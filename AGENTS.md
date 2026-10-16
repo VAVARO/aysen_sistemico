@@ -7,8 +7,9 @@ superforecasting. Costo de infraestructura: **$0** (sin servidor, solo JSON/CSV 
 ## Stack
 - HTML + JS vanilla en un solo archivo (`mapa_territorial.html`), Leaflet + Chart.js por CDN.
 - Mapa base: CARTO Voyager con API key del proyecto (ver `mapa_territorial.html`).
-- Datos: JSON en `data/`. Tests: Python estándar (`unittest`) y algunos scripts Node.
-- No hay `pyproject.toml`, `package.json` ni repositorio git.
+- Datos: JSON en `data/`. Tests: Python estándar (`unittest`) y scripts Node/CDP.
+- Control de versiones: Repositorio Git local inicializado (rama `master`).
+- No hay `pyproject.toml` ni `package.json` (usa `uv run` y `node` directamente).
 
 ## Comandos
 - Suite principal (37 tests, ~20 s, hace pings HTTP reales): `uv run python scripts/test_fuentes_integridad.py`
@@ -69,5 +70,8 @@ superforecasting. Costo de infraestructura: **$0** (sin servidor, solo JSON/CSV 
 - Consola de Windows muestra mojibake con acentos; los archivos están en UTF-8 y están bien.
 
 ## Estado (2026-10-16)
-Hitos 1–4 del plan completos y con tests en verde. Pendiente: revisión visual en navegador,
-cotejo de cifras con fuentes oficiales y auditoría independiente (el subagente se cortó por cuota).
+Proyecto cerrado y operativo:
+- Hitos 1–4 completos. 100% de tests en verde (37 integridad, 8 editorial, 58 E2E, 64 pruebas adversariales y 17 tests de estrés Headless Chrome CDP).
+- Cifras demográficas cotejadas con publicación oficial preliminar Censo 2024 de Aysén (100.745 hab en total regional).
+- Repositorio Git inicializado con `.gitignore` higienizado listo para GitHub Pages.
+- Subagentes y crons cerrados y terminados para prevenir sobreconsumo de cuota.
