@@ -1,0 +1,31 @@
+{
+  "fecha_extraccion": "2026-10-15T18:27:26.580550+00:00",
+  "region": "Aysén del General Carlos Ibáñez del Campo",
+  "fuente": "Comisión Nacional de Energía (bencinaenlinea.cl)",
+  "estaciones": [
+    {
+      "comuna": "Coyhaique",
+      "distribuidor": "Copec",
+      "direccion": "General Parra 240",
+      "gasolina_93": 1362,
+      "gasolina_97": 1410,
+      "diesel": 1098
+    },
+    {
+      "comuna": "Puerto Aysén",
+      "distribuidor": "Shell",
+      "direccion": "Sargento Aldea 820",
+      "gasolina_93": 1375,
+      "gasolina_97": 1425,
+      "diesel": 1115
+    },
+    {
+      "comuna": "Cochrane",
+      "distribuidor": "Copec",
+      "direccion": "Teniente Merino 450",
+      "gasolina_93": 1410,
+      "gasolina_97": 1460,
+      "diesel": 1150
+    }
+  ]
+}

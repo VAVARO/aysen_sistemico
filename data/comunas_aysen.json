@@ -1,0 +1,601 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "dataset_id": "comunas_aysen_estructural",
+  "titulo": "Base de Datos Estructural de las 10 Comunas de la Región de Aysén",
+  "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+  "total_comunas": 10,
+  "fecha_actualizacion": "2026-10-16T12:00:00Z",
+  "bounding_box": {
+    "lat_bounds": [
+      -49.3,
+      -43.6
+    ],
+    "lng_bounds": [
+      -75.8,
+      -71.0
+    ]
+  },
+  "fuentes_oficiales": [
+    "INE - Censo de Población y Vivienda 2024",
+    "MDSF - Encuesta CASEN 2022 (Estimaciones SAE Comunal)",
+    "CONAF - Catastro Nacional de Áreas Silvestres Protegidas (SNASPE)",
+    "MOP Vialidad - Red Vial y Pavimentación Ruta 7 (Balance 2024-2025)",
+    "MTT / DTPR - Subsidios de Conectividad Marítima y Lacustre",
+    "DEIS Minsal - Infraestructura Hospitalaria y Postas de Salud Rural",
+    "DGAC - Red Aeroportuaria y Aeródromos de Aysén",
+    "DIFROL / UPF - Pasos Fronterizos Internacionales"
+  ],
+  "comunas": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre": "Coyhaique",
+      "provincia": "Coyhaique",
+      "cabecera": "Coyhaique",
+      "cuenca_principal_bna": "Cuenca 113 (Río Aysén)",
+      "coordenadas": {
+        "lat": -45.5712,
+        "lng": -72.0685
+      },
+      "lat": -45.5712,
+      "lng": -72.0685,
+      "demografia": {
+        "censo_2024_poblacion": 57823,
+        "porcentaje_regional_pct": 57.4,
+        "superficie_km2": 7290.2,
+        "densidad_hab_km2": 7.93
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 2.9,
+        "pobreza_multidimensional_pct": 12.5,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 19.2,
+        "superficie_protegida_ha": 139971.8,
+        "unidades_snaspe": [
+          "Reserva Nacional Coyhaique",
+          "Reserva Nacional Río Simpson",
+          "Reserva Nacional Cerro Castillo"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 142.5,
+        "ruta7_km_ripio": 18.0,
+        "dependencia_barcaza": "Nula (Conectividad terrestre continua 100% pavimentada)",
+        "descripcion_acceso": "Capital regional y nodo articulador terrestre de la Carretera Austral. Conectividad 100% pavimentada en Ruta 7 y ejes internacionales CH-240 y CH-245. Sin barcazas.",
+        "servicios_barcaza": [
+          "Sin servicios de barcaza"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Hospital Regional Coyhaique (Alta Complejidad, Tipo 2)",
+        "total_postas_rurales": 7,
+        "postas_rurales": [
+          "Posta de Salud Rural Balmaceda",
+          "Posta de Salud Rural El Blanco",
+          "Posta de Salud Rural Lago Atravesado",
+          "Posta de Salud Rural Valle Simpson",
+          "Posta de Salud Rural Villa Ortega",
+          "Posta de Salud Rural Villa Ñirehuao",
+          "Posta de Salud Rural Arroyo El Gato"
+        ],
+        "aerodromo_dgac": "Aeródromo Balmaceda (SCBA) / Teniente Vidal (SCCY)",
+        "paso_fronterizo": "Paso Huemules (Ruta CH-245) / Paso Coyhaique Alto (Ruta 240) / Paso Triana"
+      },
+      "sensores_asociados_ids": [
+        5,
+        6,
+        7,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre": "Lago Verde",
+      "provincia": "Coyhaique",
+      "cabecera": "Lago Verde",
+      "cuenca_principal_bna": "Cuenca 111 (Río Palena)",
+      "coordenadas": {
+        "lat": -44.241,
+        "lng": -71.8465
+      },
+      "lat": -44.241,
+      "lng": -71.8465,
+      "demografia": {
+        "censo_2024_poblacion": 779,
+        "porcentaje_regional_pct": 0.77,
+        "superficie_km2": 5422.3,
+        "densidad_hab_km2": 0.14
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 0.9,
+        "pobreza_multidimensional_pct": 15.8,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 34.5,
+        "superficie_protegida_ha": 187069.3,
+        "unidades_snaspe": [
+          "Parque Nacional Lago Rosselot (sector este)",
+          "Reserva Nacional Lago Las Torres"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 0.0,
+        "ruta7_km_ripio": 75.0,
+        "dependencia_barcaza": "Nula (Conectividad terrestre continua)",
+        "descripcion_acceso": "Conexión terrestre transversal por ruta de ripio X-111 (75 km) empalmando con Ruta 7 en La Tapera / Villa Amengual. Paso Las Pampas hacia Argentina.",
+        "servicios_barcaza": [
+          "Sin servicios de barcaza"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Posta de Salud Rural Lago Verde (Atención Primaria Rural)",
+        "total_postas_rurales": 3,
+        "postas_rurales": [
+          "Posta de Salud Rural Lago Verde",
+          "Posta de Salud Rural Villa La Tapera",
+          "Posta de Salud Rural Villa Amengual"
+        ],
+        "aerodromo_dgac": "Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica)",
+        "paso_fronterizo": "Paso Las Pampas / Lago Verde (Ruta X-115 hacia RP 44 Argentina)"
+      },
+      "sensores_asociados_ids": []
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre": "Aysén",
+      "provincia": "Aysén",
+      "cabecera": "Puerto Aysén",
+      "cuenca_principal_bna": "Cuenca 113 (Río Aysén)",
+      "coordenadas": {
+        "lat": -45.405,
+        "lng": -72.693
+      },
+      "lat": -45.405,
+      "lng": -72.693,
+      "demografia": {
+        "censo_2024_poblacion": 23170,
+        "porcentaje_regional_pct": 23.0,
+        "superficie_km2": 29796.4,
+        "densidad_hab_km2": 0.78
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 5.3,
+        "pobreza_multidimensional_pct": 13.8,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 63.4,
+        "superficie_protegida_ha": 1889091.7,
+        "unidades_snaspe": [
+          "Parque Nacional Laguna San Rafael",
+          "Reserva Nacional Río Simpson (sector poniente)",
+          "Reserva Nacional Las Guaitecas (sector sur)"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 68.0,
+        "ruta7_km_ripio": 0.0,
+        "dependencia_barcaza": "Crítica en territorio insular (Islas Huichas / Puerto Aguirre); Nula en área continental",
+        "descripcion_acceso": "Zona continental 100% pavimentada (Ruta 7 y autopista CH-240 hacia Puerto Aysén y Puerto Chacabuco). Territorio insular (Islas Huichas) depende estrictamente de barcazas subsidiadas de Naviera Austral.",
+        "servicios_barcaza": [
+          "Puerto Chacabuco - Islas Huichas",
+          "Puerto Chacabuco - Quellón / Puerto Montt"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Hospital de Puerto Aysén (Mediana Complejidad, Tipo 3)",
+        "total_postas_rurales": 4,
+        "postas_rurales": [
+          "Posta de Salud Rural Puerto Aguirre (Islas Huichas)",
+          "Posta de Salud Rural Caleta Andrade (Islas Huichas)",
+          "Posta de Salud Rural Estero Copa (Islas Huichas)",
+          "Posta de Salud Rural Villa Mañihuales"
+        ],
+        "aerodromo_dgac": "Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico)",
+        "paso_fronterizo": "Sin pasos fronterizos terrestres directos (puerto internacional de cabotaje y aduanas Puerto Chacabuco)"
+      },
+      "sensores_asociados_ids": [
+        3,
+        12,
+        13
+      ]
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre": "Cisnes",
+      "provincia": "Aysén",
+      "cabecera": "Puerto Cisnes",
+      "cuenca_principal_bna": "Cuenca 112 (Río Cisnes)",
+      "coordenadas": {
+        "lat": -44.743,
+        "lng": -72.699
+      },
+      "lat": -44.743,
+      "lng": -72.699,
+      "demografia": {
+        "censo_2024_poblacion": 5137,
+        "porcentaje_regional_pct": 5.1,
+        "superficie_km2": 16093.0,
+        "densidad_hab_km2": 0.32
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 5.0,
+        "pobreza_multidimensional_pct": 14.2,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 71.2,
+        "superficie_protegida_ha": 1145821.6,
+        "unidades_snaspe": [
+          "Parque Nacional Queulat",
+          "Parque Nacional Melimoyu",
+          "Parque Nacional Isla Magdalena"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 115.0,
+        "ruta7_km_ripio": 65.0,
+        "dependencia_barcaza": "Crítica en localidades aisladas (Puerto Raúl Marín Balmaceda, Puerto Gala y Gaviota); Nula en Puerto Cisnes y La Junta",
+        "descripcion_acceso": "Eje troncal Ruta 7 mixto (asfalto y ripio en Cuesta Queulat). Acceso a cabecera por ramal pavimentado X-25 (32 km). Raúl Marín Balmaceda depende de barcaza fluvial en Río Palena e islas de barcazas marítimas.",
+        "servicios_barcaza": [
+          "Cruce Fluvial Río Palena (Raúl Marín Balmaceda)",
+          "Ruta Cordillera Marítima (Puerto Cisnes - Melinka - Gala - Gaviota)"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce (Baja Complejidad, Tipo 4)",
+        "total_postas_rurales": 6,
+        "postas_rurales": [
+          "Posta de Salud Rural Puyuhuapi",
+          "Posta de Salud Rural La Junta",
+          "Posta de Salud Rural Puerto Raúl Marín Balmaceda",
+          "Posta de Salud Rural Puerto Gala",
+          "Posta de Salud Rural Melimoyu",
+          "Posta de Salud Rural Puerto Gaviota"
+        ],
+        "aerodromo_dgac": "Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH)",
+        "paso_fronterizo": "Sin pasos fronterizos vehiculares habilitados (barrera cordillera andina y Parques Queulat y Melimoyu)"
+      },
+      "sensores_asociados_ids": [
+        9,
+        11
+      ]
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre": "Guaitecas",
+      "provincia": "Aysén",
+      "cabecera": "Melinka",
+      "cuenca_principal_bna": "Cuenca 110 (Costeras e Islas Río Palena - Río Aysén)",
+      "coordenadas": {
+        "lat": -43.896,
+        "lng": -73.748
+      },
+      "lat": -43.896,
+      "lng": -73.748,
+      "demografia": {
+        "censo_2024_poblacion": 1598,
+        "porcentaje_regional_pct": 1.59,
+        "superficie_km2": 620.6,
+        "densidad_hab_km2": 2.58
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 6.1,
+        "pobreza_multidimensional_pct": 17.4,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 45.8,
+        "superficie_protegida_ha": 28423.5,
+        "unidades_snaspe": [
+          "Reserva Nacional Las Guaitecas"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 0.0,
+        "ruta7_km_ripio": 0.0,
+        "dependencia_barcaza": "Absoluta (100% marítima vía Quellón/Cisnes/Chacabuco)",
+        "descripcion_acceso": "Comuna 100% insular en archipiélago de las Guaitecas. Cero km de red vial continental. Abastecimiento de combustible y víveres depende totalmente de barcazas subsidiadas de Naviera Austral (Ruta Cordillera).",
+        "servicios_barcaza": [
+          "Quellón - Melinka - Puerto Cisnes - Puerto Chacabuco (Naviera Austral)"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "CESFAM Melinka (Atención Primaria de Salud Resolutiva)",
+        "total_postas_rurales": 1,
+        "postas_rurales": [
+          "Posta de Salud Rural Repollal"
+        ],
+        "aerodromo_dgac": "Aeródromo Melinka (SCMK, asfalto 830m, vuelos regulares subvencionados)",
+        "paso_fronterizo": "Sin pasos fronterizos terrestres (territorio insular marítimo en el Golfo de Corcovado)"
+      },
+      "sensores_asociados_ids": []
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre": "Chile Chico",
+      "provincia": "General Carrera",
+      "cabecera": "Chile Chico",
+      "cuenca_principal_bna": "Cuenca 115 (Río Baker)",
+      "coordenadas": {
+        "lat": -46.541,
+        "lng": -71.722
+      },
+      "lat": -46.541,
+      "lng": -71.722,
+      "demografia": {
+        "censo_2024_poblacion": 4905,
+        "porcentaje_regional_pct": 4.87,
+        "superficie_km2": 5737.1,
+        "densidad_hab_km2": 0.85
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 6.2,
+        "pobreza_multidimensional_pct": 13.1,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 48.6,
+        "superficie_protegida_ha": 278823.1,
+        "unidades_snaspe": [
+          "Parque Nacional Patagonia (sector Jeinimeni)",
+          "Reserva Nacional Lago Jeinimeni"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 8.0,
+        "ruta7_km_ripio": 120.0,
+        "dependencia_barcaza": "Alta (Barcaza lacustre Tehuelche / Pilchero en Lago General Carrera)",
+        "descripcion_acceso": "Dependencia estratégica de la barcaza lacustre Tehuelche/Pilchero entre Puerto Ibáñez y Chile Chico (2h 15m) para conectar con Coyhaique. Alternativa terrestre exige 320 km de ripio por Paso Las Llaves (CH-265) o transitar por Argentina.",
+        "servicios_barcaza": [
+          "Puerto Ibáñez - Chile Chico (Barcaza La Tehuelche / Pilchero)"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Hospital Comunitario Dr. Leopoldo Ortega Rodríguez (Baja Complejidad, Tipo 4)",
+        "total_postas_rurales": 3,
+        "postas_rurales": [
+          "Posta de Salud Rural Puerto Guadal",
+          "Posta de Salud Rural Mallín Grande",
+          "Posta de Salud Rural Puerto Bertrand"
+        ],
+        "aerodromo_dgac": "Aeródromo Chile Chico (SCCC, asfalto 1.300m, subvencionado y aeromédico)",
+        "paso_fronterizo": "Paso Río Jeinimeni (Ruta CH-265 hacia Los Antiguos / RN 43 Argentina)"
+      },
+      "sensores_asociados_ids": []
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre": "Río Ibáñez",
+      "provincia": "General Carrera",
+      "cabecera": "Puerto Ingeniero Ibáñez",
+      "cuenca_principal_bna": "Cuenca 113 (Río Aysén)",
+      "coordenadas": {
+        "lat": -46.291,
+        "lng": -71.936
+      },
+      "lat": -46.291,
+      "lng": -71.936,
+      "demografia": {
+        "censo_2024_poblacion": 2723,
+        "porcentaje_regional_pct": 2.7,
+        "superficie_km2": 5997.2,
+        "densidad_hab_km2": 0.45
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 7.0,
+        "pobreza_multidimensional_pct": 14.9,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 61.7,
+        "superficie_protegida_ha": 370027.2,
+        "unidades_snaspe": [
+          "Parque Nacional Cerro Castillo",
+          "Reserva Nacional Laguna San Rafael",
+          "Santuario de la Naturaleza Capillas de Mármol"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 82.0,
+        "ruta7_km_ripio": 68.0,
+        "dependencia_barcaza": "Media (Terminal norte de barcazas hacia Chile Chico)",
+        "descripcion_acceso": "Conectividad terrestre continua por Ruta 7, pavimentada hasta Cerro Castillo y frentes de obra en Murta; ripio hacia Río Tranquilo. Puerto Ibáñez es la cabecera portuaria lacustre de la barcaza Tehuelche.",
+        "servicios_barcaza": [
+          "Puerto Ibáñez - Chile Chico (Terminal Lacustre)"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Posta de Salud Rural Puerto Ingeniero Ibáñez (Atención Primaria Rural)",
+        "total_postas_rurales": 5,
+        "postas_rurales": [
+          "Posta de Salud Rural Puerto Ingeniero Ibáñez",
+          "Posta de Salud Rural Villa Cerro Castillo",
+          "Posta de Salud Rural Puerto Río Tranquilo",
+          "Posta de Salud Rural Bahía Murta",
+          "Posta de Salud Rural Puerto Sánchez"
+        ],
+        "aerodromo_dgac": "Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias)",
+        "paso_fronterizo": "Paso Pallavicini / El Palomar / Río Ibáñez (Ruta X-65 hacia RP 45 Argentina)"
+      },
+      "sensores_asociados_ids": [
+        8
+      ]
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre": "Cochrane",
+      "provincia": "Capitán Prat",
+      "cabecera": "Cochrane",
+      "cuenca_principal_bna": "Cuenca 115 (Río Baker)",
+      "coordenadas": {
+        "lat": -47.254,
+        "lng": -72.571
+      },
+      "lat": -47.254,
+      "lng": -72.571,
+      "demografia": {
+        "censo_2024_poblacion": 3458,
+        "porcentaje_regional_pct": 3.43,
+        "superficie_km2": 8599.5,
+        "densidad_hab_km2": 0.4
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 6.3,
+        "pobreza_multidimensional_pct": 15.2,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 52.1,
+        "superficie_protegida_ha": 448033.9,
+        "unidades_snaspe": [
+          "Parque Nacional Patagonia (sector Valle Chacabuco)",
+          "Reserva Nacional Tamango"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 12.0,
+        "ruta7_km_ripio": 168.0,
+        "dependencia_barcaza": "Baja / Nula en eje troncal norte (Acceso terrestre continuo por Ruta 7 de ripio)",
+        "descripcion_acceso": "Acceso terrestre vehicular continuo desde el norte por Ruta 7 de ripio consolidado (168 km ripio, 12 km pavimentación en Confluencia-Chacabuco). Sin barcazas para acceso troncal. Conexión a Argentina por Paso Roballos.",
+        "servicios_barcaza": [
+          "Sin servicios de barcaza en eje troncal norte"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Hospital Comunitario Lord Cochrane (Baja Complejidad, Tipo 4)",
+        "total_postas_rurales": 1,
+        "postas_rurales": [
+          "Posta de Salud Rural San Lorenzo / Lago Vargas"
+        ],
+        "aerodromo_dgac": "Aeródromo Cochrane (SCHR, asfalto 1.200m, vuelos subvencionados y aeromédicos)",
+        "paso_fronterizo": "Paso Roballos / Rodolfo Roballos (Ruta X-83 Valle Chacabuco hacia RP 41 Argentina)"
+      },
+      "sensores_asociados_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre": "O'Higgins",
+      "provincia": "Capitán Prat",
+      "cabecera": "Villa O'Higgins",
+      "cuenca_principal_bna": "Cuenca 117 (Río Pascua)",
+      "coordenadas": {
+        "lat": -48.468,
+        "lng": -72.56
+      },
+      "lat": -48.468,
+      "lng": -72.56,
+      "demografia": {
+        "censo_2024_poblacion": 647,
+        "porcentaje_regional_pct": 0.64,
+        "superficie_km2": 8182.5,
+        "densidad_hab_km2": 0.08
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 9.2,
+        "pobreza_multidimensional_pct": 18.6,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 78.3,
+        "superficie_protegida_ha": 640689.7,
+        "unidades_snaspe": [
+          "Parque Nacional Bernardo O'Higgins (sector norte)"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 0.0,
+        "ruta7_km_ripio": 134.0,
+        "dependencia_barcaza": "Crítica / Absoluta (Cruce obligado en Barcaza Fiordo Mitchell)",
+        "descripcion_acceso": "Aislamiento geográfico extremo en el término sur de la Carretera Austral (km 1.247). Acceso terrestre condicionado al cruce marítimo obligado en barcaza Padre Antonio Ronchi en Fiordo Mitchell (Puerto Yungay a Río Bravo, 45 min).",
+        "servicios_barcaza": [
+          "Puerto Yungay - Río Bravo (Fiordo Mitchell, MOP/MTT gratuito)"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Posta de Salud Rural Villa O'Higgins (Atención Primaria Rural Avanzada)",
+        "total_postas_rurales": 1,
+        "postas_rurales": [
+          "Posta de Salud Rural Villa O'Higgins"
+        ],
+        "aerodromo_dgac": "Aeródromo Villa O'Higgins (SCOH, asfalto 1.300m, puente aéreo subvencionado)",
+        "paso_fronterizo": "Paso Río Mayer / Dos Lagunas (Ruta X-91 hacia RP 81 Argentina / Gobernador Gregores)"
+      },
+      "sensores_asociados_ids": []
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre": "Tortel",
+      "provincia": "Capitán Prat",
+      "cabecera": "Caleta Tortel",
+      "cuenca_principal_bna": "Cuenca 115 (Río Baker)",
+      "coordenadas": {
+        "lat": -47.795,
+        "lng": -73.535
+      },
+      "lat": -47.795,
+      "lng": -73.535,
+      "demografia": {
+        "censo_2024_poblacion": 505,
+        "porcentaje_regional_pct": 0.5,
+        "superficie_km2": 19710.6,
+        "densidad_hab_km2": 0.026
+      },
+      "pobreza_casen": {
+        "pobreza_ingresos_pct": 4.6,
+        "pobreza_multidimensional_pct": 16.5,
+        "fuente": "CASEN 2022 / Estimaciones SAE MDSF"
+      },
+      "conservacion_conaf": {
+        "superficie_protegida_pct": 87.4,
+        "superficie_protegida_ha": 1722706.4,
+        "unidades_snaspe": [
+          "Parque Nacional Bernardo O'Higgins",
+          "Reserva Nacional Katalalixar",
+          "Parque Nacional Laguna San Rafael (sector sur)"
+        ]
+      },
+      "conectividad": {
+        "ruta7_km_pavimentados": 0.0,
+        "ruta7_km_ripio": 45.0,
+        "dependencia_barcaza": "Alta (Barcaza marítima comercial hacia Puerto Natales y rampa norte de Barcaza Fiordo Mitchell)",
+        "descripcion_acceso": "Acceso vehicular continental por ramal de ripio X-904 (23 km desde Ruta 7) hasta rotonda vehicular. Casco urbano 100% peatonal sobre 7.5 km de pasarelas de ciprés. Rampa en Puerto Yungay para cruce a O'Higgins y recalada marítima a Magallanes.",
+        "servicios_barcaza": [
+          "Puerto Yungay - Río Bravo",
+          "Caleta Tortel - Puerto Edén - Puerto Natales (TABSA)"
+        ]
+      },
+      "equipamiento_critico": {
+        "salud_principal": "Posta de Salud Rural Caleta Tortel (Atención Primaria Rural)",
+        "total_postas_rurales": 1,
+        "postas_rurales": [
+          "Posta de Salud Rural Caleta Tortel"
+        ],
+        "aerodromo_dgac": "Aeródromo Caleta Tortel (SCTT, ripio 800m, evacuación médica y rescate)",
+        "paso_fronterizo": "Sin pasos fronterizos terrestres habilitados (Campo de Hielo Sur y fiordos marítimos)"
+      },
+      "sensores_asociados_ids": [
+        4,
+        10
+      ]
+    }
+  ]
+}

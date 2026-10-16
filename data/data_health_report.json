@@ -1,0 +1,270 @@
+{
+  "report_timestamp": "2026-10-16T17:13:36.258773+00:00",
+  "summary": {
+    "total_stations": 16,
+    "stations_in_bbox": 16,
+    "bbox_compliance_percent": 100.0,
+    "schema_validation_passed": true,
+    "null_values_detected": 0,
+    "total_endpoints_probed": 10,
+    "endpoints_online": 10,
+    "resilience_fallback_coverage_percent": 100.0,
+    "overall_health_score": 100.0,
+    "status": "OPERATIONAL"
+  },
+  "bounding_box": {
+    "lat_bounds": [
+      -49.3,
+      -43.6
+    ],
+    "lng_bounds": [
+      -75.8,
+      -71.0
+    ],
+    "violations": []
+  },
+  "stations": [
+    {
+      "id": 1,
+      "name": "Río Baker en Lago Bertrand",
+      "code": "BNA 11530000-8",
+      "lat": -47.0125,
+      "lng": -72.825,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 2,
+      "name": "Río Baker en Bajo Colonia (Alerta GLOF)",
+      "code": "BNA 11542001-1",
+      "lat": -47.285,
+      "lng": -72.952,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 3,
+      "name": "Glaciar San Rafael (Frente de Parto)",
+      "code": "RGI60-17.01423",
+      "lat": -46.702,
+      "lng": -73.855,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 4,
+      "name": "Glaciar Jorge Montt (Velocidad de Flujo)",
+      "code": "ITS-LIVE S3",
+      "lat": -48.33,
+      "lng": -73.5,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 5,
+      "name": "Río Simpson en Coyhaique",
+      "code": "BNA 11317001-K",
+      "lat": -45.572,
+      "lng": -72.071,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 6,
+      "name": "Estación Calidad del Aire Coyhaique II",
+      "code": "SINCA XI-02",
+      "lat": -45.568,
+      "lng": -72.062,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 7,
+      "name": "Estación Meteorológica Balmaceda (BBA)",
+      "code": "DMC 450005",
+      "lat": -45.918,
+      "lng": -71.691,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 8,
+      "name": "Vigilancia Volcánica: Volcán Hudson",
+      "code": "RNVV-HUDSON",
+      "lat": -45.9,
+      "lng": -72.966,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 9,
+      "name": "Boya Oceanográfica Fiordo Puyuhuapi",
+      "code": "CIEP-PUYU-01",
+      "lat": -44.62,
+      "lng": -72.71,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 10,
+      "name": "Estación Ambiental CIEP Caleta Tortel",
+      "code": "CDAT-TORTEL",
+      "lat": -47.795,
+      "lng": -73.535,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 11,
+      "name": "Monitoreo Invasión Salmón Chinook (Río Cisnes)",
+      "code": "CIEP-CHINOOK",
+      "lat": -44.78,
+      "lng": -72.6,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 12,
+      "name": "Estación Centinela Marea Roja (Islas Huichas)",
+      "code": "IFOP-FAN-XI-24",
+      "lat": -45.12,
+      "lng": -73.51,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 13,
+      "name": "Agrupación Concesiones Barrio 21B (Salmonicultura)",
+      "code": "ACS-21B",
+      "lat": -45.45,
+      "lng": -73.35,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 14,
+      "name": "Tráfico Aéreo Comercial: Aeródromo Balmaceda",
+      "code": "IATA: BBA / ICAO: SCBA",
+      "lat": -45.916,
+      "lng": -71.688,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 15,
+      "name": "Paso Fronterizo Internacional Huemules",
+      "code": "UPF-HUEMULES",
+      "lat": -45.919,
+      "lng": -71.645,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    },
+    {
+      "id": 16,
+      "name": "Precios de Combustibles en Coyhaique",
+      "code": "bencinaenlinea API",
+      "lat": -45.575,
+      "lng": -72.068,
+      "in_bbox": true,
+      "schema_valid": true,
+      "data_points": 12
+    }
+  ],
+  "endpoints": [
+    {
+      "provider": "DGA MOP",
+      "url": "https://dga.mop.gob.cl",
+      "http_status": 200,
+      "latency_ms": 3590,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "SINCA MMA",
+      "url": "https://sinca.mma.gob.cl",
+      "http_status": 200,
+      "latency_ms": 614,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "DMC MeteoChile",
+      "url": "https://climatologia.meteochile.gob.cl",
+      "http_status": 200,
+      "latency_ms": 476,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "SERNAGEOMIN",
+      "url": "https://www.sernageomin.cl",
+      "http_status": 200,
+      "latency_ms": 855,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "CIEP",
+      "url": "https://www.ciep.cl",
+      "http_status": 200,
+      "latency_ms": 2556,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "IFOP",
+      "url": "https://www.ifop.cl",
+      "http_status": 200,
+      "latency_ms": 548,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "JAC Chile",
+      "url": "https://www.jac.gob.cl",
+      "http_status": 200,
+      "latency_ms": 270,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "Datos Abiertos Chile",
+      "url": "https://datos.gob.cl",
+      "http_status": 200,
+      "latency_ms": 5234,
+      "state": "DEGRADED",
+      "fallback_ready": true
+    },
+    {
+      "provider": "SERNAPESCA",
+      "url": "https://www.sernapesca.cl",
+      "http_status": 200,
+      "latency_ms": 601,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    },
+    {
+      "provider": "CNE Bencina en Línea",
+      "url": "https://www.bencinaenlinea.cl",
+      "http_status": 200,
+      "latency_ms": 407,
+      "state": "HEALTHY",
+      "fallback_ready": true
+    }
+  ]
+}

@@ -1,0 +1,1912 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "dataset_id": "series_prospectivas_aysen_2030_2035",
+  "titulo": "Catálogo de 18 Series Estratégicas y Modelado Prospectivo a 2030-2035 de la Región de Aysén",
+  "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+  "total_series": 18,
+  "horizonte_proyeccion": "2030-2035",
+  "dilemas_regionales": 4,
+  "fecha_generacion": "2026-10-16T13:30:00Z",
+  "bounding_box": {
+    "lat_bounds": [
+      -49.3,
+      -43.6
+    ],
+    "lng_bounds": [
+      -75.8,
+      -71.0
+    ]
+  },
+  "dilemas_estrategicos": {
+    "frio_aire": {
+      "titulo": "Frío & Aire en Coyhaique",
+      "descripcion": "Descontaminación atmosférica, transición térmica residencial y dinámica invernal en la cuenca de Coyhaique.",
+      "series_asociadas": [
+        "mp25_invernal_coyhaique",
+        "temperatura_minima_balmaceda",
+        "caudal_simpson_coyhaique",
+        "sismicidad_volcan_hudson"
+      ],
+      "pregunta_flagship": {
+        "id": "sf_q1_calidad_aire_coyhaique",
+        "pregunta": "¿Logrará la ciudad de Coyhaique reducir su concentración media anual de MP2.5 por debajo de 20 µg/m³ al 31 de diciembre de 2030, saliendo formalmente de la condición de zona saturada según el D.S. N° 12/2011 MMA?",
+        "horizonte": "2030-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si el Informe Anual de Calidad del Aire oficial del MMA para la estación Coyhaique II (código SINCA XI-02) certifica un promedio aritmético anual de material particulado fino MP2.5 <= 20.0 µg/m³ durante el año calendario 2030, con al menos 75% de captura de datos horarios validados. Se resolverá como NO si dicho promedio supera los 20.0 µg/m³ o si la estación persiste en condición de saturación ambiental.",
+        "fuente_resolutoria": "SINCA / Ministerio del Medio Ambiente (MMA)"
+      }
+    },
+    "conectividad": {
+      "titulo": "Conectividad Carretera Austral",
+      "descripcion": "Evolución de la pavimentación en Ruta 7, movilidad aérea, flujos fronterizos e impacto en precios de combustible.",
+      "series_asociadas": [
+        "ruta7_kilometros_pavimentados",
+        "trafico_aereo_balmaceda",
+        "flujo_fronterizo_huemules",
+        "precio_combustibles_coyhaique"
+      ],
+      "pregunta_flagship": {
+        "id": "sf_q2_pavimentacion_ruta7_sur",
+        "pregunta": "¿Estará pavimentado el 100% del tramo troncal de la Ruta 7 entre Villa Cerro Castillo (km 725) y la ciudad de Cochrane (km 920) al 31 de diciembre de 2032?",
+        "horizonte": "2032-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si la Dirección de Vialidad emite el acta de recepción provisional o definitiva de obras de pavimentación continua para la totalidad de los 195 kilómetros del eje troncal de la Ruta 7 entre Villa Cerro Castillo y Cochrane. Se resolverá como NO si al 31 de diciembre de 2032 persiste cualquier subtramo en ripio.",
+        "fuente_resolutoria": "Dirección de Vialidad del Ministerio de Obras Públicas (MOP) / Catastro SIG-Vialidad"
+      }
+    },
+    "fiordos_salmones": {
+      "titulo": "Futuro de Fiordos y Salmones",
+      "descripcion": "Sostenibilidad de ecosistemas marinos, floraciones algales nocivas, hipoxia y regulación de la salmonicultura.",
+      "series_asociadas": [
+        "biomasa_cosecha_salmon",
+        "floracion_alexandrium_fan",
+        "oxigeno_disuelto_puyuhuapi",
+        "invasion_chinook_desove"
+      ],
+      "pregunta_flagship": {
+        "id": "sf_q3_moratoria_salmonera_fiordos",
+        "pregunta": "¿Se decretará una moratoria o congelamiento total del 100% de nuevas concesiones salmoneras en los fiordos de la Región de Aysén antes del 31 de diciembre de 2031 debido a crisis recurrentes de floraciones algales nocivas (FAN) o hipoxia marina?",
+        "horizonte": "2031-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si se publica en el Diario Oficial de Chile un Decreto Supremo o Resolución Exenta de SUBPESCA o del Ministerio de Economía que prohíba o suspenda indefinidamente el otorgamiento de nuevas concesiones de cultivo de salmónidos en las agrupaciones de concesiones (barrios ACS) de la Región de Aysén. Se resolverá como NO en caso contrario.",
+        "fuente_resolutoria": "Subsecretaría de Pesca y Acuicultura (SUBPESCA) / Diario Oficial de la República de Chile"
+      }
+    },
+    "seguridad_hidrica": {
+      "titulo": "Seguridad Hídrica del Baker y Criósfera",
+      "descripcion": "Dinámica de caudales mayores, eventos de vaciamiento glacial (GLOF), retroceso de glaciares y extremos hidroclimáticos.",
+      "series_asociadas": [
+        "caudal_baker_bertrand",
+        "limnigrafo_glof_colonia",
+        "retroceso_glaciar_san_rafael",
+        "velocidad_glaciar_jorge_montt",
+        "precipitacion_extrema_tortel"
+      ],
+      "pregunta_flagship": {
+        "id": "sf_q4_glof_baker_extremo",
+        "pregunta": "¿Superará el caudal instantáneo del Río Baker en la estación Bajo Colonia los 3.000 m³/s debido a un vaciamiento repentino de lago glaciar (evento GLOF) antes del 31 de diciembre de 2033?",
+        "horizonte": "2033-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si la telemetría en tiempo real o el anuario hidrológico oficial de la DGA para la estación BNA 11542001-1 (Río Baker en Bajo Colonia) o el limnígrafo de alerta GLOF registra una descarga fluviométrica instantánea >= 3.000 m³/s vinculada a un vaciamiento hidro-glaciar antes del 31 de diciembre de 2033. Se resolverá como NO en caso contrario.",
+        "fuente_resolutoria": "Dirección General de Aguas (DGA) / Servicio Nacional de Prevención y Respuesta ante Desastres (SENAPRED)"
+      }
+    }
+  },
+  "series": [
+    {
+      "id": "mp25_invernal_coyhaique",
+      "nombre": "Concentración Invernal de MP2.5 en Coyhaique",
+      "dilema_regional": "frio_aire",
+      "comuna_ine": "11101",
+      "codigo_comuna": "CL-XI-01",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "SINCA XI-02 (Coyhaique II)",
+      "coordenadas": {
+        "lat": -45.568,
+        "lng": -72.062
+      },
+      "lat": -45.568,
+      "lng": -72.062,
+      "fuente_institucional": "SINCA (Ministerio del Medio Ambiente)",
+      "unidad_medida": "µg/m³",
+      "unidad": "µg/m³",
+      "descripcion": "Concentración promedio de material particulado fino respirable MP2.5 en el trimestre invernal (mayo a agosto) registrada en la estación Coyhaique II. Es el indicador central de seguimiento del Plan de Descontaminación Atmosférica (PDA), condicionado por la combustión masiva de leña húmeda residencial y los fenómenos de inversión térmica en la cuenca.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 132.4
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 124.8
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 118.2
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 112.6
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 106.5
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 101.3
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 78.4,
+          "limite_inferior": 66.0,
+          "limite_superior": 92.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 74.2,
+          "limite_inferior": 61.0,
+          "limite_superior": 89.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 70.5,
+          "limite_inferior": 56.5,
+          "limite_superior": 86.5
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 67.1,
+          "limite_inferior": 52.0,
+          "limite_superior": 84.5
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 64.0,
+          "limite_inferior": 48.0,
+          "limite_superior": 83.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 61.2,
+          "limite_inferior": 44.0,
+          "limite_superior": 82.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Logrará la ciudad de Coyhaique reducir su concentración invernal de MP2.5 por debajo de 70 µg/m³ antes del 31 de diciembre de 2032 según la red SINCA?",
+        "horizonte": "2032-12-31",
+        "criterio_resolucion": "El promedio aritmético consolidado de concentraciones diarias de MP2.5 en la estación Coyhaique II entre el 1 de mayo y el 31 de agosto del año calendario respectivo sea estrictamente menor a 70.0 µg/m³.",
+        "fuente_resolutoria": "SINCA / Ministerio del Medio Ambiente - Reporte Anual de Calidad del Aire Aysén"
+      }
+    },
+    {
+      "id": "temperatura_minima_balmaceda",
+      "nombre": "Temperatura Mínima Media Invernal en Balmaceda",
+      "dilema_regional": "frio_aire",
+      "comuna_ine": "11101",
+      "codigo_comuna": "CL-XI-01",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "DMC 450005 (Balmaceda BBA)",
+      "coordenadas": {
+        "lat": -45.918,
+        "lng": -71.691
+      },
+      "lat": -45.918,
+      "lng": -71.691,
+      "fuente_institucional": "DMC (Dirección Meteorológica de Chile)",
+      "unidad_medida": "°C",
+      "unidad": "°C",
+      "descripcion": "Temperatura mínima media del trimestre invernal (junio, julio, agosto) en la estación de referencia histórica del Aeródromo Balmaceda. Modula la intensidad de las heladas esteparias, la demanda de calefacción residencial y el gradiente de inversión térmica en la cuenca.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": -5.8
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": -4.9
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": -5.4
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": -4.6
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": -5.1
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": -4.7
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": -4.3,
+          "limite_inferior": -6.1,
+          "limite_superior": -2.6
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": -4.2,
+          "limite_inferior": -6.1,
+          "limite_superior": -2.4
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": -4.0,
+          "limite_inferior": -6.0,
+          "limite_superior": -2.1
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": -3.9,
+          "limite_inferior": -6.0,
+          "limite_superior": -1.9
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": -3.8,
+          "limite_inferior": -6.0,
+          "limite_superior": -1.7
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": -3.6,
+          "limite_inferior": -5.9,
+          "limite_superior": -1.4
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará la temperatura mínima media invernal (junio-agosto) en Balmaceda los -3.5 °C en al menos dos inviernos consecutivos antes de 2035?",
+        "horizonte": "2035-08-31",
+        "criterio_resolucion": "Registros consolidados de la DMC en la estación 450005 certifiquen un promedio de mínimas diarias de junio, julio y agosto estrictamente mayor a -3.5 °C durante dos años consecutivos.",
+        "fuente_resolutoria": "DMC MeteoChile - Anuario Climatológico Nacional"
+      }
+    },
+    {
+      "id": "caudal_simpson_coyhaique",
+      "nombre": "Caudal Medio Anual del Río Simpson en Coyhaique",
+      "dilema_regional": "frio_aire",
+      "comuna_ine": "11101",
+      "codigo_comuna": "CL-XI-01",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "DGA BNA 11317001-K (Simpson Coyhaique)",
+      "coordenadas": {
+        "lat": -45.572,
+        "lng": -72.071
+      },
+      "lat": -45.572,
+      "lng": -72.071,
+      "fuente_institucional": "DGA (Ministerio de Obras Públicas)",
+      "unidad_medida": "m³/s",
+      "unidad": "m³/s",
+      "descripcion": "Caudal medio anual descargado por la cuenca alta y media del Río Simpson a su paso por Coyhaique. Fuente estratégica para el abastecimiento de agua potable urbana (Aguas Patagonia), dilución de efluentes tratados y riego del valle central.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 54.2
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 49.8
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 52.6
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 48.4
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 50.1
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 47.9
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 45.8,
+          "limite_inferior": 36.5,
+          "limite_superior": 55.5
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 45.2,
+          "limite_inferior": 35.5,
+          "limite_superior": 55.5
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 44.5,
+          "limite_inferior": 34.2,
+          "limite_superior": 55.2
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 43.9,
+          "limite_inferior": 33.0,
+          "limite_superior": 55.2
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 43.2,
+          "limite_inferior": 31.8,
+          "limite_superior": 55.3
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 42.6,
+          "limite_inferior": 30.5,
+          "limite_superior": 55.5
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Descenderá el caudal medio anual del Río Simpson en Coyhaique por debajo de 40 m³/s antes de diciembre de 2033?",
+        "horizonte": "2033-12-31",
+        "criterio_resolucion": "La estación BNA 11317001-K de la DGA registre un caudal medio anual consolidado estrictamente menor a 40.0 m³/s en cualquiera de los años de la serie 2026-2033.",
+        "fuente_resolutoria": "DGA MOP - Anuario de Caudales Medios y Boletines Hidrológicos"
+      }
+    },
+    {
+      "id": "sismicidad_volcan_hudson",
+      "nombre": "Tasa Mensual de Sismicidad en Volcán Hudson",
+      "dilema_regional": "frio_aire",
+      "comuna_ine": "11402",
+      "codigo_comuna": "CL-XI-07",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "RNVV-OVDAS Volcán Hudson",
+      "coordenadas": {
+        "lat": -45.9,
+        "lng": -72.966
+      },
+      "lat": -45.9,
+      "lng": -72.966,
+      "fuente_institucional": "SERNAGEOMIN (RNVV / OVDAS)",
+      "unidad_medida": "eventos/mes",
+      "unidad": "eventos/mes",
+      "descripcion": "Promedio mensual de eventos sísmicos de origen volcánico (fracturamiento de roca VT y dinámica de fluidos LP) detectados en la caldera del Volcán Hudson por la Red Nacional de Vigilancia Volcánica.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 24.5
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 28.2
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 32.6
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 27.8
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 29.4
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 28.1
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 29.5,
+          "limite_inferior": 18.0,
+          "limite_superior": 48.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 30.0,
+          "limite_inferior": 17.5,
+          "limite_superior": 49.5
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 30.8,
+          "limite_inferior": 17.0,
+          "limite_superior": 51.5
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 31.5,
+          "limite_inferior": 16.5,
+          "limite_superior": 53.5
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 32.2,
+          "limite_inferior": 16.0,
+          "limite_superior": 56.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 33.0,
+          "limite_inferior": 15.5,
+          "limite_superior": 59.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Declarará SERNAGEOMIN / SENAPRED un cambio a Alerta Amarilla o superior para el Volcán Hudson antes del 31 de diciembre de 2031?",
+        "horizonte": "2031-12-31",
+        "criterio_resolucion": "Emisión de un Reporte de Actividad Volcánica Extraordinario (REAV) oficial de SERNAGEOMIN-OVDAS elevando el nivel de alerta técnica volcánica a Amarilla, Naranja o Roja para el Volcán Hudson.",
+        "fuente_resolutoria": "SERNAGEOMIN OVDAS - Reportes Técnicos de Vigilancia Volcánica"
+      }
+    },
+    {
+      "id": "caudal_baker_bertrand",
+      "nombre": "Caudal Medio Anual del Río Baker en Lago Bertrand",
+      "dilema_regional": "seguridad_hidrica",
+      "comuna_ine": "11301",
+      "codigo_comuna": "CL-XI-08",
+      "cuenca_bna": "Cuenca 115 (Río Baker)",
+      "estacion_sensor": "DGA BNA 11530000-8 (Baker Bertrand)",
+      "coordenadas": {
+        "lat": -47.0125,
+        "lng": -72.825
+      },
+      "lat": -47.0125,
+      "lng": -72.825,
+      "fuente_institucional": "DGA (Ministerio de Obras Públicas)",
+      "unidad_medida": "m³/s",
+      "unidad": "m³/s",
+      "descripcion": "Descarga fluviométrica media anual del mayor río de Chile por volumen en su naciente en Lago Bertrand (desagüe del Lago General Carrera). Regulador macrohídrico de la Patagonia Central y barómetro del deshielo de cabecera andina.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 595.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 572.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 608.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 588.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 615.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 602.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 605.0,
+          "limite_inferior": 530.0,
+          "limite_superior": 685.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 602.0,
+          "limite_inferior": 522.0,
+          "limite_superior": 688.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 598.0,
+          "limite_inferior": 512.0,
+          "limite_superior": 692.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 594.0,
+          "limite_inferior": 500.0,
+          "limite_superior": 695.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 589.0,
+          "limite_inferior": 488.0,
+          "limite_superior": 698.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 584.0,
+          "limite_inferior": 475.0,
+          "limite_superior": 702.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el caudal medio anual del Río Baker en Lago Bertrand los 650 m³/s en algún año antes del 31 de diciembre de 2033?",
+        "horizonte": "2033-12-31",
+        "criterio_resolucion": "La estación BNA 11530000-8 reporte un caudal medio anual consolidado estrictamente superior a 650.0 m³/s en cualquiera de los años de la serie DGA entre 2026 y 2033.",
+        "fuente_resolutoria": "DGA MOP - División de Hidrología / Balance Hídrico Regional"
+      }
+    },
+    {
+      "id": "limnigrafo_glof_colonia",
+      "nombre": "Nivel Máximo Anual en Limnígrafo Río Baker en Bajo Colonia",
+      "dilema_regional": "seguridad_hidrica",
+      "comuna_ine": "11301",
+      "codigo_comuna": "CL-XI-08",
+      "cuenca_bna": "Cuenca 115 (Río Baker)",
+      "estacion_sensor": "DGA/SENAPRED 11542001-1 (Baker Bajo Colonia)",
+      "coordenadas": {
+        "lat": -47.285,
+        "lng": -72.952
+      },
+      "lat": -47.285,
+      "lng": -72.952,
+      "fuente_institucional": "DGA / SENAPRED",
+      "unidad_medida": "m",
+      "unidad": "m",
+      "descripcion": "Altura limnigráfica máxima instantánea anual en la estación Bajo Colonia, aguas abajo de la confluencia con el Río Colonia. Sensor de alerta temprana de vaciamientos catastróficos de lagos glaciares (GLOFs del Lago Cachet II represado por el Glaciar Colonia).",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 4.8
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 3.5
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 5.6
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 3.8
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 5.9
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 4.2
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 5.1,
+          "limite_inferior": 3.2,
+          "limite_superior": 6.5
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 4.9,
+          "limite_inferior": 3.1,
+          "limite_superior": 6.6
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 5.0,
+          "limite_inferior": 3.0,
+          "limite_superior": 6.7
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 4.8,
+          "limite_inferior": 2.9,
+          "limite_superior": 6.8
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 4.7,
+          "limite_inferior": 2.8,
+          "limite_superior": 6.9
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 4.6,
+          "limite_inferior": 2.7,
+          "limite_superior": 7.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el caudal instantáneo del Río Baker en la estación Bajo Colonia los 3.000 m³/s (nivel limnígrafo > 6.0 m) debido a un evento GLOF antes del 31 de diciembre de 2033?",
+        "horizonte": "2033-12-31",
+        "criterio_resolucion": "El sensor telemétrico BNA 11542001-1 registre una descarga fluviométrica instantánea mayor o igual a 3.000 m³/s o cota limnigráfica >= 6.00 m asociada a un vaciamiento glacial certificado por SENAPRED/DGA.",
+        "fuente_resolutoria": "DGA / SENAPRED - Alertas Hidrológicas Regionales de Aysén"
+      }
+    },
+    {
+      "id": "retroceso_glaciar_san_rafael",
+      "nombre": "Tasa Anual de Retroceso Frontal del Glaciar San Rafael",
+      "dilema_regional": "seguridad_hidrica",
+      "comuna_ine": "11201",
+      "codigo_comuna": "CL-XI-03",
+      "cuenca_bna": "Cuenca 114 (Costeras Aysén - Baker)",
+      "estacion_sensor": "Copernicus Sentinel-1 SAR (RGI60-17.01423)",
+      "coordenadas": {
+        "lat": -46.702,
+        "lng": -73.855
+      },
+      "lat": -46.702,
+      "lng": -73.855,
+      "fuente_institucional": "Copernicus (Agencia Espacial Europea)",
+      "unidad_medida": "m/año",
+      "unidad": "m/año",
+      "descripcion": "Distancia lineal neta de retroceso del frente de desprendimiento del Glaciar San Rafael en la Laguna San Rafael. Medido mediante radar de apertura sintética satelital, independiente de la nubosidad oceánica permanente.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 88.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 94.5
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 102.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 98.5
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 112.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 116.5
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 125.0,
+          "limite_inferior": 95.0,
+          "limite_superior": 160.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 127.5,
+          "limite_inferior": 94.0,
+          "limite_superior": 164.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 129.0,
+          "limite_inferior": 92.0,
+          "limite_superior": 168.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 131.0,
+          "limite_inferior": 90.0,
+          "limite_superior": 172.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 132.5,
+          "limite_inferior": 88.0,
+          "limite_superior": 177.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 134.0,
+          "limite_inferior": 85.0,
+          "limite_superior": 182.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el retroceso frontal acumulado del Glaciar San Rafael los 1.200 metros entre el 1 de enero de 2025 y el 31 de diciembre de 2034?",
+        "horizonte": "2034-12-31",
+        "criterio_resolucion": "La sumatoria de las distancias anuales de retroceso del frente terminal publicadas en el catastro Copernicus SAR / DGA supere estrictamente 1.200,0 metros lineales al 31 de diciembre de 2034.",
+        "fuente_resolutoria": "Copernicus Sentinel-1 STAC API / DGA Unidad de Glaciología y Nieves"
+      }
+    },
+    {
+      "id": "velocidad_glaciar_jorge_montt",
+      "nombre": "Velocidad de Flujo Superficial del Glaciar Jorge Montt",
+      "dilema_regional": "seguridad_hidrica",
+      "comuna_ine": "11303",
+      "codigo_comuna": "CL-XI-10",
+      "cuenca_bna": "Cuenca 118 (Costeras Pascua - Límite)",
+      "estacion_sensor": "NASA JPL ITS_LIVE S3",
+      "coordenadas": {
+        "lat": -48.33,
+        "lng": -73.5
+      },
+      "lat": -48.33,
+      "lng": -73.5,
+      "fuente_institucional": "NASA JPL (Caltech)",
+      "unidad_medida": "m/año",
+      "unidad": "m/año",
+      "descripcion": "Velocidad superficial del flujo de hielo en la zona terminal del Glaciar Jorge Montt (Campo de Hielo Sur), con descarga en el fiordo Brazo Jorge Montt. Registra una de las tasas de aceleración y vaciamiento más veloces del hemisferio sur.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 1380.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 1420.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 1465.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 1510.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 1540.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 1575.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 1660.0,
+          "limite_inferior": 1350.0,
+          "limite_superior": 2010.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 1680.0,
+          "limite_inferior": 1340.0,
+          "limite_superior": 2050.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 1695.0,
+          "limite_inferior": 1320.0,
+          "limite_superior": 2090.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 1710.0,
+          "limite_inferior": 1300.0,
+          "limite_superior": 2140.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 1725.0,
+          "limite_inferior": 1280.0,
+          "limite_superior": 2190.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 1735.0,
+          "limite_inferior": 1250.0,
+          "limite_superior": 2250.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará la velocidad de flujo del Glaciar Jorge Montt los 1.850 m/año en los mosaicos satelitales NASA JPL ITS_LIVE antes de 2033?",
+        "horizonte": "2033-12-31",
+        "criterio_resolucion": "El dataset oficial ITS_LIVE de la NASA registre una velocidad media anual superior a 1.850 m/año en la lengua terminal del Glaciar Jorge Montt en cualquier mosaico anual procesado entre 2026 y 2033.",
+        "fuente_resolutoria": "NASA JPL ITS_LIVE / Cloud-Optimized Zarr Data Portal"
+      }
+    },
+    {
+      "id": "precipitacion_extrema_tortel",
+      "nombre": "Precipitación Diaria Máxima Anual en Caleta Tortel",
+      "dilema_regional": "seguridad_hidrica",
+      "comuna_ine": "11303",
+      "codigo_comuna": "CL-XI-10",
+      "cuenca_bna": "Cuenca 115 (Río Baker)",
+      "estacion_sensor": "CIEP CDAT-TORTEL (Laboratorio Eco-Climático)",
+      "coordenadas": {
+        "lat": -47.795,
+        "lng": -73.535
+      },
+      "lat": -47.795,
+      "lng": -73.535,
+      "fuente_institucional": "CIEP (Centro de Investigación en Ecosistemas)",
+      "unidad_medida": "mm",
+      "unidad": "mm",
+      "descripcion": "Máxima precipitación pluvial acumulada en un período de 24 horas en Caleta Tortel, punto neurálgico de impacto de ríos atmosféricos extremos del Pacífico sur. Parámetro crítico para la estabilidad de pasarelas comunales y aluviones en fiordos.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 95.4
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 104.2
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 98.6
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 112.5
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 108.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 115.8
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 122.5,
+          "limite_inferior": 88.0,
+          "limite_superior": 162.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 125.0,
+          "limite_inferior": 88.0,
+          "limite_superior": 166.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 127.2,
+          "limite_inferior": 87.0,
+          "limite_superior": 170.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 129.5,
+          "limite_inferior": 86.0,
+          "limite_superior": 174.5
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 132.0,
+          "limite_inferior": 85.0,
+          "limite_superior": 180.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 134.5,
+          "limite_inferior": 84.0,
+          "limite_superior": 186.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Registrará la estación Caleta Tortel (CIEP CDAT) una precipitación acumulada en 24 horas superior a 150 mm antes del 31 de diciembre de 2032?",
+        "horizonte": "2032-12-31",
+        "criterio_resolucion": "El pluviómetro telemétrico de la estación CDAT-TORTEL certifique un registro de precipitación diaria acumulada mayor o igual a 150.0 mm en un día meteorológico (08:00 a 08:00 hora local).",
+        "fuente_resolutoria": "CIEP (Centro de Investigación en Ecosistemas) / Red de Monitoreo CDAT"
+      }
+    },
+    {
+      "id": "ruta7_kilometros_pavimentados",
+      "nombre": "Longitud Pavimentada Acumulada en Ruta 7 (Carretera Austral)",
+      "dilema_regional": "conectividad",
+      "comuna_ine": "regional",
+      "codigo_comuna": "CL-XI-REG",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "MOP Dirección de Vialidad Aysén",
+      "coordenadas": {
+        "lat": -45.5712,
+        "lng": -72.0685
+      },
+      "lat": -45.5712,
+      "lng": -72.0685,
+      "fuente_institucional": "MOP Dirección de Vialidad",
+      "unidad_medida": "km",
+      "unidad": "km",
+      "descripcion": "Longitud total acumulada de calzada con pavimento definitivo (asfalto, hormigón o tratamiento superficial doble) a lo largo del eje troncal de la Ruta 7 Carretera Austral en la Región de Aysén, según Vialidad MOP. Es la variable estructural determinante de los tiempos de viaje y la integración territorial continental.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 242.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 258.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 275.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 294.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 312.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 328.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 415.0,
+          "limite_inferior": 385.0,
+          "limite_superior": 445.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 432.0,
+          "limite_inferior": 398.0,
+          "limite_superior": 465.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 450.0,
+          "limite_inferior": 412.0,
+          "limite_superior": 488.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 468.0,
+          "limite_inferior": 425.0,
+          "limite_superior": 510.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 485.0,
+          "limite_inferior": 438.0,
+          "limite_superior": 532.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 502.0,
+          "limite_inferior": 450.0,
+          "limite_superior": 555.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Estará pavimentado el 100% del tramo troncal de la Ruta 7 entre Villa Cerro Castillo (km 725) y la ciudad de Cochrane (km 920) al 31 de diciembre de 2032?",
+        "horizonte": "2032-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si la Dirección de Vialidad emite el acta de recepción provisional o definitiva de obras de pavimentación continua para la totalidad de los 195 kilómetros del eje troncal de la Ruta 7 entre Villa Cerro Castillo y Cochrane. Se resolverá como NO en caso contrario.",
+        "fuente_resolutoria": "Dirección de Vialidad del Ministerio de Obras Públicas (MOP) / Catastro SIG-Vialidad"
+      }
+    },
+    {
+      "id": "trafico_aereo_balmaceda",
+      "nombre": "Tráfico Aéreo Comercial en Aeródromo Balmaceda",
+      "dilema_regional": "conectividad",
+      "comuna_ine": "11101",
+      "codigo_comuna": "CL-XI-01",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "JAC / DGAC Aeródromo Balmaceda (SCBA)",
+      "coordenadas": {
+        "lat": -45.916,
+        "lng": -71.688
+      },
+      "lat": -45.916,
+      "lng": -71.688,
+      "fuente_institucional": "JAC (Junta de Aeronáutica Civil)",
+      "unidad_medida": "kPasajeros",
+      "unidad": "kPasajeros",
+      "descripcion": "Tráfico total anual de pasajeros comerciales transportados (embarcados y desembarcados) en el Aeródromo Balmaceda (SCBA), principal terminal aéreo y puerta de entrada a la Región de Aysén, según estadísticas oficiales de la Junta de Aeronáutica Civil (JAC).",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 165.2
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 242.8
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 332.5
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 374.1
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 408.6
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 432.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 525.0,
+          "limite_inferior": 465.0,
+          "limite_superior": 590.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 546.0,
+          "limite_inferior": 478.0,
+          "limite_superior": 618.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 568.0,
+          "limite_inferior": 490.0,
+          "limite_superior": 648.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 591.0,
+          "limite_inferior": 502.0,
+          "limite_superior": 680.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 615.0,
+          "limite_inferior": 515.0,
+          "limite_superior": 715.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 640.0,
+          "limite_inferior": 528.0,
+          "limite_superior": 752.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el tráfico anual de pasajeros en el Aeródromo Balmaceda los 550.000 viajeros comerciales antes del 31 de diciembre de 2031?",
+        "horizonte": "2031-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si el balance anual consolidado de la JAC certifica un total de pasajeros comerciales embarcados y desembarcados en Balmaceda (código BBA/SCBA) mayor o igual a 550.000 personas en cualquier año calendario entre 2026 y 2031.",
+        "fuente_resolutoria": "JAC (Junta de Aeronáutica Civil) - Serie Estadística Anual de Tráfico Aéreo Comercial"
+      }
+    },
+    {
+      "id": "flujo_fronterizo_huemules",
+      "nombre": "Tránsito Internacional de Personas en Paso Fronterizo Huemules",
+      "dilema_regional": "conectividad",
+      "comuna_ine": "11101",
+      "codigo_comuna": "CL-XI-01",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "UPF / PDI Paso Huemules",
+      "coordenadas": {
+        "lat": -45.919,
+        "lng": -71.645
+      },
+      "lat": -45.919,
+      "lng": -71.645,
+      "fuente_institucional": "Unidad de Pasos Fronterizos / PDI",
+      "unidad_medida": "kPersonas",
+      "unidad": "kPersonas",
+      "descripcion": "Tránsito anual consolidado de personas (entradas y salidas) por el Complejo Fronterizo Huemules, principal paso terrestre internacional habilitado que conecta Coyhaique con la República Argentina y la cuenca del Río Senguer.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 31.5
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 46.2
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 94.8
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 136.4
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 154.2
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 168.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 198.0,
+          "limite_inferior": 165.0,
+          "limite_superior": 235.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 204.0,
+          "limite_inferior": 168.0,
+          "limite_superior": 245.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 211.0,
+          "limite_inferior": 172.0,
+          "limite_superior": 256.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 218.0,
+          "limite_inferior": 175.0,
+          "limite_superior": 268.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 225.0,
+          "limite_inferior": 178.0,
+          "limite_superior": 280.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 232.0,
+          "limite_inferior": 180.0,
+          "limite_superior": 292.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Registrará el Complejo Fronterizo Huemules un tránsito anual superior a 200.000 personas antes del 31 de diciembre de 2030?",
+        "horizonte": "2030-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si el balance anual consolidado de la Unidad de Pasos Fronterizos del Ministerio del Interior certifica un total anual de entradas y salidas mayor o igual a 200.000 tránsitos antes del término de 2030.",
+        "fuente_resolutoria": "Ministerio del Interior y Seguridad Pública - Unidad de Pasos Fronterizos (UPF)"
+      }
+    },
+    {
+      "id": "precio_combustibles_coyhaique",
+      "nombre": "Precio Promedio Minorista Gasolina 93 en Coyhaique",
+      "dilema_regional": "conectividad",
+      "comuna_ine": "11101",
+      "codigo_comuna": "CL-XI-01",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "CNE Bencina en Línea Coyhaique",
+      "coordenadas": {
+        "lat": -45.575,
+        "lng": -72.068
+      },
+      "lat": -45.575,
+      "lng": -72.068,
+      "fuente_institucional": "CNE (Comisión Nacional de Energía)",
+      "unidad_medida": "$/litro",
+      "unidad": "$/litro",
+      "descripcion": "Precio promedio minorista en pesos chilenos por litro de gasolina de 93 octanos en estaciones de servicio de Coyhaique, según plataforma oficial Bencina en Línea de la Comisión Nacional de Energía (CNE). Variable crítica de la matriz de costos logísticos y de transporte austral.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 845.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 962.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 1285.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 1328.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 1365.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 1390.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 1585.0,
+          "limite_inferior": 1420.0,
+          "limite_superior": 1760.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 1625.0,
+          "limite_inferior": 1440.0,
+          "limite_superior": 1830.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 1665.0,
+          "limite_inferior": 1460.0,
+          "limite_superior": 1900.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 1708.0,
+          "limite_inferior": 1480.0,
+          "limite_superior": 1975.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 1752.0,
+          "limite_inferior": 1500.0,
+          "limite_superior": 2050.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 1798.0,
+          "limite_inferior": 1520.0,
+          "limite_superior": 2130.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el precio minorista promedio de la gasolina 93 en Coyhaique los 1.600 $/litro antes del 31 de diciembre de 2030?",
+        "horizonte": "2030-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si el promedio aritmético de precios semanales reportados por la plataforma Bencina en Línea de la CNE para servicentros de Coyhaique supera 1.600 $/litro durante al menos 12 semanas consecutivas.",
+        "fuente_resolutoria": "CNE (Comisión Nacional de Energía) - Plataforma Bencina en Línea"
+      }
+    },
+    {
+      "id": "biomasa_cosecha_salmon",
+      "nombre": "Cosecha Anual de Biomasa Salmonídea en Seno Aysén (ACS-21B)",
+      "dilema_regional": "fiordos_salmones",
+      "comuna_ine": "11201",
+      "codigo_comuna": "CL-XI-03",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "SERNAPESCA Barrio ACS-21B (Seno Aysén)",
+      "coordenadas": {
+        "lat": -45.45,
+        "lng": -73.35
+      },
+      "lat": -45.45,
+      "lng": -73.35,
+      "fuente_institucional": "SERNAPESCA / SUBPESCA",
+      "unidad_medida": "kTon",
+      "unidad": "kTon",
+      "descripcion": "Volumen anual acumulado de biomasa de salmónidos cosechada (kTon) en la agrupación de concesiones Barrio ACS-21B (Seno Aysén). Principal indicador de intensidad productiva acuícola y presión ambiental sobre fiordos y canales patagónicos.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 312.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 295.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 325.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 318.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 308.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 298.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 265.0,
+          "limite_inferior": 220.0,
+          "limite_superior": 300.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 258.0,
+          "limite_inferior": 210.0,
+          "limite_superior": 296.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 252.0,
+          "limite_inferior": 200.0,
+          "limite_superior": 292.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 246.0,
+          "limite_inferior": 190.0,
+          "limite_superior": 288.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 240.0,
+          "limite_inferior": 180.0,
+          "limite_superior": 285.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 235.0,
+          "limite_inferior": 170.0,
+          "limite_superior": 282.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Se decretará una moratoria o congelamiento total del 100% de nuevas concesiones salmoneras en los fiordos de la Región de Aysén antes del 31 de diciembre de 2031 debido a crisis recurrentes de floraciones algales nocivas (FAN) o hipoxia marina?",
+        "horizonte": "2031-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si se publica en el Diario Oficial de Chile un Decreto Supremo o Resolución Exenta de SUBPESCA o del Ministerio de Economía que prohíba o suspenda indefinidamente el otorgamiento de nuevas concesiones en barrios ACS de Aysén. Se resolverá como NO en caso contrario.",
+        "fuente_resolutoria": "Subsecretaría de Pesca y Acuicultura (SUBPESCA) / Diario Oficial de la República de Chile"
+      }
+    },
+    {
+      "id": "floracion_alexandrium_fan",
+      "nombre": "Densidad Celular Máxima Estival de Alexandrium catenella (iFAN)",
+      "dilema_regional": "fiordos_salmones",
+      "comuna_ine": "11201",
+      "codigo_comuna": "CL-XI-03",
+      "cuenca_bna": "Cuenca 110 (Costeras Palena - Aysén)",
+      "estacion_sensor": "IFOP Sistema iFAN Estación Seno Aysén",
+      "coordenadas": {
+        "lat": -45.12,
+        "lng": -73.51
+      },
+      "lat": -45.12,
+      "lng": -73.51,
+      "fuente_institucional": "IFOP (Instituto de Fomento Pesquero)",
+      "unidad_medida": "cél/L",
+      "unidad": "cél/L",
+      "descripcion": "Densidad celular máxima observada durante la temporada estival de la microalga dinoflagelada toxigénica Alexandrium catenella en estaciones de muestreo del Sistema iFAN del IFOP en Seno Aysén e Islas Huichas, responsable de floraciones algales nocivas (marea roja).",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 380.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 1250.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 420.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 890.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 1450.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 1100.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 1750.0,
+          "limite_inferior": 850.0,
+          "limite_superior": 2800.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 1830.0,
+          "limite_inferior": 880.0,
+          "limite_superior": 3050.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 1910.0,
+          "limite_inferior": 910.0,
+          "limite_superior": 3300.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 2000.0,
+          "limite_inferior": 940.0,
+          "limite_superior": 3580.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 2090.0,
+          "limite_inferior": 970.0,
+          "limite_superior": 3880.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 2180.0,
+          "limite_inferior": 1000.0,
+          "limite_superior": 4200.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el pico estival de Alexandrium catenella en las Islas Huichas las 2.000 cél/L antes del 31 de marzo de 2032?",
+        "horizonte": "2032-03-31",
+        "criterio_resolucion": "Se resolverá como SÍ si el reporte oficial del Sistema iFAN del IFOP registra una concentración mayor o igual a 2.000 cél/L de A. catenella en la estación centinela de Islas Huichas o estaciones adyacentes de la comuna de Aysén.",
+        "fuente_resolutoria": "IFOP - Informes Técnicos del Sistema de Monitoreo iFAN"
+      }
+    },
+    {
+      "id": "oxigeno_disuelto_puyuhuapi",
+      "nombre": "Concentración Mínima de Oxígeno Disuelto Profundo en Fiordo Puyuhuapi",
+      "dilema_regional": "fiordos_salmones",
+      "comuna_ine": "11202",
+      "codigo_comuna": "CL-XI-04",
+      "cuenca_bna": "Cuenca 112 (Río Cisnes)",
+      "estacion_sensor": "CIEP Boya Puyuhuapi (ACS-22A)",
+      "coordenadas": {
+        "lat": -44.62,
+        "lng": -72.71
+      },
+      "lat": -44.62,
+      "lng": -72.71,
+      "fuente_institucional": "CIEP / COPAS Coastal",
+      "unidad_medida": "mg/L",
+      "unidad": "mg/L",
+      "descripcion": "Concentración mínima anual de oxígeno disuelto en aguas profundas (profundidad >= 15 m) en la estación oceanográfica Boya Puyuhuapi (CIEP/COPAS Coastal). Monitorea fenómenos de hipoxia marina y estratificación física en la columna de agua del fiordo.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 4.35
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 4.18
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 4.02
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 3.84
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 3.65
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 3.48
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 2.85,
+          "limite_inferior": 2.1,
+          "limite_superior": 3.45
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 2.74,
+          "limite_inferior": 1.95,
+          "limite_superior": 3.38
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 2.63,
+          "limite_inferior": 1.8,
+          "limite_superior": 3.3
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 2.52,
+          "limite_inferior": 1.65,
+          "limite_superior": 3.22
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 2.42,
+          "limite_inferior": 1.5,
+          "limite_superior": 3.15
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 2.32,
+          "limite_inferior": 1.35,
+          "limite_superior": 3.08
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Descenderá la concentración mínima de oxígeno disuelto profundo en el Fiordo Puyuhuapi por debajo de 2,5 mg/L antes del 31 de diciembre de 2033?",
+        "horizonte": "2033-12-31",
+        "criterio_resolucion": "Se resolverá como SÍ si la boya oceanográfica CIEP/COPAS Puyuhuapi documenta un evento continuo de más de 14 días con valores de oxígeno disuelto a profundidad >=15m inferiores a 2,50 mg/L.",
+        "fuente_resolutoria": "CIEP / COPAS Coastal - Oceanografía Costera"
+      }
+    },
+    {
+      "id": "invasion_chinook_desove",
+      "nombre": "Censo Anual de Nidos de Desove de Salmón Chinook en Río Cisnes",
+      "dilema_regional": "fiordos_salmones",
+      "comuna_ine": "11202",
+      "codigo_comuna": "CL-XI-04",
+      "cuenca_bna": "Cuenca 112 (Río Cisnes)",
+      "estacion_sensor": "CIEP Ecosistemas Acuáticos (Campaña Desove)",
+      "coordenadas": {
+        "lat": -44.78,
+        "lng": -72.6
+      },
+      "lat": -44.78,
+      "lng": -72.6,
+      "fuente_institucional": "CIEP (Laboratorio Ecosistemas Acuáticos)",
+      "unidad_medida": "nidos",
+      "unidad": "nidos",
+      "descripcion": "Conteo anual de nidos de desove (redds) de salmón Chinook (Oncorhynchus tshawytscha) asilvestrado en la cuenca del Río Cisnes, monitoreado en campañas de censo fluvial del CIEP para evaluar la invasión biológica en ríos patagónicos.",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 310.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 345.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 395.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 440.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 510.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 560.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 780.0,
+          "limite_inferior": 650.0,
+          "limite_superior": 920.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 820.0,
+          "limite_inferior": 675.0,
+          "limite_superior": 980.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 855.0,
+          "limite_inferior": 700.0,
+          "limite_superior": 1035.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 885.0,
+          "limite_inferior": 720.0,
+          "limite_superior": 1085.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 912.0,
+          "limite_inferior": 738.0,
+          "limite_superior": 1130.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 935.0,
+          "limite_inferior": 755.0,
+          "limite_superior": 1170.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará el censo anual de nidos de salmón Chinook en la cuenca del Río Cisnes los 800 nidos antes del 30 de junio de 2031?",
+        "horizonte": "2031-06-30",
+        "criterio_resolucion": "Se resolverá como SÍ si el informe anual del CIEP certifica un conteo igual o mayor a 800 nidos de desove en el curso del Río Cisnes durante la campaña otoñal.",
+        "fuente_resolutoria": "CIEP - Monitoreo de Especies Invasoras y Ecosistemas Acuáticos"
+      }
+    },
+    {
+      "id": "poblacion_regional_proyectada",
+      "nombre": "Población Regional Censada y Proyectada de Aysén",
+      "dilema_regional": "demografia_regional",
+      "comuna_ine": "regional",
+      "codigo_comuna": "CL-XI-REG",
+      "cuenca_bna": "Cuenca 113 (Río Aysén)",
+      "estacion_sensor": "INE Censo 2024 / DEIS Proyecciones",
+      "coordenadas": {
+        "lat": -45.5712,
+        "lng": -72.0685
+      },
+      "lat": -45.5712,
+      "lng": -72.0685,
+      "fuente_institucional": "INE (Instituto Nacional de Estadísticas)",
+      "unidad_medida": "habitantes",
+      "unidad": "habitantes",
+      "descripcion": "Población total residente de la Región de Aysén, basada en el empadronamiento oficial del Censo 2024 (100.745 habitantes) y proyecciones demográficas de cohortes hacia 2030-2035 considerando dinámica de natalidad, envejecimiento y migración neta (INE).",
+      "historico": [
+        {
+          "periodo": "2020",
+          "fecha": "2020",
+          "valor": 98450.0
+        },
+        {
+          "periodo": "2021",
+          "fecha": "2021",
+          "valor": 99120.0
+        },
+        {
+          "periodo": "2022",
+          "fecha": "2022",
+          "valor": 99780.0
+        },
+        {
+          "periodo": "2023",
+          "fecha": "2023",
+          "valor": 100280.0
+        },
+        {
+          "periodo": "2024",
+          "fecha": "2024",
+          "valor": 100745.0
+        },
+        {
+          "periodo": "2025",
+          "fecha": "2025",
+          "valor": 101350.0
+        }
+      ],
+      "proyeccion_2030_2035": [
+        {
+          "periodo": "2030",
+          "fecha": "2030",
+          "valor_proyectado": 104250.0,
+          "limite_inferior": 102100.0,
+          "limite_superior": 106800.0
+        },
+        {
+          "periodo": "2031",
+          "fecha": "2031",
+          "valor_proyectado": 104900.0,
+          "limite_inferior": 102500.0,
+          "limite_superior": 107800.0
+        },
+        {
+          "periodo": "2032",
+          "fecha": "2032",
+          "valor_proyectado": 105550.0,
+          "limite_inferior": 102900.0,
+          "limite_superior": 108900.0
+        },
+        {
+          "periodo": "2033",
+          "fecha": "2033",
+          "valor_proyectado": 106200.0,
+          "limite_inferior": 103200.0,
+          "limite_superior": 110000.0
+        },
+        {
+          "periodo": "2034",
+          "fecha": "2034",
+          "valor_proyectado": 106850.0,
+          "limite_inferior": 103500.0,
+          "limite_superior": 111100.0
+        },
+        {
+          "periodo": "2035",
+          "fecha": "2035",
+          "valor_proyectado": 107500.0,
+          "limite_inferior": 103800.0,
+          "limite_superior": 112300.0
+        }
+      ],
+      "pregunta_superforecasting": {
+        "pregunta": "¿Superará la población oficial estimada de la Región de Aysén los 105.000 habitantes al 30 de junio de 2031?",
+        "horizonte": "2031-06-30",
+        "criterio_resolucion": "Se resolverá como SÍ si las estimaciones y proyecciones de población oficiales del INE basadas en el Censo 2024 registran para Aysén una cifra igual o superior a 105.000 habitantes al 30 de junio de 2031.",
+        "fuente_resolutoria": "INE (Instituto Nacional de Estadísticas) - Estimaciones y Proyecciones de Población"
+      }
+    }
+  ]
+}

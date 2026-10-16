@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "region": "Aysén del General Carlos Ibáñez del Campo (XI Región)",
+  "ultima_actualizacion": "2026-10-15 18:27:26 UTC",
+  "total_series": 46,
+  "estaciones_georeferenciadas": 16,
+  "dominios": [
+    {
+      "id": "criosfera",
+      "nombre": "Criósfera e Hidrología",
+      "series_count": 8
+    },
+    {
+      "id": "clima",
+      "nombre": "Clima y Riesgos Naturales",
+      "series_count": 8
+    },
+    {
+      "id": "oceano",
+      "nombre": "Océano, Fiordos y Acuicultura",
+      "series_count": 9
+    },
+    {
+      "id": "demografia",
+      "nombre": "Demografía y Bienestar Social",
+      "series_count": 7
+    },
+    {
+      "id": "economia",
+      "nombre": "Economía, Turismo y Energía",
+      "series_count": 7
+    },
+    {
+      "id": "ciep",
+      "nombre": "Investigación Territorial CIEP",
+      "series_count": 7
+    }
+  ],
+  "arquitectura": {
+    "alojamiento": "GitHub Pages (Estático puro)",
+    "costo_mensual_usd": 0.0,
+    "peso_carga_kb": 145,
+    "actualizador": "GitHub Actions (Cron diario / semanal)",
+    "formatos_descarga": [
+      "CSV",
+      "Parquet",
+      "GeoJSON"
+    ]
+  }
+}

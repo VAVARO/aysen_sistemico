@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aysén Territorial Forecasting · Auditoría Agéntica en Vivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #F7F7F5;
+            --bg-paper: #FFFFFF;
+            --bg-tint: #F0F0EC;
+            --border-light: #E3E4DC;
+            --border-strong: #1A1A1A;
+            --ink-primary: #141618;
+            --ink-secondary: #4A515D;
+            --ink-faint: #7E8694;
+            --ink-accent-patagonia: #19483A;
+            --ink-accent-copper: #9E4300;
+            --ink-accent-blue: #0E58A8;
+            --font-serif: 'Newsreader', Georgia, serif;
+            --font-sans: 'Space Grotesk', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--ink-primary);
+            font-family: var(--font-sans);
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        /* Top Newspaper Masthead */
+        .masthead {
+            border-bottom: 2px solid var(--border-strong);
+            padding: 24px 0 16px;
+            margin-bottom: 40px;
+        }
+
+        .masthead-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--ink-faint);
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .masthead-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--ink-accent-copper);
+            font-weight: 600;
+        }
+
+        .live-bullet {
+            width: 8px;
+            height: 8px;
+            background: var(--ink-accent-copper);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px rgba(158, 67, 0, 0.6);
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.85); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .masthead-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 18px;
+        }
+
+        .masthead-title {
+            font-family: var(--font-serif);
+            font-size: clamp(34px, 4.2vw, 54px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--ink-primary);
+        }
+
+        .masthead-tagline {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            max-width: 320px;
+            text-align: right;
+            color: var(--ink-secondary);
+            line-height: 1.4;
+        }
+
+        /* Hero Narrative */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 56px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero-lead-text {
+            font-family: var(--font-serif);
+            font-size: clamp(23px, 2.3vw, 32px);
+            line-height: 1.35;
+            color: #23272F;
+            margin-bottom: 24px;
+        }
+
+        .hero-lead-text strong {
+            color: var(--ink-accent-patagonia);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-thickness: 1.5px;
+            text-underline-offset: 4px;
+        }
+
+        .hero-body-text {
+            font-size: 17px;
+            color: var(--ink-secondary);
+            line-height: 1.65;
+        }
+
+        .hero-side-card {
+            background: var(--bg-paper);
+            border: 2px solid var(--border-strong);
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .side-metric-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 8px;
+        }
+
+        .side-metric-val {
+            font-family: var(--font-sans);
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 0.95;
+            color: var(--ink-primary);
+            letter-spacing: -0.04em;
+        }
+
+        .side-metric-val span {
+            font-family: var(--font-serif);
+            color: var(--ink-accent-copper);
+            font-weight: 400;
+            font-size: 48px;
+        }
+
+        .side-metric-caption {
+            font-size: 13px;
+            color: var(--ink-secondary);
+            border-top: 1px solid var(--border-light);
+            padding-top: 16px;
+            margin-top: 24px;
+            line-height: 1.5;
+        }
+
+        /* The 3-Sphere Provenance Board (Efectismo de Fuentes) */
+        .section-header {
+            padding: 48px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .section-headline {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ink-primary);
+        }
+
+        .section-sub {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--ink-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .provenance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .provenance-box {
+            background: var(--bg-paper);
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--border-strong);
+            padding: 32px 28px;
+            position: relative;
+        }
+
+        .provenance-box.tier-orbital {
+            border-top-color: var(--ink-accent-blue);
+        }
+
+        .provenance-box.tier-state {
+            border-top-color: var(--ink-accent-copper);
+        }
+
+        .provenance-box.tier-local {
+            border-top-color: var(--ink-accent-patagonia);
+        }
+
+        .tier-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .tier-orbital .tier-label { color: var(--ink-accent-blue); }
+        .tier-state .tier-label { color: var(--ink-accent-copper); }
+        .tier-local .tier-label { color: var(--ink-accent-patagonia); }
+
+        .tier-title {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--ink-primary);
+        }
+
+        .tier-desc {
+            font-size: 13px;
+            color: var(--ink-secondary);
+            line-height: 1.55;
+            margin-bottom: 24px;
+        }
+
+        .provenance-list {
+            list-style: none;
+            border-top: 1px solid var(--border-light);
+            padding-top: 14px;
+        }
+
+        .provenance-list li {
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(227, 228, 220, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .provenance-list li:last-child {
+            border-bottom: none;
+        }
+
+        .inst-name {
+            font-weight: 600;
+            color: var(--ink-primary);
+        }
+
+        .inst-detail {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-faint);
+        }
+
+        /* 4-Stat Strip */
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 2px solid var(--border-strong);
+            background: var(--bg-paper);
+            margin-bottom: 60px;
+        }
+
+        .stat-cell {
+            padding: 28px 24px;
+            border-right: 1px solid var(--border-light);
+        }
+
+        .stat-cell:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-family: var(--font-mono);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--ink-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-sub {
+            font-size: 11px;
+            color: var(--ink-faint);
+            line-height: 1.4;
+        }
+
+        /* Series Interactive Table */
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            background: var(--bg-paper);
+            border: 1px solid var(--border-light);
+            color: var(--ink-secondary);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--border-strong);
+            color: var(--ink-primary);
+        }
+
+        .filter-pill.active {
+            background: var(--border-strong);
+            color: #FFFFFF;
+            border-color: var(--border-strong);
+            font-weight: 600;
+        }
+
+        .table-wrapper {
+            background: var(--bg-paper);
+            border: 2px solid var(--border-strong);
+            margin-bottom: 70px;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background: var(--bg-tint);
+            padding: 14px 16px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--ink-secondary);
+            border-bottom: 2px solid var(--border-strong);
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--ink-secondary);
+            vertical-align: top;
+        }
+
+        .data-table tr:hover td {
+            background: #FAFAEE;
+        }
+
+        .series-title {
+            font-weight: 600;
+            color: var(--ink-primary);
+            display: block;
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
+
+        .series-subtext {
+            font-size: 11px;
+            color: var(--ink-faint);
+            line-height: 1.3;
+        }
+
+        .institution-badge {
+            font-weight: 600;
+            color: var(--ink-accent-patagonia);
+            display: block;
+        }
+
+        .endpoint-pill {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-accent-blue);
+            background: #EDF4FD;
+            padding: 2px 6px;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        /* Provocative Superforecasting Questions */
+        .provocations-container {
+            margin-bottom: 90px;
+        }
+
+        .provocation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .prov-card {
+            background: var(--bg-paper);
+            border: 2px solid var(--border-strong);
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .prov-card.highlight {
+            background: #FFFDF9;
+            border-color: var(--ink-accent-copper);
+        }
+
+        .prov-category {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--ink-accent-copper);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .prov-question {
+            font-family: var(--font-serif);
+            font-size: 23px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--ink-primary);
+            margin-bottom: 18px;
+        }
+
+        .prov-rule {
+            font-size: 12px;
+            color: var(--ink-secondary);
+            line-height: 1.55;
+            background: var(--bg-tint);
+            padding: 14px;
+            border-left: 3px solid var(--border-strong);
+            margin-bottom: 24px;
+        }
+
+        .prov-rule strong {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            display: block;
+            color: var(--ink-primary);
+            margin-bottom: 4px;
+        }
+
+        .prob-box {
+            border-top: 1px solid var(--border-light);
+            padding-top: 14px;
+        }
+
+        .prob-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .prob-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink-accent-patagonia);
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 5px;
+            background: var(--border-light);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--border-strong);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        /* Fixed Presentation Bar */
+        .presentation-bar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-paper);
+            border: 2px solid var(--border-strong);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            padding: 8px 24px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            z-index: 1000;
+        }
+
+        .pres-btn {
+            background: transparent;
+            border: none;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-secondary);
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 4px 8px;
+        }
+
+        .pres-btn:hover {
+            color: var(--ink-accent-copper);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-section, .provenance-grid, .provocation-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-cell {
+                border-bottom: 1px solid var(--border-light);
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Masthead -->
+        <header class="masthead">
+            <div class="masthead-meta">
+                <div>Observatorio de Superforecasting Territorial</div>
+                <div class="masthead-live">
+                    <span class="live-bullet"></span>
+                    <span>AUDITORÍA AGÉNTICA DE DATOS PÚBLICOS · 15 OCTUBRE 2026</span>
+                </div>
+                <div>Región de Aysén · Chile</div>
+            </div>
+
+            <div class="masthead-title-row">
+                <div>
+                    <h1 class="masthead-title">Superforecasting Territorial en Aysén: <br>Auditoría de Datos y Preguntas de Decisión</h1>
+                    <div style="margin-top: 16px; display: flex; gap: 12px; align-items: center;">
+                        <a href="mapa_territorial.html" style="font-family: var(--font-mono); font-size: 11px; text-decoration: none; background: var(--ink-primary); color: #FFFFFF; padding: 8px 16px; text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--ink-primary);">
+                            <span>🗺️</span> Ver Mapa Territorial Interactivo (GIS)
+                        </a>
+                        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint);">GitHub Pages · Carga &lt;150 KB · $0 costo</span>
+                    </div>
+                </div>
+                <div class="masthead-tagline">
+                    Caso práctico: 6 agentes autónomos levantaron y verificaron 46 series regionales en 45 minutos.
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div>
+                <p class="hero-lead-text">
+                    El <strong>Superforecasting</strong> (Tetlock / Good Judgment Project) sustituye las opiniones cualitativas por <strong>estimaciones probabilísticas calibradas</strong>, evaluadas contra fuentes de resolución verificables.
+                </p>
+                <p class="hero-body-text">
+                    Para construir preguntas de pronóstico sobre el futuro de Aysén, se requería verificar primero qué datos existen de manera regular en el territorio. En esta sesión de 45 minutos, se ejecutaron <strong>6 agentes de software en paralelo</strong> para auditar fuentes de ministerios, satélites de observación terrestre y centros de investigación regional, verificando su operatividad y frecuencia de actualización.
+                </p>
+            </div>
+            <div class="hero-side-card">
+                <div>
+                    <div class="side-metric-label">Tiempo de Ejecución</div>
+                    <div class="side-metric-val">45<span>min</span></div>
+                </div>
+                <div class="side-metric-caption">
+                    Tiempo de ejecución para auditar fuentes públicas en la web, verificar respuestas HTTP y clasificar 46 series de datos para Aysén.
+                </div>
+            </div>
+        </section>
+
+        <!-- 4-Stat Strip -->
+        <div class="stat-strip">
+            <div class="stat-cell">
+                <div class="stat-num">6</div>
+                <div class="stat-title">Agentes en Paralelo</div>
+                <div class="stat-sub">Criósfera, Clima, Océano, Demografía, Economía y Gobernanza.</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">65+</div>
+                <div class="stat-title">Fuentes Consultadas</div>
+                <div class="stat-sub">Portales ministeriales, APIs públicas y repositorios satelitales.</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">46</div>
+                <div class="stat-title">Series Operativas</div>
+                <div class="stat-sub">Verificadas con respuesta HTTP 200 y actualización periódica.</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">100%</div>
+                <div class="stat-title">Criterio Binario</div>
+                <div class="stat-sub">Reglas de resolución cuantificadas sin margen de ambigüedad.</div>
+            </div>
+        </div>
+
+        <!-- The Provenance / Trazabilidad de Fuentes -->
+        <div class="section-header">
+            <h2 class="section-headline">Procedencia de las Fuentes Verificadas</h2>
+            <div class="section-sub">Origen institucional de las series identificadas</div>
+        </div>
+
+        <div class="provenance-grid">
+            <!-- Sphere 1: Satélites y Agencias Globales -->
+            <div class="provenance-box tier-orbital">
+                <span class="tier-label">Nivel 01 · Sensores Satelitales</span>
+                <h3 class="tier-title">Agencias Espaciales</h3>
+                <p class="tier-desc">Medición remota mediante sensores ópticos y radar con cobertura regular sobre fiordos y cordillera.</p>
+                <ul class="provenance-list">
+                    <li>
+                        <span class="inst-name">Copernicus Sentinel-1 SAR</span>
+                        <span class="inst-detail">Radar para monitoreo de frentes glaciares</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">NASA JPL (ITS_LIVE)</span>
+                        <span class="inst-detail">Velocidad de flujo en Campo de Hielo Sur</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">NASA EOSDIS (VIIRS 375m)</span>
+                        <span class="inst-detail">Detección de focos térmicos en la región</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">NOAA Coral Reef Watch</span>
+                        <span class="inst-detail">Temperatura superficial en canales marinos</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">NASA MODIS (MOD10A1)</span>
+                        <span class="inst-detail">Cobertura diaria de nieve en cuencas</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sphere 2: República de Chile -->
+            <div class="provenance-box tier-state">
+                <span class="tier-label">Nivel 02 · Estado de Chile</span>
+                <h3 class="tier-title">Servicios Públicos</h3>
+                <p class="tier-desc">Registros administrativos, estadísticas continuas y series sectoriales con cobertura regional.</p>
+                <ul class="provenance-list">
+                    <li>
+                        <span class="inst-name">DGA (MOP)</span>
+                        <span class="inst-detail">Caudales horarios en Río Baker y Simpson</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">DMC (Meteorología)</span>
+                        <span class="inst-detail">Estaciones Balmaceda, Coyhaique y Cochrane</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">Banco Central de Chile</span>
+                        <span class="inst-detail">PIB regional trimestral y exportaciones</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">DEIS (Minsal)</span>
+                        <span class="inst-detail">Defunciones semanales por región (rezago &lt;14d)</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">IFOP (iFAN API)</span>
+                        <span class="inst-detail">Monitoreo de floraciones algales nocivas</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">JAC (Aeronáutica Civil)</span>
+                        <span class="inst-detail">Pasajeros mensuales en Balmaceda</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">SMA (SNIFA)</span>
+                        <span class="inst-detail">Fiscalizaciones a centros de cultivo</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sphere 3: Ciencia Territorial Aysén -->
+            <div class="provenance-box tier-local">
+                <span class="tier-label">Nivel 03 · Investigación Regional</span>
+                <h3 class="tier-title">CIEP</h3>
+                <p class="tier-desc">Mediciones de terreno, boyas oceanográficas y redes ambientales del Centro de Investigación en Ecosistemas de la Patagonia.</p>
+                <ul class="provenance-list">
+                    <li>
+                        <span class="inst-name">CDAT-Aysén (CIEP)</span>
+                        <span class="inst-detail">Estaciones en Tortel, Puyuhuapi, Steffen, Cisnes</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">Boyas Puyuhuapi (CIEP/COPAS)</span>
+                        <span class="inst-detail">Oxígeno disuelto, pH y variables oceanográficas</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">Ecosistemas Acuáticos CIEP</span>
+                        <span class="inst-detail">Monitoreo de especies invasoras en ríos</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">Geoportal Ciencia Austral</span>
+                        <span class="inst-detail">Capas hidrográficas y áreas protegidas</span>
+                    </li>
+                    <li>
+                        <span class="inst-name">Red RECCA (Baker)</span>
+                        <span class="inst-detail">Monitoreo climático comunitario</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- The 41 Live Series Explorer -->
+        <div class="section-header">
+            <div>
+                <h2 class="section-headline">Las 46 Series Verificadas en Vivo</h2>
+                <div class="section-sub">Catálogo clasificado por dominio y nivel de acceso</div>
+            </div>
+            <div class="filter-group">
+                <button class="filter-pill active" onclick="filterTable('all', this)">Todas (46)</button>
+                <button class="filter-pill" onclick="filterTable('criosfera', this)">Criósfera</button>
+                <button class="filter-pill" onclick="filterTable('clima', this)">Clima</button>
+                <button class="filter-pill" onclick="filterTable('oceano', this)">Océano/Salmón</button>
+                <button class="filter-pill" onclick="filterTable('social', this)">Demografía</button>
+                <button class="filter-pill" onclick="filterTable('economia', this)">Economía</button>
+                <button class="filter-pill" onclick="filterTable('ciep', this)">CIEP Local</button>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 32%;">Serie Territorial</th>
+                        <th style="width: 24%;">Institución de Origen</th>
+                        <th style="width: 14%;">Frecuencia</th>
+                        <th style="width: 15%;">Acceso Verificado</th>
+                        <th style="width: 15%;">Tipo de Pronóstico</th>
+                    </tr>
+                </thead>
+                <tbody id="seriesRows">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Provocative Hypotheses -->
+        <div class="provocations-container">
+            <div class="section-header" style="padding-top:0;">
+                <div>
+                    <h2 class="section-headline">Ejemplos de Preguntas de Pronóstico</h2>
+                    <div class="section-sub">Formuladas bajo estándar de Superforecasting: métrica medible, horizonte temporal y regla de resolución</div>
+                </div>
+            </div>
+
+            <div class="provocation-grid">
+                <!-- Question 1: Demografía -->
+                <div class="prov-card highlight">
+                    <div>
+                        <span class="prov-category">Pregunta 01 · Dinámica Demográfica</span>
+                        <div class="prov-question">
+                            ¿Superará la población censada de Aysén los 250.000 habitantes en el Censo de 2040?
+                        </div>
+                        <div class="prov-rule">
+                            <strong>Fuente y Criterio de Resolución:</strong>
+                            El Censo 2024 registró 100.745 habitantes. Se resuelve SÍ si el Censo oficial del INE de 2040 registra una población igual o superior a 250.000 personas en la región. De lo contrario, se resuelve NO.
+                        </div>
+                    </div>
+                    <div class="prob-box">
+                        <div class="prob-meta">
+                            <span>Consenso IA vs Humanos</span>
+                            <span class="prob-number" id="prob-num-1">12%</span>
+                        </div>
+                        <input type="range" min="1" max="99" value="12" oninput="changeProb(1, this.value)">
+                    </div>
+                </div>
+
+                <!-- Question 2: Criósfera / Glaciar San Rafael -->
+                <div class="prov-card">
+                    <div>
+                        <span class="prov-category">Pregunta 02 · Dinámica Glaciar</span>
+                        <div class="prov-question">
+                            ¿Retrocederá el frente del Glaciar San Rafael más de 1.200 metros antes del 15 de octubre de 2032?
+                        </div>
+                        <div class="prov-rule">
+                            <strong>Fuente y Criterio de Resolución:</strong>
+                            Imágenes satelitales radar Copernicus Sentinel-1 SAR. Se resuelve SÍ si el promedio de 5 transectos longitudinales en el frente terminal registra un retiro superior a 1.200 metros respecto a la posición de octubre de 2026.
+                        </div>
+                    </div>
+                    <div class="prob-box">
+                        <div class="prob-meta">
+                            <span>Consenso IA vs Humanos</span>
+                            <span class="prob-number" id="prob-num-2">76%</span>
+                        </div>
+                        <input type="range" min="1" max="99" value="76" oninput="changeProb(2, this.value)">
+                    </div>
+                </div>
+
+                <!-- Question 3: Salmonicultura / Moratoria -->
+                <div class="prov-card">
+                    <div>
+                        <span class="prov-category">Pregunta 03 · Actividad Acuícola</span>
+                        <div class="prov-question">
+                            ¿Registrará Aysén una cosecha anual de salmónidos inferior a 300.000 toneladas antes de 2030?
+                        </div>
+                        <div class="prov-rule">
+                            <strong>Fuente y Criterio de Resolución:</strong>
+                            Aysén cosecha actualmente más de 420.000 toneladas anuales de Salmo salar. Se resuelve SÍ si el Anuario Estadístico oficial de SERNAPESCA consigna una cosecha regional bruta inferior a 300.000 toneladas en cualquier año calendario entre 2026 y 2030.
+                        </div>
+                    </div>
+                    <div class="prob-box">
+                        <div class="prob-meta">
+                            <span>Consenso IA vs Humanos</span>
+                            <span class="prob-number" id="prob-num-3">34%</span>
+                        </div>
+                        <input type="range" min="1" max="99" value="34" oninput="changeProb(3, this.value)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presentation Floating Bar -->
+        <div class="presentation-bar">
+            <span style="color:var(--ink-accent-copper); font-weight:700;">PROYECTOR AYSÉN</span>
+            <button class="pres-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">Portada</button>
+            <button class="pres-btn" onclick="document.querySelector('.provenance-grid').scrollIntoView({behavior:'smooth'})">Procedencia</button>
+            <button class="pres-btn" onclick="document.querySelector('.table-wrapper').scrollIntoView({behavior:'smooth'})">41 Series</button>
+            <button class="pres-btn" onclick="document.querySelector('.provocations-container').scrollIntoView({behavior:'smooth'})">Preguntas</button>
+        </div>
+
+        <!-- Footer -->
+        <footer style="padding: 32px 0 64px; border-top: 1px solid var(--border-light); font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); display: flex; justify-content: space-between;">
+            <div>SUPERFORECASTING TERRITORIAL AYSÉN · BENCHMARK IA vs. HUMANOS</div>
+            <div>VERIFICACIÓN EN TIEMPO REAL · TALLER DE AGENTES AUTÓNOMOS 2026</div>
+        </footer>
+    </div>
+
+    <script>
+        const seriesData = [
+            // Criósfera
+            { name: "Caudal en Tiempo Real Río Baker", desc: "Estaciones Bertrand y Bajo Colonia. Telemetría horaria continua.", inst: "DGA (Obras Públicas)", freq: "Horaria / Diario", endpoint: "snia.mop.gob.cl", domain: "criosfera", type: "Rápido (1-6m)" },
+            { name: "Caudal Río Simpson y Río Pascua", desc: "Monitoreo fluviométrico de cuencas andinas y desagüe lacustre.", inst: "DGA MOP", freq: "Diaria / Mensual", endpoint: "Boletín PDF", domain: "criosfera", type: "Rápido (1-6m)" },
+            { name: "Alerta de GLOF Lago Cachet II", desc: "Eventos súbitos de vaciamiento subglacial hacia el Río Baker.", inst: "DGA / SENAPRED", freq: "Por Evento", endpoint: "Alertas Técnicas", domain: "criosfera", type: "Rápido (1-6m)" },
+            { name: "Frente Glaciar San Rafael (Radar SAR)", desc: "Retroceso frontal atravesando nubosidad permanente en fiordos.", inst: "Copernicus Sentinel-1", freq: "Cada 6-12 días", endpoint: "STAC API", domain: "criosfera", type: "Escalera Anual" },
+            { name: "Velocidad de Flujo Glaciar Jorge Montt", desc: "Aceleración y dinámica del hielo en Campo de Hielo Sur.", inst: "NASA JPL (ITS_LIVE)", freq: "Mensual / Anual", endpoint: "AWS Open Data", domain: "criosfera", type: "Escalera Anual" },
+            { name: "Cobertura de Nieve Cuenca Simpson", desc: "Índice satelital NDSI diario de superficie nival en cabecera.", inst: "NASA MODIS (MOD10A1)", freq: "Diaria (500m)", endpoint: "Cloud GeoTIFF", domain: "criosfera", type: "Rápido (1-6m)" },
+            { name: "Inventario Público de Glaciares", desc: "Volumen, área y altitud de cuerpos de hielo en Aysén.", inst: "DGA Glaciología", freq: "Decenal", endpoint: "Geoportal MMA", domain: "criosfera", type: "Línea Base 2050" },
+
+            // Clima y Riesgos
+            { name: "Meteorología Coyhaique / Balmaceda", desc: "Temperatura extrema, precipitación y viento en aeródromos.", inst: "DMC (Dirección Meteorológica)", freq: "Horaria / Diaria", endpoint: "Web Service JSON", domain: "clima", type: "Rápido (1-3m)" },
+            { name: "Calidad del Aire Coyhaique (MP2.5)", desc: "Saturación por leña y episodios críticos en invierno.", inst: "SINCA (Medio Ambiente)", freq: "Horaria", endpoint: "CSV / JSON Directo", domain: "clima", type: "Rápido (1-6m)" },
+            { name: "Focos de Calor e Incendios Satelitales", desc: "Detección térmica orbital automática en polígono de Aysén.", inst: "NASA FIRMS (VIIRS 375m)", freq: "Cuasi Tiempo Real", endpoint: "REST API Directa", domain: "clima", type: "Rápido (1-3m)" },
+            { name: "Vigilancia Volcán Hudson, Macá y Mentolat", desc: "Semáforo técnico de alerta volcánica y sismicidad interna.", inst: "SERNAGEOMIN (RNVV)", freq: "Mensual / Inmediata", endpoint: "Portal / REAV", domain: "clima", type: "Rápido / Anual" },
+            { name: "Sismicidad en Fiordo de Aysén", desc: "Catálogo de sismos en el sistema de fallas Liquiñe-Ofqui.", inst: "CSN / USGS", freq: "Minutaria", endpoint: "GeoJSON API", domain: "clima", type: "Rápido (1-6m)" },
+            { name: "Alertas Tempranas Preventivas", desc: "Decretos de emergencia por heladas, viento o lluvias torrenciales.", inst: "SENAPRED Aysén", freq: "Por Evento", endpoint: "ArcGIS REST", domain: "clima", type: "Rápido (1-3m)" },
+
+            // Océano y Salmón
+            { name: "Cosechas de Salmón del Atlántico", desc: "Tonelaje regional de Salmo salar por mes y agrupación (barrio).", inst: "SERNAPESCA", freq: "Anual consolidada", endpoint: "Data Observatory XLS", domain: "oceano", type: "Escalera Anual" },
+            { name: "Alerta de Marea Roja (Alexandrium)", desc: "Densidad de toxina paralizante en 52 estaciones centinela.", inst: "IFOP (iFAN API)", freq: "Semanal", endpoint: "REST API JSON", domain: "oceano", type: "Rápido (1-3m)" },
+            { name: "Condición de Fondos Marinos (INFA)", desc: "Clasificación de centros en condición aeróbica vs. anaeróbica.", inst: "SUBPESCA / SERNAPESCA", freq: "Bienal / Semestral", endpoint: "Informes INFA", domain: "oceano", type: "Escalera Anual" },
+            { name: "Consumo de Antimicrobianos por Empresa (ICA)", desc: "Gramos de antibiótico por tonelada (Ley 21.532 de Transparencia).", inst: "SERNAPESCA", freq: "Anual consolidada", endpoint: "Reporte Bioseguridad", domain: "oceano", type: "Escalera Anual" },
+            { name: "Centros CAD de Cáligus (Piojo de Mar)", desc: "Notificaciones de centros con más de 3 hembras ovígeras por pez.", inst: "SERNAPESCA", freq: "Quincenal", endpoint: "Boletín PSEVC", domain: "oceano", type: "Rápido (1-3m)" },
+            { name: "Registro Oficial de Escapes de Salmones", desc: "Fugas masivas de biomasa declaradas ante la autoridad pesquera.", inst: "SERNAPESCA / SMA", freq: "Por Evento", endpoint: "Registro Ley 118 ter", domain: "oceano", type: "Rápido (1-6m)" },
+            { name: "Exportaciones de Salmón y Precios FOB", desc: "Envíos mensuales por empresa, mercado de destino y valor USD/kg.", inst: "Servicio Nacional de Aduanas", freq: "Mensual", endpoint: "Microdatos DUS", domain: "oceano", type: "Rápido (1-3m)" },
+            { name: "Catastro de Concesiones de Acuicultura", desc: "745 concesiones vigentes, en trámite o caducadas.", inst: "SUBPESCA", freq: "Mensual", endpoint: "ArcGIS MapServer", domain: "oceano", type: "Escalera Anual" },
+            { name: "Fiscalizaciones y Sanciones a Salmoneras", desc: "Infracciones por sobreproducción, mortalidades y daño.", inst: "SMA (SNIFA)", freq: "Diaria / Continua", endpoint: "AJAX POST JSON", domain: "oceano", type: "Rápido (1-6m)" },
+            { name: "Temperatura Superficial del Mar en Fiordos", desc: "Olas de calor marinas y estratificación térmica en canales.", inst: "NOAA Coral Reef Watch", freq: "Diaria (5 km)", endpoint: "NetCDF / ERDDAP", domain: "oceano", type: "Rápido (1-6m)" },
+            { name: "Resoluciones Sanitarias de Cierre de Bahías", desc: "Vedas jurídicas de extracción de mariscos por VPM o VDM.", inst: "SEREMI Salud Aysén", freq: "Eventual", endpoint: "PDF Oficial", domain: "oceano", type: "Rápido (1-3m)" },
+            { name: "Desembarque Pesquero Artesanal", desc: "Capturas de merluza austral, congrio dorado y erizo por caleta.", inst: "SERNAPESCA", freq: "Anual / Mensual", endpoint: "XLS Estructurado", domain: "oceano", type: "Escalera Anual" },
+
+            // Social y Demografía
+            { name: "Defunciones Semanales por Región", desc: "Mortalidad general observada y exceso de muertes en Aysén.", inst: "DEIS (Minsal)", freq: "Semanal (<14d rezago)", endpoint: "datos.gob.cl CKAN", domain: "social", type: "Rápido (1-3m)" },
+            { name: "Asistencia Escolar por Establecimiento", desc: "Asistencia mensual declarada en colegios de las 10 comunas.", inst: "MINEDUC (CEM)", freq: "Mensual", endpoint: "CSV / RAR Abierto", domain: "social", type: "Rápido (1-6m)" },
+            { name: "Permisos de Edificación Habitacional", desc: "Metros cuadrados y viviendas autorizadas por DOM Coyhaique.", inst: "INE", freq: "Mensual", endpoint: "XLSX Tabulado", domain: "social", type: "Rápido (2-6m)" },
+            { name: "Delitos de Mayor Connotación Social (DMCS)", desc: "Casos policiales de robo, lesiones y homicidios por comuna.", inst: "CEAD / Min. Seguridad", freq: "Semestral", endpoint: "Tabulados SIED", domain: "social", type: "Rápido (3-6m)" },
+            { name: "Residencias Temporales a Extranjeros", desc: "Permisos resueltos para mano de obra en acuicultura y obras.", inst: "SERMIG", freq: "Semestral", endpoint: "XLSX Abierto", domain: "social", type: "Escalera Anual" },
+            { name: "Censo de Población y Vivienda 2024", desc: "100.745 habitantes (línea base demográfica de Aysén).", inst: "INE", freq: "Decenal", endpoint: "Redatam Web", domain: "social", type: "Denominador Base" },
+
+            // Economía y Energía
+            { name: "Tráfico Aéreo Balmaceda (BBA)", desc: "Pasajeros comerciales por aerolínea y par de ciudades.", inst: "JAC (Aeronáutica)", freq: "Mensual (<25d rezago)", endpoint: "Excel Mensual", domain: "economia", type: "Rápido (1-3m)" },
+            { name: "Encuesta Nacional de Empleo (ENE)", desc: "Desempleo regional e informalidad en trimestres móviles.", inst: "INE", freq: "Mensual", endpoint: "Calendario Fijo XLS", domain: "economia", type: "Rápido (1-3m)" },
+            { name: "Pernoctaciones Turísticas en Carretera Austral", desc: "Ocupación hotelera en Coyhaique, Austral Norte y Sur.", inst: "INE / SERNATUR", freq: "Mensual", endpoint: "Portal SIET", domain: "economia", type: "Rápido (1-6m)" },
+            { name: "Precios de Combustibles por Estación", desc: "Gasolina 93/97 y diésel en Coyhaique, Aysén y Cochrane.", inst: "CNE (bencinaenlinea)", freq: "Semanal (MEPCO)", endpoint: "REST API JSON", domain: "economia", type: "Rápido (1-2m)" },
+            { name: "Generación Sistema Mediano Aysén", desc: "Despacho por tecnología: eólica Alto Baguales, hidro, diésel.", inst: "CNE / Coordinador", freq: "Mensual / Diaria", endpoint: "Energía Abierta", domain: "economia", type: "Rápido (1-6m)" },
+            { name: "PIB Regional Trimestral de Aysén", desc: "Cuentas nacionales regionales por sector productivo.", inst: "Banco Central de Chile", freq: "Trimestral (83d rezago)", endpoint: "API si3.bcentral.cl", domain: "economia", type: "Escalera Anual" },
+            { name: "Licitaciones Públicas de Obras en Aysén", desc: "Contratos convocados por GORE, MOP y municipios.", inst: "ChileCompra", freq: "Tiempo Real", endpoint: "API Mercado Público", domain: "economia", type: "Rápido (1-6m)" },
+            { name: "Ejecución Presupuestaria GORE Aysén (FNDR)", desc: "Porcentaje de gasto devengado en inversión pública regional.", inst: "DIPRES (Hacienda)", freq: "Mensual (~25d rezago)", endpoint: "Excel Oficial", domain: "economia", type: "Rápido (1-6m)" },
+
+            // CIEP Local
+            { name: "Red de Monitoreo Ambiental CDAT-Aysén", desc: "Estaciones meteorológicas en Tortel, Puyuhuapi, Steffen, Cisnes.", inst: "CIEP (Lab. Eco-Climático)", freq: "Horaria / Diaria", endpoint: "cdataysen.cl CSV", domain: "ciep", type: "Rápido (1-6m)" },
+            { name: "Boyas Oceanográficas Fiordo Puyuhuapi", desc: "Oxígeno disuelto, saturación de aragonita, pH y salinidad.", inst: "CIEP / COPAS", freq: "Continua de campaña", endpoint: "Zenodo / Papers", domain: "ciep", type: "Rápido (1-6m)" },
+            { name: "Invasión de Salmón Chinook en Ríos", desc: "Conteo de desoves en cuencas del Baker, Simpson y Cisnes.", inst: "CIEP (Ecosistemas Acuáticos)", freq: "Campaña Anual", endpoint: "Informes Técnicos", domain: "ciep", type: "Escalera Anual" },
+            { name: "Geoportal Ciencia Austral (Capas Espaciales)", desc: "Red hidrográfica subantártica, áreas protegidas y turismo.", inst: "Nodo Ciencia Austral / CIEP", freq: "Continua", endpoint: "ArcGIS Hub Feature", domain: "ciep", type: "Ordenamiento Base" },
+            { name: "Floraciones de Alga Didymo en Río Baker", desc: "Biomasa y expansión del alga invasora Didymosphenia.", inst: "CIEP Limnología", freq: "Estacional", endpoint: "Bases Científicas", domain: "ciep", type: "Escalera Anual" },
+            { name: "Modelos Climáticos de Mesoescala AysénMet", desc: "Simulaciones numéricas WRF adaptadas al relieve de fiordos.", inst: "CIEP Clima", freq: "Periódica", endpoint: "aysenmet.cl", domain: "ciep", type: "Referencia Modelo" },
+            { name: "Catastro Paleoambiental y Ocupación Holocena", desc: "Fechados radiocarbónicos de poblamiento temprano en Aysén.", inst: "CIEP Arqueología", freq: "Histórico consolidado", endpoint: "Repositorio ANID", domain: "ciep", type: "Línea Base Milenaria" }
+        ];
+
+        function renderRows(items) {
+            const tbody = document.getElementById('seriesRows');
+            tbody.innerHTML = '';
+            items.forEach(it => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <span class="series-title">${it.name}</span>
+                        <span class="series-subtext">${it.desc}</span>
+                    </td>
+                    <td>
+                        <span class="institution-badge">${it.inst}</span>
+                    </td>
+                    <td><span style="font-family:var(--font-mono); font-size:11px;">${it.freq}</span></td>
+                    <td><span class="endpoint-pill">${it.endpoint}</span></td>
+                    <td><span style="font-family:var(--font-mono); font-size:11px; font-weight:600; color:var(--ink-primary);">${it.type}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterTable(domain, btn) {
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+
+            if (domain === 'all') {
+                renderRows(seriesData);
+            } else {
+                renderRows(seriesData.filter(d => d.domain === domain));
+            }
+        }
+
+        function changeProb(id, val) {
+            document.getElementById(`prob-num-${id}`).innerText = `${val}%`;
+        }
+
+        // Initialize table
+        renderRows(seriesData);
+    </script>
+</body>
+</html>

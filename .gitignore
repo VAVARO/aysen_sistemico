@@ -1,0 +1,14 @@
+# Multi-agent internal logs and transcripts
+.agents/
+.gemini/
+failure_log.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# OS and scratch
+.DS_Store
+Thumbs.db
