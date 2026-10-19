@@ -1471,10 +1471,102 @@
       pointer-events: auto;
       transform: translateY(-100%);
       margin-top: -8px;
+      flex-wrap: wrap;
+      max-width: min(94vw, 920px);
+      user-select: none;
+      touch-action: none;
     }
 
-    .canva-floating-toolbar.active {
+    .context-toolbar {
+      z-index: 1200;
+    }
+
+    .canva-floating-toolbar.active,
+    .context-toolbar.active {
       display: flex;
+    }
+
+    .canva-floating-toolbar.user-docked,
+    .context-toolbar.user-docked {
+      position: absolute;
+      transform: none !important;
+      margin-top: 0 !important;
+    }
+
+    .toolbar-drag-handle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.2rem 0.35rem;
+      cursor: grab;
+      color: #00357f;
+      font-size: 0.85rem;
+      line-height: 1;
+      font-weight: 700;
+      border-radius: 2px;
+      margin-right: 0.2rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toolbar-drag-handle:hover {
+      background: rgba(0, 53, 127, 0.08);
+      color: #0059c5;
+    }
+
+    .toolbar-drag-handle:active {
+      cursor: grabbing;
+      background: rgba(0, 53, 127, 0.15);
+    }
+
+    .toolbar-close-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #7d7a78;
+      width: 22px;
+      height: 22px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      line-height: 1;
+      font-family: var(--font-mono);
+      margin-left: 0.25rem;
+      transition: all 0.15s;
+    }
+
+    .toolbar-close-btn:hover {
+      background: rgba(186, 26, 26, 0.08);
+      border-color: rgba(186, 26, 26, 0.25);
+      color: #ba1a1a;
+    }
+
+    .btn-card-format {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: #fcf9f8;
+      border: 1px solid rgba(0, 53, 127, 0.22);
+      color: #00357f;
+      font-size: 0.68rem;
+      font-family: var(--font-mono);
+      padding: 0.18rem 0.45rem;
+      border-radius: 2px;
+      cursor: pointer;
+      line-height: 1;
+      transition: all 0.15s;
+    }
+
+    .btn-card-format:hover {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: #00357f;
+    }
+
+    .btn-card-format.active {
+      background: #00357f;
+      color: #ffffff;
+      border-color: #00357f;
     }
 
     .floating-btn-group {
@@ -2607,8 +2699,9 @@
         </div>
       </div>
 
-      <!-- Barra Flotante Contextual Estilo Canva -->
-      <div class="canva-floating-toolbar" id="canvaFloatingToolbar">
+      <!-- Barra Flotante Contextual Estilo Canva / Context Toolbar -->
+      <div class="canva-floating-toolbar context-toolbar" id="canvaFloatingToolbar">
+        <span class="toolbar-drag-handle" id="toolbarDragHandle" title="Arrastrar barra flotante">⠿</span>
         <div class="floating-btn-group">
           <button class="floating-btn" id="tbBtnBar" title="Barras">Barras</button>
           <button class="floating-btn" id="tbBtnLine" title="Líneas">Líneas</button>
@@ -2646,6 +2739,8 @@
           <button class="floating-btn" id="tbBtnScalePct" title="Escala % Total Regional">% Reg</button>
           <button class="floating-btn" id="tbBtnScaleZ" title="Escala Z-Score (Desviaciones estándar)">Z-Score</button>
         </div>
+
+        <button class="toolbar-close-btn" id="tbBtnCloseToolbar" title="Ocultar barra de formato (mantener tarjeta seleccionada)" aria-label="Ocultar barra">×</button>
       </div>
 
       <!-- Popover de Sugerencias para Cruzar Variables -->
@@ -4250,6 +4345,13 @@
                 </svg>
                 <span>+ Cruzar</span>
               </button>
+              <button class="btn-card-format" id="btnFormatCard-${w.id}" title="Mostrar/Ocultar barra de herramientas y formato">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Formato</span>
+              </button>
               <div class="window-control-group mac-window-controls">
                 <button class="card-ctrl-btn mac-btn mac-minimize" id="btnMinCard-${w.id}" title="Minimizar a barra de pestañas" aria-label="Minimizar">–</button>
                 <button class="card-ctrl-btn mac-btn mac-maximize" id="btnMaxCard-${w.id}" title="Maximizar / Restaurar tamaño" aria-label="Maximizar">+</button>
@@ -4435,6 +4537,15 @@
           e.stopPropagation();
           openSmartPopover(w, e.currentTarget);
         });
+
+        // Botón Formato (Mostrar/Ocultar barra de customización)
+        const formatBtn = card.querySelector(`#btnFormatCard-${w.id}`);
+        if (formatBtn) {
+          formatBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFloatingToolbarForCard(w.id);
+          });
+        }
 
         // Selector de Modo de Sincronización (Red, Aislada, Global)
         const syncBtn = card.querySelector(`#btnSyncCard-${w.id}`);
@@ -4706,6 +4817,7 @@
       function deselectActiveCard() {
         AppState.activeWidgetId = null;
         document.querySelectorAll('.studio-widget-card').forEach(c => c.classList.remove('selected'));
+        document.querySelectorAll('.btn-card-format').forEach(b => b.classList.remove('active'));
         const tb = document.getElementById('canvaFloatingToolbar');
         if (tb) tb.classList.remove('active');
         closeSmartPopover();
@@ -5479,8 +5591,33 @@
       }
 
       // =======================================================================
-      // 7. BARRA FLOTANTE ESTILO CANVA
+      // 7. BARRA FLOTANTE ESTILO CANVA / CONTEXT TOOLBAR
       // =======================================================================
+      function hideFloatingToolbar() {
+        const tb = document.getElementById('canvaFloatingToolbar');
+        if (tb) tb.classList.remove('active');
+        if (AppState.activeWidgetId) {
+          if (!AppState.toolbarHiddenByCard) AppState.toolbarHiddenByCard = {};
+          AppState.toolbarHiddenByCard[AppState.activeWidgetId] = true;
+          const formatBtn = document.getElementById(`btnFormatCard-${AppState.activeWidgetId}`);
+          if (formatBtn) formatBtn.classList.remove('active');
+        }
+      }
+
+      function toggleFloatingToolbarForCard(widgetId) {
+        if (!AppState.toolbarHiddenByCard) AppState.toolbarHiddenByCard = {};
+        const isHidden = !!AppState.toolbarHiddenByCard[widgetId];
+        const tb = document.getElementById('canvaFloatingToolbar');
+        const isCurrentlyActive = tb && tb.classList.contains('active');
+
+        if (isCurrentlyActive && !isHidden) {
+          hideFloatingToolbar();
+        } else {
+          AppState.toolbarHiddenByCard[widgetId] = false;
+          showFloatingToolbarForCard(widgetId);
+        }
+      }
+
       function showFloatingToolbarForCard(widgetId) {
         const w = AppState.widgets.find(x => x.id === widgetId);
         if (!w || w.minimized) return;
@@ -5488,7 +5625,18 @@
         const tb = document.getElementById('canvaFloatingToolbar');
         if (!tb) return;
 
+        if (!AppState.toolbarHiddenByCard) AppState.toolbarHiddenByCard = {};
+        if (AppState.toolbarHiddenByCard[widgetId]) {
+          tb.classList.remove('active');
+          const formatBtn = document.getElementById(`btnFormatCard-${widgetId}`);
+          if (formatBtn) formatBtn.classList.remove('active');
+          return;
+        }
+
         tb.classList.add('active');
+        const formatBtn = document.getElementById(`btnFormatCard-${widgetId}`);
+        if (formatBtn) formatBtn.classList.add('active');
+
         updateFloatingToolbarPosition();
 
         tb.querySelectorAll('.floating-btn').forEach(b => b.classList.remove('active'));
@@ -5606,6 +5754,19 @@
         const vRect = viewport.getBoundingClientRect();
         const tbRect = tb.getBoundingClientRect();
 
+        // Si el usuario arrastró o ancló la barra a una posición manual personalizada
+        if (AppState.toolbarPosition) {
+          tb.classList.add('user-docked');
+          const maxLeft = Math.max(12, vRect.width - (tbRect.width || 420) - 12);
+          const maxTop = Math.max(12, vRect.height - (tbRect.height || 42) - 12);
+          const posX = Math.max(12, Math.min(AppState.toolbarPosition.x, maxLeft));
+          const posY = Math.max(12, Math.min(AppState.toolbarPosition.y, maxTop));
+          tb.style.left = `${Math.round(posX)}px`;
+          tb.style.top = `${Math.round(posY)}px`;
+          return;
+        }
+
+        tb.classList.remove('user-docked');
         let screenX = w.x * AppState.transform.scale + AppState.transform.x;
         let screenY = w.y * AppState.transform.scale + AppState.transform.y;
 
@@ -5614,18 +5775,17 @@
         const maxLeft = Math.max(minLeft, vRect.width - (tbRect.width || 420) - 12);
         screenX = Math.max(minLeft, Math.min(screenX, maxLeft));
 
-        // Clamping vertical: si está muy cerca del borde superior, ubicar bajo la cabecera
-        if (screenY < (tbRect.height || 36) + 16) {
-          tb.style.transform = 'translateY(0)';
-          tb.style.marginTop = '0px';
-          screenY = screenY + 56;
+        // Clamping vertical: si está muy cerca del borde superior (< 52px), ubicar como dock superior en top 12px
+        if (screenY < (tbRect.height || 40) + 16) {
+          tb.classList.add('user-docked');
+          tb.style.left = `${Math.round(screenX)}px`;
+          tb.style.top = '12px';
         } else {
           tb.style.transform = 'translateY(-100%)';
           tb.style.marginTop = '-8px';
+          tb.style.left = `${Math.round(screenX)}px`;
+          tb.style.top = `${Math.round(screenY)}px`;
         }
-
-        tb.style.left = `${Math.round(screenX)}px`;
-        tb.style.top = `${Math.round(screenY)}px`;
       }
 
       // =======================================================================
@@ -8428,12 +8588,6 @@
           document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
           closeSmartPopover();
         });
-        window.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
-            document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
-            closeSmartPopover();
-          }
-        });
 
         document.getElementById('btnExportarJson').addEventListener('click', () => {
           if (projectMenu) projectMenu.classList.remove('show');
@@ -8663,9 +8817,77 @@
           btnNl.addEventListener('click', executeNLQuery);
         }
 
+        // Manejador de Arrastre Draggable de la Barra Flotante (Pointer Events)
+        const tbDragHandle = document.getElementById('toolbarDragHandle');
+        const floatingTb = document.getElementById('canvaFloatingToolbar');
+        if (tbDragHandle && floatingTb) {
+          let isDraggingTb = false;
+          let tbStartMouseX = 0;
+          let tbStartMouseY = 0;
+          let tbStartLeft = 0;
+          let tbStartTop = 0;
+
+          tbDragHandle.addEventListener('pointerdown', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            isDraggingTb = true;
+            tbDragHandle.setPointerCapture(e.pointerId);
+
+            const rect = floatingTb.getBoundingClientRect();
+            const parentRect = floatingTb.offsetParent ? floatingTb.offsetParent.getBoundingClientRect() : { left: 0, top: 0 };
+            tbStartLeft = rect.left - parentRect.left;
+            tbStartTop = rect.top - parentRect.top;
+            tbStartMouseX = e.clientX;
+            tbStartMouseY = e.clientY;
+
+            floatingTb.classList.add('user-docked');
+            floatingTb.style.transform = 'none';
+            floatingTb.style.marginTop = '0px';
+            floatingTb.style.left = `${Math.round(tbStartLeft)}px`;
+            floatingTb.style.top = `${Math.round(tbStartTop)}px`;
+          });
+
+          window.addEventListener('pointermove', (e) => {
+            if (!isDraggingTb) return;
+            e.preventDefault();
+            const dx = e.clientX - tbStartMouseX;
+            const dy = e.clientY - tbStartMouseY;
+            const newLeft = Math.max(8, tbStartLeft + dx);
+            const newTop = Math.max(8, tbStartTop + dy);
+
+            floatingTb.style.left = `${Math.round(newLeft)}px`;
+            floatingTb.style.top = `${Math.round(newTop)}px`;
+            AppState.toolbarPosition = { x: newLeft, y: newTop };
+          });
+
+          const endTbDrag = (e) => {
+            if (isDraggingTb) {
+              isDraggingTb = false;
+              try { tbDragHandle.releasePointerCapture(e.pointerId); } catch (_) {}
+            }
+          };
+          window.addEventListener('pointerup', endTbDrag);
+          window.addEventListener('pointercancel', endTbDrag);
+        }
+
+        // Botón de Cierre de la Barra Flotante (Ocultar sin deseleccionar)
+        const btnCloseTb = document.getElementById('tbBtnCloseToolbar');
+        if (btnCloseTb) {
+          btnCloseTb.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hideFloatingToolbar();
+          });
+        }
+
         window.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
-            deselectActiveCard();
+            document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
+            const tb = document.getElementById('canvaFloatingToolbar');
+            if (tb && tb.classList.contains('active')) {
+              hideFloatingToolbar();
+            } else {
+              deselectActiveCard();
+            }
             closeSmartPopover();
             closeContextMenu();
           }
