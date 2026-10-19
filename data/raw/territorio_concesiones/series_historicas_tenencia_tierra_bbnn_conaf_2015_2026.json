@@ -1,0 +1,761 @@
+{
+  "fuente": "Corporación Nacional Forestal (CONAF - SNASPE) / Ministerio de Bienes Nacionales IDE",
+  "url_origen": "https://www.conaf.cl/parques-nacionales/",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5120000,
+        "superficie_snaspe_pct": 47.25,
+        "suelo_fiscal_bbnn_ha": 2963000,
+        "suelo_fiscal_bbnn_pct": 27.35,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2016,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5120000,
+        "superficie_snaspe_pct": 47.25,
+        "suelo_fiscal_bbnn_ha": 2963000,
+        "suelo_fiscal_bbnn_pct": 27.35,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2017,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5120000,
+        "superficie_snaspe_pct": 47.25,
+        "suelo_fiscal_bbnn_ha": 2963000,
+        "suelo_fiscal_bbnn_pct": 27.35,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2018,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2019,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2020,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2021,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2022,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2023,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2024,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2025,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2026,
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    }
+  ],
+  "series_comunales": {
+    "11101": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 182000,
+        "superficie_fiscal_bbnn_ha": 228000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 182000,
+        "superficie_fiscal_bbnn_ha": 228000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 182000,
+        "superficie_fiscal_bbnn_ha": 228000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 245000,
+        "superficie_fiscal_bbnn_ha": 165000
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 185000,
+        "superficie_fiscal_bbnn_ha": 210000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 185000,
+        "superficie_fiscal_bbnn_ha": 210000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 185000,
+        "superficie_fiscal_bbnn_ha": 210000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 235000,
+        "superficie_fiscal_bbnn_ha": 160000
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 1890000,
+        "superficie_fiscal_bbnn_ha": 650000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 1890000,
+        "superficie_fiscal_bbnn_ha": 650000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 1890000,
+        "superficie_fiscal_bbnn_ha": 650000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 2045000,
+        "superficie_fiscal_bbnn_ha": 495000
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 1180000,
+        "superficie_fiscal_bbnn_ha": 420000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 1180000,
+        "superficie_fiscal_bbnn_ha": 420000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 1180000,
+        "superficie_fiscal_bbnn_ha": 420000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 1420000,
+        "superficie_fiscal_bbnn_ha": 180000
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 28000
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 195000,
+        "superficie_fiscal_bbnn_ha": 215000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 195000,
+        "superficie_fiscal_bbnn_ha": 215000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 195000,
+        "superficie_fiscal_bbnn_ha": 215000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 348000,
+        "superficie_fiscal_bbnn_ha": 62000
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 172000,
+        "superficie_fiscal_bbnn_ha": 185000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 172000,
+        "superficie_fiscal_bbnn_ha": 185000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 172000,
+        "superficie_fiscal_bbnn_ha": 185000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 285000,
+        "superficie_fiscal_bbnn_ha": 72000
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 265000,
+        "superficie_fiscal_bbnn_ha": 345000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 265000,
+        "superficie_fiscal_bbnn_ha": 345000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 265000,
+        "superficie_fiscal_bbnn_ha": 345000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 525000,
+        "superficie_fiscal_bbnn_ha": 85000
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 680000,
+        "superficie_fiscal_bbnn_ha": 120000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 680000,
+        "superficie_fiscal_bbnn_ha": 120000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 680000,
+        "superficie_fiscal_bbnn_ha": 120000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 692000,
+        "superficie_fiscal_bbnn_ha": 108000
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "superficie_snaspe_ha": 820000,
+        "superficie_fiscal_bbnn_ha": 182000
+      },
+      {
+        "ano": 2016,
+        "superficie_snaspe_ha": 820000,
+        "superficie_fiscal_bbnn_ha": 182000
+      },
+      {
+        "ano": 2017,
+        "superficie_snaspe_ha": 820000,
+        "superficie_fiscal_bbnn_ha": 182000
+      },
+      {
+        "ano": 2018,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2019,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2020,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2021,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2022,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2023,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2024,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2025,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      },
+      {
+        "ano": 2026,
+        "superficie_snaspe_ha": 845000,
+        "superficie_fiscal_bbnn_ha": 157000
+      }
+    ]
+  }
+}

@@ -496,6 +496,36 @@ html, body {
   box-shadow: var(--shadow-subtle);
 }
 
+.btn-toggle-filter {
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  padding: 5px 12px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+.btn-toggle-filter:hover {
+  background: var(--bg-subtle);
+  color: var(--ink-primary);
+}
+
+.btn-toggle-filter.active {
+  background: var(--accent-cobalt, #00357f);
+  color: #ffffff;
+  border-color: var(--accent-cobalt, #00357f);
+  font-weight: 700;
+}
+
 /* Quick Suggested Presets Bar */
 .presets-row {
   display: flex;
@@ -594,12 +624,81 @@ html, body {
 /* Time Series Seasonal Sub-view */
 .seasonal-selector-bar {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
   background: var(--bg-subtle);
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
   border: var(--border-hairline);
+  margin-top: 4px;
+}
+
+.seasonal-submodes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.seasonal-submode-btn {
+  background: var(--bg-surface);
+  border: 1px solid rgba(20, 22, 24, 0.16);
+  border-radius: var(--radius-xs);
+  padding: 5px 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 120ms var(--ease-out);
+}
+
+.seasonal-submode-btn:hover {
+  background: var(--bg-hover);
+  color: var(--ink-primary);
+}
+
+.seasonal-submode-btn.active {
+  background: var(--ink-primary);
+  color: #FFFFFF;
+  border-color: var(--ink-primary);
+  font-weight: 700;
+}
+
+.multiannual-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(20, 22, 24, 0.12);
+}
+
+.var-select-year {
+  min-width: 82px;
+  max-width: 96px;
+}
+
+.mobile-controls-toggle-row {
+  display: none;
+  width: 100%;
+}
+
+.btn-toggle-var-controls {
+  width: 100%;
+  min-height: 44px;
+  background: var(--bg-subtle);
+  border: 1px solid rgba(20, 22, 24, 0.14);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 /* Right Table Header & Table */
@@ -1500,11 +1599,39 @@ html, body {
   border-radius: var(--radius-pill);
 }
 
-/* Responsive adjustments */
+/* ==============================================================================
+ * ADAPTACIÓN RESPONSIVA PROFESIONAL (Tablets 1024px, Móviles <768px y <480px)
+ * ============================================================================== */
+
+/* Cero scroll horizontal involuntario en contenedores principales */
+html, body, .app-container, .content-viewport, .view-section {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 @media (max-width: 1080px) {
   .arena-split {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .arena-panel.left-chart-panel {
+    min-height: 380px;
+    width: 100%;
+    border-right: none;
+    border-bottom: var(--border-hairline);
+    flex-shrink: 0;
+  }
+  .chart-canvas-wrapper {
+    min-height: 300px;
+    width: 100%;
+  }
+  .arena-panel.right-table-panel {
+    width: 100%;
+    flex: 1;
+    min-height: 380px;
   }
   .schema-boxes-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1518,6 +1645,345 @@ html, body {
   .clean-map-sidebar {
     width: 100%;
     min-width: 100%;
-    height: 180px;
+    height: auto;
+    max-height: 220px;
+    border-right: none;
+    border-bottom: var(--border-hairline);
+    padding: 12px;
+  }
+  .map-exclusive-filters-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+    padding-bottom: 6px;
+  }
+  .exclusive-layer-btn, .btn-clear-map {
+    flex-shrink: 0;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .map-viewport-container {
+    flex: 1;
+    min-height: 420px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header Superior Móvil */
+  .app-header {
+    height: auto;
+    min-height: 52px;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .brand-section {
+    flex: 1;
+    min-width: 0;
+  }
+  .brand-title {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .brand-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .btn-wizard {
+    min-height: 40px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .header-actions .btn-outline-subtle {
+    display: none;
+  }
+
+  /* Tabs de Navegación Desplazables Horizontalmente con Scroll Táctil */
+  .nav-tabs {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    padding: 4px;
+    gap: 6px;
+    background: var(--bg-subtle);
+    border-radius: var(--radius-sm);
+  }
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .tab-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px 14px;
+    flex-shrink: 0;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Buscador Universal Adaptable en Móvil */
+  .header-search-wrap {
+    order: 2;
+    flex: 1;
+    max-width: 100%;
+    min-width: 130px;
+  }
+  .search-input-box {
+    min-height: 40px;
+    padding: 6px 10px;
+  }
+  .search-shortcut {
+    display: none;
+  }
+  .header-search-wrap.active-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: rgba(20, 22, 24, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .header-search-wrap.active-mobile .search-input-box {
+    background: #FFFFFF;
+    border: 2px solid var(--accent-blue);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+  }
+  .header-search-wrap.active-mobile .search-input {
+    font-size: 14px;
+  }
+  .header-search-wrap.active-mobile .search-results-dropdown {
+    position: static;
+    margin-top: 8px;
+    flex: 1;
+    max-height: calc(100vh - 90px);
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  /* Vista 1: Barra de Controles Colapsable en Acordeón */
+  .mobile-controls-toggle-row {
+    display: flex;
+    margin-bottom: 4px;
+  }
+  .var-control-bar.controls-collapsed .var-selectors-row,
+  .var-control-bar.controls-collapsed #seasonalSeriesBar,
+  .var-control-bar.controls-collapsed .presets-row {
+    display: none !important;
+  }
+  .var-selectors-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .var-selector-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .var-select {
+    max-width: 100%;
+    width: 100%;
+    min-height: 44px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .view-mode-toggle-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    margin-left: 0;
+    gap: 4px;
+    background: var(--bg-subtle);
+  }
+  .mode-toggle-btn {
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .presets-row {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+  }
+  .preset-pill {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .seasonal-submode-btn {
+    min-height: 44px;
+    padding: 8px 14px;
+  }
+  .multiannual-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  #btnToggleYoY {
+    min-height: 44px;
+    width: 100%;
+    justify-content: center;
+  }
+  .table-scroll-container {
+    max-height: 340px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Vista 2: Modelo Relacional Móvil */
+  .schema-boxes-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .relational-canvas-container {
+    max-height: 280px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .relational-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .relational-preset-btns {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    gap: 6px;
+  }
+  .relational-preset-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 12px;
+  }
+  .join-table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .join-mode-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .join-mode-btn {
+    min-height: 44px;
+    width: 100%;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .join-table-search {
+    min-height: 44px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .btn-export-csv {
+    min-height: 44px;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .live-join-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Vista 3: Fichas Comunales y Holdings Móvil */
+  .fichas-top-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .comuna-selectors-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .comuna-selectors-wrap .var-select {
+    width: 100%;
+    min-height: 44px;
+  }
+  .fichas-mode-switch {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dimensions-grid-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .holdings-header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .holdings-search-box {
+    min-height: 44px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .holdings-cards-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .holding-detail-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-badge {
+    display: none;
+  }
+  .brand-title {
+    font-size: 13px;
+  }
+  .wizard-dialog {
+    width: 95vw;
+    max-height: 90vh;
+    padding: 16px;
+  }
+  .wizard-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .chart-title-main {
+    font-size: 14px;
   }
 }

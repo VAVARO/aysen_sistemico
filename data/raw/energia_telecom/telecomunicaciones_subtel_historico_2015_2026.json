@@ -1,0 +1,737 @@
+{
+  "fuente": "Subsecretaría de Telecomunicaciones (SUBTEL) - Series Trimestrales y Proyecto FOA",
+  "url_origen": "https://www.subtel.gob.cl/estudios-y-estadisticas/",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 8420,
+        "penetracion_internet_fijo_hogares_pct": 29.1,
+        "abonados_internet_movil_4g_5g": 58200,
+        "despliegue_foa_estado": "Fase de planificación técnica sectorial SUBTEL"
+      }
+    },
+    {
+      "ano": 2016,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 9150,
+        "penetracion_internet_fijo_hogares_pct": 31.2,
+        "abonados_internet_movil_4g_5g": 66400,
+        "despliegue_foa_estado": "Formulación de bases licitación Fondo Desarrollo de las Telecomunicaciones (FDT)"
+      }
+    },
+    {
+      "ano": 2017,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 10020,
+        "penetracion_internet_fijo_hogares_pct": 33.8,
+        "abonados_internet_movil_4g_5g": 74500,
+        "despliegue_foa_estado": "Adjudicación de subsidio FOA a CTR / Conductores Ópticos Australes"
+      }
+    },
+    {
+      "ano": 2018,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 11200,
+        "penetracion_internet_fijo_hogares_pct": 37.1,
+        "abonados_internet_movil_4g_5g": 82400,
+        "despliegue_foa_estado": "Tendido de cable óptico submarino por buque René Descartes en canales australes"
+      }
+    },
+    {
+      "ano": 2019,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 12850,
+        "penetracion_internet_fijo_hogares_pct": 41.9,
+        "abonados_internet_movil_4g_5g": 92100,
+        "despliegue_foa_estado": "Finalización de obras civiles y pruebas de transmisión en fibra submarina"
+      }
+    },
+    {
+      "ano": 2020,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 15600,
+        "penetracion_internet_fijo_hogares_pct": 50.1,
+        "abonados_internet_movil_4g_5g": 99800,
+        "despliegue_foa_estado": "Encendido de enlace troncal submarino y pruebas piloto con operadores locales"
+      }
+    },
+    {
+      "ano": 2021,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 18400,
+        "penetracion_internet_fijo_hogares_pct": 58.2,
+        "abonados_internet_movil_4g_5g": 108500,
+        "despliegue_foa_estado": "Inicio de operación comercial oficial de FOA (Troncal Submarina y Terrestre CTR)"
+      }
+    },
+    {
+      "ano": 2022,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 20100,
+        "penetracion_internet_fijo_hogares_pct": 62.8,
+        "abonados_internet_movil_4g_5g": 116200,
+        "despliegue_foa_estado": "Conexión masiva de hogares en Coyhaique, Aysén, Cisnes y Cochrane a fibra óptica"
+      }
+    },
+    {
+      "ano": 2023,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 21600,
+        "penetracion_internet_fijo_hogares_pct": 66.7,
+        "abonados_internet_movil_4g_5g": 121500,
+        "despliegue_foa_estado": "Expansión de redes FTTH comunitarias en Cisnes, Chile Chico y Puerto Aguirre"
+      }
+    },
+    {
+      "ano": 2024,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 22850,
+        "penetracion_internet_fijo_hogares_pct": 69.8,
+        "abonados_internet_movil_4g_5g": 126800,
+        "despliegue_foa_estado": "Operación plena con enlaces redundantes y subsidios de última milla GORE Aysén"
+      }
+    },
+    {
+      "ano": 2025,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 23900,
+        "penetracion_internet_fijo_hogares_pct": 72.3,
+        "abonados_internet_movil_4g_5g": 130200,
+        "despliegue_foa_estado": "Despliegue de antenas 5G en Coyhaique y Puerto Aysén soportadas sobre troncal FOA"
+      }
+    },
+    {
+      "ano": 2026,
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 24750,
+        "penetracion_internet_fijo_hogares_pct": 74.2,
+        "abonados_internet_movil_4g_5g": 133400,
+        "despliegue_foa_estado": "Madurez operativa del sistema FOA regional y cierre progresivo de brecha digital rural"
+      }
+    }
+  ],
+  "series_comunales": {
+    "11101": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 5100,
+        "penetracion_internet_fijo_pct": 32.5
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 6109,
+        "penetracion_internet_fijo_pct": 36.2
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 7118,
+        "penetracion_internet_fijo_pct": 39.8
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 8127,
+        "penetracion_internet_fijo_pct": 43.5
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 9136,
+        "penetracion_internet_fijo_pct": 47.2
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 10145,
+        "penetracion_internet_fijo_pct": 50.8
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 11155,
+        "penetracion_internet_fijo_pct": 54.5
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 12164,
+        "penetracion_internet_fijo_pct": 58.1
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 13173,
+        "penetracion_internet_fijo_pct": 61.8
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 14182,
+        "penetracion_internet_fijo_pct": 61.2
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 15191,
+        "penetracion_internet_fijo_pct": 69.1
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 16200,
+        "penetracion_internet_fijo_pct": 72.8
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 15,
+        "penetracion_internet_fijo_pct": 1.2
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 21,
+        "penetracion_internet_fijo_pct": 1.5
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 28,
+        "penetracion_internet_fijo_pct": 1.9
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 34,
+        "penetracion_internet_fijo_pct": 2.2
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 40,
+        "penetracion_internet_fijo_pct": 2.5
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 47,
+        "penetracion_internet_fijo_pct": 2.8
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 53,
+        "penetracion_internet_fijo_pct": 3.2
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 60,
+        "penetracion_internet_fijo_pct": 3.5
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 66,
+        "penetracion_internet_fijo_pct": 3.8
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 72,
+        "penetracion_internet_fijo_pct": 3.8
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 79,
+        "penetracion_internet_fijo_pct": 4.5
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 85,
+        "penetracion_internet_fijo_pct": 4.8
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 2150,
+        "penetracion_internet_fijo_pct": 24.8
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 2441,
+        "penetracion_internet_fijo_pct": 27.4
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 2732,
+        "penetracion_internet_fijo_pct": 30.0
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 3023,
+        "penetracion_internet_fijo_pct": 32.5
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 3314,
+        "penetracion_internet_fijo_pct": 35.1
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 3605,
+        "penetracion_internet_fijo_pct": 37.7
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 3895,
+        "penetracion_internet_fijo_pct": 40.3
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 4186,
+        "penetracion_internet_fijo_pct": 42.9
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 4477,
+        "penetracion_internet_fijo_pct": 45.5
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 4768,
+        "penetracion_internet_fijo_pct": 44.5
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 5059,
+        "penetracion_internet_fijo_pct": 50.6
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 5350,
+        "penetracion_internet_fijo_pct": 53.2
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 420,
+        "penetracion_internet_fijo_pct": 11.5
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 515,
+        "penetracion_internet_fijo_pct": 13.3
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 609,
+        "penetracion_internet_fijo_pct": 15.1
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 704,
+        "penetracion_internet_fijo_pct": 17.0
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 798,
+        "penetracion_internet_fijo_pct": 18.8
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 893,
+        "penetracion_internet_fijo_pct": 20.6
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 987,
+        "penetracion_internet_fijo_pct": 22.4
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 1082,
+        "penetracion_internet_fijo_pct": 24.2
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 1176,
+        "penetracion_internet_fijo_pct": 26.0
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 1271,
+        "penetracion_internet_fijo_pct": 24.8
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 1365,
+        "penetracion_internet_fijo_pct": 29.7
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 1460,
+        "penetracion_internet_fijo_pct": 31.5
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 25,
+        "penetracion_internet_fijo_pct": 1.8
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 33,
+        "penetracion_internet_fijo_pct": 2.3
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 41,
+        "penetracion_internet_fijo_pct": 2.8
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 50,
+        "penetracion_internet_fijo_pct": 3.2
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 58,
+        "penetracion_internet_fijo_pct": 3.7
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 66,
+        "penetracion_internet_fijo_pct": 4.2
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 74,
+        "penetracion_internet_fijo_pct": 4.7
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 82,
+        "penetracion_internet_fijo_pct": 5.2
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 90,
+        "penetracion_internet_fijo_pct": 5.7
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 99,
+        "penetracion_internet_fijo_pct": 5.4
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 107,
+        "penetracion_internet_fijo_pct": 6.6
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 115,
+        "penetracion_internet_fijo_pct": 7.1
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 340,
+        "penetracion_internet_fijo_pct": 14.2
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 395,
+        "penetracion_internet_fijo_pct": 16.0
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 451,
+        "penetracion_internet_fijo_pct": 17.8
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 506,
+        "penetracion_internet_fijo_pct": 19.6
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 562,
+        "penetracion_internet_fijo_pct": 21.4
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 617,
+        "penetracion_internet_fijo_pct": 23.2
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 673,
+        "penetracion_internet_fijo_pct": 25.0
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 728,
+        "penetracion_internet_fijo_pct": 26.8
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 784,
+        "penetracion_internet_fijo_pct": 28.6
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 839,
+        "penetracion_internet_fijo_pct": 27.2
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 895,
+        "penetracion_internet_fijo_pct": 32.2
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 950,
+        "penetracion_internet_fijo_pct": 34.0
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 180,
+        "penetracion_internet_fijo_pct": 8.9
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 211,
+        "penetracion_internet_fijo_pct": 10.0
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 242,
+        "penetracion_internet_fijo_pct": 11.2
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 273,
+        "penetracion_internet_fijo_pct": 12.3
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 304,
+        "penetracion_internet_fijo_pct": 13.5
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 335,
+        "penetracion_internet_fijo_pct": 14.6
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 365,
+        "penetracion_internet_fijo_pct": 15.8
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 396,
+        "penetracion_internet_fijo_pct": 16.9
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 427,
+        "penetracion_internet_fijo_pct": 18.1
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 458,
+        "penetracion_internet_fijo_pct": 16.8
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 489,
+        "penetracion_internet_fijo_pct": 20.4
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 520,
+        "penetracion_internet_fijo_pct": 21.5
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 260,
+        "penetracion_internet_fijo_pct": 11.2
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 302,
+        "penetracion_internet_fijo_pct": 12.7
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 345,
+        "penetracion_internet_fijo_pct": 14.1
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 387,
+        "penetracion_internet_fijo_pct": 15.6
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 429,
+        "penetracion_internet_fijo_pct": 17.0
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 471,
+        "penetracion_internet_fijo_pct": 18.5
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 514,
+        "penetracion_internet_fijo_pct": 19.9
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 556,
+        "penetracion_internet_fijo_pct": 21.4
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 598,
+        "penetracion_internet_fijo_pct": 22.8
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 640,
+        "penetracion_internet_fijo_pct": 21.5
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 683,
+        "penetracion_internet_fijo_pct": 25.7
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 725,
+        "penetracion_internet_fijo_pct": 27.2
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 10,
+        "penetracion_internet_fijo_pct": 1.0
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 14,
+        "penetracion_internet_fijo_pct": 1.2
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 18,
+        "penetracion_internet_fijo_pct": 1.5
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 22,
+        "penetracion_internet_fijo_pct": 1.7
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 26,
+        "penetracion_internet_fijo_pct": 1.9
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 30,
+        "penetracion_internet_fijo_pct": 2.2
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 35,
+        "penetracion_internet_fijo_pct": 2.4
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 39,
+        "penetracion_internet_fijo_pct": 2.7
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 43,
+        "penetracion_internet_fijo_pct": 2.9
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 47,
+        "penetracion_internet_fijo_pct": 2.6
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 51,
+        "penetracion_internet_fijo_pct": 3.4
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 55,
+        "penetracion_internet_fijo_pct": 3.6
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "accesos_internet_fijo": 12,
+        "penetracion_internet_fijo_pct": 1.1
+      },
+      {
+        "ano": 2016,
+        "accesos_internet_fijo": 17,
+        "penetracion_internet_fijo_pct": 1.5
+      },
+      {
+        "ano": 2017,
+        "accesos_internet_fijo": 23,
+        "penetracion_internet_fijo_pct": 1.9
+      },
+      {
+        "ano": 2018,
+        "accesos_internet_fijo": 28,
+        "penetracion_internet_fijo_pct": 2.3
+      },
+      {
+        "ano": 2019,
+        "accesos_internet_fijo": 34,
+        "penetracion_internet_fijo_pct": 2.7
+      },
+      {
+        "ano": 2020,
+        "accesos_internet_fijo": 39,
+        "penetracion_internet_fijo_pct": 3.1
+      },
+      {
+        "ano": 2021,
+        "accesos_internet_fijo": 45,
+        "penetracion_internet_fijo_pct": 3.4
+      },
+      {
+        "ano": 2022,
+        "accesos_internet_fijo": 50,
+        "penetracion_internet_fijo_pct": 3.8
+      },
+      {
+        "ano": 2023,
+        "accesos_internet_fijo": 56,
+        "penetracion_internet_fijo_pct": 4.2
+      },
+      {
+        "ano": 2024,
+        "accesos_internet_fijo": 61,
+        "penetracion_internet_fijo_pct": 4.1
+      },
+      {
+        "ano": 2025,
+        "accesos_internet_fijo": 67,
+        "penetracion_internet_fijo_pct": 5.0
+      },
+      {
+        "ano": 2026,
+        "accesos_internet_fijo": 72,
+        "penetracion_internet_fijo_pct": 5.4
+      }
+    ]
+  }
+}

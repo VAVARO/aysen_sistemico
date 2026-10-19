@@ -117,7 +117,7 @@
 
     .brand-author-name {
       font-family: var(--font-serif);
-      font-size: 1.2rem;
+      font-size: clamp(0.92rem, 3.8vw, 1.2rem);
       font-weight: 700;
       letter-spacing: -0.015em;
       color: var(--ink-primary);
@@ -613,20 +613,306 @@
       border-radius: 2px;
     }
 
+    /* =========================================================================
+       UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
+       ========================================================================= */
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.16);
+      border-radius: 4px;
+      color: var(--cobalt);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: var(--cobalt);
+    }
+
+    .brand-header.dark-mode .mobile-menu-btn {
+      color: #fcf9f8;
+      border-color: rgba(252, 249, 248, 0.25);
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+      visibility: hidden;
+      transition: visibility 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .mobile-nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 20, 50, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open .mobile-nav-backdrop {
+      opacity: 1;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(86vw, 360px);
+      background: rgba(252, 249, 248, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid rgba(0, 53, 127, 0.18);
+      box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem 1.25rem 2rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-nav-drawer.open .mobile-nav-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
+    }
+
+    .mobile-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .mobile-nav-author {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+
+    .mobile-nav-close {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.15);
+      border-radius: 4px;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-nav-close:hover {
+      color: var(--cobalt);
+      border-color: var(--cobalt);
+      background: rgba(0, 53, 127, 0.05);
+    }
+
+    .mobile-nav-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cobalt);
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      min-height: 48px;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 53, 127, 0.10);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink-primary);
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-nav-link:hover {
+      background: rgba(0, 53, 127, 0.05);
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+      transform: translateX(2px);
+    }
+
+    .mobile-nav-link.active {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+      font-weight: 600;
+    }
+
+    .mobile-nav-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cobalt);
+      font-weight: 600;
+      width: 24px;
+    }
+
+    .mobile-nav-text {
+      flex: 1;
+    }
+
+    .mobile-nav-arrow {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    /* Breakpoint Navigation */
+    @media (max-width: 1023px) {
+      .brand-nav-pills {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: inline-flex !important;
+      }
+    }
+
+    /* Responsive Snap Scroll & Layout Adaptations */
     @media (max-width: 768px) {
-      .brand-author-name {
-        font-size: 1.1rem;
+      .snap-container {
+        scroll-snap-type: y proximity;
+      }
+
+      .snap-section {
+        min-height: 100vh;
+        height: auto;
+        overflow-y: visible;
+        padding: 5rem 1.25rem 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #seccion-portada {
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+        padding: 0;
       }
 
       .editorial-reading-card {
-        padding: 2.2rem 1.75rem;
+        padding: 1.85rem 1.35rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 1.5rem auto;
+      }
+
+      .reading-heading {
+        font-size: clamp(1.45rem, 5.5vw, 2.1rem);
+        margin-bottom: 1rem;
+      }
+
+      .reading-paragraph {
+        font-size: 0.92rem;
+        line-height: 1.62;
+      }
+
+      .hero-center-overlay {
+        padding: 1.75rem 1rem;
+        width: 95%;
+      }
+
+      .hero-title {
+        font-size: clamp(1.95rem, 6.8vw, 3rem);
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-actions {
+        gap: 0.65rem;
+        width: 100%;
+      }
+
+      .btn-editorial {
+        min-height: 44px;
+        padding: 0.75rem 1.15rem;
+        font-size: 0.78rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .snap-dots {
+        display: none;
+      }
+
+      .landmark-indicator-wrap {
+        bottom: 3.8rem;
+        right: 0.75rem;
+        left: auto;
+        transform: none;
+        align-items: flex-end;
       }
 
       .landmark-caption {
-        bottom: 4.2rem;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: 0.8rem;
+        padding: 0.2rem 0.55rem;
+      }
+
+      .landmark-pips {
+        padding: 3px 6px;
+      }
+
+      .snap-next-trigger {
+        bottom: 0.85rem;
+        font-size: 0.68rem;
+        padding: 0.35rem 0.75rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .brand-divider,
+      .brand-module-title {
+        display: none;
       }
     }
   </style>
@@ -656,9 +942,63 @@
             <span class="pill-arrow">↗</span>
           </a>
         </nav>
+        <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- CAJÓN DE NAVEGACIÓN MÓVIL UNIVERSAL -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="brand-dot"></span>
+          <span class="mobile-nav-author">Álvaro Contreras Barrios</span>
+        </div>
+        <button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>
+      <nav class="mobile-nav-links" aria-label="Navegación móvil">
+        <a href="portal.html" class="mobile-nav-link active">
+          <span class="mobile-nav-num">01</span>
+          <span class="mobile-nav-text">Portada</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="sistemas_complejos.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">02</span>
+          <span class="mobile-nav-text">Visualizador de Complejidad</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="index.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">03</span>
+          <span class="mobile-nav-text">Datos de Aysén</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="laboratorio.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">04</span>
+          <span class="mobile-nav-text">Laboratorio Sistémico</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">LinkedIn</span>
+          <span class="mobile-nav-arrow">↗</span>
+        </a>
+      </nav>
+    </div>
+  </div>
 
   <!-- INDICADORES LATERALES DE SNAP -->
   <div class="snap-dots" id="snapDots">
@@ -1673,6 +2013,21 @@
       const geomB = POSTCARD_GEOMETRIES[nextPostalIdx];
       const rawProgress = morphPhase === 'morph' ? Math.min(1, phaseTimer / MORPH_DURATION) : 0;
 
+      // Adaptación de resolución y escala para evitar distorsión en pantallas verticales
+      let scaleX = w;
+      let scaleY = h;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      if (w < h) {
+        // En pantallas verticales (móviles/tablets) preservamos la silueta natural sin comprimir
+        const naturalAspect = 1.25;
+        scaleX = Math.max(w, h * naturalAspect);
+        scaleY = h;
+        offsetX = (w - scaleX) / 2;
+        offsetY = 0;
+      }
+
       // Dibujar las 128 capas vectoriales interpoladas a todo el ancho de la pantalla
       for (let l = 0; l < NUM_LAYERS; l++) {
         const layerA = geomA[l];
@@ -1704,8 +2059,8 @@
           const nx = pA.x * (1 - m) + pB.x * m;
           const ny = pA.y * (1 - m) + pB.y * m + morphArc + liveRipple;
 
-          const sx = nx * w;
-          const sy = ny * h;
+          const sx = offsetX + nx * scaleX;
+          const sy = offsetY + ny * scaleY;
 
           if (i === 0) pCtx.moveTo(sx, sy);
           else pCtx.lineTo(sx, sy);
@@ -1881,6 +2236,45 @@
         qeCtx.fill();
       }
     }
+
+    // =========================================================================
+    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL UNIVERSAL
+    // =========================================================================
+    const btnMobileMenu = document.getElementById('btnMobileMenu');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const btnMobileClose = document.getElementById('btnMobileClose');
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+    function openMobileNav() {
+      if (!mobileNavDrawer) return;
+      mobileNavDrawer.classList.add('open');
+      mobileNavDrawer.setAttribute('aria-hidden', 'false');
+      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileNav() {
+      if (!mobileNavDrawer) return;
+      mobileNavDrawer.classList.remove('open');
+      mobileNavDrawer.setAttribute('aria-hidden', 'true');
+      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
+    }
+
+    if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
+    if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
+    if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+        closeMobileNav();
+      }
+    });
+
+    // Cerrar el drawer al pulsar en cualquier enlace interno
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
 
     requestAnimationFrame(renderFrame);
   </script>

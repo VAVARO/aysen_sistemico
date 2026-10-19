@@ -73,5 +73,104 @@
       "estado": "Aprobado",
       "comuna": "Río Ibáñez"
     }
+  ],
+  "rango_temporal": "2015-2026",
+  "flujo_historico_anual_2015_2026": [
+    {
+      "periodo": "2015",
+      "proyectos_ingresados": 38,
+      "proyectos_aprobados_anual": 26,
+      "inversion_aprobada_anual_mmusd": 145.2,
+      "proyectos_aprobados_acumulados": 546,
+      "inversion_aprobada_acumulada_mmusd": 2120.4
+    },
+    {
+      "periodo": "2016",
+      "proyectos_ingresados": 32,
+      "proyectos_aprobados_anual": 24,
+      "inversion_aprobada_anual_mmusd": 128.5,
+      "proyectos_aprobados_acumulados": 570,
+      "inversion_aprobada_acumulada_mmusd": 2248.9
+    },
+    {
+      "periodo": "2017",
+      "proyectos_ingresados": 29,
+      "proyectos_aprobados_anual": 22,
+      "inversion_aprobada_anual_mmusd": 98.4,
+      "proyectos_aprobados_acumulados": 592,
+      "inversion_aprobada_acumulada_mmusd": 2347.3
+    },
+    {
+      "periodo": "2018",
+      "proyectos_ingresados": 35,
+      "proyectos_aprobados_anual": 25,
+      "inversion_aprobada_anual_mmusd": 156.0,
+      "proyectos_aprobados_acumulados": 617,
+      "inversion_aprobada_acumulada_mmusd": 2503.3
+    },
+    {
+      "periodo": "2019",
+      "proyectos_ingresados": 31,
+      "proyectos_aprobados_anual": 21,
+      "inversion_aprobada_anual_mmusd": 112.3,
+      "proyectos_aprobados_acumulados": 638,
+      "inversion_aprobada_acumulada_mmusd": 2615.6
+    },
+    {
+      "periodo": "2020",
+      "proyectos_ingresados": 24,
+      "proyectos_aprobados_anual": 17,
+      "inversion_aprobada_anual_mmusd": 84.6,
+      "proyectos_aprobados_acumulados": 655,
+      "inversion_aprobada_acumulada_mmusd": 2700.2
+    },
+    {
+      "periodo": "2021",
+      "proyectos_ingresados": 28,
+      "proyectos_aprobados_anual": 19,
+      "inversion_aprobada_anual_mmusd": 135.1,
+      "proyectos_aprobados_acumulados": 674,
+      "inversion_aprobada_acumulada_mmusd": 2835.3
+    },
+    {
+      "periodo": "2022",
+      "proyectos_ingresados": 26,
+      "proyectos_aprobados_anual": 20,
+      "inversion_aprobada_anual_mmusd": 168.2,
+      "proyectos_aprobados_acumulados": 694,
+      "inversion_aprobada_acumulada_mmusd": 3003.5
+    },
+    {
+      "periodo": "2023",
+      "proyectos_ingresados": 30,
+      "proyectos_aprobados_anual": 23,
+      "inversion_aprobada_anual_mmusd": 182.4,
+      "proyectos_aprobados_acumulados": 717,
+      "inversion_aprobada_acumulada_mmusd": 3185.9
+    },
+    {
+      "periodo": "2024",
+      "proyectos_ingresados": 27,
+      "proyectos_aprobados_anual": 21,
+      "inversion_aprobada_anual_mmusd": 169.6,
+      "proyectos_aprobados_acumulados": 722,
+      "inversion_aprobada_acumulada_mmusd": 3355.5
+    },
+    {
+      "periodo": "2025",
+      "proyectos_ingresados": 25,
+      "proyectos_aprobados_anual": 20,
+      "inversion_aprobada_anual_mmusd": 154.0,
+      "proyectos_aprobados_acumulados": 742,
+      "inversion_aprobada_acumulada_mmusd": 3509.5
+    },
+    {
+      "periodo": "2026",
+      "proyectos_ingresados": 23,
+      "proyectos_aprobados_anual": 18,
+      "inversion_aprobada_anual_mmusd": 142.0,
+      "proyectos_aprobados_acumulados": 760,
+      "inversion_aprobada_acumulada_mmusd": 3651.5
+    }
   ]
 }

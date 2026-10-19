@@ -34,6 +34,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = REPO_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw" / "politico_sinim"
 SYSTEMIC_DIR = DATA_DIR / "systemic"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 COMUNAS_METADATA = [
     {
@@ -939,6 +940,13 @@ def main():
     systemic_json_path = SYSTEMIC_DIR / "01_gob_poder_finanzas.json"
     with open(systemic_json_path, "w", encoding="utf-8") as f:
         json.dump(systemic_data, f, indent=2, ensure_ascii=False)
+
+    # Inyección y sincronización de series temporales históricas (2015-2026)
+    try:
+        from update_wp01_wp04_series import update_wp01_all
+        update_wp01_all()
+    except Exception as e:
+        print(f"   [AVISO] No se pudo ejecutar update_wp01_all: {e}")
 
     print(f"   [SYSTEMIC] Archivo generado exitosamente:")
     print(f"      -> {systemic_json_path.relative_to(REPO_ROOT)} ({systemic_json_path.stat().st_size} bytes)")

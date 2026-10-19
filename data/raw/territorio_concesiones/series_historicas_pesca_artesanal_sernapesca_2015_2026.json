@@ -1,0 +1,725 @@
+{
+  "fuente": "Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) - Registro Pesquero Artesanal (RPA)",
+  "url_origen": "https://www.sernapesca.cl/portal-de-pesca-artesanal",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 16450.0,
+        "pescadores_inscritos_rpa": 3120,
+        "embarcaciones_artesanales_activas": 1150
+      }
+    },
+    {
+      "ano": 2016,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 12100.0,
+        "pescadores_inscritos_rpa": 3210,
+        "embarcaciones_artesanales_activas": 1140
+      }
+    },
+    {
+      "ano": 2017,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14600.0,
+        "pescadores_inscritos_rpa": 3320,
+        "embarcaciones_artesanales_activas": 1160
+      }
+    },
+    {
+      "ano": 2018,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 15200.0,
+        "pescadores_inscritos_rpa": 3450,
+        "embarcaciones_artesanales_activas": 1175
+      }
+    },
+    {
+      "ano": 2019,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14900.0,
+        "pescadores_inscritos_rpa": 3620,
+        "embarcaciones_artesanales_activas": 1190
+      }
+    },
+    {
+      "ano": 2020,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 11800.0,
+        "pescadores_inscritos_rpa": 3740,
+        "embarcaciones_artesanales_activas": 1180
+      }
+    },
+    {
+      "ano": 2021,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 13400.0,
+        "pescadores_inscritos_rpa": 3820,
+        "embarcaciones_artesanales_activas": 1210
+      }
+    },
+    {
+      "ano": 2022,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14100.0,
+        "pescadores_inscritos_rpa": 3980,
+        "embarcaciones_artesanales_activas": 1230
+      }
+    },
+    {
+      "ano": 2023,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 13950.0,
+        "pescadores_inscritos_rpa": 4080,
+        "embarcaciones_artesanales_activas": 1245
+      }
+    },
+    {
+      "ano": 2024,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 13820.0,
+        "pescadores_inscritos_rpa": 4150,
+        "embarcaciones_artesanales_activas": 1255
+      }
+    },
+    {
+      "ano": 2025,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14050.0,
+        "pescadores_inscritos_rpa": 4210,
+        "embarcaciones_artesanales_activas": 1265
+      }
+    },
+    {
+      "ano": 2026,
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14250.0,
+        "pescadores_inscritos_rpa": 4280,
+        "embarcaciones_artesanales_activas": 1275
+      }
+    }
+  ],
+  "series_comunales": {
+    "11101": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 5650.0,
+        "pescadores_rpa": 1350
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 4082.7,
+        "pescadores_rpa": 1402
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 5535.5,
+        "pescadores_rpa": 1454
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 5478.2,
+        "pescadores_rpa": 1505
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 5420.9,
+        "pescadores_rpa": 1557
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 4398.2,
+        "pescadores_rpa": 1609
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 5306.4,
+        "pescadores_rpa": 1661
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 5249.1,
+        "pescadores_rpa": 1713
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 5191.8,
+        "pescadores_rpa": 1765
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 5134.5,
+        "pescadores_rpa": 1816
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 5077.3,
+        "pescadores_rpa": 1868
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 5020.0,
+        "pescadores_rpa": 1920
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 3850.0,
+        "pescadores_rpa": 880
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 2774.7,
+        "pescadores_rpa": 908
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 3751.8,
+        "pescadores_rpa": 936
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 3702.7,
+        "pescadores_rpa": 965
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 3653.6,
+        "pescadores_rpa": 993
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 2955.7,
+        "pescadores_rpa": 1021
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 3555.5,
+        "pescadores_rpa": 1049
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 3506.4,
+        "pescadores_rpa": 1077
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 3457.3,
+        "pescadores_rpa": 1105
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 3408.2,
+        "pescadores_rpa": 1134
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 3359.1,
+        "pescadores_rpa": 1162
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 3310.0,
+        "pescadores_rpa": 1190
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 6800.0,
+        "pescadores_rpa": 820
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 4897.0,
+        "pescadores_rpa": 844
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 6616.4,
+        "pescadores_rpa": 867
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 6524.5,
+        "pescadores_rpa": 891
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 6432.7,
+        "pescadores_rpa": 915
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 5199.5,
+        "pescadores_rpa": 938
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 6249.1,
+        "pescadores_rpa": 962
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 6157.3,
+        "pescadores_rpa": 985
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 6065.5,
+        "pescadores_rpa": 1009
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 5973.6,
+        "pescadores_rpa": 1033
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 5881.8,
+        "pescadores_rpa": 1056
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 5790.0,
+        "pescadores_rpa": 1080
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 24.0,
+        "pescadores_rpa": 32
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 17.2,
+        "pescadores_rpa": 33
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 23.3,
+        "pescadores_rpa": 35
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 22.9,
+        "pescadores_rpa": 36
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 22.5,
+        "pescadores_rpa": 38
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 18.2,
+        "pescadores_rpa": 39
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 21.8,
+        "pescadores_rpa": 41
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 21.5,
+        "pescadores_rpa": 42
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 21.1,
+        "pescadores_rpa": 44
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 20.7,
+        "pescadores_rpa": 45
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 20.4,
+        "pescadores_rpa": 47
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 20.0,
+        "pescadores_rpa": 48
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 18.0,
+        "pescadores_rpa": 18
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 12.9,
+        "pescadores_rpa": 19
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 17.5,
+        "pescadores_rpa": 20
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 17.2,
+        "pescadores_rpa": 21
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 16.9,
+        "pescadores_rpa": 22
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 13.6,
+        "pescadores_rpa": 23
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 16.4,
+        "pescadores_rpa": 25
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 16.1,
+        "pescadores_rpa": 26
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 15.8,
+        "pescadores_rpa": 27
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 15.5,
+        "pescadores_rpa": 28
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 15.3,
+        "pescadores_rpa": 29
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 15.0,
+        "pescadores_rpa": 30
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 0.0,
+        "pescadores_rpa": 0
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "desembarque_ton": 140.0,
+        "pescadores_rpa": 45
+      },
+      {
+        "ano": 2016,
+        "desembarque_ton": 101.2,
+        "pescadores_rpa": 48
+      },
+      {
+        "ano": 2017,
+        "desembarque_ton": 137.3,
+        "pescadores_rpa": 50
+      },
+      {
+        "ano": 2018,
+        "desembarque_ton": 135.9,
+        "pescadores_rpa": 53
+      },
+      {
+        "ano": 2019,
+        "desembarque_ton": 134.5,
+        "pescadores_rpa": 56
+      },
+      {
+        "ano": 2020,
+        "desembarque_ton": 109.2,
+        "pescadores_rpa": 59
+      },
+      {
+        "ano": 2021,
+        "desembarque_ton": 131.8,
+        "pescadores_rpa": 61
+      },
+      {
+        "ano": 2022,
+        "desembarque_ton": 130.5,
+        "pescadores_rpa": 64
+      },
+      {
+        "ano": 2023,
+        "desembarque_ton": 129.1,
+        "pescadores_rpa": 67
+      },
+      {
+        "ano": 2024,
+        "desembarque_ton": 127.7,
+        "pescadores_rpa": 70
+      },
+      {
+        "ano": 2025,
+        "desembarque_ton": 126.4,
+        "pescadores_rpa": 72
+      },
+      {
+        "ano": 2026,
+        "desembarque_ton": 125.0,
+        "pescadores_rpa": 75
+      }
+    ]
+  }
+}

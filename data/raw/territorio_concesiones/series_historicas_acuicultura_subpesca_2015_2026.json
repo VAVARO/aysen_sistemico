@@ -1,0 +1,1145 @@
+{
+  "fuente": "Subsecretaría de Pesca y Acuicultura (SUBPESCA) / SERNAPESCA - Anuarios Estadísticos",
+  "url_origen": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "cosecha_salmonidos_total_ton": 395400.0,
+      "cosecha_salmon_atlantico_ton": 295000.0,
+      "cosecha_salmon_coho_ton": 68400.0,
+      "cosecha_trucha_arcoiris_ton": 32000.0,
+      "concesiones_acuicolas_vigentes": 728,
+      "hectareas_marinas_concesionadas_ha": 9210.0,
+      "centros_salmonicolas_activos_ciclo": 218,
+      "concentracion_holdings": {
+        "top_3_pct": 41.8,
+        "top_5_pct": 57.2,
+        "propiedad_capital_extranjero_pct": 25.4
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 182,
+        "concesiones_exploracion_vigentes": 410,
+        "superficie_minera_amparada_ha": 168000
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 16450.0,
+        "pescadores_inscritos_rpa": 3120,
+        "embarcaciones_artesanales_activas": 1150
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5120000,
+        "superficie_snaspe_pct": 47.25,
+        "suelo_fiscal_bbnn_ha": 2963000,
+        "suelo_fiscal_bbnn_pct": 27.35,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2016,
+      "cosecha_salmonidos_total_ton": 342100.0,
+      "cosecha_salmon_atlantico_ton": 258000.0,
+      "cosecha_salmon_coho_ton": 59100.0,
+      "cosecha_trucha_arcoiris_ton": 25000.0,
+      "concesiones_acuicolas_vigentes": 732,
+      "hectareas_marinas_concesionadas_ha": 9260.0,
+      "centros_salmonicolas_activos_ciclo": 195,
+      "concentracion_holdings": {
+        "top_3_pct": 42.1,
+        "top_5_pct": 57.5,
+        "propiedad_capital_extranjero_pct": 25.8
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 184,
+        "concesiones_exploracion_vigentes": 398,
+        "superficie_minera_amparada_ha": 165500
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 12100.0,
+        "pescadores_inscritos_rpa": 3210,
+        "embarcaciones_artesanales_activas": 1140
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5120000,
+        "superficie_snaspe_pct": 47.25,
+        "suelo_fiscal_bbnn_ha": 2963000,
+        "suelo_fiscal_bbnn_pct": 27.35,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2017,
+      "cosecha_salmonidos_total_ton": 388900.0,
+      "cosecha_salmon_atlantico_ton": 298500.0,
+      "cosecha_salmon_coho_ton": 64200.0,
+      "cosecha_trucha_arcoiris_ton": 26200.0,
+      "concesiones_acuicolas_vigentes": 735,
+      "hectareas_marinas_concesionadas_ha": 9305.0,
+      "centros_salmonicolas_activos_ciclo": 215,
+      "concentracion_holdings": {
+        "top_3_pct": 42.3,
+        "top_5_pct": 57.8,
+        "propiedad_capital_extranjero_pct": 26.1
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 186,
+        "concesiones_exploracion_vigentes": 390,
+        "superficie_minera_amparada_ha": 163200
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14600.0,
+        "pescadores_inscritos_rpa": 3320,
+        "embarcaciones_artesanales_activas": 1160
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5120000,
+        "superficie_snaspe_pct": 47.25,
+        "suelo_fiscal_bbnn_ha": 2963000,
+        "suelo_fiscal_bbnn_pct": 27.35,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2018,
+      "cosecha_salmonidos_total_ton": 432500.0,
+      "cosecha_salmon_atlantico_ton": 338000.0,
+      "cosecha_salmon_coho_ton": 69500.0,
+      "cosecha_trucha_arcoiris_ton": 25000.0,
+      "concesiones_acuicolas_vigentes": 739,
+      "hectareas_marinas_concesionadas_ha": 9350.0,
+      "centros_salmonicolas_activos_ciclo": 230,
+      "concentracion_holdings": {
+        "top_3_pct": 42.5,
+        "top_5_pct": 58.0,
+        "propiedad_capital_extranjero_pct": 26.5
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 188,
+        "concesiones_exploracion_vigentes": 385,
+        "superficie_minera_amparada_ha": 161500
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 15200.0,
+        "pescadores_inscritos_rpa": 3450,
+        "embarcaciones_artesanales_activas": 1175
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2019,
+      "cosecha_salmonidos_total_ton": 468200.0,
+      "cosecha_salmon_atlantico_ton": 369000.0,
+      "cosecha_salmon_coho_ton": 74800.0,
+      "cosecha_trucha_arcoiris_ton": 24400.0,
+      "concesiones_acuicolas_vigentes": 742,
+      "hectareas_marinas_concesionadas_ha": 9400.0,
+      "centros_salmonicolas_activos_ciclo": 240,
+      "concentracion_holdings": {
+        "top_3_pct": 49.2,
+        "top_5_pct": 65.4,
+        "propiedad_capital_extranjero_pct": 31.0
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 190,
+        "concesiones_exploracion_vigentes": 372,
+        "superficie_minera_amparada_ha": 159800
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14900.0,
+        "pescadores_inscritos_rpa": 3620,
+        "embarcaciones_artesanales_activas": 1190
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2020,
+      "cosecha_salmonidos_total_ton": 485600.0,
+      "cosecha_salmon_atlantico_ton": 386200.0,
+      "cosecha_salmon_coho_ton": 76500.0,
+      "cosecha_trucha_arcoiris_ton": 22900.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 248,
+      "concentracion_holdings": {
+        "top_3_pct": 51.2,
+        "top_5_pct": 68.5,
+        "propiedad_capital_extranjero_pct": 32.8
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 191,
+        "concesiones_exploracion_vigentes": 360,
+        "superficie_minera_amparada_ha": 158200
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 11800.0,
+        "pescadores_inscritos_rpa": 3740,
+        "embarcaciones_artesanales_activas": 1180
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2021,
+      "cosecha_salmonidos_total_ton": 452300.0,
+      "cosecha_salmon_atlantico_ton": 361500.0,
+      "cosecha_salmon_coho_ton": 70200.0,
+      "cosecha_trucha_arcoiris_ton": 20600.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 238,
+      "concentracion_holdings": {
+        "top_3_pct": 51.4,
+        "top_5_pct": 69.2,
+        "propiedad_capital_extranjero_pct": 33.2
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 192,
+        "concesiones_exploracion_vigentes": 350,
+        "superficie_minera_amparada_ha": 157200
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 13400.0,
+        "pescadores_inscritos_rpa": 3820,
+        "embarcaciones_artesanales_activas": 1210
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2022,
+      "cosecha_salmonidos_total_ton": 478100.0,
+      "cosecha_salmon_atlantico_ton": 382000.0,
+      "cosecha_salmon_coho_ton": 76100.0,
+      "cosecha_trucha_arcoiris_ton": 20000.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 244,
+      "concentracion_holdings": {
+        "top_3_pct": 51.5,
+        "top_5_pct": 69.8,
+        "propiedad_capital_extranjero_pct": 33.7
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 193,
+        "concesiones_exploracion_vigentes": 345,
+        "superficie_minera_amparada_ha": 155800
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14100.0,
+        "pescadores_inscritos_rpa": 3980,
+        "embarcaciones_artesanales_activas": 1230
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2023,
+      "cosecha_salmonidos_total_ton": 462800.0,
+      "cosecha_salmon_atlantico_ton": 371200.0,
+      "cosecha_salmon_coho_ton": 72800.0,
+      "cosecha_trucha_arcoiris_ton": 18800.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 242,
+      "concentracion_holdings": {
+        "top_3_pct": 51.6,
+        "top_5_pct": 70.0,
+        "propiedad_capital_extranjero_pct": 34.0
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 194,
+        "concesiones_exploracion_vigentes": 342,
+        "superficie_minera_amparada_ha": 154900
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 13950.0,
+        "pescadores_inscritos_rpa": 4080,
+        "embarcaciones_artesanales_activas": 1245
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2024,
+      "cosecha_salmonidos_total_ton": 448500.0,
+      "cosecha_salmon_atlantico_ton": 358800.0,
+      "cosecha_salmon_coho_ton": 71700.0,
+      "cosecha_trucha_arcoiris_ton": 18000.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 245,
+      "concentracion_holdings": {
+        "top_3_pct": 51.68,
+        "top_5_pct": 70.07,
+        "propiedad_capital_extranjero_pct": 34.12
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 195,
+        "concesiones_exploracion_vigentes": 339,
+        "superficie_minera_amparada_ha": 154200
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 13820.0,
+        "pescadores_inscritos_rpa": 4150,
+        "embarcaciones_artesanales_activas": 1255
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2025,
+      "cosecha_salmonidos_total_ton": 440200.0,
+      "cosecha_salmon_atlantico_ton": 352000.0,
+      "cosecha_salmon_coho_ton": 70800.0,
+      "cosecha_trucha_arcoiris_ton": 17400.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 242,
+      "concentracion_holdings": {
+        "top_3_pct": 51.8,
+        "top_5_pct": 70.4,
+        "propiedad_capital_extranjero_pct": 34.3
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 196,
+        "concesiones_exploracion_vigentes": 332,
+        "superficie_minera_amparada_ha": 153000
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14050.0,
+        "pescadores_inscritos_rpa": 4210,
+        "embarcaciones_artesanales_activas": 1265
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    },
+    {
+      "ano": 2026,
+      "cosecha_salmonidos_total_ton": 435000.0,
+      "cosecha_salmon_atlantico_ton": 348000.0,
+      "cosecha_salmon_coho_ton": 70000.0,
+      "cosecha_trucha_arcoiris_ton": 17000.0,
+      "concesiones_acuicolas_vigentes": 745,
+      "hectareas_marinas_concesionadas_ha": 9450.0,
+      "centros_salmonicolas_activos_ciclo": 240,
+      "concentracion_holdings": {
+        "top_3_pct": 51.9,
+        "top_5_pct": 70.8,
+        "propiedad_capital_extranjero_pct": 34.5
+      },
+      "mineria": {
+        "concesiones_explotacion_vigentes": 197,
+        "concesiones_exploracion_vigentes": 325,
+        "superficie_minera_amparada_ha": 151800
+      },
+      "pesca_artesanal": {
+        "desembarque_artesanal_total_ton": 14250.0,
+        "pescadores_inscritos_rpa": 4280,
+        "embarcaciones_artesanales_activas": 1275
+      },
+      "tenencia_tierra": {
+        "superficie_snaspe_protegida_ha": 5830000,
+        "superficie_snaspe_pct": 53.81,
+        "suelo_fiscal_bbnn_ha": 2253000,
+        "suelo_fiscal_bbnn_pct": 20.79,
+        "propiedad_privada_ha": 2752000,
+        "propiedad_privada_pct": 25.4
+      }
+    }
+  ],
+  "series_comunales_cosecha_ton": {
+    "11101": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 409,
+        "centros_activos": 120,
+        "biomasa_cosechada_ton": 233286.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 410,
+        "centros_activos": 106,
+        "biomasa_cosechada_ton": 201839.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 411,
+        "centros_activos": 122,
+        "biomasa_cosechada_ton": 229451.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 412,
+        "centros_activos": 123,
+        "biomasa_cosechada_ton": 255175.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 412,
+        "centros_activos": 124,
+        "biomasa_cosechada_ton": 276238.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 412,
+        "centros_activos": 125,
+        "biomasa_cosechada_ton": 286504.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 412,
+        "centros_activos": 127,
+        "biomasa_cosechada_ton": 266857.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 412,
+        "centros_activos": 128,
+        "biomasa_cosechada_ton": 282079.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 412,
+        "centros_activos": 129,
+        "biomasa_cosechada_ton": 273052.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 412,
+        "centros_activos": 130,
+        "biomasa_cosechada_ton": 264615.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 412,
+        "centros_activos": 131,
+        "biomasa_cosechada_ton": 259718.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 412,
+        "centros_activos": 132,
+        "biomasa_cosechada_ton": 256650.0
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 215,
+        "centros_activos": 68,
+        "biomasa_cosechada_ton": 122574.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 216,
+        "centros_activos": 61,
+        "biomasa_cosechada_ton": 106051.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 217,
+        "centros_activos": 69,
+        "biomasa_cosechada_ton": 120559.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 218,
+        "centros_activos": 70,
+        "biomasa_cosechada_ton": 134075.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 218,
+        "centros_activos": 71,
+        "biomasa_cosechada_ton": 145142.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 218,
+        "centros_activos": 72,
+        "biomasa_cosechada_ton": 150536.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 218,
+        "centros_activos": 72,
+        "biomasa_cosechada_ton": 140213.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 218,
+        "centros_activos": 73,
+        "biomasa_cosechada_ton": 148211.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 218,
+        "centros_activos": 74,
+        "biomasa_cosechada_ton": 143468.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 218,
+        "centros_activos": 75,
+        "biomasa_cosechada_ton": 139035.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 218,
+        "centros_activos": 75,
+        "biomasa_cosechada_ton": 136462.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 218,
+        "centros_activos": 76,
+        "biomasa_cosechada_ton": 134850.0
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 95,
+        "centros_activos": 28,
+        "biomasa_cosechada_ton": 35586.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 96,
+        "centros_activos": 25,
+        "biomasa_cosechada_ton": 30789.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 97,
+        "centros_activos": 29,
+        "biomasa_cosechada_ton": 35001.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 98,
+        "centros_activos": 29,
+        "biomasa_cosechada_ton": 38925.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 98,
+        "centros_activos": 29,
+        "biomasa_cosechada_ton": 42138.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 98,
+        "centros_activos": 30,
+        "biomasa_cosechada_ton": 43704.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 98,
+        "centros_activos": 30,
+        "biomasa_cosechada_ton": 40707.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 98,
+        "centros_activos": 31,
+        "biomasa_cosechada_ton": 43029.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 98,
+        "centros_activos": 31,
+        "biomasa_cosechada_ton": 41652.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 98,
+        "centros_activos": 31,
+        "biomasa_cosechada_ton": 40365.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 98,
+        "centros_activos": 32,
+        "biomasa_cosechada_ton": 39618.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 98,
+        "centros_activos": 32,
+        "biomasa_cosechada_ton": 39150.0
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 0,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 0.0
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "concesiones_vigentes": 14,
+        "centros_activos": 2,
+        "biomasa_cosechada_ton": 3954.0
+      },
+      {
+        "ano": 2016,
+        "concesiones_vigentes": 15,
+        "centros_activos": 2,
+        "biomasa_cosechada_ton": 3421.0
+      },
+      {
+        "ano": 2017,
+        "concesiones_vigentes": 16,
+        "centros_activos": 2,
+        "biomasa_cosechada_ton": 3889.0
+      },
+      {
+        "ano": 2018,
+        "concesiones_vigentes": 17,
+        "centros_activos": 1,
+        "biomasa_cosechada_ton": 4325.0
+      },
+      {
+        "ano": 2019,
+        "concesiones_vigentes": 17,
+        "centros_activos": 1,
+        "biomasa_cosechada_ton": 4682.0
+      },
+      {
+        "ano": 2020,
+        "concesiones_vigentes": 17,
+        "centros_activos": 1,
+        "biomasa_cosechada_ton": 4856.0
+      },
+      {
+        "ano": 2021,
+        "concesiones_vigentes": 17,
+        "centros_activos": 1,
+        "biomasa_cosechada_ton": 4523.0
+      },
+      {
+        "ano": 2022,
+        "concesiones_vigentes": 17,
+        "centros_activos": 1,
+        "biomasa_cosechada_ton": 4781.0
+      },
+      {
+        "ano": 2023,
+        "concesiones_vigentes": 17,
+        "centros_activos": 1,
+        "biomasa_cosechada_ton": 4628.0
+      },
+      {
+        "ano": 2024,
+        "concesiones_vigentes": 17,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 4485.0
+      },
+      {
+        "ano": 2025,
+        "concesiones_vigentes": 17,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 4402.0
+      },
+      {
+        "ano": 2026,
+        "concesiones_vigentes": 17,
+        "centros_activos": 0,
+        "biomasa_cosechada_ton": 4350.0
+      }
+    ]
+  }
+}

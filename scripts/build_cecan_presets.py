@@ -1,0 +1,718 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+scripts/build_cecan_presets.py
+=============================================================================
+Genera data/cecan_16_presets_aysen.json y actualiza data/cruces_multivariables.json
+vinculando las 16 Propiedades de Sistemas Complejos (CECAN) con el Data Lake de Aysén.
+
+CERO EMOJIS - RIGOR EPISTEMOLÓGICO Y MATEMÁTICO - UTF-8
+=============================================================================
+"""
+
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.stdout.reconfigure(encoding='utf-8')
+
+def build_cecan_presets():
+    cecan_data = {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "version": "1.0.0",
+        "dataset_id": "cecan_16_presets_aysen",
+        "titulo": "Presets Sistémicos Empíricos CECAN para la Región de Aysén",
+        "descripcion": "Catálogo canónico de configuración y parametrización de las 16 Propiedades de Sistemas Complejos (marco CECAN) vinculadas a las variables del Data Lake territorial de Aysén.",
+        "autor": "Álvaro Contreras Barrios",
+        "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+        "fecha_generacion": "2026-10-19T12:00:00Z",
+        "total_properties": 16,
+        "properties_with_empirical_charts": 13,
+        "properties_metacognitive_or_simulated": 3,
+        "properties": [
+            {
+                "property_id": 1,
+                "property_num": "01",
+                "name_es": "Retroalimentación",
+                "name_en": "Feedback",
+                "hasEmpiricalChart": True,
+                "description": "Cuando el resultado de un proceso influye en la entrada de forma directa o indirecta, acelerando (positiva) o amortiguando (negativa) el cambio del sistema.",
+                "presets": [
+                    {
+                        "preset_id": "01_a_positiva",
+                        "sub_preset": "A",
+                        "subtype": "Positiva/Refuerzo",
+                        "titulo": "Retroalimentación Positiva (+): Frío, Quema de Leña y Crisis Respiratoria",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "dias_sobre_norma_mp25",
+                        "labelX": "Días sobre norma MP2.5 anual (días)",
+                        "varY": "urgencias_respiratorias_pct",
+                        "labelY": "Urgencias respiratorias invernales (% del total)",
+                        "varZ": "hogares_lena_pct",
+                        "labelZ": "Hogares calefaccionados con leña (%)",
+                        "what_it_shows": "Muestra cómo a mayor cantidad de días con aire saturado por material particulado fino (MP2.5) en invierno, se disparan exponencialmente las consultas de urgencia por patologías respiratorias en los centros de salud de la región.",
+                        "why_complex_system": "Opera como un bucle de retroalimentación de refuerzo (+): ante el descenso severo de la temperatura invernal, los hogares incrementan la combustión residencial de leña húmeda. La acumulación de humo en cuencas de escasa ventilación atmosférica eleva el MP2.5, irritando el tracto respiratorio de la población y saturando la red asistencial, sin que el sistema vuelva por sí solo al equilibrio térmico-sanitario.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    },
+                    {
+                        "preset_id": "01_b_negativa",
+                        "sub_preset": "B",
+                        "subtype": "Negativa/Regulación",
+                        "titulo": "Retroalimentación Negativa (–): Floraciones Algales y Descanso Sanitario en Fiordos",
+                        "type": "series_cruce",
+                        "source_dataset": "cruces_multivariables.marino_productivo",
+                        "varX": "biomasa_cosecha_kton",
+                        "labelX": "Biomasa cosechada mensual (kton)",
+                        "varY": "infa_aerobica_pct",
+                        "labelY": "Conformidad ambiental INFA aeróbica (%)",
+                        "varZ": "alexandrium_cel_l",
+                        "labelZ": "Densidad Alexandrium catenella (cél/L)",
+                        "what_it_shows": "Ilustra cómo el incremento sostenido de la biomasa acuícola en fiordos genera cargas orgánicas en los fondos marinos que gatillan floraciones algales nocivas (FAN), forzando descansos sanitarios y caídas de cosecha que reequilibran la presión sobre el maritorio.",
+                        "why_complex_system": "Funciona como un bucle de retroalimentación negativa u homeostática (–): una elevada densidad de cultivo intensivo sobrecarga los fondos marinos y reduce la capacidad aeróbica; esto interactúa con microalgas tóxicas forzando cosechas anticipadas, cierres preventivos de centros y vacíos sanitarios obligatorios decretados por la autoridad, lo que atenúa la biomasa cultivada y reajusta la carga del ecosistema.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": True
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 2,
+                "property_num": "02",
+                "name_es": "Emergencia",
+                "name_en": "Emergence",
+                "hasEmpiricalChart": True,
+                "description": "Comportamientos, patrones o estructuras a nivel macro que surgen de la interacción colectiva de componentes a nivel micro, imposibles de predecir o deducir observando las partes aisladas.",
+                "presets": [
+                    {
+                        "preset_id": "02_emergencia_economica",
+                        "sub_preset": "A",
+                        "subtype": "Económica Territorial",
+                        "titulo": "Emergencia Económica: Enclaves Extractivos y Fuga del Gasto Comunal",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "inversion_seia_mmusd",
+                        "labelX": "Inversión SEIA aprobada acumulada (MM USD)",
+                        "varY": "fuga_compras_pct",
+                        "labelY": "Fuga de compras públicas fuera de la región (%)",
+                        "varZ": "dependencia_fcm_pct",
+                        "labelZ": "Dependencia del Fondo Común Municipal (%)",
+                        "what_it_shows": "Revela la paradoja territorial de cómo comunas con multimillonarios montos de inversión industrial aprobados en el SEIA retienen un ínfimo valor local, manteniendo una elevada fuga de compras a proveedores extrarregionales y una dependencia fiscal crítica del Fondo Común Municipal.",
+                        "why_complex_system": "Ilustra una propiedad emergente a nivel macro: la coexistencia de enclaves de alto capital productivo con fragilidad fiscal de los municipios no es una decisión voluntaria de ningún actor particular, sino un patrón macro-sistémico emergente derivado de la centralización tributaria, estructuras contractuales corporativas y vacíos de encadenamiento de proveedores locales.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": True,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 3,
+                "property_num": "03",
+                "name_es": "Autoorganización",
+                "name_en": "Self-Organisation",
+                "hasEmpiricalChart": False,
+                "description": "Capacidad de un sistema para generar orden espontáneo, estructuras complejas y coordinación interna a través de interacciones locales sin intervención de un mando o diseño central.",
+                "methodological_note": {
+                    "reason": "La autoorganización emerge de interacciones microscópicas no reducibles a una correlación cartesiana comunal.",
+                    "redirect": "sistemas_complejos.html#prop-03",
+                    "badge": "Simulador de Agentes"
+                },
+                "what_it_shows": "La autoorganización en el territorio se manifiesta en redes adaptativas locales descentralizadas, tales como la coordinación de caletas pesqueras artesanales, mingas comunitarias y acuerdos consuetudinarios de uso del borde costero que no responden a una imposición jerárquica central.",
+                "why_complex_system": "Los patrones de autoorganización surgen de reglas locales simples e interacciones directas entre actores sin necesidad de una autoridad rectora global; reducir este fenómeno a una correlación cartesiana bi-dimensional ocultaría la riqueza relacional microscópica de los agentes en interacción.",
+                "suggested_switches": {
+                    "excludeOutlierCoyhaique": False,
+                    "perCapitaMode": False,
+                    "doubleAxis": False
+                }
+            },
+            {
+                "property_id": 4,
+                "property_num": "04",
+                "name_es": "Palancas y nodos centrales",
+                "name_en": "Leverage Points and Central Nodes",
+                "hasEmpiricalChart": True,
+                "description": "Lugares específicos dentro de un sistema complejo donde una pequeña intervención puede producir modificaciones profundas y generalizadas en el comportamiento global.",
+                "presets": [
+                    {
+                        "preset_id": "04_a_nodo_critico_salud",
+                        "sub_preset": "A",
+                        "subtype": "Nodo Crítico Regional",
+                        "titulo": "Nodo Crítico Regional: Centralización Hospitalaria en Coyhaique y Evacuaciones SAMU",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "poblacion_censo_2024",
+                        "labelX": "Población comunal Censo 2024 (habitantes)",
+                        "varY": "aeroevacuaciones_samu_n",
+                        "labelY": "Aeroevacuaciones médicas SAMU anuales (n)",
+                        "varZ": "camas_hospitalarias",
+                        "labelZ": "Dotación total de camas hospitalarias (n)",
+                        "what_it_shows": "Expone la hiperconcentración de camas hospitalarias de alta complejidad en Coyhaique frente a la dependencia crítica de aeroevacuaciones médicas de urgencia que presentan las comunas periféricas y aisladas de Aysén.",
+                        "why_complex_system": "Demuestra la topología 'hub-and-spoke' de la red asistencial de salud: Coyhaique actúa como nodo concentrador indispensable (hub con más del 70% de las camas de la región). Por ende, cualquier sobrecarga o perturbación operativa en este único nodo central propaga vulnerabilidad inmediata a los 9 nodos periféricos satélites dependientes de evacuación aeromédica.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": True,
+                            "doubleAxis": False
+                        }
+                    },
+                    {
+                        "preset_id": "04_b_palanca_salmon",
+                        "sub_preset": "B",
+                        "subtype": "Palanca de Dominancia",
+                        "titulo": "Palanca de Dominancia: Concentración en Holdings Acuícolas Madres",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "concesiones_salmon",
+                        "labelX": "Concesiones acuícolas otorgadas (n)",
+                        "varY": "biomasa_salmon_ton",
+                        "labelY": "Biomasa de salmón cosechada anual (toneladas)",
+                        "varZ": "centros_activos_salmon",
+                        "labelZ": "Centros de cultivo operativos activos (n)",
+                        "what_it_shows": "Muestra cómo el control de las concesiones y el volumen de cosecha en el litoral de Aysén está concentrado en un reducido número de holdings empresariales matrices que articulan la actividad económica del maritorio.",
+                        "why_complex_system": "Identifica un punto de palanca estructural (leverage point de Donella Meadows): una intervención regulatoria, sanitaria o tecnológica focalizada sobre las 12 corporaciones matrices que controlan los 745 permisos altera más del 80% del flujo bioeconómico y de bioseguridad de todo el maritorio austral.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": True,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 5,
+                "property_num": "05",
+                "name_es": "No linealidad",
+                "name_en": "Non-Linearity",
+                "hasEmpiricalChart": True,
+                "description": "Relaciones de causa y efecto donde los cambios en los resultados no son proporcionales a los cambios en las entradas, manifestando saltos bruscos, rendimientos decrecientes o efectos multiplicadores.",
+                "presets": [
+                    {
+                        "preset_id": "05_no_linealidad_energia",
+                        "sub_preset": "A",
+                        "subtype": "Disrupción Exponencial",
+                        "titulo": "Disrupción Exponencial: Salto Crítico de Cortes Eléctricos en Sistemas Aislados",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "traslado_coyhaique_hrs",
+                        "labelX": "Tiempo de traslado terrestre a Coyhaique (horas)",
+                        "varY": "saidi_horas_anual",
+                        "labelY": "Interrupción del suministro SAIDI (horas/año)",
+                        "varZ": "costo_diesel_aislado_clp",
+                        "labelZ": "Costo de generación diésel aislado (CLP/kWh)",
+                        "what_it_shows": "Exhibe que las horas anuales de interrupción del suministro eléctrico (índice SAIDI) no crecen de manera gradual con la distancia geográfica, sino que explotan bruscamente en comunas que superan las 6 horas de viaje y dependen de micro-redes diésel.",
+                        "why_complex_system": "Caracteriza una respuesta no lineal de tipo umbral: ligeros incrementos en los tiempos de aislamiento logístico detonan fallas en cadena en el abastecimiento de combustible diésel y demoras críticas en el despliegue de cuadrillas técnicas para reparaciones, provocando un salto desproporcionado en la indisponibilidad energética comunal.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 6,
+                "property_num": "06",
+                "name_es": "Dominios de estabilidad",
+                "name_en": "Domains of Stability",
+                "hasEmpiricalChart": True,
+                "description": "Configuraciones o estados estables alternativos hacia los cuales un sistema tiende a gravitar (cuencas de atracción), requiriendo perturbaciones mayores para cambiar de régimen.",
+                "presets": [
+                    {
+                        "preset_id": "06_dominios_fiscales",
+                        "sub_preset": "A",
+                        "subtype": "Cuencas de Atracción Fiscal",
+                        "titulo": "Cuencas de Atracción Fiscal: Bipartición entre Comunas Aisladas y Cabeceras",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "dependencia_fcm_pct",
+                        "labelX": "Dependencia del Fondo Común Municipal (%)",
+                        "varY": "inversion_directa_pct",
+                        "labelY": "Inversión real directa municipal (% del gasto)",
+                        "varZ": "pobreza_multidim_pct",
+                        "labelZ": "Pobreza multidimensional CASEN (%)",
+                        "what_it_shows": "Permite observar la segregación nítida de las 10 comunas en dos regímenes estables diferenciados: cabeceras con relativa autonomía financiera y capacidad de inversión de capital, frente a comunas aisladas cautivas en una alta dependencia del subsidio fiscal nacional y bajo gasto en desarrollo local.",
+                        "why_complex_system": "Demuestra la existencia de cuencas de atracción en finanzas territoriales: los municipios se sitúan en dos estados estacionarios estables, donde transferencias monetarias marginales resultan insuficientes para trasladar a un municipio aislado desde la cuenca de subsidio operativo hacia la cuenca de acumulación de inversión autónoma sin una reestructuración de incentivos sistémicos.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 7,
+                "property_num": "07",
+                "name_es": "Adaptación",
+                "name_en": "Adaptation",
+                "hasEmpiricalChart": True,
+                "description": "Proceso dinámico mediante el cual los agentes y subsistemas ajustan sus conductas, estructuras o estrategias en respuesta a presiones selectivas y transformaciones de su entorno.",
+                "presets": [
+                    {
+                        "preset_id": "07_a_adaptacion_biologica",
+                        "sub_preset": "A",
+                        "subtype": "Biológica",
+                        "titulo": "Adaptación Sanitaria: Intensificación y Uso de Antimicrobianos en Cultivo",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "biomasa_salmon_ton",
+                        "labelX": "Biomasa de salmón cosechada (toneladas)",
+                        "varY": "antibioticos_ica_g_ton",
+                        "labelY": "Índice de consumo de antibióticos ICA (g/ton)",
+                        "varZ": "concesiones_salmon",
+                        "labelZ": "Concesiones acuícolas otorgadas (n)",
+                        "what_it_shows": "Presenta la relación entre el tonelaje de salmón cosechado en cada comuna y los gramos de principios activos antimicrobianos aplicados para controlar brotes de patógenos bacterianos como Piscirickettsia salmonis.",
+                        "why_complex_system": "Manifiesta co-adaptación biológica y tecnológica: ante la proliferación bacteriana en condiciones de cultivo intensivo, el sistema productivo recurre a terapias farmacológicas intensivas; esto genera presiones adaptativas de susceptibilidad en las cepas patógenas, exigiendo permanentes innovaciones y vacunas en un ciclo co-evolutivo continuo.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": True,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    },
+                    {
+                        "preset_id": "07_b_adaptacion_societaria",
+                        "sub_preset": "B",
+                        "subtype": "Societaria",
+                        "titulo": "Adaptación Estructural: 12 Holdings y Red de 42 Sociedades Filiales",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "concesiones_salmon",
+                        "labelX": "Concesiones acuícolas otorgadas (n)",
+                        "varY": "empresas_sii",
+                        "labelY": "Empresas comerciales activas SII (n)",
+                        "varZ": "trabajadores_sii",
+                        "labelZ": "Trabajadores dependientes registrados SII (n)",
+                        "what_it_shows": "Muestra la proliferación de sociedades comerciales filiales y empresas contratistas prestadoras de servicios en torno a las concesiones marítimas para responder a regulaciones operativas y de subcontratación.",
+                        "why_complex_system": "Evidencia la adaptación organizacional a las reglas institucionales: los holdings acuícolas despliegan una arquitectura corporativa multicapa que distribuye licencias, plantas de procesamiento y nóminas entre diversas razones sociales para aislar contingencias sanitarias, optimizar costos transaccionales y adecuarse a marcos normativos sectoriales.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": True,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 8,
+                "property_num": "08",
+                "name_es": "Dependencia del camino",
+                "name_en": "Path Dependence",
+                "hasEmpiricalChart": True,
+                "description": "Influencia persistente y determinante de decisiones y condiciones pasadas sobre las trayectorias de desarrollo y alternativas viables en el presente y futuro.",
+                "presets": [
+                    {
+                        "preset_id": "08_dependencia_camino",
+                        "sub_preset": "A",
+                        "subtype": "Inercia de Infraestructura",
+                        "titulo": "Inercia de Infraestructura: Pavimentación Troncal vs Aislamiento Perpetuo",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "ruta7_pavimentada_km",
+                        "labelX": "Kilómetros pavimentados en Ruta 7 (km)",
+                        "varY": "internet_fijo_pct",
+                        "labelY": "Penetración de internet fijo en hogares (%)",
+                        "varZ": "empresas_sii",
+                        "labelZ": "Empresas formales activas SII (n)",
+                        "what_it_shows": "Demuestra cómo el despliegue histórico de pavimentación vial sobre el eje central de la Carretera Austral sigue determinando hasta hoy las brechas de conectividad digital por fibra óptica y la densidad empresarial comunal.",
+                        "why_complex_system": "Ilustra el efecto de inercia o 'lock-in': una inversión física temprana (el trazado y pavimentación de la Ruta 7) crea retornos crecientes de adopción que canalizan la infraestructura de telecomunicaciones y los flujos comerciales a lo largo del mismo corredor vial, condenando a las comunas litorales o no pavimentadas a un sendero de rezago estructural difícil de corregir sin inversiones de ruptura.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 9,
+                "property_num": "09",
+                "name_es": "Puntos de inflexión",
+                "name_en": "Tipping Points",
+                "hasEmpiricalChart": True,
+                "description": "Umbrales críticos a partir de los cuales pequeños cambios en un forzante desencadenan transiciones rápidas, drásticas y a menudo difícilmente reversibles en el régimen del sistema.",
+                "presets": [
+                    {
+                        "preset_id": "09_a_tipping_glof",
+                        "sub_preset": "A",
+                        "subtype": "Quiebre Hidrológico",
+                        "titulo": "Punto de Quiebre Hidrológico: Vaciado Súbito GLOF en Lago Cachet II",
+                        "type": "series_cruce",
+                        "source_dataset": "cruces_multivariables.criosfera_riesgo",
+                        "varX": "caudal_baker_m3s",
+                        "labelX": "Caudal río Baker estación Bertrand (m³/s)",
+                        "varY": "nivel_colonia_m",
+                        "labelY": "Nivel limnígrafo río Baker Bajo Colonia (m)",
+                        "varZ": "precipitacion_tortel_mm",
+                        "labelZ": "Precipitación mensual Caleta Tortel (mm)",
+                        "what_it_shows": "Registra el régimen extremo del río Baker cuando el colapso del dique de hielo del Glaciar Colonia desagua súbitamente el Lago Cachet II, provocando una crecida intempestiva de miles de metros cúbicos por segundo en Bajo Colonia.",
+                        "why_complex_system": "Modela una bifurcación catastrófica por umbral de flotación: el lago glacial acumula presión hidrostática de forma lenta y silenciosa durante meses hasta alcanzar la cota crítica de despegue basal del hielo, instante en el que se abre un canal subglacial irreversible y se descarga el reservorio en menos de 48 horas.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": True
+                        }
+                    },
+                    {
+                        "preset_id": "09_b_tipping_sst_fan",
+                        "sub_preset": "B",
+                        "subtype": "Umbral Térmico Marino",
+                        "titulo": "Umbral Térmico Marino: Disparo de Floración Tóxica a >15°C",
+                        "type": "series_cruce",
+                        "source_dataset": "cruces_multivariables.marino_productivo",
+                        "varX": "sst_c",
+                        "labelX": "Temperatura superficial del mar SST (°C)",
+                        "varY": "alexandrium_cel_l",
+                        "labelY": "Concentración celular Alexandrium catenella (cél/L)",
+                        "varZ": "biomasa_cosecha_kton",
+                        "labelZ": "Biomasa cosechada en barrio acuícola (kton)",
+                        "what_it_shows": "Muestra cómo la densidad poblacional de la microalga productora de veneno paralizante se mantiene en niveles basales inocuos hasta que la temperatura superficial del agua cruza el umbral crítico estival de 15 °C, desatando una proliferación masiva.",
+                        "why_complex_system": "Expone un quiebre no lineal de fase ecológica: la combinación de temperatura superficial superior a 15 °C y estratificación de la columna de agua reduce el pastoreo de zooplancton y dispara la tasa de división celular de la microalga, transformando abruptamente el fiordo de un estado oligotrófico seguro a un estado tóxico con veda sanitaria total.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": True
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 10,
+                "property_num": "10",
+                "name_es": "Cambio en el tiempo",
+                "name_en": "Change Over Time",
+                "hasEmpiricalChart": True,
+                "description": "Comportamiento temporal de las variables que incluye dinámicas de desfase, acumulaciones, tasas diferenciales de cambio y fluctuaciones cíclicas multianuales.",
+                "presets": [
+                    {
+                        "preset_id": "10_cambio_tiempo_fan",
+                        "sub_preset": "A",
+                        "subtype": "Evolución Multianual Fiordos y FAN",
+                        "titulo": "Evolución Multianual: Calentamiento de Aguas (TSM) y Alertas de Marea Roja Alexandrium (2015-2026)",
+                        "type": "temporal",
+                        "source_dataset": "cruces_multivariables.marino_productivo",
+                        "seriePrimaria": "tsm_fiordos",
+                        "llavePrimaria": "sst_c",
+                        "labelPrimaria": "Temperatura Superficial Marina en Fiordos (°C)",
+                        "serieSecundaria": "fan_alexandrium",
+                        "llaveSecundaria": "alexandrium_cel_l",
+                        "aliasSecundaria": "floracion_alexandrium_fan",
+                        "labelSecundaria": "Densidad Celular Alexandrium catenella (cél/L)",
+                        "what_it_shows": "Presenta la trayectoria longitudinal multianual del calentamiento térmico en los fiordos patagónicos y su sincronía con los picos históricos y alertas de floraciones algales tóxicas entre 2015 y 2026.",
+                        "why_complex_system": "Permite analizar las escalas de tiempo asíncronas y los desfases temporales (time lags): los forzantes climáticos globales actúan a escala decadal sobre la temperatura del océano, generando períodos de latencia que interactúan con la variabilidad estacional y desencadenan respuestas biológicas agudas desfasadas respecto a los cambios atmosféricos inmediatos.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": True
+                        }
+                    },
+                    {
+                        "preset_id": "10_b_cambio_tiempo_mp25",
+                        "sub_preset": "B",
+                        "subtype": "Evolución Multianual Atmosférica y Sanitaria",
+                        "titulo": "Evolución Multianual: Clima Invernal Balmaceda y Calidad del Aire MP2.5 Coyhaique (2015-2026)",
+                        "type": "temporal",
+                        "source_dataset": "cruces_multivariables.clima_salud",
+                        "seriePrimaria": "temperatura_minima_balmaceda",
+                        "llavePrimaria": "temp_min_c",
+                        "labelPrimaria": "Temperatura Mínima Media Invernal (°C)",
+                        "serieSecundaria": "mp25_invernal_coyhaique",
+                        "llaveSecundaria": "mp25_ugm3",
+                        "aliasSecundaria": "mp25_coyhaique",
+                        "labelSecundaria": "Concentración Media MP2.5 Invernal (µg/m³)",
+                        "serieTerciaria": "egresos_respiratorios",
+                        "llaveTerciaria": "egresos_respiratorios",
+                        "labelTerciaria": "Egresos Hospitalarios Respiratorios (casos)",
+                        "what_it_shows": "Muestra la correlación estacional e interanual entre los mínimos térmicos extremos en los valles orientales y la saturación por material particulado fino MP2.5 en Coyhaique con su impacto directo en egresos respiratorios hospitalarios.",
+                        "why_complex_system": "El desacoplamiento temporal y la inversión térmica en cuencas de baja ventilación generan respuestas no lineales en la calidad del aire: una caída de pocos grados bajo cero multiplica exponencialmente la combustión residencial de leña y la persistencia de la pluma de contaminantes.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": True
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 11,
+                "property_num": "11",
+                "name_es": "Sistema abierto",
+                "name_en": "Open System",
+                "hasEmpiricalChart": True,
+                "description": "Intercambio continuo de materia, energía, recursos e información entre el sistema y su entorno externo, delimitado por límites porosos y dinámicos.",
+                "presets": [
+                    {
+                        "preset_id": "11_sistema_abierto_frontera",
+                        "sub_preset": "A",
+                        "subtype": "Vulnerabilidad de Frontera",
+                        "titulo": "Vulnerabilidad de Frontera: Sobrecosto de Combustibles y Presión Externa",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "gasolina_93_clp",
+                        "labelX": "Precio minorista gasolina 93 octanos (CLP/litro)",
+                        "varY": "pernoctaciones_emat",
+                        "labelY": "Pernoctaciones turísticas anuales EMAT (n)",
+                        "varZ": "fauna_amenazada_n",
+                        "labelZ": "Especies de fauna emblemática amenazada (n)",
+                        "what_it_shows": "Ilustra cómo el territorio de Aysén depende estructuralmente de flujos externos importados (combustibles fósiles trasladados por cabotaje marítimo o ruta argentina y demanda turística global) mientras alberga ecosistemas y hábitats de alta singularidad ecológica.",
+                        "why_complex_system": "Los sistemas abiertos requieren un flujo termodinámico constante de insumos y salidas para preservar su organización interna; cuando la cadena de suministro externa sufre un choque de precios o un cierre fronterizo, el costo de vida local y la capacidad de movilidad colapsan sin posibilidad de amortiguación puramente endógena.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 12,
+                "property_num": "12",
+                "name_es": "Impredecibilidad",
+                "name_en": "Unpredictability",
+                "hasEmpiricalChart": False,
+                "description": "Imposibilidad intrínseca de pronosticar con certeza matemática exacta el estado futuro de un sistema debido a la sensibilidad a condiciones iniciales y a interacciones estocásticas no deterministas.",
+                "methodological_note": {
+                    "reason": "La impredecibilidad intrínseca exige análisis probabilístico no determinista.",
+                    "redirect": "laboratorio.html?mode=scenarios",
+                    "badge": "Series Prospectivas 2030-2035"
+                },
+                "what_it_shows": "Destaca cómo la confluencia no lineal de variables meteorológicas extremas, actividad sísmico-volcánica (como el Volcán Hudson) y fluctuaciones de mercados globales impiden predicciones unívocas deterministas en el territorio de Aysén.",
+                "why_complex_system": "La impredecibilidad en sistemas dinámicos no es atribuible a una deficiencia de instrumentación estadística, sino a la naturaleza ontológica de trayectorias caóticas con sensibilidad a condiciones iniciales; su abordaje riguroso exige modelamiento probabilístico de escenarios futuros y bandas de confianza prospectivas.",
+                "suggested_switches": {
+                    "excludeOutlierCoyhaique": False,
+                    "perCapitaMode": False,
+                    "doubleAxis": False
+                }
+            },
+            {
+                "property_id": 13,
+                "property_num": "13",
+                "name_es": "Factores desconocidos",
+                "name_en": "Unknown Factors",
+                "hasEmpiricalChart": False,
+                "description": "Fronteras del conocimiento ontológico e incertidumbre radical, asociadas a fenómenos no modelados, eventos imprevistos y 'cisnes negros' que escapan a los marcos causales convencionales.",
+                "methodological_note": {
+                    "reason": "Lo desconocido e incertidumbre ontológica requiere interrogación crítica reflexiva.",
+                    "redirect": "laboratorio.html?mode=metacognitive",
+                    "badge": "Oráculo Metacognitivo (30 Preguntas)"
+                },
+                "what_it_shows": "Enfoca la atención en los límites epistemológicos de los modelos: mutaciones patológicas imprevistas, colapso de plataformas glaciales remotas en Campos de Hielo y transformaciones geopolíticas globales que inciden en el territorio sin antecedentes estadísticos.",
+                "why_complex_system": "La incertidumbre radical ('unknown unknowns') no puede ser parametrizada en ecuaciones cuantitativas fijas; la resiliencia sistémica demanda salvaguardas precautorias, flexibilidad operativa y herramientas de reflexión metacognitiva que desafíen los supuestos implícitos de los planificadores territoriales.",
+                "suggested_switches": {
+                    "excludeOutlierCoyhaique": False,
+                    "perCapitaMode": False,
+                    "doubleAxis": False
+                }
+            },
+            {
+                "property_id": 14,
+                "property_num": "14",
+                "name_es": "Control distribuido",
+                "name_en": "Distributed Control",
+                "hasEmpiricalChart": True,
+                "description": "Regulación, toma de decisiones y gobernanza repartidas entre múltiples agentes autónomos locales sin un mando centralizado único o jerarquía rígida.",
+                "presets": [
+                    {
+                        "preset_id": "14_control_distribuido_fiscal",
+                        "sub_preset": "A",
+                        "subtype": "Gobernanza Territorial Descentralizada",
+                        "titulo": "Gobernanza Territorial Descentralizada: Municipios Administrando Soberanía Fiscal",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "superficie_snaspe_pct",
+                        "labelX": "Superficie comunal bajo protección SNASPE (%)",
+                        "varY": "presupuesto_mclp",
+                        "labelY": "Presupuesto municipal anual total (M CLP)",
+                        "varZ": "densidad_hab_km2",
+                        "labelZ": "Densidad de población (hab/km²)",
+                        "what_it_shows": "Demuestra cómo municipios rurales con presupuestos muy reducidos administran la soberanía territorial y el resguardo de extensas áreas silvestres protegidas (que cubren más del 50% de la superficie comunal) sin depender de una supervisión burocrática centralizada continua.",
+                        "why_complex_system": "En geografías archipelágicas y continentales aisladas con densidades inferiores a 0,5 hab/km², el control territorial no puede ejercerse eficazmente desde un mando centralizado; la estabilidad y gobernanza emergen de la capacidad de respuesta descentralizada de alcaldías locales, capitanías de puerto y guardaparques distribuidos.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": True,
+                            "perCapitaMode": True,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 15,
+                "property_num": "15",
+                "name_es": "Sistemas anidados",
+                "name_en": "Nested Systems",
+                "hasEmpiricalChart": True,
+                "description": "Estructuras jerárquicas u holárquicas donde sistemas complejos enteros forman parte integrante de sistemas más amplios y, a la vez, contienen subsistemas autorregulados en su interior.",
+                "presets": [
+                    {
+                        "preset_id": "15_sistemas_anidados_cuencas",
+                        "sub_preset": "A",
+                        "subtype": "Jerarquía de Cuencas",
+                        "titulo": "Jerarquía de Cuencas: Glaciares, Derechos de Agua y Macro-escalas",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "superficie_glaciar_km2",
+                        "labelX": "Superficie glaciar inventariada DGA (km²)",
+                        "varY": "daa_no_consuntivos_m3s",
+                        "labelY": "Derechos de agua DAA no consuntivos (m³/s)",
+                        "varZ": "superficie_km2",
+                        "labelZ": "Superficie territorial total comunal (km²)",
+                        "what_it_shows": "Exhibe la integración física e institucional entre las masas glaciares de alta montaña, los caudales protegidos por derechos de agua no consuntivos y la macro-extensión de las cuencas hidrográficas de la región.",
+                        "why_complex_system": "Expresa la arquitectura holárquica (subsistemas dentro de sistemas): cada microcuenca glaciar es un sistema termodinámico propio con balance de masa individual, el cual está anidado dentro de la cuenca fluvial receptora (Baker, Aysén, Pascua) y ésta, a su vez, en el macrosistema oceanográfico de canales y fiordos australes.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            },
+            {
+                "property_id": 16,
+                "property_num": "16",
+                "name_es": "Múltiples escalas y niveles",
+                "name_en": "Multiple Scales and Levels",
+                "hasEmpiricalChart": True,
+                "description": "Fenómenos que ocurren simultáneamente en diversos niveles temporales, espaciales y organizativos, con interacciones cruzadas e interferencias entre escalas macro y micro.",
+                "presets": [
+                    {
+                        "preset_id": "16_multiples_escalas_turismo",
+                        "sub_preset": "A",
+                        "subtype": "Disonancia Multiescala",
+                        "titulo": "Disonancia Multiescala: Turismo Masivo en Comunidades Micro-demográficas",
+                        "type": "cross_section",
+                        "source_dataset": "comunas",
+                        "varX": "ratio_presion_turistica",
+                        "labelX": "Ratio de presión turística (población flotante / permanente)",
+                        "varY": "ha_snaspe_por_guardaparque",
+                        "labelY": "Hectáreas protegidas por guardaparque (ha/guardaparque)",
+                        "varZ": "poblacion_censo_2024",
+                        "labelZ": "Población residente Censo 2024 (habitantes)",
+                        "what_it_shows": "Contrasta la presión estival de visitantes de escala turística global que arriban a comunas de población permanente diminuta (menos de 2.000 habitantes) y dotaciones mínimas de guardaparques para custodiar cientos de miles de hectáreas.",
+                        "why_complex_system": "Ilustra el choque o fricción multiescala: las dinámicas de escala global del turismo internacional (altamente veloces y estacionales) impactan sobre la escala ecológica y de servicios básicos locales (lenta y con capacidades fijas reducidas), generando sobrecargas de infraestructura sanitaria, residuos y fiscalización ambiental.",
+                        "suggested_switches": {
+                            "excludeOutlierCoyhaique": False,
+                            "perCapitaMode": False,
+                            "doubleAxis": False
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+    target_file = ROOT / "data" / "cecan_16_presets_aysen.json"
+    with open(target_file, "w", encoding="utf-8") as f:
+        json.dump(cecan_data, f, indent=2, ensure_ascii=False)
+    print(f"Archivo guardado exitosamente: {target_file}")
+    return cecan_data
+
+def update_cruces_multivariables():
+    cruces_file = ROOT / "data" / "cruces_multivariables.json"
+    with open(cruces_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # 1. Asegurar normalización de nombres de variables en criosfera_riesgo y marino_productivo
+    if "cruces" in data:
+        criosfera = data["cruces"].get("criosfera_riesgo", {})
+        if "datos" in criosfera:
+            for row in criosfera["datos"]:
+                if "caudal_m3s" in row and "caudal_baker_m3s" not in row:
+                    row["caudal_baker_m3s"] = row["caudal_m3s"]
+                if "nivel_limnigrafo_m" in row and "nivel_colonia_m" not in row:
+                    row["nivel_colonia_m"] = row["nivel_limnigrafo_m"]
+
+        # Vincular explícitamente en cada cruce sus propiedades CECAN asociadas
+        clima = data["cruces"].get("clima_salud", {})
+        clima["cecan_vinculos"] = [
+            {
+                "property_id": 1,
+                "property_num": "01",
+                "preset_id": "01_a_positiva",
+                "tipo": "Retroalimentación Positiva (+): Frío, Quema de Leña y Crisis Respiratoria",
+                "variables": ["dias_sobre_norma_mp25", "urgencias_respiratorias_pct", "hogares_lena_pct"]
+            },
+            {
+                "property_id": 10,
+                "property_num": "10",
+                "preset_id": "10_b_cambio_tiempo_mp25",
+                "tipo": "Evolución Multianual: Clima Invernal Balmaceda y Calidad del Aire MP2.5 Coyhaique (2015-2026)",
+                "variables": ["temp_min_c", "mp25_ugm3", "egresos_respiratorios"]
+            }
+        ]
+
+        criosfera["cecan_vinculos"] = [
+            {
+                "property_id": 9,
+                "property_num": "09",
+                "preset_id": "09_a_tipping_glof",
+                "tipo": "Punto de Quiebre Hidrológico: Vaciado Súbito GLOF en Lago Cachet II",
+                "variables": ["caudal_baker_m3s", "nivel_colonia_m", "precipitacion_tortel_mm"]
+            }
+        ]
+
+        marino = data["cruces"].get("marino_productivo", {})
+        marino["cecan_vinculos"] = [
+            {
+                "property_id": 1,
+                "property_num": "01",
+                "preset_id": "01_b_negativa",
+                "tipo": "Retroalimentación Negativa (–): Floraciones Algales y Descanso Sanitario en Fiordos",
+                "variables": ["biomasa_cosecha_kton", "infa_aerobica_pct", "alexandrium_cel_l"]
+            },
+            {
+                "property_id": 9,
+                "property_num": "09",
+                "preset_id": "09_b_tipping_sst_fan",
+                "tipo": "Umbral Térmico Marino: Disparo de Floración Tóxica a >15°C",
+                "variables": ["sst_c", "alexandrium_cel_l", "biomasa_cosecha_kton"]
+            },
+            {
+                "property_id": 10,
+                "property_num": "10",
+                "preset_id": "10_cambio_tiempo_fan",
+                "tipo": "Evolución Multianual: Calentamiento de Aguas y Alertas de Marea Roja (2015-2026)",
+                "variables": ["sst_c", "alexandrium_cel_l", "biomasa_cosecha_kton"]
+            }
+        ]
+
+    # 2. Agregar índice de cruces CECAN interoperable a nivel raíz
+    data["cecan_interoperabilidad"] = {
+        "origen_marco": "CECAN 16 Complex System Properties",
+        "total_propiedades": 16,
+        "propiedades_empiricas": 13,
+        "propiedades_epistemicas": 3,
+        "catalogo_presets_ref": "data/cecan_16_presets_aysen.json",
+        "resumen_vinculos": [
+            {"property_id": 1, "property_num": "01", "presets": ["01_a_positiva", "01_b_negativa"], "dataset": ["comunas", "cruces.marino_productivo"]},
+            {"property_id": 2, "property_num": "02", "presets": ["02_emergencia_economica"], "dataset": ["comunas"]},
+            {"property_id": 3, "property_num": "03", "presets": [], "dataset": ["simulacion_agentes"], "epistemica": True},
+            {"property_id": 4, "property_num": "04", "presets": ["04_a_nodo_critico_salud", "04_b_palanca_salmon"], "dataset": ["comunas"]},
+            {"property_id": 5, "property_num": "05", "presets": ["05_no_linealidad_energia"], "dataset": ["comunas"]},
+            {"property_id": 6, "property_num": "06", "presets": ["06_dominios_fiscales"], "dataset": ["comunas"]},
+            {"property_id": 7, "property_num": "07", "presets": ["07_a_adaptacion_biologica", "07_b_adaptacion_societaria"], "dataset": ["comunas"]},
+            {"property_id": 8, "property_num": "08", "presets": ["08_dependencia_camino"], "dataset": ["comunas"]},
+            {"property_id": 9, "property_num": "09", "presets": ["09_a_tipping_glof", "09_b_tipping_sst_fan"], "dataset": ["cruces.criosfera_riesgo", "cruces.marino_productivo"]},
+            {"property_id": 10, "property_num": "10", "presets": ["10_cambio_tiempo_fan", "10_b_cambio_tiempo_mp25"], "dataset": ["series_prospectivas", "cruces.marino_productivo", "cruces.clima_salud"]},
+            {"property_id": 11, "property_num": "11", "presets": ["11_sistema_abierto_frontera"], "dataset": ["comunas"]},
+            {"property_id": 12, "property_num": "12", "presets": [], "dataset": ["series_prospectivas"], "epistemica": True},
+            {"property_id": 13, "property_num": "13", "presets": [], "dataset": ["metacognitivo"], "epistemica": True},
+            {"property_id": 14, "property_num": "14", "presets": ["14_control_distribuido_fiscal"], "dataset": ["comunas"]},
+            {"property_id": 15, "property_num": "15", "presets": ["15_sistemas_anidados_cuencas"], "dataset": ["comunas"]},
+            {"property_id": 16, "property_num": "16", "presets": ["16_multiples_escalas_turismo"], "dataset": ["comunas"]}
+        ]
+    }
+
+    with open(cruces_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"Archivo actualizado exitosamente: {cruces_file}")
+
+if __name__ == "__main__":
+    build_cecan_presets()
+    update_cruces_multivariables()

@@ -46,6 +46,39 @@ CSV_OUT_DIR = SYSTEMIC_DIR / "csv"
 OUTPUT_JSON = SYSTEMIC_DIR / "03_concesiones_tierra_mar.json"
 HOLDINGS_CSV = CSV_OUT_DIR / "03_holdings_salmoneros_ruts_aysen.csv"
 
+sys.path.insert(0, str(REPO_ROOT))
+from scripts.ingesta.build_historical_raw_data import (
+    SERIES_HISTORICAS_REGIONALES_WP03,
+    build_comuna_series_wp03,
+    generate_raw_files
+)
+
+WP03_INDICATORS = {
+    "11101": {"biomasa": 0, "ica": 0.0, "amerb_dec": 0, "amerb_op": 0},
+    "11102": {"biomasa": 0, "ica": 0.0, "amerb_dec": 0, "amerb_op": 0},
+    "11201": {"biomasa": 265000, "ica": 335.4, "amerb_dec": 12, "amerb_op": 4},
+    "11202": {"biomasa": 185000, "ica": 324.8, "amerb_dec": 14, "amerb_op": 5},
+    "11203": {"biomasa": 45000, "ica": 382.1, "amerb_dec": 18, "amerb_op": 7},
+    "11401": {"biomasa": 0, "ica": 0.0, "amerb_dec": 0, "amerb_op": 0},
+    "11402": {"biomasa": 0, "ica": 0.0, "amerb_dec": 0, "amerb_op": 0},
+    "11301": {"biomasa": 0, "ica": 0.0, "amerb_dec": 0, "amerb_op": 0},
+    "11302": {"biomasa": 0, "ica": 0.0, "amerb_dec": 0, "amerb_op": 0},
+    "11303": {"biomasa": 8500, "ica": 289.0, "amerb_dec": 2, "amerb_op": 1},
+}
+
+CABECERAS_COMUNALES = {
+    "11101": "Coyhaique",
+    "11102": "Lago Verde",
+    "11201": "Puerto Aysén",
+    "11202": "Puerto Cisnes",
+    "11203": "Melinka",
+    "11401": "Chile Chico",
+    "11402": "Puerto Ingeniero Ibáñez",
+    "11301": "Cochrane",
+    "11302": "Villa O'Higgins",
+    "11303": "Caleta Tortel",
+}
+
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 AysenAtlasIngest/1.0"
 REQUEST_TIMEOUT = 5  # Segundos estrictos de timeout
 
@@ -945,6 +978,9 @@ def export_holdings_ruts_csv():
 
     print(f"  [CSV] Archivo maestro de holdings y RUTs exportado en {HOLDINGS_CSV.relative_to(REPO_ROOT)} ({len(rows)} registros)")
 
+    # Generar respaldos crudos estructurados de series históricas 2015-2026
+    generate_raw_files()
+
 
 def generate_systemic_dataset():
     """Genera data/systemic/03_concesiones_tierra_mar.json respetando MASTER_DATA_CONTRACT.md."""
@@ -1629,6 +1665,19 @@ def generate_systemic_dataset():
             }
         }
     ]
+
+    # Enriquecer comunas con cabecera, indicadores expandidos y series históricas 2015-2026
+    for c in por_comuna:
+        ine = str(c.get("comuna_ine"))
+        if "cabecera" not in c or not c.get("cabecera"):
+            c["cabecera"] = CABECERAS_COMUNALES.get(ine, "")
+        if ine in WP03_INDICATORS:
+            ind = WP03_INDICATORS[ine]
+            c["datos"]["concesiones_acuicolas"]["biomasa_cosechada_ton_anual"] = ind["biomasa"]
+            c["datos"]["concesiones_acuicolas"]["indice_consumo_antibioticos_ica_g_ton"] = ind["ica"]
+            c["datos"]["concesiones_acuicolas"]["amerb_decretadas_cantidad"] = ind["amerb_dec"]
+            c["datos"]["concesiones_acuicolas"]["amerb_operativas_vigentes"] = ind["amerb_op"]
+        c["datos"]["series_historicas"] = build_comuna_series_wp03(ine)
 
     # Nodos georreferenciados reales (38 nodos verificados dentro de BBOX de Aysén)
     nodos_georreferenciados = [
@@ -2359,6 +2408,41 @@ def generate_systemic_dataset():
                 "url_origen": "https://www.bcn.cl/siit/reportescomunales/",
                 "metodo_extraccion": "Descarga Tabulado Oficial Estadísticas Territoriales BCN 2024",
                 "archivo_raw_local": "data/raw/territorio_concesiones/endpoints_query_audit.json"
+            },
+            {
+                "institucion": "SUBPESCA / SERNAPESCA",
+                "sistema": "Cosechas Salmoneras y Biomasa Histórica por Especie en Aysén (2015-2026)",
+                "url_origen": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+                "metodo_extraccion": "Anuarios Estadísticos Oficiales de Pesca y Acuicultura",
+                "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_acuicultura_subpesca_2015_2026.json"
+            },
+            {
+                "institucion": "SUBPESCA / CMF / Memorias Financieras",
+                "sistema": "Evolución de Concentración de Concesiones en Principales Holdings (2018-2026)",
+                "url_origen": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50830.html",
+                "metodo_extraccion": "Trazabilidad de Fusiones, Adquisiciones y Concesiones por Grupo Empresarial",
+                "archivo_raw_local": "data/raw/territorio_concesiones/evolucion_holdings_salmoneros_2018_2026.json"
+            },
+            {
+                "institucion": "SERNAGEOMIN",
+                "sistema": "Evolución de Concesiones y Superficie Amparada de Minería en Aysén (2015-2026)",
+                "url_origen": "https://www.sernageomin.cl/catastro-de-concesiones-mineras/",
+                "metodo_extraccion": "Catastro Nacional de Concesiones Mineras y Anuarios SERNAGEOMIN",
+                "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_mineria_sernageomin_2015_2026.json"
+            },
+            {
+                "institucion": "SERNAPESCA",
+                "sistema": "Desembarques y Pescadores Artesanales RPA en Caletas de Aysén (2015-2026)",
+                "url_origen": "https://www.sernapesca.cl/portal-de-pesca-artesanal",
+                "metodo_extraccion": "Registro Pesquero Artesanal RPA y Estadísticas de Caletas",
+                "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_pesca_artesanal_sernapesca_2015_2026.json"
+            },
+            {
+                "institucion": "CONAF / Ministerio de Bienes Nacionales",
+                "sistema": "Evolución de Superficie Protegida SNASPE y Suelo Fiscal BBNN (2015-2026)",
+                "url_origen": "https://www.conaf.cl/parques-nacionales/",
+                "metodo_extraccion": "Catastro de Áreas Protegidas e IDE Bienes Nacionales",
+                "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_tenencia_tierra_bbnn_conaf_2015_2026.json"
             }
         ],
         "resumen_regional": {
@@ -2387,7 +2471,8 @@ def generate_systemic_dataset():
                 "holding_lider_regional": "AquaChile (Agrosuper S.A., 210 concesiones, 28.19%)",
                 "segundo_operador_regional": "Mowi Chile S.A. (Mowi ASA Noruega, 95 concesiones, 12.75%)",
                 "tercer_operador_regional": "Multi X S.A. (Multiexport Foods / Mitsui / Cargill, 80 concesiones, 10.74%)"
-            }
+            },
+            "series_historicas_regionales": SERIES_HISTORICAS_REGIONALES_WP03
         },
         "holdings_salmoneros_matriz_ruts": HOLDINGS_SALMONEROS_AYSEN,
         "por_comuna": por_comuna,

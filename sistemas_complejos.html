@@ -101,7 +101,7 @@
 
     .brand-author-name {
       font-family: var(--font-serif);
-      font-size: 1.2rem;
+      font-size: clamp(0.92rem, 3.8vw, 1.2rem);
       font-weight: 700;
       letter-spacing: -0.015em;
       color: var(--ink);
@@ -614,6 +614,391 @@
       font-weight: 500;
       color: var(--ink);
     }
+
+    /* =========================================================================
+       UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
+       ========================================================================= */
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.16);
+      border-radius: 4px;
+      color: var(--cobalt);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: var(--cobalt);
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      pointer-events: none;
+      visibility: hidden;
+      transition: visibility 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .mobile-nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 20, 50, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open .mobile-nav-backdrop {
+      opacity: 1;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(86vw, 360px);
+      background: rgba(252, 249, 248, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid rgba(0, 53, 127, 0.18);
+      box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem 1.25rem 2rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-nav-drawer.open .mobile-nav-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
+    }
+
+    .mobile-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .mobile-nav-author {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .mobile-nav-close {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.15);
+      border-radius: 4px;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-nav-close:hover {
+      color: var(--cobalt);
+      border-color: var(--cobalt);
+      background: rgba(0, 53, 127, 0.05);
+    }
+
+    .mobile-nav-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cobalt);
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      min-height: 48px;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 53, 127, 0.10);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-nav-link:hover {
+      background: rgba(0, 53, 127, 0.05);
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+      transform: translateX(2px);
+    }
+
+    .mobile-nav-link.active {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+      font-weight: 600;
+    }
+
+    .mobile-nav-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cobalt);
+      font-weight: 600;
+      width: 24px;
+    }
+
+    .mobile-nav-text {
+      flex: 1;
+    }
+
+    .mobile-nav-arrow {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .editorial-drawer-handle {
+      display: none;
+    }
+
+    /* Breakpoints Responsivos */
+    @media (max-width: 1023px) {
+      .brand-nav-pills {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: inline-flex !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      main {
+        height: calc(100vh - 56px);
+      }
+
+      #gridView {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .grid-cell {
+        min-height: 200px;
+      }
+
+      #detailView {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .stage-pane {
+        width: 100%;
+        height: 100%;
+        border-right: none;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      .stage-top-bar {
+        padding: 8px 14px;
+        gap: 6px;
+      }
+
+      .stage-controls {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .stage-btn {
+        min-height: 38px;
+        padding: 6px 12px;
+        font-size: 11px;
+      }
+
+      .stage-bottom-area {
+        padding-bottom: 46px; /* Para que la barra de navegación no tape el stepper */
+      }
+
+      .editorial-drawer-handle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% + 36px);
+        margin: 0 -18px 12px;
+        padding: 0 16px;
+        height: 44px;
+        min-height: 44px;
+        background: var(--paper-subtle);
+        border: none;
+        border-bottom: 1px solid var(--rule);
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--cobalt);
+        cursor: pointer;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        touch-action: manipulation;
+      }
+
+      .editorial-drawer-handle .handle-bar {
+        width: 38px;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(0, 53, 127, 0.25);
+        position: absolute;
+        left: 50%;
+        top: 5px;
+        transform: translateX(-50%);
+      }
+
+      .editorial-pane {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 82vh;
+        max-height: 82vh;
+        background: rgba(252, 249, 248, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 2px solid var(--cobalt);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+        z-index: 80;
+        transform: translateY(calc(100% - 44px));
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 0 18px 24px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .editorial-pane.expanded {
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #gridView {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .grid-cell {
+        min-height: 180px;
+        padding: 12px 14px;
+      }
+
+      .cell-title {
+        font-size: 14px;
+      }
+
+      #detailView {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .stage-pane {
+        width: 100%;
+        height: 48vh;
+        min-height: 320px;
+        flex-shrink: 0;
+      }
+
+      .editorial-pane {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        transform: none;
+        box-shadow: none;
+        border-top: 2px solid var(--cobalt);
+        overflow-y: visible;
+        padding: 16px 18px 48px;
+        flex-shrink: 0;
+      }
+
+      .editorial-drawer-handle {
+        display: none;
+      }
+
+      .brand-module-sub {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-divider,
+      #btnHomeTitle {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -644,9 +1029,63 @@
             <span class="pill-arrow">↗</span>
           </a>
         </nav>
+        <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- CAJÓN DE NAVEGACIÓN MÓVIL UNIVERSAL -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="brand-dot"></span>
+          <span class="mobile-nav-author">Álvaro Contreras Barrios</span>
+        </div>
+        <button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>
+      <nav class="mobile-nav-links" aria-label="Navegación móvil">
+        <a href="portal.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">01</span>
+          <span class="mobile-nav-text">Portada</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="sistemas_complejos.html" class="mobile-nav-link active">
+          <span class="mobile-nav-num">02</span>
+          <span class="mobile-nav-text">Visualizador de Complejidad</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="index.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">03</span>
+          <span class="mobile-nav-text">Datos de Aysén</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="laboratorio.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">04</span>
+          <span class="mobile-nav-text">Laboratorio Sistémico</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">LinkedIn</span>
+          <span class="mobile-nav-arrow">↗</span>
+        </a>
+      </nav>
+    </div>
+  </div>
 
   <main>
     <!-- VISTA 1: MATRIZ 4x4 DE LAS 16 PROPIEDADES -->
@@ -677,7 +1116,12 @@
         </div>
       </div>
 
-      <aside class="editorial-pane">
+      <aside class="editorial-pane" id="editorialPane">
+        <button class="editorial-drawer-handle" id="btnToggleEditorialDrawer" aria-label="Alternar lectura editorial" type="button">
+          <span class="handle-bar"></span>
+          <span>Ficha Editorial CECAN</span>
+          <span id="editorialDrawerArrow">▲</span>
+        </button>
         <div>
           <div class="prop-header">
             <span class="prop-index" id="propIndex">#01</span>
@@ -1958,14 +2402,137 @@
     const ctx = sceneCanvas.getContext('2d');
 
     function resizeCanvases() {
-      const vp = document.getElementById('stageViewport').getBoundingClientRect();
-      if (vp.width > 0 && vp.height > 0) {
+      const vpEl = document.getElementById('stageViewport');
+      if (!vpEl) return;
+      const w = vpEl.clientWidth;
+      const h = vpEl.clientHeight;
+      if (w > 0 && h > 0) {
         const dpr = window.devicePixelRatio || 1;
-        sceneCanvas.width = vp.width * dpr;
-        sceneCanvas.height = vp.height * dpr;
+        sceneCanvas.width = Math.round(w * dpr);
+        sceneCanvas.height = Math.round(h * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
     }
+
+    // =========================================================================
+    // SOPORTE TÁCTIL E INTERACCIÓN GESTUAL EN SIMULADORES (#sceneCanvas)
+    // =========================================================================
+    const touchState = {
+      active: false,
+      nx: 0.5,
+      ny: 0.5,
+      canvasX: 0,
+      canvasY: 0,
+      rippleR: 0,
+      rippleAlpha: 0
+    };
+
+    function handleSimulationPointer(e, isStart, isEnd) {
+      if (!sceneCanvas) return;
+      const rect = sceneCanvas.getBoundingClientRect();
+      const clientX = e.touches && e.touches[0] ? e.touches[0].clientX : (e.changedTouches ? e.changedTouches[0].clientX : e.clientX);
+      const clientY = e.touches && e.touches[0] ? e.touches[0].clientY : (e.changedTouches ? e.changedTouches[0].clientY : e.clientY);
+      if (clientX === undefined || clientY === undefined) return;
+
+      const cx = clientX - rect.left;
+      const cy = clientY - rect.top;
+      const nx = Math.max(0, Math.min(1, cx / (rect.width || 1)));
+      const ny = Math.max(0, Math.min(1, cy / (rect.height || 1)));
+
+      touchState.canvasX = cx;
+      touchState.canvasY = cy;
+      touchState.nx = nx;
+      touchState.ny = ny;
+
+      if (isStart) {
+        touchState.active = true;
+        touchState.rippleR = 12;
+        touchState.rippleAlpha = 0.85;
+      }
+      if (isEnd) {
+        touchState.active = false;
+      }
+
+      // Interacción táctil en los modelos de complejidad
+      if (touchState.active) {
+        // #01 Retroalimentación
+        if (currentPropId === 1) {
+          if (currentExampleIdx === 0 && state.people) {
+            state.people.forEach(p => {
+              const dist = Math.hypot(p.x - nx, p.y - ny);
+              if (dist < 0.22) p.panicked = true;
+            });
+          } else if (currentExampleIdx === 1) {
+            state.bodyTemp = 36.0 + ny * 3.0;
+          } else if (currentExampleIdx === 2 && state.gasBubbles) {
+            state.gasBubbles.forEach(b => {
+              if (Math.abs(b.x - nx) < 0.14) b.released = true;
+            });
+          }
+        }
+        // #02 Emergencia
+        else if (currentPropId === 2) {
+          if (currentExampleIdx === 1) state.trafficBrakeTriggered = true;
+          else if (currentExampleIdx === 0) state.buyerDemandBoost = true;
+          else if (currentExampleIdx === 2) state.neuralSync = true;
+        }
+        // #03 Autoorganización
+        else if (currentPropId === 3) {
+          if (currentExampleIdx === 0 && state.boids) {
+            state.boids.forEach(b => {
+              const dx = nx - b.x, dy = ny - b.y;
+              const d = Math.hypot(dx, dy);
+              if (d < 0.28 && d > 0.01) {
+                b.x += (dx / d) * 0.025;
+                b.y += (dy / d) * 0.025;
+                b.angle = Math.atan2(dy, dx);
+              }
+            });
+          } else if (currentExampleIdx === 1 && state.pedestrians) {
+            state.pedestrians.forEach(p => {
+              if (Math.abs(p.y - ny) < 0.16) p.x += p.dir * 0.035;
+            });
+          }
+        }
+        // #06 Dominios de estabilidad (Arrastrar canica entre pozos con el dedo)
+        else if (currentPropId === 6) {
+          state.ballMode = 'dragged';
+          state.ballU = (nx - 0.5) * 2.6;
+        }
+        // #09 Puntos de inflexión (Mover umbral crítico con el tacto)
+        else if (currentPropId === 9) {
+          if (currentExampleIdx === 0) state.gentrificationRent = 300 + nx * 600;
+          else if (currentExampleIdx === 1) state.unrestLevel = nx;
+        }
+        // #14 Auto-organización y Gobernanza
+        else if (currentPropId === 14) {
+          state.localEmpowerment = nx > 0.5;
+        }
+      }
+    }
+
+    sceneCanvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      handleSimulationPointer(e, true, false);
+    }, { passive: false });
+
+    sceneCanvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      handleSimulationPointer(e, false, false);
+    }, { passive: false });
+
+    sceneCanvas.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      handleSimulationPointer(e, false, true);
+    }, { passive: false });
+
+    sceneCanvas.addEventListener('touchcancel', () => {
+      touchState.active = false;
+    });
+
+    sceneCanvas.addEventListener('mousedown', (e) => handleSimulationPointer(e, true, false));
+    window.addEventListener('mousemove', (e) => { if (touchState.active) handleSimulationPointer(e, false, false); });
+    window.addEventListener('mouseup', (e) => { if (touchState.active) handleSimulationPointer(e, false, true); });
 
     function drawFigurativeIcon(kind, x, y, scale, strokeColor, fillColor) {
       ctx.save();
@@ -2129,6 +2696,19 @@
 
       let metricNorm = 0.3;
       let telemetryStr = "";
+
+      // Feedback táctil visual (onda de propagación sutil en el punto de contacto)
+      if (touchState.rippleAlpha > 0.01) {
+        touchState.rippleR += dt * 50;
+        touchState.rippleAlpha = Math.max(0, touchState.rippleAlpha - dt * 1.6);
+        ctx.save();
+        ctx.strokeStyle = `rgba(0, 53, 127, ${touchState.rippleAlpha.toFixed(3)})`;
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.arc(touchState.canvasX, touchState.canvasY, touchState.rippleR, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+      }
 
       // -----------------------------------------------------------------------
       // #01 RETROALIMENTACIÓN
@@ -4202,6 +4782,10 @@
       gridView.classList.add('hidden');
       document.getElementById('detailView').classList.add('active');
       document.getElementById('btnBackToGrid').classList.remove('hidden');
+      const ep = document.getElementById('editorialPane');
+      if (ep) ep.classList.remove('expanded');
+      const arr = document.getElementById('editorialDrawerArrow');
+      if (arr) arr.textContent = '▲';
       resetScenarioState(id, 0);
       renderDetailUI();
       requestAnimationFrame(() => resizeCanvases());
@@ -4212,6 +4796,8 @@
       document.getElementById('detailView').classList.remove('active');
       gridView.classList.remove('hidden');
       document.getElementById('btnBackToGrid').classList.add('hidden');
+      const ep = document.getElementById('editorialPane');
+      if (ep) ep.classList.remove('expanded');
       requestAnimationFrame(() => resizeMiniCanvases());
     }
 
@@ -4268,6 +4854,53 @@
     buildGrid();
     resetScenarioState(1, 0);
     renderDetailUI();
+
+    // =========================================================================
+    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL Y DRAWER EDITORIAL
+    // =========================================================================
+    const btnMobileMenu = document.getElementById('btnMobileMenu');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const btnMobileClose = document.getElementById('btnMobileClose');
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+    function openMobileNav() {
+      if (!mobileNavDrawer) return;
+      mobileNavDrawer.classList.add('open');
+      mobileNavDrawer.setAttribute('aria-hidden', 'false');
+      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileNav() {
+      if (!mobileNavDrawer) return;
+      mobileNavDrawer.classList.remove('open');
+      mobileNavDrawer.setAttribute('aria-hidden', 'true');
+      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
+    }
+
+    if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
+    if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
+    if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+        closeMobileNav();
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    const btnToggleEditorialDrawer = document.getElementById('btnToggleEditorialDrawer');
+    const editorialPane = document.getElementById('editorialPane');
+    if (btnToggleEditorialDrawer && editorialPane) {
+      btnToggleEditorialDrawer.addEventListener('click', () => {
+        editorialPane.classList.toggle('expanded');
+        const isExp = editorialPane.classList.contains('expanded');
+        const arr = document.getElementById('editorialDrawerArrow');
+        if (arr) arr.textContent = isExp ? '▼' : '▲';
+      });
+    }
 
     let lastTime = performance.now();
     function animate(now) {

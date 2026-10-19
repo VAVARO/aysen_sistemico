@@ -15,6 +15,344 @@
   ],
   "resumen_regional": {
     "region_codigo": "CL-XI",
+    "series_historicas_regionales": [
+      {
+        "anio": 2015,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 187150,
+          "aps_urgencias_atenciones_total": 47200,
+          "aps_rondas_rurales_total": 538,
+          "hosp_egresos_red_ssa": 11049,
+          "hosp_intervenciones_quirurgicas_red": 6130,
+          "hosp_consultas_especialidad_red": 104550,
+          "hosp_urgencias_red": 98500
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1639,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 13950,
+          "matricula_tecnico_profesional_total": 2967,
+          "matricula_parvularia_total": 2768
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 114325,
+          "subsidios_operacion_mclp_total": 4017
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 7647,
+          "desembarque_artesanal_ton_total": 11065,
+          "desembarque_industrial_ton_total": 14200
+        }
+      },
+      {
+        "anio": 2016,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 191980,
+          "aps_urgencias_atenciones_total": 49290,
+          "aps_rondas_rurales_total": 538,
+          "hosp_egresos_red_ssa": 11373,
+          "hosp_intervenciones_quirurgicas_red": 6290,
+          "hosp_consultas_especialidad_red": 107630,
+          "hosp_urgencias_red": 100990
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1616,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14083,
+          "matricula_tecnico_profesional_total": 3025,
+          "matricula_parvularia_total": 2837
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 117475,
+          "subsidios_operacion_mclp_total": 4165
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 7891,
+          "desembarque_artesanal_ton_total": 11432,
+          "desembarque_industrial_ton_total": 14600
+        }
+      },
+      {
+        "anio": 2017,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 197560,
+          "aps_urgencias_atenciones_total": 51650,
+          "aps_rondas_rurales_total": 562,
+          "hosp_egresos_red_ssa": 11717,
+          "hosp_intervenciones_quirurgicas_red": 6500,
+          "hosp_consultas_especialidad_red": 111230,
+          "hosp_urgencias_red": 103920
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1592,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14215,
+          "matricula_tecnico_profesional_total": 3083,
+          "matricula_parvularia_total": 2906
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 120690,
+          "subsidios_operacion_mclp_total": 4324
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 8139,
+          "desembarque_artesanal_ton_total": 11870,
+          "desembarque_industrial_ton_total": 15100
+        }
+      },
+      {
+        "anio": 2018,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 202950,
+          "aps_urgencias_atenciones_total": 54040,
+          "aps_rondas_rurales_total": 562,
+          "hosp_egresos_red_ssa": 11995,
+          "hosp_intervenciones_quirurgicas_red": 6700,
+          "hosp_consultas_especialidad_red": 114740,
+          "hosp_urgencias_red": 106920
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1566,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14375,
+          "matricula_tecnico_profesional_total": 3151,
+          "matricula_parvularia_total": 2987
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 124140,
+          "subsidios_operacion_mclp_total": 4512
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 8419,
+          "desembarque_artesanal_ton_total": 12358,
+          "desembarque_industrial_ton_total": 15700
+        }
+      },
+      {
+        "anio": 2019,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 208160,
+          "aps_urgencias_atenciones_total": 56440,
+          "aps_rondas_rurales_total": 578,
+          "hosp_egresos_red_ssa": 12245,
+          "hosp_intervenciones_quirurgicas_red": 6840,
+          "hosp_consultas_especialidad_red": 117740,
+          "hosp_urgencias_red": 109770
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1546,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14502,
+          "matricula_tecnico_profesional_total": 3211,
+          "matricula_parvularia_total": 3057
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 127380,
+          "subsidios_operacion_mclp_total": 4702
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 8680,
+          "desembarque_artesanal_ton_total": 12825,
+          "desembarque_industrial_ton_total": 16200
+        }
+      },
+      {
+        "anio": 2020,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 171780,
+          "aps_urgencias_atenciones_total": 44860,
+          "aps_rondas_rurales_total": 456,
+          "hosp_egresos_red_ssa": 10268,
+          "hosp_intervenciones_quirurgicas_red": 5060,
+          "hosp_consultas_especialidad_red": 89350,
+          "hosp_urgencias_red": 86150
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1526,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14372,
+          "matricula_tecnico_profesional_total": 3161,
+          "matricula_parvularia_total": 2734
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 124180,
+          "subsidios_operacion_mclp_total": 4919
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 8558,
+          "desembarque_artesanal_ton_total": 11122,
+          "desembarque_industrial_ton_total": 14100
+        }
+      },
+      {
+        "anio": 2021,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 195130,
+          "aps_urgencias_atenciones_total": 52780,
+          "aps_rondas_rurales_total": 524,
+          "hosp_egresos_red_ssa": 11252,
+          "hosp_intervenciones_quirurgicas_red": 6060,
+          "hosp_consultas_especialidad_red": 105920,
+          "hosp_urgencias_red": 100350
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1515,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14496,
+          "matricula_tecnico_profesional_total": 3220,
+          "matricula_parvularia_total": 2939
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 128600,
+          "subsidios_operacion_mclp_total": 5162
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 8839,
+          "desembarque_artesanal_ton_total": 12445,
+          "desembarque_industrial_ton_total": 15800
+        }
+      },
+      {
+        "anio": 2022,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 212330,
+          "aps_urgencias_atenciones_total": 59325,
+          "aps_rondas_rurales_total": 578,
+          "hosp_egresos_red_ssa": 12245,
+          "hosp_intervenciones_quirurgicas_red": 6920,
+          "hosp_consultas_especialidad_red": 120570,
+          "hosp_urgencias_red": 112330
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1501,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14678,
+          "matricula_tecnico_profesional_total": 3290,
+          "matricula_parvularia_total": 3114
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 133305,
+          "subsidios_operacion_mclp_total": 5420
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 9103,
+          "desembarque_artesanal_ton_total": 13622,
+          "desembarque_industrial_ton_total": 17100
+        }
+      },
+      {
+        "anio": 2023,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 220100,
+          "aps_urgencias_atenciones_total": 62540,
+          "aps_rondas_rurales_total": 588,
+          "hosp_egresos_red_ssa": 12628,
+          "hosp_intervenciones_quirurgicas_red": 7220,
+          "hosp_consultas_especialidad_red": 125880,
+          "hosp_urgencias_red": 116890
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1486,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 14844,
+          "matricula_tecnico_profesional_total": 3359,
+          "matricula_parvularia_total": 3199
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 137390,
+          "subsidios_operacion_mclp_total": 5701
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 9314,
+          "desembarque_artesanal_ton_total": 14264,
+          "desembarque_industrial_ton_total": 17800
+        }
+      },
+      {
+        "anio": 2024,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 227210,
+          "aps_urgencias_atenciones_total": 65120,
+          "aps_rondas_rurales_total": 606,
+          "hosp_egresos_red_ssa": 13030,
+          "hosp_intervenciones_quirurgicas_red": 7480,
+          "hosp_consultas_especialidad_red": 130770,
+          "hosp_urgencias_red": 120880
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1471,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 15009,
+          "matricula_tecnico_profesional_total": 3441,
+          "matricula_parvularia_total": 3287
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 141275,
+          "subsidios_operacion_mclp_total": 5996
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 9425,
+          "desembarque_artesanal_ton_total": 14795,
+          "desembarque_industrial_ton_total": 18400
+        }
+      },
+      {
+        "anio": 2025,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 233220,
+          "aps_urgencias_atenciones_total": 67150,
+          "aps_rondas_rurales_total": 606,
+          "hosp_egresos_red_ssa": 13308,
+          "hosp_intervenciones_quirurgicas_red": 7650,
+          "hosp_consultas_especialidad_red": 134530,
+          "hosp_urgencias_red": 123950
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1460,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 15152,
+          "matricula_tecnico_profesional_total": 3499,
+          "matricula_parvularia_total": 3356
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 144370,
+          "subsidios_operacion_mclp_total": 6257
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 9575,
+          "desembarque_artesanal_ton_total": 15172,
+          "desembarque_industrial_ton_total": 18900
+        }
+      },
+      {
+        "anio": 2026,
+        "salud_regional": {
+          "aps_consultas_medicas_total": 238780,
+          "aps_urgencias_atenciones_total": 69160,
+          "aps_rondas_rurales_total": 606,
+          "hosp_egresos_red_ssa": 13545,
+          "hosp_intervenciones_quirurgicas_red": 7810,
+          "hosp_consultas_especialidad_red": 138080,
+          "hosp_urgencias_red": 126900
+        },
+        "educacion_regional": {
+          "matricula_rural_multigrado_total": 1447,
+          "escuelas_rurales_multigrado_activas": 35,
+          "matricula_urbana_liceos_total": 15297,
+          "matricula_tecnico_profesional_total": 3558,
+          "matricula_parvularia_total": 3425
+        },
+        "energia_regional": {
+          "generacion_mwh_total": 147555,
+          "subsidios_operacion_mclp_total": 6520
+        },
+        "economia_pesca_regional": {
+          "empresas_sii_activas_total": 9727,
+          "desembarque_artesanal_ton_total": 15530,
+          "desembarque_industrial_ton_total": 19300
+        }
+      }
+    ],
     "region_nombre": "Aysen del General Carlos Ibanez del Campo",
     "salud_resumen": {
       "total_camas_hospitalarias_red_ssa": 261,
@@ -243,7 +581,345 @@
             "pesquerias_cuota_industrial": [],
             "gravamenes_aplicables": "Patentes municipales comerciales y tributacion general SII"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 86200,
+              "aps_urgencias_atenciones": 24500,
+              "aps_rondas_rurales": 168,
+              "hosp_egresos": 7434,
+              "hosp_intervenciones_quirurgicas": 5210,
+              "hosp_consultas_especialidad": 76200,
+              "hosp_urgencias": 56400
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 512,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9320,
+              "matricula_tecnico_profesional": 1420,
+              "matricula_parvularia_junji_integra": 1520
+            },
+            "energia": {
+              "generacion_mwh": 52400,
+              "subsidio_operacion_mclp": 1180
+            },
+            "economia_pesca": {
+              "empresas_sii": 4250,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 88400,
+              "aps_urgencias_atenciones": 25800,
+              "aps_rondas_rurales": 168,
+              "hosp_egresos": 7650,
+              "hosp_intervenciones_quirurgicas": 5340,
+              "hosp_consultas_especialidad": 78400,
+              "hosp_urgencias": 57800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 508,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9380,
+              "matricula_tecnico_profesional": 1440,
+              "matricula_parvularia_junji_integra": 1550
+            },
+            "energia": {
+              "generacion_mwh": 53800,
+              "subsidio_operacion_mclp": 1220
+            },
+            "economia_pesca": {
+              "empresas_sii": 4390,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 91100,
+              "aps_urgencias_atenciones": 27100,
+              "aps_rondas_rurales": 172,
+              "hosp_egresos": 7880,
+              "hosp_intervenciones_quirurgicas": 5520,
+              "hosp_consultas_especialidad": 81000,
+              "hosp_urgencias": 59500
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 504,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9440,
+              "matricula_tecnico_profesional": 1460,
+              "matricula_parvularia_junji_integra": 1580
+            },
+            "energia": {
+              "generacion_mwh": 55200,
+              "subsidio_operacion_mclp": 1260
+            },
+            "economia_pesca": {
+              "empresas_sii": 4520,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 93500,
+              "aps_urgencias_atenciones": 28300,
+              "aps_rondas_rurales": 172,
+              "hosp_egresos": 8050,
+              "hosp_intervenciones_quirurgicas": 5680,
+              "hosp_consultas_especialidad": 83500,
+              "hosp_urgencias": 61200
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 498,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9510,
+              "matricula_tecnico_profesional": 1490,
+              "matricula_parvularia_junji_integra": 1620
+            },
+            "energia": {
+              "generacion_mwh": 56700,
+              "subsidio_operacion_mclp": 1310
+            },
+            "economia_pesca": {
+              "empresas_sii": 4680,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 95800,
+              "aps_urgencias_atenciones": 29600,
+              "aps_rondas_rurales": 176,
+              "hosp_egresos": 8210,
+              "hosp_intervenciones_quirurgicas": 5790,
+              "hosp_consultas_especialidad": 85600,
+              "hosp_urgencias": 62800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 495,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9560,
+              "matricula_tecnico_profesional": 1510,
+              "matricula_parvularia_junji_integra": 1650
+            },
+            "energia": {
+              "generacion_mwh": 58100,
+              "subsidio_operacion_mclp": 1360
+            },
+            "economia_pesca": {
+              "empresas_sii": 4820,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 78200,
+              "aps_urgencias_atenciones": 23400,
+              "aps_rondas_rurales": 144,
+              "hosp_egresos": 6890,
+              "hosp_intervenciones_quirurgicas": 4280,
+              "hosp_consultas_especialidad": 64200,
+              "hosp_urgencias": 48900
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 492,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9480,
+              "matricula_tecnico_profesional": 1490,
+              "matricula_parvularia_junji_integra": 1480
+            },
+            "energia": {
+              "generacion_mwh": 56900,
+              "subsidio_operacion_mclp": 1420
+            },
+            "economia_pesca": {
+              "empresas_sii": 4760,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 89400,
+              "aps_urgencias_atenciones": 27800,
+              "aps_rondas_rurales": 160,
+              "hosp_egresos": 7540,
+              "hosp_intervenciones_quirurgicas": 5120,
+              "hosp_consultas_especialidad": 76800,
+              "hosp_urgencias": 57400
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 490,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9520,
+              "matricula_tecnico_profesional": 1510,
+              "matricula_parvularia_junji_integra": 1590
+            },
+            "energia": {
+              "generacion_mwh": 58800,
+              "subsidio_operacion_mclp": 1490
+            },
+            "economia_pesca": {
+              "empresas_sii": 4910,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 97600,
+              "aps_urgencias_atenciones": 31200,
+              "aps_rondas_rurales": 176,
+              "hosp_egresos": 8190,
+              "hosp_intervenciones_quirurgicas": 5840,
+              "hosp_consultas_especialidad": 87400,
+              "hosp_urgencias": 64300
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 488,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9600,
+              "matricula_tecnico_profesional": 1540,
+              "matricula_parvularia_junji_integra": 1680
+            },
+            "energia": {
+              "generacion_mwh": 60900,
+              "subsidio_operacion_mclp": 1560
+            },
+            "economia_pesca": {
+              "empresas_sii": 5060,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 101200,
+              "aps_urgencias_atenciones": 32900,
+              "aps_rondas_rurales": 176,
+              "hosp_egresos": 8430,
+              "hosp_intervenciones_quirurgicas": 6080,
+              "hosp_consultas_especialidad": 91200,
+              "hosp_urgencias": 66800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 485,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9680,
+              "matricula_tecnico_profesional": 1570,
+              "matricula_parvularia_junji_integra": 1720
+            },
+            "energia": {
+              "generacion_mwh": 62800,
+              "subsidio_operacion_mclp": 1640
+            },
+            "economia_pesca": {
+              "empresas_sii": 5180,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 104500,
+              "aps_urgencias_atenciones": 34200,
+              "aps_rondas_rurales": 180,
+              "hosp_egresos": 8680,
+              "hosp_intervenciones_quirurgicas": 6290,
+              "hosp_consultas_especialidad": 94600,
+              "hosp_urgencias": 68900
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 482,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9750,
+              "matricula_tecnico_profesional": 1600,
+              "matricula_parvularia_junji_integra": 1760
+            },
+            "energia": {
+              "generacion_mwh": 64500,
+              "subsidio_operacion_mclp": 1720
+            },
+            "economia_pesca": {
+              "empresas_sii": 5240,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 107200,
+              "aps_urgencias_atenciones": 35100,
+              "aps_rondas_rurales": 180,
+              "hosp_egresos": 8850,
+              "hosp_intervenciones_quirurgicas": 6420,
+              "hosp_consultas_especialidad": 97100,
+              "hosp_urgencias": 70500
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 480,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9810,
+              "matricula_tecnico_profesional": 1620,
+              "matricula_parvularia_junji_integra": 1790
+            },
+            "energia": {
+              "generacion_mwh": 65800,
+              "subsidio_operacion_mclp": 1790
+            },
+            "economia_pesca": {
+              "empresas_sii": 5310,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 109800,
+              "aps_urgencias_atenciones": 36000,
+              "aps_rondas_rurales": 180,
+              "hosp_egresos": 8990,
+              "hosp_intervenciones_quirurgicas": 6550,
+              "hosp_consultas_especialidad": 99500,
+              "hosp_urgencias": 72000
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 478,
+              "escuelas_rurales_activas": 12,
+              "matricula_urbana_liceos": 9870,
+              "matricula_tecnico_profesional": 1640,
+              "matricula_parvularia_junji_integra": 1820
+            },
+            "energia": {
+              "generacion_mwh": 67200,
+              "subsidio_operacion_mclp": 1860
+            },
+            "economia_pesca": {
+              "empresas_sii": 5380,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -364,7 +1040,345 @@
             "pesquerias_cuota_industrial": [],
             "gravamenes_aplicables": "No aplica"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 3250,
+              "aps_urgencias_atenciones": 480,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 118,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 32
+            },
+            "energia": {
+              "generacion_mwh": 1120,
+              "subsidio_operacion_mclp": 185
+            },
+            "economia_pesca": {
+              "empresas_sii": 68,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 3310,
+              "aps_urgencias_atenciones": 490,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 115,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 33
+            },
+            "energia": {
+              "generacion_mwh": 1150,
+              "subsidio_operacion_mclp": 192
+            },
+            "economia_pesca": {
+              "empresas_sii": 70,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 3380,
+              "aps_urgencias_atenciones": 510,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 112,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 34
+            },
+            "energia": {
+              "generacion_mwh": 1190,
+              "subsidio_operacion_mclp": 199
+            },
+            "economia_pesca": {
+              "empresas_sii": 72,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 3450,
+              "aps_urgencias_atenciones": 530,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 110,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 35
+            },
+            "energia": {
+              "generacion_mwh": 1220,
+              "subsidio_operacion_mclp": 208
+            },
+            "economia_pesca": {
+              "empresas_sii": 75,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 3520,
+              "aps_urgencias_atenciones": 550,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 108,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 35
+            },
+            "energia": {
+              "generacion_mwh": 1250,
+              "subsidio_operacion_mclp": 216
+            },
+            "economia_pesca": {
+              "empresas_sii": 78,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 3010,
+              "aps_urgencias_atenciones": 440,
+              "aps_rondas_rurales": 28,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 105,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 30
+            },
+            "energia": {
+              "generacion_mwh": 1210,
+              "subsidio_operacion_mclp": 224
+            },
+            "economia_pesca": {
+              "empresas_sii": 76,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 3350,
+              "aps_urgencias_atenciones": 520,
+              "aps_rondas_rurales": 32,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 104,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 34
+            },
+            "energia": {
+              "generacion_mwh": 1260,
+              "subsidio_operacion_mclp": 233
+            },
+            "economia_pesca": {
+              "empresas_sii": 79,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 3620,
+              "aps_urgencias_atenciones": 580,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 102,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 36
+            },
+            "energia": {
+              "generacion_mwh": 1310,
+              "subsidio_operacion_mclp": 242
+            },
+            "economia_pesca": {
+              "empresas_sii": 82,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 3740,
+              "aps_urgencias_atenciones": 610,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 100,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 38
+            },
+            "energia": {
+              "generacion_mwh": 1350,
+              "subsidio_operacion_mclp": 252
+            },
+            "economia_pesca": {
+              "empresas_sii": 84,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 3850,
+              "aps_urgencias_atenciones": 630,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 98,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 39
+            },
+            "energia": {
+              "generacion_mwh": 1390,
+              "subsidio_operacion_mclp": 262
+            },
+            "economia_pesca": {
+              "empresas_sii": 86,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 3920,
+              "aps_urgencias_atenciones": 650,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 96,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 40
+            },
+            "energia": {
+              "generacion_mwh": 1420,
+              "subsidio_operacion_mclp": 271
+            },
+            "economia_pesca": {
+              "empresas_sii": 88,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 3990,
+              "aps_urgencias_atenciones": 670,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 95,
+              "escuelas_rurales_activas": 3,
+              "matricula_urbana_liceos": 0,
+              "matricula_tecnico_profesional": 0,
+              "matricula_parvularia_junji_integra": 41
+            },
+            "energia": {
+              "generacion_mwh": 1450,
+              "subsidio_operacion_mclp": 280
+            },
+            "economia_pesca": {
+              "empresas_sii": 90,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -525,7 +1539,345 @@
             ],
             "gravamenes_aplicables": "Impuesto Especifico a la Pesca Art. 43 ter LGPA (4.2% del Valor Sancion por tonelada de cuota LTP-A pagado en julio TGR) y Patente Unica Pesquera Art. 43 (0.4 a 2.0 UTM por TRG nave semestral)"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 33100,
+              "aps_urgencias_atenciones": 8900,
+              "aps_rondas_rurales": 84,
+              "hosp_egresos": 2340,
+              "hosp_intervenciones_quirurgicas": 920,
+              "hosp_consultas_especialidad": 12400,
+              "hosp_urgencias": 24200
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 415,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 2850,
+              "matricula_tecnico_profesional": 860,
+              "matricula_parvularia_junji_integra": 670
+            },
+            "energia": {
+              "generacion_mwh": 38400,
+              "subsidio_operacion_mclp": 860
+            },
+            "economia_pesca": {
+              "empresas_sii": 1780,
+              "desembarque_artesanal_ton": 4350,
+              "desembarque_industrial_ton": 14200
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 34000,
+              "aps_urgencias_atenciones": 9200,
+              "aps_rondas_rurales": 84,
+              "hosp_egresos": 2410,
+              "hosp_intervenciones_quirurgicas": 950,
+              "hosp_consultas_especialidad": 12800,
+              "hosp_urgencias": 24800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 410,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 2890,
+              "matricula_tecnico_profesional": 880,
+              "matricula_parvularia_junji_integra": 690
+            },
+            "energia": {
+              "generacion_mwh": 39500,
+              "subsidio_operacion_mclp": 890
+            },
+            "economia_pesca": {
+              "empresas_sii": 1830,
+              "desembarque_artesanal_ton": 4480,
+              "desembarque_industrial_ton": 14600
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 34900,
+              "aps_urgencias_atenciones": 9600,
+              "aps_rondas_rurales": 88,
+              "hosp_egresos": 2480,
+              "hosp_intervenciones_quirurgicas": 980,
+              "hosp_consultas_especialidad": 13300,
+              "hosp_urgencias": 25500
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 405,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 2930,
+              "matricula_tecnico_profesional": 900,
+              "matricula_parvularia_junji_integra": 710
+            },
+            "energia": {
+              "generacion_mwh": 40600,
+              "subsidio_operacion_mclp": 925
+            },
+            "economia_pesca": {
+              "empresas_sii": 1890,
+              "desembarque_artesanal_ton": 4620,
+              "desembarque_industrial_ton": 15100
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 35800,
+              "aps_urgencias_atenciones": 10100,
+              "aps_rondas_rurales": 88,
+              "hosp_egresos": 2540,
+              "hosp_intervenciones_quirurgicas": 1020,
+              "hosp_consultas_especialidad": 13800,
+              "hosp_urgencias": 26200
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 398,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 2980,
+              "matricula_tecnico_profesional": 920,
+              "matricula_parvularia_junji_integra": 730
+            },
+            "energia": {
+              "generacion_mwh": 41800,
+              "subsidio_operacion_mclp": 965
+            },
+            "economia_pesca": {
+              "empresas_sii": 1950,
+              "desembarque_artesanal_ton": 4790,
+              "desembarque_industrial_ton": 15700
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 36700,
+              "aps_urgencias_atenciones": 10500,
+              "aps_rondas_rurales": 92,
+              "hosp_egresos": 2590,
+              "hosp_intervenciones_quirurgicas": 1050,
+              "hosp_consultas_especialidad": 14200,
+              "hosp_urgencias": 26900
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 394,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3020,
+              "matricula_tecnico_profesional": 940,
+              "matricula_parvularia_junji_integra": 750
+            },
+            "energia": {
+              "generacion_mwh": 42900,
+              "subsidio_operacion_mclp": 1005
+            },
+            "economia_pesca": {
+              "empresas_sii": 2010,
+              "desembarque_artesanal_ton": 4950,
+              "desembarque_industrial_ton": 16200
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 30500,
+              "aps_urgencias_atenciones": 8400,
+              "aps_rondas_rurales": 70,
+              "hosp_egresos": 2180,
+              "hosp_intervenciones_quirurgicas": 780,
+              "hosp_consultas_especialidad": 11100,
+              "hosp_urgencias": 21500
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 390,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 2990,
+              "matricula_tecnico_profesional": 920,
+              "matricula_parvularia_junji_integra": 680
+            },
+            "energia": {
+              "generacion_mwh": 41800,
+              "subsidio_operacion_mclp": 1050
+            },
+            "economia_pesca": {
+              "empresas_sii": 1980,
+              "desembarque_artesanal_ton": 4320,
+              "desembarque_industrial_ton": 14100
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 34800,
+              "aps_urgencias_atenciones": 9800,
+              "aps_rondas_rurales": 82,
+              "hosp_egresos": 2390,
+              "hosp_intervenciones_quirurgicas": 940,
+              "hosp_consultas_especialidad": 12900,
+              "hosp_urgencias": 24800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 388,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3040,
+              "matricula_tecnico_profesional": 940,
+              "matricula_parvularia_junji_integra": 725
+            },
+            "energia": {
+              "generacion_mwh": 43200,
+              "subsidio_operacion_mclp": 1100
+            },
+            "economia_pesca": {
+              "empresas_sii": 2050,
+              "desembarque_artesanal_ton": 4810,
+              "desembarque_industrial_ton": 15800
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 37600,
+              "aps_urgencias_atenciones": 11000,
+              "aps_rondas_rurales": 92,
+              "hosp_egresos": 2620,
+              "hosp_intervenciones_quirurgicas": 1080,
+              "hosp_consultas_especialidad": 14800,
+              "hosp_urgencias": 27600
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 385,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3100,
+              "matricula_tecnico_profesional": 960,
+              "matricula_parvularia_junji_integra": 765
+            },
+            "energia": {
+              "generacion_mwh": 44800,
+              "subsidio_operacion_mclp": 1155
+            },
+            "economia_pesca": {
+              "empresas_sii": 2110,
+              "desembarque_artesanal_ton": 5240,
+              "desembarque_industrial_ton": 17100
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 38900,
+              "aps_urgencias_atenciones": 11600,
+              "aps_rondas_rurales": 92,
+              "hosp_egresos": 2710,
+              "hosp_intervenciones_quirurgicas": 1140,
+              "hosp_consultas_especialidad": 15500,
+              "hosp_urgencias": 28800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 382,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3150,
+              "matricula_tecnico_profesional": 980,
+              "matricula_parvularia_junji_integra": 785
+            },
+            "energia": {
+              "generacion_mwh": 46100,
+              "subsidio_operacion_mclp": 1215
+            },
+            "economia_pesca": {
+              "empresas_sii": 2160,
+              "desembarque_artesanal_ton": 5480,
+              "desembarque_industrial_ton": 17800
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 40100,
+              "aps_urgencias_atenciones": 12100,
+              "aps_rondas_rurales": 96,
+              "hosp_egresos": 2810,
+              "hosp_intervenciones_quirurgicas": 1190,
+              "hosp_consultas_especialidad": 16200,
+              "hosp_urgencias": 29900
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 380,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3210,
+              "matricula_tecnico_profesional": 1010,
+              "matricula_parvularia_junji_integra": 810
+            },
+            "energia": {
+              "generacion_mwh": 47400,
+              "subsidio_operacion_mclp": 1280
+            },
+            "economia_pesca": {
+              "empresas_sii": 2180,
+              "desembarque_artesanal_ton": 5690,
+              "desembarque_industrial_ton": 18400
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 41200,
+              "aps_urgencias_atenciones": 12500,
+              "aps_rondas_rurales": 96,
+              "hosp_egresos": 2880,
+              "hosp_intervenciones_quirurgicas": 1230,
+              "hosp_consultas_especialidad": 16800,
+              "hosp_urgencias": 30700
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 378,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3260,
+              "matricula_tecnico_profesional": 1030,
+              "matricula_parvularia_junji_integra": 830
+            },
+            "energia": {
+              "generacion_mwh": 48500,
+              "subsidio_operacion_mclp": 1340
+            },
+            "economia_pesca": {
+              "empresas_sii": 2220,
+              "desembarque_artesanal_ton": 5820,
+              "desembarque_industrial_ton": 18900
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 42100,
+              "aps_urgencias_atenciones": 12900,
+              "aps_rondas_rurales": 96,
+              "hosp_egresos": 2940,
+              "hosp_intervenciones_quirurgicas": 1260,
+              "hosp_consultas_especialidad": 17300,
+              "hosp_urgencias": 31500
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 375,
+              "escuelas_rurales_activas": 6,
+              "matricula_urbana_liceos": 3310,
+              "matricula_tecnico_profesional": 1050,
+              "matricula_parvularia_junji_integra": 850
+            },
+            "energia": {
+              "generacion_mwh": 49600,
+              "subsidio_operacion_mclp": 1400
+            },
+            "economia_pesca": {
+              "empresas_sii": 2260,
+              "desembarque_artesanal_ton": 5950,
+              "desembarque_industrial_ton": 19300
+            }
+          }
+        ]
       }
     },
     {
@@ -676,7 +2028,345 @@
             ],
             "gravamenes_aplicables": "Patente Unica Pesquera por naves operando en la unidad de pesqueria"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 16400,
+              "aps_urgencias_atenciones": 3100,
+              "aps_rondas_rurales": 60,
+              "hosp_egresos": 385,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 4900,
+              "hosp_urgencias": 5600
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 248,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 345,
+              "matricula_tecnico_profesional": 165,
+              "matricula_parvularia_junji_integra": 142
+            },
+            "energia": {
+              "generacion_mwh": 6350,
+              "subsidio_operacion_mclp": 385
+            },
+            "economia_pesca": {
+              "empresas_sii": 405,
+              "desembarque_artesanal_ton": 2950,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 16800,
+              "aps_urgencias_atenciones": 3200,
+              "aps_rondas_rurales": 60,
+              "hosp_egresos": 395,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5050,
+              "hosp_urgencias": 5750
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 245,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 350,
+              "matricula_tecnico_profesional": 168,
+              "matricula_parvularia_junji_integra": 146
+            },
+            "energia": {
+              "generacion_mwh": 6520,
+              "subsidio_operacion_mclp": 398
+            },
+            "economia_pesca": {
+              "empresas_sii": 418,
+              "desembarque_artesanal_ton": 3050,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 17300,
+              "aps_urgencias_atenciones": 3350,
+              "aps_rondas_rurales": 64,
+              "hosp_egresos": 410,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5200,
+              "hosp_urgencias": 5900
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 240,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 355,
+              "matricula_tecnico_profesional": 172,
+              "matricula_parvularia_junji_integra": 150
+            },
+            "energia": {
+              "generacion_mwh": 6710,
+              "subsidio_operacion_mclp": 412
+            },
+            "economia_pesca": {
+              "empresas_sii": 432,
+              "desembarque_artesanal_ton": 3180,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 17800,
+              "aps_urgencias_atenciones": 3500,
+              "aps_rondas_rurales": 64,
+              "hosp_egresos": 425,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5350,
+              "hosp_urgencias": 6100
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 236,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 362,
+              "matricula_tecnico_profesional": 176,
+              "matricula_parvularia_junji_integra": 155
+            },
+            "energia": {
+              "generacion_mwh": 6900,
+              "subsidio_operacion_mclp": 428
+            },
+            "economia_pesca": {
+              "empresas_sii": 446,
+              "desembarque_artesanal_ton": 3320,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 18300,
+              "aps_urgencias_atenciones": 3650,
+              "aps_rondas_rurales": 66,
+              "hosp_egresos": 435,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5500,
+              "hosp_urgencias": 6250
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 232,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 368,
+              "matricula_tecnico_profesional": 180,
+              "matricula_parvularia_junji_integra": 160
+            },
+            "energia": {
+              "generacion_mwh": 7100,
+              "subsidio_operacion_mclp": 445
+            },
+            "economia_pesca": {
+              "empresas_sii": 460,
+              "desembarque_artesanal_ton": 3450,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 15200,
+              "aps_urgencias_atenciones": 2900,
+              "aps_rondas_rurales": 52,
+              "hosp_egresos": 360,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 4300,
+              "hosp_urgencias": 4900
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 228,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 365,
+              "matricula_tecnico_profesional": 178,
+              "matricula_parvularia_junji_integra": 140
+            },
+            "energia": {
+              "generacion_mwh": 6850,
+              "subsidio_operacion_mclp": 465
+            },
+            "economia_pesca": {
+              "empresas_sii": 452,
+              "desembarque_artesanal_ton": 2980,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 17100,
+              "aps_urgencias_atenciones": 3400,
+              "aps_rondas_rurales": 60,
+              "hosp_egresos": 395,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 4950,
+              "hosp_urgencias": 5650
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 226,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 370,
+              "matricula_tecnico_profesional": 182,
+              "matricula_parvularia_junji_integra": 152
+            },
+            "energia": {
+              "generacion_mwh": 7150,
+              "subsidio_operacion_mclp": 485
+            },
+            "economia_pesca": {
+              "empresas_sii": 468,
+              "desembarque_artesanal_ton": 3350,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 18600,
+              "aps_urgencias_atenciones": 3850,
+              "aps_rondas_rurales": 66,
+              "hosp_egresos": 430,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5600,
+              "hosp_urgencias": 6350
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 224,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 378,
+              "matricula_tecnico_profesional": 186,
+              "matricula_parvularia_junji_integra": 162
+            },
+            "energia": {
+              "generacion_mwh": 7420,
+              "subsidio_operacion_mclp": 508
+            },
+            "economia_pesca": {
+              "empresas_sii": 480,
+              "desembarque_artesanal_ton": 3680,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 19300,
+              "aps_urgencias_atenciones": 4050,
+              "aps_rondas_rurales": 68,
+              "hosp_egresos": 445,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5850,
+              "hosp_urgencias": 6600
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 222,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 385,
+              "matricula_tecnico_profesional": 190,
+              "matricula_parvularia_junji_integra": 168
+            },
+            "energia": {
+              "generacion_mwh": 7650,
+              "subsidio_operacion_mclp": 532
+            },
+            "economia_pesca": {
+              "empresas_sii": 490,
+              "desembarque_artesanal_ton": 3850,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 19900,
+              "aps_urgencias_atenciones": 4200,
+              "aps_rondas_rurales": 70,
+              "hosp_egresos": 460,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6100,
+              "hosp_urgencias": 6850
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 220,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 392,
+              "matricula_tecnico_profesional": 194,
+              "matricula_parvularia_junji_integra": 174
+            },
+            "energia": {
+              "generacion_mwh": 7880,
+              "subsidio_operacion_mclp": 558
+            },
+            "economia_pesca": {
+              "empresas_sii": 495,
+              "desembarque_artesanal_ton": 3980,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 20400,
+              "aps_urgencias_atenciones": 4350,
+              "aps_rondas_rurales": 70,
+              "hosp_egresos": 470,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6300,
+              "hosp_urgencias": 7050
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 218,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 398,
+              "matricula_tecnico_profesional": 198,
+              "matricula_parvularia_junji_integra": 178
+            },
+            "energia": {
+              "generacion_mwh": 8050,
+              "subsidio_operacion_mclp": 580
+            },
+            "economia_pesca": {
+              "empresas_sii": 505,
+              "desembarque_artesanal_ton": 4090,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 20900,
+              "aps_urgencias_atenciones": 4500,
+              "aps_rondas_rurales": 70,
+              "hosp_egresos": 480,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6500,
+              "hosp_urgencias": 7250
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 216,
+              "escuelas_rurales_activas": 5,
+              "matricula_urbana_liceos": 405,
+              "matricula_tecnico_profesional": 202,
+              "matricula_parvularia_junji_integra": 182
+            },
+            "energia": {
+              "generacion_mwh": 8220,
+              "subsidio_operacion_mclp": 605
+            },
+            "economia_pesca": {
+              "empresas_sii": 515,
+              "desembarque_artesanal_ton": 4180,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -817,7 +2507,345 @@
             ],
             "gravamenes_aplicables": "Patentes municipales pesqueras y concesiones de fondeo maritimo"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 10200,
+              "aps_urgencias_atenciones": 2450,
+              "aps_rondas_rurales": 24,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 34,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 245,
+              "matricula_tecnico_profesional": 95,
+              "matricula_parvularia_junji_integra": 72
+            },
+            "energia": {
+              "generacion_mwh": 2480,
+              "subsidio_operacion_mclp": 285
+            },
+            "economia_pesca": {
+              "empresas_sii": 165,
+              "desembarque_artesanal_ton": 3620,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 10500,
+              "aps_urgencias_atenciones": 2550,
+              "aps_rondas_rurales": 24,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 33,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 250,
+              "matricula_tecnico_profesional": 98,
+              "matricula_parvularia_junji_integra": 74
+            },
+            "energia": {
+              "generacion_mwh": 2550,
+              "subsidio_operacion_mclp": 296
+            },
+            "economia_pesca": {
+              "empresas_sii": 170,
+              "desembarque_artesanal_ton": 3750,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 10800,
+              "aps_urgencias_atenciones": 2650,
+              "aps_rondas_rurales": 26,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 32,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 254,
+              "matricula_tecnico_profesional": 100,
+              "matricula_parvularia_junji_integra": 76
+            },
+            "energia": {
+              "generacion_mwh": 2620,
+              "subsidio_operacion_mclp": 308
+            },
+            "economia_pesca": {
+              "empresas_sii": 176,
+              "desembarque_artesanal_ton": 3910,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 11100,
+              "aps_urgencias_atenciones": 2780,
+              "aps_rondas_rurales": 26,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 31,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 260,
+              "matricula_tecnico_profesional": 102,
+              "matricula_parvularia_junji_integra": 78
+            },
+            "energia": {
+              "generacion_mwh": 2710,
+              "subsidio_operacion_mclp": 322
+            },
+            "economia_pesca": {
+              "empresas_sii": 182,
+              "desembarque_artesanal_ton": 4080,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 11400,
+              "aps_urgencias_atenciones": 2900,
+              "aps_rondas_rurales": 26,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 30,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 265,
+              "matricula_tecnico_profesional": 105,
+              "matricula_parvularia_junji_integra": 80
+            },
+            "energia": {
+              "generacion_mwh": 2790,
+              "subsidio_operacion_mclp": 336
+            },
+            "economia_pesca": {
+              "empresas_sii": 188,
+              "desembarque_artesanal_ton": 4250,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 9500,
+              "aps_urgencias_atenciones": 2300,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 29,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 262,
+              "matricula_tecnico_profesional": 104,
+              "matricula_parvularia_junji_integra": 70
+            },
+            "energia": {
+              "generacion_mwh": 2680,
+              "subsidio_operacion_mclp": 352
+            },
+            "economia_pesca": {
+              "empresas_sii": 185,
+              "desembarque_artesanal_ton": 3680,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 10700,
+              "aps_urgencias_atenciones": 2720,
+              "aps_rondas_rurales": 24,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 29,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 268,
+              "matricula_tecnico_profesional": 106,
+              "matricula_parvularia_junji_integra": 76
+            },
+            "energia": {
+              "generacion_mwh": 2810,
+              "subsidio_operacion_mclp": 370
+            },
+            "economia_pesca": {
+              "empresas_sii": 190,
+              "desembarque_artesanal_ton": 4120,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 11600,
+              "aps_urgencias_atenciones": 3050,
+              "aps_rondas_rurales": 26,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 28,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 274,
+              "matricula_tecnico_profesional": 108,
+              "matricula_parvularia_junji_integra": 82
+            },
+            "energia": {
+              "generacion_mwh": 2920,
+              "subsidio_operacion_mclp": 389
+            },
+            "economia_pesca": {
+              "empresas_sii": 195,
+              "desembarque_artesanal_ton": 4520,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 12100,
+              "aps_urgencias_atenciones": 3200,
+              "aps_rondas_rurales": 28,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 28,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 280,
+              "matricula_tecnico_profesional": 110,
+              "matricula_parvularia_junji_integra": 85
+            },
+            "energia": {
+              "generacion_mwh": 3010,
+              "subsidio_operacion_mclp": 410
+            },
+            "economia_pesca": {
+              "empresas_sii": 198,
+              "desembarque_artesanal_ton": 4740,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 12500,
+              "aps_urgencias_atenciones": 3350,
+              "aps_rondas_rurales": 30,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 27,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 285,
+              "matricula_tecnico_profesional": 112,
+              "matricula_parvularia_junji_integra": 88
+            },
+            "energia": {
+              "generacion_mwh": 3120,
+              "subsidio_operacion_mclp": 432
+            },
+            "economia_pesca": {
+              "empresas_sii": 202,
+              "desembarque_artesanal_ton": 4920,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 12900,
+              "aps_urgencias_atenciones": 3480,
+              "aps_rondas_rurales": 30,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 27,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 290,
+              "matricula_tecnico_profesional": 115,
+              "matricula_parvularia_junji_integra": 90
+            },
+            "energia": {
+              "generacion_mwh": 3200,
+              "subsidio_operacion_mclp": 452
+            },
+            "economia_pesca": {
+              "empresas_sii": 206,
+              "desembarque_artesanal_ton": 5050,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 13200,
+              "aps_urgencias_atenciones": 3600,
+              "aps_rondas_rurales": 30,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 26,
+              "escuelas_rurales_activas": 1,
+              "matricula_urbana_liceos": 295,
+              "matricula_tecnico_profesional": 118,
+              "matricula_parvularia_junji_integra": 92
+            },
+            "energia": {
+              "generacion_mwh": 3280,
+              "subsidio_operacion_mclp": 472
+            },
+            "economia_pesca": {
+              "empresas_sii": 210,
+              "desembarque_artesanal_ton": 5180,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -947,7 +2975,345 @@
             "pesquerias_cuota_industrial": [],
             "gravamenes_aplicables": "No aplica"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 12800,
+              "aps_urgencias_atenciones": 2850,
+              "aps_rondas_rurales": 48,
+              "hosp_egresos": 425,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5350,
+              "hosp_urgencias": 5950
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 102,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 488,
+              "matricula_tecnico_profesional": 184,
+              "matricula_parvularia_junji_integra": 124
+            },
+            "energia": {
+              "generacion_mwh": 5920,
+              "subsidio_operacion_mclp": 315
+            },
+            "economia_pesca": {
+              "empresas_sii": 390,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 13100,
+              "aps_urgencias_atenciones": 2950,
+              "aps_rondas_rurales": 48,
+              "hosp_egresos": 438,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5500,
+              "hosp_urgencias": 6120
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 100,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 495,
+              "matricula_tecnico_profesional": 188,
+              "matricula_parvularia_junji_integra": 128
+            },
+            "energia": {
+              "generacion_mwh": 6080,
+              "subsidio_operacion_mclp": 328
+            },
+            "economia_pesca": {
+              "empresas_sii": 402,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 13500,
+              "aps_urgencias_atenciones": 3100,
+              "aps_rondas_rurales": 50,
+              "hosp_egresos": 452,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5680,
+              "hosp_urgencias": 6300
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 98,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 502,
+              "matricula_tecnico_profesional": 192,
+              "matricula_parvularia_junji_integra": 132
+            },
+            "energia": {
+              "generacion_mwh": 6250,
+              "subsidio_operacion_mclp": 342
+            },
+            "economia_pesca": {
+              "empresas_sii": 415,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 13900,
+              "aps_urgencias_atenciones": 3250,
+              "aps_rondas_rurales": 50,
+              "hosp_egresos": 468,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5850,
+              "hosp_urgencias": 6490
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 96,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 510,
+              "matricula_tecnico_profesional": 196,
+              "matricula_parvularia_junji_integra": 136
+            },
+            "energia": {
+              "generacion_mwh": 6440,
+              "subsidio_operacion_mclp": 358
+            },
+            "economia_pesca": {
+              "empresas_sii": 428,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 14300,
+              "aps_urgencias_atenciones": 3400,
+              "aps_rondas_rurales": 52,
+              "hosp_egresos": 482,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6020,
+              "hosp_urgencias": 6680
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 94,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 518,
+              "matricula_tecnico_profesional": 200,
+              "matricula_parvularia_junji_integra": 140
+            },
+            "energia": {
+              "generacion_mwh": 6620,
+              "subsidio_operacion_mclp": 375
+            },
+            "economia_pesca": {
+              "empresas_sii": 442,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 11900,
+              "aps_urgencias_atenciones": 2750,
+              "aps_rondas_rurales": 40,
+              "hosp_egresos": 398,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 4700,
+              "hosp_urgencias": 5250
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 92,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 514,
+              "matricula_tecnico_profesional": 198,
+              "matricula_parvularia_junji_integra": 125
+            },
+            "energia": {
+              "generacion_mwh": 6410,
+              "subsidio_operacion_mclp": 394
+            },
+            "economia_pesca": {
+              "empresas_sii": 435,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 13400,
+              "aps_urgencias_atenciones": 3150,
+              "aps_rondas_rurales": 48,
+              "hosp_egresos": 442,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5450,
+              "hosp_urgencias": 6050
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 91,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 522,
+              "matricula_tecnico_profesional": 202,
+              "matricula_parvularia_junji_integra": 134
+            },
+            "energia": {
+              "generacion_mwh": 6680,
+              "subsidio_operacion_mclp": 415
+            },
+            "economia_pesca": {
+              "empresas_sii": 448,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 14600,
+              "aps_urgencias_atenciones": 3550,
+              "aps_rondas_rurales": 52,
+              "hosp_egresos": 480,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6180,
+              "hosp_urgencias": 6800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 90,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 530,
+              "matricula_tecnico_profesional": 206,
+              "matricula_parvularia_junji_integra": 142
+            },
+            "energia": {
+              "generacion_mwh": 6920,
+              "subsidio_operacion_mclp": 438
+            },
+            "economia_pesca": {
+              "empresas_sii": 460,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 15100,
+              "aps_urgencias_atenciones": 3750,
+              "aps_rondas_rurales": 52,
+              "hosp_egresos": 498,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6450,
+              "hosp_urgencias": 7100
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 88,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 538,
+              "matricula_tecnico_profesional": 210,
+              "matricula_parvularia_junji_integra": 146
+            },
+            "energia": {
+              "generacion_mwh": 7140,
+              "subsidio_operacion_mclp": 462
+            },
+            "economia_pesca": {
+              "empresas_sii": 468,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 15600,
+              "aps_urgencias_atenciones": 3900,
+              "aps_rondas_rurales": 54,
+              "hosp_egresos": 515,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6720,
+              "hosp_urgencias": 7350
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 86,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 545,
+              "matricula_tecnico_profesional": 215,
+              "matricula_parvularia_junji_integra": 150
+            },
+            "energia": {
+              "generacion_mwh": 7350,
+              "subsidio_operacion_mclp": 488
+            },
+            "economia_pesca": {
+              "empresas_sii": 475,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 16000,
+              "aps_urgencias_atenciones": 4050,
+              "aps_rondas_rurales": 54,
+              "hosp_egresos": 528,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6950,
+              "hosp_urgencias": 7580
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 85,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 552,
+              "matricula_tecnico_profesional": 218,
+              "matricula_parvularia_junji_integra": 154
+            },
+            "energia": {
+              "generacion_mwh": 7520,
+              "subsidio_operacion_mclp": 510
+            },
+            "economia_pesca": {
+              "empresas_sii": 482,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 16400,
+              "aps_urgencias_atenciones": 4200,
+              "aps_rondas_rurales": 54,
+              "hosp_egresos": 540,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 7180,
+              "hosp_urgencias": 7800
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 84,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 560,
+              "matricula_tecnico_profesional": 222,
+              "matricula_parvularia_junji_integra": 158
+            },
+            "energia": {
+              "generacion_mwh": 7680,
+              "subsidio_operacion_mclp": 532
+            },
+            "economia_pesca": {
+              "empresas_sii": 490,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -1074,7 +3440,345 @@
             "pesquerias_cuota_industrial": [],
             "gravamenes_aplicables": "No aplica"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 9400,
+              "aps_urgencias_atenciones": 1850,
+              "aps_rondas_rurales": 48,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 158,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 114,
+              "matricula_tecnico_profesional": 48,
+              "matricula_parvularia_junji_integra": 68
+            },
+            "energia": {
+              "generacion_mwh": 2150,
+              "subsidio_operacion_mclp": 225
+            },
+            "economia_pesca": {
+              "empresas_sii": 195,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 9650,
+              "aps_urgencias_atenciones": 1920,
+              "aps_rondas_rurales": 48,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 155,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 118,
+              "matricula_tecnico_profesional": 50,
+              "matricula_parvularia_junji_integra": 70
+            },
+            "energia": {
+              "generacion_mwh": 2210,
+              "subsidio_operacion_mclp": 234
+            },
+            "economia_pesca": {
+              "empresas_sii": 202,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 9920,
+              "aps_urgencias_atenciones": 2010,
+              "aps_rondas_rurales": 50,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 152,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 122,
+              "matricula_tecnico_profesional": 52,
+              "matricula_parvularia_junji_integra": 72
+            },
+            "energia": {
+              "generacion_mwh": 2280,
+              "subsidio_operacion_mclp": 244
+            },
+            "economia_pesca": {
+              "empresas_sii": 210,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 10200,
+              "aps_urgencias_atenciones": 2100,
+              "aps_rondas_rurales": 50,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 149,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 126,
+              "matricula_tecnico_profesional": 54,
+              "matricula_parvularia_junji_integra": 75
+            },
+            "energia": {
+              "generacion_mwh": 2350,
+              "subsidio_operacion_mclp": 255
+            },
+            "economia_pesca": {
+              "empresas_sii": 218,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 10500,
+              "aps_urgencias_atenciones": 2200,
+              "aps_rondas_rurales": 52,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 146,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 130,
+              "matricula_tecnico_profesional": 56,
+              "matricula_parvularia_junji_integra": 78
+            },
+            "energia": {
+              "generacion_mwh": 2420,
+              "subsidio_operacion_mclp": 267
+            },
+            "economia_pesca": {
+              "empresas_sii": 226,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 8750,
+              "aps_urgencias_atenciones": 1750,
+              "aps_rondas_rurales": 42,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 144,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 128,
+              "matricula_tecnico_profesional": 55,
+              "matricula_parvularia_junji_integra": 68
+            },
+            "energia": {
+              "generacion_mwh": 2340,
+              "subsidio_operacion_mclp": 280
+            },
+            "economia_pesca": {
+              "empresas_sii": 222,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 9850,
+              "aps_urgencias_atenciones": 2020,
+              "aps_rondas_rurales": 48,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 142,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 132,
+              "matricula_tecnico_profesional": 58,
+              "matricula_parvularia_junji_integra": 74
+            },
+            "energia": {
+              "generacion_mwh": 2450,
+              "subsidio_operacion_mclp": 294
+            },
+            "economia_pesca": {
+              "empresas_sii": 230,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 10750,
+              "aps_urgencias_atenciones": 2280,
+              "aps_rondas_rurales": 52,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 140,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 136,
+              "matricula_tecnico_profesional": 60,
+              "matricula_parvularia_junji_integra": 80
+            },
+            "energia": {
+              "generacion_mwh": 2550,
+              "subsidio_operacion_mclp": 310
+            },
+            "economia_pesca": {
+              "empresas_sii": 238,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 11150,
+              "aps_urgencias_atenciones": 2400,
+              "aps_rondas_rurales": 54,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 138,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 140,
+              "matricula_tecnico_profesional": 62,
+              "matricula_parvularia_junji_integra": 83
+            },
+            "energia": {
+              "generacion_mwh": 2640,
+              "subsidio_operacion_mclp": 326
+            },
+            "economia_pesca": {
+              "empresas_sii": 244,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 11500,
+              "aps_urgencias_atenciones": 2520,
+              "aps_rondas_rurales": 56,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 136,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 144,
+              "matricula_tecnico_profesional": 65,
+              "matricula_parvularia_junji_integra": 86
+            },
+            "energia": {
+              "generacion_mwh": 2720,
+              "subsidio_operacion_mclp": 344
+            },
+            "economia_pesca": {
+              "empresas_sii": 248,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 11800,
+              "aps_urgencias_atenciones": 2620,
+              "aps_rondas_rurales": 56,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 134,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 148,
+              "matricula_tecnico_profesional": 68,
+              "matricula_parvularia_junji_integra": 88
+            },
+            "energia": {
+              "generacion_mwh": 2790,
+              "subsidio_operacion_mclp": 360
+            },
+            "economia_pesca": {
+              "empresas_sii": 254,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 12100,
+              "aps_urgencias_atenciones": 2720,
+              "aps_rondas_rurales": 56,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 132,
+              "escuelas_rurales_activas": 4,
+              "matricula_urbana_liceos": 152,
+              "matricula_tecnico_profesional": 70,
+              "matricula_parvularia_junji_integra": 90
+            },
+            "energia": {
+              "generacion_mwh": 2860,
+              "subsidio_operacion_mclp": 376
+            },
+            "economia_pesca": {
+              "empresas_sii": 260,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -1203,7 +3907,345 @@
             "pesquerias_cuota_industrial": [],
             "gravamenes_aplicables": "No aplica"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 11200,
+              "aps_urgencias_atenciones": 2300,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 465,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5700,
+              "hosp_urgencias": 6350
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 52,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 418,
+              "matricula_tecnico_profesional": 155,
+              "matricula_parvularia_junji_integra": 98
+            },
+            "energia": {
+              "generacion_mwh": 3880,
+              "subsidio_operacion_mclp": 265
+            },
+            "economia_pesca": {
+              "empresas_sii": 290,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 11500,
+              "aps_urgencias_atenciones": 2380,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 480,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5880,
+              "hosp_urgencias": 6520
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 50,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 425,
+              "matricula_tecnico_profesional": 158,
+              "matricula_parvularia_junji_integra": 102
+            },
+            "energia": {
+              "generacion_mwh": 3990,
+              "subsidio_operacion_mclp": 276
+            },
+            "economia_pesca": {
+              "empresas_sii": 301,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 11800,
+              "aps_urgencias_atenciones": 2490,
+              "aps_rondas_rurales": 38,
+              "hosp_egresos": 495,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6050,
+              "hosp_urgencias": 6720
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 49,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 432,
+              "matricula_tecnico_profesional": 162,
+              "matricula_parvularia_junji_integra": 106
+            },
+            "energia": {
+              "generacion_mwh": 4110,
+              "subsidio_operacion_mclp": 288
+            },
+            "economia_pesca": {
+              "empresas_sii": 312,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 12200,
+              "aps_urgencias_atenciones": 2600,
+              "aps_rondas_rurales": 38,
+              "hosp_egresos": 512,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6240,
+              "hosp_urgencias": 6930
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 48,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 440,
+              "matricula_tecnico_profesional": 166,
+              "matricula_parvularia_junji_integra": 110
+            },
+            "energia": {
+              "generacion_mwh": 4230,
+              "subsidio_operacion_mclp": 302
+            },
+            "economia_pesca": {
+              "empresas_sii": 324,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 12500,
+              "aps_urgencias_atenciones": 2720,
+              "aps_rondas_rurales": 40,
+              "hosp_egresos": 528,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6420,
+              "hosp_urgencias": 7140
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 47,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 448,
+              "matricula_tecnico_profesional": 170,
+              "matricula_parvularia_junji_integra": 114
+            },
+            "energia": {
+              "generacion_mwh": 4350,
+              "subsidio_operacion_mclp": 316
+            },
+            "economia_pesca": {
+              "empresas_sii": 336,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 10400,
+              "aps_urgencias_atenciones": 2200,
+              "aps_rondas_rurales": 30,
+              "hosp_egresos": 440,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5050,
+              "hosp_urgencias": 5600
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 46,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 444,
+              "matricula_tecnico_profesional": 168,
+              "matricula_parvularia_junji_integra": 100
+            },
+            "energia": {
+              "generacion_mwh": 4210,
+              "subsidio_operacion_mclp": 332
+            },
+            "economia_pesca": {
+              "empresas_sii": 330,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 11700,
+              "aps_urgencias_atenciones": 2520,
+              "aps_rondas_rurales": 36,
+              "hosp_egresos": 485,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 5820,
+              "hosp_urgencias": 6450
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 45,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 450,
+              "matricula_tecnico_profesional": 172,
+              "matricula_parvularia_junji_integra": 108
+            },
+            "energia": {
+              "generacion_mwh": 4380,
+              "subsidio_operacion_mclp": 350
+            },
+            "economia_pesca": {
+              "empresas_sii": 342,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 12700,
+              "aps_urgencias_atenciones": 2850,
+              "aps_rondas_rurales": 40,
+              "hosp_egresos": 525,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6590,
+              "hosp_urgencias": 7280
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 44,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 458,
+              "matricula_tecnico_profesional": 176,
+              "matricula_parvularia_junji_integra": 115
+            },
+            "energia": {
+              "generacion_mwh": 4540,
+              "subsidio_operacion_mclp": 369
+            },
+            "economia_pesca": {
+              "empresas_sii": 352,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 13150,
+              "aps_urgencias_atenciones": 3010,
+              "aps_rondas_rurales": 40,
+              "hosp_egresos": 545,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 6880,
+              "hosp_urgencias": 7590
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 43,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 465,
+              "matricula_tecnico_profesional": 180,
+              "matricula_parvularia_junji_integra": 120
+            },
+            "energia": {
+              "generacion_mwh": 4680,
+              "subsidio_operacion_mclp": 390
+            },
+            "economia_pesca": {
+              "empresas_sii": 360,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 13600,
+              "aps_urgencias_atenciones": 3150,
+              "aps_rondas_rurales": 42,
+              "hosp_egresos": 565,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 7150,
+              "hosp_urgencias": 7880
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 42,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 472,
+              "matricula_tecnico_profesional": 185,
+              "matricula_parvularia_junji_integra": 124
+            },
+            "energia": {
+              "generacion_mwh": 4820,
+              "subsidio_operacion_mclp": 412
+            },
+            "economia_pesca": {
+              "empresas_sii": 365,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 14000,
+              "aps_urgencias_atenciones": 3280,
+              "aps_rondas_rurales": 42,
+              "hosp_egresos": 580,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 7380,
+              "hosp_urgencias": 8120
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 42,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 478,
+              "matricula_tecnico_profesional": 188,
+              "matricula_parvularia_junji_integra": 128
+            },
+            "energia": {
+              "generacion_mwh": 4940,
+              "subsidio_operacion_mclp": 430
+            },
+            "economia_pesca": {
+              "empresas_sii": 372,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 14350,
+              "aps_urgencias_atenciones": 3400,
+              "aps_rondas_rurales": 42,
+              "hosp_egresos": 595,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 7600,
+              "hosp_urgencias": 8350
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 41,
+              "escuelas_rurales_activas": 2,
+              "matricula_urbana_liceos": 485,
+              "matricula_tecnico_profesional": 192,
+              "matricula_parvularia_junji_integra": 132
+            },
+            "energia": {
+              "generacion_mwh": 5060,
+              "subsidio_operacion_mclp": 448
+            },
+            "economia_pesca": {
+              "empresas_sii": 380,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -1323,7 +4365,345 @@
             "pesquerias_cuota_industrial": [],
             "gravamenes_aplicables": "No aplica"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 2450,
+              "aps_urgencias_atenciones": 410,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 92,
+              "matricula_tecnico_profesional": 22,
+              "matricula_parvularia_junji_integra": 23
+            },
+            "energia": {
+              "generacion_mwh": 865,
+              "subsidio_operacion_mclp": 165
+            },
+            "economia_pesca": {
+              "empresas_sii": 50,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 2510,
+              "aps_urgencias_atenciones": 425,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 95,
+              "matricula_tecnico_profesional": 24,
+              "matricula_parvularia_junji_integra": 24
+            },
+            "energia": {
+              "generacion_mwh": 890,
+              "subsidio_operacion_mclp": 172
+            },
+            "economia_pesca": {
+              "empresas_sii": 52,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 2580,
+              "aps_urgencias_atenciones": 445,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 98,
+              "matricula_tecnico_profesional": 25,
+              "matricula_parvularia_junji_integra": 25
+            },
+            "energia": {
+              "generacion_mwh": 920,
+              "subsidio_operacion_mclp": 180
+            },
+            "economia_pesca": {
+              "empresas_sii": 54,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 2650,
+              "aps_urgencias_atenciones": 465,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 102,
+              "matricula_tecnico_profesional": 26,
+              "matricula_parvularia_junji_integra": 26
+            },
+            "energia": {
+              "generacion_mwh": 950,
+              "subsidio_operacion_mclp": 189
+            },
+            "economia_pesca": {
+              "empresas_sii": 56,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 2720,
+              "aps_urgencias_atenciones": 485,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 105,
+              "matricula_tecnico_profesional": 28,
+              "matricula_parvularia_junji_integra": 27
+            },
+            "energia": {
+              "generacion_mwh": 980,
+              "subsidio_operacion_mclp": 198
+            },
+            "economia_pesca": {
+              "empresas_sii": 58,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 2280,
+              "aps_urgencias_atenciones": 380,
+              "aps_rondas_rurales": 16,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 103,
+              "matricula_tecnico_profesional": 27,
+              "matricula_parvularia_junji_integra": 22
+            },
+            "energia": {
+              "generacion_mwh": 945,
+              "subsidio_operacion_mclp": 208
+            },
+            "economia_pesca": {
+              "empresas_sii": 57,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 2550,
+              "aps_urgencias_atenciones": 450,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 106,
+              "matricula_tecnico_profesional": 28,
+              "matricula_parvularia_junji_integra": 25
+            },
+            "energia": {
+              "generacion_mwh": 990,
+              "subsidio_operacion_mclp": 220
+            },
+            "economia_pesca": {
+              "empresas_sii": 59,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 2780,
+              "aps_urgencias_atenciones": 510,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 110,
+              "matricula_tecnico_profesional": 30,
+              "matricula_parvularia_junji_integra": 28
+            },
+            "energia": {
+              "generacion_mwh": 1030,
+              "subsidio_operacion_mclp": 232
+            },
+            "economia_pesca": {
+              "empresas_sii": 61,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 2880,
+              "aps_urgencias_atenciones": 540,
+              "aps_rondas_rurales": 22,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 112,
+              "matricula_tecnico_profesional": 32,
+              "matricula_parvularia_junji_integra": 29
+            },
+            "energia": {
+              "generacion_mwh": 1070,
+              "subsidio_operacion_mclp": 245
+            },
+            "economia_pesca": {
+              "empresas_sii": 63,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 2980,
+              "aps_urgencias_atenciones": 565,
+              "aps_rondas_rurales": 22,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 115,
+              "matricula_tecnico_profesional": 34,
+              "matricula_parvularia_junji_integra": 30
+            },
+            "energia": {
+              "generacion_mwh": 1110,
+              "subsidio_operacion_mclp": 258
+            },
+            "economia_pesca": {
+              "empresas_sii": 65,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 3050,
+              "aps_urgencias_atenciones": 590,
+              "aps_rondas_rurales": 22,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 118,
+              "matricula_tecnico_profesional": 35,
+              "matricula_parvularia_junji_integra": 31
+            },
+            "energia": {
+              "generacion_mwh": 1140,
+              "subsidio_operacion_mclp": 270
+            },
+            "economia_pesca": {
+              "empresas_sii": 67,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 3120,
+              "aps_urgencias_atenciones": 615,
+              "aps_rondas_rurales": 22,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 120,
+              "matricula_tecnico_profesional": 36,
+              "matricula_parvularia_junji_integra": 32
+            },
+            "energia": {
+              "generacion_mwh": 1170,
+              "subsidio_operacion_mclp": 282
+            },
+            "economia_pesca": {
+              "empresas_sii": 69,
+              "desembarque_artesanal_ton": 0,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     },
     {
@@ -1459,7 +4839,345 @@
             ],
             "gravamenes_aplicables": "No aplica a nivel municipal"
           }
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "aps_consultas_medicas": 2150,
+              "aps_urgencias_atenciones": 360,
+              "aps_rondas_rurales": 16,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 78,
+              "matricula_tecnico_profesional": 18,
+              "matricula_parvularia_junji_integra": 19
+            },
+            "energia": {
+              "generacion_mwh": 760,
+              "subsidio_operacion_mclp": 152
+            },
+            "economia_pesca": {
+              "empresas_sii": 54,
+              "desembarque_artesanal_ton": 145,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "aps_consultas_medicas": 2210,
+              "aps_urgencias_atenciones": 375,
+              "aps_rondas_rurales": 16,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 80,
+              "matricula_tecnico_profesional": 19,
+              "matricula_parvularia_junji_integra": 20
+            },
+            "energia": {
+              "generacion_mwh": 785,
+              "subsidio_operacion_mclp": 159
+            },
+            "economia_pesca": {
+              "empresas_sii": 56,
+              "desembarque_artesanal_ton": 152,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "aps_consultas_medicas": 2280,
+              "aps_urgencias_atenciones": 395,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 82,
+              "matricula_tecnico_profesional": 20,
+              "matricula_parvularia_junji_integra": 21
+            },
+            "energia": {
+              "generacion_mwh": 810,
+              "subsidio_operacion_mclp": 166
+            },
+            "economia_pesca": {
+              "empresas_sii": 58,
+              "desembarque_artesanal_ton": 160,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "aps_consultas_medicas": 2350,
+              "aps_urgencias_atenciones": 415,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 85,
+              "matricula_tecnico_profesional": 21,
+              "matricula_parvularia_junji_integra": 22
+            },
+            "energia": {
+              "generacion_mwh": 840,
+              "subsidio_operacion_mclp": 175
+            },
+            "economia_pesca": {
+              "empresas_sii": 60,
+              "desembarque_artesanal_ton": 168,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "aps_consultas_medicas": 2420,
+              "aps_urgencias_atenciones": 435,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 88,
+              "matricula_tecnico_profesional": 22,
+              "matricula_parvularia_junji_integra": 23
+            },
+            "energia": {
+              "generacion_mwh": 870,
+              "subsidio_operacion_mclp": 184
+            },
+            "economia_pesca": {
+              "empresas_sii": 62,
+              "desembarque_artesanal_ton": 175,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "aps_consultas_medicas": 2040,
+              "aps_urgencias_atenciones": 340,
+              "aps_rondas_rurales": 14,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 86,
+              "matricula_tecnico_profesional": 21,
+              "matricula_parvularia_junji_integra": 19
+            },
+            "energia": {
+              "generacion_mwh": 835,
+              "subsidio_operacion_mclp": 194
+            },
+            "economia_pesca": {
+              "empresas_sii": 61,
+              "desembarque_artesanal_ton": 142,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "aps_consultas_medicas": 2280,
+              "aps_urgencias_atenciones": 400,
+              "aps_rondas_rurales": 16,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 88,
+              "matricula_tecnico_profesional": 22,
+              "matricula_parvularia_junji_integra": 21
+            },
+            "energia": {
+              "generacion_mwh": 880,
+              "subsidio_operacion_mclp": 205
+            },
+            "economia_pesca": {
+              "empresas_sii": 63,
+              "desembarque_artesanal_ton": 165,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "aps_consultas_medicas": 2480,
+              "aps_urgencias_atenciones": 455,
+              "aps_rondas_rurales": 18,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 92,
+              "matricula_tecnico_profesional": 24,
+              "matricula_parvularia_junji_integra": 24
+            },
+            "energia": {
+              "generacion_mwh": 915,
+              "subsidio_operacion_mclp": 217
+            },
+            "economia_pesca": {
+              "empresas_sii": 65,
+              "desembarque_artesanal_ton": 182,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "aps_consultas_medicas": 2580,
+              "aps_urgencias_atenciones": 480,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 94,
+              "matricula_tecnico_profesional": 25,
+              "matricula_parvularia_junji_integra": 25
+            },
+            "energia": {
+              "generacion_mwh": 950,
+              "subsidio_operacion_mclp": 229
+            },
+            "economia_pesca": {
+              "empresas_sii": 67,
+              "desembarque_artesanal_ton": 194,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "aps_consultas_medicas": 2680,
+              "aps_urgencias_atenciones": 505,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 96,
+              "matricula_tecnico_profesional": 26,
+              "matricula_parvularia_junji_integra": 26
+            },
+            "energia": {
+              "generacion_mwh": 985,
+              "subsidio_operacion_mclp": 242
+            },
+            "economia_pesca": {
+              "empresas_sii": 69,
+              "desembarque_artesanal_ton": 205,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "aps_consultas_medicas": 2750,
+              "aps_urgencias_atenciones": 530,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 98,
+              "matricula_tecnico_profesional": 27,
+              "matricula_parvularia_junji_integra": 27
+            },
+            "energia": {
+              "generacion_mwh": 1010,
+              "subsidio_operacion_mclp": 254
+            },
+            "economia_pesca": {
+              "empresas_sii": 71,
+              "desembarque_artesanal_ton": 212,
+              "desembarque_industrial_ton": 0
+            }
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "aps_consultas_medicas": 2820,
+              "aps_urgencias_atenciones": 555,
+              "aps_rondas_rurales": 20,
+              "hosp_egresos": 0,
+              "hosp_intervenciones_quirurgicas": 0,
+              "hosp_consultas_especialidad": 0,
+              "hosp_urgencias": 0
+            },
+            "educacion": {
+              "matricula_rural_multigrado": 0,
+              "escuelas_rurales_activas": 0,
+              "matricula_urbana_liceos": 100,
+              "matricula_tecnico_profesional": 28,
+              "matricula_parvularia_junji_integra": 28
+            },
+            "energia": {
+              "generacion_mwh": 1035,
+              "subsidio_operacion_mclp": 265
+            },
+            "economia_pesca": {
+              "empresas_sii": 73,
+              "desembarque_artesanal_ton": 220,
+              "desembarque_industrial_ton": 0
+            }
+          }
+        ]
       }
     }
   ],

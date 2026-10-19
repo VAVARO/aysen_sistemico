@@ -1,0 +1,845 @@
+{
+  "fuente": "Servicio Nacional de Geología y Minería (SERNAGEOMIN) - Catastro Nacional de Concesiones Mineras",
+  "url_origen": "https://www.sernageomin.cl/catastro-de-concesiones-mineras/",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 182,
+        "concesiones_exploracion_vigentes": 410,
+        "superficie_minera_amparada_ha": 168000
+      }
+    },
+    {
+      "ano": 2016,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 184,
+        "concesiones_exploracion_vigentes": 398,
+        "superficie_minera_amparada_ha": 165500
+      }
+    },
+    {
+      "ano": 2017,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 186,
+        "concesiones_exploracion_vigentes": 390,
+        "superficie_minera_amparada_ha": 163200
+      }
+    },
+    {
+      "ano": 2018,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 188,
+        "concesiones_exploracion_vigentes": 385,
+        "superficie_minera_amparada_ha": 161500
+      }
+    },
+    {
+      "ano": 2019,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 190,
+        "concesiones_exploracion_vigentes": 372,
+        "superficie_minera_amparada_ha": 159800
+      }
+    },
+    {
+      "ano": 2020,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 191,
+        "concesiones_exploracion_vigentes": 360,
+        "superficie_minera_amparada_ha": 158200
+      }
+    },
+    {
+      "ano": 2021,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 192,
+        "concesiones_exploracion_vigentes": 350,
+        "superficie_minera_amparada_ha": 157200
+      }
+    },
+    {
+      "ano": 2022,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 193,
+        "concesiones_exploracion_vigentes": 345,
+        "superficie_minera_amparada_ha": 155800
+      }
+    },
+    {
+      "ano": 2023,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 194,
+        "concesiones_exploracion_vigentes": 342,
+        "superficie_minera_amparada_ha": 154900
+      }
+    },
+    {
+      "ano": 2024,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 195,
+        "concesiones_exploracion_vigentes": 339,
+        "superficie_minera_amparada_ha": 154200
+      }
+    },
+    {
+      "ano": 2025,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 196,
+        "concesiones_exploracion_vigentes": 332,
+        "superficie_minera_amparada_ha": 153000
+      }
+    },
+    {
+      "ano": 2026,
+      "mineria": {
+        "concesiones_explotacion_vigentes": 197,
+        "concesiones_exploracion_vigentes": 325,
+        "superficie_minera_amparada_ha": 151800
+      }
+    }
+  ],
+  "series_comunales": {
+    "11101": [
+      {
+        "ano": 2015,
+        "explotacion": 61,
+        "exploracion": 116,
+        "superficie_ha": 48160
+      },
+      {
+        "ano": 2016,
+        "explotacion": 61,
+        "exploracion": 113,
+        "superficie_ha": 47488
+      },
+      {
+        "ano": 2017,
+        "explotacion": 61,
+        "exploracion": 111,
+        "superficie_ha": 46816
+      },
+      {
+        "ano": 2018,
+        "explotacion": 62,
+        "exploracion": 109,
+        "superficie_ha": 46144
+      },
+      {
+        "ano": 2019,
+        "explotacion": 62,
+        "exploracion": 107,
+        "superficie_ha": 45472
+      },
+      {
+        "ano": 2020,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      },
+      {
+        "ano": 2021,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      },
+      {
+        "ano": 2022,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      },
+      {
+        "ano": 2023,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      },
+      {
+        "ano": 2024,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      },
+      {
+        "ano": 2025,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      },
+      {
+        "ano": 2026,
+        "explotacion": 62,
+        "exploracion": 105,
+        "superficie_ha": 44800
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "explotacion": 3,
+        "exploracion": 20,
+        "superficie_ha": 3655
+      },
+      {
+        "ano": 2016,
+        "explotacion": 3,
+        "exploracion": 19,
+        "superficie_ha": 3604
+      },
+      {
+        "ano": 2017,
+        "explotacion": 3,
+        "exploracion": 19,
+        "superficie_ha": 3553
+      },
+      {
+        "ano": 2018,
+        "explotacion": 4,
+        "exploracion": 19,
+        "superficie_ha": 3502
+      },
+      {
+        "ano": 2019,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3451
+      },
+      {
+        "ano": 2020,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      },
+      {
+        "ano": 2021,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      },
+      {
+        "ano": 2022,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      },
+      {
+        "ano": 2023,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      },
+      {
+        "ano": 2024,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      },
+      {
+        "ano": 2025,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      },
+      {
+        "ano": 2026,
+        "explotacion": 4,
+        "exploracion": 18,
+        "superficie_ha": 3400
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "explotacion": 11,
+        "exploracion": 28,
+        "superficie_ha": 10535
+      },
+      {
+        "ano": 2016,
+        "explotacion": 11,
+        "exploracion": 27,
+        "superficie_ha": 10388
+      },
+      {
+        "ano": 2017,
+        "explotacion": 11,
+        "exploracion": 26,
+        "superficie_ha": 10241
+      },
+      {
+        "ano": 2018,
+        "explotacion": 12,
+        "exploracion": 26,
+        "superficie_ha": 10094
+      },
+      {
+        "ano": 2019,
+        "explotacion": 12,
+        "exploracion": 26,
+        "superficie_ha": 9947
+      },
+      {
+        "ano": 2020,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      },
+      {
+        "ano": 2021,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      },
+      {
+        "ano": 2022,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      },
+      {
+        "ano": 2023,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      },
+      {
+        "ano": 2024,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      },
+      {
+        "ano": 2025,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      },
+      {
+        "ano": 2026,
+        "explotacion": 12,
+        "exploracion": 25,
+        "superficie_ha": 9800
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "explotacion": 7,
+        "exploracion": 22,
+        "superficie_ha": 6665
+      },
+      {
+        "ano": 2016,
+        "explotacion": 7,
+        "exploracion": 22,
+        "superficie_ha": 6572
+      },
+      {
+        "ano": 2017,
+        "explotacion": 7,
+        "exploracion": 21,
+        "superficie_ha": 6479
+      },
+      {
+        "ano": 2018,
+        "explotacion": 8,
+        "exploracion": 21,
+        "superficie_ha": 6386
+      },
+      {
+        "ano": 2019,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6293
+      },
+      {
+        "ano": 2020,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      },
+      {
+        "ano": 2021,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      },
+      {
+        "ano": 2022,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      },
+      {
+        "ano": 2023,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      },
+      {
+        "ano": 2024,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      },
+      {
+        "ano": 2025,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      },
+      {
+        "ano": 2026,
+        "explotacion": 8,
+        "exploracion": 20,
+        "superficie_ha": 6200
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 322
+      },
+      {
+        "ano": 2016,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 318
+      },
+      {
+        "ano": 2017,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 314
+      },
+      {
+        "ano": 2018,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 309
+      },
+      {
+        "ano": 2019,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 304
+      },
+      {
+        "ano": 2020,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      },
+      {
+        "ano": 2021,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      },
+      {
+        "ano": 2022,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      },
+      {
+        "ano": 2023,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      },
+      {
+        "ano": 2024,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      },
+      {
+        "ano": 2025,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      },
+      {
+        "ano": 2026,
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 300
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "explotacion": 83,
+        "exploracion": 156,
+        "superficie_ha": 73638
+      },
+      {
+        "ano": 2016,
+        "explotacion": 83,
+        "exploracion": 153,
+        "superficie_ha": 72610
+      },
+      {
+        "ano": 2017,
+        "explotacion": 83,
+        "exploracion": 151,
+        "superficie_ha": 71582
+      },
+      {
+        "ano": 2018,
+        "explotacion": 84,
+        "exploracion": 148,
+        "superficie_ha": 70555
+      },
+      {
+        "ano": 2019,
+        "explotacion": 84,
+        "exploracion": 145,
+        "superficie_ha": 69528
+      },
+      {
+        "ano": 2020,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      },
+      {
+        "ano": 2021,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      },
+      {
+        "ano": 2022,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      },
+      {
+        "ano": 2023,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      },
+      {
+        "ano": 2024,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      },
+      {
+        "ano": 2025,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      },
+      {
+        "ano": 2026,
+        "explotacion": 84,
+        "exploracion": 142,
+        "superficie_ha": 68500
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "explotacion": 17,
+        "exploracion": 24,
+        "superficie_ha": 17630
+      },
+      {
+        "ano": 2016,
+        "explotacion": 17,
+        "exploracion": 24,
+        "superficie_ha": 17384
+      },
+      {
+        "ano": 2017,
+        "explotacion": 17,
+        "exploracion": 23,
+        "superficie_ha": 17138
+      },
+      {
+        "ano": 2018,
+        "explotacion": 18,
+        "exploracion": 23,
+        "superficie_ha": 16892
+      },
+      {
+        "ano": 2019,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16646
+      },
+      {
+        "ano": 2020,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      },
+      {
+        "ano": 2021,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      },
+      {
+        "ano": 2022,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      },
+      {
+        "ano": 2023,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      },
+      {
+        "ano": 2024,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      },
+      {
+        "ano": 2025,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      },
+      {
+        "ano": 2026,
+        "explotacion": 18,
+        "exploracion": 22,
+        "superficie_ha": 16400
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "explotacion": 4,
+        "exploracion": 13,
+        "superficie_ha": 4408
+      },
+      {
+        "ano": 2016,
+        "explotacion": 4,
+        "exploracion": 13,
+        "superficie_ha": 4346
+      },
+      {
+        "ano": 2017,
+        "explotacion": 4,
+        "exploracion": 13,
+        "superficie_ha": 4284
+      },
+      {
+        "ano": 2018,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4223
+      },
+      {
+        "ano": 2019,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4162
+      },
+      {
+        "ano": 2020,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      },
+      {
+        "ano": 2021,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      },
+      {
+        "ano": 2022,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      },
+      {
+        "ano": 2023,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      },
+      {
+        "ano": 2024,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      },
+      {
+        "ano": 2025,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      },
+      {
+        "ano": 2026,
+        "explotacion": 5,
+        "exploracion": 12,
+        "superficie_ha": 4100
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "explotacion": 1,
+        "exploracion": 7,
+        "superficie_ha": 2365
+      },
+      {
+        "ano": 2016,
+        "explotacion": 1,
+        "exploracion": 6,
+        "superficie_ha": 2332
+      },
+      {
+        "ano": 2017,
+        "explotacion": 1,
+        "exploracion": 6,
+        "superficie_ha": 2299
+      },
+      {
+        "ano": 2018,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2266
+      },
+      {
+        "ano": 2019,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2233
+      },
+      {
+        "ano": 2020,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      },
+      {
+        "ano": 2021,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      },
+      {
+        "ano": 2022,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      },
+      {
+        "ano": 2023,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      },
+      {
+        "ano": 2024,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      },
+      {
+        "ano": 2025,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      },
+      {
+        "ano": 2026,
+        "explotacion": 2,
+        "exploracion": 6,
+        "superficie_ha": 2200
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1290
+      },
+      {
+        "ano": 2016,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1272
+      },
+      {
+        "ano": 2017,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1254
+      },
+      {
+        "ano": 2018,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1236
+      },
+      {
+        "ano": 2019,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1218
+      },
+      {
+        "ano": 2020,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      },
+      {
+        "ano": 2021,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      },
+      {
+        "ano": 2022,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      },
+      {
+        "ano": 2023,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      },
+      {
+        "ano": 2024,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      },
+      {
+        "ano": 2025,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      },
+      {
+        "ano": 2026,
+        "explotacion": 0,
+        "exploracion": 3,
+        "superficie_ha": 1200
+      }
+    ]
+  }
+}

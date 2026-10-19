@@ -62,7 +62,606 @@
     "peso_empleo_publico_regional_promedio_pct": 34.5,
     "pernoctaciones_anuales_regionales_total": 502400,
     "licitaciones_mercado_publico_regional_total_mclp": 105400,
-    "total_nodos_georreferenciados": 20
+    "total_nodos_georreferenciados": 20,
+    "series_historicas_regionales": [
+      {
+        "indicador": "pib_regional_nominal_mmclp",
+        "nombre": "PIB Regional Nominal de Aysén",
+        "unidad": "MM$ CLP",
+        "fuente": "Banco Central de Chile (BCCh)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 980000.0
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 1045000.0
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 1120000.0
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 1215000.0
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 1260000.0
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 1240000.0
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 1410000.0
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 1540000.0
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 1620000.0
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 1680000.0
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 1755000.0
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 1830000.0
+          }
+        ]
+      },
+      {
+        "indicador": "pib_regional_variacion_real_anual_pct",
+        "nombre": "Variación Real Anual del PIB Regional de Aysén",
+        "unidad": "%",
+        "fuente": "Banco Central de Chile (BCCh)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 4.1
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 3.8
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 4.2
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 5.1
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 1.2
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": -2.8
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 8.4
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 2.1
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 1.5
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 2.3
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 2.6
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 2.4
+          }
+        ]
+      },
+      {
+        "indicador": "empresas_totales_regionales_sii",
+        "nombre": "Total Regional de Empresas Activas Registradas en el SII",
+        "unidad": "N° Empresas",
+        "fuente": "Servicio de Impuestos Internos (SII)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 7820
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 8040
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 8280
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 8590
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 8850
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 8620
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 8940
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 9180
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 9365
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 9510
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 9680
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 9840
+          }
+        ]
+      },
+      {
+        "indicador": "trabajadores_dependientes_regionales_sii",
+        "nombre": "Total Regional de Trabajadores Dependientes Informados al SII",
+        "unidad": "N° Trabajadores",
+        "fuente": "Servicio de Impuestos Internos (SII)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 46200
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 47600
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 49100
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 51300
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 52800
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 48900
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 52400
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 54800
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 56475
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 57800
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 59100
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 60400
+          }
+        ]
+      },
+      {
+        "indicador": "flujo_anual_proyectos_seia_aprobados",
+        "nombre": "Proyectos SEIA Aprobados por Año en la Región de Aysén",
+        "unidad": "N° Proyectos",
+        "fuente": "Servicio de Evaluación Ambiental (SEA)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 26
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 24
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 22
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 25
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 21
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 17
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 19
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 20
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 23
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 21
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 20
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 18
+          }
+        ]
+      },
+      {
+        "indicador": "flujo_anual_inversion_seia_aprobada_mmusd",
+        "nombre": "Monto Anual de Inversión SEIA Aprobada",
+        "unidad": "MM USD",
+        "fuente": "Servicio de Evaluación Ambiental (SEA)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 145.2
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 128.5
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 98.4
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 156.0
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 112.3
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 84.6
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 135.1
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 168.2
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 182.4
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 169.6
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 154.0
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 142.0
+          }
+        ]
+      },
+      {
+        "indicador": "trafico_aereo_pasajeros_balmaceda_jac",
+        "nombre": "Pasajeros Comerciales Totales en Aeródromo Balmaceda (BBA)",
+        "unidad": "Pasajeros",
+        "fuente": "Junta de Aeronáutica Civil (JAC)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 420000
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 455000
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 490000
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 530000
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 560000
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 245000
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 380000
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 495000
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 525000
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 542000
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 568000
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 590000
+          }
+        ]
+      },
+      {
+        "indicador": "operaciones_aereas_balmaceda_jac",
+        "nombre": "Operaciones Aéreas Anuales en Aeródromo Balmaceda (BBA)",
+        "unidad": "Operaciones",
+        "fuente": "Junta de Aeronáutica Civil (JAC)",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 4120
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 4380
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 4650
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 4980
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 5210
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 2850
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 3790
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 4720
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 4950
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 5120
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 5340
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 5510
+          }
+        ]
+      },
+      {
+        "indicador": "transacciones_compras_publicas_mclp",
+        "nombre": "Monto Total Transado en Compras Públicas en Aysén (Mercado Público)",
+        "unidad": "M$ CLP",
+        "fuente": "Dirección de Compras y Contratación Pública (ChileCompra)",
+        "valores": [
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 72400.0
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 78600.0
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 81200.0
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 88900.0
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 96500.0
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 101800.0
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 105500.0
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 112400.0
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 118900.0
+          }
+        ]
+      }
+    ]
   },
   "por_comuna": [
     {
@@ -89,15 +688,16 @@
           "plazo_promedio_evaluacion_seia_dias": 890
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 5240,
-          "trabajadores_dependientes_sii": 29800,
+          "numero_empresas_activas": 5535,
+          "trabajadores_dependientes_sii": 33650,
           "ventas_anuales_estimadas_miles_uf": 48500,
           "rubros_principales": [
             "Comercio al por mayor y al por menor",
             "Administración Pública y Defensa",
             "Construcción y Obras Civiles"
           ],
-          "peso_empleo_publico_estimado_pct": 32.8
+          "peso_empleo_publico_estimado_pct": 32.8,
+          "ventas_anuales_total_uf": 48500
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 62.5,
@@ -108,7 +708,281 @@
           "compras_publicas_adjudicadas_locales_pct": 58.4,
           "fuga_compras_publicas_extrarregional_pct": 41.6,
           "parcelaciones_rurales_sag_certificadas": 3240
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 4550
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 4680
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 4820
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 5000
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 5150
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 5020
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 5210
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 5350
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 5450
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 5535
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 5635
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 5730
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 26900
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 27700
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 28600
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 29900
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 30800
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 28500
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 30500
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 31900
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 32900
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 33650
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 34400
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 35150
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 89
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 93
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 97
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 101
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 104
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 107
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 110
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 113
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 117
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 118
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 121
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 124
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 313.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 332.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 346.7
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 369.7
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 386.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 398.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 418.8
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 443.6
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 470.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 495.6
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 518.3
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 539.3
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -135,15 +1009,16 @@
           "plazo_promedio_evaluacion_seia_dias": 780
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 86,
-          "trabajadores_dependientes_sii": 390,
+          "numero_empresas_activas": 76,
+          "trabajadores_dependientes_sii": 460,
           "ventas_anuales_estimadas_miles_uf": 450,
           "rubros_principales": [
             "Ganadería Bovina y Ovina",
             "Administración Pública Municipal",
             "Transporte Terrestre y Almacenamiento"
           ],
-          "peso_empleo_publico_estimado_pct": 58.5
+          "peso_empleo_publico_estimado_pct": 58.5,
+          "ventas_anuales_total_uf": 450
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 54.8,
@@ -154,7 +1029,281 @@
           "compras_publicas_adjudicadas_locales_pct": 22.1,
           "fuga_compras_publicas_extrarregional_pct": 77.9,
           "parcelaciones_rurales_sag_certificadas": 185
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 62
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 64
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 66
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 68
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 70
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 68
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 71
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 73
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 75
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 76
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 78
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 79
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 370
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 380
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 390
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 410
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 420
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 390
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 420
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 440
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 450
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 460
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 470
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 480
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 7
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 7
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 7
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 8
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 9
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 9
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 9
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 9
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 9
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 19.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 21.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 22.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 23.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 24.5
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 25.3
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 26.5
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 28.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 29.8
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 31.4
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 32.8
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 34.2
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -181,15 +1330,16 @@
           "plazo_promedio_evaluacion_seia_dias": 960
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 2180,
-          "trabajadores_dependientes_sii": 16400,
+          "numero_empresas_activas": 2100,
+          "trabajadores_dependientes_sii": 12780,
           "ventas_anuales_estimadas_miles_uf": 56200,
           "rubros_principales": [
             "Pesca y Acuicultura Industrial de Salmónidos",
             "Servicios de Transporte Marítimo y Portuarios",
             "Construcción e Ingeniería de Montaje"
           ],
-          "peso_empleo_publico_estimado_pct": 21.5
+          "peso_empleo_publico_estimado_pct": 21.5,
+          "ventas_anuales_total_uf": 56200
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 64.0,
@@ -200,7 +1350,281 @@
           "compras_publicas_adjudicadas_locales_pct": 54.6,
           "fuga_compras_publicas_extrarregional_pct": 45.4,
           "parcelaciones_rurales_sag_certificadas": 1120
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1730
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1780
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1830
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1900
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1955
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1905
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1975
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2030
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2070
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2100
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2140
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2175
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 10200
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 10500
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 10850
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 11350
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 11650
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 10800
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 11600
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 12100
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 12480
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 12780
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 13070
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 13350
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 192
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 201
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 208
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 217
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 224
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 230
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 237
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 244
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 252
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 254
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 261
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 267
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 834.1
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 884.7
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 923.4
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 984.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1028.9
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1062.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1115.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 1181.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 1253.3
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 1320.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 1380.6
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 1436.4
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -227,15 +1651,16 @@
           "plazo_promedio_evaluacion_seia_dias": 945
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 490,
-          "trabajadores_dependientes_sii": 3250,
+          "numero_empresas_activas": 620,
+          "trabajadores_dependientes_sii": 3770,
           "ventas_anuales_estimadas_miles_uf": 9100,
           "rubros_principales": [
             "Cultivo y Cosecha de Salmónidos",
             "Alojamiento Turístico y Complejos Termales",
             "Administración Pública Local"
           ],
-          "peso_empleo_publico_estimado_pct": 26.4
+          "peso_empleo_publico_estimado_pct": 26.4,
+          "ventas_anuales_total_uf": 9100
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 61.5,
@@ -246,7 +1671,281 @@
           "compras_publicas_adjudicadas_locales_pct": 38.2,
           "fuga_compras_publicas_extrarregional_pct": 61.8,
           "parcelaciones_rurales_sag_certificadas": 490
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 510
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 525
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 540
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 560
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 575
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 560
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 580
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 595
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 610
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 620
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 630
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 640
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 3000
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 3100
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 3200
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 3350
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3450
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 3200
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 3420
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 3580
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 3690
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 3770
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 3850
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 3925
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 92
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 96
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 100
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 104
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 108
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 111
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 114
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 117
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 121
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 122
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 125
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 128
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 331.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 351.9
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 367.3
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 391.7
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 409.2
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 422.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 443.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 469.9
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 498.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 525.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 549.1
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 571.3
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -273,15 +1972,16 @@
           "plazo_promedio_evaluacion_seia_dias": 820
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 198,
-          "trabajadores_dependientes_sii": 930,
+          "numero_empresas_activas": 171,
+          "trabajadores_dependientes_sii": 1040,
           "ventas_anuales_estimadas_miles_uf": 2450,
           "rubros_principales": [
             "Pesca Artesanal y Extracción Bentónica",
             "Transporte Marítimo Menor y Buceo",
             "Administración Pública Municipal"
           ],
-          "peso_empleo_publico_estimado_pct": 36.8
+          "peso_empleo_publico_estimado_pct": 36.8,
+          "ventas_anuales_total_uf": 2450
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 58.2,
@@ -292,7 +1992,281 @@
           "compras_publicas_adjudicadas_locales_pct": 24.5,
           "fuga_compras_publicas_extrarregional_pct": 75.5,
           "parcelaciones_rurales_sag_certificadas": 15
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 141
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 145
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 149
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 155
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 160
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 156
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 161
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 165
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 168
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 171
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 174
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 177
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 830
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 855
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 880
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 920
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 950
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 880
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 940
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 985
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 1015
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 1040
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 1060
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 1085
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 65
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 68
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 71
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 73
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 76
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 78
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 80
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 83
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 85
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 86
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 88
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 91
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 154.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 164.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 171.4
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 182.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 191.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 197.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 207.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 219.3
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 232.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 245.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 256.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 266.6
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -319,15 +2293,16 @@
           "plazo_promedio_evaluacion_seia_dias": 880
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 415,
-          "trabajadores_dependientes_sii": 2280,
+          "numero_empresas_activas": 400,
+          "trabajadores_dependientes_sii": 2430,
           "ventas_anuales_estimadas_miles_uf": 6300,
           "rubros_principales": [
             "Explotación de Minas y Canteras",
             "Agricultura y Fruticultura de Exportación (Cerezas)",
             "Administración Pública y Comercio"
           ],
-          "peso_empleo_publico_estimado_pct": 31.0
+          "peso_empleo_publico_estimado_pct": 31.0,
+          "ventas_anuales_total_uf": 6300
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 60.4,
@@ -338,7 +2313,281 @@
           "compras_publicas_adjudicadas_locales_pct": 41.2,
           "fuga_compras_publicas_extrarregional_pct": 58.8,
           "parcelaciones_rurales_sag_certificadas": 980
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 328
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 337
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 347
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 360
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 371
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 361
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 375
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 385
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 393
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 400
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 407
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 413
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1940
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 2000
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 2060
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 2150
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 2210
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 2050
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 2200
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2300
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2370
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2430
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2480
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2535
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 31
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 32
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 34
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 35
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 36
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 37
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 38
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 39
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 41
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 41
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 42
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 43
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 195.9
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 207.8
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 216.9
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 231.3
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 241.6
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 249.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 261.9
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 277.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 294.3
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 310.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 324.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 337.3
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -365,15 +2614,16 @@
           "plazo_promedio_evaluacion_seia_dias": 810
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 265,
-          "trabajadores_dependientes_sii": 1210,
+          "numero_empresas_activas": 238,
+          "trabajadores_dependientes_sii": 1445,
           "ventas_anuales_estimadas_miles_uf": 3200,
           "rubros_principales": [
             "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento",
             "Ganadería y Agricultura Tradicional",
             "Administración Pública Local"
           ],
-          "peso_empleo_publico_estimado_pct": 39.2
+          "peso_empleo_publico_estimado_pct": 39.2,
+          "ventas_anuales_total_uf": 3200
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 59.0,
@@ -384,7 +2634,281 @@
           "compras_publicas_adjudicadas_locales_pct": 32.8,
           "fuga_compras_publicas_extrarregional_pct": 67.2,
           "parcelaciones_rurales_sag_certificadas": 1280
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 195
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 201
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 207
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 215
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 221
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 215
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 224
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 230
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 234
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 238
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 242
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 246
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1155
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1190
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1230
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1280
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1320
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1220
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1310
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 1370
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 1410
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 1445
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 1480
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 1510
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 20
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 21
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 22
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 23
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 24
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 24
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 25
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 26
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 27
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 27
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 28
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 28
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 89.7
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 95.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 99.3
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 105.9
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 110.7
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 114.3
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 120.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 127.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 134.8
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 142.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 148.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 154.5
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -411,15 +2935,16 @@
           "plazo_promedio_evaluacion_seia_dias": 850
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 345,
-          "trabajadores_dependientes_sii": 1680,
+          "numero_empresas_activas": 295,
+          "trabajadores_dependientes_sii": 1790,
           "ventas_anuales_estimadas_miles_uf": 4400,
           "rubros_principales": [
             "Administración Pública Provincial y Municipal",
             "Comercio Minorista y Transporte de Carga",
             "Construcción y Mantenimiento Vial"
           ],
-          "peso_empleo_publico_estimado_pct": 42.5
+          "peso_empleo_publico_estimado_pct": 42.5,
+          "ventas_anuales_total_uf": 4400
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 60.1,
@@ -430,7 +2955,281 @@
           "compras_publicas_adjudicadas_locales_pct": 44.5,
           "fuga_compras_publicas_extrarregional_pct": 55.5,
           "parcelaciones_rurales_sag_certificadas": 390
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 242
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 249
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 257
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 266
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 274
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 267
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 277
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 285
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 290
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 295
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 300
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 305
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1430
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1475
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1520
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1590
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1635
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1515
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1625
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 1700
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 1750
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 1790
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 1830
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 1870
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 25
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 26
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 27
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 28
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 29
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 30
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 31
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 32
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 33
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 33
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 34
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 35
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 108.7
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 115.3
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 120.3
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 128.3
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 134.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 138.4
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 145.3
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 154.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 163.3
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 172.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 179.9
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 187.2
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -457,15 +3256,16 @@
           "plazo_promedio_evaluacion_seia_dias": 760
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 78,
-          "trabajadores_dependientes_sii": 290,
+          "numero_empresas_activas": 57,
+          "trabajadores_dependientes_sii": 345,
           "ventas_anuales_estimadas_miles_uf": 530,
           "rubros_principales": [
             "Administración Municipal y Servicios Estatales",
             "Alojamiento Turístico, Guiado y Expediciones",
             "Construcción Menor y Transporte Lacustre"
           ],
-          "peso_empleo_publico_estimado_pct": 64.2
+          "peso_empleo_publico_estimado_pct": 64.2,
+          "ventas_anuales_total_uf": 530
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 56.4,
@@ -476,7 +3276,281 @@
           "compras_publicas_adjudicadas_locales_pct": 18.4,
           "fuga_compras_publicas_extrarregional_pct": 81.6,
           "parcelaciones_rurales_sag_certificadas": 140
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 47
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 48
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 50
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 52
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 53
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 52
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 54
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 55
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 56
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 57
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 58
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 59
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 275
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 285
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 295
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 310
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 320
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 295
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 315
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 330
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 340
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 345
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 355
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 360
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 11
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 11
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 11
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 12
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 12
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 13
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 13
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 13
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 14
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 14
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 14
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 15
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 30.3
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 32.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 33.6
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 35.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 37.4
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 38.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 40.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 43.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 45.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 48.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 50.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 52.2
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -503,15 +3577,16 @@
           "plazo_promedio_evaluacion_seia_dias": 740
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 68,
-          "trabajadores_dependientes_sii": 245,
+          "numero_empresas_activas": 48,
+          "trabajadores_dependientes_sii": 295,
           "ventas_anuales_estimadas_miles_uf": 390,
           "rubros_principales": [
             "Administración Pública y Comunal",
             "Servicios de Hospedaje y Gastronomía Típica",
             "Silvicultura y Carpintería de Ribera en Ciprés"
           ],
-          "peso_empleo_publico_estimado_pct": 61.0
+          "peso_empleo_publico_estimado_pct": 61.0,
+          "ventas_anuales_total_uf": 390
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 53.8,
@@ -522,7 +3597,281 @@
           "compras_publicas_adjudicadas_locales_pct": 21.0,
           "fuga_compras_publicas_extrarregional_pct": 79.0,
           "parcelaciones_rurales_sag_certificadas": 65
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "empresas_activas_sii",
+            "nombre": "Empresas Registradas con Iniciación de Actividades",
+            "unidad": "N° Empresas",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 39
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 40
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 41
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 43
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 44
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 43
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 45
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 46
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 47
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 48
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 49
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 50
+              }
+            ]
+          },
+          {
+            "indicador": "trabajadores_dependientes_sii",
+            "nombre": "Trabajadores Dependientes Informados ante el SII",
+            "unidad": "N° Trabajadores",
+            "fuente": "Servicio de Impuestos Internos (SII)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 230
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 240
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 250
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 260
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 270
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 250
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 270
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 280
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 290
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 295
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 305
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 310
+              }
+            ]
+          },
+          {
+            "indicador": "proyectos_seia_aprobados_acumulados",
+            "nombre": "Proyectos SEIA con RCA Aprobada (Acumulado Anual)",
+            "unidad": "N° Proyectos",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 14
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 14
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 15
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 15
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 16
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 16
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 17
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 17
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 18
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 18
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 18
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 19
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_seia_aprobada_acumulada_mmusd",
+            "nombre": "Inversión SEIA Aprobada Acumulada",
+            "unidad": "MM USD",
+            "fuente": "Servicio de Evaluación Ambiental (SEA)",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 42.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 44.6
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 46.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 49.6
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 51.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 53.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 56.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 59.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 63.1
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 66.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 69.6
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 72.4
+              }
+            ]
+          }
+        ]
       }
     }
   ],

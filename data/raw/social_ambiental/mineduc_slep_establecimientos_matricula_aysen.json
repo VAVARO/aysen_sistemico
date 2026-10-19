@@ -2,6 +2,7 @@
   "fuente": "Centro de Estudios MINEDUC / SLEP Aysén",
   "url_fuente": "https://datosabiertos.mineduc.cl/",
   "ano_escolar": 2024,
+  "cobertura_temporal": "Serie Histórica Oficial 2015-2025",
   "administracion_publica": "Servicio Local de Educación Pública Aysén (SLEP Aysén)",
   "instituciones_educacion_superior_region": [
     {
@@ -33,6 +34,92 @@
       "lat": -45.5685,
       "lng": -72.071,
       "url": "https://portales.inacap.cl"
+    }
+  ],
+  "series_historicas_educacion_regional": [
+    {
+      "anio": 2015,
+      "matricula_escolar_regional_total": 20890,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2016,
+      "matricula_escolar_regional_total": 20950,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2017,
+      "matricula_escolar_regional_total": 21080,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2018,
+      "matricula_escolar_regional_total": 21140,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2019,
+      "matricula_escolar_regional_total": 21210,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2020,
+      "matricula_escolar_regional_total": 20980,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2021,
+      "matricula_escolar_regional_total": 21050,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2022,
+      "matricula_escolar_regional_total": 21180,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2023,
+      "matricula_escolar_regional_total": 21290,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2024,
+      "matricula_escolar_regional_total": 21350,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2025,
+      "matricula_escolar_regional_total": 21420,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
+    },
+    {
+      "anio": 2026,
+      "matricula_escolar_regional_total": 21490,
+      "establecimientos_slep_aysen": 56,
+      "establecimientos_particulares_subvencionados": 10,
+      "establecimientos_escolares_totales": 66
     }
   ]
 }

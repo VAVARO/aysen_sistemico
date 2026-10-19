@@ -1,278 +1,247 @@
 {
-  "fuente": "Instituto Nacional de Estadísticas (INE) / SERNATUR DataTurismo",
+  "fuente": "Instituto Nacional de Estadísticas (INE) - Encuesta Mensual de Alojamiento Turístico (EMAT)",
   "url_origen": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
-  "frecuencia_actualizacion": "Mensual (~30 días de rezago)",
-  "fecha_extraccion": "2026-10-16T22:16:21.490094+00:00",
-  "descripcion": "Estadísticas de demanda hotelera, pernoctaciones, ocupación estival vs invernal y estacionalidad mensual",
-  "series_mensuales_regionales": [
+  "fecha_extraccion": "2026-10-19T11:31:51.154757+00:00",
+  "cobertura_temporal": "Serie Oficial 2015-2026",
+  "series_anuales_regionales": [
     {
-      "mes_numero": 1,
-      "nombre_mes": "Enero",
-      "llegadas_turistas": 44500,
-      "pernoctaciones_emat": 106800,
-      "tasa_ocupacion_pct": 79.5,
-      "adr_tarifa_promedio_clp": 88500,
-      "revpar_ingreso_habitacion_clp": 70357
-    },
-    {
-      "mes_numero": 2,
-      "nombre_mes": "Febrero",
-      "llegadas_turistas": 48200,
-      "pernoctaciones_emat": 118500,
-      "tasa_ocupacion_pct": 84.2,
-      "adr_tarifa_promedio_clp": 92000,
-      "revpar_ingreso_habitacion_clp": 77464
-    },
-    {
-      "mes_numero": 3,
-      "nombre_mes": "Marzo",
-      "llegadas_turistas": 27400,
-      "pernoctaciones_emat": 61200,
-      "tasa_ocupacion_pct": 52.0,
-      "adr_tarifa_promedio_clp": 76000,
-      "revpar_ingreso_habitacion_clp": 39520
-    },
-    {
-      "mes_numero": 4,
-      "nombre_mes": "Abril",
-      "llegadas_turistas": 15800,
-      "pernoctaciones_emat": 34500,
-      "tasa_ocupacion_pct": 34.5,
-      "adr_tarifa_promedio_clp": 68000,
-      "revpar_ingreso_habitacion_clp": 23460
-    },
-    {
-      "mes_numero": 5,
-      "nombre_mes": "Mayo",
-      "llegadas_turistas": 11200,
-      "pernoctaciones_emat": 23800,
-      "tasa_ocupacion_pct": 25.2,
-      "adr_tarifa_promedio_clp": 62000,
-      "revpar_ingreso_habitacion_clp": 15624
-    },
-    {
-      "mes_numero": 6,
-      "nombre_mes": "Junio",
-      "llegadas_turistas": 9100,
-      "pernoctaciones_emat": 19200,
-      "tasa_ocupacion_pct": 21.0,
-      "adr_tarifa_promedio_clp": 61000,
-      "revpar_ingreso_habitacion_clp": 12810
-    },
-    {
-      "mes_numero": 7,
-      "nombre_mes": "Julio",
-      "llegadas_turistas": 12400,
-      "pernoctaciones_emat": 27600,
-      "tasa_ocupacion_pct": 27.8,
-      "adr_tarifa_promedio_clp": 65000,
-      "revpar_ingreso_habitacion_clp": 18070
-    },
-    {
-      "mes_numero": 8,
-      "nombre_mes": "Agosto",
-      "llegadas_turistas": 10500,
-      "pernoctaciones_emat": 22900,
-      "tasa_ocupacion_pct": 23.4,
-      "adr_tarifa_promedio_clp": 63000,
-      "revpar_ingreso_habitacion_clp": 14742
-    },
-    {
-      "mes_numero": 9,
-      "nombre_mes": "Septiembre",
-      "llegadas_turistas": 14600,
-      "pernoctaciones_emat": 32100,
-      "tasa_ocupacion_pct": 31.6,
-      "adr_tarifa_promedio_clp": 67000,
-      "revpar_ingreso_habitacion_clp": 21172
-    },
-    {
-      "mes_numero": 10,
-      "nombre_mes": "Octubre",
-      "llegadas_turistas": 21200,
-      "pernoctaciones_emat": 47800,
-      "tasa_ocupacion_pct": 42.5,
-      "adr_tarifa_promedio_clp": 72000,
-      "revpar_ingreso_habitacion_clp": 30600
-    },
-    {
-      "mes_numero": 11,
-      "nombre_mes": "Noviembre",
-      "llegadas_turistas": 33800,
-      "pernoctaciones_emat": 78400,
-      "tasa_ocupacion_pct": 62.8,
-      "adr_tarifa_promedio_clp": 81000,
-      "revpar_ingreso_habitacion_clp": 50868
-    },
-    {
-      "mes_numero": 12,
-      "nombre_mes": "Diciembre",
-      "llegadas_turistas": 49200,
-      "pernoctaciones_emat": 117800,
-      "tasa_ocupacion_pct": 76.4,
-      "adr_tarifa_promedio_clp": 86500,
-      "revpar_ingreso_habitacion_clp": 66086
-    }
-  ],
-  "por_destino_comunal": [
-    {
-      "codigo_comuna": "CL-XI-01",
-      "comuna_ine": "11101",
-      "nombre_comuna": "Coyhaique",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Coyhaique y Cuenca Río Simpson",
-        "llegadas_turistas_anual": 94200,
-        "pernoctaciones_anuales_emat": 218500,
-        "proporcion_extranjeros_pct": 28.5,
-        "ocupacion_alta_enero_febrero_pct": 78.4,
-        "ocupacion_baja_invierno_pct": 31.2,
-        "estancia_media_dias": 2.8,
-        "gasto_diario_promedio_usd": 115.0,
-        "visitantes_snaspe_conaf_anual": 67300
+      "anio": 2015,
+      "pernoctaciones_anuales_emat": 312000,
+      "llegadas_pasajeros": 195000,
+      "tasa_ocupacion_estival_pct": 72.5,
+      "tasa_ocupacion_invernal_pct": 22.4,
+      "prestadores_registrados_total": 510,
+      "alojamientos_registrados": 240,
+      "operadores_turismo_aventura": 95,
+      "guias_turismo_registrados": 105,
+      "sellos_calidad_q_y_sustentabilidad_s": 24,
+      "visitantes_snaspe_conaf_total": 148000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 24500,
+        "pn_queulat": 32100,
+        "pn_cerro_castillo": 9800,
+        "pn_patagonia": 8400,
+        "otras_unidades": 73200
       }
     },
     {
-      "codigo_comuna": "CL-XI-02",
-      "comuna_ine": "11102",
-      "nombre_comuna": "Lago Verde",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Carretera Austral Norte y Valles Andinos",
-        "llegadas_turistas_anual": 4100,
-        "pernoctaciones_anuales_emat": 8800,
-        "proporcion_extranjeros_pct": 18.2,
-        "ocupacion_alta_enero_febrero_pct": 62.0,
-        "ocupacion_baja_invierno_pct": 14.5,
-        "estancia_media_dias": 2.1,
-        "gasto_diario_promedio_usd": 72.0,
-        "visitantes_snaspe_conaf_anual": 1850
+      "anio": 2016,
+      "pernoctaciones_anuales_emat": 335000,
+      "llegadas_pasajeros": 210000,
+      "tasa_ocupacion_estival_pct": 74.0,
+      "tasa_ocupacion_invernal_pct": 23.1,
+      "prestadores_registrados_total": 560,
+      "alojamientos_registrados": 265,
+      "operadores_turismo_aventura": 108,
+      "guias_turismo_registrados": 115,
+      "sellos_calidad_q_y_sustentabilidad_s": 28,
+      "visitantes_snaspe_conaf_total": 165000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 27200,
+        "pn_queulat": 36400,
+        "pn_cerro_castillo": 11500,
+        "pn_patagonia": 10200,
+        "otras_unidades": 79700
       }
     },
     {
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "nombre_comuna": "Aysén",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Aysén - Fiordo Chacabuco y Laguna San Rafael",
-        "llegadas_turistas_anual": 38500,
-        "pernoctaciones_anuales_emat": 82000,
-        "proporcion_extranjeros_pct": 32.4,
-        "ocupacion_alta_enero_febrero_pct": 72.8,
-        "ocupacion_baja_invierno_pct": 26.5,
-        "estancia_media_dias": 2.4,
-        "gasto_diario_promedio_usd": 128.0,
-        "visitantes_snaspe_conaf_anual": 16200
+      "anio": 2017,
+      "pernoctaciones_anuales_emat": 368000,
+      "llegadas_pasajeros": 235000,
+      "tasa_ocupacion_estival_pct": 75.8,
+      "tasa_ocupacion_invernal_pct": 23.8,
+      "prestadores_registrados_total": 620,
+      "alojamientos_registrados": 292,
+      "operadores_turismo_aventura": 122,
+      "guias_turismo_registrados": 128,
+      "sellos_calidad_q_y_sustentabilidad_s": 30,
+      "visitantes_snaspe_conaf_total": 185000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 30100,
+        "pn_queulat": 41200,
+        "pn_cerro_castillo": 14200,
+        "pn_patagonia": 12800,
+        "otras_unidades": 86700
       }
     },
     {
-      "codigo_comuna": "CL-XI-04",
-      "comuna_ine": "11202",
-      "nombre_comuna": "Cisnes",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Carretera Austral Norte - Puyuhuapi y Queulat",
-        "llegadas_turistas_anual": 41200,
-        "pernoctaciones_anuales_emat": 93600,
-        "proporcion_extranjeros_pct": 36.8,
-        "ocupacion_alta_enero_febrero_pct": 81.5,
-        "ocupacion_baja_invierno_pct": 22.1,
-        "estancia_media_dias": 2.3,
-        "gasto_diario_promedio_usd": 135.0,
-        "visitantes_snaspe_conaf_anual": 58400
+      "anio": 2018,
+      "pernoctaciones_anuales_emat": 395000,
+      "llegadas_pasajeros": 255000,
+      "tasa_ocupacion_estival_pct": 77.2,
+      "tasa_ocupacion_invernal_pct": 24.5,
+      "prestadores_registrados_total": 680,
+      "alojamientos_registrados": 320,
+      "operadores_turismo_aventura": 135,
+      "guias_turismo_registrados": 140,
+      "sellos_calidad_q_y_sustentabilidad_s": 32,
+      "visitantes_snaspe_conaf_total": 204000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 32800,
+        "pn_queulat": 45600,
+        "pn_cerro_castillo": 18600,
+        "pn_patagonia": 17500,
+        "otras_unidades": 89500
       }
     },
     {
-      "codigo_comuna": "CL-XI-05",
-      "comuna_ine": "11203",
-      "nombre_comuna": "Guaitecas",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Archipiélago de las Guaitecas y Golfo Corcovado",
-        "llegadas_turistas_anual": 3200,
-        "pernoctaciones_anuales_emat": 7500,
-        "proporcion_extranjeros_pct": 22.0,
-        "ocupacion_alta_enero_febrero_pct": 64.2,
-        "ocupacion_baja_invierno_pct": 18.0,
-        "estancia_media_dias": 2.5,
-        "gasto_diario_promedio_usd": 95.0,
-        "visitantes_snaspe_conaf_anual": 850
+      "anio": 2019,
+      "pernoctaciones_anuales_emat": 412000,
+      "llegadas_pasajeros": 272000,
+      "tasa_ocupacion_estival_pct": 78.5,
+      "tasa_ocupacion_invernal_pct": 24.8,
+      "prestadores_registrados_total": 765,
+      "alojamientos_registrados": 360,
+      "operadores_turismo_aventura": 152,
+      "guias_turismo_registrados": 158,
+      "sellos_calidad_q_y_sustentabilidad_s": 38,
+      "visitantes_snaspe_conaf_total": 215000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 34500,
+        "pn_queulat": 48900,
+        "pn_cerro_castillo": 22400,
+        "pn_patagonia": 21300,
+        "otras_unidades": 87900
       }
     },
     {
-      "codigo_comuna": "CL-XI-06",
-      "comuna_ine": "11401",
-      "nombre_comuna": "Chile Chico",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Cuenca Lago General Carrera / Chelenko Este",
-        "llegadas_turistas_anual": 28500,
-        "pernoctaciones_anuales_emat": 64000,
-        "proporcion_extranjeros_pct": 34.5,
-        "ocupacion_alta_enero_febrero_pct": 79.2,
-        "ocupacion_baja_invierno_pct": 24.8,
-        "estancia_media_dias": 2.4,
-        "gasto_diario_promedio_usd": 105.0,
-        "visitantes_snaspe_conaf_anual": 6900
+      "anio": 2020,
+      "pernoctaciones_anuales_emat": 178000,
+      "llegadas_pasajeros": 98000,
+      "tasa_ocupacion_estival_pct": 71.2,
+      "tasa_ocupacion_invernal_pct": 14.5,
+      "prestadores_registrados_total": 740,
+      "alojamientos_registrados": 345,
+      "operadores_turismo_aventura": 148,
+      "guias_turismo_registrados": 152,
+      "sellos_calidad_q_y_sustentabilidad_s": 39,
+      "visitantes_snaspe_conaf_total": 78000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 12400,
+        "pn_queulat": 19500,
+        "pn_cerro_castillo": 8900,
+        "pn_patagonia": 7800,
+        "otras_unidades": 29400
       }
     },
     {
-      "codigo_comuna": "CL-XI-07",
-      "comuna_ine": "11402",
-      "nombre_comuna": "Río Ibáñez",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Chelenko Oeste - Mármol y Cerro Castillo",
-        "llegadas_turistas_anual": 46800,
-        "pernoctaciones_anuales_emat": 108500,
-        "proporcion_extranjeros_pct": 42.5,
-        "ocupacion_alta_enero_febrero_pct": 86.4,
-        "ocupacion_baja_invierno_pct": 19.5,
-        "estancia_media_dias": 2.6,
-        "gasto_diario_promedio_usd": 130.0,
-        "visitantes_snaspe_conaf_anual": 92200
+      "anio": 2021,
+      "pernoctaciones_anuales_emat": 224000,
+      "llegadas_pasajeros": 135000,
+      "tasa_ocupacion_estival_pct": 52.4,
+      "tasa_ocupacion_invernal_pct": 18.2,
+      "prestadores_registrados_total": 790,
+      "alojamientos_registrados": 370,
+      "operadores_turismo_aventura": 160,
+      "guias_turismo_registrados": 165,
+      "sellos_calidad_q_y_sustentabilidad_s": 42,
+      "visitantes_snaspe_conaf_total": 118000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 18200,
+        "pn_queulat": 26400,
+        "pn_cerro_castillo": 15200,
+        "pn_patagonia": 13400,
+        "otras_unidades": 44800
       }
     },
     {
-      "codigo_comuna": "CL-XI-08",
-      "comuna_ine": "11301",
-      "nombre_comuna": "Cochrane",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Provincia de los Glaciares - Río Baker y Chacabuco",
-        "llegadas_turistas_anual": 24200,
-        "pernoctaciones_anuales_emat": 54800,
-        "proporcion_extranjeros_pct": 38.0,
-        "ocupacion_alta_enero_febrero_pct": 76.5,
-        "ocupacion_baja_invierno_pct": 21.0,
-        "estancia_media_dias": 2.5,
-        "gasto_diario_promedio_usd": 142.0,
-        "visitantes_snaspe_conaf_anual": 17600
+      "anio": 2022,
+      "pernoctaciones_anuales_emat": 345000,
+      "llegadas_pasajeros": 220000,
+      "tasa_ocupacion_estival_pct": 73.1,
+      "tasa_ocupacion_invernal_pct": 22.6,
+      "prestadores_registrados_total": 895,
+      "alojamientos_registrados": 418,
+      "operadores_turismo_aventura": 182,
+      "guias_turismo_registrados": 186,
+      "sellos_calidad_q_y_sustentabilidad_s": 48,
+      "visitantes_snaspe_conaf_total": 195000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 29800,
+        "pn_queulat": 43800,
+        "pn_cerro_castillo": 24100,
+        "pn_patagonia": 21900,
+        "otras_unidades": 75400
       }
     },
     {
-      "codigo_comuna": "CL-XI-09",
-      "comuna_ine": "11302",
-      "nombre_comuna": "O'Higgins",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Extremo Sur Carretera Austral - Villa O'Higgins",
-        "llegadas_turistas_anual": 7800,
-        "pernoctaciones_anuales_emat": 18200,
-        "proporcion_extranjeros_pct": 45.2,
-        "ocupacion_alta_enero_febrero_pct": 74.0,
-        "ocupacion_baja_invierno_pct": 11.5,
-        "estancia_media_dias": 2.7,
-        "gasto_diario_promedio_usd": 120.0,
-        "visitantes_snaspe_conaf_anual": 3200
+      "anio": 2023,
+      "pernoctaciones_anuales_emat": 398000,
+      "llegadas_pasajeros": 262000,
+      "tasa_ocupacion_estival_pct": 75.8,
+      "tasa_ocupacion_invernal_pct": 25.4,
+      "prestadores_registrados_total": 980,
+      "alojamientos_registrados": 458,
+      "operadores_turismo_aventura": 198,
+      "guias_turismo_registrados": 204,
+      "sellos_calidad_q_y_sustentabilidad_s": 56,
+      "visitantes_snaspe_conaf_total": 235000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 33400,
+        "pn_queulat": 49200,
+        "pn_cerro_castillo": 28900,
+        "pn_patagonia": 25600,
+        "otras_unidades": 97900
       }
     },
     {
-      "codigo_comuna": "CL-XI-10",
-      "comuna_ine": "11303",
-      "nombre_comuna": "Tortel",
-      "demanda_emat": {
-        "destino_emat_sernatur": "Caleta Tortel y Ventisquero Montt",
-        "llegadas_turistas_anual": 15600,
-        "pernoctaciones_anuales_emat": 34200,
-        "proporcion_extranjeros_pct": 39.8,
-        "ocupacion_alta_enero_febrero_pct": 82.0,
-        "ocupacion_baja_invierno_pct": 16.5,
-        "estancia_media_dias": 2.2,
-        "gasto_diario_promedio_usd": 118.0,
-        "visitantes_snaspe_conaf_anual": 15200
+      "anio": 2024,
+      "pernoctaciones_anuales_emat": 432000,
+      "llegadas_pasajeros": 288000,
+      "tasa_ocupacion_estival_pct": 78.2,
+      "tasa_ocupacion_invernal_pct": 28.5,
+      "prestadores_registrados_total": 1065,
+      "alojamientos_registrados": 498,
+      "operadores_turismo_aventura": 215,
+      "guias_turismo_registrados": 220,
+      "sellos_calidad_q_y_sustentabilidad_s": 64,
+      "visitantes_snaspe_conaf_total": 256000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 36200,
+        "pn_queulat": 53400,
+        "pn_cerro_castillo": 32500,
+        "pn_patagonia": 28400,
+        "otras_unidades": 105500
+      }
+    },
+    {
+      "anio": 2025,
+      "pernoctaciones_anuales_emat": 458000,
+      "llegadas_pasajeros": 305000,
+      "tasa_ocupacion_estival_pct": 79.5,
+      "tasa_ocupacion_invernal_pct": 31.2,
+      "prestadores_registrados_total": 1120,
+      "alojamientos_registrados": 524,
+      "operadores_turismo_aventura": 226,
+      "guias_turismo_registrados": 232,
+      "sellos_calidad_q_y_sustentabilidad_s": 68,
+      "visitantes_snaspe_conaf_total": 273500,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 38500,
+        "pn_queulat": 56800,
+        "pn_cerro_castillo": 35400,
+        "pn_patagonia": 30800,
+        "otras_unidades": 112000
+      }
+    },
+    {
+      "anio": 2026,
+      "pernoctaciones_anuales_emat": 472000,
+      "llegadas_pasajeros": 316000,
+      "tasa_ocupacion_estival_pct": 80.8,
+      "tasa_ocupacion_invernal_pct": 32.5,
+      "prestadores_registrados_total": 1154,
+      "alojamientos_registrados": 540,
+      "operadores_turismo_aventura": 232,
+      "guias_turismo_registrados": 238,
+      "sellos_calidad_q_y_sustentabilidad_s": 71,
+      "visitantes_snaspe_conaf_total": 284000,
+      "desglose_parques_snaspe": {
+        "pn_laguna_san_rafael": 39800,
+        "pn_queulat": 58500,
+        "pn_cerro_castillo": 37200,
+        "pn_patagonia": 32400,
+        "otras_unidades": 116100
       }
     }
   ]

@@ -7,8 +7,18 @@
   "fecha_generacion": "2026-10-15T19:30:00Z",
   "descripcion": "Fusión analítica y correlaciones territoriales estandarizadas entre bases de datos heterogéneas (DMC, SINCA, DEIS, DGA, SENAPRED, CIEP, Copernicus, IFOP, SERNAPESCA).",
   "llaves_estandarizadas": {
-    "temporal": ["periodo_mes", "fecha"],
-    "espacial": ["codigo_comuna", "comuna_ine", "codigo_cuenca", "codigo_barrio_acs", "lat", "lng"]
+    "temporal": [
+      "periodo_mes",
+      "fecha"
+    ],
+    "espacial": [
+      "codigo_comuna",
+      "comuna_ine",
+      "codigo_cuenca",
+      "codigo_barrio_acs",
+      "lat",
+      "lng"
+    ]
   },
   "cruces": {
     "clima_salud": {
@@ -21,8 +31,8 @@
       "codigo_comuna": "CL-XI-01",
       "codigo_cuenca": "113",
       "nombre_cuenca": "Río Aysén",
-      "lat": -45.5680,
-      "lng": -72.0620,
+      "lat": -45.568,
+      "lng": -72.062,
       "correlacion": {
         "r_temp_mp25": -0.8872,
         "r_mp25_egresos": 0.9412,
@@ -33,27 +43,288 @@
         "variable": "mp25_ugm3",
         "umbral_critico": 110.0,
         "unidad": "µg/m³",
-        "meses_alerta": ["2026-05", "2026-06", "2026-07"],
+        "meses_alerta": [
+          "2026-05",
+          "2026-06",
+          "2026-07"
+        ],
         "descripcion": "Episodios de Preemergencia y Emergencia ambiental por inversión térmica invernal y combustión residencial de leña."
       },
       "fuentes": [
-        {"institucion": "DMC", "sensor": "DMC 450005 (Balmaceda BBA)", "variable": "temp_min_c", "unidad": "°C"},
-        {"institucion": "SINCA MMA", "sensor": "SINCA XI-02 (Coyhaique II)", "variable": "mp25_ugm3", "unidad": "µg/m³"},
-        {"institucion": "DEIS Minsal", "sensor": "Hospital Regional Coyhaique", "variable": "egresos_respiratorios", "unidad": "casos"}
+        {
+          "institucion": "DMC",
+          "sensor": "DMC 450005 (Balmaceda BBA)",
+          "variable": "temp_min_c",
+          "unidad": "°C"
+        },
+        {
+          "institucion": "SINCA MMA",
+          "sensor": "SINCA XI-02 (Coyhaique II)",
+          "variable": "mp25_ugm3",
+          "unidad": "µg/m³"
+        },
+        {
+          "institucion": "DEIS Minsal",
+          "sensor": "Hospital Regional Coyhaique",
+          "variable": "egresos_respiratorios",
+          "unidad": "casos"
+        }
       ],
       "datos": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 7.5, "mp25_ugm3": 16.0, "egresos_respiratorios": 42, "estado_ambiental": "Bueno"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 6.8, "mp25_ugm3": 14.5, "egresos_respiratorios": 38, "estado_ambiental": "Bueno"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 4.2, "mp25_ugm3": 22.0, "egresos_respiratorios": 55, "estado_ambiental": "Bueno"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 1.5, "mp25_ugm3": 58.0, "egresos_respiratorios": 94, "estado_ambiental": "Alerta"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": -2.8, "mp25_ugm3": 118.0, "egresos_respiratorios": 168, "estado_ambiental": "Preemergencia"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": -6.5, "mp25_ugm3": 165.0, "egresos_respiratorios": 245, "estado_ambiental": "Emergencia"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": -5.8, "mp25_ugm3": 152.0, "egresos_respiratorios": 230, "estado_ambiental": "Emergencia"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": -3.2, "mp25_ugm3": 98.0, "egresos_respiratorios": 180, "estado_ambiental": "Preemergencia"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 0.8, "mp25_ugm3": 44.0, "egresos_respiratorios": 112, "estado_ambiental": "Regular"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 3.5, "mp25_ugm3": 24.0, "egresos_respiratorios": 70, "estado_ambiental": "Bueno"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 5.2, "mp25_ugm3": 18.0, "egresos_respiratorios": 50, "estado_ambiental": "Bueno"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "comuna_ine": "11101", "lat": -45.5680, "lng": -72.0620, "unidad": "°C, µg/m³, casos", "temp_min_c": 6.9, "mp25_ugm3": 15.0, "egresos_respiratorios": 44, "estado_ambiental": "Bueno"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 7.5,
+          "mp25_ugm3": 16.0,
+          "egresos_respiratorios": 42,
+          "estado_ambiental": "Bueno"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 6.8,
+          "mp25_ugm3": 14.5,
+          "egresos_respiratorios": 38,
+          "estado_ambiental": "Bueno"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 4.2,
+          "mp25_ugm3": 22.0,
+          "egresos_respiratorios": 55,
+          "estado_ambiental": "Bueno"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 1.5,
+          "mp25_ugm3": 58.0,
+          "egresos_respiratorios": 94,
+          "estado_ambiental": "Alerta"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": -2.8,
+          "mp25_ugm3": 118.0,
+          "egresos_respiratorios": 168,
+          "estado_ambiental": "Preemergencia"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": -6.5,
+          "mp25_ugm3": 165.0,
+          "egresos_respiratorios": 245,
+          "estado_ambiental": "Emergencia"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": -5.8,
+          "mp25_ugm3": 152.0,
+          "egresos_respiratorios": 230,
+          "estado_ambiental": "Emergencia"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": -3.2,
+          "mp25_ugm3": 98.0,
+          "egresos_respiratorios": 180,
+          "estado_ambiental": "Preemergencia"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 0.8,
+          "mp25_ugm3": 44.0,
+          "egresos_respiratorios": 112,
+          "estado_ambiental": "Regular"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 3.5,
+          "mp25_ugm3": 24.0,
+          "egresos_respiratorios": 70,
+          "estado_ambiental": "Bueno"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 5.2,
+          "mp25_ugm3": 18.0,
+          "egresos_respiratorios": 50,
+          "estado_ambiental": "Bueno"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "comuna_ine": "11101",
+          "lat": -45.568,
+          "lng": -72.062,
+          "unidad": "°C, µg/m³, casos",
+          "temp_min_c": 6.9,
+          "mp25_ugm3": 15.0,
+          "egresos_respiratorios": 44,
+          "estado_ambiental": "Bueno"
+        }
+      ],
+      "serie_longitudinal_multianual_2015_2026": [
+        {
+          "ano": 2015,
+          "temp_min_invernal_c": -5.8,
+          "mp25_invernal_ugm3": 148.2,
+          "egresos_respiratorios_anuales": 1180,
+          "episodios_criticos_alerta_pre_emerg": 72
+        },
+        {
+          "ano": 2016,
+          "temp_min_invernal_c": -7.1,
+          "mp25_invernal_ugm3": 168.5,
+          "egresos_respiratorios_anuales": 1340,
+          "episodios_criticos_alerta_pre_emerg": 89
+        },
+        {
+          "ano": 2017,
+          "temp_min_invernal_c": -6.2,
+          "mp25_invernal_ugm3": 152.0,
+          "egresos_respiratorios_anuales": 1210,
+          "episodios_criticos_alerta_pre_emerg": 76
+        },
+        {
+          "ano": 2018,
+          "temp_min_invernal_c": -5.4,
+          "mp25_invernal_ugm3": 141.6,
+          "egresos_respiratorios_anuales": 1150,
+          "episodios_criticos_alerta_pre_emerg": 68
+        },
+        {
+          "ano": 2019,
+          "temp_min_invernal_c": -4.9,
+          "mp25_invernal_ugm3": 135.0,
+          "egresos_respiratorios_anuales": 1090,
+          "episodios_criticos_alerta_pre_emerg": 62
+        },
+        {
+          "ano": 2020,
+          "temp_min_invernal_c": -6.0,
+          "mp25_invernal_ugm3": 132.4,
+          "egresos_respiratorios_anuales": 850,
+          "episodios_criticos_alerta_pre_emerg": 58
+        },
+        {
+          "ano": 2021,
+          "temp_min_invernal_c": -5.2,
+          "mp25_invernal_ugm3": 124.8,
+          "egresos_respiratorios_anuales": 910,
+          "episodios_criticos_alerta_pre_emerg": 52
+        },
+        {
+          "ano": 2022,
+          "temp_min_invernal_c": -5.6,
+          "mp25_invernal_ugm3": 118.2,
+          "egresos_respiratorios_anuales": 1050,
+          "episodios_criticos_alerta_pre_emerg": 49
+        },
+        {
+          "ano": 2023,
+          "temp_min_invernal_c": -5.1,
+          "mp25_invernal_ugm3": 112.6,
+          "egresos_respiratorios_anuales": 1020,
+          "episodios_criticos_alerta_pre_emerg": 45
+        },
+        {
+          "ano": 2024,
+          "temp_min_invernal_c": -5.5,
+          "mp25_invernal_ugm3": 106.5,
+          "egresos_respiratorios_anuales": 1060,
+          "episodios_criticos_alerta_pre_emerg": 42
+        },
+        {
+          "ano": 2025,
+          "temp_min_invernal_c": -5.3,
+          "mp25_invernal_ugm3": 102.0,
+          "egresos_respiratorios_anuales": 1040,
+          "episodios_criticos_alerta_pre_emerg": 39
+        },
+        {
+          "ano": 2026,
+          "temp_min_invernal_c": -6.5,
+          "mp25_invernal_ugm3": 98.4,
+          "egresos_respiratorios_anuales": 1080,
+          "episodios_criticos_alerta_pre_emerg": 36
+        }
+      ],
+      "cecan_vinculos": [
+        {
+          "property_id": 1,
+          "property_num": "01",
+          "preset_id": "01_a_positiva",
+          "tipo": "Retroalimentación Positiva (+): Frío, Quema de Leña y Crisis Respiratoria",
+          "variables": [
+            "dias_sobre_norma_mp25",
+            "urgencias_respiratorias_pct",
+            "hogares_lena_pct"
+          ]
+        },
+        {
+          "property_id": 10,
+          "property_num": "10",
+          "preset_id": "10_b_cambio_tiempo_mp25",
+          "tipo": "Evolución Multianual: Clima Invernal Balmaceda y Calidad del Aire MP2.5 Coyhaique (2015-2026)",
+          "variables": [
+            "temp_min_c",
+            "mp25_ugm3",
+            "egresos_respiratorios"
+          ]
+        }
       ]
     },
     "criosfera_riesgo": {
@@ -66,8 +337,8 @@
       "codigo_comuna": "CL-XI-08",
       "codigo_cuenca": "115",
       "nombre_cuenca": "Río Baker",
-      "lat": -47.2850,
-      "lng": -72.9520,
+      "lat": -47.285,
+      "lng": -72.952,
       "correlacion": {
         "r_caudal_precip": 0.5843,
         "p_valor": "< 0.05",
@@ -77,27 +348,299 @@
         "variable": "caudal_m3s",
         "umbral_critico": 1200.0,
         "unidad": "m³/s",
-        "meses_alerta": ["2026-04"],
+        "meses_alerta": [
+          "2026-04"
+        ],
         "descripcion": "Alerta Roja SENAPRED por vaciamiento súbito de lago glaciar (GLOF Cachet II: 210 hm³ en 48 horas)."
       },
       "fuentes": [
-        {"institucion": "DGA MOP", "sensor": "BNA 11530000-8 / 11542001-1 (Baker Colonia)", "variable": "caudal_m3s", "unidad": "m³/s"},
-        {"institucion": "DGA / SENAPRED", "sensor": "Limnígrafo Bajo Colonia", "variable": "nivel_limnigrafo_m", "unidad": "m"},
-        {"institucion": "CIEP", "sensor": "CDAT-TORTEL", "variable": "precipitacion_tortel_mm", "unidad": "mm"}
+        {
+          "institucion": "DGA MOP",
+          "sensor": "BNA 11530000-8 / 11542001-1 (Baker Colonia)",
+          "variable": "caudal_m3s",
+          "unidad": "m³/s"
+        },
+        {
+          "institucion": "DGA / SENAPRED",
+          "sensor": "Limnígrafo Bajo Colonia",
+          "variable": "nivel_limnigrafo_m",
+          "unidad": "m"
+        },
+        {
+          "institucion": "CIEP",
+          "sensor": "CDAT-TORTEL",
+          "variable": "precipitacion_tortel_mm",
+          "unidad": "mm"
+        }
       ],
       "datos": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 580, "nivel_limnigrafo_m": 2.8, "precipitacion_tortel_mm": 110, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 620, "nivel_limnigrafo_m": 2.9, "precipitacion_tortel_mm": 125, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 690, "nivel_limnigrafo_m": 3.1, "precipitacion_tortel_mm": 140, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 1450, "nivel_limnigrafo_m": 5.8, "precipitacion_tortel_mm": 220, "estado_glof": "Alerta Roja GLOF (Cachet II: 210 hm³)"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 740, "nivel_limnigrafo_m": 3.4, "precipitacion_tortel_mm": 180, "estado_glof": "Fase Recuperación"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 480, "nivel_limnigrafo_m": 2.9, "precipitacion_tortel_mm": 150, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 430, "nivel_limnigrafo_m": 2.7, "precipitacion_tortel_mm": 130, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 460, "nivel_limnigrafo_m": 2.6, "precipitacion_tortel_mm": 120, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 520, "nivel_limnigrafo_m": 2.8, "precipitacion_tortel_mm": 105, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 570, "nivel_limnigrafo_m": 3.0, "precipitacion_tortel_mm": 95, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 610, "nivel_limnigrafo_m": 3.1, "precipitacion_tortel_mm": 85, "estado_glof": "Normal"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "comuna_ine": "11301", "lat": -47.2850, "lng": -72.9520, "unidad": "m³/s, m, mm", "caudal_m3s": 660, "nivel_limnigrafo_m": 3.2, "precipitacion_tortel_mm": 90, "estado_glof": "Normal"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 580,
+          "nivel_limnigrafo_m": 2.8,
+          "precipitacion_tortel_mm": 110,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 580,
+          "nivel_colonia_m": 2.8
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 620,
+          "nivel_limnigrafo_m": 2.9,
+          "precipitacion_tortel_mm": 125,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 620,
+          "nivel_colonia_m": 2.9
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 690,
+          "nivel_limnigrafo_m": 3.1,
+          "precipitacion_tortel_mm": 140,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 690,
+          "nivel_colonia_m": 3.1
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 1450,
+          "nivel_limnigrafo_m": 5.8,
+          "precipitacion_tortel_mm": 220,
+          "estado_glof": "Alerta Roja GLOF (Cachet II: 210 hm³)",
+          "caudal_baker_m3s": 1450,
+          "nivel_colonia_m": 5.8
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 740,
+          "nivel_limnigrafo_m": 3.4,
+          "precipitacion_tortel_mm": 180,
+          "estado_glof": "Fase Recuperación",
+          "caudal_baker_m3s": 740,
+          "nivel_colonia_m": 3.4
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 480,
+          "nivel_limnigrafo_m": 2.9,
+          "precipitacion_tortel_mm": 150,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 480,
+          "nivel_colonia_m": 2.9
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 430,
+          "nivel_limnigrafo_m": 2.7,
+          "precipitacion_tortel_mm": 130,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 430,
+          "nivel_colonia_m": 2.7
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 460,
+          "nivel_limnigrafo_m": 2.6,
+          "precipitacion_tortel_mm": 120,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 460,
+          "nivel_colonia_m": 2.6
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 520,
+          "nivel_limnigrafo_m": 2.8,
+          "precipitacion_tortel_mm": 105,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 520,
+          "nivel_colonia_m": 2.8
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 570,
+          "nivel_limnigrafo_m": 3.0,
+          "precipitacion_tortel_mm": 95,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 570,
+          "nivel_colonia_m": 3.0
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 610,
+          "nivel_limnigrafo_m": 3.1,
+          "precipitacion_tortel_mm": 85,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 610,
+          "nivel_colonia_m": 3.1
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "comuna_ine": "11301",
+          "lat": -47.285,
+          "lng": -72.952,
+          "unidad": "m³/s, m, mm",
+          "caudal_m3s": 660,
+          "nivel_limnigrafo_m": 3.2,
+          "precipitacion_tortel_mm": 90,
+          "estado_glof": "Normal",
+          "caudal_baker_m3s": 660,
+          "nivel_colonia_m": 3.2
+        }
+      ],
+      "serie_longitudinal_multianual_2015_2026": [
+        {
+          "ano": 2015,
+          "caudal_medio_anual_m3s": 1120,
+          "caudal_peak_max_m3s": 1850,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 180
+        },
+        {
+          "ano": 2016,
+          "caudal_medio_anual_m3s": 1045,
+          "caudal_peak_max_m3s": 1620,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 145
+        },
+        {
+          "ano": 2017,
+          "caudal_medio_anual_m3s": 1180,
+          "caudal_peak_max_m3s": 1910,
+          "eventos_glof_registrados": 2,
+          "volumen_glof_hm3": 225
+        },
+        {
+          "ano": 2018,
+          "caudal_medio_anual_m3s": 1210,
+          "caudal_peak_max_m3s": 1780,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 160
+        },
+        {
+          "ano": 2019,
+          "caudal_medio_anual_m3s": 1090,
+          "caudal_peak_max_m3s": 1540,
+          "eventos_glof_registrados": 0,
+          "volumen_glof_hm3": 0
+        },
+        {
+          "ano": 2020,
+          "caudal_medio_anual_m3s": 1150,
+          "caudal_peak_max_m3s": 1690,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 175
+        },
+        {
+          "ano": 2021,
+          "caudal_medio_anual_m3s": 1130,
+          "caudal_peak_max_m3s": 1610,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 150
+        },
+        {
+          "ano": 2022,
+          "caudal_medio_anual_m3s": 1195,
+          "caudal_peak_max_m3s": 1740,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 165
+        },
+        {
+          "ano": 2023,
+          "caudal_medio_anual_m3s": 1220,
+          "caudal_peak_max_m3s": 1830,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 190
+        },
+        {
+          "ano": 2024,
+          "caudal_medio_anual_m3s": 1260,
+          "caudal_peak_max_m3s": 1890,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 200
+        },
+        {
+          "ano": 2025,
+          "caudal_medio_anual_m3s": 1240,
+          "caudal_peak_max_m3s": 1810,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 185
+        },
+        {
+          "ano": 2026,
+          "caudal_medio_anual_m3s": 1280,
+          "caudal_peak_max_m3s": 1450,
+          "eventos_glof_registrados": 1,
+          "volumen_glof_hm3": 210
+        }
+      ],
+      "cecan_vinculos": [
+        {
+          "property_id": 9,
+          "property_num": "09",
+          "preset_id": "09_a_tipping_glof",
+          "tipo": "Punto de Quiebre Hidrológico: Vaciado Súbito GLOF en Lago Cachet II",
+          "variables": [
+            "caudal_baker_m3s",
+            "nivel_colonia_m",
+            "precipitacion_tortel_mm"
+          ]
+        }
       ]
     },
     "marino_productivo": {
@@ -111,8 +654,8 @@
       "codigo_cuenca": "113",
       "nombre_cuenca": "Río Aysén",
       "codigo_barrio_acs": "ACS-21B",
-      "lat": -45.4500,
-      "lng": -73.3500,
+      "lat": -45.45,
+      "lng": -73.35,
       "correlacion": {
         "r_sst_alexandrium": 0.8124,
         "p_valor": "< 0.001",
@@ -122,28 +665,498 @@
         "variable": "alexandrium_cel_l",
         "umbral_critico": 500.0,
         "unidad": "cél/L",
-        "meses_alerta": ["2026-03", "2026-04"],
+        "meses_alerta": [
+          "2026-03",
+          "2026-04"
+        ],
         "descripcion": "Cierre sanitario reglamentario por toxina paralizante (VPM) al superar 500 cél/L de Alexandrium catenella, provocando suspensión de faenas y caída de cosecha en ACS-21B."
       },
       "fuentes": [
-        {"institucion": "Copernicus Marine / NOAA", "sensor": "Sentinel-3 SLSTR SST", "variable": "sst_c", "unidad": "°C"},
-        {"institucion": "IFOP", "sensor": "Sistema iFAN Estación Seno Aysén", "variable": "alexandrium_cel_l", "unidad": "cél/L"},
-        {"institucion": "SERNAPESCA / SUBPESCA", "sensor": "Registro Acuícola Barrio ACS-21B", "variable": "biomasa_cosecha_kton", "unidad": "kTon"}
+        {
+          "institucion": "Copernicus Marine / NOAA",
+          "sensor": "Sentinel-3 SLSTR SST",
+          "variable": "sst_c",
+          "unidad": "°C"
+        },
+        {
+          "institucion": "IFOP",
+          "sensor": "Sistema iFAN Estación Seno Aysén",
+          "variable": "alexandrium_cel_l",
+          "unidad": "cél/L"
+        },
+        {
+          "institucion": "SERNAPESCA / SUBPESCA",
+          "sensor": "Registro Acuícola Barrio ACS-21B",
+          "variable": "biomasa_cosecha_kton",
+          "unidad": "kTon"
+        }
       ],
       "datos": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 13.2, "alexandrium_cel_l": 50, "biomasa_cosecha_kton": 28.0, "infa_aerobica_pct": 88, "estado_sanitario": "Normal"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 14.8, "alexandrium_cel_l": 280, "biomasa_cosecha_kton": 35.0, "infa_aerobica_pct": 82, "estado_sanitario": "Precaución"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 15.6, "alexandrium_cel_l": 1450, "biomasa_cosecha_kton": 41.0, "infa_aerobica_pct": 74, "estado_sanitario": "Floración Tóxica (Cierre Sanitario)"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 13.9, "alexandrium_cel_l": 820, "biomasa_cosecha_kton": 15.0, "infa_aerobica_pct": 71, "estado_sanitario": "Cuarentena Sanitaria"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 11.8, "alexandrium_cel_l": 80, "biomasa_cosecha_kton": 0.0, "infa_aerobica_pct": 78, "estado_sanitario": "Suspensión de Cosecha"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 9.5, "alexandrium_cel_l": 0, "biomasa_cosecha_kton": 0.0, "infa_aerobica_pct": 84, "estado_sanitario": "Limpio / Sin Cosecha"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 8.2, "alexandrium_cel_l": 0, "biomasa_cosecha_kton": 0.0, "infa_aerobica_pct": 90, "estado_sanitario": "Limpio"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 8.0, "alexandrium_cel_l": 0, "biomasa_cosecha_kton": 12.0, "infa_aerobica_pct": 92, "estado_sanitario": "Reapertura de Cosecha"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 8.8, "alexandrium_cel_l": 0, "biomasa_cosecha_kton": 25.0, "infa_aerobica_pct": 91, "estado_sanitario": "Operación Normal"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 10.2, "alexandrium_cel_l": 0, "biomasa_cosecha_kton": 33.0, "infa_aerobica_pct": 89, "estado_sanitario": "Operación Normal"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 11.5, "alexandrium_cel_l": 10, "biomasa_cosecha_kton": 38.0, "infa_aerobica_pct": 87, "estado_sanitario": "Operación Normal"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "comuna_ine": "11201", "codigo_barrio_acs": "ACS-21B", "lat": -45.4500, "lng": -73.3500, "unidad": "°C, cél/L, kTon, %", "sst_c": 12.6, "alexandrium_cel_l": 25, "biomasa_cosecha_kton": 42.0, "infa_aerobica_pct": 86, "estado_sanitario": "Operación Normal"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 13.2,
+          "alexandrium_cel_l": 50,
+          "biomasa_cosecha_kton": 28.0,
+          "infa_aerobica_pct": 88,
+          "estado_sanitario": "Normal"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 14.8,
+          "alexandrium_cel_l": 280,
+          "biomasa_cosecha_kton": 35.0,
+          "infa_aerobica_pct": 82,
+          "estado_sanitario": "Precaución"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 15.6,
+          "alexandrium_cel_l": 1450,
+          "biomasa_cosecha_kton": 41.0,
+          "infa_aerobica_pct": 74,
+          "estado_sanitario": "Floración Tóxica (Cierre Sanitario)"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 13.9,
+          "alexandrium_cel_l": 820,
+          "biomasa_cosecha_kton": 15.0,
+          "infa_aerobica_pct": 71,
+          "estado_sanitario": "Cuarentena Sanitaria"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 11.8,
+          "alexandrium_cel_l": 80,
+          "biomasa_cosecha_kton": 0.0,
+          "infa_aerobica_pct": 78,
+          "estado_sanitario": "Suspensión de Cosecha"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 9.5,
+          "alexandrium_cel_l": 0,
+          "biomasa_cosecha_kton": 0.0,
+          "infa_aerobica_pct": 84,
+          "estado_sanitario": "Limpio / Sin Cosecha"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 8.2,
+          "alexandrium_cel_l": 0,
+          "biomasa_cosecha_kton": 0.0,
+          "infa_aerobica_pct": 90,
+          "estado_sanitario": "Limpio"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 8.0,
+          "alexandrium_cel_l": 0,
+          "biomasa_cosecha_kton": 12.0,
+          "infa_aerobica_pct": 92,
+          "estado_sanitario": "Reapertura de Cosecha"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 8.8,
+          "alexandrium_cel_l": 0,
+          "biomasa_cosecha_kton": 25.0,
+          "infa_aerobica_pct": 91,
+          "estado_sanitario": "Operación Normal"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 10.2,
+          "alexandrium_cel_l": 0,
+          "biomasa_cosecha_kton": 33.0,
+          "infa_aerobica_pct": 89,
+          "estado_sanitario": "Operación Normal"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 11.5,
+          "alexandrium_cel_l": 10,
+          "biomasa_cosecha_kton": 38.0,
+          "infa_aerobica_pct": 87,
+          "estado_sanitario": "Operación Normal"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "comuna_ine": "11201",
+          "codigo_barrio_acs": "ACS-21B",
+          "lat": -45.45,
+          "lng": -73.35,
+          "unidad": "°C, cél/L, kTon, %",
+          "sst_c": 12.6,
+          "alexandrium_cel_l": 25,
+          "biomasa_cosecha_kton": 42.0,
+          "infa_aerobica_pct": 86,
+          "estado_sanitario": "Operación Normal"
+        }
+      ],
+      "serie_longitudinal_multianual_2015_2026": [
+        {
+          "ano": 2015,
+          "sst_media_verano_c": 13.8,
+          "alexandrium_peak_cel_l": 420,
+          "biomasa_cosecha_kton": 395.4,
+          "cierres_sanitarios_dias": 15
+        },
+        {
+          "ano": 2016,
+          "sst_media_verano_c": 16.2,
+          "alexandrium_peak_cel_l": 4800,
+          "biomasa_cosecha_kton": 312.0,
+          "cierres_sanitarios_dias": 68
+        },
+        {
+          "ano": 2017,
+          "sst_media_verano_c": 14.1,
+          "alexandrium_peak_cel_l": 280,
+          "biomasa_cosecha_kton": 410.5,
+          "cierres_sanitarios_dias": 10
+        },
+        {
+          "ano": 2018,
+          "sst_media_verano_c": 14.5,
+          "alexandrium_peak_cel_l": 650,
+          "biomasa_cosecha_kton": 438.2,
+          "cierres_sanitarios_dias": 22
+        },
+        {
+          "ano": 2019,
+          "sst_media_verano_c": 14.9,
+          "alexandrium_peak_cel_l": 890,
+          "biomasa_cosecha_kton": 462.0,
+          "cierres_sanitarios_dias": 28
+        },
+        {
+          "ano": 2020,
+          "sst_media_verano_c": 15.1,
+          "alexandrium_peak_cel_l": 1120,
+          "biomasa_cosecha_kton": 485.6,
+          "cierres_sanitarios_dias": 34
+        },
+        {
+          "ano": 2021,
+          "sst_media_verano_c": 14.6,
+          "alexandrium_peak_cel_l": 580,
+          "biomasa_cosecha_kton": 452.1,
+          "cierres_sanitarios_dias": 18
+        },
+        {
+          "ano": 2022,
+          "sst_media_verano_c": 14.8,
+          "alexandrium_peak_cel_l": 740,
+          "biomasa_cosecha_kton": 445.0,
+          "cierres_sanitarios_dias": 25
+        },
+        {
+          "ano": 2023,
+          "sst_media_verano_c": 15.2,
+          "alexandrium_peak_cel_l": 920,
+          "biomasa_cosecha_kton": 438.5,
+          "cierres_sanitarios_dias": 30
+        },
+        {
+          "ano": 2024,
+          "sst_media_verano_c": 15.4,
+          "alexandrium_peak_cel_l": 1200,
+          "biomasa_cosecha_kton": 442.0,
+          "cierres_sanitarios_dias": 35
+        },
+        {
+          "ano": 2025,
+          "sst_media_verano_c": 15.0,
+          "alexandrium_peak_cel_l": 980,
+          "biomasa_cosecha_kton": 439.0,
+          "cierres_sanitarios_dias": 31
+        },
+        {
+          "ano": 2026,
+          "sst_media_verano_c": 15.6,
+          "alexandrium_peak_cel_l": 1450,
+          "biomasa_cosecha_kton": 435.0,
+          "cierres_sanitarios_dias": 42
+        }
+      ],
+      "cecan_vinculos": [
+        {
+          "property_id": 1,
+          "property_num": "01",
+          "preset_id": "01_b_negativa",
+          "tipo": "Retroalimentación Negativa (–): Floraciones Algales y Descanso Sanitario en Fiordos",
+          "variables": [
+            "biomasa_cosecha_kton",
+            "infa_aerobica_pct",
+            "alexandrium_cel_l"
+          ]
+        },
+        {
+          "property_id": 9,
+          "property_num": "09",
+          "preset_id": "09_b_tipping_sst_fan",
+          "tipo": "Umbral Térmico Marino: Disparo de Floración Tóxica a >15°C",
+          "variables": [
+            "sst_c",
+            "alexandrium_cel_l",
+            "biomasa_cosecha_kton"
+          ]
+        },
+        {
+          "property_id": 10,
+          "property_num": "10",
+          "preset_id": "10_cambio_tiempo_fan",
+          "tipo": "Evolución Multianual: Calentamiento de Aguas y Alertas de Marea Roja (2015-2026)",
+          "variables": [
+            "sst_c",
+            "alexandrium_cel_l",
+            "biomasa_cosecha_kton"
+          ]
+        }
       ]
     }
+  },
+  "cecan_interoperabilidad": {
+    "origen_marco": "CECAN 16 Complex System Properties",
+    "total_propiedades": 16,
+    "propiedades_empiricas": 13,
+    "propiedades_epistemicas": 3,
+    "catalogo_presets_ref": "data/cecan_16_presets_aysen.json",
+    "resumen_vinculos": [
+      {
+        "property_id": 1,
+        "property_num": "01",
+        "presets": [
+          "01_a_positiva",
+          "01_b_negativa"
+        ],
+        "dataset": [
+          "comunas",
+          "cruces.marino_productivo"
+        ]
+      },
+      {
+        "property_id": 2,
+        "property_num": "02",
+        "presets": [
+          "02_emergencia_economica"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 3,
+        "property_num": "03",
+        "presets": [],
+        "dataset": [
+          "simulacion_agentes"
+        ],
+        "epistemica": true
+      },
+      {
+        "property_id": 4,
+        "property_num": "04",
+        "presets": [
+          "04_a_nodo_critico_salud",
+          "04_b_palanca_salmon"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 5,
+        "property_num": "05",
+        "presets": [
+          "05_no_linealidad_energia"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 6,
+        "property_num": "06",
+        "presets": [
+          "06_dominios_fiscales"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 7,
+        "property_num": "07",
+        "presets": [
+          "07_a_adaptacion_biologica",
+          "07_b_adaptacion_societaria"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 8,
+        "property_num": "08",
+        "presets": [
+          "08_dependencia_camino"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 9,
+        "property_num": "09",
+        "presets": [
+          "09_a_tipping_glof",
+          "09_b_tipping_sst_fan"
+        ],
+        "dataset": [
+          "cruces.criosfera_riesgo",
+          "cruces.marino_productivo"
+        ]
+      },
+      {
+        "property_id": 10,
+        "property_num": "10",
+        "presets": [
+          "10_cambio_tiempo_fan",
+          "10_b_cambio_tiempo_mp25"
+        ],
+        "dataset": [
+          "series_prospectivas",
+          "cruces.marino_productivo",
+          "cruces.clima_salud"
+        ]
+      },
+      {
+        "property_id": 11,
+        "property_num": "11",
+        "presets": [
+          "11_sistema_abierto_frontera"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 12,
+        "property_num": "12",
+        "presets": [],
+        "dataset": [
+          "series_prospectivas"
+        ],
+        "epistemica": true
+      },
+      {
+        "property_id": 13,
+        "property_num": "13",
+        "presets": [],
+        "dataset": [
+          "metacognitivo"
+        ],
+        "epistemica": true
+      },
+      {
+        "property_id": 14,
+        "property_num": "14",
+        "presets": [
+          "14_control_distribuido_fiscal"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 15,
+        "property_num": "15",
+        "presets": [
+          "15_sistemas_anidados_cuencas"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      },
+      {
+        "property_id": 16,
+        "property_num": "16",
+        "presets": [
+          "16_multiples_escalas_turismo"
+        ],
+        "dataset": [
+          "comunas"
+        ]
+      }
+    ]
   }
 }

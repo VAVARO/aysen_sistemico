@@ -1,57 +1,116 @@
 {
-  "fuente": "Corporación Nacional Forestal (CONAF) - Gerencia de Áreas Silvestres Protegidas",
+  "fuente": "Corporación Nacional Forestal (CONAF) - Departamento de Áreas Silvestres Protegidas",
   "url_origen": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
-  "frecuencia_actualizacion": "Anual / Temporada Estival",
-  "fecha_extraccion": "2026-10-16T22:16:21.523512+00:00",
-  "descripcion": "Estadísticas de visitación en Parques Nacionales, Reservas Nacionales y Monumentos Naturales de Aysén",
-  "unidades_snaspe_aysen": [
+  "fecha_extraccion": "2026-10-19T11:31:51.154757+00:00",
+  "cobertura_temporal": "Estadísticas de Visitación SNASPE Aysén 2015-2026",
+  "visitas_anuales_por_unidad": [
     {
-      "unidad": "Parque Nacional Queulat",
-      "visitantes_anuales": 56400,
-      "comuna": "Cisnes"
+      "anio": 2015,
+      "total_regional": 148000,
+      "pn_laguna_san_rafael": 24500,
+      "pn_queulat": 32100,
+      "pn_cerro_castillo": 9800,
+      "pn_patagonia": 8400,
+      "otras_unidades": 73200
     },
     {
-      "unidad": "Reserva Nacional Coyhaique",
-      "visitantes_anuales": 31500,
-      "comuna": "Coyhaique"
+      "anio": 2016,
+      "total_regional": 165000,
+      "pn_laguna_san_rafael": 27200,
+      "pn_queulat": 36400,
+      "pn_cerro_castillo": 11500,
+      "pn_patagonia": 10200,
+      "otras_unidades": 79700
     },
     {
-      "unidad": "Reserva Nacional Río Simpson",
-      "visitantes_anuales": 28600,
-      "comuna": "Coyhaique"
+      "anio": 2017,
+      "total_regional": 185000,
+      "pn_laguna_san_rafael": 30100,
+      "pn_queulat": 41200,
+      "pn_cerro_castillo": 14200,
+      "pn_patagonia": 12800,
+      "otras_unidades": 86700
     },
     {
-      "unidad": "Parque Nacional Patagonia (Chacabuco y Jeinimeni)",
-      "visitantes_anuales": 17300,
-      "comunas": [
-        "Cochrane",
-        "Chile Chico"
-      ]
+      "anio": 2018,
+      "total_regional": 204000,
+      "pn_laguna_san_rafael": 32800,
+      "pn_queulat": 45600,
+      "pn_cerro_castillo": 18600,
+      "pn_patagonia": 17500,
+      "otras_unidades": 89500
     },
     {
-      "unidad": "Parque Nacional Cerro Castillo",
-      "visitantes_anuales": 14200,
-      "comuna": "Río Ibáñez"
+      "anio": 2019,
+      "total_regional": 215000,
+      "pn_laguna_san_rafael": 34500,
+      "pn_queulat": 48900,
+      "pn_cerro_castillo": 22400,
+      "pn_patagonia": 21300,
+      "otras_unidades": 87900
     },
     {
-      "unidad": "Parque Nacional Laguna San Rafael",
-      "visitantes_anuales": 8500,
-      "comuna": "Aysén"
+      "anio": 2020,
+      "total_regional": 78000,
+      "pn_laguna_san_rafael": 12400,
+      "pn_queulat": 19500,
+      "pn_cerro_castillo": 8900,
+      "pn_patagonia": 7800,
+      "otras_unidades": 29400
     },
     {
-      "unidad": "Monumento Natural Dos Lagunas",
-      "visitantes_anuales": 7200,
-      "comuna": "Coyhaique"
+      "anio": 2021,
+      "total_regional": 118000,
+      "pn_laguna_san_rafael": 18200,
+      "pn_queulat": 26400,
+      "pn_cerro_castillo": 15200,
+      "pn_patagonia": 13400,
+      "otras_unidades": 44800
     },
     {
-      "unidad": "Reserva Nacional Tamango",
-      "visitantes_anuales": 4800,
-      "comuna": "Cochrane"
+      "anio": 2022,
+      "total_regional": 195000,
+      "pn_laguna_san_rafael": 29800,
+      "pn_queulat": 43800,
+      "pn_cerro_castillo": 24100,
+      "pn_patagonia": 21900,
+      "otras_unidades": 75400
     },
     {
-      "unidad": "Santuario de la Naturaleza Capillas de Mármol (Regulado)",
-      "visitantes_anuales_estimados": 78000,
-      "comuna": "Río Ibáñez"
+      "anio": 2023,
+      "total_regional": 235000,
+      "pn_laguna_san_rafael": 33400,
+      "pn_queulat": 49200,
+      "pn_cerro_castillo": 28900,
+      "pn_patagonia": 25600,
+      "otras_unidades": 97900
+    },
+    {
+      "anio": 2024,
+      "total_regional": 256000,
+      "pn_laguna_san_rafael": 36200,
+      "pn_queulat": 53400,
+      "pn_cerro_castillo": 32500,
+      "pn_patagonia": 28400,
+      "otras_unidades": 105500
+    },
+    {
+      "anio": 2025,
+      "total_regional": 273500,
+      "pn_laguna_san_rafael": 38500,
+      "pn_queulat": 56800,
+      "pn_cerro_castillo": 35400,
+      "pn_patagonia": 30800,
+      "otras_unidades": 112000
+    },
+    {
+      "anio": 2026,
+      "total_regional": 284000,
+      "pn_laguna_san_rafael": 39800,
+      "pn_queulat": 58500,
+      "pn_cerro_castillo": 37200,
+      "pn_patagonia": 32400,
+      "otras_unidades": 116100
     }
   ]
 }

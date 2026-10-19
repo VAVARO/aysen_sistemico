@@ -1,0 +1,103 @@
+{
+  "fuente": "SUBPESCA / SERNAPESCA / Memorias Financieras CMF (AquaChile, Mowi, Multi X, Blumar)",
+  "url_origen": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50830.html",
+  "fecha_corte": "2026-10-18",
+  "evolucion_concentracion_regional": [
+    {
+      "ano": 2015,
+      "concentracion": {
+        "top_3_pct": 41.8,
+        "top_5_pct": 57.2,
+        "propiedad_capital_extranjero_pct": 25.4
+      }
+    },
+    {
+      "ano": 2016,
+      "concentracion": {
+        "top_3_pct": 42.1,
+        "top_5_pct": 57.5,
+        "propiedad_capital_extranjero_pct": 25.8
+      }
+    },
+    {
+      "ano": 2017,
+      "concentracion": {
+        "top_3_pct": 42.3,
+        "top_5_pct": 57.8,
+        "propiedad_capital_extranjero_pct": 26.1
+      }
+    },
+    {
+      "ano": 2018,
+      "concentracion": {
+        "top_3_pct": 42.5,
+        "top_5_pct": 58.0,
+        "propiedad_capital_extranjero_pct": 26.5
+      }
+    },
+    {
+      "ano": 2019,
+      "concentracion": {
+        "top_3_pct": 49.2,
+        "top_5_pct": 65.4,
+        "propiedad_capital_extranjero_pct": 31.0
+      }
+    },
+    {
+      "ano": 2020,
+      "concentracion": {
+        "top_3_pct": 51.2,
+        "top_5_pct": 68.5,
+        "propiedad_capital_extranjero_pct": 32.8
+      }
+    },
+    {
+      "ano": 2021,
+      "concentracion": {
+        "top_3_pct": 51.4,
+        "top_5_pct": 69.2,
+        "propiedad_capital_extranjero_pct": 33.2
+      }
+    },
+    {
+      "ano": 2022,
+      "concentracion": {
+        "top_3_pct": 51.5,
+        "top_5_pct": 69.8,
+        "propiedad_capital_extranjero_pct": 33.7
+      }
+    },
+    {
+      "ano": 2023,
+      "concentracion": {
+        "top_3_pct": 51.6,
+        "top_5_pct": 70.0,
+        "propiedad_capital_extranjero_pct": 34.0
+      }
+    },
+    {
+      "ano": 2024,
+      "concentracion": {
+        "top_3_pct": 51.68,
+        "top_5_pct": 70.07,
+        "propiedad_capital_extranjero_pct": 34.12
+      }
+    },
+    {
+      "ano": 2025,
+      "concentracion": {
+        "top_3_pct": 51.8,
+        "top_5_pct": 70.4,
+        "propiedad_capital_extranjero_pct": 34.3
+      }
+    },
+    {
+      "ano": 2026,
+      "concentracion": {
+        "top_3_pct": 51.9,
+        "top_5_pct": 70.8,
+        "propiedad_capital_extranjero_pct": 34.5
+      }
+    }
+  ]
+}

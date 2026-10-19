@@ -19,6 +19,7 @@
     
     <!-- Plataforma Aysén Stylesheet -->
     <link rel="stylesheet" href="js/plataforma_aysen.css">
+    <style>html, body { overflow-x: hidden; }</style>
 </head>
 <body>
     <div class="app-container">
@@ -91,8 +92,16 @@
             <section id="tabSection_variables" class="view-section active">
                 <div class="variables-layout">
                     <!-- Barra Superior de Controles y Selectores -->
-                    <div class="var-control-bar">
-                        <div class="var-selectors-row">
+                    <div class="var-control-bar" id="varControlBar">
+                        <!-- Botón Acordeón/Drawer Táctil Móvil (<768px) -->
+                        <div class="mobile-controls-toggle-row">
+                            <button type="button" id="btnToggleVarControls" class="btn-toggle-var-controls">
+                                <span>Configurar Variables y Modos</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                        </div>
+
+                        <div class="var-selectors-row" id="varSelectorsRow">
                             <div class="var-selector-group">
                                 <label for="selectVarX" class="var-selector-label">Variable Eje X:</label>
                                 <select id="selectVarX" class="var-select"></select>
@@ -116,10 +125,78 @@
                                 </select>
                             </div>
 
+                            <div class="var-selector-group">
+                                <label for="selectCecanPreset" class="var-selector-label">Preset CECAN (16):</label>
+                                <select id="selectCecanPreset" class="var-select">
+                                    <option value="">Presets CECAN (16)...</option>
+                                    <option value="01">#01 Retroalimentación</option>
+                                    <option value="02">#02 Emergencia</option>
+                                    <option value="03">#03 Autoorganización (Metodológica)</option>
+                                    <option value="04">#04 Palancas y nodos centrales</option>
+                                    <option value="05">#05 No linealidad</option>
+                                    <option value="06">#06 Dominios de estabilidad</option>
+                                    <option value="07">#07 Adaptación</option>
+                                    <option value="08">#08 Dependencia del camino</option>
+                                    <option value="09">#09 Puntos de inflexión</option>
+                                    <option value="10">#10 Cambio en el tiempo</option>
+                                    <option value="11">#11 Sistema abierto</option>
+                                    <option value="12">#12 Impredecibilidad (Metodológica)</option>
+                                    <option value="13">#13 Factores desconocidos (Metodológica)</option>
+                                    <option value="14">#14 Control distribuido</option>
+                                    <option value="15">#15 Sistemas anidados</option>
+                                    <option value="16">#16 Múltiples escalas y niveles</option>
+                                </select>
+                            </div>
+
+                            <div class="var-selector-group" style="align-self: flex-end;">
+                                <button type="button" class="btn-toggle-filter" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del análisis de dispersión">
+                                    <span>Excluir Coyhaique</span>
+                                </button>
+                            </div>
+
                             <div class="view-mode-toggle-group">
                                 <button type="button" class="mode-toggle-btn active" data-chart-mode="scatter">Dispersión / Burbujas</button>
                                 <button type="button" class="mode-toggle-btn" data-chart-mode="bar">Barras Doble Eje</button>
                                 <button type="button" class="mode-toggle-btn" data-chart-mode="seasonal">Series Temporales / EMAT</button>
+                            </div>
+                        </div>
+
+                        <!-- Sub-barra para Series Temporales y Multianuales Históricas (2015-2026) -->
+                        <div id="seasonalSeriesBar" class="seasonal-selector-bar" style="display: none;">
+                            <div class="seasonal-submodes">
+                                <button type="button" class="seasonal-submode-btn active" id="btnSubmodeEmat" data-submode="emat">
+                                    EMAT Mensual (Turismo 2024)
+                                </button>
+                                <button type="button" class="seasonal-submode-btn" id="btnSubmodeMultiannual" data-submode="multiannual">
+                                    Series Multianuales (2015-2026)
+                                </button>
+                            </div>
+
+                            <div id="multiannualControlsWrap" class="multiannual-controls" style="display: none;">
+                                <div class="var-selector-group">
+                                    <label for="selectHistSeriesX" class="var-selector-label">Serie Primaria:</label>
+                                    <select id="selectHistSeriesX" class="var-select"></select>
+                                </div>
+
+                                <div class="var-selector-group">
+                                    <label for="selectHistSeriesY" class="var-selector-label">Serie Secundaria (Doble Eje):</label>
+                                    <select id="selectHistSeriesY" class="var-select">
+                                        <option value="none">-- Ninguna (Serie Simple) --</option>
+                                    </select>
+                                </div>
+
+                                <div class="var-selector-group">
+                                    <label for="selectHistYearFrom" class="var-selector-label">Desde:</label>
+                                    <select id="selectHistYearFrom" class="var-select var-select-year"></select>
+                                    <label for="selectHistYearTo" class="var-selector-label">Hasta:</label>
+                                    <select id="selectHistYearTo" class="var-select var-select-year"></select>
+                                </div>
+
+                                <div class="var-selector-group">
+                                    <button type="button" id="btnToggleYoY" class="mode-toggle-btn" data-mode="abs">
+                                        Modo: Valores Absolutos
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -211,7 +288,7 @@
                                     </div>
                                 </div>
                                 <div class="correlation-disclaimer">
-                                    ⚠️ <strong>Nota metodológica:</strong> Correlación estadística descriptiva entre las 10 comunas; no implica relación causal directa ni dependencia forzada.
+                                    <strong>Nota metodológica:</strong> Correlación estadística descriptiva entre las 10 comunas; no implica relación causal directa ni dependencia forzada.
                                 </div>
                             </div>
                         </div>
@@ -528,7 +605,9 @@
                 <div class="wizard-cards-grid">
                     <div class="wizard-action-card" data-wizard-action="cross_variables">
                         <div class="wizard-card-header">
-                            <span class="wizard-card-icon">📊</span>
+                            <span class="wizard-card-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            </span>
                             <span class="wizard-card-title">Hacer interactuar variables</span>
                         </div>
                         <div class="wizard-card-desc">Cruza libremente cualquiera de las >35 variables (SINIM, CNE, SEA, SERNATUR) en gráficos de dispersión o barras doble eje.</div>
@@ -537,7 +616,9 @@
 
                     <div class="wizard-action-card" data-wizard-action="relational_model">
                         <div class="wizard-card-header">
-                            <span class="wizard-card-icon">🗄️</span>
+                            <span class="wizard-card-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="8" x="2" y="3" rx="2"/><rect width="20" height="8" x="2" y="13" rx="2"/><line x1="10" y1="7" x2="14" y2="7"/><line x1="10" y1="17" x2="14" y2="17"/></svg>
+                            </span>
                             <span class="wizard-card-title">Explorar el Modelo Power BI</span>
                         </div>
                         <div class="wizard-card-desc">Observa el diagrama de 8 tablas relacionales con sus llaves primarias/foráneas y genera un LIVE JOIN completo para exportar a Excel.</div>
@@ -546,7 +627,9 @@
 
                     <div class="wizard-action-card" data-wizard-action="holdings_ruts">
                         <div class="wizard-card-header">
-                            <span class="wizard-card-icon">🐟</span>
+                            <span class="wizard-card-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/></svg>
+                            </span>
                             <span class="wizard-card-title">Consultar los 12 Holdings y 42 RUTs</span>
                         </div>
                         <div class="wizard-card-desc">Explora la titularidad real de las 745 concesiones salmoneras, grupos controladores y razones sociales filiales con sus RUTs oficiales.</div>
@@ -555,7 +638,9 @@
 
                     <div class="wizard-action-card" data-wizard-action="seia_investments">
                         <div class="wizard-card-header">
-                            <span class="wizard-card-icon">🏗️</span>
+                            <span class="wizard-card-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22h20"/><path d="M18 10h-7L6 22"/><path d="m6 10 3-8h6l3 8"/><path d="M10 2v8"/><path d="M14 2v8"/></svg>
+                            </span>
                             <span class="wizard-card-title">Inversión SEIA y Economía</span>
                         </div>
                         <div class="wizard-card-desc">Revisa los 722 proyectos aprobados en el SEIA, montos en millones de USD y la estructura de empleo formal de SII por comuna.</div>
@@ -564,7 +649,9 @@
 
                     <div class="wizard-action-card" data-wizard-action="turismo_sernatur">
                         <div class="wizard-card-header">
-                            <span class="wizard-card-icon">🌲</span>
+                            <span class="wizard-card-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                            </span>
                             <span class="wizard-card-title">Turismo SERNATUR y Estacionalidad</span>
                         </div>
                         <div class="wizard-card-desc">Analiza la curva mensual de pernoctaciones EMAT ene-dic, las 4 Zonas ZOIT y la visitación de parques CONAF.</div>
@@ -573,7 +660,9 @@
 
                     <div class="wizard-action-card" data-wizard-action="clean_map">
                         <div class="wizard-card-header">
-                            <span class="wizard-card-icon">🗺️</span>
+                            <span class="wizard-card-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                            </span>
                             <span class="wizard-card-title">Abrir Mapa por Capas Limpias</span>
                         </div>
                         <div class="wizard-card-desc">Visualiza en el mapa Leaflet exclusivamente la capa que elijas (solo SEIA, solo caletas, solo centrales) sin ruido visual.</div>
@@ -585,6 +674,9 @@
 
     </div>
 
+    <!-- Data Lake Aysén Hubs y Motor Semántico NL2Chart -->
+    <script src="data/aysen_hubs_data.js"></script>
+    <script src="js/nl2chart_engine.js"></script>
     <!-- Script del Motor de la Plataforma -->
     <script src="js/plataforma_aysen.js"></script>
 </body>

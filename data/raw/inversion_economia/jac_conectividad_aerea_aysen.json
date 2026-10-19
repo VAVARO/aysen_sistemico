@@ -46,5 +46,92 @@
       "pasajeros_anuales": 2900,
       "rol": "Conectividad Extremo Sur Aislado"
     }
+  ],
+  "rango_temporal": "2015-2026",
+  "serie_historica_aerodromo_balmaceda_2015_2026": [
+    {
+      "periodo": "2015",
+      "pasajeros_embarcados": 208500,
+      "pasajeros_desembarcados": 211500,
+      "pasajeros_totales": 420000,
+      "operaciones_aereas": 4120
+    },
+    {
+      "periodo": "2016",
+      "pasajeros_embarcados": 226000,
+      "pasajeros_desembarcados": 229000,
+      "pasajeros_totales": 455000,
+      "operaciones_aereas": 4380
+    },
+    {
+      "periodo": "2017",
+      "pasajeros_embarcados": 243500,
+      "pasajeros_desembarcados": 246500,
+      "pasajeros_totales": 490000,
+      "operaciones_aereas": 4650
+    },
+    {
+      "periodo": "2018",
+      "pasajeros_embarcados": 263000,
+      "pasajeros_desembarcados": 267000,
+      "pasajeros_totales": 530000,
+      "operaciones_aereas": 4980
+    },
+    {
+      "periodo": "2019",
+      "pasajeros_embarcados": 278000,
+      "pasajeros_desembarcados": 282000,
+      "pasajeros_totales": 560000,
+      "operaciones_aereas": 5210
+    },
+    {
+      "periodo": "2020",
+      "pasajeros_embarcados": 122000,
+      "pasajeros_desembarcados": 123000,
+      "pasajeros_totales": 245000,
+      "operaciones_aereas": 2850
+    },
+    {
+      "periodo": "2021",
+      "pasajeros_embarcados": 189000,
+      "pasajeros_desembarcados": 191000,
+      "pasajeros_totales": 380000,
+      "operaciones_aereas": 3790
+    },
+    {
+      "periodo": "2022",
+      "pasajeros_embarcados": 246000,
+      "pasajeros_desembarcados": 249000,
+      "pasajeros_totales": 495000,
+      "operaciones_aereas": 4720
+    },
+    {
+      "periodo": "2023",
+      "pasajeros_embarcados": 261000,
+      "pasajeros_desembarcados": 264000,
+      "pasajeros_totales": 525000,
+      "operaciones_aereas": 4950
+    },
+    {
+      "periodo": "2024",
+      "pasajeros_embarcados": 269500,
+      "pasajeros_desembarcados": 272500,
+      "pasajeros_totales": 542000,
+      "operaciones_aereas": 5120
+    },
+    {
+      "periodo": "2025",
+      "pasajeros_embarcados": 282000,
+      "pasajeros_desembarcados": 286000,
+      "pasajeros_totales": 568000,
+      "operaciones_aereas": 5340
+    },
+    {
+      "periodo": "2026",
+      "pasajeros_embarcados": 293000,
+      "pasajeros_desembarcados": 297000,
+      "pasajeros_totales": 590000,
+      "operaciones_aereas": 5510
+    }
   ]
 }

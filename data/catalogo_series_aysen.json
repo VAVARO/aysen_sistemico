@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "region": "Aysén del General Carlos Ibáñez del Campo (XI Región)",
-  "ultima_actualizacion": "2026-10-15 18:27:26 UTC",
+  "ultima_actualizacion": "2026-10-19 11:30:00 UTC",
   "total_series": 46,
   "estaciones_georeferenciadas": 16,
   "dominios": [
@@ -34,6 +34,163 @@
       "id": "ciep",
       "nombre": "Investigación Territorial CIEP",
       "series_count": 7
+    }
+  ],
+  "cobertura_temporal_historica": {
+    "ventana_anos": "2015-2026",
+    "amplitud_temporal": "12 años continuos",
+    "paquetes_con_series_multianuales": [
+      "WP_01 Gobernanza y Finanzas Municipales (SINIM / DIPRES)",
+      "WP_02 Energía, Combustibles y Telecom (CNE / SUBTEL / SEC)",
+      "WP_03 Acuicultura, Concesiones y Suelo (SUBPESCA / SERNAGEOMIN / BBNN)",
+      "WP_04 Economía, PIB, Empresas y SEIA (BCCh / SII / SEA / JAC)",
+      "WP_05 Social, Salud DEIS, Educación SLEP y Seguridad CEAD",
+      "WP_06 Turismo, Ocupación EMAT y Parques SNASPE (INE / CONAF)",
+      "WP_07 Calidad del Aire MP2.5, Caudales DGA y Biodiversidad (MMA / DGA)",
+      "WP_08 Desagregaciones Sectoriales Críticas (Salud APS vs Hosp, SLEP)"
+    ]
+  },
+  "series_historicas_multianuales": [
+    {
+      "indicador": "presupuesto_municipal_anual_mclp",
+      "nombre": "Presupuestos Municipales por Comuna",
+      "unidad": "MCLP",
+      "periodo": "2015-2026",
+      "fuente": "SINIM SUBDERE",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "dependencia_fcm_pct",
+      "nombre": "Dependencia del Fondo Común Municipal (FCM)",
+      "unidad": "%",
+      "periodo": "2015-2026",
+      "fuente": "SINIM SUBDERE",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "generacion_electrica_gwh",
+      "nombre": "Generación Eléctrica por Fuente (Hidro, Diésel, Eólica)",
+      "unidad": "GWh",
+      "periodo": "2015-2026",
+      "fuente": "CNE / Edelaysen",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "precios_combustibles_clp",
+      "nombre": "Precios Minoristas de Gasolina 93 y Diésel",
+      "unidad": "CLP/L",
+      "periodo": "2015-2026",
+      "fuente": "CNE Bencina en Línea",
+      "frecuencia": "Semanal / Anual"
+    },
+    {
+      "indicador": "cosechas_salmon_ton",
+      "nombre": "Cosechas Salmoneras por Especie en Maritorio",
+      "unidad": "toneladas",
+      "periodo": "2015-2026",
+      "fuente": "SUBPESCA / SERNAPESCA",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "pib_regional_mmclp",
+      "nombre": "Producto Interno Bruto (PIB) Regional de Aysén",
+      "unidad": "MMCLP",
+      "periodo": "2015-2026",
+      "fuente": "Banco Central de Chile",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "empresas_trabajadores_sii",
+      "nombre": "Empresas y Empleo Dependiente Registrado",
+      "unidad": "entidades / personas",
+      "periodo": "2015-2026",
+      "fuente": "SII",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "proyectos_seia_mmusd",
+      "nombre": "Inversión y Proyectos Aprobados en SEIA",
+      "unidad": "MM USD / cantidad",
+      "periodo": "2015-2026",
+      "fuente": "Servicio de Evaluación Ambiental (SEA)",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "trafico_aereo_jac",
+      "nombre": "Tráfico Aéreo Comercial en Aeródromo Balmaceda",
+      "unidad": "pasajeros / operaciones",
+      "periodo": "2015-2026",
+      "fuente": "Junta de Aeronáutica Civil (JAC)",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "delitos_dmcs_vif_tasa",
+      "nombre": "Delitos de Mayor Connotación Social y VIF",
+      "unidad": "tasa por 100k hab",
+      "periodo": "2015-2025",
+      "fuente": "Centro de Estudios y Análisis del Delito (CEAD)",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "matricula_escolar_slep",
+      "nombre": "Matrícula y Establecimientos Escolares",
+      "unidad": "estudiantes / escuelas",
+      "periodo": "2015-2025",
+      "fuente": "MINEDUC / SLEP Aysén",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "pernoctaciones_emat",
+      "nombre": "Pernoctaciones y Ocupación Hotelera EMAT",
+      "unidad": "pernoctaciones / % ocupación",
+      "periodo": "2015-2026",
+      "fuente": "Instituto Nacional de Estadísticas (INE)",
+      "frecuencia": "Mensual / Anual"
+    },
+    {
+      "indicador": "visitantes_parques_snaspe",
+      "nombre": "Visitantes a Parques y Reservas del SNASPE",
+      "unidad": "visitantes anuales",
+      "periodo": "2015-2026",
+      "fuente": "Corporación Nacional Forestal (CONAF)",
+      "frecuencia": "Anual"
+    },
+    {
+      "indicador": "mp25_invernal_coyhaique",
+      "nombre": "Concentración Invernal de MP2.5 en Coyhaique II",
+      "unidad": "µg/m³",
+      "periodo": "2015-2026",
+      "fuente": "SINCA MMA",
+      "frecuencia": "Horaria / Mensual / Anual",
+      "llave_canonica": "mp25_ugm3"
+    },
+    {
+      "indicador": "caudales_baker_simpson",
+      "nombre": "Caudal Medio Fluvial en Ríos Baker y Simpson",
+      "unidad": "m³/s",
+      "periodo": "2015-2026",
+      "fuente": "Dirección General de Aguas (DGA MOP)",
+      "frecuencia": "Mensual / Anual",
+      "llave_canonica": "caudal_medio_anual_rio_baker_m3s"
+    },
+    {
+      "indicador": "tsm_fiordos",
+      "nombre": "Temperatura Superficial Marina en Fiordos y Canales",
+      "unidad": "°C",
+      "periodo": "2015-2026",
+      "fuente": "Copernicus Marine / NOAA Sentinel-3 SLSTR",
+      "frecuencia": "Mensual / Anual",
+      "llave_canonica": "sst_c"
+    },
+    {
+      "indicador": "fan_alexandrium",
+      "nombre": "Floraciones Algales Nocivas Alexandrium catenella (iFAN)",
+      "unidad": "cél/L",
+      "periodo": "2015-2026",
+      "fuente": "IFOP - Sistema iFAN",
+      "frecuencia": "Mensual / Anual",
+      "llave_canonica": "alexandrium_cel_l",
+      "alias_prospectiva": "floracion_alexandrium_fan"
     }
   ],
   "arquitectura": {

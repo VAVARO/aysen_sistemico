@@ -71,7 +71,213 @@
     "presupuesto_fndr_regional_mclp": 72450.0,
     "dependencia_fcm_promedio_regional_pct": 76.8,
     "total_comunas": 10,
-    "autoridades_vigentes_corte": "Período Constitucional 2024–2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026)"
+    "autoridades_vigentes_corte": "Período Constitucional 2024–2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026)",
+    "series_historicas_regionales": [
+      {
+        "indicador": "presupuesto_fndr_gore_aysen_mclp",
+        "nombre": "Presupuesto Total FNDR GORE Aysén",
+        "unidad": "M$ CLP",
+        "fuente": "DIPRES / Ley de Presupuestos del Sector Público",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 46500.0
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 48200.0
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 50800.0
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 53400.0
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 56100.0
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 58900.0
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 62300.0
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 66700.0
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 69800.0
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 72450.0
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 75800.0
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 78950.0
+          }
+        ]
+      },
+      {
+        "indicador": "dependencia_fcm_promedio_regional_pct",
+        "nombre": "Dependencia Promedio Regional del Fondo Común Municipal",
+        "unidad": "%",
+        "fuente": "SINIM - SUBDERE",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 77.2
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 77.0
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 76.8
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 76.6
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 76.3
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 77.3
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 76.5
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 76.1
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 76.0
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 75.8
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 75.5
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 75.2
+          }
+        ]
+      },
+      {
+        "indicador": "presupuesto_municipal_total_regional_mclp",
+        "nombre": "Presupuesto Municipal Total Agregado de las 10 Comunas de Aysén",
+        "unidad": "M$ CLP",
+        "fuente": "SINIM - SUBDERE",
+        "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 39353.4
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 41693.1
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 44764.1
+          },
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 48263.8
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 51344.5
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 53644.9
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 57743.4
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 62864.5
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 67163.4
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 70751.5
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 75524.1
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 80001.3
+          }
+        ]
+      }
+    ]
   },
   "por_comuna": [
     {
@@ -102,7 +308,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 139928,
           "gasto_personal_subtitulo_21_pct": 42.1,
           "inversion_real_directa_pct": 8.4,
-          "profesionalizacion_planta_pct": 36.4
+          "profesionalizacion_planta_pct": 36.4,
+          "ingresos_patentes_acuicolas_mclp": 725.0,
+          "ingresos_patentes_mineras_mclp": 725.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 14850.0,
@@ -112,7 +320,349 @@
             "Saneamiento sanitario periurbano",
             "Recambio de calefactores y eficiencia energética"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 14820.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 15640.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 16750.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 17920.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 18980.6
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 19850.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 21340.5
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 23410.8
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 25120.4
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 26540.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 28420.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 30150.0
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 4350.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 4680.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 5090.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 5540.3
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 5920.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 5610.4
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 6320.1
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 7120.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 7680.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 8091.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 8650.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 9220.4
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 48.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 48.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 47.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 47.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 47.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 48.4
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 47.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 46.8
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 46.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 46.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 46.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 45.9
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 40.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 41.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 41.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 41.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 42.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 42.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 42.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 42.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 42.1
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 42.1
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 42.3
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 42.5
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 9800.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 10250.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 10900.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 11450.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 12100.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 12600.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 13250.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 13950.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 14420.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 14850.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 15450.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 16100.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -143,7 +693,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 184852,
           "gasto_personal_subtitulo_21_pct": 48.5,
           "inversion_real_directa_pct": 4.2,
-          "profesionalizacion_planta_pct": 12.5
+          "profesionalizacion_planta_pct": 12.5,
+          "ingresos_patentes_acuicolas_mclp": 17.5,
+          "ingresos_patentes_mineras_mclp": 17.5
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2200.0,
@@ -153,7 +705,349 @@
             "Electrificación y generación aislada",
             "Postas de salud rural Lago Verde y Villa Amengual"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1350.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1420.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1510.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1630.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1740.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1820.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1950.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2140.6
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2310.4
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2450.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2620.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2780.5
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 78.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 84.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 91.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 99.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 106.2
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 101.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 114.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 128.6
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 137.4
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 144.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 154.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 164.5
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 86.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 87.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 87.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 88.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 88.4
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 89.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 89.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 89.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 89.3
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 89.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 89.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 88.8
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 46.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 46.8
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 47.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 47.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 47.9
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 48.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 48.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 48.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 48.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 48.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 48.7
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 49.0
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1420.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1490.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1580.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1670.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1760.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1840.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1940.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2050.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2130.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2200.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2290.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2380.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -184,7 +1078,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 176295,
           "gasto_personal_subtitulo_21_pct": 44.2,
           "inversion_real_directa_pct": 7.1,
-          "profesionalizacion_planta_pct": 28.2
+          "profesionalizacion_planta_pct": 28.2,
+          "ingresos_patentes_acuicolas_mclp": 1665.0,
+          "ingresos_patentes_mineras_mclp": 185.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 9800.0,
@@ -194,7 +1090,349 @@
             "Saneamiento básico y alcantarillado Islas Huichas",
             "Pavimentación y drenaje urbano Puerto Aysén"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 7950.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 8420.1
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 9100.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 9850.3
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 10480.2
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 10920.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 11840.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 12750.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 13540.8
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 14210.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 15180.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 16050.0
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 2240.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 2410.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 2630.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 2880.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3090.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 2940.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 3320.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 3740.2
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 4010.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 4235.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 4520.1
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 4810.0
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 54.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 54.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 54.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 53.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 53.4
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 54.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 53.5
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 53.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 52.9
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 52.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 52.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 52.2
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 42.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 43.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 43.4
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 43.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 44.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 44.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 44.3
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 44.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 44.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 44.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 44.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 44.6
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 6450.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 6750.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 7180.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 7560.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 7980.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 8320.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 8750.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 9220.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 9540.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 9800.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 10200.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 10650.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -225,7 +1463,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 525265,
           "gasto_personal_subtitulo_21_pct": 39.8,
           "inversion_real_directa_pct": 11.5,
-          "profesionalizacion_planta_pct": 18.6
+          "profesionalizacion_planta_pct": 18.6,
+          "ingresos_patentes_acuicolas_mclp": 612.0,
+          "ingresos_patentes_mineras_mclp": 68.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 5600.0,
@@ -235,7 +1475,349 @@
             "Agua potable rural APR y saneamiento",
             "Manejo de residuos domiciliarios costeros e insulares"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 3410.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 3620.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 3890.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 4210.6
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 4480.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 4690.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 5040.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 5460.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 5820.1
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 6100.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 6480.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 6850.2
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 580.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 625.4
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 680.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 745.2
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 798.5
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 760.1
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 855.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 965.2
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 1040.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 1102.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 1175.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 1250.0
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 76.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 76.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 75.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 75.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 75.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 76.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 75.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 74.8
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 74.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 74.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 74.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 73.9
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 38.6
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 39.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 39.2
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 39.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 39.7
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 40.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 40.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 39.7
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 39.8
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 39.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 40.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 40.2
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 3680.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 3850.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 4100.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 4320.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 4560.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 4750.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 5000.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 5270.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 5450.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 5600.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 5830.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 6080.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -266,7 +1848,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 356696,
           "gasto_personal_subtitulo_21_pct": 51.2,
           "inversion_real_directa_pct": 3.6,
-          "profesionalizacion_planta_pct": 11.8
+          "profesionalizacion_planta_pct": 11.8,
+          "ingresos_patentes_acuicolas_mclp": 189.0,
+          "ingresos_patentes_mineras_mclp": 21.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 3400.0,
@@ -276,7 +1860,349 @@
             "Planta desalinizadora y ampliación red APR Repollal",
             "Infraestructura de atraque de pesca artesanal"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1820.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1940.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 2080.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 2240.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 2410.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 2520.4
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 2710.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2950.3
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 3140.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 3300.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 3510.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 3720.0
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 145.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 156.4
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 170.2
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 186.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 200.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 190.4
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 215.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 242.8
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 261.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 278.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 296.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 315.0
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 85.1
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 84.8
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 84.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 84.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 83.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 84.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 83.9
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 83.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 83.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 83.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 82.7
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 82.4
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 49.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 49.8
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 50.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 50.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 50.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 51.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 51.3
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 51.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 51.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 51.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 51.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 51.6
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 2240.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 2340.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 2490.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 2620.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 2770.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 2890.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 3040.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 3200.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 3310.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 3400.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 3540.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 3690.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -307,7 +2233,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 161297,
           "gasto_personal_subtitulo_21_pct": 46.7,
           "inversion_real_directa_pct": 5.8,
-          "profesionalizacion_planta_pct": 15.4
+          "profesionalizacion_planta_pct": 15.4,
+          "ingresos_patentes_acuicolas_mclp": 32.0,
+          "ingresos_patentes_mineras_mclp": 288.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4900.0,
@@ -317,7 +2245,349 @@
             "Canales de riego y microclima frutícola",
             "Pavimentación tramo periurbano Bahía Jara"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 2980.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 3180.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 3420.6
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 3710.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3950.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 4120.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 4430.5
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 4820.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 5140.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 5400.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 5740.8
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 6080.4
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 460.1
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 495.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 540.6
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 592.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 635.4
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 605.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 682.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 768.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 825.1
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 872.6
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 930.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 990.0
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 73.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 73.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 72.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 72.4
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 72.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 73.1
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 72.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 71.7
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 71.4
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 71.2
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 70.9
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 70.6
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 44.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 45.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 45.6
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 46.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 46.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 47.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 46.8
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 46.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 46.7
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 46.7
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 46.9
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 47.1
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 3220.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 3370.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 3590.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 3780.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3990.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 4160.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 4380.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 4610.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 4770.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 4900.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 5100.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 5320.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -348,7 +2618,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 185457,
           "gasto_personal_subtitulo_21_pct": 47.9,
           "inversion_real_directa_pct": 4.9,
-          "profesionalizacion_planta_pct": 14.1
+          "profesionalizacion_planta_pct": 14.1,
+          "ingresos_patentes_acuicolas_mclp": 57.5,
+          "ingresos_patentes_mineras_mclp": 57.5
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4100.0,
@@ -358,7 +2630,349 @@
             "Saneamiento básico y alcantarillado Bahía Murta y Puerto Ibáñez",
             "Ciclovías y senderos seguros Ruta 7"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 2180.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 2320.4
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 2490.1
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 2710.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 2890.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 3020.6
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 3250.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 3520.8
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 3760.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 3950.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 4210.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 4460.0
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 220.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 238.1
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 260.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 285.2
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 305.8
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 291.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 328.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 370.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 398.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 421.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 450.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 480.2
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 81.6
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 81.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 81.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 80.6
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 80.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 81.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 80.5
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 80.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 79.8
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 79.6
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 79.3
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 79.0
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 45.9
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 46.4
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 46.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 47.2
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 47.5
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 48.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 48.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 47.8
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 47.9
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 47.9
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 48.1
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 48.3
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 2700.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 2820.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 3000.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 3160.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3340.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 3480.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 3660.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 3860.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 3990.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 4100.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 4270.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 4450.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -389,7 +3003,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 124047,
           "gasto_personal_subtitulo_21_pct": 43.5,
           "inversion_real_directa_pct": 6.2,
-          "profesionalizacion_planta_pct": 16.2
+          "profesionalizacion_planta_pct": 16.2,
+          "ingresos_patentes_acuicolas_mclp": 90.0,
+          "ingresos_patentes_mineras_mclp": 90.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4800.0,
@@ -399,7 +3015,349 @@
             "Maquinaria pesada para conectividad en valles San Lorenzo y Colonia",
             "Mejoramiento de redes sanitarias urbanas"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 2540.1
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 2710.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 2910.2
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 3160.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3370.4
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 3520.1
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 3780.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 4110.2
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 4380.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 4600.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 4890.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 5180.2
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 330.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 355.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 388.4
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 425.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 456.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 434.5
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 490.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 552.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 594.1
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 628.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 670.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 715.0
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 78.8
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 78.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 78.2
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 77.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 77.5
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 78.4
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 77.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 77.2
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 77.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 76.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 76.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 76.2
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 42.1
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 42.5
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 42.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 43.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 43.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 43.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 43.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 43.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 43.5
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 43.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 43.7
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 43.9
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 3160.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 3300.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 3510.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 3700.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 3910.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 4080.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 4290.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 4520.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 4670.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 4800.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 5000.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 5210.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -430,7 +3388,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 188563,
           "gasto_personal_subtitulo_21_pct": 50.4,
           "inversion_real_directa_pct": 3.8,
-          "profesionalizacion_planta_pct": 10.5
+          "profesionalizacion_planta_pct": 10.5,
+          "ingresos_patentes_acuicolas_mclp": 14.0,
+          "ingresos_patentes_mineras_mclp": 14.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2400.0,
@@ -440,7 +3400,349 @@
             "Pasarelas y embarcadero Lago O'Higgins hacia Glaciar Chico",
             "Electrificación híbrida fotovoltaica-diésel"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1180.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1250.3
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1340.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1450.2
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1560.4
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1630.7
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1740.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 1890.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2020.1
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2150.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2290.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2420.0
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 48.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 52.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 56.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 62.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 66.5
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 63.2
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 71.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 80.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 86.4
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 91.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 98.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 104.5
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 93.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 93.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 92.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 92.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 92.2
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 93.1
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 92.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 91.9
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 91.7
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 91.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 91.2
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 90.9
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 48.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 49.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 49.4
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 49.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 50.1
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 50.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 50.6
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 50.3
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 50.4
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 50.4
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 50.6
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 50.8
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1580.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1650.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1760.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1850.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1950.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 2040.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 2150.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2260.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2340.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2400.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2500.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2610.0
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -471,7 +3773,9 @@
           "ingresos_propios_permanentes_per_capita_clp": 63594,
           "gasto_personal_subtitulo_21_pct": 52.6,
           "inversion_real_directa_pct": 3.1,
-          "profesionalizacion_planta_pct": 9.8
+          "profesionalizacion_planta_pct": 9.8,
+          "ingresos_patentes_acuicolas_mclp": 11.0,
+          "ingresos_patentes_mineras_mclp": 11.0
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2600.0,
@@ -481,7 +3785,349 @@
             "Sistema de alcantarillado al vacío por gravedad",
             "Conectividad fluvial delta río Baker y Caleta Tortel"
           ]
-        }
+        },
+        "series_historicas": [
+          {
+            "indicador": "presupuesto_municipal_anual_mclp",
+            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1120.4
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1190.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1270.5
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 1380.1
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 1480.6
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 1550.3
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 1660.8
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 1810.4
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 1930.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2050.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2180.6
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2310.0
+              }
+            ]
+          },
+          {
+            "indicador": "ingresos_propios_permanentes_mclp",
+            "nombre": "Ingresos Propios Permanentes (IPP)",
+            "unidad": "M$ CLP",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 38.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 41.6
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 45.4
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 49.8
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 53.2
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 50.8
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 57.2
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 64.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 69.2
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 73.5
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 78.4
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 83.6
+              }
+            ]
+          },
+          {
+            "indicador": "dependencia_fcm_pct",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 94.2
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 94.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 93.8
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 93.5
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 93.2
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 94.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 93.4
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 93.1
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 93.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 92.8
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 92.5
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 92.2
+              }
+            ]
+          },
+          {
+            "indicador": "gasto_personal_subtitulo_21_pct",
+            "nombre": "Gasto en Personal Municipal (Subtítulo 21 %)",
+            "unidad": "%",
+            "fuente": "SINIM - SUBDERE",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 50.5
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 51.2
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 51.6
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 52.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 52.3
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 53.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 52.8
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 52.5
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 52.6
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 52.6
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 52.8
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 53.0
+              }
+            ]
+          },
+          {
+            "indicador": "inversion_fndr_asignada_mclp",
+            "nombre": "Inversión FNDR Asignada por Comuna",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén",
+            "valores": [
+              {
+                "periodo": "2015",
+                "fecha": "2015-12-31",
+                "valor": 1710.0
+              },
+              {
+                "periodo": "2016",
+                "fecha": "2016-12-31",
+                "valor": 1790.0
+              },
+              {
+                "periodo": "2017",
+                "fecha": "2017-12-31",
+                "valor": 1900.0
+              },
+              {
+                "periodo": "2018",
+                "fecha": "2018-12-31",
+                "valor": 2000.0
+              },
+              {
+                "periodo": "2019",
+                "fecha": "2019-12-31",
+                "valor": 2110.0
+              },
+              {
+                "periodo": "2020",
+                "fecha": "2020-12-31",
+                "valor": 2200.0
+              },
+              {
+                "periodo": "2021",
+                "fecha": "2021-12-31",
+                "valor": 2320.0
+              },
+              {
+                "periodo": "2022",
+                "fecha": "2022-12-31",
+                "valor": 2440.0
+              },
+              {
+                "periodo": "2023",
+                "fecha": "2023-12-31",
+                "valor": 2520.0
+              },
+              {
+                "periodo": "2024",
+                "fecha": "2024-12-31",
+                "valor": 2600.0
+              },
+              {
+                "periodo": "2025",
+                "fecha": "2025-12-31",
+                "valor": 2710.0
+              },
+              {
+                "periodo": "2026",
+                "fecha": "2026-12-31",
+                "valor": 2820.0
+              }
+            ]
+          }
+        ]
       }
     }
   ],

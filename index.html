@@ -229,7 +229,7 @@
 
     .brand-author-name {
       font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
-      font-size: 1.2rem;
+      font-size: clamp(0.92rem, 3.8vw, 1.2rem);
       font-weight: 700;
       letter-spacing: -0.015em;
       color: #1c1b1b;
@@ -348,6 +348,276 @@
       font-family: var(--font-mono, 'JetBrains Mono', monospace);
       font-size: 0.72rem;
     }
+
+    /* =========================================================================
+       UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
+       ========================================================================= */
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.16);
+      border-radius: 4px;
+      color: #00357f;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: #00357f;
+    }
+
+    .mobile-search-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.16);
+      border-radius: 4px;
+      color: #00357f;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-search-btn:hover {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: #00357f;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+      visibility: hidden;
+      transition: visibility 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .mobile-nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 20, 50, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open .mobile-nav-backdrop {
+      opacity: 1;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(86vw, 360px);
+      background: rgba(252, 249, 248, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid rgba(0, 53, 127, 0.18);
+      box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem 1.25rem 2rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-nav-drawer.open .mobile-nav-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
+    }
+
+    .mobile-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .mobile-nav-author {
+      font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1c1b1b;
+    }
+
+    .mobile-nav-close {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.15);
+      border-radius: 4px;
+      color: #66625f;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-nav-close:hover {
+      color: #00357f;
+      border-color: #00357f;
+      background: rgba(0, 53, 127, 0.05);
+    }
+
+    .mobile-nav-kicker {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #00357f;
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      min-height: 48px;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 53, 127, 0.10);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      font-family: var(--font-sans, 'Inter', sans-serif);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #1c1b1b;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    .mobile-nav-link:hover {
+      background: rgba(0, 53, 127, 0.05);
+      border-color: #00357f;
+      color: #00357f;
+      transform: translateX(2px);
+    }
+
+    .mobile-nav-link.active {
+      background: rgba(0, 53, 127, 0.08);
+      border-color: #00357f;
+      color: #00357f;
+      font-weight: 600;
+    }
+
+    .mobile-nav-num {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.75rem;
+      color: #00357f;
+      font-weight: 600;
+      width: 24px;
+    }
+
+    .mobile-nav-text {
+      flex: 1;
+    }
+
+    .mobile-nav-arrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.85rem;
+      color: #66625f;
+    }
+
+    /* Grillas fluidas responsivas */
+    #nodos-grid,
+    #comunas-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+      gap: 1.25rem !important;
+    }
+
+    /* Bottom-sheet en móviles para #concept-drawer */
+    @media (max-width: 767px) {
+      #concept-drawer #drawer-panel {
+        top: auto !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 88vh !important;
+        border-left: none !important;
+        border-top: 2px solid #00357f !important;
+        border-radius: 16px 16px 0 0 !important;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.22) !important;
+        transform: translateY(100%) !important;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      #concept-drawer.open #drawer-panel {
+        transform: translateY(0) !important;
+      }
+    }
+
+    /* Breakpoint cabecera */
+    @media (max-width: 1023px) {
+      .brand-nav-pills {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: inline-flex !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .mobile-search-btn {
+        display: inline-flex !important;
+      }
+      #mobileSearchRow.open {
+        display: flex !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-divider,
+      .brand-module-title {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -378,8 +648,8 @@
       </div>
 
       <div class="brand-right">
-        <!-- Buscador rápido en header -->
-        <div class="header-search-wrap hidden md:block">
+        <!-- Buscador rápido en header (Desktop e interactivo en móviles vía botón) -->
+        <div class="header-search-wrap">
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 text-primary pointer-events-none" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <input 
             type="search" 
@@ -388,8 +658,15 @@
             class="header-search-input"
             aria-label="Buscar en bases de datos de Aysén"
           />
-          <kbd class="header-search-kbd">/</kbd>
+          <kbd class="header-search-kbd hidden sm:inline-block">/</kbd>
         </div>
+
+        <button class="mobile-search-btn" id="btnMobileSearchToggle" onclick="toggleMobileSearch()" aria-label="Abrir buscador" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
 
         <nav class="brand-nav-pills" aria-label="Navegación principal">
           <a href="portal.html" class="brand-pill">Portada</a>
@@ -401,9 +678,64 @@
             <span class="pill-arrow">↗</span>
           </a>
         </nav>
+
+        <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- CAJÓN DE NAVEGACIÓN MÓVIL UNIVERSAL -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="brand-dot"></span>
+          <span class="mobile-nav-author">Álvaro Contreras Barrios</span>
+        </div>
+        <button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>
+      <nav class="mobile-nav-links" aria-label="Navegación móvil">
+        <a href="portal.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">01</span>
+          <span class="mobile-nav-text">Portada</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="sistemas_complejos.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">02</span>
+          <span class="mobile-nav-text">Visualizador de Complejidad</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="index.html" class="mobile-nav-link active">
+          <span class="mobile-nav-num">03</span>
+          <span class="mobile-nav-text">Datos de Aysén</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="laboratorio.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">04</span>
+          <span class="mobile-nav-text">Laboratorio Sistémico</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">LinkedIn</span>
+          <span class="mobile-nav-arrow">↗</span>
+        </a>
+      </nav>
+    </div>
+  </div>
 
   <!-- HERO EDITORIAL LIMPIO & ACCESOS DIRECTOS -->
   <section class="border-b border-border-subtle bg-gradient-to-b from-background via-surface-alt/25 to-background">
@@ -418,8 +750,8 @@
         </p>
       </div>
 
-      <!-- ACCESO DIRECTO A LAS 2 VISTAS PRINCIPALES -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 max-w-xl gap-3 sm:gap-4 mt-8 pt-6 border-t border-border-subtle">
+      <!-- ACCESO DIRECTO A LAS VISTAS PRINCIPALES -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 max-w-2xl gap-3 sm:gap-4 mt-8 pt-6 border-t border-border-subtle">
         
         <button onclick="switchTab('nodos')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
           <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
@@ -436,6 +768,14 @@
           </div>
           <div class="text-xs text-muted mt-1">Fichas integradas transversales por comuna</div>
         </button>
+
+        <a href="plataforma_aysen.html" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group block no-underline">
+          <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
+            <span>Atlas Sistémico</span>
+            <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">↗</span>
+          </div>
+          <div class="text-xs text-muted mt-1">Plataforma analítica y cruces multivariables</div>
+        </a>
 
       </div>
     </div>
@@ -545,56 +885,59 @@
 
             <!-- Controles de Zoom y Centrado -->
             <div class="flex items-center gap-1.5">
-              <button onclick="zoomGraph(1.3)" class="p-1 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary transition-colors" title="Acercar (+)">
-                <span class="material-symbols-outlined text-[17px]">zoom_in</span>
+              <button onclick="zoomGraph(1.3)" class="p-2 sm:p-1 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 flex items-center justify-center rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary transition-colors" title="Acercar (+)" aria-label="Acercar mapa">
+                <span class="material-symbols-outlined text-[19px]">zoom_in</span>
               </button>
-              <button onclick="zoomGraph(0.7)" class="p-1 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary transition-colors" title="Alejar (-)">
-                <span class="material-symbols-outlined text-[17px]">zoom_out</span>
+              <button onclick="zoomGraph(0.7)" class="p-2 sm:p-1 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 flex items-center justify-center rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary transition-colors" title="Alejar (-)" aria-label="Alejar mapa">
+                <span class="material-symbols-outlined text-[19px]">zoom_out</span>
               </button>
-              <button onclick="resetGraphView()" class="px-2 py-1 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary font-mono text-xs transition-colors flex items-center gap-1" title="Restablecer posición">
-                <span class="material-symbols-outlined text-[15px]">center_focus_strong</span>
+              <button onclick="resetGraphView()" class="px-2.5 py-1 min-h-[44px] sm:min-h-0 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary font-mono text-xs transition-colors flex items-center gap-1" title="Restablecer posición" aria-label="Centrar mapa">
+                <span class="material-symbols-outlined text-[17px]">center_focus_strong</span>
                 <span>Centrar</span>
               </button>
             </div>
           </div>
 
           <!-- Contenedor del Lienzo SVG D3 -->
-          <div class="relative w-full h-[520px] sm:h-[600px] overflow-hidden" id="d3-canvas-container">
-            <svg id="d3-concept-svg" class="w-full h-full"></svg>
+          <div class="relative w-full h-[520px] sm:h-[600px] overflow-hidden" id="d3-canvas-container" style="touch-action: none;">
+            <svg id="d3-concept-svg" class="w-full h-full" style="touch-action: none;"></svg>
             
-            <!-- Leyenda flotante compacta (Clicable por Hub) -->
-            <div class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-border-subtle rounded-sm p-2.5 text-xs font-mono shadow-xs space-y-1 max-w-[245px]">
-              <div class="font-bold text-xs uppercase tracking-wider text-primary mb-1">
-                7 Hubs de Datos (Clic para abrir)
+            <!-- Leyenda flotante compacta (Clicable por Hub, colapsable en móviles) -->
+            <div id="d3-hubs-legend" class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-border-subtle rounded-sm p-2 text-xs font-mono shadow-xs space-y-1 max-w-[245px] z-10">
+              <div class="flex items-center justify-between cursor-pointer font-bold text-xs uppercase tracking-wider text-primary py-0.5 select-none" onclick="toggleD3Legend()" title="Alternar leyenda">
+                <span>7 Hubs de Datos</span>
+                <span id="d3LegendArrow" class="text-muted text-[11px] font-mono">▲</span>
               </div>
-              <button onclick="openHubDrawerById('turismo')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#00357f] shrink-0"></span>
-                <span class="truncate">I. Turismo & Áreas Silvestres</span>
-              </button>
-              <button onclick="openHubDrawerById('salmonicultura')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#0059c5] shrink-0"></span>
-                <span class="truncate">II. Pesca, Acuicultura & Mar</span>
-              </button>
-              <button onclick="openHubDrawerById('energia')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#0284c7] shrink-0"></span>
-                <span class="truncate">III. Energía & Telecom</span>
-              </button>
-              <button onclick="openHubDrawerById('gobernanza')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#4338ca] shrink-0"></span>
-                <span class="truncate">IV. Gobernanza & Finanzas</span>
-              </button>
-              <button onclick="openHubDrawerById('inversion')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#0f766e] shrink-0"></span>
-                <span class="truncate">V. Economía, Inversión & Suelo</span>
-              </button>
-              <button onclick="openHubDrawerById('social')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] shrink-0"></span>
-                <span class="truncate">VI. Demografía, Salud & Educ.</span>
-              </button>
-              <button onclick="openHubDrawerById('biodiversidad')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#047857] shrink-0"></span>
-                <span class="truncate">VII. Biodiversidad & Clima</span>
-              </button>
+              <div id="d3LegendList" class="space-y-0.5 hidden sm:block">
+                <button onclick="openHubDrawerById('turismo')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#00357f] shrink-0"></span>
+                  <span class="truncate">I. Turismo & Áreas Silvestres</span>
+                </button>
+                <button onclick="openHubDrawerById('salmonicultura')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#0059c5] shrink-0"></span>
+                  <span class="truncate">II. Pesca, Acuicultura & Mar</span>
+                </button>
+                <button onclick="openHubDrawerById('energia')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#0284c7] shrink-0"></span>
+                  <span class="truncate">III. Energía & Telecom</span>
+                </button>
+                <button onclick="openHubDrawerById('gobernanza')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4338ca] shrink-0"></span>
+                  <span class="truncate">IV. Gobernanza & Finanzas</span>
+                </button>
+                <button onclick="openHubDrawerById('inversion')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#0f766e] shrink-0"></span>
+                  <span class="truncate">V. Economía, Inversión & Suelo</span>
+                </button>
+                <button onclick="openHubDrawerById('social')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] shrink-0"></span>
+                  <span class="truncate">VI. Demografía, Salud & Educ.</span>
+                </button>
+                <button onclick="openHubDrawerById('biodiversidad')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#047857] shrink-0"></span>
+                  <span class="truncate">VII. Biodiversidad & Clima</span>
+                </button>
+              </div>
             </div>
 
             <!-- Tooltip reactivo -->
@@ -665,13 +1008,19 @@
       onclick="closeConceptDrawer()"
     ></div>
 
-    <!-- Panel deslizante -->
+    <!-- Panel deslizante (Drawer en desktop / Bottom-sheet en móvil) -->
     <div 
       id="drawer-panel" 
       class="absolute right-0 top-0 bottom-0 w-full max-w-2xl bg-background border-l border-primary/20 shadow-drawer transform translate-x-full transition-transform duration-250 ease-out flex flex-col pointer-events-auto overflow-hidden"
     >
+      <!-- Tirador táctil visible en pantallas móviles (<768px) -->
+      <div class="md:hidden flex flex-col items-center justify-center py-2 bg-white/95 border-b border-border-subtle cursor-pointer select-none" onclick="closeConceptDrawer()" title="Cerrar ficha">
+        <span class="w-12 h-1.5 rounded-full bg-primary/25 mb-0.5"></span>
+        <span class="font-mono text-[10px] text-muted tracking-wider uppercase">Cerrar ficha ↓</span>
+      </div>
+
       <!-- Cabecera del Drawer -->
-      <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between gap-3 bg-white/95 sticky top-0 z-10">
+      <div class="px-5 sm:px-6 py-3 sm:py-4 border-b border-border-subtle flex items-center justify-between gap-3 bg-white/95 sticky top-0 z-10">
         <div class="flex items-center gap-2 min-w-0">
           <span id="drawer-concept-id" class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary text-white">
             #01
@@ -683,24 +1032,27 @@
           <button 
             id="drawer-btn-prev" 
             onclick="navigateNode(-1)" 
-            class="p-1.5 text-muted hover:text-primary hover:bg-surface-alt rounded-sm transition-colors font-mono text-sm leading-none" 
+            class="min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-2 sm:p-1.5 text-muted hover:text-primary hover:bg-surface-alt rounded-sm transition-colors font-mono text-base sm:text-sm leading-none flex items-center justify-center" 
             title="Nodo anterior (←)"
+            aria-label="Nodo anterior"
           >
             ←
           </button>
           <button 
             id="drawer-btn-next" 
             onclick="navigateNode(1)" 
-            class="p-1.5 text-muted hover:text-primary hover:bg-surface-alt rounded-sm transition-colors font-mono text-sm leading-none" 
+            class="min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-2 sm:p-1.5 text-muted hover:text-primary hover:bg-surface-alt rounded-sm transition-colors font-mono text-base sm:text-sm leading-none flex items-center justify-center" 
             title="Siguiente nodo (→)"
+            aria-label="Siguiente nodo"
           >
             →
           </button>
           <div class="h-4 w-px bg-border-subtle mx-1"></div>
           <button 
             onclick="closeConceptDrawer()" 
-            class="p-1.5 text-muted hover:text-on-surface hover:bg-surface-alt rounded-sm transition-colors font-mono text-base leading-none" 
+            class="min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 p-2 sm:p-1.5 text-muted hover:text-on-surface hover:bg-surface-alt rounded-sm transition-colors font-mono text-xl sm:text-base leading-none flex items-center justify-center" 
             title="Cerrar panel (Esc)"
+            aria-label="Cerrar panel"
           >
             ×
           </button>
@@ -1188,13 +1540,20 @@
       AppState.graph.svg = svg;
 
       const zoom = d3.zoom()
-        .scaleExtent([0.5, 2.5])
+        .scaleExtent([0.35, 3.0])
         .on('zoom', (event) => {
           g.attr('transform', event.transform);
         });
 
       svg.call(zoom);
       AppState.graph.zoom = zoom;
+
+      if (width < 768) {
+        const initialScale = Math.min(1.0, Math.max(0.55, width / 740));
+        const initialTx = (width - width * initialScale) / 2;
+        const initialTy = (height - height * initialScale) / 2;
+        svg.call(zoom.transform, d3.zoomIdentity.translate(initialTx, initialTy).scale(initialScale));
+      }
 
       const simulation = d3.forceSimulation(allNodes)
         .force('link', d3.forceLink(links).id(d => d.nodeId || d.id).distance(d => {
@@ -2074,6 +2433,7 @@
       const panel = document.getElementById('drawer-panel');
 
       drawer.classList.remove('pointer-events-none');
+      drawer.classList.add('open');
       drawer.setAttribute('aria-hidden', 'false');
       backdrop.classList.remove('pointer-events-none', 'opacity-0');
       backdrop.classList.add('opacity-100');
@@ -2090,6 +2450,7 @@
 
       destroyDrawerChart();
 
+      drawer.classList.remove('open');
       backdrop.classList.remove('opacity-100');
       backdrop.classList.add('opacity-0');
       panel.classList.remove('translate-x-0');
@@ -2146,6 +2507,10 @@
 
         if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
           e.preventDefault();
+          const wrap = document.querySelector('.header-search-wrap');
+          if (wrap && window.innerWidth < 768) {
+            wrap.classList.add('mobile-active');
+          }
           const input = document.getElementById('global-search-input');
           if (input) {
             input.focus();
@@ -2154,6 +2519,62 @@
         }
       });
     }
+
+    function toggleMobileSearch() {
+      const wrap = document.querySelector('.header-search-wrap');
+      if (wrap) {
+        wrap.classList.toggle('mobile-active');
+        if (wrap.classList.contains('mobile-active')) {
+          const inp = document.getElementById('global-search-input');
+          if (inp) {
+            inp.focus();
+            inp.select();
+          }
+        }
+      }
+    }
+
+    function toggleD3Legend() {
+      const list = document.getElementById('d3LegendList');
+      const arr = document.getElementById('d3LegendArrow');
+      if (!list) return;
+      const isHidden = list.classList.toggle('hidden');
+      if (arr) arr.textContent = isHidden ? '▲' : '▼';
+    }
+
+    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL
+    const btnMobileMenu = document.getElementById('btnMobileMenu');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const btnMobileClose = document.getElementById('btnMobileClose');
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+    function openMobileNav() {
+      if (!mobileNavDrawer) return;
+      mobileNavDrawer.classList.add('open');
+      mobileNavDrawer.setAttribute('aria-hidden', 'false');
+      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileNav() {
+      if (!mobileNavDrawer) return;
+      mobileNavDrawer.classList.remove('open');
+      mobileNavDrawer.setAttribute('aria-hidden', 'true');
+      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
+    }
+
+    if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
+    if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
+    if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+        closeMobileNav();
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
 
     function clearFiltersAndSearch() {
       AppState.searchQuery = '';

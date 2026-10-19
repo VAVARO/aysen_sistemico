@@ -136,6 +136,16 @@
             systemicMarkersGroup = L.layerGroup().addTo(window.map);
         }
 
+        // Configuración táctil en móviles para evitar bloqueo de scroll de página
+        if (window.innerWidth <= 768 && window.map) {
+            if (window.map.scrollWheelZoom) window.map.scrollWheelZoom.disable();
+            if (window.map.touchZoom) window.map.touchZoom.enable();
+            const mapContainer = window.map.getContainer ? window.map.getContainer() : null;
+            if (mapContainer) {
+                mapContainer.style.touchAction = 'pan-y';
+            }
+        }
+
         renderMapLayerControl();
         updateMapMarkers();
     }

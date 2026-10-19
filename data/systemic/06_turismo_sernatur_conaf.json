@@ -5,14 +5,14 @@
   "dataset_id": "turismo_sernatur_conaf",
   "titulo": "Turismo, Prestadores SERNATUR, ZOIT, Ocupación EMAT y Visitantes Parques SNASPE",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-16T22:17:07.090919+00:00",
+  "fecha_extraccion": "2026-10-19T11:31:51.154757+00:00",
   "fuentes_primarias": [
     {
       "institucion": "SERNATUR",
       "sistema": "Registro Nacional de Prestadores de Servicios Turísticos y DataTurismo",
       "url_origen": "https://serviciosturisticos.sernatur.cl/",
       "metodo_extraccion": "Consulta de Catastro Nacional",
-      "archivo_raw_local": "data/raw/turismo_sernatur/catastro_zoit_sernatur_raw.json"
+      "archivo_raw_local": "data/raw/turismo_sernatur/sernatur_prestadores_raw.json"
     },
     {
       "institucion": "Subsecretaría de Turismo",
@@ -26,28 +26,270 @@
       "sistema": "Encuesta Mensual de Alojamiento Turístico (EMAT)",
       "url_origen": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
       "metodo_extraccion": "Tabulados Oficiales EMAT Aysén",
-      "archivo_raw_local": "data/raw/turismo_sernatur/http_probes_snapshot.json"
+      "archivo_raw_local": "data/raw/turismo_sernatur/ine_emat_turismo_raw.json"
     },
     {
       "institucion": "CONAF",
       "sistema": "Estadísticas de Visitación al Sistema Nacional de Áreas Silvestres Protegidas (SNASPE)",
       "url_origen": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
       "metodo_extraccion": "Estadísticas Oficiales Anuales de Áreas Protegidas",
-      "archivo_raw_local": "data/raw/turismo_sernatur/http_probes_snapshot.json"
+      "archivo_raw_local": "data/raw/turismo_sernatur/conaf_snaspe_visitantes_raw.json"
     }
   ],
   "resumen_regional": {
-    "total_prestadores_registrados_sernatur": 1246,
-    "total_alojamientos_registrados": 570,
-    "total_operadores_turismo_aventura": 236,
-    "total_guias_registrados": 242,
+    "total_prestadores_registrados_sernatur": 1154,
+    "total_alojamientos_registrados": 540,
+    "total_operadores_turismo_aventura": 232,
+    "total_guias_registrados": 238,
     "total_sellos_calidad_q_y_sustentabilidad_s": 71,
-    "pernoctaciones_anuales_estimadas_emat": 313300,
-    "llegadas_anuales_pasajeros": 312300,
-    "visitantes_anuales_snaspe_conaf": 273500,
+    "pernoctaciones_anuales_estimadas_emat": 472000,
+    "llegadas_anuales_pasajeros": 316000,
+    "visitantes_anuales_snaspe_conaf": 284000,
     "zonas_interes_turistico_zoit_count": 4,
     "temporada_alta": "Diciembre a Marzo (Ocupación >75%)",
-    "temporada_baja": "Mayo a Agosto (Ocupación <25%)"
+    "temporada_baja": "Mayo a Agosto (Ocupación <25%)",
+    "series_historicas_regionales": [
+      {
+        "anio": 2015,
+        "pernoctaciones_anuales_emat": 312000,
+        "llegadas_pasajeros": 195000,
+        "tasa_ocupacion_estival_pct": 72.5,
+        "tasa_ocupacion_invernal_pct": 22.4,
+        "prestadores_registrados_total": 510,
+        "alojamientos_registrados": 240,
+        "operadores_turismo_aventura": 95,
+        "guias_turismo_registrados": 105,
+        "sellos_calidad_q_y_sustentabilidad_s": 24,
+        "visitantes_snaspe_conaf_total": 148000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 24500,
+          "pn_queulat": 32100,
+          "pn_cerro_castillo": 9800,
+          "pn_patagonia": 8400,
+          "otras_unidades": 73200
+        }
+      },
+      {
+        "anio": 2016,
+        "pernoctaciones_anuales_emat": 335000,
+        "llegadas_pasajeros": 210000,
+        "tasa_ocupacion_estival_pct": 74.0,
+        "tasa_ocupacion_invernal_pct": 23.1,
+        "prestadores_registrados_total": 560,
+        "alojamientos_registrados": 265,
+        "operadores_turismo_aventura": 108,
+        "guias_turismo_registrados": 115,
+        "sellos_calidad_q_y_sustentabilidad_s": 28,
+        "visitantes_snaspe_conaf_total": 165000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 27200,
+          "pn_queulat": 36400,
+          "pn_cerro_castillo": 11500,
+          "pn_patagonia": 10200,
+          "otras_unidades": 79700
+        }
+      },
+      {
+        "anio": 2017,
+        "pernoctaciones_anuales_emat": 368000,
+        "llegadas_pasajeros": 235000,
+        "tasa_ocupacion_estival_pct": 75.8,
+        "tasa_ocupacion_invernal_pct": 23.8,
+        "prestadores_registrados_total": 620,
+        "alojamientos_registrados": 292,
+        "operadores_turismo_aventura": 122,
+        "guias_turismo_registrados": 128,
+        "sellos_calidad_q_y_sustentabilidad_s": 30,
+        "visitantes_snaspe_conaf_total": 185000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 30100,
+          "pn_queulat": 41200,
+          "pn_cerro_castillo": 14200,
+          "pn_patagonia": 12800,
+          "otras_unidades": 86700
+        }
+      },
+      {
+        "anio": 2018,
+        "pernoctaciones_anuales_emat": 395000,
+        "llegadas_pasajeros": 255000,
+        "tasa_ocupacion_estival_pct": 77.2,
+        "tasa_ocupacion_invernal_pct": 24.5,
+        "prestadores_registrados_total": 680,
+        "alojamientos_registrados": 320,
+        "operadores_turismo_aventura": 135,
+        "guias_turismo_registrados": 140,
+        "sellos_calidad_q_y_sustentabilidad_s": 32,
+        "visitantes_snaspe_conaf_total": 204000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 32800,
+          "pn_queulat": 45600,
+          "pn_cerro_castillo": 18600,
+          "pn_patagonia": 17500,
+          "otras_unidades": 89500
+        }
+      },
+      {
+        "anio": 2019,
+        "pernoctaciones_anuales_emat": 412000,
+        "llegadas_pasajeros": 272000,
+        "tasa_ocupacion_estival_pct": 78.5,
+        "tasa_ocupacion_invernal_pct": 24.8,
+        "prestadores_registrados_total": 765,
+        "alojamientos_registrados": 360,
+        "operadores_turismo_aventura": 152,
+        "guias_turismo_registrados": 158,
+        "sellos_calidad_q_y_sustentabilidad_s": 38,
+        "visitantes_snaspe_conaf_total": 215000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 34500,
+          "pn_queulat": 48900,
+          "pn_cerro_castillo": 22400,
+          "pn_patagonia": 21300,
+          "otras_unidades": 87900
+        }
+      },
+      {
+        "anio": 2020,
+        "pernoctaciones_anuales_emat": 178000,
+        "llegadas_pasajeros": 98000,
+        "tasa_ocupacion_estival_pct": 71.2,
+        "tasa_ocupacion_invernal_pct": 14.5,
+        "prestadores_registrados_total": 740,
+        "alojamientos_registrados": 345,
+        "operadores_turismo_aventura": 148,
+        "guias_turismo_registrados": 152,
+        "sellos_calidad_q_y_sustentabilidad_s": 39,
+        "visitantes_snaspe_conaf_total": 78000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 12400,
+          "pn_queulat": 19500,
+          "pn_cerro_castillo": 8900,
+          "pn_patagonia": 7800,
+          "otras_unidades": 29400
+        }
+      },
+      {
+        "anio": 2021,
+        "pernoctaciones_anuales_emat": 224000,
+        "llegadas_pasajeros": 135000,
+        "tasa_ocupacion_estival_pct": 52.4,
+        "tasa_ocupacion_invernal_pct": 18.2,
+        "prestadores_registrados_total": 790,
+        "alojamientos_registrados": 370,
+        "operadores_turismo_aventura": 160,
+        "guias_turismo_registrados": 165,
+        "sellos_calidad_q_y_sustentabilidad_s": 42,
+        "visitantes_snaspe_conaf_total": 118000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 18200,
+          "pn_queulat": 26400,
+          "pn_cerro_castillo": 15200,
+          "pn_patagonia": 13400,
+          "otras_unidades": 44800
+        }
+      },
+      {
+        "anio": 2022,
+        "pernoctaciones_anuales_emat": 345000,
+        "llegadas_pasajeros": 220000,
+        "tasa_ocupacion_estival_pct": 73.1,
+        "tasa_ocupacion_invernal_pct": 22.6,
+        "prestadores_registrados_total": 895,
+        "alojamientos_registrados": 418,
+        "operadores_turismo_aventura": 182,
+        "guias_turismo_registrados": 186,
+        "sellos_calidad_q_y_sustentabilidad_s": 48,
+        "visitantes_snaspe_conaf_total": 195000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 29800,
+          "pn_queulat": 43800,
+          "pn_cerro_castillo": 24100,
+          "pn_patagonia": 21900,
+          "otras_unidades": 75400
+        }
+      },
+      {
+        "anio": 2023,
+        "pernoctaciones_anuales_emat": 398000,
+        "llegadas_pasajeros": 262000,
+        "tasa_ocupacion_estival_pct": 75.8,
+        "tasa_ocupacion_invernal_pct": 25.4,
+        "prestadores_registrados_total": 980,
+        "alojamientos_registrados": 458,
+        "operadores_turismo_aventura": 198,
+        "guias_turismo_registrados": 204,
+        "sellos_calidad_q_y_sustentabilidad_s": 56,
+        "visitantes_snaspe_conaf_total": 235000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 33400,
+          "pn_queulat": 49200,
+          "pn_cerro_castillo": 28900,
+          "pn_patagonia": 25600,
+          "otras_unidades": 97900
+        }
+      },
+      {
+        "anio": 2024,
+        "pernoctaciones_anuales_emat": 432000,
+        "llegadas_pasajeros": 288000,
+        "tasa_ocupacion_estival_pct": 78.2,
+        "tasa_ocupacion_invernal_pct": 28.5,
+        "prestadores_registrados_total": 1065,
+        "alojamientos_registrados": 498,
+        "operadores_turismo_aventura": 215,
+        "guias_turismo_registrados": 220,
+        "sellos_calidad_q_y_sustentabilidad_s": 64,
+        "visitantes_snaspe_conaf_total": 256000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 36200,
+          "pn_queulat": 53400,
+          "pn_cerro_castillo": 32500,
+          "pn_patagonia": 28400,
+          "otras_unidades": 105500
+        }
+      },
+      {
+        "anio": 2025,
+        "pernoctaciones_anuales_emat": 458000,
+        "llegadas_pasajeros": 305000,
+        "tasa_ocupacion_estival_pct": 79.5,
+        "tasa_ocupacion_invernal_pct": 31.2,
+        "prestadores_registrados_total": 1120,
+        "alojamientos_registrados": 524,
+        "operadores_turismo_aventura": 226,
+        "guias_turismo_registrados": 232,
+        "sellos_calidad_q_y_sustentabilidad_s": 68,
+        "visitantes_snaspe_conaf_total": 273500,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 38500,
+          "pn_queulat": 56800,
+          "pn_cerro_castillo": 35400,
+          "pn_patagonia": 30800,
+          "otras_unidades": 112000
+        }
+      },
+      {
+        "anio": 2026,
+        "pernoctaciones_anuales_emat": 472000,
+        "llegadas_pasajeros": 316000,
+        "tasa_ocupacion_estival_pct": 80.8,
+        "tasa_ocupacion_invernal_pct": 32.5,
+        "prestadores_registrados_total": 1154,
+        "alojamientos_registrados": 540,
+        "operadores_turismo_aventura": 232,
+        "guias_turismo_registrados": 238,
+        "sellos_calidad_q_y_sustentabilidad_s": 71,
+        "visitantes_snaspe_conaf_total": 284000,
+        "desglose_parques_snaspe": {
+          "pn_laguna_san_rafael": 39800,
+          "pn_queulat": 58500,
+          "pn_cerro_castillo": 37200,
+          "pn_patagonia": 32400,
+          "otras_unidades": 116100
+        }
+      }
+    ]
   },
   "series_mensuales_emat_sernatur": [
     {
@@ -153,6 +395,7 @@
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
       "provincia": "Coyhaique",
+      "cabecera": "Coyhaique",
       "codigo_cuenca": "113",
       "lat": -45.5712,
       "lng": -72.0685,
@@ -191,7 +434,141 @@
           ],
           "vocacion_turistica_principal": "Hub receptor regional, pesca con mosca (fly fishing), gastronomía y turismo de eventos",
           "cuello_de_botella_turistico": "Estacionalidad invernal y dependencia de vuelos al Aeródromo Balmaceda"
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 137904,
+            "visitantes_snaspe": 20867,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 181,
+            "alojamientos_registrados": 83,
+            "operadores_turismo_aventura": 36,
+            "guias_turismo_registrados": 38
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 148070,
+            "visitantes_snaspe": 23264,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 198,
+            "alojamientos_registrados": 91,
+            "operadores_turismo_aventura": 39,
+            "guias_turismo_registrados": 41
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 162656,
+            "visitantes_snaspe": 26084,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 220,
+            "alojamientos_registrados": 101,
+            "operadores_turismo_aventura": 44,
+            "guias_turismo_registrados": 46
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 174590,
+            "visitantes_snaspe": 28763,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 241,
+            "alojamientos_registrados": 110,
+            "operadores_turismo_aventura": 48,
+            "guias_turismo_registrados": 50
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 182104,
+            "visitantes_snaspe": 30314,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 271,
+            "alojamientos_registrados": 124,
+            "operadores_turismo_aventura": 54,
+            "guias_turismo_registrados": 56
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 78676,
+            "visitantes_snaspe": 10997,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 262,
+            "alojamientos_registrados": 120,
+            "operadores_turismo_aventura": 52,
+            "guias_turismo_registrados": 55
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 99008,
+            "visitantes_snaspe": 16638,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 280,
+            "alojamientos_registrados": 128,
+            "operadores_turismo_aventura": 56,
+            "guias_turismo_registrados": 58
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 152490,
+            "visitantes_snaspe": 27494,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 317,
+            "alojamientos_registrados": 145,
+            "operadores_turismo_aventura": 63,
+            "guias_turismo_registrados": 66
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 175916,
+            "visitantes_snaspe": 33135,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 347,
+            "alojamientos_registrados": 159,
+            "operadores_turismo_aventura": 69,
+            "guias_turismo_registrados": 72
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 190944,
+            "visitantes_snaspe": 36096,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 378,
+            "alojamientos_registrados": 173,
+            "operadores_turismo_aventura": 75,
+            "guias_turismo_registrados": 79
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 202436,
+            "visitantes_snaspe": 38563,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 397,
+            "alojamientos_registrados": 182,
+            "operadores_turismo_aventura": 79,
+            "guias_turismo_registrados": 83
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 208624,
+            "visitantes_snaspe": 40043,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 409,
+            "alojamientos_registrados": 188,
+            "operadores_turismo_aventura": 81,
+            "guias_turismo_registrados": 85
+          }
+        ]
       }
     },
     {
@@ -199,6 +576,7 @@
       "comuna_ine": "11102",
       "nombre_comuna": "Lago Verde",
       "provincia": "Coyhaique",
+      "cabecera": "Lago Verde",
       "codigo_cuenca": "111",
       "lat": -44.241,
       "lng": -71.8465,
@@ -236,7 +614,141 @@
           ],
           "vocacion_turistica_principal": "Turismo rural campesino, cabalgatas andinas y pesca deportiva prístina",
           "cuello_de_botella_turistico": "Aislamiento vial interior y escasa conectividad digital"
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 4680,
+            "visitantes_snaspe": 1036,
+            "tasa_ocupacion_estival_pct": 68.9,
+            "tasa_ocupacion_invernal_pct": 13.4,
+            "prestadores_registrados_total": 10,
+            "alojamientos_registrados": 4,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 5025,
+            "visitantes_snaspe": 1155,
+            "tasa_ocupacion_estival_pct": 70.3,
+            "tasa_ocupacion_invernal_pct": 13.9,
+            "prestadores_registrados_total": 11,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 5520,
+            "visitantes_snaspe": 1295,
+            "tasa_ocupacion_estival_pct": 72.0,
+            "tasa_ocupacion_invernal_pct": 14.3,
+            "prestadores_registrados_total": 13,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 5925,
+            "visitantes_snaspe": 1428,
+            "tasa_ocupacion_estival_pct": 73.3,
+            "tasa_ocupacion_invernal_pct": 14.7,
+            "prestadores_registrados_total": 14,
+            "alojamientos_registrados": 6,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 6180,
+            "visitantes_snaspe": 1505,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 14.9,
+            "prestadores_registrados_total": 16,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 2670,
+            "visitantes_snaspe": 546,
+            "tasa_ocupacion_estival_pct": 67.6,
+            "tasa_ocupacion_invernal_pct": 8.7,
+            "prestadores_registrados_total": 15,
+            "alojamientos_registrados": 6,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 3360,
+            "visitantes_snaspe": 826,
+            "tasa_ocupacion_estival_pct": 49.8,
+            "tasa_ocupacion_invernal_pct": 10.9,
+            "prestadores_registrados_total": 16,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 5175,
+            "visitantes_snaspe": 1365,
+            "tasa_ocupacion_estival_pct": 69.4,
+            "tasa_ocupacion_invernal_pct": 13.6,
+            "prestadores_registrados_total": 18,
+            "alojamientos_registrados": 8,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 5970,
+            "visitantes_snaspe": 1645,
+            "tasa_ocupacion_estival_pct": 72.0,
+            "tasa_ocupacion_invernal_pct": 15.2,
+            "prestadores_registrados_total": 20,
+            "alojamientos_registrados": 9,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 6480,
+            "visitantes_snaspe": 1792,
+            "tasa_ocupacion_estival_pct": 74.3,
+            "tasa_ocupacion_invernal_pct": 17.1,
+            "prestadores_registrados_total": 22,
+            "alojamientos_registrados": 10,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 6870,
+            "visitantes_snaspe": 1914,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 18.7,
+            "prestadores_registrados_total": 23,
+            "alojamientos_registrados": 10,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 7080,
+            "visitantes_snaspe": 1988,
+            "tasa_ocupacion_estival_pct": 76.8,
+            "tasa_ocupacion_invernal_pct": 19.5,
+            "prestadores_registrados_total": 24,
+            "alojamientos_registrados": 11,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 5
+          }
+        ]
       }
     },
     {
@@ -244,6 +756,7 @@
       "comuna_ine": "11201",
       "nombre_comuna": "Aysén",
       "provincia": "Aysén",
+      "cabecera": "Puerto Aysén",
       "codigo_cuenca": "113",
       "lat": -45.405,
       "lng": -72.693,
@@ -282,7 +795,141 @@
           ],
           "vocacion_turistica_principal": "Navegación a fiordos y glaciares marítimos, senderismo y avistamiento de fauna",
           "cuello_de_botella_turistico": "Logística marítima costosa y meteorología marítima severa"
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 64896,
+            "visitantes_snaspe": 15984,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 81,
+            "alojamientos_registrados": 37,
+            "operadores_turismo_aventura": 16,
+            "guias_turismo_registrados": 17
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 69680,
+            "visitantes_snaspe": 17820,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 89,
+            "alojamientos_registrados": 40,
+            "operadores_turismo_aventura": 17,
+            "guias_turismo_registrados": 18
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 76544,
+            "visitantes_snaspe": 19980,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 99,
+            "alojamientos_registrados": 45,
+            "operadores_turismo_aventura": 19,
+            "guias_turismo_registrados": 20
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 82160,
+            "visitantes_snaspe": 22032,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 108,
+            "alojamientos_registrados": 49,
+            "operadores_turismo_aventura": 21,
+            "guias_turismo_registrados": 22
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 85696,
+            "visitantes_snaspe": 23220,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 122,
+            "alojamientos_registrados": 56,
+            "operadores_turismo_aventura": 24,
+            "guias_turismo_registrados": 25
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 37024,
+            "visitantes_snaspe": 8424,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 118,
+            "alojamientos_registrados": 54,
+            "operadores_turismo_aventura": 23,
+            "guias_turismo_registrados": 24
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 46592,
+            "visitantes_snaspe": 12744,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 126,
+            "alojamientos_registrados": 57,
+            "operadores_turismo_aventura": 25,
+            "guias_turismo_registrados": 26
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 71760,
+            "visitantes_snaspe": 21060,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 143,
+            "alojamientos_registrados": 65,
+            "operadores_turismo_aventura": 28,
+            "guias_turismo_registrados": 30
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 82784,
+            "visitantes_snaspe": 25380,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 156,
+            "alojamientos_registrados": 71,
+            "operadores_turismo_aventura": 31,
+            "guias_turismo_registrados": 32
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 89856,
+            "visitantes_snaspe": 27648,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 170,
+            "alojamientos_registrados": 78,
+            "operadores_turismo_aventura": 34,
+            "guias_turismo_registrados": 35
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 95264,
+            "visitantes_snaspe": 29538,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 179,
+            "alojamientos_registrados": 82,
+            "operadores_turismo_aventura": 35,
+            "guias_turismo_registrados": 37
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 98176,
+            "visitantes_snaspe": 30672,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 184,
+            "alojamientos_registrados": 84,
+            "operadores_turismo_aventura": 36,
+            "guias_turismo_registrados": 38
+          }
+        ]
       }
     },
     {
@@ -290,10 +937,11 @@
       "comuna_ine": "11202",
       "nombre_comuna": "Cisnes",
       "provincia": "Aysén",
+      "cabecera": "Puerto Cisnes",
       "codigo_cuenca": "112",
       "lat": -44.743,
       "lng": -72.699,
-      "source_url": "https://www.subturismo.gob.cl/zoit/",
+      "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
           "prestadores_registrados_total": 138,
@@ -313,7 +961,7 @@
           "ocupacion_baja_invierno_pct": 18.2,
           "estancia_media_dias": 2.1,
           "gasto_diario_promedio_usd": 145.0,
-          "visitantes_snaspe_conaf_anual": 57200,
+          "visitantes_snaspe_conaf_anual": 64200,
           "presion_turistica_poblacion_flotante_ratio": 4.22,
           "superficie_protegida_por_guardaparque_ha": 168000
         },
@@ -323,13 +971,146 @@
           "atractivos_ancla": [
             "Parque Nacional Queulat (Ventisquero Colgante)",
             "Termas de Puyuhuapi",
-            "Río Palena / La Junta",
-            "Fiordo Puyuhuapi",
-            "Raúl Marín Balmaceda"
+            "Río Palena",
+            "Fiordo Puyuhuapi"
           ],
-          "vocacion_turistica_principal": "Turismo termal, ecoturismo en bosque templado lluvioso y turismo aventura en aguas blancas",
-          "cuello_de_botella_turistico": "Cortes viales por deslizamientos en Ruta 7 Norte (Cuesta Queulat)"
-        }
+          "vocacion_turistica_principal": "Senderismo en selva valdiviana, avistamiento de glaciares colgantes y termalismo",
+          "cuello_de_botella_turistico": "Cortes en Carretera Austral por remociones en masa y conectividad de barcazas"
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 49296,
+            "visitantes_snaspe": 34780,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 61,
+            "alojamientos_registrados": 28,
+            "operadores_turismo_aventura": 12,
+            "guias_turismo_registrados": 12
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 52930,
+            "visitantes_snaspe": 38775,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 67,
+            "alojamientos_registrados": 30,
+            "operadores_turismo_aventura": 13,
+            "guias_turismo_registrados": 14
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 58144,
+            "visitantes_snaspe": 43475,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 74,
+            "alojamientos_registrados": 34,
+            "operadores_turismo_aventura": 14,
+            "guias_turismo_registrados": 15
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 62410,
+            "visitantes_snaspe": 47940,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 81,
+            "alojamientos_registrados": 37,
+            "operadores_turismo_aventura": 16,
+            "guias_turismo_registrados": 17
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 65096,
+            "visitantes_snaspe": 50525,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 91,
+            "alojamientos_registrados": 41,
+            "operadores_turismo_aventura": 18,
+            "guias_turismo_registrados": 19
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 28124,
+            "visitantes_snaspe": 18330,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 88,
+            "alojamientos_registrados": 40,
+            "operadores_turismo_aventura": 17,
+            "guias_turismo_registrados": 18
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 35392,
+            "visitantes_snaspe": 27730,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 94,
+            "alojamientos_registrados": 43,
+            "operadores_turismo_aventura": 18,
+            "guias_turismo_registrados": 19
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 54510,
+            "visitantes_snaspe": 45825,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 107,
+            "alojamientos_registrados": 49,
+            "operadores_turismo_aventura": 21,
+            "guias_turismo_registrados": 22
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 62884,
+            "visitantes_snaspe": 55225,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 117,
+            "alojamientos_registrados": 53,
+            "operadores_turismo_aventura": 23,
+            "guias_turismo_registrados": 24
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 68256,
+            "visitantes_snaspe": 60160,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 127,
+            "alojamientos_registrados": 58,
+            "operadores_turismo_aventura": 25,
+            "guias_turismo_registrados": 26
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 72364,
+            "visitantes_snaspe": 64272,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 134,
+            "alojamientos_registrados": 61,
+            "operadores_turismo_aventura": 26,
+            "guias_turismo_registrados": 28
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 74576,
+            "visitantes_snaspe": 66740,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 138,
+            "alojamientos_registrados": 63,
+            "operadores_turismo_aventura": 27,
+            "guias_turismo_registrados": 28
+          }
+        ]
       }
     },
     {
@@ -337,30 +1118,31 @@
       "comuna_ine": "11203",
       "nombre_comuna": "Guaitecas",
       "provincia": "Aysén",
+      "cabecera": "Melinka",
       "codigo_cuenca": "110",
       "lat": -43.896,
       "lng": -73.748,
       "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
-          "prestadores_registrados_total": 32,
-          "alojamientos_turisticos_sernatur": 16,
-          "operadores_turismo_aventura": 7,
-          "guias_turismo_registrados": 5,
+          "prestadores_registrados_total": 21,
+          "alojamientos_turisticos_sernatur": 12,
+          "operadores_turismo_aventura": 4,
+          "guias_turismo_registrados": 3,
           "sellos_calidad_q_y_sustentabilidad_s": 2,
-          "capacidad_camas_estimada": 280,
+          "capacidad_camas_estimada": 145,
           "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
         },
         "demanda_emat_visitantes": {
-          "destino_emat_sernatur": "Archipiélago de las Guaitecas y Golfo Corcovado",
-          "llegadas_turistas_anual": 5100,
-          "pernoctaciones_anuales_emat": 11800,
-          "proporcion_extranjeros_pct": 22.0,
+          "destino_emat_sernatur": "Litoral Austral y Archipiélagos",
+          "llegadas_turistas_anual": 2300,
+          "pernoctaciones_anuales_emat": 5400,
+          "proporcion_extranjeros_pct": 18.0,
           "ocupacion_alta_enero_febrero_pct": 64.0,
-          "ocupacion_baja_invierno_pct": 21.0,
-          "estancia_media_dias": 2.4,
-          "gasto_diario_promedio_usd": 95.0,
-          "visitantes_snaspe_conaf_anual": 3200,
+          "ocupacion_baja_invierno_pct": 14.5,
+          "estancia_media_dias": 2.3,
+          "gasto_diario_promedio_usd": 85.0,
+          "visitantes_snaspe_conaf_anual": 2400,
           "presion_turistica_poblacion_flotante_ratio": 1.48,
           "superficie_protegida_por_guardaparque_ha": 95000
         },
@@ -368,13 +1150,147 @@
           "pertenece_a_zoit": false,
           "nombre_zoit": "Sin declaratoria ZOIT vigente",
           "atractivos_ancla": [
-            "Avistamiento de Ballenas Azules en Golfo Corcovado",
-            "Canales de Melinka",
-            "Pesca Artesanal y Gastronomía Marina"
+            "Avistamiento de Ballenas Golfo Corcovado",
+            "Canales de Las Guaitecas",
+            "Cultura Chilota-Patagónica"
           ],
-          "vocacion_turistica_principal": "Ecoturismo marino, avistamiento de cetáceos y cultura chilota-patagónica insular",
-          "cuello_de_botella_turistico": "Dependencia absoluta de conectividad marítima y aérea subsidiada"
-        }
+          "vocacion_turistica_principal": "Ecoturismo marino, navegación de fiordos y gastronomía de productos del mar",
+          "cuello_de_botella_turistico": "Aislamiento insular y dependencia exclusiva de transporte aéreo/marítimo"
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 3744,
+            "visitantes_snaspe": 1332,
+            "tasa_ocupacion_estival_pct": 68.9,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 9,
+            "alojamientos_registrados": 4,
+            "operadores_turismo_aventura": 1,
+            "guias_turismo_registrados": 1
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 4020,
+            "visitantes_snaspe": 1485,
+            "tasa_ocupacion_estival_pct": 70.3,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 10,
+            "alojamientos_registrados": 4,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 4416,
+            "visitantes_snaspe": 1664,
+            "tasa_ocupacion_estival_pct": 72.0,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 11,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 4740,
+            "visitantes_snaspe": 1835,
+            "tasa_ocupacion_estival_pct": 73.3,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 12,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 4944,
+            "visitantes_snaspe": 1934,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 13,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 2136,
+            "visitantes_snaspe": 702,
+            "tasa_ocupacion_estival_pct": 67.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 13,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 2688,
+            "visitantes_snaspe": 1062,
+            "tasa_ocupacion_estival_pct": 49.8,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 14,
+            "alojamientos_registrados": 6,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 4140,
+            "visitantes_snaspe": 1754,
+            "tasa_ocupacion_estival_pct": 69.4,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 16,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 4776,
+            "visitantes_snaspe": 2115,
+            "tasa_ocupacion_estival_pct": 72.0,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 17,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 5184,
+            "visitantes_snaspe": 2304,
+            "tasa_ocupacion_estival_pct": 74.3,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 19,
+            "alojamientos_registrados": 8,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 5496,
+            "visitantes_snaspe": 2461,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 20,
+            "alojamientos_registrados": 9,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 5664,
+            "visitantes_snaspe": 2556,
+            "tasa_ocupacion_estival_pct": 76.8,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 20,
+            "alojamientos_registrados": 9,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          }
+        ]
       }
     },
     {
@@ -382,30 +1298,31 @@
       "comuna_ine": "11401",
       "nombre_comuna": "Chile Chico",
       "provincia": "General Carrera",
+      "cabecera": "Chile Chico",
       "codigo_cuenca": "115",
       "lat": -46.541,
       "lng": -71.722,
-      "source_url": "https://www.subturismo.gob.cl/zoit/",
+      "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
-          "prestadores_registrados_total": 105,
-          "alojamientos_turisticos_sernatur": 48,
+          "prestadores_registrados_total": 95,
+          "alojamientos_turisticos_sernatur": 45,
           "operadores_turismo_aventura": 22,
-          "guias_turismo_registrados": 18,
+          "guias_turismo_registrados": 16,
           "sellos_calidad_q_y_sustentabilidad_s": 6,
-          "capacidad_camas_estimada": 980,
+          "capacidad_camas_estimada": 780,
           "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
         },
         "demanda_emat_visitantes": {
           "destino_emat_sernatur": "Cuenca del Lago General Carrera",
           "llegadas_turistas_anual": 29800,
-          "pernoctaciones_anuales_emat": 59600,
-          "proporcion_extranjeros_pct": 38.6,
-          "ocupacion_alta_enero_febrero_pct": 79.2,
-          "ocupacion_baja_invierno_pct": 22.5,
-          "estancia_media_dias": 2.1,
-          "gasto_diario_promedio_usd": 105.0,
-          "visitantes_snaspe_conaf_anual": 18400,
+          "pernoctaciones_anuales_emat": 58600,
+          "proporcion_extranjeros_pct": 38.5,
+          "ocupacion_alta_enero_febrero_pct": 82.0,
+          "ocupacion_baja_invierno_pct": 21.0,
+          "estancia_media_dias": 2.4,
+          "gasto_diario_promedio_usd": 125.0,
+          "visitantes_snaspe_conaf_anual": 34200,
           "presion_turistica_poblacion_flotante_ratio": 6.08,
           "superficie_protegida_por_guardaparque_ha": 112000
         },
@@ -414,13 +1331,147 @@
           "nombre_zoit": "ZOIT Chelenko",
           "atractivos_ancla": [
             "Parque Nacional Patagonia (Sector Jeinimeni)",
-            "Lago General Carrera (Microclima)",
-            "Paso Fronterizo Río Jeinimeni",
-            "Cueva de las Manos del Pedregoso"
+            "Cueva de las Manos",
+            "Microclima de Chile Chico (Cerezas)",
+            "Paso Fronterizo Jeinimeni"
           ],
-          "vocacion_turistica_principal": "Turismo geológico, agroturismo (cerezas), senderismo de media montaña y circuito binacional",
-          "cuello_de_botella_turistico": "Capacidad limitada de la barcaza La Tehuelche en cruce lacustre"
-        }
+          "vocacion_turistica_principal": "Geoturismo, trekking estepario-andino, agroturismo y conexión binacional con Los Antiguos",
+          "cuello_de_botella_turistico": "Dependencia del servicio de barcaza lacustre La Tehuelche y vientos intensos"
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 19344,
+            "visitantes_snaspe": 18500,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 41,
+            "alojamientos_registrados": 18,
+            "operadores_turismo_aventura": 8,
+            "guias_turismo_registrados": 8
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 20770,
+            "visitantes_snaspe": 20625,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 45,
+            "alojamientos_registrados": 20,
+            "operadores_turismo_aventura": 9,
+            "guias_turismo_registrados": 9
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 22816,
+            "visitantes_snaspe": 23125,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 50,
+            "alojamientos_registrados": 23,
+            "operadores_turismo_aventura": 10,
+            "guias_turismo_registrados": 10
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 24490,
+            "visitantes_snaspe": 25500,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 55,
+            "alojamientos_registrados": 25,
+            "operadores_turismo_aventura": 11,
+            "guias_turismo_registrados": 11
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 25544,
+            "visitantes_snaspe": 26875,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 62,
+            "alojamientos_registrados": 28,
+            "operadores_turismo_aventura": 12,
+            "guias_turismo_registrados": 13
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 11036,
+            "visitantes_snaspe": 9750,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 60,
+            "alojamientos_registrados": 27,
+            "operadores_turismo_aventura": 12,
+            "guias_turismo_registrados": 12
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 13888,
+            "visitantes_snaspe": 14750,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 64,
+            "alojamientos_registrados": 29,
+            "operadores_turismo_aventura": 12,
+            "guias_turismo_registrados": 13
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 21390,
+            "visitantes_snaspe": 24375,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 73,
+            "alojamientos_registrados": 33,
+            "operadores_turismo_aventura": 14,
+            "guias_turismo_registrados": 15
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 24676,
+            "visitantes_snaspe": 29375,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 80,
+            "alojamientos_registrados": 36,
+            "operadores_turismo_aventura": 16,
+            "guias_turismo_registrados": 16
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 26784,
+            "visitantes_snaspe": 32000,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 87,
+            "alojamientos_registrados": 40,
+            "operadores_turismo_aventura": 17,
+            "guias_turismo_registrados": 18
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 28396,
+            "visitantes_snaspe": 34187,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 91,
+            "alojamientos_registrados": 41,
+            "operadores_turismo_aventura": 18,
+            "guias_turismo_registrados": 19
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 29264,
+            "visitantes_snaspe": 35500,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 94,
+            "alojamientos_registrados": 43,
+            "operadores_turismo_aventura": 18,
+            "guias_turismo_registrados": 19
+          }
+        ]
       }
     },
     {
@@ -428,30 +1479,31 @@
       "comuna_ine": "11402",
       "nombre_comuna": "Río Ibáñez",
       "provincia": "General Carrera",
+      "cabecera": "Puerto Ingeniero Ibáñez",
       "codigo_cuenca": "113",
       "lat": -46.291,
       "lng": -71.936,
-      "source_url": "https://www.subturismo.gob.cl/zoit/",
+      "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
-          "prestadores_registrados_total": 162,
-          "alojamientos_turisticos_sernatur": 76,
-          "operadores_turismo_aventura": 38,
-          "guias_turismo_registrados": 29,
-          "sellos_calidad_q_y_sustentabilidad_s": 10,
-          "capacidad_camas_estimada": 1450,
+          "prestadores_registrados_total": 132,
+          "alojamientos_turisticos_sernatur": 58,
+          "operadores_turismo_aventura": 32,
+          "guias_turismo_registrados": 28,
+          "sellos_calidad_q_y_sustentabilidad_s": 9,
+          "capacidad_camas_estimada": 1150,
           "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
         },
         "demanda_emat_visitantes": {
-          "destino_emat_sernatur": "Cuenca del Lago General Carrera / Chelenko",
+          "destino_emat_sernatur": "Cuenca del Lago General Carrera",
           "llegadas_turistas_anual": 52400,
-          "pernoctaciones_anuales_emat": 112000,
-          "proporcion_extranjeros_pct": 44.5,
-          "ocupacion_alta_enero_febrero_pct": 86.8,
-          "ocupacion_baja_invierno_pct": 16.4,
-          "estancia_media_dias": 2.2,
-          "gasto_diario_promedio_usd": 138.0,
-          "visitantes_snaspe_conaf_anual": 46800,
+          "pernoctaciones_anuales_emat": 86200,
+          "proporcion_extranjeros_pct": 48.0,
+          "ocupacion_alta_enero_febrero_pct": 89.2,
+          "ocupacion_baja_invierno_pct": 14.5,
+          "estancia_media_dias": 2.1,
+          "gasto_diario_promedio_usd": 150.0,
+          "visitantes_snaspe_conaf_anual": 41000,
           "presion_turistica_poblacion_flotante_ratio": 19.24,
           "superficie_protegida_por_guardaparque_ha": 86000
         },
@@ -461,12 +1513,146 @@
           "atractivos_ancla": [
             "Santuario de la Naturaleza Capillas de Mármol",
             "Parque Nacional Cerro Castillo",
-            "Glaciar Exploradores",
-            "Bahía Murta"
+            "Puerto Río Tranquilo",
+            "Glaciar Exploradores"
           ],
-          "vocacion_turistica_principal": "Navegación a cavernas de mármol, trekking de montaña (Circuito Cerro Castillo) y glaciares",
-          "cuello_de_botella_turistico": "Saturación vehicular en Puerto Río Tranquilo y ripio en Ruta 7"
-        }
+          "vocacion_turistica_principal": "Navegación a cavernas de mármol, trekking sobre hielo y escalada en Cerro Castillo",
+          "cuello_de_botella_turistico": "Saturación vehicular estival en Puerto Río Tranquilo y polvo en suspensión en Ruta 7"
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 23400,
+            "visitantes_snaspe": 22200,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 58,
+            "alojamientos_registrados": 26,
+            "operadores_turismo_aventura": 11,
+            "guias_turismo_registrados": 12
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 25125,
+            "visitantes_snaspe": 24750,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 64,
+            "alojamientos_registrados": 29,
+            "operadores_turismo_aventura": 12,
+            "guias_turismo_registrados": 13
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 27600,
+            "visitantes_snaspe": 27750,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 71,
+            "alojamientos_registrados": 32,
+            "operadores_turismo_aventura": 14,
+            "guias_turismo_registrados": 14
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 29625,
+            "visitantes_snaspe": 30600,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 78,
+            "alojamientos_registrados": 35,
+            "operadores_turismo_aventura": 15,
+            "guias_turismo_registrados": 16
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 30900,
+            "visitantes_snaspe": 32250,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 87,
+            "alojamientos_registrados": 40,
+            "operadores_turismo_aventura": 17,
+            "guias_turismo_registrados": 18
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 13350,
+            "visitantes_snaspe": 11700,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 85,
+            "alojamientos_registrados": 39,
+            "operadores_turismo_aventura": 17,
+            "guias_turismo_registrados": 17
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 16800,
+            "visitantes_snaspe": 17700,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 90,
+            "alojamientos_registrados": 41,
+            "operadores_turismo_aventura": 18,
+            "guias_turismo_registrados": 18
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 25875,
+            "visitantes_snaspe": 29250,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 102,
+            "alojamientos_registrados": 46,
+            "operadores_turismo_aventura": 20,
+            "guias_turismo_registrados": 21
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 29850,
+            "visitantes_snaspe": 35250,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 112,
+            "alojamientos_registrados": 51,
+            "operadores_turismo_aventura": 22,
+            "guias_turismo_registrados": 23
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 32400,
+            "visitantes_snaspe": 38400,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 122,
+            "alojamientos_registrados": 56,
+            "operadores_turismo_aventura": 24,
+            "guias_turismo_registrados": 25
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 34350,
+            "visitantes_snaspe": 41025,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 128,
+            "alojamientos_registrados": 58,
+            "operadores_turismo_aventura": 25,
+            "guias_turismo_registrados": 26
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 35400,
+            "visitantes_snaspe": 42600,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 132,
+            "alojamientos_registrados": 60,
+            "operadores_turismo_aventura": 26,
+            "guias_turismo_registrados": 27
+          }
+        ]
       }
     },
     {
@@ -474,30 +1660,31 @@
       "comuna_ine": "11301",
       "nombre_comuna": "Cochrane",
       "provincia": "Capitán Prat",
+      "cabecera": "Cochrane",
       "codigo_cuenca": "115",
       "lat": -47.254,
       "lng": -72.571,
-      "source_url": "https://www.subturismo.gob.cl/zoit/",
+      "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
-          "prestadores_registrados_total": 96,
-          "alojamientos_turisticos_sernatur": 44,
-          "operadores_turismo_aventura": 23,
+          "prestadores_registrados_total": 83,
+          "alojamientos_turisticos_sernatur": 38,
+          "operadores_turismo_aventura": 21,
           "guias_turismo_registrados": 16,
-          "sellos_calidad_q_y_sustentabilidad_s": 5,
-          "capacidad_camas_estimada": 890,
+          "sellos_calidad_q_y_sustentabilidad_s": 6,
+          "capacidad_camas_estimada": 690,
           "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
         },
         "demanda_emat_visitantes": {
-          "destino_emat_sernatur": "Carretera Austral Sur - Baker y Glaciares",
+          "destino_emat_sernatur": "Carretera Austral Sur y Glaciares",
           "llegadas_turistas_anual": 24500,
-          "pernoctaciones_anuales_emat": 49000,
-          "proporcion_extranjeros_pct": 39.8,
+          "pernoctaciones_anuales_emat": 49200,
+          "proporcion_extranjeros_pct": 44.5,
           "ocupacion_alta_enero_febrero_pct": 81.0,
-          "ocupacion_baja_invierno_pct": 17.5,
-          "estancia_media_dias": 2.0,
-          "gasto_diario_promedio_usd": 120.0,
-          "visitantes_snaspe_conaf_anual": 28300,
+          "ocupacion_baja_invierno_pct": 16.0,
+          "estancia_media_dias": 2.5,
+          "gasto_diario_promedio_usd": 130.0,
+          "visitantes_snaspe_conaf_anual": 35600,
           "presion_turistica_poblacion_flotante_ratio": 7.09,
           "superficie_protegida_por_guardaparque_ha": 142000
         },
@@ -505,14 +1692,148 @@
           "pertenece_a_zoit": true,
           "nombre_zoit": "ZOIT Provincia de los Glaciares",
           "atractivos_ancla": [
-            "Parque Nacional Patagonia (Valle Chacabuco)",
-            "Río Baker (Rafting y Pesca)",
-            "Reserva Nacional Tamango (Huemules)",
+            "Parque Nacional Patagonia (Sector Valle Chacabuco / Tamango)",
+            "Río Baker",
+            "Río Cochrane",
             "Lago Cochrane"
           ],
-          "vocacion_turistica_principal": "Trekking de conservación, avistamiento de huemul, deportes de aguas bravas y pesca con mosca",
-          "cuello_de_botella_turistico": "Distancia terrestre desde Balmaceda (~330 km) y estado de calzada"
-        }
+          "vocacion_turistica_principal": "Pesca deportiva de clase mundial, observación de huemules y senderismo patagónico",
+          "cuello_de_botella_turistico": "Tramos no pavimentados de Ruta 7 y distancia a centros de abastecimiento mayorista"
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 21216,
+            "visitantes_snaspe": 19240,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 24.6,
+            "prestadores_registrados_total": 36,
+            "alojamientos_registrados": 16,
+            "operadores_turismo_aventura": 7,
+            "guias_turismo_registrados": 7
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 22780,
+            "visitantes_snaspe": 21450,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 25.4,
+            "prestadores_registrados_total": 40,
+            "alojamientos_registrados": 18,
+            "operadores_turismo_aventura": 8,
+            "guias_turismo_registrados": 8
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 25024,
+            "visitantes_snaspe": 24050,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 26.2,
+            "prestadores_registrados_total": 44,
+            "alojamientos_registrados": 20,
+            "operadores_turismo_aventura": 8,
+            "guias_turismo_registrados": 9
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 26860,
+            "visitantes_snaspe": 26520,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 27.0,
+            "prestadores_registrados_total": 48,
+            "alojamientos_registrados": 22,
+            "operadores_turismo_aventura": 9,
+            "guias_turismo_registrados": 10
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 28016,
+            "visitantes_snaspe": 27950,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 27.3,
+            "prestadores_registrados_total": 55,
+            "alojamientos_registrados": 25,
+            "operadores_turismo_aventura": 11,
+            "guias_turismo_registrados": 11
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 12104,
+            "visitantes_snaspe": 10140,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 16.0,
+            "prestadores_registrados_total": 53,
+            "alojamientos_registrados": 24,
+            "operadores_turismo_aventura": 10,
+            "guias_turismo_registrados": 11
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 15232,
+            "visitantes_snaspe": 15340,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 20.0,
+            "prestadores_registrados_total": 56,
+            "alojamientos_registrados": 25,
+            "operadores_turismo_aventura": 11,
+            "guias_turismo_registrados": 11
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 23460,
+            "visitantes_snaspe": 25350,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 24.9,
+            "prestadores_registrados_total": 64,
+            "alojamientos_registrados": 29,
+            "operadores_turismo_aventura": 12,
+            "guias_turismo_registrados": 13
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 27064,
+            "visitantes_snaspe": 30550,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 27.9,
+            "prestadores_registrados_total": 70,
+            "alojamientos_registrados": 32,
+            "operadores_turismo_aventura": 14,
+            "guias_turismo_registrados": 14
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 29376,
+            "visitantes_snaspe": 33280,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 31.4,
+            "prestadores_registrados_total": 76,
+            "alojamientos_registrados": 34,
+            "operadores_turismo_aventura": 15,
+            "guias_turismo_registrados": 15
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 31144,
+            "visitantes_snaspe": 35555,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 34.3,
+            "prestadores_registrados_total": 80,
+            "alojamientos_registrados": 36,
+            "operadores_turismo_aventura": 16,
+            "guias_turismo_registrados": 16
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 32096,
+            "visitantes_snaspe": 36920,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 35.8,
+            "prestadores_registrados_total": 83,
+            "alojamientos_registrados": 38,
+            "operadores_turismo_aventura": 16,
+            "guias_turismo_registrados": 17
+          }
+        ]
       }
     },
     {
@@ -520,30 +1841,31 @@
       "comuna_ine": "11302",
       "nombre_comuna": "O'Higgins",
       "provincia": "Capitán Prat",
+      "cabecera": "Villa O'Higgins",
       "codigo_cuenca": "117",
       "lat": -48.468,
       "lng": -72.56,
-      "source_url": "https://www.subturismo.gob.cl/zoit/",
+      "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
-          "prestadores_registrados_total": 46,
-          "alojamientos_turisticos_sernatur": 22,
-          "operadores_turismo_aventura": 11,
-          "guias_turismo_registrados": 8,
-          "sellos_calidad_q_y_sustentabilidad_s": 3,
-          "capacidad_camas_estimada": 410,
+          "prestadores_registrados_total": 29,
+          "alojamientos_turisticos_sernatur": 15,
+          "operadores_turismo_aventura": 6,
+          "guias_turismo_registrados": 5,
+          "sellos_calidad_q_y_sustentabilidad_s": 2,
+          "capacidad_camas_estimada": 240,
           "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
         },
         "demanda_emat_visitantes": {
-          "destino_emat_sernatur": "Extremo Sur Carretera Austral y Campos de Hielo",
-          "llegadas_turistas_anual": 9800,
-          "pernoctaciones_anuales_emat": 23500,
-          "proporcion_extranjeros_pct": 52.0,
-          "ocupacion_alta_enero_febrero_pct": 88.5,
-          "ocupacion_baja_invierno_pct": 8.2,
-          "estancia_media_dias": 2.6,
-          "gasto_diario_promedio_usd": 140.0,
-          "visitantes_snaspe_conaf_anual": 14200,
+          "destino_emat_sernatur": "Carretera Austral Sur y Glaciares",
+          "llegadas_turistas_anual": 7600,
+          "pernoctaciones_anuales_emat": 16400,
+          "proporcion_extranjeros_pct": 55.0,
+          "ocupacion_alta_enero_febrero_pct": 86.5,
+          "ocupacion_baja_invierno_pct": 7.5,
+          "estancia_media_dias": 2.8,
+          "gasto_diario_promedio_usd": 138.0,
+          "visitantes_snaspe_conaf_anual": 12400,
           "presion_turistica_poblacion_flotante_ratio": 15.15,
           "superficie_protegida_por_guardaparque_ha": 210000
         },
@@ -551,14 +1873,148 @@
           "pertenece_a_zoit": true,
           "nombre_zoit": "ZOIT Provincia de los Glaciares",
           "atractivos_ancla": [
-            "Fin de la Carretera Austral (Hito km 1247)",
+            "Hito Terminal Carretera Austral (Km 1.247)",
             "Glaciar O'Higgins (Campo de Hielo Sur)",
-            "Cruce a El Chaltén / Laguna del Desierto",
+            "Cruce a El Chaltén",
             "Glaciar Mosco"
           ],
           "vocacion_turistica_principal": "Hito terminal de Carretera Austral, expediciones glaciarias y cruce binacional",
           "cuello_de_botella_turistico": "Paso obligado por barcaza Mitchell (Río Bravo) y vientos en lago O'Higgins"
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 6864,
+            "visitantes_snaspe": 6660,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 13.4,
+            "prestadores_registrados_total": 12,
+            "alojamientos_registrados": 5,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 7370,
+            "visitantes_snaspe": 7425,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 13.9,
+            "prestadores_registrados_total": 14,
+            "alojamientos_registrados": 6,
+            "operadores_turismo_aventura": 2,
+            "guias_turismo_registrados": 2
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 8095,
+            "visitantes_snaspe": 8325,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 14.3,
+            "prestadores_registrados_total": 15,
+            "alojamientos_registrados": 6,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 8690,
+            "visitantes_snaspe": 9180,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 14.7,
+            "prestadores_registrados_total": 17,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 9064,
+            "visitantes_snaspe": 9675,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 14.9,
+            "prestadores_registrados_total": 19,
+            "alojamientos_registrados": 8,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 3916,
+            "visitantes_snaspe": 3510,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 8.7,
+            "prestadores_registrados_total": 18,
+            "alojamientos_registrados": 8,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 4928,
+            "visitantes_snaspe": 5310,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 10.9,
+            "prestadores_registrados_total": 19,
+            "alojamientos_registrados": 8,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 7590,
+            "visitantes_snaspe": 8775,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 13.6,
+            "prestadores_registrados_total": 22,
+            "alojamientos_registrados": 10,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 8756,
+            "visitantes_snaspe": 10575,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 15.2,
+            "prestadores_registrados_total": 24,
+            "alojamientos_registrados": 11,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 5
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 9504,
+            "visitantes_snaspe": 11520,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 17.1,
+            "prestadores_registrados_total": 26,
+            "alojamientos_registrados": 11,
+            "operadores_turismo_aventura": 5,
+            "guias_turismo_registrados": 5
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 10076,
+            "visitantes_snaspe": 12307,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 18.7,
+            "prestadores_registrados_total": 28,
+            "alojamientos_registrados": 12,
+            "operadores_turismo_aventura": 5,
+            "guias_turismo_registrados": 5
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 10384,
+            "visitantes_snaspe": 12780,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 19.5,
+            "prestadores_registrados_total": 28,
+            "alojamientos_registrados": 12,
+            "operadores_turismo_aventura": 5,
+            "guias_turismo_registrados": 5
+          }
+        ]
       }
     },
     {
@@ -566,18 +2022,19 @@
       "comuna_ine": "11303",
       "nombre_comuna": "Tortel",
       "provincia": "Capitán Prat",
+      "cabecera": "Caleta Tortel",
       "codigo_cuenca": "115",
       "lat": -47.795,
       "lng": -73.535,
-      "source_url": "https://www.subturismo.gob.cl/zoit/",
+      "source_url": "https://www.sernatur.cl/dataturismo/",
       "datos": {
         "oferta_sernatur": {
-          "prestadores_registrados_total": 38,
-          "alojamientos_turisticos_sernatur": 18,
-          "operadores_turismo_aventura": 9,
-          "guias_turismo_registrados": 7,
-          "sellos_calidad_q_y_sustentabilidad_s": 2,
-          "capacidad_camas_estimada": 330,
+          "prestadores_registrados_total": 42,
+          "alojamientos_turisticos_sernatur": 20,
+          "operadores_turismo_aventura": 11,
+          "guias_turismo_registrados": 8,
+          "sellos_calidad_q_y_sustentabilidad_s": 3,
+          "capacidad_camas_estimada": 360,
           "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
         },
         "demanda_emat_visitantes": {
@@ -589,7 +2046,7 @@
           "ocupacion_baja_invierno_pct": 11.0,
           "estancia_media_dias": 1.9,
           "gasto_diario_promedio_usd": 115.0,
-          "visitantes_snaspe_conaf_anual": 11500,
+          "visitantes_snaspe_conaf_anual": 14200,
           "presion_turistica_poblacion_flotante_ratio": 28.12,
           "superficie_protegida_por_guardaparque_ha": 195000
         },
@@ -597,14 +2054,148 @@
           "pertenece_a_zoit": true,
           "nombre_zoit": "ZOIT Provincia de los Glaciares",
           "atractivos_ancla": [
-            "Pasarelas de Ciprés de las Guaitecas",
+            "Pueblo Patrimonial Caleta Tortel (Pasarelas)",
             "Desembocadura del Río Baker",
             "Glaciar Jorge Montt",
             "Isla de los Muertos"
           ],
           "vocacion_turistica_principal": "Arquitectura patrimonial de pasarelas, navegaciones a fiordos de Campos de Hielo y patrimonio histórico",
           "cuello_de_botella_turistico": "Capacidad de alojamiento acotada y fragilidad de pasarelas peatonales"
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "pernoctaciones_anuales_estimadas": 11856,
+            "visitantes_snaspe": 7400,
+            "tasa_ocupacion_estival_pct": 74.0,
+            "tasa_ocupacion_invernal_pct": 13.4,
+            "prestadores_registrados_total": 16,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2016,
+            "pernoctaciones_anuales_estimadas": 12730,
+            "visitantes_snaspe": 8250,
+            "tasa_ocupacion_estival_pct": 75.5,
+            "tasa_ocupacion_invernal_pct": 13.9,
+            "prestadores_registrados_total": 17,
+            "alojamientos_registrados": 7,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2017,
+            "pernoctaciones_anuales_estimadas": 13984,
+            "visitantes_snaspe": 9250,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 14.3,
+            "prestadores_registrados_total": 19,
+            "alojamientos_registrados": 8,
+            "operadores_turismo_aventura": 3,
+            "guias_turismo_registrados": 3
+          },
+          {
+            "anio": 2018,
+            "pernoctaciones_anuales_estimadas": 15010,
+            "visitantes_snaspe": 10200,
+            "tasa_ocupacion_estival_pct": 78.7,
+            "tasa_ocupacion_invernal_pct": 14.7,
+            "prestadores_registrados_total": 21,
+            "alojamientos_registrados": 9,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2019,
+            "pernoctaciones_anuales_estimadas": 15656,
+            "visitantes_snaspe": 10750,
+            "tasa_ocupacion_estival_pct": 80.1,
+            "tasa_ocupacion_invernal_pct": 14.9,
+            "prestadores_registrados_total": 24,
+            "alojamientos_registrados": 11,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 5
+          },
+          {
+            "anio": 2020,
+            "pernoctaciones_anuales_estimadas": 6764,
+            "visitantes_snaspe": 3900,
+            "tasa_ocupacion_estival_pct": 72.6,
+            "tasa_ocupacion_invernal_pct": 8.7,
+            "prestadores_registrados_total": 23,
+            "alojamientos_registrados": 10,
+            "operadores_turismo_aventura": 4,
+            "guias_turismo_registrados": 4
+          },
+          {
+            "anio": 2021,
+            "pernoctaciones_anuales_estimadas": 8512,
+            "visitantes_snaspe": 5900,
+            "tasa_ocupacion_estival_pct": 53.4,
+            "tasa_ocupacion_invernal_pct": 10.9,
+            "prestadores_registrados_total": 25,
+            "alojamientos_registrados": 11,
+            "operadores_turismo_aventura": 5,
+            "guias_turismo_registrados": 5
+          },
+          {
+            "anio": 2022,
+            "pernoctaciones_anuales_estimadas": 13110,
+            "visitantes_snaspe": 9750,
+            "tasa_ocupacion_estival_pct": 74.6,
+            "tasa_ocupacion_invernal_pct": 13.6,
+            "prestadores_registrados_total": 28,
+            "alojamientos_registrados": 12,
+            "operadores_turismo_aventura": 5,
+            "guias_turismo_registrados": 5
+          },
+          {
+            "anio": 2023,
+            "pernoctaciones_anuales_estimadas": 15124,
+            "visitantes_snaspe": 11750,
+            "tasa_ocupacion_estival_pct": 77.3,
+            "tasa_ocupacion_invernal_pct": 15.2,
+            "prestadores_registrados_total": 31,
+            "alojamientos_registrados": 14,
+            "operadores_turismo_aventura": 6,
+            "guias_turismo_registrados": 6
+          },
+          {
+            "anio": 2024,
+            "pernoctaciones_anuales_estimadas": 16416,
+            "visitantes_snaspe": 12800,
+            "tasa_ocupacion_estival_pct": 79.8,
+            "tasa_ocupacion_invernal_pct": 17.1,
+            "prestadores_registrados_total": 34,
+            "alojamientos_registrados": 15,
+            "operadores_turismo_aventura": 6,
+            "guias_turismo_registrados": 7
+          },
+          {
+            "anio": 2025,
+            "pernoctaciones_anuales_estimadas": 17404,
+            "visitantes_snaspe": 13675,
+            "tasa_ocupacion_estival_pct": 81.1,
+            "tasa_ocupacion_invernal_pct": 18.7,
+            "prestadores_registrados_total": 35,
+            "alojamientos_registrados": 16,
+            "operadores_turismo_aventura": 7,
+            "guias_turismo_registrados": 7
+          },
+          {
+            "anio": 2026,
+            "pernoctaciones_anuales_estimadas": 17936,
+            "visitantes_snaspe": 14200,
+            "tasa_ocupacion_estival_pct": 82.4,
+            "tasa_ocupacion_invernal_pct": 19.5,
+            "prestadores_registrados_total": 36,
+            "alojamientos_registrados": 16,
+            "operadores_turismo_aventura": 7,
+            "guias_turismo_registrados": 7
+          }
+        ]
       }
     }
   ],
@@ -621,23 +2212,39 @@
         "categoria": "ZOIT",
         "vocacion": "Hub receptor regional y pesca con mosca",
         "prestadores_zona": 412,
-        "declaratoria": "Oficial SERNATUR / Subturismo"
+        "declaratoria": "En proceso de actualización"
       },
       "source_url": "https://www.subturismo.gob.cl/zoit/"
     },
     {
+      "id": "snaspe_pn_laguna_san_rafael",
+      "nombre": "Parque Nacional Laguna San Rafael",
+      "tipo": "Parque Nacional SNASPE",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -46.702,
+      "lng": -73.855,
+      "atributos": {
+        "categoria": "Parque Nacional",
+        "superficie_ha": 1742000,
+        "visitantes_anuales": 38500,
+        "atractivo": "Ventisquero San Rafael y Campo de Hielo Norte"
+      },
+      "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/"
+    },
+    {
       "id": "snaspe_pn_queulat",
-      "nombre": "Parque Nacional Queulat (Ventisquero Colgante)",
+      "nombre": "Parque Nacional Queulat",
       "tipo": "Parque Nacional SNASPE",
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
-      "lat": -44.483,
-      "lng": -72.533,
+      "lat": -44.45,
+      "lng": -72.55,
       "atributos": {
         "categoria": "Parque Nacional",
-        "visitantes_anuales": 57200,
-        "administracion": "CONAF Aysén",
-        "atractivo": "Glaciar colgante y selva patagónica"
+        "superficie_ha": 154093,
+        "visitantes_anuales": 56800,
+        "atractivo": "Ventisquero Colgante y bosque siempreverde"
       },
       "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-queulat/"
     },
@@ -651,15 +2258,15 @@
       "lng": -72.1833,
       "atributos": {
         "categoria": "Parque Nacional",
-        "visitantes_anuales": 24800,
-        "administracion": "CONAF Aysén",
-        "atractivo": "Circuito de trekking alta montaña y huemules"
+        "superficie_ha": 143502,
+        "visitantes_anuales": 35400,
+        "atractivo": "Circuito de trekking Las Horquetas y avistamiento de huemul"
       },
       "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/"
     },
     {
       "id": "snaspe_pn_patagonia",
-      "nombre": "Parque Nacional Patagonia (Valle Chacabuco)",
+      "nombre": "Parque Nacional Patagonia (Sector Valle Chacabuco)",
       "tipo": "Parque Nacional SNASPE",
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
@@ -667,38 +2274,22 @@
       "lng": -72.4833,
       "atributos": {
         "categoria": "Parque Nacional",
-        "visitantes_anuales": 28300,
-        "administracion": "CONAF / Fundación Tompkins",
-        "atractivo": "Restauración ecológica y estepa patagónica"
+        "superficie_ha": 304527,
+        "visitantes_anuales": 30800,
+        "atractivo": "Restauración ecológica de estepa, museo de sitio y fauna"
       },
       "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-patagonia/"
     },
     {
-      "id": "snaspe_pn_san_rafael",
-      "nombre": "Parque Nacional Laguna San Rafael",
-      "tipo": "Parque Nacional SNASPE",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -46.702,
-      "lng": -73.855,
-      "atributos": {
-        "categoria": "Parque Nacional",
-        "visitantes_anuales": 12400,
-        "administracion": "CONAF Aysén",
-        "atractivo": "Pared de hielo del Glaciar San Rafael e témpanos flotantes"
-      },
-      "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/"
-    },
-    {
-      "id": "atractivo_capillas_marmol",
+      "id": "atractivo_capillas_de_marmol",
       "nombre": "Santuario de la Naturaleza Capillas de Mármol (Puerto Río Tranquilo)",
-      "tipo": "Santuario de la Naturaleza",
+      "tipo": "Santuario de la Naturaleza y Geositio",
       "codigo_comuna": "CL-XI-07",
       "comuna_ine": "11402",
-      "lat": -46.654,
-      "lng": -72.628,
+      "lat": -46.643,
+      "lng": -72.648,
       "atributos": {
-        "categoria": "Santuario Natural",
+        "categoria": "Santuario de la Naturaleza",
         "visitantes_anuales": 48500,
         "operacion": "Embarcaciones y kayaks locales",
         "atractivo": "Formaciones de carbonato de calcio en Lago General Carrera"
@@ -852,43 +2443,45 @@
       "tipo": "Reserva Nacional SNASPE",
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
-      "lat": -47.228,
-      "lng": -72.522,
+      "lat": -47.225,
+      "lng": -72.518,
       "atributos": {
         "categoria": "Reserva Nacional",
-        "visitantes_anuales": 9800,
-        "administracion": "CONAF Aysén",
-        "atractivo": "Población de huemules protegidos y Lago Cochrane"
+        "visitantes_anuales": 15800,
+        "conservacion": "Población núcleo de huemul patagónico",
+        "actividades": "Navegación Río Cochrane y senderismo de baja dificultad"
       },
       "source_url": "https://www.conaf.cl/parques-nacionales/reserva-nacional-tamango/"
     },
     {
+      "id": "snaspe_rn_coyhaique",
+      "nombre": "Reserva Nacional Coyhaique",
+      "tipo": "Reserva Nacional SNASPE Periurbana",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.545,
+      "lng": -72.045,
+      "atributos": {
+        "categoria": "Reserva Nacional",
+        "visitantes_anuales": 24800,
+        "acceso": "A 5 km del centro de Coyhaique",
+        "atractivo": "Laguna Verde, miradores de la ciudad y senderismo familiar"
+      },
+      "source_url": "https://www.conaf.cl/parques-nacionales/reserva-nacional-coyhaique/"
+    },
+    {
       "id": "atractivo_glaciar_exploradores",
-      "nombre": "Valle y Glaciar Exploradores (Campo de Hielo Norte)",
-      "tipo": "Atractivo Glaciario de Montaña",
+      "nombre": "Glaciar Exploradores (Valle Exploradores)",
+      "tipo": "Geositio y Glaciar Terrestre",
       "codigo_comuna": "CL-XI-07",
       "comuna_ine": "11402",
       "lat": -46.52,
-      "lng": -73.2,
+      "lng": -73.18,
       "atributos": {
-        "categoria": "Glaciar",
-        "actividad": "Caminata sobre hielo y observación geológica",
-        "operacion": "Guías certificados SERNATUR"
-      },
-      "source_url": "https://www.sernatur.cl/dataturismo/"
-    },
-    {
-      "id": "atractivo_lago_verde_valle",
-      "nombre": "Valle Andino y Río Cisnes Alto (Lago Verde)",
-      "tipo": "Turismo Rural Campesino y Pesca",
-      "codigo_comuna": "CL-XI-02",
-      "comuna_ine": "11102",
-      "lat": -44.241,
-      "lng": -71.8465,
-      "atributos": {
-        "categoria": "Turismo Rural",
-        "actividad": "Cabalgatas patagónicas, pesca deportiva y gastronomía criolla",
-        "entorno": "Paisaje de estepa y bosque caducifolio"
+        "categoria": "Glaciar Terrestre",
+        "visitantes_anuales": 21500,
+        "origen": "Campo de Hielo Norte",
+        "operacion": "Trekking con grampones sobre morena y hielo fósil"
       },
       "source_url": "https://www.sernatur.cl/dataturismo/"
     }

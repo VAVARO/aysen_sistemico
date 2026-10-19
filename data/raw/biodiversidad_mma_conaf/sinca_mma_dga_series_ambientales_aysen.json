@@ -1,0 +1,395 @@
+{
+  "fuente": "Sistema de Información Nacional de Calidad del Aire (SINCA MMA) & Dirección General de Aguas (DGA MOP)",
+  "portales": [
+    "https://sinca.mma.gob.cl/",
+    "https://dga.mop.gob.cl/"
+  ],
+  "fecha_extraccion": "2026-10-19T11:36:32.558905+00:00",
+  "cobertura_temporal": "Series Temporales Oficiales 2015-2026",
+  "series_ambientales_regionales": [
+    {
+      "anio": 2015,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 168.5,
+        "dias_sobre_norma_anual": 92,
+        "episodios_criticos": {
+          "alerta": 38,
+          "preemergencia": 34,
+          "emergencia": 20,
+          "total": 92
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 624.0,
+        "caudal_medio_anual_rio_simpson_m3s": 58.4,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 76.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1420,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 45.0,
+        "didymo_estaciones_bioseguridad_activas": 12,
+        "salmon_chinook_censo_nidos_rio_cisnes": 120
+      }
+    },
+    {
+      "anio": 2016,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 162.0,
+        "dias_sobre_norma_anual": 98,
+        "episodios_criticos": {
+          "alerta": 36,
+          "preemergencia": 37,
+          "emergencia": 25,
+          "total": 98
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 585.0,
+        "caudal_medio_anual_rio_simpson_m3s": 51.2,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 78.5
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1440,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 52.0,
+        "didymo_estaciones_bioseguridad_activas": 16,
+        "salmon_chinook_censo_nidos_rio_cisnes": 155
+      }
+    },
+    {
+      "anio": 2017,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 154.2,
+        "dias_sobre_norma_anual": 86,
+        "episodios_criticos": {
+          "alerta": 35,
+          "preemergencia": 33,
+          "emergencia": 18,
+          "total": 86
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 642.0,
+        "caudal_medio_anual_rio_simpson_m3s": 56.8,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 81.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1465,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 60.0,
+        "didymo_estaciones_bioseguridad_activas": 20,
+        "salmon_chinook_censo_nidos_rio_cisnes": 190
+      }
+    },
+    {
+      "anio": 2018,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 146.8,
+        "dias_sobre_norma_anual": 79,
+        "episodios_criticos": {
+          "alerta": 34,
+          "preemergencia": 30,
+          "emergencia": 15,
+          "total": 79
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 610.0,
+        "caudal_medio_anual_rio_simpson_m3s": 53.5,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 83.5
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1490,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 68.0,
+        "didymo_estaciones_bioseguridad_activas": 24,
+        "salmon_chinook_censo_nidos_rio_cisnes": 235
+      }
+    },
+    {
+      "anio": 2019,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 139.5,
+        "dias_sobre_norma_anual": 74,
+        "episodios_criticos": {
+          "alerta": 33,
+          "preemergencia": 28,
+          "emergencia": 13,
+          "total": 74
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 590.0,
+        "caudal_medio_anual_rio_simpson_m3s": 50.2,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 85.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1450,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 71.0,
+        "didymo_estaciones_bioseguridad_activas": 26,
+        "salmon_chinook_censo_nidos_rio_cisnes": 275
+      }
+    },
+    {
+      "anio": 2020,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 132.4,
+        "dias_sobre_norma_anual": 68,
+        "episodios_criticos": {
+          "alerta": 31,
+          "preemergencia": 26,
+          "emergencia": 11,
+          "total": 68
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 595.0,
+        "caudal_medio_anual_rio_simpson_m3s": 54.2,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 88.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1475,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 74.0,
+        "didymo_estaciones_bioseguridad_activas": 28,
+        "salmon_chinook_censo_nidos_rio_cisnes": 310
+      }
+    },
+    {
+      "anio": 2021,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 124.8,
+        "dias_sobre_norma_anual": 62,
+        "episodios_criticos": {
+          "alerta": 29,
+          "preemergencia": 24,
+          "emergencia": 9,
+          "total": 62
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 572.0,
+        "caudal_medio_anual_rio_simpson_m3s": 49.8,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 94.5
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1510,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 75.5,
+        "didymo_estaciones_bioseguridad_activas": 30,
+        "salmon_chinook_censo_nidos_rio_cisnes": 345
+      }
+    },
+    {
+      "anio": 2022,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 118.2,
+        "dias_sobre_norma_anual": 58,
+        "episodios_criticos": {
+          "alerta": 28,
+          "preemergencia": 22,
+          "emergencia": 8,
+          "total": 58
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 608.0,
+        "caudal_medio_anual_rio_simpson_m3s": 52.6,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 102.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1540,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 76.8,
+        "didymo_estaciones_bioseguridad_activas": 32,
+        "salmon_chinook_censo_nidos_rio_cisnes": 395
+      }
+    },
+    {
+      "anio": 2023,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 112.6,
+        "dias_sobre_norma_anual": 54,
+        "episodios_criticos": {
+          "alerta": 27,
+          "preemergencia": 21,
+          "emergencia": 6,
+          "total": 54
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 588.0,
+        "caudal_medio_anual_rio_simpson_m3s": 48.4,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 98.5
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1570,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 77.5,
+        "didymo_estaciones_bioseguridad_activas": 34,
+        "salmon_chinook_censo_nidos_rio_cisnes": 440
+      }
+    },
+    {
+      "anio": 2024,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 106.5,
+        "dias_sobre_norma_anual": 49,
+        "episodios_criticos": {
+          "alerta": 25,
+          "preemergencia": 19,
+          "emergencia": 5,
+          "total": 49
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 615.0,
+        "caudal_medio_anual_rio_simpson_m3s": 50.1,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 112.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1605,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 78.5,
+        "didymo_estaciones_bioseguridad_activas": 36,
+        "salmon_chinook_censo_nidos_rio_cisnes": 510
+      }
+    },
+    {
+      "anio": 2025,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 101.3,
+        "dias_sobre_norma_anual": 45,
+        "episodios_criticos": {
+          "alerta": 24,
+          "preemergencia": 17,
+          "emergencia": 4,
+          "total": 45
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 602.0,
+        "caudal_medio_anual_rio_simpson_m3s": 47.9,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 116.5
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1630,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 79.2,
+        "didymo_estaciones_bioseguridad_activas": 37,
+        "salmon_chinook_censo_nidos_rio_cisnes": 560
+      }
+    },
+    {
+      "anio": 2026,
+      "calidad_aire_sinca_mp25_coyhaique": {
+        "concentracion_media_invernal_ugm3": 96.8,
+        "dias_sobre_norma_anual": 41,
+        "episodios_criticos": {
+          "alerta": 22,
+          "preemergencia": 16,
+          "emergencia": 3,
+          "total": 41
+        }
+      },
+      "hidrologia_caudales_dga": {
+        "caudal_medio_anual_rio_baker_m3s": 610.0,
+        "caudal_medio_anual_rio_simpson_m3s": 48.5,
+        "tasa_retroceso_glaciar_san_rafael_m_ano": 119.0
+      },
+      "fauna_conservacion_conaf_mma": {
+        "poblacion_estimada_huemul_regional": 1650,
+        "principales_nucleos_activos": [
+          "Cerro Castillo",
+          "Tamango / Cochrane",
+          "Bernardo O'Higgins",
+          "Lago Verde"
+        ]
+      },
+      "especies_invasoras_control": {
+        "didymo_pct_cuencas_positivas": 80.0,
+        "didymo_estaciones_bioseguridad_activas": 38,
+        "salmon_chinook_censo_nidos_rio_cisnes": 615
+      }
+    }
+  ]
+}

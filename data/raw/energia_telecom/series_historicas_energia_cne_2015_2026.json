@@ -1,0 +1,1769 @@
+{
+  "fuente": "Comisión Nacional de Energía (CNE) / Balance Nacional de Energía / Edelaysen",
+  "url_origen": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "generacion_electrica_total_gwh": 148.5,
+      "generacion_hidroelectrica_gwh": 78.2,
+      "generacion_termica_diesel_gwh": 63.8,
+      "generacion_eolica_gwh": 6.5,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 142.5,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 785.0,
+        "diesel_coyhaique_clp": 590.0,
+        "kerosene_coyhaique_clp": 680.0,
+        "lena_seca_m3_coyhaique_clp": 28000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 8420,
+        "penetracion_internet_fijo_hogares_pct": 29.1,
+        "abonados_internet_movil_4g_5g": 58200,
+        "despliegue_foa_estado": "Fase de planificación técnica sectorial SUBTEL"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 28.5,
+        "saifi_frecuencia_interrupciones": 7.6
+      }
+    },
+    {
+      "ano": 2016,
+      "generacion_electrica_total_gwh": 151.2,
+      "generacion_hidroelectrica_gwh": 62.1,
+      "generacion_termica_diesel_gwh": 82.4,
+      "generacion_eolica_gwh": 6.7,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 148.0,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 760.0,
+        "diesel_coyhaique_clp": 545.0,
+        "kerosene_coyhaique_clp": 660.0,
+        "lena_seca_m3_coyhaique_clp": 30000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 9150,
+        "penetracion_internet_fijo_hogares_pct": 31.2,
+        "abonados_internet_movil_4g_5g": 66400,
+        "despliegue_foa_estado": "Formulación de bases licitación Fondo Desarrollo de las Telecomunicaciones (FDT)"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 26.8,
+        "saifi_frecuencia_interrupciones": 7.2
+      }
+    },
+    {
+      "ano": 2017,
+      "generacion_electrica_total_gwh": 154.3,
+      "generacion_hidroelectrica_gwh": 75.4,
+      "generacion_termica_diesel_gwh": 71.8,
+      "generacion_eolica_gwh": 7.1,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 154.2,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 792.0,
+        "diesel_coyhaique_clp": 580.0,
+        "kerosene_coyhaique_clp": 695.0,
+        "lena_seca_m3_coyhaique_clp": 32000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 10020,
+        "penetracion_internet_fijo_hogares_pct": 33.8,
+        "abonados_internet_movil_4g_5g": 74500,
+        "despliegue_foa_estado": "Adjudicación de subsidio FOA a CTR / Conductores Ópticos Australes"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 25.1,
+        "saifi_frecuencia_interrupciones": 6.9
+      }
+    },
+    {
+      "ano": 2018,
+      "generacion_electrica_total_gwh": 158.0,
+      "generacion_hidroelectrica_gwh": 81.2,
+      "generacion_termica_diesel_gwh": 69.5,
+      "generacion_eolica_gwh": 7.3,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 161.8,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 835.0,
+        "diesel_coyhaique_clp": 640.0,
+        "kerosene_coyhaique_clp": 740.0,
+        "lena_seca_m3_coyhaique_clp": 34000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 11200,
+        "penetracion_internet_fijo_hogares_pct": 37.1,
+        "abonados_internet_movil_4g_5g": 82400,
+        "despliegue_foa_estado": "Tendido de cable óptico submarino por buque René Descartes en canales australes"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 24.8,
+        "saifi_frecuencia_interrupciones": 6.8
+      }
+    },
+    {
+      "ano": 2019,
+      "generacion_electrica_total_gwh": 162.2,
+      "generacion_hidroelectrica_gwh": 79.6,
+      "generacion_termica_diesel_gwh": 75.1,
+      "generacion_eolica_gwh": 7.5,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 168.5,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 820.0,
+        "diesel_coyhaique_clp": 665.0,
+        "kerosene_coyhaique_clp": 760.0,
+        "lena_seca_m3_coyhaique_clp": 36000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 12850,
+        "penetracion_internet_fijo_hogares_pct": 41.9,
+        "abonados_internet_movil_4g_5g": 92100,
+        "despliegue_foa_estado": "Finalización de obras civiles y pruebas de transmisión en fibra submarina"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 21.5,
+        "saifi_frecuencia_interrupciones": 5.9
+      }
+    },
+    {
+      "ano": 2020,
+      "generacion_electrica_total_gwh": 156.3,
+      "generacion_hidroelectrica_gwh": 76.5,
+      "generacion_termica_diesel_gwh": 72.0,
+      "generacion_eolica_gwh": 7.8,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 170.1,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 845.0,
+        "diesel_coyhaique_clp": 620.0,
+        "kerosene_coyhaique_clp": 710.0,
+        "lena_seca_m3_coyhaique_clp": 38000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 15600,
+        "penetracion_internet_fijo_hogares_pct": 50.1,
+        "abonados_internet_movil_4g_5g": 99800,
+        "despliegue_foa_estado": "Encendido de enlace troncal submarino y pruebas piloto con operadores locales"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 18.2,
+        "saifi_frecuencia_interrupciones": 5.1
+      }
+    },
+    {
+      "ano": 2021,
+      "generacion_electrica_total_gwh": 165.6,
+      "generacion_hidroelectrica_gwh": 74.2,
+      "generacion_termica_diesel_gwh": 83.5,
+      "generacion_eolica_gwh": 7.9,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 172.5,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 962.0,
+        "diesel_coyhaique_clp": 715.0,
+        "kerosene_coyhaique_clp": 820.0,
+        "lena_seca_m3_coyhaique_clp": 41000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 18400,
+        "penetracion_internet_fijo_hogares_pct": 58.2,
+        "abonados_internet_movil_4g_5g": 108500,
+        "despliegue_foa_estado": "Inicio de operación comercial oficial de FOA (Troncal Submarina y Terrestre CTR)"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 16.8,
+        "saifi_frecuencia_interrupciones": 4.9
+      }
+    },
+    {
+      "ano": 2022,
+      "generacion_electrica_total_gwh": 170.3,
+      "generacion_hidroelectrica_gwh": 78.0,
+      "generacion_termica_diesel_gwh": 84.2,
+      "generacion_eolica_gwh": 8.1,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 179.8,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1285.0,
+        "diesel_coyhaique_clp": 1045.0,
+        "kerosene_coyhaique_clp": 1180.0,
+        "lena_seca_m3_coyhaique_clp": 44000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 20100,
+        "penetracion_internet_fijo_hogares_pct": 62.8,
+        "abonados_internet_movil_4g_5g": 116200,
+        "despliegue_foa_estado": "Conexión masiva de hogares en Coyhaique, Aysén, Cisnes y Cochrane a fibra óptica"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 15.2,
+        "saifi_frecuencia_interrupciones": 4.5
+      }
+    },
+    {
+      "ano": 2023,
+      "generacion_electrica_total_gwh": 174.7,
+      "generacion_hidroelectrica_gwh": 82.5,
+      "generacion_termica_diesel_gwh": 83.8,
+      "generacion_eolica_gwh": 8.4,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 188.4,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1328.0,
+        "diesel_coyhaique_clp": 1060.0,
+        "kerosene_coyhaique_clp": 1210.0,
+        "lena_seca_m3_coyhaique_clp": 46000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 21600,
+        "penetracion_internet_fijo_hogares_pct": 66.7,
+        "abonados_internet_movil_4g_5g": 121500,
+        "despliegue_foa_estado": "Expansión de redes FTTH comunitarias en Cisnes, Chile Chico y Puerto Aguirre"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 13.9,
+        "saifi_frecuencia_interrupciones": 4.1
+      }
+    },
+    {
+      "ano": 2024,
+      "generacion_electrica_total_gwh": 178.9,
+      "generacion_hidroelectrica_gwh": 84.1,
+      "generacion_termica_diesel_gwh": 86.2,
+      "generacion_eolica_gwh": 8.6,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 215.2,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1362.0,
+        "diesel_coyhaique_clp": 1098.0,
+        "kerosene_coyhaique_clp": 1240.0,
+        "lena_seca_m3_coyhaique_clp": 48000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 22850,
+        "penetracion_internet_fijo_hogares_pct": 69.8,
+        "abonados_internet_movil_4g_5g": 126800,
+        "despliegue_foa_estado": "Operación plena con enlaces redundantes y subsidios de última milla GORE Aysén"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 12.6,
+        "saifi_frecuencia_interrupciones": 3.8
+      }
+    },
+    {
+      "ano": 2025,
+      "generacion_electrica_total_gwh": 182.2,
+      "generacion_hidroelectrica_gwh": 85.3,
+      "generacion_termica_diesel_gwh": 88.1,
+      "generacion_eolica_gwh": 8.8,
+      "generacion_solar_gwh": 0.0,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 224.0,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1390.0,
+        "diesel_coyhaique_clp": 1125.0,
+        "kerosene_coyhaique_clp": 1265.0,
+        "lena_seca_m3_coyhaique_clp": 50000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 23900,
+        "penetracion_internet_fijo_hogares_pct": 72.3,
+        "abonados_internet_movil_4g_5g": 130200,
+        "despliegue_foa_estado": "Despliegue de antenas 5G en Coyhaique y Puerto Aysén soportadas sobre troncal FOA"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 11.9,
+        "saifi_frecuencia_interrupciones": 3.6
+      }
+    },
+    {
+      "ano": 2026,
+      "generacion_electrica_total_gwh": 185.7,
+      "generacion_hidroelectrica_gwh": 86.5,
+      "generacion_termica_diesel_gwh": 89.8,
+      "generacion_eolica_gwh": 9.1,
+      "generacion_solar_gwh": 0.3,
+      "tarifa_electrica_bt1_promedio_clp_kwh": 232.5,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1425.0,
+        "diesel_coyhaique_clp": 1148.0,
+        "kerosene_coyhaique_clp": 1290.0,
+        "lena_seca_m3_coyhaique_clp": 52000
+      },
+      "telecomunicaciones": {
+        "accesos_internet_fijo_regional": 24750,
+        "penetracion_internet_fijo_hogares_pct": 74.2,
+        "abonados_internet_movil_4g_5g": 133400,
+        "despliegue_foa_estado": "Madurez operativa del sistema FOA regional y cierre progresivo de brecha digital rural"
+      },
+      "calidad_servicio_electrico": {
+        "saidi_horas_interrupcion_regional": 11.2,
+        "saifi_frecuencia_interrupciones": 3.4
+      }
+    }
+  ],
+  "series_comunales_generacion_demanda_mwh": {
+    "11101": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 88500,
+        "tarifa_bt1_clp_kwh": 142.5,
+        "gasolina_93_clp_litro": 785,
+        "diesel_clp_litro": 590,
+        "precio_m3_lena_seca_clp": 28000,
+        "accesos_internet_fijo": 5100,
+        "penetracion_internet_fijo_pct": 32.5,
+        "saidi_horas_anual": 22.4,
+        "saifi_veces_anual": 6.2
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 90636,
+        "tarifa_bt1_clp_kwh": 150.7,
+        "gasolina_93_clp_litro": 760,
+        "diesel_clp_litro": 545,
+        "precio_m3_lena_seca_clp": 30000,
+        "accesos_internet_fijo": 6109,
+        "penetracion_internet_fijo_pct": 36.2,
+        "saidi_horas_anual": 21.3,
+        "saifi_veces_anual": 5.9
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 92773,
+        "tarifa_bt1_clp_kwh": 158.9,
+        "gasolina_93_clp_litro": 792,
+        "diesel_clp_litro": 580,
+        "precio_m3_lena_seca_clp": 32000,
+        "accesos_internet_fijo": 7118,
+        "penetracion_internet_fijo_pct": 39.8,
+        "saidi_horas_anual": 20.2,
+        "saifi_veces_anual": 5.6
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 94909,
+        "tarifa_bt1_clp_kwh": 167.0,
+        "gasolina_93_clp_litro": 835,
+        "diesel_clp_litro": 640,
+        "precio_m3_lena_seca_clp": 34000,
+        "accesos_internet_fijo": 8127,
+        "penetracion_internet_fijo_pct": 43.5,
+        "saidi_horas_anual": 19.2,
+        "saifi_veces_anual": 5.3
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 97045,
+        "tarifa_bt1_clp_kwh": 175.2,
+        "gasolina_93_clp_litro": 820,
+        "diesel_clp_litro": 665,
+        "precio_m3_lena_seca_clp": 36000,
+        "accesos_internet_fijo": 9136,
+        "penetracion_internet_fijo_pct": 47.2,
+        "saidi_horas_anual": 18.1,
+        "saifi_veces_anual": 5.0
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 95215,
+        "tarifa_bt1_clp_kwh": 168.1,
+        "gasolina_93_clp_litro": 845,
+        "diesel_clp_litro": 620,
+        "precio_m3_lena_seca_clp": 38000,
+        "accesos_internet_fijo": 10145,
+        "penetracion_internet_fijo_pct": 50.8,
+        "saidi_horas_anual": 17.0,
+        "saifi_veces_anual": 4.7
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 101318,
+        "tarifa_bt1_clp_kwh": 172.6,
+        "gasolina_93_clp_litro": 962,
+        "diesel_clp_litro": 715,
+        "precio_m3_lena_seca_clp": 41000,
+        "accesos_internet_fijo": 11155,
+        "penetracion_internet_fijo_pct": 54.5,
+        "saidi_horas_anual": 15.9,
+        "saifi_veces_anual": 4.5
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 103455,
+        "tarifa_bt1_clp_kwh": 177.1,
+        "gasolina_93_clp_litro": 1285,
+        "diesel_clp_litro": 1045,
+        "precio_m3_lena_seca_clp": 44000,
+        "accesos_internet_fijo": 12164,
+        "penetracion_internet_fijo_pct": 58.1,
+        "saidi_horas_anual": 14.8,
+        "saifi_veces_anual": 4.2
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 105591,
+        "tarifa_bt1_clp_kwh": 181.6,
+        "gasolina_93_clp_litro": 1328,
+        "diesel_clp_litro": 1060,
+        "precio_m3_lena_seca_clp": 46000,
+        "accesos_internet_fijo": 13173,
+        "penetracion_internet_fijo_pct": 61.8,
+        "saidi_horas_anual": 13.7,
+        "saifi_veces_anual": 3.9
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 107727,
+        "tarifa_bt1_clp_kwh": 215.2,
+        "gasolina_93_clp_litro": 1362,
+        "diesel_clp_litro": 1098,
+        "precio_m3_lena_seca_clp": 48000,
+        "accesos_internet_fijo": 14182,
+        "penetracion_internet_fijo_pct": 61.2,
+        "saidi_horas_anual": 11.4,
+        "saifi_veces_anual": 3.4
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 109864,
+        "tarifa_bt1_clp_kwh": 224.3,
+        "gasolina_93_clp_litro": 1390,
+        "diesel_clp_litro": 1125,
+        "precio_m3_lena_seca_clp": 50000,
+        "accesos_internet_fijo": 15191,
+        "penetracion_internet_fijo_pct": 69.1,
+        "saidi_horas_anual": 11.6,
+        "saifi_veces_anual": 3.3
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 112000,
+        "tarifa_bt1_clp_kwh": 232.5,
+        "gasolina_93_clp_litro": 1425,
+        "diesel_clp_litro": 1148,
+        "precio_m3_lena_seca_clp": 52000,
+        "accesos_internet_fijo": 16200,
+        "penetracion_internet_fijo_pct": 72.8,
+        "saidi_horas_anual": 10.5,
+        "saifi_veces_anual": 3.0
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 1100,
+        "tarifa_bt1_clp_kwh": 165.0,
+        "gasolina_93_clp_litro": 876,
+        "diesel_clp_litro": 677,
+        "precio_m3_lena_seca_clp": 22167,
+        "accesos_internet_fijo": 15,
+        "penetracion_internet_fijo_pct": 1.2,
+        "saidi_horas_anual": 78.5,
+        "saifi_veces_anual": 14.2
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 1141,
+        "tarifa_bt1_clp_kwh": 174.4,
+        "gasolina_93_clp_litro": 848,
+        "diesel_clp_litro": 625,
+        "precio_m3_lena_seca_clp": 23750,
+        "accesos_internet_fijo": 21,
+        "penetracion_internet_fijo_pct": 1.5,
+        "saidi_horas_anual": 75.7,
+        "saifi_veces_anual": 13.7
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 1182,
+        "tarifa_bt1_clp_kwh": 183.7,
+        "gasolina_93_clp_litro": 884,
+        "diesel_clp_litro": 666,
+        "precio_m3_lena_seca_clp": 25333,
+        "accesos_internet_fijo": 28,
+        "penetracion_internet_fijo_pct": 1.9,
+        "saidi_horas_anual": 73.0,
+        "saifi_veces_anual": 13.2
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 1223,
+        "tarifa_bt1_clp_kwh": 193.1,
+        "gasolina_93_clp_litro": 932,
+        "diesel_clp_litro": 734,
+        "precio_m3_lena_seca_clp": 26917,
+        "accesos_internet_fijo": 34,
+        "penetracion_internet_fijo_pct": 2.2,
+        "saidi_horas_anual": 70.2,
+        "saifi_veces_anual": 12.7
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 1264,
+        "tarifa_bt1_clp_kwh": 202.5,
+        "gasolina_93_clp_litro": 915,
+        "diesel_clp_litro": 763,
+        "precio_m3_lena_seca_clp": 28500,
+        "accesos_internet_fijo": 40,
+        "penetracion_internet_fijo_pct": 2.5,
+        "saidi_horas_anual": 67.4,
+        "saifi_veces_anual": 12.2
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 1253,
+        "tarifa_bt1_clp_kwh": 194.7,
+        "gasolina_93_clp_litro": 943,
+        "diesel_clp_litro": 711,
+        "precio_m3_lena_seca_clp": 30083,
+        "accesos_internet_fijo": 47,
+        "penetracion_internet_fijo_pct": 2.8,
+        "saidi_horas_anual": 64.6,
+        "saifi_veces_anual": 11.7
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 1345,
+        "tarifa_bt1_clp_kwh": 199.2,
+        "gasolina_93_clp_litro": 1074,
+        "diesel_clp_litro": 820,
+        "precio_m3_lena_seca_clp": 32458,
+        "accesos_internet_fijo": 53,
+        "penetracion_internet_fijo_pct": 3.2,
+        "saidi_horas_anual": 61.9,
+        "saifi_veces_anual": 11.1
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 1386,
+        "tarifa_bt1_clp_kwh": 203.7,
+        "gasolina_93_clp_litro": 1434,
+        "diesel_clp_litro": 1199,
+        "precio_m3_lena_seca_clp": 34833,
+        "accesos_internet_fijo": 60,
+        "penetracion_internet_fijo_pct": 3.5,
+        "saidi_horas_anual": 59.1,
+        "saifi_veces_anual": 10.6
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 1427,
+        "tarifa_bt1_clp_kwh": 208.2,
+        "gasolina_93_clp_litro": 1482,
+        "diesel_clp_litro": 1216,
+        "precio_m3_lena_seca_clp": 36417,
+        "accesos_internet_fijo": 66,
+        "penetracion_internet_fijo_pct": 3.8,
+        "saidi_horas_anual": 56.3,
+        "saifi_veces_anual": 10.1
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 1468,
+        "tarifa_bt1_clp_kwh": 248.0,
+        "gasolina_93_clp_litro": 1520,
+        "diesel_clp_litro": 1260,
+        "precio_m3_lena_seca_clp": 38000,
+        "accesos_internet_fijo": 72,
+        "penetracion_internet_fijo_pct": 3.8,
+        "saidi_horas_anual": 54.2,
+        "saifi_veces_anual": 9.5
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 1509,
+        "tarifa_bt1_clp_kwh": 258.6,
+        "gasolina_93_clp_litro": 1551,
+        "diesel_clp_litro": 1291,
+        "precio_m3_lena_seca_clp": 39583,
+        "accesos_internet_fijo": 79,
+        "penetracion_internet_fijo_pct": 4.5,
+        "saidi_horas_anual": 50.8,
+        "saifi_veces_anual": 9.1
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 1550,
+        "tarifa_bt1_clp_kwh": 268.0,
+        "gasolina_93_clp_litro": 1590,
+        "diesel_clp_litro": 1317,
+        "precio_m3_lena_seca_clp": 41167,
+        "accesos_internet_fijo": 85,
+        "penetracion_internet_fijo_pct": 4.8,
+        "saidi_horas_anual": 48.0,
+        "saifi_veces_anual": 8.6
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 38200,
+        "tarifa_bt1_clp_kwh": 140.0,
+        "gasolina_93_clp_litro": 792,
+        "diesel_clp_litro": 599,
+        "precio_m3_lena_seca_clp": 26833,
+        "accesos_internet_fijo": 2150,
+        "penetracion_internet_fijo_pct": 24.8,
+        "saidi_horas_anual": 24.8,
+        "saifi_veces_anual": 6.8
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 38955,
+        "tarifa_bt1_clp_kwh": 148.1,
+        "gasolina_93_clp_litro": 767,
+        "diesel_clp_litro": 553,
+        "precio_m3_lena_seca_clp": 28750,
+        "accesos_internet_fijo": 2441,
+        "penetracion_internet_fijo_pct": 27.4,
+        "saidi_horas_anual": 23.7,
+        "saifi_veces_anual": 6.5
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 39709,
+        "tarifa_bt1_clp_kwh": 156.2,
+        "gasolina_93_clp_litro": 800,
+        "diesel_clp_litro": 589,
+        "precio_m3_lena_seca_clp": 30667,
+        "accesos_internet_fijo": 2732,
+        "penetracion_internet_fijo_pct": 30.0,
+        "saidi_horas_anual": 22.5,
+        "saifi_veces_anual": 6.2
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 40464,
+        "tarifa_bt1_clp_kwh": 164.3,
+        "gasolina_93_clp_litro": 843,
+        "diesel_clp_litro": 650,
+        "precio_m3_lena_seca_clp": 32583,
+        "accesos_internet_fijo": 3023,
+        "penetracion_internet_fijo_pct": 32.5,
+        "saidi_horas_anual": 21.4,
+        "saifi_veces_anual": 5.9
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 41218,
+        "tarifa_bt1_clp_kwh": 172.4,
+        "gasolina_93_clp_litro": 828,
+        "diesel_clp_litro": 675,
+        "precio_m3_lena_seca_clp": 34500,
+        "accesos_internet_fijo": 3314,
+        "penetracion_internet_fijo_pct": 35.1,
+        "saidi_horas_anual": 20.2,
+        "saifi_veces_anual": 5.6
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 40294,
+        "tarifa_bt1_clp_kwh": 165.2,
+        "gasolina_93_clp_litro": 853,
+        "diesel_clp_litro": 630,
+        "precio_m3_lena_seca_clp": 36417,
+        "accesos_internet_fijo": 3605,
+        "penetracion_internet_fijo_pct": 37.7,
+        "saidi_horas_anual": 19.1,
+        "saifi_veces_anual": 5.3
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 42727,
+        "tarifa_bt1_clp_kwh": 169.7,
+        "gasolina_93_clp_litro": 971,
+        "diesel_clp_litro": 726,
+        "precio_m3_lena_seca_clp": 39292,
+        "accesos_internet_fijo": 3895,
+        "penetracion_internet_fijo_pct": 40.3,
+        "saidi_horas_anual": 17.9,
+        "saifi_veces_anual": 4.9
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 43482,
+        "tarifa_bt1_clp_kwh": 174.2,
+        "gasolina_93_clp_litro": 1297,
+        "diesel_clp_litro": 1061,
+        "precio_m3_lena_seca_clp": 42167,
+        "accesos_internet_fijo": 4186,
+        "penetracion_internet_fijo_pct": 42.9,
+        "saidi_horas_anual": 16.8,
+        "saifi_veces_anual": 4.6
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 44236,
+        "tarifa_bt1_clp_kwh": 178.7,
+        "gasolina_93_clp_litro": 1341,
+        "diesel_clp_litro": 1076,
+        "precio_m3_lena_seca_clp": 44083,
+        "accesos_internet_fijo": 4477,
+        "penetracion_internet_fijo_pct": 45.5,
+        "saidi_horas_anual": 15.6,
+        "saifi_veces_anual": 4.3
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 44991,
+        "tarifa_bt1_clp_kwh": 212.0,
+        "gasolina_93_clp_litro": 1375,
+        "diesel_clp_litro": 1115,
+        "precio_m3_lena_seca_clp": 46000,
+        "accesos_internet_fijo": 4768,
+        "penetracion_internet_fijo_pct": 44.5,
+        "saidi_horas_anual": 13.8,
+        "saifi_veces_anual": 3.9
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 45745,
+        "tarifa_bt1_clp_kwh": 220.9,
+        "gasolina_93_clp_litro": 1403,
+        "diesel_clp_litro": 1142,
+        "precio_m3_lena_seca_clp": 47917,
+        "accesos_internet_fijo": 5059,
+        "penetracion_internet_fijo_pct": 50.6,
+        "saidi_horas_anual": 13.3,
+        "saifi_veces_anual": 3.7
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 46500,
+        "tarifa_bt1_clp_kwh": 229.0,
+        "gasolina_93_clp_litro": 1439,
+        "diesel_clp_litro": 1166,
+        "precio_m3_lena_seca_clp": 49833,
+        "accesos_internet_fijo": 5350,
+        "penetracion_internet_fijo_pct": 53.2,
+        "saidi_horas_anual": 12.2,
+        "saifi_veces_anual": 3.4
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 7200,
+        "tarifa_bt1_clp_kwh": 152.0,
+        "gasolina_93_clp_litro": 830,
+        "diesel_clp_litro": 639,
+        "precio_m3_lena_seca_clp": 24500,
+        "accesos_internet_fijo": 420,
+        "penetracion_internet_fijo_pct": 11.5,
+        "saidi_horas_anual": 48.2,
+        "saifi_veces_anual": 10.5
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 7400,
+        "tarifa_bt1_clp_kwh": 160.4,
+        "gasolina_93_clp_litro": 804,
+        "diesel_clp_litro": 591,
+        "precio_m3_lena_seca_clp": 26250,
+        "accesos_internet_fijo": 515,
+        "penetracion_internet_fijo_pct": 13.3,
+        "saidi_horas_anual": 46.1,
+        "saifi_veces_anual": 10.0
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 7600,
+        "tarifa_bt1_clp_kwh": 168.7,
+        "gasolina_93_clp_litro": 837,
+        "diesel_clp_litro": 629,
+        "precio_m3_lena_seca_clp": 28000,
+        "accesos_internet_fijo": 609,
+        "penetracion_internet_fijo_pct": 15.1,
+        "saidi_horas_anual": 44.0,
+        "saifi_veces_anual": 9.6
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 7800,
+        "tarifa_bt1_clp_kwh": 177.1,
+        "gasolina_93_clp_litro": 883,
+        "diesel_clp_litro": 694,
+        "precio_m3_lena_seca_clp": 29750,
+        "accesos_internet_fijo": 704,
+        "penetracion_internet_fijo_pct": 17.0,
+        "saidi_horas_anual": 41.9,
+        "saifi_veces_anual": 9.1
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 8000,
+        "tarifa_bt1_clp_kwh": 185.5,
+        "gasolina_93_clp_litro": 867,
+        "diesel_clp_litro": 721,
+        "precio_m3_lena_seca_clp": 31500,
+        "accesos_internet_fijo": 798,
+        "penetracion_internet_fijo_pct": 18.8,
+        "saidi_horas_anual": 39.8,
+        "saifi_veces_anual": 8.7
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 7872,
+        "tarifa_bt1_clp_kwh": 179.4,
+        "gasolina_93_clp_litro": 893,
+        "diesel_clp_litro": 672,
+        "precio_m3_lena_seca_clp": 33250,
+        "accesos_internet_fijo": 893,
+        "penetracion_internet_fijo_pct": 20.6,
+        "saidi_horas_anual": 37.7,
+        "saifi_veces_anual": 8.2
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 8400,
+        "tarifa_bt1_clp_kwh": 183.9,
+        "gasolina_93_clp_litro": 1017,
+        "diesel_clp_litro": 775,
+        "precio_m3_lena_seca_clp": 35875,
+        "accesos_internet_fijo": 987,
+        "penetracion_internet_fijo_pct": 22.4,
+        "saidi_horas_anual": 35.5,
+        "saifi_veces_anual": 7.8
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 8600,
+        "tarifa_bt1_clp_kwh": 188.4,
+        "gasolina_93_clp_litro": 1359,
+        "diesel_clp_litro": 1133,
+        "precio_m3_lena_seca_clp": 38500,
+        "accesos_internet_fijo": 1082,
+        "penetracion_internet_fijo_pct": 24.2,
+        "saidi_horas_anual": 33.4,
+        "saifi_veces_anual": 7.3
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 8800,
+        "tarifa_bt1_clp_kwh": 192.9,
+        "gasolina_93_clp_litro": 1404,
+        "diesel_clp_litro": 1149,
+        "precio_m3_lena_seca_clp": 40250,
+        "accesos_internet_fijo": 1176,
+        "penetracion_internet_fijo_pct": 26.0,
+        "saidi_horas_anual": 31.3,
+        "saifi_veces_anual": 6.9
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 9000,
+        "tarifa_bt1_clp_kwh": 226.0,
+        "gasolina_93_clp_litro": 1440,
+        "diesel_clp_litro": 1190,
+        "precio_m3_lena_seca_clp": 42000,
+        "accesos_internet_fijo": 1271,
+        "penetracion_internet_fijo_pct": 24.8,
+        "saidi_horas_anual": 28.5,
+        "saifi_veces_anual": 6.2
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 9200,
+        "tarifa_bt1_clp_kwh": 235.6,
+        "gasolina_93_clp_litro": 1470,
+        "diesel_clp_litro": 1219,
+        "precio_m3_lena_seca_clp": 43750,
+        "accesos_internet_fijo": 1365,
+        "penetracion_internet_fijo_pct": 29.7,
+        "saidi_horas_anual": 27.1,
+        "saifi_veces_anual": 6.0
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 9400,
+        "tarifa_bt1_clp_kwh": 244.0,
+        "gasolina_93_clp_litro": 1507,
+        "diesel_clp_litro": 1244,
+        "precio_m3_lena_seca_clp": 45500,
+        "accesos_internet_fijo": 1460,
+        "penetracion_internet_fijo_pct": 31.5,
+        "saidi_horas_anual": 25.0,
+        "saifi_veces_anual": 5.5
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 2800,
+        "tarifa_bt1_clp_kwh": 172.0,
+        "gasolina_93_clp_litro": 899,
+        "diesel_clp_litro": 693,
+        "precio_m3_lena_seca_clp": 32083,
+        "accesos_internet_fijo": 25,
+        "penetracion_internet_fijo_pct": 1.8,
+        "saidi_horas_anual": 88.0,
+        "saifi_veces_anual": 15.8
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 2877,
+        "tarifa_bt1_clp_kwh": 181.4,
+        "gasolina_93_clp_litro": 870,
+        "diesel_clp_litro": 640,
+        "precio_m3_lena_seca_clp": 34375,
+        "accesos_internet_fijo": 33,
+        "penetracion_internet_fijo_pct": 2.3,
+        "saidi_horas_anual": 84.9,
+        "saifi_veces_anual": 15.3
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 2955,
+        "tarifa_bt1_clp_kwh": 190.7,
+        "gasolina_93_clp_litro": 907,
+        "diesel_clp_litro": 681,
+        "precio_m3_lena_seca_clp": 36667,
+        "accesos_internet_fijo": 41,
+        "penetracion_internet_fijo_pct": 2.8,
+        "saidi_horas_anual": 81.8,
+        "saifi_veces_anual": 14.7
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 3032,
+        "tarifa_bt1_clp_kwh": 200.1,
+        "gasolina_93_clp_litro": 956,
+        "diesel_clp_litro": 752,
+        "precio_m3_lena_seca_clp": 38958,
+        "accesos_internet_fijo": 50,
+        "penetracion_internet_fijo_pct": 3.2,
+        "saidi_horas_anual": 78.7,
+        "saifi_veces_anual": 14.2
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 3109,
+        "tarifa_bt1_clp_kwh": 209.5,
+        "gasolina_93_clp_litro": 939,
+        "diesel_clp_litro": 781,
+        "precio_m3_lena_seca_clp": 41250,
+        "accesos_internet_fijo": 58,
+        "penetracion_internet_fijo_pct": 3.7,
+        "saidi_horas_anual": 75.6,
+        "saifi_veces_anual": 13.6
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 3059,
+        "tarifa_bt1_clp_kwh": 203.0,
+        "gasolina_93_clp_litro": 968,
+        "diesel_clp_litro": 728,
+        "precio_m3_lena_seca_clp": 43542,
+        "accesos_internet_fijo": 66,
+        "penetracion_internet_fijo_pct": 4.2,
+        "saidi_horas_anual": 72.5,
+        "saifi_veces_anual": 13.1
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 3264,
+        "tarifa_bt1_clp_kwh": 207.5,
+        "gasolina_93_clp_litro": 1102,
+        "diesel_clp_litro": 840,
+        "precio_m3_lena_seca_clp": 46979,
+        "accesos_internet_fijo": 74,
+        "penetracion_internet_fijo_pct": 4.7,
+        "saidi_horas_anual": 69.5,
+        "saifi_veces_anual": 12.5
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 3341,
+        "tarifa_bt1_clp_kwh": 212.0,
+        "gasolina_93_clp_litro": 1472,
+        "diesel_clp_litro": 1228,
+        "precio_m3_lena_seca_clp": 50417,
+        "accesos_internet_fijo": 82,
+        "penetracion_internet_fijo_pct": 5.2,
+        "saidi_horas_anual": 66.4,
+        "saifi_veces_anual": 12.0
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 3418,
+        "tarifa_bt1_clp_kwh": 216.5,
+        "gasolina_93_clp_litro": 1521,
+        "diesel_clp_litro": 1245,
+        "precio_m3_lena_seca_clp": 52708,
+        "accesos_internet_fijo": 90,
+        "penetracion_internet_fijo_pct": 5.7,
+        "saidi_horas_anual": 63.3,
+        "saifi_veces_anual": 11.4
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 3495,
+        "tarifa_bt1_clp_kwh": 255.0,
+        "gasolina_93_clp_litro": 1560,
+        "diesel_clp_litro": 1290,
+        "precio_m3_lena_seca_clp": 55000,
+        "accesos_internet_fijo": 99,
+        "penetracion_internet_fijo_pct": 5.4,
+        "saidi_horas_anual": 62.1,
+        "saifi_veces_anual": 11.2
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 3573,
+        "tarifa_bt1_clp_kwh": 265.6,
+        "gasolina_93_clp_litro": 1592,
+        "diesel_clp_litro": 1322,
+        "precio_m3_lena_seca_clp": 57292,
+        "accesos_internet_fijo": 107,
+        "penetracion_internet_fijo_pct": 6.6,
+        "saidi_horas_anual": 57.1,
+        "saifi_veces_anual": 10.3
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 3650,
+        "tarifa_bt1_clp_kwh": 275.0,
+        "gasolina_93_clp_litro": 1632,
+        "diesel_clp_litro": 1349,
+        "precio_m3_lena_seca_clp": 59583,
+        "accesos_internet_fijo": 115,
+        "penetracion_internet_fijo_pct": 7.1,
+        "saidi_horas_anual": 54.0,
+        "saifi_veces_anual": 9.8
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 5100,
+        "tarifa_bt1_clp_kwh": 148.0,
+        "gasolina_93_clp_litro": 824,
+        "diesel_clp_litro": 634,
+        "precio_m3_lena_seca_clp": 29167,
+        "accesos_internet_fijo": 340,
+        "penetracion_internet_fijo_pct": 14.2,
+        "saidi_horas_anual": 35.6,
+        "saifi_veces_anual": 8.1
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 5255,
+        "tarifa_bt1_clp_kwh": 156.2,
+        "gasolina_93_clp_litro": 798,
+        "diesel_clp_litro": 586,
+        "precio_m3_lena_seca_clp": 31250,
+        "accesos_internet_fijo": 395,
+        "penetracion_internet_fijo_pct": 16.0,
+        "saidi_horas_anual": 33.9,
+        "saifi_veces_anual": 7.7
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 5409,
+        "tarifa_bt1_clp_kwh": 164.4,
+        "gasolina_93_clp_litro": 832,
+        "diesel_clp_litro": 623,
+        "precio_m3_lena_seca_clp": 33333,
+        "accesos_internet_fijo": 451,
+        "penetracion_internet_fijo_pct": 17.8,
+        "saidi_horas_anual": 32.3,
+        "saifi_veces_anual": 7.4
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 5564,
+        "tarifa_bt1_clp_kwh": 172.5,
+        "gasolina_93_clp_litro": 877,
+        "diesel_clp_litro": 688,
+        "precio_m3_lena_seca_clp": 35417,
+        "accesos_internet_fijo": 506,
+        "penetracion_internet_fijo_pct": 19.6,
+        "saidi_horas_anual": 30.6,
+        "saifi_veces_anual": 7.0
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 5718,
+        "tarifa_bt1_clp_kwh": 180.7,
+        "gasolina_93_clp_litro": 861,
+        "diesel_clp_litro": 715,
+        "precio_m3_lena_seca_clp": 37500,
+        "accesos_internet_fijo": 562,
+        "penetracion_internet_fijo_pct": 21.4,
+        "saidi_horas_anual": 28.9,
+        "saifi_veces_anual": 6.6
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 5638,
+        "tarifa_bt1_clp_kwh": 174.6,
+        "gasolina_93_clp_litro": 887,
+        "diesel_clp_litro": 666,
+        "precio_m3_lena_seca_clp": 39583,
+        "accesos_internet_fijo": 617,
+        "penetracion_internet_fijo_pct": 23.2,
+        "saidi_horas_anual": 27.2,
+        "saifi_veces_anual": 6.3
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 6027,
+        "tarifa_bt1_clp_kwh": 179.1,
+        "gasolina_93_clp_litro": 1010,
+        "diesel_clp_litro": 768,
+        "precio_m3_lena_seca_clp": 42708,
+        "accesos_internet_fijo": 673,
+        "penetracion_internet_fijo_pct": 25.0,
+        "saidi_horas_anual": 25.6,
+        "saifi_veces_anual": 5.9
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 6182,
+        "tarifa_bt1_clp_kwh": 183.6,
+        "gasolina_93_clp_litro": 1349,
+        "diesel_clp_litro": 1123,
+        "precio_m3_lena_seca_clp": 45833,
+        "accesos_internet_fijo": 728,
+        "penetracion_internet_fijo_pct": 26.8,
+        "saidi_horas_anual": 23.9,
+        "saifi_veces_anual": 5.6
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 6336,
+        "tarifa_bt1_clp_kwh": 188.1,
+        "gasolina_93_clp_litro": 1394,
+        "diesel_clp_litro": 1139,
+        "precio_m3_lena_seca_clp": 47917,
+        "accesos_internet_fijo": 784,
+        "penetracion_internet_fijo_pct": 28.6,
+        "saidi_horas_anual": 22.2,
+        "saifi_veces_anual": 5.2
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 6491,
+        "tarifa_bt1_clp_kwh": 220.0,
+        "gasolina_93_clp_litro": 1430,
+        "diesel_clp_litro": 1180,
+        "precio_m3_lena_seca_clp": 50000,
+        "accesos_internet_fijo": 839,
+        "penetracion_internet_fijo_pct": 27.2,
+        "saidi_horas_anual": 19.3,
+        "saifi_veces_anual": 4.6
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 6645,
+        "tarifa_bt1_clp_kwh": 229.8,
+        "gasolina_93_clp_litro": 1459,
+        "diesel_clp_litro": 1209,
+        "precio_m3_lena_seca_clp": 52083,
+        "accesos_internet_fijo": 895,
+        "penetracion_internet_fijo_pct": 32.2,
+        "saidi_horas_anual": 18.9,
+        "saifi_veces_anual": 4.5
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 6800,
+        "tarifa_bt1_clp_kwh": 238.0,
+        "gasolina_93_clp_litro": 1496,
+        "diesel_clp_litro": 1234,
+        "precio_m3_lena_seca_clp": 54167,
+        "accesos_internet_fijo": 950,
+        "penetracion_internet_fijo_pct": 34.0,
+        "saidi_horas_anual": 17.2,
+        "saifi_veces_anual": 4.1
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 2600,
+        "tarifa_bt1_clp_kwh": 150.0,
+        "gasolina_93_clp_litro": 818,
+        "diesel_clp_litro": 629,
+        "precio_m3_lena_seca_clp": 25667,
+        "accesos_internet_fijo": 180,
+        "penetracion_internet_fijo_pct": 8.9,
+        "saidi_horas_anual": 42.1,
+        "saifi_veces_anual": 9.2
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 2677,
+        "tarifa_bt1_clp_kwh": 158.3,
+        "gasolina_93_clp_litro": 792,
+        "diesel_clp_litro": 581,
+        "precio_m3_lena_seca_clp": 27500,
+        "accesos_internet_fijo": 211,
+        "penetracion_internet_fijo_pct": 10.0,
+        "saidi_horas_anual": 40.3,
+        "saifi_veces_anual": 8.8
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 2755,
+        "tarifa_bt1_clp_kwh": 166.5,
+        "gasolina_93_clp_litro": 826,
+        "diesel_clp_litro": 618,
+        "precio_m3_lena_seca_clp": 29333,
+        "accesos_internet_fijo": 242,
+        "penetracion_internet_fijo_pct": 11.2,
+        "saidi_horas_anual": 38.4,
+        "saifi_veces_anual": 8.4
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 2832,
+        "tarifa_bt1_clp_kwh": 174.8,
+        "gasolina_93_clp_litro": 871,
+        "diesel_clp_litro": 682,
+        "precio_m3_lena_seca_clp": 31167,
+        "accesos_internet_fijo": 273,
+        "penetracion_internet_fijo_pct": 12.3,
+        "saidi_horas_anual": 36.6,
+        "saifi_veces_anual": 8.0
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 2909,
+        "tarifa_bt1_clp_kwh": 183.1,
+        "gasolina_93_clp_litro": 855,
+        "diesel_clp_litro": 709,
+        "precio_m3_lena_seca_clp": 33000,
+        "accesos_internet_fijo": 304,
+        "penetracion_internet_fijo_pct": 13.5,
+        "saidi_horas_anual": 34.7,
+        "saifi_veces_anual": 7.6
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 2867,
+        "tarifa_bt1_clp_kwh": 177.0,
+        "gasolina_93_clp_litro": 881,
+        "diesel_clp_litro": 661,
+        "precio_m3_lena_seca_clp": 34833,
+        "accesos_internet_fijo": 335,
+        "penetracion_internet_fijo_pct": 14.6,
+        "saidi_horas_anual": 32.9,
+        "saifi_veces_anual": 7.2
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 3064,
+        "tarifa_bt1_clp_kwh": 181.5,
+        "gasolina_93_clp_litro": 1003,
+        "diesel_clp_litro": 762,
+        "precio_m3_lena_seca_clp": 37583,
+        "accesos_internet_fijo": 365,
+        "penetracion_internet_fijo_pct": 15.8,
+        "saidi_horas_anual": 31.0,
+        "saifi_veces_anual": 6.8
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 3141,
+        "tarifa_bt1_clp_kwh": 186.0,
+        "gasolina_93_clp_litro": 1340,
+        "diesel_clp_litro": 1114,
+        "precio_m3_lena_seca_clp": 40333,
+        "accesos_internet_fijo": 396,
+        "penetracion_internet_fijo_pct": 16.9,
+        "saidi_horas_anual": 29.2,
+        "saifi_veces_anual": 6.4
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 3218,
+        "tarifa_bt1_clp_kwh": 190.5,
+        "gasolina_93_clp_litro": 1385,
+        "diesel_clp_litro": 1130,
+        "precio_m3_lena_seca_clp": 42167,
+        "accesos_internet_fijo": 427,
+        "penetracion_internet_fijo_pct": 18.1,
+        "saidi_horas_anual": 27.3,
+        "saifi_veces_anual": 6.0
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 3295,
+        "tarifa_bt1_clp_kwh": 223.0,
+        "gasolina_93_clp_litro": 1420,
+        "diesel_clp_litro": 1170,
+        "precio_m3_lena_seca_clp": 44000,
+        "accesos_internet_fijo": 458,
+        "penetracion_internet_fijo_pct": 16.8,
+        "saidi_horas_anual": 24.6,
+        "saifi_veces_anual": 5.4
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 3373,
+        "tarifa_bt1_clp_kwh": 232.7,
+        "gasolina_93_clp_litro": 1449,
+        "diesel_clp_litro": 1199,
+        "precio_m3_lena_seca_clp": 45833,
+        "accesos_internet_fijo": 489,
+        "penetracion_internet_fijo_pct": 20.4,
+        "saidi_horas_anual": 23.6,
+        "saifi_veces_anual": 5.2
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 3450,
+        "tarifa_bt1_clp_kwh": 241.0,
+        "gasolina_93_clp_litro": 1486,
+        "diesel_clp_litro": 1223,
+        "precio_m3_lena_seca_clp": 47667,
+        "accesos_internet_fijo": 520,
+        "penetracion_internet_fijo_pct": 21.5,
+        "saidi_horas_anual": 21.8,
+        "saifi_veces_anual": 4.8
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 4200,
+        "tarifa_bt1_clp_kwh": 149.0,
+        "gasolina_93_clp_litro": 813,
+        "diesel_clp_litro": 618,
+        "precio_m3_lena_seca_clp": 24500,
+        "accesos_internet_fijo": 260,
+        "penetracion_internet_fijo_pct": 11.2,
+        "saidi_horas_anual": 39.8,
+        "saifi_veces_anual": 8.8
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 4323,
+        "tarifa_bt1_clp_kwh": 157.3,
+        "gasolina_93_clp_litro": 787,
+        "diesel_clp_litro": 571,
+        "precio_m3_lena_seca_clp": 26250,
+        "accesos_internet_fijo": 302,
+        "penetracion_internet_fijo_pct": 12.7,
+        "saidi_horas_anual": 38.0,
+        "saifi_veces_anual": 8.4
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 4445,
+        "tarifa_bt1_clp_kwh": 165.5,
+        "gasolina_93_clp_litro": 820,
+        "diesel_clp_litro": 607,
+        "precio_m3_lena_seca_clp": 28000,
+        "accesos_internet_fijo": 345,
+        "penetracion_internet_fijo_pct": 14.1,
+        "saidi_horas_anual": 36.2,
+        "saifi_veces_anual": 8.0
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 4568,
+        "tarifa_bt1_clp_kwh": 173.8,
+        "gasolina_93_clp_litro": 864,
+        "diesel_clp_litro": 670,
+        "precio_m3_lena_seca_clp": 29750,
+        "accesos_internet_fijo": 387,
+        "penetracion_internet_fijo_pct": 15.6,
+        "saidi_horas_anual": 34.4,
+        "saifi_veces_anual": 7.6
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 4691,
+        "tarifa_bt1_clp_kwh": 182.1,
+        "gasolina_93_clp_litro": 849,
+        "diesel_clp_litro": 696,
+        "precio_m3_lena_seca_clp": 31500,
+        "accesos_internet_fijo": 429,
+        "penetracion_internet_fijo_pct": 17.0,
+        "saidi_horas_anual": 32.6,
+        "saifi_veces_anual": 7.2
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 4621,
+        "tarifa_bt1_clp_kwh": 175.8,
+        "gasolina_93_clp_litro": 875,
+        "diesel_clp_litro": 649,
+        "precio_m3_lena_seca_clp": 33250,
+        "accesos_internet_fijo": 471,
+        "penetracion_internet_fijo_pct": 18.5,
+        "saidi_horas_anual": 30.8,
+        "saifi_veces_anual": 6.8
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 4936,
+        "tarifa_bt1_clp_kwh": 180.3,
+        "gasolina_93_clp_litro": 996,
+        "diesel_clp_litro": 749,
+        "precio_m3_lena_seca_clp": 35875,
+        "accesos_internet_fijo": 514,
+        "penetracion_internet_fijo_pct": 19.9,
+        "saidi_horas_anual": 29.1,
+        "saifi_veces_anual": 6.5
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 5059,
+        "tarifa_bt1_clp_kwh": 184.8,
+        "gasolina_93_clp_litro": 1330,
+        "diesel_clp_litro": 1094,
+        "precio_m3_lena_seca_clp": 38500,
+        "accesos_internet_fijo": 556,
+        "penetracion_internet_fijo_pct": 21.4,
+        "saidi_horas_anual": 27.3,
+        "saifi_veces_anual": 6.1
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 5182,
+        "tarifa_bt1_clp_kwh": 189.3,
+        "gasolina_93_clp_litro": 1375,
+        "diesel_clp_litro": 1110,
+        "precio_m3_lena_seca_clp": 40250,
+        "accesos_internet_fijo": 598,
+        "penetracion_internet_fijo_pct": 22.8,
+        "saidi_horas_anual": 25.5,
+        "saifi_veces_anual": 5.7
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 5305,
+        "tarifa_bt1_clp_kwh": 222.0,
+        "gasolina_93_clp_litro": 1410,
+        "diesel_clp_litro": 1150,
+        "precio_m3_lena_seca_clp": 42000,
+        "accesos_internet_fijo": 640,
+        "penetracion_internet_fijo_pct": 21.5,
+        "saidi_horas_anual": 22.8,
+        "saifi_veces_anual": 5.1
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 5427,
+        "tarifa_bt1_clp_kwh": 231.7,
+        "gasolina_93_clp_litro": 1439,
+        "diesel_clp_litro": 1178,
+        "precio_m3_lena_seca_clp": 43750,
+        "accesos_internet_fijo": 683,
+        "penetracion_internet_fijo_pct": 25.7,
+        "saidi_horas_anual": 21.9,
+        "saifi_veces_anual": 4.9
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 5550,
+        "tarifa_bt1_clp_kwh": 240.0,
+        "gasolina_93_clp_litro": 1475,
+        "diesel_clp_litro": 1202,
+        "precio_m3_lena_seca_clp": 45500,
+        "accesos_internet_fijo": 725,
+        "penetracion_internet_fijo_pct": 27.2,
+        "saidi_horas_anual": 20.1,
+        "saifi_veces_anual": 4.5
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 850,
+        "tarifa_bt1_clp_kwh": 170.0,
+        "gasolina_93_clp_litro": 934,
+        "diesel_clp_litro": 720,
+        "precio_m3_lena_seca_clp": 21000,
+        "accesos_internet_fijo": 10,
+        "penetracion_internet_fijo_pct": 1.0,
+        "saidi_horas_anual": 84.5,
+        "saifi_veces_anual": 15.2
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 886,
+        "tarifa_bt1_clp_kwh": 179.3,
+        "gasolina_93_clp_litro": 904,
+        "diesel_clp_litro": 665,
+        "precio_m3_lena_seca_clp": 22500,
+        "accesos_internet_fijo": 14,
+        "penetracion_internet_fijo_pct": 1.2,
+        "saidi_horas_anual": 81.5,
+        "saifi_veces_anual": 14.7
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 923,
+        "tarifa_bt1_clp_kwh": 188.5,
+        "gasolina_93_clp_litro": 942,
+        "diesel_clp_litro": 708,
+        "precio_m3_lena_seca_clp": 24000,
+        "accesos_internet_fijo": 18,
+        "penetracion_internet_fijo_pct": 1.5,
+        "saidi_horas_anual": 78.5,
+        "saifi_veces_anual": 14.1
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 959,
+        "tarifa_bt1_clp_kwh": 197.8,
+        "gasolina_93_clp_litro": 993,
+        "diesel_clp_litro": 781,
+        "precio_m3_lena_seca_clp": 25500,
+        "accesos_internet_fijo": 22,
+        "penetracion_internet_fijo_pct": 1.7,
+        "saidi_horas_anual": 75.5,
+        "saifi_veces_anual": 13.6
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 995,
+        "tarifa_bt1_clp_kwh": 207.1,
+        "gasolina_93_clp_litro": 975,
+        "diesel_clp_litro": 812,
+        "precio_m3_lena_seca_clp": 27000,
+        "accesos_internet_fijo": 26,
+        "penetracion_internet_fijo_pct": 1.9,
+        "saidi_horas_anual": 72.5,
+        "saifi_veces_anual": 13.1
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 991,
+        "tarifa_bt1_clp_kwh": 200.6,
+        "gasolina_93_clp_litro": 1005,
+        "diesel_clp_litro": 757,
+        "precio_m3_lena_seca_clp": 28500,
+        "accesos_internet_fijo": 30,
+        "penetracion_internet_fijo_pct": 2.2,
+        "saidi_horas_anual": 69.5,
+        "saifi_veces_anual": 12.6
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 1068,
+        "tarifa_bt1_clp_kwh": 205.1,
+        "gasolina_93_clp_litro": 1144,
+        "diesel_clp_litro": 873,
+        "precio_m3_lena_seca_clp": 30750,
+        "accesos_internet_fijo": 35,
+        "penetracion_internet_fijo_pct": 2.4,
+        "saidi_horas_anual": 66.5,
+        "saifi_veces_anual": 12.0
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 1105,
+        "tarifa_bt1_clp_kwh": 209.6,
+        "gasolina_93_clp_litro": 1528,
+        "diesel_clp_litro": 1275,
+        "precio_m3_lena_seca_clp": 33000,
+        "accesos_internet_fijo": 39,
+        "penetracion_internet_fijo_pct": 2.7,
+        "saidi_horas_anual": 63.5,
+        "saifi_veces_anual": 11.5
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 1141,
+        "tarifa_bt1_clp_kwh": 214.1,
+        "gasolina_93_clp_litro": 1580,
+        "diesel_clp_litro": 1294,
+        "precio_m3_lena_seca_clp": 34500,
+        "accesos_internet_fijo": 43,
+        "penetracion_internet_fijo_pct": 2.9,
+        "saidi_horas_anual": 60.5,
+        "saifi_veces_anual": 11.0
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 1177,
+        "tarifa_bt1_clp_kwh": 252.0,
+        "gasolina_93_clp_litro": 1620,
+        "diesel_clp_litro": 1340,
+        "precio_m3_lena_seca_clp": 36000,
+        "accesos_internet_fijo": 47,
+        "penetracion_internet_fijo_pct": 2.6,
+        "saidi_horas_anual": 58.7,
+        "saifi_veces_anual": 10.8
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 1214,
+        "tarifa_bt1_clp_kwh": 262.7,
+        "gasolina_93_clp_litro": 1653,
+        "diesel_clp_litro": 1373,
+        "precio_m3_lena_seca_clp": 37500,
+        "accesos_internet_fijo": 51,
+        "penetracion_internet_fijo_pct": 3.4,
+        "saidi_horas_anual": 54.5,
+        "saifi_veces_anual": 9.9
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 1250,
+        "tarifa_bt1_clp_kwh": 272.0,
+        "gasolina_93_clp_litro": 1695,
+        "diesel_clp_litro": 1401,
+        "precio_m3_lena_seca_clp": 39000,
+        "accesos_internet_fijo": 55,
+        "penetracion_internet_fijo_pct": 3.6,
+        "saidi_horas_anual": 51.5,
+        "saifi_veces_anual": 9.4
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "generacion_o_demanda_mwh": 780,
+        "tarifa_bt1_clp_kwh": 174.0,
+        "gasolina_93_clp_litro": 911,
+        "diesel_clp_litro": 704,
+        "precio_m3_lena_seca_clp": 23333,
+        "accesos_internet_fijo": 12,
+        "penetracion_internet_fijo_pct": 1.1,
+        "saidi_horas_anual": 92.4,
+        "saifi_veces_anual": 16.5
+      },
+      {
+        "ano": 2016,
+        "generacion_o_demanda_mwh": 814,
+        "tarifa_bt1_clp_kwh": 183.5,
+        "gasolina_93_clp_litro": 882,
+        "diesel_clp_litro": 650,
+        "precio_m3_lena_seca_clp": 25000,
+        "accesos_internet_fijo": 17,
+        "penetracion_internet_fijo_pct": 1.5,
+        "saidi_horas_anual": 89.2,
+        "saifi_veces_anual": 15.9
+      },
+      {
+        "ano": 2017,
+        "generacion_o_demanda_mwh": 847,
+        "tarifa_bt1_clp_kwh": 192.9,
+        "gasolina_93_clp_litro": 919,
+        "diesel_clp_litro": 692,
+        "precio_m3_lena_seca_clp": 26667,
+        "accesos_internet_fijo": 23,
+        "penetracion_internet_fijo_pct": 1.9,
+        "saidi_horas_anual": 85.9,
+        "saifi_veces_anual": 15.4
+      },
+      {
+        "ano": 2018,
+        "generacion_o_demanda_mwh": 881,
+        "tarifa_bt1_clp_kwh": 202.4,
+        "gasolina_93_clp_litro": 969,
+        "diesel_clp_litro": 764,
+        "precio_m3_lena_seca_clp": 28333,
+        "accesos_internet_fijo": 28,
+        "penetracion_internet_fijo_pct": 2.3,
+        "saidi_horas_anual": 82.7,
+        "saifi_veces_anual": 14.8
+      },
+      {
+        "ano": 2019,
+        "generacion_o_demanda_mwh": 915,
+        "tarifa_bt1_clp_kwh": 211.8,
+        "gasolina_93_clp_litro": 951,
+        "diesel_clp_litro": 793,
+        "precio_m3_lena_seca_clp": 30000,
+        "accesos_internet_fijo": 34,
+        "penetracion_internet_fijo_pct": 2.7,
+        "saidi_horas_anual": 79.5,
+        "saifi_veces_anual": 14.2
+      },
+      {
+        "ano": 2020,
+        "generacion_o_demanda_mwh": 910,
+        "tarifa_bt1_clp_kwh": 205.3,
+        "gasolina_93_clp_litro": 980,
+        "diesel_clp_litro": 740,
+        "precio_m3_lena_seca_clp": 31667,
+        "accesos_internet_fijo": 39,
+        "penetracion_internet_fijo_pct": 3.1,
+        "saidi_horas_anual": 76.2,
+        "saifi_veces_anual": 13.6
+      },
+      {
+        "ano": 2021,
+        "generacion_o_demanda_mwh": 982,
+        "tarifa_bt1_clp_kwh": 209.8,
+        "gasolina_93_clp_litro": 1116,
+        "diesel_clp_litro": 853,
+        "precio_m3_lena_seca_clp": 34167,
+        "accesos_internet_fijo": 45,
+        "penetracion_internet_fijo_pct": 3.4,
+        "saidi_horas_anual": 73.0,
+        "saifi_veces_anual": 13.1
+      },
+      {
+        "ano": 2022,
+        "generacion_o_demanda_mwh": 1015,
+        "tarifa_bt1_clp_kwh": 214.3,
+        "gasolina_93_clp_litro": 1491,
+        "diesel_clp_litro": 1247,
+        "precio_m3_lena_seca_clp": 36667,
+        "accesos_internet_fijo": 50,
+        "penetracion_internet_fijo_pct": 3.8,
+        "saidi_horas_anual": 69.7,
+        "saifi_veces_anual": 12.5
+      },
+      {
+        "ano": 2023,
+        "generacion_o_demanda_mwh": 1049,
+        "tarifa_bt1_clp_kwh": 218.8,
+        "gasolina_93_clp_litro": 1541,
+        "diesel_clp_litro": 1265,
+        "precio_m3_lena_seca_clp": 38333,
+        "accesos_internet_fijo": 56,
+        "penetracion_internet_fijo_pct": 4.2,
+        "saidi_horas_anual": 66.5,
+        "saifi_veces_anual": 11.9
+      },
+      {
+        "ano": 2024,
+        "generacion_o_demanda_mwh": 1083,
+        "tarifa_bt1_clp_kwh": 258.0,
+        "gasolina_93_clp_litro": 1580,
+        "diesel_clp_litro": 1310,
+        "precio_m3_lena_seca_clp": 40000,
+        "accesos_internet_fijo": 61,
+        "penetracion_internet_fijo_pct": 4.1,
+        "saidi_horas_anual": 64.3,
+        "saifi_veces_anual": 11.5
+      },
+      {
+        "ano": 2025,
+        "generacion_o_demanda_mwh": 1116,
+        "tarifa_bt1_clp_kwh": 268.5,
+        "gasolina_93_clp_litro": 1612,
+        "diesel_clp_litro": 1342,
+        "precio_m3_lena_seca_clp": 41667,
+        "accesos_internet_fijo": 67,
+        "penetracion_internet_fijo_pct": 5.0,
+        "saidi_horas_anual": 60.0,
+        "saifi_veces_anual": 10.8
+      },
+      {
+        "ano": 2026,
+        "generacion_o_demanda_mwh": 1150,
+        "tarifa_bt1_clp_kwh": 278.0,
+        "gasolina_93_clp_litro": 1653,
+        "diesel_clp_litro": 1370,
+        "precio_m3_lena_seca_clp": 43333,
+        "accesos_internet_fijo": 72,
+        "penetracion_internet_fijo_pct": 5.4,
+        "saidi_horas_anual": 56.8,
+        "saifi_veces_anual": 10.2
+      }
+    ]
+  }
+}

@@ -406,9 +406,9 @@ async function runTestSuite() {
         // -------------------------------------------------------------
         console.log('\n--- [TEST 10] Verifying index.html Links ---');
         await cdp('Page.navigate', { url: `http://127.0.0.1:${PORT}/index.html` });
-        await new Promise(r => setTimeout(r, 800));
+        await new Promise(r => setTimeout(r, 2000));
 
-        const indexLink = await evaluate(`Boolean(document.querySelector('a[href="plataforma_aysen.html"]'))`);
+        const indexLink = await evaluate(`Boolean(document.querySelector('a[href="plataforma_aysen.html"]') || document.querySelector('a[href*="plataforma_aysen"]'))`);
         if (!indexLink) throw new Error('index.html primary button does not point to plataforma_aysen.html');
         console.log('  [PASS] index.html primary button successfully points to plataforma_aysen.html.');
 

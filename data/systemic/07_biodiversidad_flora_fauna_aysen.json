@@ -69,7 +69,393 @@
       "jabali_europeo_ingreso": "Pasos cordilleranos orientales de Lago Verde, Coyhaique y Río Ibáñez",
       "lupino_perenne_via_dispersion": "Corredores viales de la Carretera Austral (Ruta 7)",
       "salmonidos_asilvestrados_impacto": "Dominancia en biomasa en todas las cuencas fluviales con corridas masivas de salmón chinook"
-    }
+    },
+    "series_historicas_regionales": [
+      {
+        "anio": 2015,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 168.5,
+          "dias_sobre_norma_anual": 92,
+          "episodios_criticos": {
+            "alerta": 38,
+            "preemergencia": 34,
+            "emergencia": 20,
+            "total": 92
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 624.0,
+          "caudal_medio_anual_rio_simpson_m3s": 58.4,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 76.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1420,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 45.0,
+          "didymo_estaciones_bioseguridad_activas": 12,
+          "salmon_chinook_censo_nidos_rio_cisnes": 120
+        }
+      },
+      {
+        "anio": 2016,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 162.0,
+          "dias_sobre_norma_anual": 98,
+          "episodios_criticos": {
+            "alerta": 36,
+            "preemergencia": 37,
+            "emergencia": 25,
+            "total": 98
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 585.0,
+          "caudal_medio_anual_rio_simpson_m3s": 51.2,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 78.5
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1440,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 52.0,
+          "didymo_estaciones_bioseguridad_activas": 16,
+          "salmon_chinook_censo_nidos_rio_cisnes": 155
+        }
+      },
+      {
+        "anio": 2017,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 154.2,
+          "dias_sobre_norma_anual": 86,
+          "episodios_criticos": {
+            "alerta": 35,
+            "preemergencia": 33,
+            "emergencia": 18,
+            "total": 86
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 642.0,
+          "caudal_medio_anual_rio_simpson_m3s": 56.8,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 81.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1465,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 60.0,
+          "didymo_estaciones_bioseguridad_activas": 20,
+          "salmon_chinook_censo_nidos_rio_cisnes": 190
+        }
+      },
+      {
+        "anio": 2018,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 146.8,
+          "dias_sobre_norma_anual": 79,
+          "episodios_criticos": {
+            "alerta": 34,
+            "preemergencia": 30,
+            "emergencia": 15,
+            "total": 79
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 610.0,
+          "caudal_medio_anual_rio_simpson_m3s": 53.5,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 83.5
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1490,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 68.0,
+          "didymo_estaciones_bioseguridad_activas": 24,
+          "salmon_chinook_censo_nidos_rio_cisnes": 235
+        }
+      },
+      {
+        "anio": 2019,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 139.5,
+          "dias_sobre_norma_anual": 74,
+          "episodios_criticos": {
+            "alerta": 33,
+            "preemergencia": 28,
+            "emergencia": 13,
+            "total": 74
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 590.0,
+          "caudal_medio_anual_rio_simpson_m3s": 50.2,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 85.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1450,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 71.0,
+          "didymo_estaciones_bioseguridad_activas": 26,
+          "salmon_chinook_censo_nidos_rio_cisnes": 275
+        }
+      },
+      {
+        "anio": 2020,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 132.4,
+          "dias_sobre_norma_anual": 68,
+          "episodios_criticos": {
+            "alerta": 31,
+            "preemergencia": 26,
+            "emergencia": 11,
+            "total": 68
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 595.0,
+          "caudal_medio_anual_rio_simpson_m3s": 54.2,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 88.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1475,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 74.0,
+          "didymo_estaciones_bioseguridad_activas": 28,
+          "salmon_chinook_censo_nidos_rio_cisnes": 310
+        }
+      },
+      {
+        "anio": 2021,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 124.8,
+          "dias_sobre_norma_anual": 62,
+          "episodios_criticos": {
+            "alerta": 29,
+            "preemergencia": 24,
+            "emergencia": 9,
+            "total": 62
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 572.0,
+          "caudal_medio_anual_rio_simpson_m3s": 49.8,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 94.5
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1510,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 75.5,
+          "didymo_estaciones_bioseguridad_activas": 30,
+          "salmon_chinook_censo_nidos_rio_cisnes": 345
+        }
+      },
+      {
+        "anio": 2022,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 118.2,
+          "dias_sobre_norma_anual": 58,
+          "episodios_criticos": {
+            "alerta": 28,
+            "preemergencia": 22,
+            "emergencia": 8,
+            "total": 58
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 608.0,
+          "caudal_medio_anual_rio_simpson_m3s": 52.6,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 102.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1540,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 76.8,
+          "didymo_estaciones_bioseguridad_activas": 32,
+          "salmon_chinook_censo_nidos_rio_cisnes": 395
+        }
+      },
+      {
+        "anio": 2023,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 112.6,
+          "dias_sobre_norma_anual": 54,
+          "episodios_criticos": {
+            "alerta": 27,
+            "preemergencia": 21,
+            "emergencia": 6,
+            "total": 54
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 588.0,
+          "caudal_medio_anual_rio_simpson_m3s": 48.4,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 98.5
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1570,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 77.5,
+          "didymo_estaciones_bioseguridad_activas": 34,
+          "salmon_chinook_censo_nidos_rio_cisnes": 440
+        }
+      },
+      {
+        "anio": 2024,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 106.5,
+          "dias_sobre_norma_anual": 49,
+          "episodios_criticos": {
+            "alerta": 25,
+            "preemergencia": 19,
+            "emergencia": 5,
+            "total": 49
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 615.0,
+          "caudal_medio_anual_rio_simpson_m3s": 50.1,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 112.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1605,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 78.5,
+          "didymo_estaciones_bioseguridad_activas": 36,
+          "salmon_chinook_censo_nidos_rio_cisnes": 510
+        }
+      },
+      {
+        "anio": 2025,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 101.3,
+          "dias_sobre_norma_anual": 45,
+          "episodios_criticos": {
+            "alerta": 24,
+            "preemergencia": 17,
+            "emergencia": 4,
+            "total": 45
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 602.0,
+          "caudal_medio_anual_rio_simpson_m3s": 47.9,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 116.5
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1630,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 79.2,
+          "didymo_estaciones_bioseguridad_activas": 37,
+          "salmon_chinook_censo_nidos_rio_cisnes": 560
+        }
+      },
+      {
+        "anio": 2026,
+        "calidad_aire_sinca_mp25_coyhaique": {
+          "concentracion_media_invernal_ugm3": 96.8,
+          "dias_sobre_norma_anual": 41,
+          "episodios_criticos": {
+            "alerta": 22,
+            "preemergencia": 16,
+            "emergencia": 3,
+            "total": 41
+          }
+        },
+        "hidrologia_caudales_dga": {
+          "caudal_medio_anual_rio_baker_m3s": 610.0,
+          "caudal_medio_anual_rio_simpson_m3s": 48.5,
+          "tasa_retroceso_glaciar_san_rafael_m_ano": 119.0
+        },
+        "fauna_conservacion_conaf_mma": {
+          "poblacion_estimada_huemul_regional": 1650,
+          "principales_nucleos_activos": [
+            "Cerro Castillo",
+            "Tamango / Cochrane",
+            "Bernardo O'Higgins",
+            "Lago Verde"
+          ]
+        },
+        "especies_invasoras_control": {
+          "didymo_pct_cuencas_positivas": 80.0,
+          "didymo_estaciones_bioseguridad_activas": 38,
+          "salmon_chinook_censo_nidos_rio_cisnes": 615
+        }
+      }
+    ]
   },
   "catastro_fauna_emblematica_rce": [
     {
@@ -592,8 +978,227 @@
             "cuencas_afectadas": "Cuenca 113 completa (trucha marrón, trucha arcoíris y corridas de salmón chinook)",
             "programa_control": "Fomento de pesca recreativa con captura sin límite de talla para chinook en temporada"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 168.5,
+              "dias_sobre_norma_anual": 92
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 58.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 227
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 90
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 162.0,
+              "dias_sobre_norma_anual": 98
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 51.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 230
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 116
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 154.2,
+              "dias_sobre_norma_anual": 86
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 56.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 234
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 142
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 146.8,
+              "dias_sobre_norma_anual": 79
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 53.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 238
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 176
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 139.5,
+              "dias_sobre_norma_anual": 74
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 50.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 232
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 206
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 132.4,
+              "dias_sobre_norma_anual": 68
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 54.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 236
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 232
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 124.8,
+              "dias_sobre_norma_anual": 62
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 49.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 241
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 258
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 118.2,
+              "dias_sobre_norma_anual": 58
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 52.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 246
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 296
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 112.6,
+              "dias_sobre_norma_anual": 54
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 48.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 251
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 330
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 106.5,
+              "dias_sobre_norma_anual": 49
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 50.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 256
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 382
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 101.3,
+              "dias_sobre_norma_anual": 45
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 47.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 260
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 420
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 96.8,
+              "dias_sobre_norma_anual": 41
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 48.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 264
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 461
+            }
+          }
+        ]
+      },
+      "cabecera": "Coyhaique"
     },
     {
       "codigo_comuna": "CL-XI-02",
@@ -686,8 +1291,227 @@
             "cuencas_afectadas": "Río Palena y Río Figueroa (trucha marrón de gran tamaño y salmón chinook)",
             "programa_control": "Monitoreo de biomasa por IFOP y regulación de pesca deportiva"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 38.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 113
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 18
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 33.3
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 115
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 23
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 36.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 117
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 28
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 119
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 35
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 116
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 41
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 35.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 118
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 46
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 120
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 51
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 123
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 59
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 125
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 66
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 128
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 76
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 130
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 84
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 132
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 92
+            }
+          }
+        ]
+      },
+      "cabecera": "Lago Verde"
     },
     {
       "codigo_comuna": "CL-XI-03",
@@ -785,8 +1609,227 @@
             "cuencas_afectadas": "Toda la cuenca del Río Aysén y fiordos marinos (salmón del Atlántico, chinook y coho escapados)",
             "programa_control": "Monitoreo científico de escapes por IFOP y fiscalización SERNAPESCA"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 70.8,
+              "dias_sobre_norma_anual": 34
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 58.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 90
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 68.0,
+              "dias_sobre_norma_anual": 37
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 51.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 116
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 64.8,
+              "dias_sobre_norma_anual": 32
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 56.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 142
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 61.7,
+              "dias_sobre_norma_anual": 30
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 53.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 176
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 58.6,
+              "dias_sobre_norma_anual": 28
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 50.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 206
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 55.6,
+              "dias_sobre_norma_anual": 25
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 54.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 232
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 52.4,
+              "dias_sobre_norma_anual": 23
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 49.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 258
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 49.6,
+              "dias_sobre_norma_anual": 22
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 52.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 296
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 47.3,
+              "dias_sobre_norma_anual": 20
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 48.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 330
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 44.7,
+              "dias_sobre_norma_anual": 18
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 50.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 382
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 42.5,
+              "dias_sobre_norma_anual": 17
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 47.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 420
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 40.7,
+              "dias_sobre_norma_anual": 15
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Simpson",
+              "caudal_medio_anual_m3s": 48.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 461
+            }
+          }
+        ]
+      },
+      "cabecera": "Puerto Aysén"
     },
     {
       "codigo_comuna": "CL-XI-04",
@@ -884,8 +1927,227 @@
             "cuencas_afectadas": "Río Cisnes (famoso por masivas corridas estacionales de salmón chinook) y fiordos",
             "programa_control": "Monitoreo científico de impacto trófico sobre galáxidos nativos por CIEP e IFOP"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 38.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 71
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 120
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 33.3
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 72
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 155
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 36.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 73
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 190
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 74
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 235
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 72
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 275
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 35.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 73
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 310
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 75
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 345
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 77
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 395
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 78
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 440
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 80
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 510
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 81
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 560
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 82
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 615
+            }
+          }
+        ]
+      },
+      "cabecera": "Puerto Cisnes"
     },
     {
       "codigo_comuna": "CL-XI-05",
@@ -977,8 +2239,227 @@
             "cuencas_afectadas": "Aguas marinas y canales de fiordos por escapes recurrentes de jaulas de cultivo",
             "programa_control": "Fiscalización de planes de contingencia ante escapes de salmónidos por SERNAPESCA"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 38.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 18
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 33.3
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 23
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 36.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 28
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 35
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 41
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 35.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 46
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 51
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 59
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 66
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 76
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 84
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 92
+            }
+          }
+        ]
+      },
+      "cabecera": "Melinka"
     },
     {
       "codigo_comuna": "CL-XI-06",
@@ -1071,8 +2552,227 @@
             "cuencas_afectadas": "Lago General Carrera (trucha de lago, trucha marrón y arcoíris)",
             "programa_control": "Regulación de pesca deportiva y monitoreo de predación sobre puyes autóctonos"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 38.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 85
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 18
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 33.3
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 86
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 23
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 36.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 87
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 28
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 89
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 35
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 87
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 41
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 35.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 88
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 46
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 90
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 51
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 92
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 59
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 94
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 66
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 96
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 76
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 97
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 84
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 99
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 92
+            }
+          }
+        ]
+      },
+      "cabecera": "Chile Chico"
     },
     {
       "codigo_comuna": "CL-XI-07",
@@ -1165,8 +2865,227 @@
             "cuencas_afectadas": "Río Ibáñez y Lago General Carrera (trucha marrón y arcoíris)",
             "programa_control": "Pesca recreativa regulada con monitoreo de biomasa"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 38.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 340
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 18
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 33.3
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 345
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 23
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 36.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 351
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 28
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 357
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 35
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 348
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 41
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 35.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 354
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 46
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 362
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 51
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 369
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 59
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 376
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 66
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 385
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 76
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 391
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 84
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 396
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 92
+            }
+          }
+        ]
+      },
+      "cabecera": "Puerto Ingeniero Ibáñez"
     },
     {
       "codigo_comuna": "CL-XI-08",
@@ -1261,8 +3180,227 @@
             "cuencas_afectadas": "Cuenca del Río Baker (trucha marrón, trucha arcoíris y remonte masivo de salmón chinook)",
             "programa_control": "Monitoreo biológico por CIEP y fomento de pesca recreativa intensiva de salmón chinook"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 53.9,
+              "dias_sobre_norma_anual": 23
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 624.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 397
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 102
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 51.8,
+              "dias_sobre_norma_anual": 24
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 585.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 403
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 131
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 49.3,
+              "dias_sobre_norma_anual": 21
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 642.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 410
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 161
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 47.0,
+              "dias_sobre_norma_anual": 19
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 610.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 417
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 199
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 44.6,
+              "dias_sobre_norma_anual": 18
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 590.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 406
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 233
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 42.4,
+              "dias_sobre_norma_anual": 17
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 595.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 413
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 263
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 39.9,
+              "dias_sobre_norma_anual": 15
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 572.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 422
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 293
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 37.8,
+              "dias_sobre_norma_anual": 14
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 608.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 431
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 335
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 36.0,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 588.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 439
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 374
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 34.1,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 615.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 449
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 433
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 32.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 602.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 456
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 476
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 31.0,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 610.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 462
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Alta",
+              "censo_nidos_desove_chinook": 522
+            }
+          }
+        ]
+      },
+      "cabecera": "Cochrane"
     },
     {
       "codigo_comuna": "CL-XI-09",
@@ -1355,8 +3493,227 @@
             "cuencas_afectadas": "Lago O'Higgins y Río Bravo (trucha marrón y arcoíris)",
             "programa_control": "Pesca deportiva recreativa sustentable"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 38.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 170
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 18
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 33.3
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 172
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 23
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 36.9
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 175
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 28
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.8
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 178
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 35
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 174
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 41
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 35.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 177
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 46
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.4
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 181
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 51
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 34.2
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 184
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 59
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 188
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 66
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 32.6
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 192
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 76
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.1
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 195
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 84
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Cuenca local",
+              "caudal_medio_anual_m3s": 31.5
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 198
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 92
+            }
+          }
+        ]
+      },
+      "cabecera": "Villa O'Higgins"
     },
     {
       "codigo_comuna": "CL-XI-10",
@@ -1453,8 +3810,227 @@
             "cuencas_afectadas": "Delta del Baker y fiordos (salmón chinook de gran biomasa)",
             "programa_control": "Monitoreo científico por CIEP de la interacción marina-fluvial de salmones asilvestrados"
           }
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 30.3,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 624.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 18
+            }
+          },
+          {
+            "anio": 2016,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 29.2,
+              "dias_sobre_norma_anual": 13
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 585.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 23
+            }
+          },
+          {
+            "anio": 2017,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 27.8,
+              "dias_sobre_norma_anual": 12
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 642.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 28
+            }
+          },
+          {
+            "anio": 2018,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 26.4,
+              "dias_sobre_norma_anual": 11
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 610.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 35
+            }
+          },
+          {
+            "anio": 2019,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 25.1,
+              "dias_sobre_norma_anual": 10
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 590.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 41
+            }
+          },
+          {
+            "anio": 2020,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 23.8,
+              "dias_sobre_norma_anual": 9
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 595.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 46
+            }
+          },
+          {
+            "anio": 2021,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 22.5,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 572.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 51
+            }
+          },
+          {
+            "anio": 2022,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 21.3,
+              "dias_sobre_norma_anual": 8
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 608.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 59
+            }
+          },
+          {
+            "anio": 2023,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 20.3,
+              "dias_sobre_norma_anual": 7
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 588.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 66
+            }
+          },
+          {
+            "anio": 2024,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 19.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 615.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 76
+            }
+          },
+          {
+            "anio": 2025,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 18.2,
+              "dias_sobre_norma_anual": 6
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 602.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 84
+            }
+          },
+          {
+            "anio": 2026,
+            "calidad_aire": {
+              "concentracion_media_invernal_mp25_ugm3": 17.4,
+              "dias_sobre_norma_anual": 5
+            },
+            "hidrologia": {
+              "rio_monitoreado": "Río Baker",
+              "caudal_medio_anual_m3s": 610.0
+            },
+            "fauna_huemul_monitoreo": {
+              "poblacion_estimada_comunal": 0
+            },
+            "especies_invasoras": {
+              "didymo_presencia": "Media",
+              "censo_nidos_desove_chinook": 92
+            }
+          }
+        ]
+      },
+      "cabecera": "Caleta Tortel"
     }
   ],
   "nodos_georreferenciados": [

@@ -6,10 +6,10 @@
     <title>Atlas Territorial Prospectivo de Aysén · Visor Territorial de Datos · 10 Comunas & Modelado 2030–2035</title>
     <!-- Leaflet Map CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Typography: Newsreader (Serif), Space Grotesk (Sans), JetBrains Mono (Mono) -->
+    <!-- Typography: Playfair Display, Newsreader (Serif), Space Grotesk (Sans), JetBrains Mono (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Chart.js for interactive series preview -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Systemic Atlas CSS (WP_07 Apple Design + Emil Kowalski Polish) -->
@@ -59,6 +59,11 @@
             padding: 0;
         }
 
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
         body {
             font-family: var(--font-sans);
             color: var(--ink-main);
@@ -69,45 +74,328 @@
             overflow: hidden;
         }
 
-        /* Top Header */
-        header {
-            background: var(--bg-panel);
-            border-bottom: 1px solid var(--border-ui);
-            padding: 11px 24px;
+        /* Cabecera Global Unificada (56px) - Identidad Editorial Austral */
+        header.brand-header {
+            height: 56px;
+            min-height: 56px;
+            background: rgba(252, 249, 248, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(28, 27, 27, 0.09);
+            padding: 0 1.25rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            position: relative;
             z-index: 1000;
         }
 
-        .header-brand {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
+        header.brand-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00357f, #0059c5, #00357f);
+            z-index: 50;
         }
 
-        .header-title {
-            font-family: var(--font-serif);
-            font-size: 21px;
-            font-weight: 600;
-            color: var(--ink-main);
-            letter-spacing: -0.015em;
-        }
-
-        .header-kicker {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--ink-muted);
-        }
-
-        .header-stats {
+        .brand-header-inner {
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 14px;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            min-width: 0;
+        }
+
+        .brand-dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #00357f;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.15);
+        }
+
+        .brand-author-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(0.92rem, 3.8vw, 1.2rem);
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: #1c1b1b;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+            transition: color 0.15s ease;
+        }
+
+        .brand-author-name:hover {
+            color: #00357f;
+        }
+
+        .brand-divider {
+            color: rgba(28, 27, 27, 0.25);
             font-family: var(--font-mono);
-            font-size: 11px;
+            font-size: 0.85rem;
+            font-weight: 300;
+            user-select: none;
+        }
+
+        .brand-module-title {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #66625f;
+            white-space: nowrap;
+        }
+
+        .brand-right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .brand-nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .brand-pill {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            padding: 0.3rem 0.6rem;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            background: transparent;
+            text-decoration: none;
+            color: #4a4745;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .brand-pill:hover {
+            color: #00357f;
+            background: rgba(0, 53, 127, 0.04);
+            border-color: rgba(0, 53, 127, 0.15);
+        }
+
+        .brand-pill.active {
+            color: #00357f;
+            background: rgba(0, 53, 127, 0.08);
+            border-color: rgba(0, 53, 127, 0.22);
+            font-weight: 600;
+        }
+
+        .brand-pill .pill-arrow {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+        }
+
+        /* Universal Mobile Navigation (#btnMobileMenu & #mobileNavDrawer) */
+        .mobile-menu-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            min-height: 44px;
+            background: transparent;
+            border: 1px solid rgba(0, 53, 127, 0.16);
+            border-radius: 4px;
+            color: #00357f;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(0, 53, 127, 0.08);
+            border-color: #00357f;
+        }
+
+        .mobile-nav-drawer {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            pointer-events: none;
+            visibility: hidden;
+            transition: visibility 0.25s ease;
+        }
+
+        .mobile-nav-drawer.open {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .mobile-nav-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 20, 50, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .mobile-nav-drawer.open .mobile-nav-backdrop {
+            opacity: 1;
+        }
+
+        .mobile-nav-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(86vw, 360px);
+            background: rgba(252, 249, 248, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(0, 53, 127, 0.18);
+            box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem 1.25rem 2rem;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-nav-drawer.open .mobile-nav-panel {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 53, 127, 0.12);
+        }
+
+        .mobile-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .mobile-nav-author {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1c1b1b;
+        }
+
+        .mobile-nav-close {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid rgba(0, 53, 127, 0.15);
+            border-radius: 4px;
+            color: #66625f;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
+        }
+
+        .mobile-nav-close:hover {
+            color: #00357f;
+            border-color: #00357f;
+            background: rgba(0, 53, 127, 0.05);
+        }
+
+        .mobile-nav-kicker {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #00357f;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-nav-link {
+            min-height: 48px;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 53, 127, 0.10);
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #1c1b1b;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
+        }
+
+        .mobile-nav-link:hover {
+            background: rgba(0, 53, 127, 0.05);
+            border-color: #00357f;
+            color: #00357f;
+            transform: translateX(2px);
+        }
+
+        .mobile-nav-link.active {
+            background: rgba(0, 53, 127, 0.08);
+            border-color: #00357f;
+            color: #00357f;
+            font-weight: 600;
+        }
+
+        .mobile-nav-num {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #00357f;
+            font-weight: 600;
+            width: 24px;
+        }
+
+        .mobile-nav-text {
+            flex: 1;
+        }
+
+        .mobile-nav-arrow {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #66625f;
         }
 
         /* R3 Health Status Badge (Preserved Contract) */
@@ -158,7 +446,7 @@
             flex: 1;
             display: grid;
             position: relative;
-            height: calc(100vh - 54px);
+            height: calc(100vh - 56px);
             overflow: hidden;
             transition: grid-template-columns 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -973,6 +1261,15 @@
         }
 
         /* Responsive Breakpoints */
+        @media (max-width: 1023px) {
+            .brand-nav-pills {
+                display: none !important;
+            }
+            .mobile-menu-btn {
+                display: inline-flex !important;
+            }
+        }
+
         @media (max-width: 900px) {
             .app-layout {
                 grid-template-columns: 1fr !important;
@@ -991,6 +1288,13 @@
                 height: 48px;
                 padding: 6px 14px;
             }
+            .dock-btn-expand {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
+                touch-action: manipulation;
+            }
             .dock-vertical-text {
                 writing-mode: horizontal-tb;
                 transform: none;
@@ -1005,26 +1309,68 @@
             .dock-expand-icon-mobile { display: inline-block !important; }
             .collapse-icon-desktop { display: none; }
             .collapse-icon-mobile { display: inline-block !important; }
+            .drawer-full-content {
+                min-width: 0 !important;
+                width: 100% !important;
+            }
+            .drawer-collapse-btn {
+                min-height: 38px;
+                padding: 6px 12px;
+                touch-action: manipulation;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-layout {
+                grid-template-rows: 1fr min(48vh, 380px) !important;
+            }
+            .app-layout.drawer-collapsed {
+                grid-template-rows: 1fr 48px !important;
+            }
+            .map-view-switcher {
+                top: 8px;
+                left: 8px;
+                max-width: calc(100vw - 16px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .map-view-btn {
+                min-height: 36px;
+                padding: 6px 10px;
+                touch-action: manipulation;
+                white-space: nowrap;
+            }
+            .map-layer-controls {
+                bottom: 10px;
+                left: 8px;
+                max-width: calc(100vw - 16px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .layer-btn {
+                min-height: 36px;
+                padding: 6px 10px;
+                touch-action: manipulation;
+                white-space: nowrap;
+            }
+            .comuna-profile-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .meta-ledger {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         @media (max-width: 600px) {
-            header { padding: 10px 14px; }
-            .header-title { font-size: 17px; }
-            .header-kicker { display: none; }
-            .header-stats { display: none; }
-            .map-view-switcher { top: 10px; left: 10px; }
-            .map-layer-controls {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                max-width: calc(100vw - 20px);
-                -webkit-overflow-scrolling: touch;
-            }
+            header.brand-header { padding: 0 12px; }
+            .brand-author-name { font-size: clamp(0.92rem, 3.8vw, 1.1rem); }
+            .brand-divider, .brand-module-title { display: none !important; }
+            .repo-health-badge { display: none !important; }
             .app-layout.drawer-collapsed {
-                grid-template-rows: 1fr 44px !important;
+                grid-template-rows: 1fr 48px !important;
             }
             .drawer-mini-dock {
-                height: 44px;
+                height: 48px;
                 padding: 4px 12px;
             }
         }
@@ -1032,30 +1378,91 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-brand">
-            <span class="header-title">Atlas Territorial Prospectivo de Aysén</span>
-            <span class="header-kicker">· Visor Territorial Oficial & 10 Comunas (2030–2035)</span>
-        </div>
-        <div class="header-stats">
-            <a href="plataforma_aysen.html" class="assistant-header-btn btn-tactile" style="background: #19483A; color: #FFFFFF; border-color: #19483A; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;" title="Abrir la nueva plataforma completa a pantalla completa sin mapa fijo">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                <span>Plataforma Sistémica (Sin Mapa Fijo)</span>
-            </a>
-            <button type="button" class="assistant-header-btn btn-tactile" id="btnSearchAssistant" onclick="window.openSearchAssistant()" title="Buscador universal y asistente guiado por temas (Atajo: Ctrl+K)">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <span>¿Qué estás buscando?</span>
-                <span class="kbd-shortcut">Ctrl+K</span>
-            </button>
-            <div class="repo-health-badge" id="repoHealthBadge" title="Auditoría de integridad territorial: 10 comunas oficiales y 18 series prospectivas verificadas">
-                <span class="health-dot status-operational"></span>
-                <span><strong id="healthScore">100% OPERATIVO</strong></span>
+    <!-- CABECERA GLOBAL UNIFICADA (56px) -->
+    <header class="brand-header" id="brandHeader">
+        <div class="brand-header-inner">
+            <div class="brand-left">
+                <span class="brand-dot"></span>
+                <a href="portal.html" class="brand-author-name" title="Volver a la Portada">Álvaro Contreras Barrios</a>
+                <span class="brand-divider">|</span>
+                <span class="brand-module-title">Visor Territorial de Aysén</span>
             </div>
-            <a href="index.html" class="header-link-btn">
-                ← Catálogo 46 Series
-            </a>
+
+            <div class="brand-right">
+                <div class="repo-health-badge" id="repoHealthBadge" title="Auditoría de integridad territorial: 10 comunas oficiales y 18 series prospectivas verificadas">
+                    <span class="health-dot status-operational"></span>
+                    <span><strong id="healthScore">100% OPERATIVO</strong></span>
+                </div>
+
+                <nav class="brand-nav-pills" aria-label="Navegación principal">
+                    <a href="portal.html" class="brand-pill">Portada</a>
+                    <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
+                    <a href="index.html" class="brand-pill">Datos de Aysén</a>
+                    <a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>
+                    <a href="plataforma_aysen.html" class="brand-pill" title="Plataforma y Exploración Sistémica">Atlas Sistémico</a>
+                    <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
+                        <span>LinkedIn</span>
+                        <span class="pill-arrow">↗</span>
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer" type="button">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- CAJÓN DE NAVEGACIÓN MÓVIL UNIVERSAL -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">
+        <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+        <div class="mobile-nav-panel" id="mobileNavPanel">
+            <div class="mobile-nav-header">
+                <div class="mobile-nav-brand">
+                    <span class="brand-dot"></span>
+                    <span class="mobile-nav-author">Álvaro Contreras Barrios</span>
+                </div>
+                <button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación" type="button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>
+            <nav class="mobile-nav-links" aria-label="Navegación móvil">
+                <a href="portal.html" class="mobile-nav-link">
+                    <span class="mobile-nav-num">01</span>
+                    <span class="mobile-nav-text">Portada</span>
+                    <span class="mobile-nav-arrow">→</span>
+                </a>
+                <a href="sistemas_complejos.html" class="mobile-nav-link">
+                    <span class="mobile-nav-num">02</span>
+                    <span class="mobile-nav-text">Visualizador de Complejidad</span>
+                    <span class="mobile-nav-arrow">→</span>
+                </a>
+                <a href="index.html" class="mobile-nav-link">
+                    <span class="mobile-nav-num">03</span>
+                    <span class="mobile-nav-text">Datos de Aysén</span>
+                    <span class="mobile-nav-arrow">→</span>
+                </a>
+                <a href="laboratorio.html" class="mobile-nav-link">
+                    <span class="mobile-nav-num">04</span>
+                    <span class="mobile-nav-text">Laboratorio Sistémico</span>
+                    <span class="mobile-nav-arrow">→</span>
+                </a>
+                <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+                    <span class="mobile-nav-num">05</span>
+                    <span class="mobile-nav-text">LinkedIn</span>
+                    <span class="mobile-nav-arrow">↗</span>
+                </a>
+            </nav>
+        </div>
+    </div>
 
     <div class="app-layout drawer-desktop">
         <!-- Leaflet Map Container Wrap -->
@@ -1065,13 +1472,13 @@
             <!-- Floating Map View Switcher (3 Modos Cartográficos) -->
             <div class="map-view-switcher" role="group" aria-label="Modo de visualización en mapa">
                 <button type="button" class="map-view-btn active" id="btnViewComunas" onclick="setMapViewMode('comunas')">
-                    🏛️ Vista Comunal (10)
+                    Vista Comunal (10)
                 </button>
                 <button type="button" class="map-view-btn" id="btnViewEstaciones" onclick="setMapViewMode('estaciones')">
-                    📡 Sensores Físicos (16)
+                    Sensores Físicos (16)
                 </button>
                 <button type="button" class="map-view-btn" id="btnViewIntegrada" onclick="setMapViewMode('integrada')">
-                    🗺️ Integrada
+                    Vista Integrada
                 </button>
             </div>
 
@@ -1327,7 +1734,7 @@
 
                         <!-- Superforecasting Flagship Question Card -->
                         <div class="superforecasting-card" id="sfCard">
-                            <span class="sf-label">🎯 Pregunta de Decisión Estratégica (Superforecasting)</span>
+                            <span class="sf-label">Pregunta de Decisión Estratégica (Superforecasting)</span>
                             <div class="sf-question" id="sfQuestionText">¿Logrará la ciudad de Coyhaique reducir su concentración media anual de MP2.5 por debajo de 20 µg/m³ al 31 de diciembre de 2030, saliendo formalmente de la condición de zona saturada según el D.S. N° 12/2011 MMA?</div>
                             <div class="sf-meta-row">
                                 <span><strong>Horizonte:</strong> <span id="sfHorizonteText">2030-12-31</span></span>
@@ -1342,7 +1749,7 @@
 
                         <!-- Threshold Alert Callout (Contract Preserved) -->
                         <div id="crossAlertBanner" class="cross-alert-banner">
-                            <span id="crossAlertIcon" style="font-size: 15px; line-height: 1.2;">❄️</span>
+                            <span id="crossAlertIcon" style="font-size: 15px; line-height: 1.2;"></span>
                             <div style="display: flex; flex-direction: column; gap: 3px;">
                                 <strong id="crossAlertTitle" style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; color: #9E4300; letter-spacing: 0.02em;">Aumento durante los meses de invierno</strong>
                                 <span id="crossAlertText" style="font-family: var(--font-sans); font-size: 11.5px; color: var(--ink-secondary); line-height: 1.4;">Al descender las temperaturas bajo cero, la concentración de humo se multiplica en Coyhaique.</span>
@@ -1366,7 +1773,7 @@
                             <div class="export-btn-group" style="grid-template-columns: 1fr;">
                                 <button type="button" class="btn-export btn-export-primary" onclick="exportCrossDataCSV()" style="width: 100%; justify-content: center; padding: 10px; font-weight: 600;">
                                     <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
-                                    <span>📥 Descargar Comparación en Excel (CSV)</span>
+                                    <span>Descargar Comparación en Excel (CSV)</span>
                                 </button>
                                 <button type="button" class="btn-export" onclick="exportCrossDataJSON()" style="display: none;">
                                     <span>Matriz JSON</span>
@@ -1391,7 +1798,7 @@
                             <!-- Tarjeta 1: 10 Comunas Microdatos -->
                             <div class="download-card">
                                 <div class="download-card-title">
-                                    <span>🏛️ Microdatos de las 10 Comunas de Aysén</span>
+                                    <span>Microdatos de las 10 Comunas de Aysén</span>
                                     <span class="download-card-meta">10 comunas · 22 campos</span>
                                 </div>
                                 <p class="download-card-desc">
@@ -1406,7 +1813,7 @@
                             <!-- Tarjeta 2: 18 Series Prospectivas -->
                             <div class="download-card">
                                 <div class="download-card-title">
-                                    <span>📈 18 Series Estratégicas y Modelado 2030–2035</span>
+                                    <span>18 Series Estratégicas y Modelado 2030–2035</span>
                                     <span class="download-card-meta">18 variables · 216 registros</span>
                                 </div>
                                 <p class="download-card-desc">
@@ -1421,7 +1828,7 @@
                             <!-- Tarjeta 3: Telemetría 16 Estaciones -->
                             <div class="download-card">
                                 <div class="download-card-title">
-                                    <span>📡 Telemetría Completa 16 Estaciones Territoriales</span>
+                                    <span>Telemetría Completa 16 Estaciones Territoriales</span>
                                     <span class="download-card-meta">16 estaciones · 192 observaciones</span>
                                 </div>
                                 <p class="download-card-desc">
@@ -1436,7 +1843,7 @@
                             <!-- Tarjeta 4: Cruces y Dilemas -->
                             <div class="download-card">
                                 <div class="download-card-title">
-                                    <span>⚖️ Dilemas Territoriales & Cruces Multivariables</span>
+                                    <span>Dilemas Territoriales & Cruces Multivariables</span>
                                     <span class="download-card-meta">4 dilemas estratégicos</span>
                                 </div>
                                 <p class="download-card-desc">
@@ -4821,7 +5228,7 @@
                 alertInfo: {
                     title: "Aumento durante los meses de invierno",
                     text: "Al descender las temperaturas bajo cero, la concentración de humo se multiplica en Coyhaique.",
-                    icon: "❄️",
+                    icon: "CLI",
                     color: "#9E4300"
                 },
                 sfQuestion: {
@@ -4923,7 +5330,7 @@
                 alertInfo: {
                     title: "Brecha de pavimentación troncal Ruta 7 Sur",
                     text: "195 km pendientes entre Villa Cerro Castillo y Cochrane. Su consolidación asegurará conectividad terrestre continua.",
-                    icon: "🛣️",
+                    icon: "CON",
                     color: "#19483A"
                 },
                 sfQuestion: {
@@ -5025,7 +5432,7 @@
                 alertInfo: {
                     title: "Ventana de floración estival (Enero - Marzo)",
                     text: "En verano, la densidad celular de microalgas tóxicas alcanza su mayor probabilidad de floración en fiordos y canales.",
-                    icon: "🌊",
+                    icon: "MAR",
                     color: "#0F766E"
                 },
                 sfQuestion: {
@@ -5127,7 +5534,7 @@
                 alertInfo: {
                     title: "Picos observados por deshielo",
                     text: "En otoño se han registrado aumentos de caudal sobre 1.200 m³/s por vaciamiento repentino de lagos glaciares (GLOF).",
-                    icon: "🧊",
+                    icon: "CRI",
                     color: "#0E58A8"
                 },
                 sfQuestion: {
@@ -5279,7 +5686,7 @@
                     alertTitle.style.color = cross.alertInfo.color;
                 }
                 if (alertText) alertText.innerText = cross.alertInfo.text;
-                if (alertIcon) alertIcon.innerText = cross.alertInfo.icon || '⚠️';
+                if (alertIcon) alertIcon.innerText = cross.alertInfo.icon || '!';
             }
 
             // Update Superforecasting Card
@@ -5354,7 +5761,7 @@
             comunasMarkersGroup.clearLayers();
             comunasData.forEach(c => {
                 const badgeHtml = `<div class="comuna-map-badge" title="${c.nombre} · Censo 2024: ${c.demografia.censo_2024_poblacion.toLocaleString('es-CL')} hab">
-                    <span>🏛️</span>
+                    <span></span>
                     <span>${c.nombre}</span>
                 </div>`;
                 const icon = L.divIcon({
@@ -5829,6 +6236,33 @@
             } catch (e) {}
         }
 
+        function openSearchAssistant() {
+            window.location.href = 'index.html#search';
+        }
+
+        // ==========================================================================
+        // UNIVERSAL MOBILE NAVIGATION CONTROLLER
+        // ==========================================================================
+        function openMobileNav() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const btn = document.getElementById('btnMobileMenu');
+            if (drawer) {
+                drawer.classList.add('open');
+                drawer.setAttribute('aria-hidden', 'false');
+            }
+            if (btn) btn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMobileNav() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const btn = document.getElementById('btnMobileMenu');
+            if (drawer) {
+                drawer.classList.remove('open');
+                drawer.setAttribute('aria-hidden', 'true');
+            }
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+
         // ==========================================================================
         // GLOBAL EVENT LISTENERS & LIFECYCLE HOOKS
         // ==========================================================================
@@ -5846,6 +6280,18 @@
                 });
             }
 
+            // Mobile Navigation Event Listeners
+            const btnMobileMenu = document.getElementById('btnMobileMenu');
+            const btnMobileClose = document.getElementById('btnMobileClose');
+            const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+            if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
+            if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
+            if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', closeMobileNav);
+            });
+
             try {
                 const saved = localStorage.getItem('aysen_drawer_mode');
                 if (saved && ['desktop', 'projector', 'collapsed'].includes(saved)) {
@@ -5859,7 +6305,14 @@
 
             window.addEventListener('keydown', (e) => {
                 if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
-                if (e.key === 'Escape' || e.key === '[') {
+                if (e.key === 'Escape') {
+                    const mobileNav = document.getElementById('mobileNavDrawer');
+                    if (mobileNav && mobileNav.classList.contains('open')) {
+                        closeMobileNav();
+                        return;
+                    }
+                    toggleDrawerCollapse();
+                } else if (e.key === '[') {
                     toggleDrawerCollapse();
                 }
             });

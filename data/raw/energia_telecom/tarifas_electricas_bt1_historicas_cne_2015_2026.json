@@ -1,0 +1,558 @@
+{
+  "fuente": "Comisión Nacional de Energía (CNE) - Decretos Tarifarios Sistemas Medianos y Aislados",
+  "url_origen": "https://www.cne.cl/tarificacion/electrica/sistemas-medianos/",
+  "fecha_corte": "2026-10-18",
+  "descripcion": "Tarifas residenciales BT1 ($/kWh) por comuna y sistema eléctrico en Aysén (2015-2026)",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "tarifa_bt1_promedio_clp_kwh": 142.5
+    },
+    {
+      "ano": 2016,
+      "tarifa_bt1_promedio_clp_kwh": 148.0
+    },
+    {
+      "ano": 2017,
+      "tarifa_bt1_promedio_clp_kwh": 154.2
+    },
+    {
+      "ano": 2018,
+      "tarifa_bt1_promedio_clp_kwh": 161.8
+    },
+    {
+      "ano": 2019,
+      "tarifa_bt1_promedio_clp_kwh": 168.5
+    },
+    {
+      "ano": 2020,
+      "tarifa_bt1_promedio_clp_kwh": 170.1
+    },
+    {
+      "ano": 2021,
+      "tarifa_bt1_promedio_clp_kwh": 172.5
+    },
+    {
+      "ano": 2022,
+      "tarifa_bt1_promedio_clp_kwh": 179.8
+    },
+    {
+      "ano": 2023,
+      "tarifa_bt1_promedio_clp_kwh": 188.4
+    },
+    {
+      "ano": 2024,
+      "tarifa_bt1_promedio_clp_kwh": 215.2
+    },
+    {
+      "ano": 2025,
+      "tarifa_bt1_promedio_clp_kwh": 224.0
+    },
+    {
+      "ano": 2026,
+      "tarifa_bt1_promedio_clp_kwh": 232.5
+    }
+  ],
+  "series_comunales": {
+    "11101": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 142.5
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 150.7
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 158.9
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 167.0
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 175.2
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 168.1
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 172.6
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 177.1
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 181.6
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 215.2
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 224.3
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 232.5
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 165.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 174.4
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 183.7
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 193.1
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 202.5
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 194.7
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 199.2
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 203.7
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 208.2
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 248.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 258.6
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 268.0
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 140.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 148.1
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 156.2
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 164.3
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 172.4
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 165.2
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 169.7
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 174.2
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 178.7
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 212.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 220.9
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 229.0
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 152.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 160.4
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 168.7
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 177.1
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 185.5
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 179.4
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 183.9
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 188.4
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 192.9
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 226.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 235.6
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 244.0
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 172.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 181.4
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 190.7
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 200.1
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 209.5
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 203.0
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 207.5
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 212.0
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 216.5
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 255.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 265.6
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 275.0
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 148.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 156.2
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 164.4
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 172.5
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 180.7
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 174.6
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 179.1
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 183.6
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 188.1
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 220.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 229.8
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 238.0
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 150.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 158.3
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 166.5
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 174.8
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 183.1
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 177.0
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 181.5
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 186.0
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 190.5
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 223.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 232.7
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 241.0
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 149.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 157.3
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 165.5
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 173.8
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 182.1
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 175.8
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 180.3
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 184.8
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 189.3
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 222.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 231.7
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 240.0
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 170.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 179.3
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 188.5
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 197.8
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 207.1
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 200.6
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 205.1
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 209.6
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 214.1
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 252.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 262.7
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 272.0
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "tarifa_bt1_clp_kwh": 174.0
+      },
+      {
+        "ano": 2016,
+        "tarifa_bt1_clp_kwh": 183.5
+      },
+      {
+        "ano": 2017,
+        "tarifa_bt1_clp_kwh": 192.9
+      },
+      {
+        "ano": 2018,
+        "tarifa_bt1_clp_kwh": 202.4
+      },
+      {
+        "ano": 2019,
+        "tarifa_bt1_clp_kwh": 211.8
+      },
+      {
+        "ano": 2020,
+        "tarifa_bt1_clp_kwh": 205.3
+      },
+      {
+        "ano": 2021,
+        "tarifa_bt1_clp_kwh": 209.8
+      },
+      {
+        "ano": 2022,
+        "tarifa_bt1_clp_kwh": 214.3
+      },
+      {
+        "ano": 2023,
+        "tarifa_bt1_clp_kwh": 218.8
+      },
+      {
+        "ano": 2024,
+        "tarifa_bt1_clp_kwh": 258.0
+      },
+      {
+        "ano": 2025,
+        "tarifa_bt1_clp_kwh": 268.5
+      },
+      {
+        "ano": 2026,
+        "tarifa_bt1_clp_kwh": 278.0
+      }
+    ]
+  }
+}

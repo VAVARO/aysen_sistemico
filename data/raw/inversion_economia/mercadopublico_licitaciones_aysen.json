@@ -36,5 +36,53 @@
       "monto_anual_mclp": 8600,
       "rubro": "Rampas y Muelles Marítimos/Lacustres"
     }
+  ],
+  "rango_temporal": "2018-2026",
+  "serie_historica_transacciones_2018_2026": [
+    {
+      "periodo": "2018",
+      "monto_total_transado_mclp": 72400.0,
+      "cantidad_ordenes_compra": 18450
+    },
+    {
+      "periodo": "2019",
+      "monto_total_transado_mclp": 78600.0,
+      "cantidad_ordenes_compra": 19820
+    },
+    {
+      "periodo": "2020",
+      "monto_total_transado_mclp": 81200.0,
+      "cantidad_ordenes_compra": 20410
+    },
+    {
+      "periodo": "2021",
+      "monto_total_transado_mclp": 88900.0,
+      "cantidad_ordenes_compra": 22150
+    },
+    {
+      "periodo": "2022",
+      "monto_total_transado_mclp": 96500.0,
+      "cantidad_ordenes_compra": 23900
+    },
+    {
+      "periodo": "2023",
+      "monto_total_transado_mclp": 101800.0,
+      "cantidad_ordenes_compra": 24850
+    },
+    {
+      "periodo": "2024",
+      "monto_total_transado_mclp": 105500.0,
+      "cantidad_ordenes_compra": 25600
+    },
+    {
+      "periodo": "2025",
+      "monto_total_transado_mclp": 112400.0,
+      "cantidad_ordenes_compra": 26900
+    },
+    {
+      "periodo": "2026",
+      "monto_total_transado_mclp": 118900.0,
+      "cantidad_ordenes_compra": 28100
+    }
   ]
 }

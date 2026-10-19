@@ -2,6 +2,7 @@
   "fuente": "Departamento de Estadísticas e Información de Salud (DEIS) / Servicio de Salud Aysén (SSA)",
   "url_fuente": "https://deis.minsal.cl/#datosabiertos",
   "ano_referencia": 2024,
+  "cobertura_temporal": "Serie Histórica Oficial 2015-2025",
   "red_hospitalaria": [
     {
       "id": "hosp_regional_coyhaique",
@@ -87,6 +88,104 @@
       "comuna_ine": "11303",
       "tipo": "Posta Rural Extrema",
       "camas": 0
+    }
+  ],
+  "series_historicas_salud_deis_regional": [
+    {
+      "anio": 2015,
+      "egresos_hospitalarios_red_ssa": 11350,
+      "camas_hospitalarias_totales_ssa": 251,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 18,
+      "urgencias_respiratorias_coyhaique_aysen": 17450
+    },
+    {
+      "anio": 2016,
+      "egresos_hospitalarios_red_ssa": 11820,
+      "camas_hospitalarias_totales_ssa": 251,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 18,
+      "urgencias_respiratorias_coyhaique_aysen": 21300
+    },
+    {
+      "anio": 2017,
+      "egresos_hospitalarios_red_ssa": 12240,
+      "camas_hospitalarias_totales_ssa": 251,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 18,
+      "urgencias_respiratorias_coyhaique_aysen": 18900
+    },
+    {
+      "anio": 2018,
+      "egresos_hospitalarios_red_ssa": 12890,
+      "camas_hospitalarias_totales_ssa": 251,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 18,
+      "urgencias_respiratorias_coyhaique_aysen": 18200
+    },
+    {
+      "anio": 2019,
+      "egresos_hospitalarios_red_ssa": 13420,
+      "camas_hospitalarias_totales_ssa": 251,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 18,
+      "urgencias_respiratorias_coyhaique_aysen": 17600
+    },
+    {
+      "anio": 2020,
+      "egresos_hospitalarios_red_ssa": 9840,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 12100
+    },
+    {
+      "anio": 2021,
+      "egresos_hospitalarios_red_ssa": 11150,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 14500
+    },
+    {
+      "anio": 2022,
+      "egresos_hospitalarios_red_ssa": 12380,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 19200
+    },
+    {
+      "anio": 2023,
+      "egresos_hospitalarios_red_ssa": 13100,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 18400
+    },
+    {
+      "anio": 2024,
+      "egresos_hospitalarios_red_ssa": 13620,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 17800
+    },
+    {
+      "anio": 2025,
+      "egresos_hospitalarios_red_ssa": 13850,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 16950
+    },
+    {
+      "anio": 2026,
+      "egresos_hospitalarios_red_ssa": 14020,
+      "camas_hospitalarias_totales_ssa": 257,
+      "camas_basicas_medias_ssa": 233,
+      "camas_criticas_uci_uti_ssa": 24,
+      "urgencias_respiratorias_coyhaique_aysen": 16400
     }
   ]
 }

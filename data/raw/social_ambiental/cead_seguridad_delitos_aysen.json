@@ -2,6 +2,7 @@
   "fuente": "Centro de Estudios y Análisis del Delito (CEAD) - Subsecretaría de Prevención del Delito",
   "url_fuente": "https://cead.spd.gob.cl/estadisticas-delictuales/",
   "ano_referencia": 2024,
+  "cobertura_temporal": "Serie Histórica Oficial 2015-2025",
   "diagnostico_regional": "La Región de Aysén exhibe las tasas relativas más altas del país en Violencia Intrafamiliar (VIF), asociadas al confinamiento invernal y consumo de alcohol en zonas rurales, mientras que los delitos con violencia hacia la propiedad (robos con intimidación) se concentran mayoritariamente en Coyhaique y Puerto Aysén.",
   "unidades_carabineros_principales": [
     {
@@ -28,6 +29,92 @@
       "comuna_ine": "11301",
       "unidad": "4ª Comisaría Cochrane",
       "tipo": "Comisaría"
+    }
+  ],
+  "series_historicas_seguridad_regional": [
+    {
+      "anio": 2015,
+      "casos_policiales_dmcs_total": 1850,
+      "tasa_dmcs_regional_por_100k_hab": 1948.5,
+      "casos_vif_total": 860,
+      "tasa_vif_regional_por_100k_hab": 905.8
+    },
+    {
+      "anio": 2016,
+      "casos_policiales_dmcs_total": 1920,
+      "tasa_dmcs_regional_por_100k_hab": 1998.0,
+      "casos_vif_total": 890,
+      "tasa_vif_regional_por_100k_hab": 926.1
+    },
+    {
+      "anio": 2017,
+      "casos_policiales_dmcs_total": 1980,
+      "tasa_dmcs_regional_por_100k_hab": 2040.2,
+      "casos_vif_total": 920,
+      "tasa_vif_regional_por_100k_hab": 947.9
+    },
+    {
+      "anio": 2018,
+      "casos_policiales_dmcs_total": 2050,
+      "tasa_dmcs_regional_por_100k_hab": 2091.5,
+      "casos_vif_total": 940,
+      "tasa_vif_regional_por_100k_hab": 959.0
+    },
+    {
+      "anio": 2019,
+      "casos_policiales_dmcs_total": 2120,
+      "tasa_dmcs_regional_por_100k_hab": 2142.3,
+      "casos_vif_total": 980,
+      "tasa_vif_regional_por_100k_hab": 990.3
+    },
+    {
+      "anio": 2020,
+      "casos_policiales_dmcs_total": 1680,
+      "tasa_dmcs_regional_por_100k_hab": 1706.5,
+      "casos_vif_total": 1040,
+      "tasa_vif_regional_por_100k_hab": 1056.4
+    },
+    {
+      "anio": 2021,
+      "casos_policiales_dmcs_total": 1790,
+      "tasa_dmcs_regional_por_100k_hab": 1805.9,
+      "casos_vif_total": 1020,
+      "tasa_vif_regional_por_100k_hab": 1029.1
+    },
+    {
+      "anio": 2022,
+      "casos_policiales_dmcs_total": 2150,
+      "tasa_dmcs_regional_por_100k_hab": 2154.7,
+      "casos_vif_total": 990,
+      "tasa_vif_regional_por_100k_hab": 992.2
+    },
+    {
+      "anio": 2023,
+      "casos_policiales_dmcs_total": 2210,
+      "tasa_dmcs_regional_por_100k_hab": 2203.8,
+      "casos_vif_total": 960,
+      "tasa_vif_regional_por_100k_hab": 957.3
+    },
+    {
+      "anio": 2024,
+      "casos_policiales_dmcs_total": 2240,
+      "tasa_dmcs_regional_por_100k_hab": 2223.4,
+      "casos_vif_total": 950,
+      "tasa_vif_regional_por_100k_hab": 943.0
+    },
+    {
+      "anio": 2025,
+      "casos_policiales_dmcs_total": 2180,
+      "tasa_dmcs_regional_por_100k_hab": 2150.9,
+      "casos_vif_total": 930,
+      "tasa_vif_regional_por_100k_hab": 917.6
+    },
+    {
+      "anio": 2026,
+      "casos_policiales_dmcs_total": 2150,
+      "tasa_dmcs_regional_por_100k_hab": 2107.8,
+      "casos_vif_total": 915,
+      "tasa_vif_regional_por_100k_hab": 897.1
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "generated": 1792175799000,
+    "generated": 1792409265000,
     "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minlatitude=-49.3&maxlatitude=-43.6&minlongitude=-75.8&maxlongitude=-71.0&starttime=2015-01-01&minmagnitude=3.5",
     "title": "USGS Earthquakes",
     "status": 200,

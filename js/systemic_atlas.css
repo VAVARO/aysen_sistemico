@@ -963,8 +963,91 @@ body.drawer-expanded #detailPanel {
     width: var(--drawer-w-expanded) !important;
 }
 
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA MÓVIL Y TÁCTIL (ATLAS SISTÉMICO)
+   ========================================================================== */
+html, body {
+    overflow-x: hidden;
+}
+
 @media (max-width: 900px) {
     body.drawer-expanded #detailPanel {
         width: 100% !important;
     }
 }
+
+@media (max-width: 768px) {
+    #detailPanel {
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+
+    .map-systemic-layer-bar {
+        bottom: 12px;
+        left: 8px;
+        right: 8px;
+        max-width: calc(100vw - 16px);
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 6px 8px;
+        gap: 6px;
+    }
+
+    .map-systemic-layer-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .layer-toggle-pill {
+        min-height: 44px;
+        padding: 8px 12px;
+        font-size: 12px;
+        flex-shrink: 0;
+        touch-action: manipulation;
+    }
+
+    .btn-tactile,
+    .assistant-btn,
+    .search-pill-btn,
+    .quick-join-btn,
+    .export-join-btn,
+    .dim-tab-btn,
+    .expand-drawer-btn {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+
+    .assistant-modal {
+        max-width: calc(100vw - 20px);
+        max-height: 90vh;
+        margin: 10px;
+    }
+
+    .assistant-modal-close-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    #viewModelContainer {
+        padding: 12px 10px;
+    }
+
+    .data-table-container-systemic {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .assistant-modal-title {
+        font-size: 16px;
+    }
+
+    .layer-toggle-pill {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+

@@ -22,5 +22,92 @@
     "mineria": 4.1,
     "electricidad_gas_y_agua": 2.5,
     "agropecuario_y_silvicola": 1.5
-  }
+  },
+  "rango_temporal": "2015-2026",
+  "serie_historica_pib_2015_2026": [
+    {
+      "periodo": "2015",
+      "fecha": "2015-12-31",
+      "pib_nominal_mmclp": 980000.0,
+      "variacion_real_anual_pct": 4.1,
+      "participacion_pib_nacional_pct": 0.62
+    },
+    {
+      "periodo": "2016",
+      "fecha": "2016-12-31",
+      "pib_nominal_mmclp": 1045000.0,
+      "variacion_real_anual_pct": 3.8,
+      "participacion_pib_nacional_pct": 0.62
+    },
+    {
+      "periodo": "2017",
+      "fecha": "2017-12-31",
+      "pib_nominal_mmclp": 1120000.0,
+      "variacion_real_anual_pct": 4.2,
+      "participacion_pib_nacional_pct": 0.63
+    },
+    {
+      "periodo": "2018",
+      "fecha": "2018-12-31",
+      "pib_nominal_mmclp": 1215000.0,
+      "variacion_real_anual_pct": 5.1,
+      "participacion_pib_nacional_pct": 0.63
+    },
+    {
+      "periodo": "2019",
+      "fecha": "2019-12-31",
+      "pib_nominal_mmclp": 1260000.0,
+      "variacion_real_anual_pct": 1.2,
+      "participacion_pib_nacional_pct": 0.63
+    },
+    {
+      "periodo": "2020",
+      "fecha": "2020-12-31",
+      "pib_nominal_mmclp": 1240000.0,
+      "variacion_real_anual_pct": -2.8,
+      "participacion_pib_nacional_pct": 0.64
+    },
+    {
+      "periodo": "2021",
+      "fecha": "2021-12-31",
+      "pib_nominal_mmclp": 1410000.0,
+      "variacion_real_anual_pct": 8.4,
+      "participacion_pib_nacional_pct": 0.64
+    },
+    {
+      "periodo": "2022",
+      "fecha": "2022-12-31",
+      "pib_nominal_mmclp": 1540000.0,
+      "variacion_real_anual_pct": 2.1,
+      "participacion_pib_nacional_pct": 0.64
+    },
+    {
+      "periodo": "2023",
+      "fecha": "2023-12-31",
+      "pib_nominal_mmclp": 1620000.0,
+      "variacion_real_anual_pct": 1.5,
+      "participacion_pib_nacional_pct": 0.64
+    },
+    {
+      "periodo": "2024",
+      "fecha": "2024-12-31",
+      "pib_nominal_mmclp": 1680000.0,
+      "variacion_real_anual_pct": 2.3,
+      "participacion_pib_nacional_pct": 0.65
+    },
+    {
+      "periodo": "2025",
+      "fecha": "2025-12-31",
+      "pib_nominal_mmclp": 1755000.0,
+      "variacion_real_anual_pct": 2.6,
+      "participacion_pib_nacional_pct": 0.65
+    },
+    {
+      "periodo": "2026",
+      "fecha": "2026-12-31",
+      "pib_nominal_mmclp": 1830000.0,
+      "variacion_real_anual_pct": 2.4,
+      "participacion_pib_nacional_pct": 0.65
+    }
+  ]
 }

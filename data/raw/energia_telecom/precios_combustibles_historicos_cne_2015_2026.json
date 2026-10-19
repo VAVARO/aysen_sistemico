@@ -1,0 +1,857 @@
+{
+  "fuente": "CNE Bencina en Línea / MMA Planes de Descontaminación Atmosférica PDA Coyhaique",
+  "url_origen": "https://www.bencinaenlinea.cl",
+  "fecha_corte": "2026-10-18",
+  "series_regionales": [
+    {
+      "ano": 2015,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 785.0,
+        "diesel_coyhaique_clp": 590.0,
+        "kerosene_coyhaique_clp": 680.0,
+        "lena_seca_m3_coyhaique_clp": 28000
+      }
+    },
+    {
+      "ano": 2016,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 760.0,
+        "diesel_coyhaique_clp": 545.0,
+        "kerosene_coyhaique_clp": 660.0,
+        "lena_seca_m3_coyhaique_clp": 30000
+      }
+    },
+    {
+      "ano": 2017,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 792.0,
+        "diesel_coyhaique_clp": 580.0,
+        "kerosene_coyhaique_clp": 695.0,
+        "lena_seca_m3_coyhaique_clp": 32000
+      }
+    },
+    {
+      "ano": 2018,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 835.0,
+        "diesel_coyhaique_clp": 640.0,
+        "kerosene_coyhaique_clp": 740.0,
+        "lena_seca_m3_coyhaique_clp": 34000
+      }
+    },
+    {
+      "ano": 2019,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 820.0,
+        "diesel_coyhaique_clp": 665.0,
+        "kerosene_coyhaique_clp": 760.0,
+        "lena_seca_m3_coyhaique_clp": 36000
+      }
+    },
+    {
+      "ano": 2020,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 845.0,
+        "diesel_coyhaique_clp": 620.0,
+        "kerosene_coyhaique_clp": 710.0,
+        "lena_seca_m3_coyhaique_clp": 38000
+      }
+    },
+    {
+      "ano": 2021,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 962.0,
+        "diesel_coyhaique_clp": 715.0,
+        "kerosene_coyhaique_clp": 820.0,
+        "lena_seca_m3_coyhaique_clp": 41000
+      }
+    },
+    {
+      "ano": 2022,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1285.0,
+        "diesel_coyhaique_clp": 1045.0,
+        "kerosene_coyhaique_clp": 1180.0,
+        "lena_seca_m3_coyhaique_clp": 44000
+      }
+    },
+    {
+      "ano": 2023,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1328.0,
+        "diesel_coyhaique_clp": 1060.0,
+        "kerosene_coyhaique_clp": 1210.0,
+        "lena_seca_m3_coyhaique_clp": 46000
+      }
+    },
+    {
+      "ano": 2024,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1362.0,
+        "diesel_coyhaique_clp": 1098.0,
+        "kerosene_coyhaique_clp": 1240.0,
+        "lena_seca_m3_coyhaique_clp": 48000
+      }
+    },
+    {
+      "ano": 2025,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1390.0,
+        "diesel_coyhaique_clp": 1125.0,
+        "kerosene_coyhaique_clp": 1265.0,
+        "lena_seca_m3_coyhaique_clp": 50000
+      }
+    },
+    {
+      "ano": 2026,
+      "combustibles": {
+        "gasolina_93_coyhaique_clp": 1425.0,
+        "diesel_coyhaique_clp": 1148.0,
+        "kerosene_coyhaique_clp": 1290.0,
+        "lena_seca_m3_coyhaique_clp": 52000
+      }
+    }
+  ],
+  "series_comunales": {
+    "11101": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 785,
+        "diesel_clp_litro": 590,
+        "precio_m3_lena_seca_clp": 28000
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 760,
+        "diesel_clp_litro": 545,
+        "precio_m3_lena_seca_clp": 30000
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 792,
+        "diesel_clp_litro": 580,
+        "precio_m3_lena_seca_clp": 32000
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 835,
+        "diesel_clp_litro": 640,
+        "precio_m3_lena_seca_clp": 34000
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 820,
+        "diesel_clp_litro": 665,
+        "precio_m3_lena_seca_clp": 36000
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 845,
+        "diesel_clp_litro": 620,
+        "precio_m3_lena_seca_clp": 38000
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 962,
+        "diesel_clp_litro": 715,
+        "precio_m3_lena_seca_clp": 41000
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1285,
+        "diesel_clp_litro": 1045,
+        "precio_m3_lena_seca_clp": 44000
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1328,
+        "diesel_clp_litro": 1060,
+        "precio_m3_lena_seca_clp": 46000
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1362,
+        "diesel_clp_litro": 1098,
+        "precio_m3_lena_seca_clp": 48000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1390,
+        "diesel_clp_litro": 1125,
+        "precio_m3_lena_seca_clp": 50000
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1425,
+        "diesel_clp_litro": 1148,
+        "precio_m3_lena_seca_clp": 52000
+      }
+    ],
+    "11102": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 876,
+        "diesel_clp_litro": 677,
+        "precio_m3_lena_seca_clp": 22167
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 848,
+        "diesel_clp_litro": 625,
+        "precio_m3_lena_seca_clp": 23750
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 884,
+        "diesel_clp_litro": 666,
+        "precio_m3_lena_seca_clp": 25333
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 932,
+        "diesel_clp_litro": 734,
+        "precio_m3_lena_seca_clp": 26917
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 915,
+        "diesel_clp_litro": 763,
+        "precio_m3_lena_seca_clp": 28500
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 943,
+        "diesel_clp_litro": 711,
+        "precio_m3_lena_seca_clp": 30083
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1074,
+        "diesel_clp_litro": 820,
+        "precio_m3_lena_seca_clp": 32458
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1434,
+        "diesel_clp_litro": 1199,
+        "precio_m3_lena_seca_clp": 34833
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1482,
+        "diesel_clp_litro": 1216,
+        "precio_m3_lena_seca_clp": 36417
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1520,
+        "diesel_clp_litro": 1260,
+        "precio_m3_lena_seca_clp": 38000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1551,
+        "diesel_clp_litro": 1291,
+        "precio_m3_lena_seca_clp": 39583
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1590,
+        "diesel_clp_litro": 1317,
+        "precio_m3_lena_seca_clp": 41167
+      }
+    ],
+    "11201": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 792,
+        "diesel_clp_litro": 599,
+        "precio_m3_lena_seca_clp": 26833
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 767,
+        "diesel_clp_litro": 553,
+        "precio_m3_lena_seca_clp": 28750
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 800,
+        "diesel_clp_litro": 589,
+        "precio_m3_lena_seca_clp": 30667
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 843,
+        "diesel_clp_litro": 650,
+        "precio_m3_lena_seca_clp": 32583
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 828,
+        "diesel_clp_litro": 675,
+        "precio_m3_lena_seca_clp": 34500
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 853,
+        "diesel_clp_litro": 630,
+        "precio_m3_lena_seca_clp": 36417
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 971,
+        "diesel_clp_litro": 726,
+        "precio_m3_lena_seca_clp": 39292
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1297,
+        "diesel_clp_litro": 1061,
+        "precio_m3_lena_seca_clp": 42167
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1341,
+        "diesel_clp_litro": 1076,
+        "precio_m3_lena_seca_clp": 44083
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1375,
+        "diesel_clp_litro": 1115,
+        "precio_m3_lena_seca_clp": 46000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1403,
+        "diesel_clp_litro": 1142,
+        "precio_m3_lena_seca_clp": 47917
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1439,
+        "diesel_clp_litro": 1166,
+        "precio_m3_lena_seca_clp": 49833
+      }
+    ],
+    "11202": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 830,
+        "diesel_clp_litro": 639,
+        "precio_m3_lena_seca_clp": 24500
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 804,
+        "diesel_clp_litro": 591,
+        "precio_m3_lena_seca_clp": 26250
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 837,
+        "diesel_clp_litro": 629,
+        "precio_m3_lena_seca_clp": 28000
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 883,
+        "diesel_clp_litro": 694,
+        "precio_m3_lena_seca_clp": 29750
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 867,
+        "diesel_clp_litro": 721,
+        "precio_m3_lena_seca_clp": 31500
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 893,
+        "diesel_clp_litro": 672,
+        "precio_m3_lena_seca_clp": 33250
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1017,
+        "diesel_clp_litro": 775,
+        "precio_m3_lena_seca_clp": 35875
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1359,
+        "diesel_clp_litro": 1133,
+        "precio_m3_lena_seca_clp": 38500
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1404,
+        "diesel_clp_litro": 1149,
+        "precio_m3_lena_seca_clp": 40250
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1440,
+        "diesel_clp_litro": 1190,
+        "precio_m3_lena_seca_clp": 42000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1470,
+        "diesel_clp_litro": 1219,
+        "precio_m3_lena_seca_clp": 43750
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1507,
+        "diesel_clp_litro": 1244,
+        "precio_m3_lena_seca_clp": 45500
+      }
+    ],
+    "11203": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 899,
+        "diesel_clp_litro": 693,
+        "precio_m3_lena_seca_clp": 32083
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 870,
+        "diesel_clp_litro": 640,
+        "precio_m3_lena_seca_clp": 34375
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 907,
+        "diesel_clp_litro": 681,
+        "precio_m3_lena_seca_clp": 36667
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 956,
+        "diesel_clp_litro": 752,
+        "precio_m3_lena_seca_clp": 38958
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 939,
+        "diesel_clp_litro": 781,
+        "precio_m3_lena_seca_clp": 41250
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 968,
+        "diesel_clp_litro": 728,
+        "precio_m3_lena_seca_clp": 43542
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1102,
+        "diesel_clp_litro": 840,
+        "precio_m3_lena_seca_clp": 46979
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1472,
+        "diesel_clp_litro": 1228,
+        "precio_m3_lena_seca_clp": 50417
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1521,
+        "diesel_clp_litro": 1245,
+        "precio_m3_lena_seca_clp": 52708
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1560,
+        "diesel_clp_litro": 1290,
+        "precio_m3_lena_seca_clp": 55000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1592,
+        "diesel_clp_litro": 1322,
+        "precio_m3_lena_seca_clp": 57292
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1632,
+        "diesel_clp_litro": 1349,
+        "precio_m3_lena_seca_clp": 59583
+      }
+    ],
+    "11401": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 824,
+        "diesel_clp_litro": 634,
+        "precio_m3_lena_seca_clp": 29167
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 798,
+        "diesel_clp_litro": 586,
+        "precio_m3_lena_seca_clp": 31250
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 832,
+        "diesel_clp_litro": 623,
+        "precio_m3_lena_seca_clp": 33333
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 877,
+        "diesel_clp_litro": 688,
+        "precio_m3_lena_seca_clp": 35417
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 861,
+        "diesel_clp_litro": 715,
+        "precio_m3_lena_seca_clp": 37500
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 887,
+        "diesel_clp_litro": 666,
+        "precio_m3_lena_seca_clp": 39583
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1010,
+        "diesel_clp_litro": 768,
+        "precio_m3_lena_seca_clp": 42708
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1349,
+        "diesel_clp_litro": 1123,
+        "precio_m3_lena_seca_clp": 45833
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1394,
+        "diesel_clp_litro": 1139,
+        "precio_m3_lena_seca_clp": 47917
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1430,
+        "diesel_clp_litro": 1180,
+        "precio_m3_lena_seca_clp": 50000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1459,
+        "diesel_clp_litro": 1209,
+        "precio_m3_lena_seca_clp": 52083
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1496,
+        "diesel_clp_litro": 1234,
+        "precio_m3_lena_seca_clp": 54167
+      }
+    ],
+    "11402": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 818,
+        "diesel_clp_litro": 629,
+        "precio_m3_lena_seca_clp": 25667
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 792,
+        "diesel_clp_litro": 581,
+        "precio_m3_lena_seca_clp": 27500
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 826,
+        "diesel_clp_litro": 618,
+        "precio_m3_lena_seca_clp": 29333
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 871,
+        "diesel_clp_litro": 682,
+        "precio_m3_lena_seca_clp": 31167
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 855,
+        "diesel_clp_litro": 709,
+        "precio_m3_lena_seca_clp": 33000
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 881,
+        "diesel_clp_litro": 661,
+        "precio_m3_lena_seca_clp": 34833
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1003,
+        "diesel_clp_litro": 762,
+        "precio_m3_lena_seca_clp": 37583
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1340,
+        "diesel_clp_litro": 1114,
+        "precio_m3_lena_seca_clp": 40333
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1385,
+        "diesel_clp_litro": 1130,
+        "precio_m3_lena_seca_clp": 42167
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1420,
+        "diesel_clp_litro": 1170,
+        "precio_m3_lena_seca_clp": 44000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1449,
+        "diesel_clp_litro": 1199,
+        "precio_m3_lena_seca_clp": 45833
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1486,
+        "diesel_clp_litro": 1223,
+        "precio_m3_lena_seca_clp": 47667
+      }
+    ],
+    "11301": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 813,
+        "diesel_clp_litro": 618,
+        "precio_m3_lena_seca_clp": 24500
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 787,
+        "diesel_clp_litro": 571,
+        "precio_m3_lena_seca_clp": 26250
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 820,
+        "diesel_clp_litro": 607,
+        "precio_m3_lena_seca_clp": 28000
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 864,
+        "diesel_clp_litro": 670,
+        "precio_m3_lena_seca_clp": 29750
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 849,
+        "diesel_clp_litro": 696,
+        "precio_m3_lena_seca_clp": 31500
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 875,
+        "diesel_clp_litro": 649,
+        "precio_m3_lena_seca_clp": 33250
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 996,
+        "diesel_clp_litro": 749,
+        "precio_m3_lena_seca_clp": 35875
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1330,
+        "diesel_clp_litro": 1094,
+        "precio_m3_lena_seca_clp": 38500
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1375,
+        "diesel_clp_litro": 1110,
+        "precio_m3_lena_seca_clp": 40250
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1410,
+        "diesel_clp_litro": 1150,
+        "precio_m3_lena_seca_clp": 42000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1439,
+        "diesel_clp_litro": 1178,
+        "precio_m3_lena_seca_clp": 43750
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1475,
+        "diesel_clp_litro": 1202,
+        "precio_m3_lena_seca_clp": 45500
+      }
+    ],
+    "11302": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 934,
+        "diesel_clp_litro": 720,
+        "precio_m3_lena_seca_clp": 21000
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 904,
+        "diesel_clp_litro": 665,
+        "precio_m3_lena_seca_clp": 22500
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 942,
+        "diesel_clp_litro": 708,
+        "precio_m3_lena_seca_clp": 24000
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 993,
+        "diesel_clp_litro": 781,
+        "precio_m3_lena_seca_clp": 25500
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 975,
+        "diesel_clp_litro": 812,
+        "precio_m3_lena_seca_clp": 27000
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 1005,
+        "diesel_clp_litro": 757,
+        "precio_m3_lena_seca_clp": 28500
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1144,
+        "diesel_clp_litro": 873,
+        "precio_m3_lena_seca_clp": 30750
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1528,
+        "diesel_clp_litro": 1275,
+        "precio_m3_lena_seca_clp": 33000
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1580,
+        "diesel_clp_litro": 1294,
+        "precio_m3_lena_seca_clp": 34500
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1620,
+        "diesel_clp_litro": 1340,
+        "precio_m3_lena_seca_clp": 36000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1653,
+        "diesel_clp_litro": 1373,
+        "precio_m3_lena_seca_clp": 37500
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1695,
+        "diesel_clp_litro": 1401,
+        "precio_m3_lena_seca_clp": 39000
+      }
+    ],
+    "11303": [
+      {
+        "ano": 2015,
+        "gasolina_93_clp_litro": 911,
+        "diesel_clp_litro": 704,
+        "precio_m3_lena_seca_clp": 23333
+      },
+      {
+        "ano": 2016,
+        "gasolina_93_clp_litro": 882,
+        "diesel_clp_litro": 650,
+        "precio_m3_lena_seca_clp": 25000
+      },
+      {
+        "ano": 2017,
+        "gasolina_93_clp_litro": 919,
+        "diesel_clp_litro": 692,
+        "precio_m3_lena_seca_clp": 26667
+      },
+      {
+        "ano": 2018,
+        "gasolina_93_clp_litro": 969,
+        "diesel_clp_litro": 764,
+        "precio_m3_lena_seca_clp": 28333
+      },
+      {
+        "ano": 2019,
+        "gasolina_93_clp_litro": 951,
+        "diesel_clp_litro": 793,
+        "precio_m3_lena_seca_clp": 30000
+      },
+      {
+        "ano": 2020,
+        "gasolina_93_clp_litro": 980,
+        "diesel_clp_litro": 740,
+        "precio_m3_lena_seca_clp": 31667
+      },
+      {
+        "ano": 2021,
+        "gasolina_93_clp_litro": 1116,
+        "diesel_clp_litro": 853,
+        "precio_m3_lena_seca_clp": 34167
+      },
+      {
+        "ano": 2022,
+        "gasolina_93_clp_litro": 1491,
+        "diesel_clp_litro": 1247,
+        "precio_m3_lena_seca_clp": 36667
+      },
+      {
+        "ano": 2023,
+        "gasolina_93_clp_litro": 1541,
+        "diesel_clp_litro": 1265,
+        "precio_m3_lena_seca_clp": 38333
+      },
+      {
+        "ano": 2024,
+        "gasolina_93_clp_litro": 1580,
+        "diesel_clp_litro": 1310,
+        "precio_m3_lena_seca_clp": 40000
+      },
+      {
+        "ano": 2025,
+        "gasolina_93_clp_litro": 1612,
+        "diesel_clp_litro": 1342,
+        "precio_m3_lena_seca_clp": 41667
+      },
+      {
+        "ano": 2026,
+        "gasolina_93_clp_litro": 1653,
+        "diesel_clp_litro": 1370,
+        "precio_m3_lena_seca_clp": 43333
+      }
+    ]
+  }
+}

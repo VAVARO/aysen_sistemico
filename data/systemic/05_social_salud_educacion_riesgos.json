@@ -5,7 +5,7 @@
   "dataset_id": "social_salud_educacion_riesgos",
   "titulo": "Dinámica Social, Red Asistencial, Educación, Seguridad Ciudadana y Riesgos Geológicos y Ambientales de Aysén",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-16T18:36:39.508802+00:00",
+  "fecha_extraccion": "2026-10-19T11:27:45.705202+00:00",
   "fuentes_primarias": [
     {
       "institucion": "USGS Earthquake Hazards Program",
@@ -54,11 +54,373 @@
     "total_comunas": 10,
     "total_camas_hospitalarias_red_ssa": 261,
     "hospital_base_regional": "Hospital Regional Coyhaique (167 camas, nivel alta complejidad)",
-    "matricula_escolar_regional_total": 22015,
-    "establecimientos_escolares_totales": 87,
+    "matricula_escolar_regional_total": 21990,
+    "establecimientos_escolares_totales": 84,
     "volcanes_activos_monitoreados": 6,
     "sismos_registrados_usgs_periodo": 22,
-    "nodos_georreferenciados_totales": 39
+    "nodos_georreferenciados_totales": 39,
+    "series_historicas_regionales": [
+      {
+        "anio": 2015,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 11350,
+          "camas_hospitalarias_totales_ssa": 251,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 18,
+          "urgencias_respiratorias_coyhaique_aysen": 17450
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 20890,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 1850,
+          "tasa_dmcs_regional_por_100k_hab": 1948.5,
+          "casos_vif_total": 860,
+          "tasa_vif_regional_por_100k_hab": 905.8
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 38,
+          "superficie_afectada_ha": 1240.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 2,
+          "sismo_mayor_magnitud": 4.6
+        }
+      },
+      {
+        "anio": 2016,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 11820,
+          "camas_hospitalarias_totales_ssa": 251,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 18,
+          "urgencias_respiratorias_coyhaique_aysen": 21300
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 20950,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 1920,
+          "tasa_dmcs_regional_por_100k_hab": 1998.0,
+          "casos_vif_total": 890,
+          "tasa_vif_regional_por_100k_hab": 926.1
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 42,
+          "superficie_afectada_ha": 2850.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 3,
+          "sismo_mayor_magnitud": 5.4
+        }
+      },
+      {
+        "anio": 2017,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 12240,
+          "camas_hospitalarias_totales_ssa": 251,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 18,
+          "urgencias_respiratorias_coyhaique_aysen": 18900
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21080,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 1980,
+          "tasa_dmcs_regional_por_100k_hab": 2040.2,
+          "casos_vif_total": 920,
+          "tasa_vif_regional_por_100k_hab": 947.9
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 35,
+          "superficie_afectada_ha": 890.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 1,
+          "sismo_mayor_magnitud": 4.4
+        }
+      },
+      {
+        "anio": 2018,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 12890,
+          "camas_hospitalarias_totales_ssa": 251,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 18,
+          "urgencias_respiratorias_coyhaique_aysen": 18200
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21140,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2050,
+          "tasa_dmcs_regional_por_100k_hab": 2091.5,
+          "casos_vif_total": 940,
+          "tasa_vif_regional_por_100k_hab": 959.0
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 45,
+          "superficie_afectada_ha": 1120.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 2,
+          "sismo_mayor_magnitud": 4.7
+        }
+      },
+      {
+        "anio": 2019,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 13420,
+          "camas_hospitalarias_totales_ssa": 251,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 18,
+          "urgencias_respiratorias_coyhaique_aysen": 17600
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21210,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2120,
+          "tasa_dmcs_regional_por_100k_hab": 2142.3,
+          "casos_vif_total": 980,
+          "tasa_vif_regional_por_100k_hab": 990.3
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 52,
+          "superficie_afectada_ha": 15142.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 1,
+          "sismo_mayor_magnitud": 4.5
+        }
+      },
+      {
+        "anio": 2020,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 9840,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 12100
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 20980,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 1680,
+          "tasa_dmcs_regional_por_100k_hab": 1706.5,
+          "casos_vif_total": 1040,
+          "tasa_vif_regional_por_100k_hab": 1056.4
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 34,
+          "superficie_afectada_ha": 620.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 2,
+          "sismo_mayor_magnitud": 4.8
+        }
+      },
+      {
+        "anio": 2021,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 11150,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 14500
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21050,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 1790,
+          "tasa_dmcs_regional_por_100k_hab": 1805.9,
+          "casos_vif_total": 1020,
+          "tasa_vif_regional_por_100k_hab": 1029.1
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 29,
+          "superficie_afectada_ha": 410.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 3,
+          "sismo_mayor_magnitud": 5.1
+        }
+      },
+      {
+        "anio": 2022,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 12380,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 19200
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21180,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2150,
+          "tasa_dmcs_regional_por_100k_hab": 2154.7,
+          "casos_vif_total": 990,
+          "tasa_vif_regional_por_100k_hab": 992.2
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 41,
+          "superficie_afectada_ha": 1890.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 2,
+          "sismo_mayor_magnitud": 4.9
+        }
+      },
+      {
+        "anio": 2023,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 13100,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 18400
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21290,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2210,
+          "tasa_dmcs_regional_por_100k_hab": 2203.8,
+          "casos_vif_total": 960,
+          "tasa_vif_regional_por_100k_hab": 957.3
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 36,
+          "superficie_afectada_ha": 780.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 2,
+          "sismo_mayor_magnitud": 4.5
+        }
+      },
+      {
+        "anio": 2024,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 13620,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 17800
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21350,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2240,
+          "tasa_dmcs_regional_por_100k_hab": 2223.4,
+          "casos_vif_total": 950,
+          "tasa_vif_regional_por_100k_hab": 943.0
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 39,
+          "superficie_afectada_ha": 950.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 2,
+          "sismo_mayor_magnitud": 4.6
+        }
+      },
+      {
+        "anio": 2025,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 13850,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 16950
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21420,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2180,
+          "tasa_dmcs_regional_por_100k_hab": 2150.9,
+          "casos_vif_total": 930,
+          "tasa_vif_regional_por_100k_hab": 917.6
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 33,
+          "superficie_afectada_ha": 580.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 1,
+          "sismo_mayor_magnitud": 4.3
+        }
+      },
+      {
+        "anio": 2026,
+        "salud_regional": {
+          "egresos_hospitalarios_red_ssa": 14020,
+          "camas_hospitalarias_totales_ssa": 257,
+          "camas_basicas_medias_ssa": 233,
+          "camas_criticas_uci_uti_ssa": 24,
+          "urgencias_respiratorias_coyhaique_aysen": 16400
+        },
+        "educacion_regional": {
+          "matricula_escolar_regional_total": 21490,
+          "establecimientos_slep_aysen": 56,
+          "establecimientos_particulares_subvencionados": 10,
+          "establecimientos_escolares_totales": 66
+        },
+        "seguridad_regional": {
+          "casos_policiales_dmcs_total": 2150,
+          "tasa_dmcs_regional_por_100k_hab": 2107.8,
+          "casos_vif_total": 915,
+          "tasa_vif_regional_por_100k_hab": 897.1
+        },
+        "incendios_forestales_conaf": {
+          "numero_siniestros_total": 28,
+          "superficie_afectada_ha": 420.0
+        },
+        "sismos_magnitud_mayor_igual_4": {
+          "total_eventos_ano": 1,
+          "sismo_mayor_magnitud": 4.4
+        }
+      }
+    ]
   },
   "por_comuna": [
     {
@@ -113,7 +475,321 @@
           "amenaza_principal_senapred": "Contaminación atmosférica invernal crítica (MP2.5 por leña) e incendios de interfaz periurbana",
           "incendios_forestales_promedio_anual_ha": 185.0,
           "sismos_registrados_cercanos_usgs": 0
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 7434,
+              "camas_hospitalarias": 161,
+              "camas_criticas": 18,
+              "urgencias_respiratorias": 11866
+            },
+            "educacion": {
+              "matricula_escolar": 13160,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1202,
+              "tasa_dmcs_por_100k_hab": 2078.8,
+              "casos_vif": 516,
+              "tasa_vif_por_100k_hab": 892.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 14,
+              "superficie_afectada_ha": 198.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 7742,
+              "camas_hospitalarias": 161,
+              "camas_criticas": 18,
+              "urgencias_respiratorias": 14484
+            },
+            "educacion": {
+              "matricula_escolar": 13198,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1248,
+              "tasa_dmcs_por_100k_hab": 2158.3,
+              "casos_vif": 534,
+              "tasa_vif_por_100k_hab": 923.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 15,
+              "superficie_afectada_ha": 456.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 8017,
+              "camas_hospitalarias": 161,
+              "camas_criticas": 18,
+              "urgencias_respiratorias": 12852
+            },
+            "educacion": {
+              "matricula_escolar": 13280,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1287,
+              "tasa_dmcs_por_100k_hab": 2225.8,
+              "casos_vif": 552,
+              "tasa_vif_por_100k_hab": 954.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 13,
+              "superficie_afectada_ha": 142.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 8442,
+              "camas_hospitalarias": 161,
+              "camas_criticas": 18,
+              "urgencias_respiratorias": 12376
+            },
+            "educacion": {
+              "matricula_escolar": 13318,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1332,
+              "tasa_dmcs_por_100k_hab": 2303.6,
+              "casos_vif": 564,
+              "tasa_vif_por_100k_hab": 975.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 17,
+              "superficie_afectada_ha": 179.2
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 8790,
+              "camas_hospitalarias": 161,
+              "camas_criticas": 18,
+              "urgencias_respiratorias": 11968
+            },
+            "educacion": {
+              "matricula_escolar": 13362,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1378,
+              "tasa_dmcs_por_100k_hab": 2383.1,
+              "casos_vif": 588,
+              "tasa_vif_por_100k_hab": 1016.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 19,
+              "superficie_afectada_ha": 2422.7
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 6445,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 8228
+            },
+            "educacion": {
+              "matricula_escolar": 13217,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1092,
+              "tasa_dmcs_por_100k_hab": 1888.5,
+              "casos_vif": 624,
+              "tasa_vif_por_100k_hab": 1079.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 12,
+              "superficie_afectada_ha": 99.2
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 7303,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 9860
+            },
+            "educacion": {
+              "matricula_escolar": 13261,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1163,
+              "tasa_dmcs_por_100k_hab": 2011.3,
+              "casos_vif": 612,
+              "tasa_vif_por_100k_hab": 1058.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 11,
+              "superficie_afectada_ha": 65.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 8108,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 13056
+            },
+            "educacion": {
+              "matricula_escolar": 13343,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1397,
+              "tasa_dmcs_por_100k_hab": 2416.0,
+              "casos_vif": 594,
+              "tasa_vif_por_100k_hab": 1027.3
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 15,
+              "superficie_afectada_ha": 302.4
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 8580,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 12512
+            },
+            "educacion": {
+              "matricula_escolar": 13412,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1436,
+              "tasa_dmcs_por_100k_hab": 2483.4,
+              "casos_vif": 576,
+              "tasa_vif_por_100k_hab": 996.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 13,
+              "superficie_afectada_ha": 124.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 8921,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 12104
+            },
+            "educacion": {
+              "matricula_escolar": 13450,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1456,
+              "tasa_dmcs_por_100k_hab": 2518.0,
+              "casos_vif": 570,
+              "tasa_vif_por_100k_hab": 985.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 14,
+              "superficie_afectada_ha": 152.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 9071,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 11526
+            },
+            "educacion": {
+              "matricula_escolar": 13494,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1417,
+              "tasa_dmcs_por_100k_hab": 2450.6,
+              "casos_vif": 558,
+              "tasa_vif_por_100k_hab": 965.0
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 12,
+              "superficie_afectada_ha": 92.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 9183,
+              "camas_hospitalarias": 167,
+              "camas_criticas": 24,
+              "urgencias_respiratorias": 11152
+            },
+            "educacion": {
+              "matricula_escolar": 13538,
+              "establecimientos_slep": 31,
+              "establecimientos_subvencionados": 7,
+              "establecimientos_totales": 38
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 1397,
+              "tasa_dmcs_por_100k_hab": 2416.0,
+              "casos_vif": 549,
+              "tasa_vif_por_100k_hab": 949.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 10,
+              "superficie_afectada_ha": 67.2
+            },
+            "sismos_m4_registrados": 1
+          }
+        ]
       }
     },
     {
@@ -165,7 +841,321 @@
           "amenaza_principal_senapred": "Aislamiento invernal por nevadas extremas, crecidas de ríos cordilleranos e incendios forestales",
           "incendios_forestales_promedio_anual_ha": 45.0,
           "sismos_registrados_cercanos_usgs": 0
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 52,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 104,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1027.0,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 24.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 54,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 104,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1027.0,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 57.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 56,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 105,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 9,
+              "tasa_dmcs_por_100k_hab": 1155.3,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 17.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 59,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 105,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 9,
+              "tasa_dmcs_por_100k_hab": 1155.3,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 22.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 62,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 106,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 9,
+              "tasa_dmcs_por_100k_hab": 1155.3,
+              "casos_vif": 6,
+              "tasa_vif_por_100k_hab": 770.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 1,
+              "superficie_afectada_ha": 302.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 45,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 104,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 7,
+              "tasa_dmcs_por_100k_hab": 898.6,
+              "casos_vif": 6,
+              "tasa_vif_por_100k_hab": 770.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 12.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 51,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 105,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1027.0,
+              "casos_vif": 6,
+              "tasa_vif_por_100k_hab": 770.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 57,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 105,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 9,
+              "tasa_dmcs_por_100k_hab": 1155.3,
+              "casos_vif": 6,
+              "tasa_vif_por_100k_hab": 770.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 37.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 60,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 106,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 10,
+              "tasa_dmcs_por_100k_hab": 1283.7,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 15.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 63,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 106,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 10,
+              "tasa_dmcs_por_100k_hab": 1283.7,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 19.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 64,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 107,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 10,
+              "tasa_dmcs_por_100k_hab": 1283.7,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 11.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 65,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 155
+            },
+            "educacion": {
+              "matricula_escolar": 107,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 9,
+              "tasa_dmcs_por_100k_hab": 1155.3,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 641.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.4
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     },
     {
@@ -221,7 +1211,321 @@
           "amenaza_principal_senapred": "Sismicidad cortical en Falla Liquiñe-Ofqui, deslizamientos en fiordos con tsunamis locales y caída de ceniza",
           "incendios_forestales_promedio_anual_ha": 75.0,
           "sismos_registrados_cercanos_usgs": 2
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 2406,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5584
+            },
+            "educacion": {
+              "matricula_escolar": 4742,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 407,
+              "tasa_dmcs_por_100k_hab": 1756.6,
+              "casos_vif": 215,
+              "tasa_vif_por_100k_hab": 927.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 6,
+              "superficie_afectada_ha": 124.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 2505,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 6816
+            },
+            "educacion": {
+              "matricula_escolar": 4755,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 422,
+              "tasa_dmcs_por_100k_hab": 1821.3,
+              "casos_vif": 222,
+              "tasa_vif_por_100k_hab": 958.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 7,
+              "superficie_afectada_ha": 285.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 2594,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 6048
+            },
+            "educacion": {
+              "matricula_escolar": 4785,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 435,
+              "tasa_dmcs_por_100k_hab": 1877.4,
+              "casos_vif": 230,
+              "tasa_vif_por_100k_hab": 992.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 6,
+              "superficie_afectada_ha": 89.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 2732,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5824
+            },
+            "educacion": {
+              "matricula_escolar": 4798,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 451,
+              "tasa_dmcs_por_100k_hab": 1946.5,
+              "casos_vif": 235,
+              "tasa_vif_por_100k_hab": 1014.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 8,
+              "superficie_afectada_ha": 112.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 2845,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5632
+            },
+            "educacion": {
+              "matricula_escolar": 4814,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 466,
+              "tasa_dmcs_por_100k_hab": 2011.2,
+              "casos_vif": 245,
+              "tasa_vif_por_100k_hab": 1057.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 9,
+              "superficie_afectada_ha": 1514.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 2086,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 3872
+            },
+            "educacion": {
+              "matricula_escolar": 4762,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 369,
+              "tasa_dmcs_por_100k_hab": 1592.6,
+              "casos_vif": 260,
+              "tasa_vif_por_100k_hab": 1122.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 6,
+              "superficie_afectada_ha": 62.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 2363,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 4640
+            },
+            "educacion": {
+              "matricula_escolar": 4778,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 393,
+              "tasa_dmcs_por_100k_hab": 1696.2,
+              "casos_vif": 255,
+              "tasa_vif_por_100k_hab": 1100.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 41.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 2624,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 6144
+            },
+            "educacion": {
+              "matricula_escolar": 4807,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 473,
+              "tasa_dmcs_por_100k_hab": 2041.4,
+              "casos_vif": 247,
+              "tasa_vif_por_100k_hab": 1066.0
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 7,
+              "superficie_afectada_ha": 189.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 2777,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5888
+            },
+            "educacion": {
+              "matricula_escolar": 4832,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 486,
+              "tasa_dmcs_por_100k_hab": 2097.5,
+              "casos_vif": 240,
+              "tasa_vif_por_100k_hab": 1035.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 6,
+              "superficie_afectada_ha": 78.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 2887,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5696
+            },
+            "educacion": {
+              "matricula_escolar": 4846,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 492,
+              "tasa_dmcs_por_100k_hab": 2123.4,
+              "casos_vif": 237,
+              "tasa_vif_por_100k_hab": 1022.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 7,
+              "superficie_afectada_ha": 95.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 2936,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5424
+            },
+            "educacion": {
+              "matricula_escolar": 4862,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 479,
+              "tasa_dmcs_por_100k_hab": 2067.3,
+              "casos_vif": 232,
+              "tasa_vif_por_100k_hab": 1001.3
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 58.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 2972,
+              "camas_hospitalarias": 52,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 5248
+            },
+            "educacion": {
+              "matricula_escolar": 4878,
+              "establecimientos_slep": 15,
+              "establecimientos_subvencionados": 3,
+              "establecimientos_totales": 18
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 473,
+              "tasa_dmcs_por_100k_hab": 2041.4,
+              "casos_vif": 228,
+              "tasa_vif_por_100k_hab": 984.0
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 42.0
+            },
+            "sismos_m4_registrados": 1
+          }
+        ]
       }
     },
     {
@@ -271,10 +1575,324 @@
             "Volcán Melimoyu",
             "Complejo Volcánico Puyuhuapi"
           ],
-          "amenaza_principal_senapred": "Remociones en masa en Carretera Austral, erupción volcánica y cortes por temporales marítimos",
-          "incendios_forestales_promedio_anual_ha": 30.0,
+          "amenaza_principal_senapred": "Remociones en masa sobre Carretera Austral (Ruta 7), sismicidad en Canal Puyuhuapi y nevadas intensas",
+          "incendios_forestales_promedio_anual_ha": 35.0,
           "sismos_registrados_cercanos_usgs": 1
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 454,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 960,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 70,
+              "tasa_dmcs_por_100k_hab": 1362.7,
+              "casos_vif": 38,
+              "tasa_vif_por_100k_hab": 739.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 74.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 472,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 963,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 72,
+              "tasa_dmcs_por_100k_hab": 1401.6,
+              "casos_vif": 40,
+              "tasa_vif_por_100k_hab": 778.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 171.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 489,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 969,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 75,
+              "tasa_dmcs_por_100k_hab": 1460.0,
+              "casos_vif": 41,
+              "tasa_vif_por_100k_hab": 798.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 2,
+              "superficie_afectada_ha": 53.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 515,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 972,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 77,
+              "tasa_dmcs_por_100k_hab": 1498.9,
+              "casos_vif": 42,
+              "tasa_vif_por_100k_hab": 817.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 67.2
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 536,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 975,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 80,
+              "tasa_dmcs_por_100k_hab": 1557.3,
+              "casos_vif": 44,
+              "tasa_vif_por_100k_hab": 856.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 908.5
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 393,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 965,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 63,
+              "tasa_dmcs_por_100k_hab": 1226.4,
+              "casos_vif": 46,
+              "tasa_vif_por_100k_hab": 895.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 2,
+              "superficie_afectada_ha": 37.2
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 446,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 968,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 68,
+              "tasa_dmcs_por_100k_hab": 1323.7,
+              "casos_vif": 45,
+              "tasa_vif_por_100k_hab": 876.0
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 2,
+              "superficie_afectada_ha": 24.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 495,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 974,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 81,
+              "tasa_dmcs_por_100k_hab": 1576.8,
+              "casos_vif": 44,
+              "tasa_vif_por_100k_hab": 856.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 113.4
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 524,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 979,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 83,
+              "tasa_dmcs_por_100k_hab": 1615.7,
+              "casos_vif": 43,
+              "tasa_vif_por_100k_hab": 837.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 2,
+              "superficie_afectada_ha": 46.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 544,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 982,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 85,
+              "tasa_dmcs_por_100k_hab": 1654.7,
+              "casos_vif": 42,
+              "tasa_vif_por_100k_hab": 817.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 57.0
+            },
+            "sismos_m4_registrados": 1
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 554,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 985,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 82,
+              "tasa_dmcs_por_100k_hab": 1596.3,
+              "casos_vif": 41,
+              "tasa_vif_por_100k_hab": 798.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 2,
+              "superficie_afectada_ha": 34.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 560,
+              "camas_hospitalarias": 12,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1284
+            },
+            "educacion": {
+              "matricula_escolar": 988,
+              "establecimientos_slep": 9,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 9
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 81,
+              "tasa_dmcs_por_100k_hab": 1576.8,
+              "casos_vif": 41,
+              "tasa_vif_por_100k_hab": 798.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 2,
+              "superficie_afectada_ha": 25.2
+            },
+            "sismos_m4_registrados": 1
+          }
+        ]
       }
     },
     {
@@ -290,12 +1908,12 @@
       "datos": {
         "salud_red_asistencial": {
           "establecimiento_principal": "CESFAM Melinka",
-          "nivel_complejidad": "Atención Primaria con Servicio de Urgencia Rural (SUR)",
+          "nivel_complejidad": "Atención Primaria de Salud con Servicio de Urgencia Rural (SUR)",
           "camas_hospitalarias": 0,
           "postas_rurales_dependientes": 1,
-          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique / Hospital de Castro",
-          "tiempo_traslado_terrestre_coyhaique_horas": 18.0,
-          "dependencia_evacuacion_aeromedica": "Crítica (Territorio 100% insular oceánico, aeroevacuaciones SAMU frecuentes)",
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique (Vía lancha a Puerto Montt o aeroevacuación)",
+          "tiempo_traslado_terrestre_coyhaique_horas": 14.0,
+          "dependencia_evacuacion_aeromedica": "Crítica / Extrema (Aislamiento marítimo insular absoluto)",
           "medicos_por_mil_habitantes": 0.95,
           "lista_espera_no_ges_consultas_especialidad": 410,
           "urgencias_respiratorias_invernales_pct": 22.8,
@@ -304,29 +1922,342 @@
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
           "establecimientos_escolares_total": 2,
-          "matricula_escolar_total": 310,
+          "matricula_escolar_total": 320,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": []
         },
         "seguridad_cead": {
           "tasa_dmcs_por_100k_hab": 890.0,
-          "tasa_vif_por_100k_hab": 750.0,
+          "tasa_vif_por_100k_hab": 540.0,
           "delitos_frecuentes_comuna": [
+            "Infracción a Ley de Pesca",
             "Violencia intrafamiliar",
-            "Riñas e infracción a Ley de Alcoholes",
-            "Infracciones a normativa pesquera"
+            "Riñas en faenas bentónicas"
           ],
-          "dotacion_carabineros_cabecera": "Retén Melinka (Fronterizo/Marítimo) y Capitanía de Puerto Melinka"
+          "dotacion_carabineros_cabecera": "Retén Melinka (Fronterizo) y Capitanía de Puerto Melinka (Armada)"
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
-            "Volcán Melimoyu",
-            "Volcán Mentolat (dispersión eólica de tefra)"
+            "Volcán Mentolat"
           ],
-          "amenaza_principal_senapred": "Temporales oceánicos con marejadas destructivas, aislamiento insular y florecimiento de algas nocivas (Marea Roja)",
-          "incendios_forestales_promedio_anual_ha": 5.0,
+          "amenaza_principal_senapred": "Aislamiento marítimo por temporales severos del Pacífico, floraciones algales nocivas (Marea Roja) y tsunamis",
+          "incendios_forestales_promedio_anual_ha": 12.0,
           "sismos_registrados_cercanos_usgs": 7
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 108,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 313,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 17,
+              "tasa_dmcs_por_100k_hab": 1063.8,
+              "casos_vif": 10,
+              "tasa_vif_por_100k_hab": 625.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 24.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 112,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 314,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 18,
+              "tasa_dmcs_por_100k_hab": 1126.4,
+              "casos_vif": 11,
+              "tasa_vif_por_100k_hab": 688.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 57.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 116,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 316,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 18,
+              "tasa_dmcs_por_100k_hab": 1126.4,
+              "casos_vif": 11,
+              "tasa_vif_por_100k_hab": 688.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 17.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 122,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 317,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 19,
+              "tasa_dmcs_por_100k_hab": 1189.0,
+              "casos_vif": 11,
+              "tasa_vif_por_100k_hab": 688.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 22.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 127,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 318,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 20,
+              "tasa_dmcs_por_100k_hab": 1251.6,
+              "casos_vif": 12,
+              "tasa_vif_por_100k_hab": 750.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 1,
+              "superficie_afectada_ha": 302.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 93,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 314,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 15,
+              "tasa_dmcs_por_100k_hab": 938.7,
+              "casos_vif": 13,
+              "tasa_vif_por_100k_hab": 813.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 12.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 106,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 315,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 17,
+              "tasa_dmcs_por_100k_hab": 1063.8,
+              "casos_vif": 12,
+              "tasa_vif_por_100k_hab": 750.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 117,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 317,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 20,
+              "tasa_dmcs_por_100k_hab": 1251.6,
+              "casos_vif": 12,
+              "tasa_vif_por_100k_hab": 750.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 37.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 124,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 319,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 21,
+              "tasa_dmcs_por_100k_hab": 1314.1,
+              "casos_vif": 12,
+              "tasa_vif_por_100k_hab": 750.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 15.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 129,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 320,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 21,
+              "tasa_dmcs_por_100k_hab": 1314.1,
+              "casos_vif": 12,
+              "tasa_vif_por_100k_hab": 750.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 19.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 131,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 321,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 20,
+              "tasa_dmcs_por_100k_hab": 1251.6,
+              "casos_vif": 11,
+              "tasa_vif_por_100k_hab": 688.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 11.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 133,
+              "camas_hospitalarias": 2,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 319
+            },
+            "educacion": {
+              "matricula_escolar": 322,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 20,
+              "tasa_dmcs_por_100k_hab": 1251.6,
+              "casos_vif": 11,
+              "tasa_vif_por_100k_hab": 688.4
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.4
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     },
     {
@@ -344,10 +2275,10 @@
           "establecimiento_principal": "Hospital Familiar y Comunitario San José de Chile Chico",
           "nivel_complejidad": "Baja Complejidad",
           "camas_hospitalarias": 14,
-          "postas_rurales_dependientes": 3,
-          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
-          "tiempo_traslado_terrestre_coyhaique_horas": 4.5,
-          "dependencia_evacuacion_aeromedica": "Media-Alta (Dependencia de cruce de barcaza en Lago General Carrera)",
+          "postas_rurales_dependientes": 4,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique (Vía barcaza Lago General Carrera o territorio argentino)",
+          "tiempo_traslado_terrestre_coyhaique_horas": 4.0,
+          "dependencia_evacuacion_aeromedica": "Media (Afectada por suspensión de navegación en barcaza por viento)",
           "medicos_por_mil_habitantes": 1.28,
           "lista_espera_no_ges_consultas_especialidad": 520,
           "urgencias_respiratorias_invernales_pct": 20.5,
@@ -355,29 +2286,343 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 5,
-          "matricula_escolar_total": 920,
+          "establecimientos_escolares_total": 4,
+          "matricula_escolar_total": 890,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": []
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 1250.0,
-          "tasa_vif_por_100k_hab": 680.0,
+          "tasa_dmcs_por_100k_hab": 1340.0,
+          "tasa_vif_por_100k_hab": 710.0,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
-            "Hurtos",
-            "Contrabando fronterizo"
+            "Contrabando y pasos fronterizos no habilitados",
+            "Hurtos"
           ],
-          "dotacion_carabineros_cabecera": "3ª Comisaría Chile Chico (Fronteriza)"
+          "dotacion_carabineros_cabecera": "3ª Comisaría Chile Chico y Retén Puerto Guadal"
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
-            "Volcán Hudson (afectación directa en erupción pliniana 1991)"
+            "Volcán Hudson"
           ],
-          "amenaza_principal_senapred": "Vientos catabáticos severos en cuenca lacustre, sequía estival y caída histórica de tefra volcánica",
-          "incendios_forestales_promedio_anual_ha": 120.0,
+          "amenaza_principal_senapred": "Vientos extremos lacustres, incendios forestales en estepa de matorral seco y ceniza volcánica del Hudson",
+          "incendios_forestales_promedio_anual_ha": 95.0,
           "sismos_registrados_cercanos_usgs": 0
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 408,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 877,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 64,
+              "tasa_dmcs_por_100k_hab": 1304.8,
+              "casos_vif": 34,
+              "tasa_vif_por_100k_hab": 693.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 6,
+              "superficie_afectada_ha": 1100.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 425,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 879,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 67,
+              "tasa_dmcs_por_100k_hab": 1366.0,
+              "casos_vif": 35,
+              "tasa_vif_por_100k_hab": 713.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 570.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 440,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 885,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 69,
+              "tasa_dmcs_por_100k_hab": 1406.7,
+              "casos_vif": 36,
+              "tasa_vif_por_100k_hab": 733.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 178.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 464,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 887,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 71,
+              "tasa_dmcs_por_100k_hab": 1447.5,
+              "casos_vif": 37,
+              "tasa_vif_por_100k_hab": 754.3
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 6,
+              "superficie_afectada_ha": 224.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 483,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 890,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 74,
+              "tasa_dmcs_por_100k_hab": 1508.7,
+              "casos_vif": 39,
+              "tasa_vif_por_100k_hab": 795.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 7,
+              "superficie_afectada_ha": 3028.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 354,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 881,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 58,
+              "tasa_dmcs_por_100k_hab": 1182.5,
+              "casos_vif": 41,
+              "tasa_vif_por_100k_hab": 835.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 124.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 401,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 884,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 62,
+              "tasa_dmcs_por_100k_hab": 1264.0,
+              "casos_vif": 40,
+              "tasa_vif_por_100k_hab": 815.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 82.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 445,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 889,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 75,
+              "tasa_dmcs_por_100k_hab": 1529.1,
+              "casos_vif": 39,
+              "tasa_vif_por_100k_hab": 795.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 378.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 471,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 894,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 77,
+              "tasa_dmcs_por_100k_hab": 1569.8,
+              "casos_vif": 38,
+              "tasa_vif_por_100k_hab": 774.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 156.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 490,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 896,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 78,
+              "tasa_dmcs_por_100k_hab": 1590.2,
+              "casos_vif": 38,
+              "tasa_vif_por_100k_hab": 774.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 190.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 498,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 899,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 76,
+              "tasa_dmcs_por_100k_hab": 1549.4,
+              "casos_vif": 37,
+              "tasa_vif_por_100k_hab": 754.3
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 116.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 504,
+              "camas_hospitalarias": 14,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 1079
+            },
+            "educacion": {
+              "matricula_escolar": 902,
+              "establecimientos_slep": 4,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 4
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 75,
+              "tasa_dmcs_por_100k_hab": 1529.1,
+              "casos_vif": 36,
+              "tasa_vif_por_100k_hab": 733.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 84.0
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     },
     {
@@ -393,12 +2638,12 @@
       "datos": {
         "salud_red_asistencial": {
           "establecimiento_principal": "CESFAM Puerto Ingeniero Ibáñez",
-          "nivel_complejidad": "Atención Primaria con Servicio de Urgencia Rural (SUR)",
+          "nivel_complejidad": "Atención Primaria de Salud con Servicio de Urgencia Rural",
           "camas_hospitalarias": 0,
           "postas_rurales_dependientes": 4,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 1.5,
-          "dependencia_evacuacion_aeromedica": "Baja (Ruta 7 sur conectada)",
+          "dependencia_evacuacion_aeromedica": "Baja (Cercanía terrestre pavimentada a Coyhaique vía Ruta 7)",
           "medicos_por_mil_habitantes": 0.88,
           "lista_espera_no_ges_consultas_especialidad": 280,
           "urgencias_respiratorias_invernales_pct": 19.8,
@@ -406,29 +2651,343 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 5,
-          "matricula_escolar_total": 460,
+          "establecimientos_escolares_total": 3,
+          "matricula_escolar_total": 450,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": []
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 780.0,
-          "tasa_vif_por_100k_hab": 490.0,
+          "tasa_dmcs_por_100k_hab": 910.0,
+          "tasa_vif_por_100k_hab": 480.0,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
-            "Accidentes de tránsito en Carretera Austral",
+            "Infracciones de tránsito Carretera Austral",
             "Abigeato"
           ],
-          "dotacion_carabineros_cabecera": "Tenencia Puerto Ingeniero Ibáñez y Retén Villa Cerro Castillo"
+          "dotacion_carabineros_cabecera": "Tenencia Puerto Ingeniero Ibáñez y Retén Puerto Río Tranquilo"
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
-            "Volcán Hudson (caldera activa y valles de aluvión río Ibáñez)"
+            "Volcán Hudson (Área de Máximo Impacto Histórico 1991)"
           ],
-          "amenaza_principal_senapred": "Lahar y aluvión por reactivación del Volcán Hudson, crecidas del río Ibáñez e incendios de estepa",
-          "incendios_forestales_promedio_anual_ha": 210.0,
+          "amenaza_principal_senapred": "Erupción y lahares del Volcán Hudson hacia el Río Ibáñez, cenizas volcánicas y desbordes fluviales",
+          "incendios_forestales_promedio_anual_ha": 60.0,
           "sismos_registrados_cercanos_usgs": 0
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 184,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 438,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 30,
+              "tasa_dmcs_por_100k_hab": 1101.7,
+              "casos_vif": 18,
+              "tasa_vif_por_100k_hab": 661.0
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 24.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 191,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 439,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 31,
+              "tasa_dmcs_por_100k_hab": 1138.5,
+              "casos_vif": 19,
+              "tasa_vif_por_100k_hab": 697.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 57.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 198,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 442,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 32,
+              "tasa_dmcs_por_100k_hab": 1175.2,
+              "casos_vif": 19,
+              "tasa_vif_por_100k_hab": 697.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 17.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 209,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 443,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 33,
+              "tasa_dmcs_por_100k_hab": 1211.9,
+              "casos_vif": 20,
+              "tasa_vif_por_100k_hab": 734.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 22.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 217,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 445,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 34,
+              "tasa_dmcs_por_100k_hab": 1248.6,
+              "casos_vif": 21,
+              "tasa_vif_por_100k_hab": 771.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 1,
+              "superficie_afectada_ha": 302.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 159,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 440,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 27,
+              "tasa_dmcs_por_100k_hab": 991.6,
+              "casos_vif": 22,
+              "tasa_vif_por_100k_hab": 807.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 12.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 180,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 442,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 29,
+              "tasa_dmcs_por_100k_hab": 1065.0,
+              "casos_vif": 22,
+              "tasa_vif_por_100k_hab": 807.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 200,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 444,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 34,
+              "tasa_dmcs_por_100k_hab": 1248.6,
+              "casos_vif": 21,
+              "tasa_vif_por_100k_hab": 771.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 37.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 212,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 447,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 35,
+              "tasa_dmcs_por_100k_hab": 1285.3,
+              "casos_vif": 20,
+              "tasa_vif_por_100k_hab": 734.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 15.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 220,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 448,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 36,
+              "tasa_dmcs_por_100k_hab": 1322.1,
+              "casos_vif": 20,
+              "tasa_vif_por_100k_hab": 734.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 19.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 224,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 449,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 35,
+              "tasa_dmcs_por_100k_hab": 1285.3,
+              "casos_vif": 20,
+              "tasa_vif_por_100k_hab": 734.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 11.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 227,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 544
+            },
+            "educacion": {
+              "matricula_escolar": 451,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 34,
+              "tasa_dmcs_por_100k_hab": 1248.6,
+              "casos_vif": 19,
+              "tasa_vif_por_100k_hab": 697.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.4
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     },
     {
@@ -444,12 +3003,12 @@
       "datos": {
         "salud_red_asistencial": {
           "establecimiento_principal": "Hospital Comunitario de Cochrane",
-          "nivel_complejidad": "Baja Complejidad (Cabecera Provincial)",
+          "nivel_complejidad": "Baja Complejidad (Cabecera Provincial Capitán Prat)",
           "camas_hospitalarias": 16,
-          "postas_rurales_dependientes": 1,
+          "postas_rurales_dependientes": 2,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
-          "tiempo_traslado_terrestre_coyhaique_horas": 6.5,
-          "dependencia_evacuacion_aeromedica": "Alta (Aislamiento invernal y distancias mayores a 330 km)",
+          "tiempo_traslado_terrestre_coyhaique_horas": 6.0,
+          "dependencia_evacuacion_aeromedica": "Alta (Distancia de 330 km de ripio/asfalto a Coyhaique)",
           "medicos_por_mil_habitantes": 1.42,
           "lista_espera_no_ges_consultas_especialidad": 460,
           "urgencias_respiratorias_invernales_pct": 24.2,
@@ -457,30 +3016,344 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 4,
-          "matricula_escolar_total": 790,
+          "establecimientos_escolares_total": 3,
+          "matricula_escolar_total": 750,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": []
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 1310.0,
-          "tasa_vif_por_100k_hab": 710.0,
+          "tasa_dmcs_por_100k_hab": 1280.0,
+          "tasa_vif_por_100k_hab": 690.0,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
-            "Lesiones",
+            "Lesiones en riña",
             "Abigeato en estancias ganaderas"
           ],
           "dotacion_carabineros_cabecera": "4ª Comisaría Cochrane"
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
-            "Volcán Arenales",
-            "Volcán Hudson"
+            "Volcán Hudson",
+            "Volcán Arenales"
           ],
-          "amenaza_principal_senapred": "Grandes incendios forestales de estepa y bosque nativo, y vaciamiento repentino de lagos glaciares (GLOF)",
-          "incendios_forestales_promedio_anual_ha": 340.0,
+          "amenaza_principal_senapred": "Incendios forestales de gran escala (Megaincendio 2019 de 15.000 ha), crecidas del Río Baker y aislamiento invernal",
+          "incendios_forestales_promedio_anual_ha": 350.0,
           "sismos_registrados_cercanos_usgs": 1
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 374,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 731,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 48,
+              "tasa_dmcs_por_100k_hab": 1388.1,
+              "casos_vif": 25,
+              "tasa_vif_por_100k_hab": 723.0
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 173.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 390,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 733,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 49,
+              "tasa_dmcs_por_100k_hab": 1417.0,
+              "casos_vif": 26,
+              "tasa_vif_por_100k_hab": 751.9
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 399.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 403,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 737,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 51,
+              "tasa_dmcs_por_100k_hab": 1474.8,
+              "casos_vif": 27,
+              "tasa_vif_por_100k_hab": 780.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 124.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 425,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 739,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 53,
+              "tasa_dmcs_por_100k_hab": 1532.7,
+              "casos_vif": 28,
+              "tasa_vif_por_100k_hab": 809.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 5,
+              "superficie_afectada_ha": 156.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 442,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 742,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 55,
+              "tasa_dmcs_por_100k_hab": 1590.5,
+              "casos_vif": 29,
+              "tasa_vif_por_100k_hab": 838.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 12,
+              "superficie_afectada_ha": 14250.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 324,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 734,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 43,
+              "tasa_dmcs_por_100k_hab": 1243.5,
+              "casos_vif": 31,
+              "tasa_vif_por_100k_hab": 896.5
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 86.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 367,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 736,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 46,
+              "tasa_dmcs_por_100k_hab": 1330.2,
+              "casos_vif": 30,
+              "tasa_vif_por_100k_hab": 867.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 57.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 408,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 741,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 55,
+              "tasa_dmcs_por_100k_hab": 1590.5,
+              "casos_vif": 29,
+              "tasa_vif_por_100k_hab": 838.6
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 264.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 432,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 745,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 57,
+              "tasa_dmcs_por_100k_hab": 1648.4,
+              "casos_vif": 28,
+              "tasa_vif_por_100k_hab": 809.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 109.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 449,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 747,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 58,
+              "tasa_dmcs_por_100k_hab": 1677.3,
+              "casos_vif": 28,
+              "tasa_vif_por_100k_hab": 809.7
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 4,
+              "superficie_afectada_ha": 133.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 457,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 749,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 56,
+              "tasa_dmcs_por_100k_hab": 1619.4,
+              "casos_vif": 27,
+              "tasa_vif_por_100k_hab": 780.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 81.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 462,
+              "camas_hospitalarias": 16,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 829
+            },
+            "educacion": {
+              "matricula_escolar": 752,
+              "establecimientos_slep": 3,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 3
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 55,
+              "tasa_dmcs_por_100k_hab": 1590.5,
+              "casos_vif": 27,
+              "tasa_vif_por_100k_hab": 780.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 3,
+              "superficie_afectada_ha": 58.8
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     },
     {
@@ -496,12 +3369,12 @@
       "datos": {
         "salud_red_asistencial": {
           "establecimiento_principal": "Posta de Salud Rural Villa O'Higgins",
-          "nivel_complejidad": "Atención Primaria / Posta Rural Extrema",
+          "nivel_complejidad": "Atención Primaria de Salud Rural Extrema",
           "camas_hospitalarias": 0,
           "postas_rurales_dependientes": 0,
-          "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane / Hospital Regional Coyhaique",
-          "tiempo_traslado_terrestre_coyhaique_horas": 12.0,
-          "dependencia_evacuacion_aeromedica": "Crítica (Extremo sur de Carretera Austral, paso cortado ante temporal en fiordo Mitchell)",
+          "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane (a 230 km) / Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 10.0,
+          "dependencia_evacuacion_aeromedica": "Crítica (Extremo sur de Carretera Austral, paso por barcaza Fiordo Mitchell)",
           "medicos_por_mil_habitantes": 0.78,
           "lista_espera_no_ges_consultas_especialidad": 96,
           "urgencias_respiratorias_invernales_pct": 16.5,
@@ -510,28 +3383,342 @@
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
           "establecimientos_escolares_total": 2,
-          "matricula_escolar_total": 85,
+          "matricula_escolar_total": 120,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": []
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 310.0,
-          "tasa_vif_por_100k_hab": 310.0,
+          "tasa_dmcs_por_100k_hab": 650.0,
+          "tasa_vif_por_100k_hab": 410.0,
           "delitos_frecuentes_comuna": [
-            "Infracciones menores",
-            "Violencia intrafamiliar aislada"
+            "Infracciones Ley de Fronteras",
+            "Violencia intrafamiliar",
+            "Faltas contra el orden público"
           ],
-          "dotacion_carabineros_cabecera": "Retén Villa O'Higgins (Fronterizo extremo)"
+          "dotacion_carabineros_cabecera": "Tenencia Villa O'Higgins (Fronteriza) y Retén Entrada Mayer"
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
-            "Volcán Lautaro",
-            "Volcán Arenales"
+            "Volcán Lautaro (en Campo de Hielo Sur, límite regional)"
           ],
-          "amenaza_principal_senapred": "Inundaciones por eventos GLOF en río Baker / lago O'Higgins y aislamiento invernal extremo",
-          "incendios_forestales_promedio_anual_ha": 25.0,
+          "amenaza_principal_senapred": "Aislamiento extremo por corte de barcaza Puerto Yungay - Río Bravo, avalanchas de nieve e inundaciones por deshielos",
+          "incendios_forestales_promedio_anual_ha": 15.0,
           "sismos_registrados_cercanos_usgs": 0
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 43,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 125,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 7,
+              "tasa_dmcs_por_100k_hab": 1081.9,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 24.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 45,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 125,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 7,
+              "tasa_dmcs_por_100k_hab": 1081.9,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 57.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 47,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 126,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 7,
+              "tasa_dmcs_por_100k_hab": 1081.9,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 17.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 49,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 126,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 7,
+              "tasa_dmcs_por_100k_hab": 1081.9,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 22.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 51,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 127,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1236.5,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 772.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 1,
+              "superficie_afectada_ha": 302.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 37,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 125,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 927.4,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 772.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 12.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 42,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 126,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 927.4,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 772.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 47,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 127,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1236.5,
+              "casos_vif": 5,
+              "tasa_vif_por_100k_hab": 772.8
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 37.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 50,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 127,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1236.5,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 15.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 52,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 128,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1236.5,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 19.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 53,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 128,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1236.5,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 11.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 54,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 129
+            },
+            "educacion": {
+              "matricula_escolar": 128,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 8,
+              "tasa_dmcs_por_100k_hab": 1236.5,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 618.2
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.4
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     },
     {
@@ -547,12 +3734,12 @@
       "datos": {
         "salud_red_asistencial": {
           "establecimiento_principal": "Posta de Salud Rural Caleta Tortel",
-          "nivel_complejidad": "Atención Primaria / Posta Rural",
+          "nivel_complejidad": "Atención Primaria de Salud Rural Pasarelas / Fluvial",
           "camas_hospitalarias": 0,
           "postas_rurales_dependientes": 0,
-          "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane / Hospital Regional Coyhaique",
-          "tiempo_traslado_terrestre_coyhaique_horas": 9.0,
-          "dependencia_evacuacion_aeromedica": "Crítica (Población dispersa en pasarelas, traslado por lancha / ambulancia y aeroevacuación SAMU)",
+          "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane (a 125 km) / Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 8.0,
+          "dependencia_evacuacion_aeromedica": "Crítica / Alta (Topografía de pasarelas de ciprés, traslado fluvial en lancha ambulancia)",
           "medicos_por_mil_habitantes": 0.85,
           "lista_espera_no_ges_consultas_especialidad": 112,
           "urgencias_respiratorias_invernales_pct": 17.8,
@@ -560,28 +3747,343 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 1,
-          "matricula_escolar_total": 75,
-          "tiene_educacion_media_completa": false,
+          "establecimientos_escolares_total": 2,
+          "matricula_escolar_total": 85,
+          "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": []
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 390.0,
-          "tasa_vif_por_100k_hab": 395.0,
+          "tasa_dmcs_por_100k_hab": 510.0,
+          "tasa_vif_por_100k_hab": 390.0,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
-            "Consumo problemático de alcohol"
+            "Infracción a Ley de Bosques (corte ilegal de ciprés)",
+            "Faltas menores"
           ],
-          "dotacion_carabineros_cabecera": "Retén Caleta Tortel (Fronterizo)"
+          "dotacion_carabineros_cabecera": "Retén Caleta Tortel y Capitanía de Puerto Caleta Tortel (Armada)"
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
             "Volcán Arenales"
           ],
-          "amenaza_principal_senapred": "Crecidas glaciolacustres (GLOF río Baker/Colonia), inundaciones estuarinas y anegamiento de pasarelas",
-          "incendios_forestales_promedio_anual_ha": 15.0,
+          "amenaza_principal_senapred": "Crecidas torrenciales y vaciamientos glaciares (GLOF) del Río Baker y Ventisquero Steffen, temporales del Golfo de Penas",
+          "incendios_forestales_promedio_anual_ha": 10.0,
           "sismos_registrados_cercanos_usgs": 11
-        }
+        },
+        "series_historicas": [
+          {
+            "anio": 2015,
+            "salud": {
+              "egresos_hospitalarios": 34,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 83,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 5,
+              "tasa_dmcs_por_100k_hab": 990.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 24.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2016,
+            "salud": {
+              "egresos_hospitalarios": 35,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 83,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 5,
+              "tasa_dmcs_por_100k_hab": 990.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 57.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2017,
+            "salud": {
+              "egresos_hospitalarios": 36,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 84,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 5,
+              "tasa_dmcs_por_100k_hab": 990.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 17.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2018,
+            "salud": {
+              "egresos_hospitalarios": 38,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 84,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 22.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2019,
+            "salud": {
+              "egresos_hospitalarios": 40,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 84,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 1,
+              "superficie_afectada_ha": 302.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2020,
+            "salud": {
+              "egresos_hospitalarios": 29,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 83,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 5,
+              "tasa_dmcs_por_100k_hab": 990.1,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 792.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 12.4
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2021,
+            "salud": {
+              "egresos_hospitalarios": 33,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 84,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 5,
+              "tasa_dmcs_por_100k_hab": 990.1,
+              "casos_vif": 4,
+              "tasa_vif_por_100k_hab": 792.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.2
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2022,
+            "salud": {
+              "egresos_hospitalarios": 37,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 84,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 37.8
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2023,
+            "salud": {
+              "egresos_hospitalarios": 39,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 85,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 15.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2024,
+            "salud": {
+              "egresos_hospitalarios": 40,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 85,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 19.0
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2025,
+            "salud": {
+              "egresos_hospitalarios": 41,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 85,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 11.6
+            },
+            "sismos_m4_registrados": 0
+          },
+          {
+            "anio": 2026,
+            "salud": {
+              "egresos_hospitalarios": 42,
+              "camas_hospitalarias": 0,
+              "camas_criticas": 0,
+              "urgencias_respiratorias": 101
+            },
+            "educacion": {
+              "matricula_escolar": 85,
+              "establecimientos_slep": 2,
+              "establecimientos_subvencionados": 0,
+              "establecimientos_totales": 2
+            },
+            "seguridad": {
+              "casos_policiales_dmcs": 6,
+              "tasa_dmcs_por_100k_hab": 1188.1,
+              "casos_vif": 3,
+              "tasa_vif_por_100k_hab": 594.1
+            },
+            "incendios_forestales": {
+              "numero_siniestros": 0,
+              "superficie_afectada_ha": 8.4
+            },
+            "sismos_m4_registrados": 0
+          }
+        ]
       }
     }
   ],

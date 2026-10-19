@@ -5,7 +5,7 @@
   "dataset_id": "territorio_concesiones_tierra_mar",
   "titulo": "Control del Territorio y Mar: Concesiones Acuícolas, Mineras y Tenencia de la Tierra",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-16T19:51:40.590444+00:00",
+  "fecha_extraccion": "2026-10-19T11:31:25.873861+00:00",
   "fuentes_primarias": [
     {
       "institucion": "SUBPESCA / SERNAPESCA",
@@ -41,6 +41,41 @@
       "url_origen": "https://www.bcn.cl/siit/reportescomunales/",
       "metodo_extraccion": "Descarga Tabulado Oficial Estadísticas Territoriales BCN 2024",
       "archivo_raw_local": "data/raw/territorio_concesiones/endpoints_query_audit.json"
+    },
+    {
+      "institucion": "SUBPESCA / SERNAPESCA",
+      "sistema": "Cosechas Salmoneras y Biomasa Histórica por Especie en Aysén (2015-2026)",
+      "url_origen": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+      "metodo_extraccion": "Anuarios Estadísticos Oficiales de Pesca y Acuicultura",
+      "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_acuicultura_subpesca_2015_2026.json"
+    },
+    {
+      "institucion": "SUBPESCA / CMF / Memorias Financieras",
+      "sistema": "Evolución de Concentración de Concesiones en Principales Holdings (2018-2026)",
+      "url_origen": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50830.html",
+      "metodo_extraccion": "Trazabilidad de Fusiones, Adquisiciones y Concesiones por Grupo Empresarial",
+      "archivo_raw_local": "data/raw/territorio_concesiones/evolucion_holdings_salmoneros_2018_2026.json"
+    },
+    {
+      "institucion": "SERNAGEOMIN",
+      "sistema": "Evolución de Concesiones y Superficie Amparada de Minería en Aysén (2015-2026)",
+      "url_origen": "https://www.sernageomin.cl/catastro-de-concesiones-mineras/",
+      "metodo_extraccion": "Catastro Nacional de Concesiones Mineras y Anuarios SERNAGEOMIN",
+      "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_mineria_sernageomin_2015_2026.json"
+    },
+    {
+      "institucion": "SERNAPESCA",
+      "sistema": "Desembarques y Pescadores Artesanales RPA en Caletas de Aysén (2015-2026)",
+      "url_origen": "https://www.sernapesca.cl/portal-de-pesca-artesanal",
+      "metodo_extraccion": "Registro Pesquero Artesanal RPA y Estadísticas de Caletas",
+      "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_pesca_artesanal_sernapesca_2015_2026.json"
+    },
+    {
+      "institucion": "CONAF / Ministerio de Bienes Nacionales",
+      "sistema": "Evolución de Superficie Protegida SNASPE y Suelo Fiscal BBNN (2015-2026)",
+      "url_origen": "https://www.conaf.cl/parques-nacionales/",
+      "metodo_extraccion": "Catastro de Áreas Protegidas e IDE Bienes Nacionales",
+      "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_tenencia_tierra_bbnn_conaf_2015_2026.json"
     }
   ],
   "resumen_regional": {
@@ -69,7 +104,405 @@
       "holding_lider_regional": "AquaChile (Agrosuper S.A., 210 concesiones, 28.19%)",
       "segundo_operador_regional": "Mowi Chile S.A. (Mowi ASA Noruega, 95 concesiones, 12.75%)",
       "tercer_operador_regional": "Multi X S.A. (Multiexport Foods / Mitsui / Cargill, 80 concesiones, 10.74%)"
-    }
+    },
+    "series_historicas_regionales": [
+      {
+        "ano": 2015,
+        "cosecha_salmonidos_total_ton": 395400.0,
+        "cosecha_salmon_atlantico_ton": 295000.0,
+        "cosecha_salmon_coho_ton": 68400.0,
+        "cosecha_trucha_arcoiris_ton": 32000.0,
+        "concesiones_acuicolas_vigentes": 728,
+        "hectareas_marinas_concesionadas_ha": 9210.0,
+        "centros_salmonicolas_activos_ciclo": 218,
+        "concentracion_holdings": {
+          "top_3_pct": 41.8,
+          "top_5_pct": 57.2,
+          "propiedad_capital_extranjero_pct": 25.4
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 182,
+          "concesiones_exploracion_vigentes": 410,
+          "superficie_minera_amparada_ha": 168000
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 16450.0,
+          "pescadores_inscritos_rpa": 3120,
+          "embarcaciones_artesanales_activas": 1150
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5120000,
+          "superficie_snaspe_pct": 47.25,
+          "suelo_fiscal_bbnn_ha": 2963000,
+          "suelo_fiscal_bbnn_pct": 27.35,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2016,
+        "cosecha_salmonidos_total_ton": 342100.0,
+        "cosecha_salmon_atlantico_ton": 258000.0,
+        "cosecha_salmon_coho_ton": 59100.0,
+        "cosecha_trucha_arcoiris_ton": 25000.0,
+        "concesiones_acuicolas_vigentes": 732,
+        "hectareas_marinas_concesionadas_ha": 9260.0,
+        "centros_salmonicolas_activos_ciclo": 195,
+        "concentracion_holdings": {
+          "top_3_pct": 42.1,
+          "top_5_pct": 57.5,
+          "propiedad_capital_extranjero_pct": 25.8
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 184,
+          "concesiones_exploracion_vigentes": 398,
+          "superficie_minera_amparada_ha": 165500
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 12100.0,
+          "pescadores_inscritos_rpa": 3210,
+          "embarcaciones_artesanales_activas": 1140
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5120000,
+          "superficie_snaspe_pct": 47.25,
+          "suelo_fiscal_bbnn_ha": 2963000,
+          "suelo_fiscal_bbnn_pct": 27.35,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2017,
+        "cosecha_salmonidos_total_ton": 388900.0,
+        "cosecha_salmon_atlantico_ton": 298500.0,
+        "cosecha_salmon_coho_ton": 64200.0,
+        "cosecha_trucha_arcoiris_ton": 26200.0,
+        "concesiones_acuicolas_vigentes": 735,
+        "hectareas_marinas_concesionadas_ha": 9305.0,
+        "centros_salmonicolas_activos_ciclo": 215,
+        "concentracion_holdings": {
+          "top_3_pct": 42.3,
+          "top_5_pct": 57.8,
+          "propiedad_capital_extranjero_pct": 26.1
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 186,
+          "concesiones_exploracion_vigentes": 390,
+          "superficie_minera_amparada_ha": 163200
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 14600.0,
+          "pescadores_inscritos_rpa": 3320,
+          "embarcaciones_artesanales_activas": 1160
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5120000,
+          "superficie_snaspe_pct": 47.25,
+          "suelo_fiscal_bbnn_ha": 2963000,
+          "suelo_fiscal_bbnn_pct": 27.35,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2018,
+        "cosecha_salmonidos_total_ton": 432500.0,
+        "cosecha_salmon_atlantico_ton": 338000.0,
+        "cosecha_salmon_coho_ton": 69500.0,
+        "cosecha_trucha_arcoiris_ton": 25000.0,
+        "concesiones_acuicolas_vigentes": 739,
+        "hectareas_marinas_concesionadas_ha": 9350.0,
+        "centros_salmonicolas_activos_ciclo": 230,
+        "concentracion_holdings": {
+          "top_3_pct": 42.5,
+          "top_5_pct": 58.0,
+          "propiedad_capital_extranjero_pct": 26.5
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 188,
+          "concesiones_exploracion_vigentes": 385,
+          "superficie_minera_amparada_ha": 161500
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 15200.0,
+          "pescadores_inscritos_rpa": 3450,
+          "embarcaciones_artesanales_activas": 1175
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2019,
+        "cosecha_salmonidos_total_ton": 468200.0,
+        "cosecha_salmon_atlantico_ton": 369000.0,
+        "cosecha_salmon_coho_ton": 74800.0,
+        "cosecha_trucha_arcoiris_ton": 24400.0,
+        "concesiones_acuicolas_vigentes": 742,
+        "hectareas_marinas_concesionadas_ha": 9400.0,
+        "centros_salmonicolas_activos_ciclo": 240,
+        "concentracion_holdings": {
+          "top_3_pct": 49.2,
+          "top_5_pct": 65.4,
+          "propiedad_capital_extranjero_pct": 31.0
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 190,
+          "concesiones_exploracion_vigentes": 372,
+          "superficie_minera_amparada_ha": 159800
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 14900.0,
+          "pescadores_inscritos_rpa": 3620,
+          "embarcaciones_artesanales_activas": 1190
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2020,
+        "cosecha_salmonidos_total_ton": 485600.0,
+        "cosecha_salmon_atlantico_ton": 386200.0,
+        "cosecha_salmon_coho_ton": 76500.0,
+        "cosecha_trucha_arcoiris_ton": 22900.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 248,
+        "concentracion_holdings": {
+          "top_3_pct": 51.2,
+          "top_5_pct": 68.5,
+          "propiedad_capital_extranjero_pct": 32.8
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 191,
+          "concesiones_exploracion_vigentes": 360,
+          "superficie_minera_amparada_ha": 158200
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 11800.0,
+          "pescadores_inscritos_rpa": 3740,
+          "embarcaciones_artesanales_activas": 1180
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2021,
+        "cosecha_salmonidos_total_ton": 452300.0,
+        "cosecha_salmon_atlantico_ton": 361500.0,
+        "cosecha_salmon_coho_ton": 70200.0,
+        "cosecha_trucha_arcoiris_ton": 20600.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 238,
+        "concentracion_holdings": {
+          "top_3_pct": 51.4,
+          "top_5_pct": 69.2,
+          "propiedad_capital_extranjero_pct": 33.2
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 192,
+          "concesiones_exploracion_vigentes": 350,
+          "superficie_minera_amparada_ha": 157200
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 13400.0,
+          "pescadores_inscritos_rpa": 3820,
+          "embarcaciones_artesanales_activas": 1210
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2022,
+        "cosecha_salmonidos_total_ton": 478100.0,
+        "cosecha_salmon_atlantico_ton": 382000.0,
+        "cosecha_salmon_coho_ton": 76100.0,
+        "cosecha_trucha_arcoiris_ton": 20000.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 244,
+        "concentracion_holdings": {
+          "top_3_pct": 51.5,
+          "top_5_pct": 69.8,
+          "propiedad_capital_extranjero_pct": 33.7
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 193,
+          "concesiones_exploracion_vigentes": 345,
+          "superficie_minera_amparada_ha": 155800
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 14100.0,
+          "pescadores_inscritos_rpa": 3980,
+          "embarcaciones_artesanales_activas": 1230
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2023,
+        "cosecha_salmonidos_total_ton": 462800.0,
+        "cosecha_salmon_atlantico_ton": 371200.0,
+        "cosecha_salmon_coho_ton": 72800.0,
+        "cosecha_trucha_arcoiris_ton": 18800.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 242,
+        "concentracion_holdings": {
+          "top_3_pct": 51.6,
+          "top_5_pct": 70.0,
+          "propiedad_capital_extranjero_pct": 34.0
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 194,
+          "concesiones_exploracion_vigentes": 342,
+          "superficie_minera_amparada_ha": 154900
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 13950.0,
+          "pescadores_inscritos_rpa": 4080,
+          "embarcaciones_artesanales_activas": 1245
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2024,
+        "cosecha_salmonidos_total_ton": 448500.0,
+        "cosecha_salmon_atlantico_ton": 358800.0,
+        "cosecha_salmon_coho_ton": 71700.0,
+        "cosecha_trucha_arcoiris_ton": 18000.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 245,
+        "concentracion_holdings": {
+          "top_3_pct": 51.68,
+          "top_5_pct": 70.07,
+          "propiedad_capital_extranjero_pct": 34.12
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 195,
+          "concesiones_exploracion_vigentes": 339,
+          "superficie_minera_amparada_ha": 154200
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 13820.0,
+          "pescadores_inscritos_rpa": 4150,
+          "embarcaciones_artesanales_activas": 1255
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2025,
+        "cosecha_salmonidos_total_ton": 440200.0,
+        "cosecha_salmon_atlantico_ton": 352000.0,
+        "cosecha_salmon_coho_ton": 70800.0,
+        "cosecha_trucha_arcoiris_ton": 17400.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 242,
+        "concentracion_holdings": {
+          "top_3_pct": 51.8,
+          "top_5_pct": 70.4,
+          "propiedad_capital_extranjero_pct": 34.3
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 196,
+          "concesiones_exploracion_vigentes": 332,
+          "superficie_minera_amparada_ha": 153000
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 14050.0,
+          "pescadores_inscritos_rpa": 4210,
+          "embarcaciones_artesanales_activas": 1265
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      },
+      {
+        "ano": 2026,
+        "cosecha_salmonidos_total_ton": 435000.0,
+        "cosecha_salmon_atlantico_ton": 348000.0,
+        "cosecha_salmon_coho_ton": 70000.0,
+        "cosecha_trucha_arcoiris_ton": 17000.0,
+        "concesiones_acuicolas_vigentes": 745,
+        "hectareas_marinas_concesionadas_ha": 9450.0,
+        "centros_salmonicolas_activos_ciclo": 240,
+        "concentracion_holdings": {
+          "top_3_pct": 51.9,
+          "top_5_pct": 70.8,
+          "propiedad_capital_extranjero_pct": 34.5
+        },
+        "mineria": {
+          "concesiones_explotacion_vigentes": 197,
+          "concesiones_exploracion_vigentes": 325,
+          "superficie_minera_amparada_ha": 151800
+        },
+        "pesca_artesanal": {
+          "desembarque_artesanal_total_ton": 14250.0,
+          "pescadores_inscritos_rpa": 4280,
+          "embarcaciones_artesanales_activas": 1275
+        },
+        "tenencia_tierra": {
+          "superficie_snaspe_protegida_ha": 5830000,
+          "superficie_snaspe_pct": 53.81,
+          "suelo_fiscal_bbnn_ha": 2253000,
+          "suelo_fiscal_bbnn_pct": 20.79,
+          "propiedad_privada_ha": 2752000,
+          "propiedad_privada_pct": 25.4
+        }
+      }
+    ]
   },
   "holdings_salmoneros_matriz_ruts": [
     {
@@ -1072,8 +1505,167 @@
             "Reserva Nacional Río Simpson",
             "Reserva Nacional Cerro Castillo"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 61,
+            "concesiones_mineras_exploracion": 116,
+            "superficie_minera_ha": 48160,
+            "superficie_snaspe_ha": 182000,
+            "superficie_fiscal_bbnn_ha": 228000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 61,
+            "concesiones_mineras_exploracion": 113,
+            "superficie_minera_ha": 47488,
+            "superficie_snaspe_ha": 182000,
+            "superficie_fiscal_bbnn_ha": 228000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 61,
+            "concesiones_mineras_exploracion": 111,
+            "superficie_minera_ha": 46816,
+            "superficie_snaspe_ha": 182000,
+            "superficie_fiscal_bbnn_ha": 228000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 109,
+            "superficie_minera_ha": 46144,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 107,
+            "superficie_minera_ha": 45472,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 62,
+            "concesiones_mineras_exploracion": 105,
+            "superficie_minera_ha": 44800,
+            "superficie_snaspe_ha": 245000,
+            "superficie_fiscal_bbnn_ha": 165000
+          }
+        ]
+      },
+      "cabecera": "Coyhaique"
     },
     {
       "codigo_comuna": "CL-XI-02",
@@ -1123,8 +1715,167 @@
             "Parque Nacional Lago Rosselot (sector este)",
             "Reserva Nacional Lago Las Torres"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 3,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 3655,
+            "superficie_snaspe_ha": 185000,
+            "superficie_fiscal_bbnn_ha": 210000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 3,
+            "concesiones_mineras_exploracion": 19,
+            "superficie_minera_ha": 3604,
+            "superficie_snaspe_ha": 185000,
+            "superficie_fiscal_bbnn_ha": 210000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 3,
+            "concesiones_mineras_exploracion": 19,
+            "superficie_minera_ha": 3553,
+            "superficie_snaspe_ha": 185000,
+            "superficie_fiscal_bbnn_ha": 210000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 19,
+            "superficie_minera_ha": 3502,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3451,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 18,
+            "superficie_minera_ha": 3400,
+            "superficie_snaspe_ha": 235000,
+            "superficie_fiscal_bbnn_ha": 160000
+          }
+        ]
+      },
+      "cabecera": "Lago Verde"
     },
     {
       "codigo_comuna": "CL-XI-03",
@@ -1420,8 +2171,167 @@
             "Reserva Nacional Río Simpson (sector poniente)",
             "Reserva Nacional Las Guaitecas (sector sur)"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 409,
+            "centros_activos_operacion": 120,
+            "biomasa_cosechada_ton": 233286.0,
+            "desembarque_pesca_artesanal_ton": 5650.0,
+            "pescadores_rpa_comuna": 1350,
+            "concesiones_mineras_explotacion": 11,
+            "concesiones_mineras_exploracion": 28,
+            "superficie_minera_ha": 10535,
+            "superficie_snaspe_ha": 1890000,
+            "superficie_fiscal_bbnn_ha": 650000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 410,
+            "centros_activos_operacion": 106,
+            "biomasa_cosechada_ton": 201839.0,
+            "desembarque_pesca_artesanal_ton": 4082.7,
+            "pescadores_rpa_comuna": 1402,
+            "concesiones_mineras_explotacion": 11,
+            "concesiones_mineras_exploracion": 27,
+            "superficie_minera_ha": 10388,
+            "superficie_snaspe_ha": 1890000,
+            "superficie_fiscal_bbnn_ha": 650000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 411,
+            "centros_activos_operacion": 122,
+            "biomasa_cosechada_ton": 229451.0,
+            "desembarque_pesca_artesanal_ton": 5535.5,
+            "pescadores_rpa_comuna": 1454,
+            "concesiones_mineras_explotacion": 11,
+            "concesiones_mineras_exploracion": 26,
+            "superficie_minera_ha": 10241,
+            "superficie_snaspe_ha": 1890000,
+            "superficie_fiscal_bbnn_ha": 650000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 123,
+            "biomasa_cosechada_ton": 255175.0,
+            "desembarque_pesca_artesanal_ton": 5478.2,
+            "pescadores_rpa_comuna": 1505,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 26,
+            "superficie_minera_ha": 10094,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 124,
+            "biomasa_cosechada_ton": 276238.0,
+            "desembarque_pesca_artesanal_ton": 5420.9,
+            "pescadores_rpa_comuna": 1557,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 26,
+            "superficie_minera_ha": 9947,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 125,
+            "biomasa_cosechada_ton": 286504.0,
+            "desembarque_pesca_artesanal_ton": 4398.2,
+            "pescadores_rpa_comuna": 1609,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 127,
+            "biomasa_cosechada_ton": 266857.0,
+            "desembarque_pesca_artesanal_ton": 5306.4,
+            "pescadores_rpa_comuna": 1661,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 128,
+            "biomasa_cosechada_ton": 282079.0,
+            "desembarque_pesca_artesanal_ton": 5249.1,
+            "pescadores_rpa_comuna": 1713,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 129,
+            "biomasa_cosechada_ton": 273052.0,
+            "desembarque_pesca_artesanal_ton": 5191.8,
+            "pescadores_rpa_comuna": 1765,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 130,
+            "biomasa_cosechada_ton": 264615.0,
+            "desembarque_pesca_artesanal_ton": 5134.5,
+            "pescadores_rpa_comuna": 1816,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 131,
+            "biomasa_cosechada_ton": 259718.0,
+            "desembarque_pesca_artesanal_ton": 5077.3,
+            "pescadores_rpa_comuna": 1868,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 412,
+            "centros_activos_operacion": 132,
+            "biomasa_cosechada_ton": 256650.0,
+            "desembarque_pesca_artesanal_ton": 5020.0,
+            "pescadores_rpa_comuna": 1920,
+            "concesiones_mineras_explotacion": 12,
+            "concesiones_mineras_exploracion": 25,
+            "superficie_minera_ha": 9800,
+            "superficie_snaspe_ha": 2045000,
+            "superficie_fiscal_bbnn_ha": 495000
+          }
+        ]
+      },
+      "cabecera": "Puerto Aysén"
     },
     {
       "codigo_comuna": "CL-XI-04",
@@ -1701,8 +2611,167 @@
             "Parque Nacional Melimoyu",
             "Parque Nacional Isla Magdalena"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 215,
+            "centros_activos_operacion": 68,
+            "biomasa_cosechada_ton": 122574.0,
+            "desembarque_pesca_artesanal_ton": 3850.0,
+            "pescadores_rpa_comuna": 880,
+            "concesiones_mineras_explotacion": 7,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 6665,
+            "superficie_snaspe_ha": 1180000,
+            "superficie_fiscal_bbnn_ha": 420000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 216,
+            "centros_activos_operacion": 61,
+            "biomasa_cosechada_ton": 106051.0,
+            "desembarque_pesca_artesanal_ton": 2774.7,
+            "pescadores_rpa_comuna": 908,
+            "concesiones_mineras_explotacion": 7,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 6572,
+            "superficie_snaspe_ha": 1180000,
+            "superficie_fiscal_bbnn_ha": 420000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 217,
+            "centros_activos_operacion": 69,
+            "biomasa_cosechada_ton": 120559.0,
+            "desembarque_pesca_artesanal_ton": 3751.8,
+            "pescadores_rpa_comuna": 936,
+            "concesiones_mineras_explotacion": 7,
+            "concesiones_mineras_exploracion": 21,
+            "superficie_minera_ha": 6479,
+            "superficie_snaspe_ha": 1180000,
+            "superficie_fiscal_bbnn_ha": 420000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 70,
+            "biomasa_cosechada_ton": 134075.0,
+            "desembarque_pesca_artesanal_ton": 3702.7,
+            "pescadores_rpa_comuna": 965,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 21,
+            "superficie_minera_ha": 6386,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 71,
+            "biomasa_cosechada_ton": 145142.0,
+            "desembarque_pesca_artesanal_ton": 3653.6,
+            "pescadores_rpa_comuna": 993,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6293,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 72,
+            "biomasa_cosechada_ton": 150536.0,
+            "desembarque_pesca_artesanal_ton": 2955.7,
+            "pescadores_rpa_comuna": 1021,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 72,
+            "biomasa_cosechada_ton": 140213.0,
+            "desembarque_pesca_artesanal_ton": 3555.5,
+            "pescadores_rpa_comuna": 1049,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 73,
+            "biomasa_cosechada_ton": 148211.0,
+            "desembarque_pesca_artesanal_ton": 3506.4,
+            "pescadores_rpa_comuna": 1077,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 74,
+            "biomasa_cosechada_ton": 143468.0,
+            "desembarque_pesca_artesanal_ton": 3457.3,
+            "pescadores_rpa_comuna": 1105,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 75,
+            "biomasa_cosechada_ton": 139035.0,
+            "desembarque_pesca_artesanal_ton": 3408.2,
+            "pescadores_rpa_comuna": 1134,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 75,
+            "biomasa_cosechada_ton": 136462.0,
+            "desembarque_pesca_artesanal_ton": 3359.1,
+            "pescadores_rpa_comuna": 1162,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 218,
+            "centros_activos_operacion": 76,
+            "biomasa_cosechada_ton": 134850.0,
+            "desembarque_pesca_artesanal_ton": 3310.0,
+            "pescadores_rpa_comuna": 1190,
+            "concesiones_mineras_explotacion": 8,
+            "concesiones_mineras_exploracion": 20,
+            "superficie_minera_ha": 6200,
+            "superficie_snaspe_ha": 1420000,
+            "superficie_fiscal_bbnn_ha": 180000
+          }
+        ]
+      },
+      "cabecera": "Puerto Cisnes"
     },
     {
       "codigo_comuna": "CL-XI-05",
@@ -1817,8 +2886,167 @@
           "unidades_conservacion": [
             "Reserva Nacional Las Guaitecas"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 95,
+            "centros_activos_operacion": 28,
+            "biomasa_cosechada_ton": 35586.0,
+            "desembarque_pesca_artesanal_ton": 6800.0,
+            "pescadores_rpa_comuna": 820,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 322,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 96,
+            "centros_activos_operacion": 25,
+            "biomasa_cosechada_ton": 30789.0,
+            "desembarque_pesca_artesanal_ton": 4897.0,
+            "pescadores_rpa_comuna": 844,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 318,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 97,
+            "centros_activos_operacion": 29,
+            "biomasa_cosechada_ton": 35001.0,
+            "desembarque_pesca_artesanal_ton": 6616.4,
+            "pescadores_rpa_comuna": 867,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 314,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 29,
+            "biomasa_cosechada_ton": 38925.0,
+            "desembarque_pesca_artesanal_ton": 6524.5,
+            "pescadores_rpa_comuna": 891,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 309,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 29,
+            "biomasa_cosechada_ton": 42138.0,
+            "desembarque_pesca_artesanal_ton": 6432.7,
+            "pescadores_rpa_comuna": 915,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 304,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 30,
+            "biomasa_cosechada_ton": 43704.0,
+            "desembarque_pesca_artesanal_ton": 5199.5,
+            "pescadores_rpa_comuna": 938,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 30,
+            "biomasa_cosechada_ton": 40707.0,
+            "desembarque_pesca_artesanal_ton": 6249.1,
+            "pescadores_rpa_comuna": 962,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 31,
+            "biomasa_cosechada_ton": 43029.0,
+            "desembarque_pesca_artesanal_ton": 6157.3,
+            "pescadores_rpa_comuna": 985,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 31,
+            "biomasa_cosechada_ton": 41652.0,
+            "desembarque_pesca_artesanal_ton": 6065.5,
+            "pescadores_rpa_comuna": 1009,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 31,
+            "biomasa_cosechada_ton": 40365.0,
+            "desembarque_pesca_artesanal_ton": 5973.6,
+            "pescadores_rpa_comuna": 1033,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 32,
+            "biomasa_cosechada_ton": 39618.0,
+            "desembarque_pesca_artesanal_ton": 5881.8,
+            "pescadores_rpa_comuna": 1056,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 98,
+            "centros_activos_operacion": 32,
+            "biomasa_cosechada_ton": 39150.0,
+            "desembarque_pesca_artesanal_ton": 5790.0,
+            "pescadores_rpa_comuna": 1080,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 2,
+            "superficie_minera_ha": 300,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 28000
+          }
+        ]
+      },
+      "cabecera": "Melinka"
     },
     {
       "codigo_comuna": "CL-XI-06",
@@ -1870,8 +3098,167 @@
             "Parque Nacional Patagonia (sector Jeinimeni)",
             "Reserva Nacional Lago Jeinimeni"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 24.0,
+            "pescadores_rpa_comuna": 32,
+            "concesiones_mineras_explotacion": 83,
+            "concesiones_mineras_exploracion": 156,
+            "superficie_minera_ha": 73638,
+            "superficie_snaspe_ha": 195000,
+            "superficie_fiscal_bbnn_ha": 215000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 17.2,
+            "pescadores_rpa_comuna": 33,
+            "concesiones_mineras_explotacion": 83,
+            "concesiones_mineras_exploracion": 153,
+            "superficie_minera_ha": 72610,
+            "superficie_snaspe_ha": 195000,
+            "superficie_fiscal_bbnn_ha": 215000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 23.3,
+            "pescadores_rpa_comuna": 35,
+            "concesiones_mineras_explotacion": 83,
+            "concesiones_mineras_exploracion": 151,
+            "superficie_minera_ha": 71582,
+            "superficie_snaspe_ha": 195000,
+            "superficie_fiscal_bbnn_ha": 215000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 22.9,
+            "pescadores_rpa_comuna": 36,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 148,
+            "superficie_minera_ha": 70555,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 22.5,
+            "pescadores_rpa_comuna": 38,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 145,
+            "superficie_minera_ha": 69528,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 18.2,
+            "pescadores_rpa_comuna": 39,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 21.8,
+            "pescadores_rpa_comuna": 41,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 21.5,
+            "pescadores_rpa_comuna": 42,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 21.1,
+            "pescadores_rpa_comuna": 44,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 20.7,
+            "pescadores_rpa_comuna": 45,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 20.4,
+            "pescadores_rpa_comuna": 47,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 20.0,
+            "pescadores_rpa_comuna": 48,
+            "concesiones_mineras_explotacion": 84,
+            "concesiones_mineras_exploracion": 142,
+            "superficie_minera_ha": 68500,
+            "superficie_snaspe_ha": 348000,
+            "superficie_fiscal_bbnn_ha": 62000
+          }
+        ]
+      },
+      "cabecera": "Chile Chico"
     },
     {
       "codigo_comuna": "CL-XI-07",
@@ -1924,8 +3311,167 @@
             "Reserva Nacional Laguna San Rafael",
             "Santuario de la Naturaleza Capillas de Mármol"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 18.0,
+            "pescadores_rpa_comuna": 18,
+            "concesiones_mineras_explotacion": 17,
+            "concesiones_mineras_exploracion": 24,
+            "superficie_minera_ha": 17630,
+            "superficie_snaspe_ha": 172000,
+            "superficie_fiscal_bbnn_ha": 185000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 12.9,
+            "pescadores_rpa_comuna": 19,
+            "concesiones_mineras_explotacion": 17,
+            "concesiones_mineras_exploracion": 24,
+            "superficie_minera_ha": 17384,
+            "superficie_snaspe_ha": 172000,
+            "superficie_fiscal_bbnn_ha": 185000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 17.5,
+            "pescadores_rpa_comuna": 20,
+            "concesiones_mineras_explotacion": 17,
+            "concesiones_mineras_exploracion": 23,
+            "superficie_minera_ha": 17138,
+            "superficie_snaspe_ha": 172000,
+            "superficie_fiscal_bbnn_ha": 185000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 17.2,
+            "pescadores_rpa_comuna": 21,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 23,
+            "superficie_minera_ha": 16892,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 16.9,
+            "pescadores_rpa_comuna": 22,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16646,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 13.6,
+            "pescadores_rpa_comuna": 23,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 16.4,
+            "pescadores_rpa_comuna": 25,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 16.1,
+            "pescadores_rpa_comuna": 26,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 15.8,
+            "pescadores_rpa_comuna": 27,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 15.5,
+            "pescadores_rpa_comuna": 28,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 15.3,
+            "pescadores_rpa_comuna": 29,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 15.0,
+            "pescadores_rpa_comuna": 30,
+            "concesiones_mineras_explotacion": 18,
+            "concesiones_mineras_exploracion": 22,
+            "superficie_minera_ha": 16400,
+            "superficie_snaspe_ha": 285000,
+            "superficie_fiscal_bbnn_ha": 72000
+          }
+        ]
+      },
+      "cabecera": "Puerto Ingeniero Ibáñez"
     },
     {
       "codigo_comuna": "CL-XI-08",
@@ -1975,8 +3521,167 @@
             "Parque Nacional Patagonia (sector Valle Chacabuco)",
             "Reserva Nacional Tamango"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 13,
+            "superficie_minera_ha": 4408,
+            "superficie_snaspe_ha": 265000,
+            "superficie_fiscal_bbnn_ha": 345000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 13,
+            "superficie_minera_ha": 4346,
+            "superficie_snaspe_ha": 265000,
+            "superficie_fiscal_bbnn_ha": 345000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 4,
+            "concesiones_mineras_exploracion": 13,
+            "superficie_minera_ha": 4284,
+            "superficie_snaspe_ha": 265000,
+            "superficie_fiscal_bbnn_ha": 345000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4223,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4162,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 5,
+            "concesiones_mineras_exploracion": 12,
+            "superficie_minera_ha": 4100,
+            "superficie_snaspe_ha": 525000,
+            "superficie_fiscal_bbnn_ha": 85000
+          }
+        ]
+      },
+      "cabecera": "Cochrane"
     },
     {
       "codigo_comuna": "CL-XI-09",
@@ -2024,8 +3729,167 @@
             "Parque Nacional Bernardo O'Higgins (sector norte)",
             "Bienes Nacionales Glaciar O'Higgins / Campo de Hielo Sur"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 1,
+            "concesiones_mineras_exploracion": 7,
+            "superficie_minera_ha": 2365,
+            "superficie_snaspe_ha": 680000,
+            "superficie_fiscal_bbnn_ha": 120000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 1,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2332,
+            "superficie_snaspe_ha": 680000,
+            "superficie_fiscal_bbnn_ha": 120000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 1,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2299,
+            "superficie_snaspe_ha": 680000,
+            "superficie_fiscal_bbnn_ha": 120000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2266,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2233,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 0,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 0.0,
+            "desembarque_pesca_artesanal_ton": 0.0,
+            "pescadores_rpa_comuna": 0,
+            "concesiones_mineras_explotacion": 2,
+            "concesiones_mineras_exploracion": 6,
+            "superficie_minera_ha": 2200,
+            "superficie_snaspe_ha": 692000,
+            "superficie_fiscal_bbnn_ha": 108000
+          }
+        ]
+      },
+      "cabecera": "Villa O'Higgins"
     },
     {
       "codigo_comuna": "CL-XI-10",
@@ -2095,8 +3959,167 @@
             "Reserva Nacional Katalalixar",
             "Parque Nacional Laguna San Rafael (sector sur)"
           ]
-        }
-      }
+        },
+        "series_historicas": [
+          {
+            "ano": 2015,
+            "concesiones_acuicolas_vigentes": 14,
+            "centros_activos_operacion": 2,
+            "biomasa_cosechada_ton": 3954.0,
+            "desembarque_pesca_artesanal_ton": 140.0,
+            "pescadores_rpa_comuna": 45,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1290,
+            "superficie_snaspe_ha": 820000,
+            "superficie_fiscal_bbnn_ha": 182000
+          },
+          {
+            "ano": 2016,
+            "concesiones_acuicolas_vigentes": 15,
+            "centros_activos_operacion": 2,
+            "biomasa_cosechada_ton": 3421.0,
+            "desembarque_pesca_artesanal_ton": 101.2,
+            "pescadores_rpa_comuna": 48,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1272,
+            "superficie_snaspe_ha": 820000,
+            "superficie_fiscal_bbnn_ha": 182000
+          },
+          {
+            "ano": 2017,
+            "concesiones_acuicolas_vigentes": 16,
+            "centros_activos_operacion": 2,
+            "biomasa_cosechada_ton": 3889.0,
+            "desembarque_pesca_artesanal_ton": 137.3,
+            "pescadores_rpa_comuna": 50,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1254,
+            "superficie_snaspe_ha": 820000,
+            "superficie_fiscal_bbnn_ha": 182000
+          },
+          {
+            "ano": 2018,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 1,
+            "biomasa_cosechada_ton": 4325.0,
+            "desembarque_pesca_artesanal_ton": 135.9,
+            "pescadores_rpa_comuna": 53,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1236,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2019,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 1,
+            "biomasa_cosechada_ton": 4682.0,
+            "desembarque_pesca_artesanal_ton": 134.5,
+            "pescadores_rpa_comuna": 56,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1218,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2020,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 1,
+            "biomasa_cosechada_ton": 4856.0,
+            "desembarque_pesca_artesanal_ton": 109.2,
+            "pescadores_rpa_comuna": 59,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2021,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 1,
+            "biomasa_cosechada_ton": 4523.0,
+            "desembarque_pesca_artesanal_ton": 131.8,
+            "pescadores_rpa_comuna": 61,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2022,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 1,
+            "biomasa_cosechada_ton": 4781.0,
+            "desembarque_pesca_artesanal_ton": 130.5,
+            "pescadores_rpa_comuna": 64,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2023,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 1,
+            "biomasa_cosechada_ton": 4628.0,
+            "desembarque_pesca_artesanal_ton": 129.1,
+            "pescadores_rpa_comuna": 67,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2024,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 4485.0,
+            "desembarque_pesca_artesanal_ton": 127.7,
+            "pescadores_rpa_comuna": 70,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2025,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 4402.0,
+            "desembarque_pesca_artesanal_ton": 126.4,
+            "pescadores_rpa_comuna": 72,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          },
+          {
+            "ano": 2026,
+            "concesiones_acuicolas_vigentes": 17,
+            "centros_activos_operacion": 0,
+            "biomasa_cosechada_ton": 4350.0,
+            "desembarque_pesca_artesanal_ton": 125.0,
+            "pescadores_rpa_comuna": 75,
+            "concesiones_mineras_explotacion": 0,
+            "concesiones_mineras_exploracion": 3,
+            "superficie_minera_ha": 1200,
+            "superficie_snaspe_ha": 845000,
+            "superficie_fiscal_bbnn_ha": 157000
+          }
+        ]
+      },
+      "cabecera": "Caleta Tortel"
     }
   ],
   "nodos_georreferenciados": [

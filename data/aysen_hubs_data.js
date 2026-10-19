@@ -1,6 +1,6 @@
 // Auto-generado por scripts/build_aysen_hubs_bundle.cjs — CERO EMOJIS · 100% DATOS REALES VERIFICADOS
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-10-19T00:50:40.156Z",
+  "generatedAt": "2026-10-19T13:34:56.541Z",
   "hubs": [
     {
       "id": "turismo",
@@ -146,12 +146,12 @@ window.AYSEN_HUBS_DATA = {
               24,
               185,
               138,
-              32,
-              105,
-              162,
-              96,
-              46,
-              38
+              21,
+              95,
+              132,
+              83,
+              29,
+              42
             ],
             "backgroundColor": "#00357f"
           }
@@ -196,45 +196,45 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "Guaitecas",
-          "32",
-          "16",
-          "7",
-          "280"
+          "21",
+          "12",
+          "4",
+          "145"
         ],
         [
           "Chile Chico",
-          "105",
-          "48",
+          "95",
+          "45",
           "22",
-          "980"
+          "780"
         ],
         [
           "Río Ibáñez",
-          "162",
-          "76",
-          "38",
-          "1.450"
+          "132",
+          "58",
+          "32",
+          "1.150"
         ],
         [
           "Cochrane",
-          "96",
-          "44",
-          "23",
-          "890"
+          "83",
+          "38",
+          "21",
+          "690"
         ],
         [
           "O'Higgins",
-          "46",
-          "22",
-          "11",
-          "410"
+          "29",
+          "15",
+          "6",
+          "240"
         ],
         [
           "Tortel",
-          "38",
-          "18",
-          "9",
-          "330"
+          "42",
+          "20",
+          "11",
+          "360"
         ]
       ],
       "canvasPreview": {
@@ -337,50 +337,50 @@ window.AYSEN_HUBS_DATA = {
         [
           "Cisnes",
           "ZOIT Aysén Patagonia Queulat",
-          "Turismo termal, ecoturismo en bosque templado lluvioso y turismo aventura en aguas blancas",
+          "Senderismo en selva valdiviana, avistamiento de glaciares colgantes y termalismo",
           "Parque Nacional Queulat (Ventisquero Colgante), Termas de Puyuhuapi",
-          "Cortes viales por deslizamientos en Ruta 7 Norte (Cuesta Queulat)"
+          "Cortes en Carretera Austral por remociones en masa y conectividad de barcazas"
         ],
         [
           "Guaitecas",
           "Sin declaratoria ZOIT vigente",
-          "Ecoturismo marino, avistamiento de cetáceos y cultura chilota-patagónica insular",
-          "Avistamiento de Ballenas Azules en Golfo Corcovado, Canales de Melinka",
-          "Dependencia absoluta de conectividad marítima y aérea subsidiada"
+          "Ecoturismo marino, navegación de fiordos y gastronomía de productos del mar",
+          "Avistamiento de Ballenas Golfo Corcovado, Canales de Las Guaitecas",
+          "Aislamiento insular y dependencia exclusiva de transporte aéreo/marítimo"
         ],
         [
           "Chile Chico",
           "ZOIT Chelenko",
-          "Turismo geológico, agroturismo (cerezas), senderismo de media montaña y circuito binacional",
-          "Parque Nacional Patagonia (Sector Jeinimeni), Lago General Carrera (Microclima)",
-          "Capacidad limitada de la barcaza La Tehuelche en cruce lacustre"
+          "Geoturismo, trekking estepario-andino, agroturismo y conexión binacional con Los Antiguos",
+          "Parque Nacional Patagonia (Sector Jeinimeni), Cueva de las Manos",
+          "Dependencia del servicio de barcaza lacustre La Tehuelche y vientos intensos"
         ],
         [
           "Río Ibáñez",
           "ZOIT Chelenko",
-          "Navegación a cavernas de mármol, trekking de montaña (Circuito Cerro Castillo) y glaciares",
+          "Navegación a cavernas de mármol, trekking sobre hielo y escalada en Cerro Castillo",
           "Santuario de la Naturaleza Capillas de Mármol, Parque Nacional Cerro Castillo",
-          "Saturación vehicular en Puerto Río Tranquilo y ripio en Ruta 7"
+          "Saturación vehicular estival en Puerto Río Tranquilo y polvo en suspensión en Ruta 7"
         ],
         [
           "Cochrane",
           "ZOIT Provincia de los Glaciares",
-          "Trekking de conservación, avistamiento de huemul, deportes de aguas bravas y pesca con mosca",
-          "Parque Nacional Patagonia (Valle Chacabuco), Río Baker (Rafting y Pesca)",
-          "Distancia terrestre desde Balmaceda (~330 km) y estado de calzada"
+          "Pesca deportiva de clase mundial, observación de huemules y senderismo patagónico",
+          "Parque Nacional Patagonia (Sector Valle Chacabuco / Tamango), Río Baker",
+          "Tramos no pavimentados de Ruta 7 y distancia a centros de abastecimiento mayorista"
         ],
         [
           "O'Higgins",
           "ZOIT Provincia de los Glaciares",
           "Hito terminal de Carretera Austral, expediciones glaciarias y cruce binacional",
-          "Fin de la Carretera Austral (Hito km 1247), Glaciar O'Higgins (Campo de Hielo Sur)",
+          "Hito Terminal Carretera Austral (Km 1.247), Glaciar O'Higgins (Campo de Hielo Sur)",
           "Paso obligado por barcaza Mitchell (Río Bravo) y vientos en lago O'Higgins"
         ],
         [
           "Tortel",
           "ZOIT Provincia de los Glaciares",
           "Arquitectura patrimonial de pasarelas, navegaciones a fiordos de Campos de Hielo y patrimonio histórico",
-          "Pasarelas de Ciprés de las Guaitecas, Desembocadura del Río Baker",
+          "Pueblo Patrimonial Caleta Tortel (Pasarelas), Desembocadura del Río Baker",
           "Capacidad de alojamiento acotada y fragilidad de pasarelas peatonales"
         ]
       ],
@@ -505,38 +505,38 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "Guaitecas",
-          "11.800",
-          "22%",
+          "5.400",
+          "18%",
           "64%",
-          "21%"
+          "14.5%"
         ],
         [
           "Chile Chico",
-          "59.600",
-          "38.6%",
-          "79.2%",
-          "22.5%"
+          "58.600",
+          "38.5%",
+          "82%",
+          "21%"
         ],
         [
           "Río Ibáñez",
-          "112.000",
-          "44.5%",
-          "86.8%",
-          "16.4%"
+          "86.200",
+          "48%",
+          "89.2%",
+          "14.5%"
         ],
         [
           "Cochrane",
-          "49.000",
-          "39.8%",
+          "49.200",
+          "44.5%",
           "81%",
-          "17.5%"
+          "16%"
         ],
         [
           "O'Higgins",
-          "23.500",
-          "52%",
-          "88.5%",
-          "8.2%"
+          "16.400",
+          "55%",
+          "86.5%",
+          "7.5%"
         ],
         [
           "Tortel",
@@ -612,13 +612,13 @@ window.AYSEN_HUBS_DATA = {
               38500,
               1800,
               29600,
-              57200,
-              3200,
-              18400,
-              46800,
-              28300,
-              14200,
-              11500
+              64200,
+              2400,
+              34200,
+              41000,
+              35600,
+              12400,
+              14200
             ],
             "backgroundColor": "#0f766e"
           }
@@ -656,49 +656,49 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "Cisnes",
-          "57.200",
+          "64.200",
           "71.2%",
           "1.145.821,6",
           "Parque Nacional Queulat, Parque Nacional Melimoyu"
         ],
         [
           "Guaitecas",
-          "3.200",
+          "2.400",
           "45.8%",
           "28.423,5",
           "Reserva Nacional Las Guaitecas"
         ],
         [
           "Chile Chico",
-          "18.400",
+          "34.200",
           "48.6%",
           "278.823,1",
           "Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni"
         ],
         [
           "Río Ibáñez",
-          "46.800",
+          "41.000",
           "61.7%",
           "370.027,2",
           "Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael"
         ],
         [
           "Cochrane",
-          "28.300",
+          "35.600",
           "52.1%",
           "448.033,9",
           "Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango"
         ],
         [
           "O'Higgins",
-          "14.200",
+          "12.400",
           "78.3%",
           "640.689,7",
           "Parque Nacional Bernardo O'Higgins (sector norte)"
         ],
         [
           "Tortel",
-          "11.500",
+          "14.200",
           "87.4%",
           "1.722.706,4",
           "Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar"
@@ -794,39 +794,39 @@ window.AYSEN_HUBS_DATA = {
           "-45.5712, -72.0685"
         ],
         [
-          "Parque Nacional Queulat (Ventisquero Colgante)",
+          "Parque Nacional Laguna San Rafael",
+          "11201",
+          "Parque Nacional SNASPE",
+          "categoria: Parque Nacional · superficie ha: 1742000",
+          "-46.702, -73.855"
+        ],
+        [
+          "Parque Nacional Queulat",
           "11202",
           "Parque Nacional SNASPE",
-          "categoria: Parque Nacional · visitantes anuales: 57200",
-          "-44.483, -72.533"
+          "categoria: Parque Nacional · superficie ha: 154093",
+          "-44.45, -72.55"
         ],
         [
           "Parque Nacional Cerro Castillo",
           "11402",
           "Parque Nacional SNASPE",
-          "categoria: Parque Nacional · visitantes anuales: 24800",
+          "categoria: Parque Nacional · superficie ha: 143502",
           "-46.0667, -72.1833"
         ],
         [
-          "Parque Nacional Patagonia (Valle Chacabuco)",
+          "Parque Nacional Patagonia (Sector Valle Chacabuco)",
           "11301",
           "Parque Nacional SNASPE",
-          "categoria: Parque Nacional · visitantes anuales: 28300",
+          "categoria: Parque Nacional · superficie ha: 304527",
           "-47.1167, -72.4833"
-        ],
-        [
-          "Parque Nacional Laguna San Rafael",
-          "11201",
-          "Parque Nacional SNASPE",
-          "categoria: Parque Nacional · visitantes anuales: 12400",
-          "-46.702, -73.855"
         ],
         [
           "Santuario de la Naturaleza Capillas de Mármol (Puerto Río Tranquilo)",
           "11402",
-          "Santuario de la Naturaleza",
-          "categoria: Santuario Natural · visitantes anuales: 48500",
-          "-46.654, -72.628"
+          "Santuario de la Naturaleza y Geositio",
+          "categoria: Santuario de la Naturaleza · visitantes anuales: 48500",
+          "-46.643, -72.648"
         ],
         [
           "ZOIT Chelenko (Cuenca Lago General Carrera)",
@@ -2315,71 +2315,71 @@ window.AYSEN_HUBS_DATA = {
           "Coyhaique",
           "26.540,8",
           "$459",
-          "-",
-          "-"
+          "725",
+          "725"
         ],
         [
           "Lago Verde",
           "2.450,2",
           "$3.145,3",
-          "-",
-          "-"
+          "17,5",
+          "17,5"
         ],
         [
           "Aysén",
           "14.210,5",
           "$613,3",
-          "-",
-          "-"
+          "1.665",
+          "185"
         ],
         [
           "Cisnes",
           "6.100",
           "$1.187,5",
-          "-",
-          "-"
+          "612",
+          "68"
         ],
         [
           "Guaitecas",
           "3.300",
           "$2.065,1",
-          "-",
-          "-"
+          "189",
+          "21"
         ],
         [
           "Chile Chico",
           "5.400",
           "$1.100,9",
-          "-",
-          "-"
+          "32",
+          "288"
         ],
         [
           "Río Ibáñez",
           "3.950",
           "$1.450,6",
-          "-",
-          "-"
+          "57,5",
+          "57,5"
         ],
         [
           "Cochrane",
           "4.600",
           "$1.330,2",
-          "-",
-          "-"
+          "90",
+          "90"
         ],
         [
           "O'Higgins",
           "2.150",
           "$3.323",
-          "-",
-          "-"
+          "14",
+          "14"
         ],
         [
           "Tortel",
           "2.050",
           "$4.059,4",
-          "-",
-          "-"
+          "11",
+          "11"
         ]
       ],
       "canvasPreview": {
@@ -3083,72 +3083,72 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "5.240",
-          "29.800",
-          "-",
+          "5.535",
+          "33.650",
+          "48.500",
           "-"
         ],
         [
           "Lago Verde",
-          "86",
-          "390",
-          "-",
+          "76",
+          "460",
+          "450",
           "-"
         ],
         [
           "Aysén",
-          "2.180",
-          "16.400",
-          "-",
+          "2.100",
+          "12.780",
+          "56.200",
           "-"
         ],
         [
           "Cisnes",
-          "490",
-          "3.250",
-          "-",
+          "620",
+          "3.770",
+          "9.100",
           "-"
         ],
         [
           "Guaitecas",
-          "198",
-          "930",
-          "-",
+          "171",
+          "1.040",
+          "2.450",
           "-"
         ],
         [
           "Chile Chico",
-          "415",
-          "2.280",
-          "-",
+          "400",
+          "2.430",
+          "6.300",
           "-"
         ],
         [
           "Río Ibáñez",
-          "265",
-          "1.210",
-          "-",
+          "238",
+          "1.445",
+          "3.200",
           "-"
         ],
         [
           "Cochrane",
-          "345",
-          "1.680",
-          "-",
+          "295",
+          "1.790",
+          "4.400",
           "-"
         ],
         [
           "O'Higgins",
-          "78",
-          "290",
-          "-",
+          "57",
+          "345",
+          "530",
           "-"
         ],
         [
           "Tortel",
-          "68",
-          "245",
-          "-",
+          "48",
+          "295",
+          "390",
           "-"
         ]
       ],
@@ -3773,14 +3773,14 @@ window.AYSEN_HUBS_DATA = {
           "Sin hospital en el archipielago (Cobertura por CESFAM Melinka)",
           "APS Rural",
           "0",
-          "18 hrs"
+          "14 hrs"
         ],
         [
           "Chile Chico",
           "Hospital Familiar y Comunitario San Jose / Dr. Leopoldo Ortega Rodriguez de Chile Chico",
           "Hospitalario",
           "14",
-          "4.5 hrs"
+          "4 hrs"
         ],
         [
           "Río Ibáñez",
@@ -3794,21 +3794,21 @@ window.AYSEN_HUBS_DATA = {
           "Hospital Comunitario de Cochrane (Hospital Lord Cochrane)",
           "Hospitalario",
           "16",
-          "6.5 hrs"
+          "6 hrs"
         ],
         [
           "O'Higgins",
           "Sin hospital en la comuna (Posta Rural de Aislamiento Extremo)",
           "APS Rural",
           "0",
-          "12 hrs"
+          "10 hrs"
         ],
         [
           "Tortel",
           "Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas)",
           "APS Rural",
           "0",
-          "9 hrs"
+          "8 hrs"
         ]
       ],
       "canvasPreview": {
@@ -3941,43 +3941,43 @@ window.AYSEN_HUBS_DATA = {
         [
           "Guaitecas",
           "2",
-          "310",
+          "320",
           "Si",
           "Sin sede local"
         ],
         [
           "Chile Chico",
-          "5",
-          "920",
+          "4",
+          "890",
           "Si",
           "Sin sede local"
         ],
         [
           "Río Ibáñez",
-          "5",
-          "460",
+          "3",
+          "450",
           "Si",
           "Sin sede local"
         ],
         [
           "Cochrane",
-          "4",
-          "790",
+          "3",
+          "750",
           "Si",
           "Sin sede local"
         ],
         [
           "O'Higgins",
           "2",
-          "85",
+          "120",
           "Si",
           "Sin sede local"
         ],
         [
           "Tortel",
-          "1",
-          "75",
-          "Parcial / Derivacion",
+          "2",
+          "85",
+          "Si",
           "Sin sede local"
         ]
       ],
@@ -4045,11 +4045,11 @@ window.AYSEN_HUBS_DATA = {
               1980.2,
               1120,
               890,
-              1250,
-              780,
-              1310,
-              310,
-              390
+              1340,
+              910,
+              1280,
+              650,
+              510
             ],
             "backgroundColor": "#e11d48"
           }
@@ -4095,44 +4095,44 @@ window.AYSEN_HUBS_DATA = {
         [
           "Guaitecas",
           "890",
-          "750",
-          "Violencia intrafamiliar, Riñas e infracción a Ley de Alcoholes",
-          "Retén Melinka (Fronterizo/Marítimo) y Capitanía de Puerto Melinka"
+          "540",
+          "Infracción a Ley de Pesca, Violencia intrafamiliar",
+          "Retén Melinka (Fronterizo) y Capitanía de Puerto Melinka (Armada)"
         ],
         [
           "Chile Chico",
-          "1.250",
-          "680",
-          "Violencia intrafamiliar, Hurtos",
-          "3ª Comisaría Chile Chico (Fronteriza)"
+          "1.340",
+          "710",
+          "Violencia intrafamiliar, Contrabando y pasos fronterizos no habilitados",
+          "3ª Comisaría Chile Chico y Retén Puerto Guadal"
         ],
         [
           "Río Ibáñez",
-          "780",
-          "490",
-          "Violencia intrafamiliar, Accidentes de tránsito en Carretera Austral",
-          "Tenencia Puerto Ingeniero Ibáñez y Retén Villa Cerro Castillo"
+          "910",
+          "480",
+          "Violencia intrafamiliar, Infracciones de tránsito Carretera Austral",
+          "Tenencia Puerto Ingeniero Ibáñez y Retén Puerto Río Tranquilo"
         ],
         [
           "Cochrane",
-          "1.310",
-          "710",
-          "Violencia intrafamiliar, Lesiones",
+          "1.280",
+          "690",
+          "Violencia intrafamiliar, Lesiones en riña",
           "4ª Comisaría Cochrane"
         ],
         [
           "O'Higgins",
-          "310",
-          "310",
-          "Infracciones menores, Violencia intrafamiliar aislada",
-          "Retén Villa O'Higgins (Fronterizo extremo)"
+          "650",
+          "410",
+          "Infracciones Ley de Fronteras, Violencia intrafamiliar",
+          "Tenencia Villa O'Higgins (Fronteriza) y Retén Entrada Mayer"
         ],
         [
           "Tortel",
+          "510",
           "390",
-          "395",
-          "Violencia intrafamiliar, Consumo problemático de alcohol",
-          "Retén Caleta Tortel (Fronterizo)"
+          "Violencia intrafamiliar, Infracción a Ley de Bosques (corte ilegal de ciprés)",
+          "Retén Caleta Tortel y Capitanía de Puerto Caleta Tortel (Armada)"
         ]
       ],
       "canvasPreview": {
@@ -4893,8 +4893,8 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 31500,
       "proyectos_seia_aprobados": 118,
       "inversion_seia_mmusd": 495.6,
-      "empresas_sii": 5240,
-      "trabajadores_sii": 29800,
+      "empresas_sii": 5535,
+      "trabajadores_sii": 33650,
       "prestadores_sernatur": 412,
       "camas_turisticas": 3420,
       "pernoctaciones_emat": 208500,
@@ -4972,8 +4972,8 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 8900,
       "proyectos_seia_aprobados": 9,
       "inversion_seia_mmusd": 31.4,
-      "empresas_sii": 86,
-      "trabajadores_sii": 390,
+      "empresas_sii": 76,
+      "trabajadores_sii": 460,
       "prestadores_sernatur": 24,
       "camas_turisticas": 165,
       "pernoctaciones_emat": 6800,
@@ -5051,8 +5051,8 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 12400,
       "proyectos_seia_aprobados": 254,
       "inversion_seia_mmusd": 1320,
-      "empresas_sii": 2180,
-      "trabajadores_sii": 16400,
+      "empresas_sii": 2100,
+      "trabajadores_sii": 12780,
       "prestadores_sernatur": 185,
       "camas_turisticas": 1850,
       "pernoctaciones_emat": 98400,
@@ -5130,13 +5130,13 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 16800,
       "proyectos_seia_aprobados": 122,
       "inversion_seia_mmusd": 525,
-      "empresas_sii": 490,
-      "trabajadores_sii": 3250,
+      "empresas_sii": 620,
+      "trabajadores_sii": 3770,
       "prestadores_sernatur": 138,
       "camas_turisticas": 1240,
       "pernoctaciones_emat": 74200,
       "zoit_nombre": "ZOIT Aysén Patagonia Queulat",
-      "visitantes_snaspe": 57200,
+      "visitantes_snaspe": 64200,
       "camas_hospitalarias": 12,
       "traslado_coyhaique_hrs": 3.5,
       "matricula_escolar": 980,
@@ -5209,16 +5209,16 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 400,
       "proyectos_seia_aprobados": 86,
       "inversion_seia_mmusd": 245,
-      "empresas_sii": 198,
-      "trabajadores_sii": 930,
-      "prestadores_sernatur": 32,
-      "camas_turisticas": 280,
-      "pernoctaciones_emat": 11800,
+      "empresas_sii": 171,
+      "trabajadores_sii": 1040,
+      "prestadores_sernatur": 21,
+      "camas_turisticas": 145,
+      "pernoctaciones_emat": 5400,
       "zoit_nombre": "Sin declaratoria ZOIT vigente",
-      "visitantes_snaspe": 3200,
+      "visitantes_snaspe": 2400,
       "camas_hospitalarias": 0,
-      "traslado_coyhaique_hrs": 18,
-      "matricula_escolar": 310,
+      "traslado_coyhaique_hrs": 14,
+      "matricula_escolar": 320,
       "cobertura_vegetal_nativa_ha": 53000,
       "cobertura_vegetal_pct": 85.4,
       "fauna_amenazada_n": 5,
@@ -5288,16 +5288,16 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 48200,
       "proyectos_seia_aprobados": 41,
       "inversion_seia_mmusd": 310,
-      "empresas_sii": 415,
-      "trabajadores_sii": 2280,
-      "prestadores_sernatur": 105,
-      "camas_turisticas": 980,
-      "pernoctaciones_emat": 59600,
+      "empresas_sii": 400,
+      "trabajadores_sii": 2430,
+      "prestadores_sernatur": 95,
+      "camas_turisticas": 780,
+      "pernoctaciones_emat": 58600,
       "zoit_nombre": "ZOIT Chelenko",
-      "visitantes_snaspe": 18400,
+      "visitantes_snaspe": 34200,
       "camas_hospitalarias": 14,
-      "traslado_coyhaique_hrs": 4.5,
-      "matricula_escolar": 920,
+      "traslado_coyhaique_hrs": 4,
+      "matricula_escolar": 890,
       "cobertura_vegetal_nativa_ha": 328500,
       "cobertura_vegetal_pct": 57.3,
       "fauna_amenazada_n": 5,
@@ -5367,16 +5367,16 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 19600,
       "proyectos_seia_aprobados": 27,
       "inversion_seia_mmusd": 142,
-      "empresas_sii": 265,
-      "trabajadores_sii": 1210,
-      "prestadores_sernatur": 162,
-      "camas_turisticas": 1450,
-      "pernoctaciones_emat": 112000,
+      "empresas_sii": 238,
+      "trabajadores_sii": 1445,
+      "prestadores_sernatur": 132,
+      "camas_turisticas": 1150,
+      "pernoctaciones_emat": 86200,
       "zoit_nombre": "ZOIT Chelenko",
-      "visitantes_snaspe": 46800,
+      "visitantes_snaspe": 41000,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 1.5,
-      "matricula_escolar": 460,
+      "matricula_escolar": 450,
       "cobertura_vegetal_nativa_ha": 342000,
       "cobertura_vegetal_pct": 57,
       "fauna_amenazada_n": 5,
@@ -5446,16 +5446,16 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 9800,
       "proyectos_seia_aprobados": 33,
       "inversion_seia_mmusd": 172,
-      "empresas_sii": 345,
-      "trabajadores_sii": 1680,
-      "prestadores_sernatur": 96,
-      "camas_turisticas": 890,
-      "pernoctaciones_emat": 49000,
+      "empresas_sii": 295,
+      "trabajadores_sii": 1790,
+      "prestadores_sernatur": 83,
+      "camas_turisticas": 690,
+      "pernoctaciones_emat": 49200,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
-      "visitantes_snaspe": 28300,
+      "visitantes_snaspe": 35600,
       "camas_hospitalarias": 16,
-      "traslado_coyhaique_hrs": 6.5,
-      "matricula_escolar": 790,
+      "traslado_coyhaique_hrs": 6,
+      "matricula_escolar": 750,
       "cobertura_vegetal_nativa_ha": 543000,
       "cobertura_vegetal_pct": 63.1,
       "fauna_amenazada_n": 7,
@@ -5525,16 +5525,16 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 5600,
       "proyectos_seia_aprobados": 14,
       "inversion_seia_mmusd": 48,
-      "empresas_sii": 78,
-      "trabajadores_sii": 290,
-      "prestadores_sernatur": 46,
-      "camas_turisticas": 410,
-      "pernoctaciones_emat": 23500,
+      "empresas_sii": 57,
+      "trabajadores_sii": 345,
+      "prestadores_sernatur": 29,
+      "camas_turisticas": 240,
+      "pernoctaciones_emat": 16400,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
-      "visitantes_snaspe": 14200,
+      "visitantes_snaspe": 12400,
       "camas_hospitalarias": 0,
-      "traslado_coyhaique_hrs": 12,
-      "matricula_escolar": 85,
+      "traslado_coyhaique_hrs": 10,
+      "matricula_escolar": 120,
       "cobertura_vegetal_nativa_ha": 372000,
       "cobertura_vegetal_pct": 45.5,
       "fauna_amenazada_n": 5,
@@ -5604,16 +5604,16 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 3200,
       "proyectos_seia_aprobados": 18,
       "inversion_seia_mmusd": 66.5,
-      "empresas_sii": 68,
-      "trabajadores_sii": 245,
-      "prestadores_sernatur": 38,
-      "camas_turisticas": 330,
+      "empresas_sii": 48,
+      "trabajadores_sii": 295,
+      "prestadores_sernatur": 42,
+      "camas_turisticas": 360,
       "pernoctaciones_emat": 27000,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
-      "visitantes_snaspe": 11500,
+      "visitantes_snaspe": 14200,
       "camas_hospitalarias": 0,
-      "traslado_coyhaique_hrs": 9,
-      "matricula_escolar": 75,
+      "traslado_coyhaique_hrs": 8,
+      "matricula_escolar": 85,
       "cobertura_vegetal_nativa_ha": 715000,
       "cobertura_vegetal_pct": 36.3,
       "fauna_amenazada_n": 8,

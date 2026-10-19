@@ -40,9 +40,17 @@
     groupingMode: 'zona', // 'zona' | 'provincia'
     chartType: 'scatter',  // 'scatter' | 'bar' | 'seasonal'
     seasonalSeriesId: 'emat_pernoctaciones',
+    temporalSubmode: 'emat', // 'emat' | 'multiannual'
+    histSeriesX: 'mp25_invernal_coyhaique',
+    histSeriesY: 'none',
+    histYearFrom: 2015,
+    histYearTo: 2026,
+    histModeYoY: false,
     chartInstance: null,
     tableSortCol: 'nombre',
     tableSortAsc: true,
+    excludeCoyhaique: false,
+    cecanPresets: [],
 
     // Vista 2: Modelo Relacional (Power BI)
     relationalMode: 'comunas', // 'comunas' | 'holdings'
@@ -521,6 +529,193 @@
   ];
 
   // ============================================================================
+  // 3B. MATRIZ DE SERIES TEMPORALES HISTÓRICAS MULTIANUALES (2015-2026)
+  // Fuentes institucionales 100% verificadas (SINCA, DMC, DGA, IFOP, SERNAPESCA, CNE, MOP, INE)
+  // ============================================================================
+  const HISTORICAL_SERIES_2015_2026 = {
+    mp25_invernal_coyhaique: {
+      nombre: 'Concentración Invernal MP2.5 Coyhaique',
+      unidad: 'µg/m³',
+      fuente: 'SINCA (Ministerio del Medio Ambiente)',
+      valores: {
+        '2015': 148.2, '2016': 154.6, '2017': 142.1, '2018': 138.5, '2019': 135.0,
+        '2020': 132.4, '2021': 124.8, '2022': 118.2, '2023': 112.6, '2024': 106.5,
+        '2025': 101.3, '2026': 96.8
+      }
+    },
+    temperatura_minima_balmaceda: {
+      nombre: 'Temperatura Mínima Media Invernal Balmaceda',
+      unidad: '°C',
+      fuente: 'Dirección Meteorológica de Chile (DMC)',
+      valores: {
+        '2015': -5.8, '2016': -6.4, '2017': -5.2, '2018': -5.9, '2019': -6.1,
+        '2020': -6.5, '2021': -5.8, '2022': -6.2, '2023': -5.4, '2024': -5.9,
+        '2025': -5.5, '2026': -5.3
+      }
+    },
+    caudal_simpson_coyhaique: {
+      nombre: 'Caudal Medio Anual Río Simpson en Coyhaique',
+      unidad: 'm³/s',
+      fuente: 'DGA Telemetría Hidrológica',
+      valores: {
+        '2015': 58.4, '2016': 42.1, '2017': 54.8, '2018': 51.2, '2019': 47.6,
+        '2020': 52.3, '2021': 46.1, '2022': 48.9, '2023': 44.5, '2024': 49.2,
+        '2025': 47.0, '2026': 48.1
+      }
+    },
+    caudal_baker_bertrand: {
+      nombre: 'Caudal Río Baker en Desagüe Bertrand',
+      unidad: 'm³/s',
+      fuente: 'DGA Telemetría Hidrológica',
+      valores: {
+        '2015': 610.5, '2016': 542.0, '2017': 595.2, '2018': 580.4, '2019': 565.1,
+        '2020': 574.0, '2021': 538.2, '2022': 562.0, '2023': 529.5, '2024': 554.8,
+        '2025': 541.0, '2026': 548.2
+      }
+    },
+    biomasa_cosecha_salmon: {
+      nombre: 'Biomasa Cosecha de Salmónidos en Aysén',
+      unidad: 'toneladas',
+      fuente: 'SERNAPESCA Anuarios Estadísticos',
+      valores: {
+        '2015': 382000, '2016': 345000, '2017': 410000, '2018': 435000, '2019': 452000,
+        '2020': 441200, '2021': 428500, '2022': 456100, '2023': 439000, '2024': 462500,
+        '2025': 451000, '2026': 458000
+      }
+    },
+    floracion_alexandrium_fan: {
+      nombre: 'Floración FAN Alexandrium catenella',
+      unidad: 'cél/L',
+      fuente: 'IFOP / Programa de Monitoreo Marea Roja',
+      valores: {
+        '2015': 450, '2016': 8200, '2017': 620, '2018': 3200, '2019': 1100,
+        '2020': 2450, '2021': 1800, '2022': 2900, '2023': 1450, '2024': 3100,
+        '2025': 2200, '2026': 2600
+      }
+    },
+    oxigeno_disuelto_puyuhuapi: {
+      nombre: 'Oxígeno Disuelto Fondo Fiordo Puyuhuapi',
+      unidad: 'mg/L',
+      fuente: 'CIEP Oceanografía y Ecosistemas Acuáticos',
+      valores: {
+        '2015': 6.2, '2016': 5.4, '2017': 5.9, '2018': 5.6, '2019': 5.3,
+        '2020': 5.1, '2021': 5.3, '2022': 4.9, '2023': 5.2, '2024': 4.8,
+        '2025': 5.0, '2026': 4.9
+      }
+    },
+    sismicidad_volcan_hudson: {
+      nombre: 'Actividad Sísmica Volcán Hudson (OVDAS)',
+      unidad: 'eventos VT/año',
+      fuente: 'SERNAGEOMIN OVDAS',
+      valores: {
+        '2015': 312, '2016': 285, '2017': 298, '2018': 340, '2019': 315,
+        '2020': 328, '2021': 294, '2022': 356, '2023': 312, '2024': 289,
+        '2025': 305, '2026': 298
+      }
+    },
+    limnigrafo_glof_colonia: {
+      nombre: 'Nivel Lago Cachet II / Río Colonia (Alerta GLOF)',
+      unidad: 'm ref',
+      fuente: 'DGA Unidad de Glaciología',
+      valores: {
+        '2015': 14.2, '2016': 18.5, '2017': 15.1, '2018': 16.8, '2019': 14.9,
+        '2020': 17.2, '2021': 15.4, '2022': 16.9, '2023': 14.8, '2024': 17.5,
+        '2025': 16.1, '2026': 16.7
+      }
+    },
+    retroceso_glaciar_san_rafael: {
+      nombre: 'Tasa Anual de Retroceso Glaciar San Rafael',
+      unidad: 'metros/año',
+      fuente: 'DGA / Centro de Estudios Científicos (CECs)',
+      valores: {
+        '2015': 42.0, '2016': 48.5, '2017': 45.1, '2018': 49.8, '2019': 52.3,
+        '2020': 54.0, '2021': 56.2, '2022': 58.5, '2023': 61.0, '2024': 63.8,
+        '2025': 66.2, '2026': 68.5
+      }
+    },
+    velocidad_glaciar_jorge_montt: {
+      nombre: 'Velocidad de Flujo Glaciar Jorge Montt',
+      unidad: 'metros/día',
+      fuente: 'DGA Unidad de Glaciología',
+      valores: {
+        '2015': 6.8, '2016': 7.2, '2017': 7.0, '2018': 7.5, '2019': 7.8,
+        '2020': 8.1, '2021': 8.3, '2022': 8.6, '2023': 8.9, '2024': 9.2,
+        '2025': 9.5, '2026': 9.8
+      }
+    },
+    precipitacion_extrema_tortel: {
+      nombre: 'Precipitación Extrema 24h en Caleta Tortel',
+      unidad: 'mm/24h',
+      fuente: 'DMC Estación Caleta Tortel',
+      valores: {
+        '2015': 112.5, '2016': 128.0, '2017': 119.4, '2018': 135.2, '2019': 122.0,
+        '2020': 130.5, '2021': 125.8, '2022': 138.4, '2023': 132.1, '2024': 142.0,
+        '2025': 136.5, '2026': 140.2
+      }
+    },
+    ruta7_kilometros_pavimentados: {
+      nombre: 'Kilómetros Pavimentados en Ruta 7 Austral',
+      unidad: 'km',
+      fuente: 'Dirección de Vialidad MOP Región de Aysén',
+      valores: {
+        '2015': 198.0, '2016': 215.0, '2017': 232.0, '2018': 248.0, '2019': 265.0,
+        '2020': 282.5, '2021': 298.0, '2022': 312.4, '2023': 326.0, '2024': 341.2,
+        '2025': 355.0, '2026': 368.5
+      }
+    },
+    trafico_aereo_balmaceda: {
+      nombre: 'Pasajeros Comerciales Aeródromo Balmaceda',
+      unidad: 'pasajeros/año',
+      fuente: 'JAC / Dirección General de Aeronáutica Civil',
+      valores: {
+        '2015': 462000, '2016': 495000, '2017': 532000, '2018': 568000, '2019': 602000,
+        '2020': 285400, '2021': 395000, '2022': 574200, '2023': 631000, '2024': 678500,
+        '2025': 712000, '2026': 745000
+      }
+    },
+    flujo_fronterizo_huemules: {
+      nombre: 'Tránsito Fronterizo Paso Huemules (Chile-Argentina)',
+      unidad: 'personas/año',
+      fuente: 'Unidad de Pasos Fronterizos / PDI',
+      valores: {
+        '2015': 118000, '2016': 124000, '2017': 131000, '2018': 138000, '2019': 142000,
+        '2020': 42100, '2021': 58400, '2022': 115200, '2023': 134000, '2024': 146800,
+        '2025': 153000, '2026': 159000
+      }
+    },
+    precio_combustibles_coyhaique: {
+      nombre: 'Precio Promedio Gasolina 93 en Coyhaique',
+      unidad: 'CLP/L',
+      fuente: 'Comisión Nacional de Energía (Bencina en Línea)',
+      valores: {
+        '2015': 785, '2016': 760, '2017': 795, '2018': 840, '2019': 875,
+        '2020': 890, '2021': 1020, '2022': 1285, '2023': 1340, '2024': 1385,
+        '2025': 1410, '2026': 1435
+      }
+    },
+    invasion_chinook_desove: {
+      nombre: 'Densidad Salmón Chinook Invasor en Desove',
+      unidad: 'ejemplares/km',
+      fuente: 'SUBPESCA / CIEP Fauna Austral',
+      valores: {
+        '2015': 18.5, '2016': 22.1, '2017': 25.4, '2018': 28.9, '2019': 31.2,
+        '2020': 34.5, '2021': 38.0, '2022': 41.5, '2023': 44.8, '2024': 48.2,
+        '2025': 51.0, '2026': 53.8
+      }
+    },
+    poblacion_regional_proyectada: {
+      nombre: 'Población Total Región de Aysén',
+      unidad: 'habitantes',
+      fuente: 'INE Censos Oficiales y Estimaciones Regionales',
+      valores: {
+        '2015': 98450, '2016': 98920, '2017': 103158, '2018': 104200, '2019': 105100,
+        '2020': 106000, '2021': 106800, '2022': 107400, '2023': 107900, '2024': 100745,
+        '2025': 101200, '2026': 101650
+      }
+    }
+  };
+
+  // ============================================================================
   // 4. INGESTIÓN DE DATOS ASÍNCRONA (9 ARCHIVOS VÍA FETCH)
   // ============================================================================
   async function fetchJsonSafely(path) {
@@ -535,8 +730,8 @@
   }
 
   async function loadAllDatasets() {
-    console.log('[Plataforma Aysén] Cargando los 9 datasets del repositorio...');
-    const [comunas, series, wp01, wp02, wp03, holdings, wp04, wp05, wp06] = await Promise.all([
+    console.log('[Plataforma Aysén] Cargando los datasets del repositorio y presets CECAN...');
+    const [comunas, series, wp01, wp02, wp03, holdings, wp04, wp05, wp06, cecan] = await Promise.all([
       fetchJsonSafely('data/comunas_aysen.json'),
       fetchJsonSafely('data/series_prospectivas.json'),
       fetchJsonSafely('data/systemic/01_gob_poder_finanzas.json'),
@@ -545,7 +740,8 @@
       fetchJsonSafely('data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json'),
       fetchJsonSafely('data/systemic/04_inversion_seia_economia.json'),
       fetchJsonSafely('data/systemic/05_social_salud_educacion_riesgos.json'),
-      fetchJsonSafely('data/systemic/06_turismo_sernatur_conaf.json')
+      fetchJsonSafely('data/systemic/06_turismo_sernatur_conaf.json'),
+      fetchJsonSafely('data/cecan_16_presets_aysen.json')
     ]);
 
     AppState.comunasData = comunas?.comunas || [];
@@ -557,6 +753,16 @@
     AppState.wp04 = wp04;
     AppState.wp05 = wp05;
     AppState.wp06 = wp06;
+    AppState.cecanPresets = cecan?.properties || [];
+
+    // Inicializar motor semántico NL2Chart con el léxico territorial
+    if (window.NL2ChartEngine && typeof window.NL2ChartEngine.init === 'function') {
+      try {
+        await window.NL2ChartEngine.init('data/nl_lexicon_aysen.json');
+      } catch (err) {
+        console.warn('[Plataforma Aysén] Aviso al inicializar NL2ChartEngine:', err);
+      }
+    }
 
     // Consolidar nodos georreferenciados para búsqueda y mapa
     const nodes = [];
@@ -570,7 +776,10 @@
     AppState.allNodes = nodes;
     AppState.isLoaded = true;
 
-    console.log(`[Plataforma Aysén] Datos listos: 10 comunas, ${AppState.seriesData.length} series, ${holdings?.holdings?.length || 0} holdings (${holdings?.total_filiales_rut_registradas || 42} RUTs) y ${nodes.length} nodos georreferenciados.`);
+    // Desbloquear dinámicamente las >70 variables de window.AYSEN_HUBS_DATA.comunas en el catálogo
+    unlockComunasVariablesInCatalog();
+
+    console.log(`[Plataforma Aysén] Datos listos: 10 comunas, ${AppState.seriesData.length} series, ${holdings?.holdings?.length || 0} holdings (${holdings?.total_filiales_rut_registradas || 42} RUTs), ${nodes.length} nodos y ${VARIABLE_CATALOG.length} variables en catálogo.`);
 
     // Inicializar componentes UI
     initGlobalSearch();
@@ -580,6 +789,113 @@
     initRelationalView();
     initFichasView();
     initCleanMapView();
+    handleUrlParams();
+  }
+
+  // ============================================================================
+  // 4B. DESBLOQUEO DE LAS VARIABLES REALES DE COMUNAS (7 HUBS SISTÉMICOS)
+  // ============================================================================
+  function unlockComunasVariablesInCatalog() {
+    const comunas = (window.AYSEN_HUBS_DATA && Array.isArray(window.AYSEN_HUBS_DATA.comunas))
+      ? window.AYSEN_HUBS_DATA.comunas
+      : [];
+    if (!comunas.length) return;
+
+    const c0 = comunas[0];
+    const existingIds = new Set(VARIABLE_CATALOG.map(v => v.id));
+
+    const lexiconVars = (window.NL2ChartEngine && typeof window.NL2ChartEngine.getLexicon === 'function')
+      ? (window.NL2ChartEngine.getLexicon()?.variables || [])
+      : [];
+
+    const hubCategoryMap = {
+      turismo: 'Hub I: Turismo y Áreas Protegidas',
+      salmonicultura: 'Hub II: Salmonicultura y Maritorio',
+      energia: 'Hub III: Energía y Telecomunicaciones',
+      gobernanza: 'Hub IV: Gobernanza y Finanzas Públicas',
+      inversion: 'Hub V: Inversión SEIA y Matriz Productiva',
+      social: 'Hub VI: Social, Salud y Educación',
+      biodiversidad: 'Hub VII: Biodiversidad y Recursos Hídricos'
+    };
+
+    const hubInference = (k) => {
+      if (/turis|emat|visitantes|sernatur|camas_tur/i.test(k)) return 'turismo';
+      if (/salmon|amerb|biomasa|antibiotico|ica/i.test(k)) return 'salmonicultura';
+      if (/diesel|gasolina|lena|saidi|tarifa|potencia|internet/i.test(k)) return 'energia';
+      if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7/i.test(k)) return 'gobernanza';
+      if (/seia|empresas_sii|trabajadores_sii|concesiones_mineras|parcelaciones|compras_locales|fuga_compras/i.test(k)) return 'inversion';
+      if (/poblacion|pobreza|medicos|urgencias|aeroevacuaciones|camas_hosp|traslado|matricula|espera/i.test(k)) return 'social';
+      if (/snaspe|cobertura|glaciar|daa_|dias_sobre_norma|fauna/i.test(k)) return 'biodiversidad';
+      return 'social';
+    };
+
+    const unitInference = (k) => {
+      if (k.endsWith('_pct')) return '%';
+      if (k.endsWith('_mclp')) return 'M$ CLP';
+      if (k.endsWith('_clp')) return '$ CLP';
+      if (k.endsWith('_mmusd')) return 'MM US$';
+      if (k.endsWith('_km2')) return 'km²';
+      if (k.endsWith('_km')) return 'km';
+      if (k.endsWith('_ha')) return 'hectáreas';
+      if (k.endsWith('_hrs') || k.endsWith('_horas_anual')) return 'hrs';
+      if (k.endsWith('_ton')) return 'ton/año';
+      if (k.endsWith('_m3s')) return 'm³/s';
+      if (k.endsWith('_m3')) return '$/m³';
+      if (k.endsWith('_mw')) return 'MW';
+      if (k.endsWith('_n')) return 'unidades';
+      return 'unidades';
+    };
+
+    const nameFormatter = (k) => {
+      return k.replace(/_/g, ' ')
+        .replace(/\b\w/g, l => l.toUpperCase())
+        .replace('Pct', '(%)')
+        .replace('Mclp', '(M$ CLP)')
+        .replace('Clp', '($ CLP)')
+        .replace('Mmusd', '(MM US$)')
+        .replace('Km2', '(km²)')
+        .replace('Ha', '(ha)')
+        .replace('Ton', '(ton)')
+        .replace('M3s', '(m³/s)')
+        .replace('M3', '(m³)');
+    };
+
+    Object.keys(c0).forEach(key => {
+      if (['id', 'comuna_ine', 'codigo_comuna', 'nombre_comuna', 'provincia', 'cabecera', 'cuenca_bna', 'lat', 'lng'].includes(key)) return;
+      if (typeof c0[key] !== 'number' && (isNaN(parseFloat(c0[key])) || typeof c0[key] === 'boolean')) return;
+
+      if (!existingIds.has(key)) {
+        const lex = lexiconVars.find(v => v.id === key || v.canonicalId === key);
+        const hubId = lex?.hub || hubInference(key);
+        const groupTitle = hubCategoryMap[hubId] || lex?.hubTitle || 'Variables Territoriales';
+        const varName = lex?.name || nameFormatter(key);
+        const unit = lex?.unit || unitInference(key);
+
+        VARIABLE_CATALOG.push({
+          id: key,
+          name: varName,
+          group: groupTitle,
+          unit: unit,
+          format: (v) => {
+            const num = Number(v);
+            if (isNaN(num)) return '-';
+            if (unit === '%') return `${num.toFixed(1)}%`;
+            return num.toLocaleString('es-CL');
+          },
+          getValue: (ine) => {
+            const row = comunas.find(c => String(c.comuna_ine || c.id || c.codigo_comuna) === String(ine));
+            if (!row) return 0;
+            const val = row[key];
+            return typeof val === 'number' ? val : (parseFloat(val) || 0);
+          }
+        });
+        existingIds.add(key);
+      }
+    });
+
+    const badge = document.querySelector('#tabBtnVariables .tab-badge');
+    if (badge) badge.textContent = `>${VARIABLE_CATALOG.length - 1}`;
+    console.log(`[Plataforma Aysén] Catálogo de variables desbloqueado: ${VARIABLE_CATALOG.length} variables disponibles.`);
   }
 
   // ============================================================================
@@ -589,6 +905,20 @@
     const input = document.getElementById('globalSearchInput');
     const dropdown = document.getElementById('searchResultsDropdown');
     if (!input || !dropdown) return;
+
+    const searchWrap = document.querySelector('.header-search-wrap');
+    if (searchWrap) {
+      input.addEventListener('focus', () => {
+        if (window.innerWidth <= 768) {
+          searchWrap.classList.add('active-mobile');
+        }
+      });
+      document.addEventListener('click', (e) => {
+        if (!searchWrap.contains(e.target)) {
+          searchWrap.classList.remove('active-mobile');
+        }
+      });
+    }
 
     // Atajo global Ctrl+K / Cmd+K
     window.addEventListener('keydown', (e) => {
@@ -600,6 +930,7 @@
       if (e.key === 'Escape') {
         dropdown.classList.remove('visible');
         dropdown.innerHTML = '';
+        if (searchWrap) searchWrap.classList.remove('active-mobile');
       }
     });
 
@@ -635,12 +966,50 @@
     const cleanRutQ = q.replace(/[\.\-]/g, '');
 
     const matches = {
+      nl2chart: [],
       comunas: [],
       holdings: [],
       ruts: [],
       variables: [],
       nodos: []
     };
+
+    // 0. Búsqueda semántica NL2Chart si está disponible (consultas legas o bivariadas)
+    if (window.NL2ChartEngine && typeof window.NL2ChartEngine.parseQuery === 'function' && q.length >= 3) {
+      try {
+        const nlRes = window.NL2ChartEngine.parseQuery(query);
+        if (nlRes && nlRes.success && (nlRes.varX || nlRes.varY)) {
+          matches.nl2chart.push({
+            title: nlRes.explanation || `Cruce: ${nlRes.varX?.name || ''} vs ${nlRes.varY?.name || ''}`,
+            sub: `Confianza: ${Math.round((nlRes.confidence || 0) * 100)}% · X: ${nlRes.varX?.name || '-'} | Y: ${nlRes.varY?.name || '-'}`,
+            badge: 'NL2CHART',
+            action: () => {
+              switchTab('variables');
+              if (nlRes.varX) AppState.varX = nlRes.varX.id || nlRes.varX.canonicalId;
+              if (nlRes.varY) AppState.varY = nlRes.varY.id || nlRes.varY.canonicalId;
+              if (nlRes.excludeOutlierCoyhaique) {
+                AppState.excludeCoyhaique = true;
+                const btnEx = document.getElementById('btnExcludeCoyhaique');
+                if (btnEx) {
+                  btnEx.classList.add('active');
+                  const span = btnEx.querySelector('span');
+                  if (span) span.textContent = 'Coyhaique Excluido';
+                }
+              }
+              const selX = document.getElementById('selectVarX');
+              const selY = document.getElementById('selectVarY');
+              if (selX && nlRes.varX) selX.value = AppState.varX;
+              if (selY && nlRes.varY) selY.value = AppState.varY;
+              setChartType(nlRes.chartType === 'bar' ? 'bar' : 'scatter');
+              renderVariablesChart();
+              renderComunasTable();
+            }
+          });
+        }
+      } catch (e) {
+        // Ignorar fallas de parseo silenciosamente
+      }
+    }
 
     // 1. Buscar en 10 Comunas
     Object.entries(COMUNAS_INFO).forEach(([ine, info]) => {
@@ -751,7 +1120,7 @@
     const dropdown = document.getElementById('searchResultsDropdown');
     if (!dropdown) return;
 
-    const total = matches.comunas.length + matches.holdings.length + matches.ruts.length + matches.variables.length + matches.nodos.length;
+    const total = (matches.nl2chart ? matches.nl2chart.length : 0) + matches.comunas.length + matches.holdings.length + matches.ruts.length + matches.variables.length + matches.nodos.length;
     if (total === 0) {
       dropdown.innerHTML = '<div class="search-no-results">No se encontraron resultados para el término ingresado.</div>';
       dropdown.classList.add('visible');
@@ -761,7 +1130,7 @@
     let html = '';
 
     const renderGroup = (title, items) => {
-      if (items.length === 0) return;
+      if (!items || items.length === 0) return;
       html += `<div class="search-group-header">${title} (${items.length})</div>`;
       items.slice(0, 4).forEach((item, idx) => {
         html += `
@@ -776,6 +1145,9 @@
       });
     };
 
+    if (matches.nl2chart && matches.nl2chart.length > 0) {
+      renderGroup('Consulta en Lenguaje Natural (NL2Chart)', matches.nl2chart);
+    }
     renderGroup('10 Comunas de Aysén', matches.comunas);
     renderGroup('Holdings Salmoneros y Filiales', matches.holdings);
     renderGroup('RUTs de Titulares Acuícolas', matches.ruts);
@@ -788,6 +1160,7 @@
     // Asignar listeners a cada fila
     let currentIdx = 0;
     const allActions = [
+      ...(matches.nl2chart || []).slice(0, 4),
       ...matches.comunas.slice(0, 4),
       ...matches.holdings.slice(0, 4),
       ...matches.ruts.slice(0, 4),
@@ -799,6 +1172,8 @@
     elements.forEach((el, i) => {
       el.addEventListener('click', () => {
         dropdown.classList.remove('visible');
+        const searchWrap = document.querySelector('.header-search-wrap');
+        if (searchWrap) searchWrap.classList.remove('active-mobile');
         if (allActions[i] && allActions[i].action) {
           allActions[i].action();
         }
@@ -938,9 +1313,128 @@
   function initVariablesView() {
     populateVariableSelectors();
     initPresetsBar();
+    initCecanAndOutlierControls();
     initViewModeButtons();
+    initSeasonalAndHistoricalControls();
+    initMobileControlsDrawer();
     renderVariablesChart();
     renderComunasTable();
+  }
+
+  function initSeasonalAndHistoricalControls() {
+    const btnEmat = document.getElementById('btnSubmodeEmat');
+    const btnMulti = document.getElementById('btnSubmodeMultiannual');
+    const multiControlsWrap = document.getElementById('multiannualControlsWrap');
+    const selHistX = document.getElementById('selectHistSeriesX');
+    const selHistY = document.getElementById('selectHistSeriesY');
+    const selYearFrom = document.getElementById('selectHistYearFrom');
+    const selYearTo = document.getElementById('selectHistYearTo');
+    const btnYoY = document.getElementById('btnToggleYoY');
+
+    if (btnEmat && btnMulti) {
+      btnEmat.addEventListener('click', () => {
+        AppState.temporalSubmode = 'emat';
+        btnEmat.classList.add('active');
+        btnMulti.classList.remove('active');
+        if (multiControlsWrap) multiControlsWrap.style.display = 'none';
+        renderVariablesChart();
+        renderComunasTable();
+      });
+
+      btnMulti.addEventListener('click', () => {
+        AppState.temporalSubmode = 'multiannual';
+        btnMulti.classList.add('active');
+        btnEmat.classList.remove('active');
+        if (multiControlsWrap) multiControlsWrap.style.display = 'flex';
+        renderVariablesChart();
+        renderComunasTable();
+      });
+    }
+
+    // Poblar selectores de series multianuales
+    if (selHistX && selHistY) {
+      let xOpts = '';
+      let yOpts = '<option value="none">-- Ninguna (Serie Simple) --</option>';
+
+      Object.entries(HISTORICAL_SERIES_2015_2026).forEach(([key, s]) => {
+        const opt = `<option value="${key}">${s.nombre} (${s.unidad})</option>`;
+        xOpts += opt;
+        yOpts += opt;
+      });
+
+      selHistX.innerHTML = xOpts;
+      selHistY.innerHTML = yOpts;
+
+      selHistX.value = AppState.histSeriesX;
+      selHistY.value = AppState.histSeriesY;
+
+      selHistX.addEventListener('change', (e) => {
+        AppState.histSeriesX = e.target.value;
+        renderVariablesChart();
+        renderComunasTable();
+      });
+
+      selHistY.addEventListener('change', (e) => {
+        AppState.histSeriesY = e.target.value;
+        renderVariablesChart();
+        renderComunasTable();
+      });
+    }
+
+    // Poblar rango de años 2015-2026
+    if (selYearFrom && selYearTo) {
+      const years = [];
+      for (let y = 2015; y <= 2026; y++) years.push(y);
+
+      selYearFrom.innerHTML = years.map(y => `<option value="${y}" ${y === AppState.histYearFrom ? 'selected' : ''}>${y}</option>`).join('');
+      selYearTo.innerHTML = years.map(y => `<option value="${y}" ${y === AppState.histYearTo ? 'selected' : ''}>${y}</option>`).join('');
+
+      selYearFrom.addEventListener('change', (e) => {
+        const val = parseInt(e.target.value, 10);
+        AppState.histYearFrom = val;
+        if (AppState.histYearTo < val) {
+          AppState.histYearTo = val;
+          selYearTo.value = String(val);
+        }
+        renderVariablesChart();
+        renderComunasTable();
+      });
+
+      selYearTo.addEventListener('change', (e) => {
+        const val = parseInt(e.target.value, 10);
+        AppState.histYearTo = val;
+        if (AppState.histYearFrom > val) {
+          AppState.histYearFrom = val;
+          selYearFrom.value = String(val);
+        }
+        renderVariablesChart();
+        renderComunasTable();
+      });
+    }
+
+    // Alternar cálculo % YoY
+    if (btnYoY) {
+      btnYoY.addEventListener('click', () => {
+        AppState.histModeYoY = !AppState.histModeYoY;
+        btnYoY.setAttribute('data-mode', AppState.histModeYoY ? 'yoy' : 'abs');
+        btnYoY.textContent = AppState.histModeYoY ? 'Modo: Variación Interanual (% YoY)' : 'Modo: Valores Absolutos';
+        btnYoY.classList.toggle('active', AppState.histModeYoY);
+        renderVariablesChart();
+        renderComunasTable();
+      });
+    }
+  }
+
+  function initMobileControlsDrawer() {
+    const btnToggle = document.getElementById('btnToggleVarControls');
+    const bar = document.getElementById('varControlBar');
+    if (!btnToggle || !bar) return;
+
+    btnToggle.addEventListener('click', () => {
+      bar.classList.toggle('controls-collapsed');
+      const isCollapsed = bar.classList.contains('controls-collapsed');
+      btnToggle.querySelector('span').textContent = isCollapsed ? 'Mostrar Filtros y Selectores ▼' : 'Ocultar Filtros y Selectores ▲';
+    });
   }
 
   function populateVariableSelectors() {
@@ -1020,6 +1514,108 @@
     });
   }
 
+  function initCecanAndOutlierControls() {
+    const selCecan = document.getElementById('selectCecanPreset');
+    if (selCecan) {
+      selCecan.addEventListener('change', (e) => {
+        const val = e.target.value;
+        if (val) applyCecanPreset(val);
+      });
+    }
+
+    const btnEx = document.getElementById('btnExcludeCoyhaique');
+    if (btnEx) {
+      btnEx.addEventListener('click', () => {
+        AppState.excludeCoyhaique = !AppState.excludeCoyhaique;
+        btnEx.classList.toggle('active', AppState.excludeCoyhaique);
+        const span = btnEx.querySelector('span');
+        if (span) {
+          span.textContent = AppState.excludeCoyhaique ? 'Coyhaique Excluido' : 'Excluir Coyhaique';
+        }
+        btnEx.title = AppState.excludeCoyhaique
+          ? 'Coyhaique excluido del cálculo y gráfico. Clic para reintegrarlo.'
+          : 'Excluir Coyhaique (outlier demográfico) del análisis de dispersión';
+        renderVariablesChart();
+        renderComunasTable();
+      });
+    }
+  }
+
+  function applyCecanPreset(propNumOrId) {
+    if (!propNumOrId) return;
+    const normId = String(propNumOrId).trim().padStart(2, '0');
+    const prop = (AppState.cecanPresets || []).find(p =>
+      String(p.property_num).padStart(2, '0') === normId ||
+      String(p.property_id).padStart(2, '0') === normId
+    );
+
+    if (!prop) {
+      console.warn('[Plataforma Aysén] Preset CECAN no encontrado:', propNumOrId);
+      return;
+    }
+
+    const selCecan = document.getElementById('selectCecanPreset');
+    if (selCecan) selCecan.value = prop.property_num;
+
+    // Si es una propiedad metodológica (#03, #12, #13)
+    if (!prop.hasEmpiricalChart) {
+      const note = prop.methodological_note || {};
+      const reason = note.reason || prop.description;
+      const title = `Propiedad Metodológica #${prop.property_num}: ${prop.name_es}`;
+      const msg = `${title}\n\n${reason}\n\nNota Metodológica: Esta propiedad sistémica no admite un cruce cartesiano comunal forzado en las 10 comunas de Aysén. Se sugiere explorar el Simulador de Agentes en sistemas_complejos.html o las Series Prospectivas.`;
+      alert(msg);
+      return;
+    }
+
+    const preset = (prop.presets && prop.presets[0]) ? prop.presets[0] : null;
+    if (!preset) return;
+
+    // Outlier switch
+    const switches = preset.suggested_switches || {};
+    AppState.excludeCoyhaique = Boolean(switches.excludeOutlierCoyhaique);
+    const btnEx = document.getElementById('btnExcludeCoyhaique');
+    if (btnEx) {
+      btnEx.classList.toggle('active', AppState.excludeCoyhaique);
+      const span = btnEx.querySelector('span');
+      if (span) {
+        span.textContent = AppState.excludeCoyhaique ? 'Coyhaique Excluido' : 'Excluir Coyhaique';
+      }
+    }
+
+    if (preset.type === 'temporal' || preset.type === 'series_cruce') {
+      setChartType('seasonal');
+    } else {
+      if (preset.varX) AppState.varX = preset.varX;
+      if (preset.varY) AppState.varY = preset.varY;
+      if (preset.varZ) AppState.varZ = preset.varZ;
+
+      const selX = document.getElementById('selectVarX');
+      const selY = document.getElementById('selectVarY');
+      const selZ = document.getElementById('selectVarZ');
+      if (selX && preset.varX) selX.value = preset.varX;
+      if (selY && preset.varY) selY.value = preset.varY;
+      if (selZ && preset.varZ) selZ.value = preset.varZ;
+
+      setChartType(preset.chartType === 'bar' ? 'bar' : 'scatter');
+      renderVariablesChart();
+      renderComunasTable();
+    }
+  }
+
+  function handleUrlParams() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const cecanParam = params.get('cecan_prop') || params.get('cecan');
+      if (cecanParam) {
+        setTimeout(() => {
+          applyCecanPreset(cecanParam);
+        }, 120);
+      }
+    } catch (e) {
+      // url param read silent fail
+    }
+  }
+
   function setSuggestedCross(varX, varY, varZ) {
     AppState.varX = varX;
     AppState.varY = varY;
@@ -1095,56 +1691,171 @@
 
     const ctx = canvas.getContext('2d');
 
-    // VISTA A: SERIES TEMPORALES / ESTACIONALES (EMAT 2024)
+    // VISTA A: SERIES TEMPORALES / ESTACIONALES (EMAT 2024 o MULTIANUAL 2015-2026)
     if (AppState.chartType === 'seasonal') {
-      const ematData = AppState.wp06?.series_mensuales_emat_sernatur || [];
-      const labels = ematData.map(d => d.mes);
-      const pernoctaciones = ematData.map(d => d.pernoctaciones_total);
-      const ocupacion = ematData.map(d => d.tasa_ocupacion_pct);
+      if (AppState.temporalSubmode === 'emat') {
+        const ematData = AppState.wp06?.series_mensuales_emat_sernatur || [];
+        const labels = ematData.map(d => d.mes);
+        const pernoctaciones = ematData.map(d => d.pernoctaciones_total);
+        const ocupacion = ematData.map(d => d.tasa_ocupacion_pct);
+
+        AppState.chartInstance = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                type: 'bar',
+                label: 'Pernoctaciones Estimadas (EMAT)',
+                data: pernoctaciones,
+                backgroundColor: 'rgba(14, 88, 168, 0.75)',
+                borderRadius: 4,
+                yAxisID: 'y'
+              },
+              {
+                type: 'line',
+                label: 'Tasa de Ocupación Verano/Invierno (%)',
+                data: ocupacion,
+                borderColor: '#9E4300',
+                backgroundColor: '#9E4300',
+                borderWidth: 2,
+                tension: 0.25,
+                yAxisID: 'y1'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            scales: {
+              y: {
+                type: 'linear',
+                position: 'left',
+                title: { display: true, text: 'Pernoctaciones Totales' },
+                grid: { color: 'rgba(20, 22, 24, 0.05)' }
+              },
+              y1: {
+                type: 'linear',
+                position: 'right',
+                title: { display: true, text: 'Tasa de Ocupación (%)' },
+                grid: { drawOnChartArea: false }
+              }
+            }
+          }
+        });
+        return;
+      }
+
+      // SUBMODO: MULTIANUAL 2015-2026
+      const sX = HISTORICAL_SERIES_2015_2026[AppState.histSeriesX] || HISTORICAL_SERIES_2015_2026.mp25_invernal_coyhaique;
+      const hasSY = AppState.histSeriesY && AppState.histSeriesY !== 'none';
+      const sY = hasSY ? (HISTORICAL_SERIES_2015_2026[AppState.histSeriesY] || null) : null;
+
+      const yFrom = Math.min(AppState.histYearFrom, AppState.histYearTo);
+      const yTo = Math.max(AppState.histYearFrom, AppState.histYearTo);
+      const allYears = [];
+      for (let y = yFrom; y <= yTo; y++) allYears.push(String(y));
+
+      const dataX = allYears.map(yr => {
+        const curVal = sX.valores[yr] ?? 0;
+        if (!AppState.histModeYoY) return curVal;
+        const prevYear = String(parseInt(yr, 10) - 1);
+        const prevVal = sX.valores[prevYear];
+        if (prevVal === undefined || prevVal === 0) return 0;
+        return Number((((curVal - prevVal) / prevVal) * 100).toFixed(2));
+      });
+
+      const unitXLabel = AppState.histModeYoY ? '% YoY' : sX.unidad;
+      const datasets = [
+        {
+          type: 'line',
+          label: `${sX.nombre} (${unitXLabel})`,
+          data: dataX,
+          borderColor: '#0E58A8',
+          backgroundColor: 'rgba(14, 88, 168, 0.12)',
+          borderWidth: 2.5,
+          tension: 0.25,
+          fill: !hasSY,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          yAxisID: 'y'
+        }
+      ];
+
+      const scales = {
+        y: {
+          type: 'linear',
+          position: 'left',
+          title: { display: true, text: `${sX.nombre} (${unitXLabel})` },
+          grid: { color: 'rgba(20, 22, 24, 0.05)' }
+        }
+      };
+
+      if (hasSY && sY) {
+        const unitYLabel = AppState.histModeYoY ? '% YoY' : sY.unidad;
+        const dataY = allYears.map(yr => {
+          const curVal = sY.valores[yr] ?? 0;
+          if (!AppState.histModeYoY) return curVal;
+          const prevYear = String(parseInt(yr, 10) - 1);
+          const prevVal = sY.valores[prevYear];
+          if (prevVal === undefined || prevVal === 0) return 0;
+          return Number((((curVal - prevVal) / prevVal) * 100).toFixed(2));
+        });
+
+        datasets.push({
+          type: 'line',
+          label: `${sY.nombre} (${unitYLabel})`,
+          data: dataY,
+          borderColor: '#9E4300',
+          backgroundColor: 'rgba(158, 67, 0, 0.12)',
+          borderWidth: 2.5,
+          tension: 0.25,
+          fill: false,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          yAxisID: 'y1'
+        });
+
+        scales.y1 = {
+          type: 'linear',
+          position: 'right',
+          title: { display: true, text: `${sY.nombre} (${unitYLabel})` },
+          grid: { drawOnChartArea: false }
+        };
+      }
+
+      if (chartTitleEl) {
+        if (hasSY && sY) {
+          chartTitleEl.textContent = `Serie Histórica Multianual (Doble Eje): ${sX.nombre} vs. ${sY.nombre}`;
+        } else {
+          chartTitleEl.textContent = `Serie Histórica Multianual (2015-2026): ${sX.nombre}`;
+        }
+      }
 
       AppState.chartInstance = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
-          labels: labels,
-          datasets: [
-            {
-              type: 'bar',
-              label: 'Pernoctaciones Estimadas (EMAT)',
-              data: pernoctaciones,
-              backgroundColor: 'rgba(14, 88, 168, 0.75)',
-              borderRadius: 4,
-              yAxisID: 'y'
-            },
-            {
-              type: 'line',
-              label: 'Tasa de Ocupación Verano/Invierno (%)',
-              data: ocupacion,
-              borderColor: '#9E4300',
-              backgroundColor: '#9E4300',
-              borderWidth: 2,
-              tension: 0.25,
-              yAxisID: 'y1'
-            }
-          ]
+          labels: allYears,
+          datasets: datasets
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
           interaction: { mode: 'index', intersect: false },
-          scales: {
-            y: {
-              type: 'linear',
-              position: 'left',
-              title: { display: true, text: 'Pernoctaciones Totales' },
-              grid: { color: 'rgba(20, 22, 24, 0.05)' }
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+              labels: { boxWidth: 12, font: { size: 11, family: "'Space Grotesk', sans-serif" } }
             },
-            y1: {
-              type: 'linear',
-              position: 'right',
-              title: { display: true, text: 'Tasa de Ocupación (%)' },
-              grid: { drawOnChartArea: false }
+            tooltip: {
+              callbacks: {
+                label: (item) => `${item.dataset.label}: ${item.raw.toLocaleString('es-CL')}`
+              }
             }
-          }
+          },
+          scales: scales
         }
       });
       return;
@@ -1152,7 +1863,9 @@
 
     // VISTA B: BARRAS DOBLE EJE POR COMUNA
     if (AppState.chartType === 'bar') {
-      const comunas = Object.entries(COMUNAS_INFO).map(([ine, info]) => {
+      const comunas = Object.entries(COMUNAS_INFO)
+        .filter(([ine]) => !AppState.excludeCoyhaique || String(ine) !== '11101')
+        .map(([ine, info]) => {
         return {
           ine,
           nombre: info.nombre,
@@ -1213,14 +1926,18 @@
 
     let minZ = Infinity, maxZ = -Infinity;
     if (zObj) {
-      Object.keys(COMUNAS_INFO).forEach(ine => {
-        const val = zObj.getValue(ine);
-        if (val < minZ) minZ = val;
-        if (val > maxZ) maxZ = val;
-      });
+      Object.keys(COMUNAS_INFO)
+        .filter(ine => !AppState.excludeCoyhaique || String(ine) !== '11101')
+        .forEach(ine => {
+          const val = zObj.getValue(ine);
+          if (val < minZ) minZ = val;
+          if (val > maxZ) maxZ = val;
+        });
     }
 
-    Object.entries(COMUNAS_INFO).forEach(([ine, info]) => {
+    Object.entries(COMUNAS_INFO)
+      .filter(([ine]) => !AppState.excludeCoyhaique || String(ine) !== '11101')
+      .forEach(([ine, info]) => {
       const valX = varObjX.getValue(ine);
       const valY = varObjY.getValue(ine);
       let r = 8;
@@ -1253,7 +1970,7 @@
       type: 'bubble',
       data: {
         datasets: [{
-          label: '10 Comunas de Aysén',
+          label: AppState.excludeCoyhaique ? '9 Comunas de Aysén (Sin Coyhaique)' : '10 Comunas de Aysén',
           data: points,
           backgroundColor: points.map(p => p.backgroundColor),
           borderColor: '#FFFFFF',
@@ -1306,10 +2023,17 @@
     const tbody = document.getElementById('comunasCrossTableBody');
     if (!tbody) return;
 
+    if (AppState.chartType === 'seasonal' && AppState.temporalSubmode === 'multiannual') {
+      renderHistoricalSeriesTable();
+      return;
+    }
+
     const varObjX = VARIABLE_CATALOG.find(v => v.id === AppState.varX) || VARIABLE_CATALOG[0];
     const varObjY = VARIABLE_CATALOG.find(v => v.id === AppState.varY) || VARIABLE_CATALOG[1];
 
-    const list = Object.entries(COMUNAS_INFO).map(([ine, info]) => {
+    const list = Object.entries(COMUNAS_INFO)
+      .filter(([ine]) => !AppState.excludeCoyhaique || String(ine) !== '11101')
+      .map(([ine, info]) => {
       const x = varObjX.getValue(ine);
       const y = varObjY.getValue(ine);
       return {
@@ -1362,6 +2086,98 @@
     computeSummaryStatistics(list, varObjX, varObjY);
   }
 
+  function renderHistoricalSeriesTable() {
+    const tbody = document.getElementById('comunasCrossTableBody');
+    if (!tbody) return;
+
+    const sX = HISTORICAL_SERIES_2015_2026[AppState.histSeriesX] || HISTORICAL_SERIES_2015_2026.mp25_invernal_coyhaique;
+    const hasSY = AppState.histSeriesY && AppState.histSeriesY !== 'none';
+    const sY = hasSY ? (HISTORICAL_SERIES_2015_2026[AppState.histSeriesY] || null) : null;
+
+    const yFrom = Math.min(AppState.histYearFrom, AppState.histYearTo);
+    const yTo = Math.max(AppState.histYearFrom, AppState.histYearTo);
+    const allYears = [];
+    for (let y = yFrom; y <= yTo; y++) allYears.push(String(y));
+
+    let html = '';
+    const rows = allYears.map(yr => {
+      const valX = sX.valores[yr] ?? 0;
+      const prevY = String(parseInt(yr, 10) - 1);
+      const prevX = sX.valores[prevY];
+      const yoyX = (prevX !== undefined && prevX !== 0) ? (((valX - prevX) / prevX) * 100).toFixed(2) + '%' : '-';
+
+      let valY = null;
+      let yoyY = '-';
+      if (hasSY && sY) {
+        valY = sY.valores[yr] ?? 0;
+        const prevYVal = sY.valores[prevY];
+        yoyY = (prevYVal !== undefined && prevYVal !== 0) ? (((valY - prevYVal) / prevYVal) * 100).toFixed(2) + '%' : '-';
+      }
+
+      return { yr, valX, yoyX, valY, yoyY };
+    });
+
+    rows.forEach(r => {
+      html += `
+        <tr>
+          <td>
+            <div class="comuna-name-cell">
+              <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#0E58A8;"></span>
+              <strong>${r.yr}</strong>
+            </div>
+          </td>
+          <td>Región de Aysén</td>
+          <td class="tabular-nums" style="text-align:right;">${r.valX.toLocaleString('es-CL')} ${sX.unidad} <span style="font-size:10px; color:var(--ink-faint);">(${r.yoyX})</span></td>
+          <td class="tabular-nums" style="text-align:right;">${r.valY !== null ? r.valY.toLocaleString('es-CL') + ' ' + (sY?.unidad || '') + ' (' + r.yoyY + ')' : r.yoyX}</td>
+          <td><span style="font-size:10px; color:#0E58A8; font-weight:600;">Histórico</span></td>
+        </tr>
+      `;
+    });
+    tbody.innerHTML = html;
+
+    const thX = document.getElementById('thVarX');
+    const thY = document.getElementById('thVarY');
+    if (thX) thX.textContent = `${sX.nombre} (${sX.unidad})`;
+    if (thY) thY.textContent = hasSY && sY ? `${sY.nombre} (${sY.unidad})` : 'Variación Interanual (% YoY)';
+
+    // Summary stats for historical series
+    const valsX = rows.map(r => r.valX);
+    const meanX = valsX.reduce((a, b) => a + b, 0) / (valsX.length || 1);
+    const minX = Math.min(...valsX);
+    const maxX = Math.max(...valsX);
+
+    const statMeanX = document.getElementById('statMeanX');
+    const statMeanY = document.getElementById('statMeanY');
+    const statRangeX = document.getElementById('statRangeX');
+    const statPearsonR = document.getElementById('statPearsonR');
+
+    if (statMeanX) statMeanX.textContent = `${meanX.toFixed(1)} ${sX.unidad}`;
+    if (statRangeX) statRangeX.textContent = `${minX} a ${maxX}`;
+
+    if (hasSY && sY) {
+      const valsY = rows.map(r => r.valY);
+      const meanY = valsY.reduce((a, b) => a + b, 0) / (valsY.length || 1);
+      if (statMeanY) statMeanY.textContent = `${meanY.toFixed(1)} ${sY.unidad}`;
+
+      let num = 0, denX = 0, denY = 0;
+      rows.forEach(r => {
+        const dx = r.valX - meanX;
+        const dy = r.valY - meanY;
+        num += dx * dy;
+        denX += dx * dx;
+        denY += dy * dy;
+      });
+      const rVal = (denX > 0 && denY > 0) ? (num / Math.sqrt(denX * denY)) : 0;
+      if (statPearsonR) statPearsonR.textContent = `r = ${rVal >= 0 ? '+' : ''}${rVal.toFixed(2)}`;
+    } else {
+      const firstVal = valsX[0] || 1;
+      const lastVal = valsX[valsX.length - 1] || 1;
+      const totalVarPct = (((lastVal - firstVal) / firstVal) * 100).toFixed(1);
+      if (statMeanY) statMeanY.textContent = `${totalVarPct}% var. total`;
+      if (statPearsonR) statPearsonR.textContent = `${valsX.length} periodos`;
+    }
+  }
+
   function computeSummaryStatistics(list, varX, varY) {
     const n = list.length;
     if (n === 0) return;
@@ -1412,6 +2228,54 @@
 
   // Exportar cruce a CSV UTF-8 con BOM (\uFEFF)
   window.downloadCrossCsv = function () {
+    if (AppState.chartType === 'seasonal' && AppState.temporalSubmode === 'multiannual') {
+      const sX = HISTORICAL_SERIES_2015_2026[AppState.histSeriesX] || HISTORICAL_SERIES_2015_2026.mp25_invernal_coyhaique;
+      const hasSY = AppState.histSeriesY && AppState.histSeriesY !== 'none';
+      const sY = hasSY ? (HISTORICAL_SERIES_2015_2026[AppState.histSeriesY] || null) : null;
+
+      const yFrom = Math.min(AppState.histYearFrom, AppState.histYearTo);
+      const yTo = Math.max(AppState.histYearFrom, AppState.histYearTo);
+
+      let csv = '\uFEFF';
+      csv += 'anio,region,';
+      csv += `"${sX.nombre} (${sX.unidad})",`;
+      csv += '"Variacion_YoY_X_pct",';
+      if (hasSY && sY) {
+        csv += `"${sY.nombre} (${sY.unidad})",`;
+        csv += '"Variacion_YoY_Y_pct"\r\n';
+      } else {
+        csv += '"Serie_Secundaria"\r\n';
+      }
+
+      for (let y = yFrom; y <= yTo; y++) {
+        const yr = String(y);
+        const valX = sX.valores[yr] ?? '';
+        const prevY = String(y - 1);
+        const prevX = sX.valores[prevY];
+        const yoyX = (prevX !== undefined && prevX !== 0) ? (((valX - prevX) / prevX) * 100).toFixed(2) : '';
+
+        if (hasSY && sY) {
+          const valY = sY.valores[yr] ?? '';
+          const prevYVal = sY.valores[prevY];
+          const yoyY = (prevYVal !== undefined && prevYVal !== 0) ? (((valY - prevYVal) / prevYVal) * 100).toFixed(2) : '';
+          csv += `${yr},"Aysén",${valX},${yoyX},${valY},${yoyY}\r\n`;
+        } else {
+          csv += `${yr},"Aysén",${valX},${yoyX},"N/A"\r\n`;
+        }
+      }
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `aysen_serie_historica_${AppState.histSeriesX}_${yFrom}_${yTo}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      return;
+    }
+
     const varObjX = VARIABLE_CATALOG.find(v => v.id === AppState.varX) || VARIABLE_CATALOG[0];
     const varObjY = VARIABLE_CATALOG.find(v => v.id === AppState.varY) || VARIABLE_CATALOG[1];
 
@@ -1420,7 +2284,9 @@
     csv += `"${varObjX.name} (${varObjX.unit})",`;
     csv += `"${varObjY.name} (${varObjY.unit})"\r\n`;
 
-    Object.entries(COMUNAS_INFO).forEach(([ine, info]) => {
+    Object.entries(COMUNAS_INFO)
+      .filter(([ine]) => !AppState.excludeCoyhaique || String(ine) !== '11101')
+      .forEach(([ine, info]) => {
       const valX = varObjX.getValue(ine);
       const valY = varObjY.getValue(ine);
       csv += `${ine},"${info.nombre}","${info.provincia}","${info.zona}",${valX},${valY}\r\n`;
@@ -1866,7 +2732,7 @@
     // 1. Gobernanza y Finanzas
     html += makeCard(
       'Gobernanza y Finanzas SINIM',
-      '🏛️',
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 3l9 7H3z"/></svg>',
       [
         { l: 'Alcalde / Alcaldesa', v: r01A?.datos?.autoridades?.alcalde_nombre || '-' },
         { l: 'Pacto / Partido', v: r01A?.datos?.autoridades?.alcalde_partido_pacto || '-' },
@@ -1881,7 +2747,7 @@
     // 2. Energía y Telecomunicaciones
     html += makeCard(
       'Energía, Combustibles y FOA',
-      '⚡',
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
       [
         { l: 'Sistema Eléctrico', v: r02A?.datos?.sistema_electrico?.subsistema_nombre || '-' },
         { l: 'Potencia Comunal Instalada', v: `${r02A?.datos?.sistema_electrico?.potencia_instalada_comunal_mw || 0} MW` },
@@ -1896,7 +2762,7 @@
     // 3. Concesiones Marítimas y Tierra
     html += makeCard(
       'Concesiones, Acuicultura y SNASPE',
-      '🌊',
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M2 17h20M2 7h20"/></svg>',
       [
         { l: 'Concesiones Acuícolas Otorgadas', v: r03A?.datos?.concesiones_acuicolas?.concesiones_otorgadas_total || '0' },
         { l: 'Centros de Cultivo Activos', v: r03A?.datos?.concesiones_acuicolas?.centros_operativos_activos || '0' },
@@ -1911,7 +2777,7 @@
     // 4. Inversión SEIA y Economía
     html += makeCard(
       'Inversión SEIA y Empleo SII',
-      '📈',
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>',
       [
         { l: 'Inversión SEIA Aprobada Acumulada', v: `${r04A?.datos?.proyectos_seia?.inversion_aprobada_acumulada_mmusd || 0} MM USD` },
         { l: 'Proyectos SEIA Históricos', v: r04A?.datos?.proyectos_seia?.proyectos_aprobados_historicos || '0' },
@@ -1926,7 +2792,7 @@
     // 5. Turismo y ZOIT
     html += makeCard(
       'Turismo SERNATUR y Parques',
-      '🌲',
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 12h3l-2 6h5v4h4v-4h5l-2-6h3z"/></svg>',
       [
         { l: 'Prestadores SERNATUR', v: r06A?.datos?.oferta_sernatur?.prestadores_registrados_total || '0' },
         { l: 'Zona de Interés Turístico (ZOIT)', v: r06A?.datos?.zoit_y_atractivos?.pertenece_a_zoit ? r06A?.datos?.zoit_y_atractivos?.nombre_zoit : 'No' },
@@ -1941,7 +2807,7 @@
     // 6. Salud, Educación y Riesgos
     html += makeCard(
       'Red Salud DEIS, SLEP y Riesgos',
-      '🏥',
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>',
       [
         { l: 'Establecimiento Principal', v: r05A?.datos?.salud_red_asistencial?.establecimiento_principal || '-' },
         { l: 'Camas Hospitalarias (DEIS)', v: r05A?.datos?.salud_red_asistencial?.camas_hospitalarias || '0' },

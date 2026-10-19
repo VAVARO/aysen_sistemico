@@ -26,6 +26,8 @@
   <!-- Datos Oficiales: Data Lake (31 Nodos) y Preguntas Sistémicas (30) -->
   <script src="data/aysen_hubs_data.js"></script>
   <script src="data/preguntas_metacognitivas.js"></script>
+  <!-- Motor Semántico NL2Chart -->
+  <script src="js/nl2chart_engine.js"></script>
 
   <style>
     :root {
@@ -214,16 +216,31 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 1rem;
+      padding: 0 0.75rem;
       z-index: 90;
       position: relative;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
     }
 
-    .action-bar-left,
+    .action-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
     .action-bar-right {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.35rem;
+      flex-shrink: 0;
+      margin-left: 0.5rem;
+    }
+
+    .nl-search-bar-wrap {
+      display: none !important;
     }
 
     .btn-action-tool {
@@ -667,6 +684,62 @@
       border-radius: 3px;
       background: var(--bg-subtle);
       color: var(--ink-secondary);
+      border: 1px solid var(--rule-hairline);
+      white-space: nowrap;
+    }
+
+    .var-dim-badge.var-dim-tiempo {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      font-weight: 600;
+    }
+
+    .var-dim-badge.var-dim-comuna {
+      background: #f4efec;
+      color: #524f4b;
+    }
+
+    .var-dim-badge.var-dim-holding {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .temporal-catalog-helper {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 4px;
+      padding: 0.5rem 0.65rem;
+      margin-bottom: 0.65rem;
+      font-size: 0.7rem;
+      color: #0369a1;
+      line-height: 1.35;
+    }
+
+    .temporal-helper-title {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #0284c7;
+      font-weight: 700;
+      font-size: 0.72rem;
+    }
+
+    .temporal-helper-desc {
+      margin: 0;
+      color: #0c4a6e;
+      font-size: 0.68rem;
+    }
+
+    .time-series-badge {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      font-weight: 600;
     }
 
     /* ==========================================================================
@@ -1986,6 +2059,272 @@
       border-color: var(--cobalt);
       box-shadow: 0 0 0 1px rgba(0, 53, 127, 0.2);
     }
+
+    /* ==========================================================================
+       ADAPTACIÓN RESPONSIVA Y DISPOSITIVOS MÓVILES (Estudio Editorial Austral)
+       ========================================================================== */
+    .mobile-studio-dock {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(252, 249, 248, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--rule-hairline);
+      z-index: 100;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 0.5rem;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .mob-dock-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      background: transparent;
+      border: none;
+      color: var(--ink-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      min-width: 54px;
+      min-height: 44px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: color 0.15s ease, background-color 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mob-dock-btn:hover,
+    .mob-dock-btn:active,
+    .mob-dock-btn.active {
+      color: var(--cobalt);
+      background: rgba(0, 53, 127, 0.05);
+    }
+
+    .mob-dock-btn svg {
+      stroke-width: 2;
+    }
+
+    .mobile-sidebar-backdrop,
+    .mobile-metacog-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(20, 22, 24, 0.35);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 50;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .mobile-sidebar-backdrop.active,
+    .mobile-metacog-backdrop.active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-time-window-bar {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 6px;
+      background: rgba(0, 53, 127, 0.03);
+      border: 1px solid rgba(0, 53, 127, 0.08);
+      border-radius: 3px;
+      margin-top: 3px;
+    }
+
+    .time-window-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .time-window-pill {
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      padding: 1px 5px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .time-window-pill:hover {
+      color: var(--cobalt);
+      background: rgba(0, 53, 127, 0.06);
+    }
+
+    .time-window-pill.active {
+      background: var(--cobalt);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1024px) {
+      .studio-sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: 55;
+        box-shadow: 6px 0 24px rgba(0, 0, 0, 0.12);
+        transform: translateX(0);
+        margin-right: 0;
+      }
+
+      .studio-sidebar.collapsed {
+        transform: translateX(-100%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --header-h: 52px;
+        --action-h: 44px;
+        --tabs-h: 36px;
+        --sidebar-w: min(320px, 86vw);
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .brand-header-inner {
+        padding: 0 0.75rem;
+      }
+
+      .brand-module-title {
+        display: none;
+      }
+
+      .brand-divider {
+        display: none;
+      }
+
+      .brand-nav-pills {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        max-width: 55vw;
+      }
+
+      .brand-nav-pills::-webkit-scrollbar {
+        display: none;
+      }
+
+      .canvas-action-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 8px;
+        gap: 4px;
+        scrollbar-width: none;
+      }
+
+      .canvas-action-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .btn-action-tool {
+        min-height: 36px;
+        padding: 0 8px;
+        font-size: 0.72rem;
+        flex-shrink: 0;
+      }
+
+      .workspace-tabs-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .workspace-tabs-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .studio-app-shell {
+        height: calc(100vh - var(--header-h) - var(--action-h) - var(--tabs-h) - 48px);
+      }
+
+      .mobile-studio-dock {
+        display: flex;
+      }
+
+      .studio-metacog-drawer {
+        width: min(360px, 92vw);
+        z-index: 65;
+      }
+
+      .canva-floating-toolbar {
+        bottom: 58px;
+        max-width: calc(100vw - 16px);
+        left: 8px !important;
+        transform: none !important;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .canva-floating-toolbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .floating-btn {
+        min-height: 38px;
+        padding: 4px 8px;
+        font-size: 0.68rem;
+        flex-shrink: 0;
+      }
+
+      .studio-widget-card {
+        max-width: calc(100vw - 20px) !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-author-name {
+        font-size: 1rem;
+      }
+
+      .studio-sidebar {
+        width: 90vw;
+      }
+
+      .studio-metacog-drawer {
+        width: 100vw;
+      }
+
+      .hero-studio-card {
+        width: calc(100vw - 32px);
+        padding: 1.25rem 1rem;
+      }
+
+      .hero-studio-card h2 {
+        font-size: 1.35rem;
+      }
+    }
   </style>
 </head>
 
@@ -2031,6 +2370,9 @@
       <button class="btn-action-tool primary" id="btnAddChart" title="Crear tarjeta gráfica vacía">
         <span>+ Gráfico</span>
       </button>
+      <button class="btn-action-tool" id="btnAddTimeline" title="Crear línea de tiempo (serie histórica multianual)">
+        <span>+ Línea de Tiempo</span>
+      </button>
       <button class="btn-action-tool" id="btnAddMap" title="Crear tarjeta mapa vacía">
         <span>+ Mapa</span>
       </button>
@@ -2045,7 +2387,7 @@
 
       <div class="slicer-container" style="display: inline-flex; align-items: center; gap: 0.35rem;">
         <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-secondary); font-weight: 500;">Territorio:</span>
-        <select id="selectTerritorialSlicer" class="slicer-select" title="Filtrar comunas por provincia o tipología territorial">
+        <select id="selectTerritorialSlicer" class="slicer-select" style="max-width: 150px;" title="Filtrar comunas por provincia o tipología territorial">
           <option value="all">Todas las comunas (10)</option>
           <option value="prov_coyhaique">Prov. Coyhaique (2)</option>
           <option value="prov_aysen">Prov. Aysén (3)</option>
@@ -2054,6 +2396,45 @@
           <option value="tipo_maritima">Comunas Marítimas (4)</option>
           <option value="tipo_continental">Comunas Continentales (6)</option>
         </select>
+      </div>
+
+      <div style="width: 1px; height: 18px; background: var(--rule-hairline); margin: 0 0.2rem;"></div>
+
+      <!-- Presets de las 16 Propiedades CECAN -->
+      <div class="cecan-preset-wrap" style="display: inline-flex; align-items: center; gap: 0.25rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-secondary); font-weight: 600;">CECAN:</span>
+        <select id="selectCecanPreset" class="slicer-select" style="max-width: 175px;" title="Presets de las 16 Propiedades CECAN">
+          <option value="">Presets CECAN (16)...</option>
+          <option value="01">#01 Retroalimentación</option>
+          <option value="02">#02 Emergencia</option>
+          <option value="03">#03 Autoorganización (Metodológica)</option>
+          <option value="04">#04 Palancas y nodos centrales</option>
+          <option value="05">#05 No linealidad</option>
+          <option value="06">#06 Dominios de estabilidad</option>
+          <option value="07">#07 Adaptación</option>
+          <option value="08">#08 Dependencia del camino</option>
+          <option value="09">#09 Puntos de inflexión</option>
+          <option value="10">#10 Cambio en el tiempo</option>
+          <option value="11">#11 Sistema abierto</option>
+          <option value="12">#12 Impredecibilidad (Metodológica)</option>
+          <option value="13">#13 Factores desconocidos (Metodológica)</option>
+          <option value="14">#14 Control distribuido</option>
+          <option value="15">#15 Sistemas anidados</option>
+          <option value="16">#16 Múltiples escalas y niveles</option>
+        </select>
+      </div>
+
+      <!-- Conmutador Excluir Outlier Coyhaique -->
+      <button type="button" class="btn-action-tool" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del análisis de dispersión">
+        <span>Excluir Coyhaique</span>
+      </button>
+
+      <!-- Buscador Conversacional NL2Chart (oculto de la visualización) -->
+      <div class="nl-search-bar-wrap" style="display: none !important;">
+        <input type="text" id="nlSearchInput" class="nl-search-input" placeholder="Pregunta..." autocomplete="off" />
+        <button type="button" class="btn-action-tool" id="btnNlSearch" title="Interpretar">
+          <span>Interpretar</span>
+        </button>
       </div>
     </div>
 
@@ -2078,7 +2459,7 @@
         </div>
       </div>
 
-      <button class="btn-action-tool" id="btnClearCanvas" style="color: #b91c1c;" title="Limpiar lienzo">
+      <button class="btn-action-tool" id="btnClearCanvas" style="color: #b91c1c; font-weight: 600; border-color: rgba(185, 28, 28, 0.35); background: #fff5f5;" title="Reiniciar y limpiar todo el lienzo">
         <span>Limpiar</span>
       </button>
 
@@ -2239,6 +2620,48 @@
     </aside>
 
   </div>
+
+  <!-- Capas de fondo para modales/drawers en pantallas táctiles y móviles -->
+  <div class="mobile-sidebar-backdrop" id="panelCatalogoBackdrop"></div>
+  <div class="mobile-metacog-backdrop" id="panelMetacogBackdrop"></div>
+
+  <!-- Barra de Navegación Móvil de Estudio Austral (<768px) -->
+  <nav class="mobile-studio-dock" id="mobileStudioNav" aria-label="Navegación de Estudio Móvil">
+    <button class="mob-dock-btn" id="btnMobNavCatalog" title="Abrir catálogo de variables">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      <span>Catálogo</span>
+    </button>
+    <button class="mob-dock-btn active" id="btnMobNavCanvas" title="Ver lienzo interactivo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <polyline points="9 21 3 21 3 15"></polyline>
+        <line x1="21" y1="3" x2="14" y2="10"></line>
+        <line x1="3" y1="21" x2="10" y2="14"></line>
+      </svg>
+      <span>Lienzo</span>
+    </button>
+    <button class="mob-dock-btn" id="btnMobNavAdd" title="Crear nueva tarjeta gráfica">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="16"></line>
+        <line x1="8" y1="12" x2="16" y2="12"></line>
+      </svg>
+      <span>+ Tarjeta</span>
+    </button>
+    <button class="mob-dock-btn" id="btnMobNavMetacog" title="Abrir preguntas reflexivas">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
+      <span>Preguntas</span>
+    </button>
+  </nav>
 
   <!-- ========================================================================
        5. SCRIPTS DE LA APLICACIÓN (MOTOR 2D, ESTADÍSTICA Y CRUCES)
@@ -2409,6 +2832,25 @@
       async function loadDataLakeAndCatalog() {
         AppState.hubsData = window.AYSEN_HUBS_DATA || null;
         const items = [];
+
+        // 0. Cargar Presets CECAN (16) y Motor NL2Chart
+        try {
+          const respPresets = await fetch('data/cecan_16_presets_aysen.json');
+          if (respPresets.ok) {
+            const dataPresets = await respPresets.json();
+            AppState.cecanPresets = dataPresets.properties || [];
+          }
+        } catch (e) {
+          console.warn('[Laboratorio] No se pudo cargar presets CECAN:', e);
+        }
+
+        if (window.NL2ChartEngine && typeof window.NL2ChartEngine.init === 'function') {
+          try {
+            await window.NL2ChartEngine.init('data/nl_lexicon_aysen.json');
+          } catch (e) {
+            console.warn('[Laboratorio] Error iniciando NL2ChartEngine:', e);
+          }
+        }
 
         // 1. Cargar Nodos Satélites de window.AYSEN_HUBS_DATA
         if (AppState.hubsData && Array.isArray(AppState.hubsData.nodos)) {
@@ -2789,8 +3231,118 @@
           }
         ];
 
+        // Conectar datos reales del Data Lake para variables canónicas
+        if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas)) {
+          canonicalComunalVars.forEach(v => {
+            const cleanKey = v.id.replace('wp01_', '').replace('wp02_', '').replace('wp03_', '').replace('wp04_', '').replace('wp05_', '').replace('wp06_', '').replace('wp07_', '').replace('comuna_', '').replace('finanzas_', '');
+            const dlKey = Object.keys(AppState.hubsData.comunas[0] || {}).find(k => k === v.id || k === cleanKey);
+            if (dlKey) {
+              v.data = COMUNAS_ORDER.map(cName => {
+                const row = AppState.hubsData.comunas.find(c => normStr(c.nombre) === normStr(cName));
+                if (!row) return 0;
+                const val = row[dlKey];
+                return typeof val === 'number' ? val : (parseFloat(val) || 0);
+              });
+            }
+          });
+        }
+
         canonicalComunalVars.forEach(v => items.unshift(v));
         holdingVars.forEach(v => items.push(v));
+
+        // Desbloqueo dinámico de las >70 variables de window.AYSEN_HUBS_DATA.comunas organizadas en los 7 Hubs
+        if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas) && AppState.hubsData.comunas.length > 0) {
+          const c0 = AppState.hubsData.comunas[0];
+          const existingIds = new Set(items.map(it => it.id));
+          const lexiconVars = (window.NL2ChartEngine && typeof window.NL2ChartEngine.getLexicon === 'function')
+            ? (window.NL2ChartEngine.getLexicon()?.variables || [])
+            : [];
+
+          const hubInference = (k) => {
+            if (/turis|emat|visitantes|sernatur|camas_tur/i.test(k)) return 'turismo';
+            if (/salmon|amerb|biomasa|antibiotico|ica/i.test(k)) return 'salmonicultura';
+            if (/diesel|gasolina|lena|saidi|tarifa|potencia|internet/i.test(k)) return 'energia';
+            if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7/i.test(k)) return 'gobernanza';
+            if (/seia|empresas_sii|trabajadores_sii|concesiones_mineras|parcelaciones|compras_locales|fuga_compras/i.test(k)) return 'inversion';
+            if (/poblacion|pobreza|medicos|urgencias|aeroevacuaciones|camas_hosp|traslado|matricula|espera/i.test(k)) return 'social';
+            if (/snaspe|cobertura|glaciar|daa_|dias_sobre_norma|fauna/i.test(k)) return 'biodiversidad';
+            return 'social';
+          };
+
+          const unitInference = (k) => {
+            if (k.endsWith('_pct')) return '%';
+            if (k.endsWith('_mclp')) return 'M$ CLP';
+            if (k.endsWith('_clp')) return '$ CLP';
+            if (k.endsWith('_mmusd')) return 'MM US$';
+            if (k.endsWith('_km2')) return 'km²';
+            if (k.endsWith('_km')) return 'km';
+            if (k.endsWith('_ha')) return 'hectáreas';
+            if (k.endsWith('_hrs') || k.endsWith('_horas_anual')) return 'horas/año';
+            if (k.endsWith('_ton')) return 'toneladas/año';
+            if (k.endsWith('_m3s')) return 'm³/s';
+            if (k.endsWith('_m3')) return '$/m³';
+            if (k.endsWith('_mw')) return 'MW';
+            if (k.endsWith('_n')) return 'unidades';
+            return 'unidades';
+          };
+
+          const nameFormatter = (k) => {
+            return k.replace(/_/g, ' ')
+              .replace(/\b\w/g, l => l.toUpperCase())
+              .replace('Pct', '(%)')
+              .replace('Mclp', '(M$ CLP)')
+              .replace('Clp', '($ CLP)')
+              .replace('Mmusd', '(MM US$)')
+              .replace('Km2', '(km²)')
+              .replace('Ha', '(ha)')
+              .replace('Ton', '(ton)')
+              .replace('M3s', '(m³/s)')
+              .replace('M3', '(m³)');
+          };
+
+          Object.keys(c0).forEach(key => {
+            if (key === 'id' || key === 'lat' || key === 'lng' || key === 'nombre' || key === 'codigo_comuna') return;
+            if (typeof c0[key] !== 'number' && isNaN(parseFloat(c0[key]))) return;
+
+            const lex = lexiconVars.find(v => v.id === key || v.canonicalId === key);
+            const hubId = lex?.hub || hubInference(key);
+            const hubTitle = lex?.hubTitle || getHubTitleName(hubId);
+            const varName = lex?.name || nameFormatter(key);
+            const shortName = lex?.shortName || varName;
+            const unit = lex?.unit || unitInference(key);
+            const isMean = /%|\$|horas|Miles|casos|promedio|dias|t\/|g\/|ratio|hab\/|m3/i.test(unit) || key.endsWith('_pct') || key.endsWith('_hrs');
+
+            const vec = COMUNAS_ORDER.map(cName => {
+              const row = AppState.hubsData.comunas.find(c => normStr(c.nombre) === normStr(cName));
+              if (!row) return 0;
+              const val = row[key];
+              return typeof val === 'number' ? val : (parseFloat(val) || 0);
+            });
+
+            if (!existingIds.has(key)) {
+              items.push({
+                id: key,
+                canonicalId: lex?.canonicalId || key,
+                nodeId: lex?.nodeId || null,
+                name: varName,
+                shortName: shortName,
+                hubId: hubId,
+                hubTitle: hubTitle,
+                dim: 'comuna',
+                unit: unit,
+                aggMode: isMean ? 'mean' : 'sum',
+                sourceName: 'Data Lake Aysén (Oficial Octubre 2026)',
+                collectionDate: '17 Oct 2026',
+                sourceUrl: 'https://datos.gob.cl',
+                chartType: 'bar',
+                data: vec,
+                tableRows: COMUNAS_ORDER.map((c, i) => [c, vec[i]]),
+                tableColumns: ['Comuna', `${varName} (${unit})`]
+              });
+              existingIds.add(key);
+            }
+          });
+        }
 
         // 4. Series Prospectivas (18)
         try {
@@ -2816,8 +3368,16 @@
               const unit = s.unidad || 'unidades';
               const isMean = /%|\$|horas|Miles|casos|promedio|m3\/s|°C|cél\/L/i.test(unit);
 
-              items.push({
+              const aliases = [s.id];
+              if (s.id === 'floracion_alexandrium_fan') aliases.push('fan_alexandrium', 'alexandrium_cel_l', 'alexandrium', 'marea_roja_alexandrium');
+              if (s.id === 'mp25_invernal_coyhaique') aliases.push('mp25_coyhaique', 'mp25_ugm3', 'mp25', 'wp07_dias_mp25_sinca');
+              if (s.id === 'temperatura_minima_balmaceda') aliases.push('temp_min_c', 'temperatura_balmaceda');
+              if (s.id === 'biomasa_cosecha_salmon') aliases.push('biomasa_cosecha_kton', 'cosechas_salmon_ton');
+
+              const spItem = {
                 id: `sp_${s.id}`,
+                aliases: aliases,
+                canonicalKey: s.id,
                 nodeId: null,
                 name: `${s.nombre}`,
                 shortName: s.nombre,
@@ -2843,11 +3403,213 @@
                 },
                 tableRows: allLabels.map((l, i) => [l, allData[i] || 0]),
                 tableColumns: ['Período', `${s.nombre} (${unit})`]
+              };
+              items.push(spItem);
+
+              // Registrar alias sin prefijo sp_ para resolución transparente de presets
+              items.push({
+                ...spItem,
+                id: s.id,
+                isAlias: true
               });
             });
           }
         } catch (e) {
           console.warn('Carga diferida:', e);
+        }
+
+        // 4b. Series Históricas Multianuales 2015-2026 de Gobernanza, Inversión y Economía
+        try {
+          const respGob = await fetch('data/systemic/01_gob_poder_finanzas.json');
+          if (respGob.ok) {
+            const dataGob = await respGob.json();
+            const gobSeries = dataGob.resumen_regional?.series_historicas_regionales || [];
+            gobSeries.forEach(s => {
+              const sLabels = (s.valores || []).map(p => p.periodo || p.fecha);
+              const sData = (s.valores || []).map(p => p.valor);
+              items.push({
+                id: s.indicador,
+                canonicalKey: s.indicador,
+                nodeId: null,
+                name: `${s.nombre} (2015–2026)`,
+                shortName: s.nombre,
+                hubId: 'gobernanza',
+                hubTitle: 'IV. Gobernanza',
+                dim: 'tiempo',
+                subDim: 'anual',
+                unit: s.unidad,
+                aggMode: /%/.test(s.unidad) ? 'mean' : 'sum',
+                sourceName: s.fuente || 'DIPRES / SINIM',
+                collectionDate: '2015-2026',
+                sourceUrl: 'https://datos.gob.cl',
+                chartType: 'line',
+                chartSpec: {
+                  type: 'line',
+                  labels: sLabels,
+                  datasets: [{ label: s.nombre, data: sData, unit: s.unidad }],
+                  unit: s.unidad
+                },
+                tableRows: sLabels.map((l, i) => [l, sData[i] || 0]),
+                tableColumns: ['Año', `${s.nombre} (${s.unidad})`]
+              });
+            });
+          }
+
+          const respInv = await fetch('data/systemic/04_inversion_seia_economia.json');
+          if (respInv.ok) {
+            const dataInv = await respInv.json();
+            const invSeries = dataInv.resumen_regional?.series_historicas_regionales || [];
+            invSeries.forEach(s => {
+              const sLabels = (s.valores || []).map(p => p.periodo || p.fecha);
+              const sData = (s.valores || []).map(p => p.valor);
+              items.push({
+                id: s.indicador,
+                canonicalKey: s.indicador,
+                nodeId: null,
+                name: `${s.nombre} (2015–2026)`,
+                shortName: s.nombre,
+                hubId: 'inversion',
+                hubTitle: 'V. Inversión',
+                dim: 'tiempo',
+                subDim: 'anual',
+                unit: s.unidad,
+                aggMode: /%/.test(s.unidad) ? 'mean' : 'sum',
+                sourceName: s.fuente || 'Banco Central / SII / SEA',
+                collectionDate: '2015-2026',
+                sourceUrl: 'https://datos.gob.cl',
+                chartType: 'line',
+                chartSpec: {
+                  type: 'line',
+                  labels: sLabels,
+                  datasets: [{ label: s.nombre, data: sData, unit: s.unidad }],
+                  unit: s.unidad
+                },
+                tableRows: sLabels.map((l, i) => [l, sData[i] || 0]),
+                tableColumns: ['Año', `${s.nombre} (${s.unidad})`]
+              });
+            });
+          }
+        } catch (e) {
+          console.warn('Carga series históricas multianuales:', e);
+        }
+
+        // 5. Cruces Multivariables y Series Temporales (#10 Cambio en el Tiempo)
+        try {
+          const respCruces = await fetch('data/cruces_multivariables.json');
+          if (respCruces.ok) {
+            const dataCruces = await respCruces.json();
+            const crucesObj = dataCruces.cruces || {};
+
+            // Cruce Marino Productivo: TSM Fiordos, Alexandrium FAN, Biomasa
+            if (crucesObj.marino_productivo && Array.isArray(crucesObj.marino_productivo.datos)) {
+              const mpData = crucesObj.marino_productivo.datos;
+              const mpLabels = mpData.map(d => d.periodo_mes);
+              const sstData = mpData.map(d => d.sst_c);
+              const fanData = mpData.map(d => d.alexandrium_cel_l);
+
+              items.push({
+                id: 'tsm_fiordos',
+                aliases: ['sst_c', 'temperatura_marina_fiordos', 'tsm_fiordos_anomalia'],
+                canonicalKey: 'sst_c',
+                nodeId: null,
+                name: 'Temperatura Superficial Marina en Fiordos (Sentinel-3)',
+                shortName: 'TSM Fiordos (SST)',
+                hubId: 'salmonicultura',
+                hubTitle: 'II. Salmonicultura',
+                dim: 'tiempo',
+                subDim: 'mensual',
+                unit: '°C',
+                aggMode: 'mean',
+                sourceName: 'Copernicus Marine / NOAA Sentinel-3 SLSTR',
+                collectionDate: '2026',
+                sourceUrl: 'https://marine.copernicus.eu',
+                chartType: 'line',
+                chartSpec: {
+                  type: 'line',
+                  labels: mpLabels,
+                  datasets: [{
+                    label: 'TSM Fiordos (°C)',
+                    data: sstData,
+                    unit: '°C'
+                  }],
+                  unit: '°C'
+                },
+                tableRows: mpLabels.map((l, i) => [l, sstData[i] || 0]),
+                tableColumns: ['Mes', 'TSM Fiordos (°C)']
+              });
+
+              items.push({
+                id: 'fan_alexandrium_mensual',
+                aliases: ['alexandrium_cel_l', 'fan_alexandrium', 'fan_mensual'],
+                canonicalKey: 'alexandrium_cel_l',
+                nodeId: null,
+                name: 'Densidad Celular Mensual Alexandrium catenella (iFAN)',
+                shortName: 'FAN Alexandrium Mensual',
+                hubId: 'salmonicultura',
+                hubTitle: 'II. Salmonicultura',
+                dim: 'tiempo',
+                subDim: 'mensual',
+                unit: 'cél/L',
+                aggMode: 'mean',
+                sourceName: 'IFOP - Sistema iFAN Seno Aysén',
+                collectionDate: '2026',
+                sourceUrl: 'https://www.ifop.cl',
+                chartType: 'line',
+                chartSpec: {
+                  type: 'line',
+                  labels: mpLabels,
+                  datasets: [{
+                    label: 'Alexandrium catenella (cél/L)',
+                    data: fanData,
+                    unit: 'cél/L'
+                  }],
+                  unit: 'cél/L'
+                },
+                tableRows: mpLabels.map((l, i) => [l, fanData[i] || 0]),
+                tableColumns: ['Mes', 'Alexandrium (cél/L)']
+              });
+            }
+
+            // Cruce Clima y Salud: MP2.5 Coyhaique, Temp Balmaceda, Egresos
+            if (crucesObj.clima_salud && Array.isArray(crucesObj.clima_salud.datos)) {
+              const csData = crucesObj.clima_salud.datos;
+              const csLabels = csData.map(d => d.periodo_mes);
+              const mp25Data = csData.map(d => d.mp25_ugm3);
+
+              items.push({
+                id: 'mp25_coyhaique_mensual',
+                aliases: ['mp25_ugm3', 'mp25_mensual', 'mp25_coyhaique'],
+                canonicalKey: 'mp25_ugm3',
+                nodeId: null,
+                name: 'Concentración Mensual MP2.5 Coyhaique II (SINCA)',
+                shortName: 'MP2.5 Coyhaique Mensual',
+                hubId: 'social',
+                hubTitle: 'VI. Social',
+                dim: 'tiempo',
+                subDim: 'mensual',
+                unit: 'µg/m³',
+                aggMode: 'mean',
+                sourceName: 'SINCA MMA Estación Coyhaique II',
+                collectionDate: '2026',
+                sourceUrl: 'https://sinca.mma.gob.cl',
+                chartType: 'line',
+                chartSpec: {
+                  type: 'line',
+                  labels: csLabels,
+                  datasets: [{
+                    label: 'MP2.5 Coyhaique (µg/m³)',
+                    data: mp25Data,
+                    unit: 'µg/m³'
+                  }],
+                  unit: 'µg/m³'
+                },
+                tableRows: csLabels.map((l, i) => [l, mp25Data[i] || 0]),
+                tableColumns: ['Mes', 'MP2.5 (µg/m³)']
+              });
+            }
+          }
+        } catch (e) {
+          console.warn('Carga cruces multivariables:', e);
         }
 
         AppState.catalogItems = items;
@@ -2931,8 +3693,17 @@
         const isSearching = !!q;
         let html = '';
 
+        if (dimFilter === 'tiempo') {
+          html += `
+            <div class="temporal-catalog-helper">
+              <span class="temporal-helper-title">Series de Tiempo y Líneas Históricas (2015–2026)</span>
+              <p class="temporal-helper-desc">Datos longitudinales continuos con seguimiento multianual. Haz doble clic o arrastra al lienzo para graficar su línea temporal y proyectar tendencias.</p>
+            </div>
+          `;
+        }
+
         sortedGroupKeys.forEach(gName => {
-          const isCollapsed = isSearching ? false : (AppState.collapsedHubs && AppState.collapsedHubs[gName] !== false);
+          const isCollapsed = (isSearching || dimFilter === 'tiempo') ? false : (AppState.collapsedHubs && AppState.collapsedHubs[gName] !== false);
           html += `
             <div class="catalog-hub-group ${isCollapsed ? 'collapsed' : ''}" data-hub-name="${gName}">
               <div class="catalog-hub-header" data-hub-name="${gName}" title="Haz clic para expandir o colapsar">
@@ -2947,8 +3718,11 @@
               <div class="catalog-hub-items">
                 ${groups[gName].map(it => `
                   <div class="catalog-var-item" draggable="true" data-var-id="${it.id}">
-                    <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 175px;">${it.shortName || it.name}</span>
-                    <span class="var-dim-badge">${it.dim}</span>
+                    <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 165px;" title="${it.name}">${it.shortName || it.name}</span>
+                    ${it.dim === 'tiempo'
+                      ? `<span class="var-dim-badge var-dim-tiempo" title="Serie de Tiempo Histórica">Serie Temporal</span>`
+                      : `<span class="var-dim-badge var-dim-${it.dim}">${it.dim === 'comuna' ? 'Comunal' : it.dim}</span>`
+                    }
                   </div>
                 `).join('')}
               </div>
@@ -3084,6 +3858,61 @@
           }
         }, { passive: false });
 
+        let touchStartDist = 0;
+        let initialTouchScale = 1;
+
+        viewport.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            if (touch.target === viewport || touch.target === stage || touch.target.id === 'studioConnectionsSvg') {
+              AppState.isPanning = true;
+              AppState.panMoved = false;
+              AppState.pointerStart = { x: touch.clientX, y: touch.clientY };
+              AppState.panStart = { x: touch.clientX - AppState.transform.x, y: touch.clientY - AppState.transform.y };
+              viewport.classList.add('panning');
+              deselectActiveCard();
+              closeContextMenu();
+            }
+          } else if (e.touches.length === 2) {
+            AppState.isPanning = false;
+            const t1 = e.touches[0];
+            const t2 = e.touches[1];
+            touchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+            initialTouchScale = AppState.transform.scale;
+          }
+        }, { passive: false });
+
+        window.addEventListener('touchmove', (e) => {
+          if (AppState.isPanning && e.touches.length === 1) {
+            const touch = e.touches[0];
+            AppState.transform.x = touch.clientX - AppState.panStart.x;
+            AppState.transform.y = touch.clientY - AppState.panStart.y;
+            applyCanvasTransform();
+            updateFloatingToolbarPosition();
+            updateConnections();
+          } else if (e.touches.length === 2 && touchStartDist > 0) {
+            if (e.cancelable) e.preventDefault();
+            const t1 = e.touches[0];
+            const t2 = e.touches[1];
+            const currentDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+            const factor = currentDist / touchStartDist;
+            AppState.transform.scale = Math.min(Math.max(initialTouchScale * factor, 0.4), 2.2);
+            applyCanvasTransform();
+            updateFloatingToolbarPosition();
+            updateConnections();
+          }
+        }, { passive: false });
+
+        window.addEventListener('touchend', (e) => {
+          if (AppState.isPanning) {
+            AppState.isPanning = false;
+            viewport.classList.remove('panning');
+          }
+          if (e.touches.length < 2) {
+            touchStartDist = 0;
+          }
+        });
+
         viewport.addEventListener('dragover', (e) => {
           e.preventDefault();
         });
@@ -3196,6 +4025,7 @@
           y: config.y !== undefined ? config.y : pos.y,
           w: config.w || 500,
           h: config.h || 370,
+          timeWindow: config.timeWindow || 'all',
           instance: null,
           resizeObserver: null
         };
@@ -3276,9 +4106,9 @@
           hubTitle = `${vX.hubTitle} x ${vY.hubTitle}`;
           unitBadge = `X: ${vX.unit} · Y: ${vY.unit}`;
         } else if (vX) {
-          keyLabel = `Por ${vX.dim}`;
-          keyClass = 'valid';
-          hubTitle = vX.hubTitle;
+          keyLabel = (vX.dim === 'tiempo') ? 'Línea de Tiempo' : `Por ${vX.dim}`;
+          keyClass = (vX.dim === 'tiempo') ? 'valid' : 'valid';
+          hubTitle = (vX.dim === 'tiempo') ? `${vX.hubTitle} · Serie Multianual` : vX.hubTitle;
           unitBadge = `Unidad: ${vX.unit}`;
         }
 
@@ -3295,6 +4125,34 @@
             <span class="prov-text" title="[X] ${vX.sourceName} | [Y] ${vY.sourceName}">Fuentes: [X] <strong>${vX.sourceName}</strong> (${vX.collectionDate}) × [Y] <strong>${vY.sourceName}</strong> (${vY.collectionDate})</span>
             <span style="font-size: 0.58rem; color: var(--ink-muted);">Cruce Bivariable</span>
           `;
+        }
+
+        let timeFilterHtml = '';
+        if (vX && vX.dim === 'tiempo') {
+          const tw = w.timeWindow || 'all';
+          timeFilterHtml = `
+            <div class="card-time-window-bar" id="time-window-bar-${w.id}">
+              <span class="time-window-lbl">Rango Histórico:</span>
+              <button type="button" class="time-window-pill ${tw === 'all' ? 'active' : ''}" data-window="all">Todos los años</button>
+              <button type="button" class="time-window-pill ${tw === 'hist' ? 'active' : ''}" data-window="hist">2015-2026 Histórico</button>
+              <button type="button" class="time-window-pill ${tw === 'proj' ? 'active' : ''}" data-window="proj">2030-2035 Proyección</button>
+            </div>
+          `;
+        }
+
+        function bindTimeWindowEvents(cardEl, widget) {
+          cardEl.querySelectorAll('.time-window-pill').forEach(btn => {
+            if (!btn._hasTimeClickListener) {
+              btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                widget.timeWindow = btn.getAttribute('data-window');
+                renderWidgetCardDOM(widget);
+                renderWidgetVisual(widget);
+                autoSave();
+              });
+              btn._hasTimeClickListener = true;
+            }
+          });
         }
 
         // Si la tarjeta ya existe en el DOM, actualizar in-place sin duplicar
@@ -3332,6 +4190,21 @@
             if (lbl) lbl.textContent = (w.syncMode === 'isolated') ? 'Aislada' : ((w.syncMode === 'global') ? 'Global' : 'Red');
           }
 
+          let twBar = existingCard.querySelector(`#time-window-bar-${w.id}`);
+          if (timeFilterHtml) {
+            if (!twBar) {
+              const metaArea = existingCard.querySelector('.widget-title-area');
+              if (metaArea) metaArea.insertAdjacentHTML('beforeend', timeFilterHtml);
+            } else {
+              twBar.querySelectorAll('.time-window-pill').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-window') === (w.timeWindow || 'all'));
+              });
+            }
+          } else if (twBar) {
+            twBar.remove();
+          }
+          bindTimeWindowEvents(existingCard, w);
+
           renderWidgetVisual(w);
           return;
         }
@@ -3360,6 +4233,7 @@
                 <span class="widget-unit-badge" style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--cobalt); font-weight: 600;" id="unit-tag-${w.id}">${unitBadge}</span>
                 <span style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-muted);" id="hub-tag-${w.id}">${hubTitle}</span>
               </div>
+              ${timeFilterHtml}
             </div>
 
             <div class="widget-top-controls">
@@ -3398,6 +4272,7 @@
 
         stage.appendChild(card);
         bindCardEvents(w, card);
+        bindTimeWindowEvents(card, w);
         renderWidgetVisual(w);
 
         // ResizeObserver para adaptación perfecta de gráficos al tamaño de ventana
@@ -3453,6 +4328,40 @@
           if (isDragging) {
             isDragging = false;
             handleCardDropCollision(w);
+            autoSave();
+          }
+        });
+
+        let isTouchDragging = false;
+        let touchDragOffset = { x: 0, y: 0 };
+
+        header.addEventListener('touchstart', (e) => {
+          if (e.target.tagName === 'INPUT' || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.time-window-pill')) return;
+          if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            isTouchDragging = true;
+            touchDragOffset.x = touch.clientX - w.x * AppState.transform.scale;
+            touchDragOffset.y = touch.clientY - w.y * AppState.transform.scale;
+            bringWidgetToFront(w.id);
+            selectActiveCard(w.id);
+          }
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+          if (isTouchDragging && e.touches.length === 1) {
+            const touch = e.touches[0];
+            w.x = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
+            w.y = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
+            card.style.left = `${w.x}px`;
+            card.style.top = `${w.y}px`;
+            updateFloatingToolbarPosition();
+            updateConnections();
+          }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+          if (isTouchDragging) {
+            isTouchDragging = false;
             autoSave();
           }
         });
@@ -5095,10 +6004,22 @@
               chartSpec: vX.chartSpec || null
             };
           } else if (vX.chartSpec && Array.isArray(vX.chartSpec.labels)) {
+            let labels = [...vX.chartSpec.labels];
+            let data = [...(vX.chartSpec.datasets[0]?.data || [])];
+            if (vX.dim === 'tiempo' && w.timeWindow && w.timeWindow !== 'all') {
+              const keepIndices = labels.map((l, i) => {
+                const yr = parseInt(l, 10);
+                if (w.timeWindow === 'hist') return yr <= 2026 ? i : -1;
+                if (w.timeWindow === 'proj') return yr >= 2027 ? i : -1;
+                return i;
+              }).filter(idx => idx !== -1);
+              labels = keepIndices.map(i => labels[i]);
+              data = keepIndices.map(i => data[i]);
+            }
             res = {
               mode: 'univariate',
-              labels: [...vX.chartSpec.labels],
-              data: [...(vX.chartSpec.datasets[0]?.data || [])],
+              labels: labels,
+              data: data,
               unit: vX.unit,
               label: vX.shortName || vX.name,
               dim: vX.dim,
@@ -5133,9 +6054,18 @@
             status: 'valid'
           };
         } else if (vX.dim === 'tiempo' && vY.dim === 'tiempo') {
-          const labelsX = vX.chartSpec?.labels || [];
-          const labelsY = vY.chartSpec?.labels || [];
-          const sharedLabels = labelsX.filter(l => labelsY.includes(l));
+          const rawLabelsX = vX.chartSpec?.labels || [];
+          const rawLabelsY = vY.chartSpec?.labels || [];
+          let sharedLabels = rawLabelsX.filter(l => rawLabelsY.includes(l));
+
+          if (w.timeWindow && w.timeWindow !== 'all') {
+            sharedLabels = sharedLabels.filter(l => {
+              const yr = parseInt(l, 10);
+              if (w.timeWindow === 'hist') return yr <= 2026;
+              if (w.timeWindow === 'proj') return yr >= 2027;
+              return true;
+            });
+          }
 
           if (sharedLabels.length === 0) {
             res = {
@@ -5143,9 +6073,9 @@
               key: 'tiempo',
               dim: 'tiempo',
               status: 'warn_spurious',
-              labels: [...labelsX],
+              labels: [...rawLabelsX],
               dataX: [...(vX.chartSpec?.datasets[0]?.data || [])],
-              dataY: labelsX.map(() => 0),
+              dataY: rawLabelsX.map(() => 0),
               unitX: vX.unit,
               unitY: vY.unit,
               nameX: vX.shortName || vX.name,
@@ -5153,11 +6083,11 @@
             };
           } else {
             const dataX = sharedLabels.map(l => {
-              const idx = labelsX.indexOf(l);
+              const idx = rawLabelsX.indexOf(l);
               return vX.chartSpec.datasets[0]?.data[idx] || 0;
             });
             const dataY = sharedLabels.map(l => {
-              const idx = labelsY.indexOf(l);
+              const idx = rawLabelsY.indexOf(l);
               return vY.chartSpec.datasets[0]?.data[idx] || 0;
             });
             res = {
@@ -5247,6 +6177,50 @@
           }
         }
 
+        // 1.1 Exclusión de Outlier Coyhaique
+        if (res.dim === 'comuna' && (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique)) {
+          const keep = [];
+          res.labels.forEach((lbl, i) => {
+            if (normStr(lbl) !== 'coyhaique') keep.push(i);
+          });
+          if (keep.length > 0) {
+            res.labels = keep.map(i => res.labels[i]);
+            if (res.mode === 'univariate') {
+              res.data = keep.map(i => res.data[i]);
+            } else {
+              res.dataX = keep.map(i => res.dataX[i]);
+              res.dataY = keep.map(i => res.dataY[i]);
+            }
+          }
+        }
+
+        // 1.2 Modo Per Cápita
+        if (res.dim === 'comuna' && (AppState.perCapitaMode || w.perCapitaMode)) {
+          const isRate = (u) => /%|ratio|tasa|per_capita|promedio|horas|por_mil/i.test(u);
+          if (res.mode === 'univariate' && !isRate(res.unit)) {
+            res.data = res.labels.map((lbl, i) => {
+              const pop = COMUNAS_DATA[lbl]?.pop || 1;
+              return Number((res.data[i] / pop).toFixed(4));
+            });
+            res.unit = `${res.unit}/hab`;
+          } else if (res.mode === 'bivariate') {
+            if (!isRate(res.unitX)) {
+              res.dataX = res.labels.map((lbl, i) => {
+                const pop = COMUNAS_DATA[lbl]?.pop || 1;
+                return Number((res.dataX[i] / pop).toFixed(4));
+              });
+              res.unitX = `${res.unitX}/hab`;
+            }
+            if (!isRate(res.unitY)) {
+              res.dataY = res.labels.map((lbl, i) => {
+                const pop = COMUNAS_DATA[lbl]?.pop || 1;
+                return Number((res.dataY[i] / pop).toFixed(4));
+              });
+              res.unitY = `${res.unitY}/hab`;
+            }
+          }
+        }
+
         // 2. Transformación de Escala (% Regional / Z-Score)
         const scaleMode = w.scaleMode || 'raw';
         if (scaleMode === 'pct') {
@@ -5320,6 +6294,18 @@
         if (Array.isArray(item.data) && item.dim === 'comuna') {
           return item.data;
         }
+        if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas)) {
+          const vKey = item.canonicalId || item.id;
+          const found = AppState.hubsData.comunas.some(c => c[vKey] !== undefined || c[item.id] !== undefined);
+          if (found) {
+            return COMUNAS_ORDER.map(cName => {
+              const row = AppState.hubsData.comunas.find(c => normStr(c.nombre) === normStr(cName));
+              if (!row) return 0;
+              const val = row[item.id] !== undefined ? row[item.id] : (row[vKey] !== undefined ? row[vKey] : 0);
+              return typeof val === 'number' ? val : (parseFloat(val) || 0);
+            });
+          }
+        }
         if (item.chartSpec && Array.isArray(item.chartSpec.labels)) {
           const labels = item.chartSpec.labels;
           const data = item.chartSpec.datasets[0]?.data || [];
@@ -5338,7 +6324,13 @@
       function getBaseCommunalData(id) {
         const item = AppState.catalogItems.find(v => v.id === id);
         if (item && Array.isArray(item.data)) return item.data;
-        return [57823, 852, 23959, 6517, 1843, 4865, 2671, 3490, 625, 523];
+        if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas)) {
+          return COMUNAS_ORDER.map(cName => {
+            const row = AppState.hubsData.comunas.find(c => normStr(c.nombre) === normStr(cName));
+            return row ? (row.poblacion_censo_2024 || 0) : 0;
+          });
+        }
+        return COMUNAS_ORDER.map(() => 0);
       }
 
       // =======================================================================
@@ -5485,7 +6477,12 @@
               <div class="empty-interactive-title">Tarjeta sin variable asignada</div>
               <p class="empty-interactive-desc">Selecciona un dato del catálogo o arrastra cualquier variable hasta esta tarjeta.</p>
               <div class="empty-search-box">
-                <input type="text" class="empty-search-input" placeholder="Buscar variable en el catálogo..." id="empty-search-${w.id}" />
+                <input type="text" class="empty-search-input" placeholder="Buscar variable o serie..." id="empty-search-${w.id}" />
+              </div>
+              <div class="empty-pills-row" style="display: flex; gap: 0.35rem; margin-top: 0.4rem; justify-content: center;" id="empty-pills-${w.id}">
+                <button type="button" class="btn-action-tool primary" data-dim="all" style="height: 22px; padding: 0 0.5rem; font-size: 0.65rem;">Todas</button>
+                <button type="button" class="btn-action-tool" data-dim="tiempo" style="height: 22px; padding: 0 0.5rem; font-size: 0.65rem; color: #0284c7; border-color: #bae6fd; background: #f0f9ff; font-weight: 600;">Series de Tiempo</button>
+                <button type="button" class="btn-action-tool" data-dim="comuna" style="height: 22px; padding: 0 0.5rem; font-size: 0.65rem;">Comunales (10)</button>
               </div>
               <div class="empty-var-list" id="empty-list-${w.id}"></div>
             </div>
@@ -5495,17 +6492,23 @@
           const listEl = document.getElementById(`empty-list-${w.id}`);
           const dropBox = document.getElementById(`drop-target-${w.id}`);
 
-          const renderEmptyList = (filter = '') => {
+          let currentPillDim = 'all';
+          const renderEmptyList = (filter = '', dimPill = currentPillDim) => {
+            currentPillDim = dimPill;
             const q = normStr(filter);
             const filtered = AppState.catalogItems.filter(it => {
+              if (currentPillDim !== 'all' && it.dim !== currentPillDim) return false;
               if (!q) return true;
               return normStr(it.name).includes(q) || normStr(it.hubTitle).includes(q) || normStr(it.dim).includes(q);
-            }).slice(0, 8);
+            }).slice(0, 10);
 
             listEl.innerHTML = filtered.map(it => `
               <div class="empty-var-item" data-var-id="${it.id}">
                 <span><strong>${it.shortName || it.name}</strong> (${it.unit})</span>
-                <span class="var-dim-badge">${it.dim}</span>
+                ${it.dim === 'tiempo'
+                  ? `<span class="var-dim-badge var-dim-tiempo">Serie Temporal</span>`
+                  : `<span class="var-dim-badge var-dim-${it.dim}">${it.dim === 'comuna' ? 'Comunal' : it.dim}</span>`
+                }
               </div>
             `).join('');
 
@@ -5516,6 +6519,18 @@
               });
             });
           };
+
+          const pillsRow = document.getElementById(`empty-pills-${w.id}`);
+          if (pillsRow) {
+            pillsRow.querySelectorAll('button').forEach(btn => {
+              btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                pillsRow.querySelectorAll('button').forEach(b => b.classList.remove('primary'));
+                btn.classList.add('primary');
+                renderEmptyList(searchInput ? searchInput.value : '', btn.getAttribute('data-dim'));
+              });
+            });
+          }
 
           renderEmptyList();
           if (searchInput) {
@@ -5635,11 +6650,20 @@
                   }
                 },
                 plugins: {
-                  legend: { display: false },
+                  legend: {
+                    display: datasets.length > 1,
+                    position: 'top',
+                    align: 'start',
+                    labels: { boxWidth: 10, font: { size: 9.5, family: 'Inter' }, padding: 8 }
+                  },
                   scatterQuadrantsPlugin: {
                     enabled: !!w.showAverage
                   },
                   tooltip: {
+                    caretPadding: 6,
+                    padding: 8,
+                    boxPadding: 4,
+                    cornerRadius: 4,
                     callbacks: {
                       title: (items) => items[0]?.raw?.entity || '',
                       label: (item) => `${payload.nameX}: ${item.raw.x.toLocaleString('es-CL')} ${payload.unitX} | ${payload.nameY}: ${item.raw.y.toLocaleString('es-CL')} ${payload.unitY}`,
@@ -5742,9 +6766,10 @@
                   });
                 }
 
+                let lineTrendBadgeText = '';
                 if (w.showTrend && dataPts.length > 2) {
                   const n = dataPts.length;
-                  let sumT = 0, sumY = 0, stt = 0, sty = 0;
+                  let sumT = 0, sumY = 0, stt = 0, sty = 0, syy = 0;
                   dataPts.forEach((y, t) => {
                     sumT += t;
                     sumY += y;
@@ -5756,13 +6781,16 @@
                     const dy = y - meanY;
                     stt += dt * dt;
                     sty += dt * dy;
+                    syy += dy * dy;
                   });
                   const slope = stt !== 0 ? sty / stt : 0;
                   const intercept = meanY - slope * meanT;
+                  const r = (stt > 0 && syy > 0) ? (sty / Math.sqrt(stt * syy)) : 0;
+                  const r2 = r * r;
 
                   datasets.push({
                     type: 'line',
-                    label: `Tendencia (${slope >= 0 ? '+' : ''}${slope.toFixed(2)})`,
+                    label: `Tendencia (${slope >= 0 ? '+' : ''}${slope.toFixed(2)} · R² = ${r2.toFixed(2)})`,
                     data: dataPts.map((_, t) => slope * t + intercept),
                     borderColor: '#0284c7',
                     borderWidth: 2,
@@ -5770,6 +6798,8 @@
                     pointRadius: 0,
                     fill: false
                   });
+
+                  lineTrendBadgeText = `Tendencia (R² = ${r2.toFixed(2)})`;
                 }
               }
             }
@@ -5777,6 +6807,15 @@
             const scales = {
               x: {
                 grid: { display: false },
+                ticks: {
+                  maxRotation: 45,
+                  minRotation: 0,
+                  font: { size: 9 },
+                  callback: function (val, idx) {
+                    const str = this.getLabelForValue ? this.getLabelForValue(val) : (payload.labels[idx] || val);
+                    return (typeof str === 'string' && str.length > 12) ? str.slice(0, 10) + '..' : str;
+                  }
+                },
                 title: { display: true, text: payload.dim === 'comuna' ? 'Comunas de Aysén' : 'Período Temporal', font: { size: 10, weight: 600 } }
               },
               y: {
@@ -5820,9 +6859,14 @@
                   legend: {
                     display: payload.mode === 'bivariate' || datasets.length > 1,
                     position: 'top',
-                    labels: { boxWidth: 12, font: { size: 10 } }
+                    align: 'start',
+                    labels: { boxWidth: 10, font: { size: 9.5, family: 'Inter' }, padding: 8 }
                   },
                   tooltip: {
+                    caretPadding: 6,
+                    padding: 8,
+                    boxPadding: 4,
+                    cornerRadius: 4,
                     callbacks: {
                       label: (item) => `${item.dataset.label || 'Valor'}: ${item.raw.toLocaleString('es-CL')}`,
                       afterLabel: (item) => getComunaTooltipContext(item.label)
@@ -5833,6 +6877,22 @@
               }
             });
             w.instance._targetEntity = selEntity;
+
+            const cardEl = document.getElementById(`widget-card-${w.id}`);
+            if (cardEl) {
+              let badgeEl = cardEl.querySelector('.trend-math-badge');
+              if (lineTrendBadgeText) {
+                if (!badgeEl) {
+                  badgeEl = document.createElement('span');
+                  badgeEl.className = 'trend-math-badge';
+                  badgeEl.style.cssText = 'font-family: var(--font-mono); font-size: 0.62rem; color: #0284c7; font-weight: 600; margin-left: 6px;';
+                  cardEl.querySelector('.widget-meta-line')?.appendChild(badgeEl);
+                }
+                badgeEl.textContent = lineTrendBadgeText;
+              } else if (badgeEl) {
+                badgeEl.remove();
+              }
+            }
 
           } else {
             const datasets = [];
@@ -5897,7 +6957,15 @@
             const scales = {
               x: {
                 grid: { display: false },
-                ticks: { maxRotation: 45, minRotation: 0, font: { size: 9 } },
+                ticks: {
+                  maxRotation: 45,
+                  minRotation: 0,
+                  font: { size: 9 },
+                  callback: function (val, idx) {
+                    const str = this.getLabelForValue ? this.getLabelForValue(val) : (payload.labels[idx] || val);
+                    return (typeof str === 'string' && str.length > 12) ? str.slice(0, 10) + '..' : str;
+                  }
+                },
                 title: { display: true, text: xTitle, font: { size: 10, weight: 600 } }
               },
               y: {
@@ -5939,9 +7007,14 @@
                   legend: {
                     display: payload.mode === 'bivariate' || datasets.length > 1,
                     position: 'top',
-                    labels: { boxWidth: 12, font: { size: 10 } }
+                    align: 'start',
+                    labels: { boxWidth: 10, font: { size: 9.5, family: 'Inter' }, padding: 8 }
                   },
                   tooltip: {
+                    caretPadding: 6,
+                    padding: 8,
+                    boxPadding: 4,
+                    cornerRadius: 4,
                     callbacks: {
                       label: (item) => `${item.dataset.label || 'Valor'}: ${item.raw.toLocaleString('es-CL')}`,
                       afterLabel: (item) => getComunaTooltipContext(item.label)
@@ -6442,6 +7515,28 @@
             x: 620, y: 60, w: 500, h: 350
           });
           addConnection(1, 2);
+        } else if (scenarioId === 'cambio_tiempo' || scenarioId === '10' || scenarioId === '10_cambio_tiempo_fan') {
+          createWidget('chart', {
+            varX: 'sp_floracion_alexandrium_fan',
+            chartType: 'line',
+            x: 60, y: 50, w: 480, h: 350
+          });
+          createWidget('chart', {
+            varX: 'sp_mp25_invernal_coyhaique',
+            chartType: 'line',
+            x: 580, y: 50, w: 480, h: 350
+          });
+          const c = createWidget('chart', {
+            varX: 'tsm_fiordos',
+            varY: 'fan_alexandrium_mensual',
+            chartType: 'scatter',
+            showTrend: true,
+            showAverage: true,
+            x: 1100, y: 50, w: 500, h: 350
+          });
+          invokeReflectionCardForWidget(c.id);
+          addConnection(1, 2);
+          addConnection(2, 3);
         } else {
           createWidget('chart', {
             varX: 'finanzas_dependencia_fcm_pct',
@@ -6488,11 +7583,228 @@
       }
 
       // =======================================================================
+      // 16.1 PRESETS CECAN (16) Y CONSULTAS CONVERSACIONALES NL2CHART
+      // =======================================================================
+      function applyCecanPreset(propNumOrId) {
+        if (!propNumOrId) return;
+        const normId = String(propNumOrId).trim().padStart(2, '0');
+        const prop = (AppState.cecanPresets || []).find(p =>
+          String(p.property_num).padStart(2, '0') === normId ||
+          String(p.property_id).padStart(2, '0') === normId
+        );
+
+        if (!prop) {
+          console.warn('[Laboratorio] Preset CECAN no encontrado:', propNumOrId);
+          return;
+        }
+
+        const selCecan = document.getElementById('selectCecanPreset');
+        if (selCecan) selCecan.value = prop.property_num;
+
+        // Si es una propiedad metodológica (#03, #12, #13)
+        if (!prop.hasEmpiricalChart) {
+          clearAll();
+          const note = prop.methodological_note || {};
+          const center = getCanvasCenterWorld();
+
+          let actionBtnHtml = '';
+          if (prop.property_num === '03') {
+            actionBtnHtml = `
+              <a href="sistemas_complejos.html" class="btn-action-tool primary" style="text-decoration:none; display:inline-flex; align-items:center;">
+                <span>Explorar Simulador de Agentes →</span>
+              </a>
+            `;
+          } else if (prop.property_num === '12') {
+            actionBtnHtml = `
+              <button type="button" class="btn-action-tool primary" id="btnLoadScenariosAction">
+                <span>Cargar Series Prospectivas 2030-2035 →</span>
+              </button>
+            `;
+          } else if (prop.property_num === '13') {
+            actionBtnHtml = `
+              <button type="button" class="btn-action-tool primary" id="btnOpenMetacogAction">
+                <span>Consultar Oráculo Metacognitivo (30 Preguntas) →</span>
+              </button>
+            `;
+          }
+
+          const refText = `${note.reason || prop.description}\n\nNota Metodológica: Esta propiedad sistémica no admite un cruce cartesiano forzado en las 10 comunas de Aysén. Se recomienda evaluar mediante simulación dinámica o indagación reflexiva.`;
+
+          const refCard = createReflectionCard({
+            title: `Nota Metodológica #${prop.property_num}: ${prop.name_es}`,
+            text: refText,
+            x: Math.round(center.x - 240),
+            y: Math.round(center.y - 130),
+            w: 480,
+            h: 260
+          });
+
+          setTimeout(() => {
+            const cardEl = document.getElementById(`reflection-card-${refCard.id}`);
+            if (cardEl) {
+              const bodyEl = cardEl.querySelector('.reflection-card-body');
+              if (bodyEl && actionBtnHtml) {
+                const btnContainer = document.createElement('div');
+                btnContainer.style.marginTop = '0.75rem';
+                btnContainer.innerHTML = actionBtnHtml;
+                bodyEl.appendChild(btnContainer);
+
+                const btnScen = btnContainer.querySelector('#btnLoadScenariosAction');
+                if (btnScen) btnScen.addEventListener('click', () => loadScenario('10_cambio_tiempo_fan'));
+
+                const btnMeta = btnContainer.querySelector('#btnOpenMetacogAction');
+                if (btnMeta) btnMeta.addEventListener('click', () => {
+                  const drawer = document.getElementById('panelMetacognicion');
+                  if (drawer) drawer.classList.add('open');
+                });
+              }
+            }
+          }, 50);
+
+          fitAndCenterCanvas();
+          return;
+        }
+
+        // Propiedad con cruce empírico (13 propiedades)
+        clearAll();
+        const preset = (prop.presets && prop.presets[0]) ? prop.presets[0] : null;
+        if (!preset) return;
+
+        const switches = preset.suggested_switches || {};
+        if (switches.excludeOutlierCoyhaique) {
+          AppState.excludeCoyhaique = true;
+          const btnEx = document.getElementById('btnExcludeCoyhaique');
+          if (btnEx) {
+            btnEx.classList.add('active');
+            btnEx.style.background = '#00357f';
+            btnEx.style.color = '#ffffff';
+          }
+        }
+
+        let chartWidget = null;
+        if (preset.type === 'temporal') {
+          chartWidget = createWidget('chart', {
+            title: preset.titulo,
+            varX: preset.seriePrimaria || 'tsm_fiordos',
+            varY: preset.serieSecundaria || 'fan_alexandrium_mensual',
+            chartType: 'line',
+            showTrend: true,
+            x: 80, y: 60, w: 560, h: 380
+          });
+        } else {
+          // Bivariado cartesiano
+          chartWidget = createWidget('chart', {
+            title: preset.titulo,
+            varX: preset.varX,
+            varY: preset.varY,
+            chartType: 'scatter',
+            showTrend: true,
+            showAverage: true,
+            x: 80, y: 60, w: 560, h: 380
+          });
+        }
+
+        // Crear cápsula ciudadana / tarjeta reflexiva conectada
+        const explText = `${preset.what_it_shows}\n\nDinámica Sistémica: ${preset.why_complex_system}`;
+        const refCard = createReflectionCard({
+          title: `Cápsula #${prop.property_num}: ${prop.name_es}`,
+          text: explText,
+          x: 680, y: 60, w: 460, h: 380
+        });
+
+        if (chartWidget && refCard) {
+          addConnection(chartWidget.id, refCard.id, 'bivariate');
+        }
+
+        fitAndCenterCanvas();
+      }
+
+      function executeNLQuery() {
+        const nlInput = document.getElementById('nlSearchInput');
+        if (!nlInput) return;
+        const q = nlInput.value.trim();
+        if (!q || !window.NL2ChartEngine) return;
+
+        const res = window.NL2ChartEngine.parseQuery(q);
+        if (res && res.success) {
+          clearAll();
+          if (res.excludeOutlierCoyhaique) {
+            AppState.excludeCoyhaique = true;
+            const btnEx = document.getElementById('btnExcludeCoyhaique');
+            if (btnEx) {
+              btnEx.classList.add('active');
+              btnEx.style.background = '#00357f';
+              btnEx.style.color = '#ffffff';
+            }
+          }
+
+          let chartW = null;
+          if (res.chartType === 'scatter' && res.varX && res.varY) {
+            chartW = createWidget('chart', {
+              title: `${res.varX.name} vs. ${res.varY.name}`,
+              varX: res.varX.id,
+              varY: res.varY.id,
+              chartType: 'scatter',
+              showTrend: true,
+              showAverage: true,
+              x: 80, y: 60, w: 540, h: 370
+            });
+          } else if (res.chartType === 'temporal' && res.varX) {
+            chartW = createWidget('chart', {
+              title: `Serie Temporal: ${res.varX.name}`,
+              varX: res.varX.id,
+              chartType: 'line',
+              x: 80, y: 60, w: 540, h: 370
+            });
+          } else if (res.varX) {
+            chartW = createWidget('chart', {
+              title: res.varX.name,
+              varX: res.varX.id,
+              chartType: 'bar',
+              x: 80, y: 60, w: 540, h: 370
+            });
+          }
+
+          const ref = createReflectionCard({
+            title: 'Interpretación NL2Chart',
+            text: `${res.explanation}\n\nConfianza semántica: ${(res.confidence * 100).toFixed(0)}%. Coincidencias: ${res.matchedTokens.join(', ')}.`,
+            x: 660, y: 60, w: 420, h: 370
+          });
+
+          if (chartW && ref) {
+            addConnection(chartW.id, ref.id, 'bivariate');
+          }
+          fitAndCenterCanvas();
+        } else {
+          alert('No se pudieron asociar variables específicas a la consulta. Intente mencionar términos como salmón, patentes, leña, o cortes de luz.');
+        }
+      }
+
+      // =======================================================================
       // 17. PERSISTENCIA LOCALSTORAGE Y ENLACE DESDE INDEX.HTML
       // =======================================================================
       function handleUrlParamsOrLoadSaved() {
         const params = new URLSearchParams(window.location.search);
+        const cecanParam = params.get('cecan_prop');
+        const modeParam = params.get('mode');
         const nodeParam = params.get('node');
+
+        if (cecanParam) {
+          applyCecanPreset(cecanParam);
+          return;
+        }
+
+        if (modeParam === 'scenarios') {
+          loadScenario('10_cambio_tiempo_fan');
+          return;
+        }
+
+        if (modeParam === 'metacognitive') {
+          loadSavedOrPreset();
+          const drawer = document.getElementById('panelMetacognicion');
+          if (drawer) drawer.classList.add('open');
+          return;
+        }
 
         if (nodeParam) {
           const nodeId = parseInt(nodeParam, 10);
@@ -6741,6 +8053,21 @@
           const center = getCanvasCenterWorld();
           createWidget('chart', { varX: null, x: center.x - 250, y: center.y - 180 });
         });
+        const btnTimeline = document.getElementById('btnAddTimeline');
+        if (btnTimeline) {
+          btnTimeline.addEventListener('click', () => {
+            const center = getCanvasCenterWorld();
+            const defaultTemporal = AppState.catalogItems.find(v => v.dim === 'tiempo' && !v.isAlias) || AppState.catalogItems.find(v => v.dim === 'tiempo');
+            const varXId = defaultTemporal ? defaultTemporal.id : 'floracion_alexandrium_fan';
+            createWidget('chart', {
+              varX: varXId,
+              chartType: 'line',
+              title: defaultTemporal ? defaultTemporal.name : 'Línea de Tiempo (2015-2026)',
+              x: center.x - 250,
+              y: center.y - 180
+            });
+          });
+        }
         document.getElementById('btnAddMap').addEventListener('click', () => {
           const center = getCanvasCenterWorld();
           createWidget('map', { varX: null, x: center.x - 250, y: center.y - 180 });
@@ -6762,19 +8089,128 @@
           tileWindowsInGrid();
         });
 
+        const catPanel = document.getElementById('panelCatalogo');
+        const metaPanel = document.getElementById('panelMetacognicion');
+        const catBackdrop = document.getElementById('panelCatalogoBackdrop');
+        const metaBackdrop = document.getElementById('panelMetacogBackdrop');
+
+        function syncPanelBackdrops() {
+          if (catBackdrop) {
+            const isCatOpen = catPanel && !catPanel.classList.contains('collapsed') && window.innerWidth <= 1024;
+            catBackdrop.classList.toggle('active', !!isCatOpen);
+          }
+          if (metaBackdrop) {
+            const isMetaOpen = metaPanel && metaPanel.classList.contains('open') && window.innerWidth <= 768;
+            metaBackdrop.classList.toggle('active', !!isMetaOpen);
+          }
+        }
+
+        if (window.innerWidth <= 1024 && catPanel) {
+          catPanel.classList.add('collapsed');
+        }
+
         // Toggle Catálogo
         document.getElementById('btnToggleSidebar').addEventListener('click', () => {
-          document.getElementById('panelCatalogo').classList.toggle('collapsed');
-          setTimeout(updateFloatingToolbarPosition, 300);
+          if (catPanel) {
+            catPanel.classList.toggle('collapsed');
+            syncPanelBackdrops();
+            setTimeout(updateFloatingToolbarPosition, 300);
+          }
         });
 
         // Toggle Metacognición
         document.getElementById('btnToggleMetacog').addEventListener('click', () => {
-          document.getElementById('panelMetacognicion').classList.add('open');
+          if (metaPanel) {
+            metaPanel.classList.add('open');
+            syncPanelBackdrops();
+          }
         });
         document.getElementById('btnCloseMetacog').addEventListener('click', () => {
-          document.getElementById('panelMetacognicion').classList.remove('open');
+          if (metaPanel) {
+            metaPanel.classList.remove('open');
+            syncPanelBackdrops();
+          }
         });
+
+        // Backdrops click
+        if (catBackdrop) {
+          catBackdrop.addEventListener('click', () => {
+            if (catPanel) catPanel.classList.add('collapsed');
+            syncPanelBackdrops();
+          });
+        }
+        if (metaBackdrop) {
+          metaBackdrop.addEventListener('click', () => {
+            if (metaPanel) metaPanel.classList.remove('open');
+            syncPanelBackdrops();
+          });
+        }
+
+        // Controles de barra móvil inferior (#mobileStudioNav)
+        const mobCatalogBtn = document.getElementById('btnMobNavCatalog');
+        const mobCanvasBtn = document.getElementById('btnMobNavCanvas');
+        const mobAddBtn = document.getElementById('btnMobNavAdd');
+        const mobMetacogBtn = document.getElementById('btnMobNavMetacog');
+
+        function updateMobNavActive(activeBtn) {
+          [mobCatalogBtn, mobCanvasBtn, mobAddBtn, mobMetacogBtn].forEach(b => {
+            if (b) b.classList.remove('active');
+          });
+          if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        if (mobCatalogBtn) {
+          mobCatalogBtn.addEventListener('click', () => {
+            if (catPanel) {
+              const willOpen = catPanel.classList.contains('collapsed');
+              catPanel.classList.toggle('collapsed');
+              if (metaPanel) metaPanel.classList.remove('open');
+              syncPanelBackdrops();
+              updateMobNavActive(willOpen ? mobCatalogBtn : mobCanvasBtn);
+            }
+          });
+        }
+
+        if (mobCanvasBtn) {
+          mobCanvasBtn.addEventListener('click', () => {
+            if (catPanel) catPanel.classList.add('collapsed');
+            if (metaPanel) metaPanel.classList.remove('open');
+            syncPanelBackdrops();
+            updateMobNavActive(mobCanvasBtn);
+            const activeCard = AppState.activeWidgetId ? document.getElementById(`widget-card-${AppState.activeWidgetId}`) : null;
+            if (activeCard) {
+              const rect = activeCard.getBoundingClientRect();
+              const vp = document.getElementById('panelLienzo').getBoundingClientRect();
+              AppState.transform.x += (vp.left + vp.width / 2) - (rect.left + rect.width / 2);
+              AppState.transform.y += (vp.top + vp.height / 2) - (rect.top + rect.height / 2);
+              applyCanvasTransform();
+              updateFloatingToolbarPosition();
+            }
+          });
+        }
+
+        if (mobAddBtn) {
+          mobAddBtn.addEventListener('click', () => {
+            if (catPanel) catPanel.classList.add('collapsed');
+            if (metaPanel) metaPanel.classList.remove('open');
+            syncPanelBackdrops();
+            updateMobNavActive(mobCanvasBtn);
+            const center = getCanvasCenterWorld();
+            createWidget('chart', { varX: null, x: center.x - 200, y: center.y - 150, w: Math.min(420, window.innerWidth - 30), h: 320 });
+          });
+        }
+
+        if (mobMetacogBtn) {
+          mobMetacogBtn.addEventListener('click', () => {
+            if (metaPanel) {
+              const willOpen = !metaPanel.classList.contains('open');
+              metaPanel.classList.toggle('open');
+              if (catPanel) catPanel.classList.add('collapsed');
+              syncPanelBackdrops();
+              updateMobNavActive(willOpen ? mobMetacogBtn : mobCanvasBtn);
+            }
+          });
+        }
 
         // Búsqueda y tabs de dimensión en catálogo
         document.getElementById('inputBuscarVariable').addEventListener('input', (e) => {
@@ -6813,10 +8249,11 @@
         document.getElementById('btnExportarReporte').addEventListener('click', () => window.print());
 
         document.getElementById('btnEjemploSistemico').addEventListener('click', () => {
-          const sc = prompt('Selecciona escenario: 1 (Salmonicultura e Inversión), 2 (Energía y Precios), 3 (Gobernanza y Pobreza)', '1');
+          const sc = prompt('Selecciona escenario: 1 (Salmonicultura e Inversión), 2 (Energía y Precios), 3 (Gobernanza y Pobreza), 10 (Cambio en el Tiempo: Fiordos FAN y MP2.5 Coyhaique)', '1');
           if (sc === '1') loadScenario('salmon_inversion');
           else if (sc === '2') loadScenario('energia_aislada');
           else if (sc === '3') loadScenario('default');
+          else if (sc === '10' || sc === '4') loadScenario('cambio_tiempo');
         });
 
         const btnHeroInit = document.getElementById('btnHeroInit');
@@ -6973,12 +8410,42 @@
           }
         });
 
-        document.getElementById('tbBtnCsv').addEventListener('click', () => {
-          if (AppState.activeWidgetId) {
-            const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-            if (w) exportCsv(w);
-          }
-        });
+        // Conmutador Excluir Outlier Coyhaique
+        const btnExclude = document.getElementById('btnExcludeCoyhaique');
+        if (btnExclude) {
+          btnExclude.addEventListener('click', () => {
+            AppState.excludeCoyhaique = !AppState.excludeCoyhaique;
+            btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
+            btnExclude.style.background = AppState.excludeCoyhaique ? '#00357f' : '';
+            btnExclude.style.color = AppState.excludeCoyhaique ? '#ffffff' : '';
+            AppState.widgets.forEach(w => renderWidgetVisual(w));
+            autoSave();
+          });
+        }
+
+        // Selector Presets CECAN (16)
+        const selCecan = document.getElementById('selectCecanPreset');
+        if (selCecan) {
+          selCecan.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (val) applyCecanPreset(val);
+          });
+        }
+
+        // Buscador Conversacional NL2Chart
+        const nlInput = document.getElementById('nlSearchInput');
+        const btnNl = document.getElementById('btnNlSearch');
+        if (nlInput) {
+          nlInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              executeNLQuery();
+            }
+          });
+        }
+        if (btnNl) {
+          btnNl.addEventListener('click', executeNLQuery);
+        }
 
         window.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {

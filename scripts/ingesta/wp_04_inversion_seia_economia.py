@@ -33,6 +33,7 @@ if sys.platform == "win32":
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 RAW_DIR = REPO_ROOT / "data" / "raw" / "inversion_economia"
 SYSTEMIC_DIR = REPO_ROOT / "data" / "systemic"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 HTTP_TIMEOUT_SECONDS = 5
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AysenSystemicData/1.0"
@@ -1099,6 +1100,13 @@ def main() -> int:
     print(f"\n-> Escribiendo dataset sistémico en: {output_path}...")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(dataset, f, indent=2, ensure_ascii=False)
+
+    # Inyección y sincronización de series temporales históricas (2015-2026)
+    try:
+        from update_wp01_wp04_series import update_wp04_all
+        update_wp04_all()
+    except Exception as e:
+        print(f"   [AVISO] No se pudo ejecutar update_wp04_all: {e}")
 
     print(f"   [OK] Guardado exitoso: {output_path.name} ({output_path.stat().st_size} bytes)")
     print(f"   - Comunas cubiertas: {len(dataset['por_comuna'])}/10")

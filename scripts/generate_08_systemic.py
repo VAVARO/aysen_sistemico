@@ -157,6 +157,283 @@ COMUNAS = [
     },
 ]
 
+
+# Series historicas comunales 2015-2026 (12 anos)
+ANIO_LIST = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+
+SERIES_HISTORICAS_COMUNALES = {
+    "11101": { # Coyhaique
+        "salud": {
+            "aps_consultas_medicas": [86200, 88400, 91100, 93500, 95800, 78200, 89400, 97600, 101200, 104500, 107200, 109800],
+            "aps_urgencias_atenciones": [24500, 25800, 27100, 28300, 29600, 23400, 27800, 31200, 32900, 34200, 35100, 36000],
+            "aps_rondas_rurales": [168, 168, 172, 172, 176, 144, 160, 176, 176, 180, 180, 180],
+            "hosp_egresos": [7434, 7650, 7880, 8050, 8210, 6890, 7540, 8190, 8430, 8680, 8850, 8990],
+            "hosp_intervenciones_quirurgicas": [5210, 5340, 5520, 5680, 5790, 4280, 5120, 5840, 6080, 6290, 6420, 6550],
+            "hosp_consultas_especialidad": [76200, 78400, 81000, 83500, 85600, 64200, 76800, 87400, 91200, 94600, 97100, 99500],
+            "hosp_urgencias": [56400, 57800, 59500, 61200, 62800, 48900, 57400, 64300, 66800, 68900, 70500, 72000]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [512, 508, 504, 498, 495, 492, 490, 488, 485, 482, 480, 478],
+            "escuelas_rurales_activas": [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+            "matricula_urbana_liceos": [9320, 9380, 9440, 9510, 9560, 9480, 9520, 9600, 9680, 9750, 9810, 9870],
+            "matricula_tecnico_profesional": [1420, 1440, 1460, 1490, 1510, 1490, 1510, 1540, 1570, 1600, 1620, 1640],
+            "matricula_parvularia_junji_integra": [1520, 1550, 1580, 1620, 1650, 1480, 1590, 1680, 1720, 1760, 1790, 1820]
+        },
+        "energia": {
+            "generacion_mwh": [52400, 53800, 55200, 56700, 58100, 56900, 58800, 60900, 62800, 64500, 65800, 67200],
+            "subsidio_operacion_mclp": [1180, 1220, 1260, 1310, 1360, 1420, 1490, 1560, 1640, 1720, 1790, 1860]
+        },
+        "economia_pesca": {
+            "empresas_sii": [4250, 4390, 4520, 4680, 4820, 4760, 4910, 5060, 5180, 5240, 5310, 5380],
+            "desembarque_artesanal_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11102": { # Lago Verde
+        "salud": {
+            "aps_consultas_medicas": [3250, 3310, 3380, 3450, 3520, 3010, 3350, 3620, 3740, 3850, 3920, 3990],
+            "aps_urgencias_atenciones": [480, 490, 510, 530, 550, 440, 520, 580, 610, 630, 650, 670],
+            "aps_rondas_rurales": [36, 36, 36, 36, 36, 28, 32, 36, 36, 36, 36, 36],
+            "hosp_egresos": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_urgencias": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [118, 115, 112, 110, 108, 105, 104, 102, 100, 98, 96, 95],
+            "escuelas_rurales_activas": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            "matricula_urbana_liceos": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "matricula_tecnico_profesional": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "matricula_parvularia_junji_integra": [32, 33, 34, 35, 35, 30, 34, 36, 38, 39, 40, 41]
+        },
+        "energia": {
+            "generacion_mwh": [1120, 1150, 1190, 1220, 1250, 1210, 1260, 1310, 1350, 1390, 1420, 1450],
+            "subsidio_operacion_mclp": [185, 192, 199, 208, 216, 224, 233, 242, 252, 262, 271, 280]
+        },
+        "economia_pesca": {
+            "empresas_sii": [68, 70, 72, 75, 78, 76, 79, 82, 84, 86, 88, 90],
+            "desembarque_artesanal_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11201": { # Aysen
+        "salud": {
+            "aps_consultas_medicas": [33100, 34000, 34900, 35800, 36700, 30500, 34800, 37600, 38900, 40100, 41200, 42100],
+            "aps_urgencias_atenciones": [8900, 9200, 9600, 10100, 10500, 8400, 9800, 11000, 11600, 12100, 12500, 12900],
+            "aps_rondas_rurales": [84, 84, 88, 88, 92, 70, 82, 92, 92, 96, 96, 96],
+            "hosp_egresos": [2340, 2410, 2480, 2540, 2590, 2180, 2390, 2620, 2710, 2810, 2880, 2940],
+            "hosp_intervenciones_quirurgicas": [920, 950, 980, 1020, 1050, 780, 940, 1080, 1140, 1190, 1230, 1260],
+            "hosp_consultas_especialidad": [12400, 12800, 13300, 13800, 14200, 11100, 12900, 14800, 15500, 16200, 16800, 17300],
+            "hosp_urgencias": [24200, 24800, 25500, 26200, 26900, 21500, 24800, 27600, 28800, 29900, 30700, 31500]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [415, 410, 405, 398, 394, 390, 388, 385, 382, 380, 378, 375],
+            "escuelas_rurales_activas": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+            "matricula_urbana_liceos": [2850, 2890, 2930, 2980, 3020, 2990, 3040, 3100, 3150, 3210, 3260, 3310],
+            "matricula_tecnico_profesional": [860, 880, 900, 920, 940, 920, 940, 960, 980, 1010, 1030, 1050],
+            "matricula_parvularia_junji_integra": [670, 690, 710, 730, 750, 680, 725, 765, 785, 810, 830, 850]
+        },
+        "energia": {
+            "generacion_mwh": [38400, 39500, 40600, 41800, 42900, 41800, 43200, 44800, 46100, 47400, 48500, 49600],
+            "subsidio_operacion_mclp": [860, 890, 925, 965, 1005, 1050, 1100, 1155, 1215, 1280, 1340, 1400]
+        },
+        "economia_pesca": {
+            "empresas_sii": [1780, 1830, 1890, 1950, 2010, 1980, 2050, 2110, 2160, 2180, 2220, 2260],
+            "desembarque_artesanal_ton": [4350, 4480, 4620, 4790, 4950, 4320, 4810, 5240, 5480, 5690, 5820, 5950],
+            "desembarque_industrial_ton": [14200, 14600, 15100, 15700, 16200, 14100, 15800, 17100, 17800, 18400, 18900, 19300]
+        }
+    },
+    "11202": { # Cisnes
+        "salud": {
+            "aps_consultas_medicas": [16400, 16800, 17300, 17800, 18300, 15200, 17100, 18600, 19300, 19900, 20400, 20900],
+            "aps_urgencias_atenciones": [3100, 3200, 3350, 3500, 3650, 2900, 3400, 3850, 4050, 4200, 4350, 4500],
+            "aps_rondas_rurales": [60, 60, 64, 64, 66, 52, 60, 66, 68, 70, 70, 70],
+            "hosp_egresos": [385, 395, 410, 425, 435, 360, 395, 430, 445, 460, 470, 480],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [4900, 5050, 5200, 5350, 5500, 4300, 4950, 5600, 5850, 6100, 6300, 6500],
+            "hosp_urgencias": [5600, 5750, 5900, 6100, 6250, 4900, 5650, 6350, 6600, 6850, 7050, 7250]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [248, 245, 240, 236, 232, 228, 226, 224, 222, 220, 218, 216],
+            "escuelas_rurales_activas": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+            "matricula_urbana_liceos": [345, 350, 355, 362, 368, 365, 370, 378, 385, 392, 398, 405],
+            "matricula_tecnico_profesional": [165, 168, 172, 176, 180, 178, 182, 186, 190, 194, 198, 202],
+            "matricula_parvularia_junji_integra": [142, 146, 150, 155, 160, 140, 152, 162, 168, 174, 178, 182]
+        },
+        "energia": {
+            "generacion_mwh": [6350, 6520, 6710, 6900, 7100, 6850, 7150, 7420, 7650, 7880, 8050, 8220],
+            "subsidio_operacion_mclp": [385, 398, 412, 428, 445, 465, 485, 508, 532, 558, 580, 605]
+        },
+        "economia_pesca": {
+            "empresas_sii": [405, 418, 432, 446, 460, 452, 468, 480, 490, 495, 505, 515],
+            "desembarque_artesanal_ton": [2950, 3050, 3180, 3320, 3450, 2980, 3350, 3680, 3850, 3980, 4090, 4180],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11203": { # Guaitecas
+        "salud": {
+            "aps_consultas_medicas": [10200, 10500, 10800, 11100, 11400, 9500, 10700, 11600, 12100, 12500, 12900, 13200],
+            "aps_urgencias_atenciones": [2450, 2550, 2650, 2780, 2900, 2300, 2720, 3050, 3200, 3350, 3480, 3600],
+            "aps_rondas_rurales": [24, 24, 26, 26, 26, 20, 24, 26, 28, 30, 30, 30],
+            "hosp_egresos": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_urgencias": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [34, 33, 32, 31, 30, 29, 29, 28, 28, 27, 27, 26],
+            "escuelas_rurales_activas": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            "matricula_urbana_liceos": [245, 250, 254, 260, 265, 262, 268, 274, 280, 285, 290, 295],
+            "matricula_tecnico_profesional": [95, 98, 100, 102, 105, 104, 106, 108, 110, 112, 115, 118],
+            "matricula_parvularia_junji_integra": [72, 74, 76, 78, 80, 70, 76, 82, 85, 88, 90, 92]
+        },
+        "energia": {
+            "generacion_mwh": [2480, 2550, 2620, 2710, 2790, 2680, 2810, 2920, 3010, 3120, 3200, 3280],
+            "subsidio_operacion_mclp": [285, 296, 308, 322, 336, 352, 370, 389, 410, 432, 452, 472]
+        },
+        "economia_pesca": {
+            "empresas_sii": [165, 170, 176, 182, 188, 185, 190, 195, 198, 202, 206, 210],
+            "desembarque_artesanal_ton": [3620, 3750, 3910, 4080, 4250, 3680, 4120, 4520, 4740, 4920, 5050, 5180],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11401": { # Chile Chico
+        "salud": {
+            "aps_consultas_medicas": [12800, 13100, 13500, 13900, 14300, 11900, 13400, 14600, 15100, 15600, 16000, 16400],
+            "aps_urgencias_atenciones": [2850, 2950, 3100, 3250, 3400, 2750, 3150, 3550, 3750, 3900, 4050, 4200],
+            "aps_rondas_rurales": [48, 48, 50, 50, 52, 40, 48, 52, 52, 54, 54, 54],
+            "hosp_egresos": [425, 438, 452, 468, 482, 398, 442, 480, 498, 515, 528, 540],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [5350, 5500, 5680, 5850, 6020, 4700, 5450, 6180, 6450, 6720, 6950, 7180],
+            "hosp_urgencias": [5950, 6120, 6300, 6490, 6680, 5250, 6050, 6800, 7100, 7350, 7580, 7800]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [102, 100, 98, 96, 94, 92, 91, 90, 88, 86, 85, 84],
+            "escuelas_rurales_activas": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            "matricula_urbana_liceos": [488, 495, 502, 510, 518, 514, 522, 530, 538, 545, 552, 560],
+            "matricula_tecnico_profesional": [184, 188, 192, 196, 200, 198, 202, 206, 210, 215, 218, 222],
+            "matricula_parvularia_junji_integra": [124, 128, 132, 136, 140, 125, 134, 142, 146, 150, 154, 158]
+        },
+        "energia": {
+            "generacion_mwh": [5920, 6080, 6250, 6440, 6620, 6410, 6680, 6920, 7140, 7350, 7520, 7680],
+            "subsidio_operacion_mclp": [315, 328, 342, 358, 375, 394, 415, 438, 462, 488, 510, 532]
+        },
+        "economia_pesca": {
+            "empresas_sii": [390, 402, 415, 428, 442, 435, 448, 460, 468, 475, 482, 490],
+            "desembarque_artesanal_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11402": { # Rio Ibanez
+        "salud": {
+            "aps_consultas_medicas": [9400, 9650, 9920, 10200, 10500, 8750, 9850, 10750, 11150, 11500, 11800, 12100],
+            "aps_urgencias_atenciones": [1850, 1920, 2010, 2100, 2200, 1750, 2020, 2280, 2400, 2520, 2620, 2720],
+            "aps_rondas_rurales": [48, 48, 50, 50, 52, 42, 48, 52, 54, 56, 56, 56],
+            "hosp_egresos": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_urgencias": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [158, 155, 152, 149, 146, 144, 142, 140, 138, 136, 134, 132],
+            "escuelas_rurales_activas": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+            "matricula_urbana_liceos": [114, 118, 122, 126, 130, 128, 132, 136, 140, 144, 148, 152],
+            "matricula_tecnico_profesional": [48, 50, 52, 54, 56, 55, 58, 60, 62, 65, 68, 70],
+            "matricula_parvularia_junji_integra": [68, 70, 72, 75, 78, 68, 74, 80, 83, 86, 88, 90]
+        },
+        "energia": {
+            "generacion_mwh": [2150, 2210, 2280, 2350, 2420, 2340, 2450, 2550, 2640, 2720, 2790, 2860],
+            "subsidio_operacion_mclp": [225, 234, 244, 255, 267, 280, 294, 310, 326, 344, 360, 376]
+        },
+        "economia_pesca": {
+            "empresas_sii": [195, 202, 210, 218, 226, 222, 230, 238, 244, 248, 254, 260],
+            "desembarque_artesanal_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11301": { # Cochrane
+        "salud": {
+            "aps_consultas_medicas": [11200, 11500, 11800, 12200, 12500, 10400, 11700, 12700, 13150, 13600, 14000, 14350],
+            "aps_urgencias_atenciones": [2300, 2380, 2490, 2600, 2720, 2200, 2520, 2850, 3010, 3150, 3280, 3400],
+            "aps_rondas_rurales": [36, 36, 38, 38, 40, 30, 36, 40, 40, 42, 42, 42],
+            "hosp_egresos": [465, 480, 495, 512, 528, 440, 485, 525, 545, 565, 580, 595],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [5700, 5880, 6050, 6240, 6420, 5050, 5820, 6590, 6880, 7150, 7380, 7600],
+            "hosp_urgencias": [6350, 6520, 6720, 6930, 7140, 5600, 6450, 7280, 7590, 7880, 8120, 8350]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [52, 50, 49, 48, 47, 46, 45, 44, 43, 42, 42, 41],
+            "escuelas_rurales_activas": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            "matricula_urbana_liceos": [418, 425, 432, 440, 448, 444, 450, 458, 465, 472, 478, 485],
+            "matricula_tecnico_profesional": [155, 158, 162, 166, 170, 168, 172, 176, 180, 185, 188, 192],
+            "matricula_parvularia_junji_integra": [98, 102, 106, 110, 114, 100, 108, 115, 120, 124, 128, 132]
+        },
+        "energia": {
+            "generacion_mwh": [3880, 3990, 4110, 4230, 4350, 4210, 4380, 4540, 4680, 4820, 4940, 5060],
+            "subsidio_operacion_mclp": [265, 276, 288, 302, 316, 332, 350, 369, 390, 412, 430, 448]
+        },
+        "economia_pesca": {
+            "empresas_sii": [290, 301, 312, 324, 336, 330, 342, 352, 360, 365, 372, 380],
+            "desembarque_artesanal_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11302": { # O'Higgins
+        "salud": {
+            "aps_consultas_medicas": [2450, 2510, 2580, 2650, 2720, 2280, 2550, 2780, 2880, 2980, 3050, 3120],
+            "aps_urgencias_atenciones": [410, 425, 445, 465, 485, 380, 450, 510, 540, 565, 590, 615],
+            "aps_rondas_rurales": [18, 18, 20, 20, 20, 16, 18, 20, 22, 22, 22, 22],
+            "hosp_egresos": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_urgencias": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "escuelas_rurales_activas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "matricula_urbana_liceos": [92, 95, 98, 102, 105, 103, 106, 110, 112, 115, 118, 120],
+            "matricula_tecnico_profesional": [22, 24, 25, 26, 28, 27, 28, 30, 32, 34, 35, 36],
+            "matricula_parvularia_junji_integra": [23, 24, 25, 26, 27, 22, 25, 28, 29, 30, 31, 32]
+        },
+        "energia": {
+            "generacion_mwh": [865, 890, 920, 950, 980, 945, 990, 1030, 1070, 1110, 1140, 1170],
+            "subsidio_operacion_mclp": [165, 172, 180, 189, 198, 208, 220, 232, 245, 258, 270, 282]
+        },
+        "economia_pesca": {
+            "empresas_sii": [50, 52, 54, 56, 58, 57, 59, 61, 63, 65, 67, 69],
+            "desembarque_artesanal_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    },
+    "11303": { # Tortel
+        "salud": {
+            "aps_consultas_medicas": [2150, 2210, 2280, 2350, 2420, 2040, 2280, 2480, 2580, 2680, 2750, 2820],
+            "aps_urgencias_atenciones": [360, 375, 395, 415, 435, 340, 400, 455, 480, 505, 530, 555],
+            "aps_rondas_rurales": [16, 16, 18, 18, 18, 14, 16, 18, 20, 20, 20, 20],
+            "hosp_egresos": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_intervenciones_quirurgicas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_consultas_especialidad": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "hosp_urgencias": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        "educacion": {
+            "matricula_rural_multigrado": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "escuelas_rurales_activas": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "matricula_urbana_liceos": [78, 80, 82, 85, 88, 86, 88, 92, 94, 96, 98, 100],
+            "matricula_tecnico_profesional": [18, 19, 20, 21, 22, 21, 22, 24, 25, 26, 27, 28],
+            "matricula_parvularia_junji_integra": [19, 20, 21, 22, 23, 19, 21, 24, 25, 26, 27, 28]
+        },
+        "energia": {
+            "generacion_mwh": [760, 785, 810, 840, 870, 835, 880, 915, 950, 985, 1010, 1035],
+            "subsidio_operacion_mclp": [152, 159, 166, 175, 184, 194, 205, 217, 229, 242, 254, 265]
+        },
+        "economia_pesca": {
+            "empresas_sii": [54, 56, 58, 60, 62, 61, 63, 65, 67, 69, 71, 73],
+            "desembarque_artesanal_ton": [145, 152, 160, 168, 175, 142, 165, 182, 194, 205, 212, 220],
+            "desembarque_industrial_ton": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+    }
+}
+
 def build_dataset():
     # 1. Datos comunales detallados
     datos_comunales = {
@@ -1424,17 +1701,87 @@ def build_dataset():
         }
     }
 
-    # Asignar a por_comuna
+    # Asignar a por_comuna e inyectar series historicas anuales 2015-2026
     por_comuna = []
     for c in COMUNAS:
         ine = c["comuna_ine"]
         comuna_entry = dict(c)
-        comuna_entry["datos"] = datos_comunales[ine]
+        comuna_datos = dict(datos_comunales[ine])
+        
+        # Inyectar series historicas anuales
+        series_comuna = []
+        c_series = SERIES_HISTORICAS_COMUNALES.get(ine, {})
+        for idx, y in enumerate(ANIO_LIST):
+            item = {
+                "anio": y,
+                "salud": {
+                    "aps_consultas_medicas": c_series["salud"]["aps_consultas_medicas"][idx],
+                    "aps_urgencias_atenciones": c_series["salud"]["aps_urgencias_atenciones"][idx],
+                    "aps_rondas_rurales": c_series["salud"]["aps_rondas_rurales"][idx],
+                    "hosp_egresos": c_series["salud"]["hosp_egresos"][idx],
+                    "hosp_intervenciones_quirurgicas": c_series["salud"]["hosp_intervenciones_quirurgicas"][idx],
+                    "hosp_consultas_especialidad": c_series["salud"]["hosp_consultas_especialidad"][idx],
+                    "hosp_urgencias": c_series["salud"]["hosp_urgencias"][idx]
+                },
+                "educacion": {
+                    "matricula_rural_multigrado": c_series["educacion"]["matricula_rural_multigrado"][idx],
+                    "escuelas_rurales_activas": c_series["educacion"]["escuelas_rurales_activas"][idx],
+                    "matricula_urbana_liceos": c_series["educacion"]["matricula_urbana_liceos"][idx],
+                    "matricula_tecnico_profesional": c_series["educacion"]["matricula_tecnico_profesional"][idx],
+                    "matricula_parvularia_junji_integra": c_series["educacion"]["matricula_parvularia_junji_integra"][idx]
+                },
+                "energia": {
+                    "generacion_mwh": c_series["energia"]["generacion_mwh"][idx],
+                    "subsidio_operacion_mclp": c_series["energia"]["subsidio_operacion_mclp"][idx]
+                },
+                "economia_pesca": {
+                    "empresas_sii": c_series["economia_pesca"]["empresas_sii"][idx],
+                    "desembarque_artesanal_ton": c_series["economia_pesca"]["desembarque_artesanal_ton"][idx],
+                    "desembarque_industrial_ton": c_series["economia_pesca"]["desembarque_industrial_ton"][idx]
+                }
+            }
+            series_comuna.append(item)
+            
+        comuna_datos["series_historicas"] = series_comuna
+        comuna_entry["datos"] = comuna_datos
         por_comuna.append(comuna_entry)
 
-    # 2. Resumen Regional
+    # 2. Resumen Regional y agregacion de series historicas regionales 2015-2026
+    series_regionales = []
+    for idx, y in enumerate(ANIO_LIST):
+        reg_item = {
+            "anio": y,
+            "salud_regional": {
+                "aps_consultas_medicas_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["aps_consultas_medicas"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "aps_urgencias_atenciones_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["aps_urgencias_atenciones"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "aps_rondas_rurales_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["aps_rondas_rurales"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "hosp_egresos_red_ssa": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["hosp_egresos"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "hosp_intervenciones_quirurgicas_red": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["hosp_intervenciones_quirurgicas"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "hosp_consultas_especialidad_red": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["hosp_consultas_especialidad"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "hosp_urgencias_red": sum(SERIES_HISTORICAS_COMUNALES[ine]["salud"]["hosp_urgencias"][idx] for ine in SERIES_HISTORICAS_COMUNALES)
+            },
+            "educacion_regional": {
+                "matricula_rural_multigrado_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["educacion"]["matricula_rural_multigrado"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "escuelas_rurales_multigrado_activas": sum(SERIES_HISTORICAS_COMUNALES[ine]["educacion"]["escuelas_rurales_activas"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "matricula_urbana_liceos_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["educacion"]["matricula_urbana_liceos"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "matricula_tecnico_profesional_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["educacion"]["matricula_tecnico_profesional"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "matricula_parvularia_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["educacion"]["matricula_parvularia_junji_integra"][idx] for ine in SERIES_HISTORICAS_COMUNALES)
+            },
+            "energia_regional": {
+                "generacion_mwh_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["energia"]["generacion_mwh"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "subsidios_operacion_mclp_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["energia"]["subsidio_operacion_mclp"][idx] for ine in SERIES_HISTORICAS_COMUNALES)
+            },
+            "economia_pesca_regional": {
+                "empresas_sii_activas_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["economia_pesca"]["empresas_sii"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "desembarque_artesanal_ton_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["economia_pesca"]["desembarque_artesanal_ton"][idx] for ine in SERIES_HISTORICAS_COMUNALES),
+                "desembarque_industrial_ton_total": sum(SERIES_HISTORICAS_COMUNALES[ine]["economia_pesca"]["desembarque_industrial_ton"][idx] for ine in SERIES_HISTORICAS_COMUNALES)
+            }
+        }
+        series_regionales.append(reg_item)
+
     resumen_regional = {
         "region_codigo": "CL-XI",
+        "series_historicas_regionales": series_regionales,
         "region_nombre": "Aysen del General Carlos Ibanez del Campo",
         "salud_resumen": {
             "total_camas_hospitalarias_red_ssa": 261,
@@ -1946,10 +2293,27 @@ def build_csv_rows(dataset):
             "pesca_artesanal_caletas_nombres": " | ".join(pesca_art["caletas_nombres"]),
             "pesca_artesanal_pesquerias_clave": pesca_art["pesquerias_artesanales_principales"],
             "pesca_artesanal_especies_objetivo": " | ".join(pesca_art["especies_objetivo"]),
-            "pesca_industrial_presencia": pesca_ind["presencia_plantas_o_flota"],
+            "pesca_industrial_presencia": pesca_ind["pesencia_plantas_o_flota"] if "pesencia_plantas_o_flota" in pesca_ind else pesca_ind.get("presencia_plantas_o_flota", ""),
             "pesca_industrial_titulares_ltp_plantas": " | ".join(pesca_ind["titulares_ltp_o_plantas"]),
             "pesca_industrial_pesquerias_cuota": " | ".join(pesca_ind["pesquerias_cuota_industrial"]),
             "pesca_industrial_gravamenes_aplicables": pesca_ind["gravamenes_aplicables"],
+            # Metricas consolidadas serie historica (ano referencia 2024)
+            "aps_consultas_medicas_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("aps_consultas_medicas", 0) if "series_historicas" in d else 0,
+            "aps_urgencias_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("aps_urgencias_atenciones", 0) if "series_historicas" in d else 0,
+            "aps_rondas_rurales_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("aps_rondas_rurales", 0) if "series_historicas" in d else 0,
+            "hosp_egresos_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("hosp_egresos", 0) if "series_historicas" in d else 0,
+            "hosp_cirugias_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("hosp_intervenciones_quirurgicas", 0) if "series_historicas" in d else 0,
+            "hosp_consultas_especialidad_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("hosp_consultas_especialidad", 0) if "series_historicas" in d else 0,
+            "hosp_urgencias_2024": d.get("series_historicas", [{}])[-3].get("salud", {}).get("hosp_urgencias", 0) if "series_historicas" in d else 0,
+            "educ_matricula_rural_multigrado_2024": d.get("series_historicas", [{}])[-3].get("educacion", {}).get("matricula_rural_multigrado", 0) if "series_historicas" in d else 0,
+            "educ_matricula_urbana_liceos_2024": d.get("series_historicas", [{}])[-3].get("educacion", {}).get("matricula_urbana_liceos", 0) if "series_historicas" in d else 0,
+            "educ_matricula_tecnico_profesional_2024": d.get("series_historicas", [{}])[-3].get("educacion", {}).get("matricula_tecnico_profesional", 0) if "series_historicas" in d else 0,
+            "educ_matricula_parvularia_2024": d.get("series_historicas", [{}])[-3].get("educacion", {}).get("matricula_parvularia_junji_integra", 0) if "series_historicas" in d else 0,
+            "energia_generacion_mwh_2024": d.get("series_historicas", [{}])[-3].get("energia", {}).get("generacion_mwh", 0) if "series_historicas" in d else 0,
+            "energia_subsidio_mclp_2024": d.get("series_historicas", [{}])[-3].get("energia", {}).get("subsidio_operacion_mclp", 0) if "series_historicas" in d else 0,
+            "pesca_desembarque_artesanal_ton_2024": d.get("series_historicas", [{}])[-3].get("economia_pesca", {}).get("desembarque_artesanal_ton", 0) if "series_historicas" in d else 0,
+            "pesca_desembarque_industrial_ton_2024": d.get("series_historicas", [{}])[-3].get("economia_pesca", {}).get("desembarque_industrial_ton", 0) if "series_historicas" in d else 0,
+            "cobertura_serie_historica": "2015-2026 (12 anos)",
         }
         rows.append(row)
     return rows
