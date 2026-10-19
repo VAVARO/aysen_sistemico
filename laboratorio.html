@@ -220,7 +220,6 @@
       z-index: 90;
       position: relative;
       overflow-x: hidden;
-      overflow-y: hidden;
     }
 
     .action-bar-left {
@@ -294,21 +293,17 @@
 
     .dropdown-project-content {
       display: none;
-      position: absolute;
-      right: 0;
-      top: 32px;
+      position: fixed;
       background: var(--bg-surface);
       min-width: 175px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
       border: 1px solid var(--rule-hairline);
       border-radius: 6px;
-      z-index: 200;
+      z-index: 999999;
       padding: 0.35rem 0;
     }
 
     .dropdown-add-card .dropdown-project-content {
-      left: 0;
-      right: auto;
       min-width: 215px;
     }
 
@@ -2000,25 +1995,46 @@
       border-radius: 6px;
     }
 
-    /* Acordeones Colapsables del Catálogo Lateral */
+    /* Acordeones en Abanico del Catálogo Lateral */
+    .catalog-hub-group {
+      margin-bottom: 0.45rem;
+      border: 1px solid rgba(28, 27, 27, 0.08);
+      border-radius: 4px;
+      background: var(--bg-surface);
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .catalog-hub-group:hover {
+      border-color: rgba(0, 53, 127, 0.22);
+    }
+
     .catalog-hub-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.42rem 0.6rem;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.45rem 0.6rem;
       background: var(--bg-subtle);
-      border: 1px solid rgba(28, 27, 27, 0.08);
+      border: none;
       border-left: 3px solid var(--cobalt);
-      border-radius: 2px;
       cursor: pointer;
       user-select: none;
-      margin-bottom: 0.3rem;
-      transition: background 0.15s ease, border-color 0.15s ease;
+      text-align: left;
+      font-family: inherit;
+      color: inherit;
+      margin-bottom: 0;
+      transition: background 0.18s ease, color 0.18s ease;
     }
 
     .catalog-hub-header:hover {
-      background: rgba(0, 53, 127, 0.06);
-      border-color: rgba(0, 53, 127, 0.25);
+      background: rgba(0, 53, 127, 0.07);
+    }
+
+    .catalog-hub-header:focus-visible {
+      outline: 2px solid var(--cobalt);
+      outline-offset: -1px;
     }
 
     .catalog-hub-header .hub-header-title {
@@ -2031,6 +2047,20 @@
       gap: 0.35rem;
     }
 
+    .catalog-hub-header .hub-chevron {
+      display: inline-block;
+      font-size: 0.68rem;
+      line-height: 1;
+      color: var(--cobalt);
+      transform: rotate(0deg);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center center;
+    }
+
+    .catalog-hub-group.collapsed .hub-chevron {
+      transform: rotate(-90deg);
+    }
+
     .catalog-hub-header .hub-header-meta {
       display: flex;
       align-items: center;
@@ -2040,16 +2070,33 @@
       color: var(--ink-muted);
     }
 
+    /* Contenedor Abanico (CSS Grid 1fr <-> 0fr para animación de altura natural sin salto) */
+    .catalog-hub-items-body {
+      display: grid;
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      opacity: 1;
+    }
+
+    .catalog-hub-group.collapsed .catalog-hub-items-body {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     .catalog-hub-items {
+      overflow: hidden;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      margin-bottom: 0.65rem;
-      padding-left: 0.25rem;
+      padding: 0.35rem 0.45rem 0.5rem 0.45rem;
+      transition: padding 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .catalog-hub-group.collapsed .catalog-hub-items {
-      display: none;
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     /* Segmentador Territorial Slicer */
@@ -2373,7 +2420,7 @@
        ======================================================================== -->
   <div class="canvas-action-bar">
     <div class="action-bar-left">
-      <button class="btn-action-tool" id="btnToggleSidebar" title="Mostrar/ocultar catálogo de datos">
+      <button class="btn-action-tool" id="btnToggleSidebar" title="Mostrar/ocultar catálogo de datos" aria-expanded="true" aria-controls="panelCatalogo">
         <span>Catálogo</span>
       </button>
 
@@ -2397,14 +2444,30 @@
 
       <div class="slicer-container" style="display: inline-flex; align-items: center; gap: 0.35rem;">
         <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-secondary); font-weight: 500;">Territorio:</span>
-        <select id="selectTerritorialSlicer" class="slicer-select" style="max-width: 160px;" title="Filtrar comunas por provincia o tipología territorial">
-          <option value="all">Todas las comunas (10)</option>
-          <option value="prov_coyhaique">Prov. Coyhaique (2)</option>
-          <option value="prov_aysen">Prov. Aysén (3)</option>
-          <option value="prov_gral_carrera">Prov. General Carrera (2)</option>
-          <option value="prov_capitan_prat">Prov. Capitán Prat (3)</option>
-          <option value="tipo_maritima">Comunas Marítimas (4)</option>
-          <option value="tipo_continental">Comunas Continentales (6)</option>
+        <select id="selectTerritorialSlicer" class="slicer-select" style="max-width: 175px;" data-dimension="comuna" data-total-count="10" title="Filtrar comunas por provincia, tipología o comuna individual">
+          <option value="all" data-count="10">Todas las comunas (10)</option>
+          <optgroup label="Provincias">
+            <option value="prov_coyhaique" data-count="2">Prov. Coyhaique (2)</option>
+            <option value="prov_aysen" data-count="3">Prov. Aysén (3)</option>
+            <option value="prov_gral_carrera" data-count="2">Prov. General Carrera (2)</option>
+            <option value="prov_capitan_prat" data-count="3">Prov. Capitán Prat (3)</option>
+          </optgroup>
+          <optgroup label="Tipología Geográfica">
+            <option value="tipo_maritima" data-count="4">Comunas Marítimas (4)</option>
+            <option value="tipo_continental" data-count="6">Comunas Continentales (6)</option>
+          </optgroup>
+          <optgroup label="Comunas Individuales (10)">
+            <option value="comuna_coyhaique">Coyhaique</option>
+            <option value="comuna_lago_verde">Lago Verde</option>
+            <option value="comuna_aysen">Aysén</option>
+            <option value="comuna_cisnes">Cisnes</option>
+            <option value="comuna_guaitecas">Guaitecas</option>
+            <option value="comuna_chile_chico">Chile Chico</option>
+            <option value="comuna_rio_ibanez">Río Ibáñez</option>
+            <option value="comuna_cochrane">Cochrane</option>
+            <option value="comuna_ohiggins">O'Higgins</option>
+            <option value="comuna_tortel">Tortel</option>
+          </optgroup>
         </select>
       </div>
 
@@ -2509,11 +2572,11 @@
           placeholder="Buscar datos o comunas..." />
       </div>
 
-      <div class="sidebar-dim-tabs">
-        <button class="sidebar-tab-btn active" data-dim="all">Todos</button>
-        <button class="sidebar-tab-btn" data-dim="comuna">Comunal</button>
-        <button class="sidebar-tab-btn" data-dim="tiempo">Temporal</button>
-        <button class="sidebar-tab-btn" data-dim="holding">Holding</button>
+      <div class="sidebar-dim-tabs" role="tablist" aria-label="Dimensiones del catálogo">
+        <button class="sidebar-tab-btn active" role="tab" aria-selected="true" data-dim="all">Todos</button>
+        <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="comuna">Comunal</button>
+        <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="tiempo">Temporal</button>
+        <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="holding">Holding</button>
       </div>
 
       <div class="sidebar-items-scroll" id="variablesTreeContainer">
@@ -2753,8 +2816,31 @@
         prov_gral_carrera: ['Chile Chico', 'Río Ibáñez'],
         prov_capitan_prat: ['Cochrane', 'O\'Higgins', 'Tortel'],
         tipo_maritima: ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'],
-        tipo_continental: ['Coyhaique', 'Lago Verde', 'Chile Chico', 'Río Ibáñez', 'Cochrane', 'O\'Higgins']
+        tipo_continental: ['Coyhaique', 'Lago Verde', 'Chile Chico', 'Río Ibáñez', 'Cochrane', 'O\'Higgins'],
+        comuna_coyhaique: ['Coyhaique'],
+        comuna_lago_verde: ['Lago Verde'],
+        comuna_aysen: ['Aysén'],
+        comuna_cisnes: ['Cisnes'],
+        comuna_guaitecas: ['Guaitecas'],
+        comuna_chile_chico: ['Chile Chico'],
+        comuna_rio_ibanez: ['Río Ibáñez'],
+        comuna_cochrane: ['Cochrane'],
+        comuna_ohiggins: ['O\'Higgins'],
+        comuna_tortel: ['Tortel'],
+        com_coyhaique: ['Coyhaique'],
+        com_lago_verde: ['Lago Verde'],
+        com_aysen: ['Aysén'],
+        com_cisnes: ['Cisnes'],
+        com_guaitecas: ['Guaitecas'],
+        com_chile_chico: ['Chile Chico'],
+        com_rio_ibanez: ['Río Ibáñez'],
+        com_cochrane: ['Cochrane'],
+        com_ohiggins: ['O\'Higgins'],
+        com_tortel: ['Tortel']
       };
+      COMUNAS_ORDER.forEach(c => {
+        TERRITORIAL_SLICES[c] = [c];
+      });
 
       function getComunaTooltipContext(entityName) {
         if (!entityName) return '';
@@ -2839,6 +2925,25 @@
           .replace(/\s*\(\s*horas\/año\s*\)/gi, '')
           .trim();
         return `${clean} (${unit})`;
+      }
+
+      // Formateador y truncador de títulos de ejes para Chart.js (Milestone 3)
+      function formatAxisTitle(name, unit, maxLen = 28) {
+        if (!name) return '';
+        let clean = String(name).trim();
+        if (unit) {
+          const escUnit = String(unit).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          clean = clean.replace(new RegExp(`\\s*\\(\\s*${escUnit}\\s*\\)`, 'gi'), '').trim();
+        }
+        clean = clean.replace(/\s*\(\s*(?:%|M\$\s*CLP|\$\s*CLP|MM\s*US\$|km²|km|ha|ton|m³\/s|horas\/año|kPersonas|kTon|kPasajeros|cél\/L|mg\/L|µg\/m³|°C|mm|\$\/litro|m\/año|m|nidos|habitantes|eventos\/mes)\s*\)$/gi, '').trim();
+        let base = clean;
+        if (base.length > maxLen) {
+          base = base.slice(0, maxLen - 3).trimEnd() + '...';
+        }
+        if (unit && String(unit).trim()) {
+          return `${base} (${String(unit).trim()})`;
+        }
+        return base;
       }
 
       // =======================================================================
@@ -3505,43 +3610,67 @@
         }
 
         sortedGroupKeys.forEach(gName => {
-          const isCollapsed = (isSearching || dimFilter === 'tiempo') ? false : (AppState.collapsedHubs && AppState.collapsedHubs[gName] !== false);
+          const stateKey = `${dimFilter}_${gName}`;
+          let isCollapsed;
+          if (isSearching) {
+            isCollapsed = false;
+          } else if (AppState.collapsedHubs && AppState.collapsedHubs[stateKey] !== undefined) {
+            isCollapsed = AppState.collapsedHubs[stateKey];
+          } else if (AppState.collapsedHubs && AppState.collapsedHubs[gName] !== undefined) {
+            isCollapsed = AppState.collapsedHubs[gName];
+          } else if (dimFilter === 'holding' || sortedGroupKeys.length === 1) {
+            isCollapsed = false;
+          } else {
+            isCollapsed = (gName !== sortedGroupKeys[0]);
+          }
+
+          const safeHubId = 'hub_' + gName.toLowerCase().replace(/[^a-z0-9]/g, '_');
+
           html += `
             <div class="catalog-hub-group ${isCollapsed ? 'collapsed' : ''}" data-hub-name="${gName}">
-              <div class="catalog-hub-header" data-hub-name="${gName}" title="Haz clic para expandir o colapsar">
+              <div class="catalog-hub-header" 
+                   id="hub-hdr-${safeHubId}"
+                   role="button"
+                   tabindex="0"
+                   aria-expanded="${isCollapsed ? 'false' : 'true'}"
+                   aria-controls="hub-content-${safeHubId}"
+                   data-hub-name="${gName}"
+                   title="Haz clic para expandir o colapsar en abanico">
                 <div class="hub-header-title">
-                  <span class="hub-chevron">${isCollapsed ? '▸' : '▾'}</span>
+                  <span class="hub-chevron" aria-hidden="true">▾</span>
                   <span>${gName}</span>
                 </div>
                 <div class="hub-header-meta">
                   <span class="hub-count">(${groups[gName].length})</span>
                 </div>
               </div>
-              <div class="catalog-hub-items">
-                ${groups[gName].map(it => {
-                  let dimBadge = '';
-                  if (it.dim === 'comuna') {
-                    dimBadge = '<span class="var-dim-badge var-dim-comuna" title="Corte transversal de 10 comunas de Aysén">Comunal (10)</span>';
-                  } else if (it.dim === 'holding') {
-                    dimBadge = '<span class="var-dim-badge var-dim-holding" title="Corte de los 12 Holdings salmoneros">Holdings (12)</span>';
-                  } else if (it.dim === 'tiempo') {
-                    if (it.subDim === 'mensual') {
-                      dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie mensual con variación estacional">Estacional · Mensual</span>';
-                    } else if (it.hasProjection) {
-                      dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual con proyección 2030-2035">Temporal · 2015–2035</span>';
+              <div class="catalog-hub-items-body" id="hub-content-${safeHubId}" role="region" aria-labelledby="hub-hdr-${safeHubId}">
+                <div class="catalog-hub-items">
+                  ${groups[gName].map(it => {
+                    let dimBadge = '';
+                    if (it.dim === 'comuna') {
+                      dimBadge = '<span class="var-dim-badge var-dim-comuna" title="Corte transversal de 10 comunas de Aysén">Comunal (10)</span>';
+                    } else if (it.dim === 'holding') {
+                      dimBadge = '<span class="var-dim-badge var-dim-holding" title="Corte de los 12 Holdings salmoneros">Holdings (12)</span>';
+                    } else if (it.dim === 'tiempo') {
+                      if (it.subDim === 'mensual') {
+                        dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie mensual con variación estacional">Estacional · Mensual</span>';
+                      } else if (it.hasProjection) {
+                        dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual con proyección 2030-2035">Temporal · 2015–2035</span>';
+                      } else {
+                        dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual histórica 2015-2026">Temporal · 2015–2026</span>';
+                      }
                     } else {
-                      dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual histórica 2015-2026">Temporal · 2015–2026</span>';
+                      dimBadge = `<span class="var-dim-badge var-dim-${it.dim}">${it.dim}</span>`;
                     }
-                  } else {
-                    dimBadge = `<span class="var-dim-badge var-dim-${it.dim}">${it.dim}</span>`;
-                  }
-                  return `
-                    <div class="catalog-var-item" draggable="true" data-var-id="${it.id}">
-                      <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 155px;" title="${it.name}">${it.shortName || it.name}</span>
-                      ${dimBadge}
-                    </div>
-                  `;
-                }).join('')}
+                    return `
+                      <div class="catalog-var-item" draggable="true" tabindex="0" role="button" data-var-id="${it.id}">
+                        <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 155px;" title="${it.name}">${it.shortName || it.name}</span>
+                        ${dimBadge}
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
               </div>
             </div>
           `;
@@ -3553,17 +3682,72 @@
 
         container.innerHTML = html;
 
-        container.querySelectorAll('.catalog-hub-header').forEach(hdr => {
-          hdr.addEventListener('click', () => {
-            const gName = hdr.getAttribute('data-hub-name');
+        function toggleHubAccordion(hdr) {
+          const group = hdr.closest('.catalog-hub-group');
+          if (!group) return;
+          const gName = hdr.getAttribute('data-hub-name');
+          const currentDim = AppState.activeFilterDim || 'all';
+          const stateKey = `${currentDim}_${gName}`;
+          const isOpening = group.classList.contains('collapsed');
+
+          if (isOpening) {
+            // Modo abanico (fan-out): si no estamos en búsqueda activa, replegar hermanos
+            if (!normStr(AppState.searchQuery)) {
+              const parent = group.parentElement;
+              if (parent) {
+                parent.querySelectorAll('.catalog-hub-group').forEach(sib => {
+                  if (sib !== group && !sib.classList.contains('collapsed')) {
+                    sib.classList.add('collapsed');
+                    const sibHdr = sib.querySelector('.catalog-hub-header');
+                    if (sibHdr) sibHdr.setAttribute('aria-expanded', 'false');
+                    const sibName = sib.getAttribute('data-hub-name');
+                    if (sibName) {
+                      if (!AppState.collapsedHubs) AppState.collapsedHubs = {};
+                      AppState.collapsedHubs[sibName] = true;
+                      AppState.collapsedHubs[`${currentDim}_${sibName}`] = true;
+                    }
+                  }
+                });
+              }
+            }
+
+            // Expandir grupo destino
+            group.classList.remove('collapsed');
+            hdr.setAttribute('aria-expanded', 'true');
             if (!AppState.collapsedHubs) AppState.collapsedHubs = {};
-            const currentlyCollapsed = AppState.collapsedHubs[gName] !== false;
-            AppState.collapsedHubs[gName] = !currentlyCollapsed;
-            renderSidebarCatalog();
+            AppState.collapsedHubs[gName] = false;
+            AppState.collapsedHubs[stateKey] = false;
+          } else {
+            // Colapsar grupo destino (fan-in)
+            group.classList.add('collapsed');
+            hdr.setAttribute('aria-expanded', 'false');
+            if (!AppState.collapsedHubs) AppState.collapsedHubs = {};
+            AppState.collapsedHubs[gName] = true;
+            AppState.collapsedHubs[stateKey] = true;
+          }
+        }
+
+        container.querySelectorAll('.catalog-hub-header').forEach(hdr => {
+          hdr.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleHubAccordion(hdr);
+          });
+          hdr.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleHubAccordion(hdr);
+            }
           });
         });
 
         container.querySelectorAll('.catalog-var-item').forEach(el => {
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              el.dispatchEvent(new MouseEvent('dblclick'));
+            }
+          });
           el.addEventListener('dragstart', (e) => {
             AppState.draggedVariableId = el.getAttribute('data-var-id');
             e.dataTransfer.setData('text/plain', AppState.draggedVariableId);
@@ -4549,6 +4733,7 @@
 
         renderWindowTabs();
         updateConnections();
+        updateStatus();
         autoSave();
       }
 
@@ -4589,6 +4774,7 @@
         updateFloatingToolbarPosition();
         updateConnections();
         renderWindowTabs();
+        updateStatus();
         autoSave();
       }
 
@@ -4967,6 +5153,7 @@
 
         renderWindowTabs();
         updateConnections();
+        updateStatus();
         setTimeout(fitAndCenterCanvas, 100);
         autoSave();
       }
@@ -4983,6 +5170,7 @@
         });
         renderWindowTabs();
         updateConnections();
+        updateStatus();
         autoSave();
       }
 
@@ -6485,7 +6673,7 @@
               options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: { padding: { top: 10, right: 16, bottom: 6, left: 8 } },
+                layout: { padding: { top: 12, right: 18, bottom: 14, left: 14 } },
                 onClick: (e, elements) => {
                   const ptEl = elements.find(el => el.datasetIndex === 0);
                   if (ptEl) {
@@ -6499,7 +6687,7 @@
                     display: datasets.length > 1,
                     position: 'top',
                     align: 'start',
-                    labels: { boxWidth: 10, font: { size: 9.5, family: 'Inter' }, padding: 8 }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   scatterQuadrantsPlugin: {
                     enabled: !!w.showAverage
@@ -6518,11 +6706,31 @@
                 },
                 scales: {
                   x: {
-                    title: { display: true, text: `${payload.nameX} (${payload.unitX})`, color: '#524f4b', font: { size: 10, weight: 600 } },
+                    title: {
+                      display: true,
+                      text: formatAxisTitle(payload.nameX, payload.unitX),
+                      color: '#524f4b',
+                      font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                      padding: { top: 8, bottom: 2 }
+                    },
+                    ticks: {
+                      padding: 4,
+                      font: { size: 9, family: "'Inter', sans-serif" }
+                    },
                     grid: { color: 'rgba(0,0,0,0.04)' }
                   },
                   y: {
-                    title: { display: true, text: `${payload.nameY} (${payload.unitY})`, color: '#524f4b', font: { size: 10, weight: 600 } },
+                    title: {
+                      display: true,
+                      text: formatAxisTitle(payload.nameY, payload.unitY),
+                      color: '#524f4b',
+                      font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                      padding: { top: 0, bottom: 6 }
+                    },
+                    ticks: {
+                      padding: 6,
+                      font: { size: 9, family: "'JetBrains Mono', monospace" }
+                    },
                     grid: { color: 'rgba(0,0,0,0.04)' }
                   }
                 }
@@ -6551,7 +6759,7 @@
 
             if (payload.mode === 'bivariate') {
               datasets.push({
-                label: `${payload.nameX} (${payload.unitX})`,
+                label: formatAxisTitle(payload.nameX, payload.unitX, 26),
                 data: payload.dataX,
                 borderColor: primaryColor,
                 backgroundColor: `${primaryColor}15`,
@@ -6561,7 +6769,7 @@
                 pointRadius: 4
               });
               datasets.push({
-                label: `${payload.nameY} (${payload.unitY})`,
+                label: formatAxisTitle(payload.nameY, payload.unitY, 26),
                 data: payload.dataY,
                 borderColor: '#0284c7',
                 backgroundColor: 'rgba(2, 132, 199, 0.15)',
@@ -6655,20 +6863,37 @@
                 ticks: {
                   maxRotation: 45,
                   minRotation: 0,
-                  font: { size: 9 },
+                  padding: 4,
+                  font: { size: 9, family: "'Inter', sans-serif" },
                   callback: function (val, idx) {
                     const str = this.getLabelForValue ? this.getLabelForValue(val) : (payload.labels[idx] || val);
                     return (typeof str === 'string' && str.length > 12) ? str.slice(0, 10) + '..' : str;
                   }
                 },
-                title: { display: true, text: payload.dim === 'comuna' ? 'Comunas de Aysén' : 'Período Temporal', font: { size: 10, weight: 600 } }
+                title: {
+                  display: true,
+                  text: payload.dim === 'comuna' ? 'Comunas de Aysén' : 'Período Temporal',
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 8, bottom: 2 }
+                }
               },
               y: {
                 type: 'linear',
                 display: true,
                 position: 'left',
                 grid: { color: 'rgba(0,0,0,0.04)' },
-                title: { display: true, text: payload.mode === 'bivariate' ? `${payload.nameX} (${payload.unitX})` : `${payload.label} (${payload.unit})`, font: { size: 10, weight: 600 } }
+                ticks: {
+                  padding: 6,
+                  font: { size: 9, family: "'JetBrains Mono', monospace" }
+                },
+                title: {
+                  display: true,
+                  text: payload.mode === 'bivariate'
+                    ? formatAxisTitle(payload.nameX, payload.unitX)
+                    : formatAxisTitle(payload.label, payload.unit),
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 0, bottom: 6 }
+                }
               }
             };
 
@@ -6678,7 +6903,16 @@
                 display: true,
                 position: 'right',
                 grid: { drawOnChartArea: false },
-                title: { display: true, text: `${payload.nameY} (${payload.unitY})`, font: { size: 10, weight: 600 } }
+                ticks: {
+                  padding: 6,
+                  font: { size: 9, family: "'JetBrains Mono', monospace" }
+                },
+                title: {
+                  display: true,
+                  text: formatAxisTitle(payload.nameY, payload.unitY),
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 6, bottom: 0 }
+                }
               };
             }
 
@@ -6691,7 +6925,7 @@
               options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: { padding: { top: 10, right: 16, bottom: 6, left: 8 } },
+                layout: { padding: { top: 12, right: (payload.mode === 'bivariate' ? 22 : 18), bottom: 14, left: 14 } },
                 onClick: (e, elements) => {
                   const ptEl = elements.find(el => el.datasetIndex === 0);
                   if (ptEl) {
@@ -6705,7 +6939,7 @@
                     display: payload.mode === 'bivariate' || datasets.length > 1,
                     position: 'top',
                     align: 'start',
-                    labels: { boxWidth: 10, font: { size: 9.5, family: 'Inter' }, padding: 8 }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   tooltip: {
                     caretPadding: 6,
@@ -6744,14 +6978,14 @@
 
             if (payload.mode === 'bivariate') {
               datasets.push({
-                label: `${payload.nameX} (${payload.unitX})`,
+                label: formatAxisTitle(payload.nameX, payload.unitX, 26),
                 data: payload.dataX,
                 backgroundColor: `${primaryColor}cc`,
                 borderRadius: 4,
                 yAxisID: 'y'
               });
               datasets.push({
-                label: `${payload.nameY} (${payload.unitY})`,
+                label: formatAxisTitle(payload.nameY, payload.unitY, 26),
                 data: payload.dataY,
                 backgroundColor: '#0284c7cc',
                 borderRadius: 4,
@@ -6805,19 +7039,36 @@
                 ticks: {
                   maxRotation: 45,
                   minRotation: 0,
-                  font: { size: 9 },
+                  padding: 4,
+                  font: { size: 9, family: "'Inter', sans-serif" },
                   callback: function (val, idx) {
                     const str = this.getLabelForValue ? this.getLabelForValue(val) : (payload.labels[idx] || val);
                     return (typeof str === 'string' && str.length > 12) ? str.slice(0, 10) + '..' : str;
                   }
                 },
-                title: { display: true, text: xTitle, font: { size: 10, weight: 600 } }
+                title: {
+                  display: true,
+                  text: xTitle,
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 8, bottom: 2 }
+                }
               },
               y: {
                 beginAtZero: true,
                 position: 'left',
                 grid: { color: 'rgba(0,0,0,0.04)' },
-                title: { display: true, text: payload.mode === 'bivariate' ? `${payload.nameX} (${payload.unitX})` : `${payload.label} (${payload.unit})`, font: { size: 10, weight: 600 } }
+                ticks: {
+                  padding: 6,
+                  font: { size: 9, family: "'JetBrains Mono', monospace" }
+                },
+                title: {
+                  display: true,
+                  text: payload.mode === 'bivariate'
+                    ? formatAxisTitle(payload.nameX, payload.unitX)
+                    : formatAxisTitle(payload.label, payload.unit),
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 0, bottom: 6 }
+                }
               }
             };
 
@@ -6826,7 +7077,16 @@
                 beginAtZero: true,
                 position: 'right',
                 grid: { drawOnChartArea: false },
-                title: { display: true, text: `${payload.nameY} (${payload.unitY})`, font: { size: 10, weight: 600 } }
+                ticks: {
+                  padding: 6,
+                  font: { size: 9, family: "'JetBrains Mono', monospace" }
+                },
+                title: {
+                  display: true,
+                  text: formatAxisTitle(payload.nameY, payload.unitY),
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 6, bottom: 0 }
+                }
               };
             }
 
@@ -6839,7 +7099,7 @@
               options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: { padding: { top: 10, right: 16, bottom: 6, left: 8 } },
+                layout: { padding: { top: 12, right: (payload.mode === 'bivariate' ? 22 : 18), bottom: 14, left: 14 } },
                 onClick: (e, elements) => {
                   const ptEl = elements.find(el => el.datasetIndex === 0);
                   if (ptEl) {
@@ -6853,7 +7113,7 @@
                     display: payload.mode === 'bivariate' || datasets.length > 1,
                     position: 'top',
                     align: 'start',
-                    labels: { boxWidth: 10, font: { size: 9.5, family: 'Inter' }, padding: 8 }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   tooltip: {
                     caretPadding: 6,
@@ -7234,10 +7494,21 @@
       }
 
       function updateStatus() {
-        const count = AppState.widgets.length;
+        const total = AppState.widgets ? AppState.widgets.length : 0;
+        const minCount = AppState.widgets ? AppState.widgets.filter(w => w.minimized).length : 0;
+        const visibleCount = total - minCount;
         const statusEl = document.getElementById('canvasStatusWidgets');
         if (statusEl) {
-          statusEl.textContent = `${count} ventana${count === 1 ? '' : 's'}`;
+          if (total === 0) {
+            statusEl.textContent = '0 ventanas';
+          } else if (minCount === 0) {
+            statusEl.textContent = `${total} ventana${total === 1 ? '' : 's'}`;
+          } else {
+            statusEl.textContent = `${total} ventana${total === 1 ? '' : 's'} (${visibleCount} visible${visibleCount === 1 ? '' : 's'}, ${minCount} oculta${minCount === 1 ? '' : 's'})`;
+          }
+        }
+        if (typeof renderSubDashboards === 'function') {
+          renderSubDashboards();
         }
       }
 
@@ -7419,6 +7690,13 @@
         const stage = document.getElementById('canvasGridStage');
         if (stage) stage.innerHTML = '';
         syncHeroVisibility();
+
+        AppState.territorialFilter = 'all';
+        AppState.excludeCoyhaique = false;
+        const selectSlicer = document.getElementById('selectTerritorialSlicer');
+        if (selectSlicer) selectSlicer.value = 'all';
+        const btnExclude = document.getElementById('btnExcludeCoyhaique');
+        if (btnExclude) btnExclude.classList.remove('active');
 
         deselectActiveCard();
         renderWindowTabs();
@@ -7894,15 +8172,34 @@
       // 18. EVENTOS GENERALES DE LA INTERFAZ
       // =======================================================================
       function setupEvents() {
+        function toggleFixedDropdown(btn, menu, alignRight = false) {
+          if (!btn || !menu) return;
+          const willShow = !menu.classList.contains('show');
+          document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
+          if (willShow) {
+            const rect = btn.getBoundingClientRect();
+            menu.style.position = 'fixed';
+            menu.style.top = `${rect.bottom + 4}px`;
+            menu.style.zIndex = '999999';
+            if (alignRight) {
+              menu.style.left = 'auto';
+              menu.style.right = `${Math.max(8, window.innerWidth - rect.right)}px`;
+            } else {
+              menu.style.left = `${Math.max(8, rect.left)}px`;
+              menu.style.right = 'auto';
+            }
+            menu.classList.add('show');
+          } else {
+            menu.classList.remove('show');
+          }
+        }
+
         const btnAddCardDropdown = document.getElementById('btnAddCardDropdownBtn');
         const menuAddCard = document.getElementById('addCardDropdownMenu') || document.getElementById('dropdownAddCardMenu');
         if (btnAddCardDropdown && menuAddCard) {
           btnAddCardDropdown.addEventListener('click', (e) => {
             e.stopPropagation();
-            menuAddCard.classList.toggle('show');
-          });
-          window.addEventListener('click', () => {
-            if (menuAddCard.classList.contains('show')) menuAddCard.classList.remove('show');
+            toggleFixedDropdown(btnAddCardDropdown, menuAddCard, false);
           });
         }
 
@@ -7922,9 +8219,12 @@
             const catPanel = document.getElementById('panelCatalogo');
             if (catPanel && catPanel.classList.contains('collapsed')) {
               catPanel.classList.remove('collapsed');
+              document.getElementById('btnToggleSidebar')?.setAttribute('aria-expanded', 'true');
             }
             document.querySelectorAll('.sidebar-tab-btn').forEach(b => {
-              b.classList.toggle('active', b.getAttribute('data-dim') === 'tiempo');
+              const isTiempo = b.getAttribute('data-dim') === 'tiempo';
+              b.classList.toggle('active', isTiempo);
+              b.setAttribute('aria-selected', isTiempo ? 'true' : 'false');
             });
             AppState.activeFilterDim = 'tiempo';
             renderSidebarCatalog();
@@ -7994,7 +8294,9 @@
         // Toggle Catálogo
         document.getElementById('btnToggleSidebar').addEventListener('click', () => {
           if (catPanel) {
-            catPanel.classList.toggle('collapsed');
+            const willCollapse = !catPanel.classList.contains('collapsed');
+            catPanel.classList.toggle('collapsed', willCollapse);
+            document.getElementById('btnToggleSidebar').setAttribute('aria-expanded', willCollapse ? 'false' : 'true');
             syncPanelBackdrops();
             setTimeout(updateFloatingToolbarPosition, 300);
           }
@@ -8102,8 +8404,12 @@
 
         document.querySelectorAll('.sidebar-tab-btn').forEach(btn => {
           btn.addEventListener('click', () => {
-            document.querySelectorAll('.sidebar-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.sidebar-tab-btn').forEach(b => {
+              b.classList.remove('active');
+              b.setAttribute('aria-selected', 'false');
+            });
             btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
             AppState.activeFilterDim = btn.getAttribute('data-dim');
             renderSidebarCatalog();
           });
@@ -8112,23 +8418,38 @@
         // Menú Proyecto
         const projectBtn = document.getElementById('btnProjectMenu');
         const projectMenu = document.getElementById('projectMenuDropdown');
-        projectBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          projectMenu.classList.toggle('show');
-        });
+        if (projectBtn && projectMenu) {
+          projectBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFixedDropdown(projectBtn, projectMenu, true);
+          });
+        }
         window.addEventListener('click', () => {
-          if (projectMenu.classList.contains('show')) projectMenu.classList.remove('show');
+          document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
           closeSmartPopover();
         });
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
+            closeSmartPopover();
+          }
+        });
 
-        document.getElementById('btnExportarJson').addEventListener('click', exportJson);
+        document.getElementById('btnExportarJson').addEventListener('click', () => {
+          if (projectMenu) projectMenu.classList.remove('show');
+          exportJson();
+        });
         document.getElementById('btnImportarJson').addEventListener('click', () => {
+          if (projectMenu) projectMenu.classList.remove('show');
           document.getElementById('inputLoadProjectFile').click();
         });
         document.getElementById('inputLoadProjectFile').addEventListener('change', (e) => {
           if (e.target.files.length) importJson(e.target.files[0]);
         });
-        document.getElementById('btnExportarReporte').addEventListener('click', () => window.print());
+        document.getElementById('btnExportarReporte').addEventListener('click', () => {
+          if (projectMenu) projectMenu.classList.remove('show');
+          window.print();
+        });
 
         document.getElementById('btnEjemploSistemico').addEventListener('click', () => {
           const sc = prompt('Selecciona escenario: 1 (Salmonicultura e Inversión), 2 (Energía y Precios), 3 (Gobernanza y Pobreza), 10 (Cambio en el Tiempo: Fiordos FAN y MP2.5 Coyhaique)', '1');
@@ -8280,6 +8601,11 @@
         if (selectSlicer) {
           selectSlicer.addEventListener('change', (e) => {
             AppState.territorialFilter = e.target.value;
+            if (e.target.value === 'all') {
+              AppState.excludeCoyhaique = false;
+              const btnEx = document.getElementById('btnExcludeCoyhaique');
+              if (btnEx) btnEx.classList.remove('active');
+            }
             AppState.widgets.forEach(w => renderWidgetVisual(w));
             updateConnections();
             autoSave();

@@ -1665,6 +1665,25 @@
     renderVariablesChart();
   }
 
+  // Formateador y truncador de títulos de ejes para Chart.js (Milestone 3)
+  function formatAxisTitle(name, unit, maxLen = 28) {
+    if (!name) return '';
+    let clean = String(name).trim();
+    if (unit) {
+      const escUnit = String(unit).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      clean = clean.replace(new RegExp(`\\s*\\(\\s*${escUnit}\\s*\\)`, 'gi'), '').trim();
+    }
+    clean = clean.replace(/\s*\(\s*(?:%|M\$\s*CLP|\$\s*CLP|MM\s*US\$|km²|km|ha|ton|m³\/s|horas\/año|kPersonas|kTon|kPasajeros|cél\/L|mg\/L|µg\/m³|°C|mm|\$\/litro|m\/año|m|nidos|habitantes|eventos\/mes)\s*\)$/gi, '').trim();
+    let base = clean;
+    if (base.length > maxLen) {
+      base = base.slice(0, maxLen - 3).trimEnd() + '...';
+    }
+    if (unit && String(unit).trim()) {
+      return `${base} (${String(unit).trim()})`;
+    }
+    return base;
+  }
+
   // --- RENDERIZADO DEL GRÁFICO (CHART.JS) ---
   function renderVariablesChart() {
     const canvas = document.getElementById('variablesChartCanvas');
@@ -1706,7 +1725,7 @@
             datasets: [
               {
                 type: 'bar',
-                label: 'Pernoctaciones Estimadas (EMAT)',
+                label: formatAxisTitle('Pernoctaciones Estimadas (EMAT)', 'Pernoctaciones', 26),
                 data: pernoctaciones,
                 backgroundColor: 'rgba(14, 88, 168, 0.75)',
                 borderRadius: 4,
@@ -1714,7 +1733,7 @@
               },
               {
                 type: 'line',
-                label: 'Tasa de Ocupación Verano/Invierno (%)',
+                label: formatAxisTitle('Tasa de Ocupación Verano/Invierno', '%', 26),
                 data: ocupacion,
                 borderColor: '#9E4300',
                 backgroundColor: '#9E4300',
@@ -1727,18 +1746,52 @@
           options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: { padding: { top: 12, right: 22, bottom: 14, left: 14 } },
             interaction: { mode: 'index', intersect: false },
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+                align: 'start',
+                labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
+              }
+            },
             scales: {
+              x: {
+                ticks: {
+                  padding: 4,
+                  font: { size: 9, family: "'Inter', sans-serif" }
+                },
+                grid: { display: false }
+              },
               y: {
                 type: 'linear',
                 position: 'left',
-                title: { display: true, text: 'Pernoctaciones Totales' },
+                title: {
+                  display: true,
+                  text: formatAxisTitle('Pernoctaciones Totales', 'Pernoctaciones'),
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 0, bottom: 6 }
+                },
+                ticks: {
+                  padding: 6,
+                  font: { size: 9, family: "'JetBrains Mono', monospace" }
+                },
                 grid: { color: 'rgba(20, 22, 24, 0.05)' }
               },
               y1: {
                 type: 'linear',
                 position: 'right',
-                title: { display: true, text: 'Tasa de Ocupación (%)' },
+                title: {
+                  display: true,
+                  text: formatAxisTitle('Tasa de Ocupación', '%'),
+                  font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                  padding: { top: 6, bottom: 0 }
+                },
+                ticks: {
+                  padding: 6,
+                  font: { size: 9, family: "'JetBrains Mono', monospace" }
+                },
                 grid: { drawOnChartArea: false }
               }
             }
@@ -1770,7 +1823,7 @@
       const datasets = [
         {
           type: 'line',
-          label: `${sX.nombre} (${unitXLabel})`,
+          label: formatAxisTitle(sX.nombre, unitXLabel, 26),
           data: dataX,
           borderColor: '#0E58A8',
           backgroundColor: 'rgba(14, 88, 168, 0.12)',
@@ -1784,10 +1837,26 @@
       ];
 
       const scales = {
+        x: {
+          ticks: {
+            padding: 4,
+            font: { size: 9, family: "'Inter', sans-serif" }
+          },
+          grid: { display: false }
+        },
         y: {
           type: 'linear',
           position: 'left',
-          title: { display: true, text: `${sX.nombre} (${unitXLabel})` },
+          title: {
+            display: true,
+            text: formatAxisTitle(sX.nombre, unitXLabel),
+            font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+            padding: { top: 0, bottom: 6 }
+          },
+          ticks: {
+            padding: 6,
+            font: { size: 9, family: "'JetBrains Mono', monospace" }
+          },
           grid: { color: 'rgba(20, 22, 24, 0.05)' }
         }
       };
@@ -1805,7 +1874,7 @@
 
         datasets.push({
           type: 'line',
-          label: `${sY.nombre} (${unitYLabel})`,
+          label: formatAxisTitle(sY.nombre, unitYLabel, 26),
           data: dataY,
           borderColor: '#9E4300',
           backgroundColor: 'rgba(158, 67, 0, 0.12)',
@@ -1820,7 +1889,16 @@
         scales.y1 = {
           type: 'linear',
           position: 'right',
-          title: { display: true, text: `${sY.nombre} (${unitYLabel})` },
+          title: {
+            display: true,
+            text: formatAxisTitle(sY.nombre, unitYLabel),
+            font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+            padding: { top: 6, bottom: 0 }
+          },
+          ticks: {
+            padding: 6,
+            font: { size: 9, family: "'JetBrains Mono', monospace" }
+          },
           grid: { drawOnChartArea: false }
         };
       }
@@ -1842,12 +1920,14 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: { padding: { top: 12, right: (hasSY && sY ? 22 : 18), bottom: 14, left: 14 } },
           interaction: { mode: 'index', intersect: false },
           plugins: {
             legend: {
               display: true,
               position: 'top',
-              labels: { boxWidth: 12, font: { size: 11, family: "'Space Grotesk', sans-serif" } }
+              align: 'start',
+              labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
             },
             tooltip: {
               callbacks: {
@@ -1883,14 +1963,14 @@
           labels: comunas.map(c => c.nombre),
           datasets: [
             {
-              label: `${varObjX.name} (${varObjX.unit})`,
+              label: formatAxisTitle(varObjX.name, varObjX.unit, 26),
               data: comunas.map(c => c.valX),
               backgroundColor: 'rgba(25, 72, 58, 0.75)',
               borderRadius: 4,
               yAxisID: 'y'
             },
             {
-              label: `${varObjY.name} (${varObjY.unit})`,
+              label: formatAxisTitle(varObjY.name, varObjY.unit, 26),
               data: comunas.map(c => c.valY),
               backgroundColor: 'rgba(158, 67, 0, 0.75)',
               borderRadius: 4,
@@ -1901,17 +1981,59 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: { padding: { top: 12, right: 22, bottom: 14, left: 14 } },
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+              align: 'start',
+              labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
+            }
+          },
           scales: {
+            x: {
+              ticks: {
+                maxRotation: 45,
+                minRotation: 0,
+                padding: 4,
+                font: { size: 9, family: "'Inter', sans-serif" }
+              },
+              title: {
+                display: true,
+                text: 'Comunas de Aysén',
+                font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                padding: { top: 8, bottom: 2 }
+              },
+              grid: { display: false }
+            },
             y: {
               type: 'linear',
               position: 'left',
-              title: { display: true, text: `${varObjX.name} (${varObjX.unit})` },
+              title: {
+                display: true,
+                text: formatAxisTitle(varObjX.name, varObjX.unit),
+                font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                padding: { top: 0, bottom: 6 }
+              },
+              ticks: {
+                padding: 6,
+                font: { size: 9, family: "'JetBrains Mono', monospace" }
+              },
               grid: { color: 'rgba(20, 22, 24, 0.05)' }
             },
             y1: {
               type: 'linear',
               position: 'right',
-              title: { display: true, text: `${varObjY.name} (${varObjY.unit})` },
+              title: {
+                display: true,
+                text: formatAxisTitle(varObjY.name, varObjY.unit),
+                font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+                padding: { top: 6, bottom: 0 }
+              },
+              ticks: {
+                padding: 6,
+                font: { size: 9, family: "'JetBrains Mono', monospace" }
+              },
               grid: { drawOnChartArea: false }
             }
           }
@@ -1982,7 +2104,14 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: { top: 12, right: 18, bottom: 14, left: 14 } },
         plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            align: 'start',
+            labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
+          },
           tooltip: {
             callbacks: {
               title: (items) => {
@@ -2006,11 +2135,29 @@
         },
         scales: {
           x: {
-            title: { display: true, text: `${varObjX.name} (${varObjX.unit})` },
+            title: {
+              display: true,
+              text: formatAxisTitle(varObjX.name, varObjX.unit),
+              font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+              padding: { top: 8, bottom: 2 }
+            },
+            ticks: {
+              padding: 4,
+              font: { size: 9, family: "'JetBrains Mono', monospace" }
+            },
             grid: { color: 'rgba(20, 22, 24, 0.05)' }
           },
           y: {
-            title: { display: true, text: `${varObjY.name} (${varObjY.unit})` },
+            title: {
+              display: true,
+              text: formatAxisTitle(varObjY.name, varObjY.unit),
+              font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
+              padding: { top: 0, bottom: 6 }
+            },
+            ticks: {
+              padding: 6,
+              font: { size: 9, family: "'JetBrains Mono', monospace" }
+            },
             grid: { color: 'rgba(20, 22, 24, 0.05)' }
           }
         }
