@@ -7895,7 +7895,7 @@
       // =======================================================================
       function setupEvents() {
         const btnAddCardDropdown = document.getElementById('btnAddCardDropdownBtn');
-        const menuAddCard = document.getElementById('dropdownAddCardMenu');
+        const menuAddCard = document.getElementById('addCardDropdownMenu') || document.getElementById('dropdownAddCardMenu');
         if (btnAddCardDropdown && menuAddCard) {
           btnAddCardDropdown.addEventListener('click', (e) => {
             e.stopPropagation();
