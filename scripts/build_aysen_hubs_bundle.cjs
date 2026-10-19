@@ -1689,6 +1689,7 @@ const comunas = comunasBase.map((c, idx) => {
     id: idx + 1,
     comuna_ine: ine,
     codigo_comuna: c.codigo_comuna,
+    nombre: c.nombre,
     nombre_comuna: c.nombre,
     provincia: c.provincia,
     cabecera: c.cabecera,

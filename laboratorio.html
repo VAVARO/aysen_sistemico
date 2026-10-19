@@ -219,9 +219,8 @@
       padding: 0 0.75rem;
       z-index: 90;
       position: relative;
-      overflow-x: auto;
+      overflow-x: hidden;
       overflow-y: hidden;
-      scrollbar-width: thin;
     }
 
     .action-bar-left {
@@ -286,8 +285,9 @@
       background: rgba(0, 53, 127, 0.1);
     }
 
-    /* Dropdown Menú Proyecto */
-    .dropdown-project {
+    /* Dropdown Menú Proyecto y Añadir Tarjeta */
+    .dropdown-project,
+    .dropdown-add-card {
       position: relative;
       display: inline-block;
     }
@@ -304,6 +304,12 @@
       border-radius: 6px;
       z-index: 200;
       padding: 0.35rem 0;
+    }
+
+    .dropdown-add-card .dropdown-project-content {
+      left: 0;
+      right: auto;
+      min-width: 215px;
     }
 
     .dropdown-project-content.show {
@@ -1183,13 +1189,13 @@
       border-color: var(--cobalt);
     }
 
-    /* Contenedor Visual Central de la Tarjeta (100% de alto y ancho) */
+    /* Contenedor Visual Central de la Tarjeta (Full-Bleed 100% de alto y ancho) */
     .widget-stage-display {
       flex: 1 1 auto;
       width: 100%;
       height: 100%;
       min-height: 0;
-      padding: 0.85rem 1rem;
+      padding: 0.35rem 0.5rem;
       display: flex;
       flex-direction: column;
       align-items: stretch;
@@ -1207,6 +1213,12 @@
       height: 100%;
       min-height: 0;
       position: relative;
+    }
+
+    .chart-container-box canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
     }
 
     .table-container-box {
@@ -2367,27 +2379,25 @@
 
       <div style="width: 1px; height: 18px; background: var(--rule-hairline); margin: 0 0.2rem;"></div>
 
-      <button class="btn-action-tool primary" id="btnAddChart" title="Crear tarjeta gráfica vacía">
-        <span>+ Gráfico</span>
-      </button>
-      <button class="btn-action-tool" id="btnAddTimeline" title="Crear línea de tiempo (serie histórica multianual)">
-        <span>+ Línea de Tiempo</span>
-      </button>
-      <button class="btn-action-tool" id="btnAddMap" title="Crear tarjeta mapa vacía">
-        <span>+ Mapa</span>
-      </button>
-      <button class="btn-action-tool" id="btnAddTable" title="Crear tarjeta tabla vacía">
-        <span>+ Tabla</span>
-      </button>
-      <button class="btn-action-tool" id="btnAddKPI" title="Crear tarjeta indicador vacía">
-        <span>+ Indicador</span>
-      </button>
+      <!-- Menú Consolidado + Tarjeta (Gráfico, Línea de Tiempo, Mapa, Tabla, Indicador) -->
+      <div class="dropdown-add-card" id="dropdownAddCard">
+        <button type="button" class="btn-action-tool primary" id="btnAddCardDropdownBtn" title="Crear nueva tarjeta en el lienzo">
+          <span>+ Tarjeta ▾</span>
+        </button>
+        <div class="dropdown-project-content" id="addCardDropdownMenu">
+          <button type="button" class="dropdown-project-item" id="btnAddChart">+ Gráfico</button>
+          <button type="button" class="dropdown-project-item" id="btnAddTimeline">+ Línea de Tiempo (2015–2026)</button>
+          <button type="button" class="dropdown-project-item" id="btnAddMap">+ Mapa Territorial</button>
+          <button type="button" class="dropdown-project-item" id="btnAddTable">+ Tabla de Datos</button>
+          <button type="button" class="dropdown-project-item" id="btnAddKPI">+ Indicador KPI</button>
+        </div>
+      </div>
 
       <div style="width: 1px; height: 18px; background: var(--rule-hairline); margin: 0 0.2rem;"></div>
 
       <div class="slicer-container" style="display: inline-flex; align-items: center; gap: 0.35rem;">
         <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-secondary); font-weight: 500;">Territorio:</span>
-        <select id="selectTerritorialSlicer" class="slicer-select" style="max-width: 150px;" title="Filtrar comunas por provincia o tipología territorial">
+        <select id="selectTerritorialSlicer" class="slicer-select" style="max-width: 160px;" title="Filtrar comunas por provincia o tipología territorial">
           <option value="all">Todas las comunas (10)</option>
           <option value="prov_coyhaique">Prov. Coyhaique (2)</option>
           <option value="prov_aysen">Prov. Aysén (3)</option>
@@ -2398,12 +2408,9 @@
         </select>
       </div>
 
-      <div style="width: 1px; height: 18px; background: var(--rule-hairline); margin: 0 0.2rem;"></div>
-
-      <!-- Presets de las 16 Propiedades CECAN -->
-      <div class="cecan-preset-wrap" style="display: inline-flex; align-items: center; gap: 0.25rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-secondary); font-weight: 600;">CECAN:</span>
-        <select id="selectCecanPreset" class="slicer-select" style="max-width: 175px;" title="Presets de las 16 Propiedades CECAN">
+      <!-- Utilidades programáticas / contratos fuera de la barra visual -->
+      <div style="display: none !important;" aria-hidden="true">
+        <select id="selectCecanPreset">
           <option value="">Presets CECAN (16)...</option>
           <option value="01">#01 Retroalimentación</option>
           <option value="02">#02 Emergencia</option>
@@ -2422,19 +2429,10 @@
           <option value="15">#15 Sistemas anidados</option>
           <option value="16">#16 Múltiples escalas y niveles</option>
         </select>
-      </div>
-
-      <!-- Conmutador Excluir Outlier Coyhaique -->
-      <button type="button" class="btn-action-tool" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del análisis de dispersión">
-        <span>Excluir Coyhaique</span>
-      </button>
-
-      <!-- Buscador Conversacional NL2Chart (oculto de la visualización) -->
-      <div class="nl-search-bar-wrap" style="display: none !important;">
-        <input type="text" id="nlSearchInput" class="nl-search-input" placeholder="Pregunta..." autocomplete="off" />
-        <button type="button" class="btn-action-tool" id="btnNlSearch" title="Interpretar">
-          <span>Interpretar</span>
-        </button>
+        <div class="nl-search-bar-wrap">
+          <input type="text" id="nlSearchInput" class="nl-search-input" placeholder="Pregunta..." autocomplete="off" />
+          <button type="button" class="btn-action-tool" id="btnNlSearch" title="Interpretar"><span>Interpretar</span></button>
+        </div>
       </div>
     </div>
 
@@ -2447,8 +2445,12 @@
         <span>Escenarios</span>
       </button>
 
+      <button class="btn-action-tool" id="btnTopAutoLayout" title="Auto-ordenar ventanas en grilla de 2 columnas">
+        <span>Auto-ordenar</span>
+      </button>
+
       <!-- Menú Proyecto (Guardar, Cargar, Reporte) -->
-      <div class="dropdown-project">
+      <div class="dropdown-project" id="dropdownProjectWrap">
         <button class="btn-action-tool" id="btnProjectMenu">
           <span>Proyecto ▾</span>
         </button>
@@ -2464,8 +2466,7 @@
       </button>
 
       <span id="canvasStatusWidgets"
-        style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-muted); margin-left: 0.4rem;">0
-        ventanas</span>
+        style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-muted); margin-left: 0.4rem;">0 ventanas</span>
     </div>
   </div>
 
@@ -2572,6 +2573,7 @@
           <button class="floating-btn" id="tbBtnTrend" title="Regresión lineal">Tendencia</button>
           <button class="floating-btn" id="tbBtnReflection" title="Invocar tarjeta de reflexión">+ Pregunta</button>
           <button class="floating-btn" id="tbBtnCsv" title="Descargar CSV con UTF-8 BOM">CSV</button>
+          <button class="floating-btn" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del cálculo">Sin Coyhaique</button>
         </div>
 
         <!-- Grupo de Analítica Estilo Power BI: Ranking y Escala -->
@@ -2813,7 +2815,30 @@
       // Normalización fonética y de tildes (NFD) para cruces canónicos limpios
       function normStr(s) {
         if (!s) return '';
-        return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+        return String(s)
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[’'`]/g, "'")
+          .toLowerCase()
+          .trim();
+      }
+
+      // Limpieza estricta de nombres y unidades para evitar "(%) (%)" o "(M$ CLP) (M$ CLP)"
+      function formatVarWithUnit(name, unit) {
+        if (!unit) return name || '';
+        const clean = String(name || '')
+          .replace(/\s*\(\s*%\s*\)/gi, '')
+          .replace(/\s*\(\s*M\$\s*CLP\s*\)/gi, '')
+          .replace(/\s*\(\s*\$\s*CLP\s*\)/gi, '')
+          .replace(/\s*\(\s*MM\s*US\$\s*\)/gi, '')
+          .replace(/\s*\(\s*km²\s*\)/gi, '')
+          .replace(/\s*\(\s*km\s*\)/gi, '')
+          .replace(/\s*\(\s*ha\s*\)/gi, '')
+          .replace(/\s*\(\s*ton\s*\)/gi, '')
+          .replace(/\s*\(\s*m³\/s\s*\)/gi, '')
+          .replace(/\s*\(\s*horas\/año\s*\)/gi, '')
+          .trim();
+        return `${clean} (${unit})`;
       }
 
       // =======================================================================
@@ -2844,15 +2869,26 @@
           console.warn('[Laboratorio] No se pudo cargar presets CECAN:', e);
         }
 
+        let lexiconVars = [];
         if (window.NL2ChartEngine && typeof window.NL2ChartEngine.init === 'function') {
           try {
             await window.NL2ChartEngine.init('data/nl_lexicon_aysen.json');
+            lexiconVars = window.NL2ChartEngine.getLexicon()?.variables || [];
           } catch (e) {
             console.warn('[Laboratorio] Error iniciando NL2ChartEngine:', e);
           }
         }
+        if (!lexiconVars.length) {
+          try {
+            const lexResp = await fetch('data/nl_lexicon_aysen.json');
+            if (lexResp.ok) {
+              const lexJson = await lexResp.json();
+              lexiconVars = lexJson.variables || [];
+            }
+          } catch (e) {}
+        }
 
-        // 1. Cargar Nodos Satélites de window.AYSEN_HUBS_DATA
+        // 1. Nodos Satélites de window.AYSEN_HUBS_DATA (registrados como alias de búsqueda y soporte de enlaces)
         if (AppState.hubsData && Array.isArray(AppState.hubsData.nodos)) {
           AppState.hubsData.nodos.forEach(node => {
             const hubTitle = getHubTitleName(node.hubId);
@@ -2876,11 +2912,14 @@
             const unit = node.chartSpec?.unit || 'unidades';
             const isMean = /%|\$|horas|Miles|casos|promedio/i.test(unit);
 
+            // Título limpio evitando 'Alcaldes (2024-2028)' como serie graficable
+            const cleanTitle = (node.id === 17) ? 'Participación Electoral Municipal (SERVEL 2024)' : node.title;
+
             items.push({
               id: `nodo_${node.id}`,
               nodeId: node.id,
-              name: `#${node.id < 10 ? '0' : ''}${node.id}. ${node.title}`,
-              shortName: node.title,
+              name: `#${node.id < 10 ? '0' : ''}${node.id}. ${cleanTitle}`,
+              shortName: cleanTitle,
               hubId: node.hubId,
               hubTitle: hubTitle,
               dim: dim,
@@ -2893,317 +2932,13 @@
               chartType: node.chartSpec?.type || 'bar',
               chartSpec: node.chartSpec,
               tableRows: node.tableRows || [],
-              tableColumns: node.tableColumns || []
+              tableColumns: node.tableColumns || [],
+              isAlias: true // Nodos satélites quedan como alias de búsqueda; las variables comunales son las canónicas en el árbol
             });
           });
         }
 
-        // 2. Variables Canónicas Consolidadas WP_01 a WP_07
-        const canonicalComunalVars = [
-          {
-            id: 'wp01_presupuesto_municipal', name: 'Presupuesto Municipal Anual', shortName: 'Presupuesto Municipal',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: 'M$ CLP', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBDERE-SINIM / BCN', collectionDate: '17 Oct 2026 (SINIM 2025 / SERVEL 2024)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [26540.8, 2450.2, 14210.5, 6100.0, 3300.0, 5400.0, 3950.0, 4600.0, 2150.0, 2050.0]
-          },
-          {
-            id: 'wp01_presupuesto_per_capita', name: 'Presupuesto Municipal per Cápita', shortName: 'Presupuesto per Cápita',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: 'Miles $/hab', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SUBDERE-SINIM / BCN', collectionDate: '17 Oct 2026 (SINIM 2025 / SERVEL 2024)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [459.0, 3145.3, 613.3, 1187.5, 2065.1, 1100.9, 1450.6, 1330.2, 3323.0, 4059.4]
-          },
-          {
-            id: 'finanzas_dependencia_fcm_pct', name: 'Dependencia del Fondo Común Municipal', shortName: 'Dependencia FCM',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: '% presupuesto', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SUBDERE-SINIM / BCN', collectionDate: '17 Oct 2026 (SINIM 2025 / SERVEL 2024)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [46.5, 89.2, 52.8, 74.5, 83.0, 71.2, 79.6, 76.8, 91.5, 92.8]
-          },
-          {
-            id: 'wp01_patentes_acuicolas_mineras', name: 'Ingresos por Patentes Acuícolas y Mineras', shortName: 'Patentes Acuícolas/Mineras',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: 'M$ CLP', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBDERE-SINIM / BCN', collectionDate: '17 Oct 2026 (SINIM 2025 / SERVEL 2024)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [1450.0, 35.0, 1850.0, 680.0, 210.0, 320.0, 115.0, 180.0, 28.0, 22.0]
-          },
-          {
-            id: 'wp01_inversion_fndr', name: 'Inversión FNDR Asignada', shortName: 'Inversión FNDR',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: 'M$ CLP', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBDERE-SINIM / BCN', collectionDate: '17 Oct 2026 (SINIM 2025 / SERVEL 2024)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [14850.0, 2200.0, 9800.0, 5600.0, 3400.0, 4900.0, 4100.0, 4800.0, 2400.0, 2600.0]
-          },
-          {
-            id: 'wp02_potencia_electrica_mw', name: 'Potencia Eléctrica Instalada', shortName: 'Potencia Instalada',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: 'MW', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [26.8, 1.4, 42.5, 6.8, 2.8, 7.5, 2.4, 5.8, 1.4, 1.2]
-          },
-          {
-            id: 'wp02_generacion_diesel_pct', name: 'Generación Eléctrica Diésel en Matriz Local', shortName: 'Generación Diésel',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '% MW', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [85.1, 100.0, 62.6, 70.6, 100.0, 85.3, 100.0, 84.5, 57.1, 91.7]
-          },
-          {
-            id: 'wp02_precio_gasolina_93', name: 'Precio Gasolina 93', shortName: 'Gasolina 93',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '$/litro', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [1362, 1520, 1375, 1440, 1560, 1430, 1420, 1410, 1620, 1580]
-          },
-          {
-            id: 'wp02_precio_diesel', name: 'Precio Petróleo Diésel', shortName: 'Petróleo Diésel',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '$/litro', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [1098, 1260, 1115, 1190, 1290, 1180, 1170, 1150, 1340, 1310]
-          },
-          {
-            id: 'wp02_sobrecosto_combustibles_pct', name: 'Sobrecosto de Combustibles vs. Santiago', shortName: 'Sobrecosto Combustibles',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '% sobrecosto', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [10.8, 22.5, 11.2, 16.4, 26.2, 15.6, 14.8, 13.9, 30.8, 27.6]
-          },
-          {
-            id: 'wp02_precio_lena_seca', name: 'Precio Leña Seca', shortName: 'Precio Leña Seca',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '$/m³', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [48000, 38000, 46000, 42000, 55000, 50000, 44000, 42000, 36000, 40000]
-          },
-          {
-            id: 'wp02_calefaccion_lena_pct', name: 'Hogares con Calefacción a Leña', shortName: 'Calefacción a Leña',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '% hogares', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CNE / SUBTEL / SEC', collectionDate: '16 Oct 2026 (CNE / SUBTEL)', sourceUrl: 'https://www.cne.cl',
-            data: [92.4, 98.2, 87.8, 95.1, 94.6, 82.3, 94.2, 96.0, 99.1, 98.4]
-          },
-          {
-            id: 'salmon_concesiones_vigentes', name: 'Concesiones Acuícolas Vigentes', shortName: 'Concesiones Acuícolas',
-            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'comuna', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            data: [0, 0, 412, 218, 98, 0, 0, 0, 0, 17]
-          },
-          {
-            id: 'wp03_centros_activos', name: 'Centros Acuícolas Operativos Activos', shortName: 'Centros Acuícolas Activos',
-            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'comuna', unit: 'centros activos', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            data: [0, 0, 135, 78, 32, 0, 0, 0, 0, 0]
-          },
-          {
-            id: 'wp03_desembarque_artesanal', name: 'Desembarque Pesquero Artesanal', shortName: 'Desembarque Artesanal',
-            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'comuna', unit: 'toneladas/año', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            data: [0, 0, 4850, 3200, 5650, 0, 0, 0, 0, 120]
-          },
-          {
-            id: 'wp03_concesiones_mineras_ha', name: 'Superficie de Concesiones Mineras', shortName: 'Concesiones Mineras',
-            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'comuna', unit: 'hectáreas', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            data: [31500, 8900, 12400, 16800, 400, 48200, 19600, 9800, 5600, 3200]
-          },
-          {
-            id: 'seia_inversion_mmusd', name: 'Inversión Aprobada SEIA', shortName: 'Inversión SEIA',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: 'MM US$', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SEA-SEIA / SII', collectionDate: '16 Oct 2026 (SEA-SEIA / SII)', sourceUrl: 'https://seia.sea.gob.cl',
-            data: [495.6, 31.4, 1320.0, 525.0, 245.0, 310.0, 142.0, 172.0, 48.0, 66.5]
-          },
-          {
-            id: 'wp04_proyectos_seia', name: 'Proyectos SEIA Aprobados', shortName: 'Proyectos SEIA',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: 'proyectos', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SEA-SEIA / SII', collectionDate: '16 Oct 2026 (SEA-SEIA / SII)', sourceUrl: 'https://seia.sea.gob.cl',
-            data: [118, 9, 254, 122, 86, 41, 27, 33, 14, 18]
-          },
-          {
-            id: 'wp04_empresas_activas_sii', name: 'Empresas Activas SII', shortName: 'Empresas Activas',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: 'empresas', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SEA-SEIA / SII', collectionDate: '16 Oct 2026 (SEA-SEIA / SII)', sourceUrl: 'https://seia.sea.gob.cl',
-            data: [5240, 86, 2180, 490, 198, 415, 265, 345, 78, 68]
-          },
-          {
-            id: 'wp04_microempresas_pct', name: 'Proporción de Microempresas SII', shortName: 'Proporción Microempresas',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: '% empresas', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SEA-SEIA / SII', collectionDate: '16 Oct 2026 (SEA-SEIA / SII)', sourceUrl: 'https://seia.sea.gob.cl',
-            data: [74.0, 86.0, 72.0, 78.0, 84.8, 78.1, 83.0, 80.0, 88.5, 89.7]
-          },
-          {
-            id: 'wp04_trabajadores_sii', name: 'Trabajadores Dependientes SII', shortName: 'Trabajadores Dependientes',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: 'trabajadores', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SEA-SEIA / SII', collectionDate: '16 Oct 2026 (SEA-SEIA / SII)', sourceUrl: 'https://seia.sea.gob.cl',
-            data: [29800, 390, 16400, 3250, 930, 2280, 1210, 1680, 290, 245]
-          },
-          {
-            id: 'wp04_empleo_publico_pct', name: 'Peso del Empleo Público', shortName: 'Empleo Público',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: '% empleo', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SEA-SEIA / SII', collectionDate: '16 Oct 2026 (SEA-SEIA / SII)', sourceUrl: 'https://seia.sea.gob.cl',
-            data: [32.8, 58.5, 21.5, 26.4, 36.8, 31.0, 39.2, 42.5, 64.2, 61.0]
-          },
-          {
-            id: 'comuna_poblacion_2024', name: 'Población Censo 2024', shortName: 'Población 2024',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'habitantes', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'DEIS-SSA / MINEDUC / CEAD / INE', collectionDate: '16 Oct 2026 (DEIS / MINEDUC / CEAD)', sourceUrl: 'https://deis.minsal.cl',
-            data: [57823, 852, 23959, 6517, 1843, 4865, 2671, 3490, 625, 523]
-          },
-          {
-            id: 'comuna_pobreza_casen', name: 'Pobreza Multidimensional CASEN', shortName: 'Pobreza CASEN',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: '% pob.', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'DEIS-SSA / MINEDUC / CEAD / INE', collectionDate: '16 Oct 2026 (DEIS / MINEDUC / CEAD)', sourceUrl: 'https://deis.minsal.cl',
-            data: [12.5, 26.4, 16.8, 19.4, 22.8, 14.2, 18.2, 15.1, 24.1, 28.5]
-          },
-          {
-            id: 'wp05_camas_hospitalarias', name: 'Camas Hospitalarias Red SSA', shortName: 'Camas Hospitalarias',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'camas', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'DEIS-SSA / MINEDUC / CEAD / INE', collectionDate: '16 Oct 2026 (DEIS / MINEDUC / CEAD)', sourceUrl: 'https://deis.minsal.cl',
-            data: [167, 0, 52, 12, 0, 14, 0, 16, 0, 0]
-          },
-          {
-            id: 'wp05_tiempo_hospital_hrs', name: 'Tiempo de Traslado Terrestre al Hospital Regional Coyhaique', shortName: 'Tiempo al Hospital Regional',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'horas', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'DEIS-SSA / MINEDUC / CEAD / INE', collectionDate: '16 Oct 2026 (DEIS / MINEDUC / CEAD)', sourceUrl: 'https://deis.minsal.cl',
-            data: [0.0, 4.5, 1.0, 3.5, 18.0, 4.5, 1.5, 6.5, 12.0, 9.0]
-          },
-          {
-            id: 'wp05_matricula_slep', name: 'Matrícula Escolar Total SLEP', shortName: 'Matrícula Escolar SLEP',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'alumnos', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'DEIS-SSA / MINEDUC / CEAD / INE', collectionDate: '16 Oct 2026 (DEIS / MINEDUC / CEAD)', sourceUrl: 'https://deis.minsal.cl',
-            data: [13450, 95, 4850, 980, 310, 920, 460, 790, 85, 75]
-          },
-          {
-            id: 'wp05_tasa_vif', name: 'Tasa de Violencia Intrafamiliar (VIF)', shortName: 'Tasa VIF',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'casos c/100.000 hab', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'DEIS-SSA / MINEDUC / CEAD / INE', collectionDate: '16 Oct 2026 (DEIS / MINEDUC / CEAD)', sourceUrl: 'https://deis.minsal.cl',
-            data: [940.8, 385.0, 1080.5, 620.0, 750.0, 680.0, 490.0, 710.0, 310.0, 395.0]
-          },
-          {
-            id: 'wp06_prestadores_sernatur', name: 'Prestadores Turísticos SERNATUR', shortName: 'Prestadores SERNATUR',
-            hubId: 'turismo', hubTitle: 'I. Turismo', dim: 'comuna', unit: 'prestadores', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SERNATUR / INE EMAT / CONAF', collectionDate: '16 Oct 2026 (SERNATUR / INE EMAT / CONAF)', sourceUrl: 'https://serviciosturisticos.sernatur.cl',
-            data: [412, 24, 185, 138, 32, 105, 162, 96, 46, 38]
-          },
-          {
-            id: 'wp06_pernoctaciones_emat', name: 'Pernoctaciones Turísticas Anuales EMAT', shortName: 'Pernoctaciones EMAT',
-            hubId: 'turismo', hubTitle: 'I. Turismo', dim: 'comuna', unit: 'pernoctaciones', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SERNATUR / INE EMAT / CONAF', collectionDate: '16 Oct 2026 (SERNATUR / INE EMAT / CONAF)', sourceUrl: 'https://serviciosturisticos.sernatur.cl',
-            data: [208500, 6800, 98400, 74200, 11800, 59600, 112000, 49000, 23500, 27000]
-          },
-          {
-            id: 'wp06_ocupacion_verano_pct', name: 'Ocupación Hotelera Verano (Ene-Feb)', shortName: 'Ocupación Verano',
-            hubId: 'turismo', hubTitle: 'I. Turismo', dim: 'comuna', unit: '% ocupación', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SERNATUR / INE EMAT / CONAF', collectionDate: '16 Oct 2026 (SERNATUR / INE EMAT / CONAF)', sourceUrl: 'https://serviciosturisticos.sernatur.cl',
-            data: [76.5, 58.2, 72.1, 84.5, 64.0, 79.2, 86.8, 81.0, 88.5, 85.0]
-          },
-          {
-            id: 'wp06_ocupacion_invierno_pct', name: 'Ocupación Hotelera Invierno', shortName: 'Ocupación Invierno',
-            hubId: 'turismo', hubTitle: 'I. Turismo', dim: 'comuna', unit: '% ocupación', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SERNATUR / INE EMAT / CONAF', collectionDate: '16 Oct 2026 (SERNATUR / INE EMAT / CONAF)', sourceUrl: 'https://serviciosturisticos.sernatur.cl',
-            data: [32.4, 12.0, 28.6, 18.2, 21.0, 22.5, 16.4, 17.5, 8.2, 11.0]
-          },
-          {
-            id: 'wp06_visitantes_snaspe', name: 'Visitantes Anuales a Parques SNASPE', shortName: 'Visitantes SNASPE',
-            hubId: 'turismo', hubTitle: 'I. Turismo', dim: 'comuna', unit: 'visitantes', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SERNATUR / INE EMAT / CONAF', collectionDate: '16 Oct 2026 (SERNATUR / INE EMAT / CONAF)', sourceUrl: 'https://serviciosturisticos.sernatur.cl',
-            data: [38500, 1800, 29600, 57200, 3200, 18400, 46800, 28300, 14200, 11500]
-          },
-          {
-            id: 'comuna_snaspe_pct', name: 'Superficie Protegida SNASPE', shortName: 'Superficie SNASPE',
-            hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', dim: 'comuna', unit: '% superficie', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'CONAF / MMA RCE / SAG', collectionDate: '17 Oct 2026 (MMA RCE / CONAF / SAG)', sourceUrl: 'https://simbio.mma.gob.cl',
-            data: [19.2, 34.5, 63.4, 71.2, 45.8, 48.6, 61.7, 52.1, 78.3, 87.4]
-          },
-          {
-            id: 'wp07_cobertura_vegetal_ha', name: 'Cobertura Vegetal Nativa Total', shortName: 'Cobertura Vegetal Nativa',
-            hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', dim: 'comuna', unit: 'hectáreas', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'CONAF / MMA RCE / SAG', collectionDate: '17 Oct 2026 (MMA RCE / CONAF / SAG)', sourceUrl: 'https://simbio.mma.gob.cl',
-            data: [524500, 390000, 1430000, 1025000, 53000, 328500, 342000, 543000, 372000, 715000]
-          },
-          {
-            id: 'wp07_turberas_humedales_ha', name: 'Turberas y Humedales', shortName: 'Turberas y Humedales',
-            hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', dim: 'comuna', unit: 'hectáreas', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'CONAF / MMA RCE / SAG', collectionDate: '17 Oct 2026 (MMA RCE / CONAF / SAG)', sourceUrl: 'https://simbio.mma.gob.cl',
-            data: [12000, 6000, 75000, 45000, 12500, 3500, 5800, 18000, 28000, 92000]
-          },
-          // Indicadores Sistémicos Profundos (Investigación Multi-Agente Oficial Octubre 2026)
-          {
-            id: 'wp01_ipp_per_capita', name: 'Ingresos Propios Permanentes per Cápita SINIM', shortName: 'IPP per Cápita',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: '$/hab', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SUBDERE / SINIM', collectionDate: '17 Oct 2026 (SINIM 2025)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [139928, 184852, 176295, 525265, 356696, 161297, 185457, 124047, 188563, 63594]
-          },
-          {
-            id: 'wp01_profesionalizacion_pct', name: 'Profesionalización de la Planta Municipal', shortName: 'Profesionalización Municipal',
-            hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', dim: 'comuna', unit: '% profesionales', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SUBDERE / SINIM', collectionDate: '17 Oct 2026 (SINIM 2025)', sourceUrl: 'https://datos.sinim.gov.cl',
-            data: [36.4, 12.5, 28.2, 18.6, 11.8, 15.4, 14.1, 16.2, 10.5, 9.8]
-          },
-          {
-            id: 'wp02_saidi_horas', name: 'Horas de Interrupción Eléctrica Anual (SAIDI SEC)', shortName: 'Cortes Eléctricos (SAIDI)',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: 'horas/año', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'Superintendencia de Electricidad y Combustibles (SEC)', collectionDate: '17 Oct 2026 (SEC 2024–2025)', sourceUrl: 'https://www.sec.cl',
-            data: [11.4, 54.2, 13.8, 28.5, 62.1, 19.3, 24.6, 22.8, 58.7, 64.3]
-          },
-          {
-            id: 'wp02_internet_fijo_pct', name: 'Penetración de Internet Fijo Residencial por Hogar', shortName: 'Internet Fijo por Hogar',
-            hubId: 'energia', hubTitle: 'III. Energía', dim: 'comuna', unit: '% hogares', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'Subsecretaría de Telecomunicaciones (SUBTEL)', collectionDate: '17 Oct 2026 (SUBTEL Series)', sourceUrl: 'https://www.subtel.gob.cl',
-            data: [61.2, 3.8, 44.5, 24.8, 5.4, 27.2, 16.8, 21.5, 2.6, 4.1]
-          },
-          {
-            id: 'wp03_biomasa_salmon_ton', name: 'Biomasa Cosechada de Salmónidos', shortName: 'Cosecha Salmones',
-            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'comuna', unit: 'toneladas/año', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SERNAPESCA / SUBPESCA', collectionDate: '17 Oct 2026 (SERNAPESCA 2024)', sourceUrl: 'https://www.sernapesca.cl',
-            data: [0, 0, 265000, 185000, 45000, 0, 0, 0, 0, 8500]
-          },
-          {
-            id: 'wp03_ica_antibioticos', name: 'Índice de Consumo de Antimicrobianos (ICA)', shortName: 'Consumo Antibióticos (ICA)',
-            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'comuna', unit: 'g/t cosechada', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SERNAPESCA', collectionDate: '17 Oct 2026 (Informe Antimicrobianos 2024)', sourceUrl: 'https://www.sernapesca.cl',
-            data: [0.0, 0.0, 335.4, 324.8, 382.1, 0.0, 0.0, 0.0, 0.0, 289.0]
-          },
-          {
-            id: 'wp04_compras_locales_pct', name: 'Compras Públicas Adjudicadas a Proveedores Locales', shortName: 'Compras Locales MercadoPúblico',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: '% monto adjudicado', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'ChileCompra / MercadoPúblico', collectionDate: '17 Oct 2026 (Observatorio ChileCompra)', sourceUrl: 'https://www.chilecompra.cl',
-            data: [58.4, 22.1, 54.6, 38.2, 24.5, 41.2, 32.8, 44.5, 18.4, 21.0]
-          },
-          {
-            id: 'wp04_parcelaciones_sag', name: 'Loteos Rurales Certificados (SAG DL 3.516)', shortName: 'Loteos Rurales SAG',
-            hubId: 'inversion', hubTitle: 'V. Inversión', dim: 'comuna', unit: 'loteos certificados', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'Servicio Agrícola y Ganadero (SAG)', collectionDate: '17 Oct 2026 (Catastro DL 3.516)', sourceUrl: 'https://www.sag.gob.cl',
-            data: [3240, 185, 1120, 490, 15, 980, 1280, 390, 140, 65]
-          },
-          {
-            id: 'wp05_medicos_por_mil_hab', name: 'Densidad Médica de la Red Asistencial', shortName: 'Médicos por 1.000 hab',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'médicos/1.000 hab', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'DEIS / Ministerio de Salud / Servicio de Salud Aysén', collectionDate: '17 Oct 2026 (SSA / DEIS 2024)', sourceUrl: 'https://deis.minsal.cl',
-            data: [3.12, 0.82, 1.74, 1.15, 0.95, 1.28, 0.88, 1.42, 0.78, 0.85]
-          },
-          {
-            id: 'wp05_urgencias_respiratorias_pct', name: 'Consultas de Urgencia Invernales por Causas Respiratorias', shortName: 'Urgencias Respiratorias (MP2.5)',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: '% urgencias', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'DEIS / SSA', collectionDate: '17 Oct 2026 (DEIS Vigilancia Respiratoria)', sourceUrl: 'https://deis.minsal.cl',
-            data: [44.5, 18.2, 28.6, 21.4, 22.8, 20.5, 19.8, 24.2, 16.5, 17.8]
-          },
-          {
-            id: 'wp05_aeroevacuaciones_samu', name: 'Aeroevacuaciones Médicas SAMU Anuales', shortName: 'Aeroevacuaciones SAMU',
-            hubId: 'social', hubTitle: 'VI. Social', dim: 'comuna', unit: 'vuelos/año', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'Servicio de Salud Aysén (SAMU Aysén)', collectionDate: '17 Oct 2026 (Bitácora SAMU 2024–2025)', sourceUrl: 'https://www.saludaysen.cl',
-            data: [0, 24, 48, 72, 96, 38, 22, 54, 42, 46]
-          },
-          {
-            id: 'wp06_ratio_presion_turistica', name: 'Ratio de Presión Turística Estival (Turistas / Habitantes)', shortName: 'Presión Turística Estival',
-            hubId: 'turismo', hubTitle: 'I. Turismo', dim: 'comuna', unit: 'turistas/residente', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'SERNATUR / Censo INE', collectionDate: '17 Oct 2026 (DataTurismo / Censo 2024)', sourceUrl: 'https://www.sernatur.cl',
-            data: [1.53, 3.65, 1.76, 4.22, 1.48, 6.08, 19.24, 7.09, 15.15, 28.12]
-          },
-          {
-            id: 'wp07_glaciares_dga', name: 'Glaciares Inventariados DGA', shortName: 'Glaciares Inventariados',
-            hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', dim: 'comuna', unit: 'glaciares', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'Dirección General de Aguas (DGA)', collectionDate: '17 Oct 2026 (Inventario Público Glaciares DGA)', sourceUrl: 'https://dga.mop.gob.cl',
-            data: [310, 285, 2450, 1120, 0, 410, 890, 1680, 2240, 916]
-          },
-          {
-            id: 'wp07_dias_mp25_sinca', name: 'Días Sobre Norma de Calidad del Aire MP2.5', shortName: 'Días Sobre Norma MP2.5',
-            hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', dim: 'comuna', unit: 'días/año', aggMode: 'mean', chartType: 'bar',
-            sourceName: 'Ministerio del Medio Ambiente (SINCA MMA)', collectionDate: '17 Oct 2026 (SINCA Estaciones Aysén)', sourceUrl: 'https://sinca.mma.gob.cl',
-            data: [87, 12, 34, 16, 4, 18, 14, 22, 8, 10]
-          }
-        ];
-
-        // 3. Variables de Dimensión Holding (12 Holdings)
+        // 2. Variables de Dimensión Holding (12 Holdings)
         const holdingLabels = [
           'AquaChile', 'Mowi Chile', 'Multi X', 'Cermaq Chile', 'Salmones Blumar',
           'Australis Seafoods', 'Salmones Camanchaca', 'Salmones Yadrán', 'Invermar',
@@ -3230,33 +2965,19 @@
             labels: holdingLabels, data: [7, 1, 5, 3, 5, 5, 3, 4, 3, 3, 1, 1]
           }
         ];
-
-        // Conectar datos reales del Data Lake para variables canónicas
-        if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas)) {
-          canonicalComunalVars.forEach(v => {
-            const cleanKey = v.id.replace('wp01_', '').replace('wp02_', '').replace('wp03_', '').replace('wp04_', '').replace('wp05_', '').replace('wp06_', '').replace('wp07_', '').replace('comuna_', '').replace('finanzas_', '');
-            const dlKey = Object.keys(AppState.hubsData.comunas[0] || {}).find(k => k === v.id || k === cleanKey);
-            if (dlKey) {
-              v.data = COMUNAS_ORDER.map(cName => {
-                const row = AppState.hubsData.comunas.find(c => normStr(c.nombre) === normStr(cName));
-                if (!row) return 0;
-                const val = row[dlKey];
-                return typeof val === 'number' ? val : (parseFloat(val) || 0);
-              });
-            }
-          });
-        }
-
-        canonicalComunalVars.forEach(v => items.unshift(v));
         holdingVars.forEach(v => items.push(v));
 
-        // Desbloqueo dinámico de las >70 variables de window.AYSEN_HUBS_DATA.comunas organizadas en los 7 Hubs
+        // 3. Catálogo Canónico Comunal Unificado desde window.AYSEN_HUBS_DATA.comunas (100% numérico, sin duplicados ni campos de texto)
+        const NON_NUMERIC_KEYS = new Set([
+          'id', 'comuna_ine', 'codigo_comuna', 'nombre', 'nombre_comuna', 'provincia',
+          'cabecera', 'cuenca_bna', 'unidades_snaspe', 'dependencia_barcaza',
+          'salud_principal', 'aerodromo', 'alcalde', 'partido_alcalde', 'sistema_electrico',
+          'estado_foa', 'zoit_nombre'
+        ]);
+
         if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas) && AppState.hubsData.comunas.length > 0) {
           const c0 = AppState.hubsData.comunas[0];
           const existingIds = new Set(items.map(it => it.id));
-          const lexiconVars = (window.NL2ChartEngine && typeof window.NL2ChartEngine.getLexicon === 'function')
-            ? (window.NL2ChartEngine.getLexicon()?.variables || [])
-            : [];
 
           const hubInference = (k) => {
             if (/turis|emat|visitantes|sernatur|camas_tur/i.test(k)) return 'turismo';
@@ -3289,19 +3010,22 @@
           const nameFormatter = (k) => {
             return k.replace(/_/g, ' ')
               .replace(/\b\w/g, l => l.toUpperCase())
-              .replace('Pct', '(%)')
-              .replace('Mclp', '(M$ CLP)')
-              .replace('Clp', '($ CLP)')
-              .replace('Mmusd', '(MM US$)')
-              .replace('Km2', '(km²)')
-              .replace('Ha', '(ha)')
-              .replace('Ton', '(ton)')
-              .replace('M3s', '(m³/s)')
-              .replace('M3', '(m³)');
+              .replace(/ Pct\b/gi, '')
+              .replace(/ Mclp\b/gi, '')
+              .replace(/ Clp\b/gi, '')
+              .replace(/ Mmusd\b/gi, '')
+              .replace(/ Km2\b/gi, '')
+              .replace(/ Km\b/gi, '')
+              .replace(/ Ha\b/gi, '')
+              .replace(/ Ton\b/gi, '')
+              .replace(/ M3s\b/gi, '')
+              .replace(/ M3\b/gi, '')
+              .replace(/ N\b/gi, '')
+              .trim();
           };
 
           Object.keys(c0).forEach(key => {
-            if (key === 'id' || key === 'lat' || key === 'lng' || key === 'nombre' || key === 'codigo_comuna') return;
+            if (NON_NUMERIC_KEYS.has(key)) return;
             if (typeof c0[key] !== 'number' && isNaN(parseFloat(c0[key]))) return;
 
             const lex = lexiconVars.find(v => v.id === key || v.canonicalId === key);
@@ -3313,10 +3037,10 @@
             const isMean = /%|\$|horas|Miles|casos|promedio|dias|t\/|g\/|ratio|hab\/|m3/i.test(unit) || key.endsWith('_pct') || key.endsWith('_hrs');
 
             const vec = COMUNAS_ORDER.map(cName => {
-              const row = AppState.hubsData.comunas.find(c => normStr(c.nombre) === normStr(cName));
+              const row = AppState.hubsData.comunas.find(c => normStr(c.nombre || c.nombre_comuna || '') === normStr(cName));
               if (!row) return 0;
               const val = row[key];
-              return typeof val === 'number' ? val : (parseFloat(val) || 0);
+              return (typeof val === 'number' && !isNaN(val)) ? val : (parseFloat(val) || 0);
             });
 
             if (!existingIds.has(key)) {
@@ -3337,9 +3061,80 @@
                 chartType: 'bar',
                 data: vec,
                 tableRows: COMUNAS_ORDER.map((c, i) => [c, vec[i]]),
-                tableColumns: ['Comuna', `${varName} (${unit})`]
+                tableColumns: ['Comuna', formatVarWithUnit(varName, unit)]
               });
               existingIds.add(key);
+
+              if (lex?.canonicalId && lex.canonicalId !== key && !existingIds.has(lex.canonicalId)) {
+                items.push({
+                  ...items[items.length - 1],
+                  id: lex.canonicalId,
+                  isAlias: true
+                });
+                existingIds.add(lex.canonicalId);
+              }
+            }
+          });
+
+          // Aliases canónicos heredados para compatibilidad total con proyectos y scripts
+          const LEGACY_CANONICAL_MAP = {
+            'finanzas_dependencia_fcm_pct': 'dependencia_fcm_pct',
+            'wp01_dependencia_fcm': 'dependencia_fcm_pct',
+            'wp01_inversion_fndr': 'fndr_mclp',
+            'wp01_presupuesto_municipal': 'presupuesto_mclp',
+            'wp01_presupuesto_per_capita': 'presupuesto_per_capita_mclp',
+            'wp01_ipp_per_capita': 'ipp_per_capita_clp',
+            'wp01_profesionalizacion_pct': 'profesionalizacion_pct',
+            'wp01_patentes_acuicolas_mineras': 'presupuesto_mclp',
+            'wp02_potencia_electrica_mw': 'potencia_mw',
+            'wp02_generacion_diesel_pct': 'costo_diesel_aislado_clp',
+            'wp02_precio_gasolina_93': 'gasolina_93_clp',
+            'wp02_precio_diesel': 'gasolina_93_clp',
+            'wp02_precio_lena_seca': 'precio_lena_m3',
+            'wp02_calefaccion_lena_pct': 'hogares_lena_pct',
+            'wp02_saidi_horas': 'saidi_horas_anual',
+            'wp02_internet_fijo_pct': 'internet_fijo_pct',
+            'salmon_concesiones_vigentes': 'concesiones_salmon',
+            'wp03_biomasa_salmon_ton': 'biomasa_salmon_ton',
+            'wp03_centros_activos': 'centros_activos_salmon',
+            'wp03_concesiones_mineras_ha': 'concesiones_mineras_ha',
+            'wp03_ica_antibioticos': 'antibioticos_ica_g_ton',
+            'seia_inversion_mmusd': 'inversion_seia_mmusd',
+            'wp04_proyectos_seia': 'proyectos_seia_aprobados',
+            'wp04_empresas_activas_sii': 'empresas_sii',
+            'wp04_trabajadores_sii': 'trabajadores_sii',
+            'wp04_compras_locales_pct': 'compras_locales_pct',
+            'wp04_parcelaciones_sag': 'parcelaciones_sag_n',
+            'comuna_poblacion_2024': 'poblacion_censo_2024',
+            'comuna_pobreza_casen': 'pobreza_multidim_pct',
+            'wp05_camas_hospitalarias': 'camas_hospitalarias',
+            'wp05_tiempo_hospital_hrs': 'traslado_coyhaique_hrs',
+            'wp05_matricula_slep': 'matricula_escolar',
+            'wp05_medicos_por_mil_hab': 'medicos_por_mil_hab',
+            'wp05_urgencias_respiratorias_pct': 'urgencias_respiratorias_pct',
+            'wp05_aeroevacuaciones_samu': 'aeroevacuaciones_samu_n',
+            'wp06_prestadores_sernatur': 'prestadores_sernatur',
+            'wp06_pernoctaciones_emat': 'pernoctaciones_emat',
+            'wp06_visitantes_snaspe': 'visitantes_snaspe',
+            'wp06_ratio_presion_turistica': 'ratio_presion_turistica',
+            'wp07_cobertura_vegetal_ha': 'cobertura_vegetal_nativa_ha',
+            'comuna_snaspe_pct': 'superficie_snaspe_pct',
+            'wp07_glaciares_dga': 'glaciares_dga_n',
+            'wp07_dias_mp25_sinca': 'dias_sobre_norma_mp25'
+          };
+
+          Object.entries(LEGACY_CANONICAL_MAP).forEach(([legacyId, targetKey]) => {
+            if (!existingIds.has(legacyId)) {
+              const base = items.find(it => it.id === targetKey);
+              if (base) {
+                items.push({
+                  ...base,
+                  id: legacyId,
+                  canonicalId: targetKey,
+                  isAlias: true
+                });
+                existingIds.add(legacyId);
+              }
             }
           });
         }
@@ -3385,6 +3180,7 @@
                 hubTitle: getHubTitleName(hubId),
                 dim: 'tiempo',
                 subDim: 'anual',
+                hasProjection: (pData && pData.length > 0),
                 unit: unit,
                 aggMode: isMean ? 'mean' : 'sum',
                 sourceName: s.fuente || 'Institucional Aysén',
@@ -3437,6 +3233,7 @@
                 hubTitle: 'IV. Gobernanza',
                 dim: 'tiempo',
                 subDim: 'anual',
+                hasProjection: false,
                 unit: s.unidad,
                 aggMode: /%/.test(s.unidad) ? 'mean' : 'sum',
                 sourceName: s.fuente || 'DIPRES / SINIM',
@@ -3472,6 +3269,7 @@
                 hubTitle: 'V. Inversión',
                 dim: 'tiempo',
                 subDim: 'anual',
+                hasProjection: false,
                 unit: s.unidad,
                 aggMode: /%/.test(s.unidad) ? 'mean' : 'sum',
                 sourceName: s.fuente || 'Banco Central / SII / SEA',
@@ -3518,6 +3316,7 @@
                 hubTitle: 'II. Salmonicultura',
                 dim: 'tiempo',
                 subDim: 'mensual',
+                hasProjection: false,
                 unit: '°C',
                 aggMode: 'mean',
                 sourceName: 'Copernicus Marine / NOAA Sentinel-3 SLSTR',
@@ -3549,6 +3348,7 @@
                 hubTitle: 'II. Salmonicultura',
                 dim: 'tiempo',
                 subDim: 'mensual',
+                hasProjection: false,
                 unit: 'cél/L',
                 aggMode: 'mean',
                 sourceName: 'IFOP - Sistema iFAN Seno Aysén',
@@ -3587,6 +3387,7 @@
                 hubTitle: 'VI. Social',
                 dim: 'tiempo',
                 subDim: 'mensual',
+                hasProjection: false,
                 unit: 'µg/m³',
                 aggMode: 'mean',
                 sourceName: 'SINCA MMA Estación Coyhaique II',
@@ -3662,6 +3463,7 @@
         const dimFilter = AppState.activeFilterDim;
 
         const filtered = AppState.catalogItems.filter(item => {
+          if (item.isAlias) return false;
           if (dimFilter !== 'all' && item.dim !== dimFilter) return false;
           if (!q) return true;
           return normStr(item.name).includes(q) || normStr(item.hubTitle).includes(q) || normStr(item.unit).includes(q);
@@ -3716,15 +3518,30 @@
                 </div>
               </div>
               <div class="catalog-hub-items">
-                ${groups[gName].map(it => `
-                  <div class="catalog-var-item" draggable="true" data-var-id="${it.id}">
-                    <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 165px;" title="${it.name}">${it.shortName || it.name}</span>
-                    ${it.dim === 'tiempo'
-                      ? `<span class="var-dim-badge var-dim-tiempo" title="Serie de Tiempo Histórica">Serie Temporal</span>`
-                      : `<span class="var-dim-badge var-dim-${it.dim}">${it.dim === 'comuna' ? 'Comunal' : it.dim}</span>`
+                ${groups[gName].map(it => {
+                  let dimBadge = '';
+                  if (it.dim === 'comuna') {
+                    dimBadge = '<span class="var-dim-badge var-dim-comuna" title="Corte transversal de 10 comunas de Aysén">Comunal (10)</span>';
+                  } else if (it.dim === 'holding') {
+                    dimBadge = '<span class="var-dim-badge var-dim-holding" title="Corte de los 12 Holdings salmoneros">Holdings (12)</span>';
+                  } else if (it.dim === 'tiempo') {
+                    if (it.subDim === 'mensual') {
+                      dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie mensual con variación estacional">Estacional · Mensual</span>';
+                    } else if (it.hasProjection) {
+                      dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual con proyección 2030-2035">Temporal · 2015–2035</span>';
+                    } else {
+                      dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual histórica 2015-2026">Temporal · 2015–2026</span>';
                     }
-                  </div>
-                `).join('')}
+                  } else {
+                    dimBadge = `<span class="var-dim-badge var-dim-${it.dim}">${it.dim}</span>`;
+                  }
+                  return `
+                    <div class="catalog-var-item" draggable="true" data-var-id="${it.id}">
+                      <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 155px;" title="${it.name}">${it.shortName || it.name}</span>
+                      ${dimBadge}
+                    </div>
+                  `;
+                }).join('')}
               </div>
             </div>
           `;
@@ -4128,11 +3945,11 @@
         }
 
         let timeFilterHtml = '';
-        if (vX && vX.dim === 'tiempo') {
+        if (vX && vX.dim === 'tiempo' && vX.hasProjection) {
           const tw = w.timeWindow || 'all';
           timeFilterHtml = `
             <div class="card-time-window-bar" id="time-window-bar-${w.id}">
-              <span class="time-window-lbl">Rango Histórico:</span>
+              <span class="time-window-lbl">Rango:</span>
               <button type="button" class="time-window-pill ${tw === 'all' ? 'active' : ''}" data-window="all">Todos los años</button>
               <button type="button" class="time-window-pill ${tw === 'hist' ? 'active' : ''}" data-window="hist">2015-2026 Histórico</button>
               <button type="button" class="time-window-pill ${tw === 'proj' ? 'active' : ''}" data-window="proj">2030-2035 Proyección</button>
@@ -5500,6 +5317,19 @@
           document.getElementById('tbBtnKPI').classList.add('active');
         }
 
+        const btnLine = document.getElementById('tbBtnLine');
+        if (btnLine) {
+          if (vX && vX.dim === 'comuna' && !w.varY) {
+            btnLine.classList.add('disabled');
+            btnLine.disabled = true;
+            btnLine.title = 'Línea de tiempo requiere series temporales o dispersión bivariable';
+          } else {
+            btnLine.classList.remove('disabled');
+            btnLine.disabled = false;
+            btnLine.title = 'Línea';
+          }
+        }
+
         const btnAvg = document.getElementById('tbBtnAverage');
         if (w.showAverage) btnAvg.classList.add('active');
         else btnAvg.classList.remove('active');
@@ -5529,6 +5359,21 @@
           btnMap.classList.remove('disabled');
           btnMap.disabled = false;
           btnMap.title = 'Mapa Territorial';
+        }
+
+        // Toggle contextual Excluir Coyhaique (únicamente si es serie Comunal)
+        const btnExc = document.getElementById('btnExcludeCoyhaique');
+        if (btnExc) {
+          const isComunalOnly = vX && vX.dim === 'comuna' && (!w.varY || (AppState.catalogItems.find(v => v.id === w.varY)?.dim === 'comuna'));
+          if (isComunalOnly) {
+            btnExc.style.display = 'inline-flex';
+            const isExcluded = !!(AppState.excludeCoyhaique || w.excludeOutlierCoyhaique);
+            btnExc.classList.toggle('active', isExcluded);
+            btnExc.textContent = isExcluded ? 'Con Coyhaique' : 'Sin Coyhaique';
+            btnExc.title = isExcluded ? 'Restaurar Coyhaique en la serie' : 'Excluir Coyhaique por distorsión de escala';
+          } else {
+            btnExc.style.display = 'none';
+          }
         }
 
         // Sincronizar botones de Analítica: Ranking y Escala
@@ -8049,16 +7894,44 @@
       // 18. EVENTOS GENERALES DE LA INTERFAZ
       // =======================================================================
       function setupEvents() {
+        const btnAddCardDropdown = document.getElementById('btnAddCardDropdownBtn');
+        const menuAddCard = document.getElementById('dropdownAddCardMenu');
+        if (btnAddCardDropdown && menuAddCard) {
+          btnAddCardDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuAddCard.classList.toggle('show');
+          });
+          window.addEventListener('click', () => {
+            if (menuAddCard.classList.contains('show')) menuAddCard.classList.remove('show');
+          });
+        }
+
+        const closeAddMenu = () => {
+          if (menuAddCard && menuAddCard.classList.contains('show')) menuAddCard.classList.remove('show');
+        };
+
         document.getElementById('btnAddChart').addEventListener('click', () => {
+          closeAddMenu();
           const center = getCanvasCenterWorld();
           createWidget('chart', { varX: null, x: center.x - 250, y: center.y - 180 });
         });
         const btnTimeline = document.getElementById('btnAddTimeline');
         if (btnTimeline) {
           btnTimeline.addEventListener('click', () => {
+            closeAddMenu();
+            const catPanel = document.getElementById('panelCatalogo');
+            if (catPanel && catPanel.classList.contains('collapsed')) {
+              catPanel.classList.remove('collapsed');
+            }
+            document.querySelectorAll('.sidebar-tab-btn').forEach(b => {
+              b.classList.toggle('active', b.getAttribute('data-dim') === 'tiempo');
+            });
+            AppState.activeFilterDim = 'tiempo';
+            renderSidebarCatalog();
+
             const center = getCanvasCenterWorld();
             const defaultTemporal = AppState.catalogItems.find(v => v.dim === 'tiempo' && !v.isAlias) || AppState.catalogItems.find(v => v.dim === 'tiempo');
-            const varXId = defaultTemporal ? defaultTemporal.id : 'floracion_alexandrium_fan';
+            const varXId = defaultTemporal ? defaultTemporal.id : 'sp_floracion_alexandrium_fan';
             createWidget('chart', {
               varX: varXId,
               chartType: 'line',
@@ -8069,14 +7942,17 @@
           });
         }
         document.getElementById('btnAddMap').addEventListener('click', () => {
+          closeAddMenu();
           const center = getCanvasCenterWorld();
           createWidget('map', { varX: null, x: center.x - 250, y: center.y - 180 });
         });
         document.getElementById('btnAddTable').addEventListener('click', () => {
+          closeAddMenu();
           const center = getCanvasCenterWorld();
           createWidget('table', { varX: null, x: center.x - 250, y: center.y - 180 });
         });
         document.getElementById('btnAddKPI').addEventListener('click', () => {
+          closeAddMenu();
           const center = getCanvasCenterWorld();
           createWidget('kpi', { varX: null, x: center.x - 250, y: center.y - 180 });
         });
@@ -8084,7 +7960,13 @@
           if (confirm('¿Reiniciar el lienzo analítico?')) clearAll();
         });
 
-        // Botón Auto-ordenar en Barra de Pestañas
+        // Botón Auto-ordenar en Barra Superior y Barra de Pestañas
+        const btnTopAuto = document.getElementById('btnTopAutoLayout');
+        if (btnTopAuto) {
+          btnTopAuto.addEventListener('click', () => {
+            tileWindowsInGrid();
+          });
+        }
         document.getElementById('btnTileWindowsGrid').addEventListener('click', () => {
           tileWindowsInGrid();
         });
@@ -8414,10 +8296,18 @@
         const btnExclude = document.getElementById('btnExcludeCoyhaique');
         if (btnExclude) {
           btnExclude.addEventListener('click', () => {
+            if (AppState.activeWidgetId) {
+              const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
+              if (w) {
+                w.excludeOutlierCoyhaique = !w.excludeOutlierCoyhaique;
+                renderWidgetVisual(w);
+                showFloatingToolbarForCard(w.id);
+                autoSave();
+                return;
+              }
+            }
             AppState.excludeCoyhaique = !AppState.excludeCoyhaique;
             btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
-            btnExclude.style.background = AppState.excludeCoyhaique ? '#00357f' : '';
-            btnExclude.style.color = AppState.excludeCoyhaique ? '#ffffff' : '';
             AppState.widgets.forEach(w => renderWidgetVisual(w));
             autoSave();
           });
