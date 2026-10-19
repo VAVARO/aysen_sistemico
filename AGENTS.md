@@ -34,9 +34,12 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
 
 ## Comandos de Verificación Rápida
 - **Compilador de Bundle**: `node scripts/build_aysen_hubs_bundle.cjs`
-- **Suite E2E (58 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_e2e_requirements.py`
+- **Suite Auditoría Laboratorio (7 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_laboratorio_audit.py`
+- **Suite Laboratorio Salud (6 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_laboratorio_health.py`
+- **Suite Presets y NL (6 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_cecan_presets_and_nl2chart.py`
+- **Suite Mobile Responsive (7 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_mobile_responsive_e2e.py`
 - **Suite Portal (5 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_portal_health.py`
-- **Suite Laboratorio (6 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_laboratorio_health.py`
+- **Suite E2E (58 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/test_e2e_requirements.py`
 - **Suite de Integridad (37 tests)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" scripts/test_fuentes_integridad.py`
 - **Validador Data Lake (WP_01 a WP_07)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" scripts/validate_data_lake.py --all`
 - **Suite Editorial (8 checks)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/verify_m1_editorial.py`
