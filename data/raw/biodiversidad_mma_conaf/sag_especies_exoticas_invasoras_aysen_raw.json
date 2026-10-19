@@ -1,0 +1,50 @@
+{
+  "fuente": "Servicio Agrícola y Ganadero (SAG) & Ministerio del Medio Ambiente (MMA)",
+  "sistema": "Comité Operativo Regional de Especies Exóticas Invasoras (EEI) de Aysén",
+  "portal_url": "https://www.sag.gob.cl/ambitos-de-accion/especies-exoticas-invasoras",
+  "fecha_extraccion": "2026-10-17T21:07:47.973019+00:00",
+  "especies_invasoras_prioritarias": [
+    {
+      "especie": "Neovison vison",
+      "nombre_comun": "Visón norteamericano",
+      "vector": "Escapes y liberaciones de criaderos peleteros en las décadas de 1970-1990",
+      "distribucion_aysen": "Ampliamente extendido en 10 comunas; cuencas Palena, Cisnes, Aysén, Baker, Bravo y Pascua",
+      "programa_control": "Programa FNDR/SAG de trampeo de captura selectiva y vigilancia comunitaria"
+    },
+    {
+      "especie": "Castor canadensis",
+      "nombre_comun": "Castor americano",
+      "vector": "Introducido en Tierra del Fuego (1946); expansión hacia el norte a través de canales australes",
+      "distribucion_aysen": "Focos activos en Tortel y O'Higgins (Cuenca del Río Pascua, Río Bravo y bajo Baker)",
+      "programa_control": "Proyecto Estrategia Nacional GEF Castor (MMA/FAO/SAG/CONAF) para impedir cruce de Campo de Hielo"
+    },
+    {
+      "especie": "Sus scrofa",
+      "nombre_comun": "Jabalí europeo",
+      "vector": "Introducido para cotos de caza en Argentina; invasión transcordillerana a través de pasos andinos",
+      "distribucion_aysen": "Comunas de Lago Verde, Coyhaique, Cisnes y Río Ibáñez",
+      "programa_control": "Calificado como especie dañina por Ley de Caza SAG; caza permitida todo el año sin límite de cupo"
+    },
+    {
+      "especie": "Didymosphenia geminata",
+      "nombre_comun": "Microalga Didymo (moco de roca)",
+      "vector": "Equipos de pesca deportiva y waders contaminados importados por pescadores recreativos",
+      "distribucion_aysen": "Ríos Simpson, Coyhaique, Cisnes, Mañihuales, Blanco, Baker e Ibáñez",
+      "programa_control": "Programa Nacional de Bioseguridad SERNAPESCA/SUBPESCA: Estaciones de lavado y desinfección obligatoria"
+    },
+    {
+      "especie": "Lupinus polyphyllus",
+      "nombre_comun": "Lupino perenne (chocho)",
+      "vector": "Introducción ornamental y forrajera; dispersión hidrocórica y por transporte vehicular",
+      "distribucion_aysen": "Bancos de arena y fajas de servidumbre vial de la Carretera Austral (Ruta 7)",
+      "programa_control": "Desmalezado mecánico y control manual en áreas de influencia de parques nacionales (CONAF/MOP)"
+    },
+    {
+      "especie": "Salmonidae (Oncorhynchus mykiss, Salmo trutta, Oncorhynchus tshawytscha)",
+      "nombre_comun": "Salmónidos asilvestrados (trucha arcoíris, trucha marrón, salmón chinook)",
+      "vector": "Siembras históricas para pesca deportiva y escapes accidentales de la salmonicultura intensiva",
+      "distribucion_aysen": "Todas las cuencas fluviales y lacustres de Aysén; corridas masivas de chinook en Baker, Cisnes y Simpson",
+      "programa_control": "Regulación de pesca recreativa con eliminación de cupo para salmón chinook en ríos priorizados (SERNAPESCA)"
+    }
+  ]
+}

@@ -1,0 +1,1245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "work_package": "WP_05",
+  "dataset_id": "social_salud_educacion_riesgos",
+  "titulo": "Dinámica Social, Red Asistencial, Educación, Seguridad Ciudadana y Riesgos Geológicos y Ambientales de Aysén",
+  "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+  "fecha_extraccion": "2026-10-16T18:36:39.508802+00:00",
+  "fuentes_primarias": [
+    {
+      "institucion": "USGS Earthquake Hazards Program",
+      "sistema": "FDSN Event Web Service API",
+      "url_origen": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "metodo_extraccion": "API REST GeoJSON en tiempo real",
+      "archivo_raw_local": "data/raw/social_ambiental/usgs_earthquakes_aysen_2015_2026.geojson"
+    },
+    {
+      "institucion": "Departamento de Estadísticas e Información de Salud (DEIS) / SSA",
+      "sistema": "Catastro Oficial de Establecimientos y Camas de Salud",
+      "url_origen": "https://deis.minsal.cl/#datosabiertos",
+      "metodo_extraccion": "Consulta Tabulados Estadísticos Oficiales",
+      "archivo_raw_local": "data/raw/social_ambiental/deis_red_asistencial_aysen.json"
+    },
+    {
+      "institucion": "Centro de Estudios MINEDUC / SLEP Aysén",
+      "sistema": "Datos Abiertos de Educación Escolar y Superior",
+      "url_origen": "https://datosabiertos.mineduc.cl/",
+      "metodo_extraccion": "Catastro de Establecimientos y Matrícula",
+      "archivo_raw_local": "data/raw/social_ambiental/mineduc_slep_establecimientos_matricula_aysen.json"
+    },
+    {
+      "institucion": "Centro de Estudios y Análisis del Delito (CEAD - SPD)",
+      "sistema": "Estadísticas Delictuales Comunales",
+      "url_origen": "https://cead.spd.gob.cl/estadisticas-delictuales/",
+      "metodo_extraccion": "Reporte Oficial de Denuncias y Casos Policiales",
+      "archivo_raw_local": "data/raw/social_ambiental/cead_seguridad_delitos_aysen.json"
+    },
+    {
+      "institucion": "SERNAGEOMIN",
+      "sistema": "Red Nacional de Vigilancia Volcánica (RNVV)",
+      "url_origen": "https://rnvv.sernageomin.cl/",
+      "metodo_extraccion": "Fichas Técnicas de Vigilancia Volcánica",
+      "archivo_raw_local": "data/raw/social_ambiental/sernageomin_rnvv_volcanes_aysen.json"
+    },
+    {
+      "institucion": "CONAF / SENAPRED",
+      "sistema": "Monitoreo y Estadísticas Históricas de Incendios Forestales",
+      "url_origen": "https://www.conaf.cl/situacion-nacional-de-incendios-forestales/",
+      "metodo_extraccion": "Estadísticas Territoriales CONAF",
+      "archivo_raw_local": "data/raw/social_ambiental/conaf_senapred_incendios_forestales_aysen.json"
+    }
+  ],
+  "resumen_regional": {
+    "total_comunas": 10,
+    "total_camas_hospitalarias_red_ssa": 261,
+    "hospital_base_regional": "Hospital Regional Coyhaique (167 camas, nivel alta complejidad)",
+    "matricula_escolar_regional_total": 22015,
+    "establecimientos_escolares_totales": 87,
+    "volcanes_activos_monitoreados": 6,
+    "sismos_registrados_usgs_periodo": 22,
+    "nodos_georreferenciados_totales": 39
+  },
+  "por_comuna": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "provincia": "Coyhaique",
+      "cabecera": "Coyhaique",
+      "codigo_cuenca": "113",
+      "lat": -45.5712,
+      "lng": -72.0685,
+      "source_url": "https://deis.minsal.cl/#datosabiertos",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Hospital Regional Coyhaique",
+          "nivel_complejidad": "Alta Complejidad (Base Regional)",
+          "camas_hospitalarias": 167,
+          "postas_rurales_dependientes": 7,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 0.0,
+          "dependencia_evacuacion_aeromedica": "Nula (Centro Receptor Regional y Base SAMU)",
+          "medicos_por_mil_habitantes": 3.12,
+          "lista_espera_no_ges_consultas_especialidad": 5420,
+          "urgencias_respiratorias_invernales_pct": 44.5,
+          "aeroevacuaciones_samu_anual": 0
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 38,
+          "matricula_escolar_total": 13450,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": [
+            "Universidad de Aysén",
+            "INACAP Sede Coyhaique"
+          ]
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 2150.4,
+          "tasa_vif_por_100k_hab": 940.8,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Hurto en centros comerciales",
+            "Lesiones menos graves",
+            "Robo en lugar habitado"
+          ],
+          "dotacion_carabineros_cabecera": "1ª Comisaría Coyhaique + Subcomisaría Fuerzas Especiales + Retenes fronterizos"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Hudson (dispersión de cenizas tefra)"
+          ],
+          "amenaza_principal_senapred": "Contaminación atmosférica invernal crítica (MP2.5 por leña) e incendios de interfaz periurbana",
+          "incendios_forestales_promedio_anual_ha": 185.0,
+          "sismos_registrados_cercanos_usgs": 0
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "provincia": "Coyhaique",
+      "cabecera": "Lago Verde",
+      "codigo_cuenca": "111",
+      "lat": -44.241,
+      "lng": -71.8465,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Posta de Salud Rural Lago Verde",
+          "nivel_complejidad": "Atención Primaria / Posta Rural",
+          "camas_hospitalarias": 0,
+          "postas_rurales_dependientes": 3,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 4.5,
+          "dependencia_evacuacion_aeromedica": "Media-Alta (Aislamiento por nevadas y cortes de ruta)",
+          "medicos_por_mil_habitantes": 0.82,
+          "lista_espera_no_ges_consultas_especialidad": 128,
+          "urgencias_respiratorias_invernales_pct": 18.2,
+          "aeroevacuaciones_samu_anual": 24
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 3,
+          "matricula_escolar_total": 95,
+          "tiene_educacion_media_completa": false,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 420.0,
+          "tasa_vif_por_100k_hab": 385.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Infracción a Ley de Alcoholes",
+            "Abigeato"
+          ],
+          "dotacion_carabineros_cabecera": "Retén Lago Verde (Fronterizo) y Retén La Tapera"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Complejo Volcánico Puyuhuapi",
+            "Volcán Melimoyu"
+          ],
+          "amenaza_principal_senapred": "Aislamiento invernal por nevadas extremas, crecidas de ríos cordilleranos e incendios forestales",
+          "incendios_forestales_promedio_anual_ha": 45.0,
+          "sismos_registrados_cercanos_usgs": 0
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "provincia": "Aysén",
+      "cabecera": "Puerto Aysén",
+      "codigo_cuenca": "113",
+      "lat": -45.405,
+      "lng": -72.693,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Hospital de Puerto Aysén",
+          "nivel_complejidad": "Mediana Complejidad",
+          "camas_hospitalarias": 52,
+          "postas_rurales_dependientes": 5,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 1.0,
+          "dependencia_evacuacion_aeromedica": "Baja (Conexión terrestre pavimentada continua Ruta 240)",
+          "medicos_por_mil_habitantes": 1.74,
+          "lista_espera_no_ges_consultas_especialidad": 2450,
+          "urgencias_respiratorias_invernales_pct": 28.6,
+          "aeroevacuaciones_samu_anual": 48
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 18,
+          "matricula_escolar_total": 4850,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": [
+            "CFT Estatal de la Región de Aysén"
+          ]
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 1980.2,
+          "tasa_vif_por_100k_hab": 1080.5,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Lesiones en riña",
+            "Hurtos portuarios y comercio",
+            "Robo en lugar habitado"
+          ],
+          "dotacion_carabineros_cabecera": "2ª Comisaría Puerto Aysén y Subcomisaría Puerto Chacabuco"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Macá",
+            "Volcán Cay",
+            "Volcán Hudson"
+          ],
+          "amenaza_principal_senapred": "Sismicidad cortical en Falla Liquiñe-Ofqui, deslizamientos en fiordos con tsunamis locales y caída de ceniza",
+          "incendios_forestales_promedio_anual_ha": 75.0,
+          "sismos_registrados_cercanos_usgs": 2
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "provincia": "Aysén",
+      "cabecera": "Puerto Cisnes",
+      "codigo_cuenca": "112",
+      "lat": -44.743,
+      "lng": -72.699,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes",
+          "nivel_complejidad": "Baja Complejidad",
+          "camas_hospitalarias": 12,
+          "postas_rurales_dependientes": 6,
+          "hospital_derivacion_quirurgica": "Hospital de Puerto Aysén / Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 3.5,
+          "dependencia_evacuacion_aeromedica": "Media (Alta en caletas insulares como Puerto Gaviota y Raúl Marín)",
+          "medicos_por_mil_habitantes": 1.15,
+          "lista_espera_no_ges_consultas_especialidad": 890,
+          "urgencias_respiratorias_invernales_pct": 21.4,
+          "aeroevacuaciones_samu_anual": 72
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 9,
+          "matricula_escolar_total": 980,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 1120.0,
+          "tasa_vif_por_100k_hab": 620.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Conducción en estado de ebriedad",
+            "Hurtos"
+          ],
+          "dotacion_carabineros_cabecera": "Subcomisaría Puerto Cisnes y Retén Puyuhuapi / La Junta"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Mentolat",
+            "Volcán Melimoyu",
+            "Complejo Volcánico Puyuhuapi"
+          ],
+          "amenaza_principal_senapred": "Remociones en masa en Carretera Austral, erupción volcánica y cortes por temporales marítimos",
+          "incendios_forestales_promedio_anual_ha": 30.0,
+          "sismos_registrados_cercanos_usgs": 1
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "provincia": "Aysén",
+      "cabecera": "Melinka",
+      "codigo_cuenca": "110",
+      "lat": -43.896,
+      "lng": -73.748,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "CESFAM Melinka",
+          "nivel_complejidad": "Atención Primaria con Servicio de Urgencia Rural (SUR)",
+          "camas_hospitalarias": 0,
+          "postas_rurales_dependientes": 1,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique / Hospital de Castro",
+          "tiempo_traslado_terrestre_coyhaique_horas": 18.0,
+          "dependencia_evacuacion_aeromedica": "Crítica (Territorio 100% insular oceánico, aeroevacuaciones SAMU frecuentes)",
+          "medicos_por_mil_habitantes": 0.95,
+          "lista_espera_no_ges_consultas_especialidad": 410,
+          "urgencias_respiratorias_invernales_pct": 22.8,
+          "aeroevacuaciones_samu_anual": 96
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 2,
+          "matricula_escolar_total": 310,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 890.0,
+          "tasa_vif_por_100k_hab": 750.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Riñas e infracción a Ley de Alcoholes",
+            "Infracciones a normativa pesquera"
+          ],
+          "dotacion_carabineros_cabecera": "Retén Melinka (Fronterizo/Marítimo) y Capitanía de Puerto Melinka"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Melimoyu",
+            "Volcán Mentolat (dispersión eólica de tefra)"
+          ],
+          "amenaza_principal_senapred": "Temporales oceánicos con marejadas destructivas, aislamiento insular y florecimiento de algas nocivas (Marea Roja)",
+          "incendios_forestales_promedio_anual_ha": 5.0,
+          "sismos_registrados_cercanos_usgs": 7
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "provincia": "General Carrera",
+      "cabecera": "Chile Chico",
+      "codigo_cuenca": "115",
+      "lat": -46.541,
+      "lng": -71.722,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Hospital Familiar y Comunitario San José de Chile Chico",
+          "nivel_complejidad": "Baja Complejidad",
+          "camas_hospitalarias": 14,
+          "postas_rurales_dependientes": 3,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 4.5,
+          "dependencia_evacuacion_aeromedica": "Media-Alta (Dependencia de cruce de barcaza en Lago General Carrera)",
+          "medicos_por_mil_habitantes": 1.28,
+          "lista_espera_no_ges_consultas_especialidad": 520,
+          "urgencias_respiratorias_invernales_pct": 20.5,
+          "aeroevacuaciones_samu_anual": 38
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 5,
+          "matricula_escolar_total": 920,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 1250.0,
+          "tasa_vif_por_100k_hab": 680.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Hurtos",
+            "Contrabando fronterizo"
+          ],
+          "dotacion_carabineros_cabecera": "3ª Comisaría Chile Chico (Fronteriza)"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Hudson (afectación directa en erupción pliniana 1991)"
+          ],
+          "amenaza_principal_senapred": "Vientos catabáticos severos en cuenca lacustre, sequía estival y caída histórica de tefra volcánica",
+          "incendios_forestales_promedio_anual_ha": 120.0,
+          "sismos_registrados_cercanos_usgs": 0
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "provincia": "General Carrera",
+      "cabecera": "Puerto Ingeniero Ibáñez",
+      "codigo_cuenca": "113",
+      "lat": -46.291,
+      "lng": -71.936,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "CESFAM Puerto Ingeniero Ibáñez",
+          "nivel_complejidad": "Atención Primaria con Servicio de Urgencia Rural (SUR)",
+          "camas_hospitalarias": 0,
+          "postas_rurales_dependientes": 4,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 1.5,
+          "dependencia_evacuacion_aeromedica": "Baja (Ruta 7 sur conectada)",
+          "medicos_por_mil_habitantes": 0.88,
+          "lista_espera_no_ges_consultas_especialidad": 280,
+          "urgencias_respiratorias_invernales_pct": 19.8,
+          "aeroevacuaciones_samu_anual": 22
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 5,
+          "matricula_escolar_total": 460,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 780.0,
+          "tasa_vif_por_100k_hab": 490.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Accidentes de tránsito en Carretera Austral",
+            "Abigeato"
+          ],
+          "dotacion_carabineros_cabecera": "Tenencia Puerto Ingeniero Ibáñez y Retén Villa Cerro Castillo"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Hudson (caldera activa y valles de aluvión río Ibáñez)"
+          ],
+          "amenaza_principal_senapred": "Lahar y aluvión por reactivación del Volcán Hudson, crecidas del río Ibáñez e incendios de estepa",
+          "incendios_forestales_promedio_anual_ha": 210.0,
+          "sismos_registrados_cercanos_usgs": 0
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "provincia": "Capitán Prat",
+      "cabecera": "Cochrane",
+      "codigo_cuenca": "115",
+      "lat": -47.254,
+      "lng": -72.571,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Hospital Comunitario de Cochrane",
+          "nivel_complejidad": "Baja Complejidad (Cabecera Provincial)",
+          "camas_hospitalarias": 16,
+          "postas_rurales_dependientes": 1,
+          "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 6.5,
+          "dependencia_evacuacion_aeromedica": "Alta (Aislamiento invernal y distancias mayores a 330 km)",
+          "medicos_por_mil_habitantes": 1.42,
+          "lista_espera_no_ges_consultas_especialidad": 460,
+          "urgencias_respiratorias_invernales_pct": 24.2,
+          "aeroevacuaciones_samu_anual": 54
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 4,
+          "matricula_escolar_total": 790,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 1310.0,
+          "tasa_vif_por_100k_hab": 710.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Lesiones",
+            "Abigeato en estancias ganaderas"
+          ],
+          "dotacion_carabineros_cabecera": "4ª Comisaría Cochrane"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Arenales",
+            "Volcán Hudson"
+          ],
+          "amenaza_principal_senapred": "Grandes incendios forestales de estepa y bosque nativo, y vaciamiento repentino de lagos glaciares (GLOF)",
+          "incendios_forestales_promedio_anual_ha": 340.0,
+          "sismos_registrados_cercanos_usgs": 1
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "provincia": "Capitán Prat",
+      "cabecera": "Villa O'Higgins",
+      "codigo_cuenca": "117",
+      "lat": -48.468,
+      "lng": -72.56,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Posta de Salud Rural Villa O'Higgins",
+          "nivel_complejidad": "Atención Primaria / Posta Rural Extrema",
+          "camas_hospitalarias": 0,
+          "postas_rurales_dependientes": 0,
+          "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane / Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 12.0,
+          "dependencia_evacuacion_aeromedica": "Crítica (Extremo sur de Carretera Austral, paso cortado ante temporal en fiordo Mitchell)",
+          "medicos_por_mil_habitantes": 0.78,
+          "lista_espera_no_ges_consultas_especialidad": 96,
+          "urgencias_respiratorias_invernales_pct": 16.5,
+          "aeroevacuaciones_samu_anual": 42
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 2,
+          "matricula_escolar_total": 85,
+          "tiene_educacion_media_completa": true,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 310.0,
+          "tasa_vif_por_100k_hab": 310.0,
+          "delitos_frecuentes_comuna": [
+            "Infracciones menores",
+            "Violencia intrafamiliar aislada"
+          ],
+          "dotacion_carabineros_cabecera": "Retén Villa O'Higgins (Fronterizo extremo)"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Lautaro",
+            "Volcán Arenales"
+          ],
+          "amenaza_principal_senapred": "Inundaciones por eventos GLOF en río Baker / lago O'Higgins y aislamiento invernal extremo",
+          "incendios_forestales_promedio_anual_ha": 25.0,
+          "sismos_registrados_cercanos_usgs": 0
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "provincia": "Capitán Prat",
+      "cabecera": "Caleta Tortel",
+      "codigo_cuenca": "115",
+      "lat": -47.795,
+      "lng": -73.535,
+      "source_url": "https://www.saludaysen.cl",
+      "datos": {
+        "salud_red_asistencial": {
+          "establecimiento_principal": "Posta de Salud Rural Caleta Tortel",
+          "nivel_complejidad": "Atención Primaria / Posta Rural",
+          "camas_hospitalarias": 0,
+          "postas_rurales_dependientes": 0,
+          "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane / Hospital Regional Coyhaique",
+          "tiempo_traslado_terrestre_coyhaique_horas": 9.0,
+          "dependencia_evacuacion_aeromedica": "Crítica (Población dispersa en pasarelas, traslado por lancha / ambulancia y aeroevacuación SAMU)",
+          "medicos_por_mil_habitantes": 0.85,
+          "lista_espera_no_ges_consultas_especialidad": 112,
+          "urgencias_respiratorias_invernales_pct": 17.8,
+          "aeroevacuaciones_samu_anual": 46
+        },
+        "educacion_mineduc": {
+          "slep_territorial": "SLEP Aysén",
+          "establecimientos_escolares_total": 1,
+          "matricula_escolar_total": 75,
+          "tiene_educacion_media_completa": false,
+          "instituciones_educacion_superior": []
+        },
+        "seguridad_cead": {
+          "tasa_dmcs_por_100k_hab": 390.0,
+          "tasa_vif_por_100k_hab": 395.0,
+          "delitos_frecuentes_comuna": [
+            "Violencia intrafamiliar",
+            "Consumo problemático de alcohol"
+          ],
+          "dotacion_carabineros_cabecera": "Retén Caleta Tortel (Fronterizo)"
+        },
+        "riesgos_ambientales": {
+          "volcanes_influencia_directa": [
+            "Volcán Arenales"
+          ],
+          "amenaza_principal_senapred": "Crecidas glaciolacustres (GLOF río Baker/Colonia), inundaciones estuarinas y anegamiento de pasarelas",
+          "incendios_forestales_promedio_anual_ha": 15.0,
+          "sismos_registrados_cercanos_usgs": 11
+        }
+      }
+    }
+  ],
+  "nodos_georreferenciados": [
+    {
+      "id": "hosp_coyhaique",
+      "nombre": "Hospital Regional Coyhaique",
+      "tipo": "Hospital de Alta Complejidad",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.5714,
+      "lng": -72.0635,
+      "atributos": {
+        "categoria": "Red Asistencial Minsal / SSA",
+        "camas": 167,
+        "quirurgico": true,
+        "uci_adulto_pediatrica": true,
+        "helipuerto_aeromedico": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "hosp_puerto_aysen",
+      "nombre": "Hospital de Puerto Aysén",
+      "tipo": "Hospital de Mediana Complejidad",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.4042,
+      "lng": -72.6948,
+      "atributos": {
+        "categoria": "Red Asistencial Minsal / SSA",
+        "camas": 52,
+        "quirurgico": true,
+        "urgencia_24h": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "hosp_puerto_cisnes",
+      "nombre": "Hospital Comunitario de Puerto Cisnes",
+      "tipo": "Hospital Comunitario de Baja Complejidad",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.7455,
+      "lng": -72.698,
+      "atributos": {
+        "categoria": "Red Asistencial Minsal / SSA",
+        "camas": 12,
+        "quirurgico": false,
+        "urgencia_24h": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "hosp_chile_chico",
+      "nombre": "Hospital Familiar y Comunitario San José de Chile Chico",
+      "tipo": "Hospital Comunitario de Baja Complejidad",
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "lat": -46.5415,
+      "lng": -71.725,
+      "atributos": {
+        "categoria": "Red Asistencial Minsal / SSA",
+        "camas": 14,
+        "quirurgico": false,
+        "urgencia_24h": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "hosp_cochrane",
+      "nombre": "Hospital Comunitario de Cochrane",
+      "tipo": "Hospital Comunitario de Baja Complejidad",
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "lat": -47.2555,
+      "lng": -72.5725,
+      "atributos": {
+        "categoria": "Red Asistencial Minsal / SSA",
+        "camas": 16,
+        "quirurgico": false,
+        "urgencia_24h": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "cesfam_melinka",
+      "nombre": "CESFAM Melinka (Archipiélago de las Guaitecas)",
+      "tipo": "Centro de Salud Familiar Rural",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.8972,
+      "lng": -73.7465,
+      "atributos": {
+        "categoria": "Atención Primaria Insular",
+        "camas_observacion": 2,
+        "aeromedico_requerido": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "posta_lago_verde",
+      "nombre": "Posta de Salud Rural Lago Verde",
+      "tipo": "Posta Rural Cordillerana",
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "lat": -44.2415,
+      "lng": -71.846,
+      "atributos": {
+        "categoria": "Atención Primaria Rural",
+        "medico_general_zona": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "posta_villa_ohiggins",
+      "nombre": "Posta de Salud Rural Villa O'Higgins",
+      "tipo": "Posta Rural Extrema",
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "lat": -48.4685,
+      "lng": -72.5605,
+      "atributos": {
+        "categoria": "Atención Primaria Extrema",
+        "terminal_carretera_austral": true,
+        "aeromedico_requerido": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "posta_caleta_tortel",
+      "nombre": "Posta de Salud Rural Caleta Tortel",
+      "tipo": "Posta Rural Costera / Fluvial",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.796,
+      "lng": -73.5345,
+      "atributos": {
+        "categoria": "Atención Primaria Rural Pasarelas",
+        "lancha_ambulancia": true
+      },
+      "source_url": "https://www.saludaysen.cl"
+    },
+    {
+      "id": "volcan_hudson",
+      "nombre": "Volcán Hudson",
+      "tipo": "Complejo Volcánico Activo",
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "lat": -45.9,
+      "lng": -72.9667,
+      "atributos": {
+        "tipo_volcan": "Estratovolcán con caldera",
+        "red_vigilancia": "SERNAGEOMIN RNVV OVDAS",
+        "erupcion_historica_destacada": 1991
+      },
+      "source_url": "https://rnvv.sernageomin.cl/volcan-hudson/"
+    },
+    {
+      "id": "volcan_maca",
+      "nombre": "Volcán Macá",
+      "tipo": "Complejo Volcánico Activo",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.105,
+      "lng": -73.17,
+      "atributos": {
+        "tipo_volcan": "Estratovolcán holoceno",
+        "ubicacion": "Fiordo Aysén / Canal Moraleda"
+      },
+      "source_url": "https://rnvv.sernageomin.cl/volcan-maca/"
+    },
+    {
+      "id": "volcan_cay",
+      "nombre": "Volcán Cay",
+      "tipo": "Complejo Volcánico Activo",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.06,
+      "lng": -72.985,
+      "atributos": {
+        "tipo_volcan": "Estratovolcán",
+        "ubicacion": "Noreste del Volcán Macá"
+      },
+      "source_url": "https://rnvv.sernageomin.cl/volcan-cay/"
+    },
+    {
+      "id": "volcan_mentolat",
+      "nombre": "Volcán Mentolat",
+      "tipo": "Complejo Volcánico Activo",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.668,
+      "lng": -73.085,
+      "atributos": {
+        "tipo_volcan": "Estratovolcán con caldera",
+        "ubicacion": "Isla Magdalena"
+      },
+      "source_url": "https://rnvv.sernageomin.cl/volcan-mentolat/"
+    },
+    {
+      "id": "volcan_melimoyu",
+      "nombre": "Volcán Melimoyu",
+      "tipo": "Complejo Volcánico Activo",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.083,
+      "lng": -72.883,
+      "atributos": {
+        "tipo_volcan": "Estratovolcán elongado",
+        "ubicacion": "Norte del Canal Jacaf"
+      },
+      "source_url": "https://rnvv.sernageomin.cl/volcan-melimoyu/"
+    },
+    {
+      "id": "volcan_arenales",
+      "nombre": "Volcán Arenales",
+      "tipo": "Complejo Volcánico Activo",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -47.2,
+      "lng": -73.483,
+      "atributos": {
+        "tipo_volcan": "Estratovolcán englazado",
+        "ubicacion": "Campo de Hielo Norte"
+      },
+      "source_url": "https://rnvv.sernageomin.cl/volcan-arenales/"
+    },
+    {
+      "id": "uaysen_coyhaique",
+      "nombre": "Universidad de Aysén - Campus Lillo Coyhaique",
+      "tipo": "Campus Educación Superior",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.575,
+      "lng": -72.062,
+      "atributos": {
+        "dependencia": "Estatal CRUCH",
+        "carreras": [
+          "Ingeniería Forestal",
+          "Enfermería",
+          "Obstetricia",
+          "Trabajo Social",
+          "Agronomía",
+          "Ingeniería Civil Industrial"
+        ]
+      },
+      "source_url": "https://www.uaysen.cl"
+    },
+    {
+      "id": "cft_estatal_puerto_aysen",
+      "nombre": "CFT Estatal de la Región de Aysén - Sede Puerto Aysén",
+      "tipo": "Sede Educación Técnica Superior",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.408,
+      "lng": -72.691,
+      "atributos": {
+        "dependencia": "Estatal Mineduc",
+        "enfoque": "Técnico profesional acuícola, logística y mantenimiento"
+      },
+      "source_url": "https://www.cftestatalaysen.cl"
+    },
+    {
+      "id": "usgs_us6000srue",
+      "nombre": "Sismo M4.5 - 43 km WSW of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "lat": -47.4729,
+      "lng": -73.0497,
+      "atributos": {
+        "magnitud": 4.5,
+        "profundidad_km": 10,
+        "fecha_utc": "2026-04-11T00:33:29.665000+00:00",
+        "lugar_referencia": "43 km WSW of Cochrane, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000srue"
+    },
+    {
+      "id": "usgs_us7000qdx9",
+      "nombre": "Sismo M4.5 - 230 km WSW of Puerto Chacabuco, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -46.2484,
+      "lng": -75.5636,
+      "atributos": {
+        "magnitud": 4.5,
+        "profundidad_km": 10,
+        "fecha_utc": "2025-07-20T02:43:12.565000+00:00",
+        "lugar_referencia": "230 km WSW of Puerto Chacabuco, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000qdx9"
+    },
+    {
+      "id": "usgs_us6000q482",
+      "nombre": "Sismo M4.3 - 200 km WSW of Puerto Chacabuco, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -46.0708,
+      "lng": -75.2496,
+      "atributos": {
+        "magnitud": 4.3,
+        "profundidad_km": 10,
+        "fecha_utc": "2025-04-05T10:12:43.966000+00:00",
+        "lugar_referencia": "200 km WSW of Puerto Chacabuco, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000q482"
+    },
+    {
+      "id": "usgs_us6000pkk0",
+      "nombre": "Sismo M4.2 - 144 km WNW of Puerto Chacabuco, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -44.9791,
+      "lng": -74.5206,
+      "atributos": {
+        "magnitud": 4.2,
+        "profundidad_km": 35,
+        "fecha_utc": "2025-01-17T02:32:41.382000+00:00",
+        "lugar_referencia": "144 km WNW of Puerto Chacabuco, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pkk0"
+    },
+    {
+      "id": "usgs_us7000nut1",
+      "nombre": "Sismo M4.3 - 225 km WNW of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -46.6474,
+      "lng": -75.3959,
+      "atributos": {
+        "magnitud": 4.3,
+        "profundidad_km": 10,
+        "fecha_utc": "2024-11-28T18:14:55.741000+00:00",
+        "lugar_referencia": "225 km WNW of Cochrane, Chile",
+        "tipo_magnitud": "mwr",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000nut1"
+    },
+    {
+      "id": "usgs_us7000nql2",
+      "nombre": "Sismo M6.3 - 239 km WNW of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -46.7807,
+      "lng": -75.6402,
+      "atributos": {
+        "magnitud": 6.3,
+        "profundidad_km": 10,
+        "fecha_utc": "2024-11-08T11:38:00.376000+00:00",
+        "lugar_referencia": "239 km WNW of Cochrane, Chile",
+        "tipo_magnitud": "mww",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000nql2"
+    },
+    {
+      "id": "usgs_us6000nmw5",
+      "nombre": "Sismo M5 - 81 km W of Puerto Cisnes, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -44.8712,
+      "lng": -73.7141,
+      "atributos": {
+        "magnitud": 5,
+        "profundidad_km": 58.483,
+        "fecha_utc": "2024-08-26T16:21:49.528000+00:00",
+        "lugar_referencia": "81 km W of Puerto Cisnes, Chile",
+        "tipo_magnitud": "mww",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000nmw5"
+    },
+    {
+      "id": "usgs_us7000l8gp",
+      "nombre": "Sismo M4.2 - 139 km W of Puerto Chacabuco, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.6661,
+      "lng": -74.5845,
+      "atributos": {
+        "magnitud": 4.2,
+        "profundidad_km": 27,
+        "fecha_utc": "2023-11-02T23:43:02.195000+00:00",
+        "lugar_referencia": "139 km W of Puerto Chacabuco, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000l8gp"
+    },
+    {
+      "id": "usgs_us7000krpr",
+      "nombre": "Sismo M5 - 68 km WNW of La Junta, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.8022,
+      "lng": -73.2189,
+      "atributos": {
+        "magnitud": 5,
+        "profundidad_km": 77.393,
+        "fecha_utc": "2023-08-28T23:25:01.412000+00:00",
+        "lugar_referencia": "68 km WNW of La Junta, Chile",
+        "tipo_magnitud": "mwr",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000krpr"
+    },
+    {
+      "id": "usgs_us6000kxm2",
+      "nombre": "Sismo M4.1 - 273 km WSW of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -48.5334,
+      "lng": -75.6891,
+      "atributos": {
+        "magnitud": 4.1,
+        "profundidad_km": 10,
+        "fecha_utc": "2023-07-31T04:16:18.434000+00:00",
+        "lugar_referencia": "273 km WSW of Cochrane, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000kxm2"
+    },
+    {
+      "id": "usgs_us6000j9wx",
+      "nombre": "Sismo M4.3 - 132 km WNW of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -46.9963,
+      "lng": -74.2728,
+      "atributos": {
+        "magnitud": 4.3,
+        "profundidad_km": 11.055,
+        "fecha_utc": "2022-12-17T02:07:29+00:00",
+        "lugar_referencia": "132 km WNW of Cochrane, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000j9wx"
+    },
+    {
+      "id": "usgs_us7000deg8",
+      "nombre": "Sismo M4.2 - 51 km S of Puerto Chacabuco, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.9319,
+      "lng": -72.8011,
+      "atributos": {
+        "magnitud": 4.2,
+        "profundidad_km": 4.48,
+        "fecha_utc": "2021-03-01T01:34:45.400000+00:00",
+        "lugar_referencia": "51 km S of Puerto Chacabuco, Chile",
+        "tipo_magnitud": "mwr",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000deg8"
+    },
+    {
+      "id": "usgs_us70008pbi",
+      "nombre": "Sismo M4.4 - 231 km W of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.6301,
+      "lng": -75.5856,
+      "atributos": {
+        "magnitud": 4.4,
+        "profundidad_km": 13.63,
+        "fecha_utc": "2020-04-05T15:31:04.145000+00:00",
+        "lugar_referencia": "231 km W of Cochrane, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70008pbi"
+    },
+    {
+      "id": "usgs_us70003tn8",
+      "nombre": "Sismo M4.6 - 221 km W of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.5312,
+      "lng": -75.4752,
+      "atributos": {
+        "magnitud": 4.6,
+        "profundidad_km": 10,
+        "fecha_utc": "2019-05-31T12:22:22.001000+00:00",
+        "lugar_referencia": "221 km W of Cochrane, Chile",
+        "tipo_magnitud": "mwr",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70003tn8"
+    },
+    {
+      "id": "usgs_us2000higp",
+      "nombre": "Sismo M4 - 179 km WSW of Quellón, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.7515,
+      "lng": -75.6548,
+      "atributos": {
+        "magnitud": 4,
+        "profundidad_km": 10,
+        "fecha_utc": "2018-09-21T22:11:29.830000+00:00",
+        "lugar_referencia": "179 km WSW of Quellón, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us2000higp"
+    },
+    {
+      "id": "usgs_us1000gd8a",
+      "nombre": "Sismo M4.3 - 182 km WSW of Quellón, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.8911,
+      "lng": -75.6094,
+      "atributos": {
+        "magnitud": 4.3,
+        "profundidad_km": 10,
+        "fecha_utc": "2018-08-19T11:57:11.890000+00:00",
+        "lugar_referencia": "182 km WSW of Quellón, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us1000gd8a"
+    },
+    {
+      "id": "usgs_us10008vpd",
+      "nombre": "Sismo M5.1 - 221 km W of Puerto Chacabuco, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -45.7378,
+      "lng": -75.6269,
+      "atributos": {
+        "magnitud": 5.1,
+        "profundidad_km": 10,
+        "fecha_utc": "2017-05-27T07:38:41.020000+00:00",
+        "lugar_referencia": "221 km W of Puerto Chacabuco, Chile",
+        "tipo_magnitud": "mwr",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10008vpd"
+    },
+    {
+      "id": "usgs_us10007rfa",
+      "nombre": "Sismo M4.6 - 161 km WSW of Quellón, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.6393,
+      "lng": -75.4722,
+      "atributos": {
+        "magnitud": 4.6,
+        "profundidad_km": 21.25,
+        "fecha_utc": "2016-12-20T11:29:56.860000+00:00",
+        "lugar_referencia": "161 km WSW of Quellón, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10007rfa"
+    },
+    {
+      "id": "usgs_us200081yt",
+      "nombre": "Sismo M4.7 - 238 km W of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.2575,
+      "lng": -75.7155,
+      "atributos": {
+        "magnitud": 4.7,
+        "profundidad_km": 10,
+        "fecha_utc": "2016-12-17T16:51:31.270000+00:00",
+        "lugar_referencia": "238 km W of Cochrane, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us200081yt"
+    },
+    {
+      "id": "usgs_us10007exm",
+      "nombre": "Sismo M5.2 - 207 km W of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.1545,
+      "lng": -75.3081,
+      "atributos": {
+        "magnitud": 5.2,
+        "profundidad_km": 35,
+        "fecha_utc": "2016-12-05T07:33:19.170000+00:00",
+        "lugar_referencia": "207 km W of Cochrane, Chile",
+        "tipo_magnitud": "mwr",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10007exm"
+    },
+    {
+      "id": "usgs_us10001m7j",
+      "nombre": "Sismo M5 - 34 km NW of Puerto Cisnes, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.5532,
+      "lng": -73.0345,
+      "atributos": {
+        "magnitud": 5,
+        "profundidad_km": 10.76,
+        "fecha_utc": "2015-03-13T19:16:06.670000+00:00",
+        "lugar_referencia": "34 km NW of Puerto Cisnes, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10001m7j"
+    },
+    {
+      "id": "usgs_usb000tpz6",
+      "nombre": "Sismo M4.9 - 189 km WSW of Cochrane, Chile",
+      "tipo": "Evento Sísmico USGS",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.9781,
+      "lng": -74.8571,
+      "atributos": {
+        "magnitud": 4.9,
+        "profundidad_km": 14.46,
+        "fecha_utc": "2015-02-17T08:25:10.900000+00:00",
+        "lugar_referencia": "189 km WSW of Cochrane, Chile",
+        "tipo_magnitud": "mb",
+        "fuente_catalogo": "USGS NEIC"
+      },
+      "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usb000tpz6"
+    }
+  ]
+}

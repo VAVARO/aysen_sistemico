@@ -1,0 +1,70 @@
+{
+  "timestamp_utc": "2026-10-16T22:16:16.878994+00:00",
+  "work_package": "WP_06",
+  "endpoints_auditados": [
+    {
+      "id": "sernatur_dataturismo",
+      "nombre": "SERNATUR DataTurismo Portal Oficial",
+      "url": "https://www.sernatur.cl/dataturismo/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 815.4,
+        "url": "https://www.sernatur.cl/dataturismo/",
+        "content_length_sample": 16384,
+        "snippet": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"es\">\n\n<head>\n    <!-- Google Tag Manager -->\n    <script>\n        (function(w, d, s, l, i) {\n            w[l] = w[l] || [];\n            w[l].push({\n                'gtm.start': new Date().getTime(),\n                event: 'gtm.js'\n            });\n            var f = d.getElementsByTagName(s)[0],\n                j = d.createElement(s),\n                dl = l != 'dataLayer' ? '&l=' + l : '';\n            j.async = true;\n            j.src =\n                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;\n            f.parentNode.insertBefore(j, f);\n        })(window, document, 'script', 'dataLayer', 'GTM-K6CVNCM');\n    </script>\n\t<!-- Hotjar Tracking Code for https://www.sernatur.cl -->\n\t<script>\n\t(function(h,o,t,j,a,r){\n\th.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n\th._hjSettings={hjid:5260482,hjsv:6};\n\ta=o.getElementsByTagName('head')[0];\n\tr=o.createElement('script');r.async=1;\n\tr.src=t+h._hjSettings.hjid+j+h._hjSettings.hjs"
+      }
+    },
+    {
+      "id": "sernatur_registro_prestadores",
+      "nombre": "SERNATUR Registro Nacional de Prestadores de Servicios Turísticos",
+      "url": "https://serviciosturisticos.sernatur.cl/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 405.9,
+        "url": "https://serviciosturisticos.sernatur.cl/",
+        "content_length_sample": 16384,
+        "snippet": "\n\n<!doctype html>\n<html lang=\"es\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Buscador de Servicios Turisticos - SERNATUR</title>\n  <meta name=\"viewport\" content=\"width=device-width,minimum-scale=1,initial-scale=1,user-scalable=no\" />\n  <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.2.0/css/all.css\">\n  <link rel=\"stylesheet\" href=\"css/style.css?ver=2.0\">\n  <link rel=\"stylesheet\" href=\"css/carousel.css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Roboto:700\" rel=\"stylesheet\">\n  <script src=\"js/jquery-3.1.1.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>\n  <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-83620127-1\"></script>\n  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-sRIl4kxILFvY47J16cr9ZwB07v"
+      }
+    },
+    {
+      "id": "subturismo_zoit",
+      "nombre": "Subsecretaría de Turismo - Catastro Oficial de ZOIT",
+      "url": "https://www.subturismo.gob.cl/zoit/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 715.1,
+        "url": "https://www.subturismo.gob.cl/zoit/",
+        "content_length_sample": 16384,
+        "snippet": "<!doctype html>\n<html lang=\"es\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">            \n      <!-- Bootstrap core CSS -->\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <!--<link rel=\"stylesheet\" href=\"https://pro.fontawesome.com/releases/v5.10.0/css/all.css\" integrity=\"sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p\" crossorigin=\"anonymous\"/>  -->\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.css\">\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400\">\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Slab:300,400\">\n\n    <link rel=\"shortcut icon\" href=\"https://www.subturismo.gob.cl/wp-content/themes/economia_gob/img/favicon/favicon.ico\" type=\"image/png\" />\n\n    <!-- Google tag (gtag.js) -->\n<script async src=\"https:"
+      }
+    },
+    {
+      "id": "ine_actividad_turismo",
+      "nombre": "INE - Estadísticas de Comercio, Servicios y EMAT",
+      "url": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 1329.9,
+        "url": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+        "content_length_sample": 16384,
+        "snippet": "\r\n  \r\n<!DOCTYPE html>\r\n\r\n<head lang=\"es-cl\"><title>\r\n\tActividad mensual del turismo\r\n</title><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\r\n\t\r\n\t<!-- Bootstrap CSS -->\r\n    <link rel=\"stylesheet\" href=\"/Sitefinity/WebsiteTemplates/INE/App_Theme/css/librerias/bootstrap.min.css\" /><link rel=\"stylesheet\" href=\"/Sitefinity/WebsiteTemplates/INE/App_Theme/css/librerias/fontawesome-all.min.css\" /><link rel=\"stylesheet\" href=\"/Sitefinity/WebsiteTemplates/INE/App_Theme/css/base_ine.css\" /><meta name=\"theme-color\" content=\"#214e7f\" />\r\n\t\r\n\t<!-- jQuery, Popper.js, Bootstrap JS -->\r\n    <!--script src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>\r\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" ></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>\r\n\t\r\n\t<script src=\"https://cdnjs.cloudflare.com/aj"
+      }
+    },
+    {
+      "id": "conaf_visitacion_snaspe",
+      "nombre": "CONAF - Estadísticas Oficiales de Visitación al SNASPE",
+      "url": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+      "resultado": {
+        "status": "HTTP_ERROR",
+        "http_code": 404,
+        "reason": "Not Found",
+        "latency_ms": 1071.4,
+        "url": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/"
+      }
+    }
+  ]
+}

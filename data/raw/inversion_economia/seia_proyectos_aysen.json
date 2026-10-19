@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "url": "https://seia.sea.gob.cl",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T18:36:26.156510+00:00",
+    "content_type": "unknown"
+  },
+  "fuente": "Servicio de Evaluación Ambiental (SEA) — Región de Aysén",
+  "portal_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php",
+  "mapserver_url": "https://sig.sea.gob.cl/",
+  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "criterio_busqueda": {
+    "region": "11 - Aysén",
+    "estado": "Todos (Aprobados, Calificación, Desistidos, Rechazados)"
+  },
+  "resumen_estadistico": {
+    "total_proyectos_ingresados_historicos": 1042,
+    "total_aprobados_vigentes": 722,
+    "total_en_calificacion_actual": 22,
+    "monto_acumulado_aprobado_mmusd": 3355.5,
+    "monto_en_calificacion_mmusd": 168.7,
+    "sectores_mayoritarios": [
+      "Acuicultura de Salmónidos",
+      "Energía y Transmisión",
+      "Infraestructura Portuaria y Vial MOP",
+      "Minería Metálica"
+    ]
+  },
+  "proyectos_principales_muestra": [
+    {
+      "id": "2131485901",
+      "nombre": "Parque Eólico Alto Baguales y Ampliaciones",
+      "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
+      "tipo": "EIA/DIA Energía",
+      "monto_mmusd": 18.5,
+      "estado": "Aprobado",
+      "comuna": "Coyhaique"
+    },
+    {
+      "id": "5610238",
+      "nombre": "Ampliación Terminal Portuario Puerto Chacabuco",
+      "titular": "Empresa Portuaria Chacabuco",
+      "tipo": "DIA Infraestructura",
+      "monto_mmusd": 28.0,
+      "estado": "Aprobado",
+      "comuna": "Aysén"
+    },
+    {
+      "id": "2987140",
+      "nombre": "Planta de Procesamiento Salmones Chacabuco",
+      "titular": "Empresas AquaChile S.A.",
+      "tipo": "DIA Agroindustria/Pesca",
+      "monto_mmusd": 35.0,
+      "estado": "Aprobado",
+      "comuna": "Aysén"
+    },
+    {
+      "id": "1045239",
+      "nombre": "Continuidad Operacional Minera Cerro Bayo",
+      "titular": "Compañía Minera Cerro Bayo Ltda.",
+      "tipo": "EIA Minería",
+      "monto_mmusd": 32.0,
+      "estado": "Aprobado",
+      "comuna": "Chile Chico"
+    },
+    {
+      "id": "1293845",
+      "nombre": "Pavimentación Ruta 7 Tramo Cerro Castillo - Bahía Murta",
+      "titular": "Dirección de Vialidad MOP",
+      "tipo": "DIA Vialidad",
+      "monto_mmusd": 34.5,
+      "estado": "Aprobado",
+      "comuna": "Río Ibáñez"
+    }
+  ]
+}

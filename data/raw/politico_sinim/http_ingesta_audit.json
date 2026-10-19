@@ -1,0 +1,71 @@
+{
+  "timestamp_utc": "2026-10-16T18:34:56.014212+00:00",
+  "work_package": "WP_01",
+  "endpoints_auditados": [
+    {
+      "id": "bcn_comunas_index",
+      "nombre": "BCN Reportes Comunales Index",
+      "url": "https://www.bcn.cl/siit/reportescomunales/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 2315.7,
+        "url": "https://www.bcn.cl/siit/reportescomunales/",
+        "content_length_sample": 15590,
+        "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+      }
+    },
+    {
+      "id": "sinim_portal",
+      "nombre": "SINIM SUBDERE Datos Abiertos",
+      "url": "https://datos.sinim.gov.cl/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 477.7,
+        "url": "https://datos.sinim.gov.cl/",
+        "content_length_sample": 8546,
+        "snippet": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<head>\n                <!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JX6PNWSEYQ\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-JX6PNWSEYQ');\n</script>    \n\t\t<!--<meta http-equiv=\"X-Frame-Options\" content=\"deny\">-->\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />\n                <title>Sistema Nacional de Informaci&oacute;n Municipal</title>\n\n\t\t<link type=\"text/css\" href=\"/assets/css/style.css\" rel=\"stylesheet\" media=\"screen, projection\" />\n\t\t<link type=\"application/rss+xml\" href=\"http://www.gob.cl/feed/\" rel=\"alternate\" title=\"RSS 2.0\" />\n\n\t\t<script type=\"text/javascript\" src=\"/assets/js/jquery-1.6.4.min.js\"></script>\n\t\t<!--<script type=\"text/javascript\" src=\"/assets/js/jquery-1.4.2.min.js\"></script>-->\n\t\t<script type=\"text/javascript\" src="
+      }
+    },
+    {
+      "id": "servel_elecciones",
+      "nombre": "SERVEL Elecciones y Autoridades",
+      "url": "https://www.servel.cl/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 1261.1,
+        "url": "https://www.servel.cl/",
+        "content_length_sample": 16384,
+        "snippet": "\n<!DOCTYPE html>\n<html lang=\"es-CL\">\n\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\t\t<title>Servicio Electoral de Chile &#8211; Sitio Web del Servicio Electoral de Chile.</title>\n<meta name='robots' content='max-image-preview:large' />\n<link rel='dns-prefetch' href='//www.servel.cl' />\n<link rel='dns-prefetch' href='//www.googletagmanager.com' />\n<link rel='dns-prefetch' href='//fonts.googleapis.com' />\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Servicio Electoral de Chile &raquo; Feed\" href=\"https://www.servel.cl/feed/\" />\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Servicio Electoral de Chile &raquo; Feed de comentarios\" href=\"https://www.servel.cl/comments/feed/\" />\n<link rel=\"alternate\" title=\"oEmbed (JSON)\" type=\"application/json+oembed\" href=\"https://www.servel.cl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.servel.cl%2F\" />\n<link rel=\"alternate\" title=\"oEmbed (XML)\" type=\"text/xml+oembed\" href"
+      }
+    },
+    {
+      "id": "dipres_fndr",
+      "nombre": "DIPRES Informes Financieros del Sector Público",
+      "url": "https://www.dipres.gob.cl/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 385.9,
+        "url": "https://www.dipres.gob.cl/",
+        "content_length_sample": 268,
+        "snippet": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta http-equiv=\"refresh\" content=\"0; url=/index.htm\">\r\n    <title>Redirigiendo...</title>\r\n</head>\r\n<body>\r\n    <p>Si no eres redirigido automáticamente, <a href=\"/index.htm\">haz clic aquí</a>.</p>\r\n</body>\r\n</html>\r\n"
+      }
+    },
+    {
+      "id": "gore_aysen_web",
+      "nombre": "Portal Oficial GORE Aysén",
+      "url": "https://www.goreaysen.cl/",
+      "resultado": {
+        "status": "OK",
+        "http_code": 200,
+        "latency_ms": 2074.0,
+        "url": "https://www.goreaysen.cl/",
+        "content_length_sample": 16384,
+        "snippet": "<!doctype html>\n<html lang=\"es\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\" itemtype=\"https://schema.org/WebPage\" itemscope>\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">\n\t\n<!-- Optimización para motores de búsqueda de Rank Math -  https://rankmath.com/ -->\n<title>Gobierno Regional De Aysén - Gobierno Regional De Aysén</title>\n<meta name=\"description\" content=\"El sitio web del Gobierno Regional de Aysén busca ser una puerta de enlace a información y servicios actualizados, facilitando el acceso y la participación en\"/>\n<meta name=\"robots\" content=\"follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://www.goreaysen.cl/\" />\n<meta property=\"og:locale\" content=\"es_ES\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:title\" content=\"Gobierno Regional De Aysén - Gobierno Regional De Aysén\" />\n<meta property=\"og:description\" content=\"El sit"
+      }
+    }
+  ]
+}

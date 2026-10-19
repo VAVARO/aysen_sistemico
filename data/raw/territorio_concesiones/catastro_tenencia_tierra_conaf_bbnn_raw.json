@@ -1,0 +1,21 @@
+{
+  "fuente": "CONAF SNASPE / Ministerio de Bienes Nacionales IDE / SAG Fiscalización Parcelaciones",
+  "fecha_corte": "2024-12-31",
+  "superficie_total_regional_ha": 10835000,
+  "snaspe_total_regional_ha": 5830000,
+  "snaspe_pct": 53.8,
+  "tierra_fiscal_adicional_bbnn_ha": 2253000,
+  "tierra_fiscal_adicional_pct": 20.8,
+  "propiedad_privada_ha": 2752000,
+  "propiedad_privada_pct": 25.4,
+  "parques_nacionales_principales": [
+    "Parque Nacional Laguna San Rafael",
+    "Parque Nacional Bernardo O'Higgins",
+    "Parque Nacional Queulat",
+    "Parque Nacional Melimoyu",
+    "Parque Nacional Isla Magdalena",
+    "Parque Nacional Cerro Castillo",
+    "Parque Nacional Patagonia",
+    "Parque Nacional Lago Rosselot"
+  ]
+}

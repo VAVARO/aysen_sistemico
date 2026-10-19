@@ -1,0 +1,169 @@
+{
+  "descripcion": "Catastro de autoridades locales y regionales electas en la Región de Aysén",
+  "fuente": "SERVEL / BCN Reportes Parlamentarios",
+  "url_fuente": "https://www.servel.cl/",
+  "periodo_electoral": "2021-2024 / 2024-2028",
+  "senadores_circunscripcion_14": [
+    {
+      "nombre": "David Sandoval Plaza",
+      "partido": "UDI",
+      "periodo": "2018-2026"
+    },
+    {
+      "nombre": "Ximena Órdenes Neira",
+      "partido": "PPD / IND",
+      "periodo": "2018-2026"
+    }
+  ],
+  "diputados_distrito_27": [
+    {
+      "nombre": "Miguel Ángel Calisto Águila",
+      "partido": "Demócratas",
+      "periodo": "2022-2026"
+    },
+    {
+      "nombre": "Marcia Raphael Mora",
+      "partido": "RN",
+      "periodo": "2022-2026"
+    },
+    {
+      "nombre": "René Alinco Bustos",
+      "partido": "Independiente",
+      "periodo": "2022-2026"
+    }
+  ],
+  "gobernador_regional": "Andrea Macías Palma / Marcelo Santana Vargas",
+  "delegado_presidencial": "Rodrigo Araya Morales",
+  "alcaldes_comunales": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "autoridad": {
+        "alcalde_nombre": "Carlos Gatica Villegas",
+        "alcalde_partido_pacto": "Partido Demócrata Cristiano (PDC) / Chile Vamos y Centro Democrático",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 84.2,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "autoridad": {
+        "alcalde_nombre": "Claudio Fica / Nelson Opazo López",
+        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 87.5,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "autoridad": {
+        "alcalde_nombre": "Julio Uribe Alvarado",
+        "alcalde_partido_pacto": "Independiente / Por Chile y sus Regiones",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 82.8,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "autoridad": {
+        "alcalde_nombre": "Francisco Roncagliolo Lepio",
+        "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 83.1,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "autoridad": {
+        "alcalde_nombre": "Marcos Silva Miranda",
+        "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 85.9,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "autoridad": {
+        "alcalde_nombre": "Luperciano Muñoz González",
+        "alcalde_partido_pacto": "Independiente",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 83.6,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "autoridad": {
+        "alcalde_nombre": "Marcelo Santana Vargas / Alcaldía en ejercicio",
+        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 86.4,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "autoridad": {
+        "alcalde_nombre": "Patricio Ulloa Georgia / Jorge Calderón Núñez",
+        "alcalde_partido_pacto": "UDI / Chile Vamos (Ulloa) / Partido Radical (Calderón)",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 85.2,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "autoridad": {
+        "alcalde_nombre": "Roberto Recabal Cárcamo / Claudio Fica",
+        "alcalde_partido_pacto": "Independiente / Chile Vamos",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 88.0,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "autoridad": {
+        "alcalde_nombre": "Abel Becerra Vidal",
+        "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
+        "periodo_alcaldia": "2021-2024 / 2024-2028",
+        "concejo_municipal_cupos": 6,
+        "participacion_electoral_pct": 87.3,
+        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+      }
+    }
+  ]
+}

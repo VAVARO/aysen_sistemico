@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://www.sernatur.cl/dataturismo/",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T22:17:03.367545+00:00",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://serviciosturisticos.sernatur.cl/",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T22:17:03.780801+00:00",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.subturismo.gob.cl/zoit/",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T22:17:04.501782+00:00",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T22:17:05.829612+00:00",
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+    "status": "HTTP_404",
+    "http_code": 404,
+    "timestamp_utc": "2026-10-16T22:17:07.056733+00:00",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

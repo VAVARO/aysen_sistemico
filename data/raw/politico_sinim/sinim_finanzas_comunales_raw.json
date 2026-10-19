@@ -1,0 +1,138 @@
+{
+  "descripcion": "Respaldos estructurados de finanzas municipales SINIM SUBDERE para las 10 comunas de Aysén",
+  "fuente": "SINIM (Sistema Nacional de Información Municipal - SUBDERE)",
+  "url_fuente": "https://datos.sinim.gov.cl/",
+  "ejercicio_fiscal": 2024,
+  "registros_comunales": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 26540.8,
+        "presupuesto_per_capita_miles_clp": 459.0,
+        "dependencia_fcm_pct": 46.5,
+        "ingresos_patentes_acuicolas_mineras_mclp": 1450.0,
+        "autonomia_financiera_nivel": "Media-Alta (Menor dependencia FCM regional)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 2450.2,
+        "presupuesto_per_capita_miles_clp": 3145.3,
+        "dependencia_fcm_pct": 89.2,
+        "ingresos_patentes_acuicolas_mineras_mclp": 35.0,
+        "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 14210.5,
+        "presupuesto_per_capita_miles_clp": 613.3,
+        "dependencia_fcm_pct": 52.8,
+        "ingresos_patentes_acuicolas_mineras_mclp": 1850.0,
+        "autonomia_financiera_nivel": "Media (Aporte de patentes acuícolas y portuarias Puerto Chacabuco)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 6100.0,
+        "presupuesto_per_capita_miles_clp": 1187.5,
+        "dependencia_fcm_pct": 74.5,
+        "ingresos_patentes_acuicolas_mineras_mclp": 680.0,
+        "autonomia_financiera_nivel": "Baja (Alta dependencia FCM con compensación por patentes de acuicultura)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 3300.0,
+        "presupuesto_per_capita_miles_clp": 2065.1,
+        "dependencia_fcm_pct": 83.0,
+        "ingresos_patentes_acuicolas_mineras_mclp": 210.0,
+        "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM en archipiélago insular)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 5400.0,
+        "presupuesto_per_capita_miles_clp": 1100.9,
+        "dependencia_fcm_pct": 71.2,
+        "ingresos_patentes_acuicolas_mineras_mclp": 320.0,
+        "autonomia_financiera_nivel": "Baja (Dependencia FCM con patentes mineras y comerciales)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 3950.0,
+        "presupuesto_per_capita_miles_clp": 1450.6,
+        "dependencia_fcm_pct": 79.6,
+        "ingresos_patentes_acuicolas_mineras_mclp": 115.0,
+        "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 4600.0,
+        "presupuesto_per_capita_miles_clp": 1330.2,
+        "dependencia_fcm_pct": 76.8,
+        "ingresos_patentes_acuicolas_mineras_mclp": 180.0,
+        "autonomia_financiera_nivel": "Baja (Dependencia FCM)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 2150.0,
+        "presupuesto_per_capita_miles_clp": 3323.0,
+        "dependencia_fcm_pct": 91.5,
+        "ingresos_patentes_acuicolas_mineras_mclp": 28.0,
+        "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM por aislamiento terminal Carretera Austral)",
+        "anio_referencia_sinim": 2024
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "finanzas": {
+        "presupuesto_municipal_anual_mclp": 2050.0,
+        "presupuesto_per_capita_miles_clp": 4059.4,
+        "dependencia_fcm_pct": 92.8,
+        "ingresos_patentes_acuicolas_mineras_mclp": 22.0,
+        "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM)",
+        "anio_referencia_sinim": 2024
+      }
+    }
+  ]
+}

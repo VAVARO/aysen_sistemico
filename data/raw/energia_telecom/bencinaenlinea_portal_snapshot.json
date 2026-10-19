@@ -1,0 +1,9 @@
+{
+  "url": "https://www.bencinaenlinea.cl",
+  "timestamp": "2026-10-16T18:36:31.762570+00:00",
+  "status_code": 200,
+  "success": true,
+  "content_length": 1447,
+  "error": null,
+  "body_preview": "<!doctype html>\n<html lang=\"en\">\n<head>\n    <!-- Google tag (gtag.js) -->\n    <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-SCMNGCSC50\"></script>\n    <script>\n        window.dataLayer = window.dataLayer || [];\n        function gtag(){dataLayer.push(arguments);}\n        gtag('js', new Date());\n\n        gtag('config', 'G-SCMNGCSC50');\n    </script>\n    <meta charset=\"utf-8\">\n    <title>Bencina en Línea</title>\n    <base href=\"/\">\n\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n    <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n    <!-- Etiqueta de ChatBot\n    <script async type=\"text/javascript\" data-app-id=\"1\" src=\"https://bot.cne.cl/js/chatbot.js\"></script> -->\n</head>\n<body>\n    <app-root></app-root>\n<script src=\"runtime-es2015.js\" type=\"module\"></script><script src=\"polyfills-es2015.js\" type=\"module\"></script><script src=\"runtime-es5.js\" nom"
+}

@@ -1,0 +1,54 @@
+{
+  "fuente": "SERNAGEOMIN - Anuario de la Minería de Chile y Catastro Nacional de Concesiones Mineras",
+  "fecha_corte": "2024-12-31",
+  "total_concesiones_explotacion_regional": 195,
+  "total_concesiones_exploracion_regional": 339,
+  "superficie_minera_total_ha": 154200,
+  "distritos_clave": [
+    {
+      "distrito": "El Toqui",
+      "comuna": "Coyhaique",
+      "tipo_faena": "Subterránea polimetálica",
+      "minerales": [
+        "Zinc",
+        "Oro",
+        "Plata",
+        "Plomo"
+      ],
+      "estado": "Operación y mantención con proyectos de reapertura de flotación"
+    },
+    {
+      "distrito": "Distrito Cerro Bayo / Laguna Verde",
+      "comuna": "Chile Chico",
+      "tipo_faena": "Subterránea y planta concentración",
+      "minerales": [
+        "Oro",
+        "Plata"
+      ],
+      "estado": "Reactivación y exploración de recursos en vetas Casagrande y Coyita"
+    },
+    {
+      "distrito": "Mina Fachinal",
+      "comuna": "Chile Chico",
+      "tipo_faena": "Subterránea y rajo histórico",
+      "minerales": [
+        "Oro",
+        "Plata",
+        "Zinc",
+        "Plomo"
+      ],
+      "estado": "Exploración de vetas secundarias"
+    },
+    {
+      "distrito": "Mina Silva / Puerto Cristal",
+      "comuna": "Río Ibáñez",
+      "tipo_faena": "Histórica polimetálica (1945-1997)",
+      "minerales": [
+        "Plomo",
+        "Zinc",
+        "Cobre"
+      ],
+      "estado": "Monumento Histórico Nacional y pasivo ambiental monitoreado"
+    }
+  ]
+}

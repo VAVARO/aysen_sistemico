@@ -1,0 +1,132 @@
+{
+  "11101": {
+    "nombre_comuna": "Coyhaique",
+    "comuna_ine": "11101",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11101",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2649.6,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11101",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11102": {
+    "nombre_comuna": "Lago Verde",
+    "comuna_ine": "11102",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11102",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2919.8,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11102",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11201": {
+    "nombre_comuna": "Aysén",
+    "comuna_ine": "11201",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11201",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2223.0,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11201",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11202": {
+    "nombre_comuna": "Cisnes",
+    "comuna_ine": "11202",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11202",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2042.8,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11202",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11203": {
+    "nombre_comuna": "Guaitecas",
+    "comuna_ine": "11203",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11203",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 1970.6,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11203",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11401": {
+    "nombre_comuna": "Chile Chico",
+    "comuna_ine": "11401",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11401",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2025.1,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11401",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11402": {
+    "nombre_comuna": "Río Ibáñez",
+    "comuna_ine": "11402",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11402",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 1746.7,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11402",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11301": {
+    "nombre_comuna": "Cochrane",
+    "comuna_ine": "11301",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11301",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2318.9,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11301",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11302": {
+    "nombre_comuna": "O'Higgins",
+    "comuna_ine": "11302",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11302",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 2160.6,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11302",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  },
+  "11303": {
+    "nombre_comuna": "Tortel",
+    "comuna_ine": "11303",
+    "bcn_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11303",
+    "resultado_http": {
+      "status": "OK",
+      "http_code": 200,
+      "latency_ms": 1936.0,
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11303",
+      "content_length_sample": 16384,
+      "snippet": "\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"es\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"es\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"es\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"es\"> <!--<![endif]-->\n<head> \n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <!-- Titulo del Sitio -->\n    <title> Reporte Comunal - Biblioteca del Congreso Nacional de Chile</title>\n    \n    <!-- Insertar favicon-->\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.bcn.cl/static3/img/favicon.ico\" />\n\n    <!-- Importar tipografía -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,500,700\">\n\n    <!-"
+    }
+  }
+}

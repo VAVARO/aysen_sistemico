@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "fuente": "Superintendencia de Electricidad y Combustibles (SEC) / CNE",
+    "fecha_catastro": "2026-10-15"
+  },
+  "nodos": [
+    {
+      "id": "PLANT-COMB-PUERTO-CHACABUCO",
+      "nombre": "Planta de Almacenamiento y Bunkering Enex/Copec Puerto Chacabuco",
+      "tipo": "Terminal Marítimo de Almacenamiento de Combustibles",
+      "comuna": "Aysén",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.462,
+      "lng": -72.818,
+      "capacidad_m3": 18500,
+      "productos": [
+        "Gasolina 93",
+        "Gasolina 97",
+        "Petróleo Diésel",
+        "Kerosene Doméstico"
+      ],
+      "operadores": "Enex / Copec / Petrobras"
+    },
+    {
+      "id": "SUBESTACION-ELEC-COYHAIQUE",
+      "nombre": "Subestación Eléctrica Coyhaique 23/66 kV",
+      "tipo": "Subestación de Transformación y Despacho",
+      "comuna": "Coyhaique",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.575,
+      "lng": -72.058,
+      "tension_kv": "23/66",
+      "operador": "Edelaysen S.A."
+    }
+  ]
+}

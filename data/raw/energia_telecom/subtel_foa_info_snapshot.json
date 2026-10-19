@@ -1,0 +1,9 @@
+{
+  "url": "https://www.subtel.gob.cl/foa/",
+  "timestamp": "2026-10-16T18:36:33.131067+00:00",
+  "status_code": 200,
+  "success": true,
+  "content_length": 57650,
+  "error": null,
+  "body_preview": "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\">\n    <link rel=\"stylesheet\" href=\"https://www.subtel.gob.cl/wp-content/themes/gobcl-wp-master/css/ie.css\">\n<![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\"> <!--<![endif]-->\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        \n        <title>\n          Fibra Óptica Austral - Subsecretaría de Telecomunicaciones de Chile        </title>\n\n        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>\n        <link rel=\"stylesheet\" href=\"https://www.subtel.gob.cl/wp-content/themes/gobcl-wp-master/css/main.css\">\n        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.subtel.gob.cl/wp-content/themes/gobcl-wp-master/img/gobcl-favic"
+}

@@ -1,0 +1,148 @@
+{
+  "descripcion": "Cartera de inversión y ejecución presupuestaria FNDR / GORE Aysén",
+  "fuente": "DIPRES / GORE Aysén",
+  "url_fuente": "https://www.dipres.gob.cl/",
+  "presupuesto_fndr_global_mclp": 72450.0,
+  "distribucion_comunal": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 14850.0,
+        "subdere_pmu_pmb_mclp": 2150.0,
+        "principales_focos_inversion": [
+          "Pavimentación urbana y vialidad",
+          "Saneamiento sanitario periurbano",
+          "Recambio de calefactores y eficiencia energética"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 2200.0,
+        "subdere_pmu_pmb_mclp": 480.0,
+        "principales_focos_inversion": [
+          "Conectividad vecinal rural y huellas",
+          "Electrificación y generación aislada",
+          "Postas de salud rural Lago Verde y Villa Amengual"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 9800.0,
+        "subdere_pmu_pmb_mclp": 1450.0,
+        "principales_focos_inversion": [
+          "Borde costero Ribera Sur y paseo fluvial",
+          "Saneamiento básico y alcantarillado Islas Huichas",
+          "Pavimentación y drenaje urbano Puerto Aysén"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 5600.0,
+        "subdere_pmu_pmb_mclp": 890.0,
+        "principales_focos_inversion": [
+          "Rampas de conectividad marítima La Junta y Puyuhuapi",
+          "Agua potable rural APR y saneamiento",
+          "Manejo de residuos domiciliarios costeros e insulares"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 3400.0,
+        "subdere_pmu_pmb_mclp": 620.0,
+        "principales_focos_inversion": [
+          "Generación eléctrica y subsidio diésel en Melinka",
+          "Planta desalinizadora y ampliación red APR Repollal",
+          "Infraestructura de atraque de pesca artesanal"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 4900.0,
+        "subdere_pmu_pmb_mclp": 780.0,
+        "principales_focos_inversion": [
+          "Defensas costeras y borde lacustre Lago General Carrera",
+          "Canales de riego y microclima frutícola",
+          "Pavimentación tramo periurbano Bahía Jara"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 4100.0,
+        "subdere_pmu_pmb_mclp": 650.0,
+        "principales_focos_inversion": [
+          "Espacios públicos e infraestructura turística Villa Cerro Castillo",
+          "Saneamiento básico y alcantarillado Bahía Murta y Puerto Ibáñez",
+          "Ciclovías y senderos seguros Ruta 7"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 4800.0,
+        "subdere_pmu_pmb_mclp": 710.0,
+        "principales_focos_inversion": [
+          "Infraestructura cultural y polideportivo Cochrane",
+          "Maquinaria pesada para conectividad en valles San Lorenzo y Colonia",
+          "Mejoramiento de redes sanitarias urbanas"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 2400.0,
+        "subdere_pmu_pmb_mclp": 420.0,
+        "principales_focos_inversion": [
+          "Conservación y operatividad aeródromo Villa O'Higgins",
+          "Pasarelas y embarcadero Lago O'Higgins hacia Glaciar Chico",
+          "Electrificación híbrida fotovoltaica-diésel"
+        ]
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "inversion": {
+        "fndr_asignado_estimado_mclp": 2600.0,
+        "subdere_pmu_pmb_mclp": 510.0,
+        "principales_focos_inversion": [
+          "Conservación patrimonial red pasarelas de ciprés de las Guaitecas",
+          "Sistema de alcantarillado al vacío por gravedad",
+          "Conectividad fluvial delta río Baker y Caleta Tortel"
+        ]
+      }
+    }
+  ]
+}

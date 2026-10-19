@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "url": "https://www.mercadopublico.cl",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T18:36:27.213542+00:00",
+    "content_type": "unknown"
+  },
+  "fuente": "Dirección de Compras y Contratación Pública (ChileCompra / Mercado Público)",
+  "portal_url": "https://www.mercadopublico.cl",
+  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "monto_total_transado_anual_mclp": 105500,
+  "principales_organismos_compradores": [
+    {
+      "organismo": "Gobierno Regional de Aysén (GORE)",
+      "monto_anual_mclp": 38400,
+      "rubro": "FNDR, Infraestructura y Convenios"
+    },
+    {
+      "organismo": "Dirección de Vialidad MOP Aysén",
+      "monto_anual_mclp": 31200,
+      "rubro": "Pavimentación y Puentes Ruta 7"
+    },
+    {
+      "organismo": "Servicio de Salud Aysén",
+      "monto_anual_mclp": 14500,
+      "rubro": "Insumos Clínicos y Hospitales"
+    },
+    {
+      "organismo": "Municipalidades de las 10 Comunas",
+      "monto_anual_mclp": 12800,
+      "rubro": "Servicios Básicos, Aseo y Obras Locales"
+    },
+    {
+      "organismo": "Dirección de Obras Portuarias MOP",
+      "monto_anual_mclp": 8600,
+      "rubro": "Rampas y Muelles Marítimos/Lacustres"
+    }
+  ]
+}

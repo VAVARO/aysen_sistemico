@@ -1,0 +1,79 @@
+{
+  "fuente": "Red Nacional de Vigilancia Volcánica (RNVV) - SERNAGEOMIN",
+  "url_fuente": "https://rnvv.sernageomin.cl/",
+  "volcanes_activos_aysen": [
+    {
+      "id": "volcan_hudson",
+      "nombre": "Volcán Hudson",
+      "tipo": "Estratovolcán con caldera activa de 10 km",
+      "lat": -45.9,
+      "lng": -72.9667,
+      "comuna_ine": "11402",
+      "codigo_comuna": "CL-XI-07",
+      "ranking_riesgo_sernageomin": 1,
+      "ultima_gran_erupcion": 1991,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-hudson/"
+    },
+    {
+      "id": "volcan_maca",
+      "nombre": "Volcán Macá",
+      "tipo": "Estratovolcán holoceno",
+      "lat": -45.105,
+      "lng": -73.17,
+      "comuna_ine": "11201",
+      "codigo_comuna": "CL-XI-03",
+      "ranking_riesgo_sernageomin": 35,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-maca/"
+    },
+    {
+      "id": "volcan_cay",
+      "nombre": "Volcán Cay",
+      "tipo": "Estratovolcán",
+      "lat": -45.06,
+      "lng": -72.985,
+      "comuna_ine": "11201",
+      "codigo_comuna": "CL-XI-03",
+      "ranking_riesgo_sernageomin": 46,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-cay/"
+    },
+    {
+      "id": "volcan_mentolat",
+      "nombre": "Volcán Mentolat",
+      "tipo": "Estratovolcán con caldera de 6 km",
+      "lat": -44.668,
+      "lng": -73.085,
+      "comuna_ine": "11202",
+      "codigo_comuna": "CL-XI-04",
+      "ranking_riesgo_sernageomin": 38,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-mentolat/"
+    },
+    {
+      "id": "volcan_melimoyu",
+      "nombre": "Volcán Melimoyu",
+      "tipo": "Estratovolcán con caldera elongada de 8 km",
+      "lat": -44.083,
+      "lng": -72.883,
+      "comuna_ine": "11202",
+      "codigo_comuna": "CL-XI-04",
+      "ranking_riesgo_sernageomin": 36,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-melimoyu/"
+    },
+    {
+      "id": "volcan_arenales",
+      "nombre": "Volcán Arenales",
+      "tipo": "Estratovolcán cubierto por Campo de Hielo Norte",
+      "lat": -47.2,
+      "lng": -73.483,
+      "comuna_ine": "11201",
+      "codigo_comuna": "CL-XI-03",
+      "ranking_riesgo_sernageomin": 58,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-arenales/"
+    }
+  ]
+}

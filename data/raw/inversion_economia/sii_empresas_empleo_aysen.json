@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T18:36:26.416864+00:00",
+    "content_type": "text/html"
+  },
+  "fuente": "Servicio de Impuestos Internos (SII) — Estadísticas Tributarias Comunales",
+  "portal_url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
+  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "ano_referencia": 2023,
+  "resumen_regional": {
+    "total_empresas_vigentes": 9365,
+    "trabajadores_dependientes_informados": 56475,
+    "ventas_anuales_miles_uf": 131040,
+    "distribucion_tamano": {
+      "micro": "74.8%",
+      "pequena": "20.6%",
+      "mediana": "3.8%",
+      "grande": "0.8%"
+    },
+    "empleo_publico_promedio_regional_pct": 34.5
+  },
+  "sectores_estrategicos_sii": [
+    "Acuicultura y Pesca Industrial",
+    "Administración Pública, Salud y Educación",
+    "Comercio al por mayor y al por menor",
+    "Construcción y Obras de Ingeniería",
+    "Hoteles, Alojamientos y Servicios Turísticos",
+    "Transporte Marítimo, Terrestre y Almacenamiento"
+  ]
+}

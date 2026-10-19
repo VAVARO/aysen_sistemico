@@ -1,0 +1,92 @@
+{
+  "fuente": "Departamento de Estadísticas e Información de Salud (DEIS) / Servicio de Salud Aysén (SSA)",
+  "url_fuente": "https://deis.minsal.cl/#datosabiertos",
+  "ano_referencia": 2024,
+  "red_hospitalaria": [
+    {
+      "id": "hosp_regional_coyhaique",
+      "nombre": "Hospital Regional Coyhaique",
+      "comuna_ine": "11101",
+      "nivel": "Alta Complejidad (Base Regional)",
+      "camas": 167,
+      "urgencia_24h": true,
+      "pabellones_quirurgicos": 5,
+      "uci_uti_adulta_pediatrica": true,
+      "base_samu_regional": true
+    },
+    {
+      "id": "hosp_puerto_aysen",
+      "nombre": "Hospital de Puerto Aysén",
+      "comuna_ine": "11201",
+      "nivel": "Mediana Complejidad",
+      "camas": 52,
+      "urgencia_24h": true,
+      "pabellones_quirurgicos": 2,
+      "base_samu_regional": false
+    },
+    {
+      "id": "hosp_puerto_cisnes",
+      "nombre": "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes",
+      "comuna_ine": "11202",
+      "nivel": "Baja Complejidad",
+      "camas": 12,
+      "urgencia_24h": true,
+      "pabellones_quirurgicos": 0
+    },
+    {
+      "id": "hosp_chile_chico",
+      "nombre": "Hospital Familiar y Comunitario San José de Chile Chico",
+      "comuna_ine": "11401",
+      "nivel": "Baja Complejidad",
+      "camas": 14,
+      "urgencia_24h": true,
+      "pabellones_quirurgicos": 0
+    },
+    {
+      "id": "hosp_cochrane",
+      "nombre": "Hospital Comunitario de Cochrane",
+      "comuna_ine": "11301",
+      "nivel": "Baja Complejidad",
+      "camas": 16,
+      "urgencia_24h": true,
+      "pabellones_quirurgicos": 0
+    }
+  ],
+  "atencion_primaria_y_postas": [
+    {
+      "id": "cesfam_melinka",
+      "nombre": "CESFAM Melinka",
+      "comuna_ine": "11203",
+      "tipo": "CESFAM SUR",
+      "camas": 0
+    },
+    {
+      "id": "cesfam_rio_ibanez",
+      "nombre": "CESFAM Puerto Ingeniero Ibáñez",
+      "comuna_ine": "11402",
+      "tipo": "CESFAM SUR",
+      "camas": 0
+    },
+    {
+      "id": "posta_lago_verde",
+      "nombre": "Posta de Salud Rural Lago Verde",
+      "comuna_ine": "11102",
+      "tipo": "Posta Rural",
+      "camas": 0
+    },
+    {
+      "id": "posta_villa_ohiggins",
+      "nombre": "Posta de Salud Rural Villa O'Higgins",
+      "comuna_ine": "11302",
+      "tipo": "Posta Rural Extrema",
+      "camas": 0
+    },
+    {
+      "id": "posta_caleta_tortel",
+      "nombre": "Posta de Salud Rural Caleta Tortel",
+      "comuna_ine": "11303",
+      "tipo": "Posta Rural Extrema",
+      "camas": 0
+    }
+  ]
+}

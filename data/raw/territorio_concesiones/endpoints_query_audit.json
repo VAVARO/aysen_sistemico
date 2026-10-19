@@ -1,0 +1,60 @@
+[
+  {
+    "name": "subpesca_portal",
+    "url": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50830.html",
+    "description": "SUBPESCA Portal Concesiones de Acuicultura Aysén",
+    "fecha_consulta": "2026-10-16T19:51:32.425297+00:00",
+    "status": "HTTP_200",
+    "bytes_recibidos": 29798,
+    "archivo_raw": "data/raw/territorio_concesiones/subpesca_portal_raw.html"
+  },
+  {
+    "name": "subpesca_ide_rest",
+    "url": "https://mapas.subpesca.cl/ide/rest/services/",
+    "description": "SUBPESCA Visor MapServer IDE",
+    "fecha_consulta": "2026-10-16T19:51:33.330143+00:00",
+    "status": "HTTP_ERROR_404",
+    "bytes_recibidos": 0,
+    "archivo_raw": "data/raw/territorio_concesiones/subpesca_ide_rest_probe.json",
+    "error_msg": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "sernageomin_anuario",
+    "url": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
+    "description": "SERNAGEOMIN Anuario de la Minería de Chile",
+    "fecha_consulta": "2026-10-16T19:51:33.944807+00:00",
+    "status": "HTTP_ERROR_404",
+    "bytes_recibidos": 0,
+    "archivo_raw": "data/raw/territorio_concesiones/sernageomin_anuario_probe.json",
+    "error_msg": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "sernageomin_catastro",
+    "url": "https://catastrominero.sernageomin.cl/",
+    "description": "SERNAGEOMIN Catastro Minero Online",
+    "fecha_consulta": "2026-10-16T19:51:34.903368+00:00",
+    "status": "CONNECTION_OR_DNS_TIMEOUT",
+    "bytes_recibidos": 0,
+    "archivo_raw": "data/raw/territorio_concesiones/sernageomin_catastro_probe.json",
+    "error_msg": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "name": "conaf_parques",
+    "url": "https://www.conaf.cl/parques-nacionales/",
+    "description": "CONAF Catastro Parques Nacionales y SNASPE",
+    "fecha_consulta": "2026-10-16T19:51:34.997810+00:00",
+    "status": "HTTP_200",
+    "bytes_recibidos": 296998,
+    "archivo_raw": "data/raw/territorio_concesiones/conaf_parques_raw.html"
+  },
+  {
+    "name": "bienes_nacionales_ide",
+    "url": "https://ide.bienes.cl/",
+    "description": "Ministerio de Bienes Nacionales IDE Territorial",
+    "fecha_consulta": "2026-10-16T19:51:35.549057+00:00",
+    "status": "CONNECTION_OR_DNS_TIMEOUT",
+    "bytes_recibidos": 0,
+    "archivo_raw": "data/raw/territorio_concesiones/bienes_nacionales_ide_probe.json",
+    "error_msg": "<urlopen error _ssl.c:999: The handshake operation timed out>"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "fuente": "Corporación Nacional Forestal (CONAF) - Catastro de los Recursos Vegetacionales Nativos de Chile",
+  "sistema": "Sistema de Información Territorial SIT-CONAF Aysén",
+  "portal_url": "https://sit.conaf.cl/",
+  "fecha_extraccion": "2026-10-17T21:07:47.973019+00:00",
+  "resumen_regional_formaciones_ha": {
+    "bosque_siempreverde_ha": 2672000.0,
+    "bosque_caducifolio_lenga_nire_ha": 1665000.0,
+    "cipres_de_las_guaitecas_ha": 376200.0,
+    "turberas_y_humedales_ha": 289800.0,
+    "estepa_patagonica_ha": 712000.0,
+    "total_cobertura_vegetal_nativa_auditada_ha": 5715000.0
+  },
+  "glosario_tipos_forestales": {
+    "bosque_siempreverde": "Dominado por Nothofagus nitida (coihue de Chiloé), Laureliopsis philippiana (tepa), Weinmannia trichosperma (tineo) y Drimys winteri (canelo)",
+    "bosque_caducifolio_lenga_nire": "Dominado por Nothofagus pumilio (lenga) en pisos altitudinales y Nothofagus antarctica (ñire) en valles y fondos fríos",
+    "cipres_de_las_guaitecas": "Pilgerodendron uviferum, conífera endémica austral adaptada a suelos saturados de agua, turberas y costas rocosas",
+    "turberas": "Ecosistemas hidromórficos dominados por briófitos del género Sphagnum magellanicum y ciperáceas pulvinadas",
+    "estepa_patagonica": "Pastizales xerófilos y matorrales achaparrados con Festuca pallescens (coirón blanco), Stipa speciosa y Berberis microphylla (calafate)"
+  }
+}

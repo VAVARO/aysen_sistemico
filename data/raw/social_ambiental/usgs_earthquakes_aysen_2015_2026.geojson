@@ -1,0 +1,901 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1792175799000,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minlatitude=-49.3&maxlatitude=-43.6&minlongitude=-75.8&maxlongitude=-71.0&starttime=2015-01-01&minmagnitude=3.5",
+    "title": "USGS Earthquakes",
+    "status": 200,
+    "api": "2.8.1",
+    "count": 22
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.5,
+        "place": "43 km WSW of Cochrane, Chile",
+        "time": 1775867609665,
+        "updated": 1782318881040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000srue",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000srue&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 312,
+        "net": "us",
+        "code": "6000srue",
+        "ids": ",us6000srue,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 25,
+        "dmin": 2.015,
+        "rms": 0.96,
+        "gap": 144,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.5 - 43 km WSW of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0497,
+          -47.4729,
+          10
+        ]
+      },
+      "id": "us6000srue"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.5,
+        "place": "230 km WSW of Puerto Chacabuco, Chile",
+        "time": 1752979392565,
+        "updated": 1759516974040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000qdx9",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000qdx9&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 312,
+        "net": "us",
+        "code": "7000qdx9",
+        "ids": ",us7000qdx9,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 29,
+        "dmin": 1.809,
+        "rms": 0.89,
+        "gap": 141,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.5 - 230 km WSW of Puerto Chacabuco, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5636,
+          -46.2484,
+          10
+        ]
+      },
+      "id": "us7000qdx9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "200 km WSW of Puerto Chacabuco, Chile",
+        "time": 1743847963966,
+        "updated": 1749476321040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000q482",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000q482&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "6000q482",
+        "ids": ",us6000q482,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 18,
+        "dmin": 1.528,
+        "rms": 0.47,
+        "gap": 249,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.3 - 200 km WSW of Puerto Chacabuco, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2496,
+          -46.0708,
+          10
+        ]
+      },
+      "id": "us6000q482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.2,
+        "place": "144 km WNW of Puerto Chacabuco, Chile",
+        "time": 1737081161382,
+        "updated": 1743286361040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000pkk0",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000pkk0&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 271,
+        "net": "us",
+        "code": "6000pkk0",
+        "ids": ",us6000pkk0,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 13,
+        "dmin": 0.735,
+        "rms": 0.87,
+        "gap": 211,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.2 - 144 km WNW of Puerto Chacabuco, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.5206,
+          -44.9791,
+          35
+        ]
+      },
+      "id": "us6000pkk0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "225 km WNW of Cochrane, Chile",
+        "time": 1732817695741,
+        "updated": 1738457589040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000nut1",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000nut1&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "7000nut1",
+        "ids": ",us7000nut1,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 38,
+        "dmin": 1.993,
+        "rms": 0.51,
+        "gap": 141,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 4.3 - 225 km WNW of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.3959,
+          -46.6474,
+          10
+        ]
+      },
+      "id": "us7000nut1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.3,
+        "place": "239 km WNW of Cochrane, Chile",
+        "time": 1731065880376,
+        "updated": 1737748283040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000nql2",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000nql2&format=geojson",
+        "felt": 2,
+        "cdi": 3.4,
+        "mmi": 7.515,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 611,
+        "net": "us",
+        "code": "7000nql2",
+        "ids": ",us7000nql2,usauto7000nql2,pt24313001,at00smmqzh,",
+        "sources": ",us,usauto,pt,at,",
+        "types": ",dyfi,ground-failure,internal-moment-tensor,internal-origin,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 85,
+        "dmin": 2.139,
+        "rms": 0.71,
+        "gap": 52,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.3 - 239 km WNW of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6402,
+          -46.7807,
+          10
+        ]
+      },
+      "id": "us7000nql2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "81 km W of Puerto Cisnes, Chile",
+        "time": 1724689309528,
+        "updated": 1731187095040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000nmw5",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000nmw5&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 385,
+        "net": "us",
+        "code": "6000nmw5",
+        "ids": ",usauto6000nmw5,us6000nmw5,",
+        "sources": ",usauto,us,",
+        "types": ",internal-moment-tensor,moment-tensor,origin,phase-data,",
+        "nst": 106,
+        "dmin": 0.314,
+        "rms": 0.77,
+        "gap": 117,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.0 - 81 km W of Puerto Cisnes, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7141,
+          -44.8712,
+          58.483
+        ]
+      },
+      "id": "us6000nmw5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.2,
+        "place": "139 km W of Puerto Chacabuco, Chile",
+        "time": 1698968582195,
+        "updated": 1704866504040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000l8gp",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000l8gp&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 271,
+        "net": "us",
+        "code": "7000l8gp",
+        "ids": ",us7000l8gp,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 22,
+        "dmin": 0.915,
+        "rms": 0.39,
+        "gap": 158,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.2 - 139 km W of Puerto Chacabuco, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.5845,
+          -45.6661,
+          27
+        ]
+      },
+      "id": "us7000l8gp"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "68 km WNW of La Junta, Chile",
+        "time": 1693265101412,
+        "updated": 1699133743040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000krpr",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000krpr&format=geojson",
+        "felt": 1,
+        "cdi": 2,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 385,
+        "net": "us",
+        "code": "7000krpr",
+        "ids": ",us7000krpr,",
+        "sources": ",us,",
+        "types": ",dyfi,moment-tensor,origin,phase-data,",
+        "nst": 136,
+        "dmin": 1.17,
+        "rms": 0.69,
+        "gap": 78,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 5.0 - 68 km WNW of La Junta, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2189,
+          -43.8022,
+          77.393
+        ]
+      },
+      "id": "us7000krpr"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.1,
+        "place": "273 km WSW of Cochrane, Chile",
+        "time": 1690776978434,
+        "updated": 1696714737040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000kxm2",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000kxm2&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 259,
+        "net": "us",
+        "code": "6000kxm2",
+        "ids": ",us6000kxm2,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 13,
+        "dmin": 2.447,
+        "rms": 0.67,
+        "gap": 193,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.1 - 273 km WSW of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6891,
+          -48.5334,
+          10
+        ]
+      },
+      "id": "us6000kxm2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "132 km WNW of Cochrane, Chile",
+        "time": 1671242849000,
+        "updated": 1677625580040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000j9wx",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000j9wx&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "6000j9wx",
+        "ids": ",us6000j9wx,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 21,
+        "dmin": 1.177,
+        "rms": 0.65,
+        "gap": 106,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.3 - 132 km WNW of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.2728,
+          -46.9963,
+          11.055
+        ]
+      },
+      "id": "us6000j9wx"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.2,
+        "place": "51 km S of Puerto Chacabuco, Chile",
+        "time": 1614562485400,
+        "updated": 1620945516040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000deg8",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000deg8&format=geojson",
+        "felt": 4,
+        "cdi": 2,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 272,
+        "net": "us",
+        "code": "7000deg8",
+        "ids": ",us7000deg8,",
+        "sources": ",us,",
+        "types": ",dyfi,moment-tensor,origin,phase-data,",
+        "nst": null,
+        "dmin": 0.616,
+        "rms": 0.98,
+        "gap": 123,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 4.2 - 51 km S of Puerto Chacabuco, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8011,
+          -45.9319,
+          4.48
+        ]
+      },
+      "id": "us7000deg8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.4,
+        "place": "231 km W of Cochrane, Chile",
+        "time": 1586100664145,
+        "updated": 1592700905040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70008pbi",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us70008pbi&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 298,
+        "net": "us",
+        "code": "70008pbi",
+        "ids": ",us70008pbi,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": null,
+        "dmin": 2.067,
+        "rms": 1.06,
+        "gap": 74,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.4 - 231 km W of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5856,
+          -47.6301,
+          13.63
+        ]
+      },
+      "id": "us70008pbi"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.6,
+        "place": "221 km W of Cochrane, Chile",
+        "time": 1559305342001,
+        "updated": 1566681460040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70003tn8",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us70003tn8&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 326,
+        "net": "us",
+        "code": "70003tn8",
+        "ids": ",us70003tn8,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": null,
+        "dmin": 1.979,
+        "rms": 0.8,
+        "gap": 141,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 4.6 - 221 km W of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.4752,
+          -47.5312,
+          10
+        ]
+      },
+      "id": "us70003tn8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4,
+        "place": "179 km WSW of Quellón, Chile",
+        "time": 1537567889830,
+        "updated": 1543333922040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us2000higp",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us2000higp&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 246,
+        "net": "us",
+        "code": "2000higp",
+        "ids": ",us2000higp,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": null,
+        "dmin": 1.583,
+        "rms": 0.94,
+        "gap": 173,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.0 - 179 km WSW of Quellón, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6548,
+          -43.7515,
+          10
+        ]
+      },
+      "id": "us2000higp"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "182 km WSW of Quellón, Chile",
+        "time": 1534679831890,
+        "updated": 1540657327040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us1000gd8a",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us1000gd8a&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "1000gd8a",
+        "ids": ",us1000gd8a,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": null,
+        "dmin": 1.614,
+        "rms": 0.94,
+        "gap": 220,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.3 - 182 km WSW of Quellón, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6094,
+          -43.8911,
+          10
+        ]
+      },
+      "id": "us1000gd8a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.1,
+        "place": "221 km W of Puerto Chacabuco, Chile",
+        "time": 1495870721020,
+        "updated": 1651602624191,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10008vpd",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us10008vpd&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 400,
+        "net": "us",
+        "code": "10008vpd",
+        "ids": ",us10008vpd,iscgem610654892,",
+        "sources": ",us,iscgem,",
+        "types": ",moment-tensor,origin,phase-data,",
+        "nst": null,
+        "dmin": 1.849,
+        "rms": 1.14,
+        "gap": 136,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 5.1 - 221 km W of Puerto Chacabuco, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6269,
+          -45.7378,
+          10
+        ]
+      },
+      "id": "us10008vpd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.6,
+        "place": "161 km WSW of Quellón, Chile",
+        "time": 1482233396860,
+        "updated": 1489631490040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10007rfa",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us10007rfa&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 326,
+        "net": "us",
+        "code": "10007rfa",
+        "ids": ",us10007rfa,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": null,
+        "dmin": 1.418,
+        "rms": 0.66,
+        "gap": 193,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.6 - 161 km WSW of Quellón, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.4722,
+          -43.6393,
+          21.25
+        ]
+      },
+      "id": "us10007rfa"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.7,
+        "place": "238 km W of Cochrane, Chile",
+        "time": 1481993491270,
+        "updated": 1489631485040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us200081yt",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us200081yt&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 340,
+        "net": "us",
+        "code": "200081yt",
+        "ids": ",us200081yt,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": null,
+        "dmin": 3.026,
+        "rms": 1.33,
+        "gap": 191,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.7 - 238 km W of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.7155,
+          -47.2575,
+          10
+        ]
+      },
+      "id": "us200081yt"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.2,
+        "place": "207 km W of Cochrane, Chile",
+        "time": 1480923199170,
+        "updated": 1488524763040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10007exm",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us10007exm&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 416,
+        "net": "us",
+        "code": "10007exm",
+        "ids": ",us10007exm,",
+        "sources": ",us,",
+        "types": ",moment-tensor,origin,phase-data,",
+        "nst": null,
+        "dmin": 2.737,
+        "rms": 1,
+        "gap": 94,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 5.2 - 207 km W of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.3081,
+          -47.1545,
+          35
+        ]
+      },
+      "id": "us10007exm"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "34 km NW of Puerto Cisnes, Chile",
+        "time": 1426274166670,
+        "updated": 1658973829674,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10001m7j",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us10001m7j&format=geojson",
+        "felt": 4,
+        "cdi": 3.1,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 386,
+        "net": "us",
+        "code": "10001m7j",
+        "ids": ",us10001m7j,iscgem606829182,",
+        "sources": ",us,iscgem,",
+        "types": ",cap,dyfi,impact-text,origin,phase-data,",
+        "nst": null,
+        "dmin": 1.509,
+        "rms": 0.79,
+        "gap": 96,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 5.0 - 34 km NW of Puerto Cisnes, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0345,
+          -44.5532,
+          10.76
+        ]
+      },
+      "id": "us10001m7j"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.9,
+        "place": "189 km WSW of Cochrane, Chile",
+        "time": 1424161510900,
+        "updated": 1431386420040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usb000tpz6",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usb000tpz6&format=geojson",
+        "felt": 0,
+        "cdi": 1,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 369,
+        "net": "us",
+        "code": "b000tpz6",
+        "ids": ",usb000tpz6,",
+        "sources": ",us,",
+        "types": ",dyfi,origin,phase-data,",
+        "nst": null,
+        "dmin": 3.68,
+        "rms": 0.99,
+        "gap": 151,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.9 - 189 km WSW of Cochrane, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.8571,
+          -47.9781,
+          14.46
+        ]
+      },
+      "id": "usb000tpz6"
+    }
+  ],
+  "bbox": [
+    -75.7155,
+    -48.5334,
+    4.48,
+    -72.8011,
+    -43.6393,
+    77.393
+  ]
+}

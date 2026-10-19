@@ -1,0 +1,279 @@
+{
+  "fuente": "Instituto Nacional de Estadísticas (INE) / SERNATUR DataTurismo",
+  "url_origen": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+  "frecuencia_actualizacion": "Mensual (~30 días de rezago)",
+  "fecha_extraccion": "2026-10-16T22:16:21.490094+00:00",
+  "descripcion": "Estadísticas de demanda hotelera, pernoctaciones, ocupación estival vs invernal y estacionalidad mensual",
+  "series_mensuales_regionales": [
+    {
+      "mes_numero": 1,
+      "nombre_mes": "Enero",
+      "llegadas_turistas": 44500,
+      "pernoctaciones_emat": 106800,
+      "tasa_ocupacion_pct": 79.5,
+      "adr_tarifa_promedio_clp": 88500,
+      "revpar_ingreso_habitacion_clp": 70357
+    },
+    {
+      "mes_numero": 2,
+      "nombre_mes": "Febrero",
+      "llegadas_turistas": 48200,
+      "pernoctaciones_emat": 118500,
+      "tasa_ocupacion_pct": 84.2,
+      "adr_tarifa_promedio_clp": 92000,
+      "revpar_ingreso_habitacion_clp": 77464
+    },
+    {
+      "mes_numero": 3,
+      "nombre_mes": "Marzo",
+      "llegadas_turistas": 27400,
+      "pernoctaciones_emat": 61200,
+      "tasa_ocupacion_pct": 52.0,
+      "adr_tarifa_promedio_clp": 76000,
+      "revpar_ingreso_habitacion_clp": 39520
+    },
+    {
+      "mes_numero": 4,
+      "nombre_mes": "Abril",
+      "llegadas_turistas": 15800,
+      "pernoctaciones_emat": 34500,
+      "tasa_ocupacion_pct": 34.5,
+      "adr_tarifa_promedio_clp": 68000,
+      "revpar_ingreso_habitacion_clp": 23460
+    },
+    {
+      "mes_numero": 5,
+      "nombre_mes": "Mayo",
+      "llegadas_turistas": 11200,
+      "pernoctaciones_emat": 23800,
+      "tasa_ocupacion_pct": 25.2,
+      "adr_tarifa_promedio_clp": 62000,
+      "revpar_ingreso_habitacion_clp": 15624
+    },
+    {
+      "mes_numero": 6,
+      "nombre_mes": "Junio",
+      "llegadas_turistas": 9100,
+      "pernoctaciones_emat": 19200,
+      "tasa_ocupacion_pct": 21.0,
+      "adr_tarifa_promedio_clp": 61000,
+      "revpar_ingreso_habitacion_clp": 12810
+    },
+    {
+      "mes_numero": 7,
+      "nombre_mes": "Julio",
+      "llegadas_turistas": 12400,
+      "pernoctaciones_emat": 27600,
+      "tasa_ocupacion_pct": 27.8,
+      "adr_tarifa_promedio_clp": 65000,
+      "revpar_ingreso_habitacion_clp": 18070
+    },
+    {
+      "mes_numero": 8,
+      "nombre_mes": "Agosto",
+      "llegadas_turistas": 10500,
+      "pernoctaciones_emat": 22900,
+      "tasa_ocupacion_pct": 23.4,
+      "adr_tarifa_promedio_clp": 63000,
+      "revpar_ingreso_habitacion_clp": 14742
+    },
+    {
+      "mes_numero": 9,
+      "nombre_mes": "Septiembre",
+      "llegadas_turistas": 14600,
+      "pernoctaciones_emat": 32100,
+      "tasa_ocupacion_pct": 31.6,
+      "adr_tarifa_promedio_clp": 67000,
+      "revpar_ingreso_habitacion_clp": 21172
+    },
+    {
+      "mes_numero": 10,
+      "nombre_mes": "Octubre",
+      "llegadas_turistas": 21200,
+      "pernoctaciones_emat": 47800,
+      "tasa_ocupacion_pct": 42.5,
+      "adr_tarifa_promedio_clp": 72000,
+      "revpar_ingreso_habitacion_clp": 30600
+    },
+    {
+      "mes_numero": 11,
+      "nombre_mes": "Noviembre",
+      "llegadas_turistas": 33800,
+      "pernoctaciones_emat": 78400,
+      "tasa_ocupacion_pct": 62.8,
+      "adr_tarifa_promedio_clp": 81000,
+      "revpar_ingreso_habitacion_clp": 50868
+    },
+    {
+      "mes_numero": 12,
+      "nombre_mes": "Diciembre",
+      "llegadas_turistas": 49200,
+      "pernoctaciones_emat": 117800,
+      "tasa_ocupacion_pct": 76.4,
+      "adr_tarifa_promedio_clp": 86500,
+      "revpar_ingreso_habitacion_clp": 66086
+    }
+  ],
+  "por_destino_comunal": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Coyhaique y Cuenca Río Simpson",
+        "llegadas_turistas_anual": 94200,
+        "pernoctaciones_anuales_emat": 218500,
+        "proporcion_extranjeros_pct": 28.5,
+        "ocupacion_alta_enero_febrero_pct": 78.4,
+        "ocupacion_baja_invierno_pct": 31.2,
+        "estancia_media_dias": 2.8,
+        "gasto_diario_promedio_usd": 115.0,
+        "visitantes_snaspe_conaf_anual": 67300
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Carretera Austral Norte y Valles Andinos",
+        "llegadas_turistas_anual": 4100,
+        "pernoctaciones_anuales_emat": 8800,
+        "proporcion_extranjeros_pct": 18.2,
+        "ocupacion_alta_enero_febrero_pct": 62.0,
+        "ocupacion_baja_invierno_pct": 14.5,
+        "estancia_media_dias": 2.1,
+        "gasto_diario_promedio_usd": 72.0,
+        "visitantes_snaspe_conaf_anual": 1850
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Aysén - Fiordo Chacabuco y Laguna San Rafael",
+        "llegadas_turistas_anual": 38500,
+        "pernoctaciones_anuales_emat": 82000,
+        "proporcion_extranjeros_pct": 32.4,
+        "ocupacion_alta_enero_febrero_pct": 72.8,
+        "ocupacion_baja_invierno_pct": 26.5,
+        "estancia_media_dias": 2.4,
+        "gasto_diario_promedio_usd": 128.0,
+        "visitantes_snaspe_conaf_anual": 16200
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Carretera Austral Norte - Puyuhuapi y Queulat",
+        "llegadas_turistas_anual": 41200,
+        "pernoctaciones_anuales_emat": 93600,
+        "proporcion_extranjeros_pct": 36.8,
+        "ocupacion_alta_enero_febrero_pct": 81.5,
+        "ocupacion_baja_invierno_pct": 22.1,
+        "estancia_media_dias": 2.3,
+        "gasto_diario_promedio_usd": 135.0,
+        "visitantes_snaspe_conaf_anual": 58400
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Archipiélago de las Guaitecas y Golfo Corcovado",
+        "llegadas_turistas_anual": 3200,
+        "pernoctaciones_anuales_emat": 7500,
+        "proporcion_extranjeros_pct": 22.0,
+        "ocupacion_alta_enero_febrero_pct": 64.2,
+        "ocupacion_baja_invierno_pct": 18.0,
+        "estancia_media_dias": 2.5,
+        "gasto_diario_promedio_usd": 95.0,
+        "visitantes_snaspe_conaf_anual": 850
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Cuenca Lago General Carrera / Chelenko Este",
+        "llegadas_turistas_anual": 28500,
+        "pernoctaciones_anuales_emat": 64000,
+        "proporcion_extranjeros_pct": 34.5,
+        "ocupacion_alta_enero_febrero_pct": 79.2,
+        "ocupacion_baja_invierno_pct": 24.8,
+        "estancia_media_dias": 2.4,
+        "gasto_diario_promedio_usd": 105.0,
+        "visitantes_snaspe_conaf_anual": 6900
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Chelenko Oeste - Mármol y Cerro Castillo",
+        "llegadas_turistas_anual": 46800,
+        "pernoctaciones_anuales_emat": 108500,
+        "proporcion_extranjeros_pct": 42.5,
+        "ocupacion_alta_enero_febrero_pct": 86.4,
+        "ocupacion_baja_invierno_pct": 19.5,
+        "estancia_media_dias": 2.6,
+        "gasto_diario_promedio_usd": 130.0,
+        "visitantes_snaspe_conaf_anual": 92200
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Provincia de los Glaciares - Río Baker y Chacabuco",
+        "llegadas_turistas_anual": 24200,
+        "pernoctaciones_anuales_emat": 54800,
+        "proporcion_extranjeros_pct": 38.0,
+        "ocupacion_alta_enero_febrero_pct": 76.5,
+        "ocupacion_baja_invierno_pct": 21.0,
+        "estancia_media_dias": 2.5,
+        "gasto_diario_promedio_usd": 142.0,
+        "visitantes_snaspe_conaf_anual": 17600
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Extremo Sur Carretera Austral - Villa O'Higgins",
+        "llegadas_turistas_anual": 7800,
+        "pernoctaciones_anuales_emat": 18200,
+        "proporcion_extranjeros_pct": 45.2,
+        "ocupacion_alta_enero_febrero_pct": 74.0,
+        "ocupacion_baja_invierno_pct": 11.5,
+        "estancia_media_dias": 2.7,
+        "gasto_diario_promedio_usd": 120.0,
+        "visitantes_snaspe_conaf_anual": 3200
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "demanda_emat": {
+        "destino_emat_sernatur": "Caleta Tortel y Ventisquero Montt",
+        "llegadas_turistas_anual": 15600,
+        "pernoctaciones_anuales_emat": 34200,
+        "proporcion_extranjeros_pct": 39.8,
+        "ocupacion_alta_enero_febrero_pct": 82.0,
+        "ocupacion_baja_invierno_pct": 16.5,
+        "estancia_media_dias": 2.2,
+        "gasto_diario_promedio_usd": 118.0,
+        "visitantes_snaspe_conaf_anual": 15200
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "fuente": "Ministerio del Medio Ambiente de Chile - Clasificación de Especies según Estado de Conservación",
+  "portal_url": "https://clasificacionespecies.mma.gob.cl/",
+  "inventario_url": "https://especies.mma.gob.cl/",
+  "fecha_extraccion": "2026-10-17T21:07:47.971554+00:00",
+  "especies_auditadas": [
+    {
+      "especie": "Hippocamelus bisulcus",
+      "nombre_comun": "Huemul",
+      "categoria_rce": "En Peligro (EN)",
+      "decreto": "D.S. 151/2007 MINSEGPRES",
+      "clasificacion_taxonomica": "Mammalia, Artiodactyla, Cervidae",
+      "endemismo": "Nativo de Chile y Argentina (Patagonia)",
+      "poblacion_global_estimada": "Menos de 2.500 individuos en vida silvestre",
+      "poblacion_aysen_estimada": "1.500 a 2.000 individuos (60-70% de la población mundial)",
+      "fuente_oficial": "MMA / CONAF Plan Nacional de Conservación del Huemul"
+    },
+    {
+      "especie": "Pudu puda",
+      "nombre_comun": "Pudú",
+      "categoria_rce": "Vulnerable (VU)",
+      "decreto": "D.S. 151/2007 MINSEGPRES",
+      "clasificacion_taxonomica": "Mammalia, Artiodactyla, Cervidae",
+      "endemismo": "Endémico de los bosques templados del cono sur de Sudamérica",
+      "poblacion_aysen_estimada": "Poblaciones continuas en bosques densos de Cisnes, Aysén y Lago Verde",
+      "fuente_oficial": "MMA Inventario Nacional de Especies"
+    },
+    {
+      "especie": "Lontra provocax",
+      "nombre_comun": "Huillín",
+      "categoria_rce": "En Peligro (EN)",
+      "decreto": "D.S. 151/2007 MINSEGPRES",
+      "clasificacion_taxonomica": "Mammalia, Carnivora, Mustelidae",
+      "endemismo": "Nativo de Chile y Argentina",
+      "poblacion_aysen_estimada": "Población crítica en cuenca del Río Baker, Río Cochrane y canales de fiordos",
+      "fuente_oficial": "MMA / SAG / CODEFF Monitoreo Huillín Patagonia"
+    },
+    {
+      "especie": "Lontra felina",
+      "nombre_comun": "Chungungo",
+      "categoria_rce": "En Peligro (EN)",
+      "decreto": "D.S. 151/2007 MINSEGPRES",
+      "clasificacion_taxonomica": "Mammalia, Carnivora, Mustelidae",
+      "endemismo": "Litoral del Pacífico sudamericano",
+      "poblacion_aysen_estimada": "Litoral rocoso expuesto de Guaitecas, Península de Taitao y Golfo de Penas",
+      "fuente_oficial": "MMA / IFOP Catastro de Mustélidos Marinos"
+    },
+    {
+      "especie": "Balaenoptera borealis",
+      "nombre_comun": "Ballena Sei",
+      "categoria_rce": "En Peligro (EN)",
+      "decreto": "D.S. 23/2009 MMA",
+      "clasificacion_taxonomica": "Mammalia, Cetacea, Balaenopteridae",
+      "endemismo": "Cosmopolita marina, concentración crítica en fiordos australes",
+      "poblacion_aysen_estimada": "Área de alimentación pelágica en Golfo de Penas y Archipiélago de los Chonos",
+      "fuente_oficial": "SERNAPESCA / CIEP / Centro Ballena Azul"
+    },
+    {
+      "especie": "Balaenoptera musculus",
+      "nombre_comun": "Ballena Azul",
+      "categoria_rce": "En Peligro (EN)",
+      "decreto": "D.S. 23/2009 MMA",
+      "clasificacion_taxonomica": "Mammalia, Cetacea, Balaenopteridae",
+      "endemismo": "Subpoblación del Pacífico Suroriental (Chile)",
+      "poblacion_aysen_estimada": "600 a 800 ejemplares que utilizan el Golfo Corcovado y Moraleda en verano",
+      "fuente_oficial": "Centro Ballena Azul (CBA) / UACh / MERI Foundation"
+    },
+    {
+      "especie": "Cephalorhynchus eutropia",
+      "nombre_comun": "Delfín Chileno",
+      "categoria_rce": "Casi Amenazado (NT)",
+      "decreto": "D.S. 19/2012 MMA",
+      "clasificacion_taxonomica": "Mammalia, Cetacea, Delphinidae",
+      "endemismo": "Endémico exclusivo de las costas de Chile",
+      "poblacion_aysen_estimada": "Poblaciones locales residentes en fiordos someros de Aysén, Cisnes y Tortel",
+      "fuente_oficial": "IFOP / Yaqu Pacha / MMA"
+    },
+    {
+      "especie": "Puma concolor puma",
+      "nombre_comun": "Puma patagónico",
+      "categoria_rce": "Casi Amenazado (NT)",
+      "decreto": "D.S. 33/2011 MMA (Vigente en Región de Aysén)",
+      "clasificacion_taxonomica": "Mammalia, Carnivora, Felidae",
+      "endemismo": "Nativo de las Américas",
+      "poblacion_aysen_estimada": "Densidad moderada-alta en estepa y precordillera (Cochrane, Chile Chico, Coyhaique)",
+      "fuente_oficial": "SAG / CONAF / Rewilding Chile"
+    },
+    {
+      "especie": "Lama guanicoe",
+      "nombre_comun": "Guanaco austral",
+      "categoria_rce": "Vulnerable (VU)",
+      "decreto": "D.S. 42/2011 MMA (Categoría regional para Aysén)",
+      "clasificacion_taxonomica": "Mammalia, Artiodactyla, Camelidae",
+      "endemismo": "Nativo de Sudamérica",
+      "poblacion_aysen_estimada": "Aproximadamente 3.200 a 3.500 individuos en Valle Chacabuco y Meseta Jeinimeni",
+      "fuente_oficial": "CONAF Parque Nacional Patagonia / Rewilding Chile"
+    },
+    {
+      "especie": "Vultur gryphus",
+      "nombre_comun": "Cóndor andino",
+      "categoria_rce": "Vulnerable (VU)",
+      "decreto": "D.S. 16/2020 MMA",
+      "clasificacion_taxonomica": "Aves, Cathartiformes, Cathartidae",
+      "endemismo": "Cordillera de los Andes",
+      "poblacion_aysen_estimada": "Red de más de 40 condoreras activas en farellones rocosos de Aysén",
+      "fuente_oficial": "SAG / AvesChile / CONAF"
+    },
+    {
+      "especie": "Campephilus magellanicus",
+      "nombre_comun": "Carpintero negro",
+      "categoria_rce": "Casi Amenazado (NT)",
+      "decreto": "D.S. 41/2011 MMA (Categoría para Región de Aysén)",
+      "clasificacion_taxonomica": "Aves, Piciformes, Picidae",
+      "endemismo": "Endémico de los bosques templados australes de Chile y Argentina",
+      "poblacion_aysen_estimada": "Ampliamente distribuido en bosques añosos de coihue y lenga de Aysén",
+      "fuente_oficial": "CONAF / AvesChile"
+    },
+    {
+      "especie": "Podiceps gallardoi",
+      "nombre_comun": "Macá tobiano",
+      "categoria_rce": "En Peligro Crítico (CR)",
+      "decreto": "D.S. 51/2021 MMA",
+      "clasificacion_taxonomica": "Aves, Podicipediformes, Podicipedidae",
+      "endemismo": "Endémico estricto de mesetas basálticas patagónicas australes",
+      "poblacion_global_estimada": "Menos de 800 individuos maduros en el mundo",
+      "poblacion_aysen_estimada": "Presencia reproductiva estival en lagunas volcánicas aisladas de Chile Chico y Cochrane",
+      "fuente_oficial": "MMA / AvesChile / Proyecto Macá Tobiano Binacional"
+    }
+  ]
+}

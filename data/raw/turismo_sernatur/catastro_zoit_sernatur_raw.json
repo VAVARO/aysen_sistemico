@@ -1,0 +1,39 @@
+{
+  "region": "Aysén (CL-XI)",
+  "fuente": "SERNATUR / Subturismo / CONAF / INE EMAT",
+  "fecha": "2026-10-16",
+  "zoit_declaradas": [
+    {
+      "nombre": "ZOIT Chelenko",
+      "decreto": "Res. Exenta 143/2019",
+      "comunas": [
+        "Chile Chico",
+        "Río Ibáñez"
+      ]
+    },
+    {
+      "nombre": "ZOIT Aysén Patagonia Queulat",
+      "decreto": "Res. Exenta 089/2020",
+      "comunas": [
+        "Cisnes",
+        "Aysén"
+      ]
+    },
+    {
+      "nombre": "ZOIT Provincia de los Glaciares",
+      "decreto": "Res. Exenta 210/2021",
+      "comunas": [
+        "Cochrane",
+        "O'Higgins",
+        "Tortel"
+      ]
+    },
+    {
+      "nombre": "ZOIT Destino Coyhaique / Valle Simpson",
+      "decreto": "En actualización plan estratégico",
+      "comunas": [
+        "Coyhaique"
+      ]
+    }
+  ]
+}

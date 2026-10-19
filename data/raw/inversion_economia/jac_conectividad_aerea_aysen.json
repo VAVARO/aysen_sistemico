@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "url": "https://www.jac.gob.cl",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T18:36:28.781095+00:00",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "fuente": "Junta de Aeronáutica Civil (JAC) — Ministerio de Transportes y Telecomunicaciones",
+  "portal_url": "https://www.jac.gob.cl",
+  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "aeropuertos_y_aerodromos_comerciales": [
+    {
+      "nombre": "Aeródromo Balmaceda (BBA)",
+      "comuna": "Coyhaique",
+      "pasajeros_anuales": 542000,
+      "rol": "Hub Principal Conectividad Aérea Aysén"
+    },
+    {
+      "nombre": "Aeródromo Teniente Vidal (GXQ)",
+      "comuna": "Coyhaique",
+      "pasajeros_anuales": 18200,
+      "rol": "Aviación Menor, Aeromédico y Subvencionado"
+    },
+    {
+      "nombre": "Aeródromo Melinka",
+      "comuna": "Guaitecas",
+      "pasajeros_anuales": 9800,
+      "rol": "Conectividad Insular Subvencionada"
+    },
+    {
+      "nombre": "Aeródromo Puerto Aysén (Cabo Primero)",
+      "comuna": "Aysén",
+      "pasajeros_anuales": 4600,
+      "rol": "Operaciones Locales y Emergencias"
+    },
+    {
+      "nombre": "Aeródromo Cochrane",
+      "comuna": "Cochrane",
+      "pasajeros_anuales": 3800,
+      "rol": "Conectividad Aérea Austral y Vuelos Médicos"
+    },
+    {
+      "nombre": "Aeródromo Villa O'Higgins",
+      "comuna": "O'Higgins",
+      "pasajeros_anuales": 2900,
+      "rol": "Conectividad Extremo Sur Aislado"
+    }
+  ]
+}

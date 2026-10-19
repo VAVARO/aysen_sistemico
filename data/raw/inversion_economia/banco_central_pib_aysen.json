@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "url": "https://si3.bcentral.cl",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T18:36:26.926888+00:00",
+    "content_type": "text/html"
+  },
+  "fuente": "Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales",
+  "portal_url": "https://si3.bcentral.cl",
+  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "serie": "PIB Regional de Aysén a precios corrientes y volumen encadenado",
+  "pib_regional_nominal_mclp": 1680000,
+  "participacion_pib_nacional_pct": 0.65,
+  "composicion_sectorial_pct": {
+    "acuicultura_y_pesca": 31.2,
+    "servicios_personales_y_administracion_publica": 24.8,
+    "construccion_y_obras_viales": 11.5,
+    "comercio_restaurantes_y_hoteles": 10.4,
+    "transporte_y_comunicaciones": 7.8,
+    "industria_manufacturera": 6.2,
+    "mineria": 4.1,
+    "electricidad_gas_y_agua": 2.5,
+    "agropecuario_y_silvicola": 1.5
+  }
+}

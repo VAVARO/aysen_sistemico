@@ -1,0 +1,6 @@
+{
+  "endpoint": "https://ide.bienes.cl/",
+  "status_http": "FAILED",
+  "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+  "timestamp": "2026-10-16T19:51:35.549057+00:00"
+}

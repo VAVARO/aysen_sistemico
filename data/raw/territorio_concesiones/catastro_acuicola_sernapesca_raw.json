@@ -1,0 +1,79 @@
+{
+  "fuente": "SUBPESCA / SERNAPESCA - Catastro Concesiones de Acuicultura y Agrupaciones ACS Aysén",
+  "fecha_corte": "2024-12-31",
+  "concesiones_totales_region_aysen": 745,
+  "centros_activos_ciclo_productivo": 245,
+  "distribucion_comunal": {
+    "Aysén": {
+      "ine": "11201",
+      "concesiones": 412,
+      "centros_activos": 135,
+      "barrios_acs": [
+        "ACS-21A",
+        "ACS-21B",
+        "ACS-22A",
+        "ACS-22B",
+        "ACS-22C",
+        "ACS-24",
+        "ACS-25",
+        "ACS-26"
+      ],
+      "caletas": [
+        "Puerto Aguirre",
+        "Caleta Andrade",
+        "Estero Copa",
+        "Puerto Chacabuco"
+      ],
+      "desembarque_artesanal_ton": 4850
+    },
+    "Cisnes": {
+      "ine": "11202",
+      "concesiones": 218,
+      "centros_activos": 78,
+      "barrios_acs": [
+        "ACS-18A",
+        "ACS-18B",
+        "ACS-18C",
+        "ACS-19A",
+        "ACS-19B",
+        "ACS-20"
+      ],
+      "caletas": [
+        "Puerto Cisnes",
+        "Puerto Gala",
+        "Puerto Gaviota",
+        "Puerto Raúl Marín Balmaceda",
+        "Puyuhuapi"
+      ],
+      "desembarque_artesanal_ton": 3200
+    },
+    "Guaitecas": {
+      "ine": "11203",
+      "concesiones": 98,
+      "centros_activos": 32,
+      "barrios_acs": [
+        "ACS-17",
+        "ACS-33",
+        "ACS-34"
+      ],
+      "caletas": [
+        "Melinka",
+        "Repollal Bajo",
+        "Repollal Alto"
+      ],
+      "desembarque_artesanal_ton": 5650
+    },
+    "Tortel": {
+      "ine": "11303",
+      "concesiones": 17,
+      "centros_activos": 0,
+      "barrios_acs": [
+        "ACS-35"
+      ],
+      "caletas": [
+        "Caleta Tortel"
+      ],
+      "desembarque_artesanal_ton": 120
+    }
+  }
+}

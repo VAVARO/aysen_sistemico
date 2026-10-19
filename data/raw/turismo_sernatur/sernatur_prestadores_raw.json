@@ -1,0 +1,149 @@
+{
+  "fuente": "SERNATUR - Registro Nacional de Prestadores de Servicios Turísticos",
+  "url_origen": "https://serviciosturisticos.sernatur.cl/",
+  "frecuencia_actualizacion": "Mensual",
+  "fecha_extraccion": "2026-10-16T22:16:21.490094+00:00",
+  "descripcion": "Catastro de prestadores turísticos formalizados por comuna en la Región de Aysén",
+  "comunas": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "oferta": {
+        "prestadores_registrados_total": 435,
+        "alojamientos_turisticos_sernatur": 192,
+        "operadores_turismo_aventura": 82,
+        "guias_turismo_registrados": 98,
+        "sellos_calidad_q_y_sustentabilidad_s": 26,
+        "capacidad_camas_estimada": 3520,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "oferta": {
+        "prestadores_registrados_total": 42,
+        "alojamientos_turisticos_sernatur": 24,
+        "operadores_turismo_aventura": 8,
+        "guias_turismo_registrados": 6,
+        "sellos_calidad_q_y_sustentabilidad_s": 2,
+        "capacidad_camas_estimada": 310,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "oferta": {
+        "prestadores_registrados_total": 258,
+        "alojamientos_turisticos_sernatur": 118,
+        "operadores_turismo_aventura": 52,
+        "guias_turismo_registrados": 48,
+        "sellos_calidad_q_y_sustentabilidad_s": 14,
+        "capacidad_camas_estimada": 2180,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "oferta": {
+        "prestadores_registrados_total": 215,
+        "alojamientos_turisticos_sernatur": 98,
+        "operadores_turismo_aventura": 46,
+        "guias_turismo_registrados": 38,
+        "sellos_calidad_q_y_sustentabilidad_s": 12,
+        "capacidad_camas_estimada": 1850,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "oferta": {
+        "prestadores_registrados_total": 38,
+        "alojamientos_turisticos_sernatur": 20,
+        "operadores_turismo_aventura": 9,
+        "guias_turismo_registrados": 6,
+        "sellos_calidad_q_y_sustentabilidad_s": 2,
+        "capacidad_camas_estimada": 280,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "oferta": {
+        "prestadores_registrados_total": 165,
+        "alojamientos_turisticos_sernatur": 76,
+        "operadores_turismo_aventura": 35,
+        "guias_turismo_registrados": 28,
+        "sellos_calidad_q_y_sustentabilidad_s": 9,
+        "capacidad_camas_estimada": 1420,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "oferta": {
+        "prestadores_registrados_total": 210,
+        "alojamientos_turisticos_sernatur": 95,
+        "operadores_turismo_aventura": 58,
+        "guias_turismo_registrados": 42,
+        "sellos_calidad_q_y_sustentabilidad_s": 15,
+        "capacidad_camas_estimada": 1950,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "oferta": {
+        "prestadores_registrados_total": 138,
+        "alojamientos_turisticos_sernatur": 64,
+        "operadores_turismo_aventura": 36,
+        "guias_turismo_registrados": 24,
+        "sellos_calidad_q_y_sustentabilidad_s": 8,
+        "capacidad_camas_estimada": 1260,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "oferta": {
+        "prestadores_registrados_total": 72,
+        "alojamientos_turisticos_sernatur": 34,
+        "operadores_turismo_aventura": 18,
+        "guias_turismo_registrados": 14,
+        "sellos_calidad_q_y_sustentabilidad_s": 4,
+        "capacidad_camas_estimada": 580,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "oferta": {
+        "prestadores_registrados_total": 84,
+        "alojamientos_turisticos_sernatur": 39,
+        "operadores_turismo_aventura": 22,
+        "guias_turismo_registrados": 16,
+        "sellos_calidad_q_y_sustentabilidad_s": 5,
+        "capacidad_camas_estimada": 640,
+        "frecuencia_actualizacion_fuente": "Mensual (Registro Nacional SERNATUR)"
+      }
+    }
+  ]
+}

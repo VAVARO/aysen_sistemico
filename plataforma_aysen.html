@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aysén · Plataforma de Datos y Exploración Sistémica (10 Comunas · 8 Bases)</title>
+    
+    <!-- Google Fonts: Newsreader, Space Grotesk, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet GIS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Plataforma Aysén Stylesheet -->
+    <link rel="stylesheet" href="js/plataforma_aysen.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- ==============================================================================
+             1. HEADER SUPERIOR FIJO (Marca + Tabs + Buscador 0ms + Asistente)
+             ============================================================================== -->
+        <header class="app-header">
+            <div class="brand-section">
+                <span class="brand-badge">Aysén 2030-2035</span>
+                <div>
+                    <h1 class="brand-title">Plataforma Territorial y Sistémica</h1>
+                    <div class="brand-subtitle">10 Comunas · 8 Bases Conectadas · Cero Relaciones Forzadas</div>
+                </div>
+            </div>
+
+            <!-- Navegación por las 4 Vistas Principales -->
+            <nav class="nav-tabs">
+                <button type="button" class="tab-btn active" id="tabBtnVariables" data-tab="variables">
+                    <span>1. Hacer Interactuar Variables</span>
+                    <span class="tab-badge">>35</span>
+                </button>
+                <button type="button" class="tab-btn" id="tabBtnRelational" data-tab="relational">
+                    <span>2. Modelo Relacional (Power BI)</span>
+                    <span class="tab-badge">8 Tablas</span>
+                </button>
+                <button type="button" class="tab-btn" id="tabBtnFichas" data-tab="fichas">
+                    <span>3. Fichas y Titulares</span>
+                    <span class="tab-badge">42 RUTs</span>
+                </button>
+                <button type="button" class="tab-btn" id="tabBtnMap" data-tab="map">
+                    <span>4. Mapa por Capas Limpias</span>
+                    <span class="tab-badge">Leaflet</span>
+                </button>
+            </nav>
+
+            <!-- Buscador Universal Instantáneo (0ms + Ctrl+K) -->
+            <div class="header-search-wrap">
+                <div class="search-input-box">
+                    <span class="search-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </span>
+                    <input type="text" id="globalSearchInput" class="search-input" placeholder="Buscar por RUT, holding, comuna, alcalde, SEIA..." autocomplete="off">
+                    <span class="search-shortcut">Ctrl+K</span>
+                </div>
+                <!-- Dropdown de Resultados Instantáneos -->
+                <div id="searchResultsDropdown" class="search-results-dropdown"></div>
+            </div>
+
+            <!-- Acciones Rápidas -->
+            <div class="header-actions">
+                <button type="button" id="btnOpenWizard" class="btn-wizard">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    ¿Por dónde empezar?
+                </button>
+                <a href="mapa_territorial.html" class="btn-outline-subtle" title="Abrir Visor GIS Clásico">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    Visor GIS Clásico
+                </a>
+            </div>
+        </header>
+
+        <!-- ==============================================================================
+             VIEWPORT PRINCIPAL (Las 4 Vistas a Pantalla Completa)
+             ============================================================================== -->
+        <main class="content-viewport">
+            
+            <!-- ==========================================================================
+                 VISTA 1: HACER INTERACTUAR VARIABLES (Por Defecto — Sin Mapa)
+                 ========================================================================== -->
+            <section id="tabSection_variables" class="view-section active">
+                <div class="variables-layout">
+                    <!-- Barra Superior de Controles y Selectores -->
+                    <div class="var-control-bar">
+                        <div class="var-selectors-row">
+                            <div class="var-selector-group">
+                                <label for="selectVarX" class="var-selector-label">Variable Eje X:</label>
+                                <select id="selectVarX" class="var-select"></select>
+                            </div>
+
+                            <div class="var-selector-group">
+                                <label for="selectVarY" class="var-selector-label">Variable Eje Y:</label>
+                                <select id="selectVarY" class="var-select"></select>
+                            </div>
+
+                            <div class="var-selector-group">
+                                <label for="selectVarZ" class="var-selector-label">Tamaño Burbuja:</label>
+                                <select id="selectVarZ" class="var-select"></select>
+                            </div>
+
+                            <div class="var-selector-group">
+                                <label for="selectGroupingMode" class="var-selector-label">Agrupación:</label>
+                                <select id="selectGroupingMode" class="var-select">
+                                    <option value="zona">Color por Zona Geográfica</option>
+                                    <option value="provincia">Color por Provincia</option>
+                                </select>
+                            </div>
+
+                            <div class="view-mode-toggle-group">
+                                <button type="button" class="mode-toggle-btn active" data-chart-mode="scatter">Dispersión / Burbujas</button>
+                                <button type="button" class="mode-toggle-btn" data-chart-mode="bar">Barras Doble Eje</button>
+                                <button type="button" class="mode-toggle-btn" data-chart-mode="seasonal">Series Temporales / EMAT</button>
+                            </div>
+                        </div>
+
+                        <!-- Barra de Cruces Sugeridos de 1 Clic -->
+                        <div class="presets-row">
+                            <span class="presets-label">Cruces Fácticos Sugeridos:</span>
+                            <button type="button" class="preset-pill" data-var-x="dependencia_fcm_pct" data-var-y="inversion_aprobada_acumulada_mmusd" data-var-z="poblacion_censo_2024">
+                                Dependencia FCM (%) vs. Inversión SEIA (MM USD)
+                            </button>
+                            <button type="button" class="preset-pill" data-var-x="concesiones_otorgadas_total" data-var-y="presupuesto_municipal_anual_mclp" data-var-z="poblacion_censo_2024">
+                                Concesiones Acuícolas vs. Presupuesto Municipal
+                            </button>
+                            <button type="button" class="preset-pill" data-var-x="visitantes_snaspe_conaf_anual" data-var-y="prestadores_registrados_total" data-var-z="superficie_snaspe_pct">
+                                Visitantes Parques CONAF vs. Prestadores SERNATUR
+                            </button>
+                            <button type="button" class="preset-pill" data-var-x="pobreza_multidimensional_pct" data-var-y="cobertura_movil_4g_pct" data-var-z="poblacion_censo_2024">
+                                Pobreza CASEN (%) vs. Cobertura 4G (%)
+                            </button>
+                            <button type="button" class="preset-pill" data-var-x="distancia_capital_regional_km" data-var-y="tiempo_traslado_terrestre_coyhaique_horas" data-var-z="poblacion_censo_2024">
+                                Distancia a Coyhaique vs. Tiempo Traslado (hrs)
+                            </button>
+                            <button type="button" class="preset-pill" data-var-x="precio_m3_lena_seca_clp" data-var-y="gasolina_93_clp_litro" data-var-z="poblacion_censo_2024">
+                                Precio Leña ($/m³) vs. Gasolina 93 ($/L)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Arena Dividida: Izquierda Gráfico / Derecha Tabla -->
+                    <div class="arena-split">
+                        <!-- Panel Izquierdo: Gráfico Interactivo Chart.js -->
+                        <div class="arena-panel left-chart-panel">
+                            <div class="chart-header-row">
+                                <div>
+                                    <h2 id="chartMainTitle" class="chart-title-main">Dispersión de Variables Comunales</h2>
+                                    <div class="chart-subtitle-faint">Posición de las 10 comunas de Aysén según las variables seleccionadas</div>
+                                </div>
+                            </div>
+                            <div class="chart-canvas-wrapper">
+                                <canvas id="variablesChartCanvas"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Panel Derecho: Tabla Lado a Lado de las 10 Comunas -->
+                        <div class="arena-panel right-table-panel">
+                            <div class="table-header-row">
+                                <div>
+                                    <h3 class="table-title">Comparativa de las 10 Comunas</h3>
+                                    <div style="font-size: 11px; color: var(--ink-faint);">Valores exactos del cruce actual</div>
+                                </div>
+                                <button type="button" class="btn-export-csv" onclick="downloadCrossCsv()">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Exportar a Excel (CSV)
+                                </button>
+                            </div>
+
+                            <div class="table-scroll-container">
+                                <table class="comunas-cross-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Comuna</th>
+                                            <th>Provincia</th>
+                                            <th id="thVarX" style="text-align: right;">Variable X</th>
+                                            <th id="thVarY" style="text-align: right;">Variable Y</th>
+                                            <th>Zona</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="comunasCrossTableBody"></tbody>
+                                </table>
+                            </div>
+
+                            <!-- Footer con Estadísticas Descriptivas Fácticas -->
+                            <div class="table-summary-box">
+                                <div class="summary-stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Promedio Eje X</span>
+                                        <span id="statMeanX" class="stat-val">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Promedio Eje Y</span>
+                                        <span id="statMeanY" class="stat-val">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Rango Eje X (Mín-Máx)</span>
+                                        <span id="statRangeX" class="stat-val">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Correlación Observada</span>
+                                        <span id="statPearsonR" class="stat-val" style="color: var(--accent-copper);">-</span>
+                                    </div>
+                                </div>
+                                <div class="correlation-disclaimer">
+                                    ⚠️ <strong>Nota metodológica:</strong> Correlación estadística descriptiva entre las 10 comunas; no implica relación causal directa ni dependencia forzada.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================================================
+                 VISTA 2: MODELO RELACIONAL (POWER BI STYLE — Pantalla Completa)
+                 ========================================================================== -->
+            <section id="tabSection_relational" class="view-section">
+                <div class="relational-layout">
+                    <!-- Barra Superior del Modelo -->
+                    <div class="relational-top-bar">
+                        <div class="relational-title-wrap">
+                            <h2 class="relational-title">Modelo Relacional de Datos Territorial</h2>
+                            <span class="relational-desc">8 Tablas Normalizadas · Llaves Primarias y Foráneas Conectadas</span>
+                        </div>
+                        <div class="relational-preset-btns">
+                            <button type="button" class="btn-outline-subtle relational-preset-btn" data-preset="all">Seleccionar Todas</button>
+                            <button type="button" class="btn-outline-subtle relational-preset-btn" data-preset="salmon_sinim">Finanzas y Salmonicultura</button>
+                            <button type="button" class="btn-outline-subtle relational-preset-btn" data-preset="seia_energia">Inversión y Energía</button>
+                            <button type="button" class="btn-outline-subtle relational-preset-btn" data-preset="turismo_social">Turismo y Salud/Riesgos</button>
+                        </div>
+                    </div>
+
+                    <!-- Mitad Superior: Diagrama Relacional de 8 Cajas -->
+                    <div class="relational-canvas-container">
+                        <div class="schema-boxes-grid">
+                            <!-- Caja 1: comunas_base -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="comunas_base" checked>
+                                        comunas_base
+                                    </span>
+                                    <span class="schema-box-key-badge badge-pk">PK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="comunas_base"><input type="checkbox" data-table="comunas_base" data-field="comuna_ine" checked disabled> comuna_ine (PK)</label>
+                                    <label class="schema-col-item" data-table="comunas_base"><input type="checkbox" data-table="comunas_base" data-field="nombre" checked> nombre_comuna</label>
+                                    <label class="schema-col-item" data-table="comunas_base"><input type="checkbox" data-table="comunas_base" data-field="provincia" checked> provincia</label>
+                                    <label class="schema-col-item" data-table="comunas_base"><input type="checkbox" data-table="comunas_base" data-field="poblacion" checked> poblacion_censo_2024</label>
+                                    <label class="schema-col-item" data-table="comunas_base"><input type="checkbox" data-table="comunas_base" data-field="superficie_km2" checked> superficie_km2</label>
+                                    <label class="schema-col-item" data-table="comunas_base"><input type="checkbox" data-table="comunas_base" data-field="pobreza_casen" checked> pobreza_multidimensional</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 2: gob_finanzas_sinim -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="gob_finanzas_sinim" checked>
+                                        gob_finanzas_sinim
+                                    </span>
+                                    <span class="schema-box-key-badge badge-fk">FK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="gob_finanzas_sinim"><input type="checkbox" data-table="gob_finanzas_sinim" data-field="alcalde" checked> alcalde_nombre</label>
+                                    <label class="schema-col-item" data-table="gob_finanzas_sinim"><input type="checkbox" data-table="gob_finanzas_sinim" data-field="presupuesto_mclp" checked> presupuesto_anual_mclp</label>
+                                    <label class="schema-col-item" data-table="gob_finanzas_sinim"><input type="checkbox" data-table="gob_finanzas_sinim" data-field="dependencia_fcm_pct" checked> dependencia_fcm_pct</label>
+                                    <label class="schema-col-item" data-table="gob_finanzas_sinim"><input type="checkbox" data-table="gob_finanzas_sinim" data-field="fndr_mclp" checked> fndr_asignado_mclp</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 3: energia_telecom_foa -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="energia_telecom_foa" checked>
+                                        energia_telecom_foa
+                                    </span>
+                                    <span class="schema-box-key-badge badge-fk">FK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="energia_telecom_foa"><input type="checkbox" data-table="energia_telecom_foa" data-field="sistema_electrico" checked> subsistema_electrico</label>
+                                    <label class="schema-col-item" data-table="energia_telecom_foa"><input type="checkbox" data-table="energia_telecom_foa" data-field="potencia_mw" checked> potencia_instalada_mw</label>
+                                    <label class="schema-col-item" data-table="energia_telecom_foa"><input type="checkbox" data-table="energia_telecom_foa" data-field="gasolina_93" checked> gasolina_93_clp_litro</label>
+                                    <label class="schema-col-item" data-table="energia_telecom_foa"><input type="checkbox" data-table="energia_telecom_foa" data-field="conectado_foa" checked> conectado_foa</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 4: concesiones_tierra_mar -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="concesiones_tierra_mar" checked>
+                                        concesiones_tierra_mar
+                                    </span>
+                                    <span class="schema-box-key-badge badge-fk">FK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="concesiones_tierra_mar"><input type="checkbox" data-table="concesiones_tierra_mar" data-field="concesiones_acuicolas" checked> concesiones_otorgadas</label>
+                                    <label class="schema-col-item" data-table="concesiones_tierra_mar"><input type="checkbox" data-table="concesiones_tierra_mar" data-field="centros_activos" checked> centros_operativos_activos</label>
+                                    <label class="schema-col-item" data-table="concesiones_tierra_mar"><input type="checkbox" data-table="concesiones_tierra_mar" data-field="superficie_minera_ha" checked> superficie_minera_ha</label>
+                                    <label class="schema-col-item" data-table="concesiones_tierra_mar"><input type="checkbox" data-table="concesiones_tierra_mar" data-field="snaspe_pct" checked> snaspe_conaf_pct</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 5: holdings_salmoneros_ruts -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="holdings_salmoneros_ruts" checked>
+                                        holdings_salmoneros_ruts
+                                    </span>
+                                    <span class="schema-box-key-badge badge-pk">PK: holding_id / rut</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="holdings_salmoneros_ruts"><input type="checkbox" data-table="holdings_salmoneros_ruts" data-field="holding_nombre" checked> holding_nombre</label>
+                                    <label class="schema-col-item" data-table="holdings_salmoneros_ruts"><input type="checkbox" data-table="holdings_salmoneros_ruts" data-field="rut_filial" checked> rut_filial (42 RUTs)</label>
+                                    <label class="schema-col-item" data-table="holdings_salmoneros_ruts"><input type="checkbox" data-table="holdings_salmoneros_ruts" data-field="grupo_empresarial" checked> grupo_empresarial</label>
+                                    <label class="schema-col-item" data-table="holdings_salmoneros_ruts"><input type="checkbox" data-table="holdings_salmoneros_ruts" data-field="concesiones_aysen" checked> concesiones_estimadas</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 6: inversion_seia_sii -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="inversion_seia_sii" checked>
+                                        inversion_seia_sii
+                                    </span>
+                                    <span class="schema-box-key-badge badge-fk">FK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="inversion_seia_sii"><input type="checkbox" data-table="inversion_seia_sii" data-field="seia_aprobado_mmusd" checked> inversion_aprobada_mmusd</label>
+                                    <label class="schema-col-item" data-table="inversion_seia_sii"><input type="checkbox" data-table="inversion_seia_sii" data-field="proyectos_seia_total" checked> proyectos_aprobados_total</label>
+                                    <label class="schema-col-item" data-table="inversion_seia_sii"><input type="checkbox" data-table="inversion_seia_sii" data-field="empresas_activas_sii" checked> empresas_activas_sii</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 7: turismo_sernatur_conaf -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="turismo_sernatur_conaf" checked>
+                                        turismo_sernatur_conaf
+                                    </span>
+                                    <span class="schema-box-key-badge badge-fk">FK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="turismo_sernatur_conaf"><input type="checkbox" data-table="turismo_sernatur_conaf" data-field="prestadores_sernatur" checked> prestadores_registrados</label>
+                                    <label class="schema-col-item" data-table="turismo_sernatur_conaf"><input type="checkbox" data-table="turismo_sernatur_conaf" data-field="pernoctaciones_emat" checked> pernoctaciones_anuales_emat</label>
+                                    <label class="schema-col-item" data-table="turismo_sernatur_conaf"><input type="checkbox" data-table="turismo_sernatur_conaf" data-field="pertenece_zoit" checked> zona_interes_turistico</label>
+                                </div>
+                            </div>
+
+                            <!-- Caja 8: social_salud_riesgos -->
+                            <div class="schema-box-card">
+                                <div class="schema-box-header">
+                                    <span class="schema-box-title">
+                                        <input type="checkbox" class="schema-table-toggle" data-table-id="social_salud_riesgos" checked>
+                                        social_salud_riesgos
+                                    </span>
+                                    <span class="schema-box-key-badge badge-fk">FK: comuna_ine</span>
+                                </div>
+                                <div class="schema-box-columns-list">
+                                    <label class="schema-col-item" data-table="social_salud_riesgos"><input type="checkbox" data-table="social_salud_riesgos" data-field="hospital_principal" checked> establecimiento_salud</label>
+                                    <label class="schema-col-item" data-table="social_salud_riesgos"><input type="checkbox" data-table="social_salud_riesgos" data-field="tiempo_coyhaique_hrs" checked> tiempo_traslado_horas</label>
+                                    <label class="schema-col-item" data-table="social_salud_riesgos"><input type="checkbox" data-table="social_salud_riesgos" data-field="tasa_dmcs" checked> tasa_dmcs_por_100k</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mitad Inferior: Tabla Cruzada Resultante (LIVE JOIN) -->
+                    <div class="relational-table-section">
+                        <div class="join-table-toolbar">
+                            <div class="join-mode-toggle">
+                                <button type="button" id="btnJoinModeComunas" class="join-mode-btn active">Modo 10 Comunas (Unión comuna_ine)</button>
+                                <button type="button" id="btnJoinModeHoldings" class="join-mode-btn">Modo 12 Holdings & 42 RUTs Filiales</button>
+                            </div>
+                            <input type="text" id="modelTableSearch" class="join-table-search" placeholder="Filtrar en vivo dentro de la tabla...">
+                            <button type="button" class="btn-export-csv" onclick="downloadLiveJoinCsv()">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Exportar Tabla Unida a Excel
+                            </button>
+                        </div>
+
+                        <div class="live-join-table-wrapper">
+                            <table id="liveJoinTable" class="live-join-table">
+                                <thead id="liveJoinTableHead"></thead>
+                                <tbody id="liveJoinTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================================================
+                 VISTA 3: FICHAS COMUNALES Y TITULARES (RUTs / SEIA)
+                 ========================================================================== -->
+            <section id="tabSection_fichas" class="view-section">
+                <div class="fichas-layout">
+                    <div class="fichas-top-toolbar">
+                        <div class="comuna-selectors-wrap">
+                            <label for="selectComunaFichaA" style="font-weight: 700;">Comuna Principal:</label>
+                            <select id="selectComunaFichaA" class="var-select"></select>
+
+                            <div class="fichas-mode-switch">
+                                <input type="checkbox" id="chkCompareComunas">
+                                <label for="chkCompareComunas">Comparar con otra comuna</label>
+                            </div>
+
+                            <div id="wrapComunaB" style="display: none; align-items: center; gap: 6px;">
+                                <label for="selectComunaFichaB" style="font-weight: 700;">Comuna B:</label>
+                                <select id="selectComunaFichaB" class="var-select"></select>
+                            </div>
+                        </div>
+
+                        <div style="font-size: 11px; color: var(--ink-faint);">
+                            Trazabilidad directa a fuentes oficiales (SINIM, CNE, SUBPESCA, SEA, SERNATUR, DEIS)
+                        </div>
+                    </div>
+
+                    <div class="fichas-scroll-body">
+                        <!-- Grilla de las 6 Dimensiones Sistémicas -->
+                        <div id="fichasDimensionsGrid" class="dimensions-grid-container"></div>
+
+                        <!-- Sub-sección: Catastro de Holdings y 42 RUTs -->
+                        <div class="holdings-explorer-section">
+                            <div class="holdings-header-row">
+                                <div>
+                                    <h3 class="holdings-title">Matriz de Holdings Salmoneros y 42 RUTs Filiales</h3>
+                                    <div style="font-size: 11px; color: var(--ink-faint);">Catastro oficial SUBPESCA / SERNAPESCA / CMF / SII en Aysén (745 Concesiones Totales)</div>
+                                </div>
+                                <input type="text" id="fichasHoldingsSearch" class="holdings-search-box" placeholder="Buscar por RUT (86.247.400-7), empresa madre o holding...">
+                            </div>
+
+                            <div id="holdingsCardsList" class="holdings-cards-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================================================
+                 VISTA 4: MAPA POR CAPAS LIMPIAS (LEAFLET BAJO DEMANDA)
+                 ========================================================================== -->
+            <section id="tabSection_map" class="view-section">
+                <div class="clean-map-layout">
+                    <!-- Panel Lateral de Filtros Exclusivos -->
+                    <aside class="clean-map-sidebar">
+                        <div class="clean-map-sidebar-header">
+                            <h2 class="map-sidebar-title">Mapa por Capas Limpias</h2>
+                            <span class="map-sidebar-sub">Cero marcadores ocultos. Activa únicamente la capa que desees inspeccionar.</span>
+                        </div>
+
+                        <div class="map-exclusive-filters-list">
+                            <button type="button" class="exclusive-layer-btn active" data-exclusive-layer="seia">
+                                <span>Solo Proyectos SEIA</span>
+                                <span class="layer-counter-pill">20</span>
+                            </button>
+
+                            <button type="button" class="exclusive-layer-btn" data-exclusive-layer="concesiones">
+                                <span>Solo Concesiones Acuícolas & Caletas</span>
+                                <span class="layer-counter-pill">38</span>
+                            </button>
+
+                            <button type="button" class="exclusive-layer-btn" data-exclusive-layer="mineria">
+                                <span>Solo Minería & Parques SNASPE</span>
+                                <span class="layer-counter-pill">18</span>
+                            </button>
+
+                            <button type="button" class="exclusive-layer-btn" data-exclusive-layer="energia">
+                                <span>Solo Centrales & Fibra Óptica (FOA)</span>
+                                <span class="layer-counter-pill">24</span>
+                            </button>
+
+                            <button type="button" class="exclusive-layer-btn" data-exclusive-layer="turismo">
+                                <span>Solo Turismo SERNATUR & ZOIT</span>
+                                <span class="layer-counter-pill">18</span>
+                            </button>
+
+                            <button type="button" class="exclusive-layer-btn" data-exclusive-layer="gob">
+                                <span>Solo Municipios & Gobernanza</span>
+                                <span class="layer-counter-pill">13</span>
+                            </button>
+
+                            <button type="button" class="exclusive-layer-btn" data-exclusive-layer="salud">
+                                <span>Solo Salud, Volcanes & Sismos</span>
+                                <span class="layer-counter-pill">39</span>
+                            </button>
+
+                            <button type="button" id="btnClearMapLayers" class="btn-clear-map">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Limpiar mapa (0 marcadores)
+                            </button>
+                        </div>
+                    </aside>
+
+                    <!-- Contenedor del Mapa Leaflet -->
+                    <div class="map-viewport-container">
+                        <div id="cleanMapLeaflet"></div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ==============================================================================
+             MODAL ASISTENTE ("¿POR DÓNDE EMPEZAR?")
+             ============================================================================== -->
+        <div id="wizardModal" class="modal-backdrop">
+            <div class="wizard-dialog">
+                <div class="wizard-header">
+                    <div>
+                        <h2 class="wizard-header-title">¿Por dónde empezar en Aysén?</h2>
+                        <div class="wizard-header-sub">Selecciona un punto de partida para configurar tu espacio de trabajo de inmediato:</div>
+                    </div>
+                    <button type="button" id="btnCloseWizard" class="wizard-close-btn">&times;</button>
+                </div>
+
+                <div class="wizard-cards-grid">
+                    <div class="wizard-action-card" data-wizard-action="cross_variables">
+                        <div class="wizard-card-header">
+                            <span class="wizard-card-icon">📊</span>
+                            <span class="wizard-card-title">Hacer interactuar variables</span>
+                        </div>
+                        <div class="wizard-card-desc">Cruza libremente cualquiera de las >35 variables (SINIM, CNE, SEA, SERNATUR) en gráficos de dispersión o barras doble eje.</div>
+                        <span class="wizard-card-pill">Vista 1 · Laboratorio</span>
+                    </div>
+
+                    <div class="wizard-action-card" data-wizard-action="relational_model">
+                        <div class="wizard-card-header">
+                            <span class="wizard-card-icon">🗄️</span>
+                            <span class="wizard-card-title">Explorar el Modelo Power BI</span>
+                        </div>
+                        <div class="wizard-card-desc">Observa el diagrama de 8 tablas relacionales con sus llaves primarias/foráneas y genera un LIVE JOIN completo para exportar a Excel.</div>
+                        <span class="wizard-card-pill">Vista 2 · Relacional</span>
+                    </div>
+
+                    <div class="wizard-action-card" data-wizard-action="holdings_ruts">
+                        <div class="wizard-card-header">
+                            <span class="wizard-card-icon">🐟</span>
+                            <span class="wizard-card-title">Consultar los 12 Holdings y 42 RUTs</span>
+                        </div>
+                        <div class="wizard-card-desc">Explora la titularidad real de las 745 concesiones salmoneras, grupos controladores y razones sociales filiales con sus RUTs oficiales.</div>
+                        <span class="wizard-card-pill">Vista 2 y 3 · Titulares</span>
+                    </div>
+
+                    <div class="wizard-action-card" data-wizard-action="seia_investments">
+                        <div class="wizard-card-header">
+                            <span class="wizard-card-icon">🏗️</span>
+                            <span class="wizard-card-title">Inversión SEIA y Economía</span>
+                        </div>
+                        <div class="wizard-card-desc">Revisa los 722 proyectos aprobados en el SEIA, montos en millones de USD y la estructura de empleo formal de SII por comuna.</div>
+                        <span class="wizard-card-pill">Inversión SEA</span>
+                    </div>
+
+                    <div class="wizard-action-card" data-wizard-action="turismo_sernatur">
+                        <div class="wizard-card-header">
+                            <span class="wizard-card-icon">🌲</span>
+                            <span class="wizard-card-title">Turismo SERNATUR y Estacionalidad</span>
+                        </div>
+                        <div class="wizard-card-desc">Analiza la curva mensual de pernoctaciones EMAT ene-dic, las 4 Zonas ZOIT y la visitación de parques CONAF.</div>
+                        <span class="wizard-card-pill">Turismo EMAT</span>
+                    </div>
+
+                    <div class="wizard-action-card" data-wizard-action="clean_map">
+                        <div class="wizard-card-header">
+                            <span class="wizard-card-icon">🗺️</span>
+                            <span class="wizard-card-title">Abrir Mapa por Capas Limpias</span>
+                        </div>
+                        <div class="wizard-card-desc">Visualiza en el mapa Leaflet exclusivamente la capa que elijas (solo SEIA, solo caletas, solo centrales) sin ruido visual.</div>
+                        <span class="wizard-card-pill">Vista 4 · Mapa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script del Motor de la Plataforma -->
+    <script src="js/plataforma_aysen.js"></script>
+</body>
+</html>

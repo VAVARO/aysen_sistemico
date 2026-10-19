@@ -1,0 +1,9 @@
+{
+  "url": "https://api.cne.cl/v3/combustibles/vehicular/estaciones?region=11",
+  "timestamp": "2026-10-16T18:36:32.000244+00:00",
+  "status_code": 404,
+  "success": false,
+  "content_length": 0,
+  "error": "HTTPError 404: Not Found",
+  "body_preview": null
+}

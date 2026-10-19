@@ -1,0 +1,235 @@
+{
+  "fuente": "Subsecretaría de Turismo - Comité de Ministros del Turismo",
+  "url_origen": "https://www.subturismo.gob.cl/zoit/",
+  "fecha_extraccion": "2026-10-16T22:16:21.523512+00:00",
+  "descripcion": "Catastro de Zonas de Interés Turístico (ZOIT) declaradas oficialmente en la Región de Aysén",
+  "zoit_aysen": [
+    {
+      "nombre": "ZOIT Chelenko",
+      "comunas": [
+        "Chile Chico",
+        "Río Ibáñez"
+      ],
+      "decreto": "Decreto Subturismo Oficial",
+      "atractivos_prioritarios": [
+        "Capillas de Mármol",
+        "Glaciar Exploradores",
+        "Lago General Carrera",
+        "Cerro Castillo"
+      ]
+    },
+    {
+      "nombre": "ZOIT Aysén Patagonia Queulat",
+      "comunas": [
+        "Cisnes",
+        "Aysén"
+      ],
+      "decreto": "Decreto Subturismo Oficial",
+      "atractivos_prioritarios": [
+        "Ventisquero Colgante Queulat",
+        "Termas de Puyuhuapi",
+        "Río Palena",
+        "Fiordo Aysén"
+      ]
+    },
+    {
+      "nombre": "ZOIT Provincia de los Glaciares",
+      "comunas": [
+        "Cochrane",
+        "O'Higgins",
+        "Tortel"
+      ],
+      "decreto": "Decreto Subturismo Oficial",
+      "atractivos_prioritarios": [
+        "Río Baker",
+        "Parque Nacional Patagonia",
+        "Caleta Tortel",
+        "Glaciar O'Higgins"
+      ]
+    },
+    {
+      "nombre": "ZOIT Destino Coyhaique",
+      "comunas": [
+        "Coyhaique"
+      ],
+      "decreto": "Decreto Subturismo Oficial",
+      "atractivos_prioritarios": [
+        "Reserva Nacional Río Simpson",
+        "Reserva Nacional Coyhaique",
+        "Centro de Ski El Fraile"
+      ]
+    }
+  ],
+  "distribucion_comunal": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Coyhaique",
+        "atractivos_ancla": [
+          "Reserva Nacional Coyhaique",
+          "Reserva Nacional Río Simpson",
+          "Centro de Ski El Fraile",
+          "Monumento Natural Dos Lagunas"
+        ],
+        "vocacion_turistica_principal": "Hub distribuidor regional, pesca con mosca (fly fishing), senderismo periurbano y turismo de reuniones/eventos",
+        "cuello_de_botella_turistico": "Estacionalidad invernal extrema, alta demanda de calefacción y límites de frecuencias aéreas en Balmaceda"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "zoit_info": {
+        "pertenece_a_zoit": false,
+        "nombre_zoit": "Sin declaración ZOIT formal (en articulación Cuenca Binacional Palena-Figueroa)",
+        "atractivos_ancla": [
+          "Valle del Río Figueroa",
+          "Río Pico",
+          "Lago Verde y Paso Las Pampas",
+          "Villa Amengual y La Tapera"
+        ],
+        "vocacion_turistica_principal": "Turismo rural campesino, cabalgatas andinas y pesca con mosca de aguas bravas",
+        "cuello_de_botella_turistico": "Rutas de ripio con cortes invernales por nevadas, falta de conectividad digital y servicios de combustible"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Aysén Patagonia Queulat",
+        "atractivos_ancla": [
+          "Parque Nacional Laguna San Rafael (Acceso Marítimo)",
+          "Puerto Chacabuco (Terminal Catamaranes)",
+          "Bahía Acantilada",
+          "Puente Presidente Ibáñez y Río Los Palos"
+        ],
+        "vocacion_turistica_principal": "Turismo náutico de fiordos, cruceros a glaciares marítimos y ecoturismo en bosque templado lluvioso",
+        "cuello_de_botella_turistico": "Clima hiperhúmedo con abundantes precipitaciones, dependencia de embarcaciones mayores y estacionalidad de cruceros"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Aysén Patagonia Queulat",
+        "atractivos_ancla": [
+          "Parque Nacional Queulat (Ventisquero Colgante)",
+          "Termas de Puyuhuapi y Termas del Ventisquero",
+          "Puerto Raúl Marín Balmaceda (Playas y Cetáceos)",
+          "La Junta (Confluencia Palena-Rosselot)"
+        ],
+        "vocacion_turistica_principal": "Ecoturismo de selva fría, termalismo de alta gama, navegación costera y polo Carretera Austral Norte",
+        "cuello_de_botella_turistico": "Cortes viales por deslizamientos en Cuesta Queulat y colapso de estacionamientos en temporada alta de CONAF"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "zoit_info": {
+        "pertenece_a_zoit": false,
+        "nombre_zoit": "Sin ZOIT formal (Polo Ecoturístico Marino Golfo Corcovado)",
+        "atractivos_ancla": [
+          "Avistamiento de Ballenas Azules en Golfo Corcovado",
+          "Canales del Archipiélago de las Guaitecas",
+          "Ruta Patrimonial del Calafate y Ciprés en Melinka",
+          "Repollal y Gastronomía de Productos del Mar"
+        ],
+        "vocacion_turistica_principal": "Turismo náutico de expedición marina, avistamiento de cetáceos y turismo vivencial insular",
+        "cuello_de_botella_turistico": "Aislamiento geográfico, servicio marítimo condicionado al cruce del Golfo Corcovado y limitados cupos aéreos"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Chelenko",
+        "atractivos_ancla": [
+          "Parque Nacional Patagonia - Sector Jeinimeni",
+          "Monumento Arqueológico Cueva de las Manos",
+          "Paso Internacional Río Jeinimeni / Los Antiguos",
+          "Puerto Guadal y Rivera Sur Lago General Carrera"
+        ],
+        "vocacion_turistica_principal": "Agroturismo con microclima cálido, senderismo andino, geoturismo y turismo transfronterizo binacional",
+        "cuello_de_botella_turistico": "Frecuencias y capacidad de la barcaza en Lago General Carrera y fuertes ráfagas de viento estival"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Chelenko",
+        "atractivos_ancla": [
+          "Santuario de la Naturaleza Capillas de Mármol (Puerto Río Tranquilo)",
+          "Parque Nacional Cerro Castillo (Senderos Villa Cerro Castillo)",
+          "Glaciar Exploradores (Acceso Valle Exploradores)",
+          "Puerto Ingeniero Ibáñez y Alfarería Patrimonial"
+        ],
+        "vocacion_turistica_principal": "Aventura de alta intensidad (navegación en cavernas de mármol, trekking sobre hielo y senderismo alpino)",
+        "cuello_de_botella_turistico": "Saturación vehicular en Puerto Río Tranquilo durante enero-febrero y capacidad de carga en muelles lacustres"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Provincia de los Glaciares",
+        "atractivos_ancla": [
+          "Río Baker (Rafting y Pesca con Mosca)",
+          "Parque Nacional Patagonia (Sector Valle Chacabuco)",
+          "Reserva Nacional Tamango (Protección del Huemul)",
+          "Confluencia Río Baker y Río Neff"
+        ],
+        "vocacion_turistica_principal": "Ecoturismo de conservación global, deportes de aguas blancas en Río Baker y trekking de estepa a bosque",
+        "cuello_de_botella_turistico": "Distancia vial a Coyhaique (330 km), tramos de ripio en la Ruta 7 y conectividad de telecomunicaciones intermitente"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Provincia de los Glaciares",
+        "atractivos_ancla": [
+          "Hito Final Carretera Austral Km 1.240",
+          "Glaciar O'Higgins y Navegación Lago O'Higgins",
+          "Cruce Internacional Sendero a Candelario Mancilla / El Chaltén",
+          "Parque Glaciar Mosco y Senderos Andinos"
+        ],
+        "vocacion_turistica_principal": "Turismo de expedición de fin de ruta, cicloturismo internacional y exploración de glaciares de Campo de Hielo Sur",
+        "cuello_de_botella_turistico": "Dependencia del transbordo en Fiordo Mitchell (Puerto Yungay-Río Bravo) y navegación sujeta a fuertes vientos en Lago O'Higgins"
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "zoit_info": {
+        "pertenece_a_zoit": true,
+        "nombre_zoit": "ZOIT Provincia de los Glaciares",
+        "atractivos_ancla": [
+          "Pasarelas de Ciprés de las Guaitecas (Monumento Nacional)",
+          "Isla de los Muertos",
+          "Navegación al Glaciar Jorge Montt",
+          "Desembocadura del Río Baker en el Pacífico"
+        ],
+        "vocacion_turistica_principal": "Turismo arquitectónico patrimonial único, expediciones en lanchas costeras hacia glaciares y kayak marino",
+        "cuello_de_botella_turistico": "Movilidad exclusivamente peatonal sobre escaleras de madera, saneamiento ambiental frágil y estacionamientos limitados en el acceso vial"
+      }
+    }
+  ]
+}

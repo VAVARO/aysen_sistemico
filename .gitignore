@@ -12,3 +12,6 @@ __pycache__/
 # OS and scratch
 .DS_Store
 Thumbs.db
+scratch/
+CONTEXT_NEXT_CHAT.md
+PROMPT_ORQUESTADOR_FLASH.md

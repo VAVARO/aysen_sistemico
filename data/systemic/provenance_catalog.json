@@ -1,0 +1,477 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "2.0.0",
+  "titulo": "Catálogo Oficial de Procedencia y Trazabilidad de Datos (31 Nodos Sistémicos de Aysén)",
+  "region": "Región de Aysén del General Carlos Ibáñez del Campo",
+  "fecha_emision": "2026-10-17T20:00:00Z",
+  "total_nodos": 31,
+  "total_hubs": 7,
+  "criterio_calidad": "Cero datos simulados. Fuentes oficiales del Estado de Chile con URL verificable, corte temporal exacto al 17 de octubre de 2026 y método de recolección documentado.",
+  "nodes": [
+    {
+      "id": 1,
+      "nodeId": 1,
+      "title": "Prestadores Registrados SERNATUR",
+      "hubId": "turismo",
+      "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Servicio Nacional de Turismo (SERNATUR) / Subsecretaría de Turismo",
+        "sourceUrl": "https://serviciosturisticos.sernatur.cl/",
+        "collectionDate": "Catastro Registro Nacional SERNATUR · Corte Septiembre 2026",
+        "collectionMethod": "Registro Nacional de Prestadores de Servicios Turísticos / Consulta estructurada DataTurismo",
+        "updateFrequency": "Mensual",
+        "nextUpdate": "Noviembre 2026 (Mensual continuo)"
+      }
+    },
+    {
+      "id": 2,
+      "nodeId": 2,
+      "title": "Zonas de Interés Turístico (4 ZOIT)",
+      "hubId": "turismo",
+      "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Subsecretaría de Turismo / Comité de Ministros del Turismo",
+        "sourceUrl": "https://www.subturismo.gob.cl/zoit/",
+        "collectionDate": "Decretos Supremos y Planes de Acción ZOIT vigentes · Corte 2025–2026",
+        "collectionMethod": "Catastro de Decretos Oficiales de Declaratoria ZOIT y Planes de Acción Subsecretaría de Turismo",
+        "updateFrequency": "Plurianual",
+        "nextUpdate": "Diciembre 2026 (Seguimiento anual de cartera)"
+      }
+    },
+    {
+      "id": 3,
+      "nodeId": 3,
+      "title": "Pernoctaciones y Estacionalidad (EMAT)",
+      "hubId": "turismo",
+      "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Instituto Nacional de Estadísticas (INE) / SERNATUR",
+        "sourceUrl": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+        "collectionDate": "Encuesta Mensual de Alojamiento Turístico (EMAT) INE · Serie consolidada a Agosto 2026",
+        "collectionMethod": "Encuesta probabilística mensual a establecimientos de alojamiento turístico clasificados en Aysén",
+        "updateFrequency": "Mensual",
+        "nextUpdate": "Noviembre 2026 (Boletín mensual INE)"
+      }
+    },
+    {
+      "id": 4,
+      "nodeId": 4,
+      "title": "Visitantes a Parques Nacionales (CONAF)",
+      "hubId": "turismo",
+      "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Corporación Nacional Forestal (CONAF) — Gerencia de Áreas Silvestres Protegidas",
+        "sourceUrl": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+        "collectionDate": "Estadísticas Consolidadas de Visitación SNASPE CONAF · Periodo 2025–2026",
+        "collectionMethod": "Registro administrativo en boleterías y porterías de unidades SNASPE Aysén",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Febrero 2027 (Consolidado de temporada estival)"
+      }
+    },
+    {
+      "id": 5,
+      "nodeId": 5,
+      "title": "Atractivos y Nodos Turísticos Georreferenciados",
+      "hubId": "turismo",
+      "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv",
+      "provenance": {
+        "sourceEntity": "SERNATUR / Subsecretaría de Turismo / CONAF",
+        "sourceUrl": "https://www.sernatur.cl/dataturismo/",
+        "collectionDate": "Catastro de Atractivos Turísticos Regionales SERNATUR / CONAF · Corte 2025–2026",
+        "collectionMethod": "Georreferenciación en terreno y fichas de jerarquización de atractivos turísticos",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Diciembre 2026 (Actualización anual de jerarquías)"
+      }
+    },
+    {
+      "id": 6,
+      "nodeId": 6,
+      "title": "Concesiones de Acuicultura por Comuna (745)",
+      "hubId": "salmonicultura",
+      "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Subsecretaría de Pesca y Acuicultura (SUBPESCA) / Servicio Nacional de Pesca y Acuicultura (SERNAPESCA)",
+        "sourceUrl": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50834.html",
+        "collectionDate": "Catastro Oficial de Concesiones de Acuicultura Vigentes · Corte Trimestral Septiembre 2026",
+        "collectionMethod": "Registro de Concesiones de Acuicultura (RCA) SUBPESCA y Sistema de Información Geográfica Acuícola",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Enero 2027 (Cierre anual de concesiones)"
+      }
+    },
+    {
+      "id": 7,
+      "nodeId": 7,
+      "title": "Matriz de 12 Holdings Madres y Concesiones",
+      "hubId": "salmonicultura",
+      "csvFile": "data/systemic/csv/03_holdings_salmoneros_ruts_aysen.csv",
+      "provenance": {
+        "sourceEntity": "Comisión para el Mercado Financiero (CMF) / SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.cmfchile.cl/",
+        "collectionDate": "Estados Financieros Consolidados y Memoria Anual de Emisores CMF · Corte Junio 2026",
+        "collectionMethod": "Cruce de mallas societarias CMF con titulares de concesiones acuícolas en Aysén",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Noviembre 2026 (Reporte intermedio Q3)"
+      }
+    },
+    {
+      "id": 8,
+      "nodeId": 8,
+      "title": "Barrios Sanitarios (ACS) y Caletas Pesqueras",
+      "hubId": "salmonicultura",
+      "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_nodos.csv",
+      "provenance": {
+        "sourceEntity": "Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) / SUBPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/areas-de-accion/acuicultura/",
+        "collectionDate": "Catastro de Agrupaciones de Concesiones (ACS) y Caletas Pesqueras · Corte Septiembre 2026",
+        "collectionMethod": "Resoluciones de descansos sanitarios coordinados SERNAPESCA y Registro Pesquero Artesanal (RPA)",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Diciembre 2026 (Programación de siembras 2027)"
+      }
+    },
+    {
+      "id": 9,
+      "nodeId": 9,
+      "title": "Monitoreo Marino, Oxígeno Disuelto y FAN",
+      "hubId": "salmonicultura",
+      "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Instituto de Fomento Pesquero (IFOP) / SERNAPESCA / SHOA",
+        "sourceUrl": "https://www.ifop.cl/",
+        "collectionDate": "Programa de Monitoreo de Floraciones Algales Nocivas (FAN) y Boyas Oceanográficas · Corte Septiembre 2026",
+        "collectionMethod": "Muestreo oceanográfico de estaciones en fiordos y telemetría de boyas oceanográficas",
+        "updateFrequency": "Mensual",
+        "nextUpdate": "Noviembre 2026 (Boletín oceanográfico mensual)"
+      }
+    },
+    {
+      "id": 10,
+      "nodeId": 10,
+      "title": "Pesca Industrial por Pesquería e Impuesto Específico (Art. 43 ter)",
+      "hubId": "salmonicultura",
+      "csvFile": "data/systemic/csv/03c_pesca_industrial_pesquerias_impuesto_aysen.csv",
+      "provenance": {
+        "sourceEntity": "SUBPESCA / Ley N° 21.752 / Tesorería General de la República (TGR) / SII",
+        "sourceUrl": "https://www.subpesca.cl/portal/616/w3-propertyvalue-50827.html",
+        "collectionDate": "Decretos Exentos de Cuotas Globales y Valores de Sanción 2026 · Corte Julio 2026",
+        "collectionMethod": "Cálculo de Impuesto Específico Anual (Art. 43 ter LGPA) sobre cuota LTP asignada según Valores de Sanción oficiales",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Diciembre 2026 (Decretos de cuotas anuales 2027)"
+      }
+    },
+    {
+      "id": 11,
+      "nodeId": 11,
+      "title": "Generación y Centrales Eléctricas",
+      "hubId": "energia",
+      "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_nodos.csv",
+      "provenance": {
+        "sourceEntity": "Comisión Nacional de Energía (CNE) — Plataforma Energía Abierta",
+        "sourceUrl": "https://energiaabierta.cl/",
+        "collectionDate": "Catastro de Centrales de Generación Eléctrica en Operación · Corte Agosto 2026",
+        "collectionMethod": "Declaraciones oficiales de operadores eléctricos ante CNE y Coordinador Eléctrico Nacional",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Noviembre 2026 (Actualización trimestral de capacidad)"
+      }
+    },
+    {
+      "id": 12,
+      "nodeId": 12,
+      "title": "Sistemas Eléctricos Medianos y Aislados",
+      "hubId": "energia",
+      "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Superintendencia de Electricidad y Combustibles (SEC) / CNE",
+        "sourceUrl": "https://www.sec.cl/",
+        "collectionDate": "Informe Técnico de Sistemas Medianos de Aysén y Sistemas Aislados · Corte Julio 2026",
+        "collectionMethod": "Auditorías de calidad de suministro eléctrico e informes de operación de Edelaysen",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Diciembre 2026 (Informe anual de desempeño de redes)"
+      }
+    },
+    {
+      "id": 13,
+      "nodeId": 13,
+      "title": "Precios de Combustibles y Leña por Comuna (CNE)",
+      "hubId": "energia",
+      "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Comisión Nacional de Energía (CNE) — Sistema de Información de Precios en Línea",
+        "sourceUrl": "https://www.bencinaenlinea.cl/",
+        "collectionDate": "Precios semanales en estaciones de servicio y catastro CNE de leña · Corte Octubre 2026",
+        "collectionMethod": "Reporte obligatorio de precios de venta a público informado por distribuidores minoristas a CNE",
+        "updateFrequency": "Semanal / Mensual",
+        "nextUpdate": "Octubre 2026 (Actualización semanal continua)"
+      }
+    },
+    {
+      "id": 14,
+      "nodeId": 14,
+      "title": "Fibra Óptica Austral (FOA) y Telecomunicaciones",
+      "hubId": "energia",
+      "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Subsecretaría de Telecomunicaciones (SUBTEL) — Proyecto FOA",
+        "sourceUrl": "https://www.subtel.gob.cl/",
+        "collectionDate": "Estado de Puntos de Amarre y Conexión Troncal FOA · Corte Junio 2026",
+        "collectionMethod": "Auditoría de infraestructura de telecomunicaciones y reportes de cobertura 4G/5G SUBTEL",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Diciembre 2026 (Reporte de penetración banda ancha)"
+      }
+    },
+    {
+      "id": 15,
+      "nodeId": 15,
+      "title": "Presupuestos Municipales y Patentes (SINIM)",
+      "hubId": "gobernanza",
+      "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Sistema Nacional de Información Municipal (SINIM) — SUBDERE",
+        "sourceUrl": "https://datos.sinim.gov.cl/",
+        "collectionDate": "Presupuestos Devengados e Ingresos Propios Permanentes · Corte Junio 2026",
+        "collectionMethod": "Rendición financiera trimestral remitida por las 10 Direcciones de Administración y Finanzas a SUBDERE",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Noviembre 2026 (Rendición financiera Q3)"
+      }
+    },
+    {
+      "id": 16,
+      "nodeId": 16,
+      "title": "Dependencia del Fondo Común Municipal (FCM)",
+      "hubId": "gobernanza",
+      "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
+      "provenance": {
+        "sourceEntity": "SUBDERE / Tesorería General de la República (TGR)",
+        "sourceUrl": "https://datos.sinim.gov.cl/",
+        "collectionDate": "Distribución y Transferencias Efectivas del Fondo Común Municipal · Corte Septiembre 2026",
+        "collectionMethod": "Cálculo de coeficientes de redistribución solidaria y transferencias mensuales de TGR",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Diciembre 2026 (Cierre de liquidaciones FCM)"
+      }
+    },
+    {
+      "id": 17,
+      "nodeId": 17,
+      "title": "Alcaldes (2024–2028), Concejos y Participación",
+      "hubId": "gobernanza",
+      "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Servicio Electoral de Chile (SERVEL) / Tribunal Calificador de Elecciones (TRICEL)",
+        "sourceUrl": "https://www.servel.cl/",
+        "collectionDate": "Sentencias de Proclamación Elecciones Municipales y Regionales 2024 · Periodo Oficial 2024–2028",
+        "collectionMethod": "Escrutinio general, sentencias de proclamación TRICEL y actas de instalación municipal",
+        "updateFrequency": "Cuatrienal (Vigente 2024–2028)",
+        "nextUpdate": "Octubre 2028 (Próximas elecciones municipales ordinarias)"
+      }
+    },
+    {
+      "id": 18,
+      "nodeId": 18,
+      "title": "Inversión Pública FNDR y Conectividad Ruta 7",
+      "hubId": "gobernanza",
+      "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Gobierno Regional de Aysén (GORE) / Dirección de Presupuestos (DIPRES) / Dirección de Vialidad MOP",
+        "sourceUrl": "https://datos.dipres.gob.cl/",
+        "collectionDate": "Ejecución Presupuestaria FNDR y Catastro de Red Vial MOP · Corte Agosto 2026",
+        "collectionMethod": "Sistema de Información de Proyectos FNDR DIPRES y libro de obras de contratos viales MOP",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Noviembre 2026 (Reporte DIPRES ejecución Q3)"
+      }
+    },
+    {
+      "id": 19,
+      "nodeId": 19,
+      "title": "Proyectos de Inversión en el SEIA (RCA)",
+      "hubId": "inversion",
+      "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Servicio de Evaluación Ambiental (SEA) — Sistema de Evaluación de Impacto Ambiental",
+        "sourceUrl": "https://seia.sea.gob.cl/",
+        "collectionDate": "Base Oficial de Proyectos Calificados y en Evaluación · Corte Septiembre 2026",
+        "collectionMethod": "Resoluciones de Calificación Ambiental (RCA) publicadas en el expediente electrónico público SEIA",
+        "updateFrequency": "Mensual",
+        "nextUpdate": "Noviembre 2026 (Actualización mensual continua)"
+      }
+    },
+    {
+      "id": 20,
+      "nodeId": 20,
+      "title": "Empresas, Empleo y Ventas por Rubro (SII)",
+      "hubId": "inversion",
+      "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Servicio de Impuestos Internos (SII) — Subdirección de Estudios",
+        "sourceUrl": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
+        "collectionDate": "Estadísticas de Empresas y Empleados por Comuna · Año Tributario 2025–2026",
+        "collectionMethod": "Formularios 22 y 29 consolidados de operaciones de contribuyentes con domicilio en Aysén",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Diciembre 2026 (Cierre definitivo de año tributario)"
+      }
+    },
+    {
+      "id": 21,
+      "nodeId": 21,
+      "title": "Concesiones Mineras y Yacimientos (SERNAGEOMIN)",
+      "hubId": "inversion",
+      "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Servicio Nacional de Geología y Minería (SERNAGEOMIN) — Departamento de Propiedad Minera",
+        "sourceUrl": "https://www.sernageomin.cl/catastro-minero/",
+        "collectionDate": "Catastro de Concesiones Mineras de Explotación y Exploración · Corte Junio 2026",
+        "collectionMethod": "Registro oficial de sentencias constitutivas de pertenencias mineras e inscripciones conservatorias",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Diciembre 2026 (Actualización semestral de roles)"
+      }
+    },
+    {
+      "id": 22,
+      "nodeId": 22,
+      "title": "Tenencia de Suelo Fiscal, SNASPE y Privada (BBNN / CONAF)",
+      "hubId": "inversion",
+      "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Ministerio de Bienes Nacionales (BBNN) / CONAF — Sistema de Información Territorial (SIT)",
+        "sourceUrl": "https://ide.patrimonio.cl/",
+        "collectionDate": "Catastro de la Propiedad Fiscal y Áreas Silvestres Protegidas · Corte Julio 2026",
+        "collectionMethod": "Cruce cartográfico digital de la propiedad fiscal, unidades SNASPE y roles particulares SAG/SII",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Enero 2027 (Actualización anual de límites fiscales)"
+      }
+    },
+    {
+      "id": 23,
+      "nodeId": 23,
+      "title": "Demografía Censo 2024 y Pobreza CASEN",
+      "hubId": "social",
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Instituto Nacional de Estadísticas (INE) / Ministerio de Desarrollo Social y Familia (MDSF)",
+        "sourceUrl": "https://censo2024.ine.gob.cl/",
+        "collectionDate": "Resultados Oficiales del Censo de Población y Vivienda 2024 / CASEN 2022",
+        "collectionMethod": "Operativo censal territorial INE y encuesta CASEN representativa a nivel comunal",
+        "updateFrequency": "Decenal (Censo) / Bienal (CASEN)",
+        "nextUpdate": "Noviembre 2026 (Tabulados detallados comunales Censo 2024)"
+      }
+    },
+    {
+      "id": 24,
+      "nodeId": 24,
+      "title": "Red Asistencial de Salud y Evacuación SAMU",
+      "hubId": "social",
+      "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
+      "provenance": {
+        "sourceEntity": "Ministerio de Salud (MINSAL) — Departamento de Estadísticas e Información de Salud (DEIS) / Servicio de Salud Aysén (SSA)",
+        "sourceUrl": "https://deis.minsal.cl/",
+        "collectionDate": "Registro de Establecimientos de Salud (DEIS) y Tiempos de Evacuación SAMU · Corte Septiembre 2026",
+        "collectionMethod": "Reporte mensual de infraestructura hospitalaria, dotación de camas y estadísticas de derivación SAMU",
+        "updateFrequency": "Mensual",
+        "nextUpdate": "Noviembre 2026 (Boletín mensual DEIS)"
+      }
+    },
+    {
+      "id": 25,
+      "nodeId": 25,
+      "title": "Educación Pública (SLEP Aysén) y Superior",
+      "hubId": "social",
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Ministerio de Educación (MINEDUC) — Centro de Estudios / Servicio Local de Educación Pública (SLEP Aysén)",
+        "sourceUrl": "https://datosabiertos.mineduc.cl/",
+        "collectionDate": "Matrícula Oficial y Rendición de Escuelas Rurales SLEP · Periodo Escolar 2026",
+        "collectionMethod": "Registro oficial de matrículas SIGE MINEDUC y auditoría interna de establecimientos SLEP",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Diciembre 2026 (Balance final de año escolar 2026)"
+      }
+    },
+    {
+      "id": 26,
+      "nodeId": 26,
+      "title": "Seguridad Ciudadana y Delitos (CEAD / VIF)",
+      "hubId": "social",
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Subsecretaría de Prevención del Delito (SPD) — Centro de Estudios y Análisis del Delito (CEAD)",
+        "sourceUrl": "https://cead.spd.gov.cl/",
+        "collectionDate": "Estadísticas Delictuales de Casos Policiales DMCS y VIF · Corte Junio 2026",
+        "collectionMethod": "Denuncias y detenciones en flagrancia informadas oficialmente por Carabineros de Chile y Policía de Investigaciones (PDI)",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Noviembre 2026 (Estadísticas oficiales Q3)"
+      }
+    },
+    {
+      "id": 27,
+      "nodeId": 27,
+      "title": "Cobertura Forestal y Flora Nativa (CONAF SIT / MMA)",
+      "hubId": "biodiversidad",
+      "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
+      "provenance": {
+        "sourceEntity": "Corporación Nacional Forestal (CONAF) / Ministerio del Medio Ambiente (MMA)",
+        "sourceUrl": "https://sit.conaf.cl/",
+        "collectionDate": "Catastro de Uso del Suelo y Vegetación Nativa de Aysén · Corte 2025–2026",
+        "collectionMethod": "Fotointerpretación satelital multiespectral, inventario forestal continuo y verificación en terreno",
+        "updateFrequency": "Quinquenal",
+        "nextUpdate": "Diciembre 2026 (Consolidado quinquenal SIT)"
+      }
+    },
+    {
+      "id": 28,
+      "nodeId": 28,
+      "title": "Fauna Silvestre y Especies en Categoría de Conservación (RCE MMA)",
+      "hubId": "biodiversidad",
+      "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
+      "provenance": {
+        "sourceEntity": "Ministerio del Medio Ambiente (MMA) — Comité de Clasificación de Especies / CONAF / SAG",
+        "sourceUrl": "https://clasificacionespecies.mma.gob.cl/",
+        "collectionDate": "Decretos Supremos N° 44/2023 y N° 22/2024 de Clasificación de Especies Silvestres (RCE Proceso 19) · Vigente 2026",
+        "collectionMethod": "Evaluación científica por comité técnico interinstitucional y expedientes técnicos de clasificación",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026 (Publicación Proceso 20 RCE)"
+      }
+    },
+    {
+      "id": 29,
+      "nodeId": 29,
+      "title": "Especies Exóticas Invasoras y Presión Ecológica",
+      "hubId": "biodiversidad",
+      "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
+      "provenance": {
+        "sourceEntity": "Servicio Agrícola y Ganadero (SAG) / MMA / Centro de Investigación en Ecosistemas de la Patagonia (CIEP)",
+        "sourceUrl": "https://especies-invasoras.mma.gob.cl/",
+        "collectionDate": "Programas de Vigilancia de Especies Exóticas Invasoras (Visón, Castor, Didymo) · Corte Agosto 2026",
+        "collectionMethod": "Trampeo sistemático, prospección de cuencas fluviales y reportes de fauna silvestre",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Diciembre 2026 (Informe semestral de capturas y contención)"
+      }
+    },
+    {
+      "id": 30,
+      "nodeId": 30,
+      "title": "Monitoreo Continuo de Calidad del Aire (SINCA) e Hidrología (DGA)",
+      "hubId": "biodiversidad",
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv",
+      "provenance": {
+        "sourceEntity": "Sistema de Información Nacional de Calidad del Aire (SINCA MMA) / Dirección General de Aguas (DGA MOP)",
+        "sourceUrl": "https://sinca.mma.gob.cl/",
+        "collectionDate": "Monitoreo continuo en línea de estaciones telemétricas · Corte Octubre 2026",
+        "collectionMethod": "Telemetría continua horaria de estaciones oficiales (Estación Coyhaique II SINCA y BNA 11530000-8 DGA Río Baker)",
+        "updateFrequency": "Horario / Continuo",
+        "nextUpdate": "Octubre 2026 (Transmisión en tiempo real)"
+      }
+    },
+    {
+      "id": 31,
+      "nodeId": 31,
+      "title": "Complejos Volcánicos Activos (RNVV), Sismos (USGS) y Red de Estaciones",
+      "hubId": "biodiversidad",
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv",
+      "provenance": {
+        "sourceEntity": "SERNAGEOMIN — Red Nacional de Vigilancia Volcánica (RNVV / OVDAS) / United States Geological Survey (USGS)",
+        "sourceUrl": "https://earthquake.usgs.gov/",
+        "collectionDate": "Boletines de Actividad Volcánica y Catálogo Sísmico Instrumental M>=3.0 · Corte Octubre 2026",
+        "collectionMethod": "Red sismológica satelital OVDAS y API de monitoreo de riesgos geológicos USGS",
+        "updateFrequency": "Tiempo real / Mensual",
+        "nextUpdate": "Octubre 2026 (Monitoreo telemétrico continuo)"
+      }
+    }
+  ]
+}

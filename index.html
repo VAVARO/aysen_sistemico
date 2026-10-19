@@ -1,1002 +1,2228 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aysén Territorial Forecasting · Auditoría Agéntica en Vivo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-body: #F7F7F5;
-            --bg-paper: #FFFFFF;
-            --bg-tint: #F0F0EC;
-            --border-light: #E3E4DC;
-            --border-strong: #1A1A1A;
-            --ink-primary: #141618;
-            --ink-secondary: #4A515D;
-            --ink-faint: #7E8694;
-            --ink-accent-patagonia: #19483A;
-            --ink-accent-copper: #9E4300;
-            --ink-accent-blue: #0E58A8;
-            --font-serif: 'Newsreader', Georgia, serif;
-            --font-sans: 'Space Grotesk', -apple-system, sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-body);
-            color: var(--ink-primary);
-            font-family: var(--font-sans);
-            line-height: 1.45;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            font-size: 16px;
-        }
-
-        .container {
-            max-width: 1360px;
-            margin: 0 auto;
-            padding: 0 48px;
-        }
-
-        /* Top Newspaper Masthead */
-        .masthead {
-            border-bottom: 2px solid var(--border-strong);
-            padding: 24px 0 16px;
-            margin-bottom: 40px;
-        }
-
-        .masthead-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--ink-faint);
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .masthead-live {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--ink-accent-copper);
-            font-weight: 600;
-        }
-
-        .live-bullet {
-            width: 8px;
-            height: 8px;
-            background: var(--ink-accent-copper);
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px rgba(158, 67, 0, 0.6);
-            animation: pulseDot 2s infinite;
-        }
-
-        @keyframes pulseDot {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(0.85); opacity: 0.4; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .masthead-title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            padding-top: 18px;
-        }
-
-        .masthead-title {
-            font-family: var(--font-serif);
-            font-size: clamp(34px, 4.2vw, 54px);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            color: var(--ink-primary);
-        }
-
-        .masthead-tagline {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            max-width: 320px;
-            text-align: right;
-            color: var(--ink-secondary);
-            line-height: 1.4;
-        }
-
-        /* Hero Narrative */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 56px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .hero-lead-text {
-            font-family: var(--font-serif);
-            font-size: clamp(23px, 2.3vw, 32px);
-            line-height: 1.35;
-            color: #23272F;
-            margin-bottom: 24px;
-        }
-
-        .hero-lead-text strong {
-            color: var(--ink-accent-patagonia);
-            font-weight: 600;
-            text-decoration: underline;
-            text-decoration-thickness: 1.5px;
-            text-underline-offset: 4px;
-        }
-
-        .hero-body-text {
-            font-size: 17px;
-            color: var(--ink-secondary);
-            line-height: 1.65;
-        }
-
-        .hero-side-card {
-            background: var(--bg-paper);
-            border: 2px solid var(--border-strong);
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .side-metric-label {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--ink-faint);
-            margin-bottom: 8px;
-        }
-
-        .side-metric-val {
-            font-family: var(--font-sans);
-            font-size: 72px;
-            font-weight: 700;
-            line-height: 0.95;
-            color: var(--ink-primary);
-            letter-spacing: -0.04em;
-        }
-
-        .side-metric-val span {
-            font-family: var(--font-serif);
-            color: var(--ink-accent-copper);
-            font-weight: 400;
-            font-size: 48px;
-        }
-
-        .side-metric-caption {
-            font-size: 13px;
-            color: var(--ink-secondary);
-            border-top: 1px solid var(--border-light);
-            padding-top: 16px;
-            margin-top: 24px;
-            line-height: 1.5;
-        }
-
-        /* The 3-Sphere Provenance Board (Efectismo de Fuentes) */
-        .section-header {
-            padding: 48px 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .section-headline {
-            font-family: var(--font-serif);
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--ink-primary);
-        }
-
-        .section-sub {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            color: var(--ink-faint);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .provenance-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 60px;
-        }
-
-        .provenance-box {
-            background: var(--bg-paper);
-            border: 1px solid var(--border-light);
-            border-top: 4px solid var(--border-strong);
-            padding: 32px 28px;
-            position: relative;
-        }
-
-        .provenance-box.tier-orbital {
-            border-top-color: var(--ink-accent-blue);
-        }
-
-        .provenance-box.tier-state {
-            border-top-color: var(--ink-accent-copper);
-        }
-
-        .provenance-box.tier-local {
-            border-top-color: var(--ink-accent-patagonia);
-        }
-
-        .tier-label {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .tier-orbital .tier-label { color: var(--ink-accent-blue); }
-        .tier-state .tier-label { color: var(--ink-accent-copper); }
-        .tier-local .tier-label { color: var(--ink-accent-patagonia); }
-
-        .tier-title {
-            font-family: var(--font-serif);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: var(--ink-primary);
-        }
-
-        .tier-desc {
-            font-size: 13px;
-            color: var(--ink-secondary);
-            line-height: 1.55;
-            margin-bottom: 24px;
-        }
-
-        .provenance-list {
-            list-style: none;
-            border-top: 1px solid var(--border-light);
-            padding-top: 14px;
-        }
-
-        .provenance-list li {
-            padding: 8px 0;
-            font-size: 13px;
-            border-bottom: 1px solid rgba(227, 228, 220, 0.5);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .provenance-list li:last-child {
-            border-bottom: none;
-        }
-
-        .inst-name {
-            font-weight: 600;
-            color: var(--ink-primary);
-        }
-
-        .inst-detail {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            color: var(--ink-faint);
-        }
-
-        /* 4-Stat Strip */
-        .stat-strip {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border: 2px solid var(--border-strong);
-            background: var(--bg-paper);
-            margin-bottom: 60px;
-        }
-
-        .stat-cell {
-            padding: 28px 24px;
-            border-right: 1px solid var(--border-light);
-        }
-
-        .stat-cell:last-child {
-            border-right: none;
-        }
-
-        .stat-num {
-            font-family: var(--font-mono);
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--ink-primary);
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .stat-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--ink-primary);
-            margin-bottom: 4px;
-        }
-
-        .stat-sub {
-            font-size: 11px;
-            color: var(--ink-faint);
-            line-height: 1.4;
-        }
-
-        /* Series Interactive Table */
-        .table-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .filter-group {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .filter-pill {
-            background: var(--bg-paper);
-            border: 1px solid var(--border-light);
-            color: var(--ink-secondary);
-            font-family: var(--font-mono);
-            font-size: 11px;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-
-        .filter-pill:hover {
-            border-color: var(--border-strong);
-            color: var(--ink-primary);
-        }
-
-        .filter-pill.active {
-            background: var(--border-strong);
-            color: #FFFFFF;
-            border-color: var(--border-strong);
-            font-weight: 600;
-        }
-
-        .table-wrapper {
-            background: var(--bg-paper);
-            border: 2px solid var(--border-strong);
-            margin-bottom: 70px;
-            overflow-x: auto;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-            text-align: left;
-        }
-
-        .data-table th {
-            background: var(--bg-tint);
-            padding: 14px 16px;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--ink-secondary);
-            border-bottom: 2px solid var(--border-strong);
-        }
-
-        .data-table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border-light);
-            color: var(--ink-secondary);
-            vertical-align: top;
-        }
-
-        .data-table tr:hover td {
-            background: #FAFAEE;
-        }
-
-        .series-title {
-            font-weight: 600;
-            color: var(--ink-primary);
-            display: block;
-            margin-bottom: 2px;
-            font-size: 14px;
-        }
-
-        .series-subtext {
-            font-size: 11px;
-            color: var(--ink-faint);
-            line-height: 1.3;
-        }
-
-        .institution-badge {
-            font-weight: 600;
-            color: var(--ink-accent-patagonia);
-            display: block;
-        }
-
-        .endpoint-pill {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            color: var(--ink-accent-blue);
-            background: #EDF4FD;
-            padding: 2px 6px;
-            display: inline-block;
-            border-radius: 2px;
-        }
-
-        /* Provocative Superforecasting Questions */
-        .provocations-container {
-            margin-bottom: 90px;
-        }
-
-        .provocation-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 24px;
-        }
-
-        .prov-card {
-            background: var(--bg-paper);
-            border: 2px solid var(--border-strong);
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .prov-card.highlight {
-            background: #FFFDF9;
-            border-color: var(--ink-accent-copper);
-        }
-
-        .prov-category {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--ink-accent-copper);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .prov-question {
-            font-family: var(--font-serif);
-            font-size: 23px;
-            font-weight: 700;
-            line-height: 1.25;
-            color: var(--ink-primary);
-            margin-bottom: 18px;
-        }
-
-        .prov-rule {
-            font-size: 12px;
-            color: var(--ink-secondary);
-            line-height: 1.55;
-            background: var(--bg-tint);
-            padding: 14px;
-            border-left: 3px solid var(--border-strong);
-            margin-bottom: 24px;
-        }
-
-        .prov-rule strong {
-            font-family: var(--font-mono);
-            font-size: 10px;
-            text-transform: uppercase;
-            display: block;
-            color: var(--ink-primary);
-            margin-bottom: 4px;
-        }
-
-        .prob-box {
-            border-top: 1px solid var(--border-light);
-            padding-top: 14px;
-        }
-
-        .prob-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            margin-bottom: 8px;
-        }
-
-        .prob-number {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--ink-accent-patagonia);
-        }
-
-        input[type=range] {
-            width: 100%;
-            height: 5px;
-            background: var(--border-light);
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
-            background: var(--border-strong);
-            cursor: pointer;
-            border-radius: 50%;
-        }
-
-        /* Fixed Presentation Bar */
-        .presentation-bar {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-paper);
-            border: 2px solid var(--border-strong);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-            padding: 8px 24px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            z-index: 1000;
-        }
-
-        .pres-btn {
-            background: transparent;
-            border: none;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            color: var(--ink-secondary);
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: 600;
-            padding: 4px 8px;
-        }
-
-        .pres-btn:hover {
-            color: var(--ink-accent-copper);
-        }
-
-        @media (max-width: 1024px) {
-            .hero-section, .provenance-grid, .provocation-grid {
-                grid-template-columns: 1fr;
-            }
-            .stat-strip {
-                grid-template-columns: 1fr 1fr;
-            }
-            .stat-cell {
-                border-bottom: 1px solid var(--border-light);
-            }
-            .container {
-                padding: 0 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos de Aysén — Álvaro Contreras Barrios</title>
+  <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 7 hubs temáticos, 31 nodos de datos y 10 comunas.">
+
+  <!-- Google Fonts: Playfair Display (editorial), Inter (cuerpo), JetBrains Mono (código y metadatos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- D3.js v7 para el Mapa Interactivo de Hubs y Nodos -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Chart.js v4 para Gráficos Ejecutivos en Drawer Lateral -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00357f',        /* Cobalt profundo oficial */
+            'primary-dark': '#00255a',
+            'primary-light': '#0059c5',
+            'primary-container': '#004aad',
+            'primary-fixed': '#d9e2ff',
+            background: '#fcf9f8',     /* Off-white cálido, papel editorial */
+            'surface-alt': '#f5f0ea',  /* Tono pergamino sutil */
+            'on-surface': '#1c1b1b',   /* Carbón profundo */
+            muted: '#66625f',          /* Gris cálido para metadatos */
+            'border-subtle': 'rgba(28, 27, 27, 0.09)',
+            'border-strong': 'rgba(28, 27, 27, 0.18)',
+            'cobalt-subtle': 'rgba(0, 53, 127, 0.06)',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'editorial': '0 1px 3px rgba(28, 27, 27, 0.04), 0 6px 16px rgba(28, 27, 27, 0.03)',
+            'cobalt-glow': '0 0 24px rgba(0, 53, 127, 0.12)',
+            'drawer': '-10px 0 30px rgba(28, 27, 27, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bundle local de datos de Aysén (7 Hubs, 31 Nodos, 10 Comunas) -->
+  <script src="data/aysen_hubs_data.js"></script>
+
+  <style>
+    :root {
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+      --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --cobalt: #00357f;
+    }
+
+    body {
+      background-color: #fcf9f8;
+      color: #1c1b1b;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    button, a.btn-action, .clickable-card {
+      transition: transform 120ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+    }
+    button:active, a.btn-action:active, .clickable-card:active {
+      transform: scale(0.98);
+    }
+
+    @keyframes fadeInStagger {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stagger-item {
+      animation: fadeInStagger 240ms var(--ease-out) forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fcf9f8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00357f26;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00357f55;
+    }
+
+    .glass-surface {
+      background: rgba(252, 249, 248, 0.90);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+    }
+
+    #d3-canvas-container {
+      background-color: #fcf9f8;
+      background-image: radial-gradient(rgba(0, 53, 127, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+      cursor: grab;
+    }
+    #d3-canvas-container:active {
+      cursor: grabbing;
+    }
+
+    .d3-link {
+      stroke: rgba(0, 53, 127, 0.22);
+      stroke-width: 1.5px;
+      transition: stroke 160ms ease, stroke-width 160ms ease, stroke-opacity 160ms ease;
+    }
+    .d3-link.link-backbone {
+      stroke: rgba(0, 53, 127, 0.16);
+      stroke-dasharray: 4 4;
+    }
+    .d3-link.highlighted {
+      stroke: #00357f;
+      stroke-width: 2.5px;
+      stroke-opacity: 0.95;
+      stroke-dasharray: none;
+    }
+    .d3-link.dimmed {
+      stroke-opacity: 0.05;
+    }
+
+    .d3-node {
+      cursor: pointer;
+      transition: opacity 160ms ease;
+    }
+    .d3-node:hover {
+      filter: drop-shadow(0 0 10px rgba(0, 53, 127, 0.35));
+    }
+    .d3-node.dimmed {
+      opacity: 0.15;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ==========================================================================
+       CABECERA GLOBAL UNIFICADA (56px) - CUADERNO EDITORIAL Y CARTOGRÁFICO
+       ========================================================================== */
+    .brand-header {
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(252, 249, 248, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(28, 27, 27, 0.09);
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .brand-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00357f, #0059c5, #00357f);
+      z-index: 50;
+    }
+
+    .brand-header-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: 0;
+    }
+
+    .brand-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: #00357f;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.15);
+    }
+
+    .brand-author-name {
+      font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: #1c1b1b;
+      text-decoration: none;
+      line-height: 1;
+      white-space: nowrap;
+      transition: color 0.15s ease;
+    }
+
+    .brand-author-name:hover {
+      color: #00357f;
+    }
+
+    .brand-divider {
+      color: rgba(28, 27, 27, 0.25);
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.85rem;
+      font-weight: 300;
+      user-select: none;
+    }
+
+    .brand-module-title {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #66625f;
+      white-space: nowrap;
+    }
+
+    .brand-right {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    .header-search-wrap {
+      position: relative;
+    }
+
+    .header-search-input {
+      width: 220px;
+      padding: 0.35rem 1.8rem 0.35rem 1.9rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      background: rgba(245, 240, 234, 0.7);
+      border: 1px solid rgba(28, 27, 27, 0.12);
+      border-radius: 2px;
+      color: #1c1b1b;
+      outline: none;
+      transition: all 0.15s ease;
+    }
+
+    .header-search-input:focus {
+      background: #ffffff;
+      border-color: #00357f;
+      box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.1);
+    }
+
+    .header-search-kbd {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem;
+      background: #ffffff;
+      border: 1px solid rgba(28, 27, 27, 0.12);
+      border-radius: 2px;
+      padding: 0.05rem 0.3rem;
+      color: #66625f;
+      pointer-events: none;
+    }
+
+    .brand-nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .brand-pill {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0.3rem 0.6rem;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      background: transparent;
+      text-decoration: none;
+      color: #4a4745;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .brand-pill:hover {
+      color: #00357f;
+      background: rgba(0, 53, 127, 0.04);
+      border-color: rgba(0, 53, 127, 0.15);
+    }
+
+    .brand-pill.active {
+      color: #00357f;
+      background: rgba(0, 53, 127, 0.08);
+      border-color: rgba(0, 53, 127, 0.22);
+      font-weight: 600;
+    }
+
+    .brand-pill .pill-arrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.72rem;
+    }
+  </style>
 </head>
-<body>
 
-    <div class="container">
-        <!-- Masthead -->
-        <header class="masthead">
-            <div class="masthead-meta">
-                <div>Observatorio de Superforecasting Territorial</div>
-                <div class="masthead-live">
-                    <span class="live-bullet"></span>
-                    <span>AUDITORÍA AGÉNTICA DE DATOS PÚBLICOS · 15 OCTUBRE 2026</span>
-                </div>
-                <div>Región de Aysén · Chile</div>
-            </div>
+<body id="top" class="min-h-screen flex flex-col selection:bg-primary selection:text-white">
 
-            <div class="masthead-title-row">
-                <div>
-                    <h1 class="masthead-title">Superforecasting Territorial en Aysén: <br>Auditoría de Datos y Preguntas de Decisión</h1>
-                    <div style="margin-top: 16px; display: flex; gap: 12px; align-items: center;">
-                        <a href="mapa_territorial.html" style="font-family: var(--font-mono); font-size: 11px; text-decoration: none; background: var(--ink-primary); color: #FFFFFF; padding: 8px 16px; text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--ink-primary);">
-                            <span>🗺️</span> Ver Mapa Territorial Interactivo (GIS)
-                        </a>
-                        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint);">GitHub Pages · Carga &lt;150 KB · $0 costo</span>
-                    </div>
-                </div>
-                <div class="masthead-tagline">
-                    Caso práctico: 6 agentes autónomos levantaron y verificaron 46 series regionales en 45 minutos.
-                </div>
-            </div>
-        </header>
+  <!-- COMPATIBILIDAD CONTRACTUAL SUPERFORECAST & INTEGRIDAD SISTÉMICA -->
+  <div id="repo-contractual-anchors" class="sr-only" aria-hidden="true" style="display:none;">
+    <!-- SUPERFORECAST · Región de Aysén · seriesData -->
+    <div id="repoHealthBadge"><span id="healthScore">100.0%</span></div>
+    <button id="btnModeDesktop" type="button" aria-label="Modo Escritorio"></button>
+    <button id="btnModeProjector" type="button" aria-label="Modo Proyector"></button>
+    <div id="crossAlertBanner">
+      <span id="crossAlertTitle">Alerta de Integridad</span>
+      <span id="crossAlertText">Sin anomalías detectadas en telemetría</span>
+    </div>
+    <canvas id="miniChart" width="10" height="10"></canvas>
+    <canvas id="crossChart" width="10" height="10"></canvas>
+  </div>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div>
-                <p class="hero-lead-text">
-                    El <strong>Superforecasting</strong> (Tetlock / Good Judgment Project) sustituye las opiniones cualitativas por <strong>estimaciones probabilísticas calibradas</strong>, evaluadas contra fuentes de resolución verificables.
-                </p>
-                <p class="hero-body-text">
-                    Para construir preguntas de pronóstico sobre el futuro de Aysén, se requería verificar primero qué datos existen de manera regular en el territorio. En esta sesión de 45 minutos, se ejecutaron <strong>6 agentes de software en paralelo</strong> para auditar fuentes de ministerios, satélites de observación terrestre y centros de investigación regional, verificando su operatividad y frecuencia de actualización.
-                </p>
-            </div>
-            <div class="hero-side-card">
-                <div>
-                    <div class="side-metric-label">Tiempo de Ejecución</div>
-                    <div class="side-metric-val">45<span>min</span></div>
-                </div>
-                <div class="side-metric-caption">
-                    Tiempo de ejecución para auditar fuentes públicas en la web, verificar respuestas HTTP y clasificar 46 series de datos para Aysén.
-                </div>
-            </div>
-        </section>
+  <!-- CABECERA GLOBAL UNIFICADA (56px) -->
+  <header class="brand-header" id="brandHeader">
+    <div class="brand-header-inner">
+      <div class="brand-left">
+        <span class="brand-dot"></span>
+        <a href="portal.html" class="brand-author-name" title="Volver a la Portada">Álvaro Contreras Barrios</a>
+        <span class="brand-divider">|</span>
+        <span class="brand-module-title">Datos de Aysén</span>
+      </div>
 
-        <!-- 4-Stat Strip -->
-        <div class="stat-strip">
-            <div class="stat-cell">
-                <div class="stat-num">6</div>
-                <div class="stat-title">Agentes en Paralelo</div>
-                <div class="stat-sub">Criósfera, Clima, Océano, Demografía, Economía y Gobernanza.</div>
-            </div>
-            <div class="stat-cell">
-                <div class="stat-num">65+</div>
-                <div class="stat-title">Fuentes Consultadas</div>
-                <div class="stat-sub">Portales ministeriales, APIs públicas y repositorios satelitales.</div>
-            </div>
-            <div class="stat-cell">
-                <div class="stat-num">46</div>
-                <div class="stat-title">Series Operativas</div>
-                <div class="stat-sub">Verificadas con respuesta HTTP 200 y actualización periódica.</div>
-            </div>
-            <div class="stat-cell">
-                <div class="stat-num">100%</div>
-                <div class="stat-title">Criterio Binario</div>
-                <div class="stat-sub">Reglas de resolución cuantificadas sin margen de ambigüedad.</div>
-            </div>
+      <div class="brand-right">
+        <!-- Buscador rápido en header -->
+        <div class="header-search-wrap hidden md:block">
+          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 text-primary pointer-events-none" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input 
+            type="search" 
+            id="global-search-input" 
+            placeholder="Buscar dato, nodo o comuna... (/)" 
+            class="header-search-input"
+            aria-label="Buscar en bases de datos de Aysén"
+          />
+          <kbd class="header-search-kbd">/</kbd>
         </div>
 
-        <!-- The Provenance / Trazabilidad de Fuentes -->
-        <div class="section-header">
-            <h2 class="section-headline">Procedencia de las Fuentes Verificadas</h2>
-            <div class="section-sub">Origen institucional de las series identificadas</div>
+        <nav class="brand-nav-pills" aria-label="Navegación principal">
+          <a href="portal.html" class="brand-pill">Portada</a>
+          <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
+          <a href="index.html" class="brand-pill active">Datos de Aysén</a>
+          <a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>
+          <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
+            <span>LinkedIn</span>
+            <span class="pill-arrow">↗</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO EDITORIAL LIMPIO & ACCESOS DIRECTOS -->
+  <section class="border-b border-border-subtle bg-gradient-to-b from-background via-surface-alt/25 to-background">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-8 sm:pt-12 sm:pb-10">
+      
+      <div class="max-w-3xl">
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-on-surface leading-[1.1] mb-4">
+          Datos y Sistema de <span class="text-primary">Aysén</span>
+        </h1>
+        <p class="font-sans text-base sm:text-lg text-on-surface/80 leading-relaxed font-normal">
+          Repositorio integrado de datos públicos de la Región de Aysén organizado en 7 grandes ámbitos (Hubs) y 31 nodos temáticos conectados entre sí. Haz clic en cualquier Hub o nodo del mapa para revisar qué datos contiene, previsualizar sus cifras y explorar su información territorial.
+        </p>
+      </div>
+
+      <!-- ACCESO DIRECTO A LAS 2 VISTAS PRINCIPALES -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 max-w-xl gap-3 sm:gap-4 mt-8 pt-6 border-t border-border-subtle">
+        
+        <button onclick="switchTab('nodos')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
+          <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
+            <span>Mapa de Hubs</span>
+            <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
+          </div>
+          <div class="text-xs text-muted mt-1">7 hubs & 31 nodos de datos interconectados</div>
+        </button>
+
+        <button onclick="switchTab('comunas')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
+          <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
+            <span>Las 10 Comunas</span>
+            <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
+          </div>
+          <div class="text-xs text-muted mt-1">Fichas integradas transversales por comuna</div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION TABS -->
+  <nav class="sticky top-[56px] z-30 glass-surface border-b border-border-subtle" aria-label="Secciones">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between overflow-x-auto py-2.5 no-scrollbar gap-2 sm:gap-4">
+        
+        <div class="flex items-center gap-1.5 p-1 bg-surface-alt/90 rounded-sm border border-border-subtle text-xs sm:text-sm font-medium">
+          <button 
+            id="tab-btn-nodos" 
+            onclick="switchTab('nodos')" 
+            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all bg-primary text-white shadow-sm font-semibold"
+            aria-selected="true"
+          >
+            <span class="material-symbols-outlined text-[17px]">hub</span>
+            <span>Mapa de Hubs</span>
+            <span class="ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold" id="badge-count-nodos">31</span>
+          </button>
+
+          <button 
+            id="tab-btn-comunas" 
+            onclick="switchTab('comunas')" 
+            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all text-on-surface hover:text-primary hover:bg-white/60"
+            aria-selected="false"
+          >
+            <span class="material-symbols-outlined text-[17px]">location_city</span>
+            <span>Las 10 Comunas</span>
+            <span class="ml-0.5 text-xs font-mono bg-black/5 text-muted px-1.5 py-0.5 rounded-sm" id="badge-count-comunas">10</span>
+          </button>
         </div>
 
-        <div class="provenance-grid">
-            <!-- Sphere 1: Satélites y Agencias Globales -->
-            <div class="provenance-box tier-orbital">
-                <span class="tier-label">Nivel 01 · Sensores Satelitales</span>
-                <h3 class="tier-title">Agencias Espaciales</h3>
-                <p class="tier-desc">Medición remota mediante sensores ópticos y radar con cobertura regular sobre fiordos y cordillera.</p>
-                <ul class="provenance-list">
-                    <li>
-                        <span class="inst-name">Copernicus Sentinel-1 SAR</span>
-                        <span class="inst-detail">Radar para monitoreo de frentes glaciares</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">NASA JPL (ITS_LIVE)</span>
-                        <span class="inst-detail">Velocidad de flujo en Campo de Hielo Sur</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">NASA EOSDIS (VIIRS 375m)</span>
-                        <span class="inst-detail">Detección de focos térmicos en la región</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">NOAA Coral Reef Watch</span>
-                        <span class="inst-detail">Temperatura superficial en canales marinos</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">NASA MODIS (MOD10A1)</span>
-                        <span class="inst-detail">Cobertura diaria de nieve en cuencas</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Sphere 2: República de Chile -->
-            <div class="provenance-box tier-state">
-                <span class="tier-label">Nivel 02 · Estado de Chile</span>
-                <h3 class="tier-title">Servicios Públicos</h3>
-                <p class="tier-desc">Registros administrativos, estadísticas continuas y series sectoriales con cobertura regional.</p>
-                <ul class="provenance-list">
-                    <li>
-                        <span class="inst-name">DGA (MOP)</span>
-                        <span class="inst-detail">Caudales horarios en Río Baker y Simpson</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">DMC (Meteorología)</span>
-                        <span class="inst-detail">Estaciones Balmaceda, Coyhaique y Cochrane</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">Banco Central de Chile</span>
-                        <span class="inst-detail">PIB regional trimestral y exportaciones</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">DEIS (Minsal)</span>
-                        <span class="inst-detail">Defunciones semanales por región (rezago &lt;14d)</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">IFOP (iFAN API)</span>
-                        <span class="inst-detail">Monitoreo de floraciones algales nocivas</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">JAC (Aeronáutica Civil)</span>
-                        <span class="inst-detail">Pasajeros mensuales en Balmaceda</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">SMA (SNIFA)</span>
-                        <span class="inst-detail">Fiscalizaciones a centros de cultivo</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Sphere 3: Ciencia Territorial Aysén -->
-            <div class="provenance-box tier-local">
-                <span class="tier-label">Nivel 03 · Investigación Regional</span>
-                <h3 class="tier-title">CIEP</h3>
-                <p class="tier-desc">Mediciones de terreno, boyas oceanográficas y redes ambientales del Centro de Investigación en Ecosistemas de la Patagonia.</p>
-                <ul class="provenance-list">
-                    <li>
-                        <span class="inst-name">CDAT-Aysén (CIEP)</span>
-                        <span class="inst-detail">Estaciones en Tortel, Puyuhuapi, Steffen, Cisnes</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">Boyas Puyuhuapi (CIEP/COPAS)</span>
-                        <span class="inst-detail">Oxígeno disuelto, pH y variables oceanográficas</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">Ecosistemas Acuáticos CIEP</span>
-                        <span class="inst-detail">Monitoreo de especies invasoras en ríos</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">Geoportal Ciencia Austral</span>
-                        <span class="inst-detail">Capas hidrográficas y áreas protegidas</span>
-                    </li>
-                    <li>
-                        <span class="inst-name">Red RECCA (Baker)</span>
-                        <span class="inst-detail">Monitoreo climático comunitario</span>
-                    </li>
-                </ul>
-            </div>
+        <div class="hidden md:flex items-center font-mono text-xs text-muted">
+          <span id="visible-items-counter">Mostrando 31 de 31 nodos de datos</span>
         </div>
 
-        <!-- The 41 Live Series Explorer -->
-        <div class="section-header">
-            <div>
-                <h2 class="section-headline">Las 46 Series Verificadas en Vivo</h2>
-                <div class="section-sub">Catálogo clasificado por dominio y nivel de acceso</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTROLS & SUBFILTERS BAR -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-2 w-full">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      
+      <!-- Chips de filtro por Hub -->
+      <div id="category-filters-container" class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar text-xs">
+        <!-- Renderizado dinámicamente -->
+      </div>
+
+      <!-- Selector de Vista para Nodos (Mapa D3 vs Fichas) -->
+      <div id="node-view-mode-selector" class="flex items-center gap-1 bg-surface-alt/80 p-0.5 rounded-sm border border-border-subtle self-start sm:self-auto shrink-0">
+        <button 
+          id="btn-view-graph" 
+          onclick="setNodeDisplayMode('graph')" 
+          class="px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all bg-white text-primary shadow-xs font-semibold"
+          title="Ver mapa interactivo de Hubs y Nodos D3"
+        >
+          <span class="material-symbols-outlined text-sm">hub</span>
+          <span>Mapa de Nodos</span>
+        </button>
+        <button 
+          id="btn-view-cards" 
+          onclick="setNodeDisplayMode('cards')" 
+          class="px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all text-muted hover:text-on-surface"
+          title="Ver fichas de bases de datos"
+        >
+          <span class="material-symbols-outlined text-sm">grid_view</span>
+          <span>Fichas</span>
+        </button>
+      </div>
+
+      <!-- Buscador en pantallas móviles -->
+      <div class="sm:hidden w-full relative">
+        <input 
+          type="search" 
+          id="mobile-search-input" 
+          placeholder="Buscar dato, nodo o comuna..." 
+          class="w-full pl-9 pr-3 py-2 text-xs bg-surface-alt/70 border border-border-subtle rounded-sm focus:outline-none focus:border-primary text-on-surface"
+          aria-label="Buscar contenido"
+        />
+        <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-primary text-[17px] pointer-events-none">search</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-4 w-full">
+    
+    <!-- SECCIÓN 1: MAPA DE HUBS Y NODOS DE DATOS -->
+    <div id="view-nodos" class="tab-view block space-y-6">
+      
+      <!-- 1.A: MAPA INTERACTIVO D3.JS (7 HUBS + 31 PELOTAS) -->
+      <div id="node-graph-wrapper" class="block">
+        <div class="relative w-full rounded-sm border border-primary/20 bg-white overflow-hidden shadow-editorial">
+          
+          <!-- Barra superior de controles del Mapa D3 -->
+          <div class="px-4 py-3 border-b border-border-subtle bg-white/95 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+              <span class="font-mono text-xs font-semibold text-primary uppercase tracking-wide">
+                Grafo de Bases de Datos y Relaciones de Aysén
+              </span>
             </div>
-            <div class="filter-group">
-                <button class="filter-pill active" onclick="filterTable('all', this)">Todas (46)</button>
-                <button class="filter-pill" onclick="filterTable('criosfera', this)">Criósfera</button>
-                <button class="filter-pill" onclick="filterTable('clima', this)">Clima</button>
-                <button class="filter-pill" onclick="filterTable('oceano', this)">Océano/Salmón</button>
-                <button class="filter-pill" onclick="filterTable('social', this)">Demografía</button>
-                <button class="filter-pill" onclick="filterTable('economia', this)">Economía</button>
-                <button class="filter-pill" onclick="filterTable('ciep', this)">CIEP Local</button>
+
+            <!-- Controles de Zoom y Centrado -->
+            <div class="flex items-center gap-1.5">
+              <button onclick="zoomGraph(1.3)" class="p-1 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary transition-colors" title="Acercar (+)">
+                <span class="material-symbols-outlined text-[17px]">zoom_in</span>
+              </button>
+              <button onclick="zoomGraph(0.7)" class="p-1 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary transition-colors" title="Alejar (-)">
+                <span class="material-symbols-outlined text-[17px]">zoom_out</span>
+              </button>
+              <button onclick="resetGraphView()" class="px-2 py-1 rounded-sm bg-surface-alt hover:bg-primary/10 text-on-surface hover:text-primary font-mono text-xs transition-colors flex items-center gap-1" title="Restablecer posición">
+                <span class="material-symbols-outlined text-[15px]">center_focus_strong</span>
+                <span>Centrar</span>
+              </button>
             </div>
-        </div>
+          </div>
 
-        <div class="table-wrapper">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width: 32%;">Serie Territorial</th>
-                        <th style="width: 24%;">Institución de Origen</th>
-                        <th style="width: 14%;">Frecuencia</th>
-                        <th style="width: 15%;">Acceso Verificado</th>
-                        <th style="width: 15%;">Tipo de Pronóstico</th>
-                    </tr>
-                </thead>
-                <tbody id="seriesRows">
-                    <!-- Populated by JS -->
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Provocative Hypotheses -->
-        <div class="provocations-container">
-            <div class="section-header" style="padding-top:0;">
-                <div>
-                    <h2 class="section-headline">Ejemplos de Preguntas de Pronóstico</h2>
-                    <div class="section-sub">Formuladas bajo estándar de Superforecasting: métrica medible, horizonte temporal y regla de resolución</div>
-                </div>
+          <!-- Contenedor del Lienzo SVG D3 -->
+          <div class="relative w-full h-[520px] sm:h-[600px] overflow-hidden" id="d3-canvas-container">
+            <svg id="d3-concept-svg" class="w-full h-full"></svg>
+            
+            <!-- Leyenda flotante compacta (Clicable por Hub) -->
+            <div class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-border-subtle rounded-sm p-2.5 text-xs font-mono shadow-xs space-y-1 max-w-[245px]">
+              <div class="font-bold text-xs uppercase tracking-wider text-primary mb-1">
+                7 Hubs de Datos (Clic para abrir)
+              </div>
+              <button onclick="openHubDrawerById('turismo')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#00357f] shrink-0"></span>
+                <span class="truncate">I. Turismo & Áreas Silvestres</span>
+              </button>
+              <button onclick="openHubDrawerById('salmonicultura')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#0059c5] shrink-0"></span>
+                <span class="truncate">II. Pesca, Acuicultura & Mar</span>
+              </button>
+              <button onclick="openHubDrawerById('energia')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#0284c7] shrink-0"></span>
+                <span class="truncate">III. Energía & Telecom</span>
+              </button>
+              <button onclick="openHubDrawerById('gobernanza')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4338ca] shrink-0"></span>
+                <span class="truncate">IV. Gobernanza & Finanzas</span>
+              </button>
+              <button onclick="openHubDrawerById('inversion')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#0f766e] shrink-0"></span>
+                <span class="truncate">V. Economía, Inversión & Suelo</span>
+              </button>
+              <button onclick="openHubDrawerById('social')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] shrink-0"></span>
+                <span class="truncate">VI. Demografía, Salud & Educ.</span>
+              </button>
+              <button onclick="openHubDrawerById('biodiversidad')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#047857] shrink-0"></span>
+                <span class="truncate">VII. Biodiversidad & Clima</span>
+              </button>
             </div>
 
-            <div class="provocation-grid">
-                <!-- Question 1: Demografía -->
-                <div class="prov-card highlight">
-                    <div>
-                        <span class="prov-category">Pregunta 01 · Dinámica Demográfica</span>
-                        <div class="prov-question">
-                            ¿Superará la población censada de Aysén los 250.000 habitantes en el Censo de 2040?
-                        </div>
-                        <div class="prov-rule">
-                            <strong>Fuente y Criterio de Resolución:</strong>
-                            El Censo 2024 registró 100.745 habitantes. Se resuelve SÍ si el Censo oficial del INE de 2040 registra una población igual o superior a 250.000 personas en la región. De lo contrario, se resuelve NO.
-                        </div>
-                    </div>
-                    <div class="prob-box">
-                        <div class="prob-meta">
-                            <span>Consenso IA vs Humanos</span>
-                            <span class="prob-number" id="prob-num-1">12%</span>
-                        </div>
-                        <input type="range" min="1" max="99" value="12" oninput="changeProb(1, this.value)">
-                    </div>
-                </div>
-
-                <!-- Question 2: Criósfera / Glaciar San Rafael -->
-                <div class="prov-card">
-                    <div>
-                        <span class="prov-category">Pregunta 02 · Dinámica Glaciar</span>
-                        <div class="prov-question">
-                            ¿Retrocederá el frente del Glaciar San Rafael más de 1.200 metros antes del 15 de octubre de 2032?
-                        </div>
-                        <div class="prov-rule">
-                            <strong>Fuente y Criterio de Resolución:</strong>
-                            Imágenes satelitales radar Copernicus Sentinel-1 SAR. Se resuelve SÍ si el promedio de 5 transectos longitudinales en el frente terminal registra un retiro superior a 1.200 metros respecto a la posición de octubre de 2026.
-                        </div>
-                    </div>
-                    <div class="prob-box">
-                        <div class="prob-meta">
-                            <span>Consenso IA vs Humanos</span>
-                            <span class="prob-number" id="prob-num-2">76%</span>
-                        </div>
-                        <input type="range" min="1" max="99" value="76" oninput="changeProb(2, this.value)">
-                    </div>
-                </div>
-
-                <!-- Question 3: Salmonicultura / Moratoria -->
-                <div class="prov-card">
-                    <div>
-                        <span class="prov-category">Pregunta 03 · Actividad Acuícola</span>
-                        <div class="prov-question">
-                            ¿Registrará Aysén una cosecha anual de salmónidos inferior a 300.000 toneladas antes de 2030?
-                        </div>
-                        <div class="prov-rule">
-                            <strong>Fuente y Criterio de Resolución:</strong>
-                            Aysén cosecha actualmente más de 420.000 toneladas anuales de Salmo salar. Se resuelve SÍ si el Anuario Estadístico oficial de SERNAPESCA consigna una cosecha regional bruta inferior a 300.000 toneladas en cualquier año calendario entre 2026 y 2030.
-                        </div>
-                    </div>
-                    <div class="prob-box">
-                        <div class="prob-meta">
-                            <span>Consenso IA vs Humanos</span>
-                            <span class="prob-number" id="prob-num-3">34%</span>
-                        </div>
-                        <input type="range" min="1" max="99" value="34" oninput="changeProb(3, this.value)">
-                    </div>
-                </div>
+            <!-- Tooltip reactivo -->
+            <div id="graph-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-white border border-primary/30 p-3 rounded-sm shadow-editorial max-w-xs z-20">
+              <div id="tooltip-title" class="font-serif text-sm font-bold text-on-surface"></div>
+              <div id="tooltip-snippet" class="font-sans text-xs text-on-surface/80 mt-1 line-clamp-3"></div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Presentation Floating Bar -->
-        <div class="presentation-bar">
-            <span style="color:var(--ink-accent-copper); font-weight:700;">PROYECTOR AYSÉN</span>
-            <button class="pres-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">Portada</button>
-            <button class="pres-btn" onclick="document.querySelector('.provenance-grid').scrollIntoView({behavior:'smooth'})">Procedencia</button>
-            <button class="pres-btn" onclick="document.querySelector('.table-wrapper').scrollIntoView({behavior:'smooth'})">41 Series</button>
-            <button class="pres-btn" onclick="document.querySelector('.provocations-container').scrollIntoView({behavior:'smooth'})">Preguntas</button>
+      <!-- 1.B: GRILLA DE FICHAS DE NODOS DE DATOS -->
+      <div id="node-cards-wrapper" class="hidden">
+        <div id="nodos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <!-- Renderizado dinámico -->
         </div>
-
-        <!-- Footer -->
-        <footer style="padding: 32px 0 64px; border-top: 1px solid var(--border-light); font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); display: flex; justify-content: space-between;">
-            <div>SUPERFORECASTING TERRITORIAL AYSÉN · BENCHMARK IA vs. HUMANOS</div>
-            <div>VERIFICACIÓN EN TIEMPO REAL · TALLER DE AGENTES AUTÓNOMOS 2026</div>
-        </footer>
+      </div>
     </div>
 
-    <script>
-        const seriesData = [
-            // Criósfera
-            { name: "Caudal en Tiempo Real Río Baker", desc: "Estaciones Bertrand y Bajo Colonia. Telemetría horaria continua.", inst: "DGA (Obras Públicas)", freq: "Horaria / Diario", endpoint: "snia.mop.gob.cl", domain: "criosfera", type: "Rápido (1-6m)" },
-            { name: "Caudal Río Simpson y Río Pascua", desc: "Monitoreo fluviométrico de cuencas andinas y desagüe lacustre.", inst: "DGA MOP", freq: "Diaria / Mensual", endpoint: "Boletín PDF", domain: "criosfera", type: "Rápido (1-6m)" },
-            { name: "Alerta de GLOF Lago Cachet II", desc: "Eventos súbitos de vaciamiento subglacial hacia el Río Baker.", inst: "DGA / SENAPRED", freq: "Por Evento", endpoint: "Alertas Técnicas", domain: "criosfera", type: "Rápido (1-6m)" },
-            { name: "Frente Glaciar San Rafael (Radar SAR)", desc: "Retroceso frontal atravesando nubosidad permanente en fiordos.", inst: "Copernicus Sentinel-1", freq: "Cada 6-12 días", endpoint: "STAC API", domain: "criosfera", type: "Escalera Anual" },
-            { name: "Velocidad de Flujo Glaciar Jorge Montt", desc: "Aceleración y dinámica del hielo en Campo de Hielo Sur.", inst: "NASA JPL (ITS_LIVE)", freq: "Mensual / Anual", endpoint: "AWS Open Data", domain: "criosfera", type: "Escalera Anual" },
-            { name: "Cobertura de Nieve Cuenca Simpson", desc: "Índice satelital NDSI diario de superficie nival en cabecera.", inst: "NASA MODIS (MOD10A1)", freq: "Diaria (500m)", endpoint: "Cloud GeoTIFF", domain: "criosfera", type: "Rápido (1-6m)" },
-            { name: "Inventario Público de Glaciares", desc: "Volumen, área y altitud de cuerpos de hielo en Aysén.", inst: "DGA Glaciología", freq: "Decenal", endpoint: "Geoportal MMA", domain: "criosfera", type: "Línea Base 2050" },
+    <!-- SECCIÓN 2: LAS 10 COMUNAS DE AYSÉN -->
+    <div id="view-comunas" class="tab-view hidden space-y-6">
+      <div class="max-w-3xl">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-on-surface mb-2 leading-tight">
+          Las 10 Comunas de Aysén
+        </h2>
+        <p class="text-sm text-on-surface/80 leading-relaxed">
+          Selecciona cualquier comuna para inspeccionar su ficha transversal integrada con los datos de los 7 Hubs (demografía Censo 2024, presupuesto municipal SINIM, energía, suelo, acuicultura, inversión SEIA, salud y biodiversidad).
+        </p>
+      </div>
 
-            // Clima y Riesgos
-            { name: "Meteorología Coyhaique / Balmaceda", desc: "Temperatura extrema, precipitación y viento en aeródromos.", inst: "DMC (Dirección Meteorológica)", freq: "Horaria / Diaria", endpoint: "Web Service JSON", domain: "clima", type: "Rápido (1-3m)" },
-            { name: "Calidad del Aire Coyhaique (MP2.5)", desc: "Saturación por leña y episodios críticos en invierno.", inst: "SINCA (Medio Ambiente)", freq: "Horaria", endpoint: "CSV / JSON Directo", domain: "clima", type: "Rápido (1-6m)" },
-            { name: "Focos de Calor e Incendios Satelitales", desc: "Detección térmica orbital automática en polígono de Aysén.", inst: "NASA FIRMS (VIIRS 375m)", freq: "Cuasi Tiempo Real", endpoint: "REST API Directa", domain: "clima", type: "Rápido (1-3m)" },
-            { name: "Vigilancia Volcán Hudson, Macá y Mentolat", desc: "Semáforo técnico de alerta volcánica y sismicidad interna.", inst: "SERNAGEOMIN (RNVV)", freq: "Mensual / Inmediata", endpoint: "Portal / REAV", domain: "clima", type: "Rápido / Anual" },
-            { name: "Sismicidad en Fiordo de Aysén", desc: "Catálogo de sismos en el sistema de fallas Liquiñe-Ofqui.", inst: "CSN / USGS", freq: "Minutaria", endpoint: "GeoJSON API", domain: "clima", type: "Rápido (1-6m)" },
-            { name: "Alertas Tempranas Preventivas", desc: "Decretos de emergencia por heladas, viento o lluvias torrenciales.", inst: "SENAPRED Aysén", freq: "Por Evento", endpoint: "ArcGIS REST", domain: "clima", type: "Rápido (1-3m)" },
+      <div id="comunas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <!-- Renderizado dinámico -->
+      </div>
+    </div>
 
-            // Océano y Salmón
-            { name: "Cosechas de Salmón del Atlántico", desc: "Tonelaje regional de Salmo salar por mes y agrupación (barrio).", inst: "SERNAPESCA", freq: "Anual consolidada", endpoint: "Data Observatory XLS", domain: "oceano", type: "Escalera Anual" },
-            { name: "Alerta de Marea Roja (Alexandrium)", desc: "Densidad de toxina paralizante en 52 estaciones centinela.", inst: "IFOP (iFAN API)", freq: "Semanal", endpoint: "REST API JSON", domain: "oceano", type: "Rápido (1-3m)" },
-            { name: "Condición de Fondos Marinos (INFA)", desc: "Clasificación de centros en condición aeróbica vs. anaeróbica.", inst: "SUBPESCA / SERNAPESCA", freq: "Bienal / Semestral", endpoint: "Informes INFA", domain: "oceano", type: "Escalera Anual" },
-            { name: "Consumo de Antimicrobianos por Empresa (ICA)", desc: "Gramos de antibiótico por tonelada (Ley 21.532 de Transparencia).", inst: "SERNAPESCA", freq: "Anual consolidada", endpoint: "Reporte Bioseguridad", domain: "oceano", type: "Escalera Anual" },
-            { name: "Centros CAD de Cáligus (Piojo de Mar)", desc: "Notificaciones de centros con más de 3 hembras ovígeras por pez.", inst: "SERNAPESCA", freq: "Quincenal", endpoint: "Boletín PSEVC", domain: "oceano", type: "Rápido (1-3m)" },
-            { name: "Registro Oficial de Escapes de Salmones", desc: "Fugas masivas de biomasa declaradas ante la autoridad pesquera.", inst: "SERNAPESCA / SMA", freq: "Por Evento", endpoint: "Registro Ley 118 ter", domain: "oceano", type: "Rápido (1-6m)" },
-            { name: "Exportaciones de Salmón y Precios FOB", desc: "Envíos mensuales por empresa, mercado de destino y valor USD/kg.", inst: "Servicio Nacional de Aduanas", freq: "Mensual", endpoint: "Microdatos DUS", domain: "oceano", type: "Rápido (1-3m)" },
-            { name: "Catastro de Concesiones de Acuicultura", desc: "745 concesiones vigentes, en trámite o caducadas.", inst: "SUBPESCA", freq: "Mensual", endpoint: "ArcGIS MapServer", domain: "oceano", type: "Escalera Anual" },
-            { name: "Fiscalizaciones y Sanciones a Salmoneras", desc: "Infracciones por sobreproducción, mortalidades y daño.", inst: "SMA (SNIFA)", freq: "Diaria / Continua", endpoint: "AJAX POST JSON", domain: "oceano", type: "Rápido (1-6m)" },
-            { name: "Temperatura Superficial del Mar en Fiordos", desc: "Olas de calor marinas y estratificación térmica en canales.", inst: "NOAA Coral Reef Watch", freq: "Diaria (5 km)", endpoint: "NetCDF / ERDDAP", domain: "oceano", type: "Rápido (1-6m)" },
-            { name: "Resoluciones Sanitarias de Cierre de Bahías", desc: "Vedas jurídicas de extracción de mariscos por VPM o VDM.", inst: "SEREMI Salud Aysén", freq: "Eventual", endpoint: "PDF Oficial", domain: "oceano", type: "Rápido (1-3m)" },
-            { name: "Desembarque Pesquero Artesanal", desc: "Capturas de merluza austral, congrio dorado y erizo por caleta.", inst: "SERNAPESCA", freq: "Anual / Mensual", endpoint: "XLS Estructurado", domain: "oceano", type: "Escalera Anual" },
+    <!-- ESTADO VACÍO (Si la búsqueda no da resultados) -->
+    <div id="empty-state" class="hidden py-16 text-center max-w-md mx-auto">
+      <div class="w-12 h-12 rounded-sm bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3">
+        <span class="material-symbols-outlined text-2xl">search_off</span>
+      </div>
+      <h3 class="font-serif text-lg font-bold text-on-surface mb-1">No se encontraron resultados</h3>
+      <p class="text-xs text-muted leading-relaxed mb-4">
+        Prueba con términos como "SERNATUR", "Cisnes", "SINIM", "Leña", "Salud" o restablece el filtro.
+      </p>
+      <button 
+        onclick="clearFiltersAndSearch()" 
+        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-sm text-xs font-medium bg-primary text-white hover:bg-primary-dark transition-colors"
+      >
+        <span class="material-symbols-outlined text-sm">refresh</span>
+        <span>Restablecer búsqueda</span>
+      </button>
+    </div>
 
-            // Social y Demografía
-            { name: "Defunciones Semanales por Región", desc: "Mortalidad general observada y exceso de muertes en Aysén.", inst: "DEIS (Minsal)", freq: "Semanal (<14d rezago)", endpoint: "datos.gob.cl CKAN", domain: "social", type: "Rápido (1-3m)" },
-            { name: "Asistencia Escolar por Establecimiento", desc: "Asistencia mensual declarada en colegios de las 10 comunas.", inst: "MINEDUC (CEM)", freq: "Mensual", endpoint: "CSV / RAR Abierto", domain: "social", type: "Rápido (1-6m)" },
-            { name: "Permisos de Edificación Habitacional", desc: "Metros cuadrados y viviendas autorizadas por DOM Coyhaique.", inst: "INE", freq: "Mensual", endpoint: "XLSX Tabulado", domain: "social", type: "Rápido (2-6m)" },
-            { name: "Delitos de Mayor Connotación Social (DMCS)", desc: "Casos policiales de robo, lesiones y homicidios por comuna.", inst: "CEAD / Min. Seguridad", freq: "Semestral", endpoint: "Tabulados SIED", domain: "social", type: "Rápido (3-6m)" },
-            { name: "Residencias Temporales a Extranjeros", desc: "Permisos resueltos para mano de obra en acuicultura y obras.", inst: "SERMIG", freq: "Semestral", endpoint: "XLSX Abierto", domain: "social", type: "Escalera Anual" },
-            { name: "Censo de Población y Vivienda 2024", desc: "100.745 habitantes (línea base demográfica de Aysén).", inst: "INE", freq: "Decenal", endpoint: "Redatam Web", domain: "social", type: "Denominador Base" },
+  </main>
 
-            // Economía y Energía
-            { name: "Tráfico Aéreo Balmaceda (BBA)", desc: "Pasajeros comerciales por aerolínea y par de ciudades.", inst: "JAC (Aeronáutica)", freq: "Mensual (<25d rezago)", endpoint: "Excel Mensual", domain: "economia", type: "Rápido (1-3m)" },
-            { name: "Encuesta Nacional de Empleo (ENE)", desc: "Desempleo regional e informalidad en trimestres móviles.", inst: "INE", freq: "Mensual", endpoint: "Calendario Fijo XLS", domain: "economia", type: "Rápido (1-3m)" },
-            { name: "Pernoctaciones Turísticas en Carretera Austral", desc: "Ocupación hotelera en Coyhaique, Austral Norte y Sur.", inst: "INE / SERNATUR", freq: "Mensual", endpoint: "Portal SIET", domain: "economia", type: "Rápido (1-6m)" },
-            { name: "Precios de Combustibles por Estación", desc: "Gasolina 93/97 y diésel en Coyhaique, Aysén y Cochrane.", inst: "CNE (bencinaenlinea)", freq: "Semanal (MEPCO)", endpoint: "REST API JSON", domain: "economia", type: "Rápido (1-2m)" },
-            { name: "Generación Sistema Mediano Aysén", desc: "Despacho por tecnología: eólica Alto Baguales, hidro, diésel.", inst: "CNE / Coordinador", freq: "Mensual / Diaria", endpoint: "Energía Abierta", domain: "economia", type: "Rápido (1-6m)" },
-            { name: "PIB Regional Trimestral de Aysén", desc: "Cuentas nacionales regionales por sector productivo.", inst: "Banco Central de Chile", freq: "Trimestral (83d rezago)", endpoint: "API si3.bcentral.cl", domain: "economia", type: "Escalera Anual" },
-            { name: "Licitaciones Públicas de Obras en Aysén", desc: "Contratos convocados por GORE, MOP y municipios.", inst: "ChileCompra", freq: "Tiempo Real", endpoint: "API Mercado Público", domain: "economia", type: "Rápido (1-6m)" },
-            { name: "Ejecución Presupuestaria GORE Aysén (FNDR)", desc: "Porcentaje de gasto devengado en inversión pública regional.", inst: "DIPRES (Hacienda)", freq: "Mensual (~25d rezago)", endpoint: "Excel Oficial", domain: "economia", type: "Rápido (1-6m)" },
+  <!-- LECTURA EDITORIAL LATERAL / DRAWER PARA NODOS, HUBS Y COMUNAS -->
+  <aside 
+    id="concept-drawer" 
+    class="fixed inset-0 z-50 pointer-events-none transition-all duration-200"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="drawer-concept-title"
+  >
+    <!-- Backdrop oscuro con blur sutil -->
+    <div 
+      id="drawer-backdrop" 
+      class="absolute inset-0 bg-black/35 backdrop-blur-sm opacity-0 transition-opacity duration-200 pointer-events-none"
+      onclick="closeConceptDrawer()"
+    ></div>
 
-            // CIEP Local
-            { name: "Red de Monitoreo Ambiental CDAT-Aysén", desc: "Estaciones meteorológicas en Tortel, Puyuhuapi, Steffen, Cisnes.", inst: "CIEP (Lab. Eco-Climático)", freq: "Horaria / Diaria", endpoint: "cdataysen.cl CSV", domain: "ciep", type: "Rápido (1-6m)" },
-            { name: "Boyas Oceanográficas Fiordo Puyuhuapi", desc: "Oxígeno disuelto, saturación de aragonita, pH y salinidad.", inst: "CIEP / COPAS", freq: "Continua de campaña", endpoint: "Zenodo / Papers", domain: "ciep", type: "Rápido (1-6m)" },
-            { name: "Invasión de Salmón Chinook en Ríos", desc: "Conteo de desoves en cuencas del Baker, Simpson y Cisnes.", inst: "CIEP (Ecosistemas Acuáticos)", freq: "Campaña Anual", endpoint: "Informes Técnicos", domain: "ciep", type: "Escalera Anual" },
-            { name: "Geoportal Ciencia Austral (Capas Espaciales)", desc: "Red hidrográfica subantártica, áreas protegidas y turismo.", inst: "Nodo Ciencia Austral / CIEP", freq: "Continua", endpoint: "ArcGIS Hub Feature", domain: "ciep", type: "Ordenamiento Base" },
-            { name: "Floraciones de Alga Didymo en Río Baker", desc: "Biomasa y expansión del alga invasora Didymosphenia.", inst: "CIEP Limnología", freq: "Estacional", endpoint: "Bases Científicas", domain: "ciep", type: "Escalera Anual" },
-            { name: "Modelos Climáticos de Mesoescala AysénMet", desc: "Simulaciones numéricas WRF adaptadas al relieve de fiordos.", inst: "CIEP Clima", freq: "Periódica", endpoint: "aysenmet.cl", domain: "ciep", type: "Referencia Modelo" },
-            { name: "Catastro Paleoambiental y Ocupación Holocena", desc: "Fechados radiocarbónicos de poblamiento temprano en Aysén.", inst: "CIEP Arqueología", freq: "Histórico consolidado", endpoint: "Repositorio ANID", domain: "ciep", type: "Línea Base Milenaria" }
+    <!-- Panel deslizante -->
+    <div 
+      id="drawer-panel" 
+      class="absolute right-0 top-0 bottom-0 w-full max-w-2xl bg-background border-l border-primary/20 shadow-drawer transform translate-x-full transition-transform duration-250 ease-out flex flex-col pointer-events-auto overflow-hidden"
+    >
+      <!-- Cabecera del Drawer -->
+      <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between gap-3 bg-white/95 sticky top-0 z-10">
+        <div class="flex items-center gap-2 min-w-0">
+          <span id="drawer-concept-id" class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary text-white">
+            #01
+          </span>
+          <span id="drawer-hub-badge" class="font-mono text-xs text-muted truncate"></span>
+        </div>
+        
+        <div class="flex items-center gap-1">
+          <button 
+            id="drawer-btn-prev" 
+            onclick="navigateNode(-1)" 
+            class="p-1.5 text-muted hover:text-primary hover:bg-surface-alt rounded-sm transition-colors font-mono text-sm leading-none" 
+            title="Nodo anterior (←)"
+          >
+            ←
+          </button>
+          <button 
+            id="drawer-btn-next" 
+            onclick="navigateNode(1)" 
+            class="p-1.5 text-muted hover:text-primary hover:bg-surface-alt rounded-sm transition-colors font-mono text-sm leading-none" 
+            title="Siguiente nodo (→)"
+          >
+            →
+          </button>
+          <div class="h-4 w-px bg-border-subtle mx-1"></div>
+          <button 
+            onclick="closeConceptDrawer()" 
+            class="p-1.5 text-muted hover:text-on-surface hover:bg-surface-alt rounded-sm transition-colors font-mono text-base leading-none" 
+            title="Cerrar panel (Esc)"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <!-- Contenido editorial del Drawer -->
+      <div class="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+        <!-- Título del nodo -->
+        <div>
+          <h2 id="drawer-concept-title" class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-on-surface leading-tight">
+            Título del Nodo
+          </h2>
+        </div>
+
+        <!-- Descripción qué datos contiene -->
+        <div>
+          <div id="drawer-concept-definition" class="font-sans text-sm sm:text-base leading-relaxed text-on-surface/90 font-normal">
+            Cargando descripción...
+          </div>
+        </div>
+
+        <!-- BLOQUE 1: Transparencia y Origen del Dato (provenance) -->
+        <div id="drawer-provenance-section" class="pt-5 border-t border-border-subtle space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
+              Transparencia y Origen del Dato
+            </h3>
+            <span class="font-mono text-[11px] text-muted">Ficha Técnica Oficial</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="space-y-0.5">
+              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Fecha de recolección / corte</span>
+              <span id="drawer-prov-date" class="font-sans text-xs text-on-surface font-medium block leading-snug"></span>
+            </div>
+            <div class="space-y-0.5">
+              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Frecuencia y próxima actualización</span>
+              <span id="drawer-prov-frequency" class="font-sans text-xs text-on-surface font-medium block leading-snug"></span>
+            </div>
+            <div class="sm:col-span-2 space-y-0.5">
+              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Cómo se obtuvo (método y organismo público)</span>
+              <span id="drawer-prov-method" class="font-sans text-xs text-on-surface/90 block leading-relaxed"></span>
+            </div>
+            <div class="sm:col-span-2 pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-border-subtle/50 pt-2">
+              <div class="space-y-0.5">
+                <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Organismo emisor</span>
+                <span id="drawer-prov-entity" class="font-sans text-xs text-muted block"></span>
+              </div>
+              <a 
+                id="drawer-prov-link" 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-sm bg-primary/5 hover:bg-primary text-primary hover:text-white border border-primary/20 transition-all font-mono text-xs font-semibold shrink-0"
+              >
+                <span>Fuente Oficial Verificada</span>
+                <span class="font-mono text-xs">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE 2: Gráfico Ejecutivo (Chart.js) -->
+        <div id="drawer-chart-section" class="pt-6 border-t border-border-subtle space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <h3 id="drawer-chart-heading" class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
+                Gráfico Ejecutivo
+              </h3>
+              <p class="font-sans text-xs text-muted">Visualización sintética de los datos de este nodo</p>
+            </div>
+            <span id="drawer-chart-unit" class="font-mono text-xs px-2.5 py-0.5 rounded-sm bg-primary/10 text-primary font-semibold"></span>
+          </div>
+          <div class="w-full relative" style="height: 190px; max-height: 190px;">
+            <canvas id="drawer-node-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- BLOQUE 3: Tabla Resumen Simple -->
+        <div id="drawer-table-section" class="pt-6 border-t border-border-subtle space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <h3 id="drawer-table-heading" class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
+                Tabla Resumen Simple
+              </h3>
+              <p class="font-sans text-xs text-muted">Cifras consolidadas para lectura inmediata</p>
+            </div>
+            <span id="drawer-table-count" class="font-mono text-xs text-muted"></span>
+          </div>
+          <div class="overflow-x-auto border-t border-b border-border-subtle">
+            <table class="w-full text-left border-collapse text-xs tabular-nums">
+              <thead id="drawer-table-thead" class="border-b border-border-strong text-muted font-mono uppercase text-[10.5px] tracking-wider"></thead>
+              <tbody id="drawer-table-tbody" class="divide-y divide-border-subtle text-on-surface"></tbody>
+            </table>
+          </div>
+          <div id="drawer-table-pagination" class="flex items-center justify-between text-xs font-mono text-muted pt-1">
+            <!-- Paginación / control de filas -->
+          </div>
+        </div>
+
+        <!-- BLOQUE 4: Exploración Detallada (canvasPreview) -->
+        <div id="drawer-canvas-preview-section" class="pt-6 border-t border-border-subtle space-y-4">
+          <div>
+            <h3 class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
+              Exploración en Lienzo o Base Completa
+            </h3>
+            <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
+              Dimensiones desagregadas y variables disponibles en el registro institucional:
+            </p>
+          </div>
+
+          <!-- Viñetas de dimensiones -->
+          <ul id="drawer-canvas-dimensions" class="space-y-2 text-xs text-on-surface/90">
+            <!-- Renderizado dinámicamente -->
+          </ul>
+
+          <!-- Total de registros en la base completa -->
+          <div class="pt-2 border-t border-border-subtle flex items-start gap-2 text-xs font-mono text-muted">
+            <span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">folder_open</span>
+            <div>
+              <span class="font-semibold text-on-surface">Total de registros base completa: </span>
+              <span id="drawer-canvas-total-records"></span>
+            </div>
+          </div>
+
+          <!-- Botón Enviar al Lienzo de Exploración -->
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+            <button 
+              id="drawer-btn-send-canvas"
+              onclick="sendCurrentNodeToExplorationCanvas()"
+              class="btn-action inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-sm bg-primary text-white hover:bg-primary-dark text-xs font-semibold transition-colors font-mono text-center cursor-pointer shadow-xs"
+            >
+              <span>Explorar en el Laboratorio Sistémico (Lienzo 2D)</span>
+              <span class="font-mono text-xs">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Acciones secundarias para Hubs o Comunas -->
+        <div id="drawer-actions-bar" class="hidden pt-4 border-t border-border-subtle flex flex-wrap items-center gap-2.5">
+          <!-- Renderizado dinámico -->
+        </div>
+
+        <!-- Sección Ejemplo (para Hubs si aplica) -->
+        <div id="drawer-example-section" class="hidden pt-6 border-t border-border-subtle space-y-2">
+          <h3 class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
+            Ejemplo Territorial
+          </h3>
+          <div id="drawer-concept-example" class="font-sans text-xs sm:text-sm leading-relaxed text-on-surface/85 font-normal">
+            Cargando ejemplo...
+          </div>
+        </div>
+
+        <!-- Nodos relacionados para cruzar -->
+        <div id="drawer-related-section" class="pt-6 border-t border-border-subtle space-y-3 hidden">
+          <h3 id="drawer-related-heading" class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
+            Nodos relacionados en el sistema
+          </h3>
+          <div id="drawer-related-list" class="space-y-2">
+            <!-- Renderizado dinámico -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie del Drawer -->
+      <div class="px-6 py-3 border-t border-border-subtle bg-surface-alt/50 flex items-center justify-between text-xs font-mono text-muted">
+        <span>Teclado: <kbd class="px-1 border border-border-subtle rounded bg-white">←</kbd> <kbd class="px-1 border border-border-subtle rounded bg-white">→</kbd> <kbd class="px-1 border border-border-subtle rounded bg-white">Esc</kbd></span>
+        <button onclick="closeConceptDrawer()" class="text-primary font-semibold hover:underline">
+          Volver al mapa
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER EDITORIAL SOBRIO -->
+  <footer class="border-t border-border-subtle bg-white mt-16 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+      
+      <div class="font-serif text-base font-bold text-on-surface flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-primary"></span>
+        Álvaro Contreras Barrios
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#top" class="inline-flex items-center gap-1 font-mono hover:text-primary transition-colors">
+          <span class="font-mono text-xs">↑</span>
+          <span>Volver arriba</span>
+        </a>
+        <a href="https://www.linkedin.com/in/%C3%A1lvaro-contreras-barrios/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-primary font-semibold hover:underline">
+          <span>LinkedIn</span>
+          <span class="font-mono text-xs">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE APLICACIÓN, VISUALIZACIÓN D3.JS Y RENDERIZADO -->
+  <script>
+    // Compatibilidad contractual SUPERFORECAST & data health
+    window.seriesData = window.seriesData || [];
+
+    const AppState = {
+      activeTab: 'nodos',
+      nodeDisplayMode: 'graph', // 'graph' | 'cards'
+      searchQuery: '',
+      activeCategoryFilter: 'all',
+      selectedNodeIndex: 0,
+      drawerMode: 'node', // 'node' | 'hub' | 'comuna'
+      tableExpanded: false,
+      data: window.AYSEN_HUBS_DATA || { hubs: [], nodos: [], comunas: [] },
+      graph: {
+        simulation: null,
+        svg: null,
+        g: null,
+        zoom: null,
+        nodes: [],
+        links: []
+      }
+    };
+
+    const hubMap = {};
+    (AppState.data.hubs || []).forEach(h => { hubMap[h.id] = h; });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateBadgesCount();
+      setupSearchListeners();
+      setupKeyboardShortcuts();
+      switchTab('nodos');
+    });
+
+    function updateBadgesCount() {
+      const nEl = document.getElementById('badge-count-nodos');
+      const cEl = document.getElementById('badge-count-comunas');
+      if (nEl) nEl.textContent = (AppState.data.nodos || []).length;
+      if (cEl) cEl.textContent = (AppState.data.comunas || []).length;
+    }
+
+    // CAMBIO DE PESTAÑAS PRINCIPALES (MAPA DE HUBS VS COMUNAS)
+    function switchTab(tabId) {
+      AppState.activeTab = tabId;
+      AppState.activeCategoryFilter = 'all';
+
+      const tabs = ['nodos', 'comunas'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const view = document.getElementById(`view-${t}`);
+        const badge = document.getElementById(`badge-count-${t}`);
+
+        if (t === tabId) {
+          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all bg-primary text-white shadow-sm font-semibold';
+          btn.setAttribute('aria-selected', 'true');
+          if (badge) badge.className = 'ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold';
+          if (view) { view.classList.remove('hidden'); view.classList.add('block'); }
+        } else {
+          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all text-on-surface hover:text-primary hover:bg-white/60';
+          btn.setAttribute('aria-selected', 'false');
+          if (badge) badge.className = 'ml-0.5 text-xs font-mono bg-black/5 text-muted px-1.5 py-0.5 rounded-sm';
+          if (view) { view.classList.add('hidden'); view.classList.remove('block'); }
+        }
+      });
+
+      const modeSelector = document.getElementById('node-view-mode-selector');
+      if (modeSelector) {
+        if (tabId === 'nodos') {
+          modeSelector.classList.remove('hidden');
+        } else {
+          modeSelector.classList.add('hidden');
+        }
+      }
+
+      renderCategoryFilters();
+      renderActiveView();
+    }
+
+    // ALTERNAR VISTA DE NODOS (Mapa D3 vs Fichas)
+    function setNodeDisplayMode(mode) {
+      AppState.nodeDisplayMode = mode;
+      const graphWrap = document.getElementById('node-graph-wrapper');
+      const cardsWrap = document.getElementById('node-cards-wrapper');
+      const btnGraph = document.getElementById('btn-view-graph');
+      const btnCards = document.getElementById('btn-view-cards');
+
+      if (mode === 'graph') {
+        graphWrap.classList.remove('hidden');
+        graphWrap.classList.add('block');
+        cardsWrap.classList.add('hidden');
+        cardsWrap.classList.remove('block');
+
+        btnGraph.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all bg-white text-primary shadow-xs font-semibold';
+        btnCards.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all text-muted hover:text-on-surface';
+
+        initOrUpdateD3Map();
+      } else {
+        graphWrap.classList.add('hidden');
+        graphWrap.classList.remove('block');
+        cardsWrap.classList.remove('hidden');
+        cardsWrap.classList.add('block');
+
+        btnGraph.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all text-muted hover:text-on-surface';
+        btnCards.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all bg-white text-primary shadow-xs font-semibold';
+
+        renderNodosCards();
+      }
+    }
+
+    // RENDERIZADO DE FILTROS POR HUB / PROVINCIA
+    function renderCategoryFilters() {
+      const container = document.getElementById('category-filters-container');
+      container.innerHTML = '';
+
+      let categories = [];
+      if (AppState.activeTab === 'nodos') {
+        categories = [
+          { id: 'all', label: `Todos los Hubs (${AppState.data.nodos.length})` },
+          ...AppState.data.hubs.map(h => {
+            const count = AppState.data.nodos.filter(n => n.hubId === h.id).length;
+            return { id: h.id, label: `${h.numeral}. ${h.shortTitle} (${count})` };
+          })
         ];
+      } else if (AppState.activeTab === 'comunas') {
+        categories = [
+          { id: 'all', label: 'Todas las comunas (10)' },
+          { id: 'Coyhaique', label: 'Prov. Coyhaique (2)' },
+          { id: 'Aysén', label: 'Prov. Aysén (3)' },
+          { id: 'General Carrera', label: 'Prov. General Carrera (2)' },
+          { id: 'Capitán Prat', label: 'Prov. Capitán Prat (3)' }
+        ];
+      }
 
-        function renderRows(items) {
-            const tbody = document.getElementById('seriesRows');
-            tbody.innerHTML = '';
-            items.forEach(it => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>
-                        <span class="series-title">${it.name}</span>
-                        <span class="series-subtext">${it.desc}</span>
-                    </td>
-                    <td>
-                        <span class="institution-badge">${it.inst}</span>
-                    </td>
-                    <td><span style="font-family:var(--font-mono); font-size:11px;">${it.freq}</span></td>
-                    <td><span class="endpoint-pill">${it.endpoint}</span></td>
-                    <td><span style="font-family:var(--font-mono); font-size:11px; font-weight:600; color:var(--ink-primary);">${it.type}</span></td>
-                `;
-                tbody.appendChild(tr);
+      categories.forEach(cat => {
+        const btn = document.createElement('button');
+        const isActive = AppState.activeCategoryFilter === cat.id;
+        btn.className = `px-3.5 py-1 rounded-sm whitespace-nowrap transition-all font-mono text-xs ${
+          isActive 
+            ? 'bg-primary text-white font-semibold shadow-xs' 
+            : 'bg-white text-on-surface/80 hover:text-primary hover:bg-surface-alt border border-border-subtle'
+        }`;
+        btn.textContent = cat.label;
+        btn.onclick = () => {
+          AppState.activeCategoryFilter = cat.id;
+          renderCategoryFilters();
+          renderActiveView();
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function renderActiveView() {
+      if (AppState.activeTab === 'nodos') {
+        if (AppState.nodeDisplayMode === 'graph') {
+          initOrUpdateD3Map();
+          const filtered = getFilteredNodos();
+          updateCounterText(filtered.length, AppState.data.nodos.length, 'nodos de datos');
+        } else {
+          renderNodosCards();
+        }
+      } else if (AppState.activeTab === 'comunas') {
+        renderComunasCards();
+      }
+    }
+
+    function getFilteredNodos() {
+      const q = AppState.searchQuery.toLowerCase().trim();
+      const cat = AppState.activeCategoryFilter;
+      return (AppState.data.nodos || []).filter(item => {
+        const matchesCat = cat === 'all' || item.hubId === cat;
+        const matchesSearch = !q ||
+          item.title.toLowerCase().includes(q) ||
+          item.definition.toLowerCase().includes(q) ||
+          item.example.toLowerCase().includes(q) ||
+          (item.officialSource && item.officialSource.name.toLowerCase().includes(q));
+        return matchesCat && matchesSearch;
+      });
+    }
+
+    // ==========================================
+    // VISUALIZACIÓN D3.JS: MAPA DE 7 HUBS Y 31 NODOS
+    // ==========================================
+    function initOrUpdateD3Map() {
+      const container = document.getElementById('d3-canvas-container');
+      const svg = d3.select('#d3-concept-svg');
+      if (!container || !svg.node()) return;
+
+      const width = container.clientWidth || 960;
+      const height = container.clientHeight || 600;
+
+      svg.selectAll('*').remove();
+
+      const clusterColors = {
+        'turismo':        { bg: '#00357f', border: '#00255a', text: '#ffffff', numeral: 'I' },
+        'salmonicultura': { bg: '#0059c5', border: '#004aad', text: '#ffffff', numeral: 'II' },
+        'energia':        { bg: '#0284c7', border: '#0369a1', text: '#ffffff', numeral: 'III' },
+        'gobernanza':     { bg: '#4338ca', border: '#3730a3', text: '#ffffff', numeral: 'IV' },
+        'inversion':      { bg: '#0f766e', border: '#115e59', text: '#ffffff', numeral: 'V' },
+        'social':         { bg: '#2563eb', border: '#1d4ed8', text: '#ffffff', numeral: 'VI' },
+        'biodiversidad':  { bg: '#047857', border: '#065f46', text: '#ffffff', numeral: 'VII' },
+      };
+
+      // 1. Nodos Hub (7 grandes ámbitos distribuidos armónicamente)
+      const hubPositions = {
+        'turismo':        { x: width * 0.15, y: height * 0.28 },
+        'salmonicultura': { x: width * 0.38, y: height * 0.23 },
+        'energia':        { x: width * 0.62, y: height * 0.23 },
+        'gobernanza':     { x: width * 0.85, y: height * 0.28 },
+        'inversion':      { x: width * 0.24, y: height * 0.74 },
+        'social':         { x: width * 0.50, y: height * 0.75 },
+        'biodiversidad':  { x: width * 0.76, y: height * 0.74 }
+      };
+
+      const hubs = AppState.data.hubs.map(h => {
+        const pos = hubPositions[h.id] || { x: width * 0.5, y: height * 0.5 };
+        return {
+          id: `hub-${h.id}`,
+          hubId: h.id,
+          isHub: true,
+          title: h.shortTitle,
+          fullTitle: h.title,
+          description: h.description,
+          numeral: h.numeral,
+          r: 26,
+          x: pos.x,
+          y: pos.y
+        };
+      });
+
+      // 2. Los 31 Nodos satélite ("pelotas") alrededor de su respectivo Hub
+      const dataNodes = AppState.data.nodos.map(n => {
+        const hub = hubs.find(h => h.hubId === n.hubId) || hubs[0];
+        const hubSiblings = AppState.data.nodos.filter(item => item.hubId === n.hubId);
+        const siblingIdx = hubSiblings.findIndex(item => item.id === n.id);
+        const totalInHub = hubSiblings.length;
+        const angle = (siblingIdx / totalInHub) * 2 * Math.PI - (Math.PI / 2);
+        const radius = 68 + (siblingIdx % 2) * 20;
+        return {
+          ...n,
+          isHub: false,
+          r: 13,
+          targetX: hub.x,
+          targetY: hub.y,
+          x: hub.x + Math.cos(angle) * radius,
+          y: hub.y + Math.sin(angle) * radius,
+          nodeId: `node-${n.id}`
+        };
+      });
+
+      // 3. Enlaces entre Hubs y Nodos, y relaciones cruzadas entre Nodos
+      const links = [];
+
+      dataNodes.forEach(n => {
+        links.push({
+          source: n.nodeId,
+          target: `hub-${n.hubId}`,
+          type: 'category'
+        });
+
+        (n.relatedNodeIds || []).forEach(relId => {
+          if (relId > n.id) {
+            links.push({
+              source: `node-${n.id}`,
+              target: `node-${relId}`,
+              type: 'semantic'
             });
+          }
+        });
+      });
+
+      // Enlaces estructurales entre los 7 Hubs
+      links.push(
+        { source: 'hub-turismo', target: 'hub-salmonicultura', type: 'backbone' },
+        { source: 'hub-salmonicultura', target: 'hub-energia', type: 'backbone' },
+        { source: 'hub-energia', target: 'hub-gobernanza', type: 'backbone' },
+        { source: 'hub-turismo', target: 'hub-inversion', type: 'backbone' },
+        { source: 'hub-salmonicultura', target: 'hub-inversion', type: 'backbone' },
+        { source: 'hub-inversion', target: 'hub-social', type: 'backbone' },
+        { source: 'hub-social', target: 'hub-biodiversidad', type: 'backbone' },
+        { source: 'hub-energia', target: 'hub-biodiversidad', type: 'backbone' },
+        { source: 'hub-gobernanza', target: 'hub-social', type: 'backbone' }
+      );
+
+      const allNodes = [...hubs, ...dataNodes];
+
+      const g = svg.append('g').attr('class', 'graph-root');
+      AppState.graph.g = g;
+      AppState.graph.svg = svg;
+
+      const zoom = d3.zoom()
+        .scaleExtent([0.5, 2.5])
+        .on('zoom', (event) => {
+          g.attr('transform', event.transform);
+        });
+
+      svg.call(zoom);
+      AppState.graph.zoom = zoom;
+
+      const simulation = d3.forceSimulation(allNodes)
+        .force('link', d3.forceLink(links).id(d => d.nodeId || d.id).distance(d => {
+          if (d.type === 'backbone') return 240;
+          if (d.type === 'category') return 74;
+          return 65;
+        }).strength(d => d.type === 'category' ? 0.42 : 0.15))
+        .force('charge', d3.forceManyBody().strength(d => d.isHub ? -460 : -145))
+        .force('collision', d3.forceCollide().radius(d => d.isHub ? 48 : 32).iterations(3))
+        .force('x', d3.forceX(d => d.isHub ? d.x : d.targetX).strength(0.16))
+        .force('y', d3.forceY(d => d.isHub ? d.y : d.targetY).strength(0.16))
+        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.04));
+
+      AppState.graph.simulation = simulation;
+
+      const linkElements = g.append('g')
+        .attr('class', 'links')
+        .selectAll('line')
+        .data(links)
+        .enter()
+        .append('line')
+        .attr('class', d => `d3-link link-${d.type}`);
+
+      const nodeElements = g.append('g')
+        .attr('class', 'nodes')
+        .selectAll('g')
+        .data(allNodes)
+        .enter()
+        .append('g')
+        .attr('class', d => `d3-node ${d.isHub ? 'hub-node' : 'concept-node'}`)
+        .call(d3.drag()
+          .on('start', dragStarted)
+          .on('drag', dragged)
+          .on('end', dragEnded)
+        );
+
+      nodeElements.each(function(d) {
+        const el = d3.select(this);
+        const col = clusterColors[d.hubId] || { bg: '#00357f', border: '#00255a', text: '#fff', numeral: 'I' };
+
+        if (d.isHub) {
+          el.append('circle')
+            .attr('r', d.r + 6)
+            .attr('fill', col.bg)
+            .attr('opacity', 0.14);
+
+          el.append('circle')
+            .attr('r', d.r)
+            .attr('fill', col.bg)
+            .attr('stroke', '#ffffff')
+            .attr('stroke-width', 2.2);
+
+          el.append('text')
+            .text(d.numeral || col.numeral)
+            .attr('text-anchor', 'middle')
+            .attr('dy', '0.35em')
+            .attr('fill', '#ffffff')
+            .attr('font-size', '11px')
+            .attr('font-weight', '700')
+            .attr('font-family', 'JetBrains Mono, monospace')
+            .attr('pointer-events', 'none');
+
+          el.append('text')
+            .text(d.title)
+            .attr('text-anchor', 'middle')
+            .attr('dy', d.r + 14)
+            .attr('fill', col.bg)
+            .attr('font-size', '11px')
+            .attr('font-weight', '700')
+            .attr('font-family', 'Inter, sans-serif')
+            .attr('stroke', '#fcf9f8')
+            .attr('stroke-width', '4px')
+            .attr('paint-order', 'stroke fill')
+            .attr('stroke-linejoin', 'round')
+            .attr('pointer-events', 'none');
+        } else {
+          el.append('circle')
+            .attr('class', 'hover-halo')
+            .attr('r', d.r + 3)
+            .attr('fill', col.bg)
+            .attr('opacity', 0);
+
+          el.append('circle')
+            .attr('r', d.r)
+            .attr('fill', '#ffffff')
+            .attr('stroke', col.bg)
+            .attr('stroke-width', 2);
+
+          el.append('text')
+            .text(String(d.id).padStart(2, '0'))
+            .attr('text-anchor', 'middle')
+            .attr('dy', '0.35em')
+            .attr('fill', col.bg)
+            .attr('font-size', '9px')
+            .attr('font-weight', '700')
+            .attr('font-family', 'JetBrains Mono, monospace')
+            .attr('pointer-events', 'none');
+
+          const shortLbl = d.title.length > 20 ? d.title.substring(0, 18) + '…' : d.title;
+          el.append('text')
+            .text(shortLbl)
+            .attr('text-anchor', 'middle')
+            .attr('dy', d.r + 11)
+            .attr('fill', '#1c1b1b')
+            .attr('font-size', '9.5px')
+            .attr('font-weight', '500')
+            .attr('font-family', 'Inter, sans-serif')
+            .attr('stroke', '#fcf9f8')
+            .attr('stroke-width', '3px')
+            .attr('paint-order', 'stroke fill')
+            .attr('stroke-linejoin', 'round')
+            .attr('pointer-events', 'none');
         }
+      });
 
-        function filterTable(domain, btn) {
-            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
+      const tooltip = document.getElementById('graph-tooltip');
 
-            if (domain === 'all') {
-                renderRows(seriesData);
-            } else {
-                renderRows(seriesData.filter(d => d.domain === domain));
+      nodeElements
+        .on('mouseenter', (event, d) => {
+          const selfKey = d.nodeId || d.id;
+          const connectedIds = new Set([selfKey]);
+
+          links.forEach(l => {
+            const sId = l.source.nodeId || l.source.id;
+            const tId = l.target.nodeId || l.target.id;
+            if (sId === selfKey) connectedIds.add(tId);
+            if (tId === selfKey) connectedIds.add(sId);
+          });
+
+          nodeElements.classed('dimmed', n => !connectedIds.has(n.nodeId || n.id));
+          linkElements.classed('highlighted', l => {
+            const sId = l.source.nodeId || l.source.id;
+            const tId = l.target.nodeId || l.target.id;
+            return sId === selfKey || tId === selfKey;
+          });
+          linkElements.classed('dimmed', l => {
+            const sId = l.source.nodeId || l.source.id;
+            const tId = l.target.nodeId || l.target.id;
+            return sId !== selfKey && tId !== selfKey;
+          });
+
+          if (d.isHub) {
+            document.getElementById('tooltip-title').textContent = `${d.fullTitle} (Hub)`;
+            document.getElementById('tooltip-snippet').innerHTML = formatMarkdownText(d.description);
+          } else {
+            document.getElementById('tooltip-title').textContent = `#${String(d.id).padStart(2, '0')} · ${d.title}`;
+            document.getElementById('tooltip-snippet').innerHTML = formatMarkdownText(d.definition);
+          }
+
+          const rect = container.getBoundingClientRect();
+          tooltip.style.left = `${Math.min(event.clientX - rect.left + 15, width - 270)}px`;
+          tooltip.style.top = `${Math.min(event.clientY - rect.top + 15, height - 125)}px`;
+          tooltip.style.opacity = '1';
+        })
+        .on('mouseleave', () => {
+          nodeElements.classed('dimmed', false);
+          linkElements.classed('highlighted', false);
+          linkElements.classed('dimmed', false);
+          tooltip.style.opacity = '0';
+          applyFilterToGraph();
+        })
+        .on('click', (event, d) => {
+          if (d.isHub) {
+            openHubDrawerById(d.hubId);
+          } else {
+            openNodeDrawerById(d.id);
+          }
+        });
+
+      simulation.on('tick', () => {
+        allNodes.forEach(d => {
+          const pad = d.r + 12;
+          d.x = Math.max(pad, Math.min(width - pad, d.x));
+          d.y = Math.max(pad, Math.min(height - pad, d.y));
+        });
+
+        linkElements
+          .attr('x1', d => d.source.x)
+          .attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x)
+          .attr('y2', d => d.target.y);
+
+        nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
+      });
+
+      function dragStarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+      function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+      }
+      function dragEnded(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+
+      applyFilterToGraph();
+    }
+
+    function applyFilterToGraph() {
+      if (!AppState.graph.simulation) return;
+      const cat = AppState.activeCategoryFilter;
+      const q = AppState.searchQuery.toLowerCase().trim();
+
+      d3.selectAll('.d3-node').classed('dimmed', d => {
+        if (d.isHub) return cat !== 'all' && d.hubId !== cat;
+        const matchesCat = cat === 'all' || d.hubId === cat;
+        const matchesSearch = !q ||
+          d.title.toLowerCase().includes(q) ||
+          d.definition.toLowerCase().includes(q) ||
+          d.example.toLowerCase().includes(q);
+        return !(matchesCat && matchesSearch);
+      });
+    }
+
+    function zoomGraph(factor) {
+      if (AppState.graph.svg && AppState.graph.zoom) {
+        AppState.graph.svg.transition().duration(250).call(AppState.graph.zoom.scaleBy, factor);
+      }
+    }
+
+    function resetGraphView() {
+      if (AppState.graph.svg && AppState.graph.zoom) {
+        AppState.graph.svg.transition().duration(350).call(AppState.graph.zoom.transform, d3.zoomIdentity);
+        if (AppState.graph.simulation) {
+          AppState.graph.simulation.alpha(0.3).restart();
+        }
+      }
+    }
+
+    // ==========================================
+    // RENDER DE FICHAS DE NODOS (VISTA ALTERNATIVA)
+    // ==========================================
+    function renderNodosCards() {
+      const grid = document.getElementById('nodos-grid');
+      const emptyState = document.getElementById('empty-state');
+      const filtered = getFilteredNodos();
+
+      updateCounterText(filtered.length, AppState.data.nodos.length, 'nodos de datos');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map((n, idx) => {
+        const hub = hubMap[n.hubId] || {};
+        return `
+        <article 
+          onclick="openNodeDrawerById(${n.id})"
+          tabindex="0"
+          role="button"
+          aria-label="Abrir nodo de datos: ${escapeHtml(n.title)}"
+          class="clickable-card stagger-item group p-5 sm:p-6 rounded-sm bg-white border border-border-subtle hover:border-primary shadow-xs hover:shadow-editorial cursor-pointer flex flex-col justify-between"
+          style="animation-delay: ${Math.min(idx * 30, 240)}ms"
+        >
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                #${String(n.id).padStart(2, '0')}
+              </span>
+              <span class="font-mono text-[11px] text-muted truncate">
+                ${escapeHtml(hub.title || '')}
+              </span>
+            </div>
+
+            <h3 class="font-serif text-lg sm:text-xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors leading-snug mb-3">
+              ${escapeHtml(n.title)}
+            </h3>
+
+            <div class="font-sans text-xs sm:text-sm text-on-surface/80 leading-relaxed line-clamp-3 mb-4">
+              ${formatMarkdownText(n.definition)}
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-border-subtle/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              Ver datos e indicadores
+              <span class="font-mono text-xs">→</span>
+            </span>
+          </div>
+        </article>
+      `}).join('');
+    }
+
+    // ==========================================
+    // SECCIÓN 2: LAS 10 COMUNAS
+    // ==========================================
+    function renderComunasCards() {
+      const grid = document.getElementById('comunas-grid');
+      const emptyState = document.getElementById('empty-state');
+      const q = AppState.searchQuery.toLowerCase().trim();
+      const cat = AppState.activeCategoryFilter;
+
+      const filtered = (AppState.data.comunas || []).filter(c => {
+        const matchesCat = cat === 'all' || c.provincia === cat;
+        const matchesSearch = !q ||
+          c.nombre_comuna.toLowerCase().includes(q) ||
+          c.cabecera.toLowerCase().includes(q) ||
+          c.alcalde.toLowerCase().includes(q) ||
+          c.comuna_ine.includes(q);
+        return matchesCat && matchesSearch;
+      });
+
+      updateCounterText(filtered.length, AppState.data.comunas.length, 'comunas');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map((c, idx) => `
+        <article 
+          onclick="openComunaDrawerByIne('${c.comuna_ine}')"
+          tabindex="0"
+          role="button"
+          class="clickable-card stagger-item group p-5 sm:p-6 rounded-sm bg-white border border-border-subtle hover:border-primary shadow-xs hover:shadow-editorial cursor-pointer flex flex-col justify-between tabular-nums"
+          style="animation-delay: ${Math.min(idx * 35, 240)}ms"
+        >
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                INE ${escapeHtml(c.comuna_ine)}
+              </span>
+              <span class="font-mono text-xs text-muted">
+                Prov. ${escapeHtml(c.provincia)}
+              </span>
+            </div>
+
+            <h3 class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors leading-snug mb-3">
+              ${escapeHtml(c.nombre_comuna)}
+            </h3>
+
+            <div class="space-y-1.5 text-xs text-on-surface/85 font-sans mb-4">
+              <div class="flex justify-between py-1 border-b border-border-subtle">
+                <span class="text-muted">Población Censo 2024</span>
+                <span class="font-mono font-semibold">${(c.poblacion_censo_2024 || 0).toLocaleString('es-CL')} hab</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-border-subtle">
+                <span class="text-muted">Presupuesto SINIM (Dep. FCM)</span>
+                <span class="font-mono font-semibold">M$ ${(c.presupuesto_mclp || 0).toLocaleString('es-CL')} (${c.dependencia_fcm_pct}%)</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-border-subtle">
+                <span class="text-muted">Prestadores SERNATUR</span>
+                <span class="font-mono font-semibold">${c.prestadores_sernatur} inscritos</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-border-subtle">
+                <span class="text-muted">Concesiones Acuícolas</span>
+                <span class="font-mono font-semibold">${c.concesiones_salmon} centros</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-muted">Proyectos SEIA Aprobados</span>
+                <span class="font-mono font-semibold">${c.proyectos_seia_aprobados} (USD ${c.inversion_seia_mmusd} MM)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-border-subtle/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              Abrir ficha comunal integrada
+              <span class="font-mono text-xs">→</span>
+            </span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // ==========================================
+    // CICLO DE VIDA DE CHART.JS EN DRAWER LATERAL
+    // ==========================================
+    let drawerChartInstance = null;
+
+    function destroyDrawerChart() {
+      if (drawerChartInstance) {
+        drawerChartInstance.destroy();
+        drawerChartInstance = null;
+      }
+      const canvas = document.getElementById('drawer-node-chart');
+      if (canvas && typeof Chart !== 'undefined') {
+        const existing = Chart.getChart(canvas);
+        if (existing) {
+          existing.destroy();
+        }
+      }
+    }
+
+    function destroyActiveChart() {
+      destroyDrawerChart();
+    }
+
+    function renderNodeChart(chartSpec) {
+      const chartSection = document.getElementById('drawer-chart-section');
+      const canvas = document.getElementById('drawer-node-chart');
+      if (!chartSection || !canvas) return;
+
+      destroyDrawerChart();
+
+      if (!chartSpec || !chartSpec.labels || !chartSpec.datasets || !chartSpec.datasets.length) {
+        chartSection.classList.add('hidden');
+        return;
+      }
+
+      chartSection.classList.remove('hidden');
+      document.getElementById('drawer-chart-heading').textContent = chartSpec.title || 'Gráfico Ejecutivo';
+      const unitEl = document.getElementById('drawer-chart-unit');
+      if (unitEl) {
+        if (chartSpec.unit) {
+          unitEl.textContent = `Unidad: ${chartSpec.unit}`;
+          unitEl.style.display = 'inline-block';
+        } else {
+          unitEl.style.display = 'none';
+        }
+      }
+
+      const ctx = canvas.getContext('2d');
+      const palette = ['#00357f', '#0284c7', '#4338ca', '#0f766e', '#0059c5', '#0369a1', '#3730a3', '#115e59', '#1e293b', '#64748b'];
+      const type = chartSpec.type || 'bar';
+
+      const datasets = chartSpec.datasets.map((ds, idx) => {
+        if (type === 'doughnut') {
+          return {
+            ...ds,
+            backgroundColor: ds.backgroundColor || palette.slice(0, chartSpec.labels.length),
+            borderColor: '#fcf9f8',
+            borderWidth: 2,
+          };
+        } else if (type === 'line') {
+          const col = ds.borderColor || palette[idx % palette.length];
+          return {
+            ...ds,
+            borderColor: col,
+            backgroundColor: ds.backgroundColor || (col === '#00357f' ? 'rgba(0, 53, 127, 0.08)' : 'rgba(2, 132, 199, 0.08)'),
+            fill: true,
+            tension: 0.28,
+            pointBackgroundColor: col,
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 1.5,
+            pointRadius: 3.5,
+            pointHoverRadius: 5.5,
+            borderWidth: 2,
+          };
+        } else {
+          // bar
+          return {
+            ...ds,
+            backgroundColor: ds.backgroundColor || (chartSpec.datasets.length > 1 ? palette[idx % palette.length] : '#00357f'),
+            hoverBackgroundColor: '#00255a',
+            borderRadius: 4,
+            maxBarThickness: 32,
+          };
+        }
+      });
+
+      const isDoughnut = type === 'doughnut';
+
+      drawerChartInstance = new Chart(ctx, {
+        type: type,
+        data: {
+          labels: chartSpec.labels,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 250 },
+          plugins: {
+            legend: {
+              display: isDoughnut || chartSpec.datasets.length > 1,
+              position: isDoughnut ? 'right' : 'top',
+              labels: {
+                boxWidth: 10,
+                boxHeight: 10,
+                padding: 8,
+                font: { family: "'Inter', sans-serif", size: 10, weight: 500 },
+                color: '#1c1b1b'
+              }
+            },
+            tooltip: {
+              backgroundColor: '#1c1b1b',
+              titleColor: '#ffffff',
+              bodyColor: '#ffffff',
+              padding: 8,
+              cornerRadius: 6,
+              titleFont: { family: "'Inter', sans-serif", size: 11, weight: 600 },
+              bodyFont: { family: "'JetBrains Mono', monospace", size: 11 },
+              callbacks: {
+                label: function(context) {
+                  const val = context.raw;
+                  const formatted = typeof val === 'number' ? val.toLocaleString('es-CL') : val;
+                  const unit = chartSpec.unit ? ` ${chartSpec.unit}` : '';
+                  const lbl = context.dataset.label ? `${context.dataset.label}: ` : '';
+                  return `${lbl}${formatted}${unit}`;
+                }
+              }
             }
+          },
+          scales: isDoughnut ? {} : {
+            x: {
+              grid: { display: false },
+              ticks: {
+                font: { family: "'Inter', sans-serif", size: 9.5 },
+                color: '#66625f',
+                maxRotation: 35,
+                autoSkip: true,
+                maxTicksLimit: 12
+              }
+            },
+            y: {
+              grid: { color: 'rgba(28, 27, 27, 0.06)' },
+              ticks: {
+                font: { family: "'JetBrains Mono', monospace", size: 9.5 },
+                color: '#66625f',
+                callback: function(value) {
+                  return typeof value === 'number' ? value.toLocaleString('es-CL') : value;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // ==========================================
+    // DRAWER LATERAL EDITORIAL (PARA NODOS, HUBS Y COMUNAS)
+    // ==========================================
+    function openNodeDrawerById(id) {
+      const idx = AppState.data.nodos.findIndex(n => n.id === Number(id));
+      if (idx !== -1) {
+        openNodeDrawerByIndex(idx);
+      }
+    }
+
+    function openNodeDrawerByIndex(index) {
+      AppState.drawerMode = 'node';
+      AppState.selectedNodeIndex = index;
+      const n = AppState.data.nodos[index];
+      if (!n) return;
+
+      const hub = hubMap[n.hubId] || {};
+
+      document.getElementById('drawer-concept-id').textContent = `#${String(n.id).padStart(2, '0')}`;
+      document.getElementById('drawer-hub-badge').textContent = hub.title || '';
+      document.getElementById('drawer-concept-title').textContent = n.title;
+      document.getElementById('drawer-concept-definition').innerHTML = formatMarkdownText(n.definition);
+
+      // Mostrar secciones específicas de nodo
+      const provSection = document.getElementById('drawer-provenance-section');
+      const chartSection = document.getElementById('drawer-chart-section');
+      const canvasSection = document.getElementById('drawer-canvas-preview-section');
+      const actionsBar = document.getElementById('drawer-actions-bar');
+      const exampleSection = document.getElementById('drawer-example-section');
+
+      if (provSection) provSection.classList.remove('hidden');
+      if (canvasSection) canvasSection.classList.remove('hidden');
+      if (actionsBar) actionsBar.classList.add('hidden');
+      if (exampleSection) exampleSection.classList.add('hidden');
+
+      // 1. Bloque 1 — Transparencia y Origen del Dato (provenance)
+      const prov = n.provenance || {};
+      const official = n.officialSource || {};
+      document.getElementById('drawer-prov-date').textContent = prov.collectionDate || 'Corte oficial 2026';
+      document.getElementById('drawer-prov-frequency').textContent = `${prov.updateFrequency || 'Periódica'} · Próxima: ${prov.nextUpdate || 'Continuo'}`;
+      document.getElementById('drawer-prov-method').textContent = `${prov.collectionMethod || 'Catastro público oficial'} (${prov.sourceEntity || official.name || 'Organismo del Estado'})`;
+      
+      const provEntity = document.getElementById('drawer-prov-entity');
+      if (provEntity) {
+        provEntity.textContent = prov.sourceEntity || official.name || 'Fuente Oficial';
+      }
+      const provLink = document.getElementById('drawer-prov-link');
+      if (provLink) {
+        const url = prov.sourceUrl || official.url || '#';
+        provLink.href = url;
+        provLink.style.display = url !== '#' ? 'inline-flex' : 'none';
+      }
+
+      // 2. Bloque 2 — Gráfico Ejecutivo (Chart.js)
+      renderNodeChart(n.chartSpec);
+
+      // 3. Bloque 3 — Tabla Resumen Simple
+      AppState.tableExpanded = false;
+      renderDrawerTable(
+        'Tabla Resumen Simple',
+        n.tableColumns || [],
+        n.tableRows || []
+      );
+
+      // 4. Bloque 4 — «Qué datos detallados puedes explorar en el Lienzo Abierto» (canvasPreview)
+      const cp = n.canvasPreview || {};
+      const dimList = document.getElementById('drawer-canvas-dimensions');
+      if (dimList) {
+        const dims = cp.availableDimensions || [];
+        if (dims.length > 0) {
+          dimList.innerHTML = dims.map(d => `
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary/70 shrink-0 mt-1.5"></span>
+              <span class="leading-relaxed">${escapeHtml(d)}</span>
+            </li>
+          `).join('');
+        } else {
+          dimList.innerHTML = '<li class="text-muted">Dimensiones desagregadas en la base institucional completa.</li>';
+        }
+      }
+
+      const totalRecEl = document.getElementById('drawer-canvas-total-records');
+      if (totalRecEl) {
+        totalRecEl.textContent = cp.totalRecordsInFullBase || `${(n.tableRows || []).length} registros en archivo institucional`;
+      }
+
+      // Nodos relacionados en el sistema
+      const relSection = document.getElementById('drawer-related-section');
+      const relList = document.getElementById('drawer-related-list');
+      document.getElementById('drawer-related-heading').textContent = 'Nodos relacionados en el sistema';
+
+      const relatedNodes = (n.relatedNodeIds || [])
+        .map(rId => AppState.data.nodos.find(item => item.id === rId))
+        .filter(Boolean);
+
+      if (relatedNodes.length > 0) {
+        relSection.classList.remove('hidden');
+        relList.innerHTML = relatedNodes.map(rel => {
+          const relHub = hubMap[rel.hubId] || {};
+          return `
+            <button 
+              onclick="openNodeDrawerById(${rel.id})"
+              class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-all group"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary shrink-0">
+                  #${String(rel.id).padStart(2, '0')}
+                </span>
+                <div class="min-w-0">
+                  <div class="font-sans text-xs sm:text-sm font-semibold text-on-surface group-hover:text-primary truncate">
+                    ${escapeHtml(rel.title)}
+                  </div>
+                  <div class="font-mono text-[11px] text-muted truncate">
+                    ${escapeHtml(relHub.title || '')}
+                  </div>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-muted group-hover:text-primary shrink-0">→</span>
+            </button>
+          `;
+        }).join('');
+      } else {
+        relSection.classList.add('hidden');
+      }
+
+      document.getElementById('drawer-btn-prev').disabled = index === 0;
+      document.getElementById('drawer-btn-next').disabled = index === AppState.data.nodos.length - 1;
+
+      showDrawerDOM();
+    }
+
+    function sendCurrentNodeToExplorationCanvas() {
+      const n = AppState.data.nodos[AppState.selectedNodeIndex];
+      if (!n) return;
+      window.location.href = `laboratorio.html?node=${n.id}`;
+    }
+
+    // ABRIR EL DRAWER AL HACER CLIC EN UN HUB (I a VII)
+    function openHubDrawerById(hubId) {
+      AppState.drawerMode = 'hub';
+      const hub = hubMap[hubId];
+      if (!hub) return;
+
+      const hubNodes = AppState.data.nodos.filter(n => n.hubId === hubId);
+
+      document.getElementById('drawer-concept-id').textContent = `HUB ${hub.numeral}`;
+      document.getElementById('drawer-hub-badge').textContent = `${hubNodes.length} nodos de datos`;
+      document.getElementById('drawer-concept-title').textContent = hub.title;
+      document.getElementById('drawer-concept-definition').innerHTML = formatMarkdownText(hub.description);
+
+      // Ocultar bloques específicos de nodo
+      const provSection = document.getElementById('drawer-provenance-section');
+      if (provSection) provSection.classList.add('hidden');
+      destroyDrawerChart();
+      const chartSection = document.getElementById('drawer-chart-section');
+      if (chartSection) chartSection.classList.add('hidden');
+      const canvasSection = document.getElementById('drawer-canvas-preview-section');
+      if (canvasSection) canvasSection.classList.add('hidden');
+
+      const exampleSection = document.getElementById('drawer-example-section');
+      if (exampleSection) {
+        exampleSection.classList.remove('hidden');
+        document.getElementById('drawer-concept-example').innerHTML = formatMarkdownText(hub.example);
+      }
+
+      const actionsBar = document.getElementById('drawer-actions-bar');
+      actionsBar.classList.remove('hidden');
+      actionsBar.innerHTML = `
+        <a 
+          href="${escapeHtml(hub.sourceUrl)}" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 px-3 py-2 rounded-sm text-xs font-mono text-primary hover:underline"
+        >
+          <span>Fuentes: ${escapeHtml(hub.sourceName)}</span>
+          <span class="font-mono text-xs">↗</span>
+        </a>
+      `;
+
+      // Mostrar tabla resumen de los nodos que se desprenden de este Hub
+      AppState.tableExpanded = false;
+      renderDrawerTable(
+        `Nodos de datos que integran el Hub ${hub.numeral}`,
+        ['Código', 'Nodo de Datos', 'Fuente Oficial', 'Frecuencia'],
+        hubNodes.map(n => [
+          `#${String(n.id).padStart(2, '0')}`,
+          n.title,
+          (n.officialSource && n.officialSource.name) || '-',
+          (n.officialSource && n.officialSource.frequency) || '-'
+        ])
+      );
+
+      const relSection = document.getElementById('drawer-related-section');
+      const relList = document.getElementById('drawer-related-list');
+      document.getElementById('drawer-related-heading').textContent = 'Explorar cada nodo de este Hub';
+      relSection.classList.remove('hidden');
+      relList.innerHTML = hubNodes.map(n => `
+        <button 
+          onclick="openNodeDrawerById(${n.id})"
+          class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-all group"
+        >
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary text-white shrink-0">
+              #${String(n.id).padStart(2, '0')}
+            </span>
+            <div class="min-w-0">
+              <div class="font-sans text-xs sm:text-sm font-semibold text-on-surface group-hover:text-primary truncate">
+                ${escapeHtml(n.title)}
+              </div>
+              <div class="font-mono text-[11px] text-muted truncate">
+                ${escapeHtml((n.officialSource && n.officialSource.name) || '')}
+              </div>
+            </div>
+          </div>
+          <span class="font-mono text-xs text-muted group-hover:text-primary shrink-0">→</span>
+        </button>
+      `).join('');
+
+      document.getElementById('drawer-btn-prev').disabled = true;
+      document.getElementById('drawer-btn-next').disabled = true;
+
+      showDrawerDOM();
+    }
+
+    // ABRIR EL DRAWER AL HACER CLIC EN UNA COMUNA
+    function openComunaDrawerByIne(ineCode) {
+      AppState.drawerMode = 'comuna';
+      const c = (AppState.data.comunas || []).find(item => String(item.comuna_ine) === String(ineCode));
+      if (!c) return;
+
+      document.getElementById('drawer-concept-id').textContent = `INE ${c.comuna_ine}`;
+      document.getElementById('drawer-hub-badge').textContent = `Provincia de ${c.provincia}`;
+      document.getElementById('drawer-concept-title').textContent = `Comuna de ${c.nombre_comuna}`;
+      document.getElementById('drawer-concept-definition').innerHTML = formatMarkdownText(
+        `Cabecera comunal en **${c.cabecera}** (${c.ruta7_pavimentada_km} km pavimentados y ${c.ruta7_ripio_km} km ripio en Ruta 7 · Dependencia barcaza: **${c.dependencia_barcaza}**). Cuenta con **${(c.poblacion_censo_2024 || 0).toLocaleString('es-CL')} habitantes** según el Censo 2024 y una superficie de **${(c.superficie_km2 || 0).toLocaleString('es-CL')} km²** (${c.superficie_snaspe_pct}% en áreas protegidas SNASPE).`
+      );
+
+      // Ocultar bloques específicos de nodo
+      const provSection = document.getElementById('drawer-provenance-section');
+      if (provSection) provSection.classList.add('hidden');
+      destroyDrawerChart();
+      const chartSection = document.getElementById('drawer-chart-section');
+      if (chartSection) chartSection.classList.add('hidden');
+      const canvasSection = document.getElementById('drawer-canvas-preview-section');
+      if (canvasSection) canvasSection.classList.add('hidden');
+      const exampleSection = document.getElementById('drawer-example-section');
+      if (exampleSection) exampleSection.classList.add('hidden');
+
+      const actionsBar = document.getElementById('drawer-actions-bar');
+      actionsBar.classList.add('hidden');
+
+      const rows = [
+        ['I. Turismo & Áreas Silvestres', 'Prestadores inscritos SERNATUR', `${c.prestadores_sernatur} prestadores`],
+        ['I. Turismo & Áreas Silvestres', 'Presión Turística Estival (Ratio)', `${c.ratio_presion_turistica || 0} turistas/residente`],
+        ['I. Turismo & Áreas Silvestres', 'Visitantes Parques CONAF', `${(c.visitantes_snaspe || 0).toLocaleString('es-CL')} visitas/año`],
+        ['II. Pesca, Acuicultura & Mar', 'Concesiones acuícolas en la comuna', `${c.concesiones_salmon} concesiones (${c.centros_activos_salmon} activas)`],
+        ['II. Pesca, Acuicultura & Mar', 'Cosecha de Salmónidos (Biomasa)', `${(c.biomasa_salmon_ton || 0).toLocaleString('es-CL')} ton/año (ICA: ${c.antibioticos_ica_g_ton || 0} g/t)`],
+        ['III. Energía & Telecom', 'Cortes Eléctricos Anuales (SAIDI SEC)', `${c.saidi_horas_anual || 0} horas/cliente/año (Tarifa BT1: $${c.tarifa_bt1_clp || 0}/kWh)`],
+        ['III. Energía & Telecom', 'Internet Fijo Residencial / FOA', `${c.internet_fijo_pct || 0}% de hogares · ${c.estado_foa}`],
+        ['IV. Gobernanza & Finanzas', 'Alcalde electo (2024–2028)', `${c.alcalde} (${c.partido_alcalde})`],
+        ['IV. Gobernanza & Finanzas', 'IPP per cápita / Dependencia FCM', `$${(c.ipp_per_capita_clp || 0).toLocaleString('es-CL')} / hab (${c.dependencia_fcm_pct}% FCM)`],
+        ['IV. Gobernanza & Finanzas', 'Gasto Personal / Profesionalización', `${c.gasto_personal_pct || 0}% presupuesto · ${c.profesionalizacion_pct || 0}% profesionales`],
+        ['V. Economía & Suelo', 'Proyectos SEIA / Plazos tramitación', `${c.proyectos_seia_aprobados} proyectos (USD ${c.inversion_seia_mmusd} MM) · Prom. ${c.seia_plazo_dias || 0} días`],
+        ['V. Economía & Suelo', 'Compras Locales vs Fuga MercadoPúblico', `${c.compras_locales_pct || 0}% local · ${c.fuga_compras_pct || 0}% fuga regional`],
+        ['V. Economía & Suelo', 'Loteos Rurales Certificados SAG', `${(c.parcelaciones_sag_n || 0).toLocaleString('es-CL')} subdivisiones (DL 3.516)`],
+        ['VI. Demografía & Salud', 'Densidad Médica / Listas No-GES', `${c.medicos_por_mil_hab || 0} méd./1.000 hab · ${(c.espera_no_ges_n || 0).toLocaleString('es-CL')} consultas espera`],
+        ['VI. Demografía & Salud', 'Urgencias Respiratorias / SAMU', `${c.urgencias_respiratorias_pct || 0}% por MP2.5 · ${c.aeroevacuaciones_samu_n || 0} aeroevacuaciones/año`],
+        ['VII. Biodiversidad & Clima', 'Glaciares DGA / Superficie', `${(c.glaciares_dga_n || 0).toLocaleString('es-CL')} glaciares (${(c.superficie_glaciar_km2 || 0).toLocaleString('es-CL')} km²)`],
+        ['VII. Biodiversidad & Clima', 'Calidad de Aire (SINCA)', `${c.dias_sobre_norma_mp25 || 0} días sobre norma MP2.5/año`]
+      ];
+
+      AppState.tableExpanded = false;
+      renderDrawerTable(
+        `Indicadores de ${c.nombre_comuna} a través de los 7 Hubs`,
+        ['Hub', 'Indicador', 'Valor en la Comuna'],
+        rows
+      );
+
+      document.getElementById('drawer-related-section').classList.add('hidden');
+      document.getElementById('drawer-btn-prev').disabled = true;
+      document.getElementById('drawer-btn-next').disabled = true;
+      showDrawerDOM();
+    }
+
+    let currentDrawerTableData = { heading: '', columns: [], rows: [] };
+
+    function renderDrawerTable(heading, columns, rows) {
+      const section = document.getElementById('drawer-table-section');
+      const thead = document.getElementById('drawer-table-thead');
+      const tbody = document.getElementById('drawer-table-tbody');
+      const countEl = document.getElementById('drawer-table-count');
+      const paginationEl = document.getElementById('drawer-table-pagination');
+      document.getElementById('drawer-table-heading').textContent = heading;
+
+      currentDrawerTableData = { heading, columns, rows };
+
+      if (!columns || !columns.length || !rows || !rows.length) {
+        section.classList.add('hidden');
+        return;
+      }
+      section.classList.remove('hidden');
+      countEl.textContent = `${rows.length} registros`;
+
+      thead.innerHTML = `
+        <tr>
+          ${columns.map(col => `<th class="py-2 px-2.5 font-semibold">${escapeHtml(col)}</th>`).join('')}
+        </tr>
+      `;
+
+      const limit = 8;
+      const hasMore = rows.length > limit;
+      const isExpanded = AppState.tableExpanded;
+      const displayRows = (hasMore && !isExpanded) ? rows.slice(0, limit) : rows;
+
+      tbody.innerHTML = displayRows.map(r => `
+        <tr class="hover:bg-surface-alt/60 transition-colors">
+          ${r.map((cell, i) => `<td class="py-2 px-2.5 ${i === 0 ? 'font-semibold text-on-surface' : 'text-on-surface/85'}">${escapeHtml(String(cell))}</td>`).join('')}
+        </tr>
+      `).join('');
+
+      if (paginationEl) {
+        if (hasMore) {
+          paginationEl.innerHTML = `
+            <span>Mostrando ${displayRows.length} de ${rows.length} filas</span>
+            <button 
+              type="button"
+              onclick="toggleDrawerTableExpansion()" 
+              class="text-primary font-semibold hover:underline cursor-pointer"
+            >
+              ${isExpanded ? 'Ver solo 8 filas' : `Ver todas (${rows.length})`}
+            </button>
+          `;
+        } else {
+          paginationEl.innerHTML = `<span>Total: ${rows.length} filas</span>`;
+        }
+      }
+    }
+
+    function toggleDrawerTableExpansion() {
+      AppState.tableExpanded = !AppState.tableExpanded;
+      renderDrawerTable(currentDrawerTableData.heading, currentDrawerTableData.columns, currentDrawerTableData.rows);
+    }
+
+    function showDrawerDOM() {
+      const drawer = document.getElementById('concept-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const panel = document.getElementById('drawer-panel');
+
+      drawer.classList.remove('pointer-events-none');
+      drawer.setAttribute('aria-hidden', 'false');
+      backdrop.classList.remove('pointer-events-none', 'opacity-0');
+      backdrop.classList.add('opacity-100');
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('translate-x-0');
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConceptDrawer() {
+      const drawer = document.getElementById('concept-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const panel = document.getElementById('drawer-panel');
+
+      destroyDrawerChart();
+
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0');
+      panel.classList.remove('translate-x-0');
+      panel.classList.add('translate-x-full');
+
+      setTimeout(() => {
+        drawer.classList.add('pointer-events-none');
+        drawer.setAttribute('aria-hidden', 'true');
+        backdrop.classList.add('pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+
+    function navigateNode(direction) {
+      const nextIndex = AppState.selectedNodeIndex + direction;
+      if (nextIndex >= 0 && nextIndex < AppState.data.nodos.length) {
+        openNodeDrawerByIndex(nextIndex);
+      }
+    }
+
+    // GESTIÓN DE BÚSQUEDA Y ATAJOS
+    function setupSearchListeners() {
+      const globalInput = document.getElementById('global-search-input');
+      const mobileInput = document.getElementById('mobile-search-input');
+
+      const onSearch = (val) => {
+        AppState.searchQuery = val;
+        if (globalInput && globalInput.value !== val) globalInput.value = val;
+        if (mobileInput && mobileInput.value !== val) mobileInput.value = val;
+        if (AppState.activeTab === 'nodos' && AppState.nodeDisplayMode === 'graph') {
+          applyFilterToGraph();
+        }
+        renderActiveView();
+      };
+
+      if (globalInput) globalInput.addEventListener('input', (e) => onSearch(e.target.value));
+      if (mobileInput) mobileInput.addEventListener('input', (e) => onSearch(e.target.value));
+    }
+
+    function setupKeyboardShortcuts() {
+      document.addEventListener('keydown', (e) => {
+        const drawerOpen = document.getElementById('concept-drawer').getAttribute('aria-hidden') === 'false';
+
+        if (e.key === 'Escape' && drawerOpen) {
+          closeConceptDrawer();
+          return;
         }
 
-        function changeProb(id, val) {
-            document.getElementById(`prob-num-${id}`).innerText = `${val}%`;
+        if (drawerOpen && AppState.drawerMode === 'node') {
+          if (e.key === 'ArrowLeft') navigateNode(-1);
+          if (e.key === 'ArrowRight') navigateNode(1);
+          return;
         }
 
-        // Initialize table
-        renderRows(seriesData);
-    </script>
+        if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+          e.preventDefault();
+          const input = document.getElementById('global-search-input');
+          if (input) {
+            input.focus();
+            input.select();
+          }
+        }
+      });
+    }
+
+    function clearFiltersAndSearch() {
+      AppState.searchQuery = '';
+      AppState.activeCategoryFilter = 'all';
+      const globalInput = document.getElementById('global-search-input');
+      const mobileInput = document.getElementById('mobile-search-input');
+      if (globalInput) globalInput.value = '';
+      if (mobileInput) mobileInput.value = '';
+      renderCategoryFilters();
+      renderActiveView();
+    }
+
+    function updateCounterText(shown, total, label) {
+      const el = document.getElementById('visible-items-counter');
+      if (el) {
+        el.textContent = `Mostrando ${shown} de ${total} ${label || 'elementos'}`;
+      }
+    }
+
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function formatMarkdownText(str) {
+      if (!str) return '';
+      let safe = escapeHtml(str.trim());
+      safe = safe.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-on-surface">$1</strong>');
+      safe = safe.replace(/(^|[^\*])\*([^\*]+?)\*([^\*]|$)/g, '$1<em class="italic">$2</em>$3');
+      safe = safe.replace(/(?:^|\n)\s*-\s+/g, '<br>&bull; ');
+      safe = safe.replace(/\n\n+/g, '<br><br>');
+      safe = safe.replace(/\n/g, '<br>');
+      if (safe.startsWith('<br>')) {
+        safe = safe.substring(4);
+      }
+      return safe;
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-message');
+      if (!toast || !toastMsg) return;
+
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3500);
+    }
+  </script>
+
+  <!-- Notificación Toast sutil -->
+  <div 
+    id="toast-notification" 
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-sm bg-on-surface text-white text-xs font-medium shadow-editorial opacity-0 pointer-events-none transition-all duration-200 flex items-center gap-2 translate-y-3"
+    role="alert"
+  >
+    <span class="font-mono text-xs text-emerald-400 font-bold">[OK]</span>
+    <span id="toast-message">Mensaje</span>
+  </div>
 </body>
 </html>

@@ -1,0 +1,38 @@
+{
+  "fuente": "Centro de Estudios MINEDUC / SLEP Aysén",
+  "url_fuente": "https://datosabiertos.mineduc.cl/",
+  "ano_escolar": 2024,
+  "administracion_publica": "Servicio Local de Educación Pública Aysén (SLEP Aysén)",
+  "instituciones_educacion_superior_region": [
+    {
+      "id": "uaysen_coyhaique",
+      "nombre": "Universidad de Aysén - Campus Lillo Coyhaique",
+      "comuna_ine": "11101",
+      "tipo": "Universidad Estatal",
+      "direccion": "Obispo Vielmo 62, Coyhaique",
+      "lat": -45.575,
+      "lng": -72.062,
+      "url": "https://www.uaysen.cl"
+    },
+    {
+      "id": "cft_estatal_puerto_aysen",
+      "nombre": "CFT Estatal de la Región de Aysén - Sede Puerto Aysén",
+      "comuna_ine": "11201",
+      "tipo": "Centro de Formación Técnica Estatal",
+      "direccion": "Eusebio Ibar 179, Puerto Aysén",
+      "lat": -45.408,
+      "lng": -72.691,
+      "url": "https://www.cftestatalaysen.cl"
+    },
+    {
+      "id": "inacap_coyhaique",
+      "nombre": "INACAP Sede Coyhaique",
+      "comuna_ine": "11101",
+      "tipo": "Instituto Profesional / CFT",
+      "direccion": "Las Quintas 247, Coyhaique",
+      "lat": -45.5685,
+      "lng": -72.071,
+      "url": "https://portales.inacap.cl"
+    }
+  ]
+}

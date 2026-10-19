@@ -1,0 +1,33 @@
+{
+  "fuente": "Centro de Estudios y Análisis del Delito (CEAD) - Subsecretaría de Prevención del Delito",
+  "url_fuente": "https://cead.spd.gob.cl/estadisticas-delictuales/",
+  "ano_referencia": 2024,
+  "diagnostico_regional": "La Región de Aysén exhibe las tasas relativas más altas del país en Violencia Intrafamiliar (VIF), asociadas al confinamiento invernal y consumo de alcohol en zonas rurales, mientras que los delitos con violencia hacia la propiedad (robos con intimidación) se concentran mayoritariamente en Coyhaique y Puerto Aysén.",
+  "unidades_carabineros_principales": [
+    {
+      "comuna_ine": "11101",
+      "unidad": "1ª Comisaría Coyhaique",
+      "tipo": "Comisaría Base Regional"
+    },
+    {
+      "comuna_ine": "11201",
+      "unidad": "2ª Comisaría Puerto Aysén",
+      "tipo": "Comisaría"
+    },
+    {
+      "comuna_ine": "11202",
+      "unidad": "Subcomisaría Puerto Cisnes",
+      "tipo": "Subcomisaría"
+    },
+    {
+      "comuna_ine": "11401",
+      "unidad": "3ª Comisaría Chile Chico",
+      "tipo": "Comisaría Fronteriza"
+    },
+    {
+      "comuna_ine": "11301",
+      "unidad": "4ª Comisaría Cochrane",
+      "tipo": "Comisaría"
+    }
+  ]
+}

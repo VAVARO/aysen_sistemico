@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Chart.js for interactive series preview -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Systemic Atlas CSS (WP_07 Apple Design + Emil Kowalski Polish) -->
+    <link rel="stylesheet" href="js/systemic_atlas.css" />
 
     <style>
         :root {
@@ -430,21 +432,21 @@
             border-color: var(--ink-muted);
         }
 
-        /* 3 Navigation Modes Toggle */
+        /* 4 Navigation Modes Toggle */
         .sidebar-view-toggle {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 4px;
-            padding: 8px 16px;
+            padding: 8px 10px;
             background: #FFFFFF;
             border-bottom: 1px solid var(--border-ui);
             flex-shrink: 0;
         }
 
         .view-tab-btn {
-            padding: 7px 4px;
+            padding: 7px 3px;
             font-family: var(--font-sans);
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             border: 1px solid var(--border-ui);
             background: var(--bg-subtle);
@@ -453,10 +455,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-            transition: all 0.15s ease;
+            gap: 4px;
+            transition: transform 140ms var(--ease-out, ease-out), background-color 140ms ease, border-color 140ms ease, color 140ms ease;
             border-radius: 3px;
             text-align: center;
+        }
+
+        .view-tab-btn:active {
+            transform: scale(0.97);
         }
 
         .view-tab-btn:hover {
@@ -1032,6 +1038,15 @@
             <span class="header-kicker">· Visor Territorial Oficial & 10 Comunas (2030–2035)</span>
         </div>
         <div class="header-stats">
+            <a href="plataforma_aysen.html" class="assistant-header-btn btn-tactile" style="background: #19483A; color: #FFFFFF; border-color: #19483A; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;" title="Abrir la nueva plataforma completa a pantalla completa sin mapa fijo">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>Plataforma Sistémica (Sin Mapa Fijo)</span>
+            </a>
+            <button type="button" class="assistant-header-btn btn-tactile" id="btnSearchAssistant" onclick="window.openSearchAssistant()" title="Buscador universal y asistente guiado por temas (Atajo: Ctrl+K)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>¿Qué estás buscando?</span>
+                <span class="kbd-shortcut">Ctrl+K</span>
+            </button>
             <div class="repo-health-badge" id="repoHealthBadge" title="Auditoría de integridad territorial: 10 comunas oficiales y 18 series prospectivas verificadas">
                 <span class="health-dot status-operational"></span>
                 <span><strong id="healthScore">100% OPERATIVO</strong></span>
@@ -1131,6 +1146,10 @@
                     <button type="button" class="view-tab-btn" id="tabDownloadsView" role="tab" aria-selected="false" data-view="downloads" onclick="switchSidebarView('downloads')">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                         <span>3. Descargas</span>
+                    </button>
+                    <button type="button" class="view-tab-btn" id="tabModelView" role="tab" aria-selected="false" data-view="model" onclick="switchSidebarView('model')">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        <span>4. Relaciones</span>
                     </button>
                 </div>
 
@@ -1270,6 +1289,9 @@
                                 <span>Descargar Ficha Comunal en CSV (Excel)</span>
                             </button>
                         </div>
+
+                        <!-- Explorador de las 6 Dimensiones Sistémicas (WP_07 Data Lake) -->
+                        <div id="comunaSystemicExplorerContainer"></div>
                     </div>
                 </div>
 
@@ -1428,6 +1450,9 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- VISTA 4: Modo Relaciones de Datos (Modelo Power BI Style) -->
+                <div id="viewModelContainer" class="view-container" style="display: none;"></div>
 
             </div>
         </aside>
@@ -4290,6 +4315,9 @@
         let activeComuna = COMUNAS_DATA[0];
         let currentMapViewMode = 'comunas'; // 'comunas' | 'estaciones' | 'integrada'
 
+        window.comunasData = comunasData;
+        window.activeComuna = activeComuna;
+
         // ==========================================================================
         // MAP INITIALIZATION (CARTO Voyager with active key - zero watermarks)
         // ==========================================================================
@@ -4312,6 +4340,10 @@
 
         let markersGroup = L.layerGroup().addTo(map);
         let comunasMarkersGroup = L.layerGroup().addTo(map);
+        window.markersGroup = markersGroup;
+        window.markersLayer = markersGroup;
+        window.pasosLayer = markersGroup;
+        window.comunasMarkersGroup = comunasMarkersGroup;
 
         // ==========================================================================
         // RESPONSIVE DRAWER CONTROLLER (Desktop 440px / Projector 560px / Collapsed 48px)
@@ -4418,6 +4450,7 @@
             const tabStation = document.getElementById('tabStationView');
             const tabCross = document.getElementById('tabCrossView');
             const tabDownloads = document.getElementById('tabDownloadsView');
+            const tabModel = document.getElementById('tabModelView');
 
             if (tabStation && tabCross) {
                 tabStation.classList.toggle('active', viewMode === 'station');
@@ -4429,14 +4462,20 @@
                 tabDownloads.classList.toggle('active', viewMode === 'downloads');
                 tabDownloads.setAttribute('aria-selected', viewMode === 'downloads' ? 'true' : 'false');
             }
+            if (tabModel) {
+                tabModel.classList.toggle('active', viewMode === 'model');
+                tabModel.setAttribute('aria-selected', viewMode === 'model' ? 'true' : 'false');
+            }
 
             const viewStationContainer = document.getElementById('viewStationContainer');
             const viewCrossContainer = document.getElementById('viewCrossContainer');
             const viewDownloadsContainer = document.getElementById('viewDownloadsContainer');
+            const viewModelContainer = document.getElementById('viewModelContainer');
 
             if (viewMode === 'station') {
                 if (viewCrossContainer) viewCrossContainer.style.display = 'none';
                 if (viewDownloadsContainer) viewDownloadsContainer.style.display = 'none';
+                if (viewModelContainer) viewModelContainer.style.display = 'none';
                 if (viewStationContainer) viewStationContainer.style.display = 'flex';
                 if (currentStation) {
                     initChart(currentStation.chartLabel, currentStation.chartData, currentStation.color);
@@ -4446,12 +4485,19 @@
             } else if (viewMode === 'cross') {
                 if (viewStationContainer) viewStationContainer.style.display = 'none';
                 if (viewDownloadsContainer) viewDownloadsContainer.style.display = 'none';
+                if (viewModelContainer) viewModelContainer.style.display = 'none';
                 if (viewCrossContainer) viewCrossContainer.style.display = 'flex';
                 renderCrossVisualization(currentCrossId);
             } else if (viewMode === 'downloads') {
                 if (viewStationContainer) viewStationContainer.style.display = 'none';
                 if (viewCrossContainer) viewCrossContainer.style.display = 'none';
+                if (viewModelContainer) viewModelContainer.style.display = 'none';
                 if (viewDownloadsContainer) viewDownloadsContainer.style.display = 'flex';
+            } else if (viewMode === 'model') {
+                if (viewStationContainer) viewStationContainer.style.display = 'none';
+                if (viewCrossContainer) viewCrossContainer.style.display = 'none';
+                if (viewDownloadsContainer) viewDownloadsContainer.style.display = 'none';
+                if (viewModelContainer) viewModelContainer.style.display = 'flex';
             }
         }
 
@@ -4548,6 +4594,7 @@
             const c = comunasData.find(item => item.codigo_comuna === comunaCodeOrIne || item.comuna_ine === String(comunaCodeOrIne));
             if (!c) return;
             activeComuna = c;
+            window.activeComuna = c;
 
             if (currentDrawerMode === 'collapsed') {
                 setDrawerMode(getSavedDrawerMode());
@@ -5765,6 +5812,7 @@
                     const parsed = await resCom.json();
                     if (parsed && parsed.comunas && parsed.comunas.length === 10) {
                         comunasData = parsed.comunas;
+                        window.comunasData = comunasData;
                         renderComunasMarkers();
                     }
                 }
@@ -5835,5 +5883,7 @@
         renderComunasMarkers();
         selectComuna('CL-XI-01', false);
     </script>
+    <!-- Systemic Atlas Engine (WP_07) -->
+    <script src="js/systemic_atlas.js"></script>
 </body>
 </html>

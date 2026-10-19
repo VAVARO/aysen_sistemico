@@ -1,0 +1,9 @@
+{
+  "url": "https://datos.energiaabierta.cl/api/v2/datasets",
+  "timestamp": "2026-10-16T18:36:32.280028+00:00",
+  "status_code": null,
+  "success": false,
+  "content_length": 0,
+  "error": "URLError: [Errno 11001] getaddrinfo failed",
+  "body_preview": null
+}

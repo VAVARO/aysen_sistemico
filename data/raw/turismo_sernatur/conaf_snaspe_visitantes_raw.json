@@ -1,0 +1,57 @@
+{
+  "fuente": "Corporación Nacional Forestal (CONAF) - Gerencia de Áreas Silvestres Protegidas",
+  "url_origen": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+  "frecuencia_actualizacion": "Anual / Temporada Estival",
+  "fecha_extraccion": "2026-10-16T22:16:21.523512+00:00",
+  "descripcion": "Estadísticas de visitación en Parques Nacionales, Reservas Nacionales y Monumentos Naturales de Aysén",
+  "unidades_snaspe_aysen": [
+    {
+      "unidad": "Parque Nacional Queulat",
+      "visitantes_anuales": 56400,
+      "comuna": "Cisnes"
+    },
+    {
+      "unidad": "Reserva Nacional Coyhaique",
+      "visitantes_anuales": 31500,
+      "comuna": "Coyhaique"
+    },
+    {
+      "unidad": "Reserva Nacional Río Simpson",
+      "visitantes_anuales": 28600,
+      "comuna": "Coyhaique"
+    },
+    {
+      "unidad": "Parque Nacional Patagonia (Chacabuco y Jeinimeni)",
+      "visitantes_anuales": 17300,
+      "comunas": [
+        "Cochrane",
+        "Chile Chico"
+      ]
+    },
+    {
+      "unidad": "Parque Nacional Cerro Castillo",
+      "visitantes_anuales": 14200,
+      "comuna": "Río Ibáñez"
+    },
+    {
+      "unidad": "Parque Nacional Laguna San Rafael",
+      "visitantes_anuales": 8500,
+      "comuna": "Aysén"
+    },
+    {
+      "unidad": "Monumento Natural Dos Lagunas",
+      "visitantes_anuales": 7200,
+      "comuna": "Coyhaique"
+    },
+    {
+      "unidad": "Reserva Nacional Tamango",
+      "visitantes_anuales": 4800,
+      "comuna": "Cochrane"
+    },
+    {
+      "unidad": "Santuario de la Naturaleza Capillas de Mármol (Regulado)",
+      "visitantes_anuales_estimados": 78000,
+      "comuna": "Río Ibáñez"
+    }
+  ]
+}

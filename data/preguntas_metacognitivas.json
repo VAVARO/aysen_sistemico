@@ -1,0 +1,286 @@
+{
+  "$schema": "preguntas_metacognitivas_v1",
+  "version": "1.0.0",
+  "fecha": "2026-10-17",
+  "descripcion": "Banco oficial de 30 preguntas de metacognición y pensamiento sistémico para el Laboratorio de Modelamiento de Aysén, agrupadas en 6 ámbitos canónicos de complejidad.",
+  "ambitos": [
+    {
+      "id": 1,
+      "nombre": "Fronteras y Límites",
+      "slug": "boundaries",
+      "descripcion": "Explora qué dejamos dentro, qué dejamos fuera, qué escala espacial consideramos y qué horizonte temporal miramos."
+    },
+    {
+      "id": 2,
+      "nombre": "Interconexiones y Flujos",
+      "slug": "interconnections",
+      "descripcion": "Explora relaciones recíprocas, dependencias mutuas y efectos cruzados sin asumir causalidades simples."
+    },
+    {
+      "id": 3,
+      "nombre": "Múltiples Perspectivas",
+      "slug": "multiple_perspectives",
+      "descripcion": "Invita a reconocer que distintos actores perciben la misma realidad desde intereses, valores y necesidades diversas."
+    },
+    {
+      "id": 4,
+      "nombre": "Dinámicas y Retardos en el Tiempo",
+      "slug": "dynamics_delays",
+      "descripcion": "Aborda la no-linealidad temporal, los efectos lentos acumulativos y los descalces entre intervención y respuesta."
+    },
+    {
+      "id": 5,
+      "nombre": "Emergencia y Autoorganización",
+      "slug": "emergence_self_organization",
+      "descripcion": "Observa qué capacidades y dinámicas surgen del conjunto espontáneo sin depender de una instrucción vertical."
+    },
+    {
+      "id": 6,
+      "nombre": "Poder, Reglas y Propósito",
+      "slug": "power_rules_purpose",
+      "descripcion": "Indaga en la arquitectura de decisiones, quién define las reglas de juego y cuál es la finalidad real del sistema."
+    }
+  ],
+  "preguntas": [
+    {
+      "id": 1,
+      "ambito_id": 1,
+      "categoria": "Fronteras y Límites",
+      "pregunta": "¿Dónde fijas el límite al analizar un problema en tu localidad: en tu barrio, en el pueblo, en toda la comuna o en la cuenca?",
+      "disparadores": ["comuna", "territorio", "mapa", "cuenca", "barrio"],
+      "reflexion_guia": "La escala de observación define qué factores se consideran endógenos y cuáles se ignoran como ruido externo."
+    },
+    {
+      "id": 2,
+      "ambito_id": 1,
+      "categoria": "Fronteras y Límites",
+      "pregunta": "Al evaluar un proyecto o decisión local, ¿a qué plazo miras: los meses inmediatos, un período de cuatro años o las próximas décadas?",
+      "disparadores": ["tiempo", "seia", "inversion", "proyeccion", "2030", "2035"],
+      "reflexion_guia": "Horizontes acotados favorecen retornos rápidos a expensas de la sostenibilidad ecosistémica y social de largo aliento."
+    },
+    {
+      "id": 3,
+      "ambito_id": 1,
+      "categoria": "Fronteras y Límites",
+      "pregunta": "¿Qué temas que hoy se discuten por separado consideras que forman parte de una misma conversación comunal?",
+      "disparadores": ["salud", "educacion", "energia", "finanzas", "cruce"],
+      "reflexion_guia": "La fragmentación sectorial de políticas públicas oculta sinergias y contradicciones en el mismo espacio comunal."
+    },
+    {
+      "id": 4,
+      "ambito_id": 1,
+      "categoria": "Fronteras y Límites",
+      "pregunta": "Al pensar en los problemas de tu territorio, ¿qué aspectos consideras responsabilidad de la propia comunidad y cuáles de factores externos?",
+      "disparadores": ["gobernanza", "fcm", "sinim", "comunidad", "aislamiento"],
+      "reflexion_guia": "Diferenciar entre capacidades endógenas comunitarias y condicionantes estructurales dependientes del nivel central."
+    },
+    {
+      "id": 5,
+      "ambito_id": 1,
+      "categoria": "Fronteras y Límites",
+      "pregunta": "¿Qué grupos o sectores consideras indispensables de incluir al momento de definir las prioridades de desarrollo de tu localidad?",
+      "disparadores": ["poblacion", "censo", "participacion", "sectores", "prioridades"],
+      "reflexion_guia": "Definir quién tiene voz en el diseño territorial previene sesgos de exclusión hacia sectores rurales o aislados."
+    },
+    {
+      "id": 6,
+      "ambito_id": 2,
+      "categoria": "Interconexiones y Flujos",
+      "pregunta": "Cuando cambia la actividad económica principal de una localidad, ¿qué otros aspectos de la vida diaria suelen modificarse a su alrededor?",
+      "disparadores": ["salmonicultura", "turismo", "empresas", "empleo", "economia"],
+      "reflexion_guia": "Una mutación productiva transforma la demografía, el mercado inmobiliario, el comercio y el tejido comunitario."
+    },
+    {
+      "id": 7,
+      "ambito_id": 2,
+      "categoria": "Interconexiones y Flujos",
+      "pregunta": "¿De qué manera interactúan en tu día a día la conectividad vial o marítima, la energía y el costo de los bienes básicos?",
+      "disparadores": ["ruta7", "barcaza", "energia", "tarifa", "combustibles", "costos"],
+      "reflexion_guia": "El aislamiento geográfico y la matriz energética encarecen los insumos básicos creando un acoplamiento crítico."
+    },
+    {
+      "id": 8,
+      "ambito_id": 2,
+      "categoria": "Interconexiones y Flujos",
+      "pregunta": "Al modificarse un servicio público o una norma comunal, ¿qué efectos secundarios suelen manifestarse en áreas que nadie estaba mirando?",
+      "disparadores": ["sinim", "fndr", "regulacion", "slep", "deis"],
+      "reflexion_guia": "Las intervenciones administrativas provocan efectos secundarios imprevistos en sistemas territoriales entrelazados."
+    },
+    {
+      "id": 9,
+      "ambito_id": 2,
+      "categoria": "Interconexiones y Flujos",
+      "pregunta": "¿Qué flujos de personas, recursos o información son los más determinantes para que tu comunidad funcione con normalidad cada día?",
+      "disparadores": ["conectividad", "telecom", "foa", "turismo", "salud"],
+      "reflexion_guia": "Identificar los canales y arterias logísticas cuya interrupción paralizaría la dinámica socioeconómica comunal."
+    },
+    {
+      "id": 10,
+      "ambito_id": 2,
+      "categoria": "Interconexiones y Flujos",
+      "pregunta": "¿En qué momentos sientes que un desafío local no puede abordarse sin tocar simultáneamente otros tres o cuatro temas distintos?",
+      "disparadores": ["scatter", "complejidad", "cruce", "multivariable"],
+      "reflexion_guia": "La interdependencia sistémica impide soluciones atomizadas; exige enfoques transversales coordinados."
+    },
+    {
+      "id": 11,
+      "ambito_id": 3,
+      "categoria": "Múltiples Perspectivas",
+      "pregunta": "Frente a un mismo territorio o recurso natural, ¿en qué difieren las prioridades de quienes residen, trabajan o invierten allí?",
+      "disparadores": ["concesiones", "snaspe", "seia", "inversion", "holdings"],
+      "reflexion_guia": "Residentes, trabajadores e inversionistas operan con racionalidades, tiempos y expectativas de retorno dispares."
+    },
+    {
+      "id": 12,
+      "ambito_id": 3,
+      "categoria": "Múltiples Perspectivas",
+      "pregunta": "¿Qué necesidades cotidianas de los sectores rurales o aislados suelen pasar inadvertidas para quienes toman decisiones en centros urbanos?",
+      "disparadores": ["rural", "postas", "aislamiento", "coyhaique", "comunas"],
+      "reflexion_guia": "El sesgo urbano de las capitales centraliza recursos y omite la vulnerabilidad de las localidades periféricas."
+    },
+    {
+      "id": 13,
+      "ambito_id": 3,
+      "categoria": "Múltiples Perspectivas",
+      "pregunta": "Al discutir una obra o inversión pública, ¿qué criterios distintos usan vecinos, comerciantes y autoridades para evaluar si fue un éxito?",
+      "disparadores": ["fndr", "inversion", "obras", "infraestructura", "evaluacion"],
+      "reflexion_guia": "El éxito no es un parámetro unívoco: rentabilidad social, ganancia comercial y rédito político difieren."
+    },
+    {
+      "id": 14,
+      "ambito_id": 3,
+      "categoria": "Múltiples Perspectivas",
+      "pregunta": "¿Qué ideas previas o supuestos dan por sentados los distintos grupos cuando les cuesta alcanzar acuerdos sobre el futuro local?",
+      "disparadores": ["gobernanza", "modelos_mentales", "paradigma", "acuerdos"],
+      "reflexion_guia": "Los bloqueos de gobernanza surgen de modelos mentales no explicitados respecto a lo que constituye desarrollo."
+    },
+    {
+      "id": 15,
+      "ambito_id": 3,
+      "categoria": "Múltiples Perspectivas",
+      "pregunta": "¿Cómo cambia la definición de lo que es una 'buena calidad de vida' según la edad, el oficio o la localidad donde se vive?",
+      "disparadores": ["casen", "pobreza", "demografia", "edad", "bienestar"],
+      "reflexion_guia": "La calidad de vida austral no se agota en el ingreso monetario; incluye tranquilidad, arraigo y acceso a servicios."
+    },
+    {
+      "id": 16,
+      "ambito_id": 4,
+      "categoria": "Dinámicas y Retardos en el Tiempo",
+      "pregunta": "¿Cuánto tiempo suele transcurrir entre el momento en que se plantea una necesidad comunitaria y cuando se aprecian resultados observables?",
+      "disparadores": ["tiempo", "delays", "retardos", "inversion", "proyectos"],
+      "reflexion_guia": "Los descalces temporales entre demanda social y ejecución técnica generan frustración ciudadana si no se explicitan."
+    },
+    {
+      "id": 17,
+      "ambito_id": 4,
+      "categoria": "Dinámicas y Retardos en el Tiempo",
+      "pregunta": "¿Qué situaciones que hoy experimenta tu comuna son la consecuencia de decisiones o procesos acumulados durante muchos años?",
+      "disparadores": ["historia", "tendencia", "dependencia_trayectoria", "concesiones", "snaspe"],
+      "reflexion_guia": "Patrones actuales de conectividad y uso del maritorio son herencias históricas de decisiones de décadas pasadas."
+    },
+    {
+      "id": 18,
+      "ambito_id": 4,
+      "categoria": "Dinámicas y Retardos en el Tiempo",
+      "pregunta": "Cuando se aplica una solución rápida ante una emergencia, ¿cómo tiende a evolucionar esa misma situación meses o años después?",
+      "disparadores": ["emergencia", "subsidios", "remedios", "riesgos", "parches"],
+      "reflexion_guia": "Soluciones sintomáticas inmediatas tienden a agravar el problema estructural subyacente al retirar incentivos de cambio."
+    },
+    {
+      "id": 19,
+      "ambito_id": 4,
+      "categoria": "Dinámicas y Retardos en el Tiempo",
+      "pregunta": "¿Qué transformaciones locales avanzan de forma lenta y casi imperceptible hasta que un día se hacen evidentes para toda la comunidad?",
+      "disparadores": ["clima", "glaciares", "demografia", "envejecimiento", "tipping_point"],
+      "reflexion_guia": "Fenómenos de acumulación lenta (cambio demográfico, retroceso de hielos) cruzan umbrales con efectos repentinos."
+    },
+    {
+      "id": 20,
+      "ambito_id": 4,
+      "categoria": "Dinámicas y Retardos en el Tiempo",
+      "pregunta": "¿Por qué ciertas dificultades comunales tienden a repetirse año a año a pesar de los esfuerzos continuos por resolverlas?",
+      "disparadores": ["estacionalidad", "turismo", "invernal", "leña", "bucle"],
+      "reflexion_guia": "Patrones cíclicos repetitivos evidencian bucles de retroalimentación estructural que absorben los intentos aislados de reforma."
+    },
+    {
+      "id": 21,
+      "ambito_id": 5,
+      "categoria": "Emergencia y Autoorganización",
+      "pregunta": "Ante una nevazón, temporal o corte de caminos, ¿qué respuestas o redes de apoyo surgen de manera espontánea entre vecinos?",
+      "disparadores": ["emergencia", "comunidad", "clima", "vialidad", "redes"],
+      "reflexion_guia": "La resiliencia patagónica emerge de la autoorganización solidaria comunitaria frente a la lejanía institucional."
+    },
+    {
+      "id": 22,
+      "ambito_id": 5,
+      "categoria": "Emergencia y Autoorganización",
+      "pregunta": "¿Qué iniciativas o tradiciones locales han nacido de la propia convivencia vecinal sin haber sido planificadas formalmente por ninguna institución?",
+      "disparadores": ["cultura", "patrimonio", "identidad", "comunidad", "costumbres"],
+      "reflexion_guia": "El capital social autogenerado crea cohesión y respuestas identitarias que ninguna burocracia puede decretar."
+    },
+    {
+      "id": 23,
+      "ambito_id": 5,
+      "categoria": "Emergencia y Autoorganización",
+      "pregunta": "¿En qué situaciones la colaboración comunitaria logra resolver dificultades que ningún vecino ni institución podía resolver por su cuenta?",
+      "disparadores": ["asociatividad", "cooperacion", "caletas", "comites", "soluciones"],
+      "reflexion_guia": "Propiedades emergentes de cooperación superan las limitaciones de recursos individuales y los silos estatales."
+    },
+    {
+      "id": 24,
+      "ambito_id": 5,
+      "categoria": "Emergencia y Autoorganización",
+      "pregunta": "¿Qué condiciones facilitan que una localidad se organice por iniciativa propia frente a un problema antes de esperar soluciones externas?",
+      "disparadores": ["autonomia", "liderazgo", "aislamiento", "organizacion", "gestion"],
+      "reflexion_guia": "Confianza interpersonal y urgencia compartida activan la acción colectiva antes de que intervenga el nivel central."
+    },
+    {
+      "id": 25,
+      "ambito_id": 5,
+      "categoria": "Emergencia y Autoorganización",
+      "pregunta": "¿Qué características o fortalezas de tu comunidad existen solo gracias a la unión del grupo y desaparecerían si actuaran de forma aislada?",
+      "disparadores": ["sinergia", "emergencia", "capital_social", "tejido", "aysen"],
+      "reflexion_guia": "El sistema es más que la suma de sus partes: la identidad colectiva confiere capacidades inaccesibles individualmente."
+    },
+    {
+      "id": 26,
+      "ambito_id": 6,
+      "categoria": "Poder, Reglas y Propósito",
+      "pregunta": "¿Dónde reside principalmente la capacidad real de decidir sobre las prioridades y recursos que se invierten en tu territorio?",
+      "disparadores": ["fndr", "fcm", "sinim", "centralismo", "gobierno_regional"],
+      "reflexion_guia": "Mapear la concentración de poder presupuestario entre ministerios sectoriales centrales y autoridades comunales electas."
+    },
+    {
+      "id": 27,
+      "ambito_id": 6,
+      "categoria": "Poder, Reglas y Propósito",
+      "pregunta": "¿Cuáles son las reglas, escritas o no escritas, que terminan determinando qué temas entran en la agenda de discusión pública?",
+      "disparadores": ["agenda", "medios", "politica", "influencia", "normas"],
+      "reflexion_guia": "El poder de agenda fija qué problemas se consideran prioritarios y cuáles quedan invisibilizados del debate."
+    },
+    {
+      "id": 28,
+      "ambito_id": 6,
+      "categoria": "Poder, Reglas y Propósito",
+      "pregunta": "Al implementarse una política o proyecto en tu zona, ¿quiénes asumen los costos principales y quiénes perciben los mayores beneficios?",
+      "disparadores": ["seia", "inversion", "externalidades", "holdings", "concesiones"],
+      "reflexion_guia": "Analizar la asimetría distributiva entre externalidades ambientales locales y apropiación de excedentes."
+    },
+    {
+      "id": 29,
+      "ambito_id": 6,
+      "categoria": "Poder, Reglas y Propósito",
+      "pregunta": "¿Qué oportunidades reales de incidencia tienen las comunidades más aisladas en las decisiones que definen las normas que las rigen?",
+      "disparadores": ["aislamiento", "participacion", "incidencia", "democracia", "territorio"],
+      "reflexion_guia": "La distancia física a los centros de decisión disminuye la incidencia efectiva de localidades australes en la regulación."
+    },
+    {
+      "id": 30,
+      "ambito_id": 6,
+      "categoria": "Poder, Reglas y Propósito",
+      "pregunta": "Si observas cómo operan en el día a día las instituciones en tu comuna, ¿cuál parece ser su objetivo fundamental en la práctica?",
+      "disparadores": ["instituciones", "burocracia", "servicio", "proposito", "eficiencia"],
+      "reflexion_guia": "Distinguir entre la misión declarada en documentos oficiales y el propósito revelado por la conducta real de los organismos."
+    }
+  ]
+}

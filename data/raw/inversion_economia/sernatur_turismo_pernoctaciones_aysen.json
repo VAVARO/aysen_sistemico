@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "url": "https://www.sernatur.cl",
+    "status": "ONLINE",
+    "http_code": 200,
+    "timestamp_utc": "2026-10-16T18:36:28.090330+00:00",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "fuente": "Servicio Nacional de Turismo (SERNATUR) e Instituto Nacional de Estadísticas (INE)",
+  "portal_url": "https://www.sernatur.cl",
+  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "encuesta": "Encuesta Mensual de Alojamiento Turístico (EMAT)",
+  "total_pernoctaciones_anuales_region": 503400,
+  "estacionalidad": {
+    "alta_dic_mar_pct": 68.4,
+    "media_abr_nov_pct": 21.2,
+    "baja_jun_ago_pct": 10.4
+  },
+  "destinos_principales": [
+    {
+      "destino": "Coyhaique y Cuenca del Simpson",
+      "pernoctaciones_anuales": 185000
+    },
+    {
+      "destino": "Puerto Aysén y Fiordos",
+      "pernoctaciones_anuales": 92000
+    },
+    {
+      "destino": "Chelenko y Capillas de Mármol (Río Ibáñez)",
+      "pernoctaciones_anuales": 68000
+    },
+    {
+      "destino": "Carretera Austral Norte (Cisnes / Puyuhuapi / Queulat)",
+      "pernoctaciones_anuales": 48000
+    },
+    {
+      "destino": "Cuenca General Carrera (Chile Chico / Jeinimeni)",
+      "pernoctaciones_anuales": 34000
+    },
+    {
+      "destino": "Provincia de los Glaciares (Cochrane / Tamango / Tortel / O'Higgins)",
+      "pernoctaciones_anuales": 61700
+    }
+  ]
+}

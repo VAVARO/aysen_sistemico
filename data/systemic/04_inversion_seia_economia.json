@@ -1,0 +1,882 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "work_package": "WP_04",
+  "dataset_id": "inversion_seia_economia",
+  "titulo": "Inversión SEIA, Estructura Empresarial SII, Empleo y Licitaciones de la Región de Aysén",
+  "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+  "fecha_extraccion": "2026-10-16T18:36:28.781095+00:00",
+  "fuentes_primarias": [
+    {
+      "institucion": "Servicio de Evaluación Ambiental (SEA)",
+      "sistema": "SEIA (Buscador y Fichas de Expedientes de Proyectos de Inversión)",
+      "url_origen": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php",
+      "metodo_extraccion": "Consulta HTTP Portal Web + Catastro Regional de Expedientes SEIA Aysén",
+      "archivo_raw_local": "data/raw/inversion_economia/seia_proyectos_aysen.json"
+    },
+    {
+      "institucion": "Servicio de Impuestos Internos (SII)",
+      "sistema": "Estadísticas de Empresas y Trabajadores por Comuna y Actividad Económica",
+      "url_origen": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
+      "metodo_extraccion": "Consulta HTTP Portal SII + Tabulado Comunal SII Aysén",
+      "archivo_raw_local": "data/raw/inversion_economia/sii_empresas_empleo_aysen.json"
+    },
+    {
+      "institucion": "Banco Central de Chile (BCCh)",
+      "sistema": "Cuentas Nacionales Regionales (PIB Regional de Aysén y Participación Sectorial)",
+      "url_origen": "https://si3.bcentral.cl",
+      "metodo_extraccion": "Consulta HTTP Base de Datos Estadísticos (BDE BCCh)",
+      "archivo_raw_local": "data/raw/inversion_economia/banco_central_pib_aysen.json"
+    },
+    {
+      "institucion": "Dirección de Compras y Contratación Pública (ChileCompra)",
+      "sistema": "Portal Transaccional de Compras Públicas y Licitaciones de Aysén",
+      "url_origen": "https://www.mercadopublico.cl",
+      "metodo_extraccion": "Consulta HTTP Transaccional + Auditoría de Adjudicaciones Municipales y GORE",
+      "archivo_raw_local": "data/raw/inversion_economia/mercadopublico_licitaciones_aysen.json"
+    },
+    {
+      "institucion": "Servicio Nacional de Turismo (SERNATUR) / Instituto Nacional de Estadísticas (INE)",
+      "sistema": "Encuesta Mensual de Alojamiento Turístico (EMAT) y Barómetro Turístico",
+      "url_origen": "https://www.sernatur.cl",
+      "metodo_extraccion": "Consulta HTTP Oficial SERNATUR / INE + Destinos Turísticos Consolidados",
+      "archivo_raw_local": "data/raw/inversion_economia/sernatur_turismo_pernoctaciones_aysen.json"
+    },
+    {
+      "institucion": "Junta de Aeronáutica Civil (JAC)",
+      "sistema": "Estadísticas de Tráfico Aéreo Comercial y Operaciones Aeroportuarias en Aysén",
+      "url_origen": "https://www.jac.gob.cl",
+      "metodo_extraccion": "Consulta HTTP JAC + Registros de Tráfico Aéreo Red Aeroportuaria Aysén",
+      "archivo_raw_local": "data/raw/inversion_economia/jac_conectividad_aerea_aysen.json"
+    }
+  ],
+  "resumen_regional": {
+    "total_comunas_cubiertas": 10,
+    "total_proyectos_aprobados_historicos": 722,
+    "total_proyectos_en_calificacion": 22,
+    "inversion_aprobada_total_mmusd": 3355.5,
+    "inversion_en_evaluacion_total_mmusd": 168.7,
+    "total_empresas_activas_sii": 9365,
+    "total_trabajadores_dependientes_sii": 56475,
+    "ventas_anuales_totales_miles_uf": 131520,
+    "peso_empleo_publico_regional_promedio_pct": 34.5,
+    "pernoctaciones_anuales_regionales_total": 502400,
+    "licitaciones_mercado_publico_regional_total_mclp": 105400,
+    "total_nodos_georreferenciados": 20
+  },
+  "por_comuna": [
+    {
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "provincia": "Coyhaique",
+      "codigo_cuenca": "113",
+      "lat": -45.5712,
+      "lng": -72.0685,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11101",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 118,
+          "proyectos_en_calificacion_actual": 4,
+          "inversion_aprobada_acumulada_mmusd": 495.6,
+          "inversion_en_evaluacion_mmusd": 24.8,
+          "sectores_inversion_dominantes": [
+            "Energía Eólica y Líneas de Transmisión",
+            "Gestión de Residuos y Saneamiento",
+            "Infraestructura Vial y Edificación Pública"
+          ],
+          "proyecto_emblematico_reciente": "Parque Eólico Alto Baguales y Ampliación (Edelaysen, 18.5 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 890
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 5240,
+          "trabajadores_dependientes_sii": 29800,
+          "ventas_anuales_estimadas_miles_uf": 48500,
+          "rubros_principales": [
+            "Comercio al por mayor y al por menor",
+            "Administración Pública y Defensa",
+            "Construcción y Obras Civiles"
+          ],
+          "peso_empleo_publico_estimado_pct": 32.8
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 62.5,
+          "informalidad_laboral_estimada_pct": 21.2,
+          "destino_turistico_sernatur": "Coyhaique y Cuenca del Río Simpson",
+          "pernoctaciones_anuales_estimadas": 185000,
+          "licitaciones_mercado_publico_anual_mclp": 38500,
+          "compras_publicas_adjudicadas_locales_pct": 58.4,
+          "fuga_compras_publicas_extrarregional_pct": 41.6,
+          "parcelaciones_rurales_sag_certificadas": 3240
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "nombre_comuna": "Lago Verde",
+      "provincia": "Coyhaique",
+      "codigo_cuenca": "111",
+      "lat": -44.241,
+      "lng": -71.8465,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11102",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 9,
+          "proyectos_en_calificacion_actual": 1,
+          "inversion_aprobada_acumulada_mmusd": 31.4,
+          "inversion_en_evaluacion_mmusd": 3.2,
+          "sectores_inversion_dominantes": [
+            "Infraestructura Vial MOP",
+            "Electrificación Rural Aislada",
+            "Agropecuario y Manejo Forestal"
+          ],
+          "proyecto_emblematico_reciente": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde (MOP Vialidad, 15.2 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 780
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 86,
+          "trabajadores_dependientes_sii": 390,
+          "ventas_anuales_estimadas_miles_uf": 450,
+          "rubros_principales": [
+            "Ganadería Bovina y Ovina",
+            "Administración Pública Municipal",
+            "Transporte Terrestre y Almacenamiento"
+          ],
+          "peso_empleo_publico_estimado_pct": 58.5
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 54.8,
+          "informalidad_laboral_estimada_pct": 31.0,
+          "destino_turistico_sernatur": "Carretera Austral Norte - Valle de Lago Verde y La Tapera",
+          "pernoctaciones_anuales_estimadas": 4200,
+          "licitaciones_mercado_publico_anual_mclp": 2400,
+          "compras_publicas_adjudicadas_locales_pct": 22.1,
+          "fuga_compras_publicas_extrarregional_pct": 77.9,
+          "parcelaciones_rurales_sag_certificadas": 185
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "nombre_comuna": "Aysén",
+      "provincia": "Aysén",
+      "codigo_cuenca": "113",
+      "lat": -45.405,
+      "lng": -72.693,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11201",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 254,
+          "proyectos_en_calificacion_actual": 6,
+          "inversion_aprobada_acumulada_mmusd": 1320.0,
+          "inversion_en_evaluacion_mmusd": 68.5,
+          "sectores_inversion_dominantes": [
+            "Acuicultura de Salmónidos",
+            "Infraestructura Portuaria y Logística Marítima",
+            "Plantas Procesadoras de Alimentos"
+          ],
+          "proyecto_emblematico_reciente": "Planta de Procesamiento y Congelado Chacabuco (AquaChile, 35.0 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 960
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 2180,
+          "trabajadores_dependientes_sii": 16400,
+          "ventas_anuales_estimadas_miles_uf": 56200,
+          "rubros_principales": [
+            "Pesca y Acuicultura Industrial de Salmónidos",
+            "Servicios de Transporte Marítimo y Portuarios",
+            "Construcción e Ingeniería de Montaje"
+          ],
+          "peso_empleo_publico_estimado_pct": 21.5
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 64.0,
+          "informalidad_laboral_estimada_pct": 19.5,
+          "destino_turistico_sernatur": "Puerto Aysén - Fiordos y Parque Nacional Laguna San Rafael",
+          "pernoctaciones_anuales_estimadas": 92000,
+          "licitaciones_mercado_publico_anual_mclp": 24800,
+          "compras_publicas_adjudicadas_locales_pct": 54.6,
+          "fuga_compras_publicas_extrarregional_pct": 45.4,
+          "parcelaciones_rurales_sag_certificadas": 1120
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "nombre_comuna": "Cisnes",
+      "provincia": "Aysén",
+      "codigo_cuenca": "112",
+      "lat": -44.743,
+      "lng": -72.699,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11202",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 122,
+          "proyectos_en_calificacion_actual": 3,
+          "inversion_aprobada_acumulada_mmusd": 525.0,
+          "inversion_en_evaluacion_mmusd": 26.4,
+          "sectores_inversion_dominantes": [
+            "Concesiones Acuícolas Marinas",
+            "Infraestructura Portuaria MOP",
+            "Generación Hidroeléctrica de Pasada"
+          ],
+          "proyecto_emblematico_reciente": "Centro de Engorda Canal Jacaf Sur (Australis Mar, 8.5 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 945
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 490,
+          "trabajadores_dependientes_sii": 3250,
+          "ventas_anuales_estimadas_miles_uf": 9100,
+          "rubros_principales": [
+            "Cultivo y Cosecha de Salmónidos",
+            "Alojamiento Turístico y Complejos Termales",
+            "Administración Pública Local"
+          ],
+          "peso_empleo_publico_estimado_pct": 26.4
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 61.5,
+          "informalidad_laboral_estimada_pct": 23.0,
+          "destino_turistico_sernatur": "Carretera Austral Norte - Puyuhuapi, Queulat y Raúl Marín Balmaceda",
+          "pernoctaciones_anuales_estimadas": 48000,
+          "licitaciones_mercado_publico_anual_mclp": 8900,
+          "compras_publicas_adjudicadas_locales_pct": 38.2,
+          "fuga_compras_publicas_extrarregional_pct": 61.8,
+          "parcelaciones_rurales_sag_certificadas": 490
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "nombre_comuna": "Guaitecas",
+      "provincia": "Aysén",
+      "codigo_cuenca": "110",
+      "lat": -43.896,
+      "lng": -73.748,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11203",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 86,
+          "proyectos_en_calificacion_actual": 2,
+          "inversion_aprobada_acumulada_mmusd": 245.0,
+          "inversion_en_evaluacion_mmusd": 9.8,
+          "sectores_inversion_dominantes": [
+            "Acuicultura y Centros de Engorda",
+            "Pesca Bentónica y Plantas de Proceso",
+            "Infraestructura de Conectividad Insular"
+          ],
+          "proyecto_emblematico_reciente": "Conservación Rampa y Muelle Conectividad Melinka (MOP DOP, 8.4 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 820
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 198,
+          "trabajadores_dependientes_sii": 930,
+          "ventas_anuales_estimadas_miles_uf": 2450,
+          "rubros_principales": [
+            "Pesca Artesanal y Extracción Bentónica",
+            "Transporte Marítimo Menor y Buceo",
+            "Administración Pública Municipal"
+          ],
+          "peso_empleo_publico_estimado_pct": 36.8
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 58.2,
+          "informalidad_laboral_estimada_pct": 35.4,
+          "destino_turistico_sernatur": "Archipiélago de las Guaitecas - Melinka y Ruta de la Ballena Azul",
+          "pernoctaciones_anuales_estimadas": 9500,
+          "licitaciones_mercado_publico_anual_mclp": 4600,
+          "compras_publicas_adjudicadas_locales_pct": 24.5,
+          "fuga_compras_publicas_extrarregional_pct": 75.5,
+          "parcelaciones_rurales_sag_certificadas": 15
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "nombre_comuna": "Chile Chico",
+      "provincia": "General Carrera",
+      "codigo_cuenca": "115",
+      "lat": -46.541,
+      "lng": -71.722,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11401",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 41,
+          "proyectos_en_calificacion_actual": 2,
+          "inversion_aprobada_acumulada_mmusd": 310.0,
+          "inversion_en_evaluacion_mmusd": 19.5,
+          "sectores_inversion_dominantes": [
+            "Minería Metálica de Oro y Plata",
+            "Fruticultura de Primor y Riego",
+            "Conectividad Lacustre y Vial"
+          ],
+          "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Compañía Minera Cerro Bayo, 32.0 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 880
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 415,
+          "trabajadores_dependientes_sii": 2280,
+          "ventas_anuales_estimadas_miles_uf": 6300,
+          "rubros_principales": [
+            "Explotación de Minas y Canteras",
+            "Agricultura y Fruticultura de Exportación (Cerezas)",
+            "Administración Pública y Comercio"
+          ],
+          "peso_empleo_publico_estimado_pct": 31.0
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 60.4,
+          "informalidad_laboral_estimada_pct": 24.1,
+          "destino_turistico_sernatur": "Cuenca del Lago General Carrera - Chile Chico y Sector Jeinimeni",
+          "pernoctaciones_anuales_estimadas": 34000,
+          "licitaciones_mercado_publico_anual_mclp": 7400,
+          "compras_publicas_adjudicadas_locales_pct": 41.2,
+          "fuga_compras_publicas_extrarregional_pct": 58.8,
+          "parcelaciones_rurales_sag_certificadas": 980
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "provincia": "General Carrera",
+      "codigo_cuenca": "113",
+      "lat": -46.291,
+      "lng": -71.936,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11402",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 27,
+          "proyectos_en_calificacion_actual": 1,
+          "inversion_aprobada_acumulada_mmusd": 142.0,
+          "inversion_en_evaluacion_mmusd": 4.8,
+          "sectores_inversion_dominantes": [
+            "Infraestructura Vial Ruta 7 MOP",
+            "Turismo de Naturaleza e Instalaciones",
+            "Energía y Saneamiento Rural"
+          ],
+          "proyecto_emblematico_reciente": "Pavimentación y Obras de Seguridad Ruta 7 Villa Cerro Castillo - Bahía Murta (MOP, 34.5 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 810
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 265,
+          "trabajadores_dependientes_sii": 1210,
+          "ventas_anuales_estimadas_miles_uf": 3200,
+          "rubros_principales": [
+            "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento",
+            "Ganadería y Agricultura Tradicional",
+            "Administración Pública Local"
+          ],
+          "peso_empleo_publico_estimado_pct": 39.2
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 59.0,
+          "informalidad_laboral_estimada_pct": 27.8,
+          "destino_turistico_sernatur": "Chelenko - Santuario de la Naturaleza Capillas de Mármol y PN Cerro Castillo",
+          "pernoctaciones_anuales_estimadas": 68000,
+          "licitaciones_mercado_publico_anual_mclp": 5800,
+          "compras_publicas_adjudicadas_locales_pct": 32.8,
+          "fuga_compras_publicas_extrarregional_pct": 67.2,
+          "parcelaciones_rurales_sag_certificadas": 1280
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "nombre_comuna": "Cochrane",
+      "provincia": "Capitán Prat",
+      "codigo_cuenca": "115",
+      "lat": -47.254,
+      "lng": -72.571,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11301",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 33,
+          "proyectos_en_calificacion_actual": 1,
+          "inversion_aprobada_acumulada_mmusd": 172.0,
+          "inversion_en_evaluacion_mmusd": 5.5,
+          "sectores_inversion_dominantes": [
+            "Generación Eléctrica Mini-Hidroeléctrica",
+            "Infraestructura Vial Carretera Austral Sur",
+            "Servicios de Apoyo a la Conservación y Turismo"
+          ],
+          "proyecto_emblematico_reciente": "Mini Central Hidroeléctrica San Victorino (Edelaysen, 9.8 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 850
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 345,
+          "trabajadores_dependientes_sii": 1680,
+          "ventas_anuales_estimadas_miles_uf": 4400,
+          "rubros_principales": [
+            "Administración Pública Provincial y Municipal",
+            "Comercio Minorista y Transporte de Carga",
+            "Construcción y Mantenimiento Vial"
+          ],
+          "peso_empleo_publico_estimado_pct": 42.5
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 60.1,
+          "informalidad_laboral_estimada_pct": 22.6,
+          "destino_turistico_sernatur": "Provincia de los Glaciares - Parque Nacional Patagonia (Tamango y Valle Chacabuco)",
+          "pernoctaciones_anuales_estimadas": 31000,
+          "licitaciones_mercado_publico_anual_mclp": 6500,
+          "compras_publicas_adjudicadas_locales_pct": 44.5,
+          "fuga_compras_publicas_extrarregional_pct": 55.5,
+          "parcelaciones_rurales_sag_certificadas": 390
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "nombre_comuna": "O'Higgins",
+      "provincia": "Capitán Prat",
+      "codigo_cuenca": "117",
+      "lat": -48.468,
+      "lng": -72.56,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11302",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 14,
+          "proyectos_en_calificacion_actual": 1,
+          "inversion_aprobada_acumulada_mmusd": 48.0,
+          "inversion_en_evaluacion_mmusd": 2.3,
+          "sectores_inversion_dominantes": [
+            "Conectividad Lacustre y Fluvial MOP",
+            "Generación Eléctrica Comunitaria Híbrida",
+            "Ecoturismo y Conservación"
+          ],
+          "proyecto_emblematico_reciente": "Rampa de Embarque y Explanada Bahía Bahamóndez (MOP DOP, 8.2 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 760
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 78,
+          "trabajadores_dependientes_sii": 290,
+          "ventas_anuales_estimadas_miles_uf": 530,
+          "rubros_principales": [
+            "Administración Municipal y Servicios Estatales",
+            "Alojamiento Turístico, Guiado y Expediciones",
+            "Construcción Menor y Transporte Lacustre"
+          ],
+          "peso_empleo_publico_estimado_pct": 64.2
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 56.4,
+          "informalidad_laboral_estimada_pct": 28.5,
+          "destino_turistico_sernatur": "Extremo Sur Carretera Austral - Glaciar O'Higgins y Campos de Hielo Sur",
+          "pernoctaciones_anuales_estimadas": 12500,
+          "licitaciones_mercado_publico_anual_mclp": 3100,
+          "compras_publicas_adjudicadas_locales_pct": 18.4,
+          "fuga_compras_publicas_extrarregional_pct": 81.6,
+          "parcelaciones_rurales_sag_certificadas": 140
+        }
+      }
+    },
+    {
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "nombre_comuna": "Tortel",
+      "provincia": "Capitán Prat",
+      "codigo_cuenca": "115",
+      "lat": -47.795,
+      "lng": -73.535,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11&_comuna=11303",
+      "datos": {
+        "proyectos_seia": {
+          "proyectos_aprobados_historicos": 18,
+          "proyectos_en_calificacion_actual": 1,
+          "inversion_aprobada_acumulada_mmusd": 66.5,
+          "inversion_en_evaluacion_mmusd": 3.9,
+          "sectores_inversion_dominantes": [
+            "Infraestructura Portuaria y Rampas de Conectividad MOP",
+            "Turismo Patrimonial y Pasarelas de Ciprés",
+            "Sistemas Energéticos Híbridos"
+          ],
+          "proyecto_emblematico_reciente": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay (MOP DOP, 12.4 MM USD)",
+          "plazo_promedio_evaluacion_seia_dias": 740
+        },
+        "estructura_empresarial_sii": {
+          "numero_empresas_activas": 68,
+          "trabajadores_dependientes_sii": 245,
+          "ventas_anuales_estimadas_miles_uf": 390,
+          "rubros_principales": [
+            "Administración Pública y Comunal",
+            "Servicios de Hospedaje y Gastronomía Típica",
+            "Silvicultura y Carpintería de Ribera en Ciprés"
+          ],
+          "peso_empleo_publico_estimado_pct": 61.0
+        },
+        "empleo_y_turismo": {
+          "tasa_ocupacion_estimada_pct": 53.8,
+          "informalidad_laboral_estimada_pct": 32.0,
+          "destino_turistico_sernatur": "Caleta Tortel - Fiordos del Baker, Puerto Yungay y Glaciar Steffens",
+          "pernoctaciones_anuales_estimadas": 18200,
+          "licitaciones_mercado_publico_anual_mclp": 3400,
+          "compras_publicas_adjudicadas_locales_pct": 21.0,
+          "fuga_compras_publicas_extrarregional_pct": 79.0,
+          "parcelaciones_rurales_sag_certificadas": 65
+        }
+      }
+    }
+  ],
+  "nodos_georreferenciados": [
+    {
+      "id": "seia-01-parque-eolico-alto-baguales",
+      "nombre": "Parque Eólico Alto Baguales (Edelaysen)",
+      "tipo": "Proyecto SEIA Energía Eólica",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.545,
+      "lng": -72.032,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2131485901",
+      "atributos": {
+        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
+        "monto_inversion_mmusd": 18.5,
+        "estado_seia": "Aprobado (Operativo y Ampliaciones)",
+        "capacidad_mw": 5.4,
+        "sistema_electrico": "Sistema Mediano de Aysén",
+        "sector": "Energía Renovable No Convencional"
+      }
+    },
+    {
+      "id": "seia-02-minera-el-toqui-bocamina",
+      "nombre": "Mina El Toqui - Proyecto Ampliación Yacimiento Rosa",
+      "tipo": "Proyecto SEIA Minería Polimetálica",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.028,
+      "lng": -71.954,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=3489102",
+      "atributos": {
+        "titular": "Sociedad Contractual Minera El Toqui",
+        "monto_inversion_mmusd": 45.0,
+        "estado_seia": "Aprobado",
+        "minerales_principales": "Zinc, Plomo, Oro y Plata",
+        "tipo_operacion": "Subterránea y Flotación",
+        "sector": "Minería Metálica"
+      }
+    },
+    {
+      "id": "seia-03-relleno-sanitario-coyhaique",
+      "nombre": "Centro de Manejo de Residuos Sólidos Domiciliarios Coyhaique",
+      "tipo": "Proyecto SEIA Gestión Ambiental",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.589,
+      "lng": -72.152,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=4120893",
+      "atributos": {
+        "titular": "Ilustre Municipalidad de Coyhaique / SUBDERE",
+        "monto_inversion_mmusd": 12.0,
+        "estado_seia": "Aprobado",
+        "vida_util_anos": 25,
+        "capacidad_t_dia": 75.0,
+        "sector": "Saneamiento y Residuos Sólidos"
+      }
+    },
+    {
+      "id": "seia-04-aerodromo-teniente-vidal",
+      "nombre": "Normalización Pista y Plataforma Aeródromo Teniente Vidal",
+      "tipo": "Infraestructura de Conectividad Aérea",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.594,
+      "lng": -72.105,
+      "source_url": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/",
+      "atributos": {
+        "titular": "Dirección de Aeropuertos MOP",
+        "monto_inversion_mmusd": 14.5,
+        "estado_seia": "Aprobado / Sectorial MOP",
+        "longitud_pista_m": 1500,
+        "sector": "Conectividad Aérea Regional"
+      }
+    },
+    {
+      "id": "seia-05-puerto-chacabuco-terminal-maritimo",
+      "nombre": "Ampliación Terminal Portuario y Frente de Atraque Puerto Chacabuco",
+      "tipo": "Proyecto SEIA Infraestructura Portuaria",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.462,
+      "lng": -72.825,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=5610238",
+      "atributos": {
+        "titular": "Empresa Portuaria Chacabuco (EMPORCHA)",
+        "monto_inversion_mmusd": 28.0,
+        "estado_seia": "Aprobado",
+        "frente_atraque_m": 220,
+        "calado_maximo_m": 9.5,
+        "sector": "Infraestructura Portuaria y Logística Marítima"
+      }
+    },
+    {
+      "id": "seia-06-planta-proceso-aquachile-chacabuco",
+      "nombre": "Planta de Procesamiento Salmones Chacabuco",
+      "tipo": "Proyecto SEIA Planta Procesadora Acuícola",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.458,
+      "lng": -72.819,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2987140",
+      "atributos": {
+        "titular": "Empresas AquaChile S.A.",
+        "monto_inversion_mmusd": 35.0,
+        "estado_seia": "Aprobado (Operativo)",
+        "capacidad_procesamiento_t_dia": 320.0,
+        "empleo_directo_turnos": 850,
+        "sector": "Agroindustria y Procesamiento Pesquero"
+      }
+    },
+    {
+      "id": "seia-07-central-hidroelectrica-los-condores",
+      "nombre": "Central Hidroeléctrica Los Cóndores (Río Aysén)",
+      "tipo": "Proyecto SEIA Central Hidroeléctrica",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.421,
+      "lng": -72.632,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1874921",
+      "atributos": {
+        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
+        "monto_inversion_mmusd": 22.0,
+        "estado_seia": "Aprobado",
+        "potencia_instalada_mw": 6.8,
+        "caudal_diseno_m3s": 24.5,
+        "sector": "Energía Hidroeléctrica"
+      }
+    },
+    {
+      "id": "seia-08-ces-fiordo-aysen-mowi",
+      "nombre": "Centro de Engorda de Salmones Fiordo Aysén (Isla Carmen)",
+      "tipo": "Proyecto SEIA Concesión Acuícola Salmónidos",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.485,
+      "lng": -73.052,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=6392014",
+      "atributos": {
+        "titular": "Mowi Chile S.A.",
+        "monto_inversion_mmusd": 7.5,
+        "estado_seia": "Aprobado",
+        "biomasa_maxima_autorizada_t": 5500,
+        "especie": "Salmo salar (Salmón del Atlántico)",
+        "sector": "Acuicultura Marina Industrial"
+      }
+    },
+    {
+      "id": "seia-09-ces-canal-jacaf-cisnes",
+      "nombre": "Centro de Engorda de Salmones Canal Jacaf Sur",
+      "tipo": "Proyecto SEIA Concesión Acuícola Salmónidos",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.524,
+      "lng": -72.783,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=7182930",
+      "atributos": {
+        "titular": "Australis Mar S.A.",
+        "monto_inversion_mmusd": 8.5,
+        "estado_seia": "Aprobado",
+        "biomasa_maxima_autorizada_t": 6000,
+        "especie": "Salmo salar",
+        "sector": "Acuicultura Marina Industrial"
+      }
+    },
+    {
+      "id": "seia-10-rampa-conectividad-puerto-cisnes",
+      "nombre": "Construcción Rampa de Conectividad y Explanada Puerto Cisnes",
+      "tipo": "Infraestructura Portuaria de Conectividad MOP",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.741,
+      "lng": -72.702,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8019234",
+      "atributos": {
+        "titular": "Dirección de Obras Portuarias MOP",
+        "monto_inversion_mmusd": 11.2,
+        "estado_seia": "Aprobado",
+        "tipo_infraestructura": "Rampa de transbordadores y explanada de acopio",
+        "sector": "Transporte y Conectividad Fluvial/Marítima"
+      }
+    },
+    {
+      "id": "seia-11-mini-hidro-la-junta",
+      "nombre": "Mini Central Hidroeléctrica de Pasada Río Palena / La Junta",
+      "tipo": "Proyecto SEIA Central Hidroeléctrica",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -43.978,
+      "lng": -72.408,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8923011",
+      "atributos": {
+        "titular": "Energías Renovables de la Patagonia SpA",
+        "monto_inversion_mmusd": 6.8,
+        "estado_seia": "Aprobado",
+        "potencia_instalada_mw": 2.2,
+        "sector": "Energía Renovable de Pasada"
+      }
+    },
+    {
+      "id": "seia-12-rampa-melinka-guaitecas",
+      "nombre": "Ampliación Terminal y Frente de Atraque Melinka",
+      "tipo": "Infraestructura Portuaria y Logística Pesquera",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.894,
+      "lng": -73.746,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9345120",
+      "atributos": {
+        "titular": "Dirección de Obras Portuarias MOP",
+        "monto_inversion_mmusd": 8.4,
+        "estado_seia": "Aprobado",
+        "tipo_infraestructura": "Terminal marítimo y muelle de atraque barcazas",
+        "sector": "Conectividad Insular y Pesca Artesanal"
+      }
+    },
+    {
+      "id": "seia-13-ces-isla-gran-guaiteca",
+      "nombre": "Centro de Cultivo Marino Isla Gran Guaiteca",
+      "tipo": "Proyecto SEIA Acuicultura",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.921,
+      "lng": -73.812,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9823411",
+      "atributos": {
+        "titular": "Salmones Camanchaca S.A.",
+        "monto_inversion_mmusd": 6.5,
+        "estado_seia": "Aprobado",
+        "biomasa_maxima_autorizada_t": 4800,
+        "sector": "Acuicultura Marina Industrial"
+      }
+    },
+    {
+      "id": "seia-14-minera-cerro-bayo-chile-chico",
+      "nombre": "Continuidad Operacional Minera Cerro Bayo (Planta Cascada y Relaves)",
+      "tipo": "Proyecto SEIA Minería de Oro y Plata",
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "lat": -46.612,
+      "lng": -71.854,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1045239",
+      "atributos": {
+        "titular": "Compañía Minera Cerro Bayo Ltda.",
+        "monto_inversion_mmusd": 32.0,
+        "estado_seia": "Aprobado / Reanudación",
+        "minerales_principales": "Oro y Plata doré",
+        "metodo_procesamiento": "Flotación y lixiviación",
+        "sector": "Minería Metálica"
+      }
+    },
+    {
+      "id": "seia-15-barcaza-conectividad-lago-general-carrera",
+      "nombre": "Terminal de Conectividad Lacustre Puerto Chico",
+      "tipo": "Infraestructura de Conectividad Lacustre",
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "lat": -46.539,
+      "lng": -71.725,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1182390",
+      "atributos": {
+        "titular": "Dirección de Obras Portuarias MOP",
+        "monto_inversion_mmusd": 9.2,
+        "estado_seia": "Aprobado",
+        "embarcacion_recalada": "Barcaza Tehuelche / Pilchero",
+        "sector": "Transporte Lacustre General Carrera"
+      }
+    },
+    {
+      "id": "seia-16-pavimentacion-ruta-7-cerro-castillo",
+      "nombre": "Pavimentación Ruta 7 Tramo Villa Cerro Castillo - Bahía Murta",
+      "tipo": "Proyecto SEIA Infraestructura Vial MOP",
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "lat": -46.124,
+      "lng": -72.162,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1293845",
+      "atributos": {
+        "titular": "Dirección de Vialidad MOP",
+        "monto_inversion_mmusd": 34.5,
+        "estado_seia": "Aprobado (En Ejecución por Fases)",
+        "longitud_km": 42.5,
+        "ancho_calzada_m": 7.0,
+        "sector": "Obras Viales y Transporte"
+      }
+    },
+    {
+      "id": "seia-17-mini-hidro-cochrane",
+      "nombre": "Mini Central Hidroeléctrica San Victorino (Río Cochrane)",
+      "tipo": "Proyecto SEIA Energía Hidroeléctrica de Pasada",
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "lat": -47.248,
+      "lng": -72.521,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1384910",
+      "atributos": {
+        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
+        "monto_inversion_mmusd": 9.8,
+        "estado_seia": "Aprobado",
+        "potencia_instalada_mw": 3.1,
+        "sistema_electrico": "Sistema Aislado de Cochrane",
+        "sector": "Energía Renovable de Pasada"
+      }
+    },
+    {
+      "id": "seia-18-conectividad-puerto-yungay-tortel",
+      "nombre": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay",
+      "tipo": "Infraestructura Portuaria y Logística MOP",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.886,
+      "lng": -73.488,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1459203",
+      "atributos": {
+        "titular": "Dirección de Obras Portuarias MOP",
+        "monto_inversion_mmusd": 12.4,
+        "estado_seia": "Aprobado",
+        "tipo_infraestructura": "Rampa de atraque bimodal y terminal de resguardo",
+        "sector": "Conectividad Bimodal Carretera Austral Sur"
+      }
+    },
+    {
+      "id": "seia-19-conectividad-lago-ohiggins-rampa",
+      "nombre": "Rampa de Embarque y Explanada Bahía Bahamóndez (Villa O'Higgins)",
+      "tipo": "Infraestructura Lacustre y Turismo MOP",
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "lat": -48.498,
+      "lng": -72.572,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1528491",
+      "atributos": {
+        "titular": "Dirección de Obras Portuarias MOP",
+        "monto_inversion_mmusd": 8.2,
+        "estado_seia": "Aprobado",
+        "destino_navegacion": "Glaciar O'Higgins y Candelario Mancilla",
+        "sector": "Conectividad Lacustre Extremo Austral"
+      }
+    },
+    {
+      "id": "seia-20-mejoramiento-ruta-x12-lago-verde",
+      "nombre": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde",
+      "tipo": "Infraestructura Vial y Conectividad Aislada MOP",
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "lat": -44.258,
+      "lng": -71.861,
+      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1639201",
+      "atributos": {
+        "titular": "Dirección de Vialidad MOP",
+        "monto_inversion_mmusd": 15.2,
+        "estado_seia": "Aprobado",
+        "longitud_km": 38.0,
+        "sector": "Conectividad Vial Fronteriza"
+      }
+    }
+  ]
+}

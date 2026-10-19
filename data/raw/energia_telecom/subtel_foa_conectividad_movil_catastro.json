@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "fuente": "Subsecretaría de Telecomunicaciones (SUBTEL) - CTR / Conductores Ópticos Australes",
+    "fecha_catastro": "2026-10-15",
+    "region": "Aysén (CL-XI)",
+    "descripcion": "Puntos de aterrizaje submarino y nodos troncales terrestres de la Fibra Óptica Austral"
+  },
+  "nodos": [
+    {
+      "id": "FOA-NODO-MELINKA",
+      "nombre": "Nodo Troncal FOA Melinka (Aterrizaje Submarino)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Submarina",
+      "comuna": "Guaitecas",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.894,
+      "lng": -73.742,
+      "tramo": "Troncal Submarino Quellón - Caleta Tortel",
+      "capacidad_tbps": 16.0,
+      "operador": "CTR (Comunicación y Telefonía Rural) / SUBTEL"
+    },
+    {
+      "id": "FOA-NODO-PUERTO-AGUIRRE",
+      "nombre": "Nodo Troncal FOA Puerto Aguirre (Aterrizaje Submarino)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Submarina",
+      "comuna": "Aysén",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.161,
+      "lng": -73.52,
+      "tramo": "Derivación Submarina Islas Huichas",
+      "capacidad_tbps": 16.0,
+      "operador": "CTR / SUBTEL"
+    },
+    {
+      "id": "FOA-NODO-PUERTO-CISNES",
+      "nombre": "Nodo Troncal FOA Puerto Cisnes (Aterrizaje Submarino y Terrestre)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral",
+      "comuna": "Cisnes",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.745,
+      "lng": -72.698,
+      "tramo": "Troncal Submarino y Empalme Terrestre Ruta 7",
+      "capacidad_tbps": 16.0,
+      "operador": "CTR / Silice / SUBTEL"
+    },
+    {
+      "id": "FOA-NODO-CHACABUCO",
+      "nombre": "Nodo Troncal FOA Puerto Chacabuco (Aterrizaje Submarino / Terrestre)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral",
+      "comuna": "Aysén",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.468,
+      "lng": -72.825,
+      "tramo": "Aterrizaje Submarino y conexión terrestre por Ruta 240 a Coyhaique",
+      "capacidad_tbps": 16.0,
+      "operador": "CTR / SUBTEL"
+    },
+    {
+      "id": "FOA-NODO-COYHAIQUE",
+      "nombre": "Nodo Troncal FOA Coyhaique (Centro de Distribución Regional)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Terrestre",
+      "comuna": "Coyhaique",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.569,
+      "lng": -72.065,
+      "tramo": "Troncal Terrestre Regional Aysén",
+      "capacidad_tbps": 16.0,
+      "operador": "CTR / Silice / Conductores Ópticos Australes"
+    },
+    {
+      "id": "FOA-NODO-CHILE-CHICO",
+      "nombre": "Nodo Troncal FOA Chile Chico (Poblado Lacustre)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Terrestre",
+      "comuna": "Chile Chico",
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "lat": -46.539,
+      "lng": -71.72,
+      "tramo": "Troncal Terrestre Cuenca General Carrera",
+      "capacidad_tbps": 10.0,
+      "operador": "Silice / SUBTEL"
+    },
+    {
+      "id": "FOA-NODO-COCHRANE",
+      "nombre": "Nodo Troncal FOA Cochrane (Troncal Sur Provincial)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Terrestre",
+      "comuna": "Cochrane",
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "lat": -47.252,
+      "lng": -72.568,
+      "tramo": "Troncal Terrestre Ruta 7 Sur Capitán Prat",
+      "capacidad_tbps": 10.0,
+      "operador": "Silice / SUBTEL"
+    },
+    {
+      "id": "FOA-NODO-TORTEL",
+      "nombre": "Nodo Troncal FOA Caleta Tortel (Aterrizaje Submarino Sur)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Submarina",
+      "comuna": "Tortel",
+      "codigo_comuna": "CL-XI-10",
+      "comuna_ine": "11303",
+      "lat": -47.793,
+      "lng": -73.532,
+      "tramo": "Troncal Submarino Sur hacia Puerto Williams y Enlace Cochrane",
+      "capacidad_tbps": 16.0,
+      "operador": "CTR / SUBTEL"
+    }
+  ]
+}
