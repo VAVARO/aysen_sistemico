@@ -1857,8 +1857,18 @@ if (nullCells > 0) {
 // ============================================================================
 // 6. COMPILACION Y EXPORTACION DEL BUNDLE FINAL
 // ============================================================================
+
+// Compilacion reproducible: si SOURCE_DATE_EPOCH esta definido (convencion
+// reproducible-builds, en segundos Unix), se usa como marca temporal en vez del
+// reloj de pared. Permite que el CI compare el bundle generado contra el
+// versionado byte a byte sin que el timestamp cause un falso negativo.
+const sourceDateEpoch = process.env.SOURCE_DATE_EPOCH;
+const buildTimestamp = sourceDateEpoch && /^\d+$/.test(sourceDateEpoch)
+  ? new Date(Number(sourceDateEpoch) * 1000).toISOString()
+  : new Date().toISOString();
+
 const bundle = {
-  generatedAt: new Date().toISOString(),
+  generatedAt: buildTimestamp,
   hubs,
   nodos,
   comunas,
@@ -1876,7 +1886,7 @@ if (emojiRegex.test(bundleStr)) {
 const outPath = path.join(ROOT, 'data', 'aysen_hubs_data.js');
 fs.writeFileSync(
   outPath,
-  `// Auto-generado por scripts/build_aysen_hubs_bundle.cjs — CERO EMOJIS · 100% DATOS REALES VERIFICADOS\nwindow.AYSEN_HUBS_DATA = ${bundleStr};\n`,
+  `// Auto-generado por scripts/build_aysen_hubs_bundle.cjs — CERO EMOJIS · CERO NULOS\n// Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales\n// de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".\nwindow.AYSEN_HUBS_DATA = ${bundleStr};\n`,
   'utf8'
 );
 

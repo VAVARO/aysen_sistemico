@@ -48,6 +48,8 @@ La plataforma implementa una cabecera global unificada con identidad editorial a
 │   ├── series_prospectivas.json         # 18 series temporales con proyecciones a 2030-2035
 │   ├── estaciones_aysen.json            # Red de estaciones y sensores territoriales
 │   ├── data_health_report.json          # Reporte de salud e integridad de datos (100% PASS)
+│   ├── systemic/source_watch_report.md  # Digest del watchdog de fuentes (generado)
+│   ├── systemic/source_watch_workorder.json # Orden de trabajo de refresco (generado)
 │   ├── raw/                             # Fuentes primarias y matrices institucionales
 │   └── systemic/                        # Data Lake estructurado (WP_01 a WP_07 + 08)
 │       ├── 01_gob_poder_finanzas.json
@@ -77,6 +79,9 @@ Para compilar el bundle del Data Lake y correr las suites de validación automat
 # Compilar bundle frontend (genera data/aysen_hubs_data.js)
 node scripts/build_aysen_hubs_bundle.cjs
 
+# Verificar que el bundle versionado corresponde a sus fuentes
+node scripts/verify_bundle_sync.cjs
+
 # Validar integridad del Data Lake (WP_01 a WP_07)
 python scripts/validate_data_lake.py --all
 
@@ -91,3 +96,32 @@ python tests/test_portal_health.py
 python tests/test_laboratorio_health.py
 python tests/verify_m1_editorial.py
 ```
+
+Estas mismas suites corren automáticamente en cada `push` y `pull_request` sobre
+`main` mediante [`.github/workflows/verificacion.yml`](.github/workflows/verificacion.yml).
+
+---
+
+## Alcance y Límites de los Datos
+
+Este repositorio declara trazabilidad institucional por nodo, no verificación
+exhaustiva de cada punto. Lo que eso significa en concreto:
+
+- **Procedencia declarada**: los 31 nodos registran organismo, URL, método de
+  recolección, fecha de corte y periodicidad en
+  [`data/systemic/provenance_catalog.json`](data/systemic/provenance_catalog.json),
+  con los campos procesables `collectionDateISO` y `updateFrequencyDays`.
+- **Series anuales reconstruidas**: las series comunales 2015–2026 de **WP_02
+  (energía y telecomunicaciones)** y **WP_03 (concesiones y tenencia)** no son
+  doce observaciones independientes. Se reconstruyen por interpolación lineal
+  entre valores ancla. Cada punto declara su procedencia en el campo `origen`
+  (`observado`, `ancla`, `ajustado_por_evento`, `interpolado`) y cada archivo
+  declara su método en `metodologia_series_historicas`. Un punto `interpolado`
+  es una estimación, no una medición.
+- **Proyecciones 2030–2035**: `data/series_prospectivas.json` contiene
+  proyecciones de tendencia con intervalos de confianza, explícitamente
+  separadas del histórico observado.
+- **Vigencia de las fuentes**: se audita con
+  `scripts/` + la skill `aysen-data-refresh`, que sondea las 31 URLs, detecta
+  cambios reales de contenido y emite una orden de trabajo. Ninguna
+  actualización entra al Data Lake sin revisión humana.

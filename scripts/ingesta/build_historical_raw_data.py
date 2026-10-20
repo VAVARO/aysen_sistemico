@@ -637,6 +637,45 @@ def interpolate_linear(v_start, v_end, idx, total_steps):
     return v_start + (v_end - v_start) * (idx / total_steps)
 
 
+# ---------------------------------------------------------------------------
+# TRAZABILIDAD DEL ORIGEN DE CADA PUNTO DE SERIE
+# ---------------------------------------------------------------------------
+# Las series anuales 2015-2026 de WP_02 y WP_03 NO son 12 observaciones
+# independientes: se reconstruyen por interpolacion lineal entre valores ancla.
+# Presentarlas sin distinguir equivale a declarar como medido lo que es estimado,
+# lo que contradice el principio de "Cero Relaciones Causales Inventadas".
+#
+# Cada punto declara su procedencia en el campo "origen":
+#   - "observado"           : valor reportado explicitamente por la fuente oficial
+#                             para ese ano (en el config, claves *_2024).
+#   - "ancla"               : extremo de la serie fijado desde la fuente
+#                             (claves *_base para 2015 y *_2026 para 2026).
+#   - "ajustado_por_evento" : interpolado y luego corregido por un evento
+#                             documentado (2016 floracion algal / marea roja,
+#                             2020 pandemia Covid-19, 2020-2023 Ley PEC).
+#   - "interpolado"         : calculado por interpolate_linear entre dos anclas.
+#                             NO es una observacion.
+
+ANIO_ANCLA_INICIAL = YEARS[0]   # 2015
+ANIO_ANCLA_FINAL = YEARS[-1]    # 2026
+
+ORIGEN_OBSERVADO = "observado"
+ORIGEN_ANCLA = "ancla"
+ORIGEN_AJUSTADO = "ajustado_por_evento"
+ORIGEN_INTERPOLADO = "interpolado"
+
+
+def clasificar_origen(year, anios_observados=(), anios_ajustados=()):
+    """Devuelve la etiqueta de procedencia del punto de serie para ese ano."""
+    if year in anios_observados:
+        return ORIGEN_OBSERVADO
+    if year in (ANIO_ANCLA_INICIAL, ANIO_ANCLA_FINAL):
+        return ORIGEN_ANCLA
+    if year in anios_ajustados:
+        return ORIGEN_AJUSTADO
+    return ORIGEN_INTERPOLADO
+
+
 def build_comuna_series_wp02(ine_code):
     cfg = COMUNAS_CONFIG_WP02[ine_code]
     steps = len(YEARS) - 1  # 11 steps for 12 years
@@ -686,7 +725,15 @@ def build_comuna_series_wp02(ine_code):
             "accesos_internet_fijo": net_fijo,
             "penetracion_internet_fijo_pct": net_pct,
             "saidi_horas_anual": saidi,
-            "saifi_veces_anual": saifi
+            "saifi_veces_anual": saifi,
+            # 2024: valores reportados (cfg["*_2024"]).
+            # 2020-2023: tarifa corregida por congelamiento Ley PEC.
+            # 2020: demanda corregida por pandemia Covid-19.
+            "origen": clasificar_origen(
+                year,
+                anios_observados=(2024,),
+                anios_ajustados=(2020, 2021, 2022, 2023),
+            )
         })
     return series
 
@@ -1348,7 +1395,16 @@ def build_comuna_series_wp03(ine_code):
             "concesiones_mineras_exploracion": min_expl,
             "superficie_minera_ha": min_ha,
             "superficie_snaspe_ha": snaspe_ha,
-            "superficie_fiscal_bbnn_ha": fiscal_ha
+            "superficie_fiscal_bbnn_ha": fiscal_ha,
+            # 2016: correccion por floracion algal nociva / marea roja.
+            # 2020: correccion por pandemia Covid-19.
+            # WP_03 no tiene ano con valores reportados por comuna: todos los
+            # puntos intermedios son reconstruccion, no observacion.
+            "origen": clasificar_origen(
+                year,
+                anios_observados=(),
+                anios_ajustados=(2016, 2020),
+            )
         })
     return series
 

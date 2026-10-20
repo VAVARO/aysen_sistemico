@@ -1,6 +1,8 @@
-// Auto-generado por scripts/build_aysen_hubs_bundle.cjs — CERO EMOJIS · 100% DATOS REALES VERIFICADOS
+// Auto-generado por scripts/build_aysen_hubs_bundle.cjs — CERO EMOJIS · CERO NULOS
+// Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
+// de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-10-19T14:30:51.305Z",
+  "generatedAt": "2026-10-20T20:06:57.085Z",
   "hubs": [
     {
       "id": "turismo",
@@ -114,7 +116,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Catastro Registro Nacional SERNATUR · Corte Septiembre 2026",
         "collectionMethod": "Registro Nacional de Prestadores de Servicios Turísticos / Consulta estructurada DataTurismo",
         "updateFrequency": "Mensual",
-        "nextUpdate": "Noviembre 2026 (Mensual continuo)"
+        "nextUpdate": "Noviembre 2026 (Mensual continuo)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 31
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "relatedNodeIds": [
@@ -270,7 +274,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Decretos Supremos y Planes de Acción ZOIT vigentes · Corte 2025–2026",
         "collectionMethod": "Catastro de Decretos Oficiales de Declaratoria ZOIT y Planes de Acción Subsecretaría de Turismo",
         "updateFrequency": "Plurianual",
-        "nextUpdate": "Diciembre 2026 (Seguimiento anual de cartera)"
+        "nextUpdate": "Diciembre 2026 (Seguimiento anual de cartera)",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "relatedNodeIds": [
@@ -417,7 +423,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Encuesta Mensual de Alojamiento Turístico (EMAT) INE · Serie consolidada a Agosto 2026",
         "collectionMethod": "Encuesta probabilística mensual a establecimientos de alojamiento turístico clasificados en Aysén",
         "updateFrequency": "Mensual",
-        "nextUpdate": "Noviembre 2026 (Boletín mensual INE)"
+        "nextUpdate": "Noviembre 2026 (Boletín mensual INE)",
+        "collectionDateISO": "2026-08-01",
+        "updateFrequencyDays": 31
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "relatedNodeIds": [
@@ -575,11 +583,15 @@ window.AYSEN_HUBS_DATA = {
       },
       "provenance": {
         "sourceEntity": "Corporación Nacional Forestal (CONAF) — Gerencia de Áreas Silvestres Protegidas",
-        "sourceUrl": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+        "sourceUrl": "https://www.conaf.cl/centro-documental/visitacion-ap-2025/",
         "collectionDate": "Estadísticas Consolidadas de Visitación SNASPE CONAF · Periodo 2025–2026",
         "collectionMethod": "Registro administrativo en boleterías y porterías de unidades SNASPE Aysén",
         "updateFrequency": "Anual",
-        "nextUpdate": "Febrero 2027 (Consolidado de temporada estival)"
+        "nextUpdate": "Febrero 2027 (Consolidado de temporada estival)",
+        "sourceUrlPrevious": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+        "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "relatedNodeIds": [
@@ -737,7 +749,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Catastro de Atractivos Turísticos Regionales SERNATUR / CONAF · Corte 2025–2026",
         "collectionMethod": "Georreferenciación en terreno y fichas de jerarquización de atractivos turísticos",
         "updateFrequency": "Anual",
-        "nextUpdate": "Diciembre 2026 (Actualización anual de jerarquías)"
+        "nextUpdate": "Diciembre 2026 (Actualización anual de jerarquías)",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv",
       "relatedNodeIds": [
@@ -876,7 +890,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Catastro Oficial de Concesiones de Acuicultura Vigentes · Corte Trimestral Septiembre 2026",
         "collectionMethod": "Registro de Concesiones de Acuicultura (RCA) SUBPESCA y Sistema de Información Geográfica Acuícola",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Enero 2027 (Cierre anual de concesiones)"
+        "nextUpdate": "Enero 2027 (Cierre anual de concesiones)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
       "relatedNodeIds": [
@@ -1049,7 +1065,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Estados Financieros Consolidados y Memoria Anual de Emisores CMF · Corte Junio 2026",
         "collectionMethod": "Cruce de mallas societarias CMF con titulares de concesiones acuícolas en Aysén",
         "updateFrequency": "Semestral",
-        "nextUpdate": "Noviembre 2026 (Reporte intermedio Q3)"
+        "nextUpdate": "Noviembre 2026 (Reporte intermedio Q3)",
+        "collectionDateISO": "2026-06-01",
+        "updateFrequencyDays": 184
       },
       "csvFile": "data/systemic/csv/03_holdings_salmoneros_ruts_aysen.csv",
       "relatedNodeIds": [
@@ -1206,7 +1224,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Catastro de Agrupaciones de Concesiones (ACS) y Caletas Pesqueras · Corte Septiembre 2026",
         "collectionMethod": "Resoluciones de descansos sanitarios coordinados SERNAPESCA y Registro Pesquero Artesanal (RPA)",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Diciembre 2026 (Programación de siembras 2027)"
+        "nextUpdate": "Diciembre 2026 (Programación de siembras 2027)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_nodos.csv",
       "relatedNodeIds": [
@@ -1336,7 +1356,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Programa de Monitoreo de Floraciones Algales Nocivas (FAN) y Boyas Oceanográficas · Corte Septiembre 2026",
         "collectionMethod": "Muestreo oceanográfico de estaciones en fiordos y telemetría de boyas oceanográficas",
         "updateFrequency": "Mensual",
-        "nextUpdate": "Noviembre 2026 (Boletín oceanográfico mensual)"
+        "nextUpdate": "Noviembre 2026 (Boletín oceanográfico mensual)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 31
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
       "relatedNodeIds": [
@@ -1478,7 +1500,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Decretos Exentos de Cuotas Globales y Valores de Sanción 2026 · Corte Julio 2026",
         "collectionMethod": "Cálculo de Impuesto Específico Anual (Art. 43 ter LGPA) sobre cuota LTP asignada según Valores de Sanción oficiales",
         "updateFrequency": "Anual",
-        "nextUpdate": "Diciembre 2026 (Decretos de cuotas anuales 2027)"
+        "nextUpdate": "Diciembre 2026 (Decretos de cuotas anuales 2027)",
+        "collectionDateISO": "2026-07-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/03c_pesca_industrial_pesquerias_impuesto_aysen.csv",
       "relatedNodeIds": [
@@ -1640,7 +1664,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Catastro de Centrales de Generación Eléctrica en Operación · Corte Agosto 2026",
         "collectionMethod": "Declaraciones oficiales de operadores eléctricos ante CNE y Coordinador Eléctrico Nacional",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Noviembre 2026 (Actualización trimestral de capacidad)"
+        "nextUpdate": "Noviembre 2026 (Actualización trimestral de capacidad)",
+        "collectionDateISO": "2026-08-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_nodos.csv",
       "relatedNodeIds": [
@@ -1774,7 +1800,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Informe Técnico de Sistemas Medianos de Aysén y Sistemas Aislados · Corte Julio 2026",
         "collectionMethod": "Auditorías de calidad de suministro eléctrico e informes de operación de Edelaysen",
         "updateFrequency": "Anual",
-        "nextUpdate": "Diciembre 2026 (Informe anual de desempeño de redes)"
+        "nextUpdate": "Diciembre 2026 (Informe anual de desempeño de redes)",
+        "collectionDateISO": "2026-07-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
       "relatedNodeIds": [
@@ -1929,7 +1957,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Precios semanales en estaciones de servicio y catastro CNE de leña · Corte Octubre 2026",
         "collectionMethod": "Reporte obligatorio de precios de venta a público informado por distribuidores minoristas a CNE",
         "updateFrequency": "Semanal / Mensual",
-        "nextUpdate": "Octubre 2026 (Actualización semanal continua)"
+        "nextUpdate": "Octubre 2026 (Actualización semanal continua)",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 7
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
       "relatedNodeIds": [
@@ -2102,7 +2132,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Estado de Puntos de Amarre y Conexión Troncal FOA · Corte Junio 2026",
         "collectionMethod": "Auditoría de infraestructura de telecomunicaciones y reportes de cobertura 4G/5G SUBTEL",
         "updateFrequency": "Semestral",
-        "nextUpdate": "Diciembre 2026 (Reporte de penetración banda ancha)"
+        "nextUpdate": "Diciembre 2026 (Reporte de penetración banda ancha)",
+        "collectionDateISO": "2026-06-01",
+        "updateFrequencyDays": 184
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
       "relatedNodeIds": [
@@ -2258,7 +2290,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Presupuestos Devengados e Ingresos Propios Permanentes · Corte Junio 2026",
         "collectionMethod": "Rendición financiera trimestral remitida por las 10 Direcciones de Administración y Finanzas a SUBDERE",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Noviembre 2026 (Rendición financiera Q3)"
+        "nextUpdate": "Noviembre 2026 (Rendición financiera Q3)",
+        "collectionDateISO": "2026-06-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
       "relatedNodeIds": [
@@ -2415,7 +2449,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Distribución y Transferencias Efectivas del Fondo Común Municipal · Corte Septiembre 2026",
         "collectionMethod": "Cálculo de coeficientes de redistribución solidaria y transferencias mensuales de TGR",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Diciembre 2026 (Cierre de liquidaciones FCM)"
+        "nextUpdate": "Diciembre 2026 (Cierre de liquidaciones FCM)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
       "relatedNodeIds": [
@@ -2570,7 +2606,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Sentencias de Proclamación Elecciones Municipales y Regionales 2024 · Periodo Oficial 2024–2028",
         "collectionMethod": "Escrutinio general, sentencias de proclamación TRICEL y actas de instalación municipal",
         "updateFrequency": "Cuatrienal (Vigente 2024–2028)",
-        "nextUpdate": "Octubre 2028 (Próximas elecciones municipales ordinarias)"
+        "nextUpdate": "Octubre 2028 (Próximas elecciones municipales ordinarias)",
+        "collectionDateISO": "2028-01-01",
+        "updateFrequencyDays": 1096
       },
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
       "relatedNodeIds": [
@@ -2721,11 +2759,15 @@ window.AYSEN_HUBS_DATA = {
       },
       "provenance": {
         "sourceEntity": "Gobierno Regional de Aysén (GORE) / Dirección de Presupuestos (DIPRES) / Dirección de Vialidad MOP",
-        "sourceUrl": "https://datos.dipres.gob.cl/",
+        "sourceUrl": "https://www.dipres.gob.cl/598/w3-propertyname-706.html",
         "collectionDate": "Ejecución Presupuestaria FNDR y Catastro de Red Vial MOP · Corte Agosto 2026",
         "collectionMethod": "Sistema de Información de Proyectos FNDR DIPRES y libro de obras de contratos viales MOP",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Noviembre 2026 (Reporte DIPRES ejecución Q3)"
+        "nextUpdate": "Noviembre 2026 (Reporte DIPRES ejecución Q3)",
+        "sourceUrlPrevious": "https://datos.dipres.gob.cl/",
+        "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
+        "collectionDateISO": "2026-08-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
       "relatedNodeIds": [
@@ -2880,7 +2922,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Base Oficial de Proyectos Calificados y en Evaluación · Corte Septiembre 2026",
         "collectionMethod": "Resoluciones de Calificación Ambiental (RCA) publicadas en el expediente electrónico público SEIA",
         "updateFrequency": "Mensual",
-        "nextUpdate": "Noviembre 2026 (Actualización mensual continua)"
+        "nextUpdate": "Noviembre 2026 (Actualización mensual continua)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 31
       },
       "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
       "relatedNodeIds": [
@@ -3036,7 +3080,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Estadísticas de Empresas y Empleados por Comuna · Año Tributario 2025–2026",
         "collectionMethod": "Formularios 22 y 29 consolidados de operaciones de contribuyentes con domicilio en Aysén",
         "updateFrequency": "Anual",
-        "nextUpdate": "Diciembre 2026 (Cierre definitivo de año tributario)"
+        "nextUpdate": "Diciembre 2026 (Cierre definitivo de año tributario)",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
       "relatedNodeIds": [
@@ -3181,11 +3227,15 @@ window.AYSEN_HUBS_DATA = {
       },
       "provenance": {
         "sourceEntity": "Servicio Nacional de Geología y Minería (SERNAGEOMIN) — Departamento de Propiedad Minera",
-        "sourceUrl": "https://www.sernageomin.cl/catastro-minero/",
+        "sourceUrl": "https://www.sernageomin.cl/mineria/",
         "collectionDate": "Catastro de Concesiones Mineras de Explotación y Exploración · Corte Junio 2026",
         "collectionMethod": "Registro oficial de sentencias constitutivas de pertenencias mineras e inscripciones conservatorias",
         "updateFrequency": "Semestral",
-        "nextUpdate": "Diciembre 2026 (Actualización semestral de roles)"
+        "nextUpdate": "Diciembre 2026 (Actualización semestral de roles)",
+        "sourceUrlPrevious": "https://www.sernageomin.cl/catastro-minero/",
+        "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
+        "collectionDateISO": "2026-06-01",
+        "updateFrequencyDays": 184
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
       "relatedNodeIds": [
@@ -3336,11 +3386,15 @@ window.AYSEN_HUBS_DATA = {
       },
       "provenance": {
         "sourceEntity": "Ministerio de Bienes Nacionales (BBNN) / CONAF — Sistema de Información Territorial (SIT)",
-        "sourceUrl": "https://ide.patrimonio.cl/",
+        "sourceUrl": "https://idembn.bienes.cl/idembn/catalog",
         "collectionDate": "Catastro de la Propiedad Fiscal y Áreas Silvestres Protegidas · Corte Julio 2026",
         "collectionMethod": "Cruce cartográfico digital de la propiedad fiscal, unidades SNASPE y roles particulares SAG/SII",
         "updateFrequency": "Anual",
-        "nextUpdate": "Enero 2027 (Actualización anual de límites fiscales)"
+        "nextUpdate": "Enero 2027 (Actualización anual de límites fiscales)",
+        "sourceUrlPrevious": "https://ide.patrimonio.cl/",
+        "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
+        "collectionDateISO": "2026-07-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
       "relatedNodeIds": [
@@ -3528,7 +3582,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Resultados Oficiales del Censo de Población y Vivienda 2024 / CASEN 2022",
         "collectionMethod": "Operativo censal territorial INE y encuesta CASEN representativa a nivel comunal",
         "updateFrequency": "Decenal (Censo) / Bienal (CASEN)",
-        "nextUpdate": "Noviembre 2026 (Tabulados detallados comunales Censo 2024)"
+        "nextUpdate": "Noviembre 2026 (Tabulados detallados comunales Censo 2024)",
+        "collectionDateISO": "2024-01-01",
+        "updateFrequencyDays": 731
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
       "relatedNodeIds": [
@@ -3684,7 +3740,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Registro de Establecimientos de Salud (DEIS) y Tiempos de Evacuación SAMU · Corte Septiembre 2026",
         "collectionMethod": "Reporte mensual de infraestructura hospitalaria, dotación de camas y estadísticas de derivación SAMU",
         "updateFrequency": "Mensual",
-        "nextUpdate": "Noviembre 2026 (Boletín mensual DEIS)"
+        "nextUpdate": "Noviembre 2026 (Boletín mensual DEIS)",
+        "collectionDateISO": "2026-09-01",
+        "updateFrequencyDays": 31
       },
       "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "relatedNodeIds": [
@@ -3844,7 +3902,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Matrícula Oficial y Rendición de Escuelas Rurales SLEP · Periodo Escolar 2026",
         "collectionMethod": "Registro oficial de matrículas SIGE MINEDUC y auditoría interna de establecimientos SLEP",
         "updateFrequency": "Anual",
-        "nextUpdate": "Diciembre 2026 (Balance final de año escolar 2026)"
+        "nextUpdate": "Diciembre 2026 (Balance final de año escolar 2026)",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
       "relatedNodeIds": [
@@ -4010,11 +4070,15 @@ window.AYSEN_HUBS_DATA = {
       },
       "provenance": {
         "sourceEntity": "Subsecretaría de Prevención del Delito (SPD) — Centro de Estudios y Análisis del Delito (CEAD)",
-        "sourceUrl": "https://cead.spd.gov.cl/",
+        "sourceUrl": "https://cead.minsegpublica.gob.cl/",
         "collectionDate": "Estadísticas Delictuales de Casos Policiales DMCS y VIF · Corte Junio 2026",
         "collectionMethod": "Denuncias y detenciones en flagrancia informadas oficialmente por Carabineros de Chile y Policía de Investigaciones (PDI)",
         "updateFrequency": "Trimestral",
-        "nextUpdate": "Noviembre 2026 (Estadísticas oficiales Q3)"
+        "nextUpdate": "Noviembre 2026 (Estadísticas oficiales Q3)",
+        "sourceUrlPrevious": "https://cead.spd.gov.cl/",
+        "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
+        "collectionDateISO": "2026-06-01",
+        "updateFrequencyDays": 92
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
       "relatedNodeIds": [
@@ -4168,7 +4232,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Catastro de Uso del Suelo y Vegetación Nativa de Aysén · Corte 2025–2026",
         "collectionMethod": "Fotointerpretación satelital multiespectral, inventario forestal continuo y verificación en terreno",
         "updateFrequency": "Quinquenal",
-        "nextUpdate": "Diciembre 2026 (Consolidado quinquenal SIT)"
+        "nextUpdate": "Diciembre 2026 (Consolidado quinquenal SIT)",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 1826
       },
       "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
       "relatedNodeIds": [
@@ -4315,7 +4381,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Decretos Supremos N° 44/2023 y N° 22/2024 de Clasificación de Especies Silvestres (RCE Proceso 19) · Vigente 2026",
         "collectionMethod": "Evaluación científica por comité técnico interinstitucional y expedientes técnicos de clasificación",
         "updateFrequency": "Anual",
-        "nextUpdate": "Noviembre 2026 (Publicación Proceso 20 RCE)"
+        "nextUpdate": "Noviembre 2026 (Publicación Proceso 20 RCE)",
+        "collectionDateISO": "2026-01-01",
+        "updateFrequencyDays": 366
       },
       "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
       "relatedNodeIds": [
@@ -4450,11 +4518,15 @@ window.AYSEN_HUBS_DATA = {
       },
       "provenance": {
         "sourceEntity": "Servicio Agrícola y Ganadero (SAG) / MMA / Centro de Investigación en Ecosistemas de la Patagonia (CIEP)",
-        "sourceUrl": "https://especies-invasoras.mma.gob.cl/",
+        "sourceUrl": "https://especies-exoticas.mma.gob.cl/",
         "collectionDate": "Programas de Vigilancia de Especies Exóticas Invasoras (Visón, Castor, Didymo) · Corte Agosto 2026",
         "collectionMethod": "Trampeo sistemático, prospección de cuencas fluviales y reportes de fauna silvestre",
         "updateFrequency": "Semestral",
-        "nextUpdate": "Diciembre 2026 (Informe semestral de capturas y contención)"
+        "nextUpdate": "Diciembre 2026 (Informe semestral de capturas y contención)",
+        "sourceUrlPrevious": "https://especies-invasoras.mma.gob.cl/",
+        "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
+        "collectionDateISO": "2026-08-01",
+        "updateFrequencyDays": 184
       },
       "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
       "relatedNodeIds": [
@@ -4575,7 +4647,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Monitoreo continuo en línea de estaciones telemétricas · Corte Octubre 2026",
         "collectionMethod": "Telemetría continua horaria de estaciones oficiales (Estación Coyhaique II SINCA y BNA 11530000-8 DGA Río Baker)",
         "updateFrequency": "Horario / Continuo",
-        "nextUpdate": "Octubre 2026 (Transmisión en tiempo real)"
+        "nextUpdate": "Octubre 2026 (Transmisión en tiempo real)",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 1
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv",
       "relatedNodeIds": [
@@ -4755,7 +4829,9 @@ window.AYSEN_HUBS_DATA = {
         "collectionDate": "Boletines de Actividad Volcánica y Catálogo Sísmico Instrumental M>=3.0 · Corte Octubre 2026",
         "collectionMethod": "Red sismológica satelital OVDAS y API de monitoreo de riesgos geológicos USGS",
         "updateFrequency": "Tiempo real / Mensual",
-        "nextUpdate": "Octubre 2026 (Monitoreo telemétrico continuo)"
+        "nextUpdate": "Octubre 2026 (Monitoreo telemétrico continuo)",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 1
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv",
       "relatedNodeIds": [

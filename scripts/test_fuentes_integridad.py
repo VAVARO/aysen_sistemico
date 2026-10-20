@@ -753,12 +753,28 @@ def print_structured_cli_report(report: Dict[str, Any], test_duration: float, te
     print("  data/comunas_aysen.json, data/series_prospectivas.json, mapa_territorial.html")
 
     # Overall Summary
+    #
+    # El score que se imprime debe reflejar el resultado de LAS PRUEBAS, no la
+    # salud del dato. Antes se tomaba report['summary'] (siempre 100/OPERATIONAL),
+    # por lo que el arnes anunciaba "OPERATIONAL 100.0%" con tests en rojo.
+    passed = max(test_count - failures, 0)
+    test_score = round((passed / test_count) * 100, 1) if test_count else 0.0
+    data_status = report["summary"]["status"]
+    data_score = report["summary"]["overall_health_score"]
+    harness_status = data_status if failures == 0 else "DEGRADED"
+
     print(f"\n{sep}")
     if failures:
         print(f"  HARNESS RESULT: {failures} OF {test_count} TESTS FAILED IN {test_duration:.3f}s")
     else:
         print(f"  HARNESS RESULT: ALL {test_count} TESTS PASSED CLEANLY IN {test_duration:.3f}s")
-    print(f"  REPOSITORY STATUS: {report['summary']['status']} (OVERALL HEALTH SCORE: {report['summary']['overall_health_score']}%)")
+    print(f"  TESTS: {passed}/{test_count} PASS"
+          + (f" · {failures} FAIL" if failures else "")
+          + f" (TEST SCORE: {test_score}%)")
+    print(f"  REPOSITORY STATUS: {harness_status} (DATA HEALTH SCORE: {data_score}%)")
+    if failures:
+        print("  NOTA: el score de datos es independiente del resultado de las pruebas.")
+        print("        Con pruebas en rojo el repositorio NO esta operativo.")
     print(f"{sep}\n")
 
 

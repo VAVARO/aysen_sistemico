@@ -1,0 +1,98 @@
+name: Verificacion
+
+# Arnes de verificacion del repositorio. Todas las suites del proyecto corren en
+# cada push y pull request sobre main. Sin este workflow, regresiones como el
+# borrado de la clave de API de CARTO sobreviven a un commit sin que nadie lo note.
+#
+# Regla: NINGUN paso lleva continue-on-error. Si una suite falla, el workflow falla.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verificacion-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verificacion:
+    name: Suites de datos, integridad y modulos
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Configurar Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Versiones del entorno
+        run: |
+          python --version
+          node --version
+
+      # ------------------------------------------------------------------
+      # Capa 1: compilacion y coherencia del Data Lake
+      # ------------------------------------------------------------------
+      - name: Compilar bundle del Data Lake
+        run: node scripts/build_aysen_hubs_bundle.cjs
+
+      - name: El bundle versionado corresponde a sus fuentes
+        run: node scripts/verify_bundle_sync.cjs
+
+      - name: Validar Data Lake (WP_01 a WP_07)
+        run: python scripts/validate_data_lake.py --all
+
+      # ------------------------------------------------------------------
+      # Capa 2: integridad territorial y requerimientos
+      # ------------------------------------------------------------------
+      - name: Suite de integridad de fuentes (37 tests)
+        run: python scripts/test_fuentes_integridad.py
+
+      - name: Suite E2E de requerimientos (58 tests)
+        run: python tests/test_e2e_requirements.py
+
+      # ------------------------------------------------------------------
+      # Capa 3: salud por modulo
+      # ------------------------------------------------------------------
+      - name: Suite Portal (5 tests)
+        run: python tests/test_portal_health.py
+
+      - name: Suite Laboratorio - auditoria (7 tests)
+        run: python tests/test_laboratorio_audit.py
+
+      - name: Suite Laboratorio - salud (6 tests)
+        run: python tests/test_laboratorio_health.py
+
+      - name: Suite Editorial M1 (8 checks)
+        run: python tests/verify_m1_editorial.py
+
+      - name: Suite Presets CECAN y NL2Chart (6 tests)
+        run: python tests/test_cecan_presets_and_nl2chart.py
+
+      - name: Suite Mobile Responsive (7 tests)
+        run: python tests/test_mobile_responsive_e2e.py
+
+      # ------------------------------------------------------------------
+      # Capa 4: higiene del arbol de trabajo
+      # ------------------------------------------------------------------
+      # data/data_health_report.json es reescrito por la suite de integridad
+      # (lleva timestamp y latencias), por eso esta excluido de esta comprobacion.
+      - name: Ninguna suite dejo el arbol sucio
+        run: |
+          git diff --stat -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'
+          git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'

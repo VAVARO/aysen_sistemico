@@ -16,12 +16,18 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet" />
 
-  <!-- Chart.js v4 para Gráficos Fluidos -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Chart.js v4.4.1 para Gráficos Fluidos (version fijada + SRI) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+    integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
+    crossorigin="anonymous"></script>
 
-  <!-- Leaflet v1.9 para Mapas Territoriales -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Leaflet v1.9.4 para Mapas Territoriales (version fijada + SRI) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H"
+    crossorigin="anonymous" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
+    crossorigin="anonymous"></script>
 
   <!-- Datos Oficiales: Data Lake (31 Nodos) y Preguntas Sistémicas (30) -->
   <script src="data/aysen_hubs_data.js"></script>
@@ -2476,6 +2482,192 @@
         font-size: 1.35rem;
       }
     }
+
+    /* ===================================================================
+       AVISO EFIMERO (TOAST) CON ACCION DESHACER
+       Reemplaza los confirm() bloqueantes: en un lienzo de arrastre, un
+       deshacer confiable es mejor UX que un modal por cada borrado.
+       =================================================================== */
+    .studio-toast-stack {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .studio-toast {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 280px;
+      max-width: min(92vw, 520px);
+      padding: 0.7rem 0.9rem;
+      background: #ffffff;
+      border: 1px solid rgba(28, 27, 27, 0.14);
+      border-left: 3px solid #00357f;
+      border-radius: 3px;
+      box-shadow: 0 2px 10px rgba(28, 27, 27, 0.10);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: #1c1b1b;
+      animation: studioToastIn 0.18s ease-out;
+    }
+
+    @keyframes studioToastIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .studio-toast.leaving {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .studio-toast-msg { flex: 1; line-height: 1.35; }
+
+    .studio-toast-action {
+      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #00357f;
+      background: transparent;
+      border: 1px solid rgba(0, 53, 127, 0.28);
+      border-radius: 2px;
+      padding: 0.35rem 0.6rem;
+      min-height: 32px;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .studio-toast-action:hover {
+      background: rgba(0, 53, 127, 0.06);
+      border-color: #00357f;
+    }
+
+    .studio-toast-action:focus-visible {
+      outline: 2px solid #0059c5;
+      outline-offset: 2px;
+    }
+
+    /* ===================================================================
+       FOCO VISIBLE UNIFORME (accesibilidad de teclado)
+       =================================================================== */
+    .studio-shell button:focus-visible,
+    .studio-shell a:focus-visible,
+    .studio-shell input:focus-visible,
+    .studio-shell select:focus-visible,
+    .studio-shell [tabindex]:focus-visible,
+    .widget-card:focus-visible,
+    .context-menu-item:focus-visible {
+      outline: 2px solid #0059c5;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ===================================================================
+       POPOVER DE ATAJOS DE TECLADO (tecla ?)
+       =================================================================== */
+    .shortcuts-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 4100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(28, 27, 27, 0.32);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      padding: 1rem;
+    }
+
+    .shortcuts-overlay.open { display: flex; }
+
+    .shortcuts-panel {
+      background: #fcf9f8;
+      border: 1px solid rgba(28, 27, 27, 0.14);
+      border-radius: 4px;
+      box-shadow: 0 10px 34px rgba(28, 27, 27, 0.16);
+      width: min(94vw, 460px);
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 1.25rem 1.35rem 1.1rem;
+    }
+
+    .shortcuts-panel h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1c1b1b;
+      margin: 0 0 0.2rem;
+    }
+
+    .shortcuts-panel .shortcuts-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #00357f;
+      margin-bottom: 0.9rem;
+    }
+
+    .shortcuts-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.42rem 0;
+      border-top: 1px solid rgba(28, 27, 27, 0.09);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: #4a4745;
+    }
+
+    .shortcuts-row:first-of-type { border-top: none; }
+
+    .shortcuts-row kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #1c1b1b;
+      background: #f4efec;
+      border: 1px solid rgba(28, 27, 27, 0.16);
+      border-bottom-width: 2px;
+      border-radius: 3px;
+      padding: 0.12rem 0.38rem;
+      white-space: nowrap;
+    }
+
+    .shortcuts-close {
+      margin-top: 1rem;
+      width: 100%;
+      min-height: 40px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #4a4745;
+      background: transparent;
+      border: 1px solid rgba(28, 27, 27, 0.18);
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .shortcuts-close:hover { background: rgba(0, 53, 127, 0.05); color: #00357f; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .studio-toast { animation: none; }
+      .studio-toast.leaving { transition: none; }
+    }
   </style>
 </head>
 
@@ -2786,6 +2978,29 @@
   <div class="mobile-metacog-backdrop" id="panelMetacogBackdrop"></div>
 
   <!-- Barra de Navegación Móvil de Estudio Austral (<768px) -->
+  <!-- Pila de avisos efimeros con accion Deshacer -->
+  <div class="studio-toast-stack" id="studioToastStack" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Panel de atajos de teclado (tecla ?) -->
+  <div class="shortcuts-overlay" id="shortcutsOverlay" role="dialog" aria-modal="true"
+       aria-labelledby="shortcutsTitle" aria-hidden="true">
+    <div class="shortcuts-panel">
+      <h3 id="shortcutsTitle">Atajos de Teclado</h3>
+      <div class="shortcuts-kicker">Lienzo Analítico</div>
+      <div class="shortcuts-row"><span>Deshacer</span><kbd>Ctrl + Z</kbd></div>
+      <div class="shortcuts-row"><span>Rehacer</span><kbd>Ctrl + Shift + Z</kbd></div>
+      <div class="shortcuts-row"><span>Eliminar ventana seleccionada</span><kbd>Supr</kbd></div>
+      <div class="shortcuts-row"><span>Duplicar ventana seleccionada</span><kbd>Ctrl + D</kbd></div>
+      <div class="shortcuts-row"><span>Encuadrar todo</span><kbd>F</kbd></div>
+      <div class="shortcuts-row"><span>Restablecer zoom al 100 %</span><kbd>Ctrl + 0</kbd></div>
+      <div class="shortcuts-row"><span>Ciclar entre ventanas</span><kbd>Tab</kbd></div>
+      <div class="shortcuts-row"><span>Desplazar el lienzo</span><kbd>Espacio + arrastrar</kbd></div>
+      <div class="shortcuts-row"><span>Cerrar panel o menú activo</span><kbd>Esc</kbd></div>
+      <div class="shortcuts-row"><span>Mostrar esta ayuda</span><kbd>?</kbd></div>
+      <button type="button" class="shortcuts-close" id="btnShortcutsClose">Cerrar</button>
+    </div>
+  </div>
+
   <nav class="mobile-studio-dock" id="mobileStudioNav" aria-label="Navegación de Estudio Móvil">
     <button class="mob-dock-btn" id="btnMobNavCatalog" title="Abrir catálogo de variables">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2872,6 +3087,10 @@
         territorialFilter: 'all',
         collapsedHubs: {}
       };
+
+      // CARTO Voyager: clave de API verificada (azulejos limpios sin marca de agua).
+      // Constante de modulo: el tileLayer se instancia una vez por ventana de mapa.
+      const CARTO_API_KEY = 'cb1_26jf_1_b3c8a2bb8884ddd6439f3456';
 
       const COMUNAS_ORDER = [
         'Coyhaique', 'Lago Verde', 'Aysén', 'Cisnes', 'Guaitecas',
@@ -5044,7 +5263,12 @@
         if (AppState.subDashboards.length <= 1) return;
         const sub = AppState.subDashboards.find(s => s.id === id);
         const name = sub ? sub.name : 'esta mesa';
-        if (!confirm(`¿Eliminar "${name}" y todas sus ventanas?`)) return;
+
+        // Borrado directo y reversible: un confirm() bloqueante por cada mesa es
+        // peor experiencia que un deshacer confiable. El snapshot completo de la
+        // mesa se guarda para poder restaurarla desde el aviso efimero.
+        const snapshotMesa = JSON.parse(JSON.stringify(sub || {}));
+        const posicionOriginal = AppState.subDashboards.findIndex(s => s.id === id);
 
         if (AppState.activeSubDashboardId === id) {
           const other = AppState.subDashboards.find(s => s.id !== id);
@@ -5054,6 +5278,16 @@
         AppState.subDashboards = AppState.subDashboards.filter(s => s.id !== id);
         renderSubDashboards();
         autoSave();
+
+        showToast(`Mesa eliminada: ${name}.`, 'Deshacer', () => {
+          if (AppState.subDashboards.some(s => s.id === snapshotMesa.id)) return;
+          const at = Math.max(0, Math.min(posicionOriginal, AppState.subDashboards.length));
+          AppState.subDashboards.splice(at, 0, snapshotMesa);
+          renderSubDashboards();
+          switchSubDashboard(snapshotMesa.id);
+          autoSave();
+          showToast(`Mesa restaurada: ${name}.`);
+        });
       }
 
       function showNewSubDashboardMenu(evt) {
@@ -7311,7 +7545,6 @@
           });
           L.control.zoom({ position: 'topright' }).addTo(map);
 
-          const CARTO_API_KEY = 'cb1_26jf_1_b3c8a2bb8884ddd6439f3456';
           L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${CARTO_API_KEY}`, {
             attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
             subdomains: 'abcd',
@@ -7623,9 +7856,10 @@
         updateOracle();
       }
 
-      function removeWidget(widgetId) {
+      function removeWidget(widgetId, opts = {}) {
         const idx = AppState.widgets.findIndex(w => w.id === widgetId);
         if (idx !== -1) {
+          if (!opts.skipHistory) pushHistory('eliminar ventana');
           const w = AppState.widgets[idx];
           if (w.resizeObserver) {
             w.resizeObserver.disconnect();
@@ -7829,7 +8063,8 @@
         setTimeout(fitAndCenterCanvas, 100);
       }
 
-      function clearAll() {
+      function clearAll(opts = {}) {
+        if (!opts.skipHistory) pushHistory('reiniciar lienzo');
         AppState.widgets.forEach(w => {
           if (w.resizeObserver) w.resizeObserver.disconnect();
           if (w.instance) {
@@ -8104,6 +8339,295 @@
         }
 
         loadSavedOrPreset();
+      }
+
+      // =======================================================================
+      // 17.0 HISTORIAL DESHACER / REHACER, AVISOS EFIMEROS Y ATAJOS
+      // =======================================================================
+      // En un lienzo infinito con arrastre, borrar es un clic y antes no habia
+      // vuelta atras: el unico resguardo eran dos confirm() bloqueantes. Aqui se
+      // implementa una pila de historial sobre el mismo estado que ya se
+      // serializa en localStorage, y los confirm() se reemplazan por accion
+      // directa + aviso efimero con "Deshacer".
+
+      const HISTORY_LIMIT = 25;
+
+      const History = {
+        past: [],
+        future: [],
+        restoring: false,
+      };
+
+      /** Captura el estado del lienzo activo (misma forma que usa autoSave). */
+      function snapshotCanvas() {
+        return JSON.parse(JSON.stringify({
+          widgets: AppState.widgets.map(w => ({
+            id: w.id, type: w.type, title: w.title, varIds: w.varIds,
+            chartType: w.chartType, kpiVarId: w.kpiVarId, mapVarId: w.mapVarId,
+            tableVarIds: w.tableVarIds, timelineVarId: w.timelineVarId,
+            xVarId: w.xVarId, yVarIds: w.yVarIds, mode: w.mode,
+            showAverage: w.showAverage, showTrend: w.showTrend,
+            minimized: w.minimized, maximized: w.maximized,
+            prevBounds: w.prevBounds, syncMode: w.syncMode,
+            highlightEntity: w.highlightEntity, tableFilter: w.tableFilter,
+            tableSortCol: w.tableSortCol, tableSortDir: w.tableSortDir,
+            x: w.x, y: w.y, w: w.w, h: w.h,
+          })),
+          connections: AppState.connections,
+          reflectionCards: AppState.reflectionCards,
+          transform: AppState.transform,
+          nextWidgetId: AppState.nextWidgetId,
+          nextReflectionId: AppState.nextReflectionId,
+          territorialFilter: AppState.territorialFilter,
+          excludeCoyhaique: AppState.excludeCoyhaique,
+          activeWidgetId: AppState.activeWidgetId,
+        }));
+      }
+
+      /**
+       * Registra el estado ACTUAL en el historial antes de mutarlo.
+       * Llamar siempre ANTES de la mutacion, nunca despues.
+       */
+      function pushHistory(label) {
+        if (History.restoring) return;
+        try {
+          History.past.push({ label: label || 'accion', state: snapshotCanvas() });
+          if (History.past.length > HISTORY_LIMIT) History.past.shift();
+          History.future = [];
+        } catch (e) {
+          console.warn('No se pudo registrar el historial:', e);
+        }
+      }
+
+      /** Destruye instancias y DOM del lienzo sin tocar los sub-dashboards. */
+      function teardownCanvasEntities() {
+        AppState.widgets.forEach(w => {
+          if (w.resizeObserver) w.resizeObserver.disconnect();
+          if (w.instance) {
+            if (typeof w.instance.destroy === 'function') w.instance.destroy();
+            if (typeof w.instance.remove === 'function') w.instance.remove();
+          }
+        });
+        AppState.widgets = [];
+        AppState.connections = [];
+        AppState.reflectionCards = [];
+        AppState.activeWidgetId = null;
+        const stage = document.getElementById('canvasGridStage');
+        if (stage) stage.innerHTML = '';
+      }
+
+      /** Reconstruye el lienzo desde una instantanea. */
+      function restoreCanvas(snap) {
+        History.restoring = true;
+        try {
+          teardownCanvasEntities();
+
+          (snap.widgets || []).forEach(w => {
+            AppState.widgets.push({ ...w, instance: null, resizeObserver: null });
+            renderWidgetCardDOM(w);
+          });
+          (snap.reflectionCards || []).forEach(r => {
+            AppState.reflectionCards.push(r);
+            renderReflectionCardDOM(r);
+          });
+
+          AppState.connections = snap.connections || [];
+          AppState.nextWidgetId = snap.nextWidgetId || (AppState.widgets.length + 1);
+          AppState.nextReflectionId = snap.nextReflectionId || (AppState.reflectionCards.length + 1);
+          AppState.territorialFilter = snap.territorialFilter || 'all';
+          AppState.excludeCoyhaique = !!snap.excludeCoyhaique;
+
+          const selectSlicer = document.getElementById('selectTerritorialSlicer');
+          if (selectSlicer) selectSlicer.value = AppState.territorialFilter;
+          const btnExclude = document.getElementById('btnExcludeCoyhaique');
+          if (btnExclude) btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
+
+          if (snap.transform) {
+            AppState.transform = snap.transform;
+            applyCanvasTransform();
+          }
+
+          AppState.widgets.forEach(w => renderWidgetVisual(w));
+
+          syncHeroVisibility();
+          renderWindowTabs();
+          updateConnections();
+          updateStatus();
+        } catch (e) {
+          console.warn('Fallo al restaurar el lienzo:', e);
+        } finally {
+          History.restoring = false;
+        }
+        autoSave();
+      }
+
+      function undo() {
+        if (History.past.length === 0) {
+          showToast('No hay nada que deshacer.');
+          return;
+        }
+        const entry = History.past.pop();
+        History.future.push({ label: entry.label, state: snapshotCanvas() });
+        if (History.future.length > HISTORY_LIMIT) History.future.shift();
+        restoreCanvas(entry.state);
+        showToast(`Deshecho: ${entry.label}.`, 'Rehacer', redo);
+      }
+
+      function redo() {
+        if (History.future.length === 0) {
+          showToast('No hay nada que rehacer.');
+          return;
+        }
+        const entry = History.future.pop();
+        History.past.push({ label: entry.label, state: snapshotCanvas() });
+        if (History.past.length > HISTORY_LIMIT) History.past.shift();
+        restoreCanvas(entry.state);
+        showToast(`Rehecho: ${entry.label}.`);
+      }
+
+      /** Aviso efimero no bloqueante. Reemplaza a confirm() en acciones reversibles. */
+      function showToast(message, actionLabel, actionFn, timeoutMs = 5000) {
+        const stack = document.getElementById('studioToastStack');
+        if (!stack) return;
+
+        const toast = document.createElement('div');
+        toast.className = 'studio-toast';
+
+        const msg = document.createElement('div');
+        msg.className = 'studio-toast-msg';
+        msg.textContent = message;
+        toast.appendChild(msg);
+
+        let timer = null;
+        const dismiss = () => {
+          if (timer) clearTimeout(timer);
+          toast.classList.add('leaving');
+          setTimeout(() => toast.remove(), 200);
+        };
+
+        if (actionLabel && typeof actionFn === 'function') {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'studio-toast-action';
+          btn.textContent = actionLabel;
+          btn.setAttribute('aria-label', `${actionLabel}: ${message}`);
+          btn.addEventListener('click', () => { dismiss(); actionFn(); });
+          toast.appendChild(btn);
+        }
+
+        stack.appendChild(toast);
+        timer = setTimeout(dismiss, timeoutMs);
+      }
+
+      function openShortcutsPanel() {
+        const ov = document.getElementById('shortcutsOverlay');
+        if (!ov) return;
+        ov.classList.add('open');
+        ov.setAttribute('aria-hidden', 'false');
+        const closeBtn = document.getElementById('btnShortcutsClose');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeShortcutsPanel() {
+        const ov = document.getElementById('shortcutsOverlay');
+        if (!ov) return;
+        ov.classList.remove('open');
+        ov.setAttribute('aria-hidden', 'true');
+      }
+
+      function isShortcutsPanelOpen() {
+        const ov = document.getElementById('shortcutsOverlay');
+        return !!(ov && ov.classList.contains('open'));
+      }
+
+      /** Encuadra todas las ventanas en la vista (zoom to fit). */
+      function zoomToFitCanvas() {
+        const items = [
+          ...AppState.widgets.map(w => ({ x: w.x, y: w.y, w: w.w, h: w.h })),
+          ...AppState.reflectionCards.map(r => ({ x: r.x, y: r.y, w: r.w || 260, h: r.h || 160 })),
+        ].filter(i => Number.isFinite(i.x) && Number.isFinite(i.y));
+
+        if (items.length === 0) {
+          showToast('El lienzo esta vacio: no hay nada que encuadrar.');
+          return;
+        }
+
+        const viewport = document.getElementById('panelLienzo') || document.body;
+        const vw = viewport.clientWidth || window.innerWidth;
+        const vh = viewport.clientHeight || window.innerHeight;
+
+        const minX = Math.min(...items.map(i => i.x));
+        const minY = Math.min(...items.map(i => i.y));
+        const maxX = Math.max(...items.map(i => i.x + (i.w || 320)));
+        const maxY = Math.max(...items.map(i => i.y + (i.h || 220)));
+
+        const pad = 60;
+        const contentW = Math.max(maxX - minX, 1);
+        const contentH = Math.max(maxY - minY, 1);
+        const scale = Math.min((vw - pad * 2) / contentW, (vh - pad * 2) / contentH, 1.5);
+        const safeScale = Math.max(Math.min(scale, 1.5), 0.2);
+
+        AppState.transform = {
+          scale: safeScale,
+          x: (vw - contentW * safeScale) / 2 - minX * safeScale,
+          y: (vh - contentH * safeScale) / 2 - minY * safeScale,
+        };
+        applyCanvasTransform();
+        updateConnections();
+      }
+
+      function resetCanvasZoom() {
+        AppState.transform = { ...AppState.transform, scale: 1 };
+        applyCanvasTransform();
+        updateConnections();
+      }
+
+      /** Cicla el foco entre ventanas del lienzo con Tab. */
+      function cycleActiveWidget(backwards = false) {
+        if (AppState.widgets.length === 0) return;
+        const ids = AppState.widgets.map(w => w.id);
+        const cur = ids.indexOf(AppState.activeWidgetId);
+        const next = cur === -1
+          ? 0
+          : (cur + (backwards ? -1 : 1) + ids.length) % ids.length;
+        const targetId = ids[next];
+        selectActiveCard(targetId);
+        const el = document.getElementById(`widget-card-${targetId}`);
+        if (el && typeof el.scrollIntoView === 'function') {
+          el.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        }
+      }
+
+      /** Duplica la ventana seleccionada (misma logica que el menu contextual). */
+      function duplicateActiveWidget() {
+        const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
+        if (!w) {
+          showToast('Selecciona una ventana para duplicarla.');
+          return;
+        }
+        pushHistory('duplicar ventana');
+        const dup = createWidget(w.type, {
+          varX: w.varX,
+          varY: w.varY,
+          chartType: w.chartType,
+          color: w.color,
+          showAverage: w.showAverage,
+          showTrend: w.showTrend,
+          x: w.x + w.w + 40,
+          y: w.y,
+          w: w.w,
+          h: w.h,
+        });
+        if (dup) addConnection(w.id, dup.id);
+      }
+
+      /** Elimina la ventana seleccionada dejando el paso reversible. */
+      function deleteActiveWidget() {
+        const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
+        if (!w) return;
+        const titulo = w.title || `ventana #${w.id}`;
+        removeWidget(w.id); // registra el historial internamente
+        showToast(`Ventana eliminada: ${titulo}.`, 'Deshacer', undo);
       }
 
       function autoSave() {
@@ -8417,7 +8941,15 @@
           createWidget('kpi', { varX: null, x: center.x - 250, y: center.y - 180 });
         });
         document.getElementById('btnClearCanvas').addEventListener('click', () => {
-          if (confirm('¿Reiniciar el lienzo analítico?')) clearAll();
+          // Accion directa y reversible en vez de confirm() bloqueante:
+          // clearAll() registra el historial, asi que Ctrl+Z la revierte.
+          const habia = AppState.widgets.length + AppState.reflectionCards.length;
+          if (habia === 0) {
+            showToast('El lienzo ya esta vacio.');
+            return;
+          }
+          clearAll();
+          showToast(`Lienzo reiniciado: ${habia} elemento(s) retirados.`, 'Deshacer', undo);
         });
 
         // Botón Auto-ordenar en Barra Superior y Barra de Pestañas

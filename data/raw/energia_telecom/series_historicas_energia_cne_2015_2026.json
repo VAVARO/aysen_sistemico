@@ -316,7 +316,8 @@
         "accesos_internet_fijo": 5100,
         "penetracion_internet_fijo_pct": 32.5,
         "saidi_horas_anual": 22.4,
-        "saifi_veces_anual": 6.2
+        "saifi_veces_anual": 6.2,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -328,7 +329,8 @@
         "accesos_internet_fijo": 6109,
         "penetracion_internet_fijo_pct": 36.2,
         "saidi_horas_anual": 21.3,
-        "saifi_veces_anual": 5.9
+        "saifi_veces_anual": 5.9,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -340,7 +342,8 @@
         "accesos_internet_fijo": 7118,
         "penetracion_internet_fijo_pct": 39.8,
         "saidi_horas_anual": 20.2,
-        "saifi_veces_anual": 5.6
+        "saifi_veces_anual": 5.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -352,7 +355,8 @@
         "accesos_internet_fijo": 8127,
         "penetracion_internet_fijo_pct": 43.5,
         "saidi_horas_anual": 19.2,
-        "saifi_veces_anual": 5.3
+        "saifi_veces_anual": 5.3,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -364,7 +368,8 @@
         "accesos_internet_fijo": 9136,
         "penetracion_internet_fijo_pct": 47.2,
         "saidi_horas_anual": 18.1,
-        "saifi_veces_anual": 5.0
+        "saifi_veces_anual": 5.0,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -376,7 +381,8 @@
         "accesos_internet_fijo": 10145,
         "penetracion_internet_fijo_pct": 50.8,
         "saidi_horas_anual": 17.0,
-        "saifi_veces_anual": 4.7
+        "saifi_veces_anual": 4.7,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -388,7 +394,8 @@
         "accesos_internet_fijo": 11155,
         "penetracion_internet_fijo_pct": 54.5,
         "saidi_horas_anual": 15.9,
-        "saifi_veces_anual": 4.5
+        "saifi_veces_anual": 4.5,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -400,7 +407,8 @@
         "accesos_internet_fijo": 12164,
         "penetracion_internet_fijo_pct": 58.1,
         "saidi_horas_anual": 14.8,
-        "saifi_veces_anual": 4.2
+        "saifi_veces_anual": 4.2,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -412,7 +420,8 @@
         "accesos_internet_fijo": 13173,
         "penetracion_internet_fijo_pct": 61.8,
         "saidi_horas_anual": 13.7,
-        "saifi_veces_anual": 3.9
+        "saifi_veces_anual": 3.9,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -424,7 +433,8 @@
         "accesos_internet_fijo": 14182,
         "penetracion_internet_fijo_pct": 61.2,
         "saidi_horas_anual": 11.4,
-        "saifi_veces_anual": 3.4
+        "saifi_veces_anual": 3.4,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -436,7 +446,8 @@
         "accesos_internet_fijo": 15191,
         "penetracion_internet_fijo_pct": 69.1,
         "saidi_horas_anual": 11.6,
-        "saifi_veces_anual": 3.3
+        "saifi_veces_anual": 3.3,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -448,7 +459,8 @@
         "accesos_internet_fijo": 16200,
         "penetracion_internet_fijo_pct": 72.8,
         "saidi_horas_anual": 10.5,
-        "saifi_veces_anual": 3.0
+        "saifi_veces_anual": 3.0,
+        "origen": "ancla"
       }
     ],
     "11102": [
@@ -462,7 +474,8 @@
         "accesos_internet_fijo": 15,
         "penetracion_internet_fijo_pct": 1.2,
         "saidi_horas_anual": 78.5,
-        "saifi_veces_anual": 14.2
+        "saifi_veces_anual": 14.2,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -474,7 +487,8 @@
         "accesos_internet_fijo": 21,
         "penetracion_internet_fijo_pct": 1.5,
         "saidi_horas_anual": 75.7,
-        "saifi_veces_anual": 13.7
+        "saifi_veces_anual": 13.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -486,7 +500,8 @@
         "accesos_internet_fijo": 28,
         "penetracion_internet_fijo_pct": 1.9,
         "saidi_horas_anual": 73.0,
-        "saifi_veces_anual": 13.2
+        "saifi_veces_anual": 13.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -498,7 +513,8 @@
         "accesos_internet_fijo": 34,
         "penetracion_internet_fijo_pct": 2.2,
         "saidi_horas_anual": 70.2,
-        "saifi_veces_anual": 12.7
+        "saifi_veces_anual": 12.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -510,7 +526,8 @@
         "accesos_internet_fijo": 40,
         "penetracion_internet_fijo_pct": 2.5,
         "saidi_horas_anual": 67.4,
-        "saifi_veces_anual": 12.2
+        "saifi_veces_anual": 12.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -522,7 +539,8 @@
         "accesos_internet_fijo": 47,
         "penetracion_internet_fijo_pct": 2.8,
         "saidi_horas_anual": 64.6,
-        "saifi_veces_anual": 11.7
+        "saifi_veces_anual": 11.7,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -534,7 +552,8 @@
         "accesos_internet_fijo": 53,
         "penetracion_internet_fijo_pct": 3.2,
         "saidi_horas_anual": 61.9,
-        "saifi_veces_anual": 11.1
+        "saifi_veces_anual": 11.1,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -546,7 +565,8 @@
         "accesos_internet_fijo": 60,
         "penetracion_internet_fijo_pct": 3.5,
         "saidi_horas_anual": 59.1,
-        "saifi_veces_anual": 10.6
+        "saifi_veces_anual": 10.6,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -558,7 +578,8 @@
         "accesos_internet_fijo": 66,
         "penetracion_internet_fijo_pct": 3.8,
         "saidi_horas_anual": 56.3,
-        "saifi_veces_anual": 10.1
+        "saifi_veces_anual": 10.1,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -570,7 +591,8 @@
         "accesos_internet_fijo": 72,
         "penetracion_internet_fijo_pct": 3.8,
         "saidi_horas_anual": 54.2,
-        "saifi_veces_anual": 9.5
+        "saifi_veces_anual": 9.5,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -582,7 +604,8 @@
         "accesos_internet_fijo": 79,
         "penetracion_internet_fijo_pct": 4.5,
         "saidi_horas_anual": 50.8,
-        "saifi_veces_anual": 9.1
+        "saifi_veces_anual": 9.1,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -594,7 +617,8 @@
         "accesos_internet_fijo": 85,
         "penetracion_internet_fijo_pct": 4.8,
         "saidi_horas_anual": 48.0,
-        "saifi_veces_anual": 8.6
+        "saifi_veces_anual": 8.6,
+        "origen": "ancla"
       }
     ],
     "11201": [
@@ -608,7 +632,8 @@
         "accesos_internet_fijo": 2150,
         "penetracion_internet_fijo_pct": 24.8,
         "saidi_horas_anual": 24.8,
-        "saifi_veces_anual": 6.8
+        "saifi_veces_anual": 6.8,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -620,7 +645,8 @@
         "accesos_internet_fijo": 2441,
         "penetracion_internet_fijo_pct": 27.4,
         "saidi_horas_anual": 23.7,
-        "saifi_veces_anual": 6.5
+        "saifi_veces_anual": 6.5,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -632,7 +658,8 @@
         "accesos_internet_fijo": 2732,
         "penetracion_internet_fijo_pct": 30.0,
         "saidi_horas_anual": 22.5,
-        "saifi_veces_anual": 6.2
+        "saifi_veces_anual": 6.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -644,7 +671,8 @@
         "accesos_internet_fijo": 3023,
         "penetracion_internet_fijo_pct": 32.5,
         "saidi_horas_anual": 21.4,
-        "saifi_veces_anual": 5.9
+        "saifi_veces_anual": 5.9,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -656,7 +684,8 @@
         "accesos_internet_fijo": 3314,
         "penetracion_internet_fijo_pct": 35.1,
         "saidi_horas_anual": 20.2,
-        "saifi_veces_anual": 5.6
+        "saifi_veces_anual": 5.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -668,7 +697,8 @@
         "accesos_internet_fijo": 3605,
         "penetracion_internet_fijo_pct": 37.7,
         "saidi_horas_anual": 19.1,
-        "saifi_veces_anual": 5.3
+        "saifi_veces_anual": 5.3,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -680,7 +710,8 @@
         "accesos_internet_fijo": 3895,
         "penetracion_internet_fijo_pct": 40.3,
         "saidi_horas_anual": 17.9,
-        "saifi_veces_anual": 4.9
+        "saifi_veces_anual": 4.9,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -692,7 +723,8 @@
         "accesos_internet_fijo": 4186,
         "penetracion_internet_fijo_pct": 42.9,
         "saidi_horas_anual": 16.8,
-        "saifi_veces_anual": 4.6
+        "saifi_veces_anual": 4.6,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -704,7 +736,8 @@
         "accesos_internet_fijo": 4477,
         "penetracion_internet_fijo_pct": 45.5,
         "saidi_horas_anual": 15.6,
-        "saifi_veces_anual": 4.3
+        "saifi_veces_anual": 4.3,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -716,7 +749,8 @@
         "accesos_internet_fijo": 4768,
         "penetracion_internet_fijo_pct": 44.5,
         "saidi_horas_anual": 13.8,
-        "saifi_veces_anual": 3.9
+        "saifi_veces_anual": 3.9,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -728,7 +762,8 @@
         "accesos_internet_fijo": 5059,
         "penetracion_internet_fijo_pct": 50.6,
         "saidi_horas_anual": 13.3,
-        "saifi_veces_anual": 3.7
+        "saifi_veces_anual": 3.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -740,7 +775,8 @@
         "accesos_internet_fijo": 5350,
         "penetracion_internet_fijo_pct": 53.2,
         "saidi_horas_anual": 12.2,
-        "saifi_veces_anual": 3.4
+        "saifi_veces_anual": 3.4,
+        "origen": "ancla"
       }
     ],
     "11202": [
@@ -754,7 +790,8 @@
         "accesos_internet_fijo": 420,
         "penetracion_internet_fijo_pct": 11.5,
         "saidi_horas_anual": 48.2,
-        "saifi_veces_anual": 10.5
+        "saifi_veces_anual": 10.5,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -766,7 +803,8 @@
         "accesos_internet_fijo": 515,
         "penetracion_internet_fijo_pct": 13.3,
         "saidi_horas_anual": 46.1,
-        "saifi_veces_anual": 10.0
+        "saifi_veces_anual": 10.0,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -778,7 +816,8 @@
         "accesos_internet_fijo": 609,
         "penetracion_internet_fijo_pct": 15.1,
         "saidi_horas_anual": 44.0,
-        "saifi_veces_anual": 9.6
+        "saifi_veces_anual": 9.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -790,7 +829,8 @@
         "accesos_internet_fijo": 704,
         "penetracion_internet_fijo_pct": 17.0,
         "saidi_horas_anual": 41.9,
-        "saifi_veces_anual": 9.1
+        "saifi_veces_anual": 9.1,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -802,7 +842,8 @@
         "accesos_internet_fijo": 798,
         "penetracion_internet_fijo_pct": 18.8,
         "saidi_horas_anual": 39.8,
-        "saifi_veces_anual": 8.7
+        "saifi_veces_anual": 8.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -814,7 +855,8 @@
         "accesos_internet_fijo": 893,
         "penetracion_internet_fijo_pct": 20.6,
         "saidi_horas_anual": 37.7,
-        "saifi_veces_anual": 8.2
+        "saifi_veces_anual": 8.2,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -826,7 +868,8 @@
         "accesos_internet_fijo": 987,
         "penetracion_internet_fijo_pct": 22.4,
         "saidi_horas_anual": 35.5,
-        "saifi_veces_anual": 7.8
+        "saifi_veces_anual": 7.8,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -838,7 +881,8 @@
         "accesos_internet_fijo": 1082,
         "penetracion_internet_fijo_pct": 24.2,
         "saidi_horas_anual": 33.4,
-        "saifi_veces_anual": 7.3
+        "saifi_veces_anual": 7.3,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -850,7 +894,8 @@
         "accesos_internet_fijo": 1176,
         "penetracion_internet_fijo_pct": 26.0,
         "saidi_horas_anual": 31.3,
-        "saifi_veces_anual": 6.9
+        "saifi_veces_anual": 6.9,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -862,7 +907,8 @@
         "accesos_internet_fijo": 1271,
         "penetracion_internet_fijo_pct": 24.8,
         "saidi_horas_anual": 28.5,
-        "saifi_veces_anual": 6.2
+        "saifi_veces_anual": 6.2,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -874,7 +920,8 @@
         "accesos_internet_fijo": 1365,
         "penetracion_internet_fijo_pct": 29.7,
         "saidi_horas_anual": 27.1,
-        "saifi_veces_anual": 6.0
+        "saifi_veces_anual": 6.0,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -886,7 +933,8 @@
         "accesos_internet_fijo": 1460,
         "penetracion_internet_fijo_pct": 31.5,
         "saidi_horas_anual": 25.0,
-        "saifi_veces_anual": 5.5
+        "saifi_veces_anual": 5.5,
+        "origen": "ancla"
       }
     ],
     "11203": [
@@ -900,7 +948,8 @@
         "accesos_internet_fijo": 25,
         "penetracion_internet_fijo_pct": 1.8,
         "saidi_horas_anual": 88.0,
-        "saifi_veces_anual": 15.8
+        "saifi_veces_anual": 15.8,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -912,7 +961,8 @@
         "accesos_internet_fijo": 33,
         "penetracion_internet_fijo_pct": 2.3,
         "saidi_horas_anual": 84.9,
-        "saifi_veces_anual": 15.3
+        "saifi_veces_anual": 15.3,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -924,7 +974,8 @@
         "accesos_internet_fijo": 41,
         "penetracion_internet_fijo_pct": 2.8,
         "saidi_horas_anual": 81.8,
-        "saifi_veces_anual": 14.7
+        "saifi_veces_anual": 14.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -936,7 +987,8 @@
         "accesos_internet_fijo": 50,
         "penetracion_internet_fijo_pct": 3.2,
         "saidi_horas_anual": 78.7,
-        "saifi_veces_anual": 14.2
+        "saifi_veces_anual": 14.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -948,7 +1000,8 @@
         "accesos_internet_fijo": 58,
         "penetracion_internet_fijo_pct": 3.7,
         "saidi_horas_anual": 75.6,
-        "saifi_veces_anual": 13.6
+        "saifi_veces_anual": 13.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -960,7 +1013,8 @@
         "accesos_internet_fijo": 66,
         "penetracion_internet_fijo_pct": 4.2,
         "saidi_horas_anual": 72.5,
-        "saifi_veces_anual": 13.1
+        "saifi_veces_anual": 13.1,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -972,7 +1026,8 @@
         "accesos_internet_fijo": 74,
         "penetracion_internet_fijo_pct": 4.7,
         "saidi_horas_anual": 69.5,
-        "saifi_veces_anual": 12.5
+        "saifi_veces_anual": 12.5,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -984,7 +1039,8 @@
         "accesos_internet_fijo": 82,
         "penetracion_internet_fijo_pct": 5.2,
         "saidi_horas_anual": 66.4,
-        "saifi_veces_anual": 12.0
+        "saifi_veces_anual": 12.0,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -996,7 +1052,8 @@
         "accesos_internet_fijo": 90,
         "penetracion_internet_fijo_pct": 5.7,
         "saidi_horas_anual": 63.3,
-        "saifi_veces_anual": 11.4
+        "saifi_veces_anual": 11.4,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -1008,7 +1065,8 @@
         "accesos_internet_fijo": 99,
         "penetracion_internet_fijo_pct": 5.4,
         "saidi_horas_anual": 62.1,
-        "saifi_veces_anual": 11.2
+        "saifi_veces_anual": 11.2,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -1020,7 +1078,8 @@
         "accesos_internet_fijo": 107,
         "penetracion_internet_fijo_pct": 6.6,
         "saidi_horas_anual": 57.1,
-        "saifi_veces_anual": 10.3
+        "saifi_veces_anual": 10.3,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -1032,7 +1091,8 @@
         "accesos_internet_fijo": 115,
         "penetracion_internet_fijo_pct": 7.1,
         "saidi_horas_anual": 54.0,
-        "saifi_veces_anual": 9.8
+        "saifi_veces_anual": 9.8,
+        "origen": "ancla"
       }
     ],
     "11401": [
@@ -1046,7 +1106,8 @@
         "accesos_internet_fijo": 340,
         "penetracion_internet_fijo_pct": 14.2,
         "saidi_horas_anual": 35.6,
-        "saifi_veces_anual": 8.1
+        "saifi_veces_anual": 8.1,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -1058,7 +1119,8 @@
         "accesos_internet_fijo": 395,
         "penetracion_internet_fijo_pct": 16.0,
         "saidi_horas_anual": 33.9,
-        "saifi_veces_anual": 7.7
+        "saifi_veces_anual": 7.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -1070,7 +1132,8 @@
         "accesos_internet_fijo": 451,
         "penetracion_internet_fijo_pct": 17.8,
         "saidi_horas_anual": 32.3,
-        "saifi_veces_anual": 7.4
+        "saifi_veces_anual": 7.4,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -1082,7 +1145,8 @@
         "accesos_internet_fijo": 506,
         "penetracion_internet_fijo_pct": 19.6,
         "saidi_horas_anual": 30.6,
-        "saifi_veces_anual": 7.0
+        "saifi_veces_anual": 7.0,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -1094,7 +1158,8 @@
         "accesos_internet_fijo": 562,
         "penetracion_internet_fijo_pct": 21.4,
         "saidi_horas_anual": 28.9,
-        "saifi_veces_anual": 6.6
+        "saifi_veces_anual": 6.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -1106,7 +1171,8 @@
         "accesos_internet_fijo": 617,
         "penetracion_internet_fijo_pct": 23.2,
         "saidi_horas_anual": 27.2,
-        "saifi_veces_anual": 6.3
+        "saifi_veces_anual": 6.3,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -1118,7 +1184,8 @@
         "accesos_internet_fijo": 673,
         "penetracion_internet_fijo_pct": 25.0,
         "saidi_horas_anual": 25.6,
-        "saifi_veces_anual": 5.9
+        "saifi_veces_anual": 5.9,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -1130,7 +1197,8 @@
         "accesos_internet_fijo": 728,
         "penetracion_internet_fijo_pct": 26.8,
         "saidi_horas_anual": 23.9,
-        "saifi_veces_anual": 5.6
+        "saifi_veces_anual": 5.6,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -1142,7 +1210,8 @@
         "accesos_internet_fijo": 784,
         "penetracion_internet_fijo_pct": 28.6,
         "saidi_horas_anual": 22.2,
-        "saifi_veces_anual": 5.2
+        "saifi_veces_anual": 5.2,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -1154,7 +1223,8 @@
         "accesos_internet_fijo": 839,
         "penetracion_internet_fijo_pct": 27.2,
         "saidi_horas_anual": 19.3,
-        "saifi_veces_anual": 4.6
+        "saifi_veces_anual": 4.6,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -1166,7 +1236,8 @@
         "accesos_internet_fijo": 895,
         "penetracion_internet_fijo_pct": 32.2,
         "saidi_horas_anual": 18.9,
-        "saifi_veces_anual": 4.5
+        "saifi_veces_anual": 4.5,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -1178,7 +1249,8 @@
         "accesos_internet_fijo": 950,
         "penetracion_internet_fijo_pct": 34.0,
         "saidi_horas_anual": 17.2,
-        "saifi_veces_anual": 4.1
+        "saifi_veces_anual": 4.1,
+        "origen": "ancla"
       }
     ],
     "11402": [
@@ -1192,7 +1264,8 @@
         "accesos_internet_fijo": 180,
         "penetracion_internet_fijo_pct": 8.9,
         "saidi_horas_anual": 42.1,
-        "saifi_veces_anual": 9.2
+        "saifi_veces_anual": 9.2,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -1204,7 +1277,8 @@
         "accesos_internet_fijo": 211,
         "penetracion_internet_fijo_pct": 10.0,
         "saidi_horas_anual": 40.3,
-        "saifi_veces_anual": 8.8
+        "saifi_veces_anual": 8.8,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -1216,7 +1290,8 @@
         "accesos_internet_fijo": 242,
         "penetracion_internet_fijo_pct": 11.2,
         "saidi_horas_anual": 38.4,
-        "saifi_veces_anual": 8.4
+        "saifi_veces_anual": 8.4,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -1228,7 +1303,8 @@
         "accesos_internet_fijo": 273,
         "penetracion_internet_fijo_pct": 12.3,
         "saidi_horas_anual": 36.6,
-        "saifi_veces_anual": 8.0
+        "saifi_veces_anual": 8.0,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -1240,7 +1316,8 @@
         "accesos_internet_fijo": 304,
         "penetracion_internet_fijo_pct": 13.5,
         "saidi_horas_anual": 34.7,
-        "saifi_veces_anual": 7.6
+        "saifi_veces_anual": 7.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -1252,7 +1329,8 @@
         "accesos_internet_fijo": 335,
         "penetracion_internet_fijo_pct": 14.6,
         "saidi_horas_anual": 32.9,
-        "saifi_veces_anual": 7.2
+        "saifi_veces_anual": 7.2,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -1264,7 +1342,8 @@
         "accesos_internet_fijo": 365,
         "penetracion_internet_fijo_pct": 15.8,
         "saidi_horas_anual": 31.0,
-        "saifi_veces_anual": 6.8
+        "saifi_veces_anual": 6.8,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -1276,7 +1355,8 @@
         "accesos_internet_fijo": 396,
         "penetracion_internet_fijo_pct": 16.9,
         "saidi_horas_anual": 29.2,
-        "saifi_veces_anual": 6.4
+        "saifi_veces_anual": 6.4,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -1288,7 +1368,8 @@
         "accesos_internet_fijo": 427,
         "penetracion_internet_fijo_pct": 18.1,
         "saidi_horas_anual": 27.3,
-        "saifi_veces_anual": 6.0
+        "saifi_veces_anual": 6.0,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -1300,7 +1381,8 @@
         "accesos_internet_fijo": 458,
         "penetracion_internet_fijo_pct": 16.8,
         "saidi_horas_anual": 24.6,
-        "saifi_veces_anual": 5.4
+        "saifi_veces_anual": 5.4,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -1312,7 +1394,8 @@
         "accesos_internet_fijo": 489,
         "penetracion_internet_fijo_pct": 20.4,
         "saidi_horas_anual": 23.6,
-        "saifi_veces_anual": 5.2
+        "saifi_veces_anual": 5.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -1324,7 +1407,8 @@
         "accesos_internet_fijo": 520,
         "penetracion_internet_fijo_pct": 21.5,
         "saidi_horas_anual": 21.8,
-        "saifi_veces_anual": 4.8
+        "saifi_veces_anual": 4.8,
+        "origen": "ancla"
       }
     ],
     "11301": [
@@ -1338,7 +1422,8 @@
         "accesos_internet_fijo": 260,
         "penetracion_internet_fijo_pct": 11.2,
         "saidi_horas_anual": 39.8,
-        "saifi_veces_anual": 8.8
+        "saifi_veces_anual": 8.8,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -1350,7 +1435,8 @@
         "accesos_internet_fijo": 302,
         "penetracion_internet_fijo_pct": 12.7,
         "saidi_horas_anual": 38.0,
-        "saifi_veces_anual": 8.4
+        "saifi_veces_anual": 8.4,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -1362,7 +1448,8 @@
         "accesos_internet_fijo": 345,
         "penetracion_internet_fijo_pct": 14.1,
         "saidi_horas_anual": 36.2,
-        "saifi_veces_anual": 8.0
+        "saifi_veces_anual": 8.0,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -1374,7 +1461,8 @@
         "accesos_internet_fijo": 387,
         "penetracion_internet_fijo_pct": 15.6,
         "saidi_horas_anual": 34.4,
-        "saifi_veces_anual": 7.6
+        "saifi_veces_anual": 7.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -1386,7 +1474,8 @@
         "accesos_internet_fijo": 429,
         "penetracion_internet_fijo_pct": 17.0,
         "saidi_horas_anual": 32.6,
-        "saifi_veces_anual": 7.2
+        "saifi_veces_anual": 7.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -1398,7 +1487,8 @@
         "accesos_internet_fijo": 471,
         "penetracion_internet_fijo_pct": 18.5,
         "saidi_horas_anual": 30.8,
-        "saifi_veces_anual": 6.8
+        "saifi_veces_anual": 6.8,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -1410,7 +1500,8 @@
         "accesos_internet_fijo": 514,
         "penetracion_internet_fijo_pct": 19.9,
         "saidi_horas_anual": 29.1,
-        "saifi_veces_anual": 6.5
+        "saifi_veces_anual": 6.5,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -1422,7 +1513,8 @@
         "accesos_internet_fijo": 556,
         "penetracion_internet_fijo_pct": 21.4,
         "saidi_horas_anual": 27.3,
-        "saifi_veces_anual": 6.1
+        "saifi_veces_anual": 6.1,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -1434,7 +1526,8 @@
         "accesos_internet_fijo": 598,
         "penetracion_internet_fijo_pct": 22.8,
         "saidi_horas_anual": 25.5,
-        "saifi_veces_anual": 5.7
+        "saifi_veces_anual": 5.7,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -1446,7 +1539,8 @@
         "accesos_internet_fijo": 640,
         "penetracion_internet_fijo_pct": 21.5,
         "saidi_horas_anual": 22.8,
-        "saifi_veces_anual": 5.1
+        "saifi_veces_anual": 5.1,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -1458,7 +1552,8 @@
         "accesos_internet_fijo": 683,
         "penetracion_internet_fijo_pct": 25.7,
         "saidi_horas_anual": 21.9,
-        "saifi_veces_anual": 4.9
+        "saifi_veces_anual": 4.9,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -1470,7 +1565,8 @@
         "accesos_internet_fijo": 725,
         "penetracion_internet_fijo_pct": 27.2,
         "saidi_horas_anual": 20.1,
-        "saifi_veces_anual": 4.5
+        "saifi_veces_anual": 4.5,
+        "origen": "ancla"
       }
     ],
     "11302": [
@@ -1484,7 +1580,8 @@
         "accesos_internet_fijo": 10,
         "penetracion_internet_fijo_pct": 1.0,
         "saidi_horas_anual": 84.5,
-        "saifi_veces_anual": 15.2
+        "saifi_veces_anual": 15.2,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -1496,7 +1593,8 @@
         "accesos_internet_fijo": 14,
         "penetracion_internet_fijo_pct": 1.2,
         "saidi_horas_anual": 81.5,
-        "saifi_veces_anual": 14.7
+        "saifi_veces_anual": 14.7,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -1508,7 +1606,8 @@
         "accesos_internet_fijo": 18,
         "penetracion_internet_fijo_pct": 1.5,
         "saidi_horas_anual": 78.5,
-        "saifi_veces_anual": 14.1
+        "saifi_veces_anual": 14.1,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -1520,7 +1619,8 @@
         "accesos_internet_fijo": 22,
         "penetracion_internet_fijo_pct": 1.7,
         "saidi_horas_anual": 75.5,
-        "saifi_veces_anual": 13.6
+        "saifi_veces_anual": 13.6,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -1532,7 +1632,8 @@
         "accesos_internet_fijo": 26,
         "penetracion_internet_fijo_pct": 1.9,
         "saidi_horas_anual": 72.5,
-        "saifi_veces_anual": 13.1
+        "saifi_veces_anual": 13.1,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -1544,7 +1645,8 @@
         "accesos_internet_fijo": 30,
         "penetracion_internet_fijo_pct": 2.2,
         "saidi_horas_anual": 69.5,
-        "saifi_veces_anual": 12.6
+        "saifi_veces_anual": 12.6,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -1556,7 +1658,8 @@
         "accesos_internet_fijo": 35,
         "penetracion_internet_fijo_pct": 2.4,
         "saidi_horas_anual": 66.5,
-        "saifi_veces_anual": 12.0
+        "saifi_veces_anual": 12.0,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -1568,7 +1671,8 @@
         "accesos_internet_fijo": 39,
         "penetracion_internet_fijo_pct": 2.7,
         "saidi_horas_anual": 63.5,
-        "saifi_veces_anual": 11.5
+        "saifi_veces_anual": 11.5,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -1580,7 +1684,8 @@
         "accesos_internet_fijo": 43,
         "penetracion_internet_fijo_pct": 2.9,
         "saidi_horas_anual": 60.5,
-        "saifi_veces_anual": 11.0
+        "saifi_veces_anual": 11.0,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -1592,7 +1697,8 @@
         "accesos_internet_fijo": 47,
         "penetracion_internet_fijo_pct": 2.6,
         "saidi_horas_anual": 58.7,
-        "saifi_veces_anual": 10.8
+        "saifi_veces_anual": 10.8,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -1604,7 +1710,8 @@
         "accesos_internet_fijo": 51,
         "penetracion_internet_fijo_pct": 3.4,
         "saidi_horas_anual": 54.5,
-        "saifi_veces_anual": 9.9
+        "saifi_veces_anual": 9.9,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -1616,7 +1723,8 @@
         "accesos_internet_fijo": 55,
         "penetracion_internet_fijo_pct": 3.6,
         "saidi_horas_anual": 51.5,
-        "saifi_veces_anual": 9.4
+        "saifi_veces_anual": 9.4,
+        "origen": "ancla"
       }
     ],
     "11303": [
@@ -1630,7 +1738,8 @@
         "accesos_internet_fijo": 12,
         "penetracion_internet_fijo_pct": 1.1,
         "saidi_horas_anual": 92.4,
-        "saifi_veces_anual": 16.5
+        "saifi_veces_anual": 16.5,
+        "origen": "ancla"
       },
       {
         "ano": 2016,
@@ -1642,7 +1751,8 @@
         "accesos_internet_fijo": 17,
         "penetracion_internet_fijo_pct": 1.5,
         "saidi_horas_anual": 89.2,
-        "saifi_veces_anual": 15.9
+        "saifi_veces_anual": 15.9,
+        "origen": "interpolado"
       },
       {
         "ano": 2017,
@@ -1654,7 +1764,8 @@
         "accesos_internet_fijo": 23,
         "penetracion_internet_fijo_pct": 1.9,
         "saidi_horas_anual": 85.9,
-        "saifi_veces_anual": 15.4
+        "saifi_veces_anual": 15.4,
+        "origen": "interpolado"
       },
       {
         "ano": 2018,
@@ -1666,7 +1777,8 @@
         "accesos_internet_fijo": 28,
         "penetracion_internet_fijo_pct": 2.3,
         "saidi_horas_anual": 82.7,
-        "saifi_veces_anual": 14.8
+        "saifi_veces_anual": 14.8,
+        "origen": "interpolado"
       },
       {
         "ano": 2019,
@@ -1678,7 +1790,8 @@
         "accesos_internet_fijo": 34,
         "penetracion_internet_fijo_pct": 2.7,
         "saidi_horas_anual": 79.5,
-        "saifi_veces_anual": 14.2
+        "saifi_veces_anual": 14.2,
+        "origen": "interpolado"
       },
       {
         "ano": 2020,
@@ -1690,7 +1803,8 @@
         "accesos_internet_fijo": 39,
         "penetracion_internet_fijo_pct": 3.1,
         "saidi_horas_anual": 76.2,
-        "saifi_veces_anual": 13.6
+        "saifi_veces_anual": 13.6,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2021,
@@ -1702,7 +1816,8 @@
         "accesos_internet_fijo": 45,
         "penetracion_internet_fijo_pct": 3.4,
         "saidi_horas_anual": 73.0,
-        "saifi_veces_anual": 13.1
+        "saifi_veces_anual": 13.1,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2022,
@@ -1714,7 +1829,8 @@
         "accesos_internet_fijo": 50,
         "penetracion_internet_fijo_pct": 3.8,
         "saidi_horas_anual": 69.7,
-        "saifi_veces_anual": 12.5
+        "saifi_veces_anual": 12.5,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2023,
@@ -1726,7 +1842,8 @@
         "accesos_internet_fijo": 56,
         "penetracion_internet_fijo_pct": 4.2,
         "saidi_horas_anual": 66.5,
-        "saifi_veces_anual": 11.9
+        "saifi_veces_anual": 11.9,
+        "origen": "ajustado_por_evento"
       },
       {
         "ano": 2024,
@@ -1738,7 +1855,8 @@
         "accesos_internet_fijo": 61,
         "penetracion_internet_fijo_pct": 4.1,
         "saidi_horas_anual": 64.3,
-        "saifi_veces_anual": 11.5
+        "saifi_veces_anual": 11.5,
+        "origen": "observado"
       },
       {
         "ano": 2025,
@@ -1750,7 +1868,8 @@
         "accesos_internet_fijo": 67,
         "penetracion_internet_fijo_pct": 5.0,
         "saidi_horas_anual": 60.0,
-        "saifi_veces_anual": 10.8
+        "saifi_veces_anual": 10.8,
+        "origen": "interpolado"
       },
       {
         "ano": 2026,
@@ -1762,7 +1881,8 @@
         "accesos_internet_fijo": 72,
         "penetracion_internet_fijo_pct": 5.4,
         "saidi_horas_anual": 56.8,
-        "saifi_veces_anual": 10.2
+        "saifi_veces_anual": 10.2,
+        "origen": "ancla"
       }
     ]
   }

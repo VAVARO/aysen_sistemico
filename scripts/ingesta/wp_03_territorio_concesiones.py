@@ -2373,6 +2373,20 @@ def generate_systemic_dataset():
         "titulo": "Control del Territorio y Mar: Concesiones Acuícolas, Mineras y Tenencia de la Tierra",
         "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
         "fecha_extraccion": datetime.now(timezone.utc).isoformat(),
+        "metodologia_series_historicas": {
+            "advertencia": (
+                "Las series anuales 2015-2026 NO son 12 observaciones independientes. "
+                "Se reconstruyen por interpolacion lineal entre valores ancla; ningun "
+                "ano intermedio corresponde a un valor comunal reportado por la fuente."
+            ),
+            "campo_trazabilidad": "origen",
+            "valores_posibles": {
+                "ancla": "Extremo de la serie fijado desde la fuente (2015 y 2026).",
+                "ajustado_por_evento": "Interpolado y corregido por evento documentado (floracion algal 2016, pandemia 2020).",
+                "interpolado": "Calculado por interpolacion lineal. NO es una observacion.",
+            },
+            "generador": "scripts/ingesta/build_historical_raw_data.py::build_comuna_series_wp03",
+        },
         "fuentes_primarias": [
             {
                 "institucion": "SUBPESCA / SERNAPESCA",

@@ -1380,6 +1380,21 @@ def generate_systemic_dataset():
         "titulo": "Energía, Sistemas Medianos y Aislados, Precios de Combustibles y Conectividad Telecomunicaciones en Aysén",
         "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
         "fecha_extraccion": now_iso,
+        "metodologia_series_historicas": {
+            "advertencia": (
+                "Las series anuales 2015-2026 NO son 12 observaciones independientes. "
+                "Se reconstruyen por interpolacion lineal entre valores ancla y solo "
+                "algunos anos corresponden a valores reportados por la fuente oficial."
+            ),
+            "campo_trazabilidad": "origen",
+            "valores_posibles": {
+                "observado": "Valor reportado explicitamente por la fuente oficial para ese ano.",
+                "ancla": "Extremo de la serie fijado desde la fuente (2015 y 2026).",
+                "ajustado_por_evento": "Interpolado y corregido por evento documentado (Ley PEC 2020-2023, pandemia 2020).",
+                "interpolado": "Calculado por interpolacion lineal. NO es una observacion.",
+            },
+            "generador": "scripts/ingesta/build_historical_raw_data.py::build_comuna_series_wp02",
+        },
         "fuentes_primarias": fuentes_primarias,
         "resumen_regional": resumen_regional,
         "por_comuna": comunas_data,

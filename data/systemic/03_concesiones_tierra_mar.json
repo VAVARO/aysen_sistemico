@@ -5,7 +5,17 @@
   "dataset_id": "territorio_concesiones_tierra_mar",
   "titulo": "Control del Territorio y Mar: Concesiones Acuícolas, Mineras y Tenencia de la Tierra",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-19T11:31:25.873861+00:00",
+  "fecha_extraccion": "2026-10-20T19:55:12.554663+00:00",
+  "metodologia_series_historicas": {
+    "advertencia": "Las series anuales 2015-2026 NO son 12 observaciones independientes. Se reconstruyen por interpolacion lineal entre valores ancla; ningun ano intermedio corresponde a un valor comunal reportado por la fuente.",
+    "campo_trazabilidad": "origen",
+    "valores_posibles": {
+      "ancla": "Extremo de la serie fijado desde la fuente (2015 y 2026).",
+      "ajustado_por_evento": "Interpolado y corregido por evento documentado (floracion algal 2016, pandemia 2020).",
+      "interpolado": "Calculado por interpolacion lineal. NO es una observacion."
+    },
+    "generador": "scripts/ingesta/build_historical_raw_data.py::build_comuna_series_wp03"
+  },
   "fuentes_primarias": [
     {
       "institucion": "SUBPESCA / SERNAPESCA",
@@ -1518,7 +1528,8 @@
             "concesiones_mineras_exploracion": 116,
             "superficie_minera_ha": 48160,
             "superficie_snaspe_ha": 182000,
-            "superficie_fiscal_bbnn_ha": 228000
+            "superficie_fiscal_bbnn_ha": 228000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -1531,7 +1542,8 @@
             "concesiones_mineras_exploracion": 113,
             "superficie_minera_ha": 47488,
             "superficie_snaspe_ha": 182000,
-            "superficie_fiscal_bbnn_ha": 228000
+            "superficie_fiscal_bbnn_ha": 228000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -1544,7 +1556,8 @@
             "concesiones_mineras_exploracion": 111,
             "superficie_minera_ha": 46816,
             "superficie_snaspe_ha": 182000,
-            "superficie_fiscal_bbnn_ha": 228000
+            "superficie_fiscal_bbnn_ha": 228000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -1557,7 +1570,8 @@
             "concesiones_mineras_exploracion": 109,
             "superficie_minera_ha": 46144,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -1570,7 +1584,8 @@
             "concesiones_mineras_exploracion": 107,
             "superficie_minera_ha": 45472,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -1583,7 +1598,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -1596,7 +1612,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -1609,7 +1626,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -1622,7 +1640,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -1635,7 +1654,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -1648,7 +1668,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -1661,7 +1682,8 @@
             "concesiones_mineras_exploracion": 105,
             "superficie_minera_ha": 44800,
             "superficie_snaspe_ha": 245000,
-            "superficie_fiscal_bbnn_ha": 165000
+            "superficie_fiscal_bbnn_ha": 165000,
+            "origen": "ancla"
           }
         ]
       },
@@ -1728,7 +1750,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 3655,
             "superficie_snaspe_ha": 185000,
-            "superficie_fiscal_bbnn_ha": 210000
+            "superficie_fiscal_bbnn_ha": 210000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -1741,7 +1764,8 @@
             "concesiones_mineras_exploracion": 19,
             "superficie_minera_ha": 3604,
             "superficie_snaspe_ha": 185000,
-            "superficie_fiscal_bbnn_ha": 210000
+            "superficie_fiscal_bbnn_ha": 210000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -1754,7 +1778,8 @@
             "concesiones_mineras_exploracion": 19,
             "superficie_minera_ha": 3553,
             "superficie_snaspe_ha": 185000,
-            "superficie_fiscal_bbnn_ha": 210000
+            "superficie_fiscal_bbnn_ha": 210000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -1767,7 +1792,8 @@
             "concesiones_mineras_exploracion": 19,
             "superficie_minera_ha": 3502,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -1780,7 +1806,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3451,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -1793,7 +1820,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -1806,7 +1834,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -1819,7 +1848,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -1832,7 +1862,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -1845,7 +1876,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -1858,7 +1890,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -1871,7 +1904,8 @@
             "concesiones_mineras_exploracion": 18,
             "superficie_minera_ha": 3400,
             "superficie_snaspe_ha": 235000,
-            "superficie_fiscal_bbnn_ha": 160000
+            "superficie_fiscal_bbnn_ha": 160000,
+            "origen": "ancla"
           }
         ]
       },
@@ -2184,7 +2218,8 @@
             "concesiones_mineras_exploracion": 28,
             "superficie_minera_ha": 10535,
             "superficie_snaspe_ha": 1890000,
-            "superficie_fiscal_bbnn_ha": 650000
+            "superficie_fiscal_bbnn_ha": 650000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -2197,7 +2232,8 @@
             "concesiones_mineras_exploracion": 27,
             "superficie_minera_ha": 10388,
             "superficie_snaspe_ha": 1890000,
-            "superficie_fiscal_bbnn_ha": 650000
+            "superficie_fiscal_bbnn_ha": 650000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -2210,7 +2246,8 @@
             "concesiones_mineras_exploracion": 26,
             "superficie_minera_ha": 10241,
             "superficie_snaspe_ha": 1890000,
-            "superficie_fiscal_bbnn_ha": 650000
+            "superficie_fiscal_bbnn_ha": 650000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -2223,7 +2260,8 @@
             "concesiones_mineras_exploracion": 26,
             "superficie_minera_ha": 10094,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -2236,7 +2274,8 @@
             "concesiones_mineras_exploracion": 26,
             "superficie_minera_ha": 9947,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -2249,7 +2288,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -2262,7 +2302,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -2275,7 +2316,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -2288,7 +2330,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -2301,7 +2344,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -2314,7 +2358,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -2327,7 +2372,8 @@
             "concesiones_mineras_exploracion": 25,
             "superficie_minera_ha": 9800,
             "superficie_snaspe_ha": 2045000,
-            "superficie_fiscal_bbnn_ha": 495000
+            "superficie_fiscal_bbnn_ha": 495000,
+            "origen": "ancla"
           }
         ]
       },
@@ -2624,7 +2670,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 6665,
             "superficie_snaspe_ha": 1180000,
-            "superficie_fiscal_bbnn_ha": 420000
+            "superficie_fiscal_bbnn_ha": 420000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -2637,7 +2684,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 6572,
             "superficie_snaspe_ha": 1180000,
-            "superficie_fiscal_bbnn_ha": 420000
+            "superficie_fiscal_bbnn_ha": 420000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -2650,7 +2698,8 @@
             "concesiones_mineras_exploracion": 21,
             "superficie_minera_ha": 6479,
             "superficie_snaspe_ha": 1180000,
-            "superficie_fiscal_bbnn_ha": 420000
+            "superficie_fiscal_bbnn_ha": 420000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -2663,7 +2712,8 @@
             "concesiones_mineras_exploracion": 21,
             "superficie_minera_ha": 6386,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -2676,7 +2726,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6293,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -2689,7 +2740,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -2702,7 +2754,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -2715,7 +2768,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -2728,7 +2782,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -2741,7 +2796,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -2754,7 +2810,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -2767,7 +2824,8 @@
             "concesiones_mineras_exploracion": 20,
             "superficie_minera_ha": 6200,
             "superficie_snaspe_ha": 1420000,
-            "superficie_fiscal_bbnn_ha": 180000
+            "superficie_fiscal_bbnn_ha": 180000,
+            "origen": "ancla"
           }
         ]
       },
@@ -2899,7 +2957,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 322,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -2912,7 +2971,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 318,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -2925,7 +2985,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 314,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -2938,7 +2999,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 309,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -2951,7 +3013,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 304,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -2964,7 +3027,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -2977,7 +3041,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -2990,7 +3055,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -3003,7 +3069,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -3016,7 +3083,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -3029,7 +3097,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -3042,7 +3111,8 @@
             "concesiones_mineras_exploracion": 2,
             "superficie_minera_ha": 300,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 28000
+            "superficie_fiscal_bbnn_ha": 28000,
+            "origen": "ancla"
           }
         ]
       },
@@ -3111,7 +3181,8 @@
             "concesiones_mineras_exploracion": 156,
             "superficie_minera_ha": 73638,
             "superficie_snaspe_ha": 195000,
-            "superficie_fiscal_bbnn_ha": 215000
+            "superficie_fiscal_bbnn_ha": 215000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -3124,7 +3195,8 @@
             "concesiones_mineras_exploracion": 153,
             "superficie_minera_ha": 72610,
             "superficie_snaspe_ha": 195000,
-            "superficie_fiscal_bbnn_ha": 215000
+            "superficie_fiscal_bbnn_ha": 215000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -3137,7 +3209,8 @@
             "concesiones_mineras_exploracion": 151,
             "superficie_minera_ha": 71582,
             "superficie_snaspe_ha": 195000,
-            "superficie_fiscal_bbnn_ha": 215000
+            "superficie_fiscal_bbnn_ha": 215000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -3150,7 +3223,8 @@
             "concesiones_mineras_exploracion": 148,
             "superficie_minera_ha": 70555,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -3163,7 +3237,8 @@
             "concesiones_mineras_exploracion": 145,
             "superficie_minera_ha": 69528,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -3176,7 +3251,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -3189,7 +3265,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -3202,7 +3279,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -3215,7 +3293,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -3228,7 +3307,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -3241,7 +3321,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -3254,7 +3335,8 @@
             "concesiones_mineras_exploracion": 142,
             "superficie_minera_ha": 68500,
             "superficie_snaspe_ha": 348000,
-            "superficie_fiscal_bbnn_ha": 62000
+            "superficie_fiscal_bbnn_ha": 62000,
+            "origen": "ancla"
           }
         ]
       },
@@ -3324,7 +3406,8 @@
             "concesiones_mineras_exploracion": 24,
             "superficie_minera_ha": 17630,
             "superficie_snaspe_ha": 172000,
-            "superficie_fiscal_bbnn_ha": 185000
+            "superficie_fiscal_bbnn_ha": 185000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -3337,7 +3420,8 @@
             "concesiones_mineras_exploracion": 24,
             "superficie_minera_ha": 17384,
             "superficie_snaspe_ha": 172000,
-            "superficie_fiscal_bbnn_ha": 185000
+            "superficie_fiscal_bbnn_ha": 185000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -3350,7 +3434,8 @@
             "concesiones_mineras_exploracion": 23,
             "superficie_minera_ha": 17138,
             "superficie_snaspe_ha": 172000,
-            "superficie_fiscal_bbnn_ha": 185000
+            "superficie_fiscal_bbnn_ha": 185000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -3363,7 +3448,8 @@
             "concesiones_mineras_exploracion": 23,
             "superficie_minera_ha": 16892,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -3376,7 +3462,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16646,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -3389,7 +3476,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -3402,7 +3490,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -3415,7 +3504,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -3428,7 +3518,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -3441,7 +3532,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -3454,7 +3546,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -3467,7 +3560,8 @@
             "concesiones_mineras_exploracion": 22,
             "superficie_minera_ha": 16400,
             "superficie_snaspe_ha": 285000,
-            "superficie_fiscal_bbnn_ha": 72000
+            "superficie_fiscal_bbnn_ha": 72000,
+            "origen": "ancla"
           }
         ]
       },
@@ -3534,7 +3628,8 @@
             "concesiones_mineras_exploracion": 13,
             "superficie_minera_ha": 4408,
             "superficie_snaspe_ha": 265000,
-            "superficie_fiscal_bbnn_ha": 345000
+            "superficie_fiscal_bbnn_ha": 345000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -3547,7 +3642,8 @@
             "concesiones_mineras_exploracion": 13,
             "superficie_minera_ha": 4346,
             "superficie_snaspe_ha": 265000,
-            "superficie_fiscal_bbnn_ha": 345000
+            "superficie_fiscal_bbnn_ha": 345000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -3560,7 +3656,8 @@
             "concesiones_mineras_exploracion": 13,
             "superficie_minera_ha": 4284,
             "superficie_snaspe_ha": 265000,
-            "superficie_fiscal_bbnn_ha": 345000
+            "superficie_fiscal_bbnn_ha": 345000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -3573,7 +3670,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4223,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -3586,7 +3684,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4162,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -3599,7 +3698,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -3612,7 +3712,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -3625,7 +3726,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -3638,7 +3740,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -3651,7 +3754,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -3664,7 +3768,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -3677,7 +3782,8 @@
             "concesiones_mineras_exploracion": 12,
             "superficie_minera_ha": 4100,
             "superficie_snaspe_ha": 525000,
-            "superficie_fiscal_bbnn_ha": 85000
+            "superficie_fiscal_bbnn_ha": 85000,
+            "origen": "ancla"
           }
         ]
       },
@@ -3742,7 +3848,8 @@
             "concesiones_mineras_exploracion": 7,
             "superficie_minera_ha": 2365,
             "superficie_snaspe_ha": 680000,
-            "superficie_fiscal_bbnn_ha": 120000
+            "superficie_fiscal_bbnn_ha": 120000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -3755,7 +3862,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2332,
             "superficie_snaspe_ha": 680000,
-            "superficie_fiscal_bbnn_ha": 120000
+            "superficie_fiscal_bbnn_ha": 120000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -3768,7 +3876,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2299,
             "superficie_snaspe_ha": 680000,
-            "superficie_fiscal_bbnn_ha": 120000
+            "superficie_fiscal_bbnn_ha": 120000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -3781,7 +3890,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2266,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -3794,7 +3904,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2233,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -3807,7 +3918,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -3820,7 +3932,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -3833,7 +3946,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -3846,7 +3960,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -3859,7 +3974,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -3872,7 +3988,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -3885,7 +4002,8 @@
             "concesiones_mineras_exploracion": 6,
             "superficie_minera_ha": 2200,
             "superficie_snaspe_ha": 692000,
-            "superficie_fiscal_bbnn_ha": 108000
+            "superficie_fiscal_bbnn_ha": 108000,
+            "origen": "ancla"
           }
         ]
       },
@@ -3972,7 +4090,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1290,
             "superficie_snaspe_ha": 820000,
-            "superficie_fiscal_bbnn_ha": 182000
+            "superficie_fiscal_bbnn_ha": 182000,
+            "origen": "ancla"
           },
           {
             "ano": 2016,
@@ -3985,7 +4104,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1272,
             "superficie_snaspe_ha": 820000,
-            "superficie_fiscal_bbnn_ha": 182000
+            "superficie_fiscal_bbnn_ha": 182000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2017,
@@ -3998,7 +4118,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1254,
             "superficie_snaspe_ha": 820000,
-            "superficie_fiscal_bbnn_ha": 182000
+            "superficie_fiscal_bbnn_ha": 182000,
+            "origen": "interpolado"
           },
           {
             "ano": 2018,
@@ -4011,7 +4132,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1236,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2019,
@@ -4024,7 +4146,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1218,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2020,
@@ -4037,7 +4160,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "ajustado_por_evento"
           },
           {
             "ano": 2021,
@@ -4050,7 +4174,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2022,
@@ -4063,7 +4188,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2023,
@@ -4076,7 +4202,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2024,
@@ -4089,7 +4216,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2025,
@@ -4102,7 +4230,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "interpolado"
           },
           {
             "ano": 2026,
@@ -4115,7 +4244,8 @@
             "concesiones_mineras_exploracion": 3,
             "superficie_minera_ha": 1200,
             "superficie_snaspe_ha": 845000,
-            "superficie_fiscal_bbnn_ha": 157000
+            "superficie_fiscal_bbnn_ha": 157000,
+            "origen": "ancla"
           }
         ]
       },
