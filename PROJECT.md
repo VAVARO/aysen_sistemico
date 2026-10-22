@@ -42,7 +42,7 @@
 | M1 | Base Comunas Aysén (`data/comunas_aysen.json`) | Build official 10 comunas dataset (Censo 2024, CASEN 2022, CONAF, connectivity, critical equipment) with zero nulls | None | DONE |
 | M2 | Series Prospectivas (`data/series_prospectivas.json`) | Build 18 strategic series with historical data, projections to 2030-2035, and 4 Superforecasting questions | M1 | DONE |
 | M3 | Rediseño Atlas Territorial (`mapa_territorial.html`) | Implement 3 modes (Comunas, Retos & Proyecciones, Descargas), CARTO Voyager key, eradicate AI slop, preserve contractual DOM IDs | M1, M2 | DONE |
-| M4 | Arnés de Integridad y Verificación E2E (`scripts/test_fuentes_integridad.py`) | Extend test suite to validate 10 comunas, 18 series, math consistency, CSV BOM, and run full test suites | M1, M2, M3 | IN_PROGRESS |
+| M4 | Arnés de Integridad y Verificación E2E (`scripts/test_fuentes_integridad.py`) | Extend test suite to validate 10 comunas, 18 series, math consistency, CSV BOM, and run full test suites | M1, M2, M3 | DONE |
 
 ## Interface Contracts
 ### `data/comunas_aysen.json` Contract

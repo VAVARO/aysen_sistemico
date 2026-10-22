@@ -44,7 +44,8 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
 - **Validador Data Lake (WP_01 a WP_07)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" scripts/validate_data_lake.py --all`
 - **Suite Editorial (8 checks)**: `& "C:\Users\alvar\.local\bin\python3.11.exe" tests/verify_m1_editorial.py`
 
-## Mapa de Datos Consolidados (Data Lake 100% Verificado)
+## Mapa de Datos Consolidados (Data Lake con Trazabilidad Declarada por Nodo)
+Datos institucionales con trazabilidad declarada por nodo; las series anuales intermedias de WP_02 y WP_03 están reconstruidas por interpolación entre años ancla (cada punto lleva `origen`: `observado` o `interpolado`).
 | Ruta | Contenido |
 |---|---|
 | `data/aysen_hubs_data.js` | Bundle compilado frontend: 7 Hubs, 31 Nodos, 10 Comunas (`window.AYSEN_HUBS_DATA`) |

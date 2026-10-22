@@ -261,7 +261,7 @@ class TestMilestone1Challenger(unittest.TestCase):
 
     def test_clear_all_resets_slicer_and_exclusion(self):
         """clearAll() debe restablecer AppState.territorialFilter a 'all', select.value a 'all' y apagar exclusión."""
-        m = re.search(r"function clearAll\(\)\s*\{([\s\S]+?)\n      \}", self.html)
+        m = re.search(r"function clearAll\((?:opts = \{\})?\)\s*\{([\s\S]+?)\n      \}", self.html)
         self.assertIsNotNone(m, "Debe encontrarse function clearAll()")
         body = m.group(1)
 

@@ -19,7 +19,12 @@
     <!-- Systemic Atlas CSS (WP_07 Apple Design + Emil Kowalski Polish) -->
     <link rel="stylesheet" href="js/systemic_atlas.css" />
 
-    <style>
+    <link rel="stylesheet" href="js/cabecera_global.css">
+  <style>
+    /* Posicion de la cabecera en esta pagina (los estilos viven en js/cabecera_global.css) */
+    .brand-header { z-index: 1000; }
+  </style>
+  <style>
         :root {
             /* Editorial Canvas & Surfaces */
             --bg-page: #FBFBFA;              /* Warm newsprint background */
@@ -79,165 +84,7 @@
         }
 
         /* Cabecera Global Unificada (56px) - Identidad Editorial Austral */
-        header.brand-header {
-            height: 56px;
-            min-height: 56px;
-            background: rgba(252, 249, 248, 0.94);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(28, 27, 27, 0.09);
-            padding: 0 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            z-index: 1000;
-        }
-
-        header.brand-header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #00357f, #0059c5, #00357f);
-            z-index: 50;
-        }
-
-        .brand-header-inner {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .brand-left {
-            display: flex;
-            align-items: center;
-            gap: 0.65rem;
-            min-width: 0;
-        }
-
-        .brand-dot {
-            display: inline-block;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background-color: #00357f;
-            flex-shrink: 0;
-            box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.15);
-        }
-
-        .brand-author-name {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(0.92rem, 3.8vw, 1.2rem);
-            font-weight: 700;
-            letter-spacing: -0.015em;
-            color: #1c1b1b;
-            text-decoration: none;
-            line-height: 1;
-            white-space: nowrap;
-            transition: color 0.15s ease;
-        }
-
-        .brand-author-name:hover {
-            color: #00357f;
-        }
-
-        .brand-divider {
-            color: rgba(28, 27, 27, 0.25);
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            font-weight: 300;
-            user-select: none;
-        }
-
-        .brand-module-title {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: #66625f;
-            white-space: nowrap;
-        }
-
-        .brand-right {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        .brand-nav-pills {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .brand-pill {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            padding: 0.3rem 0.6rem;
-            border-radius: 2px;
-            border: 1px solid transparent;
-            background: transparent;
-            text-decoration: none;
-            color: #4a4745;
-            transition: all 0.15s ease;
-            white-space: nowrap;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            line-height: 1.2;
-        }
-
-        .brand-pill:hover {
-            color: #00357f;
-            background: rgba(0, 53, 127, 0.04);
-            border-color: rgba(0, 53, 127, 0.15);
-        }
-
-        .brand-pill.active {
-            color: #00357f;
-            background: rgba(0, 53, 127, 0.08);
-            border-color: rgba(0, 53, 127, 0.22);
-            font-weight: 600;
-        }
-
-        .brand-pill .pill-arrow {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-        }
-
         /* Universal Mobile Navigation (#btnMobileMenu & #mobileNavDrawer) */
-        .mobile-menu-btn {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            min-width: 44px;
-            min-height: 44px;
-            background: transparent;
-            border: 1px solid rgba(0, 53, 127, 0.16);
-            border-radius: 4px;
-            color: #00357f;
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.2s ease;
-            touch-action: manipulation;
-        }
-
-        .mobile-menu-btn:hover {
-            background: rgba(0, 53, 127, 0.08);
-            border-color: #00357f;
-        }
-
         .mobile-nav-drawer {
             position: fixed;
             inset: 0;
@@ -1379,6 +1226,7 @@
             }
         }
     </style>
+<script src="js/cabecera_global.js"></script>
 </head>
 <body>
 
@@ -6344,5 +6192,10 @@
     </script>
     <!-- Systemic Atlas Engine (WP_07) -->
     <script src="js/systemic_atlas.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      montarCabecera({ tituloModulo: 'Visor Territorial de Aysén', activo: null });
+    });
+  </script>
 </body>
 </html>

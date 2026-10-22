@@ -15,3 +15,7 @@ Thumbs.db
 scratch/
 CONTEXT_NEXT_CHAT.md
 PROMPT_ORQUESTADOR_FLASH.md
+
+# Artefactos regenerados por los scripts de verificacion y el watchdog de fuentes
+data/data_health_report.json
+data/systemic/source_watch_manifest.json

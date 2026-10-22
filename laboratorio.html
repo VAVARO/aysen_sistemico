@@ -35,6 +35,11 @@
   <!-- Motor Semántico NL2Chart -->
   <script src="js/nl2chart_engine.js"></script>
 
+  <link rel="stylesheet" href="js/cabecera_global.css">
+  <style>
+    /* Posicion de la cabecera en esta pagina (los estilos viven en js/cabecera_global.css) */
+    .brand-header { height: var(--header-h); }
+  </style>
   <style>
     :root {
       --bg-canvas: #fcf9f8;
@@ -84,134 +89,6 @@
     /* ==========================================================================
        CABECERA GLOBAL UNIFICADA (56px) - "CUADERNO EDITORIAL Y CARTOGRÁFICO"
        ========================================================================== */
-    .brand-header {
-      height: var(--header-h);
-      background: rgba(252, 249, 248, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(28, 27, 27, 0.09);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1.25rem;
-      z-index: 100;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    .brand-header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #00357f, #0059c5, #00357f);
-      z-index: 101;
-    }
-
-    .brand-header-inner {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand-left {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      min-width: 0;
-    }
-
-    .brand-dot {
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background-color: var(--cobalt);
-      flex-shrink: 0;
-      box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.15);
-    }
-
-    .brand-author-name {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      color: var(--ink);
-      text-decoration: none;
-      line-height: 1;
-      white-space: nowrap;
-      transition: color 0.15s ease;
-    }
-
-    .brand-author-name:hover {
-      color: var(--cobalt);
-    }
-
-    .brand-divider {
-      color: rgba(28, 27, 27, 0.25);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 300;
-      user-select: none;
-    }
-
-    .brand-module-title {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--ink-secondary);
-      white-space: nowrap;
-    }
-
-    .brand-nav-pills {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .brand-pill {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      padding: 0.3rem 0.6rem;
-      border-radius: 2px;
-      border: 1px solid transparent;
-      background: transparent;
-      text-decoration: none;
-      color: var(--ink-secondary);
-      transition: all 0.15s ease;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      line-height: 1.2;
-    }
-
-    .brand-pill:hover {
-      color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.04);
-      border-color: rgba(0, 53, 127, 0.15);
-    }
-
-    .brand-pill.active {
-      color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.08);
-      border-color: rgba(0, 53, 127, 0.22);
-      font-weight: 600;
-    }
-
-    .brand-pill .pill-arrow {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-    }
-
     /* ==========================================================================
        BARRA DE ACCIONES DEL LIENZO (40px)
        ========================================================================== */
@@ -2668,7 +2545,197 @@
       .studio-toast { animation: none; }
       .studio-toast.leaving { transition: none; }
     }
+
+    /* ===================================================================
+       ESTADO VACIO: TRES PASOS PARA APRENDER EL GESTO CENTRAL
+       =================================================================== */
+    .sr-only-txt {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .hero-steps {
+      list-style: none;
+      margin: 0 auto 1.25rem;
+      padding: 0;
+      max-width: 520px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .hero-step { display: flex; gap: 0.85rem; align-items: flex-start; }
+
+    .hero-step-num {
+      flex-shrink: 0;
+      width: 1.6rem;
+      height: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: #00357f;
+      border: 1px solid rgba(0, 53, 127, 0.35);
+      border-radius: 2px;
+    }
+
+    .hero-step-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.84rem;
+      color: #1c1b1b;
+      align-items: flex-start;
+    }
+
+    .hero-step-text { font-size: 0.78rem; line-height: 1.5; color: #4a4745; }
+
+    .hero-step-action,
+    .hero-secondary-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #00357f;
+      background: transparent;
+      border: none;
+      padding: 0.3rem 0;
+      min-height: 32px;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .hero-step-action:hover,
+    .hero-secondary-link:hover { color: #0059c5; }
+
+    .hero-step-action:focus-visible,
+    .hero-secondary-link:focus-visible {
+      outline: 2px solid #0059c5;
+      outline-offset: 2px;
+    }
+
+    .hero-secondary-link { color: #4a4745; }
+
+    .hero-drag-demo {
+      position: relative;
+      display: block;
+      width: 220px;
+      height: 30px;
+    }
+
+    .hero-drag-target {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 70px;
+      height: 28px;
+      border: 1px dashed rgba(0, 53, 127, 0.45);
+      border-radius: 2px;
+    }
+
+    .hero-drag-chip {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 62px;
+      height: 20px;
+      background: rgba(0, 53, 127, 0.12);
+      border: 1px solid #00357f;
+      border-radius: 2px;
+      animation: heroDragGesture 2s ease-in-out infinite;
+    }
+
+    @keyframes heroDragGesture {
+      0%, 15%  { transform: translateX(0); opacity: 1; }
+      70%, 85% { transform: translateX(152px); opacity: 1; }
+      100%     { transform: translateX(152px); opacity: 0; }
+    }
+
+    /* Panel del lienzo enfocable y modo desplazar con barra espaciadora */
+    #panelLienzo:focus-visible {
+      outline: 2px solid #0059c5;
+      outline-offset: -2px;
+    }
+
+    .studio-widget-card:focus-visible {
+      outline: 2px solid #0059c5;
+      outline-offset: 2px;
+    }
+
+    .studio-canvas-container.space-pan,
+    .studio-canvas-container.space-pan * { cursor: grab !important; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-drag-chip { animation: none; transform: translateX(76px); }
+    }
+
+    /* ===================================================================
+       BREAKPOINT 1280px: compactar la barra y el catalogo
+       =================================================================== */
+    @media (max-width: 1280px) {
+      :root { --sidebar-w: 280px; }
+      .btn-action-tool { padding-left: 0.6rem; padding-right: 0.6rem; }
+      .slicer-select { max-width: 150px !important; }
+    }
+
+    /* ===================================================================
+       BAJO 768px: LISTA VERTICAL APILADA (sin lienzo con paneo)
+       Un lienzo espacial infinito no funciona con el pulgar.
+       =================================================================== */
+    @media (max-width: 768px) {
+      #panelLienzo {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        cursor: auto;
+      }
+
+      #canvasGridStage {
+        position: relative !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        padding: 0.75rem 0.75rem 4rem;
+      }
+
+      #studioConnectionsSvg,
+      .widget-connect-port,
+      .card-resize-handle,
+      #canvaFloatingToolbar .toolbar-drag-handle { display: none !important; }
+
+      .studio-widget-card,
+      .studio-reflection-card {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 320px !important;
+      }
+
+      .widget-stage-display { min-height: 240px; }
+
+      #mobileStudioNav .mob-dock-btn {
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
   </style>
+<script src="js/cabecera_global.js"></script>
 </head>
 
 <body>
@@ -2712,15 +2779,15 @@
 
       <!-- Menú Consolidado + Tarjeta (Gráfico, Línea de Tiempo, Mapa, Tabla, Indicador) -->
       <div class="dropdown-add-card" id="dropdownAddCard">
-        <button type="button" class="btn-action-tool primary" id="btnAddCardDropdownBtn" title="Crear nueva tarjeta en el lienzo">
+        <button type="button" class="btn-action-tool primary" id="btnAddCardDropdownBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="addCardDropdownMenu" title="Crear nueva tarjeta en el lienzo">
           <span>+ Tarjeta ▾</span>
         </button>
-        <div class="dropdown-project-content" id="addCardDropdownMenu">
-          <button type="button" class="dropdown-project-item" id="btnAddChart">+ Gráfico</button>
-          <button type="button" class="dropdown-project-item" id="btnAddTimeline">+ Línea de Tiempo (2015–2026)</button>
-          <button type="button" class="dropdown-project-item" id="btnAddMap">+ Mapa Territorial</button>
-          <button type="button" class="dropdown-project-item" id="btnAddTable">+ Tabla de Datos</button>
-          <button type="button" class="dropdown-project-item" id="btnAddKPI">+ Indicador KPI</button>
+        <div class="dropdown-project-content" id="addCardDropdownMenu" role="menu" aria-label="Crear tarjeta">
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnAddChart">+ Gráfico</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnAddTimeline">+ Línea de Tiempo (2015–2026)</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnAddMap">+ Mapa Territorial</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnAddTable">+ Tabla de Datos</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnAddKPI">+ Indicador KPI</button>
         </div>
       </div>
 
@@ -2798,13 +2865,13 @@
 
       <!-- Menú Proyecto (Guardar, Cargar, Reporte) -->
       <div class="dropdown-project" id="dropdownProjectWrap">
-        <button class="btn-action-tool" id="btnProjectMenu">
+        <button class="btn-action-tool" id="btnProjectMenu" aria-haspopup="menu" aria-expanded="false" aria-controls="projectMenuDropdown">
           <span>Proyecto ▾</span>
         </button>
-        <div class="dropdown-project-content" id="projectMenuDropdown">
-          <button class="dropdown-project-item" id="btnExportarJson">Guardar Proyecto (.json)</button>
-          <button class="dropdown-project-item" id="btnImportarJson">Abrir Proyecto (.json)</button>
-          <button class="dropdown-project-item" id="btnExportarReporte">Exportar Reporte (PDF)</button>
+        <div class="dropdown-project-content" id="projectMenuDropdown" role="menu" aria-label="Proyecto">
+          <button class="dropdown-project-item" role="menuitem" id="btnExportarJson">Guardar Proyecto (.json)</button>
+          <button class="dropdown-project-item" role="menuitem" id="btnImportarJson">Abrir Proyecto (.json)</button>
+          <button class="dropdown-project-item" role="menuitem" id="btnExportarReporte">Exportar Reporte (PDF)</button>
         </div>
       </div>
 
@@ -2850,7 +2917,8 @@
   <div class="studio-app-shell">
 
     <!-- PANEL 1: CATÁLOGO DE VARIABLES -->
-    <aside class="studio-sidebar" id="panelCatalogo">
+    <aside class="studio-sidebar" id="panelCatalogo" role="dialog" aria-modal="true" aria-labelledby="catalogoTitulo">
+      <h2 class="sr-only-txt" id="catalogoTitulo">Catálogo de variables</h2>
       <div class="sidebar-search-box">
         <input type="text" class="sidebar-search-input" id="inputBuscarVariable"
           placeholder="Buscar datos o comunas..." />
@@ -2869,7 +2937,7 @@
     </aside>
 
     <!-- PANEL 2: LIENZO ESPACIAL 2D (Miro + Canva) -->
-    <main class="studio-canvas-container" id="panelLienzo">
+    <main class="studio-canvas-container" id="panelLienzo" tabindex="0" aria-label="Lienzo analítico. Tab recorre las ventanas; la tecla ? muestra los atajos.">
       <!-- Capa de Conexiones Bézier SVG -->
       <svg class="canvas-connections-svg" id="studioConnectionsSvg"></svg>
 
@@ -2883,11 +2951,35 @@
         <h2>Laboratorio Territorial de Aysén</h2>
         <p>
           Lienzo analítico para modelar, cruzar y reflexionar sobre la dinámica sistémica de las 10 comunas de la
-          región. Explora los 31 nodos de datos o selecciona un escenario guiado.
+          región. Tres pasos para empezar:
         </p>
+        <ol class="hero-steps">
+          <li class="hero-step">
+            <span class="hero-step-num">1</span>
+            <div class="hero-step-body">
+              <strong>Abre el catálogo de variables</strong>
+              <button type="button" class="hero-step-action" id="btnHeroOpenCatalog">Abrir catálogo</button>
+            </div>
+          </li>
+          <li class="hero-step">
+            <span class="hero-step-num">2</span>
+            <div class="hero-step-body">
+              <strong>Arrastra una variable al lienzo</strong>
+              <span class="hero-drag-demo" aria-hidden="true"><span class="hero-drag-chip"></span><span class="hero-drag-target"></span></span>
+              <button type="button" class="hero-step-action" id="btnHeroInit">O crea una tarjeta vacía</button>
+            </div>
+          </li>
+          <li class="hero-step">
+            <span class="hero-step-num">3</span>
+            <div class="hero-step-body">
+              <strong>Conecta dos tarjetas para cruzarlas</strong>
+              <span class="hero-step-text">Arrastra desde el puerto lateral de una tarjeta hasta otra y elige cómo cruzar sus variables.</span>
+            </div>
+          </li>
+        </ol>
         <div class="hero-btn-row">
-          <button class="btn-action-tool primary" id="btnHeroInit">Cargar Escenario Comunal</button>
           <button class="btn-action-tool" id="btnHeroEmpty">Comenzar en Blanco</button>
+          <button type="button" class="hero-secondary-link" id="btnHeroScenario">Cargar Escenario Comunal</button>
         </div>
       </div>
 
@@ -2900,19 +2992,19 @@
           <button class="floating-btn" id="tbBtnScatter" title="Dispersión">Dispersión</button>
           <button class="floating-btn" id="tbBtnMap" title="Mapa Territorial">Mapa</button>
           <button class="floating-btn" id="tbBtnTable" title="Tabla">Tabla</button>
-          <button class="floating-btn" id="tbBtnKPI" title="Indicador">KPI</button>
+          <button class="floating-btn" id="tbBtnKPI" title="Indicador" aria-label="Indicador KPI">KPI</button>
         </div>
 
         <div class="floating-btn-group">
-          <button class="color-swatch-btn" data-color="#00357f" style="background: #00357f;" title="Turismo"></button>
-          <button class="color-swatch-btn" data-color="#0059c5" style="background: #0059c5;"
+          <button class="color-swatch-btn" aria-label="Color Turismo" data-color="#00357f" style="background: #00357f;" title="Turismo"></button>
+          <button class="color-swatch-btn" aria-label="Color Salmonicultura" data-color="#0059c5" style="background: #0059c5;"
             title="Salmonicultura"></button>
-          <button class="color-swatch-btn" data-color="#0284c7" style="background: #0284c7;" title="Energía"></button>
-          <button class="color-swatch-btn" data-color="#4338ca" style="background: #4338ca;"
+          <button class="color-swatch-btn" aria-label="Color Energía" data-color="#0284c7" style="background: #0284c7;" title="Energía"></button>
+          <button class="color-swatch-btn" aria-label="Color Gobernanza" data-color="#4338ca" style="background: #4338ca;"
             title="Gobernanza"></button>
-          <button class="color-swatch-btn" data-color="#0f766e" style="background: #0f766e;" title="Inversión"></button>
-          <button class="color-swatch-btn" data-color="#2563eb" style="background: #2563eb;" title="Social"></button>
-          <button class="color-swatch-btn" data-color="#047857" style="background: #047857;"
+          <button class="color-swatch-btn" aria-label="Color Inversión" data-color="#0f766e" style="background: #0f766e;" title="Inversión"></button>
+          <button class="color-swatch-btn" aria-label="Color Social" data-color="#2563eb" style="background: #2563eb;" title="Social"></button>
+          <button class="color-swatch-btn" aria-label="Color Biodiversidad" data-color="#047857" style="background: #047857;"
             title="Biodiversidad"></button>
         </div>
 
@@ -2920,14 +3012,14 @@
           <button class="floating-btn" id="tbBtnAverage" title="Línea media / 4 cuadrantes">Promedio</button>
           <button class="floating-btn" id="tbBtnTrend" title="Regresión lineal">Tendencia</button>
           <button class="floating-btn" id="tbBtnReflection" title="Invocar tarjeta de reflexión">+ Pregunta</button>
-          <button class="floating-btn" id="tbBtnCsv" title="Descargar CSV con UTF-8 BOM">CSV</button>
+          <button class="floating-btn" id="tbBtnCsv" title="Descargar CSV con UTF-8 BOM" aria-label="Descargar CSV">CSV</button>
           <button class="floating-btn" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del cálculo">Sin Coyhaique</button>
         </div>
 
         <!-- Grupo de Analítica Estilo Power BI: Ranking y Escala -->
         <div class="floating-btn-group" id="tbGroupAnalytics">
           <button class="floating-btn" id="tbBtnSortRank" title="Alternar orden: Canónico / Descendente / Ascendente">Ordenar ↓↑</button>
-          <button class="floating-btn active" id="tbBtnScaleRaw" title="Escala original (Valor Bruto)">123</button>
+          <button class="floating-btn active" id="tbBtnScaleRaw" title="Escala original (Valor Bruto)" aria-label="Escala original, valor bruto">123</button>
           <button class="floating-btn" id="tbBtnScalePct" title="Escala % Total Regional">% Reg</button>
           <button class="floating-btn" id="tbBtnScaleZ" title="Escala Z-Score (Desviaciones estándar)">Z-Score</button>
         </div>
@@ -2936,20 +3028,20 @@
       </div>
 
       <!-- Popover de Sugerencias para Cruzar Variables -->
-      <div class="smart-cross-popover" id="smartPopover">
+      <div class="smart-cross-popover" id="smartPopover" role="menu" aria-label="Variables compatibles para cruzar">
         <div class="popover-header">Variables Compatibles</div>
         <div id="popoverListContainer"></div>
       </div>
 
       <!-- Menú Contextual Personalizado con Clic Derecho -->
-      <div class="canvas-context-menu" id="canvasContextMenu"></div>
+      <div class="canvas-context-menu" id="canvasContextMenu" role="menu" aria-label="Menú del lienzo"></div>
     </main>
 
     <!-- PANEL 3: METAPENSAMIENTO Y BANCO DE 30 PREGUNTAS -->
-    <aside class="studio-metacog-drawer" id="panelMetacognicion">
+    <aside class="studio-metacog-drawer" id="panelMetacognicion" role="dialog" aria-modal="true" aria-labelledby="metacogTitle">
       <div class="metacog-header">
-        <span class="metacog-title">Preguntas Sistémicas</span>
-        <button class="btn-card-ctrl" id="btnCloseMetacog" style="font-size: 0.9rem;">X</button>
+        <span class="metacog-title" id="metacogTitle">Preguntas Sistémicas</span>
+        <button class="btn-card-ctrl" id="btnCloseMetacog" style="font-size: 0.9rem;" aria-label="Cerrar panel de preguntas">X</button>
       </div>
 
       <div class="metacog-body">
@@ -2994,10 +3086,11 @@
       <div class="shortcuts-row"><span>Encuadrar todo</span><kbd>F</kbd></div>
       <div class="shortcuts-row"><span>Restablecer zoom al 100 %</span><kbd>Ctrl + 0</kbd></div>
       <div class="shortcuts-row"><span>Ciclar entre ventanas</span><kbd>Tab</kbd></div>
+      <div class="shortcuts-row"><span>Entrar a los controles de la ventana</span><kbd>Enter</kbd></div>
       <div class="shortcuts-row"><span>Desplazar el lienzo</span><kbd>Espacio + arrastrar</kbd></div>
       <div class="shortcuts-row"><span>Cerrar panel o menú activo</span><kbd>Esc</kbd></div>
       <div class="shortcuts-row"><span>Mostrar esta ayuda</span><kbd>?</kbd></div>
-      <button type="button" class="shortcuts-close" id="btnShortcutsClose">Cerrar</button>
+      <button type="button" class="shortcuts-close" id="btnShortcutsClose" aria-label="Cerrar la ayuda de atajos">Cerrar</button>
     </div>
   </div>
 
@@ -3930,10 +4023,11 @@
             isCollapsed = false;
           } else if (AppState.collapsedHubs && AppState.collapsedHubs[stateKey] !== undefined) {
             isCollapsed = AppState.collapsedHubs[stateKey];
+          } else if (dimFilter === 'holding' || sortedGroupKeys.length === 1) {
+            // El estado colapsado de otras pestañas no debe filtrarse a Holding.
+            isCollapsed = false;
           } else if (AppState.collapsedHubs && AppState.collapsedHubs[gName] !== undefined) {
             isCollapsed = AppState.collapsedHubs[gName];
-          } else if (dimFilter === 'holding' || sortedGroupKeys.length === 1) {
-            isCollapsed = false;
           } else {
             isCollapsed = (gName !== sortedGroupKeys[0]);
           }
@@ -4103,11 +4197,29 @@
       // =======================================================================
       // 4. MOTOR ESPACIAL DEL LIENZO (PAN, ZOOM Y CENTRADO)
       // =======================================================================
+      /** Bajo 768px el lienzo es una lista vertical apilada: sin paneo, zoom ni arrastre. */
+      function isStackedLayout() {
+        return window.matchMedia('(max-width: 768px)').matches;
+      }
+
       function setupCanvasEngine() {
         const viewport = document.getElementById('panelLienzo');
         const stage = document.getElementById('canvasGridStage');
 
+        // Barra espaciadora + arrastre: desplaza el lienzo incluso sobre una ventana.
         viewport.addEventListener('mousedown', (e) => {
+          if (!AppState.spaceHeld || e.button !== 0 || isStackedLayout()) return;
+          AppState.isPanning = true;
+          AppState.panMoved = false;
+          AppState.pointerStart = { x: e.clientX, y: e.clientY };
+          AppState.panStart = { x: e.clientX - AppState.transform.x, y: e.clientY - AppState.transform.y };
+          viewport.classList.add('panning');
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }, true);
+
+        viewport.addEventListener('mousedown', (e) => {
+          if (isStackedLayout()) return;
           if (e.button === 0 && (e.target === viewport || e.target === stage || e.target.id === 'studioConnectionsSvg')) {
             AppState.isPanning = true;
             AppState.panMoved = false;
@@ -4150,6 +4262,7 @@
         });
 
         viewport.addEventListener('wheel', (e) => {
+          if (isStackedLayout()) return;
           const scrollable = e.target.closest('.table-container-box, .empty-var-list, .smart-cross-popover, .clean-table, .sidebar-items-scroll');
           if (scrollable && !e.ctrlKey && !e.metaKey) {
             return;
@@ -4177,6 +4290,7 @@
         let initialTouchScale = 1;
 
         viewport.addEventListener('touchstart', (e) => {
+          if (isStackedLayout()) return;
           if (e.touches.length === 1) {
             const touch = e.touches[0];
             if (touch.target === viewport || touch.target === stage || touch.target.id === 'studioConnectionsSvg') {
@@ -4245,7 +4359,7 @@
           const worldX = (e.clientX - rect.left - AppState.transform.x) / AppState.transform.scale;
           const worldY = (e.clientY - rect.top - AppState.transform.y) / AppState.transform.scale;
 
-          createWidget('chart', {
+          crearTarjeta('chart', 'arrastre', {
             varX: varId,
             x: Math.round(worldX - 180),
             y: Math.round(worldY - 40)
@@ -4353,6 +4467,34 @@
         updateStatus();
         autoSave();
         updateConnections();
+        return widget;
+      }
+
+      /**
+       * Unico punto de entrada para crear una tarjeta. Los cuatro accesos
+       * (menu "+ Tarjeta", menu contextual, estado vacio y barra movil) y el
+       * soltar de variables llaman aqui: comparten validacion, posicion por
+       * defecto y registro en el historial de deshacer.
+       * @param {string} tipo   'chart' | 'map' | 'table' | 'kpi'
+       * @param {string} origen 'barra' | 'contexto' | 'vacio' | 'movil' | 'arrastre'
+       * @param {object} opts   varX, chartType, title, w, h, x, y (esquina sup. izq.)
+       */
+      function crearTarjeta(tipo = 'chart', origen = 'barra', opts = {}) {
+        const tiposValidos = ['chart', 'map', 'table', 'kpi'];
+        const tipoFinal = tiposValidos.includes(tipo) ? tipo : 'chart';
+
+        const cfg = { varX: null, ...opts };
+        if (cfg.x === undefined || cfg.y === undefined) {
+          const center = getCanvasCenterWorld();
+          const ancho = cfg.w || 500;
+          const alto = cfg.h || 370;
+          if (cfg.x === undefined) cfg.x = Math.round(center.x - ancho / 2);
+          if (cfg.y === undefined) cfg.y = Math.round(center.y - alto / 2);
+        }
+
+        pushHistory('crear ventana');
+        const widget = createWidget(tipoFinal, cfg);
+        if (widget) widget.origen = origen;
         return widget;
       }
 
@@ -4528,6 +4670,9 @@
         const card = document.createElement('div');
         card.className = 'studio-widget-card';
         card.id = `widget-card-${w.id}`;
+        card.tabIndex = 0;
+        card.setAttribute('role', 'group');
+        card.setAttribute('aria-label', `Ventana: ${w.title}`);
         card.style.left = `${w.x}px`;
         card.style.top = `${w.y}px`;
         card.style.width = `${w.w}px`;
@@ -4627,6 +4772,7 @@
 
         header.addEventListener('mousedown', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill')) return;
+          if (isStackedLayout()) return;
           isDragging = true;
           dragOffset.x = e.clientX - w.x * AppState.transform.scale;
           dragOffset.y = e.clientY - w.y * AppState.transform.scale;
@@ -4634,8 +4780,10 @@
           e.stopPropagation();
         });
 
+        let dragHistoryPushed = false;
         window.addEventListener('mousemove', (e) => {
           if (isDragging) {
+            if (!dragHistoryPushed) { pushHistory('mover ventana'); dragHistoryPushed = true; }
             w.x = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
             w.y = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
             card.style.left = `${w.x}px`;
@@ -4649,17 +4797,19 @@
         window.addEventListener('mouseup', () => {
           if (isDragging) {
             isDragging = false;
+            dragHistoryPushed = false;
             handleCardDropCollision(w);
             autoSave();
           }
         });
 
         let isTouchDragging = false;
+        let touchHistoryPushed = false;
         let touchDragOffset = { x: 0, y: 0 };
 
         header.addEventListener('touchstart', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.time-window-pill')) return;
-          if (e.touches.length === 1) {
+          if (e.touches.length === 1 && !isStackedLayout()) {
             const touch = e.touches[0];
             isTouchDragging = true;
             touchDragOffset.x = touch.clientX - w.x * AppState.transform.scale;
@@ -4672,6 +4822,7 @@
         window.addEventListener('touchmove', (e) => {
           if (isTouchDragging && e.touches.length === 1) {
             const touch = e.touches[0];
+            if (!touchHistoryPushed) { pushHistory('mover ventana'); touchHistoryPushed = true; }
             w.x = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
             w.y = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
             card.style.left = `${w.x}px`;
@@ -4684,6 +4835,7 @@
         window.addEventListener('touchend', () => {
           if (isTouchDragging) {
             isTouchDragging = false;
+            touchHistoryPushed = false;
             autoSave();
           }
         });
@@ -4692,6 +4844,7 @@
         const resizeHandle = card.querySelector(`#resize-handle-${w.id}`);
         let isResizing = false;
         let startW, startH, startMouseX, startMouseY;
+        let resizeHistoryPushed = false;
 
         resizeHandle.addEventListener('mousedown', (e) => {
           isResizing = true;
@@ -4704,6 +4857,7 @@
 
         window.addEventListener('mousemove', (e) => {
           if (isResizing) {
+            if (!resizeHistoryPushed) { pushHistory('redimensionar ventana'); resizeHistoryPushed = true; }
             const dx = (e.clientX - startMouseX) / AppState.transform.scale;
             const dy = (e.clientY - startMouseY) / AppState.transform.scale;
             w.w = Math.max(380, Math.round(startW + dx));
@@ -4721,6 +4875,7 @@
         window.addEventListener('mouseup', () => {
           if (isResizing) {
             isResizing = false;
+            resizeHistoryPushed = false;
             autoSave();
           }
         });
@@ -4736,7 +4891,7 @@
         // Semáforo macOS: Rojo (Cerrar)
         card.querySelector(`#btnDelCard-${w.id}`).addEventListener('click', (e) => {
           e.stopPropagation();
-          removeWidget(w.id);
+          deleteWidgetWithUndo(w.id);
         });
 
         // Semáforo macOS: Amarillo (Minimizar)
@@ -4942,6 +5097,8 @@
 
         const pop = document.createElement('div');
         pop.className = 'connection-action-popover';
+        pop.setAttribute('role', 'dialog');
+        pop.setAttribute('aria-label', 'Conectar ventanas');
         pop.style.left = `${Math.min(clientX, window.innerWidth - 250)}px`;
         pop.style.top = `${Math.min(clientY, window.innerHeight - 180)}px`;
 
@@ -4959,8 +5116,11 @@
         `;
 
         document.body.appendChild(pop);
+        const firstConnBtn = pop.querySelector('button');
+        if (firstConnBtn) firstConnBtn.focus({ preventScroll: true });
 
         pop.querySelector('#btnSyncFilter').addEventListener('click', () => {
+          pushHistory('conectar ventanas');
           addConnection(sourceId, targetId, 'sync');
           wSource.syncMode = 'linked';
           wTarget.syncMode = 'linked';
@@ -4982,6 +5142,7 @@
         });
 
         pop.querySelector('#btnFuseVariables').addEventListener('click', () => {
+          pushHistory('conectar ventanas');
           if (wSource.varX) {
             fuseVariableIntoWidget(wTarget, wSource.varX);
           }
@@ -5005,6 +5166,7 @@
       }
 
       function removeConnection(id1, id2) {
+        pushHistory('desconectar ventanas');
         AppState.connections = AppState.connections.filter(c =>
           !((c.from === id1 && c.to === id2) || (c.from === id2 && c.to === id1))
         );
@@ -5131,7 +5293,7 @@
             <div class="subdash-tab ${isActive ? 'active' : ''}" data-subdash-id="${s.id}" title="${s.name}">
               <span class="subdash-name">${s.name}</span>
               <span class="subdash-count">${count}</span>
-              ${canDelete ? `<button class="subdash-close-btn" data-del-subdash="${s.id}" title="Eliminar mesa">×</button>` : ''}
+              ${canDelete ? `<button class="subdash-close-btn" data-del-subdash="${s.id}" title="Eliminar mesa" aria-label="Eliminar mesa de trabajo">×</button>` : ''}
             </div>
           `;
         }).join('');
@@ -5433,7 +5595,7 @@
               <span class="tab-hub-dot" style="background: ${w.color || '#00357f'};"></span>
               <span class="tab-title-text">${w.title}</span>
               ${isMin ? '<span class="tab-minimized-badge">Oculta</span>' : ''}
-              <button class="tab-close-btn" data-close-id="${w.id}" title="Cerrar ventana">x</button>
+              <button class="tab-close-btn" data-close-id="${w.id}" title="Cerrar ventana" aria-label="Cerrar ventana">x</button>
             </div>
           `;
         }).join('');
@@ -5475,6 +5637,7 @@
       function tileWindowsInGrid() {
         const visible = AppState.widgets.filter(w => !w.minimized);
         if (!visible.length) return;
+        pushHistory('ordenar ventanas');
 
         visible.forEach((w, idx) => {
           const col = idx % 2;
@@ -5588,17 +5751,17 @@
           <div class="context-menu-title">${w.title}</div>
           
           ${hasOtherWidgets ? `
-            <div class="context-menu-item" id="ctxConnectWindow">
+            <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxConnectWindow">
               <span>Conectar con otra ventana...</span>
               <span style="font-size: 0.62rem; color: var(--cobalt);">↳ Línea</span>
             </div>
-            <div class="context-menu-item" id="ctxCrossWindow">
+            <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxCrossWindow">
               <span>Cruzar datos con otra ventana...</span>
               <span style="font-size: 0.62rem; color: var(--cobalt);">↳ Cruzar</span>
             </div>
           ` : ''}
 
-          <div class="context-menu-item" id="ctxCrossCatalog">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxCrossCatalog">
             <span>Cruzar con catálogo de datos...</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">+</span>
           </div>
@@ -5612,31 +5775,31 @@
             <button class="btn-sub-format" data-fmt="scatter">Dispersión</button>
             <button class="btn-sub-format" data-fmt="map">Mapa</button>
             <button class="btn-sub-format" data-fmt="table">Tabla</button>
-            <button class="btn-sub-format" data-fmt="kpi">KPI</button>
+            <button class="btn-sub-format" data-fmt="kpi" aria-label="Formato indicador KPI">KPI</button>
           </div>
 
           <div class="context-menu-separator"></div>
 
-          <div class="context-menu-item" id="ctxDuplicateCard">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxDuplicateCard">
             <span>Duplicar ventana al lado</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">Clonar</span>
           </div>
-          <div class="context-menu-item" id="ctxAddReflection">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxAddReflection">
             <span>Agregar pregunta reflexiva</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">?</span>
           </div>
 
           <div class="context-menu-separator"></div>
 
-          <div class="context-menu-item" id="ctxMinimizeCard">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxMinimizeCard">
             <span>Minimizar a barra de pestañas</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">-</span>
           </div>
-          <div class="context-menu-item" id="ctxMaximizeCard">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxMaximizeCard">
             <span>${w.maximized ? 'Restaurar tamaño' : 'Maximizar ventana'}</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">+</span>
           </div>
-          <div class="context-menu-item" id="ctxExportCsv">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxExportCsv">
             <span>Exportar datos (CSV)</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">CSV</span>
           </div>
@@ -5698,6 +5861,7 @@
         });
 
         menu.querySelector('#ctxDuplicateCard').addEventListener('click', () => {
+          pushHistory('duplicar ventana');
           const dup = createWidget(w.type, {
             varX: w.varX,
             varY: w.varY,
@@ -5735,7 +5899,7 @@
         });
 
         menu.querySelector('#ctxCloseCard').addEventListener('click', () => {
-          removeWidget(w.id);
+          deleteWidgetWithUndo(w.id);
           closeContextMenu();
         });
       }
@@ -5746,28 +5910,28 @@
 
         menu.innerHTML = `
           <div class="context-menu-title">Lienzo Analítico</div>
-          <div class="context-menu-item" id="ctxNewChart">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxNewChart">
             <span>+ Nueva ventana de Gráfico aquí</span>
           </div>
-          <div class="context-menu-item" id="ctxNewMap">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxNewMap">
             <span>+ Nuevo Mapa aquí</span>
           </div>
-          <div class="context-menu-item" id="ctxNewTable">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxNewTable">
             <span>+ Nueva Tabla aquí</span>
           </div>
-          <div class="context-menu-item" id="ctxNewKPI">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxNewKPI">
             <span>+ Nuevo Indicador aquí</span>
           </div>
 
           <div class="context-menu-separator"></div>
 
-          <div class="context-menu-item" id="ctxTileGrid">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxTileGrid">
             <span>Ordenar ventanas automáticamente (Grilla 2 col)</span>
           </div>
-          <div class="context-menu-item" id="ctxShowAll">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxShowAll">
             <span>Mostrar todas las ventanas ocultas</span>
           </div>
-          <div class="context-menu-item" id="ctxCenterCanvas">
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxCenterCanvas">
             <span>Centrar y ajustar vista (100%)</span>
           </div>
         `;
@@ -5775,19 +5939,19 @@
         positionContextMenu(menu, clientX, clientY);
 
         menu.querySelector('#ctxNewChart').addEventListener('click', () => {
-          createWidget('chart', { varX: null, x: worldX - 250, y: worldY - 180 });
+          crearTarjeta('chart', 'contexto', { x: Math.round(worldX - 250), y: Math.round(worldY - 180) });
           closeContextMenu();
         });
         menu.querySelector('#ctxNewMap').addEventListener('click', () => {
-          createWidget('map', { varX: null, x: worldX - 250, y: worldY - 180 });
+          crearTarjeta('map', 'contexto', { x: Math.round(worldX - 250), y: Math.round(worldY - 180) });
           closeContextMenu();
         });
         menu.querySelector('#ctxNewTable').addEventListener('click', () => {
-          createWidget('table', { varX: null, x: worldX - 250, y: worldY - 180 });
+          crearTarjeta('table', 'contexto', { x: Math.round(worldX - 250), y: Math.round(worldY - 180) });
           closeContextMenu();
         });
         menu.querySelector('#ctxNewKPI').addEventListener('click', () => {
-          createWidget('kpi', { varX: null, x: worldX - 250, y: worldY - 180 });
+          crearTarjeta('kpi', 'contexto', { x: Math.round(worldX - 250), y: Math.round(worldY - 180) });
           closeContextMenu();
         });
 
@@ -5817,6 +5981,8 @@
 
         menu.style.left = `${posX}px`;
         menu.style.top = `${posY}px`;
+        const firstItem = menu.querySelector('[role="menuitem"]');
+        if (firstItem) firstItem.focus({ preventScroll: true });
       }
 
       function closeContextMenu() {
@@ -5887,6 +6053,7 @@
           document.getElementById('tbBtnKPI').classList.add('active');
         }
 
+        const vX = AppState.catalogItems.find(v => v.id === w.varX);
         const btnLine = document.getElementById('tbBtnLine');
         if (btnLine) {
           if (vX && vX.dim === 'comuna' && !w.varY) {
@@ -5905,7 +6072,6 @@
         else btnAvg.classList.remove('active');
 
         const btnTrend = document.getElementById('tbBtnTrend');
-        const vX = AppState.catalogItems.find(v => v.id === w.varX);
         const isBivariate = !!w.varY;
 
         if (w.type === 'chart' && (w.chartType === 'bar' && !isBivariate && (!vX || vX.dim !== 'tiempo'))) {
@@ -6046,12 +6212,14 @@
         popover.style.left = `${triggerRect.left - vRect.left}px`;
         popover.style.top = `${triggerRect.bottom - vRect.top + 6}px`;
         popover.classList.add('active');
+        const firstItem = popover.querySelector('[role="menuitem"]');
+        if (firstItem) firstItem.focus({ preventScroll: true });
       }
 
       function renderPopoverList(w, items) {
         const list = document.getElementById('popoverListContainer');
         list.innerHTML = items.map(it => `
-          <div class="popover-item" data-var-id="${it.id}">
+          <div class="popover-item" role="menuitem" tabindex="-1" data-var-id="${it.id}">
             <div>
               <div style="font-weight: 500;">${it.shortName || it.name}</div>
               <div style="font-size: 0.64rem; color: var(--ink-muted);">${it.hubTitle} · ${it.unit}</div>
@@ -6240,7 +6408,7 @@
         card.innerHTML = `
           <div class="reflection-card-header">
             <span class="reflection-hub-tag">${getHubTitleName(r.hubId)}</span>
-            <button class="reflection-close-btn" id="btnCloseRefl-${r.id}" title="Eliminar nota">X</button>
+            <button class="reflection-close-btn" id="btnCloseRefl-${r.id}" title="Eliminar nota" aria-label="Eliminar nota de reflexión">X</button>
           </div>
           <p class="reflection-prompt-body" id="reflText-${r.id}">"${r.promptText}"</p>
           <div class="reflection-card-footer">
@@ -8361,18 +8529,11 @@
       /** Captura el estado del lienzo activo (misma forma que usa autoSave). */
       function snapshotCanvas() {
         return JSON.parse(JSON.stringify({
-          widgets: AppState.widgets.map(w => ({
-            id: w.id, type: w.type, title: w.title, varIds: w.varIds,
-            chartType: w.chartType, kpiVarId: w.kpiVarId, mapVarId: w.mapVarId,
-            tableVarIds: w.tableVarIds, timelineVarId: w.timelineVarId,
-            xVarId: w.xVarId, yVarIds: w.yVarIds, mode: w.mode,
-            showAverage: w.showAverage, showTrend: w.showTrend,
-            minimized: w.minimized, maximized: w.maximized,
-            prevBounds: w.prevBounds, syncMode: w.syncMode,
-            highlightEntity: w.highlightEntity, tableFilter: w.tableFilter,
-            tableSortCol: w.tableSortCol, tableSortDir: w.tableSortDir,
-            x: w.x, y: w.y, w: w.w, h: w.h,
-          })),
+          widgets: AppState.widgets.map(w => {
+            // Copia todos los campos serializables; excluye instancias vivas.
+            const { instance, resizeObserver, ...plain } = w;
+            return plain;
+          }),
           connections: AppState.connections,
           reflectionCards: AppState.reflectionCards,
           transform: AppState.transform,
@@ -8422,8 +8583,11 @@
         try {
           teardownCanvasEntities();
 
-          (snap.widgets || []).forEach(w => {
-            AppState.widgets.push({ ...w, instance: null, resizeObserver: null });
+          (snap.widgets || []).forEach(snapW => {
+            // Se renderiza el mismo objeto que vive en AppState para que
+            // arrastre, redimension y edicion posteriores muten el estado real.
+            const w = { ...snapW, instance: null, resizeObserver: null };
+            AppState.widgets.push(w);
             renderWidgetCardDOM(w);
           });
           (snap.reflectionCards || []).forEach(r => {
@@ -8448,6 +8612,10 @@
           }
 
           AppState.widgets.forEach(w => renderWidgetVisual(w));
+
+          if (snap.activeWidgetId && AppState.widgets.some(w => w.id === snap.activeWidgetId)) {
+            selectActiveCard(snap.activeWidgetId);
+          }
 
           syncHeroVisibility();
           renderWindowTabs();
@@ -8519,9 +8687,12 @@
         timer = setTimeout(dismiss, timeoutMs);
       }
 
+      let shortcutsReturnFocus = null;
+
       function openShortcutsPanel() {
         const ov = document.getElementById('shortcutsOverlay');
         if (!ov) return;
+        shortcutsReturnFocus = document.activeElement;
         ov.classList.add('open');
         ov.setAttribute('aria-hidden', 'false');
         const closeBtn = document.getElementById('btnShortcutsClose');
@@ -8533,6 +8704,10 @@
         if (!ov) return;
         ov.classList.remove('open');
         ov.setAttribute('aria-hidden', 'true');
+        if (shortcutsReturnFocus && typeof shortcutsReturnFocus.focus === 'function') {
+          shortcutsReturnFocus.focus({ preventScroll: true });
+        }
+        shortcutsReturnFocus = null;
       }
 
       function isShortcutsPanelOpen() {
@@ -8623,7 +8798,12 @@
 
       /** Elimina la ventana seleccionada dejando el paso reversible. */
       function deleteActiveWidget() {
-        const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
+        deleteWidgetWithUndo(AppState.activeWidgetId);
+      }
+
+      /** Elimina una ventana (reversible) y ofrece Deshacer en un aviso de 5 s. */
+      function deleteWidgetWithUndo(widgetId) {
+        const w = AppState.widgets.find(x => x.id === widgetId);
         if (!w) return;
         const titulo = w.title || `ventana #${w.id}`;
         removeWidget(w.id); // registra el historial internamente
@@ -8873,6 +9053,8 @@
               menu.style.right = 'auto';
             }
             menu.classList.add('show');
+            const firstItem = menu.querySelector('[role="menuitem"]');
+            if (firstItem) firstItem.focus({ preventScroll: true });
           } else {
             menu.classList.remove('show');
           }
@@ -8893,8 +9075,7 @@
 
         document.getElementById('btnAddChart').addEventListener('click', () => {
           closeAddMenu();
-          const center = getCanvasCenterWorld();
-          createWidget('chart', { varX: null, x: center.x - 250, y: center.y - 180 });
+          crearTarjeta('chart', 'barra');
         });
         const btnTimeline = document.getElementById('btnAddTimeline');
         if (btnTimeline) {
@@ -8913,32 +9094,26 @@
             AppState.activeFilterDim = 'tiempo';
             renderSidebarCatalog();
 
-            const center = getCanvasCenterWorld();
             const defaultTemporal = AppState.catalogItems.find(v => v.dim === 'tiempo' && !v.isAlias) || AppState.catalogItems.find(v => v.dim === 'tiempo');
             const varXId = defaultTemporal ? defaultTemporal.id : 'sp_floracion_alexandrium_fan';
-            createWidget('chart', {
+            crearTarjeta('chart', 'barra', {
               varX: varXId,
               chartType: 'line',
-              title: defaultTemporal ? defaultTemporal.name : 'Línea de Tiempo (2015-2026)',
-              x: center.x - 250,
-              y: center.y - 180
+              title: defaultTemporal ? defaultTemporal.name : 'Línea de Tiempo (2015-2026)'
             });
           });
         }
         document.getElementById('btnAddMap').addEventListener('click', () => {
           closeAddMenu();
-          const center = getCanvasCenterWorld();
-          createWidget('map', { varX: null, x: center.x - 250, y: center.y - 180 });
+          crearTarjeta('map', 'barra');
         });
         document.getElementById('btnAddTable').addEventListener('click', () => {
           closeAddMenu();
-          const center = getCanvasCenterWorld();
-          createWidget('table', { varX: null, x: center.x - 250, y: center.y - 180 });
+          crearTarjeta('table', 'barra');
         });
         document.getElementById('btnAddKPI').addEventListener('click', () => {
           closeAddMenu();
-          const center = getCanvasCenterWorld();
-          createWidget('kpi', { varX: null, x: center.x - 250, y: center.y - 180 });
+          crearTarjeta('kpi', 'barra');
         });
         document.getElementById('btnClearCanvas').addEventListener('click', () => {
           // Accion directa y reversible en vez de confirm() bloqueante:
@@ -8973,6 +9148,9 @@
             const isCatOpen = catPanel && !catPanel.classList.contains('collapsed') && window.innerWidth <= 1024;
             catBackdrop.classList.toggle('active', !!isCatOpen);
           }
+          // En escritorio el catalogo es un panel lateral, no un dialogo modal.
+          if (catPanel) catPanel.setAttribute('aria-modal', (window.innerWidth <= 1024 && !catPanel.classList.contains('collapsed')) ? 'true' : 'false');
+          if (metaPanel) metaPanel.setAttribute('aria-modal', metaPanel.classList.contains('open') ? 'true' : 'false');
           if (metaBackdrop) {
             const isMetaOpen = metaPanel && metaPanel.classList.contains('open') && window.innerWidth <= 768;
             metaBackdrop.classList.toggle('active', !!isMetaOpen);
@@ -8982,6 +9160,8 @@
         if (window.innerWidth <= 1024 && catPanel) {
           catPanel.classList.add('collapsed');
         }
+        syncPanelBackdrops();
+        window.addEventListener('resize', syncPanelBackdrops);
 
         // Toggle Catálogo
         document.getElementById('btnToggleSidebar').addEventListener('click', () => {
@@ -9071,8 +9251,7 @@
             if (metaPanel) metaPanel.classList.remove('open');
             syncPanelBackdrops();
             updateMobNavActive(mobCanvasBtn);
-            const center = getCanvasCenterWorld();
-            createWidget('chart', { varX: null, x: center.x - 200, y: center.y - 150, w: Math.min(420, window.innerWidth - 30), h: 320 });
+            crearTarjeta('chart', 'movil', { w: Math.min(420, window.innerWidth - 30), h: 320 });
           });
         }
 
@@ -9147,7 +9326,21 @@
 
         const btnHeroInit = document.getElementById('btnHeroInit');
         if (btnHeroInit) {
-          btnHeroInit.addEventListener('click', () => loadScenario('salmon_inversion'));
+          btnHeroInit.addEventListener('click', () => crearTarjeta('chart', 'vacio'));
+        }
+        const btnHeroScenario = document.getElementById('btnHeroScenario');
+        if (btnHeroScenario) {
+          btnHeroScenario.addEventListener('click', () => loadScenario('salmon_inversion'));
+        }
+        const btnHeroOpenCatalog = document.getElementById('btnHeroOpenCatalog');
+        if (btnHeroOpenCatalog) {
+          btnHeroOpenCatalog.addEventListener('click', () => {
+            if (catPanel && catPanel.classList.contains('collapsed')) {
+              document.getElementById('btnToggleSidebar').click();
+            }
+            const buscador = document.getElementById('inputBuscarVariable');
+            if (buscador) buscador.focus();
+          });
         }
         const btnHeroEmpty = document.getElementById('btnHeroEmpty');
         if (btnHeroEmpty) {
@@ -9286,6 +9479,7 @@
         const selectSlicer = document.getElementById('selectTerritorialSlicer');
         if (selectSlicer) {
           selectSlicer.addEventListener('change', (e) => {
+            pushHistory('aplicar filtro');
             AppState.territorialFilter = e.target.value;
             if (e.target.value === 'all') {
               AppState.excludeCoyhaique = false;
@@ -9308,6 +9502,7 @@
         const btnExclude = document.getElementById('btnExcludeCoyhaique');
         if (btnExclude) {
           btnExclude.addEventListener('click', () => {
+            pushHistory('aplicar filtro');
             if (AppState.activeWidgetId) {
               const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
               if (w) {
@@ -9424,11 +9619,182 @@
             closeContextMenu();
           }
         });
+
+        bindCanvasShortcuts();
+      }
+
+      /** Atrapa Tab dentro de un contenedor modal. Devuelve true si gestiono el evento. */
+      function trapFocus(container, e) {
+        if (e.key !== 'Tab' || !container) return false;
+        const focusables = Array.from(container.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )).filter(el => el.offsetParent !== null);
+        if (!focusables.length) return false;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        const outside = !container.contains(document.activeElement);
+        if (e.shiftKey && (document.activeElement === first || outside)) {
+          last.focus();
+          e.preventDefault();
+          return true;
+        }
+        if (!e.shiftKey && (document.activeElement === last || outside)) {
+          first.focus();
+          e.preventDefault();
+          return true;
+        }
+        return false;
+      }
+
+      /** Atajos de teclado del lienzo, navegacion de menus y atrape de foco en dialogos. */
+      function bindCanvasShortcuts() {
+        const viewport = document.getElementById('panelLienzo');
+        const catPanel = document.getElementById('panelCatalogo');
+        const metaPanel = document.getElementById('panelMetacognicion');
+
+        const shortcutsClose = document.getElementById('btnShortcutsClose');
+        if (shortcutsClose) shortcutsClose.addEventListener('click', closeShortcutsPanel);
+        const shortcutsOv = document.getElementById('shortcutsOverlay');
+        if (shortcutsOv) {
+          shortcutsOv.addEventListener('click', (e) => { if (e.target === shortcutsOv) closeShortcutsPanel(); });
+        }
+
+        // aria-expanded de los disparadores de menu sigue a la clase .show
+        [['addCardDropdownMenu', 'btnAddCardDropdownBtn'], ['projectMenuDropdown', 'btnProjectMenu']].forEach(([menuId, btnId]) => {
+          const menu = document.getElementById(menuId);
+          const btn = document.getElementById(btnId);
+          if (!menu || !btn) return;
+          new MutationObserver(() => {
+            btn.setAttribute('aria-expanded', menu.classList.contains('show') ? 'true' : 'false');
+          }).observe(menu, { attributes: true, attributeFilter: ['class'] });
+        });
+
+        const isEditable = (t) => !!t && (
+          t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable
+        );
+
+        const overlayModal = () => {
+          if (metaPanel && metaPanel.classList.contains('open')) return metaPanel;
+          if (catPanel && !catPanel.classList.contains('collapsed') && window.innerWidth <= 1024) return catPanel;
+          return null;
+        };
+
+        window.addEventListener('keydown', (e) => {
+          const t = e.target;
+
+          // 1. Panel de atajos abierto: Escape cierra y Tab queda atrapado
+          if (isShortcutsPanelOpen()) {
+            if (e.key === 'Escape') { e.preventDefault(); closeShortcutsPanel(); return; }
+            trapFocus(document.querySelector('#shortcutsOverlay .shortcuts-panel'), e);
+            return;
+          }
+
+          // 2. Navegacion con flechas dentro de menus
+          const menuEl = t && t.closest ? t.closest('[role="menu"]') : null;
+          if (menuEl) {
+            const items = Array.from(menuEl.querySelectorAll('[role="menuitem"]')).filter(i => i.offsetParent !== null);
+            const idx = items.indexOf(document.activeElement);
+            if (items.length && ['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) {
+              e.preventDefault();
+              let next = idx;
+              if (e.key === 'ArrowDown') next = (idx + 1) % items.length;
+              if (e.key === 'ArrowUp') next = (idx - 1 + items.length) % items.length;
+              if (e.key === 'Home') next = 0;
+              if (e.key === 'End') next = items.length - 1;
+              items[next].focus();
+              return;
+            }
+            if ((e.key === 'Enter' || e.key === ' ') && t.getAttribute('role') === 'menuitem' && t.tagName !== 'BUTTON') {
+              e.preventDefault();
+              t.click();
+              return;
+            }
+          }
+
+          // 3. Paneles que se comportan como dialogo modal
+          const modal = overlayModal();
+          if (modal) {
+            if (e.key === 'Escape') {
+              const closer = modal === metaPanel ? document.getElementById('btnCloseMetacog') : document.getElementById('btnToggleSidebar');
+              if (closer) closer.click();
+              return;
+            }
+            if (trapFocus(modal, e)) return;
+          }
+
+          if (isEditable(t)) return;
+
+          const mod = e.ctrlKey || e.metaKey;
+          const key = (e.key || '').toLowerCase();
+          const sobreControl = t && t.closest && t.closest('button, a[href], [role="menuitem"], summary');
+          const sobreTarjeta = t && t.classList && t.classList.contains('studio-widget-card');
+
+          // Deshacer / rehacer
+          if (mod && key === 'z') { e.preventDefault(); if (e.shiftKey) redo(); else undo(); return; }
+          if (mod && key === 'y') { e.preventDefault(); redo(); return; }
+          if (mod && key === 'd') { e.preventDefault(); duplicateActiveWidget(); return; }
+          if (mod && e.key === '0') { e.preventDefault(); resetCanvasZoom(); return; }
+          if (mod || e.altKey) return;
+
+          // Barra espaciadora: modo desplazar
+          if (e.code === 'Space' && !sobreControl) {
+            e.preventDefault();
+            if (!AppState.spaceHeld) {
+              AppState.spaceHeld = true;
+              if (viewport) viewport.classList.add('space-pan');
+            }
+            return;
+          }
+
+          if ((e.key === 'Delete' || e.key === 'Backspace') && !sobreControl) {
+            if (AppState.activeWidgetId) { e.preventDefault(); deleteActiveWidget(); }
+            return;
+          }
+          if (key === 'f' && !sobreControl) { e.preventDefault(); zoomToFitCanvas(); return; }
+          if (e.key === '?') { e.preventDefault(); openShortcutsPanel(); return; }
+
+          // Enter sobre una ventana enfocada: entrar a sus controles
+          if (e.key === 'Enter' && sobreTarjeta) {
+            const first = t.querySelector('button, input, select, a[href]');
+            if (first) { e.preventDefault(); first.focus(); }
+            return;
+          }
+
+          // Tab recorre las ventanas solo mientras haya una siguiente: no atrapa el foco
+          if (e.key === 'Tab' && (t === viewport || sobreTarjeta) && AppState.widgets.length) {
+            const ids = AppState.widgets.map(w => w.id);
+            const curId = sobreTarjeta ? parseInt(t.id.replace('widget-card-', ''), 10) : null;
+            const cur = curId === null ? -1 : ids.indexOf(curId);
+            const target = e.shiftKey ? cur - 1 : cur + 1;
+            if (target < 0 || target >= ids.length) return; // sale del lienzo con el Tab nativo
+            e.preventDefault();
+            const targetId = ids[target];
+            selectActiveCard(targetId);
+            const el = document.getElementById(`widget-card-${targetId}`);
+            if (el) el.focus({ preventScroll: false });
+          }
+        });
+
+        window.addEventListener('keyup', (e) => {
+          if (e.code === 'Space' && AppState.spaceHeld) {
+            AppState.spaceHeld = false;
+            if (viewport) viewport.classList.remove('space-pan');
+          }
+        });
+        window.addEventListener('blur', () => {
+          AppState.spaceHeld = false;
+          if (viewport) viewport.classList.remove('space-pan');
+        });
       }
 
       window.addEventListener('DOMContentLoaded', init);
 
     })();
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      montarCabecera({ tituloModulo: 'Laboratorio Sistémico', activo: 'laboratorio.html' });
+    });
   </script>
 </body>
 

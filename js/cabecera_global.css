@@ -1,0 +1,205 @@
+/* Cabecera global unificada (56px) - fuente unica de verdad de los estilos de .brand-header.
+   Identidad "Cuaderno Editorial y Cartografico Austral": cobalto #00357f / #0059c5,
+   papel #fcf9f8, tintas #1c1b1b / #4a4745. La posicion (fixed / sticky / relative) y el
+   ancho maximo del contenido se definen en cada pagina con --brand-inner-max y position. */
+
+.brand-header {
+  height: 56px;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(252, 249, 248, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(28, 27, 27, 0.09);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.brand-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00357f, #0059c5, #00357f);
+  z-index: 50;
+}
+
+.brand-header-inner {
+  width: 100%;
+  max-width: var(--brand-inner-max, none);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #00357f;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.15);
+}
+
+.brand-author-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(0.92rem, 3.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #1c1b1b;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.brand-author-name:hover { color: #00357f; }
+
+.brand-divider {
+  color: rgba(28, 27, 27, 0.25);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 300;
+  user-select: none;
+}
+
+.brand-module-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4a4745;
+  white-space: nowrap;
+}
+
+.brand-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.brand-nav-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #4a4745;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.brand-pill:hover {
+  color: #00357f;
+  background: rgba(0, 53, 127, 0.04);
+  border-color: rgba(0, 53, 127, 0.15);
+}
+
+.brand-pill.active {
+  color: #00357f;
+  background: rgba(0, 53, 127, 0.08);
+  border-color: rgba(0, 53, 127, 0.22);
+  font-weight: 600;
+}
+
+.brand-pill.hidden { display: none; }
+
+.brand-pill .pill-arrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+}
+
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  background: transparent;
+  border: 1px solid rgba(0, 53, 127, 0.16);
+  border-radius: 4px;
+  color: #00357f;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(0, 53, 127, 0.08);
+  border-color: #00357f;
+}
+
+.brand-header a:focus-visible,
+.brand-header button:focus-visible {
+  outline: 2px solid #0059c5;
+  outline-offset: 2px;
+}
+
+/* Modo oscuro (se activa con .dark-mode sobre el header, p. ej. en la Portada) */
+.brand-header.dark-mode {
+  background: rgba(18, 17, 17, 0.92);
+  border-bottom-color: rgba(252, 249, 248, 0.12);
+}
+
+.brand-header.dark-mode .brand-dot {
+  background-color: #9ec5ff;
+  box-shadow: 0 0 0 2px rgba(158, 197, 255, 0.2);
+}
+
+.brand-header.dark-mode .brand-author-name { color: #fcf9f8; }
+.brand-header.dark-mode .brand-author-name:hover { color: #9ec5ff; }
+.brand-header.dark-mode .brand-divider { color: rgba(252, 249, 248, 0.25); }
+.brand-header.dark-mode .brand-module-title { color: #ebd9c8; }
+.brand-header.dark-mode .brand-pill { color: #fcf9f8; }
+
+.brand-header.dark-mode .brand-pill:hover {
+  background: rgba(252, 249, 248, 0.12);
+  color: #ffffff;
+  border-color: rgba(252, 249, 248, 0.25);
+}
+
+.brand-header.dark-mode .brand-pill.active {
+  background: rgba(252, 249, 248, 0.18);
+  color: #ffffff;
+  border-color: rgba(252, 249, 248, 0.35);
+}
+
+.brand-header.dark-mode .mobile-menu-btn {
+  color: #fcf9f8;
+  border-color: rgba(252, 249, 248, 0.25);
+}

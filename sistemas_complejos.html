@@ -7,6 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="js/cabecera_global.css">
+  <style>
+    /* Posicion de la cabecera en esta pagina (los estilos viven en js/cabecera_global.css) */
+    .brand-module-title { cursor: pointer; transition: color 0.15s ease; }
+    .brand-module-title:hover { color: #00357f; }
+  </style>
   <style>
     :root {
       /* Paleta de Marca: Cuaderno Intelectual (C:\AGY\AVLARO & Clases de IA) */
@@ -44,154 +50,6 @@
       -webkit-font-smoothing: antialiased;
       overflow: hidden;
       user-select: none;
-    }
-
-    header.brand-header,
-    header {
-      height: 56px;
-      position: relative;
-      background: rgba(252, 249, 248, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(28, 27, 27, 0.09);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1.25rem;
-      z-index: 100;
-      box-sizing: border-box;
-    }
-
-    header::before,
-    .brand-header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #00357f, #0059c5, #00357f);
-      z-index: 101;
-    }
-
-    .brand-header-inner {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand-left {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      min-width: 0;
-    }
-
-    .brand-dot {
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background-color: var(--cobalt);
-      flex-shrink: 0;
-      box-shadow: 0 0 0 2px rgba(0, 53, 127, 0.15);
-    }
-
-    .brand-author-name {
-      font-family: var(--font-serif);
-      font-size: clamp(0.92rem, 3.8vw, 1.2rem);
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      color: var(--ink);
-      text-decoration: none;
-      white-space: nowrap;
-      line-height: 1;
-      transition: color 0.15s ease;
-    }
-
-    .brand-author-name:hover {
-      color: var(--cobalt);
-    }
-
-    .brand-divider {
-      color: rgba(28, 27, 27, 0.25);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 300;
-      user-select: none;
-    }
-
-    .brand-module-title {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--ink-secondary);
-      white-space: nowrap;
-      cursor: pointer;
-      transition: color 0.15s ease;
-    }
-
-    .brand-module-title:hover {
-      color: var(--cobalt);
-    }
-
-    .brand-right {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .brand-nav-pills {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .brand-pill {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: var(--ink-secondary);
-      text-decoration: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 2px;
-      border: 1px solid transparent;
-      background: transparent;
-      transition: all 0.15s ease;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      line-height: 1.2;
-      cursor: pointer;
-    }
-
-    .brand-pill:hover {
-      color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.04);
-      border-color: rgba(0, 53, 127, 0.15);
-    }
-
-    .brand-pill.active {
-      color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.08);
-      border-color: rgba(0, 53, 127, 0.22);
-      font-weight: 600;
-    }
-
-    .brand-pill.hidden {
-      display: none;
-    }
-
-    .brand-pill .pill-arrow {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
     }
 
     .lang-switch {
@@ -618,29 +476,6 @@
     /* =========================================================================
        UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
        ========================================================================= */
-    .mobile-menu-btn {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      background: transparent;
-      border: 1px solid rgba(0, 53, 127, 0.16);
-      border-radius: 4px;
-      color: var(--cobalt);
-      cursor: pointer;
-      padding: 0;
-      transition: all 0.2s ease;
-      touch-action: manipulation;
-    }
-
-    .mobile-menu-btn:hover {
-      background: rgba(0, 53, 127, 0.08);
-      border-color: var(--cobalt);
-    }
-
     .mobile-nav-drawer {
       position: fixed;
       inset: 0;
@@ -1000,6 +835,7 @@
       }
     }
   </style>
+<script src="js/cabecera_global.js"></script>
 </head>
 <body>
 
@@ -4916,6 +4752,11 @@
       }
     }
     requestAnimationFrame(animate);
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      montarCabecera({ tituloModulo: 'Visualizador de Complejidad', activo: 'sistemas_complejos.html' });
+    });
   </script>
 </body>
 </html>
