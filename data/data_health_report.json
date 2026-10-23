@@ -1,5 +1,5 @@
 {
-  "report_timestamp": "2026-10-22T14:26:30.656069+00:00",
+  "report_timestamp": "2026-10-23T17:38:12.136358+00:00",
   "summary": {
     "total_stations": 16,
     "stations_in_bbox": 16,
@@ -190,7 +190,7 @@
       "provider": "DGA MOP",
       "url": "https://dga.mop.gob.cl",
       "http_status": 200,
-      "latency_ms": 3133,
+      "latency_ms": 3862,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -198,7 +198,7 @@
       "provider": "SINCA MMA",
       "url": "https://sinca.mma.gob.cl",
       "http_status": 200,
-      "latency_ms": 390,
+      "latency_ms": 410,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -206,7 +206,7 @@
       "provider": "DMC MeteoChile",
       "url": "https://climatologia.meteochile.gob.cl",
       "http_status": 200,
-      "latency_ms": 191,
+      "latency_ms": 260,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -214,7 +214,7 @@
       "provider": "SERNAGEOMIN",
       "url": "https://www.sernageomin.cl",
       "http_status": 200,
-      "latency_ms": 833,
+      "latency_ms": 878,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -222,7 +222,7 @@
       "provider": "CIEP",
       "url": "https://www.ciep.cl",
       "http_status": 200,
-      "latency_ms": 2537,
+      "latency_ms": 3845,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -230,7 +230,7 @@
       "provider": "IFOP",
       "url": "https://www.ifop.cl",
       "http_status": 200,
-      "latency_ms": 430,
+      "latency_ms": 503,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -238,7 +238,7 @@
       "provider": "JAC Chile",
       "url": "https://www.jac.gob.cl",
       "http_status": 200,
-      "latency_ms": 83,
+      "latency_ms": 148,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -246,7 +246,7 @@
       "provider": "Datos Abiertos Chile",
       "url": "https://datos.gob.cl",
       "http_status": 200,
-      "latency_ms": 1319,
+      "latency_ms": 1123,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -254,7 +254,7 @@
       "provider": "SERNAPESCA",
       "url": "https://www.sernapesca.cl",
       "http_status": 200,
-      "latency_ms": 524,
+      "latency_ms": 480,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -262,7 +262,7 @@
       "provider": "CNE Bencina en Línea",
       "url": "https://www.bencinaenlinea.cl",
       "http_status": 200,
-      "latency_ms": 1145,
+      "latency_ms": 612,
       "state": "HEALTHY",
       "fallback_ready": true
     }

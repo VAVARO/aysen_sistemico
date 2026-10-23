@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laboratorio de Modelamiento Sistémico de Aysén | Álvaro Contreras Barrios</title>
+  <title>Laboratorio Sistémico · Aysén | Álvaro Contreras Barrios</title>
   <meta name="description"
     content="Lienzo de modelamiento y cruce de variables territoriales de Aysén. Análisis sistémico, pensamiento reflexivo y rigor empírico." />
   <meta name="author" content="Álvaro Contreras Barrios" />
@@ -2893,7 +2893,7 @@
     </div>
     <div class="subdash-divider"></div>
     <div class="tabs-scroll-area" id="windowTabsScroll">
-      <span style="font-size: 0.68rem; color: var(--ink-muted); font-style: italic;">Sin ventanas abiertas · Haz clic en + Gráfico o arrastra variables</span>
+      <span style="font-size: 0.68rem; color: var(--ink-muted); font-style: italic;">Sin ventanas. Usa + Tarjeta o arrastra una variable del catálogo</span>
     </div>
     <div class="tabs-actions-right">
       <button class="btn-tab-action" id="btnTileWindowsGrid" title="Auto-ordenar ventanas en grilla de 2 columnas">
@@ -2948,10 +2948,9 @@
 
       <!-- Hero Inicial en Estado Vacío (Direct Child of #panelLienzo, Perfectly Centered) -->
       <div class="hero-studio-card" id="heroEmptyCanvas">
-        <h2>Laboratorio Territorial de Aysén</h2>
+        <h2>Laboratorio Sistémico</h2>
         <p>
-          Lienzo analítico para modelar, cruzar y reflexionar sobre la dinámica sistémica de las 10 comunas de la
-          región. Tres pasos para empezar:
+          Un lienzo para comparar datos de las 10 comunas de Aysén. Para empezar:
         </p>
         <ol class="hero-steps">
           <li class="hero-step">
@@ -3051,7 +3050,7 @@
             ¿Dónde fijas el límite al analizar un problema en tu localidad: en tu barrio, en el pueblo, en toda la comuna o en la cuenca?
           </p>
           <textarea class="analyst-notes-area" id="txtAnalystNotes"
-            placeholder="Anota observaciones o reflexiones sobre los cruces del lienzo..."></textarea>
+            placeholder="Notas sobre este lienzo..."></textarea>
         </div>
 
         <div>
@@ -3262,46 +3261,46 @@
 
       const HUB_QUESTIONS_MAP = {
         'turismo': [
-          'Frente a un mismo territorio o recurso natural, ¿en qué difieren las prioridades de quienes residen, trabajan o invierten allí?',
-          '¿Qué aspectos de la calidad de vida en tu localidad son difíciles de medir en números pero cruciales para el bienestar?',
-          '¿Cómo conviven en tu localidad actividades tradicionales con nuevas industrias o servicios?',
-          '¿Qué flujos de personas, recursos o información son los más determinantes para que tu comunidad funcione con normalidad?'
+          '¿Quiénes viven del turismo en tu comuna y qué hacen el resto del año?',
+          '¿Qué pasa con el empleo y los servicios cuando termina la temporada alta?',
+          '¿Qué atractivos de tu comuna quedan fuera de los circuitos turísticos conocidos?',
+          '¿Qué necesita un parque nacional cercano para recibir más visitantes sin dañarse?'
         ],
         'salmonicultura': [
-          '¿Qué dependencias críticas tiene tu comunidad respecto de insumos, servicios o decisiones que provienen de fuera de la región?',
-          'Cuando cambia la actividad económica principal de una localidad, ¿qué otros aspectos de la vida diaria suelen modificarse?',
-          'Al evaluar un proyecto o decisión local, ¿a qué plazo miras: los meses inmediatos, cuatro años o las próximas décadas?',
-          '¿Qué temas que hoy se discuten por separado consideras que forman parte de una misma conversación comunal?'
+          '¿Qué compras y servicios de las empresas acuícolas se quedan en tu comuna y cuáles vienen de fuera de la región?',
+          '¿Qué cambió en tu comuna desde que llegaron los centros de cultivo?',
+          '¿Qué pasa con otras actividades del borde costero cuando se cierra un centro por una floración algal?',
+          '¿Quién decide qué se hace con el borde costero que rodea tu localidad?'
         ],
         'energia': [
-          '¿De qué manera interactúan en tu día a día la conectividad vial o marítima, la energía y el costo de los bienes básicos?',
-          '¿Qué factores históricos explican que ciertos problemas locales persistan a pesar de los sucesivos intentos de solución?',
-          '¿Qué cambios graduales en el entorno notas hoy que podrían convertirse en desafíos mayores si nadie interviene a tiempo?',
-          '¿Qué grupos o sectores consideras indispensables de incluir al definir las prioridades de desarrollo?'
+          '¿Cuánto gasta un hogar de tu comuna en leña y combustible en un invierno?',
+          '¿Qué pasa en tu localidad cuando se corta la electricidad o no llega el combustible?',
+          '¿Qué actividades dependen de tener una conexión a internet estable?',
+          '¿Cómo se relacionan el humo de leña, la calefacción y la salud en tu comuna en invierno?'
         ],
         'gobernanza': [
-          'Al pensar en los problemas de tu territorio, ¿qué aspectos consideras responsabilidad de la comunidad y cuáles de factores externos?',
-          'Al modificarse un servicio público o una norma, ¿qué efectos secundarios suelen manifestarse en áreas que nadie miraba?',
-          '¿Qué acuerdos tácitos entre actores locales facilitan o traban resolver problemas colectivos?',
-          '¿En qué momentos sientes que un desafío local no puede abordarse sin tocar simultáneamente otros tres o cuatro temas?'
+          '¿Qué servicios de tu comuna dependen de Coyhaique?',
+          '¿Qué parte del presupuesto municipal depende del Fondo Común Municipal y qué pasaría si bajara?',
+          '¿Quién decide hoy sobre las obras que se hacen en tu comuna?',
+          '¿Qué acuerdos informales entre actores locales facilitan o traban la solución de problemas colectivos?'
         ],
         'inversion': [
-          'Al discutir una inversión pública, ¿qué beneficios o costos futuros suelen omitirse por concentrarse en el corto plazo?',
-          '¿Dónde fijas el límite al analizar un problema: en tu barrio, en el pueblo, en toda la comuna o en la cuenca?',
-          '¿Qué necesidades cotidianas de sectores rurales o aislados suelen pasar inadvertidas en centros urbanos?',
-          '¿Qué fortalezas o recursos de tu territorio suelen subestimarse en debates de desarrollo?'
+          '¿Qué beneficios deja en tu comuna un proyecto aprobado en el SEIA y cuáles se van fuera?',
+          '¿Cuánto del suelo de tu comuna es fiscal, protegido o privado y quién decide su uso?',
+          '¿Qué empresas de tu comuna son pequeñas o medianas y de qué dependen?',
+          '¿Qué costos de un proyecto de inversión suelen quedar fuera de la discusión?'
         ],
         'social': [
-          '¿Qué factores fortalecen o debilitan la capacidad de tu comunidad para organizarse ante una emergencia territorial?',
-          '¿Qué aspectos de la vida local funcionan mejor gracias a la colaboración espontánea sin intervención institucional?',
-          '¿Qué lecciones de crisis o transformaciones pasadas siguen presentes en las decisiones de la comunidad?',
-          '¿Qué temas de la discusión pública local suelen simplificarse en dos bandos impidiendo acuerdos matizados?'
+          '¿Cuánto tiempo toma llegar al hospital o a la escuela más cercana desde tu localidad?',
+          '¿Qué se organiza entre vecinos, sin apoyo institucional, ante un temporal o un corte de caminos?',
+          '¿Qué servicios básicos faltan en las zonas rurales de tu comuna?',
+          '¿Qué temas de tu comuna se discuten como si hubiera solo dos bandos?'
         ],
         'biodiversidad': [
-          '¿Qué servicios silenciosos presta la naturaleza a tu localidad y cómo cambiaría la vida diaria si se deterioraran?',
-          '¿Cómo se equilibran la protección ambiental y las necesidades inmediatas de empleo en tu territorio?',
-          '¿Qué transformaciones ecológicas graduales notas hoy que requerirán adaptación en las próximas décadas?',
-          '¿Qué compromisos entre conservación y desarrollo local consideras urgentes de consensuar?'
+          '¿Qué especies o ecosistemas de tu comuna están en peligro y quién los cuida?',
+          '¿Qué hace la naturaleza por tu localidad (agua, leña, turismo) y qué pasaría si se deteriorara?',
+          '¿Qué especies invasoras notas en tu comuna y qué daño causan?',
+          '¿Cómo se equilibran la protección ambiental y el empleo en tu territorio?'
         ]
       };
 
@@ -5479,7 +5478,7 @@
           </div>
           <button class="conn-action-btn" data-template="blank">
             <strong>Mesa en Blanco</strong>
-            <span style="font-size: 0.65rem; color: var(--ink-secondary);">Lienzo vacío para explorar libremente</span>
+            <span style="font-size: 0.65rem; color: var(--ink-secondary);">Lienzo vacío</span>
           </button>
           <button class="conn-action-btn" data-template="fiscal_brechas">
             <strong>Brechas Comunales y Capacidad Fiscal</strong>
@@ -5583,7 +5582,7 @@
         if (!tabsContainer) return;
 
         if (!AppState.widgets.length) {
-          tabsContainer.innerHTML = '<span style="font-size: 0.68rem; color: var(--ink-muted); font-style: italic;">Sin ventanas abiertas · Haz clic en + Gráfico o arrastra variables</span>';
+          tabsContainer.innerHTML = '<span style="font-size: 0.68rem; color: var(--ink-muted); font-style: italic;">Sin ventanas. Usa + Tarjeta o arrastra una variable del catálogo</span>';
           return;
         }
 
@@ -8297,7 +8296,7 @@
           if (prop.property_num === '03') {
             actionBtnHtml = `
               <a href="sistemas_complejos.html" class="btn-action-tool primary" style="text-decoration:none; display:inline-flex; align-items:center;">
-                <span>Explorar Simulador de Agentes →</span>
+                <span>Ir al Visualizador de Complejidad →</span>
               </a>
             `;
           } else if (prop.property_num === '12') {
@@ -8391,7 +8390,7 @@
         }
 
         // Crear cápsula ciudadana / tarjeta reflexiva conectada
-        const explText = `${preset.what_it_shows}\n\nDinámica Sistémica: ${preset.why_complex_system}`;
+        const explText = `${preset.what_it_shows}\n\nPor qué es un sistema complejo: ${preset.why_complex_system}`;
         const refCard = createReflectionCard({
           title: `Cápsula #${prop.property_num}: ${prop.name_es}`,
           text: explText,
@@ -8948,7 +8947,7 @@
         const payload = {
           metadata: {
             autor: 'Álvaro Contreras Barrios',
-            plataforma: 'Laboratorio de Modelamiento Sistémico de Aysén',
+            plataforma: 'Laboratorio Sistémico · Aysén',
             fecha: new Date().toISOString()
           },
           subDashboards: AppState.subDashboards,

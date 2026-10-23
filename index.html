@@ -496,7 +496,7 @@
     <button id="btnModeProjector" type="button" aria-label="Modo Proyector"></button>
     <div id="crossAlertBanner">
       <span id="crossAlertTitle">Alerta de Integridad</span>
-      <span id="crossAlertText">Sin anomalías detectadas en telemetría</span>
+      <span id="crossAlertText">Datos sin alertas</span>
     </div>
     <canvas id="miniChart" width="10" height="10"></canvas>
     <canvas id="crossChart" width="10" height="10"></canvas>
@@ -611,7 +611,7 @@
           Datos y Sistema de <span class="text-primary">Aysén</span>
         </h1>
         <p class="font-sans text-base sm:text-lg text-on-surface/80 leading-relaxed font-normal">
-          Repositorio integrado de datos públicos de la Región de Aysén organizado en 7 grandes ámbitos (Hubs) y 31 nodos temáticos conectados entre sí. Haz clic en cualquier Hub o nodo del mapa para revisar qué datos contiene, previsualizar sus cifras y explorar su información territorial.
+          Datos públicos de la Región de Aysén, ordenados en 7 ámbitos y 31 nodos. Haz clic en un ámbito o nodo para ver qué contiene, de dónde viene y sus cifras principales.
         </p>
       </div>
 
@@ -623,7 +623,7 @@
             <span>Mapa de Hubs</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
           </div>
-          <div class="text-xs text-muted mt-1">7 hubs & 31 nodos de datos interconectados</div>
+          <div class="text-xs text-muted mt-1">7 ámbitos y 31 nodos de datos</div>
         </button>
 
         <button onclick="switchTab('comunas')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
@@ -631,7 +631,7 @@
             <span>Las 10 Comunas</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
           </div>
-          <div class="text-xs text-muted mt-1">Fichas integradas transversales por comuna</div>
+          <div class="text-xs text-muted mt-1">Una ficha por comuna</div>
         </button>
 
         <a href="plataforma_aysen.html" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group block no-underline">
@@ -639,7 +639,7 @@
             <span>Atlas Sistémico</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">↗</span>
           </div>
-          <div class="text-xs text-muted mt-1">Plataforma analítica y cruces multivariables</div>
+          <div class="text-xs text-muted mt-1">Cruces entre variables (en el Laboratorio)</div>
         </a>
 
       </div>
@@ -829,7 +829,7 @@
           Las 10 Comunas de Aysén
         </h2>
         <p class="text-sm text-on-surface/80 leading-relaxed">
-          Selecciona cualquier comuna para inspeccionar su ficha transversal integrada con los datos de los 7 Hubs (demografía Censo 2024, presupuesto municipal SINIM, energía, suelo, acuicultura, inversión SEIA, salud y biodiversidad).
+          Elige una comuna para ver sus datos de población, presupuesto municipal, energía, suelo, acuicultura, inversión, salud y biodiversidad.
         </p>
       </div>
 
@@ -940,25 +940,25 @@
           </div>
         </div>
 
-        <!-- BLOQUE 1: Transparencia y Origen del Dato (provenance) -->
+        <!-- BLOQUE 1: Origen del dato (provenance) -->
         <div id="drawer-provenance-section" class="pt-5 border-t border-border-subtle space-y-3">
           <div class="flex items-center justify-between">
             <h3 class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
-              Transparencia y Origen del Dato
+              Origen del dato
             </h3>
             <span class="font-mono text-[11px] text-muted">Ficha Técnica Oficial</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div class="space-y-0.5">
-              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Fecha de recolección / corte</span>
+              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Fecha de corte</span>
               <span id="drawer-prov-date" class="font-sans text-xs text-on-surface font-medium block leading-snug"></span>
             </div>
             <div class="space-y-0.5">
-              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Frecuencia y próxima actualización</span>
+              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Frecuencia de actualización</span>
               <span id="drawer-prov-frequency" class="font-sans text-xs text-on-surface font-medium block leading-snug"></span>
             </div>
             <div class="sm:col-span-2 space-y-0.5">
-              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Cómo se obtuvo (método y organismo público)</span>
+              <span class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-medium block">Método de obtención</span>
               <span id="drawer-prov-method" class="font-sans text-xs text-on-surface/90 block leading-relaxed"></span>
             </div>
             <div class="sm:col-span-2 pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-border-subtle/50 pt-2">
@@ -973,21 +973,21 @@
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 px-3 py-1.5 rounded-sm bg-primary/5 hover:bg-primary text-primary hover:text-white border border-primary/20 transition-all font-mono text-xs font-semibold shrink-0"
               >
-                <span>Fuente Oficial Verificada</span>
+                <span>Fuente oficial</span>
                 <span class="font-mono text-xs">↗</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- BLOQUE 2: Gráfico Ejecutivo (Chart.js) -->
+        <!-- BLOQUE 2: Gráfico (Chart.js) -->
         <div id="drawer-chart-section" class="pt-6 border-t border-border-subtle space-y-2">
           <div class="flex items-center justify-between gap-2">
             <div>
               <h3 id="drawer-chart-heading" class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
-                Gráfico Ejecutivo
+                Gráfico
               </h3>
-              <p class="font-sans text-xs text-muted">Visualización sintética de los datos de este nodo</p>
+              <p class="font-sans text-xs text-muted">Gráfico del nodo</p>
             </div>
             <span id="drawer-chart-unit" class="font-mono text-xs px-2.5 py-0.5 rounded-sm bg-primary/10 text-primary font-semibold"></span>
           </div>
@@ -996,14 +996,14 @@
           </div>
         </div>
 
-        <!-- BLOQUE 3: Tabla Resumen Simple -->
+        <!-- BLOQUE 3: Tabla resumen -->
         <div id="drawer-table-section" class="pt-6 border-t border-border-subtle space-y-3">
           <div class="flex items-center justify-between gap-2">
             <div>
               <h3 id="drawer-table-heading" class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
-                Tabla Resumen Simple
+                Tabla resumen
               </h3>
-              <p class="font-sans text-xs text-muted">Cifras consolidadas para lectura inmediata</p>
+              <p class="font-sans text-xs text-muted">Cifras principales</p>
             </div>
             <span id="drawer-table-count" class="font-mono text-xs text-muted"></span>
           </div>
@@ -1022,7 +1022,7 @@
         <div id="drawer-canvas-preview-section" class="pt-6 border-t border-border-subtle space-y-4">
           <div>
             <h3 class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
-              Exploración en Lienzo o Base Completa
+              Ver todos los datos
             </h3>
             <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
               Dimensiones desagregadas y variables disponibles en el registro institucional:
@@ -1050,7 +1050,7 @@
               onclick="sendCurrentNodeToExplorationCanvas()"
               class="btn-action inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-sm bg-primary text-white hover:bg-primary-dark text-xs font-semibold transition-colors font-mono text-center cursor-pointer shadow-xs"
             >
-              <span>Explorar en el Laboratorio Sistémico (Lienzo 2D)</span>
+              <span>Abrir en el Laboratorio</span>
               <span class="font-mono text-xs">↗</span>
             </button>
           </div>
@@ -1074,7 +1074,7 @@
         <!-- Nodos relacionados para cruzar -->
         <div id="drawer-related-section" class="pt-6 border-t border-border-subtle space-y-3 hidden">
           <h3 id="drawer-related-heading" class="font-mono text-[11px] uppercase tracking-wider text-muted font-medium">
-            Nodos relacionados en el sistema
+            Nodos relacionados
           </h3>
           <div id="drawer-related-list" class="space-y-2">
             <!-- Renderizado dinámico -->
@@ -1786,7 +1786,7 @@
 
           <div class="pt-3 border-t border-border-subtle/80 flex items-center justify-between text-xs">
             <span class="font-mono text-xs text-primary font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-              Abrir ficha comunal integrada
+              Abrir ficha comunal
               <span class="font-mono text-xs">→</span>
             </span>
           </div>
@@ -1830,7 +1830,7 @@
       }
 
       chartSection.classList.remove('hidden');
-      document.getElementById('drawer-chart-heading').textContent = chartSpec.title || 'Gráfico Ejecutivo';
+      document.getElementById('drawer-chart-heading').textContent = chartSpec.title || 'Gráfico';
       const unitEl = document.getElementById('drawer-chart-unit');
       if (unitEl) {
         if (chartSpec.unit) {
@@ -1984,7 +1984,7 @@
       if (actionsBar) actionsBar.classList.add('hidden');
       if (exampleSection) exampleSection.classList.add('hidden');
 
-      // 1. Bloque 1 — Transparencia y Origen del Dato (provenance)
+      // 1. Bloque 1 — Origen del dato (provenance)
       const prov = n.provenance || {};
       const official = n.officialSource || {};
       document.getElementById('drawer-prov-date').textContent = prov.collectionDate || 'Corte oficial 2026';
@@ -2002,13 +2002,13 @@
         provLink.style.display = url !== '#' ? 'inline-flex' : 'none';
       }
 
-      // 2. Bloque 2 — Gráfico Ejecutivo (Chart.js)
+      // 2. Bloque 2 — Gráfico (Chart.js)
       renderNodeChart(n.chartSpec);
 
-      // 3. Bloque 3 — Tabla Resumen Simple
+      // 3. Bloque 3 — Tabla resumen
       AppState.tableExpanded = false;
       renderDrawerTable(
-        'Tabla Resumen Simple',
+        'Tabla resumen',
         n.tableColumns || [],
         n.tableRows || []
       );
@@ -2035,10 +2035,10 @@
         totalRecEl.textContent = cp.totalRecordsInFullBase || `${(n.tableRows || []).length} registros en archivo institucional`;
       }
 
-      // Nodos relacionados en el sistema
+      // Nodos relacionados
       const relSection = document.getElementById('drawer-related-section');
       const relList = document.getElementById('drawer-related-list');
-      document.getElementById('drawer-related-heading').textContent = 'Nodos relacionados en el sistema';
+      document.getElementById('drawer-related-heading').textContent = 'Nodos relacionados';
 
       const relatedNodes = (n.relatedNodeIds || [])
         .map(rId => AppState.data.nodos.find(item => item.id === rId))
@@ -2143,7 +2143,7 @@
 
       const relSection = document.getElementById('drawer-related-section');
       const relList = document.getElementById('drawer-related-list');
-      document.getElementById('drawer-related-heading').textContent = 'Explorar cada nodo de este Hub';
+      document.getElementById('drawer-related-heading').textContent = 'Ver los nodos de este ámbito';
       relSection.classList.remove('hidden');
       relList.innerHTML = hubNodes.map(n => `
         <button 
