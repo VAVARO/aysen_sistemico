@@ -170,6 +170,98 @@ class TestCecanPresetsAndNl2Chart(unittest.TestCase):
             emojis = EMOJI_REGEX.findall(text)
             self.assertEqual(len(emojis), 0, f"Se detectaron emojis en {os.path.basename(path)}: {emojis}")
 
+    def test_07_hubs_gallery_structure_and_multiformats(self):
+        """Verifica que hubs_gallery contenga exactamente 8 Hubs y 5 formatos por Hub (40 presets en total)."""
+        with open(CECAN_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        gallery = data.get("hubs_gallery", {})
+        self.assertEqual(len(gallery), 8, "Deben existir exactamente 8 Hubs en hubs_gallery")
+
+        expected_formats = {"map", "bar", "scatter", "line", "special"}
+        total_presets = 0
+
+        for hub_id, hdata in gallery.items():
+            presets = hdata.get("presets", [])
+            self.assertEqual(len(presets), 5, f"Hub {hub_id} debe tener exactamente 5 presets")
+            total_presets += len(presets)
+
+            formats_in_hub = {p.get("format_type") for p in presets}
+            self.assertEqual(formats_in_hub, expected_formats, f"Hub {hub_id} no cumple la diversidad de 5 formatos: {formats_in_hub}")
+
+            # Todo preset debe cruzar con otro Hub
+            for p in presets:
+                cross = p.get("inter_hub_cross", {})
+                self.assertTrue(cross.get("cross_hub"), f"Preset {p.get('preset_id')} carece de cross_hub")
+                self.assertNotEqual(cross.get("cross_hub"), hub_id, f"Preset {p.get('preset_id')} se cruza consigo mismo")
+
+            # Cada Hub debe tener al menos 1 preset de percepción mirror
+            mirrors = [p for p in presets if p.get("is_perception_mirror") is True]
+            self.assertGreaterEqual(len(mirrors), 1, f"Hub {hub_id} carece de preset con is_perception_mirror")
+            for m in mirrors:
+                cfg = m.get("config", {})
+                sc = cfg.get("sample_contract", {})
+                self.assertIn("active_n", sc, f"Preset {m.get('preset_id')} carece de active_n en sample_contract")
+                self.assertIn("margin_error_pct", sc, f"Preset {m.get('preset_id')} carece de margin_error_pct")
+                self.assertGreater(sc.get("active_n", 0), 0)
+
+        self.assertEqual(total_presets, 40, "La galería debe totalizar exactamente 40 presets")
+
+    def test_08_barometro_espejo_statistical_robustness(self):
+        """Verifica que el dataset integrado del Barómetro contenga micro-cubos y semáforo estadístico correcto."""
+        baro_file = os.path.join(ROOT_DIR, "data", "raw", "barometro_uaysen", "barometro_integrado_aysen.json")
+        self.assertTrue(os.path.exists(baro_file), "Debe existir barometro_integrado_aysen.json")
+        with open(baro_file, "r", encoding="utf-8") as f:
+            baro = json.load(f)
+
+        self.assertEqual(len(baro.get("hubs", {})), 8, "Barómetro debe tener micro-cubos para los 8 Hubs")
+
+        for hid, hdata in baro["hubs"].items():
+            pregs = hdata.get("preguntas", [])
+            self.assertGreaterEqual(len(pregs), 1, f"Hub {hid} carece de preguntas")
+            for q in pregs:
+                self.assertGreater(q.get("n_muestral_valido", 0), 0)
+                self.assertGreater(q.get("me_95_total", 0), 0)
+                self.assertIn(q.get("semaforo_global"), ["verde", "amarillo", "rojo"])
+                cubes = q.get("micro_cubos", {})
+                for dim_key in ["por_nivel_educativo", "por_nse", "por_macrozona"]:
+                    self.assertIn(dim_key, cubes, f"Pregunta {q.get('codigo')} carece de micro-cubo {dim_key}")
+                    for cat, cval in cubes[dim_key].items():
+                        n = cval.get("n_muestral", 0)
+                        sem = cval.get("semaforo")
+                        if n >= 50:
+                            self.assertEqual(sem, "verde")
+                        elif n >= 30:
+                            self.assertEqual(sem, "amarillo")
+                        else:
+                            self.assertEqual(sem, "rojo")
+
+    def test_09_edges_inter_hub_integrity(self):
+        """Verifica que la matriz edges_inter_hub en cruces_multivariables.json y bundle tenga las 3 llaves y divergencia."""
+        cruces_file = os.path.join(ROOT_DIR, "data", "cruces_multivariables.json")
+        with open(cruces_file, "r", encoding="utf-8") as f:
+            cruces = json.load(f)
+
+        edges = cruces.get("edges_inter_hub", [])
+        self.assertGreaterEqual(len(edges), 8, "Deben existir al menos 8 aristas inter-hub")
+
+        valid_types = {"comunal", "economico_rut", "espacial_proximidad"}
+        found_types = set()
+
+        for e in edges:
+            self.assertIn(e.get("tipo"), valid_types, f"Tipo de arista inválido: {e.get('tipo')}")
+            found_types.add(e.get("tipo"))
+            self.assertTrue(e.get("hub_origen"))
+            self.assertTrue(e.get("hub_destino"))
+            self.assertNotEqual(e.get("hub_origen"), e.get("hub_destino"))
+            self.assertIn("peso_intensidad", e)
+            self.assertTrue(0.0 <= e.get("peso_intensidad", -1) <= 1.0)
+            self.assertIn("indice_divergencia_percepcion", e)
+            self.assertTrue(0.0 <= e.get("indice_divergencia_percepcion", -1) <= 1.0)
+            self.assertTrue(e.get("preset_recomendado"))
+
+        self.assertEqual(found_types, valid_types, f"Deben estar presentes los 3 tipos de llaves: {valid_types}")
+
 
 if __name__ == "__main__":
     unittest.main()

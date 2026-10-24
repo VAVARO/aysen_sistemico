@@ -15,6 +15,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+if str(ROOT / "scripts") not in sys.path:
+    sys.path.insert(0, str(ROOT / "scripts"))
 sys.stdout.reconfigure(encoding='utf-8')
 
 def build_cecan_presets():
@@ -608,6 +612,23 @@ def build_cecan_presets():
     }
 
     target_file = ROOT / "data" / "cecan_16_presets_aysen.json"
+    baro_file = ROOT / "data" / "raw" / "barometro_uaysen" / "barometro_integrado_aysen.json"
+    barometro_data = {}
+    if baro_file.exists():
+        with open(baro_file, "r", encoding="utf-8") as f:
+            barometro_data = json.load(f)
+
+    try:
+        from scripts.build_hubs_gallery_and_edges import build_hubs_gallery, build_extension_gallery, build_edges_inter_hub
+        cecan_data["total_hubs"] = 8
+        cecan_data["total_hub_presets"] = 40
+        cecan_data["hubs_gallery"] = build_hubs_gallery(barometro_data)
+        cecan_data["extension_gallery"] = build_extension_gallery(barometro_data)
+        cecan_data["edges_inter_hub"] = build_edges_inter_hub(barometro_data)
+        print("Galería de 40 visualizaciones, 10 presets de extensión e inter-hub edges inyectadas en presets CECAN.")
+    except Exception as e:
+        print(f"Aviso: no se pudo inyectar galería de 40 presets: {e}")
+
     with open(target_file, "w", encoding="utf-8") as f:
         json.dump(cecan_data, f, indent=2, ensure_ascii=False)
     print(f"Archivo guardado exitosamente: {target_file}")
@@ -708,6 +729,22 @@ def update_cruces_multivariables():
             {"property_id": 16, "property_num": "16", "presets": ["16_multiples_escalas_turismo"], "dataset": ["comunas"]}
         ]
     }
+
+    # 3. Inyectar matriz de relaciones explícitas inter-hub
+    baro_file = ROOT / "data" / "raw" / "barometro_uaysen" / "barometro_integrado_aysen.json"
+    barometro_data = {}
+    if baro_file.exists():
+        with open(baro_file, "r", encoding="utf-8") as f:
+            barometro_data = json.load(f)
+
+    try:
+        from scripts.build_hubs_gallery_and_edges import build_edges_inter_hub, build_extension_gallery
+        data["edges_inter_hub"] = build_edges_inter_hub(barometro_data)
+        data["total_edges_inter_hub"] = len(data["edges_inter_hub"])
+        data["extension_gallery"] = build_extension_gallery(barometro_data)
+        print("Matriz edges_inter_hub y extension_gallery inyectadas en cruces_multivariables.json.")
+    except Exception as e:
+        print(f"Aviso: no se pudo inyectar edges_inter_hub: {e}")
 
     with open(cruces_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)

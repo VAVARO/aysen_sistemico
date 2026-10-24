@@ -61,8 +61,30 @@ const wp05 = readJson('data/systemic/05_social_salud_educacion_riesgos.json');
 const wp06 = readJson('data/systemic/06_turismo_sernatur_conaf.json');
 const wp07 = readJson('data/systemic/07_biodiversidad_flora_fauna_aysen.json');
 const wp08 = readJson('data/systemic/08_desagregaciones_sectoriales_aysen.json');
+let wp09 = null;
+const wp09Path = path.join(ROOT, 'data/systemic/09_cultura_patrimonio.json');
+if (fs.existsSync(wp09Path)) {
+  wp09 = readJson('data/systemic/09_cultura_patrimonio.json');
+}
+let wp10 = null;
+const wp10Path = path.join(ROOT, 'data/systemic/10_ctci_innovacion.json');
+if (fs.existsSync(wp10Path)) {
+  wp10 = readJson('data/systemic/10_ctci_innovacion.json');
+}
 const provCatalog = readJson('data/systemic/provenance_catalog.json');
 const holdingsRaw = readJson('data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json');
+
+// Carga opcional de Barómetro y Presets Inter-Hub
+let baroData = { hubs: {} };
+const baroPath = path.join(ROOT, 'data/raw/barometro_uaysen/barometro_integrado_aysen.json');
+if (fs.existsSync(baroPath)) {
+  baroData = readJson('data/raw/barometro_uaysen/barometro_integrado_aysen.json');
+}
+let cecanPresets = {};
+const cecanPath = path.join(ROOT, 'data/cecan_16_presets_aysen.json');
+if (fs.existsSync(cecanPath)) {
+  cecanPresets = readJson('data/cecan_16_presets_aysen.json');
+}
 
 // Mapas auxiliares por código comunal INE ('11101'..'11303')
 const wp01ByIne = {};
@@ -182,8 +204,26 @@ const hubs = [
     nodesFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv',
     sourceName: 'CONAF SIT / MMA RCE / SAG / SINCA / DGA / SERNAGEOMIN',
     sourceUrl: 'https://clasificacionespecies.mma.gob.cl/'
+  },
+  {
+    id: 'salud',
+    numeral: 'VIII',
+    title: 'VIII. Salud APS, Hospitales & Desagregaciones Sectoriales',
+    shortTitle: 'Salud APS & Hospitales',
+    color: '#dc2626',
+    description: 'Red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), capacidad de **261 camas hospitalarias**, **32 postas de salud rural**, tiempos de traslado SAMU e isócronas de evacuación crítica.',
+    example: 'El **Hospital Regional de Coyhaique** concentra el **78,5% de las camas regionales** (205 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas.',
+    csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
+    nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
+    sourceName: 'MINSAL DEIS / SSA / SAMU Aysén',
+    sourceUrl: 'https://deis.minsal.cl/'
   }
 ];
+
+// Inyección transversal de Espejo Ciudadano (Barómetro Regional) en cada Hub
+hubs.forEach(h => {
+  h.espejo_barometro = (baroData.hubs && baroData.hubs[h.id]) ? baroData.hubs[h.id] : null;
+});
 
 // ============================================================================
 // 2. CONSTRUCCION DE LOS 31 NODOS SATELITE CON DATOS 100% REALES VERIFICADOS
@@ -1873,7 +1913,15 @@ const bundle = {
   nodos,
   comunas,
   holdings,
-  seriesMensualesEmat: wp06.series_mensuales_emat_sernatur || []
+  seriesMensualesEmat: wp06.series_mensuales_emat_sernatur || [],
+  edges_inter_hub: cecanPresets.edges_inter_hub || [],
+  hubsGallery: cecanPresets.hubs_gallery || {},
+  extension_gallery: cecanPresets.extension_gallery || {},
+  extension_modules: {
+    cultura_patrimonio: wp09 || {},
+    ctci_innovacion: wp10 || {}
+  },
+  comparativaInterregional: baroData.comparativa_interregional || null
 };
 
 const bundleStr = JSON.stringify(bundle, null, 2);

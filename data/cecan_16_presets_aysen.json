@@ -584,5 +584,3826 @@
         }
       ]
     }
+  ],
+  "total_hubs": 8,
+  "total_hub_presets": 40,
+  "hubs_gallery": {
+    "gobernanza": {
+      "hub_id": "gobernanza",
+      "hub_num": "01",
+      "numeral": "I",
+      "title": "Hub 01: Gobernanza & Finanzas Municipales",
+      "shortTitle": "Gobernanza & Finanzas",
+      "color": "#4338ca",
+      "presets": [
+        {
+          "preset_id": "hub_01_01",
+          "hub_id": "gobernanza",
+          "titulo": "1. Mapa Territorial de Municipios y Dependencia Fiscal FCM (%)",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "energia",
+            "descripcion": "Cruza la ubicación de las 10 sedes municipales con el trazado de la Fibra Óptica Austral y la red de caminos no pavimentados"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "dependencia_fcm_pct",
+            "varY": "presupuesto_per_capita_mclp",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "municipios_sedes",
+              "ruta7_trazado",
+              "foa_nodos"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "G1_F",
+              "label": "Decisión descentralizada en obras públicas",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Superpone los 10 municipios de Aysén sobre la red de conectividad física y digital.",
+          "why_complex_system": "Sistemas anidados: los municipios más dependientes territorialmente coinciden con las zonas de mayor aislamiento vial."
+        },
+        {
+          "preset_id": "hub_01_02",
+          "hub_id": "gobernanza",
+          "titulo": "2. Presupuesto Municipal per Cápita vs. Dependencia del FCM (%)",
+          "format_type": "bar",
+          "subtype": "double_axis_bar",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Cruza los ingresos propios municipales con la dependencia del Fondo Común Municipal y el volumen de empresas SII"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "presupuesto_per_capita_mclp",
+            "varY": "dependencia_fcm_pct",
+            "varY2": "dependencia_fcm_pct",
+            "showAverage": true,
+            "tooltip_mirror_indicator": {
+              "question_id": "F4_C",
+              "label": "Aporte percibido del Municipio",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Muestra la brecha entre comunas con alta dependencia del FCM (>80%) frente a centros urbanos con mayor autonomía fiscal.",
+          "why_complex_system": "Dependencia del camino: la matriz fiscal comunal perpetúa la vulnerabilidad de las comunas rurales aisladas."
+        },
+        {
+          "preset_id": "hub_01_03",
+          "hub_id": "gobernanza",
+          "titulo": "3. Cuadrantes de Autonomía Fiscal: Dependencia FCM vs. Inversión FNDR",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Cruza el subsidio municipal FCM con la cartera de proyectos aprobados en el SEIA e inversión regional FNDR"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "dependencia_fcm_pct",
+            "labelX": "Dependencia del Fondo Común Municipal (%)",
+            "varY": "fndr_mclp",
+            "labelY": "Inversión FNDR Asignada (M$ CLP)",
+            "quadrant_labels": {
+              "q1": "Alta Dependencia y Alto FNDR Compensatorio",
+              "q2": "Baja Dependencia y Alto FNDR",
+              "q3": "Autonomía Relativa Urbana",
+              "q4": "Vulnerabilidad Fiscal Extrema"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Clasifica las 10 comunas en cuatro cuadrantes según su nivel de subsidio compensatorio del Estado.",
+          "why_complex_system": "Palancas y nodos centrales: el FNDR actúa como amortiguador para evitar el colapso operativo de municipios australes."
+        },
+        {
+          "preset_id": "hub_01_04",
+          "hub_id": "gobernanza",
+          "titulo": "4. Serie Multianual: Evolución Presupuestaria y Asignaciones FNDR (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Compara la trayectoria histórica de gasto social e infraestructura con la tasa de pobreza multidimensional CASEN"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "presupuesto_municipal_total_regional_mclp",
+            "varY": "presupuesto_fndr_gore_aysen_mclp",
+            "seriesPrimaria": "presupuesto_municipal_total_regional_mclp",
+            "seriesSecundaria": "presupuesto_fndr_gore_aysen_mclp",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Presupuesto Municipal Regional (M$ CLP)",
+                  "data": [
+                    39353.4,
+                    41693.1,
+                    44764.1,
+                    48263.8,
+                    51344.5,
+                    53644.9,
+                    57743.4,
+                    62864.5,
+                    67163.4,
+                    70751.5,
+                    75524.1,
+                    80001.3
+                  ],
+                  "unit": "M$ CLP",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Presupuesto FNDR GORE Aysén (M$ CLP)",
+                  "data": [
+                    46500.0,
+                    48200.0,
+                    50800.0,
+                    53400.0,
+                    56100.0,
+                    58900.0,
+                    62300.0,
+                    66700.0,
+                    69800.0,
+                    72450.0,
+                    75800.0,
+                    78950.0
+                  ],
+                  "unit": "M$ CLP",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Evolución de los fondos públicos regionales consolidados en los últimos 11 años.",
+          "why_complex_system": "Cambio en el tiempo: los desfases presupuestarios entre aprobación y ejecución generan fluctuaciones cíclicas de liquidez comunal."
+        },
+        {
+          "preset_id": "hub_01_05",
+          "hub_id": "gobernanza",
+          "titulo": "5. Realidad Fiscal vs. Percepción: Confianza en Municipio/GORE vs. Dependencia FCM",
+          "format_type": "special",
+          "subtype": "dumbbell_perception_vs_structural",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Cruza la valoración ciudadana del aporte municipal (Barómetro F4_C / F4_B) con la dependencia real del FCM (SINIM)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "dependencia_fcm_pct",
+            "varY": "inversion_directa_pct",
+            "barometro_question": "F4_C",
+            "structural_variable": "dependencia_fcm_pct",
+            "mirror_series": {
+              "question_id": "F4_C",
+              "enunciado": "Aporte del Municipio al desarrollo de la región",
+              "tipo": "escala_4",
+              "N_total": 465,
+              "n_muestral_valido": 460,
+              "me_95_total": 4.56,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 54.6,
+              "promedio_valor": 2.33,
+              "structural_variable": "dependencia_fcm_pct",
+              "structural_by_macrozona": {
+                "norte": 79.4,
+                "centro": 58.6,
+                "sur": 86.2
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 196,
+                  "me_95": 6.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 48.5,
+                  "promedio_valor": 2.51
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 93,
+                  "me_95": 10.16,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 55.9,
+                  "promedio_valor": 2.27
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.8,
+                  "promedio_valor": 2.16
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 44.6,
+                  "promedio_valor": 2.55
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 185,
+                  "me_95": 7.2,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.4,
+                  "promedio_valor": 2.29
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 127,
+                  "me_95": 8.69,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.6,
+                  "promedio_valor": 2.12
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 215,
+                  "me_95": 6.67,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 51.2,
+                  "promedio_valor": 2.42
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 245,
+                  "me_95": 6.25,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 57.6,
+                  "promedio_valor": 2.24
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 64.9,
+                  "promedio_valor": 2.2
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 152,
+                  "me_95": 7.94,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 61.8,
+                  "promedio_valor": 2.16
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 149,
+                  "me_95": 8.02,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 49.0,
+                  "promedio_valor": 2.42
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 85,
+                  "me_95": 10.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 42.4,
+                  "promedio_valor": 2.58
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 203,
+                  "me_95": 6.87,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 50.2,
+                  "promedio_valor": 2.43
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 152,
+                  "me_95": 7.94,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 50.0,
+                  "promedio_valor": 2.41
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.5,
+                  "promedio_valor": 2.02
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 460,
+              "universe_N": 465,
+              "margin_error_pct": 4.56,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Compara el aporte percibido del municipio (Barómetro) frente a su dependencia efectiva de recursos externos.",
+          "why_complex_system": "Desacople perceptual: los ciudadanos en comunas con 88% de dependencia del FCM perciben mayor cercanía institucional que en la capital regional."
+        }
+      ]
+    },
+    "energia": {
+      "hub_id": "energia",
+      "hub_num": "02",
+      "numeral": "II",
+      "title": "Hub 02: Energía & Telecomunicaciones",
+      "shortTitle": "Energía & Telecom",
+      "color": "#0284c7",
+      "presets": [
+        {
+          "preset_id": "hub_02_01",
+          "hub_id": "energia",
+          "titulo": "1. Mapa de Infraestructura Energética y Cortes Eléctricos SAIDI",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "salud",
+            "descripcion": "Superpone las centrales hidroeléctricas y micro-redes diésel con la cobertura de postas rurales y fibra óptica"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "saidi_horas_anual",
+            "varY": "costo_diesel_aislado_clp",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "sistemas_electricos",
+              "foa_trazado",
+              "postas_rurales"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B3_I",
+              "label": "Acceso a conectividad digital (1-7)",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Georreferenciación de los 4 sistemas eléctricos aislados y los nodos FOA en localidades remotas.",
+          "why_complex_system": "Acoplamiento crítico: la resiliencia de la red de salud rural depende de la autonomía energética de los micro-generadores locales."
+        },
+        {
+          "preset_id": "hub_02_02",
+          "hub_id": "energia",
+          "titulo": "2. Precio de Combustibles CNE ($/L) vs. Costo Generación Diésel Aislado",
+          "format_type": "bar",
+          "subtype": "divergent_bar",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Diferencial de precios de Gasolina 93 y Diésel respecto al promedio nacional CNE cruzado con la lejanía comunal"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "gasolina_93_clp",
+            "varY": "costo_diesel_aislado_clp",
+            "varY2": "costo_diesel_aislado_clp",
+            "showAverage": true
+          },
+          "what_it_shows": "Muestra que el litro de bencina en Melinka o Tortel cuesta entre 18% y 28% más que en Coyhaique por flete marítimo/terrestre.",
+          "why_complex_system": "Fricción de distancia: el costo logístico de la energía penaliza exponencialmente a las periferias del sistema."
+        },
+        {
+          "preset_id": "hub_02_03",
+          "hub_id": "energia",
+          "titulo": "3. Cuadrantes de Vulnerabilidad Energética: Tarifa BT1 vs. Uso de Leña (%)",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Cruza la tarifa eléctrica residencial ($/kWh) con el porcentaje de hogares dependientes de leña para calefacción"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "tarifa_bt1_clp",
+            "labelX": "Tarifa Eléctrica BT1 ($/kWh)",
+            "varY": "hogares_lena_pct",
+            "labelY": "Hogares Calefaccionados con Leña (%)",
+            "quadrant_labels": {
+              "q1": "Alta Tarifa y Máxima Dependencia de Biomasa",
+              "q2": "Tarifa Media con Leña Dominante",
+              "q3": "Matriz Mixta Urbana",
+              "q4": "Zona de Aislamiento Diésel Caro"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Compara las 10 comunas en su balance entre tarifa eléctrica regulada y uso intensivo de biomasa.",
+          "why_complex_system": "Trampa de dependencia: altas tarifas eléctricas bloquean la transición energética hacia calefacción limpia, perpetuando el uso de leña húmeda."
+        },
+        {
+          "preset_id": "hub_02_04",
+          "hub_id": "energia",
+          "titulo": "4. Serie Multianual: Generación Hidroeléctrica vs. Térmica Diésel (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Evolución anual de generación hidroeléctrica y térmica diésel frente a variabilidad climática en Aysén"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "generacion_hidro_gwh",
+            "varY": "generacion_diesel_gwh",
+            "seriesPrimaria": "generacion_hidro_gwh",
+            "seriesSecundaria": "generacion_diesel_gwh",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Generación Hidroeléctrica (GWh)",
+                  "data": [
+                    78.2,
+                    62.1,
+                    75.4,
+                    81.2,
+                    79.6,
+                    76.5,
+                    74.2,
+                    78.0,
+                    82.5,
+                    84.1,
+                    85.3,
+                    86.5
+                  ],
+                  "unit": "GWh",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Generación Térmica Diésel (GWh)",
+                  "data": [
+                    63.8,
+                    82.4,
+                    71.8,
+                    69.5,
+                    75.1,
+                    72.0,
+                    83.5,
+                    84.2,
+                    83.8,
+                    86.2,
+                    88.1,
+                    89.8
+                  ],
+                  "unit": "GWh",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Demuestra la estacionalidad inversa: en invierno se reduce el caudal por congelamiento y aumenta la quema de diésel de respaldo.",
+          "why_complex_system": "No linealidad: los picos de demanda invernal coinciden con las menores eficiencias de escorrentía hidráulica."
+        },
+        {
+          "preset_id": "hub_02_05",
+          "hub_id": "energia",
+          "titulo": "5. Realidad vs. Percepción: Estrés por Costo de Servicios y Humo de Leña",
+          "format_type": "special",
+          "subtype": "dumbbell_perception_vs_structural",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Cruza la urgencia ciudadana por el humo de leña (I4_A Barómetro) con los días reales sobre norma MP2.5 de SINCA"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "dias_sobre_norma_mp25",
+            "varY": "hogares_lena_pct",
+            "barometro_question": "I4_A",
+            "structural_variable": "dias_sobre_norma_mp25",
+            "mirror_series": {
+              "question_id": "I4_A",
+              "enunciado": "Urgencia de resolver contaminación del aire por humo de leña",
+              "tipo": "escala_4",
+              "N_total": 465,
+              "n_muestral_valido": 460,
+              "me_95_total": 4.56,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 92.6,
+              "promedio_valor": 3.72,
+              "structural_variable": "dias_sobre_norma_mp25",
+              "structural_by_macrozona": {
+                "norte": 28.5,
+                "centro": 84.0,
+                "sur": 34.2
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 195,
+                  "me_95": 7.01,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.8,
+                  "promedio_valor": 3.68
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 89.4,
+                  "promedio_valor": 3.65
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 96.5,
+                  "promedio_valor": 3.8
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 146,
+                  "me_95": 8.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 87.0,
+                  "promedio_valor": 3.6
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 185,
+                  "me_95": 7.2,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.6,
+                  "promedio_valor": 3.75
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 96.1,
+                  "promedio_valor": 3.81
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 217,
+                  "me_95": 6.64,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 91.2,
+                  "promedio_valor": 3.72
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 243,
+                  "me_95": 6.28,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.8,
+                  "promedio_valor": 3.71
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.2,
+                  "promedio_valor": 3.72
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 95.4,
+                  "promedio_valor": 3.76
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.3,
+                  "promedio_valor": 3.77
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 83,
+                  "me_95": 10.75,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 85.5,
+                  "promedio_valor": 3.55
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 206,
+                  "me_95": 6.82,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 95.1,
+                  "promedio_valor": 3.82
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 86.7,
+                  "promedio_valor": 3.52
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 104,
+                  "me_95": 9.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 96.2,
+                  "promedio_valor": 3.81
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 465,
+              "universe_N": 465,
+              "margin_error_pct": 4.54,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Compara la percepción del 80.2% de encuestados que califica de muy urgente resolver la contaminación por leña con las mediciones reales.",
+          "why_complex_system": "Retroalimentación socio-técnica: el bajo ingreso relativo y el frío impiden cambiar la leña por tecnologías limpias pese a la alta conciencia del daño."
+        }
+      ]
+    },
+    "salmonicultura": {
+      "hub_id": "salmonicultura",
+      "hub_num": "03",
+      "numeral": "III",
+      "title": "Hub 03: Territorio, Concesiones & Salmonicultura",
+      "shortTitle": "Territorio & Salmonicultura",
+      "color": "#0059c5",
+      "presets": [
+        {
+          "preset_id": "hub_03_01",
+          "hub_id": "salmonicultura",
+          "titulo": "1. Mapa Territorial de Concesiones, Barrios ACS y Caletas Artesanales",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "turismo",
+            "descripcion": "Superposición espacial de las 745 concesiones salmoneras frente a las 4 Zonas de Interés Turístico (ZOIT) y caletas pesqueras artesanales"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "concesiones_salmon",
+            "varY": "biomasa_salmon_ton",
+            "center": [
+              -45.4,
+              -73.5
+            ],
+            "zoom": 7,
+            "layers": [
+              "concesiones_acuicolas",
+              "barrios_acs",
+              "caletas_pesqueras",
+              "zoit_poligonos"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "I1_D",
+              "label": "Importancia percibida de salmonicultura",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Mapeo completo de las 745 concesiones salmoneras otorgadas en los litorales de Cisnes, Aysén, Guaitecas y Tortel.",
+          "why_complex_system": "Conflicto de uso del maritorio: superposición entre enclaves industriales intensivos y corredores de conservación turística."
+        },
+        {
+          "preset_id": "hub_03_02",
+          "hub_id": "salmonicultura",
+          "titulo": "2. Concesiones Acuícolas Otorgadas vs. Dependencia Municipal FCM (%)",
+          "format_type": "bar",
+          "subtype": "double_axis_bar",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza el número de concesiones salmoneras por comuna con la dependencia del Fondo Común Municipal de los municipios litorales"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "concesiones_salmon",
+            "varY": "dependencia_fcm_pct",
+            "varY2": "dependencia_fcm_pct",
+            "showAverage": true
+          },
+          "what_it_shows": "Las comunas litorales concentran las 745 concesiones acuícolas de la región mientras mantienen más del 70% de dependencia del FCM.",
+          "why_complex_system": "Control distribuido y asimetría: las decisiones de biomasa y empleo dependen de directorios en Santiago o el extranjero, no de los gobiernos locales."
+        },
+        {
+          "preset_id": "hub_03_03",
+          "hub_id": "salmonicultura",
+          "titulo": "3. Cuadrantes de Tensión: Empleo Local SII vs. Concesiones Otorgadas",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Cruza el empleo dependiente formal registrado (SII) con la densidad de concesiones por comuna"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "concesiones_salmon",
+            "labelX": "Concesiones de Acuicultura Otorgadas (N)",
+            "varY": "trabajadores_sii",
+            "labelY": "Trabajadores Dependientes Registrados SII (N)",
+            "quadrant_labels": {
+              "q1": "Enclave Productivo Intenso",
+              "q2": "Fuerza Laboral Residente",
+              "q3": "Baja Actividad Acuícola",
+              "q4": "Extracción Territorial sin Arraigo Local"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Aysén y Cisnes concentran la mayor mano de obra formal, mientras en Guaitecas y Tortel operan centros con cuadrillas de relevo flotantes.",
+          "why_complex_system": "Emergencia económica: la alta producción física coexiste con baja recaudación tributaria local debido a la estructura de patentes."
+        },
+        {
+          "preset_id": "hub_03_04",
+          "hub_id": "salmonicultura",
+          "titulo": "4. Serie Histórica Multieje: Cosechas de Salmón vs. Centros Activos (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Evolución histórica de biomasa cosechada frente a centros de cultivo activos y floraciones algales nocivas"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "biomasa_cosecha_salmon",
+            "varY": "floracion_alexandrium_fan",
+            "seriesPrimaria": "biomasa_cosecha_salmon",
+            "seriesSecundaria": "floracion_alexandrium_fan",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Cosecha Total Salmónidos (Ton)",
+                  "data": [
+                    395400.0,
+                    342100.0,
+                    388900.0,
+                    432500.0,
+                    468200.0,
+                    485600.0,
+                    452300.0,
+                    478100.0,
+                    462800.0,
+                    448500.0,
+                    440200.0,
+                    435000.0
+                  ],
+                  "unit": "toneladas",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Centros Operativos Activos (N°)",
+                  "data": [
+                    218,
+                    195,
+                    215,
+                    230,
+                    240,
+                    248,
+                    238,
+                    244,
+                    242,
+                    245,
+                    242,
+                    240
+                  ],
+                  "unit": "centros",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Los eventos severos de marea roja coinciden con caídas drásticas de cosecha y descansos sanitarios coordinados.",
+          "why_complex_system": "Retroalimentación negativa: la acumulación de nutrientes y el calentamiento costero disparan eventos biológicos límite."
+        },
+        {
+          "preset_id": "hub_03_05",
+          "hub_id": "salmonicultura",
+          "titulo": "5. Realidad Estructural vs. Percepción: Priorización Salmonera vs. Biomasa",
+          "format_type": "special",
+          "subtype": "dumbbell_perception_vs_structural",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Compara la priorización ciudadana de la salmonicultura (Barómetro I1_D / I2_E) frente a la biomasa cosechada y concesiones"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "biomasa_salmon_ton",
+            "varY": "concesiones_salmon",
+            "barometro_question": "I1_D",
+            "structural_variable": "biomasa_salmon_ton",
+            "mirror_series": {
+              "question_id": "I1_D",
+              "enunciado": "Importancia asignada al cultivo de salmones en Aysén",
+              "tipo": "escala_4",
+              "N_total": 465,
+              "n_muestral_valido": 452,
+              "me_95_total": 4.6,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 74.8,
+              "promedio_valor": 3.13,
+              "structural_variable": "biomasa_salmon_ton",
+              "structural_by_macrozona": {
+                "norte": 88.5,
+                "centro": 12.0,
+                "sur": 15.4
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 190,
+                  "me_95": 7.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 83.7,
+                  "promedio_valor": 3.32
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 70.2,
+                  "promedio_valor": 3.03
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 168,
+                  "me_95": 7.55,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 67.3,
+                  "promedio_valor": 2.98
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 145,
+                  "me_95": 8.13,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 82.8,
+                  "promedio_valor": 3.26
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 179,
+                  "me_95": 7.32,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 74.3,
+                  "promedio_valor": 3.16
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 128,
+                  "me_95": 8.65,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 66.4,
+                  "promedio_valor": 2.95
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 209,
+                  "me_95": 6.77,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 78.5,
+                  "promedio_valor": 3.18
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 243,
+                  "me_95": 6.28,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 71.6,
+                  "promedio_valor": 3.09
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 73,
+                  "me_95": 11.46,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 84.9,
+                  "promedio_valor": 3.4
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 73.3,
+                  "promedio_valor": 3.05
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 149,
+                  "me_95": 8.02,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 68.5,
+                  "promedio_valor": 3.05
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 80,
+                  "me_95": 10.95,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 80.0,
+                  "promedio_valor": 3.2
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 197,
+                  "me_95": 6.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.6,
+                  "promedio_valor": 3.06
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 152,
+                  "me_95": 7.94,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 77.0,
+                  "promedio_valor": 3.22
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 103,
+                  "me_95": 9.65,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 75.7,
+                  "promedio_valor": 3.16
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 452,
+              "universe_N": 465,
+              "margin_error_pct": 4.6,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "El 74.8% considera importante la salmonicultura, pero un 58.4% cree que disminuirla reduciría los conflictos ambientales.",
+          "why_complex_system": "Dualidad sistémica: fuerte valoración del empleo inmediato combinada con alta preocupación por la sustentabilidad de los fiordos."
+        }
+      ]
+    },
+    "inversion": {
+      "hub_id": "inversion",
+      "hub_num": "04",
+      "numeral": "IV",
+      "title": "Hub 04: Economía, Inversión & SEIA",
+      "shortTitle": "Economía & Inversión",
+      "color": "#0f766e",
+      "presets": [
+        {
+          "preset_id": "hub_04_01",
+          "hub_id": "inversion",
+          "titulo": "1. Mapa Territorial de los 722 Proyectos SEIA y Concesiones Mineras",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Proyectos aprobados y en evaluación del SEIA superpuestos con áreas protegidas SNASPE y cuerpos de agua"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "inversion_seia_mmusd",
+            "varY": "proyectos_seia_aprobados",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "proyectos_seia_nodos",
+              "pertenencias_mineras",
+              "snaspe_limites"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B1",
+              "label": "Percepción momento actual región",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Distribución espacial de 3.355 millones de USD en inversión ambientalmente evaluada en Aysén.",
+          "why_complex_system": "Acoplamiento territorial: las mayores concentraciones de inversión minera y de generación coinciden con cuencas hídricas sensibles."
+        },
+        {
+          "preset_id": "hub_04_02",
+          "hub_id": "inversion",
+          "titulo": "2. Inversión Aprobada SEIA (MM USD) vs. Empresas Formales SII",
+          "format_type": "bar",
+          "subtype": "stacked_bar",
+          "inter_hub_cross": {
+            "cross_hub": "salmonicultura",
+            "descripcion": "Distribución del capital aprobado en SEIA por comuna frente al número de empresas activas registradas en SII"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "inversion_seia_mmusd",
+            "varY": "empresas_sii",
+            "varY2": "empresas_sii",
+            "showAverage": true
+          },
+          "what_it_shows": "El sector acuícola y energético concentran el 72% del capital en SEIA pero menos del 15% del número total de RUTs comerciales.",
+          "why_complex_system": "Estructura oligopólica: alta concentración de capital frente a un tejido masivo de micro y pequeñas empresas de servicios."
+        },
+        {
+          "preset_id": "hub_04_03",
+          "hub_id": "inversion",
+          "titulo": "3. Cuadrantes Dinámicos: Empresas SII vs. Inversión Pública FNDR",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza el tejido de empresas activas SII con el presupuesto de inversión pública FNDR asignado"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "empresas_sii",
+            "labelX": "Empresas Activas Registradas SII (N)",
+            "varY": "fndr_mclp",
+            "labelY": "Inversión FNDR Asignada (M$ CLP)",
+            "quadrant_labels": {
+              "q1": "Dinamismo Mixto Público-Privado",
+              "q2": "Tracción Exclusiva del Estado",
+              "q3": "Inercia Económica Rural",
+              "q4": "Emprendimiento Autónomo sin Apoyo Estatal"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Coyhaique lidera en nuevos emprendimientos comerciales, mientras comunas australes dependen del gasto público en obras viales.",
+          "why_complex_system": "Dependencia del camino: el dinamismo privado requiere umbrales de escala poblacional para volverse autosustentable."
+        },
+        {
+          "preset_id": "hub_04_04",
+          "hub_id": "inversion",
+          "titulo": "4. Serie Histórica Multieje: Tráfico Aéreo JAC Balmaceda vs. PIB Regional (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "turismo",
+            "descripcion": "Evolución anual de pasajeros aéreos en el Aeródromo Balmaceda frente al PIB nominal regional"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "trafico_aereo_pasajeros_balmaceda_jac",
+            "varY": "pib_regional_nominal_mmclp",
+            "seriesPrimaria": "trafico_aereo_pasajeros_balmaceda_jac",
+            "seriesSecundaria": "pib_regional_nominal_mmclp",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Pasajeros Aeródromo Balmaceda (JAC)",
+                  "data": [
+                    420000,
+                    455000,
+                    490000,
+                    530000,
+                    560000,
+                    245000,
+                    380000,
+                    495000,
+                    525000,
+                    542000,
+                    568000,
+                    590000
+                  ],
+                  "unit": "pasajeros",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "PIB Regional Nominal (MM$ CLP)",
+                  "data": [
+                    980000.0,
+                    1045000.0,
+                    1120000.0,
+                    1215000.0,
+                    1260000.0,
+                    1240000.0,
+                    1410000.0,
+                    1540000.0,
+                    1620000.0,
+                    1680000.0,
+                    1755000.0,
+                    1830000.0
+                  ],
+                  "unit": "MM$ CLP",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "El flujo de pasajeros aéreos actúa como indicador adelantado de la actividad económica y turística regional.",
+          "why_complex_system": "Sistemas abiertos: la economía de Aysén se sincroniza fuertemente con el flujo de capitales y pasajeros que ingresan desde Santiago y Puerto Montt."
+        },
+        {
+          "preset_id": "hub_04_05",
+          "hub_id": "inversion",
+          "titulo": "5. Realidad vs. Percepción: Oportunidades Laborales vs. Empleo Formal SII",
+          "format_type": "special",
+          "subtype": "dumbbell_perception_vs_structural",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Cruza la percepción ciudadana sobre oportunidades de trabajo y buen sueldo (B4_A / B4_C) con el empleo dependiente real del SII"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "trabajadores_sii",
+            "varY": "empresas_sii",
+            "barometro_question": "B4_A",
+            "structural_variable": "trabajadores_sii",
+            "mirror_series": {
+              "question_id": "B4_A",
+              "enunciado": "Evaluación de oportunidades de trabajo en Aysén",
+              "tipo": "nota_1_7",
+              "N_total": 465,
+              "n_muestral_valido": 463,
+              "me_95_total": 4.54,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 49.9,
+              "promedio_valor": 4.38,
+              "structural_variable": "trabajadores_sii",
+              "structural_by_macrozona": {
+                "norte": 48.2,
+                "centro": 74.5,
+                "sur": 28.0
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 200,
+                  "me_95": 6.92,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.0,
+                  "promedio_valor": 4.22
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 44.7,
+                  "promedio_valor": 4.22
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 169,
+                  "me_95": 7.53,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 57.4,
+                  "promedio_valor": 4.65
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 42.7,
+                  "promedio_valor": 4.03
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.2,
+                  "promedio_valor": 4.36
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 127,
+                  "me_95": 8.69,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 63.8,
+                  "promedio_valor": 4.82
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 215,
+                  "me_95": 6.67,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 42.3,
+                  "promedio_valor": 4.13
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 248,
+                  "me_95": 6.21,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 56.5,
+                  "promedio_valor": 4.6
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 45.9,
+                  "promedio_valor": 4.32
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 50.3,
+                  "promedio_valor": 4.43
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 55.3,
+                  "promedio_valor": 4.52
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 86,
+                  "me_95": 10.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 43.0,
+                  "promedio_valor": 4.09
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 205,
+                  "me_95": 6.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 47.8,
+                  "promedio_valor": 4.33
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 52.3,
+                  "promedio_valor": 4.41
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 50.5,
+                  "promedio_valor": 4.43
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 463,
+              "universe_N": 465,
+              "margin_error_pct": 4.55,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "El 58.3% de los encuestados percibe estancamiento o decadencia en la región a pesar del alto PIB per cápita estadístico.",
+          "why_complex_system": "Brecha de distribución: el PIB regional engrosado por enclaves extractivos no se traduce en percepción de bienestar en los hogares de menor NSE."
+        }
+      ]
+    },
+    "social": {
+      "hub_id": "social",
+      "hub_num": "05",
+      "numeral": "V",
+      "title": "Hub 05: Sociedad, Seguridad & Riesgos",
+      "shortTitle": "Sociedad & Seguridad",
+      "color": "#2563eb",
+      "presets": [
+        {
+          "preset_id": "hub_05_01",
+          "hub_id": "social",
+          "titulo": "1. Mapa de Vulnerabilidad Social CASEN, Pasos Fronterizos y Volcanes",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Ubicación de los 8 pasos fronterizos y comisarías frente a la zonificación de fallas activas y volcanes SERNAGEOMIN"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "pobreza_multidim_pct",
+            "varY": "matricula_escolar",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "cuarteles_carabineros",
+              "pasos_fronterizos",
+              "volcanes_activos"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B3_F",
+              "label": "Seguridad ciudadana (nota 1-7)",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Red de seguridad pública y pasos fronterizos DIFROL en un territorio de más de 107.000 km².",
+          "why_complex_system": "Vulnerabilidad territorial múltiple: los recintos policiales y de rescate cubren radios operacionales gigantescos frente a amenazas naturales combinadas."
+        },
+        {
+          "preset_id": "hub_05_02",
+          "hub_id": "social",
+          "titulo": "2. Pobreza Multidimensional CASEN (%) vs. Pobreza por Ingresos (%)",
+          "format_type": "bar",
+          "subtype": "double_axis_bar",
+          "inter_hub_cross": {
+            "cross_hub": "salud",
+            "descripcion": "Tasa de Pobreza Multidimensional CASEN contrastada con la Pobreza por Ingresos y brechas de servicios básicos por comuna"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "pobreza_multidim_pct",
+            "varY": "pobreza_ingresos_pct",
+            "varY2": "pobreza_ingresos_pct",
+            "showAverage": true
+          },
+          "what_it_shows": "El sur austral e insular exhibe brechas severas de pobreza multidimensional asociadas a carencias de conectividad, salud y calefacción.",
+          "why_complex_system": "Diferenciación espacial: las problemáticas de seguridad urbana difieren cualitativamente de los déficits de infraestructura en zonas aisladas."
+        },
+        {
+          "preset_id": "hub_05_03",
+          "hub_id": "social",
+          "titulo": "3. Cuadrantes de Cohesión Social: Matrícula SLEP vs. Pobreza por Ingresos",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza la matrícula escolar SLEP con el porcentaje de pobreza por ingresos CASEN en las 10 comunas"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "matricula_escolar",
+            "labelX": "Matrícula Escolar Comunal SLEP (estudiantes)",
+            "varY": "pobreza_ingresos_pct",
+            "labelY": "Pobreza por Ingresos CASEN (%)",
+            "quadrant_labels": {
+              "q1": "Alta Matrícula con Vulnerabilidad Residual",
+              "q2": "Baja Escala Escolar y Alta Pobreza",
+              "q3": "Inercia Rural de Baja Matrícula",
+              "q4": "Alto Capital Humano Consolidado"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Muestra la fuerte correlación entre escala educativa comunal y menores tasas de pobreza.",
+          "why_complex_system": "Efectos acumulativos: el capital educativo regional retiene ingresos y fortalece el tejido productivo comunal."
+        },
+        {
+          "preset_id": "hub_05_04",
+          "hub_id": "social",
+          "titulo": "4. Serie Histórica Multieje: Denuncias de Violencia Intrafamiliar vs. Delitos DMCS (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "salud",
+            "descripcion": "Evolución anual de tasas de denuncias VIF frente a Delitos de Mayor Connotación Social (CEAD)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "tasa_vif_regional_por_100k_hab",
+            "varY": "tasa_dmcs_regional_por_100k_hab",
+            "seriesPrimaria": "tasa_vif_regional_por_100k_hab",
+            "seriesSecundaria": "tasa_dmcs_regional_por_100k_hab",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Tasa Violencia Intrafamiliar VIF (c/100k hab)",
+                  "data": [
+                    905.8,
+                    926.1,
+                    947.9,
+                    959.0,
+                    990.3,
+                    1056.4,
+                    1029.1,
+                    992.2,
+                    957.3,
+                    943.0,
+                    917.6,
+                    897.1
+                  ],
+                  "unit": "tasa c/100k",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Tasa Delitos Mayor Connotación DMCS (c/100k hab)",
+                  "data": [
+                    1948.5,
+                    1998.0,
+                    2040.2,
+                    2091.5,
+                    2142.3,
+                    1706.5,
+                    1805.9,
+                    2154.7,
+                    2203.8,
+                    2223.4,
+                    2150.9,
+                    2107.8
+                  ],
+                  "unit": "tasa c/100k",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "La violencia intrafamiliar representa el delito más prevalente y de mayor sensibilidad invernal en el registro regional de seguridad.",
+          "why_complex_system": "Confinamiento e invierno: los meses fríos de mayor encierro en el hogar incrementan las tensiones familiares y las denuncias de agresión."
+        },
+        {
+          "preset_id": "hub_05_05",
+          "hub_id": "social",
+          "titulo": "5. Realidad vs. Percepción: Sensación de Seguridad vs. Vulnerabilidad Social",
+          "format_type": "special",
+          "subtype": "bubble_perception_sample_scaled",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "salud",
+            "descripcion": "Compara la evaluación de seguridad ciudadana (Barómetro B3_F) frente a los indicadores de cohesión y vulnerabilidad territorial"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "pobreza_multidim_pct",
+            "varY": "poblacion_censo_2024",
+            "barometro_question": "B3_F",
+            "structural_variable": "pobreza_multidim_pct",
+            "mirror_series": {
+              "question_id": "B3_F",
+              "enunciado": "Evaluación de la seguridad ciudadana en Aysén",
+              "tipo": "nota_1_7",
+              "N_total": 465,
+              "n_muestral_valido": 462,
+              "me_95_total": 4.55,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 53.0,
+              "promedio_valor": 4.38,
+              "structural_variable": "pobreza_multidim_pct",
+              "structural_by_macrozona": {
+                "norte": 15.3,
+                "centro": 12.5,
+                "sur": 15.7
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 200,
+                  "me_95": 6.92,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 45.0,
+                  "promedio_valor": 4.19
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 93,
+                  "me_95": 10.16,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.2,
+                  "promedio_valor": 4.17
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 169,
+                  "me_95": 7.53,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 66.3,
+                  "promedio_valor": 4.72
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 38.0,
+                  "promedio_valor": 3.91
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 184,
+                  "me_95": 7.22,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 53.8,
+                  "promedio_valor": 4.46
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 128,
+                  "me_95": 8.65,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.5,
+                  "promedio_valor": 4.82
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 215,
+                  "me_95": 6.67,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 49.3,
+                  "promedio_valor": 4.27
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 247,
+                  "me_95": 6.23,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 56.3,
+                  "promedio_valor": 4.48
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 33.8,
+                  "promedio_valor": 4.04
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 56.2,
+                  "promedio_valor": 4.42
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.7,
+                  "promedio_valor": 4.43
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 85,
+                  "me_95": 10.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 54.1,
+                  "promedio_valor": 4.52
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 204,
+                  "me_95": 6.85,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 51.0,
+                  "promedio_valor": 4.28
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 52.6,
+                  "promedio_valor": 4.42
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 104,
+                  "me_95": 9.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 57.7,
+                  "promedio_valor": 4.53
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 462,
+              "universe_N": 465,
+              "margin_error_pct": 4.55,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Aysén tiene las tasas de delitos más bajas de Chile, pero la percepción de temor ciudadano ha aumentado de forma significativa.",
+          "why_complex_system": "Amplificación de señales: el consumo de noticias nacionales genera un sesgo de percepción desfasado de las cifras efectivas locales."
+        }
+      ]
+    },
+    "turismo": {
+      "hub_id": "turismo",
+      "hub_num": "06",
+      "numeral": "VI",
+      "title": "Hub 06: Turismo & Áreas Silvestres SNASPE",
+      "shortTitle": "Turismo & Áreas Silvestres",
+      "color": "#00357f",
+      "presets": [
+        {
+          "preset_id": "hub_06_01",
+          "hub_id": "turismo",
+          "titulo": "1. Mapa Territorial de Parques CONAF, Zonas ZOIT y Prestadores SERNATUR",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Cruza las 5,2 millones de hectáreas de parques nacionales con la densidad de prestadores turísticos formalizados"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "prestadores_sernatur",
+            "varY": "visitantes_snaspe",
+            "center": [
+              -46.0,
+              -73.0
+            ],
+            "zoom": 7,
+            "layers": [
+              "parques_nacionales_conaf",
+              "zoit_poligonos",
+              "prestadores_sernatur_nodos"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "I1_C",
+              "label": "Importancia del turismo (Barómetro)",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Distribución de los más de 1.100 prestadores SERNATUR en torno a las áreas silvestres protegidas.",
+          "why_complex_system": "Atracción nodal: la belleza escénica de los parques actúa como ancla que activa redes de hospedaje, guías y gastronomía en los poblados aledaños."
+        },
+        {
+          "preset_id": "hub_06_02",
+          "hub_id": "turismo",
+          "titulo": "2. Capacidad Hotelera en Camas vs. Población Residente Censo 2024",
+          "format_type": "bar",
+          "subtype": "stacked_bar",
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Contrasta la oferta de alojamiento formal e informal con el tamaño demográfico comunal"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "camas_turisticas",
+            "varY": "poblacion_censo_2024",
+            "varY2": "poblacion_censo_2024",
+            "showAverage": true
+          },
+          "what_it_shows": "En comunas como Río Ibáñez o Tortel la capacidad turística de camas supera el 40% de la población residente permanente.",
+          "why_complex_system": "Sobrecarga estacional: en temporada alta la población flotante duplica a los residentes, tensionando plantas de agua potable y residuos."
+        },
+        {
+          "preset_id": "hub_06_03",
+          "hub_id": "turismo",
+          "titulo": "3. Cuadrantes de Presión SNASPE: Visitantes Parques vs. Hectáreas por Guardaparque",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza el flujo anual de turistas en parques CONAF con la dotación de personal fiscalizador y presupuesto municipal"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "visitantes_snaspe",
+            "labelX": "Visitantes Anuales Parques SNASPE (visitantes)",
+            "varY": "ha_snaspe_por_guardaparque",
+            "labelY": "Hectáreas por Guardaparque (ha/guardaparque)",
+            "quadrant_labels": {
+              "q1": "Sobrecarga Crítica sin Fiscalización",
+              "q2": "Capacidad Controlada",
+              "q3": "Baja Presión de Flujo",
+              "q4": "Parques Urbanos de Fácil Gestión"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "En parques australes un solo guardaparque debe custodiar más de 100.000 hectáreas ante contingencias de visitantes y fogatas.",
+          "why_complex_system": "Límites del crecimiento: la expansión turística no regulada erosiona el propio activo ecológico que atrae a los visitantes."
+        },
+        {
+          "preset_id": "hub_06_04",
+          "hub_id": "turismo",
+          "titulo": "4. Serie Histórica: Pernoctaciones Anuales EMAT vs. Visitación SNASPE (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Compara las pernoctaciones hoteleras anuales del INE con la visitación a parques nacionales SNASPE en Aysén"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "pernoctaciones_anuales_emat_hist",
+            "varY": "visitantes_snaspe_conaf_hist",
+            "seriesPrimaria": "pernoctaciones_anuales_emat_hist",
+            "seriesSecundaria": "visitantes_snaspe_conaf_hist",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Pernoctaciones Anuales EMAT (N°)",
+                  "data": [
+                    312000,
+                    335000,
+                    368000,
+                    395000,
+                    412000,
+                    178000,
+                    224000,
+                    345000,
+                    398000,
+                    432000,
+                    458000,
+                    472000
+                  ],
+                  "unit": "pernoctaciones",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Visitantes Anuales Parques SNASPE (N°)",
+                  "data": [
+                    148000,
+                    165000,
+                    185000,
+                    204000,
+                    215000,
+                    78000,
+                    118000,
+                    195000,
+                    235000,
+                    256000,
+                    273500,
+                    284000
+                  ],
+                  "unit": "visitantes",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "La demanda hotelera y la visitación a parques nacionales muestran alta sincronía y rápida recuperación post-pandemia.",
+          "why_complex_system": "Oscilación periódica: la extrema estacionalidad exige modelos de negocio hiperflexibles para subsistir los 8 meses de baja afluencia."
+        },
+        {
+          "preset_id": "hub_06_05",
+          "hub_id": "turismo",
+          "titulo": "5. Realidad vs. Percepción: Turismo como Futuro Regional vs. Oferta SERNATUR",
+          "format_type": "special",
+          "subtype": "dumbbell_perception_vs_structural",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza la convicción ciudadana de que el turismo será el principal motor regional (Barómetro I3_A) con la oferta turística formal SERNATUR"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "prestadores_sernatur",
+            "varY": "pernoctaciones_emat",
+            "barometro_question": "I3_A",
+            "structural_variable": "prestadores_sernatur",
+            "mirror_series": {
+              "question_id": "I3_A",
+              "enunciado": "Acuerdo: El turismo podría ser la principal actividad económica regional futura",
+              "tipo": "acuerdo_4",
+              "N_total": 465,
+              "n_muestral_valido": 462,
+              "me_95_total": 4.55,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 90.3,
+              "promedio_valor": 3.47,
+              "structural_variable": "prestadores_sernatur",
+              "structural_by_macrozona": {
+                "norte": 52.0,
+                "centro": 68.5,
+                "sur": 61.2
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 198,
+                  "me_95": 6.96,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 86.9,
+                  "promedio_valor": 3.38
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 93,
+                  "me_95": 10.16,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 92.5,
+                  "promedio_valor": 3.51
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.0,
+                  "promedio_valor": 3.55
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 88.5,
+                  "promedio_valor": 3.41
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 185,
+                  "me_95": 7.2,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 88.6,
+                  "promedio_valor": 3.42
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.6,
+                  "promedio_valor": 3.61
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 215,
+                  "me_95": 6.67,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.7,
+                  "promedio_valor": 3.48
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 247,
+                  "me_95": 6.23,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 89.9,
+                  "promedio_valor": 3.46
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 73,
+                  "me_95": 11.46,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.5,
+                  "promedio_valor": 3.51
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 88.9,
+                  "promedio_valor": 3.46
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 89.4,
+                  "promedio_valor": 3.51
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 85,
+                  "me_95": 10.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.6,
+                  "promedio_valor": 3.39
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 205,
+                  "me_95": 6.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.2,
+                  "promedio_valor": 3.48
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 87.6,
+                  "promedio_valor": 3.36
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 104,
+                  "me_95": 9.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.2,
+                  "promedio_valor": 3.61
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 465,
+              "universe_N": 465,
+              "margin_error_pct": 4.54,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "El 89.7% está de acuerdo en que el turismo podría ser la principal actividad futura, pero los municipios destinan menos del 3% de su gasto directo a infraestructura turística.",
+          "why_complex_system": "Divergencia estratégica: enorme consenso ciudadano sobre la vocación turística contrastado con un financiamiento público municipal exiguo."
+        }
+      ]
+    },
+    "biodiversidad": {
+      "hub_id": "biodiversidad",
+      "hub_num": "07",
+      "numeral": "VII",
+      "title": "Hub 07: Biodiversidad, Aire & Medio Ambiente",
+      "shortTitle": "Biodiversidad & Ambiente",
+      "color": "#047857",
+      "presets": [
+        {
+          "preset_id": "hub_07_01",
+          "hub_id": "biodiversidad",
+          "titulo": "1. Mapa de Formaciones Vegetacionales, Hábitat del Huemul y Estaciones SINCA",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "turismo",
+            "descripcion": "Capas de bosque nativo, presencia censada de Huemules y estaciones de monitoreo continuo de calidad del aire"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "cobertura_vegetal_nativa_ha",
+            "varY": "superficie_snaspe_pct",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "bosque_nativo_conaf",
+              "habitat_huemul_rce",
+              "estaciones_sinca_aire"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B3_G",
+              "label": "Acceso a medioambiente limpio (1-7)",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "La riqueza ecosistémica de Aysén alberga más de 5,7 millones de ha de bosque nativo y el 70% de la población mundial de huemules.",
+          "why_complex_system": "Fragilidad y refugio: la cuenca del Baker y los fiordos actúan como santuarios biológicos frente a la fragmentación antropogénica."
+        },
+        {
+          "preset_id": "hub_07_02",
+          "hub_id": "biodiversidad",
+          "titulo": "2. Cobertura de Bosque Nativo (ha) vs. Superficie Protegida SNASPE (%)",
+          "format_type": "bar",
+          "subtype": "divergent_bar",
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Superficie de cobertura vegetal nativa comunal reportada por CONAF frente al porcentaje de superficie bajo protección SNASPE"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "cobertura_vegetal_nativa_ha",
+            "varY": "superficie_snaspe_pct",
+            "varY2": "superficie_snaspe_pct",
+            "showAverage": true
+          },
+          "what_it_shows": "Comunas como Tortel, O'Higgins y Cisnes resguardan las mayores reservas de bosque templado y subantártico del hemisferio sur.",
+          "why_complex_system": "Histéresis ecológica: un bosque patagónico calcinado tarda más de un siglo en regenerar su dosel original debido a los fuertes vientos y la erosión."
+        },
+        {
+          "preset_id": "hub_07_03",
+          "hub_id": "biodiversidad",
+          "titulo": "3. Cuadrantes Críticos: Días sobre Norma MP2.5 vs. Uso de Leña (%)",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "energia",
+            "descripcion": "Cruza las concentraciones de material particulado fino en invierno con el porcentaje de hogares que usan leña"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "dias_sobre_norma_mp25",
+            "labelX": "Días Anuales sobre Norma MP2.5 (días)",
+            "varY": "hogares_lena_pct",
+            "labelY": "Hogares Calefaccionados con Leña (%)",
+            "quadrant_labels": {
+              "q1": "Crisis Ambiental e Invernada Severa",
+              "q2": "Alto Uso de Leña con Mayor Ventilación",
+              "q3": "Aire Limpio y Baja Saturación",
+              "q4": "Riesgo Emergente por Inversión Térmica"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Coyhaique registra más de 80 días al año con episodios críticos de MP2.5 por la combinación de cuenca cerrada y quema de leña húmeda.",
+          "why_complex_system": "Bucle cerrado: el costo económico del recambio térmico atrapa a los hogares en el consumo de leña ineficiente, retroalimentando la nube tóxica."
+        },
+        {
+          "preset_id": "hub_07_04",
+          "hub_id": "biodiversidad",
+          "titulo": "4. Serie Histórica Multieje: MP2.5 Coyhaique vs. Temperatura Balmaceda (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "salud",
+            "descripcion": "Evolución histórica de microgramos por metro cúbico de MP2.5 contrastada con los días críticos de saturación invernal"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "mp25_invernal_coyhaique",
+            "varY": "temperatura_minima_balmaceda",
+            "seriesPrimaria": "mp25_invernal_coyhaique",
+            "seriesSecundaria": "temperatura_minima_balmaceda",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Concentración Media Invernal MP2.5 (µg/m³)",
+                  "data": [
+                    168.5,
+                    162.0,
+                    154.2,
+                    146.8,
+                    139.5,
+                    132.4,
+                    124.8,
+                    118.2,
+                    112.6,
+                    106.5,
+                    101.3,
+                    96.8
+                  ],
+                  "unit": "µg/m³",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Días sobre Norma MP2.5 Anual (días)",
+                  "data": [
+                    92,
+                    98,
+                    86,
+                    79,
+                    74,
+                    68,
+                    62,
+                    58,
+                    54,
+                    49,
+                    45,
+                    41
+                  ],
+                  "unit": "días",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Correlación estacional directa: a menores temperaturas en junio-julio se disparan los picos de material particulado por sobre los 100 µg/m³.",
+          "why_complex_system": "Inversión térmica y no linealidad: caídas de 2°C bajo cero duplican el encendido simultáneo de calefactores, colapsando la capa de ventilación."
+        },
+        {
+          "preset_id": "hub_07_05",
+          "hub_id": "biodiversidad",
+          "titulo": "5. Realidad vs. Percepción: Urgencia de Biodiversidad y Agua vs. Superficie SNASPE",
+          "format_type": "special",
+          "subtype": "heatmap_perception_by_age",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Cruza la urgencia ciudadana por pérdida de biodiversidad y humedales (Barómetro I4_E) por tramo de edad frente a superficie protegida SNASPE"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "superficie_snaspe_pct",
+            "varY": "cobertura_vegetal_nativa_ha",
+            "barometro_question": "I4_E",
+            "structural_variable": "superficie_snaspe_pct",
+            "mirror_series": {
+              "question_id": "I4_E",
+              "enunciado": "Urgencia: Agotamiento de recursos marinos, hídricos y biodiversidad",
+              "tipo": "escala_4",
+              "N_total": 465,
+              "n_muestral_valido": 452,
+              "me_95_total": 4.6,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 92.0,
+              "promedio_valor": 3.56,
+              "structural_variable": "superficie_snaspe_pct",
+              "structural_by_macrozona": {
+                "norte": 54.8,
+                "centro": 22.4,
+                "sur": 68.5
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 190,
+                  "me_95": 7.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.5,
+                  "promedio_valor": 3.56
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 92,
+                  "me_95": 10.21,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 92.4,
+                  "promedio_valor": 3.59
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 170,
+                  "me_95": 7.51,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.5,
+                  "promedio_valor": 3.55
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 142,
+                  "me_95": 8.22,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.0,
+                  "promedio_valor": 3.61
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 182,
+                  "me_95": 7.26,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 91.2,
+                  "promedio_valor": 3.55
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 128,
+                  "me_95": 8.65,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 92.2,
+                  "promedio_valor": 3.53
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 207,
+                  "me_95": 6.8,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.2,
+                  "promedio_valor": 3.62
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 245,
+                  "me_95": 6.25,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.2,
+                  "promedio_valor": 3.52
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 73,
+                  "me_95": 11.46,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 87.7,
+                  "promedio_valor": 3.49
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.4,
+                  "promedio_valor": 3.56
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.0,
+                  "promedio_valor": 3.66
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 78,
+                  "me_95": 11.09,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 89.7,
+                  "promedio_valor": 3.46
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 201,
+                  "me_95": 6.9,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.5,
+                  "promedio_valor": 3.61
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 89.2,
+                  "promedio_valor": 3.41
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 103,
+                  "me_95": 9.65,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.2,
+                  "promedio_valor": 3.69
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 465,
+              "universe_N": 465,
+              "margin_error_pct": 4.54,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "El 89.5% de los jóvenes y adultos considera urgente frenar la pérdida de biodiversidad y el agotamiento de recursos hídricos en la región.",
+          "why_complex_system": "Valores emergentes: fuerte arraigo patagónico donde la conservación de la naturaleza se concibe como parte indisoluble de la identidad territorial."
+        }
+      ]
+    },
+    "salud": {
+      "hub_id": "salud",
+      "hub_num": "08",
+      "numeral": "VIII",
+      "title": "Hub 08: Salud APS, Hospitales & Desagregaciones Sectoriales",
+      "shortTitle": "Salud APS & Hospitales",
+      "color": "#dc2626",
+      "presets": [
+        {
+          "preset_id": "hub_08_01",
+          "hub_id": "salud",
+          "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales y 32 Postas Rurales",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "salmonicultura",
+            "descripcion": "Superpone los 5 hospitales públicos y 32 postas rurales con los centros productivos aislados y tiempos de evacuación marítima SAMU"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "camas_hospitalarias",
+            "varY": "aeroevacuaciones_samu_n",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "hospitales_deis",
+              "postas_salud_rural",
+              "concesiones_acuicolas"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B3_A",
+              "label": "Acceso a salud de calidad (1-7)",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Georreferenciación de los únicos 5 hospitales y las 32 postas rurales que atienden a los 100.745 habitantes de la región.",
+          "why_complex_system": "Puntos de fallo único: el Hospital Regional de Coyhaique concentra la totalidad de camas UCI y especialistas de alta complejidad para 108.000 km²."
+        },
+        {
+          "preset_id": "hub_08_02",
+          "hub_id": "salud",
+          "titulo": "2. Camas Hospitalarias Disponibles vs. Médicos por Mil Habitantes",
+          "format_type": "bar",
+          "subtype": "stacked_bar",
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Compara la dotación de 261 camas hospitalarias en Aysén frente a la tasa de médicos por cada mil habitantes en las 10 comunas"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "camas_hospitalarias",
+            "varY": "medicos_por_mil_hab",
+            "varY2": "medicos_por_mil_hab",
+            "showAverage": true
+          },
+          "what_it_shows": "Coyhaique alberga 205 de las 261 camas regionales (78.5%), mientras la Macrozona Sur cuenta con solo 14 camas para 5 comunas.",
+          "why_complex_system": "Centralismo intrarregional: la concentración hospitalaria en la capital regional genera extrema dependencia en evacuaciones de emergencia."
+        },
+        {
+          "preset_id": "hub_08_03",
+          "hub_id": "salud",
+          "titulo": "3. Cuadrantes de Aislamiento Crítico: Tiempo de Traslado a Hospital vs. Aeroevacuaciones SAMU",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "energia",
+            "descripcion": "Cruza las horas estimadas de traslado en ambulancia/barcaza hasta Coyhaique con las aeroevacuaciones médicas SAMU"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "traslado_coyhaique_hrs",
+            "labelX": "Tiempo de Traslado a Hospital Resolutivo (Horas)",
+            "varY": "aeroevacuaciones_samu_n",
+            "labelY": "Aeroevacuaciones SAMU Anuales (N)",
+            "quadrant_labels": {
+              "q1": "Aislamiento Crítico de Alto Riesgo",
+              "q2": "Vulnerabilidad Urbana",
+              "q3": "Cobertura Inmediata Metropolitana",
+              "q4": "Aislamiento Compensado con APS Resolutiva"
+            },
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Tortel y Villa O'Higgins distan a más de 8-10 horas de ambulancia de un quirófano, condicionando el pronóstico de pacientes críticos.",
+          "why_complex_system": "Isócronas vitales: la distancia física en carreteras de ripio impone demoras irreversibles en eventos cerebrovasculares o traumas agudos."
+        },
+        {
+          "preset_id": "hub_08_04",
+          "hub_id": "salud",
+          "titulo": "4. Serie Histórica Multieje: Consultas de Urgencia Respiratoria vs. Egresos SSA (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_series",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Evolución histórica de atenciones de urgencia por causas respiratorias DEIS frente a egresos hospitalarios regionales"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "urgencias_respiratorias_anuales_ssa",
+            "varY": "egresos_hospitalarios_red_ssa",
+            "seriesPrimaria": "urgencias_respiratorias_anuales_ssa",
+            "seriesSecundaria": "egresos_hospitalarios_red_ssa",
+            "showDualAxis": true,
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Urgencias Respiratorias Red SSA (atenciones)",
+                  "data": [
+                    17450,
+                    21300,
+                    18900,
+                    18200,
+                    17600,
+                    12100,
+                    14500,
+                    19200,
+                    18400,
+                    17800,
+                    16950,
+                    16400
+                  ],
+                  "unit": "atenciones",
+                  "yAxisID": "y"
+                },
+                {
+                  "label": "Egresos Hospitalarios Red SSA (egresos)",
+                  "data": [
+                    11350,
+                    11820,
+                    12240,
+                    12890,
+                    13420,
+                    9840,
+                    11150,
+                    12380,
+                    13100,
+                    13620,
+                    13850,
+                    14020
+                  ],
+                  "unit": "egresos",
+                  "yAxisID": "y1"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Cada pico invernal de MP2.5 genera un aumento casi sincrónico del 40% al 65% en consultas pediátricas y geriátricas en el Hospital de Coyhaique.",
+          "why_complex_system": "Cascada sistémica: el frío dispara la combustión de leña, el humo satura la atmósfera y la red asistencial colapsa sus camas de hospitalización abreviada."
+        },
+        {
+          "preset_id": "hub_08_05",
+          "hub_id": "salud",
+          "titulo": "5. Realidad vs. Percepción: Satisfacción de Salud vs. Capacidad Resolutiva DEIS",
+          "format_type": "special",
+          "subtype": "dumbbell_perception_vs_structural",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "salmonicultura",
+            "descripcion": "Cruza la nota ciudadana al acceso a salud de calidad (Barómetro B3_A) por NSE y Macrozona con la tasa de médicos y camas reales DEIS"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "medicos_por_mil_hab",
+            "varY": "camas_hospitalarias",
+            "barometro_question": "B3_A",
+            "structural_variable": "medicos_por_mil_hab",
+            "mirror_series": {
+              "question_id": "B3_A",
+              "enunciado": "Evaluación del acceso a salud de calidad en la región",
+              "tipo": "nota_1_7",
+              "N_total": 465,
+              "n_muestral_valido": 464,
+              "me_95_total": 4.54,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 23.7,
+              "promedio_valor": 3.48,
+              "structural_variable": "medicos_por_mil_hab",
+              "structural_by_macrozona": {
+                "norte": 28.4,
+                "centro": 78.5,
+                "sur": 18.2
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 200,
+                  "me_95": 6.92,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 24.0,
+                  "promedio_valor": 3.48
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 16.0,
+                  "promedio_valor": 3.18
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 170,
+                  "me_95": 7.51,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 27.6,
+                  "promedio_valor": 3.64
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 149,
+                  "me_95": 8.02,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 18.8,
+                  "promedio_valor": 3.3
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 23.1,
+                  "promedio_valor": 3.46
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 30.2,
+                  "promedio_valor": 3.71
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 216,
+                  "me_95": 6.66,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 18.5,
+                  "promedio_valor": 3.28
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 248,
+                  "me_95": 6.21,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 28.2,
+                  "promedio_valor": 3.65
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 21.6,
+                  "promedio_valor": 3.43
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 22.1,
+                  "promedio_valor": 3.39
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 24.7,
+                  "promedio_valor": 3.48
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 86,
+                  "me_95": 10.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 26.7,
+                  "promedio_valor": 3.66
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 206,
+                  "me_95": 6.82,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 23.3,
+                  "promedio_valor": 3.5
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 27.5,
+                  "promedio_valor": 3.61
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 19.0,
+                  "promedio_valor": 3.24
+                }
+              }
+            },
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 464,
+              "universe_N": 465,
+              "margin_error_pct": 4.54,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "La salud es calificada con nota promedio de 3.8 sobre 7.0 (el servicio público peor evaluado de Aysén), reflejando la angustia del aislamiento.",
+          "why_complex_system": "Dilema irresoluble de escala: la reducida densidad de población (100.745 hab en 108.000 km²) encarece exponencialmente la instalación de médicos especialistas en cada poblado."
+        }
+      ]
+    }
+  },
+  "extension_gallery": {
+    "cultura_patrimonio": {
+      "hub_id": "cultura_patrimonio",
+      "hub_num": "09",
+      "numeral": "CP",
+      "title": "Módulo Especializado: Cultura, Artes y Patrimonio",
+      "shortTitle": "Cultura & Patrimonio",
+      "color": "#7c2d12",
+      "presets": [
+        {
+          "preset_id": "CP_01",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "1. Mapa Territorial de Espacios Culturales, Museos (RMC) y Monumentos Nacionales",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "turismo",
+            "descripcion": "Cruza la ubicación de museos RMC, bibliotecas públicas y monumentos nacionales con los atractivos turísticos y zonas ZOIT"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "total_espacios_culturales",
+            "varY": "monumentos_nacionales_count",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "museos_rmc",
+              "bibliotecas_snbp",
+              "monumentos_cmn",
+              "atractivos_turismo"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B4_B",
+              "label": "Oportunidades de recreación y cultura",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Distribución geográfica de la infraestructura cultural y patrimonial en las 10 comunas de Aysén.",
+          "why_complex_system": "Concentración espacial y aislamiento: la mayor densidad patrimonial protegida coexiste con asimetrías de conectividad física en comunas australes e insulares."
+        },
+        {
+          "preset_id": "CP_02",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "2. Gasto Municipal en Cultura per Cápita vs. Fondos Concursables Adjudicados (FONDART)",
+          "format_type": "bar",
+          "subtype": "double_axis_bar",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza el gasto municipal per cápita en cultura (SINIM Área 03) con la cartera de proyectos FONDART adjudicados por MINCAP"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "bivariate_comparison",
+            "varX": "gasto_cultura_per_capita_clp",
+            "varY": "fondos_cultura_adjudicados_mclp",
+            "varY2": "fondos_cultura_adjudicados_mclp",
+            "showAverage": true,
+            "barometro_question": "B4_B",
+            "structural_variable": "gasto_cultura_per_capita_clp",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 463,
+              "universe_N": 465,
+              "margin_error_pct": 4.55,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Compara el esfuerzo financiero de los municipios en cultura frente al financiamiento competitivo central del MINCAP y la percepción comunitaria.",
+          "why_complex_system": "Desacople de escalas: la inversión sectorial centralizada no siempre compensa las disparidades de presupuesto de los municipios más aislados."
+        },
+        {
+          "preset_id": "CP_03",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "3. Inversión FNDR 8% Cultura vs. Tasa de Participación Cultural Ciudadana",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Relación entre transferencias FNDR 8% del GORE Aysén y la participación de la población en organizaciones sociales y culturales (C2)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "mode": "four_quadrants",
+            "varX": "fndr_8pct_cultura_mclp",
+            "varY": "participacion_cultural_pct_c2",
+            "showAverage": true,
+            "showTrend": true,
+            "barometro_question": "C2",
+            "structural_variable": "fndr_8pct_cultura_mclp",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 465,
+              "universe_N": 465,
+              "margin_error_pct": 4.54,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Distribución de las comunas según el nivel de financiamiento regional concursable y la densidad de participación comunitaria efectiva.",
+          "why_complex_system": "Autoorganización social: niveles altos de tejido cultural comunitario pueden sostenerse incluso en territorios con bajo subsidio estatal directo."
+        },
+        {
+          "preset_id": "CP_04",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "4. Serie Multianual: Asignación Histórica Fondos de Cultura MINCAP (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_time_series",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Evolución histórica de montos asignados y número de iniciativas financiadas por fondos sectoriales de cultura en la región"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "monto_adjudicado_mclp",
+            "varY": "proyectos_cultura_adjudicados_n",
+            "varY2": "proyectos_cultura_adjudicados_n",
+            "seriesPrimaria": "monto_adjudicado_mclp",
+            "seriesSecundaria": "proyectos_cultura_adjudicados_n",
+            "temporal_range": [
+              2015,
+              2026
+            ],
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Monto Adjudicado Fondos Cultura MINCAP (M$ CLP)",
+                  "data": [
+                    248.5,
+                    275.0,
+                    312.4,
+                    345.8,
+                    390.2,
+                    420.5,
+                    515.0,
+                    488.0,
+                    542.6,
+                    598.4,
+                    635.0,
+                    672.0
+                  ],
+                  "borderColor": "#7c2d12",
+                  "backgroundColor": "rgba(124,45,18,0.12)",
+                  "yAxisID": "y",
+                  "unit": "M$ CLP"
+                },
+                {
+                  "label": "Proyectos Culturales Financiados (N iniciativas)",
+                  "data": [
+                    24,
+                    27,
+                    31,
+                    33,
+                    36,
+                    42,
+                    48,
+                    41,
+                    45,
+                    49,
+                    52,
+                    55
+                  ],
+                  "borderColor": "#d97706",
+                  "backgroundColor": "rgba(217,119,6,0.12)",
+                  "yAxisID": "y1",
+                  "unit": "Proyectos"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Trayectoria de 12 años de inversión concursable en el sector artístico y patrimonial de Aysén.",
+          "why_complex_system": "Sensibilidad a shocks externos: variaciones en presupuestos nacionales y contingencias macroeconómicas impactan la masa crítica de gestores culturales locales."
+        },
+        {
+          "preset_id": "CP_05",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "5. Espejo Ciudadano: Oferta Cultural y Recreación (B4_B) vs. Infraestructura Cultural",
+          "format_type": "special",
+          "subtype": "dumbbell_gap",
+          "is_perception_mirror": false,
+          "inter_hub_cross": {
+            "cross_hub": "energia",
+            "descripcion": "Cruza la brecha de espacios culturales formales y gasto municipal con la evaluación ciudadana de oportunidades de recreación y cultura (Barómetro B4_B)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "gasto_cultura_per_capita_clp",
+            "varY": "total_espacios_culturales",
+            "varBase": "coyhaique",
+            "varCompare": "comunas_aisladas",
+            "metrics": [
+              "total_espacios_culturales",
+              "museos_count",
+              "bibliotecas_publicas_count"
+            ],
+            "barometro_question": "B4_B",
+            "structural_variable": "gasto_cultura_per_capita_clp",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 463,
+              "universe_N": 465,
+              "margin_error_pct": 4.55,
+              "robustness_rule": "semaforo_n_30_50"
+            },
+            "mirror_series": {
+              "question_id": "B4_B",
+              "enunciado": "Evaluación de oportunidades de recreación y cultura en la región",
+              "tipo": "nota_1_7",
+              "N_total": 465,
+              "n_muestral_valido": 463,
+              "me_95_total": 4.54,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 40.2,
+              "promedio_valor": 4.04,
+              "structural_variable": "gasto_cultura_per_capita_clp",
+              "structural_by_macrozona": {
+                "norte": 18400.0,
+                "centro": 24600.0,
+                "sur": 21300.0
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 198,
+                  "me_95": 6.96,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 44.4,
+                  "promedio_valor": 4.11
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 36.2,
+                  "promedio_valor": 4.03
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 37.4,
+                  "promedio_valor": 3.97
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 41.9,
+                  "promedio_valor": 4.02
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 34.4,
+                  "promedio_valor": 3.94
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.5,
+                  "promedio_valor": 4.22
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 216,
+                  "me_95": 6.66,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 33.3,
+                  "promedio_valor": 3.81
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 247,
+                  "me_95": 6.23,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.2,
+                  "promedio_valor": 4.24
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 32.4,
+                  "promedio_valor": 3.72
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 40.9,
+                  "promedio_valor": 3.99
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 35.8,
+                  "promedio_valor": 3.99
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 84,
+                  "me_95": 10.69,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 53.6,
+                  "promedio_valor": 4.51
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 204,
+                  "me_95": 6.85,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 37.7,
+                  "promedio_valor": 4.02
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.1,
+                  "promedio_valor": 4.09
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 36.2,
+                  "promedio_valor": 4.0
+                }
+              }
+            }
+          },
+          "what_it_shows": "Disparidad en la disponibilidad de infraestructura cultural pública frente a la evaluación ciudadana de oportunidades de recreación y cultura.",
+          "why_complex_system": "Efectos de umbral: comunidades bajo cierto tamaño poblacional dependen exclusivamente de redes digitales y bibliotecas locales para acceso cultural."
+        }
+      ]
+    },
+    "ctci_innovacion": {
+      "hub_id": "ctci_innovacion",
+      "hub_num": "10",
+      "numeral": "CT",
+      "title": "Módulo Especializado: Ciencia, Tecnología e Innovación (CTCi)",
+      "shortTitle": "CTCi & Innovación",
+      "color": "#0e7490",
+      "presets": [
+        {
+          "preset_id": "CT_01",
+          "hub_id": "ctci_innovacion",
+          "titulo": "1. Red de Centros Científicos, Estaciones de Campo y Laboratorios Costeros",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Localización espacial de nodos de investigación (CIEP, UAysén, INIA, IFOP, laboratorios de campo) frente a la red de cuencas y áreas protegidas"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "total_proyectos_ctci",
+            "varY": "centros_y_estaciones_ctci_count",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "nodos_ctci",
+              "estaciones_campo",
+              "cuencas_dga",
+              "snaspe_conaf"
+            ]
+          },
+          "what_it_shows": "Malla territorial de plataformas científicas permanentes y estaciones de monitoreo ambiental en Aysén.",
+          "why_complex_system": "Acoplamiento socio-ecológico: la ubicación de sensores e investigadores responde a la singularidad de ecosistemas vulnerables como glaciares y fiordos."
+        },
+        {
+          "preset_id": "CT_02",
+          "hub_id": "ctci_innovacion",
+          "titulo": "2. Capacidad Científica Endógena (UAysén, CIEP, INIA, IFOP) vs. Proyectos Extrarregionales",
+          "format_type": "bar",
+          "subtype": "stacked_bar",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Compara el volumen de investigación liderado por entidades con base permanente en Aysén frente a proyectos operados por universidades extrarregionales"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "bivariate_comparison",
+            "varX": "proyectos_anid_locales_count",
+            "varY": "proyectos_anid_extrarregionales_count",
+            "varY2": "proyectos_anid_extrarregionales_count",
+            "showAverage": true,
+            "barometro_question": "I1_I",
+            "structural_variable": "total_proyectos_ctci",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 452,
+              "universe_N": 465,
+              "margin_error_pct": 4.6,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Partición entre conocimiento generado localmente con permanencia territorial versus expediciones científicas transitorias.",
+          "why_complex_system": "Retención de valor cognitivo: la ciencia endógena transfiere capacidades de decisión sostenibles al ecosistema regional."
+        },
+        {
+          "preset_id": "CT_03",
+          "hub_id": "ctci_innovacion",
+          "titulo": "3. Proyectos CORFO Innova & I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "salmonicultura",
+            "descripcion": "Relación entre proyectos de innovación y transferencia aplicada frente a la nota de valoración social de la academia regional (Barómetro I8)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "mode": "four_quadrants",
+            "varX": "proyectos_corfo_innova_count",
+            "varY": "evaluacion_uaysen_promedio_i8",
+            "showAverage": true,
+            "showTrend": true,
+            "barometro_question": "I8",
+            "structural_variable": "proyectos_corfo_innova_count",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 423,
+              "universe_N": 465,
+              "margin_error_pct": 4.76,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Cruce entre la innovación productiva del sector empresarial/académico y la reputación de la casa de estudios regional.",
+          "why_complex_system": "Legitimidad social de la ciencia: la conexión entre investigación aplicada y problemas productivos directos modula la confianza pública en las instituciones del conocimiento."
+        },
+        {
+          "preset_id": "CT_04",
+          "hub_id": "ctci_innovacion",
+          "titulo": "4. Evolución de Adjudicaciones ANID y CORFO en Aysén (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_line_ocde",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Series anuales de financiamiento científico concursable ANID e innovación aplicada CORFO/FIA en Aysén"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "anid_macroareas_ocde_historico",
+            "varY": "anid_innovacion_aplicada_historico",
+            "seriesPrimaria": "anid_macroareas_ocde_historico",
+            "seriesSecundaria": "anid_innovacion_aplicada_historico",
+            "series": [
+              "ciencias_naturales",
+              "ciencias_agricolas_veterinarias",
+              "ciencias_sociales_humanidades",
+              "ingenieria_tecnologia"
+            ],
+            "temporal_range": [
+              2015,
+              2026
+            ],
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Proyectos Ciencia y Ecosistemas ANID (N activos)",
+                  "data": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    12,
+                    11,
+                    13,
+                    15,
+                    16,
+                    18,
+                    19,
+                    21
+                  ],
+                  "borderColor": "#0e7490",
+                  "backgroundColor": "rgba(14,116,144,0.12)",
+                  "yAxisID": "y",
+                  "unit": "Proyectos ANID"
+                },
+                {
+                  "label": "Inversión I+D+i y Transferencia Aplicada (M$ CLP)",
+                  "data": [
+                    620,
+                    685,
+                    740,
+                    890,
+                    1120,
+                    1050,
+                    1280,
+                    1490,
+                    1680,
+                    1850,
+                    2040,
+                    2210
+                  ],
+                  "borderColor": "#00357f",
+                  "backgroundColor": "rgba(0,53,127,0.12)",
+                  "yAxisID": "y1",
+                  "unit": "M$ CLP"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Histórico multianual del financiamiento a proyectos Fondecyt, Fondef, Fondequip, Milenio e innovación regional en Aysén.",
+          "why_complex_system": "Diversificación adaptativa: el tránsito desde investigación descriptiva natural hacia innovación interdisciplinaria fortalece la resiliencia territorial."
+        },
+        {
+          "preset_id": "CT_05",
+          "hub_id": "ctci_innovacion",
+          "titulo": "5. Espejo Ciudadano: Aporte Percibido de Universidades (F4_G) vs. Masa Crítica CTCi",
+          "format_type": "special",
+          "subtype": "radar_ecosystem",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Evaluación multifactorial del ecosistema del conocimiento: masa crítica de investigadores, fondos públicos y percepción comunitaria del rol universitario (F4_G)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "investigadores_residentes_est",
+            "varY": "monto_anid_acumulado_mclp",
+            "axes": [
+              "investigadores_residentes_est",
+              "monto_anid_acumulado_mclp",
+              "centros_y_estaciones_ctci_count",
+              "aporte_universidades_f4g_pct"
+            ],
+            "barometro_question": "F4_G",
+            "structural_variable": "investigadores_residentes_est",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 438,
+              "universe_N": 465,
+              "margin_error_pct": 4.68,
+              "robustness_rule": "semaforo_n_30_50"
+            },
+            "mirror_series": {
+              "question_id": "F4_G",
+              "enunciado": "Aporte de las Universidades al desarrollo regional de Aysén",
+              "tipo": "escala_4",
+              "N_total": 465,
+              "n_muestral_valido": 438,
+              "me_95_total": 4.67,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 66.4,
+              "promedio_valor": 2.11,
+              "structural_variable": "investigadores_residentes_est",
+              "structural_by_macrozona": {
+                "norte": 11.0,
+                "centro": 58.0,
+                "sur": 19.0
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 185,
+                  "me_95": 7.2,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.9,
+                  "promedio_valor": 2.27
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 87,
+                  "me_95": 10.5,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 70.1,
+                  "promedio_valor": 2.02
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 166,
+                  "me_95": 7.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.9,
+                  "promedio_valor": 1.98
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 146,
+                  "me_95": 8.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.2,
+                  "promedio_valor": 2.3
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 169,
+                  "me_95": 7.53,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 67.5,
+                  "promedio_valor": 2.09
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 123,
+                  "me_95": 8.83,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 74.8,
+                  "promedio_valor": 1.91
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 205,
+                  "me_95": 6.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.8,
+                  "promedio_valor": 2.07
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 233,
+                  "me_95": 6.41,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 63.5,
+                  "promedio_valor": 2.15
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 70,
+                  "me_95": 11.71,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 71.4,
+                  "promedio_valor": 2.1
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.3,
+                  "promedio_valor": 2.04
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 145,
+                  "me_95": 8.13,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.0,
+                  "promedio_valor": 2.15
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 75,
+                  "me_95": 11.31,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 62.7,
+                  "promedio_valor": 2.19
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 191,
+                  "me_95": 7.08,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.8,
+                  "promedio_valor": 2.02
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 62.2,
+                  "promedio_valor": 2.18
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 99,
+                  "me_95": 9.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.6,
+                  "promedio_valor": 2.2
+                }
+              }
+            }
+          },
+          "what_it_shows": "Perfil integral de madurez del ecosistema regional de ciencia y tecnología en sus dimensiones estructurales y de percepción.",
+          "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
+        }
+      ]
+    }
+  },
+  "edges_inter_hub": [
+    {
+      "edge_id": "edge_comunal_01_04",
+      "tipo": "comunal",
+      "hub_origen": "gobernanza",
+      "hub_destino": "inversion",
+      "llave": "comuna_ine",
+      "descripcion": "Vínculo estructural entre dependencia municipal del FCM e inversión pública y proyectos SEIA por comuna",
+      "peso_intensidad": 0.88,
+      "indice_divergencia_percepcion": 0.34,
+      "preset_recomendado": "hub_01_02"
+    },
+    {
+      "edge_id": "edge_comunal_02_07",
+      "tipo": "comunal",
+      "hub_origen": "energia",
+      "hub_destino": "biodiversidad",
+      "llave": "comuna_ine",
+      "descripcion": "Vínculo entre porcentaje de hogares calefaccionados con leña y días sobre norma MP2.5 por cuenca comunal",
+      "peso_intensidad": 0.94,
+      "indice_divergencia_percepcion": 0.22,
+      "preset_recomendado": "hub_02_03"
+    },
+    {
+      "edge_id": "edge_comunal_03_04",
+      "tipo": "comunal",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "inversion",
+      "llave": "comuna_ine",
+      "descripcion": "Concesiones acuícolas otorgadas frente a empleo dependiente registrado ante el SII por territorio comunal",
+      "peso_intensidad": 0.91,
+      "indice_divergencia_percepcion": 0.42,
+      "preset_recomendado": "hub_03_03"
+    },
+    {
+      "edge_id": "edge_comunal_06_01",
+      "tipo": "comunal",
+      "hub_origen": "turismo",
+      "hub_destino": "gobernanza",
+      "llave": "comuna_ine",
+      "descripcion": "Visitantes a parques SNASPE y prestadores turísticos frente al gasto municipal en Zonas ZOIT",
+      "peso_intensidad": 0.79,
+      "indice_divergencia_percepcion": 0.58,
+      "preset_recomendado": "hub_06_03"
+    },
+    {
+      "edge_id": "edge_comunal_08_05",
+      "tipo": "comunal",
+      "hub_origen": "salud",
+      "hub_destino": "social",
+      "llave": "comuna_ine",
+      "descripcion": "Red de 32 postas de salud rural frente al índice de pobreza multidimensional CASEN por comuna",
+      "peso_intensidad": 0.86,
+      "indice_divergencia_percepcion": 0.39,
+      "preset_recomendado": "hub_08_02"
+    },
+    {
+      "edge_id": "edge_rut_03_04_aquachile",
+      "tipo": "economico_rut",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "inversion",
+      "llave": "rut_titular",
+      "rut_titular": "86.247.400-7",
+      "titular_nombre": "Empresas AquaChile S.A.",
+      "descripcion": "Holding salmonero con 196 concesiones y 7 filiales que tramitan proyectos de engorda y ensilaje en el SEIA",
+      "peso_intensidad": 0.96,
+      "indice_divergencia_percepcion": 0.46,
+      "preset_recomendado": "hub_03_02"
+    },
+    {
+      "edge_id": "edge_rut_03_04_cooke",
+      "tipo": "economico_rut",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "inversion",
+      "llave": "rut_titular",
+      "rut_titular": "76.012.345-K",
+      "titular_nombre": "Cooke Aquaculture Chile",
+      "descripcion": "Operaciones en fiordo Cupquelán y Parque Nacional Laguna San Rafael cruzadas con cartera SEIA",
+      "peso_intensidad": 0.89,
+      "indice_divergencia_percepcion": 0.62,
+      "preset_recomendado": "hub_03_05"
+    },
+    {
+      "edge_id": "edge_rut_02_04_edelaysen",
+      "tipo": "economico_rut",
+      "hub_origen": "energia",
+      "hub_destino": "inversion",
+      "llave": "rut_titular",
+      "rut_titular": "96.589.120-4",
+      "titular_nombre": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
+      "descripcion": "Concesionaria monopólica de distribución en sistemas medianos y proyectos de generación en SEIA",
+      "peso_intensidad": 0.93,
+      "indice_divergencia_percepcion": 0.38,
+      "preset_recomendado": "hub_02_02"
+    },
+    {
+      "edge_id": "edge_spatial_03_08_cisnes",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "salud",
+      "llave": "distancia_geodesica",
+      "nodo_a": "centro_concesion_canal_puyuhuapi",
+      "nodo_b": "hospital_de_cisnes",
+      "distancia_km": 14.8,
+      "descripcion": "Proximidad entre centros de engorda en Canal Puyuhuapi y el Hospital de Cisnes para evacuaciones por buceo y trauma",
+      "peso_intensidad": 0.84,
+      "indice_divergencia_percepcion": 0.41,
+      "preset_recomendado": "hub_08_01"
+    },
+    {
+      "edge_id": "edge_spatial_02_08_coyhaique",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "energia",
+      "hub_destino": "salud",
+      "llave": "distancia_geodesica",
+      "nodo_a": "subestacion_coyhaique_edelaysen",
+      "nodo_b": "hospital_regional_coyhaique",
+      "distancia_km": 2.3,
+      "descripcion": "Respaldo crítico de línea eléctrica al Hospital Regional de Coyhaique en episodios de emergencia climática",
+      "peso_intensidad": 0.95,
+      "indice_divergencia_percepcion": 0.28,
+      "preset_recomendado": "hub_02_01"
+    },
+    {
+      "edge_id": "edge_spatial_06_07_queulat",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "turismo",
+      "hub_destino": "biodiversidad",
+      "llave": "distancia_geodesica",
+      "nodo_a": "acceso_parque_queulat_conaf",
+      "nodo_b": "area_conservacion_huemul_seno_ventisquero",
+      "distancia_km": 11.2,
+      "descripcion": "Frontera de uso intensivo de senderos turísticos en Queulat con hábitat protegido de fauna RCE",
+      "peso_intensidad": 0.9,
+      "indice_divergencia_percepcion": 0.48,
+      "preset_recomendado": "hub_06_01"
+    },
+    {
+      "edge_id": "edge_comunal_cp_turismo",
+      "tipo": "comunal",
+      "hub_origen": "cultura_patrimonio",
+      "hub_destino": "turismo",
+      "llave": "comuna_ine",
+      "descripcion": "Espacios culturales, museos y bibliotecas públicas frente a la oferta de prestadores turísticos SERNATUR y ZOIT por comuna",
+      "peso_intensidad": 0.85,
+      "indice_divergencia_percepcion": 0.52,
+      "preset_recomendado": "CP_01"
+    },
+    {
+      "edge_id": "edge_comunal_ctci_inversion",
+      "tipo": "comunal",
+      "hub_origen": "ctci_innovacion",
+      "hub_destino": "inversion",
+      "llave": "comuna_ine",
+      "descripcion": "Proyectos de investigación ANID y CORFO frente a inversión aprobada SEIA y dinamismo empresarial SII",
+      "peso_intensidad": 0.88,
+      "indice_divergencia_percepcion": 0.45,
+      "preset_recomendado": "CT_02"
+    },
+    {
+      "edge_id": "edge_rut_ctci_salmon_uaysen",
+      "tipo": "economico_rut",
+      "hub_origen": "ctci_innovacion",
+      "hub_destino": "salmonicultura",
+      "llave": "rut_titular",
+      "rut_titular": "61.554.000-0",
+      "titular_nombre": "Universidad de Aysén / Instituto de Fomento Pesquero (IFOP)",
+      "descripcion": "Convenios de monitoreo oceanográfico y proyectos de bioseguridad en barrios ACS con holdings salmoneros",
+      "peso_intensidad": 0.82,
+      "indice_divergencia_percepcion": 0.41,
+      "preset_recomendado": "CT_03"
+    },
+    {
+      "edge_id": "edge_rut_cp_gore_cultura",
+      "tipo": "economico_rut",
+      "hub_origen": "cultura_patrimonio",
+      "hub_destino": "gobernanza",
+      "llave": "rut_titular",
+      "rut_titular": "61.979.900-9",
+      "titular_nombre": "Gobierno Regional de Aysén (GORE)",
+      "descripcion": "Subvenciones FNDR 8% de Cultura y Patrimonio transferidas a municipios y agrupaciones culturales",
+      "peso_intensidad": 0.9,
+      "indice_divergencia_percepcion": 0.37,
+      "preset_recomendado": "CP_02"
+    },
+    {
+      "edge_id": "edge_spatial_cp_turismo_coyhaique",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "cultura_patrimonio",
+      "hub_destino": "turismo",
+      "llave": "distancia_geodesica",
+      "nodo_a": "CP-NOD-01",
+      "nodo_b": "atractivo_coyhaique_monumento_ovejero",
+      "distancia_km": 1.2,
+      "descripcion": "Proximidad física entre el Museo Regional de Aysén y el circuito turístico urbano de Coyhaique",
+      "peso_intensidad": 0.92,
+      "indice_divergencia_percepcion": 0.3,
+      "preset_recomendado": "CP_01"
+    },
+    {
+      "edge_id": "edge_spatial_ctci_salud_ciep",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "ctci_innovacion",
+      "hub_destino": "salud",
+      "llave": "distancia_geodesica",
+      "nodo_a": "CTCI-NOD-01",
+      "nodo_b": "hospital_regional_coyhaique",
+      "distancia_km": 0.8,
+      "descripcion": "Colaboración científica en salud pública y bioestadística regional entre CIEP y Hospital Regional de Coyhaique",
+      "peso_intensidad": 0.87,
+      "indice_divergencia_percepcion": 0.25,
+      "preset_recomendado": "CT_01"
+    }
   ]
 }

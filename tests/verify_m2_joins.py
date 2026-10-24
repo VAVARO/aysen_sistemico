@@ -362,6 +362,24 @@ class TestM2CrossDatabaseConsistency(unittest.TestCase):
         mp = cruces["marino_productivo"]["datos"]
         self.assertEqual(mp[2]["alexandrium_cel_l"], 1450)  # March peak
 
+    def test_03_edges_inter_hub_matrix(self):
+        """Matrix edges_inter_hub contains valid relational links and Barómetro divergence metrics"""
+        with open(CRUCES_JSON, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        self.assertIn("edges_inter_hub", data, "CRUCES_JSON must contain edges_inter_hub")
+        edges = data["edges_inter_hub"]
+        self.assertGreaterEqual(len(edges), 8)
+
+        for e in edges:
+            self.assertIn("edge_id", e)
+            self.assertIn("hub_origen", e)
+            self.assertIn("hub_destino", e)
+            self.assertIn("tipo", e)
+            self.assertIn("preset_recomendado", e)
+            self.assertTrue(0.0 <= e.get("peso_intensidad", -1) <= 1.0)
+            self.assertTrue(0.0 <= e.get("indice_divergencia_percepcion", -1) <= 1.0)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

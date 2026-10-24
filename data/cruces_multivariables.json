@@ -1158,5 +1158,1001 @@
         ]
       }
     ]
+  },
+  "edges_inter_hub": [
+    {
+      "edge_id": "edge_comunal_01_04",
+      "tipo": "comunal",
+      "hub_origen": "gobernanza",
+      "hub_destino": "inversion",
+      "llave": "comuna_ine",
+      "descripcion": "Vínculo estructural entre dependencia municipal del FCM e inversión pública y proyectos SEIA por comuna",
+      "peso_intensidad": 0.88,
+      "indice_divergencia_percepcion": 0.34,
+      "preset_recomendado": "hub_01_02"
+    },
+    {
+      "edge_id": "edge_comunal_02_07",
+      "tipo": "comunal",
+      "hub_origen": "energia",
+      "hub_destino": "biodiversidad",
+      "llave": "comuna_ine",
+      "descripcion": "Vínculo entre porcentaje de hogares calefaccionados con leña y días sobre norma MP2.5 por cuenca comunal",
+      "peso_intensidad": 0.94,
+      "indice_divergencia_percepcion": 0.22,
+      "preset_recomendado": "hub_02_03"
+    },
+    {
+      "edge_id": "edge_comunal_03_04",
+      "tipo": "comunal",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "inversion",
+      "llave": "comuna_ine",
+      "descripcion": "Concesiones acuícolas otorgadas frente a empleo dependiente registrado ante el SII por territorio comunal",
+      "peso_intensidad": 0.91,
+      "indice_divergencia_percepcion": 0.42,
+      "preset_recomendado": "hub_03_03"
+    },
+    {
+      "edge_id": "edge_comunal_06_01",
+      "tipo": "comunal",
+      "hub_origen": "turismo",
+      "hub_destino": "gobernanza",
+      "llave": "comuna_ine",
+      "descripcion": "Visitantes a parques SNASPE y prestadores turísticos frente al gasto municipal en Zonas ZOIT",
+      "peso_intensidad": 0.79,
+      "indice_divergencia_percepcion": 0.58,
+      "preset_recomendado": "hub_06_03"
+    },
+    {
+      "edge_id": "edge_comunal_08_05",
+      "tipo": "comunal",
+      "hub_origen": "salud",
+      "hub_destino": "social",
+      "llave": "comuna_ine",
+      "descripcion": "Red de 32 postas de salud rural frente al índice de pobreza multidimensional CASEN por comuna",
+      "peso_intensidad": 0.86,
+      "indice_divergencia_percepcion": 0.39,
+      "preset_recomendado": "hub_08_02"
+    },
+    {
+      "edge_id": "edge_rut_03_04_aquachile",
+      "tipo": "economico_rut",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "inversion",
+      "llave": "rut_titular",
+      "rut_titular": "86.247.400-7",
+      "titular_nombre": "Empresas AquaChile S.A.",
+      "descripcion": "Holding salmonero con 196 concesiones y 7 filiales que tramitan proyectos de engorda y ensilaje en el SEIA",
+      "peso_intensidad": 0.96,
+      "indice_divergencia_percepcion": 0.46,
+      "preset_recomendado": "hub_03_02"
+    },
+    {
+      "edge_id": "edge_rut_03_04_cooke",
+      "tipo": "economico_rut",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "inversion",
+      "llave": "rut_titular",
+      "rut_titular": "76.012.345-K",
+      "titular_nombre": "Cooke Aquaculture Chile",
+      "descripcion": "Operaciones en fiordo Cupquelán y Parque Nacional Laguna San Rafael cruzadas con cartera SEIA",
+      "peso_intensidad": 0.89,
+      "indice_divergencia_percepcion": 0.62,
+      "preset_recomendado": "hub_03_05"
+    },
+    {
+      "edge_id": "edge_rut_02_04_edelaysen",
+      "tipo": "economico_rut",
+      "hub_origen": "energia",
+      "hub_destino": "inversion",
+      "llave": "rut_titular",
+      "rut_titular": "96.589.120-4",
+      "titular_nombre": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
+      "descripcion": "Concesionaria monopólica de distribución en sistemas medianos y proyectos de generación en SEIA",
+      "peso_intensidad": 0.93,
+      "indice_divergencia_percepcion": 0.38,
+      "preset_recomendado": "hub_02_02"
+    },
+    {
+      "edge_id": "edge_spatial_03_08_cisnes",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "salmonicultura",
+      "hub_destino": "salud",
+      "llave": "distancia_geodesica",
+      "nodo_a": "centro_concesion_canal_puyuhuapi",
+      "nodo_b": "hospital_de_cisnes",
+      "distancia_km": 14.8,
+      "descripcion": "Proximidad entre centros de engorda en Canal Puyuhuapi y el Hospital de Cisnes para evacuaciones por buceo y trauma",
+      "peso_intensidad": 0.84,
+      "indice_divergencia_percepcion": 0.41,
+      "preset_recomendado": "hub_08_01"
+    },
+    {
+      "edge_id": "edge_spatial_02_08_coyhaique",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "energia",
+      "hub_destino": "salud",
+      "llave": "distancia_geodesica",
+      "nodo_a": "subestacion_coyhaique_edelaysen",
+      "nodo_b": "hospital_regional_coyhaique",
+      "distancia_km": 2.3,
+      "descripcion": "Respaldo crítico de línea eléctrica al Hospital Regional de Coyhaique en episodios de emergencia climática",
+      "peso_intensidad": 0.95,
+      "indice_divergencia_percepcion": 0.28,
+      "preset_recomendado": "hub_02_01"
+    },
+    {
+      "edge_id": "edge_spatial_06_07_queulat",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "turismo",
+      "hub_destino": "biodiversidad",
+      "llave": "distancia_geodesica",
+      "nodo_a": "acceso_parque_queulat_conaf",
+      "nodo_b": "area_conservacion_huemul_seno_ventisquero",
+      "distancia_km": 11.2,
+      "descripcion": "Frontera de uso intensivo de senderos turísticos en Queulat con hábitat protegido de fauna RCE",
+      "peso_intensidad": 0.9,
+      "indice_divergencia_percepcion": 0.48,
+      "preset_recomendado": "hub_06_01"
+    },
+    {
+      "edge_id": "edge_comunal_cp_turismo",
+      "tipo": "comunal",
+      "hub_origen": "cultura_patrimonio",
+      "hub_destino": "turismo",
+      "llave": "comuna_ine",
+      "descripcion": "Espacios culturales, museos y bibliotecas públicas frente a la oferta de prestadores turísticos SERNATUR y ZOIT por comuna",
+      "peso_intensidad": 0.85,
+      "indice_divergencia_percepcion": 0.52,
+      "preset_recomendado": "CP_01"
+    },
+    {
+      "edge_id": "edge_comunal_ctci_inversion",
+      "tipo": "comunal",
+      "hub_origen": "ctci_innovacion",
+      "hub_destino": "inversion",
+      "llave": "comuna_ine",
+      "descripcion": "Proyectos de investigación ANID y CORFO frente a inversión aprobada SEIA y dinamismo empresarial SII",
+      "peso_intensidad": 0.88,
+      "indice_divergencia_percepcion": 0.45,
+      "preset_recomendado": "CT_02"
+    },
+    {
+      "edge_id": "edge_rut_ctci_salmon_uaysen",
+      "tipo": "economico_rut",
+      "hub_origen": "ctci_innovacion",
+      "hub_destino": "salmonicultura",
+      "llave": "rut_titular",
+      "rut_titular": "61.554.000-0",
+      "titular_nombre": "Universidad de Aysén / Instituto de Fomento Pesquero (IFOP)",
+      "descripcion": "Convenios de monitoreo oceanográfico y proyectos de bioseguridad en barrios ACS con holdings salmoneros",
+      "peso_intensidad": 0.82,
+      "indice_divergencia_percepcion": 0.41,
+      "preset_recomendado": "CT_03"
+    },
+    {
+      "edge_id": "edge_rut_cp_gore_cultura",
+      "tipo": "economico_rut",
+      "hub_origen": "cultura_patrimonio",
+      "hub_destino": "gobernanza",
+      "llave": "rut_titular",
+      "rut_titular": "61.979.900-9",
+      "titular_nombre": "Gobierno Regional de Aysén (GORE)",
+      "descripcion": "Subvenciones FNDR 8% de Cultura y Patrimonio transferidas a municipios y agrupaciones culturales",
+      "peso_intensidad": 0.9,
+      "indice_divergencia_percepcion": 0.37,
+      "preset_recomendado": "CP_02"
+    },
+    {
+      "edge_id": "edge_spatial_cp_turismo_coyhaique",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "cultura_patrimonio",
+      "hub_destino": "turismo",
+      "llave": "distancia_geodesica",
+      "nodo_a": "CP-NOD-01",
+      "nodo_b": "atractivo_coyhaique_monumento_ovejero",
+      "distancia_km": 1.2,
+      "descripcion": "Proximidad física entre el Museo Regional de Aysén y el circuito turístico urbano de Coyhaique",
+      "peso_intensidad": 0.92,
+      "indice_divergencia_percepcion": 0.3,
+      "preset_recomendado": "CP_01"
+    },
+    {
+      "edge_id": "edge_spatial_ctci_salud_ciep",
+      "tipo": "espacial_proximidad",
+      "hub_origen": "ctci_innovacion",
+      "hub_destino": "salud",
+      "llave": "distancia_geodesica",
+      "nodo_a": "CTCI-NOD-01",
+      "nodo_b": "hospital_regional_coyhaique",
+      "distancia_km": 0.8,
+      "descripcion": "Colaboración científica en salud pública y bioestadística regional entre CIEP y Hospital Regional de Coyhaique",
+      "peso_intensidad": 0.87,
+      "indice_divergencia_percepcion": 0.25,
+      "preset_recomendado": "CT_01"
+    }
+  ],
+  "total_edges_inter_hub": 17,
+  "extension_gallery": {
+    "cultura_patrimonio": {
+      "hub_id": "cultura_patrimonio",
+      "hub_num": "09",
+      "numeral": "CP",
+      "title": "Módulo Especializado: Cultura, Artes y Patrimonio",
+      "shortTitle": "Cultura & Patrimonio",
+      "color": "#7c2d12",
+      "presets": [
+        {
+          "preset_id": "CP_01",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "1. Mapa Territorial de Espacios Culturales, Museos (RMC) y Monumentos Nacionales",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "turismo",
+            "descripcion": "Cruza la ubicación de museos RMC, bibliotecas públicas y monumentos nacionales con los atractivos turísticos y zonas ZOIT"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "total_espacios_culturales",
+            "varY": "monumentos_nacionales_count",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "museos_rmc",
+              "bibliotecas_snbp",
+              "monumentos_cmn",
+              "atractivos_turismo"
+            ],
+            "tooltip_mirror_indicator": {
+              "question_id": "B4_B",
+              "label": "Oportunidades de recreación y cultura",
+              "show_sample_n": true
+            }
+          },
+          "what_it_shows": "Distribución geográfica de la infraestructura cultural y patrimonial en las 10 comunas de Aysén.",
+          "why_complex_system": "Concentración espacial y aislamiento: la mayor densidad patrimonial protegida coexiste con asimetrías de conectividad física en comunas australes e insulares."
+        },
+        {
+          "preset_id": "CP_02",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "2. Gasto Municipal en Cultura per Cápita vs. Fondos Concursables Adjudicados (FONDART)",
+          "format_type": "bar",
+          "subtype": "double_axis_bar",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Cruza el gasto municipal per cápita en cultura (SINIM Área 03) con la cartera de proyectos FONDART adjudicados por MINCAP"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "bivariate_comparison",
+            "varX": "gasto_cultura_per_capita_clp",
+            "varY": "fondos_cultura_adjudicados_mclp",
+            "varY2": "fondos_cultura_adjudicados_mclp",
+            "showAverage": true,
+            "barometro_question": "B4_B",
+            "structural_variable": "gasto_cultura_per_capita_clp",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 463,
+              "universe_N": 465,
+              "margin_error_pct": 4.55,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Compara el esfuerzo financiero de los municipios en cultura frente al financiamiento competitivo central del MINCAP y la percepción comunitaria.",
+          "why_complex_system": "Desacople de escalas: la inversión sectorial centralizada no siempre compensa las disparidades de presupuesto de los municipios más aislados."
+        },
+        {
+          "preset_id": "CP_03",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "3. Inversión FNDR 8% Cultura vs. Tasa de Participación Cultural Ciudadana",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Relación entre transferencias FNDR 8% del GORE Aysén y la participación de la población en organizaciones sociales y culturales (C2)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "mode": "four_quadrants",
+            "varX": "fndr_8pct_cultura_mclp",
+            "varY": "participacion_cultural_pct_c2",
+            "showAverage": true,
+            "showTrend": true,
+            "barometro_question": "C2",
+            "structural_variable": "fndr_8pct_cultura_mclp",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 465,
+              "universe_N": 465,
+              "margin_error_pct": 4.54,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Distribución de las comunas según el nivel de financiamiento regional concursable y la densidad de participación comunitaria efectiva.",
+          "why_complex_system": "Autoorganización social: niveles altos de tejido cultural comunitario pueden sostenerse incluso en territorios con bajo subsidio estatal directo."
+        },
+        {
+          "preset_id": "CP_04",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "4. Serie Multianual: Asignación Histórica Fondos de Cultura MINCAP (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_axis_time_series",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Evolución histórica de montos asignados y número de iniciativas financiadas por fondos sectoriales de cultura en la región"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "monto_adjudicado_mclp",
+            "varY": "proyectos_cultura_adjudicados_n",
+            "varY2": "proyectos_cultura_adjudicados_n",
+            "seriesPrimaria": "monto_adjudicado_mclp",
+            "seriesSecundaria": "proyectos_cultura_adjudicados_n",
+            "temporal_range": [
+              2015,
+              2026
+            ],
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Monto Adjudicado Fondos Cultura MINCAP (M$ CLP)",
+                  "data": [
+                    248.5,
+                    275.0,
+                    312.4,
+                    345.8,
+                    390.2,
+                    420.5,
+                    515.0,
+                    488.0,
+                    542.6,
+                    598.4,
+                    635.0,
+                    672.0
+                  ],
+                  "borderColor": "#7c2d12",
+                  "backgroundColor": "rgba(124,45,18,0.12)",
+                  "yAxisID": "y",
+                  "unit": "M$ CLP"
+                },
+                {
+                  "label": "Proyectos Culturales Financiados (N iniciativas)",
+                  "data": [
+                    24,
+                    27,
+                    31,
+                    33,
+                    36,
+                    42,
+                    48,
+                    41,
+                    45,
+                    49,
+                    52,
+                    55
+                  ],
+                  "borderColor": "#d97706",
+                  "backgroundColor": "rgba(217,119,6,0.12)",
+                  "yAxisID": "y1",
+                  "unit": "Proyectos"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Trayectoria de 12 años de inversión concursable en el sector artístico y patrimonial de Aysén.",
+          "why_complex_system": "Sensibilidad a shocks externos: variaciones en presupuestos nacionales y contingencias macroeconómicas impactan la masa crítica de gestores culturales locales."
+        },
+        {
+          "preset_id": "CP_05",
+          "hub_id": "cultura_patrimonio",
+          "titulo": "5. Espejo Ciudadano: Oferta Cultural y Recreación (B4_B) vs. Infraestructura Cultural",
+          "format_type": "special",
+          "subtype": "dumbbell_gap",
+          "is_perception_mirror": false,
+          "inter_hub_cross": {
+            "cross_hub": "energia",
+            "descripcion": "Cruza la brecha de espacios culturales formales y gasto municipal con la evaluación ciudadana de oportunidades de recreación y cultura (Barómetro B4_B)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "gasto_cultura_per_capita_clp",
+            "varY": "total_espacios_culturales",
+            "varBase": "coyhaique",
+            "varCompare": "comunas_aisladas",
+            "metrics": [
+              "total_espacios_culturales",
+              "museos_count",
+              "bibliotecas_publicas_count"
+            ],
+            "barometro_question": "B4_B",
+            "structural_variable": "gasto_cultura_per_capita_clp",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 463,
+              "universe_N": 465,
+              "margin_error_pct": 4.55,
+              "robustness_rule": "semaforo_n_30_50"
+            },
+            "mirror_series": {
+              "question_id": "B4_B",
+              "enunciado": "Evaluación de oportunidades de recreación y cultura en la región",
+              "tipo": "nota_1_7",
+              "N_total": 465,
+              "n_muestral_valido": 463,
+              "me_95_total": 4.54,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 40.2,
+              "promedio_valor": 4.04,
+              "structural_variable": "gasto_cultura_per_capita_clp",
+              "structural_by_macrozona": {
+                "norte": 18400.0,
+                "centro": 24600.0,
+                "sur": 21300.0
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 198,
+                  "me_95": 6.96,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 44.4,
+                  "promedio_valor": 4.11
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 36.2,
+                  "promedio_valor": 4.03
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 37.4,
+                  "promedio_valor": 3.97
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 41.9,
+                  "promedio_valor": 4.02
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 34.4,
+                  "promedio_valor": 3.94
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.5,
+                  "promedio_valor": 4.22
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 216,
+                  "me_95": 6.66,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 33.3,
+                  "promedio_valor": 3.81
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 247,
+                  "me_95": 6.23,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.2,
+                  "promedio_valor": 4.24
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 32.4,
+                  "promedio_valor": 3.72
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 40.9,
+                  "promedio_valor": 3.99
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 35.8,
+                  "promedio_valor": 3.99
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 84,
+                  "me_95": 10.69,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 53.6,
+                  "promedio_valor": 4.51
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 204,
+                  "me_95": 6.85,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 37.7,
+                  "promedio_valor": 4.02
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.1,
+                  "promedio_valor": 4.09
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 36.2,
+                  "promedio_valor": 4.0
+                }
+              }
+            }
+          },
+          "what_it_shows": "Disparidad en la disponibilidad de infraestructura cultural pública frente a la evaluación ciudadana de oportunidades de recreación y cultura.",
+          "why_complex_system": "Efectos de umbral: comunidades bajo cierto tamaño poblacional dependen exclusivamente de redes digitales y bibliotecas locales para acceso cultural."
+        }
+      ]
+    },
+    "ctci_innovacion": {
+      "hub_id": "ctci_innovacion",
+      "hub_num": "10",
+      "numeral": "CT",
+      "title": "Módulo Especializado: Ciencia, Tecnología e Innovación (CTCi)",
+      "shortTitle": "CTCi & Innovación",
+      "color": "#0e7490",
+      "presets": [
+        {
+          "preset_id": "CT_01",
+          "hub_id": "ctci_innovacion",
+          "titulo": "1. Red de Centros Científicos, Estaciones de Campo y Laboratorios Costeros",
+          "format_type": "map",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Localización espacial de nodos de investigación (CIEP, UAysén, INIA, IFOP, laboratorios de campo) frente a la red de cuencas y áreas protegidas"
+          },
+          "config": {
+            "widget_type": "map",
+            "varX": "total_proyectos_ctci",
+            "varY": "centros_y_estaciones_ctci_count",
+            "center": [
+              -45.57,
+              -72.06
+            ],
+            "zoom": 7,
+            "layers": [
+              "nodos_ctci",
+              "estaciones_campo",
+              "cuencas_dga",
+              "snaspe_conaf"
+            ]
+          },
+          "what_it_shows": "Malla territorial de plataformas científicas permanentes y estaciones de monitoreo ambiental en Aysén.",
+          "why_complex_system": "Acoplamiento socio-ecológico: la ubicación de sensores e investigadores responde a la singularidad de ecosistemas vulnerables como glaciares y fiordos."
+        },
+        {
+          "preset_id": "CT_02",
+          "hub_id": "ctci_innovacion",
+          "titulo": "2. Capacidad Científica Endógena (UAysén, CIEP, INIA, IFOP) vs. Proyectos Extrarregionales",
+          "format_type": "bar",
+          "subtype": "stacked_bar",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Compara el volumen de investigación liderado por entidades con base permanente en Aysén frente a proyectos operados por universidades extrarregionales"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "bivariate_comparison",
+            "varX": "proyectos_anid_locales_count",
+            "varY": "proyectos_anid_extrarregionales_count",
+            "varY2": "proyectos_anid_extrarregionales_count",
+            "showAverage": true,
+            "barometro_question": "I1_I",
+            "structural_variable": "total_proyectos_ctci",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 452,
+              "universe_N": 465,
+              "margin_error_pct": 4.6,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Partición entre conocimiento generado localmente con permanencia territorial versus expediciones científicas transitorias.",
+          "why_complex_system": "Retención de valor cognitivo: la ciencia endógena transfiere capacidades de decisión sostenibles al ecosistema regional."
+        },
+        {
+          "preset_id": "CT_03",
+          "hub_id": "ctci_innovacion",
+          "titulo": "3. Proyectos CORFO Innova & I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "salmonicultura",
+            "descripcion": "Relación entre proyectos de innovación y transferencia aplicada frente a la nota de valoración social de la academia regional (Barómetro I8)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "mode": "four_quadrants",
+            "varX": "proyectos_corfo_innova_count",
+            "varY": "evaluacion_uaysen_promedio_i8",
+            "showAverage": true,
+            "showTrend": true,
+            "barometro_question": "I8",
+            "structural_variable": "proyectos_corfo_innova_count",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 423,
+              "universe_N": 465,
+              "margin_error_pct": 4.76,
+              "robustness_rule": "semaforo_n_30_50"
+            }
+          },
+          "what_it_shows": "Cruce entre la innovación productiva del sector empresarial/académico y la reputación de la casa de estudios regional.",
+          "why_complex_system": "Legitimidad social de la ciencia: la conexión entre investigación aplicada y problemas productivos directos modula la confianza pública en las instituciones del conocimiento."
+        },
+        {
+          "preset_id": "CT_04",
+          "hub_id": "ctci_innovacion",
+          "titulo": "4. Evolución de Adjudicaciones ANID y CORFO en Aysén (2015-2026)",
+          "format_type": "line",
+          "subtype": "multi_line_ocde",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Series anuales de financiamiento científico concursable ANID e innovación aplicada CORFO/FIA en Aysén"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "line",
+            "varX": "anid_macroareas_ocde_historico",
+            "varY": "anid_innovacion_aplicada_historico",
+            "seriesPrimaria": "anid_macroareas_ocde_historico",
+            "seriesSecundaria": "anid_innovacion_aplicada_historico",
+            "series": [
+              "ciencias_naturales",
+              "ciencias_agricolas_veterinarias",
+              "ciencias_sociales_humanidades",
+              "ingenieria_tecnologia"
+            ],
+            "temporal_range": [
+              2015,
+              2026
+            ],
+            "showTrend": true,
+            "customChartSpec": {
+              "labels": [
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Proyectos Ciencia y Ecosistemas ANID (N activos)",
+                  "data": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    12,
+                    11,
+                    13,
+                    15,
+                    16,
+                    18,
+                    19,
+                    21
+                  ],
+                  "borderColor": "#0e7490",
+                  "backgroundColor": "rgba(14,116,144,0.12)",
+                  "yAxisID": "y",
+                  "unit": "Proyectos ANID"
+                },
+                {
+                  "label": "Inversión I+D+i y Transferencia Aplicada (M$ CLP)",
+                  "data": [
+                    620,
+                    685,
+                    740,
+                    890,
+                    1120,
+                    1050,
+                    1280,
+                    1490,
+                    1680,
+                    1850,
+                    2040,
+                    2210
+                  ],
+                  "borderColor": "#00357f",
+                  "backgroundColor": "rgba(0,53,127,0.12)",
+                  "yAxisID": "y1",
+                  "unit": "M$ CLP"
+                }
+              ]
+            }
+          },
+          "what_it_shows": "Histórico multianual del financiamiento a proyectos Fondecyt, Fondef, Fondequip, Milenio e innovación regional en Aysén.",
+          "why_complex_system": "Diversificación adaptativa: el tránsito desde investigación descriptiva natural hacia innovación interdisciplinaria fortalece la resiliencia territorial."
+        },
+        {
+          "preset_id": "CT_05",
+          "hub_id": "ctci_innovacion",
+          "titulo": "5. Espejo Ciudadano: Aporte Percibido de Universidades (F4_G) vs. Masa Crítica CTCi",
+          "format_type": "special",
+          "subtype": "radar_ecosystem",
+          "is_perception_mirror": true,
+          "inter_hub_cross": {
+            "cross_hub": "social",
+            "descripcion": "Evaluación multifactorial del ecosistema del conocimiento: masa crítica de investigadores, fondos públicos y percepción comunitaria del rol universitario (F4_G)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "mode": "mirror_comparison",
+            "varX": "investigadores_residentes_est",
+            "varY": "monto_anid_acumulado_mclp",
+            "axes": [
+              "investigadores_residentes_est",
+              "monto_anid_acumulado_mclp",
+              "centros_y_estaciones_ctci_count",
+              "aporte_universidades_f4g_pct"
+            ],
+            "barometro_question": "F4_G",
+            "structural_variable": "investigadores_residentes_est",
+            "display_controls": {
+              "enable_sociodemo_filters": true,
+              "show_sample_stats": true,
+              "confidence_interval_95": true
+            },
+            "sample_contract": {
+              "active_n": 438,
+              "universe_N": 465,
+              "margin_error_pct": 4.68,
+              "robustness_rule": "semaforo_n_30_50"
+            },
+            "mirror_series": {
+              "question_id": "F4_G",
+              "enunciado": "Aporte de las Universidades al desarrollo regional de Aysén",
+              "tipo": "escala_4",
+              "N_total": 465,
+              "n_muestral_valido": 438,
+              "me_95_total": 4.67,
+              "semaforo_global": "verde",
+              "tasa_positiva_pct": 66.4,
+              "promedio_valor": 2.11,
+              "structural_variable": "investigadores_residentes_est",
+              "structural_by_macrozona": {
+                "norte": 11.0,
+                "centro": 58.0,
+                "sur": 19.0
+              },
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 185,
+                  "me_95": 7.2,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.9,
+                  "promedio_valor": 2.27
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 87,
+                  "me_95": 10.5,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 70.1,
+                  "promedio_valor": 2.02
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 166,
+                  "me_95": 7.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.9,
+                  "promedio_valor": 1.98
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 146,
+                  "me_95": 8.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.2,
+                  "promedio_valor": 2.3
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 169,
+                  "me_95": 7.53,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 67.5,
+                  "promedio_valor": 2.09
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 123,
+                  "me_95": 8.83,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 74.8,
+                  "promedio_valor": 1.91
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 205,
+                  "me_95": 6.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.8,
+                  "promedio_valor": 2.07
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 233,
+                  "me_95": 6.41,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 63.5,
+                  "promedio_valor": 2.15
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 70,
+                  "me_95": 11.71,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 71.4,
+                  "promedio_valor": 2.1
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.3,
+                  "promedio_valor": 2.04
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 145,
+                  "me_95": 8.13,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.0,
+                  "promedio_valor": 2.15
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 75,
+                  "me_95": 11.31,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 62.7,
+                  "promedio_valor": 2.19
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 191,
+                  "me_95": 7.08,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.8,
+                  "promedio_valor": 2.02
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 62.2,
+                  "promedio_valor": 2.18
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 99,
+                  "me_95": 9.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.6,
+                  "promedio_valor": 2.2
+                }
+              }
+            }
+          },
+          "what_it_shows": "Perfil integral de madurez del ecosistema regional de ciencia y tecnología en sus dimensiones estructurales y de percepción.",
+          "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
+        }
+      ]
+    }
   }
 }

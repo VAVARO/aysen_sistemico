@@ -53,7 +53,10 @@
     cecanPresets: [],
 
     // Vista 2: Modelo Relacional (Power BI)
-    relationalMode: 'comunas', // 'comunas' | 'holdings'
+    relationalMode: 'comunas', // 'comunas' | 'holdings' | 'interhub'
+    wp09: null,
+    wp10: null,
+    edgesInterHub: [],
     selectedTables: {
       comunas_base: true,
       gob_finanzas_sinim: true,
@@ -525,6 +528,98 @@
         const row = AppState.wp05?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
         return row?.datos?.seguridad_cead?.tasa_dmcs_por_100k_hab || 0;
       }
+    },
+
+    // --- 8. Cultura, Artes y Patrimonio (SERPAT / MINCAP / Barómetro) ---
+    {
+      id: 'total_espacios_culturales',
+      name: 'Total Espacios Culturales Registrados',
+      group: '8. Cultura, Artes y Patrimonio (SERPAT / MINCAP / Barómetro)',
+      unit: 'espacios',
+      format: (v) => Number(v),
+      getValue: (ine) => {
+        const row = AppState.wp09?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.total_espacios_culturales || 0;
+      }
+    },
+    {
+      id: 'gasto_cultura_per_capita_clp',
+      name: 'Gasto Municipal en Cultura per Cápita',
+      group: '8. Cultura, Artes y Patrimonio (SERPAT / MINCAP / Barómetro)',
+      unit: 'CLP/hab',
+      format: (v) => `$${Number(v).toLocaleString('es-CL')}`,
+      getValue: (ine) => {
+        const row = AppState.wp09?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.gasto_cultura_per_capita_clp || 0;
+      }
+    },
+    {
+      id: 'fondos_cultura_adjudicados_mclp',
+      name: 'Fondos de Cultura Adjudicados (FONDART)',
+      group: '8. Cultura, Artes y Patrimonio (SERPAT / MINCAP / Barómetro)',
+      unit: 'M$ (Millones CLP)',
+      format: (v) => `$${Number(v).toLocaleString('es-CL')} M$`,
+      getValue: (ine) => {
+        const row = AppState.wp09?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.fondos_cultura_adjudicados_mclp || 0;
+      }
+    },
+    {
+      id: 'participacion_cultural_pct_c2',
+      name: 'Participación en Organizaciones Culturales (Barómetro)',
+      group: '8. Cultura, Artes y Patrimonio (SERPAT / MINCAP / Barómetro)',
+      unit: '%',
+      format: (v) => `${Number(v).toFixed(1)}%`,
+      getValue: (ine) => {
+        const row = AppState.wp09?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.participacion_cultural_pct_c2 || 0;
+      }
+    },
+
+    // --- 9. CTCi e Innovación (ANID / MinCiencia / CORFO / Barómetro) ---
+    {
+      id: 'total_proyectos_ctci',
+      name: 'Total Proyectos de Investigación y Desarrollo (CTCi)',
+      group: '9. CTCi e Innovación (ANID / MinCiencia / CORFO / Barómetro)',
+      unit: 'proyectos',
+      format: (v) => Number(v),
+      getValue: (ine) => {
+        const row = AppState.wp10?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.total_proyectos_ctci || 0;
+      }
+    },
+    {
+      id: 'proyectos_anid_locales_count',
+      name: 'Proyectos ANID Capacidad Científica Local Endógena',
+      group: '9. CTCi e Innovación (ANID / MinCiencia / CORFO / Barómetro)',
+      unit: 'proyectos',
+      format: (v) => Number(v),
+      getValue: (ine) => {
+        const row = AppState.wp10?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.proyectos_anid_locales_count || 0;
+      }
+    },
+    {
+      id: 'monto_anid_acumulado_mclp',
+      name: 'Monto ANID Adjudicado Acumulado',
+      group: '9. CTCi e Innovación (ANID / MinCiencia / CORFO / Barómetro)',
+      unit: 'M$ (Millones CLP)',
+      format: (v) => `$${Number(v).toLocaleString('es-CL')} M$`,
+      getValue: (ine) => {
+        const row = AppState.wp10?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.monto_anid_acumulado_mclp || 0;
+      }
+    },
+    {
+      id: 'percepcion_ctci_prioritaria_pct_i1i',
+      name: 'Prioridad Ciudadana de Actividades CTCi (Barómetro)',
+      group: '9. CTCi e Innovación (ANID / MinCiencia / CORFO / Barómetro)',
+      unit: '%',
+      format: (v) => `${Number(v).toFixed(1)}%`,
+      getValue: (ine) => {
+        const row = AppState.wp10?.por_comuna?.find(c => String(c.comuna_ine) === String(ine));
+        return row?.datos?.percepcion_ctci_prioritaria_pct_i1i || 0;
+      }
     }
   ];
 
@@ -731,7 +826,7 @@
 
   async function loadAllDatasets() {
     console.log('[Plataforma Aysén] Cargando los datasets del repositorio y presets CECAN...');
-    const [comunas, series, wp01, wp02, wp03, holdings, wp04, wp05, wp06, cecan] = await Promise.all([
+    const [comunas, series, wp01, wp02, wp03, holdings, wp04, wp05, wp06, cecan, wp09, wp10] = await Promise.all([
       fetchJsonSafely('data/comunas_aysen.json'),
       fetchJsonSafely('data/series_prospectivas.json'),
       fetchJsonSafely('data/systemic/01_gob_poder_finanzas.json'),
@@ -741,7 +836,9 @@
       fetchJsonSafely('data/systemic/04_inversion_seia_economia.json'),
       fetchJsonSafely('data/systemic/05_social_salud_educacion_riesgos.json'),
       fetchJsonSafely('data/systemic/06_turismo_sernatur_conaf.json'),
-      fetchJsonSafely('data/cecan_16_presets_aysen.json')
+      fetchJsonSafely('data/cecan_16_presets_aysen.json'),
+      fetchJsonSafely('data/systemic/09_cultura_patrimonio.json'),
+      fetchJsonSafely('data/systemic/10_ctci_innovacion.json')
     ]);
 
     AppState.comunasData = comunas?.comunas || [];
@@ -753,6 +850,9 @@
     AppState.wp04 = wp04;
     AppState.wp05 = wp05;
     AppState.wp06 = wp06;
+    AppState.wp09 = wp09 || window.AYSEN_HUBS_DATA?.extension_modules?.cultura_patrimonio || null;
+    AppState.wp10 = wp10 || window.AYSEN_HUBS_DATA?.extension_modules?.ctci_innovacion || null;
+    AppState.edgesInterHub = window.AYSEN_HUBS_DATA?.edges_inter_hub || [];
     AppState.cecanPresets = cecan?.properties || [];
 
     // Inicializar motor semántico NL2Chart con el léxico territorial
@@ -2467,9 +2567,13 @@
 
     const btnModeComunas = document.getElementById('btnJoinModeComunas');
     const btnModeHoldings = document.getElementById('btnJoinModeHoldings');
+    const btnModeInterHub = document.getElementById('btnJoinModeInterHub');
     if (btnModeComunas && btnModeHoldings) {
       btnModeComunas.addEventListener('click', () => setRelationalMode('comunas'));
       btnModeHoldings.addEventListener('click', () => setRelationalMode('holdings'));
+    }
+    if (btnModeInterHub) {
+      btnModeInterHub.addEventListener('click', () => setRelationalMode('interhub'));
     }
   }
 
@@ -2477,10 +2581,10 @@
     AppState.relationalMode = mode;
     const btnC = document.getElementById('btnJoinModeComunas');
     const btnH = document.getElementById('btnJoinModeHoldings');
-    if (btnC && btnH) {
-      btnC.classList.toggle('active', mode === 'comunas');
-      btnH.classList.toggle('active', mode === 'holdings');
-    }
+    const btnI = document.getElementById('btnJoinModeInterHub');
+    if (btnC) btnC.classList.toggle('active', mode === 'comunas');
+    if (btnH) btnH.classList.toggle('active', mode === 'holdings');
+    if (btnI) btnI.classList.toggle('active', mode === 'interhub');
     renderRelationalJoinTable();
   }
 
@@ -2628,6 +2732,59 @@
         `;
       });
       tbody.innerHTML = tbodyHtml || '<tr><td colspan="8" style="text-align:center; padding:18px;">No se encontraron registros de filiales.</td></tr>';
+      return;
+    }
+
+    // MODO C: RELACIONES INTER-HUB & ESPEJO CIUDADANO
+    if (AppState.relationalMode === 'interhub') {
+      thead.innerHTML = `
+        <tr>
+          <th>Hub Origen</th>
+          <th>Hub Destino</th>
+          <th>Tipo de Llave</th>
+          <th>Identificador Llave</th>
+          <th>Descripción del Cruce Inter-Hub</th>
+          <th style="text-align:right;">Intensidad</th>
+          <th style="text-align:right;">Divergencia Barómetro</th>
+          <th style="text-align:center;">Acción Laboratorio</th>
+        </tr>
+      `;
+
+      let edges = (window.AYSEN_HUBS_DATA?.edges_inter_hub || AppState.edgesInterHub || []);
+      if (AppState.joinSearchQuery) {
+        const q = AppState.joinSearchQuery;
+        edges = edges.filter(e => {
+          return (e.hub_origen || '').toLowerCase().includes(q) ||
+                 (e.hub_destino || '').toLowerCase().includes(q) ||
+                 (e.tipo || '').toLowerCase().includes(q) ||
+                 (e.descripcion || '').toLowerCase().includes(q) ||
+                 (e.titular_nombre || '').toLowerCase().includes(q) ||
+                 (e.rut_titular || '').toLowerCase().includes(q) ||
+                 (e.preset_recomendado || '').toLowerCase().includes(q);
+        });
+      }
+
+      let tbodyHtml = '';
+      edges.forEach(e => {
+        const keyLabel = e.rut_titular ? `${e.titular_nombre} (${e.rut_titular})` : (e.distancia_km ? `${e.distancia_km} km (${e.nodo_a} ↔ ${e.nodo_b})` : `Comunal (${e.llave})`);
+        const divBadge = `<span class="rut-badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">${Math.round((e.indice_divergencia_percepcion || 0) * 100)}% brecha</span>`;
+        const link = `laboratorio.html?hub=${e.hub_origen}&preset=${e.preset_recomendado}`;
+        tbodyHtml += `
+          <tr>
+            <td><strong>${(e.hub_origen || '').toUpperCase()}</strong></td>
+            <td><strong>${(e.hub_destino || '').toUpperCase()}</strong></td>
+            <td><span class="rut-badge">${e.tipo}</span></td>
+            <td><code>${keyLabel}</code></td>
+            <td>${e.descripcion}</td>
+            <td class="tabular-nums" style="text-align:right;">${Math.round((e.peso_intensidad || 0) * 100)}%</td>
+            <td class="tabular-nums" style="text-align:right;">${divBadge}</td>
+            <td style="text-align:center;">
+              <a href="${link}" class="btn-explore-cruce" style="display:inline-block; padding:3px 8px; font-size:0.75rem; font-weight:600; text-decoration:none; background:#00357f; color:#ffffff; border-radius:3px;">Explorar en Laboratorio ↗</a>
+            </td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = tbodyHtml || '<tr><td colspan="8" style="text-align:center; padding:18px;">No se encontraron relaciones inter-hub.</td></tr>';
       return;
     }
 

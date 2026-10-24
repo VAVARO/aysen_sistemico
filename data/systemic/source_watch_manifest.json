@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20T19:50:46+00:00",
-  "total_sources": 31,
+  "generated_at": "2026-10-24T00:00:00+00:00",
+  "total_sources": 33,
   "sources": {
     "1": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -187,6 +187,18 @@
       "snapshot": "",
       "checked_at": "2026-10-20T19:50:48.275882+00:00",
       "sourceUrl": "https://especies-exoticas.mma.gob.cl/"
+    },
+    "fuente_cultura_patrimonio": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "",
+      "checked_at": "2026-10-24T00:00:00.000000+00:00",
+      "sourceUrl": "https://ide.patrimoniocultural.gob.cl/"
+    },
+    "fuente_ctci_innovacion": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "",
+      "checked_at": "2026-10-24T00:00:00.000000+00:00",
+      "sourceUrl": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv"
     }
   }
 }

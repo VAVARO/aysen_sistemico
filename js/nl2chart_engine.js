@@ -540,6 +540,113 @@ Responde UNICAMENTE en formato JSON plano:
         explanation,
         matchedTokens
       };
+    },
+
+    // ------------------------------------------------------------------------
+    // 5. CONTROL ESTADISTICO Y SEMAFORO DE ROBUSTEZ MUESTRAL (BAROMETRO)
+    // ------------------------------------------------------------------------
+    calculateSampleRobustness: function (n, N = 465, popUniverse = 76000) {
+      const activeN = Math.max(0, parseInt(n, 10) || 0);
+      const totalN = Math.max(activeN, parseInt(N, 10) || 465);
+
+      if (activeN <= 0) {
+        return {
+          n: 0,
+          N: totalN,
+          me_95: 0.0,
+          semaforo: 'rojo',
+          label: 'Sin muestra',
+          isRobust: false,
+          isReferential: false,
+          isCritical: true,
+          badgeText: 'n = 0 · Sin datos'
+        };
+      }
+
+      // Calculo ME al 95%: 1.96 * 0.5 / sqrt(n) * 100
+      let me = (1.96 * 0.5 / Math.sqrt(activeN)) * 100.0;
+      if (popUniverse && popUniverse > activeN) {
+        me *= Math.sqrt((popUniverse - activeN) / (popUniverse - 1));
+      }
+      const roundedMe = Number(me.toFixed(1));
+
+      let semaforo = 'rojo';
+      let label = 'Submuestra crítica';
+      let isRobust = false;
+      let isReferential = false;
+      let isCritical = true;
+
+      if (activeN >= 50) {
+        semaforo = 'verde';
+        label = 'Muestra robusta';
+        isRobust = true;
+        isCritical = false;
+      } else if (activeN >= 30) {
+        semaforo = 'amarillo';
+        label = 'Muestra referencial';
+        isReferential = true;
+        isCritical = false;
+      }
+
+      const badgeText = `n = ${activeN} / N = ${totalN} | ME ±${roundedMe}% (${label})`;
+
+      return {
+        n: activeN,
+        N: totalN,
+        me_95: roundedMe,
+        semaforo,
+        label,
+        isRobust,
+        isReferential,
+        isCritical,
+        badgeText
+      };
+    },
+
+    formatSampleHeader: function (n, N, me_95) {
+      const meStr = (typeof me_95 === 'number') ? me_95.toFixed(1) : String(me_95);
+      return `n = ${n} / N = ${N} | ME ±${meStr}%`;
+    },
+
+    filterMicrocube: function (questionObj, filterDimensions = {}) {
+      if (!questionObj || !questionObj.micro_cubos) {
+        return null;
+      }
+
+      const cubes = questionObj.micro_cubos;
+      // Prioridad de filtrado dimensional
+      if (filterDimensions.nivel_educativo && filterDimensions.nivel_educativo !== 'todos') {
+        const seg = cubes.por_nivel_educativo?.[filterDimensions.nivel_educativo];
+        if (seg) return { ...seg, dimension: 'nivel_educativo', categoria: filterDimensions.nivel_educativo };
+      }
+      if (filterDimensions.nse && filterDimensions.nse !== 'todos') {
+        const seg = cubes.por_nse?.[filterDimensions.nse];
+        if (seg) return { ...seg, dimension: 'nse', categoria: filterDimensions.nse };
+      }
+      if (filterDimensions.macrozona && filterDimensions.macrozona !== 'todas') {
+        const seg = cubes.por_macrozona?.[filterDimensions.macrozona];
+        if (seg) return { ...seg, dimension: 'macrozona', categoria: filterDimensions.macrozona };
+      }
+      if (filterDimensions.tramo_edad && filterDimensions.tramo_edad !== 'todos') {
+        const seg = cubes.por_tramo_edad?.[filterDimensions.tramo_edad];
+        if (seg) return { ...seg, dimension: 'tramo_edad', categoria: filterDimensions.tramo_edad };
+      }
+      if (filterDimensions.sexo && filterDimensions.sexo !== 'todos') {
+        const seg = cubes.por_sexo?.[filterDimensions.sexo];
+        if (seg) return { ...seg, dimension: 'sexo', categoria: filterDimensions.sexo };
+      }
+
+      // Por defecto retorna global
+      return {
+        n_muestral: questionObj.n_muestral_valido,
+        N_estrato: questionObj.N_total,
+        me_95: questionObj.me_95_total,
+        semaforo: questionObj.semaforo_global,
+        tasa_positiva_pct: questionObj.tasa_positiva_pct,
+        promedio_valor: questionObj.promedio_valor,
+        dimension: 'global',
+        categoria: 'total_regional'
+      };
     }
   };
 

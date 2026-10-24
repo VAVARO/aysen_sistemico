@@ -548,5 +548,31 @@
       }
     }
   ],
-  "notas_esquema": "collectionDateISO y updateFrequencyDays son campos derivados y procesables, agregados para permitir el calculo automatico de vencimiento de fuentes. collectionDate se conserva como texto editorial mostrado en el drawer. updateFrequencyDays usa la cota mas corta en frecuencias compuestas."
+  "notas_esquema": "collectionDateISO y updateFrequencyDays son campos derivados y procesables, agregados para permitir el calculo automatico de vencimiento de fuentes. collectionDate se conserva como texto editorial mostrado en el drawer. updateFrequencyDays usa la cota mas corta en frecuencias compuestas.",
+  "fuente_espejo_ciudadano": {
+    "sourceEntity": "Universidad de Aysén / Proyecto Barómetro Regional UAYSÉN",
+    "sourceUrl": "https://github.com/VAVARO/barometro_regional",
+    "collectionDate": "Marzo 2025",
+    "collectionMethod": "Encuesta probabilística y estratificada en las 10 comunas de la Región de Aysén",
+    "sampleSize": 465,
+    "marginOfError": "+-4.54% al 95% de confianza (p=0.5)",
+    "updateFrequency": "Anual / Bianual",
+    "workPackage": "WP_09 (Capa Transversal Espejo Ciudadano)"
+  },
+  "fuente_cultura_patrimonio": {
+    "sourceEntity": "Servicio Nacional del Patrimonio Cultural (SERPAT) / Ministerio de las Culturas, las Artes y el Patrimonio (MINCAP)",
+    "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+    "collectionDate": "Catastro IDE Patrimonio y Fondos Cultura · Corte Octubre 2026",
+    "collectionMethod": "Registros oficiales IDE Patrimonio (CMN, RMC, SNBP), MINCAP Fondos Cultura, DIPRES FNDR 8% y SINIM",
+    "updateFrequency": "Anual / Continuo",
+    "workPackage": "WP_09 (Módulo Especializado Cultura, Artes y Patrimonio)"
+  },
+  "fuente_ctci_innovacion": {
+    "sourceEntity": "Agencia Nacional de Investigación y Desarrollo (ANID) / Ministerio de Ciencia (OBSERVA) / CORFO",
+    "sourceUrl": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv",
+    "collectionDate": "BDH ANID y DataInnovación CORFO · Corte Octubre 2026",
+    "collectionMethod": "Base de Datos Histórica ANID, Catastro OBSERVA MinCiencia, Proyectos CORFO DataInnovación e indicadores Barómetro UAYSÉN",
+    "updateFrequency": "Anual / Continuo",
+    "workPackage": "WP_10 (Módulo Especializado Ciencia, Tecnología, Conocimiento e Innovación)"
+  }
 }

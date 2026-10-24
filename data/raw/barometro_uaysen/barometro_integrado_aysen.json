@@ -1,0 +1,6227 @@
+{
+  "version": "1.0.0",
+  "fuente": "Barómetro Regional UAYSÉN 2024-2025",
+  "universo_N": 465,
+  "fecha_generacion": "2026-10-24",
+  "hubs": {
+    "gobernanza": {
+      "hub_id": "gobernanza",
+      "total_preguntas": 4,
+      "preguntas": [
+        {
+          "codigo": "F4_C",
+          "enunciado": "Aporte del Municipio al desarrollo de la región",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 460,
+          "me_95_total": 4.56,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 54.6,
+          "promedio_valor": 2.33,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 196,
+                "me_95": 6.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.5,
+                "promedio_valor": 2.51
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 55.9,
+                "promedio_valor": 2.27
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.8,
+                "promedio_valor": 2.16
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.6,
+                "promedio_valor": 2.55
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.4,
+                "promedio_valor": 2.29
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.6,
+                "promedio_valor": 2.12
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 215,
+                "me_95": 6.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.2,
+                "promedio_valor": 2.42
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 245,
+                "me_95": 6.25,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.6,
+                "promedio_valor": 2.24
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 64.9,
+                "promedio_valor": 2.2
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.8,
+                "promedio_valor": 2.16
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 49.0,
+                "promedio_valor": 2.42
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 42.4,
+                "promedio_valor": 2.58
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 203,
+                "me_95": 6.87,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.2,
+                "promedio_valor": 2.43
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.0,
+                "promedio_valor": 2.41
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 69.5,
+                "promedio_valor": 2.02
+              }
+            }
+          }
+        },
+        {
+          "codigo": "F4_B",
+          "enunciado": "Aporte del Gobierno Regional (GORE) al desarrollo",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 455,
+          "me_95_total": 4.58,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 51.6,
+          "promedio_valor": 2.38,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 195,
+                "me_95": 7.01,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.6,
+                "promedio_valor": 2.56
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 90,
+                "me_95": 10.32,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.6,
+                "promedio_valor": 2.46
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 170,
+                "me_95": 7.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.8,
+                "promedio_valor": 2.13
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 34.9,
+                "promedio_valor": 2.73
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 182,
+                "me_95": 7.26,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.2,
+                "promedio_valor": 2.29
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.4,
+                "promedio_valor": 2.11
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 212,
+                "me_95": 6.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.8,
+                "promedio_valor": 2.35
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 243,
+                "me_95": 6.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.6,
+                "promedio_valor": 2.4
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.5,
+                "promedio_valor": 2.27
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.7,
+                "promedio_valor": 2.16
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.3,
+                "promedio_valor": 2.47
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 40.0,
+                "promedio_valor": 2.69
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 200,
+                "me_95": 6.92,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.0,
+                "promedio_valor": 2.31
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.1,
+                "promedio_valor": 2.54
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 103,
+                "me_95": 9.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.2,
+                "promedio_valor": 2.27
+              }
+            }
+          }
+        },
+        {
+          "codigo": "F4_A",
+          "enunciado": "Aporte del Gobierno Central al desarrollo",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 444,
+          "me_95_total": 4.64,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 31.8,
+          "promedio_valor": 2.78,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 188,
+                "me_95": 7.14,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 23.9,
+                "promedio_valor": 2.95
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 91,
+                "me_95": 10.27,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 31.9,
+                "promedio_valor": 2.74
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 165,
+                "me_95": 7.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 40.6,
+                "promedio_valor": 2.6
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 143,
+                "me_95": 8.19,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 18.9,
+                "promedio_valor": 3.05
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 175,
+                "me_95": 7.4,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 32.0,
+                "promedio_valor": 2.75
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 126,
+                "me_95": 8.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.0,
+                "promedio_valor": 2.5
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 209,
+                "me_95": 6.77,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 32.1,
+                "promedio_valor": 2.8
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 235,
+                "me_95": 6.38,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 31.5,
+                "promedio_valor": 2.75
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 70,
+                "me_95": 11.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 31.4,
+                "promedio_valor": 2.86
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 38.4,
+                "promedio_valor": 2.66
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 28.8,
+                "promedio_valor": 2.83
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 82,
+                "me_95": 10.82,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 25.6,
+                "promedio_valor": 2.83
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 202,
+                "me_95": 6.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 35.1,
+                "promedio_valor": 2.71
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 144,
+                "me_95": 8.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 25.0,
+                "promedio_valor": 2.91
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 98,
+                "me_95": 9.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 34.7,
+                "promedio_valor": 2.71
+              }
+            }
+          }
+        },
+        {
+          "codigo": "G1_F",
+          "enunciado": "Decisión sobre construcción de grandes obras públicas",
+          "tipo": "autoridad",
+          "N_total": 465,
+          "n_muestral_valido": 462,
+          "me_95_total": 4.55,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 61.5,
+          "promedio_valor": 1.73,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 198,
+                "me_95": 6.96,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 65.7,
+                "promedio_valor": 1.8
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.3,
+                "promedio_valor": 1.68
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 170,
+                "me_95": 7.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.6,
+                "promedio_valor": 1.68
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.1,
+                "promedio_valor": 1.78
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 186,
+                "me_95": 7.18,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 64.0,
+                "promedio_valor": 1.76
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 59.4,
+                "promedio_valor": 1.63
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 215,
+                "me_95": 6.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.0,
+                "promedio_valor": 1.73
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 247,
+                "me_95": 6.23,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 62.8,
+                "promedio_valor": 1.73
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.1,
+                "promedio_valor": 1.73
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 59.1,
+                "promedio_valor": 1.72
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.7,
+                "promedio_valor": 1.7
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.8,
+                "promedio_valor": 1.81
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 205,
+                "me_95": 6.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 59.5,
+                "promedio_valor": 1.69
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.0,
+                "promedio_valor": 1.78
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 103,
+                "me_95": 9.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.1,
+                "promedio_valor": 1.74
+              }
+            }
+          }
+        }
+      ]
+    },
+    "energia": {
+      "hub_id": "energia",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "B3_I",
+          "enunciado": "Evaluación de acceso a conectividad tecnológica digital",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 460,
+          "me_95_total": 4.56,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 70.0,
+          "promedio_valor": 4.95,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 197,
+                "me_95": 6.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.1,
+                "promedio_valor": 4.94
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 64.5,
+                "promedio_valor": 4.86
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 170,
+                "me_95": 7.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.9,
+                "promedio_valor": 4.99
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.6,
+                "promedio_valor": 4.76
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 73.0,
+                "promedio_valor": 4.99
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 75.2,
+                "promedio_valor": 5.09
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 214,
+                "me_95": 6.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 66.4,
+                "promedio_valor": 4.9
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 246,
+                "me_95": 6.24,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 73.2,
+                "promedio_valor": 4.98
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.3,
+                "promedio_valor": 5.03
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 66.9,
+                "promedio_valor": 4.91
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.5,
+                "promedio_valor": 4.91
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 81,
+                "me_95": 10.88,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.8,
+                "promedio_valor": 5.01
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.5,
+                "promedio_valor": 5.01
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.4,
+                "promedio_valor": 4.93
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 64.4,
+                "promedio_valor": 4.83
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I4_A",
+          "enunciado": "Urgencia de resolver contaminación del aire por humo de leña",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 460,
+          "me_95_total": 4.56,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 92.6,
+          "promedio_valor": 3.72,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 195,
+                "me_95": 7.01,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.8,
+                "promedio_valor": 3.68
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.4,
+                "promedio_valor": 3.65
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 96.5,
+                "promedio_valor": 3.8
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.0,
+                "promedio_valor": 3.6
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.6,
+                "promedio_valor": 3.75
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 96.1,
+                "promedio_valor": 3.81
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 217,
+                "me_95": 6.64,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.2,
+                "promedio_valor": 3.72
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 243,
+                "me_95": 6.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.8,
+                "promedio_valor": 3.71
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.2,
+                "promedio_valor": 3.72
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.4,
+                "promedio_valor": 3.76
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.3,
+                "promedio_valor": 3.77
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 83,
+                "me_95": 10.75,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 85.5,
+                "promedio_valor": 3.55
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 206,
+                "me_95": 6.82,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.1,
+                "promedio_valor": 3.82
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.7,
+                "promedio_valor": 3.52
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 96.2,
+                "promedio_valor": 3.81
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I1_F",
+          "enunciado": "Importancia económica: producción de energías renovables",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 459,
+          "me_95_total": 4.56,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 88.0,
+          "promedio_valor": 3.56,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 196,
+                "me_95": 6.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.3,
+                "promedio_valor": 3.58
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.0,
+                "promedio_valor": 3.49
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.3,
+                "promedio_valor": 3.56
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 147,
+                "me_95": 8.08,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.1,
+                "promedio_valor": 3.5
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.1,
+                "promedio_valor": 3.6
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.0,
+                "promedio_valor": 3.56
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 213,
+                "me_95": 6.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.7,
+                "promedio_valor": 3.59
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 246,
+                "me_95": 6.24,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.6,
+                "promedio_valor": 3.53
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.3,
+                "promedio_valor": 3.45
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.1,
+                "promedio_valor": 3.59
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.0,
+                "promedio_valor": 3.61
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 85.9,
+                "promedio_valor": 3.48
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 202,
+                "me_95": 6.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.6,
+                "promedio_valor": 3.6
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.2,
+                "promedio_valor": 3.37
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.3,
+                "promedio_valor": 3.73
+              }
+            }
+          }
+        }
+      ]
+    },
+    "salmonicultura": {
+      "hub_id": "salmonicultura",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "I1_D",
+          "enunciado": "Importancia asignada al cultivo de salmones en Aysén",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 452,
+          "me_95_total": 4.6,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 74.8,
+          "promedio_valor": 3.13,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 190,
+                "me_95": 7.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.7,
+                "promedio_valor": 3.32
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.2,
+                "promedio_valor": 3.03
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 168,
+                "me_95": 7.55,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 67.3,
+                "promedio_valor": 2.98
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 145,
+                "me_95": 8.13,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.8,
+                "promedio_valor": 3.26
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 179,
+                "me_95": 7.32,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 74.3,
+                "promedio_valor": 3.16
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 66.4,
+                "promedio_valor": 2.95
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 209,
+                "me_95": 6.77,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 78.5,
+                "promedio_valor": 3.18
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 243,
+                "me_95": 6.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.6,
+                "promedio_valor": 3.09
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.9,
+                "promedio_valor": 3.4
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 73.3,
+                "promedio_valor": 3.05
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 68.5,
+                "promedio_valor": 3.05
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 80,
+                "me_95": 10.95,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 80.0,
+                "promedio_valor": 3.2
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 197,
+                "me_95": 6.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.6,
+                "promedio_valor": 3.06
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 77.0,
+                "promedio_valor": 3.22
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 103,
+                "me_95": 9.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 75.7,
+                "promedio_valor": 3.16
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I2_E",
+          "enunciado": "Acuerdo: Si la salmonicultura disminuyera, habría menos conflictos ambientales",
+          "tipo": "acuerdo_4",
+          "N_total": 465,
+          "n_muestral_valido": 454,
+          "me_95_total": 4.59,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 61.9,
+          "promedio_valor": 2.76,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 196,
+                "me_95": 6.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 68.4,
+                "promedio_valor": 2.85
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 92,
+                "me_95": 10.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.0,
+                "promedio_valor": 2.77
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 166,
+                "me_95": 7.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.6,
+                "promedio_valor": 2.64
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.8,
+                "promedio_valor": 2.96
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 179,
+                "me_95": 7.32,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.5,
+                "promedio_valor": 2.65
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 126,
+                "me_95": 8.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 56.3,
+                "promedio_valor": 2.67
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 211,
+                "me_95": 6.74,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 62.6,
+                "promedio_valor": 2.81
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 243,
+                "me_95": 6.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.3,
+                "promedio_valor": 2.71
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.1,
+                "promedio_valor": 2.56
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.3,
+                "promedio_valor": 2.72
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 65.3,
+                "promedio_valor": 2.83
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 80,
+                "me_95": 10.95,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.2,
+                "promedio_valor": 2.85
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 202,
+                "me_95": 6.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 59.9,
+                "promedio_valor": 2.7
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 78.4,
+                "promedio_valor": 3.07
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 42.3,
+                "promedio_valor": 2.41
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I2_A",
+          "enunciado": "Acuerdo: Si la salmonicultura disminuyera, habría menos empleo para la región",
+          "tipo": "acuerdo_4",
+          "N_total": 465,
+          "n_muestral_valido": 456,
+          "me_95_total": 4.58,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 79.2,
+          "promedio_valor": 3.1,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 194,
+                "me_95": 7.03,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.5,
+                "promedio_valor": 3.14
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 78.7,
+                "promedio_valor": 3.16
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 168,
+                "me_95": 7.55,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 74.4,
+                "promedio_valor": 3.02
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.7,
+                "promedio_valor": 3.24
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 182,
+                "me_95": 7.26,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 74.7,
+                "promedio_valor": 3.01
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 75.8,
+                "promedio_valor": 3.09
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 214,
+                "me_95": 6.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.7,
+                "promedio_valor": 3.16
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 242,
+                "me_95": 6.29,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.0,
+                "promedio_valor": 3.05
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.7,
+                "promedio_valor": 2.93
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.1,
+                "promedio_valor": 3.2
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.8,
+                "promedio_valor": 3.01
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 83,
+                "me_95": 10.75,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.2,
+                "promedio_valor": 3.25
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 203,
+                "me_95": 6.87,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 80.8,
+                "promedio_valor": 3.09
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.1,
+                "promedio_valor": 3.3
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 102,
+                "me_95": 9.7,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 68.6,
+                "promedio_valor": 2.83
+              }
+            }
+          }
+        }
+      ]
+    },
+    "inversion": {
+      "hub_id": "inversion",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "B1",
+          "enunciado": "Percepción del momento actual de la región de Aysén",
+          "tipo": "momento_regional",
+          "N_total": 465,
+          "n_muestral_valido": 462,
+          "me_95_total": 4.55,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 30.7,
+          "promedio_valor": 1.8,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 197,
+                "me_95": 6.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 28.9,
+                "promedio_valor": 1.83
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 23.4,
+                "promedio_valor": 1.9
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 36.8,
+                "promedio_valor": 1.71
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 29.7,
+                "promedio_valor": 1.84
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 28.6,
+                "promedio_valor": 1.83
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 34.9,
+                "promedio_valor": 1.71
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 216,
+                "me_95": 6.66,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 29.6,
+                "promedio_valor": 1.82
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 246,
+                "me_95": 6.24,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 31.7,
+                "promedio_valor": 1.78
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 34.2,
+                "promedio_valor": 1.68
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 32.5,
+                "promedio_valor": 1.77
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 26.7,
+                "promedio_valor": 1.87
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 31.8,
+                "promedio_valor": 1.81
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 30.4,
+                "promedio_valor": 1.8
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 32.5,
+                "promedio_valor": 1.76
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 28.8,
+                "promedio_valor": 1.85
+              }
+            }
+          }
+        },
+        {
+          "codigo": "B4_A",
+          "enunciado": "Evaluación de oportunidades de trabajo en Aysén",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 463,
+          "me_95_total": 4.54,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 49.9,
+          "promedio_valor": 4.38,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 200,
+                "me_95": 6.92,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.0,
+                "promedio_valor": 4.22
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.7,
+                "promedio_valor": 4.22
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.4,
+                "promedio_valor": 4.65
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 42.7,
+                "promedio_valor": 4.03
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 186,
+                "me_95": 7.18,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.2,
+                "promedio_valor": 4.36
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.8,
+                "promedio_valor": 4.82
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 215,
+                "me_95": 6.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 42.3,
+                "promedio_valor": 4.13
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 248,
+                "me_95": 6.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 56.5,
+                "promedio_valor": 4.6
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.9,
+                "promedio_valor": 4.32
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.3,
+                "promedio_valor": 4.43
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 55.3,
+                "promedio_valor": 4.52
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 86,
+                "me_95": 10.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 43.0,
+                "promedio_valor": 4.09
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 205,
+                "me_95": 6.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 47.8,
+                "promedio_valor": 4.33
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.3,
+                "promedio_valor": 4.41
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.5,
+                "promedio_valor": 4.43
+              }
+            }
+          }
+        },
+        {
+          "codigo": "B4_C",
+          "enunciado": "Evaluación de la posibilidad de tener un buen sueldo",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 453,
+          "me_95_total": 4.59,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 51.7,
+          "promedio_valor": 4.32,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 193,
+                "me_95": 7.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 43.5,
+                "promedio_valor": 3.99
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 92,
+                "me_95": 10.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.6,
+                "promedio_valor": 4.13
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 168,
+                "me_95": 7.55,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 64.9,
+                "promedio_valor": 4.81
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 37.0,
+                "promedio_valor": 3.71
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 182,
+                "me_95": 7.26,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 47.8,
+                "promedio_valor": 4.29
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 125,
+                "me_95": 8.76,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 74.4,
+                "promedio_valor": 5.1
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 212,
+                "me_95": 6.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.6,
+                "promedio_valor": 4.17
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 241,
+                "me_95": 6.3,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.4,
+                "promedio_valor": 4.46
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.7,
+                "promedio_valor": 4.34
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 55.6,
+                "promedio_valor": 4.48
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 147,
+                "me_95": 8.08,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.4,
+                "promedio_valor": 4.35
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 81,
+                "me_95": 10.88,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 42.0,
+                "promedio_valor": 3.98
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 199,
+                "me_95": 6.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.3,
+                "promedio_valor": 4.33
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.7,
+                "promedio_valor": 4.19
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.8,
+                "promedio_valor": 4.51
+              }
+            }
+          }
+        }
+      ]
+    },
+    "social": {
+      "hub_id": "social",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "B3_F",
+          "enunciado": "Evaluación de la seguridad ciudadana en Aysén",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 462,
+          "me_95_total": 4.55,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 53.0,
+          "promedio_valor": 4.38,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 200,
+                "me_95": 6.92,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.0,
+                "promedio_valor": 4.19
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.2,
+                "promedio_valor": 4.17
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 66.3,
+                "promedio_valor": 4.72
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 38.0,
+                "promedio_valor": 3.91
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 184,
+                "me_95": 7.22,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.8,
+                "promedio_valor": 4.46
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 69.5,
+                "promedio_valor": 4.82
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 215,
+                "me_95": 6.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 49.3,
+                "promedio_valor": 4.27
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 247,
+                "me_95": 6.23,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 56.3,
+                "promedio_valor": 4.48
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 33.8,
+                "promedio_valor": 4.04
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 56.2,
+                "promedio_valor": 4.42
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.7,
+                "promedio_valor": 4.43
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.1,
+                "promedio_valor": 4.52
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.0,
+                "promedio_valor": 4.28
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.6,
+                "promedio_valor": 4.42
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.7,
+                "promedio_valor": 4.53
+              }
+            }
+          }
+        },
+        {
+          "codigo": "G1_H",
+          "enunciado": "Toma de decisiones sobre seguridad y orden público",
+          "tipo": "autoridad",
+          "N_total": 465,
+          "n_muestral_valido": 462,
+          "me_95_total": 4.55,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 82.5,
+          "promedio_valor": 2.2,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 199,
+                "me_95": 6.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 81.9,
+                "promedio_valor": 2.2
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.2,
+                "promedio_valor": 2.24
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 81.1,
+                "promedio_valor": 2.18
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.9,
+                "promedio_valor": 2.24
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.2,
+                "promedio_valor": 2.23
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 79.7,
+                "promedio_valor": 2.12
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 216,
+                "me_95": 6.66,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.9,
+                "promedio_valor": 2.23
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 246,
+                "me_95": 6.24,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.1,
+                "promedio_valor": 2.18
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 81.1,
+                "promedio_valor": 2.3
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 81.0,
+                "promedio_valor": 2.21
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.0,
+                "promedio_valor": 2.16
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.1,
+                "promedio_valor": 2.19
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 78.4,
+                "promedio_valor": 2.0
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.5,
+                "promedio_valor": 2.45
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 80.0,
+                "promedio_valor": 2.23
+              }
+            }
+          }
+        },
+        {
+          "codigo": "B3_C",
+          "enunciado": "Evaluación de acceso a la vivienda en la región",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 456,
+          "me_95_total": 4.58,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 44.1,
+          "promedio_valor": 4.11,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 197,
+                "me_95": 6.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 41.6,
+                "promedio_valor": 4.1
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.1,
+                "promedio_valor": 4.01
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 166,
+                "me_95": 7.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 47.0,
+                "promedio_valor": 4.17
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 43.2,
+                "promedio_valor": 4.06
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 181,
+                "me_95": 7.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 37.6,
+                "promedio_valor": 3.96
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.3,
+                "promedio_valor": 4.37
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 212,
+                "me_95": 6.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 39.6,
+                "promedio_valor": 3.97
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 244,
+                "me_95": 6.26,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.0,
+                "promedio_valor": 4.23
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.4,
+                "promedio_valor": 4.05
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 34.7,
+                "promedio_valor": 3.85
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.6,
+                "promedio_valor": 4.19
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 83,
+                "me_95": 10.75,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.8,
+                "promedio_valor": 4.48
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 41.2,
+                "promedio_valor": 4.04
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.7,
+                "promedio_valor": 4.06
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 101,
+                "me_95": 9.74,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 47.5,
+                "promedio_valor": 4.32
+              }
+            }
+          }
+        }
+      ]
+    },
+    "turismo": {
+      "hub_id": "turismo",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "I1_C",
+          "enunciado": "Importancia asignada al turismo para el desarrollo de Aysén",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 463,
+          "me_95_total": 4.54,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 95.7,
+          "promedio_valor": 3.8,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 199,
+                "me_95": 6.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.5,
+                "promedio_valor": 3.77
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.7,
+                "promedio_valor": 3.77
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 170,
+                "me_95": 7.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 96.5,
+                "promedio_valor": 3.85
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.0,
+                "promedio_valor": 3.74
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 98.4,
+                "promedio_valor": 3.86
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.8,
+                "promedio_valor": 3.78
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 215,
+                "me_95": 6.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.9,
+                "promedio_valor": 3.79
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 248,
+                "me_95": 6.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 96.4,
+                "promedio_valor": 3.81
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.9,
+                "promedio_valor": 3.81
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 98.1,
+                "promedio_valor": 3.87
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.4,
+                "promedio_valor": 3.78
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 84,
+                "me_95": 10.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.7,
+                "promedio_valor": 3.69
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 205,
+                "me_95": 6.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.1,
+                "promedio_valor": 3.8
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 95.4,
+                "promedio_valor": 3.75
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 97.1,
+                "promedio_valor": 3.87
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I3_A",
+          "enunciado": "Acuerdo: El turismo podría ser la principal actividad económica regional futura",
+          "tipo": "acuerdo_4",
+          "N_total": 465,
+          "n_muestral_valido": 462,
+          "me_95_total": 4.55,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 90.3,
+          "promedio_valor": 3.47,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 198,
+                "me_95": 6.96,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.9,
+                "promedio_valor": 3.38
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.5,
+                "promedio_valor": 3.51
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.0,
+                "promedio_valor": 3.55
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.5,
+                "promedio_valor": 3.41
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.6,
+                "promedio_valor": 3.42
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.6,
+                "promedio_valor": 3.61
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 215,
+                "me_95": 6.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.7,
+                "promedio_valor": 3.48
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 247,
+                "me_95": 6.23,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.9,
+                "promedio_valor": 3.46
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.5,
+                "promedio_valor": 3.51
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.9,
+                "promedio_valor": 3.46
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.4,
+                "promedio_valor": 3.51
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.6,
+                "promedio_valor": 3.39
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 205,
+                "me_95": 6.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.2,
+                "promedio_valor": 3.48
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.6,
+                "promedio_valor": 3.36
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.2,
+                "promedio_valor": 3.61
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I3_C",
+          "enunciado": "Acuerdo: El turismo es sustentable y respeta el medio ambiente",
+          "tipo": "acuerdo_4",
+          "N_total": 465,
+          "n_muestral_valido": 456,
+          "me_95_total": 4.58,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 89.5,
+          "promedio_valor": 3.25,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 194,
+                "me_95": 7.03,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.7,
+                "promedio_valor": 3.24
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.5,
+                "promedio_valor": 3.31
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.8,
+                "promedio_valor": 3.22
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 145,
+                "me_95": 8.13,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.3,
+                "promedio_valor": 3.18
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 184,
+                "me_95": 7.22,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.3,
+                "promedio_valor": 3.29
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.2,
+                "promedio_valor": 3.26
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 213,
+                "me_95": 6.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 85.9,
+                "promedio_valor": 3.2
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 243,
+                "me_95": 6.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.6,
+                "promedio_valor": 3.29
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.8,
+                "promedio_valor": 3.22
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.2,
+                "promedio_valor": 3.2
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.2,
+                "promedio_valor": 3.36
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 82,
+                "me_95": 10.82,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.2,
+                "promedio_valor": 3.16
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 201,
+                "me_95": 6.9,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.1,
+                "promedio_valor": 3.16
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.1,
+                "promedio_valor": 3.24
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 103,
+                "me_95": 9.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.2,
+                "promedio_valor": 3.42
+              }
+            }
+          }
+        }
+      ]
+    },
+    "biodiversidad": {
+      "hub_id": "biodiversidad",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "B3_G",
+          "enunciado": "Evaluación de acceso a un medioambiente limpio",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 464,
+          "me_95_total": 4.54,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 60.1,
+          "promedio_valor": 4.67,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 200,
+                "me_95": 6.92,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.0,
+                "promedio_valor": 4.56
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 65.6,
+                "promedio_valor": 4.8
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.8,
+                "promedio_valor": 4.74
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.3,
+                "promedio_valor": 4.4
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.2,
+                "promedio_valor": 4.72
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.6,
+                "promedio_valor": 4.91
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 217,
+                "me_95": 6.64,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.4,
+                "promedio_valor": 4.49
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 247,
+                "me_95": 6.23,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 65.2,
+                "promedio_valor": 4.83
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.1,
+                "promedio_valor": 4.46
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 61.7,
+                "promedio_valor": 4.73
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.0,
+                "promedio_valor": 4.56
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 68.2,
+                "promedio_valor": 4.94
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 205,
+                "me_95": 6.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.2,
+                "promedio_valor": 4.49
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 66.9,
+                "promedio_valor": 4.88
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.8,
+                "promedio_valor": 4.72
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I4_E",
+          "enunciado": "Urgencia: Agotamiento de recursos marinos, hídricos y biodiversidad",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 452,
+          "me_95_total": 4.6,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 92.0,
+          "promedio_valor": 3.56,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 190,
+                "me_95": 7.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.5,
+                "promedio_valor": 3.56
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 92,
+                "me_95": 10.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.4,
+                "promedio_valor": 3.59
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 170,
+                "me_95": 7.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.5,
+                "promedio_valor": 3.55
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 142,
+                "me_95": 8.22,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.0,
+                "promedio_valor": 3.61
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 182,
+                "me_95": 7.26,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.2,
+                "promedio_valor": 3.55
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.2,
+                "promedio_valor": 3.53
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 207,
+                "me_95": 6.8,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.2,
+                "promedio_valor": 3.62
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 245,
+                "me_95": 6.25,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.2,
+                "promedio_valor": 3.52
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.7,
+                "promedio_valor": 3.49
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.4,
+                "promedio_valor": 3.56
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.0,
+                "promedio_valor": 3.66
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 78,
+                "me_95": 11.09,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.7,
+                "promedio_valor": 3.46
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 201,
+                "me_95": 6.9,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.5,
+                "promedio_valor": 3.61
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.2,
+                "promedio_valor": 3.41
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 103,
+                "me_95": 9.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.2,
+                "promedio_valor": 3.69
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I4_F",
+          "enunciado": "Urgencia: Corte y deforestación de bosque nativo",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 459,
+          "me_95_total": 4.56,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 87.6,
+          "promedio_valor": 3.51,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 195,
+                "me_95": 7.01,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.2,
+                "promedio_valor": 3.48
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.8,
+                "promedio_valor": 3.42
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.8,
+                "promedio_valor": 3.58
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.2,
+                "promedio_valor": 3.4
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.6,
+                "promedio_valor": 3.6
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 128,
+                "me_95": 8.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.8,
+                "promedio_valor": 3.49
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 213,
+                "me_95": 6.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.7,
+                "promedio_valor": 3.55
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 246,
+                "me_95": 6.24,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 85.8,
+                "promedio_valor": 3.47
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 85.1,
+                "promedio_valor": 3.5
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.1,
+                "promedio_valor": 3.54
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.9,
+                "promedio_valor": 3.54
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 84,
+                "me_95": 10.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.5,
+                "promedio_valor": 3.39
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.2,
+                "promedio_valor": 3.59
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.4,
+                "promedio_valor": 3.32
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.5,
+                "promedio_valor": 3.62
+              }
+            }
+          }
+        }
+      ]
+    },
+    "salud": {
+      "hub_id": "salud",
+      "total_preguntas": 3,
+      "preguntas": [
+        {
+          "codigo": "B3_A",
+          "enunciado": "Evaluación del acceso a salud de calidad en la región",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 464,
+          "me_95_total": 4.54,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 23.7,
+          "promedio_valor": 3.48,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 200,
+                "me_95": 6.92,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 24.0,
+                "promedio_valor": 3.48
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 16.0,
+                "promedio_valor": 3.18
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 170,
+                "me_95": 7.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 27.6,
+                "promedio_valor": 3.64
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 18.8,
+                "promedio_valor": 3.3
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 186,
+                "me_95": 7.18,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 23.1,
+                "promedio_valor": 3.46
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 30.2,
+                "promedio_valor": 3.71
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 216,
+                "me_95": 6.66,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 18.5,
+                "promedio_valor": 3.28
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 248,
+                "me_95": 6.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 28.2,
+                "promedio_valor": 3.65
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 21.6,
+                "promedio_valor": 3.43
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 22.1,
+                "promedio_valor": 3.39
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 24.7,
+                "promedio_valor": 3.48
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 86,
+                "me_95": 10.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 26.7,
+                "promedio_valor": 3.66
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 206,
+                "me_95": 6.82,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 23.3,
+                "promedio_valor": 3.5
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 27.5,
+                "promedio_valor": 3.61
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 19.0,
+                "promedio_valor": 3.24
+              }
+            }
+          }
+        },
+        {
+          "codigo": "G1_A",
+          "enunciado": "Toma de decisiones sobre salud pública",
+          "tipo": "autoridad",
+          "N_total": 465,
+          "n_muestral_valido": 459,
+          "me_95_total": 4.56,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 80.0,
+          "promedio_valor": 2.0,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 199,
+                "me_95": 6.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 80.9,
+                "promedio_valor": 2.05
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.0,
+                "promedio_valor": 2.05
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 166,
+                "me_95": 7.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.5,
+                "promedio_valor": 1.92
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.6,
+                "promedio_valor": 2.09
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 184,
+                "me_95": 7.22,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.6,
+                "promedio_valor": 1.98
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 126,
+                "me_95": 8.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 81.7,
+                "promedio_valor": 1.93
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 214,
+                "me_95": 6.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.6,
+                "promedio_valor": 1.97
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 245,
+                "me_95": 6.25,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.9,
+                "promedio_valor": 2.03
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 73,
+                "me_95": 11.46,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 65.8,
+                "promedio_valor": 1.88
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.3,
+                "promedio_valor": 2.06
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 79.3,
+                "promedio_valor": 1.98
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 86,
+                "me_95": 10.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.2,
+                "promedio_valor": 2.05
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 202,
+                "me_95": 6.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 77.2,
+                "promedio_valor": 1.92
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.7,
+                "promedio_valor": 2.12
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 79.8,
+                "promedio_valor": 2.0
+              }
+            }
+          }
+        },
+        {
+          "codigo": "B3_B",
+          "enunciado": "Evaluación del acceso a educación pública de calidad",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 456,
+          "me_95_total": 4.58,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 49.6,
+          "promedio_valor": 4.29,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 194,
+                "me_95": 7.03,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.1,
+                "promedio_valor": 4.34
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 93,
+                "me_95": 10.16,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 41.9,
+                "promedio_valor": 4.08
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.5,
+                "promedio_valor": 4.35
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 147,
+                "me_95": 8.08,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 55.1,
+                "promedio_valor": 4.33
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 182,
+                "me_95": 7.26,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.5,
+                "promedio_valor": 4.16
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 127,
+                "me_95": 8.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.4,
+                "promedio_valor": 4.42
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 213,
+                "me_95": 6.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.4,
+                "promedio_valor": 4.23
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 243,
+                "me_95": 6.28,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.6,
+                "promedio_valor": 4.35
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 40.5,
+                "promedio_valor": 4.01
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.7,
+                "promedio_valor": 4.16
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 54.4,
+                "promedio_valor": 4.42
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 81,
+                "me_95": 10.88,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 50.6,
+                "promedio_valor": 4.53
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 203,
+                "me_95": 6.87,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 57.1,
+                "promedio_valor": 4.48
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.3,
+                "promedio_valor": 4.29
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 103,
+                "me_95": 9.65,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 40.8,
+                "promedio_valor": 3.92
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "extension_modules": {
+    "cultura_patrimonio": {
+      "modulo_id": "cultura_patrimonio",
+      "total_preguntas": 2,
+      "preguntas": [
+        {
+          "codigo": "B4_B",
+          "enunciado": "Evaluación de oportunidades de recreación y cultura en la región",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 463,
+          "me_95_total": 4.54,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 40.2,
+          "promedio_valor": 4.04,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 198,
+                "me_95": 6.96,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 44.4,
+                "promedio_valor": 4.11
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 36.2,
+                "promedio_valor": 4.03
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 37.4,
+                "promedio_valor": 3.97
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 41.9,
+                "promedio_valor": 4.02
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 186,
+                "me_95": 7.18,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 34.4,
+                "promedio_valor": 3.94
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.5,
+                "promedio_valor": 4.22
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 216,
+                "me_95": 6.66,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 33.3,
+                "promedio_valor": 3.81
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 247,
+                "me_95": 6.23,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.2,
+                "promedio_valor": 4.24
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 32.4,
+                "promedio_valor": 3.72
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 40.9,
+                "promedio_valor": 3.99
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 35.8,
+                "promedio_valor": 3.99
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 84,
+                "me_95": 10.69,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.6,
+                "promedio_valor": 4.51
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 204,
+                "me_95": 6.85,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 37.7,
+                "promedio_valor": 4.02
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 46.1,
+                "promedio_valor": 4.09
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 36.2,
+                "promedio_valor": 4.0
+              }
+            }
+          }
+        },
+        {
+          "codigo": "C2",
+          "enunciado": "Participación activa en organizaciones culturales o comunitarias",
+          "tipo": "binario",
+          "N_total": 465,
+          "n_muestral_valido": 465,
+          "me_95_total": 4.53,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 46.9,
+          "promedio_valor": 1.53,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 200,
+                "me_95": 6.92,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 43.0,
+                "promedio_valor": 1.57
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 53.2,
+                "promedio_valor": 1.47
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.0,
+                "promedio_valor": 1.52
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 150,
+                "me_95": 7.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.3,
+                "promedio_valor": 1.55
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 186,
+                "me_95": 7.18,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 48.9,
+                "promedio_valor": 1.51
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 45.7,
+                "promedio_valor": 1.54
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 217,
+                "me_95": 6.64,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 41.0,
+                "promedio_valor": 1.59
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 248,
+                "me_95": 6.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 52.0,
+                "promedio_valor": 1.48
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 31.1,
+                "promedio_valor": 1.69
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 47.4,
+                "promedio_valor": 1.53
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.7,
+                "promedio_valor": 1.48
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 86,
+                "me_95": 10.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 51.2,
+                "promedio_valor": 1.49
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 206,
+                "me_95": 6.82,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 39.3,
+                "promedio_valor": 1.61
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 49.4,
+                "promedio_valor": 1.51
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.1,
+                "promedio_valor": 1.42
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ctci_innovacion": {
+      "modulo_id": "ctci_innovacion",
+      "total_preguntas": 4,
+      "preguntas": [
+        {
+          "codigo": "I1_I",
+          "enunciado": "Importancia de actividades de ciencia, tecnología e innovación para el futuro de Aysén",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 452,
+          "me_95_total": 4.6,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 89.6,
+          "promedio_valor": 3.56,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 190,
+                "me_95": 7.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.2,
+                "promedio_valor": 3.62
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.6,
+                "promedio_valor": 3.65
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 168,
+                "me_95": 7.55,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.3,
+                "promedio_valor": 3.46
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 143,
+                "me_95": 8.19,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.0,
+                "promedio_valor": 3.59
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 183,
+                "me_95": 7.24,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.3,
+                "promedio_valor": 3.63
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 126,
+                "me_95": 8.72,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 81.7,
+                "promedio_valor": 3.44
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 207,
+                "me_95": 6.8,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 88.9,
+                "promedio_valor": 3.57
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 245,
+                "me_95": 6.25,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.2,
+                "promedio_valor": 3.56
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 91.9,
+                "promedio_valor": 3.54
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.7,
+                "promedio_valor": 3.6
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 147,
+                "me_95": 8.08,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 89.1,
+                "promedio_valor": 3.61
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 80,
+                "me_95": 10.95,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.2,
+                "promedio_valor": 3.45
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 196,
+                "me_95": 6.99,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.2,
+                "promedio_valor": 3.51
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 152,
+                "me_95": 7.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 92.1,
+                "promedio_valor": 3.53
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 104,
+                "me_95": 9.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.4,
+                "promedio_valor": 3.72
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I5",
+          "enunciado": "Conocimiento de la existencia de la Universidad de Aysén",
+          "tipo": "binario",
+          "N_total": 465,
+          "n_muestral_valido": 464,
+          "me_95_total": 4.54,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 84.3,
+          "promedio_valor": 1.16,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 199,
+                "me_95": 6.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 74.9,
+                "promedio_valor": 1.25
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 94,
+                "me_95": 10.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 86.2,
+                "promedio_valor": 1.14
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 94.2,
+                "promedio_valor": 1.06
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 149,
+                "me_95": 8.02,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 77.2,
+                "promedio_valor": 1.23
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 186,
+                "me_95": 7.18,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.3,
+                "promedio_valor": 1.17
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 129,
+                "me_95": 8.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 93.8,
+                "promedio_valor": 1.06
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 216,
+                "me_95": 6.66,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.7,
+                "promedio_valor": 1.15
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 248,
+                "me_95": 6.21,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.9,
+                "promedio_valor": 1.16
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 74,
+                "me_95": 11.39,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 87.8,
+                "promedio_valor": 1.12
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 154,
+                "me_95": 7.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 83.1,
+                "promedio_valor": 1.17
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 151,
+                "me_95": 7.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 84.8,
+                "promedio_valor": 1.15
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 85,
+                "me_95": 10.62,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 82.4,
+                "promedio_valor": 1.18
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 206,
+                "me_95": 6.82,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 90.8,
+                "promedio_valor": 1.09
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 153,
+                "me_95": 7.91,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 79.1,
+                "promedio_valor": 1.21
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 105,
+                "me_95": 9.56,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 79.0,
+                "promedio_valor": 1.21
+              }
+            }
+          }
+        },
+        {
+          "codigo": "I8",
+          "enunciado": "Evaluación del desempeño de la Universidad de Aysén",
+          "tipo": "nota_1_7",
+          "N_total": 465,
+          "n_muestral_valido": 423,
+          "me_95_total": 4.75,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 71.4,
+          "promedio_valor": 4.98,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 171,
+                "me_95": 7.49,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 68.4,
+                "promedio_valor": 5.08
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 89,
+                "me_95": 10.38,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.4,
+                "promedio_valor": 5.11
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 163,
+                "me_95": 7.67,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.8,
+                "promedio_valor": 4.8
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 137,
+                "me_95": 8.37,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 69.3,
+                "promedio_valor": 5.1
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 166,
+                "me_95": 7.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.5,
+                "promedio_valor": 4.98
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 120,
+                "me_95": 8.94,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 75.0,
+                "promedio_valor": 4.84
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 197,
+                "me_95": 6.97,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 75.6,
+                "promedio_valor": 5.12
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 226,
+                "me_95": 6.51,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 67.7,
+                "promedio_valor": 4.85
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 72,
+                "me_95": 11.54,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.2,
+                "promedio_valor": 4.99
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 143,
+                "me_95": 8.19,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 69.9,
+                "promedio_valor": 4.84
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 138,
+                "me_95": 8.33,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 73.2,
+                "promedio_valor": 5.02
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 70,
+                "me_95": 11.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.0,
+                "promedio_valor": 5.17
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 189,
+                "me_95": 7.12,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 76.7,
+                "promedio_valor": 5.04
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 136,
+                "me_95": 8.4,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 67.6,
+                "promedio_valor": 4.95
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 98,
+                "me_95": 9.89,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 66.3,
+                "promedio_valor": 4.9
+              }
+            }
+          }
+        },
+        {
+          "codigo": "F4_G",
+          "enunciado": "Aporte de las Universidades al desarrollo regional de Aysén",
+          "tipo": "escala_4",
+          "N_total": 465,
+          "n_muestral_valido": 438,
+          "me_95_total": 4.67,
+          "semaforo_global": "verde",
+          "tasa_positiva_pct": 66.4,
+          "promedio_valor": 2.11,
+          "micro_cubos": {
+            "por_nivel_educativo": {
+              "basica_media": {
+                "N_estrato": 200,
+                "n_muestral": 185,
+                "me_95": 7.2,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.9,
+                "promedio_valor": 2.27
+              },
+              "tecnico_superior": {
+                "N_estrato": 94,
+                "n_muestral": 87,
+                "me_95": 10.5,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 70.1,
+                "promedio_valor": 2.02
+              },
+              "universitaria": {
+                "N_estrato": 171,
+                "n_muestral": 166,
+                "me_95": 7.6,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.9,
+                "promedio_valor": 1.98
+              }
+            },
+            "por_nse": {
+              "bajo": {
+                "N_estrato": 150,
+                "n_muestral": 146,
+                "me_95": 8.1,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 58.2,
+                "promedio_valor": 2.3
+              },
+              "medio": {
+                "N_estrato": 186,
+                "n_muestral": 169,
+                "me_95": 7.53,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 67.5,
+                "promedio_valor": 2.09
+              },
+              "alto": {
+                "N_estrato": 129,
+                "n_muestral": 123,
+                "me_95": 8.83,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 74.8,
+                "promedio_valor": 1.91
+              }
+            },
+            "por_sexo": {
+              "hombre": {
+                "N_estrato": 217,
+                "n_muestral": 205,
+                "me_95": 6.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 69.8,
+                "promedio_valor": 2.07
+              },
+              "mujer": {
+                "N_estrato": 248,
+                "n_muestral": 233,
+                "me_95": 6.41,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 63.5,
+                "promedio_valor": 2.15
+              }
+            },
+            "por_tramo_edad": {
+              "18-29": {
+                "N_estrato": 74,
+                "n_muestral": 70,
+                "me_95": 11.71,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 71.4,
+                "promedio_valor": 2.1
+              },
+              "30-44": {
+                "N_estrato": 154,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.3,
+                "promedio_valor": 2.04
+              },
+              "45-59": {
+                "N_estrato": 151,
+                "n_muestral": 145,
+                "me_95": 8.13,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.0,
+                "promedio_valor": 2.15
+              },
+              "60+": {
+                "N_estrato": 86,
+                "n_muestral": 75,
+                "me_95": 11.31,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 62.7,
+                "promedio_valor": 2.19
+              }
+            },
+            "por_macrozona": {
+              "centro": {
+                "N_estrato": 206,
+                "n_muestral": 191,
+                "me_95": 7.08,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 72.8,
+                "promedio_valor": 2.02
+              },
+              "norte": {
+                "N_estrato": 154,
+                "n_muestral": 148,
+                "me_95": 8.05,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 62.2,
+                "promedio_valor": 2.18
+              },
+              "sur": {
+                "N_estrato": 105,
+                "n_muestral": 99,
+                "me_95": 9.84,
+                "semaforo": "verde",
+                "tasa_positiva_pct": 60.6,
+                "promedio_valor": 2.2
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "comparativa_interregional": {
+    "ficha_tecnica": [
+      {
+        "region": "O'Higgins",
+        "n": 601,
+        "error": "4.0%"
+      },
+      {
+        "region": "Ñuble",
+        "n": 500,
+        "error": "4.4%"
+      },
+      {
+        "region": "Biobío",
+        "n": 500,
+        "error": "4.4%"
+      },
+      {
+        "region": "Los Ríos",
+        "n": 482,
+        "error": "3.8%"
+      },
+      {
+        "region": "Los Lagos",
+        "n": 601,
+        "error": "4.0%"
+      },
+      {
+        "region": "Aysén",
+        "n": 465,
+        "error": "4.5%",
+        "is_target": true
+      },
+      {
+        "region": "Magallanes",
+        "n": 664,
+        "error": "4.4%"
+      }
+    ],
+    "coyuntura": {
+      "rumbo": [
+        {
+          "region": "O'Higgins",
+          "is_target": false,
+          "progresando": 41.4,
+          "estancada": 43.8,
+          "decadencia": 14.8
+        },
+        {
+          "region": "Ñuble",
+          "is_target": false,
+          "progresando": 51.9,
+          "estancada": 37.0,
+          "decadencia": 11.1
+        },
+        {
+          "region": "Biobío",
+          "is_target": false,
+          "progresando": 46.6,
+          "estancada": 38.1,
+          "decadencia": 15.3
+        },
+        {
+          "region": "Los Ríos",
+          "is_target": false,
+          "progresando": 37.5,
+          "estancada": 47.8,
+          "decadencia": 14.7
+        },
+        {
+          "region": "Los Lagos",
+          "is_target": false,
+          "progresando": 47.4,
+          "estancada": 42.8,
+          "decadencia": 9.9
+        },
+        {
+          "region": "Aysén",
+          "is_target": true,
+          "progresando": 31.6,
+          "estancada": 58.1,
+          "decadencia": 10.3
+        },
+        {
+          "region": "Magallanes",
+          "is_target": false,
+          "progresando": 45.1,
+          "estancada": 45.9,
+          "decadencia": 9.1
+        }
+      ],
+      "disposicion_migrar": [
+        {
+          "region": "O'Higgins",
+          "pct": 34.5,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 28.5,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 28.2,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 28.2,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 27.9,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 26.4,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 22.3,
+          "is_target": false
+        }
+      ],
+      "destino_migracion": [
+        {
+          "region": "O'Higgins",
+          "is_target": false,
+          "misma_comuna": 18.2,
+          "otra_comuna": 19.0,
+          "otra_region": 39.6,
+          "extranjero": 23.1
+        },
+        {
+          "region": "Ñuble",
+          "is_target": false,
+          "misma_comuna": 17.9,
+          "otra_comuna": 16.7,
+          "otra_region": 49.5,
+          "extranjero": 15.9
+        },
+        {
+          "region": "Biobío",
+          "is_target": false,
+          "misma_comuna": 21.5,
+          "otra_comuna": 34.6,
+          "otra_region": 25.9,
+          "extranjero": 18.1
+        },
+        {
+          "region": "Los Ríos",
+          "is_target": false,
+          "misma_comuna": 23.9,
+          "otra_comuna": 23.3,
+          "otra_region": 29.8,
+          "extranjero": 23.0
+        },
+        {
+          "region": "Los Lagos",
+          "is_target": false,
+          "misma_comuna": 25.8,
+          "otra_comuna": 25.9,
+          "otra_region": 32.6,
+          "extranjero": 15.6
+        },
+        {
+          "region": "Aysén",
+          "is_target": true,
+          "misma_comuna": 2.8,
+          "otra_comuna": 18.0,
+          "otra_region": 57.6,
+          "extranjero": 21.6
+        },
+        {
+          "region": "Magallanes",
+          "is_target": false,
+          "misma_comuna": 5.0,
+          "otra_comuna": 10.3,
+          "otra_region": 54.6,
+          "extranjero": 30.1
+        }
+      ],
+      "identificacion_territorial": [
+        {
+          "region": 10.6,
+          "is_target": false,
+          "barrio": 16.5,
+          "pueblo_localidad": 14.9,
+          "comuna": 23.5,
+          "ciudad": 9.8,
+          "pais": 24.7
+        },
+        {
+          "region": 11.6,
+          "is_target": false,
+          "barrio": 16.8,
+          "pueblo_localidad": 8.1,
+          "comuna": 23.8,
+          "ciudad": 15.5,
+          "pais": 24.1
+        },
+        {
+          "region": 9.0,
+          "is_target": false,
+          "barrio": 20.3,
+          "pueblo_localidad": 5.9,
+          "comuna": 25.9,
+          "ciudad": 13.2,
+          "pais": 25.7
+        },
+        {
+          "region": 14.8,
+          "is_target": false,
+          "barrio": 20.2,
+          "pueblo_localidad": 8.9,
+          "comuna": 19.3,
+          "ciudad": 19.6,
+          "pais": 17.2
+        },
+        {
+          "region": 14.2,
+          "is_target": false,
+          "barrio": 11.7,
+          "pueblo_localidad": 9.5,
+          "comuna": 18.2,
+          "ciudad": 28.8,
+          "pais": 17.6
+        },
+        {
+          "region": 36.6,
+          "is_target": true,
+          "barrio": 6.1,
+          "pueblo_localidad": 18.1,
+          "comuna": 16.4,
+          "ciudad": 14.6,
+          "pais": 8.2
+        },
+        {
+          "region": 28.3,
+          "is_target": false,
+          "barrio": 13.3,
+          "pueblo_localidad": 4.5,
+          "comuna": 18.0,
+          "ciudad": 23.8,
+          "pais": 12.2
+        }
+      ],
+      "principal_problema": [
+        {
+          "region": "O'Higgins",
+          "is_target": false,
+          "seguridad": 54.7,
+          "salud": 19.1,
+          "empleo": 3.3,
+          "conectividad": 20.0,
+          "vivienda": 2.8
+        },
+        {
+          "region": "Ñuble",
+          "is_target": false,
+          "seguridad": 47.2,
+          "salud": 12.3,
+          "empleo": 16.3,
+          "conectividad": 21.4,
+          "vivienda": 2.7
+        },
+        {
+          "region": "Biobío",
+          "is_target": false,
+          "seguridad": 64.8,
+          "salud": 10.4,
+          "empleo": 5.8,
+          "conectividad": 18.0,
+          "vivienda": 1.0
+        },
+        {
+          "region": "Los Ríos",
+          "is_target": false,
+          "seguridad": 33.9,
+          "salud": 18.6,
+          "empleo": 21.7,
+          "conectividad": 20.2,
+          "vivienda": 5.6
+        },
+        {
+          "region": "Los Lagos",
+          "is_target": false,
+          "seguridad": 41.7,
+          "salud": 16.3,
+          "empleo": 12.9,
+          "conectividad": 24.9,
+          "vivienda": 4.3
+        },
+        {
+          "region": "Aysén",
+          "is_target": true,
+          "seguridad": 13.5,
+          "salud": 27.2,
+          "empleo": 14.8,
+          "conectividad": 40.1,
+          "vivienda": 4.5
+        },
+        {
+          "region": "Magallanes",
+          "is_target": false,
+          "seguridad": 19.1,
+          "salud": 26.3,
+          "empleo": 10.6,
+          "conectividad": 34.9,
+          "vivienda": 9.1
+        }
+      ],
+      "conocimiento_erd": [
+        {
+          "region": "Ñuble",
+          "pct": 51.4,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 46.2,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 44.2,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 42.4,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 40.5,
+          "is_target": true
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 39.3,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 34.6,
+          "is_target": false
+        }
+      ]
+    },
+    "servicios": {
+      "salud": [
+        {
+          "region": "Magallanes",
+          "nota": 4.12,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.08,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.06,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.02,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 3.97,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 3.97,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 3.44,
+          "is_target": true
+        }
+      ],
+      "educacion": [
+        {
+          "region": "Ñuble",
+          "nota": 4.92,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.87,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.85,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 4.73,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.67,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.63,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.28,
+          "is_target": true
+        }
+      ],
+      "vivienda": [
+        {
+          "region": "Ñuble",
+          "nota": 4.32,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.31,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.1,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.09,
+          "is_target": true
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.05,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 3.99,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 3.83,
+          "is_target": false
+        }
+      ],
+      "agua": [
+        {
+          "region": "Biobío",
+          "nota": 5.9,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 5.88,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 5.86,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 5.69,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 5.62,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 5.44,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 5.39,
+          "is_target": true
+        }
+      ],
+      "transporte": [
+        {
+          "region": "Ñuble",
+          "nota": 4.94,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.94,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.83,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.81,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 4.73,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.62,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 3.87,
+          "is_target": true
+        }
+      ],
+      "seguridad": [
+        {
+          "region": "Magallanes",
+          "nota": 4.92,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.32,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.31,
+          "is_target": true
+        },
+        {
+          "region": "Ñuble",
+          "nota": 4.27,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.16,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 3.86,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 3.84,
+          "is_target": false
+        }
+      ],
+      "medioambiente": [
+        {
+          "region": "Magallanes",
+          "nota": 5.57,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 5.18,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 5.02,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 5.0,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.96,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.79,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.62,
+          "is_target": true
+        }
+      ],
+      "empleo": [
+        {
+          "region": "Magallanes",
+          "nota": 4.82,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.46,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.41,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.32,
+          "is_target": true
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.24,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 4.08,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 3.59,
+          "is_target": false
+        }
+      ],
+      "recreacion": [
+        {
+          "region": "Biobío",
+          "nota": 4.97,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.82,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.82,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.69,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 4.69,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 4.5,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.02,
+          "is_target": true
+        }
+      ],
+      "sueldos": [
+        {
+          "region": "Magallanes",
+          "nota": 4.71,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.41,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.29,
+          "is_target": true
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.28,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.16,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 4.13,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 3.9,
+          "is_target": false
+        }
+      ],
+      "consumo": [
+        {
+          "region": "Biobío",
+          "nota": 5.48,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 5.28,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 5.27,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 5.26,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.95,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 4.89,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.52,
+          "is_target": true
+        }
+      ],
+      "participacion": [
+        {
+          "region": "Magallanes",
+          "nota": 4.71,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.7,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.58,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 4.58,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.56,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.45,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.26,
+          "is_target": true
+        }
+      ],
+      "caminos": [
+        {
+          "region": "Ñuble",
+          "nota": 4.94,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.94,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.83,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.81,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "nota": 4.73,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.62,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 3.87,
+          "is_target": true
+        }
+      ],
+      "internet": [
+        {
+          "region": "Magallanes",
+          "nota": 4.71,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "nota": 4.7,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "nota": 4.58,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "nota": 4.58,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "nota": 4.56,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "nota": 4.45,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "nota": 4.26,
+          "is_target": true
+        }
+      ]
+    },
+    "descentralizacion": {
+      "centralismo": [
+        {
+          "region": "Aysén",
+          "pct": 57.3,
+          "is_target": true
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 44.0
+        },
+        {
+          "region": "Biobío",
+          "pct": 39.0
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 37.0
+        },
+        {
+          "region": "Ñuble",
+          "pct": 31.0
+        }
+      ],
+      "gobernadores": [
+        {
+          "region": "O'Higgins",
+          "is_target": false,
+          "impulso": 16.5,
+          "igual": 53.8,
+          "problemas": 29.7
+        },
+        {
+          "region": "Ñuble",
+          "is_target": false,
+          "impulso": 50.0,
+          "igual": 36.1,
+          "problemas": 13.9
+        },
+        {
+          "region": "Biobío",
+          "is_target": false,
+          "impulso": 26.6,
+          "igual": 48.9,
+          "problemas": 24.6
+        },
+        {
+          "region": "Los Ríos",
+          "is_target": false,
+          "impulso": 22.3,
+          "igual": 53.2,
+          "problemas": 24.5
+        },
+        {
+          "region": "Los Lagos",
+          "is_target": false,
+          "impulso": 20.8,
+          "igual": 51.9,
+          "problemas": 27.3
+        },
+        {
+          "region": "Aysén",
+          "is_target": true,
+          "impulso": 24.6,
+          "igual": 55.5,
+          "problemas": 19.8
+        },
+        {
+          "region": "Magallanes",
+          "is_target": false,
+          "impulso": 23.7,
+          "igual": 53.7,
+          "problemas": 22.6
+        }
+      ],
+      "decision_obras": [
+        {
+          "region": "Aysén",
+          "pct": 60.5,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 59.1,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 58.3,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 57.3,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 52.9,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 52.1,
+          "is_target": false
+        }
+      ],
+      "decision_salud": [
+        {
+          "region": "Aysén",
+          "pct": 79.7,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 75.8,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 75.7,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 74.9,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 67.9,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 66.1,
+          "is_target": false
+        }
+      ],
+      "decision_educacion": [
+        {
+          "region": "Aysén",
+          "pct": 77.1,
+          "is_target": true
+        },
+        {
+          "region": "Ñuble",
+          "pct": 68.7,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 66.0,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 65.8,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 65.1,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 62.9,
+          "is_target": false
+        }
+      ],
+      "decision_fomento": [
+        {
+          "region": "Aysén",
+          "pct": 85.0,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 81.5,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 79.8,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 79.1,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 71.4,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 71.4,
+          "is_target": false
+        }
+      ],
+      "decision_medioambiente": [
+        {
+          "region": "Aysén",
+          "pct": 82.7,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 75.9,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 75.2,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 73.4,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 66.3,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 60.0,
+          "is_target": false
+        }
+      ],
+      "decision_agua": [
+        {
+          "region": "Aysén",
+          "pct": 93.1,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 91.1,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 85.1,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 83.3,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 82.5,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 79.9,
+          "is_target": false
+        }
+      ],
+      "decision_vivienda": [
+        {
+          "region": "Aysén",
+          "pct": 87.5,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 85.7,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 81.9,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 80.6,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 73.4,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 69.8,
+          "is_target": false
+        }
+      ],
+      "decision_inversion": [
+        {
+          "region": "Aysén",
+          "pct": 77.4,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 74.5,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 69.2,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 68.9,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 61.7,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 61.0,
+          "is_target": false
+        }
+      ],
+      "decision_seguridad": [
+        {
+          "region": "Aysén",
+          "pct": 82.8,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 75.4,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 73.6,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 71.2,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 70.9,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 64.9,
+          "is_target": false
+        }
+      ],
+      "aporte_institucional": [
+        {
+          "institucion": "Medios Regionales",
+          "pct": 66.9
+        },
+        {
+          "institucion": "Universidades Regionales",
+          "pct": 65.9
+        },
+        {
+          "institucion": "Municipalidades",
+          "pct": 54.8
+        },
+        {
+          "institucion": "Organizaciones Sociales",
+          "pct": 54.1
+        },
+        {
+          "institucion": "Empresas Regionales",
+          "pct": 51.2
+        },
+        {
+          "institucion": "Gobierno Regional (GORE)",
+          "pct": 50.8
+        },
+        {
+          "institucion": "Gobierno Central",
+          "pct": 35.6
+        },
+        {
+          "institucion": "Parlamentarios",
+          "pct": 24.7
+        }
+      ]
+    },
+    "cohesion": {
+      "confianza": [
+        {
+          "region": "Magallanes",
+          "pct": 53.8,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 46.9,
+          "is_target": true
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 29.6,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 29.3,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 27.4,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 27.1,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 26.1,
+          "is_target": false
+        }
+      ],
+      "participacion_comunitaria": [
+        {
+          "region": "Aysén",
+          "pct": 45.0,
+          "is_target": true
+        },
+        {
+          "region": "Ñuble",
+          "pct": 44.0,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 43.0,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 40.2,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 39.4,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 33.7,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 28.9,
+          "is_target": false
+        }
+      ],
+      "afectacion_aire": [
+        {
+          "region": "O'Higgins",
+          "pct": 11.7,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 8.6,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 7.6,
+          "is_target": true
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 4.4,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 4.2,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 3.9,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 2.8,
+          "is_target": false
+        }
+      ],
+      "afectacion_extractivismo": [
+        {
+          "region": "Aysén",
+          "pct": 64.8,
+          "is_target": true
+        },
+        {
+          "region": "Ñuble",
+          "pct": 57.8,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 54.3,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 48.0,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 42.1,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 39.1,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 28.3,
+          "is_target": false
+        }
+      ],
+      "afectacion_basura": [
+        {
+          "region": "Biobío",
+          "pct": 26.2,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 24.6,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 24.3,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 20.1,
+          "is_target": true
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 16.8,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 11.5,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 8.8,
+          "is_target": false
+        }
+      ],
+      "afectacion_agua": [
+        {
+          "region": "Biobío",
+          "pct": 30.2,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 20.3,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 19.3,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 18.3,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 17.5,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 14.8,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 9.5,
+          "is_target": false
+        }
+      ],
+      "afectacion_clima": [
+        {
+          "region": "Biobío",
+          "pct": 35.4,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 25.0,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 24.6,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 21.6,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 19.7,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 15.3,
+          "is_target": true
+        },
+        {
+          "region": "Magallanes",
+          "pct": 12.6,
+          "is_target": false
+        }
+      ],
+      "adhesion_democracia": [
+        {
+          "region": "Magallanes",
+          "pct": 66.0,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 57.4,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 57.0,
+          "is_target": true
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 56.7,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 55.9,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 53.1,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 51.2,
+          "is_target": false
+        }
+      ],
+      "uso_radios": [
+        {
+          "region": "Aysén",
+          "pct": 74.2,
+          "is_target": true
+        },
+        {
+          "region": "Ñuble",
+          "pct": 64.2,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 59.6,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 57.3,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 56.6,
+          "is_target": false
+        },
+        {
+          "region": "Biobío",
+          "pct": 50.1,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 47.1,
+          "is_target": false
+        }
+      ],
+      "uso_tv": [
+        {
+          "region": "Biobío",
+          "pct": 72.0,
+          "is_target": false
+        },
+        {
+          "region": "O'Higgins",
+          "pct": 63.8,
+          "is_target": false
+        },
+        {
+          "region": "Ñuble",
+          "pct": 63.0,
+          "is_target": false
+        },
+        {
+          "region": "Los Lagos",
+          "pct": 55.8,
+          "is_target": false
+        },
+        {
+          "region": "Magallanes",
+          "pct": 47.5,
+          "is_target": false
+        },
+        {
+          "region": "Los Ríos",
+          "pct": 45.3,
+          "is_target": false
+        },
+        {
+          "region": "Aysén",
+          "pct": 39.6,
+          "is_target": true
+        }
+      ],
+      "medio_principal": [
+        {
+          "region": "O'Higgins",
+          "is_target": false,
+          "tv_nacional": 32.0,
+          "tv_regional": 0.9,
+          "radios_nacionales": 6.5,
+          "radios_locales": 5.4,
+          "web_nacional": 4.9,
+          "web_regional": 2.7,
+          "redes_sociales": 47.5
+        },
+        {
+          "region": "Ñuble",
+          "is_target": false,
+          "tv_nacional": 20.6,
+          "tv_regional": 1.3,
+          "radios_nacionales": 5.6,
+          "radios_locales": 6.3,
+          "web_nacional": 3.0,
+          "web_regional": 2.1,
+          "redes_sociales": 61.0
+        },
+        {
+          "region": "Biobío",
+          "is_target": false,
+          "tv_nacional": 23.3,
+          "tv_regional": 6.3,
+          "radios_nacionales": 4.7,
+          "radios_locales": 4.6,
+          "web_nacional": 4.1,
+          "web_regional": 1.9,
+          "redes_sociales": 55.1
+        },
+        {
+          "region": "Los Ríos",
+          "is_target": false,
+          "tv_nacional": 13.2,
+          "tv_regional": 2.4,
+          "radios_nacionales": 4.8,
+          "radios_locales": 12.1,
+          "web_nacional": 3.9,
+          "web_regional": 2.9,
+          "redes_sociales": 60.7
+        },
+        {
+          "region": "Los Lagos",
+          "is_target": false,
+          "tv_nacional": 18.3,
+          "tv_regional": 3.8,
+          "radios_nacionales": 6.2,
+          "radios_locales": 9.8,
+          "web_nacional": 3.0,
+          "web_regional": 3.7,
+          "redes_sociales": 55.2
+        },
+        {
+          "region": "Aysén",
+          "is_target": true,
+          "tv_nacional": 7.1,
+          "tv_regional": 1.8,
+          "radios_nacionales": 3.8,
+          "radios_locales": 17.8,
+          "web_nacional": 4.3,
+          "web_regional": 4.8,
+          "redes_sociales": 60.6
+        },
+        {
+          "region": "Magallanes",
+          "is_target": false,
+          "tv_nacional": 9.7,
+          "tv_regional": 11.9,
+          "radios_nacionales": 2.6,
+          "radios_locales": 7.8,
+          "web_nacional": 3.7,
+          "web_regional": 5.2,
+          "redes_sociales": 59.0
+        }
+      ]
+    }
+  }
+}
