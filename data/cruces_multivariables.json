@@ -1411,7 +1411,10 @@
               "question_id": "B4_B",
               "label": "Oportunidades de recreación y cultura",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "museos_cultura",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Distribución geográfica de la infraestructura cultural y patrimonial en las 10 comunas de Aysén.",
           "why_complex_system": "Concentración espacial y aislamiento: la mayor densidad patrimonial protegida coexiste con asimetrías de conectividad física en comunas australes e insulares."
@@ -1796,7 +1799,10 @@
               "estaciones_campo",
               "cuencas_dga",
               "snaspe_conaf"
-            ]
+            ],
+            "spatialLayer": "centros_ctci",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Malla territorial de plataformas científicas permanentes y estaciones de monitoreo ambiental en Aysén.",
           "why_complex_system": "Acoplamiento socio-ecológico: la ubicación de sensores e investigadores responde a la singularidad de ecosistemas vulnerables como glaciares y fiordos."

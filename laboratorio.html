@@ -441,6 +441,97 @@
       color: #ffffff;
     }
 
+
+    /* Controles de Capas Espaciales y Leyenda Cartográfica Multicapa */
+    .card-map-layer-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.28rem 0.65rem;
+      background: #f4efec;
+      border-bottom: 1px solid rgba(28, 27, 27, 0.09);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--ink);
+      flex-wrap: wrap;
+      z-index: 15;
+    }
+    .card-map-layer-bar .map-layer-lbl {
+      font-weight: 700;
+      color: var(--cobalt);
+      white-space: nowrap;
+    }
+    .map-spatial-layer-select {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.16rem 0.38rem;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      color: var(--ink);
+      background: #ffffff;
+      border: 1px solid rgba(28, 27, 27, 0.18);
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .btn-map-buffer-toggle {
+      padding: 0.16rem 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.63rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: #ffffff;
+      border: 1px solid rgba(28, 27, 27, 0.2);
+      border-radius: 2px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .btn-map-buffer-toggle:hover {
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+    }
+    .btn-map-buffer-toggle.active {
+      background: #dc2626;
+      color: #ffffff;
+      border-color: #b91c1c;
+    }
+    .map-bivariate-legend {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      z-index: 500;
+      background: rgba(252, 249, 248, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(28, 27, 27, 0.16);
+      border-radius: 3px;
+      padding: 5px 8px;
+      font-family: var(--font-sans);
+      font-size: 0.63rem;
+      color: #1c1b1b;
+      max-width: 245px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      pointer-events: auto;
+    }
+    .map-bivariate-legend .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+    }
+    .map-bivariate-legend .legend-ramp {
+      display: inline-flex;
+      height: 8px;
+      width: 48px;
+      border: 1px solid rgba(28, 27, 27, 0.25);
+      overflow: hidden;
+    }
+    .map-bivariate-legend .legend-ramp span {
+      flex: 1;
+      height: 100%;
+    }
+
   </style>
   <style>
     :root {
@@ -3843,6 +3934,101 @@
         'Tortel': [-47.7958, -73.5350]
       };
 
+      const LOCALIDADES_AYSEN_COORDS = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.localidadesCoords) || {
+        'Melinka': { lat: -43.8960, lon: -73.7480, comuna_ine: '11203', comuna: 'Guaitecas' },
+        'Repollal': { lat: -43.9320, lon: -73.6850, comuna_ine: '11203', comuna: 'Guaitecas' },
+        'Puerto Aguirre': { lat: -45.1630, lon: -73.5220, comuna_ine: '11201', comuna: 'Aysén' },
+        'Caleta Andrade': { lat: -45.1540, lon: -73.5080, comuna_ine: '11201', comuna: 'Aysén' },
+        'Puerto Gala': { lat: -44.1810, lon: -73.1250, comuna_ine: '11202', comuna: 'Cisnes' },
+        'Puerto Gaviota': { lat: -44.9180, lon: -73.3210, comuna_ine: '11202', comuna: 'Cisnes' },
+        'Puyuhuapi': { lat: -44.3250, lon: -72.5580, comuna_ine: '11202', comuna: 'Cisnes' },
+        'Puerto Cisnes': { lat: -44.7430, lon: -72.6990, comuna_ine: '11202', comuna: 'Cisnes' },
+        'La Junta': { lat: -43.9730, lon: -72.4050, comuna_ine: '11202', comuna: 'Cisnes' },
+        'Raul Marin Balmaceda': { lat: -43.7820, lon: -72.9540, comuna_ine: '11202', comuna: 'Cisnes' },
+        'Villa Manihuales': { lat: -45.1740, lon: -72.1460, comuna_ine: '11201', comuna: 'Aysén' },
+        'Puerto Chacabuco': { lat: -45.4650, lon: -72.8250, comuna_ine: '11201', comuna: 'Aysén' },
+        'Balmaceda': { lat: -45.9160, lon: -71.6890, comuna_ine: '11101', comuna: 'Coyhaique' },
+        'Villa Cerro Castillo': { lat: -46.1210, lon: -72.1540, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+        'Bahia Murta': { lat: -46.4580, lon: -72.6710, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+        'Puerto Rio Tranquilo': { lat: -46.6240, lon: -72.6760, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+        'Puerto Guadal': { lat: -46.8480, lon: -72.7080, comuna_ine: '11401', comuna: 'Chile Chico' },
+        'Puerto Bertrand': { lat: -47.0180, lon: -72.8250, comuna_ine: '11401', comuna: 'Chile Chico' },
+        'Caleta Tortel': { lat: -47.7950, lon: -73.5350, comuna_ine: '11303', comuna: 'Tortel' },
+        'Villa O\'Higgins': { lat: -48.4680, lon: -72.5600, comuna_ine: '11302', comuna: 'O\'Higgins' }
+      };
+
+      const SPATIAL_LAYERS_META = {
+        'concesiones_acuicolas': { label: 'Concesiones Acuícolas, Caletas y Minería', color: '#0059c5' },
+        'centrales_electricas': { label: 'Centrales Eléctricas y Nodos FOA', color: '#0284c7' },
+        'proyectos_seia': { label: 'Proyectos SEIA y Aeródromos JAC', color: '#0f766e' },
+        'hospitales_postas': { label: 'Hospitales DEIS, CESFAM y Postas Rurales', color: '#be185d' },
+        'escuelas_slep': { label: 'Escuelas SLEP y Educación Superior', color: '#2563eb' },
+        'volcanes_sismos': { label: 'Volcanes RNVV y Epicentros Sísmicos USGS', color: '#dc2626' },
+        'parques_snaspe': { label: 'Parques SNASPE y Zonas ZOIT', color: '#00357f' },
+        'estaciones_monitoreo': { label: 'Estaciones DGA/SINCA y Fauna RCE', color: '#047857' },
+        'museos_cultura': { label: 'Museos RMC, Bibliotecas y Monumentos CMN', color: '#b45309' },
+        'centros_ctci': { label: 'Centros CTCi, Laboratorios y CORFO', color: '#0e7490' },
+        'gobernanza_obras': { label: 'Sedes Municipales, GORE y Obras Públicas', color: '#4338ca' },
+        'justicia_sma': { label: 'Unidades Fiscalizables SMA y Causas 3TA', color: '#dc2626' },
+        'all': { label: 'Todos los Nodos Georreferenciados (342)', color: '#00357f' },
+        'none': { label: 'Solo Coropleta Comunal', color: '#64748b' }
+      };
+
+      function resolveActiveSpatialLayerKey(w) {
+        if (w.spatialLayer && w.spatialLayer !== 'auto') return w.spatialLayer;
+        const varKey = String(w.varY || w.varX || '').toLowerCase();
+        const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+        const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
+        const hubKey = String((vY && vY.hubId) || (vX && vX.hubId) || '').toLowerCase();
+
+        if (varKey.includes('salmon') || varKey.includes('concesion') || varKey.includes('biomasa') || hubKey === 'salmonicultura') return 'concesiones_acuicolas';
+        if (varKey.includes('saidi') || varKey.includes('tarifa') || varKey.includes('internet') || varKey.includes('lena') || hubKey === 'energia') return 'centrales_electricas';
+        if (varKey.includes('seia') || varKey.includes('empresas') || varKey.includes('trabajadores') || hubKey === 'inversion') return 'proyectos_seia';
+        if (varKey.includes('salud') || varKey.includes('hospital') || varKey.includes('camas') || hubKey === 'salud') return 'hospitales_postas';
+        if (varKey.includes('matricula') || varKey.includes('escolar') || varKey.includes('slep')) return 'escuelas_slep';
+        if (varKey.includes('delito') || varKey.includes('pobreza') || varKey.includes('volcan') || varKey.includes('sismo') || hubKey === 'social') return 'volcanes_sismos';
+        if (varKey.includes('visitantes') || varKey.includes('sernatur') || varKey.includes('sello') || hubKey === 'turismo') return 'parques_snaspe';
+        if (varKey.includes('snaspe') || varKey.includes('especies') || varKey.includes('invasora') || varKey.includes('huemul') || hubKey === 'biodiversidad') return 'estaciones_monitoreo';
+        if (varKey.includes('cultural') || varKey.includes('fondart') || varKey.includes('museo') || varKey.includes('monumento') || hubKey === 'cultura_patrimonio') return 'museos_cultura';
+        if (varKey.includes('anid') || varKey.includes('corfo') || varKey.includes('ctci') || varKey.includes('publicaciones') || hubKey === 'ctci_innovacion') return 'centros_ctci';
+        if (varKey.includes('sma') || varKey.includes('multa') || varKey.includes('3ta') || hubKey === 'justicia_ambiental') return 'justicia_sma';
+        if (varKey.includes('fcm') || varKey.includes('fndr') || varKey.includes('presupuesto') || hubKey === 'gobernanza') return 'gobernanza_obras';
+        return 'concesiones_acuicolas';
+      }
+
+      function haversineDistanceKm(lat1, lon1, lat2, lon2) {
+        const R = 6371.0;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      }
+
+      function getChoroplethRampColors(baseHex) {
+        const hex = String(baseHex || '#00357f').toLowerCase();
+        if (hex.includes('047857') || hex.includes('0f766e')) {
+          return ['#d1fae5', '#6ee7b7', '#10b981', '#047857'];
+        }
+        if (hex.includes('dc2626') || hex.includes('be185d')) {
+          return ['#fee2e2', '#fca5a5', '#ef4444', '#b91c1c'];
+        }
+        if (hex.includes('b45309')) {
+          return ['#fef3c7', '#fcd34d', '#d97706', '#92400e'];
+        }
+        return ['#dbeafe', '#93c5fd', '#2563eb', '#00357f'];
+      }
+
+      function getChoroplethFillColor(ratio, baseHex) {
+        const ramp = getChoroplethRampColors(baseHex);
+        const r = Math.max(0, Math.min(1, Number(ratio) || 0));
+        if (r < 0.25) return ramp[0];
+        if (r < 0.50) return ramp[1];
+        if (r < 0.75) return ramp[2];
+        return ramp[3];
+      }
+
       const COMUNAS_CONTEXT_MAP = {
         'Coyhaique': { pop: 57823, casen: 12.5, prov: 'Coyhaique' },
         'Lago Verde': { pop: 779, casen: 15.8, prov: 'Coyhaique' },
@@ -5580,6 +5766,10 @@
           w: config.w || 500,
           h: config.h || 370,
           timeWindow: config.timeWindow || 'all',
+          spatialLayer: config.spatialLayer || 'auto',
+          showBuffers: Boolean(config.showBuffers),
+          bufferRadiusM: Number(config.bufferRadiusM || 25000),
+          layers: config.layers || [],
           instance: null,
           resizeObserver: null
         };
@@ -5740,7 +5930,56 @@
           });
         }
 
-        let sampleRobustnessHtml = '';
+        let mapLayerControlHtml = '';
+        if (w.type === 'map') {
+          const curLayer = w.spatialLayer || 'auto';
+          const autoResolved = resolveActiveSpatialLayerKey(w);
+          const autoLabel = (SPATIAL_LAYERS_META[autoResolved] && SPATIAL_LAYERS_META[autoResolved].label) || autoResolved;
+          const catalog = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.spatialLayersCatalog) || [];
+          const optsHtml = catalog.map(l =>
+            `<option value="${l.id}" ${curLayer === l.id ? 'selected' : ''}>${l.label} (${l.count})</option>`
+          ).join('');
+          mapLayerControlHtml = `
+            <div class="card-map-layer-bar" id="map-layer-bar-${w.id}">
+              <span class="map-layer-lbl">Nodos (Y):</span>
+              <select class="map-spatial-layer-select" id="map-layer-select-${w.id}" aria-label="Seleccionar capa de nodos georreferenciados">
+                <option value="auto" ${curLayer === 'auto' ? 'selected' : ''}>Auto · ${autoLabel}</option>
+                ${optsHtml}
+                <option value="all" ${curLayer === 'all' ? 'selected' : ''}>Todos los Nodos Georreferenciados (342)</option>
+                <option value="none" ${curLayer === 'none' ? 'selected' : ''}>Solo Polígonos Comunales (Coropleta)</option>
+              </select>
+              <button type="button" class="btn-map-buffer-toggle ${w.showBuffers ? 'active' : ''}" id="map-buffer-btn-${w.id}" title="Activar/Desactivar anillos de cobertura o amenaza de 25 km (L.circle)">
+                [◎ Radio 25 km]
+              </button>
+            </div>
+          `;
+        }
+
+        function bindMapLayerControlEvents(cardEl, widget) {
+          const sel = cardEl.querySelector(`#map-layer-select-${widget.id}`);
+          if (sel && !sel._hasMapLayerListener) {
+            sel.addEventListener('change', (e) => {
+              e.stopPropagation();
+              widget.spatialLayer = sel.value;
+              renderWidgetVisual(widget);
+              autoSave();
+            });
+            sel._hasMapLayerListener = true;
+          }
+          const bufBtn = cardEl.querySelector(`#map-buffer-btn-${widget.id}`);
+          if (bufBtn && !bufBtn._hasBufferListener) {
+            bufBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              widget.showBuffers = !widget.showBuffers;
+              bufBtn.classList.toggle('active', widget.showBuffers);
+              renderWidgetVisual(widget);
+              autoSave();
+            });
+            bufBtn._hasBufferListener = true;
+          }
+        }
+
+                let sampleRobustnessHtml = '';
         if (w.isPerceptionMirror && w.sampleContract) {
           const sc = w.sampleContract;
           const sem = (sc.active_n >= 50) ? 'verde' : ((sc.active_n >= 30) ? 'amarillo' : 'rojo');
@@ -5820,6 +6059,19 @@
             sampleBar.remove();
           }
 
+          let mapBar = existingCard.querySelector(`#map-layer-bar-${w.id}`);
+          if (mapLayerControlHtml) {
+            if (!mapBar) {
+              const topBar = existingCard.querySelector('.widget-top-bar');
+              if (topBar) topBar.insertAdjacentHTML('afterend', mapLayerControlHtml);
+            } else {
+              mapBar.outerHTML = mapLayerControlHtml;
+            }
+            bindMapLayerControlEvents(existingCard, w);
+          } else if (mapBar) {
+            mapBar.remove();
+          }
+
           renderWidgetVisual(w);
           return;
         }
@@ -5883,6 +6135,7 @@
           </div>
 
           ${sampleRobustnessHtml}
+          ${mapLayerControlHtml}
 
           <!-- Contenedor Visual Central de la Tarjeta (100% alto y ancho) -->
           <div class="widget-stage-display" id="display-body-${w.id}">
@@ -5900,6 +6153,7 @@
         stage.appendChild(card);
         bindCardEvents(w, card);
         bindTimeWindowEvents(card, w);
+        bindMapLayerControlEvents(card, w);
         renderWidgetVisual(w);
 
         // ResizeObserver para adaptación perfecta de gráficos al tamaño de ventana
@@ -7247,14 +7501,10 @@
         }
 
         const btnMap = document.getElementById('tbBtnMap');
-        if (vX && vX.dim !== 'comuna') {
-          btnMap.classList.add('disabled');
-          btnMap.disabled = true;
-          btnMap.title = 'Mapa disponible solo para variables comunales';
-        } else {
+        if (btnMap) {
           btnMap.classList.remove('disabled');
           btnMap.disabled = false;
-          btnMap.title = 'Mapa Territorial';
+          btnMap.title = 'Mapa Cartográfico Multicapa (Polígonos Comunales + Nodos Georreferenciados)';
         }
 
         // Toggle contextual Excluir Coyhaique (únicamente si es serie Comunal)
@@ -9094,20 +9344,11 @@
           }
 
         } else if (w.type === 'map') {
-          if (payload.dim && payload.dim !== 'comuna') {
-            container.innerHTML = `
-              <div class="empty-dim-notice">
-                <h4>Visualización Espacial No Aplicable</h4>
-                <p>Esta variable posee dimensión <strong>${payload.dim.toUpperCase()}</strong>. El mapa territorial está configurado para representar datos a nivel de comunas de Aysén.</p>
-              </div>
-            `;
-            return;
-          }
-
+          container.style.position = 'relative';
           container.innerHTML = `<div id="map-${w.id}" class="map-container-box"></div>`;
           const map = L.map(`map-${w.id}`, {
-            center: [-46.5, -72.8],
-            zoom: 7,
+            center: [-46.15, -72.75],
+            zoom: 6,
             zoomControl: false
           });
           L.control.zoom({ position: 'topright' }).addTo(map);
@@ -9118,58 +9359,224 @@
             maxZoom: 19
           }).addTo(map);
 
-          const rawLabels = payload.labels || COMUNAS_ORDER;
-          const rawVec = payload.mode === 'univariate' ? payload.data : payload.dataY;
+          // Resolver capa de nodos puntuales georreferenciados (Nivel 2)
+          const activeLayerKey = resolveActiveSpatialLayerKey(w);
+          const allSpatialNodes = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.spatialNodes) || [];
+          const byLayerMap = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.spatialNodesByLayer) || {};
+          let activeNodes = [];
+          if (activeLayerKey === 'none') {
+            activeNodes = [];
+          } else if (activeLayerKey === 'all') {
+            activeNodes = allSpatialNodes;
+          } else {
+            activeNodes = byLayerMap[activeLayerKey] || allSpatialNodes.filter(n => n.layerKey === activeLayerKey);
+          }
 
-          const valuesMap = {};
-          rawLabels.forEach((lbl, i) => {
-            valuesMap[normStr(lbl)] = rawVec[i] || 0;
+          // Contar nodos activos por comuna
+          const comunaNodeCountMap = {};
+          COMUNAS_ORDER.forEach(c => { comunaNodeCountMap[normStr(c)] = 0; });
+          activeNodes.forEach(n => {
+            const cn = normStr(n.nombre_comuna || '');
+            if (comunaNodeCountMap[cn] !== undefined) comunaNodeCountMap[cn] += 1;
           });
 
-          const comunasVals = COMUNAS_ORDER.map(c => {
-            const cNorm = normStr(c);
-            let val = valuesMap[cNorm];
-            if (val === undefined) {
-              const matchK = Object.keys(valuesMap).find(k => k.includes(cNorm) || cNorm.includes(k));
-              val = matchK !== undefined ? valuesMap[matchK] : 0;
-            }
-            return val || 0;
-          });
+          // Resolver vector comunal para Coropleta de Fondo (Nivel 1 - Variable X)
+          const vXItem = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
+          const vYItem = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+          let choroLabel = 'Indicador Comunal';
+          let choroUnit = '';
+          const valuesMapX = {};
+          const valuesMapY = {};
 
-          const maxVal = Math.max(...comunasVals, 1);
-          const minVal = Math.min(...comunasVals, 0);
+          if (vXItem && vXItem.dim === 'comuna' && Array.isArray(vXItem.data)) {
+            choroLabel = vXItem.shortName || vXItem.name;
+            choroUnit = vXItem.unit || '';
+            const lbls = vXItem.labels || COMUNAS_ORDER;
+            lbls.forEach((l, idx) => { valuesMapX[normStr(l)] = Number(vXItem.data[idx]) || 0; });
+          } else if (payload.dim === 'comuna') {
+            choroLabel = payload.label || payload.nameX || 'Indicador Comunal';
+            choroUnit = payload.unit || payload.unitX || '';
+            const rawLabels = payload.labels || COMUNAS_ORDER;
+            const rawVec = payload.mode === 'univariate' ? payload.data : payload.dataX;
+            rawLabels.forEach((lbl, i) => { valuesMapX[normStr(lbl)] = Number(rawVec[i]) || 0; });
+          } else {
+            choroLabel = 'Densidad de Nodos Georreferenciados';
+            choroUnit = 'nodos';
+            COMUNAS_ORDER.forEach(c => {
+              valuesMapX[normStr(c)] = comunaNodeCountMap[normStr(c)] || 0;
+            });
+          }
 
-          COMUNAS_ORDER.forEach((c, idx) => {
-            const coords = COMUNA_COORDS[c];
-            if (!coords) return;
-            const val = comunasVals[idx];
-            const ratio = (val - minVal) / (maxVal - minVal || 1);
-            const radius = 6 + ratio * 14;
+          if (vYItem && vYItem.dim === 'comuna' && Array.isArray(vYItem.data)) {
+            const lblsY = vYItem.labels || COMUNAS_ORDER;
+            lblsY.forEach((l, idx) => { valuesMapY[normStr(l)] = Number(vYItem.data[idx]) || 0; });
+          }
 
-            const isSelected = selEntity && normStr(selEntity) === normStr(c);
-            const opacity = (!selEntity || isSelected) ? 0.85 : 0.25;
+          const getComunaVal = (mapObj, cName) => {
+            const cNorm = normStr(cName);
+            if (mapObj[cNorm] !== undefined) return mapObj[cNorm];
+            const matchK = Object.keys(mapObj).find(k => k.includes(cNorm) || cNorm.includes(k));
+            return matchK !== undefined ? mapObj[matchK] : 0;
+          };
 
-            const circle = L.circleMarker(coords, {
-              radius: isSelected ? radius + 4 : radius,
-              fillColor: w.color || '#00357f',
-              color: isSelected ? '#002254' : (w.color || '#0059c5'),
-              weight: isSelected ? 3 : 1.5,
-              opacity: opacity,
-              fillOpacity: opacity
+          const comunasValsX = COMUNAS_ORDER.map(c => getComunaVal(valuesMapX, c));
+          const maxValX = Math.max(...comunasValsX, 1);
+          const minValX = Math.min(...comunasValsX, 0);
+          const baseChoroColor = w.color || '#00357f';
+
+          // NIVEL 1: Poligonos Coropleticos Comunales (L.geoJSON)
+          const geojsonData = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.comunasGeoJSON) || null;
+          if (geojsonData && Array.isArray(geojsonData.features)) {
+            L.geoJSON(geojsonData, {
+              style: (feature) => {
+                const cName = (feature.properties && feature.properties.nombre) || 'Coyhaique';
+                const valX = getComunaVal(valuesMapX, cName);
+                const ratio = (valX - minValX) / (maxValX - minValX || 1);
+                const fillHex = getChoroplethFillColor(ratio, baseChoroColor);
+                const isSelected = selEntity && normStr(selEntity) === normStr(cName);
+                const fillOp = (!selEntity || isSelected) ? (isSelected ? 0.68 : 0.44) : 0.16;
+                return {
+                  fillColor: fillHex,
+                  color: isSelected ? '#001d4a' : '#1e293b',
+                  weight: isSelected ? 2.8 : 1.2,
+                  opacity: (!selEntity || isSelected) ? 0.85 : 0.35,
+                  fillOpacity: fillOp
+                };
+              },
+              onEachFeature: (feature, layer) => {
+                const props = feature.properties || {};
+                const cName = props.nombre || 'Coyhaique';
+                const valX = getComunaVal(valuesMapX, cName);
+                const valY = getComunaVal(valuesMapY, cName);
+                const nCount = comunaNodeCountMap[normStr(cName)] || 0;
+                const yRowHtml = (vYItem && vYItem.dim === 'comuna')
+                  ? `<br><span style="font-size: 0.70rem; color: #4a4745;">[Y] ${vYItem.shortName || vYItem.name}:</span> <strong style="font-family: var(--font-mono);">${valY.toLocaleString('es-CL')} ${vYItem.unit || ''}</strong>`
+                  : '';
+                layer.on('click', () => toggleCrossHighlight(cName, w.id));
+                layer.bindPopup(`
+                  <div style="font-family: var(--font-sans); padding: 2px; min-width: 195px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.60rem; color: #4a4745; text-transform: uppercase;">Polígono Comunal · Prov. ${props.provincia || 'Aysén'}</div>
+                    <strong style="color: #00357f; font-size: 0.88rem;">Comuna de ${cName}</strong><br>
+                    <span style="font-size: 0.70rem; color: #4a4745;">[X] ${choroLabel}:</span>
+                    <strong style="font-family: var(--font-mono); font-size: 0.84rem;">${valX.toLocaleString('es-CL')} ${choroUnit}</strong>
+                    ${yRowHtml}
+                    <div style="margin-top: 4px; padding-top: 3px; border-top: 1px solid rgba(0,0,0,0.08); font-family: var(--font-mono); font-size: 0.66rem; color: #0059c5;">
+                      Nodos en comuna (${(SPATIAL_LAYERS_META[activeLayerKey] || {}).label || activeLayerKey}): <strong>${nCount}</strong>
+                    </div>
+                  </div>
+                `);
+              }
             }).addTo(map);
+          }
 
-            circle.on('click', () => toggleCrossHighlight(c, w.id));
+          // NIVEL 3: Radios de Cobertura / Amenaza en metros reales (L.circle)
+          let insideBufferCount = 0;
+          let evalNodesTotal = activeNodes.length;
+          const bufferRadiusM = Number(w.bufferRadiusM || 25000);
+          const bufferRadiusKm = bufferRadiusM / 1000;
+          if (w.showBuffers) {
+            let bufferCenters = activeNodes.filter(n => n.bufferGenerator);
+            if (bufferCenters.length === 0) {
+              bufferCenters = allSpatialNodes.filter(n => (n.layerKey === 'volcanes_sismos' || n.layerKey === 'hospitales_postas') && n.bufferGenerator);
+            }
+            bufferCenters.forEach(bc => {
+              L.circle([bc.lat, bc.lon], {
+                radius: bufferRadiusM,
+                color: bc.color || '#dc2626',
+                weight: 1.3,
+                dashArray: '4,4',
+                fillColor: bc.color || '#dc2626',
+                fillOpacity: 0.08,
+                interactive: false
+              }).addTo(map);
+            });
 
-            circle.bindPopup(`
-              <div style="font-family: var(--font-sans); padding: 2px;">
-                <strong style="color: #00357f; font-size: 0.88rem;">${c}</strong><br>
-                <span style="font-size: 0.72rem; color: #524f4b;">${payload.label || payload.nameY || 'Valor'}:</span><br>
-                <span style="font-family: var(--font-mono); font-size: 0.92rem; font-weight: 700;">${val.toLocaleString('es-CL')} ${payload.unit || payload.unitY}</span>
-              </div>
-            `);
+            // Evaluar cuantos nodos productivos/sociales caen dentro del radio de 25 km
+            const targetEvalNodes = activeNodes.length > 0 ? activeNodes : allSpatialNodes;
+            evalNodesTotal = targetEvalNodes.length;
+            targetEvalNodes.forEach(tn => {
+              const isInside = bufferCenters.some(bc => haversineDistanceKm(tn.lat, tn.lon, bc.lat, bc.lon) <= bufferRadiusKm);
+              if (isInside) insideBufferCount += 1;
+            });
+          }
 
-            if (isSelected) circle.openPopup();
-          });
+          // NIVEL 2: Capa de Nodos Puntuales Georreferenciados (L.circleMarker)
+          if (activeNodes.length > 0) {
+            const mags = activeNodes.map(n => Number(n.magnitudeValue) || 1);
+            const minMag = Math.min(...mags, 0);
+            const maxMag = Math.max(...mags, 1);
+
+            activeNodes.forEach(n => {
+              const magRatio = (Number(n.magnitudeValue || 1) - minMag) / (maxMag - minMag || 1);
+              const ptRadius = 5 + magRatio * 7.5;
+              const isComunaSelected = selEntity && normStr(selEntity) === normStr(n.nombre_comuna);
+              const markerOpacity = (!selEntity || isComunaSelected) ? 0.92 : 0.28;
+              const valComunaX = getComunaVal(valuesMapX, n.nombre_comuna);
+
+              const marker = L.circleMarker([n.lat, n.lon], {
+                radius: isComunaSelected ? ptRadius + 2.5 : ptRadius,
+                fillColor: n.color || w.color || '#0059c5',
+                color: '#ffffff',
+                weight: isComunaSelected ? 2.2 : 1.4,
+                opacity: markerOpacity,
+                fillOpacity: markerOpacity
+              }).addTo(map);
+
+              marker.on('click', () => toggleCrossHighlight(n.nombre_comuna, w.id));
+
+              marker.bindPopup(`
+                <div style="font-family: var(--font-sans); padding: 2px; min-width: 215px;">
+                  <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${n.color || '#00357f'}; font-weight: 700;">${n.tipo}</div>
+                  <strong style="color: #1c1b1b; font-size: 0.84rem; display: block; margin: 2px 0;">${n.nombre}</strong>
+                  <div style="font-size: 0.69rem; color: #4a4745; margin-bottom: 4px;">
+                    Localidad: <strong>${n.localidad}</strong> · Comuna: <strong>${n.nombre_comuna}</strong><br>
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem;">Coord: (${n.lat.toFixed(4)}, ${n.lon.toFixed(4)})</span>
+                  </div>
+                  <div style="background: #f4efec; padding: 4px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 0.69rem; margin-bottom: 4px;">
+                    <strong>${n.magnitudeLabel || 'Magnitud'}:</strong> ${Number(n.magnitudeValue).toLocaleString('es-CL')} ${n.magnitudeUnit || ''}<br>
+                    <span>Coropleta Comunal [X]: <strong>${valComunaX.toLocaleString('es-CL')} ${choroUnit}</strong></span>
+                  </div>
+                  <div style="font-size: 0.64rem; color: #524f4b;">
+                    Titular: <strong>${n.titular}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Fuente oficial ↗</a>
+                  </div>
+                </div>
+              `);
+            });
+          }
+
+          // Leyenda Bivariada Automatica en Esquina Inferior Izquierda
+          const ramp = getChoroplethRampColors(baseChoroColor);
+          const layerInfo = SPATIAL_LAYERS_META[activeLayerKey] || { label: activeLayerKey, color: '#0059c5' };
+          const bufferLegendHtml = w.showBuffers
+            ? `<div class="legend-row" style="color: #b91c1c; font-weight: 600;">
+                 <span>[◎ ${bufferRadiusKm} km]</span>
+                 <span>${insideBufferCount}/${evalNodesTotal} nodos en radio</span>
+               </div>`
+            : '';
+
+          const legendDiv = document.createElement('div');
+          legendDiv.className = 'map-bivariate-legend';
+          legendDiv.innerHTML = `
+            <div style="font-weight: 700; font-size: 0.62rem; color: #00357f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${choroLabel}">
+              [X] Coropleta: ${choroLabel}
+            </div>
+            <div class="legend-row">
+              <span>${minValX.toLocaleString('es-CL')}</span>
+              <span class="legend-ramp">
+                <span style="background:${ramp[0]}"></span>
+                <span style="background:${ramp[1]}"></span>
+                <span style="background:${ramp[2]}"></span>
+                <span style="background:${ramp[3]}"></span>
+              </span>
+              <span>${maxValX.toLocaleString('es-CL')} ${choroUnit}</span>
+            </div>
+            <div class="legend-row" style="margin-top: 3px;">
+              <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${layerInfo.color}; border:1px solid #fff;"></span>
+              <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${layerInfo.label}">[Y] ${layerInfo.label} (n=${activeNodes.length})</span>
+            </div>
+            ${bufferLegendHtml}
+          `;
+          container.appendChild(legendDiv);
 
           w.instance = map;
           setTimeout(() => map.invalidateSize(), 150);
@@ -9811,9 +10218,12 @@
         if (p.format_type === 'map') {
           chartWidget = createWidget('map', {
             title: p.titulo,
-            varX: cfg.varX || (p.preset_id === 'CP_01' ? 'total_espacios_culturales' : (p.preset_id === 'CT_01' ? 'total_proyectos_ctci' : 'prestadores_sernatur')),
+            varX: cfg.varX || (p.preset_id === 'CP_01' ? 'infraestructura_cultural_total' : (p.preset_id === 'CT_01' ? 'proyectos_anid_total' : 'visitantes_snaspe')),
             varY: cfg.varY || null,
             color: hubColor,
+            spatialLayer: cfg.spatialLayer || 'auto',
+            showBuffers: Boolean(cfg.showBuffers),
+            bufferRadiusM: Number(cfg.bufferRadiusM || 25000),
             layers: cfg.layers || ['municipios_sedes'],
             x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h
           });
@@ -11400,32 +11810,32 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         document.getElementById('tbBtnBar').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'bar'; renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'chart'; w.chartType = 'bar'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnLine').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'line'; renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'chart'; w.chartType = 'line'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnScatter').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'scatter'; renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'chart'; w.chartType = 'scatter'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnMap').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'map'; renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'map'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnTable').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'table'; renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'table'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnKPI').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'kpi'; renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'kpi'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
 
         document.querySelectorAll('.color-swatch-btn').forEach(btn => {

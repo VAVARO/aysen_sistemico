@@ -1324,6 +1324,25 @@ def build_hubs_gallery(barometro_data):
         }
     }
 
+
+    _map_layers = {
+        'hub_01_01': ('gobernanza_obras', False, 25000),
+        'hub_02_01': ('centrales_electricas', True, 25000),
+        'hub_03_01': ('concesiones_acuicolas', False, 25000),
+        'hub_04_01': ('proyectos_seia', False, 25000),
+        'hub_05_01': ('volcanes_sismos', True, 25000),
+        'hub_06_01': ('parques_snaspe', False, 25000),
+        'hub_07_01': ('estaciones_monitoreo', True, 25000),
+        'hub_08_01': ('hospitales_postas', True, 25000),
+    }
+    for _hid, _hgroup in gallery.items():
+        for _p in _hgroup.get('presets', []):
+            _pid = _p.get('preset_id')
+            if _pid in _map_layers:
+                _sl, _sb, _br = _map_layers[_pid]
+                _p['config']['spatialLayer'] = _sl
+                _p['config']['showBuffers'] = _sb
+                _p['config']['bufferRadiusM'] = _br
     return gallery
 
 def build_edges_inter_hub(barometro_data):
@@ -1950,6 +1969,19 @@ def build_extension_gallery(barometro_data=None):
             ]
         }
     }
+
+    _ext_map_layers = {
+        'CP_01': ('museos_cultura', False, 25000),
+        'CT_01': ('centros_ctci', False, 25000),
+    }
+    for _mid, _mgroup in ext_gallery.items():
+        for _p in _mgroup.get('presets', []):
+            _pid = _p.get('preset_id')
+            if _pid in _ext_map_layers:
+                _sl, _sb, _br = _ext_map_layers[_pid]
+                _p['config']['spatialLayer'] = _sl
+                _p['config']['showBuffers'] = _sb
+                _p['config']['bufferRadiusM'] = _br
     return ext_gallery
 
 if __name__ == "__main__":

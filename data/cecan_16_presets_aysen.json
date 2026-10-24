@@ -623,7 +623,10 @@
               "question_id": "G1_F",
               "label": "Decisión descentralizada en obras públicas",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "gobernanza_obras",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Superpone los 10 municipios de Aysén sobre la red de conectividad física y digital.",
           "why_complex_system": "Sistemas anidados: los municipios más dependientes territorialmente coinciden con las zonas de mayor aislamiento vial."
@@ -980,7 +983,10 @@
               "question_id": "B3_I",
               "label": "Acceso a conectividad digital (1-7)",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "centrales_electricas",
+            "showBuffers": true,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Georreferenciación de los 4 sistemas eléctricos aislados y los nodos FOA en localidades remotas.",
           "why_complex_system": "Acoplamiento crítico: la resiliencia de la red de salud rural depende de la autonomía energética de los micro-generadores locales."
@@ -1333,7 +1339,10 @@
               "question_id": "I1_D",
               "label": "Importancia percibida de salmonicultura",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "concesiones_acuicolas",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Mapeo completo de las 745 concesiones salmoneras otorgadas en los litorales de Cisnes, Aysén, Guaitecas y Tortel.",
           "why_complex_system": "Conflicto de uso del maritorio: superposición entre enclaves industriales intensivos y corredores de conservación turística."
@@ -1685,7 +1694,10 @@
               "question_id": "B1",
               "label": "Percepción momento actual región",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "proyectos_seia",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Distribución espacial de 3.355 millones de USD en inversión ambientalmente evaluada en Aysén.",
           "why_complex_system": "Acoplamiento territorial: las mayores concentraciones de inversión minera y de generación coinciden con cuencas hídricas sensibles."
@@ -2037,7 +2049,10 @@
               "question_id": "B3_F",
               "label": "Seguridad ciudadana (nota 1-7)",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "volcanes_sismos",
+            "showBuffers": true,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Red de seguridad pública y pasos fronterizos DIFROL en un territorio de más de 107.000 km².",
           "why_complex_system": "Vulnerabilidad territorial múltiple: los recintos policiales y de rescate cubren radios operacionales gigantescos frente a amenazas naturales combinadas."
@@ -2389,7 +2404,10 @@
               "question_id": "I1_C",
               "label": "Importancia del turismo (Barómetro)",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "parques_snaspe",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Distribución de los más de 1.100 prestadores SERNATUR en torno a las áreas silvestres protegidas.",
           "why_complex_system": "Atracción nodal: la belleza escénica de los parques actúa como ancla que activa redes de hospedaje, guías y gastronomía en los poblados aledaños."
@@ -2741,7 +2759,10 @@
               "question_id": "B3_G",
               "label": "Acceso a medioambiente limpio (1-7)",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "estaciones_monitoreo",
+            "showBuffers": true,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "La riqueza ecosistémica de Aysén alberga más de 5,7 millones de ha de bosque nativo y el 70% de la población mundial de huemules.",
           "why_complex_system": "Fragilidad y refugio: la cuenca del Baker y los fiordos actúan como santuarios biológicos frente a la fragmentación antropogénica."
@@ -3093,7 +3114,10 @@
               "question_id": "B3_A",
               "label": "Acceso a salud de calidad (1-7)",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "hospitales_postas",
+            "showBuffers": true,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Georreferenciación de los únicos 5 hospitales y las 32 postas rurales que atienden a los 100.745 habitantes de la región.",
           "why_complex_system": "Puntos de fallo único: el Hospital Regional de Coyhaique concentra la totalidad de camas UCI y especialistas de alta complejidad para 108.000 km²."
@@ -3448,7 +3472,10 @@
               "question_id": "B4_B",
               "label": "Oportunidades de recreación y cultura",
               "show_sample_n": true
-            }
+            },
+            "spatialLayer": "museos_cultura",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Distribución geográfica de la infraestructura cultural y patrimonial en las 10 comunas de Aysén.",
           "why_complex_system": "Concentración espacial y aislamiento: la mayor densidad patrimonial protegida coexiste con asimetrías de conectividad física en comunas australes e insulares."
@@ -3833,7 +3860,10 @@
               "estaciones_campo",
               "cuencas_dga",
               "snaspe_conaf"
-            ]
+            ],
+            "spatialLayer": "centros_ctci",
+            "showBuffers": false,
+            "bufferRadiusM": 25000
           },
           "what_it_shows": "Malla territorial de plataformas científicas permanentes y estaciones de monitoreo ambiental en Aysén.",
           "why_complex_system": "Acoplamiento socio-ecológico: la ubicación de sensores e investigadores responde a la singularidad de ecosistemas vulnerables como glaciares y fiordos."

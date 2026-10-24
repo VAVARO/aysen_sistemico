@@ -1894,6 +1894,689 @@ if (nullCells > 0) {
   throw new Error(`Se detectaron ${nullCells} celdas nulas en el bundle.`);
 }
 
+
+// ============================================================================
+// 5.5 GEOCODIFICADOR CANONICO DE LOCALIDADES Y CONSOLIDACION DE SPATIAL NODES
+// ============================================================================
+const LOCALIDADES_AYSEN_COORDS = {
+  'Melinka': { lat: -43.8960, lon: -73.7480, comuna_ine: '11203', comuna: 'Guaitecas' },
+  'Repollal': { lat: -43.9320, lon: -73.6850, comuna_ine: '11203', comuna: 'Guaitecas' },
+  'Repollal Bajo': { lat: -43.9410, lon: -73.6720, comuna_ine: '11203', comuna: 'Guaitecas' },
+  'Puerto Gala': { lat: -44.1810, lon: -73.1250, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Isla Toto': { lat: -44.1830, lon: -73.1280, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Puerto Gaviota': { lat: -44.9180, lon: -73.3210, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Raul Marin Balmaceda': { lat: -43.7820, lon: -72.9540, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Puerto Raul Marin Balmaceda': { lat: -43.7820, lon: -72.9540, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Melimoyu': { lat: -44.0850, lon: -72.8820, comuna_ine: '11202', comuna: 'Cisnes' },
+  'La Junta': { lat: -43.9730, lon: -72.4050, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Puyuhuapi': { lat: -44.3250, lon: -72.5580, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Puerto Cisnes': { lat: -44.7430, lon: -72.6990, comuna_ine: '11202', comuna: 'Cisnes' },
+  'Lago Verde': { lat: -44.2410, lon: -71.8465, comuna_ine: '11102', comuna: 'Lago Verde' },
+  'Villa La Tapera': { lat: -44.6520, lon: -71.6810, comuna_ine: '11102', comuna: 'Lago Verde' },
+  'La Tapera': { lat: -44.6520, lon: -71.6810, comuna_ine: '11102', comuna: 'Lago Verde' },
+  'Villa Amengual': { lat: -44.7540, lon: -72.2080, comuna_ine: '11102', comuna: 'Lago Verde' },
+  'Puerto Aguirre': { lat: -45.1630, lon: -73.5220, comuna_ine: '11201', comuna: 'Aysén' },
+  'Caleta Andrade': { lat: -45.1540, lon: -73.5080, comuna_ine: '11201', comuna: 'Aysén' },
+  'Estero Copa': { lat: -45.1460, lon: -73.5350, comuna_ine: '11201', comuna: 'Aysén' },
+  'Islas Huichas': { lat: -45.1590, lon: -73.5180, comuna_ine: '11201', comuna: 'Aysén' },
+  'Villa Manihuales': { lat: -45.1740, lon: -72.1460, comuna_ine: '11201', comuna: 'Aysén' },
+  'Manihuales': { lat: -45.1740, lon: -72.1460, comuna_ine: '11201', comuna: 'Aysén' },
+  'Puerto Aysen': { lat: -45.4050, lon: -72.6930, comuna_ine: '11201', comuna: 'Aysén' },
+  'Ribera Sur': { lat: -45.4120, lon: -72.6940, comuna_ine: '11201', comuna: 'Aysén' },
+  'Puerto Chacabuco': { lat: -45.4650, lon: -72.8250, comuna_ine: '11201', comuna: 'Aysén' },
+  'Laguna San Rafael': { lat: -46.6520, lon: -73.8540, comuna_ine: '11201', comuna: 'Aysén' },
+  'Coyhaique': { lat: -45.5712, lon: -72.0685, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Teniente Vidal': { lat: -45.5940, lon: -72.1060, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Alto Baguales': { lat: -45.5350, lon: -72.0120, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Villa Ortega': { lat: -45.3780, lon: -71.9850, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Villa Nirehuao': { lat: -45.2420, lon: -71.7250, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Nirehuao': { lat: -45.2420, lon: -71.7250, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Arroyo El Gato': { lat: -45.3120, lon: -71.5680, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'El Blanco': { lat: -45.7850, lon: -71.9120, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Balmaceda': { lat: -45.9160, lon: -71.6890, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Valle Simpson': { lat: -45.7320, lon: -72.1080, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Lago Atravesado': { lat: -45.6880, lon: -72.2850, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'El Salto': { lat: -45.6620, lon: -72.0350, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Lago Pollux': { lat: -45.6940, lon: -71.8620, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Vista Hermosa': { lat: -45.8250, lon: -71.8420, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Los Torreones': { lat: -45.4850, lon: -72.3450, comuna_ine: '11101', comuna: 'Coyhaique' },
+  'Villa Cerro Castillo': { lat: -46.1210, lon: -72.1540, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Cerro Castillo': { lat: -46.1210, lon: -72.1540, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Puerto Ingeniero Ibanez': { lat: -46.2910, lon: -71.9360, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Puerto Ibanez': { lat: -46.2910, lon: -71.9360, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Bahia Murta': { lat: -46.4580, lon: -72.6710, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Puerto Rio Tranquilo': { lat: -46.6240, lon: -72.6760, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Rio Tranquilo': { lat: -46.6240, lon: -72.6760, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Puerto Sanchez': { lat: -46.5820, lon: -72.5580, comuna_ine: '11402', comuna: 'Río Ibáñez' },
+  'Chile Chico': { lat: -46.5410, lon: -71.7220, comuna_ine: '11401', comuna: 'Chile Chico' },
+  'Fachinal': { lat: -46.5680, lon: -72.1850, comuna_ine: '11401', comuna: 'Chile Chico' },
+  'Mallin Grande': { lat: -46.7520, lon: -72.5280, comuna_ine: '11401', comuna: 'Chile Chico' },
+  'Puerto Guadal': { lat: -46.8480, lon: -72.7080, comuna_ine: '11401', comuna: 'Chile Chico' },
+  'Puerto Bertrand': { lat: -47.0180, lon: -72.8250, comuna_ine: '11401', comuna: 'Chile Chico' },
+  'Jeinimeni': { lat: -46.8350, lon: -71.9820, comuna_ine: '11401', comuna: 'Chile Chico' },
+  'Cochrane': { lat: -47.2540, lon: -72.5710, comuna_ine: '11301', comuna: 'Cochrane' },
+  'Valle Chacabuco': { lat: -47.1180, lon: -72.3850, comuna_ine: '11301', comuna: 'Cochrane' },
+  'San Lorenzo': { lat: -47.4820, lon: -72.3650, comuna_ine: '11301', comuna: 'Cochrane' },
+  'Lago Vargas': { lat: -47.6650, lon: -72.8150, comuna_ine: '11301', comuna: 'Cochrane' },
+  'Caleta Tortel': { lat: -47.7950, lon: -73.5350, comuna_ine: '11303', comuna: 'Tortel' },
+  'Puerto Yungay': { lat: -47.9320, lon: -73.3280, comuna_ine: '11303', comuna: 'Tortel' },
+  'Rio Bravo': { lat: -48.0150, lon: -73.1650, comuna_ine: '11302', comuna: "O'Higgins" },
+  'Villa O\'Higgins': { lat: -48.4680, lon: -72.5600, comuna_ine: '11302', comuna: "O'Higgins" },
+  'Candelario Mansilla': { lat: -48.8650, lon: -72.6420, comuna_ine: '11302', comuna: "O'Higgins" }
+};
+
+function normAscii(str) {
+  return String(str || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+const comunaByIneMap = {};
+comunasBase.forEach(c => {
+  comunaByIneMap[String(c.comuna_ine)] = c;
+});
+
+function geocodeEntity(item, fallbackIne, idxOffset) {
+  const rawLat = Number(item.lat ?? item.latitud ?? (item.coordenadas && item.coordenadas.lat));
+  const rawLon = Number(item.lng ?? item.lon ?? item.longitud ?? (item.coordenadas && (item.coordenadas.lng ?? item.coordenadas.lon)));
+  if (Number.isFinite(rawLat) && Number.isFinite(rawLon) && rawLat <= -43.5 && rawLat >= -49.5 && rawLon <= -71.0 && rawLon >= -76.0) {
+    return {
+      lat: Number(rawLat.toFixed(4)),
+      lon: Number(rawLon.toFixed(4)),
+      localidad: item.localidad || item.ubicacion || item.comuna || (comunaByIneMap[String(item.comuna_ine || fallbackIne)] || {}).nombre || 'Aysén',
+      comuna_ine: String(item.comuna_ine || fallbackIne || '11101'),
+      geocodedBy: 'explicit_coords'
+    };
+  }
+  const searchBlob = normAscii(`${item.nombre || ''} ${item.localidad || ''} ${item.ubicacion || ''} ${item.comuna || ''}`);
+  const keys = Object.keys(LOCALIDADES_AYSEN_COORDS).sort((a, b) => b.length - a.length);
+  for (const k of keys) {
+    if (searchBlob.includes(normAscii(k))) {
+      const loc = LOCALIDADES_AYSEN_COORDS[k];
+      const angle = ((idxOffset || 0) * 137.5) * (Math.PI / 180);
+      const r = ((idxOffset || 0) % 7) * 0.0035;
+      const lat = Math.max(-49.28, Math.min(-43.62, loc.lat + Math.sin(angle) * r));
+      const lon = Math.max(-75.78, Math.min(-71.05, loc.lon + Math.cos(angle) * r));
+      return {
+        lat: Number(lat.toFixed(4)),
+        lon: Number(lon.toFixed(4)),
+        localidad: k,
+        comuna_ine: String(item.comuna_ine || fallbackIne || loc.comuna_ine),
+        geocodedBy: 'LOCALIDADES_AYSEN_COORDS'
+      };
+    }
+  }
+  const fallbackComuna = comunaByIneMap[String(fallbackIne || item.comuna_ine || '11101')] || comunasBase[0];
+  const angle = ((idxOffset || 1) * 137.5) * (Math.PI / 180);
+  const r = 0.005 * (((idxOffset || 1) % 6) + 1);
+  return {
+    lat: Number((fallbackComuna.lat + Math.sin(angle) * r).toFixed(4)),
+    lon: Number((fallbackComuna.lng + Math.cos(angle) * r).toFixed(4)),
+    localidad: fallbackComuna.cabecera || fallbackComuna.nombre,
+    comuna_ine: String(fallbackComuna.comuna_ine),
+    geocodedBy: 'comuna_cabecera_fallback'
+  };
+}
+
+// 5.5.1 Construir GeoJSON de Poligonos Comunales (comunasGeoJSON)
+const comunasGeoJSON = {
+  type: 'FeatureCollection',
+  features: comunasBase.map(c => ({
+    type: 'Feature',
+    properties: {
+      codigo_comuna: c.codigo_comuna,
+      comuna_ine: String(c.comuna_ine),
+      nombre: c.nombre,
+      provincia: c.provincia,
+      cabecera: c.cabecera,
+      lat: c.lat,
+      lon: c.lng,
+      superficie_km2: (c.demografia || {}).superficie_km2 || 0,
+      poblacion_2024: (c.demografia || {}).censo_2024_poblacion || 0
+    },
+    geometry: c.geometria_geojson || {
+      type: 'Polygon',
+      coordinates: [[
+        [c.lng - 0.35, c.lat + 0.25],
+        [c.lng + 0.35, c.lat + 0.25],
+        [c.lng + 0.35, c.lat - 0.25],
+        [c.lng - 0.35, c.lat - 0.25],
+        [c.lng - 0.35, c.lat + 0.25]
+      ]]
+    }
+  }))
+};
+
+// 5.5.2 Consolidar spatialNodes desde todas las fuentes del repositorio
+const spatialNodes = [];
+const seenSpatialIds = new Set();
+
+function pushSpatialNode(raw) {
+  const id = String(raw.id || `node_${spatialNodes.length + 1}`);
+  if (seenSpatialIds.has(id)) return;
+  seenSpatialIds.add(id);
+
+  const geo = geocodeEntity(raw, raw.comuna_ine, spatialNodes.length + 1);
+  const cObj = comunaByIneMap[String(geo.comuna_ine)] || comunasBase[0];
+  const magVal = Number(raw.magnitudeValue);
+  spatialNodes.push({
+    id,
+    nombre: String(raw.nombre || id),
+    tipo: String(raw.tipo || 'Nodo Territorial'),
+    layerKey: String(raw.layerKey || 'gobernanza_obras'),
+    hubId: String(raw.hubId || 'gobernanza'),
+    comuna_ine: String(geo.comuna_ine),
+    nombre_comuna: String(raw.nombre_comuna || cObj.nombre || 'Coyhaique'),
+    localidad: String(geo.localidad || cObj.cabecera || 'Coyhaique'),
+    lat: geo.lat,
+    lon: geo.lon,
+    magnitudeValue: Number.isFinite(magVal) && magVal > 0 ? Number(magVal.toFixed(2)) : 10,
+    magnitudeUnit: String(raw.magnitudeUnit || 'unid.'),
+    magnitudeLabel: String(raw.magnitudeLabel || 'Magnitud'),
+    titular: String(raw.titular || 'Institucion Oficial'),
+    sourceUrl: String(raw.sourceUrl || 'https://datos.gob.cl'),
+    bufferGenerator: Boolean(raw.bufferGenerator),
+    bufferRadiusM: Number(raw.bufferRadiusM || 25000),
+    color: String(raw.color || '#00357f'),
+    geocodedBy: geo.geocodedBy
+  });
+}
+
+// 1) Hub Gobernanza: 01_gob_poder_finanzas.json (13 nodos)
+(wp01.nodos_georreferenciados || []).forEach(n => {
+  pushSpatialNode({
+    id: `gob_${n.id}`,
+    nombre: n.nombre,
+    tipo: n.tipo || 'Municipalidad / Gobernacion',
+    layerKey: 'gobernanza_obras',
+    hubId: 'gobernanza',
+    comuna_ine: n.comuna_ine,
+    lat: n.lat,
+    lon: n.lng,
+    magnitudeValue: n.presupuesto_anual_mclp || n.presupuesto_fndr_anual_mclp || 4500,
+    magnitudeUnit: 'M$',
+    magnitudeLabel: 'Presupuesto Anual',
+    titular: n.alcalde_titular || n.gobernador_regional || n.delegado_presidencial || 'Estado de Chile',
+    sourceUrl: n.source_url || 'https://datos.sinim.gov.cl/',
+    bufferGenerator: false,
+    color: '#4338ca'
+  });
+});
+
+// 2) Hub Energia y Telecom: 02_energia_combustibles_telecom.json + CNE + FOA
+(wp02.nodos_georreferenciados || []).forEach(n => {
+  const isPower = Number(n.potencia_mw) > 0;
+  const isFoa = Number(n.capacidad_diseno_tbps) > 0;
+  pushSpatialNode({
+    id: `ene_${n.id}`,
+    nombre: n.nombre,
+    tipo: n.tipo || 'Infraestructura Energetica / Telecom',
+    layerKey: 'centrales_electricas',
+    hubId: 'energia',
+    comuna_ine: n.comuna_ine,
+    lat: n.lat,
+    lon: n.lng,
+    magnitudeValue: isPower ? n.potencia_mw : (isFoa ? n.capacidad_diseno_tbps : (n.capacidad_m3 || 12)),
+    magnitudeUnit: isPower ? 'MW' : (isFoa ? 'Tbps' : 'm3'),
+    magnitudeLabel: isPower ? 'Potencia Instalada' : (isFoa ? 'Capacidad Troncal FOA' : 'Capacidad'),
+    titular: n.operador || n.operador_troncal || 'Edelaysen / SUBTEL',
+    sourceUrl: n.source_url || 'https://energiaabierta.cl/',
+    bufferGenerator: true,
+    bufferRadiusM: 25000,
+    color: '#0284c7'
+  });
+});
+const cneRawPath = path.join(ROOT, 'data/raw/energia_telecom/catastro_centrales_electricas_cne_edelaysen.json');
+if (fs.existsSync(cneRawPath)) {
+  const cneRaw = readJson('data/raw/energia_telecom/catastro_centrales_electricas_cne_edelaysen.json');
+  (cneRaw.centrales || []).forEach(c => {
+    pushSpatialNode({
+      id: `ene_cne_${c.id}`,
+      nombre: c.nombre,
+      tipo: c.tipo || 'Central Electrica CNE',
+      layerKey: 'centrales_electricas',
+      hubId: 'energia',
+      comuna_ine: c.comuna_ine,
+      lat: c.lat,
+      lon: c.lng,
+      magnitudeValue: c.potencia_mw || 2.5,
+      magnitudeUnit: 'MW',
+      magnitudeLabel: 'Potencia Instalada',
+      titular: c.operador || 'Edelaysen S.A.',
+      sourceUrl: 'https://energiaabierta.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#0284c7'
+    });
+  });
+}
+const foaRawPath = path.join(ROOT, 'data/raw/energia_telecom/subtel_foa_conectividad_movil_catastro.json');
+if (fs.existsSync(foaRawPath)) {
+  const foaRaw = readJson('data/raw/energia_telecom/subtel_foa_conectividad_movil_catastro.json');
+  (foaRaw.nodos || []).forEach(fn => {
+    pushSpatialNode({
+      id: `ene_foa_${fn.id}`,
+      nombre: fn.nombre,
+      tipo: fn.tipo || 'Nodo Fibra Optica Austral',
+      layerKey: 'centrales_electricas',
+      hubId: 'energia',
+      comuna_ine: fn.comuna_ine,
+      lat: fn.lat,
+      lon: fn.lng,
+      magnitudeValue: fn.capacidad_tbps || 16.0,
+      magnitudeUnit: 'Tbps',
+      magnitudeLabel: 'Capacidad FOA',
+      titular: fn.operador || 'CTR / SUBTEL',
+      sourceUrl: 'https://www.subtel.gob.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#0284c7'
+    });
+  });
+}
+
+// 3) Hub Salmonicultura y Maritorio: 03_concesiones_tierra_mar.json (38 nodos)
+(wp03.nodos_georreferenciados || []).forEach(n => {
+  const hasConc = Number(n.concesiones_integradas) > 0;
+  const hasPesc = Number(n.pescadores_inscritos) > 0;
+  pushSpatialNode({
+    id: `sal_${n.id}`,
+    nombre: n.nombre,
+    tipo: n.tipo || 'Concesion Acuicola / Maritorio',
+    layerKey: 'concesiones_acuicolas',
+    hubId: 'salmonicultura',
+    comuna_ine: n.comuna_ine,
+    lat: n.lat,
+    lon: n.lng,
+    magnitudeValue: hasConc ? n.concesiones_integradas : (hasPesc ? n.pescadores_inscritos : (n.superficie_ha || 24)),
+    magnitudeUnit: hasConc ? 'concesiones' : (hasPesc ? 'pescadores' : 'ha'),
+    magnitudeLabel: hasConc ? 'Concesiones Acuicolas' : (hasPesc ? 'Registro Pesquero Artesanal' : 'Superficie'),
+    titular: n.holdings_principales || n.empresa_madre || n.operador_titular || n.administracion || 'SUBPESCA / SERNAPESCA',
+    sourceUrl: n.source_url || 'https://www.subpesca.cl/',
+    bufferGenerator: false,
+    color: '#0059c5'
+  });
+});
+
+// 4) Hub Inversion y SEIA: 04_inversion_seia_economia.json + SEIA + JAC
+(wp04.nodos_georreferenciados || []).forEach(n => {
+  pushSpatialNode({
+    id: `inv_${n.id}`,
+    nombre: n.nombre,
+    tipo: n.tipo || 'Proyecto de Inversion SEIA / MOP',
+    layerKey: 'proyectos_seia',
+    hubId: 'inversion',
+    comuna_ine: n.comuna_ine,
+    lat: n.lat,
+    lon: n.lng,
+    magnitudeValue: n.monto_inversion_mmusd || n.capacidad_mw || n.longitud_km || 18.5,
+    magnitudeUnit: n.monto_inversion_mmusd ? 'MM US$' : (n.capacidad_mw ? 'MW' : 'km'),
+    magnitudeLabel: n.monto_inversion_mmusd ? 'Inversion SEIA' : 'Escala Tecnica',
+    titular: n.titular || 'SEA SEIA / MOP',
+    sourceUrl: n.source_url || 'https://seia.sea.gob.cl/',
+    bufferGenerator: false,
+    color: '#0f766e'
+  });
+});
+const jacRawPath = path.join(ROOT, 'data/raw/inversion_economia/jac_conectividad_aerea_aysen.json');
+if (fs.existsSync(jacRawPath)) {
+  const jacRaw = readJson('data/raw/inversion_economia/jac_conectividad_aerea_aysen.json');
+  (jacRaw.aeropuertos_y_aerodromos_comerciales || []).forEach((ae, idx) => {
+    pushSpatialNode({
+      id: `inv_jac_${idx + 1}`,
+      nombre: ae.nombre,
+      tipo: 'Aerodromo Comercial DGAC / JAC',
+      layerKey: 'proyectos_seia',
+      hubId: 'inversion',
+      comuna: ae.comuna,
+      magnitudeValue: ae.pasajeros_anuales || 3500,
+      magnitudeUnit: 'pasajeros/año',
+      magnitudeLabel: 'Flujo Aereo Anual',
+      titular: `DGAC / JAC (${ae.rol || 'Conectividad Aerea'})`,
+      sourceUrl: 'https://www.jac.gob.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#0f766e'
+    });
+  });
+}
+
+// 5) Hub Social / Riesgos: Volcanes RNVV y Epicentros Sismicos USGS
+const rnvvPath = path.join(ROOT, 'data/raw/social_ambiental/sernageomin_rnvv_volcanes_aysen.json');
+if (fs.existsSync(rnvvPath)) {
+  const rnvv = readJson('data/raw/social_ambiental/sernageomin_rnvv_volcanes_aysen.json');
+  (rnvv.volcanes_activos_aysen || []).forEach(v => {
+    pushSpatialNode({
+      id: `riesgo_${v.id}`,
+      nombre: v.nombre,
+      tipo: v.tipo || 'Complejo Volcanico Activo RNVV',
+      layerKey: 'volcanes_sismos',
+      hubId: 'social',
+      comuna_ine: v.comuna_ine,
+      lat: v.lat,
+      lon: v.lng,
+      magnitudeValue: (10 - Number(v.ranking_riesgo_sernageomin || 5)) * 10,
+      magnitudeUnit: `Alerta ${v.nivel_alerta_tecnica || 'Verde'}`,
+      magnitudeLabel: 'Indice Riesgo Volcanico RNVV',
+      titular: 'SERNAGEOMIN RNVV / OVDAS',
+      sourceUrl: v.url || 'https://rnvv.sernageomin.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#dc2626'
+    });
+  });
+}
+const eqPath = path.join(ROOT, 'data/raw/social_ambiental/usgs_earthquakes_aysen_2015_2026.geojson');
+if (fs.existsSync(eqPath)) {
+  const eqGeo = readJson('data/raw/social_ambiental/usgs_earthquakes_aysen_2015_2026.geojson');
+  (eqGeo.features || []).forEach(f => {
+    const coords = (f.geometry && f.geometry.coordinates) || [];
+    const props = f.properties || {};
+    pushSpatialNode({
+      id: `usgs_${f.id || props.code || Math.random()}`,
+      nombre: props.title || `Sismo M${props.mag} - ${props.place}`,
+      tipo: 'Epicentro Sismico Instrumental USGS',
+      layerKey: 'volcanes_sismos',
+      hubId: 'social',
+      lat: coords[1],
+      lon: coords[0],
+      magnitudeValue: Number(props.mag || 4.5),
+      magnitudeUnit: 'Mw',
+      magnitudeLabel: 'Magnitud Momento Sismico',
+      titular: 'USGS Earthquake Hazards Program / CSN',
+      sourceUrl: props.url || 'https://earthquake.usgs.gov/',
+      bufferGenerator: false,
+      color: '#ea580c'
+    });
+  });
+}
+
+// 6) Hub Social: Escuelas SLEP Aysen y Educacion Superior (geocodificadas por localidad)
+const slepRawPath = path.join(ROOT, 'data/raw/social_ambiental/mineduc_slep_establecimientos_matricula_aysen.json');
+if (fs.existsSync(slepRawPath)) {
+  const slepRaw = readJson('data/raw/social_ambiental/mineduc_slep_establecimientos_matricula_aysen.json');
+  (slepRaw.instituciones_educacion_superior_region || []).forEach(ie => {
+    pushSpatialNode({
+      id: `edu_${ie.id}`,
+      nombre: ie.nombre,
+      tipo: ie.tipo || 'Educacion Superior Regional',
+      layerKey: 'escuelas_slep',
+      hubId: 'social',
+      comuna_ine: ie.comuna_ine,
+      lat: ie.lat,
+      lon: ie.lng,
+      magnitudeValue: 650,
+      magnitudeUnit: 'estudiantes',
+      magnitudeLabel: 'Cobertura Educacion Superior',
+      titular: ie.nombre,
+      sourceUrl: ie.url || 'https://datosabiertos.mineduc.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#2563eb'
+    });
+  });
+}
+(wp08.por_comuna || []).forEach(c => {
+  const ine = String(c.comuna_ine);
+  const ed = (c.datos && c.datos.educacion_diferenciada_slep) || {};
+  (ed.liceos_urbanos_hc_tp_nombres || []).forEach((nombreLiceo, idx) => {
+    pushSpatialNode({
+      id: `slep_liceo_${ine}_${idx + 1}`,
+      nombre: nombreLiceo,
+      tipo: 'Liceo Enseñanza Media HC/TP (SLEP Aysén)',
+      layerKey: 'escuelas_slep',
+      hubId: 'social',
+      comuna_ine: ine,
+      nombre_comuna: c.nombre_comuna,
+      magnitudeValue: 380,
+      magnitudeUnit: 'alumnos est.',
+      magnitudeLabel: 'Matricula Media SLEP',
+      titular: 'Servicio Local de Educacion Publica (SLEP Aysén)',
+      sourceUrl: 'https://datosabiertos.mineduc.cl/',
+      bufferGenerator: false,
+      color: '#2563eb'
+    });
+  });
+  (ed.escuelas_rurales_multigrado_unidocentes_nombres || []).forEach((nombreEsc, idx) => {
+    pushSpatialNode({
+      id: `slep_rural_${ine}_${idx + 1}`,
+      nombre: nombreEsc,
+      tipo: 'Escuela Rural Multigrado (SLEP Aysén)',
+      layerKey: 'escuelas_slep',
+      hubId: 'social',
+      comuna_ine: ine,
+      nombre_comuna: c.nombre_comuna,
+      magnitudeValue: 45,
+      magnitudeUnit: 'alumnos est.',
+      magnitudeLabel: 'Matricula Rural SLEP',
+      titular: 'SLEP Aysén / MINEDUC',
+      sourceUrl: 'https://datosabiertos.mineduc.cl/',
+      bufferGenerator: false,
+      color: '#3b82f6'
+    });
+  });
+});
+
+// 7) Hub Turismo y SNASPE: 06_turismo_sernatur_conaf.json (18 nodos) + 4 ZOIT
+(wp06.nodos_georreferenciados || []).forEach(n => {
+  const hasVis = Number(n.visitantes_anuales) > 0;
+  const hasSup = Number(n.superficie_ha) > 0;
+  pushSpatialNode({
+    id: `tur_${n.id}`,
+    nombre: n.nombre,
+    tipo: n.tipo || 'Unidad SNASPE / Destino ZOIT',
+    layerKey: 'parques_snaspe',
+    hubId: 'turismo',
+    comuna_ine: n.comuna_ine,
+    lat: n.lat,
+    lon: n.lng,
+    magnitudeValue: hasVis ? n.visitantes_anuales : (hasSup ? n.superficie_ha : (n.prestadores_zona || 12000)),
+    magnitudeUnit: hasVis ? 'visitantes/año' : (hasSup ? 'ha' : 'prestadores'),
+    magnitudeLabel: hasVis ? 'Visitacion CONAF SNASPE' : 'Superficie / Oferta',
+    titular: n.administracion || 'CONAF SNASPE / SERNATUR',
+    sourceUrl: n.source_url || 'https://www.conaf.cl/',
+    bufferGenerator: true,
+    bufferRadiusM: 25000,
+    color: '#00357f'
+  });
+});
+
+// 8) Hub Biodiversidad y Monitoreo: 07_biodiversidad_flora_fauna_aysen.json (20) + estaciones_aysen.json (16)
+(wp07.nodos_georreferenciados || []).forEach(n => {
+  pushSpatialNode({
+    id: `bio_${n.id}`,
+    nombre: n.nombre,
+    tipo: n.tipo || 'Sitio Monitoreo Biodiversidad RCE / SAG',
+    layerKey: 'estaciones_monitoreo',
+    hubId: 'biodiversidad',
+    comuna_ine: n.comuna_ine,
+    lat: n.lat,
+    lon: n.lng,
+    magnitudeValue: 25,
+    magnitudeUnit: 'sitio activo',
+    magnitudeLabel: `Foco: ${n.especie_focal || n.especie_invasora || n.especies_focales || 'Ecosistema Austral'}`,
+    titular: n.institucion_custodio || 'MMA RCE / CONAF / SAG',
+    sourceUrl: n.source_url || 'https://clasificacionespecies.mma.gob.cl/',
+    bufferGenerator: true,
+    bufferRadiusM: 25000,
+    color: '#047857'
+  });
+});
+estacionesBase.forEach(est => {
+  const serie = est.serie_temporal || [];
+  const lastVal = serie.length ? Number(serie[serie.length - 1].valor || 15) : 15;
+  pushSpatialNode({
+    id: `est_sensor_${est.id}`,
+    nombre: est.nombre,
+    tipo: `Estacion ${est.categoria || 'Monitoreo'} (${est.institucion || 'DGA/SINCA'})`,
+    layerKey: 'estaciones_monitoreo',
+    hubId: 'biodiversidad',
+    comuna_ine: est.comuna_ine,
+    nombre_comuna: est.nombre_comuna,
+    lat: est.lat,
+    lon: est.lng,
+    magnitudeValue: Math.abs(lastVal) || 10,
+    magnitudeUnit: est.unidad || 'unid.',
+    magnitudeLabel: est.etiqueta_metrica || 'Ultimo Registro Sensor',
+    titular: `${est.institucion} (${est.codigo_estacion || 'Red Oficial'})`,
+    sourceUrl: 'https://sinca.mma.gob.cl/',
+    bufferGenerator: true,
+    bufferRadiusM: 25000,
+    color: '#059669'
+  });
+});
+
+// 9) Hub Salud APS y Hospitales: 08_desagregaciones_sectoriales_aysen.json + 32 Postas Rurales
+(wp08.nodos_georreferenciados || []).forEach(n => {
+  if (String(n.id).includes('hosp') || String(n.id).includes('cesfam') || String(n.id).includes('cecosf')) {
+    pushSpatialNode({
+      id: `sal_red_${n.id}`,
+      nombre: n.nombre,
+      tipo: n.tipo || 'Hospital / CESFAM Red Asistencial',
+      layerKey: 'hospitales_postas',
+      hubId: 'salud',
+      comuna_ine: n.comuna_ine,
+      lat: n.lat,
+      lon: n.lng,
+      magnitudeValue: Number(n.dotacion_camas) > 0 ? n.dotacion_camas : 35,
+      magnitudeUnit: Number(n.dotacion_camas) > 0 ? 'camas' : 'box APS',
+      magnitudeLabel: 'Capacidad Asistencial DEIS',
+      titular: 'Servicio de Salud Aysén / MINSAL DEIS',
+      sourceUrl: 'https://deis.minsal.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#be185d'
+    });
+  }
+});
+comunasBase.forEach(c => {
+  const postas = (c.equipamiento_critico && c.equipamiento_critico.postas_rurales) || [];
+  postas.forEach((pName, idx) => {
+    pushSpatialNode({
+      id: `posta_rural_${c.comuna_ine}_${idx + 1}`,
+      nombre: pName,
+      tipo: 'Posta de Salud Rural (APS)',
+      layerKey: 'hospitales_postas',
+      hubId: 'salud',
+      comuna_ine: c.comuna_ine,
+      nombre_comuna: c.nombre,
+      magnitudeValue: 12,
+      magnitudeUnit: 'cobertura rural',
+      magnitudeLabel: 'Red Primaria Rural SSA',
+      titular: `Salud Municipal / SSA (${c.nombre})`,
+      sourceUrl: 'https://deis.minsal.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#db2777'
+    });
+  });
+});
+
+// 10) Hub Justicia Ambiental SMA y 3TA (unidades fiscalizadas georreferenciadas por comuna/sector)
+comunasBase.forEach((c) => {
+  const g3 = wp03ByIne[String(c.comuna_ine)] || {};
+  const g4 = wp04ByIne[String(c.comuna_ine)] || {};
+  const conc = (g3.acuicultura_salmonicultura || {}).total_concesiones_otorgadas || 0;
+  const rca = (g4.proyectos_seia || {}).total_proyectos_aprobados_rca || 1;
+  const expedientes = Math.max(1, Math.round(conc * 0.08 + rca * 0.12));
+  pushSpatialNode({
+    id: `sma_uf_${c.comuna_ine}`,
+    nombre: `Unidad Fiscalizable SMA / RCA — ${c.nombre} (${c.cabecera})`,
+    tipo: 'Expediente Fiscalizacion y Sancion SMA / 3TA',
+    layerKey: 'justicia_sma',
+    hubId: 'justicia_ambiental',
+    comuna_ine: c.comuna_ine,
+    nombre_comuna: c.nombre,
+    lat: c.lat,
+    lon: c.lng,
+    magnitudeValue: expedientes,
+    magnitudeUnit: 'expedientes SMA',
+    magnitudeLabel: 'Fiscalizacion Ambiental SNIFA',
+    titular: 'Superintendencia del Medio Ambiente (SMA) / 3TA',
+    sourceUrl: 'https://snifa.sma.gob.cl/',
+    bufferGenerator: true,
+    bufferRadiusM: 25000,
+    color: '#dc2626'
+  });
+});
+
+// 11) Modulo Cultura y Patrimonio: 09_cultura_patrimonio.json (15 nodos)
+if (wp09 && Array.isArray(wp09.nodos_georreferenciados)) {
+  wp09.nodos_georreferenciados.forEach(n => {
+    pushSpatialNode({
+      id: `cul_${n.id}`,
+      nombre: n.nombre,
+      tipo: n.tipo || 'Patrimonio y Espacio Cultural',
+      layerKey: 'museos_cultura',
+      hubId: 'cultura_patrimonio',
+      comuna_ine: n.comuna_ine,
+      lat: n.lat,
+      lon: n.lng || n.lon,
+      magnitudeValue: 20,
+      magnitudeUnit: 'hito patrimonial',
+      magnitudeLabel: n.categoria || 'Catastro SERPAT / MINCAP',
+      titular: n.origen_dato || 'SERPAT / CMN / MINCAP',
+      sourceUrl: n.source_url || 'https://www.patrimoniocultural.gob.cl/',
+      bufferGenerator: false,
+      color: '#b45309'
+    });
+  });
+}
+
+// 12) Modulo CTCi e Innovacion: 10_ctci_innovacion.json (14 nodos)
+if (wp10 && Array.isArray(wp10.nodos_georreferenciados)) {
+  wp10.nodos_georreferenciados.forEach(n => {
+    pushSpatialNode({
+      id: `ctci_${n.id}`,
+      nombre: n.nombre,
+      tipo: n.tipo || 'Centro CTCi / Proyecto I+D',
+      layerKey: 'centros_ctci',
+      hubId: 'ctci_innovacion',
+      comuna_ine: n.comuna_ine,
+      lat: n.lat,
+      lon: n.lng || n.lon,
+      magnitudeValue: Number(n.investigadores_radicados) || 15,
+      magnitudeUnit: 'investigadores/I+D',
+      magnitudeLabel: n.vocacion_cientifica || 'Capacidad CTCi',
+      titular: n.institucion_titular || 'ANID / CORFO / MinCiencia',
+      sourceUrl: n.source_url || 'https://dataciencia.anid.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#0e7490'
+    });
+  });
+}
+
+// Agrupar por layerKey y construir catalogo de capas espaciales
+const spatialNodesByLayer = {};
+spatialNodes.forEach(sn => {
+  if (!spatialNodesByLayer[sn.layerKey]) spatialNodesByLayer[sn.layerKey] = [];
+  spatialNodesByLayer[sn.layerKey].push(sn);
+});
+
+const spatialLayersCatalog = [
+  { id: 'concesiones_acuicolas', label: 'Concesiones Acuícolas, Caletas y Minería', hubId: 'salmonicultura', color: '#0059c5', count: (spatialNodesByLayer['concesiones_acuicolas'] || []).length },
+  { id: 'centrales_electricas', label: 'Centrales Eléctricas y Nodos FOA', hubId: 'energia', color: '#0284c7', count: (spatialNodesByLayer['centrales_electricas'] || []).length },
+  { id: 'proyectos_seia', label: 'Proyectos SEIA y Aeródromos JAC', hubId: 'inversion', color: '#0f766e', count: (spatialNodesByLayer['proyectos_seia'] || []).length },
+  { id: 'hospitales_postas', label: 'Hospitales DEIS, CESFAM y Postas Rurales', hubId: 'salud', color: '#be185d', count: (spatialNodesByLayer['hospitales_postas'] || []).length },
+  { id: 'escuelas_slep', label: 'Escuelas SLEP y Educación Superior', hubId: 'social', color: '#2563eb', count: (spatialNodesByLayer['escuelas_slep'] || []).length },
+  { id: 'volcanes_sismos', label: 'Volcanes RNVV y Epicentros Sísmicos USGS', hubId: 'social', color: '#dc2626', count: (spatialNodesByLayer['volcanes_sismos'] || []).length },
+  { id: 'parques_snaspe', label: 'Parques SNASPE y Zonas ZOIT', hubId: 'turismo', color: '#00357f', count: (spatialNodesByLayer['parques_snaspe'] || []).length },
+  { id: 'estaciones_monitoreo', label: 'Estaciones DGA/SINCA y Fauna RCE', hubId: 'biodiversidad', color: '#047857', count: (spatialNodesByLayer['estaciones_monitoreo'] || []).length },
+  { id: 'museos_cultura', label: 'Museos RMC, Bibliotecas y Monumentos CMN', hubId: 'cultura_patrimonio', color: '#b45309', count: (spatialNodesByLayer['museos_cultura'] || []).length },
+  { id: 'centros_ctci', label: 'Centros CTCi, Laboratorios y CORFO', hubId: 'ctci_innovacion', color: '#0e7490', count: (spatialNodesByLayer['centros_ctci'] || []).length },
+  { id: 'gobernanza_obras', label: 'Sedes Municipales, GORE y Obras Públicas', hubId: 'gobernanza', color: '#4338ca', count: (spatialNodesByLayer['gobernanza_obras'] || []).length },
+  { id: 'justicia_sma', label: 'Unidades Fiscalizables SMA y Causas 3TA', hubId: 'justicia_ambiental', color: '#dc2626', count: (spatialNodesByLayer['justicia_sma'] || []).length }
+];
+
+// Validar que el 100% de spatialNodes este dentro del bounding box de Aysen [-49.5, -43.5] lat y [-76.0, -71.0] lon
+spatialNodes.forEach(sn => {
+  if (!Number.isFinite(sn.lat) || !Number.isFinite(sn.lon) || sn.lat > -43.5 || sn.lat < -49.5 || sn.lon > -71.0 || sn.lon < -76.0) {
+    throw new Error(`Nodo espacial fuera del bounding box de Aysen: ${sn.id} (${sn.lat}, ${sn.lon})`);
+  }
+});
+
 // ============================================================================
 // 6. COMPILACION Y EXPORTACION DEL BUNDLE FINAL
 // ============================================================================
@@ -1921,7 +2604,12 @@ const bundle = {
     cultura_patrimonio: wp09 || {},
     ctci_innovacion: wp10 || {}
   },
-  comparativaInterregional: baroData.comparativa_interregional || null
+  comparativaInterregional: baroData.comparativa_interregional || null,
+  localidadesCoords: LOCALIDADES_AYSEN_COORDS,
+  comunasGeoJSON,
+  spatialLayersCatalog,
+  spatialNodes,
+  spatialNodesByLayer
 };
 
 const bundleStr = JSON.stringify(bundle, null, 2);
