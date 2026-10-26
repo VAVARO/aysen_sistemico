@@ -3437,8 +3437,8 @@
         <span>Preguntas (30)</span>
       </button>
 
-      <button class="btn-action-tool" id="btnOpenHubGallery" style="border-color: #00357f; color: #00357f; font-weight: 600; background: #f0f4fc;" title="Galería de 40 Visualizaciones por Hub">
-        <span>Galería Hubs (40)</span>
+      <button class="btn-action-tool" id="btnOpenHubGallery" style="border-color: #00357f; color: #00357f; font-weight: 600; background: #f0f4fc;" title="Galería de 50 Visualizaciones por Hub">
+        <span>Galería Hubs (50)</span>
       </button>
 
       <button class="btn-action-tool" id="btnEjemploSistemico" title="Cargar escenario ilustrativo">
@@ -3540,12 +3540,13 @@
         </p>
         <div class="hero-hubs-launcher-section" id="heroHubsLauncherSection">
           <div class="hero-hubs-launcher-kicker">
-            <span>Dashboards Completos por Hub Temático (8 Hubs + 2 Módulos Especializados)</span>
+            <span>Dashboards Completos por Hub Temático (10 Hubs de Datos)</span>
             <span>5 Gráficos Multiformato por Hub →</span>
           </div>
           <div class="hero-hubs-launcher-grid" id="heroHubsLauncherGrid">
             <!-- Inyectado dinámicamente por renderHeroHubsLauncher() -->
           </div>
+          <div id="heroHubLauncherGrid" style="display:none;" aria-hidden="true"></div>
         </div>
         <ol class="hero-steps">
           <li class="hero-step">
@@ -4183,13 +4184,30 @@
       // 2. INICIALIZACION ASINCRONA SIN CONDICIONES DE CARRERA
       // =======================================================================
       async function init() {
-        await loadDataLakeAndCatalog();
-        loadQuestions();
-        setupCanvasEngine();
-        setupContextMenu();
-        setupEvents();
-        handleUrlParamsOrLoadSaved();
-        renderSubDashboards();
+        try { setupCanvasEngine(); } catch (errEngine) { console.error('[Laboratorio] Error en setupCanvasEngine:', errEngine); }
+        try { setupContextMenu(); } catch (errMenu) { console.error('[Laboratorio] Error en setupContextMenu:', errMenu); }
+        try { setupEvents(); } catch (errEvents) { console.error('[Laboratorio] Error en setupEvents:', errEvents); }
+        try { initHubGalleryUI(); } catch (errGallery) { console.error('[Laboratorio] Error en initHubGalleryUI:', errGallery); }
+
+        try {
+          await loadDataLakeAndCatalog();
+        } catch (errData) {
+          console.error('[Laboratorio] Error cargando data lake:', errData);
+        }
+
+        try {
+          renderHeroLauncherGrid();
+        } catch (errHero) {
+          console.error('[Laboratorio] Error renderizando hero launcher:', errHero);
+        }
+
+        try {
+          loadQuestions();
+          handleUrlParamsOrLoadSaved();
+          renderSubDashboards();
+        } catch (errState) {
+          console.error('[Laboratorio] Error restaurando estado/preguntas:', errState);
+        }
       }
 
       async function loadDataLakeAndCatalog() {
@@ -5238,12 +5256,13 @@
       function getHubTitleName(hubId) {
         if (!hubId) return 'Otros';
         const str = String(hubId).toLowerCase();
+        if (str === 'salud' || str.includes('salud_') || str.includes('hospital') || str.startsWith('salud')) return 'VIII. Salud';
         if (str.includes('turismo')) return 'I. Turismo';
         if (str.includes('salmon') || str.includes('pesca') || str.includes('maritorio') || str.includes('acuicultura')) return 'II. Salmonicultura';
         if (str.includes('energia') || str.includes('energía') || str.includes('combustible') || str.includes('telecom')) return 'III. Energía';
         if (str.includes('gobernanza') || str.includes('finanza')) return 'IV. Gobernanza';
         if (str.includes('inversion') || str.includes('inversión') || str.includes('empresa') || str.includes('seia') || str.includes('suelo') || str.includes('economia') || str.includes('economía')) return 'V. Inversión';
-        if (str.includes('social') || str.includes('salud') || str.includes('educacion') || str.includes('educación') || str.includes('bienestar') || str.includes('demografia') || str.includes('demografía')) return 'VI. Social';
+        if (str.includes('social') || str.includes('educacion') || str.includes('educación') || str.includes('bienestar') || str.includes('demografia') || str.includes('demografía')) return 'VI. Social';
         if (str.includes('biodiversidad') || str.includes('conservacion') || str.includes('conservación') || str.includes('flora') || str.includes('fauna') || str.includes('medio ambiente')) return 'VII. Biodiversidad';
         if (str.includes('cultura') || str.includes('patrimonio')) return 'IX. Cultura & Patrimonio';
         if (str.includes('ctci') || str.includes('innovacion') || str.includes('innovación') || str.includes('ciencia')) return 'X. CTCi & Innovación';
@@ -5256,7 +5275,9 @@
           'social': 'VI. Social',
           'biodiversidad': 'VII. Biodiversidad',
           'salud': 'VIII. Salud',
+          'cultura': 'IX. Cultura & Patrimonio',
           'cultura_patrimonio': 'IX. Cultura & Patrimonio',
+          'ctci': 'X. CTCi & Innovación',
           'ctci_innovacion': 'X. CTCi & Innovación'
         };
         return m[hubId] || hubId;
@@ -5276,7 +5297,7 @@
       }
 
       // =======================================================================
-      // 3. RENDERIZADO DEL CATALOGO DE VARIABLES (7 HUBS EN ACORDEONES)
+      // 3. RENDERIZADO DEL CATALOGO DE VARIABLES (10 HUBS EN ACORDEONES)
       // =======================================================================
       function renderSidebarCatalog() {
         const container = document.getElementById('variablesTreeContainer');
@@ -5307,7 +5328,10 @@
           'IV. Gobernanza',
           'V. Inversión',
           'VI. Social',
-          'VII. Biodiversidad'
+          'VII. Biodiversidad',
+          'VIII. Salud',
+          'IX. Cultura & Patrimonio',
+          'X. CTCi & Innovación'
         ];
 
         const sortedGroupKeys = OFFICIAL_HUB_ORDER.filter(hubKey => groups[hubKey] && groups[hubKey].length > 0);
@@ -5841,9 +5865,11 @@
           'inversion': '#0f766e',
           'social': '#2563eb',
           'biodiversidad': '#047857',
-          'salud': '#be185d',
+          'salud': '#be123c',
+          'cultura': '#b45309',
           'cultura_patrimonio': '#b45309',
-          'ctci_innovacion': '#0e7490'
+          'ctci': '#6d28d9',
+          'ctci_innovacion': '#6d28d9'
         };
         return map[hubId] || '#00357f';
       }
@@ -9994,35 +10020,35 @@
       }
 
       function renderHeroHubsLauncher() {
-        const grid = document.getElementById('heroHubsLauncherGrid');
+        const grid = document.getElementById('heroHubsLauncherGrid') || document.getElementById('heroHubLauncherGrid');
         if (!grid) return;
 
         const gallery = AppState.hubsGallery || (window.AYSEN_HUBS_DATA?.hubsGallery) || {};
         const extGallery = AppState.extensionGallery || (window.AYSEN_HUBS_DATA?.extension_gallery) || {};
 
         const orderedHubs = [
-          { id: 'gobernanza', fallbackNum: 'I', fallbackTitle: 'Gobernanza & Finanzas', color: '#4338ca' },
-          { id: 'energia', fallbackNum: 'II', fallbackTitle: 'Energía & Telecom', color: '#0284c7' },
-          { id: 'salmonicultura', fallbackNum: 'III', fallbackTitle: 'Salmonicultura & Maritorio', color: '#0059c5' },
-          { id: 'inversion', fallbackNum: 'IV', fallbackTitle: 'Inversión, SEIA & SII', color: '#0f766e' },
-          { id: 'social', fallbackNum: 'V', fallbackTitle: 'Social, Educación & Riesgos', color: '#2563eb' },
-          { id: 'turismo', fallbackNum: 'VI', fallbackTitle: 'Turismo & SNASPE', color: '#00357f' },
+          { id: 'turismo', fallbackNum: 'I', fallbackTitle: 'Turismo & Áreas Silvestres', color: '#00357f' },
+          { id: 'salmonicultura', fallbackNum: 'II', fallbackTitle: 'Pesca, Acuicultura & Mar', color: '#0059c5' },
+          { id: 'energia', fallbackNum: 'III', fallbackTitle: 'Energía & Telecom', color: '#0284c7' },
+          { id: 'gobernanza', fallbackNum: 'IV', fallbackTitle: 'Gobernanza & Finanzas', color: '#4338ca' },
+          { id: 'inversion', fallbackNum: 'V', fallbackTitle: 'Economía, Inversión & Suelo', color: '#0f766e' },
+          { id: 'social', fallbackNum: 'VI', fallbackTitle: 'Demografía, Educación & Riesgos', color: '#2563eb' },
           { id: 'biodiversidad', fallbackNum: 'VII', fallbackTitle: 'Biodiversidad & Clima', color: '#047857' },
-          { id: 'salud', fallbackNum: 'VIII', fallbackTitle: 'Salud & Red Hospitalaria', color: '#be123c' },
-          { id: 'cultura_patrimonio', fallbackNum: 'CP', fallbackTitle: 'Cultura & Patrimonio', color: '#7c2d12' },
-          { id: 'ctci_innovacion', fallbackNum: 'CT', fallbackTitle: 'CTCi & Innovación', color: '#0e7490' }
+          { id: 'salud', fallbackNum: 'VIII', fallbackTitle: 'Salud APS & Hospitales', color: '#be123c' },
+          { id: 'cultura_patrimonio', aliasId: 'cultura', fallbackNum: 'IX', fallbackTitle: 'Cultura, Artes & Patrimonio', color: '#b45309' },
+          { id: 'ctci_innovacion', aliasId: 'ctci', fallbackNum: 'X', fallbackTitle: 'CTCi, Ciencia & Innovación', color: '#6d28d9' }
         ];
 
         let html = '';
         orderedHubs.forEach(item => {
-          const entry = gallery[item.id] || extGallery[item.id];
-          if (!entry) return;
+          const entry = gallery[item.id] || extGallery[item.id] || (item.aliasId && (gallery[item.aliasId] || extGallery[item.aliasId])) || {};
           const num = entry.numeral || item.fallbackNum;
           const title = entry.shortTitle || item.fallbackTitle || entry.title;
           const color = entry.color || item.color || '#00357f';
           const count = Array.isArray(entry.presets) ? entry.presets.length : 5;
+          const launchId = (entry && entry.presets) ? (entry.id || item.id) : item.id;
           html += `
-            <button type="button" class="hero-hub-launch-card" data-launch-hub="${item.id}" style="border-left-color: ${color};">
+            <button type="button" class="hero-hub-launch-card" data-launch-hub="${launchId}" style="border-left-color: ${color};">
               <div class="hero-hub-launch-top">
                 <span style="color:${color};">HUB ${num}</span>
                 <span>${count} gráficos →</span>
@@ -10034,18 +10060,33 @@
         });
 
         grid.innerHTML = html;
-        grid.querySelectorAll('.hero-hub-launch-card').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const hid = btn.getAttribute('data-launch-hub');
-            if (hid) loadFullHubDashboard(hid);
+        const altGrid = document.getElementById('heroHubLauncherGrid');
+        if (altGrid && altGrid !== grid) {
+          altGrid.innerHTML = html;
+        }
+
+        [grid, altGrid].filter(Boolean).forEach(container => {
+          container.querySelectorAll('.hero-hub-launch-card').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const hid = btn.getAttribute('data-launch-hub');
+              if (hid) loadFullHubDashboard(hid);
+            });
           });
         });
       }
 
+      function renderHeroLauncherGrid() {
+        renderHeroHubsLauncher();
+      }
+
+      let _hubGalleryUIInitialized = false;
       function initHubGalleryUI() {
         enrichBarometroMicroCubosFromGallery();
         renderHeroHubsLauncher();
+
+        if (_hubGalleryUIInitialized) return;
+        _hubGalleryUIInitialized = true;
 
         const btnOpen = document.getElementById('btnOpenHubGallery');
         const modal = document.getElementById('modalHubGallery');
@@ -10109,19 +10150,19 @@
         const container = document.getElementById('hubGalleryTabs');
         if (!container) return;
         const hubsList = [
-          { id: 'gobernanza', num: 'I', name: 'Gobernanza' },
-          { id: 'energia', num: 'II', name: 'Energía' },
-          { id: 'salmonicultura', num: 'III', name: 'Salmonicultura' },
-          { id: 'inversion', num: 'IV', name: 'Inversión & SEIA' },
-          { id: 'social', num: 'V', name: 'Sociedad & Riesgos' },
-          { id: 'turismo', num: 'VI', name: 'Turismo' },
+          { id: 'turismo', num: 'I', name: 'Turismo' },
+          { id: 'salmonicultura', num: 'II', name: 'Salmonicultura' },
+          { id: 'energia', num: 'III', name: 'Energía' },
+          { id: 'gobernanza', num: 'IV', name: 'Gobernanza' },
+          { id: 'inversion', num: 'V', name: 'Inversión' },
+          { id: 'social', num: 'VI', name: 'Social' },
           { id: 'biodiversidad', num: 'VII', name: 'Biodiversidad' },
-          { id: 'salud', num: 'VIII', name: 'Salud & Hospitales' }
+          { id: 'salud', num: 'VIII', name: 'Salud' }
         ];
 
         const extensionModules = [
-          { id: 'cultura_patrimonio', num: 'CP', name: 'Cultura & Patrimonio' },
-          { id: 'ctci_innovacion', num: 'CT', name: 'CTCi & Innovación' }
+          { id: 'cultura_patrimonio', num: 'IX', name: 'Cultura & Patr.' },
+          { id: 'ctci_innovacion', num: 'X', name: 'CTCi & Innovación' }
         ];
 
         let html = '';
@@ -10163,7 +10204,11 @@
 
         const gallery = AppState.hubsGallery || (window.AYSEN_HUBS_DATA?.hubsGallery) || {};
         const extGallery = AppState.extensionGallery || (window.AYSEN_HUBS_DATA?.extension_gallery) || {};
-        const hubEntry = gallery[hubId] || extGallery[hubId];
+        const hubEntry = gallery[hubId] || extGallery[hubId] ||
+          (hubId === 'cultura' ? (extGallery['cultura_patrimonio'] || gallery['cultura_patrimonio']) : null) ||
+          (hubId === 'cultura_patrimonio' ? (extGallery['cultura'] || gallery['cultura']) : null) ||
+          (hubId === 'ctci' ? (extGallery['ctci_innovacion'] || gallery['ctci_innovacion']) : null) ||
+          (hubId === 'ctci_innovacion' ? (extGallery['ctci'] || gallery['ctci']) : null);
         const presets = (hubEntry && Array.isArray(hubEntry.presets)) ? hubEntry.presets : [];
 
         if (presets.length === 0) {
@@ -10288,7 +10333,11 @@
         if (!hubId) return;
         const gallery = AppState.hubsGallery || (window.AYSEN_HUBS_DATA?.hubsGallery) || {};
         const extGallery = AppState.extensionGallery || (window.AYSEN_HUBS_DATA?.extension_gallery) || {};
-        const hubEntry = gallery[hubId] || extGallery[hubId];
+        const hubEntry = gallery[hubId] || extGallery[hubId] ||
+          (hubId === 'cultura' ? (extGallery['cultura_patrimonio'] || gallery['cultura_patrimonio']) : null) ||
+          (hubId === 'cultura_patrimonio' ? (extGallery['cultura'] || gallery['cultura']) : null) ||
+          (hubId === 'ctci' ? (extGallery['ctci_innovacion'] || gallery['ctci_innovacion']) : null) ||
+          (hubId === 'ctci_innovacion' ? (extGallery['ctci'] || gallery['ctci']) : null);
         if (!hubEntry || !Array.isArray(hubEntry.presets) || hubEntry.presets.length === 0) {
           console.warn('[Laboratorio] Hub no encontrado para Dashboard completo:', hubId);
           return;

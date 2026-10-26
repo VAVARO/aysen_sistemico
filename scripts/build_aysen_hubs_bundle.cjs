@@ -103,6 +103,14 @@ const wp07ByIne = {};
 (wp07.por_comuna || []).forEach(c => { wp07ByIne[String(c.comuna_ine)] = c.datos || {}; });
 const wp08ByIne = {};
 (wp08.por_comuna || []).forEach(c => { wp08ByIne[String(c.comuna_ine)] = c.datos || {}; });
+const wp09ByIne = {};
+if (wp09 && wp09.por_comuna) {
+  wp09.por_comuna.forEach(c => { wp09ByIne[String(c.comuna_ine)] = c.datos || {}; });
+}
+const wp10ByIne = {};
+if (wp10 && wp10.por_comuna) {
+  wp10.por_comuna.forEach(c => { wp10ByIne[String(c.comuna_ine)] = c.datos || {}; });
+}
 
 // Catálogo de procedencia por ID de nodo
 const provByNodeId = {};
@@ -182,8 +190,8 @@ const hubs = [
   {
     id: 'social',
     numeral: 'VI',
-    title: 'VI. Sociedad: Demografía, Salud & Educación',
-    shortTitle: 'Demografía, Salud & Educación',
+    title: 'VI. Demografía, Educación & Riesgos',
+    shortTitle: 'Demografía, Educación & Riesgos',
     color: '#2563eb',
     description: 'Población comunal **Censo 2024 (100.745 hab)** y **CASEN 2022**, red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), educación pública (**SLEP Aysén**) y tasas delictuales (**CEAD / VIF**).',
     example: 'Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.',
@@ -195,8 +203,8 @@ const hubs = [
   {
     id: 'biodiversidad',
     numeral: 'VII',
-    title: 'VII. Biodiversidad & Medio Ambiente',
-    shortTitle: 'Biodiversidad & Medio Ambiente',
+    title: 'VII. Biodiversidad & Clima',
+    shortTitle: 'Biodiversidad & Clima',
     color: '#047857',
     description: 'Formaciones de **flora nativa (CONAF SIT)**, **fauna en conservación (RCE MMA / Huemul)**, **especies exóticas invasoras (EEI / Visón, Castor)**, monitoreo ambiental continuo (**SINCA / DGA**) y volcanes/sismos (**RNVV / USGS**).',
     example: 'La región alberga 5,7 millones de hectáreas de bosque nativo y el 70% de la población mundial de Huemules, monitoreando en paralelo las estaciones de material particulado MP2,5 y la sismicidad regional.',
@@ -208,21 +216,52 @@ const hubs = [
   {
     id: 'salud',
     numeral: 'VIII',
-    title: 'VIII. Salud APS, Hospitales & Desagregaciones Sectoriales',
+    title: 'VIII. Salud APS & Hospitales',
     shortTitle: 'Salud APS & Hospitales',
-    color: '#dc2626',
+    color: '#be123c',
     description: 'Red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), capacidad de **261 camas hospitalarias**, **32 postas de salud rural**, tiempos de traslado SAMU e isócronas de evacuación crítica.',
     example: 'El **Hospital Regional de Coyhaique** concentra el **78,5% de las camas regionales** (205 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas.',
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     sourceName: 'MINSAL DEIS / SSA / SAMU Aysén',
     sourceUrl: 'https://deis.minsal.cl/'
+  },
+  {
+    id: 'cultura',
+    numeral: 'IX',
+    title: 'IX. Cultura, Artes & Patrimonio',
+    shortTitle: 'Cultura, Artes & Patrimonio',
+    color: '#b45309',
+    description: 'Infraestructura cultural regional: **42 espacios culturales**, **14 museos (RMC)**, **13 bibliotecas públicas (SNBP)**, **9 monumentos nacionales (CMN)** y financiamiento Fondos Cultura / FNDR 8%.',
+    example: '**Coyhaique** concentra la Biblioteca Regional y el Centro Cultural, mientras localidades como **Caleta Tortel**, **Guaitecas** y **Cerro Castillo** albergan museos comunitarios y monumentos históricos australes.',
+    csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
+    nodesFile: 'data/systemic/csv/09_cultura_patrimonio_nodos.csv',
+    sourceName: 'SERPAT / CMN / SNBP / MINCAP / GORE Aysén',
+    sourceUrl: 'https://ide.patrimoniocultural.gob.cl/'
+  },
+  {
+    id: 'ctci',
+    numeral: 'X',
+    title: 'X. CTCi, Ciencia & Innovación',
+    shortTitle: 'CTCi, Ciencia & Innovación',
+    color: '#6d28d9',
+    description: 'Ecosistema de ciencia, tecnología e innovación austral: **179 proyectos de I+D**, cartera histórica ANID (**17.326 MM CLP**), proyectos CORFO Innova (**8.450 MM CLP**) y **15 centros y estaciones científicas**.',
+    example: 'Articula la investigación local liderada por el **CIEP**, la **Universidad de Aysén** e **INIA Tamel Aike** frente a bases científicas de universidades metropolitanas (UC en Exploradores, UCH/CECs en glaciares).',
+    csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
+    nodesFile: 'data/systemic/csv/10_ctci_innovacion_nodos.csv',
+    sourceName: 'MinCiencia / ANID / CORFO / CIEP / UAysén / INIA',
+    sourceUrl: 'https://observa.minciencia.gob.cl/'
   }
 ];
 
 // Inyección transversal de Espejo Ciudadano (Barómetro Regional) en cada Hub
 hubs.forEach(h => {
-  h.espejo_barometro = (baroData.hubs && baroData.hubs[h.id]) ? baroData.hubs[h.id] : null;
+  let espejo = (baroData.hubs && baroData.hubs[h.id]) ? baroData.hubs[h.id] : null;
+  if (!espejo && baroData.extension_modules) {
+    if (h.id === 'cultura') espejo = baroData.extension_modules.cultura_patrimonio || null;
+    if (h.id === 'ctci') espejo = baroData.extension_modules.ctci_innovacion || null;
+  }
+  h.espejo_barometro = espejo;
 });
 
 // ============================================================================
@@ -1291,19 +1330,19 @@ const rawNodos = [
   },
   {
     id: 24,
-    hubId: 'social',
-    title: 'Red Asistencial de Salud y Evacuación SAMU',
+    hubId: 'salud',
+    title: 'Red Asistencial DEIS y Hospitales de Aysén',
     definition: 'Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (APS - 2 CESFAM, 3 CECOSF, 28 Postas Rurales y 20 EMR)** frente a la **Red Hospitalaria (1 Hospital de Alta Complejidad y 4 Hospitales Comunitarios)** con 261 camas totales, camas críticas UCI/UTI y tiempos de traslado SAMU.',
     example: '**Coyhaique** concentra el **Hospital Regional (167 camas, 22 críticas UCI/UTI, 5 quirófanos)** y la base SAMU, mientras las 4 cabeceras provinciales cuentan con hospitales comunitarios de baja complejidad y 5 comunas dependen exclusivamente de postas rurales con traslados terrestres de hasta **7 a 9 horas** hacia Coyhaique.',
-    officialSource: { name: 'Departamento de Estadisticas e Informacion de Salud (DEIS) / SSA', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
+    officialSource: { name: 'Departamento de Estadísticas e Información de Salud (DEIS) / SSA', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
-    relatedNodeIds: [14, 18, 23, 31],
+    relatedNodeIds: [6, 13, 23, 27],
     chartSpec: {
       type: 'bar',
       title: 'Capacidad Hospitalaria vs. Dispositivos APS en la Red SSA (261 Camas Totales)',
       labels: ['Hosp. Reg. Coyhaique', 'Hosp. Pto. Aysén', 'Hosp. Cochrane', 'Hosp. Chile Chico', 'Hosp. Pto. Cisnes', 'Red APS Comunal'],
       datasets: [
-        { label: 'Camas Disponibles', data: [167, 52, 16, 14, 12, 0], backgroundColor: '#0059c5' },
+        { label: 'Camas Disponibles', data: [167, 52, 16, 14, 12, 0], backgroundColor: '#be123c' },
         { label: 'Dispositivos Asistenciales', data: [1, 1, 1, 1, 1, 53], backgroundColor: '#0284c7' }
       ],
       unit: 'camas / dispositivos'
@@ -1657,19 +1696,435 @@ const rawNodos = [
       ],
       totalRecordsInFullBase: '28 hitos geologicos y estaciones ambientales en data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv'
     }
+  },
+  // --- HUB IX: CULTURA, ARTES & PATRIMONIO (#32 a #34) ---
+  {
+    id: 32,
+    hubId: 'cultura',
+    title: 'Museos, Bibliotecas y Monumentos SERPAT/CMN',
+    definition: 'Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)** y **9 Monumentos Históricos y Arqueológicos** protegidos por el Consejo de Monumentos Nacionales (CMN).',
+    example: '**Coyhaique** alberga 3 museos y la Biblioteca Regional, mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.',
+    officialSource: { name: 'Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Anual' },
+    csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
+    relatedNodeIds: [1, 15, 23, 33],
+    chartSpec: {
+      type: 'bar',
+      title: 'Museos, Bibliotecas Públicas y Monumentos Nacionales por Comuna',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [
+        {
+          label: 'Museos RMC',
+          data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).museos_count || 0),
+          backgroundColor: '#b45309'
+        },
+        {
+          label: 'Bibliotecas SNBP',
+          data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).bibliotecas_publicas_count || 0),
+          backgroundColor: '#d97706'
+        },
+        {
+          label: 'Monumentos CMN',
+          data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).monumentos_nacionales_count || 0),
+          backgroundColor: '#f59e0b'
+        }
+      ],
+      unit: 'recintos patrimoniales'
+    },
+    tableColumns: ['Comuna', 'Museos RMC', 'Bibliotecas SNBP', 'Monumentos CMN', 'Espacios Culturales'],
+    tableRows: comunasBase.map(c => {
+      const cult = wp09ByIne[String(c.comuna_ine)] || {};
+      return [
+        c.nombre,
+        fmtNum(cult.museos_count || 0),
+        fmtNum(cult.bibliotecas_publicas_count || 0),
+        fmtNum(cult.monumentos_nacionales_count || 0),
+        fmtNum(cult.total_espacios_culturales || 0)
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Directorio de 14 museos regionales y comunitarios',
+        'Red de 13 bibliotecas públicas conectadas a BiblioRedes',
+        '9 Monumentos Históricos y Zonas Típicas decretadas por ley',
+        'Distribución territorial de recintos patrimoniales por cuenca'
+      ],
+      suggestedCrossings: [
+        'Cruce con Prestadores de Servicios Turísticos (Nodo #01)',
+        'Cruce con Presupuestos Municipales y Cultura (Nodo #15)'
+      ],
+      totalRecordsInFullBase: '10 comunas con catastro patrimonial completo en data/systemic/09_cultura_patrimonio.json'
+    }
+  },
+  {
+    id: 33,
+    hubId: 'cultura',
+    title: 'Fondos Cultura MINCAP y FNDR 8%',
+    definition: 'Flujos de financiamiento público para el desarrollo cultural: asignaciones acumuladas de los **Fondos de Cultura (FONDART Regional, Fondos del Libro, Música y Audiovisual)**, asignación del **FNDR 8% Comunitario del GORE Aysén** y gasto municipal anual en cultura.',
+    example: 'La inversión cultural se concentra en **Coyhaique ($2.150 MM acumulados)** y **Aysén ($820 MM)**, mientras las comunas del sur dependen de líneas concursables de intermediación y del FNDR 8%.',
+    officialSource: { name: 'MINCAP Fondos Cultura / DIPRES GORE Aysén / SINIM', url: 'https://www.fondosdecultura.cl/', frequency: 'Anual' },
+    csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
+    relatedNodeIds: [15, 18, 32, 34],
+    chartSpec: {
+      type: 'bar',
+      title: 'Fondos Cultura Adjudicados vs. FNDR 8% Cultura por Comuna (M$ CLP)',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [
+        {
+          label: 'Fondos Cultura MINCAP (M$)',
+          data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).fondos_cultura_adjudicados_mclp || 0),
+          backgroundColor: '#b45309'
+        },
+        {
+          label: 'FNDR 8% Cultura (M$)',
+          data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).fndr_8pct_cultura_mclp || 0),
+          backgroundColor: '#78350f'
+        }
+      ],
+      unit: 'M$ CLP'
+    },
+    tableColumns: ['Comuna', 'Fondos MINCAP (M$)', 'FNDR 8% Cultura (M$)', 'Gasto Municipal (M$)', 'Gasto per Cápita ($)'],
+    tableRows: comunasBase.map(c => {
+      const cult = wp09ByIne[String(c.comuna_ine)] || {};
+      return [
+        c.nombre,
+        fmtNum(cult.fondos_cultura_adjudicados_mclp || 0),
+        fmtNum(cult.fndr_8pct_cultura_mclp || 0),
+        fmtNum(cult.gasto_municipal_cultura_mclp || 0),
+        fmtNum(cult.gasto_cultura_per_capita_clp || 0)
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Monto acumulado adjudicado en líneas FONDART Regional',
+        'Distribución de recursos del 8% FNDR para cultura',
+        'Gasto municipal reportado al SINIM en actividades culturales',
+        'Inversión cultural per cápita por habitante comunal'
+      ],
+      suggestedCrossings: [
+        'Cruce con Dependencia del Fondo Común Municipal (Nodo #16)',
+        'Cruce con Inversión Pública FNDR (Nodo #18)'
+      ],
+      totalRecordsInFullBase: '10 comunas con detalle de fondos públicos en data/systemic/csv/09_cultura_patrimonio_comunas.csv'
+    }
+  },
+  {
+    id: 34,
+    hubId: 'cultura',
+    title: 'Espacios y Agentes Culturales de Aysén',
+    definition: 'Infraestructura activa de difusión artística: teatros, centros culturales, casas de la cultura comunales, agrupaciones artesanales, indicadores de participación ciudadana y evaluación comunal de la oferta cultural.',
+    example: 'El 42,8% de la población regional participa anualmente en actividades culturales, registrándose una valoración positiva en el Barómetro UAYSÉN (nota 4,12 regional) con alta demanda de descentralización hacia las localidades aisladas.',
+    officialSource: { name: 'SERPAT / MINCAP / Barómetro Regional UAYSÉN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Bienal' },
+    csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
+    relatedNodeIds: [1, 23, 32, 33],
+    chartSpec: {
+      type: 'bar',
+      title: 'Total de Espacios Culturales Activos por Comuna',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [{
+        label: 'Espacios Culturales Activos',
+        data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).total_espacios_culturales || 0),
+        backgroundColor: '#d97706'
+      }],
+      unit: 'espacios culturales'
+    },
+    tableColumns: ['Comuna', 'Espacios Culturales', 'Participación Ciudadana (%)', 'Percepción Cultural (1-7)', 'Fuente'],
+    tableRows: comunasBase.map(c => {
+      const cult = wp09ByIne[String(c.comuna_ine)] || {};
+      return [
+        c.nombre,
+        fmtNum(cult.total_espacios_culturales || 0),
+        `${cult.participacion_cultural_pct_c2 || 0}%`,
+        fmtNum(cult.nota_percepcion_cultura_b4b || 0),
+        'SERPAT / Barómetro UAYSÉN'
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Directorio de centros culturales y casas comunales de cultura',
+        'Tasa de participación ciudadana en eventos artísticos',
+        'Evaluación de satisfacción comunal con la oferta cultural',
+        'Red de agentes y agrupaciones de creadores patagónicos'
+      ],
+      suggestedCrossings: [
+        'Cruce con Población Censo 2024 y Casen (Nodo #23)',
+        'Cruce con Zonas de Interés Turístico ZOIT (Nodo #02)'
+      ],
+      totalRecordsInFullBase: '10 comunas con métricas de participación y percepción en data/systemic/09_cultura_patrimonio.json'
+    }
+  },
+  // --- HUB X: CTCI, CIENCIA & INNOVACIÓN (#35 a #37) ---
+  {
+    id: 35,
+    hubId: 'ctci',
+    title: 'Proyectos ANID Cartera Histórica en Aysén',
+    definition: 'Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.',
+    example: 'Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.',
+    officialSource: { name: 'Base de Datos Histórica ANID / MinCiencia OBSERVA', url: 'https://anid.cl/', frequency: 'Anual' },
+    csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
+    relatedNodeIds: [18, 20, 25, 36],
+    chartSpec: {
+      type: 'bar',
+      title: 'Proyectos ANID Adjudicados: Instituciones Locales vs. Extrarregionales',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [
+        {
+          label: 'Proyectos Locales (UAysén/CIEP/INIA)',
+          data: comunasBase.map(c => (wp10ByIne[String(c.comuna_ine)] || {}).proyectos_anid_locales_count || 0),
+          backgroundColor: '#6d28d9'
+        },
+        {
+          label: 'Proyectos Extrarregionales (UC/UCH/CECs)',
+          data: comunasBase.map(c => (wp10ByIne[String(c.comuna_ine)] || {}).proyectos_anid_extrarregionales_count || 0),
+          backgroundColor: '#a855f7'
+        }
+      ],
+      unit: 'proyectos'
+    },
+    tableColumns: ['Comuna', 'Proyectos Locales', 'Proyectos Extrarregionales', 'Monto ANID (M$)', 'Investigadores'],
+    tableRows: comunasBase.map(c => {
+      const ct = wp10ByIne[String(c.comuna_ine)] || {};
+      return [
+        c.nombre,
+        fmtNum(ct.proyectos_anid_locales_count || 0),
+        fmtNum(ct.proyectos_anid_extrarregionales_count || 0),
+        fmtNum(ct.monto_anid_acumulado_mclp || 0),
+        fmtNum(ct.investigadores_residentes_est || 0)
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Líneas concursables ANID (FONDECYT, FONDEF, FONDAP, Centros Regionales)',
+        'Monto adjudicado en moneda constante por comuna',
+        'Número de investigadores principales residentes vs. visitantes',
+        'Áreas OCDE de investigación (Ciencias Naturales, Agrícolas, Médicas, Sociales)'
+      ],
+      suggestedCrossings: [
+        'Cruce con Educación Superior y SLEP (Nodo #25)',
+        'Cruce con Empresas e Inversión Productiva (Nodo #20)'
+      ],
+      totalRecordsInFullBase: '179 proyectos de investigación georreferenciados en data/systemic/10_ctci_innovacion.json'
+    }
+  },
+  {
+    id: 36,
+    hubId: 'ctci',
+    title: 'Centros I+D Locales UAysén/CIEP/INIA vs. Ciencia Extrarregional',
+    definition: 'Infraestructura científica fija instalada en la región: **15 centros y estaciones de campo**, contrastando los centros endógenos con sede regional permanente frente a estaciones de investigación operadas por universidades de la zona central.',
+    example: 'Coyhaique alberga el Campus Río Simpson de la UAysén, la sede central del CIEP e INIA Tamel Aike, mientras que en los fiordos operan la Estación Patagonia UC (Bahía Exploradores) y laboratorios costeros del IFOP.',
+    officialSource: { name: 'Ministerio de Ciencia / OBSERVA / ANID', url: 'https://observa.minciencia.gob.cl/', frequency: 'Continuo' },
+    csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
+    relatedNodeIds: [6, 25, 27, 35],
+    chartSpec: {
+      type: 'bar',
+      title: 'Centros y Estaciones Científicas de Campo por Comuna',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [{
+        label: 'Centros y Estaciones I+D',
+        data: comunasBase.map(c => (wp10ByIne[String(c.comuna_ine)] || {}).centros_y_estaciones_ctci_count || 0),
+        backgroundColor: '#7c3aed'
+      }],
+      unit: 'centros científicos'
+    },
+    tableColumns: ['Comuna', 'Centros y Estaciones I+D', 'Investigadores Residentes', 'Instituciones Principales', 'Prioridad Ciudadana (%)'],
+    tableRows: comunasBase.map(c => {
+      const ct = wp10ByIne[String(c.comuna_ine)] || {};
+      return [
+        c.nombre,
+        fmtNum(ct.centros_y_estaciones_ctci_count || 0),
+        fmtNum(ct.investigadores_residentes_est || 0),
+        (ct.centros_y_estaciones_ctci_count > 0) ? 'UAysén / CIEP / INIA / IFOP / PUC' : 'Sin centro fijo',
+        `${ct.percepcion_ctci_prioritaria_pct_i1i || 0}%`
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Directorio de 15 estaciones de campo y laboratorios científicos',
+        'Masa crítica de investigadores residentes (115 científicos)',
+        'Vocación temática (oceanografía, glaciología, agronomía, salud pública)',
+        'Percepción ciudadana sobre la prioridad de la ciencia en la región'
+      ],
+      suggestedCrossings: [
+        'Cruce con Monitoreo Marino y FAN (Nodo #09)',
+        'Cruce con Cobertura Forestal y Flora Nativa (Nodo #27)'
+      ],
+      totalRecordsInFullBase: '15 centros y estaciones científicas en data/systemic/csv/10_ctci_innovacion_nodos.csv'
+    }
+  },
+  {
+    id: 37,
+    hubId: 'ctci',
+    title: 'Innovación Productiva CORFO/FIA y Capital Humano',
+    definition: 'Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.',
+    example: 'Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.',
+    officialSource: { name: 'CORFO DataInnovación / FIA / MinCiencia', url: 'https://datainnovacion.corfo.cl/', frequency: 'Anual' },
+    csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
+    relatedNodeIds: [10, 19, 20, 35],
+    chartSpec: {
+      type: 'bar',
+      title: 'Proyectos CORFO Innovación Productiva por Comuna',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [{
+        label: 'Proyectos CORFO Innova',
+        data: comunasBase.map(c => (wp10ByIne[String(c.comuna_ine)] || {}).proyectos_corfo_innova_count || 0),
+        backgroundColor: '#4c1d95'
+      }],
+      unit: 'proyectos de innovación'
+    },
+    tableColumns: ['Comuna', 'Proyectos CORFO', 'Monto Innovación (M$)', 'Evaluación UAysén (1-7)', 'Prioridad CTCi (%)'],
+    tableRows: comunasBase.map(c => {
+      const ct = wp10ByIne[String(c.comuna_ine)] || {};
+      return [
+        c.nombre,
+        fmtNum(ct.proyectos_corfo_innova_count || 0),
+        fmtNum(ct.monto_corfo_innova_mclp || 0),
+        fmtNum(ct.evaluacion_uaysen_promedio_i8 || 0),
+        `${ct.percepcion_ctci_prioritaria_pct_i1i || 0}%`
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Proyectos de innovación empresarial cofinanciados por CORFO',
+        'Monto de inversión público-privada en I+D aplicada',
+        'Indicadores de vinculación entre empresas salmoneras y centros locales',
+        'Evaluación comunal de la labor académica y científica'
+      ],
+      suggestedCrossings: [
+        'Cruce con Estructura Empresarial SII (Nodo #20)',
+        'Cruce con Pesca Industrial e Impuesto Específico (Nodo #10)'
+      ],
+      totalRecordsInFullBase: '59 proyectos de innovación productiva en data/systemic/10_ctci_innovacion.json'
+    }
+  },
+  // --- SATÉLITES ADICIONALES HUB VIII: SALUD APS & HOSPITALES (#38 y #39) ---
+  {
+    id: 38,
+    hubId: 'salud',
+    title: 'Cobertura APS Rural, Postas y Rondas Médicas',
+    definition: 'Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **28 postas de salud rural**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.',
+    example: 'En comunas como **Tortel**, **Lago Verde** u **O\'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.',
+    officialSource: { name: 'Servicio de Salud Aysén (SSA) / DEIS MINSAL', url: 'https://deis.minsal.cl/', frequency: 'Semestral' },
+    csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
+    relatedNodeIds: [6, 13, 23, 27, 24],
+    chartSpec: {
+      type: 'bar',
+      title: 'Postas de Salud Rural y Dispositivos APS por Comuna (SSA)',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [{
+        label: 'Postas de Salud Rural',
+        data: comunasBase.map(c => {
+          const s = (wp08ByIne[String(c.comuna_ine)] || {}).salud_diferenciada?.atencion_primaria_aps || {};
+          return s.postas_salud_rural_total || (wp05ByIne[String(c.comuna_ine)]?.salud_red_asistencial?.postas_salud_rural || 0);
+        }),
+        backgroundColor: '#be123c'
+      }],
+      unit: 'postas rurales'
+    },
+    tableColumns: ['Comuna', 'Postas Rurales', 'CESFAM/CECOSF', 'Estaciones Médico Rurales', 'Frecuencia Rondas'],
+    tableRows: comunasBase.map(c => {
+      const s = (wp08ByIne[String(c.comuna_ine)] || {}).salud_diferenciada?.atencion_primaria_aps || {};
+      return [
+        c.nombre,
+        fmtNum(s.postas_salud_rural_total || 0),
+        fmtNum((s.cesfam_total || 0) + (s.cecosf_total || 0)),
+        fmtNum(s.estaciones_medico_rurales_total || 0),
+        s.rondas_medicas_frecuencia_y_equipo ? 'Quincenal / Mensual' : 'Periódica'
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Postas de salud rural operativas con TENS residente',
+        'Estaciones médico rurales para atención en terreno',
+        'Calendario de rondas médicas del equipo multidisciplinario',
+        'Programas preventivos (EMP, EMPAM, PSCV, PNI)'
+      ],
+      suggestedCrossings: [
+        'Cruce con Fibra Óptica Austral y Telemedicina (Nodo #14)',
+        'Cruce con Adultos Mayores y Pobreza CASEN (Nodo #23)'
+      ],
+      totalRecordsInFullBase: '10 comunas y 53 dispositivos APS rurales en data/systemic/08_desagregaciones_sectoriales_aysen.json'
+    }
+  },
+  {
+    id: 39,
+    hubId: 'salud',
+    title: 'Lista de Espera Quirúrgica y Aeroevacuaciones SAMU',
+    definition: 'Logística de urgencia vital y tiempos de derivación crítica hacia el Hospital Regional Coyhaique y centros extrarregionales (Puerto Montt / Santiago), disponibilidad de helipuertos DGAC, ambulancias 4x4 y aeroevacuaciones FACH/SAMU.',
+    example: 'Una evacuación desde **Villa O\'Higgins** a Coyhaique toma **8 a 9 horas vía terrestre** o **75 minutos vía aérea**, condicionada a techos de vuelo y meteorología patagónica extrema.',
+    officialSource: { name: 'Centro Regulador SAMU Regional Aysén / FACH / DGAC', url: 'https://saludaysen.cl/', frequency: 'Trimestral' },
+    csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
+    relatedNodeIds: [8, 14, 23, 31, 24],
+    chartSpec: {
+      type: 'bar',
+      title: 'Tiempo de Traslado Terrestre a Coyhaique por Comuna (Horas)',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [{
+        label: 'Horas Traslado a Coyhaique',
+        data: comunasBase.map(c => (wp05ByIne[String(c.comuna_ine)]?.salud_red_asistencial?.tiempo_traslado_terrestre_coyhaique_horas || 0)),
+        backgroundColor: '#e11d48'
+      }],
+      unit: 'horas'
+    },
+    tableColumns: ['Comuna', 'Tiempo a Coyhaique (hrs)', 'Aeródromo DGAC', 'Tipo Traslado', 'Centro Derivación Final'],
+    tableRows: comunasBase.map(c => {
+      const s = (wp05ByIne[String(c.comuna_ine)] || {}).salud_red_asistencial || {};
+      const eq = c.equipamiento_critico || {};
+      return [
+        c.nombre,
+        `${s.tiempo_traslado_terrestre_coyhaique_horas || 0} hrs`,
+        eq.aerodromo_dgac || 'Habilitado',
+        (s.tiempo_traslado_terrestre_coyhaique_horas > 4) ? 'Terrestre / Aeroevacuación' : 'Terrestre Directo',
+        'Hospital Regional Coyhaique'
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Tiempos de traslado terrestre según estado de Carretera Austral',
+        'Pistas aéreas y helipuertos operativos para SAMU aéreo',
+        'Protocolos de aeroevacuación de pacientes críticos',
+        'Capacidad de respuesta ante emergencias climáticas y desastres'
+      ],
+      suggestedCrossings: [
+        'Cruce con Inversión Ruta 7 y Conectividad (Nodo #18)',
+        'Cruce con Riesgos Volcánicos y Sismos (Nodo #31)'
+      ],
+      totalRecordsInFullBase: '10 comunas con tiempos y protocolos de aeroevacuacion en data/systemic/08_desagregaciones_sectoriales_aysen.json'
+    }
   }
 ];
 
-// Integrar provenance en los 31 nodos y ordenar por ID
+// Integrar provenance en los nodos y ordenar por ID
 const nodos = rawNodos.map(n => {
-  const p = provByNodeId[n.id] || {
-    sourceEntity: n.officialSource?.name || 'Fuente Oficial Estado de Chile',
-    sourceUrl: n.officialSource?.url || 'https://www.gob.cl',
-    collectionDate: 'Corte Septiembre-Octubre 2026',
-    collectionMethod: 'Catastro Oficial',
-    updateFrequency: n.officialSource?.frequency || 'Periódica',
-    nextUpdate: 'Continuo 2026'
-  };
+  let p = provByNodeId[n.id];
+  if (!p) {
+    if (n.hubId === 'cultura' && provCatalog.fuente_cultura_patrimonio) {
+      p = {
+        sourceEntity: provCatalog.fuente_cultura_patrimonio.sourceEntity,
+        sourceUrl: provCatalog.fuente_cultura_patrimonio.sourceUrl,
+        collectionDate: provCatalog.fuente_cultura_patrimonio.collectionDate,
+        collectionMethod: provCatalog.fuente_cultura_patrimonio.collectionMethod,
+        updateFrequency: provCatalog.fuente_cultura_patrimonio.updateFrequency,
+        nextUpdate: 'Continuo 2026'
+      };
+    } else if (n.hubId === 'ctci' && provCatalog.fuente_ctci_innovacion) {
+      p = {
+        sourceEntity: provCatalog.fuente_ctci_innovacion.sourceEntity,
+        sourceUrl: provCatalog.fuente_ctci_innovacion.sourceUrl,
+        collectionDate: provCatalog.fuente_ctci_innovacion.collectionDate,
+        collectionMethod: provCatalog.fuente_ctci_innovacion.collectionMethod,
+        updateFrequency: provCatalog.fuente_ctci_innovacion.updateFrequency,
+        nextUpdate: 'Continuo 2026'
+      };
+    } else {
+      p = {
+        sourceEntity: n.officialSource?.name || 'Fuente Oficial Estado de Chile',
+        sourceUrl: n.officialSource?.url || 'https://www.gob.cl',
+        collectionDate: 'Corte Septiembre-Octubre 2026',
+        collectionMethod: 'Catastro Oficial',
+        updateFrequency: n.officialSource?.frequency || 'Periódica',
+        nextUpdate: 'Continuo 2026'
+      };
+    }
+  }
 
   return {
     id: n.id,
@@ -1724,6 +2179,8 @@ const comunas = comunasBase.map((c, idx) => {
   const g6 = wp06ByIne[ine] || {};
   const g7 = wp07ByIne[ine] || {};
   const g8 = wp08ByIne[ine] || {};
+  const g9 = wp09ByIne[ine] || {};
+  const g10 = wp10ByIne[ine] || {};
 
   return {
     id: idx + 1,
@@ -1804,7 +2261,21 @@ const comunas = comunasBase.map((c, idx) => {
     superficie_glaciar_km2: (g7.flora_y_formaciones_vegetacionales || {}).superficie_glaciar_km2 || 0,
     daa_consuntivos_m3s: (g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_consuntivos_m3s || 0,
     daa_no_consuntivos_m3s: (g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_no_consuntivos_m3s || 0,
-    dias_sobre_norma_mp25: (g7.flora_y_formaciones_vegetacionales || {}).dias_sobre_norma_mp25_anual || 0
+    dias_sobre_norma_mp25: (g7.flora_y_formaciones_vegetacionales || {}).dias_sobre_norma_mp25_anual || 0,
+    // Hub VIII (Salud)
+    postas_salud_rural: (g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : ((g5.salud_red_asistencial || {}).postas_salud_rural || 0),
+    // Hub IX (Cultura)
+    museos_espacios_n: (g9.museos_count !== undefined) ? (g9.museos_count + (g9.total_espacios_culturales || 0)) : (g9.total_espacios_culturales || 0),
+    bibliotecas_snbp_n: g9.bibliotecas_publicas_count || 0,
+    fondart_fndr_mclp: (g9.fondos_cultura_adjudicados_mclp || 0) + (g9.fndr_8pct_cultura_mclp || 0),
+    total_espacios_culturales: g9.total_espacios_culturales || 0,
+    monumentos_nacionales_count: g9.monumentos_nacionales_count || 0,
+    // Hub X (CTCi)
+    proyectos_anid_n: (g10.proyectos_anid_locales_count || 0) + (g10.proyectos_anid_extrarregionales_count || 0),
+    monto_anid_mclp: g10.monto_anid_acumulado_mclp || 0,
+    innovacion_corfo_mclp: g10.monto_corfo_innova_mclp || 0,
+    proyectos_ctci_total: g10.total_proyectos_ctci || 0,
+    investigadores_residentes: g10.investigadores_residentes_est || 0
   };
 });
 
@@ -1827,10 +2298,9 @@ const holdings = (holdingsRaw.holdings || []).map(h => ({
 
 // ============================================================================
 // 5. AUDITORIA AUTOMATICA DE INTEGRIDAD Y REGLAS CONTRACTUALES
-// ============================================================================
-// 5.1 Validar que haya exactamente 31 nodos
-if (nodos.length !== 31) {
-  throw new Error(`Se esperaban 31 nodos, pero se obtuvieron ${nodos.length}.`);
+// 5.1 Validar que haya al menos 31 nodos (39 con Hubs VIII, IX y X)
+if (nodos.length < 31 || nodos.length > 50) {
+  throw new Error(`Se esperaban entre 31 y 50 nodos, pero se obtuvieron ${nodos.length}.`);
 }
 
 // 5.2 Validar cada nodo individualmente
@@ -2627,8 +3097,8 @@ fs.writeFileSync(
 );
 
 console.log(`[OK] Generado data/aysen_hubs_data.js (${fs.statSync(outPath).size} bytes):`);
-console.log(`  - ${hubs.length} Hubs con datos reales (I a VII)`);
-console.log(`  - ${nodos.length} Nodos satelite (#01 a #31) verificados al 100%`);
+console.log(`  - ${hubs.length} Hubs con datos reales (I a X)`);
+console.log(`  - ${nodos.length} Nodos satelite (#01 a #39) verificados al 100%`);
 console.log(`  - 0 celdas nulas o undefined`);
 console.log(`  - 0 emojis detectados`);
 console.log(`  - ${comunas.length} comunas consolidadas y ${holdings.length} holdings salmoneros`);

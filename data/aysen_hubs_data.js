@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-10-24T06:18:25.332Z",
+  "generatedAt": "2026-10-25T14:12:30.857Z",
   "hubs": [
     {
       "id": "turismo",
@@ -2390,8 +2390,8 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": "social",
       "numeral": "VI",
-      "title": "VI. Sociedad: Demografía, Salud & Educación",
-      "shortTitle": "Demografía, Salud & Educación",
+      "title": "VI. Demografía, Educación & Riesgos",
+      "shortTitle": "Demografía, Educación & Riesgos",
       "color": "#2563eb",
       "description": "Población comunal **Censo 2024 (100.745 hab)** y **CASEN 2022**, red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), educación pública (**SLEP Aysén**) y tasas delictuales (**CEAD / VIF**).",
       "example": "Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.",
@@ -2838,8 +2838,8 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": "biodiversidad",
       "numeral": "VII",
-      "title": "VII. Biodiversidad & Medio Ambiente",
-      "shortTitle": "Biodiversidad & Medio Ambiente",
+      "title": "VII. Biodiversidad & Clima",
+      "shortTitle": "Biodiversidad & Clima",
       "color": "#047857",
       "description": "Formaciones de **flora nativa (CONAF SIT)**, **fauna en conservación (RCE MMA / Huemul)**, **especies exóticas invasoras (EEI / Visón, Castor)**, monitoreo ambiental continuo (**SINCA / DGA**) y volcanes/sismos (**RNVV / USGS**).",
       "example": "La región alberga 5,7 millones de hectáreas de bosque nativo y el 70% de la población mundial de Huemules, monitoreando en paralelo las estaciones de material particulado MP2,5 y la sismicidad regional.",
@@ -3286,9 +3286,9 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": "salud",
       "numeral": "VIII",
-      "title": "VIII. Salud APS, Hospitales & Desagregaciones Sectoriales",
+      "title": "VIII. Salud APS & Hospitales",
       "shortTitle": "Salud APS & Hospitales",
-      "color": "#dc2626",
+      "color": "#be123c",
       "description": "Red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), capacidad de **261 camas hospitalarias**, **32 postas de salud rural**, tiempos de traslado SAMU e isócronas de evacuación crítica.",
       "example": "El **Hospital Regional de Coyhaique** concentra el **78,5% de las camas regionales** (205 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas.",
       "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
@@ -3724,6 +3724,902 @@ window.AYSEN_HUBS_DATA = {
                   "semaforo": "verde",
                   "tasa_positiva_pct": 40.8,
                   "promedio_valor": 3.92
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "cultura",
+      "numeral": "IX",
+      "title": "IX. Cultura, Artes & Patrimonio",
+      "shortTitle": "Cultura, Artes & Patrimonio",
+      "color": "#b45309",
+      "description": "Infraestructura cultural regional: **42 espacios culturales**, **14 museos (RMC)**, **13 bibliotecas públicas (SNBP)**, **9 monumentos nacionales (CMN)** y financiamiento Fondos Cultura / FNDR 8%.",
+      "example": "**Coyhaique** concentra la Biblioteca Regional y el Centro Cultural, mientras localidades como **Caleta Tortel**, **Guaitecas** y **Cerro Castillo** albergan museos comunitarios y monumentos históricos australes.",
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "nodesFile": "data/systemic/csv/09_cultura_patrimonio_nodos.csv",
+      "sourceName": "SERPAT / CMN / SNBP / MINCAP / GORE Aysén",
+      "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+      "espejo_barometro": {
+        "modulo_id": "cultura_patrimonio",
+        "total_preguntas": 2,
+        "preguntas": [
+          {
+            "codigo": "B4_B",
+            "enunciado": "Evaluación de oportunidades de recreación y cultura en la región",
+            "tipo": "nota_1_7",
+            "N_total": 465,
+            "n_muestral_valido": 463,
+            "me_95_total": 4.54,
+            "semaforo_global": "verde",
+            "tasa_positiva_pct": 40.2,
+            "promedio_valor": 4.04,
+            "micro_cubos": {
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 198,
+                  "me_95": 6.96,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 44.4,
+                  "promedio_valor": 4.11
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 36.2,
+                  "promedio_valor": 4.03
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 37.4,
+                  "promedio_valor": 3.97
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 41.9,
+                  "promedio_valor": 4.02
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 34.4,
+                  "promedio_valor": 3.94
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.5,
+                  "promedio_valor": 4.22
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 216,
+                  "me_95": 6.66,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 33.3,
+                  "promedio_valor": 3.81
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 247,
+                  "me_95": 6.23,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.2,
+                  "promedio_valor": 4.24
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 32.4,
+                  "promedio_valor": 3.72
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 40.9,
+                  "promedio_valor": 3.99
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 35.8,
+                  "promedio_valor": 3.99
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 84,
+                  "me_95": 10.69,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 53.6,
+                  "promedio_valor": 4.51
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 204,
+                  "me_95": 6.85,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 37.7,
+                  "promedio_valor": 4.02
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 46.1,
+                  "promedio_valor": 4.09
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 36.2,
+                  "promedio_valor": 4
+                }
+              }
+            }
+          },
+          {
+            "codigo": "C2",
+            "enunciado": "Participación activa en organizaciones culturales o comunitarias",
+            "tipo": "binario",
+            "N_total": 465,
+            "n_muestral_valido": 465,
+            "me_95_total": 4.53,
+            "semaforo_global": "verde",
+            "tasa_positiva_pct": 46.9,
+            "promedio_valor": 1.53,
+            "micro_cubos": {
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 200,
+                  "me_95": 6.92,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 43,
+                  "promedio_valor": 1.57
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 53.2,
+                  "promedio_valor": 1.47
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 48,
+                  "promedio_valor": 1.52
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 150,
+                  "me_95": 7.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 45.3,
+                  "promedio_valor": 1.55
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 48.9,
+                  "promedio_valor": 1.51
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 45.7,
+                  "promedio_valor": 1.54
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 217,
+                  "me_95": 6.64,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 41,
+                  "promedio_valor": 1.59
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 248,
+                  "me_95": 6.21,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 52,
+                  "promedio_valor": 1.48
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 31.1,
+                  "promedio_valor": 1.69
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 47.4,
+                  "promedio_valor": 1.53
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 51.7,
+                  "promedio_valor": 1.48
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 86,
+                  "me_95": 10.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 51.2,
+                  "promedio_valor": 1.49
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 206,
+                  "me_95": 6.82,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 39.3,
+                  "promedio_valor": 1.61
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 49.4,
+                  "promedio_valor": 1.51
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.1,
+                  "promedio_valor": 1.42
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ctci",
+      "numeral": "X",
+      "title": "X. CTCi, Ciencia & Innovación",
+      "shortTitle": "CTCi, Ciencia & Innovación",
+      "color": "#6d28d9",
+      "description": "Ecosistema de ciencia, tecnología e innovación austral: **179 proyectos de I+D**, cartera histórica ANID (**17.326 MM CLP**), proyectos CORFO Innova (**8.450 MM CLP**) y **15 centros y estaciones científicas**.",
+      "example": "Articula la investigación local liderada por el **CIEP**, la **Universidad de Aysén** e **INIA Tamel Aike** frente a bases científicas de universidades metropolitanas (UC en Exploradores, UCH/CECs en glaciares).",
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "nodesFile": "data/systemic/csv/10_ctci_innovacion_nodos.csv",
+      "sourceName": "MinCiencia / ANID / CORFO / CIEP / UAysén / INIA",
+      "sourceUrl": "https://observa.minciencia.gob.cl/",
+      "espejo_barometro": {
+        "modulo_id": "ctci_innovacion",
+        "total_preguntas": 4,
+        "preguntas": [
+          {
+            "codigo": "I1_I",
+            "enunciado": "Importancia de actividades de ciencia, tecnología e innovación para el futuro de Aysén",
+            "tipo": "escala_4",
+            "N_total": 465,
+            "n_muestral_valido": 452,
+            "me_95_total": 4.6,
+            "semaforo_global": "verde",
+            "tasa_positiva_pct": 89.6,
+            "promedio_valor": 3.56,
+            "micro_cubos": {
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 190,
+                  "me_95": 7.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.2,
+                  "promedio_valor": 3.62
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.6,
+                  "promedio_valor": 3.65
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 168,
+                  "me_95": 7.55,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 83.3,
+                  "promedio_valor": 3.46
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 143,
+                  "me_95": 8.19,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93,
+                  "promedio_valor": 3.59
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 183,
+                  "me_95": 7.24,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 92.3,
+                  "promedio_valor": 3.63
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 126,
+                  "me_95": 8.72,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 81.7,
+                  "promedio_valor": 3.44
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 207,
+                  "me_95": 6.8,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 88.9,
+                  "promedio_valor": 3.57
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 245,
+                  "me_95": 6.25,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.2,
+                  "promedio_valor": 3.56
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 91.9,
+                  "promedio_valor": 3.54
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.7,
+                  "promedio_valor": 3.6
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 147,
+                  "me_95": 8.08,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 89.1,
+                  "promedio_valor": 3.61
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 80,
+                  "me_95": 10.95,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 86.2,
+                  "promedio_valor": 3.45
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 196,
+                  "me_95": 6.99,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 87.2,
+                  "promedio_valor": 3.51
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 152,
+                  "me_95": 7.94,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 92.1,
+                  "promedio_valor": 3.53
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 104,
+                  "me_95": 9.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.4,
+                  "promedio_valor": 3.72
+                }
+              }
+            }
+          },
+          {
+            "codigo": "I5",
+            "enunciado": "Conocimiento de la existencia de la Universidad de Aysén",
+            "tipo": "binario",
+            "N_total": 465,
+            "n_muestral_valido": 464,
+            "me_95_total": 4.54,
+            "semaforo_global": "verde",
+            "tasa_positiva_pct": 84.3,
+            "promedio_valor": 1.16,
+            "micro_cubos": {
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 199,
+                  "me_95": 6.94,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 74.9,
+                  "promedio_valor": 1.25
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 94,
+                  "me_95": 10.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 86.2,
+                  "promedio_valor": 1.14
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 94.2,
+                  "promedio_valor": 1.06
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 149,
+                  "me_95": 8.02,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 77.2,
+                  "promedio_valor": 1.23
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 186,
+                  "me_95": 7.18,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 83.3,
+                  "promedio_valor": 1.17
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 129,
+                  "me_95": 8.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 93.8,
+                  "promedio_valor": 1.06
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 216,
+                  "me_95": 6.66,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 84.7,
+                  "promedio_valor": 1.15
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 248,
+                  "me_95": 6.21,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 83.9,
+                  "promedio_valor": 1.16
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 74,
+                  "me_95": 11.39,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 87.8,
+                  "promedio_valor": 1.12
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 154,
+                  "me_95": 7.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 83.1,
+                  "promedio_valor": 1.17
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 151,
+                  "me_95": 7.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 84.8,
+                  "promedio_valor": 1.15
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 85,
+                  "me_95": 10.62,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 82.4,
+                  "promedio_valor": 1.18
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 206,
+                  "me_95": 6.82,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 90.8,
+                  "promedio_valor": 1.09
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 153,
+                  "me_95": 7.91,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 79.1,
+                  "promedio_valor": 1.21
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 105,
+                  "me_95": 9.56,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 79,
+                  "promedio_valor": 1.21
+                }
+              }
+            }
+          },
+          {
+            "codigo": "I8",
+            "enunciado": "Evaluación del desempeño de la Universidad de Aysén",
+            "tipo": "nota_1_7",
+            "N_total": 465,
+            "n_muestral_valido": 423,
+            "me_95_total": 4.75,
+            "semaforo_global": "verde",
+            "tasa_positiva_pct": 71.4,
+            "promedio_valor": 4.98,
+            "micro_cubos": {
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 171,
+                  "me_95": 7.49,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 68.4,
+                  "promedio_valor": 5.08
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 89,
+                  "me_95": 10.38,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 76.4,
+                  "promedio_valor": 5.11
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 163,
+                  "me_95": 7.67,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 71.8,
+                  "promedio_valor": 4.8
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 137,
+                  "me_95": 8.37,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.3,
+                  "promedio_valor": 5.1
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 166,
+                  "me_95": 7.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 70.5,
+                  "promedio_valor": 4.98
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 120,
+                  "me_95": 8.94,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 75,
+                  "promedio_valor": 4.84
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 197,
+                  "me_95": 6.97,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 75.6,
+                  "promedio_valor": 5.12
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 226,
+                  "me_95": 6.51,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 67.7,
+                  "promedio_valor": 4.85
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 72,
+                  "me_95": 11.54,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.2,
+                  "promedio_valor": 4.99
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 143,
+                  "me_95": 8.19,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.9,
+                  "promedio_valor": 4.84
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 138,
+                  "me_95": 8.33,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 73.2,
+                  "promedio_valor": 5.02
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 70,
+                  "me_95": 11.71,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 70,
+                  "promedio_valor": 5.17
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 189,
+                  "me_95": 7.12,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 76.7,
+                  "promedio_valor": 5.04
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 136,
+                  "me_95": 8.4,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 67.6,
+                  "promedio_valor": 4.95
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 98,
+                  "me_95": 9.89,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 66.3,
+                  "promedio_valor": 4.9
+                }
+              }
+            }
+          },
+          {
+            "codigo": "F4_G",
+            "enunciado": "Aporte de las Universidades al desarrollo regional de Aysén",
+            "tipo": "escala_4",
+            "N_total": 465,
+            "n_muestral_valido": 438,
+            "me_95_total": 4.67,
+            "semaforo_global": "verde",
+            "tasa_positiva_pct": 66.4,
+            "promedio_valor": 2.11,
+            "micro_cubos": {
+              "por_nivel_educativo": {
+                "basica_media": {
+                  "N_estrato": 200,
+                  "n_muestral": 185,
+                  "me_95": 7.2,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.9,
+                  "promedio_valor": 2.27
+                },
+                "tecnico_superior": {
+                  "N_estrato": 94,
+                  "n_muestral": 87,
+                  "me_95": 10.5,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 70.1,
+                  "promedio_valor": 2.02
+                },
+                "universitaria": {
+                  "N_estrato": 171,
+                  "n_muestral": 166,
+                  "me_95": 7.6,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.9,
+                  "promedio_valor": 1.98
+                }
+              },
+              "por_nse": {
+                "bajo": {
+                  "N_estrato": 150,
+                  "n_muestral": 146,
+                  "me_95": 8.1,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 58.2,
+                  "promedio_valor": 2.3
+                },
+                "medio": {
+                  "N_estrato": 186,
+                  "n_muestral": 169,
+                  "me_95": 7.53,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 67.5,
+                  "promedio_valor": 2.09
+                },
+                "alto": {
+                  "N_estrato": 129,
+                  "n_muestral": 123,
+                  "me_95": 8.83,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 74.8,
+                  "promedio_valor": 1.91
+                }
+              },
+              "por_sexo": {
+                "hombre": {
+                  "N_estrato": 217,
+                  "n_muestral": 205,
+                  "me_95": 6.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 69.8,
+                  "promedio_valor": 2.07
+                },
+                "mujer": {
+                  "N_estrato": 248,
+                  "n_muestral": 233,
+                  "me_95": 6.41,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 63.5,
+                  "promedio_valor": 2.15
+                }
+              },
+              "por_tramo_edad": {
+                "18-29": {
+                  "N_estrato": 74,
+                  "n_muestral": 70,
+                  "me_95": 11.71,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 71.4,
+                  "promedio_valor": 2.1
+                },
+                "30-44": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.3,
+                  "promedio_valor": 2.04
+                },
+                "45-59": {
+                  "N_estrato": 151,
+                  "n_muestral": 145,
+                  "me_95": 8.13,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60,
+                  "promedio_valor": 2.15
+                },
+                "60+": {
+                  "N_estrato": 86,
+                  "n_muestral": 75,
+                  "me_95": 11.31,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 62.7,
+                  "promedio_valor": 2.19
+                }
+              },
+              "por_macrozona": {
+                "centro": {
+                  "N_estrato": 206,
+                  "n_muestral": 191,
+                  "me_95": 7.08,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 72.8,
+                  "promedio_valor": 2.02
+                },
+                "norte": {
+                  "N_estrato": 154,
+                  "n_muestral": 148,
+                  "me_95": 8.05,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 62.2,
+                  "promedio_valor": 2.18
+                },
+                "sur": {
+                  "N_estrato": 105,
+                  "n_muestral": 99,
+                  "me_95": 9.84,
+                  "semaforo": "verde",
+                  "tasa_positiva_pct": 60.6,
+                  "promedio_valor": 2.2
                 }
               }
             }
@@ -7360,13 +8256,13 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": 24,
       "nodeId": 24,
-      "hubId": "social",
+      "hubId": "salud",
       "isSpecial": false,
-      "title": "Red Asistencial de Salud y Evacuación SAMU",
+      "title": "Red Asistencial DEIS y Hospitales de Aysén",
       "definition": "Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (APS - 2 CESFAM, 3 CECOSF, 28 Postas Rurales y 20 EMR)** frente a la **Red Hospitalaria (1 Hospital de Alta Complejidad y 4 Hospitales Comunitarios)** con 261 camas totales, camas críticas UCI/UTI y tiempos de traslado SAMU.",
       "example": "**Coyhaique** concentra el **Hospital Regional (167 camas, 22 críticas UCI/UTI, 5 quirófanos)** y la base SAMU, mientras las 4 cabeceras provinciales cuentan con hospitales comunitarios de baja complejidad y 5 comunas dependen exclusivamente de postas rurales con traslados terrestres de hasta **7 a 9 horas** hacia Coyhaique.",
       "officialSource": {
-        "name": "Departamento de Estadisticas e Informacion de Salud (DEIS) / SSA",
+        "name": "Departamento de Estadísticas e Información de Salud (DEIS) / SSA",
         "url": "https://deis.minsal.cl/",
         "frequency": "Mensual"
       },
@@ -7382,10 +8278,10 @@ window.AYSEN_HUBS_DATA = {
       },
       "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "relatedNodeIds": [
-        14,
-        18,
+        6,
+        13,
         23,
-        31
+        27
       ],
       "chartSpec": {
         "type": "bar",
@@ -7409,7 +8305,7 @@ window.AYSEN_HUBS_DATA = {
               12,
               0
             ],
-            "backgroundColor": "#0059c5"
+            "backgroundColor": "#be123c"
           },
           {
             "label": "Dispositivos Asistenciales",
@@ -8564,6 +9460,1320 @@ window.AYSEN_HUBS_DATA = {
         ],
         "totalRecordsInFullBase": "28 hitos geologicos y estaciones ambientales en data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv"
       }
+    },
+    {
+      "id": 32,
+      "nodeId": 32,
+      "hubId": "cultura",
+      "isSpecial": false,
+      "title": "Museos, Bibliotecas y Monumentos SERPAT/CMN",
+      "definition": "Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)** y **9 Monumentos Históricos y Arqueológicos** protegidos por el Consejo de Monumentos Nacionales (CMN).",
+      "example": "**Coyhaique** alberga 3 museos y la Biblioteca Regional, mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.",
+      "officialSource": {
+        "name": "Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN",
+        "url": "https://ide.patrimoniocultural.gob.cl/",
+        "frequency": "Anual"
+      },
+      "provenance": {
+        "sourceEntity": "Servicio Nacional del Patrimonio Cultural (SERPAT) / Ministerio de las Culturas, las Artes y el Patrimonio (MINCAP)",
+        "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+        "collectionDate": "Catastro IDE Patrimonio y Fondos Cultura · Corte Octubre 2026",
+        "collectionMethod": "Registros oficiales IDE Patrimonio (CMN, RMC, SNBP), MINCAP Fondos Cultura, DIPRES FNDR 8% y SINIM",
+        "updateFrequency": "Anual / Continuo",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "relatedNodeIds": [
+        1,
+        15,
+        23,
+        33
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Museos, Bibliotecas Públicas y Monumentos Nacionales por Comuna",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Museos RMC",
+            "data": [
+              3,
+              0,
+              2,
+              2,
+              1,
+              2,
+              2,
+              1,
+              1,
+              0
+            ],
+            "backgroundColor": "#b45309"
+          },
+          {
+            "label": "Bibliotecas SNBP",
+            "data": [
+              1,
+              1,
+              1,
+              3,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "backgroundColor": "#d97706"
+          },
+          {
+            "label": "Monumentos CMN",
+            "data": [
+              2,
+              0,
+              2,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              1
+            ],
+            "backgroundColor": "#f59e0b"
+          }
+        ],
+        "unit": "recintos patrimoniales"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Museos RMC",
+        "Bibliotecas SNBP",
+        "Monumentos CMN",
+        "Espacios Culturales"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "3",
+          "1",
+          "2",
+          "8"
+        ],
+        [
+          "Lago Verde",
+          "0",
+          "1",
+          "0",
+          "2"
+        ],
+        [
+          "Aysén",
+          "2",
+          "1",
+          "2",
+          "6"
+        ],
+        [
+          "Cisnes",
+          "2",
+          "3",
+          "0",
+          "6"
+        ],
+        [
+          "Guaitecas",
+          "1",
+          "1",
+          "0",
+          "2"
+        ],
+        [
+          "Chile Chico",
+          "2",
+          "2",
+          "1",
+          "5"
+        ],
+        [
+          "Río Ibáñez",
+          "2",
+          "1",
+          "3",
+          "6"
+        ],
+        [
+          "Cochrane",
+          "1",
+          "1",
+          "0",
+          "3"
+        ],
+        [
+          "O'Higgins",
+          "1",
+          "1",
+          "0",
+          "2"
+        ],
+        [
+          "Tortel",
+          "0",
+          "1",
+          "1",
+          "2"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Directorio de 14 museos regionales y comunitarios",
+          "Red de 13 bibliotecas públicas conectadas a BiblioRedes",
+          "9 Monumentos Históricos y Zonas Típicas decretadas por ley",
+          "Distribución territorial de recintos patrimoniales por cuenca"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Prestadores de Servicios Turísticos (Nodo #01)",
+          "Cruce con Presupuestos Municipales y Cultura (Nodo #15)"
+        ],
+        "totalRecordsInFullBase": "10 comunas con catastro patrimonial completo en data/systemic/09_cultura_patrimonio.json"
+      }
+    },
+    {
+      "id": 33,
+      "nodeId": 33,
+      "hubId": "cultura",
+      "isSpecial": false,
+      "title": "Fondos Cultura MINCAP y FNDR 8%",
+      "definition": "Flujos de financiamiento público para el desarrollo cultural: asignaciones acumuladas de los **Fondos de Cultura (FONDART Regional, Fondos del Libro, Música y Audiovisual)**, asignación del **FNDR 8% Comunitario del GORE Aysén** y gasto municipal anual en cultura.",
+      "example": "La inversión cultural se concentra en **Coyhaique ($2.150 MM acumulados)** y **Aysén ($820 MM)**, mientras las comunas del sur dependen de líneas concursables de intermediación y del FNDR 8%.",
+      "officialSource": {
+        "name": "MINCAP Fondos Cultura / DIPRES GORE Aysén / SINIM",
+        "url": "https://www.fondosdecultura.cl/",
+        "frequency": "Anual"
+      },
+      "provenance": {
+        "sourceEntity": "Servicio Nacional del Patrimonio Cultural (SERPAT) / Ministerio de las Culturas, las Artes y el Patrimonio (MINCAP)",
+        "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+        "collectionDate": "Catastro IDE Patrimonio y Fondos Cultura · Corte Octubre 2026",
+        "collectionMethod": "Registros oficiales IDE Patrimonio (CMN, RMC, SNBP), MINCAP Fondos Cultura, DIPRES FNDR 8% y SINIM",
+        "updateFrequency": "Anual / Continuo",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "relatedNodeIds": [
+        15,
+        18,
+        32,
+        34
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Fondos Cultura Adjudicados vs. FNDR 8% Cultura por Comuna (M$ CLP)",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Fondos Cultura MINCAP (M$)",
+            "data": [
+              2150.4,
+              23.5,
+              742.8,
+              212.5,
+              42.1,
+              162,
+              195.4,
+              184.2,
+              45.6,
+              91
+            ],
+            "backgroundColor": "#b45309"
+          },
+          {
+            "label": "FNDR 8% Cultura (M$)",
+            "data": [
+              480,
+              42,
+              310,
+              145,
+              68,
+              120,
+              110,
+              95,
+              38,
+              42
+            ],
+            "backgroundColor": "#78350f"
+          }
+        ],
+        "unit": "M$ CLP"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Fondos MINCAP (M$)",
+        "FNDR 8% Cultura (M$)",
+        "Gasto Municipal (M$)",
+        "Gasto per Cápita ($)"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "2.150,4",
+          "480",
+          "685,2",
+          "11.850"
+        ],
+        [
+          "Lago Verde",
+          "23,5",
+          "42",
+          "38,4",
+          "49.294"
+        ],
+        [
+          "Aysén",
+          "742,8",
+          "310",
+          "215,6",
+          "9.306"
+        ],
+        [
+          "Cisnes",
+          "212,5",
+          "145",
+          "82,4",
+          "16.040"
+        ],
+        [
+          "Guaitecas",
+          "42,1",
+          "68",
+          "41,2",
+          "25.782"
+        ],
+        [
+          "Chile Chico",
+          "162",
+          "120",
+          "74,8",
+          "15.250"
+        ],
+        [
+          "Río Ibáñez",
+          "195,4",
+          "110",
+          "52,6",
+          "19.317"
+        ],
+        [
+          "Cochrane",
+          "184,2",
+          "95",
+          "62,4",
+          "18.045"
+        ],
+        [
+          "O'Higgins",
+          "45,6",
+          "38",
+          "21,8",
+          "33.590"
+        ],
+        [
+          "Tortel",
+          "91",
+          "42",
+          "18,5",
+          "36.706"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Monto acumulado adjudicado en líneas FONDART Regional",
+          "Distribución de recursos del 8% FNDR para cultura",
+          "Gasto municipal reportado al SINIM en actividades culturales",
+          "Inversión cultural per cápita por habitante comunal"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Dependencia del Fondo Común Municipal (Nodo #16)",
+          "Cruce con Inversión Pública FNDR (Nodo #18)"
+        ],
+        "totalRecordsInFullBase": "10 comunas con detalle de fondos públicos en data/systemic/csv/09_cultura_patrimonio_comunas.csv"
+      }
+    },
+    {
+      "id": 34,
+      "nodeId": 34,
+      "hubId": "cultura",
+      "isSpecial": false,
+      "title": "Espacios y Agentes Culturales de Aysén",
+      "definition": "Infraestructura activa de difusión artística: teatros, centros culturales, casas de la cultura comunales, agrupaciones artesanales, indicadores de participación ciudadana y evaluación comunal de la oferta cultural.",
+      "example": "El 42,8% de la población regional participa anualmente en actividades culturales, registrándose una valoración positiva en el Barómetro UAYSÉN (nota 4,12 regional) con alta demanda de descentralización hacia las localidades aisladas.",
+      "officialSource": {
+        "name": "SERPAT / MINCAP / Barómetro Regional UAYSÉN",
+        "url": "https://ide.patrimoniocultural.gob.cl/",
+        "frequency": "Bienal"
+      },
+      "provenance": {
+        "sourceEntity": "Servicio Nacional del Patrimonio Cultural (SERPAT) / Ministerio de las Culturas, las Artes y el Patrimonio (MINCAP)",
+        "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+        "collectionDate": "Catastro IDE Patrimonio y Fondos Cultura · Corte Octubre 2026",
+        "collectionMethod": "Registros oficiales IDE Patrimonio (CMN, RMC, SNBP), MINCAP Fondos Cultura, DIPRES FNDR 8% y SINIM",
+        "updateFrequency": "Anual / Continuo",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "relatedNodeIds": [
+        1,
+        23,
+        32,
+        33
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Total de Espacios Culturales Activos por Comuna",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Espacios Culturales Activos",
+            "data": [
+              8,
+              2,
+              6,
+              6,
+              2,
+              5,
+              6,
+              3,
+              2,
+              2
+            ],
+            "backgroundColor": "#d97706"
+          }
+        ],
+        "unit": "espacios culturales"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Espacios Culturales",
+        "Participación Ciudadana (%)",
+        "Percepción Cultural (1-7)",
+        "Fuente"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "8",
+          "42.2%",
+          "3,87",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Lago Verde",
+          "2",
+          "80%",
+          "5",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Aysén",
+          "6",
+          "40.4%",
+          "3,81",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Cisnes",
+          "6",
+          "74.1%",
+          "5",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Guaitecas",
+          "2",
+          "75%",
+          "4,5",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Chile Chico",
+          "5",
+          "52%",
+          "4,12",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Río Ibáñez",
+          "6",
+          "47.6%",
+          "4,62",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Cochrane",
+          "3",
+          "54.2%",
+          "4,58",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "O'Higgins",
+          "2",
+          "66.7%",
+          "4",
+          "SERPAT / Barómetro UAYSÉN"
+        ],
+        [
+          "Tortel",
+          "2",
+          "100%",
+          "4,8",
+          "SERPAT / Barómetro UAYSÉN"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Directorio de centros culturales y casas comunales de cultura",
+          "Tasa de participación ciudadana en eventos artísticos",
+          "Evaluación de satisfacción comunal con la oferta cultural",
+          "Red de agentes y agrupaciones de creadores patagónicos"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Población Censo 2024 y Casen (Nodo #23)",
+          "Cruce con Zonas de Interés Turístico ZOIT (Nodo #02)"
+        ],
+        "totalRecordsInFullBase": "10 comunas con métricas de participación y percepción en data/systemic/09_cultura_patrimonio.json"
+      }
+    },
+    {
+      "id": 35,
+      "nodeId": 35,
+      "hubId": "ctci",
+      "isSpecial": false,
+      "title": "Proyectos ANID Cartera Histórica en Aysén",
+      "definition": "Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.",
+      "example": "Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.",
+      "officialSource": {
+        "name": "Base de Datos Histórica ANID / MinCiencia OBSERVA",
+        "url": "https://anid.cl/",
+        "frequency": "Anual"
+      },
+      "provenance": {
+        "sourceEntity": "Agencia Nacional de Investigación y Desarrollo (ANID) / Ministerio de Ciencia (OBSERVA) / CORFO",
+        "sourceUrl": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv",
+        "collectionDate": "BDH ANID y DataInnovación CORFO · Corte Octubre 2026",
+        "collectionMethod": "Base de Datos Histórica ANID, Catastro OBSERVA MinCiencia, Proyectos CORFO DataInnovación e indicadores Barómetro UAYSÉN",
+        "updateFrequency": "Anual / Continuo",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "relatedNodeIds": [
+        18,
+        20,
+        25,
+        36
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Proyectos ANID Adjudicados: Instituciones Locales vs. Extrarregionales",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Proyectos Locales (UAysén/CIEP/INIA)",
+            "data": [
+              48,
+              0,
+              8,
+              3,
+              1,
+              2,
+              1,
+              2,
+              0,
+              3
+            ],
+            "backgroundColor": "#6d28d9"
+          },
+          {
+            "label": "Proyectos Extrarregionales (UC/UCH/CECs)",
+            "data": [
+              26,
+              1,
+              9,
+              3,
+              2,
+              2,
+              3,
+              2,
+              2,
+              2
+            ],
+            "backgroundColor": "#a855f7"
+          }
+        ],
+        "unit": "proyectos"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Proyectos Locales",
+        "Proyectos Extrarregionales",
+        "Monto ANID (M$)",
+        "Investigadores"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "48",
+          "26",
+          "11.850,5",
+          "82"
+        ],
+        [
+          "Lago Verde",
+          "0",
+          "1",
+          "45",
+          "1"
+        ],
+        [
+          "Aysén",
+          "8",
+          "9",
+          "2.450",
+          "14"
+        ],
+        [
+          "Cisnes",
+          "3",
+          "3",
+          "680",
+          "4"
+        ],
+        [
+          "Guaitecas",
+          "1",
+          "2",
+          "280",
+          "2"
+        ],
+        [
+          "Chile Chico",
+          "2",
+          "2",
+          "490",
+          "3"
+        ],
+        [
+          "Río Ibáñez",
+          "1",
+          "3",
+          "520",
+          "2"
+        ],
+        [
+          "Cochrane",
+          "2",
+          "2",
+          "460",
+          "3"
+        ],
+        [
+          "O'Higgins",
+          "0",
+          "2",
+          "190",
+          "1"
+        ],
+        [
+          "Tortel",
+          "3",
+          "2",
+          "361,3",
+          "3"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Líneas concursables ANID (FONDECYT, FONDEF, FONDAP, Centros Regionales)",
+          "Monto adjudicado en moneda constante por comuna",
+          "Número de investigadores principales residentes vs. visitantes",
+          "Áreas OCDE de investigación (Ciencias Naturales, Agrícolas, Médicas, Sociales)"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Educación Superior y SLEP (Nodo #25)",
+          "Cruce con Empresas e Inversión Productiva (Nodo #20)"
+        ],
+        "totalRecordsInFullBase": "179 proyectos de investigación georreferenciados en data/systemic/10_ctci_innovacion.json"
+      }
+    },
+    {
+      "id": 36,
+      "nodeId": 36,
+      "hubId": "ctci",
+      "isSpecial": false,
+      "title": "Centros I+D Locales UAysén/CIEP/INIA vs. Ciencia Extrarregional",
+      "definition": "Infraestructura científica fija instalada en la región: **15 centros y estaciones de campo**, contrastando los centros endógenos con sede regional permanente frente a estaciones de investigación operadas por universidades de la zona central.",
+      "example": "Coyhaique alberga el Campus Río Simpson de la UAysén, la sede central del CIEP e INIA Tamel Aike, mientras que en los fiordos operan la Estación Patagonia UC (Bahía Exploradores) y laboratorios costeros del IFOP.",
+      "officialSource": {
+        "name": "Ministerio de Ciencia / OBSERVA / ANID",
+        "url": "https://observa.minciencia.gob.cl/",
+        "frequency": "Continuo"
+      },
+      "provenance": {
+        "sourceEntity": "Agencia Nacional de Investigación y Desarrollo (ANID) / Ministerio de Ciencia (OBSERVA) / CORFO",
+        "sourceUrl": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv",
+        "collectionDate": "BDH ANID y DataInnovación CORFO · Corte Octubre 2026",
+        "collectionMethod": "Base de Datos Histórica ANID, Catastro OBSERVA MinCiencia, Proyectos CORFO DataInnovación e indicadores Barómetro UAYSÉN",
+        "updateFrequency": "Anual / Continuo",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "relatedNodeIds": [
+        6,
+        25,
+        27,
+        35
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Centros y Estaciones Científicas de Campo por Comuna",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Centros y Estaciones I+D",
+            "data": [
+              5,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "backgroundColor": "#7c3aed"
+          }
+        ],
+        "unit": "centros científicos"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Centros y Estaciones I+D",
+        "Investigadores Residentes",
+        "Instituciones Principales",
+        "Prioridad Ciudadana (%)"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "5",
+          "82",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "88.6%"
+        ],
+        [
+          "Lago Verde",
+          "1",
+          "1",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "100%"
+        ],
+        [
+          "Aysén",
+          "2",
+          "14",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "93.8%"
+        ],
+        [
+          "Cisnes",
+          "1",
+          "4",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "85.2%"
+        ],
+        [
+          "Guaitecas",
+          "1",
+          "2",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "87.5%"
+        ],
+        [
+          "Chile Chico",
+          "1",
+          "3",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "84%"
+        ],
+        [
+          "Río Ibáñez",
+          "1",
+          "2",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "90%"
+        ],
+        [
+          "Cochrane",
+          "1",
+          "3",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "83.3%"
+        ],
+        [
+          "O'Higgins",
+          "1",
+          "1",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "100%"
+        ],
+        [
+          "Tortel",
+          "1",
+          "3",
+          "UAysén / CIEP / INIA / IFOP / PUC",
+          "100%"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Directorio de 15 estaciones de campo y laboratorios científicos",
+          "Masa crítica de investigadores residentes (115 científicos)",
+          "Vocación temática (oceanografía, glaciología, agronomía, salud pública)",
+          "Percepción ciudadana sobre la prioridad de la ciencia en la región"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Monitoreo Marino y FAN (Nodo #09)",
+          "Cruce con Cobertura Forestal y Flora Nativa (Nodo #27)"
+        ],
+        "totalRecordsInFullBase": "15 centros y estaciones científicas en data/systemic/csv/10_ctci_innovacion_nodos.csv"
+      }
+    },
+    {
+      "id": 37,
+      "nodeId": 37,
+      "hubId": "ctci",
+      "isSpecial": false,
+      "title": "Innovación Productiva CORFO/FIA y Capital Humano",
+      "definition": "Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.",
+      "example": "Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.",
+      "officialSource": {
+        "name": "CORFO DataInnovación / FIA / MinCiencia",
+        "url": "https://datainnovacion.corfo.cl/",
+        "frequency": "Anual"
+      },
+      "provenance": {
+        "sourceEntity": "Agencia Nacional de Investigación y Desarrollo (ANID) / Ministerio de Ciencia (OBSERVA) / CORFO",
+        "sourceUrl": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv",
+        "collectionDate": "BDH ANID y DataInnovación CORFO · Corte Octubre 2026",
+        "collectionMethod": "Base de Datos Histórica ANID, Catastro OBSERVA MinCiencia, Proyectos CORFO DataInnovación e indicadores Barómetro UAYSÉN",
+        "updateFrequency": "Anual / Continuo",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "relatedNodeIds": [
+        10,
+        19,
+        20,
+        35
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Proyectos CORFO Innovación Productiva por Comuna",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Proyectos CORFO Innova",
+            "data": [
+              28,
+              1,
+              14,
+              5,
+              1,
+              4,
+              1,
+              3,
+              1,
+              1
+            ],
+            "backgroundColor": "#4c1d95"
+          }
+        ],
+        "unit": "proyectos de innovación"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Proyectos CORFO",
+        "Monto Innovación (M$)",
+        "Evaluación UAysén (1-7)",
+        "Prioridad CTCi (%)"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "28",
+          "4.120",
+          "4,94",
+          "88.6%"
+        ],
+        [
+          "Lago Verde",
+          "1",
+          "30",
+          "6",
+          "100%"
+        ],
+        [
+          "Aysén",
+          "14",
+          "2.150",
+          "4,92",
+          "93.8%"
+        ],
+        [
+          "Cisnes",
+          "5",
+          "680",
+          "5,04",
+          "85.2%"
+        ],
+        [
+          "Guaitecas",
+          "1",
+          "140",
+          "4,17",
+          "87.5%"
+        ],
+        [
+          "Chile Chico",
+          "4",
+          "580",
+          "5,13",
+          "84%"
+        ],
+        [
+          "Río Ibáñez",
+          "1",
+          "110",
+          "5,11",
+          "90%"
+        ],
+        [
+          "Cochrane",
+          "3",
+          "410",
+          "5,35",
+          "83.3%"
+        ],
+        [
+          "O'Higgins",
+          "1",
+          "50",
+          "4,33",
+          "100%"
+        ],
+        [
+          "Tortel",
+          "1",
+          "180",
+          "5,2",
+          "100%"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Proyectos de innovación empresarial cofinanciados por CORFO",
+          "Monto de inversión público-privada en I+D aplicada",
+          "Indicadores de vinculación entre empresas salmoneras y centros locales",
+          "Evaluación comunal de la labor académica y científica"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Estructura Empresarial SII (Nodo #20)",
+          "Cruce con Pesca Industrial e Impuesto Específico (Nodo #10)"
+        ],
+        "totalRecordsInFullBase": "59 proyectos de innovación productiva en data/systemic/10_ctci_innovacion.json"
+      }
+    },
+    {
+      "id": 38,
+      "nodeId": 38,
+      "hubId": "salud",
+      "isSpecial": false,
+      "title": "Cobertura APS Rural, Postas y Rondas Médicas",
+      "definition": "Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **28 postas de salud rural**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.",
+      "example": "En comunas como **Tortel**, **Lago Verde** u **O'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.",
+      "officialSource": {
+        "name": "Servicio de Salud Aysén (SSA) / DEIS MINSAL",
+        "url": "https://deis.minsal.cl/",
+        "frequency": "Semestral"
+      },
+      "provenance": {
+        "sourceEntity": "Servicio de Salud Aysén (SSA) / DEIS MINSAL",
+        "sourceUrl": "https://deis.minsal.cl/",
+        "collectionDate": "Corte Septiembre-Octubre 2026",
+        "collectionMethod": "Catastro Oficial",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
+      "relatedNodeIds": [
+        6,
+        13,
+        23,
+        27,
+        24
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Postas de Salud Rural y Dispositivos APS por Comuna (SSA)",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Postas de Salud Rural",
+            "data": [
+              7,
+              3,
+              4,
+              5,
+              1,
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "backgroundColor": "#be123c"
+          }
+        ],
+        "unit": "postas rurales"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Postas Rurales",
+        "CESFAM/CECOSF",
+        "Estaciones Médico Rurales",
+        "Frecuencia Rondas"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "7",
+          "4",
+          "4",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Lago Verde",
+          "3",
+          "0",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Aysén",
+          "4",
+          "1",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Cisnes",
+          "5",
+          "0",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Guaitecas",
+          "1",
+          "1",
+          "1",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Chile Chico",
+          "3",
+          "0",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Río Ibáñez",
+          "3",
+          "1",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Cochrane",
+          "1",
+          "0",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "O'Higgins",
+          "1",
+          "0",
+          "2",
+          "Quincenal / Mensual"
+        ],
+        [
+          "Tortel",
+          "1",
+          "0",
+          "2",
+          "Quincenal / Mensual"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Postas de salud rural operativas con TENS residente",
+          "Estaciones médico rurales para atención en terreno",
+          "Calendario de rondas médicas del equipo multidisciplinario",
+          "Programas preventivos (EMP, EMPAM, PSCV, PNI)"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Fibra Óptica Austral y Telemedicina (Nodo #14)",
+          "Cruce con Adultos Mayores y Pobreza CASEN (Nodo #23)"
+        ],
+        "totalRecordsInFullBase": "10 comunas y 53 dispositivos APS rurales en data/systemic/08_desagregaciones_sectoriales_aysen.json"
+      }
+    },
+    {
+      "id": 39,
+      "nodeId": 39,
+      "hubId": "salud",
+      "isSpecial": false,
+      "title": "Lista de Espera Quirúrgica y Aeroevacuaciones SAMU",
+      "definition": "Logística de urgencia vital y tiempos de derivación crítica hacia el Hospital Regional Coyhaique y centros extrarregionales (Puerto Montt / Santiago), disponibilidad de helipuertos DGAC, ambulancias 4x4 y aeroevacuaciones FACH/SAMU.",
+      "example": "Una evacuación desde **Villa O'Higgins** a Coyhaique toma **8 a 9 horas vía terrestre** o **75 minutos vía aérea**, condicionada a techos de vuelo y meteorología patagónica extrema.",
+      "officialSource": {
+        "name": "Centro Regulador SAMU Regional Aysén / FACH / DGAC",
+        "url": "https://saludaysen.cl/",
+        "frequency": "Trimestral"
+      },
+      "provenance": {
+        "sourceEntity": "Centro Regulador SAMU Regional Aysén / FACH / DGAC",
+        "sourceUrl": "https://saludaysen.cl/",
+        "collectionDate": "Corte Septiembre-Octubre 2026",
+        "collectionMethod": "Catastro Oficial",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Continuo 2026"
+      },
+      "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
+      "relatedNodeIds": [
+        8,
+        14,
+        23,
+        31,
+        24
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Tiempo de Traslado Terrestre a Coyhaique por Comuna (Horas)",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Horas Traslado a Coyhaique",
+            "data": [
+              0,
+              4.5,
+              1,
+              3.5,
+              14,
+              4,
+              1.5,
+              6,
+              10,
+              8
+            ],
+            "backgroundColor": "#e11d48"
+          }
+        ],
+        "unit": "horas"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Tiempo a Coyhaique (hrs)",
+        "Aeródromo DGAC",
+        "Tipo Traslado",
+        "Centro Derivación Final"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "0 hrs",
+          "Aeródromo Balmaceda (SCBA) / Teniente Vidal (SCCY)",
+          "Terrestre Directo",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Lago Verde",
+          "4.5 hrs",
+          "Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica)",
+          "Terrestre / Aeroevacuación",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Aysén",
+          "1 hrs",
+          "Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico)",
+          "Terrestre Directo",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Cisnes",
+          "3.5 hrs",
+          "Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH)",
+          "Terrestre Directo",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Guaitecas",
+          "14 hrs",
+          "Aeródromo Melinka (SCMK, asfalto 830m, vuelos regulares subvencionados)",
+          "Terrestre / Aeroevacuación",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Chile Chico",
+          "4 hrs",
+          "Aeródromo Chile Chico (SCCC, asfalto 1.300m, subvencionado y aeromédico)",
+          "Terrestre Directo",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Río Ibáñez",
+          "1.5 hrs",
+          "Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias)",
+          "Terrestre Directo",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Cochrane",
+          "6 hrs",
+          "Aeródromo Cochrane (SCHR, asfalto 1.200m, vuelos subvencionados y aeromédicos)",
+          "Terrestre / Aeroevacuación",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "O'Higgins",
+          "10 hrs",
+          "Aeródromo Villa O'Higgins (SCOH, asfalto 1.300m, puente aéreo subvencionado)",
+          "Terrestre / Aeroevacuación",
+          "Hospital Regional Coyhaique"
+        ],
+        [
+          "Tortel",
+          "8 hrs",
+          "Aeródromo Caleta Tortel (SCTT, ripio 800m, evacuación médica y rescate)",
+          "Terrestre / Aeroevacuación",
+          "Hospital Regional Coyhaique"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Tiempos de traslado terrestre según estado de Carretera Austral",
+          "Pistas aéreas y helipuertos operativos para SAMU aéreo",
+          "Protocolos de aeroevacuación de pacientes críticos",
+          "Capacidad de respuesta ante emergencias climáticas y desastres"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Inversión Ruta 7 y Conectividad (Nodo #18)",
+          "Cruce con Riesgos Volcánicos y Sismos (Nodo #31)"
+        ],
+        "totalRecordsInFullBase": "10 comunas con tiempos y protocolos de aeroevacuacion en data/systemic/08_desagregaciones_sectoriales_aysen.json"
+      }
     }
   ],
   "comunas": [
@@ -8645,7 +10855,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 42.5,
       "daa_consuntivos_m3s": 48.5,
       "daa_no_consuntivos_m3s": 145,
-      "dias_sobre_norma_mp25": 87
+      "dias_sobre_norma_mp25": 87,
+      "postas_salud_rural": 7,
+      "museos_espacios_n": 11,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 2630.4,
+      "total_espacios_culturales": 8,
+      "monumentos_nacionales_count": 2,
+      "proyectos_anid_n": 74,
+      "monto_anid_mclp": 11850.5,
+      "innovacion_corfo_mclp": 4120,
+      "proyectos_ctci_total": 102,
+      "investigadores_residentes": 82
     },
     {
       "id": 2,
@@ -8725,7 +10946,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 38.2,
       "daa_consuntivos_m3s": 6.2,
       "daa_no_consuntivos_m3s": 18,
-      "dias_sobre_norma_mp25": 12
+      "dias_sobre_norma_mp25": 12,
+      "postas_salud_rural": 3,
+      "museos_espacios_n": 2,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 65.5,
+      "total_espacios_culturales": 2,
+      "monumentos_nacionales_count": 0,
+      "proyectos_anid_n": 1,
+      "monto_anid_mclp": 45,
+      "innovacion_corfo_mclp": 30,
+      "proyectos_ctci_total": 2,
+      "investigadores_residentes": 1
     },
     {
       "id": 3,
@@ -8805,7 +11037,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 1850,
       "daa_consuntivos_m3s": 38.4,
       "daa_no_consuntivos_m3s": 680,
-      "dias_sobre_norma_mp25": 34
+      "dias_sobre_norma_mp25": 34,
+      "postas_salud_rural": 4,
+      "museos_espacios_n": 8,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 1052.8,
+      "total_espacios_culturales": 6,
+      "monumentos_nacionales_count": 2,
+      "proyectos_anid_n": 17,
+      "monto_anid_mclp": 2450,
+      "innovacion_corfo_mclp": 2150,
+      "proyectos_ctci_total": 31,
+      "investigadores_residentes": 14
     },
     {
       "id": 4,
@@ -8885,7 +11128,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 480,
       "daa_consuntivos_m3s": 18.2,
       "daa_no_consuntivos_m3s": 320,
-      "dias_sobre_norma_mp25": 16
+      "dias_sobre_norma_mp25": 16,
+      "postas_salud_rural": 5,
+      "museos_espacios_n": 8,
+      "bibliotecas_snbp_n": 3,
+      "fondart_fndr_mclp": 357.5,
+      "total_espacios_culturales": 6,
+      "monumentos_nacionales_count": 0,
+      "proyectos_anid_n": 6,
+      "monto_anid_mclp": 680,
+      "innovacion_corfo_mclp": 680,
+      "proyectos_ctci_total": 11,
+      "investigadores_residentes": 4
     },
     {
       "id": 5,
@@ -8965,7 +11219,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 0,
       "daa_consuntivos_m3s": 1.2,
       "daa_no_consuntivos_m3s": 0,
-      "dias_sobre_norma_mp25": 4
+      "dias_sobre_norma_mp25": 4,
+      "postas_salud_rural": 1,
+      "museos_espacios_n": 3,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 110.1,
+      "total_espacios_culturales": 2,
+      "monumentos_nacionales_count": 0,
+      "proyectos_anid_n": 3,
+      "monto_anid_mclp": 280,
+      "innovacion_corfo_mclp": 140,
+      "proyectos_ctci_total": 4,
+      "investigadores_residentes": 2
     },
     {
       "id": 6,
@@ -9045,7 +11310,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 145,
       "daa_consuntivos_m3s": 14.8,
       "daa_no_consuntivos_m3s": 45,
-      "dias_sobre_norma_mp25": 18
+      "dias_sobre_norma_mp25": 18,
+      "postas_salud_rural": 3,
+      "museos_espacios_n": 7,
+      "bibliotecas_snbp_n": 2,
+      "fondart_fndr_mclp": 282,
+      "total_espacios_culturales": 5,
+      "monumentos_nacionales_count": 1,
+      "proyectos_anid_n": 4,
+      "monto_anid_mclp": 490,
+      "innovacion_corfo_mclp": 580,
+      "proyectos_ctci_total": 8,
+      "investigadores_residentes": 3
     },
     {
       "id": 7,
@@ -9125,7 +11401,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 460,
       "daa_consuntivos_m3s": 12.5,
       "daa_no_consuntivos_m3s": 110,
-      "dias_sobre_norma_mp25": 14
+      "dias_sobre_norma_mp25": 14,
+      "postas_salud_rural": 3,
+      "museos_espacios_n": 8,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 305.4,
+      "total_espacios_culturales": 6,
+      "monumentos_nacionales_count": 3,
+      "proyectos_anid_n": 4,
+      "monto_anid_mclp": 520,
+      "innovacion_corfo_mclp": 110,
+      "proyectos_ctci_total": 5,
+      "investigadores_residentes": 2
     },
     {
       "id": 8,
@@ -9205,7 +11492,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 890,
       "daa_consuntivos_m3s": 8.4,
       "daa_no_consuntivos_m3s": 890,
-      "dias_sobre_norma_mp25": 22
+      "dias_sobre_norma_mp25": 22,
+      "postas_salud_rural": 1,
+      "museos_espacios_n": 4,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 279.2,
+      "total_espacios_culturales": 3,
+      "monumentos_nacionales_count": 0,
+      "proyectos_anid_n": 4,
+      "monto_anid_mclp": 460,
+      "innovacion_corfo_mclp": 410,
+      "proyectos_ctci_total": 7,
+      "investigadores_residentes": 3
     },
     {
       "id": 9,
@@ -9285,7 +11583,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 3450,
       "daa_consuntivos_m3s": 3.8,
       "daa_no_consuntivos_m3s": 540,
-      "dias_sobre_norma_mp25": 8
+      "dias_sobre_norma_mp25": 8,
+      "postas_salud_rural": 1,
+      "museos_espacios_n": 3,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 83.6,
+      "total_espacios_culturales": 2,
+      "monumentos_nacionales_count": 0,
+      "proyectos_anid_n": 2,
+      "monto_anid_mclp": 190,
+      "innovacion_corfo_mclp": 50,
+      "proyectos_ctci_total": 3,
+      "investigadores_residentes": 1
     },
     {
       "id": 10,
@@ -9365,7 +11674,18 @@ window.AYSEN_HUBS_DATA = {
       "superficie_glaciar_km2": 2680,
       "daa_consuntivos_m3s": 3.1,
       "daa_no_consuntivos_m3s": 420,
-      "dias_sobre_norma_mp25": 10
+      "dias_sobre_norma_mp25": 10,
+      "postas_salud_rural": 1,
+      "museos_espacios_n": 2,
+      "bibliotecas_snbp_n": 1,
+      "fondart_fndr_mclp": 133,
+      "total_espacios_culturales": 2,
+      "monumentos_nacionales_count": 1,
+      "proyectos_anid_n": 5,
+      "monto_anid_mclp": 361.3,
+      "innovacion_corfo_mclp": 180,
+      "proyectos_ctci_total": 6,
+      "investigadores_residentes": 3
     }
   ],
   "holdings": [

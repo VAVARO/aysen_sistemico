@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datos de Aysén — Álvaro Contreras Barrios</title>
-  <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 7 hubs temáticos, 31 nodos de datos y 10 comunas.">
+  <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 10 hubs temáticos, 39 nodos de datos y 10 comunas.">
 
   <!-- Google Fonts: Playfair Display (editorial), Inter (cuerpo), JetBrains Mono (código y metadatos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +70,7 @@
     }
   </script>
 
-  <!-- Bundle local de datos de Aysén (7 Hubs, 31 Nodos, 10 Comunas) -->
+  <!-- Bundle local de datos de Aysén (10 Hubs, 39 Nodos, 10 Comunas) -->
   <script src="data/aysen_hubs_data.js"></script>
 
   <link rel="stylesheet" href="js/cabecera_global.css">
@@ -198,12 +198,29 @@
     /* ==========================================================================
        CABECERA GLOBAL UNIFICADA (56px) - CUADERNO EDITORIAL Y CARTOGRÁFICO
        ========================================================================== */
+    .brand-left {
+      flex-shrink: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .brand-module-title {
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+    }
+
+    .brand-author-name {
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+    }
+
     .header-search-wrap {
       position: relative;
+      max-width: 240px;
+      flex-shrink: 1;
     }
 
     .header-search-input {
-      width: 220px;
+      width: clamp(140px, 14vw, 220px);
       padding: 0.35rem 1.8rem 0.35rem 1.9rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
@@ -458,7 +475,7 @@
     }
 
     /* Breakpoint cabecera */
-    @media (max-width: 1023px) {
+    @media (max-width: 1140px) {
       .brand-nav-pills {
         display: none !important;
       }
@@ -468,6 +485,25 @@
     }
 
     @media (max-width: 767px) {
+      .header-search-wrap:not(.mobile-active) {
+        display: none !important;
+      }
+      .header-search-wrap.mobile-active {
+        display: block !important;
+        position: absolute;
+        top: 100%;
+        left: 0.75rem;
+        right: 0.75rem;
+        max-width: none;
+        z-index: 60;
+        background: #ffffff;
+        padding: 0.5rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      }
+      .header-search-wrap.mobile-active .header-search-input {
+        width: 100% !important;
+      }
       .mobile-search-btn {
         display: inline-flex !important;
       }
@@ -611,7 +647,7 @@
           Datos y Sistema de <span class="text-primary">Aysén</span>
         </h1>
         <p class="font-sans text-base sm:text-lg text-on-surface/80 leading-relaxed font-normal">
-          Datos públicos de la Región de Aysén, ordenados en 7 ámbitos y 31 nodos. Haz clic en un ámbito o nodo para ver qué contiene, de dónde viene y sus cifras principales.
+          Datos públicos de la Región de Aysén, ordenados en 10 ámbitos y 39 nodos. Haz clic en un ámbito o nodo para ver qué contiene, de dónde viene y sus cifras principales.
         </p>
       </div>
 
@@ -623,7 +659,7 @@
             <span>Mapa de Hubs</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
           </div>
-          <div class="text-xs text-muted mt-1">7 ámbitos y 31 nodos de datos</div>
+          <div class="text-xs text-muted mt-1">10 ámbitos y 39 nodos de datos</div>
         </button>
 
         <button onclick="switchTab('comunas')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
@@ -660,7 +696,7 @@
           >
             <span class="material-symbols-outlined text-[17px]">hub</span>
             <span>Mapa de Hubs</span>
-            <span class="ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold" id="badge-count-nodos">31</span>
+            <span class="ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold" id="badge-count-nodos">39</span>
           </button>
 
           <button 
@@ -676,7 +712,7 @@
         </div>
 
         <div class="hidden md:flex items-center font-mono text-xs text-muted">
-          <span id="visible-items-counter">Mostrando 31 de 31 nodos de datos</span>
+          <span id="visible-items-counter">Mostrando 39 de 39 nodos de datos</span>
         </div>
 
       </div>
@@ -735,7 +771,7 @@
     <!-- SECCIÓN 1: MAPA DE HUBS Y NODOS DE DATOS -->
     <div id="view-nodos" class="tab-view block space-y-6">
       
-      <!-- 1.A: MAPA INTERACTIVO D3.JS (7 HUBS + 31 PELOTAS) -->
+      <!-- 1.A: MAPA INTERACTIVO D3.JS (10 HUBS + 39 NODOS) -->
       <div id="node-graph-wrapper" class="block">
         <div class="relative w-full rounded-sm border border-primary/20 bg-white overflow-hidden shadow-editorial">
           
@@ -768,9 +804,9 @@
             <svg id="d3-concept-svg" class="w-full h-full" style="touch-action: none;"></svg>
             
             <!-- Leyenda flotante compacta (Clicable por Hub, colapsable en móviles) -->
-            <div id="d3-hubs-legend" class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-border-subtle rounded-sm p-2 text-xs font-mono shadow-xs space-y-1 max-w-[245px] z-10">
+            <div id="d3-hubs-legend" class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-border-subtle rounded-sm p-2 text-xs font-mono shadow-xs space-y-1 max-w-[260px] max-h-[360px] overflow-y-auto z-10">
               <div class="flex items-center justify-between cursor-pointer font-bold text-xs uppercase tracking-wider text-primary py-0.5 select-none" onclick="toggleD3Legend()" title="Alternar leyenda">
-                <span>7 Hubs de Datos</span>
+                <span>10 Hubs de Datos (I al X)</span>
                 <span id="d3LegendArrow" class="text-muted text-[11px] font-mono">▲</span>
               </div>
               <div id="d3LegendList" class="space-y-0.5 hidden sm:block">
@@ -796,11 +832,23 @@
                 </button>
                 <button onclick="openHubDrawerById('social')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
                   <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] shrink-0"></span>
-                  <span class="truncate">VI. Demografía, Salud & Educ.</span>
+                  <span class="truncate">VI. Demografía, Educ. & Riesgos</span>
                 </button>
                 <button onclick="openHubDrawerById('biodiversidad')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
                   <span class="w-2.5 h-2.5 rounded-full bg-[#047857] shrink-0"></span>
                   <span class="truncate">VII. Biodiversidad & Clima</span>
+                </button>
+                <button onclick="openHubDrawerById('salud')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#be123c] shrink-0"></span>
+                  <span class="truncate">VIII. Salud APS & Hospitales</span>
+                </button>
+                <button onclick="openHubDrawerById('cultura')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#b45309] shrink-0"></span>
+                  <span class="truncate">IX. Cultura, Artes & Patr.</span>
+                </button>
+                <button onclick="openHubDrawerById('ctci')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#6d28d9] shrink-0"></span>
+                  <span class="truncate">X. CTCi & Innovación</span>
                 </button>
               </div>
             </div>
@@ -1295,7 +1343,7 @@
     }
 
     // ==========================================
-    // VISUALIZACIÓN D3.JS: MAPA DE 7 HUBS Y 31 NODOS
+    // VISUALIZACIÓN D3.JS: MAPA DE 10 HUBS Y 39 NODOS
     // ==========================================
     function initOrUpdateD3Map() {
       const container = document.getElementById('d3-canvas-container');
@@ -1308,24 +1356,36 @@
       svg.selectAll('*').remove();
 
       const clusterColors = {
-        'turismo':        { bg: '#00357f', border: '#00255a', text: '#ffffff', numeral: 'I' },
-        'salmonicultura': { bg: '#0059c5', border: '#004aad', text: '#ffffff', numeral: 'II' },
-        'energia':        { bg: '#0284c7', border: '#0369a1', text: '#ffffff', numeral: 'III' },
-        'gobernanza':     { bg: '#4338ca', border: '#3730a3', text: '#ffffff', numeral: 'IV' },
-        'inversion':      { bg: '#0f766e', border: '#115e59', text: '#ffffff', numeral: 'V' },
-        'social':         { bg: '#2563eb', border: '#1d4ed8', text: '#ffffff', numeral: 'VI' },
-        'biodiversidad':  { bg: '#047857', border: '#065f46', text: '#ffffff', numeral: 'VII' },
+        'turismo':              { bg: '#00357f', border: '#00255a', text: '#ffffff', numeral: 'I' },
+        'salmonicultura':       { bg: '#0059c5', border: '#004aad', text: '#ffffff', numeral: 'II' },
+        'energia':              { bg: '#0284c7', border: '#0369a1', text: '#ffffff', numeral: 'III' },
+        'gobernanza':           { bg: '#4338ca', border: '#3730a3', text: '#ffffff', numeral: 'IV' },
+        'inversion':            { bg: '#0f766e', border: '#115e59', text: '#ffffff', numeral: 'V' },
+        'social':               { bg: '#2563eb', border: '#1d4ed8', text: '#ffffff', numeral: 'VI' },
+        'biodiversidad':        { bg: '#047857', border: '#065f46', text: '#ffffff', numeral: 'VII' },
+        'salud':                { bg: '#be123c', border: '#9f1239', text: '#ffffff', numeral: 'VIII' },
+        'cultura':              { bg: '#b45309', border: '#92400e', text: '#ffffff', numeral: 'IX' },
+        'cultura_patrimonio':   { bg: '#b45309', border: '#92400e', text: '#ffffff', numeral: 'IX' },
+        'ctci':                 { bg: '#6d28d9', border: '#5b21b6', text: '#ffffff', numeral: 'X' },
+        'ctci_innovacion':      { bg: '#6d28d9', border: '#5b21b6', text: '#ffffff', numeral: 'X' }
       };
 
-      // 1. Nodos Hub (7 grandes ámbitos distribuidos armónicamente)
+      // 1. Nodos Hub (10 grandes ámbitos en 2 filas de 5 distribuidos armónicamente)
       const hubPositions = {
-        'turismo':        { x: width * 0.15, y: height * 0.28 },
-        'salmonicultura': { x: width * 0.38, y: height * 0.23 },
-        'energia':        { x: width * 0.62, y: height * 0.23 },
-        'gobernanza':     { x: width * 0.85, y: height * 0.28 },
-        'inversion':      { x: width * 0.24, y: height * 0.74 },
-        'social':         { x: width * 0.50, y: height * 0.75 },
-        'biodiversidad':  { x: width * 0.76, y: height * 0.74 }
+        // Fila Superior (y: height * 0.26)
+        'turismo':        { x: width * 0.12, y: height * 0.26 },
+        'salmonicultura': { x: width * 0.31, y: height * 0.26 },
+        'energia':        { x: width * 0.50, y: height * 0.26 },
+        'gobernanza':     { x: width * 0.69, y: height * 0.26 },
+        'inversion':      { x: width * 0.88, y: height * 0.26 },
+        // Fila Inferior (y: height * 0.74)
+        'social':         { x: width * 0.12, y: height * 0.74 },
+        'biodiversidad':  { x: width * 0.31, y: height * 0.74 },
+        'salud':          { x: width * 0.50, y: height * 0.74 },
+        'cultura':        { x: width * 0.69, y: height * 0.74 },
+        'cultura_patrimonio': { x: width * 0.69, y: height * 0.74 },
+        'ctci':           { x: width * 0.88, y: height * 0.74 },
+        'ctci_innovacion': { x: width * 0.88, y: height * 0.74 }
       };
 
       const hubs = AppState.data.hubs.map(h => {
@@ -1344,7 +1404,7 @@
         };
       });
 
-      // 2. Los 31 Nodos satélite ("pelotas") alrededor de su respectivo Hub
+      // 2. Los Nodos satélite ("pelotas") alrededor de su respectivo Hub
       const dataNodes = AppState.data.nodos.map(n => {
         const hub = hubs.find(h => h.hubId === n.hubId) || hubs[0];
         const hubSiblings = AppState.data.nodos.filter(item => item.hubId === n.hubId);
@@ -1385,17 +1445,21 @@
         });
       });
 
-      // Enlaces estructurales entre los 7 Hubs
+      // Enlaces estructurales entre los 10 Hubs (backbone continuo)
       links.push(
         { source: 'hub-turismo', target: 'hub-salmonicultura', type: 'backbone' },
         { source: 'hub-salmonicultura', target: 'hub-energia', type: 'backbone' },
         { source: 'hub-energia', target: 'hub-gobernanza', type: 'backbone' },
-        { source: 'hub-turismo', target: 'hub-inversion', type: 'backbone' },
-        { source: 'hub-salmonicultura', target: 'hub-inversion', type: 'backbone' },
-        { source: 'hub-inversion', target: 'hub-social', type: 'backbone' },
+        { source: 'hub-gobernanza', target: 'hub-inversion', type: 'backbone' },
+        { source: 'hub-turismo', target: 'hub-social', type: 'backbone' },
+        { source: 'hub-salmonicultura', target: 'hub-biodiversidad', type: 'backbone' },
+        { source: 'hub-energia', target: 'hub-salud', type: 'backbone' },
+        { source: 'hub-gobernanza', target: 'hub-cultura', type: 'backbone' },
+        { source: 'hub-inversion', target: 'hub-ctci', type: 'backbone' },
         { source: 'hub-social', target: 'hub-biodiversidad', type: 'backbone' },
-        { source: 'hub-energia', target: 'hub-biodiversidad', type: 'backbone' },
-        { source: 'hub-gobernanza', target: 'hub-social', type: 'backbone' }
+        { source: 'hub-biodiversidad', target: 'hub-salud', type: 'backbone' },
+        { source: 'hub-salud', target: 'hub-cultura', type: 'backbone' },
+        { source: 'hub-cultura', target: 'hub-ctci', type: 'backbone' }
       );
 
       const allNodes = [...hubs, ...dataNodes];
@@ -2214,15 +2278,21 @@
         ['V. Economía & Suelo', 'Proyectos SEIA / Plazos tramitación', `${c.proyectos_seia_aprobados} proyectos (USD ${c.inversion_seia_mmusd} MM) · Prom. ${c.seia_plazo_dias || 0} días`],
         ['V. Economía & Suelo', 'Compras Locales vs Fuga MercadoPúblico', `${c.compras_locales_pct || 0}% local · ${c.fuga_compras_pct || 0}% fuga regional`],
         ['V. Economía & Suelo', 'Loteos Rurales Certificados SAG', `${(c.parcelaciones_sag_n || 0).toLocaleString('es-CL')} subdivisiones (DL 3.516)`],
-        ['VI. Demografía & Salud', 'Densidad Médica / Listas No-GES', `${c.medicos_por_mil_hab || 0} méd./1.000 hab · ${(c.espera_no_ges_n || 0).toLocaleString('es-CL')} consultas espera`],
-        ['VI. Demografía & Salud', 'Urgencias Respiratorias / SAMU', `${c.urgencias_respiratorias_pct || 0}% por MP2.5 · ${c.aeroevacuaciones_samu_n || 0} aeroevacuaciones/año`],
+        ['VI. Sociedad & Educación', 'Matrícula Escolar Pública SLEP', `${(c.matricula_escolar || 0).toLocaleString('es-CL')} estudiantes`],
+        ['VI. Sociedad & Educación', 'Pobreza Multidimensional CASEN', `${c.pobreza_multidim_pct || 0}% de la población comunal`],
         ['VII. Biodiversidad & Clima', 'Glaciares DGA / Superficie', `${(c.glaciares_dga_n || 0).toLocaleString('es-CL')} glaciares (${(c.superficie_glaciar_km2 || 0).toLocaleString('es-CL')} km²)`],
-        ['VII. Biodiversidad & Clima', 'Calidad de Aire (SINCA)', `${c.dias_sobre_norma_mp25 || 0} días sobre norma MP2.5/año`]
+        ['VII. Biodiversidad & Clima', 'Calidad de Aire (SINCA)', `${c.dias_sobre_norma_mp25 || 0} días sobre norma MP2.5/año`],
+        ['VIII. Salud APS & Hospitales', 'Red Asistencial / Postas Rurales', `${c.salud_principal || 'APS Comunal'} · ${c.postas_salud_rural || 0} postas rurales (${c.camas_hospitalarias || 0} camas)`],
+        ['VIII. Salud APS & Hospitales', 'Densidad Médica / Listas No-GES', `${c.medicos_por_mil_hab || 0} méd./1.000 hab · ${(c.espera_no_ges_n || 0).toLocaleString('es-CL')} consultas espera`],
+        ['IX. Cultura & Patrimonio', 'Espacios Culturales y Bibliotecas SNBP', `${c.museos_espacios_n || c.total_espacios_culturales || 0} museos/espacios · ${c.bibliotecas_snbp_n || 0} bibliotecas (${c.monumentos_nacionales_count || 0} monumentos CMN)`],
+        ['IX. Cultura & Patrimonio', 'Inversión Fondos Cultura (FONDART/FNDR)', `$${(c.fondart_fndr_mclp || 0).toLocaleString('es-CL')} MCLP adjudicados`],
+        ['X. CTCi & Innovación', 'Proyectos ANID y Portafolio CTCi', `${c.proyectos_anid_n || c.proyectos_ctci_total || 0} proyectos ($${(c.monto_anid_mclp || 0).toLocaleString('es-CL')} MCLP)`],
+        ['X. CTCi & Innovación', 'Innovación CORFO / Investigadores', `$${(c.innovacion_corfo_mclp || 0).toLocaleString('es-CL')} MCLP · ${c.investigadores_residentes || 0} investigadores`]
       ];
 
       AppState.tableExpanded = false;
       renderDrawerTable(
-        `Indicadores de ${c.nombre_comuna} a través de los 7 Hubs`,
+        `Indicadores de ${c.nombre_comuna} a través de los 10 Hubs`,
         ['Hub', 'Indicador', 'Valor en la Comuna'],
         rows
       );
