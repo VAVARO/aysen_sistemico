@@ -29,6 +29,7 @@ def build_cecan_presets():
         "titulo": "Presets Sistémicos Empíricos CECAN para la Región de Aysén",
         "descripcion": "Catálogo canónico de configuración y parametrización de las 16 Propiedades de Sistemas Complejos (marco CECAN) vinculadas a las variables del Data Lake territorial de Aysén.",
         "autor": "Álvaro Contreras Barrios",
+        "referencia_academica": "Boehnert, J., Penn, A., Barbrook-Johnson, P., Bicket, M., & Hills, D. (2018). The visual representation of complexity: Definitions, examples & learning points [Poster]. Loughborough University.",
         "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
         "fecha_generacion": "2026-10-19T12:00:00Z",
         "total_properties": 16,

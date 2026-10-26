@@ -473,6 +473,87 @@
       color: var(--ink);
     }
 
+    .editorial-citation {
+      margin-top: 6px;
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--ink-secondary);
+      border-left: 2px solid var(--cobalt);
+      padding-left: 8px;
+    }
+
+    .citation-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--cobalt);
+      margin-bottom: 2px;
+    }
+
+    .citation-text {
+      font-family: var(--font-serif);
+      font-style: normal;
+      color: var(--ink-secondary);
+    }
+
+    .grid-attribution-pill {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      background: rgba(252, 249, 248, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 53, 127, 0.22);
+      box-shadow: 0 4px 14px rgba(0, 53, 127, 0.08);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-secondary);
+      pointer-events: auto;
+      max-width: min(92%, 880px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .grid-attribution-pill .pill-badge {
+      background: var(--cobalt);
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .grid-attribution-pill .pill-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .grid-attribution-pill.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 10px);
+    }
+
+    @media (max-width: 768px) {
+      .grid-attribution-pill {
+        display: none;
+      }
+    }
+
     /* =========================================================================
        UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
        ========================================================================= */
@@ -926,6 +1007,10 @@
   <main>
     <!-- VISTA 1: MATRIZ 4x4 DE LAS 16 PROPIEDADES -->
     <section id="gridView"></section>
+    <div class="grid-attribution-pill" id="gridAttributionPill" aria-label="Atribución académica CECAN">
+      <span class="pill-badge">CECAN</span>
+      <span class="pill-text" id="gridAttributionPillText">Basado en: <em>Boehnert, J., Penn, A., Barbrook-Johnson, P., Bicket, M., &amp; Hills, D. (2018). The visual representation of complexity: Definitions, examples &amp; learning points [Poster]. Loughborough University.</em></span>
+    </div>
 
     <!-- VISTA 2: ESCENARIO DE SIMULACIÓN CAUSAL + LECTURA EDITORIAL -->
     <section id="detailView">
@@ -982,7 +1067,10 @@
             <span class="brand-dot" style="width:6px;height:6px;"></span>
             <span>Álvaro Contreras Barrios</span>
           </div>
-          <span>Fuente documental: CECAN — Dr. Joanna Boehnert, Alex Penn, Pete Barbrook-Johnson, Martha Bicket y Dione Hills (CC BY-NC-SA 4.0).</span>
+          <div class="editorial-citation" id="editorialCitationBlock">
+            <span class="citation-label" id="citationLabel">Atribución académica y metodológica:</span>
+            <cite class="citation-text">Boehnert, J., Penn, A., Barbrook-Johnson, P., Bicket, M., &amp; Hills, D. (2018). The visual representation of complexity: Definitions, examples &amp; learning points [Poster]. Loughborough University.</cite>
+          </div>
         </div>
       </aside>
     </section>
@@ -4570,6 +4658,10 @@
 
       document.getElementById('headingExamples').textContent = currentLang === 'es' ? 'Ejemplo' : 'Example';
       document.getElementById('headingLearning').textContent = currentLang === 'es' ? 'Puntos de aprendizaje' : 'Learning points';
+      const citLabel = document.getElementById('citationLabel');
+      if (citLabel) {
+        citLabel.textContent = currentLang === 'es' ? 'Atribución académica y metodológica:' : 'Academic & methodological attribution:';
+      }
       document.getElementById('btnBackToGrid').textContent = currentLang === 'es' ? '← Índice (16)' : '← Index (16)';
       const bp = document.getElementById('btnBackToPortal');
       if (bp) bp.textContent = currentLang === 'es' ? 'Portada' : 'Portal';
@@ -4616,6 +4708,8 @@
     function openProperty(id) {
       inDetailView = true;
       gridView.classList.add('hidden');
+      const pill = document.getElementById('gridAttributionPill');
+      if (pill) pill.classList.add('hidden');
       document.getElementById('detailView').classList.add('active');
       document.getElementById('btnBackToGrid').classList.remove('hidden');
       const ep = document.getElementById('editorialPane');
@@ -4631,6 +4725,8 @@
       inDetailView = false;
       document.getElementById('detailView').classList.remove('active');
       gridView.classList.remove('hidden');
+      const pill = document.getElementById('gridAttributionPill');
+      if (pill) pill.classList.remove('hidden');
       document.getElementById('btnBackToGrid').classList.add('hidden');
       const ep = document.getElementById('editorialPane');
       if (ep) ep.classList.remove('expanded');
@@ -4650,6 +4746,10 @@
       if (bp) bp.textContent = 'Portada';
       const bg = document.getElementById('btnBackToGrid');
       if (bg) bg.textContent = '← Índice (16)';
+      const pillText = document.getElementById('gridAttributionPillText');
+      if (pillText) {
+        pillText.innerHTML = 'Basado en: <em>Boehnert, J., Penn, A., Barbrook-Johnson, P., Bicket, M., &amp; Hills, D. (2018). The visual representation of complexity: Definitions, examples &amp; learning points [Poster]. Loughborough University.</em>';
+      }
       buildGrid();
       if (inDetailView) renderDetailUI();
     });
@@ -4664,6 +4764,10 @@
       if (bp) bp.textContent = 'Portal';
       const bg = document.getElementById('btnBackToGrid');
       if (bg) bg.textContent = '← Index (16)';
+      const pillText = document.getElementById('gridAttributionPillText');
+      if (pillText) {
+        pillText.innerHTML = 'Based on: <em>Boehnert, J., Penn, A., Barbrook-Johnson, P., Bicket, M., &amp; Hills, D. (2018). The visual representation of complexity: Definitions, examples &amp; learning points [Poster]. Loughborough University.</em>';
+      }
       buildGrid();
       if (inDetailView) renderDetailUI();
     });

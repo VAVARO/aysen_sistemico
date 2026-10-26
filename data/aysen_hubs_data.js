@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-10-25T14:12:30.857Z",
+  "generatedAt": "2026-10-26T15:14:30.253Z",
   "hubs": [
     {
       "id": "turismo",
@@ -10477,7 +10477,7 @@ window.AYSEN_HUBS_DATA = {
       "provenance": {
         "sourceEntity": "Servicio de Salud Aysén (SSA) / DEIS MINSAL",
         "sourceUrl": "https://deis.minsal.cl/",
-        "collectionDate": "Corte Septiembre-Octubre 2026",
+        "collectionDate": "17 Oct 2026",
         "collectionMethod": "Catastro Oficial",
         "updateFrequency": "Semestral",
         "nextUpdate": "Continuo 2026"
@@ -10634,7 +10634,7 @@ window.AYSEN_HUBS_DATA = {
       "provenance": {
         "sourceEntity": "Centro Regulador SAMU Regional Aysén / FACH / DGAC",
         "sourceUrl": "https://saludaysen.cl/",
-        "collectionDate": "Corte Septiembre-Octubre 2026",
+        "collectionDate": "17 Oct 2026",
         "collectionMethod": "Catastro Oficial",
         "updateFrequency": "Trimestral",
         "nextUpdate": "Continuo 2026"
@@ -12291,7 +12291,7 @@ window.AYSEN_HUBS_DATA = {
     "gobernanza": {
       "hub_id": "gobernanza",
       "hub_num": "01",
-      "numeral": "I",
+      "numeral": "IV",
       "title": "Hub 01: Gobernanza & Finanzas Municipales",
       "shortTitle": "Gobernanza & Finanzas",
       "color": "#4338ca",
@@ -12651,7 +12651,7 @@ window.AYSEN_HUBS_DATA = {
     "energia": {
       "hub_id": "energia",
       "hub_num": "02",
-      "numeral": "II",
+      "numeral": "III",
       "title": "Hub 02: Energía & Telecomunicaciones",
       "shortTitle": "Energía & Telecom",
       "color": "#0284c7",
@@ -13006,7 +13006,7 @@ window.AYSEN_HUBS_DATA = {
     "salmonicultura": {
       "hub_id": "salmonicultura",
       "hub_num": "03",
-      "numeral": "III",
+      "numeral": "II",
       "title": "Hub 03: Territorio, Concesiones & Salmonicultura",
       "shortTitle": "Territorio & Salmonicultura",
       "color": "#0059c5",
@@ -13362,7 +13362,7 @@ window.AYSEN_HUBS_DATA = {
     "inversion": {
       "hub_id": "inversion",
       "hub_num": "04",
-      "numeral": "IV",
+      "numeral": "V",
       "title": "Hub 04: Economía, Inversión & SEIA",
       "shortTitle": "Economía & Inversión",
       "color": "#0f766e",
@@ -13717,7 +13717,7 @@ window.AYSEN_HUBS_DATA = {
     "social": {
       "hub_id": "social",
       "hub_num": "05",
-      "numeral": "V",
+      "numeral": "VI",
       "title": "Hub 05: Sociedad, Seguridad & Riesgos",
       "shortTitle": "Sociedad & Seguridad",
       "color": "#2563eb",
@@ -14072,7 +14072,7 @@ window.AYSEN_HUBS_DATA = {
     "turismo": {
       "hub_id": "turismo",
       "hub_num": "06",
-      "numeral": "VI",
+      "numeral": "I",
       "title": "Hub 06: Turismo & Áreas Silvestres SNASPE",
       "shortTitle": "Turismo & Áreas Silvestres",
       "color": "#00357f",
@@ -15139,7 +15139,7 @@ window.AYSEN_HUBS_DATA = {
     "cultura_patrimonio": {
       "hub_id": "cultura_patrimonio",
       "hub_num": "09",
-      "numeral": "CP",
+      "numeral": "IX",
       "title": "Módulo Especializado: Cultura, Artes y Patrimonio",
       "shortTitle": "Cultura & Patrimonio",
       "color": "#7c2d12",
@@ -15532,7 +15532,7 @@ window.AYSEN_HUBS_DATA = {
     "ctci_innovacion": {
       "hub_id": "ctci_innovacion",
       "hub_num": "10",
-      "numeral": "CT",
+      "numeral": "X",
       "title": "Módulo Especializado: Ciencia, Tecnología e Innovación (CTCi)",
       "shortTitle": "CTCi & Innovación",
       "color": "#0e7490",
@@ -15920,6 +15920,118 @@ window.AYSEN_HUBS_DATA = {
           "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
         }
       ]
+    }
+  },
+  "officialVariableSources": {
+    "sinim": {
+      "name": "SUBDERE - Sistema Nacional de Información Municipal (SINIM)",
+      "url": "https://datos.sinim.gov.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "fndr": {
+      "name": "DIPRES / Gobierno Regional de Aysén (FNDR)",
+      "url": "https://www.dipres.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "censo": {
+      "name": "INE - Censo de Población y Vivienda 2024",
+      "url": "https://censo2024.ine.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "casen": {
+      "name": "Ministerio de Desarrollo Social y Familia - Encuesta CASEN",
+      "url": "https://observatorio.ministeriodesarrollosocial.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "cead": {
+      "name": "SPD - Centro de Estudios y Análisis del Delito (CEAD)",
+      "url": "https://cead.spd.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "deis": {
+      "name": "DEIS - Ministerio de Salud / Servicio de Salud Aysén",
+      "url": "https://deis.minsal.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "mineduc": {
+      "name": "Centro de Estudios MINEDUC / SLEP Aysén",
+      "url": "https://datosabiertos.mineduc.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sernapesca": {
+      "name": "SERNAPESCA / SUBPESCA",
+      "url": "https://www.sernapesca.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sernageomin": {
+      "name": "SERNAGEOMIN - Catastro Minero Nacional",
+      "url": "https://www.sernageomin.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "seia": {
+      "name": "Servicio de Evaluación Ambiental (SEA - SEIA)",
+      "url": "https://seia.sea.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sii": {
+      "name": "Servicio de Impuestos Internos (SII) - Estadísticas de Empresas",
+      "url": "https://www.sii.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "chilecompra": {
+      "name": "Dirección ChileCompra - Datos Abiertos MercadoPúblico",
+      "url": "https://datos-abiertos.chilecompra.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sag": {
+      "name": "Servicio Agrícola y Ganadero (SAG)",
+      "url": "https://www.sag.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "cne": {
+      "name": "Comisión Nacional de Energía (CNE)",
+      "url": "https://www.cne.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sec": {
+      "name": "Superintendencia de Electricidad y Combustibles (SEC)",
+      "url": "https://www.sec.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "subtel": {
+      "name": "Subsecretaría de Telecomunicaciones (SUBTEL)",
+      "url": "https://www.subtel.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sernatur": {
+      "name": "SERNATUR / INE Encuesta Mensual de Alojamiento Turístico (EMAT)",
+      "url": "https://www.sernatur.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "conaf": {
+      "name": "CONAF - SNASPE y Catastro Vegetacional",
+      "url": "https://www.conaf.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "sinca_mma": {
+      "name": "Ministerio del Medio Ambiente (SINCA / RCE) y DGA-MOP",
+      "url": "https://sinca.mma.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "mincap": {
+      "name": "MINCAP / Servicio Nacional del Patrimonio Cultural (SERPAT - CMN)",
+      "url": "https://www.patrimoniocultural.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "anid": {
+      "name": "ANID DataCiencia / MinCiencia y CORFO",
+      "url": "https://dataciencia.anid.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "barometro": {
+      "name": "Universidad de Aysén - Barómetro Regional Aysén",
+      "url": "https://uaysen.cl",
+      "collectionDate": "17 Oct 2026"
     }
   },
   "extension_modules": {

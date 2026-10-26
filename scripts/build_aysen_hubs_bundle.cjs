@@ -119,6 +119,165 @@ const provByNodeId = {};
 });
 
 // ============================================================================
+// DICCIONARIO CANONICO DE FUENTES OFICIALES POR VARIABLE / PREFIJO
+// ============================================================================
+const OFFICIAL_VARIABLE_SOURCES = {
+  sinim: {
+    name: 'SUBDERE - Sistema Nacional de Información Municipal (SINIM)',
+    url: 'https://datos.sinim.gov.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  fndr: {
+    name: 'DIPRES / Gobierno Regional de Aysén (FNDR)',
+    url: 'https://www.dipres.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  censo: {
+    name: 'INE - Censo de Población y Vivienda 2024',
+    url: 'https://censo2024.ine.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  casen: {
+    name: 'Ministerio de Desarrollo Social y Familia - Encuesta CASEN',
+    url: 'https://observatorio.ministeriodesarrollosocial.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  cead: {
+    name: 'SPD - Centro de Estudios y Análisis del Delito (CEAD)',
+    url: 'https://cead.spd.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  deis: {
+    name: 'DEIS - Ministerio de Salud / Servicio de Salud Aysén',
+    url: 'https://deis.minsal.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  mineduc: {
+    name: 'Centro de Estudios MINEDUC / SLEP Aysén',
+    url: 'https://datosabiertos.mineduc.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sernapesca: {
+    name: 'SERNAPESCA / SUBPESCA',
+    url: 'https://www.sernapesca.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sernageomin: {
+    name: 'SERNAGEOMIN - Catastro Minero Nacional',
+    url: 'https://www.sernageomin.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  seia: {
+    name: 'Servicio de Evaluación Ambiental (SEA - SEIA)',
+    url: 'https://seia.sea.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sii: {
+    name: 'Servicio de Impuestos Internos (SII) - Estadísticas de Empresas',
+    url: 'https://www.sii.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  chilecompra: {
+    name: 'Dirección ChileCompra - Datos Abiertos MercadoPúblico',
+    url: 'https://datos-abiertos.chilecompra.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sag: {
+    name: 'Servicio Agrícola y Ganadero (SAG)',
+    url: 'https://www.sag.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  cne: {
+    name: 'Comisión Nacional de Energía (CNE)',
+    url: 'https://www.cne.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sec: {
+    name: 'Superintendencia de Electricidad y Combustibles (SEC)',
+    url: 'https://www.sec.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  subtel: {
+    name: 'Subsecretaría de Telecomunicaciones (SUBTEL)',
+    url: 'https://www.subtel.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sernatur: {
+    name: 'SERNATUR / INE Encuesta Mensual de Alojamiento Turístico (EMAT)',
+    url: 'https://www.sernatur.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  conaf: {
+    name: 'CONAF - SNASPE y Catastro Vegetacional',
+    url: 'https://www.conaf.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  sinca_mma: {
+    name: 'Ministerio del Medio Ambiente (SINCA / RCE) y DGA-MOP',
+    url: 'https://sinca.mma.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  mincap: {
+    name: 'MINCAP / Servicio Nacional del Patrimonio Cultural (SERPAT - CMN)',
+    url: 'https://www.patrimoniocultural.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  anid: {
+    name: 'ANID DataCiencia / MinCiencia y CORFO',
+    url: 'https://dataciencia.anid.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  barometro: {
+    name: 'Universidad de Aysén - Barómetro Regional Aysén',
+    url: 'https://uaysen.cl',
+    collectionDate: '17 Oct 2026'
+  }
+};
+
+function resolveOfficialSource(varKey, hubId) {
+  const k = String(varKey || '').toLowerCase();
+  const h = String(hubId || '').toLowerCase();
+
+  if (/glaciar|glaciares/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
+  if (/fondart/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
+  if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|patentes_|ingresos_municipales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinim;
+  if (/fndr_|inversion_fndr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.fndr;
+  if (/poblacion_censo|superficie_km2|densidad_hab|poblacion_|censo_2024|porcentaje_regional/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.censo;
+  if (/pobreza_|casen|ingreso_mediano|ingreso_autonomo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.casen;
+  if (/tasa_vif|delitos_|tasa_regional|tasa_dmcs|denuncias_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cead;
+  if (/medicos_|camas_hosp|urgencias_|espera_|aeroevacuaciones|traslado_|postas_|salud_|egresos_|camas_hospitalarias/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.deis;
+  if (/matricula_|establecimientos_|escuelas_|docentes_|retencion_|slep/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mineduc;
+  if (/concesiones_salmon|centros_activos|biomasa_|antibioticos|desembarque|amerb|salmon|caletas/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernapesca;
+  if (/concesiones_mineras|pertenencias_mineras|mineria/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernageomin;
+  if (/proyectos_seia|inversion_seia|seia_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.seia;
+  if (/empresas_sii|trabajadores_sii|microempresas_|ventas_sii|empleo_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sii;
+  if (/compras_locales|fuga_compras|chilecompra|mercadopublico/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.chilecompra;
+  if (/parcelaciones_sag|sag_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sag;
+  if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
+  if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
+  if (/internet_fijo|estado_foa|conectividad_|telecom/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
+  if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
+  if (/visitantes_snaspe|superficie_snaspe|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
+  if (/dias_sobre_norma_mp25|mp25_|fauna_|flora_|sinca|dga|daa_|humedales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
+  if (/museos_|bibliotecas_|monumentos_|agentes_culturales|cultura|patrimonio|total_espacios_culturales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
+  if (/proyectos_anid|monto_anid|publicaciones_|innovacion_corfo|centros_ctci|ctci|investigadores|total_proyectos_ctci|proyectos_corfo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.anid;
+  if (/barometro|nota_percepcion|percepcion|evaluacion_uaysen|participacion_cultural/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.barometro;
+
+  if (h.includes('turis')) return OFFICIAL_VARIABLE_SOURCES.sernatur;
+  if (h.includes('salmon') || h.includes('pesca')) return OFFICIAL_VARIABLE_SOURCES.sernapesca;
+  if (h.includes('energia')) return OFFICIAL_VARIABLE_SOURCES.cne;
+  if (h.includes('gobernanza')) return OFFICIAL_VARIABLE_SOURCES.sinim;
+  if (h.includes('inversion')) return OFFICIAL_VARIABLE_SOURCES.sii;
+  if (h.includes('salud')) return OFFICIAL_VARIABLE_SOURCES.deis;
+  if (h.includes('social')) return OFFICIAL_VARIABLE_SOURCES.censo;
+  if (h.includes('biodiversidad')) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
+  if (h.includes('cultura')) return OFFICIAL_VARIABLE_SOURCES.mincap;
+  if (h.includes('ctci')) return OFFICIAL_VARIABLE_SOURCES.anid;
+
+  return OFFICIAL_VARIABLE_SOURCES.sinim;
+}
+
+// ============================================================================
 // 1. DEFINICION DE LOS 7 HUBS CENTRALES
 // ============================================================================
 const hubs = [
@@ -2115,10 +2274,11 @@ const nodos = rawNodos.map(n => {
         nextUpdate: 'Continuo 2026'
       };
     } else {
+      const off = resolveOfficialSource(n.id, n.hubId);
       p = {
-        sourceEntity: n.officialSource?.name || 'Fuente Oficial Estado de Chile',
-        sourceUrl: n.officialSource?.url || 'https://www.gob.cl',
-        collectionDate: 'Corte Septiembre-Octubre 2026',
+        sourceEntity: n.officialSource?.name || off.name,
+        sourceUrl: n.officialSource?.url || off.url,
+        collectionDate: off.collectionDate || '17 Oct 2026',
         collectionMethod: 'Catastro Oficial',
         updateFrequency: n.officialSource?.frequency || 'Periódica',
         nextUpdate: 'Continuo 2026'
@@ -3060,6 +3220,32 @@ const buildTimestamp = sourceDateEpoch && /^\d+$/.test(sourceDateEpoch)
   ? new Date(Number(sourceDateEpoch) * 1000).toISOString()
   : new Date().toISOString();
 
+// Normalizar numerales de Hubs a numeracion canonica romana I a X
+const processedHubsGallery = JSON.parse(JSON.stringify(cecanPresets.hubs_gallery || {}));
+const processedExtGallery = JSON.parse(JSON.stringify(cecanPresets.extension_gallery || {}));
+
+const canonicalNumeralMap = {
+  turismo: 'I',
+  salmonicultura: 'II',
+  energia: 'III',
+  gobernanza: 'IV',
+  inversion: 'V',
+  social: 'VI',
+  biodiversidad: 'VII',
+  salud: 'VIII',
+  cultura: 'IX',
+  cultura_patrimonio: 'IX',
+  ctci: 'X',
+  ctci_innovacion: 'X'
+};
+
+Object.keys(processedHubsGallery).forEach(k => {
+  if (canonicalNumeralMap[k]) processedHubsGallery[k].numeral = canonicalNumeralMap[k];
+});
+Object.keys(processedExtGallery).forEach(k => {
+  if (canonicalNumeralMap[k]) processedExtGallery[k].numeral = canonicalNumeralMap[k];
+});
+
 const bundle = {
   generatedAt: buildTimestamp,
   hubs,
@@ -3068,8 +3254,9 @@ const bundle = {
   holdings,
   seriesMensualesEmat: wp06.series_mensuales_emat_sernatur || [],
   edges_inter_hub: cecanPresets.edges_inter_hub || [],
-  hubsGallery: cecanPresets.hubs_gallery || {},
-  extension_gallery: cecanPresets.extension_gallery || {},
+  hubsGallery: processedHubsGallery,
+  extension_gallery: processedExtGallery,
+  officialVariableSources: OFFICIAL_VARIABLE_SOURCES,
   extension_modules: {
     cultura_patrimonio: wp09 || {},
     ctci_innovacion: wp10 || {}
