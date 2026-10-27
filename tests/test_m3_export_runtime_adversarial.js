@@ -473,10 +473,19 @@ print("PYTHON_ORACLE_SUCCESS")
     fs.writeFileSync(oraclePyPath, pythonOracleScript, { encoding: 'utf-8' });
 
     try {
-        const pyResult = execSync(`uv run python "${oraclePyPath}" "${tmpComunasCsv}" "${tmpSeriesCsv}" "${tmpSingleComunaCsv}"`, {
-            cwd: REPO_ROOT,
-            encoding: 'utf-8'
-        });
+        const pyCmd = process.env.PYTHON || 'python';
+        let pyResult;
+        try {
+            pyResult = execSync(`uv run python "${oraclePyPath}" "${tmpComunasCsv}" "${tmpSeriesCsv}" "${tmpSingleComunaCsv}"`, {
+                cwd: REPO_ROOT,
+                encoding: 'utf-8'
+            });
+        } catch (uvErr) {
+            pyResult = execSync(`"${pyCmd}" "${oraclePyPath}" "${tmpComunasCsv}" "${tmpSeriesCsv}" "${tmpSingleComunaCsv}"`, {
+                cwd: REPO_ROOT,
+                encoding: 'utf-8'
+            });
+        }
         if (pyResult.includes('PYTHON_ORACLE_SUCCESS')) {
             console.log('  [PASS] Python csv.reader oracle parsed 100% of adversarial CSVs cleanly:');
             console.log('         - Exact column counts preserved (23 for comunas, 16 for series)');

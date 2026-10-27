@@ -1378,9 +1378,9 @@
     "cultura_patrimonio": {
       "hub_id": "cultura_patrimonio",
       "hub_num": "09",
-      "numeral": "CP",
+      "numeral": "IX",
       "title": "Módulo Especializado: Cultura, Artes y Patrimonio",
-      "shortTitle": "Cultura & Patrimonio",
+      "shortTitle": "Cultura y Patrimonio",
       "color": "#7c2d12",
       "presets": [
         {
@@ -1771,9 +1771,9 @@
     "ctci_innovacion": {
       "hub_id": "ctci_innovacion",
       "hub_num": "10",
-      "numeral": "CT",
+      "numeral": "X",
       "title": "Módulo Especializado: Ciencia, Tecnología e Innovación (CTCi)",
-      "shortTitle": "CTCi & Innovación",
+      "shortTitle": "CTCi e Innovación",
       "color": "#0e7490",
       "presets": [
         {
@@ -1846,7 +1846,7 @@
         {
           "preset_id": "CT_03",
           "hub_id": "ctci_innovacion",
-          "titulo": "3. Proyectos CORFO Innova & I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
+          "titulo": "3. Proyectos CORFO Innova e I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "is_perception_mirror": true,

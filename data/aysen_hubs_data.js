@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-10-26T15:14:30.253Z",
+  "generatedAt": "2026-10-27T13:39:05.066Z",
   "hubs": [
     {
       "id": "turismo",
@@ -12291,9 +12291,9 @@ window.AYSEN_HUBS_DATA = {
     "gobernanza": {
       "hub_id": "gobernanza",
       "hub_num": "01",
-      "numeral": "IV",
-      "title": "Hub 01: Gobernanza & Finanzas Municipales",
-      "shortTitle": "Gobernanza & Finanzas",
+      "numeral": "I",
+      "title": "Hub 01: Gobernanza y Finanzas Municipales",
+      "shortTitle": "Gobernanza y Finanzas",
       "color": "#4338ca",
       "presets": [
         {
@@ -12651,9 +12651,9 @@ window.AYSEN_HUBS_DATA = {
     "energia": {
       "hub_id": "energia",
       "hub_num": "02",
-      "numeral": "III",
-      "title": "Hub 02: Energía & Telecomunicaciones",
-      "shortTitle": "Energía & Telecom",
+      "numeral": "II",
+      "title": "Hub 02: Energía y Telecomunicaciones",
+      "shortTitle": "Energía y Telecomunicaciones",
       "color": "#0284c7",
       "presets": [
         {
@@ -13006,9 +13006,9 @@ window.AYSEN_HUBS_DATA = {
     "salmonicultura": {
       "hub_id": "salmonicultura",
       "hub_num": "03",
-      "numeral": "II",
-      "title": "Hub 03: Territorio, Concesiones & Salmonicultura",
-      "shortTitle": "Territorio & Salmonicultura",
+      "numeral": "III",
+      "title": "Hub 03: Territorio, Concesiones y Salmonicultura",
+      "shortTitle": "Territorio y Salmonicultura",
       "color": "#0059c5",
       "presets": [
         {
@@ -13362,9 +13362,9 @@ window.AYSEN_HUBS_DATA = {
     "inversion": {
       "hub_id": "inversion",
       "hub_num": "04",
-      "numeral": "V",
-      "title": "Hub 04: Economía, Inversión & SEIA",
-      "shortTitle": "Economía & Inversión",
+      "numeral": "IV",
+      "title": "Hub 04: Economía, Inversión y SEIA",
+      "shortTitle": "Economía e Inversión",
       "color": "#0f766e",
       "presets": [
         {
@@ -13717,9 +13717,9 @@ window.AYSEN_HUBS_DATA = {
     "social": {
       "hub_id": "social",
       "hub_num": "05",
-      "numeral": "VI",
-      "title": "Hub 05: Sociedad, Seguridad & Riesgos",
-      "shortTitle": "Sociedad & Seguridad",
+      "numeral": "V",
+      "title": "Hub 05: Sociedad, Seguridad y Riesgos",
+      "shortTitle": "Sociedad y Seguridad",
       "color": "#2563eb",
       "presets": [
         {
@@ -14072,9 +14072,9 @@ window.AYSEN_HUBS_DATA = {
     "turismo": {
       "hub_id": "turismo",
       "hub_num": "06",
-      "numeral": "I",
-      "title": "Hub 06: Turismo & Áreas Silvestres SNASPE",
-      "shortTitle": "Turismo & Áreas Silvestres",
+      "numeral": "VI",
+      "title": "Hub 06: Turismo y Áreas Silvestres SNASPE",
+      "shortTitle": "Turismo y Áreas Silvestres",
       "color": "#00357f",
       "presets": [
         {
@@ -14428,8 +14428,8 @@ window.AYSEN_HUBS_DATA = {
       "hub_id": "biodiversidad",
       "hub_num": "07",
       "numeral": "VII",
-      "title": "Hub 07: Biodiversidad, Aire & Medio Ambiente",
-      "shortTitle": "Biodiversidad & Ambiente",
+      "title": "Hub 07: Biodiversidad, Aire y Medio Ambiente",
+      "shortTitle": "Biodiversidad y Ambiente",
       "color": "#047857",
       "presets": [
         {
@@ -14783,8 +14783,8 @@ window.AYSEN_HUBS_DATA = {
       "hub_id": "salud",
       "hub_num": "08",
       "numeral": "VIII",
-      "title": "Hub 08: Salud APS, Hospitales & Desagregaciones Sectoriales",
-      "shortTitle": "Salud APS & Hospitales",
+      "title": "Hub 08: Salud APS, Hospitales y Desagregaciones Sectoriales",
+      "shortTitle": "Salud APS y Hospitales",
       "color": "#dc2626",
       "presets": [
         {
@@ -15141,7 +15141,7 @@ window.AYSEN_HUBS_DATA = {
       "hub_num": "09",
       "numeral": "IX",
       "title": "Módulo Especializado: Cultura, Artes y Patrimonio",
-      "shortTitle": "Cultura & Patrimonio",
+      "shortTitle": "Cultura y Patrimonio",
       "color": "#7c2d12",
       "presets": [
         {
@@ -15534,7 +15534,7 @@ window.AYSEN_HUBS_DATA = {
       "hub_num": "10",
       "numeral": "X",
       "title": "Módulo Especializado: Ciencia, Tecnología e Innovación (CTCi)",
-      "shortTitle": "CTCi & Innovación",
+      "shortTitle": "CTCi e Innovación",
       "color": "#0e7490",
       "presets": [
         {
@@ -15607,7 +15607,7 @@ window.AYSEN_HUBS_DATA = {
         {
           "preset_id": "CT_03",
           "hub_id": "ctci_innovacion",
-          "titulo": "3. Proyectos CORFO Innova & I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
+          "titulo": "3. Proyectos CORFO Innova e I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "is_perception_mirror": true,

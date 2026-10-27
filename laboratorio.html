@@ -2563,7 +2563,10 @@
       text-transform: uppercase;
     }
 
-    /* Tarjeta de Bienvenida Centrada y Pulida en el Viewport */
+    /* Tarjeta de Bienvenida Centrada y Pulida en el Viewport — Cero Scroll Interno y Cero Desborde */
+    #heroEmptyCanvas,
+    #canvas-empty,
+    .canvas-empty,
     .hero-studio-card {
       position: absolute;
       left: 50%;
@@ -2572,53 +2575,86 @@
       background: var(--bg-surface);
       border: 1px solid var(--rule-hairline);
       border-radius: 8px;
-      padding: 1.5rem 1.85rem;
-      width: min(920px, calc(100% - 40px));
-      max-width: 920px;
-      max-height: calc(100% - 28px);
-      overflow-y: auto;
+      padding: 1rem 1.4rem;
+      width: min(960px, calc(100% - 32px));
+      max-width: 960px;
+      overflow: visible;
       text-align: center;
-      box-shadow: var(--card-shadow);
+      box-shadow: 0 16px 36px rgba(28, 27, 27, 0.08);
       z-index: 25;
       pointer-events: auto;
+      box-sizing: border-box;
+    }
+    @media (max-height: 720px) {
+      .hero-studio-card {
+        padding: 0.65rem 1.1rem;
+        transform: translate(-50%, -50%) scale(0.92);
+        transform-origin: center center;
+      }
+      .hero-hubs-launcher-section {
+        margin: 0.4rem 0 0.5rem 0;
+      }
+      .hero-hub-launch-card {
+        padding: 0.35rem 0.5rem;
+      }
+      .hero-steps-compact-bar {
+        padding-top: 0.45rem;
+        margin-top: 0.45rem;
+      }
+      .hero-btn-row {
+        margin-top: 0.45rem;
+        padding-top: 0.2rem;
+      }
+    }
+    @media (max-height: 560px) {
+      .hero-studio-card {
+        padding: 0.45rem 0.8rem;
+        transform: translate(-50%, -50%) scale(0.82);
+      }
     }
     .hero-hubs-launcher-section {
-      margin: 0.85rem 0 1.15rem 0;
+      margin: 0.65rem 0 0.85rem 0;
       text-align: left;
-      background: #fcf9f8;
-      border: 1px solid rgba(0, 53, 127, 0.16);
-      border-radius: 6px;
-      padding: 0.9rem 1rem;
+      background: transparent;
+      border: none;
+      padding: 0;
     }
     .hero-hubs-launcher-kicker {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #00357f;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 0.4rem;
     }
+    .hero-kicker-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #00357f;
+    }
+    .hero-kicker-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #5f5c59;
+    }
     .hero-hubs-launcher-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(162px, 1fr));
-      gap: 0.5rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.45rem;
     }
     .hero-hub-launch-card {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.25rem;
-      padding: 0.55rem 0.68rem;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.6rem;
+      min-height: 40px;
+      box-sizing: border-box;
       background: #ffffff;
-      border: 1px solid rgba(28, 27, 27, 0.14);
-      border-left: 3px solid #00357f;
+      border: 1px solid rgba(28, 27, 27, 0.1);
       border-radius: 4px;
       cursor: pointer;
       text-align: left;
@@ -2626,32 +2662,130 @@
       font-family: 'Inter', sans-serif;
     }
     .hero-hub-launch-card:hover {
-      background: #f0f5ff;
-      border-color: #00357f;
+      background: #f4f7fc;
+      border-color: rgba(0, 53, 127, 0.35);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 53, 127, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 53, 127, 0.08);
     }
-    .hero-hub-launch-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
+    .hero-hub-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .hero-hub-launch-num {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.64rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      color: #00357f;
+      color: #5f5c59;
+      flex-shrink: 0;
+      min-width: 1.15rem;
     }
     .hero-hub-launch-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.84rem;
-      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 600;
       color: #1c1b1b;
       line-height: 1.2;
+      flex: 1;
     }
-    .hero-hub-launch-meta {
+    .hero-hub-launch-arrow {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
+      font-size: 0.72rem;
+      color: #9ca3af;
+      transition: transform 0.15s ease, color 0.15s ease;
+      flex-shrink: 0;
+    }
+    .hero-hub-launch-card:hover .hero-hub-launch-arrow {
+      transform: translateX(2px);
+      color: #00357f;
+    }
+    .hero-steps-compact-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      margin-top: 0.65rem;
+      border-top: 1px solid rgba(28, 27, 27, 0.08);
+      text-align: left;
+    }
+    .hero-step-compact {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .hero-step-compact .hero-step-num {
+      width: 1.35rem;
+      height: 1.35rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #00357f;
+      border: 1px solid rgba(0, 53, 127, 0.3);
+      border-radius: 3px;
+      flex-shrink: 0;
+      background: rgba(0, 53, 127, 0.04);
+    }
+    .hero-step-compact .hero-step-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .hero-step-compact .hero-step-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #1c1b1b;
+    }
+    .hero-step-compact .hero-step-text {
+      font-size: 0.68rem;
       color: #5f5c59;
+      line-height: 1.3;
+    }
+    .hero-step-compact .hero-step-action {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: #00357f;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-align: left;
+      line-height: 1.3;
+    }
+    .hero-step-compact .hero-step-action:hover {
+      color: #0059c5;
+    }
+    .badge-count-subtle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.64rem;
+      font-weight: 600;
+      opacity: 0.75;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: rgba(0, 53, 127, 0.08);
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    @media (max-width: 900px) {
+      .hero-hubs-launcher-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-steps-compact-bar {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-hubs-launcher-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .btn-load-full-hub-dashboard {
       background: #00357f;
@@ -2672,17 +2806,17 @@
 
     .hero-studio-card h2 {
       font-family: var(--font-serif);
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       color: var(--cobalt);
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.35rem;
     }
 
-    .hero-studio-card p {
-      font-size: 0.84rem;
-      line-height: 1.55;
+    .hero-studio-card p.hero-lead-text {
+      font-size: 0.82rem;
+      line-height: 1.45;
       color: var(--ink-secondary);
-      margin-bottom: 1.5rem;
-      max-width: 600px;
+      margin-bottom: 0.65rem;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -2690,21 +2824,38 @@
     .hero-btn-row {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 0.75rem;
       flex-wrap: wrap;
+      margin-top: 0.65rem;
+      padding-top: 0.4rem;
     }
 
     .hero-btn-row .btn-action-tool {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.6rem 1.25rem;
-      min-height: 38px;
+      padding: 0.45rem 1rem;
+      min-height: 32px;
       height: auto;
       white-space: nowrap;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       line-height: 1.2;
-      border-radius: 6px;
+      border-radius: 4px;
+    }
+
+    .hero-btn-row .hero-secondary-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #5f5c59;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .hero-btn-row .hero-secondary-link:hover {
+      color: #00357f;
     }
 
     /* Acordeones en Abanico del Catálogo Lateral */
@@ -3589,23 +3740,19 @@
 
     <div class="action-bar-right">
       <button class="btn-action-tool secondary" id="btnToggleMetacog" title="Abrir preguntas reflexivas">
-        <span>Preguntas (30)</span>
+        <span>Preguntas <span class="badge-count-subtle">30</span></span>
       </button>
 
-      <button class="btn-action-tool" id="btnOpenHubGallery" style="border-color: #00357f; color: #00357f; font-weight: 600; background: #f0f4fc;" title="Galería de 50 Visualizaciones por Hub">
-        <span>Galería Hubs (50)</span>
+      <button class="btn-action-tool" id="btnOpenHubGallery" style="border-color: #00357f; color: #00357f; font-weight: 600; background: #f0f4fc;" title="Galería de 50 visualizaciones por eje temático">
+        <span>Galería <span class="badge-count-subtle">50</span></span>
       </button>
 
       <button class="btn-action-tool" id="btnEjemploSistemico" title="Cargar escenario ilustrativo">
         <span>Escenarios</span>
       </button>
 
-      <button class="btn-action-tool" id="btnTopAutoLayout" title="Auto-ordenar ventanas en grilla de 2 columnas">
-        <span>Auto-ordenar</span>
-      </button>
-
-      <button class="btn-action-tool" id="btnToggleDashboardMode" title="Alternar entre Vista Grilla Cómoda (Scroll Vertical) y Modo Lienzo 2D libre">
-        <span>Vista: Grilla / Lienzo 2D</span>
+      <button class="btn-action-tool" id="btnToggleDashboardMode" title="Alternar entre ajustar en grilla y modo lienzo 2D libre">
+        <span>Ajustar en grilla</span>
       </button>
 
       <!-- Menú Proyecto (Guardar, Cargar, Reporte) -->
@@ -3692,48 +3839,47 @@
       </div>
 
       <!-- Hero Inicial en Estado Vacío (Direct Child of #panelLienzo, Perfectly Centered) -->
-      <div class="hero-studio-card" id="heroEmptyCanvas">
-        <h2>Laboratorio Sistémico · Lanzador de Dashboards por Hub</h2>
-        <p style="margin-bottom: 0.65rem;">
-          Selecciona un Hub Temático para desplegar de inmediato sus 5 visualizaciones multiformato (Mapa, Barras, Scatter 4Q, Serie 2015–2026 y Espejo Ciudadano Barómetro) conectadas en el lienzo, o construye tu propio cruce paso a paso:
+      <div class="hero-studio-card canvas-empty" id="heroEmptyCanvas" data-id="canvas-empty">
+        <h2>Laboratorio Sistémico de Aysén</h2>
+        <p class="hero-lead-text">
+          Elige un eje temático para abrir su mesa de trabajo con datos de la región, o arma tu propio cruce desde cero.
         </p>
         <div class="hero-hubs-launcher-section" id="heroHubsLauncherSection">
           <div class="hero-hubs-launcher-kicker">
-            <span>Dashboards Completos por Hub Temático (10 Hubs de Datos)</span>
-            <span>5 Gráficos Multiformato por Hub →</span>
+            <span class="hero-kicker-title">Ejes temáticos de Aysén</span>
+            <span class="hero-kicker-sub">5 vistas integradas por eje (Mapa, Barras, 4Q, Serie y Percepción)</span>
           </div>
           <div class="hero-hubs-launcher-grid" id="heroHubsLauncherGrid">
             <!-- Inyectado dinámicamente por renderHeroHubsLauncher() -->
           </div>
           <div id="heroHubLauncherGrid" style="display:none;" aria-hidden="true"></div>
         </div>
-        <ol class="hero-steps">
-          <li class="hero-step">
+        <div class="hero-steps-compact-bar">
+          <div class="hero-step-compact">
             <span class="hero-step-num">1</span>
             <div class="hero-step-body">
-              <strong>Abre el catálogo de variables</strong>
+              <span class="hero-step-title">Catálogo de variables</span>
               <button type="button" class="hero-step-action" id="btnHeroOpenCatalog">Abrir catálogo</button>
             </div>
-          </li>
-          <li class="hero-step">
+          </div>
+          <div class="hero-step-compact">
             <span class="hero-step-num">2</span>
             <div class="hero-step-body">
-              <strong>Arrastra una variable al lienzo</strong>
-              <span class="hero-drag-demo" aria-hidden="true"><span class="hero-drag-chip"></span><span class="hero-drag-target"></span></span>
-              <button type="button" class="hero-step-action" id="btnHeroInit">O crea una tarjeta vacía</button>
+              <span class="hero-step-title">Construcción manual</span>
+              <button type="button" class="hero-step-action" id="btnHeroInit">Crear tarjeta vacía</button>
             </div>
-          </li>
-          <li class="hero-step">
+          </div>
+          <div class="hero-step-compact">
             <span class="hero-step-num">3</span>
             <div class="hero-step-body">
-              <strong>Conecta dos tarjetas para cruzarlas</strong>
-              <span class="hero-step-text">Arrastra desde el puerto lateral de una tarjeta hasta otra y elige cómo cruzar sus variables.</span>
+              <span class="hero-step-title">Cruces sistémicos</span>
+              <span class="hero-step-text">Conecta tarjetas desde sus puertos laterales</span>
             </div>
-          </li>
-        </ol>
+          </div>
+        </div>
         <div class="hero-btn-row">
-          <button class="btn-action-tool" id="btnHeroEmpty">Comenzar en Blanco</button>
-          <button type="button" class="hero-secondary-link" id="btnHeroScenario">Cargar Escenario Comunal</button>
+          <button class="btn-action-tool" id="btnHeroEmpty">Comenzar en blanco</button>
+          <button type="button" class="hero-secondary-link" id="btnHeroScenario">Cargar escenario comunal</button>
         </div>
       </div>
 
@@ -3864,13 +4010,13 @@
     <div class="hub-gallery-modal">
       <div class="hub-gallery-header">
         <div>
-          <span class="hub-gallery-kicker">Catálogo Multiformato Austral</span>
-          <h2 id="hubGalleryTitle" class="hub-gallery-title">Galería Multiformato por Hub & Módulos Especializados</h2>
-          <p class="hub-gallery-subtitle">5 Gráficos Multiformato (Mapa, Barras, Scatter 4Q, Serie Temporal y Espejo Ciudadano) por cada uno de los 8 Hubs Sistémicos y 2 Módulos Especializados (Cultura & Patrimonio, CTCi & Innovación)</p>
+          <span class="hub-gallery-kicker">Catálogo Editorial Austral</span>
+          <h2 id="hubGalleryTitle" class="hub-gallery-title">Galería de Vistas por Eje Temático</h2>
+          <p class="hub-gallery-subtitle">5 vistas integradas (Mapa territorial, Barras bivariadas, Dispersión en 4 cuadrantes, Serie temporal y Percepción ciudadana) para los 10 ejes de Aysén.</p>
         </div>
         <div style="display:flex; align-items:center; gap:0.75rem;">
           <button type="button" class="btn-load-full-hub-dashboard" id="btnLoadFullHubDashboard">
-            Cargar Dashboard Completo del Hub (5 gráficos) →
+            Cargar mesa completa del eje (5 vistas) →
           </button>
           <button type="button" class="hub-gallery-close" id="btnHubGalleryClose" aria-label="Cerrar galería">×</button>
         </div>
@@ -3893,7 +4039,7 @@
     <div class="baro-drawer-header">
       <div>
         <span class="baro-drawer-kicker">Capa Transversal de Percepción Ciudadana</span>
-        <h3 id="baroDrawerTitle" class="baro-drawer-title">Filtros Sociodemográficos & Control Muestral</h3>
+        <h3 id="baroDrawerTitle" class="baro-drawer-title">Filtros Sociodemográficos y Control Muestral</h3>
         <p class="baro-drawer-subtitle" id="baroDrawerSubtitle">Barómetro Regional UAYSÉN · N = 465 casos · 10 comunas</p>
       </div>
       <button type="button" class="baro-drawer-close" id="btnBaroDrawerClose" aria-label="Cerrar filtros">×</button>
@@ -4332,7 +4478,7 @@
       }
 
       // Formateador y truncador de títulos de ejes para Chart.js (Milestone 3)
-      function formatAxisTitle(name, unit, maxLen = 22 /* bound estándar 28 */) {
+      function formatAxisTitle(name, unit, maxLen = 28) {
         if (!name) return '';
         let clean = String(name).trim();
         if (unit) {
@@ -6101,7 +6247,7 @@
         const isGrid = panel.classList.toggle('mode-dashboard-grid');
         AppState.dashboardViewMode = isGrid ? 'grid' : 'canvas';
         if (btn) {
-          btn.textContent = isGrid ? 'Modo Lienzo 2D' : 'Vista Grilla Cómoda';
+          btn.textContent = isGrid ? 'Modo Lienzo 2D' : 'Ajustar en grilla';
           btn.classList.toggle('active', isGrid);
         }
         if (!isGrid) {
@@ -9190,21 +9336,7 @@
                     display: datasets.length > 1,
                     position: 'top',
                     align: 'start',
-                    labels: {
-                      boxWidth: 8,
-                      padding: 6,
-                      font: { size: 9.5, family: "'Inter', sans-serif" },
-                      generateLabels: (chart) => {
-                        const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                        return original.map(item => {
-                          if (item.text && item.text.length > 28) {
-                            item.fullText = item.text;
-                            item.text = item.text.slice(0, 25) + '...';
-                          }
-                          return item;
-                        });
-                      }
-                    }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   scatterQuadrantsPlugin: {
                     enabled: !!w.showAverage
@@ -9486,21 +9618,7 @@
                     display: payload.mode === 'bivariate' || datasets.length > 1,
                     position: 'top',
                     align: 'start',
-                    labels: {
-                      boxWidth: 8,
-                      padding: 6,
-                      font: { size: 9.5, family: "'Inter', sans-serif" },
-                      generateLabels: (chart) => {
-                        const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                        return original.map(item => {
-                          if (item.text && item.text.length > 28) {
-                            item.fullText = item.text;
-                            item.text = item.text.slice(0, 25) + '...';
-                          }
-                          return item;
-                        });
-                      }
-                    }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   tooltip: {
                     caretPadding: 6,
@@ -9691,27 +9809,13 @@
               options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: { padding: { top: 12, right: hasStructuralOverlay ? 20 : 16, bottom: 14, left: 14 } },
+                layout: { padding: { top: 12, right: (payload.mode === 'bivariate' ? 22 : 18), bottom: 14, left: 14 } },
                 plugins: {
                   legend: {
                     display: true,
                     position: 'top',
                     align: 'start',
-                    labels: {
-                      boxWidth: 8,
-                      padding: 6,
-                      font: { size: 9.5, family: "'Inter', sans-serif" },
-                      generateLabels: (chart) => {
-                        const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                        return original.map(item => {
-                          if (item.text && item.text.length > 28) {
-                            item.fullText = item.text;
-                            item.text = item.text.slice(0, 25) + '...';
-                          }
-                          return item;
-                        });
-                      }
-                    }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   tooltip: {
                     callbacks: {
@@ -9871,21 +9975,7 @@
                     display: payload.mode === 'bivariate' || datasets.length > 1,
                     position: 'top',
                     align: 'start',
-                    labels: {
-                      boxWidth: 8,
-                      padding: 6,
-                      font: { size: 9.5, family: "'Inter', sans-serif" },
-                      generateLabels: (chart) => {
-                        const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                        return original.map(item => {
-                          if (item.text && item.text.length > 28) {
-                            item.fullText = item.text;
-                            item.text = item.text.slice(0, 25) + '...';
-                          }
-                          return item;
-                        });
-                      }
-                    }
+                    labels: { boxWidth: 10, font: { size: 9.5, family: "'Inter', sans-serif" }, padding: 8 }
                   },
                   tooltip: {
                     caretPadding: 6,
@@ -10566,36 +10656,31 @@
         const extGallery = AppState.extensionGallery || (window.AYSEN_HUBS_DATA?.extension_gallery) || {};
 
         const orderedHubs = [
-          { id: 'turismo', fallbackNum: 'I', fallbackTitle: 'Turismo & Áreas Silvestres', color: '#00357f' },
-          { id: 'salmonicultura', fallbackNum: 'II', fallbackTitle: 'Pesca, Acuicultura & Mar', color: '#0059c5' },
-          { id: 'energia', fallbackNum: 'III', fallbackTitle: 'Energía & Telecom', color: '#0284c7' },
-          { id: 'gobernanza', fallbackNum: 'IV', fallbackTitle: 'Gobernanza & Finanzas', color: '#4338ca' },
-          { id: 'inversion', fallbackNum: 'V', fallbackTitle: 'Economía, Inversión & Suelo', color: '#0f766e' },
-          { id: 'social', fallbackNum: 'VI', fallbackTitle: 'Demografía, Educación & Riesgos', color: '#2563eb' },
-          { id: 'biodiversidad', fallbackNum: 'VII', fallbackTitle: 'Biodiversidad & Clima', color: '#047857' },
-          { id: 'salud', fallbackNum: 'VIII', fallbackTitle: 'Salud APS & Hospitales', color: '#be123c' },
-          { id: 'cultura_patrimonio', aliasId: 'cultura', fallbackNum: 'IX', fallbackTitle: 'Cultura, Artes & Patrimonio', color: '#b45309' },
-          { id: 'ctci_innovacion', aliasId: 'ctci', fallbackNum: 'X', fallbackTitle: 'CTCi, Ciencia & Innovación', color: '#6d28d9' }
+          { id: 'gobernanza', num: 'I', title: 'Gobernanza y Finanzas', color: '#4338ca' },
+          { id: 'energia', num: 'II', title: 'Energía y Telecomunicaciones', color: '#0284c7' },
+          { id: 'salmonicultura', num: 'III', title: 'Territorio y Salmonicultura', color: '#0059c5' },
+          { id: 'inversion', num: 'IV', title: 'Economía e Inversión', color: '#0f766e' },
+          { id: 'social', num: 'V', title: 'Sociedad y Seguridad', color: '#2563eb' },
+          { id: 'turismo', num: 'VI', title: 'Turismo y Áreas Silvestres', color: '#00357f' },
+          { id: 'biodiversidad', num: 'VII', title: 'Biodiversidad y Ambiente', color: '#047857' },
+          { id: 'salud', num: 'VIII', title: 'Salud APS y Hospitales', color: '#be123c' },
+          { id: 'cultura_patrimonio', aliasId: 'cultura', num: 'IX', title: 'Cultura y Patrimonio', color: '#b45309' },
+          { id: 'ctci_innovacion', aliasId: 'ctci', num: 'X', title: 'CTCi e Innovación', color: '#6d28d9' }
         ];
 
         let html = '';
         orderedHubs.forEach(item => {
           const entry = gallery[item.id] || extGallery[item.id] || (item.aliasId && (gallery[item.aliasId] || extGallery[item.aliasId])) || {};
-          let num = entry.numeral || item.fallbackNum;
-          if (num === 'CP') num = 'IX';
-          if (num === 'CT') num = 'X';
-          const title = entry.shortTitle || item.fallbackTitle || entry.title;
+          const num = item.num;
+          const title = item.title;
           const color = entry.color || item.color || '#00357f';
-          const count = Array.isArray(entry.presets) ? entry.presets.length : 5;
           const launchId = (entry && entry.presets) ? (entry.id || item.id) : item.id;
           html += `
-            <button type="button" class="hero-hub-launch-card" data-launch-hub="${launchId}" style="border-left-color: ${color};">
-              <div class="hero-hub-launch-top">
-                <span style="color:${color};">HUB ${num}</span>
-                <span>${count} gráficos →</span>
-              </div>
-              <div class="hero-hub-launch-title">${title}</div>
-              <div class="hero-hub-launch-meta">Mapa · Barras · 4Q · Serie · Espejo N</div>
+            <button type="button" class="hero-hub-launch-card" data-launch-hub="${launchId}" data-hub-id="${launchId}" aria-label="Abrir mesa de trabajo de ${title}">
+              <span class="hero-hub-dot" style="background-color: ${color};" aria-hidden="true"></span>
+              <span class="hero-hub-launch-num">${num}</span>
+              <span class="hero-hub-launch-title">${title}</span>
+              <span class="hero-hub-launch-arrow" aria-hidden="true">→</span>
             </button>
           `;
         });
@@ -10677,7 +10762,7 @@
         });
       }
 
-      function openHubGallery(hubId = 'salmonicultura') {
+      function openHubGallery(hubId = 'gobernanza') {
         const modal = document.getElementById('modalHubGallery');
         if (!modal) return;
         hideFloatingToolbar();
@@ -10691,19 +10776,19 @@
         const container = document.getElementById('hubGalleryTabs');
         if (!container) return;
         const hubsList = [
-          { id: 'turismo', num: 'I', name: 'Turismo' },
-          { id: 'salmonicultura', num: 'II', name: 'Salmonicultura' },
-          { id: 'energia', num: 'III', name: 'Energía' },
-          { id: 'gobernanza', num: 'IV', name: 'Gobernanza' },
-          { id: 'inversion', num: 'V', name: 'Inversión' },
-          { id: 'social', num: 'VI', name: 'Social' },
-          { id: 'biodiversidad', num: 'VII', name: 'Biodiversidad' },
-          { id: 'salud', num: 'VIII', name: 'Salud' }
+          { id: 'gobernanza', num: 'I', name: 'Gobernanza y Finanzas' },
+          { id: 'energia', num: 'II', name: 'Energía y Telecomunicaciones' },
+          { id: 'salmonicultura', num: 'III', name: 'Territorio y Salmonicultura' },
+          { id: 'inversion', num: 'IV', name: 'Economía e Inversión' },
+          { id: 'social', num: 'V', name: 'Sociedad y Seguridad' },
+          { id: 'turismo', num: 'VI', name: 'Turismo y Áreas Silvestres' },
+          { id: 'biodiversidad', num: 'VII', name: 'Biodiversidad y Ambiente' },
+          { id: 'salud', num: 'VIII', name: 'Salud APS y Hospitales' }
         ];
 
         const extensionModules = [
-          { id: 'cultura_patrimonio', num: 'IX', name: 'Cultura & Patr.' },
-          { id: 'ctci_innovacion', num: 'X', name: 'CTCi & Innovación' }
+          { id: 'cultura_patrimonio', num: 'IX', name: 'Cultura y Patrimonio', legacyName: 'Cultura & Patrimonio' },
+          { id: 'ctci_innovacion', num: 'X', name: 'CTCi e Innovación', legacyName: 'CTCi & Innovación' }
         ];
 
         let html = '';
@@ -10720,7 +10805,7 @@
         extensionModules.forEach(m => {
           const isActive = (m.id === activeHubGalleryId);
           html += `
-            <button type="button" class="hub-tab-btn hub-tab-extension ${isActive ? 'active' : ''}" data-hub-id="${m.id}" style="border-left:2px solid #00357f;">
+            <button type="button" class="hub-tab-btn hub-tab-extension ${isActive ? 'active' : ''}" data-hub-id="${m.id}" data-legacy-label="${m.legacyName}" style="border-left:2px solid #00357f;">
               <span style="font-family:'JetBrains Mono',monospace; font-weight:700;">[${m.num}]</span>
               <span>${m.name}</span>
             </button>
@@ -10762,7 +10847,7 @@
           const isMirror = Boolean(p.is_perception_mirror);
           const mirrorBadge = isMirror
             ? `<div class="hub-preset-mirror-badge">
-                 <span>Espejo Ciudadano (Barómetro n=${p.config?.sample_contract?.active_n || 452} · ME ±${p.config?.sample_contract?.margin_error_pct || 4.6}%)</span>
+                 <span>Percepción ciudadana (Barómetro regional · n=${p.config?.sample_contract?.active_n || 452} · ME ±${p.config?.sample_contract?.margin_error_pct || 4.6}%)</span>
                </div>`
             : '';
 
@@ -12417,17 +12502,17 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         document.getElementById('tbBtnBar').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'bar'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'chart'; w.chartType = 'bar'; renderWidgetCardDOM(w); renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnLine').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'line'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'chart'; w.chartType = 'line'; renderWidgetCardDOM(w); renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnScatter').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;
           const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'scatter'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
+          if (w) { w.type = 'chart'; w.chartType = 'scatter'; renderWidgetCardDOM(w); renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
         });
         document.getElementById('tbBtnMap').addEventListener('click', () => {
           if (!AppState.activeWidgetId) return;

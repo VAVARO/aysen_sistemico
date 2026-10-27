@@ -14,6 +14,8 @@ import subprocess
 import csv
 import io
 import re
+import os
+import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -80,7 +82,7 @@ class TestM3ExportOracle(unittest.TestCase):
     def test_03_run_node_m3_adversarial_harness(self):
         """Execute node tests/test_m3_export_runtime_adversarial.js and verify exit code 0"""
         cmd = ["node", "tests/test_m3_export_runtime_adversarial.js"]
-        proc = subprocess.run(cmd, cwd=REPO_ROOT, capture_output=True, text=True, timeout=60)
+        proc = subprocess.run(cmd, cwd=REPO_ROOT, capture_output=True, text=True, timeout=60, env={**os.environ, "PYTHON": sys.executable})
         self.assertEqual(proc.returncode, 0, f"Node adversarial harness failed: {proc.stderr}\n{proc.stdout}")
         self.assertIn("FINAL CHALLENGER 2 VERDICT: APPROVE", proc.stdout)
         self.assertIn("100% of 105 object URLs were revoked", proc.stdout)

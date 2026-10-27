@@ -3225,12 +3225,12 @@ const processedHubsGallery = JSON.parse(JSON.stringify(cecanPresets.hubs_gallery
 const processedExtGallery = JSON.parse(JSON.stringify(cecanPresets.extension_gallery || {}));
 
 const canonicalNumeralMap = {
-  turismo: 'I',
-  salmonicultura: 'II',
-  energia: 'III',
-  gobernanza: 'IV',
-  inversion: 'V',
-  social: 'VI',
+  gobernanza: 'I',
+  energia: 'II',
+  salmonicultura: 'III',
+  inversion: 'IV',
+  social: 'V',
+  turismo: 'VI',
   biodiversidad: 'VII',
   salud: 'VIII',
   cultura: 'IX',

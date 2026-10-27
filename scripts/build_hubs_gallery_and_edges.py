@@ -87,14 +87,14 @@ def build_hubs_gallery(barometro_data):
 
     gallery = {
         # =====================================================================
-        # HUB 01: GOBERNANZA & FINANZAS MUNICIPALES (WP_01)
+        # HUB 01: GOBERNANZA Y FINANZAS MUNICIPALES (WP_01)
         # =====================================================================
         "gobernanza": {
             "hub_id": "gobernanza",
             "hub_num": "01",
             "numeral": "I",
-            "title": "Hub 01: Gobernanza & Finanzas Municipales",
-            "shortTitle": "Gobernanza & Finanzas",
+            "title": "Hub 01: Gobernanza y Finanzas Municipales",
+            "shortTitle": "Gobernanza y Finanzas",
             "color": "#4338ca",
             "presets": [
                 {
@@ -246,14 +246,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 02: ENERGÍA & TELECOMUNICACIONES (WP_02)
+        # HUB 02: ENERGÍA Y TELECOMUNICACIONES (WP_02)
         # =====================================================================
         "energia": {
             "hub_id": "energia",
             "hub_num": "02",
             "numeral": "II",
-            "title": "Hub 02: Energía & Telecomunicaciones",
-            "shortTitle": "Energía & Telecom",
+            "title": "Hub 02: Energía y Telecomunicaciones",
+            "shortTitle": "Energía y Telecomunicaciones",
             "color": "#0284c7",
             "presets": [
                 {
@@ -400,14 +400,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 03: TERRITORIO, CONCESIONES & SALMONICULTURA (WP_03)
+        # HUB 03: TERRITORIO, CONCESIONES Y SALMONICULTURA (WP_03)
         # =====================================================================
         "salmonicultura": {
             "hub_id": "salmonicultura",
             "hub_num": "03",
             "numeral": "III",
-            "title": "Hub 03: Territorio, Concesiones & Salmonicultura",
-            "shortTitle": "Territorio & Salmonicultura",
+            "title": "Hub 03: Territorio, Concesiones y Salmonicultura",
+            "shortTitle": "Territorio y Salmonicultura",
             "color": "#0059c5",
             "presets": [
                 {
@@ -554,14 +554,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 04: ECONOMÍA, INVERSIÓN & SEIA (WP_04)
+        # HUB 04: ECONOMÍA, INVERSIÓN Y SEIA (WP_04)
         # =====================================================================
         "inversion": {
             "hub_id": "inversion",
             "hub_num": "04",
             "numeral": "IV",
-            "title": "Hub 04: Economía, Inversión & SEIA",
-            "shortTitle": "Economía & Inversión",
+            "title": "Hub 04: Economía, Inversión y SEIA",
+            "shortTitle": "Economía e Inversión",
             "color": "#0f766e",
             "presets": [
                 {
@@ -708,14 +708,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 05: SOCIEDAD, SEGURIDAD & RIESGOS (WP_05)
+        # HUB 05: SOCIEDAD, SEGURIDAD Y RIESGOS (WP_05)
         # =====================================================================
         "social": {
             "hub_id": "social",
             "hub_num": "05",
             "numeral": "V",
-            "title": "Hub 05: Sociedad, Seguridad & Riesgos",
-            "shortTitle": "Sociedad & Seguridad",
+            "title": "Hub 05: Sociedad, Seguridad y Riesgos",
+            "shortTitle": "Sociedad y Seguridad",
             "color": "#2563eb",
             "presets": [
                 {
@@ -862,14 +862,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 06: TURISMO & ÁREAS SILVESTRES SNASPE (WP_06)
+        # HUB 06: TURISMO Y ÁREAS SILVESTRES SNASPE (WP_06)
         # =====================================================================
         "turismo": {
             "hub_id": "turismo",
             "hub_num": "06",
             "numeral": "VI",
-            "title": "Hub 06: Turismo & Áreas Silvestres SNASPE",
-            "shortTitle": "Turismo & Áreas Silvestres",
+            "title": "Hub 06: Turismo y Áreas Silvestres SNASPE",
+            "shortTitle": "Turismo y Áreas Silvestres",
             "color": "#00357f",
             "presets": [
                 {
@@ -1016,14 +1016,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 07: BIODIVERSIDAD, AIRE & MEDIO AMBIENTE (WP_07)
+        # HUB 07: BIODIVERSIDAD, AIRE Y MEDIO AMBIENTE (WP_07)
         # =====================================================================
         "biodiversidad": {
             "hub_id": "biodiversidad",
             "hub_num": "07",
             "numeral": "VII",
-            "title": "Hub 07: Biodiversidad, Aire & Medio Ambiente",
-            "shortTitle": "Biodiversidad & Ambiente",
+            "title": "Hub 07: Biodiversidad, Aire y Medio Ambiente",
+            "shortTitle": "Biodiversidad y Ambiente",
             "color": "#047857",
             "presets": [
                 {
@@ -1170,14 +1170,14 @@ def build_hubs_gallery(barometro_data):
         },
 
         # =====================================================================
-        # HUB 08: SALUD APS, HOSPITALES & DESAGREGACIONES (WP_08)
+        # HUB 08: SALUD APS, HOSPITALES Y DESAGREGACIONES (WP_08)
         # =====================================================================
         "salud": {
             "hub_id": "salud",
             "hub_num": "08",
             "numeral": "VIII",
-            "title": "Hub 08: Salud APS, Hospitales & Desagregaciones Sectoriales",
-            "shortTitle": "Salud APS & Hospitales",
+            "title": "Hub 08: Salud APS, Hospitales y Desagregaciones Sectoriales",
+            "shortTitle": "Salud APS y Hospitales",
             "color": "#dc2626",
             "presets": [
                 {
@@ -1594,9 +1594,9 @@ def build_extension_gallery(barometro_data=None):
         "cultura_patrimonio": {
             "hub_id": "cultura_patrimonio",
             "hub_num": "09",
-            "numeral": "CP",
+            "numeral": "IX",
             "title": "Módulo Especializado: Cultura, Artes y Patrimonio",
-            "shortTitle": "Cultura & Patrimonio",
+            "shortTitle": "Cultura y Patrimonio",
             "color": "#7c2d12",
             "presets": [
                 {
@@ -1788,9 +1788,9 @@ def build_extension_gallery(barometro_data=None):
         "ctci_innovacion": {
             "hub_id": "ctci_innovacion",
             "hub_num": "10",
-            "numeral": "CT",
+            "numeral": "X",
             "title": "Módulo Especializado: Ciencia, Tecnología e Innovación (CTCi)",
-            "shortTitle": "CTCi & Innovación",
+            "shortTitle": "CTCi e Innovación",
             "color": "#0e7490",
             "presets": [
                 {
@@ -1852,7 +1852,7 @@ def build_extension_gallery(barometro_data=None):
                 {
                     "preset_id": "CT_03",
                     "hub_id": "ctci_innovacion",
-                    "titulo": "3. Proyectos CORFO Innova & I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
+                    "titulo": "3. Proyectos CORFO Innova e I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
                     "format_type": "scatter",
                     "subtype": "four_quadrants",
                     "is_perception_mirror": True,
