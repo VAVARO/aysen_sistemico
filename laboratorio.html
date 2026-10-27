@@ -6060,7 +6060,6 @@
             AppState.transform.y = e.clientY - AppState.panStart.y;
             applyCanvasTransform();
             updateFloatingToolbarPosition();
-            updateConnections();
           }
         });
 
@@ -6098,7 +6097,6 @@
 
             applyCanvasTransform();
             updateFloatingToolbarPosition();
-            updateConnections();
           }
         }, { passive: false });
 
@@ -6134,7 +6132,6 @@
             AppState.transform.y = touch.clientY - AppState.panStart.y;
             applyCanvasTransform();
             updateFloatingToolbarPosition();
-            updateConnections();
           } else if (e.touches.length === 2 && touchStartDist > 0) {
             if (e.cancelable) e.preventDefault();
             const t1 = e.touches[0];
@@ -6144,7 +6141,6 @@
             AppState.transform.scale = Math.min(Math.max(initialTouchScale * factor, 0.4), 2.2);
             applyCanvasTransform();
             updateFloatingToolbarPosition();
-            updateConnections();
           }
         }, { passive: false });
 
@@ -6796,13 +6792,18 @@
         const header = card.querySelector(`#drag-header-${w.id}`);
         let isDragging = false;
         let dragOffset = { x: 0, y: 0 };
+        let startCardX = 0, startCardY = 0;
+        let connectionsPending = false;
+        let connectionsRafId = null;
 
         header.addEventListener('mousedown', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.closest('.widget-main-title') || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill')) return;
-          if (isStackedLayout()) return;
+          if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           isDragging = true;
           dragOffset.x = e.clientX - w.x * AppState.transform.scale;
           dragOffset.y = e.clientY - w.y * AppState.transform.scale;
+          startCardX = w.x;
+          startCardY = w.y;
           bringWidgetToFront(w.id);
           e.stopPropagation();
         });
@@ -6811,12 +6812,22 @@
         window.addEventListener('mousemove', (e) => {
           if (isDragging) {
             if (!dragHistoryPushed) { pushHistory('mover ventana'); dragHistoryPushed = true; }
-            w.x = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
-            w.y = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
-            card.style.left = `${w.x}px`;
-            card.style.top = `${w.y}px`;
+            const currentWorldX = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
+            const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
+            w.x = currentWorldX;
+            w.y = currentWorldY;
+            const dx = currentWorldX - startCardX;
+            const dy = currentWorldY - startCardY;
+            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
             updateFloatingToolbarPosition();
-            updateConnections();
+            if (!connectionsPending) {
+              connectionsPending = true;
+              connectionsRafId = requestAnimationFrame(() => {
+                updateConnections();
+                connectionsPending = false;
+                connectionsRafId = null;
+              });
+            }
             checkCollisionWithOtherCards(w);
           }
         });
@@ -6825,6 +6836,15 @@
           if (isDragging) {
             isDragging = false;
             dragHistoryPushed = false;
+            if (connectionsRafId) {
+              cancelAnimationFrame(connectionsRafId);
+              connectionsRafId = null;
+            }
+            connectionsPending = false;
+            card.style.transform = '';
+            card.style.left = `${w.x}px`;
+            card.style.top = `${w.y}px`;
+            updateConnections();
             handleCardDropCollision(w);
             autoSave();
           }
@@ -6833,14 +6853,17 @@
         let isTouchDragging = false;
         let touchHistoryPushed = false;
         let touchDragOffset = { x: 0, y: 0 };
+        let touchStartCardX = 0, touchStartCardY = 0;
 
         header.addEventListener('touchstart', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.time-window-pill')) return;
-          if (e.touches.length === 1 && !isStackedLayout()) {
+          if (e.touches.length === 1 && !isStackedLayout() && AppState.dashboardViewMode !== 'grid') {
             const touch = e.touches[0];
             isTouchDragging = true;
             touchDragOffset.x = touch.clientX - w.x * AppState.transform.scale;
             touchDragOffset.y = touch.clientY - w.y * AppState.transform.scale;
+            touchStartCardX = w.x;
+            touchStartCardY = w.y;
             bringWidgetToFront(w.id);
             selectActiveCard(w.id);
           }
@@ -6850,12 +6873,23 @@
           if (isTouchDragging && e.touches.length === 1) {
             const touch = e.touches[0];
             if (!touchHistoryPushed) { pushHistory('mover ventana'); touchHistoryPushed = true; }
-            w.x = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
-            w.y = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
-            card.style.left = `${w.x}px`;
-            card.style.top = `${w.y}px`;
+            const currentWorldX = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
+            const currentWorldY = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
+            w.x = currentWorldX;
+            w.y = currentWorldY;
+            const dx = currentWorldX - touchStartCardX;
+            const dy = currentWorldY - touchStartCardY;
+            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
             updateFloatingToolbarPosition();
-            updateConnections();
+            if (!connectionsPending) {
+              connectionsPending = true;
+              connectionsRafId = requestAnimationFrame(() => {
+                updateConnections();
+                connectionsPending = false;
+                connectionsRafId = null;
+              });
+            }
+            checkCollisionWithOtherCards(w);
           }
         }, { passive: true });
 
@@ -6863,6 +6897,16 @@
           if (isTouchDragging) {
             isTouchDragging = false;
             touchHistoryPushed = false;
+            if (connectionsRafId) {
+              cancelAnimationFrame(connectionsRafId);
+              connectionsRafId = null;
+            }
+            connectionsPending = false;
+            card.style.transform = '';
+            card.style.left = `${w.x}px`;
+            card.style.top = `${w.y}px`;
+            updateConnections();
+            handleCardDropCollision(w);
             autoSave();
           }
         });
@@ -8399,6 +8443,10 @@
       }
 
       function handleCardDropCollision(sourceW) {
+        document.querySelectorAll('.studio-widget-card').forEach(c => {
+          c.classList.remove('drag-target-hover');
+        });
+
         const target = AppState.widgets.find(w => {
           if (w.id === sourceW.id || w.minimized) return false;
           return (
@@ -8411,10 +8459,11 @@
 
         if (target && target.varX && sourceW.varX) {
           fuseVariableIntoWidget(target, sourceW.varX);
-          addConnection(target.id, sourceW.id);
           sourceW.x = target.x + target.w + 50;
           const sCard = document.getElementById(`widget-card-${sourceW.id}`);
           if (sCard) sCard.style.left = `${sourceW.x}px`;
+          addConnection(target.id, sourceW.id);
+          updateConnections();
         }
       }
 
@@ -8499,30 +8548,111 @@
 
         let isDragging = false;
         let dragOffset = { x: 0, y: 0 };
+        let startCardX = 0, startCardY = 0;
+        let connectionsPending = false;
+        let connectionsRafId = null;
 
         card.addEventListener('mousedown', (e) => {
           if (e.target.tagName === 'BUTTON') return;
+          if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           isDragging = true;
           dragOffset.x = e.clientX - r.x * AppState.transform.scale;
           dragOffset.y = e.clientY - r.y * AppState.transform.scale;
+          startCardX = r.x;
+          startCardY = r.y;
           card.style.zIndex = 35;
           e.stopPropagation();
         });
 
         window.addEventListener('mousemove', (e) => {
           if (isDragging) {
-            r.x = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
-            r.y = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
-            card.style.left = `${r.x}px`;
-            card.style.top = `${r.y}px`;
-            updateConnections();
+            const currentWorldX = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
+            const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
+            r.x = currentWorldX;
+            r.y = currentWorldY;
+            const dx = currentWorldX - startCardX;
+            const dy = currentWorldY - startCardY;
+            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+            if (!connectionsPending) {
+              connectionsPending = true;
+              connectionsRafId = requestAnimationFrame(() => {
+                updateConnections();
+                connectionsPending = false;
+                connectionsRafId = null;
+              });
+            }
           }
         });
 
         window.addEventListener('mouseup', () => {
           if (isDragging) {
             isDragging = false;
+            if (connectionsRafId) {
+              cancelAnimationFrame(connectionsRafId);
+              connectionsRafId = null;
+            }
+            connectionsPending = false;
+            card.style.transform = '';
+            card.style.left = `${r.x}px`;
+            card.style.top = `${r.y}px`;
             card.style.zIndex = 12;
+            updateConnections();
+            autoSave();
+          }
+        });
+
+        let isTouchDragging = false;
+        let touchDragOffset = { x: 0, y: 0 };
+        let touchStartCardX = 0, touchStartCardY = 0;
+
+        card.addEventListener('touchstart', (e) => {
+          if (e.target.tagName === 'BUTTON') return;
+          if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
+          if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            isTouchDragging = true;
+            touchDragOffset.x = touch.clientX - r.x * AppState.transform.scale;
+            touchDragOffset.y = touch.clientY - r.y * AppState.transform.scale;
+            touchStartCardX = r.x;
+            touchStartCardY = r.y;
+            card.style.zIndex = 35;
+          }
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+          if (isTouchDragging && e.touches.length === 1) {
+            const touch = e.touches[0];
+            const currentWorldX = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
+            const currentWorldY = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
+            r.x = currentWorldX;
+            r.y = currentWorldY;
+            const dx = currentWorldX - touchStartCardX;
+            const dy = currentWorldY - touchStartCardY;
+            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+            if (!connectionsPending) {
+              connectionsPending = true;
+              connectionsRafId = requestAnimationFrame(() => {
+                updateConnections();
+                connectionsPending = false;
+                connectionsRafId = null;
+              });
+            }
+          }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+          if (isTouchDragging) {
+            isTouchDragging = false;
+            if (connectionsRafId) {
+              cancelAnimationFrame(connectionsRafId);
+              connectionsRafId = null;
+            }
+            connectionsPending = false;
+            card.style.transform = '';
+            card.style.left = `${r.x}px`;
+            card.style.top = `${r.y}px`;
+            card.style.zIndex = 12;
+            updateConnections();
             autoSave();
           }
         });
