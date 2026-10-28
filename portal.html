@@ -1001,11 +1001,32 @@
       });
     });
 
+    // Culling de Viewport y Supresión en Segundo Plano
+    let activeSectionId = 'seccion-portada';
+    let isTabVisible = typeof document !== 'undefined' ? !document.hidden : true;
+    document.addEventListener('visibilitychange', () => {
+      isTabVisible = !document.hidden;
+    });
+
     const snapContainerEl = document.getElementById('snapContainer');
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
           const activeId = entry.target.id;
+          if (activeSectionId !== activeId) {
+            activeSectionId = activeId;
+            // Redibujo inmediato de la nueva sección activa para evitar parpadeos
+            const tSec = performance.now() / 1000;
+            if (activeSectionId === 'seccion-portada') {
+              drawMorphingPostcard(tSec);
+            } else if (activeSectionId === 'seccion-que-es') {
+              drawBackgroundQueEs(tSec);
+            } else if (activeSectionId === 'seccion-por-que') {
+              drawBackgroundPorQue(tSec);
+            } else if (activeSectionId === 'seccion-que-encontraras') {
+              drawBackgroundQueEncontraras(tSec);
+            }
+          }
           const isDark = entry.target.classList.contains('section-dark');
           snapDotsContainer.classList.toggle('dark-mode', isDark);
           brandHeader.classList.toggle('dark-mode', isDark);
@@ -1818,6 +1839,12 @@
     let lastTime = performance.now();
 
     function renderFrame(now) {
+      if (!isTabVisible) {
+        lastTime = now;
+        requestAnimationFrame(renderFrame);
+        return;
+      }
+
       const dt = Math.min(0.05, (now - lastTime) / 1000);
       lastTime = now;
       const tSec = now / 1000;
@@ -1841,10 +1868,15 @@
         updateActivePip();
       }
 
-      drawMorphingPostcard(tSec);
-      drawBackgroundQueEs(tSec);
-      drawBackgroundPorQue(tSec);
-      drawBackgroundQueEncontraras(tSec);
+      if (activeSectionId === 'seccion-portada') {
+        drawMorphingPostcard(tSec);
+      } else if (activeSectionId === 'seccion-que-es') {
+        drawBackgroundQueEs(tSec);
+      } else if (activeSectionId === 'seccion-por-que') {
+        drawBackgroundPorQue(tSec);
+      } else if (activeSectionId === 'seccion-que-encontraras') {
+        drawBackgroundQueEncontraras(tSec);
+      }
 
       requestAnimationFrame(renderFrame);
     }

@@ -4730,8 +4730,18 @@
       document.getElementById('btnBackToGrid').classList.add('hidden');
       const ep = document.getElementById('editorialPane');
       if (ep) ep.classList.remove('expanded');
-      requestAnimationFrame(() => resizeMiniCanvases());
+      lastTime = performance.now();
+      requestAnimationFrame(() => {
+        resizeMiniCanvases();
+        drawMiniatures(performance.now() / 1000);
+      });
     }
+
+    function closeProperty() {
+      backToGrid();
+    }
+    window.closeProperty = closeProperty;
+    window.openProperty = openProperty;
 
     document.getElementById('btnBackToGrid').addEventListener('click', backToGrid);
     document.getElementById('btnHomeTitle').addEventListener('click', backToGrid);
@@ -4842,9 +4852,19 @@
       });
     }
 
+    // Supresión de bucle de animación cuando la pestaña está oculta
+    let isTabVisible = typeof document !== 'undefined' ? !document.hidden : true;
+    document.addEventListener('visibilitychange', () => {
+      isTabVisible = !document.hidden;
+    });
+
     let lastTime = performance.now();
     function animate(now) {
       requestAnimationFrame(animate);
+      if (!isTabVisible) {
+        lastTime = now;
+        return;
+      }
       const dt = Math.min(0.05, (now - lastTime) / 1000);
       lastTime = now;
       const t = now / 1000;
