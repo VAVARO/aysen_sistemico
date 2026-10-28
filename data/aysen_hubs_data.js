@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-10-28T00:04:20.499Z",
+  "generatedAt": "2026-10-28T00:21:58.175Z",
   "hubs": [
     {
       "id": "turismo",

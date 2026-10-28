@@ -136,7 +136,7 @@ class TestLaboratorioPointerEventsMemory(unittest.TestCase):
         self.assertIn("r._cleanup = () =>", code)
 
     def test_04_card_lifecycle_cleanup_hooks(self):
-        """removeWidget, removeReflectionCard y clearAll deben invocar los hooks de limpieza _cleanup."""
+        """removeWidget, removeReflectionCard, clearAll y teardownCanvasEntities deben invocar _cleanup."""
         # 1. removeWidget
         m_rw = re.search(r'function removeWidget\(widgetId,\s*opts\s*=\s*\{\}\)\s*\{(.*?)\n\s*function updateStatus', self.lab_html, re.DOTALL)
         self.assertIsNotNone(m_rw, "Debe existir function removeWidget")
@@ -156,6 +156,13 @@ class TestLaboratorioPointerEventsMemory(unittest.TestCase):
         self.assertIn("w._cleanup()", ca_code, "clearAll debe invocar w._cleanup() para todos los widgets")
         self.assertIn("r._cleanup()", ca_code, "clearAll debe invocar r._cleanup() para todas las reflexiones")
 
+        # 4. teardownCanvasEntities (usado en restoreCanvas / Undo-Redo)
+        m_td = re.search(r'function teardownCanvasEntities\(\)\s*\{(.*?)\n\s*function restoreCanvas', self.lab_html, re.DOTALL)
+        self.assertIsNotNone(m_td, "Debe existir function teardownCanvasEntities")
+        td_code = m_td.group(1)
+        self.assertIn("w._cleanup()", td_code, "teardownCanvasEntities debe invocar w._cleanup()")
+        self.assertIn("r._cleanup()", td_code, "teardownCanvasEntities debe invocar r._cleanup()")
+
     def test_05_css_touch_action_none_on_draggable_and_resizable_elements(self):
         """Los elementos arrastrables y redimensionables deben tener touch-action: none en CSS."""
         # 1. .studio-widget-card (regla base de tarjeta)
@@ -163,15 +170,50 @@ class TestLaboratorioPointerEventsMemory(unittest.TestCase):
         self.assertIsNotNone(m_card)
         self.assertIn("touch-action: none", m_card.group(1))
 
-        # 2. .card-resize-handle
+        # 2. .widget-top-bar (cabecera arrastrable)
+        m_topbar = re.search(r'^\s*\.widget-top-bar\s*\{([^}]*)\}', self.lab_html, re.MULTILINE)
+        self.assertIsNotNone(m_topbar)
+        self.assertIn("touch-action: none", m_topbar.group(1), ".widget-top-bar debe tener touch-action: none para gestos táctiles")
+
+        # 3. .card-resize-handle
         m_resize = re.search(r'\.card-resize-handle\s*\{([^}]*)\}', self.lab_html)
         self.assertIsNotNone(m_resize)
         self.assertIn("touch-action: none", m_resize.group(1))
 
-        # 3. .studio-reflection-card
+        # 4. .studio-reflection-card
         m_refl = re.search(r'\.studio-reflection-card\s*\{([^}]*)\}', self.lab_html)
         self.assertIsNotNone(m_refl)
         self.assertIn("touch-action: none", m_refl.group(1))
+
+    def test_06_header_buttons_drag_guard(self):
+        """Los botones y controles interactivos en la cabecera no deben disparar el arrastre de la ventana."""
+        m = re.search(r'const onHeaderPointerDown = \(e\) =>\s*\{(.*?)\n\s*isDragging = true;', self.lab_html, re.DOTALL)
+        self.assertIsNotNone(m, "Debe existir onHeaderPointerDown con cláusula de guarda")
+        guard_code = m.group(1)
+
+        # Debe excluir botones y enlaces de forma genérica
+        self.assertIn("e.target.closest('button')", guard_code, "Debe prevenir arrastre al hacer clic en cualquier botón de la cabecera")
+        self.assertIn("e.target.closest('a')", guard_code, "Debe prevenir arrastre al hacer clic en enlaces")
+
+        # Cláusulas contractuales específicas
+        self.assertIn("btn-card-format", guard_code, "Debe excluir explícitamente botón Formato")
+        self.assertIn("btn-card-sync-pill", guard_code, "Debe excluir explícitamente píldora de Sincronización")
+        self.assertIn("widget-main-title", guard_code, "Debe excluir título editable")
+
+    def test_07_cleanup_releases_active_pointer_capture(self):
+        """w._cleanup y r._cleanup deben liberar capturas de puntero activas para evitar bloqueos."""
+        # Widget _cleanup
+        m_w = re.search(r'w\._cleanup = \(\) =>\s*\{(.*?)\n\s*\};', self.lab_html, re.DOTALL)
+        self.assertIsNotNone(m_w, "Debe existir w._cleanup")
+        w_code = m_w.group(1)
+        self.assertIn("header.releasePointerCapture", w_code, "w._cleanup debe liberar la captura de puntero del header")
+        self.assertIn("resizeHandle.releasePointerCapture", w_code, "w._cleanup debe liberar la captura de puntero del resizeHandle")
+
+        # Reflection _cleanup
+        m_r = re.search(r'r\._cleanup = \(\) =>\s*\{(.*?)\n\s*\};', self.lab_html, re.DOTALL)
+        self.assertIsNotNone(m_r, "Debe existir r._cleanup")
+        r_code = m_r.group(1)
+        self.assertIn("card.releasePointerCapture", r_code, "r._cleanup debe liberar la captura de puntero de la reflexión")
 
 
 if __name__ == "__main__":

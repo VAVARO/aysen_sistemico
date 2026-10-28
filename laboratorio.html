@@ -1401,6 +1401,7 @@
       justify-content: space-between;
       cursor: move;
       user-select: none;
+      touch-action: none;
       background: var(--bg-surface);
       flex-shrink: 0;
       box-sizing: border-box;
@@ -6799,13 +6800,15 @@
         let connectionsPending = false;
         let connectionsRafId = null;
         let dragHistoryPushed = false;
+        let activeDragPointerId = null;
 
         const onHeaderPointerDown = (e) => {
-          if (e.target.tagName === 'INPUT' || e.target.closest('.widget-main-title') || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.time-window-pill')) return;
+          if (e.target.tagName === 'INPUT' || e.target.closest('button') || e.target.closest('a') || e.target.closest('select') || e.target.closest('.widget-main-title') || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.btn-card-format') || e.target.closest('.btn-card-sync-pill') || e.target.closest('.time-window-pill')) return;
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           if (e.button !== undefined && e.button !== 0) return;
 
           isDragging = true;
+          activeDragPointerId = e.pointerId;
           dragOffset.x = e.clientX - w.x * AppState.transform.scale;
           dragOffset.y = e.clientY - w.y * AppState.transform.scale;
           startCardX = w.x;
@@ -6854,6 +6857,7 @@
               }
             } catch (_) {}
           }
+          activeDragPointerId = null;
           if (connectionsRafId) {
             cancelAnimationFrame(connectionsRafId);
             connectionsRafId = null;
@@ -6882,11 +6886,13 @@
         let resizeHistoryPushed = false;
         let resizePending = false;
         let resizeRafId = null;
+        let activeResizePointerId = null;
 
         const onResizePointerDown = (e) => {
           if (e.button !== undefined && e.button !== 0) return;
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           isResizing = true;
+          activeResizePointerId = e.pointerId;
           startW = w.w;
           startH = w.h;
           startMouseX = e.clientX;
@@ -6934,6 +6940,7 @@
               }
             } catch (_) {}
           }
+          activeResizePointerId = null;
           if (resizeRafId) {
             cancelAnimationFrame(resizeRafId);
             resizeRafId = null;
@@ -6962,6 +6969,22 @@
           if (resizeRafId) {
             cancelAnimationFrame(resizeRafId);
             resizeRafId = null;
+          }
+          if (activeDragPointerId !== null && header && typeof header.releasePointerCapture === 'function') {
+            try {
+              if (header.hasPointerCapture && header.hasPointerCapture(activeDragPointerId)) {
+                header.releasePointerCapture(activeDragPointerId);
+              }
+            } catch (_) {}
+            activeDragPointerId = null;
+          }
+          if (activeResizePointerId !== null && resizeHandle && typeof resizeHandle.releasePointerCapture === 'function') {
+            try {
+              if (resizeHandle.hasPointerCapture && resizeHandle.hasPointerCapture(activeResizePointerId)) {
+                resizeHandle.releasePointerCapture(activeResizePointerId);
+              }
+            } catch (_) {}
+            activeResizePointerId = null;
           }
           isDragging = false;
           isResizing = false;
@@ -8567,12 +8590,14 @@
         let startCardX = 0, startCardY = 0;
         let connectionsPending = false;
         let connectionsRafId = null;
+        let activeReflPointerId = null;
 
         const onReflPointerDown = (e) => {
           if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           if (e.button !== undefined && e.button !== 0) return;
           isDragging = true;
+          activeReflPointerId = e.pointerId;
           dragOffset.x = e.clientX - r.x * AppState.transform.scale;
           dragOffset.y = e.clientY - r.y * AppState.transform.scale;
           startCardX = r.x;
@@ -8613,6 +8638,7 @@
               }
             } catch (_) {}
           }
+          activeReflPointerId = null;
           if (connectionsRafId) {
             cancelAnimationFrame(connectionsRafId);
             connectionsRafId = null;
@@ -8636,6 +8662,14 @@
           if (connectionsRafId) {
             cancelAnimationFrame(connectionsRafId);
             connectionsRafId = null;
+          }
+          if (activeReflPointerId !== null && card && typeof card.releasePointerCapture === 'function') {
+            try {
+              if (card.hasPointerCapture && card.hasPointerCapture(activeReflPointerId)) {
+                card.releasePointerCapture(activeReflPointerId);
+              }
+            } catch (_) {}
+            activeReflPointerId = null;
           }
           isDragging = false;
         };
@@ -11835,11 +11869,15 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       /** Destruye instancias y DOM del lienzo sin tocar los sub-dashboards. */
       function teardownCanvasEntities() {
         AppState.widgets.forEach(w => {
+          if (typeof w._cleanup === 'function') w._cleanup();
           if (w.resizeObserver) w.resizeObserver.disconnect();
           if (w.instance) {
             if (typeof w.instance.destroy === 'function') w.instance.destroy();
             if (typeof w.instance.remove === 'function') w.instance.remove();
           }
+        });
+        AppState.reflectionCards.forEach(r => {
+          if (typeof r._cleanup === 'function') r._cleanup();
         });
         AppState.widgets = [];
         AppState.connections = [];
