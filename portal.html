@@ -95,11 +95,18 @@
       padding: 0.3rem 0.6rem;
       border-radius: 2px;
       border: 1px solid transparent;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       white-space: nowrap;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
+    }
+
+    .header-pill:active {
+      transform: scale(0.97);
     }
 
     .header-pill:hover {
@@ -138,7 +145,9 @@
       background: transparent;
       cursor: pointer;
       padding: 0;
-      transition: all 0.25s ease;
+      transition: background-color var(--duration-normal) var(--ease-out),
+                  border-color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-normal) var(--ease-out);
     }
 
     .snap-dot.active {
@@ -258,10 +267,18 @@
       letter-spacing: 0.03em;
       text-decoration: none;
       border: 1.5px solid var(--cobalt);
-      transition: all 0.2s ease;
+      transition: background-color var(--duration-normal) var(--ease-out),
+                  border-color var(--duration-normal) var(--ease-out),
+                  color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-normal) var(--ease-out);
       cursor: pointer;
       box-shadow: 0 4px 18px rgba(255, 255, 255, 0.85);
       white-space: nowrap;
+    }
+
+    .btn-editorial:active {
+      transform: scale(0.97);
     }
 
     .btn-editorial.primary {
@@ -331,7 +348,10 @@
       border: none;
       cursor: pointer;
       padding: 0;
-      transition: all 0.25s ease;
+      transition: background-color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-normal) var(--ease-out),
+                  width var(--duration-normal) var(--ease-out),
+                  border-radius var(--duration-normal) var(--ease-out);
     }
 
     .landmark-pip:hover {
@@ -361,9 +381,17 @@
       color: var(--cobalt);
       cursor: pointer;
       letter-spacing: 0.03em;
-      transition: all 0.2s ease;
+      transition: background-color var(--duration-normal) var(--ease-out),
+                  border-color var(--duration-normal) var(--ease-out),
+                  color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-normal) var(--ease-out);
       box-shadow: 0 2px 8px rgba(0, 53, 127, 0.08);
       white-space: nowrap;
+    }
+
+    .snap-next-trigger:active {
+      transform: translateX(-50%) scale(0.97);
     }
 
     .snap-next-trigger:hover {
@@ -474,7 +502,9 @@
       text-decoration-thickness: 1.5px;
       text-underline-offset: 4px;
       padding: 0 2px;
-      transition: all 0.2s ease;
+      transition: color var(--duration-normal) var(--ease-out),
+                  text-decoration-color var(--duration-normal) var(--ease-out),
+                  background-color var(--duration-normal) var(--ease-out);
     }
 
     .editorial-inline-link:hover {
@@ -574,8 +604,15 @@
       color: var(--ink-secondary);
       cursor: pointer;
       padding: 0;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       touch-action: manipulation;
+    }
+
+    .mobile-nav-close:active {
+      transform: scale(0.97);
     }
 
     .mobile-nav-close:hover {
@@ -615,8 +652,15 @@
       font-size: 0.92rem;
       font-weight: 500;
       color: var(--ink-primary);
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       touch-action: manipulation;
+    }
+
+    .mobile-nav-link:active {
+      transform: scale(0.98);
     }
 
     .mobile-nav-link:hover {

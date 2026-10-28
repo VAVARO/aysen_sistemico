@@ -109,7 +109,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+    .hub-gallery-close:active {
+      transform: scale(0.97);
     }
     .hub-gallery-close:hover {
       background: #f4efec;
@@ -132,10 +138,16 @@
       border-radius: 3px;
       cursor: pointer;
       color: #4a4745;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+    }
+    .hub-tab-btn:active {
+      transform: scale(0.97);
     }
     .hub-tab-btn:hover {
       background: #ffffff;
@@ -486,7 +498,13 @@
       border-radius: 2px;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+    .btn-map-buffer-toggle:active {
+      transform: scale(0.97);
     }
     .btn-map-buffer-toggle:hover {
       border-color: var(--cobalt);
@@ -514,7 +532,9 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       pointer-events: auto;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background-color var(--duration-normal) var(--ease-out),
+                  border-color var(--duration-normal) var(--ease-out),
+                  box-shadow var(--duration-normal) var(--ease-out);
     }
     .map-bivariate-legend.collapsed .legend-row,
     .map-bivariate-legend.collapsed .legend-ramp {
@@ -574,8 +594,13 @@
       padding: 4px 8px;
       border-radius: 9999px;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       line-height: 1;
+    }
+    .zoom-hud-btn:active {
+      transform: scale(0.95);
     }
     .zoom-hud-btn:hover {
       background: rgba(0, 53, 127, 0.08);
@@ -749,8 +774,16 @@
       background: var(--bg-surface);
       color: var(--ink);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-fast) var(--ease-out);
       font-family: var(--font-sans);
+    }
+
+    .btn-action-tool:active {
+      transform: scale(0.97);
     }
 
     .btn-action-tool:hover {
@@ -860,8 +893,15 @@
       font-weight: 500;
       color: var(--ink-secondary);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       white-space: nowrap;
+    }
+
+    .subdash-tab:active {
+      transform: scale(0.97);
     }
 
     .subdash-tab:hover {
@@ -919,8 +959,15 @@
       display: inline-flex;
       align-items: center;
       gap: 3px;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       white-space: nowrap;
+    }
+
+    .btn-new-subdash:active {
+      transform: scale(0.97);
     }
 
     .btn-new-subdash:hover {
@@ -961,9 +1008,17 @@
       font-size: 0.7rem;
       color: var(--ink);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  opacity var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       white-space: nowrap;
       max-width: 220px;
+    }
+
+    .window-tab-pill:active {
+      transform: scale(0.97);
     }
 
     .window-tab-pill:hover {
@@ -1035,9 +1090,16 @@
       font-weight: 500;
       color: var(--ink-secondary);
       cursor: pointer;
-      transition: all 0.15s;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       white-space: nowrap;
       margin-left: 0.5rem;
+    }
+
+    .btn-tab-action:active {
+      transform: scale(0.97);
     }
 
     .btn-tab-action:hover {
@@ -1117,7 +1179,9 @@
       color: var(--ink-secondary);
       cursor: pointer;
       text-align: center;
-      transition: all 0.15s;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out);
     }
 
     .sidebar-tab-btn.active {
@@ -1156,9 +1220,16 @@
       border: 1px solid var(--rule-hairline);
       border-radius: 4px;
       cursor: grab;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       font-size: 0.74rem;
       user-select: none;
+    }
+
+    .catalog-var-item:active {
+      transform: scale(0.98);
     }
 
     .catalog-var-item:hover {
@@ -1455,7 +1526,14 @@
       cursor: pointer;
       padding: 0;
       line-height: 1;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+
+    .card-ctrl-btn:active {
+      transform: scale(0.95);
     }
 
     .card-ctrl-btn:hover {
@@ -1561,8 +1639,15 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       white-space: nowrap;
+    }
+
+    .btn-card-cross-pill:active {
+      transform: scale(0.97);
     }
 
     .btn-card-cross-pill:hover {
@@ -1582,11 +1667,18 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       border: 1px solid var(--rule-hairline);
       background: var(--bg-surface);
       color: var(--ink-secondary);
       line-height: 1;
+    }
+
+    .btn-card-sync-pill:active {
+      transform: scale(0.97);
     }
 
     .btn-card-sync-pill .sync-dot {
@@ -1659,10 +1751,17 @@
       border: 1px solid var(--rule-hairline);
       border-radius: 3px;
       cursor: pointer;
-      transition: all 0.12s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    .connection-action-popover .conn-action-btn:active {
+      transform: scale(0.97);
     }
 
     .connection-action-popover .conn-action-btn:hover {
@@ -1707,7 +1806,14 @@
       border-radius: 3px;
       cursor: pointer;
       text-align: left;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+
+    .drop-action-btn:active {
+      transform: scale(0.97);
     }
 
     .drop-action-btn:hover {
@@ -2066,7 +2172,14 @@
       line-height: 1;
       font-family: var(--font-mono);
       margin-left: 0.25rem;
-      transition: all 0.15s;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+
+    .toolbar-close-btn:active {
+      transform: scale(0.95);
     }
 
     .toolbar-close-btn:hover {
@@ -2088,7 +2201,14 @@
       border-radius: 2px;
       cursor: pointer;
       line-height: 1;
-      transition: all 0.15s;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+
+    .btn-card-format:active {
+      transform: scale(0.97);
     }
 
     .btn-card-format:hover {
@@ -2126,7 +2246,14 @@
       align-items: center;
       gap: 0.25rem;
       font-family: var(--font-mono);
-      transition: all 0.15s;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+
+    .floating-btn:active {
+      transform: scale(0.97);
     }
 
     .floating-btn:hover {
@@ -2661,8 +2788,14 @@
       border-radius: 4px;
       cursor: pointer;
       text-align: left;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-fast) var(--ease-out);
       font-family: 'Inter', sans-serif;
+    }
+    .hero-hub-launch-card:active {
+      transform: scale(0.97);
     }
     .hero-hub-launch-card:hover {
       background: #f4f7fc;
@@ -3089,7 +3222,14 @@
       font-size: 0.58rem;
       color: var(--ink-secondary);
       cursor: pointer;
-      transition: all 0.12s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
+    }
+
+    .time-window-pill:active {
+      transform: scale(0.97);
     }
 
     .time-window-pill:hover {

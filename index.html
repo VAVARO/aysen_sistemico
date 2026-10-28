@@ -229,7 +229,9 @@
       border-radius: 2px;
       color: #1c1b1b;
       outline: none;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-fast) var(--ease-out);
     }
 
     .header-search-input:focus {
@@ -270,8 +272,15 @@
       color: #00357f;
       cursor: pointer;
       padding: 0;
-      transition: all 0.2s ease;
+      transition: background-color var(--duration-normal) var(--ease-out),
+                  border-color var(--duration-normal) var(--ease-out),
+                  color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       touch-action: manipulation;
+    }
+
+    .mobile-search-btn:active {
+      transform: scale(0.97);
     }
 
     .mobile-search-btn:hover {
@@ -366,8 +375,15 @@
       color: #66625f;
       cursor: pointer;
       padding: 0;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       touch-action: manipulation;
+    }
+
+    .mobile-nav-close:active {
+      transform: scale(0.97);
     }
 
     .mobile-nav-close:hover {
@@ -407,8 +423,15 @@
       font-size: 0.92rem;
       font-weight: 500;
       color: #1c1b1b;
-      transition: all 0.15s ease;
+      transition: background-color var(--duration-fast) var(--ease-out),
+                  border-color var(--duration-fast) var(--ease-out),
+                  color var(--duration-fast) var(--ease-out),
+                  transform var(--duration-fast) var(--ease-out);
       touch-action: manipulation;
+    }
+
+    .mobile-nav-link:active {
+      transform: scale(0.98);
     }
 
     .mobile-nav-link:hover {

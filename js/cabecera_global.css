@@ -3,6 +3,14 @@
    papel #fcf9f8, tintas #1c1b1b / #4a4745. La posicion (fixed / sticky / relative) y el
    ancho maximo del contenido se definen en cada pagina con --brand-inner-max y position. */
 
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-fast: 140ms;
+  --duration-normal: 200ms;
+}
+
 .brand-header {
   height: 56px;
   position: relative;
@@ -112,7 +120,10 @@
   border-radius: 2px;
   border: 1px solid transparent;
   background: transparent;
-  transition: all 0.15s ease;
+  transition: background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -125,6 +136,10 @@
   color: #00357f;
   background: rgba(0, 53, 127, 0.04);
   border-color: rgba(0, 53, 127, 0.15);
+}
+
+.brand-pill:active {
+  transform: scale(0.97);
 }
 
 .brand-pill.active {
@@ -155,13 +170,20 @@
   color: #00357f;
   cursor: pointer;
   padding: 0;
-  transition: all 0.2s ease;
+  transition: background-color var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              color var(--duration-normal) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
   touch-action: manipulation;
 }
 
 .mobile-menu-btn:hover {
   background: rgba(0, 53, 127, 0.08);
   border-color: #00357f;
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.97);
 }
 
 .brand-header a:focus-visible,
