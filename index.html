@@ -491,12 +491,13 @@
         border-top: 2px solid #00357f !important;
         border-radius: 16px 16px 0 0 !important;
         box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.22) !important;
-        transform: translateY(100%) !important;
-        transition: transform 0.28s var(--ease-drawer) !important;
+        transform: translateY(100%);
+        transition: transform 0.28s var(--ease-drawer);
+        touch-action: pan-y;
       }
 
       #concept-drawer.open #drawer-panel {
-        transform: translateY(0) !important;
+        transform: translateY(0);
       }
     }
 
@@ -953,9 +954,14 @@
       class="absolute right-0 top-0 bottom-0 w-full max-w-2xl bg-background border-l border-primary/20 shadow-drawer transform translate-x-full transition-transform duration-250 ease-out flex flex-col pointer-events-auto overflow-hidden"
     >
       <!-- Tirador táctil visible en pantallas móviles (<768px) -->
-      <div class="md:hidden flex flex-col items-center justify-center py-2 bg-white/95 border-b border-border-subtle cursor-pointer select-none" onclick="closeConceptDrawer()" title="Cerrar ficha">
-        <span class="w-12 h-1.5 rounded-full bg-primary/25 mb-0.5"></span>
-        <span class="font-mono text-[10px] text-muted tracking-wider uppercase">Cerrar ficha ↓</span>
+      <div 
+        id="drawer-handle-bar" 
+        class="md:hidden flex flex-col items-center justify-center py-2 bg-white/95 border-b border-border-subtle cursor-pointer select-none touch-none" 
+        style="touch-action: none;" 
+        title="Cerrar ficha"
+      >
+        <span class="w-12 h-1.5 rounded-full bg-primary/25 mb-0.5 pointer-events-none"></span>
+        <span class="font-mono text-[10px] text-muted tracking-wider uppercase pointer-events-none">Cerrar ficha ↓</span>
       </div>
 
       <!-- Cabecera del Drawer -->
@@ -1220,6 +1226,7 @@
       updateBadgesCount();
       setupSearchListeners();
       setupKeyboardShortcuts();
+      setupDrawerGestureDismiss();
       switchTab('nodos');
     });
 
@@ -2388,10 +2395,20 @@
       renderDrawerTable(currentDrawerTableData.heading, currentDrawerTableData.columns, currentDrawerTableData.rows);
     }
 
+    let drawerCloseTimeout = null;
+
     function showDrawerDOM() {
       const drawer = document.getElementById('concept-drawer');
       const backdrop = document.getElementById('drawer-backdrop');
       const panel = document.getElementById('drawer-panel');
+
+      if (drawerCloseTimeout) {
+        clearTimeout(drawerCloseTimeout);
+        drawerCloseTimeout = null;
+      }
+
+      panel.style.transform = '';
+      panel.style.transition = '';
 
       drawer.classList.remove('pointer-events-none');
       drawer.classList.add('open');
@@ -2409,6 +2426,8 @@
       const backdrop = document.getElementById('drawer-backdrop');
       const panel = document.getElementById('drawer-panel');
 
+      if (!drawer || drawer.getAttribute('aria-hidden') === 'true') return;
+
       destroyDrawerChart();
 
       drawer.classList.remove('open');
@@ -2417,12 +2436,142 @@
       panel.classList.remove('translate-x-0');
       panel.classList.add('translate-x-full');
 
-      setTimeout(() => {
+      // Limpiar transforms y transiciones inline de gestos para que aplique la regla CSS de salida
+      panel.style.transform = '';
+      panel.style.transition = '';
+
+      if (drawerCloseTimeout) {
+        clearTimeout(drawerCloseTimeout);
+        drawerCloseTimeout = null;
+      }
+
+      let isClosed = false;
+      const finalizeClose = () => {
+        if (isClosed) return;
+        isClosed = true;
+        if (drawerCloseTimeout) {
+          clearTimeout(drawerCloseTimeout);
+          drawerCloseTimeout = null;
+        }
+        panel.removeEventListener('transitionend', onTransitionEnd);
         drawer.classList.add('pointer-events-none');
         drawer.setAttribute('aria-hidden', 'true');
         backdrop.classList.add('pointer-events-none');
         document.body.style.overflow = '';
-      }, 200);
+      };
+
+      const onTransitionEnd = (e) => {
+        if (e.target === panel) {
+          finalizeClose();
+        }
+      };
+
+      panel.addEventListener('transitionend', onTransitionEnd, { once: true });
+      // Sincronización defensiva a 285ms (duración de la transición: 280ms en var(--ease-drawer))
+      drawerCloseTimeout = setTimeout(finalizeClose, 285);
+    }
+
+    function setupDrawerGestureDismiss() {
+      const handle = document.getElementById('drawer-handle-bar');
+      const panel = document.getElementById('drawer-panel');
+      const drawer = document.getElementById('concept-drawer');
+      if (!handle || !panel || !drawer) return;
+
+      let isDragging = false;
+      let startY = 0;
+      let startTime = 0;
+      let deltaY = 0;
+
+      const onStart = (clientY, pointerId) => {
+        if (drawer.getAttribute('aria-hidden') === 'true') return;
+        isDragging = true;
+        startY = clientY;
+        startTime = performance.now();
+        deltaY = 0;
+        panel.style.transition = 'none';
+
+        if (pointerId !== undefined && handle.setPointerCapture) {
+          try {
+            handle.setPointerCapture(pointerId);
+          } catch (_) {}
+        }
+      };
+
+      const onMove = (clientY) => {
+        if (!isDragging) return;
+        const currentY = clientY;
+        deltaY = Math.max(0, currentY - startY);
+        if (deltaY > 0) {
+          panel.style.transform = 'translateY(' + deltaY + 'px)';
+        }
+      };
+
+      const onEnd = (pointerId) => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        if (pointerId !== undefined && handle.releasePointerCapture && handle.hasPointerCapture && handle.hasPointerCapture(pointerId)) {
+          try {
+            handle.releasePointerCapture(pointerId);
+          } catch (_) {}
+        }
+
+        panel.style.transition = 'transform 0.28s var(--ease-drawer)';
+        const elapsed = Math.max(1, performance.now() - startTime);
+        const velocity = deltaY / elapsed; // px/ms
+
+        if (deltaY > 120 || velocity > 0.11) {
+          panel.style.transform = '';
+          closeConceptDrawer();
+        } else {
+          panel.style.transform = 'translateY(0)';
+        }
+      };
+
+      const onCancel = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        panel.style.transition = 'transform 0.28s var(--ease-drawer)';
+        panel.style.transform = 'translateY(0)';
+        deltaY = 0;
+      };
+
+      // Pointer Events (soporte unificado para touch, lápiz y mouse con pointer capture)
+      handle.addEventListener('pointerdown', (e) => {
+        if (e.button !== undefined && e.button !== 0) return;
+        onStart(e.clientY, e.pointerId);
+      });
+      handle.addEventListener('pointermove', (e) => {
+        onMove(e.clientY);
+      });
+      handle.addEventListener('pointerup', (e) => {
+        onEnd(e.pointerId);
+      });
+      handle.addEventListener('pointercancel', onCancel);
+      handle.addEventListener('lostpointercapture', onCancel);
+
+      // Touch Events nativos de respaldo para compatibilidad universal
+      handle.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          onStart(e.touches[0].clientY);
+        }
+      }, { passive: true });
+      handle.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          onMove(e.touches[0].clientY);
+        }
+      }, { passive: true });
+      handle.addEventListener('touchend', (e) => {
+        onEnd();
+      });
+      handle.addEventListener('touchcancel', onCancel);
+
+      // Tap rápido sin arrastre (< 8px) para accesibilidad y clics directos
+      handle.addEventListener('click', (e) => {
+        if (deltaY < 8) {
+          closeConceptDrawer();
+        }
+      });
     }
 
     function navigateNode(direction) {
