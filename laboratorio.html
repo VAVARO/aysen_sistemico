@@ -1980,6 +1980,7 @@
       cursor: nwse-resize;
       background: linear-gradient(135deg, transparent 50%, var(--rule-strong) 50%);
       z-index: 35;
+      touch-action: none;
     }
 
     /* ==========================================================================
@@ -2298,6 +2299,7 @@
       z-index: 12;
       cursor: move;
       user-select: none;
+      touch-action: none;
     }
 
     .reflection-card-header {
@@ -6782,7 +6784,7 @@
       }
 
       function bindCardEvents(w, card) {
-        card.addEventListener('mousedown', (e) => {
+        card.addEventListener('pointerdown', (e) => {
           if (!e.target.closest('.card-ctrl-btn') && !e.target.closest('.mac-btn') && !e.target.closest('.btn-card-cross-pill') && !e.target.closest('.widget-provenance-footer a')) {
             selectActiveCard(w.id);
             bringWidgetToFront(w.id);
@@ -6793,163 +6795,177 @@
         let isDragging = false;
         let dragOffset = { x: 0, y: 0 };
         let startCardX = 0, startCardY = 0;
+        let touchStartCardX = 0, touchStartCardY = 0;
         let connectionsPending = false;
         let connectionsRafId = null;
+        let dragHistoryPushed = false;
 
-        header.addEventListener('mousedown', (e) => {
-          if (e.target.tagName === 'INPUT' || e.target.closest('.widget-main-title') || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill')) return;
+        const onHeaderPointerDown = (e) => {
+          if (e.target.tagName === 'INPUT' || e.target.closest('.widget-main-title') || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.time-window-pill')) return;
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
+          if (e.button !== undefined && e.button !== 0) return;
+
           isDragging = true;
           dragOffset.x = e.clientX - w.x * AppState.transform.scale;
           dragOffset.y = e.clientY - w.y * AppState.transform.scale;
           startCardX = w.x;
           startCardY = w.y;
+          touchStartCardX = w.x;
+          touchStartCardY = w.y;
           bringWidgetToFront(w.id);
+          selectActiveCard(w.id);
+
+          if (typeof header.setPointerCapture === 'function') {
+            try { header.setPointerCapture(e.pointerId); } catch (_) {}
+          }
           e.stopPropagation();
-        });
+        };
 
-        let dragHistoryPushed = false;
-        window.addEventListener('mousemove', (e) => {
-          if (isDragging) {
-            if (!dragHistoryPushed) { pushHistory('mover ventana'); dragHistoryPushed = true; }
-            const currentWorldX = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
-            const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
-            w.x = currentWorldX;
-            w.y = currentWorldY;
-            const dx = currentWorldX - startCardX;
-            const dy = currentWorldY - startCardY;
-            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
-            updateFloatingToolbarPosition();
-            if (!connectionsPending) {
-              connectionsPending = true;
-              connectionsRafId = requestAnimationFrame(() => {
-                updateConnections();
-                connectionsPending = false;
-                connectionsRafId = null;
-              });
-            }
-            checkCollisionWithOtherCards(w);
-          }
-        });
-
-        window.addEventListener('mouseup', () => {
-          if (isDragging) {
-            isDragging = false;
-            dragHistoryPushed = false;
-            if (connectionsRafId) {
-              cancelAnimationFrame(connectionsRafId);
+        const onHeaderPointerMove = (e) => {
+          if (!isDragging) return;
+          if (!dragHistoryPushed) { pushHistory('mover ventana'); dragHistoryPushed = true; }
+          const currentWorldX = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
+          const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
+          w.x = currentWorldX;
+          w.y = currentWorldY;
+          const dx = currentWorldX - startCardX;
+          const dy = currentWorldY - startCardY;
+          card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+          updateFloatingToolbarPosition();
+          if (!connectionsPending) {
+            connectionsPending = true;
+            connectionsRafId = requestAnimationFrame(() => {
+              updateConnections();
+              connectionsPending = false;
               connectionsRafId = null;
-            }
-            connectionsPending = false;
-            card.style.transform = '';
-            card.style.left = `${w.x}px`;
-            card.style.top = `${w.y}px`;
-            updateConnections();
-            handleCardDropCollision(w);
-            autoSave();
+            });
           }
-        });
+          checkCollisionWithOtherCards(w);
+        };
 
-        let isTouchDragging = false;
-        let touchHistoryPushed = false;
-        let touchDragOffset = { x: 0, y: 0 };
-        let touchStartCardX = 0, touchStartCardY = 0;
-
-        header.addEventListener('touchstart', (e) => {
-          if (e.target.tagName === 'INPUT' || e.target.closest('.card-ctrl-btn') || e.target.closest('.mac-btn') || e.target.closest('.btn-card-cross-pill') || e.target.closest('.time-window-pill')) return;
-          if (e.touches.length === 1 && !isStackedLayout() && AppState.dashboardViewMode !== 'grid') {
-            const touch = e.touches[0];
-            isTouchDragging = true;
-            touchDragOffset.x = touch.clientX - w.x * AppState.transform.scale;
-            touchDragOffset.y = touch.clientY - w.y * AppState.transform.scale;
-            touchStartCardX = w.x;
-            touchStartCardY = w.y;
-            bringWidgetToFront(w.id);
-            selectActiveCard(w.id);
+        const onHeaderPointerUp = (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          dragHistoryPushed = false;
+          if (e && e.pointerId !== undefined && typeof header.releasePointerCapture === 'function') {
+            try {
+              if (header.hasPointerCapture && header.hasPointerCapture(e.pointerId)) {
+                header.releasePointerCapture(e.pointerId);
+              }
+            } catch (_) {}
           }
-        }, { passive: true });
-
-        window.addEventListener('touchmove', (e) => {
-          if (isTouchDragging && e.touches.length === 1) {
-            const touch = e.touches[0];
-            if (!touchHistoryPushed) { pushHistory('mover ventana'); touchHistoryPushed = true; }
-            const currentWorldX = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
-            const currentWorldY = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
-            w.x = currentWorldX;
-            w.y = currentWorldY;
-            const dx = currentWorldX - touchStartCardX;
-            const dy = currentWorldY - touchStartCardY;
-            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
-            updateFloatingToolbarPosition();
-            if (!connectionsPending) {
-              connectionsPending = true;
-              connectionsRafId = requestAnimationFrame(() => {
-                updateConnections();
-                connectionsPending = false;
-                connectionsRafId = null;
-              });
-            }
-            checkCollisionWithOtherCards(w);
+          if (connectionsRafId) {
+            cancelAnimationFrame(connectionsRafId);
+            connectionsRafId = null;
           }
-        }, { passive: true });
+          connectionsPending = false;
+          card.style.transform = '';
+          card.style.left = `${w.x}px`;
+          card.style.top = `${w.y}px`;
+          updateConnections();
+          handleCardDropCollision(w);
+          autoSave();
+        };
 
-        window.addEventListener('touchend', () => {
-          if (isTouchDragging) {
-            isTouchDragging = false;
-            touchHistoryPushed = false;
-            if (connectionsRafId) {
-              cancelAnimationFrame(connectionsRafId);
-              connectionsRafId = null;
-            }
-            connectionsPending = false;
-            card.style.transform = '';
-            card.style.left = `${w.x}px`;
-            card.style.top = `${w.y}px`;
-            updateConnections();
-            handleCardDropCollision(w);
-            autoSave();
-          }
-        });
+        if (header) {
+          header.addEventListener('pointerdown', onHeaderPointerDown);
+          header.addEventListener('pointermove', onHeaderPointerMove);
+          header.addEventListener('pointerup', onHeaderPointerUp);
+          header.addEventListener('pointercancel', onHeaderPointerUp);
+          header.addEventListener('lostpointercapture', onHeaderPointerUp);
+        }
 
         // Redimensionado Libre 2D
         const resizeHandle = card.querySelector(`#resize-handle-${w.id}`);
         let isResizing = false;
         let startW, startH, startMouseX, startMouseY;
         let resizeHistoryPushed = false;
+        let resizePending = false;
+        let resizeRafId = null;
 
-        resizeHandle.addEventListener('mousedown', (e) => {
+        const onResizePointerDown = (e) => {
+          if (e.button !== undefined && e.button !== 0) return;
+          if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           isResizing = true;
           startW = w.w;
           startH = w.h;
           startMouseX = e.clientX;
           startMouseY = e.clientY;
+          if (typeof resizeHandle.setPointerCapture === 'function') {
+            try { resizeHandle.setPointerCapture(e.pointerId); } catch (_) {}
+          }
+          bringWidgetToFront(w.id);
+          selectActiveCard(w.id);
           e.stopPropagation();
-        });
+        };
 
-        window.addEventListener('mousemove', (e) => {
-          if (isResizing) {
-            if (!resizeHistoryPushed) { pushHistory('redimensionar ventana'); resizeHistoryPushed = true; }
-            const dx = (e.clientX - startMouseX) / AppState.transform.scale;
-            const dy = (e.clientY - startMouseY) / AppState.transform.scale;
-            w.w = Math.max(380, Math.round(startW + dx));
-            w.h = Math.max(280, Math.round(startH + dy));
-            card.style.width = `${w.w}px`;
-            card.style.height = `${w.h}px`;
-            card.style.minHeight = `${w.h}px`;
-            if (w.instance && typeof w.instance.resize === 'function') w.instance.resize();
-            if (w.instance && typeof w.instance.invalidateSize === 'function') w.instance.invalidateSize();
-            updateFloatingToolbarPosition();
-            updateConnections();
-          }
-        });
+        const onResizePointerMove = (e) => {
+          if (!isResizing) return;
+          if (!resizeHistoryPushed) { pushHistory('redimensionar ventana'); resizeHistoryPushed = true; }
+          const dx = (e.clientX - startMouseX) / AppState.transform.scale;
+          const dy = (e.clientY - startMouseY) / AppState.transform.scale;
+          w.w = Math.max(380, Math.round(startW + dx));
+          w.h = Math.max(280, Math.round(startH + dy));
+          card.style.width = `${w.w}px`;
+          card.style.height = `${w.h}px`;
+          card.style.minHeight = `${w.h}px`;
 
-        window.addEventListener('mouseup', () => {
-          if (isResizing) {
-            isResizing = false;
-            resizeHistoryPushed = false;
-            autoSave();
+          if (!resizePending) {
+            resizePending = true;
+            resizeRafId = requestAnimationFrame(() => {
+              if (w.instance && typeof w.instance.resize === 'function') w.instance.resize();
+              if (w.instance && typeof w.instance.invalidateSize === 'function') w.instance.invalidateSize();
+              updateFloatingToolbarPosition();
+              updateConnections();
+              resizePending = false;
+              resizeRafId = null;
+            });
           }
-        });
+        };
+
+        const onResizePointerUp = (e) => {
+          if (!isResizing) return;
+          isResizing = false;
+          resizeHistoryPushed = false;
+          if (e && e.pointerId !== undefined && typeof resizeHandle.releasePointerCapture === 'function') {
+            try {
+              if (resizeHandle.hasPointerCapture && resizeHandle.hasPointerCapture(e.pointerId)) {
+                resizeHandle.releasePointerCapture(e.pointerId);
+              }
+            } catch (_) {}
+          }
+          if (resizeRafId) {
+            cancelAnimationFrame(resizeRafId);
+            resizeRafId = null;
+          }
+          resizePending = false;
+          if (w.instance && typeof w.instance.resize === 'function') w.instance.resize();
+          if (w.instance && typeof w.instance.invalidateSize === 'function') w.instance.invalidateSize();
+          updateFloatingToolbarPosition();
+          updateConnections();
+          autoSave();
+        };
+
+        if (resizeHandle) {
+          resizeHandle.addEventListener('pointerdown', onResizePointerDown);
+          resizeHandle.addEventListener('pointermove', onResizePointerMove);
+          resizeHandle.addEventListener('pointerup', onResizePointerUp);
+          resizeHandle.addEventListener('pointercancel', onResizePointerUp);
+          resizeHandle.addEventListener('lostpointercapture', onResizePointerUp);
+        }
+
+        w._cleanup = () => {
+          if (connectionsRafId) {
+            cancelAnimationFrame(connectionsRafId);
+            connectionsRafId = null;
+          }
+          if (resizeRafId) {
+            cancelAnimationFrame(resizeRafId);
+            resizeRafId = null;
+          }
+          isDragging = false;
+          isResizing = false;
+        };
 
         // Título editable
         const titleInput = card.querySelector('.widget-main-title');
@@ -8552,110 +8568,77 @@
         let connectionsPending = false;
         let connectionsRafId = null;
 
-        card.addEventListener('mousedown', (e) => {
-          if (e.target.tagName === 'BUTTON') return;
+        const onReflPointerDown = (e) => {
+          if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
+          if (e.button !== undefined && e.button !== 0) return;
           isDragging = true;
           dragOffset.x = e.clientX - r.x * AppState.transform.scale;
           dragOffset.y = e.clientY - r.y * AppState.transform.scale;
           startCardX = r.x;
           startCardY = r.y;
           card.style.zIndex = 35;
+          if (typeof card.setPointerCapture === 'function') {
+            try { card.setPointerCapture(e.pointerId); } catch (_) {}
+          }
           e.stopPropagation();
-        });
+        };
 
-        window.addEventListener('mousemove', (e) => {
-          if (isDragging) {
-            const currentWorldX = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
-            const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
-            r.x = currentWorldX;
-            r.y = currentWorldY;
-            const dx = currentWorldX - startCardX;
-            const dy = currentWorldY - startCardY;
-            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
-            if (!connectionsPending) {
-              connectionsPending = true;
-              connectionsRafId = requestAnimationFrame(() => {
-                updateConnections();
-                connectionsPending = false;
-                connectionsRafId = null;
-              });
-            }
-          }
-        });
-
-        window.addEventListener('mouseup', () => {
-          if (isDragging) {
-            isDragging = false;
-            if (connectionsRafId) {
-              cancelAnimationFrame(connectionsRafId);
+        const onReflPointerMove = (e) => {
+          if (!isDragging) return;
+          const currentWorldX = Math.round((e.clientX - dragOffset.x) / AppState.transform.scale);
+          const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
+          r.x = currentWorldX;
+          r.y = currentWorldY;
+          const dx = currentWorldX - startCardX;
+          const dy = currentWorldY - startCardY;
+          card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+          if (!connectionsPending) {
+            connectionsPending = true;
+            connectionsRafId = requestAnimationFrame(() => {
+              updateConnections();
+              connectionsPending = false;
               connectionsRafId = null;
-            }
-            connectionsPending = false;
-            card.style.transform = '';
-            card.style.left = `${r.x}px`;
-            card.style.top = `${r.y}px`;
-            card.style.zIndex = 12;
-            updateConnections();
-            autoSave();
+            });
           }
-        });
+        };
 
-        let isTouchDragging = false;
-        let touchDragOffset = { x: 0, y: 0 };
-        let touchStartCardX = 0, touchStartCardY = 0;
-
-        card.addEventListener('touchstart', (e) => {
-          if (e.target.tagName === 'BUTTON') return;
-          if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
-          if (e.touches.length === 1) {
-            const touch = e.touches[0];
-            isTouchDragging = true;
-            touchDragOffset.x = touch.clientX - r.x * AppState.transform.scale;
-            touchDragOffset.y = touch.clientY - r.y * AppState.transform.scale;
-            touchStartCardX = r.x;
-            touchStartCardY = r.y;
-            card.style.zIndex = 35;
+        const onReflPointerUp = (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          if (e && e.pointerId !== undefined && typeof card.releasePointerCapture === 'function') {
+            try {
+              if (card.hasPointerCapture && card.hasPointerCapture(e.pointerId)) {
+                card.releasePointerCapture(e.pointerId);
+              }
+            } catch (_) {}
           }
-        }, { passive: true });
-
-        window.addEventListener('touchmove', (e) => {
-          if (isTouchDragging && e.touches.length === 1) {
-            const touch = e.touches[0];
-            const currentWorldX = Math.round((touch.clientX - touchDragOffset.x) / AppState.transform.scale);
-            const currentWorldY = Math.round((touch.clientY - touchDragOffset.y) / AppState.transform.scale);
-            r.x = currentWorldX;
-            r.y = currentWorldY;
-            const dx = currentWorldX - touchStartCardX;
-            const dy = currentWorldY - touchStartCardY;
-            card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
-            if (!connectionsPending) {
-              connectionsPending = true;
-              connectionsRafId = requestAnimationFrame(() => {
-                updateConnections();
-                connectionsPending = false;
-                connectionsRafId = null;
-              });
-            }
+          if (connectionsRafId) {
+            cancelAnimationFrame(connectionsRafId);
+            connectionsRafId = null;
           }
-        }, { passive: true });
+          connectionsPending = false;
+          card.style.transform = '';
+          card.style.left = `${r.x}px`;
+          card.style.top = `${r.y}px`;
+          card.style.zIndex = 12;
+          updateConnections();
+          autoSave();
+        };
 
-        window.addEventListener('touchend', () => {
-          if (isTouchDragging) {
-            isTouchDragging = false;
-            if (connectionsRafId) {
-              cancelAnimationFrame(connectionsRafId);
-              connectionsRafId = null;
-            }
-            connectionsPending = false;
-            card.style.transform = '';
-            card.style.left = `${r.x}px`;
-            card.style.top = `${r.y}px`;
-            card.style.zIndex = 12;
-            updateConnections();
-            autoSave();
+        card.addEventListener('pointerdown', onReflPointerDown);
+        card.addEventListener('pointermove', onReflPointerMove);
+        card.addEventListener('pointerup', onReflPointerUp);
+        card.addEventListener('pointercancel', onReflPointerUp);
+        card.addEventListener('lostpointercapture', onReflPointerUp);
+
+        r._cleanup = () => {
+          if (connectionsRafId) {
+            cancelAnimationFrame(connectionsRafId);
+            connectionsRafId = null;
           }
-        });
+          isDragging = false;
+        };
 
         card.querySelector(`#btnCloseRefl-${r.id}`).addEventListener('click', () => {
           removeReflectionCard(r.id);
@@ -8678,6 +8661,10 @@
       function removeReflectionCard(rId) {
         const idx = AppState.reflectionCards.findIndex(r => r.id === rId);
         if (idx !== -1) {
+          const r = AppState.reflectionCards[idx];
+          if (typeof r._cleanup === 'function') {
+            r._cleanup();
+          }
           AppState.reflectionCards.splice(idx, 1);
           const el = document.getElementById(`reflection-card-${rId}`);
           if (el) el.remove();
@@ -10620,6 +10607,9 @@
         if (idx !== -1) {
           if (!opts.skipHistory) pushHistory('eliminar ventana');
           const w = AppState.widgets[idx];
+          if (typeof w._cleanup === 'function') {
+            w._cleanup();
+          }
           if (w.resizeObserver) {
             w.resizeObserver.disconnect();
             w.resizeObserver = null;
@@ -11502,11 +11492,15 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       function clearAll(opts = {}) {
         if (!opts.skipHistory) pushHistory('reiniciar lienzo');
         AppState.widgets.forEach(w => {
+          if (typeof w._cleanup === 'function') w._cleanup();
           if (w.resizeObserver) w.resizeObserver.disconnect();
           if (w.instance) {
             if (typeof w.instance.destroy === 'function') w.instance.destroy();
             if (typeof w.instance.remove === 'function') w.instance.remove();
           }
+        });
+        AppState.reflectionCards.forEach(r => {
+          if (typeof r._cleanup === 'function') r._cleanup();
         });
         AppState.widgets = [];
         AppState.connections = [];
