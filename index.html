@@ -87,7 +87,10 @@
     :root {
       --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
       --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+      --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
       --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --duration-fast: 140ms;
+      --duration-normal: 200ms;
       --cobalt: #00357f;
     }
 
@@ -100,10 +103,10 @@
     }
 
     button, a.btn-action, .clickable-card {
-      transition: transform 120ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+      transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
     }
     button:active, a.btn-action:active, .clickable-card:active {
-      transform: scale(0.98);
+      transform: scale(0.97);
     }
 
     @keyframes fadeInStagger {
@@ -328,7 +331,7 @@
       border-left: 1px solid rgba(0, 53, 127, 0.18);
       box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
       transform: translateX(100%);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.28s var(--ease-drawer);
       display: flex;
       flex-direction: column;
       padding: 1.25rem 1.25rem 2rem;
@@ -431,7 +434,7 @@
     }
 
     .mobile-nav-link:active {
-      transform: scale(0.98);
+      transform: scale(0.97);
     }
 
     .mobile-nav-link:hover {
@@ -489,7 +492,7 @@
         border-radius: 16px 16px 0 0 !important;
         box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.22) !important;
         transform: translateY(100%) !important;
-        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        transition: transform 0.28s var(--ease-drawer) !important;
       }
 
       #concept-drawer.open #drawer-panel {
@@ -677,7 +680,7 @@
       <!-- ACCESO DIRECTO A LAS VISTAS PRINCIPALES -->
       <div class="grid grid-cols-1 sm:grid-cols-3 max-w-2xl gap-3 sm:gap-4 mt-8 pt-6 border-t border-border-subtle">
         
-        <button onclick="switchTab('nodos')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
+        <button onclick="switchTab('nodos')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-colors duration-150 group">
           <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
             <span>Mapa de Hubs</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
@@ -685,7 +688,7 @@
           <div class="text-xs text-muted mt-1">10 ámbitos y 39 nodos de datos</div>
         </button>
 
-        <button onclick="switchTab('comunas')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group">
+        <button onclick="switchTab('comunas')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-colors duration-150 group">
           <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
             <span>Las 10 Comunas</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">→</span>
@@ -693,7 +696,7 @@
           <div class="text-xs text-muted mt-1">Una ficha por comuna</div>
         </button>
 
-        <a href="plataforma_aysen.html" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-all group block no-underline">
+        <a href="plataforma_aysen.html" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-colors duration-150 group block no-underline">
           <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
             <span>Atlas Sistémico</span>
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">↗</span>
@@ -714,7 +717,7 @@
           <button 
             id="tab-btn-nodos" 
             onclick="switchTab('nodos')" 
-            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all bg-primary text-white shadow-sm font-semibold"
+            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 bg-primary text-white shadow-sm font-semibold"
             aria-selected="true"
           >
             <span class="material-symbols-outlined text-[17px]">hub</span>
@@ -725,7 +728,7 @@
           <button 
             id="tab-btn-comunas" 
             onclick="switchTab('comunas')" 
-            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all text-on-surface hover:text-primary hover:bg-white/60"
+            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 text-on-surface hover:text-primary hover:bg-white/60"
             aria-selected="false"
           >
             <span class="material-symbols-outlined text-[17px]">location_city</span>
@@ -756,7 +759,7 @@
         <button 
           id="btn-view-graph" 
           onclick="setNodeDisplayMode('graph')" 
-          class="px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all bg-white text-primary shadow-xs font-semibold"
+          class="px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-colors duration-150 bg-white text-primary shadow-xs font-semibold"
           title="Ver mapa interactivo de Hubs y Nodos D3"
         >
           <span class="material-symbols-outlined text-sm">hub</span>
@@ -765,7 +768,7 @@
         <button 
           id="btn-view-cards" 
           onclick="setNodeDisplayMode('cards')" 
-          class="px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all text-muted hover:text-on-surface"
+          class="px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-colors duration-150 text-muted hover:text-on-surface"
           title="Ver fichas de bases de datos"
         >
           <span class="material-symbols-outlined text-sm">grid_view</span>
@@ -932,7 +935,7 @@
   <!-- LECTURA EDITORIAL LATERAL / DRAWER PARA NODOS, HUBS Y COMUNAS -->
   <aside 
     id="concept-drawer" 
-    class="fixed inset-0 z-50 pointer-events-none transition-all duration-200"
+    class="fixed inset-0 z-50 pointer-events-none"
     aria-hidden="true"
     role="dialog"
     aria-labelledby="drawer-concept-title"
@@ -1042,7 +1045,7 @@
                 href="#" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-sm bg-primary/5 hover:bg-primary text-primary hover:text-white border border-primary/20 transition-all font-mono text-xs font-semibold shrink-0"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-sm bg-primary/5 hover:bg-primary text-primary hover:text-white border border-primary/20 transition-colors duration-150 font-mono text-xs font-semibold shrink-0"
               >
                 <span>Fuente oficial</span>
                 <span class="font-mono text-xs">↗</span>
@@ -1239,12 +1242,12 @@
         const badge = document.getElementById(`badge-count-${t}`);
 
         if (t === tabId) {
-          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all bg-primary text-white shadow-sm font-semibold';
+          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 bg-primary text-white shadow-sm font-semibold';
           btn.setAttribute('aria-selected', 'true');
           if (badge) badge.className = 'ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold';
           if (view) { view.classList.remove('hidden'); view.classList.add('block'); }
         } else {
-          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-all text-on-surface hover:text-primary hover:bg-white/60';
+          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 text-on-surface hover:text-primary hover:bg-white/60';
           btn.setAttribute('aria-selected', 'false');
           if (badge) badge.className = 'ml-0.5 text-xs font-mono bg-black/5 text-muted px-1.5 py-0.5 rounded-sm';
           if (view) { view.classList.add('hidden'); view.classList.remove('block'); }
@@ -1278,8 +1281,8 @@
         cardsWrap.classList.add('hidden');
         cardsWrap.classList.remove('block');
 
-        btnGraph.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all bg-white text-primary shadow-xs font-semibold';
-        btnCards.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all text-muted hover:text-on-surface';
+        btnGraph.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-colors duration-150 bg-white text-primary shadow-xs font-semibold';
+        btnCards.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-colors duration-150 text-muted hover:text-on-surface';
 
         initOrUpdateD3Map();
       } else {
@@ -1288,8 +1291,8 @@
         cardsWrap.classList.remove('hidden');
         cardsWrap.classList.add('block');
 
-        btnGraph.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all text-muted hover:text-on-surface';
-        btnCards.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-all bg-white text-primary shadow-xs font-semibold';
+        btnGraph.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-colors duration-150 text-muted hover:text-on-surface';
+        btnCards.className = 'px-2.5 py-1 rounded-sm text-xs font-mono font-medium flex items-center gap-1.5 transition-colors duration-150 bg-white text-primary shadow-xs font-semibold';
 
         renderNodosCards();
       }
@@ -1322,7 +1325,7 @@
       categories.forEach(cat => {
         const btn = document.createElement('button');
         const isActive = AppState.activeCategoryFilter === cat.id;
-        btn.className = `px-3.5 py-1 rounded-sm whitespace-nowrap transition-all font-mono text-xs ${
+        btn.className = `px-3.5 py-1 rounded-sm whitespace-nowrap transition-colors duration-150 font-mono text-xs ${
           isActive 
             ? 'bg-primary text-white font-semibold shadow-xs' 
             : 'bg-white text-on-surface/80 hover:text-primary hover:bg-surface-alt border border-border-subtle'
@@ -2138,7 +2141,7 @@
           return `
             <button 
               onclick="openNodeDrawerById(${rel.id})"
-              class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-all group"
+              class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-colors duration-150 group"
             >
               <div class="flex items-center gap-2.5 min-w-0">
                 <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary shrink-0">
@@ -2235,7 +2238,7 @@
       relList.innerHTML = hubNodes.map(n => `
         <button 
           onclick="openNodeDrawerById(${n.id})"
-          class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-all group"
+          class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-colors duration-150 group"
         >
           <div class="flex items-center gap-2.5 min-w-0">
             <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary text-white shrink-0">
@@ -2597,7 +2600,7 @@
   <!-- Notificación Toast sutil -->
   <div 
     id="toast-notification" 
-    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-sm bg-on-surface text-white text-xs font-medium shadow-editorial opacity-0 pointer-events-none transition-all duration-200 flex items-center gap-2 translate-y-3"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-sm bg-on-surface text-white text-xs font-medium shadow-editorial opacity-0 pointer-events-none transition-[opacity,transform] duration-200 flex items-center gap-2 translate-y-3"
     role="alert"
   >
     <span class="font-mono text-xs text-emerald-400 font-bold">[OK]</span>

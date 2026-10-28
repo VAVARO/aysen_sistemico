@@ -90,7 +90,7 @@ class TestTransitionTokensAndNoAll(unittest.TestCase):
         )
 
     def test_03_zero_transition_all_in_all_target_files(self):
-        """Verifica que ninguna regla CSS declare 'transition: all' en los 5 archivos del Plan 04"""
+        """Verifica que ninguna regla CSS declare 'transition: all' ni existan clases 'transition-all' en los 5 archivos del Plan 04"""
         files = {
             "js/cabecera_global.css": self.cabecera_css,
             "portal.html": self.portal_html,
@@ -99,16 +99,17 @@ class TestTransitionTokensAndNoAll(unittest.TestCase):
             "index.html": self.index_html,
         }
 
-        transition_all_pattern = re.compile(r"transition\s*:\s*all\b", re.IGNORECASE)
+        transition_all_css_pattern = re.compile(r"transition\s*:\s*[^;]*\ball\b", re.IGNORECASE)
+        transition_all_class_pattern = re.compile(r"\btransition-all\b", re.IGNORECASE)
 
         for filename, content in files.items():
             matches = []
             for i, line in enumerate(content.splitlines(), start=1):
-                if transition_all_pattern.search(line):
+                if transition_all_css_pattern.search(line) or transition_all_class_pattern.search(line):
                     matches.append((i, line.strip()))
             self.assertEqual(
                 len(matches), 0,
-                f"Se detectaron {len(matches)} ocurrencias de 'transition: all' en {filename}:\n" +
+                f"Se detectaron {len(matches)} ocurrencias de 'transition: all' o clase 'transition-all' en {filename}:\n" +
                 "\n".join(f"  L{m[0]}: {m[1]}" for m in matches)
             )
 
@@ -140,6 +141,13 @@ class TestTransitionTokensAndNoAll(unittest.TestCase):
             self.sistemas_html,
             r"\.lang-btn:active\s*\{[^}]*transform:\s*scale\(",
             ".lang-btn:active debe estar definido con scale() en sistemas_complejos.html"
+        )
+
+        # index.html: botones y tarjetas activas
+        self.assertRegex(
+            self.index_html,
+            r"button:active,\s*a\.btn-action:active,\s*\.clickable-card:active\s*\{[^}]*transform:\s*scale\(0\.97\)",
+            "button:active en index.html debe aplicar transform: scale(0.97)"
         )
 
     def test_05_explicit_transitions_on_btn_editorial_and_btn_action_tool(self):
@@ -175,6 +183,44 @@ class TestTransitionTokensAndNoAll(unittest.TestCase):
                 'href="js/cabecera_global.css"', html,
                 f"{name} no enlaza js/cabecera_global.css"
             )
+
+    def test_07_canonical_ease_drawer_used_on_drawers(self):
+        """Verifica que las transiciones de paneles deslizantes/drawers utilicen var(--ease-drawer)"""
+        # portal.html mobile-nav-panel
+        self.assertRegex(
+            self.portal_html,
+            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
+            "portal.html: .mobile-nav-panel debe usar var(--ease-drawer)"
+        )
+        # sistemas_complejos.html mobile-nav-panel
+        self.assertRegex(
+            self.sistemas_html,
+            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
+            "sistemas_complejos.html: .mobile-nav-panel debe usar var(--ease-drawer)"
+        )
+        # laboratorio.html studio-sidebar
+        self.assertRegex(
+            self.laboratorio_html,
+            r"\.studio-sidebar\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
+            "laboratorio.html: .studio-sidebar debe usar var(--ease-drawer)"
+        )
+        # laboratorio.html studio-metacog-drawer
+        self.assertRegex(
+            self.laboratorio_html,
+            r"\.studio-metacog-drawer\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
+            "laboratorio.html: .studio-metacog-drawer debe usar var(--ease-drawer)"
+        )
+        # index.html mobile-nav-panel y #drawer-panel
+        self.assertRegex(
+            self.index_html,
+            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
+            "index.html: .mobile-nav-panel debe usar var(--ease-drawer)"
+        )
+        self.assertRegex(
+            self.index_html,
+            r"#concept-drawer\s+#drawer-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
+            "index.html: #concept-drawer #drawer-panel debe usar var(--ease-drawer)"
+        )
 
 
 if __name__ == "__main__":
