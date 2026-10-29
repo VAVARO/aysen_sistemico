@@ -4803,6 +4803,7 @@
       // 2. INICIALIZACION ASINCRONA SIN CONDICIONES DE CARRERA
       // =======================================================================
       async function init() {
+        try { initFloatingToolbarEvents(); } catch (errTb) { console.error('[Laboratorio] Error en initFloatingToolbarEvents:', errTb); }
         try { setupCanvasEngine(); } catch (errEngine) { console.error('[Laboratorio] Error en setupCanvasEngine:', errEngine); }
         try { initCanvasZoomHud(); } catch (errHud) { console.error('[Laboratorio] Error en initCanvasZoomHud:', errHud); }
         try { setupContextMenu(); } catch (errMenu) { console.error('[Laboratorio] Error en setupContextMenu:', errMenu); }
@@ -6165,6 +6166,7 @@
 
         // Barra espaciadora + arrastre: desplaza el lienzo incluso sobre una ventana.
         viewport.addEventListener('mousedown', (e) => {
+          if (e.target.closest('#canvaFloatingToolbar, #smartPopover, .connection-action-popover')) return;
           if (!AppState.spaceHeld || e.button !== 0 || isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           AppState.isPanning = true;
           AppState.panMoved = false;
@@ -6176,6 +6178,7 @@
         }, true);
 
         viewport.addEventListener('mousedown', (e) => {
+          if (e.target.closest('#canvaFloatingToolbar, #smartPopover, .connection-action-popover')) return;
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
           const isCardElement = e.target.closest('.studio-widget-card, .reflection-note-card, #canvasZoomHud, #action-bar-floating, #panelCatalogo, #panelMetacognicion');
           if ((e.button === 1 || (e.button === 0 && !isCardElement)) && !AppState.spaceHeld) {
@@ -6188,6 +6191,10 @@
             deselectActiveCard();
             closeContextMenu();
           }
+        });
+
+        viewport.addEventListener('pointerdown', (e) => {
+          if (e.target.closest('#canvaFloatingToolbar, #smartPopover, .connection-action-popover')) return;
         });
 
         window.addEventListener('mousemove', (e) => {
@@ -6247,6 +6254,7 @@
         let initialTouchScale = 1;
 
         viewport.addEventListener('touchstart', (e) => {
+          if (e.target.closest('#canvaFloatingToolbar, #smartPopover, .connection-action-popover')) return;
           if (isStackedLayout()) return;
           if (e.touches.length === 1) {
             const touch = e.touches[0];
@@ -8289,12 +8297,26 @@
         }
       }
 
+      function getTargetToolbarWidget() {
+        const tb = document.getElementById('canvaFloatingToolbar');
+        const targetId = AppState.activeWidgetId || (tb && tb.dataset.targetWidgetId ? Number(tb.dataset.targetWidgetId) : null);
+        if (!targetId) return null;
+        const w = AppState.widgets.find(x => x.id === targetId);
+        if (w && !AppState.activeWidgetId) {
+          AppState.activeWidgetId = w.id;
+        }
+        return w || null;
+      }
+
       function showFloatingToolbarForCard(widgetId) {
         const w = AppState.widgets.find(x => x.id === widgetId);
         if (!w || w.minimized) return;
 
         const tb = document.getElementById('canvaFloatingToolbar');
         if (!tb) return;
+
+        tb.dataset.targetWidgetId = String(widgetId);
+        AppState.activeWidgetId = widgetId;
 
         if (!AppState.toolbarHiddenByCard) AppState.toolbarHiddenByCard = {};
         if (AppState.toolbarHiddenByCard[widgetId]) {
@@ -8324,37 +8346,24 @@
           document.getElementById('tbBtnKPI').classList.add('active');
         }
 
-        const vX = AppState.catalogItems.find(v => v.id === w.varX);
         const btnLine = document.getElementById('tbBtnLine');
         if (btnLine) {
-          if (vX && vX.dim === 'comuna' && !w.varY) {
-            btnLine.classList.add('disabled');
-            btnLine.disabled = true;
-            btnLine.title = 'Línea de tiempo requiere series temporales o dispersión bivariable';
-          } else {
-            btnLine.classList.remove('disabled');
-            btnLine.disabled = false;
-            btnLine.title = 'Línea';
-          }
+          btnLine.classList.remove('disabled');
+          btnLine.disabled = false;
+          btnLine.title = 'Líneas';
         }
 
         const btnAvg = document.getElementById('tbBtnAverage');
-        if (w.showAverage) btnAvg.classList.add('active');
-        else btnAvg.classList.remove('active');
+        if (btnAvg) {
+          btnAvg.classList.toggle('active', !!w.showAverage);
+        }
 
         const btnTrend = document.getElementById('tbBtnTrend');
-        const isBivariate = !!w.varY;
-
-        if (w.type === 'chart' && (w.chartType === 'bar' && !isBivariate && (!vX || vX.dim !== 'tiempo'))) {
-          btnTrend.classList.add('disabled');
-          btnTrend.disabled = true;
-          btnTrend.title = 'Tendencia requiere series temporales o dispersión bivariable';
-        } else {
+        if (btnTrend) {
           btnTrend.classList.remove('disabled');
           btnTrend.disabled = false;
           btnTrend.title = 'Regresión lineal y Pearson';
-          if (w.showTrend) btnTrend.classList.add('active');
-          else btnTrend.classList.remove('active');
+          btnTrend.classList.toggle('active', !!w.showTrend);
         }
 
         const btnMap = document.getElementById('tbBtnMap');
@@ -8367,7 +8376,8 @@
         // Toggle contextual Excluir Coyhaique (únicamente si es serie Comunal)
         const btnExc = document.getElementById('btnExcludeCoyhaique');
         if (btnExc) {
-          const isComunalOnly = vX && vX.dim === 'comuna' && (!w.varY || (AppState.catalogItems.find(v => v.id === w.varY)?.dim === 'comuna'));
+          const vX = AppState.catalogItems.find(v => v.id === w.varX);
+          const isComunalOnly = (vX && vX.dim === 'comuna' && (!w.varY || (AppState.catalogItems.find(v => v.id === w.varY)?.dim === 'comuna'))) || (w.customChartSpec && Array.isArray(w.customChartSpec.labels) && w.customChartSpec.labels.some(l => COMUNAS_ORDER.some(c => normStr(c) === normStr(l))));
           if (isComunalOnly) {
             btnExc.style.display = 'inline-flex';
             const isExcluded = !!(AppState.excludeCoyhaique || w.excludeOutlierCoyhaique);
@@ -8410,8 +8420,7 @@
       }
 
       function updateFloatingToolbarPosition() {
-        if (!AppState.activeWidgetId) return;
-        const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
+        const w = getTargetToolbarWidget();
         if (!w || w.minimized) return;
 
         const tb = document.getElementById('canvaFloatingToolbar');
@@ -8452,6 +8461,354 @@
           tb.style.marginTop = '-8px';
           tb.style.left = `${Math.round(screenX)}px`;
           tb.style.top = `${Math.round(screenY)}px`;
+        }
+      }
+
+      function initFloatingToolbarEvents() {
+        const tb = document.getElementById('canvaFloatingToolbar');
+        if (!tb || tb._eventsInitialized) return;
+        tb._eventsInitialized = true;
+
+        // 1. Tipos de visualización
+        const btnBar = document.getElementById('tbBtnBar');
+        if (btnBar) {
+          document.getElementById('tbBtnBar').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('cambiar a barras');
+              w.type = 'chart';
+              w.chartType = 'bar';
+              renderWidgetCardDOM(w);
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnLine = document.getElementById('tbBtnLine');
+        if (btnLine) {
+          document.getElementById('tbBtnLine').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('cambiar a líneas');
+              w.type = 'chart';
+              w.chartType = 'line';
+              renderWidgetCardDOM(w);
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnScatter = document.getElementById('tbBtnScatter');
+        if (btnScatter) {
+          document.getElementById('tbBtnScatter').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('cambiar a dispersión');
+              w.type = 'chart';
+              w.chartType = 'scatter';
+              renderWidgetCardDOM(w);
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              if (!w.varY) {
+                const trigger = document.getElementById('tbBtnScatter') || document.getElementById(`widget-card-${w.id}`);
+                if (trigger) openSmartPopover(w, trigger);
+              }
+              autoSave();
+            }
+          });
+        }
+
+        const btnMap = document.getElementById('tbBtnMap');
+        if (btnMap) {
+          document.getElementById('tbBtnMap').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('cambiar a mapa');
+              w.type = 'map';
+              renderWidgetCardDOM(w);
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnTable = document.getElementById('tbBtnTable');
+        if (btnTable) {
+          document.getElementById('tbBtnTable').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('cambiar a tabla');
+              w.type = 'table';
+              renderWidgetCardDOM(w);
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnKPI = document.getElementById('tbBtnKPI');
+        if (btnKPI) {
+          document.getElementById('tbBtnKPI').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('cambiar a kpi');
+              w.type = 'kpi';
+              renderWidgetCardDOM(w);
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        // 2. Colores
+        tb.querySelectorAll('.color-swatch-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (!w) return;
+            pushHistory('cambiar color');
+            const color = btn.getAttribute('data-color');
+            w.color = color;
+            if (w.customChartSpec && Array.isArray(w.customChartSpec.datasets) && w.customChartSpec.datasets[0]) {
+              w.customChartSpec.datasets[0].borderColor = color;
+              w.customChartSpec.datasets[0].backgroundColor = color;
+            }
+            renderWidgetCardDOM(w);
+            renderWidgetVisual(w);
+            renderWindowTabs();
+            showFloatingToolbarForCard(w.id);
+            autoSave();
+          });
+        });
+
+        // 3. Analítica
+        const btnAvg = document.getElementById('tbBtnAverage');
+        if (btnAvg) {
+          document.getElementById('tbBtnAverage').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('alternar promedio');
+              w.showAverage = !w.showAverage;
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnTrend = document.getElementById('tbBtnTrend');
+        if (btnTrend) {
+          document.getElementById('tbBtnTrend').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('alternar tendencia');
+              w.showTrend = !w.showTrend;
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnRef = document.getElementById('tbBtnReflection');
+        if (btnRef) {
+          document.getElementById('tbBtnReflection').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              invokeReflectionCardForWidget(w.id);
+            }
+          });
+        }
+
+        const btnCsv = document.getElementById('tbBtnCsv');
+        if (btnCsv) {
+          document.getElementById('tbBtnCsv').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              exportCsv(w);
+            }
+          });
+        }
+
+        const btnExclude = document.getElementById('btnExcludeCoyhaique');
+        if (btnExclude) {
+          document.getElementById('btnExcludeCoyhaique').addEventListener('click', (e) => {
+            e.stopPropagation();
+            pushHistory('aplicar filtro coyhaique');
+            const w = getTargetToolbarWidget();
+            if (w) {
+              w.excludeOutlierCoyhaique = !w.excludeOutlierCoyhaique;
+              AppState.excludeCoyhaique = w.excludeOutlierCoyhaique;
+              btnExclude.classList.toggle('active', w.excludeOutlierCoyhaique);
+              btnExclude.textContent = w.excludeOutlierCoyhaique ? 'Con Coyhaique' : 'Sin Coyhaique';
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+              return;
+            }
+            AppState.excludeCoyhaique = !AppState.excludeCoyhaique;
+            btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
+            AppState.widgets.forEach(wid => renderWidgetVisual(wid));
+            autoSave();
+          });
+        }
+
+        // 4. Analítica de Escala y Ranking
+        const btnSort = document.getElementById('tbBtnSortRank');
+        if (btnSort) {
+          document.getElementById('tbBtnSortRank').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('ordenar ranking');
+              if (!w.sortRanking || w.sortRanking === 'none') {
+                w.sortRanking = 'desc';
+              } else if (w.sortRanking === 'desc') {
+                w.sortRanking = 'asc';
+              } else {
+                w.sortRanking = 'none';
+              }
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnRaw = document.getElementById('tbBtnScaleRaw');
+        if (btnRaw) {
+          document.getElementById('tbBtnScaleRaw').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('escala bruta');
+              w.scaleMode = 'raw';
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnPct = document.getElementById('tbBtnScalePct');
+        if (btnPct) {
+          document.getElementById('tbBtnScalePct').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('escala pct');
+              w.scaleMode = 'pct';
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnZ = document.getElementById('tbBtnScaleZ');
+        if (btnZ) {
+          document.getElementById('tbBtnScaleZ').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              pushHistory('escala zscore');
+              w.scaleMode = 'zscore';
+              renderWidgetVisual(w);
+              showFloatingToolbarForCard(w.id);
+              autoSave();
+            }
+          });
+        }
+
+        const btnCloseTb = document.getElementById('tbBtnCloseToolbar');
+        if (btnCloseTb) {
+          document.getElementById('tbBtnCloseToolbar').addEventListener('click', (e) => {
+            e.stopPropagation();
+            hideFloatingToolbar();
+          });
+        }
+
+        // 5. Arrastre Draggable de la Barra Flotante (Pointer Events)
+        const tbDragHandle = document.getElementById('toolbarDragHandle');
+        if (tbDragHandle) {
+          let isDraggingTb = false;
+          let tbStartMouseX = 0;
+          let tbStartMouseY = 0;
+          let tbStartLeft = 0;
+          let tbStartTop = 0;
+
+          tb.addEventListener('pointerdown', (e) => {
+            if (e.target.closest('button')) {
+              e.stopPropagation();
+              return;
+            }
+          });
+          tb.addEventListener('mousedown', (e) => {
+            if (e.target.closest('button')) {
+              e.stopPropagation();
+              return;
+            }
+          });
+
+          tbDragHandle.addEventListener('pointerdown', (e) => {
+            if (e.target.closest('button')) return;
+            e.preventDefault();
+            e.stopPropagation();
+            isDraggingTb = true;
+            try { tbDragHandle.setPointerCapture(e.pointerId); } catch (_) {}
+
+            const rect = tb.getBoundingClientRect();
+            const parentRect = tb.offsetParent ? tb.offsetParent.getBoundingClientRect() : { left: 0, top: 0 };
+            tbStartLeft = rect.left - parentRect.left;
+            tbStartTop = rect.top - parentRect.top;
+            tbStartMouseX = e.clientX;
+            tbStartMouseY = e.clientY;
+
+            tb.classList.add('user-docked');
+            tb.style.transform = 'none';
+            tb.style.marginTop = '0px';
+            tb.style.left = `${Math.round(tbStartLeft)}px`;
+            tb.style.top = `${Math.round(tbStartTop)}px`;
+          });
+
+          window.addEventListener('pointermove', (e) => {
+            if (!isDraggingTb) return;
+            e.preventDefault();
+            const dx = e.clientX - tbStartMouseX;
+            const dy = e.clientY - tbStartMouseY;
+            const newLeft = Math.max(8, tbStartLeft + dx);
+            const newTop = Math.max(8, tbStartTop + dy);
+
+            tb.style.left = `${Math.round(newLeft)}px`;
+            tb.style.top = `${Math.round(newTop)}px`;
+            AppState.toolbarPosition = { x: newLeft, y: newTop };
+          });
+
+          const endTbDrag = (e) => {
+            if (isDraggingTb) {
+              isDraggingTb = false;
+              try { tbDragHandle.releasePointerCapture(e.pointerId); } catch (_) {}
+            }
+          };
+          window.addEventListener('pointerup', endTbDrag);
+          window.addEventListener('pointercancel', endTbDrag);
         }
       }
 
@@ -8931,7 +9288,7 @@
       // 10. MATRIZ DE CRUCE TERRITORIAL Y RESOLUCION VECTORIAL
       // =======================================================================
       function getWidgetDataPayload(w) {
-        if (!w.varX) {
+        if (!w.varX && !w.customChartSpec) {
           return {
             mode: 'empty',
             labels: [],
@@ -8942,11 +9299,47 @@
           };
         }
 
-        const vX = AppState.catalogItems.find(v => v.id === w.varX) || AppState.catalogItems[0];
-        const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
         let res = null;
 
-        if (!vY) {
+        if (w.customChartSpec && Array.isArray(w.customChartSpec.datasets) && w.customChartSpec.datasets.length > 0) {
+          const ds0 = w.customChartSpec.datasets[0];
+          const ds1 = w.customChartSpec.datasets.length > 1 ? w.customChartSpec.datasets[1] : null;
+          const rawLabels = Array.isArray(w.customChartSpec.labels) ? [...w.customChartSpec.labels] : [...COMUNAS_ORDER];
+          const isComunal = rawLabels.some(l => COMUNAS_ORDER.some(c => normStr(c) === normStr(l)));
+          const isTemporal = rawLabels.some(l => /^\d{4}$/.test(l) || ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'].includes(l));
+          const cDim = isComunal ? 'comuna' : (isTemporal ? 'tiempo' : 'sector');
+
+          if (ds1 && Array.isArray(ds1.data)) {
+            res = {
+              mode: 'bivariate',
+              key: cDim,
+              dim: cDim,
+              labels: rawLabels,
+              dataX: [...(ds0.data || [])],
+              dataY: [...(ds1.data || [])],
+              unitX: ds0.unit || w.unit || '',
+              unitY: ds1.unit || '',
+              nameX: ds0.label || w.title || 'Serie 1',
+              nameY: ds1.label || 'Serie 2',
+              status: 'valid',
+              chartSpec: w.customChartSpec
+            };
+          } else {
+            res = {
+              mode: 'univariate',
+              labels: rawLabels,
+              data: [...(ds0.data || [])],
+              unit: ds0.unit || w.unit || '',
+              label: ds0.label || w.title || 'Serie',
+              dim: cDim,
+              chartSpec: w.customChartSpec
+            };
+          }
+        } else {
+          const vX = AppState.catalogItems.find(v => v.id === w.varX) || AppState.catalogItems[0];
+          const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+
+          if (!vY) {
           if (Array.isArray(vX.data) && vX.dim === 'comuna') {
             res = {
               mode: 'univariate',
@@ -9120,6 +9513,7 @@
             nameY: vY.shortName || vY.name
           };
         }
+      }
 
         if (!res || res.mode === 'empty') return res;
 
@@ -9540,12 +9934,42 @@
           container.innerHTML = `<div class="chart-container-box"><canvas id="canvas-${w.id}"></canvas></div>`;
           const ctx = document.getElementById(`canvas-${w.id}`).getContext('2d');
 
-          if (w.chartType === 'scatter' && payload.mode === 'bivariate') {
-            const points = payload.labels.map((c, i) => ({
-              x: payload.dataX[i] || 0,
-              y: payload.dataY[i] || 0,
-              entity: c
-            }));
+          if (w.chartType === 'scatter') {
+            let points = [];
+            let nameX = payload.nameX;
+            let nameY = payload.nameY;
+            let unitX = payload.unitX;
+            let unitY = payload.unitY;
+
+            if (w.chartType === 'scatter' && payload.mode === 'bivariate') {
+              points = payload.labels.map((c, i) => ({
+                x: payload.dataX[i] || 0,
+                y: payload.dataY[i] || 0,
+                entity: c
+              }));
+            } else {
+              // Modo univariado: cruzar con variable estructural base de contraste o ranking
+              const popVar = AppState.catalogItems ? AppState.catalogItems.find(v => v.id === 'poblacion_censo_2024' || v.id === 'censo_2024_poblacion') : null;
+              const popVec = popVar ? resolveCommunalVector(popVar) : null;
+              nameX = popVar ? (popVar.shortName || 'Población Censo 2024') : 'Ranking Comunal';
+              unitX = popVar ? (popVar.unit || 'hab') : 'posición';
+              nameY = payload.label || 'Valor';
+              unitY = payload.unit || '';
+
+              points = payload.labels.map((c, i) => {
+                let xVal = i + 1;
+                if (popVec && popVec[i] !== undefined) {
+                  xVal = popVec[i];
+                } else if (COMUNAS_DATA[c]?.pop) {
+                  xVal = COMUNAS_DATA[c].pop;
+                }
+                return {
+                  x: xVal,
+                  y: payload.data[i] !== undefined ? payload.data[i] : 0,
+                  entity: c
+                };
+              });
+            }
 
             const bgColors = points.map(p => {
               if (!selEntity) return primaryColor;
@@ -9555,7 +9979,7 @@
             const radii = points.map(p => (!selEntity || normStr(p.entity) === normStr(selEntity)) ? 7 : 4);
 
             const datasets = [{
-              label: `${payload.nameY} vs ${payload.nameX}`,
+              label: `${nameY} vs ${nameX}`,
               data: points,
               backgroundColor: bgColors,
               borderColor: primaryColor,
@@ -9639,7 +10063,7 @@
                     cornerRadius: 4,
                     callbacks: {
                       title: (items) => items[0]?.raw?.entity || '',
-                      label: (item) => `${payload.nameX}: ${item.raw.x.toLocaleString('es-CL')} ${payload.unitX} | ${payload.nameY}: ${item.raw.y.toLocaleString('es-CL')} ${payload.unitY}`,
+                      label: (item) => `${nameX}: ${item.raw.x.toLocaleString('es-CL')} ${unitX} | ${nameY}: ${item.raw.y.toLocaleString('es-CL')} ${unitY}`,
                       afterLabel: (item) => getComunaTooltipContext(item.raw?.entity)
                     }
                   }
@@ -9648,7 +10072,7 @@
                   x: {
                     title: {
                       display: true,
-                      text: formatAxisTitle(payload.nameX, payload.unitX),
+                      text: formatAxisTitle(nameX, unitX),
                       color: '#524f4b',
                       font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
                       padding: { top: 8, bottom: 2 }
@@ -9662,7 +10086,7 @@
                   y: {
                     title: {
                       display: true,
-                      text: formatAxisTitle(payload.nameY, payload.unitY),
+                      text: formatAxisTitle(nameY, unitY),
                       color: '#524f4b',
                       font: { size: 10, weight: 600, family: "'Inter', sans-serif" },
                       padding: { top: 0, bottom: 6 }
@@ -9701,7 +10125,6 @@
             if (hasCustomDualLine) {
               const ds0 = w.customChartSpec.datasets[0];
               const ds1 = w.customChartSpec.datasets[1];
-              payload.labels = w.customChartSpec.labels || payload.labels;
               payload.mode = 'bivariate';
               payload.nameX = ds0.label || payload.nameX || 'Serie 1';
               payload.unitX = ds0.unit || payload.unitX || '';
@@ -9709,8 +10132,8 @@
               payload.unitY = ds1.unit || payload.unitY || '';
               datasets.push({
                 label: ds0.label,
-                data: ds0.data,
-                borderColor: ds0.borderColor || primaryColor,
+                data: (payload.dataX && payload.dataX.length) ? payload.dataX : ds0.data,
+                borderColor: w.color || ds0.borderColor || primaryColor,
                 backgroundColor: ds0.backgroundColor || `${primaryColor}18`,
                 yAxisID: 'y',
                 fill: false,
@@ -9719,7 +10142,7 @@
               });
               datasets.push({
                 label: ds1.label,
-                data: ds1.data,
+                data: (payload.dataY && payload.dataY.length) ? payload.dataY : ds1.data,
                 borderColor: ds1.borderColor || '#0284c7',
                 backgroundColor: ds1.backgroundColor || 'rgba(2, 132, 199, 0.15)',
                 yAxisID: 'y1',
@@ -9727,6 +10150,46 @@
                 tension: 0.32,
                 pointRadius: 4
               });
+              if (w.showAverage && payload.dataX && payload.dataX.length) {
+                const meanX = payload.dataX.reduce((a, b) => a + b, 0) / payload.dataX.length;
+                datasets.push({
+                  type: 'line',
+                  label: `Promedio (${meanX.toLocaleString('es-CL', { maximumFractionDigits: 1 })})`,
+                  data: payload.labels.map(() => meanX),
+                  borderColor: '#b91c1c',
+                  borderWidth: 1.5,
+                  borderDash: [5, 4],
+                  pointRadius: 0,
+                  fill: false,
+                  yAxisID: 'y'
+                });
+              }
+              if (w.showTrend && payload.dataX && payload.dataX.length > 2) {
+                const n = payload.dataX.length;
+                let sumT = 0, sumY = 0, stt = 0, sty = 0;
+                payload.dataX.forEach((y, t) => { sumT += t; sumY += y; });
+                const meanT = sumT / n;
+                const meanY = sumY / n;
+                payload.dataX.forEach((y, t) => {
+                  const dt = t - meanT;
+                  const dy = y - meanY;
+                  stt += dt * dt;
+                  sty += dt * dy;
+                });
+                const slope = stt !== 0 ? sty / stt : 0;
+                const intercept = meanY - slope * meanT;
+                datasets.push({
+                  type: 'line',
+                  label: `Tendencia (${slope >= 0 ? '+' : ''}${slope.toFixed(2)})`,
+                  data: payload.dataX.map((_, t) => slope * t + intercept),
+                  borderColor: '#0284c7',
+                  borderWidth: 2,
+                  borderDash: [6, 4],
+                  pointRadius: 0,
+                  fill: false,
+                  yAxisID: 'y'
+                });
+              }
             } else if (payload.mode === 'bivariate') {
               datasets.push({
                 label: formatAxisTitle(payload.nameX, payload.unitX, 26),
@@ -10144,6 +10607,46 @@
                 borderRadius: 4,
                 yAxisID: 'y1'
               });
+              if (w.showAverage && payload.dataX && payload.dataX.length) {
+                const meanX = payload.dataX.reduce((a, b) => a + b, 0) / payload.dataX.length;
+                datasets.push({
+                  type: 'line',
+                  label: `Promedio (${meanX.toLocaleString('es-CL', { maximumFractionDigits: 1 })})`,
+                  data: payload.labels.map(() => meanX),
+                  borderColor: '#b91c1c',
+                  borderWidth: 1.5,
+                  borderDash: [5, 4],
+                  pointRadius: 0,
+                  fill: false,
+                  yAxisID: 'y'
+                });
+              }
+              if (w.showTrend && payload.dataX && payload.dataX.length > 2) {
+                const n = payload.dataX.length;
+                let sumT = 0, sumY = 0, stt = 0, sty = 0;
+                payload.dataX.forEach((y, t) => { sumT += t; sumY += y; });
+                const meanT = sumT / n;
+                const meanY = sumY / n;
+                payload.dataX.forEach((y, t) => {
+                  const dt = t - meanT;
+                  const dy = y - meanY;
+                  stt += dt * dt;
+                  sty += dt * dy;
+                });
+                const slope = stt !== 0 ? sty / stt : 0;
+                const intercept = meanY - slope * meanT;
+                datasets.push({
+                  type: 'line',
+                  label: `Tendencia (${slope >= 0 ? '+' : ''}${slope.toFixed(2)})`,
+                  data: payload.dataX.map((_, t) => slope * t + intercept),
+                  borderColor: '#0284c7',
+                  borderWidth: 2,
+                  borderDash: [6, 4],
+                  pointRadius: 0,
+                  fill: false,
+                  yAxisID: 'y'
+                });
+              }
             } else {
               if (payload.chartSpec && payload.chartSpec.datasets && payload.chartSpec.datasets.length > 1) {
                 const palette = [primaryColor, '#0284c7', '#047857', '#4338ca', '#b45309'];
@@ -10178,6 +10681,32 @@
                     borderColor: '#b91c1c',
                     borderWidth: 1.5,
                     borderDash: [5, 4],
+                    pointRadius: 0,
+                    fill: false
+                  });
+                }
+
+                if (w.showTrend && dataPts.length > 2) {
+                  const n = dataPts.length;
+                  let sumT = 0, sumY = 0, stt = 0, sty = 0;
+                  dataPts.forEach((y, t) => { sumT += t; sumY += y; });
+                  const meanT = sumT / n;
+                  const meanY = sumY / n;
+                  dataPts.forEach((y, t) => {
+                    const dt = t - meanT;
+                    const dy = y - meanY;
+                    stt += dt * dt;
+                    sty += dt * dy;
+                  });
+                  const slope = stt !== 0 ? sty / stt : 0;
+                  const intercept = meanY - slope * meanT;
+                  datasets.push({
+                    type: 'line',
+                    label: `Tendencia (${slope >= 0 ? '+' : ''}${slope.toFixed(2)})`,
+                    data: dataPts.map((_, t) => slope * t + intercept),
+                    borderColor: '#0284c7',
+                    borderWidth: 2,
+                    borderDash: [6, 4],
                     pointRadius: 0,
                     fill: false
                   });
@@ -12800,130 +13329,8 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           });
         }
 
-        // Acciones de la Barra Flotante Canva
-        document.getElementById('tbBtnBar').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'bar'; renderWidgetCardDOM(w); renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
-        });
-        document.getElementById('tbBtnLine').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'line'; renderWidgetCardDOM(w); renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
-        });
-        document.getElementById('tbBtnScatter').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'chart'; w.chartType = 'scatter'; renderWidgetCardDOM(w); renderWidgetVisual(w); showFloatingToolbarForCard(w.id); autoSave(); }
-        });
-        document.getElementById('tbBtnMap').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'map'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
-        });
-        document.getElementById('tbBtnTable').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'table'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
-        });
-        document.getElementById('tbBtnKPI').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) { w.type = 'kpi'; renderWidgetCardDOM(w); showFloatingToolbarForCard(w.id); autoSave(); }
-        });
-
-        document.querySelectorAll('.color-swatch-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            if (!AppState.activeWidgetId) return;
-            const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-            if (w) {
-              w.color = btn.getAttribute('data-color');
-              renderWidgetVisual(w);
-              renderWindowTabs();
-              autoSave();
-            }
-          });
-        });
-
-        document.getElementById('tbBtnAverage').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) {
-            w.showAverage = !w.showAverage;
-            renderWidgetVisual(w);
-            showFloatingToolbarForCard(w.id);
-            autoSave();
-          }
-        });
-        document.getElementById('tbBtnTrend').addEventListener('click', () => {
-          if (!AppState.activeWidgetId) return;
-          const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-          if (w) {
-            w.showTrend = !w.showTrend;
-            renderWidgetVisual(w);
-            showFloatingToolbarForCard(w.id);
-            autoSave();
-          }
-        });
-
-        // Botones Analíticos Estilo Power BI en Barra Flotante
-        const tbBtnSortRank = document.getElementById('tbBtnSortRank');
-        if (tbBtnSortRank) {
-          tbBtnSortRank.addEventListener('click', () => {
-            if (!AppState.activeWidgetId) return;
-            const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-            if (!w) return;
-            if (!w.sortRanking || w.sortRanking === 'none') {
-              w.sortRanking = 'desc';
-            } else if (w.sortRanking === 'desc') {
-              w.sortRanking = 'asc';
-            } else {
-              w.sortRanking = 'none';
-            }
-            renderWidgetVisual(w);
-            showFloatingToolbarForCard(w.id);
-            autoSave();
-          });
-        }
-
-        const tbBtnScaleRaw = document.getElementById('tbBtnScaleRaw');
-        if (tbBtnScaleRaw) {
-          tbBtnScaleRaw.addEventListener('click', () => {
-            if (!AppState.activeWidgetId) return;
-            const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-            if (!w) return;
-            w.scaleMode = 'raw';
-            renderWidgetVisual(w);
-            showFloatingToolbarForCard(w.id);
-            autoSave();
-          });
-        }
-
-        const tbBtnScalePct = document.getElementById('tbBtnScalePct');
-        if (tbBtnScalePct) {
-          tbBtnScalePct.addEventListener('click', () => {
-            if (!AppState.activeWidgetId) return;
-            const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-            if (!w) return;
-            w.scaleMode = 'pct';
-            renderWidgetVisual(w);
-            showFloatingToolbarForCard(w.id);
-            autoSave();
-          });
-        }
-
-        const tbBtnScaleZ = document.getElementById('tbBtnScaleZ');
-        if (tbBtnScaleZ) {
-          tbBtnScaleZ.addEventListener('click', () => {
-            if (!AppState.activeWidgetId) return;
-            const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-            if (!w) return;
-            w.scaleMode = 'zscore';
-            renderWidgetVisual(w);
-            showFloatingToolbarForCard(w.id);
-            autoSave();
-          });
-        }
+        // Acciones de la Barra Flotante Canva (delegadas a initFloatingToolbarEvents)
+        initFloatingToolbarEvents();
 
         // Segmentador Territorial de la Mesa
         const selectSlicer = document.getElementById('selectTerritorialSlicer');
@@ -12941,35 +13348,6 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             autoSave();
           });
         }
-
-        document.getElementById('tbBtnReflection').addEventListener('click', () => {
-          if (AppState.activeWidgetId) {
-            invokeReflectionCardForWidget(AppState.activeWidgetId);
-          }
-        });
-
-        // Conmutador Excluir Outlier Coyhaique
-        const btnExclude = document.getElementById('btnExcludeCoyhaique');
-        if (btnExclude) {
-          btnExclude.addEventListener('click', () => {
-            pushHistory('aplicar filtro');
-            if (AppState.activeWidgetId) {
-              const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
-              if (w) {
-                w.excludeOutlierCoyhaique = !w.excludeOutlierCoyhaique;
-                renderWidgetVisual(w);
-                showFloatingToolbarForCard(w.id);
-                autoSave();
-                return;
-              }
-            }
-            AppState.excludeCoyhaique = !AppState.excludeCoyhaique;
-            btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
-            AppState.widgets.forEach(w => renderWidgetVisual(w));
-            autoSave();
-          });
-        }
-
         initHubGalleryUI();
         // Selector Presets CECAN (16)
         const selCecan = document.getElementById('selectCecanPreset');
@@ -12994,69 +13372,6 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         if (btnNl) {
           btnNl.addEventListener('click', executeNLQuery);
         }
-
-        // Manejador de Arrastre Draggable de la Barra Flotante (Pointer Events)
-        const tbDragHandle = document.getElementById('toolbarDragHandle');
-        const floatingTb = document.getElementById('canvaFloatingToolbar');
-        if (tbDragHandle && floatingTb) {
-          let isDraggingTb = false;
-          let tbStartMouseX = 0;
-          let tbStartMouseY = 0;
-          let tbStartLeft = 0;
-          let tbStartTop = 0;
-
-          tbDragHandle.addEventListener('pointerdown', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            isDraggingTb = true;
-            tbDragHandle.setPointerCapture(e.pointerId);
-
-            const rect = floatingTb.getBoundingClientRect();
-            const parentRect = floatingTb.offsetParent ? floatingTb.offsetParent.getBoundingClientRect() : { left: 0, top: 0 };
-            tbStartLeft = rect.left - parentRect.left;
-            tbStartTop = rect.top - parentRect.top;
-            tbStartMouseX = e.clientX;
-            tbStartMouseY = e.clientY;
-
-            floatingTb.classList.add('user-docked');
-            floatingTb.style.transform = 'none';
-            floatingTb.style.marginTop = '0px';
-            floatingTb.style.left = `${Math.round(tbStartLeft)}px`;
-            floatingTb.style.top = `${Math.round(tbStartTop)}px`;
-          });
-
-          window.addEventListener('pointermove', (e) => {
-            if (!isDraggingTb) return;
-            e.preventDefault();
-            const dx = e.clientX - tbStartMouseX;
-            const dy = e.clientY - tbStartMouseY;
-            const newLeft = Math.max(8, tbStartLeft + dx);
-            const newTop = Math.max(8, tbStartTop + dy);
-
-            floatingTb.style.left = `${Math.round(newLeft)}px`;
-            floatingTb.style.top = `${Math.round(newTop)}px`;
-            AppState.toolbarPosition = { x: newLeft, y: newTop };
-          });
-
-          const endTbDrag = (e) => {
-            if (isDraggingTb) {
-              isDraggingTb = false;
-              try { tbDragHandle.releasePointerCapture(e.pointerId); } catch (_) {}
-            }
-          };
-          window.addEventListener('pointerup', endTbDrag);
-          window.addEventListener('pointercancel', endTbDrag);
-        }
-
-        // Botón de Cierre de la Barra Flotante (Ocultar sin deseleccionar)
-        const btnCloseTb = document.getElementById('tbBtnCloseToolbar');
-        if (btnCloseTb) {
-          btnCloseTb.addEventListener('click', (e) => {
-            e.stopPropagation();
-            hideFloatingToolbar();
-          });
-        }
-
         window.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
             document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
