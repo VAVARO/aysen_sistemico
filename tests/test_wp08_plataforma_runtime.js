@@ -21,7 +21,22 @@ const { spawn } = require('child_process');
 const REPO_ROOT = path.resolve(__dirname, '..');
 const PORT = 8925;
 const CDP_PORT = 9345;
-const CHROME_PATH = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+function getChromePath() {
+    if (process.env.CHROME_BIN && fs.existsSync(process.env.CHROME_BIN)) return process.env.CHROME_BIN;
+    const candidates = process.platform === 'win32' ? [
+        'C:\Program Files\Google\Chrome\Application\chrome.exe',
+        'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
+        path.join(process.env.LOCALAPPDATA || '', 'Google\Chrome\Application\chrome.exe')
+    ] : [
+        '/usr/bin/google-chrome',
+        '/usr/bin/google-chrome-stable',
+        '/usr/bin/chromium',
+        '/usr/bin/chromium-browser'
+    ];
+    return candidates.find(c => c && fs.existsSync(c)) || null;
+}
+
+const CHROME_PATH = getChromePath();
 
 let server;
 let chromeProcess;
@@ -99,6 +114,7 @@ async function runTestSuite() {
 
     await startServer();
 
+    if (!CHROME_PATH) { console.log('[SKIP] Chrome not found. Exiting.'); process.exit(0); }
     console.log('[CHROME] Launching Chrome via CDP...');
     chromeProcess = spawn(CHROME_PATH, [
         '--headless=new',

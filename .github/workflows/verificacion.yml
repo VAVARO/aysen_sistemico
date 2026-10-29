@@ -99,7 +99,7 @@ jobs:
         run: python tests/verify_10_hubs_checklist.py
 
       - name: Suite Pytest Completa (397 tests)
-        run: pytest tests/
+        run: python -m pytest tests/
 
       # ------------------------------------------------------------------
       # Capa 4: higiene del arbol de trabajo
