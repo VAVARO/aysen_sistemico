@@ -6,10 +6,10 @@
   <title>Datos de Aysén — Álvaro Contreras Barrios</title>
   <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 10 hubs temáticos, 39 nodos de datos y 10 comunas.">
 
-  <!-- Google Fonts: Playfair Display (editorial), Inter (cuerpo), JetBrains Mono (código y metadatos) -->
+  <!-- Google Fonts: Playfair Display (editorial), Inter (cuerpo), JetBrains Mono (código y metadatos), IBM Plex Mono/Sans (tooltips sobrios) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   
   <!-- Material Symbols Outlined -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -167,20 +167,29 @@
     .d3-link {
       stroke: rgba(0, 53, 127, 0.22);
       stroke-width: 1.5px;
-      transition: stroke 160ms ease, stroke-width 160ms ease, stroke-opacity 160ms ease;
+      transition: stroke 160ms ease, stroke-width 160ms ease, stroke-opacity 160ms ease, opacity 160ms ease;
     }
     .d3-link.link-backbone {
       stroke: rgba(0, 53, 127, 0.16);
       stroke-dasharray: 4 4;
     }
+    .d3-link.link-inter-node {
+      stroke: #64748b;
+      stroke-width: 1.2px;
+      opacity: 0.32;
+      fill: none;
+    }
+    .d3-link.link-inter-node:hover,
     .d3-link.highlighted {
       stroke: #00357f;
-      stroke-width: 2.5px;
+      stroke-width: 2px;
       stroke-opacity: 0.95;
+      opacity: 0.9;
       stroke-dasharray: none;
     }
     .d3-link.dimmed {
       stroke-opacity: 0.05;
+      opacity: 0.05;
     }
 
     .d3-node {
@@ -826,65 +835,77 @@
             </div>
           </div>
 
-          <!-- Contenedor del Lienzo SVG D3 -->
-          <div class="relative w-full h-[520px] sm:h-[600px] overflow-hidden" id="d3-canvas-container" style="touch-action: none;">
-            <svg id="d3-concept-svg" class="w-full h-full" style="touch-action: none;"></svg>
-            
-            <!-- Leyenda flotante compacta (Clicable por Hub, colapsable en móviles) -->
-            <div id="d3-hubs-legend" class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-border-subtle rounded-sm p-2 text-xs font-mono shadow-xs space-y-1 max-w-[260px] max-h-[360px] overflow-y-auto z-10">
-              <div class="flex items-center justify-between cursor-pointer font-bold text-xs uppercase tracking-wider text-primary py-0.5 select-none" onclick="toggleD3Legend()" title="Alternar leyenda">
-                <span>10 Hubs de Datos (I al X)</span>
-                <span id="d3LegendArrow" class="text-muted text-[11px] font-mono">▲</span>
-              </div>
-              <div id="d3LegendList" class="space-y-0.5 hidden sm:block">
-                <button onclick="openHubDrawerById('turismo')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#00357f] shrink-0"></span>
-                  <span class="truncate">I. Turismo & Áreas Silvestres</span>
-                </button>
-                <button onclick="openHubDrawerById('salmonicultura')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#0059c5] shrink-0"></span>
-                  <span class="truncate">II. Pesca, Acuicultura & Mar</span>
-                </button>
-                <button onclick="openHubDrawerById('energia')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#0284c7] shrink-0"></span>
-                  <span class="truncate">III. Energía & Telecom</span>
-                </button>
-                <button onclick="openHubDrawerById('gobernanza')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#4338ca] shrink-0"></span>
-                  <span class="truncate">IV. Gobernanza & Finanzas</span>
-                </button>
-                <button onclick="openHubDrawerById('inversion')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#0f766e] shrink-0"></span>
-                  <span class="truncate">V. Economía, Inversión & Suelo</span>
-                </button>
-                <button onclick="openHubDrawerById('social')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] shrink-0"></span>
-                  <span class="truncate">VI. Demografía, Educ. & Riesgos</span>
-                </button>
-                <button onclick="openHubDrawerById('biodiversidad')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#047857] shrink-0"></span>
-                  <span class="truncate">VII. Biodiversidad & Clima</span>
-                </button>
-                <button onclick="openHubDrawerById('salud')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#be123c] shrink-0"></span>
-                  <span class="truncate">VIII. Salud APS & Hospitales</span>
-                </button>
-                <button onclick="openHubDrawerById('cultura')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#b45309] shrink-0"></span>
-                  <span class="truncate">IX. Cultura, Artes & Patr.</span>
-                </button>
-                <button onclick="openHubDrawerById('ctci')" class="w-full text-left flex items-center gap-2 text-on-surface/85 hover:text-primary transition-colors py-0.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-[#6d28d9] shrink-0"></span>
-                  <span class="truncate">X. CTCi & Innovación</span>
-                </button>
-              </div>
+          <!-- Franja superior plana de filtros tipográficos y selector de eje transversal -->
+          <div id="d3-filter-strip" style="border-bottom: 1px solid #e2e8f0; background: #ffffff; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <!-- Izquierda: Toggles tipográficos planos para los 10 Hubs (I al X) -->
+            <div id="d3-hub-toggles" class="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <button onclick="toggleHubFilter('turismo')" id="toggle-hub-turismo" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #00357f; display: inline-block; flex-shrink: 0;"></span>
+                <span>I. Turismo</span>
+              </button>
+              <button onclick="toggleHubFilter('salmonicultura')" id="toggle-hub-salmonicultura" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #0059c5; display: inline-block; flex-shrink: 0;"></span>
+                <span>II. Pesca</span>
+              </button>
+              <button onclick="toggleHubFilter('energia')" id="toggle-hub-energia" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #0284c7; display: inline-block; flex-shrink: 0;"></span>
+                <span>III. Energía</span>
+              </button>
+              <button onclick="toggleHubFilter('gobernanza')" id="toggle-hub-gobernanza" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #4338ca; display: inline-block; flex-shrink: 0;"></span>
+                <span>IV. Gobernanza</span>
+              </button>
+              <button onclick="toggleHubFilter('inversion')" id="toggle-hub-inversion" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #0f766e; display: inline-block; flex-shrink: 0;"></span>
+                <span>V. Inversión</span>
+              </button>
+              <button onclick="toggleHubFilter('social')" id="toggle-hub-social" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #2563eb; display: inline-block; flex-shrink: 0;"></span>
+                <span>VI. Social</span>
+              </button>
+              <button onclick="toggleHubFilter('biodiversidad')" id="toggle-hub-biodiversidad" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #047857; display: inline-block; flex-shrink: 0;"></span>
+                <span>VII. Biodiversidad</span>
+              </button>
+              <button onclick="toggleHubFilter('salud')" id="toggle-hub-salud" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #be123c; display: inline-block; flex-shrink: 0;"></span>
+                <span>VIII. Salud</span>
+              </button>
+              <button onclick="toggleHubFilter('cultura')" id="toggle-hub-cultura" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #b45309; display: inline-block; flex-shrink: 0;"></span>
+                <span>IX. Cultura</span>
+              </button>
+              <button onclick="toggleHubFilter('ctci')" id="toggle-hub-ctci" class="d3-hub-btn font-mono text-xs flex items-center gap-1 text-on-surface/80 hover:text-primary transition-colors" style="background: transparent; border: none; padding: 2px 4px; cursor: pointer; box-shadow: none;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #6d28d9; display: inline-block; flex-shrink: 0;"></span>
+                <span>X. CTCi</span>
+              </button>
             </div>
 
-            <!-- Tooltip reactivo -->
-            <div id="graph-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-white border border-primary/30 p-3 rounded-sm shadow-editorial max-w-xs z-20">
-              <div id="tooltip-title" class="font-serif text-sm font-bold text-on-surface"></div>
-              <div id="tooltip-snippet" class="font-sans text-xs text-on-surface/80 mt-1 line-clamp-3"></div>
+            <!-- Derecha: Selector plano de eje transversal -->
+            <div class="flex items-center gap-2 text-xs font-mono">
+              <label for="d3-axis-selector" class="text-muted uppercase tracking-wider text-[11px]">Eje:</label>
+              <select id="d3-axis-selector" onchange="setD3AxisFilter(this.value)" class="bg-transparent border border-border-subtle rounded-sm px-2 py-1 text-xs font-sans text-on-surface focus:outline-none focus:border-primary cursor-pointer" style="box-shadow: none;">
+                <option value="all">Todas las relaciones</option>
+                <option value="energia_aire_salud">Energía · Aire · Salud</option>
+                <option value="ciencia_mar_clima">CTCi · Mar · Clima</option>
+                <option value="conectividad_salud_rural">Telecom · Aislamiento · Salud</option>
+                <option value="cultura_turismo_educacion">Cultura · Parques · Educación</option>
+                <option value="produccion_fisco_empleo">Producción · Municipio · Empleo</option>
+              </select>
             </div>
+          </div>
+
+          <!-- Contenedor del Lienzo SVG D3 (libre de leyendas flotantes superpuestas) -->
+          <div class="relative w-full h-[520px] sm:h-[600px] overflow-hidden" id="d3-canvas-container" style="touch-action: none;">
+            <svg id="d3-concept-svg" class="w-full h-full" style="touch-action: none;"></svg>
+
+            <!-- Tooltip reactivo D3 sobrio (fondo #0f172a, texto blanco, sin cajas anidadas) -->
+            <div id="d3-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 z-30" style="background: #0f172a; color: #ffffff; padding: 8px 12px; border-radius: 2px; max-width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.22); border: 1px solid rgba(255,255,255,0.08);">
+              <div id="tooltip-title" style="font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace; font-size: 0.68rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;"></div>
+              <div id="tooltip-snippet" style="font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 0.78rem; color: #f8fafc; line-height: 1.4; margin-top: 3px;"></div>
+            </div>
+            <!-- Alias para compatibilidad de contratos DOM -->
+            <div id="graph-tooltip" class="hidden"></div>
           </div>
         </div>
       </div>
@@ -1205,6 +1226,7 @@
       nodeDisplayMode: 'graph', // 'graph' | 'cards'
       searchQuery: '',
       activeCategoryFilter: 'all',
+      activeAxisFilter: 'all',
       selectedNodeIndex: 0,
       drawerMode: 'node', // 'node' | 'hub' | 'comuna'
       tableExpanded: false,
@@ -1227,8 +1249,21 @@
       setupSearchListeners();
       setupKeyboardShortcuts();
       setupDrawerGestureDismiss();
+      setupWindowResizeListener();
       switchTab('nodos');
     });
+
+    function setupWindowResizeListener() {
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        if (AppState.activeTab === 'nodos' && AppState.nodeDisplayMode === 'graph') {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            initOrUpdateD3Map();
+          }, 200);
+        }
+      });
+    }
 
     function updateBadgesCount() {
       const nEl = document.getElementById('badge-count-nodos');
@@ -1378,6 +1413,21 @@
     // ==========================================
     // VISUALIZACIÓN D3.JS: MAPA DE 10 HUBS Y 39 NODOS
     // ==========================================
+    const clusterColors = {
+      'turismo':              { bg: '#00357f', border: '#00255a', text: '#ffffff', numeral: 'I', label: 'Turismo' },
+      'salmonicultura':       { bg: '#0059c5', border: '#004aad', text: '#ffffff', numeral: 'II', label: 'Pesca' },
+      'energia':              { bg: '#0284c7', border: '#0369a1', text: '#ffffff', numeral: 'III', label: 'Energía' },
+      'gobernanza':           { bg: '#4338ca', border: '#3730a3', text: '#ffffff', numeral: 'IV', label: 'Gobernanza' },
+      'inversion':            { bg: '#0f766e', border: '#115e59', text: '#ffffff', numeral: 'V', label: 'Inversión' },
+      'social':               { bg: '#2563eb', border: '#1d4ed8', text: '#ffffff', numeral: 'VI', label: 'Social' },
+      'biodiversidad':        { bg: '#047857', border: '#065f46', text: '#ffffff', numeral: 'VII', label: 'Biodiversidad' },
+      'salud':                { bg: '#be123c', border: '#9f1239', text: '#ffffff', numeral: 'VIII', label: 'Salud' },
+      'cultura':              { bg: '#b45309', border: '#92400e', text: '#ffffff', numeral: 'IX', label: 'Cultura' },
+      'cultura_patrimonio':   { bg: '#b45309', border: '#92400e', text: '#ffffff', numeral: 'IX', label: 'Cultura' },
+      'ctci':                 { bg: '#6d28d9', border: '#5b21b6', text: '#ffffff', numeral: 'X', label: 'CTCi' },
+      'ctci_innovacion':      { bg: '#6d28d9', border: '#5b21b6', text: '#ffffff', numeral: 'X', label: 'CTCi' }
+    };
+
     function initOrUpdateD3Map() {
       const container = document.getElementById('d3-canvas-container');
       const svg = d3.select('#d3-concept-svg');
@@ -1388,37 +1438,22 @@
 
       svg.selectAll('*').remove();
 
-      const clusterColors = {
-        'turismo':              { bg: '#00357f', border: '#00255a', text: '#ffffff', numeral: 'I' },
-        'salmonicultura':       { bg: '#0059c5', border: '#004aad', text: '#ffffff', numeral: 'II' },
-        'energia':              { bg: '#0284c7', border: '#0369a1', text: '#ffffff', numeral: 'III' },
-        'gobernanza':           { bg: '#4338ca', border: '#3730a3', text: '#ffffff', numeral: 'IV' },
-        'inversion':            { bg: '#0f766e', border: '#115e59', text: '#ffffff', numeral: 'V' },
-        'social':               { bg: '#2563eb', border: '#1d4ed8', text: '#ffffff', numeral: 'VI' },
-        'biodiversidad':        { bg: '#047857', border: '#065f46', text: '#ffffff', numeral: 'VII' },
-        'salud':                { bg: '#be123c', border: '#9f1239', text: '#ffffff', numeral: 'VIII' },
-        'cultura':              { bg: '#b45309', border: '#92400e', text: '#ffffff', numeral: 'IX' },
-        'cultura_patrimonio':   { bg: '#b45309', border: '#92400e', text: '#ffffff', numeral: 'IX' },
-        'ctci':                 { bg: '#6d28d9', border: '#5b21b6', text: '#ffffff', numeral: 'X' },
-        'ctci_innovacion':      { bg: '#6d28d9', border: '#5b21b6', text: '#ffffff', numeral: 'X' }
-      };
-
       // 1. Nodos Hub (10 grandes ámbitos en 2 filas de 5 distribuidos armónicamente)
       const hubPositions = {
-        // Fila Superior (y: height * 0.26)
-        'turismo':        { x: width * 0.12, y: height * 0.26 },
-        'salmonicultura': { x: width * 0.31, y: height * 0.26 },
-        'energia':        { x: width * 0.50, y: height * 0.26 },
-        'gobernanza':     { x: width * 0.69, y: height * 0.26 },
-        'inversion':      { x: width * 0.88, y: height * 0.26 },
-        // Fila Inferior (y: height * 0.74)
-        'social':         { x: width * 0.12, y: height * 0.74 },
-        'biodiversidad':  { x: width * 0.31, y: height * 0.74 },
-        'salud':          { x: width * 0.50, y: height * 0.74 },
-        'cultura':        { x: width * 0.69, y: height * 0.74 },
-        'cultura_patrimonio': { x: width * 0.69, y: height * 0.74 },
-        'ctci':           { x: width * 0.88, y: height * 0.74 },
-        'ctci_innovacion': { x: width * 0.88, y: height * 0.74 }
+        // Fila Superior (y: height * 0.28)
+        'turismo':        { x: width * 0.13, y: height * 0.28 },
+        'salmonicultura': { x: width * 0.31, y: height * 0.28 },
+        'energia':        { x: width * 0.50, y: height * 0.28 },
+        'gobernanza':     { x: width * 0.69, y: height * 0.28 },
+        'inversion':      { x: width * 0.87, y: height * 0.28 },
+        // Fila Inferior (y: height * 0.72)
+        'social':         { x: width * 0.13, y: height * 0.72 },
+        'biodiversidad':  { x: width * 0.31, y: height * 0.72 },
+        'salud':          { x: width * 0.50, y: height * 0.72 },
+        'cultura':        { x: width * 0.69, y: height * 0.72 },
+        'cultura_patrimonio': { x: width * 0.69, y: height * 0.72 },
+        'ctci':           { x: width * 0.87, y: height * 0.72 },
+        'ctci_innovacion': { x: width * 0.87, y: height * 0.72 }
       };
 
       const hubs = AppState.data.hubs.map(h => {
@@ -1433,11 +1468,13 @@
           numeral: h.numeral,
           r: 26,
           x: pos.x,
-          y: pos.y
+          y: pos.y,
+          targetX: pos.x,
+          targetY: pos.y
         };
       });
 
-      // 2. Los Nodos satélite ("pelotas") alrededor de su respectivo Hub
+      // 2. Nodos satélite alrededor de su Hub padre
       const dataNodes = AppState.data.nodos.map(n => {
         const hub = hubs.find(h => h.hubId === n.hubId) || hubs[0];
         const hubSiblings = AppState.data.nodos.filter(item => item.hubId === n.hubId);
@@ -1457,28 +1494,10 @@
         };
       });
 
-      // 3. Enlaces entre Hubs y Nodos, y relaciones cruzadas entre Nodos
+      // 3. Enlaces estructurales y puentes sistémicos inter-nodo
       const links = [];
 
-      dataNodes.forEach(n => {
-        links.push({
-          source: n.nodeId,
-          target: `hub-${n.hubId}`,
-          type: 'category'
-        });
-
-        (n.relatedNodeIds || []).forEach(relId => {
-          if (relId > n.id) {
-            links.push({
-              source: `node-${n.id}`,
-              target: `node-${relId}`,
-              type: 'semantic'
-            });
-          }
-        });
-      });
-
-      // Enlaces estructurales entre los 10 Hubs (backbone continuo)
+      // Backbone entre hubs
       links.push(
         { source: 'hub-turismo', target: 'hub-salmonicultura', type: 'backbone' },
         { source: 'hub-salmonicultura', target: 'hub-energia', type: 'backbone' },
@@ -1494,6 +1513,31 @@
         { source: 'hub-salud', target: 'hub-cultura', type: 'backbone' },
         { source: 'hub-cultura', target: 'hub-ctci', type: 'backbone' }
       );
+
+      // Enlaces radiales satélite-hub
+      dataNodes.forEach(n => {
+        links.push({
+          source: n.nodeId,
+          target: `hub-${n.hubId}`,
+          type: 'category'
+        });
+      });
+
+      // Enlaces inter-node desde systemicBridges
+      const bridges = AppState.data.systemicBridges || [];
+      bridges.forEach(b => {
+        links.push({
+          source: `node-${b.source}`,
+          target: `node-${b.target}`,
+          sourceId: b.source,
+          targetId: b.target,
+          type: 'inter-node',
+          axis: b.axis,
+          relationNote: b.relationNote,
+          varX: b.varX,
+          varY: b.varY
+        });
+      });
 
       const allNodes = [...hubs, ...dataNodes];
 
@@ -1517,28 +1561,50 @@
         svg.call(zoom.transform, d3.zoomIdentity.translate(initialTx, initialTy).scale(initialScale));
       }
 
+      // Simulación D3: enlaces inter-node con strength: 0 para no deformar órbitas
       const simulation = d3.forceSimulation(allNodes)
         .force('link', d3.forceLink(links).id(d => d.nodeId || d.id).distance(d => {
           if (d.type === 'backbone') return 240;
           if (d.type === 'category') return 74;
-          return 65;
-        }).strength(d => d.type === 'category' ? 0.42 : 0.15))
+          return 140;
+        }).strength(d => {
+          if (d.type === 'inter-node') return 0;
+          if (d.type === 'category') return 0.42;
+          return 0.15;
+        }))
         .force('charge', d3.forceManyBody().strength(d => d.isHub ? -460 : -145))
         .force('collision', d3.forceCollide().radius(d => d.isHub ? 48 : 32).iterations(3))
-        .force('x', d3.forceX(d => d.isHub ? d.x : d.targetX).strength(0.16))
-        .force('y', d3.forceY(d => d.isHub ? d.y : d.targetY).strength(0.16))
+        .force('x', d3.forceX(d => d.targetX).strength(d => d.isHub ? 0.35 : 0.16))
+        .force('y', d3.forceY(d => d.targetY).strength(d => d.isHub ? 0.35 : 0.16))
         .force('center', d3.forceCenter(width / 2, height / 2).strength(0.04));
 
       AppState.graph.simulation = simulation;
 
-      const linkElements = g.append('g')
-        .attr('class', 'links')
+      // 1. Enlaces estructurales rectos (backbone y radiales)
+      const structuralLinks = g.append('g')
+        .attr('class', 'links-structural')
         .selectAll('line')
-        .data(links)
+        .data(links.filter(d => d.type !== 'inter-node'))
         .enter()
         .append('line')
         .attr('class', d => `d3-link link-${d.type}`);
 
+      // 2. Enlaces inter-node dibujados como curvas <path> limpias
+      const interNodeLinks = g.append('g')
+        .attr('class', 'links-inter-node')
+        .selectAll('path')
+        .data(links.filter(d => d.type === 'inter-node'))
+        .enter()
+        .append('path')
+        .attr('class', 'd3-link link-inter-node inter-node')
+        .attr('fill', 'none')
+        .attr('stroke', '#64748b')
+        .attr('stroke-width', '1.2px')
+        .attr('stroke-linecap', 'round')
+        .attr('opacity', 0.32)
+        .style('cursor', 'pointer');
+
+      // 3. Nodos visuales
       const nodeElements = g.append('g')
         .attr('class', 'nodes')
         .selectAll('g')
@@ -1631,8 +1697,49 @@
         }
       });
 
-      const tooltip = document.getElementById('graph-tooltip');
+      const tooltip = document.getElementById('d3-tooltip') || document.getElementById('graph-tooltip');
+      const tooltipTitle = document.getElementById('tooltip-title');
+      const tooltipSnippet = document.getElementById('tooltip-snippet');
 
+      // Interacción sobre aristas inter-node
+      interNodeLinks
+        .on('mouseenter', (event, d) => {
+          d3.select(event.currentTarget)
+            .attr('stroke', '#00357f')
+            .attr('stroke-width', '2px')
+            .attr('opacity', 0.9);
+
+          const sId = `node-${d.sourceId}`;
+          const tId = `node-${d.targetId}`;
+          nodeElements.classed('dimmed', n => {
+            const nid = n.nodeId || n.id;
+            return nid !== sId && nid !== tId;
+          });
+
+          if (tooltip && tooltipTitle && tooltipSnippet) {
+            tooltipTitle.innerHTML = `<span style="font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em; color: #94a3b8;">NODO #${String(d.sourceId).padStart(2, '0')} ↔ NODO #${String(d.targetId).padStart(2, '0')}</span>`;
+            tooltipSnippet.innerHTML = `<div style="font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 0.78rem; color: #f8fafc; line-height: 1.4; margin-top: 3px;">${escapeHtml(d.relationNote || '')}</div>`;
+
+            const rect = container.getBoundingClientRect();
+            tooltip.style.left = `${Math.min(event.clientX - rect.left + 15, width - 300)}px`;
+            tooltip.style.top = `${Math.min(event.clientY - rect.top + 15, height - 100)}px`;
+            tooltip.style.opacity = '1';
+          }
+        })
+        .on('mouseleave', (event, d) => {
+          d3.select(event.currentTarget)
+            .attr('stroke', '#64748b')
+            .attr('stroke-width', '1.2px')
+            .attr('opacity', 0.32);
+
+          if (tooltip) tooltip.style.opacity = '0';
+          applyFilterToGraph();
+        })
+        .on('click', (event, d) => {
+          openNodeDrawerById(d.sourceId);
+        });
+
+      // Interacción sobre nodos
       nodeElements
         .on('mouseenter', (event, d) => {
           const selfKey = d.nodeId || d.id;
@@ -1646,35 +1753,51 @@
           });
 
           nodeElements.classed('dimmed', n => !connectedIds.has(n.nodeId || n.id));
-          linkElements.classed('highlighted', l => {
+          structuralLinks.classed('highlighted', l => {
             const sId = l.source.nodeId || l.source.id;
             const tId = l.target.nodeId || l.target.id;
             return sId === selfKey || tId === selfKey;
           });
-          linkElements.classed('dimmed', l => {
+          structuralLinks.classed('dimmed', l => {
             const sId = l.source.nodeId || l.source.id;
             const tId = l.target.nodeId || l.target.id;
             return sId !== selfKey && tId !== selfKey;
           });
 
-          if (d.isHub) {
-            document.getElementById('tooltip-title').textContent = `${d.fullTitle} (Hub)`;
-            document.getElementById('tooltip-snippet').innerHTML = formatMarkdownText(d.description);
-          } else {
-            document.getElementById('tooltip-title').textContent = `#${String(d.id).padStart(2, '0')} · ${d.title}`;
-            document.getElementById('tooltip-snippet').innerHTML = formatMarkdownText(d.definition);
-          }
+          interNodeLinks.each(function(l) {
+            const sId = l.source.nodeId || l.source.id;
+            const tId = l.target.nodeId || l.target.id;
+            const isConn = (sId === selfKey || tId === selfKey);
+            d3.select(this)
+              .attr('opacity', isConn ? 0.9 : 0.05)
+              .attr('stroke', isConn ? '#00357f' : '#cbd5e1')
+              .attr('stroke-width', isConn ? '2px' : '0.8px');
+          });
 
-          const rect = container.getBoundingClientRect();
-          tooltip.style.left = `${Math.min(event.clientX - rect.left + 15, width - 270)}px`;
-          tooltip.style.top = `${Math.min(event.clientY - rect.top + 15, height - 125)}px`;
-          tooltip.style.opacity = '1';
+          if (tooltip && tooltipTitle && tooltipSnippet) {
+            if (d.isHub) {
+              tooltipTitle.innerHTML = `<span style="font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em; color: #94a3b8;">${escapeHtml(d.numeral || '')} · HUB</span>`;
+              tooltipSnippet.innerHTML = `<div style="font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 0.78rem; color: #f8fafc; font-weight: 600; line-height: 1.3;">${escapeHtml(d.fullTitle)}</div><div style="font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 0.72rem; color: #cbd5e1; margin-top: 2px;">${formatMarkdownText(d.description)}</div>`;
+            } else {
+              tooltipTitle.innerHTML = `<span style="font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em; color: #94a3b8;">NODO #${String(d.id).padStart(2, '0')}</span>`;
+              tooltipSnippet.innerHTML = `<div style="font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 0.78rem; color: #f8fafc; font-weight: 600; line-height: 1.3;">${escapeHtml(d.title)}</div><div style="font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 0.72rem; color: #cbd5e1; margin-top: 2px;">${formatMarkdownText(d.definition)}</div>`;
+            }
+
+            const rect = container.getBoundingClientRect();
+            tooltip.style.left = `${Math.min(event.clientX - rect.left + 15, width - 300)}px`;
+            tooltip.style.top = `${Math.min(event.clientY - rect.top + 15, height - 120)}px`;
+            tooltip.style.opacity = '1';
+          }
         })
         .on('mouseleave', () => {
           nodeElements.classed('dimmed', false);
-          linkElements.classed('highlighted', false);
-          linkElements.classed('dimmed', false);
-          tooltip.style.opacity = '0';
+          structuralLinks.classed('highlighted', false);
+          structuralLinks.classed('dimmed', false);
+          interNodeLinks
+            .attr('opacity', 0.32)
+            .attr('stroke', '#64748b')
+            .attr('stroke-width', '1.2px');
+          if (tooltip) tooltip.style.opacity = '0';
           applyFilterToGraph();
         })
         .on('click', (event, d) => {
@@ -1685,6 +1808,7 @@
           }
         });
 
+      // Actualización de posiciones en cada tick
       simulation.on('tick', () => {
         allNodes.forEach(d => {
           const pad = d.r + 12;
@@ -1692,11 +1816,27 @@
           d.y = Math.max(pad, Math.min(height - pad, d.y));
         });
 
-        linkElements
+        structuralLinks
           .attr('x1', d => d.source.x)
           .attr('y1', d => d.source.y)
           .attr('x2', d => d.target.x)
           .attr('y2', d => d.target.y);
+
+        interNodeLinks
+          .attr('d', d => {
+            const x1 = d.source.x;
+            const y1 = d.source.y;
+            const x2 = d.target.x;
+            const y2 = d.target.y;
+            const dx = x2 - x1;
+            const dy = y2 - y1;
+            const mx = (x1 + x2) / 2;
+            const my = (y1 + y2) / 2;
+            const curvature = 0.14;
+            const cx = mx - dy * curvature;
+            const cy = my + dx * curvature;
+            return `M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`;
+          });
 
         nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
       });
@@ -1719,19 +1859,82 @@
       applyFilterToGraph();
     }
 
+    function toggleHubFilter(hubId) {
+      if (AppState.activeCategoryFilter === hubId) {
+        AppState.activeCategoryFilter = 'all';
+      } else {
+        AppState.activeCategoryFilter = hubId;
+      }
+      updateHubTogglesUI();
+      renderCategoryFilters();
+      renderActiveView();
+    }
+
+    function updateHubTogglesUI() {
+      const active = AppState.activeCategoryFilter;
+      document.querySelectorAll('.d3-hub-btn').forEach(btn => {
+        const id = btn.id.replace('toggle-hub-', '');
+        if (active === 'all' || active === id) {
+          btn.style.opacity = '1';
+          btn.style.fontWeight = active === id ? '700' : '500';
+          btn.style.color = active === id ? '#00357f' : '#1c1b1b';
+        } else {
+          btn.style.opacity = '0.38';
+          btn.style.fontWeight = '400';
+          btn.style.color = '#64748b';
+        }
+      });
+    }
+
+    function setD3AxisFilter(axis) {
+      AppState.activeAxisFilter = axis || 'all';
+      applyFilterToGraph();
+    }
+
     function applyFilterToGraph() {
       if (!AppState.graph.simulation) return;
       const cat = AppState.activeCategoryFilter;
+      const axis = AppState.activeAxisFilter || 'all';
       const q = AppState.searchQuery.toLowerCase().trim();
 
+      updateHubTogglesUI();
+
       d3.selectAll('.d3-node').classed('dimmed', d => {
-        if (d.isHub) return cat !== 'all' && d.hubId !== cat;
-        const matchesCat = cat === 'all' || d.hubId === cat;
+        if (d.isHub) {
+          if (cat !== 'all') return d.hubId !== cat;
+          return false;
+        }
+        const matchesCat = (cat === 'all' || d.hubId === cat);
         const matchesSearch = !q ||
           d.title.toLowerCase().includes(q) ||
           d.definition.toLowerCase().includes(q) ||
           d.example.toLowerCase().includes(q);
-        return !(matchesCat && matchesSearch);
+
+        let matchesAxis = true;
+        if (axis !== 'all') {
+          const bridges = AppState.data.systemicBridges || [];
+          matchesAxis = bridges.some(b => b.axis === axis && (b.source === d.id || b.target === d.id));
+        }
+
+        return !(matchesCat && matchesSearch && matchesAxis);
+      });
+
+      d3.selectAll('.link-inter-node').each(function(d) {
+        const el = d3.select(this);
+        const matchesAxis = (axis === 'all' || d.axis === axis);
+        const sHub = d.source.hubId || '';
+        const tHub = d.target.hubId || '';
+        const matchesCat = (cat === 'all' || sHub === cat || tHub === cat);
+
+        if (matchesAxis && matchesCat) {
+          el.attr('opacity', axis !== 'all' ? 0.9 : 0.32)
+            .attr('stroke', axis !== 'all' ? '#00357f' : '#64748b')
+            .attr('stroke-width', axis !== 'all' ? '1.8px' : '1.2px');
+        } else {
+          el.attr('opacity', 0.05)
+            .attr('stroke', '#cbd5e1')
+            .attr('stroke-width', '0.8px');
+        }
       });
     }
 
@@ -1749,7 +1952,6 @@
         }
       }
     }
-
     // ==========================================
     // RENDER DE FICHAS DE NODOS (VISTA ALTERNATIVA)
     // ==========================================
@@ -2049,6 +2251,26 @@
     // ==========================================
     // DRAWER LATERAL EDITORIAL (PARA NODOS, HUBS Y COMUNAS)
     // ==========================================
+    function openDrawer(d) {
+      if (!d && d !== 0) return;
+      if (typeof d === 'number') {
+        openNodeDrawerById(d);
+      } else if (typeof d === 'object') {
+        if (d.isHub) {
+          openHubDrawerById(d.hubId || d.id);
+        } else if (d.id !== undefined) {
+          openNodeDrawerById(d.id);
+        }
+      } else if (typeof d === 'string') {
+        if (hubMap[d]) {
+          openHubDrawerById(d);
+        } else if (!isNaN(Number(d))) {
+          openNodeDrawerById(Number(d));
+        }
+      }
+    }
+    window.openDrawer = openDrawer;
+
     function openNodeDrawerById(id) {
       const idx = AppState.data.nodos.findIndex(n => n.id === Number(id));
       if (idx !== -1) {
@@ -2061,6 +2283,9 @@
       AppState.selectedNodeIndex = index;
       const n = AppState.data.nodos[index];
       if (!n) return;
+
+      const scrollContainer = document.querySelector('#drawer-panel .overflow-y-auto');
+      if (scrollContainer) scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
 
       const hub = hubMap[n.hubId] || {};
 
@@ -2132,10 +2357,10 @@
         totalRecEl.textContent = cp.totalRecordsInFullBase || `${(n.tableRows || []).length} registros en archivo institucional`;
       }
 
-      // Nodos relacionados
+      // Nodos relacionados: lista plana editorial separada por líneas de 1px (CERO CAJAS)
       const relSection = document.getElementById('drawer-related-section');
       const relList = document.getElementById('drawer-related-list');
-      document.getElementById('drawer-related-heading').textContent = 'Nodos relacionados';
+      document.getElementById('drawer-related-heading').textContent = 'Conexiones Inter-Hub y Cruces Sistémicos';
 
       const relatedNodes = (n.relatedNodeIds || [])
         .map(rId => AppState.data.nodos.find(item => item.id === rId))
@@ -2143,28 +2368,44 @@
 
       if (relatedNodes.length > 0) {
         relSection.classList.remove('hidden');
+        relList.style.display = 'flex';
+        relList.style.flexDirection = 'column';
         relList.innerHTML = relatedNodes.map(rel => {
           const relHub = hubMap[rel.hubId] || {};
+          const relCol = clusterColors[rel.hubId]?.bg || '#00357f';
+          const relNumeral = clusterColors[rel.hubId]?.numeral || relHub.numeral || '';
+          const relHubName = clusterColors[rel.hubId]?.label || relHub.shortTitle || relHub.title || '';
+          
+          const bridge = (AppState.data.systemicBridges || []).find(b =>
+            (b.source === n.id && b.target === rel.id) || (b.source === rel.id && b.target === n.id)
+          );
+          const relationNote = bridge ? bridge.relationNote : '';
+          let varX = (bridge && bridge.varX) || '';
+          let varY = (bridge && bridge.varY) || '';
+          if (bridge && bridge.source !== n.id) {
+            varX = bridge.varY || '';
+            varY = bridge.varX || '';
+          }
+          const labUrl = `laboratorio.html?varX=${encodeURIComponent(varX)}&varY=${encodeURIComponent(varY)}`;
+
           return `
-            <button 
-              onclick="openNodeDrawerById(${rel.id})"
-              class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-colors duration-150 group"
-            >
-              <div class="flex items-center gap-2.5 min-w-0">
-                <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary shrink-0">
-                  #${String(rel.id).padStart(2, '0')}
-                </span>
-                <div class="min-w-0">
-                  <div class="font-sans text-xs sm:text-sm font-semibold text-on-surface group-hover:text-primary truncate">
-                    ${escapeHtml(rel.title)}
-                  </div>
-                  <div class="font-mono text-[11px] text-muted truncate">
-                    ${escapeHtml(relHub.title || '')}
-                  </div>
-                </div>
+            <div style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; background: transparent; box-shadow: none;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;">
+                <button 
+                  type="button"
+                  onclick="openNodeDrawerById(${rel.id})"
+                  style="background: transparent; border: none; padding: 0; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 0.84rem; font-weight: 600; color: #0f172a;"
+                  class="hover:text-primary transition-colors"
+                >
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background-color: ${relCol}; display: inline-block; flex-shrink: 0;"></span>
+                  <span>#${String(rel.id).padStart(2, '0')} ${escapeHtml(rel.title)} · ${relNumeral}. ${escapeHtml(relHubName)}</span>
+                </button>
+                <a href="${labUrl}" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #00357f; text-decoration: none; white-space: nowrap; font-weight: 500;" class="hover:underline">
+                  Cruzar en Laboratorio →
+                </a>
               </div>
-              <span class="font-mono text-xs text-muted group-hover:text-primary shrink-0">→</span>
-            </button>
+              ${relationNote ? `<div style="color: #475569; font-size: 0.8rem; line-height: 1.4; margin-top: 3px; font-family: 'Inter', sans-serif;">${escapeHtml(relationNote)}</div>` : ''}
+            </div>
           `;
         }).join('');
       } else {
@@ -2240,29 +2481,26 @@
 
       const relSection = document.getElementById('drawer-related-section');
       const relList = document.getElementById('drawer-related-list');
-      document.getElementById('drawer-related-heading').textContent = 'Ver los nodos de este ámbito';
+      document.getElementById('drawer-related-heading').textContent = 'Nodos Satélite de este Ámbito';
       relSection.classList.remove('hidden');
-      relList.innerHTML = hubNodes.map(n => `
-        <button 
-          onclick="openNodeDrawerById(${n.id})"
-          class="w-full text-left flex items-center justify-between gap-3 p-3 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white transition-colors duration-150 group"
-        >
-          <div class="flex items-center gap-2.5 min-w-0">
-            <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-primary text-white shrink-0">
-              #${String(n.id).padStart(2, '0')}
-            </span>
-            <div class="min-w-0">
-              <div class="font-sans text-xs sm:text-sm font-semibold text-on-surface group-hover:text-primary truncate">
-                ${escapeHtml(n.title)}
-              </div>
-              <div class="font-mono text-[11px] text-muted truncate">
-                ${escapeHtml((n.officialSource && n.officialSource.name) || '')}
-              </div>
-            </div>
+      relList.style.display = 'flex';
+      relList.style.flexDirection = 'column';
+      relList.innerHTML = hubNodes.map(n => {
+        const hubCol = clusterColors[hubId]?.bg || '#00357f';
+        return `
+          <div style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; background: transparent; box-shadow: none; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+            <button 
+              onclick="openNodeDrawerById(${n.id})"
+              style="background: transparent; border: none; padding: 0; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 0.84rem; font-weight: 600; color: #0f172a;"
+              class="hover:text-primary transition-colors"
+            >
+              <span style="width: 6px; height: 6px; border-radius: 50%; background-color: ${hubCol}; display: inline-block; flex-shrink: 0;"></span>
+              <span>#${String(n.id).padStart(2, '0')} ${escapeHtml(n.title)}</span>
+            </button>
+            <span class="font-mono text-[11px] text-muted">${escapeHtml((n.officialSource && n.officialSource.name) || '')}</span>
           </div>
-          <span class="font-mono text-xs text-muted group-hover:text-primary shrink-0">→</span>
-        </button>
-      `).join('');
+        `;
+      }).join('');
 
       document.getElementById('drawer-btn-prev').disabled = true;
       document.getElementById('drawer-btn-next').disabled = true;

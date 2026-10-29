@@ -12481,6 +12481,23 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           }
         }
 
+        const varXParam = params.get('varX');
+        const varYParam = params.get('varY');
+        if (varXParam) {
+          clearAll();
+          const opts = {
+            varX: varXParam,
+            x: 120, y: 80, w: 580, h: 420
+          };
+          if (varYParam) {
+            opts.varY = varYParam;
+            opts.chartType = 'scatter';
+          }
+          createWidget('chart', opts);
+          setTimeout(fitAndCenterCanvas, 100);
+          return;
+        }
+
         loadSavedOrPreset();
       }
 

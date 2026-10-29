@@ -2251,6 +2251,673 @@ const rawNodos = [
   }
 ];
 
+const systemicBridges = [
+  {
+    source: 1,
+    target: 15,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Patentes comerciales turísticas recaudadas por municipios financian servicios comunales de aseo y señalética vial.',
+    varX: 'prestadores_sernatur',
+    varY: 'presupuesto_mclp'
+  },
+  {
+    source: 1,
+    target: 20,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Microempresas turísticas registradas en SERNATUR aportan empleo formal no calificado en comunas con estacionalidad.',
+    varX: 'prestadores_sernatur',
+    varY: 'empresas_sii'
+  },
+  {
+    source: 1,
+    target: 32,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Prestadores de turismo cultural requieren catastros oficiales de inmuebles patrimoniales y monumentos nacionales para diseñar rutas.',
+    varX: 'prestadores_sernatur',
+    varY: 'museos_espacios_n'
+  },
+  {
+    source: 1,
+    target: 34,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Talleres y centros culturales autogestionados articulan experiencias artísticas para prestadores turísticos en temporada alta.',
+    varX: 'prestadores_sernatur',
+    varY: 'total_espacios_culturales'
+  },
+  {
+    source: 2,
+    target: 6,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'La superposición de concesiones acuícolas con zonas ZOIT genera tensiones por uso de bordemar y paisaje turístico.',
+    varX: 'ratio_presion_turistica',
+    varY: 'concesiones_salmon'
+  },
+  {
+    source: 2,
+    target: 12,
+    axis: 'energia_aire_salud',
+    relationNote: 'Zonas ZOIT demandan estabilidad de suministro y electrificación limpia para certificar sustentabilidad turística.',
+    varX: 'ratio_presion_turistica',
+    varY: 'tarifa_bt1_clp'
+  },
+  {
+    source: 2,
+    target: 18,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Los planes de infraestructura turística de zonas ZOIT dependen de priorizaciones sectoriales de inversión FNDR.',
+    varX: 'ratio_presion_turistica',
+    varY: 'fndr_mclp'
+  },
+  {
+    source: 2,
+    target: 33,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Iniciativas Fondart en zonas ZOIT promueven el rescate de oficios tradicionales vinculados al ecoturismo sustentable.',
+    varX: 'ratio_presion_turistica',
+    varY: 'fondart_fndr_mclp'
+  },
+  {
+    source: 3,
+    target: 13,
+    axis: 'energia_aire_salud',
+    relationNote: 'La ocupación hotelera estival eleva el consumo comunal de gas licuado y combustibles en establecimientos turísticos.',
+    varX: 'pernoctaciones_emat',
+    varY: 'gasolina_93_clp'
+  },
+  {
+    source: 3,
+    target: 15,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'La estacionalidad de pernoctaciones genera fluctuaciones en los derechos municipales y patentes de hospedaje.',
+    varX: 'pernoctaciones_emat',
+    varY: 'presupuesto_mclp'
+  },
+  {
+    source: 3,
+    target: 20,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Establecimientos de alojamiento formal concentran ventas tributarias en el primer trimestre, reduciéndose en invierno.',
+    varX: 'pernoctaciones_emat',
+    varY: 'empresas_sii'
+  },
+  {
+    source: 3,
+    target: 30,
+    axis: 'energia_aire_salud',
+    relationNote: 'El descenso de pernoctaciones turísticas en otoño coincide con el inicio de los meses críticos de MP2.5 residencial.',
+    varX: 'pernoctaciones_emat',
+    varY: 'dias_sobre_norma_mp25'
+  },
+  {
+    source: 4,
+    target: 18,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Accesos a parques nacionales remotos dependen de fondos sectoriales de pavimentación y mantención de Ruta 7.',
+    varX: 'visitantes_snaspe',
+    varY: 'fndr_mclp'
+  },
+  {
+    source: 4,
+    target: 22,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'El flujo de turistas en áreas silvestres protegidas demanda resguardos sobre predios fiscales y servidumbres.',
+    varX: 'visitantes_snaspe',
+    varY: 'superficie_snaspe_pct'
+  },
+  {
+    source: 4,
+    target: 27,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'La visitación intensiva en parques nacionales requiere senderos habilitados para evitar degradación del sotobosque.',
+    varX: 'visitantes_snaspe',
+    varY: 'cobertura_vegetal_pct'
+  },
+  {
+    source: 4,
+    target: 32,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Comunas con alta visitación a parques nacionales (Ibáñez, Tortel, Cisnes) registran baja infraestructura museográfica local.',
+    varX: 'visitantes_snaspe',
+    varY: 'museos_espacios_n'
+  },
+  {
+    source: 5,
+    target: 14,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Atractivos turísticos georreferenciados en áreas remotas requieren cobertura celular para seguridad de visitantes.',
+    varX: 'camas_turisticas',
+    varY: 'estado_foa'
+  },
+  {
+    source: 5,
+    target: 22,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Concesiones turísticas en terrenos fiscales administrados por Bienes Nacionales impulsan inversión en campings.',
+    varX: 'camas_turisticas',
+    varY: 'superficie_snaspe_pct'
+  },
+  {
+    source: 5,
+    target: 28,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Atractivos naturales en hábitats de huemul y aves migratorias exigen directrices de avistamiento responsable.',
+    varX: 'camas_turisticas',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 5,
+    target: 31,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Miradores y senderos en las inmediaciones de complejos volcánicos requieren protocolos de alerta temprana para turistas.',
+    varX: 'camas_turisticas',
+    varY: 'traslado_coyhaique_hrs'
+  },
+  {
+    source: 6,
+    target: 15,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Patentes acuícolas recaudadas benefician a municipalidades costeras a través de tributos territoriales SINIM.',
+    varX: 'concesiones_salmon',
+    varY: 'presupuesto_mclp'
+  },
+  {
+    source: 6,
+    target: 24,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'La accidentabilidad y patologías de buceo en centros salmoneros demandan atención de medicina hiperbárica hospitalaria regional.',
+    varX: 'concesiones_salmon',
+    varY: 'camas_hospitalarias'
+  },
+  {
+    source: 6,
+    target: 29,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'La presencia de especies hidrobiológicas exóticas invasoras en canales marítimos afecta la biodiversidad bentónica autóctona.',
+    varX: 'concesiones_salmon',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 6,
+    target: 36,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'La actividad acuícola en Cisnes, Aysén y Guaitecas contrasta con la concentración de capacidades I+D en la comuna de Coyhaique.',
+    varX: 'concesiones_salmon',
+    varY: 'investigadores_residentes'
+  },
+  {
+    source: 7,
+    target: 16,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'La radicación de domicilios tributarios salmoneros en Santiago reduce los ingresos propios de municipios dependientes del FCM.',
+    varX: 'centros_activos_salmon',
+    varY: 'dependencia_fcm_pct'
+  },
+  {
+    source: 7,
+    target: 19,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Grandes holdings acuícolas tramitan modificaciones de biomasa y ampliaciones de centros mediante RCA en el SEIA.',
+    varX: 'centros_activos_salmon',
+    varY: 'inversion_seia_mmusd'
+  },
+  {
+    source: 7,
+    target: 20,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Empresas matrices salmoneras concentran empleo asalariado en faenas de engorda y plantas de proceso de Aysén.',
+    varX: 'centros_activos_salmon',
+    varY: 'empresas_sii'
+  },
+  {
+    source: 7,
+    target: 29,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Escapes accidentales de salmónidos en centros de cultivo impactan tramas tróficas de ríos y fiordos australes.',
+    varX: 'centros_activos_salmon',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 8,
+    target: 14,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Pontones habitables en barrios sanitarios apartados utilizan enlaces troncales FOA para telemetría ambiental.',
+    varX: 'centros_activos_salmon',
+    varY: 'estado_foa'
+  },
+  {
+    source: 8,
+    target: 16,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Caletas pesqueras artesanales aisladas reciben apoyo de infraestructura básica desde municipalidades con alta dependencia FCM.',
+    varX: 'centros_activos_salmon',
+    varY: 'dependencia_fcm_pct'
+  },
+  {
+    source: 8,
+    target: 22,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Espacios costeros marinos para pueblos originarios y caletas colindan con concesiones de agrupaciones ACS.',
+    varX: 'centros_activos_salmon',
+    varY: 'superficie_snaspe_pct'
+  },
+  {
+    source: 8,
+    target: 39,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Centros acuícolas remotos y caletas en el litoral norte derivan pacientes graves mediante aeroevacuación SAMU marítimo.',
+    varX: 'centros_activos_salmon',
+    varY: 'aeroevacuaciones_samu_n'
+  },
+  {
+    source: 9,
+    target: 27,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Aportes de agua dulce rica en taninos de cuencas boscosas modulan la estratificación salina en los fiordos.',
+    varX: 'centros_activos_salmon',
+    varY: 'cobertura_vegetal_pct'
+  },
+  {
+    source: 9,
+    target: 29,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Monitoreo oceanográfico mide oxígeno disuelto y biomasa ante proliferación de microalgas y especies invasoras.',
+    varX: 'centros_activos_salmon',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 9,
+    target: 30,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Estaciones DGA registran caudales fluviales que determinan el transporte de nutrientes hacia golfos marinos.',
+    varX: 'centros_activos_salmon',
+    varY: 'dias_sobre_norma_mp25'
+  },
+  {
+    source: 9,
+    target: 36,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Centros científicos analizan series de fitoplancton tóxico para anticipar eventos FAN que impactan las costas regionales.',
+    varX: 'centros_activos_salmon',
+    varY: 'investigadores_residentes'
+  },
+  {
+    source: 10,
+    target: 17,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Recaudación del impuesto específico pesquero Art. 43 ter incide en transferencias fiscales para desarrollo comunal.',
+    varX: 'empresas_sii',
+    varY: 'presupuesto_mclp'
+  },
+  {
+    source: 10,
+    target: 20,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Faenas extractivas industriales abastecen industrias de harina y congelado inscritas ante el Servicio de Impuestos Internos.',
+    varX: 'empresas_sii',
+    varY: 'trabajadores_sii'
+  },
+  {
+    source: 10,
+    target: 26,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Fiscalizaciones marítimas coordinadas resguardan cuotas extractivas y previenen desembarques ilegales en puertos de desembarque.',
+    varX: 'empresas_sii',
+    varY: 'pobreza_multidim_pct'
+  },
+  {
+    source: 10,
+    target: 37,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Iniciativas CORFO apoyan el escalamiento comercial y procesamiento local de capturas de pesca artesanal e industrial.',
+    varX: 'empresas_sii',
+    varY: 'innovacion_corfo_mclp'
+  },
+  {
+    source: 11,
+    target: 19,
+    axis: 'energia_aire_salud',
+    relationNote: 'Proyectos de generación renovable ingresan al SEIA para evaluación de impacto sobre cuencas y comunidades.',
+    varX: 'potencia_mw',
+    varY: 'inversion_seia_mmusd'
+  },
+  {
+    source: 11,
+    target: 21,
+    axis: 'energia_aire_salud',
+    relationNote: 'Faenas mineras en Aysén demandan potencia eléctrica autónoma debido a su desconexión del Sistema Eléctrico Nacional.',
+    varX: 'potencia_mw',
+    varY: 'concesiones_mineras_ha'
+  },
+  {
+    source: 11,
+    target: 30,
+    axis: 'energia_aire_salud',
+    relationNote: 'La hidroelectricidad de pasada evita emisiones atmosféricas asociadas al respaldo térmico con diésel en Coyhaique.',
+    varX: 'potencia_mw',
+    varY: 'dias_sobre_norma_mp25'
+  },
+  {
+    source: 11,
+    target: 37,
+    axis: 'energia_aire_salud',
+    relationNote: 'Proyectos de innovación energética financian pilotos de generación hidroeléctrica de pasada y bombas de calor.',
+    varX: 'potencia_mw',
+    varY: 'innovacion_corfo_mclp'
+  },
+  {
+    source: 12,
+    target: 16,
+    axis: 'energia_aire_salud',
+    relationNote: 'Sistemas medianos aislados requieren subsidios estatales para amortiguar altas tarifas eléctricas en municipios dependientes.',
+    varX: 'tarifa_bt1_clp',
+    varY: 'dependencia_fcm_pct'
+  },
+  {
+    source: 12,
+    target: 28,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Trazados de líneas eléctricas y subestaciones en cuencas cordilleranas requieren resguardos sobre nidificación de fauna nativa.',
+    varX: 'tarifa_bt1_clp',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 12,
+    target: 39,
+    axis: 'energia_aire_salud',
+    relationNote: 'El costo eléctrico BT1 frena la calefacción limpia, sosteniendo la combustión de leña húmeda y la morbilidad respiratoria.',
+    varX: 'tarifa_bt1_clp',
+    varY: 'aeroevacuaciones_samu_n'
+  },
+  {
+    source: 13,
+    target: 24,
+    axis: 'energia_aire_salud',
+    relationNote: 'El consumo intensivo de leña residencial en Coyhaique incrementa los ingresos hospitalarios por afecciones broncopulmonares agudas.',
+    varX: 'precio_lena_m3',
+    varY: 'urgencias_respiratorias_pct'
+  },
+  {
+    source: 13,
+    target: 27,
+    axis: 'energia_aire_salud',
+    relationNote: 'Extracción de leña como combustible primario presiona rodales de bosque nativo degradando masas forestales comunales.',
+    varX: 'precio_lena_m3',
+    varY: 'cobertura_vegetal_pct'
+  },
+  {
+    source: 13,
+    target: 30,
+    axis: 'energia_aire_salud',
+    relationNote: 'Venta masiva de leña húmeda en centros urbanos desencadena alertas ambientales por concentración horaria de MP2.5.',
+    varX: 'precio_lena_m3',
+    varY: 'dias_sobre_norma_mp25'
+  },
+  {
+    source: 14,
+    target: 25,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Conectividad troncal de fibra óptica FOA viabiliza plataformas de educación digital en escuelas públicas rurales SLEP.',
+    varX: 'estado_foa',
+    varY: 'matricula_escolar'
+  },
+  {
+    source: 14,
+    target: 31,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Redes sismológicas y estaciones de monitoreo volcánico transmiten datos en tiempo real mediante enlaces satelitales y FOA.',
+    varX: 'estado_foa',
+    varY: 'traslado_coyhaique_hrs'
+  },
+  {
+    source: 14,
+    target: 38,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Las postas rurales en comunas sin redundancia FOA dependen de enlaces satelitales para interconsulta con el Hospital de Coyhaique.',
+    varX: 'estado_foa',
+    varY: 'postas_salud_rural'
+  },
+  {
+    source: 15,
+    target: 32,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Municipios con bajos ingresos propios presentan menor presupuesto comunal destinado a la conservación de museos locales.',
+    varX: 'presupuesto_mclp',
+    varY: 'museos_espacios_n'
+  },
+  {
+    source: 15,
+    target: 33,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Las asignaciones del FNDR 8% cultural compensan las limitaciones de financiamiento de los presupuestos municipales pequeños.',
+    varX: 'presupuesto_mclp',
+    varY: 'fondart_fndr_mclp'
+  },
+  {
+    source: 16,
+    target: 21,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Comunas mineras aisladas perciben escasos tributos directos para su presupuesto municipal, dependiendo del FCM.',
+    varX: 'dependencia_fcm_pct',
+    varY: 'concesiones_mineras_ha'
+  },
+  {
+    source: 16,
+    target: 23,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'La dependencia del Fondo Común Municipal refleja baja autonomía financiera en comunas de alta ruralidad CASEN.',
+    varX: 'dependencia_fcm_pct',
+    varY: 'pobreza_multidim_pct'
+  },
+  {
+    source: 17,
+    target: 23,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Concejos municipales priorizan ayudas sociales y subsidios asistenciales según los registros sociales comunales CASEN.',
+    varX: 'presupuesto_mclp',
+    varY: 'pobreza_ingresos_pct'
+  },
+  {
+    source: 17,
+    target: 26,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Alcaldías lideran consejos comunales de seguridad pública para coordinar operativos de prevención con Carabineros.',
+    varX: 'presupuesto_mclp',
+    varY: 'pobreza_multidim_pct'
+  },
+  {
+    source: 17,
+    target: 34,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Alcaldías y concejos municipales facilitan recintos comunitarios para el desarrollo de actividades de agrupaciones culturales.',
+    varX: 'presupuesto_mclp',
+    varY: 'total_espacios_culturales'
+  },
+  {
+    source: 18,
+    target: 33,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'El fondo concursable del 8% FNDR constituye la principal vía de financiamiento cultural en comunas sin oferta privada.',
+    varX: 'fndr_mclp',
+    varY: 'fondart_fndr_mclp'
+  },
+  {
+    source: 18,
+    target: 35,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Fondos de Innovación para la Competitividad FIC regional apalancan fondos nacionales ANID para ciencia aplicada.',
+    varX: 'fndr_mclp',
+    varY: 'proyectos_anid_n'
+  },
+  {
+    source: 18,
+    target: 38,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Los proyectos de reposición y equipamiento clínico de postas rurales dependen de asignaciones presupuestarias FNDR.',
+    varX: 'fndr_mclp',
+    varY: 'postas_salud_rural'
+  },
+  {
+    source: 19,
+    target: 35,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Líneas de base ambiental del SEIA incorporan levantamientos oceanográficos y glaciológicos financiados por fondos ANID.',
+    varX: 'inversion_seia_mmusd',
+    varY: 'proyectos_anid_n'
+  },
+  {
+    source: 19,
+    target: 37,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Programas de desarrollo de proveedores CORFO facilitan adopción de tecnologías limpias en obras ingresadas al SEIA.',
+    varX: 'inversion_seia_mmusd',
+    varY: 'innovacion_corfo_mclp'
+  },
+  {
+    source: 20,
+    target: 37,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Los proyectos de innovación productiva CORFO buscan desarrollar proveedores locales para reducir la compra extrarregional.',
+    varX: 'empresas_sii',
+    varY: 'innovacion_corfo_mclp'
+  },
+  {
+    source: 21,
+    target: 28,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Yacimientos mineros en cuencas cordilleranas requieren estudios de impacto sobre fauna andina y cursos hídricos.',
+    varX: 'concesiones_mineras_ha',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 21,
+    target: 29,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Caminos de prospección minera abren accesos no controlados facilitando dispersión de especies exóticas invasoras.',
+    varX: 'concesiones_mineras_ha',
+    varY: 'fauna_amenazada_n'
+  },
+  {
+    source: 21,
+    target: 32,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Monumentos históricos y sitios arqueológicos mineros requieren delimitaciones técnicas ante solicitudes de exploración de SERNAGEOMIN.',
+    varX: 'concesiones_mineras_ha',
+    varY: 'museos_espacios_n'
+  },
+  {
+    source: 22,
+    target: 34,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Espacios culturales comunitarios solicitan permisos de ocupación y concesiones gratuitas sobre inmuebles fiscales de Bienes Nacionales.',
+    varX: 'superficie_snaspe_pct',
+    varY: 'total_espacios_culturales'
+  },
+  {
+    source: 23,
+    target: 24,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Comunas con mayor pobreza multidimensional y dispersión poblacional presentan menor dotación de médicos especialistas por habitante.',
+    varX: 'pobreza_multidim_pct',
+    varY: 'medicos_por_mil_hab'
+  },
+  {
+    source: 23,
+    target: 38,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Las postas de salud rural atienden prioritariamente a población de tercera edad en localidades bajo vulnerabilidad CASEN.',
+    varX: 'pobreza_multidim_pct',
+    varY: 'postas_salud_rural'
+  },
+  {
+    source: 23,
+    target: 39,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Tiempos de traslado mayores a seis horas hacia Coyhaique aumentan el riesgo asistencial en comunas australes vulnerables.',
+    varX: 'pobreza_ingresos_pct',
+    varY: 'traslado_coyhaique_hrs'
+  },
+  {
+    source: 24,
+    target: 30,
+    axis: 'energia_aire_salud',
+    relationNote: 'Los episodios invernales sobre norma de MP2.5 en Coyhaique y Aysén incrementan las consultas respiratorias de urgencia.',
+    varX: 'urgencias_respiratorias_pct',
+    varY: 'dias_sobre_norma_mp25'
+  },
+  {
+    source: 25,
+    target: 34,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'En localidades aisladas, las escuelas públicas SLEP y bibliotecas SNBP operan como la única infraestructura cultural activa.',
+    varX: 'matricula_escolar',
+    varY: 'total_espacios_culturales'
+  },
+  {
+    source: 25,
+    target: 35,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Proyectos de divulgación científica ANID vinculan investigadores con escolares de liceos del Servicio Local SLEP.',
+    varX: 'matricula_escolar',
+    varY: 'proyectos_anid_n'
+  },
+  {
+    source: 25,
+    target: 36,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Investigadores residentes dictan pasantías científicas para estudiantes secundarios de la red escolar pública regional.',
+    varX: 'matricula_escolar',
+    varY: 'investigadores_residentes'
+  },
+  {
+    source: 26,
+    target: 31,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Planes comunales de emergencia coordinan evacuaciones policiales preventivas ante eventos sísmicos o desbordes volcánicos.',
+    varX: 'pobreza_multidim_pct',
+    varY: 'traslado_coyhaique_hrs'
+  },
+  {
+    source: 26,
+    target: 33,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Fondos concursables de cultura barrial promueven actividades juveniles preventivas en sectores urbanos con denuncias de delitos.',
+    varX: 'pobreza_multidim_pct',
+    varY: 'fondart_fndr_mclp'
+  },
+  {
+    source: 27,
+    target: 36,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Investigadores del CIEP e INIA monitorean carbono orgánico y regeneración vegetal en bosques y turberas.',
+    varX: 'cobertura_vegetal_pct',
+    varY: 'investigadores_residentes'
+  },
+  {
+    source: 27,
+    target: 38,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'La discontinuidad geográfica por bosque nativo y fiordos condiciona la periodicidad de las rondas médicas rurales.',
+    varX: 'cobertura_vegetal_pct',
+    varY: 'postas_salud_rural'
+  },
+  {
+    source: 28,
+    target: 35,
+    axis: 'ciencia_mar_clima',
+    relationNote: 'Más del 70% de los proyectos ANID ejecutados en cuencas y glaciares de Aysén son liderados por universidades extrarregionales.',
+    varX: 'glaciares_dga_n',
+    varY: 'proyectos_anid_n'
+  },
+  {
+    source: 31,
+    target: 39,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'La evacuación médica aerotransportada SAMU requiere pistas despejadas ante emergencias de ceniza volcánica o sismos.',
+    varX: 'traslado_coyhaique_hrs',
+    varY: 'aeroevacuaciones_samu_n'
+  }
+];
+
 // Integrar provenance en los nodos y ordenar por ID
 const nodos = rawNodos.map(n => {
   let p = provByNodeId[n.id];
@@ -2297,7 +2964,10 @@ const nodos = rawNodos.map(n => {
     officialSource: n.officialSource || { name: p.sourceEntity, url: p.sourceUrl, frequency: p.updateFrequency },
     provenance: p,
     csvFile: n.csvFile,
-    relatedNodeIds: n.relatedNodeIds || [],
+    relatedNodeIds: systemicBridges
+      .filter(b => b.source === n.id || b.target === n.id)
+      .map(b => b.source === n.id ? b.target : b.source)
+      .sort((a, b) => a - b),
     chartSpec: n.chartSpec,
     tableColumns: n.tableColumns,
     tableRows: n.tableRows,
@@ -3252,6 +3922,7 @@ const bundle = {
   nodos,
   comunas,
   holdings,
+  systemicBridges: systemicBridges,
   seriesMensualesEmat: wp06.series_mensuales_emat_sernatur || [],
   edges_inter_hub: cecanPresets.edges_inter_hub || [],
   hubsGallery: processedHubsGallery,
