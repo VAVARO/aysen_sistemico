@@ -15,7 +15,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { spawn, execSync } = require('child_process');
+const { spawn, execSync, execFileSync } = require('child_process');
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 const PORT = 8903;
@@ -498,18 +498,25 @@ print("PYTHON_ORACLE_SUCCESS")
     fs.writeFileSync(oraclePyPath, pythonOracleScript, { encoding: 'utf-8' });
 
     try {
-        const pyCmd = process.env.PYTHON || 'python';
+        const pyCmd = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
         let pyResult;
         try {
-            pyResult = execSync(`uv run python "${oraclePyPath}" "${tmpComunasCsv}" "${tmpSeriesCsv}" "${tmpSingleComunaCsv}"`, {
+            pyResult = execFileSync(pyCmd, [oraclePyPath, tmpComunasCsv, tmpSeriesCsv, tmpSingleComunaCsv], {
                 cwd: REPO_ROOT,
                 encoding: 'utf-8'
             });
-        } catch (uvErr) {
-            pyResult = execSync(`"${pyCmd}" "${oraclePyPath}" "${tmpComunasCsv}" "${tmpSeriesCsv}" "${tmpSingleComunaCsv}"`, {
-                cwd: REPO_ROOT,
-                encoding: 'utf-8'
-            });
+        } catch (pyErr) {
+            try {
+                pyResult = execFileSync('python3', [oraclePyPath, tmpComunasCsv, tmpSeriesCsv, tmpSingleComunaCsv], {
+                    cwd: REPO_ROOT,
+                    encoding: 'utf-8'
+                });
+            } catch (py3Err) {
+                pyResult = execFileSync('python', [oraclePyPath, tmpComunasCsv, tmpSeriesCsv, tmpSingleComunaCsv], {
+                    cwd: REPO_ROOT,
+                    encoding: 'utf-8'
+                });
+            }
         }
         if (pyResult.includes('PYTHON_ORACLE_SUCCESS')) {
             console.log('  [PASS] Python csv.reader oracle parsed 100% of adversarial CSVs cleanly:');
