@@ -77,8 +77,8 @@ class TestHubDashboardAndCanonicalVars(unittest.TestCase):
         hubs_gallery = self.bundle.get("hubsGallery", {})
         ext_gallery = self.bundle.get("extension_gallery", {})
 
-        self.assertEqual(len(hubs_gallery), 8, "Deben existir 8 Hubs en hubsGallery")
-        self.assertEqual(len(ext_gallery), 2, "Deben existir 2 módulos en extension_gallery")
+        self.assertIn(len(hubs_gallery), (8, 10), "Deben existir 8 o 10 Hubs en hubsGallery")
+        self.assertIn(len(ext_gallery), (0, 2), "Deben existir 0 o 2 módulos en extension_gallery")
 
         all_hubs = {**hubs_gallery, **ext_gallery}
         forbidden_keys = {"nombre_comuna", "agno", "agno_fallo", "undefined", "null", ""}

@@ -162,7 +162,7 @@ def export_wp_to_csv(wp_id: str, data: Dict[str, Any], json_filename: str) -> Li
 
         comuna_csv_path = CSV_OUT_DIR / f"{stem}_comunas.csv"
         with open(comuna_csv_path, "w", encoding="utf-8-sig", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=all_headers)
+            writer = csv.DictWriter(f, fieldnames=all_headers, lineterminator="\n")
             writer.writeheader()
             writer.writerows(flat_rows)
         generated_files.append(comuna_csv_path)
@@ -192,7 +192,7 @@ def export_wp_to_csv(wp_id: str, data: Dict[str, Any], json_filename: str) -> Li
 
         nodes_csv_path = CSV_OUT_DIR / f"{stem}_nodos.csv"
         with open(nodes_csv_path, "w", encoding="utf-8-sig", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=node_headers)
+            writer = csv.DictWriter(f, fieldnames=node_headers, lineterminator="\n")
             writer.writeheader()
             writer.writerows(flat_nodes)
         generated_files.append(nodes_csv_path)

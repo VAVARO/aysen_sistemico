@@ -45,6 +45,11 @@ jobs:
           python --version
           node --version
 
+      - name: Instalar dependencias Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
       # ------------------------------------------------------------------
       # Capa 1: compilacion y coherencia del Data Lake
       # ------------------------------------------------------------------
@@ -81,11 +86,20 @@ jobs:
       - name: Suite Editorial M1 (8 checks)
         run: python tests/verify_m1_editorial.py
 
-      - name: Suite Presets CECAN y NL2Chart (6 tests)
+      - name: Suite Presets CECAN y NL2Chart (9 tests)
         run: python tests/test_cecan_presets_and_nl2chart.py
 
       - name: Suite Mobile Responsive (7 tests)
         run: python tests/test_mobile_responsive_e2e.py
+
+      - name: Suite Red Anti-Slop (8 tests)
+        run: python tests/test_no_slop_hub_network.py
+
+      - name: Verificacion de 10 Hubs y 39 Nodos
+        run: python tests/verify_10_hubs_checklist.py
+
+      - name: Suite Pytest Completa (397 tests)
+        run: pytest tests/
 
       # ------------------------------------------------------------------
       # Capa 4: higiene del arbol de trabajo
@@ -94,5 +108,6 @@ jobs:
       # (lleva timestamp y latencias), por eso esta excluido de esta comprobacion.
       - name: Ninguna suite dejo el arbol sucio
         run: |
+          git status --short
           git diff --stat -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'
           git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'

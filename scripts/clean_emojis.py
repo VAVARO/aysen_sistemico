@@ -9,6 +9,7 @@ path = os.path.join(ROOT, 'mapa_territorial.html')
 if os.path.exists(path):
     with open(path, 'r', encoding='utf-8') as f:
         text = f.read()
+    original = text
 
     replacements = {
         '🏛️ Vista Comunal (10)': 'Vista Comunal (10)',
@@ -33,12 +34,14 @@ if os.path.exists(path):
         text = text.replace(old, new)
 
     EMOJI_REGEX = re.compile(r'[\U00010000-\U0010ffff]|[\u2600-\u27ff]|[\u2300-\u23ff]|[\u2b50-\u2b55]|[\u200d\ufe0f]')
-    text = EMOJI_REGEX.sub('', text)
+    cleaned = EMOJI_REGEX.sub('', text)
 
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(text)
-
-    print('[OK] mapa_territorial.html cleaned of all emojis')
+    if cleaned != original:
+        with open(path, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(cleaned)
+        print('[OK] mapa_territorial.html cleaned of all emojis')
+    else:
+        print('[OK] mapa_territorial.html 0 emojis detected')
 
 files_to_clean = [
     'index.html',

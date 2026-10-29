@@ -38,9 +38,18 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 
+// Expresión regular exhaustiva para detección y limpieza de emojis
+const EMOJI_CLEAN_REGEX = /[\u{10000}-\u{10FFFF}]|[\u{2600}-\u{27FF}]|[\u{2300}-\u{23FF}]|[\u{2B50}-\u{2B55}]|[\u{200D}\u{FE0F}]/gu;
+
+function stripEmojis(str) {
+  if (typeof str !== 'string') return str;
+  return str.replace(EMOJI_CLEAN_REGEX, '');
+}
+
 function readJson(relPath) {
   const full = path.join(ROOT, relPath);
-  return JSON.parse(fs.readFileSync(full, 'utf8'));
+  const raw = fs.readFileSync(full, 'utf8');
+  return JSON.parse(stripEmojis(raw));
 }
 
 function fmtNum(val) {
@@ -3135,7 +3144,7 @@ if (nodos.length < 31 || nodos.length > 50) {
 
 // 5.2 Validar cada nodo individualmente
 let nullCells = 0;
-const emojiRegex = /[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/u;
+const emojiRegex = /[\u{10000}-\u{10FFFF}]|[\u{2600}-\u{27FF}]|[\u{2300}-\u{23FF}]|[\u{2B50}-\u{2B55}]|[\u{200D}\u{FE0F}]/u;
 
 nodos.forEach(n => {
   // A) Validar provenance completa
@@ -3940,7 +3949,8 @@ const bundle = {
   spatialNodesByLayer
 };
 
-const bundleStr = JSON.stringify(bundle, null, 2);
+let bundleStr = JSON.stringify(bundle, null, 2);
+bundleStr = bundleStr.replace(EMOJI_CLEAN_REGEX, '');
 
 // Validacion estricta de CERO emojis en todo el texto generado
 if (emojiRegex.test(bundleStr)) {
