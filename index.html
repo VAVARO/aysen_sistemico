@@ -2747,11 +2747,11 @@
         if (!isDragging) return;
         const currentY = clientY;
         const raw = currentY - startY;
-        deltaY = Math.max(0, raw);
+        deltaY = Math.max(0, currentY - startY);
         history.push({ y: currentY, t: performance.now() });
         if (history.length > 6) history.shift();
         if (raw > 0) {
-          panel.style.transform = 'translateY(' + raw + 'px)';
+          panel.style.transform = 'translateY(' + deltaY + 'px)';
         } else {
           // hacia arriba: sigue al dedo con resistencia, nunca un tope duro
           panel.style.transform = 'translateY(' + rubberband(raw, panel.offsetHeight || 400) + 'px)';
@@ -2769,14 +2769,16 @@
         }
 
         panel.style.transition = 'transform 0.28s var(--ease-drawer)';
+        const elapsed = Math.max(1, performance.now() - startTime);
+        const avgVelocity = deltaY / elapsed;
         // Velocidad de liberacion: ventana corta de historial, no el promedio del gesto
         const last = history[history.length - 1];
         const first = history.find((h) => last.t - h.t <= 100) || history[0];
         const dtMs = Math.max(1, last.t - first.t);
-        const velocity = (last.y - first.y) / dtMs; // px/ms (signo: + hacia abajo)
+        const velocity = Math.max(avgVelocity, (last.y - first.y) / dtMs); // px/ms (signo: + hacia abajo)
         const projected = deltaY + project(velocity * 1000);
 
-        if (velocity > 0.11 || (velocity >= 0 && projected > 120)) {
+        if (deltaY > 120 || velocity > 0.11 || (velocity >= 0 && projected > 120)) {
           panel.style.transform = '';
           closeConceptDrawer();
         } else {
