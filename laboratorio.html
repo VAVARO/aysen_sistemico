@@ -3767,6 +3767,7 @@
     }
   </style>
 <script src="js/cabecera_global.js"></script>
+  <link rel="stylesheet" href="css/apple-design.css">
 </head>
 
 <body>
@@ -12427,7 +12428,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           }
           fitAndCenterCanvas();
         } else {
-          alert('No se pudieron asociar variables específicas a la consulta. Intente mencionar términos como salmón, patentes, leña, o cortes de luz.');
+          showToast('No se pudieron asociar variables específicas a la consulta. Intente mencionar términos como salmón, patentes, leña, o cortes de luz.');
         }
       }
 
@@ -13022,7 +13023,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             updateConnections();
             renderSubDashboards();
           } catch (err) {
-            alert('Archivo JSON no válido.');
+            showToast('Archivo JSON no válido.');
           }
         };
         reader.readAsText(file);

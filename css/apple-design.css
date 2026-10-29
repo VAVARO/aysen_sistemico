@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Capa transversal de accesibilidad y artesanía (auditoría Apple Design).
+   Se carga DESPUÉS de los estilos propios de cada página.
+   ========================================================================== */
+
+html {
+  font-optical-sizing: auto;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Foco visible coherente (cobalto) para teclado; no afecta al foco por puntero */
+:where(a, button, input, select, textarea, summary, [role="button"], [tabindex]):focus-visible {
+  outline: 2px solid #0059c5;
+  outline-offset: 2px;
+}
+
+/* Movimiento reducido: sin desplazamientos ni resortes; solo fundidos breves */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-property: opacity, color, background-color, border-color !important;
+    transition-duration: 150ms !important;
+    transition-delay: 0ms !important;
+  }
+  .drawer, #concept-drawer, .mobile-nav-panel { transform: none; }
+}
+
+/* Transparencia reducida: superficies sólidas, sin desenfoque */
+@media (prefers-reduced-transparency: reduce) {
+  *, *::before, *::after {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .glass-surface, .mobile-nav-panel, header, .zoom-hud-buttons, .canvas-context-menu {
+    background-color: #fcf9f8 !important;
+  }
+}
+
+/* Contraste alto: fondos casi sólidos y bordes definidos */
+@media (prefers-contrast: more) {
+  .glass-surface, .mobile-nav-panel, header, #concept-drawer, .zoom-hud-buttons, .canvas-context-menu {
+    background-color: #ffffff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    border-color: #1c1b1b !important;
+  }
+  :where(a, button, input, select, textarea):focus-visible { outline-width: 3px; }
+}

@@ -808,6 +808,7 @@
     }
   </style>
 <script src="js/cabecera_global.js"></script>
+  <link rel="stylesheet" href="css/apple-design.css">
 </head>
 
 <body>
@@ -1806,8 +1807,10 @@
     let nextPostalIdx = 1;
     let morphPhase = 'dwell';
     let phaseTimer = 0;
-    const DWELL_DURATION = 3.8;
-    const MORPH_DURATION = 2.5;
+    // Movimiento reducido: transicion breve y permanencia larga (sin deformacion continua)
+    const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DWELL_DURATION = REDUCED_MOTION ? 8 : 3.8;
+    const MORPH_DURATION = REDUCED_MOTION ? 0.4 : 2.5;
 
     const landmarkTitleEl = document.getElementById('landmarkTitle');
     const landmarkPipsContainer = document.getElementById('landmarkPips');
