@@ -2721,12 +2721,19 @@
       let startTime = 0;
       let deltaY = 0;
 
+      let history = []; // ultimas posiciones para estimar velocidad al soltar
+      // Resistencia progresiva (rubber-banding) al arrastrar contra el borde
+      const rubberband = (over, dim, c = 0.55) => (over * dim * c) / (dim + c * Math.abs(over));
+      // Proyeccion de momentum (tasa tipo scroll), v en px/s
+      const project = (v, rate = 0.998) => (v / 1000) * rate / (1 - rate);
+
       const onStart = (clientY, pointerId) => {
         if (drawer.getAttribute('aria-hidden') === 'true') return;
         isDragging = true;
         startY = clientY;
         startTime = performance.now();
         deltaY = 0;
+        history = [{ y: clientY, t: startTime }];
         panel.style.transition = 'none';
 
         if (pointerId !== undefined && handle.setPointerCapture) {
@@ -2739,9 +2746,15 @@
       const onMove = (clientY) => {
         if (!isDragging) return;
         const currentY = clientY;
-        deltaY = Math.max(0, currentY - startY);
-        if (deltaY > 0) {
-          panel.style.transform = 'translateY(' + deltaY + 'px)';
+        const raw = currentY - startY;
+        deltaY = Math.max(0, raw);
+        history.push({ y: currentY, t: performance.now() });
+        if (history.length > 6) history.shift();
+        if (raw > 0) {
+          panel.style.transform = 'translateY(' + raw + 'px)';
+        } else {
+          // hacia arriba: sigue al dedo con resistencia, nunca un tope duro
+          panel.style.transform = 'translateY(' + rubberband(raw, panel.offsetHeight || 400) + 'px)';
         }
       };
 
@@ -2756,10 +2769,14 @@
         }
 
         panel.style.transition = 'transform 0.28s var(--ease-drawer)';
-        const elapsed = Math.max(1, performance.now() - startTime);
-        const velocity = deltaY / elapsed; // px/ms
+        // Velocidad de liberacion: ventana corta de historial, no el promedio del gesto
+        const last = history[history.length - 1];
+        const first = history.find((h) => last.t - h.t <= 100) || history[0];
+        const dtMs = Math.max(1, last.t - first.t);
+        const velocity = (last.y - first.y) / dtMs; // px/ms (signo: + hacia abajo)
+        const projected = deltaY + project(velocity * 1000);
 
-        if (deltaY > 120 || velocity > 0.11) {
+        if (velocity > 0.11 || (velocity >= 0 && projected > 120)) {
           panel.style.transform = '';
           closeConceptDrawer();
         } else {
