@@ -99,7 +99,14 @@ jobs:
         run: python tests/verify_10_hubs_checklist.py
 
       - name: Suite Pytest Completa (398 tests)
-        run: python -m pytest tests/
+        run: |
+          python -m pytest -v --tb=short tests/ 2>&1 | tee pytest_output.txt || {
+            echo "## Pytest Failure Log" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            tail -n 120 pytest_output.txt >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            exit 1
+          }
 
       # ------------------------------------------------------------------
       # Capa 4: higiene del arbol de trabajo
