@@ -1,7 +1,7 @@
 {
   "fuente": "Instituto Nacional de Estadísticas (INE) - Encuesta Mensual de Alojamiento Turístico (EMAT)",
   "url_origen": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
-  "fecha_extraccion": "2026-10-19T11:31:51.154757+00:00",
+  "fecha_extraccion": "2026-10-30T15:07:09.171325+00:00",
   "cobertura_temporal": "Serie Oficial 2015-2026",
   "series_anuales_regionales": [
     {

@@ -98,6 +98,9 @@ jobs:
       - name: Verificacion de 10 Hubs y 39 Nodos
         run: python tests/verify_10_hubs_checklist.py
 
+      - name: Suite Coherencia Metodologica y CECAN Atlas (16 tests)
+        run: python tests/test_coherencia_metodologia_y_cecan.py
+
       - name: Suite Pytest Completa (398 tests)
         run: |
           python -m pytest -v --tb=short tests/ 2>&1 | tee pytest_output.txt || {

@@ -5,7 +5,7 @@
   "dataset_id": "inversion_seia_economia",
   "titulo": "Inversión SEIA, Estructura Empresarial SII, Empleo y Licitaciones de la Región de Aysén",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-16T18:36:28.781095+00:00",
+  "fecha_extraccion": "2026-10-30T15:07:02.427203+00:00",
   "fuentes_primarias": [
     {
       "institucion": "Servicio de Evaluación Ambiental (SEA)",
@@ -684,8 +684,7 @@
             "Gestión de Residuos y Saneamiento",
             "Infraestructura Vial y Edificación Pública"
           ],
-          "proyecto_emblematico_reciente": "Parque Eólico Alto Baguales y Ampliación (Edelaysen, 18.5 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 890
+          "proyecto_emblematico_reciente": "Parque Eólico Alto Baguales y Ampliación (Edelaysen, 18.5 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 5535,
@@ -704,10 +703,7 @@
           "informalidad_laboral_estimada_pct": 21.2,
           "destino_turistico_sernatur": "Coyhaique y Cuenca del Río Simpson",
           "pernoctaciones_anuales_estimadas": 185000,
-          "licitaciones_mercado_publico_anual_mclp": 38500,
-          "compras_publicas_adjudicadas_locales_pct": 58.4,
-          "fuga_compras_publicas_extrarregional_pct": 41.6,
-          "parcelaciones_rurales_sag_certificadas": 3240
+          "licitaciones_mercado_publico_anual_mclp": 38500
         },
         "series_historicas": [
           {
@@ -1005,8 +1001,7 @@
             "Electrificación Rural Aislada",
             "Agropecuario y Manejo Forestal"
           ],
-          "proyecto_emblematico_reciente": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde (MOP Vialidad, 15.2 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 780
+          "proyecto_emblematico_reciente": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde (MOP Vialidad, 15.2 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 76,
@@ -1025,10 +1020,7 @@
           "informalidad_laboral_estimada_pct": 31.0,
           "destino_turistico_sernatur": "Carretera Austral Norte - Valle de Lago Verde y La Tapera",
           "pernoctaciones_anuales_estimadas": 4200,
-          "licitaciones_mercado_publico_anual_mclp": 2400,
-          "compras_publicas_adjudicadas_locales_pct": 22.1,
-          "fuga_compras_publicas_extrarregional_pct": 77.9,
-          "parcelaciones_rurales_sag_certificadas": 185
+          "licitaciones_mercado_publico_anual_mclp": 2400
         },
         "series_historicas": [
           {
@@ -1326,8 +1318,7 @@
             "Infraestructura Portuaria y Logística Marítima",
             "Plantas Procesadoras de Alimentos"
           ],
-          "proyecto_emblematico_reciente": "Planta de Procesamiento y Congelado Chacabuco (AquaChile, 35.0 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 960
+          "proyecto_emblematico_reciente": "Planta de Procesamiento y Congelado Chacabuco (AquaChile, 35.0 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 2100,
@@ -1346,10 +1337,7 @@
           "informalidad_laboral_estimada_pct": 19.5,
           "destino_turistico_sernatur": "Puerto Aysén - Fiordos y Parque Nacional Laguna San Rafael",
           "pernoctaciones_anuales_estimadas": 92000,
-          "licitaciones_mercado_publico_anual_mclp": 24800,
-          "compras_publicas_adjudicadas_locales_pct": 54.6,
-          "fuga_compras_publicas_extrarregional_pct": 45.4,
-          "parcelaciones_rurales_sag_certificadas": 1120
+          "licitaciones_mercado_publico_anual_mclp": 24800
         },
         "series_historicas": [
           {
@@ -1647,8 +1635,7 @@
             "Infraestructura Portuaria MOP",
             "Generación Hidroeléctrica de Pasada"
           ],
-          "proyecto_emblematico_reciente": "Centro de Engorda Canal Jacaf Sur (Australis Mar, 8.5 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 945
+          "proyecto_emblematico_reciente": "Centro de Engorda Canal Jacaf Sur (Australis Mar, 8.5 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 620,
@@ -1667,10 +1654,7 @@
           "informalidad_laboral_estimada_pct": 23.0,
           "destino_turistico_sernatur": "Carretera Austral Norte - Puyuhuapi, Queulat y Raúl Marín Balmaceda",
           "pernoctaciones_anuales_estimadas": 48000,
-          "licitaciones_mercado_publico_anual_mclp": 8900,
-          "compras_publicas_adjudicadas_locales_pct": 38.2,
-          "fuga_compras_publicas_extrarregional_pct": 61.8,
-          "parcelaciones_rurales_sag_certificadas": 490
+          "licitaciones_mercado_publico_anual_mclp": 8900
         },
         "series_historicas": [
           {
@@ -1968,8 +1952,7 @@
             "Pesca Bentónica y Plantas de Proceso",
             "Infraestructura de Conectividad Insular"
           ],
-          "proyecto_emblematico_reciente": "Conservación Rampa y Muelle Conectividad Melinka (MOP DOP, 8.4 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 820
+          "proyecto_emblematico_reciente": "Conservación Rampa y Muelle Conectividad Melinka (MOP DOP, 8.4 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 171,
@@ -1988,10 +1971,7 @@
           "informalidad_laboral_estimada_pct": 35.4,
           "destino_turistico_sernatur": "Archipiélago de las Guaitecas - Melinka y Ruta de la Ballena Azul",
           "pernoctaciones_anuales_estimadas": 9500,
-          "licitaciones_mercado_publico_anual_mclp": 4600,
-          "compras_publicas_adjudicadas_locales_pct": 24.5,
-          "fuga_compras_publicas_extrarregional_pct": 75.5,
-          "parcelaciones_rurales_sag_certificadas": 15
+          "licitaciones_mercado_publico_anual_mclp": 4600
         },
         "series_historicas": [
           {
@@ -2289,8 +2269,7 @@
             "Fruticultura de Primor y Riego",
             "Conectividad Lacustre y Vial"
           ],
-          "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Compañía Minera Cerro Bayo, 32.0 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 880
+          "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Compañía Minera Cerro Bayo, 32.0 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 400,
@@ -2309,10 +2288,7 @@
           "informalidad_laboral_estimada_pct": 24.1,
           "destino_turistico_sernatur": "Cuenca del Lago General Carrera - Chile Chico y Sector Jeinimeni",
           "pernoctaciones_anuales_estimadas": 34000,
-          "licitaciones_mercado_publico_anual_mclp": 7400,
-          "compras_publicas_adjudicadas_locales_pct": 41.2,
-          "fuga_compras_publicas_extrarregional_pct": 58.8,
-          "parcelaciones_rurales_sag_certificadas": 980
+          "licitaciones_mercado_publico_anual_mclp": 7400
         },
         "series_historicas": [
           {
@@ -2610,8 +2586,7 @@
             "Turismo de Naturaleza e Instalaciones",
             "Energía y Saneamiento Rural"
           ],
-          "proyecto_emblematico_reciente": "Pavimentación y Obras de Seguridad Ruta 7 Villa Cerro Castillo - Bahía Murta (MOP, 34.5 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 810
+          "proyecto_emblematico_reciente": "Pavimentación y Obras de Seguridad Ruta 7 Villa Cerro Castillo - Bahía Murta (MOP, 34.5 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 238,
@@ -2630,10 +2605,7 @@
           "informalidad_laboral_estimada_pct": 27.8,
           "destino_turistico_sernatur": "Chelenko - Santuario de la Naturaleza Capillas de Mármol y PN Cerro Castillo",
           "pernoctaciones_anuales_estimadas": 68000,
-          "licitaciones_mercado_publico_anual_mclp": 5800,
-          "compras_publicas_adjudicadas_locales_pct": 32.8,
-          "fuga_compras_publicas_extrarregional_pct": 67.2,
-          "parcelaciones_rurales_sag_certificadas": 1280
+          "licitaciones_mercado_publico_anual_mclp": 5800
         },
         "series_historicas": [
           {
@@ -2931,8 +2903,7 @@
             "Infraestructura Vial Carretera Austral Sur",
             "Servicios de Apoyo a la Conservación y Turismo"
           ],
-          "proyecto_emblematico_reciente": "Mini Central Hidroeléctrica San Victorino (Edelaysen, 9.8 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 850
+          "proyecto_emblematico_reciente": "Mini Central Hidroeléctrica San Victorino (Edelaysen, 9.8 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 295,
@@ -2951,10 +2922,7 @@
           "informalidad_laboral_estimada_pct": 22.6,
           "destino_turistico_sernatur": "Provincia de los Glaciares - Parque Nacional Patagonia (Tamango y Valle Chacabuco)",
           "pernoctaciones_anuales_estimadas": 31000,
-          "licitaciones_mercado_publico_anual_mclp": 6500,
-          "compras_publicas_adjudicadas_locales_pct": 44.5,
-          "fuga_compras_publicas_extrarregional_pct": 55.5,
-          "parcelaciones_rurales_sag_certificadas": 390
+          "licitaciones_mercado_publico_anual_mclp": 6500
         },
         "series_historicas": [
           {
@@ -3252,8 +3220,7 @@
             "Generación Eléctrica Comunitaria Híbrida",
             "Ecoturismo y Conservación"
           ],
-          "proyecto_emblematico_reciente": "Rampa de Embarque y Explanada Bahía Bahamóndez (MOP DOP, 8.2 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 760
+          "proyecto_emblematico_reciente": "Rampa de Embarque y Explanada Bahía Bahamóndez (MOP DOP, 8.2 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 57,
@@ -3272,10 +3239,7 @@
           "informalidad_laboral_estimada_pct": 28.5,
           "destino_turistico_sernatur": "Extremo Sur Carretera Austral - Glaciar O'Higgins y Campos de Hielo Sur",
           "pernoctaciones_anuales_estimadas": 12500,
-          "licitaciones_mercado_publico_anual_mclp": 3100,
-          "compras_publicas_adjudicadas_locales_pct": 18.4,
-          "fuga_compras_publicas_extrarregional_pct": 81.6,
-          "parcelaciones_rurales_sag_certificadas": 140
+          "licitaciones_mercado_publico_anual_mclp": 3100
         },
         "series_historicas": [
           {
@@ -3573,8 +3537,7 @@
             "Turismo Patrimonial y Pasarelas de Ciprés",
             "Sistemas Energéticos Híbridos"
           ],
-          "proyecto_emblematico_reciente": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay (MOP DOP, 12.4 MM USD)",
-          "plazo_promedio_evaluacion_seia_dias": 740
+          "proyecto_emblematico_reciente": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay (MOP DOP, 12.4 MM USD)"
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 48,
@@ -3593,10 +3556,7 @@
           "informalidad_laboral_estimada_pct": 32.0,
           "destino_turistico_sernatur": "Caleta Tortel - Fiordos del Baker, Puerto Yungay y Glaciar Steffens",
           "pernoctaciones_anuales_estimadas": 18200,
-          "licitaciones_mercado_publico_anual_mclp": 3400,
-          "compras_publicas_adjudicadas_locales_pct": 21.0,
-          "fuga_compras_publicas_extrarregional_pct": 79.0,
-          "parcelaciones_rurales_sag_certificadas": 65
+          "licitaciones_mercado_publico_anual_mclp": 3400
         },
         "series_historicas": [
           {

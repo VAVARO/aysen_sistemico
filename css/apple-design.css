@@ -49,3 +49,32 @@ html {
   }
   :where(a, button, input, select, textarea):focus-visible { outline-width: 3px; }
 }
+
+/* Sello sobrio de actualizacion mensual automatica: una linea tipografica plana,
+   sin recuadros ni emojis (js/auto_update_seal.js la rellena). */
+.auto-update-seal {
+  margin: 0;
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #4a4745;
+}
+.auto-update-seal[hidden] { display: none; }
+.auto-update-seal--floating {
+  position: fixed;
+  left: 0.85rem;
+  bottom: 0.4rem;
+  z-index: 40;
+  max-width: calc(100vw - 7rem);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767px) {
+  .auto-update-seal--floating { bottom: 3.6rem; }
+}
+@media (prefers-contrast: more) {
+  .auto-update-seal { color: #1c1b1b; }
+}

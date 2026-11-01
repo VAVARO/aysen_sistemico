@@ -1,9 +1,9 @@
 {
   "url": "https://api.cne.cl/v3/combustibles/vehicular/estaciones?region=11",
-  "timestamp": "2026-10-20T19:55:03.349639+00:00",
-  "status_code": 404,
+  "timestamp": "2026-10-30T15:06:43.073908+00:00",
+  "status_code": null,
   "success": false,
   "content_length": 0,
-  "error": "HTTPError 404: Not Found",
+  "error": "URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
   "body_preview": null
 }

@@ -5,7 +5,7 @@
   "dataset_id": "turismo_sernatur_conaf",
   "titulo": "Turismo, Prestadores SERNATUR, ZOIT, Ocupación EMAT y Visitantes Parques SNASPE",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-19T11:31:51.154757+00:00",
+  "fecha_extraccion": "2026-10-30T15:07:09.229786+00:00",
   "fuentes_primarias": [
     {
       "institucion": "SERNATUR",

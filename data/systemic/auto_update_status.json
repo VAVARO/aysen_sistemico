@@ -1,0 +1,461 @@
+{
+  "frequency": "Mensual (día 1 de cada mes)",
+  "lastRun": "2026-10-30T15:05:39+00:00",
+  "activeApiConnectors": 7,
+  "totalSources": 33,
+  "summary": {
+    "live_api": 5,
+    "curated_fallback": 6,
+    "stages_restored": 1,
+    "stages_skipped": 0
+  },
+  "usgs": {
+    "total_events": 36,
+    "max_magnitude": 6.3,
+    "max_magnitude_place": "239 km WNW of Cochrane, Chile",
+    "max_magnitude_time_ms": 1731065880376
+  },
+  "connectors": [
+    {
+      "connector": "usgs",
+      "key": "usgs",
+      "nodes": [
+        31
+      ],
+      "ok": true,
+      "mode": "live_api",
+      "http_status": 200,
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minlatitude=-49.5&maxlatitude=-43.5&minlongitude=-76.0&maxlongitude=-71.0&minmagnitude=2.5&starttime=2015-01-01",
+      "checked_at": "2026-10-30T15:05:41+00:00",
+      "elapsed_s": 2.06,
+      "error": "",
+      "metrics": {
+        "total_events": 36,
+        "max_magnitude": 6.3,
+        "max_magnitude_place": "239 km WNW of Cochrane, Chile",
+        "max_magnitude_time_ms": 1731065880376
+      },
+      "updated_files": [
+        "data/raw/social_ambiental/usgs_earthquakes_aysen_2015_2026.geojson"
+      ]
+    },
+    {
+      "connector": "ckan_cne",
+      "key": "cne_combustibles",
+      "nodes": [
+        13
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": null,
+      "url": "http://datos.energiaabierta.cl/api/3/action/package_search?q=combustibles+precios&rows=5",
+      "checked_at": "2026-10-30T15:05:43+00:00",
+      "elapsed_s": 0.02,
+      "error": "CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)",
+      "metrics": {},
+      "updated_files": []
+    },
+    {
+      "connector": "ckan_cne",
+      "key": "cne_energia",
+      "nodes": [
+        11
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": null,
+      "url": "http://datos.energiaabierta.cl/api/3/action/package_search?q=generacion+electrica&rows=5",
+      "checked_at": "2026-10-30T15:05:44+00:00",
+      "elapsed_s": 0.0,
+      "error": "CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)",
+      "metrics": {},
+      "updated_files": []
+    },
+    {
+      "connector": "ckan_datos_gob",
+      "key": "deis_salud",
+      "nodes": [
+        24
+      ],
+      "ok": true,
+      "mode": "live_api",
+      "http_status": 200,
+      "url": "https://datos.gob.cl/api/3/action/datastore_search?resource_id=2c44d782-3365-44e3-aefb-2c8b8363a1bc&limit=1000",
+      "checked_at": "2026-10-30T15:05:45+00:00",
+      "elapsed_s": 1.73,
+      "error": "",
+      "metrics": {
+        "packages_found": 7,
+        "resources": 15,
+        "aysen_rows": 9
+      },
+      "updated_files": [
+        "data/raw/social_ambiental/ckan_deis_salud_snapshot.json"
+      ]
+    },
+    {
+      "connector": "ckan_datos_gob",
+      "key": "mineduc",
+      "nodes": [
+        25
+      ],
+      "ok": true,
+      "mode": "live_api",
+      "http_status": 200,
+      "url": "https://datos.gob.cl/api/3/action/package_search?q=mineduc&rows=5",
+      "checked_at": "2026-10-30T15:05:58+00:00",
+      "elapsed_s": 0.85,
+      "error": "",
+      "metrics": {
+        "packages_found": 32,
+        "resources": 5
+      },
+      "updated_files": [
+        "data/raw/social_ambiental/ckan_mineduc_snapshot.json"
+      ]
+    },
+    {
+      "connector": "ckan_datos_gob",
+      "key": "sinim",
+      "nodes": [
+        15,
+        16
+      ],
+      "ok": true,
+      "mode": "live_api",
+      "http_status": 200,
+      "url": "https://datos.gob.cl/api/3/action/package_search?q=finanzas+municipales&rows=5",
+      "checked_at": "2026-10-30T15:05:59+00:00",
+      "elapsed_s": 0.74,
+      "error": "",
+      "metrics": {
+        "packages_found": 3,
+        "resources": 6
+      },
+      "updated_files": [
+        "data/raw/politico_sinim/ckan_sinim_snapshot.json"
+      ]
+    },
+    {
+      "connector": "ckan_datos_gob",
+      "key": "serpat",
+      "nodes": [
+        22
+      ],
+      "ok": true,
+      "mode": "live_api",
+      "http_status": 200,
+      "url": "https://datos.gob.cl/api/3/action/package_search?q=propiedad+fiscal&rows=5",
+      "checked_at": "2026-10-30T15:06:05+00:00",
+      "elapsed_s": 0.89,
+      "error": "",
+      "metrics": {
+        "packages_found": 1,
+        "resources": 1
+      },
+      "updated_files": [
+        "data/raw/territorio_concesiones/ckan_serpat_snapshot.json"
+      ]
+    },
+    {
+      "connector": "arcgis_subpesca",
+      "key": "subpesca",
+      "nodes": [
+        6
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": 404,
+      "url": "https://mapas.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+      "checked_at": "2026-10-30T15:06:06+00:00",
+      "elapsed_s": 0.0,
+      "error": "2 candidato(s) fallaron: sin respuesta | 404",
+      "metrics": {
+        "attempts": [
+          {
+            "layer_url": "https://ide.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0",
+            "http_status": null,
+            "ok": false,
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)"
+          },
+          {
+            "layer_url": "https://mapas.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0",
+            "http_status": 404,
+            "ok": false,
+            "error": "ArcGIS no respondio 200 (HTTP 404 Not Found)"
+          }
+        ]
+      },
+      "updated_files": []
+    },
+    {
+      "connector": "arcgis_bbnn",
+      "key": "bbnn",
+      "nodes": [
+        22
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": null,
+      "url": "https://idembn.bienes.cl/arcgis/rest/services/PropiedadFiscal/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+      "checked_at": "2026-10-30T15:06:07+00:00",
+      "elapsed_s": 0.0,
+      "error": "2 candidato(s) fallaron: sin respuesta | sin respuesta",
+      "metrics": {
+        "attempts": [
+          {
+            "layer_url": "https://ide.bienes.cl/arcgis/rest/services/IDE_MBN/PropiedadFiscal/MapServer/0",
+            "http_status": null,
+            "ok": false,
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error timed out>)"
+          },
+          {
+            "layer_url": "https://idembn.bienes.cl/arcgis/rest/services/PropiedadFiscal/MapServer/0",
+            "http_status": null,
+            "ok": false,
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión>)"
+          }
+        ]
+      },
+      "updated_files": []
+    },
+    {
+      "connector": "arcgis_conaf",
+      "key": "conaf",
+      "nodes": [
+        27
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": null,
+      "url": "https://ide.conaf.cl/arcgis/rest/services/Catastro/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+      "checked_at": "2026-10-30T15:06:22+00:00",
+      "elapsed_s": 0.0,
+      "error": "2 candidato(s) fallaron: 404 | sin respuesta",
+      "metrics": {
+        "attempts": [
+          {
+            "layer_url": "https://sit.conaf.cl/server/rest/services/Catastro/CatastroVegetacional/MapServer/0",
+            "http_status": 404,
+            "ok": false,
+            "error": "ArcGIS no respondio 200 (HTTP 404 Not Found)"
+          },
+          {
+            "layer_url": "https://ide.conaf.cl/arcgis/rest/services/Catastro/MapServer/0",
+            "http_status": null,
+            "ok": false,
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)"
+          }
+        ]
+      },
+      "updated_files": []
+    },
+    {
+      "connector": "sinca",
+      "key": "sinca",
+      "nodes": [
+        30
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": 403,
+      "url": "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/",
+      "checked_at": "2026-10-30T15:06:23+00:00",
+      "elapsed_s": 0.77,
+      "error": "SINCA no respondio 200 (HTTP 403 Forbidden)",
+      "metrics": {},
+      "updated_files": []
+    }
+  ],
+  "stages": [
+    {
+      "name": "usgs",
+      "kind": "live_connector",
+      "group": "earthquake.usgs.gov",
+      "status": "ok",
+      "detail": "",
+      "seconds": 2.3,
+      "changed": 1
+    },
+    {
+      "name": "ckan:cne_combustibles",
+      "kind": "live_connector",
+      "group": "datos.energiaabierta.cl",
+      "status": "ok",
+      "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
+      "seconds": 0.1,
+      "changed": 0
+    },
+    {
+      "name": "ckan:cne_energia",
+      "kind": "live_connector",
+      "group": "datos.energiaabierta.cl",
+      "status": "ok",
+      "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
+      "seconds": 0.1,
+      "changed": 0
+    },
+    {
+      "name": "ckan:deis_salud",
+      "kind": "live_connector",
+      "group": "datos.gob.cl",
+      "status": "ok",
+      "detail": "",
+      "seconds": 13.7,
+      "changed": 1
+    },
+    {
+      "name": "ckan:mineduc",
+      "kind": "live_connector",
+      "group": "datos.gob.cl",
+      "status": "ok",
+      "detail": "",
+      "seconds": 1.0,
+      "changed": 1
+    },
+    {
+      "name": "ckan:sinim",
+      "kind": "live_connector",
+      "group": "datos.gob.cl",
+      "status": "ok",
+      "detail": "",
+      "seconds": 5.5,
+      "changed": 1
+    },
+    {
+      "name": "ckan:serpat",
+      "kind": "live_connector",
+      "group": "datos.gob.cl",
+      "status": "ok",
+      "detail": "",
+      "seconds": 1.1,
+      "changed": 1
+    },
+    {
+      "name": "arcgis:subpesca",
+      "kind": "live_connector",
+      "group": "ide.subpesca.cl",
+      "status": "ok",
+      "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
+      "seconds": 1.2,
+      "changed": 0
+    },
+    {
+      "name": "arcgis:bbnn",
+      "kind": "live_connector",
+      "group": "ide.bienes.cl",
+      "status": "ok",
+      "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
+      "seconds": 14.6,
+      "changed": 0
+    },
+    {
+      "name": "arcgis:conaf",
+      "kind": "live_connector",
+      "group": "sit.conaf.cl",
+      "status": "ok",
+      "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
+      "seconds": 0.6,
+      "changed": 0
+    },
+    {
+      "name": "sinca",
+      "kind": "live_connector",
+      "group": "sinca.mma.gob.cl",
+      "status": "ok",
+      "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
+      "seconds": 0.9,
+      "changed": 0
+    },
+    {
+      "name": "wp_01_gobernanza_finanzas",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 17.9,
+      "changed": 3
+    },
+    {
+      "name": "wp_02_energia_telecom",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 3.9,
+      "changed": 6
+    },
+    {
+      "name": "wp_03_territorio_concesiones",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 10.4,
+      "changed": 8
+    },
+    {
+      "name": "wp_04_inversion_seia_economia",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 6.0,
+      "changed": 7
+    },
+    {
+      "name": "wp_05_social_riesgos_apis",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 2.1,
+      "changed": 2
+    },
+    {
+      "name": "wp_06_turismo_sernatur",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 4.1,
+      "changed": 6
+    },
+    {
+      "name": "wp_07_biodiversidad_flora_fauna",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 0.8,
+      "changed": 4
+    },
+    {
+      "name": "wp_09_barometro_espejo",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "restored",
+      "detail": "codigo de salida 1: ERROR: No se encontró C:\\AGY\\BAROMETRO\\data\\barometro_summary.json",
+      "seconds": 0.5,
+      "changed": 0
+    },
+    {
+      "name": "wp_10_cultura_patrimonio",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 1.6,
+      "changed": 1
+    },
+    {
+      "name": "wp_11_ctci_anid_corfo",
+      "kind": "ingesta_script",
+      "group": "ingesta_wp",
+      "status": "ok",
+      "detail": "",
+      "seconds": 0.9,
+      "changed": 1
+    }
+  ]
+}

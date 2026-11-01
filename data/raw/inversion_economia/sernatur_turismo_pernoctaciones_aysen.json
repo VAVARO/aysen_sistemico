@@ -3,12 +3,12 @@
     "url": "https://www.sernatur.cl",
     "status": "ONLINE",
     "http_code": 200,
-    "timestamp_utc": "2026-10-16T18:36:28.090330+00:00",
+    "timestamp_utc": "2026-10-30T15:07:01.699785+00:00",
     "content_type": "text/html; charset=UTF-8"
   },
   "fuente": "Servicio Nacional de Turismo (SERNATUR) e Instituto Nacional de Estadísticas (INE)",
   "portal_url": "https://www.sernatur.cl",
-  "fecha_snapshot": "2026-10-16T18:36:25.144817+00:00",
+  "fecha_snapshot": "2026-10-30T15:06:57.366554+00:00",
   "encuesta": "Encuesta Mensual de Alojamiento Turístico (EMAT)",
   "total_pernoctaciones_anuales_region": 503400,
   "estacionalidad": {

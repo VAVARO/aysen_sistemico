@@ -1,0 +1,65 @@
+name: Actualizacion mensual
+
+# Actualizacion mensual automatizada por API de Aysen Sistemico.
+#
+# Corre el dia 1 de cada mes a las 09:00 UTC (06:00 en Chile continental con horario de
+# verano, UTC-3) y puede lanzarse a mano desde la pestana Actions (workflow_dispatch).
+#
+# Principio: una API estatal caida NO rompe la base. scripts/run_monthly_update.py aplica
+# un Circuit Breaker con Last-Known-Good: ante timeout, 403/500 o datos vacios/corruptos
+# restaura el ultimo dato valido de esa fuente y continua con las demas. Solo si la
+# compuerta de calidad (bundle + validador + sincronia) falla, el script revierte todo y
+# el workflow termina en rojo sin publicar nada.
+
+on:
+  schedule:
+    - cron: '0 9 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizacion-mensual
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    name: Extraer, validar y publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Configurar Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Actualizar datos desde APIs oficiales
+        run: python3 scripts/run_monthly_update.py
+
+      - name: Validar Data Lake
+        run: python3 scripts/validate_data_lake.py --all
+
+      - name: Verificar sincronia del bundle
+        run: node scripts/verify_bundle_sync.cjs
+
+      - name: Confirmar y publicar cambios
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/
+            git commit -m "chore(data): actualización mensual automática desde APIs oficiales"
+            git push
+          else
+            echo "Sin cambios en data/: no hay nada que publicar."
+          fi

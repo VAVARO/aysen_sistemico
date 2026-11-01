@@ -72,6 +72,7 @@
 
   <!-- Bundle local de datos de Aysén (10 Hubs, 39 Nodos, 10 Comunas) -->
   <script src="data/aysen_hubs_data.js"></script>
+  <script src="js/auto_update_seal.js" defer></script>
 
   <link rel="stylesheet" href="js/cabecera_global.css">
   <style>
@@ -689,7 +690,7 @@
       </div>
 
       <!-- ACCESO DIRECTO A LAS VISTAS PRINCIPALES -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 max-w-2xl gap-3 sm:gap-4 mt-8 pt-6 border-t border-border-subtle">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl gap-3 sm:gap-4 mt-8 pt-6 border-t border-border-subtle">
         
         <button onclick="switchTab('nodos')" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-colors duration-150 group">
           <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
@@ -713,6 +714,14 @@
             <span class="text-sm text-primary font-mono transition-transform group-hover:translate-x-1">↗</span>
           </div>
           <div class="text-xs text-muted mt-1">Cruces entre variables (en el Laboratorio)</div>
+        </a>
+
+        <a href="#seccion-arquitectura-fuentes" class="text-left p-3.5 rounded-sm border border-border-subtle hover:border-primary/40 hover:bg-white hover:shadow-xs transition-colors duration-150 group block no-underline">
+          <div class="font-serif text-lg font-bold text-on-surface group-hover:text-primary flex items-center justify-between">
+            <span>Metodología</span>
+            <span class="text-sm text-primary font-mono transition-transform group-hover:translate-y-0.5">↓</span>
+          </div>
+          <div class="text-xs text-muted mt-1">Funcionamiento y 28 fuentes oficiales</div>
         </a>
 
       </div>
@@ -745,6 +754,16 @@
             <span class="material-symbols-outlined text-[17px]">location_city</span>
             <span>Las 10 Comunas</span>
             <span class="ml-0.5 text-xs font-mono bg-black/5 text-muted px-1.5 py-0.5 rounded-sm" id="badge-count-comunas">10</span>
+          </button>
+
+          <button 
+            id="tab-btn-metodologia" 
+            onclick="scrollToMetodologia()" 
+            class="tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 text-on-surface hover:text-primary hover:bg-white/60"
+            aria-selected="false"
+          >
+            <span class="material-symbols-outlined text-[17px]">menu_book</span>
+            <span>Funcionamiento y Fuentes (28)</span>
           </button>
         </div>
 
@@ -911,6 +930,14 @@
         </div>
       </div>
 
+      <!-- Pie plano de navegación hacia Metodología y Fuentes -->
+      <div class="pt-2.5 pb-1 border-b border-border-subtle flex flex-wrap items-center justify-between text-xs gap-2">
+        <span class="text-muted font-mono text-[11px]">10 Hubs temáticos · 39 Nodos de datos · 10 Comunas de Aysén</span>
+        <a href="#seccion-arquitectura-fuentes" class="font-mono text-primary hover:text-primary-dark transition-colors duration-150 inline-flex items-center gap-1 font-medium text-[11px]">
+          <span>Ir a Funcionamiento, 28 Fuentes Oficiales y Régimen de Actualización ↓</span>
+        </a>
+      </div>
+
       <!-- 1.B: GRILLA DE FICHAS DE NODOS DE DATOS -->
       <div id="node-cards-wrapper" class="hidden">
         <div id="nodos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -952,6 +979,355 @@
         <span>Restablecer búsqueda</span>
       </button>
     </div>
+
+    <!-- SECCIÓN EDITORIAL: FUNCIONAMIENTO, FUENTES Y RÉGIMEN -->
+    <section id="seccion-arquitectura-fuentes" class="mt-14 pt-8 border-t border-[#e2e8f0] text-on-surface" style="box-shadow: none;">
+      
+      <!-- Cabecera de la Sección Metodológica -->
+      <div class="pb-6 border-b border-[#e2e8f0]">
+        <div class="font-mono text-xs uppercase tracking-wider text-primary font-semibold">Arquitectura y Procedencia de Datos</div>
+        <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface mt-2 leading-tight">
+          Funcionamiento de la Plataforma, Fuentes Oficiales y Régimen de Actualización
+        </h2>
+        <p class="font-sans text-xs sm:text-sm text-on-surface/80 mt-2 max-w-3xl leading-relaxed">
+          Estructura técnica de agregación sectorial, protocolos de sincronización automática con resguardo de continuidad y catálogo maestro de las 28 bases de datos públicas de la Región de Aysén.
+        </p>
+      </div>
+
+      <!-- BLOQUE 1: CÓMO LEER E INTERACTUAR CON LA SECCIÓN -->
+      <div id="bloque-como-leer" class="py-8 border-b border-[#e2e8f0]">
+        <div class="mb-6">
+          <div class="font-mono text-xs text-primary font-semibold tracking-wider uppercase">Bloque 01 · Guía de Navegación</div>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-on-surface mt-1">Cómo leer e interactuar con la sección</h3>
+          <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
+            Estructura relacional de 3 niveles analíticos para la exploración territorial y técnica de Aysén.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#e2e8f0]">
+          <!-- Nivel 01 -->
+          <div class="pr-0 md:pr-6 pb-6 md:pb-0">
+            <div class="font-mono text-xs font-semibold text-primary tracking-wide">
+              Nivel 01 · Los 10 Hubs Temáticos (I al X)
+            </div>
+            <p class="font-sans text-xs text-on-surface/80 mt-2 leading-relaxed">
+              Agrupación sectorial de primer nivel: I. Turismo, II. Pesca y Acuicultura, III. Energía y Telecomunicaciones, IV. Gobernanza y Finanzas, V. Economía e Inversión, VI. Demografía y Social, VII. Biodiversidad y Clima, VIII. Salud APS y Hospitales, IX. Cultura y Patrimonio, X. CTCi e Innovación. Cada Hub organiza los nodos satélites según su dominio funcional y concentra las fuentes sectoriales correspondientes.
+            </p>
+          </div>
+
+          <!-- Nivel 02 -->
+          <div class="px-0 md:px-6 py-6 md:py-0">
+            <div class="font-mono text-xs font-semibold text-primary tracking-wide">
+              Nivel 02 · Los 39 Nodos Satélites (#01 al #39)
+            </div>
+            <p class="font-sans text-xs text-on-surface/80 mt-2 leading-relaxed">
+              Unidades empíricas con series comunales verificadas para las 10 comunas de Aysén y series temporales 2015-2026. Al hacer clic en cualquier nodo se abre el panel técnico lateral (<span class="font-mono text-primary">#concept-drawer</span>) con metadatos de procedencia, gráfico, tabla resumen y descarga CSV con UTF-8 BOM.
+            </p>
+          </div>
+
+          <!-- Nivel 03 -->
+          <div class="pl-0 md:pl-6 pt-6 md:pt-0">
+            <div class="font-mono text-xs font-semibold text-primary tracking-wide">
+              Nivel 03 · Puentes Inter-Hub y Paso al Laboratorio Sistémico
+            </div>
+            <p class="font-sans text-xs text-on-surface/80 mt-2 leading-relaxed">
+              Las curvas entre nodos de distinto Hub representan relaciones empíricas documentadas (<span class="font-mono text-primary">systemicBridges</span>). Desde el panel lateral de cada nodo, los enlaces <span class="font-semibold">Abrir en el Laboratorio</span> y <span class="font-semibold">Cruzar en Laboratorio →</span> transfieren las variables (<span class="font-mono text-primary">varX</span>, <span class="font-mono text-primary">varY</span>) directamente al lienzo 2D de <span class="font-mono">laboratorio.html</span> para ejecutar regresiones, series temporales y cruces con el Barómetro Ciudadano.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE 2: RÉGIMEN DE ACTUALIZACIÓN EN 3 VELOCIDADES -->
+      <div id="bloque-regimen-actualizacion" class="py-8 border-b border-[#e2e8f0]">
+        <div class="mb-6">
+          <div class="font-mono text-xs text-primary font-semibold tracking-wider uppercase">Bloque 02 · Ciclo de Ingesta y Respaldo</div>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-on-surface mt-1">Régimen de Actualización en 3 Velocidades</h3>
+          <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
+            Protocolos técnicos diferenciados según la periodicidad de reporte institucional y mecanismos de contingencia.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table id="tabla-regimen-actualizacion" class="w-full text-left border-collapse font-sans text-xs" style="box-shadow: none;">
+            <thead>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <th class="py-3 pr-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Velocidad y Régimen</th>
+                <th class="py-3 px-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Período y Ventana de Ejecución</th>
+                <th class="py-3 px-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Instituciones y Conectores</th>
+                <th class="py-3 pl-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Mecanismo de Integridad y Respaldo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Velocidad 1 -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3.5 pr-4 align-top">
+                  <div class="font-mono font-semibold text-on-surface text-xs">Extracción Mensual vía API (Día 1 de cada mes, 06:00 AM)</div>
+                  <div class="text-[11px] text-muted mt-0.5">Ingesta recurrente automatizada</div>
+                </td>
+                <td class="py-3.5 px-4 align-top text-on-surface/80">
+                  <span class="font-mono">Mensual recurrente</span><br>
+                  Día 1 de cada mes, 06:00 AM (UTC-3 / 09:00 UTC)
+                </td>
+                <td class="py-3.5 px-4 align-top text-on-surface/80">
+                  Sismos USGS (GeoJSON), Combustibles y Generación CNE (CKAN/REST), Calidad del Aire SINCA (JSON), Catastros Geoespaciales IDE/Subpesca/CONAF (ArcGIS REST) y catálogos CKAN de <span class="font-mono">datos.gob.cl</span>.
+                </td>
+                <td class="py-3.5 pl-4 align-top text-on-surface/80">
+                  Sincronización desatendida vía HTTP/REST con validación de esquemas JSON, límites de tiempo de espera y almacenamiento de respaldo antes de reemplazo.
+                </td>
+              </tr>
+
+              <!-- Velocidad 2 -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3.5 pr-4 align-top">
+                  <div class="font-mono font-semibold text-on-surface text-xs">Sincronización de Cierres Administrativos Anuales/Semestrales (con Circuit Breaker)</div>
+                  <div class="text-[11px] text-muted mt-0.5">Consolidación contable y sectorial</div>
+                </td>
+                <td class="py-3.5 px-4 align-top text-on-surface/80">
+                  <span class="font-mono">Anual / Semestral</span><br>
+                  Ventana posterior al cierre formal de balances ministeriales
+                </td>
+                <td class="py-3.5 px-4 align-top text-on-surface/80">
+                  SUBDERE-SINIM, DIPRES-GORE, SERNAPESCA, DEIS-MINSAL, MINEDUC-SLEP, CEAD-SPD, SII, SEA-SEIA, ChileCompra, SERNATUR, SERPAT-CMN, ANID y CORFO.
+                </td>
+                <td class="py-3.5 pl-4 align-top text-on-surface/80">
+                  El sistema ejecuta sondas automáticas y mantiene un fusible <span class="font-mono font-semibold">Last-Known-Good</span> que preserva la última serie íntegra si un servidor ministerial presenta caídas, errores HTTP o respuestas truncadas.
+                </td>
+              </tr>
+
+              <!-- Velocidad 3 -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3.5 pr-4 align-top">
+                  <div class="font-mono font-semibold text-on-surface text-xs">Líneas Base Estructurales y Muestrales</div>
+                  <div class="text-[11px] text-muted mt-0.5">Estructuras sociodemográficas de fondo</div>
+                </td>
+                <td class="py-3.5 px-4 align-top text-on-surface/80">
+                  <span class="font-mono">Periódica / Por oleada</span><br>
+                  Actualizadas por cada nueva ronda oficial
+                </td>
+                <td class="py-3.5 px-4 align-top text-on-surface/80">
+                  INE Censo 2024, Encuesta CASEN (MDSF) y Barómetro Regional de la Universidad de Aysén.
+                </td>
+                <td class="py-3.5 pl-4 align-top text-on-surface/80">
+                  Verificación de matrices tabulares, ajuste a la división política de las 10 comunas y cotejo estadístico con la serie histórica regional.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BLOQUE 3: MATRIZ DE LAS 28 FUENTES OFICIALES POR HUB -->
+      <div id="bloque-matriz-28-fuentes" class="py-8">
+        <div class="mb-6">
+          <div class="font-mono text-xs text-primary font-semibold tracking-wider uppercase">Bloque 03 · Inventario Institucional</div>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-on-surface mt-1">Matriz de las 28 Fuentes Oficiales por Hub (I al X)</h3>
+          <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
+            Catálogo completo de los 28 registros oficiales integrados en los 10 Hubs sectoriales, con cobertura comunal y enlace al repositorio público.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table id="tabla-28-fuentes-oficiales" class="w-full text-left border-collapse font-sans text-xs" style="box-shadow: none;">
+            <thead>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <th class="py-3 pr-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider w-1/5">Hub Sistémico (I al X)</th>
+                <th class="py-3 px-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider w-2/5">Base de Datos e Institución Proveedora (28 Bases)</th>
+                <th class="py-3 px-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider w-1/5">Corte Temporal y Cobertura</th>
+                <th class="py-3 pl-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider w-1/5">Repositorio Público Original</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-28-fuentes">
+              <!-- Hub I. Turismo (WP_06) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub I. Turismo (WP_06)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">01. Registro Nacional de Prestadores SERNATUR</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://registro.sernatur.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">registro.sernatur.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub I. Turismo (WP_06)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">02. Zonas de Interés Turístico SUBTURISMO (ZOIT)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.subturismo.gob.cl/zoit/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">subturismo.gob.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub I. Turismo (WP_06)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">03. Encuesta Mensual de Alojamiento Turístico INE (EMAT)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.ine.gob.cl/estadisticas/economicas/turismo" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">ine.gob.cl/turismo ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub I. Turismo (WP_06)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">04. Estadísticas de Visitación SNASPE CONAF</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">conaf.cl/visitacion ↗</a></td>
+              </tr>
+
+              <!-- Hub II. Salmonicultura y Maritorio (WP_03) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub II. Salmonicultura y Maritorio (WP_03)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">05. Catastro de Concesiones de Acuicultura SUBPESCA (745 concesiones)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://mapas.subpesca.cl/visorsubpesca/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">mapas.subpesca.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub II. Salmonicultura y Maritorio (WP_03)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">06. Fiscalización Sanitaria, Biomasa y Antimicrobianos SERNAPESCA</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.sernapesca.cl/informes/acuicultura" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">sernapesca.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub II. Salmonicultura y Maritorio (WP_03)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">07. Monitoreo Oceanográfico y Floraciones Algales IFOP</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.ifop.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">ifop.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub II. Salmonicultura y Maritorio (WP_03)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">08. Memorias Financieras de Holdings Acuícolas CMF</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.cmfchile.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">cmfchile.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub III. Energía y Telecomunicaciones (WP_02) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub III. Energía y Telecomunicaciones (WP_02)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">09. Capacidad Instalada y Generación Eléctrica CNE (Energía Abierta)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://energiaabierta.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">energiaabierta.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub III. Energía y Telecomunicaciones (WP_02)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">10. Interrupciones Eléctricas SAIDI y Tarifas BT1 SEC</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.sec.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">sec.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub III. Energía y Telecomunicaciones (WP_02)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">11. Precios Minoristas de Combustibles y Leña CNE (Bencina en Línea)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.bencinaenlinea.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">bencinaenlinea.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub III. Energía y Telecomunicaciones (WP_02)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">12. Conectividad Digital y Fibra Óptica Austral SUBTEL</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.subtel.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">subtel.gob.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub IV. Gobernanza y Finanzas Municipales (WP_01) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub IV. Gobernanza y Finanzas Municipales (WP_01)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">13. Finanzas Municipales y Fondo Común Municipal SUBDERE-SINIM</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://datos.sinim.gov.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">datos.sinim.gov.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub IV. Gobernanza y Finanzas Municipales (WP_01)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">14. Ejecución Presupuestaria Regional FNDR DIPRES / GORE Aysén</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.dipres.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">dipres.gob.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub IV. Gobernanza y Finanzas Municipales (WP_01)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">15. Resultados Electorales y Autoridades Comunales SERVEL (2024-2028)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.servel.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">servel.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub IV. Gobernanza y Finanzas Municipales (WP_01)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">16. Red Vial y Pavimentación Ruta 7 MOP Vialidad</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://vialidad.mop.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">vialidad.mop.gob.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub V. Economía, Inversión y Suelo (WP_04) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub V. Economía, Inversión y Suelo (WP_04)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">17. Proyectos Aprobados en el Sistema de Evaluación de Impacto Ambiental SEA-SEIA (722 proyectos)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://seia.sea.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">seia.sea.gob.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub V. Economía, Inversión y Suelo (WP_04)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">18. Estadísticas Tributarias de Empresas, Ventas y Empleo SII</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.sii.cl/sobre_finanzas/estadisticas/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">sii.cl/estadisticas ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub V. Economía, Inversión y Suelo (WP_04)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">19. Transacciones y Compras Públicas Mercado Público ChileCompra</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://www.chilecompra.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">chilecompra.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub V. Economía, Inversión y Suelo (WP_04)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">20. Catastro de Propiedad Fiscal y Concesiones MBN / SERNAGEOMIN</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://catastro.bienes.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">catastro.bienes.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub VI. Demografía, Educación y Social (WP_05) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social (WP_05)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">21. Censo de Población y Vivienda 2024 INE</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://censo2024.ine.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">censo2024.ine.gob.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social (WP_05)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">22. Encuesta de Caracterización Socioeconómica Nacional CASEN (MDSF)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">observatorio.ministeriodesarrollosocial.gob.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social (WP_05)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">23. Matrícula, Asistencia y Establecimientos Escolares MINEDUC / SLEP Aysén</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://datosabiertos.mineduc.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">datosabiertos.mineduc.cl ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social (WP_05)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">24. Estadísticas Policiales y Seguridad Ciudadana CEAD-SPD</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://cead.spd.gov.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">cead.spd.gov.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub VII. Biodiversidad y Clima (WP_07) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VII. Biodiversidad y Clima (WP_07)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">25. Inventario de Flora, Fauna en Conservación (RCE) y Pisos Vegetacionales MMA / CONAF SIT / SAG</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://mma.gob.cl/biodiversidad/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">mma.gob.cl/biodiversidad ↗</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VII. Biodiversidad y Clima (WP_07)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">26. Red de Calidad del Aire (SINCA), Glaciares e Hidrología (DGA) y Sismicidad (USGS / RNVV SERNAGEOMIN)</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://sinca.mma.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">sinca.mma.gob.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub VIII. Salud APS y Hospitales (WP_08) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VIII. Salud APS y Hospitales (WP_08)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">27. Estadísticas Vitales, Egresos, Urgencias Respiratorias, Red APS y Evacuaciones SAMU DEIS-MINSAL / Servicio de Salud Aysén</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://deis.minsal.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">deis.minsal.cl ↗</a></td>
+              </tr>
+
+              <!-- Hub IX. Cultura y Patrimonio y Hub X. CTCi e Innovación (WP_09 y WP_10) -->
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub IX. Cultura y Patrimonio y Hub X. CTCi e Innovación (WP_09 y WP_10)</td>
+                <td class="py-3 px-4 align-top text-on-surface/90">28. Infraestructura Cultural y Monumentos SERPAT-CMN / MINCAP, Cartera Histórica de Proyectos ANID DataCiencia, Innovación CORFO y Barómetro Regional Universidad de Aysén</td>
+                <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
+                <td class="py-3 pl-4 align-top"><a href="https://dataciencia.anid.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">dataciencia.anid.cl ↗</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 
@@ -1210,12 +1586,11 @@
         </a>
         <a href="https://www.linkedin.com/in/%C3%A1lvaro-contreras-barrios/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-primary font-semibold hover:underline">
           <span>LinkedIn</span>
-          <span class="font-mono text-xs">↗</span>
-        </a>
-      </div>
+          $1
 
-    </div>
-  </footer>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-5">
+      <p id="autoUpdateSeal" class="auto-update-seal" hidden></p>
+    </div>$2
 
   <!-- SCRIPT DE APLICACIÓN, VISUALIZACIÓN D3.JS Y RENDERIZADO -->
   <script>
@@ -1245,13 +1620,42 @@
     const hubMap = {};
     (AppState.data.hubs || []).forEach(h => { hubMap[h.id] = h; });
 
+    function scrollToMetodologia() {
+      const el = document.getElementById('seccion-arquitectura-fuentes');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       updateBadgesCount();
       setupSearchListeners();
       setupKeyboardShortcuts();
       setupDrawerGestureDismiss();
       setupWindowResizeListener();
-      switchTab('nodos');
+
+      const validHubs = [
+        'turismo', 'salmonicultura', 'energia', 'gobernanza', 'inversion',
+        'social', 'biodiversidad', 'salud', 'cultura', 'ctci'
+      ];
+      const urlParams = new URLSearchParams(window.location.search);
+      const hubParam = urlParams.get('hub');
+
+      if (hubParam && validHubs.includes(hubParam.toLowerCase())) {
+        const normHub = hubParam.toLowerCase();
+        AppState.activeCategoryFilter = normHub;
+        if (typeof activeD3Hubs !== 'undefined' && activeD3Hubs instanceof Set) {
+          activeD3Hubs = new Set([normHub]);
+        }
+        switchTab('nodos', true);
+        updateHubTogglesUI();
+      } else {
+        switchTab('nodos');
+      }
+
+      if (window.location.hash === '#seccion-arquitectura-fuentes') {
+        setTimeout(scrollToMetodologia, 200);
+      }
     });
 
     function setupWindowResizeListener() {
@@ -1274,9 +1678,16 @@
     }
 
     // CAMBIO DE PESTAÑAS PRINCIPALES (MAPA DE HUBS VS COMUNAS)
-    function switchTab(tabId) {
+    function switchTab(tabId, preserveCategoryFilter = false) {
+      if (tabId === 'metodologia') {
+        scrollToMetodologia();
+        return;
+      }
+
       AppState.activeTab = tabId;
-      AppState.activeCategoryFilter = 'all';
+      if (!preserveCategoryFilter) {
+        AppState.activeCategoryFilter = 'all';
+      }
 
       const tabs = ['nodos', 'comunas'];
       tabs.forEach(t => {
@@ -1285,13 +1696,17 @@
         const badge = document.getElementById(`badge-count-${t}`);
 
         if (t === tabId) {
-          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 bg-primary text-white shadow-sm font-semibold';
-          btn.setAttribute('aria-selected', 'true');
+          if (btn) {
+            btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 bg-primary text-white shadow-sm font-semibold';
+            btn.setAttribute('aria-selected', 'true');
+          }
           if (badge) badge.className = 'ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold';
           if (view) { view.classList.remove('hidden'); view.classList.add('block'); }
         } else {
-          btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 text-on-surface hover:text-primary hover:bg-white/60';
-          btn.setAttribute('aria-selected', 'false');
+          if (btn) {
+            btn.className = 'tab-button px-4 py-1.5 rounded-sm flex items-center gap-2 transition-colors duration-150 text-on-surface hover:text-primary hover:bg-white/60';
+            btn.setAttribute('aria-selected', 'false');
+          }
           if (badge) badge.className = 'ml-0.5 text-xs font-mono bg-black/5 text-muted px-1.5 py-0.5 rounded-sm';
           if (view) { view.classList.add('hidden'); view.classList.remove('block'); }
         }

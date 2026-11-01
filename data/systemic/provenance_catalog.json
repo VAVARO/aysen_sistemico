@@ -22,7 +22,9 @@
         "updateFrequency": "Mensual",
         "nextUpdate": "Noviembre 2026 (Mensual continuo)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 31
+        "updateFrequencyDays": 31,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -39,7 +41,9 @@
         "updateFrequency": "Plurianual",
         "nextUpdate": "Diciembre 2026 (Seguimiento anual de cartera)",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -56,7 +60,9 @@
         "updateFrequency": "Mensual",
         "nextUpdate": "Noviembre 2026 (Boletín mensual INE)",
         "collectionDateISO": "2026-08-01",
-        "updateFrequencyDays": 31
+        "updateFrequencyDays": 31,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -75,7 +81,9 @@
         "sourceUrlPrevious": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -92,7 +100,9 @@
         "updateFrequency": "Anual",
         "nextUpdate": "Diciembre 2026 (Actualización anual de jerarquías)",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -109,7 +119,10 @@
         "updateFrequency": "Trimestral",
         "nextUpdate": "Enero 2027 (Cierre anual de concesiones)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 404,
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -126,7 +139,9 @@
         "updateFrequency": "Semestral",
         "nextUpdate": "Noviembre 2026 (Reporte intermedio Q3)",
         "collectionDateISO": "2026-06-01",
-        "updateFrequencyDays": 184
+        "updateFrequencyDays": 184,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -143,7 +158,9 @@
         "updateFrequency": "Trimestral",
         "nextUpdate": "Diciembre 2026 (Programación de siembras 2027)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -160,7 +177,9 @@
         "updateFrequency": "Mensual",
         "nextUpdate": "Noviembre 2026 (Boletín oceanográfico mensual)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 31
+        "updateFrequencyDays": 31,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -177,7 +196,9 @@
         "updateFrequency": "Anual",
         "nextUpdate": "Diciembre 2026 (Decretos de cuotas anuales 2027)",
         "collectionDateISO": "2026-07-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -194,7 +215,9 @@
         "updateFrequency": "Trimestral",
         "nextUpdate": "Noviembre 2026 (Actualización trimestral de capacidad)",
         "collectionDateISO": "2026-08-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -211,7 +234,9 @@
         "updateFrequency": "Anual",
         "nextUpdate": "Diciembre 2026 (Informe anual de desempeño de redes)",
         "collectionDateISO": "2026-07-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -228,7 +253,9 @@
         "updateFrequency": "Semanal / Mensual",
         "nextUpdate": "Octubre 2026 (Actualización semanal continua)",
         "collectionDateISO": "2026-10-01",
-        "updateFrequencyDays": 7
+        "updateFrequencyDays": 7,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -245,7 +272,9 @@
         "updateFrequency": "Semestral",
         "nextUpdate": "Diciembre 2026 (Reporte de penetración banda ancha)",
         "collectionDateISO": "2026-06-01",
-        "updateFrequencyDays": 184
+        "updateFrequencyDays": 184,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -262,7 +291,10 @@
         "updateFrequency": "Trimestral",
         "nextUpdate": "Noviembre 2026 (Rendición financiera Q3)",
         "collectionDateISO": "2026-06-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 200,
+        "extractionMode": "live_api"
       }
     },
     {
@@ -279,7 +311,10 @@
         "updateFrequency": "Trimestral",
         "nextUpdate": "Diciembre 2026 (Cierre de liquidaciones FCM)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 200,
+        "extractionMode": "live_api"
       }
     },
     {
@@ -296,7 +331,9 @@
         "updateFrequency": "Cuatrienal (Vigente 2024–2028)",
         "nextUpdate": "Octubre 2028 (Próximas elecciones municipales ordinarias)",
         "collectionDateISO": "2028-01-01",
-        "updateFrequencyDays": 1096
+        "updateFrequencyDays": 1096,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -315,7 +352,9 @@
         "sourceUrlPrevious": "https://datos.dipres.gob.cl/",
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-08-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -332,7 +371,9 @@
         "updateFrequency": "Mensual",
         "nextUpdate": "Noviembre 2026 (Actualización mensual continua)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 31
+        "updateFrequencyDays": 31,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -349,7 +390,9 @@
         "updateFrequency": "Anual",
         "nextUpdate": "Diciembre 2026 (Cierre definitivo de año tributario)",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -368,7 +411,9 @@
         "sourceUrlPrevious": "https://www.sernageomin.cl/catastro-minero/",
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-06-01",
-        "updateFrequencyDays": 184
+        "updateFrequencyDays": 184,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -387,7 +432,10 @@
         "sourceUrlPrevious": "https://ide.patrimonio.cl/",
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-07-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 200,
+        "extractionMode": "live_api"
       }
     },
     {
@@ -404,7 +452,9 @@
         "updateFrequency": "Decenal (Censo) / Bienal (CASEN)",
         "nextUpdate": "Noviembre 2026 (Tabulados detallados comunales Censo 2024)",
         "collectionDateISO": "2024-01-01",
-        "updateFrequencyDays": 731
+        "updateFrequencyDays": 731,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -421,7 +471,10 @@
         "updateFrequency": "Mensual",
         "nextUpdate": "Noviembre 2026 (Boletín mensual DEIS)",
         "collectionDateISO": "2026-09-01",
-        "updateFrequencyDays": 31
+        "updateFrequencyDays": 31,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 200,
+        "extractionMode": "live_api"
       }
     },
     {
@@ -438,7 +491,10 @@
         "updateFrequency": "Anual",
         "nextUpdate": "Diciembre 2026 (Balance final de año escolar 2026)",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 200,
+        "extractionMode": "live_api"
       }
     },
     {
@@ -457,7 +513,9 @@
         "sourceUrlPrevious": "https://cead.spd.gov.cl/",
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-06-01",
-        "updateFrequencyDays": 92
+        "updateFrequencyDays": 92,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -474,7 +532,9 @@
         "updateFrequency": "Quinquenal",
         "nextUpdate": "Diciembre 2026 (Consolidado quinquenal SIT)",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 1826
+        "updateFrequencyDays": 1826,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -491,7 +551,9 @@
         "updateFrequency": "Anual",
         "nextUpdate": "Noviembre 2026 (Publicación Proceso 20 RCE)",
         "collectionDateISO": "2026-01-01",
-        "updateFrequencyDays": 366
+        "updateFrequencyDays": 366,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -510,7 +572,9 @@
         "sourceUrlPrevious": "https://especies-invasoras.mma.gob.cl/",
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-08-01",
-        "updateFrequencyDays": 184
+        "updateFrequencyDays": 184,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -527,7 +591,10 @@
         "updateFrequency": "Horario / Continuo",
         "nextUpdate": "Octubre 2026 (Transmisión en tiempo real)",
         "collectionDateISO": "2026-10-01",
-        "updateFrequencyDays": 1
+        "updateFrequencyDays": 1,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 403,
+        "extractionMode": "curated_fallback"
       }
     },
     {
@@ -544,7 +611,10 @@
         "updateFrequency": "Tiempo real / Mensual",
         "nextUpdate": "Octubre 2026 (Monitoreo telemétrico continuo)",
         "collectionDateISO": "2026-10-01",
-        "updateFrequencyDays": 1
+        "updateFrequencyDays": 1,
+        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastHttpStatus": 200,
+        "extractionMode": "live_api"
       }
     }
   ],
@@ -574,5 +644,6 @@
     "collectionMethod": "Base de Datos Histórica ANID, Catastro OBSERVA MinCiencia, Proyectos CORFO DataInnovación e indicadores Barómetro UAYSÉN",
     "updateFrequency": "Anual / Continuo",
     "workPackage": "WP_10 (Módulo Especializado Ciencia, Tecnología, Conocimiento e Innovación)"
-  }
+  },
+  "ultima_actualizacion_automatica": "2026-10-30T15:05:39+00:00"
 }

@@ -81,8 +81,8 @@
           "source_dataset": "comunas",
           "varX": "inversion_seia_mmusd",
           "labelX": "Inversión SEIA aprobada acumulada (MM USD)",
-          "varY": "fuga_compras_pct",
-          "labelY": "Fuga de compras públicas fuera de la región (%)",
+          "varY": "empresas_sii",
+          "labelY": "Empresas Activas SII (n°)",
           "varZ": "dependencia_fcm_pct",
           "labelZ": "Dependencia del Fondo Común Municipal (%)",
           "what_it_shows": "Compara la inversión aprobada en el SEIA con las compras locales y la dependencia del Fondo Común Municipal en cada comuna.",
@@ -91,7 +91,8 @@
             "excludeOutlierCoyhaique": true,
             "perCapitaMode": false,
             "doubleAxis": false
-          }
+          },
+          "fuente": "SEA - Servicio de Evaluación Ambiental y SII"
         }
       ]
     },
@@ -215,8 +216,8 @@
           "source_dataset": "comunas",
           "varX": "dependencia_fcm_pct",
           "labelX": "Dependencia del Fondo Común Municipal (%)",
-          "varY": "inversion_directa_pct",
-          "labelY": "Inversión real directa municipal (% del gasto)",
+          "varY": "gasto_personal_pct",
+          "labelY": "Gasto en Personal Municipal (%)",
           "varZ": "pobreza_multidim_pct",
           "labelZ": "Pobreza multidimensional CASEN (%)",
           "what_it_shows": "Compara las 10 comunas según su autonomía financiera: cabeceras con capacidad de inversión y comunas aisladas que dependen del subsidio fiscal nacional.",
@@ -225,7 +226,8 @@
             "excludeOutlierCoyhaique": false,
             "perCapitaMode": false,
             "doubleAxis": false
-          }
+          },
+          "fuente": "SUBDERE - Sistema Nacional de Información Municipal (SINIM)"
         }
       ]
     },
@@ -744,18 +746,18 @@
                 {
                   "label": "Presupuesto FNDR GORE Aysén (M$ CLP)",
                   "data": [
-                    46500.0,
-                    48200.0,
-                    50800.0,
-                    53400.0,
-                    56100.0,
-                    58900.0,
-                    62300.0,
-                    66700.0,
-                    69800.0,
-                    72450.0,
-                    75800.0,
-                    78950.0
+                    46500,
+                    48200,
+                    50800,
+                    53400,
+                    56100,
+                    58900,
+                    62300,
+                    66700,
+                    69800,
+                    72450,
+                    75800,
+                    78950
                   ],
                   "unit": "M$ CLP",
                   "yAxisID": "y1"
@@ -893,7 +895,7 @@
                   "n_muestral": 149,
                   "me_95": 8.02,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 49.0,
+                  "tasa_positiva_pct": 49,
                   "promedio_valor": 2.42
                 },
                 "60+": {
@@ -919,7 +921,7 @@
                   "n_muestral": 152,
                   "me_95": 7.94,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 50.0,
+                  "tasa_positiva_pct": 50,
                   "promedio_valor": 2.41
                 },
                 "sur": {
@@ -1087,7 +1089,7 @@
                     79.6,
                     76.5,
                     74.2,
-                    78.0,
+                    78,
                     82.5,
                     84.1,
                     85.3,
@@ -1104,7 +1106,7 @@
                     71.8,
                     69.5,
                     75.1,
-                    72.0,
+                    72,
                     83.5,
                     84.2,
                     83.8,
@@ -1153,7 +1155,7 @@
               "structural_variable": "dias_sobre_norma_mp25",
               "structural_by_macrozona": {
                 "norte": 28.5,
-                "centro": 84.0,
+                "centro": 84,
                 "sur": 34.2
               },
               "por_nivel_educativo": {
@@ -1188,7 +1190,7 @@
                   "n_muestral": 146,
                   "me_95": 8.1,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 87.0,
+                  "tasa_positiva_pct": 87,
                   "promedio_valor": 3.6
                 },
                 "medio": {
@@ -1436,18 +1438,18 @@
                 {
                   "label": "Cosecha Total Salmónidos (Ton)",
                   "data": [
-                    395400.0,
-                    342100.0,
-                    388900.0,
-                    432500.0,
-                    468200.0,
-                    485600.0,
-                    452300.0,
-                    478100.0,
-                    462800.0,
-                    448500.0,
-                    440200.0,
-                    435000.0
+                    395400,
+                    342100,
+                    388900,
+                    432500,
+                    468200,
+                    485600,
+                    452300,
+                    478100,
+                    462800,
+                    448500,
+                    440200,
+                    435000
                   ],
                   "unit": "toneladas",
                   "yAxisID": "y"
@@ -1509,7 +1511,7 @@
               "structural_variable": "biomasa_salmon_ton",
               "structural_by_macrozona": {
                 "norte": 88.5,
-                "centro": 12.0,
+                "centro": 12,
                 "sur": 15.4
               },
               "por_nivel_educativo": {
@@ -1612,7 +1614,7 @@
                   "n_muestral": 80,
                   "me_95": 10.95,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 80.0,
+                  "tasa_positiva_pct": 80,
                   "promedio_valor": 3.2
                 }
               },
@@ -1630,7 +1632,7 @@
                   "n_muestral": 152,
                   "me_95": 7.94,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 77.0,
+                  "tasa_positiva_pct": 77,
                   "promedio_valor": 3.22
                 },
                 "sur": {
@@ -1810,18 +1812,18 @@
                 {
                   "label": "PIB Regional Nominal (MM$ CLP)",
                   "data": [
-                    980000.0,
-                    1045000.0,
-                    1120000.0,
-                    1215000.0,
-                    1260000.0,
-                    1240000.0,
-                    1410000.0,
-                    1540000.0,
-                    1620000.0,
-                    1680000.0,
-                    1755000.0,
-                    1830000.0
+                    980000,
+                    1045000,
+                    1120000,
+                    1215000,
+                    1260000,
+                    1240000,
+                    1410000,
+                    1540000,
+                    1620000,
+                    1680000,
+                    1755000,
+                    1830000
                   ],
                   "unit": "MM$ CLP",
                   "yAxisID": "y1"
@@ -1865,7 +1867,7 @@
               "structural_by_macrozona": {
                 "norte": 48.2,
                 "centro": 74.5,
-                "sur": 28.0
+                "sur": 28
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -1873,7 +1875,7 @@
                   "n_muestral": 200,
                   "me_95": 6.92,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 46.0,
+                  "tasa_positiva_pct": 46,
                   "promedio_valor": 4.22
                 },
                 "tecnico_superior": {
@@ -1967,7 +1969,7 @@
                   "n_muestral": 86,
                   "me_95": 10.56,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 43.0,
+                  "tasa_positiva_pct": 43,
                   "promedio_valor": 4.09
                 }
               },
@@ -2149,13 +2151,13 @@
                     905.8,
                     926.1,
                     947.9,
-                    959.0,
+                    959,
                     990.3,
                     1056.4,
                     1029.1,
                     992.2,
                     957.3,
-                    943.0,
+                    943,
                     917.6,
                     897.1
                   ],
@@ -2166,7 +2168,7 @@
                   "label": "Tasa Delitos Mayor Connotación DMCS (c/100k hab)",
                   "data": [
                     1948.5,
-                    1998.0,
+                    1998,
                     2040.2,
                     2091.5,
                     2142.3,
@@ -2214,7 +2216,7 @@
               "n_muestral_valido": 462,
               "me_95_total": 4.55,
               "semaforo_global": "verde",
-              "tasa_positiva_pct": 53.0,
+              "tasa_positiva_pct": 53,
               "promedio_valor": 4.38,
               "structural_variable": "pobreza_multidim_pct",
               "structural_by_macrozona": {
@@ -2228,7 +2230,7 @@
                   "n_muestral": 200,
                   "me_95": 6.92,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 45.0,
+                  "tasa_positiva_pct": 45,
                   "promedio_valor": 4.19
                 },
                 "tecnico_superior": {
@@ -2254,7 +2256,7 @@
                   "n_muestral": 150,
                   "me_95": 7.99,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 38.0,
+                  "tasa_positiva_pct": 38,
                   "promedio_valor": 3.91
                 },
                 "medio": {
@@ -2332,7 +2334,7 @@
                   "n_muestral": 204,
                   "me_95": 6.85,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 51.0,
+                  "tasa_positiva_pct": 51,
                   "promedio_valor": 4.28
                 },
                 "norte": {
@@ -2392,8 +2394,8 @@
             "varX": "prestadores_sernatur",
             "varY": "visitantes_snaspe",
             "center": [
-              -46.0,
-              -73.0
+              -46,
+              -73
             ],
             "zoom": 7,
             "layers": [
@@ -2573,7 +2575,7 @@
               "promedio_valor": 3.47,
               "structural_variable": "prestadores_sernatur",
               "structural_by_macrozona": {
-                "norte": 52.0,
+                "norte": 52,
                 "centro": 68.5,
                 "sur": 61.2
               },
@@ -2599,7 +2601,7 @@
                   "n_muestral": 171,
                   "me_95": 7.49,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 93.0,
+                  "tasa_positiva_pct": 93,
                   "promedio_valor": 3.55
                 }
               },
@@ -2857,7 +2859,7 @@
                   "label": "Concentración Media Invernal MP2.5 (µg/m³)",
                   "data": [
                     168.5,
-                    162.0,
+                    162,
                     154.2,
                     146.8,
                     139.5,
@@ -2924,7 +2926,7 @@
               "n_muestral_valido": 452,
               "me_95_total": 4.6,
               "semaforo_global": "verde",
-              "tasa_positiva_pct": 92.0,
+              "tasa_positiva_pct": 92,
               "promedio_valor": 3.56,
               "structural_variable": "superficie_snaspe_pct",
               "structural_by_macrozona": {
@@ -2964,7 +2966,7 @@
                   "n_muestral": 142,
                   "me_95": 8.22,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 93.0,
+                  "tasa_positiva_pct": 93,
                   "promedio_valor": 3.61
                 },
                 "medio": {
@@ -3024,7 +3026,7 @@
                   "n_muestral": 150,
                   "me_95": 7.99,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 94.0,
+                  "tasa_positiva_pct": 94,
                   "promedio_valor": 3.66
                 },
                 "60+": {
@@ -3293,7 +3295,7 @@
                   "n_muestral": 200,
                   "me_95": 6.92,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 24.0,
+                  "tasa_positiva_pct": 24,
                   "promedio_valor": 3.48
                 },
                 "tecnico_superior": {
@@ -3301,7 +3303,7 @@
                   "n_muestral": 94,
                   "me_95": 10.1,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 16.0,
+                  "tasa_positiva_pct": 16,
                   "promedio_valor": 3.18
                 },
                 "universitaria": {
@@ -3413,7 +3415,7 @@
                   "n_muestral": 105,
                   "me_95": 9.56,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 19.0,
+                  "tasa_positiva_pct": 19,
                   "promedio_valor": 3.24
                 }
               }
@@ -3596,17 +3598,17 @@
                   "label": "Monto Adjudicado Fondos Cultura MINCAP (M$ CLP)",
                   "data": [
                     248.5,
-                    275.0,
+                    275,
                     312.4,
                     345.8,
                     390.2,
                     420.5,
-                    515.0,
-                    488.0,
+                    515,
+                    488,
                     542.6,
                     598.4,
-                    635.0,
-                    672.0
+                    635,
+                    672
                   ],
                   "borderColor": "#7c2d12",
                   "backgroundColor": "rgba(124,45,18,0.12)",
@@ -3689,9 +3691,9 @@
               "promedio_valor": 4.04,
               "structural_variable": "gasto_cultura_per_capita_clp",
               "structural_by_macrozona": {
-                "norte": 18400.0,
-                "centro": 24600.0,
-                "sur": 21300.0
+                "norte": 18400,
+                "centro": 24600,
+                "sur": 21300
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -3820,7 +3822,7 @@
                   "me_95": 9.56,
                   "semaforo": "verde",
                   "tasa_positiva_pct": 36.2,
-                  "promedio_valor": 4.0
+                  "promedio_valor": 4
                 }
               }
             }
@@ -4081,9 +4083,9 @@
               "promedio_valor": 2.11,
               "structural_variable": "investigadores_residentes_est",
               "structural_by_macrozona": {
-                "norte": 11.0,
-                "centro": 58.0,
-                "sur": 19.0
+                "norte": 11,
+                "centro": 58,
+                "sur": 19
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -4177,7 +4179,7 @@
                   "n_muestral": 145,
                   "me_95": 8.13,
                   "semaforo": "verde",
-                  "tasa_positiva_pct": 60.0,
+                  "tasa_positiva_pct": 60,
                   "promedio_valor": 2.15
                 },
                 "60+": {

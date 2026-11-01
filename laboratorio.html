@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet" />
 
   <!-- Chart.js v4.4.1 para Gráficos Fluidos (version fijada + SRI) -->
@@ -31,6 +31,7 @@
 
   <!-- Datos Oficiales: Data Lake (31 Nodos) y Preguntas Sistémicas (30) -->
   <script src="data/aysen_hubs_data.js"></script>
+  <script src="js/auto_update_seal.js" defer></script>
   <script src="data/preguntas_metacognitivas.js"></script>
   <!-- Motor Semántico NL2Chart -->
   <script src="js/nl2chart_engine.js"></script>
@@ -4127,6 +4128,9 @@
   <!-- Barra de Navegación Móvil de Estudio Austral (<768px) -->
   <!-- Pila de avisos efimeros con accion Deshacer -->
   <div class="studio-toast-stack" id="studioToastStack" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Sello sobrio de actualizacion mensual automatica (se rellena desde meta.autoUpdate) -->
+  <p id="autoUpdateSeal" class="auto-update-seal auto-update-seal--floating" hidden></p>
 
   <!-- Panel de atajos de teclado (tecla ?) -->
   <div class="shortcuts-overlay" id="shortcutsOverlay" role="dialog" aria-modal="true"
@@ -12440,6 +12444,11 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const presetParam = params.get('preset');
         const hubParam = params.get('hub');
         if (presetParam) {
+          if (presetParam.startsWith('cecan_')) {
+            const propNum = presetParam.replace(/^cecan_/, '').slice(0, 2);
+            applyCecanPreset(propNum);
+            return;
+          }
           loadHubPresetById(presetParam);
           return;
         }

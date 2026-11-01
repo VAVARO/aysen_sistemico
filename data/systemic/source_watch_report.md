@@ -1,5 +1,28 @@
 # Orden de Trabajo: Fuentes del Data Lake de Aysen
 
+<!-- AUTO-UPDATE-BEGIN -->
+## Actualizacion mensual automatica
+
+- Corrida: 2026-10-30T15:05:39+00:00
+- Ciclo: Mensual (día 1 de cada mes)
+- Conectores activos: 7
+- Resultado: 5 en vivo, 6 con respaldo curado (ultimo dato valido)
+
+| Conector | Modo | HTTP | Nodos | Observacion |
+|---|---|---|---|---|
+| usgs/usgs | live_api | 200 | #31 |  |
+| ckan_cne/cne_combustibles | curated_fallback | sin respuesta | #13 | CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] get |
+| ckan_cne/cne_energia | curated_fallback | sin respuesta | #11 | CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] get |
+| ckan_datos_gob/deis_salud | live_api | 200 | #24 |  |
+| ckan_datos_gob/mineduc | live_api | 200 | #25 |  |
+| ckan_datos_gob/sinim | live_api | 200 | #15, #16 |  |
+| ckan_datos_gob/serpat | live_api | 200 | #22 |  |
+| arcgis_subpesca/subpesca | curated_fallback | 404 | #6 | 2 candidato(s) fallaron: sin respuesta / 404 |
+| arcgis_bbnn/bbnn | curated_fallback | sin respuesta | #22 | 2 candidato(s) fallaron: sin respuesta / sin respuesta |
+| arcgis_conaf/conaf | curated_fallback | sin respuesta | #27 | 2 candidato(s) fallaron: 404 / sin respuesta |
+| sinca/sinca | curated_fallback | 403 | #30 | SINCA no respondio 200 (HTTP 403 Forbidden) |
+<!-- AUTO-UPDATE-END -->
+
 - Generado: 2026-10-20T19:50:49+00:00
 - Nodos evaluados: 31
 - Resumen: UNCHANGED 15 · DUE 10 · BASELINE 6

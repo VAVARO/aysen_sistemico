@@ -5,7 +5,7 @@
   "dataset_id": "territorio_concesiones_tierra_mar",
   "titulo": "Control del Territorio y Mar: Concesiones Acuícolas, Mineras y Tenencia de la Tierra",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-20T19:55:12.554663+00:00",
+  "fecha_extraccion": "2026-10-30T15:06:55.500464+00:00",
   "metodologia_series_historicas": {
     "advertencia": "Las series anuales 2015-2026 NO son 12 observaciones independientes. Se reconstruyen por interpolacion lineal entre valores ancla; ningun ano intermedio corresponde a un valor comunal reportado por la fuente.",
     "campo_trazabilidad": "origen",

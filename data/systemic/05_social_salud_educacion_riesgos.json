@@ -5,7 +5,7 @@
   "dataset_id": "social_salud_educacion_riesgos",
   "titulo": "Dinámica Social, Red Asistencial, Educación, Seguridad Ciudadana y Riesgos Geológicos y Ambientales de Aysén",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-19T11:27:45.705202+00:00",
+  "fecha_extraccion": "2026-10-30T15:07:05.017996+00:00",
   "fuentes_primarias": [
     {
       "institucion": "USGS Earthquake Hazards Program",
@@ -57,7 +57,7 @@
     "matricula_escolar_regional_total": 21990,
     "establecimientos_escolares_totales": 84,
     "volcanes_activos_monitoreados": 6,
-    "sismos_registrados_usgs_periodo": 22,
+    "sismos_registrados_usgs_periodo": 36,
     "nodos_georreferenciados_totales": 39,
     "series_historicas_regionales": [
       {

@@ -731,39 +731,30 @@ def generate_comunal_historical_series(ine: str) -> List[Dict[str, Any]]:
 
 
 def fetch_usgs_earthquakes() -> Dict[str, Any]:
-    """Consulta la API oficial de USGS para el Bounding Box de Aysén y guarda el GeoJSON crudo."""
-    url = (
-        "https://earthquake.usgs.gov/fdsnws/event/1/query?"
-        "format=geojson&"
-        f"minlatitude={BBOX_LAT_MIN}&maxlatitude={BBOX_LAT_MAX}&"
-        f"minlongitude={BBOX_LNG_MIN}&maxlongitude={BBOX_LNG_MAX}&"
-        "starttime=2015-01-01&minmagnitude=3.5"
-    )
+    """
+    Obtiene el catalogo sismico USGS de Aysen reutilizando el conector validado
+    (scripts/ingesta/live_api_connectors.py): HTTP 200, esquema GeoJSON, magnitudes > 0
+    y coordenadas dentro del bounding box. Si la consulta falla o no valida, se conserva
+    el GeoJSON crudo existente (Last-Known-Good) sin tocarlo.
+    """
     raw_file = RAW_DIR / "usgs_earthquakes_aysen_2015_2026.geojson"
-    print(f"Consultando USGS Earthquake API ({url[:85]}...)...")
+    print("Consultando USGS Earthquake API (conector validado)...")
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import live_api_connectors as live
 
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "AysenDataLake-Ingesta/1.0 (GobiernoRegional-Investigacion)"},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            content = resp.read().decode("utf-8")
-            data = json.loads(content)
-            with open(raw_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-            features_count = len(data.get("features", []))
-            print(f"  [OK] USGS API respondió exitosamente: {features_count} sismos registrados.")
-            print(f"  [RAW] Guardado: {raw_file.relative_to(REPO_ROOT)}")
-            return data
-    except Exception as e:
-        print(f"  [WARN] Error consultando USGS en vivo: {e}")
-        if raw_file.exists():
-            print(f"  [FALLBACK] Cargando archivo crudo existente: {raw_file.relative_to(REPO_ROOT)}")
-            with open(raw_file, "r", encoding="utf-8") as f:
-                return json.load(f)
-        raise RuntimeError(f"No se pudo consultar ni cargar USGS: {e}")
+    result = live.fetch_usgs_earthquakes_aysen(REPO_ROOT)
+    if result.ok and result.data:
+        print(f"  [OK] USGS API respondi\u00f3 exitosamente: {result.metrics['total_events']} sismos registrados "
+              f"(magnitud m\u00e1xima {result.metrics['max_magnitude']}).")
+        print(f"  [RAW] Guardado: {raw_file.relative_to(REPO_ROOT)}")
+        return result.data
 
+    print(f"  [WARN] USGS en vivo no disponible o inv\u00e1lido: {result.error}")
+    if raw_file.exists():
+        print(f"  [FALLBACK] Cargando archivo crudo existente: {raw_file.relative_to(REPO_ROOT)}")
+        with open(raw_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    raise RuntimeError(f"No se pudo consultar ni cargar USGS: {result.error}")
 
 def build_raw_social_health_catalog() -> Dict[str, Any]:
     """Genera y guarda el catastro crudo de la Red Asistencial (DEIS / SSA) con series 2015-2025."""

@@ -1,0 +1,91 @@
+{
+  "source": "https://datos.gob.cl/api/3/action",
+  "query": "finanzas municipales",
+  "fetched_at": "2026-10-30T15:05:59+00:00",
+  "http_status": 200,
+  "packages_found": 3,
+  "resources": [
+    {
+      "package": "pasivos-municipales",
+      "package_title": "Pasivos Municipales",
+      "organization": "Municipalidad de Puerto Montt",
+      "metadata_modified": "2022-05-23T16:01:16.763476",
+      "resource_id": "d84cffa8-691b-40e1-a8b1-1cf3be6423e2",
+      "resource_name": "pasivos 2021",
+      "format": "pdf",
+      "url": "https://datos.gob.cl/dataset/6b7739c3-81c5-463d-aaa3-e0061e24a5ae/resource/d84cffa8-691b-40e1-a8b1-1cf3be6423e2/download/pasivos-2021.pdf",
+      "datastore_active": false
+    },
+    {
+      "package": "pasivos-municipales",
+      "package_title": "Pasivos Municipales",
+      "organization": "Municipalidad de Puerto Montt",
+      "metadata_modified": "2022-05-23T16:01:16.763476",
+      "resource_id": "8cf4b4c2-4879-481b-b985-16bf81a85397",
+      "resource_name": "pasivos 2020",
+      "format": "pdf",
+      "url": "https://datos.gob.cl/dataset/6b7739c3-81c5-463d-aaa3-e0061e24a5ae/resource/8cf4b4c2-4879-481b-b985-16bf81a85397/download/pasivos-2020.pdf",
+      "datastore_active": false
+    },
+    {
+      "package": "pasivos-municipales",
+      "package_title": "Pasivos Municipales",
+      "organization": "Municipalidad de Puerto Montt",
+      "metadata_modified": "2022-05-23T16:01:16.763476",
+      "resource_id": "fe2c61d8-23b9-4dc6-8a92-355702d434ab",
+      "resource_name": "pasivos 2018",
+      "format": "pdf",
+      "url": "https://datos.gob.cl/dataset/6b7739c3-81c5-463d-aaa3-e0061e24a5ae/resource/fe2c61d8-23b9-4dc6-8a92-355702d434ab/download/pasivos-2018.pdf",
+      "datastore_active": false
+    },
+    {
+      "package": "pasivos-municipales",
+      "package_title": "Pasivos Municipales",
+      "organization": "Municipalidad de Puerto Montt",
+      "metadata_modified": "2022-05-23T16:01:16.763476",
+      "resource_id": "c83b5a7a-18a0-4cde-829a-736f67a89442",
+      "resource_name": "pasivos 2019",
+      "format": "pdf",
+      "url": "https://datos.gob.cl/dataset/6b7739c3-81c5-463d-aaa3-e0061e24a5ae/resource/c83b5a7a-18a0-4cde-829a-736f67a89442/download/pasivos-2019.pdf",
+      "datastore_active": false
+    },
+    {
+      "package": "nomina-de-patentes-municipales-vigentes-ano-2022",
+      "package_title": "NOMINA DE PATENTES MUNICIPALES VIGENTES AÑO 2022",
+      "organization": "Municipalidad de Peñalolén",
+      "metadata_modified": "2022-08-25T19:59:32.435952",
+      "resource_id": "d83988ea-5b9b-487c-b27f-23e6267f7001",
+      "resource_name": "NOMINA DE PATENTES MUNICIPALES VIGENTES AÑO 2022",
+      "format": "xls",
+      "url": "https://datos.gob.cl/dataset/210a5cf6-4520-48c0-9989-c5f1b6cc6dfe/resource/d83988ea-5b9b-487c-b27f-23e6267f7001/download/contenido-respuesta.xls",
+      "datastore_active": true
+    },
+    {
+      "package": "1132",
+      "package_title": "Principales datos presupuestarios de la Municipalidad",
+      "organization": "Subsecretaría de Desarrollo Regional y Administrativo",
+      "metadata_modified": "2015-10-30T13:20:11.018081",
+      "resource_id": "b022ea39-3159-46d5-bb15-225e3d19beb1",
+      "resource_name": "Principales Datos de Ingresos y Gastos Municipales  Año 2011.",
+      "format": "xls",
+      "url": "https://www.sinim.gov.cl/desarrollo_local/datos_municipales2011/2011/Informacion ingresos y gastos municipales.xls",
+      "datastore_active": false
+    }
+  ],
+  "aysen_rows": [],
+  "aysen_filter": {
+    "region": "11",
+    "comunas": [
+      "11101",
+      "11102",
+      "11201",
+      "11202",
+      "11203",
+      "11301",
+      "11302",
+      "11303",
+      "11401",
+      "11402"
+    ]
+  }
+}

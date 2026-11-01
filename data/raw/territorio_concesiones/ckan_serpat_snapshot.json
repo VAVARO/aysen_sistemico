@@ -1,0 +1,36 @@
+{
+  "source": "https://datos.gob.cl/api/3/action",
+  "query": "propiedad fiscal",
+  "fetched_at": "2026-10-30T15:06:05+00:00",
+  "http_status": 200,
+  "packages_found": 1,
+  "resources": [
+    {
+      "package": "categoria-geoespacial-planificacion-y-catastro",
+      "package_title": "Categoría Geoespacial: Planificación y catastro",
+      "organization": "Infraestructura de Datos Geoespaciales de Chile",
+      "metadata_modified": "2024-06-04T22:07:16.284880",
+      "resource_id": "9e870f8d-e281-4915-a5a5-49e149891155",
+      "resource_name": "Categoría Geoespacial: Planificación y catastro",
+      "format": "",
+      "url": "https://www.geoportal.cl/geoportal/catalog?categories%5B%5D=planningCadastre&action=search",
+      "datastore_active": false
+    }
+  ],
+  "aysen_rows": [],
+  "aysen_filter": {
+    "region": "11",
+    "comunas": [
+      "11101",
+      "11102",
+      "11201",
+      "11202",
+      "11203",
+      "11301",
+      "11302",
+      "11303",
+      "11401",
+      "11402"
+    ]
+  }
+}

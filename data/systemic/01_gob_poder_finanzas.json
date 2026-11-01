@@ -5,7 +5,7 @@
   "dataset_id": "01_gob_poder_finanzas",
   "titulo": "Poder Político, Autoridades y Finanzas Municipales (SINIM / BCN / SERVEL)",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-17T19:00:00Z",
+  "fecha_extraccion": "2026-10-30T15:06:41.520504+00:00",
   "fuentes_primarias": [
     {
       "institucion": "Biblioteca del Congreso Nacional de Chile (BCN)",
@@ -37,7 +37,7 @@
     }
   ],
   "resumen_regional": {
-    "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos · Período 2024–2028)",
+    "gobernador_regional": "Andrea Macías Palma (2021-2024) / Marcelo Santana Vargas (electo 2024)",
     "delegado_presidencial_regional": "Rodrigo Araya Morales",
     "senadores_circunscripcion_14": [
       {
@@ -71,7 +71,6 @@
     "presupuesto_fndr_regional_mclp": 72450.0,
     "dependencia_fcm_promedio_regional_pct": 76.8,
     "total_comunas": 10,
-    "autoridades_vigentes_corte": "Período Constitucional 2024–2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026)",
     "series_historicas_regionales": [
       {
         "indicador": "presupuesto_fndr_gore_aysen_mclp",
@@ -292,11 +291,11 @@
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Carlos Gatica Villegas",
-          "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor",
-          "periodo_alcaldia": "2024–2028 (Reelecto)",
+          "alcalde_partido_pacto": "Partido Demócrata Cristiano (PDC) / Chile Vamos y Centro Democrático",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 84.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 26540.8,
@@ -304,11 +303,8 @@
           "dependencia_fcm_pct": 46.5,
           "ingresos_patentes_acuicolas_mineras_mclp": 1450.0,
           "autonomia_financiera_nivel": "Media-Alta (Menor dependencia FCM regional)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 139928,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 42.1,
-          "inversion_real_directa_pct": 8.4,
-          "profesionalizacion_planta_pct": 36.4,
           "ingresos_patentes_acuicolas_mclp": 725.0,
           "ingresos_patentes_mineras_mclp": 725.0
         },
@@ -676,12 +672,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11102",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Claudia Valdés Vásquez",
-          "alcalde_partido_pacto": "Independiente / Contigo Chile Mejor",
-          "periodo_alcaldia": "2024–2028",
+          "alcalde_nombre": "Claudio Fica / Nelson Opazo López",
+          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 87.5,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2450.2,
@@ -689,11 +685,8 @@
           "dependencia_fcm_pct": 89.2,
           "ingresos_patentes_acuicolas_mineras_mclp": 35.0,
           "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 184852,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 48.5,
-          "inversion_real_directa_pct": 4.2,
-          "profesionalizacion_planta_pct": 12.5,
           "ingresos_patentes_acuicolas_mclp": 17.5,
           "ingresos_patentes_mineras_mclp": 17.5
         },
@@ -1061,12 +1054,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11201",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Luis Martínez Gallardo",
-          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-          "periodo_alcaldia": "2024–2028",
+          "alcalde_nombre": "Julio Uribe Alvarado",
+          "alcalde_partido_pacto": "Independiente / Por Chile y sus Regiones",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 82.8,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 14210.5,
@@ -1074,11 +1067,8 @@
           "dependencia_fcm_pct": 52.8,
           "ingresos_patentes_acuicolas_mineras_mclp": 1850.0,
           "autonomia_financiera_nivel": "Media (Aporte de patentes acuícolas y portuarias Puerto Chacabuco)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 176295,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 44.2,
-          "inversion_real_directa_pct": 7.1,
-          "profesionalizacion_planta_pct": 28.2,
           "ingresos_patentes_acuicolas_mclp": 1665.0,
           "ingresos_patentes_mineras_mclp": 185.0
         },
@@ -1446,12 +1436,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11202",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Francisco Roncagliolo Lepío",
+          "alcalde_nombre": "Francisco Roncagliolo Lepio",
           "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos",
-          "periodo_alcaldia": "2024–2028 (Reelecto)",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 83.1,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 6100.0,
@@ -1459,11 +1449,8 @@
           "dependencia_fcm_pct": 74.5,
           "ingresos_patentes_acuicolas_mineras_mclp": 680.0,
           "autonomia_financiera_nivel": "Baja (Alta dependencia FCM con compensación por patentes de acuicultura)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 525265,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 39.8,
-          "inversion_real_directa_pct": 11.5,
-          "profesionalizacion_planta_pct": 18.6,
           "ingresos_patentes_acuicolas_mclp": 612.0,
           "ingresos_patentes_mineras_mclp": 68.0
         },
@@ -1831,12 +1818,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11203",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Bans Puinao Carimoney",
-          "alcalde_partido_pacto": "Evolución Política (Evópoli) / Chile Vamos",
-          "periodo_alcaldia": "2024–2028",
+          "alcalde_nombre": "Marcos Silva Miranda",
+          "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 85.9,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 3300.0,
@@ -1844,11 +1831,8 @@
           "dependencia_fcm_pct": 83.0,
           "ingresos_patentes_acuicolas_mineras_mclp": 210.0,
           "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM en archipiélago insular)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 356696,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 51.2,
-          "inversion_real_directa_pct": 3.6,
-          "profesionalizacion_planta_pct": 11.8,
           "ingresos_patentes_acuicolas_mclp": 189.0,
           "ingresos_patentes_mineras_mclp": 21.0
         },
@@ -2216,12 +2200,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11401",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Ariel Keim Hermosilla",
+          "alcalde_nombre": "Luperciano Muñoz González",
           "alcalde_partido_pacto": "Independiente",
-          "periodo_alcaldia": "2024–2028",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 83.6,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 5400.0,
@@ -2229,11 +2213,8 @@
           "dependencia_fcm_pct": 71.2,
           "ingresos_patentes_acuicolas_mineras_mclp": 320.0,
           "autonomia_financiera_nivel": "Baja (Dependencia FCM con patentes mineras y comerciales)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 161297,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 46.7,
-          "inversion_real_directa_pct": 5.8,
-          "profesionalizacion_planta_pct": 15.4,
           "ingresos_patentes_acuicolas_mclp": 32.0,
           "ingresos_patentes_mineras_mclp": 288.0
         },
@@ -2601,12 +2582,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11402",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Marcelo Jélvez Cárdenas",
+          "alcalde_nombre": "Marcelo Santana Vargas / Alcaldía en ejercicio",
           "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-          "periodo_alcaldia": "2024–2028",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 86.4,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 3950.0,
@@ -2614,11 +2595,8 @@
           "dependencia_fcm_pct": 79.6,
           "ingresos_patentes_acuicolas_mineras_mclp": 115.0,
           "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 185457,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 47.9,
-          "inversion_real_directa_pct": 4.9,
-          "profesionalizacion_planta_pct": 14.1,
           "ingresos_patentes_acuicolas_mclp": 57.5,
           "ingresos_patentes_mineras_mclp": 57.5
         },
@@ -2986,12 +2964,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11301",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Patricio Ulloa Georgia",
-          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-          "periodo_alcaldia": "2024–2028",
+          "alcalde_nombre": "Patricio Ulloa Georgia / Jorge Calderón Núñez",
+          "alcalde_partido_pacto": "UDI / Chile Vamos (Ulloa) / Partido Radical (Calderón)",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 85.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 4600.0,
@@ -2999,11 +2977,8 @@
           "dependencia_fcm_pct": 76.8,
           "ingresos_patentes_acuicolas_mineras_mclp": 180.0,
           "autonomia_financiera_nivel": "Baja (Dependencia FCM)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 124047,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 43.5,
-          "inversion_real_directa_pct": 6.2,
-          "profesionalizacion_planta_pct": 16.2,
           "ingresos_patentes_acuicolas_mclp": 90.0,
           "ingresos_patentes_mineras_mclp": 90.0
         },
@@ -3371,12 +3346,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11302",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "José Claudio Fica Gómez",
-          "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC)",
-          "periodo_alcaldia": "2024–2028",
+          "alcalde_nombre": "Roberto Recabal Cárcamo / Claudio Fica",
+          "alcalde_partido_pacto": "Independiente / Chile Vamos",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 88.0,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2150.0,
@@ -3384,11 +3359,8 @@
           "dependencia_fcm_pct": 91.5,
           "ingresos_patentes_acuicolas_mineras_mclp": 28.0,
           "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM por aislamiento terminal Carretera Austral)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 188563,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 50.4,
-          "inversion_real_directa_pct": 3.8,
-          "profesionalizacion_planta_pct": 10.5,
           "ingresos_patentes_acuicolas_mclp": 14.0,
           "ingresos_patentes_mineras_mclp": 14.0
         },
@@ -3756,12 +3728,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11303",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Marisela Jiménez Cruces",
-          "alcalde_partido_pacto": "Independiente",
-          "periodo_alcaldia": "2024–2028",
+          "alcalde_nombre": "Abel Becerra Vidal",
+          "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
+          "periodo_alcaldia": "2021-2024 / 2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 87.3,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2050.0,
@@ -3769,11 +3741,8 @@
           "dependencia_fcm_pct": 92.8,
           "ingresos_patentes_acuicolas_mineras_mclp": 22.0,
           "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM)",
-          "anio_referencia_sinim": 2025,
-          "ingresos_propios_permanentes_per_capita_clp": 63594,
+          "anio_referencia_sinim": 2024,
           "gasto_personal_subtitulo_21_pct": 52.6,
-          "inversion_real_directa_pct": 3.1,
-          "profesionalizacion_planta_pct": 9.8,
           "ingresos_patentes_acuicolas_mclp": 11.0,
           "ingresos_patentes_mineras_mclp": 11.0
         },

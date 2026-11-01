@@ -124,7 +124,13 @@ if (wp10 && wp10.por_comuna) {
 // Catálogo de procedencia por ID de nodo
 const provByNodeId = {};
 (provCatalog.nodes || []).forEach(n => {
-  provByNodeId[n.id] = n.provenance;
+  const p = Object.assign({}, n.provenance || {});
+  Object.keys(p).forEach(k => {
+    if (p[k] === null || p[k] === undefined) {
+      delete p[k];
+    }
+  });
+  provByNodeId[n.id] = p;
 });
 
 // ============================================================================
@@ -3925,8 +3931,24 @@ Object.keys(processedExtGallery).forEach(k => {
   if (canonicalNumeralMap[k]) processedExtGallery[k].numeral = canonicalNumeralMap[k];
 });
 
+// Sello de actualizacion mensual automatica. Se lee de un archivo de datos (no del reloj
+// de pared) para que la compilacion siga siendo reproducible byte a byte (verify_bundle_sync).
+const autoUpdateStatus = (() => {
+  try {
+    return readJson('data/systemic/auto_update_status.json');
+  } catch (e) {
+    return null;
+  }
+})();
+const metaAutoUpdate = {
+  frequency: (autoUpdateStatus && autoUpdateStatus.frequency) || 'Mensual (d\u00eda 1 de cada mes)',
+  lastRun: (autoUpdateStatus && autoUpdateStatus.lastRun) || '',
+  activeApiConnectors: (autoUpdateStatus && autoUpdateStatus.activeApiConnectors) || 7,
+  totalSources: (autoUpdateStatus && autoUpdateStatus.totalSources) || 0
+};
 const bundle = {
   generatedAt: buildTimestamp,
+  meta: { autoUpdate: metaAutoUpdate },
   hubs,
   nodos,
   comunas,

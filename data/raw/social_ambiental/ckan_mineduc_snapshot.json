@@ -1,0 +1,80 @@
+{
+  "source": "https://datos.gob.cl/api/3/action",
+  "query": "mineduc",
+  "fetched_at": "2026-10-30T15:05:58+00:00",
+  "http_status": 200,
+  "packages_found": 32,
+  "resources": [
+    {
+      "package": "cargos-docentes",
+      "package_title": "Cargos docentes",
+      "organization": "Subsecretaría de Educación",
+      "metadata_modified": "2024-01-22T18:35:08.127095",
+      "resource_id": "d27a9a94-f43d-402c-afe0-c3c27cb4737a",
+      "resource_name": "Base de datos de cargos docentes",
+      "format": "",
+      "url": "https://datosabiertos.mineduc.cl/cargos-docentes/",
+      "datastore_active": false
+    },
+    {
+      "package": "estudiantes-subvencion-escolar-preferencial-sep",
+      "package_title": "Estudiantes Subvención Escolar Preferencial (SEP)",
+      "organization": "Subsecretaría de Educación",
+      "metadata_modified": "2024-01-22T19:24:15.269339",
+      "resource_id": "c884ed33-b0ee-4abe-8576-6661d1da7287",
+      "resource_name": "Bases de datos de estudiantes SEP",
+      "format": "",
+      "url": "https://datosabiertos.mineduc.cl/alumnos-preferentes-prioritarios-y-beneficiarios-sep/",
+      "datastore_active": false
+    },
+    {
+      "package": "resumen-de-matricula-por-establecimiento",
+      "package_title": "Resumen de matrícula por establecimiento",
+      "organization": "Subsecretaría de Educación",
+      "metadata_modified": "2024-01-22T18:52:55.319855",
+      "resource_id": "08261551-96a9-4ab8-a9ff-426f99af1d7c",
+      "resource_name": "Bases de datos resumen de matrícula por establecimiento",
+      "format": "",
+      "url": "https://datosabiertos.mineduc.cl/resumen-de-matricula-por-establecimiento-educacional/",
+      "datastore_active": false
+    },
+    {
+      "package": "asignaciones-fuas",
+      "package_title": "Asignaciones Formulario Único de Acreditación Socioeconómica (FUAS)",
+      "organization": "Subsecretaría de Educación",
+      "metadata_modified": "2024-01-22T18:35:48.790686",
+      "resource_id": "0390c0f0-bafa-44bd-b847-af1ff8947661",
+      "resource_name": "Bases de datos de asignaciones  Formulario Único de Acreditación Socioeconómica (FUAS) ",
+      "format": "",
+      "url": "https://datosabiertos.mineduc.cl/asignaciones-de-becas-y-creditos-en-educacion-superior/",
+      "datastore_active": false
+    },
+    {
+      "package": "pruebas-de-admision-a-la-educacion-superior",
+      "package_title": "Pruebas de admisión a la educación superior",
+      "organization": "Subsecretaría de Educación",
+      "metadata_modified": "2024-01-22T19:28:08.941047",
+      "resource_id": "2e74a273-72a6-4749-b7d7-9feaa73aad9a",
+      "resource_name": "Bases de datos pruebas de acceso a la educación superior",
+      "format": "",
+      "url": "https://datosabiertos.mineduc.cl/pruebas-de-admision-a-la-educacion-superior/",
+      "datastore_active": false
+    }
+  ],
+  "aysen_rows": [],
+  "aysen_filter": {
+    "region": "11",
+    "comunas": [
+      "11101",
+      "11102",
+      "11201",
+      "11202",
+      "11203",
+      "11301",
+      "11302",
+      "11303",
+      "11401",
+      "11402"
+    ]
+  }
+}

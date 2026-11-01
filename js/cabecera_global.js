@@ -3,7 +3,8 @@
  *
  * El marcado de <header class="brand-header"> es estatico en cada pagina (las suites de
  * verificacion lo leen del HTML y la cabecera debe existir sin JavaScript). Este modulo
- * solo marca el enlace activo y fija el titulo corto del modulo.
+ * inyecta el contenido de .brand-header si el contenedor esta vacio, marca el enlace
+ * activo y fija el titulo corto del modulo.
  *
  * Uso: montarCabecera({ tituloModulo: 'Portada', activo: 'portal.html' });
  */
@@ -14,10 +15,39 @@
     return String(href || '').split('#')[0].split('?')[0].split('/').pop();
   }
 
+  function generarHtmlCabecera(tituloModulo) {
+    var modTitle = tituloModulo || 'Portada';
+    return '<div class="brand-header-inner">' +
+      '<div class="brand-left">' +
+        '<span class="brand-dot"></span>' +
+        '<a href="portal.html" class="brand-author-name" title="Volver al inicio">Álvaro Contreras Barrios</a>' +
+        '<span class="brand-divider">|</span>' +
+        '<span class="brand-module-title">' + modTitle + '</span>' +
+      '</div>' +
+      '<div class="brand-right">' +
+        '<nav class="brand-nav-pills" aria-label="Navegación principal">' +
+          '<a href="portal.html" class="brand-pill">Portada</a>' +
+          '<a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>' +
+          '<a href="index.html" class="brand-pill">Datos de Aysén</a>' +
+          '<a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>' +
+          '<a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">' +
+            '<span>LinkedIn</span>' +
+            '<span class="pill-arrow">↗</span>' +
+          '</a>' +
+        '</nav>' +
+      '</div>' +
+    '</div>';
+  }
+
   function montarCabecera(opciones) {
+    if (typeof document === 'undefined') return null;
     var cfg = opciones || {};
     var cabecera = document.querySelector('header.brand-header');
     if (!cabecera) return null;
+
+    if (!cabecera.querySelector('.brand-header-inner')) {
+      cabecera.innerHTML = generarHtmlCabecera(cfg.tituloModulo);
+    }
 
     if (cfg.tituloModulo) {
       var titulo = cabecera.querySelector('.brand-module-title');
