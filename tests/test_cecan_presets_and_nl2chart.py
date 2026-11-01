@@ -35,71 +35,77 @@ EMOJI_REGEX = re.compile(
 class TestCecanPresetsAndNl2Chart(unittest.TestCase):
 
     def test_01_cecan_presets_json_structure(self):
-        """data/cecan_16_presets_aysen.json debe contener exactamente las 16 propiedades CECAN."""
+        """data/cecan_16_presets_aysen.json debe contener exactamente las 16 propiedades en las 3 modalidades."""
         self.assertTrue(os.path.exists(CECAN_FILE), "data/cecan_16_presets_aysen.json debe existir")
         with open(CECAN_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            raw_text = f.read()
+            data = json.loads(raw_text)
+
+        self.assertNotIn("CECAN", raw_text, "El JSON de las 16 propiedades no debe contener la sigla CECAN")
 
         properties = data.get("properties", [])
         self.assertEqual(len(properties), 16, "Deben existir exactamente 16 propiedades")
 
-        # Verificar conteo de empíricas y vacías
-        empirical = [p for p in properties if p.get("hasEmpiricalChart") is True]
-        empty = [p for p in properties if p.get("hasEmpiricalChart") is False]
+        epist = [p for p in properties if p.get("mode") == "epistemological_limit"]
+        dual = [p for p in properties if p.get("mode") == "dual_chart"]
+        single = [p for p in properties if p.get("mode") == "single_chart"]
 
-        self.assertEqual(len(empirical), 13, "Deben existir exactamente 13 propiedades con presets empíricos activos")
-        self.assertEqual(len(empty), 3, "Deben existir exactamente 3 propiedades declaradas epistemológicamente vacías")
+        self.assertEqual(len(epist), 3, "Deben existir exactamente 3 propiedades en mode 'epistemological_limit'")
+        self.assertEqual(len(dual), 5, "Deben existir exactamente 5 propiedades en mode 'dual_chart'")
+        self.assertEqual(len(single), 8, "Deben existir exactamente 8 propiedades en mode 'single_chart'")
 
-        empty_ids = {p.get("property_id") for p in empty}
-        self.assertEqual(empty_ids, {3, 12, 13}, "Las propiedades vacías deben ser exactamente #03, #12 y #13")
+        self.assertEqual({p.get("property_num") for p in epist}, {"02", "12", "13"})
+        self.assertEqual({p.get("property_num") for p in dual}, {"01", "08", "11", "15", "16"})
+        self.assertEqual({p.get("property_num") for p in single}, {"03", "04", "05", "06", "07", "09", "10", "14"})
 
-        for p in empty:
-            self.assertIn("methodological_note", p, f"Propiedad {p.get('property_id')} carece de methodological_note")
-            note = p["methodological_note"]
-            self.assertTrue(note.get("reason"), "Debe incluir explicación metodológica")
-            self.assertTrue(note.get("redirect") or note.get("redirect_url"), "Debe incluir redirección")
+        for p in properties:
+            refl = p.get("reflection_card") or {}
+            self.assertTrue(p.get("definition_es") or refl.get("definition"), f"Propiedad {p.get('property_num')} sin definición")
+            self.assertTrue(p.get("aysen_case_es") or refl.get("aysen_case"), f"Propiedad {p.get('property_num')} sin caso de Aysén")
+            self.assertTrue(p.get("official_source") or refl.get("official_source"), f"Propiedad {p.get('property_num')} sin fuente oficial")
+            self.assertEqual(p.get("return_url"), f"sistemas_complejos.html?prop={p.get('property_num')}")
 
     def test_02_cecan_empirical_presets_variables_exist(self):
-        """Las variables referenciadas en los presets empíricos deben existir en el Data Lake."""
+        """Las variables referenciadas en las 16 propiedades deben existir en window.AYSEN_HUBS_DATA o series sincronizadas con varianza > 0."""
         with open(CECAN_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        # Leer variables comunales de data/aysen_hubs_data.js
         with open(HUBS_DATA_FILE, "r", encoding="utf-8") as f:
             hubs_text = f.read()
         idx = hubs_text.find("window.AYSEN_HUBS_DATA = ")
         raw_json = hubs_text[idx + len("window.AYSEN_HUBS_DATA = "):].rstrip(";\n ")
         hubs_obj = json.loads(raw_json)
-        comuna_keys = set(hubs_obj["comunas"][0].keys())
+        comunas = hubs_obj["comunas"]
+        comuna_keys = set(comunas[0].keys())
 
-        special_cross_vars = {
-            "dias_sobre_norma_mp25", "urgencias_respiratorias_pct", "hogares_lena_pct",
-            "biomasa_cosecha_kton", "infa_aerobica_pct", "alexandrium_cel_l", "caudal_baker_m3s",
-            "nivel_colonia_m", "precipitacion_tortel_mm", "sst_c", "tsm_fiordos", "fan_alexandrium",
-            "temperatura_minima_balmaceda", "mp25_invernal_coyhaique", "egresos_respiratorios",
-            "temp_min_c", "mp25_ugm3"
-        }
+        lab_path = os.path.join(ROOT_DIR, "laboratorio.html")
+        with open(lab_path, "r", encoding="utf-8") as f:
+            lab_html = f.read()
 
         for prop in data.get("properties", []):
-            if not prop.get("hasEmpiricalChart"):
-                continue
             presets = prop.get("presets", [])
-            if not presets and "primary_preset" in prop:
-                presets = [prop["primary_preset"]]
-            self.assertGreaterEqual(len(presets), 1, f"Propiedad {prop['property_id']} sin presets")
+            if prop.get("property_num") in ("12", "13"):
+                self.assertEqual(len(presets), 0, f"Propiedad #{prop.get('property_num')} no debe tener presets de gráfico")
+                continue
+            if prop.get("mode") == "dual_chart":
+                self.assertEqual(len(presets), 2, f"Propiedad dual_chart #{prop.get('property_num')} debe tener 2 gráficos")
+            elif prop.get("mode") == "single_chart":
+                self.assertEqual(len(presets), 1, f"Propiedad single_chart #{prop.get('property_num')} debe tener 1 gráfico")
+            elif prop.get("property_num") == "02":
+                self.assertEqual(len(presets), 3, "Propiedad #02 Emergencia debe mostrar los 3 widgets sistémicos")
 
             for preset in presets:
                 title = preset.get("titulo") or preset.get("title")
                 self.assertTrue(title, "El preset debe tener título")
-                varX = preset.get("varX") or preset.get("seriePrimaria") or preset.get("llavePrimaria")
-                varY = preset.get("varY") or preset.get("serieSecundaria") or preset.get("llaveSecundaria")
+                varX = preset.get("varX") or preset.get("seriePrimaria") or preset.get("y_axis")
                 self.assertTrue(varX, f"Preset {title} carece de varX")
-                self.assertTrue(varY, f"Preset {title} carece de varY")
-
-                # Comprobar que varX y varY existan (directo o por llave)
-                for v in [varX, varY]:
-                    valid = (v in comuna_keys or v in special_cross_vars)
-                    self.assertTrue(valid, f"Variable {v} en preset {title} no existe en el Data Lake")
+                series_keys = preset.get("series_keys") or [k for k in [varX, preset.get("varY")] if k]
+                for v in series_keys:
+                    if v in comuna_keys:
+                        vals = [float(c.get(v, 0) or 0) for c in comunas]
+                        self.assertGreater(len(set(vals)), 1, f"Variable comunal {v} tiene varianza 0")
+                    else:
+                        self.assertIn(f"id: '{v}'", lab_html, f"Serie temporal {v} en preset {title} debe estar registrada en laboratorio.html")
 
     def test_03_nl_lexicon_coverage(self):
         """data/nl_lexicon_aysen.json debe indexar >70 variables y 31 nodos satélites."""

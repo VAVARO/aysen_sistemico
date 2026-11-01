@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Representación Visual de la Complejidad — CECAN</title>
+  <title>La Representación Visual de la Complejidad | Álvaro Contreras Barrios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <script src="data/aysen_hubs_data.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="js/cabecera_global.css">
   <style>
     /* Posicion de la cabecera en esta pagina (los estilos viven en js/cabecera_global.css) */
@@ -45,14 +43,13 @@
 
     html, body {
       width: 100%;
-      height: auto;
-      min-height: 100%;
+      height: 100vh;
+      min-height: 100vh;
       background-color: var(--paper);
       color: var(--ink);
       font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      overflow-y: auto;
+      overflow: hidden;
     }
 
     .lang-switch {
@@ -544,17 +541,6 @@
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
-    .grid-attribution-pill .pill-badge {
-      background: var(--cobalt);
-      color: #ffffff;
-      font-size: 0.5625rem;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 2px;
-      letter-spacing: 0.04em;
-      flex-shrink: 0;
-    }
-
     .grid-attribution-pill .pill-text {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -949,177 +935,29 @@
       }
     }
   
-    /* =========================================================================
-       ATLAS VISUAL DE LAS 16 PROPIEDADES EN AYSEN (CECAN) - WP-3
-       ========================================================================= */
-    .aysen-cecan-atlas {
-      width: 100%;
-      background-color: #ffffff;
-      color: #1c1b1b;
-      font-family: 'IBM Plex Sans', sans-serif;
-      border-top: 2px solid #00357f;
-      padding: 0;
-      margin: 0;
-      box-shadow: none;
-    }
-
-    .atlas-header {
-      padding: 36px 32px 24px 32px;
-      border-bottom: 1px solid #e2e8f0;
-      background: #fafaf9;
-    }
-
-    .atlas-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.85rem;
-      font-weight: 700;
-      color: #1c1b1b;
-      margin-bottom: 10px;
-      line-height: 1.25;
-    }
-
-    .atlas-subtitle {
+    /* SÍNTESIS DEL CASO EN AYSÉN Y ENLACE AL LABORATORIO SISTÉMICO */
+    .prop-aysen-summary {
+      font-family: var(--font-sans);
       font-size: 0.875rem;
-      line-height: 1.55;
-      color: #4a4745;
-      max-width: 980px;
-      margin-bottom: 0;
+      line-height: 1.58;
+      color: var(--ink-secondary);
+      margin: 0 0 12px 0;
     }
 
-    /* BARRA PLANA DE FILTRO POR CATEGORÍA SISTÉMICA */
-    .atlas-filter-bar {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 12px 32px;
-      border-bottom: 1px solid #e2e8f0;
-      background: #ffffff;
-      flex-wrap: wrap;
-    }
-
-    .atlas-filter-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .atlas-filter-btn {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      color: #475569;
-      font-family: 'IBM Plex Sans', sans-serif;
+    .prop-lab-link {
+      display: inline-block;
+      font-family: var(--font-sans);
       font-size: 0.8125rem;
-      font-weight: 500;
-      padding: 6px 12px;
-      cursor: pointer;
-      border-radius: 0;
-      transition: color 0.15s ease, border-color 0.15s ease;
-    }
-
-    .atlas-filter-btn:hover {
-      color: #00357f;
-      border-bottom-color: #cbd5e1;
-    }
-
-    .atlas-filter-btn.active {
-      color: #00357f;
       font-weight: 600;
-      border-bottom-color: #00357f;
+      color: var(--cobalt);
+      text-decoration: none;
+      line-height: 1.4;
+      transition: color var(--duration-fast) var(--ease-out);
     }
 
-    .atlas-filter-btn:active {
-      transform: scale(0.98);
-    }
-
-    /* GRILLA EDITORIAL LIMPIA DE 16 PROPIEDADES */
-    .atlas-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      background: #e2e8f0;
-      gap: 1px;
-      width: 100%;
-    }
-
-    @media (max-width: 920px) {
-      .atlas-grid {
-        grid-template-columns: 1fr;
-      }
-      .atlas-header {
-        padding: 24px 16px;
-      }
-      .atlas-filter-bar {
-        padding: 12px 16px;
-      }
-    }
-
-    .atlas-prop-cell {
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      padding: 24px;
-      box-shadow: none;
-      min-width: 0;
-    }
-
-    .atlas-prop-cell.is-hidden {
-      display: none;
-    }
-
-    .atlas-prop-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 0 0 0.5rem 0;
-      line-height: 1.3;
-    }
-
-    .atlas-prop-def {
-      font-size: 0.8125rem;
-      line-height: 1.5;
-      color: #475569;
-      margin: 0 0 0.5rem 0;
-    }
-
-    .atlas-aysen-case {
-      font-size: 0.8125rem;
-      line-height: 1.5;
-      color: #1e293b;
-      margin: 0 0 0.75rem 0;
-    }
-
-    .atlas-chart-wrap {
-      position: relative;
-      height: 260px;
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .atlas-source-line {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7rem;
-      color: #64748b;
-      margin-top: 0.5rem;
-    }
-
-    .atlas-footer {
-      padding: 24px 32px;
-      background: #f8fafc;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .atlas-footer-inner {
-      max-width: 980px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .atlas-footer-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6875rem;
-      color: #64748b;
+    .prop-lab-link:hover {
+      color: #0059c5;
+      text-decoration: underline;
     }
   </style>
 <script src="js/cabecera_global.js"></script>
@@ -1134,7 +972,7 @@
         <a href="portal.html" class="brand-author-name" title="Volver a la Portada">Álvaro Contreras Barrios</a>
         <span class="brand-divider">|</span>
         <span class="brand-module-title" id="btnHomeTitle" title="Volver al índice de 16 propiedades">Visualizador de Complejidad</span>
-        <span class="brand-module-sub" id="mastheadSub" style="display:none;">CECAN — 16 propiedades</span>
+        <span class="brand-module-sub" id="mastheadSub" style="display:none;">16 propiedades</span>
       </div>
       <div class="brand-right">
         <nav class="brand-nav-pills" aria-label="Navegación principal">
@@ -1208,8 +1046,7 @@
   <main>
     <!-- VISTA 1: MATRIZ 4x4 DE LAS 16 PROPIEDADES -->
     <section id="gridView"></section>
-    <div class="grid-attribution-pill" id="gridAttributionPill" aria-label="Atribución académica CECAN">
-      <span class="pill-badge">CECAN</span>
+    <div class="grid-attribution-pill" id="gridAttributionPill" aria-label="Atribución académica">
       <span class="pill-text" id="gridAttributionPillText">Basado en: <em>Boehnert, J., Penn, A., Barbrook-Johnson, P., Bicket, M., &amp; Hills, D. (2018). The visual representation of complexity: Definitions, examples &amp; learning points [Poster]. Loughborough University.</em></span>
     </div>
 
@@ -1242,7 +1079,7 @@
       <aside class="editorial-pane" id="editorialPane">
         <button class="editorial-drawer-handle" id="btnToggleEditorialDrawer" aria-label="Alternar lectura editorial" type="button">
           <span class="handle-bar"></span>
-          <span>Ficha Editorial CECAN</span>
+          <span>Ficha Editorial</span>
           <span id="editorialDrawerArrow">▲</span>
         </button>
         <div>
@@ -1262,6 +1099,12 @@
             <h2 class="section-heading" id="headingLearning">Puntos de aprendizaje</h2>
             <ul class="learning-list" id="learningList"></ul>
           </div>
+
+          <div class="section-block" id="aysenCaseBlock">
+            <h2 class="section-heading" id="headingAysenCase">Caso en Aysén</h2>
+            <p class="prop-aysen-summary" id="propAysenSummary"></p>
+            <a class="prop-lab-link" id="propLabLink" href="laboratorio.html?preset=prop_01">Explorar caso empírico de Aysén en el Laboratorio Sistémico →</a>
+          </div>
         </div>
 
         <div class="editorial-footer">
@@ -1273,718 +1116,12 @@
       </aside>
     </section>
   </main>
-  <!-- =========================================================================
-       ATLAS VISUAL DE LAS 16 PROPIEDADES EN AYSEN (CECAN) - WP-3
-       ========================================================================= -->
-  <section id="aysenCecanAtlasSection" class="aysen-cecan-atlas" aria-label="Atlas Visual de las 16 Propiedades de los Sistemas Complejos en Aysén">
-    <header class="atlas-header">
-      <h2 class="atlas-title">Atlas Visual de las 16 Propiedades de los Sistemas Complejos en Aysén</h2>
-      <p class="atlas-subtitle">
-        Aplicación empírica de las 16 propiedades de los sistemas complejos en las 10 comunas de la Región de Aysén a partir de series históricas 2015–2026 y registros administrativos oficiales.
-      </p>
-    </header>
-
-    <nav id="atlasCategoryFilterBar" class="atlas-filter-bar" aria-label="Filtro de propiedades por categoría sistémica">
-      <div class="atlas-filter-buttons">
-        <button class="atlas-filter-btn active" data-cat="all" data-category="all" type="button">Todas (16)</button>
-        <button class="atlas-filter-btn" data-cat="dinamicas" data-category="dinamicas" type="button">Dinámicas y Retroalimentación</button>
-        <button class="atlas-filter-btn" data-cat="emergencia" data-category="emergencia" type="button">Emergencia y Auto-organización</button>
-        <button class="atlas-filter-btn" data-cat="umbrales" data-category="umbrales" type="button">No Linealidad y Umbrales</button>
-        <button class="atlas-filter-btn" data-cat="redes" data-category="redes" type="button">Redes, Escalas y Dependencia del Camino</button>
-      </div>
-    </nav>
-
-    <div id="aysenCecanAtlasGrid" class="atlas-grid">
-      <!-- Propiedad #01 -->
-      <article class="atlas-prop-cell" id="atlas-prop-01" data-cat="dinamicas" data-category="dinamicas">
-        <h3 class="atlas-prop-heading">#01 Retroalimentación</h3>
-        <p class="atlas-prop-def">Cuando el resultado de un proceso influye en la entrada de forma directa o indirecta, acelerando (positiva) o amortiguando (negativa) el cambio del sistema.</p>
-        <p class="atlas-aysen-case">En Coyhaique y la red asistencial de Aysén (2015–2026), la concentración invernal de material particulado fino MP2,5 por combustión residencial de leña se acopla con las urgencias respiratorias anuales, mientras el recambio de calefactores reduce gradualmente el promedio invernal.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-01"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: MMA - Red SINCA y MINSAL - DEIS · <a href="laboratorio.html?preset=cecan_01" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #02 -->
-      <article class="atlas-prop-cell" id="atlas-prop-02" data-cat="emergencia" data-category="emergencia">
-        <h3 class="atlas-prop-heading">#02 Emergencia</h3>
-        <p class="atlas-prop-def">Comportamientos, patrones o estructuras a nivel macro que surgen de la interacción colectiva de componentes a nivel micro, imposibles de predecir o deducir observando las partes aisladas.</p>
-        <p class="atlas-aysen-case">La comparación comunal entre la inversión aprobada en el SEIA y el número de empresas activas ante el SII muestra cómo la alta capitalización industrial en comunas litorales no se traduce linealmente en densificación del tejido empresarial local.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-02"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: SEA - Servicio de Evaluación Ambiental y SII · <a href="laboratorio.html?preset=cecan_02" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #03 -->
-      <article class="atlas-prop-cell" id="atlas-prop-03" data-cat="emergencia" data-category="emergencia">
-        <h3 class="atlas-prop-heading">#03 Autoorganización</h3>
-        <p class="atlas-prop-def">Capacidad de un sistema para generar orden espontáneo, estructuras complejas y coordinación interna a través de interacciones locales sin intervención de un mando o diseño central.</p>
-        <p class="atlas-aysen-case">El despliegue comunal de prestadores turísticos registrados en SERNATUR junto a la red de espacios culturales y museos refleja cómo las localidades australes articulan circuitos propios de hospitalidad e identidad territorial.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-03"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: SERNATUR Registro Nacional y MINCAP · <a href="laboratorio.html?preset=cecan_03" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #04 -->
-      <article class="atlas-prop-cell" id="atlas-prop-04" data-cat="redes" data-category="redes">
-        <h3 class="atlas-prop-heading">#04 Palancas y nodos centrales</h3>
-        <p class="atlas-prop-def">Lugares específicos dentro de un sistema complejo donde una pequeña intervención puede producir modificaciones profundas y generalizadas en el comportamiento global.</p>
-        <p class="atlas-aysen-case">El contraste entre la concentración demográfica en Coyhaique y las aeroevacuaciones médicas anuales SAMU desde comunas insulares y australes configura una red asistencial en estrella donde el hospital regional actúa como nodo crítico.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-04"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: INE Censo 2024 y MINSAL - SAMU Servicio de Salud Aysén · <a href="laboratorio.html?preset=cecan_04" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #05 -->
-      <article class="atlas-prop-cell" id="atlas-prop-05" data-cat="umbrales" data-category="umbrales">
-        <h3 class="atlas-prop-heading">#05 No linealidad</h3>
-        <p class="atlas-prop-def">Relaciones de causa y efecto donde los cambios en los resultados no son proporcionales a los cambios en las entradas, manifestando saltos bruscos, rendimientos decrecientes o efectos multiplicadores.</p>
-        <p class="atlas-aysen-case">Al relacionar la distancia temporal al Hospital Regional de Coyhaique con las horas anuales de interrupción eléctrica SAIDI, las comunas en sistemas aislados exhiben un incremento desproporcionado de indisponibilidad de suministro.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-05"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: MINSAL - Servicio de Salud Aysén y SEC · <a href="laboratorio.html?preset=cecan_05" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #06 -->
-      <article class="atlas-prop-cell" id="atlas-prop-06" data-cat="dinamicas" data-category="dinamicas">
-        <h3 class="atlas-prop-heading">#06 Dominios de estabilidad</h3>
-        <p class="atlas-prop-def">Configuraciones o estados estables alternativos hacia los cuales un sistema tiende a gravitar (cuencas de atracción), requiriendo perturbaciones mayores para cambiar de régimen.</p>
-        <p class="atlas-aysen-case">Aunque el presupuesto municipal total regional más que se duplicó entre 2015 y 2026, la dependencia promedio comunal respecto del Fondo Común Municipal permanece estabilizada por sobre el 61%.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-06"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: SUBDERE - Sistema Nacional de Información Municipal (SINIM) · <a href="laboratorio.html?preset=cecan_06" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #07 -->
-      <article class="atlas-prop-cell" id="atlas-prop-07" data-cat="dinamicas" data-category="dinamicas">
-        <h3 class="atlas-prop-heading">#07 Adaptación</h3>
-        <p class="atlas-prop-def">Proceso dinámico mediante el cual los agentes y subsistemas ajustan sus conductas, estructuras o estrategias en respuesta a presiones selectivas y transformaciones de su entorno.</p>
-        <p class="atlas-aysen-case">La dispersión comunal entre los proyectos aprobados en el SEIA y la inversión en innovación aplicada CORFO evidencia cómo las capacidades de reconversión productiva tienden a concentrarse en las cabeceras urbanas.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-07"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: SEA - Servicio de Evaluación Ambiental y CORFO Innova Aysén · <a href="laboratorio.html?preset=cecan_07" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #08 -->
-      <article class="atlas-prop-cell" id="atlas-prop-08" data-cat="redes" data-category="redes">
-        <h3 class="atlas-prop-heading">#08 Dependencia del camino</h3>
-        <p class="atlas-prop-def">Influencia persistente y determinante de decisiones y condiciones pasadas sobre las trayectorias de desarrollo y alternativas viables en el presente y futuro.</p>
-        <p class="atlas-aysen-case">La trayectoria eléctrica 2015–2026 muestra la expansión continua de la generación renovable hidroeléctrica y eólica junto a la persistencia estructural de generación térmica diésel en los sistemas aislados.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-08"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: Comisión Nacional de Energía (CNE) y SEC · <a href="laboratorio.html?preset=cecan_08" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #09 -->
-      <article class="atlas-prop-cell" id="atlas-prop-09" data-cat="umbrales" data-category="umbrales">
-        <h3 class="atlas-prop-heading">#09 Puntos de inflexión</h3>
-        <p class="atlas-prop-def">Umbrales críticos a partir de los cuales pequeños cambios en un forzante desencadenan transiciones rápidas, drásticas y a menudo difícilmente reversibles en el régimen del sistema.</p>
-        <p class="atlas-aysen-case">En el litoral de Aysén (2015–2026), los episodios de floración algal nociva de Alexandrium catenella sobre umbrales críticos gatillan cierres sanitarios preventivos que condicionan la cosecha acuícola regional.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-09"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: IFOP - Monitoreo FAN y SERNAPESCA · <a href="laboratorio.html?preset=cecan_09" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #10 -->
-      <article class="atlas-prop-cell" id="atlas-prop-10" data-cat="dinamicas" data-category="dinamicas">
-        <h3 class="atlas-prop-heading">#10 Cambio en el tiempo</h3>
-        <p class="atlas-prop-def">Comportamiento temporal de las variables que incluye dinámicas de desfase, acumulaciones, tasas diferenciales de cambio y fluctuaciones cíclicas multianuales.</p>
-        <p class="atlas-aysen-case">La evolución 2015–2026 de las pernoctaciones turísticas EMAT y las visitas anuales a áreas protegidas SNASPE refleja el ciclo de crecimiento, la contracción abrupta de 2020–2021 y la posterior recuperación regional.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-10"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: INE - SERNATUR (EMAT) y CONAF (SNASPE) · <a href="laboratorio.html?preset=cecan_10" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #11 -->
-      <article class="atlas-prop-cell" id="atlas-prop-11" data-cat="emergencia" data-category="emergencia">
-        <h3 class="atlas-prop-heading">#11 Sistema abierto</h3>
-        <p class="atlas-prop-def">Intercambio continuo de materia, energía, recursos e información entre el sistema y su entorno externo, delimitado por límites porosos y dinámicos.</p>
-        <p class="atlas-aysen-case">El cruce comunal entre las pernoctaciones turísticas anuales y el precio minorista de la gasolina de 93 octanos ilustra la exposición simultánea del territorio a flujos externos de visitantes y costos logísticos de combustibles.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-11"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: INE - SERNATUR (EMAT) y Comisión Nacional de Energía (CNE) · <a href="laboratorio.html?preset=cecan_11" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #12 -->
-      <article class="atlas-prop-cell" id="atlas-prop-12" data-cat="umbrales" data-category="umbrales">
-        <h3 class="atlas-prop-heading">#12 Impredecibilidad</h3>
-        <p class="atlas-prop-def">Imposibilidad intrínseca de pronosticar con certeza matemática exacta el estado futuro de un sistema debido a la sensibilidad a condiciones iniciales y a interacciones estocásticas no deterministas.</p>
-        <p class="atlas-aysen-case">Las oscilaciones interanuales de la inversión aprobada en el SEIA frente al flujo anual de pasajeros del Aeródromo Balmaceda (2015–2026) muestran la sensibilidad regional ante choques externos y ciclos discretos de proyectos.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-12"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: SEA - Servicio de Evaluación Ambiental y JAC · <a href="laboratorio.html?preset=cecan_12" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #13 -->
-      <article class="atlas-prop-cell" id="atlas-prop-13" data-cat="umbrales" data-category="umbrales">
-        <h3 class="atlas-prop-heading">#13 Factores desconocidos</h3>
-        <p class="atlas-prop-def">Fronteras del conocimiento ontológico e incertidumbre radical, asociadas a fenómenos no modelados, eventos imprevistos y 'cisnes negros' que escapan a los marcos causales convencionales.</p>
-        <p class="atlas-aysen-case">La relación entre el número de glaciares inventariados por cuenca comunal y la cartera de inversión FNDR expone cómo las comunas con mayor reserva criosférica operan con márgenes financieros acotados frente a contingencias hidroglaciológicas.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-13"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: DGA - MOP Inventario Público de Glaciares y DIPRES - GORE Aysén · <a href="laboratorio.html?preset=cecan_13" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #14 -->
-      <article class="atlas-prop-cell" id="atlas-prop-14" data-cat="emergencia" data-category="emergencia">
-        <h3 class="atlas-prop-heading">#14 Control distribuido</h3>
-        <p class="atlas-prop-def">Regulación, toma de decisiones y gobernanza repartidas entre múltiples agentes autónomos locales sin un mando centralizado único o jerarquía rígida.</p>
-        <p class="atlas-aysen-case">La contraposición entre el presupuesto municipal vigente y el porcentaje de superficie comunal en el SNASPE evidencia que municipios rurales de menor escala fiscal coexisten con vastas extensiones bajo jurisdicción de conservación.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-14"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: SUBDERE - SINIM y CONAF Catastro SNASPE · <a href="laboratorio.html?preset=cecan_14" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #15 -->
-      <article class="atlas-prop-cell" id="atlas-prop-15" data-cat="redes" data-category="redes">
-        <h3 class="atlas-prop-heading">#15 Sistemas anidados</h3>
-        <p class="atlas-prop-def">Estructuras jerárquicas u holárquicas donde sistemas complejos enteros forman parte integrante de sistemas más amplios y, a la vez, contienen subsistemas autorregulados en su interior.</p>
-        <p class="atlas-aysen-case">El vínculo comunal entre la superficie glaciar inventariada y los derechos de aprovechamiento de aguas no consuntivos da cuenta de cómo las cabeceras criosféricas alimentan las macrocuencas hidrográficas de la región.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-15"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: DGA - MOP Inventario Público de Glaciares y Derechos de Agua · <a href="laboratorio.html?preset=cecan_15" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-      <!-- Propiedad #16 -->
-      <article class="atlas-prop-cell" id="atlas-prop-16" data-cat="redes" data-category="redes">
-        <h3 class="atlas-prop-heading">#16 Múltiples escalas y niveles</h3>
-        <p class="atlas-prop-def">Fenómenos que ocurren simultáneamente en diversos niveles temporales, espaciales y organizativos, con interacciones cruzadas e interferencias entre escalas macro y micro.</p>
-        <p class="atlas-aysen-case">La comparación entre las hectáreas protegidas SNASPE por guardaparque y el ratio de presión turística comunal revela el desajuste de escalas entre los flujos estacionales de visitantes y la capacidad operativa local.</p>
-        <div class="atlas-chart-wrap" style="position: relative; height: 260px; width: 100%;"><canvas id="atlas-canvas-16"></canvas></div>
-        <div class="atlas-source-line" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Fuente: CONAF - SNASPE y SERNATUR / INE · <a href="laboratorio.html?preset=cecan_16" style="color: #00357f; text-decoration: none; font-weight: 500;">Explorar en Laboratorio →</a></div>
-      </article>
-    </div>
-
-    <footer class="atlas-footer">
-      <div class="atlas-footer-inner">
-        <div class="atlas-footer-meta">
-          <span>Plataforma y Base de Datos Sistémica de Aysén · Cobertura 10 Comunas · Series 2015–2026</span>
-        </div>
-      </div>
-    </footer>
-  </section>
-
+  
   <script>
     // =========================================================================
-    // ATLAS VISUAL CECAN (16 PROPIEDADES) - MOTOR CHART.JS ESTANDARIZADO
+    // DATOS ÍNTEGROS DE LAS 16 PROPIEDADES DE LOS SISTEMAS COMPLEJOS
     // =========================================================================
-    (function () {
-      window.atlasChartInstances = window.atlasChartInstances || {};
-
-      const YEARS_2015_2026 = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
-
-      const FALLBACK_COMUNAS = [
-        { comuna: 'Coyhaique', inversion_seia_mmusd: 545.5, empresas_sii: 3331, prestadores_sernatur: 229, museos_espacios_n: 8, poblacion_censo_2024: 61742, aeroevacuaciones_samu_n: 12, pernoctaciones_emat: 198400, gasolina_93_clp: 1385, presupuesto_mclp: 32450, superficie_snaspe_pct: 14.2, superficie_glaciar_km2: 85, daa_no_consuntivos_m3s: 142.5, ha_snaspe_por_guardaparque: 9800, ratio_presion_turistica: 3.21, traslado_coyhaique_hrs: 0.0, saidi_horas_anual: 6.4, proyectos_seia_aprobados: 168, innovacion_corfo_mclp: 1840, glaciares_dga_n: 112, fndr_mclp: 14200 },
-        { comuna: 'Aysén', inversion_seia_mmusd: 612.8, empresas_sii: 1285, prestadores_sernatur: 142, museos_espacios_n: 4, poblacion_censo_2024: 25061, aeroevacuaciones_samu_n: 28, pernoctaciones_emat: 96500, gasolina_93_clp: 1398, presupuesto_mclp: 19820, superficie_snaspe_pct: 62.4, superficie_glaciar_km2: 4120, daa_no_consuntivos_m3s: 685.0, ha_snaspe_por_guardaparque: 84500, ratio_presion_turistica: 3.85, traslado_coyhaique_hrs: 1.0, saidi_horas_anual: 9.8, proyectos_seia_aprobados: 245, innovacion_corfo_mclp: 1120, glaciares_dga_n: 1480, fndr_mclp: 9850 },
-        { comuna: 'Cisnes', inversion_seia_mmusd: 318.4, empresas_sii: 342, prestadores_sernatur: 98, museos_espacios_n: 3, poblacion_censo_2024: 5411, aeroevacuaciones_samu_n: 34, pernoctaciones_emat: 58200, gasolina_93_clp: 1445, presupuesto_mclp: 8940, superficie_snaspe_pct: 58.6, superficie_glaciar_km2: 920, daa_no_consuntivos_m3s: 310.4, ha_snaspe_por_guardaparque: 62400, ratio_presion_turistica: 10.75, traslado_coyhaique_hrs: 3.2, saidi_horas_anual: 18.5, proyectos_seia_aprobados: 142, innovacion_corfo_mclp: 485, glaciares_dga_n: 640, fndr_mclp: 5420 },
-        { comuna: 'Chile Chico', inversion_seia_mmusd: 184.2, empresas_sii: 298, prestadores_sernatur: 86, museos_espacios_n: 4, poblacion_censo_2024: 5106, aeroevacuaciones_samu_n: 42, pernoctaciones_emat: 46800, gasolina_93_clp: 1468, presupuesto_mclp: 7650, superficie_snaspe_pct: 36.8, superficie_glaciar_km2: 640, daa_no_consuntivos_m3s: 195.0, ha_snaspe_por_guardaparque: 41200, ratio_presion_turistica: 9.16, traslado_coyhaique_hrs: 5.5, saidi_horas_anual: 22.4, proyectos_seia_aprobados: 58, innovacion_corfo_mclp: 390, glaciares_dga_n: 420, fndr_mclp: 4890 },
-        { comuna: 'Cochrane', inversion_seia_mmusd: 92.6, empresas_sii: 215, prestadores_sernatur: 74, museos_espacios_n: 3, poblacion_censo_2024: 3601, aeroevacuaciones_samu_n: 38, pernoctaciones_emat: 39400, gasolina_93_clp: 1495, presupuesto_mclp: 6840, superficie_snaspe_pct: 48.5, superficie_glaciar_km2: 1850, daa_no_consuntivos_m3s: 820.5, ha_snaspe_por_guardaparque: 54800, ratio_presion_turistica: 10.94, traslado_coyhaique_hrs: 6.5, saidi_horas_anual: 26.8, proyectos_seia_aprobados: 36, innovacion_corfo_mclp: 310, glaciares_dga_n: 980, fndr_mclp: 4620 },
-        { comuna: 'Río Ibáñez', inversion_seia_mmusd: 64.5, empresas_sii: 164, prestadores_sernatur: 68, museos_espacios_n: 3, poblacion_censo_2024: 2699, aeroevacuaciones_samu_n: 26, pernoctaciones_emat: 34200, gasolina_93_clp: 1452, presupuesto_mclp: 6120, superficie_snaspe_pct: 42.1, superficie_glaciar_km2: 780, daa_no_consuntivos_m3s: 245.0, ha_snaspe_por_guardaparque: 38900, ratio_presion_turistica: 12.67, traslado_coyhaique_hrs: 2.2, saidi_horas_anual: 19.2, proyectos_seia_aprobados: 24, innovacion_corfo_mclp: 265, glaciares_dga_n: 510, fndr_mclp: 4180 },
-        { comuna: 'Guaitecas', inversion_seia_mmusd: 78.4, empresas_sii: 96, prestadores_sernatur: 18, museos_espacios_n: 1, poblacion_censo_2024: 1585, aeroevacuaciones_samu_n: 31, pernoctaciones_emat: 4800, gasolina_93_clp: 1540, presupuesto_mclp: 4890, superficie_snaspe_pct: 52.0, superficie_glaciar_km2: 0, daa_no_consuntivos_m3s: 12.0, ha_snaspe_por_guardaparque: 46000, ratio_presion_turistica: 3.03, traslado_coyhaique_hrs: 9.5, saidi_horas_anual: 34.6, proyectos_seia_aprobados: 28, innovacion_corfo_mclp: 140, glaciares_dga_n: 0, fndr_mclp: 3450 },
-        { comuna: 'Lago Verde', inversion_seia_mmusd: 28.5, empresas_sii: 68, prestadores_sernatur: 29, museos_espacios_n: 1, poblacion_censo_2024: 920, aeroevacuaciones_samu_n: 19, pernoctaciones_emat: 8900, gasolina_93_clp: 1510, presupuesto_mclp: 4320, superficie_snaspe_pct: 22.4, superficie_glaciar_km2: 145, daa_no_consuntivos_m3s: 168.0, ha_snaspe_por_guardaparque: 31500, ratio_presion_turistica: 9.67, traslado_coyhaique_hrs: 5.8, saidi_horas_anual: 29.4, proyectos_seia_aprobados: 9, innovacion_corfo_mclp: 95, glaciares_dga_n: 135, fndr_mclp: 3120 },
-        { comuna: "O'Higgins", inversion_seia_mmusd: 19.2, empresas_sii: 52, prestadores_sernatur: 34, museos_espacios_n: 2, poblacion_censo_2024: 657, aeroevacuaciones_samu_n: 22, pernoctaciones_emat: 11200, gasolina_93_clp: 1585, presupuesto_mclp: 4560, superficie_snaspe_pct: 68.9, superficie_glaciar_km2: 3490, daa_no_consuntivos_m3s: 410.0, ha_snaspe_por_guardaparque: 96400, ratio_presion_turistica: 17.05, traslado_coyhaique_hrs: 9.8, saidi_horas_anual: 36.2, proyectos_seia_aprobados: 6, innovacion_corfo_mclp: 115, glaciares_dga_n: 1290, fndr_mclp: 3680 },
-        { comuna: 'Tortel', inversion_seia_mmusd: 14.8, empresas_sii: 44, prestadores_sernatur: 31, museos_espacios_n: 2, poblacion_censo_2024: 569, aeroevacuaciones_samu_n: 24, pernoctaciones_emat: 9600, gasolina_93_clp: 1570, presupuesto_mclp: 4410, superficie_snaspe_pct: 79.4, superficie_glaciar_km2: 5980, daa_no_consuntivos_m3s: 520.0, ha_snaspe_por_guardaparque: 118500, ratio_presion_turistica: 16.87, traslado_coyhaique_hrs: 8.6, saidi_horas_anual: 32.8, proyectos_seia_aprobados: 6, innovacion_corfo_mclp: 105, glaciares_dga_n: 1690, fndr_mclp: 3540 }
-      ];
-
-      function getComunas() {
-        if (window.AYSEN_HUBS_DATA && Array.isArray(window.AYSEN_HUBS_DATA.comunas) && window.AYSEN_HUBS_DATA.comunas.length) {
-          return window.AYSEN_HUBS_DATA.comunas;
-        }
-        return FALLBACK_COMUNAS;
-      }
-
-      const atlasScatterLabelsPlugin = {
-        id: 'atlasScatterLabelsPlugin',
-        afterDatasetsDraw(chart) {
-          if (chart.config.type !== 'scatter') return;
-          const meta = chart.getDatasetMeta(0);
-          if (!meta || !meta.data || !meta.data.length) return;
-          const ds = chart.data.datasets[0];
-          const ctx = chart.ctx;
-          const area = chart.chartArea;
-          const placed = [];
-
-          ctx.save();
-          ctx.font = "500 9.5px 'IBM Plex Sans', sans-serif";
-          ctx.textBaseline = 'middle';
-
-          meta.data.forEach((el, idx) => {
-            const raw = ds.data[idx];
-            if (!raw || !raw.label) return;
-            const px = el.x;
-            const py = el.y;
-
-            const tooClose = placed.some(p => Math.hypot(p.x - px, p.y - py) < 24);
-            if (tooClose) return;
-            placed.push({ x: px, y: py });
-
-            const text = String(raw.label);
-            const textW = ctx.measureText(text).width;
-            const padX = 4;
-            const boxW = textW + padX * 2;
-            const boxH = 14;
-
-            let bx = px + 7;
-            let by = py - boxH / 2;
-            if (bx + boxW > area.right - 2) {
-              bx = px - boxW - 7;
-            }
-            if (by < area.top + 2) by = area.top + 2;
-            if (by + boxH > area.bottom - 2) by = area.bottom - boxH - 2;
-
-            ctx.fillStyle = 'rgba(255,255,255,0.82)';
-            ctx.fillRect(bx, by, boxW, boxH);
-            ctx.fillStyle = '#1e293b';
-            ctx.fillText(text, bx + padX, by + boxH / 2);
-          });
-
-          ctx.restore();
-        }
-      };
-
-      function getCommonLegend() {
-        return {
-          display: true,
-          position: 'top',
-          align: 'start',
-          labels: {
-            boxWidth: 10,
-            color: '#334155',
-            font: { family: "'IBM Plex Sans', sans-serif", size: 11 },
-            padding: 10
-          }
-        };
-      }
-
-      function getCommonTooltip() {
-        return {
-          backgroundColor: 'rgba(15, 23, 42, 0.92)',
-          titleFont: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '600' },
-          bodyFont: { family: "'IBM Plex Mono', monospace", size: 10.5 },
-          padding: 8,
-          callbacks: {
-            label: function (ctx) {
-              const raw = ctx.raw;
-              if (raw && typeof raw === 'object' && raw.label) {
-                const vx = typeof raw.x === 'number' ? raw.x.toLocaleString('es-CL') : raw.x;
-                const vy = typeof raw.y === 'number' ? raw.y.toLocaleString('es-CL') : raw.y;
-                return raw.label + ': (' + vx + ' ; ' + vy + ')';
-              }
-              const val = typeof ctx.parsed.y === 'number' ? ctx.parsed.y.toLocaleString('es-CL') : ctx.parsed.y;
-              return (ctx.dataset.label || '') + ': ' + val;
-            }
-          }
-        };
-      }
-
-      function buildDualAxisLineConfig(xTitle, s1Label, s1Data, s2Label, s2Data) {
-        return {
-          type: 'line',
-          data: {
-            labels: YEARS_2015_2026,
-            datasets: [
-              {
-                label: s1Label,
-                data: s1Data,
-                yAxisID: 'y',
-                borderColor: '#00357f',
-                backgroundColor: 'rgba(0, 53, 127, 0.12)',
-                pointBackgroundColor: '#00357f',
-                pointRadius: 3,
-                borderWidth: 2,
-                tension: 0.25
-              },
-              {
-                label: s2Label,
-                data: s2Data,
-                yAxisID: 'y1',
-                borderColor: '#0284c7',
-                backgroundColor: 'rgba(2, 132, 199, 0.12)',
-                pointBackgroundColor: '#0284c7',
-                pointRadius: 3,
-                borderWidth: 2,
-                borderDash: [5, 4],
-                tension: 0.25
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: 'index', intersect: false },
-            plugins: {
-              legend: getCommonLegend(),
-              tooltip: getCommonTooltip()
-            },
-            scales: {
-              x: {
-                title: { display: true, text: xTitle, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#475569',
-                  font: { family: "'IBM Plex Sans', sans-serif", size: 10 },
-                  callback: function (v) {
-                    const lbl = this.getLabelForValue ? this.getLabelForValue(v) : v;
-                    return typeof lbl === 'number' ? lbl.toLocaleString('es-CL') : lbl;
-                  }
-                },
-                grid: { color: 'rgba(226, 232, 240, 0.7)' }
-              },
-              y: {
-                type: 'linear',
-                position: 'left',
-                title: { display: true, text: s1Label, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#00357f',
-                  font: { family: "'IBM Plex Mono', monospace", size: 10 },
-                  callback: (v) => typeof v === 'number' ? v.toLocaleString('es-CL') : v
-                },
-                grid: { color: 'rgba(226, 232, 240, 0.7)' }
-              },
-              y1: {
-                type: 'linear',
-                position: 'right',
-                title: { display: true, text: s2Label, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#0284c7',
-                  font: { family: "'IBM Plex Mono', monospace", size: 10 },
-                  callback: (v) => typeof v === 'number' ? v.toLocaleString('es-CL') : v
-                },
-                grid: { drawOnChartArea: false }
-              }
-            }
-          }
-        };
-      }
-
-      function buildBivariateBarConfig(comunas, key1, label1, key2, label2) {
-        const sorted = comunas.slice().sort((a, b) => (Number(b[key1]) || 0) - (Number(a[key1]) || 0));
-        const labels = sorted.map(c => c.comuna || c.nombre || 'Comuna');
-        const data1 = sorted.map(c => Number(c[key1]) || 0);
-        const data2 = sorted.map(c => Number(c[key2]) || 0);
-
-        return {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [
-              {
-                label: label1,
-                data: data1,
-                yAxisID: 'y',
-                backgroundColor: '#00357f',
-                borderColor: '#00357f',
-                borderWidth: 1,
-                borderRadius: 2
-              },
-              {
-                label: label2,
-                data: data2,
-                yAxisID: 'y1',
-                backgroundColor: '#0284c7',
-                borderColor: '#0284c7',
-                borderWidth: 1,
-                borderRadius: 2
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: 'index', intersect: false },
-            plugins: {
-              legend: getCommonLegend(),
-              tooltip: getCommonTooltip()
-            },
-            scales: {
-              x: {
-                title: { display: true, text: 'Comunas de la Región de Aysén (ordenadas por indicador primario)', color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#475569',
-                  font: { family: "'IBM Plex Sans', sans-serif", size: 10 },
-                  maxRotation: 30,
-                  minRotation: 0,
-                  callback: function (v) {
-                    const lbl = this.getLabelForValue ? this.getLabelForValue(v) : v;
-                    return typeof lbl === 'number' ? lbl.toLocaleString('es-CL') : lbl;
-                  }
-                },
-                grid: { display: false }
-              },
-              y: {
-                type: 'linear',
-                position: 'left',
-                title: { display: true, text: label1, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#00357f',
-                  font: { family: "'IBM Plex Mono', monospace", size: 10 },
-                  callback: (v) => typeof v === 'number' ? v.toLocaleString('es-CL') : v
-                },
-                grid: { color: 'rgba(226, 232, 240, 0.7)' }
-              },
-              y1: {
-                type: 'linear',
-                position: 'right',
-                title: { display: true, text: label2, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#0284c7',
-                  font: { family: "'IBM Plex Mono', monospace", size: 10 },
-                  callback: (v) => typeof v === 'number' ? v.toLocaleString('es-CL') : v
-                },
-                grid: { drawOnChartArea: false }
-              }
-            }
-          }
-        };
-      }
-
-      function computeOLS(points) {
-        const n = points.length;
-        if (n < 2) return { line: [], r: 0 };
-        let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
-        for (let i = 0; i < n; i++) {
-          const x = points[i].x;
-          const y = points[i].y;
-          sumX += x;
-          sumY += y;
-          sumXY += x * y;
-          sumX2 += x * x;
-          sumY2 += y * y;
-        }
-        const denom = (n * sumX2 - sumX * sumX);
-        const slope = denom !== 0 ? (n * sumXY - sumX * sumY) / denom : 0;
-        const intercept = (sumY - slope * sumX) / n;
-        const rDenom = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
-        const r = rDenom !== 0 ? (n * sumXY - sumX * sumY) / rDenom : 0;
-
-        const xs = points.map(p => p.x);
-        const minX = Math.min(...xs);
-        const maxX = Math.max(...xs);
-        return {
-          r: r,
-          line: [
-            { x: minX, y: Number((slope * minX + intercept).toFixed(2)) },
-            { x: maxX, y: Number((slope * maxX + intercept).toFixed(2)) }
-          ]
-        };
-      }
-
-      function buildScatterOLSConfig(comunas, keyX, labelX, keyY, labelY) {
-        const pts = comunas.map(c => ({
-          x: Number(c[keyX]) || 0,
-          y: Number(c[keyY]) || 0,
-          label: c.comuna || c.nombre || 'Comuna'
-        }));
-        const ols = computeOLS(pts);
-        const rFormatted = ols.r.toFixed(2).replace('.', ',');
-
-        return {
-          type: 'scatter',
-          plugins: [atlasScatterLabelsPlugin],
-          data: {
-            datasets: [
-              {
-                label: 'Comunas de Aysén (10)',
-                data: pts,
-                backgroundColor: 'rgba(0, 53, 127, 0.78)',
-                borderColor: '#00357f',
-                pointRadius: 5,
-                pointHoverRadius: 7
-              },
-              {
-                type: 'line',
-                label: 'Tendencia lineal (r = ' + rFormatted + ')',
-                data: ols.line,
-                borderColor: '#0284c7',
-                borderWidth: 2,
-                borderDash: [5, 4],
-                pointRadius: 0,
-                fill: false
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: getCommonLegend(),
-              tooltip: getCommonTooltip()
-            },
-            scales: {
-              x: {
-                type: 'linear',
-                position: 'bottom',
-                title: { display: true, text: labelX, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#475569',
-                  font: { family: "'IBM Plex Sans', sans-serif", size: 10 },
-                  callback: (v) => typeof v === 'number' ? v.toLocaleString('es-CL') : v
-                },
-                grid: { color: 'rgba(226, 232, 240, 0.7)' }
-              },
-              y: {
-                type: 'linear',
-                position: 'left',
-                title: { display: true, text: labelY, color: '#334155', font: { family: "'IBM Plex Sans', sans-serif", size: 11, weight: '500' } },
-                ticks: {
-                  color: '#00357f',
-                  font: { family: "'IBM Plex Mono', monospace", size: 10 },
-                  callback: (v) => typeof v === 'number' ? v.toLocaleString('es-CL') : v
-                },
-                grid: { color: 'rgba(226, 232, 240, 0.7)' }
-              }
-            }
-          }
-        };
-      }
-
-      function getChartConfigForProperty(pnum, comunas) {
-        switch (pnum) {
-          case '01':
-            return buildDualAxisLineConfig(
-              'Año (serie histórica 2015–2026)',
-              'Concentración Invernal MP2,5 Coyhaique (µg/m³)',
-              [64.2, 61.8, 58.4, 55.9, 53.1, 51.4, 48.9, 46.2, 44.5, 42.8, 41.2, 39.6],
-              'Urgencias Respiratorias Anuales Red SSA (atenciones)',
-              [48200, 49650, 47890, 46420, 45180, 21450, 28940, 44120, 46850, 45320, 43890, 42650]
-            );
-          case '02':
-            return buildBivariateBarConfig(
-              comunas,
-              'inversion_seia_mmusd', 'Inversión Aprobada SEIA (MM US$)',
-              'empresas_sii', 'Empresas Activas SII (n°)'
-            );
-          case '03':
-            return buildBivariateBarConfig(
-              comunas,
-              'prestadores_sernatur', 'Prestadores Turísticos SERNATUR (n°)',
-              'museos_espacios_n', 'Espacios Culturales y Museos (n°)'
-            );
-          case '04':
-            return buildBivariateBarConfig(
-              comunas,
-              'poblacion_censo_2024', 'Población Censo 2024 (hab)',
-              'aeroevacuaciones_samu_n', 'Aeroevacuaciones Médicas SAMU (operativos/año)'
-            );
-          case '05':
-            return buildScatterOLSConfig(
-              comunas,
-              'traslado_coyhaique_hrs', 'Distancia Temporal al Hospital Regional (horas)',
-              'saidi_horas_anual', 'Interrupción Eléctrica Anual SAIDI (horas/año)'
-            );
-          case '06':
-            return buildDualAxisLineConfig(
-              'Año (serie histórica 2015–2026)',
-              'Dependencia Promedio Regional FCM (%)',
-              [66.4, 65.8, 65.1, 64.5, 64.0, 65.2, 63.8, 63.1, 62.5, 62.0, 61.6, 61.2],
-              'Presupuesto Municipal Total Regional (M$ CLP)',
-              [44280, 47150, 50320, 53890, 57410, 55920, 62450, 69840, 76120, 82450, 88190, 93420]
-            );
-          case '07':
-            return buildScatterOLSConfig(
-              comunas,
-              'proyectos_seia_aprobados', 'Proyectos Aprobados SEIA (n°)',
-              'innovacion_corfo_mclp', 'Inversión en Innovación Aplicada CORFO (M$ CLP)'
-            );
-          case '08':
-            return buildDualAxisLineConfig(
-              'Año (serie histórica 2015–2026)',
-              'Generación Renovable Hidro + Eólica (GWh)',
-              [92.4, 96.8, 101.2, 105.5, 110.3, 108.9, 115.4, 121.8, 127.5, 133.2, 138.6, 144.0],
-              'Generación Térmica Diésel Sistemas Aislados (GWh)',
-              [68.5, 70.1, 71.8, 72.4, 71.0, 66.8, 69.5, 67.2, 64.8, 61.5, 58.9, 55.4]
-            );
-          case '09':
-            return buildDualAxisLineConfig(
-              'Año (serie histórica 2015–2026)',
-              'Abundancia Máxima Alexandrium catenella FAN (cél/L)',
-              [120, 850, 310, 1420, 480, 290, 610, 540, 1180, 720, 690, 760],
-              'Cosecha Acuícola Regional de Salmónidos (Miles Ton)',
-              [412.5, 385.2, 428.9, 465.4, 492.1, 510.8, 488.3, 524.6, 538.2, 545.9, 552.4, 561.0]
-            );
-          case '10':
-            return buildDualAxisLineConfig(
-              'Año (serie histórica 2015–2026)',
-              'Pernoctaciones Turísticas EMAT (noches)',
-              [298400, 324500, 358900, 381200, 396400, 118500, 194200, 342800, 389500, 418600, 442100, 468900],
-              'Visitantes Anuales SNASPE en Aysén (visitantes)',
-              [112400, 128900, 146500, 162300, 174800, 42100, 78600, 149200, 171400, 186900, 198400, 212500]
-            );
-          case '11':
-            return buildBivariateBarConfig(
-              comunas,
-              'pernoctaciones_emat', 'Pernoctaciones Turísticas EMAT (noches/año)',
-              'gasolina_93_clp', 'Precio Gasolina 93 ($/L)'
-            );
-          case '12':
-            return buildDualAxisLineConfig(
-              'Año (serie histórica 2015–2026)',
-              'Inversión Aprobada Anual SEIA (MM US$)',
-              [84.5, 62.3, 118.4, 95.2, 142.8, 54.6, 88.9, 126.4, 108.5, 134.2, 119.8, 148.6],
-              'Flujo Anual Pasajeros Aeródromo Balmaceda (pasajeros)',
-              [218450, 241320, 268910, 294150, 318740, 142680, 215490, 312850, 346920, 368410, 389250, 412600]
-            );
-          case '13':
-            return buildScatterOLSConfig(
-              comunas,
-              'glaciares_dga_n', 'Glaciares Inventariados en Cuenca Comunal (n°)',
-              'fndr_mclp', 'Cartera de Contingencia e Inversión FNDR (M$ CLP)'
-            );
-          case '14':
-            return buildBivariateBarConfig(
-              comunas,
-              'presupuesto_mclp', 'Presupuesto Municipal Vigente (M$ CLP)',
-              'superficie_snaspe_pct', 'Superficie Comunal en SNASPE (%)'
-            );
-          case '15':
-            return buildBivariateBarConfig(
-              comunas,
-              'superficie_glaciar_km2', 'Superficie Glaciar Comunal (km²)',
-              'daa_no_consuntivos_m3s', 'Derechos de Agua No Consuntivos (m³/s)'
-            );
-          case '16':
-            return buildBivariateBarConfig(
-              comunas,
-              'ha_snaspe_por_guardaparque', 'Hectáreas SNASPE por Guardaparque (ha/guardap.)',
-              'ratio_presion_turistica', 'Ratio de Presión Turística (visit./hab)'
-            );
-          default:
-            return null;
-        }
-      }
-
-      function renderAllAtlasCharts() {
-        if (typeof Chart === 'undefined') return;
-        const comunas = getComunas();
-        for (let i = 1; i <= 16; i++) {
-          const pnum = String(i).padStart(2, '0');
-          const canvas = document.getElementById('atlas-canvas-' + pnum);
-          if (!canvas) continue;
-          if (window.atlasChartInstances[pnum]) {
-            window.atlasChartInstances[pnum].destroy();
-          }
-          const cfg = getChartConfigForProperty(pnum, comunas);
-          if (cfg) {
-            window.atlasChartInstances[pnum] = new Chart(canvas, cfg);
-          }
-        }
-      }
-
-      function initAtlasCategoryFilters() {
-        document.querySelectorAll('.atlas-filter-btn').forEach(btn => {
-          btn.addEventListener('click', function () {
-            document.querySelectorAll('.atlas-filter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-
-            const cat = this.getAttribute('data-cat') || this.getAttribute('data-category') || 'all';
-            document.querySelectorAll('.atlas-prop-cell').forEach(cell => {
-              const cellCat = cell.getAttribute('data-cat') || cell.getAttribute('data-category');
-              if (cat === 'all' || cellCat === cat) {
-                cell.classList.remove('is-hidden');
-              } else {
-                cell.classList.add('is-hidden');
-              }
-            });
-
-            setTimeout(() => {
-              Object.keys(window.atlasChartInstances).forEach(k => {
-                const inst = window.atlasChartInstances[k];
-                if (inst && typeof inst.resize === 'function') inst.resize();
-              });
-            }, 30);
-          });
-        });
-      }
-
-      function startAtlas() {
-        initAtlasCategoryFilters();
-        renderAllAtlasCharts();
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', startAtlas);
-      } else {
-        startAtlas();
-      }
-    })();
-  </script>
-
-
-
-  <script>
-    // =========================================================================
-    // DATOS ÍNTEGROS DE LAS 16 PROPIEDADES DE CECANV.4.pdf
-    // =========================================================================
-    const CECAN_PROPERTIES = [
+    const COMPLEXITY_PROPERTIES = [
       {
         id: 1, num: "01",
         es: {
@@ -2014,7 +1151,8 @@
             "Los bucles de retroalimentación pueden conducir a efectos desbocados o crear inercia mediante la amortiguación de efectos: dos extremos.",
             "Las retroalimentaciones positivas refuerzan y aceleran el cambio.",
             "Las retroalimentaciones negativas suprimen el cambio y son estabilizadoras o reguladoras."
-          ]
+          ],
+          aysenCase: "En las comunas de Aysén, el alto porcentaje de hogares que utilizan leña para calefacción se acopla con los días sobre la norma de MP2,5 y las atenciones respiratorias invernales (bucle reforzador), mientras el programa de recambio térmico y aislación PDA opera como bucle regulador entre 2015 y 2026."
         },
         en: {
           title: "Feedback",
@@ -2043,7 +1181,8 @@
             "Feedback loops can lead to runaway effects, or can create inertia through dampening of effects — two extremes.",
             "Positive feedbacks are reinforcing and accelerate change.",
             "Negative feedback suppress change and are stabilising/regulating."
-          ]
+          ],
+          aysenCase: "Across Aysén communes, household firewood share couples with days above the PM2.5 standard and winter respiratory visits (reinforcing loop), while the thermal replacement and insulation programme acts as a regulating loop over 2015–2026."
         }
       },
       {
@@ -2074,7 +1213,8 @@
           learning: [
             "Pueden surgir propiedades o fenómenos completamente nuevos e inesperados simplemente de la interacción de entidades de nivel inferior. Estas nuevas propiedades pueden ser difíciles y a veces imposibles de predecir.",
             "Considere cómo comprender los fenómenos emergentes impredecibles en su propio dominio."
-          ]
+          ],
+          aysenCase: "La vulnerabilidad invernal y la fragilidad fiscal comunal en Aysén emergen de la interacción simultánea entre costos eléctricos residenciales (tarifa BT1), contaminación atmosférica por leña (MP2,5) y dependencia presupuestaria del Fondo Común Municipal, sin poder deducirse de una sola variable aislada."
         },
         en: {
           title: "Emergence",
@@ -2102,7 +1242,8 @@
           learning: [
             "Completely new and unexpected properties or things can arise simply from the interaction of lower level entities. These new properties can be difficult and sometimes impossible to predict.",
             "Consider how to understand unpredictable emergent phenomena in your domain."
-          ]
+          ],
+          aysenCase: "Winter vulnerability and municipal fiscal fragility in Aysén emerge from the simultaneous interaction of residential electricity tariffs (BT1), PM2.5 firewood pollution and Common Municipal Fund dependency, which cannot be deduced from a single bivariate chart."
         }
       },
       {
@@ -2129,7 +1270,8 @@
             "Este orden de nivel superior requiere únicamente interacciones locales (o de nivel inferior).",
             "El orden surge espontáneamente sin control de arriba hacia abajo y, por tanto, suele mantenerse incluso si se interrumpe parte del sistema.",
             "La emergencia y la autoorganización son conceptos estrechamente relacionados: la autoorganización puede causar fenómenos emergentes, pero estos no tienen por qué ser autoorganizados."
-          ]
+          ],
+          aysenCase: "A lo largo de las 10 comunas de Aysén, la red de prestadores turísticos registrados en SERNATUR y los espacios culturales locales se articulan de forma descentralizada en torno a los flujos de visitantes a parques nacionales SNASPE."
         },
         en: {
           title: "Self-organisation",
@@ -2153,7 +1295,8 @@
             "This higher level order requires only local (or lower-level) interactions.",
             "Order arises spontaneously without top down control and hence can often remain in place even if part of the system is disrupted.",
             "Emergence and self-organisation are closely related concepts. Self-organisation can cause emergent phenomena, but emergent phenomena do not have to be self-organised."
-          ]
+          ],
+          aysenCase: "Across the 10 communes of Aysén, registered SERNATUR tourism providers and local cultural spaces self-organise around visitor flows to SNASPE national parks."
         }
       },
       {
@@ -2183,8 +1326,9 @@
           ],
           learning: [
             "Identificar los nodos centrales y las palancas puede ayudar a encontrar los mejores lugares para intervenir en sistemas complejos.",
-            "La estructura importa: conocer la estructura de las interacciones en un sistema es crucial para comprender cómo se comportará, cambiará o fallará."
-          ]
+            "La estructura importa: conocer la estructura de las interacciones en un sistema es determinante para comprender cómo se comportará, cambiará o fallará."
+          ],
+          aysenCase: "El sistema hospitalario y de conectividad digital de Aysén presenta una topología altamente concentrada en Coyhaique y Puerto Aysén, donde la dotación de camas hospitalarias, médicos por habitante y penetración de internet fijo actúan como nodos centrales para toda la red regional."
         },
         en: {
           title: "Levers and hubs",
@@ -2211,8 +1355,9 @@
           ],
           learning: [
             "Identifying hubs and levers can help identify best places to intervene in complex systems.",
-            "Structure matters; knowing the structure of interactions in a system is crucial to understanding how it will behave, change or fail."
-          ]
+            "Structure matters; knowing the structure of interactions in a system is essential to understanding how it will behave, change or fail."
+          ],
+          aysenCase: "Aysén healthcare and digital connectivity exhibit a hub topology centred in Coyhaique and Puerto Aysén, where hospital beds, physicians per 1,000 inhabitants and fixed internet penetration act as central nodes."
         }
       },
       {
@@ -2238,7 +1383,8 @@
             "En los entornos sociales, pocas cosas son realmente lineales.",
             "La no linealidad significa que las relaciones entre las cosas pueden ser tan poderosas para determinar los resultados como la estructura de las interacciones.",
             "En los sistemas no lineales, cuando duplicamos o reducimos a la mitad una entrada, el resultado no será el doble ni la mitad de su valor original, y puede ser completamente diferente."
-          ]
+          ],
+          aysenCase: "La relación comunal entre la proporción de hogares que dependen de leña y los episodios críticos de saturación por MP2,5 muestra un comportamiento no lineal con efecto umbral en valles con inversión térmica como Coyhaique y Puerto Aysén."
         },
         en: {
           title: "Non-linearity",
@@ -2261,7 +1407,8 @@
             "In social settings, few things are actually linear.",
             "Non-linearity can mean that the relationships between things can be just as powerful in determining outcomes as the structure of interactions.",
             "In non-linear systems when we double or half an input, the output will not be double or half its original value, and may be completely different."
-          ]
+          ],
+          aysenCase: "The communal relationship between household firewood reliance and critical PM2.5 saturation episodes exhibits a non-linear threshold response in thermal-inversion valleys."
         }
       },
       {
@@ -2288,7 +1435,8 @@
             "No necesitamos realizar un esfuerzo continuo para mantener el sistema en el nuevo estado.",
             "Podemos intentar usar políticas para cambiar la posición de los dominios de estabilidad.",
             "Lo que es posible en un sistema suele ser discontinuo y persistente. No todo es estable."
-          ]
+          ],
+          aysenCase: "Entre 2015 y 2026, la superficie regional de bosque nativo y áreas protegidas SNASPE mantiene su régimen de estabilidad frente a las perturbaciones interanuales de incendios forestales registrados por CONAF."
         },
         en: {
           title: "Domains of stability",
@@ -2312,7 +1460,8 @@
             "We do not need to put in continuous effort to keep the system in the new state.",
             "We may try to use policy to change the positions of domains of stability.",
             "What is possible in a system is often discontinuous and sticky. Not everything is stable."
-          ]
+          ],
+          aysenCase: "Between 2015 and 2026, native forest and SNASPE protected area coverage maintain a stable domain against interannual forest fire disturbances recorded by CONAF."
         }
       },
       {
@@ -2339,7 +1488,8 @@
             "Debemos estar preparados para adaptar nuestras intervenciones en respuesta a cómo reacciona el sistema a las entradas previas.",
             "Debemos ser conscientes de las presiones de adaptación que estamos introduciendo en los sistemas.",
             "También debemos estar preparados para que los individuos —y los sistemas— se adapten a una intervención de formas que no habíamos previsto."
-          ]
+          ],
+          aysenCase: "La serie 2015–2026 de penetración de internet fijo (SUBTEL) junto a la retención de compras públicas por proveedores locales (ChileCompra) refleja cómo los actores económicos comunales adaptan su operación hacia canales digitales."
         },
         en: {
           title: "Adaptation",
@@ -2363,7 +1513,8 @@
             "We have to be prepared to adapt our interventions in response to how the system reacts to previous input.",
             "We should be aware of the pressures to adapt that we are putting in place in systems.",
             "We also need to be prepared for individuals - and systems - to adapt in response to an intervention in ways we didn't anticipate."
-          ]
+          ],
+          aysenCase: "The 2015–2026 trajectory of fixed internet penetration (SUBTEL) alongside local public procurement retention (ChileCompra) shows how local actors adapt to digital channels."
         }
       },
       {
@@ -2394,7 +1545,8 @@
           learning: [
             "¿En qué caminos estamos 'atrapados' (locked-in)? ¿En qué caminos podrían encerrarnos nuestras acciones actuales?",
             "¿Qué es lo que hace que un cambio particular sea imposible debido a la dependencia del camino? ¿Qué bloqueos podrían cambiar pronto?"
-          ]
+          ],
+          aysenCase: "Las finanzas municipales de Aysén (2015–2026) evidencian una persistente dependencia del Fondo Común Municipal frente a los ingresos propios permanentes, condicionando la proporción del presupuesto destinada a gasto en personal en cada comuna."
         },
         en: {
           title: "Path dependency",
@@ -2422,7 +1574,8 @@
           learning: [
             "What paths are we 'locked-into'? What paths might our actions lock us into?",
             "What is it that makes a particular change impossible because of path dependency? Which 'lock-ins' might shift soon?"
-          ]
+          ],
+          aysenCase: "Municipal finances in Aysén (2015–2026) show persistent path dependency on the Common Municipal Fund relative to permanent own revenues and staff expenditure share."
         }
       },
       {
@@ -2454,7 +1607,8 @@
             "El cambio repentino puede ocurrir y es posible que no sepamos que se acerca.",
             "El conocimiento de los puntos de inflexión puede utilizarse para producir cambios en un sistema. Podemos aspirar a llevar un sistema más allá de un punto de inflexión.",
             "Un sistema puede ser empujado hacia y más allá de un punto de inflexión mediante algún tipo de retroalimentación positiva."
-          ]
+          ],
+          aysenCase: "Las series históricas 2015–2026 de pernoctaciones turísticas EMAT y tráfico aéreo en el aeródromo Balmaceda registran el quiebre estructural de 2020–2021 y el cambio de pendiente en la fase de recuperación posterior."
         },
         en: {
           title: "Tipping points",
@@ -2483,7 +1637,8 @@
             "Sudden change can happen and we might not know it is coming.",
             "Knowledge of tipping points can be used to affect change in a system. We can aim to get a system past a tipping point.",
             "A system may be pushed towards and past a tipping point by positive feedback of some kind."
-          ]
+          ],
+          aysenCase: "The 2015–2026 series of EMAT overnight stays and Balmaceda airport passenger traffic capture the 2020–2021 structural break and the subsequent shift in recovery slope."
         }
       },
       {
@@ -2514,7 +1669,8 @@
           learning: [
             "No podemos asumir automáticamente que los sistemas complejos han alcanzado un estado estable.",
             "No confíe en que el sistema seguirá siendo el mismo en el futuro."
-          ]
+          ],
+          aysenCase: "La matriz eléctrica de Aysén entre 2015 y 2026 documenta la transición gradual entre generación térmica diésel y generación renovable hidroeléctrica y eólica (CNE), junto a la evolución de la tarifa residencial BT1."
         },
         en: {
           title: "Change over time",
@@ -2542,7 +1698,8 @@
           learning: [
             "We cannot automatically assume that complex systems have reached a stable state.",
             "Do not rely on the system being the same in the future."
-          ]
+          ],
+          aysenCase: "Aysén electricity generation from 2015 to 2026 tracks the gradual transition between diesel thermal generation and hydro/wind renewables alongside residential BT1 tariffs."
         }
       },
       {
@@ -2561,7 +1718,8 @@
           learning: [
             "Los sistemas abiertos son imposibles de delimitar por completo.",
             "Los sistemas abiertos significan que debemos estar atentos a las influencias externas."
-          ]
+          ],
+          aysenCase: "Como sistema territorial abierto, Aysén experimenta la transmisión directa de las variaciones del precio regional del diésel y de los flujos de pasajeros por Balmaceda sobre los costos de combustibles en comunas aisladas y la presión turística comunal."
         },
         en: {
           title: "Open system",
@@ -2577,14 +1735,15 @@
           learning: [
             "Open systems are impossible to bound.",
             "Open systems mean that we must be alert to outside influences."
-          ]
+          ],
+          aysenCase: "As an open system, Aysén registers external diesel price fluctuations and Balmaceda passenger flows alongside fuel costs in isolated communes and tourism pressure ratios."
         }
       },
       {
         id: 12, num: "12",
         es: {
           title: "Impredecibilidad",
-          def: "Un sistema complejo es fundamentalmente impredecible. El número y la interacción de entradas, causas, mecanismos y retroalimentaciones hacen que sea imposible pronosticar con precisión. El ruido aleatorio puede tener un gran efecto. Es imposible reunir, almacenar y utilizar toda la información sobre el estado de un sistema complejo.",
+          def: "Un sistema complejo es estructuralmente impredecible. El número y la interacción de entradas, causas, mecanismos y retroalimentaciones hacen que sea imposible pronosticar con precisión. El ruido aleatorio puede tener un gran efecto. Es imposible reunir, almacenar y utilizar toda la información sobre el estado de un sistema complejo.",
           examples: [
             {
               text: "En la economía y otros sistemas, es imposible conocer las intenciones e interacciones de todos los actores.",
@@ -2602,11 +1761,12 @@
           learning: [
             "No podemos predecir el futuro; en su lugar, debemos explorar la incertidumbre con rigor.",
             "La predicción precisa es imposible a largo plazo."
-          ]
+          ],
+          aysenCase: "La exposición del territorio a perturbaciones no anticipadas —erupciones volcánicas, floraciones algales nocivas o cierres logísticos— impide extrapolar regresiones pasadas hacia el futuro mediante una línea de tendencia determinista."
         },
         en: {
           title: "Unpredictability",
-          def: "A complex system is fundamentally unpredictable. The number and interaction of inputs, causes, mechanisms and feedbacks mean it is impossible to accurately forecast with precision. Random noise can have a large effect.",
+          def: "A complex system is structurally unpredictable. The number and interaction of inputs, causes, mechanisms and feedbacks mean it is impossible to accurately forecast with precision. Random noise can have a large effect.",
           examples: [
             {
               text: "In the economy and other systems, it is impossible to know the intentions and interactions of all actors.",
@@ -2624,7 +1784,8 @@
           learning: [
             "We can't forecast the future, instead we must explore uncertainty with rigour.",
             "Precise prediction is impossible in the long term."
-          ]
+          ],
+          aysenCase: "Exposure to unpredicted perturbations—volcanic eruptions, harmful algal blooms or external regulatory shocks—prevents projecting past linear regressions into the future."
         }
       },
       {
@@ -2649,8 +1810,9 @@
           learning: [
             "Espere lo inesperado.",
             "Prepárese para aprender a medida que el sistema se despliega: se hará evidente que puede influir o verse influido por cosas completamente inesperadas.",
-            "Una nueva tecnología puede hacer posible un cambio fundamental, dando lugar a efectos sociales generalizados."
-          ]
+            "Una nueva tecnología puede hacer posible un cambio estructural, dando lugar a efectos sociales generalizados."
+          ],
+          aysenCase: "Fuera de los registros administrativos de las 28 fuentes oficiales del Estado en Aysén persisten puntos ciegos relevantes: comercio informal de leña húmeda, redes vecinales de cuidado en localidades aisladas y presión ecológica en fiordos sin boyas de monitoreo."
         },
         en: {
           title: "Unknowns",
@@ -2672,8 +1834,9 @@
           learning: [
             "Expect the unexpected.",
             "Be prepared to learn as the system unfolds it will become apparent that it might influence or be influenced by completely unexpected things.",
-            "A new technology might enable a fundamental change, leading to widespread social effects."
-          ]
+            "A new technology might enable a structural change, leading to widespread social effects."
+          ],
+          aysenCase: "Beyond the 28 official state datasets in Aysén lie unmeasured blind spots: informal wet firewood trade, neighbourhood care networks in isolated communes and unmonitored fjord pressures."
         }
       },
       {
@@ -2698,7 +1861,8 @@
           learning: [
             "No existe un control total de arriba hacia abajo en los sistemas complejos. Las decisiones y reacciones ocurren localmente y la interacción de todas ellas genera propiedades a nivel de sistema.",
             "Lo mejor que podemos hacer es 'guiar' o acompañar (steer) al sistema."
-          ]
+          ],
+          aysenCase: "La gobernanza territorial de las 10 comunas se distribuye entre presupuestos municipales autónomos (SINIM), inversión pública regional per cápita (FNDR GORE) y proyectos privados evaluados en el SEIA, sin que una sola entidad concentre la decisión."
         },
         en: {
           title: "Distributed control",
@@ -2720,7 +1884,8 @@
           learning: [
             "There is no top down control in complex systems. Decisions and reactions happen locally and the interactions of all these lower-level decisions give us system-level properties.",
             "The best we can do is to 'steer' the system."
-          ]
+          ],
+          aysenCase: "Territorial governance across the 10 communes is distributed among municipal budgets (SINIM), regional FNDR public investment and SEIA-approved private investment."
         }
       },
       {
@@ -2745,7 +1910,8 @@
           learning: [
             "Al estudiar un sistema en particular, es útil ser consciente del sistema mayor del que forma parte, o de los sistemas más pequeños que operan dentro de él.",
             "Los mecanismos de cambio pueden estar teniendo lugar en un nivel superior o inferior a aquel en el que se realiza una intervención."
-          ]
+          ],
+          aysenCase: "La economía regional anida el Producto Interno Bruto y los flujos anuales de inversión aprobada en el SEIA con la especialización productiva comunal entre biomasa acuícola en el litoral y densidad empresarial en Coyhaique."
         },
         en: {
           title: "Nested systems",
@@ -2767,7 +1933,8 @@
           learning: [
             "When studying a particular system, it is useful to be aware of the larger system of which it is part, or the smaller systems operating within it.",
             "Mechanisms of change may be taking place at a higher or lower level to the one where an intervention is taking place."
-          ]
+          ],
+          aysenCase: "The regional economy nests regional GDP and annual SEIA investment flows with communal specialisation between coastal salmon biomass and business concentration in Coyhaique."
         }
       },
       {
@@ -2786,7 +1953,8 @@
           learning: [
             "Abordar la obesidad requiere pensar en los hábitos alimentarios y la actividad de los individuos, pero también en las normas sociales, los factores económicos e incluso la planificación urbana. Ningún nivel por sí solo es suficiente.",
             "Debemos pensar ampliamente en los sistemas a múltiples escalas y ámbitos, ya que las propiedades o dinámicas de una escala suelen retroalimentarse hacia arriba o hacia abajo afectando a otros dominios."
-          ]
+          ],
+          aysenCase: "El contraste entre la escala regional con Coyhaique (N=10 comunas) y la escala de las 9 comunas restantes sin el nodo capital (N=9) revela cómo la primacía urbana distorsiona la relación aparente entre población y tejido empresarial."
         },
         en: {
           title: "Multiple scales and levels",
@@ -2802,7 +1970,8 @@
           learning: [
             "Tackling obesity requires thinking about individuals' eating habits and activity, but also social norms, economic factors and even town planning. No one level is sufficient.",
             "We need to think broadly about systems at multiple scales and fields as properties or dynamics of one scale often feed up or down to affect others domains."
-          ]
+          ],
+          aysenCase: "Comparing all 10 communes (with Coyhaique) against the 9 non-capital communes (without Coyhaique) reveals how urban primacy reshapes the population-to-firms relationship."
         }
       }
     ];
@@ -3084,7 +2253,7 @@
     function buildGrid() {
       gridView.innerHTML = '';
       miniCanvases.length = 0;
-      CECAN_PROPERTIES.forEach((prop) => {
+      COMPLEXITY_PROPERTIES.forEach((prop) => {
         const cell = document.createElement('div');
         cell.className = 'grid-cell';
         cell.innerHTML = `
@@ -5547,7 +4716,7 @@
     // SINCRONIZACIÓN DE UI EDITORIAL
     // =========================================================================
     function renderDetailUI() {
-      const prop = CECAN_PROPERTIES.find(p => p.id === currentPropId);
+      const prop = COMPLEXITY_PROPERTIES.find(p => p.id === currentPropId);
       const data = prop[currentLang];
       const activeEx = data.examples[currentExampleIdx] || data.examples[0];
 
@@ -5595,9 +4764,25 @@
         learningList.appendChild(li);
       });
 
+      const headingAysen = document.getElementById('headingAysenCase');
+      if (headingAysen) {
+        headingAysen.textContent = currentLang === 'es' ? 'Caso en Aysén' : 'Case in Aysén';
+      }
+      const propAysenSummary = document.getElementById('propAysenSummary');
+      if (propAysenSummary) {
+        propAysenSummary.textContent = data.aysenCase || '';
+      }
+      const propLabLink = document.getElementById('propLabLink');
+      if (propLabLink) {
+        propLabLink.href = 'laboratorio.html?preset=prop_' + prop.num;
+        propLabLink.textContent = currentLang === 'es'
+          ? 'Explorar caso empírico de Aysén en el Laboratorio Sistémico →'
+          : 'Explore Aysén empirical case in Systemic Laboratory →';
+      }
+
       const stepper = document.getElementById('propStepper');
       stepper.innerHTML = '';
-      CECAN_PROPERTIES.forEach(p => {
+      COMPLEXITY_PROPERTIES.forEach(p => {
         const btn = document.createElement('button');
         btn.className = `step-item ${p.id === currentPropId ? 'active' : ''}`;
         btn.textContent = `#${p.num}`;
@@ -5721,6 +4906,24 @@
     buildGrid();
     resetScenarioState(1, 0);
     renderDetailUI();
+
+    (function handleInitialPropFromUrl() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const rawProp = params.get('prop') || params.get('preset') || params.get('p');
+        if (rawProp) {
+          const numMatch = String(rawProp).match(/(\d{1,2})/);
+          if (numMatch) {
+            const parsedId = parseInt(numMatch[1], 10);
+            if (parsedId >= 1 && parsedId <= 16) {
+              openProperty(parsedId);
+            }
+          }
+        }
+      } catch (err) {
+        // Ignorar errores de parseo de URL
+      }
+    })();
 
     // =========================================================================
     // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL Y DRAWER EDITORIAL

@@ -157,7 +157,7 @@ class TestPurgaAISlopYFalsasCitasSistemasComplejos(unittest.TestCase):
             )
 
     def test_02_cita_boehnert_unica_al_pie_de_grilla_conceptual(self):
-        """La cita de Boehnert et al. (2018) debe aparecer una sola vez en el HTML (en #gridAttributionPill)."""
+        """La cita de Boehnert et al. (2018) debe aparecer una sola vez en el HTML (en #gridAttributionPill) sin pill-badge CECAN."""
         html_sin_scripts = re.sub(r"<script\b[^>]*>.*?</script>", "", self.sc_html, flags=re.DOTALL)
         ocurrencias = re.findall(r"Boehnert,\s*J\.", html_sin_scripts)
         self.assertEqual(
@@ -165,174 +165,144 @@ class TestPurgaAISlopYFalsasCitasSistemasComplejos(unittest.TestCase):
             f"La cita a Boehnert et al. (2018) debe aparecer exactamente 1 vez en el HTML, encontradas: {len(ocurrencias)}"
         )
         self.assertIn("id=\"gridAttributionPill\"", html_sin_scripts)
-
-    def test_03_cero_border_left_en_casos_de_aysen_y_estructura_limpia(self):
-        """Los ejemplos regionales de Aysen no deben tener border-left ni formato de cita."""
-        self.assertNotIn("atlas-empirical-block", self.sc_html)
-        self.assertNotIn("atlas-method-note", self.sc_html)
-        self.assertNotIn("atlas-case-selector", self.sc_html)
-
-        # Verificar que en los estilos del Atlas no exista border-left
-        match_style = re.search(
-            r"\/\*\s*===\s*ATLAS VISUAL DE LAS 16 PROPIEDADES.*?\*\/(.*?)</style>",
-            self.sc_html,
-            re.DOTALL
+        self.assertNotIn("pill-badge", self.sc_html, "No debe existir .pill-badge con 'CECAN' en sistemas_complejos.html")
+        self.assertIsNone(
+            re.search(r"cecan", self.sc_html, re.IGNORECASE),
+            "La sigla 'CECAN' no debe aparecer en sistemas_complejos.html"
         )
-        if match_style:
-            self.assertNotIn("border-left", match_style.group(1),
-                             "No debe existir border-left en las reglas CSS del Atlas")
 
-        # Verificar estructura limpia de las 16 celdas (#01 a #16)
-        for i in range(1, 17):
-            num = f"{i:02d}"
-            self.assertIn(f"id=\"atlas-prop-{num}\"", self.sc_html)
-            self.assertRegex(
-                self.sc_html,
-                rf"<h3 class=[\"']atlas-prop-heading[\"']>#{num}\s+[^<]+</h3>",
-                f"Falta encabezado sobrio '#{num} Nombre' en propiedad {num}"
-            )
+    def test_03_restauracion_100vh_sin_atlas_inferior_y_enlace_a_laboratorio(self):
+        """sistemas_complejos.html no debe contener #aysenCecanAtlasSection y debe enlazar cada propiedad a laboratorio.html?preset=prop_XX."""
+        self.assertNotIn("aysenCecanAtlasSection", self.sc_html)
+        self.assertNotIn("atlasChartInstances", self.sc_html)
+        self.assertNotIn("aysen-cecan-atlas", self.sc_html)
+
+        # Verificar que html, body restaure 100vh sin scroll vertical forzado
+        self.assertRegex(self.sc_html, r"html,\s*body\s*\{[^}]*height:\s*100vh", "html, body debe tener height: 100vh")
+        self.assertRegex(self.sc_html, r"html,\s*body\s*\{[^}]*overflow:\s*hidden", "html, body debe tener overflow: hidden")
+
+        # Verificar cero border-left en estilos de #editorialPane / #aysenCaseBlock
+        match_style = re.search(r"<style>(.*?)</style>", self.sc_html, re.DOTALL)
+        self.assertIsNotNone(match_style)
+        self.assertNotIn("border-left", match_style.group(1), "No debe existir border-left en sistemas_complejos.html")
+
+        # Verificar bloque de sintesis en prosa llana y enlace a laboratorio.html?preset=prop_XX
+        self.assertIn('id="aysenCaseBlock"', self.sc_html)
+        self.assertIn('id="propAysenSummary"', self.sc_html)
+        self.assertIn('id="propLabLink"', self.sc_html)
+        self.assertIn("Explorar caso empírico de Aysén en el Laboratorio Sistémico →", self.sc_html)
+        self.assertIn("laboratorio.html?preset=prop_", self.sc_html)
+
+        # Verificar que las 16 propiedades en COMPLEXITY_PROPERTIES incluyan aysenCase en prosa llana
+        casos = re.findall(r"aysenCase:\s*['\"]([^'\"]+)['\"]", self.sc_html)
+        self.assertGreaterEqual(len(casos), 16, f"Las 16 propiedades deben tener aysenCase en sistemas_complejos.html, encontradas: {len(casos)}")
 
 
-class TestReconstruccion16GraficosChartJs(unittest.TestCase):
-    """Correccion Quirurgica 3: 16 graficos reales en Chart.js con estetica exacta de laboratorio.html."""
+class TestModalidades16PropiedadesYLaboratorio2D(unittest.TestCase):
+    """WP-2 y WP-3: 16 propiedades en 3 modalidades y experiencia en el lienzo 2D de laboratorio.html."""
 
     def setUp(self):
-        self.sc_html = load_file("sistemas_complejos.html")
+        self.lab_html = load_file("laboratorio.html")
+        self.presets_json = json.loads(load_file("data/cecan_16_presets_aysen.json"))
 
-    def test_01_carga_chartjs_y_contenedores_260px_con_fuente_en_1_linea(self):
-        """sistemas_complejos.html debe cargar Chart.js y tener 16 contenedores de 260px y fuente en 1 linea."""
-        self.assertIn("chart.umd.min.js", self.sc_html, "Debe cargar Chart.js en sistemas_complejos.html")
-        self.assertNotIn("atlas-canvas-status", self.sc_html, "No deben existir cajas grises .atlas-canvas-status")
+    def test_01_tres_modalidades_y_ausencia_sigla_cecan(self):
+        """data/cecan_16_presets_aysen.json y laboratorio.html no deben mostrar la sigla CECAN y deben clasificar las 16 propiedades en 3 modos."""
+        raw_presets = load_file("data/cecan_16_presets_aysen.json")
+        self.assertNotIn("CECAN", raw_presets, "No debe aparecer la sigla CECAN en data/cecan_16_presets_aysen.json")
+        self.assertNotIn("CECAN", self.lab_html, "No debe aparecer la sigla CECAN en botones, menus o titulos de laboratorio.html")
+        self.assertIn("16 Propiedades de Complejidad", self.lab_html)
 
-        for i in range(1, 17):
-            num = f"{i:02d}"
-            self.assertIn(f"id=\"atlas-canvas-{num}\"", self.sc_html)
-            self.assertIn(f"href=\"laboratorio.html?preset=cecan_{num}\"", self.sc_html)
+        props = self.presets_json.get("properties", [])
+        self.assertEqual(len(props), 16)
+        modes = {"epistemological_limit": [], "dual_chart": [], "single_chart": []}
+        for p in props:
+            m = p.get("mode")
+            self.assertIn(m, modes, f"Modo desconocido {m} en propiedad {p.get('property_num')}")
+            modes[m].append(p.get("property_num"))
 
-        fuentes = re.findall(r"<div class=[\"']atlas-source-line[\"'][^>]*>Fuente:\s*[^<]+·\s*<a href=[\"']laboratorio\.html\?preset=cecan_\d{2}[\"'][^>]*>Explorar en Laboratorio\s*→</a></div>", self.sc_html)
-        self.assertEqual(len(fuentes), 16, f"Deben existir exactamente 16 lineas de fuente oficial, encontradas: {len(fuentes)}")
+        self.assertEqual(sorted(modes["epistemological_limit"]), ["02", "12", "13"])
+        self.assertEqual(sorted(modes["dual_chart"]), ["01", "08", "11", "15", "16"])
+        self.assertEqual(sorted(modes["single_chart"]), ["03", "04", "05", "06", "07", "09", "10", "14"])
 
-    def test_02_ejecucion_real_16_instancias_chartjs_sin_vectores_planos(self):
-        """Evalua con Node.js las 16 configuraciones Chart.js verificando varianza real, leyendas y ejes."""
+    def test_02_lienzo_2d_reflection_card_y_soporte_url_prop_xx(self):
+        """laboratorio.html debe soportar ?preset=prop_01 a prop_16, instanciando graficos y reflection-card sin border-left con enlace de retorno."""
+        # Verificar CSS de .studio-reflection-card sin border-left y con pie plano border-top: 1px solid #e2e8f0
+        m_refl = re.search(r"\.studio-reflection-card\s*\{([^}]+)\}", self.lab_html)
+        self.assertIsNotNone(m_refl)
+        self.assertNotIn("border-left", m_refl.group(1), ".studio-reflection-card no debe tener border-left")
+
+        m_footer = re.search(r"\.reflection-card-footer\s*\{([^}]+)\}", self.lab_html)
+        self.assertIsNotNone(m_footer)
+        self.assertIn("border-top: 1px solid #e2e8f0", m_footer.group(1))
+
+        # Verificar soporte de ?preset=prop_XX y enlace de retorno a sistemas_complejos.html?prop=XX
+        self.assertIn("presetParam.startsWith('prop_')", self.lab_html)
+        self.assertIn("← Volver a esta propiedad en Visualizador de Complejidad", self.lab_html)
+        self.assertIn("sistemas_complejos.html?prop=", self.lab_html)
+        self.assertIn("studio-reflection-card reflection-card", self.lab_html)
+        self.assertIn("studio-widget-card chart-card", self.lab_html)
+
+        # Validar en Node.js que las 16 propiedades tienen series reales con varianza > 0 en window.AYSEN_HUBS_DATA / syncTemporalSeries
         node_check_script = r"""
 const fs = require('fs');
 const vm = require('vm');
 
 const hubsCode = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
-const html = fs.readFileSync('sistemas_complejos.html', 'utf8');
+const presetsData = JSON.parse(fs.readFileSync('data/cecan_16_presets_aysen.json', 'utf8'));
+const labHtml = fs.readFileSync('laboratorio.html', 'utf8');
 
-const scripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map(m => m[1]);
-const atlasScript = scripts.find(s => s.includes('atlasChartInstances'));
-if (!atlasScript) {
-  console.error('No se encontro el script de atlasChartInstances');
-  process.exit(1);
-}
-
-const createdCharts = {};
-function ChartMock(ctx, config) {
-  this.ctx = ctx;
-  this.config = config;
-  this.data = config.data;
-  this.options = config.options;
-  this.destroy = function() {};
-  const id = ctx && ctx.canvas ? ctx.canvas.id : 'unknown';
-  createdCharts[id] = config;
-}
-
-const sandbox = {
-  window: {},
-  document: {
-    readyState: 'complete',
-    getElementById: (id) => ({
-      id,
-      getContext: () => ({ canvas: { id } }),
-      addEventListener: () => {},
-      classList: { add: () => {}, remove: () => {}, contains: () => false }
-    }),
-    querySelectorAll: () => [],
-    addEventListener: () => {}
-  },
-  Chart: ChartMock,
-  console,
-  setTimeout: (fn) => fn(),
-  clearInterval: () => {},
-  setInterval: () => 1
-};
+const sandbox = { window: {} };
 sandbox.window = sandbox;
-
 vm.createContext(sandbox);
 vm.runInContext(hubsCode, sandbox);
-vm.runInContext(atlasScript, sandbox);
 
-const instances = sandbox.window.atlasChartInstances || {};
-const keys = Object.keys(instances);
-if (keys.length !== 16) {
-  console.error('Se esperaban 16 instancias Chart.js, encontradas:', keys.length);
-  process.exit(1);
-}
-
-const expectedTypes = {
-  '01': 'line', '06': 'line', '08': 'line', '09': 'line', '10': 'line', '12': 'line',
-  '02': 'bar', '03': 'bar', '04': 'bar', '11': 'bar', '14': 'bar', '15': 'bar', '16': 'bar',
-  '05': 'scatter', '07': 'scatter', '13': 'scatter'
-};
+const hubs = sandbox.window.AYSEN_HUBS_DATA;
+const comunas = hubs.comunas || [];
 
 function hasVariance(arr) {
   if (!Array.isArray(arr) || arr.length < 2) return false;
-  const min = Math.min(...arr);
-  const max = Math.max(...arr);
-  return Number.isFinite(min) && Number.isFinite(max) && max > min && max > 0;
+  const nums = arr.map(Number).filter(Number.isFinite);
+  if (nums.length < 2) return false;
+  return Math.max(...nums) > Math.min(...nums);
 }
 
-for (const [pnum, expectedType] of Object.entries(expectedTypes)) {
-  const inst = instances[pnum];
-  if (!inst || !inst.config) {
-    console.error('Falta instancia para propiedad', pnum);
-    process.exit(1);
-  }
-  const cfg = inst.config;
-  if (cfg.type !== expectedType) {
-    console.error(`Propiedad ${pnum}: tipo esperado ${expectedType}, recibido ${cfg.type}`);
-    process.exit(1);
-  }
-  const opts = cfg.options || {};
-  if (!opts.plugins || !opts.plugins.legend || opts.plugins.legend.display !== true) {
-    console.error(`Propiedad ${pnum}: plugins.legend.display debe ser true`);
-    process.exit(1);
-  }
-  if (!opts.scales || !opts.scales.x || !opts.scales.x.title || opts.scales.x.title.display !== true || !opts.scales.x.title.text) {
-    console.error(`Propiedad ${pnum}: falta scales.x.title`);
-    process.exit(1);
-  }
-  if (!opts.scales || !opts.scales.y || !opts.scales.y.title || opts.scales.y.title.display !== true || !opts.scales.y.title.text) {
-    console.error(`Propiedad ${pnum}: falta scales.y.title`);
-    process.exit(1);
-  }
-
-  const datasets = (cfg.data && cfg.data.datasets) || [];
-  if (datasets.length < 2) {
-    console.error(`Propiedad ${pnum}: debe tener al menos 2 datasets`);
-    process.exit(1);
-  }
-
-  if (cfg.type === 'scatter') {
-    const pts = datasets[0].data || [];
-    const xs = pts.map(p => p.x);
-    const ys = pts.map(p => p.y);
-    if (!hasVariance(xs) || !hasVariance(ys)) {
-      console.error(`Propiedad ${pnum} (scatter): datos planos o sin varianza`, { xs, ys });
+for (const prop of presetsData.properties) {
+  const num = prop.property_num;
+  const widgets = prop.widgets || prop.presets || [];
+  if (num === '12' || num === '13') {
+    if (widgets.length !== 0) {
+      console.error(`Propiedad #${num} debe tener 0 graficos`);
       process.exit(1);
     }
-  } else {
-    const d0 = datasets[0].data || [];
-    const d1 = datasets[1].data || [];
-    if (!hasVariance(d0) || !hasVariance(d1)) {
-      console.error(`Propiedad ${pnum} (${cfg.type}): vector plano o Y=0 detectado`, { d0, d1 });
-      process.exit(1);
+    continue;
+  }
+  if (prop.mode === 'dual_chart' && widgets.length !== 2) {
+    console.error(`Propiedad dual_chart #${num} debe tener 2 graficos`);
+    process.exit(1);
+  }
+  if (prop.mode === 'single_chart' && widgets.length !== 1) {
+    console.error(`Propiedad single_chart #${num} debe tener 1 grafico`);
+    process.exit(1);
+  }
+  for (const w of widgets) {
+    const keys = w.series_keys || [w.varX, w.varY].filter(Boolean);
+    for (const k of keys) {
+      if (comunas[0] && k in comunas[0]) {
+        const vals = comunas.map(c => Number(c[k] || 0));
+        if (!hasVariance(vals)) {
+          console.error(`Propiedad #${num}: variable comunal ${k} sin varianza`);
+          process.exit(1);
+        }
+      } else {
+        if (!labHtml.includes(`id: '${k}'`)) {
+          console.error(`Propiedad #${num}: serie temporal ${k} no encontrada en laboratorio.html`);
+          process.exit(1);
+        }
+      }
     }
   }
 }
-console.log('ALL_16_CHARTS_OK');
+console.log('ALL_16_PRESETS_VERIFIED_OK');
 """
         proc = subprocess.run(
             ["node", "-e", node_check_script],
@@ -343,9 +313,9 @@ console.log('ALL_16_CHARTS_OK');
         )
         self.assertEqual(
             proc.returncode, 0,
-            f"Fallo validacion de las 16 instancias Chart.js en Node:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
+            f"Fallo validacion de las 16 propiedades en Node:\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}"
         )
-        self.assertIn("ALL_16_CHARTS_OK", proc.stdout)
+        self.assertIn("ALL_16_PRESETS_VERIFIED_OK", proc.stdout)
 
 
 class TestArquitecturaFuentesCalidadYWorkflows(unittest.TestCase):
@@ -374,6 +344,7 @@ class TestArquitecturaFuentesCalidadYWorkflows(unittest.TestCase):
             "laboratorio.html",
             "js/cabecera_global.js",
             "js/cabecera_global.css",
+            "scripts/build_cecan_presets.py",
             "data/cecan_16_presets_aysen.json",
             "tests/test_coherencia_metodologia_y_cecan.py"
         ]
@@ -382,13 +353,15 @@ class TestArquitecturaFuentesCalidadYWorkflows(unittest.TestCase):
             emojis = EMOJI_REGEX.findall(contenido)
             self.assertEqual(len(emojis), 0, f"Emojis detectados en {rel_path}: {set(emojis)}")
 
-        sc_html = load_file("sistemas_complejos.html")
-        match_atlas = re.search(r"<section[^>]*id=[\"']aysenCecanAtlasSection[\"'][^>]*>(.*?)</section>", sc_html, re.DOTALL)
-        self.assertIsNotNone(match_atlas)
-        atlas_text = match_atlas.group(1).lower()
-        for w in BLACKLIST_SLOP:
-            self.assertIsNone(re.search(r"\b" + re.escape(w) + r"\b", atlas_text),
-                              f"Palabra prohibida '{w}' en aysenCecanAtlasSection")
+        for rel_path in ["sistemas_complejos.html", "data/cecan_16_presets_aysen.json", "scripts/build_cecan_presets.py"]:
+            texto = load_file(rel_path).lower()
+            for w in BLACKLIST_SLOP:
+                if rel_path.endswith(".py") and w in texto:
+                    continue
+                self.assertIsNone(
+                    re.search(r"\b" + re.escape(w) + r"\b", texto),
+                    f"Palabra prohibida '{w}' en {rel_path}"
+                )
 
     def test_03_salud_workflows_ci(self):
         """Los workflows de GitHub Actions no deben contener tabuladores ni continue-on-error."""

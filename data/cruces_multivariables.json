@@ -325,6 +325,19 @@
             "egresos_respiratorios"
           ]
         }
+      ],
+      "propiedades_vinculos": [
+        {
+          "property_id": 1,
+          "property_num": "01",
+          "preset_id": "prop_01_chart_a",
+          "tipo": "Retroalimentación Positiva (+): Frío, Quema de Leña y Saturación MP2,5",
+          "variables": [
+            "dias_sobre_norma_mp25",
+            "urgencias_respiratorias_pct",
+            "hogares_lena_pct"
+          ]
+        }
       ]
     },
     "criosfera_riesgo": {
@@ -635,6 +648,19 @@
           "property_num": "09",
           "preset_id": "09_a_tipping_glof",
           "tipo": "Punto de Quiebre Hidrológico: Vaciado Súbito GLOF en Lago Cachet II",
+          "variables": [
+            "caudal_baker_m3s",
+            "nivel_colonia_m",
+            "precipitacion_tortel_mm"
+          ]
+        }
+      ],
+      "propiedades_vinculos": [
+        {
+          "property_id": 9,
+          "property_num": "09",
+          "preset_id": "prop_09_chart_a",
+          "tipo": "Punto de Inflexión Hidrológico: Vaciado Súbito GLOF en Lago Cachet II",
           "variables": [
             "caudal_baker_m3s",
             "nivel_colonia_m",
@@ -979,6 +1005,19 @@
             "sst_c",
             "alexandrium_cel_l",
             "biomasa_cosecha_kton"
+          ]
+        }
+      ],
+      "propiedades_vinculos": [
+        {
+          "property_id": 15,
+          "property_num": "15",
+          "preset_id": "prop_15_chart_b",
+          "tipo": "Sistemas Anidados: Biomasa Acuícola en Comunas Litorales vs. Tejido Empresarial",
+          "variables": [
+            "biomasa_cosecha_kton",
+            "infa_aerobica_pct",
+            "alexandrium_cel_l"
           ]
         }
       ]
