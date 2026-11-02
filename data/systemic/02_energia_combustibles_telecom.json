@@ -5,7 +5,7 @@
   "dataset_id": "02_energia_combustibles_telecom",
   "titulo": "Energía, Sistemas Medianos y Aislados, Precios de Combustibles y Conectividad Telecomunicaciones en Aysén",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-30T15:06:45Z",
+  "fecha_extraccion": "2026-11-02T12:14:11Z",
   "metodologia_series_historicas": {
     "advertencia": "Las series anuales 2015-2026 NO son 12 observaciones independientes. Se reconstruyen por interpolacion lineal entre valores ancla y solo algunos anos corresponden a valores reportados por la fuente oficial.",
     "campo_trazabilidad": "origen",

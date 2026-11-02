@@ -3,7 +3,7 @@
 <!-- AUTO-UPDATE-BEGIN -->
 ## Actualizacion mensual automatica
 
-- Corrida: 2026-10-30T15:05:39+00:00
+- Corrida: 2026-11-02T12:13:30+00:00
 - Ciclo: Mensual (día 1 de cada mes)
 - Conectores activos: 7
 - Resultado: 5 en vivo, 6 con respaldo curado (ultimo dato valido)
@@ -11,8 +11,8 @@
 | Conector | Modo | HTTP | Nodos | Observacion |
 |---|---|---|---|---|
 | usgs/usgs | live_api | 200 | #31 |  |
-| ckan_cne/cne_combustibles | curated_fallback | sin respuesta | #13 | CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] get |
-| ckan_cne/cne_energia | curated_fallback | sin respuesta | #11 | CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] get |
+| ckan_cne/cne_combustibles | curated_fallback | sin respuesta | #13 | CKAN package_search no respondio 200 (URLError: <urlopen error [Errno -2] Name o |
+| ckan_cne/cne_energia | curated_fallback | sin respuesta | #11 | CKAN package_search no respondio 200 (URLError: <urlopen error [Errno -2] Name o |
 | ckan_datos_gob/deis_salud | live_api | 200 | #24 |  |
 | ckan_datos_gob/mineduc | live_api | 200 | #25 |  |
 | ckan_datos_gob/sinim | live_api | 200 | #15, #16 |  |

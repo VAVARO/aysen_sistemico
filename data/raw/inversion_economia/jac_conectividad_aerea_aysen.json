@@ -3,12 +3,12 @@
     "url": "https://www.jac.gob.cl",
     "status": "OFFLINE_OR_TIMEOUT",
     "http_code": null,
-    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
-    "timestamp_utc": "2026-10-30T15:07:02.415515+00:00"
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+    "timestamp_utc": "2026-11-02T12:14:28.780595+00:00"
   },
   "fuente": "Junta de Aeronáutica Civil (JAC) — Ministerio de Transportes y Telecomunicaciones",
   "portal_url": "https://www.jac.gob.cl",
-  "fecha_snapshot": "2026-10-30T15:06:57.366554+00:00",
+  "fecha_snapshot": "2026-11-02T12:14:21.667472+00:00",
   "aeropuertos_y_aerodromos_comerciales": [
     {
       "nombre": "Aeródromo Balmaceda (BBA)",

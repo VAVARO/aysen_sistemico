@@ -1,6 +1,6 @@
 {
   "endpoint": "https://catastrominero.sernageomin.cl/",
   "status_http": "FAILED",
-  "error": "<urlopen error [Errno 11001] getaddrinfo failed>",
-  "timestamp": "2026-10-30T15:06:49.499417+00:00"
+  "error": "<urlopen error [Errno -2] Name or service not known>",
+  "timestamp": "2026-11-02T12:14:15.010917+00:00"
 }

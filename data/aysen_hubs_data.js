@@ -2,11 +2,11 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-01T12:30:58.420Z",
+  "generatedAt": "2026-11-02T12:14:40.245Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
-      "lastRun": "2026-10-30T15:05:39+00:00",
+      "lastRun": "2026-11-02T12:13:30+00:00",
       "activeApiConnectors": 7,
       "totalSources": 33
     }
@@ -4659,7 +4659,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Mensual continuo)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 31,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
@@ -4819,7 +4819,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Seguimiento anual de cartera)",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
@@ -4969,7 +4969,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Boletín mensual INE)",
         "collectionDateISO": "2026-08-01",
         "updateFrequencyDays": 31,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
@@ -5137,7 +5137,7 @@ window.AYSEN_HUBS_DATA = {
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
@@ -5297,7 +5297,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Actualización anual de jerarquías)",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv",
@@ -5439,7 +5439,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Enero 2027 (Cierre anual de concesiones)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 404,
         "extractionMode": "curated_fallback"
       },
@@ -5617,7 +5617,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Reporte intermedio Q3)",
         "collectionDateISO": "2026-06-01",
         "updateFrequencyDays": 184,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/03_holdings_salmoneros_ruts_aysen.csv",
@@ -5777,7 +5777,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Programación de siembras 2027)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_nodos.csv",
@@ -5911,7 +5911,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Boletín oceanográfico mensual)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 31,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
@@ -6057,7 +6057,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Decretos de cuotas anuales 2027)",
         "collectionDateISO": "2026-07-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/03c_pesca_industrial_pesquerias_impuesto_aysen.csv",
@@ -6223,7 +6223,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Actualización trimestral de capacidad)",
         "collectionDateISO": "2026-08-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_nodos.csv",
@@ -6362,7 +6362,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Informe anual de desempeño de redes)",
         "collectionDateISO": "2026-07-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
@@ -6522,7 +6522,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Octubre 2026 (Actualización semanal continua)",
         "collectionDateISO": "2026-10-01",
         "updateFrequencyDays": 7,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
@@ -6698,7 +6698,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Reporte de penetración banda ancha)",
         "collectionDateISO": "2026-06-01",
         "updateFrequencyDays": 184,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv",
@@ -6859,7 +6859,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Rendición financiera Q3)",
         "collectionDateISO": "2026-06-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       },
@@ -7021,7 +7021,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Cierre de liquidaciones FCM)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       },
@@ -7183,7 +7183,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Octubre 2028 (Próximas elecciones municipales ordinarias)",
         "collectionDateISO": "2028-01-01",
         "updateFrequencyDays": 1096,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
@@ -7345,7 +7345,7 @@ window.AYSEN_HUBS_DATA = {
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-08-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
@@ -7506,7 +7506,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Actualización mensual continua)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 31,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
@@ -7666,7 +7666,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Cierre definitivo de año tributario)",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
@@ -7822,7 +7822,7 @@ window.AYSEN_HUBS_DATA = {
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-06-01",
         "updateFrequencyDays": 184,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv",
@@ -7985,7 +7985,7 @@ window.AYSEN_HUBS_DATA = {
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-07-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       },
@@ -8178,7 +8178,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Tabulados detallados comunales Censo 2024)",
         "collectionDateISO": "2024-01-01",
         "updateFrequencyDays": 731,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
@@ -8339,7 +8339,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Boletín mensual DEIS)",
         "collectionDateISO": "2026-09-01",
         "updateFrequencyDays": 31,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       },
@@ -8504,7 +8504,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Balance final de año escolar 2026)",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       },
@@ -8683,7 +8683,7 @@ window.AYSEN_HUBS_DATA = {
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-06-01",
         "updateFrequencyDays": 92,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
@@ -8843,7 +8843,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Diciembre 2026 (Consolidado quinquenal SIT)",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 1826,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
@@ -8994,7 +8994,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Noviembre 2026 (Publicación Proceso 20 RCE)",
         "collectionDateISO": "2026-01-01",
         "updateFrequencyDays": 366,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
@@ -9138,7 +9138,7 @@ window.AYSEN_HUBS_DATA = {
         "sourceUrlStatus": "REPARADA_VERIFICADA_HTTP_200",
         "collectionDateISO": "2026-08-01",
         "updateFrequencyDays": 184,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
       },
       "csvFile": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv",
@@ -9262,7 +9262,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Octubre 2026 (Transmisión en tiempo real)",
         "collectionDateISO": "2026-10-01",
         "updateFrequencyDays": 1,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 403,
         "extractionMode": "curated_fallback"
       },
@@ -9448,7 +9448,7 @@ window.AYSEN_HUBS_DATA = {
         "nextUpdate": "Octubre 2026 (Monitoreo telemétrico continuo)",
         "collectionDateISO": "2026-10-01",
         "updateFrequencyDays": 1,
-        "lastAutoUpdateISO": "2026-10-30T15:05:39+00:00",
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       },

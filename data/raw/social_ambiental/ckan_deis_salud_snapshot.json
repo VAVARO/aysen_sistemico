@@ -1,7 +1,7 @@
 {
   "source": "https://datos.gob.cl/api/3/action",
   "query": "salud deis",
-  "fetched_at": "2026-10-30T15:05:45+00:00",
+  "fetched_at": "2026-11-02T12:13:31+00:00",
   "http_status": 200,
   "packages_found": 7,
   "resources": [

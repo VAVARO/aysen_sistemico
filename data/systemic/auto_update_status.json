@@ -1,6 +1,6 @@
 {
   "frequency": "Mensual (día 1 de cada mes)",
-  "lastRun": "2026-10-30T15:05:39+00:00",
+  "lastRun": "2026-11-02T12:13:30+00:00",
   "activeApiConnectors": 7,
   "totalSources": 33,
   "summary": {
@@ -26,8 +26,8 @@
       "mode": "live_api",
       "http_status": 200,
       "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minlatitude=-49.5&maxlatitude=-43.5&minlongitude=-76.0&maxlongitude=-71.0&minmagnitude=2.5&starttime=2015-01-01",
-      "checked_at": "2026-10-30T15:05:41+00:00",
-      "elapsed_s": 2.06,
+      "checked_at": "2026-11-02T12:13:30+00:00",
+      "elapsed_s": 0.23,
       "error": "",
       "metrics": {
         "total_events": 36,
@@ -49,9 +49,9 @@
       "mode": "curated_fallback",
       "http_status": null,
       "url": "http://datos.energiaabierta.cl/api/3/action/package_search?q=combustibles+precios&rows=5",
-      "checked_at": "2026-10-30T15:05:43+00:00",
-      "elapsed_s": 0.02,
-      "error": "CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)",
+      "checked_at": "2026-11-02T12:13:30+00:00",
+      "elapsed_s": 0.27,
+      "error": "CKAN package_search no respondio 200 (URLError: <urlopen error [Errno -2] Name or service not known>)",
       "metrics": {},
       "updated_files": []
     },
@@ -65,9 +65,9 @@
       "mode": "curated_fallback",
       "http_status": null,
       "url": "http://datos.energiaabierta.cl/api/3/action/package_search?q=generacion+electrica&rows=5",
-      "checked_at": "2026-10-30T15:05:44+00:00",
-      "elapsed_s": 0.0,
-      "error": "CKAN package_search no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)",
+      "checked_at": "2026-11-02T12:13:30+00:00",
+      "elapsed_s": 0.26,
+      "error": "CKAN package_search no respondio 200 (URLError: <urlopen error [Errno -2] Name or service not known>)",
       "metrics": {},
       "updated_files": []
     },
@@ -81,8 +81,8 @@
       "mode": "live_api",
       "http_status": 200,
       "url": "https://datos.gob.cl/api/3/action/datastore_search?resource_id=2c44d782-3365-44e3-aefb-2c8b8363a1bc&limit=1000",
-      "checked_at": "2026-10-30T15:05:45+00:00",
-      "elapsed_s": 1.73,
+      "checked_at": "2026-11-02T12:13:31+00:00",
+      "elapsed_s": 0.41,
       "error": "",
       "metrics": {
         "packages_found": 7,
@@ -103,8 +103,8 @@
       "mode": "live_api",
       "http_status": 200,
       "url": "https://datos.gob.cl/api/3/action/package_search?q=mineduc&rows=5",
-      "checked_at": "2026-10-30T15:05:58+00:00",
-      "elapsed_s": 0.85,
+      "checked_at": "2026-11-02T12:13:32+00:00",
+      "elapsed_s": 0.2,
       "error": "",
       "metrics": {
         "packages_found": 32,
@@ -125,8 +125,8 @@
       "mode": "live_api",
       "http_status": 200,
       "url": "https://datos.gob.cl/api/3/action/package_search?q=finanzas+municipales&rows=5",
-      "checked_at": "2026-10-30T15:05:59+00:00",
-      "elapsed_s": 0.74,
+      "checked_at": "2026-11-02T12:13:33+00:00",
+      "elapsed_s": 0.46,
       "error": "",
       "metrics": {
         "packages_found": 3,
@@ -146,8 +146,8 @@
       "mode": "live_api",
       "http_status": 200,
       "url": "https://datos.gob.cl/api/3/action/package_search?q=propiedad+fiscal&rows=5",
-      "checked_at": "2026-10-30T15:06:05+00:00",
-      "elapsed_s": 0.89,
+      "checked_at": "2026-11-02T12:13:34+00:00",
+      "elapsed_s": 0.48,
       "error": "",
       "metrics": {
         "packages_found": 1,
@@ -167,7 +167,7 @@
       "mode": "curated_fallback",
       "http_status": 404,
       "url": "https://mapas.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
-      "checked_at": "2026-10-30T15:06:06+00:00",
+      "checked_at": "2026-11-02T12:13:35+00:00",
       "elapsed_s": 0.0,
       "error": "2 candidato(s) fallaron: sin respuesta | 404",
       "metrics": {
@@ -176,7 +176,7 @@
             "layer_url": "https://ide.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0",
             "http_status": null,
             "ok": false,
-            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)"
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno -2] Name or service not known>)"
           },
           {
             "layer_url": "https://mapas.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0",
@@ -198,7 +198,7 @@
       "mode": "curated_fallback",
       "http_status": null,
       "url": "https://idembn.bienes.cl/arcgis/rest/services/PropiedadFiscal/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
-      "checked_at": "2026-10-30T15:06:07+00:00",
+      "checked_at": "2026-11-02T12:13:36+00:00",
       "elapsed_s": 0.0,
       "error": "2 candidato(s) fallaron: sin respuesta | sin respuesta",
       "metrics": {
@@ -213,7 +213,7 @@
             "layer_url": "https://idembn.bienes.cl/arcgis/rest/services/PropiedadFiscal/MapServer/0",
             "http_status": null,
             "ok": false,
-            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión>)"
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno 111] Connection refused>)"
           }
         ]
       },
@@ -229,7 +229,7 @@
       "mode": "curated_fallback",
       "http_status": null,
       "url": "https://ide.conaf.cl/arcgis/rest/services/Catastro/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
-      "checked_at": "2026-10-30T15:06:22+00:00",
+      "checked_at": "2026-11-02T12:13:48+00:00",
       "elapsed_s": 0.0,
       "error": "2 candidato(s) fallaron: 404 | sin respuesta",
       "metrics": {
@@ -244,7 +244,7 @@
             "layer_url": "https://ide.conaf.cl/arcgis/rest/services/Catastro/MapServer/0",
             "http_status": null,
             "ok": false,
-            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno 11001] getaddrinfo failed>)"
+            "error": "ArcGIS no respondio 200 (URLError: <urlopen error [Errno -2] Name or service not known>)"
           }
         ]
       },
@@ -260,8 +260,8 @@
       "mode": "curated_fallback",
       "http_status": 403,
       "url": "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/",
-      "checked_at": "2026-10-30T15:06:23+00:00",
-      "elapsed_s": 0.77,
+      "checked_at": "2026-11-02T12:13:49+00:00",
+      "elapsed_s": 0.85,
       "error": "SINCA no respondio 200 (HTTP 403 Forbidden)",
       "metrics": {},
       "updated_files": []
@@ -274,7 +274,7 @@
       "group": "earthquake.usgs.gov",
       "status": "ok",
       "detail": "",
-      "seconds": 2.3,
+      "seconds": 0.4,
       "changed": 1
     },
     {
@@ -283,7 +283,7 @@
       "group": "datos.energiaabierta.cl",
       "status": "ok",
       "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
-      "seconds": 0.1,
+      "seconds": 0.3,
       "changed": 0
     },
     {
@@ -292,7 +292,7 @@
       "group": "datos.energiaabierta.cl",
       "status": "ok",
       "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
-      "seconds": 0.1,
+      "seconds": 0.3,
       "changed": 0
     },
     {
@@ -301,7 +301,7 @@
       "group": "datos.gob.cl",
       "status": "ok",
       "detail": "",
-      "seconds": 13.7,
+      "seconds": 1.9,
       "changed": 1
     },
     {
@@ -310,7 +310,7 @@
       "group": "datos.gob.cl",
       "status": "ok",
       "detail": "",
-      "seconds": 1.0,
+      "seconds": 0.2,
       "changed": 1
     },
     {
@@ -319,7 +319,7 @@
       "group": "datos.gob.cl",
       "status": "ok",
       "detail": "",
-      "seconds": 5.5,
+      "seconds": 1.6,
       "changed": 1
     },
     {
@@ -328,7 +328,7 @@
       "group": "datos.gob.cl",
       "status": "ok",
       "detail": "",
-      "seconds": 1.1,
+      "seconds": 0.5,
       "changed": 1
     },
     {
@@ -337,7 +337,7 @@
       "group": "ide.subpesca.cl",
       "status": "ok",
       "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
-      "seconds": 1.2,
+      "seconds": 0.8,
       "changed": 0
     },
     {
@@ -346,7 +346,7 @@
       "group": "ide.bienes.cl",
       "status": "ok",
       "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
-      "seconds": 14.6,
+      "seconds": 12.4,
       "changed": 0
     },
     {
@@ -355,7 +355,7 @@
       "group": "sit.conaf.cl",
       "status": "ok",
       "detail": "fuente sin respuesta valida; se conserva el ultimo dato valido",
-      "seconds": 0.6,
+      "seconds": 1.1,
       "changed": 0
     },
     {
@@ -373,7 +373,7 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 17.9,
+      "seconds": 16.9,
       "changed": 3
     },
     {
@@ -391,8 +391,8 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 10.4,
-      "changed": 8
+      "seconds": 10.3,
+      "changed": 9
     },
     {
       "name": "wp_04_inversion_seia_economia",
@@ -400,7 +400,7 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 6.0,
+      "seconds": 7.2,
       "changed": 7
     },
     {
@@ -409,8 +409,8 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 2.1,
-      "changed": 2
+      "seconds": 0.2,
+      "changed": 1
     },
     {
       "name": "wp_06_turismo_sernatur",
@@ -418,7 +418,7 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 4.1,
+      "seconds": 11.1,
       "changed": 6
     },
     {
@@ -427,16 +427,16 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 0.8,
-      "changed": 4
+      "seconds": 0.0,
+      "changed": 5
     },
     {
       "name": "wp_09_barometro_espejo",
       "kind": "ingesta_script",
       "group": "ingesta_wp",
       "status": "restored",
-      "detail": "codigo de salida 1: ERROR: No se encontró C:\\AGY\\BAROMETRO\\data\\barometro_summary.json",
-      "seconds": 0.5,
+      "detail": "codigo de salida 1: ERROR: No se encontró C:\\AGY\\BAROMETRO\\data/barometro_summary.json",
+      "seconds": 0.0,
       "changed": 0
     },
     {
@@ -445,8 +445,8 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 1.6,
-      "changed": 1
+      "seconds": 0.0,
+      "changed": 3
     },
     {
       "name": "wp_11_ctci_anid_corfo",
@@ -454,8 +454,8 @@
       "group": "ingesta_wp",
       "status": "ok",
       "detail": "",
-      "seconds": 0.9,
-      "changed": 1
+      "seconds": 0.1,
+      "changed": 3
     }
   ]
 }
