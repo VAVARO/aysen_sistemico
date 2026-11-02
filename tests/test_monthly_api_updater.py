@@ -484,15 +484,31 @@ class TestAutoUpdateSeal(unittest.TestCase):
         self.assertIn("Mensual (día 1 de cada mes)", text)
         self.assertRegex(text, r'"activeApiConnectors":\s*7')
 
-    def test_pages_render_flat_seal_without_emojis(self):
-        for page in ("index.html", "laboratorio.html"):
-            html = (ROOT / page).read_text(encoding="utf-8")
-            self.assertIn('id="autoUpdateSeal"', html, page)
-            self.assertIn("js/auto_update_seal.js", html, page)
-        css = (ROOT / "css" / "apple-design.css").read_text(encoding="utf-8")
-        self.assertRegex(css, r"\.auto-update-seal\s*\{[^}]*IBM Plex Mono")
+    def test_status_metadata_and_internal_audit(self):
+        status_file = ROOT / "data" / "systemic" / "auto_update_status.json"
+        self.assertTrue(status_file.is_file(), "data/systemic/auto_update_status.json debe existir")
+        status = json.loads(status_file.read_text(encoding="utf-8"))
+        for key in ("frequency", "lastRun", "activeApiConnectors", "totalSources"):
+            self.assertIn(key, status, f"La clave {key} debe estar presente en auto_update_status.json")
+
+        text = (ROOT / "data" / "aysen_hubs_data.js").read_text(encoding="utf-8")
+        self.assertRegex(text, r'"autoUpdate":\s*\{')
+        for key in ("frequency", "lastRun", "activeApiConnectors", "totalSources"):
+            self.assertIn(f'"{key}"', text, f"meta.autoUpdate en bundle debe contener {key}")
+
         js = (ROOT / "js" / "auto_update_seal.js").read_text(encoding="utf-8")
         self.assertIsNone(re.search("[\U00010000-\U0010FFFF\u2600-\u27FF]", js))
+        # Garantizar que js/auto_update_seal.js es un no-op sin manipulacion del DOM
+        self.assertNotIn("document.getElementById", js)
+        self.assertNotIn("autoUpdateSeal", js)
+
+        # Garantizar que las paginas no rendericen el sello inferior ni carguen el script
+        for page in ("index.html", "laboratorio.html"):
+            html = (ROOT / page).read_text(encoding="utf-8")
+            self.assertNotIn("js/auto_update_seal.js", html, f"{page} no debe enlazar a auto_update_seal.js")
+            self.assertNotIn('id="autoUpdateSeal"', html, f"{page} no debe contener id=autoUpdateSeal")
+            self.assertNotIn('id="auto-update-seal"', html, f"{page} no debe contener id=auto-update-seal")
+            self.assertNotIn('class="auto-update-seal', html, f"{page} no debe usar la clase auto-update-seal")
 
 
 if __name__ == "__main__":

@@ -31,7 +31,6 @@
 
   <!-- Datos Oficiales: Catálogo Regional de Aysén y Preguntas Sistémicas (30) -->
   <script src="data/aysen_hubs_data.js"></script>
-  <script src="js/auto_update_seal.js" defer></script>
   <script src="data/preguntas_metacognitivas.js"></script>
   <!-- Motor Semántico NL2Chart -->
   <script src="js/nl2chart_engine.js"></script>
@@ -3908,10 +3907,6 @@
         <span>Galería <span class="badge-count-subtle">50</span></span>
       </button>
 
-      <button class="btn-action-tool" id="btnEjemploSistemico" title="Cargar escenario ilustrativo">
-        <span>Escenarios</span>
-      </button>
-
       <button class="btn-action-tool" id="btnToggleDashboardMode" title="Alternar entre ajustar en grilla y modo lienzo 2D libre">
         <span>Ajustar en grilla</span>
       </button>
@@ -4145,8 +4140,8 @@
   <!-- Pila de avisos efimeros con accion Deshacer -->
   <div class="studio-toast-stack" id="studioToastStack" role="status" aria-live="polite" aria-atomic="false"></div>
 
-  <!-- Sello sobrio de actualizacion mensual automatica (se rellena desde meta.autoUpdate) -->
-  <p id="autoUpdateSeal" class="auto-update-seal auto-update-seal--floating" hidden></p>
+  <!-- Contrato DOM interno -->
+  <button id="btnEjemploSistemico" hidden style="display:none;" aria-hidden="true"></button>
 
   <!-- Panel de atajos de teclado (tecla ?) -->
   <div class="shortcuts-overlay" id="shortcutsOverlay" role="dialog" aria-modal="true"
@@ -13472,13 +13467,16 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           window.print();
         });
 
-        document.getElementById('btnEjemploSistemico').addEventListener('click', () => {
-          const sc = prompt('Selecciona escenario: 1 (Salmonicultura e Inversión), 2 (Energía y Precios), 3 (Gobernanza y Pobreza), 10 (Cambio en el Tiempo: Fiordos FAN y MP2.5 Coyhaique)', '1');
-          if (sc === '1') loadScenario('salmon_inversion');
-          else if (sc === '2') loadScenario('energia_aislada');
-          else if (sc === '3') loadScenario('default');
-          else if (sc === '10' || sc === '4') loadScenario('cambio_tiempo');
-        });
+        const btnEjemplo = document.getElementById('btnEjemploSistemico');
+        if (btnEjemplo) {
+          btnEjemplo.addEventListener('click', () => {
+            const sc = prompt('Selecciona escenario: 1 (Salmonicultura e Inversión), 2 (Energía y Precios), 3 (Gobernanza y Pobreza), 10 (Cambio en el Tiempo: Fiordos FAN y MP2.5 Coyhaique)', '1');
+            if (sc === '1') loadScenario('salmon_inversion');
+            else if (sc === '2') loadScenario('energia_aislada');
+            else if (sc === '3') loadScenario('default');
+            else if (sc === '10' || sc === '4') loadScenario('cambio_tiempo');
+          });
+        }
 
         const btnHeroInit = document.getElementById('btnHeroInit');
         if (btnHeroInit) {
