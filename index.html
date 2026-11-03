@@ -207,6 +207,14 @@
       font-variant-numeric: tabular-nums;
     }
 
+    .flow-node {
+      outline: none;
+    }
+    .flow-node:focus-visible {
+      outline: 2px solid #00357f;
+      outline-offset: 3px;
+    }
+
     /* ==========================================================================
        CABECERA GLOBAL UNIFICADA (56px) - CUADERNO EDITORIAL Y CARTOGRÁFICO
        ========================================================================== */
@@ -1035,81 +1043,310 @@
         </div>
       </div>
 
-      <!-- BLOQUE 2: RÉGIMEN DE ACTUALIZACIÓN EN 3 VELOCIDADES -->
+            <!-- 2. DIAGRAMA DE FLUJO INTERACTIVO: RÉGIMEN DE ACTUALIZACIÓN EN 3 VELOCIDADES -->
       <div id="bloque-regimen-actualizacion" class="py-8 border-b border-[#e2e8f0]">
-        <div class="mb-6">
-          <h3 class="font-serif text-xl sm:text-2xl font-bold text-on-surface mt-1">Régimen de Actualización en 3 Velocidades</h3>
-          <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
-            Protocolos técnicos diferenciados según la periodicidad de reporte institucional y mecanismos de contingencia.
-          </p>
+        <div class="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-on-surface mt-1">Régimen de Actualización en 3 Velocidades</h3>
+            <p class="font-sans text-xs text-muted mt-1 leading-relaxed">
+              Protocolos técnicos diferenciados según la periodicidad de reporte institucional y mecanismos de contingencia. Traza interactiva entre los 3 regímenes de ingesta, las instituciones oficiales y los 10 hubs de datos de Aysén.
+            </p>
+          </div>
+          <div class="text-[11px] font-mono text-muted flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-[#00357f]"></span>
+            <span>Haz clic o pasa el cursor para trazar dependencias</span>
+          </div>
         </div>
 
-        <div class="overflow-x-auto">
-          <table id="tabla-regimen-actualizacion" class="w-full text-left border-collapse font-sans text-xs" style="box-shadow: none;">
-            <thead>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <th class="py-3 pr-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Velocidad y Régimen</th>
-                <th class="py-3 px-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Período y Ventana de Ejecución</th>
-                <th class="py-3 px-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Instituciones y Conectores</th>
-                <th class="py-3 pl-4 font-mono font-semibold text-primary uppercase text-[11px] tracking-wider">Mecanismo de Integridad y Respaldo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Velocidad 1 -->
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3.5 pr-4 align-top">
-                  <div class="font-mono font-semibold text-on-surface text-xs">Extracción Mensual vía API (Día 1 de cada mes, 06:00 AM)</div>
-                  <div class="text-[11px] text-muted mt-0.5">Ingesta recurrente automatizada</div>
-                </td>
-                <td class="py-3.5 px-4 align-top text-on-surface/80">
-                  <span class="font-mono">Mensual recurrente</span><br>
-                  Día 1 de cada mes, 06:00 AM (UTC-3 / 09:00 UTC)
-                </td>
-                <td class="py-3.5 px-4 align-top text-on-surface/80">
-                  Sismos USGS (GeoJSON), Combustibles y Generación CNE (CKAN/REST), Calidad del Aire SINCA (JSON), Catastros Geoespaciales IDE/Subpesca/CONAF (ArcGIS REST) y catálogos CKAN de <span class="font-mono">datos.gob.cl</span>.
-                </td>
-                <td class="py-3.5 pl-4 align-top text-on-surface/80">
-                  Sincronización desatendida vía HTTP/REST con validación de esquemas JSON, límites de tiempo de espera y almacenamiento de respaldo antes de reemplazo.
-                </td>
-              </tr>
+        <div class="w-full overflow-x-auto">
+          <svg id="provenance-flow-svg" viewBox="0 0 1000 440" preserveAspectRatio="xMidYMid meet" style="width: 100%; min-width: 860px; height: 440px; background: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; display: block;" role="img" aria-label="Diagrama de flujo interactivo de tres columnas: Régimen de actualización, instituciones oficiales y los 10 hubs de datos">
+            <!-- Encabezados de Columna -->
+            <text x="120" y="22" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f" letter-spacing="0.05em">1. RÉGIMEN DE ACTUALIZACIÓN</text>
+            <text x="500" y="22" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f" letter-spacing="0.05em">2. INSTITUCIONES OFICIALES</text>
+            <text x="880" y="22" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f" letter-spacing="0.05em">3. LOS 10 HUBS DE DATOS</text>
 
-              <!-- Velocidad 2 -->
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3.5 pr-4 align-top">
-                  <div class="font-mono font-semibold text-on-surface text-xs">Sincronización de Cierres Administrativos Anuales/Semestrales (con Circuit Breaker)</div>
-                  <div class="text-[11px] text-muted mt-0.5">Consolidación contable y sectorial</div>
-                </td>
-                <td class="py-3.5 px-4 align-top text-on-surface/80">
-                  <span class="font-mono">Anual / Semestral</span><br>
-                  Ventana posterior al cierre formal de balances ministeriales
-                </td>
-                <td class="py-3.5 px-4 align-top text-on-surface/80">
-                  SUBDERE-SINIM, DIPRES-GORE, SERNAPESCA, DEIS-MINSAL, MINEDUC-SLEP, CEAD-SPD, SII, SEA-SEIA, ChileCompra, SERNATUR, SERPAT-CMN, ANID y CORFO.
-                </td>
-                <td class="py-3.5 pl-4 align-top text-on-surface/80">
-                  El sistema ejecuta sondas automáticas y mantiene un fusible <span class="font-mono font-semibold">Last-Known-Good</span> que preserva la última serie íntegra si un servidor ministerial presenta caídas, errores HTTP o respuestas truncadas.
-                </td>
-              </tr>
+            <!-- Curvas Bézier de Conexión -->
+            <g id="flow-paths-group">
+            <path id="path-reg_01-inst_usgs" class="flow-path" data-reg="reg_01" data-inst="inst_usgs" d="M 210 111 C 297.5 111, 297.5 48, 385 48" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_01-inst_cne" class="flow-path" data-reg="reg_01" data-inst="inst_cne" d="M 210 111 C 297.5 111, 297.5 69, 385 69" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_01-inst_sinca" class="flow-path" data-reg="reg_01" data-inst="inst_sinca" d="M 210 111 C 297.5 111, 297.5 90, 385 90" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_01-inst_subpesca" class="flow-path" data-reg="reg_01" data-inst="inst_subpesca" d="M 210 111 C 297.5 111, 297.5 111, 385 111" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_01-inst_bbnn_conaf" class="flow-path" data-reg="reg_01" data-inst="inst_bbnn_conaf" d="M 210 111 C 297.5 111, 297.5 132, 385 132" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_01-inst_datos_gob" class="flow-path" data-reg="reg_01" data-inst="inst_datos_gob" d="M 210 111 C 297.5 111, 297.5 153, 385 153" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_01-inst_anid" class="flow-path" data-reg="reg_01" data-inst="inst_anid" d="M 210 111 C 297.5 111, 297.5 174, 385 174" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_subdere" class="flow-path" data-reg="reg_02" data-inst="inst_subdere" d="M 210 268 C 297.5 268, 297.5 205, 385 205" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_sernapesca" class="flow-path" data-reg="reg_02" data-inst="inst_sernapesca" d="M 210 268 C 297.5 268, 297.5 226, 385 226" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_deis" class="flow-path" data-reg="reg_02" data-inst="inst_deis" d="M 210 268 C 297.5 268, 297.5 247, 385 247" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_mineduc_cead" class="flow-path" data-reg="reg_02" data-inst="inst_mineduc_cead" d="M 210 268 C 297.5 268, 297.5 268, 385 268" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_sea_sii" class="flow-path" data-reg="reg_02" data-inst="inst_sea_sii" d="M 210 268 C 297.5 268, 297.5 289, 385 289" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_sernatur" class="flow-path" data-reg="reg_02" data-inst="inst_sernatur" d="M 210 268 C 297.5 268, 297.5 310, 385 310" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_02-inst_mincap_corfo" class="flow-path" data-reg="reg_02" data-inst="inst_mincap_corfo" d="M 210 268 C 297.5 268, 297.5 331, 385 331" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_03-inst_ine_censo" class="flow-path" data-reg="reg_03" data-inst="inst_ine_censo" d="M 210 391 C 297.5 391, 297.5 368, 385 368" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_03-inst_casen" class="flow-path" data-reg="reg_03" data-inst="inst_casen" d="M 210 391 C 297.5 391, 297.5 391, 385 391" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-reg_03-inst_barometro" class="flow-path" data-reg="reg_03" data-inst="inst_barometro" d="M 210 391 C 297.5 391, 297.5 414, 385 414" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_usgs-biodiversidad" class="flow-path" data-reg="reg_01" data-inst="inst_usgs" data-hub="biodiversidad" d="M 615 48 C 697.5 48, 697.5 288, 780 288" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_usgs-salud" class="flow-path" data-reg="reg_01" data-inst="inst_usgs" data-hub="salud" d="M 615 48 C 697.5 48, 697.5 328, 780 328" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_cne-energia" class="flow-path" data-reg="reg_01" data-inst="inst_cne" data-hub="energia" d="M 615 69 C 697.5 69, 697.5 128, 780 128" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_sinca-biodiversidad" class="flow-path" data-reg="reg_01" data-inst="inst_sinca" data-hub="biodiversidad" d="M 615 90 C 697.5 90, 697.5 288, 780 288" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_sinca-salud" class="flow-path" data-reg="reg_01" data-inst="inst_sinca" data-hub="salud" d="M 615 90 C 697.5 90, 697.5 328, 780 328" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_subpesca-salmonicultura" class="flow-path" data-reg="reg_01" data-inst="inst_subpesca" data-hub="salmonicultura" d="M 615 111 C 697.5 111, 697.5 88, 780 88" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_subpesca-turismo" class="flow-path" data-reg="reg_01" data-inst="inst_subpesca" data-hub="turismo" d="M 615 111 C 697.5 111, 697.5 48, 780 48" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_bbnn_conaf-turismo" class="flow-path" data-reg="reg_01" data-inst="inst_bbnn_conaf" data-hub="turismo" d="M 615 132 C 697.5 132, 697.5 48, 780 48" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_bbnn_conaf-inversion" class="flow-path" data-reg="reg_01" data-inst="inst_bbnn_conaf" data-hub="inversion" d="M 615 132 C 697.5 132, 697.5 208, 780 208" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_bbnn_conaf-biodiversidad" class="flow-path" data-reg="reg_01" data-inst="inst_bbnn_conaf" data-hub="biodiversidad" d="M 615 132 C 697.5 132, 697.5 288, 780 288" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_datos_gob-gobernanza" class="flow-path" data-reg="reg_01" data-inst="inst_datos_gob" data-hub="gobernanza" d="M 615 153 C 697.5 153, 697.5 168, 780 168" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_datos_gob-ctci" class="flow-path" data-reg="reg_01" data-inst="inst_datos_gob" data-hub="ctci" d="M 615 153 C 697.5 153, 697.5 408, 780 408" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_anid-ctci" class="flow-path" data-reg="reg_01" data-inst="inst_anid" data-hub="ctci" d="M 615 174 C 697.5 174, 697.5 408, 780 408" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_subdere-gobernanza" class="flow-path" data-reg="reg_02" data-inst="inst_subdere" data-hub="gobernanza" d="M 615 205 C 697.5 205, 697.5 168, 780 168" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_subdere-inversion" class="flow-path" data-reg="reg_02" data-inst="inst_subdere" data-hub="inversion" d="M 615 205 C 697.5 205, 697.5 208, 780 208" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_sernapesca-salmonicultura" class="flow-path" data-reg="reg_02" data-inst="inst_sernapesca" data-hub="salmonicultura" d="M 615 226 C 697.5 226, 697.5 88, 780 88" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_deis-salud" class="flow-path" data-reg="reg_02" data-inst="inst_deis" data-hub="salud" d="M 615 247 C 697.5 247, 697.5 328, 780 328" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_mineduc_cead-social" class="flow-path" data-reg="reg_02" data-inst="inst_mineduc_cead" data-hub="social" d="M 615 268 C 697.5 268, 697.5 248, 780 248" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_sea_sii-inversion" class="flow-path" data-reg="reg_02" data-inst="inst_sea_sii" data-hub="inversion" d="M 615 289 C 697.5 289, 697.5 208, 780 208" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_sernatur-turismo" class="flow-path" data-reg="reg_02" data-inst="inst_sernatur" data-hub="turismo" d="M 615 310 C 697.5 310, 697.5 48, 780 48" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_sernatur-inversion" class="flow-path" data-reg="reg_02" data-inst="inst_sernatur" data-hub="inversion" d="M 615 310 C 697.5 310, 697.5 208, 780 208" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_mincap_corfo-cultura" class="flow-path" data-reg="reg_02" data-inst="inst_mincap_corfo" data-hub="cultura" d="M 615 331 C 697.5 331, 697.5 368, 780 368" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_mincap_corfo-ctci" class="flow-path" data-reg="reg_02" data-inst="inst_mincap_corfo" data-hub="ctci" d="M 615 331 C 697.5 331, 697.5 408, 780 408" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_ine_censo-social" class="flow-path" data-reg="reg_03" data-inst="inst_ine_censo" data-hub="social" d="M 615 368 C 697.5 368, 697.5 248, 780 248" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_ine_censo-turismo" class="flow-path" data-reg="reg_03" data-inst="inst_ine_censo" data-hub="turismo" d="M 615 368 C 697.5 368, 697.5 48, 780 48" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_ine_censo-gobernanza" class="flow-path" data-reg="reg_03" data-inst="inst_ine_censo" data-hub="gobernanza" d="M 615 368 C 697.5 368, 697.5 168, 780 168" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_casen-social" class="flow-path" data-reg="reg_03" data-inst="inst_casen" data-hub="social" d="M 615 391 C 697.5 391, 697.5 248, 780 248" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_casen-salud" class="flow-path" data-reg="reg_03" data-inst="inst_casen" data-hub="salud" d="M 615 391 C 697.5 391, 697.5 328, 780 328" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_barometro-gobernanza" class="flow-path" data-reg="reg_03" data-inst="inst_barometro" data-hub="gobernanza" d="M 615 414 C 697.5 414, 697.5 168, 780 168" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            <path id="path-inst_barometro-cultura" class="flow-path" data-reg="reg_03" data-inst="inst_barometro" data-hub="cultura" d="M 615 414 C 697.5 414, 697.5 368, 780 368" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.55" style="transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;" />
+            </g>
 
-              <!-- Velocidad 3 -->
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3.5 pr-4 align-top">
-                  <div class="font-mono font-semibold text-on-surface text-xs">Líneas Base Estructurales y Muestrales</div>
-                  <div class="text-[11px] text-muted mt-0.5">Estructuras sociodemográficas de fondo</div>
-                </td>
-                <td class="py-3.5 px-4 align-top text-on-surface/80">
-                  <span class="font-mono">Periódica / Por oleada</span><br>
-                  Actualizadas por cada nueva ronda oficial
-                </td>
-                <td class="py-3.5 px-4 align-top text-on-surface/80">
-                  INE Censo 2024, Encuesta CASEN (MDSF) y Barómetro Regional de la Universidad de Aysén.
-                </td>
-                <td class="py-3.5 pl-4 align-top text-on-surface/80">
-                  Verificación de matrices tabulares, ajuste a la división política de las 10 comunas y cotejo estadístico con la serie histórica regional.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            <!-- Nodos: Columna 1 (Regímenes) -->
+            <g id="flow-regs-group">
+            <g class="flow-node flow-reg" id="node-reg_01" data-type="reg" data-id="reg_01" style="cursor: pointer;" tabindex="0" role="button" aria-label="Régimen 01: Extracción API Mensual">
+              <rect x="20" y="88" width="195" height="46" fill="transparent" />
+              <text x="24" y="104" class="flow-label" style="transition: fill 0.18s ease;">
+                <tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">01 · </tspan>
+                <tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="600" fill="#0f172a">Extracción API Mensual</tspan>
+              </text>
+              <text x="24" y="117" class="flow-sub" font-family="'IBM Plex Mono', monospace" font-size="9.5px" fill="#00357f">Día 1 de cada mes</text>
+              <text x="24" y="128" class="flow-sub-detail" font-family="'IBM Plex Mono', monospace" font-size="9px" fill="#66625f">7 conectores REST/CKAN/GeoJSON</text>
+              <circle cx="210" cy="111" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-reg" id="node-reg_02" data-type="reg" data-id="reg_02" style="cursor: pointer;" tabindex="0" role="button" aria-label="Régimen 02: Cierres Administrativos">
+              <rect x="20" y="245" width="195" height="46" fill="transparent" />
+              <text x="24" y="261" class="flow-label" style="transition: fill 0.18s ease;">
+                <tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">02 · </tspan>
+                <tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="600" fill="#0f172a">Cierres Administrativos</tspan>
+              </text>
+              <text x="24" y="274" class="flow-sub" font-family="'IBM Plex Mono', monospace" font-size="9.5px" fill="#00357f">Semestral/Anual</text>
+              <text x="24" y="285" class="flow-sub-detail" font-family="'IBM Plex Mono', monospace" font-size="9px" fill="#66625f">18 registros con Circuit Breaker</text>
+              <circle cx="210" cy="268" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-reg" id="node-reg_03" data-type="reg" data-id="reg_03" style="cursor: pointer;" tabindex="0" role="button" aria-label="Régimen 03: Líneas Base Estructurales">
+              <rect x="20" y="368" width="195" height="46" fill="transparent" />
+              <text x="24" y="384" class="flow-label" style="transition: fill 0.18s ease;">
+                <tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">03 · </tspan>
+                <tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="600" fill="#0f172a">Líneas Base Estructurales</tspan>
+              </text>
+              <text x="24" y="397" class="flow-sub" font-family="'IBM Plex Mono', monospace" font-size="9.5px" fill="#00357f">Por ola oficial</text>
+              <text x="24" y="408" class="flow-sub-detail" font-family="'IBM Plex Mono', monospace" font-size="9px" fill="#66625f">3 bases censales y muestrales</text>
+              <circle cx="210" cy="391" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+            </g>
+            </g>
+
+            <!-- Nodos: Columna 2 (Instituciones) -->
+            <g id="flow-insts-group">
+            <g class="flow-node flow-inst" id="node-inst_usgs" data-type="inst" data-id="inst_usgs" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: USGS Sismos">
+              <rect x="380" y="39" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="48" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="51.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">USGS Sismos</text>
+              <circle cx="615" cy="48" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_cne" data-type="inst" data-id="inst_cne" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: CNE Combustibles y Energía">
+              <rect x="380" y="60" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="69" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="72.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">CNE Combustibles y Energía</text>
+              <circle cx="615" cy="69" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_sinca" data-type="inst" data-id="inst_sinca" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: SINCA MMA Aire">
+              <rect x="380" y="81" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="90" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="93.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">SINCA MMA Aire</text>
+              <circle cx="615" cy="90" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_subpesca" data-type="inst" data-id="inst_subpesca" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: SUBPESCA / IDE REST">
+              <rect x="380" y="102" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="111" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="114.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">SUBPESCA / IDE REST</text>
+              <circle cx="615" cy="111" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_bbnn_conaf" data-type="inst" data-id="inst_bbnn_conaf" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: Bienes Nacionales / CONAF SIT">
+              <rect x="380" y="123" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="132" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="135.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">Bienes Nacionales / CONAF SIT</text>
+              <circle cx="615" cy="132" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_datos_gob" data-type="inst" data-id="inst_datos_gob" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: Datos.gob.cl CKAN">
+              <rect x="380" y="144" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="153" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="156.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">Datos.gob.cl CKAN</text>
+              <circle cx="615" cy="153" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_anid" data-type="inst" data-id="inst_anid" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: ANID DataCiencia">
+              <rect x="380" y="165" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="174" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="177.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">ANID DataCiencia</text>
+              <circle cx="615" cy="174" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_subdere" data-type="inst" data-id="inst_subdere" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: SUBDERE SINIM / DIPRES">
+              <rect x="380" y="196" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="205" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="208.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">SUBDERE SINIM / DIPRES</text>
+              <circle cx="615" cy="205" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_sernapesca" data-type="inst" data-id="inst_sernapesca" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: SERNAPESCA">
+              <rect x="380" y="217" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="226" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="229.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">SERNAPESCA</text>
+              <circle cx="615" cy="226" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_deis" data-type="inst" data-id="inst_deis" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: DEIS MINSAL / SSA">
+              <rect x="380" y="238" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="247" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="250.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">DEIS MINSAL / SSA</text>
+              <circle cx="615" cy="247" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_mineduc_cead" data-type="inst" data-id="inst_mineduc_cead" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: MINEDUC SLEP / CEAD SPD">
+              <rect x="380" y="259" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="268" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="271.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">MINEDUC SLEP / CEAD SPD</text>
+              <circle cx="615" cy="268" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_sea_sii" data-type="inst" data-id="inst_sea_sii" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: SEA SEIA / SII / ChileCompra">
+              <rect x="380" y="280" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="289" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="292.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">SEA SEIA / SII / ChileCompra</text>
+              <circle cx="615" cy="289" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_sernatur" data-type="inst" data-id="inst_sernatur" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: SERNATUR / JAC / BCCh">
+              <rect x="380" y="301" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="310" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="313.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">SERNATUR / JAC / BCCh</text>
+              <circle cx="615" cy="310" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_mincap_corfo" data-type="inst" data-id="inst_mincap_corfo" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: MINCAP SERPAT / CORFO">
+              <rect x="380" y="322" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="331" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="334.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">MINCAP SERPAT / CORFO</text>
+              <circle cx="615" cy="331" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_ine_censo" data-type="inst" data-id="inst_ine_censo" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: INE Censo 2024">
+              <rect x="380" y="359" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="368" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="371.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">INE Censo 2024</text>
+              <circle cx="615" cy="368" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_casen" data-type="inst" data-id="inst_casen" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: CASEN MDSF">
+              <rect x="380" y="382" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="391" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="394.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">CASEN MDSF</text>
+              <circle cx="615" cy="391" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            <g class="flow-node flow-inst" id="node-inst_barometro" data-type="inst" data-id="inst_barometro" style="cursor: pointer;" tabindex="0" role="button" aria-label="Institución: Barómetro Regional UAysén">
+              <rect x="380" y="405" width="240" height="18" fill="transparent" />
+              <circle cx="385" cy="414" r="5" fill="#0f172a" class="flow-circle flow-in" style="transition: fill 0.18s ease;" />
+              <text x="398" y="417.5" class="flow-label" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" fill="#0f172a" style="transition: fill 0.18s ease;">Barómetro Regional UAysén</text>
+              <circle cx="615" cy="414" r="5" fill="#0f172a" class="flow-circle flow-out" style="transition: fill 0.18s ease;" />
+            </g>
+            </g>
+
+            <!-- Nodos: Columna 3 (Hubs) -->
+            <g id="flow-hubs-group">
+            <g class="flow-node flow-hub" id="node-turismo" data-type="hub" data-id="turismo" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub I: Turismo">
+              <rect x="775" y="34" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="48" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="52" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">I. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Turismo</tspan></text>
+              <text x="965" y="52" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_06</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-salmonicultura" data-type="hub" data-id="salmonicultura" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub II: Salmonicultura">
+              <rect x="775" y="74" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="88" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="92" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">II. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Salmonicultura</tspan></text>
+              <text x="965" y="92" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_03</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-energia" data-type="hub" data-id="energia" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub III: Energía">
+              <rect x="775" y="114" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="128" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="132" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">III. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Energía</tspan></text>
+              <text x="965" y="132" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_02</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-gobernanza" data-type="hub" data-id="gobernanza" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub IV: Gobernanza">
+              <rect x="775" y="154" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="168" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="172" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">IV. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Gobernanza</tspan></text>
+              <text x="965" y="172" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_01</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-inversion" data-type="hub" data-id="inversion" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub V: Inversión">
+              <rect x="775" y="194" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="208" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="212" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">V. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Inversión</tspan></text>
+              <text x="965" y="212" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_04</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-social" data-type="hub" data-id="social" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub VI: Social">
+              <rect x="775" y="234" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="248" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="252" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">VI. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Social</tspan></text>
+              <text x="965" y="252" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_05</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-biodiversidad" data-type="hub" data-id="biodiversidad" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub VII: Biodiversidad">
+              <rect x="775" y="274" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="288" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="292" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">VII. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Biodiversidad</tspan></text>
+              <text x="965" y="292" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_07</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-salud" data-type="hub" data-id="salud" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub VIII: Salud">
+              <rect x="775" y="314" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="328" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="332" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">VIII. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Salud</tspan></text>
+              <text x="965" y="332" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_08</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-cultura" data-type="hub" data-id="cultura" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub IX: Cultura y Patrimonio">
+              <rect x="775" y="354" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="368" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="372" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">IX. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Cultura y Patrimonio</tspan></text>
+              <text x="965" y="372" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_09</text>
+            </g>
+            <g class="flow-node flow-hub" id="node-ctci" data-type="hub" data-id="ctci" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub X: CTCi e Innovación">
+              <rect x="775" y="394" width="200" height="28" fill="transparent" />
+              <circle cx="780" cy="408" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
+              <text x="794" y="412" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">X. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">CTCi e Innovación</tspan></text>
+              <text x="965" y="412" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_10</text>
+            </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Fila editorial plana de detalle -->
+        <div id="provenance-flow-detail" style="border-top: 1px solid #e2e8f0; padding: 12px 0;">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start text-xs font-sans">
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-primary font-semibold">Flujo de Sincronización</div>
+              <div class="font-serif text-sm font-bold text-on-surface mt-0.5">Vista General de Procedencia</div>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Periodicidad Exacta</div>
+              <div class="font-sans text-xs text-on-surface/90 mt-0.5">3 Velocidades (Mensual, Semestral/Anual, Censal)</div>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Mecanismo de Respaldo</div>
+              <div class="font-sans text-xs text-on-surface/90 mt-0.5">API directa + Circuit Breaker Last-Known-Good + Corte Censal</div>
+              <div class="font-mono text-[11px] text-primary mt-1">28 Fuentes Oficiales → 10 Hubs → 39 Nodos Territoriales</div>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Portales Oficiales</div>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 mt-0.5">
+                <a href="https://datos.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">datos.gob.cl ↗</a>
+                <a href="https://www.ine.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">ine.gob.cl ↗</a>
+                <a href="https://energiaabierta.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">energiaabierta.cl ↗</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1617,6 +1854,529 @@
     const hubMap = {};
     (AppState.data.hubs || []).forEach(h => { hubMap[h.id] = h; });
 
+        /* Inicializador del Diagrama de Flujo Interactivo de Procedencia */
+    function initProvenanceFlowchart() {
+      const svg = document.getElementById('provenance-flow-svg');
+      const detailEl = document.getElementById('provenance-flow-detail');
+      if (!svg || !detailEl) return;
+
+      const instDefs = [
+        { id: 'inst_usgs', name: 'USGS Sismos', reg: 'reg_01', hubs: ['biodiversidad', 'salud'] },
+        { id: 'inst_cne', name: 'CNE Combustibles y Energía', reg: 'reg_01', hubs: ['energia'] },
+        { id: 'inst_sinca', name: 'SINCA MMA Aire', reg: 'reg_01', hubs: ['biodiversidad', 'salud'] },
+        { id: 'inst_subpesca', name: 'SUBPESCA / IDE REST', reg: 'reg_01', hubs: ['salmonicultura', 'turismo'] },
+        { id: 'inst_bbnn_conaf', name: 'Bienes Nacionales / CONAF SIT', reg: 'reg_01', hubs: ['turismo', 'inversion', 'biodiversidad'] },
+        { id: 'inst_datos_gob', name: 'Datos.gob.cl CKAN', reg: 'reg_01', hubs: ['gobernanza', 'ctci'] },
+        { id: 'inst_anid', name: 'ANID DataCiencia', reg: 'reg_01', hubs: ['ctci'] },
+        { id: 'inst_subdere', name: 'SUBDERE SINIM / DIPRES', reg: 'reg_02', hubs: ['gobernanza', 'inversion'] },
+        { id: 'inst_sernapesca', name: 'SERNAPESCA', reg: 'reg_02', hubs: ['salmonicultura'] },
+        { id: 'inst_deis', name: 'DEIS MINSAL / SSA', reg: 'reg_02', hubs: ['salud'] },
+        { id: 'inst_mineduc_cead', name: 'MINEDUC SLEP / CEAD SPD', reg: 'reg_02', hubs: ['social'] },
+        { id: 'inst_sea_sii', name: 'SEA SEIA / SII / ChileCompra', reg: 'reg_02', hubs: ['inversion'] },
+        { id: 'inst_sernatur', name: 'SERNATUR / JAC / BCCh', reg: 'reg_02', hubs: ['turismo', 'inversion'] },
+        { id: 'inst_mincap_corfo', name: 'MINCAP SERPAT / CORFO', reg: 'reg_02', hubs: ['cultura', 'ctci'] },
+        { id: 'inst_ine_censo', name: 'INE Censo 2024', reg: 'reg_03', hubs: ['social', 'turismo', 'gobernanza'] },
+        { id: 'inst_casen', name: 'CASEN MDSF', reg: 'reg_03', hubs: ['social', 'salud'] },
+        { id: 'inst_barometro', name: 'Barómetro Regional UAysén', reg: 'reg_03', hubs: ['gobernanza', 'cultura'] }
+      ];
+
+      const DETAILS = {
+        reg_01: {
+          nombre: '01 · Extracción API Mensual',
+          tipo: 'Régimen de Ingesta Recurrente',
+          periodicidad: 'Día 1 de cada mes (06:00 AM UTC-3 / 09:00 UTC)',
+          mecanismo: 'API directa desatendida / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta 7 conectores institucionales · USGS, CNE, SINCA, SUBPESCA, BBNN/CONAF, Datos.gob.cl, ANID',
+          links: [
+            { text: 'earthquake.usgs.gov ↗', url: 'https://earthquake.usgs.gov/' },
+            { text: 'energiaabierta.cl ↗', url: 'https://energiaabierta.cl/' },
+            { text: 'sinca.mma.gob.cl ↗', url: 'https://sinca.mma.gob.cl/' },
+            { text: 'datos.gob.cl ↗', url: 'https://datos.gob.cl/' }
+          ]
+        },
+        reg_02: {
+          nombre: '02 · Cierres Administrativos',
+          tipo: 'Régimen de Cierres Contables y Sectoriales',
+          periodicidad: 'Semestral y Anual (tras balances ministeriales)',
+          mecanismo: 'Circuit Breaker Last-Known-Good con sondas automáticas',
+          nodos: 'Alimenta 7 agrupaciones sectoriales (18 registros oficiales)',
+          links: [
+            { text: 'datos.sinim.gov.cl ↗', url: 'https://datos.sinim.gov.cl/' },
+            { text: 'sernapesca.cl ↗', url: 'https://www.sernapesca.cl/informes/acuicultura' },
+            { text: 'deis.minsal.cl ↗', url: 'https://deis.minsal.cl/' },
+            { text: 'seia.sea.gob.cl ↗', url: 'https://seia.sea.gob.cl/' }
+          ]
+        },
+        reg_03: {
+          nombre: '03 · Líneas Base Estructurales',
+          tipo: 'Régimen de Fondo Censal y Muestral',
+          periodicidad: 'Por ola oficial (Censo decenal / CASEN / Barómetro)',
+          mecanismo: 'Corte Censal Oficial y Verificación Tabular Comunal',
+          nodos: 'Alimenta 3 bases sociodemográficas de fondo',
+          links: [
+            { text: 'censo2024.ine.gob.cl ↗', url: 'https://censo2024.ine.gob.cl/' },
+            { text: 'observatorio.ministeriodesarrollosocial.gob.cl ↗', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen' },
+            { text: 'uaysen.cl ↗', url: 'https://uaysen.cl/' }
+          ]
+        },
+        inst_usgs: {
+          nombre: 'USGS Sismos (United States Geological Survey)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · Serie 2015-2026',
+          mecanismo: 'API directa GeoJSON / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta Hub VII (Biodiversidad y Clima) y Hub VIII (Salud) · Nodos #30 y #31',
+          links: [{ text: 'earthquake.usgs.gov ↗', url: 'https://earthquake.usgs.gov/' }]
+        },
+        inst_cne: {
+          nombre: 'CNE Combustibles y Energía (Energía Abierta)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · 10 comunas',
+          mecanismo: 'API directa CKAN REST / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta Hub III (Energía) · Nodos #11, #13 y #14',
+          links: [{ text: 'energiaabierta.cl ↗', url: 'https://energiaabierta.cl/' }, { text: 'bencinaenlinea.cl ↗', url: 'https://www.bencinaenlinea.cl/' }]
+        },
+        inst_sinca: {
+          nombre: 'SINCA MMA Aire (Calidad del Aire)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · Coyhaique y Aysén',
+          mecanismo: 'API directa JSON / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta Hub VII (Biodiversidad y Clima) y Hub VIII (Salud) · Nodos #30 y #31',
+          links: [{ text: 'sinca.mma.gob.cl ↗', url: 'https://sinca.mma.gob.cl/' }]
+        },
+        inst_subpesca: {
+          nombre: 'SUBPESCA / IDE REST (Acuicultura)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · 745 concesiones de acuicultura',
+          mecanismo: 'ArcGIS MapServer REST / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta Hub II (Salmonicultura) y Hub I (Turismo) · Nodos #06 y #07',
+          links: [{ text: 'mapas.subpesca.cl ↗', url: 'https://mapas.subpesca.cl/visorsubpesca/' }]
+        },
+        inst_bbnn_conaf: {
+          nombre: 'Bienes Nacionales / CONAF SIT (Catastro y SNASPE)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · Parques y Propiedad Fiscal',
+          mecanismo: 'ArcGIS Server REST / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta Hub I (Turismo), Hub V (Inversión) y Hub VII (Biodiversidad) · Nodos #04, #20, #28',
+          links: [{ text: 'catastro.bienes.cl ↗', url: 'https://catastro.bienes.cl/' }, { text: 'sit.conaf.cl ↗', url: 'https://sit.conaf.cl/' }]
+        },
+        inst_datos_gob: {
+          nombre: 'Datos.gob.cl CKAN (Portal Nacional de Datos Abiertos)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · Catálogo Descentralizado',
+          mecanismo: 'API directa CKAN REST / Circuit Breaker Last-Known-Good',
+          nodos: 'Alimenta Hub IV (Gobernanza) y Hub X (CTCi) · Nodos #15, #16, #35',
+          links: [{ text: 'datos.gob.cl ↗', url: 'https://datos.gob.cl/' }]
+        },
+        inst_anid: {
+          nombre: 'ANID DataCiencia (Ciencia e Innovación)',
+          tipo: 'Conector API Mensual',
+          periodicidad: 'Mensual (Día 1, 06:00 AM) · Fondecyt/Fondef/CIEP',
+          mecanismo: 'API REST / Catálogo Abierto / Circuit Breaker',
+          nodos: 'Alimenta Hub X (CTCi e Innovación) · Nodos #35 y #36',
+          links: [{ text: 'dataciencia.anid.cl ↗', url: 'https://dataciencia.anid.cl/' }]
+        },
+        inst_subdere: {
+          nombre: 'SUBDERE SINIM / DIPRES (Finanzas y FNDR)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Semestral / Anual · 10 municipios de Aysén + GORE',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Consolidación SINIM)',
+          nodos: 'Alimenta Hub IV (Gobernanza) y Hub V (Inversión) · Nodos #15 y #16',
+          links: [{ text: 'datos.sinim.gov.cl ↗', url: 'https://datos.sinim.gov.cl/' }, { text: 'dipres.gob.cl ↗', url: 'https://www.dipres.gob.cl/' }]
+        },
+        inst_sernapesca: {
+          nombre: 'SERNAPESCA (Fiscalización y Biomasa Acuícola)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Semestral / Anual · Informes Sanitarios y Antimicrobianos',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Informes Consolidados)',
+          nodos: 'Alimenta Hub II (Salmonicultura) · Nodos #07, #08, #09, #10',
+          links: [{ text: 'sernapesca.cl ↗', url: 'https://www.sernapesca.cl/informes/acuicultura' }]
+        },
+        inst_deis: {
+          nombre: 'DEIS MINSAL / SSA (Servicio de Salud Aysén)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Semestral / Anual · Red Hospitalaria y APS Regional',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Estadísticas Vitales)',
+          nodos: 'Alimenta Hub VIII (Salud) · Nodos #31, #38, #39',
+          links: [{ text: 'deis.minsal.cl ↗', url: 'https://deis.minsal.cl/' }]
+        },
+        inst_mineduc_cead: {
+          nombre: 'MINEDUC SLEP / CEAD SPD (Educación y Seguridad)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Anual (cierre matrículas y balance policial anual)',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Bases Mineduc Abiertas)',
+          nodos: 'Alimenta Hub VI (Social) · Nodos #23 y #24',
+          links: [{ text: 'datosabiertos.mineduc.cl ↗', url: 'https://datosabiertos.mineduc.cl/' }, { text: 'cead.spd.gov.cl ↗', url: 'https://cead.spd.gov.cl/' }]
+        },
+        inst_sea_sii: {
+          nombre: 'SEA SEIA / SII / ChileCompra (Inversión y Empleo)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Semestral / Anual · 722 proyectos SEIA y compras públicas',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Registros SEIA/SII)',
+          nodos: 'Alimenta Hub V (Inversión) · Nodos #19, #21, #22',
+          links: [{ text: 'seia.sea.gob.cl ↗', url: 'https://seia.sea.gob.cl/' }, { text: 'sii.cl ↗', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/' }, { text: 'chilecompra.cl ↗', url: 'https://www.chilecompra.cl/' }]
+        },
+        inst_sernatur: {
+          nombre: 'SERNATUR / JAC / BCCh (Turismo y Tráfico Aéreo)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Semestral / Anual · Registro prestadores y 4 ZOIT',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Catálogo Prestadores)',
+          nodos: 'Alimenta Hub I (Turismo) y Hub V (Inversión) · Nodos #01, #02, #03',
+          links: [{ text: 'registro.sernatur.cl ↗', url: 'https://registro.sernatur.cl/' }, { text: 'subturismo.gob.cl ↗', url: 'https://www.subturismo.gob.cl/zoit/' }]
+        },
+        inst_mincap_corfo: {
+          nombre: 'MINCAP SERPAT / CORFO (Patrimonio e Innovación)',
+          tipo: 'Cierre Administrativo',
+          periodicidad: 'Anual · Monumentos nacionales y fondos de innovación',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Inventario Patrimonial)',
+          nodos: 'Alimenta Hub IX (Cultura y Patrimonio) y Hub X (CTCi) · Nodos #32, #33, #34, #37',
+          links: [{ text: 'patrimoniocultural.gob.cl ↗', url: 'https://www.patrimoniocultural.gob.cl/' }, { text: 'corfo.cl ↗', url: 'https://www.corfo.cl/' }]
+        },
+        inst_ine_censo: {
+          nombre: 'INE Censo 2024 (Instituto Nacional de Estadísticas)',
+          tipo: 'Línea Base Estructural',
+          periodicidad: 'Por ola oficial · Censo de Población y Vivienda 2024',
+          mecanismo: 'Corte Censal Oficial y Proyecciones Demográficas',
+          nodos: 'Alimenta Hub VI (Social), Hub I (Turismo) y Hub IV (Gobernanza) · Nodo #25',
+          links: [{ text: 'censo2024.ine.gob.cl ↗', url: 'https://censo2024.ine.gob.cl/' }]
+        },
+        inst_casen: {
+          nombre: 'CASEN MDSF (Ministerio de Desarrollo Social y Familia)',
+          tipo: 'Línea Base Estructural',
+          periodicidad: 'Por ola oficial (bianual/trianual)',
+          mecanismo: 'Corte Encuesta Muestral y Pobreza Multidimensional',
+          nodos: 'Alimenta Hub VI (Social) y Hub VIII (Salud) · Nodo #25',
+          links: [{ text: 'observatorio.ministeriodesarrollosocial.gob.cl ↗', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen' }]
+        },
+        inst_barometro: {
+          nombre: 'Barómetro Regional UAysén (Universidad de Aysén)',
+          tipo: 'Línea Base Estructural',
+          periodicidad: 'Por ola oficial (anual) · Estudio de Percepción Regional',
+          mecanismo: 'Corte Muestral UAysén / Validación Metodológica',
+          nodos: 'Alimenta Hub IV (Gobernanza) y Hub IX (Cultura) · Nodos #17 y #34',
+          links: [{ text: 'uaysen.cl ↗', url: 'https://uaysen.cl/' }]
+        },
+        turismo: {
+          nombre: 'Hub I. Turismo (WP_06)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'Multirrégimen (API mensual + Cierres anuales + Censo)',
+          mecanismo: 'Circuit Breaker Last-Known-Good + Registros SERNATUR/CONAF',
+          nodos: '5 Nodos Satélites (#01 al #05) · Prestadores, ZOIT, EMAT, SNASPE, Georreferenciación',
+          links: [{ text: 'registro.sernatur.cl ↗', url: 'https://registro.sernatur.cl/' }, { text: 'subturismo.gob.cl ↗', url: 'https://www.subturismo.gob.cl/zoit/' }]
+        },
+        salmonicultura: {
+          nombre: 'Hub II. Salmonicultura y Maritorio (WP_03)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'Multirrégimen (API mensual ArcGIS + Cierres Sernapesca)',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Catastro 745 concesiones SUBPESCA)',
+          nodos: '5 Nodos Satélites (#06 al #10) · Concesiones, Fiscalización, IFOP, Holdings CMF, Cargas',
+          links: [{ text: 'mapas.subpesca.cl ↗', url: 'https://mapas.subpesca.cl/visorsubpesca/' }, { text: 'sernapesca.cl ↗', url: 'https://www.sernapesca.cl/informes/acuicultura' }]
+        },
+        energia: {
+          nombre: 'Hub III. Energía y Telecomunicaciones (WP_02)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'API Mensual CNE + Cierres SEC/SUBTEL',
+          mecanismo: 'API directa CKAN REST / Circuit Breaker Last-Known-Good',
+          nodos: '4 Nodos Satélites (#11 al #14) · Capacidad Instalada, Tarifas SEC, Combustibles, Fibra Óptica',
+          links: [{ text: 'energiaabierta.cl ↗', url: 'https://energiaabierta.cl/' }, { text: 'sec.cl ↗', url: 'https://www.sec.cl/' }]
+        },
+        gobernanza: {
+          nombre: 'Hub IV. Gobernanza y Finanzas Municipales (WP_01)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'Multirrégimen (API CKAN + Cierres SINIM/DIPRES + Barómetro)',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Finanzas Municipales SINIM / FCM)',
+          nodos: '4 Nodos Satélites (#15 al #18) · Presupuestos, FNDR DIPRES, Elecciones SERVEL, Red Vial MOP',
+          links: [{ text: 'datos.sinim.gov.cl ↗', url: 'https://datos.sinim.gov.cl/' }, { text: 'dipres.gob.cl ↗', url: 'https://www.dipres.gob.cl/' }]
+        },
+        inversion: {
+          nombre: 'Hub V. Economía, Inversión y Suelo (WP_04)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'Cierres Administrativos Semestrales/Anuales (SEA, SII, ChileCompra)',
+          mecanismo: 'Circuit Breaker Last-Known-Good (722 proyectos SEIA)',
+          nodos: '4 Nodos Satélites (#19 al #22) · SEIA, SII Empresas, Mercado Público, Bienes Nacionales',
+          links: [{ text: 'seia.sea.gob.cl ↗', url: 'https://seia.sea.gob.cl/' }, { text: 'sii.cl ↗', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/' }]
+        },
+        social: {
+          nombre: 'Hub VI. Demografía, Educación y Social (WP_05)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'Líneas Base Censales + Cierres Anuales MINEDUC/CEAD',
+          mecanismo: 'Corte Censal Oficial INE 2024 / CASEN MDSF / SLEP Aysén',
+          nodos: '3 Nodos Satélites (#23 al #25) · Matrícula SLEP, Seguridad CEAD-SPD, Pirámide Censo 2024',
+          links: [{ text: 'censo2024.ine.gob.cl ↗', url: 'https://censo2024.ine.gob.cl/' }, { text: 'datosabiertos.mineduc.cl ↗', url: 'https://datosabiertos.mineduc.cl/' }]
+        },
+        biodiversidad: {
+          nombre: 'Hub VII. Biodiversidad y Clima (WP_07)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'API Mensual SINCA/USGS + Cierres MMA/CONAF',
+          mecanismo: 'API directa GeoJSON/JSON / Circuit Breaker Last-Known-Good',
+          nodos: '5 Nodos Satélites (#26 al #30) · Especies RCE, Pisos CONAF, Glaciares DGA, Aire SINCA, Sismos USGS',
+          links: [{ text: 'sinca.mma.gob.cl ↗', url: 'https://sinca.mma.gob.cl/' }, { text: 'mma.gob.cl ↗', url: 'https://mma.gob.cl/biodiversidad/' }]
+        },
+        salud: {
+          nombre: 'Hub VIII. Salud APS y Hospitales (WP_08)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'API Mensual SINCA/USGS + Cierres DEIS-MINSAL',
+          mecanismo: 'Circuit Breaker Last-Known-Good (DEIS Estadísticas Vitales)',
+          nodos: '3 Nodos Satélites (#31, #38, #39) · Cobertura APS, Causas Defunción, Camas Críticas SSA',
+          links: [{ text: 'deis.minsal.cl ↗', url: 'https://deis.minsal.cl/' }]
+        },
+        cultura: {
+          nombre: 'Hub IX. Cultura y Patrimonio (WP_09)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'Cierres Administrativos MINCAP-SERPAT + Barómetro UAysén',
+          mecanismo: 'Circuit Breaker Last-Known-Good (Catastro Monumentos CMN)',
+          nodos: '3 Nodos Satélites (#32 al #34) · Inmuebles Patrimoniales, Gasto Municipal Cultura, Festividades',
+          links: [{ text: 'patrimoniocultural.gob.cl ↗', url: 'https://www.patrimoniocultural.gob.cl/' }]
+        },
+        ctci: {
+          nombre: 'Hub X. CTCi e Innovación (WP_10)',
+          tipo: 'Hub Temático Sistémico',
+          periodicidad: 'API Mensual Datos.gob/ANID + Cierres CORFO',
+          mecanismo: 'API directa CKAN REST / Circuit Breaker Last-Known-Good',
+          nodos: '3 Nodos Satélites (#35 al #37) · Fondecyt/Fondef ANID, Centros CIEP, Corfo Innova Aysén',
+          links: [{ text: 'dataciencia.anid.cl ↗', url: 'https://dataciencia.anid.cl/' }, { text: 'corfo.cl ↗', url: 'https://www.corfo.cl/' }]
+        }
+      };
+
+      const DEFAULT_HTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start text-xs font-sans">
+          <div>
+            <div class="font-mono text-[10.5px] uppercase tracking-wider text-primary font-semibold">Flujo de Sincronización</div>
+            <div class="font-serif text-sm font-bold text-on-surface mt-0.5">Vista General de Procedencia</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Periodicidad Exacta</div>
+            <div class="font-sans text-xs text-on-surface/90 mt-0.5">3 Velocidades (Mensual, Semestral/Anual, Censal)</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Mecanismo de Respaldo</div>
+            <div class="font-sans text-xs text-on-surface/90 mt-0.5">API directa + Circuit Breaker Last-Known-Good + Corte Censal</div>
+            <div class="font-mono text-[11px] text-primary mt-1">28 Fuentes Oficiales → 10 Hubs → 39 Nodos Territoriales</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Portales Oficiales</div>
+            <div class="flex flex-wrap gap-x-3 gap-y-1 mt-0.5">
+              <a href="https://datos.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">datos.gob.cl ↗</a>
+              <a href="https://www.ine.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">ine.gob.cl ↗</a>
+              <a href="https://energiaabierta.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">energiaabierta.cl ↗</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      let lockedEntity = null;
+
+      function renderDetail(item) {
+        if (!item) {
+          detailEl.innerHTML = DEFAULT_HTML;
+          return;
+        }
+        detailEl.innerHTML = `
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start text-xs font-sans">
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-primary font-semibold">${item.tipo}</div>
+              <div class="font-serif text-sm font-bold text-on-surface mt-0.5">${item.nombre}</div>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Periodicidad Exacta</div>
+              <div class="font-sans text-xs text-on-surface/90 mt-0.5">${item.periodicidad}</div>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Mecanismo de Respaldo</div>
+              <div class="font-sans text-xs text-on-surface/90 mt-0.5">${item.mecanismo}</div>
+              <div class="font-mono text-[11px] text-primary mt-1">${item.nodos}</div>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Portales Oficiales</div>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 mt-0.5">
+                ${item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="font-mono text-primary font-semibold hover:underline text-[11.5px]">${l.text}</a>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function applySelection(type, id) {
+        const activeRegs = new Set();
+        const activeInsts = new Set();
+        const activeHubs = new Set();
+
+        if (type === 'reg') {
+          activeRegs.add(id);
+          instDefs.filter(i => i.reg === id).forEach(i => {
+            activeInsts.add(i.id);
+            i.hubs.forEach(h => activeHubs.add(h));
+          });
+        } else if (type === 'inst') {
+          const inst = instDefs.find(i => i.id === id);
+          if (inst) {
+            activeInsts.add(id);
+            activeRegs.add(inst.reg);
+            inst.hubs.forEach(h => activeHubs.add(h));
+          }
+        } else if (type === 'hub') {
+          activeHubs.add(id);
+          instDefs.filter(i => i.hubs.includes(id)).forEach(i => {
+            activeInsts.add(i.id);
+            activeRegs.add(i.reg);
+          });
+        }
+
+        // Resaltar curvas Bézier
+        svg.querySelectorAll('.flow-path').forEach(p => {
+          const pReg = p.getAttribute('data-reg');
+          const pInst = p.getAttribute('data-inst');
+          const pHub = p.getAttribute('data-hub');
+
+          let isActive = false;
+          if (pHub) {
+            isActive = activeInsts.has(pInst) && activeHubs.has(pHub);
+          } else {
+            isActive = activeRegs.has(pReg) && activeInsts.has(pInst);
+          }
+
+          if (isActive) {
+            p.setAttribute('stroke', '#00357f');
+            p.setAttribute('stroke-width', '2');
+            p.setAttribute('opacity', '0.95');
+            p.parentNode.appendChild(p);
+          } else {
+            p.setAttribute('stroke', '#cbd5e1');
+            p.setAttribute('stroke-width', '1.1');
+            p.setAttribute('opacity', '0.15');
+          }
+        });
+
+        // Resaltar nodos
+        svg.querySelectorAll('.flow-node').forEach(node => {
+          const nType = node.getAttribute('data-type');
+          const nId = node.getAttribute('data-id');
+
+          const isActive = (nType === 'reg' && activeRegs.has(nId)) ||
+                           (nType === 'inst' && activeInsts.has(nId)) ||
+                           (nType === 'hub' && activeHubs.has(nId));
+
+          if (isActive) {
+            node.setAttribute('opacity', '1');
+            node.querySelectorAll('.flow-circle').forEach(c => c.setAttribute('fill', '#00357f'));
+            node.querySelectorAll('.flow-label, .flow-text').forEach(t => {
+              t.setAttribute('fill', '#00357f');
+              t.style.fontWeight = '600';
+            });
+            node.querySelectorAll('.flow-numeral').forEach(t => {
+              t.setAttribute('fill', '#00357f');
+              t.style.fontWeight = '700';
+            });
+          } else {
+            node.setAttribute('opacity', '0.15');
+            node.querySelectorAll('.flow-circle').forEach(c => c.setAttribute('fill', '#0f172a'));
+            node.querySelectorAll('.flow-label, .flow-text').forEach(t => {
+              t.setAttribute('fill', '#0f172a');
+              t.style.fontWeight = (nType === 'reg') ? '600' : (nType === 'hub' ? '500' : '400');
+            });
+            node.querySelectorAll('.flow-numeral').forEach(t => {
+              t.setAttribute('fill', '#00357f');
+              t.style.fontWeight = '600';
+            });
+          }
+        });
+
+        renderDetail(DETAILS[id]);
+      }
+
+      function resetSelection() {
+        if (lockedEntity) return;
+
+        svg.querySelectorAll('.flow-path').forEach(p => {
+          p.setAttribute('stroke', '#cbd5e1');
+          p.setAttribute('stroke-width', '1.1');
+          p.setAttribute('opacity', '0.55');
+        });
+
+        svg.querySelectorAll('.flow-node').forEach(node => {
+          const nType = node.getAttribute('data-type');
+          node.setAttribute('opacity', '1');
+          node.querySelectorAll('.flow-circle').forEach(c => c.setAttribute('fill', '#0f172a'));
+          node.querySelectorAll('.flow-label, .flow-text').forEach(t => {
+            t.setAttribute('fill', '#0f172a');
+            t.style.fontWeight = (nType === 'reg') ? '600' : (nType === 'hub' ? '500' : '400');
+          });
+          node.querySelectorAll('.flow-numeral').forEach(t => {
+            t.setAttribute('fill', '#00357f');
+            t.style.fontWeight = '600';
+          });
+        });
+
+        renderDetail(null);
+      }
+
+      svg.querySelectorAll('.flow-node').forEach(node => {
+        const type = node.getAttribute('data-type');
+        const id = node.getAttribute('data-id');
+
+        node.addEventListener('mouseenter', () => {
+          if (!lockedEntity) {
+            applySelection(type, id);
+          }
+        });
+
+        node.addEventListener('mouseleave', () => {
+          if (!lockedEntity) {
+            resetSelection();
+          }
+        });
+
+        node.addEventListener('focus', () => {
+          if (!lockedEntity) {
+            applySelection(type, id);
+          }
+        });
+
+        node.addEventListener('blur', () => {
+          if (!lockedEntity) {
+            resetSelection();
+          }
+        });
+
+        node.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (lockedEntity && lockedEntity.id === id) {
+            lockedEntity = null;
+            resetSelection();
+          } else {
+            lockedEntity = { type, id };
+            applySelection(type, id);
+          }
+        });
+
+        node.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (lockedEntity && lockedEntity.id === id) {
+              lockedEntity = null;
+              resetSelection();
+            } else {
+              lockedEntity = { type, id };
+              applySelection(type, id);
+            }
+          }
+        });
+      });
+
+      svg.addEventListener('click', (e) => {
+        if (lockedEntity && !e.target.closest('.flow-node')) {
+          lockedEntity = null;
+          resetSelection();
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (lockedEntity && !svg.contains(e.target) && !detailEl.contains(e.target)) {
+          lockedEntity = null;
+          resetSelection();
+        }
+      });
+    }
+
     function scrollToMetodologia() {
       const el = document.getElementById('seccion-arquitectura-fuentes');
       if (el) {
@@ -1630,6 +2390,7 @@
       setupKeyboardShortcuts();
       setupDrawerGestureDismiss();
       setupWindowResizeListener();
+      initProvenanceFlowchart();
 
       const validHubs = [
         'turismo', 'salmonicultura', 'energia', 'gobernanza', 'inversion',

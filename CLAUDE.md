@@ -7,6 +7,7 @@
 - Data Lake: Static JSON & CSV files UTF-8 (BOM on CSVs, no BOM on JSONs).
 
 ## Core Commands
+- Sincronización Previa Obligatoria: Antes de editar cualquier archivo o hacer git push, ejecutar siempre 'git pull --rebase origin main' y luego 'node scripts/build_aysen_hubs_bundle.cjs' para evitar conflictos con las corridas automáticas de GitHub Actions.
 - Compile Data Bundle: `node scripts/build_aysen_hubs_bundle.cjs`
 - Verify Bundle Sync: `node scripts/verify_bundle_sync.cjs`
 - Clean Emojis: `python scripts/clean_emojis.py`

@@ -334,6 +334,37 @@ class TestArquitecturaFuentesCalidadYWorkflows(unittest.TestCase):
         self.assertIsNotNone(match)
         filas = re.findall(r"<tr[^>]*>.*?</tr>", match.group(1), re.DOTALL)
         self.assertEqual(len(filas), 28)
+        self.assertIn('id="provenance-flow-svg"', self.index_html, "index.html debe contener el diagrama de flujo SVG #provenance-flow-svg")
+        self.assertIn('id="provenance-flow-detail"', self.index_html, "index.html debe contener la fila de detalle #provenance-flow-detail")
+
+        # Verificar estructura de 3 columnas en SVG
+        self.assertIn("1. RÉGIMEN DE ACTUALIZACIÓN", self.index_html)
+        self.assertIn("2. INSTITUCIONES OFICIALES", self.index_html)
+        self.assertIn("3. LOS 10 HUBS DE DATOS", self.index_html)
+
+        # 3 Regimenes de Columna 1 con sus subtitulos completos
+        self.assertRegex(self.index_html, r'01 ·\s*</tspan>\s*<tspan class="flow-text"[^>]*>Extracción API Mensual</tspan>')
+        self.assertIn("7 conectores REST/CKAN/GeoJSON", self.index_html)
+        self.assertRegex(self.index_html, r'02 ·\s*</tspan>\s*<tspan class="flow-text"[^>]*>Cierres Administrativos</tspan>')
+        self.assertIn("18 registros con Circuit Breaker", self.index_html)
+        self.assertRegex(self.index_html, r'03 ·\s*</tspan>\s*<tspan class="flow-text"[^>]*>Líneas Base Estructurales</tspan>')
+        self.assertIn("3 bases censales y muestrales", self.index_html)
+
+        # 17 Nodos institucionales en Columna 2
+        inst_nodes = re.findall(r'class="flow-node flow-inst"[^>]*data-id="([^"]+)"', self.index_html)
+        self.assertEqual(len(inst_nodes), 17, f"Debe haber exactamente 17 nodos institucionales, encontrados: {len(inst_nodes)}")
+
+        # 10 Nodos de Hubs en Columna 3 (I al X)
+        hub_nodes = re.findall(r'class="flow-node flow-hub"[^>]*data-id="([^"]+)"', self.index_html)
+        self.assertEqual(len(hub_nodes), 10, f"Debe haber exactamente 10 hubs en la columna 3, encontrados: {len(hub_nodes)}")
+
+        # 47 Curvas Bézier de interconexión
+        flow_paths = re.findall(r'class="flow-path"', self.index_html)
+        self.assertEqual(len(flow_paths), 47, f"Debe haber 47 curvas Bézier en el SVG, encontradas: {len(flow_paths)}")
+
+        # Accesibilidad: todos los nodos deben ser navegables por teclado
+        all_flow_nodes = re.findall(r'class="flow-node[^"]*"[^>]*tabindex="0"[^>]*role="button"', self.index_html)
+        self.assertEqual(len(all_flow_nodes), 30, f"Los 30 nodos del diagrama deben tener tabindex=0 y role=button, encontrados: {len(all_flow_nodes)}")
 
     def test_02_cero_emojis_y_cero_slop_en_archivos(self):
         """Ningun archivo intervenido debe contener emojis ni palabras de la lista negra de IA."""

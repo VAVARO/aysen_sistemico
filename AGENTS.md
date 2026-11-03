@@ -29,7 +29,7 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
 - **Node.js**: Node 20+.
 - **Frontend**: HTML5 + CSS3 + JS vanilla, Canvas 2D, Chart.js y Leaflet/D3 por CDN. Cero dependencias de Node en producción.
 - **Pipeline de Datos**: Compilador estático `node scripts/build_aysen_hubs_bundle.cjs` -> genera `data/aysen_hubs_data.js` (`window.AYSEN_HUBS_DATA`, ~1.2 MB, 10 Hubs, 39 Nodos).
-- **Control de Versiones**: Saltos de línea normalizados a LF en `.gitattributes`. Los CSV se exportan con `lineterminator="\n"` y cabecera UTF-8 BOM (`\uFEFF`). Los JSONs se serializan estrictamente sin BOM.
+- **Control de Versiones y Sincronización**: Antes de editar cualquier archivo o hacer git push, ejecutar siempre 'git pull --rebase origin main' y luego 'node scripts/build_aysen_hubs_bundle.cjs' para evitar conflictos con las corridas automáticas de GitHub Actions. Saltos de línea normalizados a LF en `.gitattributes`. Los CSV se exportan con `lineterminator="\n"` y cabecera UTF-8 BOM (`\uFEFF`). Los JSONs se serializan estrictamente sin BOM.
 
 ## Economía de Tokens y Context Budgeting
 - No leer directorios pesados (`.agents/`, `docs/ideas/`, ni HTMLs de >1.000 líneas completos).
