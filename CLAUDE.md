@@ -14,12 +14,12 @@
 - Validate Data Lake: `python scripts/validate_data_lake.py --all`
 - Run Integrity Suite (37 tests): `python scripts/test_fuentes_integridad.py`
 - Run E2E Requirements (58 tests): `python tests/test_e2e_requirements.py`
-- Run Pytest Suite (398 tests): `python -m pytest tests/`
+- Run Pytest Suite (436 tests): `python -m pytest tests/`
 - Check Working Tree: `git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'`
 
 ## Architecture & Modules (Cuaderno Editorial y Cartográfico Austral)
 1. `portal.html` - Home / Portada Principal con metamorfosis vectorial continua (10 postales icónicas).
-2. `sistemas_complejos.html` - Visualizador interactivo de 16 propiedades CECAN de sistemas complejos.
+2. `sistemas_complejos.html` - Visualizador interactivo de 16 propiedades de sistemas complejos (marco Boehnert et al., 2018).
 3. `index.html` - Data Hub e Inteligencia Territorial (10 Hubs, 39 nodos satélites, 10 comunas, drawer analítico).
 4. `laboratorio.html` - Estudio cartográfico 2D sobre lienzo infinito interactivo.
 5. `css/apple-design.css` - Capa transversal de accesibilidad y foco visible cobalto.
