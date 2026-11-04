@@ -526,12 +526,18 @@
         // 1. Buscar en Comunas
         if (window.comunasData && Array.isArray(window.comunasData)) {
             window.comunasData.forEach(c => {
-                if (c.nombre_comuna.toLowerCase().includes(q) || c.cabecera.toLowerCase().includes(q) || c.codigo_comuna.toLowerCase().includes(q) || c.comuna_ine.includes(q)) {
+                const nombre = c.nombre_comuna || c.nombre || '';
+                const cabecera = c.cabecera || '';
+                const codCom = c.codigo_comuna || '';
+                const ine = String(c.comuna_ine || '');
+                if (nombre.toLowerCase().includes(q) || cabecera.toLowerCase().includes(q) || codCom.toLowerCase().includes(q) || ine.includes(q)) {
+                    const poblacion = (c.poblacion_censo_2024 != null ? c.poblacion_censo_2024 : (c.demografia && c.demografia.censo_2024_poblacion != null ? c.demografia.censo_2024_poblacion : null));
+                    const poblacionStr = poblacion != null ? Number(poblacion).toLocaleString('es-CL') : 'N/D';
                     matches.comunas.push({
-                        title: c.nombre_comuna,
-                        subtitle: `Cabecera: ${c.cabecera} · Censo: ${c.poblacion_censo_2024.toLocaleString('es-CL')} hab`,
-                        badge: c.codigo_comuna,
-                        action: () => window.selectAndCloseComuna(c.codigo_comuna)
+                        title: nombre,
+                        subtitle: `Cabecera: ${cabecera} · Censo: ${poblacionStr} hab`,
+                        badge: codCom,
+                        action: () => window.selectAndCloseComuna(codCom)
                     });
                 }
             });
@@ -1191,10 +1197,13 @@
 
         const rows = comunas.map(c => {
             const ine = String(c.comuna_ine);
+            const nombre = c.nombre_comuna || c.nombre || 'N/D';
+            const poblacion = (c.poblacion_censo_2024 != null ? c.poblacion_censo_2024 : (c.demografia && c.demografia.censo_2024_poblacion != null ? c.demografia.censo_2024_poblacion : null));
+            const poblacionStr = poblacion != null ? Number(poblacion).toLocaleString('es-CL') : 'N/D';
             let rowCols = [
                 `<span class="badge-code">${c.comuna_ine}</span>`,
-                `<strong>${c.nombre_comuna}</strong>`,
-                `<span class="tabular-numbers">${c.poblacion_censo_2024.toLocaleString('es-CL')}</span>`
+                `<strong>${nombre}</strong>`,
+                `<span class="tabular-numbers">${poblacionStr}</span>`
             ];
 
             if (selectedModelTables.includes('wp01')) {

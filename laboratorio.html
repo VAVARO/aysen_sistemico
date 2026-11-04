@@ -1210,12 +1210,13 @@
       margin: 0.4rem 0.25rem;
     }
 
-    .catalog-var-item {
+    .catalog-var-item, .catalog-item {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.42rem 0.6rem;
-      margin-bottom: 0.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0.45rem 0.65rem;
+      margin-bottom: 0.35rem;
       background: var(--bg-surface);
       border: 1px solid var(--rule-hairline);
       border-radius: 4px;
@@ -1224,24 +1225,54 @@
                   border-color var(--duration-fast) var(--ease-out),
                   color var(--duration-fast) var(--ease-out),
                   transform var(--duration-fast) var(--ease-out);
-      font-size: 0.74rem;
+      font-size: 0.82rem;
       user-select: none;
+      box-sizing: border-box;
+      width: 100%;
     }
 
-    .catalog-var-item:active {
+    .catalog-var-item:active, .catalog-item:active {
       transform: scale(0.98);
     }
 
-    .catalog-var-item:hover {
+    .catalog-var-item:hover, .catalog-item:hover {
       background: var(--cobalt-soft);
       border-color: var(--cobalt-border);
       color: var(--cobalt);
       transform: translateX(2px);
     }
 
-    .catalog-var-item.dragging {
+    .catalog-var-item.dragging, .catalog-item.dragging {
       opacity: 0.4;
       cursor: grabbing;
+    }
+
+    .catalog-item-title {
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.3;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #0f172a;
+      width: 100%;
+    }
+
+    .catalog-item-subline {
+      font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: #64748b;
+      margin-top: 3px;
+      line-height: 1.25;
+      white-space: normal;
+      width: 100%;
+    }
+
+    .widget-var-desc {
+      font-size: 0.75rem;
+      color: #475569;
+      margin: 2px 0 4px 0;
+      line-height: 1.3;
+      white-space: normal;
     }
 
     .var-dim-badge {
@@ -3800,19 +3831,76 @@
         <span class="brand-module-title">Laboratorio Sistémico</span>
       </div>
 
-      <nav class="brand-nav-pills" aria-label="Navegación principal">
-        <a href="portal.html" class="brand-pill">Portada</a>
-        <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
-        <a href="index.html" class="brand-pill">Datos de Aysén</a>
-        <a href="laboratorio.html" class="brand-pill active">Laboratorio Sistémico</a>
-        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer"
-          class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
-          <span>LinkedIn</span>
-          <span class="pill-arrow">↗</span>
+      <div class="brand-right">
+        <nav class="brand-nav-pills" aria-label="Navegación principal">
+          <a href="portal.html" class="brand-pill">Portada</a>
+          <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
+          <a href="index.html" class="brand-pill">Datos de Aysén</a>
+          <a href="laboratorio.html" class="brand-pill active" aria-current="page">Laboratorio Sistémico</a>
+          <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer"
+            class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
+            <span>LinkedIn</span>
+            <span class="pill-arrow">↗</span>
+          </a>
+        </nav>
+
+        <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CAJÓN DE NAVEGACIÓN MÓVIL UNIVERSAL -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <span class="brand-dot"></span>
+          <span class="mobile-nav-author">Álvaro Contreras Barrios</span>
+        </div>
+        <button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>
+      <nav class="mobile-nav-links" aria-label="Navegación móvil">
+        <a href="portal.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">01</span>
+          <span class="mobile-nav-text">Portada</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="sistemas_complejos.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">02</span>
+          <span class="mobile-nav-text">Visualizador de Complejidad</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="index.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">03</span>
+          <span class="mobile-nav-text">Datos de Aysén</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="laboratorio.html" class="mobile-nav-link active">
+          <span class="mobile-nav-num">04</span>
+          <span class="mobile-nav-text">Laboratorio Sistémico</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">LinkedIn</span>
+          <span class="mobile-nav-arrow">↗</span>
         </a>
       </nav>
     </div>
-  </header>
+  </div>
 
   <!-- ========================================================================
        2. BARRA DE ACCIONES DEL LIENZO (40px)
@@ -3979,8 +4067,10 @@
         <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="holding">Holding</button>
       </div>
 
-      <div class="sidebar-items-scroll" id="variablesTreeContainer">
-        <!-- Renderizado dinámico desde AppState.catalogItems -->
+      <div id="catalogList" class="catalog-list-wrapper" style="display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;">
+        <div class="sidebar-items-scroll" id="variablesTreeContainer">
+          <!-- Renderizado dinámico desde AppState.catalogItems -->
+        </div>
       </div>
     </aside>
 
@@ -4814,6 +4904,586 @@
         return OFFICIAL_VARIABLE_SOURCES.sinim;
       }
 
+      // =======================================================================
+      // DICCIONARIO DE NOMBRES AUTOEXPLICATIVOS Y DESCRIPCION "QUE MIDE"
+      // Reemplaza siglas cripticas (EMAT, SNASPE, FCM, IPP, BT1, SAIDI, MP2.5,
+      // SEIA, FNDR, DEIS, APS, VIF, SLEP, ZOIT) por titulos autoexplicativos
+      // limpios y linea "que mide" en el formato requerido.
+      // =======================================================================
+      const AUTOEXPLANATORY_VAR_DICT = {
+        'pernoctaciones_emat': {
+          title: 'Noches de alojamiento turístico',
+          short: 'Noches de alojamiento',
+          unitLabel: 'noches/año',
+          sourceTag: 'INE-EMAT',
+          desc: 'Mide las pernoctaciones y ocupación en alojamientos turísticos registrados.'
+        },
+        'pernoctaciones_turismo_emat': {
+          title: 'Noches de alojamiento turístico',
+          short: 'Noches de alojamiento',
+          unitLabel: 'noches/año',
+          sourceTag: 'INE-EMAT',
+          desc: 'Mide las pernoctaciones mensuales y la brecha de estacionalidad turística.'
+        },
+        'pernoctaciones_anuales_emat_hist': {
+          title: 'Noches de alojamiento turístico',
+          short: 'Noches de alojamiento',
+          unitLabel: 'noches/año',
+          sourceTag: 'INE-EMAT',
+          desc: 'Mide la evolución histórica de pernoctaciones turísticas anuales.'
+        },
+        'sp_turismo_pernoctaciones': {
+          title: 'Noches de alojamiento turístico',
+          short: 'Noches turísticas',
+          unitLabel: 'noches/año',
+          sourceTag: 'INE-EMAT',
+          desc: 'Mide la serie histórica y tendencia proyectada de noches de alojamiento.'
+        },
+        'visitantes_snaspe': {
+          title: 'Visitas a Parques y Reservas Nacionales',
+          short: 'Visitas a Parques',
+          unitLabel: 'visitas/año',
+          sourceTag: 'CONAF-SNASPE',
+          desc: 'Mide el flujo anual de visitantes en áreas silvestres protegidas del Estado.'
+        },
+        'visitantes_parques_snaspe': {
+          title: 'Visitas a Parques y Reservas Nacionales',
+          short: 'Visitas a Parques',
+          unitLabel: 'visitas/año',
+          sourceTag: 'CONAF-SNASPE',
+          desc: 'Mide las visitas registradas por CONAF en parques y reservas.'
+        },
+        'visitantes_snaspe_conaf_hist': {
+          title: 'Visitas a Parques y Reservas Nacionales',
+          short: 'Visitas a Parques',
+          unitLabel: 'visitas/año',
+          sourceTag: 'CONAF-SNASPE',
+          desc: 'Mide la serie histórica de visitas registradas en parques nacionales.'
+        },
+        'prestadores_sernatur': {
+          title: 'Servicios turísticos registrados',
+          short: 'Servicios turísticos',
+          unitLabel: 'prestadores',
+          sourceTag: 'SERNATUR',
+          desc: 'Mide los prestadores formales inscritos en el Registro Nacional de Turismo.'
+        },
+        'ratio_presion_turistica': {
+          title: 'Presión turística estival sobre población local',
+          short: 'Presión turística estival',
+          unitLabel: 'turistas / hab.',
+          sourceTag: 'SERNATUR / INE',
+          desc: 'Mide la proporción de turistas estivales por cada habitante comunal.'
+        },
+        'superficie_snaspe_pct': {
+          title: 'Superficie comunal bajo protección SNASPE (%)',
+          short: 'Superficie protegida SNASPE',
+          unitLabel: '% superficie',
+          sourceTag: 'CONAF-SNASPE',
+          desc: 'Mide el porcentaje territorial comunal dentro de parques y reservas nacionales.'
+        },
+        'zoit': {
+          title: 'Zonas de Interés Turístico (ZOIT)',
+          short: 'Zonas ZOIT',
+          unitLabel: 'zonas activas',
+          sourceTag: 'Subturismo',
+          desc: 'Mide polígonos territoriales priorizados para fomento turístico sustentable.'
+        },
+        'zoit_nombre': {
+          title: 'Zonas de Interés Turístico (ZOIT)',
+          short: 'Zonas ZOIT',
+          unitLabel: 'zonas activas',
+          sourceTag: 'Subturismo',
+          desc: 'Mide polígonos territoriales priorizados para fomento turístico sustentable.'
+        },
+        'concesiones_salmon': {
+          title: 'Concesiones de salmonicultura otorgadas',
+          short: 'Concesiones salmoneras',
+          unitLabel: 'concesiones',
+          sourceTag: 'SUBPESCA',
+          desc: 'Mide el número de concesiones de cultivo de salmónidos en trámite y vigentes.'
+        },
+        'biomasa_salmon_ton': {
+          title: 'Producción acuícola de salmónidos',
+          short: 'Producción de salmón',
+          unitLabel: 'toneladas',
+          sourceTag: 'SERNAPESCA',
+          desc: 'Mide el volumen anual cosechado de especies salmonídeas en centros de cultivo.'
+        },
+        'biomasa_cosecha_salmon': {
+          title: 'Cosecha regional de salmónidos',
+          short: 'Cosecha regional salmón',
+          unitLabel: 'Miles Ton',
+          sourceTag: 'SERNAPESCA',
+          desc: 'Mide la serie multianual de toneladas cosechadas de salmónidos.'
+        },
+        'centros_activos_salmon': {
+          title: 'Centros acuícolas con siembra activa',
+          short: 'Centros activos salmón',
+          unitLabel: 'centros',
+          sourceTag: 'SERNAPESCA',
+          desc: 'Mide los centros de cultivo con ciclos productivos y peces en el agua.'
+        },
+        'antibioticos_ica_g_ton': {
+          title: 'Uso de antibióticos por tonelada cosechada',
+          short: 'Uso de antibióticos (ICA)',
+          unitLabel: 'g / ton',
+          sourceTag: 'ICA SERNAPESCA',
+          desc: 'Mide los gramos de principio activo farmacológico por tonelada de biomasa.'
+        },
+        'floracion_alexandrium_fan': {
+          title: 'Monitoreo de Marea Roja Alexandrium',
+          short: 'Marea Roja Alexandrium',
+          unitLabel: 'cél/L',
+          sourceTag: 'FAN IFOP',
+          desc: 'Mide la abundancia estacional de células tóxicas en canales y fiordos.'
+        },
+        'tarifa_bt1_clp': {
+          title: 'Costo de electricidad en hogares',
+          short: 'Costo electricidad hogares',
+          unitLabel: '$/kWh',
+          sourceTag: 'Tarifa BT1 CNE',
+          desc: 'Mide el costo residencial en pesos chilenos por kWh de electricidad en baja tensión.'
+        },
+        'tarifa_bt1': {
+          title: 'Costo de electricidad en hogares',
+          short: 'Costo electricidad hogares',
+          unitLabel: '$/kWh',
+          sourceTag: 'Tarifa BT1 CNE',
+          desc: 'Mide la tarifa eléctrica doméstica regulada por la Comisión Nacional de Energía.'
+        },
+        'saidi_horas_anual': {
+          title: 'Horas al año sin suministro eléctrico',
+          short: 'Horas sin suministro eléctrico',
+          unitLabel: 'horas/hogar',
+          sourceTag: 'Índice SAIDI SEC',
+          desc: 'Mide la duración promedio anual de cortes e interrupciones del suministro eléctrico.'
+        },
+        'saidi_horas': {
+          title: 'Horas al año sin suministro eléctrico',
+          short: 'Horas sin suministro eléctrico',
+          unitLabel: 'horas/hogar',
+          sourceTag: 'Índice SAIDI SEC',
+          desc: 'Mide el tiempo promedio sin servicio eléctrico por usuario según SEC.'
+        },
+        'costo_diesel_aislado_clp': {
+          title: 'Costo de generación con diésel en sistemas aislados',
+          short: 'Costo térmico diésel',
+          unitLabel: '$/kWh',
+          sourceTag: 'CNE',
+          desc: 'Mide el costo unitario de generar electricidad con combustible diésel en microredes.'
+        },
+        'generacion_hidro_gwh': {
+          title: 'Generación eléctrica hidroeléctrica y eólica',
+          short: 'Generación hidro y eólica',
+          unitLabel: 'GWh',
+          sourceTag: 'CNE',
+          desc: 'Mide la producción anual de energía eléctrica renovable en la región.'
+        },
+        'generacion_diesel_gwh': {
+          title: 'Generación eléctrica térmica a diésel',
+          short: 'Generación diésel',
+          unitLabel: 'GWh',
+          sourceTag: 'CNE',
+          desc: 'Mide la generación eléctrica fósil en centrales térmicas y sistemas medianos.'
+        },
+        'gasolina_93_clp': {
+          title: 'Precio de gasolina regular 93 octanos',
+          short: 'Precio gasolina 93',
+          unitLabel: '$/L',
+          sourceTag: 'CNE Bencina en Línea',
+          desc: 'Mide el precio por litro de gasolina regular según CNE Bencina en Línea.'
+        },
+        'precio_lena_m3': {
+          title: 'Precio promedio de leña seca',
+          short: 'Precio leña seca',
+          unitLabel: '$/m³',
+          sourceTag: 'CNE / MMA',
+          desc: 'Mide el valor de mercado por metro estéreo de leña para calefacción domiciliaria.'
+        },
+        'hogares_lena_pct': {
+          title: 'Hogares que usan leña para calefacción (%)',
+          short: 'Calefacción con leña',
+          unitLabel: '% hogares',
+          sourceTag: 'Censo / MMA',
+          desc: 'Mide el porcentaje de viviendas cuya fuente primaria de calor es la biomasa.'
+        },
+        'internet_fijo_pct': {
+          title: 'Hogares con conexión fija a internet (%)',
+          short: 'Conexión internet fija',
+          unitLabel: '% hogares',
+          sourceTag: 'SUBTEL',
+          desc: 'Mide la penetración de banda ancha fija residencial por comuna.'
+        },
+        'dependencia_fcm_pct': {
+          title: 'Dependencia del Fondo Común Municipal',
+          short: 'Dependencia FCM',
+          unitLabel: '% del presupuesto',
+          sourceTag: 'SINIM',
+          desc: 'Mide el porcentaje del presupuesto municipal que depende de transferencias solidarias del Estado.'
+        },
+        'dependencia_fcm_promedio_regional_pct': {
+          title: 'Dependencia del Fondo Común Municipal',
+          short: 'Dependencia FCM Regional',
+          unitLabel: '% del presupuesto',
+          sourceTag: 'SINIM',
+          desc: 'Mide la trayectoria histórica de la vulnerabilidad fiscal municipal en la región.'
+        },
+        'ipp_per_capita_clp': {
+          title: 'Ingresos propios recaudados por el municipio',
+          short: 'Ingresos propios IPP',
+          unitLabel: 'M$ / %',
+          sourceTag: 'IPP SINIM',
+          desc: 'Mide los ingresos tributarios y patentes recaudados localmente por habitante.'
+        },
+        'fndr_mclp': {
+          title: 'Inversión pública del Gobierno Regional',
+          short: 'Inversión pública FNDR',
+          unitLabel: 'M$',
+          sourceTag: 'FNDR GORE',
+          desc: 'Mide los recursos monetarios del FNDR ejecutados por el GORE Aysén en la comuna.'
+        },
+        'presupuesto_fndr_gore_aysen_mclp': {
+          title: 'Inversión pública del Gobierno Regional',
+          short: 'Presupuesto total FNDR',
+          unitLabel: 'M$',
+          sourceTag: 'FNDR GORE',
+          desc: 'Mide la evolución histórica de la cartera de inversión regional del GORE.'
+        },
+        'presupuesto_mclp': {
+          title: 'Presupuesto municipal anual',
+          short: 'Presupuesto municipal',
+          unitLabel: 'M$',
+          sourceTag: 'SINIM',
+          desc: 'Mide los recursos monetarios administrados anualmente por cada municipio.'
+        },
+        'presupuesto_per_capita_mclp': {
+          title: 'Gasto presupuestario municipal por habitante',
+          short: 'Gasto municipal por hab.',
+          unitLabel: 'M$/hab.',
+          sourceTag: 'SINIM',
+          desc: 'Mide el presupuesto comunal dividido por la población total residente.'
+        },
+        'presupuesto_municipal_total_regional_mclp': {
+          title: 'Presupuesto municipal consolidado regional',
+          short: 'Presupuesto municipal regional',
+          unitLabel: 'M$',
+          sourceTag: 'SINIM',
+          desc: 'Mide el total anual devengado de las diez municipalidades de Aysén.'
+        },
+        'profesionalizacion_pct': {
+          title: 'Profesionalización de la dotación municipal (%)',
+          short: 'Profesionalización municipal',
+          unitLabel: '% dotación',
+          sourceTag: 'SINIM',
+          desc: 'Mide el porcentaje de funcionarios municipales de planta y contrata con título profesional.'
+        },
+        'km_ruta7_totales': {
+          title: 'Extensión comunal de la Carretera Austral Ruta 7 (km)',
+          short: 'Km Carretera Austral',
+          unitLabel: 'km',
+          sourceTag: 'Vialidad MOP',
+          desc: 'Mide los kilómetros de la Ruta 7 que atraviesan la comuna.'
+        },
+        'km_ruta7_pavimentados': {
+          title: 'Pavimento en la Carretera Austral Ruta 7 (km)',
+          short: 'Km pavimentados Ruta 7',
+          unitLabel: 'km pavimentados',
+          sourceTag: 'Vialidad MOP',
+          desc: 'Mide la longitud de la Ruta 7 con carpeta de asfalto u hormigón.'
+        },
+        'ruta7_pavimentada_pct': {
+          title: 'Porcentaje pavimentado de la Carretera Austral (%)',
+          short: 'Pavimento Ruta 7 (%)',
+          unitLabel: '% pavimentado',
+          sourceTag: 'Vialidad MOP',
+          desc: 'Mide la proporción pavimentada de la columna vertebral terrestre regional.'
+        },
+        'inversion_seia_mmusd': {
+          title: 'Inversión privada en evaluación ambiental',
+          short: 'Inversión ambiental SEIA',
+          unitLabel: 'MM USD',
+          sourceTag: 'SEIA',
+          desc: 'Mide el monto en millones de dólares de proyectos con Resolución de Calificación Ambiental.'
+        },
+        'proyectos_seia_mmusd': {
+          title: 'Inversión privada en evaluación ambiental',
+          short: 'Inversión ambiental SEIA',
+          unitLabel: 'MM USD',
+          sourceTag: 'SEIA',
+          desc: 'Mide la inversión aprobada en el Sistema de Evaluación de Impacto Ambiental.'
+        },
+        'flujo_anual_inversion_seia_aprobada_mmusd': {
+          title: 'Inversión privada en evaluación ambiental',
+          short: 'Inversión anual SEIA',
+          unitLabel: 'MM USD',
+          sourceTag: 'SEIA',
+          desc: 'Mide el flujo histórico anual de inversiones ambientales aprobadas por el SEA.'
+        },
+        'proyectos_seia_aprobados': {
+          title: 'Cantidad de proyectos aprobados en el SEIA',
+          short: 'Proyectos aprobados SEIA',
+          unitLabel: 'proyectos RCA',
+          sourceTag: 'SEIA',
+          desc: 'Mide el número acumulado de resoluciones ambientales favorables otorgadas.'
+        },
+        'fuga_compras_pct': {
+          title: 'Compras que salen fuera de la región',
+          short: 'Compras fuera de región',
+          unitLabel: '% de fuga',
+          sourceTag: 'SII / ChileCompra',
+          desc: 'Mide el porcentaje de compras comerciales facturadas a proveedores fuera de Aysén.'
+        },
+        'compras_locales_pct': {
+          title: 'Compras retenidas en el mercado local (%)',
+          short: 'Compras en mercado local',
+          unitLabel: '% compras locales',
+          sourceTag: 'SII / ChileCompra',
+          desc: 'Mide la proporción de adquisiciones abastecidas por empresas y comercio local.'
+        },
+        'empresas_sii': {
+          title: 'Empresas formales con iniciación de actividades',
+          short: 'Empresas formales (SII)',
+          unitLabel: 'empresas',
+          sourceTag: 'SII',
+          desc: 'Mide los contribuyentes activos según catastro del Servicio de Impuestos Internos.'
+        },
+        'trabajadores_sii': {
+          title: 'Trabajadores dependientes formales registrados',
+          short: 'Empleo dependiente formal',
+          unitLabel: 'trabajadores',
+          sourceTag: 'SII',
+          desc: 'Mide los empleos asalariados reportados en declaraciones juradas del SII.'
+        },
+        'concesiones_mineras_ha': {
+          title: 'Superficie concesionada para minería (hectáreas)',
+          short: 'Concesiones mineras',
+          unitLabel: 'hectáreas',
+          sourceTag: 'SERNAGEOMIN',
+          desc: 'Mide el área otorgada en concesiones de exploración y explotación ante SERNAGEOMIN.'
+        },
+        'parcelaciones_sag_n': {
+          title: 'Subdivisiones de predios rústicos aprobadas',
+          short: 'Loteos y parcelaciones',
+          unitLabel: 'certificados',
+          sourceTag: 'SAG',
+          desc: 'Mide los certificados de subdivisión de predios rurales tramitados ante el SAG.'
+        },
+        'pib_regional_nominal_mmclp': {
+          title: 'Producto Interno Bruto Regional de Aysén',
+          short: 'PIB Regional Aysén',
+          unitLabel: 'MM$',
+          sourceTag: 'Banco Central',
+          desc: 'Mide el valor económico total de la producción de bienes y servicios según el Banco Central.'
+        },
+        'trafico_aereo_pasajeros_balmaceda_jac': {
+          title: 'Flujo anual de pasajeros en el Aeródromo Balmaceda',
+          short: 'Pasajeros Balmaceda',
+          unitLabel: 'pasajeros',
+          sourceTag: 'JAC',
+          desc: 'Mide la conectividad aérea regional y movimiento anual de viajeros según la JAC.'
+        },
+        'matricula_escolar': {
+          title: 'Matrícula escolar en la comuna',
+          short: 'Matrícula escolar',
+          unitLabel: 'estudiantes',
+          sourceTag: 'MINEDUC-SLEP',
+          desc: 'Mide la cantidad de alumnos matriculados en colegios del Servicio Local de Educación Pública.'
+        },
+        'matricula_escolar_slep': {
+          title: 'Matrícula escolar en la comuna',
+          short: 'Matrícula escolar',
+          unitLabel: 'estudiantes',
+          sourceTag: 'MINEDUC-SLEP',
+          desc: 'Mide los estudiantes inscritos en la red educativa pública comarcal.'
+        },
+        'tasa_vif_regional_por_100k_hab': {
+          title: 'Denuncias por violencia intrafamiliar',
+          short: 'Denuncias VIF',
+          unitLabel: 'tasa c/100 mil hab.',
+          sourceTag: 'CEAD',
+          desc: 'Mide las denuncias policiales por violencia intrafamiliar cada 100.000 habitantes.'
+        },
+        'delitos_dmcs_vif_tasa': {
+          title: 'Denuncias por violencia intrafamiliar',
+          short: 'Denuncias VIF',
+          unitLabel: 'tasa c/100 mil hab.',
+          sourceTag: 'CEAD',
+          desc: 'Mide las tasas delictuales de mayor connotación social y violencia familiar.'
+        },
+        'tasa_dmcs_regional_por_100k_hab': {
+          title: 'Tasa de Delitos de Mayor Connotación Social',
+          short: 'Tasa delitos (DMCS)',
+          unitLabel: 'tasa c/100 mil hab.',
+          sourceTag: 'CEAD',
+          desc: 'Mide la frecuencia de hurtos, robos y lesiones por 100.000 habitantes en la región.'
+        },
+        'poblacion_censo_2024': {
+          title: 'Población comunal oficial',
+          short: 'Población comunal',
+          unitLabel: 'habitantes',
+          sourceTag: 'Censo 2024 INE',
+          desc: 'Mide el número total de habitantes censados efectivamente en el Censo 2024.'
+        },
+        'pobreza_multidim_pct': {
+          title: 'Pobreza multidimensional comunal (CASEN %)',
+          short: 'Pobreza multidimensional',
+          unitLabel: '% población',
+          sourceTag: 'CASEN',
+          desc: 'Mide la población con privaciones simultáneas en salud, educación, trabajo y vivienda.'
+        },
+        'camas_hospitalarias': {
+          title: 'Centros de salud y postas rurales',
+          short: 'Centros de salud APS',
+          unitLabel: 'establecimientos APS',
+          sourceTag: 'DEIS MINSAL',
+          desc: 'Mide la dotación de recintos de atención primaria, consultorios y postas rurales en la red de salud.'
+        },
+        'red_asistencial_deis': {
+          title: 'Centros de salud y postas rurales',
+          short: 'Centros de salud APS',
+          unitLabel: 'establecimientos APS',
+          sourceTag: 'DEIS MINSAL',
+          desc: 'Mide la dotación de recintos de atención primaria, consultorios y postas rurales en la red de salud.'
+        },
+        'cobertura_aps': {
+          title: 'Centros de salud y postas rurales',
+          short: 'Centros de salud APS',
+          unitLabel: 'establecimientos APS',
+          sourceTag: 'DEIS MINSAL',
+          desc: 'Mide la dotación de recintos de atención primaria, consultorios y postas rurales en la red de salud.'
+        },
+        'medicos_por_mil_hab': {
+          title: 'Densidad médica comunal',
+          short: 'Médicos por 1.000 hab.',
+          unitLabel: 'médicos / 1.000 hab.',
+          sourceTag: 'DEIS MINSAL',
+          desc: 'Mide la disponibilidad de profesionales médicos en el sistema de salud local.'
+        },
+        'urgencias_respiratorias_pct': {
+          title: 'Consultas de urgencia por patologías respiratorias (%)',
+          short: 'Urgencias respiratorias (%)',
+          unitLabel: '% consultas',
+          sourceTag: 'DEIS MINSAL',
+          desc: 'Mide el impacto de la contaminación invernal en las consultas médicas de urgencia.'
+        },
+        'urgencias_respiratorias_anuales_ssa': {
+          title: 'Consultas de urgencia por patologías respiratorias',
+          short: 'Urgencias respiratorias',
+          unitLabel: 'atenciones',
+          sourceTag: 'DEIS MINSAL',
+          desc: 'Mide el impacto de la contaminación invernal en las consultas médicas de urgencia.'
+        },
+        'aeroevacuaciones_samu_n': {
+          title: 'Aeroevacuaciones médicas de urgencia realizadas',
+          short: 'Aeroevacuaciones SAMU',
+          unitLabel: 'traslados',
+          sourceTag: 'SAMU',
+          desc: 'Mide los traslados aéreos de pacientes críticos desde localidades aisladas.'
+        },
+        'traslado_coyhaique_hrs': {
+          title: 'Tiempo de traslado terrestre hacia Coyhaique (horas)',
+          short: 'Traslado a Coyhaique',
+          unitLabel: 'horas',
+          sourceTag: 'Vialidad / SAMU',
+          desc: 'Mide las horas de viaje por carretera hacia el principal centro de salud regional.'
+        },
+        'dias_sobre_norma_mp25': {
+          title: 'Días al año con contaminación crítica del aire',
+          short: 'Días sobre norma MP2.5',
+          unitLabel: 'días sobre norma MP2.5',
+          sourceTag: 'SINCA',
+          desc: 'Mide los días anuales con superación de norma ambiental por material particulado fino.'
+        },
+        'mp25_invernal_coyhaique': {
+          title: 'Días al año con contaminación crítica del aire',
+          short: 'Días sobre norma MP2.5',
+          unitLabel: 'días sobre norma MP2.5',
+          sourceTag: 'SINCA',
+          desc: 'Mide los episodios críticos de calidad del aire asociados a calefacción con leña.'
+        },
+        'cobertura_vegetal_nativa_ha': {
+          title: 'Superficie de bosque nativo y cobertura vegetal',
+          short: 'Bosque nativo',
+          unitLabel: 'hectáreas',
+          sourceTag: 'CONAF',
+          desc: 'Mide las hectáreas de bosque y flora nativa según el catastro de CONAF.'
+        },
+        'glaciares_dga_n': {
+          title: 'Cantidad de glaciares inventariados por comuna',
+          short: 'Glaciares inventariados',
+          unitLabel: 'glaciares',
+          sourceTag: 'DGA MOP',
+          desc: 'Mide los cuerpos de hielo catastrados por la Dirección General de Aguas.'
+        },
+        'museos_espacios_n': {
+          title: 'Museos, bibliotecas y monumentos nacionales',
+          short: 'Museos y patrimonio',
+          unitLabel: 'espacios',
+          sourceTag: 'SERPAT-CMN',
+          desc: 'Mide la infraestructura patrimonial y sitios históricos protegidos por el Estado.'
+        },
+        'infraestructura_cultural_total': {
+          title: 'Museos, bibliotecas y monumentos nacionales',
+          short: 'Museos y patrimonio',
+          unitLabel: 'espacios',
+          sourceTag: 'SERPAT-CMN',
+          desc: 'Mide la infraestructura patrimonial y sitios históricos protegidos por el Estado.'
+        },
+        'proyectos_anid_n': {
+          title: 'Proyectos de investigación científica adjudicados',
+          short: 'Proyectos científicos ANID',
+          unitLabel: 'proyectos',
+          sourceTag: 'ANID',
+          desc: 'Mide los proyectos de investigación científica activa con financiamiento estatal.'
+        },
+        'proyectos_anid': {
+          title: 'Proyectos de investigación científica adjudicados',
+          short: 'Proyectos científicos ANID',
+          unitLabel: 'proyectos',
+          sourceTag: 'ANID',
+          desc: 'Mide los proyectos de investigación científica activa con financiamiento estatal.'
+        },
+        'innovacion_corfo_n': {
+          title: 'Proyectos de innovación productiva local',
+          short: 'Innovación productiva CORFO',
+          unitLabel: 'proyectos',
+          sourceTag: 'CORFO',
+          desc: 'Mide las iniciativas empresariales cofinanciadas para desarrollo tecnológico local.'
+        },
+        'innovacion_corfo': {
+          title: 'Proyectos de innovación productiva local',
+          short: 'Innovación productiva CORFO',
+          unitLabel: 'proyectos',
+          sourceTag: 'CORFO',
+          desc: 'Mide las iniciativas empresariales cofinanciadas para desarrollo tecnológico local.'
+        }
+      };
+
+      function getAutoexplanatoryVarInfo(varId, fallbackName, fallbackUnit) {
+        if (!varId) return null;
+        const normKey = String(varId).toLowerCase().trim();
+        if (AUTOEXPLANATORY_VAR_DICT[normKey]) {
+          return AUTOEXPLANATORY_VAR_DICT[normKey];
+        }
+        for (const [k, info] of Object.entries(AUTOEXPLANATORY_VAR_DICT)) {
+          if (normKey === k || normKey.startsWith(k + '_') || normKey.endsWith('_' + k)) {
+            return info;
+          }
+        }
+        let title = fallbackName || varId.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        let desc = 'Mide indicador territorial con corte comunal o temporal de Aysén.';
+        if (fallbackUnit && fallbackUnit !== 'unidades') {
+          desc = `Mide valor expresado en ${fallbackUnit} para el territorio regional.`;
+        }
+        return {
+          title: title,
+          short: title,
+          unitLabel: fallbackUnit || 'unidades',
+          sourceTag: 'Oficial',
+          desc: desc
+        };
+      }
+
 
       // =======================================================================
       // 2. INICIALIZACION ASINCRONA SIN CONDICIONES DE CARRERA
@@ -5024,8 +5694,9 @@
             const lex = lexiconVars.find(v => v.id === key || v.canonicalId === key);
             const hubId = lex?.hub || hubInference(key);
             const hubTitle = lex?.hubTitle || getHubTitleName(hubId);
-            const varName = lex?.name || nameFormatter(key);
-            const shortName = lex?.shortName || varName;
+            const autoInfo = getAutoexplanatoryVarInfo(key, lex?.name || nameFormatter(key), lex?.unit || unitInference(key));
+            const varName = autoInfo?.title || lex?.name || nameFormatter(key);
+            const shortName = autoInfo?.short || lex?.shortName || varName;
             const unit = lex?.unit || unitInference(key);
             const isMean = /%|\$|horas|Miles|casos|promedio|dias|t\/|g\/|ratio|hab\/|m3/i.test(unit) || key.endsWith('_pct') || key.endsWith('_hrs');
 
@@ -5044,6 +5715,7 @@
                 nodeId: lex?.nodeId || null,
                 name: varName,
                 shortName: shortName,
+                desc: autoInfo?.desc || '',
                 hubId: hubId,
                 hubTitle: hubTitle,
                 dim: 'comuna',
@@ -6013,7 +6685,22 @@
           if (item.isAlias) return false;
           if (dimFilter !== 'all' && item.dim !== dimFilter) return false;
           if (!q) return true;
-          return normStr(item.name).includes(q) || normStr(item.hubTitle).includes(q) || normStr(item.unit).includes(q);
+          const info = getAutoexplanatoryVarInfo(item.id, item.name, item.unit);
+          const aliasesStr = Array.isArray(item.aliases) ? item.aliases.join(' ') : (item.aliases || '');
+          const searchTarget = [
+            item.id,
+            item.name,
+            item.shortName,
+            item.hubTitle,
+            item.unit,
+            item.sourceName,
+            info?.title,
+            info?.unitLabel,
+            info?.sourceTag,
+            info?.desc,
+            aliasesStr
+          ].filter(Boolean).map(normStr).join(' ');
+          return searchTarget.includes(q);
         });
 
         const groups = {};
@@ -6022,6 +6709,21 @@
           it.hubTitle = k;
           if (!groups[k]) groups[k] = [];
           groups[k].push(it);
+        });
+
+        // Agrupación jerárquica: primero comunales (10), luego series de tiempo, luego holdings/otros
+        Object.keys(groups).forEach(k => {
+          groups[k].sort((a, b) => {
+            const dimPriority = { comuna: 1, tiempo: 2, holding: 3, sector: 4 };
+            const pA = dimPriority[a.dim] || 5;
+            const pB = dimPriority[b.dim] || 5;
+            if (pA !== pB) return pA - pB;
+            const infoA = getAutoexplanatoryVarInfo(a.id, a.name, a.unit);
+            const infoB = getAutoexplanatoryVarInfo(b.id, b.name, b.unit);
+            const titleA = infoA?.title || a.shortName || a.name || '';
+            const titleB = infoB?.title || b.shortName || b.name || '';
+            return titleA.localeCompare(titleB, 'es', { sensitivity: 'base' });
+          });
         });
 
         const OFFICIAL_HUB_ORDER = [
@@ -6093,26 +6795,26 @@
               <div class="catalog-hub-items-body" id="hub-content-${safeHubId}" role="region" aria-labelledby="hub-hdr-${safeHubId}">
                 <div class="catalog-hub-items">
                   ${groups[gName].map(it => {
-                    let dimBadge = '';
+                    const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+                    const displayTitle = info?.title || it.name;
+                    const displayUnit = info?.unitLabel || it.unit;
+                    const displaySigla = info?.sourceTag || it.sourceName || 'Oficial';
+                    let displaySub = '';
                     if (it.dim === 'comuna') {
-                      dimBadge = '<span class="var-dim-badge var-dim-comuna" title="Corte transversal de 10 comunas de Aysén">Comunal (10)</span>';
-                    } else if (it.dim === 'holding') {
-                      dimBadge = '<span class="var-dim-badge var-dim-holding" title="Corte de los 12 Holdings salmoneros">Holdings (12)</span>';
+                      displaySub = `10 comunas · ${displayUnit} · ${displaySigla}`;
                     } else if (it.dim === 'tiempo') {
-                      if (it.subDim === 'mensual') {
-                        dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie mensual con variación estacional">Estacional · Mensual</span>';
-                      } else if (it.hasProjection) {
-                        dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual con proyección 2030-2035">Temporal · 2015–2035</span>';
-                      } else {
-                        dimBadge = '<span class="var-dim-badge var-dim-tiempo" title="Serie multianual histórica 2015-2026">Temporal · 2015–2026</span>';
-                      }
+                      displaySub = `Serie 2015–2026 · ${displayUnit} · ${displaySigla}`;
+                    } else if (it.dim === 'holding') {
+                      displaySub = `12 holdings · ${displayUnit} · ${displaySigla}`;
                     } else {
-                      dimBadge = `<span class="var-dim-badge var-dim-${it.dim}">${it.dim}</span>`;
+                      displaySub = `${it.dim} · ${displayUnit} · ${displaySigla}`;
                     }
+                    const tooltipText = info?.desc ? `${displayTitle}\n\nQué mide: ${info.desc}` : displayTitle;
+
                     return `
-                      <div class="catalog-var-item" draggable="true" tabindex="0" role="button" data-var-id="${it.id}">
-                        <span style="font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 155px;" title="${it.name}">${it.shortName || it.name}</span>
-                        ${dimBadge}
+                      <div class="catalog-var-item catalog-item" draggable="true" tabindex="0" role="button" data-var-id="${it.id}" title="${tooltipText}">
+                        <div class="catalog-item-title">${displayTitle}</div>
+                        <div class="catalog-item-subline">${displaySub}</div>
                       </div>
                     `;
                   }).join('')}
@@ -6209,13 +6911,11 @@
               const w = AppState.widgets.find(x => x.id === AppState.activeWidgetId);
               if (w) {
                 if (!w.varX) {
-                  w.varX = varId;
+                  assignVarToWidget(w, varId);
                 } else if (!w.varY) {
-                  w.varY = varId;
-                  w.type = 'chart';
-                  w.chartType = 'scatter';
+                  fuseVariableIntoWidget(w, varId);
                 } else {
-                  w.varX = varId;
+                  assignVarToWidget(w, varId);
                 }
                 renderWidgetCardDOM(w);
                 autoSave();
@@ -6695,9 +7395,14 @@
         const vX = AppState.catalogItems.find(v => v.id === varXId);
         const vY = varYId ? AppState.catalogItems.find(v => v.id === varYId) : null;
         if (vX && vY) {
-          return `${vY.shortName || vY.name} vs. ${vX.shortName || vX.name}`;
+          const infoX = getAutoexplanatoryVarInfo(vX.id, vX.shortName || vX.name, vX.unit);
+          const infoY = getAutoexplanatoryVarInfo(vY.id, vY.shortName || vY.name, vY.unit);
+          return `${infoY?.short || infoY?.title || vY.shortName || vY.name} vs. ${infoX?.short || infoX?.title || vX.shortName || vX.name}`;
         }
-        if (vX) return vX.name;
+        if (vX) {
+          const infoX = getAutoexplanatoryVarInfo(vX.id, vX.name, vX.unit);
+          return infoX?.title || vX.name;
+        }
         return type === 'map' ? 'Mapa Territorial' : (type === 'kpi' ? 'Indicador Consolidado' : 'Tabla de Datos');
       }
 
@@ -6722,6 +7427,16 @@
           keyClass = (vX.dim === 'tiempo') ? 'valid' : 'valid';
           hubTitle = (vX.dim === 'tiempo') ? `${vX.hubTitle} · Serie Multianual` : vX.hubTitle;
           unitBadge = `Unidad: ${vX.unit}`;
+        }
+
+        let descText = '';
+        if (vX && vY) {
+          const infoX = getAutoexplanatoryVarInfo(vX.id, vX.name, vX.unit);
+          const infoY = getAutoexplanatoryVarInfo(vY.id, vY.name, vY.unit);
+          descText = `Cruce: [X] ${infoX?.desc || vX.name} × [Y] ${infoY?.desc || vY.name}`;
+        } else if (vX) {
+          const infoX = getAutoexplanatoryVarInfo(vX.id, vX.name, vX.unit);
+          descText = infoX?.desc || `Mide indicador territorial con valor en ${vX.unit}.`;
         }
 
         let footerHtml = '';
@@ -6851,6 +7566,12 @@
             if ('value' in titleInput) titleInput.value = w.title;
           }
 
+          const descEl = existingCard.querySelector(`#widget-desc-${w.id}`);
+          if (descEl) {
+            descEl.textContent = descText;
+            descEl.style.display = descText ? 'block' : 'none';
+          }
+
           const validTag = existingCard.querySelector(`#valid-tag-${w.id}`);
           if (validTag) {
             validTag.className = `widget-meta-tag ${keyClass}`;
@@ -6945,6 +7666,7 @@
                 <button class="card-ctrl-btn card-ctrl-close mac-btn mac-close" id="btnDelCard-${w.id}" title="Cerrar ventana" aria-label="Cerrar">×</button>
               </div>
             </div>
+            ${descText ? `<div class="widget-var-desc" id="widget-desc-${w.id}">${descText}</div>` : `<div class="widget-var-desc" id="widget-desc-${w.id}" style="display:none;"></div>`}
             <div class="widget-header-line2">
               <div class="widget-meta-line">
                 <span class="widget-meta-tag ${keyClass}" id="valid-tag-${w.id}">${keyLabel}</span>
@@ -7327,7 +8049,7 @@
           if (!varId) return;
 
           if (!w.varX) {
-            w.varX = varId;
+            assignVarToWidget(w, varId);
             renderWidgetCardDOM(w);
             autoSave();
           } else {
@@ -7358,7 +8080,7 @@
 
         menu.querySelector('#btnDropReplaceX').addEventListener('click', (e) => {
           e.stopPropagation();
-          w.varX = varId;
+          assignVarToWidget(w, varId);
           menu.remove();
           renderWidgetCardDOM(w);
           autoSave();
@@ -7366,9 +8088,7 @@
 
         menu.querySelector('#btnDropAddY').addEventListener('click', (e) => {
           e.stopPropagation();
-          w.varY = varId;
-          w.type = 'chart';
-          w.chartType = 'scatter';
+          fuseVariableIntoWidget(w, varId);
           menu.remove();
           renderWidgetCardDOM(w);
           autoSave();
@@ -8923,15 +9643,17 @@
 
       function renderPopoverList(w, items) {
         const list = document.getElementById('popoverListContainer');
-        list.innerHTML = items.map(it => `
-          <div class="popover-item" role="menuitem" tabindex="-1" data-var-id="${it.id}">
-            <div>
-              <div style="font-weight: 500;">${it.shortName || it.name}</div>
-              <div style="font-size: 0.64rem; color: var(--ink-muted);">${it.hubTitle} · ${it.unit}</div>
+        list.innerHTML = items.map(it => {
+          const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+          const displayTitle = info?.title || it.name;
+          const displayDesc = info?.desc || `${it.hubTitle} · ${it.unit}`;
+          return `
+            <div class="popover-item" role="menuitem" tabindex="-1" data-var-id="${it.id}" style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 6px 10px; cursor: pointer;">
+              <div style="font-weight: 500; font-size: 0.82rem; color: #0f172a; line-height: 1.3;">${displayTitle}</div>
+              <div style="font-size: 0.68rem; color: #64748b; line-height: 1.25;">${displayDesc}</div>
             </div>
-            <span class="var-dim-badge">${it.dim}</span>
-          </div>
-        `).join('');
+          `;
+        }).join('');
 
         list.querySelectorAll('.popover-item').forEach(el => {
           el.addEventListener('click', () => {
@@ -8957,7 +9679,9 @@
         const vX = AppState.catalogItems.find(v => v.id === w.varX);
         const vY = AppState.catalogItems.find(v => v.id === varYId);
 
-        w.title = `${vY.shortName || vY.name} vs. ${vX.shortName || vX.name}`;
+        const infoX = getAutoexplanatoryVarInfo(vX.id, vX.shortName || vX.name, vX.unit);
+        const infoY = getAutoexplanatoryVarInfo(vY.id, vY.shortName || vY.name, vY.unit);
+        w.title = `${infoY?.short || infoY?.title || vY.shortName || vY.name} vs. ${infoX?.short || infoX?.title || vX.shortName || vX.name}`;
         if (w.type === 'chart') {
           w.chartType = (vX.dim === 'comuna' && vY.dim === 'comuna') ? 'scatter' : 'bar';
         }
@@ -8969,6 +9693,11 @@
             titleInput.textContent = w.title;
             titleInput.title = w.title;
             if ('value' in titleInput) titleInput.value = w.title;
+          }
+          const descEl = cardEl.querySelector(`#widget-desc-${w.id}`);
+          if (descEl) {
+            descEl.textContent = `Cruce: [X] ${infoX?.desc || vX.name} × [Y] ${infoY?.desc || vY.name}`;
+            descEl.style.display = 'block';
           }
           const validTag = cardEl.querySelector(`#valid-tag-${w.id}`);
           if (validTag) {
@@ -9001,7 +9730,8 @@
         const v = AppState.catalogItems.find(it => it.id === varId);
         if (!v) return;
         w.varX = varId;
-        w.title = v.name;
+        const info = getAutoexplanatoryVarInfo(v.id, v.name, v.unit);
+        w.title = info?.title || v.name;
         w.color = getHubColor(v.hubId);
         if (w.type === 'chart') {
           w.chartType = v.chartType || 'bar';
@@ -9013,6 +9743,11 @@
             titleInput.textContent = w.title;
             titleInput.title = w.title;
             if ('value' in titleInput) titleInput.value = w.title;
+          }
+          const descEl = cardEl.querySelector(`#widget-desc-${w.id}`);
+          if (descEl) {
+            descEl.textContent = info?.desc || `Mide indicador territorial con valor en ${v.unit}.`;
+            descEl.style.display = 'block';
           }
           const validTag = cardEl.querySelector(`#valid-tag-${w.id}`);
           if (validTag) {
@@ -9963,18 +10698,46 @@
             const filtered = AppState.catalogItems.filter(it => {
               if (currentPillDim !== 'all' && it.dim !== currentPillDim) return false;
               if (!q) return true;
-              return normStr(it.name).includes(q) || normStr(it.hubTitle).includes(q) || normStr(it.dim).includes(q);
+              const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+              const aliasesStr = Array.isArray(it.aliases) ? it.aliases.join(' ') : (it.aliases || '');
+              const searchTarget = [
+                it.id,
+                it.name,
+                it.shortName,
+                it.hubTitle,
+                it.unit,
+                it.sourceName,
+                info?.title,
+                info?.unitLabel,
+                info?.sourceTag,
+                info?.desc,
+                aliasesStr
+              ].filter(Boolean).map(normStr).join(' ');
+              return searchTarget.includes(q);
             }).slice(0, 10);
 
-            listEl.innerHTML = filtered.map(it => `
-              <div class="empty-var-item" data-var-id="${it.id}">
-                <span><strong>${it.shortName || it.name}</strong> (${it.unit})</span>
-                ${it.dim === 'tiempo'
-                  ? `<span class="var-dim-badge var-dim-tiempo">Serie Temporal</span>`
-                  : `<span class="var-dim-badge var-dim-${it.dim}">${it.dim === 'comuna' ? 'Comunal' : it.dim}</span>`
-                }
-              </div>
-            `).join('');
+            listEl.innerHTML = filtered.map(it => {
+              const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+              const displayTitle = info?.title || it.name;
+              const displayUnit = info?.unitLabel || it.unit;
+              const displaySigla = info?.sourceTag || it.sourceName || 'Oficial';
+              let displayDesc = '';
+              if (it.dim === 'comuna') {
+                displayDesc = `10 comunas · ${displayUnit} · ${displaySigla}`;
+              } else if (it.dim === 'tiempo') {
+                displayDesc = `Serie 2015–2026 · ${displayUnit} · ${displaySigla}`;
+              } else if (it.dim === 'holding') {
+                displayDesc = `12 holdings · ${displayUnit} · ${displaySigla}`;
+              } else {
+                displayDesc = `${it.dim} · ${displayUnit} · ${displaySigla}`;
+              }
+              return `
+                <div class="empty-var-item" data-var-id="${it.id}" style="display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px; margin-bottom: 4px; border: 1px solid #e2e8f0; border-radius: 4px; background: #ffffff; cursor: pointer;">
+                  <div style="font-size: 0.82rem; font-weight: 500; color: #0f172a; line-height: 1.3;">${displayTitle}</div>
+                  <div style="font-size: 0.68rem; color: #64748b; margin-top: 2px; line-height: 1.25;">${displayDesc}</div>
+                </div>
+              `;
+            }).join('');
 
             listEl.querySelectorAll('.empty-var-item').forEach(el => {
               el.addEventListener('click', () => {
@@ -13735,6 +14498,40 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       montarCabecera({ tituloModulo: 'Laboratorio Sistémico', activo: 'laboratorio.html' });
+
+      // Control del Menú Móvil Universal
+      const btnMobileMenu = document.getElementById('btnMobileMenu');
+      const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+      const btnMobileClose = document.getElementById('btnMobileClose');
+      const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+      function openMobileNav() {
+        if (!mobileNavDrawer) return;
+        mobileNavDrawer.classList.add('open');
+        mobileNavDrawer.setAttribute('aria-hidden', 'false');
+        if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeMobileNav() {
+        if (!mobileNavDrawer) return;
+        mobileNavDrawer.classList.remove('open');
+        mobileNavDrawer.setAttribute('aria-hidden', 'true');
+        if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
+      }
+
+      if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
+      if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
+      if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+          closeMobileNav();
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeMobileNav);
+      });
     });
   </script>
 </body>

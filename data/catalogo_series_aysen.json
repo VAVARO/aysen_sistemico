@@ -61,7 +61,7 @@
     },
     {
       "indicador": "dependencia_fcm_pct",
-      "nombre": "Dependencia del Fondo Común Municipal (FCM)",
+      "nombre": "Dependencia del Fondo Común Municipal",
       "unidad": "%",
       "periodo": "2015-2026",
       "fuente": "SINIM SUBDERE",
@@ -109,7 +109,7 @@
     },
     {
       "indicador": "proyectos_seia_mmusd",
-      "nombre": "Inversión y Proyectos Aprobados en SEIA",
+      "nombre": "Inversión privada en evaluación ambiental",
       "unidad": "MM USD / cantidad",
       "periodo": "2015-2026",
       "fuente": "Servicio de Evaluación Ambiental (SEA)",
@@ -125,7 +125,7 @@
     },
     {
       "indicador": "delitos_dmcs_vif_tasa",
-      "nombre": "Delitos de Mayor Connotación Social y VIF",
+      "nombre": "Denuncias por violencia intrafamiliar",
       "unidad": "tasa por 100k hab",
       "periodo": "2015-2025",
       "fuente": "Centro de Estudios y Análisis del Delito (CEAD)",
@@ -133,7 +133,7 @@
     },
     {
       "indicador": "matricula_escolar_slep",
-      "nombre": "Matrícula y Establecimientos Escolares",
+      "nombre": "Matrícula escolar en la comuna",
       "unidad": "estudiantes / escuelas",
       "periodo": "2015-2025",
       "fuente": "MINEDUC / SLEP Aysén",
@@ -141,7 +141,7 @@
     },
     {
       "indicador": "pernoctaciones_emat",
-      "nombre": "Pernoctaciones y Ocupación Hotelera EMAT",
+      "nombre": "Noches de alojamiento turístico",
       "unidad": "pernoctaciones / % ocupación",
       "periodo": "2015-2026",
       "fuente": "Instituto Nacional de Estadísticas (INE)",
@@ -149,7 +149,7 @@
     },
     {
       "indicador": "visitantes_parques_snaspe",
-      "nombre": "Visitantes a Parques y Reservas del SNASPE",
+      "nombre": "Visitas a Parques y Reservas Nacionales",
       "unidad": "visitantes anuales",
       "periodo": "2015-2026",
       "fuente": "Corporación Nacional Forestal (CONAF)",
@@ -157,7 +157,7 @@
     },
     {
       "indicador": "mp25_invernal_coyhaique",
-      "nombre": "Concentración Invernal de MP2.5 en Coyhaique II",
+      "nombre": "Días al año con contaminación crítica del aire",
       "unidad": "µg/m³",
       "periodo": "2015-2026",
       "fuente": "SINCA MMA",

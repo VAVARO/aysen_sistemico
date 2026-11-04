@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-03T02:32:36.932Z",
+  "generatedAt": "2026-11-04T00:58:41.450Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -4642,7 +4642,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 1,
       "hubId": "turismo",
       "isSpecial": false,
-      "title": "Prestadores Registrados SERNATUR",
+      "title": "Servicios turísticos registrados",
       "definition": "Catastro comunal de **servicios turísticos formales** inscritos en el Registro Nacional de Prestadores de SERNATUR: total de prestadores, alojamientos turísticos, operadores de turismo aventura, guías registrados y capacidad estimada en camas.",
       "example": "**Coyhaique** lidera con **412 prestadores registrados** (178 alojamientos, 74 operadores de aventura y 3.420 camas), seguido por **Río Ibáñez**, **Aysén**, **Cisnes**, **Chile Chico** y **Cochrane**.",
       "officialSource": {
@@ -4952,7 +4952,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 3,
       "hubId": "turismo",
       "isSpecial": false,
-      "title": "Pernoctaciones y Estacionalidad (EMAT)",
+      "title": "Noches de alojamiento turístico",
       "definition": "Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: llegadas anuales, pernoctaciones, proporción de extranjeros y brecha de ocupación estacional.",
       "example": "A nivel regional, enero registra **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación baja al **20%-32%**.",
       "officialSource": {
@@ -5118,7 +5118,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 4,
       "hubId": "turismo",
       "isSpecial": false,
-      "title": "Visitantes a Parques Nacionales (CONAF)",
+      "title": "Visitas a Parques y Reservas Nacionales",
       "definition": "Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna, junto con la superficie comunal protegida y las unidades presentes.",
       "example": "Permite cruzar el flujo anual de visitantes a parques nacionales con la proporción de territorio protegido SNASPE en cada comuna (que alcanza **87,4% en Tortel**, **78,3% en O'Higgins** y **71,2% en Cisnes**).",
       "officialSource": {
@@ -7004,7 +7004,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 16,
       "hubId": "gobernanza",
       "isSpecial": false,
-      "title": "Dependencia del Fondo Común Municipal (FCM)",
+      "title": "Dependencia del Fondo Común Municipal",
       "definition": "Grado de vulnerabilidad fiscal y porcentaje de dependencia del **Fondo Común Municipal (FCM)** para el financiamiento de los servicios locales y gasto corriente.",
       "example": "**Tortel (88,2%)**, **O'Higgins (85,6%)** y **Lago Verde (84,1%)** tienen la mayor dependencia del FCM, mientras **Coyhaique** registra un **46,5%**.",
       "officialSource": {
@@ -7326,7 +7326,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 18,
       "hubId": "gobernanza",
       "isSpecial": false,
-      "title": "Inversión Pública FNDR y Conectividad Ruta 7",
+      "title": "Inversión pública del Gobierno Regional",
       "definition": "Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)** y estado de la conectividad terrestre en la **Carretera Austral (Ruta 7)**.",
       "example": "Cruza los montos FNDR comunales con el kilometraje de pavimento y ripio en la Ruta 7 (que se extiende por **835 km en la región**, con importantes tramos de ripio al sur de Villa Cerro Castillo).",
       "officialSource": {
@@ -7489,7 +7489,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 19,
       "hubId": "inversion",
       "isSpecial": false,
-      "title": "Proyectos de Inversión en el SEIA (RCA)",
+      "title": "Inversión privada en evaluación ambiental",
       "definition": "Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa.",
       "example": "Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.420,5 MM USD)** y **Coyhaique (895,2 MM USD)** en infraestructura, energía y acuicultura.",
       "officialSource": {
@@ -8322,7 +8322,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 24,
       "hubId": "salud",
       "isSpecial": false,
-      "title": "Red Asistencial DEIS y Hospitales de Aysén",
+      "title": "Centros de salud y postas rurales",
       "definition": "Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (APS - 2 CESFAM, 3 CECOSF, 28 Postas Rurales y 20 EMR)** frente a la **Red Hospitalaria (1 Hospital de Alta Complejidad y 4 Hospitales Comunitarios)** con 261 camas totales, camas críticas UCI/UTI y tiempos de traslado SAMU.",
       "example": "**Coyhaique** concentra el **Hospital Regional (167 camas, 22 críticas UCI/UTI, 5 quirófanos)** y la base SAMU, mientras las 4 cabeceras provinciales cuentan con hospitales comunitarios de baja complejidad y 5 comunas dependen exclusivamente de postas rurales con traslados terrestres de hasta **7 a 9 horas** hacia Coyhaique.",
       "officialSource": {
@@ -8487,7 +8487,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 25,
       "hubId": "social",
       "isSpecial": false,
-      "title": "Educación Pública (SLEP Aysén) y Superior",
+      "title": "Matrícula escolar en la comuna",
       "definition": "Red de establecimientos bajo administración del **Servicio Local de Educación Pública (SLEP Aysén)**: matrícula escolar total, presencia de educación media completa, sedes de educación superior y diferenciación de **36 escuelas rurales multigrado** frente a **16 liceos urbanos**.",
       "example": "Registra la matrícula pública en las 10 comunas, los internados estudiantiles para alumnos de zonas aisladas y la oferta de educación superior (Universidad de Aysén e INACAP en Coyhaique).",
       "officialSource": {
@@ -8664,7 +8664,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 26,
       "hubId": "social",
       "isSpecial": false,
-      "title": "Seguridad Ciudadana y Delitos (CEAD / VIF)",
+      "title": "Denuncias por violencia intrafamiliar",
       "definition": "Tasas comunales de **Delitos de Mayor Connotación Social (DMCS)** y denuncias de **Violencia Intrafamiliar (VIF)** cada 100.000 habitantes (**CEAD Subsecretaría de Prevención del Delito**), tipologías frecuentes y dotación policial.",
       "example": "Permite revisar las tasas estandarizadas cada 100 mil habitantes y la cobertura de comisarías, subcomisarias, tenencias y retenes fronterizos de Carabineros en las 10 comunas.",
       "officialSource": {
@@ -9245,7 +9245,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 30,
       "hubId": "biodiversidad",
       "isSpecial": false,
-      "title": "Monitoreo Continuo de Calidad del Aire (SINCA) e Hidrología (DGA)",
+      "title": "Días al año con contaminación crítica del aire e Hidrología",
       "definition": "Red de monitoreo ambiental continuo y telemetría satelital de **calidad del aire (SINCA MMA)** y **caudales hidrométricos (DGA MOP)**: concentración de material particulado fino **MP2,5 (ug/m3)** en Coyhaique y aforos del **Río Baker y Río Simpson**.",
       "example": "La estación **Coyhaique II (SINCA)** registra un pico invernal de **160 ug/m3 de MP2,5 en junio y 145 ug/m3 en julio** asociado al uso intensivo de leña para calefacción, contrastando con **15-18 ug/m3 en verano**. Paralelamente, el **Río Baker en Bertrand (DGA)** promedia caudales de deshielo de **740 m3/s en abril** y un mínimo invernal de **430 m3/s en julio**.",
       "officialSource": {
@@ -9554,7 +9554,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 32,
       "hubId": "cultura",
       "isSpecial": false,
-      "title": "Museos, Bibliotecas y Monumentos SERPAT/CMN",
+      "title": "Museos, bibliotecas y monumentos nacionales",
       "definition": "Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)** y **9 Monumentos Históricos y Arqueológicos** protegidos por el Consejo de Monumentos Nacionales (CMN).",
       "example": "**Coyhaique** alberga 3 museos y la Biblioteca Regional, mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.",
       "officialSource": {
@@ -10070,7 +10070,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 35,
       "hubId": "ctci",
       "isSpecial": false,
-      "title": "Proyectos ANID Cartera Histórica en Aysén",
+      "title": "Proyectos de investigación científica adjudicados",
       "definition": "Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.",
       "example": "Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.",
       "officialSource": {
@@ -10398,7 +10398,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 37,
       "hubId": "ctci",
       "isSpecial": false,
-      "title": "Innovación Productiva CORFO/FIA y Capital Humano",
+      "title": "Proyectos de innovación productiva local",
       "definition": "Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.",
       "example": "Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.",
       "officialSource": {
@@ -10554,7 +10554,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 38,
       "hubId": "salud",
       "isSpecial": false,
-      "title": "Cobertura APS Rural, Postas y Rondas Médicas",
+      "title": "Centros de salud y postas rurales",
       "definition": "Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **28 postas de salud rural**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.",
       "example": "En comunas como **Tortel**, **Lago Verde** u **O'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.",
       "officialSource": {

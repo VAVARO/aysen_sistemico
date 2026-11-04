@@ -446,7 +446,7 @@ const rawNodos = [
   {
     id: 1,
     hubId: 'turismo',
-    title: 'Prestadores Registrados SERNATUR',
+    title: 'Servicios turísticos registrados',
     definition: 'Catastro comunal de **servicios turísticos formales** inscritos en el Registro Nacional de Prestadores de SERNATUR: total de prestadores, alojamientos turísticos, operadores de turismo aventura, guías registrados y capacidad estimada en camas.',
     example: '**Coyhaique** lidera con **412 prestadores registrados** (178 alojamientos, 74 operadores de aventura y 3.420 camas), seguido por **Río Ibáñez**, **Aysén**, **Cisnes**, **Chile Chico** y **Cochrane**.',
     officialSource: { name: 'Registro Nacional de Prestadores SERNATUR', url: 'https://serviciosturisticos.sernatur.cl/', frequency: 'Actualizacion mensual' },
@@ -536,7 +536,7 @@ const rawNodos = [
   {
     id: 3,
     hubId: 'turismo',
-    title: 'Pernoctaciones y Estacionalidad (EMAT)',
+    title: 'Noches de alojamiento turístico',
     definition: 'Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: llegadas anuales, pernoctaciones, proporción de extranjeros y brecha de ocupación estacional.',
     example: 'A nivel regional, enero registra **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación baja al **20%-32%**.',
     officialSource: { name: 'INE / SERNATUR — Encuesta Mensual de Alojamiento Turistico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo', frequency: 'Publicacion mensual' },
@@ -583,7 +583,7 @@ const rawNodos = [
   {
     id: 4,
     hubId: 'turismo',
-    title: 'Visitantes a Parques Nacionales (CONAF)',
+    title: 'Visitas a Parques y Reservas Nacionales',
     definition: 'Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna, junto con la superficie comunal protegida y las unidades presentes.',
     example: 'Permite cruzar el flujo anual de visitantes a parques nacionales con la proporción de territorio protegido SNASPE en cada comuna (que alcanza **87,4% en Tortel**, **78,3% en O\'Higgins** y **71,2% en Cisnes**).',
     officialSource: { name: 'CONAF — Estadisticas de Visitacion SNASPE', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', frequency: 'Anual / Mensual' },
@@ -1132,7 +1132,7 @@ const rawNodos = [
   {
     id: 16,
     hubId: 'gobernanza',
-    title: 'Dependencia del Fondo Común Municipal (FCM)',
+    title: 'Dependencia del Fondo Común Municipal',
     definition: 'Grado de vulnerabilidad fiscal y porcentaje de dependencia del **Fondo Común Municipal (FCM)** para el financiamiento de los servicios locales y gasto corriente.',
     example: '**Tortel (88,2%)**, **O\'Higgins (85,6%)** y **Lago Verde (84,1%)** tienen la mayor dependencia del FCM, mientras **Coyhaique** registra un **46,5%**.',
     officialSource: { name: 'SINIM SUBDERE / Tesoreria General de la Republica', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
@@ -1227,7 +1227,7 @@ const rawNodos = [
   {
     id: 18,
     hubId: 'gobernanza',
-    title: 'Inversión Pública FNDR y Conectividad Ruta 7',
+    title: 'Inversión pública del Gobierno Regional',
     definition: 'Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)** y estado de la conectividad terrestre en la **Carretera Austral (Ruta 7)**.',
     example: 'Cruza los montos FNDR comunales con el kilometraje de pavimento y ripio en la Ruta 7 (que se extiende por **835 km en la región**, con importantes tramos de ripio al sur de Villa Cerro Castillo).',
     officialSource: { name: 'DIPRES / GORE Aysen / Direccion de Vialidad MOP', url: 'https://datos.dipres.gob.cl/', frequency: 'Trimestral / Anual' },
@@ -1277,7 +1277,7 @@ const rawNodos = [
   {
     id: 19,
     hubId: 'inversion',
-    title: 'Proyectos de Inversión en el SEIA (RCA)',
+    title: 'Inversión privada en evaluación ambiental',
     definition: 'Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa.',
     example: 'Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.420,5 MM USD)** y **Coyhaique (895,2 MM USD)** en infraestructura, energía y acuicultura.',
     officialSource: { name: 'Servicio de Evaluacion Ambiental (SEA — SEIA)', url: 'https://seia.sea.gob.cl/', frequency: 'Actualizacion continua' },
@@ -1505,7 +1505,7 @@ const rawNodos = [
   {
     id: 24,
     hubId: 'salud',
-    title: 'Red Asistencial DEIS y Hospitales de Aysén',
+    title: 'Centros de salud y postas rurales',
     definition: 'Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (APS - 2 CESFAM, 3 CECOSF, 28 Postas Rurales y 20 EMR)** frente a la **Red Hospitalaria (1 Hospital de Alta Complejidad y 4 Hospitales Comunitarios)** con 261 camas totales, camas críticas UCI/UTI y tiempos de traslado SAMU.',
     example: '**Coyhaique** concentra el **Hospital Regional (167 camas, 22 críticas UCI/UTI, 5 quirófanos)** y la base SAMU, mientras las 4 cabeceras provinciales cuentan con hospitales comunitarios de baja complejidad y 5 comunas dependen exclusivamente de postas rurales con traslados terrestres de hasta **7 a 9 horas** hacia Coyhaique.',
     officialSource: { name: 'Departamento de Estadísticas e Información de Salud (DEIS) / SSA', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
@@ -1553,7 +1553,7 @@ const rawNodos = [
   {
     id: 25,
     hubId: 'social',
-    title: 'Educación Pública (SLEP Aysén) y Superior',
+    title: 'Matrícula escolar en la comuna',
     definition: 'Red de establecimientos bajo administración del **Servicio Local de Educación Pública (SLEP Aysén)**: matrícula escolar total, presencia de educación media completa, sedes de educación superior y diferenciación de **36 escuelas rurales multigrado** frente a **16 liceos urbanos**.',
     example: 'Registra la matrícula pública en las 10 comunas, los internados estudiantiles para alumnos de zonas aisladas y la oferta de educación superior (Universidad de Aysén e INACAP en Coyhaique).',
     officialSource: { name: 'Centro de Estudios MINEDUC / SLEP Aysen', url: 'https://datosabiertos.mineduc.cl/', frequency: 'Anual' },
@@ -1597,7 +1597,7 @@ const rawNodos = [
   {
     id: 26,
     hubId: 'social',
-    title: 'Seguridad Ciudadana y Delitos (CEAD / VIF)',
+    title: 'Denuncias por violencia intrafamiliar',
     definition: 'Tasas comunales de **Delitos de Mayor Connotación Social (DMCS)** y denuncias de **Violencia Intrafamiliar (VIF)** cada 100.000 habitantes (**CEAD Subsecretaría de Prevención del Delito**), tipologías frecuentes y dotación policial.',
     example: 'Permite revisar las tasas estandarizadas cada 100 mil habitantes y la cobertura de comisarías, subcomisarias, tenencias y retenes fronterizos de Carabineros en las 10 comunas.',
     officialSource: { name: 'CEAD — Subsecretaria de Prevencion del Delito', url: 'https://cead.spd.gov.cl/', frequency: 'Trimestral' },
@@ -1779,7 +1779,7 @@ const rawNodos = [
   {
     id: 30,
     hubId: 'biodiversidad',
-    title: 'Monitoreo Continuo de Calidad del Aire (SINCA) e Hidrología (DGA)',
+    title: 'Días al año con contaminación crítica del aire e Hidrología',
     definition: 'Red de monitoreo ambiental continuo y telemetría satelital de **calidad del aire (SINCA MMA)** y **caudales hidrométricos (DGA MOP)**: concentración de material particulado fino **MP2,5 (ug/m3)** en Coyhaique y aforos del **Río Baker y Río Simpson**.',
     example: 'La estación **Coyhaique II (SINCA)** registra un pico invernal de **160 ug/m3 de MP2,5 en junio y 145 ug/m3 en julio** asociado al uso intensivo de leña para calefacción, contrastando con **15-18 ug/m3 en verano**. Paralelamente, el **Río Baker en Bertrand (DGA)** promedia caudales de deshielo de **740 m3/s en abril** y un mínimo invernal de **430 m3/s en julio**.',
     officialSource: { name: 'SINCA (Ministerio del Medio Ambiente) / Direccion General de Aguas (DGA)', url: 'https://sinca.mma.gob.cl/', frequency: 'Horario / Telemetria continua' },
@@ -1875,7 +1875,7 @@ const rawNodos = [
   {
     id: 32,
     hubId: 'cultura',
-    title: 'Museos, Bibliotecas y Monumentos SERPAT/CMN',
+    title: 'Museos, bibliotecas y monumentos nacionales',
     definition: 'Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)** y **9 Monumentos Históricos y Arqueológicos** protegidos por el Consejo de Monumentos Nacionales (CMN).',
     example: '**Coyhaique** alberga 3 museos y la Biblioteca Regional, mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.',
     officialSource: { name: 'Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Anual' },
@@ -2030,7 +2030,7 @@ const rawNodos = [
   {
     id: 35,
     hubId: 'ctci',
-    title: 'Proyectos ANID Cartera Histórica en Aysén',
+    title: 'Proyectos de investigación científica adjudicados',
     definition: 'Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.',
     example: 'Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.',
     officialSource: { name: 'Base de Datos Histórica ANID / MinCiencia OBSERVA', url: 'https://anid.cl/', frequency: 'Anual' },
@@ -2127,7 +2127,7 @@ const rawNodos = [
   {
     id: 37,
     hubId: 'ctci',
-    title: 'Innovación Productiva CORFO/FIA y Capital Humano',
+    title: 'Proyectos de innovación productiva local',
     definition: 'Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.',
     example: 'Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.',
     officialSource: { name: 'CORFO DataInnovación / FIA / MinCiencia', url: 'https://datainnovacion.corfo.cl/', frequency: 'Anual' },
@@ -2173,7 +2173,7 @@ const rawNodos = [
   {
     id: 38,
     hubId: 'salud',
-    title: 'Cobertura APS Rural, Postas y Rondas Médicas',
+    title: 'Centros de salud y postas rurales',
     definition: 'Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **28 postas de salud rural**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.',
     example: 'En comunas como **Tortel**, **Lago Verde** u **O\'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.',
     officialSource: { name: 'Servicio de Salud Aysén (SSA) / DEIS MINSAL', url: 'https://deis.minsal.cl/', frequency: 'Semestral' },
