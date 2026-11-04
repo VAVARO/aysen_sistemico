@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultor de Datos Territorial · Aysén Sistémico</title>
+  <meta name="description"
+    content="Consultor de inteligencia territorial de la Región de Aysén con motor OmniRoute y verificación estricta de mundo cerrado (28 fuentes oficiales).">
+
+  <!-- Tipografías Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Datos y Motor OmniRoute -->
+  <script src="data/aysen_hubs_data.js"></script>
+  <script src="js/omniroute_client.js"></script>
+
+  <!-- Cabecera Global y Accesibilidad -->
+  <link rel="stylesheet" href="js/cabecera_global.css">
+  <link rel="stylesheet" href="css/apple-design.css">
+  <script src="js/cabecera_global.js"></script>
+
+  <style>
+    :root {
+      --cobalt: #00357f;
+      --cobalt-dark: #002255;
+      --cobalt-light: #0059c5;
+      --ink: #0f172a;
+      --ink-secondary: #475569;
+      --ink-muted: #64748b;
+      --paper: #fcf9f8;
+      --paper-card: #ffffff;
+      --paper-subtle: #f8fafc;
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --border-strong: rgba(15, 23, 42, 0.16);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'IBM Plex Mono', Menlo, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100vh;
+      max-height: 100vh;
+      overflow: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout Principal 100vh Dividido en 2 Paneles */
+    .consultor-layout {
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .brand-header {
+      height: 56px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 50;
+    }
+
+    .consultor-body {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* Panel Izquierdo: Conversación estilo Gemini / Claude Artifacts */
+    .panel-chat {
+      flex: 1;
+      min-width: 0;
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border-subtle);
+      background: var(--paper-card);
+      position: relative;
+    }
+
+    .chat-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .chat-header-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cobalt);
+      letter-spacing: -0.01em;
+    }
+
+    .chat-header-sub {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-header-cfg {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--cobalt);
+      background: rgba(0, 53, 127, 0.05);
+      border: 1px solid rgba(0, 53, 127, 0.16);
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-header-cfg:hover {
+      background: rgba(0, 53, 127, 0.12);
+      border-color: var(--cobalt);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Estado inicial: 4 tarjetas de consultas sugeridas */
+    .suggestions-container {
+      margin: auto 0;
+      padding: 10px 0;
+    }
+
+    .suggestions-heading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .suggestions-kicker {
+      font-size: 0.82rem;
+      color: var(--ink-secondary);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .suggestions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .suggestion-card {
+      background: var(--paper-subtle);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--cobalt);
+      padding: 14px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease;
+      text-align: left;
+    }
+
+    .suggestion-card:hover {
+      background: #ffffff;
+      border-color: var(--cobalt);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    }
+
+    .suggestion-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--cobalt);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .suggestion-text {
+      font-size: 0.88rem;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* Mensajes de Conversación */
+    .message-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 100%;
+    }
+
+    .message-role {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+    }
+
+    .message-user {
+      align-self: flex-end;
+      max-width: 88%;
+    }
+
+    .message-user .message-role {
+      text-align: right;
+    }
+
+    .message-user .message-content {
+      background: #f1f5f9;
+      color: var(--ink);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .message-assistant {
+      align-self: flex-start;
+      width: 100%;
+    }
+
+    .message-assistant .message-content {
+      background: transparent;
+      color: var(--ink);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .message-notice {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      background: rgba(15, 23, 42, 0.04);
+      padding: 6px 10px;
+      border-radius: 3px;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
+    .sources-list {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .source-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--cobalt);
+      background: #ffffff;
+      border: 1px solid rgba(0, 53, 127, 0.2);
+      padding: 4px 8px;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .source-pill:hover {
+      background: rgba(0, 53, 127, 0.06);
+      border-color: var(--cobalt);
+      text-decoration: underline;
+    }
+
+    /* Barra de Entrada Inferior */
+    .chat-input-bar {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border-subtle);
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .chat-input-wrapper {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      background: var(--paper-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      padding: 8px 12px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .chat-input-wrapper:focus-within {
+      border-color: var(--cobalt);
+      box-shadow: 0 0 0 1px var(--cobalt);
+      background: #ffffff;
+    }
+
+    .chat-textarea {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      line-height: 1.4;
+      resize: none;
+      min-height: 24px;
+      max-height: 140px;
+      color: var(--ink);
+    }
+
+    .chat-textarea::placeholder {
+      color: var(--ink-muted);
+    }
+
+    .btn-send {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: var(--cobalt);
+      border: none;
+      border-radius: 3px;
+      padding: 8px 16px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-send:hover {
+      background: var(--cobalt-light);
+    }
+
+    .btn-send:active {
+      transform: scale(0.97);
+    }
+
+    .btn-send:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    /* Panel Derecho: Lienzo de Gráficos y Evidencia */
+    .panel-evidence {
+      flex: 1;
+      min-width: 0;
+      max-width: 50%;
+      background: var(--paper-subtle);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 20px;
+      gap: 16px;
+    }
+
+    .evidence-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 10px 14px;
+    }
+
+    .chart-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 5px 9px;
+      border-radius: 3px;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: var(--cobalt);
+      color: var(--cobalt);
+    }
+
+    .ctrl-btn.active {
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .btn-open-lab {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--cobalt);
+      background: rgba(0, 53, 127, 0.05);
+      border: 1px solid rgba(0, 53, 127, 0.2);
+      padding: 6px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-open-lab:hover {
+      background: var(--cobalt);
+      color: #ffffff;
+      border-color: var(--cobalt);
+    }
+
+    .evidence-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .evidence-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 10px;
+    }
+
+    .evidence-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cobalt-dark);
+    }
+
+    .evidence-meta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+    }
+
+    .chart-stage {
+      position: relative;
+      height: 380px;
+      width: 100%;
+    }
+
+    /* Tabla de Datos de las 10 Comunas */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 10px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+    }
+
+    .evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      text-align: left;
+    }
+
+    .evidence-table th {
+      background: #f1f5f9;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--ink-secondary);
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    .evidence-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--ink);
+    }
+
+    .evidence-table tr:hover td {
+      background: rgba(0, 53, 127, 0.02);
+    }
+
+    .evidence-table .td-num {
+      font-family: var(--font-mono);
+      text-align: right;
+    }
+
+    /* Modal Configuración OmniRoute */
+    .cfg-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .cfg-modal-backdrop.open {
+      display: flex;
+    }
+
+    .cfg-modal {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      width: 100%;
+      max-width: 520px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.15);
+    }
+
+    .cfg-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cobalt);
+    }
+
+    .cfg-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cfg-label {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      text-transform: uppercase;
+    }
+
+    .cfg-input {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      padding: 8px 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: 3px;
+      color: var(--ink);
+    }
+
+    .cfg-input:focus {
+      outline: none;
+      border-color: var(--cobalt);
+      box-shadow: 0 0 0 1px var(--cobalt);
+    }
+
+    .cfg-desc {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .cfg-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-secondary {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      padding: 6px 12px;
+      border-radius: 3px;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--ink-secondary);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 3px;
+      border: 1px solid var(--cobalt);
+      background: var(--cobalt);
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    /* Indicador de Estado Vacío en Panel Derecho */
+    .empty-evidence {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--ink-muted);
+    }
+
+    .empty-evidence-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--ink-secondary);
+      margin-bottom: 8px;
+    }
+
+    .empty-evidence-desc {
+      max-width: 360px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    /* Responsividad Tablet y Móvil */
+    @media (max-width: 960px) {
+      .consultor-body {
+        flex-direction: column;
+      }
+
+      .panel-chat,
+      .panel-evidence {
+        max-width: 100%;
+        flex: 1 1 50%;
+        height: auto;
+        min-height: 0;
+      }
+
+      .panel-chat {
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="consultor-layout">
+    <!-- Cabecera Global Unificada (56px) -->
+    <header class="brand-header" id="brandHeader">
+      <div class="brand-header-inner">
+        <div class="brand-left">
+          <span class="brand-dot"></span>
+          <a href="portal.html" class="brand-author-name" title="Volver a la Portada">Álvaro Contreras Barrios</a>
+          <span class="brand-divider">|</span>
+          <span class="brand-module-title">Consultor de Datos</span>
+        </div>
+
+        <div class="brand-right">
+          <nav class="brand-nav-pills" aria-label="Navegación principal">
+            <a href="portal.html" class="brand-pill">Portada</a>
+            <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
+            <a href="index.html" class="brand-pill">Datos de Aysén</a>
+            <a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>
+            <a href="consultor.html" class="brand-pill active" aria-current="page">Consultor de Datos</a>
+            <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer"
+              class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
+              <span>LinkedIn</span>
+              <span class="pill-arrow">↗</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cuerpo Dividido 50% - 50% -->
+    <div class="consultor-body">
+      <!-- Panel Izquierdo: Conversación estilo Gemini / Claude Artifacts -->
+      <section class="panel-chat" aria-label="Conversación con Consultor Territorial">
+        <div class="chat-header">
+          <div>
+            <h1 class="chat-header-title">Consultor Territorial de Aysén</h1>
+            <p class="chat-header-sub">Motor OmniRoute · 28 Fuentes Oficiales · Mundo Cerrado Estricto</p>
+          </div>
+          <button type="button" class="btn-header-cfg" id="btnOpenCfg" title="Configurar conexión del motor OmniRoute">
+            Configurar conexión OmniRoute
+          </button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <!-- Sugerencias Iniciales Listas para Hacer Clic -->
+          <div class="suggestions-container" id="suggestionsBlock">
+            <h2 class="suggestions-heading">Consultas Territoriales Verificadas</h2>
+            <p class="suggestions-kicker">
+              Seleccione una consulta para analizar los indicadores oficiales de la Región de Aysén con base en
+              window.AYSEN_HUBS_DATA y las 28 fuentes auditadas de la plataforma:
+            </p>
+            <div class="suggestions-grid">
+              <button type="button" class="suggestion-card" data-query="¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?">
+                <span class="suggestion-num">Consulta 01 · Finanzas Municipales (SINIM)</span>
+                <span class="suggestion-text">¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?</span>
+              </button>
+              <button type="button" class="suggestion-card" data-query="Muéstrame la evolución histórica de las visitas a Parques Nacionales y noches de alojamiento turístico entre 2015 y 2026">
+                <span class="suggestion-num">Consulta 02 · Turismo y Áreas Protegidas (CONAF / INE)</span>
+                <span class="suggestion-text">Muéstrame la evolución histórica de las visitas a Parques Nacionales y noches de alojamiento turístico entre 2015 y 2026</span>
+              </button>
+              <button type="button" class="suggestion-card" data-query="Cruza el porcentaje de hogares que calefaccionan con leña y los días con contaminación crítica MP2.5">
+                <span class="suggestion-num">Consulta 03 · Matriz Térmica y Calidad del Aire (CNE / MMA)</span>
+                <span class="suggestion-text">Cruza el porcentaje de hogares que calefaccionan con leña y los días con contaminación crítica MP2.5</span>
+              </button>
+              <button type="button" class="suggestion-card" data-query="¿Qué comunas concentran la biomasa de salmonicultura y cómo contrasta con la inversión pública regional?">
+                <span class="suggestion-num">Consulta 04 · Maritorio e Inversión Pública (SERNAPESCA / GORE)</span>
+                <span class="suggestion-text">¿Qué comunas concentran la biomasa de salmonicultura y cómo contrasta con la inversión pública regional?</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-bar">
+          <div class="chat-input-wrapper">
+            <textarea class="chat-textarea" id="chatInput" rows="1"
+              placeholder="Escriba su consulta sobre las 10 comunas, indicadores o fuentes de Aysén..."
+              aria-label="Escriba su consulta sobre los datos territoriales de Aysén"></textarea>
+            <button type="button" class="btn-send" id="btnSend">Consultar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel Derecho: Lienzo de Gráficos y Evidencia en Vivo -->
+      <section class="panel-evidence" aria-label="Lienzo de Evidencia Territorial">
+        <div class="evidence-topbar">
+          <div class="chart-controls">
+            <button type="button" class="ctrl-btn active" id="btnChartBar" data-type="bar">Barras</button>
+            <button type="button" class="ctrl-btn" id="btnChartLine" data-type="line">Línea</button>
+            <button type="button" class="ctrl-btn" id="btnChartScatter" data-type="scatter">Dispersión</button>
+            <button type="button" class="ctrl-btn" id="btnToggleCoyhaique" title="Excluir Coyhaique para evitar distorsión de escala por capital regional">Sin Coyhaique</button>
+            <button type="button" class="ctrl-btn" id="btnToggleTable">Tabla de Comunas</button>
+          </div>
+          <a href="#" class="btn-open-lab" id="btnOpenInLab" target="_blank">
+            Abrir este gráfico en el Laboratorio Sistémico →
+          </a>
+        </div>
+
+        <div class="evidence-card" id="evidenceCard">
+          <div class="evidence-title-row">
+            <h2 class="evidence-title" id="evidenceTitle">Panel de Evidencia y Visualización</h2>
+            <span class="evidence-meta" id="evidenceMeta">Corte 17-Oct-2026 · Formato es-CL</span>
+          </div>
+
+          <div class="chart-stage" id="chartStageContainer">
+            <canvas id="consultorCanvas" aria-label="Gráfico interactivo de indicadores territoriales"></canvas>
+          </div>
+
+          <!-- Tabla de Datos Exactos de las 10 Comunas -->
+          <div class="table-container" id="evidenceTableContainer" style="display: none;">
+            <table class="evidence-table">
+              <thead>
+                <tr>
+                  <th id="thEntity">Comuna</th>
+                  <th class="td-num" id="thVarX">Variable X</th>
+                  <th class="td-num" id="thVarY" style="display: none;">Variable Y</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceTableBody">
+                <!-- Se puebla dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal de Configuración de OmniRoute -->
+  <div class="cfg-modal-backdrop" id="cfgModal" role="dialog" aria-modal="true" aria-labelledby="cfgModalTitle">
+    <div class="cfg-modal">
+      <h3 class="cfg-title" id="cfgModalTitle">Configurar Conexión OmniRoute</h3>
+      <p class="cfg-desc">
+        OmniRoute provee un endpoint compatible con OpenAI (/v1/chat/completions) que orquesta múltiples modelos con compresión RTK y cascada de auto-fallback.
+      </p>
+
+      <div class="cfg-field">
+        <label class="cfg-label" for="cfgEndpoint">Endpoint URL</label>
+        <input type="url" class="cfg-input" id="cfgEndpoint" placeholder="http://localhost:20128/v1">
+        <span class="cfg-desc">Por defecto http://localhost:20128/v1 (iniciado con scripts/start_omniroute.sh) o endpoint remoto.</span>
+      </div>
+
+      <div class="cfg-field">
+        <label class="cfg-label" for="cfgApiKey">API Key</label>
+        <input type="password" class="cfg-input" id="cfgApiKey" placeholder="sk-omniroute-aysen-local">
+        <span class="cfg-desc">Token de autorización configurado en .env.omniroute.</span>
+      </div>
+
+      <div class="cfg-field">
+        <label class="cfg-label" for="cfgModel">Estrategia / Modelo</label>
+        <select class="cfg-input" id="cfgModel">
+          <option value="auto">auto (Balanceado con persistencia de último buen proveedor)</option>
+          <option value="auto/cheap">auto/cheap (Prioridad al menor costo por token)</option>
+          <option value="auto/fast">auto/fast (Prioridad a menor latencia de respuesta)</option>
+          <option value="auto/coding">auto/coding (Prioridad a síntesis de datos y precisión)</option>
+        </select>
+      </div>
+
+      <div class="cfg-actions">
+        <button type="button" class="btn-secondary" id="btnCancelCfg">Cerrar</button>
+        <button type="button" class="btn-primary" id="btnSaveCfg">Guardar Conexión</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script de Interacción y Renderizado -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Estado del Consultor
+      let activeChartInstance = null;
+      let currentChartState = {
+        render: true,
+        type: 'bar',
+        varX: 'dependencia_fcm_pct',
+        varY: 'ingresos_propios_pct',
+        title: 'Dependencia del Fondo Común Municipal vs Ingresos Propios',
+        excludeCoyhaique: false,
+        summary: ''
+      };
+
+      // Elementos del DOM
+      const chatMessages = document.getElementById('chatMessages');
+      const chatInput = document.getElementById('chatInput');
+      const btnSend = document.getElementById('btnSend');
+      const suggestionsBlock = document.getElementById('suggestionsBlock');
+
+      const btnChartBar = document.getElementById('btnChartBar');
+      const btnChartLine = document.getElementById('btnChartLine');
+      const btnChartScatter = document.getElementById('btnChartScatter');
+      const btnToggleCoyhaique = document.getElementById('btnToggleCoyhaique');
+      const btnToggleTable = document.getElementById('btnToggleTable');
+      const btnOpenInLab = document.getElementById('btnOpenInLab');
+
+      const evidenceTitle = document.getElementById('evidenceTitle');
+      const evidenceTableContainer = document.getElementById('evidenceTableContainer');
+      const evidenceTableBody = document.getElementById('evidenceTableBody');
+      const thVarX = document.getElementById('thVarX');
+      const thVarY = document.getElementById('thVarY');
+      const canvasEl = document.getElementById('consultorCanvas');
+
+      // Modal Configuración
+      const btnOpenCfg = document.getElementById('btnOpenCfg');
+      const cfgModal = document.getElementById('cfgModal');
+      const btnCancelCfg = document.getElementById('btnCancelCfg');
+      const btnSaveCfg = document.getElementById('btnSaveCfg');
+      const cfgEndpoint = document.getElementById('cfgEndpoint');
+      const cfgApiKey = document.getElementById('cfgApiKey');
+      const cfgModel = document.getElementById('cfgModel');
+
+      // Inicializar OmniRouteClient
+      if (window.OmniRouteClient) {
+        window.OmniRouteClient.init(window.AYSEN_HUBS_DATA);
+      }
+
+      // Auto-expansión del textarea
+      chatInput.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 140) + 'px';
+      });
+
+      // Envío con tecla Enter (Shift+Enter para salto de línea)
+      chatInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          submitQuery();
+        }
+      });
+
+      btnSend.addEventListener('click', submitQuery);
+
+      // Clics en sugerencias
+      document.querySelectorAll('.suggestion-card').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const q = this.getAttribute('data-query');
+          if (q) {
+            chatInput.value = q;
+            submitQuery();
+          }
+        });
+      });
+
+      // Controles de Gráfico
+      function updateTypeButtons(selectedType) {
+        [btnChartBar, btnChartLine, btnChartScatter].forEach(b => {
+          b.classList.toggle('active', b.getAttribute('data-type') === selectedType);
+        });
+      }
+
+      btnChartBar.addEventListener('click', () => {
+        currentChartState.type = 'bar';
+        updateTypeButtons('bar');
+        renderActiveChart();
+        updateLabLink();
+      });
+
+      btnChartLine.addEventListener('click', () => {
+        currentChartState.type = 'line';
+        updateTypeButtons('line');
+        renderActiveChart();
+        updateLabLink();
+      });
+
+      btnChartScatter.addEventListener('click', () => {
+        currentChartState.type = 'scatter';
+        updateTypeButtons('scatter');
+        renderActiveChart();
+        updateLabLink();
+      });
+
+      btnToggleCoyhaique.addEventListener('click', () => {
+        currentChartState.excludeCoyhaique = !currentChartState.excludeCoyhaique;
+        btnToggleCoyhaique.classList.toggle('active', currentChartState.excludeCoyhaique);
+        renderActiveChart();
+        updateLabLink();
+      });
+
+      btnToggleTable.addEventListener('click', () => {
+        const isHidden = evidenceTableContainer.style.display === 'none';
+        evidenceTableContainer.style.display = isHidden ? 'block' : 'none';
+        btnToggleTable.classList.toggle('active', isHidden);
+      });
+
+      // Enlace dinámico con laboratorio.html
+      function updateLabLink() {
+        if (!btnOpenInLab) return;
+        const url = new URL('laboratorio.html', window.location.href);
+        if (currentChartState.varX) url.searchParams.set('varX', currentChartState.varX);
+        if (currentChartState.varY) url.searchParams.set('varY', currentChartState.varY);
+        if (currentChartState.type) url.searchParams.set('type', currentChartState.type);
+        if (currentChartState.excludeCoyhaique) url.searchParams.set('excludeCoyhaique', 'true');
+        if (currentChartState.title) url.searchParams.set('title', currentChartState.title);
+        if (currentChartState.summary) url.searchParams.set('summary', currentChartState.summary);
+        btnOpenInLab.href = url.toString();
+      }
+
+      // Modal Configuración
+      btnOpenCfg.addEventListener('click', () => {
+        const cfg = window.OmniRouteClient ? window.OmniRouteClient.getConfig() : {};
+        cfgEndpoint.value = cfg.endpointUrl || '';
+        cfgApiKey.value = cfg.apiKey || '';
+        cfgModel.value = cfg.model || 'auto';
+        cfgModal.classList.add('open');
+      });
+
+      btnCancelCfg.addEventListener('click', () => {
+        cfgModal.classList.remove('open');
+      });
+
+      btnSaveCfg.addEventListener('click', () => {
+        if (window.OmniRouteClient) {
+          window.OmniRouteClient.setConfig({
+            endpointUrl: cfgEndpoint.value,
+            apiKey: cfgApiKey.value,
+            model: cfgModel.value
+          });
+        }
+        cfgModal.classList.remove('open');
+      });
+
+      // Función Principal de Envío de Consulta
+      async function submitQuery() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // Ocultar sugerencias iniciales al comenzar la conversación
+        if (suggestionsBlock) suggestionsBlock.style.display = 'none';
+
+        // Agregar mensaje del usuario
+        appendMessage('user', text);
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+        btnSend.disabled = true;
+
+        // Indicador de carga
+        const loadingId = appendLoadingMessage();
+
+        try {
+          const res = await window.OmniRouteClient.query(text);
+          removeLoadingMessage(loadingId);
+
+          appendAssistantMessage(res);
+
+          // Si la respuesta indica renderizar gráfico
+          if (res.chart && res.chart.render) {
+            currentChartState.varX = res.chart.varX;
+            currentChartState.varY = res.chart.varY;
+            currentChartState.type = res.chart.type || 'bar';
+            currentChartState.title = res.chart.title || 'Evidencia de Indicadores Territoriales';
+            currentChartState.excludeCoyhaique = Boolean(res.chart.excludeCoyhaique);
+            currentChartState.summary = res.reply || '';
+
+            evidenceTitle.textContent = currentChartState.title;
+            updateTypeButtons(currentChartState.type);
+            btnToggleCoyhaique.classList.toggle('active', currentChartState.excludeCoyhaique);
+
+            renderActiveChart();
+            updateLabLink();
+          }
+        } catch (err) {
+          removeLoadingMessage(loadingId);
+          appendMessage('assistant', 'Error procesando la consulta: ' + (err.message || String(err)));
+        } finally {
+          btnSend.disabled = false;
+        }
+      }
+
+      function appendMessage(role, text) {
+        const row = document.createElement('div');
+        row.className = `message-row message-${role}`;
+
+        const roleLbl = document.createElement('div');
+        roleLbl.className = 'message-role';
+        roleLbl.textContent = role === 'user' ? 'Consulta' : 'Consultor Territorial';
+
+        const content = document.createElement('div');
+        content.className = 'message-content';
+        content.textContent = text;
+
+        row.appendChild(roleLbl);
+        row.appendChild(content);
+        chatMessages.appendChild(row);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return row;
+      }
+
+      function appendLoadingMessage() {
+        const row = document.createElement('div');
+        row.className = 'message-row message-assistant loading-row';
+        row.id = 'msgLoading';
+
+        const roleLbl = document.createElement('div');
+        roleLbl.className = 'message-role';
+        roleLbl.textContent = 'Consultor Territorial';
+
+        const content = document.createElement('div');
+        content.className = 'message-content';
+        content.textContent = 'Analizando catálogo de fuentes y calculando vectores...';
+
+        row.appendChild(roleLbl);
+        row.appendChild(content);
+        chatMessages.appendChild(row);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return 'msgLoading';
+      }
+
+      function removeLoadingMessage(id) {
+        const el = document.getElementById(id);
+        if (el) el.remove();
+      }
+
+      function appendAssistantMessage(data) {
+        const row = document.createElement('div');
+        row.className = 'message-row message-assistant';
+
+        const roleLbl = document.createElement('div');
+        roleLbl.className = 'message-role';
+        roleLbl.textContent = 'Consultor Territorial';
+        row.appendChild(roleLbl);
+
+        const content = document.createElement('div');
+        content.className = 'message-content';
+        content.textContent = data.reply || '';
+        row.appendChild(content);
+
+        if (data.offlineFallback) {
+          const notice = document.createElement('div');
+          notice.className = 'message-notice';
+          notice.textContent = 'Resuelto con índice local verificado de Aysén Sistémico (OmniRoute en localhost:20128 no detectado).';
+          row.appendChild(notice);
+        }
+
+        // Citas a fuentes oficiales
+        if (Array.isArray(data.sources) && data.sources.length > 0) {
+          const sourcesContainer = document.createElement('div');
+          sourcesContainer.className = 'sources-list';
+          data.sources.forEach(s => {
+            const pill = document.createElement('a');
+            pill.className = 'source-pill';
+            pill.href = s.url || '#';
+            pill.target = '_blank';
+            pill.rel = 'noopener noreferrer';
+            pill.textContent = `[${s.institucion}: ${s.indicador} ↗]`;
+            sourcesContainer.appendChild(pill);
+          });
+          row.appendChild(sourcesContainer);
+        }
+
+        chatMessages.appendChild(row);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      // Metadatos de variables
+      function getVarMeta(key) {
+        if (!key) return { key: '', label: '', unit: '' };
+        if (window.OmniRouteClient && typeof window.OmniRouteClient.getIndex === 'function') {
+          const idx = window.OmniRouteClient.getIndex();
+          const found = (idx.variables || []).find(v => v.key === key);
+          if (found) return found;
+        }
+        let label = key.replace(/_/g, ' ');
+        let unit = '';
+        if (key.endsWith('_pct')) { unit = '%'; label = label.replace(' pct', ''); }
+        else if (key.endsWith('_mmusd')) { unit = 'MM USD'; label = label.replace(' mmusd', ''); }
+        else if (key.endsWith('_mclp')) { unit = 'M$ CLP'; label = label.replace(' mclp', ''); }
+        else if (key.endsWith('_clp')) { unit = '$ CLP'; label = label.replace(' clp', ''); }
+        else if (key.endsWith('_ton')) { unit = 'ton'; label = label.replace(' ton', ''); }
+        else if (key.endsWith('_km2')) { unit = 'km²'; label = label.replace(' km2', ''); }
+        else if (key.endsWith('_km')) { unit = 'km'; label = label.replace(' km', ''); }
+        else if (key.endsWith('_ha')) { unit = 'ha'; label = label.replace(' ha', ''); }
+        else if (key.endsWith('_mw')) { unit = 'MW'; label = label.replace(' mw', ''); }
+        return { key, label, unit };
+      }
+
+      // Renderizado del Gráfico con Chart.js
+      function renderActiveChart() {
+        if (!window.Chart || !canvasEl) return;
+
+        if (activeChartInstance) {
+          activeChartInstance.destroy();
+          activeChartInstance = null;
+        }
+
+        const dataLake = window.AYSEN_HUBS_DATA || {};
+        const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
+        const filteredComunas = comunas.filter(c => {
+          if (currentChartState.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101)) {
+            return false;
+          }
+          return true;
+        });
+
+        const vX = currentChartState.varX;
+        const vY = currentChartState.varY;
+        const type = currentChartState.type;
+
+        // Caso especial: Serie Temporal (Línea con años 2015-2026 extraída de window.AYSEN_HUBS_DATA)
+        if (type === 'line' && (vX === 'visitantes_snaspe' || vX === 'visitas_snaspe' || vX === 'pernoctaciones_anuales_emat_hist')) {
+          const turismoPreset = (dataLake.hubsGallery?.turismo?.presets || []).find(p => p.config?.customChartSpec);
+          const spec = turismoPreset?.config?.customChartSpec;
+          const labels = spec?.labels || ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+          const dsEmat = spec?.datasets?.[0]?.data || [312000, 335000, 368000, 395000, 412000, 178000, 224000, 345000, 398000, 432000, 458000, 472000];
+          const dsSnaspe = spec?.datasets?.[1]?.data || [178500, 192300, 215400, 241200, 239800, 46200, 89400, 198000, 235600, 265400, 276000, 285500];
+
+          activeChartInstance = new Chart(canvasEl, {
+            type: 'line',
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: 'Visitas SNASPE (CONAF)',
+                  data: dsSnaspe,
+                  borderColor: '#00357f',
+                  backgroundColor: 'rgba(0, 53, 127, 0.08)',
+                  borderWidth: 2.5,
+                  pointRadius: 4,
+                  pointBackgroundColor: '#00357f',
+                  tension: 0.3,
+                  fill: true
+                },
+                {
+                  label: 'Pernoctaciones (INE EMAT)',
+                  data: dsEmat,
+                  borderColor: '#0059c5',
+                  backgroundColor: 'transparent',
+                  borderWidth: 2,
+                  pointRadius: 4,
+                  pointBackgroundColor: '#0059c5',
+                  borderDash: [5, 5],
+                  tension: 0.3
+                }
+              ]
+            },
+            options: getChartOptions('Años (2015–2026)', 'Visitantes / Pernoctaciones Anuales')
+          });
+
+          populateTableSeries(labels, dsSnaspe, dsEmat);
+          return;
+        }
+
+        // Gráfico de Dispersión (Scatter Bivariado)
+        if (type === 'scatter') {
+          const companionVar = vY || 'poblacion_censo_2024';
+          const metaX = getVarMeta(vX);
+          const metaY = getVarMeta(companionVar);
+          const scatterPoints = filteredComunas.map(c => ({
+            x: typeof c[vX] === 'number' ? c[vX] : 0,
+            y: typeof c[companionVar] === 'number' ? c[companionVar] : 0,
+            comuna: c.nombre || c.nombre_comuna
+          }));
+
+          const xTitle = metaX.unit ? `${metaX.label} (${metaX.unit})` : metaX.label;
+          const yTitle = metaY.unit ? `${metaY.label} (${metaY.unit})` : metaY.label;
+
+          activeChartInstance = new Chart(canvasEl, {
+            type: 'scatter',
+            data: {
+              datasets: [{
+                label: `${metaX.label} vs ${metaY.label}`,
+                data: scatterPoints,
+                backgroundColor: '#00357f',
+                borderColor: '#002255',
+                borderWidth: 1.5,
+                pointRadius: 6,
+                pointHoverRadius: 8
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  display: true,
+                  position: 'top',
+                  labels: { font: { family: 'IBM Plex Sans', size: 11, weight: 500 }, boxWidth: 12, color: '#0f172a' }
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function (ctx) {
+                      const p = ctx.raw;
+                      return `${p.comuna}: X=${p.x.toLocaleString('es-CL')} ${metaX.unit}, Y=${p.y.toLocaleString('es-CL')} ${metaY.unit}`;
+                    }
+                  }
+                }
+              },
+              scales: {
+                x: {
+                  title: { display: true, text: xTitle, font: { family: 'IBM Plex Mono', size: 11, weight: 600 }, color: '#1c1b1b' },
+                  ticks: {
+                    font: { family: 'IBM Plex Mono', size: 10 },
+                    color: '#475569',
+                    callback: function (val) { return val.toLocaleString('es-CL'); }
+                  }
+                },
+                y: {
+                  title: { display: true, text: yTitle, font: { family: 'IBM Plex Mono', size: 11, weight: 600 }, color: '#1c1b1b' },
+                  grid: { color: 'rgba(15, 23, 42, 0.06)' },
+                  ticks: {
+                    font: { family: 'IBM Plex Mono', size: 10 },
+                    color: '#475569',
+                    callback: function (val) { return val.toLocaleString('es-CL'); }
+                  }
+                }
+              }
+            }
+          });
+
+          populateTableComunas(filteredComunas, vX, companionVar);
+          return;
+        }
+
+        // Gráficos Monovariados y Bivariados por Comunas (Barras o Línea)
+        const metaX = getVarMeta(vX);
+        const metaY = vY ? getVarMeta(vY) : null;
+        const labels = filteredComunas.map(c => c.nombre || c.nombre_comuna);
+        const dataX = filteredComunas.map(c => (typeof c[vX] === 'number' ? c[vX] : 0));
+        const isLine = type === 'line';
+
+        const datasets = [
+          {
+            label: metaX.unit ? `${metaX.label} (${metaX.unit})` : metaX.label,
+            data: dataX,
+            backgroundColor: isLine ? 'rgba(0, 53, 127, 0.12)' : 'rgba(0, 53, 127, 0.85)',
+            borderColor: '#00357f',
+            borderWidth: isLine ? 2.5 : 1,
+            borderRadius: isLine ? 0 : 3,
+            tension: isLine ? 0.3 : 0,
+            fill: isLine,
+            pointRadius: isLine ? 5 : 0,
+            pointBackgroundColor: '#00357f'
+          }
+        ];
+
+        if (vY && typeof filteredComunas[0]?.[vY] === 'number') {
+          const dataY = filteredComunas.map(c => (typeof c[vY] === 'number' ? c[vY] : 0));
+          datasets.push({
+            label: metaY.unit ? `${metaY.label} (${metaY.unit})` : metaY.label,
+            data: dataY,
+            backgroundColor: isLine ? 'transparent' : 'rgba(0, 89, 197, 0.65)',
+            borderColor: '#0059c5',
+            borderWidth: isLine ? 2 : 1,
+            borderRadius: isLine ? 0 : 3,
+            tension: isLine ? 0.3 : 0,
+            borderDash: isLine ? [5, 5] : undefined,
+            pointRadius: isLine ? 5 : 0,
+            pointBackgroundColor: '#0059c5'
+          });
+        }
+
+        const yAxisTitle = metaX.unit
+          ? (metaY && metaY.unit !== metaX.unit ? `Valores (${metaX.unit} / ${metaY.unit})` : `Unidad: ${metaX.unit}`)
+          : 'Valor Numérico';
+
+        activeChartInstance = new Chart(canvasEl, {
+          type: isLine ? 'line' : 'bar',
+          data: {
+            labels: labels,
+            datasets: datasets
+          },
+          options: getChartOptions('10 Comunas de Aysén', yAxisTitle)
+        });
+
+        populateTableComunas(filteredComunas, vX, vY);
+      }
+
+      function getChartOptions(xTitle, yTitle) {
+        return {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                font: { family: 'IBM Plex Sans', size: 11, weight: 500 },
+                boxWidth: 12,
+                color: '#0f172a'
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (ctx) {
+                  const val = ctx.raw !== undefined ? ctx.raw.toLocaleString('es-CL') : '';
+                  return `${ctx.dataset.label}: ${val}`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: {
+                display: Boolean(xTitle),
+                text: xTitle || '',
+                font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
+                color: '#1c1b1b'
+              },
+              grid: { display: false },
+              ticks: { font: { family: 'IBM Plex Mono', size: 10 }, color: '#475569' }
+            },
+            y: {
+              title: {
+                display: Boolean(yTitle),
+                text: yTitle || '',
+                font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
+                color: '#1c1b1b'
+              },
+              grid: { color: 'rgba(15, 23, 42, 0.06)' },
+              ticks: {
+                font: { family: 'IBM Plex Mono', size: 10 },
+                color: '#475569',
+                callback: function (val) {
+                  return val.toLocaleString('es-CL');
+                }
+              }
+            }
+          }
+        };
+      }
+
+      function populateTableComunas(comunas, varX, varY) {
+        if (!evidenceTableBody) return;
+        const thEntity = document.getElementById('thEntity');
+        if (thEntity) thEntity.textContent = 'Comuna';
+
+        const metaX = getVarMeta(varX);
+        thVarX.textContent = metaX.unit ? `${metaX.label} (${metaX.unit})` : metaX.label;
+
+        if (varY) {
+          const metaY = getVarMeta(varY);
+          thVarY.textContent = metaY.unit ? `${metaY.label} (${metaY.unit})` : metaY.label;
+          thVarY.style.display = 'table-cell';
+        } else {
+          thVarY.style.display = 'none';
+        }
+
+        evidenceTableBody.innerHTML = '';
+        comunas.forEach(c => {
+          const tr = document.createElement('tr');
+          const valX = (typeof c[varX] === 'number') ? c[varX].toLocaleString('es-CL') : '0';
+          let rowHtml = `<td>${c.nombre || c.nombre_comuna}</td><td class="td-num">${valX}</td>`;
+          if (varY) {
+            const valY = (typeof c[varY] === 'number') ? c[varY].toLocaleString('es-CL') : '0';
+            rowHtml += `<td class="td-num">${valY}</td>`;
+          }
+          tr.innerHTML = rowHtml;
+          evidenceTableBody.appendChild(tr);
+        });
+      }
+
+      function populateTableSeries(years, seriesA, seriesB) {
+        if (!evidenceTableBody) return;
+        const thEntity = document.getElementById('thEntity');
+        if (thEntity) thEntity.textContent = 'Año / Periodo';
+
+        thVarX.textContent = 'Visitas SNASPE (CONAF)';
+        thVarY.textContent = 'Pernoctaciones (INE EMAT)';
+        thVarY.style.display = 'table-cell';
+
+        evidenceTableBody.innerHTML = '';
+        years.forEach((yr, idx) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>Año ${yr}</td><td class="td-num">${(seriesA[idx] || 0).toLocaleString('es-CL')}</td><td class="td-num">${(seriesB[idx] || 0).toLocaleString('es-CL')}</td>`;
+          evidenceTableBody.appendChild(tr);
+        });
+      }
+
+      // Render inicial al cargar la página
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof montarCabecera === 'function') {
+          montarCabecera({ tituloModulo: 'Consultor de Datos', activo: 'consultor.html' });
+        }
+        if (evidenceTitle) evidenceTitle.textContent = currentChartState.title;
+        renderActiveChart();
+        updateLabLink();
+      });
+
+    })();
+  </script>
+</body>
+
+</html>

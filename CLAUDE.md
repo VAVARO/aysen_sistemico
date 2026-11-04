@@ -14,7 +14,7 @@
 - Validate Data Lake: `python scripts/validate_data_lake.py --all`
 - Run Integrity Suite (37 tests): `python scripts/test_fuentes_integridad.py`
 - Run E2E Requirements (58 tests): `python tests/test_e2e_requirements.py`
-- Run Pytest Suite (436 tests): `python -m pytest tests/`
+- Run Pytest Suite (446 tests): `python -m pytest tests/`
 - Check Working Tree: `git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'`
 
 ## Architecture & Modules (Cuaderno Editorial y Cartográfico Austral)

@@ -52,7 +52,7 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
 - **Suite Mobile Responsive (7 tests)**: `python tests/test_mobile_responsive_e2e.py`
 - **Suite Red Anti-Slop (8 tests)**: `python tests/test_no_slop_hub_network.py`
 - **Checklist 10 Hubs y 39 Nodos**: `python tests/verify_10_hubs_checklist.py`
-- **Suite Pytest Completa (436 tests)**: `python -m pytest tests/`
+- **Suite Pytest Completa (446 tests)**: `python -m pytest tests/`
 - **Comprobación de Higiene del Árbol de Trabajo**: `git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'`
 
 ## Mapa de Datos Consolidados (Data Lake: 10 Hubs, 39 Nodos Satélite)

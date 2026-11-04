@@ -46,6 +46,8 @@ if os.path.exists(path):
 files_to_clean = [
     'index.html',
     'laboratorio.html',
+    'consultor.html',
+    'js/omniroute_client.js',
     'scripts/build_aysen_hubs_bundle.cjs',
     'data/aysen_hubs_data.js'
 ]

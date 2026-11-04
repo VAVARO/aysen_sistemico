@@ -232,9 +232,12 @@
 
 /* Breakpoints responsivos unificados para la cabecera */
 @media (min-width: 821px) and (max-width: 1150px) {
+  .brand-nav-pills {
+    gap: 0.2rem;
+  }
   .brand-pill {
-    padding: 0.25rem 0.45rem;
-    font-size: 0.78rem;
+    padding: 0.22rem 0.38rem;
+    font-size: 0.70rem;
   }
 }
 

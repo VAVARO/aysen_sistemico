@@ -32,8 +32,9 @@
   <!-- Datos Oficiales: Catálogo Regional de Aysén y Preguntas Sistémicas (30) -->
   <script src="data/aysen_hubs_data.js"></script>
   <script src="data/preguntas_metacognitivas.js"></script>
-  <!-- Motor Semántico NL2Chart -->
+  <!-- Motor Semántico NL2Chart y Motor de Inteligencia OmniRoute -->
   <script src="js/nl2chart_engine.js"></script>
+  <script src="js/omniroute_client.js"></script>
 
   <link rel="stylesheet" href="js/cabecera_global.css">
   <style>
@@ -13401,6 +13402,11 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
         const varXParam = params.get('varX');
         const varYParam = params.get('varY');
+        const typeParam = params.get('type');
+        const excludeParam = params.get('excludeCoyhaique');
+        const titleParam = params.get('title');
+        const summaryParam = params.get('summary');
+
         if (varXParam) {
           clearAll();
           const opts = {
@@ -13409,9 +13415,28 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           };
           if (varYParam) {
             opts.varY = varYParam;
-            opts.chartType = 'scatter';
+            opts.chartType = typeParam || 'scatter';
+          } else if (typeParam) {
+            opts.chartType = typeParam;
           }
-          createWidget('chart', opts);
+          if (excludeParam === 'true' || excludeParam === '1') {
+            opts.excludeOutlierCoyhaique = true;
+          }
+          if (titleParam) {
+            opts.title = titleParam;
+          }
+          const w = createWidget('chart', opts);
+          if (summaryParam) {
+            const r = createReflectionCard({
+              linkedWidgetId: w ? w.id : null,
+              title: titleParam ? ('Síntesis: ' + titleParam) : 'Síntesis del Consultor de Datos',
+              promptText: summaryParam,
+              x: 740, y: 80, w: 460, h: 360
+            });
+            if (w && r) {
+              addConnection(w.id, r.id, 'bivariate');
+            }
+          }
           setTimeout(fitAndCenterCanvas, 100);
           return;
         }
