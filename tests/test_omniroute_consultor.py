@@ -89,10 +89,12 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertIn("¿Qué comunas concentran la biomasa de salmonicultura", html)
 
         # Controles y boton de Laboratorio
-        self.assertIn("btnChartBar", html)
-        self.assertIn("btnChartLine", html)
-        self.assertIn("btnChartScatter", html)
-        self.assertIn("btnToggleCoyhaique", html)
+        self.assertIn("btnViewChart", html)
+        self.assertIn("btnViewTable", html)
+        self.assertNotIn("btnToggleCoyhaique", html)
+        self.assertNotIn("btnChartBar", html)
+        self.assertNotIn("btnChartLine", html)
+        self.assertNotIn("btnChartScatter", html)
         self.assertIn("btnOpenInLab", html)
         self.assertIn("laboratorio.html", html)
 
@@ -355,6 +357,166 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertAlmostEqual(hosp_coyhaique["lat"], -45.5712, places=3)
         lon_hosp = hosp_coyhaique.get("lng", hosp_coyhaique.get("lon"))
         self.assertAlmostEqual(lon_hosp, -72.0685, places=3)
+
+    def test_15_distincion_region_vs_comuna_y_preguntas_estructurales(self):
+        """Verifica que preguntas regionales respondan a nivel de 10 comunas y solo menciones explicitas activen comunas individuales."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        // 1. Consulta estructural básica sobre la region
+        const rStruct = client.resolveClosedWorldDeterministic('¿cuántas comunas tiene Aysén?');
+        if (!rStruct.reply.includes('10 comunas')) {
+            console.error('Expected 10 comunas in reply, got:', rStruct.reply);
+            process.exit(1);
+        }
+        if (!rStruct.reply.includes('100.745') && !rStruct.reply.includes('100,745')) {
+            console.error('Expected 100.745 inhabitants in reply, got:', rStruct.reply);
+            process.exit(2);
+        }
+        if (rStruct.reply.includes('Ficha Territorial: Comuna de Aysén') || rStruct.reply.includes('cuenta con 23.170')) {
+            console.error('Should not return individual comuna profile for regional query, got:', rStruct.reply);
+            process.exit(3);
+        }
+        if (rStruct.chart.varX !== 'poblacion_censo_2024' || rStruct.chart.varY !== 'superficie_km2') {
+            console.error('Expected bivariate chart poblacion vs superficie, got:', rStruct.chart);
+            process.exit(4);
+        }
+
+        // 2. Variaciones estructurales
+        const structuralVariants = [
+            '¿cuáles son las comunas?',
+            '¿cuáles son las 10 comunas?',
+            'comunas de Aysén',
+            'división comunal',
+            '¿cuáles son las provincias de Aysén?'
+        ];
+        for (const q of structuralVariants) {
+            const res = client.resolveClosedWorldDeterministic(q);
+            if (!res.reply.includes('10 comunas') && !res.reply.includes('4 provincias')) {
+                console.error('Expected structural response for query:', q, 'got:', res.reply);
+                process.exit(5);
+            }
+        }
+
+        // 3. Población regional (Aysén región sin especificar comuna)
+        const rPobReg = client.resolveClosedWorldDeterministic('¿cuál es la población de Aysén?');
+        if (!rPobReg.reply.includes('100.745') && !rPobReg.reply.includes('100,745')) {
+            console.error('Expected regional population for Aysén query, got:', rPobReg.reply);
+            process.exit(6);
+        }
+
+        // 4. Población comunal explícita (Puerto Aysén / Comuna de Aysén)
+        const rPobPtoAysen = client.resolveClosedWorldDeterministic('¿cuál es la población de Puerto Aysén?');
+        if (!rPobPtoAysen.reply.includes('23.170')) {
+            console.error('Expected Puerto Aysén population (23.170), got:', rPobPtoAysen.reply);
+            process.exit(7);
+        }
+
+        const rPobComAysen = client.resolveClosedWorldDeterministic('¿cuál es la población de la comuna de Aysén?');
+        if (!rPobComAysen.reply.includes('23.170')) {
+            console.error('Expected Comuna de Aysén population (23.170), got:', rPobComAysen.reply);
+            process.exit(8);
+        }
+
+        // 5. Consulta explícita por comuna individual (perfil territorial)
+        const rComuna = client.resolveClosedWorldDeterministic('¿cómo está la comuna de Aysén?');
+        if (!rComuna.reply.includes('comuna de Aysén cuenta con') || !rComuna.reply.includes('23.170')) {
+            console.error('Expected individual comuna profile for comuna de Aysén, got:', rComuna.reply);
+            process.exit(9);
+        }
+
+        const rPtoAysen = client.resolveClosedWorldDeterministic('¿cómo está Puerto Aysén?');
+        if (!rPtoAysen.reply.includes('comuna de Aysén cuenta con') || !rPtoAysen.reply.includes('23.170')) {
+            console.error('Expected individual comuna profile for Puerto Aysén, got:', rPtoAysen.reply);
+            process.exit(10);
+        }
+
+        const rCisnes = client.resolveClosedWorldDeterministic('¿cómo está Cisnes?');
+        if (!rCisnes.reply.includes('comuna de Cisnes cuenta con') || !rCisnes.reply.includes('5.137')) {
+            console.error('Expected individual comuna profile for Cisnes, got:', rCisnes.reply);
+            process.exit(11);
+        }
+
+        console.log('STRUCTURAL_QUERY_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en distincion region vs comuna:\n{proc.stderr}")
+        self.assertIn("STRUCTURAL_QUERY_OK", proc.stdout)
+
+    def test_16_respuestas_concisas_sin_ai_slop(self):
+        """Verifica que ninguna respuesta contenga términos prohibidos ni supere los 650 caracteres."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        const testQueries = [
+            '¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?',
+            'Muéstrame la evolución histórica de las visitas a Parques Nacionales y noches de alojamiento turístico entre 2015 y 2026',
+            'Cruza el porcentaje de hogares que calefaccionan con leña y los días con contaminación crítica MP2.5',
+            '¿Qué comunas concentran la biomasa de salmonicultura y cómo contrasta con la inversión pública regional?',
+            '¿cuántas personas viven en cada comuna?',
+            '¿cuántas comunas tiene Aysén?',
+            '¿cuáles son las provincias de Aysén?',
+            '¿qué datos tiene la plataforma?',
+            '¿cómo está Cisnes?',
+            '¿cómo está Puerto Aysén?',
+            '¿cómo está la comuna de Aysén?',
+            '¿cuál es la población de Aysén?',
+            '¿cuál es la población de Puerto Aysén?',
+            'superficie territorial de las comunas',
+            '¿cuántas camas hospitalarias hay en Coyhaique?',
+            'indicador_totalmente_inexistente_999'
+        ];
+
+        const prohibitedTerms = [
+            'Data Lake',
+            'Perfil Territorial Verificado',
+            'Mundo Cerrado',
+            'registros auditados'
+        ];
+
+        for (const q of testQueries) {
+            const res = client.resolveClosedWorldDeterministic(q);
+            if (!res || typeof res.reply !== 'string') {
+                console.error('Invalid reply object for query:', q);
+                process.exit(1);
+            }
+            for (const term of prohibitedTerms) {
+                if (res.reply.toLowerCase().includes(term.toLowerCase())) {
+                    console.error('Forbidden term "' + term + '" in reply for:', q, '\\nReply was:\\n', res.reply);
+                    process.exit(2);
+                }
+            }
+            if (res.reply.length > 650) {
+                console.error('Reply exceeds 650 chars (' + res.reply.length + ') for query:', q, '\\nReply was:\\n', res.reply);
+                process.exit(3);
+            }
+        }
+
+        console.log('RESPUESTAS_CONCISAS_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en verificacion de respuestas concisas sin slop:\n{proc.stderr}")
+        self.assertIn("RESPUESTAS_CONCISAS_OK", proc.stdout)
 
 
 if __name__ == "__main__":

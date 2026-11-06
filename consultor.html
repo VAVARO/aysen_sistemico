@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultor de Datos Territorial · Aysén Sistémico</title>
   <meta name="description"
-    content="Consultor de inteligencia territorial de la Región de Aysén con motor OmniRoute y verificación estricta de mundo cerrado (28 fuentes oficiales).">
+    content="Consultor de inteligencia territorial de la Región de Aysén con verificación de 28 fuentes oficiales.">
 
   <!-- Tipografías Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -591,7 +591,7 @@
         <div class="chat-header">
           <div>
             <h1 class="chat-header-title">Consultor Territorial de Aysén</h1>
-            <p class="chat-header-sub">Motor OmniRoute · 28 Fuentes Oficiales · Mundo Cerrado Estricto</p>
+            <p class="chat-header-sub consultor-subtitle">Consulta cifras comunales y series históricas 2015–2026 de las 28 fuentes oficiales de la región.</p>
           </div>
         </div>
 
@@ -601,7 +601,7 @@
             <h2 class="suggestions-heading">Consultas Territoriales Verificadas</h2>
             <p class="suggestions-kicker">
               Seleccione una consulta para analizar los indicadores oficiales de la Región de Aysén con base en
-              window.AYSEN_HUBS_DATA y las 28 fuentes auditadas de la plataforma:
+              window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la plataforma:
             </p>
             <div class="suggestions-grid">
               <button type="button" class="suggestion-card" data-query="¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?">
@@ -636,13 +636,10 @@
 
       <!-- Panel Derecho: Lienzo de Gráficos y Evidencia en Vivo -->
       <section class="panel-evidence consultor-canvas-pane" aria-label="Lienzo de Evidencia Territorial">
-        <div class="evidence-topbar">
+        <div class="evidence-topbar canvas-toolbar">
           <div class="chart-controls">
-            <button type="button" class="ctrl-btn active" id="btnChartBar" data-type="bar">Barras</button>
-            <button type="button" class="ctrl-btn" id="btnChartLine" data-type="line">Línea</button>
-            <button type="button" class="ctrl-btn" id="btnChartScatter" data-type="scatter">Dispersión</button>
-            <button type="button" class="ctrl-btn" id="btnToggleCoyhaique" title="Excluir Coyhaique para evitar distorsión de escala por capital regional">Sin Coyhaique</button>
-            <button type="button" class="ctrl-btn" id="btnToggleTable">Tabla de Comunas</button>
+            <button type="button" class="ctrl-btn active" id="btnViewChart">Gráfico</button>
+            <button type="button" class="ctrl-btn" id="btnViewTable">Tabla de datos (10 comunas)</button>
           </div>
           <a href="#" class="btn-open-lab" id="btnOpenInLab" target="_blank">
             Abrir este gráfico en el Laboratorio Sistémico →
@@ -655,12 +652,12 @@
             <span class="evidence-meta" id="evidenceMeta">Corte 17-Oct-2026 · Formato es-CL</span>
           </div>
 
-          <div class="chart-stage" id="chartStageContainer">
+          <div class="chart-stage" id="chartSection">
             <canvas id="consultorCanvas" aria-label="Gráfico interactivo de indicadores territoriales"></canvas>
           </div>
 
           <!-- Tabla de Datos Exactos de las 10 Comunas -->
-          <div class="table-container" id="evidenceTableContainer" style="display: none;">
+          <div class="table-container" id="tableSection" style="display: none;">
             <table class="evidence-table">
               <thead>
                 <tr>
@@ -672,6 +669,9 @@
               <tbody id="evidenceTableBody">
                 <!-- Se puebla dinámicamente -->
               </tbody>
+              <tfoot id="evidenceTableFoot">
+                <!-- Fila de total / promedio regional -->
+              </tfoot>
             </table>
           </div>
         </div>
@@ -702,16 +702,15 @@
       const btnSend = document.getElementById('btnSend');
       const suggestionsBlock = document.getElementById('suggestionsBlock');
 
-      const btnChartBar = document.getElementById('btnChartBar');
-      const btnChartLine = document.getElementById('btnChartLine');
-      const btnChartScatter = document.getElementById('btnChartScatter');
-      const btnToggleCoyhaique = document.getElementById('btnToggleCoyhaique');
-      const btnToggleTable = document.getElementById('btnToggleTable');
+      const btnViewChart = document.getElementById('btnViewChart');
+      const btnViewTable = document.getElementById('btnViewTable');
       const btnOpenInLab = document.getElementById('btnOpenInLab');
 
+      const chartSection = document.getElementById('chartSection');
+      const tableSection = document.getElementById('tableSection');
       const evidenceTitle = document.getElementById('evidenceTitle');
-      const evidenceTableContainer = document.getElementById('evidenceTableContainer');
       const evidenceTableBody = document.getElementById('evidenceTableBody');
+      const evidenceTableFoot = document.getElementById('evidenceTableFoot');
       const thVarX = document.getElementById('thVarX');
       const thVarY = document.getElementById('thVarY');
       const canvasEl = document.getElementById('consultorCanvas');
@@ -748,45 +747,20 @@
         });
       });
 
-      // Controles de Gráfico
-      function updateTypeButtons(selectedType) {
-        [btnChartBar, btnChartLine, btnChartScatter].forEach(b => {
-          b.classList.toggle('active', b.getAttribute('data-type') === selectedType);
-        });
-      }
-
-      btnChartBar.addEventListener('click', () => {
-        currentChartState.type = 'bar';
-        updateTypeButtons('bar');
-        renderActiveChart();
-        updateLabLink();
+      // Conmutador entre Gráfico y Tabla de Datos
+      btnViewChart.addEventListener('click', () => {
+        btnViewChart.classList.add('active');
+        btnViewTable.classList.remove('active');
+        chartSection.style.display = 'block';
+        tableSection.style.display = 'none';
+        if (activeChartInstance) activeChartInstance.resize();
       });
 
-      btnChartLine.addEventListener('click', () => {
-        currentChartState.type = 'line';
-        updateTypeButtons('line');
-        renderActiveChart();
-        updateLabLink();
-      });
-
-      btnChartScatter.addEventListener('click', () => {
-        currentChartState.type = 'scatter';
-        updateTypeButtons('scatter');
-        renderActiveChart();
-        updateLabLink();
-      });
-
-      btnToggleCoyhaique.addEventListener('click', () => {
-        currentChartState.excludeCoyhaique = !currentChartState.excludeCoyhaique;
-        btnToggleCoyhaique.classList.toggle('active', currentChartState.excludeCoyhaique);
-        renderActiveChart();
-        updateLabLink();
-      });
-
-      btnToggleTable.addEventListener('click', () => {
-        const isHidden = evidenceTableContainer.style.display === 'none';
-        evidenceTableContainer.style.display = isHidden ? 'block' : 'none';
-        btnToggleTable.classList.toggle('active', isHidden);
+      btnViewTable.addEventListener('click', () => {
+        btnViewTable.classList.add('active');
+        btnViewChart.classList.remove('active');
+        chartSection.style.display = 'none';
+        tableSection.style.display = 'block';
       });
 
       // Enlace dinámico con laboratorio.html
@@ -835,9 +809,6 @@
             currentChartState.summary = res.reply || '';
 
             evidenceTitle.textContent = currentChartState.title;
-            updateTypeButtons(currentChartState.type);
-            btnToggleCoyhaique.classList.toggle('active', currentChartState.excludeCoyhaique);
-
             renderActiveChart();
             updateLabLink();
           }
@@ -853,15 +824,10 @@
         const row = document.createElement('div');
         row.className = `message-row message-${role}`;
 
-        const roleLbl = document.createElement('div');
-        roleLbl.className = 'message-role';
-        roleLbl.textContent = role === 'user' ? 'Consulta' : 'Consultor Territorial';
-
         const content = document.createElement('div');
         content.className = 'message-content';
         content.textContent = text;
 
-        row.appendChild(roleLbl);
         row.appendChild(content);
         chatMessages.appendChild(row);
         chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -873,15 +839,10 @@
         row.className = 'message-row message-assistant loading-row';
         row.id = 'msgLoading';
 
-        const roleLbl = document.createElement('div');
-        roleLbl.className = 'message-role';
-        roleLbl.textContent = 'Consultor Territorial';
-
         const content = document.createElement('div');
         content.className = 'message-content';
-        content.textContent = 'Analizando catálogo de fuentes y calculando vectores...';
+        content.textContent = 'Consultando fuentes oficiales...';
 
-        row.appendChild(roleLbl);
         row.appendChild(content);
         chatMessages.appendChild(row);
         chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -896,11 +857,6 @@
       function appendAssistantMessage(data) {
         const row = document.createElement('div');
         row.className = 'message-row message-assistant';
-
-        const roleLbl = document.createElement('div');
-        roleLbl.className = 'message-role';
-        roleLbl.textContent = 'Consultor Territorial';
-        row.appendChild(roleLbl);
 
         const content = document.createElement('div');
         content.className = 'message-content';
@@ -1384,18 +1340,61 @@
           thVarY.style.display = 'none';
         }
 
+        // Ordenar datos de mayor a menor según varX
+        const sorted = [...comunas].sort((a, b) => {
+          const vB = typeof b[varX] === 'number' ? b[varX] : -Infinity;
+          const vA = typeof a[varX] === 'number' ? a[varX] : -Infinity;
+          return vB - vA;
+        });
+
         evidenceTableBody.innerHTML = '';
-        comunas.forEach(c => {
+        const unitXStr = metaX.unit ? ` ${metaX.unit}` : '';
+        sorted.forEach(c => {
           const tr = document.createElement('tr');
-          const valX = (typeof c[varX] === 'number') ? c[varX].toLocaleString('es-CL') : '0';
+          const valNumX = typeof c[varX] === 'number' ? c[varX] : 0;
+          const valX = `${valNumX.toLocaleString('es-CL')}${unitXStr}`;
           let rowHtml = `<td>${c.nombre || c.nombre_comuna}</td><td class="td-num">${valX}</td>`;
           if (varY) {
-            const valY = (typeof c[varY] === 'number') ? c[varY].toLocaleString('es-CL') : '0';
+            const metaY = getVarMeta(varY);
+            const unitYStr = metaY.unit ? ` ${metaY.unit}` : '';
+            const valNumY = typeof c[varY] === 'number' ? c[varY] : 0;
+            const valY = `${valNumY.toLocaleString('es-CL')}${unitYStr}`;
             rowHtml += `<td class="td-num">${valY}</td>`;
           }
           tr.innerHTML = rowHtml;
           evidenceTableBody.appendChild(tr);
         });
+
+        // Fila de Total / Promedio Regional
+        if (evidenceTableFoot) {
+          evidenceTableFoot.innerHTML = '';
+          const n = sorted.length || 1;
+          const sumX = sorted.reduce((acc, c) => acc + (typeof c[varX] === 'number' ? c[varX] : 0), 0);
+          const avgX = sumX / n;
+          const isPctX = metaX.unit === '%' || varX.endsWith('_pct');
+
+          const labelX = isPctX
+            ? `Promedio: ${avgX.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`
+            : `Total: ${sumX.toLocaleString('es-CL')}${unitXStr} (Promedio: ${avgX.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitXStr})`;
+
+          let footHtml = `<tr>
+            <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total / Promedio Regional</td>
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${labelX}</td>`;
+
+          if (varY) {
+            const metaY = getVarMeta(varY);
+            const unitYStr = metaY.unit ? ` ${metaY.unit}` : '';
+            const sumY = sorted.reduce((acc, c) => acc + (typeof c[varY] === 'number' ? c[varY] : 0), 0);
+            const avgY = sumY / n;
+            const isPctY = metaY.unit === '%' || varY.endsWith('_pct');
+            const labelY = isPctY
+              ? `Promedio: ${avgY.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`
+              : `Total: ${sumY.toLocaleString('es-CL')}${unitYStr} (Promedio: ${avgY.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitYStr})`;
+            footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${labelY}</td>`;
+          }
+          footHtml += `</tr>`;
+          evidenceTableFoot.innerHTML = footHtml;
+        }
       }
 
       function populateTableSeries(years, seriesA, seriesB) {
@@ -1410,9 +1409,25 @@
         evidenceTableBody.innerHTML = '';
         years.forEach((yr, idx) => {
           const tr = document.createElement('tr');
-          tr.innerHTML = `<td>Año ${yr}</td><td class="td-num">${(seriesA[idx] || 0).toLocaleString('es-CL')}</td><td class="td-num">${(seriesB[idx] || 0).toLocaleString('es-CL')}</td>`;
+          const valA = (seriesA[idx] || 0).toLocaleString('es-CL') + ' visitas';
+          const valB = (seriesB[idx] || 0).toLocaleString('es-CL') + ' noches';
+          tr.innerHTML = `<td>Año ${yr}</td><td class="td-num">${valA}</td><td class="td-num">${valB}</td>`;
           evidenceTableBody.appendChild(tr);
         });
+
+        if (evidenceTableFoot) {
+          evidenceTableFoot.innerHTML = '';
+          const sumA = seriesA.reduce((acc, v) => acc + (v || 0), 0);
+          const avgA = Math.round(sumA / (seriesA.length || 1));
+          const sumB = seriesB.reduce((acc, v) => acc + (v || 0), 0);
+          const avgB = Math.round(sumB / (seriesB.length || 1));
+
+          evidenceTableFoot.innerHTML = `<tr>
+            <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total / Promedio Histórico</td>
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total: ${sumA.toLocaleString('es-CL')} visitas (Prom: ${avgA.toLocaleString('es-CL')})</td>
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total: ${sumB.toLocaleString('es-CL')} noches (Prom: ${avgB.toLocaleString('es-CL')})</td>
+          </tr>`;
+        }
       }
 
       // Render inicial al cargar la página

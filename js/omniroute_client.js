@@ -1,9 +1,8 @@
 /**
  * js/omniroute_client.js
  * Cliente de Inteligencia Artificial para Aysén Sistémico basado en OmniRoute
- * Endpoint OpenAI-compatible (/v1/chat/completions) con Mundo Cerrado Estricto
- * (Closed-World Grounding) fundamentado 100% en window.AYSEN_HUBS_DATA y las
- * 28 fuentes oficiales de la Región de Aysén.
+ * Endpoint OpenAI-compatible (/v1/chat/completions) con verificación de datos oficiales
+ * fundamentado 100% en window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la Región de Aysén.
  *
  * Cero emojis. Estética sobria, técnica y cartográfica austral.
  */
@@ -108,6 +107,8 @@
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
+      .replace(/[¿?¡!.,;:_()'"\/\-]/g, ' ')
+      .replace(/\s+/g, ' ')
       .trim();
   }
 
@@ -228,7 +229,7 @@
     return `Eres el Consultor Territorial Oficial de la Plataforma Aysén Sistémico, desarrollado por Álvaro Contreras Barrios.
 Aysén Sistémico cuenta con 10 Hubs Sistémicos y 39 Nodos Satélites con 28 fuentes institucionales oficiales:
 ${hubsSummary}
-Tu rol es responder consultas analíticas con estricto MUNDO CERRADO (Closed-World Grounding) fundamentado 100% en window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la Región de Aysén.
+Tu rol es responder consultas analíticas con verificación rigurosa (Closed-World Grounding) fundamentado 100% en window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la Región de Aysén.
 Catálogo de variables disponibles: ${allVars}
 
 REGLAS OBLIGATORIAS:
@@ -261,37 +262,316 @@ Variables canónicas disponibles:
 ${allVars}`;
   }
 
+  const COMUNA_SYNONYMS = {
+    '11101': ['coyhaique'],
+    '11201': ['puerto aysen', 'pto aysen', 'comuna de aysen', 'aysen comuna'],
+    '11202': ['cisnes', 'puerto cisnes'],
+    '11203': ['guaitecas', 'melinka', 'guaytecas'],
+    '11102': ['lago verde'],
+    '11401': ['chile chico'],
+    '11402': ['rio ibanez', 'ibanez', 'ingeniero ibanez'],
+    '11301': ['cochrane'],
+    '11303': ['tortel', 'caleta tortel'],
+    '11302': ['ohiggins', "o'higgins", 'o higgins', 'villa ohiggins', "villa o'higgins", 'villa o higgins', 'villa higgins', 'higgins']
+  };
+
+  const DIMENSIONES = [
+    {
+      keys: ['superficie', 'km2', 'extension', 'territorio', 'tamano', 'area'],
+      varX: 'superficie_km2',
+      varY: null,
+      unit: 'km²',
+      title: 'Superficie Territorial (km²) por Comuna',
+      hub: 'VI',
+      fuente: { institucion: 'INE / IGM', indicador: 'División Político Administrativa y Superficie', url: 'https://www.ine.gob.cl/' }
+    },
+    {
+      keys: ['densidad', 'hab/km2'],
+      varX: 'densidad_hab_km2',
+      varY: null,
+      unit: 'hab/km²',
+      title: 'Densidad Poblacional (hab/km²) por Comuna',
+      hub: 'VI',
+      fuente: { institucion: 'INE', indicador: 'Censo 2024: Densidad de Ocupación', url: 'https://censo2024.ine.gob.cl/' }
+    },
+    {
+      keys: ['pobreza', 'casen', 'vulnerabilidad', 'carencias'],
+      varX: 'pobreza_multidim_pct',
+      varY: 'pobreza_ingresos_pct',
+      unit: '%',
+      title: 'Pobreza Multidimensional y por Ingresos CASEN (%)',
+      hub: 'VI',
+      fuente: { institucion: 'MDSF - CASEN', indicador: 'Encuesta de Caracterización Socioeconómica', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/' }
+    },
+    {
+      keys: ['salud', 'hospital', 'hospitales', 'cama', 'camas', 'medico', 'medicos', 'posta', 'postas', 'urgencia', 'samu'],
+      varX: 'camas_hospitalarias',
+      varY: 'postas_salud_rural',
+      unit: 'camas / postas',
+      title: 'Camas Hospitalarias y Postas de Salud Rural (DEIS/SSA)',
+      hub: 'VIII',
+      fuente: { institucion: 'DEIS - MINSAL / SSA', indicador: 'Red Asistencial Hospitalaria y APS', url: 'https://deis.minsal.cl/' }
+    },
+    {
+      keys: ['educacion', 'escuela', 'escuelas', 'colegio', 'colegios', 'matricula', 'slep', 'estudiantes'],
+      varX: 'matricula_escolar',
+      varY: null,
+      unit: 'estudiantes',
+      title: 'Matrícula Escolar por Comuna (MINEDUC SLEP)',
+      hub: 'VI',
+      fuente: { institucion: 'MINEDUC / SLEP Aysén', indicador: 'Matrícula Oficial Regular', url: 'https://datosabiertos.mineduc.cl/' }
+    },
+    {
+      keys: ['tarifa', 'saidi', 'electricidad', 'corte', 'cortes', 'diesel', 'energia'],
+      varX: 'saidi_horas_anual',
+      varY: 'tarifa_bt1_clp',
+      unit: 'horas/año y $/kWh',
+      title: 'Interrupciones Eléctricas SAIDI (horas/año) y Tarifa BT1 ($/kWh)',
+      hub: 'III',
+      fuente: { institucion: 'SEC / CNE', indicador: 'Indicador SAIDI de Calidad de Suministro y Tarifas BT1', url: 'https://www.sec.cl/' }
+    },
+    {
+      keys: ['empresas', 'trabajadores', 'empleo', 'sii', 'ventas'],
+      varX: 'empresas_sii',
+      varY: 'trabajadores_sii',
+      unit: 'empresas y trabajadores',
+      title: 'Empresas Activas y Trabajadores Formales (SII)',
+      hub: 'V',
+      fuente: { institucion: 'SII', indicador: 'Estadísticas Tributarias de Empresas y Empleo Formal', url: 'https://www.sii.cl/' }
+    },
+    {
+      keys: ['seia', 'proyectos seia', 'inversion seia', 'medio ambiente seia'],
+      varX: 'inversion_seia_mmusd',
+      varY: 'proyectos_seia_aprobados',
+      unit: 'MM US$ y proyectos',
+      title: 'Inversión en Proyectos SEIA (MM US$) y Resoluciones RCA',
+      hub: 'V',
+      fuente: { institucion: 'SEA - SEIA', indicador: 'Catastro Oficial de 722 Proyectos SEIA', url: 'https://seia.sea.gob.cl/' }
+    },
+    {
+      keys: ['turismo', 'prestadores', 'alojamiento', 'emat', 'sernatur'],
+      varX: 'visitantes_snaspe',
+      varY: 'prestadores_sernatur',
+      unit: 'visitantes y prestadores',
+      title: 'Visitantes SNASPE y Prestadores Turísticos SERNATUR',
+      hub: 'I',
+      fuente: { institucion: 'CONAF / SERNATUR', indicador: 'Estadísticas Oficiales de Turismo y SNASPE', url: 'https://registro.sernatur.cl/' }
+    },
+    {
+      keys: ['salmon', 'salmonicultura', 'biomasa', 'concesiones', 'acuicultura'],
+      varX: 'biomasa_salmon_ton',
+      varY: 'concesiones_salmon',
+      unit: 'ton y concesiones',
+      title: 'Biomasa Cosechada (toneladas) y Concesiones Otorgadas',
+      hub: 'II',
+      fuente: { institucion: 'SERNAPESCA / SUBPESCA', indicador: 'Fiscalización Acuícola y Catastro de Concesiones', url: 'https://www.sernapesca.cl/' }
+    },
+    {
+      keys: ['biodiversidad', 'bosque', 'huemul', 'glaciares', 'glaciar', 'vegetal'],
+      varX: 'cobertura_vegetal_nativa_ha',
+      varY: 'glaciares_dga_n',
+      unit: 'ha nativas y glaciares',
+      title: 'Cobertura de Bosque Nativo (ha) y Catastro de Glaciares (DGA)',
+      hub: 'VII',
+      fuente: { institucion: 'MMA / CONAF / DGA', indicador: 'Inventario Vegetacional y Catastro de Glaciares', url: 'https://mma.gob.cl/' }
+    },
+    {
+      keys: ['cultura', 'museos', 'museo', 'biblioteca', 'bibliotecas', 'monumento', 'monumentos', 'fondart', 'patrimonio'],
+      varX: 'total_espacios_culturales',
+      varY: 'fondart_fndr_mclp',
+      unit: 'espacios y M$',
+      title: 'Espacios Culturales Registrados y Financiamiento Fondart/FNDR',
+      hub: 'IX',
+      fuente: { institucion: 'SERPAT / CMN / MINCAP', indicador: 'Catastro Patrimonial y Financiamiento Cultural', url: 'https://www.patrimoniocultural.gob.cl/' }
+    },
+    {
+      keys: ['ctci', 'ciencia', 'anid', 'corfo', 'investigadores', 'investigacion'],
+      varX: 'proyectos_anid_n',
+      varY: 'investigadores_residentes',
+      unit: 'proyectos e investigadores',
+      title: 'Proyectos ANID I+D e Investigadores Residentes',
+      hub: 'X',
+      fuente: { institucion: 'ANID / MinCiencia / CORFO', indicador: 'Plataforma DataCiencia y Proyectos de Innovación', url: 'https://dataciencia.anid.cl/' }
+    }
+  ];
+
+  function buildIndicatorReply(dim, ordenadas, maxCom, minCom, sumVal, avgVal) {
+    const isPct = dim.unit === '%' || dim.varX.endsWith('_pct');
+    const maxNom = maxCom.nombre || maxCom.nombre_comuna;
+    const minNom = minCom.nombre || minCom.nombre_comuna;
+    const maxV = (maxCom[dim.varX] || 0).toLocaleString('es-CL');
+    const minV = (minCom[dim.varX] || 0).toLocaleString('es-CL');
+    const summaryStat = isPct
+      ? `un promedio regional de ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })}%`
+      : `un total regional de ${sumVal.toLocaleString('es-CL')} ${dim.unit} (promedio de ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })} ${dim.unit} por comuna)`;
+
+    return `En la Región de Aysén, ${dim.title.toLowerCase()} registra ${summaryStat} (${dim.fuente.institucion}, 2024). ${maxNom} lidera con ${maxV} ${dim.unit}, mientras que ${minNom} registra el menor valor con ${minV} ${dim.unit}. El detalle ordenado de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+  }
+
+  function buildSeriesReply(varX, varY) {
+    return "Entre 2015 y 2026, las visitas a Parques SNASPE pasaron de 148.000 a un récord estimado de 285.500 ingresos anuales, mientras que las pernoctaciones turísticas aumentaron de 312.000 a 472.000 noches (fuentes CONAF e INE EMAT). Tras el impacto sanitario de 2020 (46.200 visitas y 178.000 pernoctaciones), la actividad completó una recuperación sostenida liderada por el Parque Queulat y la cuenca del Lago General Carrera. La evolución interanual completa se visualiza en el gráfico y en la pestaña Tabla de datos a la derecha.";
+  }
+
+  function buildComunaProfileReply(c) {
+    const nombre = c.nombre || c.nombre_comuna;
+    const pob = (c.poblacion_censo_2024 || 0).toLocaleString('es-CL');
+    const pctPob = (c.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const fcm = (c.dependencia_fcm_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const sup = (c.superficie_km2 || 0).toLocaleString('es-CL');
+
+    return `La comuna de ${nombre} cuenta con ${pob} habitantes (${pctPob}% regional) y una superficie de ${sup} km² (Censo 2024, INE). En el ámbito financiero, registra una dependencia del Fondo Común Municipal de ${fcm}%, con un presupuesto municipal per cápita de ${(c.presupuesto_per_capita_mclp || 0).toLocaleString('es-CL')} M$ (SINIM, 2024). Las cifras sectoriales y la comparación con las demás comunas están disponibles en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+  }
+
+  function buildGenericVarReply(v, ordenadas, maxCom, minCom, avgVal, sumVal) {
+    const maxNom = maxCom.nombre || maxCom.nombre_comuna;
+    const minNom = minCom.nombre || minCom.nombre_comuna;
+    const maxV = (maxCom[v.key] || 0).toLocaleString('es-CL');
+    const minV = (minCom[v.key] || 0).toLocaleString('es-CL');
+    const isPct = v.unit === '%' || v.key.endsWith('_pct');
+    const summaryStat = isPct
+      ? `promedio regional de ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })}%`
+      : `total regional de ${sumVal.toLocaleString('es-CL')} ${v.unit}`;
+
+    return `El indicador ${v.label} registra un ${summaryStat} en las 10 comunas de Aysén (fuente oficial Hub ${v.hub}). ${maxNom} lidera con ${maxV} ${v.unit}, en contraste con ${minNom} que registra ${minV} ${v.unit}. El desglose completo por comuna está disponible en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+  }
+
   /**
-   * Resuelve consultas bajo mundo cerrado de forma determinista y verificada
+   * Resuelve consultas territoriales de forma determinista y verificada
    */
   function resolveClosedWorldDeterministic(queryText) {
     if (!_indexedData) init();
     const qRaw = String(queryText || '').trim();
     const q = normText(qRaw);
 
+    // 0. Detección temprana de comuna específica según COMUNA_SYNONYMS estricto
+    let matchedComuna = null;
+    for (const [code, syns] of Object.entries(COMUNA_SYNONYMS)) {
+      if (syns.some(s => q.includes(s))) {
+        matchedComuna = _comunas.find(c => String(c.comuna_ine) === code || String(c.id) === code) || null;
+        if (matchedComuna) break;
+      }
+    }
+
+    // 0.1 Preguntas estructurales sobre la región y división comunal / provincial
+    const isExcludedFromStructural = (
+      q.includes('fondo comun') || q.includes('fcm') || q.includes('dependencia') ||
+      q.includes('biomasa') || q.includes('salmon') || q.includes('parque') ||
+      q.includes('lena') || q.includes('calefacc') || q.includes('tarifa') ||
+      q.includes('hospital') || q.includes('salud') || q.includes('educacion') ||
+      q.includes('matricula') || q.includes('pobreza') || q.includes('casen') ||
+      q.includes('seia') || q.includes('inversion') || q.includes('empresas') ||
+      q.includes('trabajadores') || q.includes('turismo') || q.includes('alojamiento') ||
+      q.includes('patrimonio') || q.includes('cultura') || q.includes('ctci') ||
+      q.includes('poblacion') || q.includes('habitante') || q.includes('personas viven') ||
+      q.includes('cuanta gente') || q.includes('cuantas personas') || q.includes('residentes')
+    );
+
+    const isStructuralQuery = !isExcludedFromStructural && (
+      q.includes('cuantas comunas') ||
+      q.includes('cuales son las comunas') ||
+      q.includes('cuales comunas') ||
+      q.includes('que comunas') ||
+      q.includes('10 comunas') ||
+      q.includes('diez comunas') ||
+      q.includes('division comunal') ||
+      q.includes('division territorial') ||
+      q.includes('division politica') ||
+      q.includes('provincias') ||
+      (q.includes('comunas') && (
+        q.includes('tiene') || q.includes('distrib') || q.includes('cuantas') ||
+        q.includes('lista') || q.includes('region') || q.includes('componen') ||
+        q.includes('forman') || q.includes('integran') || q.includes('hay') ||
+        q.includes('aysen')
+      ))
+    );
+
+    if (isStructuralQuery) {
+      const txt = "La Región de Aysén tiene 10 comunas distribuidas en 4 provincias: Coyhaique y Lago Verde (Provincia de Coyhaique); Aysén, Cisnes y Guaitecas (Provincia de Aysén); Chile Chico y Río Ibáñez (Provincia General Carrera); y Cochrane, O'Higgins y Tortel (Provincia Capitán Prat). Según el Censo 2024 (INE), la región suma 100.745 habitantes, concentrando el 82,9% en Coyhaique (59.790 hab.) y Aysén (23.170 hab.). El desglose territorial completo se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.";
+
+      return {
+        reply: txt,
+        sources: [
+          { institucion: 'INE', indicador: 'Censo 2024 / División Político Administrativa', url: 'https://censo2024.ine.gob.cl/' }
+        ],
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'poblacion_censo_2024',
+          varY: 'superficie_km2',
+          title: 'Población Censo 2024 (hab.) y Superficie comunal (km²)',
+          excludeCoyhaique: false
+        },
+        relatedHub: 'VI'
+      };
+    }
+
+    // 0.2 Pregunta sobre qué datos o fuentes tiene la plataforma
+    const isPlatformDataQuery = (
+      q.includes('que datos tiene') ||
+      q.includes('que datos hay') ||
+      q.includes('que datos contiene') ||
+      q.includes('datos de la plataforma') ||
+      q.includes('catalogo de datos') ||
+      q.includes('que fuentes') ||
+      q.includes('cuales fuentes') ||
+      q.includes('que informacion tiene') ||
+      q.includes('que variables') ||
+      q.includes('que puedo consultar')
+    );
+
+    if (isPlatformDataQuery) {
+      const txt = "La plataforma integra indicadores de las 10 comunas de Aysén y series históricas 2015–2026 organizadas en 10 Hubs a partir de 28 fuentes oficiales (como INE, SINIM, SERNATUR, CONAF, CNE, SEC, SUBPESCA y DEIS). Puede consultar demografía, finanzas municipales, energía, salud, educación, medio ambiente y actividad productiva regional. El detalle de variables y fuentes está disponible en el gráfico y en la pestaña Tabla de datos a la derecha.";
+
+      return {
+        reply: txt,
+        sources: [
+          { institucion: 'Plataforma y Base de Datos Sistémica de Aysén', indicador: 'Catálogo de 28 Fuentes Oficiales', url: 'index.html#seccion-arquitectura-fuentes' }
+        ],
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'poblacion_censo_2024',
+          varY: null,
+          title: 'Población Comunal · Censo 2024 (INE)',
+          excludeCoyhaique: false
+        },
+        relatedHub: 'VI'
+      };
+    }
+
     // 1. Población Comunal / Censo 2024 (INE)
     const isPoblacionQuery = q.includes('poblacion') || q.includes('habitante') || q.includes('censo') ||
       q.includes('personas viven') || q.includes('cuanta gente') || q.includes('cuantas personas') ||
-      q.includes('residentes') || q.includes('vive en cada comuna');
+      q.includes('residentes') || q.includes('vive en cada comuna') || q.includes('demografia');
 
     if (isPoblacionQuery) {
+      if (matchedComuna) {
+        const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
+        const pobCom = (matchedComuna.poblacion_censo_2024 || 0).toLocaleString('es-CL');
+        const pctCom = (matchedComuna.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+        const supCom = (matchedComuna.superficie_km2 || 0).toLocaleString('es-CL');
+        const txt = `La comuna de ${cNom} registra una población de ${pobCom} habitantes (${pctCom}% regional) y una superficie de ${supCom} km² (Censo 2024, INE). A nivel regional, Coyhaique concentra la mayor población con 59.790 habitantes (59,3%) y O'Higgins la menor con 498 personas de un total de 100.745 habitantes. La comparativa de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+
+        return {
+          reply: txt,
+          sources: [
+            { institucion: 'INE', indicador: 'Censo de Población y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/' }
+          ],
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'poblacion_censo_2024',
+            varY: 'superficie_km2',
+            title: `Población y Superficie · Censo 2024 (INE) · ${cNom}`,
+            excludeCoyhaique: false
+          },
+          relatedHub: 'VI'
+        };
+      }
+
       const comunasOrdenadas = [..._comunas].sort((a, b) => (b.poblacion_censo_2024 || 0) - (a.poblacion_censo_2024 || 0));
       const totalRegional = comunasOrdenadas.reduce((acc, c) => acc + (c.poblacion_censo_2024 || 0), 0);
-      const filas = comunasOrdenadas.map((c, idx) => {
-        const pob = (c.poblacion_censo_2024 || 0).toLocaleString('es-CL');
-        const pct = (c.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-        const sup = (c.superficie_km2 || 0).toLocaleString('es-CL');
-        const den = (c.densidad_hab_km2 || 0).toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        return `${idx + 1}. ${c.nombre || c.nombre_comuna}: ${pob} habitantes (${pct}% regional · ${sup} km² · ${den} hab/km²)`;
-      }).join('\n');
-
-      const txt = `Según el Censo de Población y Vivienda 2024 (Instituto Nacional de Estadísticas - INE), la Región de Aysén cuenta con un total oficial de ${totalRegional.toLocaleString('es-CL')} habitantes distribuidos en sus 10 comunas:
-
-${filas}
-
-Hallazgos estructurales clave:
-- Macrocefalia capitalina: Coyhaique concentra el 57,4% de la población regional (${(comunasOrdenadas[0]?.poblacion_censo_2024 || 0).toLocaleString('es-CL')} hab). Sumado a Puerto Aysén (23,0%), ambas comunas congregan más del 80,4% de todos los habitantes regionales.
-- Densidad extremadamente baja: Con 108.494 km² de superficie continental e insular, la densidad promedio regional es de 0,93 hab/km², con extremos de aislamiento en O'Higgins (0,02 hab/km²) y Tortel (0,03 hab/km²).`;
+      const txt = `Según el Censo 2024 (INE), la Región de Aysén registra un total oficial de ${totalRegional.toLocaleString('es-CL')} habitantes en sus 10 comunas. Coyhaique lidera la concentración regional con 59.790 habitantes (59,3%) y Aysén con 23.170, seguidas por Cisnes, Chile Chico y Cochrane, mientras que O'Higgins presenta la menor población con 498 habitantes. La serie comparativa completa de las 10 comunas se encuentra desplegada en el gráfico y en la pestaña Tabla de datos a la derecha.`;
 
       return {
         reply: txt,
@@ -312,15 +592,30 @@ Hallazgos estructurales clave:
 
     // 2. Consulta de Dependencia Fondo Común Municipal vs Ingresos Propios
     if (q.includes('fondo comun') || q.includes('fcm') || q.includes('ingresos propios') || (q.includes('dependencia') && q.includes('comun'))) {
-      const txt = `En la Región de Aysén, la dependencia del Fondo Común Municipal (FCM) refleja una extrema asimetría estructural entre la capital regional y las comunas periféricas y aisladas (fuente oficial: SUBDERE - SINIM):
+      if (matchedComuna) {
+        const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
+        const fcmCom = (matchedComuna.dependencia_fcm_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+        const pcapCom = (matchedComuna.presupuesto_per_capita_mclp || 0).toLocaleString('es-CL');
+        const txt = `En la comuna de ${cNom}, la dependencia del Fondo Común Municipal es de ${fcmCom}% con un presupuesto per cápita de ${pcapCom} M$ (fuente: SUBDERE - SINIM, 2024). A nivel regional, Tortel lidera con 92,8% y Coyhaique registra el menor valor con 46,5%, frente a un promedio regional de 75,7%. El detalle ordenado de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
 
-- Tortel registra la mayor dependencia con 92,8% de sus ingresos provenientes del FCM (solo un 7,2% de ingresos propios autónomos).
-- Le siguen O'Higgins (91,5% de FCM; 8,5% ingresos propios), Lago Verde (89,2% de FCM; 10,8% ingresos propios) y Guaitecas (83,0% de FCM; 17,0% ingresos propios).
-- Río Ibáñez registra 79,6% de FCM (20,4% propios), Cochrane 76,8% (23,2% propios), Cisnes 74,5% (25,5% propios) y Chile Chico 71,2% (28,8% propios).
-- En el extremo opuesto, Coyhaique exhibe la menor dependencia regional con 46,5%, sustentada en un 53,5% de ingresos propios derivados de actividad comercial y patentes vehiculares.
-- Puerto Aysén registra 52,8% de dependencia del FCM y 47,2% de ingresos propios.
+        return {
+          reply: txt,
+          sources: [
+            { institucion: 'SUBDERE - SINIM', indicador: 'Dependencia del Fondo Común Municipal (%) e Ingresos Propios', url: 'https://datos.sinim.gov.cl/' }
+          ],
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'dependencia_fcm_pct',
+            varY: 'presupuesto_per_capita_mclp',
+            title: `Dependencia del FCM y Presupuesto Municipal · ${cNom}`,
+            excludeCoyhaique: false
+          },
+          relatedHub: 'IV'
+        };
+      }
 
-Esta disparidad evidencia la fragilidad financiera en las comunas extremas, donde más de 8 de cada 10 pesos del presupuesto dependen directamente de la redistribución solidaria nacional.`;
+      const txt = "La dependencia del Fondo Común Municipal (FCM) promedia un 75,7% en las 10 comunas de la región (fuente oficial: SUBDERE - SINIM, 2024). Tortel y O'Higgins exhiben la mayor dependencia con 92,8% y 91,5% respectivamente, mientras que Coyhaique registra el menor porcentaje regional con 46,5%, sustentado en un 53,5% de ingresos propios. Las cifras exactas de las 10 comunas están detalladas en el gráfico y en la pestaña Tabla de datos a la derecha.";
 
       return {
         reply: txt,
@@ -341,16 +636,7 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
 
     // 3. Consulta de Evolución Histórica de Parques y Alojamientos
     if ((q.includes('parque') || q.includes('snaspe') || q.includes('conaf') || q.includes('visita')) && (q.includes('alojamiento') || q.includes('emat') || q.includes('turismo') || q.includes('noche') || q.includes('2015') || q.includes('evolucion') || q.includes('historica'))) {
-      const txt = `La evolución turística de la Región de Aysén entre 2015 y 2026 (fuentes oficiales CONAF SNASPE e INE EMAT) muestra una trayectoria de expansión, choque exógeno y recuperación sostenida:
-
-1. Visitación a Áreas Silvestres Protegidas (CONAF SNASPE):
-   - Período 2015-2019: Crecimiento constante desde 148.000 hasta 215.000 visitantes anuales, impulsado por Parques Nacionales como Queulat, Cerro Castillo y Laguna San Rafael.
-   - 2020-2021: Caída abrupta por restricciones sanitarias a 78.000 visitantes (2020) y 118.000 (2021).
-   - 2022-2026: Rápida recuperación alcanzando 235.000 visitantes en 2023, 256.000 en 2024 y consolidando una proyección récord de 284.000 ingresos anuales para 2026.
-
-2. Pernoctaciones en Alojamientos Turísticos (INE EMAT):
-   - Trayectoria desde 312.000 pernoctaciones en 2015 hasta un pico prepandemia de 412.000 en 2019.
-   - Tras el piso de 178.000 en 2020, el flujo se recuperó dinámicamente a 432.000 en 2024 y alcanza un estimado de 472.000 pernoctaciones anuales para 2026, concentradas en los destinos Coyhaique, Aysén y Cuenca del Lago General Carrera.`;
+      const txt = buildSeriesReply('visitantes_snaspe', 'pernoctaciones_emat');
 
       return {
         reply: txt,
@@ -372,13 +658,7 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
 
     // 4. Leña vs Contaminación MP2.5
     if ((q.includes('lena') || q.includes('calefacc')) && (q.includes('mp2') || q.includes('contamin') || q.includes('calidad del aire') || q.includes('humo'))) {
-      const txt = `El cruce entre calefacción residencial a leña y calidad del aire en la Región de Aysén (fuentes CNE / CASEN MDSF y Red de Calidad del Aire SINCA-MMA) refleja una marcada disparidad entre cuencas urbanas y áreas litorales:
-
-- En Coyhaique, el 92,4% de los hogares utiliza leña como matriz principal de calefacción. La geomorfología de cuenca cerrada combinada con inversión térmica genera 87 días al año con concentraciones sobre la norma de MP2.5 (episodios críticos de alerta, preemergencia y emergencia ambiental).
-- En Puerto Aysén, con 87,8% de hogares a leña, la ventilación litoral y el régimen pluviométrico moderan el impacto a 34 días críticos al año.
-- En Cochrane se registran 96,0% de hogares a leña y 22 días sobre norma.
-- En Chile Chico, 82,3% a leña y 18 días críticos; en Cisnes, 95,1% a leña y 16 días; y en Río Ibáñez, 94,2% a leña y 14 días.
-- En comunas como Lago Verde (98,2% leña, 12 días), Tortel (98,4% leña, 10 días), O'Higgins (99,1% leña, 8 días) y Guaitecas (94,6% leña, 4 días), la baja densidad poblacional (<1 hab/km²) mitiga la saturación atmosférica a pesar de la alta penetración de biomasa leñosa.`;
+      const txt = "El uso residencial de leña promedia 94,1% en la región, pero su impacto atmosférico difiere drásticamente según la geomorfología (fuentes CNE / CASEN y Red SINCA-MMA, 2024). Coyhaique concentra 87 días al año con episodios críticos de MP2.5 por inversión térmica en cuenca cerrada, mientras comunas litorales como Guaitecas registran solo 4 días con similar penetración de leña (94,6%). La distribución bivariada completa se presenta en el gráfico y en la pestaña Tabla de datos a la derecha.";
 
       return {
         reply: txt,
@@ -400,19 +680,7 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
 
     // 5. Biomasa Salmonicultura vs Inversión Pública FNDR
     if ((q.includes('salmon') || q.includes('biomasa') || q.includes('concesion') || q.includes('acuic')) && (q.includes('inversion') || q.includes('fndr') || q.includes('publica') || q.includes('presupuesto'))) {
-      const txt = `El análisis espacial entre la cosecha de salmonicultura y la inversión pública regional (fuentes oficiales SERNAPESCA, SUBPESCA y DIPRES / GORE Aysén) demuestra una marcada disociación territorial:
-
-1. Concentración de Biomasa Salmonícola (SERNAPESCA 2024-2026, 503.500 ton regionales totales):
-   - La comuna de Aysén concentra el 52,6% de la biomasa regional con 265.000 ton/año y la mayor concentración de centros operativos.
-   - Cisnes alberga el 36,7% (185.000 ton/año).
-   - Guaitecas aporta el 8,9% (45.000 ton/año).
-   - Tortel registra una producción periférica de 8.500 ton/año (1,7%).
-   - Las restantes 6 comunas no tienen actividad intensiva en maritorio.
-
-2. Contraste con la Inversión Pública Regional (FNDR DIPRES / GORE, 54.650 M$ regionales totales):
-   - Coyhaique, sin producción de biomasa salmonícola, capta el 27,2% del FNDR regional (14.850 M$), concentrando infraestructura hospitalaria y vial urbana.
-   - Aysén recibe el 17,9% (9.800 M$) y Cisnes el 10,3% (5.600 M$).
-   - Comunas litorales productivas como Guaitecas reciben solo 3.400 M$ (6,2%), exhibiendo un desacople estructural entre el volumen de biomasa privada extraída y los fondos públicos asignados a saneamiento y conectividad.`;
+      const txt = "La Región de Aysén cosecha 503.500 toneladas anuales de salmón, concentradas casi en su totalidad en la comuna de Aysén (265.000 ton) y Cisnes (185.000 ton) según SERNAPESCA (2024–2026). En contraste, la inversión pública FNDR (DIPRES / GORE, 54.650 M$ totales) se concentra en Coyhaique con 14.850 M$ (27,2%) para infraestructura urbana y hospitalaria, frente a 3.400 M$ asignados a zonas productivas extremas como Guaitecas. El contraste territorial completo se detalla en el gráfico y en la pestaña Tabla de datos a la derecha.";
 
       return {
         reply: txt,
@@ -433,57 +701,55 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
       };
     }
 
-    // 6. Consultas Comuna Específica (ej. "¿Cómo está Cisnes?", "Perfil de Cochrane", "Compara...")
-    const COMUNAS_NOMBRES = [
-      { name: 'Coyhaique', keys: ['coyhaique'] },
-      { name: 'Aysén', keys: ['aysen', 'puerto aysen'] },
-      { name: 'Cisnes', keys: ['cisnes', 'puerto cisnes'] },
-      { name: 'Guaitecas', keys: ['guaitecas', 'melinka'] },
-      { name: 'Lago Verde', keys: ['lago verde'] },
-      { name: 'Chile Chico', keys: ['chile chico'] },
-      { name: 'Río Ibáñez', keys: ['rio ibanez', 'ibanez', 'ingeniero ibanez'] },
-      { name: 'Cochrane', keys: ['cochrane'] },
-      { name: 'Tortel', keys: ['tortel', 'caleta tortel'] },
-      { name: "O'Higgins", keys: ['ohiggins', "o'higgins", 'villa ohiggins', "villa o'higgins"] }
-    ];
+    // 6. Mapeo temático de dimensiones territoriales con sinónimos amplios
+    for (const dim of DIMENSIONES) {
+      if (dim.keys.some(k => q.includes(k))) {
+        const vX = dim.varX;
+        const vY = dim.varY;
+        const ordenadas = [..._comunas].sort((a, b) => (b[vX] || 0) - (a[vX] || 0));
+        const maxCom = ordenadas[0] || {};
+        const minCom = ordenadas[ordenadas.length - 1] || {};
+        const sumVal = ordenadas.reduce((acc, c) => acc + (c[vX] || 0), 0);
+        const avgVal = sumVal / (ordenadas.length || 1);
 
-    const comunasEncontradas = COMUNAS_NOMBRES.filter(cn => cn.keys.some(k => q.includes(k)));
+        let txt;
+        if (matchedComuna) {
+          const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
+          const valX = (matchedComuna[vX] || 0).toLocaleString('es-CL');
+          const maxNom = maxCom.nombre || maxCom.nombre_comuna;
+          const minNom = minCom.nombre || minCom.nombre_comuna;
+          const maxV = (maxCom[vX] || 0).toLocaleString('es-CL');
+          const minV = (minCom[vX] || 0).toLocaleString('es-CL');
+          txt = `En la comuna de ${cNom}, ${dim.title.toLowerCase()} registra ${valX} ${dim.unit} (${dim.fuente.institucion}, 2024). A nivel regional, ${maxNom} lidera con ${maxV} ${dim.unit} y ${minNom} registra ${minV} ${dim.unit}. El detalle ordenado de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+        } else {
+          txt = buildIndicatorReply(dim, ordenadas, maxCom, minCom, sumVal, avgVal);
+        }
 
-    if (comunasEncontradas.length === 1 && !isPoblacionQuery) {
-      const cNombre = comunasEncontradas[0].name;
-      const c = _comunas.find(com => normText(com.nombre || com.nombre_comuna) === normText(cNombre)) || _comunas[0];
+        return {
+          reply: txt,
+          sources: [dim.fuente],
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: vX,
+            varY: vY,
+            title: matchedComuna ? `${dim.title} · ${matchedComuna.nombre || matchedComuna.nombre_comuna}` : dim.title,
+            excludeCoyhaique: false
+          },
+          relatedHub: dim.hub
+        };
+      }
+    }
 
-      const txt = `Perfil Territorial Verificado: Comuna de ${cNombre} (fuentes oficiales del Data Lake regional):
-
-1. Demografía y Territorio (INE Censo 2024):
-   - Población oficial: ${(c.poblacion_censo_2024 || 0).toLocaleString('es-CL')} habitantes (${(c.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}% del total regional).
-   - Superficie territorial: ${(c.superficie_km2 || 0).toLocaleString('es-CL')} km².
-   - Densidad: ${(c.densidad_hab_km2 || 0).toLocaleString('es-CL', { minimumFractionDigits: 2 })} hab/km².
-
-2. Vulnerabilidad y Pobreza (MDSF CASEN):
-   - Pobreza multidimensional: ${(c.pobreza_multidim_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
-   - Pobreza por ingresos: ${(c.pobreza_ingresos_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
-
-3. Finanzas y Gobernanza (SUBDERE SINIM / DIPRES):
-   - Dependencia del Fondo Común Municipal (FCM): ${(c.dependencia_fcm_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
-   - Presupuesto municipal: ${(c.presupuesto_mclp || 0).toLocaleString('es-CL')} M$ (${(c.presupuesto_per_capita_mclp || 0).toLocaleString('es-CL')} M$/hab).
-   - Inversión pública regional FNDR: ${(c.fndr_mclp || 0).toLocaleString('es-CL')} M$.
-
-4. Salud y Educación (DEIS MINSAL / SLEP):
-   - Camas hospitalarias: ${c.camas_hospitalarias || 0} camas · Postas rurales: ${c.postas_salud_rural || 0}.
-   - Matrícula escolar: ${(c.matricula_escolar || 0).toLocaleString('es-CL')} estudiantes.
-   - Tiempo de traslado terrestre a Coyhaique: ${c.traslado_coyhaique_hrs || 0} horas.
-
-5. Energía, Economía y Actividad (SEC / CNE / SII / SUBPESCA):
-   - Interrupciones eléctricas SAIDI: ${(c.saidi_horas_anual || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })} horas/año.
-   - Tarifa residencial BT1: ${(c.tarifa_bt1_clp || 0).toLocaleString('es-CL')} $/kWh · Hogares a leña: ${(c.hogares_lena_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
-   - Empresas formales activas: ${(c.empresas_sii || 0).toLocaleString('es-CL')} · Trabajadores: ${(c.trabajadores_sii || 0).toLocaleString('es-CL')}.
-   - Salmonicultura: ${c.concesiones_salmon || 0} concesiones otorgadas (${(c.biomasa_salmon_ton || 0).toLocaleString('es-CL')} ton cosechadas).`;
+    // 7. Consultas de Comuna Específica (Ficha General cuando no se especificó otra dimensión)
+    if (matchedComuna) {
+      const cNombre = matchedComuna.nombre || matchedComuna.nombre_comuna;
+      const txt = buildComunaProfileReply(matchedComuna);
 
       return {
         reply: txt,
         sources: [
-          { institucion: 'INE / SINIM / DEIS / SEC / SII', indicador: `Ficha Territorial Consolidada: Comuna de ${cNombre}`, url: 'index.html' }
+          { institucion: 'INE / SINIM / DEIS / SEC / SII', indicador: `Ficha Territorial: Comuna de ${cNombre}`, url: 'index.html' }
         ],
         chart: {
           render: true,
@@ -497,180 +763,33 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
       };
     }
 
-    // 7. Mapeo temático de dimensiones territoriales con sinónimos amplios
-    const DIMENSIONES = [
-      {
-        keys: ['superficie', 'km2', 'extension', 'territorio', 'tamano', 'area'],
-        varX: 'superficie_km2',
-        varY: null,
-        unit: 'km²',
-        title: 'Superficie Territorial (km²) por Comuna',
-        hub: 'VI',
-        fuente: { institucion: 'INE / IGM', indicador: 'División Político Administrativa y Superficie', url: 'https://www.ine.gob.cl/' }
-      },
-      {
-        keys: ['densidad', 'hab/km2'],
-        varX: 'densidad_hab_km2',
-        varY: null,
-        unit: 'hab/km²',
-        title: 'Densidad Poblacional (hab/km²) por Comuna',
-        hub: 'VI',
-        fuente: { institucion: 'INE', indicador: 'Censo 2024: Densidad de Ocupación', url: 'https://censo2024.ine.gob.cl/' }
-      },
-      {
-        keys: ['pobreza', 'casen', 'vulnerabilidad', 'carencias'],
-        varX: 'pobreza_multidim_pct',
-        varY: 'pobreza_ingresos_pct',
-        unit: '%',
-        title: 'Pobreza Multidimensional y por Ingresos CASEN (%)',
-        hub: 'VI',
-        fuente: { institucion: 'MDSF - CASEN', indicador: 'Encuesta de Caracterización Socioeconómica', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/' }
-      },
-      {
-        keys: ['salud', 'hospital', 'hospitales', 'cama', 'camas', 'medico', 'medicos', 'posta', 'postas', 'urgencia', 'samu'],
-        varX: 'camas_hospitalarias',
-        varY: 'postas_salud_rural',
-        unit: 'camas / postas',
-        title: 'Camas Hospitalarias y Postas de Salud Rural (DEIS/SSA)',
-        hub: 'VIII',
-        fuente: { institucion: 'DEIS - MINSAL / SSA', indicador: 'Red Asistencial Hospitalaria y APS', url: 'https://deis.minsal.cl/' }
-      },
-      {
-        keys: ['educacion', 'escuela', 'escuelas', 'colegio', 'colegios', 'matricula', 'slep', 'estudiantes'],
-        varX: 'matricula_escolar',
-        varY: null,
-        unit: 'estudiantes',
-        title: 'Matrícula Escolar por Comuna (MINEDUC SLEP)',
-        hub: 'VI',
-        fuente: { institucion: 'MINEDUC / SLEP Aysén', indicador: 'Matrícula Oficial Regular', url: 'https://datosabiertos.mineduc.cl/' }
-      },
-      {
-        keys: ['tarifa', 'saidi', 'electricidad', 'corte', 'cortes', 'diesel', 'energia'],
-        varX: 'saidi_horas_anual',
-        varY: 'tarifa_bt1_clp',
-        unit: 'horas/año y $/kWh',
-        title: 'Interrupciones Eléctricas SAIDI (horas/año) y Tarifa BT1 ($/kWh)',
-        hub: 'III',
-        fuente: { institucion: 'SEC / CNE', indicador: 'Indicador SAIDI de Calidad de Suministro y Tarifas BT1', url: 'https://www.sec.cl/' }
-      },
-      {
-        keys: ['empresas', 'trabajadores', 'empleo', 'sii', 'ventas'],
-        varX: 'empresas_sii',
-        varY: 'trabajadores_sii',
-        unit: 'empresas y trabajadores',
-        title: 'Empresas Activas y Trabajadores Formales (SII)',
-        hub: 'V',
-        fuente: { institucion: 'SII', indicador: 'Estadísticas Tributarias de Empresas y Empleo Formal', url: 'https://www.sii.cl/' }
-      },
-      {
-        keys: ['seia', 'proyectos seia', 'inversion seia', 'medio ambiente seia'],
-        varX: 'inversion_seia_mmusd',
-        varY: 'proyectos_seia_aprobados',
-        unit: 'MM US$ y proyectos',
-        title: 'Inversión en Proyectos SEIA (MM US$) y Resoluciones RCA',
-        hub: 'V',
-        fuente: { institucion: 'SEA - SEIA', indicador: 'Catastro Oficial de 722 Proyectos SEIA', url: 'https://seia.sea.gob.cl/' }
-      },
-      {
-        keys: ['turismo', 'prestadores', 'alojamiento', 'emat', 'sernatur'],
-        varX: 'visitantes_snaspe',
-        varY: 'prestadores_sernatur',
-        unit: 'visitantes y prestadores',
-        title: 'Visitantes SNASPE y Prestadores Turísticos SERNATUR',
-        hub: 'I',
-        fuente: { institucion: 'CONAF / SERNATUR', indicador: 'Estadísticas Oficiales de Turismo y SNASPE', url: 'https://registro.sernatur.cl/' }
-      },
-      {
-        keys: ['salmon', 'salmonicultura', 'biomasa', 'concesiones', 'acuicultura'],
-        varX: 'biomasa_salmon_ton',
-        varY: 'concesiones_salmon',
-        unit: 'ton y concesiones',
-        title: 'Biomasa Cosechada (toneladas) y Concesiones Otorgadas',
-        hub: 'II',
-        fuente: { institucion: 'SERNAPESCA / SUBPESCA', indicador: 'Fiscalización Acuícola y Catastro de Concesiones', url: 'https://www.sernapesca.cl/' }
-      },
-      {
-        keys: ['biodiversidad', 'bosque', 'huemul', 'glaciares', 'glaciar', 'vegetal'],
-        varX: 'cobertura_vegetal_nativa_ha',
-        varY: 'glaciares_dga_n',
-        unit: 'ha nativas y glaciares',
-        title: 'Cobertura de Bosque Nativo (ha) y Catastro de Glaciares (DGA)',
-        hub: 'VII',
-        fuente: { institucion: 'MMA / CONAF / DGA', indicador: 'Inventario Vegetacional y Catastro de Glaciares', url: 'https://mma.gob.cl/' }
-      },
-      {
-        keys: ['cultura', 'museos', 'museo', 'biblioteca', 'bibliotecas', 'monumento', 'monumentos', 'fondart', 'patrimonio'],
-        varX: 'total_espacios_culturales',
-        varY: 'fondart_fndr_mclp',
-        unit: 'espacios y M$',
-        title: 'Espacios Culturales Registrados y Financiamiento Fondart/FNDR',
-        hub: 'IX',
-        fuente: { institucion: 'SERPAT / CMN / MINCAP', indicador: 'Catastro Patrimonial y Financiamiento Cultural', url: 'https://www.patrimoniocultural.gob.cl/' }
-      },
-      {
-        keys: ['ctci', 'ciencia', 'anid', 'corfo', 'investigadores', 'investigacion'],
-        varX: 'proyectos_anid_n',
-        varY: 'investigadores_residentes',
-        unit: 'proyectos e investigadores',
-        title: 'Proyectos ANID I+D e Investigadores Residentes',
-        hub: 'X',
-        fuente: { institucion: 'ANID / MinCiencia / CORFO', indicador: 'Plataforma DataCiencia y Proyectos de Innovación', url: 'https://dataciencia.anid.cl/' }
-      }
-    ];
-
-    for (const dim of DIMENSIONES) {
-      if (dim.keys.some(k => q.includes(k))) {
-        const vX = dim.varX;
-        const vY = dim.varY;
-        const ordenadas = [..._comunas].sort((a, b) => (b[vX] || 0) - (a[vX] || 0));
-        const maxCom = ordenadas[0] || {};
-        const minCom = ordenadas[ordenadas.length - 1] || {};
-        const sumVal = ordenadas.reduce((acc, c) => acc + (c[vX] || 0), 0);
-        const avgVal = sumVal / (ordenadas.length || 1);
-
-        const filas = ordenadas.map((c, idx) => {
-          const valX = (c[vX] || 0).toLocaleString('es-CL');
-          const valY = vY && c[vY] !== undefined ? ` · ${vY}: ${(c[vY] || 0).toLocaleString('es-CL')}` : '';
-          return `${idx + 1}. ${c.nombre || c.nombre_comuna}: ${valX} ${dim.unit}${valY}`;
-        }).join('\n');
-
-        const txt = `Análisis Territorial Oficial: ${dim.title} (fuente: ${dim.fuente.institucion}):
-
-${filas}
-
-Síntesis Estadística Regional:
-- Valor Máximo: ${maxCom.nombre || maxCom.nombre_comuna} con ${(maxCom[vX] || 0).toLocaleString('es-CL')} ${dim.unit}.
-- Valor Mínimo: ${minCom.nombre || minCom.nombre_comuna} con ${(minCom[vX] || 0).toLocaleString('es-CL')} ${dim.unit}.
-- Promedio Regional: ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })} ${dim.unit}.
-
-Datos 100% verificados e indexados en el Data Lake de Aysén Sistémico (Hub ${dim.hub}).`;
-
-        return {
-          reply: txt,
-          sources: [dim.fuente],
-          chart: {
-            render: true,
-            type: vY ? 'bar' : 'bar',
-            varX: vX,
-            varY: vY,
-            title: dim.title,
-            excludeCoyhaique: false
-          },
-          relatedHub: dim.hub
-        };
-      }
-    }
-
     // 8. Búsqueda directa por variable genérica en el catálogo de variables
     for (const v of _variablesCatalog) {
       const vKeyNorm = normText(v.key);
       const vLabelNorm = normText(v.label);
       if (q.includes(vKeyNorm) || q.includes(vLabelNorm)) {
         const ordenadas = [..._comunas].sort((a, b) => (b[v.key] || 0) - (a[v.key] || 0));
-        const top5 = ordenadas.slice(0, 5).map(c => `${c.nombre || c.nombre_comuna}: ${(c[v.key] || 0).toLocaleString('es-CL')} ${v.unit}`).join('\n- ');
+        const maxCom = ordenadas[0] || {};
+        const minCom = ordenadas[ordenadas.length - 1] || {};
+        const sumVal = ordenadas.reduce((acc, c) => acc + (c[v.key] || 0), 0);
+        const avgVal = sumVal / (ordenadas.length || 1);
         const hubLetter = getHubForVariable(v.key);
+
+        let txt;
+        if (matchedComuna) {
+          const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
+          const valX = (matchedComuna[v.key] || 0).toLocaleString('es-CL');
+          const maxNom = maxCom.nombre || maxCom.nombre_comuna;
+          const minNom = minCom.nombre || minCom.nombre_comuna;
+          const maxV = (maxCom[v.key] || 0).toLocaleString('es-CL');
+          const minV = (minCom[v.key] || 0).toLocaleString('es-CL');
+          txt = `En la comuna de ${cNom}, el indicador ${v.label} registra ${valX} ${v.unit}. A nivel regional, ${maxNom} lidera con ${maxV} ${v.unit} y ${minNom} registra ${minV} ${v.unit} (fuente oficial Hub ${hubLetter}). El desglose completo por comuna está disponible en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+        } else {
+          txt = buildGenericVarReply(v, ordenadas, maxCom, minCom, avgVal, sumVal);
+        }
+
         return {
-          reply: `Indicador territorial verificado: ${v.label}.\n\nDistribución en las principales comunas:\n- ${top5}\n\nDatos oficiales consolidados al 100% en window.AYSEN_HUBS_DATA (Hub ${hubLetter}).`,
+          reply: txt,
           sources: [
             { institucion: 'Plataforma Aysén Sistémico', indicador: v.label, url: 'index.html' }
           ],
@@ -679,7 +798,7 @@ Datos 100% verificados e indexados en el Data Lake de Aysén Sistémico (Hub ${d
             type: 'bar',
             varX: v.key,
             varY: null,
-            title: v.label,
+            title: matchedComuna ? `${v.label} · ${matchedComuna.nombre || matchedComuna.nombre_comuna}` : v.label,
             excludeCoyhaique: false
           },
           relatedHub: hubLetter
@@ -687,18 +806,13 @@ Datos 100% verificados e indexados en el Data Lake de Aysén Sistémico (Hub ${d
       }
     }
 
-    // 9. Mundo Cerrado Estricto ante consultas no reconocidas
+    // 9. Respuesta ante consultas no reconocidas
     return {
       reply: `Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico.
 
-La plataforma solo responde y grafica con base en registros auditados de las instituciones oficiales (SINIM, SERNATUR, CONAF, INE, CNE, SEC, SUBPESCA, SERNAPESCA, SEA, SII, CASEN, MINEDUC, MMA, DEIS-MINSAL, ANID, entre otras).
+La plataforma responde y grafica exclusivamente con base en información de instituciones oficiales de la región (como SINIM, INE, SERNATUR, CONAF, CNE, SEC, SUBPESCA, SEA y DEIS-MINSAL).
 
-Indicadores territoriales reales recomendados:
-1. Población Comunal y Densidad (Censo 2024 INE)
-2. Dependencia del Fondo Común Municipal (%) e Ingresos Propios (SINIM)
-3. Visitas a Parques Nacionales SNASPE y Pernoctaciones EMAT (CONAF / INE)
-4. Porcentaje de Hogares a Leña vs Días con Contaminación MP2.5 (CNE / MMA)
-5. Biomasa de Salmonicultura vs Inversión Pública FNDR (SERNAPESCA / GORE)`,
+Puede consultar indicadores como población comunal, dependencia del Fondo Común Municipal, visitación a parques, calefacción a leña o biomasa acuícola en el gráfico y en la pestaña Tabla de datos.`,
       sources: [
         { institucion: 'Plataforma y Base de Datos Sistémica de Aysén', indicador: 'Catálogo de 28 Fuentes Oficiales', url: 'index.html#seccion-arquitectura-fuentes' }
       ],
@@ -804,9 +918,14 @@ Indicadores territoriales reales recomendados:
     buildSystemPrompt: buildSystemPrompt,
     query: query,
     resolveClosedWorldDeterministic: resolveClosedWorldDeterministic,
+    localVerifiedQuery: resolveClosedWorldDeterministic,
+    buildIndicatorReply: buildIndicatorReply,
+    buildSeriesReply: buildSeriesReply,
+    buildComunaProfileReply: buildComunaProfileReply,
     getComunaVector: getComunaVector,
     extractJsonFromResponse: extractJsonFromResponse,
     getHubForVariable: getHubForVariable,
+    COMUNA_SYNONYMS: COMUNA_SYNONYMS,
     FUENTES_OFICIALES_28: FUENTES_OFICIALES_28
   };
 });
