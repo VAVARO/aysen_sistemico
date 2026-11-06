@@ -3321,30 +3321,6 @@
         overflow-x: hidden;
       }
 
-      .brand-header-inner {
-        padding: 0 0.75rem;
-      }
-
-      .brand-module-title {
-        display: none;
-      }
-
-      .brand-divider {
-        display: none;
-      }
-
-      .brand-nav-pills {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        max-width: 55vw;
-      }
-
-      .brand-nav-pills::-webkit-scrollbar {
-        display: none;
-      }
-
       .canvas-action-bar {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -3828,8 +3804,6 @@
       <div class="brand-left">
         <span class="brand-dot"></span>
         <a href="portal.html" class="brand-author-name" title="Volver a la Portada">Álvaro Contreras Barrios</a>
-        <span class="brand-divider">|</span>
-        <span class="brand-module-title">Laboratorio Sistémico</span>
       </div>
 
       <div class="brand-right">
@@ -3838,6 +3812,7 @@
           <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
           <a href="index.html" class="brand-pill">Datos de Aysén</a>
           <a href="laboratorio.html" class="brand-pill active" aria-current="page">Laboratorio Sistémico</a>
+          <a href="consultor.html" class="brand-pill">Consultor de Datos</a>
           <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer"
             class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
             <span>LinkedIn</span>
@@ -4490,26 +4465,26 @@
 
       const COMUNA_COORDS = {
         'Coyhaique': [-45.5752, -72.0662],
-        'Lago Verde': [-44.2415, -71.8485],
-        'Aysén': [-45.4050, -72.6961],
-        'Cisnes': [-44.7431, -72.6989],
-        'Guaitecas': [-43.8897, -73.7436],
-        'Chile Chico': [-46.5414, -71.7225],
-        'Río Ibáñez': [-46.2917, -71.9392],
-        'Cochrane': [-47.2547, -72.5714],
-        'O\'Higgins': [-48.4658, -72.5614],
-        'Tortel': [-47.7958, -73.5350]
+        'Lago Verde': [-44.2403, -71.8494],
+        'Aysén': [-45.4030, -72.6915],
+        'Cisnes': [-44.7278, -72.6806],
+        'Guaitecas': [-43.8975, -73.7458],
+        'Chile Chico': [-46.5410, -71.7219],
+        'Río Ibáñez': [-46.2925, -71.9378],
+        'Cochrane': [-47.2539, -72.5694],
+        'O\'Higgins': [-48.4689, -72.5614],
+        'Tortel': [-47.7969, -73.5322]
       };
 
       const LOCALIDADES_AYSEN_COORDS = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.localidadesCoords) || {
-        'Melinka': { lat: -43.8960, lon: -73.7480, comuna_ine: '11203', comuna: 'Guaitecas' },
+        'Melinka': { lat: -43.8975, lon: -73.7458, comuna_ine: '11203', comuna: 'Guaitecas' },
         'Repollal': { lat: -43.9320, lon: -73.6850, comuna_ine: '11203', comuna: 'Guaitecas' },
         'Puerto Aguirre': { lat: -45.1630, lon: -73.5220, comuna_ine: '11201', comuna: 'Aysén' },
         'Caleta Andrade': { lat: -45.1540, lon: -73.5080, comuna_ine: '11201', comuna: 'Aysén' },
         'Puerto Gala': { lat: -44.1810, lon: -73.1250, comuna_ine: '11202', comuna: 'Cisnes' },
         'Puerto Gaviota': { lat: -44.9180, lon: -73.3210, comuna_ine: '11202', comuna: 'Cisnes' },
         'Puyuhuapi': { lat: -44.3250, lon: -72.5580, comuna_ine: '11202', comuna: 'Cisnes' },
-        'Puerto Cisnes': { lat: -44.7430, lon: -72.6990, comuna_ine: '11202', comuna: 'Cisnes' },
+        'Puerto Cisnes': { lat: -44.7278, lon: -72.6806, comuna_ine: '11202', comuna: 'Cisnes' },
         'La Junta': { lat: -43.9730, lon: -72.4050, comuna_ine: '11202', comuna: 'Cisnes' },
         'Raul Marin Balmaceda': { lat: -43.7820, lon: -72.9540, comuna_ine: '11202', comuna: 'Cisnes' },
         'Villa Manihuales': { lat: -45.1740, lon: -72.1460, comuna_ine: '11201', comuna: 'Aysén' },
@@ -4520,8 +4495,8 @@
         'Puerto Rio Tranquilo': { lat: -46.6240, lon: -72.6760, comuna_ine: '11402', comuna: 'Río Ibáñez' },
         'Puerto Guadal': { lat: -46.8480, lon: -72.7080, comuna_ine: '11401', comuna: 'Chile Chico' },
         'Puerto Bertrand': { lat: -47.0180, lon: -72.8250, comuna_ine: '11401', comuna: 'Chile Chico' },
-        'Caleta Tortel': { lat: -47.7950, lon: -73.5350, comuna_ine: '11303', comuna: 'Tortel' },
-        'Villa O\'Higgins': { lat: -48.4680, lon: -72.5600, comuna_ine: '11302', comuna: 'O\'Higgins' }
+        'Caleta Tortel': { lat: -47.7969, lon: -73.5322, comuna_ine: '11303', comuna: 'Tortel' },
+        'Villa O\'Higgins': { lat: -48.4689, lon: -72.5614, comuna_ine: '11302', comuna: 'O\'Higgins' }
       };
 
       const SPATIAL_LAYERS_META = {
@@ -4548,19 +4523,24 @@
         const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
         const hubKey = String((vY && vY.hubId) || (vX && vX.hubId) || '').toLowerCase();
 
+        // Sismos / Volcanes UNICAMENTE ante seleccion explicita de sismicidad o riesgos geologicos
+        if (varKey.includes('sismo') || varKey.includes('volcan') || varKey.includes('geolog') || varKey.includes('tsunami')) return 'volcanes_sismos';
+
+        // Hub VIII (Salud): exclusivamente Hospitales y Postas de la Red Asistencial DEIS/SSA en tierra firme
+        if (varKey.includes('salud') || varKey.includes('hospital') || varKey.includes('camas') || varKey.includes('posta') || varKey.includes('samu') || varKey.includes('medico') || hubKey === 'salud') return 'hospitales_postas';
+
         if (varKey.includes('salmon') || varKey.includes('concesion') || varKey.includes('biomasa') || hubKey === 'salmonicultura') return 'concesiones_acuicolas';
-        if (varKey.includes('saidi') || varKey.includes('tarifa') || varKey.includes('internet') || varKey.includes('lena') || hubKey === 'energia') return 'centrales_electricas';
-        if (varKey.includes('seia') || varKey.includes('empresas') || varKey.includes('trabajadores') || hubKey === 'inversion') return 'proyectos_seia';
-        if (varKey.includes('salud') || varKey.includes('hospital') || varKey.includes('camas') || hubKey === 'salud') return 'hospitales_postas';
-        if (varKey.includes('matricula') || varKey.includes('escolar') || varKey.includes('slep')) return 'escuelas_slep';
-        if (varKey.includes('delito') || varKey.includes('pobreza') || varKey.includes('volcan') || varKey.includes('sismo') || hubKey === 'social') return 'volcanes_sismos';
-        if (varKey.includes('visitantes') || varKey.includes('sernatur') || varKey.includes('sello') || hubKey === 'turismo') return 'parques_snaspe';
-        if (varKey.includes('snaspe') || varKey.includes('especies') || varKey.includes('invasora') || varKey.includes('huemul') || hubKey === 'biodiversidad') return 'estaciones_monitoreo';
-        if (varKey.includes('cultural') || varKey.includes('fondart') || varKey.includes('museo') || varKey.includes('monumento') || hubKey === 'cultura_patrimonio') return 'museos_cultura';
-        if (varKey.includes('anid') || varKey.includes('corfo') || varKey.includes('ctci') || varKey.includes('publicaciones') || hubKey === 'ctci_innovacion') return 'centros_ctci';
+        if (varKey.includes('saidi') || varKey.includes('tarifa') || varKey.includes('internet') || varKey.includes('lena') || varKey.includes('diesel') || varKey.includes('electric') || hubKey === 'energia') return 'centrales_electricas';
+        if (varKey.includes('seia') || varKey.includes('empresas') || varKey.includes('trabajadores') || varKey.includes('inversion') || hubKey === 'inversion') return 'proyectos_seia';
+        if (varKey.includes('matricula') || varKey.includes('escolar') || varKey.includes('slep') || varKey.includes('colegio') || varKey.includes('educacion')) return 'escuelas_slep';
+        if (varKey.includes('visitantes') || varKey.includes('sernatur') || varKey.includes('sello') || varKey.includes('turismo') || varKey.includes('hotel') || hubKey === 'turismo') return 'parques_snaspe';
+        if (varKey.includes('snaspe') || varKey.includes('especies') || varKey.includes('invasora') || varKey.includes('huemul') || varKey.includes('flora') || varKey.includes('fauna') || varKey.includes('bosque') || hubKey === 'biodiversidad') return 'estaciones_monitoreo';
+        if (varKey.includes('cultural') || varKey.includes('fondart') || varKey.includes('museo') || varKey.includes('monumento') || varKey.includes('patrimonio') || hubKey === 'cultura_patrimonio' || hubKey === 'cultura') return 'museos_cultura';
+        if (varKey.includes('anid') || varKey.includes('corfo') || varKey.includes('ctci') || varKey.includes('publicaciones') || varKey.includes('investigad') || hubKey === 'ctci_innovacion' || hubKey === 'ctci') return 'centros_ctci';
         if (varKey.includes('sma') || varKey.includes('multa') || varKey.includes('3ta') || hubKey === 'justicia_ambiental') return 'justicia_sma';
-        if (varKey.includes('fcm') || varKey.includes('fndr') || varKey.includes('presupuesto') || hubKey === 'gobernanza') return 'gobernanza_obras';
-        return 'concesiones_acuicolas';
+        if (varKey.includes('delito') || varKey.includes('seguridad') || varKey.includes('vif') || varKey.includes('pobreza') || varKey.includes('casen') || hubKey === 'social') return 'escuelas_slep';
+        if (varKey.includes('fcm') || varKey.includes('fndr') || varKey.includes('presupuesto') || varKey.includes('ingresos') || hubKey === 'gobernanza') return 'gobernanza_obras';
+        return 'gobernanza_obras';
       }
 
       function haversineDistanceKm(lat1, lon1, lat2, lon2) {
@@ -8642,11 +8622,12 @@
           setTimeout(fitAndCenterCanvas, 100);
         } else if (templateKey === 'salud_red') {
           createWidget('table', {
-            varX: 'comuna_poblacion_censo',
+            varX: 'camas_hospitalarias',
             x: 60, y: 50, w: 500, h: 360
           });
           createWidget('map', {
-            varX: 'comuna_poblacion_censo',
+            varX: 'camas_hospitalarias',
+            spatialLayer: 'hospitales_postas',
             x: 600, y: 50, w: 520, h: 360
           });
           addConnection(1, 2);
@@ -11809,7 +11790,7 @@
           if (w.showBuffers) {
             let bufferCenters = activeNodes.filter(n => n.bufferGenerator);
             if (bufferCenters.length === 0) {
-              bufferCenters = allSpatialNodes.filter(n => (n.layerKey === 'volcanes_sismos' || n.layerKey === 'hospitales_postas') && n.bufferGenerator);
+              bufferCenters = allSpatialNodes.filter(n => (n.layerKey === 'hospitales_postas' || n.layerKey === 'gobernanza_obras') && n.bufferGenerator);
             }
             bufferCenters.forEach(bc => {
               L.circle([bc.lat, bc.lon], {

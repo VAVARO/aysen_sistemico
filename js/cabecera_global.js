@@ -16,15 +16,12 @@
   }
 
   function generarHtmlCabecera(tituloModulo) {
-    var modTitle = tituloModulo || 'Portada';
-    return '<div class="brand-header-inner">' +
-      '<div class="brand-left">' +
+    return '<div class="brand-header-inner global-header-inner">' +
+      '<div class="brand-left global-header-brand">' +
         '<span class="brand-dot"></span>' +
         '<a href="portal.html" class="brand-author-name" title="Volver al inicio">Álvaro Contreras Barrios</a>' +
-        '<span class="brand-divider">|</span>' +
-        '<span class="brand-module-title">' + modTitle + '</span>' +
       '</div>' +
-      '<div class="brand-right">' +
+      '<div class="brand-right global-header-nav">' +
         '<nav class="brand-nav-pills" aria-label="Navegación principal">' +
           '<a href="portal.html" class="brand-pill">Portada</a>' +
           '<a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>' +
@@ -50,18 +47,16 @@
   function montarCabecera(opciones) {
     if (typeof document === 'undefined') return null;
     var cfg = opciones || {};
-    var cabecera = document.querySelector('header.brand-header');
+    var cabecera = document.querySelector('header.brand-header, header.global-header');
     if (!cabecera) return null;
 
-    if (!cabecera.querySelector('.brand-header-inner')) {
+    if (!cabecera.querySelector('.brand-header-inner, .global-header-inner')) {
       cabecera.innerHTML = generarHtmlCabecera(cfg.tituloModulo);
-    }
-
-    if (cfg.tituloModulo) {
-      var titulo = cabecera.querySelector('.brand-module-title');
-      if (titulo && titulo.textContent.trim() !== cfg.tituloModulo) {
-        titulo.textContent = cfg.tituloModulo;
-      }
+    } else {
+      // Eliminar del DOM cualquier subtitulo de seccion y divisor | que colisionen con los enlaces
+      cabecera.querySelectorAll('.global-header-section, .brand-module-title, .brand-divider').forEach(function (el) {
+        el.remove();
+      });
     }
 
     // Garantizar que el enlace a consultor.html exista en .brand-nav-pills si el HTML estatico no lo contenia

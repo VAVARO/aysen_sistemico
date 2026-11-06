@@ -1,11 +1,11 @@
 /**
  * js/omniroute_client.js
- * Cliente de Inteligencia Artificial para Aysen Sistemico basado en OmniRoute
+ * Cliente de Inteligencia Artificial para Aysén Sistémico basado en OmniRoute
  * Endpoint OpenAI-compatible (/v1/chat/completions) con Mundo Cerrado Estricto
  * (Closed-World Grounding) fundamentado 100% en window.AYSEN_HUBS_DATA y las
- * 28 fuentes oficiales de la Region de Aysen.
+ * 28 fuentes oficiales de la Región de Aysén.
  *
- * Cero emojis. Estetica sobria, tecnica y cartografica austral.
+ * Cero emojis. Estética sobria, técnica y cartográfica austral.
  */
 
 (function (root, factory) {
@@ -20,35 +20,35 @@
 })(typeof window !== 'undefined' ? window : globalThis, function () {
   'use strict';
 
-  // Catalogo canónico de las 28 fuentes oficiales de Aysén Sistémico
+  // Catálogo canónico de las 28 fuentes oficiales de Aysén Sistémico
   const FUENTES_OFICIALES_28 = [
     { id: 1, institucion: 'SERNATUR', indicador: '01. Registro Nacional de Prestadores Turísticos', url: 'https://registro.sernatur.cl/', hub: 'I. Turismo', anos: '2015-2026' },
-    { id: 2, institucion: 'SUBTURISMO', indicador: '02. Zonas de Interes Turistico (ZOIT)', url: 'https://www.subturismo.gob.cl/zoit/', hub: 'I. Turismo', anos: '2015-2026' },
-    { id: 3, institucion: 'INE', indicador: '03. Encuesta Mensual de Alojamiento Turistico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economicas/turismo', hub: 'I. Turismo', anos: '2015-2026' },
-    { id: 4, institucion: 'CONAF', indicador: '04. Estadisticas de Visitacion SNASPE', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', hub: 'I. Turismo', anos: '2015-2026' },
+    { id: 2, institucion: 'SUBTURISMO', indicador: '02. Zonas de Interés Turístico (ZOIT)', url: 'https://www.subturismo.gob.cl/zoit/', hub: 'I. Turismo', anos: '2015-2026' },
+    { id: 3, institucion: 'INE', indicador: '03. Encuesta Mensual de Alojamiento Turístico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economicas/turismo', hub: 'I. Turismo', anos: '2015-2026' },
+    { id: 4, institucion: 'CONAF', indicador: '04. Estadísticas de Visitación SNASPE', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', hub: 'I. Turismo', anos: '2015-2026' },
     { id: 5, institucion: 'SUBPESCA', indicador: '05. Catastro de Concesiones de Acuicultura (745 concesiones)', url: 'https://mapas.subpesca.cl/visorsubpesca/', hub: 'II. Salmonicultura', anos: '2015-2026' },
-    { id: 6, institucion: 'SERNAPESCA', indicador: '06. Fiscalizacion Sanitaria, Biomasa y Antimicrobianos', url: 'https://www.sernapesca.cl/informes/acuicultura', hub: 'II. Salmonicultura', anos: '2015-2026' },
-    { id: 7, institucion: 'IFOP', indicador: '07. Monitoreo Oceanografico y Floraciones Algales', url: 'https://www.ifop.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
-    { id: 8, institucion: 'CMF', indicador: '08. Memorias Financieras de Holdings Acuicolas', url: 'https://www.cmfchile.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
-    { id: 9, institucion: 'CNE', indicador: '09. Capacidad Instalada y Generacion Electrica (Energia Abierta)', url: 'https://energiaabierta.cl/', hub: 'III. Energia', anos: '2015-2026' },
-    { id: 10, institucion: 'SEC', indicador: '10. Interrupciones Electricas SAIDI y Tarifas BT1', url: 'https://www.sec.cl/', hub: 'III. Energia', anos: '2015-2026' },
-    { id: 11, institucion: 'CNE', indicador: '11. Precios Minoristas de Combustibles y Lena (Bencina en Linea)', url: 'https://www.bencinaenlinea.cl/', hub: 'III. Energia', anos: '2015-2026' },
-    { id: 12, institucion: 'SUBTEL', indicador: '12. Conectividad Digital y Fibra Optica Austral', url: 'https://www.subtel.gob.cl/', hub: 'III. Energia', anos: '2015-2026' },
-    { id: 13, institucion: 'SUBDERE - SINIM', indicador: '13. Finanzas Municipales y Fondo Comun Municipal (FCM)', url: 'https://datos.sinim.gov.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
-    { id: 14, institucion: 'DIPRES / GORE Aysen', indicador: '14. Ejecucion Presupuestaria Regional FNDR', url: 'https://www.dipres.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
+    { id: 6, institucion: 'SERNAPESCA', indicador: '06. Fiscalización Sanitaria, Biomasa y Antimicrobianos', url: 'https://www.sernapesca.cl/informes/acuicultura', hub: 'II. Salmonicultura', anos: '2015-2026' },
+    { id: 7, institucion: 'IFOP', indicador: '07. Monitoreo Oceanográfico y Floraciones Algales', url: 'https://www.ifop.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
+    { id: 8, institucion: 'CMF', indicador: '08. Memorias Financieras de Holdings Acuícolas', url: 'https://www.cmfchile.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
+    { id: 9, institucion: 'CNE', indicador: '09. Capacidad Instalada y Generación Eléctrica (Energía Abierta)', url: 'https://energiaabierta.cl/', hub: 'III. Energía', anos: '2015-2026' },
+    { id: 10, institucion: 'SEC', indicador: '10. Interrupciones Eléctricas SAIDI y Tarifas BT1', url: 'https://www.sec.cl/', hub: 'III. Energía', anos: '2015-2026' },
+    { id: 11, institucion: 'CNE', indicador: '11. Precios Minoristas de Combustibles y Leña (Bencina en Línea)', url: 'https://www.bencinaenlinea.cl/', hub: 'III. Energía', anos: '2015-2026' },
+    { id: 12, institucion: 'SUBTEL', indicador: '12. Conectividad Digital y Fibra Óptica Austral', url: 'https://www.subtel.gob.cl/', hub: 'III. Energía', anos: '2015-2026' },
+    { id: 13, institucion: 'SUBDERE - SINIM', indicador: '13. Finanzas Municipales y Fondo Común Municipal (FCM)', url: 'https://datos.sinim.gov.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
+    { id: 14, institucion: 'DIPRES / GORE Aysén', indicador: '14. Ejecución Presupuestaria Regional FNDR', url: 'https://www.dipres.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
     { id: 15, institucion: 'SERVEL', indicador: '15. Resultados Electorales y Autoridades Comunales (2024-2028)', url: 'https://www.servel.cl/', hub: 'IV. Gobernanza', anos: '2024-2028' },
-    { id: 16, institucion: 'MOP Vialidad', indicador: '16. Red Vial y Pavimentacion Ruta 7 Austral', url: 'https://vialidad.mop.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
-    { id: 17, institucion: 'SEA - SEIA', indicador: '17. Proyectos Evaluados y Aprobados en el SEIA (722 proyectos)', url: 'https://seia.sea.gob.cl/', hub: 'V. Inversion', anos: '2015-2026' },
-    { id: 18, institucion: 'SII', indicador: '18. Estadisticas Tributarias de Empresas, Ventas y Empleo', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/', hub: 'V. Inversion', anos: '2015-2026' },
-    { id: 19, institucion: 'ChileCompra', indicador: '19. Transacciones y Compras Publicas Mercado Publico', url: 'https://www.chilecompra.cl/', hub: 'V. Inversion', anos: '2015-2026' },
-    { id: 20, institucion: 'MBN / SERNAGEOMIN', indicador: '20. Catastro de Propiedad Fiscal y Concesiones Mineras', url: 'https://catastro.bienes.cl/', hub: 'V. Inversion', anos: '2015-2026' },
-    { id: 21, institucion: 'INE', indicador: '21. Censo de Poblacion y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/', hub: 'VI. Social', anos: '2017-2024' },
-    { id: 22, institucion: 'MDSF - CASEN', indicador: '22. Encuesta de Caracterizacion Socioeconomica Nacional (CASEN)', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen', hub: 'VI. Social', anos: '2015-2024' },
-    { id: 23, institucion: 'MINEDUC / SLEP Aysen', indicador: '23. Matricula, Asistencia y Establecimientos Escolares', url: 'https://datosabiertos.mineduc.cl/', hub: 'VI. Social', anos: '2015-2026' },
-    { id: 24, institucion: 'CEAD - SPD', indicador: '24. Estadisticas Policiales y Seguridad Ciudadana', url: 'https://cead.spd.gov.cl/', hub: 'VI. Social', anos: '2015-2026' },
+    { id: 16, institucion: 'MOP Vialidad', indicador: '16. Red Vial y Pavimentación Ruta 7 Austral', url: 'https://vialidad.mop.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
+    { id: 17, institucion: 'SEA - SEIA', indicador: '17. Proyectos Evaluados y Aprobados en el SEIA (722 proyectos)', url: 'https://seia.sea.gob.cl/', hub: 'V. Inversión', anos: '2015-2026' },
+    { id: 18, institucion: 'SII', indicador: '18. Estadísticas Tributarias de Empresas, Ventas y Empleo', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/', hub: 'V. Inversión', anos: '2015-2026' },
+    { id: 19, institucion: 'ChileCompra', indicador: '19. Transacciones y Compras Públicas Mercado Público', url: 'https://www.chilecompra.cl/', hub: 'V. Inversión', anos: '2015-2026' },
+    { id: 20, institucion: 'MBN / SERNAGEOMIN', indicador: '20. Catastro de Propiedad Fiscal y Concesiones Mineras', url: 'https://catastro.bienes.cl/', hub: 'V. Inversión', anos: '2015-2026' },
+    { id: 21, institucion: 'INE', indicador: '21. Censo de Población y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/', hub: 'VI. Social', anos: '2017-2024' },
+    { id: 22, institucion: 'MDSF - CASEN', indicador: '22. Encuesta de Caracterización Socioeconómica Nacional (CASEN)', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen', hub: 'VI. Social', anos: '2015-2024' },
+    { id: 23, institucion: 'MINEDUC / SLEP Aysén', indicador: '23. Matrícula, Asistencia y Establecimientos Escolares', url: 'https://datosabiertos.mineduc.cl/', hub: 'VI. Social', anos: '2015-2026' },
+    { id: 24, institucion: 'CEAD - SPD', indicador: '24. Estadísticas Policiales y Seguridad Ciudadana', url: 'https://cead.spd.gob.cl/', hub: 'VI. Social', anos: '2015-2026' },
     { id: 25, institucion: 'MMA / CONAF SIT / SAG', indicador: '25. Inventario de Flora, Fauna RCE y Pisos Vegetacionales', url: 'https://mma.gob.cl/biodiversidad/', hub: 'VII. Biodiversidad', anos: '2015-2026' },
-    { id: 26, institucion: 'MMA SINCA / DGA / SERNAGEOMIN', indicador: '26. Calidad del Aire (SINCA), Glaciares (DGA) y Red Sismica', url: 'https://sinca.mma.gob.cl/', hub: 'VII. Biodiversidad', anos: '2015-2026' },
-    { id: 27, institucion: 'DEIS - MINSAL / SSA', indicador: '27. Estadisticas Vitales, Red APS, Camas y SAMU', url: 'https://deis.minsal.cl/', hub: 'VIII. Salud', anos: '2015-2026' },
+    { id: 26, institucion: 'MMA SINCA / DGA / SERNAGEOMIN', indicador: '26. Calidad del Aire (SINCA), Glaciares (DGA) y Red Sísmica', url: 'https://sinca.mma.gob.cl/', hub: 'VII. Biodiversidad', anos: '2015-2026' },
+    { id: 27, institucion: 'DEIS - MINSAL / SSA', indicador: '27. Estadísticas Vitales, Red APS, Camas y SAMU', url: 'https://deis.minsal.cl/', hub: 'VIII. Salud', anos: '2015-2026' },
     { id: 28, institucion: 'SERPAT-CMN / ANID / CORFO', indicador: '28. Infraestructura Cultural, Cartera ANID, CORFO e Investigadores', url: 'https://dataciencia.anid.cl/', hub: 'IX. Cultura y X. CTCi', anos: '2015-2026' }
   ];
 
@@ -67,6 +67,7 @@
     presupuesto_mclp: 'IV', presupuesto_per_capita_mclp: 'IV', dependencia_fcm_pct: 'IV',
     fndr_mclp: 'IV', ipp_per_capita_clp: 'IV', gasto_personal_pct: 'IV',
     inversion_directa_pct: 'IV', profesionalizacion_pct: 'IV',
+    ruta7_pavimentada_km: 'IV', ruta7_ripio_km: 'IV',
     // Hub V: Inversión
     concesiones_mineras_ha: 'V', proyectos_seia_aprobados: 'V', inversion_seia_mmusd: 'V',
     empresas_sii: 'V', trabajadores_sii: 'V', seia_plazo_dias: 'V',
@@ -90,13 +91,30 @@
     proyectos_ctci_total: 'X', investigadores_residentes: 'X'
   };
 
-  function getHubForVariable(varKey) {
-    return VARIABLE_HUB_MAP[varKey] || 'V';
+  const DEFAULT_CONFIG = {
+    endpointUrl: 'http://localhost:20128/v1',
+    apiKey: 'sk-omniroute-aysen-local',
+    model: 'auto'
+  };
+
+  let _config = { ...DEFAULT_CONFIG };
+  let _indexedData = null;
+  let _comunas = [];
+  let _variablesCatalog = [];
+  let _nodes = [];
+
+  function normText(str) {
+    return String(str || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
   }
 
-  /**
-   * Identifica si un registro comunal corresponde a Coyhaique de manera robusta
-   */
+  function getHubForVariable(varKey) {
+    return VARIABLE_HUB_MAP[varKey] || 'VI';
+  }
+
   function isCoyhaiqueComuna(c) {
     if (!c) return false;
     if (c.id === 1 || c.id === '1' || c.id === 'coyhaique') return true;
@@ -106,179 +124,131 @@
     return name.includes('coyhaique');
   }
 
-  /**
-   * Extrae y parsea de forma resiliente el esquema JSON devuelto por OmniRoute o proveedores LLM,
-   * soportando respuestas en texto plano, bloques Markdown (```json ... ```) o con comentarios perifericos.
-   */
   function extractJsonFromResponse(rawContent) {
     if (!rawContent || typeof rawContent !== 'string') return null;
     const trimmed = rawContent.trim();
-    // 1. Intento directo
     try {
       const direct = JSON.parse(trimmed);
       if (direct && typeof direct === 'object') return direct;
     } catch (e) {}
 
-    // 2. Bloque de codigo Markdown ```json ... ``` o ``` ... ```
-    const codeBlockMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
-    if (codeBlockMatch && codeBlockMatch[1]) {
+    const mdMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+    if (mdMatch && mdMatch[1]) {
       try {
-        const fromBlock = JSON.parse(codeBlockMatch[1].trim());
-        if (fromBlock && typeof fromBlock === 'object') return fromBlock;
+        const parsed = JSON.parse(mdMatch[1].trim());
+        if (parsed && typeof parsed === 'object') return parsed;
       } catch (e) {}
     }
 
-    // 3. Extraccion entre la primera llave '{' y la ultima '}'
-    const startIdx = trimmed.indexOf('{');
-    const endIdx = trimmed.lastIndexOf('}');
-    if (startIdx !== -1 && endIdx > startIdx) {
+    const firstBrace = trimmed.indexOf('{');
+    const lastBrace = trimmed.lastIndexOf('}');
+    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
       try {
-        const fromSlice = JSON.parse(trimmed.slice(startIdx, endIdx + 1));
-        if (fromSlice && typeof fromSlice === 'object') return fromSlice;
+        const candidate = trimmed.substring(firstBrace, lastBrace + 1);
+        const parsed = JSON.parse(candidate);
+        if (parsed && typeof parsed === 'object') return parsed;
       } catch (e) {}
     }
-
     return null;
   }
 
-  // Configuración por defecto
-  const DEFAULT_CONFIG = {
-    endpointUrl: 'http://localhost:20128/v1',
-    apiKey: 'sk-omniroute-aysen-local',
-    model: 'auto'
-  };
-
-  const STORAGE_KEYS = {
-    url: 'aysen_omniroute_url',
-    key: 'aysen_omniroute_key',
-    model: 'aysen_omniroute_model'
-  };
-
-  // Estado del índice en memoria
-  let _indexedData = null;
-  let _comunas = [];
-  let _variablesCatalog = [];
-  let _nodos = [];
-  let _hubs = {};
-  let _series = {};
-
-  /**
-   * Inicializa el cliente y construye el índice compacto en memoria a partir de window.AYSEN_HUBS_DATA
-   * @param {Object} [customData] Datos opcionales para pruebas unitarias en Node.js
-   */
-  function init(customData) {
-    const raw = customData || (typeof window !== 'undefined' ? window.AYSEN_HUBS_DATA : null);
-    if (!raw) {
-      console.warn('[OmniRouteClient] window.AYSEN_HUBS_DATA no esta disponible al inicializar.');
-      return false;
-    }
+  function init(bundleData) {
+    const raw = bundleData || (typeof window !== 'undefined' ? window.AYSEN_HUBS_DATA : null);
+    if (!raw) return false;
 
     _indexedData = raw;
     _comunas = Array.isArray(raw.comunas) ? raw.comunas : [];
-    _nodos = Array.isArray(raw.nodos) ? raw.nodos : [];
-    _hubs = raw.hubs || {};
-    _series = {
-      emat: raw.seriesMensualesEmat || null
-    };
 
-    // Extraer diccionario exhaustivo de variables comunales a partir del primer registro
-    const sampleComuna = _comunas[0] || {};
-    const excludedKeys = new Set(['id', 'comuna_ine', 'codigo_comuna', 'nombre', 'nombre_comuna', 'provincia', 'cabecera', 'cuenca_bna', 'alcalde', 'partido_alcalde', 'sistema_electrico', 'estado_foa', 'zoit_nombre', 'unidades_snaspe', 'salud_principal', 'aerodromo']);
+    // Indexar 100% de columnas numéricas de las 10 comunas
+    const sample = _comunas[0] || {};
+    const keys = Object.keys(sample).filter(k => typeof sample[k] === 'number' && k !== 'id');
 
-    _variablesCatalog = Object.keys(sampleComuna)
-      .filter(k => !excludedKeys.has(k) && typeof sampleComuna[k] === 'number')
-      .map(k => {
-        let label = k.replace(/_/g, ' ');
-        let unit = '';
-        if (k.endsWith('_pct')) { unit = '%'; label = label.replace(' pct', ' (%)'); }
-        else if (k.endsWith('_mmusd')) { unit = 'MM USD'; label = label.replace(' mmusd', ' (MM USD)'); }
-        else if (k.endsWith('_mclp')) { unit = 'M CLP'; label = label.replace(' mclp', ' (M$ CLP)'); }
-        else if (k.endsWith('_clp')) { unit = 'CLP'; label = label.replace(' clp', ' ($ CLP)'); }
-        else if (k.endsWith('_ton')) { unit = 'ton'; label = label.replace(' ton', ' (toneladas)'); }
-        else if (k.endsWith('_km2')) { unit = 'km²'; label = label.replace(' km2', ' (km²)'); }
-        else if (k.endsWith('_km')) { unit = 'km'; label = label.replace(' km', ' (km)'); }
-        else if (k.endsWith('_ha')) { unit = 'ha'; label = label.replace(' ha', ' (ha)'); }
-        else if (k.endsWith('_mw')) { unit = 'MW'; label = label.replace(' mw', ' (MW)'); }
-        else if (k.endsWith('_m3')) { unit = 'm³'; label = label.replace(' m3', ' (m³)'); }
-        else if (k.endsWith('_m3s')) { unit = 'm³/s'; label = label.replace(' m3s', ' (m³/s)'); }
-        return { key: k, label: label, unit: unit };
-      });
+    _variablesCatalog = keys.map(k => {
+      let unit = 'unid.';
+      if (k.endsWith('_pct')) unit = '%';
+      else if (k.endsWith('_km2')) unit = 'km²';
+      else if (k.endsWith('_mclp')) unit = 'M$';
+      else if (k.endsWith('_clp')) unit = '$';
+      else if (k.endsWith('_mmusd')) unit = 'MM US$';
+      else if (k.endsWith('_mw')) unit = 'MW';
+      else if (k.endsWith('_ton')) unit = 'ton';
+      else if (k.endsWith('_ha')) unit = 'ha';
+      else if (k.endsWith('_km')) unit = 'km';
+      else if (k.endsWith('_hrs')) unit = 'hrs';
+      else if (k.endsWith('_anual')) unit = 'horas/año';
+      else if (k.includes('poblacion') || k.includes('habitante')) unit = 'hab';
 
+      let label = k.replace(/_/g, ' ');
+      return {
+        key: k,
+        label: label,
+        unit: unit,
+        hub: getHubForVariable(k)
+      };
+    });
+
+    _nodes = Array.isArray(raw.nodos) ? raw.nodos : (Array.isArray(raw.spatialNodes) ? raw.spatialNodes : []);
     return true;
   }
 
-  /**
-   * Obtiene la configuración actual de conexión OmniRoute desde localStorage o defaults
-   */
   function getConfig() {
-    if (typeof localStorage === 'undefined') return { ...DEFAULT_CONFIG };
-    return {
-      endpointUrl: localStorage.getItem(STORAGE_KEYS.url) || DEFAULT_CONFIG.endpointUrl,
-      apiKey: localStorage.getItem(STORAGE_KEYS.key) || DEFAULT_CONFIG.apiKey,
-      model: localStorage.getItem(STORAGE_KEYS.model) || DEFAULT_CONFIG.model
-    };
+    return { ..._config };
   }
 
-  /**
-   * Guarda nueva configuración de conexión OmniRoute en localStorage
-   */
-  function setConfig(cfg) {
-    if (!cfg || typeof localStorage === 'undefined') return;
-    if (cfg.endpointUrl !== undefined) localStorage.setItem(STORAGE_KEYS.url, cfg.endpointUrl.trim().replace(/\/+$/, ''));
-    if (cfg.apiKey !== undefined) localStorage.setItem(STORAGE_KEYS.key, cfg.apiKey.trim());
-    if (cfg.model !== undefined) localStorage.setItem(STORAGE_KEYS.model, cfg.model.trim());
+  function setConfig(newConfig) {
+    _config = { ..._config, ...(newConfig || {}) };
+    return { ..._config };
   }
 
-  /**
-   * Devuelve el índice compacto en memoria
-   */
   function getIndex() {
     return {
       comunas: _comunas,
       variables: _variablesCatalog,
-      nodos: _nodos,
-      hubs: _hubs,
-      series: _series,
+      nodos: _nodes,
       fuentes: FUENTES_OFICIALES_28
     };
   }
 
-  /**
-   * Construye el System Prompt de Mundo Cerrado Estricto (Closed-World Grounding)
-   */
   function buildSystemPrompt() {
-    const comunaNames = _comunas.map(c => c.nombre || c.nombre_comuna).join(', ');
-    const allVars = _variablesCatalog.map(v => `${v.key} [${v.unit || 'n'}]`).join(', ');
-    const hubsSummary = 'Hubs: I. Turismo (#01-#05), II. Salmonicultura (#06-#10), III. Energía (#11-#14), IV. Gobernanza (#15-#18), V. Inversión (#19-#22), VI. Social (#23-#25), VII. Biodiversidad (#26-#30), VIII. Salud (#31, #38, #39), IX. Cultura y Patrimonio (#32-#34), X. CTCi e Innovación (#35-#37). 39 Nodos Satélites auditados.';
+    const hubsSummary = `
+- Hub I (Turismo / WP_06): 5 Nodos satélites (#01 al #05). Prestadores SERNATUR, EMAT y Parques CONAF.
+- Hub II (Salmonicultura / WP_03): 5 Nodos satélites (#06 al #10). 745 concesiones SUBPESCA, biomasa SERNAPESCA.
+- Hub III (Energía / WP_02): 4 Nodos satélites (#11 al #14). Tarifas BT1 CNE, interrupciones SAIDI SEC, leña.
+- Hub IV (Gobernanza / WP_01): 4 Nodos satélites (#15 al #18). Finanzas SINIM SUBDERE, Fondo Común Municipal (FCM), FNDR.
+- Hub V (Inversión / WP_04): 4 Nodos satélites (#19 al #22). 722 proyectos SEIA SEA, empresas y empleo formal SII.
+- Hub VI (Social / WP_05): 3 Nodos satélites (#23 al #25). Censo 2024 INE, Encuesta CASEN MDSF, SLEP MINEDUC.
+- Hub VII (Biodiversidad / WP_07): 5 Nodos satélites (#26 al #30). Conservación MMA, Huemul RCE, calidad del aire SINCA.
+- Hub VIII (Salud / WP_08): 3 Nodos satélites (#31, #38, #39). Red Hospitales DEIS MINSAL, postas rurales y SAMU.
+- Hub IX (Cultura / WP_09): 3 Nodos satélites (#32 al #34). Museos SERPAT, inmuebles patrimoniales CMN, Fondart.
+- Hub X (CTCi / WP_10): 3 Nodos satélites (#35 al #37). Centros científicos CIEP, proyectos ANID y CORFO Innova.
+`;
 
-    return `Eres el Consultor Territorial e Inteligencia de Datos de Aysén Sistémico.
-Tu misión es responder consultas ciudadanas, de investigadores y planificadores territoriales sobre la Región de Aysén con rigor empírico estricto.
+    const allVars = _variablesCatalog.map(v => `${v.key} (${v.unit}, Hub ${v.hub})`).join(', ');
 
-======================================================================
-REGLAS INQUEBRANTABLES DE MUNDO CERRADO (CLOSED-WORLD GROUNDING):
-======================================================================
-1. SOLO puedes responder utilizando las cifras exactas, comunas (${comunaNames}), series 2015-2026 y las 28 fuentes oficiales de la plataforma Aysén Sistémico.
-2. TIENES ESTRICTAMENTE PROHIBIDO inventar datos, interpolar valores arbitrarios o apelar a conocimiento general externo no respaldado por las fuentes declaradas.
-3. Si el usuario pregunta por un dato o indicador que NO existe en la plataforma, DEBES DECLARAR EXPLÍCITAMENTE:
-   "Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico"
-   y sugerir los indicadores territoriales reales disponibles más cercanos.
-4. CERO emojis. Tono formal, periodístico, sobrio y técnico.
-5. DEBES RESPONDER SIEMPRE Y EXCLUSIVAMENTE EN FORMATO JSON ESTRUCTURADO con este esquema exacto:
+    return `Eres el Consultor Territorial Oficial de la Plataforma Aysén Sistémico, desarrollado por Álvaro Contreras Barrios.
+Aysén Sistémico cuenta con 10 Hubs Sistémicos y 39 Nodos Satélites con 28 fuentes institucionales oficiales:
+${hubsSummary}
+Tu rol es responder consultas analíticas con estricto MUNDO CERRADO (Closed-World Grounding) fundamentado 100% en window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la Región de Aysén.
+Catálogo de variables disponibles: ${allVars}
+
+REGLAS OBLIGATORIAS:
+1. SOLO puedes responder utilizando las cifras, nombres de comunas, series históricas 2015-2026 y datos de window.AYSEN_HUBS_DATA.
+2. NUNCA inventes cifras, nunca extrapoles fuera de las 10 comunas de Aysén y nunca uses conocimiento general externo no respaldado por la base de datos.
+3. Si el usuario pregunta por un dato o indicador inexistente en la plataforma, debes declarar explícitamente:
+   "Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico." y sugerir los indicadores reales disponibles más cercanos.
+4. CERO emojis. Estilo técnico, riguroso, cartográfico austral y respetuoso.
+5. DEBES responder SIEMPRE con un objeto JSON válido con este esquema exacto:
 {
-  "reply": "Respuesta clara, analitica y directa con cifras exactas formateadas a la usanza chilena y fuentes entre parentesis...",
+  "reply": "Respuesta clara y analítica con datos precisos...",
   "sources": [
-    {
-      "institucion": "Nombre Oficial del Organismo (ej. SUBDERE - SINIM)",
-      "indicador": "Nombre formal del indicador",
-      "url": "https://..."
-    }
+    { "institucion": "Nombre Oficial", "indicador": "Nombre Indicador", "url": "https://..." }
   ],
   "chart": {
     "render": true,
     "type": "bar" | "line" | "scatter",
-    "varX": "clave_real_variable_o_comuna",
+    "varX": "clave_real_de_la_variable",
     "varY": "clave_real_variable_secundaria_o_nulo",
-    "title": "Titulo exacto y descriptivo del grafico",
+    "title": "Título exacto y descriptivo del gráfico",
     "excludeCoyhaique": false
   },
   "relatedHub": "I" | "II" | "III" | "IV" | "V" | "VI" | "VII" | "VIII" | "IX" | "X"
@@ -288,25 +258,65 @@ Estructura de la Plataforma Aysén Sistémico:
 ${hubsSummary}
 
 Variables canónicas disponibles:
-${allVars}
-
-Las 28 fuentes oficiales incluyen: SERNATUR, SUBTURISMO, INE EMAT, CONAF, SUBPESCA, SERNAPESCA, IFOP, CMF, CNE, SEC, Bencina en Linea, SUBTEL, SINIM-SUBDERE, DIPRES/GORE, SERVEL, MOP Vialidad, SEA-SEIA, SII, ChileCompra, MBN/SERNAGEOMIN, INE Censo 2024, CASEN MDSF, MINEDUC SLEP, CEAD-SPD, MMA/CONAF SIT, SINCA/DGA/RNVV, DEIS-MINSAL/SAMU, SERPAT-CMN/ANID/CORFO.`;
+${allVars}`;
   }
 
   /**
    * Resuelve consultas bajo mundo cerrado de forma determinista y verificada
-   * (usado tanto en modo directo como fallback seguro si el daemon OmniRoute no esta corriendo)
    */
   function resolveClosedWorldDeterministic(queryText) {
-    const q = (queryText || '').toLowerCase().trim();
+    if (!_indexedData) init();
+    const qRaw = String(queryText || '').trim();
+    const q = normText(qRaw);
 
-    // 1. Consulta Sugerida: Dependencia FCM vs Ingresos Propios
-    if (q.includes('fondo común') || q.includes('fcm') || q.includes('ingresos propios') || (q.includes('dependencia') && q.includes('comun'))) {
+    // 1. Población Comunal / Censo 2024 (INE)
+    const isPoblacionQuery = q.includes('poblacion') || q.includes('habitante') || q.includes('censo') ||
+      q.includes('personas viven') || q.includes('cuanta gente') || q.includes('cuantas personas') ||
+      q.includes('residentes') || q.includes('vive en cada comuna');
+
+    if (isPoblacionQuery) {
+      const comunasOrdenadas = [..._comunas].sort((a, b) => (b.poblacion_censo_2024 || 0) - (a.poblacion_censo_2024 || 0));
+      const totalRegional = comunasOrdenadas.reduce((acc, c) => acc + (c.poblacion_censo_2024 || 0), 0);
+      const filas = comunasOrdenadas.map((c, idx) => {
+        const pob = (c.poblacion_censo_2024 || 0).toLocaleString('es-CL');
+        const pct = (c.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+        const sup = (c.superficie_km2 || 0).toLocaleString('es-CL');
+        const den = (c.densidad_hab_km2 || 0).toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return `${idx + 1}. ${c.nombre || c.nombre_comuna}: ${pob} habitantes (${pct}% regional · ${sup} km² · ${den} hab/km²)`;
+      }).join('\n');
+
+      const txt = `Según el Censo de Población y Vivienda 2024 (Instituto Nacional de Estadísticas - INE), la Región de Aysén cuenta con un total oficial de ${totalRegional.toLocaleString('es-CL')} habitantes distribuidos en sus 10 comunas:
+
+${filas}
+
+Hallazgos estructurales clave:
+- Macrocefalia capitalina: Coyhaique concentra el 57,4% de la población regional (${(comunasOrdenadas[0]?.poblacion_censo_2024 || 0).toLocaleString('es-CL')} hab). Sumado a Puerto Aysén (23,0%), ambas comunas congregan más del 80,4% de todos los habitantes regionales.
+- Densidad extremadamente baja: Con 108.494 km² de superficie continental e insular, la densidad promedio regional es de 0,93 hab/km², con extremos de aislamiento en O'Higgins (0,02 hab/km²) y Tortel (0,03 hab/km²).`;
+
+      return {
+        reply: txt,
+        sources: [
+          { institucion: 'INE', indicador: 'Censo de Población y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/' }
+        ],
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'poblacion_censo_2024',
+          varY: null,
+          title: 'Población por Comuna · Censo 2024 (INE)',
+          excludeCoyhaique: false
+        },
+        relatedHub: 'VI'
+      };
+    }
+
+    // 2. Consulta de Dependencia Fondo Común Municipal vs Ingresos Propios
+    if (q.includes('fondo comun') || q.includes('fcm') || q.includes('ingresos propios') || (q.includes('dependencia') && q.includes('comun'))) {
       const txt = `En la Región de Aysén, la dependencia del Fondo Común Municipal (FCM) refleja una extrema asimetría estructural entre la capital regional y las comunas periféricas y aisladas (fuente oficial: SUBDERE - SINIM):
 
 - Tortel registra la mayor dependencia con 92,8% de sus ingresos provenientes del FCM (solo un 7,2% de ingresos propios autónomos).
 - Le siguen O'Higgins (91,5% de FCM; 8,5% ingresos propios), Lago Verde (89,2% de FCM; 10,8% ingresos propios) y Guaitecas (83,0% de FCM; 17,0% ingresos propios).
-- Río Ibáñez registra 79,6% de FCM (20,4% ingresos propios), Cochrane 76,8% (23,2% propios), Cisnes 74,5% (25,5% propios) y Chile Chico 71,2% (28,8% propios).
+- Río Ibáñez registra 79,6% de FCM (20,4% propios), Cochrane 76,8% (23,2% propios), Cisnes 74,5% (25,5% propios) y Chile Chico 71,2% (28,8% propios).
 - En el extremo opuesto, Coyhaique exhibe la menor dependencia regional con 46,5%, sustentada en un 53,5% de ingresos propios derivados de actividad comercial y patentes vehiculares.
 - Puerto Aysén registra 52,8% de dependencia del FCM y 47,2% de ingresos propios.
 
@@ -321,16 +331,16 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
           render: true,
           type: 'bar',
           varX: 'dependencia_fcm_pct',
-          varY: null,
-          title: 'Dependencia del Fondo Común Municipal (%) por Comuna (SINIM)',
+          varY: 'presupuesto_per_capita_mclp',
+          title: 'Dependencia del Fondo Común Municipal (%) y Presupuesto Municipal per Cápita',
           excludeCoyhaique: false
         },
         relatedHub: 'IV'
       };
     }
 
-    // 2. Consulta Sugerida: Evolución histórica visitas parques y noches de alojamiento
-    if ((q.includes('parque') || q.includes('snaspe') || q.includes('conaf') || q.includes('visita')) && (q.includes('alojamiento') || q.includes('emat') || q.includes('turismo') || q.includes('noche') || q.includes('2015') || q.includes('evolución') || q.includes('historica'))) {
+    // 3. Consulta de Evolución Histórica de Parques y Alojamientos
+    if ((q.includes('parque') || q.includes('snaspe') || q.includes('conaf') || q.includes('visita')) && (q.includes('alojamiento') || q.includes('emat') || q.includes('turismo') || q.includes('noche') || q.includes('2015') || q.includes('evolucion') || q.includes('historica'))) {
       const txt = `La evolución turística de la Región de Aysén entre 2015 y 2026 (fuentes oficiales CONAF SNASPE e INE EMAT) muestra una trayectoria de expansión, choque exógeno y recuperación sostenida:
 
 1. Visitación a Áreas Silvestres Protegidas (CONAF SNASPE):
@@ -360,8 +370,8 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
       };
     }
 
-    // 3. Consulta Sugerida: Leña vs Contaminación MP2.5
-    if ((q.includes('leña') || q.includes('lena') || q.includes('calefacc')) && (q.includes('mp2') || q.includes('mp2.5') || q.includes('contamin') || q.includes('calidad del aire') || q.includes('humo'))) {
+    // 4. Leña vs Contaminación MP2.5
+    if ((q.includes('lena') || q.includes('calefacc')) && (q.includes('mp2') || q.includes('contamin') || q.includes('calidad del aire') || q.includes('humo'))) {
       const txt = `El cruce entre calefacción residencial a leña y calidad del aire en la Región de Aysén (fuentes CNE / CASEN MDSF y Red de Calidad del Aire SINCA-MMA) refleja una marcada disparidad entre cuencas urbanas y áreas litorales:
 
 - En Coyhaique, el 92,4% de los hogares utiliza leña como matriz principal de calefacción. La geomorfología de cuenca cerrada combinada con inversión térmica genera 87 días al año con concentraciones sobre la norma de MP2.5 (episodios críticos de alerta, preemergencia y emergencia ambiental).
@@ -388,8 +398,8 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
       };
     }
 
-    // 4. Consulta Sugerida: Biomasa de Salmonicultura vs Inversión Pública
-    if ((q.includes('salmon') || q.includes('biomasa') || q.includes('concesion') || q.includes('acuic')) && (q.includes('inversión') || q.includes('inversion') || q.includes('fndr') || q.includes('publica') || q.includes('presupuesto'))) {
+    // 5. Biomasa Salmonicultura vs Inversión Pública FNDR
+    if ((q.includes('salmon') || q.includes('biomasa') || q.includes('concesion') || q.includes('acuic')) && (q.includes('inversion') || q.includes('fndr') || q.includes('publica') || q.includes('presupuesto'))) {
       const txt = `El análisis espacial entre la cosecha de salmonicultura y la inversión pública regional (fuentes oficiales SERNAPESCA, SUBPESCA y DIPRES / GORE Aysén) demuestra una marcada disociación territorial:
 
 1. Concentración de Biomasa Salmonícola (SERNAPESCA 2024-2026, 503.500 ton regionales totales):
@@ -423,15 +433,241 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
       };
     }
 
-    // 5. Verificación de variables generales
-    for (const v of _variablesCatalog) {
-      if (q.includes(v.key) || q.includes(v.label.toLowerCase())) {
-        const top5 = [..._comunas]
-          .sort((a, b) => (b[v.key] || 0) - (a[v.key] || 0))
-          .slice(0, 5)
-          .map(c => `${c.nombre || c.nombre_comuna}: ${(c[v.key] || 0).toLocaleString('es-CL')} ${v.unit}`)
-          .join('\n- ');
+    // 6. Consultas Comuna Específica (ej. "¿Cómo está Cisnes?", "Perfil de Cochrane", "Compara...")
+    const COMUNAS_NOMBRES = [
+      { name: 'Coyhaique', keys: ['coyhaique'] },
+      { name: 'Aysén', keys: ['aysen', 'puerto aysen'] },
+      { name: 'Cisnes', keys: ['cisnes', 'puerto cisnes'] },
+      { name: 'Guaitecas', keys: ['guaitecas', 'melinka'] },
+      { name: 'Lago Verde', keys: ['lago verde'] },
+      { name: 'Chile Chico', keys: ['chile chico'] },
+      { name: 'Río Ibáñez', keys: ['rio ibanez', 'ibanez', 'ingeniero ibanez'] },
+      { name: 'Cochrane', keys: ['cochrane'] },
+      { name: 'Tortel', keys: ['tortel', 'caleta tortel'] },
+      { name: "O'Higgins", keys: ['ohiggins', "o'higgins", 'villa ohiggins', "villa o'higgins"] }
+    ];
 
+    const comunasEncontradas = COMUNAS_NOMBRES.filter(cn => cn.keys.some(k => q.includes(k)));
+
+    if (comunasEncontradas.length === 1 && !isPoblacionQuery) {
+      const cNombre = comunasEncontradas[0].name;
+      const c = _comunas.find(com => normText(com.nombre || com.nombre_comuna) === normText(cNombre)) || _comunas[0];
+
+      const txt = `Perfil Territorial Verificado: Comuna de ${cNombre} (fuentes oficiales del Data Lake regional):
+
+1. Demografía y Territorio (INE Censo 2024):
+   - Población oficial: ${(c.poblacion_censo_2024 || 0).toLocaleString('es-CL')} habitantes (${(c.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}% del total regional).
+   - Superficie territorial: ${(c.superficie_km2 || 0).toLocaleString('es-CL')} km².
+   - Densidad: ${(c.densidad_hab_km2 || 0).toLocaleString('es-CL', { minimumFractionDigits: 2 })} hab/km².
+
+2. Vulnerabilidad y Pobreza (MDSF CASEN):
+   - Pobreza multidimensional: ${(c.pobreza_multidim_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
+   - Pobreza por ingresos: ${(c.pobreza_ingresos_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
+
+3. Finanzas y Gobernanza (SUBDERE SINIM / DIPRES):
+   - Dependencia del Fondo Común Municipal (FCM): ${(c.dependencia_fcm_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
+   - Presupuesto municipal: ${(c.presupuesto_mclp || 0).toLocaleString('es-CL')} M$ (${(c.presupuesto_per_capita_mclp || 0).toLocaleString('es-CL')} M$/hab).
+   - Inversión pública regional FNDR: ${(c.fndr_mclp || 0).toLocaleString('es-CL')} M$.
+
+4. Salud y Educación (DEIS MINSAL / SLEP):
+   - Camas hospitalarias: ${c.camas_hospitalarias || 0} camas · Postas rurales: ${c.postas_salud_rural || 0}.
+   - Matrícula escolar: ${(c.matricula_escolar || 0).toLocaleString('es-CL')} estudiantes.
+   - Tiempo de traslado terrestre a Coyhaique: ${c.traslado_coyhaique_hrs || 0} horas.
+
+5. Energía, Economía y Actividad (SEC / CNE / SII / SUBPESCA):
+   - Interrupciones eléctricas SAIDI: ${(c.saidi_horas_anual || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })} horas/año.
+   - Tarifa residencial BT1: ${(c.tarifa_bt1_clp || 0).toLocaleString('es-CL')} $/kWh · Hogares a leña: ${(c.hogares_lena_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1 })}%.
+   - Empresas formales activas: ${(c.empresas_sii || 0).toLocaleString('es-CL')} · Trabajadores: ${(c.trabajadores_sii || 0).toLocaleString('es-CL')}.
+   - Salmonicultura: ${c.concesiones_salmon || 0} concesiones otorgadas (${(c.biomasa_salmon_ton || 0).toLocaleString('es-CL')} ton cosechadas).`;
+
+      return {
+        reply: txt,
+        sources: [
+          { institucion: 'INE / SINIM / DEIS / SEC / SII', indicador: `Ficha Territorial Consolidada: Comuna de ${cNombre}`, url: 'index.html' }
+        ],
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'dependencia_fcm_pct',
+          varY: 'presupuesto_per_capita_mclp',
+          title: `Finanzas y Dependencia Fiscal en ${cNombre} vs Región`,
+          excludeCoyhaique: false
+        },
+        relatedHub: 'IV'
+      };
+    }
+
+    // 7. Mapeo temático de dimensiones territoriales con sinónimos amplios
+    const DIMENSIONES = [
+      {
+        keys: ['superficie', 'km2', 'extension', 'territorio', 'tamano', 'area'],
+        varX: 'superficie_km2',
+        varY: null,
+        unit: 'km²',
+        title: 'Superficie Territorial (km²) por Comuna',
+        hub: 'VI',
+        fuente: { institucion: 'INE / IGM', indicador: 'División Político Administrativa y Superficie', url: 'https://www.ine.gob.cl/' }
+      },
+      {
+        keys: ['densidad', 'hab/km2'],
+        varX: 'densidad_hab_km2',
+        varY: null,
+        unit: 'hab/km²',
+        title: 'Densidad Poblacional (hab/km²) por Comuna',
+        hub: 'VI',
+        fuente: { institucion: 'INE', indicador: 'Censo 2024: Densidad de Ocupación', url: 'https://censo2024.ine.gob.cl/' }
+      },
+      {
+        keys: ['pobreza', 'casen', 'vulnerabilidad', 'carencias'],
+        varX: 'pobreza_multidim_pct',
+        varY: 'pobreza_ingresos_pct',
+        unit: '%',
+        title: 'Pobreza Multidimensional y por Ingresos CASEN (%)',
+        hub: 'VI',
+        fuente: { institucion: 'MDSF - CASEN', indicador: 'Encuesta de Caracterización Socioeconómica', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/' }
+      },
+      {
+        keys: ['salud', 'hospital', 'hospitales', 'cama', 'camas', 'medico', 'medicos', 'posta', 'postas', 'urgencia', 'samu'],
+        varX: 'camas_hospitalarias',
+        varY: 'postas_salud_rural',
+        unit: 'camas / postas',
+        title: 'Camas Hospitalarias y Postas de Salud Rural (DEIS/SSA)',
+        hub: 'VIII',
+        fuente: { institucion: 'DEIS - MINSAL / SSA', indicador: 'Red Asistencial Hospitalaria y APS', url: 'https://deis.minsal.cl/' }
+      },
+      {
+        keys: ['educacion', 'escuela', 'escuelas', 'colegio', 'colegios', 'matricula', 'slep', 'estudiantes'],
+        varX: 'matricula_escolar',
+        varY: null,
+        unit: 'estudiantes',
+        title: 'Matrícula Escolar por Comuna (MINEDUC SLEP)',
+        hub: 'VI',
+        fuente: { institucion: 'MINEDUC / SLEP Aysén', indicador: 'Matrícula Oficial Regular', url: 'https://datosabiertos.mineduc.cl/' }
+      },
+      {
+        keys: ['tarifa', 'saidi', 'electricidad', 'corte', 'cortes', 'diesel', 'energia'],
+        varX: 'saidi_horas_anual',
+        varY: 'tarifa_bt1_clp',
+        unit: 'horas/año y $/kWh',
+        title: 'Interrupciones Eléctricas SAIDI (horas/año) y Tarifa BT1 ($/kWh)',
+        hub: 'III',
+        fuente: { institucion: 'SEC / CNE', indicador: 'Indicador SAIDI de Calidad de Suministro y Tarifas BT1', url: 'https://www.sec.cl/' }
+      },
+      {
+        keys: ['empresas', 'trabajadores', 'empleo', 'sii', 'ventas'],
+        varX: 'empresas_sii',
+        varY: 'trabajadores_sii',
+        unit: 'empresas y trabajadores',
+        title: 'Empresas Activas y Trabajadores Formales (SII)',
+        hub: 'V',
+        fuente: { institucion: 'SII', indicador: 'Estadísticas Tributarias de Empresas y Empleo Formal', url: 'https://www.sii.cl/' }
+      },
+      {
+        keys: ['seia', 'proyectos seia', 'inversion seia', 'medio ambiente seia'],
+        varX: 'inversion_seia_mmusd',
+        varY: 'proyectos_seia_aprobados',
+        unit: 'MM US$ y proyectos',
+        title: 'Inversión en Proyectos SEIA (MM US$) y Resoluciones RCA',
+        hub: 'V',
+        fuente: { institucion: 'SEA - SEIA', indicador: 'Catastro Oficial de 722 Proyectos SEIA', url: 'https://seia.sea.gob.cl/' }
+      },
+      {
+        keys: ['turismo', 'prestadores', 'alojamiento', 'emat', 'sernatur'],
+        varX: 'visitantes_snaspe',
+        varY: 'prestadores_sernatur',
+        unit: 'visitantes y prestadores',
+        title: 'Visitantes SNASPE y Prestadores Turísticos SERNATUR',
+        hub: 'I',
+        fuente: { institucion: 'CONAF / SERNATUR', indicador: 'Estadísticas Oficiales de Turismo y SNASPE', url: 'https://registro.sernatur.cl/' }
+      },
+      {
+        keys: ['salmon', 'salmonicultura', 'biomasa', 'concesiones', 'acuicultura'],
+        varX: 'biomasa_salmon_ton',
+        varY: 'concesiones_salmon',
+        unit: 'ton y concesiones',
+        title: 'Biomasa Cosechada (toneladas) y Concesiones Otorgadas',
+        hub: 'II',
+        fuente: { institucion: 'SERNAPESCA / SUBPESCA', indicador: 'Fiscalización Acuícola y Catastro de Concesiones', url: 'https://www.sernapesca.cl/' }
+      },
+      {
+        keys: ['biodiversidad', 'bosque', 'huemul', 'glaciares', 'glaciar', 'vegetal'],
+        varX: 'cobertura_vegetal_nativa_ha',
+        varY: 'glaciares_dga_n',
+        unit: 'ha nativas y glaciares',
+        title: 'Cobertura de Bosque Nativo (ha) y Catastro de Glaciares (DGA)',
+        hub: 'VII',
+        fuente: { institucion: 'MMA / CONAF / DGA', indicador: 'Inventario Vegetacional y Catastro de Glaciares', url: 'https://mma.gob.cl/' }
+      },
+      {
+        keys: ['cultura', 'museos', 'museo', 'biblioteca', 'bibliotecas', 'monumento', 'monumentos', 'fondart', 'patrimonio'],
+        varX: 'total_espacios_culturales',
+        varY: 'fondart_fndr_mclp',
+        unit: 'espacios y M$',
+        title: 'Espacios Culturales Registrados y Financiamiento Fondart/FNDR',
+        hub: 'IX',
+        fuente: { institucion: 'SERPAT / CMN / MINCAP', indicador: 'Catastro Patrimonial y Financiamiento Cultural', url: 'https://www.patrimoniocultural.gob.cl/' }
+      },
+      {
+        keys: ['ctci', 'ciencia', 'anid', 'corfo', 'investigadores', 'investigacion'],
+        varX: 'proyectos_anid_n',
+        varY: 'investigadores_residentes',
+        unit: 'proyectos e investigadores',
+        title: 'Proyectos ANID I+D e Investigadores Residentes',
+        hub: 'X',
+        fuente: { institucion: 'ANID / MinCiencia / CORFO', indicador: 'Plataforma DataCiencia y Proyectos de Innovación', url: 'https://dataciencia.anid.cl/' }
+      }
+    ];
+
+    for (const dim of DIMENSIONES) {
+      if (dim.keys.some(k => q.includes(k))) {
+        const vX = dim.varX;
+        const vY = dim.varY;
+        const ordenadas = [..._comunas].sort((a, b) => (b[vX] || 0) - (a[vX] || 0));
+        const maxCom = ordenadas[0] || {};
+        const minCom = ordenadas[ordenadas.length - 1] || {};
+        const sumVal = ordenadas.reduce((acc, c) => acc + (c[vX] || 0), 0);
+        const avgVal = sumVal / (ordenadas.length || 1);
+
+        const filas = ordenadas.map((c, idx) => {
+          const valX = (c[vX] || 0).toLocaleString('es-CL');
+          const valY = vY && c[vY] !== undefined ? ` · ${vY}: ${(c[vY] || 0).toLocaleString('es-CL')}` : '';
+          return `${idx + 1}. ${c.nombre || c.nombre_comuna}: ${valX} ${dim.unit}${valY}`;
+        }).join('\n');
+
+        const txt = `Análisis Territorial Oficial: ${dim.title} (fuente: ${dim.fuente.institucion}):
+
+${filas}
+
+Síntesis Estadística Regional:
+- Valor Máximo: ${maxCom.nombre || maxCom.nombre_comuna} con ${(maxCom[vX] || 0).toLocaleString('es-CL')} ${dim.unit}.
+- Valor Mínimo: ${minCom.nombre || minCom.nombre_comuna} con ${(minCom[vX] || 0).toLocaleString('es-CL')} ${dim.unit}.
+- Promedio Regional: ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })} ${dim.unit}.
+
+Datos 100% verificados e indexados en el Data Lake de Aysén Sistémico (Hub ${dim.hub}).`;
+
+        return {
+          reply: txt,
+          sources: [dim.fuente],
+          chart: {
+            render: true,
+            type: vY ? 'bar' : 'bar',
+            varX: vX,
+            varY: vY,
+            title: dim.title,
+            excludeCoyhaique: false
+          },
+          relatedHub: dim.hub
+        };
+      }
+    }
+
+    // 8. Búsqueda directa por variable genérica en el catálogo de variables
+    for (const v of _variablesCatalog) {
+      const vKeyNorm = normText(v.key);
+      const vLabelNorm = normText(v.label);
+      if (q.includes(vKeyNorm) || q.includes(vLabelNorm)) {
+        const ordenadas = [..._comunas].sort((a, b) => (b[v.key] || 0) - (a[v.key] || 0));
+        const top5 = ordenadas.slice(0, 5).map(c => `${c.nombre || c.nombre_comuna}: ${(c[v.key] || 0).toLocaleString('es-CL')} ${v.unit}`).join('\n- ');
         const hubLetter = getHubForVariable(v.key);
         return {
           reply: `Indicador territorial verificado: ${v.label}.\n\nDistribución en las principales comunas:\n- ${top5}\n\nDatos oficiales consolidados al 100% en window.AYSEN_HUBS_DATA (Hub ${hubLetter}).`,
@@ -451,17 +687,18 @@ Esta disparidad evidencia la fragilidad financiera en las comunas extremas, dond
       }
     }
 
-    // 6. Si el dato solicitado no existe en la plataforma (Mundo Cerrado)
+    // 9. Mundo Cerrado Estricto ante consultas no reconocidas
     return {
       reply: `Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico.
 
 La plataforma solo responde y grafica con base en registros auditados de las instituciones oficiales (SINIM, SERNATUR, CONAF, INE, CNE, SEC, SUBPESCA, SERNAPESCA, SEA, SII, CASEN, MINEDUC, MMA, DEIS-MINSAL, ANID, entre otras).
 
 Indicadores territoriales reales recomendados:
-1. Dependencia del Fondo Común Municipal (%) e Ingresos Propios (SINIM)
-2. Visitas a Parques Nacionales SNASPE y Pernoctaciones EMAT (CONAF / INE)
-3. Porcentaje de Hogares a Leña vs Días con Contaminación MP2.5 (CNE / MMA)
-4. Biomasa de Salmonicultura vs Inversión Pública FNDR (SERNAPESCA / GORE)`,
+1. Población Comunal y Densidad (Censo 2024 INE)
+2. Dependencia del Fondo Común Municipal (%) e Ingresos Propios (SINIM)
+3. Visitas a Parques Nacionales SNASPE y Pernoctaciones EMAT (CONAF / INE)
+4. Porcentaje de Hogares a Leña vs Días con Contaminación MP2.5 (CNE / MMA)
+5. Biomasa de Salmonicultura vs Inversión Pública FNDR (SERNAPESCA / GORE)`,
       sources: [
         { institucion: 'Plataforma y Base de Datos Sistémica de Aysén', indicador: 'Catálogo de 28 Fuentes Oficiales', url: 'index.html#seccion-arquitectura-fuentes' }
       ],
@@ -479,8 +716,6 @@ Indicadores territoriales reales recomendados:
 
   /**
    * Consulta al endpoint de OmniRoute con fallback automático determinista
-   * @param {string} userMessage Texto de la consulta
-   * @param {Object} [options] Opciones opcionales de llamada
    */
   async function query(userMessage, options) {
     if (!_indexedData) init();
@@ -534,25 +769,18 @@ Indicadores territoriales reales recomendados:
             parsed.rawInference = true;
             parsed.modelUsed = json.model || cfg.model;
             return parsed;
-          } else {
-            console.warn('[OmniRouteClient] Respuesta no contenia un esquema JSON valido:', content);
           }
         }
       }
     } catch (errNet) {
-      // Endpoint local no activo o error de red: fallback controlado a resolutor determinista
-      // Esto asegura que consultor.html siempre funcione incluso antes de levantar scripts/start_omniroute.sh
+      // Endpoint local no activo o sin conexión: fallback transparente y silencioso al índice verificado
     }
 
     const fallbackResult = resolveClosedWorldDeterministic(prompt);
     fallbackResult.offlineFallback = true;
-    fallbackResult.notice = 'Respuesta resuelta con el índice verificado de Aysén Sistémico. (Para activar inferencia multi-proveedor en vivo vía OmniRoute, inicie el servicio con scripts/start_omniroute.sh).';
     return fallbackResult;
   }
 
-  /**
-   * Obtiene la serie de datos comunales para una variable específica
-   */
   function getComunaVector(varKey, excludeCoyhaique = false) {
     if (!_indexedData) init();
     return _comunas
@@ -564,7 +792,6 @@ Indicadores territoriales reales recomendados:
       }));
   }
 
-  // Inicialización automática si window.AYSEN_HUBS_DATA ya está cargado
   if (typeof window !== 'undefined' && window.AYSEN_HUBS_DATA) {
     init(window.AYSEN_HUBS_DATA);
   }

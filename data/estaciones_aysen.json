@@ -7,12 +7,28 @@
   "total_estaciones": 16,
   "fecha_actualizacion": "2026-10-15T19:30:00Z",
   "bounding_box": {
-    "lat_bounds": [-49.3, -43.6],
-    "lng_bounds": [-75.8, -71.0]
+    "lat_bounds": [
+      -49.3,
+      -43.6
+    ],
+    "lng_bounds": [
+      -75.8,
+      -71.0
+    ]
   },
   "llaves_estandarizadas": {
-    "temporal": ["periodo_mes", "fecha"],
-    "espacial": ["codigo_comuna", "comuna_ine", "codigo_cuenca", "codigo_barrio_acs", "lat", "lng"]
+    "temporal": [
+      "periodo_mes",
+      "fecha"
+    ],
+    "espacial": [
+      "codigo_comuna",
+      "comuna_ine",
+      "codigo_cuenca",
+      "codigo_barrio_acs",
+      "lat",
+      "lng"
+    ]
   },
   "estaciones": [
     {
@@ -21,7 +37,7 @@
       "categoria": "Criósfera e Hidrología",
       "dominio": "criosfera",
       "lat": -47.0125,
-      "lng": -72.8250,
+      "lng": -72.825,
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
       "nombre_comuna": "Cochrane",
@@ -38,18 +54,78 @@
       "unidad": "m³/s",
       "etiqueta_metrica": "Caudal Medio Mensual (m³/s)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 580, "unidad": "m³/s"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 620, "unidad": "m³/s"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 690, "unidad": "m³/s"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 740, "unidad": "m³/s"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 610, "unidad": "m³/s"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 480, "unidad": "m³/s"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 430, "unidad": "m³/s"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 460, "unidad": "m³/s"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 520, "unidad": "m³/s"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 570, "unidad": "m³/s"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 610, "unidad": "m³/s"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 660, "unidad": "m³/s"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 580,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 620,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 690,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 740,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 610,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 480,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 430,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 460,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 520,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 570,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 610,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 660,
+          "unidad": "m³/s"
+        }
       ]
     },
     {
@@ -57,8 +133,8 @@
       "nombre": "Río Baker en Bajo Colonia (Alerta GLOF)",
       "categoria": "Criósfera y Riesgos",
       "dominio": "criosfera",
-      "lat": -47.2850,
-      "lng": -72.9520,
+      "lat": -47.285,
+      "lng": -72.952,
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
       "nombre_comuna": "Cochrane",
@@ -75,18 +151,78 @@
       "unidad": "m",
       "etiqueta_metrica": "Nivel de Agua Limnígrafo (m)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 2.8, "unidad": "m"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 2.9, "unidad": "m"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 3.1, "unidad": "m"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 5.8, "unidad": "m"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 3.4, "unidad": "m"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 2.9, "unidad": "m"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 2.7, "unidad": "m"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 2.6, "unidad": "m"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 2.8, "unidad": "m"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 3.0, "unidad": "m"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 3.1, "unidad": "m"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 3.2, "unidad": "m"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 2.8,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 2.9,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 3.1,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 5.8,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 3.4,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 2.9,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 2.7,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 2.6,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 2.8,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 3.0,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 3.1,
+          "unidad": "m"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 3.2,
+          "unidad": "m"
+        }
       ]
     },
     {
@@ -94,8 +230,8 @@
       "nombre": "Glaciar San Rafael (Frente de Parto)",
       "categoria": "Criósfera Orbital",
       "dominio": "criosfera",
-      "lat": -46.7020,
-      "lng": -73.8550,
+      "lat": -46.634,
+      "lng": -73.85,
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "nombre_comuna": "Aysén",
@@ -112,18 +248,78 @@
       "unidad": "m/año",
       "etiqueta_metrica": "Retroceso Frontal Anual (metros)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 45, "unidad": "m/año"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 60, "unidad": "m/año"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 52, "unidad": "m/año"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 78, "unidad": "m/año"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 90, "unidad": "m/año"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 85, "unidad": "m/año"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 110, "unidad": "m/año"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 95, "unidad": "m/año"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 120, "unidad": "m/año"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 105, "unidad": "m/año"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 130, "unidad": "m/año"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 115, "unidad": "m/año"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 45,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 60,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 52,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 78,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 90,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 85,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 110,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 95,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 120,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 105,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 130,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 115,
+          "unidad": "m/año"
+        }
       ]
     },
     {
@@ -131,8 +327,8 @@
       "nombre": "Glaciar Jorge Montt (Velocidad de Flujo)",
       "categoria": "Criósfera Orbital",
       "dominio": "criosfera",
-      "lat": -48.3300,
-      "lng": -73.5000,
+      "lat": -48.33,
+      "lng": -73.5,
       "codigo_comuna": "CL-XI-10",
       "comuna_ine": "11303",
       "nombre_comuna": "Tortel",
@@ -149,18 +345,78 @@
       "unidad": "m/año",
       "etiqueta_metrica": "Velocidad de Flujo (m/año)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 1100, "unidad": "m/año"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 1150, "unidad": "m/año"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 1280, "unidad": "m/año"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 1320, "unidad": "m/año"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 1400, "unidad": "m/año"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 1450, "unidad": "m/año"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 1510, "unidad": "m/año"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 1490, "unidad": "m/año"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 1530, "unidad": "m/año"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 1580, "unidad": "m/año"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 1610, "unidad": "m/año"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 1650, "unidad": "m/año"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 1100,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 1150,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 1280,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 1320,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 1400,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 1450,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 1510,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 1490,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 1530,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 1580,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 1610,
+          "unidad": "m/año"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 1650,
+          "unidad": "m/año"
+        }
       ]
     },
     {
@@ -168,8 +424,8 @@
       "nombre": "Río Simpson en Coyhaique",
       "categoria": "Criósfera e Hidrología",
       "dominio": "criosfera",
-      "lat": -45.5720,
-      "lng": -72.0710,
+      "lat": -45.572,
+      "lng": -72.071,
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
@@ -186,18 +442,78 @@
       "unidad": "m³/s",
       "etiqueta_metrica": "Caudal Medio (m³/s)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 42, "unidad": "m³/s"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 38, "unidad": "m³/s"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 32, "unidad": "m³/s"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 28, "unidad": "m³/s"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 45, "unidad": "m³/s"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 65, "unidad": "m³/s"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 80, "unidad": "m³/s"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 75, "unidad": "m³/s"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 60, "unidad": "m³/s"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 52, "unidad": "m³/s"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 48, "unidad": "m³/s"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 45, "unidad": "m³/s"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 42,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 38,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 32,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 28,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 45,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 65,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 80,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 75,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 60,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 52,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 48,
+          "unidad": "m³/s"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 45,
+          "unidad": "m³/s"
+        }
       ]
     },
     {
@@ -205,8 +521,8 @@
       "nombre": "Estación Calidad del Aire Coyhaique II",
       "categoria": "Clima y Calidad Ambiental",
       "dominio": "clima",
-      "lat": -45.5680,
-      "lng": -72.0620,
+      "lat": -45.568,
+      "lng": -72.062,
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
@@ -223,18 +539,78 @@
       "unidad": "µg/m³",
       "etiqueta_metrica": "Concentración Media MP2.5 (µg/m³)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 18, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 15, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 22, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 55, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 115, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 160, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 145, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 95, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 45, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 25, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 19, "unidad": "µg/m³"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 16, "unidad": "µg/m³"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 18,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 15,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 22,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 55,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 115,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 160,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 145,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 95,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 45,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 25,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 19,
+          "unidad": "µg/m³"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 16,
+          "unidad": "µg/m³"
+        }
       ]
     },
     {
@@ -242,8 +618,8 @@
       "nombre": "Estación Meteorológica Balmaceda (BBA)",
       "categoria": "Meteorología Oficial",
       "dominio": "clima",
-      "lat": -45.9180,
-      "lng": -71.6910,
+      "lat": -45.918,
+      "lng": -71.691,
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
@@ -260,18 +636,78 @@
       "unidad": "mm",
       "etiqueta_metrica": "Precipitación Acumulada Mensual (mm)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 35, "unidad": "mm"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 28, "unidad": "mm"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 42, "unidad": "mm"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 65, "unidad": "mm"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 92, "unidad": "mm"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 115, "unidad": "mm"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 108, "unidad": "mm"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 85, "unidad": "mm"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 55, "unidad": "mm"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 40, "unidad": "mm"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 32, "unidad": "mm"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 30, "unidad": "mm"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 35,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 28,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 42,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 65,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 92,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 115,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 108,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 85,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 55,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 40,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 32,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 30,
+          "unidad": "mm"
+        }
       ]
     },
     {
@@ -279,8 +715,8 @@
       "nombre": "Vigilancia Volcánica: Volcán Hudson",
       "categoria": "Riesgos Naturales",
       "dominio": "clima",
-      "lat": -45.9000,
-      "lng": -72.9660,
+      "lat": -45.9,
+      "lng": -72.966,
       "codigo_comuna": "CL-XI-07",
       "comuna_ine": "11402",
       "nombre_comuna": "Río Ibáñez",
@@ -297,18 +733,78 @@
       "unidad": "eventos",
       "etiqueta_metrica": "Eventos Sísmicos VT / LP (mensual)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 22, "unidad": "eventos"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 18, "unidad": "eventos"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 25, "unidad": "eventos"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 30, "unidad": "eventos"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 42, "unidad": "eventos"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 38, "unidad": "eventos"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 29, "unidad": "eventos"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 31, "unidad": "eventos"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 27, "unidad": "eventos"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 24, "unidad": "eventos"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 20, "unidad": "eventos"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 26, "unidad": "eventos"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 22,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 18,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 25,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 30,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 42,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 38,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 29,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 31,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 27,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 24,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 20,
+          "unidad": "eventos"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 26,
+          "unidad": "eventos"
+        }
       ]
     },
     {
@@ -316,8 +812,8 @@
       "nombre": "Boya Oceanográfica Fiordo Puyuhuapi",
       "categoria": "Investigación Regional CIEP",
       "dominio": "ciep",
-      "lat": -44.6200,
-      "lng": -72.7100,
+      "lat": -44.325,
+      "lng": -72.558,
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
       "nombre_comuna": "Cisnes",
@@ -334,18 +830,78 @@
       "unidad": "mg/L",
       "etiqueta_metrica": "Oxígeno Disuelto Superficial (mg/L)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 8.5, "unidad": "mg/L"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 8.2, "unidad": "mg/L"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 7.8, "unidad": "mg/L"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 6.5, "unidad": "mg/L"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 5.2, "unidad": "mg/L"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 4.8, "unidad": "mg/L"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 5.5, "unidad": "mg/L"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 6.8, "unidad": "mg/L"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 7.5, "unidad": "mg/L"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 8.1, "unidad": "mg/L"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 8.4, "unidad": "mg/L"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 8.6, "unidad": "mg/L"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 8.5,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 8.2,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 7.8,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 6.5,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 5.2,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 4.8,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 5.5,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 6.8,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 7.5,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 8.1,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 8.4,
+          "unidad": "mg/L"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 8.6,
+          "unidad": "mg/L"
+        }
       ]
     },
     {
@@ -353,8 +909,8 @@
       "nombre": "Estación Ambiental CIEP Caleta Tortel",
       "categoria": "Investigación Regional CIEP",
       "dominio": "ciep",
-      "lat": -47.7950,
-      "lng": -73.5350,
+      "lat": -47.795,
+      "lng": -73.535,
       "codigo_comuna": "CL-XI-10",
       "comuna_ine": "11303",
       "nombre_comuna": "Tortel",
@@ -371,18 +927,78 @@
       "unidad": "mm",
       "etiqueta_metrica": "Precipitación Diaria Máxima (mm)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 45, "unidad": "mm"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 50, "unidad": "mm"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 72, "unidad": "mm"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 85, "unidad": "mm"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 110, "unidad": "mm"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 130, "unidad": "mm"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 125, "unidad": "mm"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 95, "unidad": "mm"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 80, "unidad": "mm"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 65, "unidad": "mm"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 55, "unidad": "mm"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 48, "unidad": "mm"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 45,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 50,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 72,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 85,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 110,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 130,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 125,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 95,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 80,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 65,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 55,
+          "unidad": "mm"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 48,
+          "unidad": "mm"
+        }
       ]
     },
     {
@@ -390,8 +1006,8 @@
       "nombre": "Monitoreo Invasión Salmón Chinook (Río Cisnes)",
       "categoria": "Ecología Fluvial CIEP",
       "dominio": "ciep",
-      "lat": -44.7800,
-      "lng": -72.6000,
+      "lat": -44.78,
+      "lng": -72.6,
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
       "nombre_comuna": "Cisnes",
@@ -408,18 +1024,78 @@
       "unidad": "nidos",
       "etiqueta_metrica": "Nidos de Desove Censados",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 120, "unidad": "nidos"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 145, "unidad": "nidos"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 180, "unidad": "nidos"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 210, "unidad": "nidos"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 260, "unidad": "nidos"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 290, "unidad": "nidos"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 340, "unidad": "nidos"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 380, "unidad": "nidos"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 420, "unidad": "nidos"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 470, "unidad": "nidos"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 510, "unidad": "nidos"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 560, "unidad": "nidos"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 120,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 145,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 180,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 210,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 260,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 290,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 340,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 380,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 420,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 470,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 510,
+          "unidad": "nidos"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 560,
+          "unidad": "nidos"
+        }
       ]
     },
     {
@@ -427,8 +1103,8 @@
       "nombre": "Estación Centinela Marea Roja (Islas Huichas)",
       "categoria": "Océano y Acuicultura",
       "dominio": "oceano",
-      "lat": -45.1200,
-      "lng": -73.5100,
+      "lat": -45.163,
+      "lng": -73.522,
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "nombre_comuna": "Aysén",
@@ -445,18 +1121,78 @@
       "unidad": "cél/L",
       "etiqueta_metrica": "Densidad Celular A. catenella (cél/L)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 0, "unidad": "cél/L"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 0, "unidad": "cél/L"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 50, "unidad": "cél/L"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 250, "unidad": "cél/L"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 800, "unidad": "cél/L"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 1400, "unidad": "cél/L"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 400, "unidad": "cél/L"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 50, "unidad": "cél/L"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 0, "unidad": "cél/L"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 0, "unidad": "cél/L"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 0, "unidad": "cél/L"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 0, "unidad": "cél/L"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 50,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 250,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 800,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 1400,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 400,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 50,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        }
       ]
     },
     {
@@ -464,8 +1200,8 @@
       "nombre": "Agrupación Concesiones Barrio 21B (Salmonicultura)",
       "categoria": "Acuicultura y Regulación",
       "dominio": "oceano",
-      "lat": -45.4500,
-      "lng": -73.3500,
+      "lat": -45.465,
+      "lng": -72.825,
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "nombre_comuna": "Aysén",
@@ -482,18 +1218,78 @@
       "unidad": "kTon",
       "etiqueta_metrica": "Biomasa Cosechada (miles de ton)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 22, "unidad": "kTon"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 28, "unidad": "kTon"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 35, "unidad": "kTon"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 41, "unidad": "kTon"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 15, "unidad": "kTon"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 0, "unidad": "kTon"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 0, "unidad": "kTon"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 12, "unidad": "kTon"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 25, "unidad": "kTon"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 33, "unidad": "kTon"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 38, "unidad": "kTon"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 42, "unidad": "kTon"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 22,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 28,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 35,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 41,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 15,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 0,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 0,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 12,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 25,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 33,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 38,
+          "unidad": "kTon"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 42,
+          "unidad": "kTon"
+        }
       ]
     },
     {
@@ -501,8 +1297,8 @@
       "nombre": "Tráfico Aéreo Comercial: Aeródromo Balmaceda",
       "categoria": "Conectividad e Infraestructura",
       "dominio": "social",
-      "lat": -45.9160,
-      "lng": -71.6880,
+      "lat": -45.916,
+      "lng": -71.688,
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
@@ -519,18 +1315,78 @@
       "unidad": "kPasajeros",
       "etiqueta_metrica": "Pasajeros Comerciales (miles)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 34, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 38, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 31, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 24, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 18, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 16, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 17, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 19, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 22, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 26, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 30, "unidad": "kPasajeros"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 35, "unidad": "kPasajeros"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 34,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 38,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 31,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 24,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 18,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 16,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 17,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 19,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 22,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 26,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 30,
+          "unidad": "kPasajeros"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 35,
+          "unidad": "kPasajeros"
+        }
       ]
     },
     {
@@ -538,8 +1394,8 @@
       "nombre": "Paso Fronterizo Internacional Huemules",
       "categoria": "Conectividad y Pasos",
       "dominio": "social",
-      "lat": -45.9190,
-      "lng": -71.6450,
+      "lat": -45.919,
+      "lng": -71.645,
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
@@ -556,18 +1412,78 @@
       "unidad": "kPersonas",
       "etiqueta_metrica": "Tránsito de Personas (miles)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 18, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 22, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 14, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 8, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 6, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 4, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 5, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 6, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 9, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 11, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 13, "unidad": "kPersonas"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 17, "unidad": "kPersonas"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 18,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 22,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 14,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 8,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 6,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 4,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 5,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 6,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 9,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 11,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 13,
+          "unidad": "kPersonas"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 17,
+          "unidad": "kPersonas"
+        }
       ]
     },
     {
@@ -575,8 +1491,8 @@
       "nombre": "Precios de Combustibles en Coyhaique",
       "categoria": "Costo de Vida y Energía",
       "dominio": "social",
-      "lat": -45.5750,
-      "lng": -72.0680,
+      "lat": -45.575,
+      "lng": -72.068,
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
@@ -593,18 +1509,78 @@
       "unidad": "$/litro",
       "etiqueta_metrica": "Precio Gasolina 93 ($/litro)",
       "serie_temporal": [
-        {"periodo_mes": "2026-01", "fecha": "2026-01-15", "valor": 1340, "unidad": "$/litro"},
-        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 1345, "unidad": "$/litro"},
-        {"periodo_mes": "2026-03", "fecha": "2026-03-15", "valor": 1350, "unidad": "$/litro"},
-        {"periodo_mes": "2026-04", "fecha": "2026-04-15", "valor": 1362, "unidad": "$/litro"},
-        {"periodo_mes": "2026-05", "fecha": "2026-05-15", "valor": 1370, "unidad": "$/litro"},
-        {"periodo_mes": "2026-06", "fecha": "2026-06-15", "valor": 1375, "unidad": "$/litro"},
-        {"periodo_mes": "2026-07", "fecha": "2026-07-15", "valor": 1368, "unidad": "$/litro"},
-        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 1360, "unidad": "$/litro"},
-        {"periodo_mes": "2026-09", "fecha": "2026-09-15", "valor": 1365, "unidad": "$/litro"},
-        {"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 1378, "unidad": "$/litro"},
-        {"periodo_mes": "2026-11", "fecha": "2026-11-15", "valor": 1385, "unidad": "$/litro"},
-        {"periodo_mes": "2026-12", "fecha": "2026-12-15", "valor": 1390, "unidad": "$/litro"}
+        {
+          "periodo_mes": "2026-01",
+          "fecha": "2026-01-15",
+          "valor": 1340,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-02",
+          "fecha": "2026-02-15",
+          "valor": 1345,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-03",
+          "fecha": "2026-03-15",
+          "valor": 1350,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-04",
+          "fecha": "2026-04-15",
+          "valor": 1362,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-05",
+          "fecha": "2026-05-15",
+          "valor": 1370,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-06",
+          "fecha": "2026-06-15",
+          "valor": 1375,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-07",
+          "fecha": "2026-07-15",
+          "valor": 1368,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-08",
+          "fecha": "2026-08-15",
+          "valor": 1360,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-09",
+          "fecha": "2026-09-15",
+          "valor": 1365,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-10",
+          "fecha": "2026-10-15",
+          "valor": 1378,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-11",
+          "fecha": "2026-11-15",
+          "valor": 1385,
+          "unidad": "$/litro"
+        },
+        {
+          "periodo_mes": "2026-12",
+          "fecha": "2026-12-15",
+          "valor": 1390,
+          "unidad": "$/litro"
+        }
       ]
     }
   ]

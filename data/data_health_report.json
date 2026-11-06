@@ -1,5 +1,5 @@
 {
-  "report_timestamp": "2026-11-04T13:35:44.634796+00:00",
+  "report_timestamp": "2026-11-05T00:16:10.773556+00:00",
   "summary": {
     "total_stations": 16,
     "stations_in_bbox": 16,
@@ -48,8 +48,8 @@
       "id": 3,
       "name": "Glaciar San Rafael (Frente de Parto)",
       "code": "RGI60-17.01423",
-      "lat": -46.702,
-      "lng": -73.855,
+      "lat": -46.634,
+      "lng": -73.85,
       "in_bbox": true,
       "schema_valid": true,
       "data_points": 12
@@ -108,8 +108,8 @@
       "id": 9,
       "name": "Boya Oceanográfica Fiordo Puyuhuapi",
       "code": "CIEP-PUYU-01",
-      "lat": -44.62,
-      "lng": -72.71,
+      "lat": -44.325,
+      "lng": -72.558,
       "in_bbox": true,
       "schema_valid": true,
       "data_points": 12
@@ -138,8 +138,8 @@
       "id": 12,
       "name": "Estación Centinela Marea Roja (Islas Huichas)",
       "code": "IFOP-FAN-XI-24",
-      "lat": -45.12,
-      "lng": -73.51,
+      "lat": -45.163,
+      "lng": -73.522,
       "in_bbox": true,
       "schema_valid": true,
       "data_points": 12
@@ -148,8 +148,8 @@
       "id": 13,
       "name": "Agrupación Concesiones Barrio 21B (Salmonicultura)",
       "code": "ACS-21B",
-      "lat": -45.45,
-      "lng": -73.35,
+      "lat": -45.465,
+      "lng": -72.825,
       "in_bbox": true,
       "schema_valid": true,
       "data_points": 12
@@ -190,7 +190,7 @@
       "provider": "DGA MOP",
       "url": "https://dga.mop.gob.cl",
       "http_status": 200,
-      "latency_ms": 3433,
+      "latency_ms": 3315,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -198,7 +198,7 @@
       "provider": "SINCA MMA",
       "url": "https://sinca.mma.gob.cl",
       "http_status": 403,
-      "latency_ms": 454,
+      "latency_ms": 305,
       "state": "DEGRADED",
       "fallback_ready": true
     },
@@ -206,7 +206,7 @@
       "provider": "DMC MeteoChile",
       "url": "https://climatologia.meteochile.gob.cl",
       "http_status": 200,
-      "latency_ms": 650,
+      "latency_ms": 415,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -214,7 +214,7 @@
       "provider": "SERNAGEOMIN",
       "url": "https://www.sernageomin.cl",
       "http_status": 200,
-      "latency_ms": 2730,
+      "latency_ms": 613,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -222,15 +222,15 @@
       "provider": "CIEP",
       "url": "https://www.ciep.cl",
       "http_status": 200,
-      "latency_ms": 3551,
-      "state": "HEALTHY",
+      "latency_ms": 4304,
+      "state": "DEGRADED",
       "fallback_ready": true
     },
     {
       "provider": "IFOP",
       "url": "https://www.ifop.cl",
       "http_status": 200,
-      "latency_ms": 758,
+      "latency_ms": 897,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -238,7 +238,7 @@
       "provider": "JAC Chile",
       "url": "https://www.jac.gob.cl",
       "http_status": 200,
-      "latency_ms": 307,
+      "latency_ms": 254,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -246,7 +246,7 @@
       "provider": "Datos Abiertos Chile",
       "url": "https://datos.gob.cl",
       "http_status": 200,
-      "latency_ms": 1105,
+      "latency_ms": 1023,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -254,7 +254,7 @@
       "provider": "SERNAPESCA",
       "url": "https://www.sernapesca.cl",
       "http_status": 200,
-      "latency_ms": 1040,
+      "latency_ms": 1198,
       "state": "HEALTHY",
       "fallback_ready": true
     },
@@ -262,7 +262,7 @@
       "provider": "CNE Bencina en Línea",
       "url": "https://www.bencinaenlinea.cl",
       "http_status": 200,
-      "latency_ms": 418,
+      "latency_ms": 402,
       "state": "HEALTHY",
       "fallback_ready": true
     }

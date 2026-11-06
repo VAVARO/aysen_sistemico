@@ -35,11 +35,11 @@
       "cabecera": "Coyhaique",
       "cuenca_principal_bna": "Cuenca 113 (Río Aysén)",
       "coordenadas": {
-        "lat": -45.5712,
-        "lng": -72.0685
+        "lat": -45.5752,
+        "lng": -72.0662
       },
-      "lat": -45.5712,
-      "lng": -72.0685,
+      "lat": -45.5752,
+      "lng": -72.0662,
       "demografia": {
         "censo_2024_poblacion": 57823,
         "porcentaje_regional_pct": 57.4,
@@ -136,11 +136,11 @@
       "cabecera": "Lago Verde",
       "cuenca_principal_bna": "Cuenca 111 (Río Palena)",
       "coordenadas": {
-        "lat": -44.241,
-        "lng": -71.8465
+        "lat": -44.2403,
+        "lng": -71.8494
       },
-      "lat": -44.241,
-      "lng": -71.8465,
+      "lat": -44.2403,
+      "lng": -71.8494,
       "demografia": {
         "censo_2024_poblacion": 779,
         "porcentaje_regional_pct": 0.77,
@@ -225,11 +225,11 @@
       "cabecera": "Puerto Aysén",
       "cuenca_principal_bna": "Cuenca 113 (Río Aysén)",
       "coordenadas": {
-        "lat": -45.405,
-        "lng": -72.693
+        "lat": -45.403,
+        "lng": -72.6915
       },
-      "lat": -45.405,
-      "lng": -72.693,
+      "lat": -45.403,
+      "lng": -72.6915,
       "demografia": {
         "censo_2024_poblacion": 23170,
         "porcentaje_regional_pct": 23.0,
@@ -333,11 +333,11 @@
       "cabecera": "Puerto Cisnes",
       "cuenca_principal_bna": "Cuenca 112 (Río Cisnes)",
       "coordenadas": {
-        "lat": -44.743,
-        "lng": -72.699
+        "lat": -44.7278,
+        "lng": -72.6806
       },
-      "lat": -44.743,
-      "lng": -72.699,
+      "lat": -44.7278,
+      "lng": -72.6806,
       "demografia": {
         "censo_2024_poblacion": 5137,
         "porcentaje_regional_pct": 5.1,
@@ -430,11 +430,11 @@
       "cabecera": "Melinka",
       "cuenca_principal_bna": "Cuenca 110 (Costeras e Islas Río Palena - Río Aysén)",
       "coordenadas": {
-        "lat": -43.896,
-        "lng": -73.748
+        "lat": -43.8975,
+        "lng": -73.7458
       },
-      "lat": -43.896,
-      "lng": -73.748,
+      "lat": -43.8975,
+      "lng": -73.7458,
       "demografia": {
         "censo_2024_poblacion": 1598,
         "porcentaje_regional_pct": 1.59,
@@ -517,10 +517,10 @@
       "cuenca_principal_bna": "Cuenca 115 (Río Baker)",
       "coordenadas": {
         "lat": -46.541,
-        "lng": -71.722
+        "lng": -71.7219
       },
       "lat": -46.541,
-      "lng": -71.722,
+      "lng": -71.7219,
       "demografia": {
         "censo_2024_poblacion": 4905,
         "porcentaje_regional_pct": 4.87,
@@ -605,11 +605,11 @@
       "cabecera": "Puerto Ingeniero Ibáñez",
       "cuenca_principal_bna": "Cuenca 113 (Río Aysén)",
       "coordenadas": {
-        "lat": -46.291,
-        "lng": -71.936
+        "lat": -46.2925,
+        "lng": -71.9378
       },
-      "lat": -46.291,
-      "lng": -71.936,
+      "lat": -46.2925,
+      "lng": -71.9378,
       "demografia": {
         "censo_2024_poblacion": 2723,
         "porcentaje_regional_pct": 2.7,
@@ -699,11 +699,11 @@
       "cabecera": "Cochrane",
       "cuenca_principal_bna": "Cuenca 115 (Río Baker)",
       "coordenadas": {
-        "lat": -47.254,
-        "lng": -72.571
+        "lat": -47.2539,
+        "lng": -72.5694
       },
-      "lat": -47.254,
-      "lng": -72.571,
+      "lat": -47.2539,
+      "lng": -72.5694,
       "demografia": {
         "censo_2024_poblacion": 3458,
         "porcentaje_regional_pct": 3.43,
@@ -793,11 +793,11 @@
       "cabecera": "Villa O'Higgins",
       "cuenca_principal_bna": "Cuenca 117 (Río Pascua)",
       "coordenadas": {
-        "lat": -48.468,
-        "lng": -72.56
+        "lat": -48.4689,
+        "lng": -72.5614
       },
-      "lat": -48.468,
-      "lng": -72.56,
+      "lat": -48.4689,
+      "lng": -72.5614,
       "demografia": {
         "censo_2024_poblacion": 647,
         "porcentaje_regional_pct": 0.64,
@@ -887,11 +887,11 @@
       "cabecera": "Caleta Tortel",
       "cuenca_principal_bna": "Cuenca 115 (Río Baker)",
       "coordenadas": {
-        "lat": -47.795,
-        "lng": -73.535
+        "lat": -47.7969,
+        "lng": -73.5322
       },
-      "lat": -47.795,
-      "lng": -73.535,
+      "lat": -47.7969,
+      "lng": -73.5322,
       "demografia": {
         "censo_2024_poblacion": 505,
         "porcentaje_regional_pct": 0.5,

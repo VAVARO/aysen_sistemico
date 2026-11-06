@@ -127,27 +127,6 @@
       text-overflow: ellipsis;
     }
 
-    .btn-header-cfg {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.05);
-      border: 1px solid rgba(0, 53, 127, 0.16);
-      padding: 5px 10px;
-      border-radius: 3px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
-    }
-
-    .btn-header-cfg:hover {
-      background: rgba(0, 53, 127, 0.12);
-      border-color: var(--cobalt);
-    }
-
     .chat-messages {
       flex: 1;
       overflow-y: auto;
@@ -267,17 +246,6 @@
       white-space: pre-line;
     }
 
-    .message-notice {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--ink-muted);
-      background: rgba(15, 23, 42, 0.04);
-      padding: 6px 10px;
-      border-radius: 3px;
-      margin-top: 8px;
-      display: inline-block;
-    }
-
     .sources-list {
       margin-top: 12px;
       padding-top: 10px;
@@ -379,16 +347,19 @@
     }
 
     /* Panel Derecho: Lienzo de Gráficos y Evidencia */
-    .panel-evidence {
+    .panel-evidence,
+    .consultor-canvas-pane {
       flex: 1;
       min-width: 0;
       max-width: 50%;
+      height: calc(100vh - 56px);
       background: var(--paper-subtle);
       display: flex;
       flex-direction: column;
       overflow-y: auto;
-      padding: 20px;
-      gap: 16px;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      gap: 14px;
     }
 
     .evidence-topbar {
@@ -492,8 +463,9 @@
 
     .chart-stage {
       position: relative;
-      height: 380px;
+      height: 340px;
       width: 100%;
+      flex-shrink: 0;
     }
 
     /* Tabla de Datos de las 10 Comunas */
@@ -534,107 +506,6 @@
     .evidence-table .td-num {
       font-family: var(--font-mono);
       text-align: right;
-    }
-
-    /* Modal Configuración OmniRoute */
-    .cfg-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(4px);
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .cfg-modal-backdrop.open {
-      display: flex;
-    }
-
-    .cfg-modal {
-      background: #ffffff;
-      border: 1px solid var(--border-strong);
-      border-radius: 4px;
-      width: 100%;
-      max-width: 520px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.15);
-    }
-
-    .cfg-title {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--cobalt);
-    }
-
-    .cfg-field {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .cfg-label {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--ink-secondary);
-      text-transform: uppercase;
-    }
-
-    .cfg-input {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      padding: 8px 10px;
-      border: 1px solid var(--border-strong);
-      border-radius: 3px;
-      color: var(--ink);
-    }
-
-    .cfg-input:focus {
-      outline: none;
-      border-color: var(--cobalt);
-      box-shadow: 0 0 0 1px var(--cobalt);
-    }
-
-    .cfg-desc {
-      font-size: 0.75rem;
-      color: var(--ink-muted);
-    }
-
-    .cfg-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .btn-secondary {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      padding: 6px 12px;
-      border-radius: 3px;
-      border: 1px solid var(--border-subtle);
-      background: transparent;
-      color: var(--ink-secondary);
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 3px;
-      border: 1px solid var(--cobalt);
-      background: var(--cobalt);
-      color: #ffffff;
-      cursor: pointer;
     }
 
     /* Indicador de Estado Vacío en Panel Derecho */
@@ -722,9 +593,6 @@
             <h1 class="chat-header-title">Consultor Territorial de Aysén</h1>
             <p class="chat-header-sub">Motor OmniRoute · 28 Fuentes Oficiales · Mundo Cerrado Estricto</p>
           </div>
-          <button type="button" class="btn-header-cfg" id="btnOpenCfg" title="Configurar conexión del motor OmniRoute">
-            Configurar conexión OmniRoute
-          </button>
         </div>
 
         <div class="chat-messages" id="chatMessages">
@@ -767,7 +635,7 @@
       </section>
 
       <!-- Panel Derecho: Lienzo de Gráficos y Evidencia en Vivo -->
-      <section class="panel-evidence" aria-label="Lienzo de Evidencia Territorial">
+      <section class="panel-evidence consultor-canvas-pane" aria-label="Lienzo de Evidencia Territorial">
         <div class="evidence-topbar">
           <div class="chart-controls">
             <button type="button" class="ctrl-btn active" id="btnChartBar" data-type="bar">Barras</button>
@@ -811,43 +679,6 @@
     </div>
   </div>
 
-  <!-- Modal de Configuración de OmniRoute -->
-  <div class="cfg-modal-backdrop" id="cfgModal" role="dialog" aria-modal="true" aria-labelledby="cfgModalTitle">
-    <div class="cfg-modal">
-      <h3 class="cfg-title" id="cfgModalTitle">Configurar Conexión OmniRoute</h3>
-      <p class="cfg-desc">
-        OmniRoute provee un endpoint compatible con OpenAI (/v1/chat/completions) que orquesta múltiples modelos con compresión RTK y cascada de auto-fallback.
-      </p>
-
-      <div class="cfg-field">
-        <label class="cfg-label" for="cfgEndpoint">Endpoint URL</label>
-        <input type="url" class="cfg-input" id="cfgEndpoint" placeholder="http://localhost:20128/v1">
-        <span class="cfg-desc">Por defecto http://localhost:20128/v1 (iniciado con scripts/start_omniroute.sh) o endpoint remoto.</span>
-      </div>
-
-      <div class="cfg-field">
-        <label class="cfg-label" for="cfgApiKey">API Key</label>
-        <input type="password" class="cfg-input" id="cfgApiKey" placeholder="sk-omniroute-aysen-local">
-        <span class="cfg-desc">Token de autorización configurado en .env.omniroute.</span>
-      </div>
-
-      <div class="cfg-field">
-        <label class="cfg-label" for="cfgModel">Estrategia / Modelo</label>
-        <select class="cfg-input" id="cfgModel">
-          <option value="auto">auto (Balanceado con persistencia de último buen proveedor)</option>
-          <option value="auto/cheap">auto/cheap (Prioridad al menor costo por token)</option>
-          <option value="auto/fast">auto/fast (Prioridad a menor latencia de respuesta)</option>
-          <option value="auto/coding">auto/coding (Prioridad a síntesis de datos y precisión)</option>
-        </select>
-      </div>
-
-      <div class="cfg-actions">
-        <button type="button" class="btn-secondary" id="btnCancelCfg">Cerrar</button>
-        <button type="button" class="btn-primary" id="btnSaveCfg">Guardar Conexión</button>
-      </div>
-    </div>
-  </div>
-
   <!-- Script de Interacción y Renderizado -->
   <script>
     (function () {
@@ -884,15 +715,6 @@
       const thVarX = document.getElementById('thVarX');
       const thVarY = document.getElementById('thVarY');
       const canvasEl = document.getElementById('consultorCanvas');
-
-      // Modal Configuración
-      const btnOpenCfg = document.getElementById('btnOpenCfg');
-      const cfgModal = document.getElementById('cfgModal');
-      const btnCancelCfg = document.getElementById('btnCancelCfg');
-      const btnSaveCfg = document.getElementById('btnSaveCfg');
-      const cfgEndpoint = document.getElementById('cfgEndpoint');
-      const cfgApiKey = document.getElementById('cfgApiKey');
-      const cfgModel = document.getElementById('cfgModel');
 
       // Inicializar OmniRouteClient
       if (window.OmniRouteClient) {
@@ -979,30 +801,6 @@
         if (currentChartState.summary) url.searchParams.set('summary', currentChartState.summary);
         btnOpenInLab.href = url.toString();
       }
-
-      // Modal Configuración
-      btnOpenCfg.addEventListener('click', () => {
-        const cfg = window.OmniRouteClient ? window.OmniRouteClient.getConfig() : {};
-        cfgEndpoint.value = cfg.endpointUrl || '';
-        cfgApiKey.value = cfg.apiKey || '';
-        cfgModel.value = cfg.model || 'auto';
-        cfgModal.classList.add('open');
-      });
-
-      btnCancelCfg.addEventListener('click', () => {
-        cfgModal.classList.remove('open');
-      });
-
-      btnSaveCfg.addEventListener('click', () => {
-        if (window.OmniRouteClient) {
-          window.OmniRouteClient.setConfig({
-            endpointUrl: cfgEndpoint.value,
-            apiKey: cfgApiKey.value,
-            model: cfgModel.value
-          });
-        }
-        cfgModal.classList.remove('open');
-      });
 
       // Función Principal de Envío de Consulta
       async function submitQuery() {
@@ -1109,13 +907,6 @@
         content.textContent = data.reply || '';
         row.appendChild(content);
 
-        if (data.offlineFallback) {
-          const notice = document.createElement('div');
-          notice.className = 'message-notice';
-          notice.textContent = 'Resuelto con índice local verificado de Aysén Sistémico (OmniRoute en localhost:20128 no detectado).';
-          row.appendChild(notice);
-        }
-
         // Citas a fuentes oficiales
         if (Array.isArray(data.sources) && data.sources.length > 0) {
           const sourcesContainer = document.createElement('div');
@@ -1136,29 +927,126 @@
         chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
+      // Catálogo canónico de variables para etiquetas humanas y unidades auditadas (sin duplicación de %)
+      const CANONICAL_VAR_LABELS = {
+        'dependencia_fcm_pct': { label: 'Dependencia del Fondo Común Municipal', unit: '%' },
+        'ingresos_propios_pct': { label: 'Ingresos Propios Permanentes', unit: '%' },
+        'poblacion_censo_2024': { label: 'Población Censo 2024', unit: 'hab.' },
+        'superficie_km2': { label: 'Superficie Comunal', unit: 'km²' },
+        'densidad_hab_km2': { label: 'Densidad Poblacional', unit: 'hab/km²' },
+        'pobreza_casen_pct': { label: 'Pobreza Multidimensional CASEN', unit: '%' },
+        'camas_hospitalarias': { label: 'Camas Hospitalarias', unit: 'camas' },
+        'biomasa_salmon_ton': { label: 'Biomasa de Salmón Cosechada', unit: 'ton' },
+        'hogares_lena_pct': { label: 'Hogares que Calefaccionan con Leña', unit: '%' },
+        'visitantes_snaspe': { label: 'Visitas a Áreas Protegidas SNASPE', unit: 'visitas' },
+        'visitas_snaspe': { label: 'Visitas a Áreas Protegidas SNASPE', unit: 'visitas' },
+        'pernoctaciones_anuales_emat_hist': { label: 'Pernoctaciones Turísticas EMAT', unit: 'noches' },
+        'presupuesto_total_mclp': { label: 'Presupuesto Municipal Total', unit: 'M$ CLP' },
+        'presupuesto_per_capita_mclp': { label: 'Presupuesto per cápita', unit: 'M$ CLP' },
+        'fndr_mclp': { label: 'Inversión FNDR Asignada', unit: 'M$ CLP' },
+        'inversion_seia_mmusd': { label: 'Inversión en Proyectos SEIA', unit: 'MM USD' },
+        'proyectos_seia_n': { label: 'Proyectos Evaluados en el SEIA', unit: 'proyectos' },
+        'empresas_sii_n': { label: 'Empresas Registradas SII', unit: 'empresas' },
+        'trabajadores_sii_n': { label: 'Trabajadores Dependientes Informados SII', unit: 'trabajadores' },
+        'establecimientos_educ_n': { label: 'Establecimientos Educacionales', unit: 'locales' },
+        'matricula_escolar_n': { label: 'Matrícula Escolar Total', unit: 'estudiantes' },
+        'establecimientos_salud_n': { label: 'Establecimientos de Salud Red Asistencial', unit: 'centros' },
+        'interrupciones_saidi_hrs': { label: 'Interrupción Media de Suministro SAIDI', unit: 'horas/año' },
+        'prestadores_sernatur': { label: 'Prestadores Turísticos con Registro SERNATUR', unit: 'prestadores' },
+        'areas_silvestres_n': { label: 'Áreas Silvestres Protegidas del Estado', unit: 'unidades' },
+        'concesiones_acuicolas_n': { label: 'Concesiones Acuícolas Otorgadas', unit: 'concesiones' },
+        'faenas_acuicolas_activas_n': { label: 'Centros de Cultivo de Salmón Activos', unit: 'centros' },
+        'glaciares_dga_n': { label: 'Glaciares Inventariados DGA', unit: 'glaciares' },
+        'humedales_urbanos_ha': { label: 'Humedales Urbanos Declarados MMA', unit: 'ha' },
+        'inmuebles_patrimoniales_n': { label: 'Inmuebles Patrimoniales Protegidos CMN', unit: 'inmuebles' },
+        'museos_espacios_n': { label: 'Espacios y Museos Culturales', unit: 'espacios' },
+        'proyectos_anid_n': { label: 'Proyectos de Investigación CTCi ANID', unit: 'proyectos' },
+        'centros_investigacion_n': { label: 'Centros e Institutos de Investigación CTCi', unit: 'centros' }
+      };
+
+      // Formateo seguro de títulos de eje y leyendas evitando duplicación de porcentaje
+      function formatAxisLabel(label, unit) {
+        if (!label) return '';
+        const clean = String(label).replace(/\s*\([^)]*\)\s*$/, '').trim();
+        return unit ? `${clean} (${unit})` : clean;
+      }
+
       // Metadatos de variables
       function getVarMeta(key) {
         if (!key) return { key: '', label: '', unit: '' };
+        if (CANONICAL_VAR_LABELS[key]) {
+          return {
+            key,
+            label: CANONICAL_VAR_LABELS[key].label,
+            unit: CANONICAL_VAR_LABELS[key].unit
+          };
+        }
         if (window.OmniRouteClient && typeof window.OmniRouteClient.getIndex === 'function') {
           const idx = window.OmniRouteClient.getIndex();
           const found = (idx.variables || []).find(v => v.key === key);
-          if (found) return found;
+          if (found) {
+            const cleanLabel = (found.label || key).replace(/\s*\([^)]*\)\s*$/, '').trim();
+            return { key, label: cleanLabel, unit: found.unit || '' };
+          }
         }
         let label = key.replace(/_/g, ' ');
         let unit = '';
-        if (key.endsWith('_pct')) { unit = '%'; label = label.replace(' pct', ''); }
-        else if (key.endsWith('_mmusd')) { unit = 'MM USD'; label = label.replace(' mmusd', ''); }
-        else if (key.endsWith('_mclp')) { unit = 'M$ CLP'; label = label.replace(' mclp', ''); }
-        else if (key.endsWith('_clp')) { unit = '$ CLP'; label = label.replace(' clp', ''); }
-        else if (key.endsWith('_ton')) { unit = 'ton'; label = label.replace(' ton', ''); }
-        else if (key.endsWith('_km2')) { unit = 'km²'; label = label.replace(' km2', ''); }
-        else if (key.endsWith('_km')) { unit = 'km'; label = label.replace(' km', ''); }
-        else if (key.endsWith('_ha')) { unit = 'ha'; label = label.replace(' ha', ''); }
-        else if (key.endsWith('_mw')) { unit = 'MW'; label = label.replace(' mw', ''); }
+        if (key.endsWith('_pct')) { unit = '%'; label = label.replace(/\s*pct$/, ''); }
+        else if (key.endsWith('_mmusd')) { unit = 'MM USD'; label = label.replace(/\s*mmusd$/, ''); }
+        else if (key.endsWith('_mclp')) { unit = 'M$ CLP'; label = label.replace(/\s*mclp$/, ''); }
+        else if (key.endsWith('_clp')) { unit = '$ CLP'; label = label.replace(/\s*clp$/, ''); }
+        else if (key.endsWith('_ton')) { unit = 'ton'; label = label.replace(/\s*ton$/, ''); }
+        else if (key.endsWith('_km2')) { unit = 'km²'; label = label.replace(/\s*km2$/, ''); }
+        else if (key.endsWith('_km')) { unit = 'km'; label = label.replace(/\s*km$/, ''); }
+        else if (key.endsWith('_ha')) { unit = 'ha'; label = label.replace(/\s*ha$/, ''); }
+        else if (key.endsWith('_mw')) { unit = 'MW'; label = label.replace(/\s*mw$/, ''); }
         return { key, label, unit };
       }
 
-      // Renderizado del Gráfico con Chart.js
+      // Plugin de Chart.js para dibujar nombres de comunas en el plano de dispersión (estándar Laboratorio)
+      const scatterPointLabelsPlugin = {
+        id: 'scatterPointLabelsPlugin',
+        afterDatasetsDraw(chart) {
+          if (chart.config.type !== 'scatter') return;
+          const ctx = chart.ctx;
+          const meta = chart.getDatasetMeta(0);
+          if (!meta || !meta.data) return;
+
+          const rawData = chart.data.datasets[0].data;
+          if (!rawData || !rawData.length) return;
+
+          const chartArea = chart.chartArea;
+          ctx.save();
+          ctx.textBaseline = 'middle';
+
+          for (let i = 0; i < meta.data.length; i++) {
+            const el = meta.data[i];
+            const p = rawData[i];
+            if (!el || !p) continue;
+            const text = p.entity || p.comuna || '';
+            if (!text) continue;
+
+            ctx.font = '600 9.5px "IBM Plex Sans", sans-serif';
+            const textWidth = ctx.measureText(text).width;
+
+            let lx = el.x + 8;
+            let ly = el.y;
+            if (chartArea && lx + textWidth > chartArea.right - 4) {
+              lx = Math.max(chartArea.left + 4, el.x - 8 - textWidth);
+            }
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.92)';
+            ctx.fillRect(lx - 2, ly - 6, textWidth + 4, 12);
+
+            ctx.fillStyle = '#0f172a';
+            ctx.fillText(text, lx, ly);
+          }
+
+          ctx.restore();
+        }
+      };
+
+      // Renderizado del Gráfico con Chart.js (Estándar Bivariado del Laboratorio)
       function renderActiveChart() {
         if (!window.Chart || !canvasEl) return;
 
@@ -1202,55 +1090,101 @@
                   pointRadius: 4,
                   pointBackgroundColor: '#00357f',
                   tension: 0.3,
-                  fill: true
+                  fill: true,
+                  yAxisID: 'y'
                 },
                 {
                   label: 'Pernoctaciones (INE EMAT)',
                   data: dsEmat,
-                  borderColor: '#0059c5',
-                  backgroundColor: 'transparent',
+                  borderColor: '#c2410c',
+                  backgroundColor: 'rgba(194, 65, 12, 0.05)',
                   borderWidth: 2,
                   pointRadius: 4,
-                  pointBackgroundColor: '#0059c5',
+                  pointBackgroundColor: '#c2410c',
                   borderDash: [5, 5],
-                  tension: 0.3
+                  tension: 0.3,
+                  yAxisID: 'y1'
                 }
               ]
             },
-            options: getChartOptions('Años (2015–2026)', 'Visitantes / Pernoctaciones Anuales')
+            options: getChartOptions('Años (2015–2026)', { label: 'Visitas SNASPE', unit: 'visitas' }, { label: 'Pernoctaciones EMAT', unit: 'noches' })
           });
 
           populateTableSeries(labels, dsSnaspe, dsEmat);
           return;
         }
 
-        // Gráfico de Dispersión (Scatter Bivariado)
+        // Gráfico de Dispersión (Scatter Bivariado con Línea de Tendencia y Etiquetas de Comunas)
         if (type === 'scatter') {
-          const companionVar = vY || 'poblacion_censo_2024';
+          const companionVar = (vY && vY !== vX) ? vY : 'poblacion_censo_2024';
           const metaX = getVarMeta(vX);
           const metaY = getVarMeta(companionVar);
           const scatterPoints = filteredComunas.map(c => ({
             x: typeof c[vX] === 'number' ? c[vX] : 0,
             y: typeof c[companionVar] === 'number' ? c[companionVar] : 0,
+            entity: c.nombre || c.nombre_comuna,
             comuna: c.nombre || c.nombre_comuna
           }));
 
-          const xTitle = metaX.unit ? `${metaX.label} (${metaX.unit})` : metaX.label;
-          const yTitle = metaY.unit ? `${metaY.label} (${metaY.unit})` : metaY.label;
+          const xTitle = formatAxisLabel(metaX.label, metaX.unit);
+          const yTitle = formatAxisLabel(metaY.label, metaY.unit);
+
+          const datasets = [
+            {
+              type: 'scatter',
+              label: `${metaX.label} vs ${metaY.label}`,
+              data: scatterPoints,
+              backgroundColor: '#00357f',
+              borderColor: '#002255',
+              borderWidth: 1.5,
+              pointRadius: 6,
+              pointHoverRadius: 8
+            }
+          ];
+
+          if (scatterPoints.length > 2) {
+            const n = scatterPoints.length;
+            const sumX = scatterPoints.reduce((acc, p) => acc + p.x, 0);
+            const sumY = scatterPoints.reduce((acc, p) => acc + p.y, 0);
+            const meanX = sumX / n;
+            const meanY = sumY / n;
+
+            let sxx = 0, syy = 0, sxy = 0;
+            scatterPoints.forEach(p => {
+              const dx = p.x - meanX;
+              const dy = p.y - meanY;
+              sxx += dx * dx;
+              syy += dy * dy;
+              sxy += dx * dy;
+            });
+
+            const slope = sxx !== 0 ? sxy / sxx : 0;
+            const intercept = meanY - slope * meanX;
+            const r = (sxx > 0 && syy > 0) ? (sxy / Math.sqrt(sxx * syy)) : 0;
+            const r2 = r * r;
+
+            const minX = Math.min(...scatterPoints.map(p => p.x));
+            const maxX = Math.max(...scatterPoints.map(p => p.x));
+
+            datasets.push({
+              type: 'line',
+              label: `Tendencia (r = ${r.toFixed(2)} · R² = ${r2.toFixed(2)})`,
+              data: [
+                { x: minX, y: slope * minX + intercept },
+                { x: maxX, y: slope * maxX + intercept }
+              ],
+              borderColor: '#c2410c',
+              borderWidth: 2,
+              borderDash: [6, 4],
+              pointRadius: 0,
+              fill: false
+            });
+          }
 
           activeChartInstance = new Chart(canvasEl, {
             type: 'scatter',
-            data: {
-              datasets: [{
-                label: `${metaX.label} vs ${metaY.label}`,
-                data: scatterPoints,
-                backgroundColor: '#00357f',
-                borderColor: '#002255',
-                borderWidth: 1.5,
-                pointRadius: 6,
-                pointHoverRadius: 8
-              }]
-            },
+            data: { datasets },
+            plugins: [scatterPointLabelsPlugin],
             options: {
               responsive: true,
               maintainAspectRatio: false,
@@ -1264,7 +1198,8 @@
                   callbacks: {
                     label: function (ctx) {
                       const p = ctx.raw;
-                      return `${p.comuna}: X=${p.x.toLocaleString('es-CL')} ${metaX.unit}, Y=${p.y.toLocaleString('es-CL')} ${metaY.unit}`;
+                      if (!p || p.x === undefined) return '';
+                      return `${p.entity || p.comuna || 'Punto'}: X=${p.x.toLocaleString('es-CL')} ${metaX.unit}, Y=${p.y.toLocaleString('es-CL')} ${metaY.unit}`;
                     }
                   }
                 }
@@ -1295,16 +1230,17 @@
           return;
         }
 
-        // Gráficos Monovariados y Bivariados por Comunas (Barras o Línea)
+        // Gráficos Monovariados y Bivariados por Comunas (Barras o Línea con Doble Eje Y)
         const metaX = getVarMeta(vX);
-        const metaY = vY ? getVarMeta(vY) : null;
+        const hasValidY = Boolean(vY && vY !== vX && typeof filteredComunas[0]?.[vY] === 'number');
+        const metaY = hasValidY ? getVarMeta(vY) : null;
         const labels = filteredComunas.map(c => c.nombre || c.nombre_comuna);
         const dataX = filteredComunas.map(c => (typeof c[vX] === 'number' ? c[vX] : 0));
         const isLine = type === 'line';
 
         const datasets = [
           {
-            label: metaX.unit ? `${metaX.label} (${metaX.unit})` : metaX.label,
+            label: formatAxisLabel(metaX.label, metaX.unit),
             data: dataX,
             backgroundColor: isLine ? 'rgba(0, 53, 127, 0.12)' : 'rgba(0, 53, 127, 0.85)',
             borderColor: '#00357f',
@@ -1313,29 +1249,27 @@
             tension: isLine ? 0.3 : 0,
             fill: isLine,
             pointRadius: isLine ? 5 : 0,
-            pointBackgroundColor: '#00357f'
+            pointBackgroundColor: '#00357f',
+            yAxisID: 'y'
           }
         ];
 
-        if (vY && typeof filteredComunas[0]?.[vY] === 'number') {
+        if (metaY) {
           const dataY = filteredComunas.map(c => (typeof c[vY] === 'number' ? c[vY] : 0));
           datasets.push({
-            label: metaY.unit ? `${metaY.label} (${metaY.unit})` : metaY.label,
+            label: formatAxisLabel(metaY.label, metaY.unit),
             data: dataY,
-            backgroundColor: isLine ? 'transparent' : 'rgba(0, 89, 197, 0.65)',
-            borderColor: '#0059c5',
+            backgroundColor: isLine ? 'rgba(194, 65, 12, 0.12)' : 'rgba(194, 65, 12, 0.80)',
+            borderColor: '#c2410c',
             borderWidth: isLine ? 2 : 1,
             borderRadius: isLine ? 0 : 3,
             tension: isLine ? 0.3 : 0,
             borderDash: isLine ? [5, 5] : undefined,
             pointRadius: isLine ? 5 : 0,
-            pointBackgroundColor: '#0059c5'
+            pointBackgroundColor: '#c2410c',
+            yAxisID: 'y1'
           });
         }
-
-        const yAxisTitle = metaX.unit
-          ? (metaY && metaY.unit !== metaX.unit ? `Valores (${metaX.unit} / ${metaY.unit})` : `Unidad: ${metaX.unit}`)
-          : 'Valor Numérico';
 
         activeChartInstance = new Chart(canvasEl, {
           type: isLine ? 'line' : 'bar',
@@ -1343,18 +1277,77 @@
             labels: labels,
             datasets: datasets
           },
-          options: getChartOptions('10 Comunas de Aysén', yAxisTitle)
+          options: getChartOptions('10 Comunas de Aysén', metaX, metaY)
         });
 
-        populateTableComunas(filteredComunas, vX, vY);
+        populateTableComunas(filteredComunas, vX, metaY ? vY : null);
       }
 
-      function getChartOptions(xTitle, yTitle) {
+      function getChartOptions(xTitle, metaX, metaY) {
+        const isBivariate = Boolean(metaY && metaY.key);
+        const scales = {
+          x: {
+            title: {
+              display: Boolean(xTitle),
+              text: xTitle || '',
+              font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
+              color: '#1c1b1b'
+            },
+            grid: { display: false },
+            ticks: {
+              font: { family: 'IBM Plex Mono', size: 10 },
+              color: '#475569',
+              maxRotation: 35,
+              minRotation: 0
+            }
+          },
+          y: {
+            type: 'linear',
+            position: 'left',
+            title: {
+              display: true,
+              text: formatAxisLabel(metaX.label, metaX.unit),
+              font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
+              color: '#00357f'
+            },
+            grid: { color: 'rgba(15, 23, 42, 0.06)' },
+            ticks: {
+              font: { family: 'IBM Plex Mono', size: 10 },
+              color: '#00357f',
+              callback: function (val) {
+                return val.toLocaleString('es-CL');
+              }
+            }
+          }
+        };
+
+        if (isBivariate) {
+          scales.y1 = {
+            type: 'linear',
+            position: 'right',
+            grid: { drawOnChartArea: false },
+            title: {
+              display: true,
+              text: formatAxisLabel(metaY.label, metaY.unit),
+              font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
+              color: '#c2410c'
+            },
+            ticks: {
+              font: { family: 'IBM Plex Mono', size: 10 },
+              color: '#c2410c',
+              callback: function (val) {
+                return val.toLocaleString('es-CL');
+              }
+            }
+          };
+        }
+
         return {
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
             legend: {
+              display: true,
               position: 'top',
               labels: {
                 font: { family: 'IBM Plex Sans', size: 11, weight: 500 },
@@ -1371,34 +1364,7 @@
               }
             }
           },
-          scales: {
-            x: {
-              title: {
-                display: Boolean(xTitle),
-                text: xTitle || '',
-                font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
-                color: '#1c1b1b'
-              },
-              grid: { display: false },
-              ticks: { font: { family: 'IBM Plex Mono', size: 10 }, color: '#475569' }
-            },
-            y: {
-              title: {
-                display: Boolean(yTitle),
-                text: yTitle || '',
-                font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
-                color: '#1c1b1b'
-              },
-              grid: { color: 'rgba(15, 23, 42, 0.06)' },
-              ticks: {
-                font: { family: 'IBM Plex Mono', size: 10 },
-                color: '#475569',
-                callback: function (val) {
-                  return val.toLocaleString('es-CL');
-                }
-              }
-            }
-          }
+          scales: scales
         };
       }
 
@@ -1408,11 +1374,11 @@
         if (thEntity) thEntity.textContent = 'Comuna';
 
         const metaX = getVarMeta(varX);
-        thVarX.textContent = metaX.unit ? `${metaX.label} (${metaX.unit})` : metaX.label;
+        thVarX.textContent = formatAxisLabel(metaX.label, metaX.unit);
 
         if (varY) {
           const metaY = getVarMeta(varY);
-          thVarY.textContent = metaY.unit ? `${metaY.label} (${metaY.unit})` : metaY.label;
+          thVarY.textContent = formatAxisLabel(metaY.label, metaY.unit);
           thVarY.style.display = 'table-cell';
         } else {
           thVarY.style.display = 'none';

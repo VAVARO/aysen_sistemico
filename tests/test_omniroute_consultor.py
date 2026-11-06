@@ -267,6 +267,95 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertIn("consultor.html", code)
         self.assertIn("js/omniroute_client.js", code)
 
+    def test_11_seguridad_no_modal_ni_api_key(self):
+        """Verifica que no exista boton de configuracion de API Key ni modal ni avisos tecnicos en consultor.html."""
+        with open(self.consultor_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        # Prohibida la exposicion de campos de API Key, endpoint o modal de configuracion
+        self.assertNotIn("btnOpenCfg", html, "consultor.html no debe incluir #btnOpenCfg")
+        self.assertNotIn("cfgModal", html, "consultor.html no debe incluir #cfgModal")
+        self.assertNotIn("Configurar Conexión OmniRoute", html, "consultor.html no debe mostrar texto de modal de configuracion")
+        self.assertNotIn("Resuelto con índice local verificado de Aysén Sistémico (OmniRoute en localhost:20128 no detectado)", html,
+                         "consultor.html no debe mostrar avisos tecnicos de localhost")
+
+        # Contencion de layout del canvas pane
+        self.assertIn("consultor-canvas-pane", html, "panel-evidence debe tener clase consultor-canvas-pane")
+        self.assertIn("height: calc(100vh - 56px)", html, "panel-evidence debe contenerse en height calc(100vh - 56px)")
+        self.assertIn("height: 340px", html, "chart-stage debe tener altura fija de 340px")
+
+    def test_12_motor_bivariado_y_dual_axis(self):
+        """Verifica que consultor.html implemente soporte bivariado con doble eje Y y dispersion con plugin."""
+        with open(self.consultor_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        # Doble eje Y
+        self.assertIn("yAxisID: 'y'", html, "datasets deben asignar eje y primario")
+        self.assertIn("yAxisID: 'y1'", html, "dataset secundario debe asignar eje y1")
+        self.assertIn("scatterPointLabelsPlugin", html, "debe registrar plugin de etiquetas de puntos de dispersion")
+        self.assertIn("Tendencia (r =", html, "debe calcular linea de tendencia en dispersion")
+        self.assertIn("formatAxisLabel", html, "debe usar formateador seguro de etiquetas sin duplicacion de unidades")
+        self.assertNotIn("(%) (%)", html, "no deben existir duplicaciones de simbolos de porcentaje")
+
+    def test_13_resolucion_poblacion_censo_2024(self):
+        """Verifica que consultas de personas/poblacion resuelvan a poblacion_censo_2024 con las 10 comunas."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        const r = client.resolveClosedWorldDeterministic('¿cuántas personas viven en cada comuna?');
+        if (!r.chart.render || r.chart.varX !== 'poblacion_censo_2024') {
+            console.error('Expected poblacion_censo_2024, got:', r.chart);
+            process.exit(1);
+        }
+        if (!r.reply.includes('100.745') && !r.reply.includes('100,745')) {
+            console.error('Expected regional population in reply, got:', r.reply);
+            process.exit(2);
+        }
+        const comunasEsperadas = ['Coyhaique', 'Aysén', 'Cisnes', 'Chile Chico', 'Cochrane'];
+        for (const c of comunasEsperadas) {
+            if (!r.reply.includes(c)) {
+                console.error('Missing expected comuna ' + c + ' in reply:', r.reply);
+                process.exit(3);
+            }
+        }
+        console.log('POBLACION_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo resolviendo poblacion censo 2024:\n{proc.stderr}")
+        self.assertIn("POBLACION_OK", proc.stdout)
+
+    def test_14_estaciones_terrestres_auditadas(self):
+        """Verifica que las coordenadas de estaciones y hospitales esten en tierra firme."""
+        with open(os.path.join(ROOT_DIR, "data", "estaciones_aysen.json"), "r", encoding="utf-8") as f:
+            estaciones_doc = json.load(f)
+        estaciones = estaciones_doc.get("estaciones", []) if isinstance(estaciones_doc, dict) else estaciones_doc
+
+        # Verificar estaciones previamente auditadas
+        san_rafael = next((e for e in estaciones if "San Rafael" in e.get("nombre", "")), None)
+        self.assertIsNotNone(san_rafael)
+        self.assertAlmostEqual(san_rafael["lat"], -46.634, places=2)
+        lon_val = san_rafael.get("lng", san_rafael.get("lon"))
+        self.assertAlmostEqual(lon_val, -73.850, places=2)
+
+        # Verificar hospitales oficiales DEIS en tierra firme
+        with open(os.path.join(ROOT_DIR, "data", "systemic", "08_desagregaciones_sectoriales_aysen.json"), "r", encoding="utf-8") as f:
+            sec8 = json.load(f)
+        hosp_coyhaique = next((h for h in sec8.get("nodos_georreferenciados", []) if "Regional" in h.get("nombre", "")), None)
+        self.assertIsNotNone(hosp_coyhaique)
+        self.assertAlmostEqual(hosp_coyhaique["lat"], -45.5712, places=3)
+        lon_hosp = hosp_coyhaique.get("lng", hosp_coyhaique.get("lon"))
+        self.assertAlmostEqual(lon_hosp, -72.0685, places=3)
+
 
 if __name__ == "__main__":
     unittest.main()
