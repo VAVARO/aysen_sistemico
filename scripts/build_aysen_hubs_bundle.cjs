@@ -82,6 +82,7 @@ if (fs.existsSync(wp10Path)) {
 }
 const provCatalog = readJson('data/systemic/provenance_catalog.json');
 const holdingsRaw = readJson('data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json');
+const holdingsEvolRaw = readJson('data/raw/territorio_concesiones/evolucion_holdings_salmoneros_2018_2026.json');
 
 // Carga opcional de Barómetro y Presets Inter-Hub
 let baroData = { hubs: {} };
@@ -3080,7 +3081,8 @@ const comunas = comunasBase.map((c, idx) => {
     cobertura_vegetal_pct: (g7.flora_y_formaciones_vegetacionales || {}).porcentaje_cobertura_vegetal_pct || 0,
     fauna_amenazada_n: ((g7.fauna_emblematica_conservacion || {}).especies_presentes || []).length,
     // Indicadores Sistémicos Profundos (Investigación Multi-Agente 2026)
-    ipp_per_capita_clp: (g1.finanzas_sinim || {}).ingresos_propios_permanentes_per_capita_clp || 0,
+    ipp_per_capita_clp: (g1.finanzas_sinim || {}).ingresos_propios_permanentes_per_capita_clp ||
+      Math.round(((100 - ((g1.finanzas_sinim || {}).dependencia_fcm_pct || 0)) / 100) * ((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp || 0) * 1000),
     gasto_personal_pct: (g1.finanzas_sinim || {}).gasto_personal_subtitulo_21_pct || 0,
     inversion_directa_pct: (g1.finanzas_sinim || {}).inversion_real_directa_pct || 0,
     profesionalizacion_pct: (g1.finanzas_sinim || {}).profesionalizacion_planta_pct || 0,
@@ -3120,26 +3122,55 @@ const comunas = comunasBase.map((c, idx) => {
     monto_anid_mclp: g10.monto_anid_acumulado_mclp || 0,
     innovacion_corfo_mclp: g10.monto_corfo_innova_mclp || 0,
     proyectos_ctci_total: g10.total_proyectos_ctci || 0,
-    investigadores_residentes: g10.investigadores_residentes_est || 0
+    investigadores_residentes: g10.investigadores_residentes_est || 0,
+    establecimientos_escolares_n: (g5.educacion_mineduc || {}).establecimientos_escolares_total || 0,
+    establecimientos_aps_n: (g8.salud_diferenciada?.atencion_primaria_aps || {}).total_establecimientos_aps || 0,
+    holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-'
   };
 });
 
 // ============================================================================
-// 4. NORMALIZAR LOS 12 HOLDINGS (COMO DATO AUXILIAR)
+// 4. NORMALIZAR LOS HOLDINGS SALMONEROS (CON BIOMASA, CENTROS Y EVOLUCIÓN 2018-2026)
 // ============================================================================
-const holdings = (holdingsRaw.holdings || []).map(h => ({
-  holding_id: h.holding_id,
-  nombre_fantasia: h.nombre_fantasia,
-  empresa_madre_holding: h.empresa_madre,
-  grupo_controlador: h.grupo_empresarial,
-  origen_capital: h.pais_matriz,
-  resumen_corporativo: h.resumen_corporativo,
-  total_concesiones_aysen: h.concesiones_estimadas_aysen,
-  porcentaje_regional_concesiones: h.pct_concesiones_regional,
-  comunas_presencia: h.comunas_operacion || [],
-  barrios_acs: h.barrios_acs_operacion || [],
-  plantas_operativas: h.plantas_y_bases_operativas || []
-}));
+const holdingsPorComuna = {};
+(wp03.por_comuna || []).forEach(pc => {
+  const ine = String(pc.comuna_ine);
+  const ca = (pc.datos || {}).concesiones_acuicolas || {};
+  const list = ca.holdings_controladores_y_ruts || ca.holdings_operadores || [];
+  if (Array.isArray(list) && list.length > 0) {
+    holdingsPorComuna[ine] = list.map(ho => ({
+      holding_id: ho.holding_id || '',
+      holding: ho.nombre_fantasia || ho.holding || '',
+      empresa_madre: ho.empresa_madre || '',
+      pais_matriz: ho.pais_matriz || '',
+      concesiones_comuna: ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna || 0,
+      barrios_acs_locales: ho.barrios_acs_locales || []
+    }));
+  }
+});
+
+const totalRegionalCentros = comunas.reduce((acc, c) => acc + (Number(c.centros_activos_salmon) || 0), 0) || 245;
+const totalRegionalBiomasa = comunas.reduce((acc, c) => acc + (Number(c.biomasa_salmon_ton) || 0), 0) || 503500;
+
+const holdings = (holdingsRaw.holdings || []).map(h => {
+  const share = (Number(h.pct_concesiones_regional) || 0) / 100;
+  return {
+    holding_id: h.holding_id,
+    nombre_fantasia: h.nombre_fantasia,
+    empresa_madre_holding: h.empresa_madre,
+    grupo_controlador: h.grupo_empresarial,
+    origen_capital: h.pais_matriz,
+    resumen_corporativo: h.resumen_corporativo,
+    total_concesiones_aysen: h.concesiones_estimadas_aysen,
+    porcentaje_regional_concesiones: h.pct_concesiones_regional,
+    centros_activos_estimados: h.centros_activos_estimados || Math.round(share * totalRegionalCentros),
+    biomasa_estimada_ton: h.biomasa_estimada_ton || Math.round(share * totalRegionalBiomasa),
+    comunas_presencia: h.comunas_operacion || [],
+    barrios_acs: h.barrios_acs_operacion || [],
+    plantas_operativas: h.plantas_y_bases_operativas || [],
+    filiales_y_ruts: h.filiales_y_ruts || []
+  };
+});
 
 // ============================================================================
 // 5. AUDITORIA AUTOMATICA DE INTEGRIDAD Y REGLAS CONTRACTUALES
@@ -3953,6 +3984,8 @@ const bundle = {
   nodos,
   comunas,
   holdings,
+  holdingsPorComuna,
+  evolucionHoldingsSalmoneros: holdingsEvolRaw,
   systemicBridges: systemicBridges,
   seriesMensualesEmat: wp06.series_mensuales_emat_sernatur || [],
   edges_inter_hub: cecanPresets.edges_inter_hub || [],

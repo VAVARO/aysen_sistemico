@@ -578,6 +578,263 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Fallo en autodescubrimiento RAG:\n{proc.stderr}")
         self.assertIn("DYNAMIC_RAG_OK", proc.stdout)
 
+    def test_18_perfil_comunal_rico_cisnes(self):
+        """Test 1 (Perfil Comunal Rico): 'cuentame sobre la comuna de Cisnes' devuelve perfil de 4 bloques con demografia, salmonicultura, finanzas, salud y energia."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+        client.clearConversationMemory();
+
+        const res = client.resolveClosedWorldDeterministic('cuéntame sobre la comuna de Cisnes');
+        const r = res.reply || '';
+
+        const requiredSnippets = [
+            '5.137',
+            '16.093',
+            '218 concesiones',
+            '78 centros activos',
+            '185.000 ton',
+            '74,5% dependencia FCM',
+            '12 camas',
+            '980 alumnos',
+            '95,1% leña'
+        ];
+        for (const s of requiredSnippets) {
+            if (!r.includes(s)) {
+                console.error('Missing expected snippet in Cisnes profile:', s, '\\nReply was:\\n', r);
+                process.exit(1);
+            }
+        }
+
+        if (!Array.isArray(res.chart.comunaProfileRows) || res.chart.comunaProfileRows.length < 20) {
+            console.error('Expected comunaProfileRows table data for Cisnes, got:', res.chart.comunaProfileRows?.length);
+            process.exit(2);
+        }
+
+        console.log('CISNES_PROFILE_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en perfil comunal rico de Cisnes:\n{proc.stderr}")
+        self.assertIn("CISNES_PROFILE_OK", proc.stdout)
+
+    def test_19_seguimiento_conversacional_comuna_sector(self):
+        """Test 2 (Seguimiento Conversacional Comuna x Sector): tras consultar por Cisnes, preguntar por su relacion con la salmonicultura mantiene Cisnes y cita SERNAPESCA/SUBPESCA."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        for (const followUpQ of ['¿y cuál es su relación con la salmonicultura?', 'y cuál es la relación que tiene Cisnes respecto a la salmonicultura?']) {
+            client.clearConversationMemory();
+            client.resolveClosedWorldDeterministic('cuéntame sobre la comuna de Cisnes');
+            const res = client.resolveClosedWorldDeterministic(followUpQ);
+            const r = res.reply || '';
+
+            const expected = ['Cisnes', '218', '78', '185.000', 'AquaChile', 'Mowi Chile', 'Multi X'];
+            for (const token of expected) {
+                if (!r.includes(token)) {
+                    console.error('Missing expected token in Cisnes salmonicultura crossing:', token, '\\nReply was:\\n', r);
+                    process.exit(1);
+                }
+            }
+
+            if (res.chart.varX !== 'concesiones_salmon' || res.chart.varY !== 'biomasa_salmon_ton') {
+                console.error('Expected bivariate salmon chart, got:', res.chart);
+                process.exit(2);
+            }
+
+            const srcText = JSON.stringify(res.sources || []);
+            if (!srcText.includes('SERNAPESCA') || srcText.includes('CNE') || srcText.includes('CEAD')) {
+                console.error('Invalid sources for Cisnes salmonicultura:', res.sources);
+                process.exit(3);
+            }
+        }
+
+        // Verify 3-turn comuna->sector->comuna switch preserves sector context
+        client.clearConversationMemory();
+        client.resolveClosedWorldDeterministic('cuéntame sobre la comuna de Cisnes');
+        client.resolveClosedWorldDeterministic('¿y en salud?');
+        const turn3 = client.resolveClosedWorldDeterministic('¿y en Coyhaique?');
+        if (!turn3.reply.includes('Coyhaique') || !turn3.reply.toLowerCase().includes('salud y red asistencial')) {
+            console.error('Turn 3 failed to preserve salud sector on comuna switch:', turn3.reply);
+            process.exit(4);
+        }
+
+        console.log('FOLLOWUP_SECTOR_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en seguimiento conversacional Comuna x Sector:\n{proc.stderr}")
+        self.assertIn("FOLLOWUP_SECTOR_OK", proc.stdout)
+
+    def test_20_distribucion_concesiones_empresas_holdings(self):
+        """Test 3 (Distribucion por Empresas / Holdings y Pesquerias): responde y grafica los 12 holdings salmoneros madres con customCategoryData y soporta pesquerias/cuotas."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        const queries = [
+            '¿cómo se distribuyen las concesiones salmoneras según empresas?',
+            'pregunté por empresas o holdings, no comunas'
+        ];
+
+        for (const q of queries) {
+            const res = client.resolveClosedWorldDeterministic(q);
+            const r = res.reply || '';
+            if (r.length > 650) {
+                console.error('Holdings reply exceeded 650 chars (' + r.length + '):\\n' + r);
+                process.exit(1);
+            }
+            for (const hName of ['AquaChile', 'Multi X', 'Blumar', 'Mowi Chile', 'Cermaq Chile', 'Australis Mar', 'Yadran', 'Salmones Ice Val']) {
+                if (!r.includes(hName)) {
+                    console.error('Missing holding ' + hName + ' in reply for ' + q + ':\\n' + r);
+                    process.exit(1);
+                }
+            }
+            if (!res.chart || !res.chart.customCategoryData || !Array.isArray(res.chart.labels) || res.chart.labels.length !== 12) {
+                console.error('Expected customCategoryData with 12 holding labels, got:', res.chart);
+                process.exit(2);
+            }
+            if (!Array.isArray(res.chart.datasets) || res.chart.datasets.length < 2 || res.chart.datasets[1].yAxisID !== 'y1') {
+                console.error('Expected 2 datasets (concesiones + biomasa y1), got:', res.chart.datasets);
+                process.exit(3);
+            }
+        }
+
+        const fishRes = client.resolveClosedWorldDeterministic('cuotas industriales en Aysén');
+        if (!fishRes.reply.includes('Merluza del Sur') || !fishRes.reply.includes('Congrio Dorado') || fishRes.reply.length > 650) {
+            console.error('Fishery quota query failed:', fishRes.reply);
+            process.exit(4);
+        }
+
+        console.log('HOLDINGS_QUERY_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en consulta por empresas/holdings salmoneros:\n{proc.stderr}")
+        self.assertIn("HOLDINGS_QUERY_OK", proc.stdout)
+
+    def test_21_mapeo_exacto_fuentes_sin_contaminacion(self):
+        """Test 4 (Mapeo Exacto de Fuentes sin Contaminacion): 'ranking de comunas por cantidad de habitantes' y '¿cuántos habitantes tiene cada comuna?' citan solo INE Censo 2024."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        for (const q of ['ranking de comunas por cantidad de habitantes', '¿cuántos habitantes tiene cada comuna?']) {
+            client.clearConversationMemory();
+            const res = client.resolveClosedWorldDeterministic(q);
+            if (!Array.isArray(res.sources) || res.sources.length !== 1) {
+                console.error('Expected exactly 1 source for habitantes query "' + q + '", got:', res.sources);
+                process.exit(1);
+            }
+            const s0 = res.sources[0];
+            if (!s0.institucion.includes('INE') || !s0.institucion.includes('Censo de Población y Vivienda 2024')) {
+                console.error('Expected INE Censo 2024 source, got:', s0);
+                process.exit(2);
+            }
+            const rawSourcesStr = JSON.stringify(res.sources);
+            for (const forbidden of ['CEAD', 'Violencia Intrafamiliar', 'DEIS', 'CNE', 'poblacion_censo_2024']) {
+                if (rawSourcesStr.includes(forbidden)) {
+                    console.error('Forbidden cross-citation or snake_case in sources:', forbidden, rawSourcesStr);
+                    process.exit(3);
+                }
+            }
+        }
+
+        console.log('EXACT_PROVENANCE_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en mapeo exacto 1-a-1 de fuentes oficiales:\n{proc.stderr}")
+        self.assertIn("EXACT_PROVENANCE_OK", proc.stdout)
+
+    def test_22_cero_claves_crudas_sin_tildes_y_cero_corte_2026(self):
+        """Test 5 (Cero Claves Crudas sin Tildes y Cero Corte 17-Oct-2026): verifica CANONICAL_LABELS y limpieza de consultor.html."""
+        with open(self.consultor_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        self.assertNotIn("Corte 17-Oct-2026", html, "consultor.html no debe contener 'Corte 17-Oct-2026'")
+        self.assertNotIn("Formato es-CL", html, "consultor.html no debe contener 'Formato es-CL'")
+        self.assertIn("white-space: normal", html, "consultor.html debe aplicar white-space: normal en subtitulo y badges")
+        self.assertIn("customCategoryData", html, "consultor.html debe soportar customCategoryData para los 12 holdings")
+        self.assertIn("comunaProfileRows", html, "consultor.html debe soportar comunaProfileRows para fichas comunales")
+
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        client.init(sandbox.AYSEN_HUBS_DATA);
+
+        const badStrings = [
+            'Dependencia fcm',
+            'Poblacion censo 2024',
+            'Biomasa salmon',
+            'Concesiones salmon'
+        ];
+
+        const queries = [
+            '¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?',
+            'ranking de comunas por cantidad de habitantes',
+            '¿Qué comunas concentran la biomasa de salmonicultura y cómo contrasta con la inversión pública regional?',
+            'concesiones de salmonicultura por comuna'
+        ];
+
+        for (const q of queries) {
+            const res = client.resolveClosedWorldDeterministic(q);
+            const combined = (res.reply || '') + ' | ' + (res.chart?.title || '');
+            for (const bad of badStrings) {
+                if (combined.toLowerCase().includes(bad.toLowerCase())) {
+                    console.error('Found unaccented raw label "' + bad + '" in output for query "' + q + '":\\n' + combined);
+                    process.exit(1);
+                }
+            }
+        }
+
+        console.log('CANONICAL_LABELS_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en verificacion de etiquetas canonicas con tildes:\n{proc.stderr}")
+        self.assertIn("CANONICAL_LABELS_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

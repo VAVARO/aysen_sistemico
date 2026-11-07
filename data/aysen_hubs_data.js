@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-07T13:25:16.143Z",
+  "generatedAt": "2026-11-07T14:41:45.973Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -10915,7 +10915,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 524500,
       "cobertura_vegetal_pct": 72,
       "fauna_amenazada_n": 5,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 245565,
       "gasto_personal_pct": 42.1,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -10952,7 +10952,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 11850.5,
       "innovacion_corfo_mclp": 4120,
       "proyectos_ctci_total": 102,
-      "investigadores_residentes": 82
+      "investigadores_residentes": 82,
+      "establecimientos_escolares_n": 38,
+      "establecimientos_aps_n": 13,
+      "holdings_operadores_salmon": "-"
     },
     {
       "id": 2,
@@ -11006,7 +11009,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 390000,
       "cobertura_vegetal_pct": 71.9,
       "fauna_amenazada_n": 5,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 339692,
       "gasto_personal_pct": 48.5,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11043,7 +11046,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 45,
       "innovacion_corfo_mclp": 30,
       "proyectos_ctci_total": 2,
-      "investigadores_residentes": 1
+      "investigadores_residentes": 1,
+      "establecimientos_escolares_n": 3,
+      "establecimientos_aps_n": 5,
+      "holdings_operadores_salmon": "-"
     },
     {
       "id": 3,
@@ -11097,7 +11103,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 1430000,
       "cobertura_vegetal_pct": 48,
       "fauna_amenazada_n": 9,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 289478,
       "gasto_personal_pct": 44.2,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11134,7 +11140,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 2450,
       "innovacion_corfo_mclp": 2150,
       "proyectos_ctci_total": 31,
-      "investigadores_residentes": 14
+      "investigadores_residentes": 14,
+      "establecimientos_escolares_n": 18,
+      "establecimientos_aps_n": 7,
+      "holdings_operadores_salmon": "AquaChile (125), Mowi Chile (55), Multi X (48), Cermaq Chile (42), Salmones Blumar (34), Australis Seafoods (32), Salmones Antártica (28), Cooke Aquaculture Chile (26), Salmones Camanchaca (18), Salmones Austral (18), Invermar (14)"
     },
     {
       "id": 4,
@@ -11188,7 +11197,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 1025000,
       "cobertura_vegetal_pct": 63.7,
       "fauna_amenazada_n": 9,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 302813,
       "gasto_personal_pct": 39.8,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11225,7 +11234,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 680,
       "innovacion_corfo_mclp": 680,
       "proyectos_ctci_total": 11,
-      "investigadores_residentes": 4
+      "investigadores_residentes": 4,
+      "establecimientos_escolares_n": 9,
+      "establecimientos_aps_n": 7,
+      "holdings_operadores_salmon": "AquaChile (65), Mowi Chile (40), Cermaq Chile (33), Multi X (32), Salmones Camanchaca (30), Salmones Blumar (28), Australis Seafoods (26), Invermar (22), Salmones Yadrán (18), Salmones Austral (16)"
     },
     {
       "id": 5,
@@ -11279,7 +11291,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 53000,
       "cobertura_vegetal_pct": 85.4,
       "fauna_amenazada_n": 5,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 351067,
       "gasto_personal_pct": 51.2,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11316,7 +11328,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 280,
       "innovacion_corfo_mclp": 140,
       "proyectos_ctci_total": 4,
-      "investigadores_residentes": 2
+      "investigadores_residentes": 2,
+      "establecimientos_escolares_n": 2,
+      "establecimientos_aps_n": 3,
+      "holdings_operadores_salmon": "Salmones Yadrán (22), AquaChile (20), Otros Concesionarios e Históricos (56)"
     },
     {
       "id": 6,
@@ -11370,7 +11385,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 328500,
       "cobertura_vegetal_pct": 57.3,
       "fauna_amenazada_n": 5,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 317059,
       "gasto_personal_pct": 46.7,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11407,7 +11422,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 490,
       "innovacion_corfo_mclp": 580,
       "proyectos_ctci_total": 8,
-      "investigadores_residentes": 3
+      "investigadores_residentes": 3,
+      "establecimientos_escolares_n": 4,
+      "establecimientos_aps_n": 5,
+      "holdings_operadores_salmon": "-"
     },
     {
       "id": 7,
@@ -11461,7 +11479,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 342000,
       "cobertura_vegetal_pct": 57,
       "fauna_amenazada_n": 5,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 295922,
       "gasto_personal_pct": 47.9,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11498,7 +11516,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 520,
       "innovacion_corfo_mclp": 110,
       "proyectos_ctci_total": 5,
-      "investigadores_residentes": 2
+      "investigadores_residentes": 2,
+      "establecimientos_escolares_n": 3,
+      "establecimientos_aps_n": 6,
+      "holdings_operadores_salmon": "-"
     },
     {
       "id": 8,
@@ -11552,7 +11573,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 543000,
       "cobertura_vegetal_pct": 63.1,
       "fauna_amenazada_n": 7,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 308606,
       "gasto_personal_pct": 43.5,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11589,7 +11610,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 460,
       "innovacion_corfo_mclp": 410,
       "proyectos_ctci_total": 7,
-      "investigadores_residentes": 3
+      "investigadores_residentes": 3,
+      "establecimientos_escolares_n": 3,
+      "establecimientos_aps_n": 3,
+      "holdings_operadores_salmon": "-"
     },
     {
       "id": 9,
@@ -11643,7 +11667,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 372000,
       "cobertura_vegetal_pct": 45.5,
       "fauna_amenazada_n": 5,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 282455,
       "gasto_personal_pct": 50.4,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11680,7 +11704,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 190,
       "innovacion_corfo_mclp": 50,
       "proyectos_ctci_total": 3,
-      "investigadores_residentes": 1
+      "investigadores_residentes": 1,
+      "establecimientos_escolares_n": 2,
+      "establecimientos_aps_n": 3,
+      "holdings_operadores_salmon": "-"
     },
     {
       "id": 10,
@@ -11734,7 +11761,7 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_vegetal_nativa_ha": 715000,
       "cobertura_vegetal_pct": 36.3,
       "fauna_amenazada_n": 8,
-      "ipp_per_capita_clp": 0,
+      "ipp_per_capita_clp": 292277,
       "gasto_personal_pct": 52.6,
       "inversion_directa_pct": 0,
       "profesionalizacion_pct": 0,
@@ -11771,7 +11798,10 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 361.3,
       "innovacion_corfo_mclp": 180,
       "proyectos_ctci_total": 6,
-      "investigadores_residentes": 3
+      "investigadores_residentes": 3,
+      "establecimientos_escolares_n": 2,
+      "establecimientos_aps_n": 3,
+      "holdings_operadores_salmon": "Titulares Menores (17)"
     }
   ],
   "holdings": [
@@ -11784,6 +11814,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Mayor operador acuícola de Chile y segundo mundial. En 2018-2019 Agrosuper adquirió Empresas AquaChile, Salmones Magallanes, Pesquera Los Fiordos y activos de Friosur, consolidando la mayor cartera de concesiones en Aysén (~28% regional).",
       "total_concesiones_aysen": 210,
       "porcentaje_regional_concesiones": 28.19,
+      "centros_activos_estimados": 69,
+      "biomasa_estimada_ton": 141937,
       "comunas_presencia": [
         "Aysén",
         "Cisnes",
@@ -11801,7 +11833,112 @@ window.AYSEN_HUBS_DATA = {
         "ACS-25",
         "ACS-33"
       ],
-      "plantas_operativas": "Planta de proceso primario y secundario en Puerto Chacabuco (Aysén); bases logísticas en Puerto Cisnes y Melinka."
+      "plantas_operativas": "Planta de proceso primario y secundario en Puerto Chacabuco (Aysén); bases logísticas en Puerto Cisnes y Melinka.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Empresas AquaChile S.A.",
+          "rut": "86.247.400-7",
+          "rol_societario": "Matriz acuícola operativa y titular directa de concesiones",
+          "estado_societario": "Activa",
+          "origen_historico": "Sociedad anónima abierta histórica adquirida por Agrosuper en 2019",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-21A",
+            "ACS-22A",
+            "ACS-24"
+          ]
+        },
+        {
+          "razon_social": "Exportadora Los Fiordos Limitada (ex Pesquera Los Fiordos Ltda.)",
+          "rut": "79.872.420-7",
+          "rol_societario": "Filial histórica de Agrosuper titular de concesiones",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "División acuícola fundacional de Agrosuper (1989), integrada a AquaChile",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-21B",
+            "ACS-22B"
+          ]
+        },
+        {
+          "razon_social": "AquaChile Maullín Limitada (ex Salmones Maullín Ltda.)",
+          "rut": "79.728.530-7",
+          "rol_societario": "Filial titular de concesiones de cultivo de salmónidos",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial histórica del grupo AquaChile",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Aguas Claras S.A.",
+          "rut": "96.509.550-0",
+          "rol_societario": "Filial titular de concesiones en fiordos australes",
+          "estado_societario": "Activa absorbida",
+          "origen_historico": "Adquirida por AquaChile en 2004",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22A",
+            "ACS-25"
+          ]
+        },
+        {
+          "razon_social": "Salmones Chiloé S.A.",
+          "rut": "96.535.920-6",
+          "rol_societario": "Filial titular de concesiones de agua de mar",
+          "estado_societario": "Activa absorbida",
+          "origen_historico": "Filial histórica del grupo Aguas Claras / AquaChile",
+          "comunas_aysen": [
+            "Aysén",
+            "Guaitecas"
+          ],
+          "barrios_acs": [
+            "ACS-21B",
+            "ACS-33"
+          ]
+        },
+        {
+          "razon_social": "AquaChile Magallanes SpA (ex Salmones Magallanes)",
+          "rut": "78.754.560-2",
+          "rol_societario": "Filial austral tenedora de activos y soporte",
+          "estado_societario": "Activa",
+          "origen_historico": "Adquirida a Familia Gala en 2018 por USD 259M e integrada a AquaChile",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "AquaChile SpA",
+          "rut": "76.852.140-9",
+          "rol_societario": "Vehículo corporativo y logístico",
+          "estado_societario": "Activa",
+          "origen_historico": "Reorganización corporativa del grupo Agrosuper",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-22A"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_mowi",
@@ -11812,6 +11949,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Mayor productor salmonero mundial de capitales noruegos. Opera en Chile a través de Mowi Chile S.A. (anteriormente Marine Harvest Chile S.A.), con centros tecnificados de engorda en Canal Moraleda, Canal Puyuhuapi y Fiordo Aysén.",
       "total_concesiones_aysen": 95,
       "porcentaje_regional_concesiones": 12.75,
+      "centros_activos_estimados": 31,
+      "biomasa_estimada_ton": 64196,
       "comunas_presencia": [
         "Aysén",
         "Cisnes"
@@ -11824,7 +11963,27 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22A",
         "ACS-24"
       ],
-      "plantas_operativas": "Base de acopio y logística en Puerto Chacabuco; pontones habitables tecnificados con alimentación remota en Canal Moraleda e Isla Melchor."
+      "plantas_operativas": "Base de acopio y logística en Puerto Chacabuco; pontones habitables tecnificados con alimentación remota en Canal Moraleda e Isla Melchor.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Mowi Chile S.A. (ex Marine Harvest Chile S.A.)",
+          "rut": "96.633.780-K",
+          "rol_societario": "Matriz y operadora directa en Chile de todas las concesiones del grupo",
+          "estado_societario": "Activa",
+          "origen_historico": "Cambio formal de razón social de Marine Harvest Chile S.A. en 2019",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-19A",
+            "ACS-21A",
+            "ACS-22A",
+            "ACS-24"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_multi_x",
@@ -11835,6 +11994,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Pionera de la salmonicultura chilena fundada en 1983. En 2022 sumó como socios estratégicos a Cargill (24.5%) y Mitsui (24.5%), reteniendo el grupo fundador chileno el control (51%). Fuerte concentración en fiordos y canales de Aysén y Cisnes.",
       "total_concesiones_aysen": 80,
       "porcentaje_regional_concesiones": 10.74,
+      "centros_activos_estimados": 26,
+      "biomasa_estimada_ton": 54076,
       "comunas_presencia": [
         "Aysén",
         "Cisnes"
@@ -11847,7 +12008,83 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22B",
         "ACS-24"
       ],
-      "plantas_operativas": "Base logística Puerto Chacabuco; centros de cultivo de alta profundidad en Canal Moraleda y Seno Gala."
+      "plantas_operativas": "Base logística Puerto Chacabuco; centros de cultivo de alta profundidad en Canal Moraleda y Seno Gala.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Multiexport Foods S.A.",
+          "rut": "76.672.100-1",
+          "rol_societario": "Sociedad matriz abierta inscrita en CMF (N° 979) bajo nemotécnica MULTIFOODS",
+          "estado_societario": "Activa",
+          "origen_historico": "Matriz corporativa del grupo fundada en 1983",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Multi X S.A. (ex Salmones Multiexport S.A.)",
+          "rut": "79.891.160-0",
+          "rol_societario": "Principal filial operadora y titular de concesiones de cultivo de salmónidos",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial productiva central de Multiexport en aguas marinas",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-18C",
+            "ACS-19A",
+            "ACS-21A",
+            "ACS-22B",
+            "ACS-24"
+          ]
+        },
+        {
+          "razon_social": "Multiexport Patagonia S.A.",
+          "rut": "76.769.420-2",
+          "rol_societario": "Filial titular de concesiones en macrozona austral",
+          "estado_societario": "Activa",
+          "origen_historico": "Vehículo de expansión patagónica de Multiexport",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-21A",
+            "ACS-24"
+          ]
+        },
+        {
+          "razon_social": "Sociedad de Inversiones Isla Victoria Limitada",
+          "rut": "76.004.634-5",
+          "rol_societario": "Filial tenedora de concesiones y derechos acuícolas",
+          "estado_societario": "Activa",
+          "origen_historico": "Vehículo patrimonial de concesiones",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-19A"
+          ]
+        },
+        {
+          "razon_social": "Multiexport Pacific Farms S.A.",
+          "rut": "76.259.377-7",
+          "rol_societario": "Filial de cultivo y operaciones complementarias",
+          "estado_societario": "Activa",
+          "origen_historico": "Operaciones marítimas y de engorda",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22B"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_cermaq",
@@ -11858,6 +12095,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Cermaq (antigua empresa estatal noruega adquirida en 2014 por el conglomerado japonés Mitsubishi Corporation) consolidó en Chile los activos de Mainstream Chile S.A. y Cultivos Marinos Chiloé S.A. Posee relevante presencia en fiordos de Aysén y Cisnes.",
       "total_concesiones_aysen": 75,
       "porcentaje_regional_concesiones": 10.07,
+      "centros_activos_estimados": 25,
+      "biomasa_estimada_ton": 50702,
       "comunas_presencia": [
         "Aysén",
         "Cisnes"
@@ -11870,7 +12109,54 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22A",
         "ACS-25"
       ],
-      "plantas_operativas": "Base operativa Puerto Chacabuco; centros de cultivo en Seno Ventisquero, Canal Jacaf y Canal Errázuriz."
+      "plantas_operativas": "Base operativa Puerto Chacabuco; centros de cultivo en Seno Ventisquero, Canal Jacaf y Canal Errázuriz.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Cermaq Chile S.A. (continuadora de Cultivos Marinos Chiloé S.A.)",
+          "rut": "79.784.980-4",
+          "rol_societario": "Matriz operativa en Chile y principal titular de concesiones",
+          "estado_societario": "Activa",
+          "origen_historico": "Fusión operativa e integración de Cultivos Marinos Chiloé en Cermaq",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-19B",
+            "ACS-21B",
+            "ACS-22A"
+          ]
+        },
+        {
+          "razon_social": "Mainstream Chile S.A.",
+          "rut": "77.424.630-4",
+          "rol_societario": "Filial histórica absorbida titular de concesiones",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Nombre corporativo original de Cermaq en Chile",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-20",
+            "ACS-25"
+          ]
+        },
+        {
+          "razon_social": "Salmones Andes S.A.",
+          "rut": "96.502.180-9",
+          "rol_societario": "Filial titular de concesiones de acuicultura",
+          "estado_societario": "Activa",
+          "origen_historico": "Adquirida e integrada al portafolio de Cermaq Chile",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22A"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_cooke",
@@ -11881,6 +12167,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
       "total_concesiones_aysen": 26,
       "porcentaje_regional_concesiones": 3.49,
+      "centros_activos_estimados": 9,
+      "biomasa_estimada_ton": 17572,
       "comunas_presencia": [
         "Aysén"
       ],
@@ -11888,7 +12176,23 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22A",
         "ACS-24"
       ],
-      "plantas_operativas": "Base flotante integral con pontones habitables en Estero Cupquelán y Fiordo Quitralco; oficinas y muelle de atraque en Puerto Chacabuco."
+      "plantas_operativas": "Base flotante integral con pontones habitables en Estero Cupquelán y Fiordo Quitralco; oficinas y muelle de atraque en Puerto Chacabuco.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Cooke Aquaculture Chile S.A. (ex Salmones Cupquelán S.A.)",
+          "rut": "96.926.970-8",
+          "rol_societario": "Titular única y directa de las concesiones del grupo en el Fiordo Cupquelán",
+          "estado_societario": "Activa",
+          "origen_historico": "Salmones Cupquelán S.A. fundada en los 90s, adquirida por Cooke Inc. en 2008",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22A",
+            "ACS-24"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_blumar",
@@ -11899,6 +12203,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Fruto de la fusión en 2011 entre Pesquera El Golfo e ITATA. Su división salmonera opera centros de engorda en Canal Puyuhuapi y Fiordo Aysén, además de contar con filial en Magallanes.",
       "total_concesiones_aysen": 62,
       "porcentaje_regional_concesiones": 8.32,
+      "centros_activos_estimados": 20,
+      "biomasa_estimada_ton": 41891,
       "comunas_presencia": [
         "Aysén",
         "Cisnes"
@@ -11910,7 +12216,83 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22A",
         "ACS-22C"
       ],
-      "plantas_operativas": "Base logística y muelle de apoyo en Puerto Chacabuco; centros de cultivo certificados ASC en Canal Puyuhuapi y Canal Errázuriz."
+      "plantas_operativas": "Base logística y muelle de apoyo en Puerto Chacabuco; centros de cultivo certificados ASC en Canal Puyuhuapi y Canal Errázuriz.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Blumar S.A.",
+          "rut": "80.860.400-0",
+          "rol_societario": "Sociedad matriz abierta inscrita en CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Fusión de Pesquera El Golfo e Itata en 2011",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-22A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Blumar S.A.",
+          "rut": "76.653.690-5",
+          "rol_societario": "Principal filial acuícola operadora y titular de concesiones",
+          "estado_societario": "Activa",
+          "origen_historico": "División de salmones de Blumar",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-18B",
+            "ACS-21A",
+            "ACS-22A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Ice Val Limitada",
+          "rut": "78.587.260-6",
+          "rol_societario": "Filial titular de concesiones acuícolas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Adquirida e integrada al grupo Blumar",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-18B"
+          ]
+        },
+        {
+          "razon_social": "Inversiones Ice-Val Limitada",
+          "rut": "78.795.440-3",
+          "rol_societario": "Filial patrimonial tenedora de activos acuícolas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Sociedad de inversión acuícola de Ice Val",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-22C"
+          ]
+        },
+        {
+          "razon_social": "Salmones Blumar Magallanes SpA",
+          "rut": "76.794.340-7",
+          "rol_societario": "Filial austral de soporte y expansión",
+          "estado_societario": "Activa",
+          "origen_historico": "Constituida para operaciones en Magallanes y apoyo interregional",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-21A"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_australis",
@@ -11921,6 +12303,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Australis Seafoods fue fundada por Isidoro Quiroga y vendida en 2019 al holding chino Joyvio por USD 921M. Es una de las mayores empresas productoras de salmón del país, con alta presencia en fiordos de Aysén y Cisnes.",
       "total_concesiones_aysen": 58,
       "porcentaje_regional_concesiones": 7.79,
+      "centros_activos_estimados": 19,
+      "biomasa_estimada_ton": 39223,
       "comunas_presencia": [
         "Aysén",
         "Cisnes"
@@ -11932,7 +12316,84 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22A",
         "ACS-24"
       ],
-      "plantas_operativas": "Bases operativas y centros de transferencia en Puerto Chacabuco y Puerto Cisnes; pontones de cultivo en Canal Jacaf y Seno Gala."
+      "plantas_operativas": "Bases operativas y centros de transferencia en Puerto Chacabuco y Puerto Cisnes; pontones de cultivo en Canal Jacaf y Seno Gala.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Australis Seafoods S.A.",
+          "rut": "76.012.392-7",
+          "rol_societario": "Sociedad matriz abierta regulada por la CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Matriz corporativa del grupo Australis",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-19A",
+            "ACS-21B"
+          ]
+        },
+        {
+          "razon_social": "Australis Mar S.A.",
+          "rut": "76.003.885-7",
+          "rol_societario": "Principal operadora de engorda marina y titular de concesiones",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial productiva marina de Australis",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18C",
+            "ACS-19A",
+            "ACS-21B",
+            "ACS-22A",
+            "ACS-24"
+          ]
+        },
+        {
+          "razon_social": "Acuícola Cordillera Limitada",
+          "rut": "76.787.060-4",
+          "rol_societario": "Filial titular de concesiones de acuicultura",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial adquirida e integrada al grupo Australis",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18C",
+            "ACS-21B"
+          ]
+        },
+        {
+          "razon_social": "Salmones Islas del Sur Limitada",
+          "rut": "76.787.110-4",
+          "rol_societario": "Filial titular de concesiones en archipiélagos de Aysén",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial integrada del grupo",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-21B",
+            "ACS-24"
+          ]
+        },
+        {
+          "razon_social": "Landcatch Chile S.A. (Australis Agua Dulce S.A.)",
+          "rut": "76.090.483-K",
+          "rol_societario": "Filial histórica de genética, ovas y alevines",
+          "estado_societario": "Activa",
+          "origen_historico": "Adquirida a Hendrix Genetics en 2009",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22A"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_camanchaca",
@@ -11943,6 +12404,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Grupo pesquero y acuícola histórico chileno. En 2017 escindió Salmones Camanchaca S.A., cotizando en la Bolsa de Santiago y de Oslo. Adquirió Fiordo Blanco S.A. en 2004, acumulando una sólida base de concesiones en Cisnes y Aysén.",
       "total_concesiones_aysen": 48,
       "porcentaje_regional_concesiones": 6.44,
+      "centros_activos_estimados": 16,
+      "biomasa_estimada_ton": 32425,
       "comunas_presencia": [
         "Cisnes",
         "Aysén"
@@ -11953,7 +12416,55 @@ window.AYSEN_HUBS_DATA = {
         "ACS-19A",
         "ACS-21A"
       ],
-      "plantas_operativas": "Base logística y de pontones en Puerto Cisnes; apoyo marítimo en Puerto Chacabuco."
+      "plantas_operativas": "Base logística y de pontones en Puerto Cisnes; apoyo marítimo en Puerto Chacabuco.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Compañía Pesquera Camanchaca S.A.",
+          "rut": "93.711.000-6",
+          "rol_societario": "Sociedad matriz del grupo pesquero",
+          "estado_societario": "Activa",
+          "origen_historico": "Matriz industrial histórica",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Camanchaca S.A.",
+          "rut": "76.065.596-1",
+          "rol_societario": "Filial abierta cotizada en Bolsa (Santiago y Oslo)",
+          "estado_societario": "Activa",
+          "origen_historico": "Escisión de la división salmonera en 2017",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-18C",
+            "ACS-19A",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Fiordo Blanco S.A.",
+          "rut": "96.540.710-3",
+          "rol_societario": "Filial titular de concesiones en Aysén",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Empresa salmonera adquirida por Camanchaca en 2004",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-19A"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_invermar",
@@ -11964,6 +12475,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
       "total_concesiones_aysen": 36,
       "porcentaje_regional_concesiones": 4.83,
+      "centros_activos_estimados": 12,
+      "biomasa_estimada_ton": 24319,
       "comunas_presencia": [
         "Cisnes",
         "Aysén"
@@ -11973,7 +12486,50 @@ window.AYSEN_HUBS_DATA = {
         "ACS-21A",
         "ACS-22B"
       ],
-      "plantas_operativas": "Centros de engorda en Canal Jacaf y Moraleda; base de avituallamiento en Puerto Chacabuco."
+      "plantas_operativas": "Centros de engorda en Canal Jacaf y Moraleda; base de avituallamiento en Puerto Chacabuco.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Invermar S.A.",
+          "rut": "79.797.990-2",
+          "rol_societario": "Sociedad anónima abierta matriz operativa inscrita en CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Adquirida por Alimar en 2015",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Froward Limitada",
+          "rut": "76.140.476-8",
+          "rol_societario": "Filial titular de concesiones acuícolas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial acuícola de Alimar integrada a Invermar",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A"
+          ]
+        },
+        {
+          "razon_social": "Cultivos Marinos Lago Yelcho SpA",
+          "rut": "76.749.470-K",
+          "rol_societario": "Filial titular de centros de cultivo",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial titular de derechos acuícolas",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22B"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_yadran",
@@ -11984,6 +12540,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Grupo de larga tradición en Chiloé y el archipiélago de las Guaitecas. Posee una de las mayores concentraciones de concesiones en la Comuna de Guaitecas (Melinka, Isla Gran Guaiteca) y Canal Puyuhuapi.",
       "total_concesiones_aysen": 40,
       "porcentaje_regional_concesiones": 5.37,
+      "centros_activos_estimados": 13,
+      "biomasa_estimada_ton": 27038,
       "comunas_presencia": [
         "Guaitecas",
         "Cisnes"
@@ -11994,7 +12552,67 @@ window.AYSEN_HUBS_DATA = {
         "ACS-18B",
         "ACS-33"
       ],
-      "plantas_operativas": "Base de aprovisionamiento y pontón en Melinka (Guaitecas) y centro de apoyo en Puerto Cisnes."
+      "plantas_operativas": "Base de aprovisionamiento y pontón en Melinka (Guaitecas) y centro de apoyo en Puerto Cisnes.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Pesquera Yadrán S.A.",
+          "rut": "82.975.200-K",
+          "rol_societario": "Sociedad matriz abierta histórica regulada por la CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Matriz pesquera y acuícola de Familia Briones",
+          "comunas_aysen": [
+            "Guaitecas",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-17",
+            "ACS-18A"
+          ]
+        },
+        {
+          "razon_social": "Cultivos Yadrán S.A.",
+          "rut": "96.550.920-8",
+          "rol_societario": "Principal operadora acuícola y titular de concesiones de salmónidos",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial operativa central de Yadrán",
+          "comunas_aysen": [
+            "Guaitecas",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-17",
+            "ACS-18A",
+            "ACS-18B",
+            "ACS-33"
+          ]
+        },
+        {
+          "razon_social": "Yadran Cultivos Marinos S.A.",
+          "rut": "96.549.610-6",
+          "rol_societario": "Filial titular de concesiones marítimas",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial histórica de cultivos marinos",
+          "comunas_aysen": [
+            "Guaitecas"
+          ],
+          "barrios_acs": [
+            "ACS-17"
+          ]
+        },
+        {
+          "razon_social": "Yadrán Cisnes S.A.",
+          "rut": "96.883.350-2",
+          "rol_societario": "Filial de operaciones territoriales en Cisnes",
+          "estado_societario": "Activa",
+          "origen_historico": "Filial local de operaciones en el Canal Puyuhuapi",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18B"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_salmones_austral",
@@ -12005,6 +12623,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Nacida en 2013 producto de la fusión de Trusal S.A. y Salmones Pacific Star S.A. Inscrita en la CMF, concentra operaciones en Canal Moraleda y Seno Gala.",
       "total_concesiones_aysen": 34,
       "porcentaje_regional_concesiones": 4.56,
+      "centros_activos_estimados": 11,
+      "biomasa_estimada_ton": 22960,
       "comunas_presencia": [
         "Cisnes",
         "Aysén"
@@ -12015,7 +12635,53 @@ window.AYSEN_HUBS_DATA = {
         "ACS-21A",
         "ACS-22B"
       ],
-      "plantas_operativas": "Centros de engorda en Canal Moraleda y Seno Gala; base logística en Puerto Chacabuco."
+      "plantas_operativas": "Centros de engorda en Canal Moraleda y Seno Gala; base logística en Puerto Chacabuco.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Salmones Austral S.A.",
+          "rut": "76.296.099-0",
+          "rol_societario": "Sociedad matriz abierta registrada en la CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Fusión entre Trusal y Pacific Star en 2013",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-19A",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Trusal S.A.",
+          "rut": "96.566.740-7",
+          "rol_societario": "Filial histórica titular de concesiones y pisciculturas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Empresa salmonera pionera fundada en Puerto Montt",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18B",
+            "ACS-19A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Pacific Star S.A.",
+          "rut": "79.559.220-2",
+          "rol_societario": "Filial histórica titular de concesiones marinas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial acuícola de engorda en mar",
+          "comunas_aysen": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-21A",
+            "ACS-22B"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_salmones_antartica",
@@ -12026,6 +12692,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Pionera absoluta del cultivo de salmón coho en Chile, fundada en 1982 e integrada a Nissui en 1988. Opera una de las plantas de procesamiento primario más emblemáticas de la región en Puerto Chacabuco.",
       "total_concesiones_aysen": 28,
       "porcentaje_regional_concesiones": 3.76,
+      "centros_activos_estimados": 9,
+      "biomasa_estimada_ton": 18932,
       "comunas_presencia": [
         "Aysén"
       ],
@@ -12035,7 +12703,25 @@ window.AYSEN_HUBS_DATA = {
         "ACS-22B",
         "ACS-26"
       ],
-      "plantas_operativas": "Gran Planta de Procesamiento en Puerto Chacabuco (Bahía Chacabuco); centros de engorda en Fiordo Aysén y Canal Moraleda."
+      "plantas_operativas": "Gran Planta de Procesamiento en Puerto Chacabuco (Bahía Chacabuco); centros de engorda en Fiordo Aysén y Canal Moraleda.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Salmones Antártica S.A.",
+          "rut": "86.100.500-3",
+          "rol_societario": "Titular integral de la planta y de las concesiones de mar",
+          "estado_societario": "Activa",
+          "origen_historico": "Fundada por Fundación Chile en 1982, adquirida por Nissui en 1988",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-21A",
+            "ACS-22A",
+            "ACS-22B",
+            "ACS-26"
+          ]
+        }
+      ]
     },
     {
       "holding_id": "holding_otros_menores",
@@ -12046,6 +12732,8 @@ window.AYSEN_HUBS_DATA = {
       "resumen_corporativo": "Concesiones individuales, acuicultura de pequeña escala (mitílidos, algas) y concesiones sin agrupamiento corporativo mayoritario.",
       "total_concesiones_aysen": 19,
       "porcentaje_regional_concesiones": 2.55,
+      "centros_activos_estimados": 6,
+      "biomasa_estimada_ton": 12839,
       "comunas_presencia": [
         "Aysén",
         "Cisnes",
@@ -12058,9 +12746,429 @@ window.AYSEN_HUBS_DATA = {
         "ACS-21A",
         "ACS-35"
       ],
-      "plantas_operativas": "Embarcaderos locales y fondeaderos menores."
+      "plantas_operativas": "Embarcaderos locales y fondeaderos menores.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Acuícola San Pedro Ltda. y Otros Concesionarios Menores",
+          "rut": "77.102.390-8",
+          "rol_societario": "Concesiones individuales o de mitílidos/algas",
+          "estado_societario": "Activas / En trámite",
+          "origen_historico": "Titulares locales independientes",
+          "comunas_aysen": [
+            "Aysén",
+            "Tortel",
+            "Guaitecas"
+          ],
+          "barrios_acs": [
+            "ACS-17",
+            "ACS-35"
+          ]
+        }
+      ]
     }
   ],
+  "holdingsPorComuna": {
+    "11201": [
+      {
+        "holding_id": "holding_aquachile",
+        "holding": "AquaChile",
+        "empresa_madre": "Agrosuper S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 125,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-21B",
+          "ACS-22A",
+          "ACS-22B",
+          "ACS-24",
+          "ACS-25"
+        ]
+      },
+      {
+        "holding_id": "holding_mowi",
+        "holding": "Mowi Chile",
+        "empresa_madre": "Mowi ASA",
+        "pais_matriz": "Noruega",
+        "concesiones_comuna": 55,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-22A",
+          "ACS-24"
+        ]
+      },
+      {
+        "holding_id": "holding_multi_x",
+        "holding": "Multi X",
+        "empresa_madre": "Multiexport Foods S.A.",
+        "pais_matriz": "Chile / Japón / EE.UU.",
+        "concesiones_comuna": 48,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-22B",
+          "ACS-24"
+        ]
+      },
+      {
+        "holding_id": "holding_cermaq",
+        "holding": "Cermaq Chile",
+        "empresa_madre": "Mitsubishi Corporation",
+        "pais_matriz": "Japón",
+        "concesiones_comuna": 42,
+        "barrios_acs_locales": [
+          "ACS-21B",
+          "ACS-22A",
+          "ACS-25"
+        ]
+      },
+      {
+        "holding_id": "holding_blumar",
+        "holding": "Salmones Blumar",
+        "empresa_madre": "Blumar S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 34,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-22A",
+          "ACS-22C"
+        ]
+      },
+      {
+        "holding_id": "holding_australis",
+        "holding": "Australis Seafoods",
+        "empresa_madre": "Joyvio Food Co. / Legend Holdings",
+        "pais_matriz": "China",
+        "concesiones_comuna": 32,
+        "barrios_acs_locales": [
+          "ACS-21B",
+          "ACS-22A",
+          "ACS-24"
+        ]
+      },
+      {
+        "holding_id": "holding_salmones_antartica",
+        "holding": "Salmones Antártica",
+        "empresa_madre": "Nissui Corporation",
+        "pais_matriz": "Japón",
+        "concesiones_comuna": 28,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-22A",
+          "ACS-22B",
+          "ACS-26"
+        ]
+      },
+      {
+        "holding_id": "holding_cooke",
+        "holding": "Cooke Aquaculture Chile",
+        "empresa_madre": "Cooke Inc.",
+        "pais_matriz": "Canadá",
+        "concesiones_comuna": 26,
+        "barrios_acs_locales": [
+          "ACS-22A",
+          "ACS-24"
+        ]
+      },
+      {
+        "holding_id": "holding_camanchaca",
+        "holding": "Salmones Camanchaca",
+        "empresa_madre": "Compañía Pesquera Camanchaca S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 18,
+        "barrios_acs_locales": [
+          "ACS-21A"
+        ]
+      },
+      {
+        "holding_id": "holding_salmones_austral",
+        "holding": "Salmones Austral",
+        "empresa_madre": "Salmones Austral S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 18,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-22B"
+        ]
+      },
+      {
+        "holding_id": "holding_invermar",
+        "holding": "Invermar",
+        "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 14,
+        "barrios_acs_locales": [
+          "ACS-21A",
+          "ACS-22B"
+        ]
+      }
+    ],
+    "11202": [
+      {
+        "holding_id": "holding_aquachile",
+        "holding": "AquaChile",
+        "empresa_madre": "Agrosuper S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 65,
+        "barrios_acs_locales": [
+          "ACS-18A",
+          "ACS-18B",
+          "ACS-19A"
+        ]
+      },
+      {
+        "holding_id": "holding_mowi",
+        "holding": "Mowi Chile",
+        "empresa_madre": "Mowi ASA",
+        "pais_matriz": "Noruega",
+        "concesiones_comuna": 40,
+        "barrios_acs_locales": [
+          "ACS-18A",
+          "ACS-19A",
+          "ACS-19B"
+        ]
+      },
+      {
+        "holding_id": "holding_cermaq",
+        "holding": "Cermaq Chile",
+        "empresa_madre": "Mitsubishi Corporation",
+        "pais_matriz": "Japón",
+        "concesiones_comuna": 33,
+        "barrios_acs_locales": [
+          "ACS-18A",
+          "ACS-19B",
+          "ACS-20"
+        ]
+      },
+      {
+        "holding_id": "holding_multi_x",
+        "holding": "Multi X",
+        "empresa_madre": "Multiexport Foods S.A.",
+        "pais_matriz": "Chile / Japón / EE.UU.",
+        "concesiones_comuna": 32,
+        "barrios_acs_locales": [
+          "ACS-18B",
+          "ACS-18C",
+          "ACS-19A"
+        ]
+      },
+      {
+        "holding_id": "holding_camanchaca",
+        "holding": "Salmones Camanchaca",
+        "empresa_madre": "Compañía Pesquera Camanchaca S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 30,
+        "barrios_acs_locales": [
+          "ACS-18B",
+          "ACS-18C",
+          "ACS-19A"
+        ]
+      },
+      {
+        "holding_id": "holding_blumar",
+        "holding": "Salmones Blumar",
+        "empresa_madre": "Blumar S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 28,
+        "barrios_acs_locales": [
+          "ACS-18A",
+          "ACS-18B"
+        ]
+      },
+      {
+        "holding_id": "holding_australis",
+        "holding": "Australis Seafoods",
+        "empresa_madre": "Joyvio Food Co. / Legend Holdings",
+        "pais_matriz": "China",
+        "concesiones_comuna": 26,
+        "barrios_acs_locales": [
+          "ACS-18C",
+          "ACS-19A"
+        ]
+      },
+      {
+        "holding_id": "holding_invermar",
+        "holding": "Invermar",
+        "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 22,
+        "barrios_acs_locales": [
+          "ACS-18A"
+        ]
+      },
+      {
+        "holding_id": "holding_yadran",
+        "holding": "Salmones Yadrán",
+        "empresa_madre": "Pesquera Yadrán S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 18,
+        "barrios_acs_locales": [
+          "ACS-18A",
+          "ACS-18B"
+        ]
+      },
+      {
+        "holding_id": "holding_salmones_austral",
+        "holding": "Salmones Austral",
+        "empresa_madre": "Salmones Austral S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 16,
+        "barrios_acs_locales": [
+          "ACS-18B",
+          "ACS-19A"
+        ]
+      }
+    ],
+    "11203": [
+      {
+        "holding_id": "holding_yadran",
+        "holding": "Salmones Yadrán",
+        "empresa_madre": "Pesquera Yadrán S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 22,
+        "barrios_acs_locales": [
+          "ACS-17",
+          "ACS-33"
+        ]
+      },
+      {
+        "holding_id": "holding_aquachile",
+        "holding": "AquaChile",
+        "empresa_madre": "Agrosuper S.A.",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 20,
+        "barrios_acs_locales": [
+          "ACS-17",
+          "ACS-33"
+        ]
+      },
+      {
+        "holding_id": "holding_otros_menores",
+        "holding": "Otros Concesionarios e Históricos",
+        "empresa_madre": "Titulares Diversos en Descanso y Traspaso",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 56,
+        "barrios_acs_locales": [
+          "ACS-17",
+          "ACS-33",
+          "ACS-34"
+        ]
+      }
+    ],
+    "11303": [
+      {
+        "holding_id": "holding_otros_menores",
+        "holding": "Titulares Menores",
+        "empresa_madre": "Concesiones en Trámite y Descanso Prolongado",
+        "pais_matriz": "Chile",
+        "concesiones_comuna": 17,
+        "barrios_acs_locales": [
+          "ACS-35"
+        ]
+      }
+    ]
+  },
+  "evolucionHoldingsSalmoneros": {
+    "fuente": "SUBPESCA / SERNAPESCA / Memorias Financieras CMF (AquaChile, Mowi, Multi X, Blumar)",
+    "url_origen": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50830.html",
+    "fecha_corte": "2026-10-18",
+    "evolucion_concentracion_regional": [
+      {
+        "ano": 2015,
+        "concentracion": {
+          "top_3_pct": 41.8,
+          "top_5_pct": 57.2,
+          "propiedad_capital_extranjero_pct": 25.4
+        }
+      },
+      {
+        "ano": 2016,
+        "concentracion": {
+          "top_3_pct": 42.1,
+          "top_5_pct": 57.5,
+          "propiedad_capital_extranjero_pct": 25.8
+        }
+      },
+      {
+        "ano": 2017,
+        "concentracion": {
+          "top_3_pct": 42.3,
+          "top_5_pct": 57.8,
+          "propiedad_capital_extranjero_pct": 26.1
+        }
+      },
+      {
+        "ano": 2018,
+        "concentracion": {
+          "top_3_pct": 42.5,
+          "top_5_pct": 58,
+          "propiedad_capital_extranjero_pct": 26.5
+        }
+      },
+      {
+        "ano": 2019,
+        "concentracion": {
+          "top_3_pct": 49.2,
+          "top_5_pct": 65.4,
+          "propiedad_capital_extranjero_pct": 31
+        }
+      },
+      {
+        "ano": 2020,
+        "concentracion": {
+          "top_3_pct": 51.2,
+          "top_5_pct": 68.5,
+          "propiedad_capital_extranjero_pct": 32.8
+        }
+      },
+      {
+        "ano": 2021,
+        "concentracion": {
+          "top_3_pct": 51.4,
+          "top_5_pct": 69.2,
+          "propiedad_capital_extranjero_pct": 33.2
+        }
+      },
+      {
+        "ano": 2022,
+        "concentracion": {
+          "top_3_pct": 51.5,
+          "top_5_pct": 69.8,
+          "propiedad_capital_extranjero_pct": 33.7
+        }
+      },
+      {
+        "ano": 2023,
+        "concentracion": {
+          "top_3_pct": 51.6,
+          "top_5_pct": 70,
+          "propiedad_capital_extranjero_pct": 34
+        }
+      },
+      {
+        "ano": 2024,
+        "concentracion": {
+          "top_3_pct": 51.68,
+          "top_5_pct": 70.07,
+          "propiedad_capital_extranjero_pct": 34.12
+        }
+      },
+      {
+        "ano": 2025,
+        "concentracion": {
+          "top_3_pct": 51.8,
+          "top_5_pct": 70.4,
+          "propiedad_capital_extranjero_pct": 34.3
+        }
+      },
+      {
+        "ano": 2026,
+        "concentracion": {
+          "top_3_pct": 51.9,
+          "top_5_pct": 70.8,
+          "propiedad_capital_extranjero_pct": 34.5
+        }
+      }
+    ]
+  },
   "systemicBridges": [
     {
       "source": 1,

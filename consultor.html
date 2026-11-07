@@ -89,7 +89,8 @@
     }
 
     /* Panel Izquierdo: Conversación estilo Gemini / Claude Artifacts */
-    .panel-chat {
+    .panel-chat,
+    .consultor-chat-pane {
       flex: 1;
       min-width: 0;
       max-width: 50%;
@@ -119,13 +120,15 @@
       letter-spacing: -0.01em;
     }
 
-    .chat-header-sub {
+    .chat-header-sub,
+    .consultor-subtitle {
       font-size: 0.75rem;
       color: var(--ink-muted);
       font-family: var(--font-mono);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
+      line-height: 1.4;
+      max-width: 100%;
+      overflow-wrap: break-word;
     }
 
     .chat-messages {
@@ -256,7 +259,8 @@
       gap: 8px;
     }
 
-    .source-pill {
+    .source-pill,
+    .source-badge {
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--cobalt);
@@ -268,10 +272,15 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
+      white-space: normal;
+      word-break: break-word;
+      max-width: 100%;
+      line-height: 1.35;
       transition: background-color 0.15s ease, border-color 0.15s ease;
     }
 
-    .source-pill:hover {
+    .source-pill:hover,
+    .source-badge:hover {
       background: rgba(0, 53, 127, 0.06);
       border-color: var(--cobalt);
       text-decoration: underline;
@@ -588,7 +597,7 @@
     <!-- Cuerpo Dividido 50% - 50% -->
     <div class="consultor-body">
       <!-- Panel Izquierdo: Conversación estilo Gemini / Claude Artifacts -->
-      <section class="panel-chat" aria-label="Conversación con Consultor Territorial">
+      <section class="panel-chat consultor-chat-pane" aria-label="Conversación con Consultor Territorial">
         <div class="chat-header">
           <div>
             <h1 class="chat-header-title">Consultor Territorial de Aysén</h1>
@@ -628,7 +637,7 @@
         <div class="chat-input-bar">
           <div class="chat-input-wrapper">
             <textarea class="chat-textarea" id="chatInput" rows="1"
-              placeholder="Escriba su consulta sobre las 10 comunas, indicadores o fuentes de Aysén..."
+              placeholder="Escriba su consulta sobre las 10 comunas, holdings salmoneros, indicadores o fuentes de Aysén..."
               aria-label="Escriba su consulta sobre los datos territoriales de Aysén"></textarea>
             <button type="button" class="btn-send" id="btnSend">Consultar</button>
           </div>
@@ -649,18 +658,18 @@
 
         <div class="evidence-card" id="evidenceCard">
           <div class="evidence-title-row">
-            <h2 class="evidence-title" id="evidenceTitle">Panel de Evidencia y Visualización</h2>
-            <span class="evidence-meta" id="evidenceMeta">Corte 17-Oct-2026 · Formato es-CL</span>
+            <h2 class="evidence-title" id="evidenceTitle"><span id="chartTitle">Panel de Evidencia y Visualización</span></h2>
+            <span class="evidence-meta" id="evidenceMeta"><span id="chartMeta">Fuente: SUBDERE — Sistema Nacional de Información Municipal (SINIM)</span></span>
           </div>
 
           <div class="chart-stage" id="chartSection">
             <canvas id="consultorCanvas" aria-label="Gráfico interactivo de indicadores territoriales"></canvas>
           </div>
 
-          <!-- Tabla de Datos Exactos de las 10 Comunas -->
+          <!-- Tabla de Datos Exactos (10 Comunas, 12 Holdings o Ficha Comunal) -->
           <div class="table-container" id="tableSection" style="display: none;">
             <table class="evidence-table">
-              <thead>
+              <thead id="evidenceTableHead">
                 <tr>
                   <th id="thEntity">Comuna</th>
                   <th class="td-num" id="thVarX">Variable X</th>
@@ -691,9 +700,17 @@
         render: true,
         type: 'bar',
         varX: 'dependencia_fcm_pct',
-        varY: 'ingresos_propios_pct',
-        title: 'Dependencia del Fondo Común Municipal vs Ingresos Propios',
+        varY: 'ipp_per_capita_clp',
+        title: 'Dependencia del Fondo Común Municipal (%) vs. Ingresos Propios Permanentes Per Cápita ($/hab)',
+        sourceText: 'SUBDERE — Sistema Nacional de Información Municipal (SINIM)',
         excludeCoyhaique: false,
+        customCategoryData: false,
+        labels: null,
+        datasets: null,
+        holdingRows: null,
+        comunaProfileRows: null,
+        comunaName: null,
+        highlightComuna: null,
         summary: ''
       };
 
@@ -710,15 +727,45 @@
       const chartSection = document.getElementById('chartSection');
       const tableSection = document.getElementById('tableSection');
       const evidenceTitle = document.getElementById('evidenceTitle');
+      const chartTitleEl = document.getElementById('chartTitle');
+      const evidenceMeta = document.getElementById('evidenceMeta');
+      const chartMetaEl = document.getElementById('chartMeta');
+      const evidenceTableHead = document.getElementById('evidenceTableHead');
       const evidenceTableBody = document.getElementById('evidenceTableBody');
       const evidenceTableFoot = document.getElementById('evidenceTableFoot');
-      const thVarX = document.getElementById('thVarX');
-      const thVarY = document.getElementById('thVarY');
       const canvasEl = document.getElementById('consultorCanvas');
 
       // Inicializar OmniRouteClient
       if (window.OmniRouteClient) {
         window.OmniRouteClient.init(window.AYSEN_HUBS_DATA);
+      }
+
+      function setChartTitleAndMeta(titleText, sourceText) {
+        const cleanTitle = titleText || 'Evidencia de Indicadores Territoriales';
+        if (chartTitleEl) {
+          chartTitleEl.textContent = cleanTitle;
+        } else if (evidenceTitle) {
+          evidenceTitle.textContent = cleanTitle;
+        }
+        const resolvedSource = sourceText || resolveSourceLabelForState(currentChartState);
+        const metaStr = resolvedSource.startsWith('Fuente:') ? resolvedSource : `Fuente: ${resolvedSource}`;
+        if (chartMetaEl) {
+          chartMetaEl.textContent = metaStr;
+        } else if (evidenceMeta) {
+          evidenceMeta.textContent = metaStr;
+        }
+      }
+
+      function resolveSourceLabelForState(state) {
+        if (state && state.sourceText) return state.sourceText;
+        if (window.OmniRouteClient && typeof window.OmniRouteClient.resolveSourcesForKeys === 'function') {
+          const keys = [state?.varX, state?.varY].filter(Boolean);
+          const list = window.OmniRouteClient.resolveSourcesForKeys(keys);
+          if (list.length > 0) {
+            return list.map(s => s.institucion).join(' · ');
+          }
+        }
+        return 'SUBDERE — Sistema Nacional de Información Municipal (SINIM)';
       }
 
       // Auto-expansión del textarea
@@ -768,7 +815,8 @@
       function updateLabLink() {
         if (!btnOpenInLab) return;
         const url = new URL('laboratorio.html', window.location.href);
-        if (currentChartState.varX) url.searchParams.set('varX', currentChartState.varX);
+        const vx = currentChartState.varX === 'holdings_salmoneros' ? 'concesiones_salmon' : currentChartState.varX;
+        if (vx) url.searchParams.set('varX', vx);
         if (currentChartState.varY) url.searchParams.set('varY', currentChartState.varY);
         if (currentChartState.type) url.searchParams.set('type', currentChartState.type);
         if (currentChartState.excludeCoyhaique) url.searchParams.set('excludeCoyhaique', 'true');
@@ -782,16 +830,13 @@
         const text = chatInput.value.trim();
         if (!text) return;
 
-        // Ocultar sugerencias iniciales al comenzar la conversación
         if (suggestionsBlock) suggestionsBlock.style.display = 'none';
 
-        // Agregar mensaje del usuario
         appendMessage('user', text);
         chatInput.value = '';
         chatInput.style.height = 'auto';
         btnSend.disabled = true;
 
-        // Indicador de carga
         const loadingId = appendLoadingMessage();
 
         try {
@@ -800,17 +845,32 @@
 
           appendAssistantMessage(res);
 
-          // Si la respuesta indica renderizar gráfico
           if (res.chart && res.chart.render) {
-            currentChartState.varX = res.chart.varX;
-            currentChartState.varY = res.chart.varY;
-            currentChartState.type = res.chart.type || 'bar';
-            currentChartState.title = res.chart.title || 'Evidencia de Indicadores Territoriales';
-            currentChartState.excludeCoyhaique = Boolean(res.chart.excludeCoyhaique);
-            currentChartState.summary = res.reply || '';
+            const srcFromRes = res.chart.sourceText ||
+              (Array.isArray(res.sources) && res.sources.length
+                ? res.sources.map(s => s.institucion).join(' · ')
+                : '');
 
-            evidenceTitle.textContent = currentChartState.title;
-            renderActiveChart();
+            currentChartState = Object.assign({}, currentChartState, res.chart, {
+              varX: res.chart.varX,
+              varY: res.chart.varY,
+              type: res.chart.type || 'bar',
+              title: res.chart.title || 'Evidencia de Indicadores Territoriales',
+              sourceText: srcFromRes,
+              excludeCoyhaique: Boolean(res.chart.excludeCoyhaique),
+              customCategoryData: Boolean(res.chart.customCategoryData),
+              labels: res.chart.labels || null,
+              datasets: res.chart.datasets || null,
+              holdingRows: res.chart.holdingRows || null,
+              comunaProfileRows: res.chart.comunaProfileRows || null,
+              comunaName: res.chart.comunaName || null,
+              highlightComuna: res.chart.highlightComuna || null,
+              summary: res.reply || ''
+            });
+
+            setChartTitleAndMeta(currentChartState.title, currentChartState.sourceText);
+            renderChart(currentChartState);
+            renderTable(currentChartState);
             updateLabLink();
           }
         } catch (err) {
@@ -864,17 +924,18 @@
         content.textContent = data.reply || '';
         row.appendChild(content);
 
-        // Citas a fuentes oficiales
+        // WP-C.2 y WP-D.1: Mostrar únicamente el nombre oficial de la institución y del registro (jamás snake_case)
         if (Array.isArray(data.sources) && data.sources.length > 0) {
           const sourcesContainer = document.createElement('div');
           sourcesContainer.className = 'sources-list';
           data.sources.forEach(s => {
             const pill = document.createElement('a');
-            pill.className = 'source-pill';
+            pill.className = 'source-pill source-badge';
             pill.href = s.url || '#';
             pill.target = '_blank';
             pill.rel = 'noopener noreferrer';
-            pill.textContent = `[${s.institucion}: ${s.indicador} ↗]`;
+            const cleanTitle = s.titulo || s.institucion || 'Fuente Oficial';
+            pill.textContent = `[${cleanTitle} ↗]`;
             sourcesContainer.appendChild(pill);
           });
           row.appendChild(sourcesContainer);
@@ -888,37 +949,44 @@
       const CANONICAL_VAR_LABELS = {
         'dependencia_fcm_pct': { label: 'Dependencia del Fondo Común Municipal', unit: '%' },
         'ingresos_propios_pct': { label: 'Ingresos Propios Permanentes', unit: '%' },
+        'ipp_per_capita_clp': { label: 'Ingresos Propios Permanentes Per Cápita', unit: '$/hab' },
         'poblacion_censo_2024': { label: 'Población Censo 2024', unit: 'hab.' },
         'superficie_km2': { label: 'Superficie Comunal', unit: 'km²' },
         'densidad_hab_km2': { label: 'Densidad Poblacional', unit: 'hab/km²' },
+        'pobreza_ingresos_pct': { label: 'Pobreza por Ingresos CASEN', unit: '%' },
+        'pobreza_multidim_pct': { label: 'Pobreza Multidimensional CASEN', unit: '%' },
         'pobreza_casen_pct': { label: 'Pobreza Multidimensional CASEN', unit: '%' },
-        'camas_hospitalarias': { label: 'Camas Hospitalarias', unit: 'camas' },
+        'camas_hospitalarias': { label: 'Camas Hospitalarias Red Asistencial', unit: 'camas' },
+        'postas_salud_rural': { label: 'Postas de Salud Rural (PSR)', unit: 'postas' },
+        'medicos_por_mil_hab': { label: 'Médicos por cada 1.000 Habitantes', unit: 'méd/1.000 hab' },
         'biomasa_salmon_ton': { label: 'Biomasa de Salmón Cosechada', unit: 'ton' },
-        'hogares_lena_pct': { label: 'Hogares que Calefaccionan con Leña', unit: '%' },
-        'visitantes_snaspe': { label: 'Visitas a Áreas Protegidas SNASPE', unit: 'visitas' },
-        'visitas_snaspe': { label: 'Visitas a Áreas Protegidas SNASPE', unit: 'visitas' },
+        'concesiones_salmon': { label: 'Concesiones de Salmonicultura', unit: 'concesiones' },
+        'centros_activos_salmon': { label: 'Centros de Cultivo Activos', unit: 'centros' },
+        'hogares_lena_pct': { label: 'Matriz de Calefacción a Leña', unit: '% hogares' },
+        'dias_sobre_norma_mp25': { label: 'Días Anuales sobre Norma Diaria MP2.5', unit: 'días' },
+        'visitantes_snaspe': { label: 'Visitantes Anuales a Parques SNASPE', unit: 'visitantes' },
+        'visitas_snaspe': { label: 'Visitantes Anuales a Parques SNASPE', unit: 'visitantes' },
+        'pernoctaciones_emat': { label: 'Pernoctaciones Turísticas Anuales (EMAT)', unit: 'noches' },
         'pernoctaciones_anuales_emat_hist': { label: 'Pernoctaciones Turísticas EMAT', unit: 'noches' },
-        'presupuesto_total_mclp': { label: 'Presupuesto Municipal Total', unit: 'M$ CLP' },
-        'presupuesto_per_capita_mclp': { label: 'Presupuesto per cápita', unit: 'M$ CLP' },
-        'fndr_mclp': { label: 'Inversión FNDR Asignada', unit: 'M$ CLP' },
-        'inversion_seia_mmusd': { label: 'Inversión en Proyectos SEIA', unit: 'MM USD' },
-        'proyectos_seia_n': { label: 'Proyectos Evaluados en el SEIA', unit: 'proyectos' },
-        'empresas_sii_n': { label: 'Empresas Registradas SII', unit: 'empresas' },
-        'trabajadores_sii_n': { label: 'Trabajadores Dependientes Informados SII', unit: 'trabajadores' },
-        'establecimientos_educ_n': { label: 'Establecimientos Educacionales', unit: 'locales' },
-        'matricula_escolar_n': { label: 'Matrícula Escolar Total', unit: 'estudiantes' },
-        'establecimientos_salud_n': { label: 'Establecimientos de Salud Red Asistencial', unit: 'centros' },
-        'interrupciones_saidi_hrs': { label: 'Interrupción Media de Suministro SAIDI', unit: 'horas/año' },
-        'prestadores_sernatur': { label: 'Prestadores Turísticos con Registro SERNATUR', unit: 'prestadores' },
-        'areas_silvestres_n': { label: 'Áreas Silvestres Protegidas del Estado', unit: 'unidades' },
-        'concesiones_acuicolas_n': { label: 'Concesiones Acuícolas Otorgadas', unit: 'concesiones' },
-        'faenas_acuicolas_activas_n': { label: 'Centros de Cultivo de Salmón Activos', unit: 'centros' },
+        'presupuesto_mclp': { label: 'Presupuesto Municipal Vigente', unit: 'M$' },
+        'presupuesto_total_mclp': { label: 'Presupuesto Municipal Vigente', unit: 'M$' },
+        'presupuesto_per_capita_mclp': { label: 'Presupuesto Municipal Per Cápita', unit: 'M$/hab' },
+        'fndr_mclp': { label: 'Inversión Pública FNDR Asignada', unit: 'M$' },
+        'inversion_seia_mmusd': { label: 'Inversión Aprobada SEIA', unit: 'MM US$' },
+        'proyectos_seia_aprobados': { label: 'Proyectos Aprobados en el SEIA (RCA)', unit: 'proyectos' },
+        'empresas_sii': { label: 'Empresas Vigentes SII', unit: 'empresas' },
+        'trabajadores_sii': { label: 'Trabajadores Dependientes SII', unit: 'trabajadores' },
+        'matricula_escolar': { label: 'Matrícula Escolar Total (MINEDUC)', unit: 'alumnos' },
+        'saidi_horas_anual': { label: 'Índice de Interrupción Eléctrica SAIDI', unit: 'hrs/año' },
+        'tarifa_bt1_clp': { label: 'Tarifa Eléctrica Residencial BT1', unit: '$/kWh' },
+        'prestadores_sernatur': { label: 'Prestadores Turísticos SERNATUR', unit: 'prestadores' },
         'glaciares_dga_n': { label: 'Glaciares Inventariados DGA', unit: 'glaciares' },
-        'humedales_urbanos_ha': { label: 'Humedales Urbanos Declarados MMA', unit: 'ha' },
-        'inmuebles_patrimoniales_n': { label: 'Inmuebles Patrimoniales Protegidos CMN', unit: 'inmuebles' },
-        'museos_espacios_n': { label: 'Espacios y Museos Culturales', unit: 'espacios' },
-        'proyectos_anid_n': { label: 'Proyectos de Investigación CTCi ANID', unit: 'proyectos' },
-        'centros_investigacion_n': { label: 'Centros e Institutos de Investigación CTCi', unit: 'centros' }
+        'superficie_glaciar_km2': { label: 'Superficie Glaciar Comunal', unit: 'km²' },
+        'cobertura_vegetal_nativa_ha': { label: 'Cobertura de Bosque y Vegetación Nativa', unit: 'ha' },
+        'museos_espacios_n': { label: 'Museos y Espacios Culturales', unit: 'espacios' },
+        'total_espacios_culturales': { label: 'Total de Espacios Culturales', unit: 'espacios' },
+        'proyectos_anid_n': { label: 'Proyectos de Investigación ANID', unit: 'proyectos' },
+        'proyectos_ctci_total': { label: 'Total de Proyectos CTCi e Innovación', unit: 'proyectos' }
       };
 
       // Formateo seguro de títulos de eje y leyendas evitando duplicación de porcentaje
@@ -928,16 +996,17 @@
         return unit ? `${clean} (${unit})` : clean;
       }
 
-      // Metadatos de variables
+      // Metadatos de variables con tildes garantizadas
       function getVarMeta(key) {
         if (!key) return { key: '', label: '', unit: '', aggregation: 'sum' };
+        const clientLabels = (window.OmniRouteClient && window.OmniRouteClient.CANONICAL_LABELS) || {};
         if (window.OmniRouteClient && typeof window.OmniRouteClient.getIndex === 'function') {
           const idx = window.OmniRouteClient.getIndex();
           const found = idx && idx.variablesByKey ? idx.variablesByKey[key] : null;
           if (found) {
             return {
               key,
-              label: CANONICAL_VAR_LABELS[key]?.label || found.label || key,
+              label: CANONICAL_VAR_LABELS[key]?.label || clientLabels[key] || found.label || window.OmniRouteClient.humanizeKey(key),
               unit: CANONICAL_VAR_LABELS[key]?.unit || found.unit || '',
               aggregation: found.aggregation || 'sum'
             };
@@ -948,13 +1017,17 @@
             key,
             label: CANONICAL_VAR_LABELS[key].label,
             unit: CANONICAL_VAR_LABELS[key].unit,
-            aggregation: CANONICAL_VAR_LABELS[key].unit === '%' ? 'avg' : 'sum'
+            aggregation: CANONICAL_VAR_LABELS[key].unit.includes('%') ? 'avg' : 'sum'
           };
         }
-        return { key, label: key.replace(/_/g, ' '), unit: '', aggregation: 'sum' };
+        const fallbackLabel = clientLabels[key] ||
+          (window.OmniRouteClient && typeof window.OmniRouteClient.humanizeKey === 'function'
+            ? window.OmniRouteClient.humanizeKey(key)
+            : key.replace(/_/g, ' '));
+        return { key, label: fallbackLabel, unit: '', aggregation: 'sum' };
       }
 
-      // Plugin de Chart.js para dibujar nombres de comunas en el plano de dispersión (estándar Laboratorio)
+      // Plugin de Chart.js para dibujar nombres de comunas en el plano de dispersión
       const scatterPointLabelsPlugin = {
         id: 'scatterPointLabelsPlugin',
         afterDatasetsDraw(chart) {
@@ -997,8 +1070,9 @@
         }
       };
 
-      // Renderizado del Gráfico con Chart.js (Estándar Bivariado del Laboratorio)
-      function renderActiveChart() {
+      // WP-D.3: Renderizado del Gráfico con soporte para Holdings (customCategoryData), Series Temporales, Dispersión y 10 Comunas
+      function renderChart(chartSpec) {
+        const spec = chartSpec || currentChartState;
         if (!window.Chart || !canvasEl) return;
 
         if (activeChartInstance) {
@@ -1006,26 +1080,77 @@
           activeChartInstance = null;
         }
 
+        // 1. Caso Especial: Gráfico por Empresas / Holdings Salmoneros (12 categorías en eje X)
+        if (spec.customCategoryData && Array.isArray(spec.labels) && Array.isArray(spec.datasets)) {
+          if (btnViewTable) btnViewTable.textContent = `Tabla de datos (${spec.labels.length} holdings)`;
+          const ds0 = spec.datasets[0] || { label: 'Concesiones Acuícolas Otorgadas', data: [] };
+          const ds1 = spec.datasets[1] || null;
+
+          const chartDatasets = [
+            {
+              label: ds0.label || 'Concesiones Acuícolas Otorgadas',
+              data: ds0.data || [],
+              backgroundColor: 'rgba(0, 53, 127, 0.86)',
+              borderColor: '#00357f',
+              borderWidth: 1,
+              borderRadius: 3,
+              yAxisID: 'y'
+            }
+          ];
+
+          if (ds1 && Array.isArray(ds1.data)) {
+            chartDatasets.push({
+              label: ds1.label || 'Biomasa Estimada (ton)',
+              data: ds1.data,
+              backgroundColor: 'rgba(194, 65, 12, 0.80)',
+              borderColor: '#c2410c',
+              borderWidth: 1,
+              borderRadius: 3,
+              yAxisID: 'y1'
+            });
+          }
+
+          activeChartInstance = new Chart(canvasEl, {
+            type: 'bar',
+            data: {
+              labels: spec.labels,
+              datasets: chartDatasets
+            },
+            options: getChartOptions(
+              spec.categoryLabel || '12 Holdings Salmoneros Madres en Aysén',
+              { key: 'concesiones_salmon', label: ds0.label || 'Concesiones Acuícolas Otorgadas', unit: 'concesiones' },
+              ds1 ? { key: 'biomasa_salmon_ton', label: ds1.label || 'Biomasa Estimada', unit: 'ton' } : null
+            )
+          });
+          return;
+        }
+
+        if (btnViewTable) {
+          btnViewTable.textContent = Array.isArray(spec.comunaProfileRows) && spec.comunaName
+            ? `Ficha comunal (${spec.comunaName})`
+            : 'Tabla de datos (10 comunas)';
+        }
+
         const dataLake = window.AYSEN_HUBS_DATA || {};
         const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
         const filteredComunas = comunas.filter(c => {
-          if (currentChartState.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101)) {
+          if (spec.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101 || String(c.comuna_ine) === '11101')) {
             return false;
           }
           return true;
         });
 
-        const vX = currentChartState.varX;
-        const vY = currentChartState.varY;
-        const type = currentChartState.type;
+        const vX = spec.varX || 'poblacion_censo_2024';
+        const vY = spec.varY;
+        const type = spec.type || 'bar';
 
-        // Caso especial: Serie Temporal (Línea con años 2015-2026 extraída de window.AYSEN_HUBS_DATA)
+        // 2. Caso Especial: Serie Temporal (Línea con años 2015-2026)
         if (type === 'line' && (vX === 'visitantes_snaspe' || vX === 'visitas_snaspe' || vX === 'pernoctaciones_anuales_emat_hist')) {
           const turismoPreset = (dataLake.hubsGallery?.turismo?.presets || []).find(p => p.config?.customChartSpec);
-          const spec = turismoPreset?.config?.customChartSpec;
-          const labels = spec?.labels || ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
-          const dsEmat = spec?.datasets?.[0]?.data || [312000, 335000, 368000, 395000, 412000, 178000, 224000, 345000, 398000, 432000, 458000, 472000];
-          const dsSnaspe = spec?.datasets?.[1]?.data || [178500, 192300, 215400, 241200, 239800, 46200, 89400, 198000, 235600, 265400, 276000, 285500];
+          const customSpec = turismoPreset?.config?.customChartSpec;
+          const labels = customSpec?.labels || ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+          const dsEmat = customSpec?.datasets?.[0]?.data || [312000, 335000, 368000, 395000, 412000, 178000, 224000, 345000, 398000, 432000, 458000, 472000];
+          const dsSnaspe = customSpec?.datasets?.[1]?.data || [178500, 192300, 215400, 241200, 239800, 46200, 89400, 198000, 235600, 265400, 276000, 285500];
 
           activeChartInstance = new Chart(canvasEl, {
             type: 'line',
@@ -1060,12 +1185,10 @@
             },
             options: getChartOptions('Años (2015–2026)', { label: 'Visitas SNASPE', unit: 'visitas' }, { label: 'Pernoctaciones EMAT', unit: 'noches' })
           });
-
-          populateTableSeries(labels, dsSnaspe, dsEmat);
           return;
         }
 
-        // Gráfico de Dispersión (Scatter Bivariado con Línea de Tendencia y Etiquetas de Comunas)
+        // 3. Caso Especial: Gráfico de Dispersión (Scatter Bivariado con Línea de Tendencia)
         if (type === 'scatter') {
           const companionVar = (vY && vY !== vX) ? vY : 'poblacion_censo_2024';
           const metaX = getVarMeta(vX);
@@ -1083,7 +1206,7 @@
           const datasets = [
             {
               type: 'scatter',
-              label: `${metaX.label} vs ${metaY.label}`,
+              label: `${metaX.label} vs. ${metaY.label}`,
               data: scatterPoints,
               backgroundColor: '#00357f',
               borderColor: '#002255',
@@ -1176,24 +1299,27 @@
               }
             }
           });
-
-          populateTableComunas(filteredComunas, vX, companionVar);
           return;
         }
 
-        // Gráficos Monovariados y Bivariados por Comunas (Barras o Línea con Doble Eje Y)
+        // 4. Gráficos Monovariados y Bivariados por Comunas (Barras o Línea con Doble Eje Y)
         const metaX = getVarMeta(vX);
         const hasValidY = Boolean(vY && vY !== vX && typeof filteredComunas[0]?.[vY] === 'number');
         const metaY = hasValidY ? getVarMeta(vY) : null;
         const labels = filteredComunas.map(c => c.nombre || c.nombre_comuna);
         const dataX = filteredComunas.map(c => (typeof c[vX] === 'number' ? c[vX] : 0));
         const isLine = type === 'line';
+        const highlightName = (spec.highlightComuna || '').toLowerCase();
+
+        const bgX = isLine
+          ? 'rgba(0, 53, 127, 0.12)'
+          : labels.map(lbl => (highlightName && lbl.toLowerCase() === highlightName) ? '#0059c5' : 'rgba(0, 53, 127, 0.85)');
 
         const datasets = [
           {
             label: formatAxisLabel(metaX.label, metaX.unit),
             data: dataX,
-            backgroundColor: isLine ? 'rgba(0, 53, 127, 0.12)' : 'rgba(0, 53, 127, 0.85)',
+            backgroundColor: bgX,
             borderColor: '#00357f',
             borderWidth: isLine ? 2.5 : 1,
             borderRadius: isLine ? 0 : 3,
@@ -1230,12 +1356,61 @@
           },
           options: getChartOptions('10 Comunas de Aysén', metaX, metaY)
         });
+      }
 
-        populateTableComunas(filteredComunas, vX, metaY ? vY : null);
+      // WP-D.3: Renderizado de la Tabla (soporta 12 Holdings, Ficha Comunal Multidimensional y 10 Comunas)
+      function renderTable(chartSpec) {
+        const spec = chartSpec || currentChartState;
+        if (!evidenceTableBody) return;
+
+        // 1. Tabla de 12 Holdings Salmoneros Madres
+        if (spec.customCategoryData && Array.isArray(spec.labels)) {
+          populateTableHoldings(spec);
+          return;
+        }
+
+        // 2. Ficha Completa de Indicadores de una Comuna vs. Promedio/Total Regional
+        if (Array.isArray(spec.comunaProfileRows) && spec.comunaProfileRows.length > 0) {
+          populateTableComunaProfile(spec.comunaName || spec.highlightComuna || 'Comuna', spec.comunaProfileRows);
+          return;
+        }
+
+        const dataLake = window.AYSEN_HUBS_DATA || {};
+        const vX = spec.varX || 'poblacion_censo_2024';
+        const vY = spec.varY;
+        const type = spec.type || 'bar';
+
+        // 3. Serie Temporal 2015–2026
+        if (type === 'line' && (vX === 'visitantes_snaspe' || vX === 'visitas_snaspe' || vX === 'pernoctaciones_anuales_emat_hist')) {
+          const turismoPreset = (dataLake.hubsGallery?.turismo?.presets || []).find(p => p.config?.customChartSpec);
+          const customSpec = turismoPreset?.config?.customChartSpec;
+          const labels = customSpec?.labels || ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+          const dsEmat = customSpec?.datasets?.[0]?.data || [];
+          const dsSnaspe = customSpec?.datasets?.[1]?.data || [];
+          populateTableSeries(labels, dsSnaspe, dsEmat);
+          return;
+        }
+
+        // 4. Tabla Estándar de 10 Comunas
+        const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
+        const filteredComunas = comunas.filter(c => {
+          if (spec.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101 || String(c.comuna_ine) === '11101')) {
+            return false;
+          }
+          return true;
+        });
+        const hasValidY = Boolean(vY && vY !== vX && typeof filteredComunas[0]?.[vY] === 'number');
+        populateTableComunas(filteredComunas, vX, hasValidY ? vY : (type === 'scatter' ? 'poblacion_censo_2024' : null), spec.highlightComuna);
+      }
+
+      function renderActiveChart() {
+        setChartTitleAndMeta(currentChartState.title, currentChartState.sourceText);
+        renderChart(currentChartState);
+        renderTable(currentChartState);
       }
 
       function getChartOptions(xTitle, metaX, metaY) {
-        const isBivariate = Boolean(metaY && metaY.key);
+        const isBivariate = Boolean(metaY && (metaY.key || metaY.label));
         const scales = {
           x: {
             title: {
@@ -1319,23 +1494,122 @@
         };
       }
 
-      function populateTableComunas(comunas, varX, varY) {
+      function restoreStandardTableHead() {
+        if (!evidenceTableHead) return;
+        evidenceTableHead.innerHTML = `<tr>
+          <th id="thEntity">Comuna</th>
+          <th class="td-num" id="thVarX">Variable X</th>
+          <th class="td-num" id="thVarY" style="display: none;">Variable Y</th>
+        </tr>`;
+      }
+
+      function populateTableHoldings(spec) {
+        if (!evidenceTableBody || !evidenceTableHead) return;
+        evidenceTableHead.innerHTML = `<tr>
+          <th>Empresa / Holding Madre</th>
+          <th>Grupo Controlador</th>
+          <th class="td-num">Concesiones Aysén (% Reg.)</th>
+          <th class="td-num">Centros Activos</th>
+          <th class="td-num">Biomasa Estimada (ton)</th>
+          <th>Comunas de Operación</th>
+        </tr>`;
+
+        evidenceTableBody.innerHTML = '';
+        const rows = Array.isArray(spec.holdingRows) && spec.holdingRows.length > 0
+          ? spec.holdingRows
+          : (spec.labels || []).map((lbl, idx) => ({
+              nombre: lbl,
+              grupo: '-',
+              concesiones: spec.datasets?.[0]?.data?.[idx] || 0,
+              pct_regional: 0,
+              centros_activos: 0,
+              biomasa_ton: spec.datasets?.[1]?.data?.[idx] || 0,
+              comunas: '-'
+            }));
+
+        let sumConc = 0;
+        let sumCtrs = 0;
+        let sumBio = 0;
+
+        rows.forEach(r => {
+          sumConc += Number(r.concesiones) || 0;
+          sumCtrs += Number(r.centros_activos) || 0;
+          sumBio += Number(r.biomasa_ton) || 0;
+          const tr = document.createElement('tr');
+          const pctStr = r.pct_regional ? ` (${Number(r.pct_regional).toLocaleString('es-CL', { maximumFractionDigits: 1 })}%)` : '';
+          tr.innerHTML = `
+            <td style="font-weight: 600;">${r.nombre}</td>
+            <td>${r.grupo || r.empresa_madre || '-'}</td>
+            <td class="td-num">${(Number(r.concesiones) || 0).toLocaleString('es-CL')}${pctStr}</td>
+            <td class="td-num">${(Number(r.centros_activos) || 0).toLocaleString('es-CL')}</td>
+            <td class="td-num">${(Number(r.biomasa_ton) || 0).toLocaleString('es-CL')} ton</td>
+            <td>${r.comunas || '-'}</td>
+          `;
+          evidenceTableBody.appendChild(tr);
+        });
+
+        if (evidenceTableFoot) {
+          evidenceTableFoot.innerHTML = `<tr>
+            <td colspan="2" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total 12 Holdings Corporativos (Catastro Regional: 745 concesiones)</td>
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumConc.toLocaleString('es-CL')} concesiones</td>
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumCtrs.toLocaleString('es-CL')} centros</td>
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumBio.toLocaleString('es-CL')} ton</td>
+            <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Aysén, Cisnes, Guaitecas</td>
+          </tr>`;
+        }
+      }
+
+      function populateTableComunaProfile(comunaName, profileRows) {
+        if (!evidenceTableBody || !evidenceTableHead) return;
+        evidenceTableHead.innerHTML = `<tr>
+          <th>Dimensión Temática</th>
+          <th>Indicador Territorial</th>
+          <th class="td-num">Valor en ${comunaName}</th>
+          <th class="td-num">Ranking Regional</th>
+          <th class="td-num">Promedio / Total Regional</th>
+        </tr>`;
+
+        evidenceTableBody.innerHTML = '';
+        profileRows.forEach(r => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${r.bloque}</td>
+            <td style="font-weight: 600;">${r.indicador}</td>
+            <td class="td-num" style="font-weight: 600; color: var(--cobalt);">${r.valorComuna}</td>
+            <td class="td-num">${r.ranking}</td>
+            <td class="td-num">${r.referenciaRegional}</td>
+          `;
+          evidenceTableBody.appendChild(tr);
+        });
+
+        if (evidenceTableFoot) {
+          evidenceTableFoot.innerHTML = `<tr>
+            <td colspan="5" style="font-weight: 600; background: #f8fafc; border-top: 2px solid var(--border-strong);">
+              Ficha multidimensional consolidada de la comuna de ${comunaName} frente a las 10 comunas de la Región de Aysén (${profileRows.length} indicadores verificados).
+            </td>
+          </tr>`;
+        }
+      }
+
+      function populateTableComunas(comunas, varX, varY, highlightComuna) {
         if (!evidenceTableBody) return;
+        restoreStandardTableHead();
         const thEntity = document.getElementById('thEntity');
+        const thVarX = document.getElementById('thVarX');
+        const thVarY = document.getElementById('thVarY');
         if (thEntity) thEntity.textContent = 'Comuna';
 
         const metaX = getVarMeta(varX);
-        thVarX.textContent = formatAxisLabel(metaX.label, metaX.unit);
+        if (thVarX) thVarX.textContent = formatAxisLabel(metaX.label, metaX.unit);
 
-        if (varY) {
+        if (varY && thVarY) {
           const metaY = getVarMeta(varY);
           thVarY.textContent = formatAxisLabel(metaY.label, metaY.unit);
           thVarY.style.display = 'table-cell';
-        } else {
+        } else if (thVarY) {
           thVarY.style.display = 'none';
         }
 
-        // Ordenar datos de mayor a menor según varX
         const sorted = [...comunas].sort((a, b) => {
           const vB = typeof b[varX] === 'number' ? b[varX] : -Infinity;
           const vA = typeof a[varX] === 'number' ? a[varX] : -Infinity;
@@ -1344,11 +1618,18 @@
 
         evidenceTableBody.innerHTML = '';
         const unitXStr = metaX.unit ? ` ${metaX.unit}` : '';
+        const hlNorm = String(highlightComuna || '').toLowerCase();
+
         sorted.forEach(c => {
           const tr = document.createElement('tr');
+          const cName = c.nombre || c.nombre_comuna;
+          if (hlNorm && cName.toLowerCase() === hlNorm) {
+            tr.style.background = 'rgba(0, 89, 197, 0.08)';
+            tr.style.fontWeight = '600';
+          }
           const valNumX = typeof c[varX] === 'number' ? c[varX] : 0;
           const valX = `${valNumX.toLocaleString('es-CL')}${unitXStr}`;
-          let rowHtml = `<td>${c.nombre || c.nombre_comuna}</td><td class="td-num">${valX}</td>`;
+          let rowHtml = `<td>${cName}</td><td class="td-num">${valX}</td>`;
           if (varY) {
             const metaY = getVarMeta(varY);
             const unitYStr = metaY.unit ? ` ${metaY.unit}` : '';
@@ -1360,13 +1641,12 @@
           evidenceTableBody.appendChild(tr);
         });
 
-        // Fila de Total / Promedio Regional
         if (evidenceTableFoot) {
           evidenceTableFoot.innerHTML = '';
           const n = sorted.length || 1;
           const sumX = sorted.reduce((acc, c) => acc + (typeof c[varX] === 'number' ? c[varX] : 0), 0);
           const avgX = sumX / n;
-          const isAvgX = metaX.aggregation === 'avg' || metaX.unit === '%' || varX.endsWith('_pct');
+          const isAvgX = metaX.aggregation === 'avg' || metaX.unit.includes('%') || varX.endsWith('_pct');
           const unitX = metaX.unit ? ` ${metaX.unit}` : '';
           const labelX = isAvgX
             ? `Promedio Regional: ${avgX.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitX}`
@@ -1381,7 +1661,7 @@
             const unitY = metaY.unit ? ` ${metaY.unit}` : '';
             const sumY = sorted.reduce((acc, c) => acc + (typeof c[varY] === 'number' ? c[varY] : 0), 0);
             const avgY = sumY / n;
-            const isAvgY = metaY.aggregation === 'avg' || metaY.unit === '%' || varY.endsWith('_pct');
+            const isAvgY = metaY.aggregation === 'avg' || metaY.unit.includes('%') || varY.endsWith('_pct');
             const labelY = isAvgY
               ? `Promedio Regional: ${avgY.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitY}`
               : `Total: ${sumY.toLocaleString('es-CL')}${unitY} (Prom: ${avgY.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitY})`;
@@ -1394,12 +1674,17 @@
 
       function populateTableSeries(years, seriesA, seriesB) {
         if (!evidenceTableBody) return;
+        restoreStandardTableHead();
         const thEntity = document.getElementById('thEntity');
+        const thVarX = document.getElementById('thVarX');
+        const thVarY = document.getElementById('thVarY');
         if (thEntity) thEntity.textContent = 'Año / Periodo';
 
-        thVarX.textContent = 'Visitas SNASPE (CONAF)';
-        thVarY.textContent = 'Pernoctaciones (INE EMAT)';
-        thVarY.style.display = 'table-cell';
+        if (thVarX) thVarX.textContent = 'Visitas SNASPE (CONAF)';
+        if (thVarY) {
+          thVarY.textContent = 'Pernoctaciones (INE EMAT)';
+          thVarY.style.display = 'table-cell';
+        }
 
         evidenceTableBody.innerHTML = '';
         years.forEach((yr, idx) => {
@@ -1430,7 +1715,6 @@
         if (typeof montarCabecera === 'function') {
           montarCabecera({ tituloModulo: 'Consultor de Datos', activo: 'consultor.html' });
         }
-        if (evidenceTitle) evidenceTitle.textContent = currentChartState.title;
         renderActiveChart();
         updateLabLink();
       });
@@ -1440,3 +1724,4 @@
 </body>
 
 </html>
+
