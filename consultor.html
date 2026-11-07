@@ -646,7 +646,7 @@
 
       <!-- Panel Derecho: Lienzo de Gráficos y Evidencia en Vivo -->
       <section class="panel-evidence consultor-canvas-pane" aria-label="Lienzo de Evidencia Territorial">
-        <div class="evidence-topbar canvas-toolbar">
+        <div class="evidence-topbar canvas-toolbar" id="evidenceToolbar" style="display: none;">
           <div class="chart-controls">
             <button type="button" class="ctrl-btn active" id="btnViewChart">Gráfico</button>
             <button type="button" class="ctrl-btn" id="btnViewTable">Tabla de datos (10 comunas)</button>
@@ -659,10 +659,16 @@
         <div class="evidence-card" id="evidenceCard">
           <div class="evidence-title-row">
             <h2 class="evidence-title" id="evidenceTitle"><span id="chartTitle">Panel de Evidencia y Visualización</span></h2>
-            <span class="evidence-meta" id="evidenceMeta"><span id="chartMeta">Fuente: SUBDERE — Sistema Nacional de Información Municipal (SINIM)</span></span>
+            <span class="evidence-meta" id="evidenceMeta"><span id="evidenceSubtitle">Esperando consulta analítica...</span><span id="chartMeta" style="display: none;"></span></span>
           </div>
 
-          <div class="chart-stage" id="chartSection">
+          <!-- Estado Vacío Inicial de Evidencia -->
+          <div class="empty-evidence" id="emptyEvidenceState" style="padding: 48px 20px; text-align: center; color: var(--ink-secondary); background: var(--paper-subtle); border: 1px dashed var(--border-strong); border-radius: 4px;">
+            <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; color: var(--ink);">Sin evidencia graficada</div>
+            <div style="font-size: 0.85rem; max-width: 380px; margin: 0 auto; line-height: 1.5; color: var(--ink-muted);">Haga una consulta en el chat o elija un ejemplo para desplegar gráficos bivariados, series temporales o tablas comunales verificadas.</div>
+          </div>
+
+          <div class="chart-stage" id="chartSection" style="display: none;">
             <canvas id="consultorCanvas" aria-label="Gráfico interactivo de indicadores territoriales"></canvas>
           </div>
 
@@ -684,6 +690,8 @@
               </tfoot>
             </table>
           </div>
+
+          <div class="evidence-footer" id="evidenceFooter" style="display: none;"></div>
         </div>
       </section>
     </div>
@@ -697,12 +705,12 @@
       // Estado del Consultor
       let activeChartInstance = null;
       let currentChartState = {
-        render: true,
+        render: false,
         type: 'bar',
-        varX: 'dependencia_fcm_pct',
-        varY: 'ipp_per_capita_clp',
-        title: 'Dependencia del Fondo Común Municipal (%) vs. Ingresos Propios Permanentes Per Cápita ($/hab)',
-        sourceText: 'SUBDERE — Sistema Nacional de Información Municipal (SINIM)',
+        varX: null,
+        varY: null,
+        title: 'Panel de Evidencia y Visualización',
+        sourceText: '',
         excludeCoyhaique: false,
         customCategoryData: false,
         labels: null,
@@ -741,20 +749,76 @@
       }
 
       function setChartTitleAndMeta(titleText, sourceText) {
-        const cleanTitle = titleText || 'Evidencia de Indicadores Territoriales';
+        const cleanTitle = titleText || 'Panel de Evidencia y Visualización';
         if (chartTitleEl) {
           chartTitleEl.textContent = cleanTitle;
         } else if (evidenceTitle) {
           evidenceTitle.textContent = cleanTitle;
         }
+        const subEl = document.getElementById('evidenceSubtitle');
         const resolvedSource = sourceText || resolveSourceLabelForState(currentChartState);
-        const metaStr = resolvedSource.startsWith('Fuente:') ? resolvedSource : `Fuente: ${resolvedSource}`;
+        const metaStr = resolvedSource ? (resolvedSource.startsWith('Fuente:') ? resolvedSource : `Fuente: ${resolvedSource}`) : 'Esperando consulta analítica...';
+        if (subEl) {
+          subEl.textContent = metaStr;
+        }
         if (chartMetaEl) {
           chartMetaEl.textContent = metaStr;
+          chartMetaEl.style.display = resolvedSource ? 'inline' : 'none';
         } else if (evidenceMeta) {
           evidenceMeta.textContent = metaStr;
         }
       }
+
+      function applyChartSpec(spec) {
+        if (!spec) return;
+        const emptyEl = document.getElementById('emptyEvidenceState');
+        const chartSec = document.getElementById('chartSection');
+        const tableSec = document.getElementById('tableSection');
+        const tb = document.getElementById('evidenceToolbar');
+        const ft = document.getElementById('evidenceFooter');
+
+        if (!spec.render) {
+          currentChartState.render = false;
+          currentChartState.varX = null;
+          currentChartState.varY = null;
+          if (emptyEl) emptyEl.style.display = 'block';
+          if (chartSec) chartSec.style.display = 'none';
+          if (tableSec) tableSec.style.display = 'none';
+          if (tb) tb.style.display = 'none';
+          if (ft) ft.style.display = 'none';
+          setChartTitleAndMeta('Panel de Evidencia y Visualización', 'Esperando consulta analítica...');
+          return;
+        }
+
+        if (emptyEl) emptyEl.style.display = 'none';
+        if (chartSec) chartSec.style.display = 'block';
+        if (tb) tb.style.display = 'flex';
+        if (ft) ft.style.display = 'block';
+
+        currentChartState = Object.assign({}, currentChartState, spec, {
+          render: true,
+          varX: spec.varX,
+          varY: spec.varY,
+          type: spec.type || 'bar',
+          title: spec.title || 'Evidencia de Indicadores Territoriales',
+          sourceText: spec.sourceText || '',
+          excludeCoyhaique: Boolean(spec.excludeCoyhaique),
+          customCategoryData: Boolean(spec.customCategoryData),
+          labels: spec.labels || null,
+          datasets: spec.datasets || null,
+          holdingRows: spec.holdingRows || null,
+          comunaProfileRows: spec.comunaProfileRows || null,
+          comunaName: spec.comunaName || null,
+          highlightComuna: spec.highlightComuna || null,
+          summary: spec.summary || ''
+        });
+
+        setChartTitleAndMeta(currentChartState.title, currentChartState.sourceText);
+        renderChart(currentChartState);
+        renderTable(currentChartState);
+        updateLabLink();
+      }
+      window.applyChartSpec = applyChartSpec;
 
       function resolveSourceLabelForState(state) {
         if (state && state.sourceText) return state.sourceText;
@@ -851,27 +915,10 @@
                 ? res.sources.map(s => s.institucion).join(' · ')
                 : '');
 
-            currentChartState = Object.assign({}, currentChartState, res.chart, {
-              varX: res.chart.varX,
-              varY: res.chart.varY,
-              type: res.chart.type || 'bar',
-              title: res.chart.title || 'Evidencia de Indicadores Territoriales',
+            applyChartSpec(Object.assign({}, res.chart, {
               sourceText: srcFromRes,
-              excludeCoyhaique: Boolean(res.chart.excludeCoyhaique),
-              customCategoryData: Boolean(res.chart.customCategoryData),
-              labels: res.chart.labels || null,
-              datasets: res.chart.datasets || null,
-              holdingRows: res.chart.holdingRows || null,
-              comunaProfileRows: res.chart.comunaProfileRows || null,
-              comunaName: res.chart.comunaName || null,
-              highlightComuna: res.chart.highlightComuna || null,
               summary: res.reply || ''
-            });
-
-            setChartTitleAndMeta(currentChartState.title, currentChartState.sourceText);
-            renderChart(currentChartState);
-            renderTable(currentChartState);
-            updateLabLink();
+            }));
           }
         } catch (err) {
           removeLoadingMessage(loadingId);
@@ -1404,6 +1451,10 @@
       }
 
       function renderActiveChart() {
+        if (!currentChartState.render) {
+          applyChartSpec(currentChartState);
+          return;
+        }
         setChartTitleAndMeta(currentChartState.title, currentChartState.sourceText);
         renderChart(currentChartState);
         renderTable(currentChartState);
@@ -1715,7 +1766,7 @@
         if (typeof montarCabecera === 'function') {
           montarCabecera({ tituloModulo: 'Consultor de Datos', activo: 'consultor.html' });
         }
-        renderActiveChart();
+        applyChartSpec(currentChartState);
         updateLabLink();
       });
 

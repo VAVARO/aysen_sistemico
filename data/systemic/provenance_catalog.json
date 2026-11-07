@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "version": "2.1.0",
-  "titulo": "Catálogo Oficial de Procedencia y Trazabilidad de Datos (31 Nodos Sistémicos de Aysén)",
+  "titulo": "Catálogo Oficial de Procedencia y Trazabilidad de Datos (39 Nodos Sistémicos de Aysén)",
   "region": "Región de Aysén del General Carlos Ibáñez del Campo",
   "fecha_emision": "2026-10-17T20:00:00Z",
-  "total_nodos": 31,
-  "total_hubs": 7,
+  "total_nodos": 39,
+  "total_hubs": 10,
   "criterio_calidad": "Cero datos simulados. Fuentes oficiales del Estado de Chile con URL verificable, corte temporal exacto al 17 de octubre de 2026 y método de recolección documentado.",
   "nodes": [
     {
@@ -616,6 +616,158 @@
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
       }
+    },
+    {
+      "id": 32,
+      "nodeId": 32,
+      "title": "Museos, bibliotecas y monumentos nacionales",
+      "hubId": "cultura",
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN",
+        "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 33,
+      "nodeId": 33,
+      "title": "Fondos Cultura MINCAP y FNDR 8%",
+      "hubId": "cultura",
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "provenance": {
+        "sourceEntity": "MINCAP Fondos Cultura / DIPRES GORE Aysén / SINIM",
+        "sourceUrl": "https://www.fondosdecultura.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 34,
+      "nodeId": 34,
+      "title": "Espacios y Agentes Culturales de Aysén",
+      "hubId": "cultura",
+      "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
+      "provenance": {
+        "sourceEntity": "SERPAT / MINCAP / Barómetro Regional UAYSÉN",
+        "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Bienal",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 35,
+      "nodeId": 35,
+      "title": "Proyectos de investigación científica adjudicados",
+      "hubId": "ctci",
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Base de Datos Histórica ANID / MinCiencia OBSERVA",
+        "sourceUrl": "https://anid.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 36,
+      "nodeId": 36,
+      "title": "Centros I+D Locales UAysén/CIEP/INIA vs. Ciencia Extrarregional",
+      "hubId": "ctci",
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "provenance": {
+        "sourceEntity": "Ministerio de Ciencia / OBSERVA / ANID",
+        "sourceUrl": "https://observa.minciencia.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Continuo",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 37,
+      "nodeId": 37,
+      "title": "Proyectos de innovación productiva local",
+      "hubId": "ctci",
+      "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
+      "provenance": {
+        "sourceEntity": "CORFO DataInnovación / FIA / MinCiencia",
+        "sourceUrl": "https://datainnovacion.corfo.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 38,
+      "nodeId": 38,
+      "title": "Centros de salud y postas rurales",
+      "hubId": "salud",
+      "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
+      "provenance": {
+        "sourceEntity": "Servicio de Salud Aysén (SSA) / DEIS MINSAL",
+        "sourceUrl": "https://deis.minsal.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
+    },
+    {
+      "id": 39,
+      "nodeId": 39,
+      "title": "Lista de Espera Quirúrgica y Aeroevacuaciones SAMU",
+      "hubId": "salud",
+      "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
+      "provenance": {
+        "sourceEntity": "Centro Regulador SAMU Regional Aysén / FACH / DGAC",
+        "sourceUrl": "https://saludaysen.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Trimestral",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      }
     }
   ],
   "notas_esquema": "collectionDateISO y updateFrequencyDays son campos derivados y procesables, agregados para permitir el calculo automatico de vencimiento de fuentes. collectionDate se conserva como texto editorial mostrado en el drawer. updateFrequencyDays usa la cota mas corta en frecuencias compuestas.",
@@ -756,6 +908,50 @@
       "verified": true,
       "institucion": "Universidad de Aysén",
       "indicador": "Barómetro Regional de Aysén - Percepción y Cohesión Ciudadana"
+    },
+    {
+      "id": "src_minsal_deis_hospitales",
+      "name": "DEIS MINSAL / Servicio de Salud Aysén (SSA)",
+      "dataset": "Dotación de Camas Críticas, Egresos y Urgencias Respiratorias (WP_08)",
+      "url": "https://deis.minsal.cl",
+      "year": "2026",
+      "scope": "Red asistencial hospitalaria y APS de Aysén",
+      "verified": true,
+      "institucion": "DEIS MINSAL / Servicio de Salud Aysén (SSA)",
+      "indicador": "Camas críticas, egresos y red de urgencias"
+    },
+    {
+      "id": "src_serpat_mincap_patrimonio",
+      "name": "SERPAT / MINCAP / CMN",
+      "dataset": "Catastro de Monumentos, Museos y Fondos Cultura (WP_09)",
+      "url": "https://ide.patrimoniocultural.gob.cl",
+      "year": "2026",
+      "scope": "Infraestructura patrimonial y fondos culturales 10 comunas",
+      "verified": true,
+      "institucion": "SERPAT / MINCAP / CMN",
+      "indicador": "Infraestructura patrimonial y fondos culturales"
+    },
+    {
+      "id": "src_anid_minciencia_ctci",
+      "name": "ANID / MinCiencia / CORFO",
+      "dataset": "Base de Datos Histórica ANID y Catastro CTCi (WP_10)",
+      "url": "https://dataciencia.anid.cl",
+      "year": "2026",
+      "scope": "Ecosistema de investigación científica e innovación austral",
+      "verified": true,
+      "institucion": "ANID / MinCiencia / CORFO",
+      "indicador": "Proyectos ANID, centros I+D y CORFO Innova"
+    },
+    {
+      "id": "src_mop_vialidad_conectividad",
+      "name": "MOP Vialidad / MTT DTPR / EMPORCHA / SUBTEL",
+      "dataset": "Infraestructura de Conectividad Multimodal y Digital (WP_11)",
+      "url": "https://vialidad.mop.gob.cl",
+      "year": "2026",
+      "scope": "Red vial MOP, barcazas MTT, puertos EMPORCHA y fibra SUBTEL",
+      "verified": true,
+      "institucion": "MOP Vialidad / MTT DTPR / EMPORCHA / SUBTEL",
+      "indicador": "Conectividad terrestre, marítima, aérea y digital"
     }
   ]
 }

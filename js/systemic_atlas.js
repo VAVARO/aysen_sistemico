@@ -23,7 +23,29 @@
         wp04: null,
         wp05: null,
         wp06: null,
-        isLoaded: false
+        wp07: null,
+        wp08: null,
+        wp09: null,
+        wp10: null,
+        wp11: null,
+        isLoaded: false,
+        fromHubsBundle: function (bundle) {
+            if (!bundle) return this;
+            if (bundle.extension_modules) {
+                if (bundle.extension_modules.cultura_patrimonio) this.wp09 = bundle.extension_modules.cultura_patrimonio;
+                if (bundle.extension_modules.ctci_innovacion) this.wp10 = bundle.extension_modules.ctci_innovacion;
+            }
+            if (bundle.holdings) this.holdings = bundle.holdings;
+            this.bundle = bundle;
+            return this;
+        }
+    };
+
+    window.SystemicAtlas = {
+        data: window.AysenSystemicData,
+        fromHubsBundle: function (bundle) {
+            return window.AysenSystemicData.fromHubsBundle(bundle);
+        }
     };
 
     let systemicMarkersGroup = null;
@@ -41,7 +63,7 @@
     let selectedModelTables = ['comunas', 'wp01', 'wp03_holdings', 'wp06'];
 
     // ==========================================================================
-    // 1. CARGA RESILIENTE DE LOS 6 DATASETS DEL DATA LAKE
+    // 1. CARGA RESILIENTE DE LOS DATASETS DEL DATA LAKE (WP_01 a WP_11)
     // ==========================================================================
     async function fetchJsonDataset(path) {
         try {
@@ -55,14 +77,19 @@
     }
 
     async function initSystemicDataLake() {
-        console.log('[Systemic Atlas] Iniciando ingesta de los 6 datasets + holdings...');
-        const [wp01, wp02, wp03, wp04, wp05, wp06, holdingsData] = await Promise.all([
+        console.log('[Systemic Atlas] Iniciando ingesta de datasets WP_01 a WP_11 + holdings...');
+        const [wp01, wp02, wp03, wp04, wp05, wp06, wp07, wp08, wp09, wp10, wp11, holdingsData] = await Promise.all([
             fetchJsonDataset('data/systemic/01_gob_poder_finanzas.json'),
             fetchJsonDataset('data/systemic/02_energia_combustibles_telecom.json'),
             fetchJsonDataset('data/systemic/03_concesiones_tierra_mar.json'),
             fetchJsonDataset('data/systemic/04_inversion_seia_economia.json'),
             fetchJsonDataset('data/systemic/05_social_salud_educacion_riesgos.json'),
             fetchJsonDataset('data/systemic/06_turismo_sernatur_conaf.json'),
+            fetchJsonDataset('data/systemic/07_biodiversidad_flora_fauna_aysen.json'),
+            fetchJsonDataset('data/systemic/08_desagregaciones_sectoriales_aysen.json'),
+            fetchJsonDataset('data/systemic/09_cultura_patrimonio.json'),
+            fetchJsonDataset('data/systemic/10_ctci_innovacion.json'),
+            fetchJsonDataset('data/systemic/11_conectividad_infraestructura_multimodal.json'),
             fetchJsonDataset('data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json')
         ]);
 
@@ -72,8 +99,17 @@
         window.AysenSystemicData.wp04 = wp04;
         window.AysenSystemicData.wp05 = wp05;
         window.AysenSystemicData.wp06 = wp06;
+        window.AysenSystemicData.wp07 = wp07;
+        window.AysenSystemicData.wp08 = wp08;
+        window.AysenSystemicData.wp09 = wp09;
+        window.AysenSystemicData.wp10 = wp10;
+        window.AysenSystemicData.wp11 = wp11;
         window.AysenSystemicData.holdings = holdingsData;
         window.AysenSystemicData.isLoaded = true;
+
+        if (window.AYSEN_HUBS_DATA) {
+            window.AysenSystemicData.fromHubsBundle(window.AYSEN_HUBS_DATA);
+        }
 
         console.log('[Systemic Atlas] Datasets listos en memoria.');
 

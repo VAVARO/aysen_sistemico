@@ -963,6 +963,85 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Error en test_23 omniroute:\n{proc.stderr}")
         self.assertIn("OMNIROUTE_MULTIMODAL_BARO_OK", proc.stdout)
 
+    def test_24_barometro_sintesis_multidimensional_y_repregunta_conversacional(self):
+        """Verifica que consultas amplias al Barometro UAysen retornen sintesis multidimensional y la repregunta mantenga el contexto."""
+        node_script = """
+        const fs = require('fs');
+        const path = require('path');
+
+        global.window = {
+            addEventListener: () => {},
+            dispatchEvent: () => {}
+        };
+        global.document = {
+            addEventListener: () => {},
+            getElementById: () => null
+        };
+
+        const bundleCode = fs.readFileSync(path.join(process.cwd(), 'data/aysen_hubs_data.js'), 'utf8');
+        eval(bundleCode);
+
+        const clientCode = fs.readFileSync(path.join(process.cwd(), 'js/omniroute_client.js'), 'utf8');
+        eval(clientCode);
+
+        const client = global.window.OmniRouteClient || window.OmniRouteClient;
+        if (!client) {
+            console.error('OmniRouteClient not exported');
+            process.exit(1);
+        }
+
+        const res = client.resolveClosedWorldDeterministic('dame datos del barometro de la u de aysen');
+        if (!res || !res.reply) {
+            console.error('No reply returned for barometro query');
+            process.exit(2);
+        }
+        if (!res.chart || !res.chart.render) {
+            console.error('Barometro query must render chart');
+            process.exit(3);
+        }
+        if (!res.reply.includes('Barometro') && !res.reply.includes('regional')) {
+            console.error('Reply does not mention Barometro or regional stats');
+            process.exit(4);
+        }
+
+        const followRes = client.resolveClosedWorldDeterministic('¿y no tienes mas datos?');
+        if (!followRes || !followRes.reply) {
+            console.error('No follow up response returned');
+            process.exit(5);
+        }
+        if (followRes.reply.includes('No encontre datos') || followRes.reply.includes('inexistente')) {
+            console.error('Follow-up lost context and failed: ' + followRes.reply);
+            process.exit(6);
+        }
+        if (!followRes.chart || !followRes.chart.render) {
+            console.error('Follow-up query must maintain active chart render');
+            process.exit(7);
+        }
+        if (followRes.chart.varX === res.chart.varX && followRes.chart.varY === res.chart.varY) {
+            console.error('Follow-up chart indicators did not rotate from initial query');
+            process.exit(8);
+        }
+
+        console.log('BAROMETRO_CONVERSATIONAL_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_24 omniroute:\n{proc.stderr}")
+        self.assertIn("BAROMETRO_CONVERSATIONAL_OK", proc.stdout)
+
+    def test_25_consultor_html_inicia_con_estado_vacio(self):
+        """Verifica que consultor.html inicie con #emptyEvidenceState y currentChartState.render = false."""
+        with open(self.consultor_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        self.assertIn('id="emptyEvidenceState"', html, "consultor.html debe tener el contenedor #emptyEvidenceState")
+        self.assertIn('class="empty-evidence"', html, "consultor.html debe tener estilos .empty-evidence")
+        self.assertIn('render: false', html, "consultor.html debe inicializar currentChartState con render: false")
+
 
 if __name__ == "__main__":
     unittest.main()

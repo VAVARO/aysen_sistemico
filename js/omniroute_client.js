@@ -1629,10 +1629,11 @@
       })
     );
 
-    // WP-A.3: Resolver referencias anafóricas de seguimiento ("¿y cuál es su relación con la salmonicultura?", "¿y en salud?")
+    // WP-A.3: Resolver referencias anafóricas de seguimiento ("¿y cuál es su relación con la salmonicultura?", "¿y en salud?", "¿y no tienes más datos?")
     const isRegionalScope = /\b(aysen|region|regional|comunas|ranking|cada comuna|todas las comunas|empresas|holdings|provincias)\b/i.test(qNorm);
-    const hasFollowUpCue = /(^¿?\s*y\b|\bsu\b|\bsus\b|\besta comuna\b|\besa comuna\b|\bahi\b|\balli\b|\ben ella\b|^¿?\s*respecto a\b|^¿?\s*en cuanto a\b)/i.test(rawQuery);
-    if (matchedEntities.length === 0 && !isRegionalScope && hasFollowUpCue && _conversationState.lastComunaCode) {
+    const isMoreDataFollowUp = /(no tienes mas|que mas tienes|otros indicadores|mas datos|que otros datos|que mas hay|mas informacion|algo mas|otra informacion)/i.test(qNorm);
+    const hasFollowUpCue = isMoreDataFollowUp || /(^¿?\s*y\b|\bsu\b|\bsus\b|\besta comuna\b|\besa comuna\b|\bahi\b|\balli\b|\ben ella\b|^¿?\s*respecto a\b|^¿?\s*en cuanto a\b)/i.test(rawQuery);
+    if (matchedEntities.length === 0 && !isRegionalScope && hasFollowUpCue && _conversationState.lastComunaCode && !isMoreDataFollowUp) {
       const prevEnt = _memoryIndex.entities.find(e => String(e.id) === String(_conversationState.lastComunaCode));
       if (prevEnt) {
         matchedEntities = [prevEnt];
@@ -1643,8 +1644,13 @@
     const isHoldingQuery = detectHoldingOrFisheryIntent(qNorm, rawQuery) &&
       (matchedEntities.length === 0 || /\b(segun empresa|segun empresas|por empresa|por empresas|por holding|no comunas|empresas o holdings|pregunte por empresas)\b/i.test(qNorm));
 
-    // WP-B.2: Detectar intención de Cruce Comuna × Sector
-    let matchedSector = matchedEntities.length === 1 ? detectSectorForComunaQuery(qNorm, rawQuery) : null;
+    // WP-B.2: Detectar intención de Cruce Comuna × Sector o Sector Regional
+    let matchedSector = null;
+    if (matchedEntities.length === 1) {
+      matchedSector = detectSectorForComunaQuery(qNorm, rawQuery);
+    } else if (matchedEntities.length === 0 && !isHoldingQuery) {
+      matchedSector = detectSectorForComunaQuery(qNorm, rawQuery);
+    }
 
     const matchedEntityTokens = new Set();
     matchedEntities.forEach(ent => {
@@ -1677,6 +1683,28 @@
         matchedSector = SECTOR_DEFINITIONS[_conversationState.lastDomain];
       } else if (_conversationState.lastIndicatorKeys.length > 0) {
         scoredVars = _conversationState.lastIndicatorKeys
+          .map(k => _memoryIndex.variablesByKey[k])
+          .filter(Boolean)
+          .map((v, idx) => ({ variable: v, score: 30 - idx * 5 }));
+      }
+    }
+
+    // Si es pregunta de seguimiento regional ("¿y no tienes más datos?", "¿qué más tienes?", "¿y otros indicadores?")
+    if (matchedEntities.length === 0 && scoredVars.length === 0 && !matchedSector && hasFollowUpCue) {
+      if (_conversationState.lastDomain && SECTOR_DEFINITIONS[_conversationState.lastDomain]) {
+        matchedSector = SECTOR_DEFINITIONS[_conversationState.lastDomain];
+        if (_conversationState.lastIndicatorKeys.length > 2) {
+          const rotated = _conversationState.lastIndicatorKeys.slice(2).concat(_conversationState.lastIndicatorKeys.slice(0, 2));
+          _conversationState.lastIndicatorKeys = rotated;
+          scoredVars = rotated.map(k => _memoryIndex.variablesByKey[k]).filter(Boolean).map((v, idx) => ({ variable: v, score: 30 - idx * 3 }));
+        }
+      } else if (_conversationState.lastIndicatorKeys.length > 0) {
+        let keysToUse = _conversationState.lastIndicatorKeys;
+        if (_conversationState.lastIndicatorKeys.length > 2) {
+          keysToUse = keysToUse.slice(2).concat(keysToUse.slice(0, 2));
+          _conversationState.lastIndicatorKeys = keysToUse;
+        }
+        scoredVars = keysToUse
           .map(k => _memoryIndex.variablesByKey[k])
           .filter(Boolean)
           .map((v, idx) => ({ variable: v, score: 30 - idx * 5 }));
@@ -1721,6 +1749,24 @@
       ? topNumericVars[1].variable
       : null;
 
+    const hasSpecificMetricFocus = Boolean(
+      (topNumericVars.length > 0 && topNumericVars[0].score >= 25 &&
+        !/(barometro en aysen|conectividad en aysen|salud en aysen|energia en aysen|cultura en aysen|dame datos|que datos tienes|barometro de la u)/i.test(qNorm)
+      ) ||
+      /(mayor dependencia|menor dependencia|ranking|cruza|versus|frente a|evolucion|serie|barcaza|pavimentada|ripio|fibra|deficit habitacional|empam|pscv|ganado|glaciares|esperanza de vida|consumo)/i.test(qNorm)
+    );
+
+    const isBroadSectorQuery = Boolean(
+      matchedSector &&
+      !hasSpecificMetricFocus &&
+      (
+        scoredVars.length === 0 ||
+        topNumericVars.length === 0 ||
+        topNumericVars[0].score < 25 ||
+        /(barometro en aysen|conectividad en aysen|salud en aysen|energia en aysen|cultura en aysen|dame datos|que datos tienes|panorama|resumen de|barometro de la u)/i.test(qNorm)
+      )
+    );
+
     const HUB_FALLBACK_NUMERIC = {
       I: 'prestadores_sernatur',
       II: 'concesiones_salmon',
@@ -1747,7 +1793,7 @@
     const provenanceTargetKeys = [];
     if (isHoldingQuery) {
       provenanceTargetKeys.push('holdings_salmoneros', 'biomasa_salmon_ton');
-    } else if (matchedSector) {
+    } else if (matchedSector && isBroadSectorQuery) {
       provenanceTargetKeys.push(...matchedSector.provenanceKeys);
     } else if (matchedEntities.length === 1 && scoredVars.length === 0) {
       provenanceTargetKeys.push('poblacion_censo_2024', 'presupuesto_mclp', 'concesiones_salmon', 'camas_hospitalarias');
@@ -1769,15 +1815,17 @@
     const sourceText = sources.map(s => s.institucion).join(' · ');
 
     let chartSpec = {
-      render: Boolean(primaryVar || matchedEntities.length > 0 || scoredVars.length > 0),
+      render: Boolean(primaryVar || matchedEntities.length > 0 || scoredVars.length > 0 || matchedSector),
       type: wantsScatter && secondaryVar ? 'scatter' : (wantsTemporal ? 'line' : 'bar'),
-      varX: primaryKey,
-      varY: secondaryKey,
-      yKey: primaryKey,
-      y2Key: secondaryKey,
-      title: primaryVar
-        ? (secondaryLabel ? `${primaryLabel} vs. ${secondaryLabel}` : `${primaryLabel} por Comuna`)
-        : `${primaryLabel} por Comuna`,
+      varX: (matchedSector && isBroadSectorQuery) ? matchedSector.varX : primaryKey,
+      varY: (matchedSector && isBroadSectorQuery) ? matchedSector.varY : secondaryKey,
+      yKey: (matchedSector && isBroadSectorQuery) ? matchedSector.varX : primaryKey,
+      y2Key: (matchedSector && isBroadSectorQuery) ? matchedSector.varY : secondaryKey,
+      title: (matchedSector && isBroadSectorQuery)
+        ? (matchedSector.chartTitle || `${matchedSector.title} por Comuna`)
+        : (primaryVar
+            ? (secondaryLabel ? `${primaryLabel} vs. ${secondaryLabel}` : `${primaryLabel} por Comuna`)
+            : `${primaryLabel} por Comuna`),
       sourceText,
       excludeCoyhaique
     };
@@ -1801,7 +1849,8 @@
     const activeKeys = Array.from(new Set([
       ...selectedVarKeys,
       ...allTextVars,
-      ...(selectedVarKeys.length === 0 ? ['poblacion_censo_2024', 'superficie_km2', 'presupuesto_mclp', 'dependencia_fcm_pct'] : [])
+      ...(matchedSector ? (matchedSector.keys || []) : []),
+      ...(selectedVarKeys.length === 0 && !matchedSector ? ['poblacion_censo_2024', 'superficie_km2', 'presupuesto_mclp', 'dependencia_fcm_pct'] : [])
     ]));
 
     const filteredEntities = _memoryIndex.entities.filter(e =>
@@ -1818,7 +1867,7 @@
 
     const relatedHub = isHoldingQuery
       ? 'II'
-      : (matchedSector ? matchedSector.hub : getHubForVariable(chartSpec.varX));
+      : ((matchedSector && isBroadSectorQuery) ? matchedSector.hub : getHubForVariable(chartSpec.varX));
 
     return {
       query: rawQuery,
@@ -1828,6 +1877,7 @@
       wantsTemporal,
       isHoldingQuery,
       matchedSector,
+      isBroadSectorQuery,
       matchedEntities,
       topVariables: [primaryVar, secondaryVar].filter(Boolean).concat(
         scoredVars.filter(s => !s.variable.isNumeric).slice(0, 1).map(s => s.variable)
@@ -1849,22 +1899,41 @@
    */
   function updateConversationState(memoryPacket, finalResult) {
     if (!memoryPacket) return;
-    if (memoryPacket.isHoldingQuery) {
+
+    const hasBarometroVar = (memoryPacket.topVariables || []).some(v => v && v.key && v.key.startsWith('barometro_')) ||
+      (memoryPacket.primaryVar && memoryPacket.primaryVar.key && memoryPacket.primaryVar.key.startsWith('barometro_')) ||
+      (memoryPacket.activeKeys || []).some(k => typeof k === 'string' && k.startsWith('barometro_')) ||
+      (memoryPacket.matchedSector && memoryPacket.matchedSector.id === 'barometro');
+
+    const isFollowUpCue = /(no tienes mas|que mas tienes|otros indicadores|mas datos|que otros datos|que mas hay|mas informacion|algo mas|otra informacion)/i.test(memoryPacket.qNorm || '');
+
+    if (hasBarometroVar) {
+      _conversationState.lastDomain = 'barometro';
+      if (SECTOR_DEFINITIONS.barometro && (!isFollowUpCue || !_conversationState.lastIndicatorKeys || _conversationState.lastIndicatorKeys.length === 0)) {
+        _conversationState.lastIndicatorKeys = [...SECTOR_DEFINITIONS.barometro.keys];
+      }
+    } else if (memoryPacket.isHoldingQuery) {
       _conversationState.lastDomain = 'holdings_salmoneros';
       _conversationState.lastIndicatorKeys = ['concesiones_salmon', 'biomasa_salmon_ton'];
+    } else if (memoryPacket.matchedSector && (!memoryPacket.matchedEntities || memoryPacket.matchedEntities.length === 0)) {
+      _conversationState.lastDomain = memoryPacket.matchedSector.id;
+      _conversationState.lastIndicatorKeys = [...(memoryPacket.matchedSector.keys || [])];
     } else if (memoryPacket.matchedEntities && memoryPacket.matchedEntities.length === 1) {
       const ent = memoryPacket.matchedEntities[0];
       _conversationState.lastComunaCode = ent.id;
       _conversationState.lastComunaName = ent.name;
       if (memoryPacket.matchedSector) {
         _conversationState.lastDomain = memoryPacket.matchedSector.id;
-        _conversationState.lastIndicatorKeys = [...memoryPacket.matchedSector.provenanceKeys];
+        _conversationState.lastIndicatorKeys = [...(memoryPacket.matchedSector.provenanceKeys || memoryPacket.matchedSector.keys || [])];
       } else if (memoryPacket.primaryVar) {
         _conversationState.lastDomain = memoryPacket.primaryVar.hub;
         _conversationState.lastIndicatorKeys = [memoryPacket.primaryVar.key, memoryPacket.secondaryVar?.key].filter(Boolean);
       } else {
         _conversationState.lastDomain = 'perfil_comunal';
       }
+    } else if (memoryPacket.matchedSector) {
+      _conversationState.lastDomain = memoryPacket.matchedSector.id;
+      _conversationState.lastIndicatorKeys = [...(memoryPacket.matchedSector.keys || [])];
     } else if (memoryPacket.primaryVar) {
       _conversationState.lastDomain = memoryPacket.primaryVar.hub;
       _conversationState.lastIndicatorKeys = [memoryPacket.primaryVar.key, memoryPacket.secondaryVar?.key].filter(Boolean);
@@ -1902,7 +1971,17 @@
    * para que el LLM responda razonando sobre los datos reales sin alucinar.
    */
   function buildMemoryGroundedPrompts(memoryPacket) {
-    const varSummaries = memoryPacket.topVariables.map(v => {
+    const varsToSummarize = [...memoryPacket.topVariables];
+    if (memoryPacket.matchedSector && Array.isArray(memoryPacket.matchedSector.keys)) {
+      memoryPacket.matchedSector.keys.forEach(k => {
+        const v = _memoryIndex.variablesByKey[k];
+        if (v && !varsToSummarize.some(existing => existing.key === k)) {
+          varsToSummarize.push(v);
+        }
+      });
+    }
+
+    const varSummaries = varsToSummarize.map(v => {
       if (!v.isNumeric || !v.stats) {
         return { key: v.key, label: v.label, type: 'categorical' };
       }
@@ -1926,6 +2005,7 @@
     const memoryPayload = {
       consulta_usuario: memoryPacket.query,
       estado_conversacional_previo: _conversationState,
+      sector_tematico_consultado: memoryPacket.matchedSector ? memoryPacket.matchedSector.title : undefined,
       comunas_filtradas_solicitadas: memoryPacket.matchedEntities.map(e => e.raw),
       holdings_salmoneros_aysen: memoryPacket.isHoldingQuery ? _memoryIndex.holdings : undefined,
       resumen_estadistico_variables_relevantes: varSummaries,
@@ -1951,6 +2031,7 @@
       wantsTemporal,
       isHoldingQuery,
       matchedSector,
+      isBroadSectorQuery,
       matchedEntities,
       topVariables,
       primaryVar,
@@ -2061,6 +2142,61 @@
     // 4. WP-B.2: Cruce Comuna × Sector (ej. "relación de Cisnes con la salmonicultura", "¿y en salud?")
     if (matchedEntities.length === 1 && matchedSector) {
       const res = buildComunaSectorReply(matchedEntities[0], matchedSector, _memoryIndex);
+      updateConversationState(memoryPacket, res);
+      return res;
+    }
+
+    // 4b. WP-B.2: Caso B.2 (Síntesis Regional de Sector / Fuente Multidimensional)
+    // Cuando la consulta es a nivel regional (0 comunas específicas) sobre un sector o fuente multidimensional
+    // (ej. "dame datos del barómetro de la u de aysen", "qué datos tienes de conectividad", "datos de salud en aysén")
+    const isMoreFollowUp = /(no tienes mas|que mas tienes|otros indicadores|mas datos|que otros datos|que mas hay|mas informacion|algo mas|otra informacion)/i.test(qNorm);
+    if (matchedEntities.length === 0 && matchedSector && (isBroadSectorQuery || isMoreFollowUp)) {
+      const secKeys = (isMoreFollowUp && _conversationState.lastIndicatorKeys && _conversationState.lastIndicatorKeys.length > 0)
+        ? _conversationState.lastIndicatorKeys.slice(0, 8)
+        : (matchedSector.keys || []).slice(0, 8);
+
+      const metricSummaries = [];
+
+      secKeys.forEach(k => {
+        const v = _memoryIndex.variablesByKey[k];
+        if (!v || !v.stats) return;
+        const cleanLbl = CANONICAL_LABELS[k] || v.label || humanizeKey(k);
+        const isAvg = v.aggregation === 'avg' || k.endsWith('_pct') || k.endsWith('_hrs') || /ratio|promedio|médicos|tarifa/i.test(v.unit || '');
+        const aggLabel = isAvg ? 'Promedio regional' : 'Total regional';
+        const aggVal = isAvg ? v.stats.avg : v.stats.sum;
+        const u = v.unit || '';
+        const unitSuffix = (u && !cleanLbl.includes(u) && !cleanLbl.includes('%')) ? ` ${u}` : '';
+        const maxStr = v.stats.max ? `máximo en ${v.stats.max.comuna} con ${fmtNumber(v.stats.max.value)}${unitSuffix}` : '';
+        const minStr = v.stats.min ? `mínimo en ${v.stats.min.comuna} con ${fmtNumber(v.stats.min.value)}${unitSuffix}` : '';
+        const rangeStr = (maxStr && minStr) ? ` (${maxStr} y ${minStr})` : '';
+        metricSummaries.push(`• ${cleanLbl}: ${aggLabel} de ${fmtNumber(aggVal)}${unitSuffix}${rangeStr}.`);
+      });
+
+      const prefix = isMoreFollowUp
+        ? `Adicionalmente, en ${matchedSector.title}, los registros oficiales en la Región de Aysén reportan:`
+        : `En ${matchedSector.title}, los registros oficiales en la Región de Aysén presentan los siguientes indicadores consolidados:`;
+
+      const reply = metricSummaries.length > 0
+        ? `${prefix}\n${metricSummaries.join('\n')}`
+        : `En ${matchedSector.title}, la plataforma integra indicadores comunales oficiales para las 10 comunas de Aysén.`;
+
+      const secSources = resolveSourcesForKeys(matchedSector.provenanceKeys || matchedSector.keys);
+      const res = {
+        reply,
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: (isMoreFollowUp && secKeys.length > 0) ? secKeys[0] : (matchedSector.varX || secKeys[0]),
+          varY: (isMoreFollowUp && secKeys.length > 1) ? secKeys[1] : (matchedSector.varY || secKeys[1]),
+          yKey: (isMoreFollowUp && secKeys.length > 0) ? secKeys[0] : (matchedSector.varX || secKeys[0]),
+          y2Key: (isMoreFollowUp && secKeys.length > 1) ? secKeys[1] : (matchedSector.varY || secKeys[1]),
+          title: matchedSector.chartTitle || `${matchedSector.title} en Aysén`,
+          sourceText: secSources.map(s => s.institucion).join(' · '),
+          excludeCoyhaique: false
+        },
+        sources: secSources,
+        relatedHub: matchedSector.hub || 'X'
+      };
       updateConversationState(memoryPacket, res);
       return res;
     }
@@ -2371,8 +2507,11 @@
     },
 
     async askConsultant(userText, history = []) {
-      if (Array.isArray(history) && history.length === 0) {
-        // Si el cliente pasa historial explícito vacío, no borrar estado salvo que se pida clearConversationMemory
+      if (Array.isArray(history) && history.length > 0) {
+        _conversationMemory = history.map(h => ({
+          role: h.role === 'user' ? 'user' : 'assistant',
+          content: String(h.content || h.text || '')
+        }));
       }
       return this.query(userText);
     },
@@ -2383,18 +2522,6 @@
       }
 
       const memoryPacket = retrieveMemoryForQuery(userText);
-      const isProfileReq = memoryPacket.matchedEntities.length === 1 && (
-        memoryPacket.topVariables.length === 0 ||
-        /\b(cuentame sobre|hablame de|perfil de|como esta|ficha de|resumen de|informacion de|todo sobre)\b/i.test(memoryPacket.qNorm)
-      ) && !memoryPacket.matchedSector;
-
-      if (memoryPacket.isHoldingQuery || memoryPacket.matchedSector || isProfileReq) {
-        const directResult = synthesizeFromMemoryPacket(memoryPacket);
-        _conversationMemory.push({ role: 'user', content: userText });
-        _conversationMemory.push({ role: 'assistant', content: directResult.reply });
-        return directResult;
-      }
-
       const { systemPrompt, userPromptWithMemory } = buildMemoryGroundedPrompts(memoryPacket);
 
       const messages = [

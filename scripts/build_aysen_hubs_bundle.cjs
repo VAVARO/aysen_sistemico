@@ -92,31 +92,71 @@ if (fs.existsSync(wp11Path)) {
 }
 let viviendaRaw = null;
 const vivPath = path.join(ROOT, 'data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json');
+const vivBackupPath = path.join(ROOT, 'data/raw/informes_territoriales/deficit_habitacional_minvu_aysen.json');
 if (fs.existsSync(vivPath)) {
   viviendaRaw = readJson('data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json');
+} else if (fs.existsSync(vivBackupPath)) {
+  viviendaRaw = readJson('data/raw/informes_territoriales/deficit_habitacional_minvu_aysen.json');
 }
 let agroRaw = null;
 const agroPath = path.join(ROOT, 'data/raw/informes_territoriales/agropecuario_forestal_lena_glaciares_odepa_infor_dga.json');
+const agroBackupPath = path.join(ROOT, 'data/raw/informes_territoriales/censo_agropecuario_forestal_odepa_infor.json');
 if (fs.existsSync(agroPath)) {
   agroRaw = readJson('data/raw/informes_territoriales/agropecuario_forestal_lena_glaciares_odepa_infor_dga.json');
+} else if (fs.existsSync(agroBackupPath)) {
+  agroRaw = readJson('data/raw/informes_territoriales/censo_agropecuario_forestal_odepa_infor.json');
 }
 let saludDetRaw = null;
 const saludDetPath = path.join(ROOT, 'data/raw/informes_territoriales/salud_determinantes_sociales_minsal.json');
+const saludDetBackupPath = path.join(ROOT, 'data/raw/informes_territoriales/determinantes_sociales_salud_minsal.json');
 if (fs.existsSync(saludDetPath)) {
   saludDetRaw = readJson('data/raw/informes_territoriales/salud_determinantes_sociales_minsal.json');
+} else if (fs.existsSync(saludDetBackupPath)) {
+  saludDetRaw = readJson('data/raw/informes_territoriales/determinantes_sociales_salud_minsal.json');
 }
 
 // Carga opcional de Barómetro y Presets Inter-Hub
 let baroData = { hubs: {} };
 const baroPath = path.join(ROOT, 'data/raw/barometro_uaysen/barometro_integrado_aysen.json');
+const baroBackupPath = path.join(ROOT, 'data/raw/barometro/barometro_patagonia_uaysen.json');
 if (fs.existsSync(baroPath)) {
   baroData = readJson('data/raw/barometro_uaysen/barometro_integrado_aysen.json');
+} else if (fs.existsSync(baroBackupPath)) {
+  baroData = readJson('data/raw/barometro/barometro_patagonia_uaysen.json');
 }
 let cecanPresets = {};
 const cecanPath = path.join(ROOT, 'data/cecan_16_presets_aysen.json');
 if (fs.existsSync(cecanPath)) {
   cecanPresets = readJson('data/cecan_16_presets_aysen.json');
 }
+
+const conectividadMultimodal = (() => {
+  try {
+    const rawPort = readJson('data/raw/conectividad_multimodal/memorias_portuarias_emporcha_dop.json');
+    const rawMar = readJson('data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json');
+    const rawAer = readJson('data/raw/conectividad_multimodal/transporte_aereo_jac_dgac.json');
+    return {
+      terminalesPortuarios: rawPort.muelles_de_conectividad_litoral || [],
+      rutasMaritimas: rawMar.servicios_maritimos_lacustres_subsidiados || [],
+      redAeroportuaria: rawAer.red_aerodromos_interiores || []
+    };
+  } catch (e) {
+    return { terminalesPortuarios: [], rutasMaritimas: [], redAeroportuaria: [] };
+  }
+})();
+
+const spatialFiles = [
+  '01_gob_poder_finanzas.json',
+  '02_energia_combustibles_telecom.json',
+  '03_concesiones_tierra_mar.json',
+  '04_inversion_seia_economia.json',
+  '05_social_salud_educacion_riesgos.json',
+  '06_turismo_sernatur_conaf.json',
+  '07_biodiversidad_flora_fauna_aysen.json',
+  '08_desagregaciones_sectoriales_aysen.json',
+  '09_cultura_patrimonio.json',
+  '10_ctci_innovacion.json'
+];
 
 // Mapas auxiliares por código comunal INE ('11101'..'11303')
 const wp01ByIne = {};
@@ -3206,12 +3246,25 @@ const comunas = comunasBase.map((c, idx) => {
     fondart_fndr_mclp: (g9.fondos_cultura_adjudicados_mclp || 0) + (g9.fndr_8pct_cultura_mclp || 0),
     total_espacios_culturales: g9.total_espacios_culturales || 0,
     monumentos_nacionales_count: g9.monumentos_nacionales_count || 0,
+    museos_count: g9.museos_count || 0,
+    fondos_cultura_adjudicados_mclp: g9.fondos_cultura_adjudicados_mclp || 0,
+    gasto_municipal_cultura_mclp: g9.gasto_municipal_cultura_mclp || 0,
+    gasto_cultura_per_capita_clp: g9.gasto_cultura_per_capita_clp || 0,
+    fndr_8pct_cultura_mclp: g9.fndr_8pct_cultura_mclp || 0,
+    nota_percepcion_cultura_b4b: g9.nota_percepcion_cultura_b4b || 0,
+    participacion_cultural_pct_c2: g9.participacion_cultural_pct_c2 || 0,
     // Hub X (CTCi)
     proyectos_anid_n: (g10.proyectos_anid_locales_count || 0) + (g10.proyectos_anid_extrarregionales_count || 0),
     monto_anid_mclp: g10.monto_anid_acumulado_mclp || 0,
     innovacion_corfo_mclp: g10.monto_corfo_innova_mclp || 0,
     proyectos_ctci_total: g10.total_proyectos_ctci || 0,
     investigadores_residentes: g10.investigadores_residentes_est || 0,
+    proyectos_anid_locales_count: g10.proyectos_anid_locales_count || 0,
+    proyectos_anid_extrarregionales_count: g10.proyectos_anid_extrarregionales_count || 0,
+    proyectos_corfo_innova_count: g10.proyectos_corfo_innova_count || 0,
+    centros_y_estaciones_ctci_count: g10.centros_y_estaciones_ctci_count || 0,
+    percepcion_ctci_prioritaria_pct_i1i: g10.percepcion_ctci_prioritaria_pct_i1i || 0,
+    evaluacion_uaysen_promedio_i8: g10.evaluacion_uaysen_promedio_i8 || 0,
     establecimientos_escolares_n: (g5.educacion_mineduc || {}).establecimientos_escolares_total || 0,
     establecimientos_aps_n: (g8.salud_diferenciada?.atencion_primaria_aps || {}).total_establecimientos_aps || 0,
     holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-',
@@ -3219,6 +3272,7 @@ const comunas = comunasBase.map((c, idx) => {
     // Conectividad Multimodal (MOP, EMPORCHA, MTT, JAC, SUBTEL)
     red_vial_total_km: (g11.conectividad_terrestre || {}).red_vial_total_km || 0,
     red_vial_pavimentada_km: (g11.conectividad_terrestre || {}).red_vial_pavimentada_km || 0,
+    red_vial_solucion_basica_km: (g11.conectividad_terrestre || {}).red_vial_solucion_basica_km || 0,
     red_vial_ripio_km: (g11.conectividad_terrestre || {}).red_vial_ripio_km || 0,
     red_vial_tierra_km: (g11.conectividad_terrestre || {}).red_vial_tierra_km || 0,
     red_vial_pavimentada_pct: (g11.conectividad_terrestre || {}).pavimentacion_pct || 0,
@@ -3228,6 +3282,7 @@ const comunas = comunasBase.map((c, idx) => {
     hogares_sin_internet_fijo_pct: (g11.conectividad_digital || {}).hogares_sin_internet_fijo_pct || 0,
     cobertura_fibra_hogar_pct: (g11.conectividad_digital || {}).cobertura_fibra_hogar_pct || 0,
     establecimientos_educacion_conectados_n: (g11.conectividad_digital || {}).establecimientos_educacion_conectados_n || 0,
+    fdt_ultima_milla_aprobado: (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado !== undefined ? (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado : false,
 
     // Informes Territoriales: Vivienda, Agropecuario, Salud y Glaciares
     deficit_habitacional_cuantitativo_n: gViv.deficit_cuantitativo_n || 0,
@@ -4130,6 +4185,8 @@ const bundle = {
     ctci_innovacion: wp10 || {}
   },
   comparativaInterregional: baroData.comparativa_interregional || null,
+  conectividadMultimodal,
+  spatialFiles,
   localidadesCoords: LOCALIDADES_AYSEN_COORDS,
   comunasGeoJSON,
   spatialLayersCatalog,

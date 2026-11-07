@@ -1,0 +1,112 @@
+{
+  "fuente": "Ministerio de Salud (MINSAL) - Departamento de Estadísticas e Información de Salud (DEIS) & Servicio de Salud Aysén (SSA)",
+  "sistema": "Diagnóstico Regional de Salud con Enfoque en Determinantes Sociales y Estadísticas Vitales",
+  "url_origen": "https://deis.minsal.cl",
+  "fecha_corte": "2026-10-17",
+  "indicadores_regionales": {
+    "tasa_global_fecundidad_hijos_mujer": 1.38,
+    "tasa_bruta_natalidad_por_mil_hab": 8.9,
+    "esperanza_vida_al_nacer_mujeres_anos": 84.7,
+    "esperanza_vida_al_nacer_hombres_anos": 77.2,
+    "brecha_esperanza_vida_genero_anos": 7.5,
+    "esperanza_vida_al_nacer_total_anos": 81.2,
+    "mortalidad_ajustada_cardiovascular_por_100k": 134.8,
+    "mortalidad_ajustada_tumores_cancer_por_100k": 142.1,
+    "cobertura_control_adulto_mayor_empam_pct": 78.4,
+    "cobertura_programa_salud_cardiovascular_pscv_pct": 71.8,
+    "prevalencia_tabaquismo_poblacion_mayor_15_pct": 27.9,
+    "prevalencia_inactividad_fisica_sedentarismo_pct": 85.6
+  },
+  "por_comuna": [
+    {
+      "comuna_ine": "11101",
+      "comuna_nombre": "Coyhaique",
+      "esperanza_vida_total_anos": 81.6,
+      "cobertura_empam_pct": 80.2,
+      "cobertura_pscv_pct": 74.5,
+      "aeroevacuaciones_samu_anual": 45,
+      "tasa_natalidad_por_mil": 9.4
+    },
+    {
+      "comuna_ine": "11102",
+      "comuna_nombre": "Lago Verde",
+      "esperanza_vida_total_anos": 79.8,
+      "cobertura_empam_pct": 72.1,
+      "cobertura_pscv_pct": 68.0,
+      "aeroevacuaciones_samu_anual": 8,
+      "tasa_natalidad_por_mil": 6.8
+    },
+    {
+      "comuna_ine": "11201",
+      "comuna_nombre": "Aysén",
+      "esperanza_vida_total_anos": 81.1,
+      "cobertura_empam_pct": 78.6,
+      "cobertura_pscv_pct": 71.2,
+      "aeroevacuaciones_samu_anual": 38,
+      "tasa_natalidad_por_mil": 9.1
+    },
+    {
+      "comuna_ine": "11202",
+      "comuna_nombre": "Cisnes",
+      "esperanza_vida_total_anos": 80.4,
+      "cobertura_empam_pct": 76.5,
+      "cobertura_pscv_pct": 70.4,
+      "aeroevacuaciones_samu_anual": 19,
+      "tasa_natalidad_por_mil": 8.2
+    },
+    {
+      "comuna_ine": "11203",
+      "comuna_nombre": "Guaitecas",
+      "esperanza_vida_total_anos": 79.5,
+      "cobertura_empam_pct": 71.0,
+      "cobertura_pscv_pct": 65.8,
+      "aeroevacuaciones_samu_anual": 22,
+      "tasa_natalidad_por_mil": 8.0
+    },
+    {
+      "comuna_ine": "11301",
+      "comuna_nombre": "Cochrane",
+      "esperanza_vida_total_anos": 80.8,
+      "cobertura_empam_pct": 77.4,
+      "cobertura_pscv_pct": 72.1,
+      "aeroevacuaciones_samu_anual": 15,
+      "tasa_natalidad_por_mil": 8.5
+    },
+    {
+      "comuna_ine": "11302",
+      "comuna_nombre": "O'Higgins",
+      "esperanza_vida_total_anos": 79.2,
+      "cobertura_empam_pct": 69.5,
+      "cobertura_pscv_pct": 64.2,
+      "aeroevacuaciones_samu_anual": 12,
+      "tasa_natalidad_por_mil": 6.2
+    },
+    {
+      "comuna_ine": "11303",
+      "comuna_nombre": "Tortel",
+      "esperanza_vida_total_anos": 79.0,
+      "cobertura_empam_pct": 68.8,
+      "cobertura_pscv_pct": 63.5,
+      "aeroevacuaciones_samu_anual": 14,
+      "tasa_natalidad_por_mil": 6.5
+    },
+    {
+      "comuna_ine": "11401",
+      "comuna_nombre": "Chile Chico",
+      "esperanza_vida_total_anos": 81.3,
+      "cobertura_empam_pct": 79.1,
+      "cobertura_pscv_pct": 73.0,
+      "aeroevacuaciones_samu_anual": 16,
+      "tasa_natalidad_por_mil": 8.6
+    },
+    {
+      "comuna_ine": "11402",
+      "comuna_nombre": "Río Ibáñez",
+      "esperanza_vida_total_anos": 80.2,
+      "cobertura_empam_pct": 75.8,
+      "cobertura_pscv_pct": 69.8,
+      "aeroevacuaciones_samu_anual": 11,
+      "tasa_natalidad_por_mil": 7.5
+    }
+  ]
+}

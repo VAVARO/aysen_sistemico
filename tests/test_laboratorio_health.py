@@ -19,6 +19,7 @@ Verifica:
 import os
 import re
 import json
+import subprocess
 import unittest
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -224,6 +225,103 @@ class TestLaboratorioHealth(unittest.TestCase):
                 self.assertIsInstance(pos_pct, (int, float), f"pos_pct debe ser numérico en {hub_id}.{mz_key}")
                 self.assertGreaterEqual(pos_pct, 0.0)
                 self.assertLessEqual(pos_pct, 100.0)
+
+    def test_09_salud_poblado_en_catalogo_lateral(self):
+        """Verifica que VIII. Salud aparezca poblado en el catalogo lateral de laboratorio.html y en nl_lexicon_aysen.json."""
+        lexicon_path = os.path.join(ROOT_DIR, "data", "nl_lexicon_aysen.json")
+        self.assertTrue(os.path.exists(lexicon_path), "data/nl_lexicon_aysen.json debe existir")
+        with open(lexicon_path, "r", encoding="utf-8") as f:
+            lexicon = json.load(f)
+
+        health_vars = [
+            "urgencias_respiratorias_pct",
+            "camas_hospitalarias",
+            "medicos_por_mil_hab",
+            "aeroevacuaciones_samu_n",
+            "espera_no_ges_n",
+            "traslado_coyhaique_hrs",
+            "salud_principal"
+        ]
+        raw_vars = lexicon.get("variables", [])
+        lex_vars = {v.get("id"): v for v in raw_vars if isinstance(v, dict) and "id" in v}
+        for hv in health_vars:
+            self.assertIn(hv, lex_vars, f"Variable de salud {hv} debe estar en nl_lexicon_aysen.json")
+            self.assertEqual(lex_vars[hv].get("hub"), "salud", f"Variable {hv} debe tener hub='salud'")
+            self.assertEqual(lex_vars[hv].get("hubTitle"), "VIII. Salud", f"Variable {hv} debe tener hubTitle='VIII. Salud'")
+
+        with open(LABORATORIO_HTML, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        self.assertIn("return 'salud';", html, "hubInference debe retornar 'salud'")
+        self.assertIn("return 'cultura';", html, "hubInference debe retornar 'cultura'")
+        self.assertIn("return 'ctci';", html, "hubInference debe retornar 'ctci'")
+        self.assertIn("VIII. Salud", html, "laboratorio.html debe contener el titulo 'VIII. Salud'")
+
+        # Verificar ejecucion real de hubInference sobre variables clave y series de salud
+        node_script = """
+        const fs = require('fs');
+        const html = fs.readFileSync('laboratorio.html', 'utf8');
+
+        // Extraer hubInference del HTML
+        const m = html.match(/const hubInference = \\(([^)]*)\\) => \\{([\\s\\S]*?)\\n\\s*\\};/);
+        if (!m) {
+            console.error('hubInference declaration not found in laboratorio.html');
+            process.exit(1);
+        }
+        const hubInference = new Function('k', m[2]);
+
+        const saludVars = ['camas_hospitalarias', 'postas_salud_rural', 'establecimientos_aps_n', 'esperanza_vida_total_anos', 'cobertura_empam_pct', 'cobertura_pscv_pct'];
+        for (const v of saludVars) {
+            const res = hubInference(v);
+            if (res !== 'salud') {
+                console.error(`Expected salud for ${v}, got ${res}`);
+                process.exit(2);
+            }
+        }
+
+        const culturaVars = ['museos_count', 'fndr_8pct_cultura_mclp', 'participacion_cultural_pct_c2'];
+        for (const v of culturaVars) {
+            const res = hubInference(v);
+            if (res !== 'cultura') {
+                console.error(`Expected cultura for ${v}, got ${res}`);
+                process.exit(3);
+            }
+        }
+
+        const ctciVars = ['proyectos_ctci_total', 'proyectos_corfo_innova_count', 'proyectos_anid_locales_count'];
+        for (const v of ctciVars) {
+            const res = hubInference(v);
+            if (res !== 'ctci') {
+                console.error(`Expected ctci for ${v}, got ${res}`);
+                process.exit(4);
+            }
+        }
+
+        // Verificar clasificacion de series de salud en syncTemporalSeries
+        if (!html.includes("id: 'urgencias_respiratorias_anuales_ssa'") || !html.includes("hubId: 'salud', hubTitle: 'VIII. Salud'")) {
+            console.error('Series SSA must belong to hubId salud and VIII. Salud');
+            process.exit(5);
+        }
+
+        // Verificar que syncSeriesDefs registra emporcha_toneladas, emporcha_cruceros, balmaceda_pasajeros_jac y barometro
+        const requiredSeries = ['emporcha_toneladas', 'emporcha_cruceros', 'balmaceda_pasajeros_jac', 'barometro'];
+        for (const s of requiredSeries) {
+            if (!html.includes(`id: '${s}'`)) {
+                console.error(`Serie ${s} missing in syncSeriesDefs`);
+                process.exit(6);
+            }
+        }
+
+        console.log('LABORATORIO_HEALTH_VERIFIED');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_09 laboratorio health:\n{proc.stderr}")
+        self.assertIn("LABORATORIO_HEALTH_VERIFIED", proc.stdout)
 
 
 if __name__ == "__main__":
