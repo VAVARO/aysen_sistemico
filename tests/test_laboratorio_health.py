@@ -132,6 +132,100 @@ class TestLaboratorioHealth(unittest.TestCase):
             lab = f.read()
         self.assertIn('\\uFEFF', lab, "La función de exportación a CSV debe incluir UTF-8 BOM (\\uFEFF)")
 
+    def test_07_barometro_filter_and_canonical_vars(self):
+        """Verifica el botón de filtro Barómetro en el catálogo y las 8 variables canónicas en las 10 comunas"""
+        with open(LABORATORIO_HTML, "r", encoding="utf-8") as f:
+            lab = f.read()
+
+        # Botón de filtro Barómetro en el panel de catálogo lateral
+        self.assertIn('data-dim="barometro"', lab, "Debe existir el botón de filtro con data-dim='barometro'")
+        self.assertIn('>Barómetro<', lab, "El botón debe tener la etiqueta 'Barómetro'")
+
+        # Bundle cargado con las 8 variables del Barómetro en cada una de las 10 comunas
+        bundle_file = os.path.join(ROOT_DIR, "data", "aysen_hubs_data.js")
+        self.assertTrue(os.path.exists(bundle_file), "data/aysen_hubs_data.js debe existir")
+        with open(bundle_file, "r", encoding="utf-8") as f:
+            b_text = f.read()
+        idx = b_text.find("window.AYSEN_HUBS_DATA = ")
+        raw_json = b_text[idx + len("window.AYSEN_HUBS_DATA = "):].rstrip(";\n ")
+        bundle = json.loads(raw_json)
+
+        comunas = bundle.get("comunas", [])
+        self.assertEqual(len(comunas), 10, "Deben existir 10 comunas en AYSEN_HUBS_DATA")
+
+        baro_keys = [
+            "barometro_confianza_institucional_pct",
+            "barometro_redes_apoyo_comunitario_pct",
+            "barometro_orgullo_identidad_pct",
+            "barometro_prioridad_conectividad_pct",
+            "barometro_tension_desarrollo_conservacion_pct",
+            "barometro_intencion_migracion_juvenil_pct",
+            "barometro_evaluacion_acceso_salud_pct",
+            "barometro_preocupacion_contaminacion_lena_pct"
+        ]
+
+        for comuna in comunas:
+            c_name = comuna.get("nombre") or comuna.get("nombre_comuna")
+            for b_key in baro_keys:
+                self.assertIn(b_key, comuna, f"Falta clave {b_key} en comuna {c_name}")
+                val = comuna[b_key]
+                self.assertIsNotNone(val, f"Clave {b_key} es None en comuna {c_name}")
+                self.assertTrue(isinstance(val, (int, float)), f"Clave {b_key} no es numérica en {c_name}: {val}")
+                self.assertGreaterEqual(val, 0.0, f"Clave {b_key} menor a 0 en {c_name}: {val}")
+                self.assertLessEqual(val, 100.0, f"Clave {b_key} mayor a 100% en {c_name}: {val}")
+
+    def test_08_render_barometro_en_10_mesas_hubs(self):
+        """Verifica que las 10 mesas de Hubs tengan Tarjeta 5 (Barómetro) con variables reales en comunas"""
+        presets_path = os.path.join(ROOT_DIR, "data", "cecan_16_presets_aysen.json")
+        self.assertTrue(os.path.exists(presets_path), "data/cecan_16_presets_aysen.json debe existir")
+        with open(presets_path, "r", encoding="utf-8") as f:
+            presets_data = json.load(f)
+
+        bundle_file = os.path.join(ROOT_DIR, "data", "aysen_hubs_data.js")
+        with open(bundle_file, "r", encoding="utf-8") as f:
+            b_text = f.read()
+        idx = b_text.find("window.AYSEN_HUBS_DATA = ")
+        bundle = json.loads(b_text[idx + len("window.AYSEN_HUBS_DATA = "):].rstrip(";\n "))
+        comunas = bundle.get("comunas", [])
+        self.assertEqual(len(comunas), 10, "Deben existir 10 comunas en AYSEN_HUBS_DATA")
+
+        # 8 Hubs en hubs_gallery + 2 Hubs en extension_gallery = 10 Hubs
+        hubs_gallery = presets_data.get("hubs_gallery", {})
+        ext_gallery = presets_data.get("extension_gallery", {})
+        total_hubs = {**hubs_gallery, **ext_gallery}
+        self.assertEqual(len(total_hubs), 10, f"Deben existir 10 Hubs/mesas (8 hubs + 2 extensiones), encontrados {len(total_hubs)}")
+
+        for hub_id, hub_info in total_hubs.items():
+            presets = hub_info.get("presets", [])
+            self.assertGreaterEqual(len(presets), 5, f"Hub {hub_id} debe tener al menos 5 presets")
+            card5 = presets[4] # Tarjeta 5: Percepción / Barómetro
+            cfg = card5.get("config", {})
+            var_y = cfg.get("varY")
+            self.assertIsNotNone(var_y, f"Tarjeta 5 del Hub {hub_id} no tiene varY definido")
+            self.assertTrue(var_y.startswith("barometro_"), f"Tarjeta 5 del Hub {hub_id} debe apuntar a una variable barometro_*, tiene '{var_y}'")
+
+            # Verificar que la variable existe en las 10 comunas con valor numérico válido
+            for comuna in comunas:
+                c_name = comuna.get("nombre") or comuna.get("nombre_comuna")
+                self.assertIn(var_y, comuna, f"Variable {var_y} del Hub {hub_id} falta en comuna {c_name}")
+                val = comuna[var_y]
+                self.assertIsNotNone(val, f"Variable {var_y} es None en comuna {c_name}")
+                self.assertTrue(isinstance(val, (int, float)), f"Variable {var_y} no es numérica en {c_name}")
+                self.assertGreaterEqual(val, 0.0, f"Variable {var_y} < 0 en {c_name}")
+                self.assertLessEqual(val, 100.0, f"Variable {var_y} > 100% en {c_name}")
+
+            # Verificar que mirror_series está bien formado
+            ms = cfg.get("mirror_series")
+            self.assertIsNotNone(ms, f"Tarjeta 5 del Hub {hub_id} debe tener mirror_series")
+            self.assertIn("por_macrozona", ms, f"mirror_series del Hub {hub_id} debe tener por_macrozona")
+            for mz_key, mz_val in ms["por_macrozona"].items():
+                pos_pct = mz_val.get("tasa_positiva_pct") if "tasa_positiva_pct" in mz_val else mz_val.get("positive_pct")
+                self.assertIsNotNone(pos_pct, f"por_macrozona.{mz_key} debe tener tasa_positiva_pct o positive_pct en Hub {hub_id}")
+                self.assertIsInstance(pos_pct, (int, float), f"pos_pct debe ser numérico en {hub_id}.{mz_key}")
+                self.assertGreaterEqual(pos_pct, 0.0)
+                self.assertLessEqual(pos_pct, 100.0)
+
 
 if __name__ == "__main__":
     unittest.main()
+

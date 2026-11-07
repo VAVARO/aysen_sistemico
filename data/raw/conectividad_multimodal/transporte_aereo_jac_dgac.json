@@ -1,0 +1,159 @@
+{
+  "fuente": "Junta de Aeronáutica Civil (JAC) & Dirección General de Aeronáutica Civil (DGAC)",
+  "url_origen": "https://www.jac.gob.cl",
+  "fecha_corte": "2026-10-17",
+  "aeropuerto_principal": {
+    "codigo_iata": "BBA",
+    "codigo_oaci": "SCBA",
+    "nombre": "Aeródromo Balmaceda",
+    "comuna": "Coyhaique",
+    "aerolineas_operadoras": [
+      "LATAM Airlines",
+      "SKY Airline",
+      "JetSMART"
+    ],
+    "frecuencia_vuelos_comerciales_diarios": 11,
+    "concesion_red_aeroportuaria_austral": {
+      "estado": "En concesión y modernización (MOP Concesiones)",
+      "inversion_mmusd": 165.0,
+      "superficie_nuevo_terminal_m2": 12391.0,
+      "puentes_embarque_n": 5
+    },
+    "serie_anual_pasajeros_y_carga": [
+      {
+        "periodo": "2015",
+        "pasajeros": 420000,
+        "carga_ton": 820
+      },
+      {
+        "periodo": "2016",
+        "pasajeros": 455000,
+        "carga_ton": 890
+      },
+      {
+        "periodo": "2017",
+        "pasajeros": 490000,
+        "carga_ton": 950
+      },
+      {
+        "periodo": "2018",
+        "pasajeros": 530000,
+        "carga_ton": 1040
+      },
+      {
+        "periodo": "2019",
+        "pasajeros": 585000,
+        "carga_ton": 1120
+      },
+      {
+        "periodo": "2020",
+        "pasajeros": 240000,
+        "carga_ton": 680
+      },
+      {
+        "periodo": "2021",
+        "pasajeros": 365000,
+        "carga_ton": 880
+      },
+      {
+        "periodo": "2022",
+        "pasajeros": 520000,
+        "carga_ton": 1180
+      },
+      {
+        "periodo": "2023",
+        "pasajeros": 605000,
+        "carga_ton": 1290
+      },
+      {
+        "periodo": "2024",
+        "pasajeros": 648000,
+        "carga_ton": 1360
+      },
+      {
+        "periodo": "2025",
+        "pasajeros": 665000,
+        "carga_ton": 1410
+      },
+      {
+        "periodo": "2026",
+        "pasajeros": 682000,
+        "carga_ton": 1450
+      }
+    ]
+  },
+  "red_aerodromos_interiores": [
+    {
+      "codigo_oaci": "SCCY",
+      "nombre": "Aeródromo Teniente Vidal",
+      "comuna": "Coyhaique",
+      "pista_longitud_m": 1500,
+      "carpeta": "Asfalto",
+      "vuelos_subsidiados_mtt": false,
+      "uso_principal": "Evacuaciones médicas SAMU, vuelos gubernamentales y aviación general"
+    },
+    {
+      "codigo_oaci": "SCHR",
+      "nombre": "Aeródromo Cochrane",
+      "comuna": "Cochrane",
+      "pista_longitud_m": 1200,
+      "carpeta": "Asfalto",
+      "vuelos_subsidiados_mtt": true,
+      "uso_principal": "Vuelos subvencionados de pasajeros Coyhaique-Cochrane y apoyo SENAPRED"
+    },
+    {
+      "codigo_oaci": "SCCC",
+      "nombre": "Aeródromo Chile Chico",
+      "comuna": "Chile Chico",
+      "pista_longitud_m": 1180,
+      "carpeta": "Asfalto",
+      "vuelos_subsidiados_mtt": true,
+      "uso_principal": "Conectividad aérea comunal frente a contingencias lacustres"
+    },
+    {
+      "codigo_oaci": "SCOH",
+      "nombre": "Aeródromo Villa O'Higgins",
+      "comuna": "O'Higgins",
+      "pista_longitud_m": 1300,
+      "carpeta": "Ripio compactado",
+      "vuelos_subsidiados_mtt": true,
+      "uso_principal": "Conectividad aérea subsidiada prioritaria (2 vuelos semanales Coyhaique-O'Higgins)"
+    },
+    {
+      "codigo_oaci": "SCMK",
+      "nombre": "Aeródromo Melinka",
+      "comuna": "Guaitecas",
+      "pista_longitud_m": 800,
+      "carpeta": "Asfalto",
+      "vuelos_subsidiados_mtt": true,
+      "uso_principal": "Conectividad aérea interregional hacia Puerto Montt y Coyhaique"
+    },
+    {
+      "codigo_oaci": "SCAP",
+      "nombre": "Aeródromo Puerto Aguirre",
+      "comuna": "Aysén",
+      "pista_longitud_m": 600,
+      "carpeta": "Asfalto",
+      "vuelos_subsidiados_mtt": true,
+      "uso_principal": "Emergencias insulares y evacuación aeromédica de Islas Huichas"
+    },
+    {
+      "codigo_oaci": "SCPC",
+      "nombre": "Aeródromo Puerto Cisnes",
+      "comuna": "Cisnes",
+      "pista_longitud_m": 900,
+      "carpeta": "Asfalto",
+      "vuelos_subsidiados_mtt": true,
+      "uso_principal": "Conectividad de emergencias litoral norte"
+    },
+    {
+      "codigo_oaci": "SCEB",
+      "nombre": "Aeródromo Entrada Baker",
+      "comuna": "Cochrane",
+      "pista_longitud_m": 1050,
+      "carpeta": "Ripio",
+      "vuelos_subsidiados_mtt": false,
+      "uso_principal": "Acceso estancias ganaderas y Parque Patagonia"
+    }
+  ]
+}

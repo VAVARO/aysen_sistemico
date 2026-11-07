@@ -4041,6 +4041,7 @@
         <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="comuna">Comunal</button>
         <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="tiempo">Temporal</button>
         <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="holding">Holding</button>
+        <button class="sidebar-tab-btn" role="tab" aria-selected="false" data-dim="barometro">Barómetro</button>
       </div>
 
       <div id="catalogList" class="catalog-list-wrapper" style="display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;">
@@ -4835,8 +4836,43 @@
           url: 'https://dataciencia.anid.cl',
           collectionDate: '17 Oct 2026'
         },
+        mop_vialidad: {
+          name: 'Ministerio de Obras Públicas - Dirección de Vialidad',
+          url: 'https://vialidad.mop.gob.cl',
+          collectionDate: '17 Oct 2026'
+        },
+        emporcha: {
+          name: 'Empresa Portuaria Chacabuco (EMPORCHA)',
+          url: 'https://chacabucoport.cl',
+          collectionDate: '17 Oct 2026'
+        },
+        mtt_dtpr: {
+          name: 'Ministerio de Transportes y Telecomunicaciones - DTPR',
+          url: 'https://dtpr.mtt.gob.cl',
+          collectionDate: '17 Oct 2026'
+        },
+        jac: {
+          name: 'Junta de Aeronáutica Civil (JAC) / DGAC',
+          url: 'https://www.jac.gob.cl',
+          collectionDate: '17 Oct 2026'
+        },
+        minvu: {
+          name: 'Ministerio de Vivienda y Urbanismo (MINVU)',
+          url: 'https://www.minvu.gob.cl',
+          collectionDate: '17 Oct 2026'
+        },
+        odepa: {
+          name: 'Oficina de Estudios y Políticas Agrarias (ODEPA) / INE',
+          url: 'https://www.odepa.gob.cl',
+          collectionDate: '17 Oct 2026'
+        },
+        dga: {
+          name: 'Dirección General de Aguas (DGA) - Inventario Glaciares',
+          url: 'https://dga.mop.gob.cl',
+          collectionDate: '17 Oct 2026'
+        },
         barometro: {
-          name: 'Universidad de Aysén - Barómetro Regional Aysén',
+          name: 'Universidad de Aysén — Barómetro Patagonia',
           url: 'https://uaysen.cl',
           collectionDate: '17 Oct 2026'
         }
@@ -4870,6 +4906,11 @@
         if (/museos_|bibliotecas_|monumentos_|agentes_culturales|cultura|patrimonio|total_espacios_culturales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
         if (/proyectos_anid|monto_anid|publicaciones_|innovacion_corfo|centros_ctci|ctci|investigadores|total_proyectos_ctci|proyectos_corfo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.anid;
         if (/barometro|nota_percepcion|percepcion|evaluacion_uaysen|participacion_cultural/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.barometro;
+        if (/red_vial|pavimentad|tiempo_viaje|distancia_coyhaique/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mop_vialidad;
+        if (/emporcha|toneladas_transferidas|cruceros/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.emporcha;
+        if (/balmaceda_pasajeros|trafico_aereo|jac/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.jac;
+        if (/deficit_habitacional|ssr_apr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.minvu;
+        if (/ganado_|bovino|ovino|agro/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.odepa;
 
         if (h.includes('turis')) return OFFICIAL_VARIABLE_SOURCES.sernatur;
         if (h.includes('salmon') || h.includes('pesca')) return OFFICIAL_VARIABLE_SOURCES.sernapesca;
@@ -5437,6 +5478,62 @@
           unitLabel: 'proyectos',
           sourceTag: 'CORFO',
           desc: 'Mide las iniciativas empresariales cofinanciadas para desarrollo tecnológico local.'
+        },
+        'barometro_confianza_institucional_pct': {
+          title: 'Confianza en Gestión Municipal (Barómetro)',
+          short: 'Confianza Municipal',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide la percepción positiva del aporte municipal al desarrollo comunal (Barómetro Patagonia UAysén).'
+        },
+        'barometro_redes_apoyo_comunitario_pct': {
+          title: 'Redes de Apoyo y Participación Comunitaria (Barómetro)',
+          short: 'Apoyo Comunitario',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide la tasa de participación y percepción de redes comunitarias activas (Barómetro Patagonia UAysén).'
+        },
+        'barometro_orgullo_identidad_pct': {
+          title: 'Orgullo e Identidad Territorial de Aysén (Barómetro)',
+          short: 'Orgullo Territorial',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide el sentido de pertenencia y orgullo por la identidad regional austral (Barómetro Patagonia UAysén).'
+        },
+        'barometro_prioridad_conectividad_pct': {
+          title: 'Prioridad y Acceso a Conectividad (Barómetro)',
+          short: 'Prioridad Conectividad',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide la evaluación y prioridad asignada a la conectividad digital y de transporte (Barómetro Patagonia UAysén).'
+        },
+        'barometro_tension_desarrollo_conservacion_pct': {
+          title: 'Tensión Desarrollo vs. Conservación Ambiental (Barómetro)',
+          short: 'Desarrollo vs Conservación',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide el nivel de acuerdo sobre conflictos ambientales y vocación productiva (Barómetro Patagonia UAysén).'
+        },
+        'barometro_intencion_migracion_juvenil_pct': {
+          title: 'Percepción de Oportunidades y Retención Juvenil (Barómetro)',
+          short: 'Retención Juvenil',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide la evaluación ciudadana de oportunidades laborales y retención juvenil en Aysén (Barómetro Patagonia UAysén).'
+        },
+        'barometro_evaluacion_acceso_salud_pct': {
+          title: 'Evaluación del Acceso a Salud de Calidad (Barómetro)',
+          short: 'Acceso a Salud',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide la percepción y satisfacción con el acceso a salud pública de calidad en la región (Barómetro Patagonia UAysén).'
+        },
+        'barometro_preocupacion_contaminacion_lena_pct': {
+          title: 'Urgencia por Contaminación Atmosférica de Leña (Barómetro)',
+          short: 'Urgencia Humo Leña',
+          unitLabel: '%',
+          sourceTag: 'UAysén-Barómetro',
+          desc: 'Mide la urgencia ciudadana percibida para solucionar el humo de leña y la calidad del aire (Barómetro Patagonia UAysén).'
         }
       };
 
@@ -6664,7 +6761,11 @@
 
         const filtered = AppState.catalogItems.filter(item => {
           if (item.isAlias) return false;
-          if (dimFilter !== 'all' && item.dim !== dimFilter) return false;
+          if (dimFilter === 'barometro') {
+            if (!item.id.startsWith('barometro_') && !item.isBarometro && !/barometro|percepcion|espejo|uaysen/i.test(item.id) && !/barometro|uaysen/i.test(item.sourceName || '') && !/barómetro|percepción/i.test(item.name || '')) return false;
+          } else if (dimFilter !== 'all' && item.dim !== dimFilter) {
+            return false;
+          }
           if (!q) return true;
           const info = getAutoexplanatoryVarInfo(item.id, item.name, item.unit);
           const aliasesStr = Array.isArray(item.aliases) ? item.aliases.join(' ') : (item.aliases || '');
@@ -6733,6 +6834,13 @@
             <div class="temporal-catalog-helper">
               <span class="temporal-helper-title">Series de Tiempo y Líneas Históricas (2015–2026)</span>
               <p class="temporal-helper-desc">Datos longitudinales continuos con seguimiento multianual. Haz doble clic o arrastra al lienzo para graficar su línea temporal y proyectar tendencias.</p>
+            </div>
+          `;
+        } else if (dimFilter === 'barometro') {
+          html += `
+            <div class="temporal-catalog-helper" style="border-left-color: #00357f; background: rgba(0, 53, 127, 0.04);">
+              <span class="temporal-helper-title" style="color: #00357f;">Barómetro Patagonia UAysén (Percepción y Cohesión Ciudadana)</span>
+              <p class="temporal-helper-desc">Muestra probabilística regional (N=465 en 10 comunas). Arrastra al lienzo para visualizar barras comunales o cruces bivariados con datos estructurales.</p>
             </div>
           `;
         }
@@ -11305,10 +11413,10 @@
 
             const rawKeys = Object.keys(dimObj);
             const baroLabels = rawKeys.map(k => prettyLabelsMap[k] || k);
-            const baroPositiveVals = rawKeys.map(k => Number(dimObj[k]?.positive_pct || 0));
-            const baroSampleN = rawKeys.map(k => Number(dimObj[k]?.n || 0));
-            const baroSampleME = rawKeys.map(k => Number(dimObj[k]?.me || 0));
-            const baroSemaforos = rawKeys.map(k => dimObj[k]?.sem || 'verde');
+            const baroPositiveVals = rawKeys.map(k => Number(dimObj[k]?.tasa_positiva_pct ?? dimObj[k]?.positive_pct ?? 0));
+            const baroSampleN = rawKeys.map(k => Number(dimObj[k]?.n_muestral ?? dimObj[k]?.n ?? 0));
+            const baroSampleME = rawKeys.map(k => Number(dimObj[k]?.me_95 ?? dimObj[k]?.me ?? 0));
+            const baroSemaforos = rawKeys.map(k => dimObj[k]?.semaforo ?? dimObj[k]?.sem ?? 'verde');
 
             if (interreg === 'comparativa') {
               const totalPos = baroPositiveVals.length
@@ -12085,6 +12193,8 @@
           `;
         }
       }
+      window.renderWidgetVisual = renderWidgetVisual;
+      window.renderCardChart = renderWidgetVisual;
 
       // =======================================================================
       // 13. CROSS-HIGHLIGHTING Y ESTADOS DE RED
@@ -12899,17 +13009,17 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const edad = document.getElementById('selectBaroEdad')?.value || 'todos';
         const macro = document.getElementById('selectBaroMacro')?.value || 'todas';
 
-        let n = qData.n;
+        let n = qData.n || qData.n_muestral || 452;
         if (edu !== 'todos' && qData.por_nivel_educativo?.[edu]) {
-          n = qData.por_nivel_educativo[edu].n;
+          n = qData.por_nivel_educativo[edu].n_muestral || qData.por_nivel_educativo[edu].n || n;
         } else if (nse !== 'todos' && qData.por_nse?.[nse]) {
-          n = qData.por_nse[nse].n;
+          n = qData.por_nse[nse].n_muestral || qData.por_nse[nse].n || n;
         } else if (macro !== 'todas' && qData.por_macrozona?.[macro]) {
-          n = qData.por_macrozona[macro].n;
+          n = qData.por_macrozona[macro].n_muestral || qData.por_macrozona[macro].n || n;
         } else if (sexo !== 'todos' && qData.por_sexo?.[sexo]) {
-          n = qData.por_sexo[sexo].n;
+          n = qData.por_sexo[sexo].n_muestral || qData.por_sexo[sexo].n || n;
         } else if (edad !== 'todos' && qData.por_tramo_edad?.[edad]) {
-          n = qData.por_tramo_edad[edad].n;
+          n = qData.por_tramo_edad[edad].n_muestral || qData.por_tramo_edad[edad].n || n;
         }
 
         const universeN = qData.N || 465;

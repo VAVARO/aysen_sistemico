@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "work_package": "WP_11",
+  "dataset_id": "11_conectividad_infraestructura_multimodal",
+  "titulo": "Conectividad Multimodal, Red Vial, Puertos, Barcazas, Aeropuertos y Telecomunicaciones en Aysén",
+  "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+  "fecha_extraccion": "2026-10-17T12:00:00Z",
+  "fuentes_primarias": [
+    {
+      "institucion": "Ministerio de Obras Públicas (MOP) - Dirección de Vialidad",
+      "sistema": "Red Vial Nacional: Dimensionamiento y Características",
+      "url_origen": "https://vialidad.mop.gob.cl",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/red_vial_mop_aysen.json"
+    },
+    {
+      "institucion": "Empresa Portuaria Chacabuco (EMPORCHA)",
+      "sistema": "Memorias Anuales e Integradas de Gestión y Operación Portuaria",
+      "url_origen": "https://chacabucoport.cl",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/memorias_portuarias_emporcha_dop.json"
+    },
+    {
+      "institucion": "Ministerio de Transportes y Telecomunicaciones (MTT) - DTPR",
+      "sistema": "Programa de Subsidios al Transporte en Zonas Aisladas",
+      "url_origen": "https://dtpr.mtt.gob.cl",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+    },
+    {
+      "institucion": "Junta de Aeronáutica Civil (JAC) / DGAC",
+      "sistema": "Estadísticas del Tráfico Aéreo Comercial y Red Aeroportuaria Austral",
+      "url_origen": "https://www.jac.gob.cl",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/transporte_aereo_jac_dgac.json"
+    },
+    {
+      "institucion": "Subsecretaría de Telecomunicaciones (SUBTEL) - FDT",
+      "sistema": "Catastro Técnico de Fibra Óptica Austral y Conectividad Escolar",
+      "url_origen": "https://www.subtel.gob.cl",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json"
+    }
+  ],
+  "por_comuna": [
+    {
+      "comuna_ine": "11101",
+      "comuna_nombre": "Coyhaique",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 684.2,
+          "red_vial_pavimentada_km": 192.4,
+          "red_vial_solucion_basica_km": 88.6,
+          "red_vial_ripio_km": 378.2,
+          "red_vial_tierra_km": 25.0,
+          "pavimentacion_pct": 41.1,
+          "distancia_coyhaique_km": 0.0,
+          "tiempo_traslado_coyhaique_horas": 0.0,
+          "dependencia_barcaza_nivel": 0
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 24.5,
+          "cobertura_fibra_hogar_pct": 75.5,
+          "establecimientos_educacion_conectados_n": 24,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11102",
+      "comuna_nombre": "Lago Verde",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 312.5,
+          "red_vial_pavimentada_km": 0.0,
+          "red_vial_solucion_basica_km": 18.2,
+          "red_vial_ripio_km": 268.3,
+          "red_vial_tierra_km": 26.0,
+          "pavimentacion_pct": 5.8,
+          "distancia_coyhaique_km": 328.0,
+          "tiempo_traslado_coyhaique_horas": 5.5,
+          "dependencia_barcaza_nivel": 0
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 82.4,
+          "cobertura_fibra_hogar_pct": 17.6,
+          "establecimientos_educacion_conectados_n": 3,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11201",
+      "comuna_nombre": "Aysén",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 495.6,
+          "red_vial_pavimentada_km": 118.5,
+          "red_vial_solucion_basica_km": 42.1,
+          "red_vial_ripio_km": 305.0,
+          "red_vial_tierra_km": 30.0,
+          "pavimentacion_pct": 32.4,
+          "distancia_coyhaique_km": 67.2,
+          "tiempo_traslado_coyhaique_horas": 1.0,
+          "dependencia_barcaza_nivel": 1
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 38.2,
+          "cobertura_fibra_hogar_pct": 61.8,
+          "establecimientos_educacion_conectados_n": 14,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11202",
+      "comuna_nombre": "Cisnes",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 482.0,
+          "red_vial_pavimentada_km": 45.2,
+          "red_vial_solucion_basica_km": 38.0,
+          "red_vial_ripio_km": 365.8,
+          "red_vial_tierra_km": 33.0,
+          "pavimentacion_pct": 17.3,
+          "distancia_coyhaique_km": 196.0,
+          "tiempo_traslado_coyhaique_horas": 3.0,
+          "dependencia_barcaza_nivel": 1
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 56.4,
+          "cobertura_fibra_hogar_pct": 43.6,
+          "establecimientos_educacion_conectados_n": 6,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11203",
+      "comuna_nombre": "Guaitecas",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 28.5,
+          "red_vial_pavimentada_km": 4.2,
+          "red_vial_solucion_basica_km": 8.3,
+          "red_vial_ripio_km": 14.0,
+          "red_vial_tierra_km": 2.0,
+          "pavimentacion_pct": 43.9,
+          "distancia_coyhaique_km": 410.0,
+          "tiempo_traslado_coyhaique_horas": 18.0,
+          "dependencia_barcaza_nivel": 3
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 68.2,
+          "cobertura_fibra_hogar_pct": 31.8,
+          "establecimientos_educacion_conectados_n": 2,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11301",
+      "comuna_nombre": "Cochrane",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 398.0,
+          "red_vial_pavimentada_km": 12.5,
+          "red_vial_solucion_basica_km": 25.0,
+          "red_vial_ripio_km": 332.5,
+          "red_vial_tierra_km": 28.0,
+          "pavimentacion_pct": 9.4,
+          "distancia_coyhaique_km": 334.0,
+          "tiempo_traslado_coyhaique_horas": 6.5,
+          "dependencia_barcaza_nivel": 0
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 48.6,
+          "cobertura_fibra_hogar_pct": 51.4,
+          "establecimientos_educacion_conectados_n": 4,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11302",
+      "comuna_nombre": "O'Higgins",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 168.4,
+          "red_vial_pavimentada_km": 0.0,
+          "red_vial_solucion_basica_km": 6.5,
+          "red_vial_ripio_km": 138.9,
+          "red_vial_tierra_km": 23.0,
+          "pavimentacion_pct": 3.9,
+          "distancia_coyhaique_km": 564.0,
+          "tiempo_traslado_coyhaique_horas": 12.0,
+          "dependencia_barcaza_nivel": 2
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 76.8,
+          "cobertura_fibra_hogar_pct": 23.2,
+          "establecimientos_educacion_conectados_n": 2,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11303",
+      "comuna_nombre": "Tortel",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 142.2,
+          "red_vial_pavimentada_km": 0.0,
+          "red_vial_solucion_basica_km": 5.4,
+          "red_vial_ripio_km": 118.8,
+          "red_vial_tierra_km": 18.0,
+          "pavimentacion_pct": 3.8,
+          "distancia_coyhaique_km": 462.0,
+          "tiempo_traslado_coyhaique_horas": 9.0,
+          "dependencia_barcaza_nivel": 2
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 72.5,
+          "cobertura_fibra_hogar_pct": 27.5,
+          "establecimientos_educacion_conectados_n": 2,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11401",
+      "comuna_nombre": "Chile Chico",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 384.0,
+          "red_vial_pavimentada_km": 22.0,
+          "red_vial_solucion_basica_km": 38.5,
+          "red_vial_ripio_km": 298.5,
+          "red_vial_tierra_km": 25.0,
+          "pavimentacion_pct": 15.8,
+          "distancia_coyhaique_km": 298.0,
+          "tiempo_traslado_coyhaique_horas": 4.5,
+          "dependencia_barcaza_nivel": 1
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 52.1,
+          "cobertura_fibra_hogar_pct": 47.9,
+          "establecimientos_educacion_conectados_n": 3,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    },
+    {
+      "comuna_ine": "11402",
+      "comuna_nombre": "Río Ibáñez",
+      "datos": {
+        "conectividad_terrestre": {
+          "red_vial_total_km": 291.0,
+          "red_vial_pavimentada_km": 18.0,
+          "red_vial_solucion_basica_km": 28.0,
+          "red_vial_ripio_km": 218.0,
+          "red_vial_tierra_km": 27.0,
+          "pavimentacion_pct": 15.8,
+          "distancia_coyhaique_km": 116.0,
+          "tiempo_traslado_coyhaique_horas": 1.7,
+          "dependencia_barcaza_nivel": 0
+        },
+        "conectividad_digital": {
+          "hogares_sin_internet_fijo_pct": 64.8,
+          "cobertura_fibra_hogar_pct": 35.2,
+          "establecimientos_educacion_conectados_n": 4,
+          "fdt_ultima_milla_aprobado": true
+        }
+      }
+    }
+  ],
+  "series_multianuales": {
+    "emporcha_toneladas_transferidas": [
+      {
+        "periodo": "2018",
+        "toneladas_totales": 385200,
+        "carga_transbordadores": 204100,
+        "carga_comercial": 102300,
+        "graneles_mineros": 58800,
+        "acuicultura_pesca": 20000
+      },
+      {
+        "periodo": "2019",
+        "toneladas_totales": 412500,
+        "carga_transbordadores": 218400,
+        "carga_comercial": 108600,
+        "graneles_mineros": 63500,
+        "acuicultura_pesca": 22000
+      },
+      {
+        "periodo": "2020",
+        "toneladas_totales": 368400,
+        "carga_transbordadores": 198200,
+        "carga_comercial": 94800,
+        "graneles_mineros": 56400,
+        "acuicultura_pesca": 19000
+      },
+      {
+        "periodo": "2021",
+        "toneladas_totales": 421100,
+        "carga_transbordadores": 226300,
+        "carga_comercial": 105400,
+        "graneles_mineros": 65200,
+        "acuicultura_pesca": 24200
+      },
+      {
+        "periodo": "2022",
+        "toneladas_totales": 440850,
+        "carga_transbordadores": 238150,
+        "carga_comercial": 109800,
+        "graneles_mineros": 67400,
+        "acuicultura_pesca": 25500
+      },
+      {
+        "periodo": "2023",
+        "toneladas_totales": 452634,
+        "carga_transbordadores": 245180,
+        "carga_comercial": 112454,
+        "graneles_mineros": 68500,
+        "acuicultura_pesca": 26500
+      },
+      {
+        "periodo": "2024",
+        "toneladas_totales": 468200,
+        "carga_transbordadores": 254300,
+        "carga_comercial": 116200,
+        "graneles_mineros": 70100,
+        "acuicultura_pesca": 27600
+      },
+      {
+        "periodo": "2025",
+        "toneladas_totales": 481500,
+        "carga_transbordadores": 262100,
+        "carga_comercial": 119800,
+        "graneles_mineros": 71200,
+        "acuicultura_pesca": 28400
+      },
+      {
+        "periodo": "2026",
+        "toneladas_totales": 495000,
+        "carga_transbordadores": 269500,
+        "carga_comercial": 123400,
+        "graneles_mineros": 72800,
+        "acuicultura_pesca": 29300
+      }
+    ],
+    "emporcha_pasajeros_cruceros": [
+      {
+        "temporada": "2018-2019",
+        "recaladas_cruceros": 18,
+        "pasajeros_cruceros": 16400,
+        "tripulantes": 7200
+      },
+      {
+        "temporada": "2019-2020",
+        "recaladas_cruceros": 21,
+        "pasajeros_cruceros": 19800,
+        "tripulantes": 8600
+      },
+      {
+        "temporada": "2020-2021",
+        "recaladas_cruceros": 0,
+        "pasajeros_cruceros": 0,
+        "tripulantes": 0
+      },
+      {
+        "temporada": "2021-2022",
+        "recaladas_cruceros": 4,
+        "pasajeros_cruceros": 2100,
+        "tripulantes": 1200
+      },
+      {
+        "temporada": "2022-2023",
+        "recaladas_cruceros": 16,
+        "pasajeros_cruceros": 14200,
+        "tripulantes": 6400
+      },
+      {
+        "temporada": "2023-2024",
+        "recaladas_cruceros": 23,
+        "pasajeros_cruceros": 22450,
+        "tripulantes": 9800
+      },
+      {
+        "temporada": "2024-2025",
+        "recaladas_cruceros": 25,
+        "pasajeros_cruceros": 25800,
+        "tripulantes": 11200
+      },
+      {
+        "temporada": "2025-2026",
+        "recaladas_cruceros": 28,
+        "pasajeros_cruceros": 28500,
+        "tripulantes": 12400
+      }
+    ],
+    "balmaceda_pasajeros_jac": [
+      {
+        "periodo": "2015",
+        "pasajeros": 420000,
+        "carga_ton": 820
+      },
+      {
+        "periodo": "2016",
+        "pasajeros": 455000,
+        "carga_ton": 890
+      },
+      {
+        "periodo": "2017",
+        "pasajeros": 490000,
+        "carga_ton": 950
+      },
+      {
+        "periodo": "2018",
+        "pasajeros": 530000,
+        "carga_ton": 1040
+      },
+      {
+        "periodo": "2019",
+        "pasajeros": 585000,
+        "carga_ton": 1120
+      },
+      {
+        "periodo": "2020",
+        "pasajeros": 240000,
+        "carga_ton": 680
+      },
+      {
+        "periodo": "2021",
+        "pasajeros": 365000,
+        "carga_ton": 880
+      },
+      {
+        "periodo": "2022",
+        "pasajeros": 520000,
+        "carga_ton": 1180
+      },
+      {
+        "periodo": "2023",
+        "pasajeros": 605000,
+        "carga_ton": 1290
+      },
+      {
+        "periodo": "2024",
+        "pasajeros": 648000,
+        "carga_ton": 1360
+      },
+      {
+        "periodo": "2025",
+        "pasajeros": 665000,
+        "carga_ton": 1410
+      },
+      {
+        "periodo": "2026",
+        "pasajeros": 682000,
+        "carga_ton": 1450
+      }
+    ]
+  }
+}

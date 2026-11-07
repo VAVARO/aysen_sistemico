@@ -84,6 +84,28 @@ const provCatalog = readJson('data/systemic/provenance_catalog.json');
 const holdingsRaw = readJson('data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json');
 const holdingsEvolRaw = readJson('data/raw/territorio_concesiones/evolucion_holdings_salmoneros_2018_2026.json');
 
+// Datasets complementarios: Conectividad Multimodal e Informes Territoriales Sectoriales
+let wp11 = null;
+const wp11Path = path.join(ROOT, 'data/systemic/11_conectividad_infraestructura_multimodal.json');
+if (fs.existsSync(wp11Path)) {
+  wp11 = readJson('data/systemic/11_conectividad_infraestructura_multimodal.json');
+}
+let viviendaRaw = null;
+const vivPath = path.join(ROOT, 'data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json');
+if (fs.existsSync(vivPath)) {
+  viviendaRaw = readJson('data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json');
+}
+let agroRaw = null;
+const agroPath = path.join(ROOT, 'data/raw/informes_territoriales/agropecuario_forestal_lena_glaciares_odepa_infor_dga.json');
+if (fs.existsSync(agroPath)) {
+  agroRaw = readJson('data/raw/informes_territoriales/agropecuario_forestal_lena_glaciares_odepa_infor_dga.json');
+}
+let saludDetRaw = null;
+const saludDetPath = path.join(ROOT, 'data/raw/informes_territoriales/salud_determinantes_sociales_minsal.json');
+if (fs.existsSync(saludDetPath)) {
+  saludDetRaw = readJson('data/raw/informes_territoriales/salud_determinantes_sociales_minsal.json');
+}
+
 // Carga opcional de Barómetro y Presets Inter-Hub
 let baroData = { hubs: {} };
 const baroPath = path.join(ROOT, 'data/raw/barometro_uaysen/barometro_integrado_aysen.json');
@@ -120,6 +142,28 @@ if (wp09 && wp09.por_comuna) {
 const wp10ByIne = {};
 if (wp10 && wp10.por_comuna) {
   wp10.por_comuna.forEach(c => { wp10ByIne[String(c.comuna_ine)] = c.datos || {}; });
+}
+const wp11ByIne = {};
+if (wp11 && wp11.por_comuna) {
+  wp11.por_comuna.forEach(c => { wp11ByIne[String(c.comuna_ine)] = c.datos || {}; });
+}
+const viviendaByIne = {};
+if (viviendaRaw && viviendaRaw.por_comuna) {
+  viviendaRaw.por_comuna.forEach(c => { viviendaByIne[String(c.comuna_ine)] = c || {}; });
+}
+const agroByIne = {};
+if (agroRaw && agroRaw.por_comuna) {
+  agroRaw.por_comuna.forEach(c => { agroByIne[String(c.comuna_ine)] = c || {}; });
+}
+const saludDetByIne = {};
+if (saludDetRaw && saludDetRaw.por_comuna) {
+  saludDetRaw.por_comuna.forEach(c => { saludDetByIne[String(c.comuna_ine)] = c || {}; });
+}
+const baroByIne = {};
+if (baroData && baroData.comunas) {
+  Object.keys(baroData.comunas).forEach(ine => {
+    baroByIne[String(ine)] = baroData.comunas[ine] || {};
+  });
 }
 
 // Catálogo de procedencia por ID de nodo
@@ -243,8 +287,43 @@ const OFFICIAL_VARIABLE_SOURCES = {
     url: 'https://dataciencia.anid.cl',
     collectionDate: '17 Oct 2026'
   },
+  mop_vialidad: {
+    name: 'Ministerio de Obras Públicas - Dirección de Vialidad',
+    url: 'https://vialidad.mop.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  emporcha: {
+    name: 'Empresa Portuaria Chacabuco (EMPORCHA)',
+    url: 'https://chacabucoport.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  mtt_dtpr: {
+    name: 'Ministerio de Transportes y Telecomunicaciones - DTPR',
+    url: 'https://dtpr.mtt.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  jac: {
+    name: 'Junta de Aeronáutica Civil (JAC) / DGAC',
+    url: 'https://www.jac.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  minvu: {
+    name: 'Ministerio de Vivienda y Urbanismo (MINVU)',
+    url: 'https://www.minvu.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  odepa: {
+    name: 'Oficina de Estudios y Políticas Agrarias (ODEPA) / INE',
+    url: 'https://www.odepa.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
+  dga: {
+    name: 'Dirección General de Aguas (DGA) - Inventario Glaciares',
+    url: 'https://dga.mop.gob.cl',
+    collectionDate: '17 Oct 2026'
+  },
   barometro: {
-    name: 'Universidad de Aysén - Barómetro Regional Aysén',
+    name: 'Universidad de Aysén — Barómetro Patagonia',
     url: 'https://uaysen.cl',
     collectionDate: '17 Oct 2026'
   }
@@ -278,6 +357,11 @@ function resolveOfficialSource(varKey, hubId) {
   if (/museos_|bibliotecas_|monumentos_|agentes_culturales|cultura|patrimonio|total_espacios_culturales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
   if (/proyectos_anid|monto_anid|publicaciones_|innovacion_corfo|centros_ctci|ctci|investigadores|total_proyectos_ctci|proyectos_corfo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.anid;
   if (/barometro|nota_percepcion|percepcion|evaluacion_uaysen|participacion_cultural/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.barometro;
+  if (/red_vial|pavimentad|tiempo_viaje|distancia_coyhaique/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mop_vialidad;
+  if (/emporcha|toneladas_transferidas|cruceros/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.emporcha;
+  if (/balmaceda_pasajeros|trafico_aereo|jac/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.jac;
+  if (/deficit_habitacional|ssr_apr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.minvu;
+  if (/ganado_|bovino|ovino|agro/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.odepa;
 
   if (h.includes('turis')) return OFFICIAL_VARIABLE_SOURCES.sernatur;
   if (h.includes('salmon') || h.includes('pesca')) return OFFICIAL_VARIABLE_SOURCES.sernapesca;
@@ -3027,6 +3111,11 @@ const comunas = comunasBase.map((c, idx) => {
   const g8 = wp08ByIne[ine] || {};
   const g9 = wp09ByIne[ine] || {};
   const g10 = wp10ByIne[ine] || {};
+  const g11 = wp11ByIne[ine] || {};
+  const gViv = viviendaByIne[ine] || {};
+  const gAgro = agroByIne[ine] || {};
+  const gSalud = saludDetByIne[ine] || {};
+  const gBaro = baroByIne[ine] || {};
 
   return {
     id: idx + 1,
@@ -3125,7 +3214,45 @@ const comunas = comunasBase.map((c, idx) => {
     investigadores_residentes: g10.investigadores_residentes_est || 0,
     establecimientos_escolares_n: (g5.educacion_mineduc || {}).establecimientos_escolares_total || 0,
     establecimientos_aps_n: (g8.salud_diferenciada?.atencion_primaria_aps || {}).total_establecimientos_aps || 0,
-    holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-'
+    holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-',
+
+    // Conectividad Multimodal (MOP, EMPORCHA, MTT, JAC, SUBTEL)
+    red_vial_total_km: (g11.conectividad_terrestre || {}).red_vial_total_km || 0,
+    red_vial_pavimentada_km: (g11.conectividad_terrestre || {}).red_vial_pavimentada_km || 0,
+    red_vial_ripio_km: (g11.conectividad_terrestre || {}).red_vial_ripio_km || 0,
+    red_vial_tierra_km: (g11.conectividad_terrestre || {}).red_vial_tierra_km || 0,
+    red_vial_pavimentada_pct: (g11.conectividad_terrestre || {}).pavimentacion_pct || 0,
+    distancia_coyhaique_km: (g11.conectividad_terrestre || {}).distancia_coyhaique_km || 0,
+    tiempo_viaje_coyhaique_hrs: (g11.conectividad_terrestre || {}).tiempo_traslado_coyhaique_horas || 0,
+    dependencia_barcaza_nivel: (g11.conectividad_terrestre || {}).dependencia_barcaza_nivel || 0,
+    hogares_sin_internet_fijo_pct: (g11.conectividad_digital || {}).hogares_sin_internet_fijo_pct || 0,
+    cobertura_fibra_hogar_pct: (g11.conectividad_digital || {}).cobertura_fibra_hogar_pct || 0,
+    establecimientos_educacion_conectados_n: (g11.conectividad_digital || {}).establecimientos_educacion_conectados_n || 0,
+
+    // Informes Territoriales: Vivienda, Agropecuario, Salud y Glaciares
+    deficit_habitacional_cuantitativo_n: gViv.deficit_cuantitativo_n || 0,
+    deficit_habitacional_cualitativo_n: gViv.deficit_cualitativo_n || 0,
+    sistemas_ssr_apr_n: gViv.sistemas_ssr_apr_n || 0,
+    cobertura_ssr_apr_familias: gViv.cobertura_ssr_apr_familias || 0,
+    ganado_bovino_cabezas: gAgro.ganado_bovino_cabezas || 0,
+    ganado_ovino_cabezas: gAgro.ganado_ovino_cabezas || 0,
+    bosque_nativo_ha: gAgro.bosque_nativo_ha || 0,
+    plantaciones_ha: gAgro.plantaciones_ha || 0,
+    consumo_lena_m3_hogar_ano: gAgro.consumo_lena_m3_hogar_ano || 0,
+    superficie_glaciares_km2: gAgro.superficie_glaciares_km2 || 0,
+    esperanza_vida_total_anos: gSalud.esperanza_vida_total_anos || 0,
+    cobertura_empam_pct: gSalud.cobertura_empam_pct || 0,
+    cobertura_pscv_pct: gSalud.cobertura_pscv_pct || 0,
+
+    // Barómetro Patagonia UAysén (8 variables canónicas)
+    barometro_confianza_institucional_pct: gBaro.barometro_confianza_institucional_pct || 0,
+    barometro_redes_apoyo_comunitario_pct: gBaro.barometro_redes_apoyo_comunitario_pct || 0,
+    barometro_orgullo_identidad_pct: gBaro.barometro_orgullo_identidad_pct || 0,
+    barometro_prioridad_conectividad_pct: gBaro.barometro_prioridad_conectividad_pct || 0,
+    barometro_tension_desarrollo_conservacion_pct: gBaro.barometro_tension_desarrollo_conservacion_pct || 0,
+    barometro_intencion_migracion_juvenil_pct: gBaro.barometro_intencion_migracion_juvenil_pct || 0,
+    barometro_evaluacion_acceso_salud_pct: gBaro.barometro_evaluacion_acceso_salud_pct || 0,
+    barometro_preocupacion_contaminacion_lena_pct: gBaro.barometro_preocupacion_contaminacion_lena_pct || 0
   };
 });
 
@@ -3983,6 +4110,12 @@ const bundle = {
   hubs,
   nodos,
   comunas,
+  series: {
+    barometro: baroData.series || {},
+    balmaceda_pasajeros_jac: (wp11 && wp11.series_multianuales && wp11.series_multianuales.balmaceda_pasajeros_jac) || [],
+    emporcha_toneladas: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_toneladas_transferidas) || [],
+    emporcha_cruceros: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_pasajeros_cruceros) || []
+  },
   holdings,
   holdingsPorComuna,
   evolucionHoldingsSalmoneros: holdingsEvolRaw,

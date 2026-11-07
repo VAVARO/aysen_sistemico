@@ -162,7 +162,45 @@
     pesquerias_industriales: 'Pesquerías y Cuotas Industriales / Artesanales',
     provincia: 'Provincia',
     cabecera: 'Cabecera Comunal',
-    cuenca_bna: 'Cuenca Hidrográfica Principal (BNA)'
+    cuenca_bna: 'Cuenca Hidrográfica Principal (BNA)',
+
+    // Conectividad Multimodal e Infraestructura
+    red_vial_total_km: 'Red Vial Total Comunal (km)',
+    red_vial_pavimentada_km: 'Red Vial Pavimentada (km)',
+    red_vial_ripio_km: 'Red Vial en Ripio (km)',
+    red_vial_tierra_km: 'Red Vial en Tierra (km)',
+    red_vial_pavimentada_pct: 'Porcentaje de Pavimentación Vial (%)',
+    distancia_coyhaique_km: 'Distancia Terrestre a Coyhaique (km)',
+    tiempo_viaje_coyhaique_hrs: 'Tiempo de Viaje a Coyhaique (hrs)',
+    dependencia_barcaza_nivel: 'Nivel de Dependencia de Barcaza',
+    hogares_sin_internet_fijo_pct: 'Hogares sin Conexión Fija a Internet (%)',
+    cobertura_fibra_hogar_pct: 'Cobertura de Fibra Óptica al Hogar (%)',
+    establecimientos_educacion_conectados_n: 'Establecimientos Educacionales Conectados FOA',
+
+    // Informes Territoriales: Vivienda, Agropecuario, Salud y Glaciares
+    deficit_habitacional_cuantitativo_n: 'Déficit Habitacional Cuantitativo (viviendas)',
+    deficit_habitacional_cualitativo_n: 'Déficit Habitacional Cualitativo (viviendas)',
+    sistemas_ssr_apr_n: 'Sistemas de Agua Potable Rural (SSR / APR)',
+    cobertura_ssr_apr_familias: 'Familias con Agua Potable Rural SSR/APR',
+    ganado_bovino_cabezas: 'Ganado Bovino (cabezas)',
+    ganado_ovino_cabezas: 'Ganado Ovino (cabezas)',
+    bosque_nativo_ha: 'Superficie de Bosque Nativo (ha)',
+    plantaciones_ha: 'Plantaciones Forestales (ha)',
+    consumo_lena_m3_hogar_ano: 'Consumo Residencial de Leña (m³/hogar/año)',
+    superficie_glaciares_km2: 'Superficie de Glaciares DGA (km²)',
+    esperanza_vida_total_anos: 'Esperanza de Vida al Nacer (años)',
+    cobertura_empam_pct: 'Cobertura Control Adulto Mayor EMPAM (%)',
+    cobertura_pscv_pct: 'Cobertura Salud Cardiovascular PSCV (%)',
+
+    // Barómetro Patagonia UAysén (8 variables canónicas)
+    barometro_confianza_institucional_pct: 'Confianza en Gestión Municipal (%)',
+    barometro_redes_apoyo_comunitario_pct: 'Redes de Apoyo Comunitario (%)',
+    barometro_orgullo_identidad_pct: 'Orgullo e Identidad Territorial (%)',
+    barometro_prioridad_conectividad_pct: 'Prioridad de Acceso a Conectividad (%)',
+    barometro_tension_desarrollo_conservacion_pct: 'Tensión Desarrollo vs. Conservación (%)',
+    barometro_intencion_migracion_juvenil_pct: 'Percepción Oportunidades / Retención Juvenil (%)',
+    barometro_evaluacion_acceso_salud_pct: 'Evaluación Acceso a Salud de Calidad (%)',
+    barometro_preocupacion_contaminacion_lena_pct: 'Preocupación por Contaminación de Leña (%)'
   };
 
   // ============================================================================
@@ -188,6 +226,26 @@
       institucion: 'SERVEL — Resultados Electorales y Autoridades Comunales (2024-2028)',
       titulo: 'SERVEL — Resultados Electorales y Autoridades Comunales (2024-2028)',
       url: 'https://www.servel.cl/'
+    },
+    EMPORCHA: {
+      institucion: 'Empresa Portuaria Chacabuco (EMPORCHA)',
+      titulo: 'EMPORCHA — Memorias Anuales e Integradas de Gestión Portuaria',
+      url: 'https://chacabucoport.cl/'
+    },
+    MINVU: {
+      institucion: 'MINVU — Ministerio de Vivienda y Urbanismo',
+      titulo: 'MINVU — Catastro de Déficit Habitacional Comunal',
+      url: 'https://www.minvu.gob.cl/'
+    },
+    ODEPA_INE: {
+      institucion: 'ODEPA / INE — Censo Agropecuario y Forestal',
+      titulo: 'ODEPA / INE — Estadísticas Agropecuarias Comunales',
+      url: 'https://www.odepa.gob.cl/'
+    },
+    BAROMETRO_UAYSEN: {
+      institucion: 'Universidad de Aysén — Barómetro Regional Patagonia',
+      titulo: 'Universidad de Aysén — Barómetro Patagonia: Percepción y Cohesión Ciudadana',
+      url: 'https://uaysen.cl/'
     },
     SERNAPESCA_SUBPESCA: {
       institucion: 'SERNAPESCA / SUBPESCA — Catastro Acuícola y Estadísticas de Cosecha',
@@ -283,6 +341,11 @@
       institucion: 'DGAC — Red Aeroportuaria y Aeródromos de Aysén',
       titulo: 'DGAC — Red Aeroportuaria y Aeródromos de Aysén',
       url: 'https://www.dgac.gob.cl/'
+    },
+    JAC_DGAC: {
+      institucion: 'JAC / DGAC — Junta de Aeronáutica Civil y Dirección General de Aeronáutica Civil',
+      titulo: 'JAC / DGAC — Estadísticas de Transporte Aéreo Regional y Red de Aeródromos',
+      url: 'https://www.jac.gob.cl/'
     },
     SERNAGEOMIN: {
       institucion: 'SERNAGEOMIN — Catastro de Concesiones Mineras y Red Volcánica',
@@ -389,7 +452,49 @@
     monto_anid_mclp: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
     innovacion_corfo_mclp: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
     proyectos_ctci_total: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
-    investigadores_residentes: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO
+    investigadores_residentes: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
+
+    // Conectividad Multimodal
+    red_vial_total_km: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    red_vial_pavimentada_km: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    red_vial_ripio_km: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    red_vial_tierra_km: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    red_vial_pavimentada_pct: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    distancia_coyhaique_km: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    tiempo_viaje_coyhaique_hrs: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    dependencia_barcaza_nivel: PROVENANCE_CATALOG_ENTRIES.MTT_DTPR,
+    hogares_sin_internet_fijo_pct: PROVENANCE_CATALOG_ENTRIES.SUBTEL,
+    cobertura_fibra_hogar_pct: PROVENANCE_CATALOG_ENTRIES.SUBTEL,
+    establecimientos_educacion_conectados_n: PROVENANCE_CATALOG_ENTRIES.SUBTEL,
+    trafico_aereo_pasajeros_balmaceda_jac: PROVENANCE_CATALOG_ENTRIES.JAC_DGAC,
+    balmaceda_pasajeros_jac: PROVENANCE_CATALOG_ENTRIES.JAC_DGAC,
+    emporcha_toneladas: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
+    emporcha_cruceros: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
+
+    // Informes Territoriales
+    deficit_habitacional_cuantitativo_n: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    deficit_habitacional_cualitativo_n: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    sistemas_ssr_apr_n: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    cobertura_ssr_apr_familias: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    ganado_bovino_cabezas: PROVENANCE_CATALOG_ENTRIES.ODEPA_INE,
+    ganado_ovino_cabezas: PROVENANCE_CATALOG_ENTRIES.ODEPA_INE,
+    bosque_nativo_ha: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
+    plantaciones_ha: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
+    consumo_lena_m3_hogar_ano: PROVENANCE_CATALOG_ENTRIES.CNE,
+    superficie_glaciares_km2: PROVENANCE_CATALOG_ENTRIES.DGA_MOP,
+    esperanza_vida_total_anos: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
+    cobertura_empam_pct: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
+    cobertura_pscv_pct: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
+
+    // Barómetro Patagonia UAysén
+    barometro_confianza_institucional_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_redes_apoyo_comunitario_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_orgullo_identidad_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_prioridad_conectividad_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_tension_desarrollo_conservacion_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_intencion_migracion_juvenil_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_evaluacion_acceso_salud_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    barometro_preocupacion_contaminacion_lena_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN
   };
 
   // ============================================================================
@@ -411,7 +516,7 @@
     visitantes_snaspe: ['visitas a parques nacionales', 'parques nacionales', 'visitacion snaspe', 'visitas snaspe', 'turistas parques'],
     pernoctaciones_emat: ['noches de alojamiento turistico', 'alojamiento turistico', 'pernoctaciones', 'emat'],
     prestadores_sernatur: ['prestadores turisticos', 'sernatur', 'oferta turistica'],
-    hogares_lena_pct: ['calefaccionan con lena', 'hogares que calefaccionan con lena', 'uso de lena', 'calefaccion lena', 'lena'],
+    hogares_lena_pct: ['calefaccionan con lena', 'hogares que calefaccionan con lena', 'uso de lena', 'calefaccion lena', 'calefaccion a lena'],
     dias_sobre_norma_mp25: ['contaminacion critica mp2.5', 'mp2.5', 'mp25', 'dias con contaminacion', 'calidad del aire', 'material particulado'],
     saidi_horas_anual: ['saidi', 'cortes de luz', 'interrupcion electrica', 'calidad electrica'],
     tarifa_bt1_clp: ['tarifa electrica', 'tarifa bt1', 'precio electricidad'],
@@ -422,7 +527,39 @@
     pobreza_ingresos_pct: ['pobreza por ingresos', 'tasa de pobreza', 'pobreza casen'],
     pobreza_multidim_pct: ['pobreza multidimensional'],
     empresas_sii: ['empresas sii', 'numero de empresas', 'empresas activas', 'tejido empresarial'],
-    inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia', 'evaluacion ambiental']
+    inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia', 'evaluacion ambiental'],
+    red_vial_total_km: ['red vial', 'red vial total', 'kilometros de caminos', 'vialidad'],
+    red_vial_pavimentada_km: ['red vial pavimentada', 'caminos pavimentados', 'asfalto'],
+    red_vial_pavimentada_pct: ['porcentaje de pavimentacion', 'pavimentacion vial', 'pavimentacion'],
+    tiempo_viaje_coyhaique_hrs: ['tiempo de viaje', 'tiempo a coyhaique', 'horas de viaje', 'horas a coyhaique', 'traslado coyhaique'],
+    hogares_sin_internet_fijo_pct: ['sin internet', 'brecha digital', 'hogares sin internet', 'internet fijo', 'fibra optica', 'conectividad digital'],
+    deficit_habitacional_cuantitativo_n: ['deficit habitacional', 'deficit cuantitativo', 'viviendas nuevas', 'falta de viviendas', 'vivienda'],
+    deficit_habitacional_cualitativo_n: ['deficit cualitativo', 'mejoramiento de vivienda', 'viviendas a reparar'],
+    ganado_bovino_cabezas: ['ganado bovino', 'bovinos', 'vacas', 'cabezas bovinas', 'ganaderia bovina'],
+    ganado_ovino_cabezas: ['ganado ovino', 'ovinos', 'ovejas', 'cabezas ovinas', 'ganaderia ovina'],
+    superficie_glaciares_km2: ['glaciares', 'superficie glaciar', 'hielo', 'campos de hielo'],
+    barometro_confianza_institucional_pct: ['confianza municipal', 'barometro confianza', 'confianza institucional', 'aporte municipio', 'barometro'],
+    barometro_redes_apoyo_comunitario_pct: ['redes de apoyo', 'participacion comunitaria', 'apoyo comunitario', 'barometro social'],
+    barometro_orgullo_identidad_pct: ['orgullo regional', 'identidad regional', 'identidad aysen', 'pertenencia austral'],
+    barometro_prioridad_conectividad_pct: ['prioridad conectividad', 'acceso conectividad', 'barometro conectividad'],
+    barometro_tension_desarrollo_conservacion_pct: ['desarrollo vs conservacion', 'conflictos ambientales', 'tension desarrollo conservacion'],
+    barometro_intencion_migracion_juvenil_pct: ['retencion juvenil', 'migracion juvenil', 'oportunidades trabajo jovenes'],
+    barometro_evaluacion_acceso_salud_pct: ['evaluacion salud', 'satisfaccion salud', 'acceso a salud barometro'],
+    barometro_preocupacion_contaminacion_lena_pct: ['preocupacion lena', 'humo lena barometro', 'contaminacion aire barometro', 'urgencia lena'],
+    esperanza_vida_total_anos: ['esperanza de vida', 'expectativa de vida', 'anos de vida', 'longevidad', 'vida al nacer'],
+    consumo_lena_m3_hogar_ano: ['consumo de lena', 'consumo residencial lena', 'metros cubicos lena', 'lena por hogar'],
+    sistemas_ssr_apr_n: ['agua potable rural', 'ssr', 'apr', 'sistemas de agua potable'],
+    dependencia_barcaza_nivel: ['dependencia de barcaza', 'barcaza', 'barcazas', 'conectividad maritima', 'transporte maritimo', 'subsidio barcaza', 'barcazas subsidiadas', 'fiordo mitchell', 'barcaza litoral'],
+    distancia_coyhaique_km: ['distancia a coyhaique', 'distancia terrestre', 'distancia terrestre a coyhaique', 'km a coyhaique', 'kilometros a coyhaique'],
+    red_vial_ripio_km: ['red vial en ripio', 'caminos de ripio', 'ripio', 'red ripio'],
+    red_vial_tierra_km: ['red vial en tierra', 'caminos de tierra', 'tierra'],
+    cobertura_fibra_hogar_pct: ['cobertura de fibra optica', 'fibra al hogar', 'foa hogar', 'cobertura fibra', 'fibra optica austral'],
+    establecimientos_educacion_conectados_n: ['establecimientos educacionales conectados', 'escuelas conectadas', 'colegios conectados foa', 'conectividad escolar 2030', 'educacion 2030 conectividad'],
+    cobertura_ssr_apr_familias: ['familias con apr', 'cobertura apr', 'familias con agua potable rural', 'familias ssr'],
+    bosque_nativo_ha: ['bosque nativo', 'superficie bosque nativo', 'hectareas bosque nativo', 'bosques nativos'],
+    plantaciones_ha: ['plantaciones forestales', 'superficie plantaciones', 'forestal'],
+    cobertura_empam_pct: ['empam', 'control adulto mayor', 'examen medicina preventiva adulto mayor', 'salud adulto mayor', 'adultos mayores empam'],
+    cobertura_pscv_pct: ['pscv', 'salud cardiovascular', 'programa de salud cardiovascular', 'control cardiovascular']
   };
 
   // ============================================================================
@@ -527,6 +664,39 @@
       chartTitle: 'Total de Espacios Culturales e Infraestructura vs. Total de Proyectos CTCi e Innovación',
       provenanceKeys: ['total_espacios_culturales', 'proyectos_ctci_total'],
       keys: ['total_espacios_culturales', 'bibliotecas_snbp_n', 'fondart_fndr_mclp', 'proyectos_ctci_total', 'monto_anid_mclp', 'innovacion_corfo_mclp']
+    },
+    conectividad: {
+      id: 'conectividad',
+      title: 'Conectividad Multimodal e Infraestructura',
+      hub: 'Conectividad',
+      regex: /\b(conectividad|red vial|vialidad|caminos|carretera austral|ruta 7|pavimentacion|barcaza|barcazas|puerto chacabuco|emporcha|transporte maritimo|balmaceda|aerodromo|aeropuerto|fibra optica|foa)\b/i,
+      varX: 'red_vial_pavimentada_km',
+      varY: 'tiempo_viaje_coyhaique_hrs',
+      chartTitle: 'Red Vial Pavimentada (km) vs. Tiempo de Viaje a Coyhaique (horas)',
+      provenanceKeys: ['red_vial_pavimentada_km', 'tiempo_viaje_coyhaique_hrs'],
+      keys: ['red_vial_total_km', 'red_vial_pavimentada_km', 'red_vial_ripio_km', 'red_vial_tierra_km', 'red_vial_pavimentada_pct', 'distancia_coyhaique_km', 'tiempo_viaje_coyhaique_hrs', 'dependencia_barcaza_nivel', 'cobertura_fibra_hogar_pct', 'hogares_sin_internet_fijo_pct']
+    },
+    barometro: {
+      id: 'barometro',
+      title: 'Barómetro Regional y Percepción Territorial (UAysén)',
+      hub: 'Barómetro',
+      regex: /\b(barometro|percepcion|cohesion|confianza|orgullo|identidad|uaysen|encuesta ciudadana|prioridad conectividad|tension ambiental|retencion juvenil)\b/i,
+      varX: 'barometro_confianza_institucional_pct',
+      varY: 'barometro_orgullo_identidad_pct',
+      chartTitle: 'Confianza en Gestión Municipal (%) vs. Orgullo e Identidad Austral (%)',
+      provenanceKeys: ['barometro_confianza_institucional_pct', 'barometro_orgullo_identidad_pct'],
+      keys: ['barometro_confianza_institucional_pct', 'barometro_redes_apoyo_comunitario_pct', 'barometro_orgullo_identidad_pct', 'barometro_prioridad_conectividad_pct', 'barometro_tension_desarrollo_conservacion_pct', 'barometro_intencion_migracion_juvenil_pct', 'barometro_evaluacion_acceso_salud_pct', 'barometro_preocupacion_contaminacion_lena_pct']
+    },
+    vivienda_habitabilidad: {
+      id: 'vivienda_habitabilidad',
+      title: 'Vivienda, APR y Habitabilidad Austral',
+      hub: 'Hábitat',
+      regex: /\b(vivienda|deficit habitacional|hacinamiento|apr|ssr|agua potable rural|sanidad|habitabilidad)\b/i,
+      varX: 'deficit_habitacional_cuantitativo_n',
+      varY: 'sistemas_ssr_apr_n',
+      chartTitle: 'Déficit Habitacional Cuantitativo (viviendas) vs. Sistemas APR/SSR',
+      provenanceKeys: ['deficit_habitacional_cuantitativo_n', 'sistemas_ssr_apr_n'],
+      keys: ['deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias']
     }
   };
 

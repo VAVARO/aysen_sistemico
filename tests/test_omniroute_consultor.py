@@ -835,6 +835,134 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Fallo en verificacion de etiquetas canonicas con tildes:\n{proc.stderr}")
         self.assertIn("CANONICAL_LABELS_OK", proc.stdout)
 
+    def test_23_conectividad_multimodal_y_barometro_en_omniroute(self):
+        """Verifica que js/omniroute_client.js resuelva consultas sobre conectividad multimodal, reportes oficiales y Barometro."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const client = require('./js/omniroute_client.js');
+        const ok = client.init(sandbox.AYSEN_HUBS_DATA);
+        if (!ok) {
+            console.error('Failed to init client');
+            process.exit(1);
+        }
+
+        // 1. Verificar variables clave en comunas de AYSEN_HUBS_DATA
+        const comunas = sandbox.AYSEN_HUBS_DATA.comunas;
+        const requiredVars = [
+            'red_vial_total_km',
+            'red_vial_pavimentada_km',
+            'red_vial_ripio_km',
+            'red_vial_tierra_km',
+            'red_vial_pavimentada_pct',
+            'distancia_coyhaique_km',
+            'tiempo_viaje_coyhaique_hrs',
+            'dependencia_barcaza_nivel',
+            'hogares_sin_internet_fijo_pct',
+            'cobertura_fibra_hogar_pct',
+            'establecimientos_educacion_conectados_n',
+            'deficit_habitacional_cuantitativo_n',
+            'deficit_habitacional_cualitativo_n',
+            'sistemas_ssr_apr_n',
+            'cobertura_ssr_apr_familias',
+            'ganado_bovino_cabezas',
+            'ganado_ovino_cabezas',
+            'bosque_nativo_ha',
+            'plantaciones_ha',
+            'consumo_lena_m3_hogar_ano',
+            'superficie_glaciares_km2',
+            'esperanza_vida_total_anos',
+            'cobertura_empam_pct',
+            'cobertura_pscv_pct',
+            'barometro_confianza_institucional_pct',
+            'barometro_redes_apoyo_comunitario_pct',
+            'barometro_orgullo_identidad_pct',
+            'barometro_prioridad_conectividad_pct',
+            'barometro_tension_desarrollo_conservacion_pct',
+            'barometro_intencion_migracion_juvenil_pct',
+            'barometro_evaluacion_acceso_salud_pct',
+            'barometro_preocupacion_contaminacion_lena_pct'
+        ];
+
+        for (const v of requiredVars) {
+            for (const c of comunas) {
+                if (c[v] === undefined || c[v] === null || typeof c[v] !== 'number' || isNaN(c[v])) {
+                    console.error('Missing or non-numeric var ' + v + ' in comuna ' + c.nombre);
+                    process.exit(2);
+                }
+            }
+        }
+
+        // 2. Verificar series temporales de conectividad y barometro
+        const series = sandbox.AYSEN_HUBS_DATA.series || {};
+        const requiredSeries = [
+            'balmaceda_pasajeros_jac',
+            'emporcha_toneladas',
+            'emporcha_cruceros',
+            'barometro'
+        ];
+        for (const s of requiredSeries) {
+            if (!series[s]) {
+                console.error('Missing series ' + s);
+                process.exit(3);
+            }
+        }
+
+        // 3. Probar resolucion de consultas cerradas
+        const testQueries = [
+            { q: 'red vial pavimentada en aysen', expectedVar: 'red_vial_pavimentada_km' },
+            { q: 'dependencia de barcaza en las comunas', expectedVar: 'dependencia_barcaza_nivel' },
+            { q: 'distancia a coyhaique por comuna', expectedVar: 'distancia_coyhaique_km' },
+            { q: 'cobertura de fibra optica al hogar', expectedVar: 'cobertura_fibra_hogar_pct' },
+            { q: 'hogares sin conexion a internet fijo por comuna', expectedVar: 'hogares_sin_internet_fijo_pct' },
+            { q: 'deficit habitacional cuantitativo por comuna minvu', expectedVar: 'deficit_habitacional_cuantitativo_n' },
+            { q: 'control adulto mayor empam en aysen', expectedVar: 'cobertura_empam_pct' },
+            { q: 'salud cardiovascular pscv por comuna', expectedVar: 'cobertura_pscv_pct' },
+            { q: 'ganado bovino por comuna', expectedVar: 'ganado_bovino_cabezas' },
+            { q: 'superficie de glaciares dga', expectedVar: 'superficie_glaciares_km2' },
+            { q: 'barometro patagonia confianza institucional uaysen', expectedVar: 'barometro_confianza_institucional_pct' },
+            { q: 'barometro orgullo regional aysen', expectedVar: 'barometro_orgullo_identidad_pct' },
+            { q: 'esperanza de vida al nacer por comuna minsal', expectedVar: 'esperanza_vida_total_anos' },
+            { q: 'consumo residencial de lena por comuna aysen', expectedVar: 'consumo_lena_m3_hogar_ano' }
+        ];
+
+        for (const t of testQueries) {
+            const res = client.resolveClosedWorldDeterministic(t.q);
+            if (!res.chart.render) {
+                console.error('Query did not render chart:', t.q);
+                process.exit(4);
+            }
+            if (res.chart.varX !== t.expectedVar && res.chart.varY !== t.expectedVar) {
+                console.error('Query ' + t.q + ' resolved to varX=' + res.chart.varX + ' varY=' + res.chart.varY + ' instead of ' + t.expectedVar);
+                process.exit(5);
+            }
+        }
+
+        // 4. Probar consultas sectoriales compuestas
+        const secResCon = client.resolveClosedWorldDeterministic('conectividad en aysen');
+        if (!secResCon.chart.render || !secResCon.chart.varX) {
+            console.error('Sector conectividad query failed');
+            process.exit(6);
+        }
+        const secResBar = client.resolveClosedWorldDeterministic('barometro en aysen');
+        if (!secResBar.chart.render || !secResBar.chart.varX) {
+            console.error('Sector barometro query failed');
+            process.exit(7);
+        }
+
+        console.log('OMNIROUTE_MULTIMODAL_BARO_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_23 omniroute:\n{proc.stderr}")
+        self.assertIn("OMNIROUTE_MULTIMODAL_BARO_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

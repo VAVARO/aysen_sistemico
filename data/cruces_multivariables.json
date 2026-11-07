@@ -1633,7 +1633,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "gasto_cultura_per_capita_clp",
-            "varY": "total_espacios_culturales",
+            "varY": "barometro_orgullo_identidad_pct",
             "varBase": "coyhaique",
             "varCompare": "comunas_aisladas",
             "metrics": [
@@ -2026,7 +2026,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "investigadores_residentes_est",
-            "varY": "monto_anid_acumulado_mclp",
+            "varY": "barometro_prioridad_conectividad_pct",
             "axes": [
               "investigadores_residentes_est",
               "monto_anid_acumulado_mclp",

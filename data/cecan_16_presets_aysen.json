@@ -1919,7 +1919,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "dependencia_fcm_pct",
-            "varY": "inversion_directa_pct",
+            "varY": "barometro_confianza_institucional_pct",
             "barometro_question": "F4_C",
             "structural_variable": "dependencia_fcm_pct",
             "mirror_series": {
@@ -2274,7 +2274,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "dias_sobre_norma_mp25",
-            "varY": "hogares_lena_pct",
+            "varY": "barometro_preocupacion_contaminacion_lena_pct",
             "barometro_question": "I4_A",
             "structural_variable": "dias_sobre_norma_mp25",
             "mirror_series": {
@@ -2630,7 +2630,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "biomasa_salmon_ton",
-            "varY": "concesiones_salmon",
+            "varY": "barometro_tension_desarrollo_conservacion_pct",
             "barometro_question": "I1_D",
             "structural_variable": "biomasa_salmon_ton",
             "mirror_series": {
@@ -2985,7 +2985,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "trabajadores_sii",
-            "varY": "empresas_sii",
+            "varY": "barometro_intencion_migracion_juvenil_pct",
             "barometro_question": "B4_A",
             "structural_variable": "trabajadores_sii",
             "mirror_series": {
@@ -3340,7 +3340,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "pobreza_multidim_pct",
-            "varY": "poblacion_censo_2024",
+            "varY": "barometro_redes_apoyo_comunitario_pct",
             "barometro_question": "B3_F",
             "structural_variable": "pobreza_multidim_pct",
             "mirror_series": {
@@ -3695,7 +3695,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "prestadores_sernatur",
-            "varY": "pernoctaciones_emat",
+            "varY": "barometro_orgullo_identidad_pct",
             "barometro_question": "I3_A",
             "structural_variable": "prestadores_sernatur",
             "mirror_series": {
@@ -4050,7 +4050,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "superficie_snaspe_pct",
-            "varY": "cobertura_vegetal_nativa_ha",
+            "varY": "barometro_tension_desarrollo_conservacion_pct",
             "barometro_question": "I4_E",
             "structural_variable": "superficie_snaspe_pct",
             "mirror_series": {
@@ -4405,7 +4405,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "medicos_por_mil_hab",
-            "varY": "camas_hospitalarias",
+            "varY": "barometro_evaluacion_acceso_salud_pct",
             "barometro_question": "B3_A",
             "structural_variable": "medicos_por_mil_hab",
             "mirror_series": {
@@ -4793,7 +4793,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "gasto_cultura_per_capita_clp",
-            "varY": "total_espacios_culturales",
+            "varY": "barometro_orgullo_identidad_pct",
             "varBase": "coyhaique",
             "varCompare": "comunas_aisladas",
             "metrics": [
@@ -5186,7 +5186,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "investigadores_residentes_est",
-            "varY": "monto_anid_acumulado_mclp",
+            "varY": "barometro_prioridad_conectividad_pct",
             "axes": [
               "investigadores_residentes_est",
               "monto_anid_acumulado_mclp",

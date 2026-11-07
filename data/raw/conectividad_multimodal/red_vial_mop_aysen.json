@@ -1,0 +1,284 @@
+{
+  "fuente": "Ministerio de Obras Públicas (MOP) - Dirección de Vialidad de Chile",
+  "sistema": "Red Vial Nacional: Dimensionamiento y Características - Región de Aysén",
+  "url_origen": "https://vialidad.mop.gob.cl",
+  "fecha_corte": "2026-10-17",
+  "resumen_regional": {
+    "km_totales_red_vial": 3386.4,
+    "km_pavimentados_hormigon_asfalto": 412.8,
+    "km_soluciones_basicas_cape_seal": 298.5,
+    "km_ripio_granular": 2415.6,
+    "km_tierra_huella": 259.5,
+    "porcentaje_pavimentado_consolidado_pct": 21.0,
+    "ruta7_longitudinal_austral": {
+      "longitud_total_region_aysen_km": 835.0,
+      "km_pavimentados": 384.9,
+      "km_ripio": 450.1,
+      "porcentaje_pavimentacion_pct": 46.1,
+      "ritmo_anual_pavimentacion_km_ano": 28.5,
+      "tramos_prioritarios_en_ejecucion": [
+        "Villa Mañihuales - Villa Amengual (Ruta 7 Norte)",
+        "Cuesta Las Pulgas - Puyuhuapi (Ruta 7 Norte)",
+        "Cerro Castillo - Alcantarilla Cascadas (Ruta 7 Sur)",
+        "Acceso Cochrane Norte (Ruta 7 Sur)"
+      ]
+    },
+    "rutas_transversales_estrategicas": [
+      {
+        "codigo": "Ruta CH-240",
+        "nombre": "Coyhaique - Puerto Aysén - Puerto Chacabuco",
+        "longitud_km": 67.2,
+        "pavimentado_km": 67.2,
+        "tipo_carpeta": "Pavimento asfáltico y hormigón",
+        "estado": "100% Pavimentado y operativo"
+      },
+      {
+        "codigo": "Ruta CH-245",
+        "nombre": "Cruce El Blanco - Balmaceda - Paso Fronterizo Huemules",
+        "longitud_km": 28.4,
+        "pavimentado_km": 28.4,
+        "tipo_carpeta": "Pavimento asfáltico",
+        "estado": "100% Pavimentado y de alto flujo binacional"
+      },
+      {
+        "codigo": "Ruta CH-265",
+        "nombre": "El Maitén - Puerto Guadal - Mallín Grande - Chile Chico - Paso Jeinimeni",
+        "longitud_km": 120.4,
+        "pavimentado_km": 42.5,
+        "tipo_carpeta": "Mixta (42.5 km cape seal / 77.9 km ripio consolidado)",
+        "estado": "Circunvalación sur del Lago General Carrera"
+      },
+      {
+        "codigo": "Ruta X-10",
+        "nombre": "La Junta - Puerto Raúl Marín Balmaceda",
+        "longitud_km": 74.8,
+        "pavimentado_km": 0.0,
+        "tipo_carpeta": "Ripio",
+        "estado": "Conectividad litoral norte (requiere barcaza Río Palena)"
+      },
+      {
+        "codigo": "Ruta X-83",
+        "nombre": "Paso Roballos - Entrada Baker - Cochrane",
+        "longitud_km": 65.0,
+        "pavimentado_km": 0.0,
+        "tipo_carpeta": "Ripio",
+        "estado": "Paso binacional hacia Parque Patagonia y Argentina"
+      },
+      {
+        "codigo": "Ruta X-91",
+        "nombre": "Puerto Yungay - Río Bravo (conexión Tortel - O'Higgins)",
+        "longitud_km": 102.0,
+        "pavimentado_km": 0.0,
+        "tipo_carpeta": "Ripio de alta montaña",
+        "estado": "Tramo austral CMT (Cuerpo Militar del Trabajo)"
+      }
+    ],
+    "pasos_fronterizos_habilitados": [
+      {
+        "nombre": "Paso Huemules",
+        "comuna": "Coyhaique",
+        "ruta": "CH-245",
+        "tipo": "Terrestre permanente",
+        "pavimentado": true
+      },
+      {
+        "nombre": "Paso Coyhaique Alto",
+        "comuna": "Coyhaique",
+        "ruta": "CH-240",
+        "tipo": "Terrestre permanente",
+        "pavimentado": true
+      },
+      {
+        "nombre": "Paso Triana",
+        "comuna": "Coyhaique",
+        "ruta": "X-550",
+        "tipo": "Terrestre vecinal",
+        "pavimentado": false
+      },
+      {
+        "nombre": "Paso Las Pampas / Lago Verde",
+        "comuna": "Lago Verde",
+        "ruta": "X-12",
+        "tipo": "Terrestre estacional",
+        "pavimentado": false
+      },
+      {
+        "nombre": "Paso Río Jeinimeni",
+        "comuna": "Chile Chico",
+        "ruta": "CH-265",
+        "tipo": "Terrestre permanente",
+        "pavimentado": true
+      },
+      {
+        "nombre": "Paso Palavicini / Ing. Ibáñez",
+        "comuna": "Río Ibáñez",
+        "ruta": "X-65",
+        "tipo": "Terrestre permanente",
+        "pavimentado": false
+      },
+      {
+        "nombre": "Paso Roballos",
+        "comuna": "Cochrane",
+        "ruta": "X-83",
+        "tipo": "Terrestre permanente",
+        "pavimentado": false
+      },
+      {
+        "nombre": "Paso Río Mayer",
+        "comuna": "O'Higgins",
+        "ruta": "X-905",
+        "tipo": "Terrestre vecinal",
+        "pavimentado": false
+      },
+      {
+        "nombre": "Paso Dos Lagunas / Candelario Mancilla",
+        "comuna": "O'Higgins",
+        "ruta": "Lacustre / Huella",
+        "tipo": "Lacustre bimodal hacia Chaltén",
+        "pavimentado": false
+      }
+    ]
+  },
+  "por_comuna": [
+    {
+      "comuna_ine": "11101",
+      "comuna_nombre": "Coyhaique",
+      "red_vial_total_km": 684.2,
+      "red_vial_pavimentada_km": 192.4,
+      "red_vial_solucion_basica_km": 88.6,
+      "red_vial_ripio_km": 378.2,
+      "red_vial_tierra_km": 25.0,
+      "pavimentacion_pct": 41.1,
+      "distancia_coyhaique_km": 0.0,
+      "tiempo_traslado_coyhaique_horas": 0.0,
+      "dependencia_barcaza_nivel": 0,
+      "descripcion_acceso": "Capital regional y nodo terrestre central continuo sin transbordos."
+    },
+    {
+      "comuna_ine": "11102",
+      "comuna_nombre": "Lago Verde",
+      "red_vial_total_km": 312.5,
+      "red_vial_pavimentada_km": 0.0,
+      "red_vial_solucion_basica_km": 18.2,
+      "red_vial_ripio_km": 268.3,
+      "red_vial_tierra_km": 26.0,
+      "pavimentacion_pct": 5.8,
+      "distancia_coyhaique_km": 328.0,
+      "tiempo_traslado_coyhaique_horas": 5.5,
+      "dependencia_barcaza_nivel": 0,
+      "descripcion_acceso": "Acceso terrestre cordillerano vía Ruta 7 Norte y desvío La Tapera - Lago Verde en ripio."
+    },
+    {
+      "comuna_ine": "11201",
+      "comuna_nombre": "Aysén",
+      "red_vial_total_km": 495.6,
+      "red_vial_pavimentada_km": 118.5,
+      "red_vial_solucion_basica_km": 42.1,
+      "red_vial_ripio_km": 305.0,
+      "red_vial_tierra_km": 30.0,
+      "pavimentacion_pct": 32.4,
+      "distancia_coyhaique_km": 67.2,
+      "tiempo_traslado_coyhaique_horas": 1.0,
+      "dependencia_barcaza_nivel": 1,
+      "descripcion_acceso": "Conectividad 100% pavimentada a Coyhaique vía Ruta CH-240; el sector insular de Islas Huichas depende 100% de barcazas marítimas."
+    },
+    {
+      "comuna_ine": "11202",
+      "comuna_nombre": "Cisnes",
+      "red_vial_total_km": 482.0,
+      "red_vial_pavimentada_km": 45.2,
+      "red_vial_solucion_basica_km": 38.0,
+      "red_vial_ripio_km": 365.8,
+      "red_vial_tierra_km": 33.0,
+      "pavimentacion_pct": 17.3,
+      "distancia_coyhaique_km": 196.0,
+      "tiempo_traslado_coyhaique_horas": 3.0,
+      "dependencia_barcaza_nivel": 1,
+      "descripcion_acceso": "Carretera Austral Norte con tramos en pavimentación; localidades como Gala y Gaviota son accesibles solo vía marítima."
+    },
+    {
+      "comuna_ine": "11203",
+      "comuna_nombre": "Guaitecas",
+      "red_vial_total_km": 28.5,
+      "red_vial_pavimentada_km": 4.2,
+      "red_vial_solucion_basica_km": 8.3,
+      "red_vial_ripio_km": 14.0,
+      "red_vial_tierra_km": 2.0,
+      "pavimentacion_pct": 43.9,
+      "distancia_coyhaique_km": 410.0,
+      "tiempo_traslado_coyhaique_horas": 18.0,
+      "dependencia_barcaza_nivel": 3,
+      "descripcion_acceso": "Archipiélago insular 100% dependiente de barcaza marítima subsidiada desde Quellón o Puerto Chacabuco."
+    },
+    {
+      "comuna_ine": "11301",
+      "comuna_nombre": "Cochrane",
+      "red_vial_total_km": 398.0,
+      "red_vial_pavimentada_km": 12.5,
+      "red_vial_solucion_basica_km": 25.0,
+      "red_vial_ripio_km": 332.5,
+      "red_vial_tierra_km": 28.0,
+      "pavimentacion_pct": 9.4,
+      "distancia_coyhaique_km": 334.0,
+      "tiempo_traslado_coyhaique_horas": 6.5,
+      "dependencia_barcaza_nivel": 0,
+      "descripcion_acceso": "Carretera Austral Sur continua por ripio desde Cerro Castillo; centro neurálgico de la provincia de Capitán Prat."
+    },
+    {
+      "comuna_ine": "11302",
+      "comuna_nombre": "O'Higgins",
+      "red_vial_total_km": 168.4,
+      "red_vial_pavimentada_km": 0.0,
+      "red_vial_solucion_basica_km": 6.5,
+      "red_vial_ripio_km": 138.9,
+      "red_vial_tierra_km": 23.0,
+      "pavimentacion_pct": 3.9,
+      "distancia_coyhaique_km": 564.0,
+      "tiempo_traslado_coyhaique_horas": 12.0,
+      "dependencia_barcaza_nivel": 2,
+      "descripcion_acceso": "Término de la Carretera Austral; cruce bimodal obligatorio en barcaza Puerto Yungay - Río Bravo (Fiordo Mitchell)."
+    },
+    {
+      "comuna_ine": "11303",
+      "comuna_nombre": "Tortel",
+      "red_vial_total_km": 142.2,
+      "red_vial_pavimentada_km": 0.0,
+      "red_vial_solucion_basica_km": 5.4,
+      "red_vial_ripio_km": 118.8,
+      "red_vial_tierra_km": 18.0,
+      "pavimentacion_pct": 3.8,
+      "distancia_coyhaique_km": 462.0,
+      "tiempo_traslado_coyhaique_horas": 9.0,
+      "dependencia_barcaza_nivel": 2,
+      "descripcion_acceso": "Pueblo de pasarelas de madera sin vehículos urbanos; acceso terrestre por ripio y dependencia fluvial/marítima para el delta."
+    },
+    {
+      "comuna_ine": "11401",
+      "comuna_nombre": "Chile Chico",
+      "red_vial_total_km": 384.0,
+      "red_vial_pavimentada_km": 22.0,
+      "red_vial_solucion_basica_km": 38.5,
+      "red_vial_ripio_km": 298.5,
+      "red_vial_tierra_km": 25.0,
+      "pavimentacion_pct": 15.8,
+      "distancia_coyhaique_km": 298.0,
+      "tiempo_traslado_coyhaique_horas": 4.5,
+      "dependencia_barcaza_nivel": 1,
+      "descripcion_acceso": "Acceso bimodal preferente vía Barcaza Puerto Ibáñez - Chile Chico (2h15m) o vuelta terrestre por Paso Las Llaves en ripio."
+    },
+    {
+      "comuna_ine": "11402",
+      "comuna_nombre": "Río Ibáñez",
+      "red_vial_total_km": 291.0,
+      "red_vial_pavimentada_km": 18.0,
+      "red_vial_solucion_basica_km": 28.0,
+      "red_vial_ripio_km": 218.0,
+      "red_vial_tierra_km": 27.0,
+      "pavimentacion_pct": 15.8,
+      "distancia_coyhaique_km": 116.0,
+      "tiempo_traslado_coyhaique_horas": 1.7,
+      "dependencia_barcaza_nivel": 0,
+      "descripcion_acceso": "Carretera Austral Sur pavimentada hasta Villa Cerro Castillo; puerto lacustre terminal de la Barcaza Tehuelche."
+    }
+  ]
+}

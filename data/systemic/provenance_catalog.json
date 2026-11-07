@@ -645,5 +645,117 @@
     "updateFrequency": "Anual / Continuo",
     "workPackage": "WP_10 (Módulo Especializado Ciencia, Tecnología, Conocimiento e Innovación)"
   },
-  "ultima_actualizacion_automatica": "2026-11-02T12:13:30+00:00"
+  "ultima_actualizacion_automatica": "2026-11-02T12:13:30+00:00",
+  "sources": [
+    {
+      "id": "src_mop_vialidad",
+      "name": "Ministerio de Obras Públicas - Dirección de Vialidad",
+      "dataset": "Red Vial Nacional: Dimensionamiento y Características - Aysén",
+      "url": "https://vialidad.mop.gob.cl",
+      "year": "2026",
+      "scope": "Regional y comunal (10 comunas)",
+      "verified": true,
+      "institucion": "Ministerio de Obras Públicas - Dirección de Vialidad",
+      "indicador": "Red Vial Nacional: Dimensionamiento y Características - Aysén"
+    },
+    {
+      "id": "src_emporcha",
+      "name": "Empresa Portuaria Chacabuco (EMPORCHA)",
+      "dataset": "Memorias Anuales e Integradas de Gestión Portuaria y Cruceros",
+      "url": "https://chacabucoport.cl",
+      "year": "2026",
+      "scope": "Puerto Chacabuco y litoral norte de Aysén",
+      "verified": true,
+      "institucion": "Empresa Portuaria Chacabuco (EMPORCHA)",
+      "indicador": "Memorias Anuales e Integradas de Gestión Portuaria y Cruceros"
+    },
+    {
+      "id": "src_mtt_dtpr",
+      "name": "Ministerio de Transportes y Telecomunicaciones - DTPR",
+      "dataset": "Catastro de Subsidios al Transporte Marítimo y Lacustre en Zonas Aisladas",
+      "url": "https://dtpr.mtt.gob.cl",
+      "year": "2026",
+      "scope": "Rutas Cordillera, Litoral, Fiordo Mitchell y Lagos de Aysén",
+      "verified": true,
+      "institucion": "Ministerio de Transportes y Telecomunicaciones - DTPR",
+      "indicador": "Catastro de Subsidios al Transporte Marítimo y Lacustre en Zonas Aisladas"
+    },
+    {
+      "id": "src_jac_dgac",
+      "name": "Junta de Aeronáutica Civil (JAC) / DGAC",
+      "dataset": "Estadísticas del Tráfico Aéreo Comercial y Red Aeroportuaria Austral",
+      "url": "https://www.jac.gob.cl",
+      "year": "2026",
+      "scope": "Aeródromo Balmaceda y red de aeródromos interiores de Aysén",
+      "verified": true,
+      "institucion": "Junta de Aeronáutica Civil (JAC) / DGAC",
+      "indicador": "Estadísticas del Tráfico Aéreo Comercial y Red Aeroportuaria Austral"
+    },
+    {
+      "id": "src_subtel_fdt",
+      "name": "Subsecretaría de Telecomunicaciones - FDT",
+      "dataset": "Proyecto Fibra Óptica Austral (FOA) y Conectividad para la Educación 2030",
+      "url": "https://www.subtel.gob.cl",
+      "year": "2026",
+      "scope": "Troncales submarino/terrestre y conectividad digital comunal",
+      "verified": true,
+      "institucion": "Subsecretaría de Telecomunicaciones - FDT",
+      "indicador": "Proyecto Fibra Óptica Austral (FOA) y Conectividad para la Educación 2030"
+    },
+    {
+      "id": "src_minsal_deis_determinantes",
+      "name": "Ministerio de Salud - DEIS / SSA",
+      "dataset": "Diagnóstico de Salud con Enfoque en Determinantes Sociales y Estadísticas Vitales",
+      "url": "https://deis.minsal.cl",
+      "year": "2026",
+      "scope": "Regional y 10 comunas de Aysén",
+      "verified": true,
+      "institucion": "Ministerio de Salud - DEIS / SSA",
+      "indicador": "Diagnóstico de Salud con Enfoque en Determinantes Sociales y Estadísticas Vitales"
+    },
+    {
+      "id": "src_minvu_deficit",
+      "name": "Ministerio de Vivienda y Urbanismo (MINVU)",
+      "dataset": "Catastro de Déficit Habitacional Cuantitativo y Cualitativo por Comuna",
+      "url": "https://www.minvu.gob.cl",
+      "year": "2026",
+      "scope": "10 comunas de Aysén",
+      "verified": true,
+      "institucion": "Ministerio de Vivienda y Urbanismo (MINVU)",
+      "indicador": "Catastro de Déficit Habitacional Cuantitativo y Cualitativo por Comuna"
+    },
+    {
+      "id": "src_odepa_censo_agro",
+      "name": "Oficina de Estudios y Políticas Agrarias (ODEPA) / INE",
+      "dataset": "VIII Censo Nacional Agropecuario y Forestal - Aysén",
+      "url": "https://www.odepa.gob.cl",
+      "year": "2026",
+      "scope": "Masa ganadera bovina y ovina comunal",
+      "verified": true,
+      "institucion": "Oficina de Estudios y Políticas Agrarias (ODEPA) / INE",
+      "indicador": "VIII Censo Nacional Agropecuario y Forestal - Aysén"
+    },
+    {
+      "id": "src_dga_glaciares",
+      "name": "Dirección General de Aguas (DGA) - MOP",
+      "dataset": "Inventario Público de Glaciares de Chile (IPG)",
+      "url": "https://dga.mop.gob.cl",
+      "year": "2026",
+      "scope": "10.301 glaciares y superficies por comuna en Aysén",
+      "verified": true,
+      "institucion": "Dirección General de Aguas (DGA) - MOP",
+      "indicador": "Inventario Público de Glaciares de Chile (IPG)"
+    },
+    {
+      "id": "src_barometro_uaysen",
+      "name": "Universidad de Aysén",
+      "dataset": "Barómetro Regional de Aysén - Percepción y Cohesión Ciudadana",
+      "url": "https://uaysen.cl",
+      "year": "2026",
+      "scope": "Muestra probabilística representativa regional N=465 en 10 comunas",
+      "verified": true,
+      "institucion": "Universidad de Aysén",
+      "indicador": "Barómetro Regional de Aysén - Percepción y Cohesión Ciudadana"
+    }
+  ]
 }

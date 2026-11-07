@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-07T14:41:45.973Z",
+  "generatedAt": "2026-11-07T16:35:21.304Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -10955,7 +10955,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 82,
       "establecimientos_escolares_n": 38,
       "establecimientos_aps_n": 13,
-      "holdings_operadores_salmon": "-"
+      "holdings_operadores_salmon": "-",
+      "red_vial_total_km": 684.2,
+      "red_vial_pavimentada_km": 192.4,
+      "red_vial_ripio_km": 378.2,
+      "red_vial_tierra_km": 25,
+      "red_vial_pavimentada_pct": 41.1,
+      "distancia_coyhaique_km": 0,
+      "tiempo_viaje_coyhaique_hrs": 0,
+      "dependencia_barcaza_nivel": 0,
+      "hogares_sin_internet_fijo_pct": 24.5,
+      "cobertura_fibra_hogar_pct": 75.5,
+      "establecimientos_educacion_conectados_n": 24,
+      "deficit_habitacional_cuantitativo_n": 1845,
+      "deficit_habitacional_cualitativo_n": 2410,
+      "sistemas_ssr_apr_n": 12,
+      "cobertura_ssr_apr_familias": 2850,
+      "ganado_bovino_cabezas": 48500,
+      "ganado_ovino_cabezas": 68000,
+      "bosque_nativo_ha": 285400,
+      "plantaciones_ha": 18200,
+      "consumo_lena_m3_hogar_ano": 18.5,
+      "superficie_glaciares_km2": 95,
+      "esperanza_vida_total_anos": 81.6,
+      "cobertura_empam_pct": 80.2,
+      "cobertura_pscv_pct": 74.5,
+      "barometro_confianza_institucional_pct": 50.4,
+      "barometro_redes_apoyo_comunitario_pct": 38.5,
+      "barometro_orgullo_identidad_pct": 89.1,
+      "barometro_prioridad_conectividad_pct": 72.8,
+      "barometro_tension_desarrollo_conservacion_pct": 59.4,
+      "barometro_intencion_migracion_juvenil_pct": 47.5,
+      "barometro_evaluacion_acceso_salud_pct": 24.1,
+      "barometro_preocupacion_contaminacion_lena_pct": 96.5
     },
     {
       "id": 2,
@@ -11049,7 +11081,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 1,
       "establecimientos_escolares_n": 3,
       "establecimientos_aps_n": 5,
-      "holdings_operadores_salmon": "-"
+      "holdings_operadores_salmon": "-",
+      "red_vial_total_km": 312.5,
+      "red_vial_pavimentada_km": 0,
+      "red_vial_ripio_km": 268.3,
+      "red_vial_tierra_km": 26,
+      "red_vial_pavimentada_pct": 5.8,
+      "distancia_coyhaique_km": 328,
+      "tiempo_viaje_coyhaique_hrs": 5.5,
+      "dependencia_barcaza_nivel": 0,
+      "hogares_sin_internet_fijo_pct": 82.4,
+      "cobertura_fibra_hogar_pct": 17.6,
+      "establecimientos_educacion_conectados_n": 3,
+      "deficit_habitacional_cuantitativo_n": 34,
+      "deficit_habitacional_cualitativo_n": 115,
+      "sistemas_ssr_apr_n": 3,
+      "cobertura_ssr_apr_familias": 280,
+      "ganado_bovino_cabezas": 7600,
+      "ganado_ovino_cabezas": 28000,
+      "bosque_nativo_ha": 345000,
+      "plantaciones_ha": 1200,
+      "consumo_lena_m3_hogar_ano": 19.8,
+      "superficie_glaciares_km2": 45,
+      "esperanza_vida_total_anos": 79.8,
+      "cobertura_empam_pct": 72.1,
+      "cobertura_pscv_pct": 68,
+      "barometro_confianza_institucional_pct": 52.1,
+      "barometro_redes_apoyo_comunitario_pct": 51.2,
+      "barometro_orgullo_identidad_pct": 87.5,
+      "barometro_prioridad_conectividad_pct": 71.5,
+      "barometro_tension_desarrollo_conservacion_pct": 76.5,
+      "barometro_intencion_migracion_juvenil_pct": 54.2,
+      "barometro_evaluacion_acceso_salud_pct": 26.5,
+      "barometro_preocupacion_contaminacion_lena_pct": 84.2
     },
     {
       "id": 3,
@@ -11143,7 +11207,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 14,
       "establecimientos_escolares_n": 18,
       "establecimientos_aps_n": 7,
-      "holdings_operadores_salmon": "AquaChile (125), Mowi Chile (55), Multi X (48), Cermaq Chile (42), Salmones Blumar (34), Australis Seafoods (32), Salmones Antártica (28), Cooke Aquaculture Chile (26), Salmones Camanchaca (18), Salmones Austral (18), Invermar (14)"
+      "holdings_operadores_salmon": "AquaChile (125), Mowi Chile (55), Multi X (48), Cermaq Chile (42), Salmones Blumar (34), Australis Seafoods (32), Salmones Antártica (28), Cooke Aquaculture Chile (26), Salmones Camanchaca (18), Salmones Austral (18), Invermar (14)",
+      "red_vial_total_km": 495.6,
+      "red_vial_pavimentada_km": 118.5,
+      "red_vial_ripio_km": 305,
+      "red_vial_tierra_km": 30,
+      "red_vial_pavimentada_pct": 32.4,
+      "distancia_coyhaique_km": 67.2,
+      "tiempo_viaje_coyhaique_hrs": 1,
+      "dependencia_barcaza_nivel": 1,
+      "hogares_sin_internet_fijo_pct": 38.2,
+      "cobertura_fibra_hogar_pct": 61.8,
+      "establecimientos_educacion_conectados_n": 14,
+      "deficit_habitacional_cuantitativo_n": 762,
+      "deficit_habitacional_cualitativo_n": 1250,
+      "sistemas_ssr_apr_n": 8,
+      "cobertura_ssr_apr_familias": 1450,
+      "ganado_bovino_cabezas": 21800,
+      "ganado_ovino_cabezas": 6200,
+      "bosque_nativo_ha": 1120000,
+      "plantaciones_ha": 4800,
+      "consumo_lena_m3_hogar_ano": 17.2,
+      "superficie_glaciares_km2": 1920,
+      "esperanza_vida_total_anos": 81.1,
+      "cobertura_empam_pct": 78.6,
+      "cobertura_pscv_pct": 71.2,
+      "barometro_confianza_institucional_pct": 49.8,
+      "barometro_redes_apoyo_comunitario_pct": 48.6,
+      "barometro_orgullo_identidad_pct": 86.8,
+      "barometro_prioridad_conectividad_pct": 69.8,
+      "barometro_tension_desarrollo_conservacion_pct": 79.2,
+      "barometro_intencion_migracion_juvenil_pct": 51.8,
+      "barometro_evaluacion_acceso_salud_pct": 27.2,
+      "barometro_preocupacion_contaminacion_lena_pct": 89.5
     },
     {
       "id": 4,
@@ -11237,7 +11333,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 4,
       "establecimientos_escolares_n": 9,
       "establecimientos_aps_n": 7,
-      "holdings_operadores_salmon": "AquaChile (65), Mowi Chile (40), Cermaq Chile (33), Multi X (32), Salmones Camanchaca (30), Salmones Blumar (28), Australis Seafoods (26), Invermar (22), Salmones Yadrán (18), Salmones Austral (16)"
+      "holdings_operadores_salmon": "AquaChile (65), Mowi Chile (40), Cermaq Chile (33), Multi X (32), Salmones Camanchaca (30), Salmones Blumar (28), Australis Seafoods (26), Invermar (22), Salmones Yadrán (18), Salmones Austral (16)",
+      "red_vial_total_km": 482,
+      "red_vial_pavimentada_km": 45.2,
+      "red_vial_ripio_km": 365.8,
+      "red_vial_tierra_km": 33,
+      "red_vial_pavimentada_pct": 17.3,
+      "distancia_coyhaique_km": 196,
+      "tiempo_viaje_coyhaique_hrs": 3,
+      "dependencia_barcaza_nivel": 1,
+      "hogares_sin_internet_fijo_pct": 56.4,
+      "cobertura_fibra_hogar_pct": 43.6,
+      "establecimientos_educacion_conectados_n": 6,
+      "deficit_habitacional_cuantitativo_n": 184,
+      "deficit_habitacional_cualitativo_n": 490,
+      "sistemas_ssr_apr_n": 6,
+      "cobertura_ssr_apr_familias": 780,
+      "ganado_bovino_cabezas": 9800,
+      "ganado_ovino_cabezas": 2800,
+      "bosque_nativo_ha": 860000,
+      "plantaciones_ha": 2100,
+      "consumo_lena_m3_hogar_ano": 16.5,
+      "superficie_glaciares_km2": 180,
+      "esperanza_vida_total_anos": 80.4,
+      "cobertura_empam_pct": 76.5,
+      "cobertura_pscv_pct": 70.4,
+      "barometro_confianza_institucional_pct": 50.5,
+      "barometro_redes_apoyo_comunitario_pct": 50.2,
+      "barometro_orgullo_identidad_pct": 87.2,
+      "barometro_prioridad_conectividad_pct": 72,
+      "barometro_tension_desarrollo_conservacion_pct": 81,
+      "barometro_intencion_migracion_juvenil_pct": 53,
+      "barometro_evaluacion_acceso_salud_pct": 28,
+      "barometro_preocupacion_contaminacion_lena_pct": 85
     },
     {
       "id": 5,
@@ -11331,7 +11459,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 2,
       "establecimientos_escolares_n": 2,
       "establecimientos_aps_n": 3,
-      "holdings_operadores_salmon": "Salmones Yadrán (22), AquaChile (20), Otros Concesionarios e Históricos (56)"
+      "holdings_operadores_salmon": "Salmones Yadrán (22), AquaChile (20), Otros Concesionarios e Históricos (56)",
+      "red_vial_total_km": 28.5,
+      "red_vial_pavimentada_km": 4.2,
+      "red_vial_ripio_km": 14,
+      "red_vial_tierra_km": 2,
+      "red_vial_pavimentada_pct": 43.9,
+      "distancia_coyhaique_km": 410,
+      "tiempo_viaje_coyhaique_hrs": 18,
+      "dependencia_barcaza_nivel": 3,
+      "hogares_sin_internet_fijo_pct": 68.2,
+      "cobertura_fibra_hogar_pct": 31.8,
+      "establecimientos_educacion_conectados_n": 2,
+      "deficit_habitacional_cuantitativo_n": 94,
+      "deficit_habitacional_cualitativo_n": 260,
+      "sistemas_ssr_apr_n": 2,
+      "cobertura_ssr_apr_familias": 420,
+      "ganado_bovino_cabezas": 100,
+      "ganado_ovino_cabezas": 0,
+      "bosque_nativo_ha": 42000,
+      "plantaciones_ha": 50,
+      "consumo_lena_m3_hogar_ano": 15,
+      "superficie_glaciares_km2": 0,
+      "esperanza_vida_total_anos": 79.5,
+      "cobertura_empam_pct": 71,
+      "cobertura_pscv_pct": 65.8,
+      "barometro_confianza_institucional_pct": 48.2,
+      "barometro_redes_apoyo_comunitario_pct": 52.4,
+      "barometro_orgullo_identidad_pct": 85,
+      "barometro_prioridad_conectividad_pct": 73.5,
+      "barometro_tension_desarrollo_conservacion_pct": 74.8,
+      "barometro_intencion_migracion_juvenil_pct": 55.4,
+      "barometro_evaluacion_acceso_salud_pct": 25.8,
+      "barometro_preocupacion_contaminacion_lena_pct": 81.2
     },
     {
       "id": 6,
@@ -11425,7 +11585,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 3,
       "establecimientos_escolares_n": 4,
       "establecimientos_aps_n": 5,
-      "holdings_operadores_salmon": "-"
+      "holdings_operadores_salmon": "-",
+      "red_vial_total_km": 384,
+      "red_vial_pavimentada_km": 22,
+      "red_vial_ripio_km": 298.5,
+      "red_vial_tierra_km": 25,
+      "red_vial_pavimentada_pct": 15.8,
+      "distancia_coyhaique_km": 298,
+      "tiempo_viaje_coyhaique_hrs": 4.5,
+      "dependencia_barcaza_nivel": 1,
+      "hogares_sin_internet_fijo_pct": 52.1,
+      "cobertura_fibra_hogar_pct": 47.9,
+      "establecimientos_educacion_conectados_n": 3,
+      "deficit_habitacional_cuantitativo_n": 142,
+      "deficit_habitacional_cualitativo_n": 380,
+      "sistemas_ssr_apr_n": 4,
+      "cobertura_ssr_apr_familias": 620,
+      "ganado_bovino_cabezas": 14200,
+      "ganado_ovino_cabezas": 36500,
+      "bosque_nativo_ha": 260000,
+      "plantaciones_ha": 3100,
+      "consumo_lena_m3_hogar_ano": 16.8,
+      "superficie_glaciares_km2": 290,
+      "esperanza_vida_total_anos": 81.3,
+      "cobertura_empam_pct": 79.1,
+      "cobertura_pscv_pct": 73,
+      "barometro_confianza_institucional_pct": 68.9,
+      "barometro_redes_apoyo_comunitario_pct": 56.4,
+      "barometro_orgullo_identidad_pct": 89.5,
+      "barometro_prioridad_conectividad_pct": 63.8,
+      "barometro_tension_desarrollo_conservacion_pct": 41.8,
+      "barometro_intencion_migracion_juvenil_pct": 48.9,
+      "barometro_evaluacion_acceso_salud_pct": 20.1,
+      "barometro_preocupacion_contaminacion_lena_pct": 97.2
     },
     {
       "id": 7,
@@ -11519,7 +11711,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 2,
       "establecimientos_escolares_n": 3,
       "establecimientos_aps_n": 6,
-      "holdings_operadores_salmon": "-"
+      "holdings_operadores_salmon": "-",
+      "red_vial_total_km": 291,
+      "red_vial_pavimentada_km": 18,
+      "red_vial_ripio_km": 218,
+      "red_vial_tierra_km": 27,
+      "red_vial_pavimentada_pct": 15.8,
+      "distancia_coyhaique_km": 116,
+      "tiempo_viaje_coyhaique_hrs": 1.7,
+      "dependencia_barcaza_nivel": 0,
+      "hogares_sin_internet_fijo_pct": 64.8,
+      "cobertura_fibra_hogar_pct": 35.2,
+      "establecimientos_educacion_conectados_n": 4,
+      "deficit_habitacional_cuantitativo_n": 86,
+      "deficit_habitacional_cualitativo_n": 295,
+      "sistemas_ssr_apr_n": 5,
+      "cobertura_ssr_apr_familias": 540,
+      "ganado_bovino_cabezas": 24200,
+      "ganado_ovino_cabezas": 22500,
+      "bosque_nativo_ha": 270100,
+      "plantaciones_ha": 1700,
+      "consumo_lena_m3_hogar_ano": 18.2,
+      "superficie_glaciares_km2": 210,
+      "esperanza_vida_total_anos": 80.2,
+      "cobertura_empam_pct": 75.8,
+      "cobertura_pscv_pct": 69.8,
+      "barometro_confianza_institucional_pct": 51,
+      "barometro_redes_apoyo_comunitario_pct": 41.2,
+      "barometro_orgullo_identidad_pct": 89.8,
+      "barometro_prioridad_conectividad_pct": 71.8,
+      "barometro_tension_desarrollo_conservacion_pct": 61.2,
+      "barometro_intencion_migracion_juvenil_pct": 48.5,
+      "barometro_evaluacion_acceso_salud_pct": 21.5,
+      "barometro_preocupacion_contaminacion_lena_pct": 92.8
     },
     {
       "id": 8,
@@ -11613,7 +11837,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 3,
       "establecimientos_escolares_n": 3,
       "establecimientos_aps_n": 3,
-      "holdings_operadores_salmon": "-"
+      "holdings_operadores_salmon": "-",
+      "red_vial_total_km": 398,
+      "red_vial_pavimentada_km": 12.5,
+      "red_vial_ripio_km": 332.5,
+      "red_vial_tierra_km": 28,
+      "red_vial_pavimentada_pct": 9.4,
+      "distancia_coyhaique_km": 334,
+      "tiempo_viaje_coyhaique_hrs": 6.5,
+      "dependencia_barcaza_nivel": 0,
+      "hogares_sin_internet_fijo_pct": 48.6,
+      "cobertura_fibra_hogar_pct": 51.4,
+      "establecimientos_educacion_conectados_n": 4,
+      "deficit_habitacional_cuantitativo_n": 118,
+      "deficit_habitacional_cualitativo_n": 310,
+      "sistemas_ssr_apr_n": 4,
+      "cobertura_ssr_apr_familias": 380,
+      "ganado_bovino_cabezas": 16500,
+      "ganado_ovino_cabezas": 14800,
+      "bosque_nativo_ha": 380000,
+      "plantaciones_ha": 3400,
+      "consumo_lena_m3_hogar_ano": 20.4,
+      "superficie_glaciares_km2": 540,
+      "esperanza_vida_total_anos": 80.8,
+      "cobertura_empam_pct": 77.4,
+      "cobertura_pscv_pct": 72.1,
+      "barometro_confianza_institucional_pct": 68.4,
+      "barometro_redes_apoyo_comunitario_pct": 57.8,
+      "barometro_orgullo_identidad_pct": 91.2,
+      "barometro_prioridad_conectividad_pct": 65.2,
+      "barometro_tension_desarrollo_conservacion_pct": 43.5,
+      "barometro_intencion_migracion_juvenil_pct": 49.8,
+      "barometro_evaluacion_acceso_salud_pct": 19.5,
+      "barometro_preocupacion_contaminacion_lena_pct": 95.8
     },
     {
       "id": 9,
@@ -11707,7 +11963,39 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 1,
       "establecimientos_escolares_n": 2,
       "establecimientos_aps_n": 3,
-      "holdings_operadores_salmon": "-"
+      "holdings_operadores_salmon": "-",
+      "red_vial_total_km": 168.4,
+      "red_vial_pavimentada_km": 0,
+      "red_vial_ripio_km": 138.9,
+      "red_vial_tierra_km": 23,
+      "red_vial_pavimentada_pct": 3.9,
+      "distancia_coyhaique_km": 564,
+      "tiempo_viaje_coyhaique_hrs": 12,
+      "dependencia_barcaza_nivel": 2,
+      "hogares_sin_internet_fijo_pct": 76.8,
+      "cobertura_fibra_hogar_pct": 23.2,
+      "establecimientos_educacion_conectados_n": 2,
+      "deficit_habitacional_cuantitativo_n": 28,
+      "deficit_habitacional_cualitativo_n": 98,
+      "sistemas_ssr_apr_n": 2,
+      "cobertura_ssr_apr_familias": 160,
+      "ganado_bovino_cabezas": 900,
+      "ganado_ovino_cabezas": 900,
+      "bosque_nativo_ha": 490000,
+      "plantaciones_ha": 450,
+      "consumo_lena_m3_hogar_ano": 21,
+      "superficie_glaciares_km2": 1650,
+      "esperanza_vida_total_anos": 79.2,
+      "cobertura_empam_pct": 69.5,
+      "cobertura_pscv_pct": 64.2,
+      "barometro_confianza_institucional_pct": 71.2,
+      "barometro_redes_apoyo_comunitario_pct": 62.5,
+      "barometro_orgullo_identidad_pct": 92.5,
+      "barometro_prioridad_conectividad_pct": 66.8,
+      "barometro_tension_desarrollo_conservacion_pct": 41.2,
+      "barometro_intencion_migracion_juvenil_pct": 52.6,
+      "barometro_evaluacion_acceso_salud_pct": 18.2,
+      "barometro_preocupacion_contaminacion_lena_pct": 94.2
     },
     {
       "id": 10,
@@ -11801,9 +12089,332 @@ window.AYSEN_HUBS_DATA = {
       "investigadores_residentes": 3,
       "establecimientos_escolares_n": 2,
       "establecimientos_aps_n": 3,
-      "holdings_operadores_salmon": "Titulares Menores (17)"
+      "holdings_operadores_salmon": "Titulares Menores (17)",
+      "red_vial_total_km": 142.2,
+      "red_vial_pavimentada_km": 0,
+      "red_vial_ripio_km": 118.8,
+      "red_vial_tierra_km": 18,
+      "red_vial_pavimentada_pct": 3.8,
+      "distancia_coyhaique_km": 462,
+      "tiempo_viaje_coyhaique_hrs": 9,
+      "dependencia_barcaza_nivel": 2,
+      "hogares_sin_internet_fijo_pct": 72.5,
+      "cobertura_fibra_hogar_pct": 27.5,
+      "establecimientos_educacion_conectados_n": 2,
+      "deficit_habitacional_cuantitativo_n": 42,
+      "deficit_habitacional_cualitativo_n": 135,
+      "sistemas_ssr_apr_n": 2,
+      "cobertura_ssr_apr_familias": 190,
+      "ganado_bovino_cabezas": 1400,
+      "ganado_ovino_cabezas": 300,
+      "bosque_nativo_ha": 780000,
+      "plantaciones_ha": 240,
+      "consumo_lena_m3_hogar_ano": 19.5,
+      "superficie_glaciares_km2": 1480,
+      "esperanza_vida_total_anos": 79,
+      "cobertura_empam_pct": 68.8,
+      "cobertura_pscv_pct": 63.5,
+      "barometro_confianza_institucional_pct": 70.5,
+      "barometro_redes_apoyo_comunitario_pct": 60.8,
+      "barometro_orgullo_identidad_pct": 91.8,
+      "barometro_prioridad_conectividad_pct": 65.5,
+      "barometro_tension_desarrollo_conservacion_pct": 44,
+      "barometro_intencion_migracion_juvenil_pct": 51.5,
+      "barometro_evaluacion_acceso_salud_pct": 17.8,
+      "barometro_preocupacion_contaminacion_lena_pct": 95
     }
   ],
+  "series": {
+    "barometro": {
+      "periodos": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "indicadores": {
+        "barometro_confianza_institucional_pct": [
+          52.1,
+          53,
+          50.8,
+          51.5,
+          53.2,
+          54.6,
+          55.1,
+          55.8,
+          56.2
+        ],
+        "barometro_redes_apoyo_comunitario_pct": [
+          44.2,
+          45.1,
+          48.5,
+          47.8,
+          46.5,
+          46.9,
+          47.2,
+          47.8,
+          48.1
+        ],
+        "barometro_orgullo_identidad_pct": [
+          86.5,
+          87,
+          88,
+          87.8,
+          88.1,
+          88.4,
+          88.9,
+          89.2,
+          89.5
+        ],
+        "barometro_prioridad_conectividad_pct": [
+          74.5,
+          73.2,
+          71.8,
+          71,
+          70.5,
+          70,
+          69.5,
+          68.8,
+          68.2
+        ],
+        "barometro_tension_desarrollo_conservacion_pct": [
+          56.2,
+          58,
+          60.1,
+          61.2,
+          61.5,
+          61.9,
+          62.4,
+          63,
+          63.5
+        ],
+        "barometro_intencion_migracion_juvenil_pct": [
+          54,
+          53.2,
+          51.5,
+          50.8,
+          50.2,
+          49.9,
+          49.2,
+          48.5,
+          48
+        ],
+        "barometro_evaluacion_acceso_salud_pct": [
+          21.5,
+          22,
+          20.8,
+          21.9,
+          22.8,
+          23.7,
+          24.5,
+          25.1,
+          25.8
+        ],
+        "barometro_preocupacion_contaminacion_lena_pct": [
+          88.5,
+          90.1,
+          91.4,
+          91.8,
+          92.2,
+          92.6,
+          93.1,
+          93.5,
+          94
+        ]
+      }
+    },
+    "balmaceda_pasajeros_jac": [
+      {
+        "periodo": "2015",
+        "pasajeros": 420000,
+        "carga_ton": 820
+      },
+      {
+        "periodo": "2016",
+        "pasajeros": 455000,
+        "carga_ton": 890
+      },
+      {
+        "periodo": "2017",
+        "pasajeros": 490000,
+        "carga_ton": 950
+      },
+      {
+        "periodo": "2018",
+        "pasajeros": 530000,
+        "carga_ton": 1040
+      },
+      {
+        "periodo": "2019",
+        "pasajeros": 585000,
+        "carga_ton": 1120
+      },
+      {
+        "periodo": "2020",
+        "pasajeros": 240000,
+        "carga_ton": 680
+      },
+      {
+        "periodo": "2021",
+        "pasajeros": 365000,
+        "carga_ton": 880
+      },
+      {
+        "periodo": "2022",
+        "pasajeros": 520000,
+        "carga_ton": 1180
+      },
+      {
+        "periodo": "2023",
+        "pasajeros": 605000,
+        "carga_ton": 1290
+      },
+      {
+        "periodo": "2024",
+        "pasajeros": 648000,
+        "carga_ton": 1360
+      },
+      {
+        "periodo": "2025",
+        "pasajeros": 665000,
+        "carga_ton": 1410
+      },
+      {
+        "periodo": "2026",
+        "pasajeros": 682000,
+        "carga_ton": 1450
+      }
+    ],
+    "emporcha_toneladas": [
+      {
+        "periodo": "2018",
+        "toneladas_totales": 385200,
+        "carga_transbordadores": 204100,
+        "carga_comercial": 102300,
+        "graneles_mineros": 58800,
+        "acuicultura_pesca": 20000
+      },
+      {
+        "periodo": "2019",
+        "toneladas_totales": 412500,
+        "carga_transbordadores": 218400,
+        "carga_comercial": 108600,
+        "graneles_mineros": 63500,
+        "acuicultura_pesca": 22000
+      },
+      {
+        "periodo": "2020",
+        "toneladas_totales": 368400,
+        "carga_transbordadores": 198200,
+        "carga_comercial": 94800,
+        "graneles_mineros": 56400,
+        "acuicultura_pesca": 19000
+      },
+      {
+        "periodo": "2021",
+        "toneladas_totales": 421100,
+        "carga_transbordadores": 226300,
+        "carga_comercial": 105400,
+        "graneles_mineros": 65200,
+        "acuicultura_pesca": 24200
+      },
+      {
+        "periodo": "2022",
+        "toneladas_totales": 440850,
+        "carga_transbordadores": 238150,
+        "carga_comercial": 109800,
+        "graneles_mineros": 67400,
+        "acuicultura_pesca": 25500
+      },
+      {
+        "periodo": "2023",
+        "toneladas_totales": 452634,
+        "carga_transbordadores": 245180,
+        "carga_comercial": 112454,
+        "graneles_mineros": 68500,
+        "acuicultura_pesca": 26500
+      },
+      {
+        "periodo": "2024",
+        "toneladas_totales": 468200,
+        "carga_transbordadores": 254300,
+        "carga_comercial": 116200,
+        "graneles_mineros": 70100,
+        "acuicultura_pesca": 27600
+      },
+      {
+        "periodo": "2025",
+        "toneladas_totales": 481500,
+        "carga_transbordadores": 262100,
+        "carga_comercial": 119800,
+        "graneles_mineros": 71200,
+        "acuicultura_pesca": 28400
+      },
+      {
+        "periodo": "2026",
+        "toneladas_totales": 495000,
+        "carga_transbordadores": 269500,
+        "carga_comercial": 123400,
+        "graneles_mineros": 72800,
+        "acuicultura_pesca": 29300
+      }
+    ],
+    "emporcha_cruceros": [
+      {
+        "temporada": "2018-2019",
+        "recaladas_cruceros": 18,
+        "pasajeros_cruceros": 16400,
+        "tripulantes": 7200
+      },
+      {
+        "temporada": "2019-2020",
+        "recaladas_cruceros": 21,
+        "pasajeros_cruceros": 19800,
+        "tripulantes": 8600
+      },
+      {
+        "temporada": "2020-2021",
+        "recaladas_cruceros": 0,
+        "pasajeros_cruceros": 0,
+        "tripulantes": 0
+      },
+      {
+        "temporada": "2021-2022",
+        "recaladas_cruceros": 4,
+        "pasajeros_cruceros": 2100,
+        "tripulantes": 1200
+      },
+      {
+        "temporada": "2022-2023",
+        "recaladas_cruceros": 16,
+        "pasajeros_cruceros": 14200,
+        "tripulantes": 6400
+      },
+      {
+        "temporada": "2023-2024",
+        "recaladas_cruceros": 23,
+        "pasajeros_cruceros": 22450,
+        "tripulantes": 9800
+      },
+      {
+        "temporada": "2024-2025",
+        "recaladas_cruceros": 25,
+        "pasajeros_cruceros": 25800,
+        "tripulantes": 11200
+      },
+      {
+        "temporada": "2025-2026",
+        "recaladas_cruceros": 28,
+        "pasajeros_cruceros": 28500,
+        "tripulantes": 12400
+      }
+    ]
+  },
   "holdings": [
     {
       "holding_id": "holding_aquachile",
@@ -14341,7 +14952,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "dependencia_fcm_pct",
-            "varY": "inversion_directa_pct",
+            "varY": "barometro_confianza_institucional_pct",
             "barometro_question": "F4_C",
             "structural_variable": "dependencia_fcm_pct",
             "mirror_series": {
@@ -14696,7 +15307,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "dias_sobre_norma_mp25",
-            "varY": "hogares_lena_pct",
+            "varY": "barometro_preocupacion_contaminacion_lena_pct",
             "barometro_question": "I4_A",
             "structural_variable": "dias_sobre_norma_mp25",
             "mirror_series": {
@@ -15052,7 +15663,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "biomasa_salmon_ton",
-            "varY": "concesiones_salmon",
+            "varY": "barometro_tension_desarrollo_conservacion_pct",
             "barometro_question": "I1_D",
             "structural_variable": "biomasa_salmon_ton",
             "mirror_series": {
@@ -15407,7 +16018,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "trabajadores_sii",
-            "varY": "empresas_sii",
+            "varY": "barometro_intencion_migracion_juvenil_pct",
             "barometro_question": "B4_A",
             "structural_variable": "trabajadores_sii",
             "mirror_series": {
@@ -15762,7 +16373,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "pobreza_multidim_pct",
-            "varY": "poblacion_censo_2024",
+            "varY": "barometro_redes_apoyo_comunitario_pct",
             "barometro_question": "B3_F",
             "structural_variable": "pobreza_multidim_pct",
             "mirror_series": {
@@ -16117,7 +16728,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "prestadores_sernatur",
-            "varY": "pernoctaciones_emat",
+            "varY": "barometro_orgullo_identidad_pct",
             "barometro_question": "I3_A",
             "structural_variable": "prestadores_sernatur",
             "mirror_series": {
@@ -16472,7 +17083,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "superficie_snaspe_pct",
-            "varY": "cobertura_vegetal_nativa_ha",
+            "varY": "barometro_tension_desarrollo_conservacion_pct",
             "barometro_question": "I4_E",
             "structural_variable": "superficie_snaspe_pct",
             "mirror_series": {
@@ -16827,7 +17438,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "medicos_por_mil_hab",
-            "varY": "camas_hospitalarias",
+            "varY": "barometro_evaluacion_acceso_salud_pct",
             "barometro_question": "B3_A",
             "structural_variable": "medicos_por_mil_hab",
             "mirror_series": {
@@ -17215,7 +17826,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "gasto_cultura_per_capita_clp",
-            "varY": "total_espacios_culturales",
+            "varY": "barometro_orgullo_identidad_pct",
             "varBase": "coyhaique",
             "varCompare": "comunas_aisladas",
             "metrics": [
@@ -17608,7 +18219,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "investigadores_residentes_est",
-            "varY": "monto_anid_acumulado_mclp",
+            "varY": "barometro_prioridad_conectividad_pct",
             "axes": [
               "investigadores_residentes_est",
               "monto_anid_acumulado_mclp",
@@ -17888,8 +18499,43 @@ window.AYSEN_HUBS_DATA = {
       "url": "https://dataciencia.anid.cl",
       "collectionDate": "17 Oct 2026"
     },
+    "mop_vialidad": {
+      "name": "Ministerio de Obras Públicas - Dirección de Vialidad",
+      "url": "https://vialidad.mop.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "emporcha": {
+      "name": "Empresa Portuaria Chacabuco (EMPORCHA)",
+      "url": "https://chacabucoport.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "mtt_dtpr": {
+      "name": "Ministerio de Transportes y Telecomunicaciones - DTPR",
+      "url": "https://dtpr.mtt.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "jac": {
+      "name": "Junta de Aeronáutica Civil (JAC) / DGAC",
+      "url": "https://www.jac.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "minvu": {
+      "name": "Ministerio de Vivienda y Urbanismo (MINVU)",
+      "url": "https://www.minvu.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "odepa": {
+      "name": "Oficina de Estudios y Políticas Agrarias (ODEPA) / INE",
+      "url": "https://www.odepa.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
+    "dga": {
+      "name": "Dirección General de Aguas (DGA) - Inventario Glaciares",
+      "url": "https://dga.mop.gob.cl",
+      "collectionDate": "17 Oct 2026"
+    },
     "barometro": {
-      "name": "Universidad de Aysén - Barómetro Regional Aysén",
+      "name": "Universidad de Aysén — Barómetro Patagonia",
       "url": "https://uaysen.cl",
       "collectionDate": "17 Oct 2026"
     }

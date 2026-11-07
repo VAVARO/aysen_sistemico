@@ -1,0 +1,111 @@
+{
+  "fuente": "Subsecretaría de Telecomunicaciones (SUBTEL) - Fondo de Desarrollo de las Telecomunicaciones (FDT)",
+  "sistema": "Monitoreo de Infraestructura Digital, Proyecto Fibra Óptica Austral y Conectividad para la Educación 2030",
+  "url_origen": "https://www.subtel.gob.cl",
+  "fecha_corte": "2026-10-17",
+  "fibra_optica_austral_foa": {
+    "troncal_submarino_km": 2829.0,
+    "operador_troncal_submarino": "Comunicación y Telefonía Rural (CTR) / Huawei Marine",
+    "troncal_terrestre_aysen_km": 630.0,
+    "operador_troncal_terrestre": "Silice Telecom",
+    "pozo_aterrizaje_submarino_aysen": "Caleta Tortel (comuna de Tortel)",
+    "nodos_troncales_iluminados": [
+      "Coyhaique",
+      "Puerto Aysén",
+      "Puerto Cisnes",
+      "La Junta",
+      "Villa Mañihuales",
+      "Cochrane",
+      "Caleta Tortel",
+      "Puerto Ingeniero Ibáñez",
+      "Chile Chico"
+    ]
+  },
+  "conectividad_educacion_2030_resumen": {
+    "total_establecimientos_educacionales_aysen": 74,
+    "establecimientos_conectados_alta_velocidad": 62,
+    "porcentaje_establecimientos_conectados_pct": 83.8
+  },
+  "por_comuna": [
+    {
+      "comuna_ine": "11101",
+      "comuna_nombre": "Coyhaique",
+      "hogares_sin_internet_fijo_pct": 24.5,
+      "cobertura_fibra_hogar_pct": 75.5,
+      "establecimientos_educacion_conectados_n": 24,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11102",
+      "comuna_nombre": "Lago Verde",
+      "hogares_sin_internet_fijo_pct": 82.4,
+      "cobertura_fibra_hogar_pct": 17.6,
+      "establecimientos_educacion_conectados_n": 3,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11201",
+      "comuna_nombre": "Aysén",
+      "hogares_sin_internet_fijo_pct": 38.2,
+      "cobertura_fibra_hogar_pct": 61.8,
+      "establecimientos_educacion_conectados_n": 14,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11202",
+      "comuna_nombre": "Cisnes",
+      "hogares_sin_internet_fijo_pct": 56.4,
+      "cobertura_fibra_hogar_pct": 43.6,
+      "establecimientos_educacion_conectados_n": 6,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11203",
+      "comuna_nombre": "Guaitecas",
+      "hogares_sin_internet_fijo_pct": 68.2,
+      "cobertura_fibra_hogar_pct": 31.8,
+      "establecimientos_educacion_conectados_n": 2,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11301",
+      "comuna_nombre": "Cochrane",
+      "hogares_sin_internet_fijo_pct": 48.6,
+      "cobertura_fibra_hogar_pct": 51.4,
+      "establecimientos_educacion_conectados_n": 4,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11302",
+      "comuna_nombre": "O'Higgins",
+      "hogares_sin_internet_fijo_pct": 76.8,
+      "cobertura_fibra_hogar_pct": 23.2,
+      "establecimientos_educacion_conectados_n": 2,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11303",
+      "comuna_nombre": "Tortel",
+      "hogares_sin_internet_fijo_pct": 72.5,
+      "cobertura_fibra_hogar_pct": 27.5,
+      "establecimientos_educacion_conectados_n": 2,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11401",
+      "comuna_nombre": "Chile Chico",
+      "hogares_sin_internet_fijo_pct": 52.1,
+      "cobertura_fibra_hogar_pct": 47.9,
+      "establecimientos_educacion_conectados_n": 3,
+      "fdt_ultima_milla_aprobado": true
+    },
+    {
+      "comuna_ine": "11402",
+      "comuna_nombre": "Río Ibáñez",
+      "hogares_sin_internet_fijo_pct": 64.8,
+      "cobertura_fibra_hogar_pct": 35.2,
+      "establecimientos_educacion_conectados_n": 4,
+      "fdt_ultima_milla_aprobado": true
+    }
+  ]
+}

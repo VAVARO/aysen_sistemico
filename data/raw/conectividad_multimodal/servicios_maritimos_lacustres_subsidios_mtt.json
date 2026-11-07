@@ -1,0 +1,147 @@
+{
+  "fuente": "Ministerio de Transportes y Telecomunicaciones (MTT) - División de Transporte Público Regional (DTPR)",
+  "sistema": "Programa Nacional de Subsidios al Transporte en Zonas Aisladas",
+  "url_origen": "https://dtpr.mtt.gob.cl",
+  "fecha_corte": "2026-10-17",
+  "servicios_maritimos_lacustres_subsidiados": [
+    {
+      "codigo_servicio": "CAM-01",
+      "nombre": "Ruta Cordillera (Quellón - Melinka - Cisnes - Chacabuco)",
+      "tramo": "Quellón - Melinka - Repollal - Santo Domingo - Melimoyu - Raúl Marín Balmaceda - Puerto Gala - Puerto Cisnes - Puerto Gaviota - Puerto Aguirre - Puerto Chacabuco",
+      "tipo": "Marítimo de cabotaje mayor",
+      "embarcacion_tipo": "Barcaza transbordadora mixta de pasajeros y rodados",
+      "frecuencia_semanal": 2,
+      "tiempo_navegacion_horas": 32.0,
+      "tarifa_residente_clp": 6500,
+      "tarifa_general_clp": 24000,
+      "comunas_beneficiadas": [
+        "Guaitecas",
+        "Cisnes",
+        "Aysén"
+      ]
+    },
+    {
+      "codigo_servicio": "CAM-02",
+      "nombre": "Ruta Litoral Norte Aysén",
+      "tramo": "Puerto Chacabuco - Puerto Aguirre - Caleta Andrade - Puerto Gala - Puerto Gaviota",
+      "tipo": "Marítimo de conectividad costera",
+      "embarcacion_tipo": "Catamarán y lancha rápida subvencionada",
+      "frecuencia_semanal": 3,
+      "tiempo_navegacion_horas": 9.5,
+      "tarifa_residente_clp": 3200,
+      "tarifa_general_clp": 15000,
+      "comunas_beneficiadas": [
+        "Aysén",
+        "Cisnes"
+      ]
+    },
+    {
+      "codigo_servicio": "FLV-01",
+      "nombre": "Fiordo Mitchell (Ruta 7 Carretera Austral Sur)",
+      "tramo": "Puerto Yungay - Río Bravo",
+      "tipo": "Marítimo/Fluvial de cruce vehicular y de pasajeros",
+      "embarcacion_tipo": "Barcaza Padre Antonio Ronchi",
+      "frecuencia_semanal": 18,
+      "tiempo_navegacion_horas": 0.75,
+      "tarifa_residente_clp": 0,
+      "tarifa_general_clp": 0,
+      "subsidio_mop_pct": 100.0,
+      "comunas_beneficiadas": [
+        "Tortel",
+        "O'Higgins"
+      ]
+    },
+    {
+      "codigo_servicio": "LAC-01",
+      "nombre": "Lago General Carrera (Puerto Ibáñez - Chile Chico)",
+      "tramo": "Puerto Ingeniero Ibáñez - Chile Chico",
+      "tipo": "Lacustre de pasajeros y vehículos",
+      "embarcacion_tipo": "Barcaza La Tehuelche / Barcaza Pilchero",
+      "frecuencia_semanal": 14,
+      "tiempo_navegacion_horas": 2.25,
+      "tarifa_residente_clp": 2300,
+      "tarifa_general_clp": 5500,
+      "tarifa_vehiculo_clp": 21000,
+      "comunas_beneficiadas": [
+        "Río Ibáñez",
+        "Chile Chico"
+      ]
+    },
+    {
+      "codigo_servicio": "LAC-02",
+      "nombre": "Lago O'Higgins (Bahía Bahamondes - Candelario Mancilla)",
+      "tramo": "Bahía Bahamondes - Candelario Mancilla (Paso Dos Lagunas)",
+      "tipo": "Lacustre fronterizo y comunitario",
+      "embarcacion_tipo": "Nave Soberanía",
+      "frecuencia_semanal": 2,
+      "tiempo_navegacion_horas": 2.75,
+      "tarifa_residente_clp": 2500,
+      "tarifa_general_clp": 35000,
+      "comunas_beneficiadas": [
+        "O'Higgins"
+      ]
+    }
+  ],
+  "localidades_con_dependencia_barcaza_100pct": [
+    {
+      "localidad": "Melinka",
+      "comuna": "Guaitecas",
+      "poblacion_estimada": 1450,
+      "tipo_aislamiento": "Insular marítimo"
+    },
+    {
+      "localidad": "Repollal",
+      "comuna": "Guaitecas",
+      "poblacion_estimada": 380,
+      "tipo_aislamiento": "Insular marítimo"
+    },
+    {
+      "localidad": "Puerto Aguirre",
+      "comuna": "Aysén",
+      "poblacion_estimada": 1250,
+      "tipo_aislamiento": "Insular marítimo (Islas Huichas)"
+    },
+    {
+      "localidad": "Caleta Andrade",
+      "comuna": "Aysén",
+      "poblacion_estimada": 420,
+      "tipo_aislamiento": "Insular marítimo (Islas Huichas)"
+    },
+    {
+      "localidad": "Estero Copa",
+      "comuna": "Aysén",
+      "poblacion_estimada": 160,
+      "tipo_aislamiento": "Insular marítimo (Islas Huichas)"
+    },
+    {
+      "localidad": "Puerto Gala",
+      "comuna": "Cisnes",
+      "poblacion_estimada": 220,
+      "tipo_aislamiento": "Insular marítimo"
+    },
+    {
+      "localidad": "Puerto Gaviota",
+      "comuna": "Cisnes",
+      "poblacion_estimada": 110,
+      "tipo_aislamiento": "Insular marítimo"
+    },
+    {
+      "localidad": "Puerto Raúl Marín Balmaceda",
+      "comuna": "Cisnes",
+      "poblacion_estimada": 310,
+      "tipo_aislamiento": "Bimodal marítimo/fluvial (Barcaza Río Palena)"
+    },
+    {
+      "localidad": "Villa O'Higgins",
+      "comuna": "O'Higgins",
+      "poblacion_estimada": 650,
+      "tipo_aislamiento": "Bimodal terrestre cortado por Fiordo Mitchell"
+    },
+    {
+      "localidad": "Candelario Mancilla",
+      "comuna": "O'Higgins",
+      "poblacion_estimada": 35,
+      "tipo_aislamiento": "Lacustre cordillerano exclusivo"
+    }
+  ]
+}

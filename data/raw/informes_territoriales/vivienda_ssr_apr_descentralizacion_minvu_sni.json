@@ -1,0 +1,108 @@
+{
+  "fuente": "Ministerio de Vivienda y Urbanismo (MINVU), Dirección de Obras Hidráulicas (DOH) & Ministerio de Desarrollo Social (SNI)",
+  "sistema": "Catastro de Déficit Habitacional, Registro Nacional de SSR/APR y Sistema Nacional de Inversiones",
+  "url_origen": "https://www.minvu.gob.cl",
+  "fecha_corte": "2026-10-17",
+  "resumen_regional": {
+    "deficit_habitacional_cuantitativo_total_viviendas": 3335,
+    "deficit_habitacional_cualitativo_total_viviendas": 5443,
+    "inversion_publica_per_capita_anual_sni_clp": 1850000,
+    "inversion_publica_nacional_promedio_sni_clp": 578000,
+    "ratio_inversion_per_capita_respecto_nacional": 3.2,
+    "descentralizacion_inversion_regional_fndr_pedze_pct": 47.8,
+    "inversion_sectorial_centralizada_ministerial_pct": 52.2,
+    "total_comites_ssr_apr_operativos": 48
+  },
+  "por_comuna": [
+    {
+      "comuna_ine": "11101",
+      "comuna_nombre": "Coyhaique",
+      "deficit_cuantitativo_n": 1845,
+      "deficit_cualitativo_n": 2410,
+      "hacinamiento_pct": 5.8,
+      "sistemas_ssr_apr_n": 12,
+      "cobertura_ssr_apr_familias": 2850
+    },
+    {
+      "comuna_ine": "11102",
+      "comuna_nombre": "Lago Verde",
+      "deficit_cuantitativo_n": 34,
+      "deficit_cualitativo_n": 115,
+      "hacinamiento_pct": 8.4,
+      "sistemas_ssr_apr_n": 3,
+      "cobertura_ssr_apr_familias": 280
+    },
+    {
+      "comuna_ine": "11201",
+      "comuna_nombre": "Aysén",
+      "deficit_cuantitativo_n": 762,
+      "deficit_cualitativo_n": 1250,
+      "hacinamiento_pct": 6.4,
+      "sistemas_ssr_apr_n": 8,
+      "cobertura_ssr_apr_familias": 1450
+    },
+    {
+      "comuna_ine": "11202",
+      "comuna_nombre": "Cisnes",
+      "deficit_cuantitativo_n": 184,
+      "deficit_cualitativo_n": 490,
+      "hacinamiento_pct": 7.1,
+      "sistemas_ssr_apr_n": 6,
+      "cobertura_ssr_apr_familias": 780
+    },
+    {
+      "comuna_ine": "11203",
+      "comuna_nombre": "Guaitecas",
+      "deficit_cuantitativo_n": 94,
+      "deficit_cualitativo_n": 260,
+      "hacinamiento_pct": 8.9,
+      "sistemas_ssr_apr_n": 2,
+      "cobertura_ssr_apr_familias": 420
+    },
+    {
+      "comuna_ine": "11301",
+      "comuna_nombre": "Cochrane",
+      "deficit_cuantitativo_n": 118,
+      "deficit_cualitativo_n": 310,
+      "hacinamiento_pct": 6.8,
+      "sistemas_ssr_apr_n": 4,
+      "cobertura_ssr_apr_familias": 380
+    },
+    {
+      "comuna_ine": "11302",
+      "comuna_nombre": "O'Higgins",
+      "deficit_cuantitativo_n": 28,
+      "deficit_cualitativo_n": 98,
+      "hacinamiento_pct": 9.2,
+      "sistemas_ssr_apr_n": 2,
+      "cobertura_ssr_apr_familias": 160
+    },
+    {
+      "comuna_ine": "11303",
+      "comuna_nombre": "Tortel",
+      "deficit_cuantitativo_n": 42,
+      "deficit_cualitativo_n": 135,
+      "hacinamiento_pct": 9.5,
+      "sistemas_ssr_apr_n": 2,
+      "cobertura_ssr_apr_familias": 190
+    },
+    {
+      "comuna_ine": "11401",
+      "comuna_nombre": "Chile Chico",
+      "deficit_cuantitativo_n": 142,
+      "deficit_cualitativo_n": 380,
+      "hacinamiento_pct": 6.2,
+      "sistemas_ssr_apr_n": 4,
+      "cobertura_ssr_apr_familias": 620
+    },
+    {
+      "comuna_ine": "11402",
+      "comuna_nombre": "Río Ibáñez",
+      "deficit_cuantitativo_n": 86,
+      "deficit_cualitativo_n": 295,
+      "hacinamiento_pct": 7.4,
+      "sistemas_ssr_apr_n": 5,
+      "cobertura_ssr_apr_familias": 540
+    }
+  ]
+}

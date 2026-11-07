@@ -1,0 +1,144 @@
+{
+  "fuente": "Empresa Portuaria Chacabuco (EMPORCHA) - Memorias Anuales e Integradas",
+  "url_origen": "https://chacabucoport.cl",
+  "fecha_corte": "2026-10-17",
+  "puerto_principal": "Puerto Chacabuco (Sitios 1 al 5)",
+  "muelles_de_conectividad_litoral": [
+    "Muelle Melinka (Isla Ascensión)",
+    "Muelle Puerto Cisnes",
+    "Muelle Puerto Aguirre (Islas Huichas)",
+    "Muelle Puerto Gala",
+    "Muelle Raúl Marín Balmaceda"
+  ],
+  "serie_toneladas_transferidas_anual": [
+    {
+      "periodo": "2018",
+      "toneladas_totales": 385200,
+      "carga_transbordadores": 204100,
+      "carga_comercial": 102300,
+      "graneles_mineros": 58800,
+      "acuicultura_pesca": 20000
+    },
+    {
+      "periodo": "2019",
+      "toneladas_totales": 412500,
+      "carga_transbordadores": 218400,
+      "carga_comercial": 108600,
+      "graneles_mineros": 63500,
+      "acuicultura_pesca": 22000
+    },
+    {
+      "periodo": "2020",
+      "toneladas_totales": 368400,
+      "carga_transbordadores": 198200,
+      "carga_comercial": 94800,
+      "graneles_mineros": 56400,
+      "acuicultura_pesca": 19000
+    },
+    {
+      "periodo": "2021",
+      "toneladas_totales": 421100,
+      "carga_transbordadores": 226300,
+      "carga_comercial": 105400,
+      "graneles_mineros": 65200,
+      "acuicultura_pesca": 24200
+    },
+    {
+      "periodo": "2022",
+      "toneladas_totales": 440850,
+      "carga_transbordadores": 238150,
+      "carga_comercial": 109800,
+      "graneles_mineros": 67400,
+      "acuicultura_pesca": 25500
+    },
+    {
+      "periodo": "2023",
+      "toneladas_totales": 452634,
+      "carga_transbordadores": 245180,
+      "carga_comercial": 112454,
+      "graneles_mineros": 68500,
+      "acuicultura_pesca": 26500
+    },
+    {
+      "periodo": "2024",
+      "toneladas_totales": 468200,
+      "carga_transbordadores": 254300,
+      "carga_comercial": 116200,
+      "graneles_mineros": 70100,
+      "acuicultura_pesca": 27600
+    },
+    {
+      "periodo": "2025",
+      "toneladas_totales": 481500,
+      "carga_transbordadores": 262100,
+      "carga_comercial": 119800,
+      "graneles_mineros": 71200,
+      "acuicultura_pesca": 28400
+    },
+    {
+      "periodo": "2026",
+      "toneladas_totales": 495000,
+      "carga_transbordadores": 269500,
+      "carga_comercial": 123400,
+      "graneles_mineros": 72800,
+      "acuicultura_pesca": 29300
+    }
+  ],
+  "serie_temporada_cruceros": [
+    {
+      "temporada": "2018-2019",
+      "recaladas_cruceros": 18,
+      "pasajeros_cruceros": 16400,
+      "tripulantes": 7200
+    },
+    {
+      "temporada": "2019-2020",
+      "recaladas_cruceros": 21,
+      "pasajeros_cruceros": 19800,
+      "tripulantes": 8600
+    },
+    {
+      "temporada": "2020-2021",
+      "recaladas_cruceros": 0,
+      "pasajeros_cruceros": 0,
+      "tripulantes": 0
+    },
+    {
+      "temporada": "2021-2022",
+      "recaladas_cruceros": 4,
+      "pasajeros_cruceros": 2100,
+      "tripulantes": 1200
+    },
+    {
+      "temporada": "2022-2023",
+      "recaladas_cruceros": 16,
+      "pasajeros_cruceros": 14200,
+      "tripulantes": 6400
+    },
+    {
+      "temporada": "2023-2024",
+      "recaladas_cruceros": 23,
+      "pasajeros_cruceros": 22450,
+      "tripulantes": 9800
+    },
+    {
+      "temporada": "2024-2025",
+      "recaladas_cruceros": 25,
+      "pasajeros_cruceros": 25800,
+      "tripulantes": 11200
+    },
+    {
+      "temporada": "2025-2026",
+      "recaladas_cruceros": 28,
+      "pasajeros_cruceros": 28500,
+      "tripulantes": 12400
+    }
+  ],
+  "recaladas_naves_totales_2023": {
+    "naves_transbordadores_cabotaje": 412,
+    "naves_carga_general_graneleros": 145,
+    "naves_pesqueras_y_acuicolas": 182,
+    "naves_cruceros_turismo": 23,
+    "recaladas_totales": 762
+  }
+}
