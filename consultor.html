@@ -18,8 +18,9 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
-  <!-- Datos y Motor OmniRoute -->
+  <!-- Datos, Motor Semántico NL2Chart y Motor OmniRoute -->
   <script src="data/aysen_hubs_data.js"></script>
+  <script src="js/nl2chart_engine.js"></script>
   <script src="js/omniroute_client.js"></script>
 
   <!-- Cabecera Global y Accesibilidad -->
@@ -929,34 +930,28 @@
 
       // Metadatos de variables
       function getVarMeta(key) {
-        if (!key) return { key: '', label: '', unit: '' };
+        if (!key) return { key: '', label: '', unit: '', aggregation: 'sum' };
+        if (window.OmniRouteClient && typeof window.OmniRouteClient.getIndex === 'function') {
+          const idx = window.OmniRouteClient.getIndex();
+          const found = idx && idx.variablesByKey ? idx.variablesByKey[key] : null;
+          if (found) {
+            return {
+              key,
+              label: CANONICAL_VAR_LABELS[key]?.label || found.label || key,
+              unit: CANONICAL_VAR_LABELS[key]?.unit || found.unit || '',
+              aggregation: found.aggregation || 'sum'
+            };
+          }
+        }
         if (CANONICAL_VAR_LABELS[key]) {
           return {
             key,
             label: CANONICAL_VAR_LABELS[key].label,
-            unit: CANONICAL_VAR_LABELS[key].unit
+            unit: CANONICAL_VAR_LABELS[key].unit,
+            aggregation: CANONICAL_VAR_LABELS[key].unit === '%' ? 'avg' : 'sum'
           };
         }
-        if (window.OmniRouteClient && typeof window.OmniRouteClient.getIndex === 'function') {
-          const idx = window.OmniRouteClient.getIndex();
-          const found = (idx.variables || []).find(v => v.key === key);
-          if (found) {
-            const cleanLabel = (found.label || key).replace(/\s*\([^)]*\)\s*$/, '').trim();
-            return { key, label: cleanLabel, unit: found.unit || '' };
-          }
-        }
-        let label = key.replace(/_/g, ' ');
-        let unit = '';
-        if (key.endsWith('_pct')) { unit = '%'; label = label.replace(/\s*pct$/, ''); }
-        else if (key.endsWith('_mmusd')) { unit = 'MM USD'; label = label.replace(/\s*mmusd$/, ''); }
-        else if (key.endsWith('_mclp')) { unit = 'M$ CLP'; label = label.replace(/\s*mclp$/, ''); }
-        else if (key.endsWith('_clp')) { unit = '$ CLP'; label = label.replace(/\s*clp$/, ''); }
-        else if (key.endsWith('_ton')) { unit = 'ton'; label = label.replace(/\s*ton$/, ''); }
-        else if (key.endsWith('_km2')) { unit = 'km²'; label = label.replace(/\s*km2$/, ''); }
-        else if (key.endsWith('_km')) { unit = 'km'; label = label.replace(/\s*km$/, ''); }
-        else if (key.endsWith('_ha')) { unit = 'ha'; label = label.replace(/\s*ha$/, ''); }
-        else if (key.endsWith('_mw')) { unit = 'MW'; label = label.replace(/\s*mw$/, ''); }
-        return { key, label, unit };
+        return { key, label: key.replace(/_/g, ' '), unit: '', aggregation: 'sum' };
       }
 
       // Plugin de Chart.js para dibujar nombres de comunas en el plano de dispersión (estándar Laboratorio)
@@ -1371,11 +1366,11 @@
           const n = sorted.length || 1;
           const sumX = sorted.reduce((acc, c) => acc + (typeof c[varX] === 'number' ? c[varX] : 0), 0);
           const avgX = sumX / n;
-          const isPctX = metaX.unit === '%' || varX.endsWith('_pct');
-
-          const labelX = isPctX
-            ? `Promedio: ${avgX.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`
-            : `Total: ${sumX.toLocaleString('es-CL')}${unitXStr} (Promedio: ${avgX.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitXStr})`;
+          const isAvgX = metaX.aggregation === 'avg' || metaX.unit === '%' || varX.endsWith('_pct');
+          const unitX = metaX.unit ? ` ${metaX.unit}` : '';
+          const labelX = isAvgX
+            ? `Promedio Regional: ${avgX.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitX}`
+            : `Total: ${sumX.toLocaleString('es-CL')}${unitX} (Prom: ${avgX.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitX})`;
 
           let footHtml = `<tr>
             <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total / Promedio Regional</td>
@@ -1383,13 +1378,13 @@
 
           if (varY) {
             const metaY = getVarMeta(varY);
-            const unitYStr = metaY.unit ? ` ${metaY.unit}` : '';
+            const unitY = metaY.unit ? ` ${metaY.unit}` : '';
             const sumY = sorted.reduce((acc, c) => acc + (typeof c[varY] === 'number' ? c[varY] : 0), 0);
             const avgY = sumY / n;
-            const isPctY = metaY.unit === '%' || varY.endsWith('_pct');
-            const labelY = isPctY
-              ? `Promedio: ${avgY.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`
-              : `Total: ${sumY.toLocaleString('es-CL')}${unitYStr} (Promedio: ${avgY.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitYStr})`;
+            const isAvgY = metaY.aggregation === 'avg' || metaY.unit === '%' || varY.endsWith('_pct');
+            const labelY = isAvgY
+              ? `Promedio Regional: ${avgY.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitY}`
+              : `Total: ${sumY.toLocaleString('es-CL')}${unitY} (Prom: ${avgY.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitY})`;
             footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${labelY}</td>`;
           }
           footHtml += `</tr>`;

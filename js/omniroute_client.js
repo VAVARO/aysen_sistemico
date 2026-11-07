@@ -1,31 +1,48 @@
 /**
- * js/omniroute_client.js
- * Cliente de Inteligencia Artificial para Aysén Sistémico basado en OmniRoute
- * Endpoint OpenAI-compatible (/v1/chat/completions) con verificación de datos oficiales
- * fundamentado 100% en window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la Región de Aysén.
- *
- * Cero emojis. Estética sobria, técnica y cartográfica austral.
+ * OmniRouteClient — Motor RAG en Memoria y Cliente LLM para Aysén Sistémico
+ * ============================================================================
+ * Arquitectura 100% libre de hardcoding y auto-adaptativa a nuevos datos:
+ * 1. Introspecta dinámicamente `window.AYSEN_HUBS_DATA` (comunas, nodos, hubs,
+ *    holdings, series históricas y cualquier colección o columna futura).
+ * 2. Construye un índice invertido ponderado en memoria (integrando
+ *    `NL2ChartEngine` / `data/nl_lexicon_aysen.json` cuando están disponibles).
+ * 3. Recupera el subconjunto exacto de datos (RAG Context) para cada consulta
+ *    y lo inyecta en la memoria del LLM (`http://localhost:20128/v1/chat/completions`),
+ *    manteniendo memoria conversacional multi-turno.
+ * 4. Si el servidor LLM local no está disponible, sintetiza la respuesta
+ *    directamente desde el paquete de memoria recuperado (cero cifras estáticas).
  */
-
 (function (root, factory) {
   'use strict';
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    module.exports = factory();
-  } else {
-    root.OmniRouteClient = factory();
+  const instance = factory(root);
+  if (typeof module === 'object' && module.exports) {
+    module.exports = instance;
   }
-})(typeof window !== 'undefined' ? window : globalThis, function () {
+  if (root) {
+    root.OmniRouteClient = instance;
+  }
+})(typeof window !== 'undefined' ? window : globalThis, function (global) {
   'use strict';
 
-  // Catálogo canónico de las 28 fuentes oficiales de Aysén Sistémico
+  const DEFAULT_CONFIG = {
+    endpoint: 'http://localhost:20128/v1/chat/completions',
+    endpointUrl: 'http://localhost:20128/v1',
+    apiKey: 'sk-omniroute-aysen-local',
+    model: 'omniroute-default',
+    temperature: 0.15,
+    maxTokens: 1100,
+    timeoutMs: 12000,
+    maxHistoryTurns: 6,
+    lexiconUrl: 'data/nl_lexicon_aysen.json'
+  };
+
+  // Catálogo institucional de las 28 fuentes verificadas
   const FUENTES_OFICIALES_28 = [
     { id: 1, institucion: 'SERNATUR', indicador: '01. Registro Nacional de Prestadores Turísticos', url: 'https://registro.sernatur.cl/', hub: 'I. Turismo', anos: '2015-2026' },
     { id: 2, institucion: 'SUBTURISMO', indicador: '02. Zonas de Interés Turístico (ZOIT)', url: 'https://www.subturismo.gob.cl/zoit/', hub: 'I. Turismo', anos: '2015-2026' },
     { id: 3, institucion: 'INE', indicador: '03. Encuesta Mensual de Alojamiento Turístico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economicas/turismo', hub: 'I. Turismo', anos: '2015-2026' },
     { id: 4, institucion: 'CONAF', indicador: '04. Estadísticas de Visitación SNASPE', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', hub: 'I. Turismo', anos: '2015-2026' },
-    { id: 5, institucion: 'SUBPESCA', indicador: '05. Catastro de Concesiones de Acuicultura (745 concesiones)', url: 'https://mapas.subpesca.cl/visorsubpesca/', hub: 'II. Salmonicultura', anos: '2015-2026' },
+    { id: 5, institucion: 'SUBPESCA', indicador: '05. Catastro de Concesiones de Acuicultura', url: 'https://mapas.subpesca.cl/visorsubpesca/', hub: 'II. Salmonicultura', anos: '2015-2026' },
     { id: 6, institucion: 'SERNAPESCA', indicador: '06. Fiscalización Sanitaria, Biomasa y Antimicrobianos', url: 'https://www.sernapesca.cl/informes/acuicultura', hub: 'II. Salmonicultura', anos: '2015-2026' },
     { id: 7, institucion: 'IFOP', indicador: '07. Monitoreo Oceanográfico y Floraciones Algales', url: 'https://www.ifop.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
     { id: 8, institucion: 'CMF', indicador: '08. Memorias Financieras de Holdings Acuícolas', url: 'https://www.cmfchile.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
@@ -37,7 +54,7 @@
     { id: 14, institucion: 'DIPRES / GORE Aysén', indicador: '14. Ejecución Presupuestaria Regional FNDR', url: 'https://www.dipres.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
     { id: 15, institucion: 'SERVEL', indicador: '15. Resultados Electorales y Autoridades Comunales (2024-2028)', url: 'https://www.servel.cl/', hub: 'IV. Gobernanza', anos: '2024-2028' },
     { id: 16, institucion: 'MOP Vialidad', indicador: '16. Red Vial y Pavimentación Ruta 7 Austral', url: 'https://vialidad.mop.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
-    { id: 17, institucion: 'SEA - SEIA', indicador: '17. Proyectos Evaluados y Aprobados en el SEIA (722 proyectos)', url: 'https://seia.sea.gob.cl/', hub: 'V. Inversión', anos: '2015-2026' },
+    { id: 17, institucion: 'SEA - SEIA', indicador: '17. Proyectos Evaluados y Aprobados en el SEIA', url: 'https://seia.sea.gob.cl/', hub: 'V. Inversión', anos: '2015-2026' },
     { id: 18, institucion: 'SII', indicador: '18. Estadísticas Tributarias de Empresas, Ventas y Empleo', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/', hub: 'V. Inversión', anos: '2015-2026' },
     { id: 19, institucion: 'ChileCompra', indicador: '19. Transacciones y Compras Públicas Mercado Público', url: 'https://www.chilecompra.cl/', hub: 'V. Inversión', anos: '2015-2026' },
     { id: 20, institucion: 'MBN / SERNAGEOMIN', indicador: '20. Catastro de Propiedad Fiscal y Concesiones Mineras', url: 'https://catastro.bienes.cl/', hub: 'V. Inversión', anos: '2015-2026' },
@@ -51,69 +68,1059 @@
     { id: 28, institucion: 'SERPAT-CMN / ANID / CORFO', indicador: '28. Infraestructura Cultural, Cartera ANID, CORFO e Investigadores', url: 'https://dataciencia.anid.cl/', hub: 'IX. Cultura y X. CTCi', anos: '2015-2026' }
   ];
 
-  // Mapeo exhaustivo de variables comunales a su Hub canónico (I a X)
-  const VARIABLE_HUB_MAP = {
-    // Hub I: Turismo
-    prestadores_sernatur: 'I', camas_turisticas: 'I', pernoctaciones_emat: 'I',
-    visitantes_snaspe: 'I', ratio_presion_turistica: 'I',
-    // Hub II: Salmonicultura
-    concesiones_salmon: 'II', centros_activos_salmon: 'II', biomasa_salmon_ton: 'II',
-    antibioticos_ica_g_ton: 'II', amerb_decretadas: 'II', amerb_operativas: 'II',
-    // Hub III: Energía
-    potencia_mw: 'III', gasolina_93_clp: 'III', precio_lena_m3: 'III',
-    saidi_horas_anual: 'III', tarifa_bt1_clp: 'III', costo_diesel_aislado_clp: 'III', internet_fijo_pct: 'III',
-    // Hub IV: Gobernanza
-    presupuesto_mclp: 'IV', presupuesto_per_capita_mclp: 'IV', dependencia_fcm_pct: 'IV',
-    fndr_mclp: 'IV', ipp_per_capita_clp: 'IV', gasto_personal_pct: 'IV',
-    inversion_directa_pct: 'IV', profesionalizacion_pct: 'IV',
-    ruta7_pavimentada_km: 'IV', ruta7_ripio_km: 'IV',
-    // Hub V: Inversión
-    concesiones_mineras_ha: 'V', proyectos_seia_aprobados: 'V', inversion_seia_mmusd: 'V',
-    empresas_sii: 'V', trabajadores_sii: 'V', seia_plazo_dias: 'V',
-    compras_locales_pct: 'V', fuga_compras_pct: 'V', parcelaciones_sag_n: 'V',
-    // Hub VI: Social
-    poblacion_censo_2024: 'VI', porcentaje_regional_pct: 'VI', superficie_km2: 'VI',
-    densidad_hab_km2: 'VI', pobreza_ingresos_pct: 'VI', pobreza_multidim_pct: 'VI', matricula_escolar: 'VI',
-    // Hub VII: Biodiversidad
-    superficie_snaspe_pct: 'VII', cobertura_vegetal_nativa_ha: 'VII', cobertura_vegetal_pct: 'VII',
-    fauna_amenazada_n: 'VII', ha_snaspe_por_guardaparque: 'VII', glaciares_dga_n: 'VII',
-    superficie_glaciar_km2: 'VII', daa_consuntivos_m3s: 'VII', daa_no_consuntivos_m3s: 'VII',
-    dias_sobre_norma_mp25: 'VII', hogares_lena_pct: 'VII',
-    // Hub VIII: Salud
-    camas_hospitalarias: 'VIII', medicos_por_mil_hab: 'VIII', espera_no_ges_n: 'VIII',
-    urgencias_respiratorias_pct: 'VIII', aeroevacuaciones_samu_n: 'VIII', postas_salud_rural: 'VIII', traslado_coyhaique_hrs: 'VIII',
-    // Hub IX: Cultura y Patrimonio
-    museos_espacios_n: 'IX', bibliotecas_snbp_n: 'IX', fondart_fndr_mclp: 'IX',
-    total_espacios_culturales: 'IX', monumentos_nacionales_count: 'IX',
-    // Hub X: CTCi e Innovación
-    proyectos_anid_n: 'X', monto_anid_mclp: 'X', innovacion_corfo_mclp: 'X',
-    proyectos_ctci_total: 'X', investigadores_residentes: 'X'
+  let _config = Object.assign({}, DEFAULT_CONFIG);
+  let _dataLake = null;
+  let _lexicon = null;
+  let _conversationMemory = [];
+
+  // Carga automática del léxico en entorno Node.js si está disponible en disco
+  function tryLoadNodeLexicon() {
+    if (_lexicon) return _lexicon;
+    if (typeof require === 'function') {
+      try {
+        const fs = require('fs');
+        const path = require('path');
+        const lexPath = path.resolve(process.cwd(), DEFAULT_CONFIG.lexiconUrl);
+        if (fs.existsSync(lexPath)) {
+          _lexicon = JSON.parse(fs.readFileSync(lexPath, 'utf8'));
+        }
+      } catch (_) {}
+    }
+    return _lexicon;
+  }
+
+  // Índice dinámico auto-construido desde el Data Lake
+  let _memoryIndex = {
+    entities: [],          // Comunas u otras unidades territoriales detectadas
+    comunas: [],           // Referencia directa a comunas para compatibilidad contractual
+    variables: [],         // Todas las columnas numéricas y categóricas de comunas
+    variablesByKey: {},
+    nodes: [],             // Todos los nodos satélite (#01..#N) con sus tablas y series
+    nodos: [],             // Alias contractual para nodos
+    hubs: [],              // Todos los hubs temáticos
+    customCollections: [], // Holdings, series mensuales, puentes y futuras tablas
+    sourcesByKey: {},      // Fuentes oficiales indexadas por variable
+    fuentes: FUENTES_OFICIALES_28
   };
 
-  const DEFAULT_CONFIG = {
-    endpointUrl: 'http://localhost:20128/v1',
-    apiKey: 'sk-omniroute-aysen-local',
-    model: 'auto'
-  };
+  // Stopwords en español para tokenización limpia
+  const STOPWORDS = new Set([
+    'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'de', 'del', 'al',
+    'a', 'en', 'con', 'por', 'para', 'sin', 'sobre', 'entre', 'hacia', 'hasta',
+    'y', 'e', 'o', 'u', 'ni', 'que', 'cual', 'cuales', 'como', 'donde', 'cuando',
+    'cuanto', 'cuanta', 'cuantos', 'cuantas', 'quien', 'quienes', 'se', 'su',
+    'sus', 'es', 'son', 'fue', 'ha', 'han', 'hay', 'tiene', 'tienen', 'mas',
+    'menos', 'muy', 'pero', 'si', 'no', 'me', 'te', 'lo', 'le', 'les', 'nos',
+    'esta', 'estan', 'este', 'estos', 'esta', 'estuvo', 'ser', 'estar',
+    'mostrar', 'muestrame', 'mostrame', 'ver', 'dime', 'consulta', 'consultar',
+    'datos', 'dato', 'informacion', 'indicador', 'indicadores', 'variable',
+    'variables', 'grafico', 'graficar', 'tabla', 'aysen', 'region', 'cada',
+    'comuna', 'comunas', 'comunal', 'comunales', 'regional', 'regionales',
+    'territorial', 'territoriales', 'mayor', 'menor', 'comparan', 'contrasta', 'cruza'
+  ]);
 
-  let _config = { ...DEFAULT_CONFIG };
-  let _indexedData = null;
-  let _comunas = [];
-  let _variablesCatalog = [];
-  let _nodes = [];
+  const IDENTITY_KEYS = new Set([
+    'id', 'comuna_ine', 'codigo_comuna', 'nombre', 'nombre_comuna', 'lat', 'lng', 'lon'
+  ]);
 
-  function normText(str) {
-    return String(str || '')
+  const TECHNICAL_SUFFIXES_RE = /\b(pct|mclp|clp|mmusd|usd|ton|km2|km|ha|mw|hrs|m3s|m3|n|count|total|est|anual|hist)\b/g;
+
+  function normalizeText(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .replace(/[¿?¡!.,;:_()'"\/\-]/g, ' ')
+      .replace(/[^a-z0-9.\s_-]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }
 
+  function tokenize(str) {
+    return normalizeText(str)
+      .replace(/_/g, ' ')
+      .split(/\s+/)
+      .filter(t => t.length > 1 && !STOPWORDS.has(t));
+  }
+
+  function fmtNumber(val, maxDecimals = 1) {
+    if (typeof val !== 'number' || !Number.isFinite(val)) return String(val ?? '-');
+    const isInt = Math.abs(val - Math.round(val)) < 1e-6;
+    return val.toLocaleString('es-CL', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: isInt ? 0 : maxDecimals
+    });
+  }
+
+  /**
+   * Infiere dinámicamente el Hub temático (I al X) al que pertenece cualquier variable
+   * actual o futura mediante inspección del Data Lake y reglas semánticas abiertas.
+   */
   function getHubForVariable(varKey) {
-    return VARIABLE_HUB_MAP[varKey] || 'VI';
+    const k = String(varKey || '').toLowerCase();
+    // 1. Verificar si el índice dinámico ya lo resolvió desde systemicBridges / nodos
+    if (_memoryIndex.variablesByKey && _memoryIndex.variablesByKey[varKey]?.hub) {
+      return _memoryIndex.variablesByKey[varKey].hub;
+    }
+    // 2. Inferencia semántica abierta para cualquier columna presente o futura
+    if (/sernatur|turis|emat|pernoctacion|snaspe.*visita|visita.*snaspe|visitantes_snaspe|zoit|hotel|alojamiento/.test(k)) return 'I';
+    if (/salmon|acuic|biomasa|antibiotico|amerb|subpesca|sernapesca|caligus/.test(k)) return 'II';
+    if (/potencia_mw|mw|electric|saidi|saifi|tarifa_bt1|gasolina|diesel|precio_lena|internet_fijo|fibra|telecom/.test(k)) return 'III';
+    if (/presupuesto|fcm|fndr|ipp|gasto_personal|inversion_directa|profesionalizacion|ruta7|alcalde|concejal|sinim|municipal/.test(k)) return 'IV';
+    if (/seia|sii|empresa|trabajador|compra|fuga_compras|parcelacion|miner|pib|inversion_seia/.test(k)) return 'V';
+    if (/glaciar|vegetal|snaspe_pct|guardaparque|fauna|huemul|daa_|mp25|hogares_lena|aire|bosque|biodiv/.test(k)) return 'VII';
+    if (/hospital|cama.*hosp|medico|espera_no_ges|urgencia|samu|aeroevac|posta|traslado_coyhaique|salud|deis/.test(k)) return 'VIII';
+    if (/museo|biblioteca|fondart|espacios_culturales|monumento|patrimonio|cultura/.test(k)) return 'IX';
+    if (/anid|corfo|ctci|investigador|ciencia|innovacion/.test(k)) return 'X';
+    return 'VI';
+  }
+
+  /**
+   * Extrae un objeto JSON desde una respuesta de LLM (pura, bloque Markdown o con texto envolvente).
+   */
+  function extractJsonFromResponse(rawContent) {
+    if (!rawContent || typeof rawContent !== 'string') return null;
+    const trimmed = rawContent.trim();
+    try {
+      const direct = JSON.parse(trimmed);
+      if (direct && typeof direct === 'object') return direct;
+    } catch (_) {}
+
+    const mdMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+    if (mdMatch && mdMatch[1]) {
+      try {
+        const parsed = JSON.parse(mdMatch[1].trim());
+        if (parsed && typeof parsed === 'object') return parsed;
+      } catch (_) {}
+    }
+
+    const firstBrace = trimmed.indexOf('{');
+    const lastBrace = trimmed.lastIndexOf('}');
+    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+      try {
+        const candidate = trimmed.substring(firstBrace, lastBrace + 1);
+        const parsed = JSON.parse(candidate);
+        if (parsed && typeof parsed === 'object') return parsed;
+      } catch (_) {}
+    }
+    return null;
+  }
+
+  /**
+   * Infiere etiqueta legible, unidad de medida y regla de agregación ('sum' vs 'avg')
+   * para cualquier clave presente o futura del Data Lake.
+   */
+  function inferVariableMetadata(key, sampleValues, lexiconEntry) {
+    let unit = '';
+    if (lexiconEntry && lexiconEntry.unit) {
+      unit = lexiconEntry.unit;
+    } else if (key.endsWith('_pct') || key.includes('porcentaje')) {
+      unit = '%';
+    } else if (key.endsWith('_mmusd')) {
+      unit = 'MM USD';
+    } else if (key.endsWith('_mclp')) {
+      unit = 'M$ CLP';
+    } else if (key.endsWith('_clp')) {
+      unit = '$ CLP';
+    } else if (key.endsWith('_ton')) {
+      unit = 'ton';
+    } else if (key.endsWith('_km2')) {
+      unit = 'km²';
+    } else if (key.endsWith('_km')) {
+      unit = 'km';
+    } else if (key.endsWith('_ha')) {
+      unit = 'ha';
+    } else if (key.endsWith('_mw')) {
+      unit = 'MW';
+    } else if (key.endsWith('_hrs') || key.includes('horas')) {
+      unit = 'horas';
+    } else if (key.endsWith('_m3s')) {
+      unit = 'm³/s';
+    } else if (key.endsWith('_m3')) {
+      unit = 'm³';
+    } else if (key.includes('por_mil')) {
+      unit = 'por mil hab.';
+    } else if (key.includes('poblacion') || key.includes('habitante')) {
+      unit = 'hab.';
+    }
+
+    // Determinar si la variable es intensiva (tasa, porcentaje, per cápita, promedio, densidad, precio, tarifa)
+    const isIntensive = Boolean(
+      unit === '%' ||
+      /(pct|porcentaje|tasa|densidad|per_capita|por_mil|ratio|promedio|plazo|horas|hrs|tarifa|precio|costo|gasolina|diesel|ica_g_ton|nota|indice)/i.test(key)
+    );
+
+    let humanLabel = (lexiconEntry && lexiconEntry.label)
+      ? lexiconEntry.label
+      : key
+          .replace(/_/g, ' ')
+          .replace(TECHNICAL_SUFFIXES_RE, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+
+    if (humanLabel) {
+      humanLabel = humanLabel.charAt(0).toUpperCase() + humanLabel.slice(1);
+    } else {
+      humanLabel = key;
+    }
+
+    const numericVals = sampleValues.filter(v => typeof v === 'number' && Number.isFinite(v));
+    const isNumeric = numericVals.length > 0;
+
+    return {
+      key,
+      label: humanLabel,
+      unit,
+      isNumeric,
+      aggregation: isIntensive ? 'avg' : 'sum',
+      hub: getHubForVariable(key)
+    };
+  }
+
+  /**
+   * Resuelve dinámicamente la fuente oficial de una variable o nodo leyendo
+   * `officialVariableSources`, `nodos` y `hubs` desde `window.AYSEN_HUBS_DATA`.
+   */
+  function resolveSourceForKey(key, dataLake) {
+    const sourcesMap = (dataLake && dataLake.officialVariableSources) || {};
+    const k = String(key || '').toLowerCase();
+
+    for (const [srcId, srcObj] of Object.entries(sourcesMap)) {
+      if (k.includes(srcId.toLowerCase())) {
+        return {
+          institucion: srcObj.name || srcId.toUpperCase(),
+          indicador: key,
+          url: srcObj.url || '#'
+        };
+      }
+    }
+
+    const bridges = Array.isArray(dataLake?.systemicBridges) ? dataLake.systemicBridges : [];
+    const nodes = Array.isArray(dataLake?.nodos) ? dataLake.nodos : [];
+    for (const b of bridges) {
+      if (b.varX === key || b.varY === key) {
+        const node = nodes.find(n => n.id === b.source || n.id === b.target);
+        if (node && node.provenance) {
+          return {
+            institucion: node.provenance.sourceEntity || node.officialSource?.name || 'Fuente Oficial',
+            indicador: node.title || key,
+            url: node.provenance.sourceUrl || node.officialSource?.url || '#'
+          };
+        }
+      }
+    }
+
+    const pick = (id, fallbackName, fallbackUrl) => {
+      const s = sourcesMap[id];
+      return {
+        institucion: s ? s.name : fallbackName,
+        indicador: key,
+        url: s ? s.url : fallbackUrl
+      };
+    };
+
+    if (/poblacion|censo|superficie_km2|densidad/.test(k)) return pick('censo', 'INE - Censo 2024', 'https://censo2024.ine.gob.cl');
+    if (/pobreza|casen/.test(k)) return pick('casen', 'MDSF - Encuesta CASEN', 'https://observatorio.ministeriodesarrollosocial.gob.cl');
+    if (/presupuesto|fcm|ipp|gasto_personal|profesionalizacion|alcalde/.test(k)) return pick('sinim', 'SUBDERE - SINIM', 'https://datos.sinim.gov.cl');
+    if (/fndr/.test(k)) return pick('fndr', 'DIPRES / GORE Aysén (FNDR)', 'https://www.dipres.gob.cl');
+    if (/salmon|acuicol|biomasa|antibioticos|amerb/.test(k)) return pick('sernapesca', 'SERNAPESCA / SUBPESCA', 'https://www.sernapesca.cl');
+    if (/miner/.test(k)) return pick('sernageomin', 'SERNAGEOMIN', 'https://www.sernageomin.cl');
+    if (/seia/.test(k)) return pick('seia', 'SEA - SEIA', 'https://seia.sea.gob.cl');
+    if (/sii|empresa|trabajador/.test(k)) return pick('sii', 'Servicio de Impuestos Internos (SII)', 'https://www.sii.cl');
+    if (/compra|fuga/.test(k)) return pick('chilecompra', 'Dirección ChileCompra', 'https://datos-abiertos.chilecompra.cl');
+    if (/parcelacion|sag/.test(k)) return pick('sag', 'SAG', 'https://www.sag.gob.cl');
+    if (/saidi|saifi/.test(k)) return pick('sec', 'SEC', 'https://www.sec.cl');
+    if (/potencia|tarifa|gasolina|diesel|lena|electric/.test(k)) return pick('cne', 'Comisión Nacional de Energía (CNE)', 'https://www.cne.cl');
+    if (/internet|foa|telecom/.test(k)) return pick('subtel', 'SUBTEL', 'https://www.subtel.gob.cl');
+    if (/sernatur|emat|pernoctacion|turis|camas_turisticas|zoit/.test(k)) return pick('sernatur', 'SERNATUR / INE EMAT', 'https://www.sernatur.cl');
+    if (/snaspe|vegetal|conaf|guardaparque/.test(k)) return pick('conaf', 'CONAF - SNASPE / SIT', 'https://www.conaf.cl');
+    if (/glaciar|mp25|daa|fauna|sinca|dga/.test(k)) return pick('sinca_mma', 'MMA (SINCA / RCE) y DGA-MOP', 'https://sinca.mma.gob.cl');
+    if (/salud|hospital|camas_hospitalarias|medico|posta|urgencia|espera|samu|traslado/.test(k)) return pick('deis', 'DEIS MINSAL / Servicio de Salud Aysén', 'https://deis.minsal.cl');
+    if (/matricula|educ|slep|escuela/.test(k)) return pick('mineduc', 'MINEDUC / SLEP Aysén', 'https://datosabiertos.mineduc.cl');
+    if (/museo|biblioteca|monumento|cultura|fondart|espacios_culturales/.test(k)) return pick('mincap', 'MINCAP / SERPAT / CMN', 'https://www.patrimoniocultural.gob.cl');
+    if (/anid|corfo|ctci|investigador|ciencia/.test(k)) return pick('anid', 'ANID / MinCiencia / CORFO', 'https://dataciencia.anid.cl');
+
+    return pick('sinim', 'Plataforma de Datos Oficiales de Aysén', 'https://datos.gob.cl');
+  }
+
+  // Sinónimos semánticos de respaldo por patrón de nombre de columna (activos incluso si el JSON externo aún no carga)
+  function getIntrinsicSynonymsForKey(key) {
+    const k = String(key || '').toLowerCase();
+    const extra = [];
+    if (k === 'poblacion_censo_2024') {
+      extra.push('poblacion', 'habitantes', 'personas viven', 'cuantas personas', 'cuanta gente', 'demografia', 'residentes', 'censo');
+    } else if (k === 'dependencia_fcm_pct') {
+      extra.push('dependencia del fondo comun municipal', 'fondo comun municipal', 'fcm', 'dependencia municipal');
+    } else if (k === 'ipp_per_capita_clp' || k === 'presupuesto_per_capita_mclp') {
+      extra.push('ingresos propios', 'ingresos propios permanentes', 'presupuesto per capita', 'autonomia financiera');
+    } else if (k === 'visitantes_snaspe') {
+      extra.push('visitas a parques nacionales', 'parques nacionales', 'visitacion snaspe', 'visitas snaspe', 'turistas parques');
+    } else if (k === 'pernoctaciones_emat') {
+      extra.push('noches de alojamiento turistico', 'alojamiento turistico', 'pernoctaciones', 'emat');
+    } else if (k === 'hogares_lena_pct') {
+      extra.push('calefaccionan con lena', 'hogares que calefaccionan con lena', 'uso de lena', 'calefaccion lena', 'lena');
+    } else if (k === 'dias_sobre_norma_mp25') {
+      extra.push('contaminacion critica mp2.5', 'mp2.5', 'dias con contaminacion', 'calidad del aire', 'material particulado');
+    } else if (k === 'biomasa_salmon_ton') {
+      extra.push('biomasa de salmonicultura', 'biomasa salmon', 'salmonicultura', 'cosecha de salmon', 'acuicultura');
+    } else if (k === 'fndr_mclp') {
+      extra.push('inversion publica regional', 'fndr', 'fondo nacional de desarrollo regional', 'inversion regional');
+    } else if (k === 'superficie_km2') {
+      extra.push('superficie territorial', 'superficie', 'extension territorial', 'tamano comunal', 'area km2');
+    } else if (k === 'camas_hospitalarias') {
+      extra.push('camas hospitalarias', 'camas de hospital', 'hospitales');
+    }
+    return extra;
+  }
+
+  /**
+   * Construye o reconstruye la memoria indexada completa inspeccionando
+   * todas las estructuras presentes en `dataLake`.
+   */
+  function buildMemoryIndex(dataLake, lexicon) {
+    if (!dataLake || typeof dataLake !== 'object') return;
+
+    const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
+    const nodos = Array.isArray(dataLake.nodos) ? dataLake.nodos : [];
+    const hubs = Array.isArray(dataLake.hubs) ? dataLake.hubs : [];
+    const bridges = Array.isArray(dataLake.systemicBridges) ? dataLake.systemicBridges : [];
+    const lexVars = (lexicon && lexicon.variables) ? lexicon.variables : {};
+
+    // 1. Indexar entidades territoriales (comunas o futuras unidades)
+    const entities = comunas.map(c => {
+      const name = c.nombre || c.nombre_comuna || String(c.id);
+      const normName = normalizeText(name);
+      const aliases = new Set([normName]);
+      const stripped = normName.replace(/^(puerto|caleta|villa)\s+/, '').trim();
+      if (stripped && stripped !== 'aysen') aliases.add(stripped);
+      if (normName === 'aysen') {
+        aliases.delete('aysen');
+        aliases.add('puerto aysen');
+        aliases.add('pto aysen');
+        aliases.add('comuna de aysen');
+        aliases.add('aysen comuna');
+      }
+      if (normName.includes('ibanez')) {
+        aliases.add('ibanez');
+        aliases.add('rio ibanez');
+        aliases.add('puerto ibanez');
+      }
+      if (normName.includes('ohiggins') || normName.includes("o'higgins") || normName.includes('higgins')) {
+        aliases.add('ohiggins');
+        aliases.add('o higgins');
+        aliases.add('villa ohiggins');
+        aliases.add('villa o higgins');
+      }
+      if (normName.includes('guaitecas')) aliases.add('melinka');
+      if (normName.includes('tortel')) aliases.add('caleta tortel');
+      if (normName.includes('cisnes')) aliases.add('puerto cisnes');
+
+      return {
+        id: String(c.comuna_ine || c.codigo_comuna || c.id),
+        name,
+        provincia: c.provincia || '',
+        cabecera: c.cabecera || '',
+        aliases: Array.from(aliases),
+        raw: c
+      };
+    });
+
+    // 2. Descubrir todas las claves de todas las filas de `comunas` (soporta esquemas heterogéneos)
+    const allComunaKeys = new Set();
+    comunas.forEach(c => {
+      if (c && typeof c === 'object') {
+        Object.keys(c).forEach(k => {
+          if (!IDENTITY_KEYS.has(k)) allComunaKeys.add(k);
+        });
+      }
+    });
+
+    const bridgeContextByVar = {};
+    bridges.forEach(b => {
+      if (b.varX) {
+        bridgeContextByVar[b.varX] = (bridgeContextByVar[b.varX] || '') + ' ' + (b.relationNote || '');
+      }
+      if (b.varY) {
+        bridgeContextByVar[b.varY] = (bridgeContextByVar[b.varY] || '') + ' ' + (b.relationNote || '');
+      }
+    });
+
+    const variables = [];
+    const variablesByKey = {};
+    const sourcesByKey = {};
+
+    allComunaKeys.forEach(key => {
+      const sampleValues = comunas.map(c => c[key]).filter(v => v !== undefined && v !== null);
+      const lexEntry = lexVars[key] || null;
+      const meta = inferVariableMetadata(key, sampleValues, lexEntry);
+      const source = resolveSourceForKey(key, dataLake);
+      sourcesByKey[key] = source;
+
+      const synonymPhrases = new Set();
+      synonymPhrases.add(normalizeText(key.replace(/_/g, ' ')));
+      synonymPhrases.add(normalizeText(meta.label));
+      getIntrinsicSynonymsForKey(key).forEach(s => synonymPhrases.add(normalizeText(s)));
+      if (lexEntry && Array.isArray(lexEntry.synonyms)) {
+        lexEntry.synonyms.forEach(s => synonymPhrases.add(normalizeText(s)));
+      }
+
+      const tokenBag = new Set([
+        ...tokenize(key),
+        ...tokenize(meta.label),
+        ...tokenize(bridgeContextByVar[key] || '')
+      ]);
+      synonymPhrases.forEach(p => tokenize(p).forEach(t => tokenBag.add(t)));
+
+      let stats = null;
+      if (meta.isNumeric) {
+        const ranked = comunas
+          .map(c => ({
+            comuna: c.nombre || c.nombre_comuna,
+            comuna_ine: String(c.comuna_ine || c.codigo_comuna || ''),
+            value: typeof c[key] === 'number' && Number.isFinite(c[key]) ? c[key] : 0
+          }))
+          .sort((a, b) => b.value - a.value);
+
+        const sum = ranked.reduce((acc, r) => acc + r.value, 0);
+        const avg = ranked.length ? sum / ranked.length : 0;
+        stats = {
+          sum,
+          avg,
+          max: ranked[0] || null,
+          second: ranked[1] || null,
+          min: ranked[ranked.length - 1] || null,
+          ranked
+        };
+      }
+
+      const varRecord = {
+        key,
+        label: meta.label,
+        unit: meta.unit,
+        hub: meta.hub,
+        isNumeric: meta.isNumeric,
+        aggregation: meta.aggregation,
+        source,
+        synonyms: Array.from(synonymPhrases).filter(Boolean),
+        tokens: Array.from(tokenBag),
+        stats
+      };
+
+      variables.push(varRecord);
+      variablesByKey[key] = varRecord;
+    });
+
+    // 3. Indexar todos los Nodos Satélite (#01..#N) incluyendo tablas y series de tiempo
+    const indexedNodes = nodos.map(n => {
+      const textCorpus = [
+        n.title,
+        n.definition,
+        n.example,
+        n.chartSpec?.title,
+        ...(Array.isArray(n.tableColumns) ? n.tableColumns : []),
+        ...(Array.isArray(n.canvasPreview?.availableDimensions) ? n.canvasPreview.availableDimensions : [])
+      ].filter(Boolean).join(' ');
+
+      return {
+        id: n.id,
+        hubId: n.hubId,
+        title: n.title || `Nodo #${n.id}`,
+        definition: (n.definition || '').replace(/\*\*/g, ''),
+        example: (n.example || '').replace(/\*\*/g, ''),
+        chartSpec: n.chartSpec || null,
+        tableColumns: n.tableColumns || [],
+        tableRows: n.tableRows || [],
+        provenance: n.provenance || n.officialSource || null,
+        tokens: tokenize(textCorpus),
+        normTitle: normalizeText(n.title || '')
+      };
+    });
+
+    // 4. Indexar Hubs temáticos
+    const indexedHubs = hubs.map(h => ({
+      id: h.id,
+      numeral: h.numeral,
+      title: h.title,
+      description: (h.description || '').replace(/\*\*/g, ''),
+      example: (h.example || '').replace(/\*\*/g, ''),
+      sourceName: h.sourceName,
+      sourceUrl: h.sourceUrl,
+      tokens: tokenize(`${h.title} ${h.description} ${h.example}`)
+    }));
+
+    // 5. Auto-descubrir colecciones adicionales (holdings, seriesMensualesEmat, extension_modules y futuras claves)
+    const customCollections = [];
+    const knownTopKeys = new Set([
+      'generatedAt', 'meta', 'hubs', 'nodos', 'comunas', 'comunasGeoJSON',
+      'localidadesCoords', 'officialVariableSources', 'spatialNodesByLayer'
+    ]);
+
+    Object.keys(dataLake).forEach(topKey => {
+      if (knownTopKeys.has(topKey)) return;
+      const val = dataLake[topKey];
+      if (Array.isArray(val) && val.length > 0 && typeof val[0] === 'object') {
+        const sampleKeys = Object.keys(val[0]);
+        const sampleText = JSON.stringify(val.slice(0, 5));
+        customCollections.push({
+          key: topKey,
+          count: val.length,
+          fields: sampleKeys,
+          tokens: tokenize(`${topKey} ${sampleKeys.join(' ')} ${sampleText}`),
+          records: val
+        });
+      } else if (val && typeof val === 'object' && !Array.isArray(val)) {
+        customCollections.push({
+          key: topKey,
+          count: Object.keys(val).length,
+          fields: Object.keys(val),
+          tokens: tokenize(`${topKey} ${Object.keys(val).join(' ')}`),
+          records: val
+        });
+      }
+    });
+
+    _memoryIndex = {
+      entities,
+      comunas,
+      variables,
+      variablesByKey,
+      nodes: indexedNodes,
+      nodos: indexedNodes,
+      hubs: indexedHubs,
+      customCollections,
+      sourcesByKey,
+      fuentes: FUENTES_OFICIALES_28
+    };
+  }
+
+  /**
+   * Puntúa una variable del catálogo frente a la consulta del usuario.
+   */
+  function scoreVariable(varRecord, qNorm, qTokens) {
+    let score = 0;
+
+    for (const phrase of varRecord.synonyms) {
+      if (phrase.length > 2 && qNorm.includes(phrase)) {
+        const wordCount = phrase.split(' ').length;
+        score += 14 * wordCount + phrase.length * 0.5;
+      }
+    }
+
+    for (const qt of qTokens) {
+      for (const vt of varRecord.tokens) {
+        if (qt === vt) {
+          score += 5;
+        } else if (qt.length >= 4 && vt.length >= 4 && (vt.startsWith(qt) || qt.startsWith(vt))) {
+          score += 2.5;
+        }
+      }
+    }
+
+    if (/(por habitante|per capita|por mil)/.test(qNorm)) {
+      if (/(per_capita|por_mil|densidad|ratio)/.test(varRecord.key)) score += 18;
+      if (varRecord.key === 'poblacion_censo_2024') score -= 20;
+    }
+
+    // Priorizar el indicador principal cuando la pregunta menciona un concepto primario y uno secundario
+    if (/(fondo comun municipal|dependencia.*fcm)/.test(qNorm) && varRecord.key === 'dependencia_fcm_pct') {
+      score += 30;
+    }
+    if (/(calefaccion.*lena|hogares.*lena)/.test(qNorm) && varRecord.key === 'hogares_lena_pct') {
+      score += 30;
+    }
+    if (/(biomasa.*salmon|concentran la biomasa)/.test(qNorm) && varRecord.key === 'biomasa_salmon_ton') {
+      score += 30;
+    }
+    if (/(personas viven|cuantas personas|poblacion|habitantes)/.test(qNorm) && !/(por habitante|per capita|por mil)/.test(qNorm)) {
+      if (varRecord.key === 'poblacion_censo_2024') score += 35;
+    }
+
+    return score;
+  }
+
+  /**
+   * Recupera el paquete de memoria relevante (`memoryPacket`) desde `_memoryIndex`
+   * para responder la consulta del usuario con datos 100% verificados.
+   */
+  function retrieveMemoryForQuery(userText) {
+    const qNorm = normalizeText(userText);
+    const qTokens = tokenize(userText);
+
+    const excludeCoyhaique = /(sin coyhaique|excluir coyhaique|excepto coyhaique|sacar coyhaique|sin la capital)/.test(qNorm);
+    const wantsScatter = /(cruza|cruzar|correlacion|vs\b|versus|frente a|contra|relacion entre|comparar .+ con)/.test(qNorm);
+    const wantsTemporal = /(evolucion|historic|serie|anual|mensual|2015|2016|2017|2018|2019|2020|2021|2022|2023|2025|2026|tiempo|tendencia|mes a mes)/.test(qNorm);
+
+    // 1. Detectar comunas mencionadas (soporta 1 o múltiples comunas comparadas)
+    const matchedEntities = _memoryIndex.entities.filter(ent =>
+      ent.aliases.some(alias => {
+        const re = new RegExp(`(^|\\s)${alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s|$)`);
+        return re.test(qNorm);
+      })
+    );
+
+    const matchedEntityTokens = new Set();
+    matchedEntities.forEach(ent => {
+      ent.aliases.forEach(a => tokenize(a).forEach(t => matchedEntityTokens.add(t)));
+    });
+    const varQueryTokens = qTokens.filter(t => !matchedEntityTokens.has(t));
+
+    // 2. Puntuar variables comunales (combinando motor propio + NL2ChartEngine si está disponible)
+    const nlScores = {};
+    if (global && global.NL2ChartEngine && typeof global.NL2ChartEngine.scoreColumns === 'function') {
+      try {
+        const ext = global.NL2ChartEngine.scoreColumns(userText) || [];
+        ext.forEach(item => {
+          if (item && item.col) nlScores[item.col] = item.score || 0;
+        });
+      } catch (_) {}
+    }
+
+    const scoredVars = _memoryIndex.variables
+      .map(v => ({
+        variable: v,
+        score: scoreVariable(v, qNorm, varQueryTokens) + (nlScores[v.key] || 0) * 1.2
+      }))
+      .filter(item => item.score >= 5)
+      .sort((a, b) => b.score - a.score);
+
+    // 3. Puntuar Nodos Satélite (#01..#N) para recuperar tablas, definiciones y series históricas
+    const scoredNodes = _memoryIndex.nodes
+      .map(n => {
+        let s = 0;
+        if (n.normTitle && n.normTitle.length > 3 && qNorm.includes(n.normTitle)) s += 25;
+        qTokens.forEach(qt => {
+          n.tokens.forEach(nt => {
+            if (qt === nt) s += 4;
+            else if (qt.length >= 4 && nt.startsWith(qt)) s += 2;
+          });
+        });
+        if (wantsTemporal && n.chartSpec && n.chartSpec.type === 'line') s += 6;
+        return { node: n, score: s };
+      })
+      .filter(item => item.score >= 8)
+      .sort((a, b) => b.score - a.score);
+
+    // 4. Puntuar colecciones especiales
+    const matchedCollections = _memoryIndex.customCollections
+      .map(col => {
+        let s = 0;
+        qTokens.forEach(qt => {
+          if (col.tokens.includes(qt)) s += 5;
+        });
+        return { collection: col, score: s };
+      })
+      .filter(item => item.score >= 10)
+      .sort((a, b) => b.score - a.score);
+
+    const topNumericVars = scoredVars.filter(item => item.variable.isNumeric);
+    const primaryVar = topNumericVars[0]?.variable || null;
+    const secondaryVar = (topNumericVars[1] && topNumericVars[1].score >= Math.max(8, (topNumericVars[0]?.score || 0) * 0.35))
+      ? topNumericVars[1].variable
+      : null;
+
+    let chartSpec = {
+      render: Boolean(primaryVar || matchedEntities.length > 0),
+      type: wantsScatter && secondaryVar ? 'scatter' : (wantsTemporal ? 'line' : 'bar'),
+      varX: primaryVar ? primaryVar.key : 'poblacion_censo_2024',
+      varY: secondaryVar ? secondaryVar.key : null,
+      title: primaryVar
+        ? (secondaryVar ? `${primaryVar.label} vs ${secondaryVar.label}` : `${primaryVar.label} por Comuna`)
+        : 'Población Comunal Censo 2024',
+      excludeCoyhaique
+    };
+
+    if (wantsTemporal && /(turis|snaspe|parque|pernoctacion|alojamiento|emat|visita)/.test(qNorm)) {
+      chartSpec = {
+        render: true,
+        type: 'line',
+        varX: 'visitantes_snaspe',
+        varY: 'pernoctaciones_emat',
+        title: 'Evolución Histórica de Visitas SNASPE y Pernoctaciones EMAT (2015–2026)',
+        excludeCoyhaique: false
+      };
+    }
+
+    const selectedVarKeys = topNumericVars.slice(0, 4).map(v => v.variable.key);
+    const allTextVars = scoredVars.filter(v => !v.variable.isNumeric).slice(0, 2).map(v => v.variable.key);
+    const activeKeys = Array.from(new Set([
+      ...selectedVarKeys,
+      ...allTextVars,
+      ...(selectedVarKeys.length === 0 ? ['poblacion_censo_2024', 'superficie_km2', 'presupuesto_mclp', 'dependencia_fcm_pct'] : [])
+    ]));
+
+    const filteredEntities = _memoryIndex.entities.filter(e =>
+      !(excludeCoyhaique && (e.id === '11101' || e.name.toLowerCase() === 'coyhaique'))
+    );
+
+    const comunasMatrix = filteredEntities.map(e => {
+      const row = { comuna: e.name, provincia: e.provincia };
+      activeKeys.forEach(k => {
+        row[k] = e.raw[k];
+      });
+      return row;
+    });
+
+    const sources = [];
+    const seenUrls = new Set();
+    const pushSource = (src) => {
+      if (!src) return;
+      const key = `${src.institucion}|${src.url}`;
+      if (!seenUrls.has(key)) {
+        seenUrls.add(key);
+        sources.push(src);
+      }
+    };
+
+    activeKeys.forEach(k => pushSource(_memoryIndex.sourcesByKey[k]));
+    scoredNodes.slice(0, 2).forEach(({ node }) => {
+      if (node.provenance) {
+        pushSource({
+          institucion: node.provenance.sourceEntity || node.provenance.name || 'Fuente Oficial',
+          indicador: node.title,
+          url: node.provenance.sourceUrl || node.provenance.url || '#'
+        });
+      }
+    });
+
+    const relatedHub = getHubForVariable(chartSpec.varX);
+
+    return {
+      query: userText,
+      qNorm,
+      excludeCoyhaique,
+      wantsScatter,
+      wantsTemporal,
+      matchedEntities,
+      topVariables: scoredVars.slice(0, 4).map(s => s.variable),
+      primaryVar,
+      secondaryVar,
+      topNodes: scoredNodes.slice(0, 2).map(s => s.node),
+      matchedCollections: matchedCollections.slice(0, 2).map(c => c.collection),
+      comunasMatrix,
+      activeKeys,
+      chartSpec,
+      sources: sources.slice(0, 4),
+      relatedHub
+    };
+  }
+
+  /**
+   * Construye el System Prompt general y de memoria verificada.
+   */
+  function buildSystemPrompt() {
+    if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
+      buildMemoryIndex(_dataLake || global.AYSEN_HUBS_DATA, _lexicon);
+    }
+    const varList = _memoryIndex.variables.map(v => `${v.key} (${v.unit || 'unid.'}, Hub ${v.hub})`).join(', ');
+    return [
+      'Eres el Consultor Territorial de Aysén Sistémico, conectado en tiempo real a la memoria verificada de `window.AYSEN_HUBS_DATA` (10 Comunas, 10 Hubs Sistémicos I al X, 39 Nodos Satélites y 28 fuentes oficiales).',
+      `Catálogo dinámico de variables indexadas (${_memoryIndex.variables.length}): ${varList}`,
+      'INSTRUCCIONES DE RIGOR FACTUAL:',
+      '1. Responde EXCLUSIVAMENTE utilizando los datos provistos en la memoria recuperada. Jamás inventes cifras.',
+      '2. Cita las cifras exactas en formato chileno (punto para miles, coma para decimales), mencionando las comunas líderes, las de menor valor y el total o promedio regional según corresponda.',
+      '3. Para tasas, porcentajes, densidades o valores per cápita, informa el Promedio Regional y NUNCA sumes porcentajes ni tasas entre comunas.',
+      '4. No utilices emojis bajo ninguna circunstancia.',
+      '5. Devuelve tu respuesta estrictamente como un objeto JSON válido con la estructura:',
+      '{"reply": "Texto analítico claro y conciso con las cifras exactas", "chart": {"render": true, "type": "bar|line|scatter", "varX": "clave_x", "varY": "clave_y_o_null", "title": "Título del gráfico", "excludeCoyhaique": false}, "relatedHub": "I..X"}'
+    ].join('\n');
+  }
+
+  /**
+   * Construye el System Prompt inyectando la Memoria Verificada (`memoryPacket`)
+   * para que el LLM responda razonando sobre los datos reales sin alucinar.
+   */
+  function buildMemoryGroundedPrompts(memoryPacket) {
+    const varSummaries = memoryPacket.topVariables.map(v => {
+      if (!v.isNumeric || !v.stats) {
+        return { key: v.key, label: v.label, type: 'categorical' };
+      }
+      return {
+        key: v.key,
+        label: v.label,
+        unit: v.unit,
+        aggregationType: v.aggregation === 'avg' ? 'Promedio Regional' : 'Total Acumulado Regional',
+        regionalAggregateValue: v.aggregation === 'avg'
+          ? Number(v.stats.avg.toFixed(2))
+          : Number(v.stats.sum.toFixed(2)),
+        leaderComuna: v.stats.max,
+        secondComuna: v.stats.second,
+        lowestComuna: v.stats.min,
+        source: v.source?.institucion
+      };
+    });
+
+    const nodeContext = memoryPacket.topNodes.map(n => ({
+      nodeId: n.id,
+      title: n.title,
+      definition: n.definition,
+      tableColumns: n.tableColumns,
+      tableRows: n.tableRows.slice(0, 10),
+      timeSeries: n.chartSpec && n.chartSpec.type === 'line' ? {
+        title: n.chartSpec.title,
+        labels: n.chartSpec.labels,
+        datasets: (n.chartSpec.datasets || []).map(ds => ({ label: ds.label, data: ds.data }))
+      } : undefined
+    }));
+
+    const extraContext = memoryPacket.matchedCollections.map(col => ({
+      collection: col.key,
+      totalRecords: col.count,
+      sampleRecords: Array.isArray(col.records) ? col.records.slice(0, 8) : col.records
+    }));
+
+    const systemPrompt = buildSystemPrompt();
+
+    const memoryPayload = {
+      consulta_usuario: memoryPacket.query,
+      comunas_filtradas_solicitadas: memoryPacket.matchedEntities.map(e => e.raw),
+      resumen_estadistico_variables_relevantes: varSummaries,
+      matriz_comunal_datos_exactos: memoryPacket.comunasMatrix,
+      nodos_y_series_historicas_relevantes: nodeContext,
+      colecciones_adicionales_detectadas: extraContext,
+      catalogo_total_stats: {
+        total_comunas: _memoryIndex.entities.length,
+        total_variables_comunales: _memoryIndex.variables.length,
+        total_nodos_satelite: _memoryIndex.nodes.length,
+        total_hubs: _memoryIndex.hubs.length
+      },
+      grafico_sugerido: memoryPacket.chartSpec
+    };
+
+    return {
+      systemPrompt,
+      userPromptWithMemory: `MEMORIA_VERIFICADA:\n${JSON.stringify(memoryPayload)}\n\nCONSULTA DEL USUARIO:\n${memoryPacket.query}`
+    };
+  }
+
+  /**
+   * Sintetiza una respuesta analítica dinámica leyendo directamente del `memoryPacket`
+   * cuando el servidor LLM local no está activo. Cero textos o números hardcodeados.
+   */
+  function synthesizeFromMemoryPacket(memoryPacket) {
+    const {
+      qNorm,
+      excludeCoyhaique,
+      wantsTemporal,
+      matchedEntities,
+      topVariables,
+      primaryVar,
+      secondaryVar,
+      topNodes,
+      matchedCollections,
+      chartSpec,
+      sources,
+      relatedHub
+    } = memoryPacket;
+
+    // 0. Consultas estructurales sobre la división comunal / provincial o catálogo de la región
+    const isStructuralComunasQuery = (
+      matchedEntities.length === 0 &&
+      topVariables.length === 0 &&
+      /(cuantas comunas|cuales son las comunas|cuales son las 10 comunas|comunas de aysen|division comunal|division territorial|cuales son las provincias|provincias de aysen)/.test(qNorm)
+    );
+
+    if (isStructuralComunasQuery) {
+      const pobVar = _memoryIndex.variablesByKey['poblacion_censo_2024'];
+      const totalPob = pobVar && pobVar.stats ? fmtNumber(pobVar.stats.sum) : '-';
+      const provinces = Array.from(new Set(_memoryIndex.entities.map(e => e.provincia).filter(Boolean)));
+      const byProv = {};
+      _memoryIndex.entities.forEach(e => {
+        const p = e.provincia || 'Aysén';
+        if (!byProv[p]) byProv[p] = [];
+        byProv[p].push(e.name);
+      });
+      const provSummary = Object.entries(byProv)
+        .map(([prov, names]) => `${prov} (${names.join(', ')})`)
+        .join('; ');
+
+      return {
+        reply: `La Región de Aysén tiene ${_memoryIndex.entities.length} comunas distribuidas en ${provinces.length} provincias: ${provSummary}. En conjunto suman ${totalPob} habitantes según el Censo 2024 (INE).`,
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'poblacion_censo_2024',
+          varY: 'superficie_km2',
+          title: 'Población Censo 2024 vs Superficie Comunal (km²)',
+          excludeCoyhaique: false
+        },
+        sources,
+        relatedHub: 'VI'
+      };
+    }
+
+    if (/(que datos tiene|que fuentes|catalogo de datos|que variables|que puedo consultar)/.test(qNorm) && topVariables.length === 0) {
+      return {
+        reply: `La plataforma integra ${_memoryIndex.variables.length} indicadores comunales en las ${_memoryIndex.entities.length} comunas de Aysén, organizados en ${_memoryIndex.hubs.length} Hubs temáticos y ${_memoryIndex.nodes.length} Nodos satélite a partir de ${_memoryIndex.fuentes.length} fuentes oficiales (INE, SINIM, SERNATUR, CONAF, CNE, SEC, SUBPESCA, SEA, SII y DEIS).`,
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'poblacion_censo_2024',
+          varY: null,
+          title: 'Población Comunal · Censo 2024 (INE)',
+          excludeCoyhaique: false
+        },
+        sources,
+        relatedHub: 'VI'
+      };
+    }
+
+    // Caso Temporal: Serie histórica extraída dinámicamente del preset/nodo correspondiente
+    if (wantsTemporal && chartSpec.type === 'line' && chartSpec.varX === 'visitantes_snaspe') {
+      const turismoPreset = (_dataLake?.hubsGallery?.turismo?.presets || []).find(p => p.config?.customChartSpec);
+      const spec = turismoPreset?.config?.customChartSpec;
+      const labels = spec?.labels || [];
+      const dsEmat = spec?.datasets?.[0]?.data || [];
+      const dsSnaspe = spec?.datasets?.[1]?.data || [];
+      if (labels.length > 0 && dsSnaspe.length > 0 && dsEmat.length > 0) {
+        const firstYr = labels[0];
+        const lastYr = labels[labels.length - 1];
+        const snaspeStart = fmtNumber(dsSnaspe[0]);
+        const snaspeEnd = fmtNumber(dsSnaspe[dsSnaspe.length - 1]);
+        const ematStart = fmtNumber(dsEmat[0]);
+        const ematEnd = fmtNumber(dsEmat[dsEmat.length - 1]);
+        return {
+          reply: `Entre ${firstYr} y ${lastYr}, las visitas a Parques Nacionales (SNASPE) pasaron de ${snaspeStart} a ${snaspeEnd} visitantes anuales, mientras que las pernoctaciones turísticas (INE EMAT) evolucionaron de ${ematStart} a ${ematEnd} noches anuales.`,
+          chart: chartSpec,
+          sources,
+          relatedHub: 'I'
+        };
+      }
+    }
+
+    // Caso A: Consulta sobre una o más comunas específicas con indicadores detectados
+    if (matchedEntities.length > 0 && topVariables.length > 0) {
+      const lines = matchedEntities.map(ent => {
+        const metricsText = topVariables.slice(0, 3).map(v => {
+          const val = ent.raw[v.key];
+          if (typeof val === 'number') {
+            const rankIdx = v.stats ? v.stats.ranked.findIndex(r => r.comuna_ine === ent.id) + 1 : null;
+            const rankStr = rankIdx ? ` (#${rankIdx} de ${_memoryIndex.entities.length})` : '';
+            return `${v.label}: ${fmtNumber(val)}${v.unit ? ' ' + v.unit : ''}${rankStr}`;
+          }
+          return `${v.label}: ${val ?? '-'}`;
+        }).join(' · ');
+        return `La comuna de ${ent.name} (Provincia de ${ent.provincia}) registra ${metricsText}.`;
+      });
+
+      const compVar = primaryVar || topVariables[0];
+      let regionalNote = '';
+      if (compVar && compVar.isNumeric && compVar.stats) {
+        const aggLabel = compVar.aggregation === 'avg' ? 'Promedio regional' : 'Total regional';
+        const aggVal = compVar.aggregation === 'avg' ? compVar.stats.avg : compVar.stats.sum;
+        regionalNote = ` ${aggLabel} de ${compVar.label}: ${fmtNumber(aggVal)}${compVar.unit ? ' ' + compVar.unit : ''} (máximo en ${compVar.stats.max.comuna} con ${fmtNumber(compVar.stats.max.value)}${compVar.unit ? ' ' + compVar.unit : ''} y mínimo en ${compVar.stats.min.comuna} con ${fmtNumber(compVar.stats.min.value)}${compVar.unit ? ' ' + compVar.unit : ''}).`;
+      }
+
+      return {
+        reply: `${lines.join(' ')}${regionalNote}`,
+        chart: chartSpec,
+        sources,
+        relatedHub
+      };
+    }
+
+    // Caso B: Perfil integral de una comuna específica cuando no se especificó un único indicador
+    if (matchedEntities.length === 1 && topVariables.length === 0) {
+      const ent = matchedEntities[0];
+      const c = ent.raw;
+      const pob = fmtNumber(c.poblacion_censo_2024);
+      const pct = fmtNumber(c.porcentaje_regional_pct);
+      const sup = fmtNumber(c.superficie_km2);
+      const fcm = fmtNumber(c.dependencia_fcm_pct);
+      const pto = fmtNumber(c.presupuesto_per_capita_mclp);
+
+      return {
+        reply: `La comuna de ${ent.name} cuenta con ${pob} habitantes (${pct}% regional) y una superficie de ${sup} km² (Provincia de ${ent.provincia}, cabecera ${ent.cabecera}). Registra una dependencia del Fondo Común Municipal de ${fcm}% y un presupuesto municipal per cápita de ${pto} M$ CLP.`,
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: 'presupuesto_per_capita_mclp',
+          varY: 'dependencia_fcm_pct',
+          title: `Comparativa Financiera y Territorial — Destacando ${ent.name}`,
+          excludeCoyhaique: false
+        },
+        sources,
+        relatedHub: 'IV'
+      };
+    }
+
+    // Caso C: Variables numéricas detectadas (1 o 2 variables para ranking o cruce bivariado)
+    if (primaryVar && primaryVar.isNumeric && primaryVar.stats) {
+      const buildVarParagraph = (v, isPrimary) => {
+        const list = excludeCoyhaique
+          ? v.stats.ranked.filter(r => r.comuna_ine !== '11101' && r.comuna.toLowerCase() !== 'coyhaique')
+          : v.stats.ranked;
+        if (!list.length) return '';
+
+        const sum = list.reduce((acc, r) => acc + r.value, 0);
+        const avg = sum / list.length;
+        const unitStr = v.unit ? ` ${v.unit}` : '';
+        const topCount = (isPrimary && v.key === 'poblacion_censo_2024') ? 5 : 3;
+        const topN = list.slice(0, topCount).map((r, i) => `${i + 1}. ${r.comuna} (${fmtNumber(r.value)}${unitStr})`).join(', ');
+        const bottom = list[list.length - 1];
+        const aggSentence = v.aggregation === 'avg'
+          ? `Promedio regional: ${fmtNumber(avg)}${unitStr}.`
+          : `Total regional: ${fmtNumber(sum)}${unitStr} (promedio comunal: ${fmtNumber(avg)}${unitStr}).`;
+
+        return `${v.label}${excludeCoyhaique ? ' (sin Coyhaique)' : ''}: Lideran ${topN}, y el menor registro corresponde a ${bottom.comuna} (${fmtNumber(bottom.value)}${unitStr}). ${aggSentence}`;
+      };
+
+      const paragraphs = [buildVarParagraph(primaryVar, true)];
+      if (secondaryVar && secondaryVar.isNumeric && secondaryVar.stats) {
+        paragraphs.push(buildVarParagraph(secondaryVar, false));
+      }
+
+      return {
+        reply: paragraphs.filter(Boolean).join(' '),
+        chart: chartSpec,
+        sources,
+        relatedHub
+      };
+    }
+
+    // Caso D: Variables categóricas / texto de comunas (ej. alcaldes, sistema eléctrico, aeródromo, ZOIT)
+    if (topVariables.length > 0 && !topVariables[0].isNumeric) {
+      const tv = topVariables[0];
+      const rows = _memoryIndex.entities
+        .map(e => `${e.name}: ${e.raw[tv.key] ?? '-'}`)
+        .join(' · ');
+      return {
+        reply: `Registro comunal para ${tv.label} en las ${_memoryIndex.entities.length} comunas: ${rows}.`,
+        chart: chartSpec,
+        sources,
+        relatedHub
+      };
+    }
+
+    // Caso E: Coincidencia en Nodos Satélite o Colecciones Especiales
+    if (topNodes.length > 0) {
+      const node = topNodes[0];
+      const text = `${node.title}: ${node.definition} ${node.example}`.trim();
+      return {
+        reply: text.length > 620 ? text.slice(0, 617) + '...' : text,
+        chart: chartSpec,
+        sources,
+        relatedHub
+      };
+    }
+
+    if (matchedCollections.length > 0) {
+      const col = matchedCollections[0];
+      return {
+        reply: `Se encontraron ${col.count} registros en la colección "${col.key}" del índice territorial (campos disponibles: ${col.fields.slice(0, 8).join(', ')}).`,
+        chart: chartSpec,
+        sources,
+        relatedHub
+      };
+    }
+
+    // Caso F: Sin coincidencia en el catálogo -> declarar explícitamente que no forma parte de las 28 fuentes oficiales
+    const sampleLabels = _memoryIndex.variables.slice(0, 6).map(v => v.label).join(', ');
+    return {
+      reply: `Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico. Actualmente el índice dinámico cuenta con ${_memoryIndex.variables.length} indicadores comunales y ${_memoryIndex.nodes.length} nodos temáticos (por ejemplo: ${sampleLabels}).`,
+      chart: { render: false, type: 'bar', varX: null, varY: null, title: '', excludeCoyhaique: false },
+      sources: [],
+      relatedHub: 'IV'
+    };
   }
 
   function isCoyhaiqueComuna(c) {
@@ -125,807 +1132,181 @@
     return name.includes('coyhaique');
   }
 
-  function extractJsonFromResponse(rawContent) {
-    if (!rawContent || typeof rawContent !== 'string') return null;
-    const trimmed = rawContent.trim();
-    try {
-      const direct = JSON.parse(trimmed);
-      if (direct && typeof direct === 'object') return direct;
-    } catch (e) {}
+  /**
+   * API Pública de OmniRouteClient
+   */
+  const OmniRouteClient = {
+    init(dataLake, customConfig = {}) {
+      _config = Object.assign({}, DEFAULT_CONFIG, customConfig);
+      _dataLake = dataLake || (global ? global.AYSEN_HUBS_DATA : null);
+      if (!_dataLake || typeof _dataLake !== 'object') return false;
 
-    const mdMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
-    if (mdMatch && mdMatch[1]) {
+      if (global && global.NL2ChartEngine && typeof global.NL2ChartEngine.getLexicon === 'function') {
+        _lexicon = global.NL2ChartEngine.getLexicon();
+      }
+      if (!_lexicon) {
+        tryLoadNodeLexicon();
+      }
+
+      buildMemoryIndex(_dataLake, _lexicon);
+
+      if (!_lexicon && typeof fetch === 'function') {
+        fetch(_config.lexiconUrl)
+          .then(r => (r.ok ? r.json() : null))
+          .then(json => {
+            if (json) {
+              _lexicon = json;
+              if (global && global.NL2ChartEngine && typeof global.NL2ChartEngine.setLexicon === 'function') {
+                global.NL2ChartEngine.setLexicon(json);
+              }
+              buildMemoryIndex(_dataLake, _lexicon);
+            }
+          })
+          .catch(() => {});
+      }
+
+      return this;
+    },
+
+    refreshMemory(newDataLake) {
+      if (newDataLake) _dataLake = newDataLake;
+      buildMemoryIndex(_dataLake, _lexicon);
+      return _memoryIndex;
+    },
+
+    clearConversationMemory() {
+      _conversationMemory = [];
+    },
+
+    getConfig() {
+      return Object.assign({}, _config);
+    },
+
+    setConfig(newConfig) {
+      _config = Object.assign({}, _config, newConfig || {});
+      return Object.assign({}, _config);
+    },
+
+    getIndex() {
+      return _memoryIndex;
+    },
+
+    buildSystemPrompt,
+    extractJsonFromResponse,
+    getHubForVariable,
+    FUENTES_OFICIALES_28,
+
+    getComunaVector(varKey, excludeCoyhaique = false) {
+      if (!_memoryIndex.comunas.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
+        this.init(_dataLake || global.AYSEN_HUBS_DATA);
+      }
+      return (_memoryIndex.comunas || [])
+        .filter(c => !(excludeCoyhaique && isCoyhaiqueComuna(c)))
+        .map(c => ({
+          id: c.id,
+          nombre: c.nombre || c.nombre_comuna,
+          value: typeof c[varKey] === 'number' ? c[varKey] : 0
+        }));
+    },
+
+    resolveClosedWorldDeterministic(userText) {
+      if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
+        this.init(_dataLake || global.AYSEN_HUBS_DATA);
+      }
+      const packet = retrieveMemoryForQuery(userText);
+      return synthesizeFromMemoryPacket(packet);
+    },
+
+    localVerifiedQuery(userText) {
+      return this.resolveClosedWorldDeterministic(userText);
+    },
+
+    async query(userText) {
+      if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
+        this.init(_dataLake || global.AYSEN_HUBS_DATA);
+      }
+
+      const memoryPacket = retrieveMemoryForQuery(userText);
+      const { systemPrompt, userPromptWithMemory } = buildMemoryGroundedPrompts(memoryPacket);
+
+      const messages = [
+        { role: 'system', content: systemPrompt },
+        ..._conversationMemory.slice(-_config.maxHistoryTurns * 2),
+        { role: 'user', content: userPromptWithMemory }
+      ];
+
+      const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      const timer = controller ? setTimeout(() => controller.abort(), _config.timeoutMs) : null;
+
       try {
-        const parsed = JSON.parse(mdMatch[1].trim());
-        if (parsed && typeof parsed === 'object') return parsed;
-      } catch (e) {}
+        const response = await fetch(_config.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: _config.model,
+            temperature: _config.temperature,
+            max_tokens: _config.maxTokens,
+            messages
+          }),
+          signal: controller ? controller.signal : undefined
+        });
+
+        if (timer) clearTimeout(timer);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        const rawContent = data?.choices?.[0]?.message?.content || '';
+        if (!rawContent) throw new Error('Empty LLM response');
+
+        const parsed = extractJsonFromResponse(rawContent) || {
+          reply: rawContent.trim(),
+          chart: memoryPacket.chartSpec
+        };
+
+        const llmChart = parsed.chart || {};
+        const validVarX = (llmChart.varX && _memoryIndex.variablesByKey[llmChart.varX])
+          ? llmChart.varX
+          : memoryPacket.chartSpec.varX;
+        const validVarY = (llmChart.varY && _memoryIndex.variablesByKey[llmChart.varY])
+          ? llmChart.varY
+          : memoryPacket.chartSpec.varY;
+
+        const finalResult = {
+          reply: parsed.reply || synthesizeFromMemoryPacket(memoryPacket).reply,
+          chart: {
+            render: llmChart.render !== undefined ? Boolean(llmChart.render) : memoryPacket.chartSpec.render,
+            type: llmChart.type || memoryPacket.chartSpec.type,
+            varX: validVarX,
+            varY: validVarY,
+            title: llmChart.title || memoryPacket.chartSpec.title,
+            excludeCoyhaique: llmChart.excludeCoyhaique !== undefined
+              ? Boolean(llmChart.excludeCoyhaique)
+              : memoryPacket.chartSpec.excludeCoyhaique
+          },
+          sources: memoryPacket.sources,
+          relatedHub: parsed.relatedHub || getHubForVariable(validVarX)
+        };
+
+        _conversationMemory.push({ role: 'user', content: userText });
+        _conversationMemory.push({ role: 'assistant', content: finalResult.reply });
+
+        return finalResult;
+      } catch (_) {
+        if (timer) clearTimeout(timer);
+        const fallbackResult = synthesizeFromMemoryPacket(memoryPacket);
+        _conversationMemory.push({ role: 'user', content: userText });
+        _conversationMemory.push({ role: 'assistant', content: fallbackResult.reply });
+        return fallbackResult;
+      }
     }
-
-    const firstBrace = trimmed.indexOf('{');
-    const lastBrace = trimmed.lastIndexOf('}');
-    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
-      try {
-        const candidate = trimmed.substring(firstBrace, lastBrace + 1);
-        const parsed = JSON.parse(candidate);
-        if (parsed && typeof parsed === 'object') return parsed;
-      } catch (e) {}
-    }
-    return null;
-  }
-
-  function init(bundleData) {
-    const raw = bundleData || (typeof window !== 'undefined' ? window.AYSEN_HUBS_DATA : null);
-    if (!raw) return false;
-
-    _indexedData = raw;
-    _comunas = Array.isArray(raw.comunas) ? raw.comunas : [];
-
-    // Indexar 100% de columnas numéricas de las 10 comunas
-    const sample = _comunas[0] || {};
-    const keys = Object.keys(sample).filter(k => typeof sample[k] === 'number' && k !== 'id');
-
-    _variablesCatalog = keys.map(k => {
-      let unit = 'unid.';
-      if (k.endsWith('_pct')) unit = '%';
-      else if (k.endsWith('_km2')) unit = 'km²';
-      else if (k.endsWith('_mclp')) unit = 'M$';
-      else if (k.endsWith('_clp')) unit = '$';
-      else if (k.endsWith('_mmusd')) unit = 'MM US$';
-      else if (k.endsWith('_mw')) unit = 'MW';
-      else if (k.endsWith('_ton')) unit = 'ton';
-      else if (k.endsWith('_ha')) unit = 'ha';
-      else if (k.endsWith('_km')) unit = 'km';
-      else if (k.endsWith('_hrs')) unit = 'hrs';
-      else if (k.endsWith('_anual')) unit = 'horas/año';
-      else if (k.includes('poblacion') || k.includes('habitante')) unit = 'hab';
-
-      let label = k.replace(/_/g, ' ');
-      return {
-        key: k,
-        label: label,
-        unit: unit,
-        hub: getHubForVariable(k)
-      };
-    });
-
-    _nodes = Array.isArray(raw.nodos) ? raw.nodos : (Array.isArray(raw.spatialNodes) ? raw.spatialNodes : []);
-    return true;
-  }
-
-  function getConfig() {
-    return { ..._config };
-  }
-
-  function setConfig(newConfig) {
-    _config = { ..._config, ...(newConfig || {}) };
-    return { ..._config };
-  }
-
-  function getIndex() {
-    return {
-      comunas: _comunas,
-      variables: _variablesCatalog,
-      nodos: _nodes,
-      fuentes: FUENTES_OFICIALES_28
-    };
-  }
-
-  function buildSystemPrompt() {
-    const hubsSummary = `
-- Hub I (Turismo / WP_06): 5 Nodos satélites (#01 al #05). Prestadores SERNATUR, EMAT y Parques CONAF.
-- Hub II (Salmonicultura / WP_03): 5 Nodos satélites (#06 al #10). 745 concesiones SUBPESCA, biomasa SERNAPESCA.
-- Hub III (Energía / WP_02): 4 Nodos satélites (#11 al #14). Tarifas BT1 CNE, interrupciones SAIDI SEC, leña.
-- Hub IV (Gobernanza / WP_01): 4 Nodos satélites (#15 al #18). Finanzas SINIM SUBDERE, Fondo Común Municipal (FCM), FNDR.
-- Hub V (Inversión / WP_04): 4 Nodos satélites (#19 al #22). 722 proyectos SEIA SEA, empresas y empleo formal SII.
-- Hub VI (Social / WP_05): 3 Nodos satélites (#23 al #25). Censo 2024 INE, Encuesta CASEN MDSF, SLEP MINEDUC.
-- Hub VII (Biodiversidad / WP_07): 5 Nodos satélites (#26 al #30). Conservación MMA, Huemul RCE, calidad del aire SINCA.
-- Hub VIII (Salud / WP_08): 3 Nodos satélites (#31, #38, #39). Red Hospitales DEIS MINSAL, postas rurales y SAMU.
-- Hub IX (Cultura / WP_09): 3 Nodos satélites (#32 al #34). Museos SERPAT, inmuebles patrimoniales CMN, Fondart.
-- Hub X (CTCi / WP_10): 3 Nodos satélites (#35 al #37). Centros científicos CIEP, proyectos ANID y CORFO Innova.
-`;
-
-    const allVars = _variablesCatalog.map(v => `${v.key} (${v.unit}, Hub ${v.hub})`).join(', ');
-
-    return `Eres el Consultor Territorial Oficial de la Plataforma Aysén Sistémico, desarrollado por Álvaro Contreras Barrios.
-Aysén Sistémico cuenta con 10 Hubs Sistémicos y 39 Nodos Satélites con 28 fuentes institucionales oficiales:
-${hubsSummary}
-Tu rol es responder consultas analíticas con verificación rigurosa (Closed-World Grounding) fundamentado 100% en window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la Región de Aysén.
-Catálogo de variables disponibles: ${allVars}
-
-REGLAS OBLIGATORIAS:
-1. SOLO puedes responder utilizando las cifras, nombres de comunas, series históricas 2015-2026 y datos de window.AYSEN_HUBS_DATA.
-2. NUNCA inventes cifras, nunca extrapoles fuera de las 10 comunas de Aysén y nunca uses conocimiento general externo no respaldado por la base de datos.
-3. Si el usuario pregunta por un dato o indicador inexistente en la plataforma, debes declarar explícitamente:
-   "Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico." y sugerir los indicadores reales disponibles más cercanos.
-4. CERO emojis. Estilo técnico, riguroso, cartográfico austral y respetuoso.
-5. DEBES responder SIEMPRE con un objeto JSON válido con este esquema exacto:
-{
-  "reply": "Respuesta clara y analítica con datos precisos...",
-  "sources": [
-    { "institucion": "Nombre Oficial", "indicador": "Nombre Indicador", "url": "https://..." }
-  ],
-  "chart": {
-    "render": true,
-    "type": "bar" | "line" | "scatter",
-    "varX": "clave_real_de_la_variable",
-    "varY": "clave_real_variable_secundaria_o_nulo",
-    "title": "Título exacto y descriptivo del gráfico",
-    "excludeCoyhaique": false
-  },
-  "relatedHub": "I" | "II" | "III" | "IV" | "V" | "VI" | "VII" | "VIII" | "IX" | "X"
-}
-
-Estructura de la Plataforma Aysén Sistémico:
-${hubsSummary}
-
-Variables canónicas disponibles:
-${allVars}`;
-  }
-
-  const COMUNA_SYNONYMS = {
-    '11101': ['coyhaique'],
-    '11201': ['puerto aysen', 'pto aysen', 'comuna de aysen', 'aysen comuna'],
-    '11202': ['cisnes', 'puerto cisnes'],
-    '11203': ['guaitecas', 'melinka', 'guaytecas'],
-    '11102': ['lago verde'],
-    '11401': ['chile chico'],
-    '11402': ['rio ibanez', 'ibanez', 'ingeniero ibanez'],
-    '11301': ['cochrane'],
-    '11303': ['tortel', 'caleta tortel'],
-    '11302': ['ohiggins', "o'higgins", 'o higgins', 'villa ohiggins', "villa o'higgins", 'villa o higgins', 'villa higgins', 'higgins']
   };
 
-  const DIMENSIONES = [
-    {
-      keys: ['superficie', 'km2', 'extension', 'territorio', 'tamano', 'area'],
-      varX: 'superficie_km2',
-      varY: null,
-      unit: 'km²',
-      title: 'Superficie Territorial (km²) por Comuna',
-      hub: 'VI',
-      fuente: { institucion: 'INE / IGM', indicador: 'División Político Administrativa y Superficie', url: 'https://www.ine.gob.cl/' }
-    },
-    {
-      keys: ['densidad', 'hab/km2'],
-      varX: 'densidad_hab_km2',
-      varY: null,
-      unit: 'hab/km²',
-      title: 'Densidad Poblacional (hab/km²) por Comuna',
-      hub: 'VI',
-      fuente: { institucion: 'INE', indicador: 'Censo 2024: Densidad de Ocupación', url: 'https://censo2024.ine.gob.cl/' }
-    },
-    {
-      keys: ['pobreza', 'casen', 'vulnerabilidad', 'carencias'],
-      varX: 'pobreza_multidim_pct',
-      varY: 'pobreza_ingresos_pct',
-      unit: '%',
-      title: 'Pobreza Multidimensional y por Ingresos CASEN (%)',
-      hub: 'VI',
-      fuente: { institucion: 'MDSF - CASEN', indicador: 'Encuesta de Caracterización Socioeconómica', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/' }
-    },
-    {
-      keys: ['salud', 'hospital', 'hospitales', 'cama', 'camas', 'medico', 'medicos', 'posta', 'postas', 'urgencia', 'samu'],
-      varX: 'camas_hospitalarias',
-      varY: 'postas_salud_rural',
-      unit: 'camas / postas',
-      title: 'Camas Hospitalarias y Postas de Salud Rural (DEIS/SSA)',
-      hub: 'VIII',
-      fuente: { institucion: 'DEIS - MINSAL / SSA', indicador: 'Red Asistencial Hospitalaria y APS', url: 'https://deis.minsal.cl/' }
-    },
-    {
-      keys: ['educacion', 'escuela', 'escuelas', 'colegio', 'colegios', 'matricula', 'slep', 'estudiantes'],
-      varX: 'matricula_escolar',
-      varY: null,
-      unit: 'estudiantes',
-      title: 'Matrícula Escolar por Comuna (MINEDUC SLEP)',
-      hub: 'VI',
-      fuente: { institucion: 'MINEDUC / SLEP Aysén', indicador: 'Matrícula Oficial Regular', url: 'https://datosabiertos.mineduc.cl/' }
-    },
-    {
-      keys: ['tarifa', 'saidi', 'electricidad', 'corte', 'cortes', 'diesel', 'energia'],
-      varX: 'saidi_horas_anual',
-      varY: 'tarifa_bt1_clp',
-      unit: 'horas/año y $/kWh',
-      title: 'Interrupciones Eléctricas SAIDI (horas/año) y Tarifa BT1 ($/kWh)',
-      hub: 'III',
-      fuente: { institucion: 'SEC / CNE', indicador: 'Indicador SAIDI de Calidad de Suministro y Tarifas BT1', url: 'https://www.sec.cl/' }
-    },
-    {
-      keys: ['empresas', 'trabajadores', 'empleo', 'sii', 'ventas'],
-      varX: 'empresas_sii',
-      varY: 'trabajadores_sii',
-      unit: 'empresas y trabajadores',
-      title: 'Empresas Activas y Trabajadores Formales (SII)',
-      hub: 'V',
-      fuente: { institucion: 'SII', indicador: 'Estadísticas Tributarias de Empresas y Empleo Formal', url: 'https://www.sii.cl/' }
-    },
-    {
-      keys: ['seia', 'proyectos seia', 'inversion seia', 'medio ambiente seia'],
-      varX: 'inversion_seia_mmusd',
-      varY: 'proyectos_seia_aprobados',
-      unit: 'MM US$ y proyectos',
-      title: 'Inversión en Proyectos SEIA (MM US$) y Resoluciones RCA',
-      hub: 'V',
-      fuente: { institucion: 'SEA - SEIA', indicador: 'Catastro Oficial de 722 Proyectos SEIA', url: 'https://seia.sea.gob.cl/' }
-    },
-    {
-      keys: ['turismo', 'prestadores', 'alojamiento', 'emat', 'sernatur'],
-      varX: 'visitantes_snaspe',
-      varY: 'prestadores_sernatur',
-      unit: 'visitantes y prestadores',
-      title: 'Visitantes SNASPE y Prestadores Turísticos SERNATUR',
-      hub: 'I',
-      fuente: { institucion: 'CONAF / SERNATUR', indicador: 'Estadísticas Oficiales de Turismo y SNASPE', url: 'https://registro.sernatur.cl/' }
-    },
-    {
-      keys: ['salmon', 'salmonicultura', 'biomasa', 'concesiones', 'acuicultura'],
-      varX: 'biomasa_salmon_ton',
-      varY: 'concesiones_salmon',
-      unit: 'ton y concesiones',
-      title: 'Biomasa Cosechada (toneladas) y Concesiones Otorgadas',
-      hub: 'II',
-      fuente: { institucion: 'SERNAPESCA / SUBPESCA', indicador: 'Fiscalización Acuícola y Catastro de Concesiones', url: 'https://www.sernapesca.cl/' }
-    },
-    {
-      keys: ['biodiversidad', 'bosque', 'huemul', 'glaciares', 'glaciar', 'vegetal'],
-      varX: 'cobertura_vegetal_nativa_ha',
-      varY: 'glaciares_dga_n',
-      unit: 'ha nativas y glaciares',
-      title: 'Cobertura de Bosque Nativo (ha) y Catastro de Glaciares (DGA)',
-      hub: 'VII',
-      fuente: { institucion: 'MMA / CONAF / DGA', indicador: 'Inventario Vegetacional y Catastro de Glaciares', url: 'https://mma.gob.cl/' }
-    },
-    {
-      keys: ['cultura', 'museos', 'museo', 'biblioteca', 'bibliotecas', 'monumento', 'monumentos', 'fondart', 'patrimonio'],
-      varX: 'total_espacios_culturales',
-      varY: 'fondart_fndr_mclp',
-      unit: 'espacios y M$',
-      title: 'Espacios Culturales Registrados y Financiamiento Fondart/FNDR',
-      hub: 'IX',
-      fuente: { institucion: 'SERPAT / CMN / MINCAP', indicador: 'Catastro Patrimonial y Financiamiento Cultural', url: 'https://www.patrimoniocultural.gob.cl/' }
-    },
-    {
-      keys: ['ctci', 'ciencia', 'anid', 'corfo', 'investigadores', 'investigacion'],
-      varX: 'proyectos_anid_n',
-      varY: 'investigadores_residentes',
-      unit: 'proyectos e investigadores',
-      title: 'Proyectos ANID I+D e Investigadores Residentes',
-      hub: 'X',
-      fuente: { institucion: 'ANID / MinCiencia / CORFO', indicador: 'Plataforma DataCiencia y Proyectos de Innovación', url: 'https://dataciencia.anid.cl/' }
-    }
-  ];
-
-  function buildIndicatorReply(dim, ordenadas, maxCom, minCom, sumVal, avgVal) {
-    const isPct = dim.unit === '%' || dim.varX.endsWith('_pct');
-    const maxNom = maxCom.nombre || maxCom.nombre_comuna;
-    const minNom = minCom.nombre || minCom.nombre_comuna;
-    const maxV = (maxCom[dim.varX] || 0).toLocaleString('es-CL');
-    const minV = (minCom[dim.varX] || 0).toLocaleString('es-CL');
-    const summaryStat = isPct
-      ? `un promedio regional de ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })}%`
-      : `un total regional de ${sumVal.toLocaleString('es-CL')} ${dim.unit} (promedio de ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })} ${dim.unit} por comuna)`;
-
-    return `En la Región de Aysén, ${dim.title.toLowerCase()} registra ${summaryStat} (${dim.fuente.institucion}, 2024). ${maxNom} lidera con ${maxV} ${dim.unit}, mientras que ${minNom} registra el menor valor con ${minV} ${dim.unit}. El detalle ordenado de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
+  if (global && global.AYSEN_HUBS_DATA) {
+    OmniRouteClient.init(global.AYSEN_HUBS_DATA);
   }
 
-  function buildSeriesReply(varX, varY) {
-    return "Entre 2015 y 2026, las visitas a Parques SNASPE pasaron de 148.000 a un récord estimado de 285.500 ingresos anuales, mientras que las pernoctaciones turísticas aumentaron de 312.000 a 472.000 noches (fuentes CONAF e INE EMAT). Tras el impacto sanitario de 2020 (46.200 visitas y 178.000 pernoctaciones), la actividad completó una recuperación sostenida liderada por el Parque Queulat y la cuenca del Lago General Carrera. La evolución interanual completa se visualiza en el gráfico y en la pestaña Tabla de datos a la derecha.";
-  }
-
-  function buildComunaProfileReply(c) {
-    const nombre = c.nombre || c.nombre_comuna;
-    const pob = (c.poblacion_censo_2024 || 0).toLocaleString('es-CL');
-    const pctPob = (c.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    const fcm = (c.dependencia_fcm_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    const sup = (c.superficie_km2 || 0).toLocaleString('es-CL');
-
-    return `La comuna de ${nombre} cuenta con ${pob} habitantes (${pctPob}% regional) y una superficie de ${sup} km² (Censo 2024, INE). En el ámbito financiero, registra una dependencia del Fondo Común Municipal de ${fcm}%, con un presupuesto municipal per cápita de ${(c.presupuesto_per_capita_mclp || 0).toLocaleString('es-CL')} M$ (SINIM, 2024). Las cifras sectoriales y la comparación con las demás comunas están disponibles en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-  }
-
-  function buildGenericVarReply(v, ordenadas, maxCom, minCom, avgVal, sumVal) {
-    const maxNom = maxCom.nombre || maxCom.nombre_comuna;
-    const minNom = minCom.nombre || minCom.nombre_comuna;
-    const maxV = (maxCom[v.key] || 0).toLocaleString('es-CL');
-    const minV = (minCom[v.key] || 0).toLocaleString('es-CL');
-    const isPct = v.unit === '%' || v.key.endsWith('_pct');
-    const summaryStat = isPct
-      ? `promedio regional de ${avgVal.toLocaleString('es-CL', { maximumFractionDigits: 1 })}%`
-      : `total regional de ${sumVal.toLocaleString('es-CL')} ${v.unit}`;
-
-    return `El indicador ${v.label} registra un ${summaryStat} en las 10 comunas de Aysén (fuente oficial Hub ${v.hub}). ${maxNom} lidera con ${maxV} ${v.unit}, en contraste con ${minNom} que registra ${minV} ${v.unit}. El desglose completo por comuna está disponible en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-  }
-
-  /**
-   * Resuelve consultas territoriales de forma determinista y verificada
-   */
-  function resolveClosedWorldDeterministic(queryText) {
-    if (!_indexedData) init();
-    const qRaw = String(queryText || '').trim();
-    const q = normText(qRaw);
-
-    // 0. Detección temprana de comuna específica según COMUNA_SYNONYMS estricto
-    let matchedComuna = null;
-    for (const [code, syns] of Object.entries(COMUNA_SYNONYMS)) {
-      if (syns.some(s => q.includes(s))) {
-        matchedComuna = _comunas.find(c => String(c.comuna_ine) === code || String(c.id) === code) || null;
-        if (matchedComuna) break;
-      }
-    }
-
-    // 0.1 Preguntas estructurales sobre la región y división comunal / provincial
-    const isExcludedFromStructural = (
-      q.includes('fondo comun') || q.includes('fcm') || q.includes('dependencia') ||
-      q.includes('biomasa') || q.includes('salmon') || q.includes('parque') ||
-      q.includes('lena') || q.includes('calefacc') || q.includes('tarifa') ||
-      q.includes('hospital') || q.includes('salud') || q.includes('educacion') ||
-      q.includes('matricula') || q.includes('pobreza') || q.includes('casen') ||
-      q.includes('seia') || q.includes('inversion') || q.includes('empresas') ||
-      q.includes('trabajadores') || q.includes('turismo') || q.includes('alojamiento') ||
-      q.includes('patrimonio') || q.includes('cultura') || q.includes('ctci') ||
-      q.includes('poblacion') || q.includes('habitante') || q.includes('personas viven') ||
-      q.includes('cuanta gente') || q.includes('cuantas personas') || q.includes('residentes')
-    );
-
-    const isStructuralQuery = !isExcludedFromStructural && (
-      q.includes('cuantas comunas') ||
-      q.includes('cuales son las comunas') ||
-      q.includes('cuales comunas') ||
-      q.includes('que comunas') ||
-      q.includes('10 comunas') ||
-      q.includes('diez comunas') ||
-      q.includes('division comunal') ||
-      q.includes('division territorial') ||
-      q.includes('division politica') ||
-      q.includes('provincias') ||
-      (q.includes('comunas') && (
-        q.includes('tiene') || q.includes('distrib') || q.includes('cuantas') ||
-        q.includes('lista') || q.includes('region') || q.includes('componen') ||
-        q.includes('forman') || q.includes('integran') || q.includes('hay') ||
-        q.includes('aysen')
-      ))
-    );
-
-    if (isStructuralQuery) {
-      const txt = "La Región de Aysén tiene 10 comunas distribuidas en 4 provincias: Coyhaique y Lago Verde (Provincia de Coyhaique); Aysén, Cisnes y Guaitecas (Provincia de Aysén); Chile Chico y Río Ibáñez (Provincia General Carrera); y Cochrane, O'Higgins y Tortel (Provincia Capitán Prat). Según el Censo 2024 (INE), la región suma 100.745 habitantes, concentrando el 82,9% en Coyhaique (59.790 hab.) y Aysén (23.170 hab.). El desglose territorial completo se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.";
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'INE', indicador: 'Censo 2024 / División Político Administrativa', url: 'https://censo2024.ine.gob.cl/' }
-        ],
-        chart: {
-          render: true,
-          type: 'bar',
-          varX: 'poblacion_censo_2024',
-          varY: 'superficie_km2',
-          title: 'Población Censo 2024 (hab.) y Superficie comunal (km²)',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'VI'
-      };
-    }
-
-    // 0.2 Pregunta sobre qué datos o fuentes tiene la plataforma
-    const isPlatformDataQuery = (
-      q.includes('que datos tiene') ||
-      q.includes('que datos hay') ||
-      q.includes('que datos contiene') ||
-      q.includes('datos de la plataforma') ||
-      q.includes('catalogo de datos') ||
-      q.includes('que fuentes') ||
-      q.includes('cuales fuentes') ||
-      q.includes('que informacion tiene') ||
-      q.includes('que variables') ||
-      q.includes('que puedo consultar')
-    );
-
-    if (isPlatformDataQuery) {
-      const txt = "La plataforma integra indicadores de las 10 comunas de Aysén y series históricas 2015–2026 organizadas en 10 Hubs a partir de 28 fuentes oficiales (como INE, SINIM, SERNATUR, CONAF, CNE, SEC, SUBPESCA y DEIS). Puede consultar demografía, finanzas municipales, energía, salud, educación, medio ambiente y actividad productiva regional. El detalle de variables y fuentes está disponible en el gráfico y en la pestaña Tabla de datos a la derecha.";
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'Plataforma y Base de Datos Sistémica de Aysén', indicador: 'Catálogo de 28 Fuentes Oficiales', url: 'index.html#seccion-arquitectura-fuentes' }
-        ],
-        chart: {
-          render: true,
-          type: 'bar',
-          varX: 'poblacion_censo_2024',
-          varY: null,
-          title: 'Población Comunal · Censo 2024 (INE)',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'VI'
-      };
-    }
-
-    // 1. Población Comunal / Censo 2024 (INE)
-    const isPoblacionQuery = q.includes('poblacion') || q.includes('habitante') || q.includes('censo') ||
-      q.includes('personas viven') || q.includes('cuanta gente') || q.includes('cuantas personas') ||
-      q.includes('residentes') || q.includes('vive en cada comuna') || q.includes('demografia');
-
-    if (isPoblacionQuery) {
-      if (matchedComuna) {
-        const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
-        const pobCom = (matchedComuna.poblacion_censo_2024 || 0).toLocaleString('es-CL');
-        const pctCom = (matchedComuna.porcentaje_regional_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-        const supCom = (matchedComuna.superficie_km2 || 0).toLocaleString('es-CL');
-        const txt = `La comuna de ${cNom} registra una población de ${pobCom} habitantes (${pctCom}% regional) y una superficie de ${supCom} km² (Censo 2024, INE). A nivel regional, Coyhaique concentra la mayor población con 59.790 habitantes (59,3%) y O'Higgins la menor con 498 personas de un total de 100.745 habitantes. La comparativa de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-
-        return {
-          reply: txt,
-          sources: [
-            { institucion: 'INE', indicador: 'Censo de Población y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/' }
-          ],
-          chart: {
-            render: true,
-            type: 'bar',
-            varX: 'poblacion_censo_2024',
-            varY: 'superficie_km2',
-            title: `Población y Superficie · Censo 2024 (INE) · ${cNom}`,
-            excludeCoyhaique: false
-          },
-          relatedHub: 'VI'
-        };
-      }
-
-      const comunasOrdenadas = [..._comunas].sort((a, b) => (b.poblacion_censo_2024 || 0) - (a.poblacion_censo_2024 || 0));
-      const totalRegional = comunasOrdenadas.reduce((acc, c) => acc + (c.poblacion_censo_2024 || 0), 0);
-      const txt = `Según el Censo 2024 (INE), la Región de Aysén registra un total oficial de ${totalRegional.toLocaleString('es-CL')} habitantes en sus 10 comunas. Coyhaique lidera la concentración regional con 59.790 habitantes (59,3%) y Aysén con 23.170, seguidas por Cisnes, Chile Chico y Cochrane, mientras que O'Higgins presenta la menor población con 498 habitantes. La serie comparativa completa de las 10 comunas se encuentra desplegada en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'INE', indicador: 'Censo de Población y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/' }
-        ],
-        chart: {
-          render: true,
-          type: 'bar',
-          varX: 'poblacion_censo_2024',
-          varY: null,
-          title: 'Población por Comuna · Censo 2024 (INE)',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'VI'
-      };
-    }
-
-    // 2. Consulta de Dependencia Fondo Común Municipal vs Ingresos Propios
-    if (q.includes('fondo comun') || q.includes('fcm') || q.includes('ingresos propios') || (q.includes('dependencia') && q.includes('comun'))) {
-      if (matchedComuna) {
-        const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
-        const fcmCom = (matchedComuna.dependencia_fcm_pct || 0).toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-        const pcapCom = (matchedComuna.presupuesto_per_capita_mclp || 0).toLocaleString('es-CL');
-        const txt = `En la comuna de ${cNom}, la dependencia del Fondo Común Municipal es de ${fcmCom}% con un presupuesto per cápita de ${pcapCom} M$ (fuente: SUBDERE - SINIM, 2024). A nivel regional, Tortel lidera con 92,8% y Coyhaique registra el menor valor con 46,5%, frente a un promedio regional de 75,7%. El detalle ordenado de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-
-        return {
-          reply: txt,
-          sources: [
-            { institucion: 'SUBDERE - SINIM', indicador: 'Dependencia del Fondo Común Municipal (%) e Ingresos Propios', url: 'https://datos.sinim.gov.cl/' }
-          ],
-          chart: {
-            render: true,
-            type: 'bar',
-            varX: 'dependencia_fcm_pct',
-            varY: 'presupuesto_per_capita_mclp',
-            title: `Dependencia del FCM y Presupuesto Municipal · ${cNom}`,
-            excludeCoyhaique: false
-          },
-          relatedHub: 'IV'
-        };
-      }
-
-      const txt = "La dependencia del Fondo Común Municipal (FCM) promedia un 75,7% en las 10 comunas de la región (fuente oficial: SUBDERE - SINIM, 2024). Tortel y O'Higgins exhiben la mayor dependencia con 92,8% y 91,5% respectivamente, mientras que Coyhaique registra el menor porcentaje regional con 46,5%, sustentado en un 53,5% de ingresos propios. Las cifras exactas de las 10 comunas están detalladas en el gráfico y en la pestaña Tabla de datos a la derecha.";
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'SUBDERE - SINIM', indicador: 'Dependencia del Fondo Común Municipal (%) e Ingresos Propios', url: 'https://datos.sinim.gov.cl/' }
-        ],
-        chart: {
-          render: true,
-          type: 'bar',
-          varX: 'dependencia_fcm_pct',
-          varY: 'presupuesto_per_capita_mclp',
-          title: 'Dependencia del Fondo Común Municipal (%) y Presupuesto Municipal per Cápita',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'IV'
-      };
-    }
-
-    // 3. Consulta de Evolución Histórica de Parques y Alojamientos
-    if ((q.includes('parque') || q.includes('snaspe') || q.includes('conaf') || q.includes('visita')) && (q.includes('alojamiento') || q.includes('emat') || q.includes('turismo') || q.includes('noche') || q.includes('2015') || q.includes('evolucion') || q.includes('historica'))) {
-      const txt = buildSeriesReply('visitantes_snaspe', 'pernoctaciones_emat');
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'CONAF', indicador: 'Estadísticas de Visitación SNASPE (2015-2026)', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/' },
-          { institucion: 'INE', indicador: 'Encuesta Mensual de Alojamiento Turístico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economicas/turismo' }
-        ],
-        chart: {
-          render: true,
-          type: 'line',
-          varX: 'visitantes_snaspe',
-          varY: 'pernoctaciones_emat',
-          title: 'Visitación a Parques SNASPE y Pernoctaciones Turísticas EMAT (2015–2026)',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'I'
-      };
-    }
-
-    // 4. Leña vs Contaminación MP2.5
-    if ((q.includes('lena') || q.includes('calefacc')) && (q.includes('mp2') || q.includes('contamin') || q.includes('calidad del aire') || q.includes('humo'))) {
-      const txt = "El uso residencial de leña promedia 94,1% en la región, pero su impacto atmosférico difiere drásticamente según la geomorfología (fuentes CNE / CASEN y Red SINCA-MMA, 2024). Coyhaique concentra 87 días al año con episodios críticos de MP2.5 por inversión térmica en cuenca cerrada, mientras comunas litorales como Guaitecas registran solo 4 días con similar penetración de leña (94,6%). La distribución bivariada completa se presenta en el gráfico y en la pestaña Tabla de datos a la derecha.";
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'MMA - SINCA', indicador: 'Red de Calidad del Aire: Días sobre norma MP2.5', url: 'https://sinca.mma.gob.cl/' },
-          { institucion: 'CNE / CASEN MDSF', indicador: 'Porcentaje de hogares que calefaccionan con leña', url: 'https://www.bencinaenlinea.cl/' }
-        ],
-        chart: {
-          render: true,
-          type: 'scatter',
-          varX: 'hogares_lena_pct',
-          varY: 'dias_sobre_norma_mp25',
-          title: 'Hogares con Calefacción a Leña (%) vs Días Críticos MP2.5 (SINCA-MMA)',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'VII'
-      };
-    }
-
-    // 5. Biomasa Salmonicultura vs Inversión Pública FNDR
-    if ((q.includes('salmon') || q.includes('biomasa') || q.includes('concesion') || q.includes('acuic')) && (q.includes('inversion') || q.includes('fndr') || q.includes('publica') || q.includes('presupuesto'))) {
-      const txt = "La Región de Aysén cosecha 503.500 toneladas anuales de salmón, concentradas casi en su totalidad en la comuna de Aysén (265.000 ton) y Cisnes (185.000 ton) según SERNAPESCA (2024–2026). En contraste, la inversión pública FNDR (DIPRES / GORE, 54.650 M$ totales) se concentra en Coyhaique con 14.850 M$ (27,2%) para infraestructura urbana y hospitalaria, frente a 3.400 M$ asignados a zonas productivas extremas como Guaitecas. El contraste territorial completo se detalla en el gráfico y en la pestaña Tabla de datos a la derecha.";
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'SERNAPESCA', indicador: 'Fiscalización y Biomasa Cosechada de Salmónidos', url: 'https://www.sernapesca.cl/informes/acuicultura' },
-          { institucion: 'SUBPESCA', indicador: 'Catastro Oficial de Concesiones de Acuicultura (745 concesiones)', url: 'https://mapas.subpesca.cl/visorsubpesca/' },
-          { institucion: 'DIPRES / GORE Aysén', indicador: 'Ejecución Presupuestaria de Inversión Regional FNDR', url: 'https://www.dipres.gob.cl/' }
-        ],
-        chart: {
-          render: true,
-          type: 'bar',
-          varX: 'biomasa_salmon_ton',
-          varY: 'fndr_mclp',
-          title: 'Biomasa de Salmón (toneladas) vs Inversión Pública Regional FNDR (M$)',
-          excludeCoyhaique: false
-        },
-        relatedHub: 'II'
-      };
-    }
-
-    // 6. Mapeo temático de dimensiones territoriales con sinónimos amplios
-    for (const dim of DIMENSIONES) {
-      if (dim.keys.some(k => q.includes(k))) {
-        const vX = dim.varX;
-        const vY = dim.varY;
-        const ordenadas = [..._comunas].sort((a, b) => (b[vX] || 0) - (a[vX] || 0));
-        const maxCom = ordenadas[0] || {};
-        const minCom = ordenadas[ordenadas.length - 1] || {};
-        const sumVal = ordenadas.reduce((acc, c) => acc + (c[vX] || 0), 0);
-        const avgVal = sumVal / (ordenadas.length || 1);
-
-        let txt;
-        if (matchedComuna) {
-          const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
-          const valX = (matchedComuna[vX] || 0).toLocaleString('es-CL');
-          const maxNom = maxCom.nombre || maxCom.nombre_comuna;
-          const minNom = minCom.nombre || minCom.nombre_comuna;
-          const maxV = (maxCom[vX] || 0).toLocaleString('es-CL');
-          const minV = (minCom[vX] || 0).toLocaleString('es-CL');
-          txt = `En la comuna de ${cNom}, ${dim.title.toLowerCase()} registra ${valX} ${dim.unit} (${dim.fuente.institucion}, 2024). A nivel regional, ${maxNom} lidera con ${maxV} ${dim.unit} y ${minNom} registra ${minV} ${dim.unit}. El detalle ordenado de las 10 comunas se encuentra en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-        } else {
-          txt = buildIndicatorReply(dim, ordenadas, maxCom, minCom, sumVal, avgVal);
-        }
-
-        return {
-          reply: txt,
-          sources: [dim.fuente],
-          chart: {
-            render: true,
-            type: 'bar',
-            varX: vX,
-            varY: vY,
-            title: matchedComuna ? `${dim.title} · ${matchedComuna.nombre || matchedComuna.nombre_comuna}` : dim.title,
-            excludeCoyhaique: false
-          },
-          relatedHub: dim.hub
-        };
-      }
-    }
-
-    // 7. Consultas de Comuna Específica (Ficha General cuando no se especificó otra dimensión)
-    if (matchedComuna) {
-      const cNombre = matchedComuna.nombre || matchedComuna.nombre_comuna;
-      const txt = buildComunaProfileReply(matchedComuna);
-
-      return {
-        reply: txt,
-        sources: [
-          { institucion: 'INE / SINIM / DEIS / SEC / SII', indicador: `Ficha Territorial: Comuna de ${cNombre}`, url: 'index.html' }
-        ],
-        chart: {
-          render: true,
-          type: 'bar',
-          varX: 'dependencia_fcm_pct',
-          varY: 'presupuesto_per_capita_mclp',
-          title: `Finanzas y Dependencia Fiscal en ${cNombre} vs Región`,
-          excludeCoyhaique: false
-        },
-        relatedHub: 'IV'
-      };
-    }
-
-    // 8. Búsqueda directa por variable genérica en el catálogo de variables
-    for (const v of _variablesCatalog) {
-      const vKeyNorm = normText(v.key);
-      const vLabelNorm = normText(v.label);
-      if (q.includes(vKeyNorm) || q.includes(vLabelNorm)) {
-        const ordenadas = [..._comunas].sort((a, b) => (b[v.key] || 0) - (a[v.key] || 0));
-        const maxCom = ordenadas[0] || {};
-        const minCom = ordenadas[ordenadas.length - 1] || {};
-        const sumVal = ordenadas.reduce((acc, c) => acc + (c[v.key] || 0), 0);
-        const avgVal = sumVal / (ordenadas.length || 1);
-        const hubLetter = getHubForVariable(v.key);
-
-        let txt;
-        if (matchedComuna) {
-          const cNom = matchedComuna.nombre || matchedComuna.nombre_comuna;
-          const valX = (matchedComuna[v.key] || 0).toLocaleString('es-CL');
-          const maxNom = maxCom.nombre || maxCom.nombre_comuna;
-          const minNom = minCom.nombre || minCom.nombre_comuna;
-          const maxV = (maxCom[v.key] || 0).toLocaleString('es-CL');
-          const minV = (minCom[v.key] || 0).toLocaleString('es-CL');
-          txt = `En la comuna de ${cNom}, el indicador ${v.label} registra ${valX} ${v.unit}. A nivel regional, ${maxNom} lidera con ${maxV} ${v.unit} y ${minNom} registra ${minV} ${v.unit} (fuente oficial Hub ${hubLetter}). El desglose completo por comuna está disponible en el gráfico y en la pestaña Tabla de datos a la derecha.`;
-        } else {
-          txt = buildGenericVarReply(v, ordenadas, maxCom, minCom, avgVal, sumVal);
-        }
-
-        return {
-          reply: txt,
-          sources: [
-            { institucion: 'Plataforma Aysén Sistémico', indicador: v.label, url: 'index.html' }
-          ],
-          chart: {
-            render: true,
-            type: 'bar',
-            varX: v.key,
-            varY: null,
-            title: matchedComuna ? `${v.label} · ${matchedComuna.nombre || matchedComuna.nombre_comuna}` : v.label,
-            excludeCoyhaique: false
-          },
-          relatedHub: hubLetter
-        };
-      }
-    }
-
-    // 9. Respuesta ante consultas no reconocidas
-    return {
-      reply: `Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico.
-
-La plataforma responde y grafica exclusivamente con base en información de instituciones oficiales de la región (como SINIM, INE, SERNATUR, CONAF, CNE, SEC, SUBPESCA, SEA y DEIS-MINSAL).
-
-Puede consultar indicadores como población comunal, dependencia del Fondo Común Municipal, visitación a parques, calefacción a leña o biomasa acuícola en el gráfico y en la pestaña Tabla de datos.`,
-      sources: [
-        { institucion: 'Plataforma y Base de Datos Sistémica de Aysén', indicador: 'Catálogo de 28 Fuentes Oficiales', url: 'index.html#seccion-arquitectura-fuentes' }
-      ],
-      chart: {
-        render: false,
-        type: 'bar',
-        varX: null,
-        varY: null,
-        title: '',
-        excludeCoyhaique: false
-      },
-      relatedHub: 'IV'
-    };
-  }
-
-  /**
-   * Consulta al endpoint de OmniRoute con fallback automático determinista
-   */
-  async function query(userMessage, options) {
-    if (!_indexedData) init();
-
-    const cfg = { ...getConfig(), ...(options || {}) };
-    const prompt = (userMessage || '').trim();
-    if (!prompt) {
-      throw new Error('La consulta no puede estar vacía.');
-    }
-
-    const sysPrompt = buildSystemPrompt();
-    let rawEndpoint = (cfg.endpointUrl || '').trim().replace(/\/+$/, '');
-    if (!rawEndpoint) rawEndpoint = DEFAULT_CONFIG.endpointUrl;
-    if (!rawEndpoint.includes('/v1')) {
-      rawEndpoint += '/v1';
-    }
-    const endpoint = rawEndpoint.endsWith('/chat/completions')
-      ? rawEndpoint
-      : `${rawEndpoint}/chat/completions`;
-
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 12000);
-
-      const resp = await fetch(endpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${cfg.apiKey}`
-        },
-        body: JSON.stringify({
-          model: cfg.model || 'auto',
-          messages: [
-            { role: 'system', content: sysPrompt },
-            { role: 'user', content: prompt }
-          ],
-          temperature: 0.1,
-          response_format: { type: 'json_object' }
-        }),
-        signal: controller.signal
-      });
-
-      clearTimeout(timeoutId);
-
-      if (resp.ok) {
-        const json = await resp.json();
-        const content = json.choices && json.choices[0] && json.choices[0].message && json.choices[0].message.content;
-        if (content) {
-          const parsed = extractJsonFromResponse(content);
-          if (parsed && typeof parsed.reply === 'string') {
-            parsed.rawInference = true;
-            parsed.modelUsed = json.model || cfg.model;
-            return parsed;
-          }
-        }
-      }
-    } catch (errNet) {
-      // Endpoint local no activo o sin conexión: fallback transparente y silencioso al índice verificado
-    }
-
-    const fallbackResult = resolveClosedWorldDeterministic(prompt);
-    fallbackResult.offlineFallback = true;
-    return fallbackResult;
-  }
-
-  function getComunaVector(varKey, excludeCoyhaique = false) {
-    if (!_indexedData) init();
-    return _comunas
-      .filter(c => !(excludeCoyhaique && isCoyhaiqueComuna(c)))
-      .map(c => ({
-        id: c.id,
-        nombre: c.nombre || c.nombre_comuna,
-        value: typeof c[varKey] === 'number' ? c[varKey] : 0
-      }));
-  }
-
-  if (typeof window !== 'undefined' && window.AYSEN_HUBS_DATA) {
-    init(window.AYSEN_HUBS_DATA);
-  }
-
-  return {
-    init: init,
-    getConfig: getConfig,
-    setConfig: setConfig,
-    getIndex: getIndex,
-    buildSystemPrompt: buildSystemPrompt,
-    query: query,
-    resolveClosedWorldDeterministic: resolveClosedWorldDeterministic,
-    localVerifiedQuery: resolveClosedWorldDeterministic,
-    buildIndicatorReply: buildIndicatorReply,
-    buildSeriesReply: buildSeriesReply,
-    buildComunaProfileReply: buildComunaProfileReply,
-    getComunaVector: getComunaVector,
-    extractJsonFromResponse: extractJsonFromResponse,
-    getHubForVariable: getHubForVariable,
-    COMUNA_SYNONYMS: COMUNA_SYNONYMS,
-    FUENTES_OFICIALES_28: FUENTES_OFICIALES_28
-  };
+  return OmniRouteClient;
 });

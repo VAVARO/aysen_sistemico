@@ -2,8 +2,8 @@
 
 Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comunas, 10 Hubs sistémicos `I` al `X`, 39 nodos satélites `#01` al `#39`, 10 paquetes de trabajo `WP_01` al `WP_10`). Costo de infraestructura: **$0** (archivos estáticos JSON/CSV, HTML/CSS/JS vanilla). Autor: **Álvaro Contreras Barrios**.
 
-## Arquitectura de la Plataforma (4 Módulos Principales — Identidad "Cuaderno Editorial y Cartográfico Austral")
-- **Cabecera Global Unificada (56px)** en las 4 páginas: Barra superior de 3px con gradiente cobalto (`linear-gradient(90deg, #00357f, #0059c5, #00357f)`), fondo `rgba(252, 249, 248, 0.92)` con `backdrop-filter: blur(16px)` y borde inferior `1px solid rgba(28, 27, 27, 0.09)`. Bloque izquierdo: dot cobalto 9px + autor `Álvaro Contreras Barrios` (Playfair Display 1.2rem/700) + `|` + título corto del módulo en español. Bloque derecho: 5 enlaces estándar (`Portada`, `Visualizador de Complejidad`, `Datos de Aysén`, `Laboratorio Sistémico`, `LinkedIn ↗`).
+## Arquitectura de la Plataforma (5 Módulos Principales — Identidad "Cuaderno Editorial y Cartográfico Austral")
+- **Cabecera Global Unificada (56px)** en las 5 páginas: Barra superior de 3px con gradiente cobalto (`linear-gradient(90deg, #00357f, #0059c5, #00357f)`), fondo `rgba(252, 249, 248, 0.92)` con `backdrop-filter: blur(16px)` y borde inferior `1px solid rgba(28, 27, 27, 0.09)`. Bloque izquierdo: dot cobalto 9px + autor `Álvaro Contreras Barrios` (Playfair Display 1.2rem/700) + `|` + título corto del módulo en español. Bloque derecho: enlaces estándar (`Portada`, `Visualizador de Complejidad`, `Datos de Aysén`, `Laboratorio Sistémico`, `Consultor de Datos`, `LinkedIn ↗`).
 - **Capa Transversal de Accesibilidad**: `css/apple-design.css` (foco visible cobalto, `prefers-reduced-motion`, `prefers-reduced-transparency`, `prefers-contrast`).
 
 1. **[portal.html](file:///g:/Mi%20unidad/AGY/SUPERFORECAST/portal.html) (Home / Portada Principal)**:
@@ -23,6 +23,9 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
    - Controles técnicos monocromáticos sobrios en JetBrains Mono (`[–]`, `[+]`, `[×]`) preservando IDs contractuales (`btnMinCard-*`, `btnMaxCard-*`, `btnDelCard-*`).
    - Barra flotante contextual estilo papel editorial, barra de pestañas de ventanas (`#workspaceWindowTabs`), cross-highlighting reactivo entre tarjetas conectadas, cálculo real de capas Promedio y Tendencia ($R^2$), y tarjetas de reflexión bajo demanda (? Pregunta).
    - Persistencia completa: autoguardado en `LocalStorage`, exportación/importación `.json` y reportes para impresión/PDF.
+5. **[consultor.html](file:///g:/Mi%20unidad/AGY/SUPERFORECAST/consultor.html) (Consultor de Datos Territorial — Motor RAG en Memoria)**:
+   - Interfaz conversacional de pantalla dividida 50% / 50% (`100vh`) con panel de chat analítico a la izquierda y lienzo de evidencia (gráfico Chart.js bivariado/serie temporal + tabla comunal con cálculo dinámico de Total/Promedio Regional y enlace directo a `laboratorio.html`) a la derecha.
+   - Motor [`js/omniroute_client.js`](file:///g:/Mi%20unidad/AGY/SUPERFORECAST/js/omniroute_client.js) 100% libre de hardcoding con auto-descubrimiento de esquema (`buildMemoryIndex`, `refreshMemory`), integración semántica con [`js/nl2chart_engine.js`](file:///g:/Mi%20unidad/AGY/SUPERFORECAST/js/nl2chart_engine.js) y [`data/nl_lexicon_aysen.json`](file:///g:/Mi%20unidad/AGY/SUPERFORECAST/data/nl_lexicon_aysen.json), memoria conversacional multi-turno hacia `http://localhost:20128/v1/chat/completions` y síntesis determinista en vivo desde `memoryPacket`.
 
 ## Stack y Entorno
 - **Python**: Python 3.11+. Ejecutar mediante `python` en PATH o `uv run python`.
@@ -49,6 +52,7 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
 - **Suite Laboratorio Salud (6 tests)**: `python tests/test_laboratorio_health.py`
 - **Suite Editorial M1 (8 checks)**: `python tests/verify_m1_editorial.py`
 - **Suite Presets CECAN y NL2Chart (9 tests)**: `python tests/test_cecan_presets_and_nl2chart.py`
+- **Suite OmniRoute y Consultor RAG (17 tests)**: `python tests/test_omniroute_consultor.py`
 - **Suite Mobile Responsive (7 tests)**: `python tests/test_mobile_responsive_e2e.py`
 - **Suite Red Anti-Slop (8 tests)**: `python tests/test_no_slop_hub_network.py`
 - **Checklist 10 Hubs y 39 Nodos**: `python tests/verify_10_hubs_checklist.py`

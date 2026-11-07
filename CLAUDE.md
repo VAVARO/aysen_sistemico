@@ -14,7 +14,8 @@
 - Validate Data Lake: `python scripts/validate_data_lake.py --all`
 - Run Integrity Suite (37 tests): `python scripts/test_fuentes_integridad.py`
 - Run E2E Requirements (58 tests): `python tests/test_e2e_requirements.py`
-- Run Pytest Suite (446 tests): `python -m pytest tests/`
+- Run OmniRoute & Consultor RAG Suite (17 tests): `python tests/test_omniroute_consultor.py`
+- Run Pytest Suite (463 tests): `python -m pytest tests/`
 - Check Working Tree: `git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'`
 
 ## Architecture & Modules (Cuaderno Editorial y Cartográfico Austral)
@@ -22,7 +23,8 @@
 2. `sistemas_complejos.html` - Visualizador interactivo de 16 propiedades de sistemas complejos (marco Boehnert et al., 2018).
 3. `index.html` - Data Hub e Inteligencia Territorial (10 Hubs, 39 nodos satélites, 10 comunas, drawer analítico).
 4. `laboratorio.html` - Estudio cartográfico 2D sobre lienzo infinito interactivo.
-5. `css/apple-design.css` - Capa transversal de accesibilidad y foco visible cobalto.
+5. `consultor.html` & `js/omniroute_client.js` - Consultor de Datos Territorial con motor RAG en memoria auto-adaptativo a nuevos datos (`buildMemoryIndex`, `refreshMemory`), integrado con `js/nl2chart_engine.js` y `data/nl_lexicon_aysen.json`.
+6. `css/apple-design.css` - Capa transversal de accesibilidad y foco visible cobalto.
 
 ## Non-Negotiable Invariants & Boundaries
 - Zero AI Slop: Strictly 0 emojis across all UI, source code, JSONs, and CSVs.

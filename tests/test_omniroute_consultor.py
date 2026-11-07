@@ -518,6 +518,66 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Fallo en verificacion de respuestas concisas sin slop:\n{proc.stderr}")
         self.assertIn("RESPUESTAS_CONCISAS_OK", proc.stdout)
 
+    def test_17_autodescubrimiento_rag_nuevas_variables_y_colecciones(self):
+        """Verifica que el motor RAG en memoria auto-descubra columnas y colecciones futuras sin hardcoding."""
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync('data/aysen_hubs_data.js', 'utf8');
+        const sandbox = {};
+        eval(content.replace('window.', 'sandbox.'));
+        const data = sandbox.AYSEN_HUBS_DATA;
+        const client = require('./js/omniroute_client.js');
+
+        // Inyectar una columna totalmente nueva en comunas y una coleccion futura
+        data.comunas.forEach((c, idx) => {
+            c.hidrogeno_verde_potencial_mw = (idx + 1) * 15;
+            c.cobertura_5g_futura_pct = 50 + idx * 4;
+        });
+        data.catastroGeotermicoFuturo = [
+            { id: 'GEO-1', nombre: 'Campo Hudson', potencia_mw: 120 },
+            { id: 'GEO-2', nombre: 'Campo Puyuhuapi', potencia_mw: 85 }
+        ];
+
+        client.refreshMemory(data);
+        const idx = client.getIndex();
+
+        // 1. Verificar indexacion automatica de unidad y regla de agregacion (sum vs avg)
+        const vH2 = idx.variablesByKey['hidrogeno_verde_potencial_mw'];
+        const v5G = idx.variablesByKey['cobertura_5g_futura_pct'];
+        if (!vH2 || vH2.unit !== 'MW' || vH2.aggregation !== 'sum') {
+            console.error('Failed to infer metadata for hidrogeno_verde_potencial_mw:', vH2);
+            process.exit(1);
+        }
+        if (!v5G || v5G.unit !== '%' || v5G.aggregation !== 'avg') {
+            console.error('Failed to infer metadata for cobertura_5g_futura_pct:', v5G);
+            process.exit(2);
+        }
+
+        // 2. Consultar la nueva variable y verificar sintesis dinamica desde memoria
+        const resH2 = client.resolveClosedWorldDeterministic('¿Cuál es el hidrogeno verde potencial en las comunas?');
+        if (resH2.chart.varX !== 'hidrogeno_verde_potencial_mw' || !resH2.reply.includes('825 MW')) {
+            console.error('Failed dynamic synthesis for new column:', resH2);
+            process.exit(3);
+        }
+
+        // 3. Verificar que la nueva coleccion haya sido indexada
+        const foundCol = idx.customCollections.find(c => c.key === 'catastroGeotermicoFuturo');
+        if (!foundCol || foundCol.count !== 2) {
+            console.error('Failed to index custom collection catastroGeotermicoFuturo:', foundCol);
+            process.exit(4);
+        }
+
+        console.log('DYNAMIC_RAG_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en autodescubrimiento RAG:\n{proc.stderr}")
+        self.assertIn("DYNAMIC_RAG_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()
