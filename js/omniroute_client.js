@@ -1612,7 +1612,15 @@
    * para responder la consulta del usuario con datos 100% verificados.
    */
   function retrieveMemoryForQuery(userText) {
-    const rawQuery = String(userText || '').trim();
+    let effectiveQuery = String(userText || '').trim();
+    const isFollowUp = /^(y\s+)?(no\s+tienes\s+mas|que\s+mas|dame\s+mas|mas\s+datos|otros\s+datos|otras\s+variables|muestrame\s+mas|y\s+sobre\s+eso|profundiza|continua)/i.test(normalizeText(effectiveQuery));
+    if (isFollowUp && _conversationMemory.length > 0) {
+      const prevUserMsgs = _conversationMemory.filter(m => m.role === 'user').map(m => m.content);
+      if (prevUserMsgs.length > 0) {
+        effectiveQuery = prevUserMsgs[prevUserMsgs.length - 1] + ' ' + effectiveQuery;
+      }
+    }
+    const rawQuery = effectiveQuery;
     const qNorm = normalizeText(rawQuery);
     const qTokens = tokenize(rawQuery);
 

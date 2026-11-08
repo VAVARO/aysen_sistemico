@@ -14,10 +14,11 @@
   <!-- Material Symbols Outlined -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <!-- D3.js v7 para el Mapa Interactivo de Hubs y Nodos -->
-  <script src="https://d3js.org/d3.v7.min.js"
+  <!-- D3.js v7.8.5 para el Mapa Interactivo de Hubs y Nodos (versión fijada + fallback) -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"
     integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
     crossorigin="anonymous"></script>
+  <script>if (typeof window.d3 === 'undefined') { document.write('<script src="https://d3js.org/d3.v7.min.js"><\/script>'); }</script>
 
   <!-- Chart.js v4.4.1 para Gráficos Ejecutivos en Drawer Lateral (version fijada + SRI) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
@@ -156,6 +157,11 @@
     }
 
     #d3-canvas-container {
+      width: 100%;
+      height: 600px;
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
       background-color: #fcf9f8;
       background-image: radial-gradient(rgba(0, 53, 127, 0.08) 1px, transparent 1px);
       background-size: 24px 24px;
@@ -163,6 +169,12 @@
     }
     #d3-canvas-container:active {
       cursor: grabbing;
+    }
+    #d3-concept-svg {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      display: block;
     }
 
     .d3-link {
@@ -1107,61 +1119,61 @@
               <rect x="775" y="34" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="48" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="52" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">I. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Turismo</tspan></text>
-              <text x="965" y="52" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_06</text>
+              <text x="965" y="52" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">5 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-salmonicultura" data-type="hub" data-id="salmonicultura" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub II: Salmonicultura">
               <rect x="775" y="74" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="88" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="92" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">II. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Salmonicultura</tspan></text>
-              <text x="965" y="92" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_03</text>
+              <text x="965" y="92" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">5 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-energia" data-type="hub" data-id="energia" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub III: Energía">
               <rect x="775" y="114" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="128" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="132" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">III. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Energía</tspan></text>
-              <text x="965" y="132" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_02</text>
+              <text x="965" y="132" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">4 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-gobernanza" data-type="hub" data-id="gobernanza" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub IV: Gobernanza">
               <rect x="775" y="154" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="168" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="172" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">IV. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Gobernanza</tspan></text>
-              <text x="965" y="172" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_01</text>
+              <text x="965" y="172" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">4 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-inversion" data-type="hub" data-id="inversion" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub V: Inversión">
               <rect x="775" y="194" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="208" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="212" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">V. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Inversión</tspan></text>
-              <text x="965" y="212" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_04</text>
+              <text x="965" y="212" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">4 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-social" data-type="hub" data-id="social" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub VI: Social">
               <rect x="775" y="234" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="248" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="252" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">VI. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Social</tspan></text>
-              <text x="965" y="252" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_05</text>
+              <text x="965" y="252" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">3 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-biodiversidad" data-type="hub" data-id="biodiversidad" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub VII: Biodiversidad">
               <rect x="775" y="274" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="288" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="292" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">VII. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Biodiversidad</tspan></text>
-              <text x="965" y="292" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_07</text>
+              <text x="965" y="292" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">5 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-salud" data-type="hub" data-id="salud" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub VIII: Salud">
               <rect x="775" y="314" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="328" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="332" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">VIII. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Salud</tspan></text>
-              <text x="965" y="332" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_08</text>
+              <text x="965" y="332" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">3 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-cultura" data-type="hub" data-id="cultura" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub IX: Cultura y Patrimonio">
               <rect x="775" y="354" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="368" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="372" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">IX. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">Cultura y Patrimonio</tspan></text>
-              <text x="965" y="372" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_09</text>
+              <text x="965" y="372" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">3 Nodos</text>
             </g>
             <g class="flow-node flow-hub" id="node-ctci" data-type="hub" data-id="ctci" style="cursor: pointer;" tabindex="0" role="button" aria-label="Hub X: CTCi e Innovación">
               <rect x="775" y="394" width="200" height="28" fill="transparent" />
               <circle cx="780" cy="408" r="5" fill="#0f172a" class="flow-circle" style="transition: fill 0.18s ease;" />
               <text x="794" y="412" class="flow-label" style="transition: fill 0.18s ease;"><tspan class="flow-numeral" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">X. </tspan><tspan class="flow-text" font-family="'IBM Plex Sans', -apple-system, sans-serif" font-size="11.5px" font-weight="500" fill="#0f172a">CTCi e Innovación</tspan></text>
-              <text x="965" y="412" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">WP_10</text>
+              <text x="965" y="412" text-anchor="end" class="flow-hub-code" font-family="'IBM Plex Mono', monospace" font-size="10.5px" font-weight="600" fill="#00357f">3 Nodos</text>
             </g>
             </g>
           </svg>
@@ -1753,14 +1765,22 @@
         { id: 'inst_subpesca', name: 'SUBPESCA / IDE REST', reg: 'reg_01', hubs: ['salmonicultura', 'turismo'] },
         { id: 'inst_bbnn_conaf', name: 'Bienes Nacionales / CONAF SIT', reg: 'reg_01', hubs: ['turismo', 'inversion', 'biodiversidad'] },
         { id: 'inst_datos_gob', name: 'Datos.gob.cl CKAN', reg: 'reg_01', hubs: ['gobernanza', 'ctci'] },
+        { id: 'inst_sernatur', name: 'SERNATUR · INE EMAT · Subturismo', reg: 'reg_02', hubs: ['turismo'] },
+        { id: 'inst_sernapesca', name: 'SERNAPESCA · TGR · IFOP', reg: 'reg_02', hubs: ['salmonicultura', 'biodiversidad'] },
+        { id: 'inst_sec_subtel', name: 'SEC · SUBTEL FOA · Edelaysen', reg: 'reg_02', hubs: ['energia', 'salud'] },
+        { id: 'inst_sinim', name: 'SINIM SUBDERE · DIPRES · SERVEL', reg: 'reg_02', hubs: ['gobernanza', 'cultura'] },
+        { id: 'inst_seia_sii', name: 'SEA SEIA · SII · ChileCompra · SAG', reg: 'reg_02', hubs: ['inversion', 'ctci'] },
+        { id: 'inst_deis', name: 'DEIS MINSAL · SSA · SAMU', reg: 'reg_02', hubs: ['salud', 'social'] },
+        { id: 'inst_mineduc_cead', name: 'MINEDUC SLEP · SPD CEAD · SENAPRED', reg: 'reg_02', hubs: ['social', 'cultura'] },
+        { id: 'inst_emporcha', name: 'EMPORCHA · DOP · MTT · DGAC', reg: 'reg_02', hubs: ['gobernanza', 'turismo'] },
+        { id: 'inst_minvu', name: 'MINVU Déficit/APR · SNI BIP · MOP', reg: 'reg_02', hubs: ['social', 'gobernanza'] },
+        { id: 'inst_mma_dga', name: 'MMA RCE · DGA · SERNAGEOMIN', reg: 'reg_03', hubs: ['biodiversidad', 'inversion', 'ctci'] },
+        { id: 'inst_mincap', name: 'SERPAT · CMN · SNBP · MINCAP', reg: 'reg_03', hubs: ['cultura', 'turismo'] },
+        { id: 'inst_anid_corfo', name: 'ANID · MinCiencia · CORFO · CIEP', reg: 'reg_03', hubs: ['ctci', 'salmonicultura', 'biodiversidad'] },
+        { id: 'inst_odepa', name: 'ODEPA Agro · INFOR · DGA Glaciares', reg: 'reg_03', hubs: ['inversion', 'biodiversidad'] },
+        { id: 'inst_uaysen', name: 'UAysén Barómetro Patagonia (8 dim.)', reg: 'reg_03', hubs: ['ctci', 'social'] },
         { id: 'inst_anid', name: 'ANID DataCiencia', reg: 'reg_01', hubs: ['ctci'] },
         { id: 'inst_subdere', name: 'SUBDERE SINIM / DIPRES', reg: 'reg_02', hubs: ['gobernanza', 'inversion'] },
-        { id: 'inst_sernapesca', name: 'SERNAPESCA', reg: 'reg_02', hubs: ['salmonicultura'] },
-        { id: 'inst_deis', name: 'DEIS MINSAL / SSA', reg: 'reg_02', hubs: ['salud'] },
-        { id: 'inst_mineduc_cead', name: 'MINEDUC SLEP / CEAD SPD', reg: 'reg_02', hubs: ['social'] },
-        { id: 'inst_sea_sii', name: 'SEA SEIA / SII / ChileCompra', reg: 'reg_02', hubs: ['inversion'] },
-        { id: 'inst_sernatur', name: 'SERNATUR / JAC / BCCh', reg: 'reg_02', hubs: ['turismo', 'inversion'] },
-        { id: 'inst_mincap_corfo', name: 'MINCAP SERPAT / CORFO', reg: 'reg_02', hubs: ['cultura', 'ctci'] },
         { id: 'inst_ine_censo', name: 'INE Censo 2024', reg: 'reg_03', hubs: ['social', 'turismo', 'gobernanza'] },
         { id: 'inst_casen', name: 'CASEN MDSF', reg: 'reg_03', hubs: ['social', 'salud'] },
         { id: 'inst_barometro', name: 'Barómetro Regional UAysén', reg: 'reg_03', hubs: ['gobernanza', 'cultura'] }
@@ -2006,7 +2026,7 @@
           links: [{ text: 'uaysen.cl ↗', url: 'https://uaysen.cl/' }]
         },
         turismo: {
-          nombre: 'Hub I. Turismo (WP_06)',
+          nombre: 'Hub I. Turismo (5 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Multirrégimen (API mensual + Cierres anuales + Censo)',
           mecanismo: 'Circuit Breaker Last-Known-Good + Registros SERNATUR/CONAF',
@@ -2014,7 +2034,7 @@
           links: [{ text: 'registro.sernatur.cl ↗', url: 'https://registro.sernatur.cl/' }, { text: 'subturismo.gob.cl ↗', url: 'https://www.subturismo.gob.cl/zoit/' }]
         },
         salmonicultura: {
-          nombre: 'Hub II. Salmonicultura y Maritorio (WP_03)',
+          nombre: 'Hub II. Salmonicultura y Maritorio (5 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Multirrégimen (API mensual ArcGIS + Cierres Sernapesca)',
           mecanismo: 'Circuit Breaker Last-Known-Good (Catastro 745 concesiones SUBPESCA)',
@@ -2022,7 +2042,7 @@
           links: [{ text: 'mapas.subpesca.cl ↗', url: 'https://mapas.subpesca.cl/visorsubpesca/' }, { text: 'sernapesca.cl ↗', url: 'https://www.sernapesca.cl/informes/acuicultura' }]
         },
         energia: {
-          nombre: 'Hub III. Energía y Telecomunicaciones (WP_02)',
+          nombre: 'Hub III. Energía y Telecomunicaciones (4 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'API Mensual CNE + Cierres SEC/SUBTEL',
           mecanismo: 'API directa CKAN REST / Circuit Breaker Last-Known-Good',
@@ -2030,7 +2050,7 @@
           links: [{ text: 'energiaabierta.cl ↗', url: 'https://energiaabierta.cl/' }, { text: 'sec.cl ↗', url: 'https://www.sec.cl/' }]
         },
         gobernanza: {
-          nombre: 'Hub IV. Gobernanza y Finanzas Municipales (WP_01)',
+          nombre: 'Hub IV. Gobernanza y Finanzas Municipales (4 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Multirrégimen (API CKAN + Cierres SINIM/DIPRES + Barómetro)',
           mecanismo: 'Circuit Breaker Last-Known-Good (Finanzas Municipales SINIM / FCM)',
@@ -2038,7 +2058,7 @@
           links: [{ text: 'datos.sinim.gov.cl ↗', url: 'https://datos.sinim.gov.cl/' }, { text: 'dipres.gob.cl ↗', url: 'https://www.dipres.gob.cl/' }]
         },
         inversion: {
-          nombre: 'Hub V. Economía, Inversión y Suelo (WP_04)',
+          nombre: 'Hub V. Economía, Inversión y Suelo (4 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Cierres Administrativos Semestrales/Anuales (SEA, SII, ChileCompra)',
           mecanismo: 'Circuit Breaker Last-Known-Good (722 proyectos SEIA)',
@@ -2046,7 +2066,7 @@
           links: [{ text: 'seia.sea.gob.cl ↗', url: 'https://seia.sea.gob.cl/' }, { text: 'sii.cl ↗', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/' }]
         },
         social: {
-          nombre: 'Hub VI. Demografía, Educación y Social (WP_05)',
+          nombre: 'Hub VI. Demografía, Educación y Social (3 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Líneas Base Censales + Cierres Anuales MINEDUC/CEAD',
           mecanismo: 'Corte Censal Oficial INE 2024 / CASEN MDSF / SLEP Aysén',
@@ -2054,7 +2074,7 @@
           links: [{ text: 'censo2024.ine.gob.cl ↗', url: 'https://censo2024.ine.gob.cl/' }, { text: 'datosabiertos.mineduc.cl ↗', url: 'https://datosabiertos.mineduc.cl/' }]
         },
         biodiversidad: {
-          nombre: 'Hub VII. Biodiversidad y Clima (WP_07)',
+          nombre: 'Hub VII. Biodiversidad y Clima (5 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'API Mensual SINCA/USGS + Cierres MMA/CONAF',
           mecanismo: 'API directa GeoJSON/JSON / Circuit Breaker Last-Known-Good',
@@ -2062,7 +2082,7 @@
           links: [{ text: 'sinca.mma.gob.cl ↗', url: 'https://sinca.mma.gob.cl/' }, { text: 'mma.gob.cl ↗', url: 'https://mma.gob.cl/biodiversidad/' }]
         },
         salud: {
-          nombre: 'Hub VIII. Salud APS y Hospitales (WP_08)',
+          nombre: 'Hub VIII. Salud APS y Hospitales (3 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'API Mensual + Cierres DEIS-MINSAL / SSA',
           mecanismo: 'Circuit Breaker Last-Known-Good (DEIS Estadísticas Vitales)',
@@ -2070,7 +2090,7 @@
           links: [{ text: 'deis.minsal.cl ↗', url: 'https://deis.minsal.cl/' }]
         },
         cultura: {
-          nombre: 'Hub IX. Cultura y Patrimonio (WP_09)',
+          nombre: 'Hub IX. Cultura y Patrimonio (3 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Cierres Administrativos MINCAP-SERPAT + Barómetro UAysén',
           mecanismo: 'Circuit Breaker Last-Known-Good (Catastro Monumentos CMN)',
@@ -2078,7 +2098,7 @@
           links: [{ text: 'patrimoniocultural.gob.cl ↗', url: 'https://www.patrimoniocultural.gob.cl/' }]
         },
         ctci: {
-          nombre: 'Hub X. CTCi e Innovación (WP_10)',
+          nombre: 'Hub X. CTCi e Innovación (3 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'API Mensual Datos.gob/ANID + Cierres CORFO',
           mecanismo: 'API directa CKAN REST / Circuit Breaker Last-Known-Good',
@@ -2553,12 +2573,20 @@
     };
 
     function initOrUpdateD3Map() {
+      if (typeof d3 === 'undefined') return;
       const container = document.getElementById('d3-canvas-container');
       const svg = d3.select('#d3-concept-svg');
       if (!container || !svg.node()) return;
 
-      const width = container.clientWidth || 960;
-      const height = container.clientHeight || 600;
+      const rawW = container.clientWidth || container.getBoundingClientRect().width || 960;
+      const rawH = container.clientHeight || container.getBoundingClientRect().height || 600;
+      const width = rawW >= 300 ? rawW : 960;
+      const height = rawH >= 420 ? rawH : 600;
+
+      svg
+        .attr('width', width)
+        .attr('height', height)
+        .attr('viewBox', `0 0 ${width} ${height}`);
 
       svg.selectAll('*').remove();
 

@@ -1491,23 +1491,25 @@
       background: rgba(0, 53, 127, 0.03);
     }
 
-    /* Cabecera de Tarjeta con Controles Técnicos Sobrios y Respiración Editorial (2 líneas, máx 64px) */
+    /* Cabecera de Tarjeta con Controles Técnicos Sobrios y Respiración Editorial */
     .widget-top-bar {
-      padding: 0.35rem 0.65rem 0.3rem 0.65rem;
-      max-height: 64px;
-      min-height: 48px;
+      padding: 0.45rem 0.65rem 0.4rem 0.65rem;
+      max-height: none;
+      min-height: 54px;
       height: auto;
-      gap: 0.2rem;
+      gap: 0.28rem;
       border-bottom: 1px solid var(--rule-hairline);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       cursor: move;
       user-select: none;
       touch-action: none;
       background: var(--bg-surface);
       flex-shrink: 0;
       box-sizing: border-box;
+      position: relative;
+      z-index: 5;
     }
 
     .widget-header-line1 {
@@ -1522,8 +1524,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.4rem;
+      flex-wrap: wrap;
+      gap: 0.35rem;
       width: 100%;
+      margin-top: 0.1rem;
     }
 
     .widget-header-actions {
@@ -5354,11 +5358,11 @@
           desc: 'Mide la población con privaciones simultáneas en salud, educación, trabajo y vivienda.'
         },
         'camas_hospitalarias': {
-          title: 'Centros de salud y postas rurales',
-          short: 'Centros de salud APS',
-          unitLabel: 'establecimientos APS',
+          title: 'Dotación de camas hospitalarias en la red asistencial',
+          short: 'Camas hospitalarias',
+          unitLabel: 'camas',
           sourceTag: 'DEIS MINSAL',
-          desc: 'Mide la dotación de recintos de atención primaria, consultorios y postas rurales en la red de salud.'
+          desc: 'Mide el total de camas hospitalarias disponibles por comuna en la red del Servicio de Salud Aysén.'
         },
         'red_asistencial_deis': {
           title: 'Centros de salud y postas rurales',
@@ -5949,6 +5953,18 @@
           'estado_foa', 'zoit_nombre'
         ]);
 
+        const aliasComunaKeys = new Set([
+          'superficie_glaciares_km2',
+          'bosque_nativo_ha',
+          'tiempo_viaje_coyhaique_hrs',
+          'museos_espacios_n',
+          'proyectos_ctci_total',
+          'monto_anid_mclp',
+          'innovacion_corfo_mclp',
+          'investigadores_residentes',
+          'porcentaje_regional_pct'
+        ]);
+
         const hubInference = (k) => {
           if (/salud|medicos|urgencias|aeroevacuaciones|camas_hosp|traslado_coyhaique|espera_no_ges|postas_salud|establecimientos_aps|esperanza_vida|empam|pscv/i.test(k)) return 'salud';
           if (/museos|bibliotecas|monumentos|fondos_cultura|gasto_municipal_cultura|gasto_cultura|fndr_8pct_cultura|percepcion_cultura|participacion_cultural|espacios_culturales/i.test(k)) return 'cultura';
@@ -6024,6 +6040,7 @@
               const offSrc = resolveOfficialSource(key, hubId);
               items.push({
                 id: key,
+                isAlias: aliasComunaKeys.has(key),
                 canonicalId: lex?.canonicalId || key,
                 nodeId: lex?.nodeId || null,
                 name: varName,
@@ -7168,9 +7185,15 @@
         });
 
         const groups = {};
+        const seenInHub = new Set();
         filtered.forEach(it => {
           const k = getHubTitleName(it.hubId || it.hubTitle);
           it.hubTitle = k;
+          const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+          const rawTitle = (info?.title || it.name || it.id).trim().toLowerCase();
+          const dedupKey = `${k}__${it.dim}__${rawTitle}`;
+          if (seenInHub.has(dedupKey)) return;
+          seenInHub.add(dedupKey);
           if (!groups[k]) groups[k] = [];
           groups[k].push(it);
         });
@@ -7267,7 +7290,10 @@
                 <div class="catalog-hub-items">
                   ${groups[gName].map(it => {
                     const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
-                    const displayTitle = info?.title || it.name;
+                    let displayTitle = info?.title || it.name;
+                    if (it.dim === 'tiempo' && groups[gName].some(other => other.dim === 'comuna' && (getAutoexplanatoryVarInfo(other.id, other.name, other.unit)?.title || other.name) === (info?.title || it.name))) {
+                      displayTitle += ' (Serie Histórica)';
+                    }
                     const displayUnit = info?.unitLabel || it.unit;
                     const displaySigla = info?.sourceTag || it.sourceName || 'Oficial';
                     let displaySub = '';
@@ -9702,12 +9728,14 @@
 
         const vRect = viewport.getBoundingClientRect();
         const tbRect = tb.getBoundingClientRect();
+        const tbW = tbRect.width || 460;
+        const tbH = tbRect.height || 42;
 
         // Si el usuario arrastró o ancló la barra a una posición manual personalizada
         if (AppState.toolbarPosition) {
           tb.classList.add('user-docked');
-          const maxLeft = Math.max(12, vRect.width - (tbRect.width || 420) - 12);
-          const maxTop = Math.max(12, vRect.height - (tbRect.height || 42) - 12);
+          const maxLeft = Math.max(12, vRect.width - tbW - 12);
+          const maxTop = Math.max(12, vRect.height - tbH - 12);
           const posX = Math.max(12, Math.min(AppState.toolbarPosition.x, maxLeft));
           const posY = Math.max(12, Math.min(AppState.toolbarPosition.y, maxTop));
           tb.style.left = `${Math.round(posX)}px`;
@@ -9715,25 +9743,37 @@
           return;
         }
 
-        tb.classList.remove('user-docked');
+        const cardEl = document.getElementById(`widget-card-${w.id}`);
         let screenX = w.x * AppState.transform.scale + AppState.transform.x;
         let screenY = w.y * AppState.transform.scale + AppState.transform.y;
+        let cardBottomY = screenY + (w.h || 370) * AppState.transform.scale;
+
+        if (cardEl) {
+          const cRect = cardEl.getBoundingClientRect();
+          screenX = cRect.left - vRect.left;
+          screenY = cRect.top - vRect.top;
+          cardBottomY = cRect.bottom - vRect.top;
+        }
 
         // Clamping horizontal dentro del viewport con margen de 12px
         const minLeft = 12;
-        const maxLeft = Math.max(minLeft, vRect.width - (tbRect.width || 420) - 12);
+        const maxLeft = Math.max(minLeft, vRect.width - tbW - 12);
         screenX = Math.max(minLeft, Math.min(screenX, maxLeft));
 
-        // Clamping vertical: si está muy cerca del borde superior (< 52px), ubicar como dock superior en top 12px
-        if (screenY < (tbRect.height || 40) + 16) {
-          tb.classList.add('user-docked');
-          tb.style.left = `${Math.round(screenX)}px`;
-          tb.style.top = '12px';
-        } else {
+        // Si hay espacio suficiente arriba de la tarjeta, colocar justo encima del borde superior sin tapar el título
+        if (screenY >= tbH + 12) {
+          tb.classList.remove('user-docked');
           tb.style.transform = 'translateY(-100%)';
           tb.style.marginTop = '-8px';
           tb.style.left = `${Math.round(screenX)}px`;
           tb.style.top = `${Math.round(screenY)}px`;
+        } else {
+          // Si la tarjeta está pegada arriba, colocar debajo de la tarjeta (o en el borde inferior del lienzo) para NUNCA tapar el título
+          tb.classList.add('user-docked');
+          tb.style.top = '12px';
+          const belowTop = Math.min(cardBottomY + 8, Math.max(12, vRect.height - tbH - 16));
+          tb.style.left = `${Math.round(screenX)}px`;
+          tb.style.top = `${Math.round(belowTop)}px`;
         }
       }
 

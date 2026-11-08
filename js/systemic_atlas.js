@@ -45,6 +45,50 @@
         data: window.AysenSystemicData,
         fromHubsBundle: function (bundle) {
             return window.AysenSystemicData.fromHubsBundle(bundle);
+        },
+        async loadData() {
+            // Intenta leer desde window.AYSEN_HUBS_DATA si existe (zero-cost bundle)
+            if (window.AYSEN_HUBS_DATA) {
+                if (Array.isArray(window.AYSEN_HUBS_DATA.nodes)) {
+                    this.rawData = window.AYSEN_HUBS_DATA;
+                    this.nodes = this.rawData.nodes.map(n => ({ ...n }));
+                    this.edges = (this.rawData.edges || []).map(e => ({ ...e }));
+                    return;
+                }
+                if (Array.isArray(window.AYSEN_HUBS_DATA.nodos)) {
+                    this.rawData = window.AYSEN_HUBS_DATA;
+                    const hubsList = (window.AYSEN_HUBS_DATA.hubs || []).map(h => ({
+                        id: `hub-${h.id}`,
+                        hubId: h.id,
+                        label: h.shortTitle || h.title,
+                        category: h.id,
+                        isHub: true
+                    }));
+                    const satNodes = window.AYSEN_HUBS_DATA.nodos.map(n => ({
+                        ...n,
+                        id: `node-${n.id}`,
+                        rawId: n.id,
+                        label: n.title,
+                        category: n.hubId,
+                        isHub: false
+                    }));
+                    this.nodes = [...hubsList, ...satNodes];
+                    const radialEdges = satNodes.map(n => ({
+                        source: n.id,
+                        target: `hub-${n.hubId}`,
+                        type: 'category'
+                    }));
+                    const bridgeEdges = (window.AYSEN_HUBS_DATA.systemicBridges || []).map(b => ({
+                        source: `node-${b.source}`,
+                        target: `node-${b.target}`,
+                        type: 'inter-node',
+                        axis: b.axis,
+                        relationNote: b.relationNote
+                    }));
+                    this.edges = [...radialEdges, ...bridgeEdges];
+                    return;
+                }
+            }
         }
     };
 
