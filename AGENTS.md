@@ -52,11 +52,12 @@ Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comu
 - **Suite Laboratorio Salud (6 tests)**: `python tests/test_laboratorio_health.py`
 - **Suite Editorial M1 (8 checks)**: `python tests/verify_m1_editorial.py`
 - **Suite Presets CECAN y NL2Chart (9 tests)**: `python tests/test_cecan_presets_and_nl2chart.py`
-- **Suite OmniRoute y Consultor RAG (22 tests)**: `python tests/test_omniroute_consultor.py`
+- **Suite OmniRoute y Consultor RAG (25 tests)**: `python tests/test_omniroute_consultor.py`
 - **Suite Mobile Responsive (7 tests)**: `python tests/test_mobile_responsive_e2e.py`
 - **Suite Red Anti-Slop (8 tests)**: `python tests/test_no_slop_hub_network.py`
 - **Checklist 10 Hubs y 39 Nodos**: `python tests/verify_10_hubs_checklist.py`
-- **Suite Pytest Completa (446 tests)**: `python -m pytest tests/`
+- **Suite Unittest Completa (463 tests)**: `python -m unittest discover -s tests -p "test_*.py"`
+- **Suite Pytest Completa**: `python -m pytest tests/`
 - **Comprobación de Higiene del Árbol de Trabajo**: `git diff --exit-code -- . ':(exclude)data/data_health_report.json' ':(exclude)data/aysen_hubs_data.js'`
 
 ## Mapa de Datos Consolidados (Data Lake: 10 Hubs, 39 Nodos Satélite)
