@@ -34,6 +34,27 @@
       "url_origen": "https://www.ifop.cl/",
       "metodo_extraccion": "Campañas de prospección hidroacústica, censos de cetáceos y bioseguridad Didymo",
       "archivo_raw_local": "data/raw/biodiversidad_mma_conaf/sag_especies_exoticas_invasoras_aysen_raw.json"
+    },
+    {
+      "institucion": "Dirección General de Aguas (DGA) - MOP",
+      "sistema": "Unidad de Glaciología y Nieves / Catastro Nacional de Glaciares y Red de Alerta GLOF",
+      "url_origen": "https://snia.mop.gob.cl/",
+      "metodo_extraccion": "Monitoreo hidrométrico en línea, registro de vaciamientos GLOF Lago Cachet 2 y balances de masa glaciar",
+      "archivo_raw_local": "data/raw/informes_territoriales/agropecuario_forestal_lena_glaciares_odepa_infor_dga.json"
+    },
+    {
+      "institucion": "Superintendencia del Medio Ambiente (SMA) y MMA (SINADER)",
+      "sistema": "Sistema Nacional de Información de Fiscalización Ambiental (SNIFA) y Registro de Emisiones y Transferencias de Contaminantes (RETC)",
+      "url_origen": "https://snifa.sma.gob.cl/",
+      "metodo_extraccion": "Catastro de pasivos en vertederos comunales y fiscalización de relleno sanitario CEMARC",
+      "archivo_raw_local": "data/raw/biodiversidad_mma_conaf/sma_pasivos_residuos_aysen.json"
+    },
+    {
+      "institucion": "Superintendencia de Servicios Sanitarios (SISS)",
+      "sistema": "Fiscalización de Plantas de Tratamiento de Aguas Servidas (PTAS) y Cumplimiento D.S. 90/2000",
+      "url_origen": "https://www.siss.gob.cl/",
+      "metodo_extraccion": "Monitoreo de autocontroles y efluentes de Aguas Patagonia en cuencas de Aysén",
+      "archivo_raw_local": "data/raw/biodiversidad_mma_conaf/siss_ptas_aguas_patagonia_aysen.json"
     }
   ],
   "resumen_regional": {
@@ -455,7 +476,29 @@
           "salmon_chinook_censo_nidos_rio_cisnes": 615
         }
       }
-    ]
+    ],
+    "criosfera_y_eventos_glof": {
+      "cuenca_baker_eventos_glof_lago_cachet_2": 27,
+      "volumen_maximo_descarga_m3_evento": 200000000,
+      "caudal_punta_crecida_m3s": 3000,
+      "descripcion_glof": "27 vaciamientos catastróficos históricos registrados en Lago Cachet 2 hacia el Río Colonia y Río Baker con caudales de crecida que han superado los 3.000 m³/s y corte de conectividad vial/fluvial aguas abajo",
+      "glaciar_exploradores_estatus": "Clausura total e indefinida del trekking sobre hielo fósil mediante resoluciones técnicas DGA/CONAF y fallo confirmatorio de la Corte de Apelaciones de Coyhaique (2023-2024) por fracturas estructurales, adelgazamiento y colapso de cavernas; sendero perimetral activo exclusivamente para mirador panorámico"
+    },
+    "gobernanza_hidrica_cuencas": {
+      "devolucion_derechos_no_consuntivos_baker_pascua": "Devolución voluntaria al Estado de los derechos de aprovechamiento no consuntivos en los ríos Baker y Pascua (anteriormente asignados a la central HidroAysén por Enel y Colbún)",
+      "reserva_caudales_art_147_bis": "Decretos de reserva de caudales dictados por la DGA / MOP en virtud del Art. 147 bis del Código de Aguas para fines de conservación ambiental y desarrollo turístico",
+      "caudal_ecologico_ley_21435": "Exigencia vinculante de caudal ecológico mínimo según la reforma del Código de Aguas (Ley N° 21.435)"
+    },
+    "ley_turberas_21660": {
+      "superficie_protegida_regional_ha": 289800.0,
+      "marco_regulatorio": "Ley N° 21.660 de Protección de Turberas: prohibición absoluta de extracción de turba y regulación estricta de la cosecha sustentable del musgo Sphagnum magellanicum (pompón) mediante planes de manejo sectoriales",
+      "rol_ecologico": "Reservorio estratégico de agua dulce, regulación hidrológica de cuencas andinas y sumidero crítico de carbono en la Patagonia"
+    },
+    "pasivos_ambientales_residuos_y_efluentes": {
+      "residuos_solidos_municipales": "Saturación y pasivo ambiental en el relleno sanitario CEMARC (Coyhaique, recepción de ~120 ton/día de residuos sólidos domiciliarios) y vertederos municipales no regulados bajo fiscalización SMA / SINADER en comunas periféricas",
+      "efluentes_ptas_aguas_patagonia": "Descargas de efluentes de Plantas de Tratamiento de Aguas Servidas (PTAS) urbanas operadas por Aguas Patagonia con fiscalización SISS bajo norma D.S. 90/2000 en Río Simpson, Río Aysén y fiordos receptores",
+      "impacto_didymosphenia_geminata": "Didymo (moco de roca) presente en cuencas de los ríos Simpson, Baker, Cisnes y Figueroa (45% a 65% de cuencas monitoreadas positivas), alterando la productividad bentónica fluvial y demandando estaciones obligatorias de desinfección y bioseguridad SERNAPESCA"
+    }
   },
   "catastro_fauna_emblematica_rce": [
     {
@@ -919,7 +962,9 @@
           "superficie_glaciar_km2": 42.5,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 48.5,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 145.0,
-          "dias_sobre_norma_mp25_anual": 87
+          "dias_sobre_norma_mp25_anual": 87,
+          "pasivos_residuos_cemarc": "Relleno sanitario CEMARC receptor de 120 ton/día de RSD bajo fiscalización SMA/SINADER",
+          "efluentes_ptas_simpson": "PTAS Aguas Patagonia con fiscalización SISS y presencia de Didymo en Río Simpson"
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -2494,7 +2539,8 @@
           "superficie_glaciar_km2": 145.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 14.8,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 45.0,
-          "dias_sobre_norma_mp25_anual": 18
+          "dias_sobre_norma_mp25_anual": 18,
+          "glaciar_exploradores_estatus": "Clausura del trekking sobre hielo fósil por resolución técnica DGA/CONAF y fallo de la Corte de Apelaciones de Coyhaique por riesgo inminente de colapso morrénico; senderismo panorámico perimetral activo"
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -3120,7 +3166,9 @@
           "superficie_glaciar_km2": 890.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 8.4,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 890.0,
-          "dias_sobre_norma_mp25_anual": 22
+          "dias_sobre_norma_mp25_anual": 22,
+          "eventos_glof_lago_cachet_2": 27,
+          "devolucion_derechos_agua_baker": "Devolución voluntaria de derechos no consuntivos Baker y reserva de caudales Art. 147 bis DGA"
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -3748,7 +3796,8 @@
           "superficie_glaciar_km2": 2680.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 3.1,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 420.0,
-          "dias_sobre_norma_mp25_anual": 10
+          "dias_sobre_norma_mp25_anual": 10,
+          "eventos_glof_lago_cachet_2_impacto": "27 crecidas por vaciamiento de Lago Cachet 2 y reserva de caudales Art. 147 bis DGA en desembocadura del Baker"
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [

@@ -48,6 +48,41 @@
       "url_origen": "https://www.conaf.cl/situacion-nacional-de-incendios-forestales/",
       "metodo_extraccion": "Estadísticas Territoriales CONAF",
       "archivo_raw_local": "data/raw/social_ambiental/conaf_senapred_incendios_forestales_aysen.json"
+    },
+    {
+      "institucion": "Instituto Nacional de Estadísticas (INE)",
+      "sistema": "Censo de Población y Vivienda 2024",
+      "url_origen": "https://www.ine.gob.cl/censo2024",
+      "metodo_extraccion": "Tabulados oficiales definitivos del Censo 2024",
+      "archivo_raw_local": "data/raw/social_ambiental/ine_censo_2024_aysen.json"
+    },
+    {
+      "institucion": "Ministerio de Vivienda y Urbanismo (MINVU)",
+      "sistema": "Observatorio Habitacional y Plan de Emergencia Habitacional (PEH)",
+      "url_origen": "https://datosabiertos.minvu.cl/",
+      "metodo_extraccion": "Catastro de Déficit Habitacional Cuantitativo y Cualitativo y metas PEH",
+      "archivo_raw_local": "data/raw/informes_territoriales/deficit_habitacional_minvu_aysen.json"
+    },
+    {
+      "institucion": "Dirección de Obras Hidráulicas (DOH-MOP)",
+      "sistema": "Subdirección de Servicios Sanitarios Rurales (SSR) - Ley N° 20.998",
+      "url_origen": "https://datos.mop.gob.cl/",
+      "metodo_extraccion": "Catastro de 47 Comités y Cooperativas de SSR en la Región de Aysén",
+      "archivo_raw_local": "data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json"
+    },
+    {
+      "institucion": "Ministerio de Desarrollo Social y Familia (MDSF)",
+      "sistema": "Encuesta de Caracterización Socioeconómica Nacional (CASEN)",
+      "url_origen": "https://observatorio.ministeriodesarrollosocial.gob.cl/",
+      "metodo_extraccion": "Tabulados comunales de Pobreza Multidimensional y Pobreza por Ingresos",
+      "archivo_raw_local": "data/raw/social_ambiental/casen_pobreza_multidimensional_aysen.json"
+    },
+    {
+      "institucion": "Subsecretaría de Redes Asistenciales / FONASA",
+      "sistema": "Sistema de Gestión de Tiempos de Espera (SIGTE)",
+      "url_origen": "https://www.minsal.cl/gestion-tiempos-de-espera/",
+      "metodo_extraccion": "Reporte de listas de espera de consultas de especialidad e intervenciones quirúrgicas",
+      "archivo_raw_local": "data/raw/social_ambiental/sigte_listas_espera_aysen.json"
     }
   ],
   "resumen_regional": {
@@ -420,7 +455,65 @@
           "sismo_mayor_magnitud": 4.4
         }
       }
-    ]
+    ],
+    "demografia_censo_2024": {
+      "poblacion_regional_total": 100745,
+      "indice_envejecimiento_regional": 66.2,
+      "indice_masculinidad_rural": 115.8,
+      "viviendas_censadas_total": 47520,
+      "fuente": "INE - Censo de Población y Vivienda 2024"
+    },
+    "salud_mental_y_riesgo_vital": {
+      "tasa_mortalidad_suicidio_deis_por_100k": 15.1,
+      "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
+      "diagnostico_red_salud_mental": "Restricción crítica estructural a 9 camas psiquiátricas de corta estadía en la Unidad de Hospitalización de Cuidados Especiales (UHCE) del Hospital Regional Coyhaique para toda la población regional; tasa regional de suicidio históricamente en la cúspide nacional (~15,1 por 100k hab)",
+      "fuente": "DEIS MINSAL / SSA"
+    },
+    "mortalidad_oncologica_digestiva_deis": {
+      "tasa_cancer_gastrico_cie10_c16_por_100k": 18.4,
+      "tasa_cancer_vesicula_cie10_c23_por_100k": 12.6,
+      "primeras_causas_avpp_regional": [
+        "Cáncer Gástrico (C16)",
+        "Cáncer de Vesícula Biliar (C23)"
+      ],
+      "observacion": "Las neoplasias digestivas constituyen la primera causa de años de vida potencialmente perdidos (AVPP) en la región",
+      "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer"
+    },
+    "listas_espera_sigte": {
+      "total_interconsultas_no_ges_espera": 11420,
+      "mediana_dias_espera_especialidad": 284,
+      "mediana_dias_espera_quirurgica": 395,
+      "fuente": "SIGTE / Subsecretaría de Redes Asistenciales"
+    },
+    "habitat_y_deficit_habitacional_minvu": {
+      "deficit_habitacional_cuantitativo_total": 3147,
+      "pct_viviendas_irrecuperables": 56.0,
+      "viviendas_irrecuperables_cantidad": 1762,
+      "deficit_habitacional_cualitativo_total": 14200,
+      "plan_emergencia_habitacional_meta_entrega": 1280,
+      "fuente": "MINVU - Observatorio Habitacional / PEH"
+    },
+    "servicios_sanitarios_rurales_ssr_doh": {
+      "total_comites_cooperativas_ssr_vigentes": 47,
+      "poblacion_beneficiaria_rural_abastecida": 28833,
+      "porcentaje_poblacion_regional_abastecida_ssr_pct": 28.6,
+      "vulnerabilidad_invernal": "Congelamiento recurrente de matrices y captaciones superficiales en valles interiores",
+      "fuente": "Subdirección de Servicios Sanitarios Rurales (DOH-MOP) - Ley N° 20.998"
+    },
+    "pobreza_casen_oficial": {
+      "pobreza_por_ingresos_regional_pct": 4.0,
+      "pobreza_multidimensional_regional_pct": 14.0,
+      "rango_pobreza_multidimensional_comunas_aisladas": "22.0% a 28.0% (Lago Verde, Tortel, O'Higgins, Guaitecas)",
+      "distorsion_pobreza_monetaria": "La medición de pobreza por ingresos monetarios (4,0% regional, 0,9% en Lago Verde) distorsiona la realidad por la alta asignación de zona de funcionarios públicos; la pobreza multidimensional cuadruplica este valor por precariedad en calefacción, leña verde, agua y aislamiento",
+      "fuente": "Ministerio de Desarrollo Social y Familia (MDSF) - CASEN"
+    },
+    "educacion_publica_slep_aysen": {
+      "traspaso_legal_slep": "1 de enero de 2024 bajo la Ley N° 21.040 de Educación Pública",
+      "establecimientos_totales_slep": 66,
+      "desglose_recintos": "56 escuelas y liceos públicos + 10 jardines infantiles y subvencionados articulados",
+      "crisis_operacional": "Déficit de infraestructura térmica (estufas a pellet defectuosas y calderas) y rutas de transporte escolar rural DTPR declaradas desiertas en temporada invernal",
+      "fuente": "SLEP Aysén / Superintendencia de Educación / DTPR MTT"
+    }
   },
   "por_comuna": [
     {
@@ -445,7 +538,11 @@
           "medicos_por_mil_habitantes": 3.12,
           "lista_espera_no_ges_consultas_especialidad": 5420,
           "urgencias_respiratorias_invernales_pct": 44.5,
-          "aeroevacuaciones_samu_anual": 0
+          "aeroevacuaciones_samu_anual": 0,
+          "camas_psiquiatricas_hrc": 9,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -789,7 +886,25 @@
             },
             "sismos_m4_registrados": 1
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -814,7 +929,11 @@
           "medicos_por_mil_habitantes": 0.82,
           "lista_espera_no_ges_consultas_especialidad": 128,
           "urgencias_respiratorias_invernales_pct": 18.2,
-          "aeroevacuaciones_samu_anual": 24
+          "aeroevacuaciones_samu_anual": 24,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -1155,7 +1274,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -1180,7 +1317,11 @@
           "medicos_por_mil_habitantes": 1.74,
           "lista_espera_no_ges_consultas_especialidad": 2450,
           "urgencias_respiratorias_invernales_pct": 28.6,
-          "aeroevacuaciones_samu_anual": 48
+          "aeroevacuaciones_samu_anual": 48,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -1525,7 +1666,25 @@
             },
             "sismos_m4_registrados": 1
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -1550,7 +1709,11 @@
           "medicos_por_mil_habitantes": 1.15,
           "lista_espera_no_ges_consultas_especialidad": 890,
           "urgencias_respiratorias_invernales_pct": 21.4,
-          "aeroevacuaciones_samu_anual": 72
+          "aeroevacuaciones_samu_anual": 72,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -1892,7 +2055,25 @@
             },
             "sismos_m4_registrados": 1
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -1917,7 +2098,11 @@
           "medicos_por_mil_habitantes": 0.95,
           "lista_espera_no_ges_consultas_especialidad": 410,
           "urgencias_respiratorias_invernales_pct": 22.8,
-          "aeroevacuaciones_samu_anual": 96
+          "aeroevacuaciones_samu_anual": 96,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -2257,7 +2442,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -2282,7 +2485,11 @@
           "medicos_por_mil_habitantes": 1.28,
           "lista_espera_no_ges_consultas_especialidad": 520,
           "urgencias_respiratorias_invernales_pct": 20.5,
-          "aeroevacuaciones_samu_anual": 38
+          "aeroevacuaciones_samu_anual": 38,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -2622,7 +2829,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -2647,7 +2872,11 @@
           "medicos_por_mil_habitantes": 0.88,
           "lista_espera_no_ges_consultas_especialidad": 280,
           "urgencias_respiratorias_invernales_pct": 19.8,
-          "aeroevacuaciones_samu_anual": 22
+          "aeroevacuaciones_samu_anual": 22,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -2987,7 +3216,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -3012,7 +3259,11 @@
           "medicos_por_mil_habitantes": 1.42,
           "lista_espera_no_ges_consultas_especialidad": 460,
           "urgencias_respiratorias_invernales_pct": 24.2,
-          "aeroevacuaciones_samu_anual": 54
+          "aeroevacuaciones_samu_anual": 54,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -3353,7 +3604,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -3378,7 +3647,11 @@
           "medicos_por_mil_habitantes": 0.78,
           "lista_espera_no_ges_consultas_especialidad": 96,
           "urgencias_respiratorias_invernales_pct": 16.5,
-          "aeroevacuaciones_samu_anual": 42
+          "aeroevacuaciones_samu_anual": 42,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -3718,7 +3991,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     },
     {
@@ -3743,7 +4034,11 @@
           "medicos_por_mil_habitantes": 0.85,
           "lista_espera_no_ges_consultas_especialidad": 112,
           "urgencias_respiratorias_invernales_pct": 17.8,
-          "aeroevacuaciones_samu_anual": 46
+          "aeroevacuaciones_samu_anual": 46,
+          "camas_psiquiatricas_hrc": 0,
+          "tasa_suicidio_deis_por_100k": 15.1,
+          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
+          "mortalidad_cancer_vesicula_cie10_c23": 12.6
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -4083,7 +4378,25 @@
             },
             "sismos_m4_registrados": 0
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "educacion_slep_operativa": {
+          "traspaso_oficial": "2024-01-01",
+          "marco_normativo": "Ley N° 21.040",
+          "establecimientos_totales": 66
+        }
       }
     }
   ],

@@ -781,6 +781,10 @@
           currentChartState.render = false;
           currentChartState.varX = null;
           currentChartState.varY = null;
+          if (activeChartInstance) {
+            activeChartInstance.destroy();
+            activeChartInstance = null;
+          }
           if (emptyEl) emptyEl.style.display = 'block';
           if (chartSec) chartSec.style.display = 'none';
           if (tableSec) tableSec.style.display = 'none';
@@ -1033,7 +1037,43 @@
         'museos_espacios_n': { label: 'Museos y Espacios Culturales', unit: 'espacios' },
         'total_espacios_culturales': { label: 'Total de Espacios Culturales', unit: 'espacios' },
         'proyectos_anid_n': { label: 'Proyectos de Investigación ANID', unit: 'proyectos' },
-        'proyectos_ctci_total': { label: 'Total de Proyectos CTCi e Innovación', unit: 'proyectos' }
+        'proyectos_ctci_total': { label: 'Total de Proyectos CTCi e Innovación', unit: 'proyectos' },
+        'deficit_habitacional_cuantitativo_n': { label: 'Déficit Habitacional Cuantitativo', unit: 'viviendas' },
+        'deficit_habitacional_cualitativo_n': { label: 'Déficit Habitacional Cualitativo', unit: 'viviendas' },
+        'sistemas_ssr_apr_n': { label: 'Sistemas Sanitarios Rurales (SSR / APR)', unit: 'comités' },
+        'cobertura_ssr_apr_familias': { label: 'Beneficiarios de Agua Potable Rural', unit: 'familias' },
+        'ganado_bovino_cabezas': { label: 'Existencias Ganaderas Bovinas', unit: 'cabezas' },
+        'ganado_ovino_cabezas': { label: 'Existencias Ganaderas Ovinas', unit: 'cabezas' },
+        'consumo_lena_m3_hogar_ano': { label: 'Consumo Residencial de Leña', unit: 'm³/hogar/año' },
+        'volumen_regional_lena_m3': { label: 'Volumen Regional de Leña Consumida', unit: 'm³/año' },
+        'demanda_pellet_ton_ano': { label: 'Demanda Regional de Pellet', unit: 'ton/año' },
+        'espera_no_ges_n': { label: 'Lista de Espera de Especialidad No GES', unit: 'consultas' },
+        'espera_quirurgica_dias': { label: 'Mediana de Espera Quirúrgica', unit: 'días' },
+        'tasa_cancer_gastrico_cie10': { label: 'Mortalidad por Cáncer Gástrico', unit: 'defunciones/100k' },
+        'tasa_cancer_vesicula_cie10': { label: 'Mortalidad por Cáncer de Vesícula', unit: 'defunciones/100k' },
+        'tasa_suicidio_por_100k': { label: 'Tasa de Mortalidad por Suicidio', unit: 'defunciones/100k' },
+        'camas_psiquiatricas_uhce': { label: 'Camas Psiquiátricas Breves HRC', unit: 'camas' },
+        'solicitudes_ecmpo_ha': { label: 'Superficie Solicitada en ECMPO', unit: 'ha' },
+        'concesiones_salmon_snaspe_n': { label: 'Concesiones Acuícolas en SNASPE', unit: 'concesiones' },
+        'ejecucion_fndr_devengado_mclp': { label: 'Inversión FNDR Devengada', unit: 'M$' },
+        'inversion_sectorial_ministerial_mclp': { label: 'Inversión Sectorial Ministerial Centralizada', unit: 'M$' },
+        'exclusion_bancaria_comunas_pct': { label: 'Comunas sin Sucursales Bancarias Privadas', unit: '%' },
+        'puntos_cajavecina_n': { label: 'Puntos de Cobertura CajaVecina', unit: 'puntos' },
+        'eventos_glof_cachet2_n': { label: 'Vaciados Glaciares GLOF en Cachet 2', unit: 'eventos' },
+        'matricula_sies_total': { label: 'Matrícula Educación Superior SIES', unit: 'estudiantes' },
+        'estandar_humedad_lena_pct': { label: 'Estándar Máximo Humedad Leña', unit: '%' },
+        'comites_ssr_vigentes_n': { label: 'Comités SSR Vigentes', unit: 'comités' },
+        'poblacion_beneficiaria_ssr': { label: 'Población Beneficiaria SSR/APR', unit: 'hab.' },
+        'pct_viviendas_irrecuperables': { label: 'Viviendas Irrecuperables', unit: '%' },
+        'interconsultas_no_ges_total': { label: 'Total Interconsultas No GES Pendientes', unit: 'interconsultas' },
+        'estaciones_medico_rurales_n': { label: 'Estaciones Médico Rurales', unit: 'estaciones' },
+        'matricula_cft_estatal': { label: 'Matrícula CFT Estatal Aysén', unit: 'estudiantes' },
+        'matricula_inacap_coyhaique': { label: 'Matrícula INACAP Coyhaique', unit: 'estudiantes' },
+        'matricula_universidad_aysen': { label: 'Matrícula Universidad de Aysén', unit: 'estudiantes' },
+        'tasa_aprobacion_rs_sni_pct': { label: 'Tasa Aprobación RS Proyectos SNI', unit: '%' },
+        'glaciar_exploradores_estatus': { label: 'Estatus Operativo Glaciar Exploradores', unit: 'estatus' },
+        'zoits_oficiales_count': { label: 'Zonas de Interés Turístico Decretadas', unit: 'ZOITs' },
+        'superficie_glaciares_km2': { label: 'Superficie Glaciar Comunal (DGA)', unit: 'km²' }
       };
 
       // Formateo seguro de títulos de eje y leyendas evitando duplicación de porcentaje

@@ -92,6 +92,15 @@
       "rural",
       "sin capital regional",
       "solo comunas pequenas"
+    ],
+    "vsm": [
+      "vsm",
+      "sistema viable",
+      "algedonica",
+      "alarma algedonica",
+      "viplan",
+      "ashby",
+      "variedad requerida"
     ]
   },
   "stopwords": [
@@ -185,7 +194,13 @@
         "concesiones otorgadas",
         "jaulas en el mar",
         "concesiones de salmones",
-        "jaulas marinas"
+        "jaulas marinas",
+        "lafkenche",
+        "ecmpo",
+        "pu wapi",
+        "antunen rain",
+        "ley lafkenche",
+        "espacios costeros marinos pueblos originarios"
       ]
     },
     {
@@ -549,7 +564,11 @@
       "synonyms": [
         "codigo comuna",
         "codigo territorial",
-        "cl xi"
+        "cl xi",
+        "prica",
+        "prot",
+        "plan regional de ordenamiento territorial",
+        "ordenamiento territorial"
       ]
     },
     {
@@ -620,7 +639,13 @@
         "cupos de hospital",
         "camas de hospital",
         "infraestructura hospitalaria",
-        "capacidad hospitalaria"
+        "capacidad hospitalaria",
+        "suicidio",
+        "salud mental",
+        "tasa de suicidio",
+        "cancer gastrico",
+        "cancer de vesicula",
+        "uhce psiquiatrica"
       ]
     },
     {
@@ -742,7 +767,13 @@
         "vulnerabilidad social",
         "estratificacion",
         "desigualdad social",
-        "pobreza casen"
+        "pobreza casen",
+        "deficit habitacional",
+        "deficit habitacional minvu",
+        "ssr",
+        "apr",
+        "servicios sanitarios rurales",
+        "agua potable rural"
       ]
     },
     {
@@ -872,7 +903,10 @@
         "educacion publica",
         "escuelas rurales",
         "educacion basica",
-        "educacion media"
+        "educacion media",
+        "cft estatal",
+        "cft estatal aysen",
+        "educacion publica rural"
       ]
     },
     {
@@ -1046,7 +1080,11 @@
         "quema de lena",
         "calor de hogar",
         "matriz de calefaccion",
-        "uso de lena"
+        "uso de lena",
+        "leña",
+        "dendroenergia",
+        "biomasa forestal",
+        "ley 21499"
       ]
     },
     {
@@ -1512,7 +1550,12 @@
         "rca aprobada",
         "proyectos evaluados",
         "inversion privada",
-        "inversion seia mmusd"
+        "inversion seia mmusd",
+        "dl 889",
+        "dfl 15",
+        "ley 889",
+        "bonificacion mano de obra",
+        "ley austral"
       ]
     },
     {
@@ -1718,7 +1761,15 @@
         "campo de hielo sur",
         "retroceso de glaciares",
         "criosfera",
-        "km2 glaciares"
+        "km2 glaciares",
+        "glof",
+        "glofs",
+        "cachet",
+        "lago cachet",
+        "lago cachet 2",
+        "exploradores",
+        "glaciar exploradores",
+        "vaciamiento de lagos glaciares"
       ]
     },
     {
@@ -2024,7 +2075,7 @@
     {
       "id": 2,
       "hub": "turismo",
-      "title": "Zonas de Interes Turistico (4 ZOIT)",
+      "title": "Zonas de Interes Turistico (3 ZOIT)",
       "chartType": "bar",
       "synonyms": [
         "zoit",

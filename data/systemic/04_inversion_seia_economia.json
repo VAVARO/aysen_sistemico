@@ -48,6 +48,34 @@
       "url_origen": "https://www.jac.gob.cl",
       "metodo_extraccion": "Consulta HTTP JAC + Registros de Tráfico Aéreo Red Aeroportuaria Aysén",
       "archivo_raw_local": "data/raw/inversion_economia/jac_conectividad_aerea_aysen.json"
+    },
+    {
+      "institucion": "Banco Central de Chile (BCCh)",
+      "sistema": "Cuentas Nacionales Regionales y Formación Bruta de Capital Fijo (FBCF)",
+      "url_origen": "https://www.bcentral.cl",
+      "metodo_extraccion": "Estimaciones de FBCF Regional y contraste metodológico frente a montos de inversión aprobada en SEIA",
+      "archivo_raw_local": "data/raw/inversion_economia/banco_central_pib_aysen.json"
+    },
+    {
+      "institucion": "Tesorería General de la República (TGR) / CORFO / DIPRES",
+      "sistema": "Leyes de Excepción Austral: Bonificación Mano de Obra (DL 889 / Ley 19.853), DFL 15 y Ley Austral 19.606",
+      "url_origen": "https://www.tgr.cl",
+      "metodo_extraccion": "Balances de Pago de Bonificaciones a Zonas Extremas y Gasto Tributario",
+      "archivo_raw_local": "data/raw/inversion_economia/mercadopublico_licitaciones_aysen.json"
+    },
+    {
+      "institucion": "Comisión para el Mercado Financiero (CMF) / BancoEstado",
+      "sistema": "Estadísticas de Infraestructura Bancaria Comunal y Red de Corresponsalía CajaVecina",
+      "url_origen": "https://www.cmfchile.cl",
+      "metodo_extraccion": "Catastro Comunal de Sucursales Bancarias Privadas, Cajeros Automáticos y Puntos CajaVecina",
+      "archivo_raw_local": "data/raw/inversion_economia/sii_empresas_empleo_aysen.json"
+    },
+    {
+      "institucion": "Observatorio Laboral de Aysén (SENCE / Universidad de Aysén) / INE",
+      "sistema": "Encuesta Nacional de Empleo (ENE) y Conmutación Laboral Interregional",
+      "url_origen": "https://www.observatoriolaboral.cl",
+      "metodo_extraccion": "Estudios de Trabajadores Conmutantes en Faenas Salmoneras y Obras Públicas",
+      "archivo_raw_local": "data/raw/inversion_economia/sii_empresas_empleo_aysen.json"
     }
   ],
   "resumen_regional": {
@@ -661,7 +689,59 @@
           }
         ]
       }
-    ]
+    ],
+    "diferenciacion_seia_vs_fbcf": {
+      "inversion_aprobada_seia_acumulada_mmusd": 3355.5,
+      "total_proyectos_aprobados_seia_historico": 722,
+      "fbcf_anual_estimada_banco_central_mmusd": 285.0,
+      "tasa_materializacion_efectiva_proyectos_pct": 36.5,
+      "plazo_caducidad_rca_anos": 5,
+      "marco_legal_caducidad": "Art. 25 ter Ley N° 19.300 sobre Bases Generales del Medio Ambiente",
+      "nota_metodologica": "Los US$ 3.355,5 MM aprobados en el SEIA corresponden a intenciones de inversión ambientalmente autorizadas acumuladas históricamente, de las cuales decenas de proyectos caducaron o jamás iniciaron obras. La Formación Bruta de Capital Fijo (FBCF) real medida por el Banco Central registra el flujo efectivo de inversión en activos físicos en torno a US$ 250 - 320 MM/año.",
+      "fuente": "SEA (Catastro SEIA) vs Banco Central de Chile (Cuentas Nacionales y FBCF Regional)"
+    },
+    "leyes_de_excepcion_austral": {
+      "dl_889_ley_19853_bonificacion_mano_obra": {
+        "nombre": "Bonificación a la Mano de Obra en Zonas Extremas (DL 889 / Ley 19.853)",
+        "porcentaje_bonificacion": 17.0,
+        "administrador": "Tesorería General de la República (TGR)",
+        "beneficiarios": "Empleadores privados que contratan mano de obra en la Región de Aysén",
+        "impacto": "Subsidio fiscal directo del 17% sobre remuneraciones imponibles"
+      },
+      "dfl_15_fomento_inversion_mipyme": {
+        "nombre": "Fondo de Fomento y Desarrollo de Zonas Extremas (DFL 15 de 1981)",
+        "porcentaje_bonificacion": 20.0,
+        "administrador": "CORFO / Comisión de Fomento del Gobierno Regional de Aysén",
+        "beneficiarios": "Micro, pequeñas y medianas empresas productoras de bienes y servicios",
+        "impacto": "Bonificación del 20% a inversiones netas en construcción, maquinaria y equipos"
+      },
+      "ley_austral_19606": {
+        "nombre": "Ley Austral (Ley N° 19.606)",
+        "mecanismo": "Crédito tributario de primera categoría por inversiones en activos fijos físicos",
+        "administrador": "Servicio de Impuestos Internos (SII) / Ministerio de Hacienda"
+      }
+    },
+    "exclusion_bancaria_cmf": {
+      "comunas_sin_sucursales_banca_privada": 8,
+      "total_comunas": 10,
+      "porcentaje_comunas_sin_banca_privada_pct": 80.0,
+      "comunas_con_banca_privada": [
+        "Coyhaique",
+        "Aysén"
+      ],
+      "cobertura_cajavecina_bancoestado": "Más de 400 puntos de corresponsalía en almacenes rurales de las 10 comunas, constituyendo la infraestructura crítica de inclusión financiera transaccional en zonas aisladas",
+      "fuente": "Comisión para el Mercado Financiero (CMF) / BancoEstado"
+    },
+    "tasa_conmutacion_laboral_interregional": {
+      "tasa_estimada_sectores_extractivos_pct": 40.0,
+      "rango_conmutacion_pct": [
+        35.0,
+        45.0
+      ],
+      "sectores_criticos": "Salmonicultura (centros de engorda en fiordos con turnos 7x7 y 14x14) y faenas de construcción de obras públicas",
+      "impacto_economico": "Drenaje del multiplicador salarial local: los salarios son devengados en Aysén pero consumidos e invertidos en las regiones de residencia permanente de los trabajadores (Los Lagos, Los Ríos, Araucanía, Biobío)",
+      "fuente": "Observatorio Laboral SENCE / INE Encuesta Nacional de Empleo (ENE)"
+    }
   },
   "por_comuna": [
     {
@@ -696,14 +776,28 @@
             "Construcción y Obras Civiles"
           ],
           "peso_empleo_publico_estimado_pct": 32.8,
-          "ventas_anuales_total_uf": 48500
+          "ventas_anuales_total_uf": 48500,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 5,
+            "sucursal_bancoestado": 1,
+            "cajeros_automaticos": 28,
+            "cajavecina_puntos": 120,
+            "clasificacion": "Centro Financiero Regional"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 62.5,
           "informalidad_laboral_estimada_pct": 21.2,
           "destino_turistico_sernatur": "Coyhaique y Cuenca del Río Simpson",
           "pernoctaciones_anuales_estimadas": 185000,
-          "licitaciones_mercado_publico_anual_mclp": 38500
+          "licitaciones_mercado_publico_anual_mclp": 38500,
+          "tasa_conmutacion_laboral_interregional_pct": 12.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -1013,14 +1107,28 @@
             "Transporte Terrestre y Almacenamiento"
           ],
           "peso_empleo_publico_estimado_pct": 58.5,
-          "ventas_anuales_total_uf": 450
+          "ventas_anuales_total_uf": 450,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 0,
+            "cajeros_automaticos": 1,
+            "cajavecina_puntos": 12,
+            "clasificacion": "Exclusión Bancaria / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 54.8,
           "informalidad_laboral_estimada_pct": 31.0,
           "destino_turistico_sernatur": "Carretera Austral Norte - Valle de Lago Verde y La Tapera",
           "pernoctaciones_anuales_estimadas": 4200,
-          "licitaciones_mercado_publico_anual_mclp": 2400
+          "licitaciones_mercado_publico_anual_mclp": 2400,
+          "tasa_conmutacion_laboral_interregional_pct": 18.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -1330,14 +1438,28 @@
             "Construcción e Ingeniería de Montaje"
           ],
           "peso_empleo_publico_estimado_pct": 21.5,
-          "ventas_anuales_total_uf": 56200
+          "ventas_anuales_total_uf": 56200,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 2,
+            "sucursal_bancoestado": 1,
+            "cajeros_automaticos": 8,
+            "cajavecina_puntos": 75,
+            "clasificacion": "Centro Secundario / Eje Portuario"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 64.0,
           "informalidad_laboral_estimada_pct": 19.5,
           "destino_turistico_sernatur": "Puerto Aysén - Fiordos y Parque Nacional Laguna San Rafael",
           "pernoctaciones_anuales_estimadas": 92000,
-          "licitaciones_mercado_publico_anual_mclp": 24800
+          "licitaciones_mercado_publico_anual_mclp": 24800,
+          "tasa_conmutacion_laboral_interregional_pct": 42.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -1647,14 +1769,28 @@
             "Administración Pública Local"
           ],
           "peso_empleo_publico_estimado_pct": 26.4,
-          "ventas_anuales_total_uf": 9100
+          "ventas_anuales_total_uf": 9100,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 1,
+            "cajeros_automaticos": 2,
+            "cajavecina_puntos": 35,
+            "clasificacion": "Banca Pública / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 61.5,
           "informalidad_laboral_estimada_pct": 23.0,
           "destino_turistico_sernatur": "Carretera Austral Norte - Puyuhuapi, Queulat y Raúl Marín Balmaceda",
           "pernoctaciones_anuales_estimadas": 48000,
-          "licitaciones_mercado_publico_anual_mclp": 8900
+          "licitaciones_mercado_publico_anual_mclp": 8900,
+          "tasa_conmutacion_laboral_interregional_pct": 45.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -1964,14 +2100,28 @@
             "Administración Pública Municipal"
           ],
           "peso_empleo_publico_estimado_pct": 36.8,
-          "ventas_anuales_total_uf": 2450
+          "ventas_anuales_total_uf": 2450,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 0,
+            "cajeros_automaticos": 1,
+            "cajavecina_puntos": 18,
+            "clasificacion": "Exclusión Bancaria Insular / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 58.2,
           "informalidad_laboral_estimada_pct": 35.4,
           "destino_turistico_sernatur": "Archipiélago de las Guaitecas - Melinka y Ruta de la Ballena Azul",
           "pernoctaciones_anuales_estimadas": 9500,
-          "licitaciones_mercado_publico_anual_mclp": 4600
+          "licitaciones_mercado_publico_anual_mclp": 4600,
+          "tasa_conmutacion_laboral_interregional_pct": 38.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -2281,14 +2431,28 @@
             "Administración Pública y Comercio"
           ],
           "peso_empleo_publico_estimado_pct": 31.0,
-          "ventas_anuales_total_uf": 6300
+          "ventas_anuales_total_uf": 6300,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 1,
+            "cajeros_automaticos": 2,
+            "cajavecina_puntos": 25,
+            "clasificacion": "Banca Pública / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 60.4,
           "informalidad_laboral_estimada_pct": 24.1,
           "destino_turistico_sernatur": "Cuenca del Lago General Carrera - Chile Chico y Sector Jeinimeni",
           "pernoctaciones_anuales_estimadas": 34000,
-          "licitaciones_mercado_publico_anual_mclp": 7400
+          "licitaciones_mercado_publico_anual_mclp": 7400,
+          "tasa_conmutacion_laboral_interregional_pct": 22.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -2598,14 +2762,28 @@
             "Administración Pública Local"
           ],
           "peso_empleo_publico_estimado_pct": 39.2,
-          "ventas_anuales_total_uf": 3200
+          "ventas_anuales_total_uf": 3200,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 0,
+            "cajeros_automaticos": 1,
+            "cajavecina_puntos": 22,
+            "clasificacion": "Exclusión Bancaria / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 59.0,
           "informalidad_laboral_estimada_pct": 27.8,
           "destino_turistico_sernatur": "Chelenko - Santuario de la Naturaleza Capillas de Mármol y PN Cerro Castillo",
           "pernoctaciones_anuales_estimadas": 68000,
-          "licitaciones_mercado_publico_anual_mclp": 5800
+          "licitaciones_mercado_publico_anual_mclp": 5800,
+          "tasa_conmutacion_laboral_interregional_pct": 20.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -2915,14 +3093,28 @@
             "Construcción y Mantenimiento Vial"
           ],
           "peso_empleo_publico_estimado_pct": 42.5,
-          "ventas_anuales_total_uf": 4400
+          "ventas_anuales_total_uf": 4400,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 1,
+            "cajeros_automaticos": 2,
+            "cajavecina_puntos": 30,
+            "clasificacion": "Banca Pública / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 60.1,
           "informalidad_laboral_estimada_pct": 22.6,
           "destino_turistico_sernatur": "Provincia de los Glaciares - Parque Nacional Patagonia (Tamango y Valle Chacabuco)",
           "pernoctaciones_anuales_estimadas": 31000,
-          "licitaciones_mercado_publico_anual_mclp": 6500
+          "licitaciones_mercado_publico_anual_mclp": 6500,
+          "tasa_conmutacion_laboral_interregional_pct": 24.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -3232,14 +3424,28 @@
             "Construcción Menor y Transporte Lacustre"
           ],
           "peso_empleo_publico_estimado_pct": 64.2,
-          "ventas_anuales_total_uf": 530
+          "ventas_anuales_total_uf": 530,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 0,
+            "cajeros_automaticos": 1,
+            "cajavecina_puntos": 8,
+            "clasificacion": "Exclusión Bancaria Extrema / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 56.4,
           "informalidad_laboral_estimada_pct": 28.5,
           "destino_turistico_sernatur": "Extremo Sur Carretera Austral - Glaciar O'Higgins y Campos de Hielo Sur",
           "pernoctaciones_anuales_estimadas": 12500,
-          "licitaciones_mercado_publico_anual_mclp": 3100
+          "licitaciones_mercado_publico_anual_mclp": 3100,
+          "tasa_conmutacion_laboral_interregional_pct": 30.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {
@@ -3549,14 +3755,28 @@
             "Silvicultura y Carpintería de Ribera en Ciprés"
           ],
           "peso_empleo_publico_estimado_pct": 61.0,
-          "ventas_anuales_total_uf": 390
+          "ventas_anuales_total_uf": 390,
+          "presencia_bancaria_cmf": {
+            "sucursales_banca_privada": 0,
+            "sucursal_bancoestado": 0,
+            "cajeros_automaticos": 1,
+            "cajavecina_puntos": 10,
+            "clasificacion": "Exclusión Bancaria Extrema / Dependencia CajaVecina"
+          },
+          "leyes_excepcion_austral": {
+            "dl_889_bonificacion_mano_obra_pct": 17.0,
+            "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
+            "ley_austral_credito_tributario": true
+          }
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 53.8,
           "informalidad_laboral_estimada_pct": 32.0,
           "destino_turistico_sernatur": "Caleta Tortel - Fiordos del Baker, Puerto Yungay y Glaciar Steffens",
           "pernoctaciones_anuales_estimadas": 18200,
-          "licitaciones_mercado_publico_anual_mclp": 3400
+          "licitaciones_mercado_publico_anual_mclp": 3400,
+          "tasa_conmutacion_laboral_interregional_pct": 25.0,
+          "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
         },
         "series_historicas": [
           {

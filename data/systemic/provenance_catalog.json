@@ -25,12 +25,16 @@
         "updateFrequencyDays": 31,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 2,
       "nodeId": 2,
-      "title": "Zonas de Interés Turístico (4 ZOIT)",
+      "title": "Zonas de Interés Turístico (3 ZOIT)",
       "hubId": "turismo",
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "provenance": {
@@ -44,7 +48,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 3,
@@ -63,7 +71,11 @@
         "updateFrequencyDays": 31,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 4,
@@ -84,7 +96,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 5,
@@ -103,7 +119,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 2,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 6,
@@ -123,7 +143,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 404,
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 7,
@@ -142,7 +166,11 @@
         "updateFrequencyDays": 184,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false
     },
     {
       "id": 8,
@@ -161,7 +189,11 @@
         "updateFrequencyDays": 92,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 9,
@@ -180,7 +212,11 @@
         "updateFrequencyDays": 31,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true
     },
     {
       "id": 10,
@@ -199,7 +235,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S5",
+      "espejo_governance": 1,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false
     },
     {
       "id": 11,
@@ -218,7 +258,11 @@
         "updateFrequencyDays": 92,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "energy",
+      "algedonic_trigger": false
     },
     {
       "id": 12,
@@ -237,7 +281,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "energy",
+      "algedonic_trigger": true
     },
     {
       "id": 13,
@@ -256,7 +304,11 @@
         "updateFrequencyDays": 7,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "energy",
+      "algedonic_trigger": false
     },
     {
       "id": 14,
@@ -275,7 +327,11 @@
         "updateFrequencyDays": 184,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 15,
@@ -295,7 +351,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
-      }
+      },
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false
     },
     {
       "id": 16,
@@ -315,7 +375,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
-      }
+      },
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": true
     },
     {
       "id": 17,
@@ -334,7 +398,11 @@
         "updateFrequencyDays": 1096,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S5",
+      "espejo_governance": 2,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 18,
@@ -355,7 +423,11 @@
         "updateFrequencyDays": 92,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": true
     },
     {
       "id": 19,
@@ -374,7 +446,11 @@
         "updateFrequencyDays": 31,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 20,
@@ -393,7 +469,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false
     },
     {
       "id": 21,
@@ -414,7 +494,11 @@
         "updateFrequencyDays": 184,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 22,
@@ -436,7 +520,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
-      }
+      },
+      "vsm_system": "S5",
+      "espejo_governance": 1,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 23,
@@ -455,7 +543,11 @@
         "updateFrequencyDays": 731,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 24,
@@ -475,7 +567,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 25,
@@ -495,7 +591,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": true
     },
     {
       "id": 26,
@@ -516,7 +616,11 @@
         "updateFrequencyDays": 92,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 27,
@@ -535,7 +639,11 @@
         "updateFrequencyDays": 1826,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 28,
@@ -554,7 +662,11 @@
         "updateFrequencyDays": 366,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 29,
@@ -575,7 +687,11 @@
         "updateFrequencyDays": 184,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 30,
@@ -595,7 +711,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 403,
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true
     },
     {
       "id": 31,
@@ -615,7 +735,11 @@
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "lastHttpStatus": 200,
         "extractionMode": "live_api"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true
     },
     {
       "id": 32,
@@ -634,7 +758,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 2,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 33,
@@ -653,7 +781,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false
     },
     {
       "id": 34,
@@ -672,7 +804,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S5",
+      "espejo_governance": 2,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 35,
@@ -691,7 +827,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 36,
@@ -710,7 +850,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false
     },
     {
       "id": 37,
@@ -729,7 +873,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 38,
@@ -748,7 +896,11 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     },
     {
       "id": 39,
@@ -767,10 +919,14 @@
         "updateFrequencyDays": 365,
         "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
         "extractionMode": "curated_fallback"
-      }
+      },
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true
     }
   ],
-  "notas_esquema": "collectionDateISO y updateFrequencyDays son campos derivados y procesables, agregados para permitir el calculo automatico de vencimiento de fuentes. collectionDate se conserva como texto editorial mostrado en el drawer. updateFrequencyDays usa la cota mas corta en frecuencias compuestas.",
+  "notas_esquema": "Metadatos de la Arquitectura Dual VSM (Stafford Beer / Raul Espejo): 'vsm_system' (S1 a S5 y canal de auditoria esporadica S3*); 'espejo_governance' (1: Politica-Inteligencia, 2: Politica-Operaciones, 3: Homeostato S3-S4, 4: Cohesion-Recursos, 5: Coordinacion lateral); 'metabolic_flow' (material, energy, info, financial); 'algedonic_trigger' (booleano que indica vinculacion con las 8 alarmas algedonicas vitales del territorio).",
   "fuente_espejo_ciudadano": {
     "sourceEntity": "Universidad de Aysén / Proyecto Barómetro Regional UAYSÉN",
     "sourceUrl": "https://github.com/VAVARO/barometro_regional",

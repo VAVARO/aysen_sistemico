@@ -11,7 +11,11 @@
     "Servicio Local de Educacion Publica (SLEP) Aysen / Datos Abiertos MINEDUC 2024",
     "Comision Nacional de Energia (CNE) / Resolucion Exenta Fijacion Tarifaria Sistemas Medianos y Aislados",
     "Servicio de Impuestos Internos (SII) - Estadisticas Tributarias de Empresas por Tamano y Comuna",
-    "Subsecretaria de Pesca y Acuicultura (SUBPESCA) / SERNAPESCA - Registro Pesquero Artesanal y Licencias Transables de Pesca LTP Ley 21.752"
+    "Subsecretaria de Pesca y Acuicultura (SUBPESCA) / SERNAPESCA - Registro Pesquero Artesanal y Licencias Transables de Pesca LTP Ley 21.752",
+    "Instituto Nacional de Estadísticas (INE) - Censo de Población y Vivienda 2024 (100.745 hab)",
+    "Ministerio de Vivienda y Urbanismo (MINVU) - Déficit Habitacional Cuantitativo (3.147) y Cualitativo (14.000+)",
+    "Dirección de Obras Hidráulicas (DOH-MOP) - Catastro de 47 Comités de Servicios Sanitarios Rurales (SSR)",
+    "Ministerio de Desarrollo Social y Familia (MDSF) - Encuesta CASEN Pobreza Multidimensional (14,0%) vs Ingresos (4,0%)"
   ],
   "resumen_regional": {
     "region_codigo": "CL-XI",
@@ -420,6 +424,58 @@
         "Globalpesca SpA"
       ],
       "regimen_tributario_pesquero": "Impuesto Especifico Art. 43 ter LGPA (LTP-A) + Patente Unica Pesquera Art. 43 LGPA"
+    },
+    "demografia_vital_censo_2024": {
+      "poblacion_total_censo_2024": 100745,
+      "indice_envejecimiento": 66.2,
+      "indice_masculinidad_rural": 115.8,
+      "viviendas_censadas_total": 47520,
+      "fuente": "INE - Censo 2024"
+    },
+    "salud_mental_y_uhce_hrc": {
+      "tasa_suicidio_deis_por_100k": 15.1,
+      "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
+      "observacion": "Aysén lidera históricamente la tasa nacional de suicidio (~15,1 por 100k hab) con una restricción crítica a 9 camas psiquiátricas de corta estadía en el Hospital Regional Coyhaique para toda la población regional",
+      "fuente": "DEIS MINSAL / SSA"
+    },
+    "mortalidad_oncologica_digestiva": {
+      "tasa_cancer_gastrico_cie10_c16": 18.4,
+      "tasa_cancer_vesicula_cie10_c23": 12.6,
+      "primeras_causas_avpp": [
+        "Cáncer Gástrico (C16)",
+        "Cáncer de Vesícula Biliar (C23)"
+      ],
+      "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer"
+    },
+    "listas_espera_sigte": {
+      "total_interconsultas_no_ges": 11420,
+      "mediana_dias_espera_consulta_especialidad": 284,
+      "mediana_dias_espera_quirurgica": 395,
+      "fuente": "SIGTE / Redes Asistenciales"
+    },
+    "deficit_habitacional_minvu": {
+      "deficit_cuantitativo": 3147,
+      "pct_irrecuperable": 56.0,
+      "deficit_cualitativo": 14200,
+      "fuente": "MINVU - Observatorio Habitacional"
+    },
+    "servicios_sanitarios_rurales_ssr_doh": {
+      "comites_ssr_activos": 47,
+      "beneficiarios_totales": 28833,
+      "fuente": "DOH-MOP Subdirección SSR"
+    },
+    "pobreza_casen": {
+      "pobreza_por_ingresos_regional": 4.0,
+      "pobreza_multidimensional_regional": 14.0,
+      "rango_comunas_aisladas_multidimensional": "22.0% - 28.0%",
+      "fuente": "MDSF - CASEN"
+    },
+    "educacion_publica_slep": {
+      "traspaso_oficial_slep": "2024-01-01",
+      "ley": "Ley N° 21.040",
+      "establecimientos_totales": 66,
+      "nudos_criticos": "Fallas en sistemas de calefacción escolar y licitaciones desiertas de transporte escolar rural DTPR",
+      "fuente": "SLEP Aysén"
     }
   },
   "por_comuna": [
@@ -496,6 +552,12 @@
               "Helipuerto institucional habilitado DGAC para aeroevacuaciones"
             ],
             "protocolo_derivacion": "Centro receptor final de toda la red asistencial de Aysen. Patologias de ultra-alta complejidad (gran quemado, cirugia cardiovascular pediatrica extracorporea, trasplantes) se derivan por aeroevacuacion FACH/SAMU a Hospital Puerto Montt o Hospital Salvador/Calvo Mackenna en Santiago."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 9,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -919,7 +981,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -978,6 +1053,12 @@
               "Oxigenoterapia de urgencia"
             ],
             "protocolo_derivacion": "Derivacion directa a Hospital Regional Coyhaique (traslado terrestre 4.5 h en ambulancia 4x4) o centro hospitalario de Cisnes segun cercania. Aeroevacuacion SAMU ante emergencias criticas o cortes de ruta por nevadas."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -1378,7 +1459,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -1443,6 +1537,12 @@
               "Rehabilitacion Kinesica integral"
             ],
             "protocolo_derivacion": "Derivacion a Hospital Regional Coyhaique para cirugia mayor, cuidados intensivos UCI/UTI y especialidades (a 65 km, 1.0 h de traslado terrestre pavimentado por Ruta 240). Desde Islas Huichas se evacua por lancha ambulancia o aeroevacuacion FACH/Carabineros/SAMU."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -1877,7 +1977,20 @@
               "desembarque_industrial_ton": 19300
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -1940,6 +2053,12 @@
               "Ambulancia 4x4 de emergencia"
             ],
             "protocolo_derivacion": "Derivacion terrestre hacia Hospital de Puerto Aysen (165 km, 2.5 h) o Hospital Regional Coyhaique (196 km, 3.5 h) por Ruta 7 y Ruta 240. Las caletas aisladas (Gala, Gaviota, Marin Balmaceda) derivan por lancha ambulancia hacia Quellon o Cisnes, o aeroevacuacion SAMU."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -2366,7 +2485,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -2428,6 +2560,12 @@
               "Helipuerto y aerodromo Melinka (SCMK) para aeroevacuaciones"
             ],
             "protocolo_derivacion": "Derivacion de maxima criticidad logistica. Traslado por avion ambulancia o helicoptero institucional SAMU/FACH/Carabineros hacia Hospital Regional Coyhaique o hacia Hospital de Castro (Region de Los Lagos) por cercania geografica en emergencias de riesgo vital inminente. Traslado maritimo a Quellon (5.0 h en barcaza) para casos electivos."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -2845,7 +2983,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -2906,6 +3057,12 @@
               "Ambulancias 4x4"
             ],
             "protocolo_derivacion": "Derivacion bimodal hacia Hospital Regional Coyhaique: combinacion lacustre en barcaza Tehuelche Chile Chico - Puerto Ibanez (2.5 h navegacion) + terrestre 115 km (1.5 h) = total 4.5 h. Alternativa terrestre por territorio argentino (Paso Los Antiguos/Huemules) en 6.0 h. Aeroevacuacion SAMU en pacientes criticos desde aerodromo Chile Chico (SCCC)."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -3313,7 +3470,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -3374,6 +3544,12 @@
               "Ambulancias 4x4 comunales"
             ],
             "protocolo_derivacion": "Derivacion directa hacia Hospital Regional Coyhaique por Ruta 7 pavimentada (115 km desde Pto. Ibanez, 1.5 h; 95 km desde Cerro Castillo, 1.2 h; 220 km desde Rio Tranquilo, 3.5 h). Evacuacion aeromedica en aerodromo Ibanez para emergencias criticas."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -3778,7 +3954,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -3838,6 +4027,12 @@
               "Aerodromo Cochrane (SCHR) habilitado para vuelos sanitarios"
             ],
             "protocolo_derivacion": "Derivacion critica a Hospital Regional Coyhaique. Distancia 334 km por Ruta 7 (tramos pavimentados y ripio, tiempo de viaje 6.5 a 7.0 h). Pacientes criticos o con riesgo vital se derivan obligatoriamente por avion ambulancia o helicoptero institucional SAMU desde el aerodromo local."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -4245,7 +4440,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -4304,6 +4512,12 @@
               "Aerodromo Villa O'Higgins (SCOH) para puente aereo"
             ],
             "protocolo_derivacion": "Derivacion de extrema complejidad territorial. Distancia a Coyhaique: 560 km (12.0 h de viaje terrestre continuo incluyendo cruce obligatorio de barcaza en fiordo Mitchell / Puerto Yungay). Primera referencia hospitalaria: Hospital Comunitario de Cochrane (230 km, 5.0 h). Casos de gravedad y emergencias quirurgicas se resuelven exclusivamente mediante aeroevacuacion con avion bimotor SAMU/FACH desde aerodromo Villa O'Higgins."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -4703,7 +4917,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     },
     {
@@ -4763,6 +4990,12 @@
               "Helipuerto Caleta Tortel habilitado para aeroevacuaciones"
             ],
             "protocolo_derivacion": "Derivacion compleja por topografia de pasarelas de cipres. Traslado de pacientes en camilla manual hasta vehiculo ambulancia o lancha. Hospital de derivacion primaria: Hospital Comunitario de Cochrane (128 km de ripio, 2.5 h); derivacion definitiva de alta complejidad: Hospital Regional Coyhaique (462 km, 9.0 h). Pacientes graves son evacuados por helicoptero FACH o avioneta SAMU."
+          },
+          "salud_mental_oncologia_deis": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
           }
         },
         "educacion_diferenciada_slep": {
@@ -5177,7 +5410,20 @@
               "desembarque_industrial_ton": 0
             }
           }
-        ]
+        ],
+        "habitat_minvu": {
+          "deficit_cuantitativo_regional": 3147,
+          "pct_irrecuperable": 56.0,
+          "deficit_cualitativo_regional": 14200
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833
+        },
+        "pobreza_casen": {
+          "pobreza_ingresos_regional_pct": 4.0,
+          "pobreza_multidimensional_regional_pct": 14.0
+        }
       }
     }
   ],

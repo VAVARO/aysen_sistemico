@@ -417,7 +417,7 @@ def build_hubs_gallery(barometro_data):
                     "format_type": "map",
                     "inter_hub_cross": {
                         "cross_hub": "turismo",
-                        "descripcion": "Superposición espacial de las 745 concesiones salmoneras frente a las 4 Zonas de Interés Turístico (ZOIT) y caletas pesqueras artesanales"
+                        "descripcion": "Superposición espacial de las 745 concesiones salmoneras frente a las 3 Zonas de Interés Turístico (ZOIT) y caletas pesqueras artesanales"
                     },
                     "config": {
                         "widget_type": "map",
@@ -1183,11 +1183,11 @@ def build_hubs_gallery(barometro_data):
                 {
                     "preset_id": "hub_08_01",
                     "hub_id": "salud",
-                    "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales y 32 Postas Rurales",
+                    "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales y 27 Postas Rurales",
                     "format_type": "map",
                     "inter_hub_cross": {
                         "cross_hub": "salmonicultura",
-                        "descripcion": "Superpone los 5 hospitales públicos y 32 postas rurales con los centros productivos aislados y tiempos de evacuación marítima SAMU"
+                        "descripcion": "Superpone los 5 hospitales públicos y 27 postas de salud rural permanentes con los centros productivos aislados y tiempos de evacuación marítima SAMU"
                     },
                     "config": {
                         "widget_type": "map",
@@ -1202,7 +1202,7 @@ def build_hubs_gallery(barometro_data):
                             "show_sample_n": True
                         }
                     },
-                    "what_it_shows": "Georreferenciación de los únicos 5 hospitales y las 32 postas rurales que atienden a los 100.745 habitantes de la región.",
+                    "what_it_shows": "Georreferenciación de los 5 hospitales públicos y las 27 postas de salud rural permanentes que atienden a los 100.745 habitantes de la región.",
                     "why_complex_system": "Puntos de fallo único: el Hospital Regional de Coyhaique concentra la totalidad de camas UCI y especialistas de alta complejidad para 108.000 km²."
                 },
                 {
@@ -1223,7 +1223,7 @@ def build_hubs_gallery(barometro_data):
                         "varY2": "medicos_por_mil_hab",
                         "showAverage": True
                     },
-                    "what_it_shows": "Coyhaique alberga 205 de las 261 camas regionales (78.5%), mientras la Macrozona Sur cuenta con solo 14 camas para 5 comunas.",
+                    "what_it_shows": "Coyhaique alberga 167 de las 261 camas regionales (63,98%), mientras la Macrozona Sur cuenta con solo 14 camas para 5 comunas.",
                     "why_complex_system": "Centralismo intrarregional: la concentración hospitalaria en la capital regional genera extrema dependencia en evacuaciones de emergencia."
                 },
                 {
@@ -1406,7 +1406,7 @@ def build_edges_inter_hub(barometro_data):
             "hub_origen": "salud",
             "hub_destino": "social",
             "llave": "comuna_ine",
-            "descripcion": "Red de 32 postas de salud rural frente al índice de pobreza multidimensional CASEN por comuna",
+            "descripcion": "Red de 27 postas de salud rural permanentes frente al índice de pobreza multidimensional CASEN por comuna",
             "peso_intensidad": 0.86,
             "indice_divergencia_percepcion": 0.39,
             "preset_recomendado": "hub_08_02"

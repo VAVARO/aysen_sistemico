@@ -36,6 +36,20 @@
       "sistema": "Catastro Técnico de Fibra Óptica Austral y Conectividad Escolar",
       "url_origen": "https://www.subtel.gob.cl",
       "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json"
+    },
+    {
+      "institucion": "Unidad de Pasos Fronterizos (Ministerio del Interior y Seguridad Pública) / Servicio Nacional de Aduanas",
+      "sistema": "Corredores Terrestres Internacionales y Convenio ATIT 1974 (Chile-Chile por Argentina)",
+      "url_origen": "https://www.pasosfronterizos.gov.cl",
+      "metodo_extraccion": "Estadísticas de Tránsito de Carga Rodada y Pasajeros en Pasos Huemules y Jeinimeni",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+    },
+    {
+      "institucion": "Dirección de Transporte Público Regional (DTPR - MTT) / Armada de Chile (DIRECTEMAR)",
+      "sistema": "Monitoreo Operacional y Resiliencia de Servicios Subsidiados Marítimos y Lacustres en Zonas Aisladas",
+      "url_origen": "https://dtpr.mtt.gob.cl",
+      "metodo_extraccion": "Informes de Continuidad de Servicio, Fallas de Carenas y Decretos de Contingencia de Barcazas",
+      "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
     }
   ],
   "por_comuna": [
@@ -59,6 +73,13 @@
           "cobertura_fibra_hogar_pct": 75.5,
           "establecimientos_educacion_conectados_n": 24,
           "fdt_ultima_milla_aprobado": true
+        },
+        "pasos_fronterizos_internacionales": {
+          "pasos_habilitados": [
+            "Paso Huemules (Balmaceda)",
+            "Paso Coyhaique Alto"
+          ],
+          "rol_logistico": "Nodo de entrada y distribución de carga internacional ATIT desde Argentina"
         }
       }
     },
@@ -128,6 +149,10 @@
           "cobertura_fibra_hogar_pct": 43.6,
           "establecimientos_educacion_conectados_n": 6,
           "fdt_ultima_milla_aprobado": true
+        },
+        "resiliencia_conectividad_maritima_lacustre": {
+          "servicio_maritimo": "Ruta Cordillera CAM0061 (Puerto Cisnes, Puyuhuapi, Raúl Marín)",
+          "bimodalidad_fiordos": true
         }
       }
     },
@@ -151,6 +176,11 @@
           "cobertura_fibra_hogar_pct": 31.8,
           "establecimientos_educacion_conectados_n": 2,
           "fdt_ultima_milla_aprobado": true
+        },
+        "resiliencia_conectividad_maritima_lacustre": {
+          "servicio_maritimo": "Ruta Cordillera CAM0061 (Melinka y Repollal)",
+          "dependencia_cabotaje_pct": 100.0,
+          "tiempo_navegacion_puerto_montt_horas": 14.0
         }
       }
     },
@@ -197,6 +227,13 @@
           "cobertura_fibra_hogar_pct": 23.2,
           "establecimientos_educacion_conectados_n": 2,
           "fdt_ultima_milla_aprobado": true
+        },
+        "resiliencia_conectividad_maritima_lacustre": {
+          "enlace_critico": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
+          "embarcacion": "Padre Antonio Ronchi",
+          "dependencia_aislamiento_rodado_pct": 100.0,
+          "punto_unico_falla": true,
+          "diagnostico": "Si la barcaza se detiene, el corte vehicular y de camiones de abastecimiento hacia Villa O'Higgins es del 100%."
         }
       }
     },
@@ -220,6 +257,10 @@
           "cobertura_fibra_hogar_pct": 27.5,
           "establecimientos_educacion_conectados_n": 2,
           "fdt_ultima_milla_aprobado": true
+        },
+        "resiliencia_conectividad_maritima_lacustre": {
+          "enlace_maritimo_fluvial": "Rampa Caleta Tortel / Enlace fluvial Río Mitchell y golfo",
+          "aislamiento_vial_urbano": "Asentamiento peatonal sin calles para vehículos; transporte interno en pasarelas de ciprés"
         }
       }
     },
@@ -243,6 +284,15 @@
           "cobertura_fibra_hogar_pct": 47.9,
           "establecimientos_educacion_conectados_n": 3,
           "fdt_ultima_milla_aprobado": true
+        },
+        "resiliencia_conectividad_maritima_lacustre": {
+          "enlace_lacustre": "Lago General Carrera (Chile Chico - Puerto Ibáñez)",
+          "embarcaciones": [
+            "La Tehuelche",
+            "Pilchero"
+          ],
+          "paso_fronterizo_internacional": "Paso Jeinimeni (Conexión Los Antiguos - RN40)",
+          "corredor_binacional_activo": true
         }
       }
     },
@@ -457,5 +507,56 @@
         "carga_ton": 1450
       }
     ]
+  },
+  "resumen_regional": {
+    "region_codigo": "CL-XI",
+    "region_nombre": "Aysén del General Carlos Ibáñez del Campo",
+    "soberania_logistica_chile_chile_argentina": {
+      "convenio": "Convenio de Transporte Internacional Terrestre (ATIT 1974)",
+      "corredor_terrestre_binacional": "Tránsito continuo Chile-Chile vía Ruta Nacional 40 argentina y Paso Cardenal Samoré hacia Paso Huemules y Jeinimeni",
+      "flujo_abastecimiento_critico": "Abastecimiento regular de gas licuado de petróleo (GLP), carnes, frutas, verduras frescas y abarrotes",
+      "puntos_control_fronterizo": [
+        "Paso Huemules (Balmaceda / Coyhaique)",
+        "Paso Jeinimeni (Chile Chico)",
+        "Paso Coyhaique Alto",
+        "Paso Roballos (Cochrane)"
+      ],
+      "vulnerabilidad_cuello_botella": "Nevadas en Paso Cardenal Samoré y cortes en tramos no pavimentados de RN40 argentina amenazan con desabastecimiento regional en 5 a 7 días ante eventos meteorológicos",
+      "fuente": "Unidad de Pasos Fronterizos (Ministerio del Interior) / Dirección Nacional de Aduanas"
+    },
+    "resiliencia_barcazas_subsidiadas": {
+      "programa": "Programa Especial de Subsidio al Transporte en Zonas Aisladas (DTPR / MTT)",
+      "puntos_criticos_single_point_of_failure": [
+        {
+          "enlace": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
+          "comuna_afectada": "Villa O'Higgins (11302)",
+          "embarcacion_titular": "Padre Antonio Ronchi",
+          "vulnerabilidad": "Aislamiento vehicular y rodado absoluto (100% de corte) ante detención, mantenimiento o falla mecánica",
+          "frecuencia_nominal_cruces_diarios": 6
+        },
+        {
+          "enlace": "Lago General Carrera (Chile Chico - Puerto Ingeniero Ibáñez)",
+          "comuna_afectada": "Chile Chico (11401)",
+          "embarcaciones": [
+            "La Tehuelche",
+            "Pilchero"
+          ],
+          "vulnerabilidad": "Aislamiento comercial y encarecimiento del abastecimiento por vía terrestre argentina ante fallas prolongadas de carena",
+          "frecuencia_nominal": "Diaria bimodal"
+        },
+        {
+          "enlace": "Ruta Cordillera Litoral Norte (CAM0061)",
+          "comunas_afectadas": [
+            "Guaitecas (11203)",
+            "Cisnes (11202)",
+            "Aysén (11201)"
+          ],
+          "recorrido": "Puerto Montt - Melinka - Raúl Marín Balmaceda - Gala - Gaviota - Cisnes - Puerto Aguirre - Puerto Chacabuco",
+          "vulnerabilidad": "Tiempos de navegación de hasta 32 horas expuestos a marejadas en Golfo Corcovado y Canal Moraleda",
+          "frecuencia_nominal": "2 a 3 viajes semanales"
+        }
+      ],
+      "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR"
+    }
   }
 }

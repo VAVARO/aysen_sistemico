@@ -5,7 +5,7 @@
   "dataset_id": "09_cultura_patrimonio",
   "titulo": "Cultura, Artes y Patrimonio: Infraestructura Cultural, Fondos Concursables, Monumentos y Percepción Ciudadana (SERPAT / MINCAP / GORE / Barómetro)",
   "region": "Región de Aysén del General Carlos Ibáñez del Campo",
-  "fecha_extraccion": "2026-10-24T00:00:00Z",
+  "fecha_extraccion": "2026-10-17T20:00:00Z",
   "fuentes_primarias": [
     {
       "nombre": "Servicio Nacional del Patrimonio Cultural (SERPAT) / IDE Patrimonio",
@@ -31,6 +31,26 @@
       "nombre": "Barómetro Regional UAYSÉN 2024-2025",
       "url": "https://www.uaysen.cl/",
       "cobertura": "Indicadores empíricos B4_B (Oportunidades recreación y cultura) y C2 (Participación cultural)"
+    },
+    {
+      "nombre": "Corporacion Nacional de Desarrollo Indigena (CONADI) / INE Censo",
+      "url": "https://www.conadi.gob.cl/",
+      "cobertura": "Registro de Comunidades Indigenas (Ley 19.253), Autoidentificacion Censo/CASEN y Solicitudes ECMPO (Ley 20.249 Lafkenche)"
+    },
+    {
+      "nombre": "SERPAT Subdireccion de Patrimonio Cultural Inmaterial (SIGPA)",
+      "url": "https://www.sigpa.cl/",
+      "cobertura": "Inventario de Patrimonio Cultural Inmaterial: Maestros tejueleros de cipres, carpinteria de ribera y jineteadas camperas"
+    },
+    {
+      "nombre": "Consejo de Monumentos Nacionales (CMN) - Arqueologia y Paleontologia",
+      "url": "https://www.monumentos.gob.cl/",
+      "cobertura": "Sitios arqueologicos (Bano Nuevo 1, Paredon de las Manos) y yacimientos paleontologicos (Formacion Toqui)"
+    },
+    {
+      "nombre": "Registro Civil / SUBDERE (Tejido Asociativo)",
+      "url": "https://www.registrocivil.cl/",
+      "cobertura": "Catastro de Organizaciones Comunitarias (Ley N 19.418), Juntas de Vecinos, sindicatos de pescadores y mujeres rurales"
     }
   ],
   "resumen_regional": {
@@ -42,7 +62,81 @@
     "gasto_municipal_cultura_anual_regional_mclp": 1292.9,
     "fndr_8pct_cultura_anual_regional_mclp": 1450.0,
     "nota_percepcion_cultura_regional_b4b": 4.12,
-    "participacion_cultural_pct_regional_c2": 42.8
+    "participacion_cultural_pct_regional_c2": 42.8,
+    "pueblos_originarios": {
+      "autoidentificacion_regional_pct": 28.7,
+      "fuente_medicion": "Censo de Poblacion y Vivienda INE / Encuesta CASEN MIDESO",
+      "poblacion_indigena_estimada": 28900,
+      "pueblo_predominante": "Mapuche-Huilliche (93%) con memoria historica de canoeros Chonos y Kawesqar",
+      "comuna_maxima_densidad": "Guaitecas (49.8% autoidentificacion)",
+      "total_comunidades_conadi_registradas": 74,
+      "solicitudes_ecmpo_lafkenche_ha": 621000.0,
+      "ecmpos_emblematicas": "Pu Wapi (Cisnes, ~227.000 ha) y Antunen Rain (Islas Huichas, ~394.000 ha)"
+    },
+    "sitios_paleo_arqueologicos": [
+      {
+        "id": "SIT-ARQ-01",
+        "nombre": "Cueva Bano Nuevo 1",
+        "comuna": "Coyhaique",
+        "antiguedad": "10.200 AP",
+        "categoria": "Sitio Arqueologico y Bioantropologico",
+        "descripcion": "Conjunto funerario mas antiguo de la Patagonia con 10 esqueletos humanos y fauna pleistocenica extinta"
+      },
+      {
+        "id": "SIT-ARQ-02",
+        "nombre": "Paredon de las Manos",
+        "comuna": "Rio Ibanez",
+        "antiguedad": "3.000 a 6.000 AP",
+        "categoria": "Monumento Historico (D.S. 2008) / Arte Rupestre Tehuelche",
+        "descripcion": "Alero rocoso con improntas de manos en negativo y escenas de caza de guanacos"
+      },
+      {
+        "id": "SIT-PAL-03",
+        "nombre": "Formacion Toqui (Mallin Grande)",
+        "comuna": "Chile Chico",
+        "antiguedad": "148 Ma (Jurasico Superior)",
+        "categoria": "Yacimiento Paleontologico de Interes Mundial",
+        "descripcion": "Yacimiento de descubrimiento del fosil de Chilesaurus diegosuarezi, dinosaurio teropodo herbivoro unico"
+      }
+    ],
+    "patrimonio_inmaterial_sigpa": {
+      "fuente": "SERPAT - Sistema de Informacion para la Gestion del Patrimonio Cultural Inmaterial (SIGPA)",
+      "expresiones_destacadas": [
+        {
+          "expresion": "Maestros tejueleros de cipres de las Guaitecas",
+          "cultores_estimados": 45,
+          "estado": "En riesgo de extincion por trabas a madera muerta y falta de aprendices",
+          "territorio": "Litoral norte y archipielagos (Melinka, Tortel, Cisnes)"
+        },
+        {
+          "expresion": "Carpinteros de ribera y constructores navales artesanales",
+          "cultores_estimados": 28,
+          "estado": "Vulnerable, activo en caletas pesqueras",
+          "territorio": "Puerto Aguirre, Puerto Gala, Puerto Gaviota, Melinka"
+        },
+        {
+          "expresion": "Jineteadas gauchas, chamame y tradiciones camperas patagonicas",
+          "cultores_estimados": 240,
+          "estado": "Vigorosa, 38 clubes camperos organizados",
+          "territorio": "Puerto Ibanez, Cochrane, Villa Manihuales, Lago Verde, Coyhaique"
+        }
+      ]
+    },
+    "tejido_asociativo": {
+      "fuente": "Registro Civil / SUBDERE / INDAP / SERNAPESCA",
+      "juntas_de_vecinos_ley_19418_total": 248,
+      "sindicatos_pescadores_artesanales_total": 45,
+      "agrupaciones_mujeres_rurales_total": 22,
+      "clubes_huasos_y_jineteada_total": 38,
+      "comites_campesinos_productores_total": 31
+    },
+    "paradoja_gasto_cultural_rural_urbano": {
+      "gasto_per_capita_coyhaique_clp": 11850,
+      "gasto_per_capita_lago_verde_clp": 49294,
+      "gasto_per_capita_tortel_clp": 36706,
+      "concentracion_fondos_mincap_coyhaique_pct": 55.9,
+      "explicacion": "Paradoja de escala demografica: el bajo numero de habitantes en comunas rurales infla el gasto per capita municipal, mientras el 56% de los fondos concursables ministeriales se concentra en Coyhaique."
+    }
   },
   "por_comuna": [
     {

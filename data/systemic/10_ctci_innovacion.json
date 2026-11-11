@@ -5,7 +5,7 @@
   "dataset_id": "10_ctci_innovacion",
   "titulo": "Ciencia, Tecnología, Conocimiento e Innovación (CTCi): Proyectos ANID, Innovación CORFO, Centros Científicos y Evaluación UAysén (ANID / MinCiencia / CORFO / Barómetro)",
   "region": "Región de Aysén del General Carlos Ibáñez del Campo",
-  "fecha_extraccion": "2026-10-24T00:00:00Z",
+  "fecha_extraccion": "2026-10-17T20:00:00Z",
   "fuentes_primarias": [
     {
       "nombre": "Agencia Nacional de Investigación y Desarrollo (ANID)",
@@ -26,6 +26,26 @@
       "nombre": "Barómetro Regional UAYSÉN 2024-2025",
       "url": "https://www.uaysen.cl/",
       "cobertura": "Indicadores empíricos I1_I (Prioridad CTCi), I5 (Conocimiento UAysén), I8 (Nota UAysén) y F4_G (Aporte Universidades)"
+    },
+    {
+      "nombre": "Servicio de Informacion de Educacion Superior (SIES - MINEDUC)",
+      "url": "https://www.mifuturo.cl/bases-de-datos-matricula/",
+      "cobertura": "Matricula oficial educacion tecnica y universitaria: CFT Estatal Aysen, UAysen, INACAP Coyhaique"
+    },
+    {
+      "nombre": "Superintendencia de Educacion Superior (SES)",
+      "url": "https://www.sesuperior.cl/",
+      "cobertura": "Informes de fiscalizacion financiera, regimen de Administracion Provisional y cierre tutela UAysen 2026"
+    },
+    {
+      "nombre": "Comite de Desarrollo Productivo Regional (CDPR Corfo Aysen)",
+      "url": "https://www.corfo.cl/sedes/aysen/",
+      "cobertura": "Financiamiento descentralizado de innovacion, emprendimiento y transferencia tecnologica ($1.930 MM)"
+    },
+    {
+      "nombre": "Instituto Forestal (INFOR Sede Patagonia)",
+      "url": "https://infor.cl/sede-patagonia/",
+      "cobertura": "Investigacion silvicultural, monitoreo dasometrico de lenga y nirre, biomasa y dendroenergia (Ley 21.499)"
     }
   ],
   "resumen_regional": {
@@ -36,9 +56,60 @@
     "proyectos_corfo_innova_total": 59,
     "monto_corfo_innova_regional_mclp": 8450.0,
     "centros_y_estaciones_ctci_total": 15,
-    "investigadores_residentes_est_total": 115,
+    "investigadores_residentes_est_total": 124,
     "percepcion_ctci_prioritaria_pct_regional_i1i": 89.6,
-    "evaluacion_uaysen_promedio_regional_i8": 5.08
+    "evaluacion_uaysen_promedio_regional_i8": 5.08,
+    "matricula_educacion_superior_sies": {
+      "fuente": "SIES / MINEDUC - Base Oficial de Matricula",
+      "matricula_total_regional": 2327,
+      "cft_estatal_aysen_estudiantes": 737,
+      "inacap_sede_coyhaique_estudiantes": 800,
+      "universidad_de_aysen_estudiantes": 790,
+      "distribucion_tecnica_pct": 66.0,
+      "distribucion_universitaria_pct": 34.0,
+      "tasa_retencion_regional_est": 68.5
+    },
+    "situacion_institucional_uaysen": {
+      "estado": "Regimen Regular Autonomo",
+      "administracion_provisional_ses": {
+        "periodo": "Enero 2024 - 15 de Enero de 2026",
+        "administrador_provisional": "Juan Pablo Prieto Cox",
+        "fecha_termino_formal": "15 de Enero de 2026",
+        "resolucion": "Saneamiento del deficit financiero de $3.000 MM y traspaso ordenado a autoridades electas"
+      },
+      "rectoria_2026_2030": {
+        "rector": "Dr. Victor Cubillos Godoy",
+        "periodo": "2026-2030",
+        "eleccion": "Elegido por votacion del cuerpo academico y proclamado para el periodo estatutario"
+      },
+      "infraestructura": "Campus Errazuriz consolidado como sede propia en Coyhaique",
+      "acreditacion_cna": "Nivel Basico (3 anos) con plan de tutoria de la Universidad de Tarapaca (UTA)"
+    },
+    "situacion_uach_campus_patagonia": {
+      "institucion": "Universidad Austral de Chile (UACh) - Campus Patagonia Coyhaique",
+      "estado_pregrado": "Cierre progresivo de oferta de pregrado en Coyhaique aprobado por Consejo Academico en Valdivia",
+      "enfoque_actual": "Lineas de investigacion aplicada, posgrados y continuidad de proyectos ANID/FIC-R"
+    },
+    "financiamiento_descentralizado_ctci": {
+      "cdpr_corfo_aysen": {
+        "monto_ejecutado_2024_mclp": 1930.0,
+        "presupuesto_2025_2026_mclp": 1900.0,
+        "mecanismo": "100% descentralizado mediante Comite de Desarrollo Productivo Regional presidido por Gobernador"
+      },
+      "fic_r_gore_aysen": {
+        "monto_historico_anual_mclp": 2000.0,
+        "estado_2024_2026": "Afectado por desaceleracion administrativa y exigencias de Glosa 7 DIPRES tras Caso Convenios"
+      }
+    },
+    "proyectos_anid_distincion": {
+      "proyectos_locales_residentes_count": 68,
+      "monto_locales_residentes_mclp": 11850.5,
+      "instituciones_residentes": "CIEP, UAysen, INIA Tamel Aike, INFOR Sede Patagonia, IFOP",
+      "proyectos_enclaves_extrarregionales_count": 52,
+      "monto_enclaves_extrarregionales_mclp": 5476.3,
+      "instituciones_extrarregionales": "Pontificia Universidad Catolica (Estacion Patagonia), CECs Valdivia, Universidad de Chile",
+      "diagnostico_extractivismo": "Enclaves que utilizan Aysen como laboratorio natural sin transferencia de capacidades permanentes a las comunidades"
+    }
   },
   "por_comuna": [
     {
@@ -58,8 +129,8 @@
         "monto_anid_acumulado_mclp": 11850.5,
         "proyectos_corfo_innova_count": 28,
         "monto_corfo_innova_mclp": 4120.0,
-        "centros_y_estaciones_ctci_count": 5,
-        "investigadores_residentes_est": 82,
+        "centros_y_estaciones_ctci_count": 6,
+        "investigadores_residentes_est": 91,
         "percepcion_ctci_prioritaria_pct_i1i": 88.6,
         "evaluacion_uaysen_promedio_i8": 4.94,
         "origen_dato": "observado_oficial"
@@ -506,6 +577,22 @@
       "institucion_titular": "MinCiencia / CONAF / UAysén",
       "investigadores_radicados": 1,
       "origen_dato": "MINCIENCIA_OBSERVA"
+    },
+    {
+      "id": "CTCI-NOD-15",
+      "nombre": "INFOR Sede Patagonia (Coyhaique Alto Km 4,5)",
+      "tipo": "Local_Endógena",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.5482,
+      "lng": -72.0125,
+      "lon": -72.0125,
+      "source_url": "https://infor.cl/sede-patagonia/",
+      "categoria": "Instituto_Forestal",
+      "vocacion_cientifica": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
+      "institucion_titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+      "investigadores_radicados": 9,
+      "origen_dato": "MINAGRI_INFOR"
     }
   ],
   "resumen_anid_adjudicaciones": {

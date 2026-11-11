@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-08T02:30:54.924Z",
+  "generatedAt": "2026-11-11T15:00:35.196Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -18,7 +18,7 @@ window.AYSEN_HUBS_DATA = {
       "title": "I. Turismo & Áreas Silvestres",
       "shortTitle": "Turismo & Áreas Silvestres",
       "color": "#00357f",
-      "description": "Oferta registrada en **SERNATUR**, las **4 Zonas de Interés Turístico (ZOIT)** de Aysén, pernoctaciones mensuales (**EMAT INE**) y flujo de visitantes a parques nacionales (**CONAF SNASPE**).",
+      "description": "Oferta registrada en **SERNATUR**, las **3 Zonas de Interés Turístico (ZOIT)** oficiales de Aysén (Chelenko, Aysén Patagonia Queulat, Provincia de los Glaciares), **361.942 pernoctaciones anuales registradas por INE EMAT** y **~38.000 visitas al Parque Nacional Queulat** (**CONAF SNASPE**).",
       "example": "En **Coyhaique** operan **412 prestadores registrados** (3.420 camas), con ocupación de 76%-82% en enero-febrero y de 22%-32% en invierno.",
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "nodesFile": "data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv",
@@ -1362,8 +1362,8 @@ window.AYSEN_HUBS_DATA = {
       "title": "IV. Gobernanza & Finanzas Municipales",
       "shortTitle": "Gobernanza & Finanzas",
       "color": "#4338ca",
-      "description": "Presupuestos municipales (**SINIM**), dependencia del **Fondo Común Municipal (FCM)**, autoridades electas 2024-2028 (**SERVEL**) y cartera de inversión pública (**FNDR / Carretera Austral Ruta 7**).",
-      "example": "Mientras **Coyhaique** maneja un presupuesto municipal de **M$ 26.540,8** con un **46,5% de dependencia del FCM**, comunas australes como **Tortel**, **Lago Verde** u **O'Higgins** superan el **84%-88%** de dependencia.",
+      "description": "Presupuestos municipales (**SINIM**), dependencia del **Fondo Común Municipal (FCM)**, autoridades electas 2024-2028 (**SERVEL**) y cartera de inversión pública (**M$ 61.548 FNDR devengado vs ~M$ 395.000 de inversión sectorial ministerial centralizada**).",
+      "example": "Mientras **Coyhaique** maneja un presupuesto municipal de **M$ 26.540,8** con un **46,5% de dependencia del FCM**, comunas australes como **Tortel**, **Lago Verde** u **O'Higgins** superan el **84%-88%** de dependencia. A nivel regional, el gasto devengado FNDR fue de M$ 61.548 frente a ~M$ 395.000 de inversión ministerial centralizada.",
       "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
       "nodesFile": "data/systemic/csv/01_gob_poder_finanzas_nodos.csv",
       "sourceName": "SINIM SUBDERE / SERVEL / DIPRES GORE Aysén",
@@ -2401,8 +2401,8 @@ window.AYSEN_HUBS_DATA = {
       "title": "VI. Demografía, Educación & Riesgos",
       "shortTitle": "Demografía, Educación & Riesgos",
       "color": "#2563eb",
-      "description": "Población comunal **Censo 2024 (100.745 hab)** y **CASEN 2022**, red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), educación pública (**SLEP Aysén**) y tasas delictuales (**CEAD / VIF**).",
-      "example": "Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.",
+      "description": "Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).",
+      "example": "La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.",
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
       "nodesFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "sourceName": "INE Censo 2024 / MINSAL DEIS / MINEDUC SLEP / SPD CEAD",
@@ -3297,8 +3297,8 @@ window.AYSEN_HUBS_DATA = {
       "title": "VIII. Salud APS & Hospitales",
       "shortTitle": "Salud APS & Hospitales",
       "color": "#be123c",
-      "description": "Red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), capacidad de **261 camas hospitalarias**, **32 postas de salud rural**, tiempos de traslado SAMU e isócronas de evacuación crítica.",
-      "example": "El **Hospital Regional de Coyhaique** concentra el **78,5% de las camas regionales** (205 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas.",
+      "description": "Red asistencial de salud (**DEIS MINSAL / SSA**): dotación de **261 camas hospitalarias**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, **27 postas de salud rural (PSR) permanentes**, tiempos de traslado SAMU e isócronas de evacuación crítica.",
+      "example": "El **Hospital Regional de Coyhaique** concentra el **63,98% de las camas regionales** (167 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas y la red dispone de 27 postas de salud rural.",
       "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "nodesFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "sourceName": "MINSAL DEIS / SSA / SAMU Aysén",
@@ -4050,8 +4050,8 @@ window.AYSEN_HUBS_DATA = {
       "title": "X. CTCi, Ciencia & Innovación",
       "shortTitle": "CTCi, Ciencia & Innovación",
       "color": "#6d28d9",
-      "description": "Ecosistema de ciencia, tecnología e innovación austral: **179 proyectos de I+D**, cartera histórica ANID (**17.326 MM CLP**), proyectos CORFO Innova (**8.450 MM CLP**) y **15 centros y estaciones científicas**.",
-      "example": "Articula la investigación local liderada por el **CIEP**, la **Universidad de Aysén** e **INIA Tamel Aike** frente a bases científicas de universidades metropolitanas (UC en Exploradores, UCH/CECs en glaciares).",
+      "description": "Ecosistema de ciencia, tecnología y educación superior austral: **2.327 estudiantes de Educación Superior SIES** (**CFT Estatal 737, INACAP 800, UAysén 790**), **179 proyectos de I+D**, cartera histórica ANID y **15 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15).",
+      "example": "Articula la educación superior e investigación local liderada por el **CFT Estatal de Aysén** (737 alumnos), **INACAP** (800 alumnos), la **Universidad de Aysén** (790 alumnos), el **CIEP**, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e **INIA Tamel Aike** frente a estaciones científicas en fiordos y glaciares.",
       "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
       "nodesFile": "data/systemic/csv/10_ctci_innovacion_nodos.csv",
       "sourceName": "MinCiencia / ANID / CORFO / CIEP / UAysén / INIA",
@@ -4643,6 +4643,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "turismo",
       "isSpecial": false,
       "title": "Servicios turísticos registrados",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Catastro comunal de **servicios turísticos formales** inscritos en el Registro Nacional de Prestadores de SERNATUR: total de prestadores, alojamientos turísticos, operadores de turismo aventura, guías registrados y capacidad estimada en camas.",
       "example": "**Coyhaique** lidera con **412 prestadores registrados** (178 alojamientos, 74 operadores de aventura y 3.420 camas), seguido por **Río Ibáñez**, **Aysén**, **Cisnes**, **Chile Chico** y **Cochrane**.",
       "officialSource": {
@@ -4802,9 +4806,13 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 2,
       "hubId": "turismo",
       "isSpecial": false,
-      "title": "Zonas de Interés Turístico (4 ZOIT)",
-      "definition": "Delimitación comunal, atractivos ancla, vocación principal y cuellos de botella de las **4 Zonas de Interés Turístico (ZOIT)** declaradas oficialmente por la Subsecretaría de Turismo en la Región de Aysén.",
-      "example": "Las 4 ZOIT articulan el territorio: **ZOIT Destino Coyhaique / Valle Simpson**, **ZOIT Aysén Patagonia Queulat** (Cisnes y Aysén), **ZOIT Chelenko** (Río Ibáñez y Chile Chico) y **ZOIT Provincia de los Glaciares** (Cochrane, O'Higgins y Tortel).",
+      "title": "Zonas de Interés Turístico (3 ZOIT)",
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
+      "definition": "Delimitación comunal, atractivos ancla, vocación principal y cuellos de botella de las **3 Zonas de Interés Turístico (ZOIT)** decretadas oficialmente por la Subsecretaría de Turismo en la Región de Aysén: **ZOIT Chelenko**, **ZOIT Aysén Patagonia Queulat** (incorporando Lago Verde) y **ZOIT Provincia de los Glaciares**.",
+      "example": "Las 3 ZOIT decretadas articulan el territorio: **ZOIT Chelenko** (Río Ibáñez y Chile Chico), **ZOIT Aysén Patagonia Queulat** (Cisnes, Aysén y Lago Verde) y **ZOIT Provincia de los Glaciares** (Cochrane, O'Higgins y Tortel), mientras Coyhaique opera como nodo de servicios sin decreto ZOIT.",
       "officialSource": {
         "name": "Subsecretaria de Turismo — ZOIT",
         "url": "https://www.subturismo.gob.cl/zoit/",
@@ -4833,18 +4841,16 @@ window.AYSEN_HUBS_DATA = {
         "type": "bar",
         "title": "Comunas Vinculadas por Zona de Interés Turístico (ZOIT)",
         "labels": [
-          "ZOIT Destino Coyhaique",
           "ZOIT Aysén Queulat",
           "ZOIT Chelenko",
           "ZOIT Prov. Glaciares",
-          "Zona Amortiguación"
+          "Zona Amortiguación (Sin ZOIT)"
         ],
         "datasets": [
           {
             "label": "Comunas Articuladas",
             "data": [
-              1,
-              2,
+              3,
               2,
               3,
               2
@@ -4864,15 +4870,15 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "ZOIT Destino Coyhaique / Valle Simpson",
+          "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
           "Hub receptor regional, pesca con mosca (fly fishing), gastronomía y turismo de eventos",
           "Reserva Nacional Coyhaique, Río Simpson (Pesca con Mosca)",
           "Estacionalidad invernal y dependencia de vuelos al Aeródromo Balmaceda"
         ],
         [
           "Lago Verde",
-          "Sin declaratoria ZOIT vigente",
-          "Turismo rural campesino, cabalgatas andinas y pesca deportiva prístina",
+          "ZOIT Aysén Patagonia Queulat",
+          "Turismo rural campesino, cabalgatas andinas, pesca deportiva prístina y articulación territorial con la ZOIT Aysén Patagonia Queulat",
           "Lago Verde, Río Cisnes Alto",
           "Aislamiento vial interior y escasa conectividad digital"
         ],
@@ -4907,7 +4913,7 @@ window.AYSEN_HUBS_DATA = {
         [
           "Río Ibáñez",
           "ZOIT Chelenko",
-          "Navegación a cavernas de mármol, trekking sobre hielo y escalada en Cerro Castillo",
+          "Navegación a cavernas de mármol, senderismo panorámico en Exploradores (hielo clausurado) y escalada en Cerro Castillo",
           "Santuario de la Naturaleza Capillas de Mármol, Parque Nacional Cerro Castillo",
           "Saturación vehicular estival en Puerto Río Tranquilo y polvo en suspensión en Ruta 7"
         ],
@@ -4935,7 +4941,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Polígonos oficiales de declaratoria y Decretos Supremos de las 4 ZOIT",
+          "Polígonos oficiales de declaratoria y Decretos Supremos de las 3 ZOITs oficiales",
           "Cartera de planes de acción interministeriales y vocaciones estratégicas",
           "Catastro de 24 atractivos ancla y sitios de alta concurrencia",
           "Análisis de brechas de infraestructura pública y cuellos de botella"
@@ -4944,7 +4950,7 @@ window.AYSEN_HUBS_DATA = {
           "Cruce con Inversión Pública FNDR (Nodo #18) para monitorear financiamiento del plan ZOIT",
           "Cruce con Pavimentacion Ruta 7 (Nodo #18) para evaluar accesibilidad a los atractivos ancla"
         ],
-        "totalRecordsInFullBase": "4 zonas ZOIT consolidadas y matrices comunales en data/systemic/06_turismo_sernatur_conaf.json"
+        "totalRecordsInFullBase": "3 zonas ZOIT oficiales consolidadas y matrices comunales en data/systemic/06_turismo_sernatur_conaf.json"
       }
     },
     {
@@ -4953,8 +4959,12 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "turismo",
       "isSpecial": false,
       "title": "Noches de alojamiento turístico",
-      "definition": "Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: llegadas anuales, pernoctaciones, proporción de extranjeros y brecha de ocupación estacional.",
-      "example": "A nivel regional, enero registra **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación baja al **20%-32%**.",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
+      "definition": "Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: **361.942 pernoctaciones anuales registradas oficialmente**, llegadas anuales, proporción de extranjeros y brecha de ocupación estacional.",
+      "example": "A nivel regional, la EMAT registra 361.942 pernoctaciones anuales oficiales. En enero se alcanzan **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación desciende al **20%-32%**.",
       "officialSource": {
         "name": "INE / SERNATUR — Encuesta Mensual de Alojamiento Turistico (EMAT)",
         "url": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
@@ -5119,8 +5129,12 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "turismo",
       "isSpecial": false,
       "title": "Visitas a Parques y Reservas Nacionales",
-      "definition": "Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna, junto con la superficie comunal protegida y las unidades presentes.",
-      "example": "Permite cruzar el flujo anual de visitantes a parques nacionales con la proporción de territorio protegido SNASPE en cada comuna (que alcanza **87,4% en Tortel**, **78,3% en O'Higgins** y **71,2% en Cisnes**).",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
+      "definition": "Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna: registro de **~38.000 visitas anuales al Parque Nacional Queulat** (principal atractivo regional) y superficie comunal protegida.",
+      "example": "El Parque Nacional Queulat lidera el flujo regional con **~38.000 visitas anuales**, conviviendo con una proporción de territorio protegido SNASPE que alcanza **87,4% en Tortel**, **78,3% en O'Higgins** y **71,2% en Cisnes**.",
       "officialSource": {
         "name": "CONAF — Estadisticas de Visitacion SNASPE",
         "url": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
@@ -5281,6 +5295,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "turismo",
       "isSpecial": false,
       "title": "Atractivos y Nodos Turísticos Georreferenciados",
+      "vsm_system": "S1",
+      "espejo_governance": 2,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Catastro de hitos turísticos georreferenciados de Aysén: Parques Nacionales (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia), Santuario Capillas de Mármol, Termas de Puyuhuapi, Caleta Tortel y Glaciar Exploradores.",
       "example": "Entrega las coordenadas geográficas (`lat`, `lng`), comuna INE, tipo de atractivo y atributos operativos o de visitación de cada hito turístico.",
       "officialSource": {
@@ -5347,10 +5365,10 @@ window.AYSEN_HUBS_DATA = {
       ],
       "tableRows": [
         [
-          "ZOIT Destino Coyhaique / Valle Simpson",
+          "Red de Comunidades Portal de la Patagonia - Nodo Regional Aysén",
           "11101",
-          "Zona de Interés Turístico (ZOIT)",
-          "categoria: ZOIT · vocacion: Hub receptor regional y pesca con mosca",
+          "Gobernanza Territorial y Conservación",
+          "categoria: Comunidades Portal · marco legal: Ley 21.600 SBAP",
           "-45.5712, -72.0685"
         ],
         [
@@ -5423,6 +5441,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salmonicultura",
       "isSpecial": false,
       "title": "Concesiones de Acuicultura por Comuna (745)",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Distribución comunal de las **745 concesiones de acuicultura otorgadas** en el litoral y fiordos de Aysén: centros operativos activos, barrios sanitarios (**ACS**) presentes, desembarque artesanal y borde costero marítimo.",
       "example": "Las 745 concesiones se concentran en el litoral norte e insular: **Cisnes (348)**, **Aysén (264)** y **Guaitecas (133)**, mientras las 7 comunas interiores no poseen borde costero marítimo.",
       "officialSource": {
@@ -5601,6 +5623,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salmonicultura",
       "isSpecial": false,
       "title": "Matriz de 12 Holdings Madres y Concesiones",
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false,
       "definition": "Vinculación corporativa entre los **12 Holdings Madres (grupos controladores)** y la titularidad de las concesiones salmoneras y plantas en la Región de Aysén.",
       "example": "**AquaChile (Agrosuper S.A.)** lidera con **210 concesiones (28,19% regional)**, seguido por **Mowi Chile (95)**, **Multi X (80)**, **Cermaq (68)** y **Blumar (58)**.",
       "officialSource": {
@@ -5761,6 +5787,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salmonicultura",
       "isSpecial": false,
       "title": "Barrios Sanitarios (ACS) y Caletas Pesqueras",
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Nodos georreferenciados de **Agrupaciones de Concesiones de Acuicultura (Barrios ACS)**, plantas de proceso (Puerto Chacabuco) y **caletas pesqueras artesanales** (Melinka, Repollal, Islas Huichas, Cisnes, Gala y Gaviota).",
       "example": "Detalla las concesiones integradas en cada barrio sanitario (**ACS-17, ACS-18, ACS-19, ACS-20, ACS-21, ACS-28**) junto con las caletas bento-demersales del archipiélago.",
       "officialSource": {
@@ -5895,6 +5925,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salmonicultura",
       "isSpecial": false,
       "title": "Monitoreo Marino, Oxígeno Disuelto y FAN",
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true,
       "definition": "Monitoreo ambiental de **temperatura superficial del mar (TSM)**, floraciones algales nocivas (**FAN / Alexandrium catenella**), oxígeno disuelto y condición aeróbica en fiordos y canales de Aysén.",
       "example": "Cruza las estaciones oceanográficas de **IFOP / SHOA** y los informes ambientales **INFA de SERNAPESCA** para seguir la condición aeróbica de los fiordos donde operan los barrios salmoneros.",
       "officialSource": {
@@ -6041,6 +6075,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salmonicultura",
       "isSpecial": false,
       "title": "Pesca Industrial por Pesquería e Impuesto Específico (Art. 43 ter)",
+      "vsm_system": "S5",
+      "espejo_governance": 1,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false,
       "definition": "Desglose de las **9 pesquerías industriales demersales y australes** en Aysén (paralelos 41 28,6' a 57 00' L.S.): régimen de acceso (**LTP Clase A/B y PEP**), fraccionamiento industrial (**Ley N° 21.752**), **Impuesto Específico Anual (Art. 43 ter LGPA)** y **Patente Única Pesquera (Art. 43)**.",
       "example": "En **Merluza del sur** (*Merluccius australis*), la **Ley N° 21.752** fijo el fraccionamiento en **37% Industrial / 63% Artesanal**, con un Valor de Sanción de **77 UTM/ton** y un **Impuesto Específico Art. 43 ter de 3,234 UTM/ton** de cuota LTP-A. En **Congrio dorado** es **83 UTM/ton** (**3,486 UTM/ton de impuesto**) y en **Bacalao de profundidad** alcanza **372 UTM/ton**.",
       "officialSource": {
@@ -6065,6 +6103,7 @@ window.AYSEN_HUBS_DATA = {
         17,
         20,
         26,
+        32,
         37
       ],
       "chartSpec": {
@@ -6207,6 +6246,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "energia",
       "isSpecial": false,
       "title": "Generación y Centrales Eléctricas",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "energy",
+      "algedonic_trigger": false,
       "definition": "Catastro georreferenciado de las **centrales de generación eléctrica** en la Región de Aysén: hidroeléctricas de pasada, parques eólicos y plantas térmicas diesel en sistemas medianos y aislados.",
       "example": "Incluye la **Central Hidroeléctrica Río Aysén (12,5 MW)**, el **Parque Eólico Alto Baguales**, la **Central Térmica Tehuelche** y las plantas de generación en **Melinka**, **Chile Chico**, **Cochrane**, **Tortel** y **Villa O'Higgins**.",
       "officialSource": {
@@ -6346,6 +6389,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "energia",
       "isSpecial": false,
       "title": "Sistemas Eléctricos Medianos y Aislados",
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "energy",
+      "algedonic_trigger": true,
       "definition": "Detalle comunal del subsistema eléctrico al que pertenece cada territorio (**Sistema Mediano de Aysén, Sistema Mediano General Carrera o Micro-redes Aisladas**), potencia instalada en MW y vulnerabilidad de suministro.",
       "example": "**Coyhaique (26,8 MW)** y **Aysén (48,2 MW)** conforman el **Sistema Mediano de Aysén (Edelaysen)**, mientras comunas como **Guaitecas**, **Lago Verde**, **Tortel** y **O'Higgins** operan como sistemas aislados.",
       "officialSource": {
@@ -6506,6 +6553,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "energia",
       "isSpecial": false,
       "title": "Precios de Combustibles y Leña por Comuna (CNE)",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "energy",
+      "algedonic_trigger": false,
       "definition": "Comparativa comunal de precios de **gasolina 93 ($/litro)**, **petróleo diesel ($/litro)**, porcentaje de **sobrecosto respecto a Santiago** y precio del **metro cúbico de leña seca ($/m3)**.",
       "example": "En **Coyhaique** la gasolina 93 promedia **$1.365/L** (+10,8% vs. Santiago) y el 92,4% de los hogares usa leña ($42.000/m3), mientras en comunas australes e insulares el sobrecosto de combustibles supera el **20%-26%**.",
       "officialSource": {
@@ -6682,6 +6733,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "energia",
       "isSpecial": false,
       "title": "Fibra Óptica Austral (FOA) y Telecomunicaciones",
+      "vsm_system": "S2",
+      "espejo_governance": 5,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Conectividad comunal al troncal terrestre y submarino de la **Fibra Óptica Austral (FOA — SUBTEL)**, tipo de enlace troncal, operadores móviles 4G/5G activos y localidades con brecha digital.",
       "example": "Detalla el tipo de enlace (FOA Terrestre, Ramal Submarino o radioenlace) en cada una de las 10 comunas y las localidades interiores que aún presentan rezago de conectividad.",
       "officialSource": {
@@ -6843,6 +6898,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "gobernanza",
       "isSpecial": false,
       "title": "Presupuestos Municipales y Patentes (SINIM)",
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false,
       "definition": "Presupuestos municipales devengados, gasto per cápita, ingresos por patentes acuícolas y mineras y clasificación tipológica según **SINIM SUBDERE**.",
       "example": "**Coyhaique** administra un presupuesto municipal de **M$ 26.540,8**, mientras comunas australes como **O'Higgins** y **Tortel** operan con presupuestos de **M$ 2.890,4** y **M$ 2.980,2**.",
       "officialSource": {
@@ -7005,6 +7064,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "gobernanza",
       "isSpecial": false,
       "title": "Dependencia del Fondo Común Municipal",
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": true,
       "definition": "Grado de vulnerabilidad fiscal y porcentaje de dependencia del **Fondo Común Municipal (FCM)** para el financiamiento de los servicios locales y gasto corriente.",
       "example": "**Tortel (88,2%)**, **O'Higgins (85,6%)** y **Lago Verde (84,1%)** tienen la mayor dependencia del FCM, mientras **Coyhaique** registra un **46,5%**.",
       "officialSource": {
@@ -7167,6 +7230,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "gobernanza",
       "isSpecial": false,
       "title": "Alcaldes (2024-2028), Concejos y Participación",
+      "vsm_system": "S5",
+      "espejo_governance": 2,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Autoridades comunales electas para el periodo **2024-2028 (SERVEL)**: alcaldes en ejercicio, pacto político, composición de los concejos municipales y porcentaje de participación con voto obligatorio.",
       "example": "Detalla los 10 alcaldes y 60 concejales de la región, con tasas de participación electoral que fluctuaron entre **79,8%** (Chile Chico) y **88,1%** (Tortel).",
       "officialSource": {
@@ -7239,70 +7306,70 @@ window.AYSEN_HUBS_DATA = {
         [
           "Coyhaique",
           "Carlos Gatica Villegas",
-          "Partido Demócrata Cristiano (PDC) / Chile Vamos y Centro Democrático",
+          "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
           "6",
           "84.2%"
         ],
         [
           "Lago Verde",
-          "Claudio Fica / Nelson Opazo López",
-          "Unión Demócrata Independiente (UDI) / Chile Vamos",
+          "Claudia Andrea Valdes Vasquez",
+          "Independiente / Contigo Chile Mejor",
           "6",
           "87.5%"
         ],
         [
           "Aysén",
-          "Julio Uribe Alvarado",
-          "Independiente / Por Chile y sus Regiones",
+          "Luis Martinez Gallardo",
+          "Union Democrata Independiente (UDI) / Chile Vamos",
           "6",
           "82.8%"
         ],
         [
           "Cisnes",
-          "Francisco Roncagliolo Lepio",
-          "Renovación Nacional (RN) / Chile Vamos",
+          "Francisco Javier Roncagliolo Lepio",
+          "Renovacion Nacional (RN) / Chile Vamos",
           "6",
           "83.1%"
         ],
         [
           "Guaitecas",
-          "Marcos Silva Miranda",
-          "Independiente / Unidos por la Dignidad",
+          "Bans Puinao Carimoney",
+          "Evolucion Politica (Evopoli) / Chile Vamos",
           "6",
           "85.9%"
         ],
         [
           "Chile Chico",
-          "Luperciano Muñoz González",
+          "Ariel Keim Hermosilla",
           "Independiente",
           "6",
           "83.6%"
         ],
         [
           "Río Ibáñez",
-          "Marcelo Santana Vargas / Alcaldía en ejercicio",
-          "Unión Demócrata Independiente (UDI) / Chile Vamos",
+          "Marcelo Daniel Jelvez Cardenas",
+          "Union Democrata Independiente (UDI) / Chile Vamos",
           "6",
           "86.4%"
         ],
         [
           "Cochrane",
-          "Patricio Ulloa Georgia / Jorge Calderón Núñez",
-          "UDI / Chile Vamos (Ulloa) / Partido Radical (Calderón)",
+          "Patricio Ulloa Georgia",
+          "Independiente / Chile Vamos",
           "6",
           "85.2%"
         ],
         [
           "O'Higgins",
-          "Roberto Recabal Cárcamo / Claudio Fica",
-          "Independiente / Chile Vamos",
+          "Jose Claudio Fica Gomez",
+          "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
           "6",
           "88%"
         ],
         [
           "Tortel",
-          "Abel Becerra Vidal",
-          "Independiente / Unidos por la Dignidad",
+          "Marisela Clorinda Jimenez Cruces",
+          "Independiente",
           "6",
           "87.3%"
         ]
@@ -7327,8 +7394,12 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "gobernanza",
       "isSpecial": false,
       "title": "Inversión pública del Gobierno Regional",
-      "definition": "Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)** y estado de la conectividad terrestre en la **Carretera Austral (Ruta 7)**.",
-      "example": "Cruza los montos FNDR comunales con el kilometraje de pavimento y ripio en la Ruta 7 (que se extiende por **835 km en la región**, con importantes tramos de ripio al sur de Villa Cerro Castillo).",
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": true,
+      "definition": "Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)**: **M$ 61.548 FNDR devengado (88,2% de ejecución presupuestaria) frente a ~M$ 395.000 anuales de inversión sectorial ministerial centralizada**, junto con el estado de la **Carretera Austral (Ruta 7)**.",
+      "example": "Descentralización nominal vs. real: el gasto FNDR devengado real del GORE Aysén es de M$ 61.548 anuales, mientras que la inversión sectorial ministerial centralizada (MOP, MINVU, Salud) alcanza ~M$ 395.000 anuales (x5 a x6 veces el FNDR). En la Ruta 7 se extienden 835 km en la región con tramos de ripio al sur de Cerro Castillo.",
       "officialSource": {
         "name": "DIPRES / GORE Aysen / Direccion de Vialidad MOP",
         "url": "https://datos.dipres.gob.cl/",
@@ -7490,6 +7561,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "inversion",
       "isSpecial": false,
       "title": "Inversión privada en evaluación ambiental",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa.",
       "example": "Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.420,5 MM USD)** y **Coyhaique (895,2 MM USD)** en infraestructura, energía y acuicultura.",
       "officialSource": {
@@ -7650,6 +7725,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "inversion",
       "isSpecial": false,
       "title": "Empresas, Empleo y Ventas por Rubro (SII)",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false,
       "definition": "Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)**: número de empresas con iniciación de actividades, trabajadores dependientes informados, ventas anuales en UF y peso del empleo público.",
       "example": "En la región operan **9.365 empresas formales**, con **6.992 microempresas (74,7%)**, **1.928 pequeñas (20,6%)**, **372 medianas (4,0%)** y **73 grandes empresas (0,8%)**.",
       "officialSource": {
@@ -7804,6 +7883,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "inversion",
       "isSpecial": false,
       "title": "Concesiones Mineras y Yacimientos (SERNAGEOMIN)",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Catastro de **concesiones mineras de exploración y explotación (pertenencias)**, superficie comprometida en hectáreas, yacimientos metálicos y no metálicos según **SERNAGEOMIN**.",
       "example": "**Chile Chico** lidera en minería metálica con **45.200 ha en pertenencias** (distrito minero Cerro Bayo), seguido por **Río Ibáñez (28.400 ha)** y **Coyhaique (18.600 ha)**.",
       "officialSource": {
@@ -7967,6 +8050,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "inversion",
       "isSpecial": false,
       "title": "Tenencia de Suelo Fiscal, SNASPE y Privada (BBNN / CONAF)",
+      "vsm_system": "S5",
+      "espejo_governance": 1,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Estructura de tenencia de la tierra según el **Ministerio de Bienes Nacionales y CONAF**: hectáreas y porcentaje de suelo fiscal, propiedad privada y unidades bajo protección **SNASPE**.",
       "example": "En comunas como **Tortel (91,4% fiscal/SNASPE)** y **O'Higgins (86,8%)** la mayor parte del territorio esta bajo dominio del Estado, contrastando con **Coyhaique**, donde el **62,3%** es propiedad privada y presenta presión por loteos rurales.",
       "officialSource": {
@@ -8162,8 +8249,12 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "social",
       "isSpecial": false,
       "title": "Demografía Censo 2024 y Pobreza CASEN",
-      "definition": "Resultados oficiales del **Censo 2024 (INE)**: población censada, proporción regional, superficie comunal, densidad habitacional (hab/km2) e índices de **pobreza por ingresos y multidimensional CASEN 2022**.",
-      "example": "La región suma **100.745 habitantes**, con una fuerte concentración en **Coyhaique (61.211 hab, 60,76%)** y **Aysén (24.345 hab, 24,17%)**, alcanzando densidades de solo **0,04 hab/km2 en Tortel**.",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
+      "definition": "Resultados oficiales del **Censo 2024 (INE)**: **100.745 habitantes censados**, proporción regional, superficie comunal, índice de envejecimiento (66,2), densidad habitacional (hab/km2) e índices de **pobreza por ingresos y multidimensional CASEN 2022**.",
+      "example": "La Región de Aysén registra 100.745 habitantes según el Censo 2024 (INE), con 61.211 en Coyhaique (60,76%) y 24.345 en Aysén (24,17%), alcanzando densidades de solo 0,04 hab/km2 en Tortel.",
       "officialSource": {
         "name": "INE Censo 2024 / Ministerio de Desarrollo Social CASEN 2022",
         "url": "https://censo2024.ine.gob.cl/",
@@ -8323,8 +8414,12 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salud",
       "isSpecial": false,
       "title": "Centros de salud y postas rurales",
-      "definition": "Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (APS - 2 CESFAM, 3 CECOSF, 28 Postas Rurales y 20 EMR)** frente a la **Red Hospitalaria (1 Hospital de Alta Complejidad y 4 Hospitales Comunitarios)** con 261 camas totales, camas críticas UCI/UTI y tiempos de traslado SAMU.",
-      "example": "**Coyhaique** concentra el **Hospital Regional (167 camas, 22 críticas UCI/UTI, 5 quirófanos)** y la base SAMU, mientras las 4 cabeceras provinciales cuentan con hospitales comunitarios de baja complejidad y 5 comunas dependen exclusivamente de postas rurales con traslados terrestres de hasta **7 a 9 horas** hacia Coyhaique.",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
+      "definition": "Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (27 Postas de Salud Rural permanentes y 20 EMR)** frente a la **Red Hospitalaria Regional (261 camas totales)**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, camas críticas UCI/UTI y tiempos de traslado SAMU.",
+      "example": "El Hospital Regional de Coyhaique concentra 167 de las 261 camas hospitalarias regionales (63,98%), 22 camas críticas UCI/UTI y 5 quirófanos. Los 4 hospitales comunitarios provinciales suman 94 camas y la red cuenta con 27 postas de salud rural permanentes con TENS residente.",
       "officialSource": {
         "name": "Departamento de Estadísticas e Información de Salud (DEIS) / SSA",
         "url": "https://deis.minsal.cl/",
@@ -8488,6 +8583,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "social",
       "isSpecial": false,
       "title": "Matrícula escolar en la comuna",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": true,
       "definition": "Red de establecimientos bajo administración del **Servicio Local de Educación Pública (SLEP Aysén)**: matrícula escolar total, presencia de educación media completa, sedes de educación superior y diferenciación de **36 escuelas rurales multigrado** frente a **16 liceos urbanos**.",
       "example": "Registra la matrícula pública en las 10 comunas, los internados estudiantiles para alumnos de zonas aisladas y la oferta de educación superior (Universidad de Aysén e INACAP en Coyhaique).",
       "officialSource": {
@@ -8665,6 +8764,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "social",
       "isSpecial": false,
       "title": "Denuncias por violencia intrafamiliar",
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Tasas comunales de **Delitos de Mayor Connotación Social (DMCS)** y denuncias de **Violencia Intrafamiliar (VIF)** cada 100.000 habitantes (**CEAD Subsecretaría de Prevención del Delito**), tipologías frecuentes y dotación policial.",
       "example": "Permite revisar las tasas estandarizadas cada 100 mil habitantes y la cobertura de comisarías, subcomisarias, tenencias y retenes fronterizos de Carabineros en las 10 comunas.",
       "officialSource": {
@@ -8827,6 +8930,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "biodiversidad",
       "isSpecial": false,
       "title": "Cobertura Forestal y Flora Nativa (CONAF SIT / MMA)",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (**CONAF SIT / MMA**): superficie comunal y regional de **Bosque Siempreverde**, **Bosque Caducifolio (Lenga y Ñire)**, **Estepa Patagónica**, **Turberas y Humedales**, y **Ciprés de las Guaitecas**.",
       "example": "La región cuenta con **5.715.000 ha de cobertura vegetal nativa (52,7% del territorio regional)**, liderada por el **Bosque Siempreverde (2.672.000 ha)** en el litoral húmedo y formaciones de **Lenga y Ñire (1.665.000 ha)** en los valles orientales y de transición.",
       "officialSource": {
@@ -8978,6 +9085,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "biodiversidad",
       "isSpecial": false,
       "title": "Fauna Silvestre y Especies en Categoría de Conservación (RCE MMA)",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Catastro de fauna emblemática y especies clasificadas bajo el **Reglamento para la Clasificación de Especies Silvestres (RCE MMA — D.S. N° 44/2023 y D.S. N° 22/2024)**: tamaño poblacional estimado, distribución comunal y amenazas directas para especies como el **Huemul**, **Pudu**, **Huillin**, **Chungungo**, **Ballena Sei**, **Ballena Azul** y **Cóndor**.",
       "example": "Aysén alberga entre **1.500 y 2.000 huemules** (60% al 70% de la población mundial de la especie), con núcleos críticos en Tamango (PN Patagonia), Cerro Castillo y la cuenca del Río Baker, amenazados por perros asilvestrados, cercos y atropellos.",
       "officialSource": {
@@ -9120,6 +9231,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "biodiversidad",
       "isSpecial": false,
       "title": "Especies Exóticas Invasoras y Presión Ecológica",
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Monitoreo de **Especies Exóticas Invasoras (EEI)** en Aysén según **MMA, SAG, CIEP y SUBPESCA**: dispersión, mecanismo de impacto y programas de control activo del **Visón norteamericano**, **Castor americano**, **Jabalí europeo**, **Microalga Didymo**, **Lupino perenne** y **Salmonidos asilvestrados**.",
       "example": "El **Visón norteamericano** colonizó las **10 comunas** de Aysén depredando aves acuáticas y compitiendo con el Huillin, mientras el **Castor** avanza en O'Higgins y Tortel talando bosques riparios que carecen de adaptación evolutiva para rebrotar tras inundación.",
       "officialSource": {
@@ -9246,6 +9361,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "biodiversidad",
       "isSpecial": false,
       "title": "Días al año con contaminación crítica del aire e Hidrología",
+      "vsm_system": "S3*",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true,
       "definition": "Red de monitoreo ambiental continuo y telemetría satelital de **calidad del aire (SINCA MMA)** y **caudales hidrométricos (DGA MOP)**: concentración de material particulado fino **MP2,5 (ug/m3)** en Coyhaique y aforos del **Río Baker y Río Simpson**.",
       "example": "La estación **Coyhaique II (SINCA)** registra un pico invernal de **160 ug/m3 de MP2,5 en junio y 145 ug/m3 en julio** asociado al uso intensivo de leña para calefacción, contrastando con **15-18 ug/m3 en verano**. Paralelamente, el **Río Baker en Bertrand (DGA)** promedia caudales de deshielo de **740 m3/s en abril** y un mínimo invernal de **430 m3/s en julio**.",
       "officialSource": {
@@ -9432,6 +9551,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "biodiversidad",
       "isSpecial": false,
       "title": "Complejos Volcánicos Activos (RNVV), Sismos (USGS) y Red de Estaciones",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true,
       "definition": "Catastro georreferenciado de los **6 complejos volcánicos activos** de Aysén (**Hudson, Macá, Cay, Mentolat, Melimoyu y Lautaro** — SERNAGEOMIN RNVV), los sismos instrumentales registrados por la API de **USGS** y la red de estaciones regionales.",
       "example": "Incluye la ubicación, magnitud y profundidad de los sismos registrados en torno a la **Triple Unión de Taitao / Zona de Fractura de Chile** y los volcanes con influencia sobre cada comuna.",
       "officialSource": {
@@ -9555,6 +9678,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "cultura",
       "isSpecial": false,
       "title": "Museos, bibliotecas y monumentos nacionales",
+      "vsm_system": "S1",
+      "espejo_governance": 2,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)** y **9 Monumentos Históricos y Arqueológicos** protegidos por el Consejo de Monumentos Nacionales (CMN).",
       "example": "**Coyhaique** alberga 3 museos y la Biblioteca Regional, mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.",
       "officialSource": {
@@ -9578,6 +9705,7 @@ window.AYSEN_HUBS_DATA = {
       "relatedNodeIds": [
         1,
         4,
+        10,
         15,
         21
       ],
@@ -9747,6 +9875,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "cultura",
       "isSpecial": false,
       "title": "Fondos Cultura MINCAP y FNDR 8%",
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "financial",
+      "algedonic_trigger": false,
       "definition": "Flujos de financiamiento público para el desarrollo cultural: asignaciones acumuladas de los **Fondos de Cultura (FONDART Regional, Fondos del Libro, Música y Audiovisual)**, asignación del **FNDR 8% Comunitario del GORE Aysén** y gasto municipal anual en cultura.",
       "example": "La inversión cultural se concentra en **Coyhaique ($2.150 MM acumulados)** y **Aysén ($820 MM)**, mientras las comunas del sur dependen de líneas concursables de intermediación y del FNDR 8%.",
       "officialSource": {
@@ -9923,6 +10055,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "cultura",
       "isSpecial": false,
       "title": "Espacios y Agentes Culturales de Aysén",
+      "vsm_system": "S5",
+      "espejo_governance": 2,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Infraestructura activa de difusión artística: teatros, centros culturales, casas de la cultura comunales, agrupaciones artesanales, indicadores de participación ciudadana y evaluación comunal de la oferta cultural.",
       "example": "El 42,8% de la población regional participa anualmente en actividades culturales, registrándose una valoración positiva en el Barómetro UAYSÉN (nota 4,12 regional) con alta demanda de descentralización hacia las localidades aisladas.",
       "officialSource": {
@@ -10083,6 +10219,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "ctci",
       "isSpecial": false,
       "title": "Proyectos de investigación científica adjudicados",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
       "definition": "Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.",
       "example": "Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.",
       "officialSource": {
@@ -10173,7 +10313,7 @@ window.AYSEN_HUBS_DATA = {
           "48",
           "26",
           "11.850,5",
-          "82"
+          "91"
         ],
         [
           "Lago Verde",
@@ -10259,8 +10399,12 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "ctci",
       "isSpecial": false,
       "title": "Centros I+D Locales UAysén/CIEP/INIA vs. Ciencia Extrarregional",
-      "definition": "Infraestructura científica fija instalada en la región: **15 centros y estaciones de campo**, contrastando los centros endógenos con sede regional permanente frente a estaciones de investigación operadas por universidades de la zona central.",
-      "example": "Coyhaique alberga el Campus Río Simpson de la UAysén, la sede central del CIEP e INIA Tamel Aike, mientras que en los fiordos operan la Estación Patagonia UC (Bahía Exploradores) y laboratorios costeros del IFOP.",
+      "vsm_system": "S4",
+      "espejo_governance": 3,
+      "metabolic_flow": "info",
+      "algedonic_trigger": false,
+      "definition": "Infraestructura científica fija y educación superior en la región: **15 centros y estaciones de campo** (incluyendo el Instituto Forestal **INFOR Sede Patagonia, CTCI-NOD-15**) y **2.327 estudiantes de Educación Superior SIES** (**CFT Estatal 737, INACAP 800, UAysén 790**), contrastando centros endógenos con estaciones de investigación extrarregionales.",
+      "example": "Coyhaique alberga el Campus Río Simpson de la UAysén (790 alumnos), la sede INACAP (800 alumnos), el CFT Estatal de Aysén (737 alumnos), la sede central del CIEP, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e INIA Tamel Aike, mientras que en los fiordos operan la Estación Patagonia UC (Bahía Exploradores) y laboratorios costeros del IFOP.",
       "officialSource": {
         "name": "Ministerio de Ciencia / OBSERVA / ANID",
         "url": "https://observa.minciencia.gob.cl/",
@@ -10304,7 +10448,7 @@ window.AYSEN_HUBS_DATA = {
           {
             "label": "Centros y Estaciones I+D",
             "data": [
-              5,
+              6,
               1,
               2,
               1,
@@ -10330,72 +10474,72 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "5",
-          "82",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "6",
+          "91",
+          "CIEP / UAysén / INIA Tamel Aike / INFOR / DGAC",
           "88.6%"
         ],
         [
           "Lago Verde",
           "1",
           "1",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "MinCiencia / CONAF / UAysén",
           "100%"
         ],
         [
           "Aysén",
           "2",
           "14",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "CECs / U. de Chile / Consorcio Salmonero",
           "93.8%"
         ],
         [
           "Cisnes",
           "1",
           "4",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "IFOP Puerto Cisnes",
           "85.2%"
         ],
         [
           "Guaitecas",
           "1",
           "2",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "IFOP Melinka (Marea Roja)",
           "87.5%"
         ],
         [
           "Chile Chico",
           "1",
           "3",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "INIA Tamel Aike (Agroclimática)",
           "84%"
         ],
         [
           "Río Ibáñez",
           "1",
           "2",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "Pontificia Universidad Católica (PUC)",
           "90%"
         ],
         [
           "Cochrane",
           "1",
           "3",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "CIEP / UAysén (Cuencas Australes)",
           "83.3%"
         ],
         [
           "O'Higgins",
           "1",
           "1",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "CECs / U. de Concepción",
           "100%"
         ],
         [
           "Tortel",
           "1",
           "3",
-          "UAysén / CIEP / INIA / IFOP / PUC",
+          "CIEP / Municipalidad de Tortel",
           "100%"
         ]
       ],
@@ -10419,6 +10563,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "ctci",
       "isSpecial": false,
       "title": "Proyectos de innovación productiva local",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
       "definition": "Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.",
       "example": "Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.",
       "officialSource": {
@@ -10579,7 +10727,11 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salud",
       "isSpecial": false,
       "title": "Centros de salud y postas rurales",
-      "definition": "Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **28 postas de salud rural**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
+      "definition": "Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **27 postas de salud rural (PSR) permanentes**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.",
       "example": "En comunas como **Tortel**, **Lago Verde** u **O'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.",
       "officialSource": {
         "name": "Servicio de Salud Aysén (SSA) / DEIS MINSAL",
@@ -10739,6 +10891,10 @@ window.AYSEN_HUBS_DATA = {
       "hubId": "salud",
       "isSpecial": false,
       "title": "Lista de Espera Quirúrgica y Aeroevacuaciones SAMU",
+      "vsm_system": "S3",
+      "espejo_governance": 4,
+      "metabolic_flow": "info",
+      "algedonic_trigger": true,
       "definition": "Logística de urgencia vital y tiempos de derivación crítica hacia el Hospital Regional Coyhaique y centros extrarregionales (Puerto Montt / Santiago), disponibilidad de helipuertos DGAC, ambulancias 4x4 y aeroevacuaciones FACH/SAMU.",
       "example": "Una evacuación desde **Villa O'Higgins** a Coyhaique toma **8 a 9 horas vía terrestre** o **75 minutos vía aérea**, condicionada a techos de vuelo y meteorología patagónica extrema.",
       "officialSource": {
@@ -10909,7 +11065,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 7290.2,
       "densidad_hab_km2": 7.93,
       "pobreza_ingresos_pct": 2.9,
-      "pobreza_multidim_pct": 12.5,
+      "pobreza_multidim_pct": 11.8,
       "superficie_snaspe_pct": 19.2,
       "unidades_snaspe": "Reserva Nacional Coyhaique, Reserva Nacional Río Simpson, Reserva Nacional Cerro Castillo",
       "ruta7_pavimentada_km": 142.5,
@@ -10918,7 +11074,7 @@ window.AYSEN_HUBS_DATA = {
       "salud_principal": "Hospital Regional Coyhaique",
       "aerodromo": "Aeródromo Balmaceda (SCBA) / Teniente Vidal (SCCY)",
       "alcalde": "Carlos Gatica Villegas",
-      "partido_alcalde": "Partido Demócrata Cristiano (PDC) / Chile Vamos y Centro Democrático",
+      "partido_alcalde": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
       "presupuesto_mclp": 26540.8,
       "presupuesto_per_capita_mclp": 459,
       "dependencia_fcm_pct": 46.5,
@@ -10939,7 +11095,7 @@ window.AYSEN_HUBS_DATA = {
       "prestadores_sernatur": 412,
       "camas_turisticas": 3420,
       "pernoctaciones_emat": 208500,
-      "zoit_nombre": "ZOIT Destino Coyhaique / Valle Simpson",
+      "zoit_nombre": "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
       "visitantes_snaspe": 38500,
       "camas_hospitalarias": 167,
       "traslado_coyhaique_hrs": 0,
@@ -10983,7 +11139,7 @@ window.AYSEN_HUBS_DATA = {
       "museos_count": 3,
       "fondos_cultura_adjudicados_mclp": 2150.4,
       "gasto_municipal_cultura_mclp": 685.2,
-      "gasto_cultura_per_capita_clp": 11850,
+      "gasto_cultura_per_capita_clp": 11200,
       "fndr_8pct_cultura_mclp": 480,
       "nota_percepcion_cultura_b4b": 3.87,
       "participacion_cultural_pct_c2": 42.2,
@@ -10991,11 +11147,11 @@ window.AYSEN_HUBS_DATA = {
       "monto_anid_mclp": 11850.5,
       "innovacion_corfo_mclp": 4120,
       "proyectos_ctci_total": 102,
-      "investigadores_residentes": 82,
+      "investigadores_residentes": 91,
       "proyectos_anid_locales_count": 48,
       "proyectos_anid_extrarregionales_count": 26,
       "proyectos_corfo_innova_count": 28,
-      "centros_y_estaciones_ctci_count": 5,
+      "centros_y_estaciones_ctci_count": 6,
       "percepcion_ctci_prioritaria_pct_i1i": 88.6,
       "evaluacion_uaysen_promedio_i8": 4.94,
       "establecimientos_escolares_n": 38,
@@ -11014,15 +11170,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 75.5,
       "establecimientos_educacion_conectados_n": 24,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 1845,
-      "deficit_habitacional_cualitativo_n": 2410,
+      "deficit_habitacional_cuantitativo_n": 1742,
+      "deficit_habitacional_cualitativo_n": 6280,
       "sistemas_ssr_apr_n": 12,
-      "cobertura_ssr_apr_familias": 2850,
-      "ganado_bovino_cabezas": 48500,
-      "ganado_ovino_cabezas": 68000,
+      "cobertura_ssr_apr_familias": 10500,
+      "ganado_bovino_cabezas": 42500,
+      "ganado_ovino_cabezas": 32000,
       "bosque_nativo_ha": 285400,
       "plantaciones_ha": 18200,
-      "consumo_lena_m3_hogar_ano": 18.5,
+      "consumo_lena_m3_hogar_ano": 14.5,
       "superficie_glaciares_km2": 95,
       "esperanza_vida_total_anos": 81.6,
       "cobertura_empam_pct": 80.2,
@@ -11034,7 +11190,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 59.4,
       "barometro_intencion_migracion_juvenil_pct": 47.5,
       "barometro_evaluacion_acceso_salud_pct": 24.1,
-      "barometro_preocupacion_contaminacion_lena_pct": 96.5
+      "barometro_preocupacion_contaminacion_lena_pct": 96.5,
+      "indice_envejecimiento": 64.1,
+      "indice_masculinidad": 96.8,
+      "camas_psiquiatricas_uhce": 9,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 2.9,
+      "pobreza_multidimensional_casen_pct": 11.8,
+      "deficit_habitacional_cuantitativo_minvu": 1742,
+      "deficit_habitacional_cualitativo_minvu": 6280,
+      "comites_ssr_apr_doh": 12,
+      "beneficiarios_ssr_apr_doh": 10500,
+      "establecimientos_slep_aysen": 22,
+      "matricula_ed_superior_sies": 2010,
+      "consumo_lena_m3_solidos_anual": 248800,
+      "consumo_lena_m3_hogar_anio": 14.5,
+      "informalidad_lena_pct": 68,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 42500,
+      "cabezas_ovinos_caf": 32000,
+      "sucursales_banca_privada_cmf": 5,
+      "puntos_cajavecina_bancoestado": 145,
+      "tasa_aprobacion_rs_sni_pct": 45,
+      "autoidentificacion_indigena_pct": 28.4,
+      "comunidades_indigenas_conadi": 18,
+      "gasto_cultural_per_capita_clp": 11200,
+      "juntas_vecinos_activas": 72,
+      "sindicatos_pesca_artesanal": 0
     },
     {
       "id": 2,
@@ -11050,7 +11239,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 5422.3,
       "densidad_hab_km2": 0.14,
       "pobreza_ingresos_pct": 0.9,
-      "pobreza_multidim_pct": 15.8,
+      "pobreza_multidim_pct": 24.5,
       "superficie_snaspe_pct": 34.5,
       "unidades_snaspe": "Parque Nacional Lago Rosselot (sector este), Reserva Nacional Lago Las Torres",
       "ruta7_pavimentada_km": 0,
@@ -11058,8 +11247,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Nula (Conectividad terrestre continua)",
       "salud_principal": "Sin hospital en la comuna (Atencion Primaria Rural)",
       "aerodromo": "Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica)",
-      "alcalde": "Claudio Fica / Nelson Opazo López",
-      "partido_alcalde": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+      "alcalde": "Claudia Andrea Valdes Vasquez",
+      "partido_alcalde": "Independiente / Contigo Chile Mejor",
       "presupuesto_mclp": 2450.2,
       "presupuesto_per_capita_mclp": 3145.3,
       "dependencia_fcm_pct": 89.2,
@@ -11080,7 +11269,7 @@ window.AYSEN_HUBS_DATA = {
       "prestadores_sernatur": 24,
       "camas_turisticas": 165,
       "pernoctaciones_emat": 6800,
-      "zoit_nombre": "Sin declaratoria ZOIT vigente",
+      "zoit_nombre": "ZOIT Aysén Patagonia Queulat",
       "visitantes_snaspe": 1800,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 4.5,
@@ -11155,15 +11344,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 17.6,
       "establecimientos_educacion_conectados_n": 3,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 34,
-      "deficit_habitacional_cualitativo_n": 115,
+      "deficit_habitacional_cuantitativo_n": 32,
+      "deficit_habitacional_cualitativo_n": 300,
       "sistemas_ssr_apr_n": 3,
-      "cobertura_ssr_apr_familias": 280,
-      "ganado_bovino_cabezas": 7600,
-      "ganado_ovino_cabezas": 28000,
+      "cobertura_ssr_apr_familias": 1050,
+      "ganado_bovino_cabezas": 18200,
+      "ganado_ovino_cabezas": 12500,
       "bosque_nativo_ha": 345000,
       "plantaciones_ha": 1200,
-      "consumo_lena_m3_hogar_ano": 19.8,
+      "consumo_lena_m3_hogar_ano": 21,
       "superficie_glaciares_km2": 45,
       "esperanza_vida_total_anos": 79.8,
       "cobertura_empam_pct": 72.1,
@@ -11175,7 +11364,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 76.5,
       "barometro_intencion_migracion_juvenil_pct": 54.2,
       "barometro_evaluacion_acceso_salud_pct": 26.5,
-      "barometro_preocupacion_contaminacion_lena_pct": 84.2
+      "barometro_preocupacion_contaminacion_lena_pct": 84.2,
+      "indice_envejecimiento": 78.5,
+      "indice_masculinidad": 122.4,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 0.9,
+      "pobreza_multidimensional_casen_pct": 24.5,
+      "deficit_habitacional_cuantitativo_minvu": 32,
+      "deficit_habitacional_cualitativo_minvu": 300,
+      "comites_ssr_apr_doh": 3,
+      "beneficiarios_ssr_apr_doh": 1050,
+      "establecimientos_slep_aysen": 4,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 16200,
+      "consumo_lena_m3_hogar_anio": 21,
+      "informalidad_lena_pct": 80,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 18200,
+      "cabezas_ovinos_caf": 12500,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 14,
+      "tasa_aprobacion_rs_sni_pct": 28,
+      "autoidentificacion_indigena_pct": 22,
+      "comunidades_indigenas_conadi": 2,
+      "gasto_cultural_per_capita_clp": 49294,
+      "juntas_vecinos_activas": 6,
+      "sindicatos_pesca_artesanal": 0
     },
     {
       "id": 3,
@@ -11191,7 +11413,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 29796.4,
       "densidad_hab_km2": 0.78,
       "pobreza_ingresos_pct": 5.3,
-      "pobreza_multidim_pct": 13.8,
+      "pobreza_multidim_pct": 15.2,
       "superficie_snaspe_pct": 63.4,
       "unidades_snaspe": "Parque Nacional Laguna San Rafael, Reserva Nacional Río Simpson (sector poniente), Reserva Nacional Las Guaitecas (sector sur)",
       "ruta7_pavimentada_km": 68,
@@ -11199,8 +11421,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Crítica en territorio insular (Islas Huichas / Puerto Aguirre); Nula en área continental",
       "salud_principal": "Hospital de Puerto Aysen",
       "aerodromo": "Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico)",
-      "alcalde": "Julio Uribe Alvarado",
-      "partido_alcalde": "Independiente / Por Chile y sus Regiones",
+      "alcalde": "Luis Martinez Gallardo",
+      "partido_alcalde": "Union Democrata Independiente (UDI) / Chile Vamos",
       "presupuesto_mclp": 14210.5,
       "presupuesto_per_capita_mclp": 613.3,
       "dependencia_fcm_pct": 52.8,
@@ -11265,7 +11487,7 @@ window.AYSEN_HUBS_DATA = {
       "museos_count": 2,
       "fondos_cultura_adjudicados_mclp": 742.8,
       "gasto_municipal_cultura_mclp": 215.6,
-      "gasto_cultura_per_capita_clp": 9306,
+      "gasto_cultura_per_capita_clp": 12450,
       "fndr_8pct_cultura_mclp": 310,
       "nota_percepcion_cultura_b4b": 3.81,
       "participacion_cultural_pct_c2": 40.4,
@@ -11296,15 +11518,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 61.8,
       "establecimientos_educacion_conectados_n": 14,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 762,
-      "deficit_habitacional_cualitativo_n": 1250,
+      "deficit_habitacional_cuantitativo_n": 719,
+      "deficit_habitacional_cualitativo_n": 3260,
       "sistemas_ssr_apr_n": 8,
-      "cobertura_ssr_apr_familias": 1450,
-      "ganado_bovino_cabezas": 21800,
-      "ganado_ovino_cabezas": 6200,
+      "cobertura_ssr_apr_familias": 5500,
+      "ganado_bovino_cabezas": 14100,
+      "ganado_ovino_cabezas": 6800,
       "bosque_nativo_ha": 1120000,
       "plantaciones_ha": 4800,
-      "consumo_lena_m3_hogar_ano": 17.2,
+      "consumo_lena_m3_hogar_ano": 15,
       "superficie_glaciares_km2": 1920,
       "esperanza_vida_total_anos": 81.1,
       "cobertura_empam_pct": 78.6,
@@ -11316,7 +11538,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 79.2,
       "barometro_intencion_migracion_juvenil_pct": 51.8,
       "barometro_evaluacion_acceso_salud_pct": 27.2,
-      "barometro_preocupacion_contaminacion_lena_pct": 89.5
+      "barometro_preocupacion_contaminacion_lena_pct": 89.5,
+      "indice_envejecimiento": 67.5,
+      "indice_masculinidad": 104.2,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 5.3,
+      "pobreza_multidimensional_casen_pct": 15.2,
+      "deficit_habitacional_cuantitativo_minvu": 719,
+      "deficit_habitacional_cualitativo_minvu": 3260,
+      "comites_ssr_apr_doh": 8,
+      "beneficiarios_ssr_apr_doh": 5500,
+      "establecimientos_slep_aysen": 12,
+      "matricula_ed_superior_sies": 317,
+      "consumo_lena_m3_solidos_anual": 128500,
+      "consumo_lena_m3_hogar_anio": 15,
+      "informalidad_lena_pct": 72,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 393000,
+      "concesiones_acuicolas_en_snaspe": 12,
+      "cabezas_bovinos_caf": 14100,
+      "cabezas_ovinos_caf": 6800,
+      "sucursales_banca_privada_cmf": 2,
+      "puntos_cajavecina_bancoestado": 85,
+      "tasa_aprobacion_rs_sni_pct": 42,
+      "autoidentificacion_indigena_pct": 31,
+      "comunidades_indigenas_conadi": 22,
+      "gasto_cultural_per_capita_clp": 12450,
+      "juntas_vecinos_activas": 42,
+      "sindicatos_pesca_artesanal": 24
     },
     {
       "id": 4,
@@ -11332,7 +11587,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 16093,
       "densidad_hab_km2": 0.32,
       "pobreza_ingresos_pct": 5,
-      "pobreza_multidim_pct": 14.2,
+      "pobreza_multidim_pct": 18.6,
       "superficie_snaspe_pct": 71.2,
       "unidades_snaspe": "Parque Nacional Queulat, Parque Nacional Melimoyu, Parque Nacional Isla Magdalena",
       "ruta7_pavimentada_km": 115,
@@ -11340,8 +11595,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Crítica en localidades aisladas (Puerto Raúl Marín Balmaceda, Puerto Gala y Gaviota); Nula en Puerto Cisnes y La Junta",
       "salud_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
       "aerodromo": "Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH)",
-      "alcalde": "Francisco Roncagliolo Lepio",
-      "partido_alcalde": "Renovación Nacional (RN) / Chile Vamos",
+      "alcalde": "Francisco Javier Roncagliolo Lepio",
+      "partido_alcalde": "Renovacion Nacional (RN) / Chile Vamos",
       "presupuesto_mclp": 6100,
       "presupuesto_per_capita_mclp": 1187.5,
       "dependencia_fcm_pct": 74.5,
@@ -11397,7 +11652,7 @@ window.AYSEN_HUBS_DATA = {
       "daa_consuntivos_m3s": 18.2,
       "daa_no_consuntivos_m3s": 320,
       "dias_sobre_norma_mp25": 16,
-      "postas_salud_rural": 5,
+      "postas_salud_rural": 4,
       "museos_espacios_n": 8,
       "bibliotecas_snbp_n": 3,
       "fondart_fndr_mclp": 357.5,
@@ -11437,15 +11692,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 43.6,
       "establecimientos_educacion_conectados_n": 6,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 184,
-      "deficit_habitacional_cualitativo_n": 490,
+      "deficit_habitacional_cuantitativo_n": 174,
+      "deficit_habitacional_cualitativo_n": 1280,
       "sistemas_ssr_apr_n": 6,
-      "cobertura_ssr_apr_familias": 780,
-      "ganado_bovino_cabezas": 9800,
-      "ganado_ovino_cabezas": 2800,
+      "cobertura_ssr_apr_familias": 3100,
+      "ganado_bovino_cabezas": 8400,
+      "ganado_ovino_cabezas": 4100,
       "bosque_nativo_ha": 860000,
       "plantaciones_ha": 2100,
-      "consumo_lena_m3_hogar_ano": 16.5,
+      "consumo_lena_m3_hogar_ano": 18.5,
       "superficie_glaciares_km2": 180,
       "esperanza_vida_total_anos": 80.4,
       "cobertura_empam_pct": 76.5,
@@ -11457,7 +11712,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 81,
       "barometro_intencion_migracion_juvenil_pct": 53,
       "barometro_evaluacion_acceso_salud_pct": 28,
-      "barometro_preocupacion_contaminacion_lena_pct": 85
+      "barometro_preocupacion_contaminacion_lena_pct": 85,
+      "indice_envejecimiento": 69.4,
+      "indice_masculinidad": 117.2,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 5,
+      "pobreza_multidimensional_casen_pct": 18.6,
+      "deficit_habitacional_cuantitativo_minvu": 174,
+      "deficit_habitacional_cualitativo_minvu": 1280,
+      "comites_ssr_apr_doh": 6,
+      "beneficiarios_ssr_apr_doh": 3100,
+      "establecimientos_slep_aysen": 8,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 38400,
+      "consumo_lena_m3_hogar_anio": 18.5,
+      "informalidad_lena_pct": 75,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 227000,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 8400,
+      "cabezas_ovinos_caf": 4100,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 42,
+      "tasa_aprobacion_rs_sni_pct": 35,
+      "autoidentificacion_indigena_pct": 34,
+      "comunidades_indigenas_conadi": 14,
+      "gasto_cultural_per_capita_clp": 16040,
+      "juntas_vecinos_activas": 18,
+      "sindicatos_pesca_artesanal": 12
     },
     {
       "id": 5,
@@ -11473,7 +11761,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 620.6,
       "densidad_hab_km2": 2.58,
       "pobreza_ingresos_pct": 6.1,
-      "pobreza_multidim_pct": 17.4,
+      "pobreza_multidim_pct": 27.4,
       "superficie_snaspe_pct": 45.8,
       "unidades_snaspe": "Reserva Nacional Las Guaitecas",
       "ruta7_pavimentada_km": 0,
@@ -11481,8 +11769,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Absoluta (100% marítima vía Quellón/Cisnes/Chacabuco)",
       "salud_principal": "Sin hospital en el archipielago (Cobertura por CESFAM Melinka)",
       "aerodromo": "Aeródromo Melinka (SCMK, asfalto 830m, vuelos regulares subvencionados)",
-      "alcalde": "Marcos Silva Miranda",
-      "partido_alcalde": "Independiente / Unidos por la Dignidad",
+      "alcalde": "Bans Puinao Carimoney",
+      "partido_alcalde": "Evolucion Politica (Evopoli) / Chile Vamos",
       "presupuesto_mclp": 3300,
       "presupuesto_per_capita_mclp": 2065.1,
       "dependencia_fcm_pct": 83,
@@ -11578,15 +11866,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 31.8,
       "establecimientos_educacion_conectados_n": 2,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 94,
-      "deficit_habitacional_cualitativo_n": 260,
+      "deficit_habitacional_cuantitativo_n": 89,
+      "deficit_habitacional_cualitativo_n": 680,
       "sistemas_ssr_apr_n": 2,
-      "cobertura_ssr_apr_familias": 420,
-      "ganado_bovino_cabezas": 100,
-      "ganado_ovino_cabezas": 0,
+      "cobertura_ssr_apr_familias": 1550,
+      "ganado_bovino_cabezas": 120,
+      "ganado_ovino_cabezas": 80,
       "bosque_nativo_ha": 42000,
       "plantaciones_ha": 50,
-      "consumo_lena_m3_hogar_ano": 15,
+      "consumo_lena_m3_hogar_ano": 19,
       "superficie_glaciares_km2": 0,
       "esperanza_vida_total_anos": 79.5,
       "cobertura_empam_pct": 71,
@@ -11598,7 +11886,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 74.8,
       "barometro_intencion_migracion_juvenil_pct": 55.4,
       "barometro_evaluacion_acceso_salud_pct": 25.8,
-      "barometro_preocupacion_contaminacion_lena_pct": 81.2
+      "barometro_preocupacion_contaminacion_lena_pct": 81.2,
+      "indice_envejecimiento": 58,
+      "indice_masculinidad": 118.5,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 6.1,
+      "pobreza_multidimensional_casen_pct": 27.4,
+      "deficit_habitacional_cuantitativo_minvu": 89,
+      "deficit_habitacional_cualitativo_minvu": 680,
+      "comites_ssr_apr_doh": 2,
+      "beneficiarios_ssr_apr_doh": 1550,
+      "establecimientos_slep_aysen": 2,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 18200,
+      "consumo_lena_m3_hogar_anio": 19,
+      "informalidad_lena_pct": 78,
+      "costo_real_generacion_diesel_kwh_clp": 640,
+      "subsidio_fiscal_diesel_kwh_clp": 375,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 300,
+      "cabezas_bovinos_caf": 120,
+      "cabezas_ovinos_caf": 80,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 20,
+      "tasa_aprobacion_rs_sni_pct": 22,
+      "autoidentificacion_indigena_pct": 49.8,
+      "comunidades_indigenas_conadi": 8,
+      "gasto_cultural_per_capita_clp": 25782,
+      "juntas_vecinos_activas": 7,
+      "sindicatos_pesca_artesanal": 11
     },
     {
       "id": 6,
@@ -11614,7 +11935,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 5737.1,
       "densidad_hab_km2": 0.85,
       "pobreza_ingresos_pct": 6.2,
-      "pobreza_multidim_pct": 13.1,
+      "pobreza_multidim_pct": 16.2,
       "superficie_snaspe_pct": 48.6,
       "unidades_snaspe": "Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni",
       "ruta7_pavimentada_km": 8,
@@ -11622,7 +11943,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Alta (Barcaza lacustre Tehuelche / Pilchero en Lago General Carrera)",
       "salud_principal": "Hospital Familiar y Comunitario San Jose / Dr. Leopoldo Ortega Rodriguez de Chile Chico",
       "aerodromo": "Aeródromo Chile Chico (SCCC, asfalto 1.300m, subvencionado y aeromédico)",
-      "alcalde": "Luperciano Muñoz González",
+      "alcalde": "Ariel Keim Hermosilla",
       "partido_alcalde": "Independiente",
       "presupuesto_mclp": 5400,
       "presupuesto_per_capita_mclp": 1100.9,
@@ -11679,7 +12000,7 @@ window.AYSEN_HUBS_DATA = {
       "daa_consuntivos_m3s": 14.8,
       "daa_no_consuntivos_m3s": 45,
       "dias_sobre_norma_mp25": 18,
-      "postas_salud_rural": 3,
+      "postas_salud_rural": 2,
       "museos_espacios_n": 7,
       "bibliotecas_snbp_n": 2,
       "fondart_fndr_mclp": 282,
@@ -11719,15 +12040,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 47.9,
       "establecimientos_educacion_conectados_n": 3,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 142,
-      "deficit_habitacional_cualitativo_n": 380,
+      "deficit_habitacional_cuantitativo_n": 134,
+      "deficit_habitacional_cualitativo_n": 990,
       "sistemas_ssr_apr_n": 4,
-      "cobertura_ssr_apr_familias": 620,
-      "ganado_bovino_cabezas": 14200,
-      "ganado_ovino_cabezas": 36500,
+      "cobertura_ssr_apr_familias": 2350,
+      "ganado_bovino_cabezas": 9600,
+      "ganado_ovino_cabezas": 38200,
       "bosque_nativo_ha": 260000,
       "plantaciones_ha": 3100,
-      "consumo_lena_m3_hogar_ano": 16.8,
+      "consumo_lena_m3_hogar_ano": 16.5,
       "superficie_glaciares_km2": 290,
       "esperanza_vida_total_anos": 81.3,
       "cobertura_empam_pct": 79.1,
@@ -11739,7 +12060,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 41.8,
       "barometro_intencion_migracion_juvenil_pct": 48.9,
       "barometro_evaluacion_acceso_salud_pct": 20.1,
-      "barometro_preocupacion_contaminacion_lena_pct": 97.2
+      "barometro_preocupacion_contaminacion_lena_pct": 97.2,
+      "indice_envejecimiento": 72.4,
+      "indice_masculinidad": 111,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 6.2,
+      "pobreza_multidimensional_casen_pct": 16.2,
+      "deficit_habitacional_cuantitativo_minvu": 134,
+      "deficit_habitacional_cualitativo_minvu": 990,
+      "comites_ssr_apr_doh": 4,
+      "beneficiarios_ssr_apr_doh": 2350,
+      "establecimientos_slep_aysen": 5,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 32600,
+      "consumo_lena_m3_hogar_anio": 16.5,
+      "informalidad_lena_pct": 74,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 9600,
+      "cabezas_ovinos_caf": 38200,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 28,
+      "tasa_aprobacion_rs_sni_pct": 36,
+      "autoidentificacion_indigena_pct": 21,
+      "comunidades_indigenas_conadi": 3,
+      "gasto_cultural_per_capita_clp": 15250,
+      "juntas_vecinos_activas": 12,
+      "sindicatos_pesca_artesanal": 2
     },
     {
       "id": 7,
@@ -11755,7 +12109,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 5997.2,
       "densidad_hab_km2": 0.45,
       "pobreza_ingresos_pct": 7,
-      "pobreza_multidim_pct": 14.9,
+      "pobreza_multidim_pct": 19.8,
       "superficie_snaspe_pct": 61.7,
       "unidades_snaspe": "Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael, Santuario de la Naturaleza Capillas de Mármol",
       "ruta7_pavimentada_km": 82,
@@ -11763,8 +12117,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Media (Terminal norte de barcazas hacia Chile Chico)",
       "salud_principal": "Sin hospital en la comuna (Atencion Primaria con CESFAM y Postas)",
       "aerodromo": "Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias)",
-      "alcalde": "Marcelo Santana Vargas / Alcaldía en ejercicio",
-      "partido_alcalde": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+      "alcalde": "Marcelo Daniel Jelvez Cardenas",
+      "partido_alcalde": "Union Democrata Independiente (UDI) / Chile Vamos",
       "presupuesto_mclp": 3950,
       "presupuesto_per_capita_mclp": 1450.6,
       "dependencia_fcm_pct": 79.6,
@@ -11860,15 +12214,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 35.2,
       "establecimientos_educacion_conectados_n": 4,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 86,
-      "deficit_habitacional_cualitativo_n": 295,
-      "sistemas_ssr_apr_n": 5,
-      "cobertura_ssr_apr_familias": 540,
-      "ganado_bovino_cabezas": 24200,
-      "ganado_ovino_cabezas": 22500,
+      "deficit_habitacional_cuantitativo_n": 81,
+      "deficit_habitacional_cualitativo_n": 770,
+      "sistemas_ssr_apr_n": 4,
+      "cobertura_ssr_apr_familias": 2050,
+      "ganado_bovino_cabezas": 15800,
+      "ganado_ovino_cabezas": 42100,
       "bosque_nativo_ha": 270100,
       "plantaciones_ha": 1700,
-      "consumo_lena_m3_hogar_ano": 18.2,
+      "consumo_lena_m3_hogar_ano": 19.5,
       "superficie_glaciares_km2": 210,
       "esperanza_vida_total_anos": 80.2,
       "cobertura_empam_pct": 75.8,
@@ -11880,7 +12234,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 61.2,
       "barometro_intencion_migracion_juvenil_pct": 48.5,
       "barometro_evaluacion_acceso_salud_pct": 21.5,
-      "barometro_preocupacion_contaminacion_lena_pct": 92.8
+      "barometro_preocupacion_contaminacion_lena_pct": 92.8,
+      "indice_envejecimiento": 79.1,
+      "indice_masculinidad": 116.4,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 7,
+      "pobreza_multidimensional_casen_pct": 19.8,
+      "deficit_habitacional_cuantitativo_minvu": 81,
+      "deficit_habitacional_cualitativo_minvu": 770,
+      "comites_ssr_apr_doh": 4,
+      "beneficiarios_ssr_apr_doh": 2050,
+      "establecimientos_slep_aysen": 5,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 22400,
+      "consumo_lena_m3_hogar_anio": 19.5,
+      "informalidad_lena_pct": 76,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 15800,
+      "cabezas_ovinos_caf": 42100,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 25,
+      "tasa_aprobacion_rs_sni_pct": 34,
+      "autoidentificacion_indigena_pct": 24,
+      "comunidades_indigenas_conadi": 4,
+      "gasto_cultural_per_capita_clp": 19317,
+      "juntas_vecinos_activas": 10,
+      "sindicatos_pesca_artesanal": 1
     },
     {
       "id": 8,
@@ -11896,7 +12283,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 8599.5,
       "densidad_hab_km2": 0.4,
       "pobreza_ingresos_pct": 6.3,
-      "pobreza_multidim_pct": 15.2,
+      "pobreza_multidim_pct": 15,
       "superficie_snaspe_pct": 52.1,
       "unidades_snaspe": "Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango",
       "ruta7_pavimentada_km": 12,
@@ -11904,8 +12291,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Baja / Nula en eje troncal norte (Acceso terrestre continuo por Ruta 7 de ripio)",
       "salud_principal": "Hospital Comunitario de Cochrane (Hospital Lord Cochrane)",
       "aerodromo": "Aeródromo Cochrane (SCHR, asfalto 1.200m, vuelos subvencionados y aeromédicos)",
-      "alcalde": "Patricio Ulloa Georgia / Jorge Calderón Núñez",
-      "partido_alcalde": "UDI / Chile Vamos (Ulloa) / Partido Radical (Calderón)",
+      "alcalde": "Patricio Ulloa Georgia",
+      "partido_alcalde": "Independiente / Chile Vamos",
       "presupuesto_mclp": 4600,
       "presupuesto_per_capita_mclp": 1330.2,
       "dependencia_fcm_pct": 76.8,
@@ -12001,15 +12388,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 51.4,
       "establecimientos_educacion_conectados_n": 4,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 118,
-      "deficit_habitacional_cualitativo_n": 310,
+      "deficit_habitacional_cuantitativo_n": 111,
+      "deficit_habitacional_cualitativo_n": 810,
       "sistemas_ssr_apr_n": 4,
-      "cobertura_ssr_apr_familias": 380,
-      "ganado_bovino_cabezas": 16500,
-      "ganado_ovino_cabezas": 14800,
+      "cobertura_ssr_apr_familias": 1450,
+      "ganado_bovino_cabezas": 16400,
+      "ganado_ovino_cabezas": 34800,
       "bosque_nativo_ha": 380000,
       "plantaciones_ha": 3400,
-      "consumo_lena_m3_hogar_ano": 20.4,
+      "consumo_lena_m3_hogar_ano": 18,
       "superficie_glaciares_km2": 540,
       "esperanza_vida_total_anos": 80.8,
       "cobertura_empam_pct": 77.4,
@@ -12021,7 +12408,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 43.5,
       "barometro_intencion_migracion_juvenil_pct": 49.8,
       "barometro_evaluacion_acceso_salud_pct": 19.5,
-      "barometro_preocupacion_contaminacion_lena_pct": 95.8
+      "barometro_preocupacion_contaminacion_lena_pct": 95.8,
+      "indice_envejecimiento": 67.5,
+      "indice_masculinidad": 114.5,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 6.3,
+      "pobreza_multidimensional_casen_pct": 15,
+      "deficit_habitacional_cuantitativo_minvu": 111,
+      "deficit_habitacional_cualitativo_minvu": 810,
+      "comites_ssr_apr_doh": 4,
+      "beneficiarios_ssr_apr_doh": 1450,
+      "establecimientos_slep_aysen": 4,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 34800,
+      "consumo_lena_m3_hogar_anio": 18,
+      "informalidad_lena_pct": 75,
+      "costo_real_generacion_diesel_kwh_clp": 0,
+      "subsidio_fiscal_diesel_kwh_clp": 0,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 16400,
+      "cabezas_ovinos_caf": 34800,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 34,
+      "tasa_aprobacion_rs_sni_pct": 35,
+      "autoidentificacion_indigena_pct": 20,
+      "comunidades_indigenas_conadi": 2,
+      "gasto_cultural_per_capita_clp": 18045,
+      "juntas_vecinos_activas": 9,
+      "sindicatos_pesca_artesanal": 0
     },
     {
       "id": 9,
@@ -12037,7 +12457,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 8182.5,
       "densidad_hab_km2": 0.08,
       "pobreza_ingresos_pct": 9.2,
-      "pobreza_multidim_pct": 18.6,
+      "pobreza_multidim_pct": 22.8,
       "superficie_snaspe_pct": 78.3,
       "unidades_snaspe": "Parque Nacional Bernardo O'Higgins (sector norte)",
       "ruta7_pavimentada_km": 0,
@@ -12045,8 +12465,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Crítica / Absoluta (Cruce obligado en Barcaza Fiordo Mitchell)",
       "salud_principal": "Sin hospital en la comuna (Posta Rural de Aislamiento Extremo)",
       "aerodromo": "Aeródromo Villa O'Higgins (SCOH, asfalto 1.300m, puente aéreo subvencionado)",
-      "alcalde": "Roberto Recabal Cárcamo / Claudio Fica",
-      "partido_alcalde": "Independiente / Chile Vamos",
+      "alcalde": "Jose Claudio Fica Gomez",
+      "partido_alcalde": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
       "presupuesto_mclp": 2150,
       "presupuesto_per_capita_mclp": 3323,
       "dependencia_fcm_pct": 91.5,
@@ -12111,7 +12531,7 @@ window.AYSEN_HUBS_DATA = {
       "museos_count": 1,
       "fondos_cultura_adjudicados_mclp": 45.6,
       "gasto_municipal_cultura_mclp": 21.8,
-      "gasto_cultura_per_capita_clp": 33590,
+      "gasto_cultura_per_capita_clp": 47500,
       "fndr_8pct_cultura_mclp": 38,
       "nota_percepcion_cultura_b4b": 4,
       "participacion_cultural_pct_c2": 66.7,
@@ -12142,15 +12562,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 23.2,
       "establecimientos_educacion_conectados_n": 2,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 28,
-      "deficit_habitacional_cualitativo_n": 98,
+      "deficit_habitacional_cuantitativo_n": 26,
+      "deficit_habitacional_cualitativo_n": 255,
       "sistemas_ssr_apr_n": 2,
-      "cobertura_ssr_apr_familias": 160,
-      "ganado_bovino_cabezas": 900,
-      "ganado_ovino_cabezas": 900,
+      "cobertura_ssr_apr_familias": 610,
+      "ganado_bovino_cabezas": 2812,
+      "ganado_ovino_cabezas": 3654,
       "bosque_nativo_ha": 490000,
       "plantaciones_ha": 450,
-      "consumo_lena_m3_hogar_ano": 21,
+      "consumo_lena_m3_hogar_ano": 22,
       "superficie_glaciares_km2": 1650,
       "esperanza_vida_total_anos": 79.2,
       "cobertura_empam_pct": 69.5,
@@ -12162,7 +12582,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 41.2,
       "barometro_intencion_migracion_juvenil_pct": 52.6,
       "barometro_evaluacion_acceso_salud_pct": 18.2,
-      "barometro_preocupacion_contaminacion_lena_pct": 94.2
+      "barometro_preocupacion_contaminacion_lena_pct": 94.2,
+      "indice_envejecimiento": 74,
+      "indice_masculinidad": 124.6,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 9.2,
+      "pobreza_multidimensional_casen_pct": 22.8,
+      "deficit_habitacional_cuantitativo_minvu": 26,
+      "deficit_habitacional_cualitativo_minvu": 255,
+      "comites_ssr_apr_doh": 2,
+      "beneficiarios_ssr_apr_doh": 610,
+      "establecimientos_slep_aysen": 2,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 11556,
+      "consumo_lena_m3_hogar_anio": 22,
+      "informalidad_lena_pct": 79,
+      "costo_real_generacion_diesel_kwh_clp": 620,
+      "subsidio_fiscal_diesel_kwh_clp": 358,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 2812,
+      "cabezas_ovinos_caf": 3654,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 10,
+      "tasa_aprobacion_rs_sni_pct": 20,
+      "autoidentificacion_indigena_pct": 18,
+      "comunidades_indigenas_conadi": 0,
+      "gasto_cultural_per_capita_clp": 47500,
+      "juntas_vecinos_activas": 4,
+      "sindicatos_pesca_artesanal": 0
     },
     {
       "id": 10,
@@ -12178,7 +12631,7 @@ window.AYSEN_HUBS_DATA = {
       "superficie_km2": 19710.6,
       "densidad_hab_km2": 0.026,
       "pobreza_ingresos_pct": 4.6,
-      "pobreza_multidim_pct": 16.5,
+      "pobreza_multidim_pct": 26.2,
       "superficie_snaspe_pct": 87.4,
       "unidades_snaspe": "Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar, Parque Nacional Laguna San Rafael (sector sur)",
       "ruta7_pavimentada_km": 0,
@@ -12186,8 +12639,8 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Alta (Barcaza marítima comercial hacia Puerto Natales y rampa norte de Barcaza Fiordo Mitchell)",
       "salud_principal": "Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas)",
       "aerodromo": "Aeródromo Caleta Tortel (SCTT, ripio 800m, evacuación médica y rescate)",
-      "alcalde": "Abel Becerra Vidal",
-      "partido_alcalde": "Independiente / Unidos por la Dignidad",
+      "alcalde": "Marisela Clorinda Jimenez Cruces",
+      "partido_alcalde": "Independiente",
       "presupuesto_mclp": 2050,
       "presupuesto_per_capita_mclp": 4059.4,
       "dependencia_fcm_pct": 92.8,
@@ -12252,7 +12705,7 @@ window.AYSEN_HUBS_DATA = {
       "museos_count": 0,
       "fondos_cultura_adjudicados_mclp": 91,
       "gasto_municipal_cultura_mclp": 18.5,
-      "gasto_cultura_per_capita_clp": 36706,
+      "gasto_cultura_per_capita_clp": 54120,
       "fndr_8pct_cultura_mclp": 42,
       "nota_percepcion_cultura_b4b": 4.8,
       "participacion_cultural_pct_c2": 100,
@@ -12283,15 +12736,15 @@ window.AYSEN_HUBS_DATA = {
       "cobertura_fibra_hogar_pct": 27.5,
       "establecimientos_educacion_conectados_n": 2,
       "fdt_ultima_milla_aprobado": true,
-      "deficit_habitacional_cuantitativo_n": 42,
-      "deficit_habitacional_cualitativo_n": 135,
+      "deficit_habitacional_cuantitativo_n": 39,
+      "deficit_habitacional_cualitativo_n": 375,
       "sistemas_ssr_apr_n": 2,
-      "cobertura_ssr_apr_familias": 190,
-      "ganado_bovino_cabezas": 1400,
-      "ganado_ovino_cabezas": 300,
+      "cobertura_ssr_apr_familias": 673,
+      "ganado_bovino_cabezas": 2900,
+      "ganado_ovino_cabezas": 3700,
       "bosque_nativo_ha": 780000,
       "plantaciones_ha": 240,
-      "consumo_lena_m3_hogar_ano": 19.5,
+      "consumo_lena_m3_hogar_ano": 21.5,
       "superficie_glaciares_km2": 1480,
       "esperanza_vida_total_anos": 79,
       "cobertura_empam_pct": 68.8,
@@ -12303,7 +12756,40 @@ window.AYSEN_HUBS_DATA = {
       "barometro_tension_desarrollo_conservacion_pct": 44,
       "barometro_intencion_migracion_juvenil_pct": 51.5,
       "barometro_evaluacion_acceso_salud_pct": 17.8,
-      "barometro_preocupacion_contaminacion_lena_pct": 95
+      "barometro_preocupacion_contaminacion_lena_pct": 95,
+      "indice_envejecimiento": 71.5,
+      "indice_masculinidad": 125.2,
+      "camas_psiquiatricas_uhce": 0,
+      "mediana_espera_especialidad_dias": 284,
+      "mediana_espera_quirurgica_dias": 395,
+      "tasa_mortalidad_cancer_gastrico_100k": 18.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 12.6,
+      "tasa_mortalidad_suicidio_100k": 15.1,
+      "pobreza_ingresos_casen_pct": 4.6,
+      "pobreza_multidimensional_casen_pct": 26.2,
+      "deficit_habitacional_cuantitativo_minvu": 39,
+      "deficit_habitacional_cualitativo_minvu": 375,
+      "comites_ssr_apr_doh": 2,
+      "beneficiarios_ssr_apr_doh": 673,
+      "establecimientos_slep_aysen": 2,
+      "matricula_ed_superior_sies": 0,
+      "consumo_lena_m3_solidos_anual": 14000,
+      "consumo_lena_m3_hogar_anio": 21.5,
+      "informalidad_lena_pct": 80,
+      "costo_real_generacion_diesel_kwh_clp": 680,
+      "subsidio_fiscal_diesel_kwh_clp": 412,
+      "ecmpo_solicitadas_ha": 0,
+      "concesiones_acuicolas_en_snaspe": 0,
+      "cabezas_bovinos_caf": 2900,
+      "cabezas_ovinos_caf": 3700,
+      "sucursales_banca_privada_cmf": 0,
+      "puntos_cajavecina_bancoestado": 12,
+      "tasa_aprobacion_rs_sni_pct": 18,
+      "autoidentificacion_indigena_pct": 19,
+      "comunidades_indigenas_conadi": 1,
+      "gasto_cultural_per_capita_clp": 54120,
+      "juntas_vecinos_activas": 4,
+      "sindicatos_pesca_artesanal": 2
     }
   ],
   "series": {
@@ -14284,6 +14770,14 @@ window.AYSEN_HUBS_DATA = {
       "varY": "innovacion_corfo_mclp"
     },
     {
+      "source": 10,
+      "target": 32,
+      "axis": "cultura_turismo_educacion",
+      "relationNote": "Caletas pesqueras y carpintería de ribera tradicional preservan la memoria histórica y patrimonio marítimo de los archipiélagos australes.",
+      "varX": "empresas_sii",
+      "varY": "museos_espacios_n"
+    },
+    {
       "source": 11,
       "target": 19,
       "axis": "energia_aire_salud",
@@ -14777,7 +15271,7 @@ window.AYSEN_HUBS_DATA = {
       "hub_origen": "salud",
       "hub_destino": "social",
       "llave": "comuna_ine",
-      "descripcion": "Red de 32 postas de salud rural frente al índice de pobreza multidimensional CASEN por comuna",
+      "descripcion": "Red de 27 postas de salud rural permanentes frente al índice de pobreza multidimensional CASEN por comuna",
       "peso_intensidad": 0.86,
       "indice_divergencia_percepcion": 0.39,
       "preset_recomendado": "hub_08_02"
@@ -15671,7 +16165,7 @@ window.AYSEN_HUBS_DATA = {
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "turismo",
-            "descripcion": "Superposición espacial de las 745 concesiones salmoneras frente a las 4 Zonas de Interés Turístico (ZOIT) y caletas pesqueras artesanales"
+            "descripcion": "Superposición espacial de las 745 concesiones salmoneras frente a las 3 Zonas de Interés Turístico (ZOIT) y caletas pesqueras artesanales"
           },
           "config": {
             "widget_type": "map",
@@ -17443,11 +17937,11 @@ window.AYSEN_HUBS_DATA = {
         {
           "preset_id": "hub_08_01",
           "hub_id": "salud",
-          "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales y 32 Postas Rurales",
+          "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales y 27 Postas Rurales",
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "salmonicultura",
-            "descripcion": "Superpone los 5 hospitales públicos y 32 postas rurales con los centros productivos aislados y tiempos de evacuación marítima SAMU"
+            "descripcion": "Superpone los 5 hospitales públicos y 27 postas de salud rural permanentes con los centros productivos aislados y tiempos de evacuación marítima SAMU"
           },
           "config": {
             "widget_type": "map",
@@ -17472,7 +17966,7 @@ window.AYSEN_HUBS_DATA = {
             "showBuffers": true,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Georreferenciación de los únicos 5 hospitales y las 32 postas rurales que atienden a los 100.745 habitantes de la región.",
+          "what_it_shows": "Georreferenciación de los 5 hospitales públicos y las 27 postas de salud rural permanentes que atienden a los 100.745 habitantes de la región.",
           "why_complex_system": "Puntos de fallo único: el Hospital Regional de Coyhaique concentra la totalidad de camas UCI y especialistas de alta complejidad para 108.000 km²."
         },
         {
@@ -17493,7 +17987,7 @@ window.AYSEN_HUBS_DATA = {
             "varY2": "medicos_por_mil_hab",
             "showAverage": true
           },
-          "what_it_shows": "Coyhaique alberga 205 de las 261 camas regionales (78.5%), mientras la Macrozona Sur cuenta con solo 14 camas para 5 comunas.",
+          "what_it_shows": "Coyhaique alberga 167 de las 261 camas regionales (63,98%), mientras la Macrozona Sur cuenta con solo 14 camas para 5 comunas.",
           "why_complex_system": "Centralismo intrarregional: la concentración hospitalaria en la capital regional genera extrema dependencia en evacuaciones de emergencia."
         },
         {
@@ -18730,7 +19224,7 @@ window.AYSEN_HUBS_DATA = {
       "dataset_id": "09_cultura_patrimonio",
       "titulo": "Cultura, Artes y Patrimonio: Infraestructura Cultural, Fondos Concursables, Monumentos y Percepción Ciudadana (SERPAT / MINCAP / GORE / Barómetro)",
       "region": "Región de Aysén del General Carlos Ibáñez del Campo",
-      "fecha_extraccion": "2026-10-24T00:00:00Z",
+      "fecha_extraccion": "2026-10-17T20:00:00Z",
       "fuentes_primarias": [
         {
           "nombre": "Servicio Nacional del Patrimonio Cultural (SERPAT) / IDE Patrimonio",
@@ -18756,6 +19250,26 @@ window.AYSEN_HUBS_DATA = {
           "nombre": "Barómetro Regional UAYSÉN 2024-2025",
           "url": "https://www.uaysen.cl/",
           "cobertura": "Indicadores empíricos B4_B (Oportunidades recreación y cultura) y C2 (Participación cultural)"
+        },
+        {
+          "nombre": "Corporacion Nacional de Desarrollo Indigena (CONADI) / INE Censo",
+          "url": "https://www.conadi.gob.cl/",
+          "cobertura": "Registro de Comunidades Indigenas (Ley 19.253), Autoidentificacion Censo/CASEN y Solicitudes ECMPO (Ley 20.249 Lafkenche)"
+        },
+        {
+          "nombre": "SERPAT Subdireccion de Patrimonio Cultural Inmaterial (SIGPA)",
+          "url": "https://www.sigpa.cl/",
+          "cobertura": "Inventario de Patrimonio Cultural Inmaterial: Maestros tejueleros de cipres, carpinteria de ribera y jineteadas camperas"
+        },
+        {
+          "nombre": "Consejo de Monumentos Nacionales (CMN) - Arqueologia y Paleontologia",
+          "url": "https://www.monumentos.gob.cl/",
+          "cobertura": "Sitios arqueologicos (Bano Nuevo 1, Paredon de las Manos) y yacimientos paleontologicos (Formacion Toqui)"
+        },
+        {
+          "nombre": "Registro Civil / SUBDERE (Tejido Asociativo)",
+          "url": "https://www.registrocivil.cl/",
+          "cobertura": "Catastro de Organizaciones Comunitarias (Ley N 19.418), Juntas de Vecinos, sindicatos de pescadores y mujeres rurales"
         }
       ],
       "resumen_regional": {
@@ -18767,7 +19281,81 @@ window.AYSEN_HUBS_DATA = {
         "gasto_municipal_cultura_anual_regional_mclp": 1292.9,
         "fndr_8pct_cultura_anual_regional_mclp": 1450,
         "nota_percepcion_cultura_regional_b4b": 4.12,
-        "participacion_cultural_pct_regional_c2": 42.8
+        "participacion_cultural_pct_regional_c2": 42.8,
+        "pueblos_originarios": {
+          "autoidentificacion_regional_pct": 28.7,
+          "fuente_medicion": "Censo de Poblacion y Vivienda INE / Encuesta CASEN MIDESO",
+          "poblacion_indigena_estimada": 28900,
+          "pueblo_predominante": "Mapuche-Huilliche (93%) con memoria historica de canoeros Chonos y Kawesqar",
+          "comuna_maxima_densidad": "Guaitecas (49.8% autoidentificacion)",
+          "total_comunidades_conadi_registradas": 74,
+          "solicitudes_ecmpo_lafkenche_ha": 621000,
+          "ecmpos_emblematicas": "Pu Wapi (Cisnes, ~227.000 ha) y Antunen Rain (Islas Huichas, ~394.000 ha)"
+        },
+        "sitios_paleo_arqueologicos": [
+          {
+            "id": "SIT-ARQ-01",
+            "nombre": "Cueva Bano Nuevo 1",
+            "comuna": "Coyhaique",
+            "antiguedad": "10.200 AP",
+            "categoria": "Sitio Arqueologico y Bioantropologico",
+            "descripcion": "Conjunto funerario mas antiguo de la Patagonia con 10 esqueletos humanos y fauna pleistocenica extinta"
+          },
+          {
+            "id": "SIT-ARQ-02",
+            "nombre": "Paredon de las Manos",
+            "comuna": "Rio Ibanez",
+            "antiguedad": "3.000 a 6.000 AP",
+            "categoria": "Monumento Historico (D.S. 2008) / Arte Rupestre Tehuelche",
+            "descripcion": "Alero rocoso con improntas de manos en negativo y escenas de caza de guanacos"
+          },
+          {
+            "id": "SIT-PAL-03",
+            "nombre": "Formacion Toqui (Mallin Grande)",
+            "comuna": "Chile Chico",
+            "antiguedad": "148 Ma (Jurasico Superior)",
+            "categoria": "Yacimiento Paleontologico de Interes Mundial",
+            "descripcion": "Yacimiento de descubrimiento del fosil de Chilesaurus diegosuarezi, dinosaurio teropodo herbivoro unico"
+          }
+        ],
+        "patrimonio_inmaterial_sigpa": {
+          "fuente": "SERPAT - Sistema de Informacion para la Gestion del Patrimonio Cultural Inmaterial (SIGPA)",
+          "expresiones_destacadas": [
+            {
+              "expresion": "Maestros tejueleros de cipres de las Guaitecas",
+              "cultores_estimados": 45,
+              "estado": "En riesgo de extincion por trabas a madera muerta y falta de aprendices",
+              "territorio": "Litoral norte y archipielagos (Melinka, Tortel, Cisnes)"
+            },
+            {
+              "expresion": "Carpinteros de ribera y constructores navales artesanales",
+              "cultores_estimados": 28,
+              "estado": "Vulnerable, activo en caletas pesqueras",
+              "territorio": "Puerto Aguirre, Puerto Gala, Puerto Gaviota, Melinka"
+            },
+            {
+              "expresion": "Jineteadas gauchas, chamame y tradiciones camperas patagonicas",
+              "cultores_estimados": 240,
+              "estado": "Vigorosa, 38 clubes camperos organizados",
+              "territorio": "Puerto Ibanez, Cochrane, Villa Manihuales, Lago Verde, Coyhaique"
+            }
+          ]
+        },
+        "tejido_asociativo": {
+          "fuente": "Registro Civil / SUBDERE / INDAP / SERNAPESCA",
+          "juntas_de_vecinos_ley_19418_total": 248,
+          "sindicatos_pescadores_artesanales_total": 45,
+          "agrupaciones_mujeres_rurales_total": 22,
+          "clubes_huasos_y_jineteada_total": 38,
+          "comites_campesinos_productores_total": 31
+        },
+        "paradoja_gasto_cultural_rural_urbano": {
+          "gasto_per_capita_coyhaique_clp": 11850,
+          "gasto_per_capita_lago_verde_clp": 49294,
+          "gasto_per_capita_tortel_clp": 36706,
+          "concentracion_fondos_mincap_coyhaique_pct": 55.9,
+          "explicacion": "Paradoja de escala demografica: el bajo numero de habitantes en comunas rurales infla el gasto per capita municipal, mientras el 56% de los fondos concursables ministeriales se concentra en Coyhaique."
+        }
       },
       "por_comuna": [
         {
@@ -19246,7 +19834,7 @@ window.AYSEN_HUBS_DATA = {
       "dataset_id": "10_ctci_innovacion",
       "titulo": "Ciencia, Tecnología, Conocimiento e Innovación (CTCi): Proyectos ANID, Innovación CORFO, Centros Científicos y Evaluación UAysén (ANID / MinCiencia / CORFO / Barómetro)",
       "region": "Región de Aysén del General Carlos Ibáñez del Campo",
-      "fecha_extraccion": "2026-10-24T00:00:00Z",
+      "fecha_extraccion": "2026-10-17T20:00:00Z",
       "fuentes_primarias": [
         {
           "nombre": "Agencia Nacional de Investigación y Desarrollo (ANID)",
@@ -19267,6 +19855,26 @@ window.AYSEN_HUBS_DATA = {
           "nombre": "Barómetro Regional UAYSÉN 2024-2025",
           "url": "https://www.uaysen.cl/",
           "cobertura": "Indicadores empíricos I1_I (Prioridad CTCi), I5 (Conocimiento UAysén), I8 (Nota UAysén) y F4_G (Aporte Universidades)"
+        },
+        {
+          "nombre": "Servicio de Informacion de Educacion Superior (SIES - MINEDUC)",
+          "url": "https://www.mifuturo.cl/bases-de-datos-matricula/",
+          "cobertura": "Matricula oficial educacion tecnica y universitaria: CFT Estatal Aysen, UAysen, INACAP Coyhaique"
+        },
+        {
+          "nombre": "Superintendencia de Educacion Superior (SES)",
+          "url": "https://www.sesuperior.cl/",
+          "cobertura": "Informes de fiscalizacion financiera, regimen de Administracion Provisional y cierre tutela UAysen 2026"
+        },
+        {
+          "nombre": "Comite de Desarrollo Productivo Regional (CDPR Corfo Aysen)",
+          "url": "https://www.corfo.cl/sedes/aysen/",
+          "cobertura": "Financiamiento descentralizado de innovacion, emprendimiento y transferencia tecnologica ($1.930 MM)"
+        },
+        {
+          "nombre": "Instituto Forestal (INFOR Sede Patagonia)",
+          "url": "https://infor.cl/sede-patagonia/",
+          "cobertura": "Investigacion silvicultural, monitoreo dasometrico de lenga y nirre, biomasa y dendroenergia (Ley 21.499)"
         }
       ],
       "resumen_regional": {
@@ -19277,9 +19885,60 @@ window.AYSEN_HUBS_DATA = {
         "proyectos_corfo_innova_total": 59,
         "monto_corfo_innova_regional_mclp": 8450,
         "centros_y_estaciones_ctci_total": 15,
-        "investigadores_residentes_est_total": 115,
+        "investigadores_residentes_est_total": 124,
         "percepcion_ctci_prioritaria_pct_regional_i1i": 89.6,
-        "evaluacion_uaysen_promedio_regional_i8": 5.08
+        "evaluacion_uaysen_promedio_regional_i8": 5.08,
+        "matricula_educacion_superior_sies": {
+          "fuente": "SIES / MINEDUC - Base Oficial de Matricula",
+          "matricula_total_regional": 2327,
+          "cft_estatal_aysen_estudiantes": 737,
+          "inacap_sede_coyhaique_estudiantes": 800,
+          "universidad_de_aysen_estudiantes": 790,
+          "distribucion_tecnica_pct": 66,
+          "distribucion_universitaria_pct": 34,
+          "tasa_retencion_regional_est": 68.5
+        },
+        "situacion_institucional_uaysen": {
+          "estado": "Regimen Regular Autonomo",
+          "administracion_provisional_ses": {
+            "periodo": "Enero 2024 - 15 de Enero de 2026",
+            "administrador_provisional": "Juan Pablo Prieto Cox",
+            "fecha_termino_formal": "15 de Enero de 2026",
+            "resolucion": "Saneamiento del deficit financiero de $3.000 MM y traspaso ordenado a autoridades electas"
+          },
+          "rectoria_2026_2030": {
+            "rector": "Dr. Victor Cubillos Godoy",
+            "periodo": "2026-2030",
+            "eleccion": "Elegido por votacion del cuerpo academico y proclamado para el periodo estatutario"
+          },
+          "infraestructura": "Campus Errazuriz consolidado como sede propia en Coyhaique",
+          "acreditacion_cna": "Nivel Basico (3 anos) con plan de tutoria de la Universidad de Tarapaca (UTA)"
+        },
+        "situacion_uach_campus_patagonia": {
+          "institucion": "Universidad Austral de Chile (UACh) - Campus Patagonia Coyhaique",
+          "estado_pregrado": "Cierre progresivo de oferta de pregrado en Coyhaique aprobado por Consejo Academico en Valdivia",
+          "enfoque_actual": "Lineas de investigacion aplicada, posgrados y continuidad de proyectos ANID/FIC-R"
+        },
+        "financiamiento_descentralizado_ctci": {
+          "cdpr_corfo_aysen": {
+            "monto_ejecutado_2024_mclp": 1930,
+            "presupuesto_2025_2026_mclp": 1900,
+            "mecanismo": "100% descentralizado mediante Comite de Desarrollo Productivo Regional presidido por Gobernador"
+          },
+          "fic_r_gore_aysen": {
+            "monto_historico_anual_mclp": 2000,
+            "estado_2024_2026": "Afectado por desaceleracion administrativa y exigencias de Glosa 7 DIPRES tras Caso Convenios"
+          }
+        },
+        "proyectos_anid_distincion": {
+          "proyectos_locales_residentes_count": 68,
+          "monto_locales_residentes_mclp": 11850.5,
+          "instituciones_residentes": "CIEP, UAysen, INIA Tamel Aike, INFOR Sede Patagonia, IFOP",
+          "proyectos_enclaves_extrarregionales_count": 52,
+          "monto_enclaves_extrarregionales_mclp": 5476.3,
+          "instituciones_extrarregionales": "Pontificia Universidad Catolica (Estacion Patagonia), CECs Valdivia, Universidad de Chile",
+          "diagnostico_extractivismo": "Enclaves que utilizan Aysen como laboratorio natural sin transferencia de capacidades permanentes a las comunidades"
+        }
       },
       "por_comuna": [
         {
@@ -19299,8 +19958,8 @@ window.AYSEN_HUBS_DATA = {
             "monto_anid_acumulado_mclp": 11850.5,
             "proyectos_corfo_innova_count": 28,
             "monto_corfo_innova_mclp": 4120,
-            "centros_y_estaciones_ctci_count": 5,
-            "investigadores_residentes_est": 82,
+            "centros_y_estaciones_ctci_count": 6,
+            "investigadores_residentes_est": 91,
             "percepcion_ctci_prioritaria_pct_i1i": 88.6,
             "evaluacion_uaysen_promedio_i8": 4.94,
             "origen_dato": "observado_oficial"
@@ -19747,6 +20406,22 @@ window.AYSEN_HUBS_DATA = {
           "institucion_titular": "MinCiencia / CONAF / UAysén",
           "investigadores_radicados": 1,
           "origen_dato": "MINCIENCIA_OBSERVA"
+        },
+        {
+          "id": "CTCI-NOD-15",
+          "nombre": "INFOR Sede Patagonia (Coyhaique Alto Km 4,5)",
+          "tipo": "Local_Endógena",
+          "codigo_comuna": "CL-XI-01",
+          "comuna_ine": "11101",
+          "lat": -45.5482,
+          "lng": -72.0125,
+          "lon": -72.0125,
+          "source_url": "https://infor.cl/sede-patagonia/",
+          "categoria": "Instituto_Forestal",
+          "vocacion_cientifica": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
+          "institucion_titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+          "investigadores_radicados": 9,
+          "origen_dato": "MINAGRI_INFOR"
         }
       ],
       "resumen_anid_adjudicaciones": {
@@ -21643,7 +22318,569 @@ window.AYSEN_HUBS_DATA = {
         "vuelos_subsidiados_mtt": false,
         "uso_principal": "Acceso estancias ganaderas y Parque Patagonia"
       }
-    ]
+    ],
+    "backbone_multimodal_wp11": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "version": "1.0.0",
+      "work_package": "WP_11",
+      "dataset_id": "11_conectividad_infraestructura_multimodal",
+      "titulo": "Conectividad Multimodal, Red Vial, Puertos, Barcazas, Aeropuertos y Telecomunicaciones en Aysén",
+      "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+      "fecha_extraccion": "2026-10-17T12:00:00Z",
+      "fuentes_primarias": [
+        {
+          "institucion": "Ministerio de Obras Públicas (MOP) - Dirección de Vialidad",
+          "sistema": "Red Vial Nacional: Dimensionamiento y Características",
+          "url_origen": "https://vialidad.mop.gob.cl",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/red_vial_mop_aysen.json"
+        },
+        {
+          "institucion": "Empresa Portuaria Chacabuco (EMPORCHA)",
+          "sistema": "Memorias Anuales e Integradas de Gestión y Operación Portuaria",
+          "url_origen": "https://chacabucoport.cl",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/memorias_portuarias_emporcha_dop.json"
+        },
+        {
+          "institucion": "Ministerio de Transportes y Telecomunicaciones (MTT) - DTPR",
+          "sistema": "Programa de Subsidios al Transporte en Zonas Aisladas",
+          "url_origen": "https://dtpr.mtt.gob.cl",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+        },
+        {
+          "institucion": "Junta de Aeronáutica Civil (JAC) / DGAC",
+          "sistema": "Estadísticas del Tráfico Aéreo Comercial y Red Aeroportuaria Austral",
+          "url_origen": "https://www.jac.gob.cl",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/transporte_aereo_jac_dgac.json"
+        },
+        {
+          "institucion": "Subsecretaría de Telecomunicaciones (SUBTEL) - FDT",
+          "sistema": "Catastro Técnico de Fibra Óptica Austral y Conectividad Escolar",
+          "url_origen": "https://www.subtel.gob.cl",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json"
+        },
+        {
+          "institucion": "Unidad de Pasos Fronterizos (Ministerio del Interior y Seguridad Pública) / Servicio Nacional de Aduanas",
+          "sistema": "Corredores Terrestres Internacionales y Convenio ATIT 1974 (Chile-Chile por Argentina)",
+          "url_origen": "https://www.pasosfronterizos.gov.cl",
+          "metodo_extraccion": "Estadísticas de Tránsito de Carga Rodada y Pasajeros en Pasos Huemules y Jeinimeni",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+        },
+        {
+          "institucion": "Dirección de Transporte Público Regional (DTPR - MTT) / Armada de Chile (DIRECTEMAR)",
+          "sistema": "Monitoreo Operacional y Resiliencia de Servicios Subsidiados Marítimos y Lacustres en Zonas Aisladas",
+          "url_origen": "https://dtpr.mtt.gob.cl",
+          "metodo_extraccion": "Informes de Continuidad de Servicio, Fallas de Carenas y Decretos de Contingencia de Barcazas",
+          "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+        }
+      ],
+      "por_comuna": [
+        {
+          "comuna_ine": "11101",
+          "comuna_nombre": "Coyhaique",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 684.2,
+              "red_vial_pavimentada_km": 192.4,
+              "red_vial_solucion_basica_km": 88.6,
+              "red_vial_ripio_km": 378.2,
+              "red_vial_tierra_km": 25,
+              "pavimentacion_pct": 41.1,
+              "distancia_coyhaique_km": 0,
+              "tiempo_traslado_coyhaique_horas": 0,
+              "dependencia_barcaza_nivel": 0
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 24.5,
+              "cobertura_fibra_hogar_pct": 75.5,
+              "establecimientos_educacion_conectados_n": 24,
+              "fdt_ultima_milla_aprobado": true
+            },
+            "pasos_fronterizos_internacionales": {
+              "pasos_habilitados": [
+                "Paso Huemules (Balmaceda)",
+                "Paso Coyhaique Alto"
+              ],
+              "rol_logistico": "Nodo de entrada y distribución de carga internacional ATIT desde Argentina"
+            }
+          }
+        },
+        {
+          "comuna_ine": "11102",
+          "comuna_nombre": "Lago Verde",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 312.5,
+              "red_vial_pavimentada_km": 0,
+              "red_vial_solucion_basica_km": 18.2,
+              "red_vial_ripio_km": 268.3,
+              "red_vial_tierra_km": 26,
+              "pavimentacion_pct": 5.8,
+              "distancia_coyhaique_km": 328,
+              "tiempo_traslado_coyhaique_horas": 5.5,
+              "dependencia_barcaza_nivel": 0
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 82.4,
+              "cobertura_fibra_hogar_pct": 17.6,
+              "establecimientos_educacion_conectados_n": 3,
+              "fdt_ultima_milla_aprobado": true
+            }
+          }
+        },
+        {
+          "comuna_ine": "11201",
+          "comuna_nombre": "Aysén",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 495.6,
+              "red_vial_pavimentada_km": 118.5,
+              "red_vial_solucion_basica_km": 42.1,
+              "red_vial_ripio_km": 305,
+              "red_vial_tierra_km": 30,
+              "pavimentacion_pct": 32.4,
+              "distancia_coyhaique_km": 67.2,
+              "tiempo_traslado_coyhaique_horas": 1,
+              "dependencia_barcaza_nivel": 1
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 38.2,
+              "cobertura_fibra_hogar_pct": 61.8,
+              "establecimientos_educacion_conectados_n": 14,
+              "fdt_ultima_milla_aprobado": true
+            }
+          }
+        },
+        {
+          "comuna_ine": "11202",
+          "comuna_nombre": "Cisnes",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 482,
+              "red_vial_pavimentada_km": 45.2,
+              "red_vial_solucion_basica_km": 38,
+              "red_vial_ripio_km": 365.8,
+              "red_vial_tierra_km": 33,
+              "pavimentacion_pct": 17.3,
+              "distancia_coyhaique_km": 196,
+              "tiempo_traslado_coyhaique_horas": 3,
+              "dependencia_barcaza_nivel": 1
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 56.4,
+              "cobertura_fibra_hogar_pct": 43.6,
+              "establecimientos_educacion_conectados_n": 6,
+              "fdt_ultima_milla_aprobado": true
+            },
+            "resiliencia_conectividad_maritima_lacustre": {
+              "servicio_maritimo": "Ruta Cordillera CAM0061 (Puerto Cisnes, Puyuhuapi, Raúl Marín)",
+              "bimodalidad_fiordos": true
+            }
+          }
+        },
+        {
+          "comuna_ine": "11203",
+          "comuna_nombre": "Guaitecas",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 28.5,
+              "red_vial_pavimentada_km": 4.2,
+              "red_vial_solucion_basica_km": 8.3,
+              "red_vial_ripio_km": 14,
+              "red_vial_tierra_km": 2,
+              "pavimentacion_pct": 43.9,
+              "distancia_coyhaique_km": 410,
+              "tiempo_traslado_coyhaique_horas": 18,
+              "dependencia_barcaza_nivel": 3
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 68.2,
+              "cobertura_fibra_hogar_pct": 31.8,
+              "establecimientos_educacion_conectados_n": 2,
+              "fdt_ultima_milla_aprobado": true
+            },
+            "resiliencia_conectividad_maritima_lacustre": {
+              "servicio_maritimo": "Ruta Cordillera CAM0061 (Melinka y Repollal)",
+              "dependencia_cabotaje_pct": 100,
+              "tiempo_navegacion_puerto_montt_horas": 14
+            }
+          }
+        },
+        {
+          "comuna_ine": "11301",
+          "comuna_nombre": "Cochrane",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 398,
+              "red_vial_pavimentada_km": 12.5,
+              "red_vial_solucion_basica_km": 25,
+              "red_vial_ripio_km": 332.5,
+              "red_vial_tierra_km": 28,
+              "pavimentacion_pct": 9.4,
+              "distancia_coyhaique_km": 334,
+              "tiempo_traslado_coyhaique_horas": 6.5,
+              "dependencia_barcaza_nivel": 0
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 48.6,
+              "cobertura_fibra_hogar_pct": 51.4,
+              "establecimientos_educacion_conectados_n": 4,
+              "fdt_ultima_milla_aprobado": true
+            }
+          }
+        },
+        {
+          "comuna_ine": "11302",
+          "comuna_nombre": "O'Higgins",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 168.4,
+              "red_vial_pavimentada_km": 0,
+              "red_vial_solucion_basica_km": 6.5,
+              "red_vial_ripio_km": 138.9,
+              "red_vial_tierra_km": 23,
+              "pavimentacion_pct": 3.9,
+              "distancia_coyhaique_km": 564,
+              "tiempo_traslado_coyhaique_horas": 12,
+              "dependencia_barcaza_nivel": 2
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 76.8,
+              "cobertura_fibra_hogar_pct": 23.2,
+              "establecimientos_educacion_conectados_n": 2,
+              "fdt_ultima_milla_aprobado": true
+            },
+            "resiliencia_conectividad_maritima_lacustre": {
+              "enlace_critico": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
+              "embarcacion": "Padre Antonio Ronchi",
+              "dependencia_aislamiento_rodado_pct": 100,
+              "punto_unico_falla": true,
+              "diagnostico": "Si la barcaza se detiene, el corte vehicular y de camiones de abastecimiento hacia Villa O'Higgins es del 100%."
+            }
+          }
+        },
+        {
+          "comuna_ine": "11303",
+          "comuna_nombre": "Tortel",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 142.2,
+              "red_vial_pavimentada_km": 0,
+              "red_vial_solucion_basica_km": 5.4,
+              "red_vial_ripio_km": 118.8,
+              "red_vial_tierra_km": 18,
+              "pavimentacion_pct": 3.8,
+              "distancia_coyhaique_km": 462,
+              "tiempo_traslado_coyhaique_horas": 9,
+              "dependencia_barcaza_nivel": 2
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 72.5,
+              "cobertura_fibra_hogar_pct": 27.5,
+              "establecimientos_educacion_conectados_n": 2,
+              "fdt_ultima_milla_aprobado": true
+            },
+            "resiliencia_conectividad_maritima_lacustre": {
+              "enlace_maritimo_fluvial": "Rampa Caleta Tortel / Enlace fluvial Río Mitchell y golfo",
+              "aislamiento_vial_urbano": "Asentamiento peatonal sin calles para vehículos; transporte interno en pasarelas de ciprés"
+            }
+          }
+        },
+        {
+          "comuna_ine": "11401",
+          "comuna_nombre": "Chile Chico",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 384,
+              "red_vial_pavimentada_km": 22,
+              "red_vial_solucion_basica_km": 38.5,
+              "red_vial_ripio_km": 298.5,
+              "red_vial_tierra_km": 25,
+              "pavimentacion_pct": 15.8,
+              "distancia_coyhaique_km": 298,
+              "tiempo_traslado_coyhaique_horas": 4.5,
+              "dependencia_barcaza_nivel": 1
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 52.1,
+              "cobertura_fibra_hogar_pct": 47.9,
+              "establecimientos_educacion_conectados_n": 3,
+              "fdt_ultima_milla_aprobado": true
+            },
+            "resiliencia_conectividad_maritima_lacustre": {
+              "enlace_lacustre": "Lago General Carrera (Chile Chico - Puerto Ibáñez)",
+              "embarcaciones": [
+                "La Tehuelche",
+                "Pilchero"
+              ],
+              "paso_fronterizo_internacional": "Paso Jeinimeni (Conexión Los Antiguos - RN40)",
+              "corredor_binacional_activo": true
+            }
+          }
+        },
+        {
+          "comuna_ine": "11402",
+          "comuna_nombre": "Río Ibáñez",
+          "datos": {
+            "conectividad_terrestre": {
+              "red_vial_total_km": 291,
+              "red_vial_pavimentada_km": 18,
+              "red_vial_solucion_basica_km": 28,
+              "red_vial_ripio_km": 218,
+              "red_vial_tierra_km": 27,
+              "pavimentacion_pct": 15.8,
+              "distancia_coyhaique_km": 116,
+              "tiempo_traslado_coyhaique_horas": 1.7,
+              "dependencia_barcaza_nivel": 0
+            },
+            "conectividad_digital": {
+              "hogares_sin_internet_fijo_pct": 64.8,
+              "cobertura_fibra_hogar_pct": 35.2,
+              "establecimientos_educacion_conectados_n": 4,
+              "fdt_ultima_milla_aprobado": true
+            }
+          }
+        }
+      ],
+      "series_multianuales": {
+        "emporcha_toneladas_transferidas": [
+          {
+            "periodo": "2018",
+            "toneladas_totales": 385200,
+            "carga_transbordadores": 204100,
+            "carga_comercial": 102300,
+            "graneles_mineros": 58800,
+            "acuicultura_pesca": 20000
+          },
+          {
+            "periodo": "2019",
+            "toneladas_totales": 412500,
+            "carga_transbordadores": 218400,
+            "carga_comercial": 108600,
+            "graneles_mineros": 63500,
+            "acuicultura_pesca": 22000
+          },
+          {
+            "periodo": "2020",
+            "toneladas_totales": 368400,
+            "carga_transbordadores": 198200,
+            "carga_comercial": 94800,
+            "graneles_mineros": 56400,
+            "acuicultura_pesca": 19000
+          },
+          {
+            "periodo": "2021",
+            "toneladas_totales": 421100,
+            "carga_transbordadores": 226300,
+            "carga_comercial": 105400,
+            "graneles_mineros": 65200,
+            "acuicultura_pesca": 24200
+          },
+          {
+            "periodo": "2022",
+            "toneladas_totales": 440850,
+            "carga_transbordadores": 238150,
+            "carga_comercial": 109800,
+            "graneles_mineros": 67400,
+            "acuicultura_pesca": 25500
+          },
+          {
+            "periodo": "2023",
+            "toneladas_totales": 452634,
+            "carga_transbordadores": 245180,
+            "carga_comercial": 112454,
+            "graneles_mineros": 68500,
+            "acuicultura_pesca": 26500
+          },
+          {
+            "periodo": "2024",
+            "toneladas_totales": 468200,
+            "carga_transbordadores": 254300,
+            "carga_comercial": 116200,
+            "graneles_mineros": 70100,
+            "acuicultura_pesca": 27600
+          },
+          {
+            "periodo": "2025",
+            "toneladas_totales": 481500,
+            "carga_transbordadores": 262100,
+            "carga_comercial": 119800,
+            "graneles_mineros": 71200,
+            "acuicultura_pesca": 28400
+          },
+          {
+            "periodo": "2026",
+            "toneladas_totales": 495000,
+            "carga_transbordadores": 269500,
+            "carga_comercial": 123400,
+            "graneles_mineros": 72800,
+            "acuicultura_pesca": 29300
+          }
+        ],
+        "emporcha_pasajeros_cruceros": [
+          {
+            "temporada": "2018-2019",
+            "recaladas_cruceros": 18,
+            "pasajeros_cruceros": 16400,
+            "tripulantes": 7200
+          },
+          {
+            "temporada": "2019-2020",
+            "recaladas_cruceros": 21,
+            "pasajeros_cruceros": 19800,
+            "tripulantes": 8600
+          },
+          {
+            "temporada": "2020-2021",
+            "recaladas_cruceros": 0,
+            "pasajeros_cruceros": 0,
+            "tripulantes": 0
+          },
+          {
+            "temporada": "2021-2022",
+            "recaladas_cruceros": 4,
+            "pasajeros_cruceros": 2100,
+            "tripulantes": 1200
+          },
+          {
+            "temporada": "2022-2023",
+            "recaladas_cruceros": 16,
+            "pasajeros_cruceros": 14200,
+            "tripulantes": 6400
+          },
+          {
+            "temporada": "2023-2024",
+            "recaladas_cruceros": 23,
+            "pasajeros_cruceros": 22450,
+            "tripulantes": 9800
+          },
+          {
+            "temporada": "2024-2025",
+            "recaladas_cruceros": 25,
+            "pasajeros_cruceros": 25800,
+            "tripulantes": 11200
+          },
+          {
+            "temporada": "2025-2026",
+            "recaladas_cruceros": 28,
+            "pasajeros_cruceros": 28500,
+            "tripulantes": 12400
+          }
+        ],
+        "balmaceda_pasajeros_jac": [
+          {
+            "periodo": "2015",
+            "pasajeros": 420000,
+            "carga_ton": 820
+          },
+          {
+            "periodo": "2016",
+            "pasajeros": 455000,
+            "carga_ton": 890
+          },
+          {
+            "periodo": "2017",
+            "pasajeros": 490000,
+            "carga_ton": 950
+          },
+          {
+            "periodo": "2018",
+            "pasajeros": 530000,
+            "carga_ton": 1040
+          },
+          {
+            "periodo": "2019",
+            "pasajeros": 585000,
+            "carga_ton": 1120
+          },
+          {
+            "periodo": "2020",
+            "pasajeros": 240000,
+            "carga_ton": 680
+          },
+          {
+            "periodo": "2021",
+            "pasajeros": 365000,
+            "carga_ton": 880
+          },
+          {
+            "periodo": "2022",
+            "pasajeros": 520000,
+            "carga_ton": 1180
+          },
+          {
+            "periodo": "2023",
+            "pasajeros": 605000,
+            "carga_ton": 1290
+          },
+          {
+            "periodo": "2024",
+            "pasajeros": 648000,
+            "carga_ton": 1360
+          },
+          {
+            "periodo": "2025",
+            "pasajeros": 665000,
+            "carga_ton": 1410
+          },
+          {
+            "periodo": "2026",
+            "pasajeros": 682000,
+            "carga_ton": 1450
+          }
+        ]
+      },
+      "resumen_regional": {
+        "region_codigo": "CL-XI",
+        "region_nombre": "Aysén del General Carlos Ibáñez del Campo",
+        "soberania_logistica_chile_chile_argentina": {
+          "convenio": "Convenio de Transporte Internacional Terrestre (ATIT 1974)",
+          "corredor_terrestre_binacional": "Tránsito continuo Chile-Chile vía Ruta Nacional 40 argentina y Paso Cardenal Samoré hacia Paso Huemules y Jeinimeni",
+          "flujo_abastecimiento_critico": "Abastecimiento regular de gas licuado de petróleo (GLP), carnes, frutas, verduras frescas y abarrotes",
+          "puntos_control_fronterizo": [
+            "Paso Huemules (Balmaceda / Coyhaique)",
+            "Paso Jeinimeni (Chile Chico)",
+            "Paso Coyhaique Alto",
+            "Paso Roballos (Cochrane)"
+          ],
+          "vulnerabilidad_cuello_botella": "Nevadas en Paso Cardenal Samoré y cortes en tramos no pavimentados de RN40 argentina amenazan con desabastecimiento regional en 5 a 7 días ante eventos meteorológicos",
+          "fuente": "Unidad de Pasos Fronterizos (Ministerio del Interior) / Dirección Nacional de Aduanas"
+        },
+        "resiliencia_barcazas_subsidiadas": {
+          "programa": "Programa Especial de Subsidio al Transporte en Zonas Aisladas (DTPR / MTT)",
+          "puntos_criticos_single_point_of_failure": [
+            {
+              "enlace": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
+              "comuna_afectada": "Villa O'Higgins (11302)",
+              "embarcacion_titular": "Padre Antonio Ronchi",
+              "vulnerabilidad": "Aislamiento vehicular y rodado absoluto (100% de corte) ante detención, mantenimiento o falla mecánica",
+              "frecuencia_nominal_cruces_diarios": 6
+            },
+            {
+              "enlace": "Lago General Carrera (Chile Chico - Puerto Ingeniero Ibáñez)",
+              "comuna_afectada": "Chile Chico (11401)",
+              "embarcaciones": [
+                "La Tehuelche",
+                "Pilchero"
+              ],
+              "vulnerabilidad": "Aislamiento comercial y encarecimiento del abastecimiento por vía terrestre argentina ante fallas prolongadas de carena",
+              "frecuencia_nominal": "Diaria bimodal"
+            },
+            {
+              "enlace": "Ruta Cordillera Litoral Norte (CAM0061)",
+              "comunas_afectadas": [
+                "Guaitecas (11203)",
+                "Cisnes (11202)",
+                "Aysén (11201)"
+              ],
+              "recorrido": "Puerto Montt - Melinka - Raúl Marín Balmaceda - Gala - Gaviota - Cisnes - Puerto Aguirre - Puerto Chacabuco",
+              "vulnerabilidad": "Tiempos de navegación de hasta 32 horas expuestos a marejadas en Golfo Corcovado y Canal Moraleda",
+              "frecuencia_nominal": "2 a 3 viajes semanales"
+            }
+          ],
+          "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR"
+        }
+      }
+    }
   },
   "spatialFiles": [
     "01_gob_poder_finanzas.json",
@@ -22647,7 +23884,7 @@ window.AYSEN_HUBS_DATA = {
       "label": "Centros CTCi, Laboratorios y CORFO",
       "hubId": "ctci_innovacion",
       "color": "#0e7490",
-      "count": 14
+      "count": 15
     },
     {
       "id": "gobernanza_obras",
@@ -27328,9 +28565,9 @@ window.AYSEN_HUBS_DATA = {
       "geocodedBy": "comuna_cabecera_fallback"
     },
     {
-      "id": "tur_zoit_coyhaique",
-      "nombre": "ZOIT Destino Coyhaique / Valle Simpson",
-      "tipo": "Zona de Interés Turístico (ZOIT)",
+      "id": "tur_portal_comunidades_aysen",
+      "nombre": "Red de Comunidades Portal de la Patagonia - Nodo Regional Aysén",
+      "tipo": "Gobernanza Territorial y Conservación",
       "layerKey": "parques_snaspe",
       "hubId": "turismo",
       "comuna_ine": "11101",
@@ -27342,7 +28579,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "prestadores",
       "magnitudeLabel": "Superficie / Oferta",
       "titular": "CONAF SNASPE / SERNATUR",
-      "sourceUrl": "https://www.subturismo.gob.cl/zoit/",
+      "sourceUrl": "https://comunidadesportal.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
       "color": "#00357f",
@@ -30136,6 +31373,27 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeLabel": "Sensores de microclima andino y dinámica de bosques de Lenga en el valle de Palena",
       "titular": "MinCiencia / CONAF / UAysén",
       "sourceUrl": "https://observa.minciencia.gob.cl/",
+      "bufferGenerator": true,
+      "bufferRadiusM": 25000,
+      "color": "#0e7490",
+      "geocodedBy": "explicit_coords"
+    },
+    {
+      "id": "ctci_CTCI-NOD-15",
+      "nombre": "INFOR Sede Patagonia (Coyhaique Alto Km 4,5)",
+      "tipo": "Local_Endógena",
+      "layerKey": "centros_ctci",
+      "hubId": "ctci_innovacion",
+      "comuna_ine": "11101",
+      "nombre_comuna": "Coyhaique",
+      "localidad": "Coyhaique",
+      "lat": -45.5482,
+      "lon": -72.0125,
+      "magnitudeValue": 9,
+      "magnitudeUnit": "investigadores/I+D",
+      "magnitudeLabel": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
+      "titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+      "sourceUrl": "https://infor.cl/sede-patagonia/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
       "color": "#0e7490",
@@ -34819,9 +36077,9 @@ window.AYSEN_HUBS_DATA = {
     ],
     "parques_snaspe": [
       {
-        "id": "tur_zoit_coyhaique",
-        "nombre": "ZOIT Destino Coyhaique / Valle Simpson",
-        "tipo": "Zona de Interés Turístico (ZOIT)",
+        "id": "tur_portal_comunidades_aysen",
+        "nombre": "Red de Comunidades Portal de la Patagonia - Nodo Regional Aysén",
+        "tipo": "Gobernanza Territorial y Conservación",
         "layerKey": "parques_snaspe",
         "hubId": "turismo",
         "comuna_ine": "11101",
@@ -34833,7 +36091,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "prestadores",
         "magnitudeLabel": "Superficie / Oferta",
         "titular": "CONAF SNASPE / SERNATUR",
-        "sourceUrl": "https://www.subturismo.gob.cl/zoit/",
+        "sourceUrl": "https://comunidadesportal.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
         "color": "#00357f",
@@ -37637,6 +38895,27 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeLabel": "Sensores de microclima andino y dinámica de bosques de Lenga en el valle de Palena",
         "titular": "MinCiencia / CONAF / UAysén",
         "sourceUrl": "https://observa.minciencia.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "ctci_CTCI-NOD-15",
+        "nombre": "INFOR Sede Patagonia (Coyhaique Alto Km 4,5)",
+        "tipo": "Local_Endógena",
+        "layerKey": "centros_ctci",
+        "hubId": "ctci_innovacion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.5482,
+        "lon": -72.0125,
+        "magnitudeValue": 9,
+        "magnitudeUnit": "investigadores/I+D",
+        "magnitudeLabel": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
+        "titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+        "sourceUrl": "https://infor.cl/sede-patagonia/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
         "color": "#0e7490",

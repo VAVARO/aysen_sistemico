@@ -5,7 +5,7 @@
   "dataset_id": "01_gob_poder_finanzas",
   "titulo": "Poder Político, Autoridades y Finanzas Municipales (SINIM / BCN / SERVEL)",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-11-02T12:14:07.331353+00:00",
+  "fecha_extraccion": "2026-10-17T20:00:00Z",
   "fuentes_primarias": [
     {
       "institucion": "Biblioteca del Congreso Nacional de Chile (BCN)",
@@ -34,11 +34,25 @@
       "url_origen": "https://www.dipres.gob.cl/",
       "metodo_extraccion": "Catastro de Inversión Pública Territorial",
       "archivo_raw_local": "data/raw/politico_sinim/dipres_gore_fndr_raw.json"
+    },
+    {
+      "institucion": "Contraloria General de la Republica (CGR)",
+      "sistema": "Sistema Nacional de Informes de Auditoria e Investigaciones Especiales",
+      "url_origen": "https://www.contraloria.cl/",
+      "metodo_extraccion": "Auditorias de Legalidad, Informes Especiales y Sumarios Administrativos Regionales",
+      "archivo_raw_local": "data/raw/politico_sinim/cgr_auditorias_aysen_raw.json"
+    },
+    {
+      "institucion": "Ministerio de Desarrollo Social y Familia (MIDESO)",
+      "sistema": "Banco Integrado de Proyectos (BIP) / SNI",
+      "url_origen": "https://sni.gob.cl/",
+      "metodo_extraccion": "Evaluacion Tecnico-Economica Ex-Ante de Iniciativas de Inversion Municipal y Regional",
+      "archivo_raw_local": "data/raw/politico_sinim/mideso_bip_proyectos_raw.json"
     }
   ],
   "resumen_regional": {
-    "gobernador_regional": "Andrea Macías Palma (2021-2024) / Marcelo Santana Vargas (electo 2024)",
-    "delegado_presidencial_regional": "Rodrigo Araya Morales",
+    "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos · Periodo 2024-2028)",
+    "delegado_presidencial_regional": "Jorge Diaz Guzman",
     "senadores_circunscripcion_14": [
       {
         "nombre": "David Sandoval Plaza",
@@ -275,6 +289,180 @@
             "valor": 80001.3
           }
         ]
+      },
+      {
+        "indicador": "ejecucion_real_fndr_dipres_mclp",
+        "nombre": "Ejecucion Real Devengada FNDR GORE Aysen (DIPRES)",
+        "unidad": "M$ CLP",
+        "fuente": "DIPRES / Balances de Ejecucion Presupuestaria Gobiernos Regionales",
+        "valores": [
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 51200.0
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 54300.0
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 56100.0
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 60500.0
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 64800.0
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 61548.0
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 57235.5
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 62500.0
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 66800.0
+          }
+        ]
+      },
+      {
+        "indicador": "inversion_sectorial_ministerial_mclp",
+        "nombre": "Inversion Sectorial Ministerial Centralizada (MOP, MINVU, Salud, MTT)",
+        "unidad": "M$ CLP",
+        "fuente": "DIPRES / Ministerios Sectoriales (Gasto Efectivo Centralizado en Aysen)",
+        "valores": [
+          {
+            "periodo": "2018",
+            "fecha": "2018-12-31",
+            "valor": 320000.0
+          },
+          {
+            "periodo": "2019",
+            "fecha": "2019-12-31",
+            "valor": 340000.0
+          },
+          {
+            "periodo": "2020",
+            "fecha": "2020-12-31",
+            "valor": 355000.0
+          },
+          {
+            "periodo": "2021",
+            "fecha": "2021-12-31",
+            "valor": 372000.0
+          },
+          {
+            "periodo": "2022",
+            "fecha": "2022-12-31",
+            "valor": 385000.0
+          },
+          {
+            "periodo": "2023",
+            "fecha": "2023-12-31",
+            "valor": 395000.0
+          },
+          {
+            "periodo": "2024",
+            "fecha": "2024-12-31",
+            "valor": 402000.0
+          },
+          {
+            "periodo": "2025",
+            "fecha": "2025-12-31",
+            "valor": 415000.0
+          },
+          {
+            "periodo": "2026",
+            "fecha": "2026-12-31",
+            "valor": 428000.0
+          }
+        ]
+      }
+    ],
+    "autoridades_vigentes_corte": "Periodo Constitucional 2024-2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026)",
+    "ejecucion_fndr_2023_devengado_mclp": 61548.0,
+    "ejecucion_fndr_2024_cierre_pct": 79.0,
+    "inversion_sectorial_ministerial_mclp": 395000.0,
+    "politica_zonas_extremas": {
+      "norma": "Decreto Supremo N 43 de 2023 del Ministerio del Interior y Seguridad Publica / SUBDERE",
+      "nombre": "Politica Nacional de Zonas Extremas (sucesora permanente del PEDZE D.S. 1.242/2014)",
+      "mecanismo_evaluacion_sni": "Metodologia de costo-eficiencia (CE) sin exigencia de rentabilidad social positiva (VAN > 0) para comunas aisladas",
+      "vigencia": "Permanente decenal 2023-2033"
+    },
+    "banco_integrado_proyectos_sni_regional": {
+      "fuente": "MIDESO Regional / Banco Integrado de Proyectos (BIP)",
+      "tasa_aprobacion_rs_promedio_pct": 37.5,
+      "tasa_falta_informacion_fi_pct": 45.0,
+      "tasa_objetado_tecnico_ot_pct": 15.0,
+      "tasa_incumple_norma_in_pct": 2.5,
+      "tasa_rechazo_observacion_comunas_rurales_pct": 65.0,
+      "proyectos_rs_promedio_comuna_rural_anual": 1.8
+    },
+    "instrumentos_planificacion_territorial": {
+      "erd": {
+        "nombre": "Estrategia Regional de Desarrollo de Aysen 2010-2030 (ERD)",
+        "estado": "Desactualizada",
+        "vigencia": "2010-2030",
+        "observacion": "Formulada en 2009-2010; desfasada de la Ley 21.074 de Descentralizacion y Ley 21.455 de Cambio Climatico"
+      },
+      "prot": {
+        "nombre": "Plan Regional de Ordenamiento Territorial (PROT)",
+        "estado": "En tramite / No vinculante",
+        "marco_normativo": "Traspasado por Ley N 21.074 y D.S. N 243 de 2019 de Interior",
+        "observacion": "Sin vigencia vinculante para zonificacion de suelos rurales"
+      },
+      "prica": {
+        "nombre": "Plan Regulador Intercomunal Coyhaique-Aysen (PRICA)",
+        "estado": "Aprobado y Vigente",
+        "fecha_aprobacion": "Octubre 2026",
+        "hito_legal": "Aprobado por Consejo Regional (CORE), tomado de razon por CGR y publicado en el Diario Oficial",
+        "alcance": "Norma 11 centros poblados y areas de extension intercomunales de Coyhaique y Puerto Aysen"
+      },
+      "prc_resumen": "Coyhaique y Aysen en actualizacion amparados por PRICA; Chile Chico en actualizacion avanzada con EAE; 7 comunas rurales desactualizadas o con anteproyectos incipientes frente a loteos D.L. 3.516",
+      "pladeco_resumen": "Actualizados: Tortel (2022-2030), O'Higgins (2024-2030 D.620), Lago Verde (2020-2028), Chile Chico (2023-2027), Coyhaique (2024-2030)"
+    },
+    "hitos_control_cgr_y_jurisdiccional": [
+      {
+        "id": "CGR-GUA-01",
+        "entidad": "Ilustre Municipalidad de Las Guaitecas",
+        "caso": "Fraude al Fisco Historico en Melinka",
+        "informe_cgr": "Informe Especial de Investigacion N 76 de 2017 de la Contraloria Regional de Aysen",
+        "monto_sustraido_mclp": 351.0,
+        "sentencia_penal": "Condena penal de 10 anos de presidio efectivo al exalcalde Cristian Alvarado Oyarzo por malversacion continuada de caudales publicos (2013-2016), ratificada a firme por la Corte de Apelaciones de Puerto Montt"
+      },
+      {
+        "id": "CGR-TOR-02",
+        "entidad": "Ilustre Municipalidad de Caleta Tortel",
+        "caso": "Contrato de Alcantarillado y Planta de Tratamiento de Aguas Servidas",
+        "informe_cgr": "Informes de Auditoria de la Contraloria Regional de Aysen sobre Contrato ICAFAL / Municipio",
+        "monto_sentencia_mclp": 670.0,
+        "sentencia_civil": "Sentencia judicial del Juzgado de Letras de Cochrane que condena a Tortel por $670 MM en litigio por retrasos de 583 dias e incumplimientos contractuales en obras de alcantarillado"
+      },
+      {
+        "id": "CGR-GOR-03",
+        "entidad": "Gobierno Regional de Aysen (GORE) / Fundacion ProCultura",
+        "caso": "Caso Convenios - Programa Familias Rezagadas Provincia Capitan Prat",
+        "informe_cgr": "Investigacion Especial CGR y Dictamenes sobre transferencias directas",
+        "monto_convenio_mclp": 1673.356,
+        "resolucion": "Anulacion formal del convenio de $1.673 MM en agosto de 2023 por votacion del Consejo Regional (CORE) antes de toma de razon ante el escandalo nacional del Caso Convenios, al detectarse sobrecosto de mas de $23 MM por familia para 70 beneficiarios"
       }
     ]
   },
@@ -291,11 +479,11 @@
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Carlos Gatica Villegas",
-          "alcalde_partido_pacto": "Partido Demócrata Cristiano (PDC) / Chile Vamos y Centro Democrático",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_partido_pacto": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
+          "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 84.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 26540.8,
@@ -303,7 +491,7 @@
           "dependencia_fcm_pct": 46.5,
           "ingresos_patentes_acuicolas_mineras_mclp": 1450.0,
           "autonomia_financiera_nivel": "Media-Alta (Menor dependencia FCM regional)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 42.1,
           "ingresos_patentes_acuicolas_mclp": 725.0,
           "ingresos_patentes_mineras_mclp": 725.0
@@ -672,12 +860,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11102",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Claudio Fica / Nelson Opazo López",
-          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Claudia Andrea Valdes Vasquez",
+          "alcalde_partido_pacto": "Independiente / Contigo Chile Mejor",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 87.5,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2450.2,
@@ -685,7 +873,7 @@
           "dependencia_fcm_pct": 89.2,
           "ingresos_patentes_acuicolas_mineras_mclp": 35.0,
           "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 48.5,
           "ingresos_patentes_acuicolas_mclp": 17.5,
           "ingresos_patentes_mineras_mclp": 17.5
@@ -1054,12 +1242,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11201",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Julio Uribe Alvarado",
-          "alcalde_partido_pacto": "Independiente / Por Chile y sus Regiones",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Luis Martinez Gallardo",
+          "alcalde_partido_pacto": "Union Democrata Independiente (UDI) / Chile Vamos",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 82.8,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 14210.5,
@@ -1067,7 +1255,7 @@
           "dependencia_fcm_pct": 52.8,
           "ingresos_patentes_acuicolas_mineras_mclp": 1850.0,
           "autonomia_financiera_nivel": "Media (Aporte de patentes acuícolas y portuarias Puerto Chacabuco)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 44.2,
           "ingresos_patentes_acuicolas_mclp": 1665.0,
           "ingresos_patentes_mineras_mclp": 185.0
@@ -1436,12 +1624,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11202",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Francisco Roncagliolo Lepio",
-          "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Francisco Javier Roncagliolo Lepio",
+          "alcalde_partido_pacto": "Renovacion Nacional (RN) / Chile Vamos",
+          "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 83.1,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 6100.0,
@@ -1449,7 +1637,7 @@
           "dependencia_fcm_pct": 74.5,
           "ingresos_patentes_acuicolas_mineras_mclp": 680.0,
           "autonomia_financiera_nivel": "Baja (Alta dependencia FCM con compensación por patentes de acuicultura)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 39.8,
           "ingresos_patentes_acuicolas_mclp": 612.0,
           "ingresos_patentes_mineras_mclp": 68.0
@@ -1818,12 +2006,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11203",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Marcos Silva Miranda",
-          "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Bans Puinao Carimoney",
+          "alcalde_partido_pacto": "Evolucion Politica (Evopoli) / Chile Vamos",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 85.9,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 3300.0,
@@ -1831,7 +2019,7 @@
           "dependencia_fcm_pct": 83.0,
           "ingresos_patentes_acuicolas_mineras_mclp": 210.0,
           "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM en archipiélago insular)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 51.2,
           "ingresos_patentes_acuicolas_mclp": 189.0,
           "ingresos_patentes_mineras_mclp": 21.0
@@ -2200,12 +2388,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11401",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Luperciano Muñoz González",
+          "alcalde_nombre": "Ariel Keim Hermosilla",
           "alcalde_partido_pacto": "Independiente",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 83.6,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 5400.0,
@@ -2213,7 +2401,7 @@
           "dependencia_fcm_pct": 71.2,
           "ingresos_patentes_acuicolas_mineras_mclp": 320.0,
           "autonomia_financiera_nivel": "Baja (Dependencia FCM con patentes mineras y comerciales)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 46.7,
           "ingresos_patentes_acuicolas_mclp": 32.0,
           "ingresos_patentes_mineras_mclp": 288.0
@@ -2582,12 +2770,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11402",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Marcelo Santana Vargas / Alcaldía en ejercicio",
-          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Marcelo Daniel Jelvez Cardenas",
+          "alcalde_partido_pacto": "Union Democrata Independiente (UDI) / Chile Vamos",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 86.4,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 3950.0,
@@ -2595,7 +2783,7 @@
           "dependencia_fcm_pct": 79.6,
           "ingresos_patentes_acuicolas_mineras_mclp": 115.0,
           "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 47.9,
           "ingresos_patentes_acuicolas_mclp": 57.5,
           "ingresos_patentes_mineras_mclp": 57.5
@@ -2964,12 +3152,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11301",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Patricio Ulloa Georgia / Jorge Calderón Núñez",
-          "alcalde_partido_pacto": "UDI / Chile Vamos (Ulloa) / Partido Radical (Calderón)",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Patricio Ulloa Georgia",
+          "alcalde_partido_pacto": "Independiente / Chile Vamos",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 85.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 4600.0,
@@ -2977,7 +3165,7 @@
           "dependencia_fcm_pct": 76.8,
           "ingresos_patentes_acuicolas_mineras_mclp": 180.0,
           "autonomia_financiera_nivel": "Baja (Dependencia FCM)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 43.5,
           "ingresos_patentes_acuicolas_mclp": 90.0,
           "ingresos_patentes_mineras_mclp": 90.0
@@ -3346,12 +3534,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11302",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Roberto Recabal Cárcamo / Claudio Fica",
-          "alcalde_partido_pacto": "Independiente / Chile Vamos",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Jose Claudio Fica Gomez",
+          "alcalde_partido_pacto": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 88.0,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2150.0,
@@ -3359,7 +3547,7 @@
           "dependencia_fcm_pct": 91.5,
           "ingresos_patentes_acuicolas_mineras_mclp": 28.0,
           "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM por aislamiento terminal Carretera Austral)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 50.4,
           "ingresos_patentes_acuicolas_mclp": 14.0,
           "ingresos_patentes_mineras_mclp": 14.0
@@ -3728,12 +3916,12 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11303",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Abel Becerra Vidal",
-          "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
-          "periodo_alcaldia": "2021-2024 / 2024-2028",
+          "alcalde_nombre": "Marisela Clorinda Jimenez Cruces",
+          "alcalde_partido_pacto": "Independiente",
+          "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 87.3,
-          "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2050.0,
@@ -3741,7 +3929,7 @@
           "dependencia_fcm_pct": 92.8,
           "ingresos_patentes_acuicolas_mineras_mclp": 22.0,
           "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM)",
-          "anio_referencia_sinim": 2024,
+          "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 52.6,
           "ingresos_patentes_acuicolas_mclp": 11.0,
           "ingresos_patentes_mineras_mclp": 11.0

@@ -1042,6 +1042,155 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertIn('class="empty-evidence"', html, "consultor.html debe tener estilos .empty-evidence")
         self.assertIn('render: false', html, "consultor.html debe inicializar currentChartState con render: false")
 
+    def test_26_variables_reconciliadas_single_source_of_truth(self):
+        """Verifica que las 14 variables territoriales reconciliadas resuelvan deterministicamente con fuentes y graficos."""
+        node_script = """
+        const fs = require('fs');
+        const path = require('path');
+
+        global.window = {};
+        const bundleCode = fs.readFileSync(path.join(process.cwd(), 'data/aysen_hubs_data.js'), 'utf8');
+        eval(bundleCode);
+
+        const clientCode = fs.readFileSync(path.join(process.cwd(), 'js/omniroute_client.js'), 'utf8');
+        eval(clientCode);
+
+        const client = global.window.OmniRouteClient || window.OmniRouteClient;
+        if (!client) {
+            console.error('OmniRouteClient not exported');
+            process.exit(1);
+        }
+        client.init(global.window.AYSEN_HUBS_DATA);
+
+        const testCases = [
+            {
+                topic: 'lena_pellet',
+                query: 'demanda de pellet y consumo de lena infor sec',
+                expectedKeywords: ['INFOR', 'SEC', 'pellet'],
+                expectedSource: 'INFOR'
+            },
+            {
+                topic: 'deficit_habitacional',
+                query: 'deficit habitacional cuantitativo y cualitativo minvu',
+                expectedKeywords: ['MINVU', 'cuantitativo', 'cualitativo'],
+                expectedSource: 'MINVU'
+            },
+            {
+                topic: 'agua_ssr_apr',
+                query: 'comites y beneficiarios de agua rural ssr apr doh mop',
+                expectedKeywords: ['DOH', 'SSR', '47 comités'],
+                expectedSource: 'DOH'
+            },
+            {
+                topic: 'pobreza_casen',
+                query: 'pobreza multidimensional vs ingresos casen mdsf',
+                expectedKeywords: ['CASEN', 'MDSF', 'Multidimensional'],
+                expectedSource: 'MDSF'
+            },
+            {
+                topic: 'listas_espera',
+                query: 'listas de espera de especialidad y quirurgica sigte minsal',
+                expectedKeywords: ['SIGTE', '11.420'],
+                expectedSource: 'SIGTE'
+            },
+            {
+                topic: 'oncologia_salud_mental',
+                query: 'cancer gastrico vesicula y tasa de suicidio deis minsal',
+                expectedKeywords: ['DEIS', 'Gástrico', 'suicidio'],
+                expectedSource: 'DEIS'
+            },
+            {
+                topic: 'red_asistencial_camas',
+                query: 'camas hospitalarias hrc 167 de 261 y postas de salud rural 27 psr',
+                expectedKeywords: ['167 camas', '27 Postas'],
+                expectedSource: 'DEIS'
+            },
+            {
+                topic: 'educacion_slep_sies',
+                query: 'slep aysen traspaso 2024 66 establecimientos y matricula sies',
+                expectedKeywords: ['SLEP', '66', 'SIES'],
+                expectedSource: 'SLEP'
+            },
+            {
+                topic: 'ecmpo_snaspe',
+                query: 'solicitudes ecmpo ley lafkenche 620000 ha y concesiones en snaspe',
+                expectedKeywords: ['620.000 ha', '312', 'Guaitecas'],
+                expectedSource: 'SUBPESCA'
+            },
+            {
+                topic: 'ganaderia_censo',
+                query: 'existencias ganaderas bovinas y ovinas odepa',
+                expectedKeywords: ['ODEPA', '130.832', '177.934'],
+                expectedSource: 'ODEPA'
+            },
+            {
+                topic: 'inversion_fndr_sectorial',
+                query: 'inversion fndr devengada vs sectorial ministerial dipres',
+                expectedKeywords: ['DIPRES', 'FNDR'],
+                expectedSource: 'DIPRES'
+            },
+            {
+                topic: 'bancarizacion_cajavecina',
+                query: 'bancarizacion y cobertura cajavecina cmf bancoestado',
+                expectedKeywords: ['CMF', 'BancoEstado', 'CajaVecina'],
+                expectedSource: 'CMF'
+            },
+            {
+                topic: 'glofs_glaciares',
+                query: 'glofs en cuenca baker cachet 2 dga y glaciar exploradores',
+                expectedKeywords: ['GLOF', 'Cachet 2', 'Exploradores'],
+                expectedSource: 'DGA'
+            },
+            {
+                topic: 'zoits_oficiales',
+                query: 'las 3 zoits oficiales decretadas subturismo sernatur',
+                expectedKeywords: ['Subturismo', 'Chelenko', 'Glaciares'],
+                expectedSource: 'Turismo'
+            }
+        ];
+
+        (async () => {
+            for (const tc of testCases) {
+                const res = client.resolveClosedWorldDeterministic(tc.query);
+                if (!res || !res.reply) {
+                    console.error('FAIL topic ' + tc.topic + ': No reply returned');
+                    process.exit(2);
+                }
+                if (!res.chart || !res.chart.render) {
+                    console.error('FAIL topic ' + tc.topic + ': Chart not rendered');
+                    process.exit(3);
+                }
+                for (const kw of tc.expectedKeywords) {
+                    if (!res.reply.includes(kw)) {
+                        console.error('FAIL topic ' + tc.topic + ': Reply missing keyword ' + kw + ' in: ' + res.reply);
+                        process.exit(4);
+                    }
+                }
+                const srcMatch = (res.sources || []).some(s => (s.institucion || '').includes(tc.expectedSource) || (s.clave || '').includes(tc.expectedSource));
+                if (!srcMatch) {
+                    console.error('FAIL topic ' + tc.topic + ': Sources missing ' + tc.expectedSource + '; sources:', res.sources);
+                    process.exit(5);
+                }
+
+                const resQuery = await client.query(tc.query);
+                if (!resQuery || resQuery.reply !== res.reply || !resQuery.chart?.render) {
+                    console.error('FAIL topic ' + tc.topic + ': client.query did not match deterministic resolution');
+                    process.exit(6);
+                }
+            }
+
+            console.log('RECONCILED_VARIABLES_SST_OK');
+        })();
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_26 omniroute:\n{proc.stderr}")
+        self.assertIn("RECONCILED_VARIABLES_SST_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

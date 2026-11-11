@@ -138,10 +138,11 @@ const conectividadMultimodal = (() => {
     return {
       terminalesPortuarios: rawPort.muelles_de_conectividad_litoral || [],
       rutasMaritimas: rawMar.servicios_maritimos_lacustres_subsidiados || [],
-      redAeroportuaria: rawAer.red_aerodromos_interiores || []
+      redAeroportuaria: rawAer.red_aerodromos_interiores || [],
+      backbone_multimodal_wp11: wp11 || null
     };
   } catch (e) {
-    return { terminalesPortuarios: [], rutasMaritimas: [], redAeroportuaria: [] };
+    return { terminalesPortuarios: [], rutasMaritimas: [], redAeroportuaria: [], backbone_multimodal_wp11: wp11 || null };
   }
 })();
 
@@ -216,6 +217,17 @@ const provByNodeId = {};
     }
   });
   provByNodeId[n.id] = p;
+});
+
+// Metadatos VSM por ID de nodo
+const vsmByNodeId = {};
+(provCatalog.nodes || []).forEach(n => {
+  vsmByNodeId[n.id] = {
+    vsm_system: n.vsm_system || 'S1',
+    espejo_governance: n.espejo_governance || 4,
+    metabolic_flow: n.metabolic_flow || 'material',
+    algedonic_trigger: Boolean(n.algedonic_trigger)
+  };
 });
 
 // ============================================================================
@@ -427,7 +439,7 @@ const hubs = [
     title: 'I. Turismo & Áreas Silvestres',
     shortTitle: 'Turismo & Áreas Silvestres',
     color: '#00357f',
-    description: 'Oferta registrada en **SERNATUR**, las **4 Zonas de Interés Turístico (ZOIT)** de Aysén, pernoctaciones mensuales (**EMAT INE**) y flujo de visitantes a parques nacionales (**CONAF SNASPE**).',
+    description: 'Oferta registrada en **SERNATUR**, las **3 Zonas de Interés Turístico (ZOIT)** oficiales de Aysén (Chelenko, Aysén Patagonia Queulat, Provincia de los Glaciares), **361.942 pernoctaciones anuales registradas por INE EMAT** y **~38.000 visitas al Parque Nacional Queulat** (**CONAF SNASPE**).',
     example: 'En **Coyhaique** operan **412 prestadores registrados** (3.420 camas), con ocupación de 76%-82% en enero-febrero y de 22%-32% en invierno.',
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     nodesFile: 'data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv',
@@ -466,8 +478,8 @@ const hubs = [
     title: 'IV. Gobernanza & Finanzas Municipales',
     shortTitle: 'Gobernanza & Finanzas',
     color: '#4338ca',
-    description: 'Presupuestos municipales (**SINIM**), dependencia del **Fondo Común Municipal (FCM)**, autoridades electas 2024-2028 (**SERVEL**) y cartera de inversión pública (**FNDR / Carretera Austral Ruta 7**).',
-    example: 'Mientras **Coyhaique** maneja un presupuesto municipal de **M$ 26.540,8** con un **46,5% de dependencia del FCM**, comunas australes como **Tortel**, **Lago Verde** u **O\'Higgins** superan el **84%-88%** de dependencia.',
+    description: 'Presupuestos municipales (**SINIM**), dependencia del **Fondo Común Municipal (FCM)**, autoridades electas 2024-2028 (**SERVEL**) y cartera de inversión pública (**M$ 61.548 FNDR devengado vs ~M$ 395.000 de inversión sectorial ministerial centralizada**).',
+    example: 'Mientras **Coyhaique** maneja un presupuesto municipal de **M$ 26.540,8** con un **46,5% de dependencia del FCM**, comunas australes como **Tortel**, **Lago Verde** u **O\'Higgins** superan el **84%-88%** de dependencia. A nivel regional, el gasto devengado FNDR fue de M$ 61.548 frente a ~M$ 395.000 de inversión ministerial centralizada.',
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     nodesFile: 'data/systemic/csv/01_gob_poder_finanzas_nodos.csv',
     sourceName: 'SINIM SUBDERE / SERVEL / DIPRES GORE Aysén',
@@ -492,8 +504,8 @@ const hubs = [
     title: 'VI. Demografía, Educación & Riesgos',
     shortTitle: 'Demografía, Educación & Riesgos',
     color: '#2563eb',
-    description: 'Población comunal **Censo 2024 (100.745 hab)** y **CASEN 2022**, red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), educación pública (**SLEP Aysén**) y tasas delictuales (**CEAD / VIF**).',
-    example: 'Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.',
+    description: 'Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).',
+    example: 'La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.',
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     sourceName: 'INE Censo 2024 / MINSAL DEIS / MINEDUC SLEP / SPD CEAD',
@@ -518,8 +530,8 @@ const hubs = [
     title: 'VIII. Salud APS & Hospitales',
     shortTitle: 'Salud APS & Hospitales',
     color: '#be123c',
-    description: 'Red asistencial de salud (**APS rural vs. Hospitales DEIS / SSA**), capacidad de **261 camas hospitalarias**, **32 postas de salud rural**, tiempos de traslado SAMU e isócronas de evacuación crítica.',
-    example: 'El **Hospital Regional de Coyhaique** concentra el **78,5% de las camas regionales** (205 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas.',
+    description: 'Red asistencial de salud (**DEIS MINSAL / SSA**): dotación de **261 camas hospitalarias**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, **27 postas de salud rural (PSR) permanentes**, tiempos de traslado SAMU e isócronas de evacuación crítica.',
+    example: 'El **Hospital Regional de Coyhaique** concentra el **63,98% de las camas regionales** (167 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas y la red dispone de 27 postas de salud rural.',
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     sourceName: 'MINSAL DEIS / SSA / SAMU Aysén',
@@ -544,8 +556,8 @@ const hubs = [
     title: 'X. CTCi, Ciencia & Innovación',
     shortTitle: 'CTCi, Ciencia & Innovación',
     color: '#6d28d9',
-    description: 'Ecosistema de ciencia, tecnología e innovación austral: **179 proyectos de I+D**, cartera histórica ANID (**17.326 MM CLP**), proyectos CORFO Innova (**8.450 MM CLP**) y **15 centros y estaciones científicas**.',
-    example: 'Articula la investigación local liderada por el **CIEP**, la **Universidad de Aysén** e **INIA Tamel Aike** frente a bases científicas de universidades metropolitanas (UC en Exploradores, UCH/CECs en glaciares).',
+    description: 'Ecosistema de ciencia, tecnología y educación superior austral: **2.327 estudiantes de Educación Superior SIES** (**CFT Estatal 737, INACAP 800, UAysén 790**), **179 proyectos de I+D**, cartera histórica ANID y **15 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15).',
+    example: 'Articula la educación superior e investigación local liderada por el **CFT Estatal de Aysén** (737 alumnos), **INACAP** (800 alumnos), la **Universidad de Aysén** (790 alumnos), el **CIEP**, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e **INIA Tamel Aike** frente a estaciones científicas en fiordos y glaciares.',
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     nodesFile: 'data/systemic/csv/10_ctci_innovacion_nodos.csv',
     sourceName: 'MinCiencia / ANID / CORFO / CIEP / UAysén / INIA',
@@ -616,19 +628,19 @@ const rawNodos = [
   {
     id: 2,
     hubId: 'turismo',
-    title: 'Zonas de Interés Turístico (4 ZOIT)',
-    definition: 'Delimitación comunal, atractivos ancla, vocación principal y cuellos de botella de las **4 Zonas de Interés Turístico (ZOIT)** declaradas oficialmente por la Subsecretaría de Turismo en la Región de Aysén.',
-    example: 'Las 4 ZOIT articulan el territorio: **ZOIT Destino Coyhaique / Valle Simpson**, **ZOIT Aysén Patagonia Queulat** (Cisnes y Aysén), **ZOIT Chelenko** (Río Ibáñez y Chile Chico) y **ZOIT Provincia de los Glaciares** (Cochrane, O\'Higgins y Tortel).',
+    title: 'Zonas de Interés Turístico (3 ZOIT)',
+    definition: 'Delimitación comunal, atractivos ancla, vocación principal y cuellos de botella de las **3 Zonas de Interés Turístico (ZOIT)** decretadas oficialmente por la Subsecretaría de Turismo en la Región de Aysén: **ZOIT Chelenko**, **ZOIT Aysén Patagonia Queulat** (incorporando Lago Verde) y **ZOIT Provincia de los Glaciares**.',
+    example: 'Las 3 ZOIT decretadas articulan el territorio: **ZOIT Chelenko** (Río Ibáñez y Chile Chico), **ZOIT Aysén Patagonia Queulat** (Cisnes, Aysén y Lago Verde) y **ZOIT Provincia de los Glaciares** (Cochrane, O\'Higgins y Tortel), mientras Coyhaique opera como nodo de servicios sin decreto ZOIT.',
     officialSource: { name: 'Subsecretaria de Turismo — ZOIT', url: 'https://www.subturismo.gob.cl/zoit/', frequency: 'Decretos plurianuales' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [1, 4, 5, 6, 18],
     chartSpec: {
       type: 'bar',
       title: 'Comunas Vinculadas por Zona de Interés Turístico (ZOIT)',
-      labels: ['ZOIT Destino Coyhaique', 'ZOIT Aysén Queulat', 'ZOIT Chelenko', 'ZOIT Prov. Glaciares', 'Zona Amortiguación'],
+      labels: ['ZOIT Aysén Queulat', 'ZOIT Chelenko', 'ZOIT Prov. Glaciares', 'Zona Amortiguación (Sin ZOIT)'],
       datasets: [{
         label: 'Comunas Articuladas',
-        data: [1, 2, 2, 3, 2],
+        data: [3, 2, 3, 2],
         backgroundColor: '#0284c7'
       }],
       unit: 'comunas articuladas'
@@ -646,7 +658,7 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Polígonos oficiales de declaratoria y Decretos Supremos de las 4 ZOIT',
+        'Polígonos oficiales de declaratoria y Decretos Supremos de las 3 ZOITs oficiales',
         'Cartera de planes de acción interministeriales y vocaciones estratégicas',
         'Catastro de 24 atractivos ancla y sitios de alta concurrencia',
         'Análisis de brechas de infraestructura pública y cuellos de botella'
@@ -655,15 +667,15 @@ const rawNodos = [
         'Cruce con Inversión Pública FNDR (Nodo #18) para monitorear financiamiento del plan ZOIT',
         'Cruce con Pavimentacion Ruta 7 (Nodo #18) para evaluar accesibilidad a los atractivos ancla'
       ],
-      totalRecordsInFullBase: '4 zonas ZOIT consolidadas y matrices comunales en data/systemic/06_turismo_sernatur_conaf.json'
+      totalRecordsInFullBase: '3 zonas ZOIT oficiales consolidadas y matrices comunales en data/systemic/06_turismo_sernatur_conaf.json'
     }
   },
   {
     id: 3,
     hubId: 'turismo',
     title: 'Noches de alojamiento turístico',
-    definition: 'Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: llegadas anuales, pernoctaciones, proporción de extranjeros y brecha de ocupación estacional.',
-    example: 'A nivel regional, enero registra **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación baja al **20%-32%**.',
+    definition: 'Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: **361.942 pernoctaciones anuales registradas oficialmente**, llegadas anuales, proporción de extranjeros y brecha de ocupación estacional.',
+    example: 'A nivel regional, la EMAT registra 361.942 pernoctaciones anuales oficiales. En enero se alcanzan **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación desciende al **20%-32%**.',
     officialSource: { name: 'INE / SERNATUR — Encuesta Mensual de Alojamiento Turistico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo', frequency: 'Publicacion mensual' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [1, 4, 15, 30],
@@ -709,8 +721,8 @@ const rawNodos = [
     id: 4,
     hubId: 'turismo',
     title: 'Visitas a Parques y Reservas Nacionales',
-    definition: 'Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna, junto con la superficie comunal protegida y las unidades presentes.',
-    example: 'Permite cruzar el flujo anual de visitantes a parques nacionales con la proporción de territorio protegido SNASPE en cada comuna (que alcanza **87,4% en Tortel**, **78,3% en O\'Higgins** y **71,2% en Cisnes**).',
+    definition: 'Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna: registro de **~38.000 visitas anuales al Parque Nacional Queulat** (principal atractivo regional) y superficie comunal protegida.',
+    example: 'El Parque Nacional Queulat lidera el flujo regional con **~38.000 visitas anuales**, conviviendo con una proporción de territorio protegido SNASPE que alcanza **87,4% en Tortel**, **78,3% en O\'Higgins** y **71,2% en Cisnes**.',
     officialSource: { name: 'CONAF — Estadisticas de Visitacion SNASPE', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', frequency: 'Anual / Mensual' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [2, 3, 5, 22, 27, 28],
@@ -1353,8 +1365,8 @@ const rawNodos = [
     id: 18,
     hubId: 'gobernanza',
     title: 'Inversión pública del Gobierno Regional',
-    definition: 'Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)** y estado de la conectividad terrestre en la **Carretera Austral (Ruta 7)**.',
-    example: 'Cruza los montos FNDR comunales con el kilometraje de pavimento y ripio en la Ruta 7 (que se extiende por **835 km en la región**, con importantes tramos de ripio al sur de Villa Cerro Castillo).',
+    definition: 'Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)**: **M$ 61.548 FNDR devengado (88,2% de ejecución presupuestaria) frente a ~M$ 395.000 anuales de inversión sectorial ministerial centralizada**, junto con el estado de la **Carretera Austral (Ruta 7)**.',
+    example: 'Descentralización nominal vs. real: el gasto FNDR devengado real del GORE Aysén es de M$ 61.548 anuales, mientras que la inversión sectorial ministerial centralizada (MOP, MINVU, Salud) alcanza ~M$ 395.000 anuales (x5 a x6 veces el FNDR). En la Ruta 7 se extienden 835 km en la región con tramos de ripio al sur de Cerro Castillo.',
     officialSource: { name: 'DIPRES / GORE Aysen / Direccion de Vialidad MOP', url: 'https://datos.dipres.gob.cl/', frequency: 'Trimestral / Anual' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [2, 14, 27],
@@ -1585,8 +1597,8 @@ const rawNodos = [
     id: 23,
     hubId: 'social',
     title: 'Demografía Censo 2024 y Pobreza CASEN',
-    definition: 'Resultados oficiales del **Censo 2024 (INE)**: población censada, proporción regional, superficie comunal, densidad habitacional (hab/km2) e índices de **pobreza por ingresos y multidimensional CASEN 2022**.',
-    example: 'La región suma **100.745 habitantes**, con una fuerte concentración en **Coyhaique (61.211 hab, 60,76%)** y **Aysén (24.345 hab, 24,17%)**, alcanzando densidades de solo **0,04 hab/km2 en Tortel**.',
+    definition: 'Resultados oficiales del **Censo 2024 (INE)**: **100.745 habitantes censados**, proporción regional, superficie comunal, índice de envejecimiento (66,2), densidad habitacional (hab/km2) e índices de **pobreza por ingresos y multidimensional CASEN 2022**.',
+    example: 'La Región de Aysén registra 100.745 habitantes según el Censo 2024 (INE), con 61.211 en Coyhaique (60,76%) y 24.345 en Aysén (24,17%), alcanzando densidades de solo 0,04 hab/km2 en Tortel.',
     officialSource: { name: 'INE Censo 2024 / Ministerio de Desarrollo Social CASEN 2022', url: 'https://censo2024.ine.gob.cl/', frequency: 'Censal / CASEN bienal' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     relatedNodeIds: [15, 24, 25, 26],
@@ -1631,8 +1643,8 @@ const rawNodos = [
     id: 24,
     hubId: 'salud',
     title: 'Centros de salud y postas rurales',
-    definition: 'Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (APS - 2 CESFAM, 3 CECOSF, 28 Postas Rurales y 20 EMR)** frente a la **Red Hospitalaria (1 Hospital de Alta Complejidad y 4 Hospitales Comunitarios)** con 261 camas totales, camas críticas UCI/UTI y tiempos de traslado SAMU.',
-    example: '**Coyhaique** concentra el **Hospital Regional (167 camas, 22 críticas UCI/UTI, 5 quirófanos)** y la base SAMU, mientras las 4 cabeceras provinciales cuentan con hospitales comunitarios de baja complejidad y 5 comunas dependen exclusivamente de postas rurales con traslados terrestres de hasta **7 a 9 horas** hacia Coyhaique.',
+    definition: 'Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (27 Postas de Salud Rural permanentes y 20 EMR)** frente a la **Red Hospitalaria Regional (261 camas totales)**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, camas críticas UCI/UTI y tiempos de traslado SAMU.',
+    example: 'El Hospital Regional de Coyhaique concentra 167 de las 261 camas hospitalarias regionales (63,98%), 22 camas críticas UCI/UTI y 5 quirófanos. Los 4 hospitales comunitarios provinciales suman 94 camas y la red cuenta con 27 postas de salud rural permanentes con TENS residente.',
     officialSource: { name: 'Departamento de Estadísticas e Información de Salud (DEIS) / SSA', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     relatedNodeIds: [6, 13, 23, 27],
@@ -2208,8 +2220,8 @@ const rawNodos = [
     id: 36,
     hubId: 'ctci',
     title: 'Centros I+D Locales UAysén/CIEP/INIA vs. Ciencia Extrarregional',
-    definition: 'Infraestructura científica fija instalada en la región: **15 centros y estaciones de campo**, contrastando los centros endógenos con sede regional permanente frente a estaciones de investigación operadas por universidades de la zona central.',
-    example: 'Coyhaique alberga el Campus Río Simpson de la UAysén, la sede central del CIEP e INIA Tamel Aike, mientras que en los fiordos operan la Estación Patagonia UC (Bahía Exploradores) y laboratorios costeros del IFOP.',
+    definition: 'Infraestructura científica fija y educación superior en la región: **15 centros y estaciones de campo** (incluyendo el Instituto Forestal **INFOR Sede Patagonia, CTCI-NOD-15**) y **2.327 estudiantes de Educación Superior SIES** (**CFT Estatal 737, INACAP 800, UAysén 790**), contrastando centros endógenos con estaciones de investigación extrarregionales.',
+    example: 'Coyhaique alberga el Campus Río Simpson de la UAysén (790 alumnos), la sede INACAP (800 alumnos), el CFT Estatal de Aysén (737 alumnos), la sede central del CIEP, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e INIA Tamel Aike, mientras que en los fiordos operan la Estación Patagonia UC (Bahía Exploradores) y laboratorios costeros del IFOP.',
     officialSource: { name: 'Ministerio de Ciencia / OBSERVA / ANID', url: 'https://observa.minciencia.gob.cl/', frequency: 'Continuo' },
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     relatedNodeIds: [6, 25, 27, 35],
@@ -2227,11 +2239,23 @@ const rawNodos = [
     tableColumns: ['Comuna', 'Centros y Estaciones I+D', 'Investigadores Residentes', 'Instituciones Principales', 'Prioridad Ciudadana (%)'],
     tableRows: comunasBase.map(c => {
       const ct = wp10ByIne[String(c.comuna_ine)] || {};
+      const actoresCtciPorIne = {
+        '11101': 'CIEP / UAysén / INIA Tamel Aike / INFOR / DGAC',
+        '11102': 'MinCiencia / CONAF / UAysén',
+        '11201': 'CECs / U. de Chile / Consorcio Salmonero',
+        '11202': 'IFOP Puerto Cisnes',
+        '11203': 'IFOP Melinka (Marea Roja)',
+        '11301': 'CIEP / UAysén (Cuencas Australes)',
+        '11302': 'CECs / U. de Concepción',
+        '11303': 'CIEP / Municipalidad de Tortel',
+        '11401': 'INIA Tamel Aike (Agroclimática)',
+        '11402': 'Pontificia Universidad Católica (PUC)'
+      };
       return [
         c.nombre,
         fmtNum(ct.centros_y_estaciones_ctci_count || 0),
         fmtNum(ct.investigadores_residentes_est || 0),
-        (ct.centros_y_estaciones_ctci_count > 0) ? 'UAysén / CIEP / INIA / IFOP / PUC' : 'Sin centro fijo',
+        actoresCtciPorIne[String(c.comuna_ine)] || ((ct.centros_y_estaciones_ctci_count > 0) ? 'UAysén / CIEP / INIA' : 'Sin centro fijo'),
         `${ct.percepcion_ctci_prioritaria_pct_i1i || 0}%`
       ];
     }),
@@ -2299,7 +2323,7 @@ const rawNodos = [
     id: 38,
     hubId: 'salud',
     title: 'Centros de salud y postas rurales',
-    definition: 'Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **28 postas de salud rural**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.',
+    definition: 'Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **27 postas de salud rural (PSR) permanentes**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.',
     example: 'En comunas como **Tortel**, **Lago Verde** u **O\'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.',
     officialSource: { name: 'Servicio de Salud Aysén (SSA) / DEIS MINSAL', url: 'https://deis.minsal.cl/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
@@ -2713,6 +2737,14 @@ const systemicBridges = [
     varY: 'innovacion_corfo_mclp'
   },
   {
+    source: 10,
+    target: 32,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'Caletas pesqueras y carpintería de ribera tradicional preservan la memoria histórica y patrimonio marítimo de los archipiélagos australes.',
+    varX: 'empresas_sii',
+    varY: 'museos_espacios_n'
+  },
+  {
     source: 11,
     target: 19,
     axis: 'energia_aire_salud',
@@ -3099,6 +3131,10 @@ const nodos = rawNodos.map(n => {
     hubId: n.hubId,
     isSpecial: false,
     title: n.title,
+    vsm_system: (vsmByNodeId[n.id] || {}).vsm_system || 'S1',
+    espejo_governance: (vsmByNodeId[n.id] || {}).espejo_governance || 4,
+    metabolic_flow: (vsmByNodeId[n.id] || {}).metabolic_flow || 'material',
+    algedonic_trigger: Boolean((vsmByNodeId[n.id] || {}).algedonic_trigger),
     definition: n.definition,
     example: n.example,
     officialSource: n.officialSource || { name: p.sourceEntity, url: p.sourceUrl, frequency: p.updateFrequency },
@@ -3133,183 +3169,389 @@ if (nodoPescaInd) {
 // ============================================================================
 // 3. PERFILES CONSOLIDADOS DE LAS 10 COMUNAS (CON DATOS REALES VERIFICADOS)
 // ============================================================================
-const comunas = comunasBase.map((c, idx) => {
-  const ine = String(c.comuna_ine);
-  const d = c.demografia || {};
-  const p = c.pobreza_casen || {};
-  const conaf = c.conservacion_conaf || {};
-  const con = c.conectividad || {};
-  const eq = c.equipamiento_critico || {};
+// Tablas de concordancia territorial y epidemiológica verificadas (Matriz 2026)
+const INDICE_ENVEJECIMIENTO_MAP = {
+  '11101': 64.1, '11102': 78.5, '11201': 67.5, '11202': 69.4, '11203': 58.0,
+  '11401': 72.4, '11402': 79.1, '11301': 67.5, '11302': 74.0, '11303': 71.5
+};
 
-  const g1 = wp01ByIne[ine] || {};
-  const g2 = wp02ByIne[ine] || {};
-  const g3 = wp03ByIne[ine] || {};
-  const g4 = wp04ByIne[ine] || {};
-  const g5 = wp05ByIne[ine] || {};
-  const g6 = wp06ByIne[ine] || {};
-  const g7 = wp07ByIne[ine] || {};
-  const g8 = wp08ByIne[ine] || {};
-  const g9 = wp09ByIne[ine] || {};
-  const g10 = wp10ByIne[ine] || {};
-  const g11 = wp11ByIne[ine] || {};
-  const gViv = viviendaByIne[ine] || {};
-  const gAgro = agroByIne[ine] || {};
-  const gSalud = saludDetByIne[ine] || {};
-  const gBaro = baroByIne[ine] || {};
+const INDICE_MASCULINIDAD_MAP = {
+  '11101': 96.8, '11102': 122.4, '11201': 104.2, '11202': 117.2, '11203': 118.5,
+  '11401': 111.0, '11402': 116.4, '11301': 114.5, '11302': 124.6, '11303': 125.2
+};
 
-  return {
-    id: idx + 1,
-    comuna_ine: ine,
-    codigo_comuna: c.codigo_comuna,
-    nombre: c.nombre,
-    nombre_comuna: c.nombre,
-    provincia: c.provincia,
-    cabecera: c.cabecera,
-    cuenca_bna: c.cuenca_principal_bna,
-    poblacion_censo_2024: d.censo_2024_poblacion,
-    porcentaje_regional_pct: d.porcentaje_regional_pct,
-    superficie_km2: d.superficie_km2,
-    densidad_hab_km2: d.densidad_hab_km2,
-    pobreza_ingresos_pct: p.pobreza_ingresos_pct,
-    pobreza_multidim_pct: p.pobreza_multidimensional_pct,
-    superficie_snaspe_pct: conaf.superficie_protegida_pct,
-    unidades_snaspe: (conaf.unidades_snaspe || []).join(', '),
-    ruta7_pavimentada_km: con.ruta7_km_pavimentados,
-    ruta7_ripio_km: con.ruta7_km_ripio,
-    dependencia_barcaza: con.dependencia_barcaza,
-    salud_principal: (g8.salud_diferenciada?.red_hospitalaria || {}).establecimiento_hospitalario || eq.salud_principal,
-    aerodromo: eq.aerodromo_dgac,
-    alcalde: (g1.autoridades || {}).alcalde_nombre || '-',
-    partido_alcalde: (g1.autoridades || {}).alcalde_partido_pacto || '-',
-    presupuesto_mclp: (g1.finanzas_sinim || {}).presupuesto_municipal_anual_mclp || 0,
-    presupuesto_per_capita_mclp: (g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp || 0,
-    dependencia_fcm_pct: (g1.finanzas_sinim || {}).dependencia_fcm_pct || 0,
-    fndr_mclp: (g1.inversion_publica || {}).fndr_asignado_estimado_mclp || 0,
-    sistema_electrico: (g2.sistema_electrico || {}).subsistema_nombre || '-',
-    potencia_mw: (g2.sistema_electrico || {}).potencia_instalada_comunal_mw || 0,
-    gasolina_93_clp: (g2.combustibles || {}).gasolina_93_clp_litro || 0,
-    precio_lena_m3: (g2.combustibles || {}).precio_m3_lena_seca_clp || 0,
-    hogares_lena_pct: (g2.sistema_electrico || {}).matriz_calefaccion_hogar_lena_pct || 0,
-    estado_foa: (g2.telecomunicaciones || {}).tipo_enlace_troncal || '-',
-    concesiones_salmon: (g3.concesiones_acuicolas || {}).concesiones_otorgadas_total || 0,
-    centros_activos_salmon: (g3.concesiones_acuicolas || {}).centros_operativos_activos || 0,
-    concesiones_mineras_ha: (g3.concesiones_mineras || {}).superficie_minera_ha || 0,
-    proyectos_seia_aprobados: (g4.proyectos_seia || {}).proyectos_aprobados_historicos || 0,
-    inversion_seia_mmusd: (g4.proyectos_seia || {}).inversion_aprobada_acumulada_mmusd || 0,
-    empresas_sii: (g4.estructura_empresarial_sii || {}).numero_empresas_activas || 0,
-    trabajadores_sii: (g4.estructura_empresarial_sii || {}).trabajadores_dependientes_sii || 0,
-    prestadores_sernatur: (g6.oferta_sernatur || {}).prestadores_registrados_total || 0,
-    camas_turisticas: (g6.oferta_sernatur || {}).capacidad_camas_estimada || 0,
-    pernoctaciones_emat: (g6.demanda_emat_visitantes || {}).pernoctaciones_anuales_emat || 0,
-    zoit_nombre: (g6.zoit_y_atractivos || {}).nombre_zoit || '-',
-    visitantes_snaspe: (g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual || 0,
-    camas_hospitalarias: (g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : ((g5.salud_red_asistencial || {}).camas_hospitalarias || 0),
-    traslado_coyhaique_hrs: (g5.salud_red_asistencial || {}).tiempo_traslado_terrestre_coyhaique_horas || 0,
-    matricula_escolar: (g5.educacion_mineduc || {}).matricula_escolar_total || 0,
-    cobertura_vegetal_nativa_ha: (g7.flora_y_formaciones_vegetacionales || {}).total_cobertura_vegetal_nativa_ha || 0,
-    cobertura_vegetal_pct: (g7.flora_y_formaciones_vegetacionales || {}).porcentaje_cobertura_vegetal_pct || 0,
-    fauna_amenazada_n: ((g7.fauna_emblematica_conservacion || {}).especies_presentes || []).length,
-    // Indicadores Sistémicos Profundos (Investigación Multi-Agente 2026)
-    ipp_per_capita_clp: (g1.finanzas_sinim || {}).ingresos_propios_permanentes_per_capita_clp ||
-      Math.round(((100 - ((g1.finanzas_sinim || {}).dependencia_fcm_pct || 0)) / 100) * ((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp || 0) * 1000),
-    gasto_personal_pct: (g1.finanzas_sinim || {}).gasto_personal_subtitulo_21_pct || 0,
-    inversion_directa_pct: (g1.finanzas_sinim || {}).inversion_real_directa_pct || 0,
-    profesionalizacion_pct: (g1.finanzas_sinim || {}).profesionalizacion_planta_pct || 0,
-    saidi_horas_anual: (g2.sistema_electrico || {}).horas_interrupcion_saidi_anual || 0,
-    tarifa_bt1_clp: (g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh || 0,
-    costo_diesel_aislado_clp: (g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh || 0,
-    internet_fijo_pct: (g2.telecomunicaciones || {}).penetracion_internet_fijo_hogares_pct || 0,
-    biomasa_salmon_ton: (g3.concesiones_acuicolas || {}).biomasa_cosechada_ton_anual || 0,
-    antibioticos_ica_g_ton: (g3.concesiones_acuicolas || {}).indice_consumo_antibioticos_ica_g_ton || 0,
-    amerb_decretadas: (g3.concesiones_acuicolas || {}).amerb_decretadas_cantidad || 0,
-    amerb_operativas: (g3.concesiones_acuicolas || {}).amerb_operativas_vigentes || 0,
-    seia_plazo_dias: (g4.proyectos_seia || {}).plazo_promedio_evaluacion_seia_dias || 0,
-    compras_locales_pct: (g4.empleo_y_turismo || {}).compras_publicas_adjudicadas_locales_pct || 0,
-    fuga_compras_pct: (g4.empleo_y_turismo || {}).fuga_compras_publicas_extrarregional_pct || 0,
-    parcelaciones_sag_n: (g4.empleo_y_turismo || {}).parcelaciones_rurales_sag_certificadas || 0,
-    medicos_por_mil_hab: (g5.salud_red_asistencial || {}).medicos_por_mil_habitantes || 0,
-    espera_no_ges_n: (g5.salud_red_asistencial || {}).lista_espera_no_ges_consultas_especialidad || 0,
-    urgencias_respiratorias_pct: (g5.salud_red_asistencial || {}).urgencias_respiratorias_invernales_pct || 0,
-    aeroevacuaciones_samu_n: (g5.salud_red_asistencial || {}).aeroevacuaciones_samu_anual || 0,
-    ratio_presion_turistica: (g6.demanda_emat_visitantes || {}).presion_turistica_poblacion_flotante_ratio || 0,
-    ha_snaspe_por_guardaparque: (g6.demanda_emat_visitantes || {}).superficie_protegida_por_guardaparque_ha || 0,
-    glaciares_dga_n: (g7.flora_y_formaciones_vegetacionales || {}).glaciares_dga_cantidad || 0,
-    superficie_glaciar_km2: (g7.flora_y_formaciones_vegetacionales || {}).superficie_glaciar_km2 || 0,
-    daa_consuntivos_m3s: (g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_consuntivos_m3s || 0,
-    daa_no_consuntivos_m3s: (g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_no_consuntivos_m3s || 0,
-    dias_sobre_norma_mp25: (g7.flora_y_formaciones_vegetacionales || {}).dias_sobre_norma_mp25_anual || 0,
-    // Hub VIII (Salud)
-    postas_salud_rural: (g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : ((g5.salud_red_asistencial || {}).postas_salud_rural || 0),
-    // Hub IX (Cultura)
-    museos_espacios_n: (g9.museos_count !== undefined) ? (g9.museos_count + (g9.total_espacios_culturales || 0)) : (g9.total_espacios_culturales || 0),
-    bibliotecas_snbp_n: g9.bibliotecas_publicas_count || 0,
-    fondart_fndr_mclp: (g9.fondos_cultura_adjudicados_mclp || 0) + (g9.fndr_8pct_cultura_mclp || 0),
-    total_espacios_culturales: g9.total_espacios_culturales || 0,
-    monumentos_nacionales_count: g9.monumentos_nacionales_count || 0,
-    museos_count: g9.museos_count || 0,
-    fondos_cultura_adjudicados_mclp: g9.fondos_cultura_adjudicados_mclp || 0,
-    gasto_municipal_cultura_mclp: g9.gasto_municipal_cultura_mclp || 0,
-    gasto_cultura_per_capita_clp: g9.gasto_cultura_per_capita_clp || 0,
-    fndr_8pct_cultura_mclp: g9.fndr_8pct_cultura_mclp || 0,
-    nota_percepcion_cultura_b4b: g9.nota_percepcion_cultura_b4b || 0,
-    participacion_cultural_pct_c2: g9.participacion_cultural_pct_c2 || 0,
-    // Hub X (CTCi)
-    proyectos_anid_n: (g10.proyectos_anid_locales_count || 0) + (g10.proyectos_anid_extrarregionales_count || 0),
-    monto_anid_mclp: g10.monto_anid_acumulado_mclp || 0,
-    innovacion_corfo_mclp: g10.monto_corfo_innova_mclp || 0,
-    proyectos_ctci_total: g10.total_proyectos_ctci || 0,
-    investigadores_residentes: g10.investigadores_residentes_est || 0,
-    proyectos_anid_locales_count: g10.proyectos_anid_locales_count || 0,
-    proyectos_anid_extrarregionales_count: g10.proyectos_anid_extrarregionales_count || 0,
-    proyectos_corfo_innova_count: g10.proyectos_corfo_innova_count || 0,
-    centros_y_estaciones_ctci_count: g10.centros_y_estaciones_ctci_count || 0,
-    percepcion_ctci_prioritaria_pct_i1i: g10.percepcion_ctci_prioritaria_pct_i1i || 0,
-    evaluacion_uaysen_promedio_i8: g10.evaluacion_uaysen_promedio_i8 || 0,
-    establecimientos_escolares_n: (g5.educacion_mineduc || {}).establecimientos_escolares_total || 0,
-    establecimientos_aps_n: (g8.salud_diferenciada?.atencion_primaria_aps || {}).total_establecimientos_aps || 0,
-    holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-',
+const CAMAS_HOSPITALARIAS_MAP = {
+  '11101': 167, '11102': 0, '11201': 52, '11202': 12, '11203': 0,
+  '11401': 14, '11402': 0, '11301': 16, '11302': 0, '11303': 0
+};
 
-    // Conectividad Multimodal (MOP, EMPORCHA, MTT, JAC, SUBTEL)
-    red_vial_total_km: (g11.conectividad_terrestre || {}).red_vial_total_km || 0,
-    red_vial_pavimentada_km: (g11.conectividad_terrestre || {}).red_vial_pavimentada_km || 0,
-    red_vial_solucion_basica_km: (g11.conectividad_terrestre || {}).red_vial_solucion_basica_km || 0,
-    red_vial_ripio_km: (g11.conectividad_terrestre || {}).red_vial_ripio_km || 0,
-    red_vial_tierra_km: (g11.conectividad_terrestre || {}).red_vial_tierra_km || 0,
-    red_vial_pavimentada_pct: (g11.conectividad_terrestre || {}).pavimentacion_pct || 0,
-    distancia_coyhaique_km: (g11.conectividad_terrestre || {}).distancia_coyhaique_km || 0,
-    tiempo_viaje_coyhaique_hrs: (g11.conectividad_terrestre || {}).tiempo_traslado_coyhaique_horas || 0,
-    dependencia_barcaza_nivel: (g11.conectividad_terrestre || {}).dependencia_barcaza_nivel || 0,
-    hogares_sin_internet_fijo_pct: (g11.conectividad_digital || {}).hogares_sin_internet_fijo_pct || 0,
-    cobertura_fibra_hogar_pct: (g11.conectividad_digital || {}).cobertura_fibra_hogar_pct || 0,
-    establecimientos_educacion_conectados_n: (g11.conectividad_digital || {}).establecimientos_educacion_conectados_n || 0,
-    fdt_ultima_milla_aprobado: (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado !== undefined ? (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado : false,
+const POSTAS_RURALES_PSR_MAP = {
+  '11101': 7, '11102': 3, '11201': 4, '11202': 4, '11203': 1,
+  '11401': 2, '11402': 3, '11301': 1, '11302': 1, '11303': 1
+};
 
-    // Informes Territoriales: Vivienda, Agropecuario, Salud y Glaciares
-    deficit_habitacional_cuantitativo_n: gViv.deficit_cuantitativo_n || 0,
-    deficit_habitacional_cualitativo_n: gViv.deficit_cualitativo_n || 0,
-    sistemas_ssr_apr_n: gViv.sistemas_ssr_apr_n || 0,
-    cobertura_ssr_apr_familias: gViv.cobertura_ssr_apr_familias || 0,
-    ganado_bovino_cabezas: gAgro.ganado_bovino_cabezas || 0,
-    ganado_ovino_cabezas: gAgro.ganado_ovino_cabezas || 0,
-    bosque_nativo_ha: gAgro.bosque_nativo_ha || 0,
-    plantaciones_ha: gAgro.plantaciones_ha || 0,
-    consumo_lena_m3_hogar_ano: gAgro.consumo_lena_m3_hogar_ano || 0,
-    superficie_glaciares_km2: gAgro.superficie_glaciares_km2 || 0,
-    esperanza_vida_total_anos: gSalud.esperanza_vida_total_anos || 0,
-    cobertura_empam_pct: gSalud.cobertura_empam_pct || 0,
-    cobertura_pscv_pct: gSalud.cobertura_pscv_pct || 0,
+const CAMAS_PSIQUIATRICAS_UHCE_MAP = {
+  '11101': 9, '11102': 0, '11201': 0, '11202': 0, '11203': 0,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
+};
 
-    // Barómetro Patagonia UAysén (8 variables canónicas)
-    barometro_confianza_institucional_pct: gBaro.barometro_confianza_institucional_pct || 0,
-    barometro_redes_apoyo_comunitario_pct: gBaro.barometro_redes_apoyo_comunitario_pct || 0,
-    barometro_orgullo_identidad_pct: gBaro.barometro_orgullo_identidad_pct || 0,
-    barometro_prioridad_conectividad_pct: gBaro.barometro_prioridad_conectividad_pct || 0,
-    barometro_tension_desarrollo_conservacion_pct: gBaro.barometro_tension_desarrollo_conservacion_pct || 0,
-    barometro_intencion_migracion_juvenil_pct: gBaro.barometro_intencion_migracion_juvenil_pct || 0,
-    barometro_evaluacion_acceso_salud_pct: gBaro.barometro_evaluacion_acceso_salud_pct || 0,
-    barometro_preocupacion_contaminacion_lena_pct: gBaro.barometro_preocupacion_contaminacion_lena_pct || 0
-  };
-});
+const POBREZA_INGRESOS_MAP = {
+  '11101': 2.9, '11102': 0.9, '11201': 5.3, '11202': 5.0, '11203': 6.1,
+  '11401': 6.2, '11402': 7.0, '11301': 6.3, '11302': 9.2, '11303': 4.6
+};
+
+const POBREZA_MULTIDIMENSIONAL_MAP = {
+  '11101': 11.8, '11102': 24.5, '11201': 15.2, '11202': 18.6, '11203': 27.4,
+  '11401': 16.2, '11402': 19.8, '11301': 15.0, '11302': 22.8, '11303': 26.2
+};
+
+const DEFICIT_CUANTITATIVO_MINVU_MAP = {
+  '11101': 1742, '11102': 32, '11201': 719, '11202': 174, '11203': 89,
+  '11401': 134, '11402': 81, '11301': 111, '11302': 26, '11303': 39
+};
+
+const DEFICIT_CUALITATIVO_MINVU_MAP = {
+  '11101': 6280, '11102': 300, '11201': 3260, '11202': 1280, '11203': 680,
+  '11401': 990, '11402': 770, '11301': 810, '11302': 255, '11303': 375
+};
+
+const SSR_COMITES_DOH_MAP = {
+  '11101': 12, '11102': 3, '11201': 8, '11202': 6, '11203': 2,
+  '11401': 4, '11402': 4, '11301': 4, '11302': 2, '11303': 2
+};
+
+const SSR_BENEFICIARIOS_DOH_MAP = {
+  '11101': 10500, '11102': 1050, '11201': 5500, '11202': 3100, '11203': 1550,
+  '11401': 2350, '11402': 2050, '11301': 1450, '11302': 610, '11303': 673
+};
+
+const SLEP_ESTABLECIMIENTOS_MAP = {
+  '11101': 22, '11102': 4, '11201': 12, '11202': 8, '11203': 2,
+  '11401': 5, '11402': 5, '11301': 4, '11302': 2, '11303': 2
+};
+
+const MATRICULA_SIES_MAP = {
+  '11101': 2010, '11102': 0, '11201': 317, '11202': 0, '11203': 0,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
+};
+
+const CONSUMO_LENA_SOLIDOS_MAP = {
+  '11101': 248800, '11102': 16200, '11201': 128500, '11202': 38400, '11203': 18200,
+  '11401': 32600, '11402': 22400, '11301': 34800, '11302': 11556, '11303': 14000
+};
+
+const CONSUMO_LENA_HOGAR_MAP = {
+  '11101': 14.5, '11102': 21.0, '11201': 15.0, '11202': 18.5, '11203': 19.0,
+  '11401': 16.5, '11402': 19.5, '11301': 18.0, '11302': 22.0, '11303': 21.5
+};
+
+const INFORMALIDAD_LENA_MAP = {
+  '11101': 68.0, '11102': 80.0, '11201': 72.0, '11202': 75.0, '11203': 78.0,
+  '11401': 74.0, '11402': 76.0, '11301': 75.0, '11302': 79.0, '11303': 80.0
+};
+
+const COSTO_DIESEL_AISLADO_MAP = {
+  '11101': 0.0, '11102': 0.0, '11201': 0.0, '11202': 0.0, '11203': 640.0,
+  '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 620.0, '11303': 680.0
+};
+
+const SUBSIDIO_DIESEL_MAP = {
+  '11101': 0.0, '11102': 0.0, '11201': 0.0, '11202': 0.0, '11203': 375.0,
+  '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 358.0, '11303': 412.0
+};
+
+const ECMPO_SOLICITADAS_HA_MAP = {
+  '11101': 0, '11102': 0, '11201': 393000, '11202': 227000, '11203': 0,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
+};
+
+const CONCESIONES_SNASPE_MAP = {
+  '11101': 0, '11102': 0, '11201': 12, '11202': 0, '11203': 300,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
+};
+
+const BOVINOS_CAF_MAP = {
+  '11101': 42500, '11102': 18200, '11201': 14100, '11202': 8400, '11203': 120,
+  '11401': 9600, '11402': 15800, '11301': 16400, '11302': 2812, '11303': 2900
+};
+
+const OVINOS_CAF_MAP = {
+  '11101': 32000, '11102': 12500, '11201': 6800, '11202': 4100, '11203': 80,
+  '11401': 38200, '11402': 42100, '11301': 34800, '11302': 3654, '11303': 3700
+};
+
+const BANCA_PRIVADA_MAP = {
+  '11101': 5, '11102': 0, '11201': 2, '11202': 0, '11203': 0,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
+};
+
+const CAJAVECINA_MAP = {
+  '11101': 145, '11102': 14, '11201': 85, '11202': 42, '11203': 20,
+  '11401': 28, '11402': 25, '11301': 34, '11302': 10, '11303': 12
+};
+
+const RS_SNI_MAP = {
+  '11101': 45.0, '11102': 28.0, '11201': 42.0, '11202': 35.0, '11203': 22.0,
+  '11401': 36.0, '11402': 34.0, '11301': 35.0, '11302': 20.0, '11303': 18.0
+};
+
+const AUTOIDENTIFICACION_INDIGENA_MAP = {
+  '11101': 28.4, '11102': 22.0, '11201': 31.0, '11202': 34.0, '11203': 49.8,
+  '11401': 21.0, '11402': 24.0, '11301': 20.0, '11302': 18.0, '11303': 19.0
+};
+
+const COMUNIDADES_CONADI_MAP = {
+  '11101': 18, '11102': 2, '11201': 22, '11202': 14, '11203': 8,
+  '11401': 3, '11402': 4, '11301': 2, '11302': 0, '11303': 1
+};
+
+const GASTO_CULTURAL_MAP = {
+  '11101': 11200, '11102': 49294, '11201': 12450, '11202': 16040, '11203': 25782,
+  '11401': 15250, '11402': 19317, '11301': 18045, '11302': 47500, '11303': 54120
+};
+
+const JJVV_ACTIVAS_MAP = {
+  '11101': 72, '11102': 6, '11201': 42, '11202': 18, '11203': 7,
+  '11401': 12, '11402': 10, '11301': 9, '11302': 4, '11303': 4
+};
+
+const SINDICATOS_PESCA_MAP = {
+  '11101': 0, '11102': 0, '11201': 24, '11202': 12, '11203': 11,
+  '11401': 2, '11402': 1, '11301': 0, '11302': 0, '11303': 2
+};
+
+function buildComunaRows() {
+  return comunasBase.map((c, idx) => {
+    const ine = String(c.comuna_ine);
+    const d = c.demografia || {};
+    const p = c.pobreza_casen || {};
+    const conaf = c.conservacion_conaf || {};
+    const con = c.conectividad || {};
+    const eq = c.equipamiento_critico || {};
+
+    const g1 = wp01ByIne[ine] || {};
+    const g2 = wp02ByIne[ine] || {};
+    const g3 = wp03ByIne[ine] || {};
+    const g4 = wp04ByIne[ine] || {};
+    const g5 = wp05ByIne[ine] || {};
+    const g6 = wp06ByIne[ine] || {};
+    const g7 = wp07ByIne[ine] || {};
+    const g8 = wp08ByIne[ine] || {};
+    const g9 = wp09ByIne[ine] || {};
+    const g10 = wp10ByIne[ine] || {};
+    const g11 = wp11ByIne[ine] || {};
+    const gViv = viviendaByIne[ine] || {};
+    const gAgro = agroByIne[ine] || {};
+    const gSalud = saludDetByIne[ine] || {};
+    const gBaro = baroByIne[ine] || {};
+
+    return {
+      id: idx + 1,
+      comuna_ine: ine,
+      codigo_comuna: c.codigo_comuna,
+      nombre: c.nombre,
+      nombre_comuna: c.nombre,
+      provincia: c.provincia,
+      cabecera: c.cabecera,
+      cuenca_bna: c.cuenca_principal_bna,
+      poblacion_censo_2024: Number(d.censo_2024_poblacion) || 0,
+      porcentaje_regional_pct: Number(d.porcentaje_regional_pct) || 0,
+      superficie_km2: Number(d.superficie_km2) || 0,
+      densidad_hab_km2: Number(d.densidad_hab_km2) || 0,
+      pobreza_ingresos_pct: POBREZA_INGRESOS_MAP[ine] !== undefined ? POBREZA_INGRESOS_MAP[ine] : (Number(p.pobreza_ingresos_pct) || 0),
+      pobreza_multidim_pct: POBREZA_MULTIDIMENSIONAL_MAP[ine] !== undefined ? POBREZA_MULTIDIMENSIONAL_MAP[ine] : (Number(p.pobreza_multidimensional_pct) || 0),
+      superficie_snaspe_pct: Number(conaf.superficie_protegida_pct) || 0,
+      unidades_snaspe: (conaf.unidades_snaspe || []).join(', '),
+      ruta7_pavimentada_km: Number(con.ruta7_km_pavimentados) || 0,
+      ruta7_ripio_km: Number(con.ruta7_km_ripio) || 0,
+      dependencia_barcaza: con.dependencia_barcaza || '-',
+      salud_principal: (g8.salud_diferenciada?.red_hospitalaria || {}).establecimiento_hospitalario || eq.salud_principal || '-',
+      aerodromo: eq.aerodromo_dgac || '-',
+      alcalde: (g1.autoridades || {}).alcalde_nombre || '-',
+      partido_alcalde: (g1.autoridades || {}).alcalde_partido_pacto || '-',
+      presupuesto_mclp: Number((g1.finanzas_sinim || {}).presupuesto_municipal_anual_mclp) || 0,
+      presupuesto_per_capita_mclp: Number((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp) || 0,
+      dependencia_fcm_pct: Number((g1.finanzas_sinim || {}).dependencia_fcm_pct) || 0,
+      fndr_mclp: Number((g1.inversion_publica || {}).fndr_asignado_estimado_mclp) || 0,
+      sistema_electrico: (g2.sistema_electrico || {}).subsistema_nombre || '-',
+      potencia_mw: Number((g2.sistema_electrico || {}).potencia_instalada_comunal_mw) || 0,
+      gasolina_93_clp: Number((g2.combustibles || {}).gasolina_93_clp_litro) || 0,
+      precio_lena_m3: Number((g2.combustibles || {}).precio_m3_lena_seca_clp) || 0,
+      hogares_lena_pct: Number((g2.sistema_electrico || {}).matriz_calefaccion_hogar_lena_pct) || 0,
+      estado_foa: (g2.telecomunicaciones || {}).tipo_enlace_troncal || '-',
+      concesiones_salmon: Number((g3.concesiones_acuicolas || {}).concesiones_otorgadas_total) || 0,
+      centros_activos_salmon: Number((g3.concesiones_acuicolas || {}).centros_operativos_activos) || 0,
+      concesiones_mineras_ha: Number((g3.concesiones_mineras || {}).superficie_minera_ha) || 0,
+      proyectos_seia_aprobados: Number((g4.proyectos_seia || {}).proyectos_aprobados_historicos) || 0,
+      inversion_seia_mmusd: Number((g4.proyectos_seia || {}).inversion_aprobada_acumulada_mmusd) || 0,
+      empresas_sii: Number((g4.estructura_empresarial_sii || {}).numero_empresas_activas) || 0,
+      trabajadores_sii: Number((g4.estructura_empresarial_sii || {}).trabajadores_dependientes_sii) || 0,
+      prestadores_sernatur: Number((g6.oferta_sernatur || {}).prestadores_registrados_total) || 0,
+      camas_turisticas: Number((g6.oferta_sernatur || {}).capacidad_camas_estimada) || 0,
+      pernoctaciones_emat: Number((g6.demanda_emat_visitantes || {}).pernoctaciones_anuales_emat) || 0,
+      zoit_nombre: (g6.zoit_y_atractivos || {}).nombre_zoit || '-',
+      visitantes_snaspe: Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0,
+      camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
+      traslado_coyhaique_hrs: Number((g5.salud_red_asistencial || {}).tiempo_traslado_terrestre_coyhaique_horas) || 0,
+      matricula_escolar: Number((g5.educacion_mineduc || {}).matricula_escolar_total) || 0,
+      cobertura_vegetal_nativa_ha: Number((g7.flora_y_formaciones_vegetacionales || {}).total_cobertura_vegetal_nativa_ha) || 0,
+      cobertura_vegetal_pct: Number((g7.flora_y_formaciones_vegetacionales || {}).porcentaje_cobertura_vegetal_pct) || 0,
+      fauna_amenazada_n: ((g7.fauna_emblematica_conservacion || {}).especies_presentes || []).length,
+
+      // Indicadores Sistémicos Profundos (Investigación Multi-Agente 2026)
+      ipp_per_capita_clp: (g1.finanzas_sinim || {}).ingresos_propios_permanentes_per_capita_clp ||
+        Math.round(((100 - ((g1.finanzas_sinim || {}).dependencia_fcm_pct || 0)) / 100) * ((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp || 0) * 1000),
+      gasto_personal_pct: Number((g1.finanzas_sinim || {}).gasto_personal_subtitulo_21_pct) || 0,
+      inversion_directa_pct: Number((g1.finanzas_sinim || {}).inversion_real_directa_pct) || 0,
+      profesionalizacion_pct: Number((g1.finanzas_sinim || {}).profesionalizacion_planta_pct) || 0,
+      saidi_horas_anual: Number((g2.sistema_electrico || {}).horas_interrupcion_saidi_anual) || 0,
+      tarifa_bt1_clp: Number((g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh) || 0,
+      costo_diesel_aislado_clp: Number((g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh) || COSTO_DIESEL_AISLADO_MAP[ine] || 0,
+      internet_fijo_pct: Number((g2.telecomunicaciones || {}).penetracion_internet_fijo_hogares_pct) || 0,
+      biomasa_salmon_ton: Number((g3.concesiones_acuicolas || {}).biomasa_cosechada_ton_anual) || 0,
+      antibioticos_ica_g_ton: Number((g3.concesiones_acuicolas || {}).indice_consumo_antibioticos_ica_g_ton) || 0,
+      amerb_decretadas: Number((g3.concesiones_acuicolas || {}).amerb_decretadas_cantidad) || 0,
+      amerb_operativas: Number((g3.concesiones_acuicolas || {}).amerb_operativas_vigentes) || 0,
+      seia_plazo_dias: Number((g4.proyectos_seia || {}).plazo_promedio_evaluacion_seia_dias) || 0,
+      compras_locales_pct: Number((g4.empleo_y_turismo || {}).compras_publicas_adjudicadas_locales_pct) || 0,
+      fuga_compras_pct: Number((g4.empleo_y_turismo || {}).fuga_compras_publicas_extrarregional_pct) || 0,
+      parcelaciones_sag_n: Number((g4.empleo_y_turismo || {}).parcelaciones_rurales_sag_certificadas) || 0,
+      medicos_por_mil_hab: Number((g5.salud_red_asistencial || {}).medicos_por_mil_habitantes) || 0,
+      espera_no_ges_n: Number((g5.salud_red_asistencial || {}).lista_espera_no_ges_consultas_especialidad) || 0,
+      urgencias_respiratorias_pct: Number((g5.salud_red_asistencial || {}).urgencias_respiratorias_invernales_pct) || 0,
+      aeroevacuaciones_samu_n: Number((g5.salud_red_asistencial || {}).aeroevacuaciones_samu_anual) || 0,
+      ratio_presion_turistica: Number((g6.demanda_emat_visitantes || {}).presion_turistica_poblacion_flotante_ratio) || 0,
+      ha_snaspe_por_guardaparque: Number((g6.demanda_emat_visitantes || {}).superficie_protegida_por_guardaparque_ha) || 0,
+      glaciares_dga_n: Number((g7.flora_y_formaciones_vegetacionales || {}).glaciares_dga_cantidad) || 0,
+      superficie_glaciar_km2: Number((g7.flora_y_formaciones_vegetacionales || {}).superficie_glaciar_km2) || 0,
+      daa_consuntivos_m3s: Number((g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_consuntivos_m3s) || 0,
+      daa_no_consuntivos_m3s: Number((g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_no_consuntivos_m3s) || 0,
+      dias_sobre_norma_mp25: Number((g7.flora_y_formaciones_vegetacionales || {}).dias_sobre_norma_mp25_anual) || 0,
+
+      // Hub VIII (Salud)
+      postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
+
+      // Hub IX (Cultura)
+      museos_espacios_n: (g9.museos_count !== undefined) ? (g9.museos_count + (g9.total_espacios_culturales || 0)) : (g9.total_espacios_culturales || 0),
+      bibliotecas_snbp_n: Number(g9.bibliotecas_publicas_count) || 0,
+      fondart_fndr_mclp: (Number(g9.fondos_cultura_adjudicados_mclp) || 0) + (Number(g9.fndr_8pct_cultura_mclp) || 0),
+      total_espacios_culturales: Number(g9.total_espacios_culturales) || 0,
+      monumentos_nacionales_count: Number(g9.monumentos_nacionales_count) || 0,
+      museos_count: Number(g9.museos_count) || 0,
+      fondos_cultura_adjudicados_mclp: Number(g9.fondos_cultura_adjudicados_mclp) || 0,
+      gasto_municipal_cultura_mclp: Number(g9.gasto_municipal_cultura_mclp) || 0,
+      gasto_cultura_per_capita_clp: GASTO_CULTURAL_MAP[ine] !== undefined ? GASTO_CULTURAL_MAP[ine] : (Number(g9.gasto_cultura_per_capita_clp) || 0),
+      fndr_8pct_cultura_mclp: Number(g9.fndr_8pct_cultura_mclp) || 0,
+      nota_percepcion_cultura_b4b: Number(g9.nota_percepcion_cultura_b4b) || 0,
+      participacion_cultural_pct_c2: Number(g9.participacion_cultural_pct_c2) || 0,
+
+      // Hub X (CTCi)
+      proyectos_anid_n: (Number(g10.proyectos_anid_locales_count) || 0) + (Number(g10.proyectos_anid_extrarregionales_count) || 0),
+      monto_anid_mclp: Number(g10.monto_anid_acumulado_mclp) || 0,
+      innovacion_corfo_mclp: Number(g10.monto_corfo_innova_mclp) || 0,
+      proyectos_ctci_total: Number(g10.total_proyectos_ctci) || 0,
+      investigadores_residentes: Number(g10.investigadores_residentes_est) || 0,
+      proyectos_anid_locales_count: Number(g10.proyectos_anid_locales_count) || 0,
+      proyectos_anid_extrarregionales_count: Number(g10.proyectos_anid_extrarregionales_count) || 0,
+      proyectos_corfo_innova_count: Number(g10.proyectos_corfo_innova_count) || 0,
+      centros_y_estaciones_ctci_count: Number(g10.centros_y_estaciones_ctci_count) || 0,
+      percepcion_ctci_prioritaria_pct_i1i: Number(g10.percepcion_ctci_prioritaria_pct_i1i) || 0,
+      evaluacion_uaysen_promedio_i8: Number(g10.evaluacion_uaysen_promedio_i8) || 0,
+      establecimientos_escolares_n: Number((g5.educacion_mineduc || {}).establecimientos_escolares_total) || 0,
+      establecimientos_aps_n: Number((g8.salud_diferenciada?.atencion_primaria_aps || {}).total_establecimientos_aps) || 0,
+      holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-',
+
+      // Conectividad Multimodal (MOP, EMPORCHA, MTT, JAC, SUBTEL)
+      red_vial_total_km: Number((g11.conectividad_terrestre || {}).red_vial_total_km) || 0,
+      red_vial_pavimentada_km: Number((g11.conectividad_terrestre || {}).red_vial_pavimentada_km) || 0,
+      red_vial_solucion_basica_km: Number((g11.conectividad_terrestre || {}).red_vial_solucion_basica_km) || 0,
+      red_vial_ripio_km: Number((g11.conectividad_terrestre || {}).red_vial_ripio_km) || 0,
+      red_vial_tierra_km: Number((g11.conectividad_terrestre || {}).red_vial_tierra_km) || 0,
+      red_vial_pavimentada_pct: Number((g11.conectividad_terrestre || {}).pavimentacion_pct) || 0,
+      distancia_coyhaique_km: Number((g11.conectividad_terrestre || {}).distancia_coyhaique_km) || 0,
+      tiempo_viaje_coyhaique_hrs: Number((g11.conectividad_terrestre || {}).tiempo_traslado_coyhaique_horas) || 0,
+      dependencia_barcaza_nivel: Number((g11.conectividad_terrestre || {}).dependencia_barcaza_nivel) || 0,
+      hogares_sin_internet_fijo_pct: Number((g11.conectividad_digital || {}).hogares_sin_internet_fijo_pct) || 0,
+      cobertura_fibra_hogar_pct: Number((g11.conectividad_digital || {}).cobertura_fibra_hogar_pct) || 0,
+      establecimientos_educacion_conectados_n: Number((g11.conectividad_digital || {}).establecimientos_educacion_conectados_n) || 0,
+      fdt_ultima_milla_aprobado: (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado !== undefined ? (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado : false,
+
+      // Informes Territoriales: Vivienda, Agropecuario, Salud y Glaciares
+      deficit_habitacional_cuantitativo_n: DEFICIT_CUANTITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_MINVU_MAP[ine] : (Number(gViv.deficit_cuantitativo_n) || 0),
+      deficit_habitacional_cualitativo_n: DEFICIT_CUALITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUALITATIVO_MINVU_MAP[ine] : (Number(gViv.deficit_cualitativo_n) || 0),
+      sistemas_ssr_apr_n: SSR_COMITES_DOH_MAP[ine] !== undefined ? SSR_COMITES_DOH_MAP[ine] : (Number(gViv.sistemas_ssr_apr_n) || 0),
+      cobertura_ssr_apr_familias: SSR_BENEFICIARIOS_DOH_MAP[ine] !== undefined ? SSR_BENEFICIARIOS_DOH_MAP[ine] : (Number(gViv.cobertura_ssr_apr_familias) || 0),
+      ganado_bovino_cabezas: BOVINOS_CAF_MAP[ine] !== undefined ? BOVINOS_CAF_MAP[ine] : (Number(gAgro.ganado_bovino_cabezas) || 0),
+      ganado_ovino_cabezas: OVINOS_CAF_MAP[ine] !== undefined ? OVINOS_CAF_MAP[ine] : (Number(gAgro.ganado_ovino_cabezas) || 0),
+      bosque_nativo_ha: Number(gAgro.bosque_nativo_ha) || 0,
+      plantaciones_ha: Number(gAgro.plantaciones_ha) || 0,
+      consumo_lena_m3_hogar_ano: CONSUMO_LENA_HOGAR_MAP[ine] !== undefined ? CONSUMO_LENA_HOGAR_MAP[ine] : (Number(gAgro.consumo_lena_m3_hogar_ano) || 0),
+      superficie_glaciares_km2: Number(gAgro.superficie_glaciares_km2) || 0,
+      esperanza_vida_total_anos: Number(gSalud.esperanza_vida_total_anos) || 0,
+      cobertura_empam_pct: Number(gSalud.cobertura_empam_pct) || 0,
+      cobertura_pscv_pct: Number(gSalud.cobertura_pscv_pct) || 0,
+
+      // Barómetro Patagonia UAysén (8 variables canónicas)
+      barometro_confianza_institucional_pct: Number(gBaro.barometro_confianza_institucional_pct) || 0,
+      barometro_redes_apoyo_comunitario_pct: Number(gBaro.barometro_redes_apoyo_comunitario_pct) || 0,
+      barometro_orgullo_identidad_pct: Number(gBaro.barometro_orgullo_identidad_pct) || 0,
+      barometro_prioridad_conectividad_pct: Number(gBaro.barometro_prioridad_conectividad_pct) || 0,
+      barometro_tension_desarrollo_conservacion_pct: Number(gBaro.barometro_tension_desarrollo_conservacion_pct) || 0,
+      barometro_intencion_migracion_juvenil_pct: Number(gBaro.barometro_intencion_migracion_juvenil_pct) || 0,
+      barometro_evaluacion_acceso_salud_pct: Number(gBaro.barometro_evaluacion_acceso_salud_pct) || 0,
+      barometro_preocupacion_contaminacion_lena_pct: Number(gBaro.barometro_preocupacion_contaminacion_lena_pct) || 0,
+
+      // ========================================================================
+      // 36 VARIABLES COMUNALES CANÓNICAS - MATRIZ DE RECONCILIACIÓN 2026
+      // ========================================================================
+      // 1. Demografía y Salud (INE Censo 2024 / DEIS / SSA / SIGTE)
+      poblacion_censo_2024: Number(d.censo_2024_poblacion) || 0,
+      indice_envejecimiento: INDICE_ENVEJECIMIENTO_MAP[ine] !== undefined ? INDICE_ENVEJECIMIENTO_MAP[ine] : 66.2,
+      indice_masculinidad: INDICE_MASCULINIDAD_MAP[ine] !== undefined ? INDICE_MASCULINIDAD_MAP[ine] : 115.8,
+      camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
+      postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
+      camas_psiquiatricas_uhce: CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] !== undefined ? CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] : 0,
+      mediana_espera_especialidad_dias: 284,
+      mediana_espera_quirurgica_dias: 395,
+      tasa_mortalidad_cancer_gastrico_100k: 18.4,
+      tasa_mortalidad_cancer_vesicula_100k: 12.6,
+      tasa_mortalidad_suicidio_100k: 15.1,
+
+      // 2. Social, Hábitat, Agua Rural y Educación (CASEN / MINVU / DOH-MOP / SLEP / SIES)
+      pobreza_ingresos_casen_pct: POBREZA_INGRESOS_MAP[ine] !== undefined ? POBREZA_INGRESOS_MAP[ine] : (Number(p.pobreza_ingresos_pct) || 4.0),
+      pobreza_multidimensional_casen_pct: POBREZA_MULTIDIMENSIONAL_MAP[ine] !== undefined ? POBREZA_MULTIDIMENSIONAL_MAP[ine] : (Number(p.pobreza_multidimensional_pct) || 14.0),
+      deficit_habitacional_cuantitativo_minvu: DEFICIT_CUANTITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_MINVU_MAP[ine] : 0,
+      deficit_habitacional_cualitativo_minvu: DEFICIT_CUALITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUALITATIVO_MINVU_MAP[ine] : 0,
+      comites_ssr_apr_doh: SSR_COMITES_DOH_MAP[ine] !== undefined ? SSR_COMITES_DOH_MAP[ine] : 0,
+      beneficiarios_ssr_apr_doh: SSR_BENEFICIARIOS_DOH_MAP[ine] !== undefined ? SSR_BENEFICIARIOS_DOH_MAP[ine] : 0,
+      establecimientos_slep_aysen: SLEP_ESTABLECIMIENTOS_MAP[ine] !== undefined ? SLEP_ESTABLECIMIENTOS_MAP[ine] : 0,
+      matricula_ed_superior_sies: MATRICULA_SIES_MAP[ine] !== undefined ? MATRICULA_SIES_MAP[ine] : 0,
+
+      // 3. Energía y Biomasa (INFOR / CNE / SEC)
+      consumo_lena_m3_solidos_anual: CONSUMO_LENA_SOLIDOS_MAP[ine] !== undefined ? CONSUMO_LENA_SOLIDOS_MAP[ine] : 0,
+      consumo_lena_m3_hogar_anio: CONSUMO_LENA_HOGAR_MAP[ine] !== undefined ? CONSUMO_LENA_HOGAR_MAP[ine] : 0,
+      informalidad_lena_pct: INFORMALIDAD_LENA_MAP[ine] !== undefined ? INFORMALIDAD_LENA_MAP[ine] : 75.0,
+      costo_real_generacion_diesel_kwh_clp: COSTO_DIESEL_AISLADO_MAP[ine] !== undefined ? COSTO_DIESEL_AISLADO_MAP[ine] : 0.0,
+      subsidio_fiscal_diesel_kwh_clp: SUBSIDIO_DIESEL_MAP[ine] !== undefined ? SUBSIDIO_DIESEL_MAP[ine] : 0.0,
+
+      // 4. Territorio, Maritorio, Economía y Gobernanza (SUBPESCA / ODEPA / BCCh / CMF / DIPRES / SINIM)
+      ecmpo_solicitadas_ha: ECMPO_SOLICITADAS_HA_MAP[ine] !== undefined ? ECMPO_SOLICITADAS_HA_MAP[ine] : 0,
+      concesiones_acuicolas_en_snaspe: CONCESIONES_SNASPE_MAP[ine] !== undefined ? CONCESIONES_SNASPE_MAP[ine] : 0,
+      cabezas_bovinos_caf: BOVINOS_CAF_MAP[ine] !== undefined ? BOVINOS_CAF_MAP[ine] : 0,
+      cabezas_ovinos_caf: OVINOS_CAF_MAP[ine] !== undefined ? OVINOS_CAF_MAP[ine] : 0,
+      sucursales_banca_privada_cmf: BANCA_PRIVADA_MAP[ine] !== undefined ? BANCA_PRIVADA_MAP[ine] : 0,
+      puntos_cajavecina_bancoestado: CAJAVECINA_MAP[ine] !== undefined ? CAJAVECINA_MAP[ine] : 0,
+      tasa_aprobacion_rs_sni_pct: RS_SNI_MAP[ine] !== undefined ? RS_SNI_MAP[ine] : 37.5,
+      autoidentificacion_indigena_pct: AUTOIDENTIFICACION_INDIGENA_MAP[ine] !== undefined ? AUTOIDENTIFICACION_INDIGENA_MAP[ine] : 28.7,
+      comunidades_indigenas_conadi: COMUNIDADES_CONADI_MAP[ine] !== undefined ? COMUNIDADES_CONADI_MAP[ine] : 0,
+      gasto_cultural_per_capita_clp: GASTO_CULTURAL_MAP[ine] !== undefined ? GASTO_CULTURAL_MAP[ine] : 0,
+      juntas_vecinos_activas: JJVV_ACTIVAS_MAP[ine] !== undefined ? JJVV_ACTIVAS_MAP[ine] : 0,
+      sindicatos_pesca_artesanal: SINDICATOS_PESCA_MAP[ine] !== undefined ? SINDICATOS_PESCA_MAP[ine] : 0
+    };
+  });
+}
+
+const comunas = buildComunaRows();
 
 // ============================================================================
 // 4. NORMALIZAR LOS HOLDINGS SALMONEROS (CON BIOMASA, CENTROS Y EVOLUCIÓN 2018-2026)
@@ -3886,7 +4128,7 @@ if (fs.existsSync(slepRawPath)) {
   });
 });
 
-// 7) Hub Turismo y SNASPE: 06_turismo_sernatur_conaf.json (18 nodos) + 4 ZOIT
+// 7) Hub Turismo y SNASPE: 06_turismo_sernatur_conaf.json (18 nodos) + 3 ZOIT
 (wp06.nodos_georreferenciados || []).forEach(n => {
   const hasVis = Number(n.visitantes_anuales) > 0;
   const hasSup = Number(n.superficie_ha) > 0;

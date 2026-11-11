@@ -1249,7 +1249,7 @@
       "hub_origen": "salud",
       "hub_destino": "social",
       "llave": "comuna_ine",
-      "descripcion": "Red de 32 postas de salud rural frente al índice de pobreza multidimensional CASEN por comuna",
+      "descripcion": "Red de 27 postas de salud rural permanentes frente al índice de pobreza multidimensional CASEN por comuna",
       "peso_intensidad": 0.86,
       "indice_divergencia_percepcion": 0.39,
       "preset_recomendado": "hub_08_02"

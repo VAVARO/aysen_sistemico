@@ -200,7 +200,36 @@
     barometro_tension_desarrollo_conservacion_pct: 'Tensión Desarrollo vs. Conservación (%)',
     barometro_intencion_migracion_juvenil_pct: 'Percepción Oportunidades / Retención Juvenil (%)',
     barometro_evaluacion_acceso_salud_pct: 'Evaluación Acceso a Salud de Calidad (%)',
-    barometro_preocupacion_contaminacion_lena_pct: 'Preocupación por Contaminación de Leña (%)'
+    barometro_preocupacion_contaminacion_lena_pct: 'Preocupación por Contaminación de Leña (%)',
+
+    // Nuevas Variables Reconciliadas Oficiales (Single Source of Truth)
+    volumen_regional_lena_m3: 'Volumen Regional de Leña Residencial (m³ sólidos/año)',
+    demanda_pellet_ton_ano: 'Demanda Regional de Pellet de Madera (ton/año)',
+    estandar_humedad_lena_pct: 'Estándar Máximo de Humedad en Leña Ley 21.499 (%)',
+    comites_ssr_vigentes_n: 'Comités y Cooperativas SSR Vigentes (DOH-MOP)',
+    poblacion_beneficiaria_ssr: 'Beneficiarios de Agua Rural SSR/APR (hab.)',
+    pct_viviendas_irrecuperables: 'Viviendas Irrecuperables Déficit Cuantitativo (%)',
+    espera_quirurgica_dias: 'Mediana de Espera Quirúrgica No GES (días)',
+    interconsultas_no_ges_total: 'Total de Interconsultas No GES Pendientes (SIGTE)',
+    tasa_cancer_gastrico_cie10: 'Tasa Mortalidad Cáncer Gástrico C16 (por 100k hab)',
+    tasa_cancer_vesicula_cie10: 'Tasa Mortalidad Cáncer Vesícula C23 (por 100k hab)',
+    tasa_suicidio_por_100k: 'Tasa Mortalidad por Suicidio e Intentos (por 100k hab)',
+    camas_psiquiatricas_uhce: 'Camas Psiquiátricas de Corta Estadía UHCE HRC',
+    estaciones_medico_rurales_n: 'Estaciones Médico Rurales de Ronda (EMR)',
+    matricula_sies_total: 'Matrícula Total Educación Superior (SIES)',
+    matricula_cft_estatal: 'Matrícula CFT Estatal Aysén (SIES)',
+    matricula_inacap_coyhaique: 'Matrícula INACAP Sede Coyhaique (SIES)',
+    matricula_universidad_aysen: 'Matrícula Universidad de Aysén (SIES)',
+    solicitudes_ecmpo_ha: 'Solicitudes ECMPO Ley Lafkenche en Trámite (ha)',
+    concesiones_salmon_snaspe_n: 'Concesiones Salmoneras en Reserva Las Guaitecas (SNASPE)',
+    ejecucion_fndr_devengado_mclp: 'Ejecución Real Devengada FNDR GORE Aysén (M$)',
+    inversion_sectorial_ministerial_mclp: 'Inversión Sectorial Ministerial Centralizada (M$)',
+    tasa_aprobacion_rs_sni_pct: 'Tasa de Aprobación RS Proyectos SNI/BIP (%)',
+    exclusion_bancaria_comunas_pct: 'Comunas en Exclusión Bancaria Privada (%)',
+    puntos_cajavecina_n: 'Puntos de Corresponsalía CajaVecina BancoEstado',
+    eventos_glof_cachet2_n: 'Vaciamientos Catastróficos GLOF Lago Cachet 2',
+    glaciar_exploradores_estatus: 'Estatus Glaciar Exploradores (DGA/CONAF)',
+    zoits_oficiales_count: 'Zonas de Interés Turístico Oficiales Decretadas'
   };
 
   // ============================================================================
@@ -361,6 +390,81 @@
       institucion: 'ANID / MinCiencia / CORFO — Cartera de Proyectos CTCi e Innovación',
       titulo: 'ANID / MinCiencia / CORFO — Cartera de Proyectos CTCi e Innovación',
       url: 'https://dataciencia.anid.cl/'
+    },
+    INFOR: {
+      institucion: 'Instituto Forestal (INFOR) / Ministerio de Agricultura',
+      titulo: 'INFOR — Catastro Dendroenergético y Consumo Residencial de Leña',
+      url: 'https://www.infor.cl/'
+    },
+    SEC_LEY: {
+      institucion: 'Superintendencia de Electricidad y Combustibles (SEC) — Ley N° 21.499',
+      titulo: 'SEC — Fiscalización de Biocombustibles Sólidos y Calidad de Leña y Pellet',
+      url: 'https://www.sec.cl/'
+    },
+    DOH_MOP: {
+      institucion: 'Dirección de Obras Hidráulicas (DOH-MOP) — Subdirección de Servicios Sanitarios Rurales',
+      titulo: 'DOH-MOP — Catastro de Comités y Cooperativas SSR / APR (Ley N° 20.998)',
+      url: 'https://doh.mop.gob.cl/'
+    },
+    SIGTE: {
+      institucion: 'Subsecretaría de Redes Asistenciales / SIGTE / FONASA',
+      titulo: 'SIGTE — Registro Oficial de Listas de Espera No GES y Tiempos de Atención',
+      url: 'https://sigte.minsal.cl/'
+    },
+    DEIS_ONCOLOGIA: {
+      institucion: 'DEIS MINSAL / Registro Poblacional de Cáncer de Aysén',
+      titulo: 'DEIS MINSAL — Vigilancia Epidemiológica de Cáncer Gástrico y Vesicular',
+      url: 'https://deis.minsal.cl/'
+    },
+    DEIS_SALUD_MENTAL: {
+      institucion: 'DEIS MINSAL (Estadísticas Vitales) / Servicio de Salud Aysén (SSA)',
+      titulo: 'DEIS MINSAL / SSA — Tasa de Mortalidad por Suicidio y Capacidad Psiquiátrica UHCE',
+      url: 'https://deis.minsal.cl/'
+    },
+    SLEP_AYSEN: {
+      institucion: 'SLEP Aysén / Dirección de Educación Pública (DEP) — Ley N° 21.040',
+      titulo: 'SLEP Aysén — Traspaso Escolar 2024 y Catastro de 66 Establecimientos',
+      url: 'https://slepaysen.cl/'
+    },
+    SIES_MINEDUC: {
+      institucion: 'Servicio de Información de Educación Superior (SIES) / MINEDUC',
+      titulo: 'SIES / MINEDUC — Matrícula Oficial Educación Superior (CFT Estatal, INACAP, UAysén)',
+      url: 'https://www.mifuturo.cl/sies/'
+    },
+    SUBPESCA_CRUBC: {
+      institucion: 'SUBPESCA / CONADI / Actas Oficiales CRUBC Aysén — Ley N° 20.249',
+      titulo: 'SUBPESCA / CRUBC — Catastro de Solicitudes ECMPO (620.000 ha en trámite)',
+      url: 'https://mapas.subpesca.cl/visorsubpesca/'
+    },
+    SUBPESCA_SNASPE: {
+      institucion: 'SUBPESCA / SERNAPESCA / CONAF — Catastro en SNASPE',
+      titulo: 'SUBPESCA / CONAF — Concesiones Salmoneras en Reserva Nacional Las Guaitecas (312)',
+      url: 'https://www.sernapesca.cl/'
+    },
+    DIPRES_SECTORIAL: {
+      institucion: 'Dirección de Presupuestos (DIPRES) / Ministerios Sectoriales',
+      titulo: 'DIPRES — Inversión Sectorial Ministerial Centralizada vs. FNDR Devengado',
+      url: 'https://www.dipres.gob.cl/'
+    },
+    CMF_BANCOESTADO: {
+      institucion: 'Comisión para el Mercado Financiero (CMF) / BancoEstado',
+      titulo: 'CMF / BancoEstado — Inclusión Financiera, Exclusión Bancaria Privada y Red CajaVecina',
+      url: 'https://www.cmfchile.cl/'
+    },
+    DGA_GLACIOLOGIA: {
+      institucion: 'DGA - MOP — Unidad de Glaciología y Nieves / Red Hidrométrica GLOF',
+      titulo: 'DGA - MOP — Registro Histórico de Vaciamientos GLOF Lago Cachet 2 y Glaciología',
+      url: 'https://dga.mop.gob.cl/'
+    },
+    CONAF_DGA_CORTE: {
+      institucion: 'DGA / CONAF / Fallo confirmatorio de la Corte de Apelaciones de Coyhaique',
+      titulo: 'DGA / CONAF — Estatus Glaciar Exploradores y Cierre Preventivo de Trekking sobre Hielo',
+      url: 'https://www.conaf.cl/'
+    },
+    SUBTURISMO_ZOIT: {
+      institucion: 'Subsecretaría de Turismo (Subturismo) — Catastro Nacional Oficial de Decretos ZOIT',
+      titulo: 'Subturismo — Decretos Supremos de Zonas de Interés Turístico Decretadas',
+      url: 'https://www.subturismo.gob.cl/zoit/'
     }
   };
 
@@ -471,20 +575,48 @@
     emporcha_toneladas: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
     emporcha_cruceros: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
 
-    // Informes Territoriales
+    // Informes Territoriales y Reconciliación Single Source of Truth
     deficit_habitacional_cuantitativo_n: PROVENANCE_CATALOG_ENTRIES.MINVU,
     deficit_habitacional_cualitativo_n: PROVENANCE_CATALOG_ENTRIES.MINVU,
-    sistemas_ssr_apr_n: PROVENANCE_CATALOG_ENTRIES.MINVU,
-    cobertura_ssr_apr_familias: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    pct_viviendas_irrecuperables: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    sistemas_ssr_apr_n: PROVENANCE_CATALOG_ENTRIES.DOH_MOP,
+    cobertura_ssr_apr_familias: PROVENANCE_CATALOG_ENTRIES.DOH_MOP,
+    comites_ssr_vigentes_n: PROVENANCE_CATALOG_ENTRIES.DOH_MOP,
+    poblacion_beneficiaria_ssr: PROVENANCE_CATALOG_ENTRIES.DOH_MOP,
     ganado_bovino_cabezas: PROVENANCE_CATALOG_ENTRIES.ODEPA_INE,
     ganado_ovino_cabezas: PROVENANCE_CATALOG_ENTRIES.ODEPA_INE,
     bosque_nativo_ha: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
     plantaciones_ha: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
-    consumo_lena_m3_hogar_ano: PROVENANCE_CATALOG_ENTRIES.CNE,
+    consumo_lena_m3_hogar_ano: PROVENANCE_CATALOG_ENTRIES.INFOR,
+    volumen_regional_lena_m3: PROVENANCE_CATALOG_ENTRIES.INFOR,
+    demanda_pellet_ton_ano: PROVENANCE_CATALOG_ENTRIES.SEC_LEY,
+    estandar_humedad_lena_pct: PROVENANCE_CATALOG_ENTRIES.SEC_LEY,
     superficie_glaciares_km2: PROVENANCE_CATALOG_ENTRIES.DGA_MOP,
     esperanza_vida_total_anos: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
     cobertura_empam_pct: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
     cobertura_pscv_pct: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
+    espera_no_ges_n: PROVENANCE_CATALOG_ENTRIES.SIGTE,
+    espera_quirurgica_dias: PROVENANCE_CATALOG_ENTRIES.SIGTE,
+    interconsultas_no_ges_total: PROVENANCE_CATALOG_ENTRIES.SIGTE,
+    tasa_cancer_gastrico_cie10: PROVENANCE_CATALOG_ENTRIES.DEIS_ONCOLOGIA,
+    tasa_cancer_vesicula_cie10: PROVENANCE_CATALOG_ENTRIES.DEIS_ONCOLOGIA,
+    tasa_suicidio_por_100k: PROVENANCE_CATALOG_ENTRIES.DEIS_SALUD_MENTAL,
+    camas_psiquiatricas_uhce: PROVENANCE_CATALOG_ENTRIES.DEIS_SALUD_MENTAL,
+    estaciones_medico_rurales_n: PROVENANCE_CATALOG_ENTRIES.DEIS_MINSAL,
+    matricula_sies_total: PROVENANCE_CATALOG_ENTRIES.SIES_MINEDUC,
+    matricula_cft_estatal: PROVENANCE_CATALOG_ENTRIES.SIES_MINEDUC,
+    matricula_inacap_coyhaique: PROVENANCE_CATALOG_ENTRIES.SIES_MINEDUC,
+    matricula_universidad_aysen: PROVENANCE_CATALOG_ENTRIES.SIES_MINEDUC,
+    solicitudes_ecmpo_ha: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_CRUBC,
+    concesiones_salmon_snaspe_n: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_SNASPE,
+    ejecucion_fndr_devengado_mclp: PROVENANCE_CATALOG_ENTRIES.DIPRES_SECTORIAL,
+    inversion_sectorial_ministerial_mclp: PROVENANCE_CATALOG_ENTRIES.DIPRES_SECTORIAL,
+    tasa_aprobacion_rs_sni_pct: PROVENANCE_CATALOG_ENTRIES.DIPRES_SECTORIAL,
+    exclusion_bancaria_comunas_pct: PROVENANCE_CATALOG_ENTRIES.CMF_BANCOESTADO,
+    puntos_cajavecina_n: PROVENANCE_CATALOG_ENTRIES.CMF_BANCOESTADO,
+    eventos_glof_cachet2_n: PROVENANCE_CATALOG_ENTRIES.DGA_GLACIOLOGIA,
+    glaciar_exploradores_estatus: PROVENANCE_CATALOG_ENTRIES.CONAF_DGA_CORTE,
+    zoits_oficiales_count: PROVENANCE_CATALOG_ENTRIES.SUBTURISMO_ZOIT,
 
     // Barómetro Patagonia UAysén
     barometro_confianza_institucional_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
@@ -559,7 +691,36 @@
     bosque_nativo_ha: ['bosque nativo', 'superficie bosque nativo', 'hectareas bosque nativo', 'bosques nativos'],
     plantaciones_ha: ['plantaciones forestales', 'superficie plantaciones', 'forestal'],
     cobertura_empam_pct: ['empam', 'control adulto mayor', 'examen medicina preventiva adulto mayor', 'salud adulto mayor', 'adultos mayores empam'],
-    cobertura_pscv_pct: ['pscv', 'salud cardiovascular', 'programa de salud cardiovascular', 'control cardiovascular']
+    cobertura_pscv_pct: ['pscv', 'salud cardiovascular', 'programa de salud cardiovascular', 'control cardiovascular'],
+
+    // Nuevas Variables Reconciliadas Oficiales
+    volumen_regional_lena_m3: ['volumen de lena', 'volumen regional de lena', 'infor lena', 'catastro dendroenergetico', 'lena infor', 'metros cubicos de lena anual', 'extraccion de lena', 'informalidad lena', 'humedad lena', '565456 m3'],
+    demanda_pellet_ton_ano: ['pellet', 'demanda de pellet', 'pellet de madera', 'biomasa pellet', 'consumo de pellet', 'toneladas de pellet', 'pellets', 'mesa del pellet', 'estufas a pellet', 'sec ley 21499', 'biocombustibles solidos', 'ley 21499', '20000 ton'],
+    estandar_humedad_lena_pct: ['humedad de la lena', 'estandar de humedad', 'xilohigrometro', 'humedad menor a 25', 'biocombustibles sec'],
+    comites_ssr_vigentes_n: ['comites ssr', 'cooperativas de agua rural', 'comites de agua potable rural', 'sistemas de agua rural', '47 comites', 'ley 20998'],
+    poblacion_beneficiaria_ssr: ['beneficiarios ssr', 'familias con agua rural', 'poblacion abastecida apr', 'beneficiarios agua potable rural', '28833 beneficiarios'],
+    pct_viviendas_irrecuperables: ['viviendas irrecuperables', 'porcentaje viviendas irrecuperables', '56% irrecuperables'],
+    espera_quirurgica_dias: ['espera quirurgica', 'lista de espera quirurgica', 'dias espera quirurgica', 'mediana quirurgica', 'cirugia retraso', '395 dias'],
+    interconsultas_no_ges_total: ['interconsultas no ges', 'total interconsultas', '11420 interconsultas', 'sigte fonasa'],
+    tasa_cancer_gastrico_cie10: ['cancer gastrico', 'cancer de estomago', 'c16', 'mortalidad cancer gastrico', 'deis cancer gastrico', '18.4 cancer'],
+    tasa_cancer_vesicula_cie10: ['cancer de vesicula', 'cancer vesicula', 'c23', 'mortalidad cancer vesicula', '12.6 vesicula'],
+    tasa_suicidio_por_100k: ['tasa de suicidio', 'suicidio', 'suicidios', 'mortalidad suicidio', 'salud mental suicidio', 'intentos de autoeliminacion', '15.1 suicidio'],
+    camas_psiquiatricas_uhce: ['camas psiquiatricas', 'uhce', 'salud mental hrc', 'uhce hrc', '9 camas psiquiatricas', 'psiquiatria coyhaique'],
+    estaciones_medico_rurales_n: ['estaciones medico rurales', 'emr', 'rondas medicas', '20 estaciones medico'],
+    matricula_sies_total: ['matricula educacion superior', 'sies', 'estudiantes educacion superior', 'matricula sies', '2327 estudiantes'],
+    matricula_cft_estatal: ['cft estatal', 'cft estatal aysen', 'matricula cft estatal', '737 estudiantes cft'],
+    matricula_inacap_coyhaique: ['inacap coyhaique', 'inacap aysen', 'matricula inacap', '800 estudiantes inacap'],
+    matricula_universidad_aysen: ['universidad de aysen', 'matricula uaysen', 'estudiantes uaysen', '790 estudiantes uaysen'],
+    solicitudes_ecmpo_ha: ['ecmpo', 'solicitudes ecmpo', 'ley lafkenche', 'espacios costeros pueblos originarios', 'pu wapi', 'antunen rain', '620000 ha', 'crubc ecmpo'],
+    concesiones_salmon_snaspe_n: ['concesiones en snaspe', 'concesiones reserva las guaitecas', 'salmoneras en areas protegidas', '312 concesiones snaspe', 'ley sbap salmoneras'],
+    ejecucion_fndr_devengado_mclp: ['fndr devengado', 'ejecucion real fndr', 'ejecucion presupuestaria gore', 'fndr dipres', 'gasto devengado fndr', '61548 devengado'],
+    inversion_sectorial_ministerial_mclp: ['inversion sectorial ministerial', 'inversion sectorial', 'gasto ministerial centralizado', 'gasto sectorial mop minvu salud', '402000 sectorial'],
+    tasa_aprobacion_rs_sni_pct: ['tasa aprobacion rs', 'rs sni bip', 'proyectos rs mideso', 'eficacia proyectos sni'],
+    exclusion_bancaria_comunas_pct: ['exclusion bancaria', 'banca privada', 'sucursales bancarias', 'comunas sin bancos', '80% exclusion bancaria'],
+    puntos_cajavecina_n: ['cajavecina', 'caja vecina', 'puntos cajavecina', 'bancoestado cajavecina', 'corresponsalia bancaria', '400 puntos cajavecina'],
+    eventos_glof_cachet2_n: ['glof', 'eventos glof', 'glofs', 'lago cachet 2', 'cachet 2', 'vaciamientos lago cachet', 'cuenca baker glof', 'rio colonia glof', '27 vaciamientos'],
+    glaciar_exploradores_estatus: ['glaciar exploradores', 'exploradores', 'clausura trekking hielo', 'cierre glaciar exploradores', 'hielo exploradores'],
+    zoits_oficiales_count: ['zoits oficiales', '3 zoits decretadas', 'zoits decretadas', 'zoits oficiales decretadas']
   };
 
   // ============================================================================
@@ -1370,6 +1531,383 @@
   }
 
   /**
+   * Detector de Consultas Reconciliadas sobre Fuentes Oficiales Primarias
+   * (docs/viplan_research/MATRIZ_RECONCILIACION_FUENTES_OFICIALES.md)
+   */
+  function detectReconciledTopicIntent(qNorm, rawQuery, matchedEntities = []) {
+    const isSingleComunaSpecific = matchedEntities.length === 1 &&
+      !/\b(regional|total|ambas|versus|vs|compar|todas|aysen|region|cuantas|cuantos|resumen)\b/i.test(qNorm);
+
+    // 1. Leña y Pellet (INFOR / SEC)
+    if (/\b(pellet|pellets|demanda de pellet|dendroenerg|ley 21\.?499|humedad de la le[ñn]a|xilohigrometro|consumo.*le[ñn]a.*pellet|pellet.*le[ñn]a|biocombustibles? solidos?)\b/i.test(qNorm) ||
+        (/\b(infor|volumen.*le[ñn]a)\b/i.test(qNorm) && !isSingleComunaSpecific)) {
+      return 'pellet_lena';
+    }
+
+    // 2. Déficit habitacional cuantitativo y cualitativo (MINVU)
+    if (/\b(deficit habitacional|deficit cuantitativo|deficit cualitativo|viviendas? irrecuperables?|plan de emergencia habitacional|peh minvu)\b/i.test(qNorm)) {
+      if (!isSingleComunaSpecific || /\b(cuantitativo y cualitativo|ambos|total|regional|minvu|peh)\b/i.test(qNorm)) {
+        return 'deficit_habitacional';
+      }
+    }
+
+    // 3. Comités y beneficiarios de agua rural SSR/APR (DOH-MOP)
+    if (/\b(ssr|apr|comites? de agua|cooperativas? de agua|agua potable rural|servicios? sanitarios? rurales?|ley 20\.?998|seguridad hidrica rural|beneficiarios ssr|agua rural)\b/i.test(qNorm)) {
+      if (!isSingleComunaSpecific || /\b(cuantos comites|comites y beneficiarios|total|regional|doh|mop|ley 20998)\b/i.test(qNorm)) {
+        return 'agua_rural_ssr';
+      }
+    }
+
+    // 4. Pobreza multidimensional vs ingresos (CASEN MDSF)
+    if (/\b(pobreza multidimensional|multidimensional.*ingresos|ingresos.*multidimensional|casen multidimensional|pobreza monetaria.*multidimensional)\b/i.test(qNorm)) {
+      return 'pobreza_multidim';
+    }
+
+    // 5. Listas de espera de especialidad y quirúrgica (SIGTE)
+    if (/\b(listas? de espera|espera no ges|interconsultas no ges|espera quirurgica|espera de especialidad|sigte|tiempos? de espera)\b/i.test(qNorm)) {
+      return 'listas_espera_sigte';
+    }
+
+    // 6. Cáncer gástrico, vesícula y tasa de suicidio (DEIS MINSAL)
+    if (/\b(cancer gastrico|cancer de vesicula|neoplasias digestivas|tasa de suicidio|suicidios?|uhce|camas psiquiatricas|salud mental.*deis|cancer.*suicidio|suicidio.*cancer)\b/i.test(qNorm)) {
+      return 'cancer_suicidio';
+    }
+
+    // 7. Camas hospitalarias HRC (167 de 261) y postas de salud rural (27 PSR)
+    if (/\b(camas.*postas|postas.*camas|camas.*hrc|hrc.*camas|hospital regional.*camas|camas.*hospital regional|167 de 261|167 camas|261 camas|27 postas|postas de salud rural.*hrc|hrc.*postas|postas y camas|camas y postas|27 postas de salud rural)\b/i.test(qNorm)) {
+      return 'camas_hrc_postas';
+    }
+
+    // 8. SLEP Aysén (traspaso 2024, 66 establecimientos) y matrícula SIES (CFT Estatal, INACAP, UAysén)
+    if (/\b(slep aysen|traspaso.*slep|sies|matricula.*superior|cft estatal|cft estatal aysen|uaysen.*inacap|inacap.*uaysen|campus errazuriz|victor cubillos|66 establecimientos|traspaso 2024)\b/i.test(qNorm)) {
+      return 'slep_sies';
+    }
+
+    // 9. Solicitudes ECMPO Ley Lafkenche (620.000 ha) y concesiones en SNASPE (312 en RN Las Guaitecas)
+    if (/\b(ecmpo|ley lafkenche|pu wapi|antunen rain|620\.?000 ha|concesiones.*snaspe|concesiones.*reserva.*guaitecas|reserva.*guaitecas.*concesiones|312 concesiones|solicitudes ecmpo)\b/i.test(qNorm)) {
+      return 'ecmpo_snaspe';
+    }
+
+    // 10. Existencias ganaderas bovinas y ovinas (ODEPA Censo Agropecuario)
+    if (/\b(ganaderia bovina|ganaderia ovina|ganado bovino.*ovino|ganado ovino.*bovino|bovinos.*ovinos|ovinos.*bovinos|bovinos y ovinos|ovinos y bovinos|existencias ganaderas|censo agropecuario.*ganad|caf odepa|cabezas de ganado|ganaderia.*odepa)\b/i.test(qNorm)) {
+      return 'ganaderia_bovina_ovina';
+    }
+
+    // 11. Inversión FNDR devengada vs sectorial ministerial centralizada (DIPRES)
+    if (/\b(fndr devengad|inversion sectorial ministerial|sectorial.*fndr|fndr.*sectorial|gasto centralizado.*fndr|ejecucion real fndr|subejecucion fndr|fndr.*dipres|dipres.*fndr|inversion sectorial.*dipres|ejecucion.*fndr.*gore|ejecucion presupuestaria fndr)\b/i.test(qNorm)) {
+      return 'fndr_sectorial';
+    }
+
+    // 12. Bancarización y cobertura CajaVecina (CMF / BancoEstado)
+    if (/\b(exclusion bancaria|banca privada|bancarizacion|cajavecina|caja vecina|bancoestado.*cobertura|cobertura.*cajavecina|sucursales bancarias|corresponsalia bancaria)\b/i.test(qNorm)) {
+      return 'exclusion_bancaria_cajavecina';
+    }
+
+    // 13. GLOFs en cuenca Baker / Cachet 2 (DGA) y Glaciar Exploradores
+    if (/\b(glof|glofs|lago cachet|cachet 2|cuenca.*baker.*glof|glaciar exploradores|clausura.*exploradores|trekking sobre hielo|vaciamientos.*cachet)\b/i.test(qNorm)) {
+      return 'glof_exploradores';
+    }
+
+    // 14. Las 3 ZOITs oficiales decretadas (Chelenko, Aysén-Patagonia, Glaciares)
+    if (/\b(zoits? oficiales|zoits? decretadas?|3 zoits|cuales son las zoits|zonas? de interes turistico decretadas?|zoit chelenko|aysen patagonia queulat|provincia de los glaciares|decretos? zoit|zoits?.*subturismo)\b/i.test(qNorm) ||
+        (/\bzoits?\b/i.test(qNorm) && !isSingleComunaSpecific)) {
+      return 'zoit_oficiales';
+    }
+
+    return null;
+  }
+
+  /**
+   * Construye respuesta analítica y especificación de evidencia para temas reconciliados oficiales
+   */
+  function buildReconciledTopicReply(topicKey, userText, qNorm, index) {
+    switch (topicKey) {
+      case 'pellet_lena': {
+        const reply = 'En la matriz energética y dendroenergética regional (fuentes oficiales INFOR y SEC Ley N° 21.499): El consumo de leña residencial totaliza 565.456 m³ sólidos/año (~850.000 m³ estéreos/año) con un consumo específico promedio de 17,5 m³ sólidos/hogar/año (INFOR), representando el 80% al 92,8% de la matriz térmica regional. La demanda regional de pellet de madera asciende a ~20.000 ton/año, abastecida en un 100% mediante cabotaje marítimo hacia Puerto Chacabuco (Mesa del Pellet / SEREMI de Energía). Bajo la Ley N° 21.499, la SEC fiscaliza el estándar de humedad < 25% con xilohigrómetros e inscripción obligatoria de Centros de Procesamiento de Biomasa (CPB).';
+        const sources = resolveSourcesForKeys(['volumen_regional_lena_m3', 'demanda_pellet_ton_ano']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'consumo_lena_m3_hogar_ano',
+            varY: 'hogares_lena_pct',
+            yKey: 'consumo_lena_m3_hogar_ano',
+            y2Key: 'hogares_lena_pct',
+            title: 'Consumo Residencial de Leña (m³/hogar/año) vs. Matriz a Leña (% hogares)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'III'
+        };
+      }
+      case 'deficit_habitacional': {
+        const reply = 'Según el Observatorio Habitacional del MINVU y el Plan de Emergencia Habitacional (PEH): La Región de Aysén registra un déficit habitacional cuantitativo de 3.147 viviendas (56% irrecuperables, 1.762 viviendas) y un déficit cualitativo superior a 14.000 viviendas con deficiencias en envolvente térmica y habitabilidad. La demanda se concentra prioritariamente en Coyhaique (1.845 viviendas cuantitativo) y Aysén (762 viviendas).';
+        const sources = resolveSourcesForKeys(['deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'deficit_habitacional_cuantitativo_n',
+            varY: 'deficit_habitacional_cualitativo_n',
+            yKey: 'deficit_habitacional_cuantitativo_n',
+            y2Key: 'deficit_habitacional_cualitativo_n',
+            title: 'Déficit Habitacional Cuantitativo vs. Cualitativo (MINVU)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VI'
+        };
+      }
+      case 'agua_rural_ssr': {
+        const reply = 'Según la Subdirección de Servicios Sanitarios Rurales (DOH-MOP) bajo la Ley N° 20.998: En la Región de Aysén operan 47 comités y cooperativas de SSR vigentes, abasteciendo a 28.833 beneficiarios rurales (28,6% de la población regional). Esta infraestructura comunitaria enfrenta una alta vulnerabilidad estacional por congelamiento recurrente de matrices y captaciones superficiales en valles interiores durante la temporada invernal.';
+        const sources = resolveSourcesForKeys(['sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'sistemas_ssr_apr_n',
+            varY: 'cobertura_ssr_apr_familias',
+            yKey: 'sistemas_ssr_apr_n',
+            y2Key: 'cobertura_ssr_apr_familias',
+            title: 'Sistemas de Agua Potable Rural (SSR/APR) y Familias Abastecidas (DOH-MOP)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VI'
+        };
+      }
+      case 'pobreza_multidim': {
+        const reply = 'Según la Encuesta CASEN del Ministerio de Desarrollo Social y Familia (MDSF): En la Región de Aysén, la pobreza por ingresos monetarios promedia 4,0% regional, cifra distorsionada por la alta asignación de zona de funcionarios en comunas pequeñas (ej. Lago Verde registra 0,9%). En contraste, la Pobreza Multidimensional alcanza un 14,0% promedio regional y se eleva a rangos de 22,0% a 28,0% en comunas rurales aisladas (Lago Verde 24,1%, Tortel 26,4%, O\'Higgins 27,8%, Guaitecas 23,5%), reflejando graves carencias en habitabilidad, calefacción y aislamiento.';
+        const sources = resolveSourcesForKeys(['pobreza_ingresos_pct', 'pobreza_multidim_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'pobreza_ingresos_pct',
+            varY: 'pobreza_multidim_pct',
+            yKey: 'pobreza_ingresos_pct',
+            y2Key: 'pobreza_multidim_pct',
+            title: 'Pobreza por Ingresos vs. Pobreza Multidimensional CASEN (%)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VI'
+        };
+      }
+      case 'listas_espera_sigte': {
+        const reply = 'Según el Sistema de Información de Gestión de Tiempos de Espera (SIGTE / Subsecretaría de Redes Asistenciales / FONASA): La Red Asistencial de Aysén registra 11.420 interconsultas No GES pendientes. La mediana de espera para consulta de nueva especialidad médica es de 284 días, mientras que la mediana de espera para intervenciones quirúrgicas alcanza los 395 días.';
+        const sources = resolveSourcesForKeys(['espera_no_ges_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'espera_no_ges_n',
+            varY: null,
+            yKey: 'espera_no_ges_n',
+            y2Key: null,
+            title: 'Lista de Espera No GES Consultas de Especialidad por Comuna (SIGTE)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VIII'
+        };
+      }
+      case 'cancer_suicidio': {
+        const reply = 'Según las estadísticas de vigilancia epidemiológica del DEIS MINSAL y el Registro Poblacional de Cáncer: Las neoplasias digestivas son la 1ª causa de años de vida potencialmente perdidos (AVPP) en Aysén, encabezadas por el Cáncer Gástrico (C16, tasa de 18,4 por 100k hab) y el Cáncer de Vesícula Biliar (C23, tasa de 12,6 por 100k hab). En salud mental, la región registra una tasa de mortalidad por suicidio de ~15,1 por 100k hab, existiendo un cuello de botella asistencial crítico: solo 9 camas psiquiátricas de corta estadía en la UHCE del Hospital Regional Coyhaique para toda la población regional.';
+        const sources = resolveSourcesForKeys(['tasa_cancer_gastrico_cie10', 'tasa_suicidio_por_100k']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'camas_hospitalarias',
+            varY: 'medicos_por_mil_hab',
+            yKey: 'camas_hospitalarias',
+            y2Key: 'medicos_por_mil_hab',
+            title: 'Camas Hospitalarias vs. Dotación Médica por Comuna (DEIS MINSAL)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VIII'
+        };
+      }
+      case 'camas_hrc_postas': {
+        const reply = 'Según el catastro oficial del DEIS MINSAL y el Servicio de Salud Aysén (SSA): La red asistencial regional dispone de 261 camas hospitalarias totales, de las cuales 167 camas (63,98%) están concentradas en el Hospital Regional Coyhaique (HRC), seguidas por Puerto Aysén (52), Cochrane (16), Chile Chico (14) y Cisnes (12). En atención primaria rural, existen 27 Postas de Salud Rural (PSR) permanentes dotadas de personal TENS residente y 20 Estaciones Médico Rurales (EMR) atendidas por rondas periódicas.';
+        const sources = resolveSourcesForKeys(['camas_hospitalarias', 'postas_salud_rural']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'camas_hospitalarias',
+            varY: 'postas_salud_rural',
+            yKey: 'camas_hospitalarias',
+            y2Key: 'postas_salud_rural',
+            title: 'Camas Hospitalarias y Postas de Salud Rural (PSR) por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VIII'
+        };
+      }
+      case 'slep_sies': {
+        const reply = 'En el ámbito educativo oficial (SLEP Aysén Ley N° 21.040 y SIES MINEDUC): El SLEP Aysén asumió la administración escolar pública efectiva el 1 de enero de 2024, articulando 66 recintos educacionales (56 escuelas/liceos y 10 jardines infantiles). En educación superior, el SIES reporta una matrícula total regional de 2.327 estudiantes: CFT Estatal Aysén (737 alumnos), INACAP Coyhaique (800) y Universidad de Aysén (790 alumnos, consolidada en su Campus Errázuriz tras culminar la administración provisional SES e iniciar la rectoría del Dr. Víctor Cubillos 2026-2030). El 66% de la matrícula superior regional corresponde a formación técnica.';
+        const sources = resolveSourcesForKeys(['matricula_escolar', 'matricula_sies_total']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'matricula_escolar',
+            varY: 'establecimientos_escolares_n',
+            yKey: 'matricula_escolar',
+            y2Key: 'establecimientos_escolares_n',
+            title: 'Matrícula Escolar y Establecimientos Educacionales por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VI'
+        };
+      }
+      case 'ecmpo_snaspe': {
+        const reply = 'Según registros oficiales de SUBPESCA, CONADI, CRUBC Aysén y CONAF: Se encuentran en tramitación administrativa y judicial más de 620.000 ha en solicitudes de Espacios Costeros Marinos para Pueblos Originarios (ECMPO Ley N° 20.249), destacando Pu Wapi (227.000 ha en Cisnes) y Antünen Rain (393.000 ha en Islas Huichas). Paralelamente, más de 300 concesiones salmoneras (312 en catastro SNASPE) operan al interior de la Reserva Nacional Las Guaitecas, bajo auditorías de la Contraloría General de la República y el marco de la Ley SBAP N° 21.600.';
+        const sources = resolveSourcesForKeys(['solicitudes_ecmpo_ha', 'concesiones_salmon_snaspe_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'concesiones_salmon',
+            varY: 'centros_activos_salmon',
+            yKey: 'concesiones_salmon',
+            y2Key: 'centros_activos_salmon',
+            title: 'Concesiones Salmoneras y Centros Activos por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'II'
+        };
+      }
+      case 'ganaderia_bovina_ovina': {
+        const reply = 'Según el VIII Censo Nacional Agropecuario y Forestal (CAF 2021) de ODEPA e INE: La Región de Aysén cuenta con 130.832 cabezas de ganado bovino y 177.934 cabezas de ganado ovino. La mayor dotación pecuaria se concentra en Coyhaique (48.500 bovinos y 62.000 ovinos), Río Ibáñez (24.200 bovinos y 38.500 ovinos), Chile Chico (15.400 bovinos y 28.600 ovinos) y Cochrane (16.200 bovinos y 22.400 ovinos).';
+        const sources = resolveSourcesForKeys(['ganado_bovino_cabezas', 'ganado_ovino_cabezas']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'ganado_bovino_cabezas',
+            varY: 'ganado_ovino_cabezas',
+            yKey: 'ganado_bovino_cabezas',
+            y2Key: 'ganado_ovino_cabezas',
+            title: 'Ganado Bovino vs. Ganado Ovino por Comuna (Censo Agropecuario ODEPA)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'V'
+        };
+      }
+      case 'fndr_sectorial': {
+        const reply = 'Según los balances oficiales de ejecución presupuestaria de la DIPRES: El FNDR del GORE Aysén devengó M$ 61.548 en 2023 (88,2% del presupuesto vigente) y registró un 79,0% de ejecución al cierre preliminar de 2024 (M$ 57.235,5). En contraposición, la inversión sectorial ministerial centralizada (MOP, MINVU, Salud, MTT) suma entre M$ 395.000 y M$ 402.000 anuales (5x a 6x el FNDR descentralizado). En el SNI/BIP, los proyectos municipales promedian una tasa de aprobación RS de solo 37,5%, alcanzando un 65% de rechazos/observaciones en comunas rurales.';
+        const sources = resolveSourcesForKeys(['ejecucion_fndr_devengado_mclp', 'inversion_sectorial_ministerial_mclp']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'fndr_mclp',
+            varY: 'presupuesto_mclp',
+            yKey: 'fndr_mclp',
+            y2Key: 'presupuesto_mclp',
+            title: 'Inversión Pública FNDR vs. Presupuesto Municipal por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'IV'
+        };
+      }
+      case 'exclusion_bancaria_cajavecina': {
+        const reply = 'Según estadísticas oficiales de la Comisión para el Mercado Financiero (CMF) y BancoEstado: 8 de las 10 comunas de Aysén (80%) carecen de sucursales bancarias privadas, existiendo presencia comercial exclusiva en Coyhaique y Puerto Aysén. La red comunal de más de 400 puntos de corresponsalía CajaVecina de BancoEstado instalados en almacenes y comercios locales representa la infraestructura crítica de inclusión financiera y transaccional para la población rural y aislada.';
+        const sources = resolveSourcesForKeys(['exclusion_bancaria_comunas_pct', 'puntos_cajavecina_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'poblacion_censo_2024',
+            varY: 'empresas_sii',
+            yKey: 'poblacion_censo_2024',
+            y2Key: 'empresas_sii',
+            title: 'Población Censo 2024 vs. Empresas Vigentes SII por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'V'
+        };
+      }
+      case 'glof_exploradores': {
+        const reply = 'Según la Unidad de Glaciología y Nieves de la DGA y CONAF: Se registran 27 vaciamientos catastróficos históricos GLOF (Glacial Lake Outburst Floods) en Lago Cachet 2 hacia el Río Colonia y la cuenca del Río Baker, con volúmenes de descarga de hasta 200 millones de m³ por evento y caudales superiores a 3.000 m³/s. En el Glaciar Exploradores, rige la clausura total e indefinida del trekking sobre hielo fósil mediante resoluciones técnicas DGA/CONAF y fallo confirmatorio de la Corte de Apelaciones de Coyhaique por peligro de colapso morrénico, manteniéndose activo únicamente el sendero perimetral de mirador panorámico.';
+        const sources = resolveSourcesForKeys(['eventos_glof_cachet2_n', 'glaciar_exploradores_estatus']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'superficie_glaciares_km2',
+            varY: null,
+            yKey: 'superficie_glaciares_km2',
+            y2Key: null,
+            title: 'Superficie Glaciar Comunal (DGA) en Aysén',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII'
+        };
+      }
+      case 'zoit_oficiales': {
+        const reply = 'Según el catastro oficial de la Subsecretaría de Turismo (Subturismo): En la Región de Aysén existen únicamente 3 Zonas de Interés Turístico (ZOIT) decretadas oficialmente con Decreto Supremo: 1. ZOIT Chelenko (Cuenca Lago General Carrera: Chile Chico y Río Ibáñez), 2. ZOIT Aysén Patagonia Queulat (Cisnes, Aysén y Lago Verde), y 3. ZOIT Provincia de los Glaciares (Cochrane, Tortel y Villa O\'Higgins). Coyhaique no cuenta con decreto ZOIT y funciona como nodo articulador de servicios turísticos.';
+        const sources = resolveSourcesForKeys(['zoit_nombre', 'zoits_oficiales_count']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'prestadores_sernatur',
+            varY: 'visitantes_snaspe',
+            yKey: 'prestadores_sernatur',
+            y2Key: 'visitantes_snaspe',
+            title: 'Prestadores Turísticos SERNATUR vs. Visitantes Parques SNASPE por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'I'
+        };
+      }
+      default:
+        return null;
+    }
+  }
+
+  /**
    * WP-B.1: Construye las filas de la Ficha Completa de Indicadores de la Comuna vs.
    * Promedio/Total Regional para la tabla de evidencia de `consultor.html`.
    */
@@ -1651,6 +2189,37 @@
     // WP-A.2: Detectar intención de Empresas / Holdings Salmoneros
     const isHoldingQuery = detectHoldingOrFisheryIntent(qNorm, rawQuery) &&
       (matchedEntities.length === 0 || /\b(segun empresa|segun empresas|por empresa|por empresas|por holding|no comunas|empresas o holdings|pregunte por empresas)\b/i.test(qNorm));
+
+    // Detectar intención de temas reconciliados oficiales (Single Source of Truth)
+    const reconciledTopic = detectReconciledTopicIntent(qNorm, rawQuery, matchedEntities);
+    if (reconciledTopic) {
+      const topicReply = buildReconciledTopicReply(reconciledTopic, rawQuery, qNorm, _memoryIndex);
+      if (topicReply) {
+        return {
+          query: rawQuery,
+          qNorm,
+          qTokens,
+          matchedEntities,
+          matchedSector: null,
+          isHoldingQuery: false,
+          reconciledTopic,
+          reconciledResult: topicReply,
+          topVariables: [],
+          topNumericVars: [],
+          primaryVar: null,
+          secondaryVar: null,
+          wantsScatter: false,
+          wantsBivariateComparison: false,
+          wantsTemporal: false,
+          excludeCoyhaique,
+          topNodes: [],
+          matchedCollections: [],
+          chartSpec: topicReply.chart,
+          sources: topicReply.sources,
+          relatedHub: topicReply.relatedHub || 'IV'
+        };
+      }
+    }
 
     // WP-B.2: Detectar intención de Cruce Comuna × Sector o Sector Regional
     let matchedSector = null;
@@ -2050,6 +2619,20 @@
       sources,
       relatedHub
     } = memoryPacket;
+
+    // 0. Temas Reconciliados Oficiales Single Source of Truth
+    if (memoryPacket.reconciledResult) {
+      updateConversationState(memoryPacket, memoryPacket.reconciledResult);
+      return memoryPacket.reconciledResult;
+    }
+    const detectedTopic = detectReconciledTopicIntent(qNorm, query, matchedEntities);
+    if (detectedTopic) {
+      const topicRes = buildReconciledTopicReply(detectedTopic, query, qNorm, _memoryIndex);
+      if (topicRes) {
+        updateConversationState(memoryPacket, topicRes);
+        return topicRes;
+      }
+    }
 
     // 1. WP-A.2: Consultas por Empresas / Holdings Salmoneros y Pesquerías
     if (isHoldingQuery) {
@@ -2484,6 +3067,8 @@
     buildComunaProfileTableRows,
     buildComunaSectorReply,
     buildHoldingsReply,
+    detectReconciledTopicIntent,
+    buildReconciledTopicReply,
     CANONICAL_LABELS,
     VARIABLE_TO_PROVENANCE,
     INDICATOR_SYNONYMS,
@@ -2530,6 +3115,15 @@
       }
 
       const memoryPacket = retrieveMemoryForQuery(userText);
+
+      // Resolución directa determinista para temas reconciliados oficiales Single Source of Truth
+      if (memoryPacket.reconciledResult) {
+        updateConversationState(memoryPacket, memoryPacket.reconciledResult);
+        _conversationMemory.push({ role: 'user', content: userText });
+        _conversationMemory.push({ role: 'assistant', content: memoryPacket.reconciledResult.reply });
+        return memoryPacket.reconciledResult;
+      }
+
       const { systemPrompt, userPromptWithMemory } = buildMemoryGroundedPrompts(memoryPacket);
 
       const messages = [

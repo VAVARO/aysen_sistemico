@@ -89,6 +89,35 @@
                     return;
                 }
             }
+        },
+        getNodeById(id) {
+            if (!id) return null;
+            const normId = String(id).toLowerCase().trim();
+            if (this.nodes && Array.isArray(this.nodes)) {
+                if (normId.includes('ctci-nod-15') || normId === 'infor' || normId === 'ctci-nod-15') {
+                    const matchInfor = this.nodes.find(n => n.rawId === 36 || n.id === 'node-36' || (n.title && n.title.toLowerCase().includes('infor')) || (n.id && n.id.toLowerCase() === 'ctci-nod-15'));
+                    if (matchInfor) return matchInfor;
+                }
+                const found = this.nodes.find(n =>
+                    String(n.id).toLowerCase() === normId ||
+                    String(n.rawId).toLowerCase() === normId ||
+                    `node-${n.rawId}`.toLowerCase() === normId ||
+                    `hub-${n.hubId}`.toLowerCase() === normId ||
+                    (n.hubId && String(n.hubId).toLowerCase() === normId)
+                );
+                if (found) return found;
+            }
+            if (typeof LAYER_CONFIG !== 'undefined' && window.AysenSystemicData) {
+                for (const conf of Object.values(LAYER_CONFIG)) {
+                    const gNodes = conf.getNodes ? conf.getNodes(window.AysenSystemicData) : [];
+                    const geoFound = gNodes.find(n =>
+                        (n.id && String(n.id).toLowerCase() === normId) ||
+                        (n.nombre && String(n.nombre).toLowerCase().includes(normId))
+                    );
+                    if (geoFound) return geoFound;
+                }
+            }
+            return null;
         }
     };
 
@@ -99,7 +128,11 @@
         mar: true,
         econ: false,
         turismo: true,
-        social: false
+        social: false,
+        biodiversidad: false,
+        salud: false,
+        cultura: false,
+        ctci: true
     };
 
     let activeDimension = 'gob';
@@ -203,12 +236,39 @@
             color: '#6D28D9',
             icon: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
             getNodes: (d) => d.wp05 ? d.wp05.nodos_georreferenciados || [] : []
+        },
+        biodiversidad: {
+            label: 'Biodiversidad & SNASPE',
+            color: '#2E7D32',
+            icon: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>',
+            getNodes: (d) => d.wp07 ? d.wp07.nodos_georreferenciados || [] : []
+        },
+        salud: {
+            label: 'Red Hospitalaria & APS',
+            color: '#C62828',
+            icon: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M2 12h20"/></svg>',
+            getNodes: (d) => d.wp08 ? d.wp08.nodos_georreferenciados || [] : []
+        },
+        cultura: {
+            label: 'Patrimonio & Monumentos',
+            color: '#8E24AA',
+            icon: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15z"/></svg>',
+            getNodes: (d) => d.wp09 ? d.wp09.nodos_georreferenciados || [] : []
+        },
+        ctci: {
+            label: 'Centros CTCi & I+D',
+            color: '#0059C5',
+            icon: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
+            getNodes: (d) => d.wp10 ? d.wp10.nodos_georreferenciados || [] : []
         }
     };
 
+    let mapLayerRetries = 0;
     function initMapLayers() {
         if (!window.map || typeof L === 'undefined') {
-            setTimeout(initMapLayers, 300);
+            if (++mapLayerRetries < 20) {
+                setTimeout(initMapLayers, 300);
+            }
             return;
         }
 
@@ -663,15 +723,20 @@
             const nodes = conf.getNodes(window.AysenSystemicData);
             nodes.forEach(n => {
                 const nName = n.nombre || n.id || '';
-                if (nName.toLowerCase().includes(q) || (n.tipo && n.tipo.toLowerCase().includes(q))) {
+                const nId = n.id || '';
+                const nVoc = n.vocacion_cientifica || '';
+                const nInst = n.institucion_titular || '';
+                const nCat = n.categoria || '';
+                if (nName.toLowerCase().includes(q) || (n.tipo && n.tipo.toLowerCase().includes(q)) || nId.toLowerCase().includes(q) || nVoc.toLowerCase().includes(q) || nInst.toLowerCase().includes(q) || nCat.toLowerCase().includes(q)) {
                     matches.nodos.push({
                         title: nName,
-                        subtitle: `${n.tipo || conf.label} · Comuna: ${n.codigo_comuna}`,
+                        subtitle: `${n.tipo || conf.label} · Comuna: ${n.codigo_comuna || ''}`,
                         badge: conf.label,
                         action: () => {
                             window.closeSearchAssistant();
-                            if (window.map && n.lat && n.lng) {
-                                window.map.flyTo([n.lat, n.lng], 11, { duration: 0.8 });
+                            const destLng = n.lng != null ? n.lng : n.lon;
+                            if (window.map && n.lat && destLng != null) {
+                                window.map.flyTo([n.lat, destLng], 11, { duration: 0.8 });
                             }
                         }
                     });

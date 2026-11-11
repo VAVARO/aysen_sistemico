@@ -80,6 +80,27 @@
       "url_origen": "https://www.subtel.gob.cl/estudios-y-estadisticas/",
       "metodo_extraccion": "Series Estadísticas Trimestrales SUBTEL y Catastro FOA",
       "archivo_raw_local": "data/raw/energia_telecom/telecomunicaciones_subtel_historico_2015_2026.json"
+    },
+    {
+      "institucion": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+      "sistema": "Catastro Dendroenergético Residencial de la Región de Aysén",
+      "url_origen": "https://infor.cl",
+      "metodo_extraccion": "Estudios Dendroenergéticos y Catastro de Consumo de Biomasa por Comuna y Tipo de Vivienda",
+      "archivo_raw_local": "data/raw/informes_territoriales/censo_agropecuario_forestal_odepa_infor.json"
+    },
+    {
+      "institucion": "Superintendencia de Electricidad y Combustibles (SEC) / Ministerio de Energía",
+      "sistema": "Registro de Biocombustibles Sólidos Ley 21.499 y Subsidios FNDR a Sistemas Aislados",
+      "url_origen": "https://www.sec.cl",
+      "metodo_extraccion": "Catastro de Centros de Procesamiento de Biomasa (CPB), estándares de humedad y balances FNDR/Subdere",
+      "archivo_raw_local": "data/raw/energia_telecom/infraestructura_combustibles_red_electrica.json"
+    },
+    {
+      "institucion": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+      "sistema": "Catastro Dendroenergético Residencial de la Región de Aysén",
+      "url_origen": "https://infor.cl",
+      "metodo_extraccion": "Estudios Dendroenergéticos y Catastro de Consumo de Biomasa por Comuna y Tipo de Vivienda",
+      "archivo_raw_local": "data/raw/informes_territoriales/censo_agropecuario_forestal_odepa_infor.json"
     }
   ],
   "resumen_regional": {
@@ -407,7 +428,65 @@
           "saifi_frecuencia_interrupciones": 3.4
         }
       }
-    ]
+    ],
+    "volumen_lena_infor_m3_solidos_ano": 565456,
+    "volumen_lena_m3_estereos_ano": 850000,
+    "factor_apilamiento_estereos_solidos": 0.665,
+    "consumo_lena_promedio_hogar_m3_ano": 17.5,
+    "consumo_lena_hogar_urbano_m3_ano": 14.0,
+    "consumo_lena_hogar_rural_m3_ano": 21.0,
+    "informalidad_mercado_lena_pct_rango": [
+      67.0,
+      80.0
+    ],
+    "fuente_lena_oficial": "Instituto Forestal (INFOR), Estudio Dendroenergético Región de Aysén / Ministerio de Energía",
+    "demanda_pellet_ton_ano": 20000,
+    "origen_pellet": "100% importado desde regiones del Biobío, Araucanía y Los Ríos por cabotaje marítimo hacia Puerto Chacabuco",
+    "vulnerabilidad_pellet": "Quiebres estacionales de inventario en temporada invernal (julio-agosto) por temporales marítimos",
+    "fuente_pellet_oficial": "Mesa Regional del Pellet / SEREMI de Energía Región de Aysén",
+    "marco_legal_biocombustibles_solidos": {
+      "ley": "Ley N° 21.499 de Biocombustibles Sólidos (D.O. Noviembre 2022)",
+      "organismo_fiscalizador": "Superintendencia de Electricidad y Combustibles (SEC)",
+      "estandar_humedad_max_pct": 25.0,
+      "instrumento_control": "Xilohigrómetros calibrados",
+      "requisito_centros": "Inscripción obligatoria de Centros de Procesamiento de Biomasa (CPB) ante la SEC"
+    },
+    "potencia_pico_transicion_electrica": {
+      "potencia_pico_calefaccion_electrica_mw": 54.4,
+      "capacidad_disponible_sma_mw": 55.0,
+      "hogares_urbanos_base": 32000,
+      "potencia_media_split_kw": 2.0,
+      "factor_simultaneidad": 0.85,
+      "diagnostico_cuello_botella": "La demanda pico de calefacción eléctrica urbana sin aislamiento previo (54,4 MW) saturaría o duplicaría la capacidad disponible del Sistema Mediano Aysén (50-59 MW), provocando riesgo de colapso en transformadores de distribución.",
+      "fuente": "Comisión Nacional de Energía (CNE) / Edelaysén / D.S. N° 7 PDA Coyhaique MMA"
+    },
+    "subsidios_diesel_sistemas_aislados": {
+      "fuente": "Gobierno Regional de Aysén (FNDR) / SUBDERE / DIPRES",
+      "mecanismo": "Glosas presupuestarias de subsidio a la compra de petróleo diésel para generación eléctrica municipal aislada",
+      "costo_real_generacion_diesel_rango_clp_kwh": [
+        560.0,
+        680.0
+      ],
+      "tarifa_regulada_usuario_promedio_clp_kwh": 265.0,
+      "brecha_subsidio_fiscal_promedio_clp_kwh": 375.0,
+      "comunas_aisladas": {
+        "Guaitecas": {
+          "costo_real_clp_kwh": 640.0,
+          "tarifa_bt1_clp_kwh": 265.0,
+          "subsidio_clp_kwh": 375.0
+        },
+        "Tortel": {
+          "costo_real_clp_kwh": 680.0,
+          "tarifa_bt1_clp_kwh": 268.0,
+          "subsidio_clp_kwh": 412.0
+        },
+        "OHiggins": {
+          "costo_real_clp_kwh": 620.0,
+          "tarifa_bt1_clp_kwh": 262.0,
+          "subsidio_clp_kwh": 358.0
+        }
+      }
+    }
   },
   "por_comuna": [
     {
@@ -435,7 +514,15 @@
           "matriz_calefaccion_hogar_lena_pct": 92.4,
           "horas_interrupcion_saidi_anual": 11.4,
           "tarifa_residencial_bt1_clp_kwh": 224.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 0.0
+          "costo_generacion_diesel_aislado_clp_kwh": 0.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 224.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 8,
@@ -443,7 +530,13 @@
           "diesel_clp_litro": 1098,
           "sobrecosto_vs_santiago_pct": 10.8,
           "precio_m3_lena_seca_clp": 48000,
-          "abastecimiento_logistico": "Camión cisterna desde muelle petrolero Puerto Chacabuco (Ruta 240 / Ruta 7)"
+          "abastecimiento_logistico": "Camión cisterna desde muelle petrolero Puerto Chacabuco (Ruta 240 / Ruta 7)",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 248800,
+            "consumo_hogar_m3_solidos_ano": 14.5,
+            "demanda_pellet_ton_ano": 14500,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -646,7 +739,15 @@
           "matriz_calefaccion_hogar_lena_pct": 98.2,
           "horas_interrupcion_saidi_anual": 54.2,
           "tarifa_residencial_bt1_clp_kwh": 258.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 560.0
+          "costo_generacion_diesel_aislado_clp_kwh": 560.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 258.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 0,
@@ -654,7 +755,13 @@
           "diesel_clp_litro": 1260,
           "sobrecosto_vs_santiago_pct": 22.5,
           "precio_m3_lena_seca_clp": 38000,
-          "abastecimiento_logistico": "Camión cisterna secundario y tambores vía Ruta 7 Norte y desvío cordillerano X-111"
+          "abastecimiento_logistico": "Camión cisterna secundario y tambores vía Ruta 7 Norte y desvío cordillerano X-111",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 16200,
+            "consumo_hogar_m3_solidos_ano": 21.0,
+            "demanda_pellet_ton_ano": 50,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": false,
@@ -854,7 +961,15 @@
           "matriz_calefaccion_hogar_lena_pct": 87.8,
           "horas_interrupcion_saidi_anual": 13.8,
           "tarifa_residencial_bt1_clp_kwh": 222.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 0.0
+          "costo_generacion_diesel_aislado_clp_kwh": 0.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 222.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 5,
@@ -862,7 +977,13 @@
           "diesel_clp_litro": 1115,
           "sobrecosto_vs_santiago_pct": 11.2,
           "precio_m3_lena_seca_clp": 46000,
-          "abastecimiento_logistico": "Desembarco directo marítimo en Terminal Petrolero Puerto Chacabuco (Enex/Copec/Petrobras)"
+          "abastecimiento_logistico": "Desembarco directo marítimo en Terminal Petrolero Puerto Chacabuco (Enex/Copec/Petrobras)",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 128500,
+            "consumo_hogar_m3_solidos_ano": 15.0,
+            "demanda_pellet_ton_ano": 3200,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -1065,7 +1186,15 @@
           "matriz_calefaccion_hogar_lena_pct": 95.1,
           "horas_interrupcion_saidi_anual": 28.5,
           "tarifa_residencial_bt1_clp_kwh": 235.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 380.0
+          "costo_generacion_diesel_aislado_clp_kwh": 380.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 235.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 2,
@@ -1073,7 +1202,13 @@
           "diesel_clp_litro": 1190,
           "sobrecosto_vs_santiago_pct": 16.4,
           "precio_m3_lena_seca_clp": 42000,
-          "abastecimiento_logistico": "Camión cisterna Ruta 7 Norte y barcazas bimodal Puerto Montt - Chaitén - Cisnes"
+          "abastecimiento_logistico": "Camión cisterna Ruta 7 Norte y barcazas bimodal Puerto Montt - Chaitén - Cisnes",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 38400,
+            "consumo_hogar_m3_solidos_ano": 18.5,
+            "demanda_pellet_ton_ano": 600,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -1274,7 +1409,14 @@
           "matriz_calefaccion_hogar_lena_pct": 94.6,
           "horas_interrupcion_saidi_anual": 62.1,
           "tarifa_residencial_bt1_clp_kwh": 265.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 640.0
+          "costo_generacion_diesel_aislado_clp_kwh": 640.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": true,
+            "costo_real_clp_kwh": 640.0,
+            "tarifa_usuario_clp_kwh": 265.0,
+            "subsidio_fndr_subdere_clp_kwh": 375.0,
+            "cobertura_subsidio_pct": 58.6
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 1,
@@ -1282,7 +1424,13 @@
           "diesel_clp_litro": 1290,
           "sobrecosto_vs_santiago_pct": 26.2,
           "precio_m3_lena_seca_clp": 55000,
-          "abastecimiento_logistico": "Transporte marítimo en barcaza subvencionada desde Isla de Chiloé (Quellón)"
+          "abastecimiento_logistico": "Transporte marítimo en barcaza subvencionada desde Isla de Chiloé (Quellón)",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 18200,
+            "consumo_hogar_m3_solidos_ano": 19.0,
+            "demanda_pellet_ton_ano": 150,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -1484,7 +1632,15 @@
           "matriz_calefaccion_hogar_lena_pct": 82.3,
           "horas_interrupcion_saidi_anual": 19.3,
           "tarifa_residencial_bt1_clp_kwh": 228.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 0.0
+          "costo_generacion_diesel_aislado_clp_kwh": 0.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 228.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 1,
@@ -1492,7 +1648,13 @@
           "diesel_clp_litro": 1180,
           "sobrecosto_vs_santiago_pct": 15.6,
           "precio_m3_lena_seca_clp": 50000,
-          "abastecimiento_logistico": "Camión cisterna vía barcaza La Tehuelche por Lago General Carrera o circunvalación por Argentina (Ruta 40)"
+          "abastecimiento_logistico": "Camión cisterna vía barcaza La Tehuelche por Lago General Carrera o circunvalación por Argentina (Ruta 40)",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 32600,
+            "consumo_hogar_m3_solidos_ano": 16.5,
+            "demanda_pellet_ton_ano": 500,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -1694,7 +1856,15 @@
           "matriz_calefaccion_hogar_lena_pct": 94.2,
           "horas_interrupcion_saidi_anual": 24.6,
           "tarifa_residencial_bt1_clp_kwh": 231.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 0.0
+          "costo_generacion_diesel_aislado_clp_kwh": 0.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 231.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 2,
@@ -1702,7 +1872,13 @@
           "diesel_clp_litro": 1170,
           "sobrecosto_vs_santiago_pct": 14.8,
           "precio_m3_lena_seca_clp": 44000,
-          "abastecimiento_logistico": "Camión cisterna por Carretera Austral (Ruta 7 Sur) y cruce CH-265"
+          "abastecimiento_logistico": "Camión cisterna por Carretera Austral (Ruta 7 Sur) y cruce CH-265",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 22400,
+            "consumo_hogar_m3_solidos_ano": 19.5,
+            "demanda_pellet_ton_ano": 200,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -1903,7 +2079,15 @@
           "matriz_calefaccion_hogar_lena_pct": 96.0,
           "horas_interrupcion_saidi_anual": 22.8,
           "tarifa_residencial_bt1_clp_kwh": 230.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 0.0
+          "costo_generacion_diesel_aislado_clp_kwh": 0.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": false,
+            "costo_real_clp_kwh": 0.0,
+            "tarifa_usuario_clp_kwh": 230.0,
+            "subsidio_fndr_subdere_clp_kwh": 0.0,
+            "cobertura_subsidio_pct": 0.0,
+            "sistema": "Interconectado SMA o SMGC"
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 1,
@@ -1911,7 +2095,13 @@
           "diesel_clp_litro": 1150,
           "sobrecosto_vs_santiago_pct": 13.9,
           "precio_m3_lena_seca_clp": 42000,
-          "abastecimiento_logistico": "Camión cisterna por Ruta 7 Sur (330 km desde Coyhaique con tramos de ripio)"
+          "abastecimiento_logistico": "Camión cisterna por Ruta 7 Sur (330 km desde Coyhaique con tramos de ripio)",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 34800,
+            "consumo_hogar_m3_solidos_ano": 18.0,
+            "demanda_pellet_ton_ano": 600,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
@@ -2113,7 +2303,14 @@
           "matriz_calefaccion_hogar_lena_pct": 99.1,
           "horas_interrupcion_saidi_anual": 58.7,
           "tarifa_residencial_bt1_clp_kwh": 262.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 620.0
+          "costo_generacion_diesel_aislado_clp_kwh": 620.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": true,
+            "costo_real_clp_kwh": 620.0,
+            "tarifa_usuario_clp_kwh": 262.0,
+            "subsidio_fndr_subdere_clp_kwh": 358.0,
+            "cobertura_subsidio_pct": 57.7
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 0,
@@ -2121,7 +2318,13 @@
           "diesel_clp_litro": 1340,
           "sobrecosto_vs_santiago_pct": 30.8,
           "precio_m3_lena_seca_clp": 36000,
-          "abastecimiento_logistico": "Camión cisterna con transbordo en barcaza Fiordo Mitchell (Puerto Yungay - Río Bravo) y 100 km ripio extremo"
+          "abastecimiento_logistico": "Camión cisterna con transbordo en barcaza Fiordo Mitchell (Puerto Yungay - Río Bravo) y 100 km ripio extremo",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 11556,
+            "consumo_hogar_m3_solidos_ano": 22.0,
+            "demanda_pellet_ton_ano": 100,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": false,
@@ -2321,7 +2524,14 @@
           "matriz_calefaccion_hogar_lena_pct": 98.4,
           "horas_interrupcion_saidi_anual": 64.3,
           "tarifa_residencial_bt1_clp_kwh": 268.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 680.0
+          "costo_generacion_diesel_aislado_clp_kwh": 680.0,
+          "subsidio_operacion_diesel_fndr": {
+            "aplica": true,
+            "costo_real_clp_kwh": 680.0,
+            "tarifa_usuario_clp_kwh": 268.0,
+            "subsidio_fndr_subdere_clp_kwh": 412.0,
+            "cobertura_subsidio_pct": 60.6
+          }
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 0,
@@ -2329,7 +2539,13 @@
           "diesel_clp_litro": 1310,
           "sobrecosto_vs_santiago_pct": 27.6,
           "precio_m3_lena_seca_clp": 40000,
-          "abastecimiento_logistico": "Camión cisterna hasta rampa de estacionamiento en rocas (Ruta X-904) y acarreo en botes"
+          "abastecimiento_logistico": "Camión cisterna hasta rampa de estacionamiento en rocas (Ruta X-904) y acarreo en botes",
+          "biomasa_calefaccion_infor": {
+            "volumen_anual_m3_solidos": 14000,
+            "consumo_hogar_m3_solidos_ano": 21.5,
+            "demanda_pellet_ton_ano": 100,
+            "ley_21499_estandar_humedad": "<25% SEC"
+          }
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,

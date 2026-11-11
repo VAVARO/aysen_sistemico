@@ -86,6 +86,34 @@
       "url_origen": "https://www.conaf.cl/parques-nacionales/",
       "metodo_extraccion": "Catastro de Áreas Protegidas e IDE Bienes Nacionales",
       "archivo_raw_local": "data/raw/territorio_concesiones/series_historicas_tenencia_tierra_bbnn_conaf_2015_2026.json"
+    },
+    {
+      "institucion": "SUBPESCA / CONADI / CRUBC Región de Aysén",
+      "sistema": "Catastro de Solicitudes ECMPO Ley Lafkenche 20.249 y Actas de Votación CRUBC",
+      "url_origen": "https://www.subpesca.cl/portal/618/w3-propertyvalue-41804.html",
+      "metodo_extraccion": "Geoportal de Acuicultura y Borde Costero / Resoluciones Exentas y Actas Oficiales CRUBC",
+      "archivo_raw_local": "data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json"
+    },
+    {
+      "institucion": "Ministerio del Medio Ambiente (MMA) / SBAP / CONAF",
+      "sistema": "Catastro de Concesiones en Áreas Protegidas y Ley N° 21.600 (SBAP)",
+      "url_origen": "https://mma.gob.cl",
+      "metodo_extraccion": "Superposición espacial de concesiones acuícolas con Reserva Nacional Las Guaitecas",
+      "archivo_raw_local": "data/raw/territorio_concesiones/holdings_salmoneros_ruts_aysen.json"
+    },
+    {
+      "institucion": "ODEPA / INE",
+      "sistema": "Censo Agropecuario y Forestal (CAF 2021) - Existencias Ganaderas y Usos del Suelo",
+      "url_origen": "https://www.odepa.gob.cl",
+      "metodo_extraccion": "Tabulados Regionales y Comunales Censo Agropecuario y Forestal",
+      "archivo_raw_local": "data/raw/informes_territoriales/censo_agropecuario_forestal_odepa_infor.json"
+    },
+    {
+      "institucion": "SERNAGEOMIN / SMA",
+      "sistema": "Catastro Nacional de Depósitos de Relaves y Pasivos Ambientales Mineros",
+      "url_origen": "https://www.sernageomin.cl",
+      "metodo_extraccion": "Fichas Técnicas de Depósitos de Relaves Activos y Abandonados de Aysén",
+      "archivo_raw_local": "data/raw/territorio_concesiones/anuario_mineria_sernageomin_aysen.json"
     }
   ],
   "resumen_regional": {
@@ -512,7 +540,74 @@
           "propiedad_privada_pct": 25.4
         }
       }
-    ]
+    ],
+    "solicitudes_ecmpo_ley_lafkenche": {
+      "superficie_total_solicitada_ha": 620000,
+      "marco_legal": "Ley N° 20.249 (Ley Lafkenche) / Espacios Costeros Marinos para Pueblos Originarios",
+      "instancia_resolutiva": "Comisión Regional de Uso del Borde Costero (CRUBC) de Aysén",
+      "principales_solicitudes": [
+        {
+          "nombre": "Pu Wapi",
+          "comuna_principal": "Cisnes",
+          "superficie_ha": 227000,
+          "pueblo_originario": "Mapuche-Huilliche / Comunidades de Cisnes",
+          "estado_resolucion": "Sometido a votación CRUBC Aysén (rechazo 2024; recursos de protección e impugnaciones judiciales ante Corte Suprema)"
+        },
+        {
+          "nombre": "Antünen Rain",
+          "comuna_principal": "Aysén (Islas Huichas)",
+          "superficie_ha": 393000,
+          "pueblo_originario": "Mapuche-Huilliche / Comunidades de Islas Huichas",
+          "estado_resolucion": "Sometido a votación CRUBC Aysén (rechazo 2024; recursos de protección e impugnaciones judiciales ante Corte Suprema)"
+        }
+      ],
+      "fuente": "SUBPESCA Geoportal / Actas Oficiales CRUBC Aysén / CONADI"
+    },
+    "concesiones_acuicolas_areas_protegidas": {
+      "concesiones_en_areas_protegidas_total": 312,
+      "reserva_nacional_las_guaitecas_concesiones": 300,
+      "marco_legal_conflicto": "Ley N° 21.600 (Servicio de Biodiversidad y Áreas Protegidas - SBAP) y Art. 142 Ley General de Pesca y Acuicultura",
+      "diagnostico_institucional": "Más de 300 concesiones salmoneras emplazadas al interior de la Reserva Nacional Las Guaitecas en proceso de evaluación de compatibilidad ecológica, planes de manejo y caducidades administrativas por inactividad no declaradas por SSFFAA (auditorías CGR).",
+      "fuente": "SUBPESCA / SERNAPESCA / CONAF / CGR"
+    },
+    "existencias_ganaderas_censo_caf": {
+      "bovinos_total_cabezas": 130832,
+      "ovinos_total_cabezas": 177934,
+      "ano_corte": 2021,
+      "fuente": "ODEPA / INE - VIII Censo Nacional Agropecuario y Forestal (CAF)",
+      "diagnostico": "Ganadería extensiva patagónica concentrada en Coyhaique, Cochrane, Río Ibáñez y Chile Chico sobre praderas de estepa y valles degradados por incendios históricos."
+    },
+    "presion_loteos_rusticos_dl_3516": {
+      "marco_legal": "Decreto Ley N° 3.516 de 1980 / Circular N° 475 de 2022 SAG",
+      "organismo_fiscalizador": "Servicio Agrícola y Ganadero (SAG) / Consejo de Defensa del Estado (CDE)",
+      "diagnostico": "Fuerte presión de subdivisiones prediales de 0,5 ha en cuencas de Coyhaique, Aysén, Lago General Carrera y Baker; aplicación de la Circular 475 SAG que instruye suspender trámites que encubran fines residenciales o urbanos sin infraestructura básica."
+    },
+    "pasivos_mineros_relaves_sernageomin": {
+      "fuente": "SERNAGEOMIN (Catastro Nacional de Depósitos de Relaves) / SMA",
+      "depositos_y_faenas_criticas": [
+        {
+          "faena": "Minera El Toqui",
+          "comuna": "Coyhaique (Alto Mañihuales)",
+          "depositos_relave": [
+            "Tranque Confluencia",
+            "Tranque Doña Rosa"
+          ],
+          "minerales_extraidos": [
+            "Zinc",
+            "Plomo",
+            "Oro",
+            "Plata"
+          ],
+          "estado_alerta": "Alertas por superación de cota de diseño, estabilidad física y presencia de arsénico y metales pesados en la cuenca fluvial de Mañihuales; judicialización y quiebra de operadores históricos."
+        },
+        {
+          "faena": "Mina Delia II (Distrito Cerro Bayo)",
+          "comuna": "Chile Chico",
+          "accidente_historico": "Inundación estructural de faena subterránea por aguas de la Laguna Verde en junio de 2017 (fallecimiento de dos mineros subterráneos)",
+          "estado_alerta": "Operaciones subterráneas condicionadas y pasivos bajo planes de fiscalización y cierre ante SERNAGEOMIN."
+        }
+      ]
+    }
   },
   "holdings_salmoneros_matriz_ruts": [
     {
@@ -1502,7 +1597,19 @@
             "Oro",
             "Plata"
           ],
-          "nivel_actividad_minera": "Media / Operación y exploración subterránea polimetálica"
+          "nivel_actividad_minera": "Media / Operación y exploración subterránea polimetálica",
+          "pasivos_ambientales_relaves": [
+            {
+              "nombre": "Tranque Confluencia",
+              "faena": "Minera El Toqui (Alto Mañihuales)",
+              "monitoreo": "Arsénico y plomo"
+            },
+            {
+              "nombre": "Tranque Doña Rosa",
+              "faena": "Minera El Toqui (Alto Mañihuales)",
+              "monitoreo": "Estabilidad física"
+            }
+          ]
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 729020,
@@ -1514,7 +1621,15 @@
             "Reserva Nacional Coyhaique",
             "Reserva Nacional Río Simpson",
             "Reserva Nacional Cerro Castillo"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 42500,
+            "ovinos_cabezas": 32000
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -1736,7 +1851,15 @@
           "unidades_conservacion": [
             "Parque Nacional Lago Rosselot (sector este)",
             "Reserva Nacional Lago Las Torres"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 18200,
+            "ovinos_cabezas": 12500
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -2176,7 +2299,13 @@
           "biomasa_cosechada_ton_anual": 265000,
           "indice_consumo_antibioticos_ica_g_ton": 335.4,
           "amerb_decretadas_cantidad": 12,
-          "amerb_operativas_vigentes": 4
+          "amerb_operativas_vigentes": 4,
+          "solicitud_ecmpo_lafkenche": {
+            "nombre": "Antünen Rain (Islas Huichas)",
+            "superficie_ha": 393000,
+            "estado": "Votación CRUBC Aysén 2024 / Recursos judiciales"
+          },
+          "concesiones_dentro_reserva_las_guaitecas": 12
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 18,
@@ -2204,7 +2333,15 @@
             "Parque Nacional Laguna San Rafael",
             "Reserva Nacional Río Simpson (sector poniente)",
             "Reserva Nacional Las Guaitecas (sector sur)"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 14100,
+            "ovinos_cabezas": 6800
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -2628,7 +2765,12 @@
           "biomasa_cosechada_ton_anual": 185000,
           "indice_consumo_antibioticos_ica_g_ton": 324.8,
           "amerb_decretadas_cantidad": 14,
-          "amerb_operativas_vigentes": 5
+          "amerb_operativas_vigentes": 5,
+          "solicitud_ecmpo_lafkenche": {
+            "nombre": "Pu Wapi",
+            "superficie_ha": 227000,
+            "estado": "Votación CRUBC Aysén 2024 / Recursos judiciales"
+          }
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 8,
@@ -2656,7 +2798,15 @@
             "Parque Nacional Queulat",
             "Parque Nacional Melimoyu",
             "Parque Nacional Isla Magdalena"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 8400,
+            "ovinos_cabezas": 4100
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -2921,7 +3071,8 @@
           "biomasa_cosechada_ton_anual": 45000,
           "indice_consumo_antibioticos_ica_g_ton": 382.1,
           "amerb_decretadas_cantidad": 18,
-          "amerb_operativas_vigentes": 7
+          "amerb_operativas_vigentes": 7,
+          "concesiones_dentro_reserva_las_guaitecas": 300
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 0,
@@ -2943,7 +3094,15 @@
           "presion_parcelacion_rural_sag": "Baja / Nula por régimen insular comunal y reserva forestal marítima",
           "unidades_conservacion": [
             "Reserva Nacional Las Guaitecas"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 120,
+            "ovinos_cabezas": 80
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -3156,7 +3315,15 @@
             "Zinc",
             "Cobre"
           ],
-          "nivel_actividad_minera": "Alta / Reactivación de faena subterránea y exploración avanzada"
+          "nivel_actividad_minera": "Alta / Reactivación de faena subterránea y exploración avanzada",
+          "pasivos_ambientales_relaves": [
+            {
+              "nombre": "Mina Delia II",
+              "faena": "Cerro Bayo",
+              "evento_historico": "Inundación por Laguna Verde en junio 2017",
+              "estado": "Monitoreo y cierre condicionado"
+            }
+          ]
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 573710,
@@ -3167,7 +3334,15 @@
           "unidades_conservacion": [
             "Parque Nacional Patagonia (sector Jeinimeni)",
             "Reserva Nacional Lago Jeinimeni"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 9600,
+            "ovinos_cabezas": 38200
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -3392,7 +3567,15 @@
             "Parque Nacional Cerro Castillo",
             "Reserva Nacional Laguna San Rafael",
             "Santuario de la Naturaleza Capillas de Mármol"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 15800,
+            "ovinos_cabezas": 42100
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -3614,7 +3797,15 @@
           "unidades_conservacion": [
             "Parque Nacional Patagonia (sector Valle Chacabuco)",
             "Reserva Nacional Tamango"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 16400,
+            "ovinos_cabezas": 34800
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -3834,7 +4025,15 @@
           "unidades_conservacion": [
             "Parque Nacional Bernardo O'Higgins (sector norte)",
             "Bienes Nacionales Glaciar O'Higgins / Campo de Hielo Sur"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 2812,
+            "ovinos_cabezas": 3654
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {
@@ -4076,7 +4275,15 @@
             "Parque Nacional Bernardo O'Higgins",
             "Reserva Nacional Katalalixar",
             "Parque Nacional Laguna San Rafael (sector sur)"
-          ]
+          ],
+          "existencias_ganaderas_censo_caf": {
+            "bovinos_cabezas": 2900,
+            "ovinos_cabezas": 3700
+          },
+          "regulacion_loteos_dl3516_circular475_sag": {
+            "aplica_circular_475": true,
+            "estado": "Fiscalización SAG de subdivisiones rurales que encubran núcleos urbanos"
+          }
         },
         "series_historicas": [
           {

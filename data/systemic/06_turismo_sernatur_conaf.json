@@ -34,6 +34,20 @@
       "url_origen": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
       "metodo_extraccion": "Estadísticas Oficiales Anuales de Áreas Protegidas",
       "archivo_raw_local": "data/raw/turismo_sernatur/conaf_snaspe_visitantes_raw.json"
+    },
+    {
+      "institucion": "Red de Comunidades Portal de la Patagonia (UACh / The Pew Charitable Trusts / Municipios de Aysén)",
+      "sistema": "Estrategia de Comunidades Portal y Vinculación con Áreas Silvestres Protegidas",
+      "url_origen": "https://comunidadesportal.cl/",
+      "metodo_extraccion": "Catastro de Planes de Acción Municipal y Comanejo de Parques",
+      "archivo_raw_local": "data/raw/turismo_sernatur/comunidades_portal_aysen_raw.json"
+    },
+    {
+      "institucion": "Ministerio del Medio Ambiente / Ley N° 21.600",
+      "sistema": "Servicio de Biodiversidad y Áreas Protegidas (SBAP) - Transición Institucional SNASPE",
+      "url_origen": "https://mma.gob.cl/sbap/",
+      "metodo_extraccion": "Marco Regulatorio de Concesiones Turísticas Sustentables a 30 Años",
+      "archivo_raw_local": "data/raw/biodiversidad_mma_conaf/sbap_ley_21600_aysen.json"
     }
   ],
   "resumen_regional": {
@@ -42,10 +56,10 @@
     "total_operadores_turismo_aventura": 232,
     "total_guias_registrados": 238,
     "total_sellos_calidad_q_y_sustentabilidad_s": 71,
-    "pernoctaciones_anuales_estimadas_emat": 472000,
+    "pernoctaciones_anuales_estimadas_emat": 361942,
     "llegadas_anuales_pasajeros": 316000,
     "visitantes_anuales_snaspe_conaf": 284000,
-    "zonas_interes_turistico_zoit_count": 4,
+    "zonas_interes_turistico_zoit_count": 3,
     "temporada_alta": "Diciembre a Marzo (Ocupación >75%)",
     "temporada_baja": "Mayo a Agosto (Ocupación <25%)",
     "series_historicas_regionales": [
@@ -289,7 +303,15 @@
           "otras_unidades": 116100
         }
       }
-    ]
+    ],
+    "zoits_oficiales_decretadas": [
+      "ZOIT Chelenko (Cuenca Lago General Carrera)",
+      "ZOIT Aysén Patagonia Queulat (Cisnes, Aysén y Lago Verde)",
+      "ZOIT Provincia de los Glaciares (Cochrane, Tortel y Villa O'Higgins)"
+    ],
+    "pernoctaciones_reales_ine_emat": 361942,
+    "red_comunidades_portal_patagonia": "Articulación de los 10 municipios de Aysén con las áreas silvestres protegidas para el desarrollo local armónico",
+    "transicion_sbap_ley_21600": "Servicio de Biodiversidad y Áreas Protegidas (SBAP - Ley 21.600): régimen de concesiones turísticas a 30 años con planes de manejo vinculantes y transferencia gradual desde CONAF"
   },
   "series_mensuales_emat_sernatur": [
     {
@@ -424,8 +446,8 @@
           "superficie_protegida_por_guardaparque_ha": 38500
         },
         "zoit_y_atractivos": {
-          "pertenece_a_zoit": true,
-          "nombre_zoit": "ZOIT Destino Coyhaique / Valle Simpson",
+          "pertenece_a_zoit": false,
+          "nombre_zoit": "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
           "atractivos_ancla": [
             "Reserva Nacional Coyhaique",
             "Río Simpson (Pesca con Mosca)",
@@ -605,14 +627,14 @@
           "superficie_protegida_por_guardaparque_ha": 82000
         },
         "zoit_y_atractivos": {
-          "pertenece_a_zoit": false,
-          "nombre_zoit": "Sin declaratoria ZOIT vigente",
+          "pertenece_a_zoit": true,
+          "nombre_zoit": "ZOIT Aysén Patagonia Queulat",
           "atractivos_ancla": [
             "Lago Verde",
             "Río Cisnes Alto",
             "Paso Fronterizo Las Pampas"
           ],
-          "vocacion_turistica_principal": "Turismo rural campesino, cabalgatas andinas y pesca deportiva prístina",
+          "vocacion_turistica_principal": "Turismo rural campesino, cabalgatas andinas, pesca deportiva prístina y articulación territorial con la ZOIT Aysén Patagonia Queulat",
           "cuello_de_botella_turistico": "Aislamiento vial interior y escasa conectividad digital"
         },
         "series_historicas": [
@@ -1516,7 +1538,7 @@
             "Puerto Río Tranquilo",
             "Glaciar Exploradores"
           ],
-          "vocacion_turistica_principal": "Navegación a cavernas de mármol, trekking sobre hielo y escalada en Cerro Castillo",
+          "vocacion_turistica_principal": "Navegación a cavernas de mármol, senderismo panorámico en Exploradores (hielo clausurado) y escalada en Cerro Castillo",
           "cuello_de_botella_turistico": "Saturación vehicular estival en Puerto Río Tranquilo y polvo en suspensión en Ruta 7"
         },
         "series_historicas": [
@@ -2201,20 +2223,20 @@
   ],
   "nodos_georreferenciados": [
     {
-      "id": "zoit_coyhaique",
-      "nombre": "ZOIT Destino Coyhaique / Valle Simpson",
-      "tipo": "Zona de Interés Turístico (ZOIT)",
+      "id": "portal_comunidades_aysen",
+      "nombre": "Red de Comunidades Portal de la Patagonia - Nodo Regional Aysén",
+      "tipo": "Gobernanza Territorial y Conservación",
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "lat": -45.5712,
       "lng": -72.0685,
       "atributos": {
-        "categoria": "ZOIT",
-        "vocacion": "Hub receptor regional y pesca con mosca",
-        "prestadores_zona": 412,
-        "declaratoria": "En proceso de actualización"
+        "categoria": "Comunidades Portal",
+        "marco_legal": "Ley 21.600 SBAP",
+        "municipios_vinculados": 10,
+        "vocacion": "Articulación comunitaria de áreas silvestres protegidas y conservación turística sustentable"
       },
-      "source_url": "https://www.subturismo.gob.cl/zoit/"
+      "source_url": "https://comunidadesportal.cl/"
     },
     {
       "id": "snaspe_pn_laguna_san_rafael",
@@ -2243,7 +2265,7 @@
       "atributos": {
         "categoria": "Parque Nacional",
         "superficie_ha": 154093,
-        "visitantes_anuales": 56800,
+        "visitantes_anuales": 38000,
         "atractivo": "Ventisquero Colgante y bosque siempreverde"
       },
       "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-queulat/"
@@ -2259,7 +2281,7 @@
       "atributos": {
         "categoria": "Parque Nacional",
         "superficie_ha": 143502,
-        "visitantes_anuales": 35400,
+        "visitantes_anuales": 13900,
         "atractivo": "Circuito de trekking Las Horquetas y avistamiento de huemul"
       },
       "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/"
@@ -2481,7 +2503,7 @@
         "categoria": "Glaciar Terrestre",
         "visitantes_anuales": 21500,
         "origen": "Campo de Hielo Norte",
-        "operacion": "Trekking con grampones sobre morena y hielo fósil"
+        "operacion": "Senderismo panorámico activo, hielo clausurado por riesgo de colapso morrénico y desprendimiento criosférico (Res. DGA/CONAF y fallo Corte de Apelaciones)"
       },
       "source_url": "https://www.sernatur.cl/dataturismo/"
     }
