@@ -743,9 +743,14 @@
       const evidenceTableFoot = document.getElementById('evidenceTableFoot');
       const canvasEl = document.getElementById('consultorCanvas');
 
-      // Inicializar OmniRouteClient
+      // Inicializar OmniRouteClient (local: OmniRoute 20128; remoto/GitHub Pages: Cloudflare Worker)
       if (window.OmniRouteClient) {
-        window.OmniRouteClient.init(window.AYSEN_HUBS_DATA);
+        const isLocalHost = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+        window.OmniRouteClient.init(window.AYSEN_HUBS_DATA, {
+          endpoint: isLocalHost
+            ? 'http://localhost:20128/v1/chat/completions'
+            : 'https://aysen-llm-proxy.alvaroidecb.workers.dev/v1/chat/completions'
+        });
       }
 
       function setChartTitleAndMeta(titleText, sourceText) {
