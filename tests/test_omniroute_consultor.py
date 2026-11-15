@@ -116,8 +116,8 @@ class TestOmniRouteConsultor(unittest.TestCase):
             console.error('Comunas count != 10:', idx.comunas.length);
             process.exit(2);
         }
-        if (idx.fuentes.length !== 28) {
-            console.error('Fuentes count != 28:', idx.fuentes.length);
+        if (idx.fuentes.length < 28) {
+            console.error('Fuentes count < 28:', idx.fuentes.length);
             process.exit(3);
         }
 
@@ -130,7 +130,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
 
         // Probar mundo cerrado ante variable inexistente
         const rUnknown = client.resolveClosedWorldDeterministic('dato_inventado_totalmente_inexistente_123');
-        if (!rUnknown.reply.includes('no forma parte de las 28 fuentes oficiales')) {
+        if (!rUnknown.reply.includes('no forma parte de las fuentes oficiales')) {
             console.error('Closed world breach, reply was:', rUnknown.reply);
             process.exit(5);
         }
@@ -1190,6 +1190,96 @@ class TestOmniRouteConsultor(unittest.TestCase):
         )
         self.assertEqual(proc.returncode, 0, f"Error en test_26 omniroute:\n{proc.stderr}")
         self.assertIn("RECONCILED_VARIABLES_SST_OK", proc.stdout)
+
+    def test_27_consultas_indirectas_y_cero_hardcodeo_fuentes(self):
+        """Verifica resolucion semantica de consultas indirectas y eliminacion de hardcodeo de 28 fuentes y escala de cabecera."""
+        with open(self.consultor_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        self.assertNotIn("28 fuentes oficiales", html, "consultor.html no debe hardcodear '28 fuentes oficiales'")
+        self.assertIn("JetBrains+Mono", html, "consultor.html debe cargar JetBrains Mono para la cabecera global")
+        self.assertNotRegex(html, r"html,\s*body\s*\{[^}]*font-size:\s*14px", "html/body en consultor.html no debe fijar font-size: 14px")
+
+        node_script = """
+        const fs = require('fs');
+        const path = require('path');
+
+        global.window = {};
+        eval(fs.readFileSync(path.join(process.cwd(), 'data/aysen_hubs_data.js'), 'utf8'));
+        eval(fs.readFileSync(path.join(process.cwd(), 'js/omniroute_client.js'), 'utf8'));
+
+        const client = global.window.OmniRouteClient || window.OmniRouteClient;
+        client.init(global.window.AYSEN_HUBS_DATA);
+        const idx = client.getIndex();
+        if (idx.fuentes.length <= 28) {
+            console.error('Expected dynamic fuente catalog > 28, got:', idx.fuentes.length);
+            process.exit(1);
+        }
+
+        const prompt = client.buildSystemPrompt();
+        if (prompt.includes('28 fuentes oficiales')) {
+            console.error('System prompt still hardcodes 28 fuentes oficiales');
+            process.exit(2);
+        }
+
+        const indirectCases = [
+            {
+                q: 'cuántos perros hay en Aysen',
+                expectedKeywords: ['huemules', '130.832', '177.934'],
+                forbiddenSources: ['SERNAPESCA']
+            },
+            {
+                q: 'cuáles son los principales nudos críticos en materia energética en Aysén',
+                expectedKeywords: ['98,6 MW', 'SAIDI', 'leña', 'MP2.5'],
+                forbiddenSources: ['SERNAPESCA']
+            },
+            {
+                q: 'cuáles son las principales rutas por las que entran insumos a la región de Aysén',
+                expectedKeywords: ['RN40', 'Chacabuco', '468.200', '3.386,4'],
+                forbiddenSources: ['SERNAPESCA']
+            },
+            {
+                q: 'cuántos árboles hay en Aysén?',
+                expectedKeywords: ['4.832.500', '5.723.000', 'CONAF'],
+                forbiddenSources: ['SERNAPESCA']
+            }
+        ];
+
+        for (const tc of indirectCases) {
+            const res = client.resolveClosedWorldDeterministic(tc.q);
+            if (!res || !res.reply || !res.chart || !res.chart.render) {
+                console.error('Indirect query failed to render chart/reply:', tc.q, res);
+                process.exit(3);
+            }
+            if (res.reply.length > 650) {
+                console.error('Indirect reply exceeded 650 chars:', tc.q, res.reply.length);
+                process.exit(4);
+            }
+            for (const kw of tc.expectedKeywords) {
+                if (!res.reply.includes(kw)) {
+                    console.error('Missing keyword ' + kw + ' for query ' + tc.q + ': ' + res.reply);
+                    process.exit(5);
+                }
+            }
+            const srcStr = JSON.stringify(res.sources || []);
+            for (const f of tc.forbiddenSources) {
+                if (srcStr.includes(f)) {
+                    console.error('Forbidden source ' + f + ' for query ' + tc.q + ': ' + srcStr);
+                    process.exit(6);
+                }
+            }
+        }
+
+        console.log('INDIRECT_QUERIES_AND_DYNAMIC_SOURCES_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_27 omniroute:\n{proc.stderr}")
+        self.assertIn("INDIRECT_QUERIES_AND_DYNAMIC_SOURCES_OK", proc.stdout)
 
 
 if __name__ == "__main__":

@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultor de Datos Territorial · Aysén Sistémico</title>
   <meta name="description"
-    content="Consultor de inteligencia territorial de la Región de Aysén con verificación de 28 fuentes oficiales.">
+    content="Consultor de inteligencia territorial de la Región de Aysén con verificación de fuentes oficiales.">
 
   <!-- Tipografías Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
 
   <!-- Chart.js -->
@@ -60,7 +60,6 @@
       background: var(--paper);
       color: var(--ink);
       font-family: var(--font-sans);
-      font-size: 14px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
@@ -86,6 +85,7 @@
       display: flex;
       min-height: 0;
       overflow: hidden;
+      font-size: 14px;
     }
 
     /* Panel Izquierdo: Conversación estilo Gemini / Claude Artifacts */
@@ -601,7 +601,7 @@
         <div class="chat-header">
           <div>
             <h1 class="chat-header-title">Consultor Territorial de Aysén</h1>
-            <p class="chat-header-sub consultor-subtitle">Consulta cifras comunales y series históricas 2015–2026 de las 28 fuentes oficiales de la región.</p>
+            <p class="chat-header-sub consultor-subtitle">Consulta cifras comunales y series históricas 2015–2026 de las fuentes oficiales verificadas de la región.</p>
           </div>
         </div>
 
@@ -611,7 +611,7 @@
             <h2 class="suggestions-heading">Consultas Territoriales Verificadas</h2>
             <p class="suggestions-kicker">
               Seleccione una consulta para analizar los indicadores oficiales de la Región de Aysén con base en
-              window.AYSEN_HUBS_DATA y las 28 fuentes oficiales de la plataforma:
+              window.AYSEN_HUBS_DATA y el catálogo de fuentes oficiales verificadas de la plataforma:
             </p>
             <div class="suggestions-grid">
               <button type="button" class="suggestion-card" data-query="¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?">
@@ -762,14 +762,17 @@
         }
         const subEl = document.getElementById('evidenceSubtitle');
         const resolvedSource = sourceText || resolveSourceLabelForState(currentChartState);
-        const metaStr = resolvedSource ? (resolvedSource.startsWith('Fuente:') ? resolvedSource : `Fuente: ${resolvedSource}`) : 'Esperando consulta analítica...';
+        const isWaiting = !resolvedSource || resolvedSource === 'Esperando consulta analítica...';
+        const metaStr = isWaiting
+          ? 'Esperando consulta analítica...'
+          : (resolvedSource.startsWith('Fuente:') ? resolvedSource : `Fuente: ${resolvedSource}`);
         if (subEl) {
           subEl.textContent = metaStr;
         }
         if (chartMetaEl) {
           chartMetaEl.textContent = metaStr;
-          chartMetaEl.style.display = resolvedSource ? 'inline' : 'none';
-        } else if (evidenceMeta) {
+          chartMetaEl.style.display = subEl ? 'none' : (resolvedSource ? 'inline' : 'none');
+        } else if (!subEl && evidenceMeta) {
           evidenceMeta.textContent = metaStr;
         }
       }

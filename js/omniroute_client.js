@@ -31,7 +31,7 @@
     model: 'omniroute-default',
     temperature: 0.15,
     maxTokens: 1100,
-    timeoutMs: 12000,
+    timeoutMs: 20000,
     maxHistoryTurns: 6,
     lexiconUrl: 'data/nl_lexicon_aysen.json'
   };
@@ -652,6 +652,7 @@
     dias_sobre_norma_mp25: ['contaminacion critica mp2.5', 'mp2.5', 'mp25', 'dias con contaminacion', 'calidad del aire', 'material particulado'],
     saidi_horas_anual: ['saidi', 'cortes de luz', 'interrupcion electrica', 'calidad electrica'],
     tarifa_bt1_clp: ['tarifa electrica', 'tarifa bt1', 'precio electricidad'],
+    potencia_mw: ['capacidad instalada', 'potencia instalada', 'megavatios', 'generacion electrica', 'matriz energetica', 'nudos criticos energeticos', 'materia energetica'],
     camas_hospitalarias: ['camas hospitalarias', 'camas de hospital', 'hospitales'],
     medicos_por_mil_hab: ['medicos por mil habitantes', 'dotacion medica', 'medicos'],
     postas_salud_rural: ['postas rurales', 'postas de salud rural', 'aps'],
@@ -661,7 +662,10 @@
     empresas_sii: ['empresas sii', 'numero de empresas', 'empresas activas', 'tejido empresarial'],
     inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia', 'evaluacion ambiental'],
     red_vial_total_km: ['red vial', 'red vial total', 'kilometros de caminos', 'vialidad'],
-    red_vial_pavimentada_km: ['red vial pavimentada', 'caminos pavimentados', 'asfalto'],
+    red_vial_pavimentada_km: ['red vial pavimentada', 'caminos pavimentados', 'asfalto', 'rutas', 'estado de las rutas', 'rutas de entrada', 'insumos', 'abastecimiento', 'logistica', 'carretera austral', 'ruta 7'],
+    ruta7_pavimentada_km: ['ruta 7 pavimentada', 'pavimentacion ruta 7', 'asfalto ruta 7', 'ruta 7'],
+    ruta7_ripio_km: ['ruta 7 ripio', 'ripio ruta 7', 'tramos de ripio ruta 7'],
+    emporcha_toneladas: ['puerto chacabuco', 'emporcha', 'carga portuaria', 'entrada de insumos', 'insumos', 'abastecimiento maritimo', 'cabotaje', 'toneladas movilizadas'],
     red_vial_pavimentada_pct: ['porcentaje de pavimentacion', 'pavimentacion vial', 'pavimentacion'],
     tiempo_viaje_coyhaique_hrs: ['tiempo de viaje', 'tiempo a coyhaique', 'horas de viaje', 'horas a coyhaique', 'traslado coyhaique'],
     hogares_sin_internet_fijo_pct: ['sin internet', 'brecha digital', 'hogares sin internet', 'internet fijo', 'fibra optica', 'conectividad digital'],
@@ -688,7 +692,8 @@
     cobertura_fibra_hogar_pct: ['cobertura de fibra optica', 'fibra al hogar', 'foa hogar', 'cobertura fibra', 'fibra optica austral'],
     establecimientos_educacion_conectados_n: ['establecimientos educacionales conectados', 'escuelas conectadas', 'colegios conectados foa', 'conectividad escolar 2030', 'educacion 2030 conectividad'],
     cobertura_ssr_apr_familias: ['familias con apr', 'cobertura apr', 'familias con agua potable rural', 'familias ssr'],
-    bosque_nativo_ha: ['bosque nativo', 'superficie bosque nativo', 'hectareas bosque nativo', 'bosques nativos'],
+    cobertura_vegetal_nativa_ha: ['arboles', 'cuantos arboles', 'cantidad de arboles', 'bosques', 'superficie de bosque', 'superficie forestal', 'masa forestal', 'vegetacion nativa', 'cobertura vegetal'],
+    bosque_nativo_ha: ['bosque nativo', 'superficie bosque nativo', 'hectareas bosque nativo', 'bosques nativos', 'arboles', 'arbolado', 'hectareas de bosque'],
     plantaciones_ha: ['plantaciones forestales', 'superficie plantaciones', 'forestal'],
     cobertura_empam_pct: ['empam', 'control adulto mayor', 'examen medicina preventiva adulto mayor', 'salud adulto mayor', 'adultos mayores empam'],
     cobertura_pscv_pct: ['pscv', 'salud cardiovascular', 'programa de salud cardiovascular', 'control cardiovascular'],
@@ -764,7 +769,7 @@
       id: 'energia',
       title: 'Energía, Calefacción y Calidad del Aire',
       hub: 'III',
-      regex: /\b(energia|matriz energetica|sistema electrico|calefaccion|contaminacion|mp2\.?5|calidad del aire|saidi|cortes de luz|tarifa electrica)\b/i,
+      regex: /\b(energ[ií]a|energ[eé]tic[oa]s?|matriz energ[eé]tica|sistema el[eé]ctrico|el[eé]ctric[oa]s?|electricidad|generaci[oó]n|calefacci[oó]n|contaminaci[oó]n|mp2\.?5|calidad del aire|saidi|cortes de luz|tarifa el[eé]ctrica|combustibles?|bencina|di[eé]sel)\b/i,
       varX: 'hogares_lena_pct',
       varY: 'dias_sobre_norma_mp25',
       chartTitle: 'Matriz de Calefacción a Leña (% hogares) vs. Días Anuales sobre Norma Diaria MP2.5 (SINCA)',
@@ -808,7 +813,7 @@
       id: 'biodiversidad',
       title: 'Biodiversidad, Bosques y Glaciares',
       hub: 'VII',
-      regex: /\b(biodiversidad|bosque nativo|vegetacion|glaciares|derechos de agua|fauna|conservacion)\b/i,
+      regex: /\b(biodiversidad|bosques?|bosque nativo|[aá]rboles|arbolado|forestal|cobertura vegetal|vegetaci[oó]n|flora|glaciares|derechos de agua|fauna|conservaci[oó]n)\b/i,
       varX: 'cobertura_vegetal_nativa_ha',
       varY: 'superficie_glaciar_km2',
       chartTitle: 'Cobertura de Bosque y Vegetación Nativa (ha) vs. Superficie Glaciar Comunal (km²)',
@@ -830,7 +835,7 @@
       id: 'conectividad',
       title: 'Conectividad Multimodal e Infraestructura',
       hub: 'Conectividad',
-      regex: /\b(conectividad|red vial|vialidad|caminos|carretera austral|ruta 7|pavimentacion|barcaza|barcazas|puerto chacabuco|emporcha|transporte maritimo|balmaceda|aerodromo|aeropuerto|fibra optica|foa)\b/i,
+      regex: /\b(conectividad|red vial|vialidad|caminos?|rutas?|carretera austral|ruta 7|pavimentaci[oó]n|barcazas?|puerto chacabuco|emporcha|transporte mar[ií]timo|cabotaje|insumos|abastecimiento|log[ií]stica|carga|balmaceda|aer[oó]dromos?|aeropuertos?|fibra [oó]ptica|foa)\b/i,
       varX: 'red_vial_pavimentada_km',
       varY: 'tiempo_viaje_coyhaique_hrs',
       chartTitle: 'Red Vial Pavimentada (km) vs. Tiempo de Viaje a Coyhaique (horas)',
@@ -1399,6 +1404,27 @@
       }
     });
 
+    // 6. Construir catálogo dinámico consolidado de fuentes oficiales verificadas
+    const allOfficialSources = [];
+    const seenSources = new Set();
+    const pushOfficialSource = (src) => {
+      if (!src || !src.institucion) return;
+      const key = `${normalizeText(src.institucion)}|${String(src.url || '').replace(/\/+$/, '')}`;
+      if (seenSources.has(key)) return;
+      seenSources.add(key);
+      allOfficialSources.push(src);
+    };
+    FUENTES_OFICIALES_28.forEach(pushOfficialSource);
+    Object.values(PROVENANCE_CATALOG_ENTRIES).forEach(entry => {
+      pushOfficialSource({
+        institucion: entry.institucion,
+        indicador: entry.titulo,
+        url: entry.url,
+        hub: 'Catálogo Verificado',
+        anos: '2015-2026'
+      });
+    });
+
     _memoryIndex = {
       entities,
       comunas,
@@ -1412,7 +1438,7 @@
       evolucionHoldingsSalmoneros: dataLake.evolucionHoldingsSalmoneros || null,
       customCollections,
       sourcesByKey,
-      fuentes: FUENTES_OFICIALES_28
+      fuentes: allOfficialSources
     };
   }
 
@@ -1612,6 +1638,26 @@
     if (/\b(zoits? oficiales|zoits? decretadas?|3 zoits|cuales son las zoits|zonas? de interes turistico decretadas?|zoit chelenko|aysen patagonia queulat|provincia de los glaciares|decretos? zoit|zoits?.*subturismo)\b/i.test(qNorm) ||
         (/\bzoits?\b/i.test(qNorm) && !isSingleComunaSpecific)) {
       return 'zoit_oficiales';
+    }
+
+    // 15. Nudos críticos energéticos y matriz térmica/eléctrica regional
+    if (/\b(nudos? criticos?.*energ|problemas?.*energ|cuellos? de botella.*energ|desafios?.*energ|brechas?.*energ|materia energetica|crisis energetica)\b/i.test(qNorm)) {
+      return 'nudos_criticos_energia';
+    }
+
+    // 16. Principales rutas de entrada de insumos y soberanía logística
+    if (/\b(rutas?.*insumos|entran.*insumos|ingreso.*insumos|abastecimiento.*region|logistica.*aysen|principales rutas.*aysen|por donde entran|rutas? de entrada|soberania logistica)\b/i.test(qNorm)) {
+      return 'rutas_insumos_logistica';
+    }
+
+    // 17. Masa forestal / árboles y cobertura de bosque nativo CONAF
+    if (/\b(cuantos arboles|cantidad de arboles|numero de arboles|total de arboles|superficie de bosque|hectareas de bosque)\b/i.test(qNorm) && !isSingleComunaSpecific) {
+      return 'bosques_arboles_conaf';
+    }
+
+    // 18. Consultas sobre perros / población canina -> puente a RCE Huemul y Censo Agropecuario ODEPA
+    if (/\b(cuantos perros|poblacion canina|cantidad de perros|numero de perros|perros asilvestrados|cuantas mascotas|mascotas)\b/i.test(qNorm)) {
+      return 'fauna_perros_ganaderia';
     }
 
     return null;
@@ -1902,6 +1948,86 @@
           relatedHub: 'I'
         };
       }
+      case 'nudos_criticos_energia': {
+        const reply = 'Los principales nudos críticos energéticos en Aysén son cuatro: 1) Desconexión del SEN nacional: opera en 3 subsistemas aislados (98,6 MW instalados totales) dependientes de diésel térmico en comunas insulares/australes; 2) Calidad de suministro y tarifas: SAIDI promedio de 36,0 h/año (hasta 64,3 h en Tortel y 62,1 h en Guaitecas) y tarifa BT1 promedio de $242,3/kWh; 3) Matriz térmica a leña: 93,8% promedio de hogares usa leña (565.456 m³/año INFOR) y 100% del pellet (~20.000 ton/año) llega por vía marítima; 4) Contaminación atmosférica: Coyhaique registra 87 días/año sobre norma MP2.5 (Aysén 34 días).';
+        const sources = resolveSourcesForKeys(['hogares_lena_pct', 'dias_sobre_norma_mp25', 'saidi_horas_anual', 'demanda_pellet_ton_ano']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'hogares_lena_pct',
+            varY: 'dias_sobre_norma_mp25',
+            yKey: 'hogares_lena_pct',
+            y2Key: 'dias_sobre_norma_mp25',
+            title: 'Matriz de Calefacción a Leña (% hogares) vs. Días sobre Norma MP2.5 (CNE / MMA)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'III'
+        };
+      }
+      case 'rutas_insumos_logistica': {
+        const reply = 'El ingreso de insumos a Aysén depende de tres vías críticas: 1) Corredor binacional por Argentina (ATIT 1974): vía RN40 y Paso Cardenal Samoré hacia Huemules, Jeinimeni, Coyhaique Alto y Roballos (GLP, carnes, frutas y abarrotes; cortes por clima amenazan desabastecimiento en 5–7 días); 2) Cabotaje marítimo: Puerto Chacabuco (EMPORCHA, 468.200 ton en 2024; 495.000 ton proy. 2026), Ruta Cordillera CAM-01 y barcazas DTPR; 3) Red vial MOP: 3.386,4 km totales (412,8 km pavimentados, 18,9% prom., vs. 2.438,0 km en ripio).';
+        const sources = resolveSourcesForKeys(['red_vial_pavimentada_km', 'emporcha_toneladas', 'dependencia_barcaza_nivel']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'red_vial_pavimentada_km',
+            varY: 'red_vial_ripio_km',
+            yKey: 'red_vial_pavimentada_km',
+            y2Key: 'red_vial_ripio_km',
+            title: 'Red Vial Pavimentada vs. Red Vial en Ripio (km) por Comuna (MOP Vialidad)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'IV'
+        };
+      }
+      case 'bosques_arboles_conaf': {
+        const reply = 'Los catastros oficiales (CONAF / MMA) miden la masa arbórea en superficie (hectáreas) y no por conteo individual de árboles. En la Región de Aysén, la cobertura de bosque nativo alcanza 4.832.500 ha (destacando Aysén con 1.120.000 ha, Cisnes con 860.000 ha y Tortel con 780.000 ha), más 35.240 ha de plantaciones forestales; considerando toda la cobertura vegetal nativa, suma 5.723.000 ha (60,0% promedio comunal), con predominio de bosques siempreverdes y lenga bajo protección parcial del SNASPE.';
+        const sources = resolveSourcesForKeys(['bosque_nativo_ha', 'cobertura_vegetal_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'bosque_nativo_ha',
+            varY: 'cobertura_vegetal_pct',
+            yKey: 'bosque_nativo_ha',
+            y2Key: 'cobertura_vegetal_pct',
+            title: 'Superficie de Bosque Nativo (ha) vs. Cobertura Vegetal (%) por Comuna (CONAF)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII'
+        };
+      }
+      case 'fauna_perros_ganaderia': {
+        const reply = 'Las fuentes oficiales no registran un censo comunal de perros o mascotas domésticas. Sin embargo, existen dos registros faunísticos vinculados en la base: 1) Biodiversidad (RCE MMA / CONAF): los perros asilvestrados figuran como amenaza directa crítica sobre los 1.500 a 2.000 huemules de Aysén (60%–70% de la población mundial); 2) Censo Agropecuario (ODEPA / INE): el ganado doméstico censado alcanza 130.832 bovinos y 177.934 ovinos en la región (liderando Coyhaique con 42.500 bovinos y Río Ibáñez con 42.100 ovinos).';
+        const sources = resolveSourcesForKeys(['ganado_bovino_cabezas', 'fauna_amenazada_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'ganado_bovino_cabezas',
+            varY: 'ganado_ovino_cabezas',
+            yKey: 'ganado_bovino_cabezas',
+            y2Key: 'ganado_ovino_cabezas',
+            title: 'Existencias Ganaderas: Bovinos vs. Ovinos por Comuna (ODEPA / INE)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII'
+        };
+      }
       default:
         return null;
     }
@@ -2108,9 +2234,13 @@
     let score = 0;
 
     for (const phrase of varRecord.synonyms) {
-      if (phrase.length > 2 && qNorm.includes(phrase)) {
-        const wordCount = phrase.split(' ').length;
-        score += 14 * wordCount + phrase.length * 0.5;
+      if (phrase.length >= 2) {
+        const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const re = new RegExp(`(?:^|\\s)${escaped}(?:\\s|$)`);
+        if (re.test(qNorm)) {
+          const wordCount = phrase.split(' ').length;
+          score += 14 * wordCount + phrase.length * 0.5;
+        }
       }
     }
 
@@ -2524,21 +2654,25 @@
   /**
    * Construye el System Prompt general y de memoria verificada.
    */
-  function buildSystemPrompt() {
+  function buildSystemPrompt(subsetVars) {
     if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
       buildMemoryIndex(_dataLake || global.AYSEN_HUBS_DATA, _lexicon);
     }
-    const varList = _memoryIndex.variables.map(v => `${v.key} (${v.label}, Hub ${v.hub})`).join(', ');
+    const varsForPrompt = (Array.isArray(subsetVars) && subsetVars.length > 0)
+      ? subsetVars
+      : _memoryIndex.variables;
+    const varList = varsForPrompt.map(v => `${v.key} (${v.label}, Hub ${v.hub})`).join(', ');
     return [
-      'Eres el Consultor Territorial de Aysén Sistémico, conectado en tiempo real a la memoria verificada de `window.AYSEN_HUBS_DATA` (10 Comunas, 10 Hubs Sistémicos I al X, 39 Nodos Satélites, 12 Holdings Salmoneros Madres y 28 fuentes oficiales).',
-      `Catálogo dinámico de variables indexadas (${_memoryIndex.variables.length}): ${varList}`,
-      'INSTRUCCIONES DE RIGOR FACTUAL:',
-      '1. Responde EXCLUSIVAMENTE utilizando los datos provistos en la memoria recuperada. Jamás inventes cifras.',
-      '2. Cita las cifras exactas en formato chileno (punto para miles, coma para decimales), mencionando las comunas o holdings líderes, los de menor valor y el total o promedio regional según corresponda.',
-      '3. Para tasas, porcentajes, densidades o valores per cápita, informa el Promedio Regional y NUNCA sumes porcentajes ni tasas entre comunas.',
-      '4. Utiliza siempre nombres canónicos con tildes y unidades limpias. Jamás muestres claves en snake_case.',
-      '5. No utilices emojis bajo ninguna circunstancia.',
-      '6. Devuelve tu respuesta estrictamente como un objeto JSON válido con la estructura:',
+      `Eres el Consultor Territorial de Aysén Sistémico, conectado en tiempo real a la memoria verificada de \`window.AYSEN_HUBS_DATA\` (10 Comunas, 10 Hubs Sistémicos I al X, 39 Nodos Satélites, 12 Holdings Salmoneros Madres y ${_memoryIndex.fuentes.length} fuentes oficiales verificadas).`,
+      `Catálogo dinámico de variables indexadas (${varsForPrompt.length}/${_memoryIndex.variables.length}): ${varList}`,
+      'INSTRUCCIONES DE RIGOR FACTUAL Y CONEXIÓN SEMÁNTICA:',
+      '1. Responde EXCLUSIVAMENTE utilizando los datos provistos en MEMORIA_VERIFICADA. Jamás inventes cifras.',
+      '2. Si el usuario pregunta de forma indirecta, conceptual o coloquial por un fenómeno o conteo no literal (ej. rutas de insumos, nudos críticos, árboles, mascotas/fauna), conecta siempre con los indicadores equivalentes, nodos temáticos o proxies oficiales disponibles en MEMORIA_VERIFICADA, explica brevemente la equivalencia de medición y entrega las cifras exactas.',
+      '3. Cita las cifras exactas en formato chileno (punto para miles, coma para decimales), mencionando las comunas o holdings líderes, los de menor valor y el total o promedio regional según corresponda.',
+      '4. Para tasas, porcentajes, densidades o valores per cápita, informa el Promedio Regional y NUNCA sumes porcentajes ni tasas entre comunas.',
+      '5. Utiliza siempre nombres canónicos con tildes y unidades limpias. Jamás muestres claves en snake_case.',
+      '6. No utilices emojis bajo ninguna circunstancia.',
+      '7. Devuelve tu respuesta estrictamente como un objeto JSON válido con la estructura:',
       '{"reply": "Texto analítico claro y conciso con las cifras exactas", "chart": {"render": true, "type": "bar|line|scatter", "varX": "clave_x", "varY": "clave_y_o_null", "title": "Título del gráfico", "excludeCoyhaique": false}, "relatedHub": "I..X"}'
     ].join('\n');
   }
@@ -2558,7 +2692,22 @@
       });
     }
 
-    const varSummaries = varsToSummarize.map(v => {
+    if (varsToSummarize.length < 6) {
+      const strategicKeys = [
+        'poblacion_censo_2024', 'presupuesto_mclp', 'red_vial_pavimentada_km',
+        'potencia_mw', 'hogares_lena_pct', 'bosque_nativo_ha',
+        'concesiones_salmon', 'visitantes_snaspe'
+      ];
+      strategicKeys.forEach(k => {
+        const v = _memoryIndex.variablesByKey[k];
+        if (v && !varsToSummarize.some(existing => existing.key === k)) {
+          varsToSummarize.push(v);
+        }
+      });
+    }
+
+    const compactVars = varsToSummarize.slice(0, 12);
+    const varSummaries = compactVars.map(v => {
       if (!v.isNumeric || !v.stats) {
         return { key: v.key, label: v.label, type: 'categorical' };
       }
@@ -2577,7 +2726,33 @@
       };
     });
 
-    const systemPrompt = buildSystemPrompt();
+    const relevantNodes = (memoryPacket.topNodes || []).slice(0, 4).map(n => ({
+      id: n.id,
+      hubId: n.hubId,
+      title: n.title,
+      definition: n.definition,
+      example: n.example
+    }));
+
+    const includeConnectivity = memoryPacket.matchedSector?.id === 'conectividad' ||
+      /(ruta|camino|carretera|conectividad|barcaza|puerto|emporcha|insumo|abastecimiento|logistica|transporte|frontera|paso)/.test(memoryPacket.qNorm || '');
+    const backbone = includeConnectivity ? _dataLake?.conectividadMultimodal?.backbone_multimodal_wp11 : null;
+    const connectivityBrief = backbone?.resumen_regional ? {
+      corredor_binacional: backbone.resumen_regional.soberania_logistica_chile_chile_argentina,
+      barcazas_criticas: backbone.resumen_regional.resiliencia_barcazas_subsidiadas?.puntos_criticos_single_point_of_failure,
+      emporcha_ultimos_anos: (backbone.series_multianuales?.emporcha_toneladas_transferidas || []).slice(-3)
+    } : undefined;
+
+    const limitedActiveKeys = (memoryPacket.activeKeys || []).slice(0, 6);
+    const compactComunasMatrix = (memoryPacket.comunasMatrix || []).map(row => {
+      const compactRow = { comuna: row.comuna, provincia: row.provincia };
+      limitedActiveKeys.forEach(k => {
+        if (k in row) compactRow[k] = row[k];
+      });
+      return compactRow;
+    });
+
+    const systemPrompt = buildSystemPrompt(compactVars);
 
     const memoryPayload = {
       consulta_usuario: memoryPacket.query,
@@ -2585,8 +2760,10 @@
       sector_tematico_consultado: memoryPacket.matchedSector ? memoryPacket.matchedSector.title : undefined,
       comunas_filtradas_solicitadas: memoryPacket.matchedEntities.map(e => e.raw),
       holdings_salmoneros_aysen: memoryPacket.isHoldingQuery ? _memoryIndex.holdings : undefined,
+      nodos_satelite_relevantes: relevantNodes.length ? relevantNodes : undefined,
+      conectividad_multimodal_resumen: connectivityBrief,
       resumen_estadistico_variables_relevantes: varSummaries,
-      matriz_comunal_datos_exactos: memoryPacket.comunasMatrix,
+      matriz_comunal_datos_exactos: compactComunasMatrix,
       grafico_sugerido: memoryPacket.chartSpec
     };
 
@@ -2968,10 +3145,10 @@
       return res;
     }
 
-    // 10. Caso F: Sin coincidencia en el catálogo -> declarar explícitamente que no forma parte de las 28 fuentes oficiales
+    // 10. Caso F: Sin coincidencia en el catálogo -> declarar explícitamente que no forma parte de las fuentes oficiales
     const sampleLabels = _memoryIndex.variables.filter(v => v.isNumeric).slice(0, 5).map(v => CANONICAL_LABELS[v.key] || v.label).join(', ');
     return {
-      reply: `Este indicador no forma parte de las 28 fuentes oficiales de Aysén Sistémico. Actualmente el índice dinámico cuenta con ${_memoryIndex.variables.length} indicadores comunales y ${_memoryIndex.nodes.length} nodos temáticos (por ejemplo: ${sampleLabels}).`,
+      reply: `Este indicador no forma parte de las fuentes oficiales verificadas de Aysén Sistémico. Actualmente el índice dinámico cuenta con ${_memoryIndex.variables.length} indicadores comunales y ${_memoryIndex.nodes.length} nodos temáticos (por ejemplo: ${sampleLabels}).`,
       chart: { render: false, type: 'bar', varX: null, varY: null, title: '', excludeCoyhaique: false },
       sources: [],
       relatedHub: 'IV'
@@ -3164,18 +3341,19 @@
         };
 
         const llmChart = parsed.chart || {};
-        const validVarX = (llmChart.varX && _memoryIndex.variablesByKey[llmChart.varX])
+        const shouldRenderChart = llmChart.render !== undefined ? Boolean(llmChart.render) : memoryPacket.chartSpec.render;
+        const validVarX = (shouldRenderChart && llmChart.varX && _memoryIndex.variablesByKey[llmChart.varX])
           ? llmChart.varX
-          : memoryPacket.chartSpec.varX;
-        const validVarY = (llmChart.varY && _memoryIndex.variablesByKey[llmChart.varY])
+          : (shouldRenderChart ? memoryPacket.chartSpec.varX : null);
+        const validVarY = (shouldRenderChart && llmChart.varY && _memoryIndex.variablesByKey[llmChart.varY])
           ? llmChart.varY
-          : memoryPacket.chartSpec.varY;
+          : (shouldRenderChart ? memoryPacket.chartSpec.varY : null);
 
-        const exactSources = resolveSourcesForKeys([validVarX, validVarY].filter(Boolean));
+        const exactSources = shouldRenderChart ? resolveSourcesForKeys([validVarX, validVarY].filter(Boolean)) : [];
         const finalResult = {
           reply: parsed.reply || synthesizeFromMemoryPacket(memoryPacket).reply,
           chart: {
-            render: llmChart.render !== undefined ? Boolean(llmChart.render) : memoryPacket.chartSpec.render,
+            render: shouldRenderChart,
             type: llmChart.type || memoryPacket.chartSpec.type,
             varX: validVarX,
             varY: validVarY,
@@ -3188,8 +3366,8 @@
               ? Boolean(llmChart.excludeCoyhaique)
               : memoryPacket.chartSpec.excludeCoyhaique
           },
-          sources: exactSources.length ? exactSources : memoryPacket.sources,
-          relatedHub: parsed.relatedHub || getHubForVariable(validVarX)
+          sources: exactSources.length ? exactSources : (shouldRenderChart ? memoryPacket.sources : []),
+          relatedHub: parsed.relatedHub || (validVarX ? getHubForVariable(validVarX) : (memoryPacket.relatedHub || 'IV'))
         };
 
         updateConversationState(memoryPacket, finalResult);
