@@ -1281,6 +1281,88 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Error en test_27 omniroute:\n{proc.stderr}")
         self.assertIn("INDIRECT_QUERIES_AND_DYNAMIC_SOURCES_OK", proc.stdout)
 
+    def test_28_recuperacion_semantica_general_y_stemming(self):
+        """Verifica el atlas panoramico, stemming morfologico y recuperacion semantica para consultas coloquiales sin reglas ad-hoc."""
+        node_script = """
+        const fs = require('fs');
+        const path = require('path');
+
+        global.window = {};
+        eval(fs.readFileSync(path.join(process.cwd(), 'data/aysen_hubs_data.js'), 'utf8'));
+        eval(fs.readFileSync(path.join(process.cwd(), 'js/omniroute_client.js'), 'utf8'));
+
+        const client = global.window.OmniRouteClient || window.OmniRouteClient;
+        client.init(global.window.AYSEN_HUBS_DATA);
+        const idx = client.getIndex();
+
+        if (!Array.isArray(idx.panoramicIndicators) || idx.panoramicIndicators.length < 100) {
+            console.error('Expected panoramicIndicators >= 100, got:', idx.panoramicIndicators?.length);
+            process.exit(1);
+        }
+        if (!idx.panoramicNodesAndMilestones || !idx.panoramicNodesAndMilestones.includes('Nodos (39)')) {
+            console.error('Missing panoramicNodesAndMilestones summary');
+            process.exit(2);
+        }
+
+        const colloquialCases = [
+            {
+                q: '¿Dónde cuesta más conseguir casa o vivienda propia en Aysén?',
+                expectedAnyVar: ['deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cuantitativo_minvu']
+            },
+            {
+                q: '¿En qué comunas hay más abuelos o población envejecida?',
+                expectedAnyVar: ['indice_envejecimiento']
+            },
+            {
+                q: '¿Dónde se corta más la luz o hay más apagones en Aysén?',
+                expectedAnyVar: ['saidi_horas_anual']
+            },
+            {
+                q: '¿Dónde hay más tensión entre cuidar la naturaleza y la economía?',
+                expectedAnyVar: ['barometro_tension_desarrollo_conservacion_pct']
+            },
+            {
+                q: '¿Dónde faltan más doctores por cada mil habitantes en Aysén?',
+                expectedAnyVar: ['medicos_por_mil_hab']
+            },
+            {
+                q: '¿Qué comunas tienen más puntos de CajaVecina para sacar plata?',
+                expectedAnyVar: ['puntos_cajavecina_bancoestado']
+            },
+            {
+                q: '¿En qué comunas hay más glaciares y reservas de hielo?',
+                expectedAnyVar: ['glaciares_dga_n', 'superficie_glaciares_km2', 'superficie_glaciar_km2']
+            }
+        ];
+
+        for (const tc of colloquialCases) {
+            const res = client.resolveClosedWorldDeterministic(tc.q);
+            const hit = res && res.chart && res.chart.render &&
+                (tc.expectedAnyVar.includes(res.chart.varX) || tc.expectedAnyVar.includes(res.chart.varY));
+            if (!hit) {
+                console.error('Colloquial query failed:', tc.q, 'got varX=' + res?.chart?.varX, 'varY=' + res?.chart?.varY, 'reply=' + res?.reply);
+                process.exit(3);
+            }
+        }
+
+        // Verificar que una consulta verdaderamente inexistente siga declarando ausencia en mundo cerrado
+        const rAlien = client.resolveClosedWorldDeterministic('¿Cuántas naves espaciales interplanetarias existen en Júpiter?');
+        if (!rAlien || rAlien.chart.render !== false || !rAlien.reply.includes('no forma parte de las fuentes oficiales')) {
+            console.error('Expected closed-world rejection for out-of-domain query, got:', rAlien);
+            process.exit(4);
+        }
+
+        console.log('GENERAL_SEMANTIC_RAG_AND_STEMMING_OK');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_28 omniroute:\n{proc.stderr}")
+        self.assertIn("GENERAL_SEMANTIC_RAG_AND_STEMMING_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

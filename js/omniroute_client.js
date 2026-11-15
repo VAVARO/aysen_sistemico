@@ -30,8 +30,8 @@
     apiKey: 'sk-omniroute-aysen-local',
     model: 'omniroute-default',
     temperature: 0.15,
-    maxTokens: 1100,
-    timeoutMs: 20000,
+    maxTokens: 1800,
+    timeoutMs: 12000,
     maxHistoryTurns: 6,
     lexiconUrl: 'data/nl_lexicon_aysen.json'
   };
@@ -650,16 +650,22 @@
     prestadores_sernatur: ['prestadores turisticos', 'sernatur', 'oferta turistica'],
     hogares_lena_pct: ['calefaccionan con lena', 'hogares que calefaccionan con lena', 'uso de lena', 'calefaccion lena', 'calefaccion a lena'],
     dias_sobre_norma_mp25: ['contaminacion critica mp2.5', 'mp2.5', 'mp25', 'dias con contaminacion', 'calidad del aire', 'material particulado'],
-    saidi_horas_anual: ['saidi', 'cortes de luz', 'interrupcion electrica', 'calidad electrica'],
-    tarifa_bt1_clp: ['tarifa electrica', 'tarifa bt1', 'precio electricidad'],
+    saidi_horas_anual: ['saidi', 'cortes de luz', 'apagones', 'sin luz', 'se corta la luz', 'cortes de electricidad', 'interrupcion electrica', 'calidad electrica'],
+    tarifa_bt1_clp: ['tarifa electrica', 'tarifa bt1', 'precio electricidad', 'cuenta de la luz', 'precio de la luz', 'luz cara', 'electricidad cara'],
+    gasolina_93_clp: ['bencina', 'gasolina', 'combustible', 'combustibles', 'precio de la bencina', 'nafta'],
+    precio_lena_m3: ['precio de la lena', 'valor de la lena', 'metro de lena', 'costo de la lena'],
     potencia_mw: ['capacidad instalada', 'potencia instalada', 'megavatios', 'generacion electrica', 'matriz energetica', 'nudos criticos energeticos', 'materia energetica'],
     camas_hospitalarias: ['camas hospitalarias', 'camas de hospital', 'hospitales'],
-    medicos_por_mil_hab: ['medicos por mil habitantes', 'dotacion medica', 'medicos'],
+    medicos_por_mil_hab: ['medicos por mil habitantes', 'dotacion medica', 'medicos', 'doctores', 'especialistas', 'falta de medicos'],
+    urgencias_respiratorias_pct: ['enfermedades respiratorias', 'problemas respiratorios', 'urgencias respiratorias', 'bronquitis', 'asma'],
+    aeroevacuaciones_samu_n: ['ambulancia aerea', 'evacuacion aeromedica', 'aeroevacuaciones', 'samu', 'traslado de urgencia'],
     postas_salud_rural: ['postas rurales', 'postas de salud rural', 'aps'],
     matricula_escolar: ['matricula escolar', 'alumnos', 'estudiantes', 'educacion escolar'],
     pobreza_ingresos_pct: ['pobreza por ingresos', 'tasa de pobreza', 'pobreza casen'],
     pobreza_multidim_pct: ['pobreza multidimensional'],
     empresas_sii: ['empresas sii', 'numero de empresas', 'empresas activas', 'tejido empresarial'],
+    trabajadores_sii: ['empleo', 'puestos de trabajo', 'trabajo formal', 'trabajadores', 'fuerza laboral'],
+    parcelaciones_sag_n: ['parcelas', 'parcelaciones', 'loteos', 'subdivision predial', 'parcelas de agrado'],
     inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia', 'evaluacion ambiental'],
     red_vial_total_km: ['red vial', 'red vial total', 'kilometros de caminos', 'vialidad'],
     red_vial_pavimentada_km: ['red vial pavimentada', 'caminos pavimentados', 'asfalto', 'rutas', 'estado de las rutas', 'rutas de entrada', 'insumos', 'abastecimiento', 'logistica', 'carretera austral', 'ruta 7'],
@@ -669,22 +675,24 @@
     red_vial_pavimentada_pct: ['porcentaje de pavimentacion', 'pavimentacion vial', 'pavimentacion'],
     tiempo_viaje_coyhaique_hrs: ['tiempo de viaje', 'tiempo a coyhaique', 'horas de viaje', 'horas a coyhaique', 'traslado coyhaique'],
     hogares_sin_internet_fijo_pct: ['sin internet', 'brecha digital', 'hogares sin internet', 'internet fijo', 'fibra optica', 'conectividad digital'],
-    deficit_habitacional_cuantitativo_n: ['deficit habitacional', 'deficit cuantitativo', 'viviendas nuevas', 'falta de viviendas', 'vivienda'],
+    deficit_habitacional_cuantitativo_n: ['deficit habitacional', 'deficit cuantitativo', 'viviendas nuevas', 'falta de viviendas', 'vivienda', 'casa', 'casas', 'viviendas', 'arriendo', 'arrendar', 'conseguir casa', 'techo', 'allegados', 'falta de vivienda'],
     deficit_habitacional_cualitativo_n: ['deficit cualitativo', 'mejoramiento de vivienda', 'viviendas a reparar'],
+    indice_envejecimiento: ['vejez', 'envejecimiento', 'envejecidos', 'adultos mayores', 'tercera edad', 'abuelos', 'ancianos'],
     ganado_bovino_cabezas: ['ganado bovino', 'bovinos', 'vacas', 'cabezas bovinas', 'ganaderia bovina'],
     ganado_ovino_cabezas: ['ganado ovino', 'ovinos', 'ovejas', 'cabezas ovinas', 'ganaderia ovina'],
-    superficie_glaciares_km2: ['glaciares', 'superficie glaciar', 'hielo', 'campos de hielo'],
+    glaciares_dga_n: ['glaciares', 'numero de glaciares', 'cantidad de glaciares', 'campos de hielo', 'reservas de agua dulce'],
+    superficie_glaciares_km2: ['glaciares', 'superficie glaciar', 'hielo', 'campos de hielo', 'reservas de agua dulce'],
     barometro_confianza_institucional_pct: ['confianza municipal', 'barometro confianza', 'confianza institucional', 'aporte municipio', 'barometro'],
     barometro_redes_apoyo_comunitario_pct: ['redes de apoyo', 'participacion comunitaria', 'apoyo comunitario', 'barometro social'],
     barometro_orgullo_identidad_pct: ['orgullo regional', 'identidad regional', 'identidad aysen', 'pertenencia austral'],
     barometro_prioridad_conectividad_pct: ['prioridad conectividad', 'acceso conectividad', 'barometro conectividad'],
-    barometro_tension_desarrollo_conservacion_pct: ['desarrollo vs conservacion', 'conflictos ambientales', 'tension desarrollo conservacion'],
-    barometro_intencion_migracion_juvenil_pct: ['retencion juvenil', 'migracion juvenil', 'oportunidades trabajo jovenes'],
+    barometro_tension_desarrollo_conservacion_pct: ['desarrollo vs conservacion', 'conflictos ambientales', 'tension desarrollo conservacion', 'cuidar la naturaleza', 'naturaleza vs economia', 'economia vs medio ambiente'],
+    barometro_intencion_migracion_juvenil_pct: ['retencion juvenil', 'migracion juvenil', 'oportunidades trabajo jovenes', 'jovenes', 'juventud', 'irse de la region', 'quieren ir', 'emigrar', 'fuga de jovenes'],
     barometro_evaluacion_acceso_salud_pct: ['evaluacion salud', 'satisfaccion salud', 'acceso a salud barometro'],
     barometro_preocupacion_contaminacion_lena_pct: ['preocupacion lena', 'humo lena barometro', 'contaminacion aire barometro', 'urgencia lena'],
-    esperanza_vida_total_anos: ['esperanza de vida', 'expectativa de vida', 'anos de vida', 'longevidad', 'vida al nacer'],
+    esperanza_vida_total_anos: ['esperanza de vida', 'expectativa de vida', 'anos de vida', 'longevidad', 'vida al nacer', 'vivir mas anos'],
     consumo_lena_m3_hogar_ano: ['consumo de lena', 'consumo residencial lena', 'metros cubicos lena', 'lena por hogar'],
-    sistemas_ssr_apr_n: ['agua potable rural', 'ssr', 'apr', 'sistemas de agua potable'],
+    sistemas_ssr_apr_n: ['agua potable rural', 'ssr', 'apr', 'sistemas de agua potable', 'sin agua potable'],
     dependencia_barcaza_nivel: ['dependencia de barcaza', 'barcaza', 'barcazas', 'conectividad maritima', 'transporte maritimo', 'subsidio barcaza', 'barcazas subsidiadas', 'fiordo mitchell', 'barcaza litoral'],
     distancia_coyhaique_km: ['distancia a coyhaique', 'distancia terrestre', 'distancia terrestre a coyhaique', 'km a coyhaique', 'kilometros a coyhaique'],
     red_vial_ripio_km: ['red vial en ripio', 'caminos de ripio', 'ripio', 'red ripio'],
@@ -697,6 +705,16 @@
     plantaciones_ha: ['plantaciones forestales', 'superficie plantaciones', 'forestal'],
     cobertura_empam_pct: ['empam', 'control adulto mayor', 'examen medicina preventiva adulto mayor', 'salud adulto mayor', 'adultos mayores empam'],
     cobertura_pscv_pct: ['pscv', 'salud cardiovascular', 'programa de salud cardiovascular', 'control cardiovascular'],
+    espera_no_ges_n: ['lista de espera', 'listas de espera', 'esperando atencion', 'espera no ges', 'interconsultas pendientes'],
+    mediana_espera_quirurgica_dias: ['operaciones', 'cirugias', 'espera quirurgica', 'lista de espera quirurgica'],
+    tasa_mortalidad_cancer_gastrico_100k: ['cancer', 'tumores', 'cancer gastrico', 'mortalidad por cancer'],
+    tasa_mortalidad_suicidio_100k: ['suicidio', 'suicidios', 'salud mental', 'mortalidad por suicidio'],
+    puntos_cajavecina_bancoestado: ['bancos', 'cajeros', 'sacar plata', 'caja vecina', 'cajavecina', 'banca'],
+    sucursales_banca_privada_cmf: ['sucursales bancarias', 'bancos privados', 'banca privada', 'sin banco'],
+    sindicatos_pesca_artesanal: ['pescadores', 'pesca artesanal', 'caletas', 'sindicatos pesqueros'],
+    autoidentificacion_indigena_pct: ['pueblos originarios', 'indigenas', 'mapuche', 'poblacion indigena'],
+    comunidades_indigenas_conadi: ['comunidades indigenas', 'conadi'],
+    juntas_vecinos_activas: ['juntas de vecinos', 'organizaciones sociales', 'organizaciones vecinales'],
 
     // Nuevas Variables Reconciliadas Oficiales
     volumen_regional_lena_m3: ['volumen de lena', 'volumen regional de lena', 'infor lena', 'catastro dendroenergetico', 'lena infor', 'metros cubicos de lena anual', 'extraccion de lena', 'informalidad lena', 'humedad lena', '565456 m3'],
@@ -965,6 +983,38 @@
     lena: 'Leña'
   };
 
+  const QUERY_STOPWORDS = new Set([
+    'como', 'cual', 'cuales', 'donde', 'cuanto', 'cuanta', 'cuantos', 'cuantas',
+    'tiene', 'tienen', 'estan', 'entre', 'para', 'segun', 'sobre', 'desde', 'hasta',
+    'region', 'aysen', 'comuna', 'comunas', 'nivel', 'datos', 'dato', 'valor', 'valores',
+    'mayor', 'menor', 'principales', 'principal', 'indicador', 'indicadores',
+    'totalmente', 'inexistente', 'inventado', 'pasa', 'afecta', 'existe', 'existen',
+    'cuesta', 'falta', 'faltan', 'quiere', 'quieren', 'hacer', 'puede', 'pueden', 'toda', 'todas', 'todos'
+  ]);
+
+  const SPANISH_SUFFIXES = [
+    'aciones', 'iciones', 'amientos', 'imientos', 'isticos', 'isticas', 'acionales',
+    'adores', 'adoras', 'ancias', 'encias', 'acion', 'icion', 'amiento', 'imiento',
+    'idades', 'istico', 'istica', 'eticos', 'eticas', 'acional', 'antes', 'ientes',
+    'anzas', 'encias', 'ismos', 'istas', 'etico', 'etica', 'ador', 'adora', 'ancia',
+    'encia', 'idad', 'ante', 'iente', 'anza', 'ismo', 'ista', 'ales', 'ares', 'iles',
+    'ores', 'oras', 'ados', 'adas', 'idos', 'idas', 'ando', 'iendo', 'eros', 'eras',
+    'ivos', 'ivas', 'osos', 'osas', 'ero', 'era', 'ivo', 'iva', 'oso', 'osa',
+    'es', 'os', 'as', 'o', 'a', 'e', 's'
+  ];
+
+  function stemSpanishWord(word) {
+    const w = String(word || '').toLowerCase().trim();
+    if (w.length < 5) return w;
+    for (const suf of SPANISH_SUFFIXES) {
+      if (w.endsWith(suf)) {
+        const stem = w.slice(0, w.length - suf.length);
+        if (stem.length >= 4) return stem;
+      }
+    }
+    return w;
+  }
+
   function normalizeText(str) {
     if (str === null || str === undefined) return '';
     return String(str)
@@ -1063,6 +1113,34 @@
         const parsed = JSON.parse(candidate);
         if (parsed && typeof parsed === 'object') return parsed;
       } catch (_) {}
+    }
+
+    // Rescate ante JSON truncado por límite de tokens
+    const replyMatch = trimmed.match(/"reply"\s*:\s*"((?:[^"\\]|\\.)*)(?:"|$)/);
+    if (replyMatch && replyMatch[1]) {
+      const unescapedReply = replyMatch[1]
+        .replace(/\\n/g, '\n')
+        .replace(/\\"/g, '"')
+        .replace(/\\\\/g, '\\')
+        .trim();
+      if (unescapedReply.length >= 12) {
+        const varXMatch = trimmed.match(/"varX"\s*:\s*"([a-z0-9_]+)"/i);
+        const varYMatch = trimmed.match(/"varY"\s*:\s*"([a-z0-9_]+)"/i);
+        const renderMatch = trimmed.match(/"render"\s*:\s*(true|false)/i);
+        const typeMatch = trimmed.match(/"type"\s*:\s*"(bar|line|scatter)"/i);
+        const hubMatch = trimmed.match(/"relatedHub"\s*:\s*"(I|II|III|IV|V|VI|VII|VIII|IX|X)"/i);
+        return {
+          _isTruncatedRescue: true,
+          reply: unescapedReply,
+          chart: {
+            render: renderMatch ? renderMatch[1].toLowerCase() === 'true' : true,
+            type: typeMatch ? typeMatch[1] : 'bar',
+            varX: varXMatch ? varXMatch[1] : null,
+            varY: varYMatch ? varYMatch[1] : null
+          },
+          relatedHub: hubMatch ? hubMatch[1] : undefined
+        };
+      }
     }
     return null;
   }
@@ -1318,6 +1396,13 @@
         };
       }
 
+      const tokensArr = Array.from(tokenBag);
+      const stemsArr = Array.from(new Set(
+        tokensArr
+          .filter(t => !QUERY_STOPWORDS.has(t) && t.length >= 4)
+          .map(stemSpanishWord)
+      ));
+
       const varRecord = {
         key,
         label: meta.label,
@@ -1327,7 +1412,8 @@
         aggregation: meta.aggregation,
         source,
         synonyms: Array.from(synonymPhrases).filter(Boolean),
-        tokens: Array.from(tokenBag),
+        tokens: tokensArr,
+        stems: stemsArr,
         stats
       };
 
@@ -1425,6 +1511,35 @@
       });
     });
 
+    // 7. Construir Atlas Panorámico compacto (indicadores deduplicados + nodos e hitos)
+    const seenStatSig = new Set();
+    const panoramicIndicators = [];
+    variables.forEach(v => {
+      if (!v.isNumeric || !v.stats) return;
+      const sig = `${v.stats.sum.toFixed(1)}|${v.stats.avg.toFixed(1)}|${v.stats.max?.comuna || ''}`;
+      if (seenStatSig.has(sig)) return;
+      seenStatSig.add(sig);
+      const aggStr = v.aggregation === 'avg'
+        ? `Prom:${Number(v.stats.avg.toFixed(1))}`
+        : `Tot:${Number(v.stats.sum.toFixed(1))}`;
+      const maxStr = v.stats.max ? `1°${v.stats.max.comuna}:${v.stats.max.value}` : '';
+      const minStr = v.stats.min ? `min:${v.stats.min.comuna}:${v.stats.min.value}` : '';
+      panoramicIndicators.push(`${v.key}=${aggStr}${v.unit || ''}[${maxStr},${minStr}]`);
+    });
+
+    const nodeSummaryList = indexedNodes.map(n => `#${n.id}(${n.hubId}):${n.title}`).join('; ');
+    const regionalMilestones = [
+      '12 Holdings salmoneros madres (AquaChile, Multi X, Blumar, Mowi, Cermaq, Australis)',
+      'Corredor binacional ATIT 1974 via RN40 y Paso Cardenal Samore hacia Huemules/Jeinimeni/Coyhaique Alto/Roballos',
+      'EMPORCHA Puerto Chacabuco 468.200 ton (2024) y proy. 495.000 ton (2026) + CAM-01 + barcazas DTPR',
+      'Red vial MOP 3.386,4 km totales (412,8 km pav. vs 2.438,0 km ripio)',
+      '3 subsistemas electricos aislados SEN (98,6 MW) + SAIDI prom 36,0 h/ano + Lena INFOR 565.456 m3/ano + Pellet 20.000 ton/ano maritimo',
+      'Bosque nativo CONAF 4.832.500 ha + 35.240 ha plantaciones + 5.723.000 ha vegetacion nativa',
+      'Huemul RCE MMA 1.500-2.000 individuos (amenaza perros asilvestrados); Ganado ODEPA 130.832 bovinos y 177.934 ovinos',
+      'Listas espera SIGTE 11.420 interconsultas; GLOFs Cachet 2 cuenca Baker; 3 ZOITs decretadas'
+    ].join(' | ');
+    const panoramicNodesAndMilestones = `Hitos regionales: ${regionalMilestones}. Nodos (${indexedNodes.length}): ${nodeSummaryList}`;
+
     _memoryIndex = {
       entities,
       comunas,
@@ -1438,7 +1553,9 @@
       evolucionHoldingsSalmoneros: dataLake.evolucionHoldingsSalmoneros || null,
       customCollections,
       sourcesByKey,
-      fuentes: allOfficialSources
+      fuentes: allOfficialSources,
+      panoramicIndicators,
+      panoramicNodesAndMilestones
     };
   }
 
@@ -1896,11 +2013,11 @@
           chart: {
             render: true,
             type: 'bar',
-            varX: 'poblacion_censo_2024',
-            varY: 'empresas_sii',
-            yKey: 'poblacion_censo_2024',
-            y2Key: 'empresas_sii',
-            title: 'Población Censo 2024 vs. Empresas Vigentes SII por Comuna',
+            varX: 'puntos_cajavecina_bancoestado',
+            varY: 'sucursales_banca_privada_cmf',
+            yKey: 'puntos_cajavecina_bancoestado',
+            y2Key: 'sucursales_banca_privada_cmf',
+            title: 'Puntos CajaVecina BancoEstado vs. Sucursales Banca Privada (CMF) por Comuna',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -1965,7 +2082,8 @@
             excludeCoyhaique: false
           },
           sources,
-          relatedHub: 'III'
+          relatedHub: 'III',
+          isContextualBridge: true
         };
       }
       case 'rutas_insumos_logistica': {
@@ -1985,7 +2103,8 @@
             excludeCoyhaique: false
           },
           sources,
-          relatedHub: 'IV'
+          relatedHub: 'IV',
+          isContextualBridge: true
         };
       }
       case 'bosques_arboles_conaf': {
@@ -2005,7 +2124,8 @@
             excludeCoyhaique: false
           },
           sources,
-          relatedHub: 'VII'
+          relatedHub: 'VII',
+          isContextualBridge: true
         };
       }
       case 'fauna_perros_ganaderia': {
@@ -2025,7 +2145,8 @@
             excludeCoyhaique: false
           },
           sources,
-          relatedHub: 'VII'
+          relatedHub: 'VII',
+          isContextualBridge: true
         };
       }
       default:
@@ -2245,16 +2366,25 @@
     }
 
     for (const qt of qTokens) {
+      let matchedExactOrPrefix = false;
       for (const vt of varRecord.tokens) {
         if (qt === vt) {
           score += 5;
-        } else if (qt.length >= 4 && vt.length >= 4 && (vt.startsWith(qt) || qt.startsWith(vt))) {
+          matchedExactOrPrefix = true;
+        } else if (qt.length >= 4 && vt.length >= 4 && !QUERY_STOPWORDS.has(qt) && (vt.startsWith(qt) || qt.startsWith(vt))) {
           score += 2.5;
+          matchedExactOrPrefix = true;
+        }
+      }
+      if (!matchedExactOrPrefix && qt.length >= 4 && !QUERY_STOPWORDS.has(qt) && Array.isArray(varRecord.stems)) {
+        const qtStem = stemSpanishWord(qt);
+        if (qtStem.length >= 4 && varRecord.stems.some(vs => vs === qtStem || (vs.length >= 5 && qtStem.length >= 5 && (vs.startsWith(qtStem) || qtStem.startsWith(vs))))) {
+          score += 3.5;
         }
       }
     }
 
-    if (/(por habitante|per capita|por mil)/.test(qNorm)) {
+    if (/(por habitante|per capita|por cada mil|por cada 1000|cada mil|por mil)/.test(qNorm)) {
       if (/(per_capita|por_mil|densidad|ratio)/.test(varRecord.key)) score += 18;
       if (varRecord.key === 'poblacion_censo_2024') score -= 20;
     }
@@ -2268,7 +2398,10 @@
     if (/(biomasa.*salmon|concentran la biomasa)/.test(qNorm) && varRecord.key === 'biomasa_salmon_ton') {
       score += 30;
     }
-    if (/(personas viven|cuantas personas|poblacion|habitantes)/.test(qNorm) && !/(por habitante|per capita|por mil)/.test(qNorm)) {
+    if (
+      /(personas viven|cuantas personas|poblacion|habitantes)/.test(qNorm) &&
+      !/(por habitante|per capita|por cada mil|por cada 1000|cada mil|por mil|envejec|adult|indigen|beneficiari|canin|escolar|joven|juvenil|activa|ocupada|rural|urbana)/.test(qNorm)
+    ) {
       if (varRecord.key === 'poblacion_censo_2024') score += 40;
     }
 
@@ -2325,6 +2458,17 @@
     if (reconciledTopic) {
       const topicReply = buildReconciledTopicReply(reconciledTopic, rawQuery, qNorm, _memoryIndex);
       if (topicReply) {
+        const bridgeKeys = topicReply.isContextualBridge
+          ? [topicReply.chart?.varX, topicReply.chart?.varY].filter(k => k && _memoryIndex.variablesByKey[k])
+          : [];
+        const bridgeTopVars = bridgeKeys.map(k => _memoryIndex.variablesByKey[k]);
+        const bridgeMatrix = topicReply.isContextualBridge
+          ? _memoryIndex.entities.map(e => {
+            const row = { comuna: e.name, provincia: e.provincia };
+            bridgeKeys.forEach(k => { row[k] = e.raw[k]; });
+            return row;
+          })
+          : [];
         return {
           query: rawQuery,
           qNorm,
@@ -2334,16 +2478,18 @@
           isHoldingQuery: false,
           reconciledTopic,
           reconciledResult: topicReply,
-          topVariables: [],
-          topNumericVars: [],
-          primaryVar: null,
-          secondaryVar: null,
+          topVariables: bridgeTopVars,
+          topNumericVars: bridgeTopVars,
+          primaryVar: bridgeTopVars[0] || null,
+          secondaryVar: bridgeTopVars[1] || null,
           wantsScatter: false,
           wantsBivariateComparison: false,
           wantsTemporal: false,
           excludeCoyhaique,
           topNodes: [],
           matchedCollections: [],
+          comunasMatrix: bridgeMatrix,
+          activeKeys: bridgeKeys,
           chartSpec: topicReply.chart,
           sources: topicReply.sources,
           relatedHub: topicReply.relatedHub || 'IV'
@@ -2376,11 +2522,12 @@
       } catch (_) {}
     }
 
-    let scoredVars = _memoryIndex.variables
-      .map(v => ({
-        variable: v,
-        score: scoreVariable(v, qNorm, varQueryTokens) + (nlScores[v.key] || 0) * 1.2
-      }))
+    const allScoredVars = _memoryIndex.variables.map(v => ({
+      variable: v,
+      score: scoreVariable(v, qNorm, varQueryTokens) + (nlScores[v.key] || 0) * 1.2
+    }));
+
+    let scoredVars = allScoredVars
       .filter(item => item.score >= 5)
       .sort((a, b) => b.score - a.score);
 
@@ -2417,6 +2564,12 @@
           .map((v, idx) => ({ variable: v, score: 30 - idx * 5 }));
       }
     }
+
+    const llmCandidateSource = scoredVars.length > 0
+      ? scoredVars
+      : allScoredVars
+          .filter(item => item.score >= 3.5)
+          .sort((a, b) => b.score - a.score);
 
     // 3. Puntuar Nodos Satélite (#01..#N)
     const scoredNodes = _memoryIndex.nodes
@@ -2589,6 +2742,14 @@
       topVariables: [primaryVar, secondaryVar].filter(Boolean).concat(
         scoredVars.filter(s => !s.variable.isNumeric).slice(0, 1).map(s => s.variable)
       ),
+      candidateVariables: [primaryVar, secondaryVar]
+        .filter(Boolean)
+        .concat(
+          llmCandidateSource
+            .map(s => s.variable)
+            .filter(v => v && v !== primaryVar && v !== secondaryVar)
+            .slice(0, 10)
+        ),
       primaryVar,
       secondaryVar,
       topNodes: scoredNodes.slice(0, 2).map(s => s.node),
@@ -2644,6 +2805,9 @@
     } else if (memoryPacket.primaryVar) {
       _conversationState.lastDomain = memoryPacket.primaryVar.hub;
       _conversationState.lastIndicatorKeys = [memoryPacket.primaryVar.key, memoryPacket.secondaryVar?.key].filter(Boolean);
+    } else if (finalResult && finalResult.chart && finalResult.chart.varX) {
+      _conversationState.lastDomain = finalResult.relatedHub || 'VI';
+      _conversationState.lastIndicatorKeys = [finalResult.chart.varX, finalResult.chart.varY].filter(Boolean);
     }
     _conversationState.lastQuery = memoryPacket.query || '';
     if (finalResult && finalResult.chart && !finalResult.chart.sourceText && Array.isArray(finalResult.sources)) {
@@ -2658,22 +2822,25 @@
     if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
       buildMemoryIndex(_dataLake || global.AYSEN_HUBS_DATA, _lexicon);
     }
-    const varsForPrompt = (Array.isArray(subsetVars) && subsetVars.length > 0)
+    const hasSubset = Array.isArray(subsetVars) && subsetVars.length > 0;
+    const varsForPrompt = hasSubset
       ? subsetVars
       : _memoryIndex.variables;
-    const varList = varsForPrompt.map(v => `${v.key} (${v.label}, Hub ${v.hub})`).join(', ');
+    const varList = hasSubset
+      ? varsForPrompt.map(v => v.key).join(', ')
+      : varsForPrompt.map(v => `${v.key} (${v.label}, Hub ${v.hub})`).join(', ');
     return [
       `Eres el Consultor Territorial de Aysén Sistémico, conectado en tiempo real a la memoria verificada de \`window.AYSEN_HUBS_DATA\` (10 Comunas, 10 Hubs Sistémicos I al X, 39 Nodos Satélites, 12 Holdings Salmoneros Madres y ${_memoryIndex.fuentes.length} fuentes oficiales verificadas).`,
       `Catálogo dinámico de variables indexadas (${varsForPrompt.length}/${_memoryIndex.variables.length}): ${varList}`,
       'INSTRUCCIONES DE RIGOR FACTUAL Y CONEXIÓN SEMÁNTICA:',
-      '1. Responde EXCLUSIVAMENTE utilizando los datos provistos en MEMORIA_VERIFICADA. Jamás inventes cifras.',
-      '2. Si el usuario pregunta de forma indirecta, conceptual o coloquial por un fenómeno o conteo no literal (ej. rutas de insumos, nudos críticos, árboles, mascotas/fauna), conecta siempre con los indicadores equivalentes, nodos temáticos o proxies oficiales disponibles en MEMORIA_VERIFICADA, explica brevemente la equivalencia de medición y entrega las cifras exactas.',
+      '1. Responde de forma directa, analítica y concisa (entre 2 y 4 oraciones, máximo 500 caracteres en "reply") utilizando EXCLUSIVAMENTE los datos provistos en MEMORIA_VERIFICADA (resumen_estadistico_variables_candidatas, hitos_regionales y matriz_comunal_datos_exactos). Jamás inventes cifras.',
+      '2. Si el usuario pregunta de forma indirecta, conceptual o coloquial por un fenómeno o conteo no literal, conecta siempre con los indicadores equivalentes, nodos temáticos o proxies oficiales disponibles en MEMORIA_VERIFICADA, explica brevemente la equivalencia de medición y entrega las cifras exactas.',
       '3. Cita las cifras exactas en formato chileno (punto para miles, coma para decimales), mencionando las comunas o holdings líderes, los de menor valor y el total o promedio regional según corresponda.',
       '4. Para tasas, porcentajes, densidades o valores per cápita, informa el Promedio Regional y NUNCA sumes porcentajes ni tasas entre comunas.',
-      '5. Utiliza siempre nombres canónicos con tildes y unidades limpias. Jamás muestres claves en snake_case.',
+      '5. Utiliza siempre nombres canónicos con tildes y unidades limpias en "reply" y en "title". Jamás muestres claves snake_case dentro del texto de "reply".',
       '6. No utilices emojis bajo ninguna circunstancia.',
-      '7. Devuelve tu respuesta estrictamente como un objeto JSON válido con la estructura:',
-      '{"reply": "Texto analítico claro y conciso con las cifras exactas", "chart": {"render": true, "type": "bar|line|scatter", "varX": "clave_x", "varY": "clave_y_o_null", "title": "Título del gráfico", "excludeCoyhaique": false}, "relatedHub": "I..X"}'
+      '7. Devuelve tu respuesta estrictamente como un objeto JSON válido. En "chart", "varX" y "varY" DEBEN ser claves exactas en snake_case elegidas del catálogo provisto (ej. "deficit_habitacional_cuantitativo_n", "barometro_tension_desarrollo_conservacion_pct"), NUNCA nombres de comunas ni arreglos, y "type" debe ser "bar", "line" o "scatter":',
+      '{"reply": "Texto analítico claro y conciso con las cifras exactas", "chart": {"render": true, "type": "bar|line|scatter", "varX": "clave_x_exacta", "varY": "clave_y_o_null", "title": "Título limpio del gráfico", "excludeCoyhaique": false}, "relatedHub": "I..X"}'
     ].join('\n');
   }
 
@@ -2682,7 +2849,7 @@
    * para que el LLM responda razonando sobre los datos reales sin alucinar.
    */
   function buildMemoryGroundedPrompts(memoryPacket) {
-    const varsToSummarize = [...memoryPacket.topVariables];
+    const varsToSummarize = [...(memoryPacket.candidateVariables || memoryPacket.topVariables || [])];
     if (memoryPacket.matchedSector && Array.isArray(memoryPacket.matchedSector.keys)) {
       memoryPacket.matchedSector.keys.forEach(k => {
         const v = _memoryIndex.variablesByKey[k];
@@ -2692,46 +2859,41 @@
       });
     }
 
-    if (varsToSummarize.length < 6) {
-      const strategicKeys = [
-        'poblacion_censo_2024', 'presupuesto_mclp', 'red_vial_pavimentada_km',
-        'potencia_mw', 'hogares_lena_pct', 'bosque_nativo_ha',
-        'concesiones_salmon', 'visitantes_snaspe'
-      ];
-      strategicKeys.forEach(k => {
-        const v = _memoryIndex.variablesByKey[k];
-        if (v && !varsToSummarize.some(existing => existing.key === k)) {
-          varsToSummarize.push(v);
-        }
-      });
-    }
-
-    const compactVars = varsToSummarize.slice(0, 12);
-    const varSummaries = compactVars.map(v => {
-      if (!v.isNumeric || !v.stats) {
-        return { key: v.key, label: v.label, type: 'categorical' };
+    const PANORAMIC_BACKBONE_KEYS = [
+      'poblacion_censo_2024', 'deficit_habitacional_cuantitativo_n', 'indice_envejecimiento',
+      'pobreza_ingresos_pct', 'presupuesto_mclp', 'red_vial_pavimentada_km',
+      'potencia_mw', 'saidi_horas_anual', 'hogares_lena_pct',
+      'dias_sobre_norma_mp25', 'biomasa_salmon_ton', 'visitantes_snaspe',
+      'bosque_nativo_ha', 'superficie_glaciares_km2', 'medicos_por_mil_hab',
+      'espera_no_ges_n', 'puntos_cajavecina_bancoestado',
+      'barometro_intencion_migracion_juvenil_pct',
+      'barometro_tension_desarrollo_conservacion_pct'
+    ];
+    PANORAMIC_BACKBONE_KEYS.forEach(k => {
+      const v = _memoryIndex.variablesByKey[k];
+      if (v && !varsToSummarize.some(existing => existing.key === k)) {
+        varsToSummarize.push(v);
       }
-      return {
-        key: v.key,
-        label: v.label,
-        unit: v.unit,
-        aggregationType: v.aggregation === 'avg' ? 'Promedio Regional' : 'Total Acumulado Regional',
-        regionalAggregateValue: v.aggregation === 'avg'
-          ? Number(v.stats.avg.toFixed(2))
-          : Number(v.stats.sum.toFixed(2)),
-        leaderComuna: v.stats.max,
-        secondComuna: v.stats.second,
-        lowestComuna: v.stats.min,
-        source: v.source?.institucion
-      };
     });
 
-    const relevantNodes = (memoryPacket.topNodes || []).slice(0, 4).map(n => ({
+    const compactVars = varsToSummarize.slice(0, 14);
+    const varSummaries = compactVars.map(v => {
+      if (!v.isNumeric || !v.stats) {
+        return `${v.key} (${v.label}): categorica`;
+      }
+      const aggTag = v.aggregation === 'avg' ? 'Prom' : 'Tot';
+      const aggVal = Number((v.aggregation === 'avg' ? v.stats.avg : v.stats.sum).toFixed(1));
+      const maxPart = v.stats.max ? `1°${v.stats.max.comuna}:${v.stats.max.value}` : '';
+      const secPart = v.stats.second ? `, 2°${v.stats.second.comuna}:${v.stats.second.value}` : '';
+      const minPart = v.stats.min ? `, min ${v.stats.min.comuna}:${v.stats.min.value}` : '';
+      return `${v.key} (${v.label}, ${v.unit || 's/u'}): ${aggTag}=${aggVal} [${maxPart}${secPart}${minPart}]`;
+    });
+
+    const relevantNodes = (memoryPacket.topNodes || []).slice(0, 2).map(n => ({
       id: n.id,
       hubId: n.hubId,
       title: n.title,
-      definition: n.definition,
-      example: n.example
+      definition: String(n.definition || '').slice(0, 180)
     }));
 
     const includeConnectivity = memoryPacket.matchedSector?.id === 'conectividad' ||
@@ -2743,28 +2905,58 @@
       emporcha_ultimos_anos: (backbone.series_multianuales?.emporcha_toneladas_transferidas || []).slice(-3)
     } : undefined;
 
-    const limitedActiveKeys = (memoryPacket.activeKeys || []).slice(0, 6);
+    const limitedActiveKeys = (memoryPacket.activeKeys || []).slice(0, 4);
     const compactComunasMatrix = (memoryPacket.comunasMatrix || []).map(row => {
-      const compactRow = { comuna: row.comuna, provincia: row.provincia };
+      const compactRow = { comuna: row.comuna };
       limitedActiveKeys.forEach(k => {
         if (k in row) compactRow[k] = row[k];
       });
       return compactRow;
     });
 
+    const fullMilestones = _memoryIndex.panoramicNodesAndMilestones || '';
+    const hitosOnly = fullMilestones.includes('. Nodos (')
+      ? fullMilestones.split('. Nodos (')[0]
+      : fullMilestones;
+    const includeHitos = !memoryPacket.primaryVar || Boolean(memoryPacket.reconciledResult);
+
     const systemPrompt = buildSystemPrompt(compactVars);
+    const hasExplicitChartHint = Boolean(memoryPacket.primaryVar || memoryPacket.matchedSector || memoryPacket.reconciledResult);
+    const compactFilteredComunas = memoryPacket.matchedEntities.length
+      ? memoryPacket.matchedEntities.map(e => {
+          const r = e.raw || {};
+          const out = {
+            comuna: e.name,
+            provincia: r.provincia,
+            poblacion_censo_2024: r.poblacion_censo_2024,
+            superficie_km2: r.superficie_km2,
+            presupuesto_mclp: r.presupuesto_mclp,
+            dependencia_fcm_pct: r.dependencia_fcm_pct,
+            empresas_sii: r.empresas_sii,
+            concesiones_salmon: r.concesiones_salmon,
+            biomasa_salmon_ton: r.biomasa_salmon_ton,
+            camas_hospitalarias: r.camas_hospitalarias
+          };
+          limitedActiveKeys.forEach(k => {
+            if (k in r) out[k] = r[k];
+          });
+          return out;
+        })
+      : undefined;
 
     const memoryPayload = {
       consulta_usuario: memoryPacket.query,
-      estado_conversacional_previo: _conversationState,
+      estado_conversacional_previo: _conversationState.lastComunaName || _conversationState.lastDomain ? _conversationState : undefined,
       sector_tematico_consultado: memoryPacket.matchedSector ? memoryPacket.matchedSector.title : undefined,
-      comunas_filtradas_solicitadas: memoryPacket.matchedEntities.map(e => e.raw),
+      comunas_filtradas_solicitadas: compactFilteredComunas,
       holdings_salmoneros_aysen: memoryPacket.isHoldingQuery ? _memoryIndex.holdings : undefined,
+      sintesis_institucional_verificada: memoryPacket.reconciledResult ? memoryPacket.reconciledResult.reply : undefined,
+      hitos_regionales: (includeHitos && hitosOnly) ? hitosOnly.slice(0, 900) : undefined,
       nodos_satelite_relevantes: relevantNodes.length ? relevantNodes : undefined,
       conectividad_multimodal_resumen: connectivityBrief,
-      resumen_estadistico_variables_relevantes: varSummaries,
+      resumen_estadistico_variables_candidatas: varSummaries,
       matriz_comunal_datos_exactos: compactComunasMatrix,
-      grafico_sugerido: memoryPacket.chartSpec
+      grafico_sugerido: hasExplicitChartHint ? memoryPacket.chartSpec : undefined
     };
 
     return {
@@ -3164,6 +3356,47 @@
     return name.includes('coyhaique');
   }
 
+  function resolveValidVarKey(rawCandidate) {
+    if (!rawCandidate || typeof rawCandidate !== 'string') return null;
+    const cleaned = rawCandidate.trim().split(/[\s(]/)[0];
+    if (_memoryIndex.variablesByKey[cleaned]?.isNumeric) return cleaned;
+    const snakeMatch = rawCandidate.match(/\b[a-z][a-z0-9_]{3,}\b/);
+    if (snakeMatch && _memoryIndex.variablesByKey[snakeMatch[0]]?.isNumeric) return snakeMatch[0];
+    return null;
+  }
+
+  function inferVariablesFromReplyText(combinedText) {
+    const qNorm = normalizeText(combinedText || '');
+    const qTokens = tokenize(combinedText || '');
+    return _memoryIndex.variables
+      .filter(v => v.isNumeric)
+      .map(v => ({ key: v.key, score: scoreVariable(v, qNorm, qTokens) }))
+      .filter(item => item.score >= 5)
+      .sort((a, b) => b.score - a.score)
+      .map(s => s.key);
+  }
+
+  function resolveChartTitleForVars(validVarX, validVarY, memoryPacket, llmChart) {
+    if (
+      validVarX === memoryPacket.chartSpec.varX &&
+      validVarY === memoryPacket.chartSpec.varY &&
+      memoryPacket.chartSpec.title
+    ) {
+      return memoryPacket.chartSpec.title;
+    }
+    const hasCleanLlmTitle = llmChart.title && typeof llmChart.title === 'string' && !/[a-z]+_[a-z]+/.test(llmChart.title);
+    if (hasCleanLlmTitle && (!validVarY || /vs\.?|versus|frente a/i.test(llmChart.title))) {
+      return llmChart.title;
+    }
+    if (!validVarX) return memoryPacket.chartSpec.title || '';
+    const labelX = CANONICAL_LABELS[validVarX] || humanizeKey(validVarX);
+    if (validVarY) {
+      const labelY = CANONICAL_LABELS[validVarY] || humanizeKey(validVarY);
+      return `${labelX} vs. ${labelY}`;
+    }
+    return `${labelX} por Comuna`;
+  }
+
   /**
    * API Pública de OmniRouteClient
    */
@@ -3293,8 +3526,8 @@
 
       const memoryPacket = retrieveMemoryForQuery(userText);
 
-      // Resolución directa determinista para temas reconciliados oficiales Single Source of Truth
-      if (memoryPacket.reconciledResult) {
+      // Resolución directa determinista para temas reconciliados oficiales Single Source of Truth (excepto puentes contextuales)
+      if (memoryPacket.reconciledResult && !memoryPacket.reconciledResult.isContextualBridge) {
         updateConversationState(memoryPacket, memoryPacket.reconciledResult);
         _conversationMemory.push({ role: 'user', content: userText });
         _conversationMemory.push({ role: 'assistant', content: memoryPacket.reconciledResult.reply });
@@ -3341,33 +3574,73 @@
         };
 
         const llmChart = parsed.chart || {};
-        const shouldRenderChart = llmChart.render !== undefined ? Boolean(llmChart.render) : memoryPacket.chartSpec.render;
-        const validVarX = (shouldRenderChart && llmChart.varX && _memoryIndex.variablesByKey[llmChart.varX])
-          ? llmChart.varX
-          : (shouldRenderChart ? memoryPacket.chartSpec.varX : null);
-        const validVarY = (shouldRenderChart && llmChart.varY && _memoryIndex.variablesByKey[llmChart.varY])
-          ? llmChart.varY
-          : (shouldRenderChart ? memoryPacket.chartSpec.varY : null);
+        const llmVarX = resolveValidVarKey(llmChart.varX);
+        const llmVarY = resolveValidVarKey(llmChart.varY);
+        const explicitDisable = llmChart.render === false || llmChart.render === 'false';
+        const shouldRenderChart = explicitDisable
+          ? false
+          : Boolean((llmChart.render !== undefined ? llmChart.render : memoryPacket.chartSpec.render) || llmVarX);
 
+        let validVarX = null;
+        let validVarY = null;
+        if (shouldRenderChart) {
+          if (llmVarX) {
+            validVarX = llmVarX;
+            if (llmVarY && llmVarY !== llmVarX) {
+              validVarY = llmVarY;
+            } else if (memoryPacket.chartSpec.varY && memoryPacket.chartSpec.varY !== llmVarX) {
+              validVarY = memoryPacket.chartSpec.varY;
+            } else {
+              const inferred = inferVariablesFromReplyText(parsed.reply || '').filter(k => k !== llmVarX);
+              validVarY = inferred[0] || null;
+            }
+          } else if (memoryPacket.primaryVar || memoryPacket.matchedSector || memoryPacket.reconciledResult) {
+            validVarX = memoryPacket.chartSpec.varX || null;
+            validVarY = (memoryPacket.chartSpec.varY && memoryPacket.chartSpec.varY !== validVarX)
+              ? memoryPacket.chartSpec.varY
+              : null;
+          } else {
+            const inferredKeys = inferVariablesFromReplyText(`${userText} ${parsed.reply || ''}`);
+            validVarX = inferredKeys[0] || memoryPacket.chartSpec.varX || null;
+            validVarY = (inferredKeys[1] && inferredKeys[1] !== validVarX)
+              ? inferredKeys[1]
+              : (memoryPacket.chartSpec.varY || null);
+          }
+        }
+
+        const allowedTypes = ['bar', 'line', 'scatter'];
+        const chartType = allowedTypes.includes(llmChart.type) ? llmChart.type : (memoryPacket.chartSpec.type || 'bar');
+        const resolvedTitle = resolveChartTitleForVars(validVarX, validVarY, memoryPacket, llmChart);
         const exactSources = shouldRenderChart ? resolveSourcesForKeys([validVarX, validVarY].filter(Boolean)) : [];
+        const rawHub = String(parsed.relatedHub || '').trim();
+        const resolvedHub = (memoryPacket.reconciledResult && memoryPacket.reconciledResult.relatedHub)
+          ? memoryPacket.reconciledResult.relatedHub
+          : (validVarX
+              ? getHubForVariable(validVarX)
+              : (/^(I|II|III|IV|V|VI|VII|VIII|IX|X)$/.test(rawHub) ? rawHub : (memoryPacket.relatedHub || 'IV')));
+
+        const resolvedReply = (parsed._isTruncatedRescue && memoryPacket.reconciledResult && memoryPacket.reconciledResult.reply)
+          ? memoryPacket.reconciledResult.reply
+          : (parsed.reply || synthesizeFromMemoryPacket(memoryPacket).reply);
+
         const finalResult = {
-          reply: parsed.reply || synthesizeFromMemoryPacket(memoryPacket).reply,
+          reply: resolvedReply,
           chart: {
-            render: shouldRenderChart,
-            type: llmChart.type || memoryPacket.chartSpec.type,
+            render: Boolean(shouldRenderChart && (validVarX || memoryPacket.chartSpec?.customCategoryData)),
+            type: chartType,
             varX: validVarX,
             varY: validVarY,
             yKey: validVarX,
             y2Key: validVarY,
             highlightComuna: memoryPacket.matchedEntities.length === 1 ? memoryPacket.matchedEntities[0].name : null,
-            title: memoryPacket.chartSpec.title || llmChart.title,
+            title: resolvedTitle,
             sourceText: exactSources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: llmChart.excludeCoyhaique !== undefined
               ? Boolean(llmChart.excludeCoyhaique)
               : memoryPacket.chartSpec.excludeCoyhaique
           },
           sources: exactSources.length ? exactSources : (shouldRenderChart ? memoryPacket.sources : []),
-          relatedHub: parsed.relatedHub || (validVarX ? getHubForVariable(validVarX) : (memoryPacket.relatedHub || 'IV'))
+          relatedHub: resolvedHub
         };
 
         updateConversationState(memoryPacket, finalResult);
