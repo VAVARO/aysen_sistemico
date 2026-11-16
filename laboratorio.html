@@ -1369,11 +1369,12 @@
       left: 0;
       width: 0;
       height: 0;
+      z-index: 10;
       transform-origin: 0 0;
       will-change: transform;
     }
 
-    /* Capa SVG de Conectores Bézier entre Tarjetas */
+    /* Capa SVG de Conectores Bézier entre Tarjetas (siempre detrás de las ventanas) */
     .canvas-connections-svg {
       position: absolute;
       top: 0;
@@ -1382,7 +1383,7 @@
       height: 1px;
       overflow: visible;
       pointer-events: none;
-      z-index: 15;
+      z-index: 5;
       transform-origin: 0 0;
       will-change: transform;
     }
@@ -1675,10 +1676,12 @@
     .widget-meta-line {
       display: inline-flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 0.3rem;
-      overflow: hidden;
-      white-space: nowrap;
-      flex: 1;
+      row-gap: 2px;
+      overflow: visible;
+      white-space: normal;
+      flex: 1 1 180px;
       min-width: 0;
     }
 
@@ -4163,6 +4166,14 @@
           <button type="button" class="hero-secondary-link" id="btnHeroScenario">Cargar escenario comunal</button>
         </div>
       </div>
+      <script>
+        if (/[?&](varX|preset|prop|hub|node|cecan_prop)=/.test(window.location.search || '')) {
+          var _hEmpty = document.getElementById('heroEmptyCanvas');
+          if (_hEmpty) _hEmpty.style.display = 'none';
+          var _sWidgets = document.getElementById('canvasStatusWidgets');
+          if (_sWidgets) _sWidgets.textContent = 'Cargando vista...';
+        }
+      </script>
 
       <!-- Barra Flotante Contextual Estilo Canva / Context Toolbar -->
       <div class="canva-floating-toolbar context-toolbar" id="canvaFloatingToolbar">
@@ -8311,8 +8322,9 @@
       function syncHeroVisibility() {
         const hero = document.getElementById('heroEmptyCanvas');
         if (!hero) return;
+        const hasUrlHydration = !AppState._urlHydrationDone && /[?&](varX|preset|prop|hub|node|cecan_prop)=/.test(window.location.search || '');
         const count = (AppState.widgets ? AppState.widgets.length : 0) + (AppState.reflectionCards ? AppState.reflectionCards.length : 0);
-        hero.style.display = count > 0 ? 'none' : 'block';
+        hero.style.display = (count > 0 || hasUrlHydration) ? 'none' : 'block';
       }
 
       function createWidget(type = 'chart', config = {}) {
@@ -11112,6 +11124,7 @@
         let pathsHtml = '';
 
         AppState.connections.forEach(conn => {
+          if (conn.from === conn.to) return;
           const w1 = AppState.widgets.find(w => w.id === conn.from);
           const w2 = AppState.widgets.find(w => w.id === conn.to);
           if (!w1 || !w2 || w1.minimized || w2.minimized) return;
@@ -13854,6 +13867,7 @@
 
         const isAppending = Boolean(opts.append && AppState.widgets.length > 0);
         if (!isAppending) {
+          AppState._urlHydrationDone = true;
           clearAll();
         }
 
@@ -14350,6 +14364,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
         const res = window.NL2ChartEngine.parseQuery(q);
         if (res && res.success) {
+          AppState._urlHydrationDone = true;
           clearAll();
           if (res.excludeOutlierCoyhaique) {
             AppState.excludeCoyhaique = true;
@@ -14453,7 +14468,8 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           const nodeId = parseInt(nodeParam, 10);
           const targetVar = AppState.catalogItems.find(v => v.nodeId === nodeId);
           if (targetVar) {
-            clearAll();
+            AppState._urlHydrationDone = true;
+          clearAll();
             createWidget('chart', {
               varX: targetVar.id,
               x: 120, y: 80, w: 520, h: 370
@@ -14463,15 +14479,54 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           }
         }
 
+        const finishHydration = () => {
+          AppState._urlHydrationDone = true;
+          syncHeroVisibility();
+          updateStatus();
+        };
+
         const varXParam = params.get('varX');
         const varYParam = params.get('varY');
         const typeParam = params.get('type');
         const excludeParam = params.get('excludeCoyhaique');
+        const comunasParam = params.get('comunas');
+        const trendParam = params.get('trend');
         const titleParam = params.get('title');
         const summaryParam = params.get('summary');
 
         if (varXParam) {
+          AppState._urlHydrationDone = true;
           clearAll();
+          if (comunasParam) {
+            const reqComunas = comunasParam.split(',').map(s => s.trim()).filter(Boolean);
+            if (reqComunas.length > 0 && reqComunas.length < 10) {
+              const reqSet = new Set(reqComunas.map(c => normStr(c)));
+              const matchedKey = Object.keys(TERRITORIAL_SLICES).find(k => {
+                if (k === 'all') return false;
+                const list = TERRITORIAL_SLICES[k] || [];
+                return list.length === reqSet.size && list.every(item => reqSet.has(normStr(item)));
+              });
+              const selectSlicer = document.getElementById('selectTerritorialSlicer');
+              if (matchedKey && selectSlicer && selectSlicer.querySelector(`option[value="${matchedKey}"]`)) {
+                AppState.territorialFilter = matchedKey;
+              } else {
+                const resolvedList = reqComunas.map(rc => COMUNAS_ORDER.find(c => normStr(c) === normStr(rc)) || rc);
+                TERRITORIAL_SLICES.custom_url = resolvedList;
+                if (selectSlicer) {
+                  let opt = selectSlicer.querySelector('option[value="custom_url"]');
+                  if (!opt) {
+                    opt = document.createElement('option');
+                    opt.value = 'custom_url';
+                    selectSlicer.appendChild(opt);
+                  }
+                  opt.textContent = `Selección Consultor (${resolvedList.length})`;
+                }
+                AppState.territorialFilter = 'custom_url';
+              }
+              if (selectSlicer) selectSlicer.value = AppState.territorialFilter;
+            }
+          }
+
           const opts = {
             varX: varXParam,
             x: 120, y: 80, w: 580, h: 420
@@ -14485,26 +14540,29 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           if (excludeParam === 'true' || excludeParam === '1') {
             opts.excludeOutlierCoyhaique = true;
           }
+          if (trendParam === '1' || trendParam === 'true' || opts.chartType === 'scatter') {
+            opts.showTrend = true;
+          }
           if (titleParam) {
             opts.title = titleParam;
           }
           const w = createWidget('chart', opts);
           if (summaryParam) {
-            const r = createReflectionCard({
+            createReflectionCard({
               linkedWidgetId: w ? w.id : null,
               title: titleParam ? ('Síntesis: ' + titleParam) : 'Síntesis del Consultor de Datos',
               promptText: summaryParam,
               x: 740, y: 80, w: 460, h: 360
             });
-            if (w && r) {
-              addConnection(w.id, r.id, 'bivariate');
-            }
           }
+          finishHydration();
+          updateConnections();
           setTimeout(fitAndCenterCanvas, 100);
           return;
         }
 
         loadSavedOrPreset();
+        finishHydration();
       }
 
       // =======================================================================
@@ -14978,7 +15036,8 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         reader.onload = (e) => {
           try {
             const data = JSON.parse(e.target.result);
-            clearAll();
+            AppState._urlHydrationDone = true;
+          clearAll();
             if (Array.isArray(data.subDashboards) && data.subDashboards.length > 0) {
               AppState.subDashboards = data.subDashboards;
               AppState.activeSubDashboardId = data.activeSubDashboardId || data.subDashboards[0].id;
@@ -15133,6 +15192,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             showToast('El lienzo ya esta vacio.');
             return;
           }
+          AppState._urlHydrationDone = true;
           clearAll();
           showToast(`Lienzo reiniciado: ${habia} elemento(s) retirados.`, 'Deshacer', undo);
         });

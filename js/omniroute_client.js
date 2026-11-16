@@ -637,13 +637,13 @@
     superficie_km2: ['superficie territorial', 'superficie', 'extension territorial', 'tamano comunal', 'area km2'],
     densidad_hab_km2: ['densidad poblacional', 'densidad', 'habitantes por km2'],
     dependencia_fcm_pct: ['dependencia del fondo comun municipal', 'fondo comun municipal', 'fcm', 'dependencia municipal', 'dependientes del fcm', 'dependencia fcm'],
-    ipp_per_capita_clp: ['ingresos propios', 'ingresos propios permanentes', 'autonomia financiera'],
+    ipp_per_capita_clp: ['ingresos propios', 'ingresos propios permanentes', 'autonomia financiera', 'ipp', 'recaudacion propia', 'recaudacion municipal propia'],
     presupuesto_mclp: ['presupuesto municipal', 'presupuesto anual', 'presupuesto vigente'],
     presupuesto_per_capita_mclp: ['presupuesto per capita', 'gasto municipal por habitante', 'gasto municipal per capita'],
     fndr_mclp: ['inversion publica regional', 'fndr', 'fondo nacional de desarrollo regional', 'inversion regional'],
     concesiones_salmon: ['concesiones salmoneras', 'concesiones acuicolas', 'concesiones de salmon', 'acuicultura', 'salmonicultura', 'salmones', 'salmoneras'],
     centros_activos_salmon: ['centros activos', 'centros de cultivo', 'centros operativos'],
-    biomasa_salmon_ton: ['biomasa de salmonicultura', 'biomasa salmon', 'biomasa cosechada', 'cosecha de salmon', 'toneladas de salmon', 'produccion salmonera', 'salmon biomass', 'harvested biomass'],
+    biomasa_salmon_ton: ['biomasa de salmonicultura', 'biomasa salmon', 'biomasa cosechada', 'biomasa producida', 'biomasa acuicola', 'cosecha de salmon', 'toneladas de salmon', 'produccion salmonera', 'salmon biomass', 'harvested biomass'],
     antibioticos_ica_g_ton: ['antibioticos', 'uso de antibioticos', 'ica', 'antimicrobianos'],
     visitantes_snaspe: ['visitas a parques nacionales', 'parques nacionales', 'visitacion snaspe', 'visitas snaspe', 'turistas parques', 'national parks', 'park visitors'],
     pernoctaciones_emat: ['noches de alojamiento turistico', 'alojamiento turistico', 'pernoctaciones', 'emat'],
@@ -1703,9 +1703,28 @@
 
     const isFisherySpecific = /\b(pesquerias|pesqueria|cuotas|cuota pesquera|cuota industrial|merluza|congrio|bacalao)\b/i.test(qNorm);
 
+    const asksB2BOrTerritorial = /\b(seia|inversion|puerto\w*|portuari\w*|logistic\w*|mantenimiento|proveedor\w*|redes)\b/i.test(qNorm);
+    const maritimeComunas = (index.entities || [])
+      .filter(e => Number(e.raw?.concesiones_salmon) > 0)
+      .slice()
+      .sort((a, b) => (Number(b.raw?.concesiones_salmon) || 0) - (Number(a.raw?.concesiones_salmon) || 0));
+    const top5Compact = holdings12.slice(0, 5).map((h, i) =>
+      `${i + 1}) ${shortHoldingName(h.nombre_fantasia)} (${fmtNumber(h.total_concesiones_aysen)}/${fmtNumber(h.centros_activos_estimados)}c/${fmtNumber(h.biomasa_estimada_ton)}t)`
+    ).join(', ');
+    const comunaDesglose = maritimeComunas.map(e => {
+      const er = e.raw || {};
+      const concC = Number(er.concesiones_salmon) || 0;
+      const ctrsC = Number(er.centros_activos_salmon) || 0;
+      const usoPct = concC > 0 ? fmtNumber((ctrsC / concC) * 100, 1) : '0';
+      return `${e.name} (${fmtNumber(ctrsC)}/${fmtNumber(concC)} ctrs [${usoPct}%], ${fmtNumber(er.biomasa_salmon_ton)}t, US$${fmtNumber(er.inversion_seia_mmusd)}MM SEIA)`;
+    }).join(', ');
+
     let reply = '';
     if (isFisherySpecific) {
       reply = `En pesca (9 pesquerías en Aysén, Ley 21.752), destacan Merluza del Sur (37% Ind/63% Art, 3,234 UTM/ton), Congrio Dorado (3,486 UTM/ton) y Bacalao (100% PEP). En acuicultura (${fmtNumber(totalConcesionesReg)} concesiones, ${fmtNumber(totalBiomasaReg)} ton en Aysén, Cisnes y Guaitecas): ${top5}; más ${rest7}.`;
+    } else if (asksB2BOrTerritorial && maritimeComunas.length > 0) {
+      const b2bReply = `12 holdings reúnen ${fmtNumber(totalConcesiones12)}/${fmtNumber(totalConcesionesReg)} conc. (${pct12Reg}%; Top 5: 58,0%→70,8%): ${top5Compact}. Comunas: ${comunaDesglose}. Puertos: Puerto Chacabuco (EMPORCHA, Aysén) y barcazas en Cisnes, Guaitecas y Tortel.`;
+      reply = b2bReply.length > 645 ? b2bReply.slice(0, 642) + '...' : b2bReply;
     } else {
       reply = `Las ${fmtNumber(totalConcesionesReg)} concesiones y ${fmtNumber(totalBiomasaReg)} ton de biomasa en Aysén (Aysén, Cisnes y Guaitecas) se concentran en 12 holdings (${fmtNumber(totalConcesiones12)} conc., ${pct12Reg}% reg.; 19 en otros titulares; Top 5 pasó de 58,0% a 70,8% en 2026): ${top5}. Completan los 12: ${rest7}.`;
     }
@@ -1721,7 +1740,9 @@
       y2Key: 'biomasa_estimada_ton',
       title: 'Concesiones Acuícolas Otorgadas y Biomasa Estimada (ton) por Empresa / Holding',
       subtitle: 'Distribución en los 12 Holdings Salmoneros Madres de Aysén',
-      sourceText: 'CMF / SUBPESCA / SERNAPESCA — Registro de Concesiones y Memorias Anuales de Holdings Acuícolas',
+      sourceText: asksB2BOrTerritorial
+        ? 'CMF / SUBPESCA / SERNAPESCA · SEA (SEIA) · EMPORCHA / MTT'
+        : 'CMF / SUBPESCA / SERNAPESCA — Registro de Concesiones y Memorias Anuales de Holdings Acuícolas',
       excludeCoyhaique: false,
       labels: holdings12.map(h => h.nombre_fantasia),
       datasets: [
@@ -1751,7 +1772,10 @@
       }))
     };
 
-    const sources = resolveSourcesForKeys(['holdings_salmoneros', 'biomasa_salmon_ton']);
+    const sourceKeys = asksB2BOrTerritorial
+      ? ['holdings_salmoneros', 'biomasa_salmon_ton', 'inversion_seia_mmusd', 'dependencia_barcaza']
+      : ['holdings_salmoneros', 'biomasa_salmon_ton'];
+    const sources = resolveSourcesForKeys(sourceKeys);
     return {
       reply,
       chart,
@@ -1811,6 +1835,14 @@
     // 8. SLEP Aysén (traspaso 2024, 66 establecimientos) y matrícula SIES (CFT Estatal, INACAP, UAysén)
     if (/\b(slep aysen|traspaso.*slep|sies|matricula.*superior|cft estatal|cft estatal aysen|uaysen.*inacap|inacap.*uaysen|campus errazuriz|victor cubillos|66 establecimientos|traspaso 2024)\b/i.test(qNorm)) {
       return 'slep_sies';
+    }
+
+    // 8b. Fiscalización ambiental acuícola, SNASPE e ICA antibióticos (Perfil Ambientalista / Fiscalizador)
+    if (!isSingleComunaSpecific &&
+        /\b(salmon\w*|acuic\w*|biomasa|concesiones|centros de cultivo)\b/i.test(qNorm) &&
+        /\b(impacto ambiental|fiscaliz\w*|areas? protegidas?|areas? silvestres?|antibioticos?|escapes?|denuncias?)\b/i.test(qNorm) &&
+        !/\b(ecmpo|ley lafkenche|pu wapi|antunen rain)\b/i.test(qNorm)) {
+      return 'impacto_ambiental_salmon';
     }
 
     // 9. Solicitudes ECMPO Ley Lafkenche (620.000 ha) y concesiones en SNASPE (312 en RN Las Guaitecas)
@@ -2030,6 +2062,54 @@
           },
           sources,
           relatedHub: 'VI'
+        };
+      }
+      case 'impacto_ambiental_salmon': {
+        const marEnts = (index.entities || [])
+          .filter(e => Number(e.raw?.concesiones_salmon) > 0)
+          .slice()
+          .sort((a, b) => (Number(b.raw?.concesiones_salmon) || 0) - (Number(a.raw?.concesiones_salmon) || 0));
+        const detailStr = marEnts.map(e => {
+          const er = e.raw || {};
+          return `${e.name} (${fmtNumber(er.concesiones_salmon)} conc., ${fmtNumber(er.biomasa_salmon_ton)}t, ${fmtNumber(er.superficie_snaspe_pct)}% SNASPE, ICA ${fmtNumber(er.antibioticos_ica_g_ton)} g/t)`;
+        }).join(', ');
+        const reply = `Fiscalización acuícola (SERNAPESCA/SUBPESCA/CONAF): ${detailStr}. Catastro oficial registra 312 concesiones superpuestas en SNASPE (RN Las Guaitecas, Ley SBAP N° 21.600). Sin datos comunales de escapes de salmones ni denuncias SMA.`;
+        const sources = resolveSourcesForKeys(['biomasa_salmon_ton', 'concesiones_salmon', 'superficie_snaspe_pct', 'antibioticos_ica_g_ton', 'concesiones_salmon_snaspe_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'biomasa_salmon_ton',
+            varY: 'concesiones_salmon',
+            varZ: 'superficie_snaspe_pct',
+            varW: 'antibioticos_ica_g_ton',
+            yKey: 'biomasa_salmon_ton',
+            y2Key: 'concesiones_salmon',
+            multiCharts: [
+              {
+                type: 'bar',
+                varX: 'biomasa_salmon_ton',
+                varY: 'concesiones_salmon',
+                title: 'Biomasa Cosechada (ton) vs. Concesiones Acuícolas',
+                sourceText: resolveSourcesForKeys(['biomasa_salmon_ton', 'concesiones_salmon']).map(s => s.institucion).join(' · '),
+                excludeCoyhaique: false
+              },
+              {
+                type: 'bar',
+                varX: 'concesiones_salmon',
+                varY: 'superficie_snaspe_pct',
+                title: 'Concesiones Salmoneras vs. Superficie Protegida SNASPE (%)',
+                sourceText: resolveSourcesForKeys(['concesiones_salmon', 'superficie_snaspe_pct']).map(s => s.institucion).join(' · '),
+                excludeCoyhaique: false
+              }
+            ],
+            title: 'Fiscalización Acuícola: Biomasa, Concesiones, SNASPE (%) e ICA Antibióticos',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'II'
         };
       }
       case 'ecmpo_snaspe': {
@@ -2624,7 +2704,7 @@
     if (/(calefaccion.*lena|hogares.*lena)/.test(qNorm) && varRecord.key === 'hogares_lena_pct') {
       score += 30;
     }
-    if (/(biomasa.*salmon|concentran la biomasa)/.test(qNorm) && varRecord.key === 'biomasa_salmon_ton') {
+    if (/\bbiomasa\b/.test(qNorm) && !/\bpellet\b/.test(qNorm) && varRecord.key === 'biomasa_salmon_ton') {
       score += 30;
     }
     if (
@@ -2849,6 +2929,13 @@
       /\b(aysen\s*,|,\s*aysen\b|aysen\s+(?:vs\.?|versus)\b|(?:vs\.?|versus)\s+aysen\b|\bcompara(?:r|cion)?\b[^?]*\bde\s+aysen\b)/i.test(rawNoAccents);
     if (mentionsAysenInList && !matchedEntities.some(e => e.id === '11201')) {
       matchedEntities.unshift(aysenEnt);
+    }
+
+    if (matchedEntities.length === 0 && /\b(comunas?\s+salmoneras?|comunas?\s+acuicolas?|comunas?\s+maritimas?|comunas?\s+del\s+litoral)\b/i.test(qNorm)) {
+      ['11201', '11202', '11203', '11303'].forEach(ineCode => {
+        const entMatch = _memoryIndex.entities.find(e => String(e.id) === ineCode);
+        if (entMatch) matchedEntities.push(entMatch);
+      });
     }
 
     // 1b. Detectar localidades sub-comunales (ej. Puerto Río Tranquilo -> Río Ibáñez, Puyuhuapi -> Cisnes)
@@ -3272,7 +3359,9 @@
       : null;
 
     const wantsMultiComparison = wantsBivariateComparison && (/\by\b/.test(qNorm) || qNorm.includes(','));
-    const tertiaryThreshold = Math.max(22, (topNumericVars[0]?.score || 0) * 0.35);
+    const tertiaryThreshold = wantsMultiComparison
+      ? Math.max(14, (topNumericVars[0]?.score || 0) * 0.25)
+      : Math.max(22, (topNumericVars[0]?.score || 0) * 0.35);
     let tertiaryVar = (
       wantsMultiComparison &&
       secondaryVar &&
@@ -3283,6 +3372,27 @@
     )
       ? topNumericVars[2].variable
       : null;
+
+    const quaternaryThreshold = Math.max(10, Math.min(20, (topNumericVars[0]?.score || 0) * 0.15));
+    let quaternaryVar = (
+      wantsMultiComparison &&
+      tertiaryVar &&
+      topNumericVars[3] &&
+      topNumericVars[3].score >= quaternaryThreshold &&
+      ![primaryVar?.key, secondaryVar?.key, tertiaryVar?.key].includes(topNumericVars[3].variable.key)
+    )
+      ? topNumericVars[3].variable
+      : null;
+
+    const isAquacultureProdOps = /\b(concesiones|centros activos)\b/i.test(qNorm) &&
+      /\b(salmon\w*|acuic\w*)\b/i.test(qNorm) &&
+      /\b(conectividad|energia|fuerza laboral|trabajadores)\b/i.test(qNorm);
+    if (isAquacultureProdOps) {
+      primaryVar = _memoryIndex.variablesByKey['concesiones_salmon'] || primaryVar;
+      secondaryVar = _memoryIndex.variablesByKey['centros_activos_salmon'] || secondaryVar;
+      tertiaryVar = _memoryIndex.variablesByKey['trabajadores_sii'] || tertiaryVar;
+      quaternaryVar = _memoryIndex.variablesByKey['potencia_mw'] || quaternaryVar;
+    }
 
     const subsetIntent = (primaryVar && primaryVar.isNumeric && primaryVar.stats && matchedEntities.length === 0)
       ? detectSubsetRankingIntent(qNorm)
@@ -3356,9 +3466,11 @@
     const primaryKey = primaryVar ? primaryVar.key : catFallbackKey;
     const secondaryKey = secondaryVar ? secondaryVar.key : null;
     const tertiaryKey = tertiaryVar ? tertiaryVar.key : null;
+    const quaternaryKey = quaternaryVar ? quaternaryVar.key : null;
     const primaryLabel = CANONICAL_LABELS[primaryKey] || (primaryVar ? primaryVar.label : humanizeKey(primaryKey));
     const secondaryLabel = secondaryKey ? (CANONICAL_LABELS[secondaryKey] || (secondaryVar ? secondaryVar.label : humanizeKey(secondaryKey))) : null;
     const tertiaryLabel = tertiaryKey ? (CANONICAL_LABELS[tertiaryKey] || (tertiaryVar ? tertiaryVar.label : humanizeKey(tertiaryKey))) : null;
+    const quaternaryLabel = quaternaryKey ? (CANONICAL_LABELS[quaternaryKey] || (quaternaryVar ? quaternaryVar.label : humanizeKey(quaternaryKey))) : null;
 
     // WP-C.2: Resolver fuentes oficiales estrictamente 1-a-1 para las variables efectivamente consultadas
     const provenanceTargetKeys = [];
@@ -3372,6 +3484,7 @@
       provenanceTargetKeys.push(primaryVar.key);
       if (secondaryVar) provenanceTargetKeys.push(secondaryVar.key);
       if (tertiaryVar) provenanceTargetKeys.push(tertiaryVar.key);
+      if (quaternaryVar) provenanceTargetKeys.push(quaternaryVar.key);
     } else if (scoredVars.length > 0) {
       provenanceTargetKeys.push(scoredVars[0].variable.key);
     } else {
@@ -3402,6 +3515,7 @@
       varX: (matchedSector && isBroadSectorQuery) ? matchedSector.varX : primaryKey,
       varY: (matchedSector && isBroadSectorQuery) ? matchedSector.varY : secondaryKey,
       varZ: (matchedSector && isBroadSectorQuery) ? null : tertiaryKey,
+      varW: (matchedSector && isBroadSectorQuery) ? null : quaternaryKey,
       yKey: (matchedSector && isBroadSectorQuery) ? matchedSector.varX : primaryKey,
       y2Key: (matchedSector && isBroadSectorQuery) ? matchedSector.varY : secondaryKey,
       singleComunaMode: singleComunaFlag,
@@ -3412,9 +3526,11 @@
       title: (matchedSector && isBroadSectorQuery)
         ? (matchedSector.chartTitle || `${matchedSector.title} por Comuna`)
         : (primaryVar
-            ? (tertiaryLabel
-                ? `${primaryLabel} vs. ${secondaryLabel} y ${tertiaryLabel}`
-                : (secondaryLabel ? `${primaryLabel} vs. ${secondaryLabel}` : `${primaryLabel} por Comuna`))
+            ? (quaternaryLabel
+                ? `${primaryLabel}, ${secondaryLabel}, ${tertiaryLabel} y ${quaternaryLabel}`
+                : (tertiaryLabel
+                    ? `${primaryLabel} vs. ${secondaryLabel} y ${tertiaryLabel}`
+                    : (secondaryLabel ? `${primaryLabel} vs. ${secondaryLabel}` : `${primaryLabel} por Comuna`)))
             : `${primaryLabel} por Comuna`),
       sourceText,
       excludeCoyhaique
@@ -3435,7 +3551,13 @@
     }
 
     if (tertiaryVar && !hasTourismTemporalSeries && !(matchedSector && isBroadSectorQuery)) {
-      const subType = wantsScatter ? 'scatter' : 'bar';
+      const canScatterMulti = wantsScatter && (!focusComunasList || focusComunasList.length > 2);
+      const subType = canScatterMulti ? 'scatter' : 'bar';
+      const panel2VarX = quaternaryKey ? tertiaryKey : primaryKey;
+      const panel2VarY = quaternaryKey ? quaternaryKey : tertiaryKey;
+      const panel2Title = quaternaryKey
+        ? `${tertiaryLabel} vs. ${quaternaryLabel}`
+        : `${primaryLabel} vs. ${tertiaryLabel}`;
       chartSpec.multiCharts = [
         {
           type: subType,
@@ -3447,16 +3569,16 @@
         },
         {
           type: subType,
-          varX: primaryKey,
-          varY: tertiaryKey,
-          title: `${primaryLabel} vs. ${tertiaryLabel}`,
-          sourceText: resolveSourcesForKeys([primaryKey, tertiaryKey]).map(s => s.institucion).join(' · '),
+          varX: panel2VarX,
+          varY: panel2VarY,
+          title: panel2Title,
+          sourceText: resolveSourcesForKeys([panel2VarX, panel2VarY]).map(s => s.institucion).join(' · '),
           excludeCoyhaique
         }
       ];
     }
 
-    const selectedVarKeys = [primaryVar?.key, secondaryVar?.key, tertiaryVar?.key].filter(Boolean);
+    const selectedVarKeys = [primaryVar?.key, secondaryVar?.key, tertiaryVar?.key, quaternaryVar?.key].filter(Boolean);
     const allTextVars = scoredVars.filter(v => !v.variable.isNumeric).slice(0, 1).map(v => v.variable.key);
     const activeKeys = Array.from(new Set([
       ...selectedVarKeys,
@@ -3496,6 +3618,8 @@
       hasTourismTemporalSeries ||
       isHoldingQuery ||
       tertiaryVar ||
+      quaternaryVar ||
+      isAquacultureProdOps ||
       over10Note
     );
 
@@ -3515,20 +3639,21 @@
       bivariateStats,
       over10Note,
       isDeterministicDirect,
-      topVariables: [primaryVar, secondaryVar, tertiaryVar].filter(Boolean).concat(
+      topVariables: [primaryVar, secondaryVar, tertiaryVar, quaternaryVar].filter(Boolean).concat(
         scoredVars.filter(s => !s.variable.isNumeric).slice(0, 1).map(s => s.variable)
       ),
-      candidateVariables: [primaryVar, secondaryVar, tertiaryVar]
+      candidateVariables: [primaryVar, secondaryVar, tertiaryVar, quaternaryVar]
         .filter(Boolean)
         .concat(
           llmCandidateSource
             .map(s => s.variable)
-            .filter(v => v && v !== primaryVar && v !== secondaryVar && v !== tertiaryVar)
+            .filter(v => v && v !== primaryVar && v !== secondaryVar && v !== tertiaryVar && v !== quaternaryVar)
             .slice(0, 10)
         ),
       primaryVar,
       secondaryVar,
       tertiaryVar,
+      quaternaryVar,
       topNodes: scoredNodes.slice(0, 2).map(s => s.node),
       matchedCollections: matchedCollections.slice(0, 2).map(c => c.collection),
       comunasMatrix,
@@ -3617,7 +3742,8 @@
       '5. Utiliza siempre nombres canónicos con tildes y unidades limpias en "reply" y en "title". Jamás muestres claves snake_case dentro del texto de "reply".',
       '6. No utilices emojis bajo ninguna circunstancia.',
       '7. Si el usuario pregunta por una localidad (ej. Puerto Río Tranquilo, Puyuhuapi), aclara que los registros oficiales son a escala comunal. Si falta un indicador o territorio externo, decláralo explícitamente antes de proponer un proxy.',
-      '8. Devuelve tu respuesta estrictamente como un objeto JSON válido. En "chart", "varX" y "varY" DEBEN ser claves exactas en snake_case elegidas del catálogo provisto (ej. "deficit_habitacional_cuantitativo_n", "barometro_tension_desarrollo_conservacion_pct"), NUNCA nombres de comunas ni arreglos, y "type" debe ser "bar", "line" o "scatter":',
+      '8. EVIDENCIA ESTRICTA: Jamás menciones cifras de antibióticos, áreas protegidas u otros indicadores si no figuran en las variables activas del turno, y NUNCA afirmes que no existen centros o concesiones en áreas protegidas (existen 312 concesiones en SNASPE / RN Las Guaitecas).',
+      '9. Devuelve tu respuesta estrictamente como un objeto JSON válido. En "chart", "varX" y "varY" DEBEN ser claves exactas en snake_case elegidas del catálogo provisto (ej. "deficit_habitacional_cuantitativo_n", "barometro_tension_desarrollo_conservacion_pct"), NUNCA nombres de comunas ni arreglos, y "type" debe ser "bar", "line" o "scatter":',
       '{"reply": "Texto analítico claro y conciso con las cifras exactas", "chart": {"render": true, "type": "bar|line|scatter", "varX": "clave_x_exacta", "varY": "clave_y_o_null", "title": "Título limpio del gráfico", "excludeCoyhaique": false}, "relatedHub": "I..X"}'
     ].join('\n');
   }
@@ -4084,26 +4210,41 @@
       };
 
       const isMultiEntityQuery = matchedEntities.length >= 2;
+      const numericTopVars = topVariables.filter(v => v && v.isNumeric).slice(0, 4);
+      const varsToShow = numericTopVars.length > 0 ? numericTopVars : topVariables.slice(0, 2);
+      const isDenseGridReply = isMultiEntityQuery && varsToShow.length >= 3;
+      const hasConcAndActivos = varsToShow.some(v => v.key === 'concesiones_salmon') &&
+        varsToShow.some(v => v.key === 'centros_activos_salmon');
+
       const lines = matchedEntities.map(ent => {
-        const metricsText = topVariables.slice(0, 2).map(v => {
+        const metricsText = varsToShow.map(v => {
           const val = ent.raw[v.key];
-          const cleanLbl = CANONICAL_LABELS[v.key] || v.label;
+          let cleanLbl = CANONICAL_LABELS[v.key] || v.label;
+          if (isDenseGridReply) {
+            cleanLbl = cleanLbl.replace(/\s*\([^)]*\)\s*/g, ' ').trim();
+          }
           if (typeof val === 'number') {
             const rankIdx = v.stats ? v.stats.ranked.findIndex(r => r.comuna_ine === ent.id) + 1 : null;
-            const rankStr = (!isMultiEntityQuery && rankIdx) ? ` (#${rankIdx} de ${_memoryIndex.entities.length})` : (rankIdx ? ` (#${rankIdx})` : '');
-            const unitSuffix = shouldAppendUnit(cleanLbl, v.unit) ? ` ${v.unit}` : '';
+            const rankStr = (!isMultiEntityQuery && rankIdx) ? ` (#${rankIdx} de ${_memoryIndex.entities.length})` : ((!isDenseGridReply && rankIdx) ? ` (#${rankIdx})` : '');
+            const unitSuffix = (!isDenseGridReply && shouldAppendUnit(cleanLbl, v.unit)) ? ` ${v.unit}` : '';
             return `${cleanLbl}: ${fmtNumber(val)}${unitSuffix}${rankStr}`;
           }
           return `${cleanLbl}: ${val ?? '-'}`;
         }).join(isMultiEntityQuery ? '; ' : ' · ');
+
+        let usoStr = '';
+        if (hasConcAndActivos && Number(ent.raw?.concesiones_salmon) > 0) {
+          const pctUso = fmtNumber((Number(ent.raw.centros_activos_salmon) / Number(ent.raw.concesiones_salmon)) * 100, 1);
+          usoStr = ` [uso: ${pctUso}%]`;
+        }
         return isMultiEntityQuery
-          ? `${ent.name}: ${metricsText}.`
-          : `La comuna de ${ent.name} (Provincia de ${ent.provincia}) registra ${metricsText}.`;
+          ? `${ent.name}: ${metricsText}${usoStr}.`
+          : `La comuna de ${ent.name} (Provincia de ${ent.provincia}) registra ${metricsText}${usoStr}.`;
       });
 
-      const compVar = primaryVar || topVariables[0];
+      const compVar = primaryVar || varsToShow[0];
       let regionalNote = '';
-      if (compVar && compVar.isNumeric && compVar.stats) {
+      if (!isDenseGridReply && compVar && compVar.isNumeric && compVar.stats) {
         const cleanCompLabel = CANONICAL_LABELS[compVar.key] || compVar.label;
         const aggLabel = compVar.aggregation === 'avg' ? 'Promedio regional' : 'Total regional';
         const aggVal = compVar.aggregation === 'avg' ? compVar.stats.avg : compVar.stats.sum;
@@ -4111,7 +4252,12 @@
         regionalNote = ` ${aggLabel} de ${cleanCompLabel}: ${fmtNumber(aggVal)}${unitSuffix} (máx. ${compVar.stats.max.comuna} ${fmtNumber(compVar.stats.max.value)}; mín. ${compVar.stats.min.comuna} ${fmtNumber(compVar.stats.min.value)}).`;
       }
 
-      const combinedReply = `${locNote}${lines.join(' ')}${regionalNote}${over10Note || ''}`;
+      const asksHoldingEvol = /\b(evolucion|concentracion|2018|2026)\b/i.test(qNorm) && /\b(holding|holdings|salmon\w*)\b/i.test(qNorm);
+      const holdingEvolNote = asksHoldingEvol
+        ? ' Top 5 holdings (2018–2026): 58,0% → 70,8%.'
+        : '';
+
+      const combinedReply = `${locNote}${lines.join(' ')}${holdingEvolNote}${regionalNote}${over10Note || ''}`;
       const res = {
         reply: combinedReply.length > 645 ? combinedReply.slice(0, 642) + '...' : combinedReply,
         chart: Object.assign({}, chartSpec, {
@@ -4600,6 +4746,7 @@
             varX: validVarX,
             varY: validVarY,
             varZ: memoryPacket.chartSpec?.varZ || null,
+            varW: memoryPacket.chartSpec?.varW || null,
             yKey: validVarX,
             y2Key: validVarY,
             singleComunaMode: Boolean(memoryPacket.chartSpec?.singleComunaMode),

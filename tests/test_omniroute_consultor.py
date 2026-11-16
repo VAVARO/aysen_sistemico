@@ -155,7 +155,10 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertIn("params.get('varY')", html)
         self.assertIn("params.get('type')", html)
         self.assertIn("params.get('excludeCoyhaique')", html)
+        self.assertIn("params.get('comunas')", html)
+        self.assertIn("params.get('trend')", html)
         self.assertIn("params.get('summary')", html)
+        self.assertIn("if (conn.from === conn.to) return;", html)
         self.assertIn("js/omniroute_client.js", html)
 
     def test_07_extractor_json_resiliente_markdown(self):
@@ -1508,6 +1511,28 @@ class TestOmniRouteConsultor(unittest.TestCase):
             assert(b9 && b9.reply && b9.reply.includes('Nota:'), 'B9 debe incluir nota de localidades: ' + b9.reply);
             assert(b9.reply.includes('Aysén registra 2.100') && b9.reply.includes('Río Ibáñez registra 238'), 'B9 debe resumir SII de Aysen (2.100) y Rio Ibanez (238): ' + b9.reply);
             assert(b9.reply.includes('10 comunas'), 'B9 debe aclarar total de 10 comunas ante pedido top 15: ' + b9.reply);
+
+            // 10. Perfiles Verticales Salmonicultura v2.2 (Proveedor B2B, Productor, Ambientalista, Tomador de Decision)
+            const profB2B = await client.query('Quiero ser proveedor de la industria salmonera en Aysén (mantenimiento naval, redes o logística). ¿Qué comunas concentran los centros activos y la biomasa, qué holdings dominan el mercado y cuál es el volumen de inversión ambiental SEIA o infraestructura portuaria disponible?');
+            assert(profB2B && profB2B.reply, 'Perfil B2B sin reply');
+            assert(profB2B.reply.includes('726') && profB2B.reply.includes('Tortel') && profB2B.reply.includes('SEIA') && profB2B.reply.includes('Puerto Chacabuco'), 'Perfil B2B debe incluir holdings, 4 comunas con Tortel, SEIA y Puerto Chacabuco: ' + profB2B.reply);
+
+            const profProd = await client.query('Soy productor de salmón en Aysén. ¿Cómo ha evolucionado la concentración de los holdings entre 2018 y 2026, cuál es la carga de concesiones vs. centros activos por comuna y qué variables de conectividad, energía o fuerza laboral existen para operar en Cisnes o Guaitecas?');
+            assert(profProd && profProd.chart && Array.isArray(profProd.chart.focusComunas), 'Perfil Productor debe poblar focusComunas');
+            assert(profProd.chart.focusComunas.includes('Cisnes') && profProd.chart.focusComunas.includes('Guaitecas'), 'Perfil Productor debe enfocar Cisnes y Guaitecas');
+            assert(profProd.reply.includes('35,8%') && profProd.reply.includes('32,7%') && profProd.reply.includes('58,0%') && profProd.reply.includes('70,8%'), 'Perfil Productor debe incluir tasa de uso y evolucion 2018-2026: ' + profProd.reply);
+
+            const profAmb = await client.query('Quiero fiscalizar el impacto ambiental de la salmonicultura en Aysén. ¿Qué relación hay entre la biomasa cosechada, las concesiones y el porcentaje de área protegida o áreas silvestres por comuna, y existen datos de denuncias, escapes de salmones, uso de antibióticos o centros en áreas protegidas?');
+            assert(profAmb && profAmb.reply && profAmb.chart && profAmb.chart.render === true, 'Perfil Ambientalista debe responder con grafico');
+            assert(profAmb.reply.includes('312') && profAmb.reply.includes('Las Guaitecas') && profAmb.reply.includes('63,4%'), 'Perfil Ambientalista debe reportar 312 concesiones en SNASPE y datos reales CONAF: ' + profAmb.reply);
+            assert(!/no se registran centros de cultivo dentro de areas protegidas/i.test(profAmb.reply), 'Perfil Ambientalista no debe alucinar 0 centros en SNASPE');
+            assert(profAmb.chart.varZ === 'superficie_snaspe_pct' && profAmb.chart.varW === 'antibioticos_ica_g_ton', 'Perfil Ambientalista debe exponer 4 variables en evidencia');
+            assert(profAmb.sources.some(s => /CONAF/i.test(s.institucion)), 'Perfil Ambientalista debe citar fuente CONAF');
+
+            const profTomador = await client.query('Como alcalde o gobernador regional, ¿cómo se compara la recaudación municipal propia (IPP) y el presupuesto per cápita de las comunas salmoneras (Aysén, Cisnes, Guaitecas, Tortel) frente a su biomasa producida, y qué dependencia del Fondo Común Municipal tienen?');
+            assert(profTomador && profTomador.chart && Array.isArray(profTomador.chart.focusComunas) && profTomador.chart.focusComunas.length === 4, 'Perfil Tomador debe enfocar las 4 comunas salmoneras');
+            assert(profTomador.chart.varZ && profTomador.chart.varW, 'Perfil Tomador debe conservar las 4 variables solicitadas (varX, varY, varZ, varW)');
+            assert(Array.isArray(profTomador.chart.multiCharts) && profTomador.chart.multiCharts.length === 2, 'Perfil Tomador debe generar 2 graficos complementarios');
 
             console.log('AUDITORIA_9_CASOS_BLOQUES_1_A_4_OK');
         })().catch(err => {

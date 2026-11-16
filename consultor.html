@@ -761,6 +761,7 @@
         varX: null,
         varY: null,
         varZ: null,
+        varW: null,
         title: 'Panel de Evidencia y Visualización',
         sourceText: '',
         excludeCoyhaique: false,
@@ -892,6 +893,7 @@
           currentChartState.varX = null;
           currentChartState.varY = null;
           currentChartState.varZ = null;
+          currentChartState.varW = null;
           currentChartState.multiCharts = null;
           currentChartState.singleComunaMode = false;
           currentChartState.focusComunas = null;
@@ -934,6 +936,7 @@
           varX: spec.varX,
           varY: spec.varY,
           varZ: spec.varZ || null,
+          varW: spec.varW || null,
           type: spec.type || 'bar',
           title: spec.title || 'Evidencia de Indicadores Territoriales',
           sourceText: spec.sourceText || '',
@@ -1023,6 +1026,7 @@
           updateScopeButtonLabel();
           renderChart(currentChartState);
           renderTable(currentChartState);
+          updateLabLink();
         });
       }
 
@@ -1035,6 +1039,13 @@
         if (currentChartState.varY) url.searchParams.set('varY', currentChartState.varY);
         if (currentChartState.type) url.searchParams.set('type', currentChartState.type);
         if (currentChartState.excludeCoyhaique) url.searchParams.set('excludeCoyhaique', 'true');
+        if (currentChartState.onlyFocusedComunas && Array.isArray(currentChartState.focusComunas) && currentChartState.focusComunas.length > 0 && currentChartState.focusComunas.length < 10) {
+          url.searchParams.set('comunas', currentChartState.focusComunas.join(','));
+        }
+        const hasScatterSub = Array.isArray(currentChartState.multiCharts) && currentChartState.multiCharts.some(m => m && m.type === 'scatter');
+        if (currentChartState.type === 'scatter' || hasScatterSub) {
+          url.searchParams.set('trend', '1');
+        }
         if (currentChartState.title) url.searchParams.set('title', currentChartState.title);
         if (currentChartState.summary) url.searchParams.set('summary', currentChartState.summary);
         btnOpenInLab.href = url.toString();
@@ -1756,6 +1767,7 @@
         const vX = spec.varX || 'poblacion_censo_2024';
         const vY = spec.varY;
         const vZ = spec.varZ || null;
+        const vW = spec.varW || null;
         const type = spec.type || 'bar';
 
         // 3. Serie Temporal 2015–2026
@@ -1786,13 +1798,15 @@
 
         const hasValidY = Boolean(vY && vY !== vX && typeof filteredComunas[0]?.[vY] === 'number');
         const hasValidZ = Boolean(vZ && vZ !== vX && vZ !== vY && typeof filteredComunas[0]?.[vZ] === 'number');
+        const hasValidW = Boolean(vW && vW !== vX && vW !== vY && vW !== vZ && typeof filteredComunas[0]?.[vW] === 'number');
         populateTableComunas(
           rowsComunas,
           vX,
           hasValidY ? vY : (type === 'scatter' ? 'poblacion_censo_2024' : null),
           spec.highlightComuna,
           hasValidZ ? vZ : null,
-          filteredComunas
+          filteredComunas,
+          hasValidW ? vW : null
         );
       }
 
@@ -1893,13 +1907,14 @@
         };
       }
 
-      function restoreStandardTableHead(hasVarZ = false) {
+      function restoreStandardTableHead(hasVarZ = false, hasVarW = false) {
         if (!evidenceTableHead) return;
         evidenceTableHead.innerHTML = `<tr>
           <th id="thEntity">Comuna</th>
           <th class="td-num" id="thVarX">Variable X</th>
           <th class="td-num" id="thVarY" style="display: none;">Variable Y</th>
           ${hasVarZ ? '<th class="td-num" id="thVarZ">Variable Z</th>' : ''}
+          ${hasVarW ? '<th class="td-num" id="thVarW">Variable W</th>' : ''}
         </tr>`;
       }
 
@@ -1991,13 +2006,14 @@
         }
       }
 
-      function populateTableComunas(comunas, varX, varY, highlightComuna, varZ = null, regionalRefComunas = null) {
+      function populateTableComunas(comunas, varX, varY, highlightComuna, varZ = null, regionalRefComunas = null, varW = null) {
         if (!evidenceTableBody) return;
-        restoreStandardTableHead(Boolean(varZ));
+        restoreStandardTableHead(Boolean(varZ), Boolean(varW));
         const thEntity = document.getElementById('thEntity');
         const thVarX = document.getElementById('thVarX');
         const thVarY = document.getElementById('thVarY');
         const thVarZ = document.getElementById('thVarZ');
+        const thVarW = document.getElementById('thVarW');
         if (thEntity) thEntity.textContent = 'Comuna';
 
         const metaX = getVarMeta(varX);
@@ -2014,6 +2030,11 @@
         if (varZ && thVarZ) {
           const metaZ = getVarMeta(varZ);
           thVarZ.textContent = formatAxisLabel(metaZ.label, metaZ.unit);
+        }
+
+        if (varW && thVarW) {
+          const metaW = getVarMeta(varW);
+          thVarW.textContent = formatAxisLabel(metaW.label, metaW.unit);
         }
 
         const sorted = [...comunas].sort((a, b) => {
@@ -2050,6 +2071,13 @@
             const valZ = `${valNumZ.toLocaleString('es-CL')}${unitZStr}`;
             rowHtml += `<td class="td-num">${valZ}</td>`;
           }
+          if (varW) {
+            const metaW = getVarMeta(varW);
+            const unitWStr = metaW.unit ? ` ${metaW.unit}` : '';
+            const valNumW = typeof c[varW] === 'number' ? c[varW] : 0;
+            const valW = `${valNumW.toLocaleString('es-CL')}${unitWStr}`;
+            rowHtml += `<td class="td-num">${valW}</td>`;
+          }
           tr.innerHTML = rowHtml;
           evidenceTableBody.appendChild(tr);
         });
@@ -2077,6 +2105,9 @@
           }
           if (varZ) {
             footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${formatFootStat(varZ, getVarMeta(varZ))}</td>`;
+          }
+          if (varW) {
+            footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${formatFootStat(varW, getVarMeta(varW))}</td>`;
           }
           footHtml += `</tr>`;
           evidenceTableFoot.innerHTML = footHtml;
