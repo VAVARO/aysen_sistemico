@@ -478,6 +478,49 @@
       flex-shrink: 0;
     }
 
+    .chart-stage.multi-chart-active {
+      height: auto;
+      min-height: 340px;
+    }
+
+    .multi-chart-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      width: 100%;
+    }
+
+    @media (max-width: 720px) {
+      .multi-chart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .multi-chart-cell {
+      background: var(--paper-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .multi-chart-cell-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--cobalt-dark);
+      line-height: 1.3;
+    }
+
+    .multi-chart-canvas-wrap {
+      position: relative;
+      height: 185px;
+      width: 100%;
+    }
+
     /* Tabla de Datos de las 10 Comunas */
     .table-container {
       overflow-x: auto;
@@ -650,6 +693,7 @@
           <div class="chart-controls">
             <button type="button" class="ctrl-btn active" id="btnViewChart">Gráfico</button>
             <button type="button" class="ctrl-btn" id="btnViewTable">Tabla de datos (10 comunas)</button>
+            <button type="button" class="ctrl-btn" id="btnScopeFilter" style="display: none;">Solo comuna</button>
           </div>
           <a href="#" class="btn-open-lab" id="btnOpenInLab" target="_blank">
             Abrir este gráfico en el Laboratorio Sistémico →
@@ -666,10 +710,12 @@
           <div class="empty-evidence" id="emptyEvidenceState" style="padding: 48px 20px; text-align: center; color: var(--ink-secondary); background: var(--paper-subtle); border: 1px dashed var(--border-strong); border-radius: 4px;">
             <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; color: var(--ink);">Sin evidencia graficada</div>
             <div style="font-size: 0.85rem; max-width: 380px; margin: 0 auto; line-height: 1.5; color: var(--ink-muted);">Haga una consulta en el chat o elija un ejemplo para desplegar gráficos bivariados, series temporales o tablas comunales verificadas.</div>
+            <div id="emptyEvidenceReason" style="font-size: 0.78rem; max-width: 420px; margin: 10px auto 0; font-family: var(--font-mono); color: var(--cobalt); display: none;"></div>
           </div>
 
           <div class="chart-stage" id="chartSection" style="display: none;">
             <canvas id="consultorCanvas" aria-label="Gráfico interactivo de indicadores territoriales"></canvas>
+            <div id="multiChartGrid" class="multi-chart-grid" style="display: none;"></div>
           </div>
 
           <!-- Tabla de Datos Exactos (10 Comunas, 12 Holdings o Ficha Comunal) -->
@@ -704,11 +750,13 @@
 
       // Estado del Consultor
       let activeChartInstance = null;
+      let activeMultiChartInstances = [];
       let currentChartState = {
         render: false,
         type: 'bar',
         varX: null,
         varY: null,
+        varZ: null,
         title: 'Panel de Evidencia y Visualización',
         sourceText: '',
         excludeCoyhaique: false,
@@ -718,6 +766,11 @@
         holdingRows: null,
         comunaProfileRows: null,
         comunaName: null,
+        comunaIne: null,
+        singleComunaMode: false,
+        focusComunas: null,
+        onlyFocusedComunas: false,
+        multiCharts: null,
         highlightComuna: null,
         summary: ''
       };
@@ -730,10 +783,13 @@
 
       const btnViewChart = document.getElementById('btnViewChart');
       const btnViewTable = document.getElementById('btnViewTable');
+      const btnScopeFilter = document.getElementById('btnScopeFilter');
       const btnOpenInLab = document.getElementById('btnOpenInLab');
 
       const chartSection = document.getElementById('chartSection');
       const tableSection = document.getElementById('tableSection');
+      const multiChartGrid = document.getElementById('multiChartGrid');
+      const emptyEvidenceReason = document.getElementById('emptyEvidenceReason');
       const evidenceTitle = document.getElementById('evidenceTitle');
       const chartTitleEl = document.getElementById('chartTitle');
       const evidenceMeta = document.getElementById('evidenceMeta');
@@ -777,6 +833,45 @@
         }
       }
 
+      function destroyActiveCharts() {
+        if (activeChartInstance) {
+          activeChartInstance.destroy();
+          activeChartInstance = null;
+        }
+        if (Array.isArray(activeMultiChartInstances) && activeMultiChartInstances.length > 0) {
+          activeMultiChartInstances.forEach(inst => {
+            try { if (inst) inst.destroy(); } catch (_) {}
+          });
+          activeMultiChartInstances = [];
+        }
+        if (multiChartGrid) {
+          multiChartGrid.innerHTML = '';
+          multiChartGrid.style.display = 'none';
+        }
+        if (chartSection) {
+          chartSection.classList.remove('multi-chart-active');
+        }
+        if (canvasEl) {
+          canvasEl.style.display = 'block';
+        }
+      }
+
+      function updateScopeButtonLabel() {
+        if (!btnScopeFilter) return;
+        const focusList = Array.isArray(currentChartState.focusComunas) ? currentChartState.focusComunas : [];
+        const hasFocus = Boolean(currentChartState.singleComunaMode || (focusList.length > 0 && focusList.length < 10));
+        if (!hasFocus || currentChartState.customCategoryData) {
+          btnScopeFilter.style.display = 'none';
+          return;
+        }
+        const labelStr = focusList.length > 0 ? focusList.join(' / ') : (currentChartState.comunaName || currentChartState.highlightComuna || 'Comuna');
+        btnScopeFilter.style.display = 'inline-block';
+        btnScopeFilter.classList.toggle('active', Boolean(currentChartState.onlyFocusedComunas));
+        btnScopeFilter.textContent = currentChartState.onlyFocusedComunas
+          ? `Solo ${labelStr} (Ver 10 comunas)`
+          : `Vista: 10 comunas (Solo ${labelStr})`;
+      }
+
       function applyChartSpec(spec) {
         if (!spec) return;
         const emptyEl = document.getElementById('emptyEvidenceState');
@@ -786,31 +881,53 @@
         const ft = document.getElementById('evidenceFooter');
 
         if (!spec.render) {
+          destroyActiveCharts();
           currentChartState.render = false;
           currentChartState.varX = null;
           currentChartState.varY = null;
-          if (activeChartInstance) {
-            activeChartInstance.destroy();
-            activeChartInstance = null;
-          }
+          currentChartState.varZ = null;
+          currentChartState.multiCharts = null;
+          currentChartState.singleComunaMode = false;
+          currentChartState.focusComunas = null;
+          currentChartState.onlyFocusedComunas = false;
           if (emptyEl) emptyEl.style.display = 'block';
+          if (emptyEvidenceReason) {
+            if (spec.emptyReason) {
+              emptyEvidenceReason.textContent = spec.emptyReason;
+              emptyEvidenceReason.style.display = 'block';
+            } else {
+              emptyEvidenceReason.textContent = '';
+              emptyEvidenceReason.style.display = 'none';
+            }
+          }
           if (chartSec) chartSec.style.display = 'none';
           if (tableSec) tableSec.style.display = 'none';
           if (tb) tb.style.display = 'none';
           if (ft) ft.style.display = 'none';
+          if (btnScopeFilter) btnScopeFilter.style.display = 'none';
           setChartTitleAndMeta('Panel de Evidencia y Visualización', 'Esperando consulta analítica...');
           return;
         }
 
         if (emptyEl) emptyEl.style.display = 'none';
+        if (emptyEvidenceReason) emptyEvidenceReason.style.display = 'none';
+
+        // Reset explícito de pestañas: mostrar Gráfico y ocultar Tabla al recibir nueva evidencia
+        if (btnViewChart) btnViewChart.classList.add('active');
+        if (btnViewTable) btnViewTable.classList.remove('active');
         if (chartSec) chartSec.style.display = 'block';
+        if (tableSec) tableSec.style.display = 'none';
         if (tb) tb.style.display = 'flex';
         if (ft) ft.style.display = 'block';
+
+        const focusList = Array.isArray(spec.focusComunas) ? spec.focusComunas : (spec.comunaName ? [spec.comunaName] : null);
+        const hasFocusedScope = Boolean(spec.singleComunaMode || (focusList && focusList.length > 0 && focusList.length < 10));
 
         currentChartState = Object.assign({}, currentChartState, spec, {
           render: true,
           varX: spec.varX,
           varY: spec.varY,
+          varZ: spec.varZ || null,
           type: spec.type || 'bar',
           title: spec.title || 'Evidencia de Indicadores Territoriales',
           sourceText: spec.sourceText || '',
@@ -821,10 +938,16 @@
           holdingRows: spec.holdingRows || null,
           comunaProfileRows: spec.comunaProfileRows || null,
           comunaName: spec.comunaName || null,
+          comunaIne: spec.comunaIne || null,
+          singleComunaMode: Boolean(spec.singleComunaMode),
+          focusComunas: focusList,
+          onlyFocusedComunas: spec.onlyFocusedComunas !== undefined ? Boolean(spec.onlyFocusedComunas) : hasFocusedScope,
+          multiCharts: Array.isArray(spec.multiCharts) ? spec.multiCharts : null,
           highlightComuna: spec.highlightComuna || null,
           summary: spec.summary || ''
         });
 
+        updateScopeButtonLabel();
         setChartTitleAndMeta(currentChartState.title, currentChartState.sourceText);
         renderChart(currentChartState);
         renderTable(currentChartState);
@@ -878,6 +1001,7 @@
         chartSection.style.display = 'block';
         tableSection.style.display = 'none';
         if (activeChartInstance) activeChartInstance.resize();
+        activeMultiChartInstances.forEach(inst => { try { if (inst) inst.resize(); } catch (_) {} });
       });
 
       btnViewTable.addEventListener('click', () => {
@@ -886,6 +1010,15 @@
         chartSection.style.display = 'none';
         tableSection.style.display = 'block';
       });
+
+      if (btnScopeFilter) {
+        btnScopeFilter.addEventListener('click', () => {
+          currentChartState.onlyFocusedComunas = !currentChartState.onlyFocusedComunas;
+          updateScopeButtonLabel();
+          renderChart(currentChartState);
+          renderTable(currentChartState);
+        });
+      }
 
       // Enlace dinámico con laboratorio.html
       function updateLabLink() {
@@ -916,12 +1049,18 @@
         const loadingId = appendLoadingMessage();
 
         try {
-          const res = await window.OmniRouteClient.query(text);
+          const timeoutPromise = new Promise((_, reject) => {
+            setTimeout(() => reject(new Error('Tiempo de espera agotado al consultar fuentes.')), 20000);
+          });
+          const res = await Promise.race([
+            window.OmniRouteClient.query(text),
+            timeoutPromise
+          ]);
           removeLoadingMessage(loadingId);
 
           appendAssistantMessage(res);
 
-          if (res.chart && res.chart.render) {
+          if (res && res.chart && res.chart.render) {
             const srcFromRes = res.chart.sourceText ||
               (Array.isArray(res.sources) && res.sources.length
                 ? res.sources.map(s => s.institucion).join(' · ')
@@ -931,6 +1070,11 @@
               sourceText: srcFromRes,
               summary: res.reply || ''
             }));
+          } else {
+            applyChartSpec({
+              render: false,
+              emptyReason: (res && res.chart && res.chart.emptyReason) ? res.chart.emptyReason : ''
+            });
           }
         } catch (err) {
           removeLoadingMessage(loadingId);
@@ -1165,14 +1309,212 @@
         }
       };
 
-      // WP-D.3: Renderizado del Gráfico con soporte para Holdings (customCategoryData), Series Temporales, Dispersión y 10 Comunas
+      // Helper para construir gráfico de dispersión reutilizable (canvas único o sub-gráfico)
+      function buildScatterConfig(comunasList, vX, vY) {
+        const metaX = getVarMeta(vX);
+        const metaY = getVarMeta(vY);
+        const scatterPoints = comunasList.map(c => ({
+          x: typeof c[vX] === 'number' ? c[vX] : 0,
+          y: typeof c[vY] === 'number' ? c[vY] : 0,
+          entity: c.nombre || c.nombre_comuna,
+          comuna: c.nombre || c.nombre_comuna
+        }));
+        const xTitle = formatAxisLabel(metaX.label, metaX.unit);
+        const yTitle = formatAxisLabel(metaY.label, metaY.unit);
+        const datasets = [{
+          type: 'scatter',
+          label: `${metaX.label} vs. ${metaY.label}`,
+          data: scatterPoints,
+          backgroundColor: '#00357f',
+          borderColor: '#002255',
+          borderWidth: 1.5,
+          pointRadius: 5,
+          pointHoverRadius: 7
+        }];
+
+        if (scatterPoints.length > 2) {
+          const n = scatterPoints.length;
+          const meanX = scatterPoints.reduce((acc, p) => acc + p.x, 0) / n;
+          const meanY = scatterPoints.reduce((acc, p) => acc + p.y, 0) / n;
+          let sxx = 0, syy = 0, sxy = 0;
+          scatterPoints.forEach(p => {
+            const dx = p.x - meanX;
+            const dy = p.y - meanY;
+            sxx += dx * dx;
+            syy += dy * dy;
+            sxy += dx * dy;
+          });
+          const slope = sxx !== 0 ? sxy / sxx : 0;
+          const intercept = meanY - slope * meanX;
+          const r = (sxx > 0 && syy > 0) ? (sxy / Math.sqrt(sxx * syy)) : 0;
+          const r2 = r * r;
+          const minX = Math.min(...scatterPoints.map(p => p.x));
+          const maxX = Math.max(...scatterPoints.map(p => p.x));
+          datasets.push({
+            type: 'line',
+            label: `Tendencia (r = ${r.toFixed(2)} · R² = ${r2.toFixed(2)})`,
+            data: [{ x: minX, y: slope * minX + intercept }, { x: maxX, y: slope * maxX + intercept }],
+            borderColor: '#c2410c',
+            borderWidth: 2,
+            borderDash: [6, 4],
+            pointRadius: 0,
+            fill: false
+          });
+        }
+
+        return {
+          type: 'scatter',
+          data: { datasets },
+          plugins: [scatterPointLabelsPlugin],
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: { padding: { top: 8, right: 16, bottom: 4, left: 8 } },
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+                labels: { font: { family: 'IBM Plex Sans', size: 10.5, weight: 500 }, boxWidth: 10, color: '#0f172a' }
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (ctx) {
+                    const p = ctx.raw;
+                    if (!p || p.x === undefined) return '';
+                    return `${p.entity || p.comuna || 'Punto'}: X=${p.x.toLocaleString('es-CL')} ${metaX.unit}, Y=${p.y.toLocaleString('es-CL')} ${metaY.unit}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: xTitle, font: { family: 'IBM Plex Mono', size: 10.5, weight: 600 }, color: '#1c1b1b' },
+                ticks: { font: { family: 'IBM Plex Mono', size: 9.5 }, color: '#475569', callback: val => val.toLocaleString('es-CL') }
+              },
+              y: {
+                title: { display: true, text: yTitle, font: { family: 'IBM Plex Mono', size: 10.5, weight: 600 }, color: '#1c1b1b' },
+                grid: { color: 'rgba(15, 23, 42, 0.06)' },
+                ticks: { font: { family: 'IBM Plex Mono', size: 9.5 }, color: '#475569', callback: val => val.toLocaleString('es-CL') }
+              }
+            }
+          }
+        };
+      }
+
+      // WP-D.3: Renderizado del Gráfico con soporte para Multi-Gráficos, Comuna Única, Holdings, Series Temporales y Dispersión
       function renderChart(chartSpec) {
         const spec = chartSpec || currentChartState;
         if (!window.Chart || !canvasEl) return;
 
-        if (activeChartInstance) {
-          activeChartInstance.destroy();
-          activeChartInstance = null;
+        destroyActiveCharts();
+
+        const dataLake = window.AYSEN_HUBS_DATA || {};
+        const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
+        const filteredComunas = comunas.filter(c => {
+          if (spec.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101 || String(c.comuna_ine) === '11101')) {
+            return false;
+          }
+          return true;
+        });
+
+        const focusList = Array.isArray(spec.focusComunas) ? spec.focusComunas : (spec.comunaName ? [spec.comunaName] : []);
+        const focusSet = new Set(focusList.map(n => String(n).toLowerCase()));
+        const scopedComunas = (spec.onlyFocusedComunas && focusSet.size > 0)
+          ? filteredComunas.filter(c => focusSet.has((c.nombre || c.nombre_comuna || '').toLowerCase()))
+          : filteredComunas;
+        const activeComunas = scopedComunas.length > 0 ? scopedComunas : filteredComunas;
+
+        // 0. Modo Multi-Gráficos (perfiles multidimensionales o cruces de 3 variables)
+        const shouldShowMultiGrid = Array.isArray(spec.multiCharts) && spec.multiCharts.length >= 2 &&
+          (!spec.singleComunaMode || spec.onlyFocusedComunas);
+        if (shouldShowMultiGrid && multiChartGrid) {
+          canvasEl.style.display = 'none';
+          if (chartSection) chartSection.classList.add('multi-chart-active');
+          multiChartGrid.style.display = 'grid';
+          if (btnViewTable) {
+            btnViewTable.textContent = Array.isArray(spec.comunaProfileRows) && spec.comunaName
+              ? `Ficha comunal (${spec.comunaName})`
+              : 'Tabla de datos (10 comunas)';
+          }
+
+          spec.multiCharts.forEach((subSpec, idx) => {
+            const cell = document.createElement('div');
+            cell.className = 'multi-chart-cell';
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'multi-chart-cell-title';
+            titleDiv.textContent = subSpec.title || `Gráfico ${idx + 1}`;
+            const wrap = document.createElement('div');
+            wrap.className = 'multi-chart-canvas-wrap';
+            const subCanvas = document.createElement('canvas');
+            subCanvas.setAttribute('aria-label', subSpec.title || `Subgráfico ${idx + 1}`);
+            wrap.appendChild(subCanvas);
+            cell.appendChild(titleDiv);
+            cell.appendChild(wrap);
+            multiChartGrid.appendChild(cell);
+
+            if (subSpec.customCategoryData && Array.isArray(subSpec.labels) && Array.isArray(subSpec.datasets)) {
+              const ds0 = subSpec.datasets[0] || { label: 'Indicador 1', data: [] };
+              const ds1 = subSpec.datasets[1] || null;
+              const subDatasets = [{
+                label: ds0.label || 'Indicador 1',
+                data: ds0.data || [],
+                backgroundColor: ['rgba(0, 53, 127, 0.88)', 'rgba(100, 116, 139, 0.45)'],
+                borderColor: ['#00357f', '#64748b'],
+                borderWidth: 1,
+                borderRadius: 3,
+                yAxisID: 'y'
+              }];
+              if (ds1 && Array.isArray(ds1.data)) {
+                subDatasets.push({
+                  label: ds1.label || 'Indicador 2',
+                  data: ds1.data,
+                  backgroundColor: ['rgba(194, 65, 12, 0.82)', 'rgba(148, 163, 184, 0.45)'],
+                  borderColor: ['#c2410c', '#94a3b8'],
+                  borderWidth: 1,
+                  borderRadius: 3,
+                  yAxisID: 'y1'
+                });
+              }
+              const opts = getChartOptions('', { label: ds0.label || '', unit: ds0.unit || '' }, ds1 ? { label: ds1.label || '', unit: ds1.unit || '' } : null);
+              opts.plugins.legend.labels.font.size = 9.5;
+              activeMultiChartInstances.push(new Chart(subCanvas, {
+                type: 'bar',
+                data: { labels: subSpec.labels, datasets: subDatasets },
+                options: opts
+              }));
+            } else if (subSpec.type === 'scatter' && subSpec.varX && subSpec.varY && activeComunas.length > 2) {
+              activeMultiChartInstances.push(new Chart(subCanvas, buildScatterConfig(activeComunas, subSpec.varX, subSpec.varY)));
+            } else if (subSpec.varX) {
+              const mX = getVarMeta(subSpec.varX);
+              const mY = subSpec.varY ? getVarMeta(subSpec.varY) : null;
+              const subDs = [{
+                label: formatAxisLabel(mX.label, mX.unit),
+                data: activeComunas.map(c => (typeof c[subSpec.varX] === 'number' ? c[subSpec.varX] : 0)),
+                backgroundColor: 'rgba(0, 53, 127, 0.85)',
+                borderColor: '#00357f',
+                borderWidth: 1,
+                borderRadius: 3,
+                yAxisID: 'y'
+              }];
+              if (mY) {
+                subDs.push({
+                  label: formatAxisLabel(mY.label, mY.unit),
+                  data: activeComunas.map(c => (typeof c[subSpec.varY] === 'number' ? c[subSpec.varY] : 0)),
+                  backgroundColor: 'rgba(194, 65, 12, 0.80)',
+                  borderColor: '#c2410c',
+                  borderWidth: 1,
+                  borderRadius: 3,
+                  yAxisID: 'y1'
+                });
+              }
+              activeMultiChartInstances.push(new Chart(subCanvas, {
+                type: 'bar',
+                data: { labels: activeComunas.map(c => c.nombre || c.nombre_comuna), datasets: subDs },
+                options: getChartOptions('', mX, mY)
+              }));
+            }
+          });
+          return;
         }
 
         // 1. Caso Especial: Gráfico por Empresas / Holdings Salmoneros (12 categorías en eje X)
@@ -1221,19 +1563,14 @@
         }
 
         if (btnViewTable) {
-          btnViewTable.textContent = Array.isArray(spec.comunaProfileRows) && spec.comunaName
-            ? `Ficha comunal (${spec.comunaName})`
-            : 'Tabla de datos (10 comunas)';
-        }
-
-        const dataLake = window.AYSEN_HUBS_DATA || {};
-        const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
-        const filteredComunas = comunas.filter(c => {
-          if (spec.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101 || String(c.comuna_ine) === '11101')) {
-            return false;
+          if (Array.isArray(spec.comunaProfileRows) && spec.comunaName && spec.onlyFocusedComunas !== false) {
+            btnViewTable.textContent = `Ficha comunal (${spec.comunaName})`;
+          } else if (spec.onlyFocusedComunas && activeComunas.length < filteredComunas.length) {
+            btnViewTable.textContent = `Datos de ${activeComunas.map(c => c.nombre || c.nombre_comuna).join(' / ')}`;
+          } else {
+            btnViewTable.textContent = 'Tabla de datos (10 comunas)';
           }
-          return true;
-        });
+        }
 
         const vX = spec.varX || 'poblacion_censo_2024';
         const vY = spec.varY;
@@ -1284,131 +1621,54 @@
         }
 
         // 3. Caso Especial: Gráfico de Dispersión (Scatter Bivariado con Línea de Tendencia)
-        if (type === 'scatter') {
+        if (type === 'scatter' && activeComunas.length > 2) {
           const companionVar = (vY && vY !== vX) ? vY : 'poblacion_censo_2024';
-          const metaX = getVarMeta(vX);
-          const metaY = getVarMeta(companionVar);
-          const scatterPoints = filteredComunas.map(c => ({
-            x: typeof c[vX] === 'number' ? c[vX] : 0,
-            y: typeof c[companionVar] === 'number' ? c[companionVar] : 0,
-            entity: c.nombre || c.nombre_comuna,
-            comuna: c.nombre || c.nombre_comuna
-          }));
-
-          const xTitle = formatAxisLabel(metaX.label, metaX.unit);
-          const yTitle = formatAxisLabel(metaY.label, metaY.unit);
-
-          const datasets = [
-            {
-              type: 'scatter',
-              label: `${metaX.label} vs. ${metaY.label}`,
-              data: scatterPoints,
-              backgroundColor: '#00357f',
-              borderColor: '#002255',
-              borderWidth: 1.5,
-              pointRadius: 6,
-              pointHoverRadius: 8
-            }
-          ];
-
-          if (scatterPoints.length > 2) {
-            const n = scatterPoints.length;
-            const sumX = scatterPoints.reduce((acc, p) => acc + p.x, 0);
-            const sumY = scatterPoints.reduce((acc, p) => acc + p.y, 0);
-            const meanX = sumX / n;
-            const meanY = sumY / n;
-
-            let sxx = 0, syy = 0, sxy = 0;
-            scatterPoints.forEach(p => {
-              const dx = p.x - meanX;
-              const dy = p.y - meanY;
-              sxx += dx * dx;
-              syy += dy * dy;
-              sxy += dx * dy;
-            });
-
-            const slope = sxx !== 0 ? sxy / sxx : 0;
-            const intercept = meanY - slope * meanX;
-            const r = (sxx > 0 && syy > 0) ? (sxy / Math.sqrt(sxx * syy)) : 0;
-            const r2 = r * r;
-
-            const minX = Math.min(...scatterPoints.map(p => p.x));
-            const maxX = Math.max(...scatterPoints.map(p => p.x));
-
-            datasets.push({
-              type: 'line',
-              label: `Tendencia (r = ${r.toFixed(2)} · R² = ${r2.toFixed(2)})`,
-              data: [
-                { x: minX, y: slope * minX + intercept },
-                { x: maxX, y: slope * maxX + intercept }
-              ],
-              borderColor: '#c2410c',
-              borderWidth: 2,
-              borderDash: [6, 4],
-              pointRadius: 0,
-              fill: false
-            });
-          }
-
-          activeChartInstance = new Chart(canvasEl, {
-            type: 'scatter',
-            data: { datasets },
-            plugins: [scatterPointLabelsPlugin],
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                legend: {
-                  display: true,
-                  position: 'top',
-                  labels: { font: { family: 'IBM Plex Sans', size: 11, weight: 500 }, boxWidth: 12, color: '#0f172a' }
-                },
-                tooltip: {
-                  callbacks: {
-                    label: function (ctx) {
-                      const p = ctx.raw;
-                      if (!p || p.x === undefined) return '';
-                      return `${p.entity || p.comuna || 'Punto'}: X=${p.x.toLocaleString('es-CL')} ${metaX.unit}, Y=${p.y.toLocaleString('es-CL')} ${metaY.unit}`;
-                    }
-                  }
-                }
-              },
-              scales: {
-                x: {
-                  title: { display: true, text: xTitle, font: { family: 'IBM Plex Mono', size: 11, weight: 600 }, color: '#1c1b1b' },
-                  ticks: {
-                    font: { family: 'IBM Plex Mono', size: 10 },
-                    color: '#475569',
-                    callback: function (val) { return val.toLocaleString('es-CL'); }
-                  }
-                },
-                y: {
-                  title: { display: true, text: yTitle, font: { family: 'IBM Plex Mono', size: 11, weight: 600 }, color: '#1c1b1b' },
-                  grid: { color: 'rgba(15, 23, 42, 0.06)' },
-                  ticks: {
-                    font: { family: 'IBM Plex Mono', size: 10 },
-                    color: '#475569',
-                    callback: function (val) { return val.toLocaleString('es-CL'); }
-                  }
-                }
-              }
-            }
-          });
+          activeChartInstance = new Chart(canvasEl, buildScatterConfig(activeComunas, vX, companionVar));
           return;
         }
 
-        // 4. Gráficos Monovariados y Bivariados por Comunas (Barras o Línea con Doble Eje Y)
+        // 4. Gráficos Monovariados y Bivariados por Comunas (siempre barras en eje X nominal; en Comuna Única compara contra Promedio Regional)
         const metaX = getVarMeta(vX);
         const hasValidY = Boolean(vY && vY !== vX && typeof filteredComunas[0]?.[vY] === 'number');
         const metaY = hasValidY ? getVarMeta(vY) : null;
-        const labels = filteredComunas.map(c => c.nombre || c.nombre_comuna);
-        const dataX = filteredComunas.map(c => (typeof c[vX] === 'number' ? c[vX] : 0));
-        const isLine = type === 'line';
-        const highlightName = (spec.highlightComuna || '').toLowerCase();
+        const isSingleEntityMode = activeComunas.length === 1;
+        let labels;
+        let dataX;
+        let bgX;
+        let dataY = null;
+        let bgY = null;
+        let xTitle = '10 Comunas de Aysén';
 
-        const bgX = isLine
-          ? 'rgba(0, 53, 127, 0.12)'
-          : labels.map(lbl => (highlightName && lbl.toLowerCase() === highlightName) ? '#0059c5' : 'rgba(0, 53, 127, 0.85)');
+        if (isSingleEntityMode) {
+          const targetC = activeComunas[0];
+          const cName = targetC.nombre || targetC.nombre_comuna;
+          const avgX = filteredComunas.length
+            ? Number((filteredComunas.reduce((acc, c) => acc + (typeof c[vX] === 'number' ? c[vX] : 0), 0) / filteredComunas.length).toFixed(1))
+            : 0;
+          labels = [cName, 'Promedio Regional'];
+          dataX = [typeof targetC[vX] === 'number' ? targetC[vX] : 0, avgX];
+          bgX = ['rgba(0, 53, 127, 0.90)', 'rgba(100, 116, 139, 0.50)'];
+          if (metaY) {
+            const avgY = filteredComunas.length
+              ? Number((filteredComunas.reduce((acc, c) => acc + (typeof c[vY] === 'number' ? c[vY] : 0), 0) / filteredComunas.length).toFixed(1))
+              : 0;
+            dataY = [typeof targetC[vY] === 'number' ? targetC[vY] : 0, avgY];
+            bgY = ['rgba(194, 65, 12, 0.85)', 'rgba(148, 163, 184, 0.50)'];
+          }
+          xTitle = `${cName} vs. Referencia Regional`;
+        } else {
+          labels = activeComunas.map(c => c.nombre || c.nombre_comuna);
+          dataX = activeComunas.map(c => (typeof c[vX] === 'number' ? c[vX] : 0));
+          const highlightName = (spec.highlightComuna || '').toLowerCase();
+          bgX = labels.map(lbl => (highlightName && lbl.toLowerCase() === highlightName) ? '#0059c5' : 'rgba(0, 53, 127, 0.85)');
+          if (metaY) {
+            dataY = activeComunas.map(c => (typeof c[vY] === 'number' ? c[vY] : 0));
+            bgY = 'rgba(194, 65, 12, 0.80)';
+          }
+          if (activeComunas.length < filteredComunas.length) {
+            xTitle = labels.join(' vs. ');
+          }
+        }
 
         const datasets = [
           {
@@ -1416,44 +1676,35 @@
             data: dataX,
             backgroundColor: bgX,
             borderColor: '#00357f',
-            borderWidth: isLine ? 2.5 : 1,
-            borderRadius: isLine ? 0 : 3,
-            tension: isLine ? 0.3 : 0,
-            fill: isLine,
-            pointRadius: isLine ? 5 : 0,
-            pointBackgroundColor: '#00357f',
+            borderWidth: 1,
+            borderRadius: 3,
             yAxisID: 'y'
           }
         ];
 
-        if (metaY) {
-          const dataY = filteredComunas.map(c => (typeof c[vY] === 'number' ? c[vY] : 0));
+        if (metaY && dataY) {
           datasets.push({
             label: formatAxisLabel(metaY.label, metaY.unit),
             data: dataY,
-            backgroundColor: isLine ? 'rgba(194, 65, 12, 0.12)' : 'rgba(194, 65, 12, 0.80)',
+            backgroundColor: bgY,
             borderColor: '#c2410c',
-            borderWidth: isLine ? 2 : 1,
-            borderRadius: isLine ? 0 : 3,
-            tension: isLine ? 0.3 : 0,
-            borderDash: isLine ? [5, 5] : undefined,
-            pointRadius: isLine ? 5 : 0,
-            pointBackgroundColor: '#c2410c',
+            borderWidth: 1,
+            borderRadius: 3,
             yAxisID: 'y1'
           });
         }
 
         activeChartInstance = new Chart(canvasEl, {
-          type: isLine ? 'line' : 'bar',
+          type: 'bar',
           data: {
             labels: labels,
             datasets: datasets
           },
-          options: getChartOptions('10 Comunas de Aysén', metaX, metaY)
+          options: getChartOptions(xTitle, metaX, metaY)
         });
       }
 
-      // WP-D.3: Renderizado de la Tabla (soporta 12 Holdings, Ficha Comunal Multidimensional y 10 Comunas)
+      // WP-D.3: Renderizado de la Tabla (soporta 12 Holdings, Ficha Comunal Multidimensional, Comuna Única y 10 Comunas)
       function renderTable(chartSpec) {
         const spec = chartSpec || currentChartState;
         if (!evidenceTableBody) return;
@@ -1464,8 +1715,8 @@
           return;
         }
 
-        // 2. Ficha Completa de Indicadores de una Comuna vs. Promedio/Total Regional
-        if (Array.isArray(spec.comunaProfileRows) && spec.comunaProfileRows.length > 0) {
+        // 2. Ficha Completa de Indicadores de una Comuna vs. Promedio/Total Regional (cuando está en modo Comuna Única)
+        if (Array.isArray(spec.comunaProfileRows) && spec.comunaProfileRows.length > 0 && spec.onlyFocusedComunas !== false) {
           populateTableComunaProfile(spec.comunaName || spec.highlightComuna || 'Comuna', spec.comunaProfileRows);
           return;
         }
@@ -1473,6 +1724,7 @@
         const dataLake = window.AYSEN_HUBS_DATA || {};
         const vX = spec.varX || 'poblacion_censo_2024';
         const vY = spec.varY;
+        const vZ = spec.varZ || null;
         const type = spec.type || 'bar';
 
         // 3. Serie Temporal 2015–2026
@@ -1486,7 +1738,7 @@
           return;
         }
 
-        // 4. Tabla Estándar de 10 Comunas
+        // 4. Tabla de Comunas (filtrada a la comuna consultada si onlyFocusedComunas === true, o las 10 comunas)
         const comunas = Array.isArray(dataLake.comunas) ? dataLake.comunas : [];
         const filteredComunas = comunas.filter(c => {
           if (spec.excludeCoyhaique && (c.id === 'coyhaique' || c.codigo_comuna === 11101 || String(c.comuna_ine) === '11101')) {
@@ -1494,8 +1746,23 @@
           }
           return true;
         });
+        const focusList = Array.isArray(spec.focusComunas) ? spec.focusComunas : (spec.comunaName ? [spec.comunaName] : []);
+        const focusSet = new Set(focusList.map(n => String(n).toLowerCase()));
+        const scopedComunas = (spec.onlyFocusedComunas && focusSet.size > 0)
+          ? filteredComunas.filter(c => focusSet.has((c.nombre || c.nombre_comuna || '').toLowerCase()))
+          : filteredComunas;
+        const rowsComunas = scopedComunas.length > 0 ? scopedComunas : filteredComunas;
+
         const hasValidY = Boolean(vY && vY !== vX && typeof filteredComunas[0]?.[vY] === 'number');
-        populateTableComunas(filteredComunas, vX, hasValidY ? vY : (type === 'scatter' ? 'poblacion_censo_2024' : null), spec.highlightComuna);
+        const hasValidZ = Boolean(vZ && vZ !== vX && vZ !== vY && typeof filteredComunas[0]?.[vZ] === 'number');
+        populateTableComunas(
+          rowsComunas,
+          vX,
+          hasValidY ? vY : (type === 'scatter' ? 'poblacion_censo_2024' : null),
+          spec.highlightComuna,
+          hasValidZ ? vZ : null,
+          filteredComunas
+        );
       }
 
       function renderActiveChart() {
@@ -1570,6 +1837,9 @@
         return {
           responsive: true,
           maintainAspectRatio: false,
+          layout: {
+            padding: { top: 8, right: 16, bottom: 4, left: 8 }
+          },
           plugins: {
             legend: {
               display: true,
@@ -1593,12 +1863,13 @@
         };
       }
 
-      function restoreStandardTableHead() {
+      function restoreStandardTableHead(hasVarZ = false) {
         if (!evidenceTableHead) return;
         evidenceTableHead.innerHTML = `<tr>
           <th id="thEntity">Comuna</th>
           <th class="td-num" id="thVarX">Variable X</th>
           <th class="td-num" id="thVarY" style="display: none;">Variable Y</th>
+          ${hasVarZ ? '<th class="td-num" id="thVarZ">Variable Z</th>' : ''}
         </tr>`;
       }
 
@@ -1649,7 +1920,7 @@
 
         if (evidenceTableFoot) {
           evidenceTableFoot.innerHTML = `<tr>
-            <td colspan="2" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total 12 Holdings Corporativos (Catastro Regional: 745 concesiones)</td>
+            <td colspan="2" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total 12 Holdings Corporativos (${sumConc.toLocaleString('es-CL')} de 745 concesiones regionales; 19 otros titulares)</td>
             <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumConc.toLocaleString('es-CL')} concesiones</td>
             <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumCtrs.toLocaleString('es-CL')} centros</td>
             <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumBio.toLocaleString('es-CL')} ton</td>
@@ -1690,12 +1961,13 @@
         }
       }
 
-      function populateTableComunas(comunas, varX, varY, highlightComuna) {
+      function populateTableComunas(comunas, varX, varY, highlightComuna, varZ = null, regionalRefComunas = null) {
         if (!evidenceTableBody) return;
-        restoreStandardTableHead();
+        restoreStandardTableHead(Boolean(varZ));
         const thEntity = document.getElementById('thEntity');
         const thVarX = document.getElementById('thVarX');
         const thVarY = document.getElementById('thVarY');
+        const thVarZ = document.getElementById('thVarZ');
         if (thEntity) thEntity.textContent = 'Comuna';
 
         const metaX = getVarMeta(varX);
@@ -1707,6 +1979,11 @@
           thVarY.style.display = 'table-cell';
         } else if (thVarY) {
           thVarY.style.display = 'none';
+        }
+
+        if (varZ && thVarZ) {
+          const metaZ = getVarMeta(varZ);
+          thVarZ.textContent = formatAxisLabel(metaZ.label, metaZ.unit);
         }
 
         const sorted = [...comunas].sort((a, b) => {
@@ -1736,35 +2013,40 @@
             const valY = `${valNumY.toLocaleString('es-CL')}${unitYStr}`;
             rowHtml += `<td class="td-num">${valY}</td>`;
           }
+          if (varZ) {
+            const metaZ = getVarMeta(varZ);
+            const unitZStr = metaZ.unit ? ` ${metaZ.unit}` : '';
+            const valNumZ = typeof c[varZ] === 'number' ? c[varZ] : 0;
+            const valZ = `${valNumZ.toLocaleString('es-CL')}${unitZStr}`;
+            rowHtml += `<td class="td-num">${valZ}</td>`;
+          }
           tr.innerHTML = rowHtml;
           evidenceTableBody.appendChild(tr);
         });
 
         if (evidenceTableFoot) {
           evidenceTableFoot.innerHTML = '';
-          const n = sorted.length || 1;
-          const sumX = sorted.reduce((acc, c) => acc + (typeof c[varX] === 'number' ? c[varX] : 0), 0);
-          const avgX = sumX / n;
-          const isAvgX = metaX.aggregation === 'avg' || metaX.unit.includes('%') || varX.endsWith('_pct');
-          const unitX = metaX.unit ? ` ${metaX.unit}` : '';
-          const labelX = isAvgX
-            ? `Promedio Regional: ${avgX.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitX}`
-            : `Total: ${sumX.toLocaleString('es-CL')}${unitX} (Prom: ${avgX.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitX})`;
+          const refComunas = (Array.isArray(regionalRefComunas) && regionalRefComunas.length > 0) ? regionalRefComunas : sorted;
+          const n = refComunas.length || 1;
+          const formatFootStat = (vKey, meta) => {
+            const sumV = refComunas.reduce((acc, c) => acc + (typeof c[vKey] === 'number' ? c[vKey] : 0), 0);
+            const avgV = sumV / n;
+            const isAvgV = meta.aggregation === 'avg' || meta.unit.includes('%') || vKey.endsWith('_pct');
+            const unitV = meta.unit ? ` ${meta.unit}` : '';
+            return isAvgV
+              ? `Promedio Regional: ${avgV.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitV}`
+              : `Total: ${sumV.toLocaleString('es-CL')}${unitV} (Prom: ${avgV.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitV})`;
+          };
 
           let footHtml = `<tr>
             <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total / Promedio Regional</td>
-            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${labelX}</td>`;
+            <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${formatFootStat(varX, metaX)}</td>`;
 
           if (varY) {
-            const metaY = getVarMeta(varY);
-            const unitY = metaY.unit ? ` ${metaY.unit}` : '';
-            const sumY = sorted.reduce((acc, c) => acc + (typeof c[varY] === 'number' ? c[varY] : 0), 0);
-            const avgY = sumY / n;
-            const isAvgY = metaY.aggregation === 'avg' || metaY.unit.includes('%') || varY.endsWith('_pct');
-            const labelY = isAvgY
-              ? `Promedio Regional: ${avgY.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${unitY}`
-              : `Total: ${sumY.toLocaleString('es-CL')}${unitY} (Prom: ${avgY.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${unitY})`;
-            footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${labelY}</td>`;
+            footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${formatFootStat(varY, getVarMeta(varY))}</td>`;
+          }
+          if (varZ) {
+            footHtml += `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${formatFootStat(varZ, getVarMeta(varZ))}</td>`;
           }
           footHtml += `</tr>`;
           evidenceTableFoot.innerHTML = footHtml;

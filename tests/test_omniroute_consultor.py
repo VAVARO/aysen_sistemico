@@ -1363,6 +1363,143 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Error en test_28 omniroute:\n{proc.stderr}")
         self.assertIn("GENERAL_SEMANTIC_RAG_AND_STEMMING_OK", proc.stdout)
 
+    def test_29_auditoria_9_casos_borde_y_bloques_1_a_4(self):
+        """
+        Verifica contratos HTML de Bloques 1-4 en consultor.html y los 9 casos borde
+        de la auditoria empirica (subset ranking, localidades, ingles/PM2.5, guardrails,
+        holdings 726/745, multiCharts y modo comuna unica) en resolveClosedWorldDeterministic y query().
+        """
+        with open(os.path.join(ROOT_DIR, "consultor.html"), "r", encoding="utf-8") as f:
+            html_content = f.read()
+
+        required_html_tokens = [
+            "btnScopeFilter",
+            "multiChartGrid",
+            "emptyEvidenceReason",
+            "destroyActiveCharts",
+            "onlyFocusedComunas",
+            "Promise.race",
+            "de 745 concesiones regionales; 19 otros titulares"
+        ]
+        for token in required_html_tokens:
+            self.assertIn(token, html_content, f"Falta token contractual de Bloques 1-4 en consultor.html: {token}")
+
+        node_script = r"""
+        const fs = require('fs');
+        const path = require('path');
+        const assert = require('assert');
+
+        global.window = global;
+        global.location = { protocol: 'http:', hostname: 'localhost' };
+        global.fetch = async () => { throw new Error('offline-test'); };
+
+        eval(fs.readFileSync(path.join(process.cwd(), 'data/aysen_hubs_data.js'), 'utf8'));
+        eval(fs.readFileSync(path.join(process.cwd(), 'js/nl2chart_engine.js'), 'utf8'));
+        const lexicon = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data/nl_lexicon_aysen.json'), 'utf8'));
+        if (global.NL2ChartEngine && typeof global.NL2ChartEngine.setLexicon === 'function') {
+            global.NL2ChartEngine.setLexicon(lexicon);
+        }
+        eval(fs.readFileSync(path.join(process.cwd(), 'js/omniroute_client.js'), 'utf8'));
+
+        const client = global.OmniRouteClient;
+        client.init(global.AYSEN_HUBS_DATA);
+
+        (async () => {
+            // 1. Subset ranking & sum (P6): 3 comunas menos pobladas
+            const p6Queries = [
+                client.resolveClosedWorldDeterministic('¿Qué porcentaje de la población regional representan las 3 comunas menos pobladas de Aysén y cuál es su suma total?'),
+                await client.query('¿Qué porcentaje de la población regional representan las 3 comunas menos pobladas de Aysén y cuál es su suma total?')
+            ];
+            for (const r of p6Queries) {
+                assert(r && r.reply, 'P6 sin reply');
+                assert(r.reply.includes('Tortel') && r.reply.includes("O'Higgins") && r.reply.includes('Lago Verde'), 'P6 debe listar Tortel, O\'Higgins y Lago Verde: ' + r.reply);
+                assert(r.reply.includes('1.931') && r.reply.includes('1,917%'), 'P6 debe calcular 1.931 hab. y 1,917%: ' + r.reply);
+                assert(!r.reply.includes('Guaitecas') && !r.reply.includes('2.740'), 'P6 no debe incluir Guaitecas ni 2.740: ' + r.reply);
+            }
+
+            // 2. Localidades sub-comunales (P9.2): Puerto Río Tranquilo vs Puyuhuapi
+            const p92 = await client.query('Compara Puerto Río Tranquilo vs Puyuhuapi');
+            assert(p92 && p92.reply, 'P9.2 sin reply');
+            assert(p92.reply.includes('Río Ibáñez') && p92.reply.includes('Cisnes'), 'P9.2 debe mapear a Río Ibáñez y Cisnes: ' + p92.reply);
+            assert(p92.reply.includes('Nota:'), 'P9.2 debe incluir nota territorial de localidad: ' + p92.reply);
+            assert(p92.chart && Array.isArray(p92.chart.focusComunas), 'P9.2 debe poblar focusComunas');
+            assert(p92.chart.focusComunas.includes('Río Ibáñez') && p92.chart.focusComunas.includes('Cisnes'), 'focusComunas debe incluir Río Ibáñez y Cisnes');
+
+            // 3. Ingles + PM2.5 + Scatter (P7)
+            const p7 = await client.query('Show me a scatter plot comparing firewood heating dependency and PM2.5 critical days across the 10 communes of Aysén');
+            assert(p7 && p7.chart && p7.chart.render === true, 'P7 debe renderizar grafico');
+            assert.strictEqual(p7.chart.type, 'scatter', 'P7 debe producir scatter');
+            const p7Vars = [p7.chart.varX, p7.chart.varY];
+            assert(p7Vars.includes('hogares_lena_pct') && p7Vars.includes('dias_sobre_norma_mp25'), 'P7 variables esperadas: ' + p7Vars.join(','));
+
+            // 4. Jailbreak fuera de dominio (P4) -> render false
+            const p4 = await client.query('¿Cuál fue el candidato ganador en Chile o cuánto cuesta un pasaje aéreo Santiago Coyhaique?');
+            assert(p4 && p4.chart && p4.chart.render === false, 'P4 debe devolver chart.render === false');
+
+            // 5. Meta-consulta de frescura (P8) -> render false y menciona 17 de octubre de 2026
+            const p8 = await client.query('¿Hasta qué fecha están actualizados estos datos y de dónde provienen?');
+            assert(p8 && p8.chart && p8.chart.render === false, 'P8 debe devolver chart.render === false');
+            assert(p8.reply.includes('17 de octubre de 2026'), 'P8 debe indicar corte 17 de octubre de 2026: ' + p8.reply);
+
+            // 6. Desempleo ausente (P3) y PIB/Providencia con proxy SII (P2)
+            const p3 = await client.query('¿Cuál es la tasa de desempleo comunal en Aysén?');
+            assert(p3 && p3.chart && p3.chart.render === false, 'P3 desempleo debe devolver chart.render === false');
+
+            const p2 = await client.query('¿Cómo se compara el PIB per cápita de Coyhaique respecto a Providencia?');
+            assert(p2 && p2.reply, 'P2 sin reply');
+            assert(/PIB/i.test(p2.reply) && /Providencia/i.test(p2.reply), 'P2 debe explicitar ausencia de PIB y Providencia: ' + p2.reply);
+            assert(p2.reply.includes('SII') || p2.reply.includes('empresas'), 'P2 debe ofrecer proxy SII: ' + p2.reply);
+            assert(p2.chart && p2.chart.singleComunaMode === true, 'P2 debe activar singleComunaMode para Coyhaique');
+            assert(p2.chart.varX === 'empresas_sii' || p2.chart.varY === 'trabajadores_sii', 'P2 debe usar proxy SII');
+
+            // 7. Reconciliacion de holdings salmoneros (P9.3)
+            const p93 = client.resolveClosedWorldDeterministic('¿Cuántas concesiones y centros de cultivo tiene cada holding salmonero en Aysén?');
+            assert(p93 && p93.chart && Array.isArray(p93.chart.holdingRows) && p93.chart.holdingRows.length === 12, 'P9.3 debe listar 12 holdings');
+            const sum12 = p93.chart.holdingRows.reduce((s, row) => s + Number(row.concesiones || 0), 0);
+            assert.strictEqual(sum12, 726, 'Los 12 holdings principales deben sumar 726 concesiones, got ' + sum12);
+            assert(p93.reply.includes('726') && p93.reply.includes('745'), 'P9.3 reply debe reconciliar 726 y 745: ' + p93.reply);
+
+            // 8. Multi-charts, Modo Comuna Unica y Consulta Nominal sin Grafico (Bloques 1 y 4)
+            const lagoVerdePerfil = await client.query('cuéntame sobre Lago Verde');
+            assert(lagoVerdePerfil && lagoVerdePerfil.chart && lagoVerdePerfil.chart.singleComunaMode === true, 'Perfil Lago Verde debe activar singleComunaMode');
+            assert(Array.isArray(lagoVerdePerfil.chart.multiCharts) && lagoVerdePerfil.chart.multiCharts.length === 4, 'Perfil Lago Verde debe generar 4 multiCharts');
+
+            const corr3 = await client.query('¿Existe correlación entre las visitas a parques nacionales SNASPE, la biomasa de salmón cosechada y la esperanza de vida al nacer por comuna?');
+            assert(corr3 && corr3.chart && Array.isArray(corr3.chart.multiCharts) && corr3.chart.multiCharts.length === 2, 'Correlacion 3 variables debe generar 2 multiCharts');
+            assert(corr3.reply.includes('Prom: 80,3') || corr3.reply.includes('80,3'), 'Correlacion 3 variables debe reportar promedio 80,3 para esperanza de vida: ' + corr3.reply);
+
+            const nominalAlcalde = await client.query('¿Quién es el alcalde de Lago Verde?');
+            assert(nominalAlcalde && nominalAlcalde.chart && nominalAlcalde.chart.render === false, 'Consulta nominal de alcalde debe devolver chart.render === false');
+
+            const c01Canon = await client.query('¿Cuáles son las comunas con mayor dependencia del Fondo Común Municipal y cómo se comparan con sus ingresos propios?');
+            assert(c01Canon && c01Canon.chart && c01Canon.chart.render === true, 'Consulta 01 canonica debe renderizar');
+            const c01CanonVars = [c01Canon.chart.varX, c01Canon.chart.varY];
+            assert(c01CanonVars.includes('dependencia_fcm_pct') && c01CanonVars.includes('ipp_per_capita_clp'), 'Consulta 01 canonica vars: ' + c01CanonVars.join(','));
+
+            const c01Gasto = await client.query('¿Las comunas más dependientes del FCM muestran un gasto municipal per cápita mayor o menor que las menos dependientes?');
+            assert(c01Gasto && c01Gasto.chart && c01Gasto.chart.render === true, 'Consulta FCM vs gasto debe renderizar');
+            const c01GastoVars = [c01Gasto.chart.varX, c01Gasto.chart.varY];
+            assert(c01GastoVars.includes('dependencia_fcm_pct') && c01GastoVars.includes('presupuesto_per_capita_mclp'), 'Consulta FCM vs gasto vars: ' + c01GastoVars.join(','));
+
+            const c02 = await client.query('¿Cuál es la tendencia temporal del turismo en Aysén desde 2018 hasta 2026?');
+            assert(c02 && c02.chart && c02.chart.type === 'line', 'Consulta 02 debe usar grafico de linea temporal');
+            assert(!/no (?:dispone|cuenta con) (?:de )?(?:serie|datos anuales)/i.test(c02.reply), 'Consulta 02 no debe negar serie anual: ' + c02.reply);
+
+            console.log('AUDITORIA_9_CASOS_BLOQUES_1_A_4_OK');
+        })().catch(err => {
+            console.error(err);
+            process.exit(1);
+        });
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_script],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Error en test_29:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("AUDITORIA_9_CASOS_BLOQUES_1_A_4_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

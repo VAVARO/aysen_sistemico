@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-11T15:00:35.196Z",
+  "generatedAt": "2026-11-16T14:01:17.762Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -5728,8 +5728,8 @@ window.AYSEN_HUBS_DATA = {
           "Cooke Aquaculture Chile",
           "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
           "Canadá",
-          "26",
-          "3.49%"
+          "18",
+          "2.42%"
         ],
         [
           "Blumar Seafoods / Salmones Blumar",
@@ -5742,29 +5742,29 @@ window.AYSEN_HUBS_DATA = {
           "Australis Seafoods",
           "Grupo Joyvio (filial de alimentos de Legend Holdings Corporation, matriz de Lenovo, China)",
           "China",
-          "58",
-          "7.79%"
+          "46",
+          "6.17%"
         ],
         [
           "Salmones Camanchaca",
           "Grupo Camanchaca (Familias Cifuentes y Stengel)",
           "Chile",
-          "48",
-          "6.44%"
+          "38",
+          "5.1%"
         ],
         [
           "Invermar",
           "Grupo Alimar (Familia Izquierdo Menéndez)",
           "Chile",
-          "36",
-          "4.83%"
+          "27",
+          "3.62%"
         ],
         [
           "Salmones Yadrán",
           "Empresas Yadrán (Familia Briones)",
           "Chile",
-          "40",
-          "5.37%"
+          "31",
+          "4.16%"
         ]
       ],
       "canvasPreview": {
@@ -13444,10 +13444,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
       "origen_capital": "Canadá",
       "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
-      "total_concesiones_aysen": 26,
-      "porcentaje_regional_concesiones": 3.49,
-      "centros_activos_estimados": 9,
-      "biomasa_estimada_ton": 17572,
+      "total_concesiones_aysen": 18,
+      "porcentaje_regional_concesiones": 2.42,
+      "centros_activos_estimados": 6,
+      "biomasa_estimada_ton": 12185,
       "comunas_presencia": [
         "Aysén"
       ],
@@ -13580,10 +13580,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Grupo Joyvio (filial de alimentos de Legend Holdings Corporation, matriz de Lenovo, China)",
       "origen_capital": "China",
       "resumen_corporativo": "Australis Seafoods fue fundada por Isidoro Quiroga y vendida en 2019 al holding chino Joyvio por USD 921M. Es una de las mayores empresas productoras de salmón del país, con alta presencia en fiordos de Aysén y Cisnes.",
-      "total_concesiones_aysen": 58,
-      "porcentaje_regional_concesiones": 7.79,
-      "centros_activos_estimados": 19,
-      "biomasa_estimada_ton": 39223,
+      "total_concesiones_aysen": 46,
+      "porcentaje_regional_concesiones": 6.17,
+      "centros_activos_estimados": 15,
+      "biomasa_estimada_ton": 31066,
       "comunas_presencia": [
         "Aysén",
         "Cisnes"
@@ -13681,10 +13681,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Grupo Camanchaca (Familias Cifuentes y Stengel)",
       "origen_capital": "Chile",
       "resumen_corporativo": "Grupo pesquero y acuícola histórico chileno. En 2017 escindió Salmones Camanchaca S.A., cotizando en la Bolsa de Santiago y de Oslo. Adquirió Fiordo Blanco S.A. en 2004, acumulando una sólida base de concesiones en Cisnes y Aysén.",
-      "total_concesiones_aysen": 48,
-      "porcentaje_regional_concesiones": 6.44,
-      "centros_activos_estimados": 16,
-      "biomasa_estimada_ton": 32425,
+      "total_concesiones_aysen": 38,
+      "porcentaje_regional_concesiones": 5.1,
+      "centros_activos_estimados": 12,
+      "biomasa_estimada_ton": 25679,
       "comunas_presencia": [
         "Cisnes",
         "Aysén"
@@ -13752,10 +13752,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Grupo Alimar (Familia Izquierdo Menéndez)",
       "origen_capital": "Chile",
       "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
-      "total_concesiones_aysen": 36,
-      "porcentaje_regional_concesiones": 4.83,
-      "centros_activos_estimados": 12,
-      "biomasa_estimada_ton": 24319,
+      "total_concesiones_aysen": 27,
+      "porcentaje_regional_concesiones": 3.62,
+      "centros_activos_estimados": 9,
+      "biomasa_estimada_ton": 18227,
       "comunas_presencia": [
         "Cisnes",
         "Aysén"
@@ -13817,10 +13817,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Empresas Yadrán (Familia Briones)",
       "origen_capital": "Chile",
       "resumen_corporativo": "Grupo de larga tradición en Chiloé y el archipiélago de las Guaitecas. Posee una de las mayores concentraciones de concesiones en la Comuna de Guaitecas (Melinka, Isla Gran Guaiteca) y Canal Puyuhuapi.",
-      "total_concesiones_aysen": 40,
-      "porcentaje_regional_concesiones": 5.37,
-      "centros_activos_estimados": 13,
-      "biomasa_estimada_ton": 27038,
+      "total_concesiones_aysen": 31,
+      "porcentaje_regional_concesiones": 4.16,
+      "centros_activos_estimados": 10,
+      "biomasa_estimada_ton": 20946,
       "comunas_presencia": [
         "Guaitecas",
         "Cisnes"
@@ -13900,10 +13900,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Salmones Austral S.A. (Familias Navarro, Hurtado y Puchi)",
       "origen_capital": "Chile",
       "resumen_corporativo": "Nacida en 2013 producto de la fusión de Trusal S.A. y Salmones Pacific Star S.A. Inscrita en la CMF, concentra operaciones en Canal Moraleda y Seno Gala.",
-      "total_concesiones_aysen": 34,
-      "porcentaje_regional_concesiones": 4.56,
-      "centros_activos_estimados": 11,
-      "biomasa_estimada_ton": 22960,
+      "total_concesiones_aysen": 24,
+      "porcentaje_regional_concesiones": 3.22,
+      "centros_activos_estimados": 8,
+      "biomasa_estimada_ton": 16213,
       "comunas_presencia": [
         "Cisnes",
         "Aysén"
@@ -13969,10 +13969,10 @@ window.AYSEN_HUBS_DATA = {
       "grupo_controlador": "Nissui Corporation (Tokio, Japón)",
       "origen_capital": "Japón",
       "resumen_corporativo": "Pionera absoluta del cultivo de salmón coho en Chile, fundada en 1982 e integrada a Nissui en 1988. Opera una de las plantas de procesamiento primario más emblemáticas de la región en Puerto Chacabuco.",
-      "total_concesiones_aysen": 28,
-      "porcentaje_regional_concesiones": 3.76,
-      "centros_activos_estimados": 9,
-      "biomasa_estimada_ton": 18932,
+      "total_concesiones_aysen": 20,
+      "porcentaje_regional_concesiones": 2.68,
+      "centros_activos_estimados": 7,
+      "biomasa_estimada_ton": 13494,
       "comunas_presencia": [
         "Aysén"
       ],

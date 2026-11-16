@@ -363,8 +363,8 @@
       "pais_matriz": "Canadá",
       "grupo_empresarial": "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
       "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
-      "concesiones_estimadas_aysen": 26,
-      "pct_concesiones_regional": 3.49,
+      "concesiones_estimadas_aysen": 18,
+      "pct_concesiones_regional": 2.42,
       "comunas_operacion": [
         "Aysén"
       ],
@@ -497,8 +497,8 @@
       "pais_matriz": "China",
       "grupo_empresarial": "Grupo Joyvio (filial de alimentos de Legend Holdings Corporation, matriz de Lenovo, China)",
       "resumen_corporativo": "Australis Seafoods fue fundada por Isidoro Quiroga y vendida en 2019 al holding chino Joyvio por USD 921M. Es una de las mayores empresas productoras de salmón del país, con alta presencia en fiordos de Aysén y Cisnes.",
-      "concesiones_estimadas_aysen": 58,
-      "pct_concesiones_regional": 7.79,
+      "concesiones_estimadas_aysen": 46,
+      "pct_concesiones_regional": 6.17,
       "comunas_operacion": [
         "Aysén",
         "Cisnes"
@@ -597,8 +597,8 @@
       "pais_matriz": "Chile",
       "grupo_empresarial": "Grupo Camanchaca (Familias Cifuentes y Stengel)",
       "resumen_corporativo": "Grupo pesquero y acuícola histórico chileno. En 2017 escindió Salmones Camanchaca S.A., cotizando en la Bolsa de Santiago y de Oslo. Adquirió Fiordo Blanco S.A. en 2004, acumulando una sólida base de concesiones en Cisnes y Aysén.",
-      "concesiones_estimadas_aysen": 48,
-      "pct_concesiones_regional": 6.44,
+      "concesiones_estimadas_aysen": 38,
+      "pct_concesiones_regional": 5.1,
       "comunas_operacion": [
         "Cisnes",
         "Aysén"
@@ -667,8 +667,8 @@
       "pais_matriz": "Chile",
       "grupo_empresarial": "Grupo Alimar (Familia Izquierdo Menéndez)",
       "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
-      "concesiones_estimadas_aysen": 36,
-      "pct_concesiones_regional": 4.83,
+      "concesiones_estimadas_aysen": 27,
+      "pct_concesiones_regional": 3.62,
       "comunas_operacion": [
         "Cisnes",
         "Aysén"
@@ -731,8 +731,8 @@
       "pais_matriz": "Chile",
       "grupo_empresarial": "Empresas Yadrán (Familia Briones)",
       "resumen_corporativo": "Grupo de larga tradición en Chiloé y el archipiélago de las Guaitecas. Posee una de las mayores concentraciones de concesiones en la Comuna de Guaitecas (Melinka, Isla Gran Guaiteca) y Canal Puyuhuapi.",
-      "concesiones_estimadas_aysen": 40,
-      "pct_concesiones_regional": 5.37,
+      "concesiones_estimadas_aysen": 31,
+      "pct_concesiones_regional": 4.16,
       "comunas_operacion": [
         "Guaitecas",
         "Cisnes"
@@ -813,8 +813,8 @@
       "pais_matriz": "Chile",
       "grupo_empresarial": "Salmones Austral S.A. (Familias Navarro, Hurtado y Puchi)",
       "resumen_corporativo": "Nacida en 2013 producto de la fusión de Trusal S.A. y Salmones Pacific Star S.A. Inscrita en la CMF, concentra operaciones en Canal Moraleda y Seno Gala.",
-      "concesiones_estimadas_aysen": 34,
-      "pct_concesiones_regional": 4.56,
+      "concesiones_estimadas_aysen": 24,
+      "pct_concesiones_regional": 3.22,
       "comunas_operacion": [
         "Cisnes",
         "Aysén"
@@ -881,8 +881,8 @@
       "pais_matriz": "Japón",
       "grupo_empresarial": "Nissui Corporation (Tokio, Japón)",
       "resumen_corporativo": "Pionera absoluta del cultivo de salmón coho en Chile, fundada en 1982 e integrada a Nissui en 1988. Opera una de las plantas de procesamiento primario más emblemáticas de la región en Puerto Chacabuco.",
-      "concesiones_estimadas_aysen": 28,
-      "pct_concesiones_regional": 3.76,
+      "concesiones_estimadas_aysen": 20,
+      "pct_concesiones_regional": 2.68,
       "comunas_operacion": [
         "Aysén"
       ],

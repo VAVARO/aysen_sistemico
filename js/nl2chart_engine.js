@@ -112,6 +112,7 @@ Responde UNICAMENTE en formato JSON plano:
       .toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '') // Elimina tildes y diacríticos
+      .replace(/\b(pm|mp)\s*2[.,]5\b/gi, 'mp25')
       .replace(/[^a-z0-9\s_-]/g, ' ')   // Puntuación a espacios
       .replace(/\s+/g, ' ')            // Colapsar espacios múltiples
       .trim();
