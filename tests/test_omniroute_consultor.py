@@ -1415,6 +1415,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
                 assert(r.reply.includes('Tortel') && r.reply.includes("O'Higgins") && r.reply.includes('Lago Verde'), 'P6 debe listar Tortel, O\'Higgins y Lago Verde: ' + r.reply);
                 assert(r.reply.includes('1.931') && r.reply.includes('1,917%'), 'P6 debe calcular 1.931 hab. y 1,917%: ' + r.reply);
                 assert(!r.reply.includes('Guaitecas') && !r.reply.includes('2.740'), 'P6 no debe incluir Guaitecas ni 2.740: ' + r.reply);
+                assert(r.chart && Array.isArray(r.chart.focusComunas) && r.chart.focusComunas.length === 3, 'P6 debe poblar focusComunas de 3 comunas');
             }
 
             // 2. Localidades sub-comunales (P9.2): Puerto Río Tranquilo vs Puyuhuapi
@@ -1425,21 +1426,24 @@ class TestOmniRouteConsultor(unittest.TestCase):
             assert(p92.chart && Array.isArray(p92.chart.focusComunas), 'P9.2 debe poblar focusComunas');
             assert(p92.chart.focusComunas.includes('Río Ibáñez') && p92.chart.focusComunas.includes('Cisnes'), 'focusComunas debe incluir Río Ibáñez y Cisnes');
 
-            // 3. Ingles + PM2.5 + Scatter (P7)
+            // 3. Ingles + PM2.5 + Scatter (P7 / A3)
             const p7 = await client.query('Show me a scatter plot comparing firewood heating dependency and PM2.5 critical days across the 10 communes of Aysén');
             assert(p7 && p7.chart && p7.chart.render === true, 'P7 debe renderizar grafico');
             assert.strictEqual(p7.chart.type, 'scatter', 'P7 debe producir scatter');
             const p7Vars = [p7.chart.varX, p7.chart.varY];
             assert(p7Vars.includes('hogares_lena_pct') && p7Vars.includes('dias_sobre_norma_mp25'), 'P7 variables esperadas: ' + p7Vars.join(','));
+            assert((p7.reply.includes('-0,28') || p7.reply.includes('negativa')) && p7.reply.includes('Guaitecas') && p7.reply.includes('inferior-derecho'), 'A3 scatter debe coincidir con r=-0,28, minimo Guaitecas y cuadrante inferior-derecho: ' + p7.reply);
+            assert(!/\btendencia positiva\b|\bpositiva\b/i.test(p7.reply), 'A3 scatter no debe decir tendencia positiva: ' + p7.reply);
 
             // 4. Jailbreak fuera de dominio (P4) -> render false
             const p4 = await client.query('¿Cuál fue el candidato ganador en Chile o cuánto cuesta un pasaje aéreo Santiago Coyhaique?');
             assert(p4 && p4.chart && p4.chart.render === false, 'P4 debe devolver chart.render === false');
 
-            // 5. Meta-consulta de frescura (P8) -> render false y menciona 17 de octubre de 2026
+            // 5. Meta-consulta de frescura (P8) -> render false y ciclo mensual dia 1 dinamico (sin 17 de octubre)
             const p8 = await client.query('¿Hasta qué fecha están actualizados estos datos y de dónde provienen?');
             assert(p8 && p8.chart && p8.chart.render === false, 'P8 debe devolver chart.render === false');
-            assert(p8.reply.includes('17 de octubre de 2026'), 'P8 debe indicar corte 17 de octubre de 2026: ' + p8.reply);
+            assert(p8.reply.includes('día 1 de cada mes'), 'P8 debe indicar actualizacion dia 1 de cada mes: ' + p8.reply);
+            assert(!p8.reply.includes('17 de octubre'), 'P8 no debe contener fecha hardcodeada 17 de octubre: ' + p8.reply);
 
             // 6. Desempleo ausente (P3) y PIB/Providencia con proxy SII (P2)
             const p3 = await client.query('¿Cuál es la tasa de desempleo comunal en Aysén?');
@@ -1484,6 +1488,26 @@ class TestOmniRouteConsultor(unittest.TestCase):
             const c02 = await client.query('¿Cuál es la tendencia temporal del turismo en Aysén desde 2018 hasta 2026?');
             assert(c02 && c02.chart && c02.chart.type === 'line', 'Consulta 02 debe usar grafico de linea temporal');
             assert(!/no (?:dispone|cuenta con) (?:de )?(?:serie|datos anuales)/i.test(c02.reply), 'Consulta 02 no debe negar serie anual: ' + c02.reply);
+
+            // 9. Casos borde Red Teaming v2.0 (A5b, B6, B8, B9)
+            const a5b = await client.query('Compara la población y el presupuesto municipal de Aysén, Puerto Río Tranquilo y Puyuhuapi');
+            assert(a5b && a5b.chart && Array.isArray(a5b.chart.focusComunas), 'A5b debe poblar focusComunas');
+            assert(a5b.chart.focusComunas.includes('Aysén') && a5b.chart.focusComunas.includes('Río Ibáñez') && a5b.chart.focusComunas.includes('Cisnes'), 'A5b focusComunas esperadas: ' + a5b.chart.focusComunas.join(','));
+            assert(a5b.reply.includes('Puyuhuapi (Cisnes)') && a5b.reply.includes('Aysén') && a5b.reply.includes('Río Ibáñez') && a5b.reply.includes('Cisnes'), 'A5b reply incompleto: ' + a5b.reply);
+
+            const b6 = await client.query('¿Cuál es la esperanza de vida y el índice de envejecimiento de las 4 comunas más pobladas?');
+            assert(b6 && b6.chart && Array.isArray(b6.chart.focusComunas) && b6.chart.focusComunas.length === 4, 'B6 debe enfocar las 4 comunas mas pobladas');
+            assert(b6.chart.focusComunas.includes('Coyhaique') && b6.chart.focusComunas.includes('Aysén') && b6.chart.focusComunas.includes('Cisnes') && b6.chart.focusComunas.includes('Chile Chico'), 'B6 focusComunas incorrectas: ' + b6.chart.focusComunas.join(','));
+            assert(b6.reply.includes('Esperanza de Vida') && b6.reply.includes('Índice Envejecimiento'), 'B6 debe incluir ambas variables: ' + b6.reply);
+
+            const b8 = await client.query('¿Quién es el alcalde de Tortel y tiene hospital o aeródromo?');
+            assert(b8 && b8.chart && b8.chart.render === false, 'B8 nominal compuesta debe devolver render === false');
+            assert(b8.reply.includes('Marisela') && /postas/i.test(b8.reply) && /aeródromo/i.test(b8.reply), 'B8 debe acumular alcalde, salud y aerodromo: ' + b8.reply);
+
+            const b9 = await client.query('Compara Puerto Aysén, Bahía Murta y Caleta Andrade con Providencia en PIB per cápita y dime el top 15 de comunas con más empresas');
+            assert(b9 && b9.reply && b9.reply.includes('Nota:'), 'B9 debe incluir nota de localidades: ' + b9.reply);
+            assert(b9.reply.includes('Aysén registra 2.100') && b9.reply.includes('Río Ibáñez registra 238'), 'B9 debe resumir SII de Aysen (2.100) y Rio Ibanez (238): ' + b9.reply);
+            assert(b9.reply.includes('10 comunas'), 'B9 debe aclarar total de 10 comunas ante pedido top 15: ' + b9.reply);
 
             console.log('AUDITORIA_9_CASOS_BLOQUES_1_A_4_OK');
         })().catch(err => {

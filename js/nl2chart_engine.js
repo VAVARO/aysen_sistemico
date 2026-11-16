@@ -4,7 +4,7 @@
  * Motor de Traducción de Lenguaje Natural a Gráficos (NL2Chart) para Aysén Sistémico
  * Arquitectura: 100% Client-Side, Zero-API, Latencia 0ms, Costo $0, CERO EMOJIS
  * Autor: Álvaro Contreras Barrios
- * Fecha: 17-Oct-2026
+ * Actualización: Mensual (día 1 de cada mes)
  *
  * Mapea expresiones cotidianas, modismos chilenos y consultas ciudadanas legas
  * a variables canónicas, satélites y configuraciones de gráficos para

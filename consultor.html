@@ -451,9 +451,9 @@
 
     .evidence-title-row {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
       border-bottom: 1px solid var(--border-subtle);
       padding-bottom: 10px;
     }
@@ -463,12 +463,14 @@
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--cobalt-dark);
+      line-height: 1.25;
     }
 
     .evidence-meta {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--ink-muted);
+      line-height: 1.35;
     }
 
     .chart-stage {
@@ -486,7 +488,7 @@
     .multi-chart-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 14px;
       width: 100%;
     }
 
@@ -497,14 +499,15 @@
     }
 
     .multi-chart-cell {
-      background: var(--paper-subtle);
+      background: #ffffff;
       border: 1px solid var(--border-subtle);
       border-radius: 4px;
-      padding: 10px 12px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       min-width: 0;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
     }
 
     .multi-chart-cell-title {
@@ -517,7 +520,7 @@
 
     .multi-chart-canvas-wrap {
       position: relative;
-      height: 185px;
+      height: 205px;
       width: 100%;
     }
 
@@ -541,13 +544,13 @@
       font-family: var(--font-mono);
       font-weight: 600;
       color: var(--ink-secondary);
-      padding: 8px 10px;
+      padding: 7px 8px;
       border-bottom: 1px solid var(--border-subtle);
       white-space: nowrap;
     }
 
     .evidence-table td {
-      padding: 7px 10px;
+      padding: 7px 8px;
       border-bottom: 1px solid var(--border-subtle);
       color: var(--ink);
     }
@@ -559,6 +562,7 @@
     .evidence-table .td-num {
       font-family: var(--font-mono);
       text-align: right;
+      white-space: nowrap;
     }
 
     /* Indicador de Estado Vacío en Panel Derecho */
@@ -864,7 +868,9 @@
           btnScopeFilter.style.display = 'none';
           return;
         }
-        const labelStr = focusList.length > 0 ? focusList.join(' / ') : (currentChartState.comunaName || currentChartState.highlightComuna || 'Comuna');
+        const labelStr = focusList.length > 2
+          ? `${focusList.length} comunas`
+          : (focusList.length > 0 ? focusList.join(' / ') : (currentChartState.comunaName || currentChartState.highlightComuna || 'Comuna'));
         btnScopeFilter.style.display = 'inline-block';
         btnScopeFilter.classList.toggle('active', Boolean(currentChartState.onlyFocusedComunas));
         btnScopeFilter.textContent = currentChartState.onlyFocusedComunas
@@ -1309,8 +1315,25 @@
         }
       };
 
+      function formatCompactTick(val) {
+        if (typeof val !== 'number' || !Number.isFinite(val)) return String(val ?? '');
+        const abs = Math.abs(val);
+        if (abs >= 1000000) {
+          return `${(val / 1000000).toLocaleString('es-CL', { maximumFractionDigits: 1 })}M`;
+        }
+        if (abs >= 1000) {
+          return `${(val / 1000).toLocaleString('es-CL', { maximumFractionDigits: 1 })}k`;
+        }
+        return val.toLocaleString('es-CL');
+      }
+
+      function shortenAxisText(text, maxLen = 36) {
+        const s = String(text || '');
+        return s.length > maxLen ? `${s.slice(0, maxLen - 2)}...` : s;
+      }
+
       // Helper para construir gráfico de dispersión reutilizable (canvas único o sub-gráfico)
-      function buildScatterConfig(comunasList, vX, vY) {
+      function buildScatterConfig(comunasList, vX, vY, isCompactCell = false) {
         const metaX = getVarMeta(vX);
         const metaY = getVarMeta(vY);
         const scatterPoints = comunasList.map(c => ({
@@ -1319,16 +1342,18 @@
           entity: c.nombre || c.nombre_comuna,
           comuna: c.nombre || c.nombre_comuna
         }));
-        const xTitle = formatAxisLabel(metaX.label, metaX.unit);
-        const yTitle = formatAxisLabel(metaY.label, metaY.unit);
+        const rawXTitle = formatAxisLabel(metaX.label, metaX.unit);
+        const rawYTitle = formatAxisLabel(metaY.label, metaY.unit);
+        const xTitle = isCompactCell ? shortenAxisText(rawXTitle, 38) : rawXTitle;
+        const yTitle = isCompactCell ? shortenAxisText(rawYTitle, 34) : rawYTitle;
         const datasets = [{
           type: 'scatter',
-          label: `${metaX.label} vs. ${metaY.label}`,
+          label: isCompactCell ? shortenAxisText(`${metaX.label} vs. ${metaY.label}`, 40) : `${metaX.label} vs. ${metaY.label}`,
           data: scatterPoints,
           backgroundColor: '#00357f',
           borderColor: '#002255',
           borderWidth: 1.5,
-          pointRadius: 5,
+          pointRadius: isCompactCell ? 4 : 5,
           pointHoverRadius: 7
         }];
 
@@ -1362,6 +1387,8 @@
           });
         }
 
+        const tickFormatter = isCompactCell ? formatCompactTick : (val => val.toLocaleString('es-CL'));
+
         return {
           type: 'scatter',
           data: { datasets },
@@ -1369,12 +1396,17 @@
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            layout: { padding: { top: 8, right: 16, bottom: 4, left: 8 } },
+            layout: { padding: isCompactCell ? { top: 4, right: 10, bottom: 2, left: 4 } : { top: 8, right: 16, bottom: 4, left: 8 } },
             plugins: {
               legend: {
                 display: true,
                 position: 'top',
-                labels: { font: { family: 'IBM Plex Sans', size: 10.5, weight: 500 }, boxWidth: 10, color: '#0f172a' }
+                labels: {
+                  font: { family: 'IBM Plex Sans', size: isCompactCell ? 9.5 : 10.5, weight: 500 },
+                  boxWidth: isCompactCell ? 8 : 10,
+                  padding: isCompactCell ? 6 : 10,
+                  color: '#0f172a'
+                }
               },
               tooltip: {
                 callbacks: {
@@ -1388,13 +1420,13 @@
             },
             scales: {
               x: {
-                title: { display: true, text: xTitle, font: { family: 'IBM Plex Mono', size: 10.5, weight: 600 }, color: '#1c1b1b' },
-                ticks: { font: { family: 'IBM Plex Mono', size: 9.5 }, color: '#475569', callback: val => val.toLocaleString('es-CL') }
+                title: { display: true, text: xTitle, font: { family: 'IBM Plex Mono', size: isCompactCell ? 9.5 : 10.5, weight: 600 }, color: '#1c1b1b' },
+                ticks: { font: { family: 'IBM Plex Mono', size: 9.5 }, color: '#475569', callback: tickFormatter }
               },
               y: {
-                title: { display: true, text: yTitle, font: { family: 'IBM Plex Mono', size: 10.5, weight: 600 }, color: '#1c1b1b' },
+                title: { display: true, text: yTitle, font: { family: 'IBM Plex Mono', size: isCompactCell ? 9.5 : 10.5, weight: 600 }, color: '#1c1b1b' },
                 grid: { color: 'rgba(15, 23, 42, 0.06)' },
-                ticks: { font: { family: 'IBM Plex Mono', size: 9.5 }, color: '#475569', callback: val => val.toLocaleString('es-CL') }
+                ticks: { font: { family: 'IBM Plex Mono', size: 9.5 }, color: '#475569', callback: tickFormatter }
               }
             }
           }
@@ -1475,15 +1507,14 @@
                   yAxisID: 'y1'
                 });
               }
-              const opts = getChartOptions('', { label: ds0.label || '', unit: ds0.unit || '' }, ds1 ? { label: ds1.label || '', unit: ds1.unit || '' } : null);
-              opts.plugins.legend.labels.font.size = 9.5;
+              const opts = getChartOptions('', { label: ds0.label || '', unit: ds0.unit || '' }, ds1 ? { label: ds1.label || '', unit: ds1.unit || '' } : null, true);
               activeMultiChartInstances.push(new Chart(subCanvas, {
                 type: 'bar',
                 data: { labels: subSpec.labels, datasets: subDatasets },
                 options: opts
               }));
             } else if (subSpec.type === 'scatter' && subSpec.varX && subSpec.varY && activeComunas.length > 2) {
-              activeMultiChartInstances.push(new Chart(subCanvas, buildScatterConfig(activeComunas, subSpec.varX, subSpec.varY)));
+              activeMultiChartInstances.push(new Chart(subCanvas, buildScatterConfig(activeComunas, subSpec.varX, subSpec.varY, true)));
             } else if (subSpec.varX) {
               const mX = getVarMeta(subSpec.varX);
               const mY = subSpec.varY ? getVarMeta(subSpec.varY) : null;
@@ -1510,7 +1541,7 @@
               activeMultiChartInstances.push(new Chart(subCanvas, {
                 type: 'bar',
                 data: { labels: activeComunas.map(c => c.nombre || c.nombre_comuna), datasets: subDs },
-                options: getChartOptions('', mX, mY)
+                options: getChartOptions('', mX, mY, true)
               }));
             }
           });
@@ -1775,21 +1806,23 @@
         renderTable(currentChartState);
       }
 
-      function getChartOptions(xTitle, metaX, metaY) {
+      function getChartOptions(xTitle, metaX, metaY, isCompactCell = false) {
         const isBivariate = Boolean(metaY && (metaY.key || metaY.label));
+        const yTickCallback = isCompactCell ? formatCompactTick : (val => val.toLocaleString('es-CL'));
         const scales = {
           x: {
             title: {
-              display: Boolean(xTitle),
+              display: Boolean(xTitle) && !isCompactCell,
               text: xTitle || '',
               font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
               color: '#1c1b1b'
             },
             grid: { display: false },
             ticks: {
-              font: { family: 'IBM Plex Mono', size: 10 },
-              color: '#475569',
-              maxRotation: 35,
+              font: { family: 'IBM Plex Mono', size: 10, weight: isCompactCell ? 600 : 400 },
+              color: isCompactCell ? '#334155' : '#475569',
+              autoSkip: !isCompactCell,
+              maxRotation: isCompactCell ? 0 : 35,
               minRotation: 0
             }
           },
@@ -1797,18 +1830,16 @@
             type: 'linear',
             position: 'left',
             title: {
-              display: true,
+              display: !isCompactCell,
               text: formatAxisLabel(metaX.label, metaX.unit),
               font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
               color: '#00357f'
             },
             grid: { color: 'rgba(15, 23, 42, 0.06)' },
             ticks: {
-              font: { family: 'IBM Plex Mono', size: 10 },
+              font: { family: 'IBM Plex Mono', size: isCompactCell ? 9.5 : 10 },
               color: '#00357f',
-              callback: function (val) {
-                return val.toLocaleString('es-CL');
-              }
+              callback: yTickCallback
             }
           }
         };
@@ -1819,17 +1850,15 @@
             position: 'right',
             grid: { drawOnChartArea: false },
             title: {
-              display: true,
+              display: !isCompactCell,
               text: formatAxisLabel(metaY.label, metaY.unit),
               font: { family: 'IBM Plex Mono', size: 11, weight: 600 },
               color: '#c2410c'
             },
             ticks: {
-              font: { family: 'IBM Plex Mono', size: 10 },
+              font: { family: 'IBM Plex Mono', size: isCompactCell ? 9.5 : 10 },
               color: '#c2410c',
-              callback: function (val) {
-                return val.toLocaleString('es-CL');
-              }
+              callback: yTickCallback
             }
           };
         }
@@ -1838,15 +1867,16 @@
           responsive: true,
           maintainAspectRatio: false,
           layout: {
-            padding: { top: 8, right: 16, bottom: 4, left: 8 }
+            padding: isCompactCell ? { top: 4, right: 6, bottom: 2, left: 4 } : { top: 8, right: 16, bottom: 4, left: 8 }
           },
           plugins: {
             legend: {
               display: true,
               position: 'top',
               labels: {
-                font: { family: 'IBM Plex Sans', size: 11, weight: 500 },
-                boxWidth: 12,
+                font: { family: 'IBM Plex Sans', size: isCompactCell ? 9.5 : 11, weight: 500 },
+                boxWidth: isCompactCell ? 9 : 12,
+                padding: isCompactCell ? 8 : 10,
                 color: '#0f172a'
               }
             },
@@ -1932,11 +1962,11 @@
       function populateTableComunaProfile(comunaName, profileRows) {
         if (!evidenceTableBody || !evidenceTableHead) return;
         evidenceTableHead.innerHTML = `<tr>
-          <th>Dimensión Temática</th>
-          <th>Indicador Territorial</th>
-          <th class="td-num">Valor en ${comunaName}</th>
-          <th class="td-num">Ranking Regional</th>
-          <th class="td-num">Promedio / Total Regional</th>
+          <th>Dimensión</th>
+          <th>Indicador</th>
+          <th class="td-num">En ${comunaName}</th>
+          <th class="td-num">Rank.</th>
+          <th class="td-num">Ref. Regional</th>
         </tr>`;
 
         evidenceTableBody.innerHTML = '';

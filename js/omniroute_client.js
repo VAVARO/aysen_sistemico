@@ -1366,6 +1366,41 @@
         localidadesMap.set(strippedLoc, entry);
       }
     });
+    const EXPLICIT_LOCALIDADES = [
+      { key: 'puyuhuapi', name: 'Puyuhuapi', ine: '11202' },
+      { key: 'la junta', name: 'La Junta', ine: '11202' },
+      { key: 'raul marin balmaceda', name: 'Raúl Marín Balmaceda', ine: '11202' },
+      { key: 'puerto cisnes', name: 'Puerto Cisnes', ine: '11202' },
+      { key: 'puerto rio tranquilo', name: 'Puerto Río Tranquilo', ine: '11402' },
+      { key: 'rio tranquilo', name: 'Puerto Río Tranquilo', ine: '11402' },
+      { key: 'bahia murta', name: 'Bahía Murta', ine: '11402' },
+      { key: 'puerto murta', name: 'Bahía Murta', ine: '11402' },
+      { key: 'cerro castillo', name: 'Villa Cerro Castillo', ine: '11402' },
+      { key: 'villa cerro castillo', name: 'Villa Cerro Castillo', ine: '11402' },
+      { key: 'caleta andrade', name: 'Caleta Andrade', ine: '11201' },
+      { key: 'puerto aguirre', name: 'Puerto Aguirre', ine: '11201' },
+      { key: 'manihuales', name: 'Villa Mañihuales', ine: '11201' },
+      { key: 'villa manihuales', name: 'Villa Mañihuales', ine: '11201' },
+      { key: 'puerto chacabuco', name: 'Puerto Chacabuco', ine: '11201' },
+      { key: 'chacabuco', name: 'Puerto Chacabuco', ine: '11201' },
+      { key: 'puerto guadal', name: 'Puerto Guadal', ine: '11401' },
+      { key: 'puerto bertrand', name: 'Puerto Bertrand', ine: '11401' },
+      { key: 'puerto sánchez', name: 'Puerto Sánchez', ine: '11402' },
+      { key: 'puerto sanchez', name: 'Puerto Sánchez', ine: '11402' }
+    ];
+    EXPLICIT_LOCALIDADES.forEach(item => {
+      const parentEnt = entityByIne.get(item.ine);
+      if (!parentEnt) return;
+      const nKey = normalizeText(item.key);
+      if (!nKey || localidadesMap.has(nKey)) return;
+      localidadesMap.set(nKey, {
+        localidadName: item.name,
+        normName: nKey,
+        comuna_ine: item.ine,
+        comunaName: parentEnt.name,
+        entity: parentEnt
+      });
+    });
     const localidadesList = Array.from(localidadesMap.entries())
       .sort((a, b) => b[0].length - a[0].length);
 
@@ -2264,6 +2299,56 @@
   }
 
   /**
+   * Calcula estadísticos exactos de regresión bivariada (Pearson r, R², extremos reales
+   * y cuadrantes respecto a la media) para sincronizar texto y scatter plot sin alucinaciones.
+   */
+  function computeBivariateStats(entities, varXKey, varYKey, excludeCoyhaique = false) {
+    const pts = (entities || [])
+      .filter(e => !(excludeCoyhaique && (e.id === '11101' || e.name.toLowerCase() === 'coyhaique')))
+      .map(e => ({
+        comuna: e.name,
+        x: typeof e.raw?.[varXKey] === 'number' ? e.raw[varXKey] : null,
+        y: typeof e.raw?.[varYKey] === 'number' ? e.raw[varYKey] : null
+      }))
+      .filter(p => p.x !== null && p.y !== null);
+
+    const n = pts.length;
+    if (n < 2) return null;
+    const meanX = pts.reduce((s, p) => s + p.x, 0) / n;
+    const meanY = pts.reduce((s, p) => s + p.y, 0) / n;
+    let sxx = 0, syy = 0, sxy = 0;
+    pts.forEach(p => {
+      const dx = p.x - meanX;
+      const dy = p.y - meanY;
+      sxx += dx * dx;
+      syy += dy * dy;
+      sxy += dx * dy;
+    });
+    const r = (sxx > 0 && syy > 0) ? (sxy / Math.sqrt(sxx * syy)) : 0;
+    const r2 = r * r;
+    const sense = Math.abs(r) < 0.1 ? 'casi nula / muy débil' : (r > 0 ? 'positiva' : 'negativa');
+    const byYDesc = [...pts].sort((a, b) => b.y - a.y);
+    const byXDesc = [...pts].sort((a, b) => b.x - a.x);
+
+    return {
+      n,
+      r,
+      r2,
+      sense,
+      meanX,
+      meanY,
+      maxX: { comuna: byXDesc[0].comuna, value: byXDesc[0].x },
+      minX: { comuna: byXDesc[n - 1].comuna, value: byXDesc[n - 1].x },
+      maxY: { comuna: byYDesc[0].comuna, value: byYDesc[0].y },
+      minY: { comuna: byYDesc[n - 1].comuna, value: byYDesc[n - 1].y },
+      topRight: pts.filter(p => p.x >= meanX && p.y >= meanY).map(p => p.comuna),
+      bottomRight: pts.filter(p => p.x >= meanX && p.y < meanY).map(p => p.comuna),
+      topLeft: pts.filter(p => p.x < meanX && p.y >= meanY).map(p => p.comuna),
+      bottomLeft: pts.filter(p => p.x < meanX && p.y < meanY).map(p => p.comuna)
+    };
+  }
+
+  /**
    * Bloque 1 & 4: Construye 4 gráficos temáticos enfocados en una única comuna vs. Promedio Regional
    * para acompañar los 4 bloques de su perfil integral sin saturar con las otras 9 comunas.
    */
@@ -2281,7 +2366,7 @@
         title: `1. Demografía y Territorio (${ent.name})`,
         type: 'bar',
         customCategoryData: true,
-        labels: [ent.name, 'Promedio Regional'],
+        labels: [ent.name, 'Prom. Reg.'],
         categoryLabel: 'Escala Comunal vs. Promedio',
         varX: 'poblacion_censo_2024',
         varY: 'superficie_km2',
@@ -2296,7 +2381,7 @@
             title: `2. Vocación Acuícola (${ent.name})`,
             type: 'bar',
             customCategoryData: true,
-            labels: [ent.name, 'Promedio Regional'],
+            labels: [ent.name, 'Prom. Reg.'],
             categoryLabel: 'Escala Comunal vs. Promedio',
             varX: 'concesiones_salmon',
             varY: 'biomasa_salmon_ton',
@@ -2310,7 +2395,7 @@
             title: `2. Economía y Turismo (${ent.name})`,
             type: 'bar',
             customCategoryData: true,
-            labels: [ent.name, 'Promedio Regional'],
+            labels: [ent.name, 'Prom. Reg.'],
             categoryLabel: 'Escala Comunal vs. Promedio',
             varX: 'empresas_sii',
             varY: 'prestadores_sernatur',
@@ -2324,7 +2409,7 @@
         title: `3. Finanzas Municipales SINIM (${ent.name})`,
         type: 'bar',
         customCategoryData: true,
-        labels: [ent.name, 'Promedio Regional'],
+        labels: [ent.name, 'Prom. Reg.'],
         categoryLabel: 'Escala Comunal vs. Promedio',
         varX: 'presupuesto_per_capita_mclp',
         varY: 'dependencia_fcm_pct',
@@ -2338,7 +2423,7 @@
         title: `4. Social y Energía Térmica (${ent.name})`,
         type: 'bar',
         customCategoryData: true,
-        labels: [ent.name, 'Promedio Regional'],
+        labels: [ent.name, 'Prom. Reg.'],
         categoryLabel: 'Escala Comunal vs. Promedio',
         varX: 'pobreza_multidim_pct',
         varY: 'hogares_lena_pct',
@@ -2554,9 +2639,12 @@
 
   function detectSubsetRankingIntent(qNorm) {
     const asksAsc = /\b(menos\s+pobladas?|menor\s+poblacion|mas\s+pequenas?|menos\s+habitantes|comunas?\s+menores|menor\s+valor|menores\s+valores|ultimas?\s+[0-9]+\s+comunas?)\b/i.test(qNorm);
+    const hasCountQuantifier = /\b(?:las?\s+|los?\s+|top\s+|primeras?\s+|ultimas?\s+)([2-9]|dos|tres|cuatro|cinco|seis|siete)\s+(?:comunas?\s+)?(?:con\s+)?(?:mas|menos|mayores|menores)\b/i.test(qNorm) ||
+      /\b([2-9]|dos|tres|cuatro|cinco|seis|siete)\s+comunas?\s+(?:con\s+)?(?:mas|menos|mayores|menores)\b/i.test(qNorm);
+    const hasFilterMetric = /\b(pobladas?|habitantes|poblacion|superficie|grandes|extensas)\b/i.test(qNorm);
     const asksDescWithSum = /\b(suma|sumatoria|cuanto\s+suman|porcentaje\s+representan|porcentaje\s+del\s+total)\b/i.test(qNorm) &&
       /\b(mas\s+pobladas?|mayor\s+poblacion|mas\s+grandes?|mas\s+habitantes|comunas?\s+mayores|primeras?\s+[0-9]+)\b/i.test(qNorm);
-    if (!asksAsc && !asksDescWithSum) return null;
+    if (!asksAsc && !asksDescWithSum && !(hasCountQuantifier && hasFilterMetric)) return null;
 
     const wordToNum = { dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7 };
     let n = null;
@@ -2570,9 +2658,19 @@
     if (!n) {
       n = /\bcomunas\b/.test(qNorm) ? 3 : 1;
     }
+
+    const direction = (asksAsc || /\b(menos|menor|menores|pequenas?|ultimas?)\b/i.test(qNorm)) ? 'asc' : 'desc';
+    let filterVarKey = null;
+    if (/\b(pobladas?|habitantes|poblacion)\b/i.test(qNorm)) {
+      filterVarKey = 'poblacion_censo_2024';
+    } else if (/\b(superficie|grandes|extensas)\b/i.test(qNorm)) {
+      filterVarKey = 'superficie_km2';
+    }
+
     return {
-      direction: asksAsc ? 'asc' : 'desc',
+      direction,
       count: Math.min(n, 10),
+      filterVarKey,
       wantsSum: /\b(suma|sumatoria|cuanto\s+suman|porcentaje|representan|total)\b/i.test(qNorm)
     };
   }
@@ -2650,15 +2748,18 @@
       };
     }
 
-    // Guardrail 0B: Meta-consulta instantánea de fechas de actualización y vigencia del repositorio
+    // Guardrail 0B: Meta-consulta instantánea de fechas de actualización y vigencia del repositorio (ciclo mensual día 1)
     const isFreshnessMetaQuery = /\b(hasta que fecha.*actualizad|estan actualizad.*datos|fecha.*actualizad|ultima actualizacion|indicadores.*desactualizados|frescura.*datos|cuando se actualizaron|fecha de corte|vigencia de las fuentes)\b/i.test(qNorm);
     if (isFreshnessMetaQuery) {
       const autoUp = _dataLake?.meta?.autoUpdate || {};
-      const lastRunIso = String(autoUp.lastRun || '2026-11-02').slice(0, 10);
+      const nowIso = new Date().toISOString().slice(0, 10);
+      const lastRunIso = String(autoUp.lastRun || nowIso).slice(0, 10);
+      const [yr, mo] = lastRunIso.split('-');
+      const cycleCutIso = (yr && mo) ? `${yr}-${mo}-01` : `${nowIso.slice(0, 7)}-01`;
       const activeConns = autoUp.activeApiConnectors || 7;
       const totalSrc = _memoryIndex.fuentes?.length || autoUp.totalSources || 33;
-      const reply = `El corte documental consolidado es del 17 de octubre de 2026 (series 2015–2026), con actualización mensual automática cada día 1 (última corrida: ${lastRunIso}, ${activeConns} conectores API sobre ${totalSrc} fuentes). Fuentes estructurales como Censo INE 2024, CASEN 2022 y Censo Agropecuario 2021 mantienen su última publicación oficial vigente.`;
-      const metaChart = buildEmptyChartSpec('Consulta de metadatos y fechas de actualización del repositorio.');
+      const reply = `La plataforma se actualiza automáticamente el día 1 de cada mes (ciclo mensual vigente: ${cycleCutIso}; última corrida automática registrada: ${lastRunIso}, con ${activeConns} conectores API activos sobre ${totalSrc} fuentes oficiales en series 2015–2026). Fuentes censales y estructurales como Censo INE 2024, CASEN 2022 y Censo Agropecuario 2021 mantienen su última publicación oficial vigente.`;
+      const metaChart = buildEmptyChartSpec('Consulta de vigencia y ciclo de actualización mensual (día 1 de cada mes).');
       return {
         query: rawQuery,
         qNorm,
@@ -2741,6 +2842,15 @@
       })
     );
 
+    const rawNoAccents = String(rawQuery || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const aysenEnt = _memoryIndex.entities.find(e => e.id === '11201');
+    const mentionsAysenInList = aysenEnt &&
+      !/\bregion de aysen\b/i.test(rawNoAccents) &&
+      /\b(aysen\s*,|,\s*aysen\b|aysen\s+(?:vs\.?|versus)\b|(?:vs\.?|versus)\s+aysen\b|\bcompara(?:r|cion)?\b[^?]*\bde\s+aysen\b)/i.test(rawNoAccents);
+    if (mentionsAysenInList && !matchedEntities.some(e => e.id === '11201')) {
+      matchedEntities.unshift(aysenEnt);
+    }
+
     // 1b. Detectar localidades sub-comunales (ej. Puerto Río Tranquilo -> Río Ibáñez, Puyuhuapi -> Cisnes)
     const matchedLocalidades = [];
     const matchedLocalidadSpans = [];
@@ -2756,7 +2866,7 @@
           if (!overlaps) {
             matchedLocalidadSpans.push({ start, end });
             if (!matchedLocalidades.some(l => l.comuna_ine === locInfo.comuna_ine && l.localidadName === locInfo.localidadName)) {
-              matchedLocalidades.push(locInfo);
+              matchedLocalidades.push(Object.assign({}, locInfo, { _pos: start }));
             }
             if (locInfo.entity && !matchedEntities.some(e => e.id === locInfo.entity.id)) {
               matchedEntities.push(locInfo.entity);
@@ -2766,8 +2876,28 @@
       }
     }
 
-    // Guardrail 0D: PIB per cápita comunal o comunas externas a la Región de Aysén (ej. Providencia, Santiago)
     const externalComunaMatch = rawQuery.match(/\b(Providencia|Santiago|Las Condes|Vitacura|Ñuñoa|Nunoa|Maipú|Maipu|Puente Alto|Valparaíso|Valparaiso|Viña del Mar|Concepción|Concepcion|Temuco|Valdivia|Osorno|Puerto Montt|Castro|Ancud|Punta Arenas|Puerto Natales)\b/i);
+    if (aysenEnt && /\bpuerto aysen\b/.test(qNorm) && (matchedLocalidades.length > 0 || externalComunaMatch)) {
+      const ptoPos = qNorm.indexOf('puerto aysen');
+      matchedLocalidades.push({
+        localidadName: 'Puerto Aysén',
+        normName: 'puerto aysen',
+        comuna_ine: '11201',
+        comunaName: aysenEnt.name,
+        entity: aysenEnt,
+        _pos: ptoPos
+      });
+    }
+    if (matchedLocalidades.length > 1) {
+      matchedLocalidades.sort((a, b) => (a._pos ?? 0) - (b._pos ?? 0));
+    }
+
+    const topOver10Match = qNorm.match(/\b(?:top|primeras?|primeros|mayores?|menores?|ultimas?|ultimos)\s+(1[1-9]|[2-9][0-9])\b/);
+    const over10Note = topOver10Match
+      ? ' Nota: la Región de Aysén comprende un total cerrado de 10 comunas.'
+      : '';
+
+    // Guardrail 0D: PIB per cápita comunal o comunas externas a la Región de Aysén (ej. Providencia, Santiago)
     const asksPibOrPrivateIncome = /\b(pib|producto interno bruto|pib per capita|ingreso per capita familiar|sueldo promedio)\b/i.test(qNorm);
     if (externalComunaMatch || asksPibOrPrivateIncome) {
       const extName = externalComunaMatch ? externalComunaMatch[1] : null;
@@ -2778,6 +2908,7 @@
       if (extName) {
         missingParts.push(`no se dispone de datos para ${extName} porque el repositorio cubre exclusivamente las 10 comunas de Aysén`);
       }
+      const locNote0D = buildLocalityNote(matchedLocalidades);
       const disclaimer = `Limitación metodológica: ${missingParts.join('; ')}.`;
 
       if (matchedEntities.length === 0 && extName) {
@@ -2792,7 +2923,7 @@
           isHoldingQuery: false,
           isDeterministicDirect: true,
           directResult: {
-            reply: `${disclaimer} Puede consultar cualquiera de las 10 comunas de la Región de Aysén.`,
+            reply: `${locNote0D}${disclaimer} Puede consultar cualquiera de las 10 comunas de la Región de Aysén.${over10Note}`,
             chart: extChart,
             sources: [],
             relatedHub: 'V'
@@ -2822,11 +2953,14 @@
       const empVar = _memoryIndex.variablesByKey['empresas_sii'];
       const trabVar = _memoryIndex.variablesByKey['trabajadores_sii'];
       let proxyText = '';
-      if (targetEnt) {
-        const r = targetEnt.raw || {};
-        proxyText = ` Como proxy de actividad económica formal en ${targetEnt.name}, el SII registra ${fmtNumber(r.empresas_sii)} empresas vigentes y ${fmtNumber(r.trabajadores_sii)} trabajadores dependientes (frente a ${fmtNumber(empVar?.stats?.sum || 0)} empresas y ${fmtNumber(trabVar?.stats?.sum || 0)} trabajadores en la región).`;
+      if (matchedEntities.length > 0) {
+        const entSummaries = matchedEntities.map(ent => {
+          const r = ent.raw || {};
+          return `${ent.name} registra ${fmtNumber(r.empresas_sii)} empresas vigentes y ${fmtNumber(r.trabajadores_sii)} trabajadores dependientes`;
+        }).join('; ');
+        proxyText = ` Como proxy de actividad económica formal del SII: ${entSummaries} (frente a ${fmtNumber(empVar?.stats?.sum || 0)} empresas y ${fmtNumber(trabVar?.stats?.sum || 0)} trabajadores en la región).${over10Note}`;
       } else {
-        proxyText = ` Como proxy de actividad económica formal comunal, el SII registra ${fmtNumber(empVar?.stats?.sum || 0)} empresas vigentes y ${fmtNumber(trabVar?.stats?.sum || 0)} trabajadores dependientes en Aysén (liderando Coyhaique con ${fmtNumber(empVar?.stats?.max?.value || 0)} empresas).`;
+        proxyText = ` Como proxy de actividad económica formal comunal, el SII registra ${fmtNumber(empVar?.stats?.sum || 0)} empresas vigentes y ${fmtNumber(trabVar?.stats?.sum || 0)} trabajadores dependientes en Aysén (liderando Coyhaique con ${fmtNumber(empVar?.stats?.max?.value || 0)} empresas).${over10Note}`;
       }
       const proxyChart = {
         render: true,
@@ -2838,11 +2972,13 @@
         singleComunaMode: matchedEntities.length === 1,
         focusComunas: matchedEntities.length > 0 ? matchedEntities.map(e => e.name) : null,
         highlightComuna: targetEnt ? targetEnt.name : null,
-        comunaName: targetEnt ? targetEnt.name : null,
-        comunaIne: targetEnt ? targetEnt.id : null,
-        title: targetEnt
+        comunaName: matchedEntities.length === 1 && targetEnt ? targetEnt.name : null,
+        comunaIne: matchedEntities.length === 1 && targetEnt ? targetEnt.id : null,
+        title: matchedEntities.length === 1 && targetEnt
           ? `Proxy Actividad Económica SII — ${targetEnt.name}`
-          : 'Proxy Actividad Económica: Empresas y Trabajadores SII por Comuna',
+          : (matchedEntities.length > 1
+              ? `Proxy Actividad Económica SII: ${matchedEntities.map(e => e.name).join(' vs. ')}`
+              : 'Proxy Actividad Económica: Empresas y Trabajadores SII por Comuna'),
         sourceText: siiSources.map(s => s.institucion).join(' · '),
         excludeCoyhaique
       };
@@ -2856,7 +2992,7 @@
         isHoldingQuery: false,
         isDeterministicDirect: true,
         directResult: {
-          reply: `${disclaimer}${proxyText}`,
+          reply: `${locNote0D}${disclaimer}${proxyText}`,
           chart: proxyChart,
           sources: siiSources,
           relatedHub: 'V'
@@ -2881,38 +3017,47 @@
       };
     }
 
-    // Guardrail 0E: Consultas nominales puntuales sobre 1 comuna que NO requieren gráfico (alcalde, cabecera, provincia, etc.)
-    if (matchedEntities.length === 1 && /\b(quien es el alcalde|quien es la alcaldesa|como se llama el alcalde|partido del alcalde|que partido.*alcalde|cual es la cabecera|a que provincia pertenece|que provincia|cual es el aerodromo|cual es el hospital principal|tiene salida al mar|tiene litoral)\b/i.test(qNorm)) {
+    // Guardrail 0E: Consultas nominales puntuales sobre 1 comuna que NO requieren gráfico (acumula múltiples atributos nominales)
+    const isNominalSingleLookup = matchedEntities.length === 1 && /\b(quien es el alcalde|quien es la alcaldesa|como se llama el alcalde|partido del alcalde|que partido.*alcalde|cual es la cabecera|a que provincia pertenece|que provincia|cual es el aerodromo|tiene aerodromo|cual es el hospital principal|tiene hospital|tiene salida al mar|tiene litoral)\b/i.test(qNorm);
+    if (isNominalSingleLookup) {
       const ent = matchedEntities[0];
       const r = ent.raw || {};
-      let nomReply = '';
-      let nomKeys = ['poblacion_censo_2024'];
+      const nomParts = [];
+      const nomKeys = [];
       let nomHub = 'IV';
-      if (/alcalde|alcaldesa|partido/.test(qNorm)) {
-        nomReply = `El alcalde en ejercicio de ${ent.name} (período 2024–2028) es ${r.alcalde || '-'} (${r.partido_alcalde || '-'}).`;
-        nomKeys = ['alcalde'];
-        nomHub = 'IV';
-      } else if (/cabecera|provincia/.test(qNorm)) {
-        nomReply = `La comuna de ${ent.name} pertenece a la Provincia de ${r.provincia || '-'} y su cabecera comunal es ${r.cabecera || ent.name}.`;
-        nomKeys = ['poblacion_censo_2024'];
-        nomHub = 'VI';
-      } else if (/aerodromo/.test(qNorm)) {
-        nomReply = `El aeródromo principal registrado para la comuna de ${ent.name} es ${r.aerodromo || 'sin registro DGAC directo'}.`;
-        nomKeys = ['aerodromo'];
-        nomHub = 'IV';
-      } else if (/hospital/.test(qNorm)) {
-        nomReply = `El establecimiento de salud principal de ${ent.name} es ${r.salud_principal || '-'}, con ${fmtNumber(r.camas_hospitalarias)} camas hospitalarias y ${fmtNumber(r.postas_salud_rural)} postas rurales.`;
-        nomKeys = ['salud_principal', 'camas_hospitalarias'];
-        nomHub = 'VIII';
-      } else {
-        const tieneMar = (r.concesiones_salmon || 0) > 0 || ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'].includes(ent.name);
-        nomReply = tieneMar
-          ? `La comuna de ${ent.name} cuenta con litoral marítimo en fiordos/canales australes (${fmtNumber(r.concesiones_salmon)} concesiones acuícolas registradas).`
-          : `La comuna de ${ent.name} es un territorio interior sin litoral marítimo (0 concesiones acuícolas).`;
-        nomKeys = ['concesiones_salmon'];
-        nomHub = 'II';
+      if (/\b(alcalde|alcaldesa|partido)\b/.test(qNorm)) {
+        nomParts.push(`El alcalde en ejercicio de ${ent.name} (período 2024–2028) es ${r.alcalde || '-'} (${r.partido_alcalde || '-'}).`);
+        nomKeys.push('alcalde');
       }
-      const nomSources = resolveSourcesForKeys(nomKeys);
+      if (/\b(cabecera|provincia)\b/.test(qNorm)) {
+        nomParts.push(`La comuna de ${ent.name} pertenece a la Provincia de ${r.provincia || '-'} y su cabecera comunal es ${r.cabecera || ent.name}.`);
+        nomKeys.push('poblacion_censo_2024');
+        if (nomParts.length === 1) nomHub = 'VI';
+      }
+      if (/\b(hospital|postas|recinto asistencial|recinto de salud)\b/.test(qNorm)) {
+        const camas = Number(r.camas_hospitalarias) || 0;
+        const postas = Number(r.postas_salud_rural) || 0;
+        const tipoAtencion = camas > 0
+          ? `tiene recinto base en ${r.salud_principal || '-'} (${fmtNumber(camas)} camas hospitalarias y ${fmtNumber(postas)} postas rurales)`
+          : `no cuenta con hospital de mediana/alta complejidad (${fmtNumber(camas)} camas hospitalarias); la atención se articula vía ${r.salud_principal || '-'} con ${fmtNumber(postas)} postas rurales`;
+        nomParts.push(`En salud, ${ent.name} ${tipoAtencion}.`);
+        nomKeys.push('salud_principal', 'camas_hospitalarias');
+        if (nomParts.length === 1) nomHub = 'VIII';
+      }
+      if (/\b(aerodromo|pista aerea)\b/.test(qNorm)) {
+        nomParts.push(`Su aeródromo registrado es ${r.aerodromo || 'sin registro DGAC directo'}.`);
+        nomKeys.push('aerodromo');
+      }
+      if (/\b(salida al mar|litoral)\b/.test(qNorm)) {
+        const tieneMar = (r.concesiones_salmon || 0) > 0 || ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'].includes(ent.name);
+        nomParts.push(tieneMar
+          ? `Cuenta con litoral marítimo en fiordos y canales australes (${fmtNumber(r.concesiones_salmon)} concesiones acuícolas).`
+          : `Es territorio interior sin litoral marítimo (0 concesiones acuícolas).`);
+        nomKeys.push('concesiones_salmon');
+        if (nomParts.length === 1) nomHub = 'II';
+      }
+      const nomReply = `${buildLocalityNote(matchedLocalidades)}${nomParts.join(' ')}`;
+      const nomSources = resolveSourcesForKeys(Array.from(new Set(nomKeys)));
       const nomChart = buildEmptyChartSpec('Consulta nominal puntual respondida directamente sin gráfico.');
       return {
         query: rawQuery,
@@ -3118,7 +3263,7 @@
       .sort((a, b) => b.score - a.score);
 
     const topNumericVars = scoredVars.filter(item => item.variable.isNumeric);
-    const primaryVar = topNumericVars[0]?.variable || null;
+    let primaryVar = topNumericVars[0]?.variable || null;
     const secondaryThreshold = wantsBivariateComparison
       ? Math.max(12, Math.min(32, (topNumericVars[0]?.score || 0) * 0.25))
       : Math.max(22, (topNumericVars[0]?.score || 0) * 0.65);
@@ -3143,8 +3288,34 @@
       ? detectSubsetRankingIntent(qNorm)
       : null;
     if (subsetIntent) {
-      secondaryVar = null;
-      tertiaryVar = null;
+      if (subsetIntent.filterVarKey) {
+        const analyticVars = topNumericVars.filter(item => item.variable.key !== subsetIntent.filterVarKey && item.score >= 12);
+        if (analyticVars.length > 0) {
+          primaryVar = analyticVars[0].variable;
+          secondaryVar = (analyticVars[1] && analyticVars[1].score >= 12) ? analyticVars[1].variable : null;
+          tertiaryVar = null;
+          subsetIntent.isConditionalProjection = true;
+        } else {
+          primaryVar = _memoryIndex.variablesByKey[subsetIntent.filterVarKey] || primaryVar;
+          secondaryVar = null;
+          tertiaryVar = null;
+        }
+      } else {
+        secondaryVar = null;
+        tertiaryVar = null;
+      }
+
+      const sortVar = (subsetIntent.filterVarKey && _memoryIndex.variablesByKey[subsetIntent.filterVarKey])
+        ? _memoryIndex.variablesByKey[subsetIntent.filterVarKey]
+        : primaryVar;
+      if (sortVar && sortVar.stats) {
+        const rawSortList = subsetIntent.direction === 'asc' ? sortVar.stats.rankedAsc : sortVar.stats.ranked;
+        const scopedSortList = excludeCoyhaique
+          ? rawSortList.filter(r => r.comuna_ine !== '11101' && r.comuna.toLowerCase() !== 'coyhaique')
+          : rawSortList;
+        subsetIntent.sortVarKey = sortVar.key;
+        subsetIntent.comunas = scopedSortList.slice(0, subsetIntent.count).map(r => r.comuna);
+      }
     }
 
     const hasSpecificMetricFocus = Boolean(
@@ -3216,7 +3387,14 @@
     const sourceText = sources.map(s => s.institucion).join(' · ');
 
     const singleComunaFlag = matchedEntities.length === 1;
-    const focusComunasList = matchedEntities.length >= 1 ? matchedEntities.map(e => e.name) : null;
+    let focusComunasList = matchedEntities.length >= 1 ? matchedEntities.map(e => e.name) : null;
+    if (!focusComunasList && subsetIntent && Array.isArray(subsetIntent.comunas) && subsetIntent.comunas.length > 0) {
+      focusComunasList = subsetIntent.comunas;
+    }
+
+    const bivariateStats = (primaryVar && secondaryVar && primaryVar.isNumeric && secondaryVar.isNumeric && (wantsScatter || wantsBivariateComparison))
+      ? computeBivariateStats(_memoryIndex.entities, primaryVar.key, secondaryVar.key, excludeCoyhaique)
+      : null;
 
     let chartSpec = {
       render: Boolean(primaryVar || matchedEntities.length > 0 || scoredVars.length > 0 || matchedSector),
@@ -3312,9 +3490,13 @@
       subsetIntent ||
       isGeneralProfileMatch ||
       isMultiEntityNoVars ||
+      (matchedEntities.length >= 2 && primaryVar) ||
+      matchedLocalidades.length > 0 ||
+      (wantsScatter && primaryVar && secondaryVar) ||
       hasTourismTemporalSeries ||
       isHoldingQuery ||
-      tertiaryVar
+      tertiaryVar ||
+      over10Note
     );
 
     return {
@@ -3330,6 +3512,8 @@
       matchedEntities,
       matchedLocalidades,
       subsetIntent,
+      bivariateStats,
+      over10Note,
       isDeterministicDirect,
       topVariables: [primaryVar, secondaryVar, tertiaryVar].filter(Boolean).concat(
         scoredVars.filter(s => !s.variable.isNumeric).slice(0, 1).map(s => s.variable)
@@ -3570,6 +3754,15 @@
       nodos_satelite_relevantes: relevantNodes.length ? relevantNodes : undefined,
       conectividad_multimodal_resumen: connectivityBrief,
       resumen_estadistico_variables_candidatas: varSummaries,
+      correlacion_bivariada_exacta: memoryPacket.bivariateStats ? {
+        pearson_r: Number(memoryPacket.bivariateStats.r.toFixed(2)),
+        r2: Number(memoryPacket.bivariateStats.r2.toFixed(2)),
+        sentido_real: memoryPacket.bivariateStats.sense,
+        maximo_y: memoryPacket.bivariateStats.maxY,
+        minimo_y: memoryPacket.bivariateStats.minY,
+        cuadrante_superior_derecho: memoryPacket.bivariateStats.topRight,
+        cuadrante_inferior_derecho: memoryPacket.bivariateStats.bottomRight
+      } : undefined,
       matriz_comunal_datos_exactos: compactComunasMatrix,
       grafico_sugerido: hasExplicitChartHint ? memoryPacket.chartSpec : undefined
     };
@@ -3595,6 +3788,7 @@
       query,
       qNorm,
       excludeCoyhaique,
+      wantsScatter,
       wantsTemporal,
       hasTourismTemporalSeries,
       isHoldingQuery,
@@ -3603,6 +3797,8 @@
       matchedEntities,
       matchedLocalidades,
       subsetIntent,
+      bivariateStats,
+      over10Note,
       topVariables,
       primaryVar,
       secondaryVar,
@@ -3887,19 +4083,22 @@
         return true;
       };
 
+      const isMultiEntityQuery = matchedEntities.length >= 2;
       const lines = matchedEntities.map(ent => {
         const metricsText = topVariables.slice(0, 2).map(v => {
           const val = ent.raw[v.key];
           const cleanLbl = CANONICAL_LABELS[v.key] || v.label;
           if (typeof val === 'number') {
             const rankIdx = v.stats ? v.stats.ranked.findIndex(r => r.comuna_ine === ent.id) + 1 : null;
-            const rankStr = rankIdx ? ` (#${rankIdx} de ${_memoryIndex.entities.length})` : '';
+            const rankStr = (!isMultiEntityQuery && rankIdx) ? ` (#${rankIdx} de ${_memoryIndex.entities.length})` : (rankIdx ? ` (#${rankIdx})` : '');
             const unitSuffix = shouldAppendUnit(cleanLbl, v.unit) ? ` ${v.unit}` : '';
             return `${cleanLbl}: ${fmtNumber(val)}${unitSuffix}${rankStr}`;
           }
           return `${cleanLbl}: ${val ?? '-'}`;
-        }).join(' · ');
-        return `La comuna de ${ent.name} (Provincia de ${ent.provincia}) registra ${metricsText}.`;
+        }).join(isMultiEntityQuery ? '; ' : ' · ');
+        return isMultiEntityQuery
+          ? `${ent.name}: ${metricsText}.`
+          : `La comuna de ${ent.name} (Provincia de ${ent.provincia}) registra ${metricsText}.`;
       });
 
       const compVar = primaryVar || topVariables[0];
@@ -3909,10 +4108,10 @@
         const aggLabel = compVar.aggregation === 'avg' ? 'Promedio regional' : 'Total regional';
         const aggVal = compVar.aggregation === 'avg' ? compVar.stats.avg : compVar.stats.sum;
         const unitSuffix = shouldAppendUnit(cleanCompLabel, compVar.unit) ? ` ${compVar.unit}` : '';
-        regionalNote = ` ${aggLabel} de ${cleanCompLabel}: ${fmtNumber(aggVal)}${unitSuffix} (máximo en ${compVar.stats.max.comuna} con ${fmtNumber(compVar.stats.max.value)} y mínimo en ${compVar.stats.min.comuna} con ${fmtNumber(compVar.stats.min.value)}).`;
+        regionalNote = ` ${aggLabel} de ${cleanCompLabel}: ${fmtNumber(aggVal)}${unitSuffix} (máx. ${compVar.stats.max.comuna} ${fmtNumber(compVar.stats.max.value)}; mín. ${compVar.stats.min.comuna} ${fmtNumber(compVar.stats.min.value)}).`;
       }
 
-      const combinedReply = `${locNote}${lines.join(' ')}${regionalNote}`;
+      const combinedReply = `${locNote}${lines.join(' ')}${regionalNote}${over10Note || ''}`;
       const res = {
         reply: combinedReply.length > 645 ? combinedReply.slice(0, 642) + '...' : combinedReply,
         chart: Object.assign({}, chartSpec, {
@@ -3929,9 +4128,41 @@
       return res;
     }
 
-    // 7. Caso C: Variables numéricas detectadas a nivel regional (1, 2 o 3 variables y rankings/sumas de subconjuntos)
+    // 7. Caso C: Variables numéricas detectadas a nivel regional (1, 2 o 3 variables, rankings de subconjuntos y rankings condicionados)
     if (primaryVar && primaryVar.isNumeric && primaryVar.stats) {
       if (subsetIntent) {
+        if (subsetIntent.isConditionalProjection && subsetIntent.sortVarKey && Array.isArray(subsetIntent.comunas) && subsetIntent.comunas.length > 0) {
+          const sortVar = _memoryIndex.variablesByKey[subsetIntent.sortVarKey];
+          const sortLbl = CANONICAL_LABELS[sortVar?.key] || sortVar?.label || subsetIntent.sortVarKey;
+          const dirLabel = subsetIntent.direction === 'asc' ? 'menor' : 'mayor';
+          const subsetEnts = subsetIntent.comunas
+            .map(name => _memoryIndex.entities.find(e => e.name === name))
+            .filter(Boolean);
+          const projVars = [primaryVar, secondaryVar, tertiaryVar].filter(v => v && v.isNumeric && v.stats);
+          const varLines = projVars.map(v => {
+            const cleanLbl = CANONICAL_LABELS[v.key] || v.label;
+            const unitStr = v.unit ? ` ${v.unit}` : '';
+            const valsList = subsetEnts.map(e => `${e.name} (${fmtNumber(e.raw[v.key])})`).join(', ');
+            const subVals = subsetEnts.map(e => Number(e.raw[v.key])).filter(Number.isFinite);
+            const subSumV = subVals.reduce((a, b) => a + b, 0);
+            const subAvgV = subVals.length ? (subSumV / subVals.length) : 0;
+            const isAvgV = v.aggregation === 'avg' || v.unit.includes('%');
+            const summaryStr = isAvgV
+              ? `Prom. subconjunto: ${fmtNumber(subAvgV, 1)}${unitStr} vs. Reg.: ${fmtNumber(v.stats.avg, 1)}${unitStr}`
+              : `Suma subconjunto: ${fmtNumber(subSumV)}${unitStr} (Reg.: ${fmtNumber(v.stats.sum)}${unitStr})`;
+            return `${cleanLbl}: ${valsList} [${summaryStr}].`;
+          }).join(' ');
+          const condReply = `En las ${subsetEnts.length} comunas con ${dirLabel} ${sortLbl}: ${varLines}${over10Note || ''}`;
+          const res = {
+            reply: condReply.length > 645 ? condReply.slice(0, 642) + '...' : condReply,
+            chart: chartSpec,
+            sources,
+            relatedHub
+          };
+          updateConversationState(memoryPacket, res);
+          return res;
+        }
+
         const list = subsetIntent.direction === 'asc'
           ? (excludeCoyhaique
               ? primaryVar.stats.rankedAsc.filter(r => r.comuna_ine !== '11101' && r.comuna.toLowerCase() !== 'coyhaique')
@@ -3950,8 +4181,8 @@
         const dirWord = subsetIntent.direction === 'asc' ? 'menores' : 'mayores';
         const isIntensive = primaryVar.aggregation === 'avg' || primaryVar.unit.includes('%');
         const replyStr = isIntensive
-          ? `Las ${subset.length} comunas con valores ${dirWord} en ${cleanLbl} son ${itemsStr} (promedio del subconjunto: ${fmtNumber(subSum / (subset.length || 1), 2)}${unitStr}; promedio regional: ${fmtNumber(primaryVar.stats.avg, 2)}${unitStr}).`
-          : `Las ${subset.length} comunas con valores ${dirWord} en ${cleanLbl} son ${itemsStr}. En conjunto suman exactamente ${fmtNumber(subSum)}${unitStr}, lo que representa el ${fmtNumber(pct, pctDecimals)}% del total regional de ${fmtNumber(totalReg)}${unitStr}.`;
+          ? `Las ${subset.length} comunas con valores ${dirWord} en ${cleanLbl} son ${itemsStr} (promedio del subconjunto: ${fmtNumber(subSum / (subset.length || 1), 2)}${unitStr}; promedio regional: ${fmtNumber(primaryVar.stats.avg, 2)}${unitStr}).${over10Note || ''}`
+          : `Las ${subset.length} comunas con valores ${dirWord} en ${cleanLbl} son ${itemsStr}. En conjunto suman exactamente ${fmtNumber(subSum)}${unitStr}, lo que representa el ${fmtNumber(pct, pctDecimals)}% del total regional de ${fmtNumber(totalReg)}${unitStr}.${over10Note || ''}`;
         const res = {
           reply: replyStr.length > 645 ? replyStr.slice(0, 642) + '...' : replyStr,
           chart: chartSpec,
@@ -3989,15 +4220,24 @@
       };
 
       const isThreeVar = Boolean(tertiaryVar && tertiaryVar.isNumeric && tertiaryVar.stats);
-      const paragraphs = [buildVarParagraph(primaryVar, true, isThreeVar)];
+      const useCompactSummary = isThreeVar || (wantsScatter && Boolean(bivariateStats));
+      const paragraphs = [buildVarParagraph(primaryVar, true, useCompactSummary)];
       if (secondaryVar && secondaryVar.isNumeric && secondaryVar.stats) {
-        paragraphs.push(buildVarParagraph(secondaryVar, false, isThreeVar));
+        paragraphs.push(buildVarParagraph(secondaryVar, false, useCompactSummary));
       }
       if (isThreeVar) {
         paragraphs.push(buildVarParagraph(tertiaryVar, false, true));
       }
+      if (wantsScatter && bivariateStats && secondaryVar && secondaryVar.isNumeric) {
+        const cleanY = CANONICAL_LABELS[secondaryVar.key] || secondaryVar.label;
+        const brList = bivariateStats.bottomRight.slice(0, 3).join(', ');
+        const brClause = brList
+          ? `con comunas de alto X y bajo Y en el cuadrante inferior-derecho (${brList}), `
+          : '';
+        paragraphs.push(`Correlación lineal ${bivariateStats.sense} (r = ${fmtNumber(bivariateStats.r, 2)}, R² = ${fmtNumber(bivariateStats.r2, 2)}): ${brClause}máximo de ${cleanY} en ${bivariateStats.maxY.comuna} (${fmtNumber(bivariateStats.maxY.value)}) y mínimo en ${bivariateStats.minY.comuna} (${fmtNumber(bivariateStats.minY.value)}).`);
+      }
 
-      const combinedVarReply = paragraphs.filter(Boolean).join(' ');
+      const combinedVarReply = `${paragraphs.filter(Boolean).join(' ')}${over10Note || ''}`;
       const res = {
         reply: combinedVarReply.length > 645 ? combinedVarReply.slice(0, 642) + '...' : combinedVarReply,
         chart: chartSpec,

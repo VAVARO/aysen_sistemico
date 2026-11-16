@@ -6,7 +6,7 @@ tests/test_nl2chart_engine.py
 Suite de pruebas unitarias para el motor NL2ChartEngine y el léxico
 semántico en cliente (Zero-API, 100% offline, 0ms, costo $0).
 Autor: Álvaro Contreras Barrios
-Fecha: 17-Oct-2026
+Actualización: Mensual (día 1 de cada mes)
 =============================================================================
 """
 
