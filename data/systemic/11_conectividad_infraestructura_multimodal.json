@@ -35,7 +35,8 @@
       "institucion": "Subsecretaría de Telecomunicaciones (SUBTEL) - FDT",
       "sistema": "Catastro Técnico de Fibra Óptica Austral y Conectividad Escolar",
       "url_origen": "https://www.subtel.gob.cl",
-      "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json"
+      "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json",
+      "archivo_jun2026": "1_SERIES_CONEXIONES_INTERNET_FIJA_JUN26_270826-VF.xlsx"
     },
     {
       "institucion": "Unidad de Pasos Fronterizos (Ministerio del Interior y Seguridad Pública) / Servicio Nacional de Aduanas",
@@ -50,6 +51,13 @@
       "url_origen": "https://dtpr.mtt.gob.cl",
       "metodo_extraccion": "Informes de Continuidad de Servicio, Fallas de Carenas y Decretos de Contingencia de Barcazas",
       "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+    },
+    {
+      "institucion": "Subsecretaría de Telecomunicaciones (SUBTEL)",
+      "sistema": "Series Estadísticas Conexiones Fijas por Comuna y Tecnología (Corte Junio 2026) + FDT Última Milla",
+      "url_origen": "https://www.subtel.gob.cl/estudios-y-estadisticas/internet/",
+      "metodo_extraccion": "Descarga XLSX oficial junio 2026 (hojas 7.7.1, 7.11 y 7.11.1)",
+      "archivo_raw_local": "data/raw/energia_telecom/telecomunicaciones_subtel_historico_2015_2026.json"
     }
   ],
   "por_comuna": [
@@ -72,7 +80,10 @@
           "hogares_sin_internet_fijo_pct": 24.5,
           "cobertura_fibra_hogar_pct": 75.5,
           "establecimientos_educacion_conectados_n": 24,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 15785,
+          "conexiones_residenciales_subtel_jun2026_n": 15088,
+          "variacion_conexiones_2015_2026_pct": 65.1
         },
         "pasos_fronterizos_internacionales": {
           "pasos_habilitados": [
@@ -102,7 +113,10 @@
           "hogares_sin_internet_fijo_pct": 82.4,
           "cobertura_fibra_hogar_pct": 17.6,
           "establecimientos_educacion_conectados_n": 3,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 189,
+          "conexiones_residenciales_subtel_jun2026_n": 159,
+          "variacion_conexiones_2015_2026_pct": 551.7
         }
       }
     },
@@ -125,7 +139,10 @@
           "hogares_sin_internet_fijo_pct": 38.2,
           "cobertura_fibra_hogar_pct": 61.8,
           "establecimientos_educacion_conectados_n": 14,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 5748,
+          "conexiones_residenciales_subtel_jun2026_n": 5353,
+          "variacion_conexiones_2015_2026_pct": 75.7
         }
       }
     },
@@ -148,7 +165,10 @@
           "hogares_sin_internet_fijo_pct": 56.4,
           "cobertura_fibra_hogar_pct": 43.6,
           "establecimientos_educacion_conectados_n": 6,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 1638,
+          "conexiones_residenciales_subtel_jun2026_n": 1486,
+          "variacion_conexiones_2015_2026_pct": 155.1
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "servicio_maritimo": "Ruta Cordillera CAM0061 (Puerto Cisnes, Puyuhuapi, Raúl Marín)",
@@ -175,7 +195,10 @@
           "hogares_sin_internet_fijo_pct": 68.2,
           "cobertura_fibra_hogar_pct": 31.8,
           "establecimientos_educacion_conectados_n": 2,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 345,
+          "conexiones_residenciales_subtel_jun2026_n": 270,
+          "variacion_conexiones_2015_2026_pct": 219.4
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "servicio_maritimo": "Ruta Cordillera CAM0061 (Melinka y Repollal)",
@@ -203,7 +226,10 @@
           "hogares_sin_internet_fijo_pct": 48.6,
           "cobertura_fibra_hogar_pct": 51.4,
           "establecimientos_educacion_conectados_n": 4,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 835,
+          "conexiones_residenciales_subtel_jun2026_n": 791,
+          "variacion_conexiones_2015_2026_pct": 293.9
         }
       }
     },
@@ -226,7 +252,10 @@
           "hogares_sin_internet_fijo_pct": 76.8,
           "cobertura_fibra_hogar_pct": 23.2,
           "establecimientos_educacion_conectados_n": 2,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 272,
+          "conexiones_residenciales_subtel_jun2026_n": 249,
+          "variacion_conexiones_2015_2026_pct": 27100.0
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "enlace_critico": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
@@ -256,7 +285,10 @@
           "hogares_sin_internet_fijo_pct": 72.5,
           "cobertura_fibra_hogar_pct": 27.5,
           "establecimientos_educacion_conectados_n": 2,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 56,
+          "conexiones_residenciales_subtel_jun2026_n": 43,
+          "variacion_conexiones_2015_2026_pct": 2700.0
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "enlace_maritimo_fluvial": "Rampa Caleta Tortel / Enlace fluvial Río Mitchell y golfo",
@@ -283,7 +315,10 @@
           "hogares_sin_internet_fijo_pct": 52.1,
           "cobertura_fibra_hogar_pct": 47.9,
           "establecimientos_educacion_conectados_n": 3,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 845,
+          "conexiones_residenciales_subtel_jun2026_n": 788,
+          "variacion_conexiones_2015_2026_pct": 141.4
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "enlace_lacustre": "Lago General Carrera (Chile Chico - Puerto Ibáñez)",
@@ -315,7 +350,10 @@
           "hogares_sin_internet_fijo_pct": 64.8,
           "cobertura_fibra_hogar_pct": 35.2,
           "establecimientos_educacion_conectados_n": 4,
-          "fdt_ultima_milla_aprobado": true
+          "fdt_ultima_milla_aprobado": true,
+          "conexiones_fijas_subtel_jun2026_n": 581,
+          "conexiones_residenciales_subtel_jun2026_n": 555,
+          "variacion_conexiones_2015_2026_pct": 1513.9
         }
       }
     }
@@ -557,6 +595,11 @@
         }
       ],
       "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR"
-    }
+    },
+    "subtel_conexiones_fijas_jun2026_total": 26294,
+    "subtel_fttx_fibra_jun2026": 19972,
+    "subtel_starlink_jun2026": 5648,
+    "fdt_ultima_milla_ago2026_mclp": 7600,
+    "mtt_dtpr_subsidio_aislado_alza_2025": "+30% respecto a 2024 (~+$6.000 MM adicionales para rutas marítimas Fiordo Mitchell/Lago General Carrera/Litoral Norte y aéreas Cochrane-Tortel)"
   }
 }

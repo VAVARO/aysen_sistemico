@@ -36,7 +36,7 @@
     lexiconUrl: 'data/nl_lexicon_aysen.json'
   };
 
-  // Catálogo institucional de las 28 fuentes verificadas
+  // Catálogo institucional de las 28 fuentes verificadas troncales (+ 10 complementarias = 38 fuentes oficiales)
   const FUENTES_OFICIALES_28 = [
     { id: 1, institucion: 'SERNATUR', indicador: '01. Registro Nacional de Prestadores Turísticos', url: 'https://registro.sernatur.cl/', hub: 'I. Turismo', anos: '2015-2026' },
     { id: 2, institucion: 'SUBTURISMO', indicador: '02. Zonas de Interés Turístico (ZOIT)', url: 'https://www.subturismo.gob.cl/zoit/', hub: 'I. Turismo', anos: '2015-2026' },
@@ -48,17 +48,17 @@
     { id: 8, institucion: 'CMF', indicador: '08. Memorias Financieras de Holdings Acuícolas', url: 'https://www.cmfchile.cl/', hub: 'II. Salmonicultura', anos: '2015-2026' },
     { id: 9, institucion: 'CNE', indicador: '09. Capacidad Instalada y Generación Eléctrica (Energía Abierta)', url: 'https://energiaabierta.cl/', hub: 'III. Energía', anos: '2015-2026' },
     { id: 10, institucion: 'SEC', indicador: '10. Interrupciones Eléctricas SAIDI y Tarifas BT1', url: 'https://www.sec.cl/', hub: 'III. Energía', anos: '2015-2026' },
-    { id: 11, institucion: 'CNE', indicador: '11. Precios Minoristas de Combustibles y Leña (Bencina en Línea)', url: 'https://www.bencinaenlinea.cl/', hub: 'III. Energía', anos: '2015-2026' },
-    { id: 12, institucion: 'SUBTEL', indicador: '12. Conectividad Digital y Fibra Óptica Austral', url: 'https://www.subtel.gob.cl/', hub: 'III. Energía', anos: '2015-2026' },
-    { id: 13, institucion: 'SUBDERE - SINIM', indicador: '13. Finanzas Municipales y Fondo Común Municipal (FCM)', url: 'https://datos.sinim.gov.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
+    { id: 11, institucion: 'CNE', indicador: '11. Precios Minoristas de Combustibles y Leña (Bencina en Línea · con brecha en zonas sin surtidor)', url: 'https://www.bencinaenlinea.cl/', hub: 'III. Energía', anos: '2015-2026' },
+    { id: 12, institucion: 'SUBTEL', indicador: '12. Conectividad Digital FTTX/Starlink (Jun 2026: 26.294 conexiones) y Fibra Última Milla', url: 'https://www.subtel.gob.cl/estudios-y-estadisticas/internet/', hub: 'III. Energía', anos: '2015-2026' },
+    { id: 13, institucion: 'SUBDERE - SINIM', indicador: '13. Finanzas Municipales, FCM y Royalty Minero FET (BCN 2026)', url: 'https://datos.sinim.gov.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
     { id: 14, institucion: 'DIPRES / GORE Aysén', indicador: '14. Ejecución Presupuestaria Regional FNDR', url: 'https://www.dipres.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
-    { id: 15, institucion: 'SERVEL', indicador: '15. Resultados Electorales y Autoridades Comunales (2024-2028)', url: 'https://www.servel.cl/', hub: 'IV. Gobernanza', anos: '2024-2028' },
+    { id: 15, institucion: 'SERVEL', indicador: '15. Resultados Electorales, Autoridades Comunales y Participación 2024–2025', url: 'https://www.servel.cl/', hub: 'IV. Gobernanza', anos: '2024-2028' },
     { id: 16, institucion: 'MOP Vialidad', indicador: '16. Red Vial y Pavimentación Ruta 7 Austral', url: 'https://vialidad.mop.gob.cl/', hub: 'IV. Gobernanza', anos: '2015-2026' },
     { id: 17, institucion: 'SEA - SEIA', indicador: '17. Proyectos Evaluados y Aprobados en el SEIA', url: 'https://seia.sea.gob.cl/', hub: 'V. Inversión', anos: '2015-2026' },
     { id: 18, institucion: 'SII', indicador: '18. Estadísticas Tributarias de Empresas, Ventas y Empleo', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/', hub: 'V. Inversión', anos: '2015-2026' },
     { id: 19, institucion: 'ChileCompra', indicador: '19. Transacciones y Compras Públicas Mercado Público', url: 'https://www.chilecompra.cl/', hub: 'V. Inversión', anos: '2015-2026' },
-    { id: 20, institucion: 'MBN / SERNAGEOMIN', indicador: '20. Catastro de Propiedad Fiscal y Concesiones Mineras', url: 'https://catastro.bienes.cl/', hub: 'V. Inversión', anos: '2015-2026' },
-    { id: 21, institucion: 'INE', indicador: '21. Censo de Población y Vivienda 2024', url: 'https://censo2024.ine.gob.cl/', hub: 'VI. Social', anos: '2017-2024' },
+    { id: 20, institucion: 'MBN / SERNAGEOMIN', indicador: '20. Catastro de Propiedad Fiscal Regional y Concesiones Mineras', url: 'https://catastro.bienes.cl/', hub: 'V. Inversión', anos: '2015-2026' },
+    { id: 21, institucion: 'INE', indicador: '21. Censo de Población y Vivienda 2024 (100.745 hab.)', url: 'https://censo2024.ine.gob.cl/', hub: 'VI. Social', anos: '2017-2024' },
     { id: 22, institucion: 'MDSF - CASEN', indicador: '22. Encuesta de Caracterización Socioeconómica Nacional (CASEN)', url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen', hub: 'VI. Social', anos: '2015-2024' },
     { id: 23, institucion: 'MINEDUC / SLEP Aysén', indicador: '23. Matrícula, Asistencia y Establecimientos Escolares', url: 'https://datosabiertos.mineduc.cl/', hub: 'VI. Social', anos: '2015-2026' },
     { id: 24, institucion: 'CEAD - SPD', indicador: '24. Estadísticas Policiales y Seguridad Ciudadana', url: 'https://cead.spd.gob.cl/', hub: 'VI. Social', anos: '2015-2026' },
@@ -66,6 +66,19 @@
     { id: 26, institucion: 'MMA SINCA / DGA / SERNAGEOMIN', indicador: '26. Calidad del Aire (SINCA), Glaciares (DGA) y Red Sísmica', url: 'https://sinca.mma.gob.cl/', hub: 'VII. Biodiversidad', anos: '2015-2026' },
     { id: 27, institucion: 'DEIS - MINSAL / SSA', indicador: '27. Estadísticas Vitales, Red APS, Camas y SAMU', url: 'https://deis.minsal.cl/', hub: 'VIII. Salud', anos: '2015-2026' },
     { id: 28, institucion: 'SERPAT-CMN / ANID / CORFO', indicador: '28. Infraestructura Cultural, Cartera ANID, CORFO e Investigadores', url: 'https://dataciencia.anid.cl/', hub: 'IX. Cultura y X. CTCi', anos: '2015-2026' }
+  ];
+
+  const FUENTES_OFICIALES_COMPLEMENTARIAS = [
+    { id: 29, institucion: 'MOP Vialidad', indicador: '29. Red Vial Nacional, Pavimentación y Tiempos de Viaje', url: 'https://vialidad.mop.gob.cl/', hub: 'Conectividad Multimodal', anos: '2018-2026' },
+    { id: 30, institucion: 'EMPORCHA / DOP MOP', indicador: '30. Operaciones Portuarias, Carga y Cruceros', url: 'https://chacabucoport.cl/', hub: 'Conectividad Multimodal', anos: '2015-2026' },
+    { id: 31, institucion: 'MTT DTPR / JAC DGAC', indicador: '31. Conectividad Marítima, Lacustre y Aérea Subsidiada (+30% en 2025)', url: 'https://dtpr.mtt.gob.cl/', hub: 'Conectividad Multimodal', anos: '2015-2026' },
+    { id: 32, institucion: 'MINVU / DOH-MOP', indicador: '32. Déficit Habitacional PEH (1.293 meta superada) y Red SSR/APR', url: 'https://www.minvu.gob.cl/', hub: 'Informes Territoriales', anos: '2024-2026' },
+    { id: 33, institucion: 'ODEPA / INFOR / DGA', indicador: '33. Censo Silvoagropecuario, Dendroenergía y Glaciares', url: 'https://www.odepa.gob.cl/', hub: 'Informes Territoriales', anos: '2015-2026' },
+    { id: 34, institucion: 'Universidad de Aysén', indicador: '34. Barómetro Regional Patagonia: Percepción y Cohesión', url: 'https://uaysen.cl/', hub: 'Informes Territoriales', anos: '2018-2026' },
+    { id: 35, institucion: 'CPLT (Consejo para la Transparencia)', indicador: '35. Fiscalización Nacional Transparencia Activa Municipal 2026 (Regional 73,8%)', url: 'https://www.consejotransparencia.cl/', hub: 'IV. Gobernanza', anos: '2026' },
+    { id: 36, institucion: 'GORE Aysén (datos.gob.cl) / SUBDERE BCN', indicador: '36. Inversión FNDR Comunal (2015–2023), Fondos 8% y FET Royalty Minero (2024–2025)', url: 'https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005', hub: 'IV. Gobernanza / V. Inversión', anos: '2015-2025' },
+    { id: 37, institucion: 'MDSF BIDAT (RSH Jun 2026) / CGR PRI', indicador: '37. Registro Social de Hogares (Carencia Servicios y Hacinamiento) y PRI Coyhaique-Aysén', url: 'https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101', hub: 'VI. Social', anos: '2026' },
+    { id: 38, institucion: 'SERVEL / TRICEL / Congreso / GORE Aysén', indicador: '38. Composición Política Histórica de Aysén (Presidenciales, Parlamento, CORE y Alcaldes 1989–2026)', url: 'https://www.goreaysen.cl/consejeros-regionales/', hub: 'IV. Gobernanza', anos: '1989-2034' }
   ];
 
   // ============================================================================
@@ -229,7 +242,40 @@
     puntos_cajavecina_n: 'Puntos de Corresponsalía CajaVecina BancoEstado',
     eventos_glof_cachet2_n: 'Vaciamientos Catastróficos GLOF Lago Cachet 2',
     glaciar_exploradores_estatus: 'Estatus Glaciar Exploradores (DGA/CONAF)',
-    zoits_oficiales_count: 'Zonas de Interés Turístico Oficiales Decretadas'
+    zoits_oficiales_count: 'Zonas de Interés Turístico Oficiales Decretadas',
+
+    // Nuevas Variables Verificadas (Nov 2026)
+    transparencia_activa_cplt_2026_pct: 'Cumplimiento Transparencia Activa CPLT 2026 (%)',
+    participacion_presidencial_2025_2v_pct: 'Participación 2da Vuelta Presidencial Dic 2025 (%)',
+    padron_electoral_nov_2025: 'Padrón Electoral Definitivo Nov 2025',
+    ingresos_mun_bcn_2025_mclp: 'Ingresos Municipales Percibidos BCN/SINIM 2025 (M$)',
+    fet_royalty_minero_2024_mclp: 'Fondo Equidad Territorial Royalty Minero 2024 (M$)',
+    fet_royalty_minero_2025_mclp: 'Fondo Equidad Territorial Royalty Minero 2025 (M$)',
+    fndr_gore_2023_proyectos_n: 'Iniciativas FNDR GORE Ejecutadas 2023 (N)',
+    fndr_gore_2023_asignado_mclp: 'Inversión FNDR GORE Asignada 2023 (M$)',
+    fndr_gore_2023_ejecutado_mclp: 'Inversión FNDR GORE Ejecutada 2023 (M$)',
+    fndr_gore_2023_ejecucion_pct: 'Tasa Ejecución FNDR GORE 2023 (%)',
+    fondos_concursables_gore_2023_n: 'Proyectos Adjudicados Fondos 8% GORE 2023 (N)',
+    fondos_concursables_gore_2023_mclp: 'Monto Fondos Concursables 8% GORE 2023 (M$)',
+    rsh_carencia_servicios_basicos_jun2026_pct: 'Personas Carentes de Servicios Básicos RSH Jun 2026 (%)',
+    rsh_hacinamiento_jun2026_pct: 'Hogares Hacinados RSH Jun 2026 (%)',
+    ruralidad_censo_2024_pct: 'Población Rural Censo 2024 (%)',
+    conexiones_fijas_subtel_jun2026_n: 'Conexiones Fijas Internet SUBTEL Jun 2026 (N)',
+    conexiones_residenciales_subtel_jun2026_n: 'Conexiones Residenciales Internet SUBTEL Jun 2026 (N)',
+    variacion_conexiones_2015_2026_pct: 'Crecimiento Conexiones Fijas Internet 2015–Jun 2026 (%)',
+    visitas_por_cama_turistica: 'Ratio Visitas SNASPE por Cama Turística',
+    visitas_por_pernoctacion_ratio: 'Ratio Visitas SNASPE por Pernoctación EMAT',
+    visitantes_extranjeros_pct: 'Visitantes Internacionales Receptivos SNASPE (%)',
+    visitantes_extranjeros_snaspe_n: 'Visitantes Extranjeros Anuales SNASPE',
+    tasa_ocupacion_estival_pct: 'Tasa de Ocupación Hotelera Estival Ene-Feb (%)',
+    tasa_ocupacion_invernal_pct: 'Tasa de Ocupación Hotelera Invernal May-Ago (%)',
+    concentracion_estival_pct: 'Concentración Estacional Estival Dic-Mar (%)',
+    estadia_promedio_dias: 'Estadía Media Turística (días/noches EMAT)',
+    gasto_diario_turista_usd: 'Gasto Diario Promedio por Turista (US$)',
+    tarifa_adr_estimada_usd: 'Tarifa Promedio Diaria Estimada ADR (US$/noche)',
+    revpar_estimado_usd: 'Ingreso por Habitación Disponible RevPAR (US$)',
+    largo_pista_aerodromo_m: 'Longitud de Pista Aeródromo Principal (m)',
+    operaciones_aerodromo_interior_anual: 'Operaciones Aéreas Anuales en Aeródromos Interiores (DGAC/JAC)'
   };
 
   // ============================================================================
@@ -465,6 +511,26 @@
       institucion: 'Subsecretaría de Turismo (Subturismo) — Catastro Nacional Oficial de Decretos ZOIT',
       titulo: 'Subturismo — Decretos Supremos de Zonas de Interés Turístico Decretadas',
       url: 'https://www.subturismo.gob.cl/zoit/'
+    },
+    CPLT_2026: {
+      institucion: 'Consejo para la Transparencia (CPLT) — Fiscalización Transparencia Activa Municipal 2026',
+      titulo: 'CPLT — Cumplimiento Transparencia Activa Municipal 2026 (Promedio Aysén 73,8%)',
+      url: 'https://www.consejotransparencia.cl/'
+    },
+    GORE_FNDR_DATOSGOB: {
+      institucion: 'GORE Aysén (datos.gob.cl) / SUBDERE BCN — FNDR, Fondos 8% y FET Royalty Minero',
+      titulo: 'GORE Aysén / SUBDERE — Inversión FNDR 2015–2023, Fondos Concursables y Royalty Minero 2024–2025',
+      url: 'https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005'
+    },
+    BIDAT_RSH_2026: {
+      institucion: 'Ministerio de Desarrollo Social y Familia (BIDAT) vía BCN — Registro Social de Hogares Junio 2026',
+      titulo: 'BIDAT MDSF — Carencia de Servicios Básicos y Hacinamiento Comunal (Junio 2026)',
+      url: 'https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101'
+    },
+    SERVEL_HISTORICO: {
+      institucion: 'SERVEL / TRICEL / Congreso Nacional / GORE Aysén — Series Históricas 1989–2026',
+      titulo: 'SERVEL / GORE Aysén — Elecciones Presidenciales, Parlamento, CORE 2013–2029 y Alcaldes 1992–2028',
+      url: 'https://www.goreaysen.cl/consejeros-regionales/'
     }
   };
 
@@ -530,6 +596,19 @@
     pernoctaciones_emat: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
     zoit_nombre: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
     ratio_presion_turistica: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    visitas_por_cama_turistica: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    visitas_por_pernoctacion_ratio: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    visitantes_extranjeros_pct: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
+    visitantes_extranjeros_snaspe_n: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
+    tasa_ocupacion_estival_pct: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    tasa_ocupacion_invernal_pct: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    concentracion_estival_pct: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    estadia_promedio_dias: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    gasto_diario_turista_usd: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    tarifa_adr_estimada_usd: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    revpar_estimado_usd: PROVENANCE_CATALOG_ENTRIES.SERNATUR_EMAT,
+    largo_pista_aerodromo_m: PROVENANCE_CATALOG_ENTRIES.JAC_DGAC,
+    operaciones_aerodromo_interior_anual: PROVENANCE_CATALOG_ENTRIES.JAC_DGAC,
     visitantes_snaspe: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
     superficie_snaspe_pct: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
     unidades_snaspe: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
@@ -626,7 +705,27 @@
     barometro_tension_desarrollo_conservacion_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
     barometro_intencion_migracion_juvenil_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
     barometro_evaluacion_acceso_salud_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
-    barometro_preocupacion_contaminacion_lena_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN
+    barometro_preocupacion_contaminacion_lena_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+
+    // Nuevas Variables Verificadas (Nov 2026)
+    transparencia_activa_cplt_2026_pct: PROVENANCE_CATALOG_ENTRIES.CPLT_2026,
+    participacion_presidencial_2025_2v_pct: PROVENANCE_CATALOG_ENTRIES.SERVEL_HISTORICO,
+    padron_electoral_nov_2025: PROVENANCE_CATALOG_ENTRIES.SERVEL_HISTORICO,
+    ingresos_mun_bcn_2025_mclp: PROVENANCE_CATALOG_ENTRIES.SINIM,
+    fet_royalty_minero_2024_mclp: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fet_royalty_minero_2025_mclp: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fndr_gore_2023_proyectos_n: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fndr_gore_2023_asignado_mclp: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fndr_gore_2023_ejecutado_mclp: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fndr_gore_2023_ejecucion_pct: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fondos_concursables_gore_2023_n: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    fondos_concursables_gore_2023_mclp: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    rsh_carencia_servicios_basicos_jun2026_pct: PROVENANCE_CATALOG_ENTRIES.BIDAT_RSH_2026,
+    rsh_hacinamiento_jun2026_pct: PROVENANCE_CATALOG_ENTRIES.BIDAT_RSH_2026,
+    ruralidad_censo_2024_pct: PROVENANCE_CATALOG_ENTRIES.INE_CENSO,
+    conexiones_fijas_subtel_jun2026_n: PROVENANCE_CATALOG_ENTRIES.SUBTEL,
+    conexiones_residenciales_subtel_jun2026_n: PROVENANCE_CATALOG_ENTRIES.SUBTEL,
+    variacion_conexiones_2015_2026_pct: PROVENANCE_CATALOG_ENTRIES.SUBTEL
   };
 
   // ============================================================================
@@ -645,12 +744,27 @@
     centros_activos_salmon: ['centros activos', 'centros de cultivo', 'centros operativos'],
     biomasa_salmon_ton: ['biomasa de salmonicultura', 'biomasa salmon', 'biomasa cosechada', 'biomasa producida', 'biomasa acuicola', 'cosecha de salmon', 'toneladas de salmon', 'produccion salmonera', 'salmon biomass', 'harvested biomass'],
     antibioticos_ica_g_ton: ['antibioticos', 'uso de antibioticos', 'ica', 'antimicrobianos'],
-    visitantes_snaspe: ['visitas a parques nacionales', 'parques nacionales', 'visitacion snaspe', 'visitas snaspe', 'turistas parques', 'national parks', 'park visitors'],
-    pernoctaciones_emat: ['noches de alojamiento turistico', 'alojamiento turistico', 'pernoctaciones', 'emat'],
+    visitantes_snaspe: ['visitas a parques nacionales', 'parques nacionales', 'visitacion snaspe', 'visitas snaspe', 'turistas parques', 'national parks', 'park visitors', 'national park visits'],
+    pernoctaciones_emat: ['noches de alojamiento turistico', 'alojamiento turistico', 'pernoctaciones', 'emat', 'overnight stays'],
+    camas_turisticas: ['camas turisticas', 'camas disponibles', 'capacidad de camas', 'capacidad hotelera', 'available tourist beds', 'tourist beds', 'hotel beds'],
+    visitas_por_cama_turistica: ['visitas por cama', 'visitas a camas', 'visitas sobre camas', 'ratio visitas cama', 'visits to available tourist beds', 'visits to tourist beds', 'ratio of national park visits', 'visits per bed', 'snaspe per bed'],
+    visitas_por_pernoctacion_ratio: ['visitas sobre pernoctaciones', 'visitas por pernoctacion', 'visits to overnight stays', 'ratio overnight stays'],
+    ratio_presion_turistica: ['presion turistica', 'indice de presion turistica', 'visitantes residentes', 'summer tourist pressure', 'tourist pressure', 'visitor pressure'],
+    visitantes_extranjeros_pct: ['visitantes extranjeros', 'turistas extranjeros', 'turismo internacional', 'turismo receptivo', 'foreign visitors', 'international visitors', 'foreign tourists'],
+    visitantes_extranjeros_snaspe_n: ['cantidad de visitantes extranjeros', 'turistas extranjeros snaspe', 'foreign park visitors'],
+    tasa_ocupacion_estival_pct: ['ocupacion estival', 'tasa de ocupacion estival', 'ocupacion verano', 'summer occupancy rate'],
+    tasa_ocupacion_invernal_pct: ['ocupacion invernal', 'tasa de ocupacion invernal', 'ocupacion invierno', 'winter occupancy rate'],
+    concentracion_estival_pct: ['concentracion estival', 'estacionalidad estival', 'summer concentration'],
+    estadia_promedio_dias: ['estadia media', 'estadia promedio', 'average stay', 'length of stay'],
+    gasto_diario_turista_usd: ['gasto diario turista', 'gasto promedio turista', 'daily tourist spending'],
+    tarifa_adr_estimada_usd: ['tarifa promedio diaria', 'adr hotelero', 'tarifa diaria promedio', 'average daily rate'],
+    revpar_estimado_usd: ['revpar', 'ingreso por habitacion disponible', 'revenue per available room'],
+    largo_pista_aerodromo_m: ['largo de pista', 'longitud de pista', 'pista aerodromo', 'metros de pista', 'capacidad de pista', 'runway length'],
+    operaciones_aerodromo_interior_anual: ['operaciones aerodromos', 'aerodromos interiores', 'aerotaxis', 'vuelos subsidiados aerodromo', 'frecuencia vuelos interiores'],
     prestadores_sernatur: ['prestadores turisticos', 'sernatur', 'oferta turistica'],
     hogares_lena_pct: ['calefaccionan con lena', 'hogares que calefaccionan con lena', 'uso de lena', 'calefaccion lena', 'calefaccion a lena', 'firewood', 'firewood heating', 'wood heating', 'heating dependency', 'firewood heating dependency'],
     dias_sobre_norma_mp25: ['contaminacion critica mp25', 'contaminacion critica mp2.5', 'mp2.5', 'pm2.5', 'mp25', 'pm25', 'dias con contaminacion', 'calidad del aire', 'material particulado', 'critical days', 'air pollution', 'air quality'],
-    saidi_horas_anual: ['saidi', 'cortes de luz', 'apagones', 'sin luz', 'se corta la luz', 'cortes de electricidad', 'interrupcion electrica', 'calidad electrica'],
+    saidi_horas_anual: ['saidi', 'cortes de luz', 'apagones', 'sin luz', 'se corta la luz', 'cortes de electricidad', 'interrupcion electrica', 'calidad electrica', 'corte electrico saidi', 'horas de corte electrico'],
     tarifa_bt1_clp: ['tarifa electrica', 'tarifa bt1', 'precio electricidad', 'cuenta de la luz', 'precio de la luz', 'luz cara', 'electricidad cara'],
     gasolina_93_clp: ['bencina', 'gasolina', 'combustible', 'combustibles', 'precio de la bencina', 'nafta'],
     precio_lena_m3: ['precio de la lena', 'valor de la lena', 'metro de lena', 'costo de la lena'],
@@ -666,14 +780,15 @@
     empresas_sii: ['empresas sii', 'numero de empresas', 'empresas activas', 'tejido empresarial'],
     trabajadores_sii: ['empleo', 'puestos de trabajo', 'trabajo formal', 'trabajadores', 'fuerza laboral'],
     parcelaciones_sag_n: ['parcelas', 'parcelaciones', 'loteos', 'subdivision predial', 'parcelas de agrado'],
-    inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia', 'evaluacion ambiental'],
+    inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia'],
+    seia_plazo_dias: ['plazo seia', 'plazo promedio de evaluacion ambiental', 'plazo de evaluacion ambiental', 'evaluacion ambiental en el seia', 'plazo evaluacion seia', 'permisologia seia', 'dias evaluacion seia'],
     red_vial_total_km: ['red vial', 'red vial total', 'kilometros de caminos', 'vialidad'],
     red_vial_pavimentada_km: ['red vial pavimentada', 'caminos pavimentados', 'asfalto', 'rutas', 'estado de las rutas', 'rutas de entrada', 'insumos', 'abastecimiento', 'logistica', 'carretera austral', 'ruta 7'],
     ruta7_pavimentada_km: ['ruta 7 pavimentada', 'pavimentacion ruta 7', 'asfalto ruta 7', 'ruta 7'],
     ruta7_ripio_km: ['ruta 7 ripio', 'ripio ruta 7', 'tramos de ripio ruta 7'],
     emporcha_toneladas: ['puerto chacabuco', 'emporcha', 'carga portuaria', 'entrada de insumos', 'insumos', 'abastecimiento maritimo', 'cabotaje', 'toneladas movilizadas'],
-    red_vial_pavimentada_pct: ['porcentaje de pavimentacion', 'pavimentacion vial', 'pavimentacion'],
-    tiempo_viaje_coyhaique_hrs: ['tiempo de viaje', 'tiempo a coyhaique', 'horas de viaje', 'horas a coyhaique', 'traslado coyhaique'],
+    red_vial_pavimentada_pct: ['porcentaje de red vial pavimentada', 'porcentaje de pavimentacion', 'pavimentacion vial', 'pavimentacion'],
+    tiempo_viaje_coyhaique_hrs: ['tiempo de traslado', 'tiempo de traslado a coyhaique', 'tiempo de viaje', 'tiempo a coyhaique', 'horas de viaje', 'horas a coyhaique', 'traslado coyhaique'],
     hogares_sin_internet_fijo_pct: ['sin internet', 'brecha digital', 'hogares sin internet', 'internet fijo', 'fibra optica', 'conectividad digital'],
     deficit_habitacional_cuantitativo_n: ['deficit habitacional', 'deficit cuantitativo', 'viviendas nuevas', 'falta de viviendas', 'vivienda', 'casa', 'casas', 'viviendas', 'arriendo', 'arrendar', 'conseguir casa', 'techo', 'allegados', 'falta de vivienda'],
     deficit_habitacional_cualitativo_n: ['deficit cualitativo', 'mejoramiento de vivienda', 'viviendas a reparar'],
@@ -743,7 +858,14 @@
     puntos_cajavecina_n: ['cajavecina', 'caja vecina', 'puntos cajavecina', 'bancoestado cajavecina', 'corresponsalia bancaria', '400 puntos cajavecina'],
     eventos_glof_cachet2_n: ['glof', 'eventos glof', 'glofs', 'lago cachet 2', 'cachet 2', 'vaciamientos lago cachet', 'cuenca baker glof', 'rio colonia glof', '27 vaciamientos'],
     glaciar_exploradores_estatus: ['glaciar exploradores', 'exploradores', 'clausura trekking hielo', 'cierre glaciar exploradores', 'hielo exploradores'],
-    zoits_oficiales_count: ['zoits oficiales', '3 zoits decretadas', 'zoits decretadas', 'zoits oficiales decretadas']
+    zoits_oficiales_count: ['zoits oficiales', '3 zoits decretadas', 'zoits decretadas', 'zoits oficiales decretadas'],
+    transparencia_activa_cplt_2026_pct: ['transparencia activa', 'transparencia', 'cplt', 'consejo para la transparencia', 'probidad municipal', 'cumplimiento municipal transparencia'],
+    fet_royalty_minero_2025_mclp: ['royalty minero', 'fet', 'fondo de equidad territorial', 'ley royalty', 'royalty municipal'],
+    fndr_gore_2023_ejecutado_mclp: ['fndr ejecutado', 'gasto fndr gore', 'ejecucion fndr datos gob', 'inversion gore ejecutada'],
+    fondos_concursables_gore_2023_n: ['fondos concursables', '8% fndr', 'fondo 8 porciento', 'vinculacion con la comunidad gore', 'proyectos sociales 8%'],
+    participacion_presidencial_2025_2v_pct: ['participacion electoral 2025', 'voto obligatorio 2025', 'segunda vuelta 2025', 'historia electoral', 'composicion politica'],
+    rsh_carencia_servicios_basicos_jun2026_pct: ['carencia servicios basicos', 'servicios basicos rsh', 'bidat rsh', 'registro social hogares', 'hacinamiento rsh'],
+    conexiones_fijas_subtel_jun2026_n: ['conexiones fijas subtel', 'subtel junio 2026', 'starlink aysen', 'fttx aysen', 'fibra ultima milla', 'telecomunicaciones subtel']
   };
 
   // ============================================================================
@@ -765,12 +887,12 @@
       id: 'turismo',
       title: 'Turismo y Áreas Silvestres Protegidas',
       hub: 'I',
-      regex: /\b(turismo|turistico|turistica|sernatur|snaspe|parques nacionales|pernoctaciones|emat|alojamiento|zoit)\b/i,
+      regex: /\b(turismo|turistico|turistica|sernatur|snaspe|parques nacionales|pernoctaciones|emat|alojamiento|zoit|eco-?lodge|tourist beds|overnight stays|tourist pressure|national park)\b/i,
       varX: 'visitantes_snaspe',
       varY: 'prestadores_sernatur',
       chartTitle: 'Visitantes Anuales a Parques SNASPE vs. Prestadores Turísticos SERNATUR',
       provenanceKeys: ['visitantes_snaspe', 'prestadores_sernatur'],
-      keys: ['prestadores_sernatur', 'camas_turisticas', 'pernoctaciones_emat', 'visitantes_snaspe', 'superficie_snaspe_pct', 'ratio_presion_turistica']
+      keys: ['prestadores_sernatur', 'camas_turisticas', 'visitas_por_cama_turistica', 'pernoctaciones_emat', 'visitas_por_pernoctacion_ratio', 'visitantes_snaspe', 'visitantes_extranjeros_pct', 'concentracion_estival_pct', 'estadia_promedio_dias', 'tarifa_adr_estimada_usd', 'revpar_estimado_usd', 'superficie_snaspe_pct', 'ratio_presion_turistica']
     },
     salud: {
       id: 'salud',
@@ -881,6 +1003,17 @@
       chartTitle: 'Déficit Habitacional Cuantitativo (viviendas) vs. Sistemas APR/SSR',
       provenanceKeys: ['deficit_habitacional_cuantitativo_n', 'sistemas_ssr_apr_n'],
       keys: ['deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias']
+    },
+    politica_transparencia_finanzas: {
+      id: 'politica_transparencia_finanzas',
+      title: 'Transparencia Activa, Royalty Minero y Participación',
+      hub: 'Gobernanza',
+      regex: /\b(transparencia activa|cplt|royalty|fet royalty|fndr|fondos concursables|padron electoral|participacion electoral)\b/i,
+      varX: 'transparencia_activa_cplt_2026_pct',
+      varY: 'fet_royalty_minero_2025_mclp',
+      chartTitle: 'Transparencia Activa CPLT 2026 (%) vs. Royalty Minero FET 2025 (MM$)',
+      provenanceKeys: ['transparencia_activa_cplt_2026_pct', 'fet_royalty_minero_2025_mclp'],
+      keys: ['transparencia_activa_cplt_2026_pct', 'fet_royalty_minero_2025_mclp', 'fndr_gore_2023_ejecutado_mclp', 'fondos_concursables_gore_2023_mclp', 'participacion_presidencial_2025_2v_pct', 'padron_electoral_nov_2025']
     }
   };
 
@@ -927,7 +1060,7 @@
     holdingsPorComuna: {}, // Operadores salmoneros por código INE comunal
     customCollections: [], // Holdings, series mensuales, puentes y futuras tablas
     sourcesByKey: {},      // Fuentes oficiales indexadas por variable
-    fuentes: FUENTES_OFICIALES_28
+    fuentes: [...FUENTES_OFICIALES_28, ...FUENTES_OFICIALES_COMPLEMENTARIAS]
   };
 
   // Stopwords en español para tokenización limpia
@@ -1075,10 +1208,10 @@
     if (_memoryIndex.variablesByKey && _memoryIndex.variablesByKey[varKey]?.hub) {
       return _memoryIndex.variablesByKey[varKey].hub;
     }
-    if (/sernatur|turis|emat|pernoctacion|snaspe.*visita|visita.*snaspe|visitantes_snaspe|zoit|hotel|alojamiento/.test(k)) return 'I';
+    if (/sernatur|turis|emat|pernoctacion|snaspe.*visita|visita.*snaspe|visitantes_snaspe|visitantes_extranjeros|visitas_por_cama|visitas_por_pernoctacion|ocupacion_estival|ocupacion_invernal|concentracion_estival|estadia_promedio|gasto_diario_turista|tarifa_adr|revpar|zoit|hotel|alojamiento/.test(k)) return 'I';
     if (/salmon|acuic|biomasa|antibiotico|amerb|subpesca|sernapesca|caligus|holding/.test(k)) return 'II';
     if (/potencia_mw|mw|electric|saidi|saifi|tarifa_bt1|gasolina|diesel|precio_lena|internet_fijo|fibra|telecom/.test(k)) return 'III';
-    if (/presupuesto|fcm|fndr|ipp|gasto_personal|inversion_directa|profesionalizacion|ruta7|alcalde|concejal|sinim|municipal/.test(k)) return 'IV';
+    if (/presupuesto|fcm|fndr|ipp|gasto_personal|inversion_directa|profesionalizacion|ruta7|alcalde|concejal|sinim|municipal|largo_pista_aerodromo|operaciones_aerodromo/.test(k)) return 'IV';
     if (/seia|sii|empresa|trabajador|compra|fuga_compras|parcelacion|miner|pib|inversion_seia/.test(k)) return 'V';
     if (/glaciar|vegetal|snaspe_pct|guardaparque|fauna|huemul|daa_|mp25|hogares_lena|aire|bosque|biodiv/.test(k)) return 'VII';
     if (/hospital|cama.*hosp|medico|espera_no_ges|urgencia|samu|aeroevac|posta|traslado_coyhaique|salud|deis|aps/.test(k)) return 'VIII';
@@ -1186,7 +1319,7 @@
 
     const isIntensive = Boolean(
       unit === '%' ||
-      /(pct|porcentaje|tasa|densidad|per_capita|por_mil|ratio|promedio|plazo|horas|hrs|tarifa|precio|costo|gasolina|diesel|ica_g_ton|nota|indice|esperanza_vida|envejecimiento|masculinidad|espera_.*dias)/i.test(key)
+      /(pct|porcentaje|tasa|densidad|per_capita|por_mil|ratio|promedio|visitas_por_cama|estadia|adr|revpar|plazo|horas|hrs|tarifa|precio|costo|gasolina|diesel|ica_g_ton|nota|indice|esperanza_vida|envejecimiento|masculinidad|espera_.*dias)/i.test(key)
     );
 
     const humanLabel = CANONICAL_LABELS[key] || (lexiconEntry && lexiconEntry.label) || humanizeKey(key);
@@ -1585,6 +1718,7 @@
       allOfficialSources.push(src);
     };
     FUENTES_OFICIALES_28.forEach(pushOfficialSource);
+    FUENTES_OFICIALES_COMPLEMENTARIAS.forEach(pushOfficialSource);
     Object.values(PROVENANCE_CATALOG_ENTRIES).forEach(entry => {
       pushOfficialSource({
         institucion: entry.institucion,
@@ -1613,7 +1747,7 @@
 
     const nodeSummaryList = indexedNodes.map(n => `#${n.id}(${n.hubId}):${n.title}`).join('; ');
     const regionalMilestones = [
-      '12 Holdings salmoneros madres (AquaChile, Multi X, Blumar, Mowi, Cermaq, Australis)',
+      '12 Holdings salmoneros madres (+ titulares menores) y 42 RUTs filiales (AquaChile, Multi X, Blumar, Mowi, Cermaq, Australis)',
       'Corredor binacional ATIT 1974 via RN40 y Paso Cardenal Samore hacia Huemules/Jeinimeni/Coyhaique Alto/Roballos',
       'EMPORCHA Puerto Chacabuco 468.200 ton (2024) y proy. 495.000 ton (2026) + CAM-01 + barcazas DTPR',
       'Red vial MOP 3.386,4 km totales (412,8 km pav. vs 2.438,0 km ripio)',
@@ -1856,7 +1990,7 @@
     }
 
     // 11. Inversión FNDR devengada vs sectorial ministerial centralizada (DIPRES)
-    if (/\b(fndr devengad|inversion sectorial ministerial|sectorial.*fndr|fndr.*sectorial|gasto centralizado.*fndr|ejecucion real fndr|subejecucion fndr|fndr.*dipres|dipres.*fndr|inversion sectorial.*dipres|ejecucion.*fndr.*gore|ejecucion presupuestaria fndr)\b/i.test(qNorm)) {
+    if (/\b(fndr devengad|inversion sectorial ministerial|sectorial.*fndr|fndr.*sectorial|gasto centralizado.*fndr|ejecucion real fndr|subejecucion fndr|fndr.*dipres|dipres.*fndr|inversion sectorial.*dipres|ejecucion.*fndr.*gore|ejecucion presupuestaria fndr)\b/i.test(qNorm) && !/\b(royalty|fet royalty|fondos concursables|8%\s*fndr)\b/i.test(qNorm)) {
       return 'fndr_sectorial';
     }
 
@@ -1894,6 +2028,26 @@
     // 18. Consultas sobre perros / población canina -> puente a RCE Huemul y Censo Agropecuario ODEPA
     if (/\b(cuantos perros|poblacion canina|cantidad de perros|numero de perros|perros asilvestrados|cuantas mascotas|mascotas)\b/i.test(qNorm)) {
       return 'fauna_perros_ganaderia';
+    }
+
+    // 19. Composición política histórica (1989-2026), presidenciales, parlamentarios, intendentes y COREs
+    if (/\b(composicion politica|historia politica|como ha votado|voto historico|votacion historica|ultimos 30 anos|consejeros regionales|core\b|cores\b|intendentes|senadores|diputados|presidenciales.*aysen|elecciones.*aysen|partidos politicos)\b/i.test(qNorm)) {
+      return 'composicion_politica_historica';
+    }
+
+    // 20. Fiscalización Transparencia Activa Municipal CPLT 2026
+    if (/\b(transparencia activa|cplt|fiscalizacion municipal|ranking transparencia)\b/i.test(qNorm)) {
+      return 'transparencia_activa_cplt';
+    }
+
+    // 21. FNDR GORE Aysén (datos.gob.cl), Fondos Concursables 8% y FET Royalty Minero
+    if (/\b(royalty minero|fet royalty|fondos concursables|8%\s*fndr|fndr gore|ejecucion fndr|cartera fndr)\b/i.test(qNorm)) {
+      return 'royalty_minero_y_fondos_gore';
+    }
+
+    // 22. Conectividad digital fija SUBTEL junio 2026 (FTTH / Starlink / Última Milla; respeta consultas específicas de cobertura/carencia)
+    if (/\b(conexiones fijas|ftth|starlink|subtel.*2026|ultima milla|banda ancha fija subtel)\b/i.test(qNorm) && !/\b(cobertura.*fibra|sin conexion|sin internet)\b/i.test(qNorm)) {
+      return 'conectividad_digital_subtel_2026';
     }
 
     return null;
@@ -2316,6 +2470,103 @@
           isContextualBridge: true
         };
       }
+      case 'composicion_politica_historica': {
+        const hp = _dataLake?.historiaPolitica || {};
+        const gov = hp?.ejecutivo_regional?.gobernadores_regionales_electos?.slice(-1)[0]?.nombre || 'Marcelo Santana Vargas';
+        const dpr = hp?.ejecutivo_regional?.delegados_presidenciales_regionales?.slice(-1)[0]?.nombre || 'Luz María Vicuña Figueroa';
+        const sens = hp?.senadores_historia_1990_2034?.slice(-1)[0]?.titulares?.map(t => t.nombre).join(' y ') || 'Miguel Ángel Calisto y Ximena Órdenes';
+        const dips = hp?.diputados_historia_1990_2030?.slice(-1)[0]?.titulares?.map(t => t.nombre).join(', ') || 'Alejandra Valdebenito, René Alinco, Andrea Macías';
+        const reply = `Serie histórica SERVEL/TRICEL/BCN (1989–2026): Gobernador Regional ${gov} (UDI, 54,39% 1V oct 2024; sucediendo a Andrea Macías 2021–2025) y DPR ${dpr} (desde mar 2026). Senadores 2026–2034: ${sens}; Diputados D27: ${dips}. El CORE cuenta con 14 escaños (6 Coyhaique, 4 Aysén, 2 Capitán Prat, 2 General Carrera). En presidenciales 2025: 1V Jara 27,2%, Kast 23,0%, Kaiser 20,3%, Parisi 16,6%; 2V Kast 59,93% vs Jara 40,07% (73,3% participación sobre 99.575 electores).`;
+        const sources = resolveSourcesForKeys(['participacion_presidencial_2025_2v_pct', 'padron_electoral_nov_2025']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'participacion_presidencial_2025_2v_pct',
+            varY: null,
+            yKey: 'participacion_presidencial_2025_2v_pct',
+            y2Key: null,
+            title: 'Participación Electoral Presidencial 2V Dic 2025 (%) por Comuna (SERVEL)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'IV',
+          isContextualBridge: true
+        };
+      }
+      case 'transparencia_activa_cplt': {
+        const cplt = _dataLake?.cpltTransparencia2026 || {};
+        const avgReg = cplt.promedio_regional_aysen_pct ?? 73.8;
+        const avgNac = cplt.promedio_nacional_pct ?? 88.5;
+        const reply = `Según Fiscalización Transparencia Activa Municipal CPLT 2026, Aysén promedia ${String(avgReg).replace('.', ',')}% frente a ${String(avgNac).replace('.', ',')}% nacional (lugar 16/16 regiones). Lideran Río Ibáñez (100,0%, #1 nacional), Aysén (96,09%) y Guaitecas (92,63%), seguidas por Coyhaique (74,45%) y Tortel (72,92%), con brechas en Chile Chico (57,46%), Lago Verde (59,24%), Cochrane (60,58%), Cisnes (61,60%) y O'Higgins (62,71%).`;
+        const sources = resolveSourcesForKeys(['transparencia_activa_cplt_2026_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'transparencia_activa_cplt_2026_pct',
+            varY: null,
+            yKey: 'transparencia_activa_cplt_2026_pct',
+            y2Key: null,
+            title: 'Transparencia Activa Municipal CPLT 2026 (% Cumplimiento)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'IV',
+          isContextualBridge: true
+        };
+      }
+      case 'royalty_minero_y_fondos_gore': {
+        const g23 = _dataLake?.goreFndrSeries?.serie_fndr_regional_datosgob_2015_2023?.['2023'] || {};
+        const init23 = g23.total_iniciativas || 560;
+        const exec23 = g23.gasto_actual_mclp || 61579.2;
+        const asig23 = g23.asignado_mclp || 68333.7;
+        const pct23 = g23.tasa_ejecucion_pct || 90.1;
+        const reply = `En cartera GORE/DIPRES (datos.gob.cl), el FNDR 2023 ejecutó $${exec23.toLocaleString('es-CL')} MM de $${asig23.toLocaleString('es-CL')} MM en ${init23} iniciativas (${pct23}%), con presupuestos DIPRES de $75.543 MM (2024) y $82.313 MM (2025). El 8% FNDR 2025 recibió 971 postulaciones (>$5.700 MM adjudicados en ~355 proyectos). Vía SUBDERE/BCN, el Fondo de Equidad Territorial (FET) Royalty Minero 2025 transfirió $3.207,7 MM a las 10 comunas (Coyhaique $762,5 MM; Aysén $727,6 MM).`;
+        const sources = resolveSourcesForKeys(['fet_royalty_minero_2025_mclp', 'fndr_gore_2023_ejecutado_mclp']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'fet_royalty_minero_2025_mclp',
+            varY: 'fet_royalty_minero_2024_mclp',
+            yKey: 'fet_royalty_minero_2025_mclp',
+            y2Key: 'fet_royalty_minero_2024_mclp',
+            title: 'Fondo Equidad Territorial Royalty Minero 2025 vs 2024 (MM$ CLP)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'V',
+          isContextualBridge: true
+        };
+      }
+      case 'conectividad_digital_subtel_2026': {
+        const reply = 'Al corte de junio 2026 (SUBTEL Tabla 7.7.1 corregida), Aysén suma 26.294 conexiones fijas de internet (+135,5% vs 2015): 75,96% FTTX fibra óptica (19.972), 21,48% satelital Starlink (5.648) y 2,25% xDSL. Lideran Coyhaique (15.785), Aysén (5.748) y Cisnes (1.638), frente a Tortel (56) y Lago Verde (189) con predominio satelital. En agosto 2026 inició Fibra Óptica Última Milla GORE-SUBTEL ($7.600 MM, 33 localidades, 7.802 viviendas).';
+        const sources = resolveSourcesForKeys(['conexiones_fijas_subtel_jun2026_n', 'variacion_conexiones_2015_2026_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'conexiones_fijas_subtel_jun2026_n',
+            varY: 'conexiones_residenciales_subtel_jun2026_n',
+            yKey: 'conexiones_fijas_subtel_jun2026_n',
+            y2Key: 'conexiones_residenciales_subtel_jun2026_n',
+            title: 'Conexiones Fijas Internet SUBTEL Jun 2026: Total vs Residencial',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'III',
+          isContextualBridge: true
+        };
+      }
       default:
         return null;
     }
@@ -2344,6 +2595,10 @@
       { key: 'dependencia_fcm_pct', bloque: 'Finanzas Municipales e Inversión' },
       { key: 'ipp_per_capita_clp', bloque: 'Finanzas Municipales e Inversión' },
       { key: 'fndr_mclp', bloque: 'Finanzas Municipales e Inversión' },
+      { key: 'transparencia_activa_cplt_2026_pct', bloque: 'Finanzas Municipales e Inversión' },
+      { key: 'fet_royalty_minero_2025_mclp', bloque: 'Finanzas Municipales e Inversión' },
+      { key: 'fndr_gore_2023_ejecutado_mclp', bloque: 'Finanzas Municipales e Inversión' },
+      { key: 'participacion_presidencial_2025_2v_pct', bloque: 'Finanzas Municipales e Inversión' },
       { key: 'pobreza_ingresos_pct', bloque: 'Social, Salud, Educación y Energía' },
       { key: 'pobreza_multidim_pct', bloque: 'Social, Salud, Educación y Energía' },
       { key: 'camas_hospitalarias', bloque: 'Social, Salud, Educación y Energía' },
@@ -2353,7 +2608,9 @@
       { key: 'hogares_lena_pct', bloque: 'Social, Salud, Educación y Energía' },
       { key: 'dias_sobre_norma_mp25', bloque: 'Social, Salud, Educación y Energía' },
       { key: 'tarifa_bt1_clp', bloque: 'Social, Salud, Educación y Energía' },
-      { key: 'saidi_horas_anual', bloque: 'Social, Salud, Educación y Energía' }
+      { key: 'saidi_horas_anual', bloque: 'Social, Salud, Educación y Energía' },
+      { key: 'rsh_carencia_servicios_basicos_jun2026_pct', bloque: 'Social, Salud, Educación y Energía' },
+      { key: 'conexiones_fijas_subtel_jun2026_n', bloque: 'Social, Salud, Educación y Energía' }
     ];
 
     return specKeys.map(item => {
@@ -2704,6 +2961,9 @@
     if (/(calefaccion.*lena|hogares.*lena)/.test(qNorm) && varRecord.key === 'hogares_lena_pct') {
       score += 30;
     }
+    if (/(porcentaje|pct|%)\s+(?:de\s+)?(?:red\s+vial\s+pavimentada|pavimentacion)/.test(qNorm) && varRecord.key === 'red_vial_pavimentada_pct') {
+      score += 45;
+    }
     if (/\bbiomasa\b/.test(qNorm) && !/\bpellet\b/.test(qNorm) && varRecord.key === 'biomasa_salmon_ton') {
       score += 30;
     }
@@ -2785,10 +3045,13 @@
     const qTokens = tokenize(rawQuery);
 
     const excludeCoyhaique = /(sin coyhaique|excluir coyhaique|excepto coyhaique|sacar coyhaique|sin la capital)/.test(qNorm);
+    const isEnglishQuery = /\b(which|what|how|where|we are|evaluating|communes|highest|lowest|available|overnight stays|across the region|show me|comparing|firewood)\b/i.test(rawQuery);
     const wantsScatter = /(cruza|cruzar|correlacion|vs\b|versus|frente a|contra|relacion entre|comparar .+ con|scatter|dispersion|comparing .+ and)/.test(qNorm);
-    const wantsBivariateComparison = wantsScatter || /(como se comparan|como contrasta|comparado con|junto con|y sus|y los|y las)/.test(qNorm);
-    const wantsTemporal = /(evolucion|historic|serie|anual|mensual|2015|2016|2017|2018|2019|2020|2021|2022|2023|2025|2026|tiempo|tendencia|mes a mes)/.test(qNorm);
-    const hasTourismTemporalSeries = wantsTemporal && /(turis|snaspe|parque|pernoctacion|alojamiento|emat|visita)/.test(qNorm);
+    const wantsBivariateComparison = wantsScatter || /(como se comparan|como contrasta|comparado con|junto con|y sus|y los|y las|\bto\b|\band how\b|\bacross the\b)/.test(qNorm);
+    const qNoTravelTime = qNorm.replace(/\btiempo\s+(?:de\s+)?(?:traslado|viaje|desplazamiento)(?:\s+(?:a|hacia|hasta)\s+(?:coyhaique(?:\s+balmaceda)?|balmaceda))?\b/g, ' ');
+    const wantsTemporal = /\b(evolucion\w*|historic\w*|serie\w*|anual\w*|mensual\w*|2015|2016|2017|2018|2019|2020|2021|2022|2023|2025|2026|tendencia|mes a mes|estacionalidad|enero a diciembre|desde \d{4} hasta \d{4})\b/.test(qNoTravelTime) ||
+      (/\btiempo\b/.test(qNoTravelTime) && !/\btiempos?\s+de\s+espera\b/.test(qNorm));
+    let hasTourismTemporalSeries = false;
 
     // Guardrail 0A: Rechazo limpio fuera de dominio / jailbreak (restaurantes, pasajes, elecciones futuras, etc.)
     const isOutOfDomain = /\b(mejor restaurante|donde comer|recomienda.*restaurante|candidato ganador|quien va a ganar|que partido.*ganar|partido politico.*ganar|proximas elecciones|pronostico electoral|pasaje aereo|precio del pasaje|cuanto cuesta un pasaje|costo de un pasaje|vuelo.*santiago|precio.*vuelo|horoscopo|receta de cocina|ignora los datos oficiales)\b/i.test(qNorm);
@@ -2837,7 +3100,7 @@
       const [yr, mo] = lastRunIso.split('-');
       const cycleCutIso = (yr && mo) ? `${yr}-${mo}-01` : `${nowIso.slice(0, 7)}-01`;
       const activeConns = autoUp.activeApiConnectors || 7;
-      const totalSrc = _memoryIndex.fuentes?.length || autoUp.totalSources || 33;
+      const totalSrc = autoUp.totalOfficialSources || _memoryIndex.fuentes?.length || autoUp.totalSources || 38;
       const reply = `La plataforma se actualiza automáticamente el día 1 de cada mes (ciclo mensual vigente: ${cycleCutIso}; última corrida automática registrada: ${lastRunIso}, con ${activeConns} conectores API activos sobre ${totalSrc} fuentes oficiales en series 2015–2026). Fuentes censales y estructurales como Censo INE 2024, CASEN 2022 y Censo Agropecuario 2021 mantienen su última publicación oficial vigente.`;
       const metaChart = buildEmptyChartSpec('Consulta de vigencia y ciclo de actualización mensual (día 1 de cada mes).');
       return {
@@ -2914,11 +3177,17 @@
       };
     }
 
-    // 1. Detectar comunas mencionadas
+    // 1. Detectar comunas mencionadas (evitando falsos positivos cuando Coyhaique/Balmaceda son solo destino o aeródromo)
+    const qNormForEntities = qNorm
+      .replace(/\b(?:tiempo\s+de\s+traslado|tiempo\s+de\s+viaje|traslado|viaje|distancia(?:\s+terrestre)?)\s+(?:a|hacia|hasta)\s+(?:coyhaique(?:\s+balmaceda)?|balmaceda)\b/g, ' ')
+      .replace(/\b(?:aerodromo|aeropuerto)\s+(?:de\s+)?balmaceda\b/g, 'aerodromo')
+      .replace(/\b(?:pn|parque\s+nacional)\s+(?:laguna\s+san\s+rafael|queulat|cerro\s+castillo|patagonia)\b/g, 'parque nacional')
+      .replace(/\b(?:laguna\s+san\s+rafael|cerro\s+castillo)\b(?=.*\b(?:queulat|patagonia|desglose\s+por\s+parque|por\s+parque\s+nacional)\b)/g, 'parque');
+
     let matchedEntities = _memoryIndex.entities.filter(ent =>
       ent.aliases.some(alias => {
         const re = new RegExp(`(^|\\s)${alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s|$)`);
-        return re.test(qNorm);
+        return re.test(qNormForEntities);
       })
     );
 
@@ -2945,7 +3214,7 @@
       for (const [locNorm, locInfo] of _memoryIndex.localidadesList) {
         const escapedLoc = locNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const reLoc = new RegExp(`(^|\\s)${escapedLoc}(\\s|$)`);
-        const match = qNorm.match(reLoc);
+        const match = qNormForEntities.match(reLoc);
         if (match && match.index !== undefined) {
           const start = match.index;
           const end = start + match[0].length;
@@ -2978,6 +3247,24 @@
     if (matchedLocalidades.length > 1) {
       matchedLocalidades.sort((a, b) => (a._pos ?? 0) - (b._pos ?? 0));
     }
+
+    // 1c. Clasificación precisa de series temporales especializadas vs serie SNASPE/EMAT por defecto
+    const asksBalmacedaOrCruisesTemporal = wantsTemporal &&
+      /\b(balmaceda|aerodromo\w*|aeropuerto\w*|cruceros?|emporcha)\b/.test(qNorm) &&
+      /\b(parques?\s+nacionales|snaspe|visitas?|turis\w*|pasajeros?)\b/.test(qNorm);
+    const asksTourismSeasonalityMonthly = /\b(estacionalidad\s+mensual|mes\s+a\s+mes|enero\s*(?:a|-|y)\s*diciembre|curva\s+mensual|temporada\s+alta\s+y\s+baja|meses?\s+(?:con\s+mayor|de\s+mayor|con\s+menor))\b/.test(qNorm) &&
+      /\b(turis\w*|emat|snaspe|pernoctacion\w*|ocupacion|visitas?|hotel\w*)\b/.test(qNorm);
+    const asksSnaspeParkBreakdown = matchedEntities.length === 0 &&
+      /\b(desglose\s+por\s+parque|por\s+parque\s+nacional|cada\s+parque|unidades\s+snaspe|queulat.*san\s+rafael|san\s+rafael.*queulat|cerro\s+castillo.*patagonia)\b/.test(qNorm) &&
+      !/\b(balmaceda|cruceros?)\b/.test(qNorm);
+    const hasNonTourismInfraSignals = /\b(seia|evaluacion\s+ambiental|plazo|pavimentad\w*|ripio|red\s+vial|carretera\s+austral|traslado|saidi|corte\w*\s+electric\w*|apagon\w*|balmaceda|cruceros?|emporcha|aerodromo\w*|pista)\b/.test(qNorm);
+    hasTourismTemporalSeries = wantsTemporal &&
+      !asksBalmacedaOrCruisesTemporal &&
+      !asksTourismSeasonalityMonthly &&
+      !asksSnaspeParkBreakdown &&
+      !hasNonTourismInfraSignals &&
+      matchedEntities.length === 0 &&
+      /\b(turis\w*|snaspe|parques?\s+nacionales|pernoctacion\w*|alojamiento|emat|visitacion|visitas\s+a\s+parques)\b/.test(qNorm);
 
     const topOver10Match = qNorm.match(/\b(?:top|primeras?|primeros|mayores?|menores?|ultimas?|ultimos)\s+(1[1-9]|[2-9][0-9])\b/);
     const over10Note = topOver10Match
@@ -3349,40 +3636,98 @@
       .filter(item => item.score >= 10)
       .sort((a, b) => b.score - a.score);
 
-    const topNumericVars = scoredVars.filter(item => item.variable.isNumeric);
-    let primaryVar = topNumericVars[0]?.variable || null;
-    const secondaryThreshold = wantsBivariateComparison
-      ? Math.max(12, Math.min(32, (topNumericVars[0]?.score || 0) * 0.25))
-      : Math.max(22, (topNumericVars[0]?.score || 0) * 0.65);
-    let secondaryVar = (topNumericVars[1] && topNumericVars[1].score >= secondaryThreshold)
-      ? topNumericVars[1].variable
+    const rawTopNumericVars = scoredVars.filter(item => item.variable.isNumeric);
+    const SEMANTIC_TWIN_GROUPS = {
+      traslado_coyhaique_hrs: 'travel_time',
+      tiempo_viaje_coyhaique_hrs: 'travel_time',
+      red_vial_pavimentada_km: 'road_paved',
+      ruta7_pavimentada_km: 'road_paved',
+      red_vial_ripio_km: 'road_gravel',
+      ruta7_ripio_km: 'road_gravel',
+      superficie_glaciar_km2: 'glacier_area',
+      superficie_glaciares_km2: 'glacier_area',
+      puntos_cajavecina_n: 'cajavecina',
+      puntos_cajavecina_bancoestado: 'cajavecina',
+      espera_quirurgica_dias: 'hosp_wait',
+      mediana_espera_quirurgica_dias: 'hosp_wait'
+    };
+    const seenTwinGroups = new Set();
+    const topNumericVars = rawTopNumericVars.filter(item => {
+      const grp = SEMANTIC_TWIN_GROUPS[item.variable.key];
+      if (!grp) return true;
+      if (seenTwinGroups.has(grp)) return false;
+      seenTwinGroups.add(grp);
+      return true;
+    });
+
+    // Cuando hay >= 4 dominios distintos compitiendo en una pregunta multi-factor (ej. SEIA + Vialidad + Traslado + SAIDI),
+    // priorizar a lo más 1 indicador vial principal si eso permite incluir todas las demás dimensiones solicitadas.
+    const distinctDomainTop = (() => {
+      const hasRoadPct = topNumericVars.some(i => i.variable.key === 'red_vial_pavimentada_pct' && i.score >= 12);
+      const nonRoadHigh = topNumericVars.filter(i => !/^(red_vial_|ruta7_)/.test(i.variable.key) && i.score >= 12);
+      if (hasRoadPct && nonRoadHigh.length >= 3) {
+        let keptOneRoad = false;
+        return topNumericVars.filter(i => {
+          if (/^(red_vial_|ruta7_)/.test(i.variable.key)) {
+            if (keptOneRoad) return false;
+            keptOneRoad = true;
+            return true;
+          }
+          return true;
+        });
+      }
+      return topNumericVars;
+    })();
+
+    let primaryVar = distinctDomainTop[0]?.variable || null;
+    const effectiveMultiBivariate = wantsBivariateComparison || (
+      distinctDomainTop.filter(i => i.score >= 22).length >= 2 &&
+      (/\b(y\s+(?:cual|cuant[oa]s?|que|como)|and\s+(?:what|how))\b/.test(qNorm) || rawQuery.includes(','))
+    );
+    const secondaryThreshold = effectiveMultiBivariate
+      ? Math.max(12, Math.min(32, (distinctDomainTop[0]?.score || 0) * 0.25))
+      : Math.max(22, (distinctDomainTop[0]?.score || 0) * 0.65);
+    let secondaryVar = (distinctDomainTop[1] && distinctDomainTop[1].score >= secondaryThreshold)
+      ? distinctDomainTop[1].variable
       : null;
 
-    const wantsMultiComparison = wantsBivariateComparison && (/\by\b/.test(qNorm) || qNorm.includes(','));
+    const wantsMultiComparison = effectiveMultiBivariate && (/\b(y|and|e)\b/.test(qNorm) || rawQuery.includes(','));
     const tertiaryThreshold = wantsMultiComparison
-      ? Math.max(14, (topNumericVars[0]?.score || 0) * 0.25)
-      : Math.max(22, (topNumericVars[0]?.score || 0) * 0.35);
+      ? Math.max(12, Math.min(28, (distinctDomainTop[0]?.score || 0) * 0.20))
+      : Math.max(22, Math.min(36, (distinctDomainTop[0]?.score || 0) * 0.35));
     let tertiaryVar = (
       wantsMultiComparison &&
       secondaryVar &&
-      topNumericVars[2] &&
-      topNumericVars[2].score >= tertiaryThreshold &&
-      topNumericVars[2].variable.key !== primaryVar?.key &&
-      topNumericVars[2].variable.key !== secondaryVar?.key
+      distinctDomainTop[2] &&
+      distinctDomainTop[2].score >= tertiaryThreshold &&
+      distinctDomainTop[2].variable.key !== primaryVar?.key &&
+      distinctDomainTop[2].variable.key !== secondaryVar?.key
     )
-      ? topNumericVars[2].variable
+      ? distinctDomainTop[2].variable
       : null;
 
-    const quaternaryThreshold = Math.max(10, Math.min(20, (topNumericVars[0]?.score || 0) * 0.15));
+    const quaternaryThreshold = Math.max(10, Math.min(20, (distinctDomainTop[0]?.score || 0) * 0.14));
     let quaternaryVar = (
       wantsMultiComparison &&
       tertiaryVar &&
-      topNumericVars[3] &&
-      topNumericVars[3].score >= quaternaryThreshold &&
-      ![primaryVar?.key, secondaryVar?.key, tertiaryVar?.key].includes(topNumericVars[3].variable.key)
+      distinctDomainTop[3] &&
+      distinctDomainTop[3].score >= quaternaryThreshold &&
+      ![primaryVar?.key, secondaryVar?.key, tertiaryVar?.key].includes(distinctDomainTop[3].variable.key)
     )
-      ? topNumericVars[3].variable
+      ? distinctDomainTop[3].variable
       : null;
+
+    // Alinear explícitamente consultas de brecha hotelera/turística (camas, pernoctaciones, presión estival)
+    const asksTourismInvestmentGap = matchedEntities.length === 0 &&
+      /\b(ratio|visitas.*cama|visits.*bed|camas turisticas|tourist beds)\b/.test(qNorm) &&
+      /\b(snaspe|parques nacionales|national park)\b/.test(qNorm) &&
+      (/\b(pernoctacion\w*|overnight)\b/.test(qNorm) || /\b(presion turistica|tourist pressure)\b/.test(qNorm));
+    if (asksTourismInvestmentGap) {
+      primaryVar = _memoryIndex.variablesByKey['visitas_por_cama_turistica'] || primaryVar;
+      secondaryVar = _memoryIndex.variablesByKey['camas_turisticas'] || secondaryVar;
+      tertiaryVar = _memoryIndex.variablesByKey['ratio_presion_turistica'] || tertiaryVar;
+      quaternaryVar = _memoryIndex.variablesByKey['visitas_por_pernoctacion_ratio'] || quaternaryVar;
+    }
 
     const isAquacultureProdOps = /\b(concesiones|centros activos)\b/i.test(qNorm) &&
       /\b(salmon\w*|acuic\w*)\b/i.test(qNorm) &&
@@ -3438,6 +3783,10 @@
     const isBroadSectorQuery = Boolean(
       matchedSector &&
       !hasSpecificMetricFocus &&
+      !asksTourismInvestmentGap &&
+      !asksBalmacedaOrCruisesTemporal &&
+      !asksTourismSeasonalityMonthly &&
+      !asksSnaspeParkBreakdown &&
       (
         scoredVars.length === 0 ||
         topNumericVars.length === 0 ||
@@ -3485,6 +3834,7 @@
       if (secondaryVar) provenanceTargetKeys.push(secondaryVar.key);
       if (tertiaryVar) provenanceTargetKeys.push(tertiaryVar.key);
       if (quaternaryVar) provenanceTargetKeys.push(quaternaryVar.key);
+      if (asksTourismInvestmentGap) provenanceTargetKeys.push('visitantes_snaspe');
     } else if (scoredVars.length > 0) {
       provenanceTargetKeys.push(scoredVars[0].variable.key);
     } else {
@@ -3616,6 +3966,11 @@
       matchedLocalidades.length > 0 ||
       (wantsScatter && primaryVar && secondaryVar) ||
       hasTourismTemporalSeries ||
+      asksBalmacedaOrCruisesTemporal ||
+      asksTourismSeasonalityMonthly ||
+      asksSnaspeParkBreakdown ||
+      asksTourismInvestmentGap ||
+      (isEnglishQuery && primaryVar) ||
       isHoldingQuery ||
       tertiaryVar ||
       quaternaryVar ||
@@ -3626,10 +3981,15 @@
     return {
       query: rawQuery,
       qNorm,
+      isEnglishQuery,
       excludeCoyhaique,
       wantsScatter,
       wantsTemporal,
       hasTourismTemporalSeries,
+      asksBalmacedaOrCruisesTemporal,
+      asksTourismSeasonalityMonthly,
+      asksSnaspeParkBreakdown,
+      asksTourismInvestmentGap,
       isHoldingQuery,
       matchedSector,
       isBroadSectorQuery,
@@ -3732,7 +4092,7 @@
       ? varsForPrompt.map(v => v.key).join(', ')
       : varsForPrompt.map(v => `${v.key} (${v.label}, Hub ${v.hub})`).join(', ');
     return [
-      `Eres el Consultor Territorial de Aysén Sistémico, conectado en tiempo real a la memoria verificada de \`window.AYSEN_HUBS_DATA\` (10 Comunas, 10 Hubs Sistémicos I al X, 39 Nodos Satélites, 12 Holdings Salmoneros Madres y ${_memoryIndex.fuentes.length} fuentes oficiales verificadas).`,
+      `Eres el Consultor Territorial de Aysén Sistémico, conectado en tiempo real a la memoria verificada de \`window.AYSEN_HUBS_DATA\` (10 Comunas, 10 Hubs Sistémicos I al X, 39 Nodos Satélites, 12 Holdings Salmoneros Madres y ${_dataLake?.meta?.autoUpdate?.totalOfficialSources || (FUENTES_OFICIALES_28.length + FUENTES_OFICIALES_COMPLEMENTARIAS.length)} fuentes oficiales verificadas).`,
       `Catálogo dinámico de variables indexadas (${varsForPrompt.length}/${_memoryIndex.variables.length}): ${varList}`,
       'INSTRUCCIONES DE RIGOR FACTUAL Y CONEXIÓN SEMÁNTICA:',
       '1. Responde de forma directa, analítica y concisa (entre 2 y 4 oraciones, máximo 500 caracteres en "reply") utilizando EXCLUSIVAMENTE los datos provistos en MEMORIA_VERIFICADA (resumen_estadistico_variables_candidatas, hitos_regionales y matriz_comunal_datos_exactos). Jamás inventes cifras.',
@@ -3743,7 +4103,8 @@
       '6. No utilices emojis bajo ninguna circunstancia.',
       '7. Si el usuario pregunta por una localidad (ej. Puerto Río Tranquilo, Puyuhuapi), aclara que los registros oficiales son a escala comunal. Si falta un indicador o territorio externo, decláralo explícitamente antes de proponer un proxy.',
       '8. EVIDENCIA ESTRICTA: Jamás menciones cifras de antibióticos, áreas protegidas u otros indicadores si no figuran en las variables activas del turno, y NUNCA afirmes que no existen centros o concesiones en áreas protegidas (existen 312 concesiones en SNASPE / RN Las Guaitecas).',
-      '9. Devuelve tu respuesta estrictamente como un objeto JSON válido. En "chart", "varX" y "varY" DEBEN ser claves exactas en snake_case elegidas del catálogo provisto (ej. "deficit_habitacional_cuantitativo_n", "barometro_tension_desarrollo_conservacion_pct"), NUNCA nombres de comunas ni arreglos, y "type" debe ser "bar", "line" o "scatter":',
+      '9. IDIOMA DE RESPUESTA: Responde exactamente en el mismo idioma que la consulta del usuario (si la consulta es en inglés, redacta "reply" y "chart.title" en inglés con nombres y unidades limpias).',
+      '10. Devuelve tu respuesta estrictamente como un objeto JSON válido. En "chart", "varX" y "varY" DEBEN ser claves exactas en snake_case elegidas del catálogo provisto (ej. "deficit_habitacional_cuantitativo_n", "barometro_tension_desarrollo_conservacion_pct"), NUNCA nombres de comunas ni arreglos, y "type" debe ser "bar", "line" o "scatter":',
       '{"reply": "Texto analítico claro y conciso con las cifras exactas", "chart": {"render": true, "type": "bar|line|scatter", "varX": "clave_x_exacta", "varY": "clave_y_o_null", "title": "Título limpio del gráfico", "excludeCoyhaique": false}, "relatedHub": "I..X"}'
     ].join('\n');
   }
@@ -3929,6 +4290,12 @@
       primaryVar,
       secondaryVar,
       tertiaryVar,
+      quaternaryVar,
+      isEnglishQuery,
+      asksBalmacedaOrCruisesTemporal,
+      asksTourismSeasonalityMonthly,
+      asksSnaspeParkBreakdown,
+      asksTourismInvestmentGap,
       topNodes,
       matchedCollections,
       chartSpec,
@@ -4024,6 +4391,144 @@
         },
         sources: catSources,
         relatedHub: 'VI'
+      };
+      updateConversationState(memoryPacket, res);
+      return res;
+    }
+
+    // 3. Caso Temporal Especializado: Flujos de Entrada (Balmaceda JAC + Cruceros EMPORCHA + SNASPE 2015-2026)
+    if (asksBalmacedaOrCruisesTemporal) {
+      const jacSeries = Array.isArray(_dataLake?.series?.balmaceda_pasajeros_jac) ? _dataLake.series.balmaceda_pasajeros_jac : [];
+      const crucSeries = Array.isArray(_dataLake?.series?.emporcha_cruceros) ? _dataLake.series.emporcha_cruceros : [];
+      const snaspeAnnual = Array.isArray(_dataLake?.series?.snaspe_por_parque_anual) ? _dataLake.series.snaspe_por_parque_anual : [];
+      const labels = jacSeries.length > 0
+        ? jacSeries.map(r => String(r.periodo))
+        : (snaspeAnnual.length > 0 ? snaspeAnnual.map(r => String(r.anio)) : ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026']);
+      const jacByYr = new Map(jacSeries.map(r => [String(r.periodo), Number(r.pasajeros) || 0]));
+      const snaspeByYr = new Map(snaspeAnnual.map(r => [String(r.anio), Number(r.visitantes_snaspe_total) || 0]));
+      const crucByYr = new Map(crucSeries.map(r => {
+        const endYr = String(r.temporada || '').split('-').pop();
+        return [endYr, Number(r.pasajeros_cruceros) || 0];
+      }));
+      const dataJac = labels.map(y => jacByYr.has(y) ? jacByYr.get(y) : null);
+      const dataSnaspe = labels.map(y => snaspeByYr.has(y) ? snaspeByYr.get(y) : null);
+      const dataCruc = labels.map(y => crucByYr.has(y) ? crucByYr.get(y) : null);
+
+      const j0 = jacSeries[0] || { periodo: '2015', pasajeros: 0 };
+      const jLast = jacSeries[jacSeries.length - 1] || { periodo: '2026', pasajeros: 0 };
+      const s0 = snaspeAnnual[0] || { anio: '2015', visitantes_snaspe_total: 0 };
+      const sLast = snaspeAnnual[snaspeAnnual.length - 1] || { anio: '2026', visitantes_snaspe_total: 0 };
+      const c0 = crucSeries[0] || { temporada: '2018-2019', pasajeros_cruceros: 0, recaladas_cruceros: 0 };
+      const cLast = crucSeries[crucSeries.length - 1] || { temporada: '2025-2026', pasajeros_cruceros: 0, recaladas_cruceros: 0 };
+
+      const flowSources = resolveSourcesForKeys(['balmaceda_pasajeros_jac', 'emporcha_cruceros', 'visitantes_snaspe']);
+      const flowReply = isEnglishQuery
+        ? `Between ${j0.periodo} and ${jLast.periodo}, Aeródromo Balmaceda passengers rose from ${j0.pasajeros.toLocaleString('en-US')} to ${jLast.pasajeros.toLocaleString('en-US')} (+${(((jLast.pasajeros - j0.pasajeros) / Math.max(1, j0.pasajeros)) * 100).toFixed(1)}%), alongside SNASPE National Park visits growing from ${s0.visitantes_snaspe_total.toLocaleString('en-US')} to ${sLast.visitantes_snaspe_total.toLocaleString('en-US')}. EMPORCHA cruise passengers grew from ${c0.pasajeros_cruceros.toLocaleString('en-US')} (${c0.temporada}, ${c0.recaladas_cruceros} calls) to ${cLast.pasajeros_cruceros.toLocaleString('en-US')} (${cLast.temporada}, ${cLast.recaladas_cruceros} calls, after 0 in 2020-2021).`
+        : `Entre ${j0.periodo} y ${jLast.periodo}, el flujo aéreo en Aeródromo Balmaceda (JAC) creció de ${fmtNumber(j0.pasajeros)} a ${fmtNumber(jLast.pasajeros)} pasajeros (+${fmtNumber(((jLast.pasajeros - j0.pasajeros) / Math.max(1, j0.pasajeros)) * 100, 1)}%), mientras las visitas SNASPE subieron de ${fmtNumber(s0.visitantes_snaspe_total)} a ${fmtNumber(sLast.visitantes_snaspe_total)}. Los pasajeros de cruceros EMPORCHA pasaron de ${fmtNumber(c0.pasajeros_cruceros)} (${c0.temporada}, ${c0.recaladas_cruceros} recaladas) a ${fmtNumber(cLast.pasajeros_cruceros)} (${cLast.temporada}, ${cLast.recaladas_cruceros} recaladas, con 0 en 2020-2021).`;
+
+      const res = {
+        reply: flowReply,
+        chart: {
+          render: true,
+          type: 'line',
+          varX: 'balmaceda_pasajeros_jac',
+          varY: 'visitantes_snaspe',
+          varZ: 'emporcha_cruceros',
+          yKey: 'balmaceda_pasajeros_jac',
+          y2Key: 'visitantes_snaspe',
+          title: isEnglishQuery
+            ? 'Balmaceda Air Traffic (JAC), Cruise Passengers (EMPORCHA) & SNASPE Visits (2015–2026)'
+            : 'Flujo Aeródromo Balmaceda (JAC), Cruceros (EMPORCHA) y Visitas SNASPE (2015–2026)',
+          sourceText: flowSources.map(s => s.institucion).join(' · '),
+          excludeCoyhaique: false,
+          customTemporalSeries: {
+            xTitle: isEnglishQuery ? 'Years (2015–2026)' : 'Años (2015–2026)',
+            labels,
+            datasets: [
+              { label: 'Aeródromo Balmaceda JAC (pasajeros)', data: dataJac, unit: 'pasajeros', borderColor: '#00357f', yAxisID: 'y' },
+              { label: 'Visitas Parques SNASPE CONAF (visitas)', data: dataSnaspe, unit: 'visitas', borderColor: '#0f766e', yAxisID: 'y' },
+              { label: 'Cruceros EMPORCHA (pasajeros/temporada)', data: dataCruc, unit: 'pasajeros', borderColor: '#c2410c', yAxisID: 'y1', dashed: true }
+            ]
+          }
+        },
+        sources: flowSources,
+        relatedHub: 'I'
+      };
+      updateConversationState(memoryPacket, res);
+      return res;
+    }
+
+    // 3b. Curva de Estacionalidad Mensual Enero–Diciembre (INE EMAT / SERNATUR)
+    if (asksTourismSeasonalityMonthly && Array.isArray(_dataLake?.seriesMensualesEmat) && _dataLake.seriesMensualesEmat.length > 0) {
+      const mRows = _dataLake.seriesMensualesEmat;
+      const peak = [...mRows].sort((a, b) => (b.pernoctaciones_total || 0) - (a.pernoctaciones_total || 0))[0];
+      const trough = [...mRows].sort((a, b) => (a.pernoctaciones_total || 0) - (b.pernoctaciones_total || 0))[0];
+      const summerSum = mRows.filter(m => [12, 1, 2, 3].includes(m.numero_mes)).reduce((a, b) => a + (b.pernoctaciones_total || 0), 0);
+      const totalYr = mRows.reduce((a, b) => a + (b.pernoctaciones_total || 0), 0);
+      const summerShare = totalYr > 0 ? ((summerSum / totalYr) * 100) : 0;
+      const mSources = resolveSourcesForKeys(['pernoctaciones_emat', 'tasa_ocupacion_estival_pct']);
+      const res = {
+        reply: isEnglishQuery
+          ? `Regional tourism seasonality (INE EMAT) concentrates ${summerShare.toFixed(1)}% of annual overnight stays in Dec–Mar (${summerSum.toLocaleString('en-US')} of ${totalYr.toLocaleString('en-US')} nights). Peak occurs in ${peak.mes} (${peak.pernoctaciones_total.toLocaleString('en-US')} nights, ${peak.tasa_ocupacion_pct}% occupancy) vs. the winter trough in ${trough.mes} (${trough.pernoctaciones_total.toLocaleString('en-US')} nights, ${trough.tasa_ocupacion_pct}% occupancy).`
+          : `La estacionalidad mensual del turismo en Aysén (INE EMAT) concentra el ${fmtNumber(summerShare, 1)}% de las pernoctaciones en diciembre–marzo (${fmtNumber(summerSum)} de ${fmtNumber(totalYr)} noches anuales). El pico ocurre en ${peak.mes} (${fmtNumber(peak.pernoctaciones_total)} noches, ${fmtNumber(peak.tasa_ocupacion_pct, 1)}% ocupación) frente al valle invernal de ${trough.mes} (${fmtNumber(trough.pernoctaciones_total)} noches, ${fmtNumber(trough.tasa_ocupacion_pct, 1)}% ocupación).`,
+        chart: {
+          render: true,
+          type: 'line',
+          varX: 'pernoctaciones_emat',
+          varY: 'tasa_ocupacion_estival_pct',
+          yKey: 'pernoctaciones_emat',
+          y2Key: 'tasa_ocupacion_estival_pct',
+          title: isEnglishQuery ? 'Monthly Tourism Seasonality EMAT (Jan–Dec)' : 'Curva Mensual de Estacionalidad Turística EMAT (Enero–Diciembre)',
+          sourceText: mSources.map(s => s.institucion).join(' · '),
+          excludeCoyhaique: false,
+          customTemporalSeries: {
+            xTitle: isEnglishQuery ? 'Month (Jan–Dec)' : 'Meses del Año (Enero–Diciembre)',
+            labels: mRows.map(m => m.mes),
+            datasets: [
+              { label: 'Pernoctaciones EMAT (noches)', data: mRows.map(m => m.pernoctaciones_total), unit: 'noches', borderColor: '#00357f', yAxisID: 'y' },
+              { label: 'Tasa de Ocupación Hotelera (%)', data: mRows.map(m => m.tasa_ocupacion_pct), unit: '%', borderColor: '#c2410c', yAxisID: 'y1', dashed: true }
+            ]
+          }
+        },
+        sources: mSources,
+        relatedHub: 'I'
+      };
+      updateConversationState(memoryPacket, res);
+      return res;
+    }
+
+    // 3c. Desglose por Parque Nacional Individual CONAF SNASPE (2015–2026)
+    if (asksSnaspeParkBreakdown && Array.isArray(_dataLake?.series?.snaspe_por_parque_anual) && _dataLake.series.snaspe_por_parque_anual.length > 0) {
+      const rows = _dataLake.series.snaspe_por_parque_anual;
+      const last = rows[rows.length - 1];
+      const pSources = resolveSourcesForKeys(['visitantes_snaspe']);
+      const res = {
+        reply: isEnglishQuery
+          ? `By individual CONAF SNASPE National Park (${last.anio}, total ${last.visitantes_snaspe_total.toLocaleString('en-US')} visits): PN Queulat leads with ${last.pn_queulat.toLocaleString('en-US')} visits, followed by PN Laguna San Rafael (${last.pn_laguna_san_rafael.toLocaleString('en-US')}), PN Cerro Castillo (${last.pn_cerro_castillo.toLocaleString('en-US')}), and PN Patagonia (${last.pn_patagonia.toLocaleString('en-US')}), plus ${last.otras_unidades.toLocaleString('en-US')} in other protected reserves.`
+          : `Desglose oficial CONAF SNASPE por parque nacional (${last.anio}, total ${fmtNumber(last.visitantes_snaspe_total)} visitas): lidera PN Queulat (${fmtNumber(last.pn_queulat)}), seguido de PN Laguna San Rafael (${fmtNumber(last.pn_laguna_san_rafael)}), PN Cerro Castillo (${fmtNumber(last.pn_cerro_castillo)}) y PN Patagonia (${fmtNumber(last.pn_patagonia)}), más ${fmtNumber(last.otras_unidades)} visitas en otras unidades regionales.`,
+        chart: {
+          render: true,
+          type: 'line',
+          varX: 'visitantes_snaspe',
+          varY: 'visitantes_extranjeros_pct',
+          yKey: 'visitantes_snaspe',
+          y2Key: 'visitantes_extranjeros_pct',
+          title: isEnglishQuery ? 'Annual Visits by National Park (CONAF SNASPE 2015–2026)' : 'Evolución Anual de Visitantes por Parque Nacional SNASPE (2015–2026)',
+          sourceText: pSources.map(s => s.institucion).join(' · '),
+          excludeCoyhaique: false,
+          customTemporalSeries: {
+            xTitle: isEnglishQuery ? 'Years (2015–2026)' : 'Años (2015–2026)',
+            labels: rows.map(r => String(r.anio)),
+            datasets: [
+              { label: 'PN Queulat (visitas)', data: rows.map(r => r.pn_queulat), unit: 'visitas', borderColor: '#00357f', yAxisID: 'y' },
+              { label: 'PN Laguna San Rafael (visitas)', data: rows.map(r => r.pn_laguna_san_rafael), unit: 'visitas', borderColor: '#0f766e', yAxisID: 'y' },
+              { label: 'PN Cerro Castillo (visitas)', data: rows.map(r => r.pn_cerro_castillo), unit: 'visitas', borderColor: '#c2410c', yAxisID: 'y' },
+              { label: 'PN Patagonia (visitas)', data: rows.map(r => r.pn_patagonia), unit: 'visitas', borderColor: '#6d28d9', yAxisID: 'y', dashed: true }
+            ]
+          }
+        },
+        sources: pSources,
+        relatedHub: 'I'
       };
       updateConversationState(memoryPacket, res);
       return res;
@@ -4339,16 +4844,42 @@
         return res;
       }
 
+      const fmtEn = (val, dec = 1) => {
+        if (typeof val !== 'number' || !Number.isFinite(val)) return String(val ?? '-');
+        const isInt = Math.abs(val - Math.round(val)) < 1e-6;
+        const useDec = Math.abs(val) < 10 && !isInt ? Math.max(dec, 2) : dec;
+        return val.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: isInt ? 0 : useDec });
+      };
+      const EN_LABELS_MAP = {
+        visitas_por_cama_turistica: 'SNASPE Visits / Tourist Bed Ratio',
+        camas_turisticas: 'Available Tourist Beds',
+        ratio_presion_turistica: 'Summer Tourist Pressure (Visits/Resident)',
+        visitas_por_pernoctacion_ratio: 'SNASPE Visits / Overnight Stays Ratio',
+        visitantes_snaspe: 'Annual SNASPE Park Visits',
+        pernoctaciones_emat: 'Annual Overnight Stays (EMAT)',
+        visitantes_extranjeros_pct: 'Foreign Visitors Share (%)',
+        concentracion_estival_pct: 'Summer Concentration (%)',
+        tarifa_adr_estimada_usd: 'Estimated Average Daily Rate ADR (US$)',
+        revpar_estimado_usd: 'Estimated RevPAR (US$)'
+      };
+
       const buildVarParagraph = (v, isPrimary, compactMode = false) => {
         const list = excludeCoyhaique
           ? v.stats.ranked.filter(r => r.comuna_ine !== '11101' && r.comuna.toLowerCase() !== 'coyhaique')
           : v.stats.ranked;
         if (!list.length) return '';
 
-        const cleanLbl = CANONICAL_LABELS[v.key] || v.label;
+        const useEnglish = Boolean(isEnglishQuery && !wantsScatter);
+        const cleanLbl = useEnglish ? (EN_LABELS_MAP[v.key] || CANONICAL_LABELS[v.key] || v.label) : (CANONICAL_LABELS[v.key] || v.label);
         const sum = list.reduce((acc, r) => acc + r.value, 0);
         const avg = sum / list.length;
         const unitStr = v.unit ? ` ${v.unit}` : '';
+        if (useEnglish) {
+          const top3 = list.slice(0, 3).map((r) => `${r.comuna} (${fmtEn(r.value)})`).join(', ');
+          const bot1 = list[list.length - 1];
+          const aggEn = v.aggregation === 'avg' ? `Reg. avg: ${fmtEn(avg)}` : `Reg. total: ${fmtEn(sum)}`;
+          return `${cleanLbl}: led by ${top3}, min ${bot1.comuna} (${fmtEn(bot1.value)}), ${aggEn}.`;
+        }
         if (compactMode) {
           const top1 = list[0];
           const bot1 = list[list.length - 1];
@@ -4366,6 +4897,7 @@
       };
 
       const isThreeVar = Boolean(tertiaryVar && tertiaryVar.isNumeric && tertiaryVar.stats);
+      const isFourVar = Boolean(quaternaryVar && quaternaryVar.isNumeric && quaternaryVar.stats);
       const useCompactSummary = isThreeVar || (wantsScatter && Boolean(bivariateStats));
       const paragraphs = [buildVarParagraph(primaryVar, true, useCompactSummary)];
       if (secondaryVar && secondaryVar.isNumeric && secondaryVar.stats) {
@@ -4373,6 +4905,9 @@
       }
       if (isThreeVar) {
         paragraphs.push(buildVarParagraph(tertiaryVar, false, true));
+      }
+      if (isFourVar && isEnglishQuery && !wantsScatter) {
+        paragraphs.push(buildVarParagraph(quaternaryVar, false, true));
       }
       if (wantsScatter && bivariateStats && secondaryVar && secondaryVar.isNumeric) {
         const cleanY = CANONICAL_LABELS[secondaryVar.key] || secondaryVar.label;
@@ -4383,10 +4918,36 @@
         paragraphs.push(`Correlación lineal ${bivariateStats.sense} (r = ${fmtNumber(bivariateStats.r, 2)}, R² = ${fmtNumber(bivariateStats.r2, 2)}): ${brClause}máximo de ${cleanY} en ${bivariateStats.maxY.comuna} (${fmtNumber(bivariateStats.maxY.value)}) y mínimo en ${bivariateStats.minY.comuna} (${fmtNumber(bivariateStats.minY.value)}).`);
       }
 
+      let outChart = chartSpec;
+      if (isEnglishQuery && !wantsScatter && asksTourismInvestmentGap && outChart) {
+        outChart = Object.assign({}, outChart, {
+          title: 'SNASPE Park Visits per Tourist Bed, Overnight Ratio & Summer Pressure by Commune',
+          multiCharts: [
+            {
+              type: 'bar',
+              varX: 'visitas_por_cama_turistica',
+              varY: 'camas_turisticas',
+              title: 'Visits per Tourist Bed vs. Available Tourist Beds',
+              sourceText: resolveSourcesForKeys(['visitas_por_cama_turistica', 'camas_turisticas']).map(s => s.institucion).join(' · '),
+              excludeCoyhaique
+            },
+            {
+              type: 'bar',
+              varX: 'ratio_presion_turistica',
+              varY: 'visitas_por_pernoctacion_ratio',
+              title: 'Summer Tourist Pressure vs. Visits/Overnight Ratio',
+              sourceText: resolveSourcesForKeys(['ratio_presion_turistica', 'visitas_por_pernoctacion_ratio']).map(s => s.institucion).join(' · '),
+              excludeCoyhaique
+            }
+          ]
+        });
+      }
+
+      const maxReplyLen = (isEnglishQuery && isFourVar) ? 780 : 645;
       const combinedVarReply = `${paragraphs.filter(Boolean).join(' ')}${over10Note || ''}`;
       const res = {
-        reply: combinedVarReply.length > 645 ? combinedVarReply.slice(0, 642) + '...' : combinedVarReply,
-        chart: chartSpec,
+        reply: combinedVarReply.length > maxReplyLen ? combinedVarReply.slice(0, maxReplyLen - 3) + '...' : combinedVarReply,
+        chart: outChart,
         sources,
         relatedHub
       };
@@ -4587,6 +5148,7 @@
     VARIABLE_TO_PROVENANCE,
     INDICATOR_SYNONYMS,
     FUENTES_OFICIALES_28,
+    FUENTES_OFICIALES_COMPLEMENTARIAS,
 
     getComunaVector(varKey, excludeCoyhaique = false) {
       if (!_memoryIndex.comunas.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {

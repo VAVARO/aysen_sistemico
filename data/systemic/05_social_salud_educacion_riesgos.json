@@ -83,6 +83,13 @@
       "url_origen": "https://www.minsal.cl/gestion-tiempos-de-espera/",
       "metodo_extraccion": "Reporte de listas de espera de consultas de especialidad e intervenciones quirúrgicas",
       "archivo_raw_local": "data/raw/social_ambiental/sigte_listas_espera_aysen.json"
+    },
+    {
+      "institucion": "Ministerio de Desarrollo Social y Familia (BIDAT) vía BCN 2026",
+      "sistema": "Registro Social de Hogares (RSH Junio 2026): Carencia de Servicios Básicos y Hacinamiento",
+      "url_origen": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101",
+      "metodo_extraccion": "Extracción directa desde Reportes Comunales BCN 2026 (corte junio 2026, 10 comunas)",
+      "archivo_raw_local": "data/systemic/05_social_salud_educacion_riesgos.json"
     }
   ],
   "resumen_regional": {
@@ -513,7 +520,11 @@
       "desglose_recintos": "56 escuelas y liceos públicos + 10 jardines infantiles y subvencionados articulados",
       "crisis_operacional": "Déficit de infraestructura térmica (estufas a pellet defectuosas y calderas) y rutas de transporte escolar rural DTPR declaradas desiertas en temporada invernal",
       "fuente": "SLEP Aysén / Superintendencia de Educación / DTPR MTT"
-    }
+    },
+    "rsh_jun2026_carencia_serv_basicos_regional_pct": 12.4,
+    "rsh_jun2026_hacinamiento_regional_pct": 5.7,
+    "peh_minvu_meta_viviendas": 1293,
+    "peh_minvu_estado_2025_2026": "Meta de 1.293 viviendas superada (>101-107% en sept 2025); vigencia prorrogada hasta dic 2029. Contraloría tomó razón del PRI Coyhaique-Aysén en oct 2026."
   },
   "por_comuna": [
     {
@@ -904,6 +915,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 11.7,
+          "rsh_hacinamiento_jun2026_pct": 6.2,
+          "ruralidad_censo_2024_pct": 19.0
         }
       }
     },
@@ -1292,6 +1308,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 33.9,
+          "rsh_hacinamiento_jun2026_pct": 3.6,
+          "ruralidad_censo_2024_pct": 100.0
         }
       }
     },
@@ -1684,6 +1705,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 11.7,
+          "rsh_hacinamiento_jun2026_pct": 5.0,
+          "ruralidad_censo_2024_pct": 14.7
         }
       }
     },
@@ -2073,6 +2099,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 12.2,
+          "rsh_hacinamiento_jun2026_pct": 3.8,
+          "ruralidad_censo_2024_pct": 28.1
         }
       }
     },
@@ -2460,6 +2491,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 26.9,
+          "rsh_hacinamiento_jun2026_pct": 10.1,
+          "ruralidad_censo_2024_pct": 8.1
         }
       }
     },
@@ -2847,6 +2883,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 9.7,
+          "rsh_hacinamiento_jun2026_pct": 5.6,
+          "ruralidad_censo_2024_pct": 37.2
         }
       }
     },
@@ -3234,6 +3275,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 14.0,
+          "rsh_hacinamiento_jun2026_pct": 4.7,
+          "ruralidad_censo_2024_pct": 100.0
         }
       }
     },
@@ -3622,6 +3668,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 15.8,
+          "rsh_hacinamiento_jun2026_pct": 5.8,
+          "ruralidad_censo_2024_pct": 21.8
         }
       }
     },
@@ -4009,6 +4060,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 13.1,
+          "rsh_hacinamiento_jun2026_pct": 5.1,
+          "ruralidad_censo_2024_pct": 100.0
         }
       }
     },
@@ -4396,6 +4452,11 @@
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
           "establecimientos_totales": 66
+        },
+        "vivienda_y_rsh": {
+          "rsh_carencia_servicios_basicos_jun2026_pct": 38.1,
+          "rsh_hacinamiento_jun2026_pct": 7.4,
+          "ruralidad_censo_2024_pct": 100.0
         }
       }
     }

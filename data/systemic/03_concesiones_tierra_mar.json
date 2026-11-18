@@ -5292,5 +5292,10 @@
       },
       "source_url": "https://ide.bienes.cl/"
     }
-  ]
+  ],
+  "auditoria_propiedad_fiscal_y_crubc": {
+    "propiedad_fiscal_regional_dipres_pct_rango": "72,54% - 79,57% (incluye SNASPE CONAF ~53,8% + fiscal disponible ~20,8%)",
+    "nota_comunal": "El Ministerio de Bienes Nacionales y DIPRES reportan el catastro agregado regional sin tabla comunal estática homologable para propiedad fiscal no-SNASPE; se rechazan interpolaciones artificiales por comuna y muestras inmobiliarias privadas (<5 avisos en comunas extremas).",
+    "crubc_borde_costero_dic2025": "Sesión CRUBC diciembre 2025 rechazó unánimemente solicitudes ECMPO de ~621.000 ha en Cisnes, Guaitecas e Isla Huichas tras votación multisectorial."
+  }
 }

@@ -1,7 +1,7 @@
 {
   "fuente": "Subsecretaría de Telecomunicaciones (SUBTEL) - Series Trimestrales y Proyecto FOA",
   "url_origen": "https://www.subtel.gob.cl/estudios-y-estadisticas/",
-  "fecha_corte": "2026-10-18",
+  "fecha_corte": "2026-06-30",
   "series_regionales": [
     {
       "ano": 2015,
@@ -105,10 +105,12 @@
     {
       "ano": 2026,
       "telecomunicaciones": {
-        "accesos_internet_fijo_regional": 24750,
+        "accesos_internet_fijo_regional": 26294,
         "penetracion_internet_fijo_hogares_pct": 74.2,
         "abonados_internet_movil_4g_5g": 133400,
-        "despliegue_foa_estado": "Madurez operativa del sistema FOA regional y cierre progresivo de brecha digital rural"
+        "despliegue_foa_estado": "26.294 conexiones fijas (76,0% FTTX, 21,5% Starlink) a jun 2026 + adjudicación FDT Última Milla $7.600 MM (ago 2026)",
+        "fttx_fibra_optica_jun2026": 19972,
+        "starlink_satelital_jun2026": 5648
       }
     }
   ],
@@ -733,5 +735,17 @@
         "penetracion_internet_fijo_pct": 5.4
       }
     ]
+  },
+  "archivo_oficial_verificado": "1_SERIES_CONEXIONES_INTERNET_FIJA_JUN26_270826-VF.xlsx (SUBTEL, hojas 7.7.1, 7.11 y 7.11.1, corrección cruce DL/DM 2019-2026)",
+  "desglose_tecnologico_junio_2026": {
+    "total_conexiones_region_11": 26294,
+    "fttx_fibra_optica": 19972,
+    "fttx_pct": 75.96,
+    "starlink_satelital": 5648,
+    "starlink_pct": 21.48,
+    "otras_inalambricas_hughes_etc": 82,
+    "adsl": 592,
+    "hfc_cable_modem": 0,
+    "proyecto_fibra_ultima_milla_ago2026": "Adjudicación GORE-SUBTEL $7.600 MM a Mundo Telecomunicaciones: 33 localidades y 7.802 viviendas en 6 comunas (Coyhaique, Aysén, Cisnes, Guaitecas, Chile Chico, Tortel)"
   }
 }

@@ -5,7 +5,7 @@
   "dataset_id": "01_gob_poder_finanzas",
   "titulo": "Poder Político, Autoridades y Finanzas Municipales (SINIM / BCN / SERVEL)",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-10-17T20:00:00Z",
+  "fecha_extraccion": "2026-11-17T00:00:00Z",
   "fuentes_primarias": [
     {
       "institucion": "Biblioteca del Congreso Nacional de Chile (BCN)",
@@ -48,38 +48,59 @@
       "url_origen": "https://sni.gob.cl/",
       "metodo_extraccion": "Evaluacion Tecnico-Economica Ex-Ante de Iniciativas de Inversion Municipal y Regional",
       "archivo_raw_local": "data/raw/politico_sinim/mideso_bip_proyectos_raw.json"
+    },
+    {
+      "institucion": "Consejo para la Transparencia (CPLT)",
+      "sistema": "Informe Nacional de Fiscalización Transparencia Activa Municipal 2026",
+      "url_origen": "https://www.consejotransparencia.cl/",
+      "metodo_extraccion": "Evaluación oficial por municipalidad (10 comunas de Aysén · promedio regional 73,8%)",
+      "archivo_raw_local": "data/raw/politico_sinim/cplt_transparencia_activa_2026.json"
+    },
+    {
+      "institucion": "Gobierno Regional de Aysén (datos.gob.cl)",
+      "sistema": "Inversión Anual FNDR y Fondos Concursables Comunitarios 8% por Comuna (2015–2025)",
+      "url_origen": "https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005",
+      "metodo_extraccion": "Descarga CSV/XLSX CKAN datos.gob.cl + BCN/SUBDERE FET Royalty Minero 2024-2025",
+      "archivo_raw_local": "data/raw/politico_sinim/gore_fndr_fondos_comunales_datosgob_2015_2025.json"
+    },
+    {
+      "institucion": "SERVEL / TRICEL / Congreso Nacional / GORE Aysén",
+      "sistema": "Composición Política Histórica de Aysén (1989–2026): Presidenciales, Parlamento, CORE y Alcaldes",
+      "url_origen": "https://www.goreaysen.cl/consejeros-regionales/",
+      "metodo_extraccion": "Consolidación de actas SERVEL/TRICEL, Senado/Cámara, BCN 2026 y nómina oficial CORE 2025-2029",
+      "archivo_raw_local": "data/raw/politico_sinim/servel_historia_politica_aysen_1989_2026.json"
     }
   ],
   "resumen_regional": {
-    "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos · Periodo 2024-2028)",
-    "delegado_presidencial_regional": "Jorge Diaz Guzman",
+    "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos · Período 2025-2029 · 54,39% 1ra vuelta oct 2024)",
+    "delegado_presidencial_regional": "Luz María Vicuña Figueroa (desde 11 mar 2026; antecesor Jorge Díaz Guzmán 2024-2026)",
     "senadores_circunscripcion_14": [
       {
-        "nombre": "David Sandoval Plaza",
-        "partido": "UDI",
-        "periodo": "2018-2026"
+        "nombre": "Miguel Ángel Calisto Águila",
+        "partido": "Independiente / FREVS",
+        "periodo": "2026-2034"
       },
       {
         "nombre": "Ximena Órdenes Neira",
-        "partido": "PPD / IND",
-        "periodo": "2018-2026"
+        "partido": "Independiente / PPD",
+        "periodo": "2026-2034"
       }
     ],
     "diputados_distrito_27": [
       {
-        "nombre": "Miguel Ángel Calisto Águila",
-        "partido": "Demócratas",
-        "periodo": "2022-2026"
-      },
-      {
-        "nombre": "Marcia Raphael Mora",
-        "partido": "RN",
-        "periodo": "2022-2026"
+        "nombre": "Alejandra Valdebenito Torres",
+        "partido": "UDI / Chile Grande y Unido",
+        "periodo": "2026-2030"
       },
       {
         "nombre": "René Alinco Bustos",
-        "partido": "Independiente",
-        "periodo": "2022-2026"
+        "partido": "Independiente / FREVS",
+        "periodo": "2026-2030"
+      },
+      {
+        "nombre": "Andrea Macías Palma",
+        "partido": "PS / Unidad por Chile",
+        "periodo": "2026-2030"
       }
     ],
     "presupuesto_fndr_regional_mclp": 72450.0,
@@ -464,6 +485,84 @@
         "monto_convenio_mclp": 1673.356,
         "resolucion": "Anulacion formal del convenio de $1.673 MM en agosto de 2023 por votacion del Consejo Regional (CORE) antes de toma de razon ante el escandalo nacional del Caso Convenios, al detectarse sobrecosto de mas de $23 MM por familia para 70 beneficiarios"
       }
+    ],
+    "transparencia_activa_cplt_2026_promedio_pct": 73.8,
+    "fet_royalty_minero_total_regional_2025_mclp": 3207.74,
+    "participacion_presidencial_2025_2v_regional_pct": 73.3,
+    "fndr_datosgob_2023_asignado_mclp": 68333.7,
+    "fndr_datosgob_2023_ejecutado_mclp": 61579.2,
+    "fndr_datosgob_2023_ejecucion_pct": 90.1,
+    "consejeros_regionales_2025_2029": [
+      {
+        "provincia": "Coyhaique",
+        "nombre": "Pablo Guglielmi Asenjo",
+        "partido": "RN"
+      },
+      {
+        "provincia": "Coyhaique",
+        "nombre": "Rocco Martiniello Ávila",
+        "partido": "PDC"
+      },
+      {
+        "provincia": "Coyhaique",
+        "nombre": "Marisol Martínez Sánchez",
+        "partido": "PS"
+      },
+      {
+        "provincia": "Coyhaique",
+        "nombre": "Benjamín Infante Rodríguez-Peña",
+        "partido": "PC"
+      },
+      {
+        "provincia": "Coyhaique",
+        "nombre": "Gustavo Villarroel Pinilla",
+        "partido": "PR"
+      },
+      {
+        "provincia": "Coyhaique",
+        "nombre": "Dominique Brautigam Lagomarsino",
+        "partido": "UDI (asumió sept 2026 en reemplazo de Omar Muñoz Sierra)"
+      },
+      {
+        "provincia": "Aysén",
+        "nombre": "Rosa González Bórquez",
+        "partido": "PDC"
+      },
+      {
+        "provincia": "Aysén",
+        "nombre": "Ximena Novoa Pérez",
+        "partido": "RN"
+      },
+      {
+        "provincia": "Aysén",
+        "nombre": "Julio Rossel González",
+        "partido": "PS"
+      },
+      {
+        "provincia": "Aysén",
+        "nombre": "María Loreta Villegas Almonacid",
+        "partido": "IND (sucesora tras renuncia mar 2026 de Eligio Montecinos como DPP Aysén)"
+      },
+      {
+        "provincia": "Capitán Prat",
+        "nombre": "Ana María Mora Araneda",
+        "partido": "RN"
+      },
+      {
+        "provincia": "Capitán Prat",
+        "nombre": "Rodrigo Rivera Tejeda",
+        "partido": "IND"
+      },
+      {
+        "provincia": "General Carrera",
+        "nombre": "Paulina Hernández Sánchez",
+        "partido": "IND / PDC"
+      },
+      {
+        "provincia": "General Carrera",
+        "nombre": "Arcadio Soto Serón",
+        "partido": "UDI"
+      }
     ]
   },
   "por_comuna": [
@@ -475,7 +574,7 @@
       "codigo_cuenca": "113",
       "lat": -45.5712,
       "lng": -72.0685,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11101",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Carlos Gatica Villegas",
@@ -483,7 +582,10 @@
           "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 84.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 74.45,
+          "participacion_presidencial_2025_2v_pct": 74.2,
+          "padron_electoral_nov_2025": 54921
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 26540.8,
@@ -494,7 +596,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 42.1,
           "ingresos_patentes_acuicolas_mclp": 725.0,
-          "ingresos_patentes_mineras_mclp": 725.0
+          "ingresos_patentes_mineras_mclp": 725.0,
+          "ingresos_municipales_bcn_2025_mclp": 27611.0,
+          "fcm_bcn_2025_mclp": 12047.74,
+          "ipp_bcn_2025_mclp": 8571.21,
+          "fet_royalty_minero_2024_mclp": 205.03,
+          "fet_royalty_minero_2025_mclp": 472.58
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 14850.0,
@@ -503,7 +610,13 @@
             "Pavimentación urbana y vialidad",
             "Saneamiento sanitario periurbano",
             "Recambio de calefactores y eficiencia energética"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 98,
+          "fndr_gore_2023_asignado_mclp": 7804.2,
+          "fndr_gore_2023_ejecutado_mclp": 7440.27,
+          "fndr_gore_2023_ejecucion_pct": 95.3,
+          "fondos_concursables_gore_2023_n": 230,
+          "fondos_concursables_gore_2023_mclp": 2688.58
         },
         "series_historicas": [
           {
@@ -857,15 +970,18 @@
       "codigo_cuenca": "111",
       "lat": -44.241,
       "lng": -71.8465,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11102",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11102",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Claudia Andrea Valdes Vasquez",
+          "alcalde_nombre": "Claudia Valdés Vásquez",
           "alcalde_partido_pacto": "Independiente / Contigo Chile Mejor",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 87.5,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 59.24,
+          "participacion_presidencial_2025_2v_pct": 67.8,
+          "padron_electoral_nov_2025": 1141
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2450.2,
@@ -876,7 +992,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 48.5,
           "ingresos_patentes_acuicolas_mclp": 17.5,
-          "ingresos_patentes_mineras_mclp": 17.5
+          "ingresos_patentes_mineras_mclp": 17.5,
+          "ingresos_municipales_bcn_2025_mclp": 3321.05,
+          "fcm_bcn_2025_mclp": 2249.3,
+          "ipp_bcn_2025_mclp": 430.75,
+          "fet_royalty_minero_2024_mclp": 121.39,
+          "fet_royalty_minero_2025_mclp": 283.22
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2200.0,
@@ -885,7 +1006,13 @@
             "Conectividad vecinal rural y huellas",
             "Electrificación y generación aislada",
             "Postas de salud rural Lago Verde y Villa Amengual"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 27,
+          "fndr_gore_2023_asignado_mclp": 1308.79,
+          "fndr_gore_2023_ejecutado_mclp": 1258.59,
+          "fndr_gore_2023_ejecucion_pct": 96.2,
+          "fondos_concursables_gore_2023_n": 8,
+          "fondos_concursables_gore_2023_mclp": 97.07
         },
         "series_historicas": [
           {
@@ -1239,15 +1366,18 @@
       "codigo_cuenca": "113",
       "lat": -45.405,
       "lng": -72.693,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11201",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11201",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Luis Martinez Gallardo",
+          "alcalde_nombre": "Luis Martínez Gallardo",
           "alcalde_partido_pacto": "Union Democrata Independiente (UDI) / Chile Vamos",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 82.8,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 96.09,
+          "participacion_presidencial_2025_2v_pct": 75.5,
+          "padron_electoral_nov_2025": 22894
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 14210.5,
@@ -1258,7 +1388,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 44.2,
           "ingresos_patentes_acuicolas_mclp": 1665.0,
-          "ingresos_patentes_mineras_mclp": 185.0
+          "ingresos_patentes_mineras_mclp": 185.0,
+          "ingresos_municipales_bcn_2025_mclp": 14614.29,
+          "fcm_bcn_2025_mclp": 7089.9,
+          "ipp_bcn_2025_mclp": 4512.82,
+          "fet_royalty_minero_2024_mclp": 168.18,
+          "fet_royalty_minero_2025_mclp": 392.86
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 9800.0,
@@ -1267,7 +1402,13 @@
             "Borde costero Ribera Sur y paseo fluvial",
             "Saneamiento básico y alcantarillado Islas Huichas",
             "Pavimentación y drenaje urbano Puerto Aysén"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 69,
+          "fndr_gore_2023_asignado_mclp": 5107.54,
+          "fndr_gore_2023_ejecutado_mclp": 4827.45,
+          "fndr_gore_2023_ejecucion_pct": 94.5,
+          "fondos_concursables_gore_2023_n": 83,
+          "fondos_concursables_gore_2023_mclp": 888.32
         },
         "series_historicas": [
           {
@@ -1621,15 +1762,18 @@
       "codigo_cuenca": "112",
       "lat": -44.743,
       "lng": -72.699,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11202",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11202",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Francisco Javier Roncagliolo Lepio",
+          "alcalde_nombre": "Francisco Roncagliolo Lepio",
           "alcalde_partido_pacto": "Renovacion Nacional (RN) / Chile Vamos",
           "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 83.1,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 61.6,
+          "participacion_presidencial_2025_2v_pct": 77.1,
+          "padron_electoral_nov_2025": 4838
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 6100.0,
@@ -1640,7 +1784,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 39.8,
           "ingresos_patentes_acuicolas_mclp": 612.0,
-          "ingresos_patentes_mineras_mclp": 68.0
+          "ingresos_patentes_mineras_mclp": 68.0,
+          "ingresos_municipales_bcn_2025_mclp": 7985.27,
+          "fcm_bcn_2025_mclp": 2824.5,
+          "ipp_bcn_2025_mclp": 2979.78,
+          "fet_royalty_minero_2024_mclp": 133.76,
+          "fet_royalty_minero_2025_mclp": 312.87
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 5600.0,
@@ -1649,7 +1798,13 @@
             "Rampas de conectividad marítima La Junta y Puyuhuapi",
             "Agua potable rural APR y saneamiento",
             "Manejo de residuos domiciliarios costeros e insulares"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 48,
+          "fndr_gore_2023_asignado_mclp": 5079.95,
+          "fndr_gore_2023_ejecutado_mclp": 4738.1,
+          "fndr_gore_2023_ejecucion_pct": 93.3,
+          "fondos_concursables_gore_2023_n": 66,
+          "fondos_concursables_gore_2023_mclp": 607.58
         },
         "series_historicas": [
           {
@@ -2003,7 +2158,7 @@
       "codigo_cuenca": "110",
       "lat": -43.896,
       "lng": -73.748,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11203",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11203",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Bans Puinao Carimoney",
@@ -2011,7 +2166,10 @@
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 85.9,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 92.63,
+          "participacion_presidencial_2025_2v_pct": 71.0,
+          "padron_electoral_nov_2025": 1539
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 3300.0,
@@ -2022,7 +2180,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 51.2,
           "ingresos_patentes_acuicolas_mclp": 189.0,
-          "ingresos_patentes_mineras_mclp": 21.0
+          "ingresos_patentes_mineras_mclp": 21.0,
+          "ingresos_municipales_bcn_2025_mclp": 4569.04,
+          "fcm_bcn_2025_mclp": 2297.78,
+          "ipp_bcn_2025_mclp": 845.22,
+          "fet_royalty_minero_2024_mclp": 121.75,
+          "fet_royalty_minero_2025_mclp": 284.33
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 3400.0,
@@ -2031,7 +2194,13 @@
             "Generación eléctrica y subsidio diésel en Melinka",
             "Planta desalinizadora y ampliación red APR Repollal",
             "Infraestructura de atraque de pesca artesanal"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 25,
+          "fndr_gore_2023_asignado_mclp": 2520.34,
+          "fndr_gore_2023_ejecutado_mclp": 2452.02,
+          "fndr_gore_2023_ejecucion_pct": 97.3,
+          "fondos_concursables_gore_2023_n": 25,
+          "fondos_concursables_gore_2023_mclp": 278.9
         },
         "series_historicas": [
           {
@@ -2385,7 +2554,7 @@
       "codigo_cuenca": "115",
       "lat": -46.541,
       "lng": -71.722,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11401",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11401",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Ariel Keim Hermosilla",
@@ -2393,7 +2562,10 @@
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 83.6,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 57.46,
+          "participacion_presidencial_2025_2v_pct": 58.4,
+          "padron_electoral_nov_2025": 6284
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 5400.0,
@@ -2404,7 +2576,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 46.7,
           "ingresos_patentes_acuicolas_mclp": 32.0,
-          "ingresos_patentes_mineras_mclp": 288.0
+          "ingresos_patentes_mineras_mclp": 288.0,
+          "ingresos_municipales_bcn_2025_mclp": 5981.72,
+          "fcm_bcn_2025_mclp": 4249.66,
+          "ipp_bcn_2025_mclp": 664.34,
+          "fet_royalty_minero_2024_mclp": 130.75,
+          "fet_royalty_minero_2025_mclp": 304.56
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4900.0,
@@ -2413,7 +2590,13 @@
             "Defensas costeras y borde lacustre Lago General Carrera",
             "Canales de riego y microclima frutícola",
             "Pavimentación tramo periurbano Bahía Jara"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 32,
+          "fndr_gore_2023_asignado_mclp": 2972.5,
+          "fndr_gore_2023_ejecutado_mclp": 2675.58,
+          "fndr_gore_2023_ejecucion_pct": 90.0,
+          "fondos_concursables_gore_2023_n": 28,
+          "fondos_concursables_gore_2023_mclp": 416.96
         },
         "series_historicas": [
           {
@@ -2767,15 +2950,18 @@
       "codigo_cuenca": "113",
       "lat": -46.291,
       "lng": -71.936,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11402",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11402",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Marcelo Daniel Jelvez Cardenas",
+          "alcalde_nombre": "Marcelo Daniel Jélvez Cárdenas",
           "alcalde_partido_pacto": "Union Democrata Independiente (UDI) / Chile Vamos",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 86.4,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 100.0,
+          "participacion_presidencial_2025_2v_pct": 75.7,
+          "padron_electoral_nov_2025": 3073
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 3950.0,
@@ -2786,7 +2972,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 47.9,
           "ingresos_patentes_acuicolas_mclp": 57.5,
-          "ingresos_patentes_mineras_mclp": 57.5
+          "ingresos_patentes_mineras_mclp": 57.5,
+          "ingresos_municipales_bcn_2025_mclp": 6252.85,
+          "fcm_bcn_2025_mclp": 3260.78,
+          "ipp_bcn_2025_mclp": 505.89,
+          "fet_royalty_minero_2024_mclp": 128.91,
+          "fet_royalty_minero_2025_mclp": 301.48
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4100.0,
@@ -2795,7 +2986,13 @@
             "Espacios públicos e infraestructura turística Villa Cerro Castillo",
             "Saneamiento básico y alcantarillado Bahía Murta y Puerto Ibáñez",
             "Ciclovías y senderos seguros Ruta 7"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 45,
+          "fndr_gore_2023_asignado_mclp": 3407.22,
+          "fndr_gore_2023_ejecutado_mclp": 3234.43,
+          "fndr_gore_2023_ejecucion_pct": 94.9,
+          "fondos_concursables_gore_2023_n": 36,
+          "fondos_concursables_gore_2023_mclp": 301.59
         },
         "series_historicas": [
           {
@@ -3149,7 +3346,7 @@
       "codigo_cuenca": "115",
       "lat": -47.254,
       "lng": -72.571,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11301",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11301",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Patricio Ulloa Georgia",
@@ -3157,7 +3354,10 @@
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 85.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 60.58,
+          "participacion_presidencial_2025_2v_pct": 70.8,
+          "padron_electoral_nov_2025": 3461
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 4600.0,
@@ -3168,7 +3368,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 43.5,
           "ingresos_patentes_acuicolas_mclp": 90.0,
-          "ingresos_patentes_mineras_mclp": 90.0
+          "ingresos_patentes_mineras_mclp": 90.0,
+          "ingresos_municipales_bcn_2025_mclp": 5720.96,
+          "fcm_bcn_2025_mclp": 3005.2,
+          "ipp_bcn_2025_mclp": 502.86,
+          "fet_royalty_minero_2024_mclp": 128.77,
+          "fet_royalty_minero_2025_mclp": 296.74
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4800.0,
@@ -3177,7 +3382,13 @@
             "Infraestructura cultural y polideportivo Cochrane",
             "Maquinaria pesada para conectividad en valles San Lorenzo y Colonia",
             "Mejoramiento de redes sanitarias urbanas"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 39,
+          "fndr_gore_2023_asignado_mclp": 4090.98,
+          "fndr_gore_2023_ejecutado_mclp": 3894.32,
+          "fndr_gore_2023_ejecucion_pct": 95.2,
+          "fondos_concursables_gore_2023_n": 37,
+          "fondos_concursables_gore_2023_mclp": 356.13
         },
         "series_historicas": [
           {
@@ -3531,15 +3742,18 @@
       "codigo_cuenca": "117",
       "lat": -48.468,
       "lng": -72.56,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11302",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11302",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Jose Claudio Fica Gomez",
+          "alcalde_nombre": "José Claudio Fica Gómez",
           "alcalde_partido_pacto": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 88.0,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 62.71,
+          "participacion_presidencial_2025_2v_pct": 57.8,
+          "padron_electoral_nov_2025": 794
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2150.0,
@@ -3550,7 +3764,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 50.4,
           "ingresos_patentes_acuicolas_mclp": 14.0,
-          "ingresos_patentes_mineras_mclp": 14.0
+          "ingresos_patentes_mineras_mclp": 14.0,
+          "ingresos_municipales_bcn_2025_mclp": 5323.76,
+          "fcm_bcn_2025_mclp": 2405.56,
+          "ipp_bcn_2025_mclp": 118.31,
+          "fet_royalty_minero_2024_mclp": 119.61,
+          "fet_royalty_minero_2025_mclp": 279.69
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2400.0,
@@ -3559,7 +3778,13 @@
             "Conservación y operatividad aeródromo Villa O'Higgins",
             "Pasarelas y embarcadero Lago O'Higgins hacia Glaciar Chico",
             "Electrificación híbrida fotovoltaica-diésel"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 28,
+          "fndr_gore_2023_asignado_mclp": 1161.93,
+          "fndr_gore_2023_ejecutado_mclp": 1148.61,
+          "fndr_gore_2023_ejecucion_pct": 98.9,
+          "fondos_concursables_gore_2023_n": 12,
+          "fondos_concursables_gore_2023_mclp": 127.88
         },
         "series_historicas": [
           {
@@ -3913,15 +4138,18 @@
       "codigo_cuenca": "115",
       "lat": -47.795,
       "lng": -73.535,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=11303",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11303",
       "datos": {
         "autoridades": {
-          "alcalde_nombre": "Marisela Clorinda Jimenez Cruces",
+          "alcalde_nombre": "Marisela Jiménez Cruces",
           "alcalde_partido_pacto": "Independiente",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
           "participacion_electoral_pct": 87.3,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "transparencia_activa_cplt_2026_pct": 72.92,
+          "participacion_presidencial_2025_2v_pct": 64.4,
+          "padron_electoral_nov_2025": 630
         },
         "finanzas_sinim": {
           "presupuesto_municipal_anual_mclp": 2050.0,
@@ -3932,7 +4160,12 @@
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 52.6,
           "ingresos_patentes_acuicolas_mclp": 11.0,
-          "ingresos_patentes_mineras_mclp": 11.0
+          "ingresos_patentes_mineras_mclp": 11.0,
+          "ingresos_municipales_bcn_2025_mclp": 3440.74,
+          "fcm_bcn_2025_mclp": 2322.9,
+          "ipp_bcn_2025_mclp": 112.34,
+          "fet_royalty_minero_2024_mclp": 119.56,
+          "fet_royalty_minero_2025_mclp": 279.4
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2600.0,
@@ -3941,7 +4174,13 @@
             "Conservación patrimonial red pasarelas de ciprés de las Guaitecas",
             "Sistema de alcantarillado al vacío por gravedad",
             "Conectividad fluvial delta río Baker y Caleta Tortel"
-          ]
+          ],
+          "fndr_gore_2023_proyectos_n": 32,
+          "fndr_gore_2023_asignado_mclp": 1990.67,
+          "fndr_gore_2023_ejecutado_mclp": 1815.82,
+          "fndr_gore_2023_ejecucion_pct": 91.2,
+          "fondos_concursables_gore_2023_n": 11,
+          "fondos_concursables_gore_2023_mclp": 135.43
         },
         "series_historicas": [
           {
@@ -4299,11 +4538,13 @@
       "lng": -72.0662,
       "atributos": {
         "direccion": "Francisco Bilbao 357, Coyhaique",
-        "alcalde_titular": "Carlos Gatica Villegas",
+        "alcalde_titular": "Carlos Gatica Villegas (2024-2028)",
         "presupuesto_anual_mclp": 26540.8,
         "dependencia_fcm_pct": 46.5,
         "telefono": "+56 67 267 5100",
-        "categoria": "Municipio Capital Regional"
+        "categoria": "Municipio Capital Regional",
+        "transparencia_activa_cplt_2026_pct": 74.45,
+        "fet_royalty_minero_2025_mclp": 472.58
       },
       "source_url": "https://www.coyhaique.cl/"
     },
@@ -4317,11 +4558,13 @@
       "lng": -71.8494,
       "atributos": {
         "direccion": "Los Guindos s/n, Lago Verde",
-        "alcalde_titular": "Claudio Fica / Nelson Opazo López",
+        "alcalde_titular": "Claudia Valdés Vásquez (2024-2028)",
         "presupuesto_anual_mclp": 2450.2,
         "dependencia_fcm_pct": 89.2,
         "telefono": "+56 67 241 1200",
-        "categoria": "Municipio Rural Cordillerano"
+        "categoria": "Municipio Rural Cordillerano",
+        "transparencia_activa_cplt_2026_pct": 59.24,
+        "fet_royalty_minero_2025_mclp": 283.22
       },
       "source_url": "https://www.lagoverdeaysen.cl/"
     },
@@ -4335,11 +4578,13 @@
       "lng": -72.6915,
       "atributos": {
         "direccion": "Kalstrom 565, Puerto Aysén",
-        "alcalde_titular": "Julio Uribe Alvarado",
+        "alcalde_titular": "Luis Martínez Gallardo (2024-2028)",
         "presupuesto_anual_mclp": 14210.5,
         "dependencia_fcm_pct": 52.8,
         "telefono": "+56 67 233 6000",
-        "categoria": "Municipio Marítimo-Portuario"
+        "categoria": "Municipio Marítimo-Portuario",
+        "transparencia_activa_cplt_2026_pct": 96.09,
+        "fet_royalty_minero_2025_mclp": 392.86
       },
       "source_url": "https://www.puertoaysen.cl/"
     },
@@ -4353,11 +4598,13 @@
       "lng": -72.6806,
       "atributos": {
         "direccion": "Rafael Sotomayor 191, Puerto Cisnes",
-        "alcalde_titular": "Francisco Roncagliolo Lepio",
+        "alcalde_titular": "Francisco Roncagliolo Lepio (2024-2028)",
         "presupuesto_anual_mclp": 6100.0,
         "dependencia_fcm_pct": 74.5,
         "telefono": "+56 67 234 6400",
-        "categoria": "Municipio Litoral Fiordos Norte"
+        "categoria": "Municipio Litoral Fiordos Norte",
+        "transparencia_activa_cplt_2026_pct": 61.6,
+        "fet_royalty_minero_2025_mclp": 312.87
       },
       "source_url": "https://www.municipalidadcisnes.cl/"
     },
@@ -4371,11 +4618,13 @@
       "lng": -73.7458,
       "atributos": {
         "direccion": "Felipe Westhoff s/n, Melinka",
-        "alcalde_titular": "Marcos Silva Miranda",
+        "alcalde_titular": "Bans Puinao Carimoney (2024-2028)",
         "presupuesto_anual_mclp": 3300.0,
         "dependencia_fcm_pct": 83.0,
         "telefono": "+56 67 243 1220",
-        "categoria": "Municipio Archipiélago Insular Aislado"
+        "categoria": "Municipio Archipiélago Insular Aislado",
+        "transparencia_activa_cplt_2026_pct": 92.63,
+        "fet_royalty_minero_2025_mclp": 284.33
       },
       "source_url": "https://www.muniguaitecas.cl/"
     },
@@ -4389,11 +4638,13 @@
       "lng": -71.7219,
       "atributos": {
         "direccion": "Bernardo O'Higgins 333, Chile Chico",
-        "alcalde_titular": "Luperciano Muñoz González",
+        "alcalde_titular": "Ariel Keim Hermosilla (2024-2028)",
         "presupuesto_anual_mclp": 5400.0,
         "dependencia_fcm_pct": 71.2,
         "telefono": "+56 67 241 1260",
-        "categoria": "Municipio Cuenca Lacustre Fronterizo"
+        "categoria": "Municipio Cuenca Lacustre Fronterizo",
+        "transparencia_activa_cplt_2026_pct": 57.46,
+        "fet_royalty_minero_2025_mclp": 304.56
       },
       "source_url": "https://www.chilechico.cl/"
     },
@@ -4407,11 +4658,13 @@
       "lng": -71.9378,
       "atributos": {
         "direccion": "Carlos Soza 161, Puerto Ingeniero Ibáñez",
-        "alcalde_titular": "Marcelo Santana Vargas / Alcaldía en ejercicio",
+        "alcalde_titular": "Marcelo Daniel Jélvez Cárdenas (2024-2028)",
         "presupuesto_anual_mclp": 3950.0,
         "dependencia_fcm_pct": 79.6,
         "telefono": "+56 67 242 3200",
-        "categoria": "Municipio Turístico-Rural Lacustre"
+        "categoria": "Municipio Turístico-Rural Lacustre",
+        "transparencia_activa_cplt_2026_pct": 100.0,
+        "fet_royalty_minero_2025_mclp": 301.48
       },
       "source_url": "https://www.rioibanez.cl/"
     },
@@ -4425,11 +4678,13 @@
       "lng": -72.5694,
       "atributos": {
         "direccion": "San Valentín 555, Cochrane",
-        "alcalde_titular": "Patricio Ulloa Georgia / Jorge Calderón Núñez",
+        "alcalde_titular": "Patricio Ulloa Georgia (2024-2028)",
         "presupuesto_anual_mclp": 4600.0,
         "dependencia_fcm_pct": 76.8,
         "telefono": "+56 67 252 2100",
-        "categoria": "Municipio Capital Provincial Capitán Prat"
+        "categoria": "Municipio Capital Provincial Capitán Prat",
+        "transparencia_activa_cplt_2026_pct": 60.58,
+        "fet_royalty_minero_2025_mclp": 296.74
       },
       "source_url": "https://www.cochrane.cl/"
     },
@@ -4443,11 +4698,13 @@
       "lng": -72.5614,
       "atributos": {
         "direccion": "Pasaje Lago Christie 36, Villa O'Higgins",
-        "alcalde_titular": "Roberto Recabal Cárcamo / Claudio Fica",
+        "alcalde_titular": "José Claudio Fica Gómez (2024-2028)",
         "presupuesto_anual_mclp": 2150.0,
         "dependencia_fcm_pct": 91.5,
         "telefono": "+56 67 243 1800",
-        "categoria": "Municipio Terminal Carretera Austral"
+        "categoria": "Municipio Terminal Carretera Austral",
+        "transparencia_activa_cplt_2026_pct": 62.71,
+        "fet_royalty_minero_2025_mclp": 279.69
       },
       "source_url": "https://www.muni-ohiggins.cl/"
     },
@@ -4461,11 +4718,13 @@
       "lng": -73.5322,
       "atributos": {
         "direccion": "Pasarela Costanera s/n, Caleta Tortel",
-        "alcalde_titular": "Abel Becerra Vidal",
+        "alcalde_titular": "Marisela Jiménez Cruces (2024-2028)",
         "presupuesto_anual_mclp": 2050.0,
         "dependencia_fcm_pct": 92.8,
         "telefono": "+56 67 243 1820",
-        "categoria": "Municipio Fluvial-Delta Pasarelas"
+        "categoria": "Municipio Fluvial-Delta Pasarelas",
+        "transparencia_activa_cplt_2026_pct": 72.92,
+        "fet_royalty_minero_2025_mclp": 279.4
       },
       "source_url": "https://www.municipalidaddetortel.cl/"
     },
@@ -4479,11 +4738,14 @@
       "lng": -72.064,
       "atributos": {
         "direccion": "Calle Ejército 405, Coyhaique",
-        "gobernador_regional": "Andrea Macías Palma (2021-2024) / Marcelo Santana Vargas (electo 2024)",
+        "gobernador_regional": "Marcelo Santana Vargas (UDI)",
         "presupuesto_fndr_anual_mclp": 72450.0,
         "consejeros_regionales_total": 14,
         "telefono": "+56 67 221 5000",
-        "rol": "Administración superior y asignación del Fondo Nacional de Desarrollo Regional (FNDR)"
+        "rol": "Administración superior y asignación del Fondo Nacional de Desarrollo Regional (FNDR)",
+        "delegado_presidencial": "Luz María Vicuña Figueroa (desde mar 2026)",
+        "senadores_2026_2034": "Miguel Ángel Calisto (Ind-FREVS), Ximena Órdenes (Ind-PPD)",
+        "diputados_2026_2030": "Alejandra Valdebenito (UDI), René Alinco (Ind-FREVS), Andrea Macías (PS)"
       },
       "source_url": "https://www.goreaysen.cl/"
     },

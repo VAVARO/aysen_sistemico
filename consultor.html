@@ -766,6 +766,7 @@
         sourceText: '',
         excludeCoyhaique: false,
         customCategoryData: false,
+        customTemporalSeries: null,
         labels: null,
         datasets: null,
         holdingRows: null,
@@ -895,6 +896,7 @@
           currentChartState.varZ = null;
           currentChartState.varW = null;
           currentChartState.multiCharts = null;
+          currentChartState.customTemporalSeries = null;
           currentChartState.singleComunaMode = false;
           currentChartState.focusComunas = null;
           currentChartState.onlyFocusedComunas = false;
@@ -942,6 +944,7 @@
           sourceText: spec.sourceText || '',
           excludeCoyhaique: Boolean(spec.excludeCoyhaique),
           customCategoryData: Boolean(spec.customCategoryData),
+          customTemporalSeries: spec.customTemporalSeries || null,
           labels: spec.labels || null,
           datasets: spec.datasets || null,
           holdingRows: spec.holdingRows || null,
@@ -1242,7 +1245,45 @@
         'tasa_aprobacion_rs_sni_pct': { label: 'Tasa Aprobación RS Proyectos SNI', unit: '%' },
         'glaciar_exploradores_estatus': { label: 'Estatus Operativo Glaciar Exploradores', unit: 'estatus' },
         'zoits_oficiales_count': { label: 'Zonas de Interés Turístico Decretadas', unit: 'ZOITs' },
-        'superficie_glaciares_km2': { label: 'Superficie Glaciar Comunal (DGA)', unit: 'km²' }
+        'superficie_glaciares_km2': { label: 'Superficie Glaciar Comunal (DGA)', unit: 'km²' },
+        'transparencia_activa_cplt_2026_pct': { label: 'Cumplimiento Transparencia Activa CPLT 2026', unit: '%' },
+        'participacion_presidencial_2025_2v_pct': { label: 'Participación Presidencial 2V Dic 2025', unit: '%' },
+        'padron_electoral_nov_2025': { label: 'Padrón Electoral Comunal (SERVEL Nov 2025)', unit: 'electores' },
+        'ingresos_mun_bcn_2025_mclp': { label: 'Ingresos Municipales BCN 2025', unit: 'M$' },
+        'fet_royalty_minero_2024_mclp': { label: 'Fondo Equidad Territorial Royalty Minero 2024', unit: 'M$' },
+        'fet_royalty_minero_2025_mclp': { label: 'Fondo Equidad Territorial Royalty Minero 2025', unit: 'M$' },
+        'fndr_gore_2023_proyectos_n': { label: 'Iniciativas FNDR GORE Aysén 2023', unit: 'proyectos' },
+        'fndr_gore_2023_asignado_mclp': { label: 'Monto Asignado FNDR GORE 2023', unit: 'M$' },
+        'fndr_gore_2023_ejecutado_mclp': { label: 'Gasto Ejecutado FNDR GORE 2023', unit: 'M$' },
+        'fndr_gore_2023_ejecucion_pct': { label: 'Tasa de Ejecución FNDR GORE 2023', unit: '%' },
+        'fondos_concursables_gore_2023_n': { label: 'Proyectos Fondos Concursables GORE 2023', unit: 'proyectos' },
+        'fondos_concursables_gore_2023_mclp': { label: 'Monto Fondos Concursables GORE 2023', unit: 'M$' },
+        'rsh_carencia_servicios_basicos_jun2026_pct': { label: 'Hogares con Carencia Servicios Básicos RSH Jun 2026', unit: '%' },
+        'rsh_hacinamiento_jun2026_pct': { label: 'Hogares en Hacinamiento RSH Jun 2026', unit: '%' },
+        'ruralidad_censo_2024_pct': { label: 'Población Rural Censo 2024', unit: '%' },
+        'conexiones_fijas_subtel_jun2026_n': { label: 'Conexiones Internet Fija SUBTEL Jun 2026', unit: 'conexiones' },
+        'conexiones_residenciales_subtel_jun2026_n': { label: 'Conexiones Internet Residencial SUBTEL Jun 2026', unit: 'conexiones' },
+        'variacion_conexiones_2015_2026_pct': { label: 'Variación Conexiones Fijas 2015–Jun 2026', unit: '%' },
+        'seia_plazo_dias': { label: 'Plazo Promedio de Evaluación SEIA', unit: 'días' },
+        'red_vial_pavimentada_pct': { label: 'Porcentaje de Red Vial Pavimentada', unit: '%' },
+        'red_vial_pavimentada_km': { label: 'Red Vial Pavimentada', unit: 'km' },
+        'red_vial_ripio_km': { label: 'Red Vial en Ripio', unit: 'km' },
+        'tiempo_viaje_coyhaique_hrs': { label: 'Tiempo de Traslado a Coyhaique', unit: 'hrs' },
+        'camas_turisticas': { label: 'Capacidad de Camas Turísticas', unit: 'camas' },
+        'ratio_presion_turistica': { label: 'Presión Turística Estival', unit: 'visitas/hab' },
+        'visitas_por_cama_turistica': { label: 'Visitas SNASPE por Cama Turística', unit: 'visitas/cama' },
+        'visitas_por_pernoctacion_ratio': { label: 'Ratio Visitas SNASPE / Pernoctaciones EMAT', unit: 'ratio' },
+        'visitantes_extranjeros_pct': { label: 'Visitantes Internacionales Receptivos', unit: '%' },
+        'visitantes_extranjeros_snaspe_n': { label: 'Visitantes Extranjeros Anuales SNASPE', unit: 'visitantes' },
+        'tasa_ocupacion_estival_pct': { label: 'Tasa de Ocupación Hotelera Estival', unit: '%' },
+        'tasa_ocupacion_invernal_pct': { label: 'Tasa de Ocupación Hotelera Invernal', unit: '%' },
+        'concentracion_estival_pct': { label: 'Concentración Estacional Estival (Dic–Mar)', unit: '%' },
+        'estadia_promedio_dias': { label: 'Estadía Media Turística EMAT', unit: 'días' },
+        'gasto_diario_turista_usd': { label: 'Gasto Diario Promedio por Turista', unit: 'US$' },
+        'tarifa_adr_estimada_usd': { label: 'Tarifa Promedio Diaria ADR Estimada', unit: 'US$/noche' },
+        'revpar_estimado_usd': { label: 'Ingreso por Habitación Disponible RevPAR', unit: 'US$' },
+        'largo_pista_aerodromo_m': { label: 'Longitud de Pista Aeródromo Principal', unit: 'm' },
+        'operaciones_aerodromo_interior_anual': { label: 'Operaciones Aéreas Anuales Aeródromos Interiores', unit: 'ops/año' }
       };
 
       // Formateo seguro de títulos de eje y leyendas evitando duplicación de porcentaje
@@ -1605,7 +1646,9 @@
         }
 
         if (btnViewTable) {
-          if (Array.isArray(spec.comunaProfileRows) && spec.comunaName && spec.onlyFocusedComunas !== false) {
+          if (spec.customTemporalSeries && Array.isArray(spec.customTemporalSeries.labels)) {
+            btnViewTable.textContent = `Tabla histórica (${spec.customTemporalSeries.labels.length} períodos)`;
+          } else if (Array.isArray(spec.comunaProfileRows) && spec.comunaName && spec.onlyFocusedComunas !== false) {
             btnViewTable.textContent = `Ficha comunal (${spec.comunaName})`;
           } else if (spec.onlyFocusedComunas && activeComunas.length < filteredComunas.length) {
             btnViewTable.textContent = `Datos de ${activeComunas.map(c => c.nombre || c.nombre_comuna).join(' / ')}`;
@@ -1617,6 +1660,38 @@
         const vX = spec.varX || 'poblacion_censo_2024';
         const vY = spec.varY;
         const type = spec.type || 'bar';
+
+        // 2a. Caso Especial: Series Temporales Multi-Fuente (Balmaceda + Cruceros + SNASPE, Estacionalidad Mensual, Desglose Parques)
+        if (type === 'line' && spec.customTemporalSeries && Array.isArray(spec.customTemporalSeries.labels) && Array.isArray(spec.customTemporalSeries.datasets)) {
+          const cts = spec.customTemporalSeries;
+          const palette = ['#00357f', '#0f766e', '#c2410c', '#6d28d9'];
+          const chartDatasets = cts.datasets.map((ds, idx) => {
+            const col = ds.borderColor || palette[idx % palette.length];
+            return {
+              label: ds.label || `Serie ${idx + 1}`,
+              data: ds.data || [],
+              borderColor: col,
+              backgroundColor: idx === 0 ? 'rgba(0, 53, 127, 0.08)' : 'transparent',
+              borderWidth: ds.dashed ? 2 : 2.5,
+              borderDash: ds.dashed ? [5, 5] : [],
+              pointRadius: 3.5,
+              pointBackgroundColor: col,
+              tension: 0.3,
+              spanGaps: true,
+              fill: idx === 0,
+              yAxisID: ds.yAxisID || 'y'
+            };
+          });
+          const primaryMeta = { label: cts.datasets[0]?.label || 'Serie Principal', unit: cts.datasets[0]?.unit || '' };
+          const y1Ds = cts.datasets.find(d => d.yAxisID === 'y1');
+          const secondaryMeta = y1Ds ? { label: y1Ds.label || 'Serie Secundaria', unit: y1Ds.unit || '' } : null;
+          activeChartInstance = new Chart(canvasEl, {
+            type: 'line',
+            data: { labels: cts.labels, datasets: chartDatasets },
+            options: getChartOptions(cts.xTitle || 'Período', primaryMeta, secondaryMeta)
+          });
+          return;
+        }
 
         // 2. Caso Especial: Serie Temporal (Línea con años 2015-2026)
         if (type === 'line' && (vX === 'visitantes_snaspe' || vX === 'visitas_snaspe' || vX === 'pernoctaciones_anuales_emat_hist')) {
@@ -1769,6 +1844,12 @@
         const vZ = spec.varZ || null;
         const vW = spec.varW || null;
         const type = spec.type || 'bar';
+
+        // 3a. Series Temporales Multi-Fuente (customTemporalSeries)
+        if (type === 'line' && spec.customTemporalSeries && Array.isArray(spec.customTemporalSeries.labels) && Array.isArray(spec.customTemporalSeries.datasets)) {
+          populateTableCustomSeries(spec.customTemporalSeries);
+          return;
+        }
 
         // 3. Serie Temporal 2015–2026
         if (type === 'line' && (vX === 'visitantes_snaspe' || vX === 'visitas_snaspe' || vX === 'pernoctaciones_anuales_emat_hist')) {
@@ -2111,6 +2192,49 @@
           }
           footHtml += `</tr>`;
           evidenceTableFoot.innerHTML = footHtml;
+        }
+      }
+
+      function populateTableCustomSeries(cts) {
+        if (!evidenceTableBody || !evidenceTableHead) return;
+        const datasets = Array.isArray(cts.datasets) ? cts.datasets : [];
+        const labels = Array.isArray(cts.labels) ? cts.labels : [];
+        evidenceTableHead.innerHTML = `<tr>
+          <th>${cts.xTitle || 'Período'}</th>
+          ${datasets.map(ds => `<th class="td-num">${ds.label}</th>`).join('')}
+        </tr>`;
+
+        evidenceTableBody.innerHTML = '';
+        labels.forEach((lbl, idx) => {
+          const tr = document.createElement('tr');
+          const cells = datasets.map(ds => {
+            const raw = ds.data?.[idx];
+            if (raw === null || raw === undefined || !Number.isFinite(Number(raw))) {
+              return `<td class="td-num">-</td>`;
+            }
+            const u = ds.unit ? ` ${ds.unit}` : '';
+            return `<td class="td-num">${Number(raw).toLocaleString('es-CL')}${u}</td>`;
+          }).join('');
+          tr.innerHTML = `<td>${lbl}</td>${cells}`;
+          evidenceTableBody.appendChild(tr);
+        });
+
+        if (evidenceTableFoot) {
+          const footCells = datasets.map(ds => {
+            const vals = (ds.data || []).map(v => (v === null || v === undefined ? NaN : Number(v))).filter(Number.isFinite);
+            const sumV = vals.reduce((a, b) => a + b, 0);
+            const avgV = vals.length ? (sumV / vals.length) : 0;
+            const u = ds.unit ? ` ${ds.unit}` : '';
+            const isPct = ds.unit === '%';
+            const txt = isPct
+              ? `Prom: ${avgV.toLocaleString('es-CL', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${u}`
+              : `Total: ${Math.round(sumV).toLocaleString('es-CL')}${u} (Prom: ${Math.round(avgV).toLocaleString('es-CL')}${u})`;
+            return `<td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${txt}</td>`;
+          }).join('');
+          evidenceTableFoot.innerHTML = `<tr>
+            <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Total / Promedio Histórico</td>
+            ${footCells}
+          </tr>`;
         }
       }
 

@@ -2,13 +2,17 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-16T14:01:17.762Z",
+  "generatedAt": "2026-11-18T13:16:25.093Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
       "lastRun": "2026-11-02T12:13:30+00:00",
       "activeApiConnectors": 7,
-      "totalSources": 33
+      "totalSources": 38,
+      "totalOfficialSources": 38,
+      "totalHubs": 10,
+      "totalNodes": 39,
+      "totalComunaVariables": 203
     }
   },
   "hubs": [
@@ -7312,21 +7316,21 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "Lago Verde",
-          "Claudia Andrea Valdes Vasquez",
+          "Claudia Valdés Vásquez",
           "Independiente / Contigo Chile Mejor",
           "6",
           "87.5%"
         ],
         [
           "Aysén",
-          "Luis Martinez Gallardo",
+          "Luis Martínez Gallardo",
           "Union Democrata Independiente (UDI) / Chile Vamos",
           "6",
           "82.8%"
         ],
         [
           "Cisnes",
-          "Francisco Javier Roncagliolo Lepio",
+          "Francisco Roncagliolo Lepio",
           "Renovacion Nacional (RN) / Chile Vamos",
           "6",
           "83.1%"
@@ -7347,7 +7351,7 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "Río Ibáñez",
-          "Marcelo Daniel Jelvez Cardenas",
+          "Marcelo Daniel Jélvez Cárdenas",
           "Union Democrata Independiente (UDI) / Chile Vamos",
           "6",
           "86.4%"
@@ -7361,14 +7365,14 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "O'Higgins",
-          "Jose Claudio Fica Gomez",
+          "José Claudio Fica Gómez",
           "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
           "6",
           "88%"
         ],
         [
           "Tortel",
-          "Marisela Clorinda Jimenez Cruces",
+          "Marisela Jiménez Cruces",
           "Independiente",
           "6",
           "87.3%"
@@ -11097,6 +11101,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 208500,
       "zoit_nombre": "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
       "visitantes_snaspe": 38500,
+      "visitas_por_cama_turistica": 11.3,
+      "visitas_por_pernoctacion_ratio": 0.18,
+      "visitantes_extranjeros_pct": 26.8,
+      "visitantes_extranjeros_snaspe_n": 10318,
+      "tasa_ocupacion_estival_pct": 76.5,
+      "tasa_ocupacion_invernal_pct": 32.4,
+      "concentracion_estival_pct": 70.2,
+      "estadia_promedio_dias": 2.7,
+      "gasto_diario_turista_usd": 118,
+      "tarifa_adr_estimada_usd": 159,
+      "revpar_estimado_usd": 79.6,
+      "largo_pista_aerodromo_m": 2300,
+      "operaciones_aerodromo_interior_anual": 4820,
       "camas_hospitalarias": 167,
       "traslado_coyhaique_hrs": 0,
       "matricula_escolar": 13450,
@@ -11105,8 +11122,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 5,
       "ipp_per_capita_clp": 245565,
       "gasto_personal_pct": 42.1,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 8.4,
+      "profesionalizacion_pct": 36.4,
       "saidi_horas_anual": 11.4,
       "tarifa_bt1_clp": 224,
       "costo_diesel_aislado_clp": 0,
@@ -11115,10 +11132,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 0,
       "amerb_decretadas": 0,
       "amerb_operativas": 0,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 890,
+      "compras_locales_pct": 58.4,
+      "fuga_compras_pct": 41.6,
+      "parcelaciones_sag_n": 3240,
       "medicos_por_mil_hab": 3.12,
       "espera_no_ges_n": 5420,
       "urgencias_respiratorias_pct": 44.5,
@@ -11223,7 +11240,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 18,
       "gasto_cultural_per_capita_clp": 11200,
       "juntas_vecinos_activas": 72,
-      "sindicatos_pesca_artesanal": 0
+      "sindicatos_pesca_artesanal": 0,
+      "transparencia_activa_cplt_2026_pct": 74.45,
+      "participacion_presidencial_2025_2v_pct": 74.2,
+      "padron_electoral_nov_2025": 54921,
+      "ingresos_mun_bcn_2025_mclp": 27611,
+      "fet_royalty_minero_2024_mclp": 205.03,
+      "fet_royalty_minero_2025_mclp": 472.58,
+      "fndr_gore_2023_proyectos_n": 98,
+      "fndr_gore_2023_asignado_mclp": 7804.2,
+      "fndr_gore_2023_ejecutado_mclp": 7440.27,
+      "fndr_gore_2023_ejecucion_pct": 95.3,
+      "fondos_concursables_gore_2023_n": 230,
+      "fondos_concursables_gore_2023_mclp": 2688.58,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 11.7,
+      "rsh_hacinamiento_jun2026_pct": 6.2,
+      "ruralidad_censo_2024_pct": 19,
+      "conexiones_fijas_subtel_jun2026_n": 15785,
+      "conexiones_residenciales_subtel_jun2026_n": 15088,
+      "variacion_conexiones_2015_2026_pct": 65.1
     },
     {
       "id": 2,
@@ -11247,7 +11282,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Nula (Conectividad terrestre continua)",
       "salud_principal": "Sin hospital en la comuna (Atencion Primaria Rural)",
       "aerodromo": "Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica)",
-      "alcalde": "Claudia Andrea Valdes Vasquez",
+      "alcalde": "Claudia Valdés Vásquez",
       "partido_alcalde": "Independiente / Contigo Chile Mejor",
       "presupuesto_mclp": 2450.2,
       "presupuesto_per_capita_mclp": 3145.3,
@@ -11271,6 +11306,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 6800,
       "zoit_nombre": "ZOIT Aysén Patagonia Queulat",
       "visitantes_snaspe": 1800,
+      "visitas_por_cama_turistica": 10.9,
+      "visitas_por_pernoctacion_ratio": 0.26,
+      "visitantes_extranjeros_pct": 14.5,
+      "visitantes_extranjeros_snaspe_n": 261,
+      "tasa_ocupacion_estival_pct": 58.2,
+      "tasa_ocupacion_invernal_pct": 12,
+      "concentracion_estival_pct": 82.9,
+      "estadia_promedio_dias": 2,
+      "gasto_diario_turista_usd": 68,
+      "tarifa_adr_estimada_usd": 92,
+      "revpar_estimado_usd": 28,
+      "largo_pista_aerodromo_m": 850,
+      "operaciones_aerodromo_interior_anual": 160,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 4.5,
       "matricula_escolar": 95,
@@ -11279,8 +11327,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 5,
       "ipp_per_capita_clp": 339692,
       "gasto_personal_pct": 48.5,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 4.2,
+      "profesionalizacion_pct": 12.5,
       "saidi_horas_anual": 54.2,
       "tarifa_bt1_clp": 258,
       "costo_diesel_aislado_clp": 560,
@@ -11289,10 +11337,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 0,
       "amerb_decretadas": 0,
       "amerb_operativas": 0,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 780,
+      "compras_locales_pct": 22.1,
+      "fuga_compras_pct": 77.9,
+      "parcelaciones_sag_n": 185,
       "medicos_por_mil_hab": 0.82,
       "espera_no_ges_n": 128,
       "urgencias_respiratorias_pct": 18.2,
@@ -11397,7 +11445,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 2,
       "gasto_cultural_per_capita_clp": 49294,
       "juntas_vecinos_activas": 6,
-      "sindicatos_pesca_artesanal": 0
+      "sindicatos_pesca_artesanal": 0,
+      "transparencia_activa_cplt_2026_pct": 59.24,
+      "participacion_presidencial_2025_2v_pct": 67.8,
+      "padron_electoral_nov_2025": 1141,
+      "ingresos_mun_bcn_2025_mclp": 3321.05,
+      "fet_royalty_minero_2024_mclp": 121.39,
+      "fet_royalty_minero_2025_mclp": 283.22,
+      "fndr_gore_2023_proyectos_n": 27,
+      "fndr_gore_2023_asignado_mclp": 1308.79,
+      "fndr_gore_2023_ejecutado_mclp": 1258.59,
+      "fndr_gore_2023_ejecucion_pct": 96.2,
+      "fondos_concursables_gore_2023_n": 8,
+      "fondos_concursables_gore_2023_mclp": 97.07,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 33.9,
+      "rsh_hacinamiento_jun2026_pct": 3.6,
+      "ruralidad_censo_2024_pct": 100,
+      "conexiones_fijas_subtel_jun2026_n": 189,
+      "conexiones_residenciales_subtel_jun2026_n": 159,
+      "variacion_conexiones_2015_2026_pct": 551.7
     },
     {
       "id": 3,
@@ -11421,7 +11487,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Crítica en territorio insular (Islas Huichas / Puerto Aguirre); Nula en área continental",
       "salud_principal": "Hospital de Puerto Aysen",
       "aerodromo": "Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico)",
-      "alcalde": "Luis Martinez Gallardo",
+      "alcalde": "Luis Martínez Gallardo",
       "partido_alcalde": "Union Democrata Independiente (UDI) / Chile Vamos",
       "presupuesto_mclp": 14210.5,
       "presupuesto_per_capita_mclp": 613.3,
@@ -11445,6 +11511,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 98400,
       "zoit_nombre": "ZOIT Aysén Patagonia Queulat (Sector Sur)",
       "visitantes_snaspe": 29600,
+      "visitas_por_cama_turistica": 16,
+      "visitas_por_pernoctacion_ratio": 0.3,
+      "visitantes_extranjeros_pct": 34.2,
+      "visitantes_extranjeros_snaspe_n": 10123,
+      "tasa_ocupacion_estival_pct": 72.1,
+      "tasa_ocupacion_invernal_pct": 28.6,
+      "concentracion_estival_pct": 71.6,
+      "estadia_promedio_dias": 2.3,
+      "gasto_diario_turista_usd": 135,
+      "tarifa_adr_estimada_usd": 182,
+      "revpar_estimado_usd": 83.7,
+      "largo_pista_aerodromo_m": 600,
+      "operaciones_aerodromo_interior_anual": 290,
       "camas_hospitalarias": 52,
       "traslado_coyhaique_hrs": 1,
       "matricula_escolar": 4850,
@@ -11453,8 +11532,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 9,
       "ipp_per_capita_clp": 289478,
       "gasto_personal_pct": 44.2,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 7.1,
+      "profesionalizacion_pct": 28.2,
       "saidi_horas_anual": 13.8,
       "tarifa_bt1_clp": 222,
       "costo_diesel_aislado_clp": 0,
@@ -11463,10 +11542,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 335.4,
       "amerb_decretadas": 12,
       "amerb_operativas": 4,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 960,
+      "compras_locales_pct": 54.6,
+      "fuga_compras_pct": 45.4,
+      "parcelaciones_sag_n": 1120,
       "medicos_por_mil_hab": 1.74,
       "espera_no_ges_n": 2450,
       "urgencias_respiratorias_pct": 28.6,
@@ -11571,7 +11650,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 22,
       "gasto_cultural_per_capita_clp": 12450,
       "juntas_vecinos_activas": 42,
-      "sindicatos_pesca_artesanal": 24
+      "sindicatos_pesca_artesanal": 24,
+      "transparencia_activa_cplt_2026_pct": 96.09,
+      "participacion_presidencial_2025_2v_pct": 75.5,
+      "padron_electoral_nov_2025": 22894,
+      "ingresos_mun_bcn_2025_mclp": 14614.29,
+      "fet_royalty_minero_2024_mclp": 168.18,
+      "fet_royalty_minero_2025_mclp": 392.86,
+      "fndr_gore_2023_proyectos_n": 69,
+      "fndr_gore_2023_asignado_mclp": 5107.54,
+      "fndr_gore_2023_ejecutado_mclp": 4827.45,
+      "fndr_gore_2023_ejecucion_pct": 94.5,
+      "fondos_concursables_gore_2023_n": 83,
+      "fondos_concursables_gore_2023_mclp": 888.32,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 11.7,
+      "rsh_hacinamiento_jun2026_pct": 5,
+      "ruralidad_censo_2024_pct": 14.7,
+      "conexiones_fijas_subtel_jun2026_n": 5748,
+      "conexiones_residenciales_subtel_jun2026_n": 5353,
+      "variacion_conexiones_2015_2026_pct": 75.7
     },
     {
       "id": 4,
@@ -11595,7 +11692,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Crítica en localidades aisladas (Puerto Raúl Marín Balmaceda, Puerto Gala y Gaviota); Nula en Puerto Cisnes y La Junta",
       "salud_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
       "aerodromo": "Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH)",
-      "alcalde": "Francisco Javier Roncagliolo Lepio",
+      "alcalde": "Francisco Roncagliolo Lepio",
       "partido_alcalde": "Renovacion Nacional (RN) / Chile Vamos",
       "presupuesto_mclp": 6100,
       "presupuesto_per_capita_mclp": 1187.5,
@@ -11619,6 +11716,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 74200,
       "zoit_nombre": "ZOIT Aysén Patagonia Queulat",
       "visitantes_snaspe": 64200,
+      "visitas_por_cama_turistica": 51.8,
+      "visitas_por_pernoctacion_ratio": 0.87,
+      "visitantes_extranjeros_pct": 41.5,
+      "visitantes_extranjeros_snaspe_n": 26643,
+      "tasa_ocupacion_estival_pct": 84.5,
+      "tasa_ocupacion_invernal_pct": 18.2,
+      "concentracion_estival_pct": 82.3,
+      "estadia_promedio_dias": 2.1,
+      "gasto_diario_turista_usd": 145,
+      "tarifa_adr_estimada_usd": 196,
+      "revpar_estimado_usd": 87.7,
+      "largo_pista_aerodromo_m": 900,
+      "operaciones_aerodromo_interior_anual": 310,
       "camas_hospitalarias": 12,
       "traslado_coyhaique_hrs": 3.5,
       "matricula_escolar": 980,
@@ -11627,8 +11737,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 9,
       "ipp_per_capita_clp": 302813,
       "gasto_personal_pct": 39.8,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 11.5,
+      "profesionalizacion_pct": 18.6,
       "saidi_horas_anual": 28.5,
       "tarifa_bt1_clp": 235,
       "costo_diesel_aislado_clp": 380,
@@ -11637,10 +11747,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 324.8,
       "amerb_decretadas": 14,
       "amerb_operativas": 5,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 945,
+      "compras_locales_pct": 38.2,
+      "fuga_compras_pct": 61.8,
+      "parcelaciones_sag_n": 490,
       "medicos_por_mil_hab": 1.15,
       "espera_no_ges_n": 890,
       "urgencias_respiratorias_pct": 21.4,
@@ -11745,7 +11855,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 14,
       "gasto_cultural_per_capita_clp": 16040,
       "juntas_vecinos_activas": 18,
-      "sindicatos_pesca_artesanal": 12
+      "sindicatos_pesca_artesanal": 12,
+      "transparencia_activa_cplt_2026_pct": 61.6,
+      "participacion_presidencial_2025_2v_pct": 77.1,
+      "padron_electoral_nov_2025": 4838,
+      "ingresos_mun_bcn_2025_mclp": 7985.27,
+      "fet_royalty_minero_2024_mclp": 133.76,
+      "fet_royalty_minero_2025_mclp": 312.87,
+      "fndr_gore_2023_proyectos_n": 48,
+      "fndr_gore_2023_asignado_mclp": 5079.95,
+      "fndr_gore_2023_ejecutado_mclp": 4738.1,
+      "fndr_gore_2023_ejecucion_pct": 93.3,
+      "fondos_concursables_gore_2023_n": 66,
+      "fondos_concursables_gore_2023_mclp": 607.58,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 12.2,
+      "rsh_hacinamiento_jun2026_pct": 3.8,
+      "ruralidad_censo_2024_pct": 28.1,
+      "conexiones_fijas_subtel_jun2026_n": 1638,
+      "conexiones_residenciales_subtel_jun2026_n": 1486,
+      "variacion_conexiones_2015_2026_pct": 155.1
     },
     {
       "id": 5,
@@ -11793,6 +11921,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 5400,
       "zoit_nombre": "Sin declaratoria ZOIT vigente",
       "visitantes_snaspe": 2400,
+      "visitas_por_cama_turistica": 16.6,
+      "visitas_por_pernoctacion_ratio": 0.44,
+      "visitantes_extranjeros_pct": 18,
+      "visitantes_extranjeros_snaspe_n": 432,
+      "tasa_ocupacion_estival_pct": 64,
+      "tasa_ocupacion_invernal_pct": 14.5,
+      "concentracion_estival_pct": 81.5,
+      "estadia_promedio_dias": 2.3,
+      "gasto_diario_turista_usd": 85,
+      "tarifa_adr_estimada_usd": 115,
+      "revpar_estimado_usd": 39.4,
+      "largo_pista_aerodromo_m": 800,
+      "operaciones_aerodromo_interior_anual": 510,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 14,
       "matricula_escolar": 320,
@@ -11801,8 +11942,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 5,
       "ipp_per_capita_clp": 351067,
       "gasto_personal_pct": 51.2,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 3.6,
+      "profesionalizacion_pct": 11.8,
       "saidi_horas_anual": 62.1,
       "tarifa_bt1_clp": 265,
       "costo_diesel_aislado_clp": 640,
@@ -11811,10 +11952,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 382.1,
       "amerb_decretadas": 18,
       "amerb_operativas": 7,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 820,
+      "compras_locales_pct": 24.5,
+      "fuga_compras_pct": 75.5,
+      "parcelaciones_sag_n": 15,
       "medicos_por_mil_hab": 0.95,
       "espera_no_ges_n": 410,
       "urgencias_respiratorias_pct": 22.8,
@@ -11919,7 +12060,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 8,
       "gasto_cultural_per_capita_clp": 25782,
       "juntas_vecinos_activas": 7,
-      "sindicatos_pesca_artesanal": 11
+      "sindicatos_pesca_artesanal": 11,
+      "transparencia_activa_cplt_2026_pct": 92.63,
+      "participacion_presidencial_2025_2v_pct": 71,
+      "padron_electoral_nov_2025": 1539,
+      "ingresos_mun_bcn_2025_mclp": 4569.04,
+      "fet_royalty_minero_2024_mclp": 121.75,
+      "fet_royalty_minero_2025_mclp": 284.33,
+      "fndr_gore_2023_proyectos_n": 25,
+      "fndr_gore_2023_asignado_mclp": 2520.34,
+      "fndr_gore_2023_ejecutado_mclp": 2452.02,
+      "fndr_gore_2023_ejecucion_pct": 97.3,
+      "fondos_concursables_gore_2023_n": 25,
+      "fondos_concursables_gore_2023_mclp": 278.9,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 26.9,
+      "rsh_hacinamiento_jun2026_pct": 10.1,
+      "ruralidad_censo_2024_pct": 8.1,
+      "conexiones_fijas_subtel_jun2026_n": 345,
+      "conexiones_residenciales_subtel_jun2026_n": 270,
+      "variacion_conexiones_2015_2026_pct": 219.4
     },
     {
       "id": 6,
@@ -11967,6 +12126,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 58600,
       "zoit_nombre": "ZOIT Chelenko",
       "visitantes_snaspe": 34200,
+      "visitas_por_cama_turistica": 43.8,
+      "visitas_por_pernoctacion_ratio": 0.58,
+      "visitantes_extranjeros_pct": 38.5,
+      "visitantes_extranjeros_snaspe_n": 13167,
+      "tasa_ocupacion_estival_pct": 82,
+      "tasa_ocupacion_invernal_pct": 21,
+      "concentracion_estival_pct": 79.6,
+      "estadia_promedio_dias": 2.4,
+      "gasto_diario_turista_usd": 125,
+      "tarifa_adr_estimada_usd": 169,
+      "revpar_estimado_usd": 76.7,
+      "largo_pista_aerodromo_m": 1180,
+      "operaciones_aerodromo_interior_anual": 580,
       "camas_hospitalarias": 14,
       "traslado_coyhaique_hrs": 4,
       "matricula_escolar": 890,
@@ -11975,8 +12147,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 5,
       "ipp_per_capita_clp": 317059,
       "gasto_personal_pct": 46.7,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 5.8,
+      "profesionalizacion_pct": 15.4,
       "saidi_horas_anual": 19.3,
       "tarifa_bt1_clp": 228,
       "costo_diesel_aislado_clp": 0,
@@ -11985,10 +12157,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 0,
       "amerb_decretadas": 0,
       "amerb_operativas": 0,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 880,
+      "compras_locales_pct": 41.2,
+      "fuga_compras_pct": 58.8,
+      "parcelaciones_sag_n": 980,
       "medicos_por_mil_hab": 1.28,
       "espera_no_ges_n": 520,
       "urgencias_respiratorias_pct": 20.5,
@@ -12093,7 +12265,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 3,
       "gasto_cultural_per_capita_clp": 15250,
       "juntas_vecinos_activas": 12,
-      "sindicatos_pesca_artesanal": 2
+      "sindicatos_pesca_artesanal": 2,
+      "transparencia_activa_cplt_2026_pct": 57.46,
+      "participacion_presidencial_2025_2v_pct": 58.4,
+      "padron_electoral_nov_2025": 6284,
+      "ingresos_mun_bcn_2025_mclp": 5981.72,
+      "fet_royalty_minero_2024_mclp": 130.75,
+      "fet_royalty_minero_2025_mclp": 304.56,
+      "fndr_gore_2023_proyectos_n": 32,
+      "fndr_gore_2023_asignado_mclp": 2972.5,
+      "fndr_gore_2023_ejecutado_mclp": 2675.58,
+      "fndr_gore_2023_ejecucion_pct": 90,
+      "fondos_concursables_gore_2023_n": 28,
+      "fondos_concursables_gore_2023_mclp": 416.96,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 9.7,
+      "rsh_hacinamiento_jun2026_pct": 5.6,
+      "ruralidad_censo_2024_pct": 37.2,
+      "conexiones_fijas_subtel_jun2026_n": 845,
+      "conexiones_residenciales_subtel_jun2026_n": 788,
+      "variacion_conexiones_2015_2026_pct": 141.4
     },
     {
       "id": 7,
@@ -12117,7 +12307,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Media (Terminal norte de barcazas hacia Chile Chico)",
       "salud_principal": "Sin hospital en la comuna (Atencion Primaria con CESFAM y Postas)",
       "aerodromo": "Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias)",
-      "alcalde": "Marcelo Daniel Jelvez Cardenas",
+      "alcalde": "Marcelo Daniel Jélvez Cárdenas",
       "partido_alcalde": "Union Democrata Independiente (UDI) / Chile Vamos",
       "presupuesto_mclp": 3950,
       "presupuesto_per_capita_mclp": 1450.6,
@@ -12141,6 +12331,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 86200,
       "zoit_nombre": "ZOIT Chelenko",
       "visitantes_snaspe": 41000,
+      "visitas_por_cama_turistica": 35.7,
+      "visitas_por_pernoctacion_ratio": 0.48,
+      "visitantes_extranjeros_pct": 48,
+      "visitantes_extranjeros_snaspe_n": 19680,
+      "tasa_ocupacion_estival_pct": 89.2,
+      "tasa_ocupacion_invernal_pct": 14.5,
+      "concentracion_estival_pct": 86,
+      "estadia_promedio_dias": 2.1,
+      "gasto_diario_turista_usd": 150,
+      "tarifa_adr_estimada_usd": 203,
+      "revpar_estimado_usd": 90.1,
+      "largo_pista_aerodromo_m": 860,
+      "operaciones_aerodromo_interior_anual": 240,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 1.5,
       "matricula_escolar": 450,
@@ -12149,8 +12352,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 5,
       "ipp_per_capita_clp": 295922,
       "gasto_personal_pct": 47.9,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 4.9,
+      "profesionalizacion_pct": 14.1,
       "saidi_horas_anual": 24.6,
       "tarifa_bt1_clp": 231,
       "costo_diesel_aislado_clp": 0,
@@ -12159,10 +12362,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 0,
       "amerb_decretadas": 0,
       "amerb_operativas": 0,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 810,
+      "compras_locales_pct": 32.8,
+      "fuga_compras_pct": 67.2,
+      "parcelaciones_sag_n": 1280,
       "medicos_por_mil_hab": 0.88,
       "espera_no_ges_n": 280,
       "urgencias_respiratorias_pct": 19.8,
@@ -12267,7 +12470,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 4,
       "gasto_cultural_per_capita_clp": 19317,
       "juntas_vecinos_activas": 10,
-      "sindicatos_pesca_artesanal": 1
+      "sindicatos_pesca_artesanal": 1,
+      "transparencia_activa_cplt_2026_pct": 100,
+      "participacion_presidencial_2025_2v_pct": 75.7,
+      "padron_electoral_nov_2025": 3073,
+      "ingresos_mun_bcn_2025_mclp": 6252.85,
+      "fet_royalty_minero_2024_mclp": 128.91,
+      "fet_royalty_minero_2025_mclp": 301.48,
+      "fndr_gore_2023_proyectos_n": 45,
+      "fndr_gore_2023_asignado_mclp": 3407.22,
+      "fndr_gore_2023_ejecutado_mclp": 3234.43,
+      "fndr_gore_2023_ejecucion_pct": 94.9,
+      "fondos_concursables_gore_2023_n": 36,
+      "fondos_concursables_gore_2023_mclp": 301.59,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 14,
+      "rsh_hacinamiento_jun2026_pct": 4.7,
+      "ruralidad_censo_2024_pct": 100,
+      "conexiones_fijas_subtel_jun2026_n": 581,
+      "conexiones_residenciales_subtel_jun2026_n": 555,
+      "variacion_conexiones_2015_2026_pct": 1513.9
     },
     {
       "id": 8,
@@ -12315,6 +12536,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 49200,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
       "visitantes_snaspe": 35600,
+      "visitas_por_cama_turistica": 51.6,
+      "visitas_por_pernoctacion_ratio": 0.72,
+      "visitantes_extranjeros_pct": 44.5,
+      "visitantes_extranjeros_snaspe_n": 15842,
+      "tasa_ocupacion_estival_pct": 81,
+      "tasa_ocupacion_invernal_pct": 16,
+      "concentracion_estival_pct": 83.5,
+      "estadia_promedio_dias": 2.5,
+      "gasto_diario_turista_usd": 130,
+      "tarifa_adr_estimada_usd": 176,
+      "revpar_estimado_usd": 73.9,
+      "largo_pista_aerodromo_m": 1200,
+      "operaciones_aerodromo_interior_anual": 640,
       "camas_hospitalarias": 16,
       "traslado_coyhaique_hrs": 6,
       "matricula_escolar": 750,
@@ -12323,8 +12557,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 7,
       "ipp_per_capita_clp": 308606,
       "gasto_personal_pct": 43.5,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 6.2,
+      "profesionalizacion_pct": 16.2,
       "saidi_horas_anual": 22.8,
       "tarifa_bt1_clp": 230,
       "costo_diesel_aislado_clp": 0,
@@ -12333,10 +12567,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 0,
       "amerb_decretadas": 0,
       "amerb_operativas": 0,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 850,
+      "compras_locales_pct": 44.5,
+      "fuga_compras_pct": 55.5,
+      "parcelaciones_sag_n": 390,
       "medicos_por_mil_hab": 1.42,
       "espera_no_ges_n": 460,
       "urgencias_respiratorias_pct": 24.2,
@@ -12441,7 +12675,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 2,
       "gasto_cultural_per_capita_clp": 18045,
       "juntas_vecinos_activas": 9,
-      "sindicatos_pesca_artesanal": 0
+      "sindicatos_pesca_artesanal": 0,
+      "transparencia_activa_cplt_2026_pct": 60.58,
+      "participacion_presidencial_2025_2v_pct": 70.8,
+      "padron_electoral_nov_2025": 3461,
+      "ingresos_mun_bcn_2025_mclp": 5720.96,
+      "fet_royalty_minero_2024_mclp": 128.77,
+      "fet_royalty_minero_2025_mclp": 296.74,
+      "fndr_gore_2023_proyectos_n": 39,
+      "fndr_gore_2023_asignado_mclp": 4090.98,
+      "fndr_gore_2023_ejecutado_mclp": 3894.32,
+      "fndr_gore_2023_ejecucion_pct": 95.2,
+      "fondos_concursables_gore_2023_n": 37,
+      "fondos_concursables_gore_2023_mclp": 356.13,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 15.8,
+      "rsh_hacinamiento_jun2026_pct": 5.8,
+      "ruralidad_censo_2024_pct": 21.8,
+      "conexiones_fijas_subtel_jun2026_n": 835,
+      "conexiones_residenciales_subtel_jun2026_n": 791,
+      "variacion_conexiones_2015_2026_pct": 293.9
     },
     {
       "id": 9,
@@ -12465,7 +12717,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Crítica / Absoluta (Cruce obligado en Barcaza Fiordo Mitchell)",
       "salud_principal": "Sin hospital en la comuna (Posta Rural de Aislamiento Extremo)",
       "aerodromo": "Aeródromo Villa O'Higgins (SCOH, asfalto 1.300m, puente aéreo subvencionado)",
-      "alcalde": "Jose Claudio Fica Gomez",
+      "alcalde": "José Claudio Fica Gómez",
       "partido_alcalde": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
       "presupuesto_mclp": 2150,
       "presupuesto_per_capita_mclp": 3323,
@@ -12489,6 +12741,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 16400,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
       "visitantes_snaspe": 12400,
+      "visitas_por_cama_turistica": 51.7,
+      "visitas_por_pernoctacion_ratio": 0.76,
+      "visitantes_extranjeros_pct": 55,
+      "visitantes_extranjeros_snaspe_n": 6820,
+      "tasa_ocupacion_estival_pct": 86.5,
+      "tasa_ocupacion_invernal_pct": 7.5,
+      "concentracion_estival_pct": 92,
+      "estadia_promedio_dias": 2.8,
+      "gasto_diario_turista_usd": 138,
+      "tarifa_adr_estimada_usd": 186,
+      "revpar_estimado_usd": 72.7,
+      "largo_pista_aerodromo_m": 1300,
+      "operaciones_aerodromo_interior_anual": 420,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 10,
       "matricula_escolar": 120,
@@ -12497,8 +12762,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 5,
       "ipp_per_capita_clp": 282455,
       "gasto_personal_pct": 50.4,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 3.8,
+      "profesionalizacion_pct": 10.5,
       "saidi_horas_anual": 58.7,
       "tarifa_bt1_clp": 262,
       "costo_diesel_aislado_clp": 620,
@@ -12507,10 +12772,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 0,
       "amerb_decretadas": 0,
       "amerb_operativas": 0,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 760,
+      "compras_locales_pct": 18.4,
+      "fuga_compras_pct": 81.6,
+      "parcelaciones_sag_n": 140,
       "medicos_por_mil_hab": 0.78,
       "espera_no_ges_n": 96,
       "urgencias_respiratorias_pct": 16.5,
@@ -12615,7 +12880,25 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 0,
       "gasto_cultural_per_capita_clp": 47500,
       "juntas_vecinos_activas": 4,
-      "sindicatos_pesca_artesanal": 0
+      "sindicatos_pesca_artesanal": 0,
+      "transparencia_activa_cplt_2026_pct": 62.71,
+      "participacion_presidencial_2025_2v_pct": 57.8,
+      "padron_electoral_nov_2025": 794,
+      "ingresos_mun_bcn_2025_mclp": 5323.76,
+      "fet_royalty_minero_2024_mclp": 119.61,
+      "fet_royalty_minero_2025_mclp": 279.69,
+      "fndr_gore_2023_proyectos_n": 28,
+      "fndr_gore_2023_asignado_mclp": 1161.93,
+      "fndr_gore_2023_ejecutado_mclp": 1148.61,
+      "fndr_gore_2023_ejecucion_pct": 98.9,
+      "fondos_concursables_gore_2023_n": 12,
+      "fondos_concursables_gore_2023_mclp": 127.88,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 13.1,
+      "rsh_hacinamiento_jun2026_pct": 5.1,
+      "ruralidad_censo_2024_pct": 100,
+      "conexiones_fijas_subtel_jun2026_n": 272,
+      "conexiones_residenciales_subtel_jun2026_n": 249,
+      "variacion_conexiones_2015_2026_pct": 27100
     },
     {
       "id": 10,
@@ -12639,7 +12922,7 @@ window.AYSEN_HUBS_DATA = {
       "dependencia_barcaza": "Alta (Barcaza marítima comercial hacia Puerto Natales y rampa norte de Barcaza Fiordo Mitchell)",
       "salud_principal": "Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas)",
       "aerodromo": "Aeródromo Caleta Tortel (SCTT, ripio 800m, evacuación médica y rescate)",
-      "alcalde": "Marisela Clorinda Jimenez Cruces",
+      "alcalde": "Marisela Jiménez Cruces",
       "partido_alcalde": "Independiente",
       "presupuesto_mclp": 2050,
       "presupuesto_per_capita_mclp": 4059.4,
@@ -12663,6 +12946,19 @@ window.AYSEN_HUBS_DATA = {
       "pernoctaciones_emat": 27000,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
       "visitantes_snaspe": 14200,
+      "visitas_por_cama_turistica": 39.4,
+      "visitas_por_pernoctacion_ratio": 0.53,
+      "visitantes_extranjeros_pct": 43,
+      "visitantes_extranjeros_snaspe_n": 6106,
+      "tasa_ocupacion_estival_pct": 85,
+      "tasa_ocupacion_invernal_pct": 11,
+      "concentracion_estival_pct": 88.5,
+      "estadia_promedio_dias": 1.9,
+      "gasto_diario_turista_usd": 115,
+      "tarifa_adr_estimada_usd": 155,
+      "revpar_estimado_usd": 62.9,
+      "largo_pista_aerodromo_m": 800,
+      "operaciones_aerodromo_interior_anual": 190,
       "camas_hospitalarias": 0,
       "traslado_coyhaique_hrs": 8,
       "matricula_escolar": 85,
@@ -12671,8 +12967,8 @@ window.AYSEN_HUBS_DATA = {
       "fauna_amenazada_n": 8,
       "ipp_per_capita_clp": 292277,
       "gasto_personal_pct": 52.6,
-      "inversion_directa_pct": 0,
-      "profesionalizacion_pct": 0,
+      "inversion_directa_pct": 3.1,
+      "profesionalizacion_pct": 9.8,
       "saidi_horas_anual": 64.3,
       "tarifa_bt1_clp": 268,
       "costo_diesel_aislado_clp": 680,
@@ -12681,10 +12977,10 @@ window.AYSEN_HUBS_DATA = {
       "antibioticos_ica_g_ton": 289,
       "amerb_decretadas": 2,
       "amerb_operativas": 1,
-      "seia_plazo_dias": 0,
-      "compras_locales_pct": 0,
-      "fuga_compras_pct": 0,
-      "parcelaciones_sag_n": 0,
+      "seia_plazo_dias": 740,
+      "compras_locales_pct": 21,
+      "fuga_compras_pct": 79,
+      "parcelaciones_sag_n": 65,
       "medicos_por_mil_hab": 0.85,
       "espera_no_ges_n": 112,
       "urgencias_respiratorias_pct": 17.8,
@@ -12789,9 +13085,1220 @@ window.AYSEN_HUBS_DATA = {
       "comunidades_indigenas_conadi": 1,
       "gasto_cultural_per_capita_clp": 54120,
       "juntas_vecinos_activas": 4,
-      "sindicatos_pesca_artesanal": 2
+      "sindicatos_pesca_artesanal": 2,
+      "transparencia_activa_cplt_2026_pct": 72.92,
+      "participacion_presidencial_2025_2v_pct": 64.4,
+      "padron_electoral_nov_2025": 630,
+      "ingresos_mun_bcn_2025_mclp": 3440.74,
+      "fet_royalty_minero_2024_mclp": 119.56,
+      "fet_royalty_minero_2025_mclp": 279.4,
+      "fndr_gore_2023_proyectos_n": 32,
+      "fndr_gore_2023_asignado_mclp": 1990.67,
+      "fndr_gore_2023_ejecutado_mclp": 1815.82,
+      "fndr_gore_2023_ejecucion_pct": 91.2,
+      "fondos_concursables_gore_2023_n": 11,
+      "fondos_concursables_gore_2023_mclp": 135.43,
+      "rsh_carencia_servicios_basicos_jun2026_pct": 38.1,
+      "rsh_hacinamiento_jun2026_pct": 7.4,
+      "ruralidad_censo_2024_pct": 100,
+      "conexiones_fijas_subtel_jun2026_n": 56,
+      "conexiones_residenciales_subtel_jun2026_n": 43,
+      "variacion_conexiones_2015_2026_pct": 2700
     }
   ],
+  "historiaPolitica": {
+    "titulo": "Composición Política Histórica e Institucional de la Región de Aysén (1989–2026)",
+    "fuentes_primarias": [
+      "Servicio Electoral de Chile (SERVEL) — Resultados Electorales Históricos 1989–2025",
+      "Tribunal Calificador de Elecciones (TRICEL) / TER Región de Aysén",
+      "Biblioteca del Congreso Nacional (BCN) — Reseñas Biográficas Parlamentarias y Reportes Comunales 2026",
+      "Senado de la República / Cámara de Diputadas y Diputados (Circ. 14 / ex Circ. 18 y Distrito 27 / ex Distrito 59)",
+      "Gobierno Regional de Aysén (goreaysen.cl/consejeros-regionales/) — Nómina vigente CORE 2025–2029"
+    ],
+    "fecha_corte": "2026-11-17",
+    "nota_epistemologica": "Cada registro distingue explícitamente actas consolidadas exactas (SERVEL/TER/GORE) de rangos referenciales históricos pre-2012; tramos locales sin respaldo digital verificable (p. ej. alcaldías de elección indirecta 1992–1996 en Lago Verde y 1992–2000 en Río Ibáñez) se declaran explícitamente como no verificados en fuente primaria digital.",
+    "ejecutivo_regional": {
+      "intendentes_designados_1990_2021": [
+        {
+          "periodo": "1990-1993",
+          "nombre": "Hernán Valencia Gutiérrez",
+          "gobierno": "Patricio Aylwin"
+        },
+        {
+          "periodo": "1993-1994",
+          "nombre": "Héctor Morales Ramírez",
+          "gobierno": "Patricio Aylwin"
+        },
+        {
+          "periodo": "1994-1997",
+          "nombre": "Silvia Moreno González",
+          "gobierno": "Eduardo Frei Ruiz-Tagle"
+        },
+        {
+          "periodo": "1997-2000",
+          "nombre": "Carlos Sackel Bahamondes",
+          "gobierno": "Eduardo Frei Ruiz-Tagle"
+        },
+        {
+          "periodo": "2000-2002",
+          "nombre": "Silvia Moreno González",
+          "gobierno": "Ricardo Lagos"
+        },
+        {
+          "periodo": "2002-2003",
+          "nombre": "Nelda Rivera Barrientos",
+          "gobierno": "Ricardo Lagos"
+        },
+        {
+          "periodo": "2003-2004",
+          "nombre": "Luis Cortés Hernández",
+          "gobierno": "Ricardo Lagos"
+        },
+        {
+          "periodo": "2004-2006",
+          "nombre": "Iván Gutiérrez Loyola",
+          "gobierno": "Ricardo Lagos"
+        },
+        {
+          "periodo": "2006-2008",
+          "nombre": "Viviana Betancourt Gallegos",
+          "gobierno": "Michelle Bachelet I"
+        },
+        {
+          "periodo": "2008",
+          "nombre": "Silvia Moreno González",
+          "gobierno": "Michelle Bachelet I"
+        },
+        {
+          "periodo": "2008-2010",
+          "nombre": "Selim Carrasco Lobo",
+          "gobierno": "Michelle Bachelet I"
+        },
+        {
+          "periodo": "2010-2014",
+          "nombre": "Pilar Cuevas Mardones",
+          "gobierno": "Sebastián Piñera I"
+        },
+        {
+          "periodo": "2014-2015",
+          "nombre": "Ximena Órdenes Neira",
+          "gobierno": "Michelle Bachelet II"
+        },
+        {
+          "periodo": "2015-2016",
+          "nombre": "Jorge Calderón Núñez",
+          "gobierno": "Michelle Bachelet II"
+        },
+        {
+          "periodo": "2016-2018",
+          "nombre": "Karina Acevedo Auad",
+          "gobierno": "Michelle Bachelet II"
+        },
+        {
+          "periodo": "2018-2021",
+          "nombre": "Geoconda Navarrete Arriagada",
+          "gobierno": "Sebastián Piñera II"
+        },
+        {
+          "periodo": "2021 (hasta 14 jul 2021)",
+          "nombre": "Margarita Ossa Rojas",
+          "gobierno": "Sebastián Piñera II"
+        }
+      ],
+      "gobernadores_regionales_electos": [
+        {
+          "periodo": "2021-2025 (14 jul 2021 – 6 ene 2025)",
+          "nombre": "Andrea Macías Palma",
+          "partido_pacto": "PS / Unidad Constituyente",
+          "votos": 18283,
+          "porcentaje_pct": 48.72,
+          "participacion_pct": 41.28,
+          "nota": "Electa en 1ra vuelta mayo 2021 sobre Raúl Rudolphi (34,27%) y Jorge Sepúlveda (17,01%)"
+        },
+        {
+          "periodo": "2025-2029 (desde 6 ene 2025)",
+          "nombre": "Marcelo Santana Vargas",
+          "partido_pacto": "UDI / Chile Vamos",
+          "votos": 33764,
+          "porcentaje_pct": 54.39,
+          "nota": "Electo en 1ra vuelta octubre 2024 sobre Andrea Macías (33,47%), Jorge Abello (7,47%) y Liset Quilodrán (4,67%)"
+        }
+      ],
+      "delegados_presidenciales_regionales": [
+        {
+          "periodo": "jul 2021 – mar 2022",
+          "nombre": "Margarita Ossa Rojas"
+        },
+        {
+          "periodo": "mar 2022 – nov 2024",
+          "nombre": "Rodrigo Araya Morales"
+        },
+        {
+          "periodo": "nov 2024 – 11 mar 2026",
+          "nombre": "Jorge Emilio Díaz Guzmán"
+        },
+        {
+          "periodo": "desde 11 mar 2026 (en ejercicio)",
+          "nombre": "Luz María Vicuña Figueroa"
+        }
+      ]
+    },
+    "senadores_historia_1990_2034": [
+      {
+        "periodo": "1990-1994",
+        "circunscripcion": "Circ. 18 (Aysén)",
+        "titulares": [
+          {
+            "nombre": "Hugo Ortiz de Filippi",
+            "partido": "RN"
+          },
+          {
+            "nombre": "Hernán Vodanovic Schnake",
+            "partido": "PPD/PS"
+          }
+        ]
+      },
+      {
+        "periodo": "1994-2002",
+        "circunscripcion": "Circ. 18 (Aysén)",
+        "titulares": [
+          {
+            "nombre": "Antonio Horvath Kiss",
+            "partido": "IND-RN"
+          },
+          {
+            "nombre": "Adolfo Zaldívar Larraín",
+            "partido": "PDC"
+          }
+        ]
+      },
+      {
+        "periodo": "2002-2010",
+        "circunscripcion": "Circ. 18 (Aysén)",
+        "titulares": [
+          {
+            "nombre": "Antonio Horvath Kiss",
+            "partido": "IND-RN/RN"
+          },
+          {
+            "nombre": "Adolfo Zaldívar Larraín",
+            "partido": "PDC/PRI"
+          }
+        ]
+      },
+      {
+        "periodo": "2010-2018",
+        "circunscripcion": "Circ. 18 (Aysén)",
+        "titulares": [
+          {
+            "nombre": "Antonio Horvath Kiss",
+            "partido": "RN/IND"
+          },
+          {
+            "nombre": "Patricio Walker Prieto",
+            "partido": "PDC"
+          }
+        ]
+      },
+      {
+        "periodo": "2018-2026",
+        "circunscripcion": "Circ. 14 (Aysén)",
+        "titulares": [
+          {
+            "nombre": "David Sandoval Plaza",
+            "partido": "UDI"
+          },
+          {
+            "nombre": "Ximena Órdenes Neira",
+            "partido": "IND-PPD"
+          }
+        ]
+      },
+      {
+        "periodo": "2026-2034 (vigente desde 11 mar 2026)",
+        "circunscripcion": "Circ. 14 (Aysén)",
+        "titulares": [
+          {
+            "nombre": "Miguel Ángel Calisto Águila",
+            "partido": "Independiente (FREVS / Verdes, Regionalistas y Humanistas)"
+          },
+          {
+            "nombre": "Ximena Órdenes Neira",
+            "partido": "Independiente pro-PPD (Unidad por Chile)"
+          }
+        ]
+      }
+    ],
+    "diputados_historia_1990_2030": [
+      {
+        "periodo": "1990-1994",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "Antonio Horvath Kiss",
+            "partido": "IND-RN (37,74%)"
+          },
+          {
+            "nombre": "Baldemar Carrasco Muñoz",
+            "partido": "PDC (25,38%)"
+          }
+        ]
+      },
+      {
+        "periodo": "1994-1998",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "Héctor Zambrano Opazo",
+            "partido": "PDC"
+          },
+          {
+            "nombre": "Valentín Solís Cabezas",
+            "partido": "UCC"
+          }
+        ]
+      },
+      {
+        "periodo": "1998-2002",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "Leopoldo Sánchez Grunert",
+            "partido": "PPD"
+          },
+          {
+            "nombre": "Pablo Galilea Carrillo",
+            "partido": "RN"
+          }
+        ]
+      },
+      {
+        "periodo": "2002-2006",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "Leopoldo Sánchez Grunert",
+            "partido": "PPD"
+          },
+          {
+            "nombre": "Pablo Galilea Carrillo",
+            "partido": "RN"
+          }
+        ]
+      },
+      {
+        "periodo": "2006-2010",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "René Alinco Bustos",
+            "partido": "PPD"
+          },
+          {
+            "nombre": "Pablo Galilea Carrillo",
+            "partido": "RN"
+          }
+        ]
+      },
+      {
+        "periodo": "2010-2014",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "René Alinco Bustos",
+            "partido": "IND/PPD"
+          },
+          {
+            "nombre": "David Sandoval Plaza",
+            "partido": "UDI"
+          }
+        ]
+      },
+      {
+        "periodo": "2014-2018",
+        "distrito": "Distrito 59",
+        "titulares": [
+          {
+            "nombre": "Iván Fuentes Castillo",
+            "partido": "IND-PDC"
+          },
+          {
+            "nombre": "David Sandoval Plaza",
+            "partido": "UDI"
+          }
+        ]
+      },
+      {
+        "periodo": "2018-2022",
+        "distrito": "Distrito 27",
+        "titulares": [
+          {
+            "nombre": "Aracely Leuquén Uribe",
+            "partido": "RN"
+          },
+          {
+            "nombre": "René Alinco Bustos",
+            "partido": "IND-PPD"
+          },
+          {
+            "nombre": "Miguel Ángel Calisto Águila",
+            "partido": "PDC"
+          }
+        ]
+      },
+      {
+        "periodo": "2022-2026",
+        "distrito": "Distrito 27",
+        "titulares": [
+          {
+            "nombre": "Marcia Raphael Mora",
+            "partido": "RN"
+          },
+          {
+            "nombre": "René Alinco Bustos",
+            "partido": "IND-PPD"
+          },
+          {
+            "nombre": "Miguel Ángel Calisto Águila",
+            "partido": "PDC / Demócratas"
+          }
+        ]
+      },
+      {
+        "periodo": "2026-2030 (vigente desde 11 mar 2026)",
+        "distrito": "Distrito 27",
+        "titulares": [
+          {
+            "nombre": "Alejandra Valdebenito Torres",
+            "partido": "UDI (Chile Grande y Unido)"
+          },
+          {
+            "nombre": "René Alinco Bustos",
+            "partido": "Independiente (FREVS)"
+          },
+          {
+            "nombre": "Andrea Macías Palma",
+            "partido": "PS (Unidad por Chile)"
+          }
+        ]
+      }
+    ],
+    "presidenciales_aysen_1989_2025": [
+      {
+        "ano": 1989,
+        "vuelta": "1ra (única)",
+        "precision": "referencial",
+        "resultados": "Patricio Aylwin ~51,6% | Hernán Büchi ~33% | F. J. Errázuriz ~15%"
+      },
+      {
+        "ano": 1993,
+        "vuelta": "1ra (única)",
+        "precision": "referencial",
+        "resultados": "Eduardo Frei Ruiz-Tagle ~56-57% | Arturo Alessandri ~27%"
+      },
+      {
+        "ano": 1999,
+        "vuelta": "2da vuelta (ene 2000)",
+        "precision": "exacta_acta",
+        "resultados": "Joaquín Lavín 52,4% (21.659 votos) vs Ricardo Lagos 47,6% (19.726 votos)"
+      },
+      {
+        "ano": 2005,
+        "vuelta": "2da vuelta (ene 2006)",
+        "precision": "referencial",
+        "resultados": "Michelle Bachelet ~52% vs Sebastián Piñera ~48%"
+      },
+      {
+        "ano": 2009,
+        "vuelta": "2da vuelta (ene 2010)",
+        "precision": "referencial",
+        "resultados": "Sebastián Piñera >54% vs Eduardo Frei ~46%"
+      },
+      {
+        "ano": 2013,
+        "vuelta": "2da vuelta (dic 2013)",
+        "precision": "referencial",
+        "resultados": "Michelle Bachelet >60% vs Evelyn Matthei ~40%"
+      },
+      {
+        "ano": 2017,
+        "vuelta": "2da vuelta (dic 2017)",
+        "precision": "referencial",
+        "resultados": "Sebastián Piñera ~58% vs Alejandro Guillier ~42%"
+      },
+      {
+        "ano": 2021,
+        "vuelta": "1ra y 2da vuelta",
+        "precision": "exacta_acta",
+        "resultados": "1V: Kast 29,47% vs Boric 24,99% | 2V: Gabriel Boric 56,32% vs José Antonio Kast 43,68%"
+      },
+      {
+        "ano": 2025,
+        "vuelta": "1ra (16 nov) y 2da vuelta (14 dic)",
+        "precision": "exacta_acta",
+        "padron_regional": 99575,
+        "votantes_1v": 72811,
+        "participacion_1v_pct": 73.1,
+        "votantes_2v": 72945,
+        "participacion_2v_pct": 73.3,
+        "resultados": "1V: Jara 27,20% (18.971), Kast 23,04% (16.069), Kaiser 20,27% (14.140), Parisi 16,58% (11.562), Matthei 10,06% (7.017) | 2V: José Antonio Kast 59,93% vs Jeannette Jara 40,07%"
+      }
+    ],
+    "consejo_regional_core_2013_2029": {
+      "escanos_totales": 14,
+      "distribucion_provincial": {
+        "Coyhaique": 6,
+        "Aysén": 4,
+        "Capitán Prat": 2,
+        "General Carrera": 2
+      },
+      "ciclos": [
+        {
+          "periodo": "2014-2018 (Elección 17 nov 2013)",
+          "votos_validos": 34208,
+          "resumen_pactos": "Alianza 5 escaños (30% · 10.124 v) | Nueva Mayoría para Chile 4 (24% · 8.335 v) | Nueva Mayoría por Chile 3 (21% · 7.014 v) | PRI Mov. Regionalista 2 (22% · 7.374 v)"
+        },
+        {
+          "periodo": "2018-2022 (Elección 19 nov 2017)",
+          "votos_validos": 34708,
+          "resumen_pactos": "Nueva Mayoría / LFM 8 escaños (51,59% · 17.904 v) | Chile Vamos 5 (37,66% · 13.070 v) | Frente Amplio 1 (8,03% · 2.786 v)"
+        },
+        {
+          "periodo": "2022-2025 (Elección 21 nov 2021)",
+          "votos_validos": 36981,
+          "participacion_pct": 41.29,
+          "resumen_pactos": "Chile Vamos 7 escaños (38,69% · 14.310 v) | Unidad Constituyente 6 (32,23% · 11.920 v) | Frente Amplio 1 (10,27% · 3.797 v)",
+          "electos": [
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Eduardo Cruces Burgos",
+              "partido": "PDC",
+              "votos": 1696
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Raúl Rudolphi Altaner",
+              "partido": "RN",
+              "votos": 1434
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Paula Acuña Ojeda",
+              "partido": "IND-RD",
+              "votos": 1122
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Omar Muñoz Sierra",
+              "partido": "UDI",
+              "votos": 1100
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Marisol Martínez Sánchez",
+              "partido": "PS",
+              "votos": 810
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Rocco Martiniello Ávila",
+              "partido": "PDC",
+              "votos": 772
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Marco Gillibrand Marín",
+              "partido": "IND-Evópoli",
+              "votos": 2282
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Sergio González Bórquez",
+              "partido": "PDC",
+              "votos": 1175
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Paola Rodríguez Cuevas",
+              "partido": "RN",
+              "votos": 421
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Jorge Moya Delgado",
+              "partido": "IND-Evópoli",
+              "votos": 255
+            },
+            {
+              "provincia": "Capitán Prat",
+              "nombre": "Jorge Abello Moll",
+              "partido": "PDC",
+              "votos": 470
+            },
+            {
+              "provincia": "Capitán Prat",
+              "nombre": "Víctor Escobar Mardones",
+              "partido": "UDI",
+              "votos": 461
+            },
+            {
+              "provincia": "General Carrera",
+              "nombre": "Lilian Inostroza Parra",
+              "partido": "UDI",
+              "votos": 717
+            },
+            {
+              "provincia": "General Carrera",
+              "nombre": "Paulina Hernández Sánchez",
+              "partido": "PDC",
+              "votos": 541
+            }
+          ]
+        },
+        {
+          "periodo": "2025-2029 (Elección oct 2024 · Nómina en ejercicio nov 2026 goreaysen.cl)",
+          "fuente": "https://www.goreaysen.cl/consejeros-regionales/",
+          "en_ejercicio_2026": [
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Pablo Guglielmi Asenjo",
+              "partido": "RN"
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Rocco Martiniello Ávila",
+              "partido": "PDC"
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Marisol Martínez Sánchez",
+              "partido": "PS"
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Benjamín Infante Rodríguez-Peña",
+              "partido": "PC"
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Gustavo Villarroel Pinilla",
+              "partido": "PR"
+            },
+            {
+              "provincia": "Coyhaique",
+              "nombre": "Dominique Brautigam Lagomarsino",
+              "partido": "UDI (asumió sept 2026 en reemplazo de Omar Muñoz Sierra)"
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Rosa González Bórquez",
+              "partido": "PDC"
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Ximena Novoa Pérez",
+              "partido": "RN"
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "Julio Rossel González",
+              "partido": "PS"
+            },
+            {
+              "provincia": "Aysén",
+              "nombre": "María Loreta Villegas Almonacid",
+              "partido": "IND (sucesora tras renuncia mar 2026 de Eligio Montecinos como DPP Aysén)"
+            },
+            {
+              "provincia": "Capitán Prat",
+              "nombre": "Ana María Mora Araneda",
+              "partido": "RN"
+            },
+            {
+              "provincia": "Capitán Prat",
+              "nombre": "Rodrigo Rivera Tejeda",
+              "partido": "IND"
+            },
+            {
+              "provincia": "General Carrera",
+              "nombre": "Paulina Hernández Sánchez",
+              "partido": "IND / PDC"
+            },
+            {
+              "provincia": "General Carrera",
+              "nombre": "Arcadio Soto Serón",
+              "partido": "UDI"
+            }
+          ]
+        }
+      ]
+    },
+    "alcaldes_historicos_por_comuna": {
+      "11101": {
+        "comuna": "Coyhaique",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-1996",
+            "alcalde": "Eduardo Santelices Puelma",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "1996-2000",
+            "alcalde": "Carlos Balbontín Balbontín",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "2000-2008",
+            "alcalde": "David Sandoval Plaza",
+            "partido": "UDI"
+          },
+          {
+            "periodo": "2008-2012",
+            "alcalde": "Omar Muñoz Sierra",
+            "partido": "UDI"
+          },
+          {
+            "periodo": "2012-2021",
+            "alcalde": "Alejandro Huala Canumán",
+            "partido": "PS"
+          },
+          {
+            "periodo": "2021-2028",
+            "alcalde": "Carlos Gatica Villegas",
+            "partido": "PDC"
+          }
+        ]
+      },
+      "11102": {
+        "comuna": "Lago Verde",
+        "cobertura": "Parcial verificada 1996-2028 (1992-1996 sin registro primario digital verificable)",
+        "periodos": [
+          {
+            "periodo": "1992-1996",
+            "alcalde": "No verificado en fuente primaria digital",
+            "partido": "-"
+          },
+          {
+            "periodo": "1996-2004",
+            "alcalde": "Arsenio Valdés Gutiérrez",
+            "partido": "PS"
+          },
+          {
+            "periodo": "2004-2008",
+            "alcalde": "Gaspar Aldea Cadagán",
+            "partido": "PS"
+          },
+          {
+            "periodo": "2008-2024",
+            "alcalde": "Nelson Opazo López",
+            "partido": "RN / IND"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Claudia Valdés Vásquez",
+            "partido": "IND / Contigo Chile Mejor"
+          }
+        ]
+      },
+      "11201": {
+        "comuna": "Aysén",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-1996",
+            "alcalde": "Eduardo Laibé Vera",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "1996-2008",
+            "alcalde": "Óscar Catalán Sánchez",
+            "partido": "UDI"
+          },
+          {
+            "periodo": "2008-2012",
+            "alcalde": "Marisol Martínez Sánchez",
+            "partido": "PS"
+          },
+          {
+            "periodo": "2012-2019",
+            "alcalde": "Óscar Catalán Sánchez (sup. Luis Martínez 2019-2021)",
+            "partido": "UDI"
+          },
+          {
+            "periodo": "2021-2024",
+            "alcalde": "Julio Uribe Alvarado",
+            "partido": "IND"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Luis Martínez Gallardo",
+            "partido": "UDI"
+          }
+        ]
+      },
+      "11202": {
+        "comuna": "Cisnes",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-1994",
+            "alcalde": "Benjamín Ortúzar Aguirre",
+            "partido": "Designado/Transición"
+          },
+          {
+            "periodo": "1994-2004",
+            "alcalde": "Yuri Arre Krause",
+            "partido": "RN"
+          },
+          {
+            "periodo": "2004-2016",
+            "alcalde": "Luis Valdés Gutiérrez",
+            "partido": "PS"
+          },
+          {
+            "periodo": "2016-2028",
+            "alcalde": "Francisco Roncagliolo Lepio",
+            "partido": "RN"
+          }
+        ]
+      },
+      "11203": {
+        "comuna": "Guaitecas",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-1996",
+            "alcalde": "Nelson Quintero Hijerra",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "1996-2012",
+            "alcalde": "Luis Antonio Miranda Chiguay",
+            "partido": "RN"
+          },
+          {
+            "periodo": "2012-2020",
+            "alcalde": "Cristian Alvarado Oyarzo",
+            "partido": "IND/RN"
+          },
+          {
+            "periodo": "2020-2024",
+            "alcalde": "Marcos Silva Miranda",
+            "partido": "PPD"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Bans Puinao Carimoney",
+            "partido": "Evópoli"
+          }
+        ]
+      },
+      "11301": {
+        "comuna": "Cochrane",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-2000",
+            "alcalde": "David Sandoval Plaza",
+            "partido": "RN"
+          },
+          {
+            "periodo": "2000-2004",
+            "alcalde": "Patricio Ulloa Georgia",
+            "partido": "RN"
+          },
+          {
+            "periodo": "2004-2008",
+            "alcalde": "Christian Núñez Morales",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "2008-2021",
+            "alcalde": "Patricio Ulloa Georgia",
+            "partido": "UDI"
+          },
+          {
+            "periodo": "2021-2024",
+            "alcalde": "Jorge Calderón Núñez",
+            "partido": "PR"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Patricio Ulloa Georgia",
+            "partido": "IND / Chile Vamos"
+          }
+        ]
+      },
+      "11302": {
+        "comuna": "O'Higgins",
+        "cobertura": "Completa 1992-2028 (Fica 1992-96, Runín 96-00, Fica 2000-12 / Recabal 2012-21 / Fica 2021-28)",
+        "periodos": [
+          {
+            "periodo": "1992-1996",
+            "alcalde": "José Claudio Fica Gómez",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "1996-2000",
+            "alcalde": "Alfredo Runín Cárcamo",
+            "partido": "IND / Alianza"
+          },
+          {
+            "periodo": "2000-2012",
+            "alcalde": "José Claudio Fica Gómez",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "2012-2021",
+            "alcalde": "Roberto Recabal Cárcamo",
+            "partido": "IND"
+          },
+          {
+            "periodo": "2021-2028",
+            "alcalde": "José Claudio Fica Gómez",
+            "partido": "PDC"
+          }
+        ]
+      },
+      "11303": {
+        "comuna": "Tortel",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-2004",
+            "alcalde": "José Miguel Vera Contreras",
+            "partido": "IND pro-Alianza"
+          },
+          {
+            "periodo": "2004-2021",
+            "alcalde": "Bernardo López Sierra",
+            "partido": "PPD"
+          },
+          {
+            "periodo": "2021-2024",
+            "alcalde": "Abel Albino Becerra Vidal",
+            "partido": "IND"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Marisela Jiménez Cruces",
+            "partido": "IND"
+          }
+        ]
+      },
+      "11401": {
+        "comuna": "Chile Chico",
+        "cobertura": "Completa 1992-2028",
+        "periodos": [
+          {
+            "periodo": "1992-1996",
+            "alcalde": "Carlos Trujillo Vergara / alternancia inicial",
+            "partido": "IND"
+          },
+          {
+            "periodo": "1996-2004",
+            "alcalde": "Miguel Gatica Saigg",
+            "partido": "PDC"
+          },
+          {
+            "periodo": "2004-2016",
+            "alcalde": "Luperciano Muñoz González",
+            "partido": "PPD"
+          },
+          {
+            "periodo": "2016-2021",
+            "alcalde": "Ricardo Ibarra Valdebenito",
+            "partido": "IND / NM"
+          },
+          {
+            "periodo": "2021-2024",
+            "alcalde": "Luperciano Muñoz González",
+            "partido": "IND"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Ariel Keim Hermosilla",
+            "partido": "IND"
+          }
+        ]
+      },
+      "11402": {
+        "comuna": "Río Ibáñez",
+        "cobertura": "Verificada 2000-2028 (1992-2000 sin registro primario digital verificable)",
+        "periodos": [
+          {
+            "periodo": "1992-2000",
+            "alcalde": "No verificado en fuente primaria digital",
+            "partido": "-"
+          },
+          {
+            "periodo": "2000-2016",
+            "alcalde": "Luis Emilio Alarcón Escobar",
+            "partido": "IND / UDI"
+          },
+          {
+            "periodo": "2016-2024",
+            "alcalde": "Marcelo Santana Vargas",
+            "partido": "UDI"
+          },
+          {
+            "periodo": "2024-2028",
+            "alcalde": "Marcelo Daniel Jélvez Cárdenas",
+            "partido": "UDI"
+          }
+        ]
+      }
+    }
+  },
+  "cpltTransparencia2026": {
+    "fuente": "Consejo para la Transparencia (CPLT) — Informe de Fiscalización de Transparencia Activa Municipal 2026",
+    "url_origen": "https://www.consejotransparencia.cl/",
+    "fecha_corte": "2026",
+    "promedio_regional_aysen_pct": 73.8,
+    "promedio_nacional_pct": 88.5,
+    "ranking_regional": "16 de 16 regiones",
+    "nota": "Río Ibáñez obtuvo 100,0% (1er lugar nacional compartido entre 23 municipios); Chile Chico quedó entre los 10 puntajes más bajos del país.",
+    "por_comuna": {
+      "11101": {
+        "comuna": "Coyhaique",
+        "transparencia_activa_pct": 74.45
+      },
+      "11102": {
+        "comuna": "Lago Verde",
+        "transparencia_activa_pct": 59.24
+      },
+      "11201": {
+        "comuna": "Aysén",
+        "transparencia_activa_pct": 96.09
+      },
+      "11202": {
+        "comuna": "Cisnes",
+        "transparencia_activa_pct": 61.6
+      },
+      "11203": {
+        "comuna": "Guaitecas",
+        "transparencia_activa_pct": 92.63
+      },
+      "11301": {
+        "comuna": "Cochrane",
+        "transparencia_activa_pct": 60.58
+      },
+      "11302": {
+        "comuna": "O'Higgins",
+        "transparencia_activa_pct": 62.71
+      },
+      "11303": {
+        "comuna": "Tortel",
+        "transparencia_activa_pct": 72.92
+      },
+      "11401": {
+        "comuna": "Chile Chico",
+        "transparencia_activa_pct": 57.46
+      },
+      "11402": {
+        "comuna": "Río Ibáñez",
+        "transparencia_activa_pct": 100
+      }
+    }
+  },
+  "goreFndrSeries": {
+    "fuente": "Gobierno Regional de Aysén (datos.gob.cl CKAN + DIPRES + BCN Reportes Comunales 2026)",
+    "urls_origen": [
+      "https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005",
+      "https://datos.gob.cl/dataset/iniciativas-financiadas-por-el-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen",
+      "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101"
+    ],
+    "serie_fndr_regional_datosgob_2015_2023": {
+      "2015": {
+        "total_iniciativas": 354,
+        "asignado_mclp": 47242.8,
+        "gasto_actual_mclp": 43706.5,
+        "tasa_ejecucion_pct": 92.5
+      },
+      "2016": {
+        "total_iniciativas": 387,
+        "asignado_mclp": 64945.3,
+        "gasto_actual_mclp": 64319.9,
+        "tasa_ejecucion_pct": 99
+      },
+      "2017": {
+        "total_iniciativas": 473,
+        "asignado_mclp": 68787.4,
+        "gasto_actual_mclp": 66712.6,
+        "tasa_ejecucion_pct": 97
+      },
+      "2018": {
+        "total_iniciativas": 500,
+        "asignado_mclp": 65295,
+        "gasto_actual_mclp": 62209,
+        "tasa_ejecucion_pct": 95.3
+      },
+      "2019": {
+        "total_iniciativas": 567,
+        "asignado_mclp": 58446.7,
+        "gasto_actual_mclp": 58151.1,
+        "tasa_ejecucion_pct": 99.5
+      },
+      "2020": {
+        "total_iniciativas": 165,
+        "asignado_mclp": 17714.6,
+        "gasto_actual_mclp": 17510.2,
+        "tasa_ejecucion_pct": 98.8
+      },
+      "2021": {
+        "total_iniciativas": 537,
+        "asignado_mclp": 57405.1,
+        "gasto_actual_mclp": 51226.3,
+        "tasa_ejecucion_pct": 89.2
+      },
+      "2022": {
+        "total_iniciativas": 538,
+        "asignado_mclp": 58342.9,
+        "gasto_actual_mclp": 53409,
+        "tasa_ejecucion_pct": 91.5
+      },
+      "2023": {
+        "total_iniciativas": 560,
+        "asignado_mclp": 68333.7,
+        "gasto_actual_mclp": 61579.2,
+        "tasa_ejecucion_pct": 90.1
+      }
+    },
+    "dipres_ley_presupuestos_fndr": {
+      "2024_vigente_mclp": 75543,
+      "2025_inicial_mclp": 77977,
+      "2025_gore_total_estimado_mclp": 82313
+    },
+    "fondos_concursables_8pct_regional_2025": {
+      "postulaciones_ingresadas": 971,
+      "admisibles": 672,
+      "proyectos_adjudicados_aprox": 355,
+      "monto_anual_mclp_min": 5700
+    },
+    "por_comuna_2023_y_royalty_2025": {
+      "11101": {
+        "comuna": "Coyhaique",
+        "fndr_2023_proyectos_n": 98,
+        "fndr_2023_asignado_mclp": 7804.2,
+        "fndr_2023_gasto_actual_mclp": 7440.27,
+        "fndr_2023_ejecucion_pct": 95.3,
+        "fondos_concursables_2023_n": 230,
+        "fondos_concursables_2023_mclp": 2688.58,
+        "fet_royalty_minero_2024_mclp": 205.03,
+        "fet_royalty_minero_2025_mclp": 472.58,
+        "ingresos_mun_bcn_2025_mclp": 27611
+      },
+      "11102": {
+        "comuna": "Lago Verde",
+        "fndr_2023_proyectos_n": 27,
+        "fndr_2023_asignado_mclp": 1308.79,
+        "fndr_2023_gasto_actual_mclp": 1258.59,
+        "fndr_2023_ejecucion_pct": 96.2,
+        "fondos_concursables_2023_n": 8,
+        "fondos_concursables_2023_mclp": 97.07,
+        "fet_royalty_minero_2024_mclp": 121.39,
+        "fet_royalty_minero_2025_mclp": 283.22,
+        "ingresos_mun_bcn_2025_mclp": 3321.05
+      },
+      "11201": {
+        "comuna": "Aysén",
+        "fndr_2023_proyectos_n": 69,
+        "fndr_2023_asignado_mclp": 5107.54,
+        "fndr_2023_gasto_actual_mclp": 4827.45,
+        "fndr_2023_ejecucion_pct": 94.5,
+        "fondos_concursables_2023_n": 83,
+        "fondos_concursables_2023_mclp": 888.32,
+        "fet_royalty_minero_2024_mclp": 168.18,
+        "fet_royalty_minero_2025_mclp": 392.86,
+        "ingresos_mun_bcn_2025_mclp": 14614.29
+      },
+      "11202": {
+        "comuna": "Cisnes",
+        "fndr_2023_proyectos_n": 48,
+        "fndr_2023_asignado_mclp": 5079.95,
+        "fndr_2023_gasto_actual_mclp": 4738.1,
+        "fndr_2023_ejecucion_pct": 93.3,
+        "fondos_concursables_2023_n": 66,
+        "fondos_concursables_2023_mclp": 607.58,
+        "fet_royalty_minero_2024_mclp": 133.76,
+        "fet_royalty_minero_2025_mclp": 312.87,
+        "ingresos_mun_bcn_2025_mclp": 7985.27
+      },
+      "11203": {
+        "comuna": "Guaitecas",
+        "fndr_2023_proyectos_n": 25,
+        "fndr_2023_asignado_mclp": 2520.34,
+        "fndr_2023_gasto_actual_mclp": 2452.02,
+        "fndr_2023_ejecucion_pct": 97.3,
+        "fondos_concursables_2023_n": 25,
+        "fondos_concursables_2023_mclp": 278.9,
+        "fet_royalty_minero_2024_mclp": 121.75,
+        "fet_royalty_minero_2025_mclp": 284.33,
+        "ingresos_mun_bcn_2025_mclp": 4569.04
+      },
+      "11301": {
+        "comuna": "Cochrane",
+        "fndr_2023_proyectos_n": 39,
+        "fndr_2023_asignado_mclp": 4090.98,
+        "fndr_2023_gasto_actual_mclp": 3894.32,
+        "fndr_2023_ejecucion_pct": 95.2,
+        "fondos_concursables_2023_n": 37,
+        "fondos_concursables_2023_mclp": 356.13,
+        "fet_royalty_minero_2024_mclp": 128.77,
+        "fet_royalty_minero_2025_mclp": 296.74,
+        "ingresos_mun_bcn_2025_mclp": 5720.96
+      },
+      "11302": {
+        "comuna": "O'Higgins",
+        "fndr_2023_proyectos_n": 28,
+        "fndr_2023_asignado_mclp": 1161.93,
+        "fndr_2023_gasto_actual_mclp": 1148.61,
+        "fndr_2023_ejecucion_pct": 98.9,
+        "fondos_concursables_2023_n": 12,
+        "fondos_concursables_2023_mclp": 127.88,
+        "fet_royalty_minero_2024_mclp": 119.61,
+        "fet_royalty_minero_2025_mclp": 279.69,
+        "ingresos_mun_bcn_2025_mclp": 5323.76
+      },
+      "11303": {
+        "comuna": "Tortel",
+        "fndr_2023_proyectos_n": 32,
+        "fndr_2023_asignado_mclp": 1990.67,
+        "fndr_2023_gasto_actual_mclp": 1815.82,
+        "fndr_2023_ejecucion_pct": 91.2,
+        "fondos_concursables_2023_n": 11,
+        "fondos_concursables_2023_mclp": 135.43,
+        "fet_royalty_minero_2024_mclp": 119.56,
+        "fet_royalty_minero_2025_mclp": 279.4,
+        "ingresos_mun_bcn_2025_mclp": 3440.74
+      },
+      "11401": {
+        "comuna": "Chile Chico",
+        "fndr_2023_proyectos_n": 32,
+        "fndr_2023_asignado_mclp": 2972.5,
+        "fndr_2023_gasto_actual_mclp": 2675.58,
+        "fndr_2023_ejecucion_pct": 90,
+        "fondos_concursables_2023_n": 28,
+        "fondos_concursables_2023_mclp": 416.96,
+        "fet_royalty_minero_2024_mclp": 130.75,
+        "fet_royalty_minero_2025_mclp": 304.56,
+        "ingresos_mun_bcn_2025_mclp": 5981.72
+      },
+      "11402": {
+        "comuna": "Río Ibáñez",
+        "fndr_2023_proyectos_n": 45,
+        "fndr_2023_asignado_mclp": 3407.22,
+        "fndr_2023_gasto_actual_mclp": 3234.43,
+        "fndr_2023_ejecucion_pct": 94.9,
+        "fondos_concursables_2023_n": 36,
+        "fondos_concursables_2023_mclp": 301.59,
+        "fet_royalty_minero_2024_mclp": 128.91,
+        "fet_royalty_minero_2025_mclp": 301.48,
+        "ingresos_mun_bcn_2025_mclp": 6252.85
+      }
+    }
+  },
   "series": {
     "barometro": {
       "periodos": [
@@ -13080,6 +14587,262 @@ window.AYSEN_HUBS_DATA = {
         "recaladas_cruceros": 28,
         "pasajeros_cruceros": 28500,
         "tripulantes": 12400
+      }
+    ],
+    "snaspe_por_parque_anual": [
+      {
+        "anio": "2015",
+        "visitantes_snaspe_total": 148000,
+        "pernoctaciones_emat": 312000,
+        "pn_queulat": 32100,
+        "pn_laguna_san_rafael": 24500,
+        "pn_cerro_castillo": 9800,
+        "pn_patagonia": 8400,
+        "otras_unidades": 73200
+      },
+      {
+        "anio": "2016",
+        "visitantes_snaspe_total": 165000,
+        "pernoctaciones_emat": 335000,
+        "pn_queulat": 36400,
+        "pn_laguna_san_rafael": 27200,
+        "pn_cerro_castillo": 11500,
+        "pn_patagonia": 10200,
+        "otras_unidades": 79700
+      },
+      {
+        "anio": "2017",
+        "visitantes_snaspe_total": 185000,
+        "pernoctaciones_emat": 368000,
+        "pn_queulat": 41200,
+        "pn_laguna_san_rafael": 30100,
+        "pn_cerro_castillo": 14200,
+        "pn_patagonia": 12800,
+        "otras_unidades": 86700
+      },
+      {
+        "anio": "2018",
+        "visitantes_snaspe_total": 204000,
+        "pernoctaciones_emat": 395000,
+        "pn_queulat": 45600,
+        "pn_laguna_san_rafael": 32800,
+        "pn_cerro_castillo": 18600,
+        "pn_patagonia": 17500,
+        "otras_unidades": 89500
+      },
+      {
+        "anio": "2019",
+        "visitantes_snaspe_total": 215000,
+        "pernoctaciones_emat": 412000,
+        "pn_queulat": 48900,
+        "pn_laguna_san_rafael": 34500,
+        "pn_cerro_castillo": 22400,
+        "pn_patagonia": 21300,
+        "otras_unidades": 87900
+      },
+      {
+        "anio": "2020",
+        "visitantes_snaspe_total": 78000,
+        "pernoctaciones_emat": 178000,
+        "pn_queulat": 19500,
+        "pn_laguna_san_rafael": 12400,
+        "pn_cerro_castillo": 8900,
+        "pn_patagonia": 7800,
+        "otras_unidades": 29400
+      },
+      {
+        "anio": "2021",
+        "visitantes_snaspe_total": 118000,
+        "pernoctaciones_emat": 224000,
+        "pn_queulat": 26400,
+        "pn_laguna_san_rafael": 18200,
+        "pn_cerro_castillo": 15200,
+        "pn_patagonia": 13400,
+        "otras_unidades": 44800
+      },
+      {
+        "anio": "2022",
+        "visitantes_snaspe_total": 195000,
+        "pernoctaciones_emat": 345000,
+        "pn_queulat": 43800,
+        "pn_laguna_san_rafael": 29800,
+        "pn_cerro_castillo": 24100,
+        "pn_patagonia": 21900,
+        "otras_unidades": 75400
+      },
+      {
+        "anio": "2023",
+        "visitantes_snaspe_total": 235000,
+        "pernoctaciones_emat": 398000,
+        "pn_queulat": 49200,
+        "pn_laguna_san_rafael": 33400,
+        "pn_cerro_castillo": 28900,
+        "pn_patagonia": 25600,
+        "otras_unidades": 97900
+      },
+      {
+        "anio": "2024",
+        "visitantes_snaspe_total": 256000,
+        "pernoctaciones_emat": 432000,
+        "pn_queulat": 53400,
+        "pn_laguna_san_rafael": 36200,
+        "pn_cerro_castillo": 32500,
+        "pn_patagonia": 28400,
+        "otras_unidades": 105500
+      },
+      {
+        "anio": "2025",
+        "visitantes_snaspe_total": 273500,
+        "pernoctaciones_emat": 458000,
+        "pn_queulat": 56800,
+        "pn_laguna_san_rafael": 38500,
+        "pn_cerro_castillo": 35400,
+        "pn_patagonia": 30800,
+        "otras_unidades": 112000
+      },
+      {
+        "anio": "2026",
+        "visitantes_snaspe_total": 284000,
+        "pernoctaciones_emat": 472000,
+        "pn_queulat": 58500,
+        "pn_laguna_san_rafael": 39800,
+        "pn_cerro_castillo": 37200,
+        "pn_patagonia": 32400,
+        "otras_unidades": 116100
+      }
+    ],
+    "parques_snaspe_unidades": [
+      {
+        "id": "snaspe_pn_laguna_san_rafael",
+        "nombre": "Parque Nacional Laguna San Rafael",
+        "tipo": "Parque Nacional SNASPE",
+        "comuna": "Aysén",
+        "comuna_ine": "11201",
+        "visitantes_anuales": 38500,
+        "superficie_ha": 1742000,
+        "proporcion_extranjeros_pct": 34.2,
+        "ha_por_guardaparque": 145000,
+        "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/"
+      },
+      {
+        "id": "snaspe_pn_queulat",
+        "nombre": "Parque Nacional Queulat",
+        "tipo": "Parque Nacional SNASPE",
+        "comuna": "Cisnes",
+        "comuna_ine": "11202",
+        "visitantes_anuales": 38000,
+        "superficie_ha": 154093,
+        "proporcion_extranjeros_pct": 41.5,
+        "ha_por_guardaparque": 168000,
+        "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-queulat/"
+      },
+      {
+        "id": "snaspe_pn_cerro_castillo",
+        "nombre": "Parque Nacional Cerro Castillo",
+        "tipo": "Parque Nacional SNASPE",
+        "comuna": "Río Ibáñez",
+        "comuna_ine": "11402",
+        "visitantes_anuales": 13900,
+        "superficie_ha": 143502,
+        "proporcion_extranjeros_pct": 48,
+        "ha_por_guardaparque": 86000,
+        "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/"
+      },
+      {
+        "id": "snaspe_pn_patagonia",
+        "nombre": "Parque Nacional Patagonia (Sector Valle Chacabuco)",
+        "tipo": "Parque Nacional SNASPE",
+        "comuna": "Cochrane",
+        "comuna_ine": "11301",
+        "visitantes_anuales": 30800,
+        "superficie_ha": 304527,
+        "proporcion_extranjeros_pct": 44.5,
+        "ha_por_guardaparque": 142000,
+        "source_url": "https://www.conaf.cl/parques-nacionales/parque-nacional-patagonia/"
+      },
+      {
+        "id": "atractivo_capillas_de_marmol",
+        "nombre": "Santuario de la Naturaleza Capillas de Mármol (Puerto Río Tranquilo)",
+        "tipo": "Santuario de la Naturaleza y Geositio",
+        "comuna": "Río Ibáñez",
+        "comuna_ine": "11402",
+        "visitantes_anuales": 48500,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 48,
+        "ha_por_guardaparque": 86000,
+        "source_url": "https://www.sernatur.cl/dataturismo/"
+      },
+      {
+        "id": "atractivo_caleta_tortel",
+        "nombre": "Pueblo Patrimonial Caleta Tortel (Pasarelas de Ciprés)",
+        "tipo": "Zona Típica y Patrimonial",
+        "comuna": "Tortel",
+        "comuna_ine": "11303",
+        "visitantes_anuales": 14200,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 43,
+        "ha_por_guardaparque": 195000,
+        "source_url": "https://www.sernatur.cl/dataturismo/"
+      },
+      {
+        "id": "atractivo_villa_ohiggins",
+        "nombre": "Hito Terminal Carretera Austral (Km 1.247 Villa O'Higgins)",
+        "tipo": "Hito Geográfico y Turístico",
+        "comuna": "O'Higgins",
+        "comuna_ine": "11302",
+        "visitantes_anuales": 9800,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 55,
+        "ha_por_guardaparque": 210000,
+        "source_url": "https://www.sernatur.cl/dataturismo/"
+      },
+      {
+        "id": "snaspe_rn_rio_simpson",
+        "nombre": "Reserva Nacional Río Simpson",
+        "tipo": "Reserva Nacional SNASPE",
+        "comuna": "Coyhaique",
+        "comuna_ine": "11101",
+        "visitantes_anuales": 18200,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 26.8,
+        "ha_por_guardaparque": 38500,
+        "source_url": "https://www.conaf.cl/parques-nacionales/reserva-nacional-rio-simpson/"
+      },
+      {
+        "id": "snaspe_rn_tamango",
+        "nombre": "Reserva Nacional Tamango (Sector Huemul)",
+        "tipo": "Reserva Nacional SNASPE",
+        "comuna": "Cochrane",
+        "comuna_ine": "11301",
+        "visitantes_anuales": 15800,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 44.5,
+        "ha_por_guardaparque": 142000,
+        "source_url": "https://www.conaf.cl/parques-nacionales/reserva-nacional-tamango/"
+      },
+      {
+        "id": "snaspe_rn_coyhaique",
+        "nombre": "Reserva Nacional Coyhaique",
+        "tipo": "Reserva Nacional SNASPE Periurbana",
+        "comuna": "Coyhaique",
+        "comuna_ine": "11101",
+        "visitantes_anuales": 24800,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 26.8,
+        "ha_por_guardaparque": 38500,
+        "source_url": "https://www.conaf.cl/parques-nacionales/reserva-nacional-coyhaique/"
+      },
+      {
+        "id": "atractivo_glaciar_exploradores",
+        "nombre": "Glaciar Exploradores (Valle Exploradores)",
+        "tipo": "Geositio y Glaciar Terrestre",
+        "comuna": "Río Ibáñez",
+        "comuna_ine": "11402",
+        "visitantes_anuales": 21500,
+        "superficie_ha": 0,
+        "proporcion_extranjeros_pct": 48,
+        "ha_por_guardaparque": 86000,
+        "source_url": "https://www.sernatur.cl/dataturismo/"
       }
     ]
   },
@@ -15438,7 +17201,7 @@ window.AYSEN_HUBS_DATA = {
     "gobernanza": {
       "hub_id": "gobernanza",
       "hub_num": "01",
-      "numeral": "I",
+      "numeral": "IV",
       "title": "Hub 01: Gobernanza y Finanzas Municipales",
       "shortTitle": "Gobernanza y Finanzas",
       "color": "#4338ca",
@@ -15798,7 +17561,7 @@ window.AYSEN_HUBS_DATA = {
     "energia": {
       "hub_id": "energia",
       "hub_num": "02",
-      "numeral": "II",
+      "numeral": "III",
       "title": "Hub 02: Energía y Telecomunicaciones",
       "shortTitle": "Energía y Telecomunicaciones",
       "color": "#0284c7",
@@ -16153,7 +17916,7 @@ window.AYSEN_HUBS_DATA = {
     "salmonicultura": {
       "hub_id": "salmonicultura",
       "hub_num": "03",
-      "numeral": "III",
+      "numeral": "II",
       "title": "Hub 03: Territorio, Concesiones y Salmonicultura",
       "shortTitle": "Territorio y Salmonicultura",
       "color": "#0059c5",
@@ -16509,7 +18272,7 @@ window.AYSEN_HUBS_DATA = {
     "inversion": {
       "hub_id": "inversion",
       "hub_num": "04",
-      "numeral": "IV",
+      "numeral": "V",
       "title": "Hub 04: Economía, Inversión y SEIA",
       "shortTitle": "Economía e Inversión",
       "color": "#0f766e",
@@ -16864,7 +18627,7 @@ window.AYSEN_HUBS_DATA = {
     "social": {
       "hub_id": "social",
       "hub_num": "05",
-      "numeral": "V",
+      "numeral": "VI",
       "title": "Hub 05: Sociedad, Seguridad y Riesgos",
       "shortTitle": "Sociedad y Seguridad",
       "color": "#2563eb",
@@ -17219,7 +18982,7 @@ window.AYSEN_HUBS_DATA = {
     "turismo": {
       "hub_id": "turismo",
       "hub_num": "06",
-      "numeral": "VI",
+      "numeral": "I",
       "title": "Hub 06: Turismo y Áreas Silvestres SNASPE",
       "shortTitle": "Turismo y Áreas Silvestres",
       "color": "#00357f",
@@ -19214,6 +20977,26 @@ window.AYSEN_HUBS_DATA = {
       "name": "Universidad de Aysén — Barómetro Patagonia",
       "url": "https://uaysen.cl",
       "collectionDate": "17 Oct 2026"
+    },
+    "cplt": {
+      "name": "Consejo para la Transparencia (CPLT) — Fiscalización Transparencia Activa 2026",
+      "url": "https://www.consejotransparencia.cl",
+      "collectionDate": "2026"
+    },
+    "gore_fndr_datosgob": {
+      "name": "GORE Aysén (datos.gob.cl CKAN) / BCN-SUBDERE Royalty Minero FET",
+      "url": "https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005",
+      "collectionDate": "2015–2025 (corte 22 Jul 2026)"
+    },
+    "bidat_rsh": {
+      "name": "Ministerio de Desarrollo Social y Familia (BIDAT) — Registro Social de Hogares",
+      "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101",
+      "collectionDate": "Junio 2026"
+    },
+    "servel_hist": {
+      "name": "SERVEL / TRICEL / Congreso Nacional / GORE Aysén (Histórico 1989–2026)",
+      "url": "https://www.goreaysen.cl/consejeros-regionales/",
+      "collectionDate": "17 Nov 2026"
     }
   },
   "extension_modules": {
@@ -22356,7 +24139,8 @@ window.AYSEN_HUBS_DATA = {
           "institucion": "Subsecretaría de Telecomunicaciones (SUBTEL) - FDT",
           "sistema": "Catastro Técnico de Fibra Óptica Austral y Conectividad Escolar",
           "url_origen": "https://www.subtel.gob.cl",
-          "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json"
+          "archivo_raw_local": "data/raw/conectividad_multimodal/subtel_fibra_optica_conectividad_digital.json",
+          "archivo_jun2026": "1_SERIES_CONEXIONES_INTERNET_FIJA_JUN26_270826-VF.xlsx"
         },
         {
           "institucion": "Unidad de Pasos Fronterizos (Ministerio del Interior y Seguridad Pública) / Servicio Nacional de Aduanas",
@@ -22371,6 +24155,13 @@ window.AYSEN_HUBS_DATA = {
           "url_origen": "https://dtpr.mtt.gob.cl",
           "metodo_extraccion": "Informes de Continuidad de Servicio, Fallas de Carenas y Decretos de Contingencia de Barcazas",
           "archivo_raw_local": "data/raw/conectividad_multimodal/servicios_maritimos_lacustres_subsidios_mtt.json"
+        },
+        {
+          "institucion": "Subsecretaría de Telecomunicaciones (SUBTEL)",
+          "sistema": "Series Estadísticas Conexiones Fijas por Comuna y Tecnología (Corte Junio 2026) + FDT Última Milla",
+          "url_origen": "https://www.subtel.gob.cl/estudios-y-estadisticas/internet/",
+          "metodo_extraccion": "Descarga XLSX oficial junio 2026 (hojas 7.7.1, 7.11 y 7.11.1)",
+          "archivo_raw_local": "data/raw/energia_telecom/telecomunicaciones_subtel_historico_2015_2026.json"
         }
       ],
       "por_comuna": [
@@ -22393,7 +24184,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 24.5,
               "cobertura_fibra_hogar_pct": 75.5,
               "establecimientos_educacion_conectados_n": 24,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 15785,
+              "conexiones_residenciales_subtel_jun2026_n": 15088,
+              "variacion_conexiones_2015_2026_pct": 65.1
             },
             "pasos_fronterizos_internacionales": {
               "pasos_habilitados": [
@@ -22423,7 +24217,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 82.4,
               "cobertura_fibra_hogar_pct": 17.6,
               "establecimientos_educacion_conectados_n": 3,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 189,
+              "conexiones_residenciales_subtel_jun2026_n": 159,
+              "variacion_conexiones_2015_2026_pct": 551.7
             }
           }
         },
@@ -22446,7 +24243,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 38.2,
               "cobertura_fibra_hogar_pct": 61.8,
               "establecimientos_educacion_conectados_n": 14,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 5748,
+              "conexiones_residenciales_subtel_jun2026_n": 5353,
+              "variacion_conexiones_2015_2026_pct": 75.7
             }
           }
         },
@@ -22469,7 +24269,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 56.4,
               "cobertura_fibra_hogar_pct": 43.6,
               "establecimientos_educacion_conectados_n": 6,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 1638,
+              "conexiones_residenciales_subtel_jun2026_n": 1486,
+              "variacion_conexiones_2015_2026_pct": 155.1
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "servicio_maritimo": "Ruta Cordillera CAM0061 (Puerto Cisnes, Puyuhuapi, Raúl Marín)",
@@ -22496,7 +24299,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 68.2,
               "cobertura_fibra_hogar_pct": 31.8,
               "establecimientos_educacion_conectados_n": 2,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 345,
+              "conexiones_residenciales_subtel_jun2026_n": 270,
+              "variacion_conexiones_2015_2026_pct": 219.4
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "servicio_maritimo": "Ruta Cordillera CAM0061 (Melinka y Repollal)",
@@ -22524,7 +24330,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 48.6,
               "cobertura_fibra_hogar_pct": 51.4,
               "establecimientos_educacion_conectados_n": 4,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 835,
+              "conexiones_residenciales_subtel_jun2026_n": 791,
+              "variacion_conexiones_2015_2026_pct": 293.9
             }
           }
         },
@@ -22547,7 +24356,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 76.8,
               "cobertura_fibra_hogar_pct": 23.2,
               "establecimientos_educacion_conectados_n": 2,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 272,
+              "conexiones_residenciales_subtel_jun2026_n": 249,
+              "variacion_conexiones_2015_2026_pct": 27100
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "enlace_critico": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
@@ -22577,7 +24389,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 72.5,
               "cobertura_fibra_hogar_pct": 27.5,
               "establecimientos_educacion_conectados_n": 2,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 56,
+              "conexiones_residenciales_subtel_jun2026_n": 43,
+              "variacion_conexiones_2015_2026_pct": 2700
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "enlace_maritimo_fluvial": "Rampa Caleta Tortel / Enlace fluvial Río Mitchell y golfo",
@@ -22604,7 +24419,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 52.1,
               "cobertura_fibra_hogar_pct": 47.9,
               "establecimientos_educacion_conectados_n": 3,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 845,
+              "conexiones_residenciales_subtel_jun2026_n": 788,
+              "variacion_conexiones_2015_2026_pct": 141.4
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "enlace_lacustre": "Lago General Carrera (Chile Chico - Puerto Ibáñez)",
@@ -22636,7 +24454,10 @@ window.AYSEN_HUBS_DATA = {
               "hogares_sin_internet_fijo_pct": 64.8,
               "cobertura_fibra_hogar_pct": 35.2,
               "establecimientos_educacion_conectados_n": 4,
-              "fdt_ultima_milla_aprobado": true
+              "fdt_ultima_milla_aprobado": true,
+              "conexiones_fijas_subtel_jun2026_n": 581,
+              "conexiones_residenciales_subtel_jun2026_n": 555,
+              "variacion_conexiones_2015_2026_pct": 1513.9
             }
           }
         }
@@ -22878,7 +24699,12 @@ window.AYSEN_HUBS_DATA = {
             }
           ],
           "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR"
-        }
+        },
+        "subtel_conexiones_fijas_jun2026_total": 26294,
+        "subtel_fttx_fibra_jun2026": 19972,
+        "subtel_starlink_jun2026": 5648,
+        "fdt_ultima_milla_ago2026_mclp": 7600,
+        "mtt_dtpr_subsidio_aislado_alza_2025": "+30% respecto a 2024 (~+$6.000 MM adicionales para rutas marítimas Fiordo Mitchell/Lago General Carrera/Litoral Norte y aéreas Cochrane-Tortel)"
       }
     }
   },
@@ -26373,7 +28199,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 542000,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén)",
+      "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 1500 m (Asfalto))",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -26394,7 +28220,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 18200,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Aviación Menor, Aeromédico y Subvencionado)",
+      "titular": "DGAC / JAC (Aviación Menor, Aeromédico y Subvencionado · Pista 1500 m (Asfalto))",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -26415,7 +28241,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 9800,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Conectividad Insular Subvencionada)",
+      "titular": "DGAC / JAC (Conectividad Insular Subvencionada · Pista 800 m (Asfalto) · Vuelo subsidiado MTT)",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -26436,7 +28262,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 4600,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Operaciones Locales y Emergencias)",
+      "titular": "DGAC / JAC (Operaciones Locales y Emergencias · Pista 600 m (Asfalto) · Vuelo subsidiado MTT)",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -26457,7 +28283,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 3800,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Conectividad Aérea Austral y Vuelos Médicos)",
+      "titular": "DGAC / JAC (Conectividad Aérea Austral y Vuelos Médicos · Pista 1200 m (Asfalto) · Vuelo subsidiado MTT)",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -26478,7 +28304,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 2900,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Conectividad Extremo Sur Aislado)",
+      "titular": "DGAC / JAC (Conectividad Extremo Sur Aislado · Pista 1300 m (Ripio compactado) · Vuelo subsidiado MTT)",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28596,10 +30422,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Aysén",
       "lat": -46.702,
       "lon": -73.855,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 38500,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Ventisquero San Rafael y Campo de Hielo Norte",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28617,10 +30443,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Cisnes",
       "lat": -44.45,
       "lon": -72.55,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 38000,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Ventisquero Colgante y bosque siempreverde",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-queulat/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28638,10 +30464,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Río Ibáñez",
       "lat": -46.0667,
       "lon": -72.1833,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 13900,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Circuito de trekking Las Horquetas y avistamiento de huemul",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28659,10 +30485,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Cochrane",
       "lat": -47.1167,
       "lon": -72.4833,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 30800,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Restauración ecológica de estepa, museo de sitio y fauna",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-patagonia/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28680,10 +30506,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Río Ibáñez",
       "lat": -46.643,
       "lon": -72.648,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 48500,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Formaciones de carbonato de calcio en Lago General Carrera",
       "sourceUrl": "https://www.sernatur.cl/dataturismo/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28764,10 +30590,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Tortel",
       "lat": -47.795,
       "lon": -73.535,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 14200,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Arquitectura vernácula y confluencia Río Baker / Pacífico",
       "sourceUrl": "https://www.sernatur.cl/dataturismo/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28785,10 +30611,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "O'Higgins",
       "lat": -48.468,
       "lon": -72.56,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 9800,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Fin de la Ruta 7 y portal de entrada al Glaciar O'Higgins",
       "sourceUrl": "https://www.sernatur.cl/dataturismo/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28809,7 +30635,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 12000,
       "magnitudeUnit": "prestadores",
       "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "titular": "Aguas termales marinas y spa de naturaleza",
       "sourceUrl": "https://serviciosturisticos.sernatur.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28827,10 +30653,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Coyhaique",
       "lat": -45.473,
       "lon": -72.325,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 18200,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Cascada La Virgen y pesca con mosca de truchas farios",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/reserva-nacional-rio-simpson/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28851,7 +30677,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 12000,
       "magnitudeUnit": "prestadores",
       "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "titular": "Aguas turquesas, pesca con mosca y rápidos clase III-IV",
       "sourceUrl": "https://www.sernatur.cl/dataturismo/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28890,9 +30716,9 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Cochrane",
       "lat": -47.225,
       "lon": -72.518,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
+      "magnitudeValue": 15800,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "CONAF SNASPE / SERNATUR",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/reserva-nacional-tamango/",
       "bufferGenerator": true,
@@ -28911,10 +30737,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Coyhaique",
       "lat": -45.545,
       "lon": -72.045,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
-      "titular": "CONAF SNASPE / SERNATUR",
+      "magnitudeValue": 24800,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
+      "titular": "Laguna Verde, miradores de la ciudad y senderismo familiar",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/reserva-nacional-coyhaique/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -28932,9 +30758,9 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Río Ibáñez",
       "lat": -46.52,
       "lon": -73.18,
-      "magnitudeValue": 12000,
-      "magnitudeUnit": "prestadores",
-      "magnitudeLabel": "Superficie / Oferta",
+      "magnitudeValue": 21500,
+      "magnitudeUnit": "visitantes/año",
+      "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "CONAF SNASPE / SERNATUR",
       "sourceUrl": "https://www.sernatur.cl/dataturismo/",
       "bufferGenerator": true,
@@ -33879,7 +35705,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 542000,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén)",
+        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 1500 m (Asfalto))",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -33900,7 +35726,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 18200,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Aviación Menor, Aeromédico y Subvencionado)",
+        "titular": "DGAC / JAC (Aviación Menor, Aeromédico y Subvencionado · Pista 1500 m (Asfalto))",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -33921,7 +35747,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 9800,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Conectividad Insular Subvencionada)",
+        "titular": "DGAC / JAC (Conectividad Insular Subvencionada · Pista 800 m (Asfalto) · Vuelo subsidiado MTT)",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -33942,7 +35768,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 4600,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Operaciones Locales y Emergencias)",
+        "titular": "DGAC / JAC (Operaciones Locales y Emergencias · Pista 600 m (Asfalto) · Vuelo subsidiado MTT)",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -33963,7 +35789,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 3800,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Conectividad Aérea Austral y Vuelos Médicos)",
+        "titular": "DGAC / JAC (Conectividad Aérea Austral y Vuelos Médicos · Pista 1200 m (Asfalto) · Vuelo subsidiado MTT)",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -33984,7 +35810,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 2900,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Conectividad Extremo Sur Aislado)",
+        "titular": "DGAC / JAC (Conectividad Extremo Sur Aislado · Pista 1300 m (Ripio compactado) · Vuelo subsidiado MTT)",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36108,10 +37934,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Aysén",
         "lat": -46.702,
         "lon": -73.855,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 38500,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Ventisquero San Rafael y Campo de Hielo Norte",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36129,10 +37955,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Cisnes",
         "lat": -44.45,
         "lon": -72.55,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 38000,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Ventisquero Colgante y bosque siempreverde",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-queulat/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36150,10 +37976,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Río Ibáñez",
         "lat": -46.0667,
         "lon": -72.1833,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 13900,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Circuito de trekking Las Horquetas y avistamiento de huemul",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36171,10 +37997,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Cochrane",
         "lat": -47.1167,
         "lon": -72.4833,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 30800,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Restauración ecológica de estepa, museo de sitio y fauna",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-patagonia/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36192,10 +38018,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Río Ibáñez",
         "lat": -46.643,
         "lon": -72.648,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 48500,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Formaciones de carbonato de calcio en Lago General Carrera",
         "sourceUrl": "https://www.sernatur.cl/dataturismo/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36276,10 +38102,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Tortel",
         "lat": -47.795,
         "lon": -73.535,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 14200,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Arquitectura vernácula y confluencia Río Baker / Pacífico",
         "sourceUrl": "https://www.sernatur.cl/dataturismo/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36297,10 +38123,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "O'Higgins",
         "lat": -48.468,
         "lon": -72.56,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 9800,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Fin de la Ruta 7 y portal de entrada al Glaciar O'Higgins",
         "sourceUrl": "https://www.sernatur.cl/dataturismo/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36321,7 +38147,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 12000,
         "magnitudeUnit": "prestadores",
         "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "titular": "Aguas termales marinas y spa de naturaleza",
         "sourceUrl": "https://serviciosturisticos.sernatur.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36339,10 +38165,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Coyhaique",
         "lat": -45.473,
         "lon": -72.325,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 18200,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Cascada La Virgen y pesca con mosca de truchas farios",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/reserva-nacional-rio-simpson/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36363,7 +38189,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 12000,
         "magnitudeUnit": "prestadores",
         "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "titular": "Aguas turquesas, pesca con mosca y rápidos clase III-IV",
         "sourceUrl": "https://www.sernatur.cl/dataturismo/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36402,9 +38228,9 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Cochrane",
         "lat": -47.225,
         "lon": -72.518,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
+        "magnitudeValue": 15800,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "CONAF SNASPE / SERNATUR",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/reserva-nacional-tamango/",
         "bufferGenerator": true,
@@ -36423,10 +38249,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Coyhaique",
         "lat": -45.545,
         "lon": -72.045,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
-        "titular": "CONAF SNASPE / SERNATUR",
+        "magnitudeValue": 24800,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
+        "titular": "Laguna Verde, miradores de la ciudad y senderismo familiar",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/reserva-nacional-coyhaique/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -36444,9 +38270,9 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Río Ibáñez",
         "lat": -46.52,
         "lon": -73.18,
-        "magnitudeValue": 12000,
-        "magnitudeUnit": "prestadores",
-        "magnitudeLabel": "Superficie / Oferta",
+        "magnitudeValue": 21500,
+        "magnitudeUnit": "visitantes/año",
+        "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "CONAF SNASPE / SERNATUR",
         "sourceUrl": "https://www.sernatur.cl/dataturismo/",
         "bufferGenerator": true,

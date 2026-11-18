@@ -1549,6 +1549,78 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Error en test_29:\n{proc.stderr}\n{proc.stdout}")
         self.assertIn("AUDITORIA_9_CASOS_BLOQUES_1_A_4_OK", proc.stdout)
 
+    def test_30_due_diligence_turismo_inversionista(self):
+        """Verifica las 3 pruebas de Due Diligence Turistico + estacionalidad mensual + parques + customTemporalSeries."""
+        with open(os.path.join(ROOT_DIR, "consultor.html"), "r", encoding="utf-8") as f:
+            consultor_html = f.read()
+
+        self.assertIn("spec.customTemporalSeries", consultor_html)
+        self.assertIn("function populateTableCustomSeries(cts)", consultor_html)
+        self.assertIn("'visitas_por_cama_turistica'", consultor_html)
+        self.assertIn("'tarifa_adr_estimada_usd'", consultor_html)
+
+        node_script = """
+        const fs = require('fs');
+        const vm = require('vm');
+        const assert = require('assert');
+        const ctx = { window: {}, global: {}, console, fetch: async () => { throw new Error('offline'); } };
+        ctx.window = ctx; ctx.global = ctx;
+        vm.runInNewContext(fs.readFileSync('data/aysen_hubs_data.js', 'utf8'), ctx);
+        const lex = JSON.parse(fs.readFileSync('data/nl_lexicon_aysen.json', 'utf8'));
+        vm.runInNewContext(fs.readFileSync('js/nl2chart_engine.js', 'utf8'), ctx);
+        if (ctx.NL2ChartEngine && ctx.NL2ChartEngine.setLexicon) ctx.NL2ChartEngine.setLexicon(lex);
+        vm.runInNewContext(fs.readFileSync('js/omniroute_client.js', 'utf8'), ctx);
+        const client = ctx.OmniRouteClient.init(ctx.AYSEN_HUBS_DATA);
+
+        (async () => {
+            // Prueba 1: Ingles + ratios visitas/cama, visitas/pernoctacion y presion estival (sin prestadores_sernatur)
+            client.clearConversationMemory();
+            const t1 = await client.query('We are evaluating a high-end eco-lodge investment in Aysén. Which communes have the highest ratio of National Park visits (SNASPE) to available tourist beds or overnight stays, and how does summer tourist pressure compare across the region?');
+            assert(t1 && t1.reply, 'Prueba 1 sin reply');
+            assert(t1.reply.includes('51.8') && t1.reply.includes('51.7') && t1.reply.includes('51.6') && t1.reply.includes('28.1'), 'Prueba 1 debe responder en ingles con cifras exactas: ' + t1.reply);
+            assert(/led by|Reg\\. avg/i.test(t1.reply), 'Prueba 1 debe redactarse en ingles: ' + t1.reply);
+            assert.notStrictEqual(t1.chart.varY, 'prestadores_sernatur', 'Prueba 1 no debe caer en prestadores_sernatur');
+            assert.strictEqual(t1.chart.varX, 'visitas_por_cama_turistica');
+            assert.strictEqual(t1.chart.varY, 'camas_turisticas');
+            assert.strictEqual(t1.chart.varZ, 'ratio_presion_turistica');
+            assert.strictEqual(t1.chart.varW, 'visitas_por_pernoctacion_ratio');
+            assert(Array.isArray(t1.chart.multiCharts) && t1.chart.multiCharts.length === 2, 'Prueba 1 debe generar 2 graficos alineados');
+
+            // Prueba 2: Riesgo operativo (SEIA, red vial pavimentada %, traslado Coyhaique, SAIDI) en Rio Ibanez, Cisnes, Tortel
+            client.clearConversationMemory();
+            const t2 = await client.query('Para invertir en un proyecto turístico en Río Ibáñez (Puerto Río Tranquilo), Cisnes (Puyuhuapi) o Tortel: ¿cuál es el plazo promedio de evaluación ambiental en el SEIA, qué porcentaje de red vial pavimentada o ripio tienen en la Carretera Austral, cuál es el tiempo de traslado a Coyhaique/Balmaceda y cuántas horas de corte eléctrico SAIDI sufren al año?');
+            assert(t2 && t2.reply && t2.chart && t2.chart.render === true, 'Prueba 2 debe responder con grafico');
+            assert(t2.chart.type !== 'line' && !t2.reply.includes('148.000'), 'Prueba 2 no debe caer en la serie historica 148.000->284.000: ' + t2.reply);
+            assert.strictEqual(t2.chart.focusComunas.length, 3, 'Prueba 2 debe enfocar solo las 3 comunas evaluadas: ' + t2.chart.focusComunas);
+            assert(t2.chart.focusComunas.includes('Cisnes') && t2.chart.focusComunas.includes('Río Ibáñez') && t2.chart.focusComunas.includes('Tortel'));
+            const t2Vars = [t2.chart.varX, t2.chart.varY, t2.chart.varZ, t2.chart.varW];
+            assert(t2Vars.includes('seia_plazo_dias') && t2Vars.includes('saidi_horas_anual') && t2Vars.includes('tiempo_viaje_coyhaique_hrs') && t2Vars.includes('red_vial_pavimentada_pct'), 'Prueba 2 debe cubrir las 4 dimensiones operativas: ' + t2Vars);
+
+            // Prueba 3: Balmaceda JAC + Cruceros EMPORCHA + Parques SNASPE 2015-2026
+            client.clearConversationMemory();
+            const t3 = await client.query('¿Cómo ha evolucionado el flujo anual de pasajeros en el Aeródromo Balmaceda y los pasajeros de cruceros turísticos entre 2015 y 2026 frente a las visitas a parques nacionales?');
+            assert(t3 && t3.chart && t3.chart.type === 'line' && t3.chart.customTemporalSeries, 'Prueba 3 debe devolver customTemporalSeries multiserie');
+            assert.strictEqual(t3.chart.customTemporalSeries.datasets.length, 3, 'Prueba 3 debe incluir 3 datasets');
+            assert(t3.reply.includes('Balmaceda') && t3.reply.includes('420.000') && t3.reply.includes('682.000') && t3.reply.includes('28.500'), 'Prueba 3 debe incluir cifras reales de JAC y EMPORCHA: ' + t3.reply);
+
+            // Estacionalidad mensual EMAT y Desglose por Parque Nacional
+            client.clearConversationMemory();
+            const t4 = await client.query('¿Cuál es la estacionalidad mensual de enero a diciembre del turismo y ocupación hotelera EMAT en Aysén?');
+            assert(t4 && t4.chart && t4.chart.customTemporalSeries && t4.chart.customTemporalSeries.labels.length === 12, 'Estacionalidad debe retornar 12 meses');
+            assert(t4.reply.includes('Febrero') && t4.reply.includes('52.100'), 'Estacionalidad debe citar pico de Febrero');
+
+            client.clearConversationMemory();
+            const t5 = await client.query('¿Cuál es el desglose por parque nacional de las visitas SNASPE (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia) entre 2015 y 2026?');
+            assert(t5 && t5.chart && t5.chart.customTemporalSeries && t5.chart.customTemporalSeries.datasets.length === 4, 'Desglose parques debe graficar 4 parques');
+            assert(t5.reply.includes('Queulat') && t5.reply.includes('58.500'), 'Desglose parques debe reportar PN Queulat');
+
+            console.log('DUE_DILIGENCE_TURISMO_CONSULTOR_OK');
+        })().catch(err => { console.error(err); process.exit(1); });
+        """
+        proc = subprocess.run(["node", "-e", node_script], cwd=ROOT_DIR, capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, f"Error en test_30:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("DUE_DILIGENCE_TURISMO_CONSULTOR_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

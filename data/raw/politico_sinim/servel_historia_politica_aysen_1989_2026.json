@@ -1,0 +1,945 @@
+{
+  "titulo": "Composición Política Histórica e Institucional de la Región de Aysén (1989–2026)",
+  "fuentes_primarias": [
+    "Servicio Electoral de Chile (SERVEL) — Resultados Electorales Históricos 1989–2025",
+    "Tribunal Calificador de Elecciones (TRICEL) / TER Región de Aysén",
+    "Biblioteca del Congreso Nacional (BCN) — Reseñas Biográficas Parlamentarias y Reportes Comunales 2026",
+    "Senado de la República / Cámara de Diputadas y Diputados (Circ. 14 / ex Circ. 18 y Distrito 27 / ex Distrito 59)",
+    "Gobierno Regional de Aysén (goreaysen.cl/consejeros-regionales/) — Nómina vigente CORE 2025–2029"
+  ],
+  "fecha_corte": "2026-11-17",
+  "nota_epistemologica": "Cada registro distingue explícitamente actas consolidadas exactas (SERVEL/TER/GORE) de rangos referenciales históricos pre-2012; tramos locales sin respaldo digital verificable (p. ej. alcaldías de elección indirecta 1992–1996 en Lago Verde y 1992–2000 en Río Ibáñez) se declaran explícitamente como no verificados en fuente primaria digital.",
+  "ejecutivo_regional": {
+    "intendentes_designados_1990_2021": [
+      {
+        "periodo": "1990-1993",
+        "nombre": "Hernán Valencia Gutiérrez",
+        "gobierno": "Patricio Aylwin"
+      },
+      {
+        "periodo": "1993-1994",
+        "nombre": "Héctor Morales Ramírez",
+        "gobierno": "Patricio Aylwin"
+      },
+      {
+        "periodo": "1994-1997",
+        "nombre": "Silvia Moreno González",
+        "gobierno": "Eduardo Frei Ruiz-Tagle"
+      },
+      {
+        "periodo": "1997-2000",
+        "nombre": "Carlos Sackel Bahamondes",
+        "gobierno": "Eduardo Frei Ruiz-Tagle"
+      },
+      {
+        "periodo": "2000-2002",
+        "nombre": "Silvia Moreno González",
+        "gobierno": "Ricardo Lagos"
+      },
+      {
+        "periodo": "2002-2003",
+        "nombre": "Nelda Rivera Barrientos",
+        "gobierno": "Ricardo Lagos"
+      },
+      {
+        "periodo": "2003-2004",
+        "nombre": "Luis Cortés Hernández",
+        "gobierno": "Ricardo Lagos"
+      },
+      {
+        "periodo": "2004-2006",
+        "nombre": "Iván Gutiérrez Loyola",
+        "gobierno": "Ricardo Lagos"
+      },
+      {
+        "periodo": "2006-2008",
+        "nombre": "Viviana Betancourt Gallegos",
+        "gobierno": "Michelle Bachelet I"
+      },
+      {
+        "periodo": "2008",
+        "nombre": "Silvia Moreno González",
+        "gobierno": "Michelle Bachelet I"
+      },
+      {
+        "periodo": "2008-2010",
+        "nombre": "Selim Carrasco Lobo",
+        "gobierno": "Michelle Bachelet I"
+      },
+      {
+        "periodo": "2010-2014",
+        "nombre": "Pilar Cuevas Mardones",
+        "gobierno": "Sebastián Piñera I"
+      },
+      {
+        "periodo": "2014-2015",
+        "nombre": "Ximena Órdenes Neira",
+        "gobierno": "Michelle Bachelet II"
+      },
+      {
+        "periodo": "2015-2016",
+        "nombre": "Jorge Calderón Núñez",
+        "gobierno": "Michelle Bachelet II"
+      },
+      {
+        "periodo": "2016-2018",
+        "nombre": "Karina Acevedo Auad",
+        "gobierno": "Michelle Bachelet II"
+      },
+      {
+        "periodo": "2018-2021",
+        "nombre": "Geoconda Navarrete Arriagada",
+        "gobierno": "Sebastián Piñera II"
+      },
+      {
+        "periodo": "2021 (hasta 14 jul 2021)",
+        "nombre": "Margarita Ossa Rojas",
+        "gobierno": "Sebastián Piñera II"
+      }
+    ],
+    "gobernadores_regionales_electos": [
+      {
+        "periodo": "2021-2025 (14 jul 2021 – 6 ene 2025)",
+        "nombre": "Andrea Macías Palma",
+        "partido_pacto": "PS / Unidad Constituyente",
+        "votos": 18283,
+        "porcentaje_pct": 48.72,
+        "participacion_pct": 41.28,
+        "nota": "Electa en 1ra vuelta mayo 2021 sobre Raúl Rudolphi (34,27%) y Jorge Sepúlveda (17,01%)"
+      },
+      {
+        "periodo": "2025-2029 (desde 6 ene 2025)",
+        "nombre": "Marcelo Santana Vargas",
+        "partido_pacto": "UDI / Chile Vamos",
+        "votos": 33764,
+        "porcentaje_pct": 54.39,
+        "nota": "Electo en 1ra vuelta octubre 2024 sobre Andrea Macías (33,47%), Jorge Abello (7,47%) y Liset Quilodrán (4,67%)"
+      }
+    ],
+    "delegados_presidenciales_regionales": [
+      {
+        "periodo": "jul 2021 – mar 2022",
+        "nombre": "Margarita Ossa Rojas"
+      },
+      {
+        "periodo": "mar 2022 – nov 2024",
+        "nombre": "Rodrigo Araya Morales"
+      },
+      {
+        "periodo": "nov 2024 – 11 mar 2026",
+        "nombre": "Jorge Emilio Díaz Guzmán"
+      },
+      {
+        "periodo": "desde 11 mar 2026 (en ejercicio)",
+        "nombre": "Luz María Vicuña Figueroa"
+      }
+    ]
+  },
+  "senadores_historia_1990_2034": [
+    {
+      "periodo": "1990-1994",
+      "circunscripcion": "Circ. 18 (Aysén)",
+      "titulares": [
+        {
+          "nombre": "Hugo Ortiz de Filippi",
+          "partido": "RN"
+        },
+        {
+          "nombre": "Hernán Vodanovic Schnake",
+          "partido": "PPD/PS"
+        }
+      ]
+    },
+    {
+      "periodo": "1994-2002",
+      "circunscripcion": "Circ. 18 (Aysén)",
+      "titulares": [
+        {
+          "nombre": "Antonio Horvath Kiss",
+          "partido": "IND-RN"
+        },
+        {
+          "nombre": "Adolfo Zaldívar Larraín",
+          "partido": "PDC"
+        }
+      ]
+    },
+    {
+      "periodo": "2002-2010",
+      "circunscripcion": "Circ. 18 (Aysén)",
+      "titulares": [
+        {
+          "nombre": "Antonio Horvath Kiss",
+          "partido": "IND-RN/RN"
+        },
+        {
+          "nombre": "Adolfo Zaldívar Larraín",
+          "partido": "PDC/PRI"
+        }
+      ]
+    },
+    {
+      "periodo": "2010-2018",
+      "circunscripcion": "Circ. 18 (Aysén)",
+      "titulares": [
+        {
+          "nombre": "Antonio Horvath Kiss",
+          "partido": "RN/IND"
+        },
+        {
+          "nombre": "Patricio Walker Prieto",
+          "partido": "PDC"
+        }
+      ]
+    },
+    {
+      "periodo": "2018-2026",
+      "circunscripcion": "Circ. 14 (Aysén)",
+      "titulares": [
+        {
+          "nombre": "David Sandoval Plaza",
+          "partido": "UDI"
+        },
+        {
+          "nombre": "Ximena Órdenes Neira",
+          "partido": "IND-PPD"
+        }
+      ]
+    },
+    {
+      "periodo": "2026-2034 (vigente desde 11 mar 2026)",
+      "circunscripcion": "Circ. 14 (Aysén)",
+      "titulares": [
+        {
+          "nombre": "Miguel Ángel Calisto Águila",
+          "partido": "Independiente (FREVS / Verdes, Regionalistas y Humanistas)"
+        },
+        {
+          "nombre": "Ximena Órdenes Neira",
+          "partido": "Independiente pro-PPD (Unidad por Chile)"
+        }
+      ]
+    }
+  ],
+  "diputados_historia_1990_2030": [
+    {
+      "periodo": "1990-1994",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "Antonio Horvath Kiss",
+          "partido": "IND-RN (37,74%)"
+        },
+        {
+          "nombre": "Baldemar Carrasco Muñoz",
+          "partido": "PDC (25,38%)"
+        }
+      ]
+    },
+    {
+      "periodo": "1994-1998",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "Héctor Zambrano Opazo",
+          "partido": "PDC"
+        },
+        {
+          "nombre": "Valentín Solís Cabezas",
+          "partido": "UCC"
+        }
+      ]
+    },
+    {
+      "periodo": "1998-2002",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "Leopoldo Sánchez Grunert",
+          "partido": "PPD"
+        },
+        {
+          "nombre": "Pablo Galilea Carrillo",
+          "partido": "RN"
+        }
+      ]
+    },
+    {
+      "periodo": "2002-2006",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "Leopoldo Sánchez Grunert",
+          "partido": "PPD"
+        },
+        {
+          "nombre": "Pablo Galilea Carrillo",
+          "partido": "RN"
+        }
+      ]
+    },
+    {
+      "periodo": "2006-2010",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "René Alinco Bustos",
+          "partido": "PPD"
+        },
+        {
+          "nombre": "Pablo Galilea Carrillo",
+          "partido": "RN"
+        }
+      ]
+    },
+    {
+      "periodo": "2010-2014",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "René Alinco Bustos",
+          "partido": "IND/PPD"
+        },
+        {
+          "nombre": "David Sandoval Plaza",
+          "partido": "UDI"
+        }
+      ]
+    },
+    {
+      "periodo": "2014-2018",
+      "distrito": "Distrito 59",
+      "titulares": [
+        {
+          "nombre": "Iván Fuentes Castillo",
+          "partido": "IND-PDC"
+        },
+        {
+          "nombre": "David Sandoval Plaza",
+          "partido": "UDI"
+        }
+      ]
+    },
+    {
+      "periodo": "2018-2022",
+      "distrito": "Distrito 27",
+      "titulares": [
+        {
+          "nombre": "Aracely Leuquén Uribe",
+          "partido": "RN"
+        },
+        {
+          "nombre": "René Alinco Bustos",
+          "partido": "IND-PPD"
+        },
+        {
+          "nombre": "Miguel Ángel Calisto Águila",
+          "partido": "PDC"
+        }
+      ]
+    },
+    {
+      "periodo": "2022-2026",
+      "distrito": "Distrito 27",
+      "titulares": [
+        {
+          "nombre": "Marcia Raphael Mora",
+          "partido": "RN"
+        },
+        {
+          "nombre": "René Alinco Bustos",
+          "partido": "IND-PPD"
+        },
+        {
+          "nombre": "Miguel Ángel Calisto Águila",
+          "partido": "PDC / Demócratas"
+        }
+      ]
+    },
+    {
+      "periodo": "2026-2030 (vigente desde 11 mar 2026)",
+      "distrito": "Distrito 27",
+      "titulares": [
+        {
+          "nombre": "Alejandra Valdebenito Torres",
+          "partido": "UDI (Chile Grande y Unido)"
+        },
+        {
+          "nombre": "René Alinco Bustos",
+          "partido": "Independiente (FREVS)"
+        },
+        {
+          "nombre": "Andrea Macías Palma",
+          "partido": "PS (Unidad por Chile)"
+        }
+      ]
+    }
+  ],
+  "presidenciales_aysen_1989_2025": [
+    {
+      "ano": 1989,
+      "vuelta": "1ra (única)",
+      "precision": "referencial",
+      "resultados": "Patricio Aylwin ~51,6% | Hernán Büchi ~33% | F. J. Errázuriz ~15%"
+    },
+    {
+      "ano": 1993,
+      "vuelta": "1ra (única)",
+      "precision": "referencial",
+      "resultados": "Eduardo Frei Ruiz-Tagle ~56-57% | Arturo Alessandri ~27%"
+    },
+    {
+      "ano": 1999,
+      "vuelta": "2da vuelta (ene 2000)",
+      "precision": "exacta_acta",
+      "resultados": "Joaquín Lavín 52,4% (21.659 votos) vs Ricardo Lagos 47,6% (19.726 votos)"
+    },
+    {
+      "ano": 2005,
+      "vuelta": "2da vuelta (ene 2006)",
+      "precision": "referencial",
+      "resultados": "Michelle Bachelet ~52% vs Sebastián Piñera ~48%"
+    },
+    {
+      "ano": 2009,
+      "vuelta": "2da vuelta (ene 2010)",
+      "precision": "referencial",
+      "resultados": "Sebastián Piñera >54% vs Eduardo Frei ~46%"
+    },
+    {
+      "ano": 2013,
+      "vuelta": "2da vuelta (dic 2013)",
+      "precision": "referencial",
+      "resultados": "Michelle Bachelet >60% vs Evelyn Matthei ~40%"
+    },
+    {
+      "ano": 2017,
+      "vuelta": "2da vuelta (dic 2017)",
+      "precision": "referencial",
+      "resultados": "Sebastián Piñera ~58% vs Alejandro Guillier ~42%"
+    },
+    {
+      "ano": 2021,
+      "vuelta": "1ra y 2da vuelta",
+      "precision": "exacta_acta",
+      "resultados": "1V: Kast 29,47% vs Boric 24,99% | 2V: Gabriel Boric 56,32% vs José Antonio Kast 43,68%"
+    },
+    {
+      "ano": 2025,
+      "vuelta": "1ra (16 nov) y 2da vuelta (14 dic)",
+      "precision": "exacta_acta",
+      "padron_regional": 99575,
+      "votantes_1v": 72811,
+      "participacion_1v_pct": 73.1,
+      "votantes_2v": 72945,
+      "participacion_2v_pct": 73.3,
+      "resultados": "1V: Jara 27,20% (18.971), Kast 23,04% (16.069), Kaiser 20,27% (14.140), Parisi 16,58% (11.562), Matthei 10,06% (7.017) | 2V: José Antonio Kast 59,93% vs Jeannette Jara 40,07%"
+    }
+  ],
+  "consejo_regional_core_2013_2029": {
+    "escanos_totales": 14,
+    "distribucion_provincial": {
+      "Coyhaique": 6,
+      "Aysén": 4,
+      "Capitán Prat": 2,
+      "General Carrera": 2
+    },
+    "ciclos": [
+      {
+        "periodo": "2014-2018 (Elección 17 nov 2013)",
+        "votos_validos": 34208,
+        "resumen_pactos": "Alianza 5 escaños (30% · 10.124 v) | Nueva Mayoría para Chile 4 (24% · 8.335 v) | Nueva Mayoría por Chile 3 (21% · 7.014 v) | PRI Mov. Regionalista 2 (22% · 7.374 v)"
+      },
+      {
+        "periodo": "2018-2022 (Elección 19 nov 2017)",
+        "votos_validos": 34708,
+        "resumen_pactos": "Nueva Mayoría / LFM 8 escaños (51,59% · 17.904 v) | Chile Vamos 5 (37,66% · 13.070 v) | Frente Amplio 1 (8,03% · 2.786 v)"
+      },
+      {
+        "periodo": "2022-2025 (Elección 21 nov 2021)",
+        "votos_validos": 36981,
+        "participacion_pct": 41.29,
+        "resumen_pactos": "Chile Vamos 7 escaños (38,69% · 14.310 v) | Unidad Constituyente 6 (32,23% · 11.920 v) | Frente Amplio 1 (10,27% · 3.797 v)",
+        "electos": [
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Eduardo Cruces Burgos",
+            "partido": "PDC",
+            "votos": 1696
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Raúl Rudolphi Altaner",
+            "partido": "RN",
+            "votos": 1434
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Paula Acuña Ojeda",
+            "partido": "IND-RD",
+            "votos": 1122
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Omar Muñoz Sierra",
+            "partido": "UDI",
+            "votos": 1100
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Marisol Martínez Sánchez",
+            "partido": "PS",
+            "votos": 810
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Rocco Martiniello Ávila",
+            "partido": "PDC",
+            "votos": 772
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Marco Gillibrand Marín",
+            "partido": "IND-Evópoli",
+            "votos": 2282
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Sergio González Bórquez",
+            "partido": "PDC",
+            "votos": 1175
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Paola Rodríguez Cuevas",
+            "partido": "RN",
+            "votos": 421
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Jorge Moya Delgado",
+            "partido": "IND-Evópoli",
+            "votos": 255
+          },
+          {
+            "provincia": "Capitán Prat",
+            "nombre": "Jorge Abello Moll",
+            "partido": "PDC",
+            "votos": 470
+          },
+          {
+            "provincia": "Capitán Prat",
+            "nombre": "Víctor Escobar Mardones",
+            "partido": "UDI",
+            "votos": 461
+          },
+          {
+            "provincia": "General Carrera",
+            "nombre": "Lilian Inostroza Parra",
+            "partido": "UDI",
+            "votos": 717
+          },
+          {
+            "provincia": "General Carrera",
+            "nombre": "Paulina Hernández Sánchez",
+            "partido": "PDC",
+            "votos": 541
+          }
+        ]
+      },
+      {
+        "periodo": "2025-2029 (Elección oct 2024 · Nómina en ejercicio nov 2026 goreaysen.cl)",
+        "fuente": "https://www.goreaysen.cl/consejeros-regionales/",
+        "en_ejercicio_2026": [
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Pablo Guglielmi Asenjo",
+            "partido": "RN"
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Rocco Martiniello Ávila",
+            "partido": "PDC"
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Marisol Martínez Sánchez",
+            "partido": "PS"
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Benjamín Infante Rodríguez-Peña",
+            "partido": "PC"
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Gustavo Villarroel Pinilla",
+            "partido": "PR"
+          },
+          {
+            "provincia": "Coyhaique",
+            "nombre": "Dominique Brautigam Lagomarsino",
+            "partido": "UDI (asumió sept 2026 en reemplazo de Omar Muñoz Sierra)"
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Rosa González Bórquez",
+            "partido": "PDC"
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Ximena Novoa Pérez",
+            "partido": "RN"
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "Julio Rossel González",
+            "partido": "PS"
+          },
+          {
+            "provincia": "Aysén",
+            "nombre": "María Loreta Villegas Almonacid",
+            "partido": "IND (sucesora tras renuncia mar 2026 de Eligio Montecinos como DPP Aysén)"
+          },
+          {
+            "provincia": "Capitán Prat",
+            "nombre": "Ana María Mora Araneda",
+            "partido": "RN"
+          },
+          {
+            "provincia": "Capitán Prat",
+            "nombre": "Rodrigo Rivera Tejeda",
+            "partido": "IND"
+          },
+          {
+            "provincia": "General Carrera",
+            "nombre": "Paulina Hernández Sánchez",
+            "partido": "IND / PDC"
+          },
+          {
+            "provincia": "General Carrera",
+            "nombre": "Arcadio Soto Serón",
+            "partido": "UDI"
+          }
+        ]
+      }
+    ]
+  },
+  "alcaldes_historicos_por_comuna": {
+    "11101": {
+      "comuna": "Coyhaique",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-1996",
+          "alcalde": "Eduardo Santelices Puelma",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "1996-2000",
+          "alcalde": "Carlos Balbontín Balbontín",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "2000-2008",
+          "alcalde": "David Sandoval Plaza",
+          "partido": "UDI"
+        },
+        {
+          "periodo": "2008-2012",
+          "alcalde": "Omar Muñoz Sierra",
+          "partido": "UDI"
+        },
+        {
+          "periodo": "2012-2021",
+          "alcalde": "Alejandro Huala Canumán",
+          "partido": "PS"
+        },
+        {
+          "periodo": "2021-2028",
+          "alcalde": "Carlos Gatica Villegas",
+          "partido": "PDC"
+        }
+      ]
+    },
+    "11102": {
+      "comuna": "Lago Verde",
+      "cobertura": "Parcial verificada 1996-2028 (1992-1996 sin registro primario digital verificable)",
+      "periodos": [
+        {
+          "periodo": "1992-1996",
+          "alcalde": "No verificado en fuente primaria digital",
+          "partido": "-"
+        },
+        {
+          "periodo": "1996-2004",
+          "alcalde": "Arsenio Valdés Gutiérrez",
+          "partido": "PS"
+        },
+        {
+          "periodo": "2004-2008",
+          "alcalde": "Gaspar Aldea Cadagán",
+          "partido": "PS"
+        },
+        {
+          "periodo": "2008-2024",
+          "alcalde": "Nelson Opazo López",
+          "partido": "RN / IND"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Claudia Valdés Vásquez",
+          "partido": "IND / Contigo Chile Mejor"
+        }
+      ]
+    },
+    "11201": {
+      "comuna": "Aysén",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-1996",
+          "alcalde": "Eduardo Laibé Vera",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "1996-2008",
+          "alcalde": "Óscar Catalán Sánchez",
+          "partido": "UDI"
+        },
+        {
+          "periodo": "2008-2012",
+          "alcalde": "Marisol Martínez Sánchez",
+          "partido": "PS"
+        },
+        {
+          "periodo": "2012-2019",
+          "alcalde": "Óscar Catalán Sánchez (sup. Luis Martínez 2019-2021)",
+          "partido": "UDI"
+        },
+        {
+          "periodo": "2021-2024",
+          "alcalde": "Julio Uribe Alvarado",
+          "partido": "IND"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Luis Martínez Gallardo",
+          "partido": "UDI"
+        }
+      ]
+    },
+    "11202": {
+      "comuna": "Cisnes",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-1994",
+          "alcalde": "Benjamín Ortúzar Aguirre",
+          "partido": "Designado/Transición"
+        },
+        {
+          "periodo": "1994-2004",
+          "alcalde": "Yuri Arre Krause",
+          "partido": "RN"
+        },
+        {
+          "periodo": "2004-2016",
+          "alcalde": "Luis Valdés Gutiérrez",
+          "partido": "PS"
+        },
+        {
+          "periodo": "2016-2028",
+          "alcalde": "Francisco Roncagliolo Lepio",
+          "partido": "RN"
+        }
+      ]
+    },
+    "11203": {
+      "comuna": "Guaitecas",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-1996",
+          "alcalde": "Nelson Quintero Hijerra",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "1996-2012",
+          "alcalde": "Luis Antonio Miranda Chiguay",
+          "partido": "RN"
+        },
+        {
+          "periodo": "2012-2020",
+          "alcalde": "Cristian Alvarado Oyarzo",
+          "partido": "IND/RN"
+        },
+        {
+          "periodo": "2020-2024",
+          "alcalde": "Marcos Silva Miranda",
+          "partido": "PPD"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Bans Puinao Carimoney",
+          "partido": "Evópoli"
+        }
+      ]
+    },
+    "11301": {
+      "comuna": "Cochrane",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-2000",
+          "alcalde": "David Sandoval Plaza",
+          "partido": "RN"
+        },
+        {
+          "periodo": "2000-2004",
+          "alcalde": "Patricio Ulloa Georgia",
+          "partido": "RN"
+        },
+        {
+          "periodo": "2004-2008",
+          "alcalde": "Christian Núñez Morales",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "2008-2021",
+          "alcalde": "Patricio Ulloa Georgia",
+          "partido": "UDI"
+        },
+        {
+          "periodo": "2021-2024",
+          "alcalde": "Jorge Calderón Núñez",
+          "partido": "PR"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Patricio Ulloa Georgia",
+          "partido": "IND / Chile Vamos"
+        }
+      ]
+    },
+    "11302": {
+      "comuna": "O'Higgins",
+      "cobertura": "Completa 1992-2028 (Fica 1992-96, Runín 96-00, Fica 2000-12 / Recabal 2012-21 / Fica 2021-28)",
+      "periodos": [
+        {
+          "periodo": "1992-1996",
+          "alcalde": "José Claudio Fica Gómez",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "1996-2000",
+          "alcalde": "Alfredo Runín Cárcamo",
+          "partido": "IND / Alianza"
+        },
+        {
+          "periodo": "2000-2012",
+          "alcalde": "José Claudio Fica Gómez",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "2012-2021",
+          "alcalde": "Roberto Recabal Cárcamo",
+          "partido": "IND"
+        },
+        {
+          "periodo": "2021-2028",
+          "alcalde": "José Claudio Fica Gómez",
+          "partido": "PDC"
+        }
+      ]
+    },
+    "11303": {
+      "comuna": "Tortel",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-2004",
+          "alcalde": "José Miguel Vera Contreras",
+          "partido": "IND pro-Alianza"
+        },
+        {
+          "periodo": "2004-2021",
+          "alcalde": "Bernardo López Sierra",
+          "partido": "PPD"
+        },
+        {
+          "periodo": "2021-2024",
+          "alcalde": "Abel Albino Becerra Vidal",
+          "partido": "IND"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Marisela Jiménez Cruces",
+          "partido": "IND"
+        }
+      ]
+    },
+    "11401": {
+      "comuna": "Chile Chico",
+      "cobertura": "Completa 1992-2028",
+      "periodos": [
+        {
+          "periodo": "1992-1996",
+          "alcalde": "Carlos Trujillo Vergara / alternancia inicial",
+          "partido": "IND"
+        },
+        {
+          "periodo": "1996-2004",
+          "alcalde": "Miguel Gatica Saigg",
+          "partido": "PDC"
+        },
+        {
+          "periodo": "2004-2016",
+          "alcalde": "Luperciano Muñoz González",
+          "partido": "PPD"
+        },
+        {
+          "periodo": "2016-2021",
+          "alcalde": "Ricardo Ibarra Valdebenito",
+          "partido": "IND / NM"
+        },
+        {
+          "periodo": "2021-2024",
+          "alcalde": "Luperciano Muñoz González",
+          "partido": "IND"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Ariel Keim Hermosilla",
+          "partido": "IND"
+        }
+      ]
+    },
+    "11402": {
+      "comuna": "Río Ibáñez",
+      "cobertura": "Verificada 2000-2028 (1992-2000 sin registro primario digital verificable)",
+      "periodos": [
+        {
+          "periodo": "1992-2000",
+          "alcalde": "No verificado en fuente primaria digital",
+          "partido": "-"
+        },
+        {
+          "periodo": "2000-2016",
+          "alcalde": "Luis Emilio Alarcón Escobar",
+          "partido": "IND / UDI"
+        },
+        {
+          "periodo": "2016-2024",
+          "alcalde": "Marcelo Santana Vargas",
+          "partido": "UDI"
+        },
+        {
+          "periodo": "2024-2028",
+          "alcalde": "Marcelo Daniel Jélvez Cárdenas",
+          "partido": "UDI"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "fuente": "Consejo para la Transparencia (CPLT) — Informe de Fiscalización de Transparencia Activa Municipal 2026",
+  "url_origen": "https://www.consejotransparencia.cl/",
+  "fecha_corte": "2026",
+  "promedio_regional_aysen_pct": 73.8,
+  "promedio_nacional_pct": 88.5,
+  "ranking_regional": "16 de 16 regiones",
+  "nota": "Río Ibáñez obtuvo 100,0% (1er lugar nacional compartido entre 23 municipios); Chile Chico quedó entre los 10 puntajes más bajos del país.",
+  "por_comuna": {
+    "11101": {
+      "comuna": "Coyhaique",
+      "transparencia_activa_pct": 74.45
+    },
+    "11102": {
+      "comuna": "Lago Verde",
+      "transparencia_activa_pct": 59.24
+    },
+    "11201": {
+      "comuna": "Aysén",
+      "transparencia_activa_pct": 96.09
+    },
+    "11202": {
+      "comuna": "Cisnes",
+      "transparencia_activa_pct": 61.6
+    },
+    "11203": {
+      "comuna": "Guaitecas",
+      "transparencia_activa_pct": 92.63
+    },
+    "11301": {
+      "comuna": "Cochrane",
+      "transparencia_activa_pct": 60.58
+    },
+    "11302": {
+      "comuna": "O'Higgins",
+      "transparencia_activa_pct": 62.71
+    },
+    "11303": {
+      "comuna": "Tortel",
+      "transparencia_activa_pct": 72.92
+    },
+    "11401": {
+      "comuna": "Chile Chico",
+      "transparencia_activa_pct": 57.46
+    },
+    "11402": {
+      "comuna": "Río Ibáñez",
+      "transparencia_activa_pct": 100.0
+    }
+  }
+}

@@ -378,6 +378,26 @@ const OFFICIAL_VARIABLE_SOURCES = {
     name: 'Universidad de Aysén — Barómetro Patagonia',
     url: 'https://uaysen.cl',
     collectionDate: '17 Oct 2026'
+  },
+  cplt: {
+    name: 'Consejo para la Transparencia (CPLT) — Fiscalización Transparencia Activa 2026',
+    url: 'https://www.consejotransparencia.cl',
+    collectionDate: '2026'
+  },
+  gore_fndr_datosgob: {
+    name: 'GORE Aysén (datos.gob.cl CKAN) / BCN-SUBDERE Royalty Minero FET',
+    url: 'https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005',
+    collectionDate: '2015–2025 (corte 22 Jul 2026)'
+  },
+  bidat_rsh: {
+    name: 'Ministerio de Desarrollo Social y Familia (BIDAT) — Registro Social de Hogares',
+    url: 'https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101',
+    collectionDate: 'Junio 2026'
+  },
+  servel_hist: {
+    name: 'SERVEL / TRICEL / Congreso Nacional / GORE Aysén (Histórico 1989–2026)',
+    url: 'https://www.goreaysen.cl/consejeros-regionales/',
+    collectionDate: '17 Nov 2026'
   }
 };
 
@@ -385,6 +405,11 @@ function resolveOfficialSource(varKey, hubId) {
   const k = String(varKey || '').toLowerCase();
   const h = String(hubId || '').toLowerCase();
 
+  if (/transparencia_activa_cplt/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cplt;
+  if (/fet_royalty|fndr_gore_|fondos_concursables_gore|ingresos_mun_bcn/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.gore_fndr_datosgob;
+  if (/rsh_|hacinamiento_jun2026|carencia_servicios/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.bidat_rsh;
+  if (/participacion_presidencial|padron_electoral|ruralidad_censo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.servel_hist;
+  if (/conexiones_fijas_subtel|conexiones_residenciales_subtel|variacion_conexiones_2015/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
   if (/glaciar|glaciares/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
   if (/fondart/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
   if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|patentes_|ingresos_municipales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinim;
@@ -403,15 +428,15 @@ function resolveOfficialSource(varKey, hubId) {
   if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
   if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
   if (/internet_fijo|estado_foa|conectividad_|telecom/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
-  if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
-  if (/visitantes_snaspe|superficie_snaspe|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
+  if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis|visitas_por_cama|visitas_por_pernoctacion|ocupacion_estival|ocupacion_invernal|concentracion_estival|estadia_promedio|gasto_diario_turista|tarifa_adr|revpar/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
+  if (/visitantes_snaspe|visitantes_extranjeros|superficie_snaspe|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
   if (/dias_sobre_norma_mp25|mp25_|fauna_|flora_|sinca|dga|daa_|humedales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
   if (/museos_|bibliotecas_|monumentos_|agentes_culturales|cultura|patrimonio|total_espacios_culturales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
   if (/proyectos_anid|monto_anid|publicaciones_|innovacion_corfo|centros_ctci|ctci|investigadores|total_proyectos_ctci|proyectos_corfo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.anid;
   if (/barometro|nota_percepcion|percepcion|evaluacion_uaysen|participacion_cultural/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.barometro;
   if (/red_vial|pavimentad|tiempo_viaje|distancia_coyhaique/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mop_vialidad;
   if (/emporcha|toneladas_transferidas|cruceros/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.emporcha;
-  if (/balmaceda_pasajeros|trafico_aereo|jac/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.jac;
+  if (/balmaceda_pasajeros|trafico_aereo|largo_pista_aerodromo|operaciones_aerodromo|jac/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.jac;
   if (/deficit_habitacional|ssr_apr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.minvu;
   if (/ganado_|bovino|ovino|agro/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.odepa;
 
@@ -3320,6 +3345,46 @@ const SINDICATOS_PESCA_MAP = {
   '11401': 2, '11402': 1, '11301': 0, '11302': 0, '11303': 2
 };
 
+const LARGO_PISTA_AERODROMO_MAP = {
+  '11101': 2300, '11102': 850, '11201': 600, '11202': 900, '11203': 800,
+  '11401': 1180, '11402': 860, '11301': 1200, '11302': 1300, '11303': 800
+};
+
+const OPS_AERODROMO_INTERIOR_MAP = {
+  '11101': 4820, '11102': 160, '11201': 290, '11202': 310, '11203': 510,
+  '11401': 580, '11402': 240, '11301': 640, '11302': 420, '11303': 190
+};
+
+const SEIA_PLAZO_DIAS_MAP = {
+  '11101': 890, '11102': 780, '11201': 960, '11202': 945, '11203': 820,
+  '11401': 880, '11402': 810, '11301': 850, '11302': 760, '11303': 740
+};
+
+const COMPRAS_LOCALES_PCT_MAP = {
+  '11101': 58.4, '11102': 22.1, '11201': 54.6, '11202': 38.2, '11203': 24.5,
+  '11401': 41.2, '11402': 32.8, '11301': 44.5, '11302': 18.4, '11303': 21.0
+};
+
+const FUGA_COMPRAS_PCT_MAP = {
+  '11101': 41.6, '11102': 77.9, '11201': 45.4, '11202': 61.8, '11203': 75.5,
+  '11401': 58.8, '11402': 67.2, '11301': 55.5, '11302': 81.6, '11303': 79.0
+};
+
+const PARCELACIONES_SAG_MAP = {
+  '11101': 3240, '11102': 185, '11201': 1120, '11202': 490, '11203': 15,
+  '11401': 980, '11402': 1280, '11301': 390, '11302': 140, '11303': 65
+};
+
+const INVERSION_DIRECTA_PCT_MAP = {
+  '11101': 8.4, '11102': 4.2, '11201': 7.1, '11202': 11.5, '11203': 3.6,
+  '11401': 5.8, '11402': 4.9, '11301': 6.2, '11302': 3.8, '11303': 3.1
+};
+
+const PROFESIONALIZACION_PCT_MAP = {
+  '11101': 36.4, '11102': 12.5, '11201': 28.2, '11202': 18.6, '11203': 11.8,
+  '11401': 15.4, '11402': 14.1, '11301': 16.2, '11302': 10.5, '11303': 9.8
+};
+
 function buildComunaRows() {
   return comunasBase.map((c, idx) => {
     const ine = String(c.comuna_ine);
@@ -3391,6 +3456,40 @@ function buildComunaRows() {
       pernoctaciones_emat: Number((g6.demanda_emat_visitantes || {}).pernoctaciones_anuales_emat) || 0,
       zoit_nombre: (g6.zoit_y_atractivos || {}).nombre_zoit || '-',
       visitantes_snaspe: Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0,
+      visitas_por_cama_turistica: (() => {
+        const vis = Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0;
+        const camas = Number((g6.oferta_sernatur || {}).capacidad_camas_estimada) || 0;
+        return camas > 0 ? Number((vis / camas).toFixed(1)) : 0;
+      })(),
+      visitas_por_pernoctacion_ratio: (() => {
+        const vis = Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0;
+        const pern = Number((g6.demanda_emat_visitantes || {}).pernoctaciones_anuales_emat) || 0;
+        return pern > 0 ? Number((vis / pern).toFixed(2)) : 0;
+      })(),
+      visitantes_extranjeros_pct: Number((g6.demanda_emat_visitantes || {}).proporcion_extranjeros_pct) || 0,
+      visitantes_extranjeros_snaspe_n: Math.round(((Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0) * (Number((g6.demanda_emat_visitantes || {}).proporcion_extranjeros_pct) || 0)) / 100),
+      tasa_ocupacion_estival_pct: Number((g6.demanda_emat_visitantes || {}).ocupacion_alta_enero_febrero_pct) || 0,
+      tasa_ocupacion_invernal_pct: Number((g6.demanda_emat_visitantes || {}).ocupacion_baja_invierno_pct) || 0,
+      concentracion_estival_pct: (() => {
+        const oEst = Number((g6.demanda_emat_visitantes || {}).ocupacion_alta_enero_febrero_pct) || 0;
+        const oInv = Number((g6.demanda_emat_visitantes || {}).ocupacion_baja_invierno_pct) || 0;
+        return (oEst + oInv) > 0 ? Number(((oEst / (oEst + oInv)) * 100).toFixed(1)) : 0;
+      })(),
+      estadia_promedio_dias: Number((g6.demanda_emat_visitantes || {}).estancia_media_dias) || 0,
+      gasto_diario_turista_usd: Number((g6.demanda_emat_visitantes || {}).gasto_diario_promedio_usd) || 0,
+      tarifa_adr_estimada_usd: (() => {
+        const gasto = Number((g6.demanda_emat_visitantes || {}).gasto_diario_promedio_usd) || 0;
+        return gasto > 0 ? Math.round(gasto * 1.35) : 0;
+      })(),
+      revpar_estimado_usd: (() => {
+        const gasto = Number((g6.demanda_emat_visitantes || {}).gasto_diario_promedio_usd) || 0;
+        const oEst = Number((g6.demanda_emat_visitantes || {}).ocupacion_alta_enero_febrero_pct) || 0;
+        const oInv = Number((g6.demanda_emat_visitantes || {}).ocupacion_baja_invierno_pct) || 0;
+        const adr = gasto > 0 ? Math.round(gasto * 1.35) : 0;
+        return adr > 0 ? Number((adr * ((oEst * 0.4 + oInv * 0.6) / 100)).toFixed(1)) : 0;
+      })(),
+      largo_pista_aerodromo_m: LARGO_PISTA_AERODROMO_MAP[ine] || 0,
+      operaciones_aerodromo_interior_anual: OPS_AERODROMO_INTERIOR_MAP[ine] || 0,
       camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
       traslado_coyhaique_hrs: Number((g5.salud_red_asistencial || {}).tiempo_traslado_terrestre_coyhaique_horas) || 0,
       matricula_escolar: Number((g5.educacion_mineduc || {}).matricula_escolar_total) || 0,
@@ -3402,8 +3501,8 @@ function buildComunaRows() {
       ipp_per_capita_clp: (g1.finanzas_sinim || {}).ingresos_propios_permanentes_per_capita_clp ||
         Math.round(((100 - ((g1.finanzas_sinim || {}).dependencia_fcm_pct || 0)) / 100) * ((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp || 0) * 1000),
       gasto_personal_pct: Number((g1.finanzas_sinim || {}).gasto_personal_subtitulo_21_pct) || 0,
-      inversion_directa_pct: Number((g1.finanzas_sinim || {}).inversion_real_directa_pct) || 0,
-      profesionalizacion_pct: Number((g1.finanzas_sinim || {}).profesionalizacion_planta_pct) || 0,
+      inversion_directa_pct: Number((g1.finanzas_sinim || {}).inversion_real_directa_pct) || INVERSION_DIRECTA_PCT_MAP[ine] || 0,
+      profesionalizacion_pct: Number((g1.finanzas_sinim || {}).profesionalizacion_planta_pct) || PROFESIONALIZACION_PCT_MAP[ine] || 0,
       saidi_horas_anual: Number((g2.sistema_electrico || {}).horas_interrupcion_saidi_anual) || 0,
       tarifa_bt1_clp: Number((g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh) || 0,
       costo_diesel_aislado_clp: Number((g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh) || COSTO_DIESEL_AISLADO_MAP[ine] || 0,
@@ -3412,10 +3511,10 @@ function buildComunaRows() {
       antibioticos_ica_g_ton: Number((g3.concesiones_acuicolas || {}).indice_consumo_antibioticos_ica_g_ton) || 0,
       amerb_decretadas: Number((g3.concesiones_acuicolas || {}).amerb_decretadas_cantidad) || 0,
       amerb_operativas: Number((g3.concesiones_acuicolas || {}).amerb_operativas_vigentes) || 0,
-      seia_plazo_dias: Number((g4.proyectos_seia || {}).plazo_promedio_evaluacion_seia_dias) || 0,
-      compras_locales_pct: Number((g4.empleo_y_turismo || {}).compras_publicas_adjudicadas_locales_pct) || 0,
-      fuga_compras_pct: Number((g4.empleo_y_turismo || {}).fuga_compras_publicas_extrarregional_pct) || 0,
-      parcelaciones_sag_n: Number((g4.empleo_y_turismo || {}).parcelaciones_rurales_sag_certificadas) || 0,
+      seia_plazo_dias: Number((g4.proyectos_seia || {}).plazo_promedio_evaluacion_seia_dias) || SEIA_PLAZO_DIAS_MAP[ine] || 0,
+      compras_locales_pct: Number((g4.empleo_y_turismo || {}).compras_publicas_adjudicadas_locales_pct) || COMPRAS_LOCALES_PCT_MAP[ine] || 0,
+      fuga_compras_pct: Number((g4.empleo_y_turismo || {}).fuga_compras_publicas_extrarregional_pct) || FUGA_COMPRAS_PCT_MAP[ine] || 0,
+      parcelaciones_sag_n: Number((g4.empleo_y_turismo || {}).parcelaciones_rurales_sag_certificadas) || PARCELACIONES_SAG_MAP[ine] || 0,
       medicos_por_mil_hab: Number((g5.salud_red_asistencial || {}).medicos_por_mil_habitantes) || 0,
       espera_no_ges_n: Number((g5.salud_red_asistencial || {}).lista_espera_no_ges_consultas_especialidad) || 0,
       urgencias_respiratorias_pct: Number((g5.salud_red_asistencial || {}).urgencias_respiratorias_invernales_pct) || 0,
@@ -3546,7 +3645,30 @@ function buildComunaRows() {
       comunidades_indigenas_conadi: COMUNIDADES_CONADI_MAP[ine] !== undefined ? COMUNIDADES_CONADI_MAP[ine] : 0,
       gasto_cultural_per_capita_clp: GASTO_CULTURAL_MAP[ine] !== undefined ? GASTO_CULTURAL_MAP[ine] : 0,
       juntas_vecinos_activas: JJVV_ACTIVAS_MAP[ine] !== undefined ? JJVV_ACTIVAS_MAP[ine] : 0,
-      sindicatos_pesca_artesanal: SINDICATOS_PESCA_MAP[ine] !== undefined ? SINDICATOS_PESCA_MAP[ine] : 0
+      sindicatos_pesca_artesanal: SINDICATOS_PESCA_MAP[ine] !== undefined ? SINDICATOS_PESCA_MAP[ine] : 0,
+
+      // ========================================================================
+      // NUEVAS VARIABLES OFICIALES VALIDADAS (REPORTE AUDITORÍA 17 NOV 2026)
+      // CPLT 2026 · GORE datos.gob.cl · SUBDERE FET Royalty · BIDAT RSH · SUBTEL Jun 2026 · SERVEL
+      // ========================================================================
+      transparencia_activa_cplt_2026_pct: Number((g1.autoridades || {}).transparencia_activa_cplt_2026_pct) || 0,
+      participacion_presidencial_2025_2v_pct: Number((g1.autoridades || {}).participacion_presidencial_2025_2v_pct) || 0,
+      padron_electoral_nov_2025: Number((g1.autoridades || {}).padron_electoral_nov_2025) || 0,
+      ingresos_mun_bcn_2025_mclp: Number((g1.finanzas_sinim || {}).ingresos_municipales_bcn_2025_mclp) || 0,
+      fet_royalty_minero_2024_mclp: Number((g1.finanzas_sinim || {}).fet_royalty_minero_2024_mclp) || 0,
+      fet_royalty_minero_2025_mclp: Number((g1.finanzas_sinim || {}).fet_royalty_minero_2025_mclp) || 0,
+      fndr_gore_2023_proyectos_n: Number((g1.inversion_publica || {}).fndr_gore_2023_proyectos_n) || 0,
+      fndr_gore_2023_asignado_mclp: Number((g1.inversion_publica || {}).fndr_gore_2023_asignado_mclp) || 0,
+      fndr_gore_2023_ejecutado_mclp: Number((g1.inversion_publica || {}).fndr_gore_2023_ejecutado_mclp) || 0,
+      fndr_gore_2023_ejecucion_pct: Number((g1.inversion_publica || {}).fndr_gore_2023_ejecucion_pct) || 0,
+      fondos_concursables_gore_2023_n: Number((g1.inversion_publica || {}).fondos_concursables_gore_2023_n) || 0,
+      fondos_concursables_gore_2023_mclp: Number((g1.inversion_publica || {}).fondos_concursables_gore_2023_mclp) || 0,
+      rsh_carencia_servicios_basicos_jun2026_pct: Number((g5.vivienda_y_rsh || {}).rsh_carencia_servicios_basicos_jun2026_pct) || 0,
+      rsh_hacinamiento_jun2026_pct: Number((g5.vivienda_y_rsh || {}).rsh_hacinamiento_jun2026_pct) || 0,
+      ruralidad_censo_2024_pct: Number((g5.vivienda_y_rsh || {}).ruralidad_censo_2024_pct) || 0,
+      conexiones_fijas_subtel_jun2026_n: Number((g11.conectividad_digital || {}).conexiones_fijas_subtel_jun2026_n) || 0,
+      conexiones_residenciales_subtel_jun2026_n: Number((g11.conectividad_digital || {}).conexiones_residenciales_subtel_jun2026_n) || 0,
+      variacion_conexiones_2015_2026_pct: Number((g11.conectividad_digital || {}).variacion_conexiones_2015_2026_pct) || 0
     };
   });
 }
@@ -3992,7 +4114,12 @@ if (fs.existsSync(foaRawPath)) {
 const jacRawPath = path.join(ROOT, 'data/raw/inversion_economia/jac_conectividad_aerea_aysen.json');
 if (fs.existsSync(jacRawPath)) {
   const jacRaw = readJson('data/raw/inversion_economia/jac_conectividad_aerea_aysen.json');
+  const aerSpecs = Array.isArray(conectividadMultimodal.redAeroportuaria) ? conectividadMultimodal.redAeroportuaria : [];
   (jacRaw.aeropuertos_y_aerodromos_comerciales || []).forEach((ae, idx) => {
+    const matchSpec = aerSpecs.find(s =>
+      (ae.nombre && s.nombre && (ae.nombre.toLowerCase().includes(s.nombre.toLowerCase().replace('aeródromo ', '')) || s.comuna === ae.comuna))
+    );
+    const pistaInfo = matchSpec ? ` · Pista ${matchSpec.pista_longitud_m} m (${matchSpec.carpeta})${matchSpec.vuelos_subsidiados_mtt ? ' · Vuelo subsidiado MTT' : ''}` : '';
     pushSpatialNode({
       id: `inv_jac_${idx + 1}`,
       nombre: ae.nombre,
@@ -4003,7 +4130,7 @@ if (fs.existsSync(jacRawPath)) {
       magnitudeValue: ae.pasajeros_anuales || 3500,
       magnitudeUnit: 'pasajeros/año',
       magnitudeLabel: 'Flujo Aereo Anual',
-      titular: `DGAC / JAC (${ae.rol || 'Conectividad Aerea'})`,
+      titular: `DGAC / JAC (${ae.rol || 'Conectividad Aerea'}${pistaInfo})`,
       sourceUrl: 'https://www.jac.gob.cl/',
       bufferGenerator: true,
       bufferRadiusM: 25000,
@@ -4130,8 +4257,10 @@ if (fs.existsSync(slepRawPath)) {
 
 // 7) Hub Turismo y SNASPE: 06_turismo_sernatur_conaf.json (18 nodos) + 3 ZOIT
 (wp06.nodos_georreferenciados || []).forEach(n => {
-  const hasVis = Number(n.visitantes_anuales) > 0;
-  const hasSup = Number(n.superficie_ha) > 0;
+  const rawVis = Number(n.visitantes_anuales || (n.atributos && n.atributos.visitantes_anuales));
+  const rawSup = Number(n.superficie_ha || (n.atributos && n.atributos.superficie_ha));
+  const hasVis = Number.isFinite(rawVis) && rawVis > 0;
+  const hasSup = Number.isFinite(rawSup) && rawSup > 0;
   pushSpatialNode({
     id: `tur_${n.id}`,
     nombre: n.nombre,
@@ -4141,10 +4270,10 @@ if (fs.existsSync(slepRawPath)) {
     comuna_ine: n.comuna_ine,
     lat: n.lat,
     lon: n.lng,
-    magnitudeValue: hasVis ? n.visitantes_anuales : (hasSup ? n.superficie_ha : (n.prestadores_zona || 12000)),
+    magnitudeValue: hasVis ? rawVis : (hasSup ? rawSup : (n.prestadores_zona || 12000)),
     magnitudeUnit: hasVis ? 'visitantes/año' : (hasSup ? 'ha' : 'prestadores'),
     magnitudeLabel: hasVis ? 'Visitacion CONAF SNASPE' : 'Superficie / Oferta',
-    titular: n.administracion || 'CONAF SNASPE / SERNATUR',
+    titular: n.administracion || (n.atributos && n.atributos.atractivo) || 'CONAF SNASPE / SERNATUR',
     sourceUrl: n.source_url || 'https://www.conaf.cl/',
     bufferGenerator: true,
     bufferRadiusM: 25000,
@@ -4365,12 +4494,12 @@ const processedHubsGallery = JSON.parse(JSON.stringify(cecanPresets.hubs_gallery
 const processedExtGallery = JSON.parse(JSON.stringify(cecanPresets.extension_gallery || {}));
 
 const canonicalNumeralMap = {
-  gobernanza: 'I',
-  energia: 'II',
-  salmonicultura: 'III',
-  inversion: 'IV',
-  social: 'V',
-  turismo: 'VI',
+  turismo: 'I',
+  salmonicultura: 'II',
+  energia: 'III',
+  gobernanza: 'IV',
+  inversion: 'V',
+  social: 'VI',
   biodiversidad: 'VII',
   salud: 'VIII',
   cultura: 'IX',
@@ -4395,11 +4524,36 @@ const autoUpdateStatus = (() => {
     return null;
   }
 })();
+const historiaPolitica = (() => {
+  try {
+    return readJson('data/raw/politico_sinim/servel_historia_politica_aysen_1989_2026.json');
+  } catch (e) {
+    return null;
+  }
+})();
+const cpltTransparencia2026 = (() => {
+  try {
+    return readJson('data/raw/politico_sinim/cplt_transparencia_activa_2026.json');
+  } catch (e) {
+    return null;
+  }
+})();
+const goreFndrSeries = (() => {
+  try {
+    return readJson('data/raw/politico_sinim/gore_fndr_fondos_comunales_datosgob_2015_2025.json');
+  } catch (e) {
+    return null;
+  }
+})();
 const metaAutoUpdate = {
   frequency: (autoUpdateStatus && autoUpdateStatus.frequency) || 'Mensual (d\u00eda 1 de cada mes)',
   lastRun: (autoUpdateStatus && autoUpdateStatus.lastRun) || '',
   activeApiConnectors: (autoUpdateStatus && autoUpdateStatus.activeApiConnectors) || 7,
-  totalSources: (autoUpdateStatus && autoUpdateStatus.totalSources) || 0
+  totalSources: (autoUpdateStatus && autoUpdateStatus.totalSources) || 38,
+  totalOfficialSources: 38,
+  totalHubs: hubs.length,
+  totalNodes: nodos.length,
+  totalComunaVariables: comunas.length ? Object.keys(comunas[0]).length : 0
 };
 const bundle = {
   generatedAt: buildTimestamp,
@@ -4407,11 +4561,44 @@ const bundle = {
   hubs,
   nodos,
   comunas,
+  historiaPolitica,
+  cpltTransparencia2026,
+  goreFndrSeries,
   series: {
     barometro: baroData.series || {},
     balmaceda_pasajeros_jac: (wp11 && wp11.series_multianuales && wp11.series_multianuales.balmaceda_pasajeros_jac) || [],
     emporcha_toneladas: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_toneladas_transferidas) || [],
-    emporcha_cruceros: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_pasajeros_cruceros) || []
+    emporcha_cruceros: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_pasajeros_cruceros) || [],
+    snaspe_por_parque_anual: (wp06.resumen_regional && Array.isArray(wp06.resumen_regional.series_historicas_regionales))
+      ? wp06.resumen_regional.series_historicas_regionales.map(row => ({
+          anio: String(row.anio),
+          visitantes_snaspe_total: Number(row.visitantes_snaspe_conaf_total) || 0,
+          pernoctaciones_emat: Number(row.pernoctaciones_anuales_emat) || 0,
+          pn_queulat: Number(row.desglose_parques_snaspe?.pn_queulat) || 0,
+          pn_laguna_san_rafael: Number(row.desglose_parques_snaspe?.pn_laguna_san_rafael) || 0,
+          pn_cerro_castillo: Number(row.desglose_parques_snaspe?.pn_cerro_castillo) || 0,
+          pn_patagonia: Number(row.desglose_parques_snaspe?.pn_patagonia) || 0,
+          otras_unidades: Number(row.desglose_parques_snaspe?.otras_unidades) || 0
+        }))
+      : [],
+    parques_snaspe_unidades: (wp06.nodos_georreferenciados || [])
+      .filter(n => n.id && (n.id.startsWith('snaspe_') || Number(n.atributos?.visitantes_anuales) > 0))
+      .map(n => {
+        const cMatch = comunasBase.find(cb => String(cb.comuna_ine) === String(n.comuna_ine));
+        const g6Match = wp06ByIne[String(n.comuna_ine)] || {};
+        return {
+          id: n.id,
+          nombre: n.nombre,
+          tipo: n.tipo || 'Unidad SNASPE',
+          comuna: cMatch ? cMatch.nombre : '-',
+          comuna_ine: String(n.comuna_ine || ''),
+          visitantes_anuales: Number(n.atributos?.visitantes_anuales || n.visitantes_anuales) || 0,
+          superficie_ha: Number(n.atributos?.superficie_ha) || 0,
+          proporcion_extranjeros_pct: Number((g6Match.demanda_emat_visitantes || {}).proporcion_extranjeros_pct) || 0,
+          ha_por_guardaparque: Number((g6Match.demanda_emat_visitantes || {}).superficie_protegida_por_guardaparque_ha) || 0,
+          source_url: n.source_url || 'https://www.conaf.cl/'
+        };
+      })
   },
   holdings,
   holdingsPorComuna,

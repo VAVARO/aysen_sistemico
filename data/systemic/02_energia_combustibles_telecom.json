@@ -5,7 +5,7 @@
   "dataset_id": "02_energia_combustibles_telecom",
   "titulo": "Energía, Sistemas Medianos y Aislados, Precios de Combustibles y Conectividad Telecomunicaciones en Aysén",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-11-02T12:14:11Z",
+  "fecha_extraccion": "2026-11-17T00:00:00Z",
   "metodologia_series_historicas": {
     "advertencia": "Las series anuales 2015-2026 NO son 12 observaciones independientes. Se reconstruyen por interpolacion lineal entre valores ancla y solo algunos anos corresponden a valores reportados por la fuente oficial.",
     "campo_trazabilidad": "origen",
@@ -94,13 +94,6 @@
       "url_origen": "https://www.sec.cl",
       "metodo_extraccion": "Catastro de Centros de Procesamiento de Biomasa (CPB), estándares de humedad y balances FNDR/Subdere",
       "archivo_raw_local": "data/raw/energia_telecom/infraestructura_combustibles_red_electrica.json"
-    },
-    {
-      "institucion": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
-      "sistema": "Catastro Dendroenergético Residencial de la Región de Aysén",
-      "url_origen": "https://infor.cl",
-      "metodo_extraccion": "Estudios Dendroenergéticos y Catastro de Consumo de Biomasa por Comuna y Tipo de Vivienda",
-      "archivo_raw_local": "data/raw/informes_territoriales/censo_agropecuario_forestal_odepa_infor.json"
     }
   ],
   "resumen_regional": {
@@ -486,7 +479,12 @@
           "subsidio_clp_kwh": 358.0
         }
       }
-    }
+    },
+    "subtel_conexiones_fijas_jun2026": 26294,
+    "subtel_fttx_jun2026": 19972,
+    "subtel_fttx_pct": 75.96,
+    "subtel_starlink_jun2026": 5648,
+    "subtel_starlink_pct": 21.48
   },
   "por_comuna": [
     {
@@ -553,7 +551,10 @@
             "Seis Lagunas",
             "El Richard"
           ],
-          "penetracion_internet_fijo_hogares_pct": 61.2
+          "penetracion_internet_fijo_hogares_pct": 61.2,
+          "conexiones_fijas_subtel_jun2026_n": 15785,
+          "conexiones_residenciales_subtel_jun2026_n": 15088,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -775,7 +776,10 @@
             "Villa La Tapera periférica",
             "Paso Las Pampas"
           ],
-          "penetracion_internet_fijo_hogares_pct": 3.8
+          "penetracion_internet_fijo_hogares_pct": 3.8,
+          "conexiones_fijas_subtel_jun2026_n": 189,
+          "conexiones_residenciales_subtel_jun2026_n": 159,
+          "cne_estacion_bencina_en_linea_continua": false
         },
         "series_historicas": [
           {
@@ -1000,7 +1004,10 @@
             "Río Los Palos interior",
             "Río Riesco"
           ],
-          "penetracion_internet_fijo_hogares_pct": 44.5
+          "penetracion_internet_fijo_hogares_pct": 44.5,
+          "conexiones_fijas_subtel_jun2026_n": 5748,
+          "conexiones_residenciales_subtel_jun2026_n": 5353,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -1224,7 +1231,10 @@
             "Puerto Gala",
             "Puyuhuapi interior"
           ],
-          "penetracion_internet_fijo_hogares_pct": 24.8
+          "penetracion_internet_fijo_hogares_pct": 24.8,
+          "conexiones_fijas_subtel_jun2026_n": 1638,
+          "conexiones_residenciales_subtel_jun2026_n": 1486,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -1445,7 +1455,10 @@
             "Islote Betecoi",
             "Islotes Gran Guaiteca"
           ],
-          "penetracion_internet_fijo_hogares_pct": 5.4
+          "penetracion_internet_fijo_hogares_pct": 5.4,
+          "conexiones_fijas_subtel_jun2026_n": 345,
+          "conexiones_residenciales_subtel_jun2026_n": 270,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -1670,7 +1683,10 @@
             "Puerto Guadal rural",
             "Mina Silva"
           ],
-          "penetracion_internet_fijo_hogares_pct": 27.2
+          "penetracion_internet_fijo_hogares_pct": 27.2,
+          "conexiones_fijas_subtel_jun2026_n": 845,
+          "conexiones_residenciales_subtel_jun2026_n": 788,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -1893,7 +1909,10 @@
             "Península de Levican",
             "Villa Cerro Castillo rural"
           ],
-          "penetracion_internet_fijo_hogares_pct": 16.8
+          "penetracion_internet_fijo_hogares_pct": 16.8,
+          "conexiones_fijas_subtel_jun2026_n": 581,
+          "conexiones_residenciales_subtel_jun2026_n": 555,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -2117,7 +2136,10 @@
             "Valle Grande",
             "Colonia San Martín"
           ],
-          "penetracion_internet_fijo_hogares_pct": 21.5
+          "penetracion_internet_fijo_hogares_pct": 21.5,
+          "conexiones_fijas_subtel_jun2026_n": 835,
+          "conexiones_residenciales_subtel_jun2026_n": 791,
+          "cne_estacion_bencina_en_linea_continua": true
         },
         "series_historicas": [
           {
@@ -2338,7 +2360,10 @@
             "Glaciar O'Higgins",
             "Río Mayer"
           ],
-          "penetracion_internet_fijo_hogares_pct": 2.6
+          "penetracion_internet_fijo_hogares_pct": 2.6,
+          "conexiones_fijas_subtel_jun2026_n": 272,
+          "conexiones_residenciales_subtel_jun2026_n": 249,
+          "cne_estacion_bencina_en_linea_continua": false
         },
         "series_historicas": [
           {
@@ -2560,7 +2585,10 @@
             "Isla de los Muertos",
             "Steffen"
           ],
-          "penetracion_internet_fijo_hogares_pct": 4.1
+          "penetracion_internet_fijo_hogares_pct": 4.1,
+          "conexiones_fijas_subtel_jun2026_n": 56,
+          "conexiones_residenciales_subtel_jun2026_n": 43,
+          "cne_estacion_bencina_en_linea_continua": false
         },
         "series_historicas": [
           {
@@ -3125,5 +3153,9 @@
       },
       "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen"
     }
-  ]
+  ],
+  "auditoria_bencina_en_linea_cne": {
+    "estado_api_v4": "Requiere token de autenticación privado (HTTP 401/Authorization Token not found sin API key pública); excluida de extracción desatendida sin credencial.",
+    "cobertura_estaciones_aysen": "Las comunas de Lago Verde, O'Higgins y Tortel carecen de estaciones de servicio tradicionales con reporte continuo en Bencina en Línea CNE (abastecimiento secundario/tambores). Diferencial oficial verificado entre comunas monitoreadas (2026 gasolina 93): Coyhaique ~$1.646-1.688/L vs Chile Chico ~$1.735-1.779/L vs Cochrane ~$1.772-1.813/L."
+  }
 }

@@ -648,10 +648,12 @@
       height: auto !important;
       box-sizing: border-box !important;
     }
-    #panelLienzo.mode-dashboard-grid .studio-widget-card {
+    #panelLienzo.mode-dashboard-grid .studio-widget-card,
+    #panelLienzo.mode-dashboard-grid .studio-reflection-card {
       position: relative !important;
       left: auto !important;
       top: auto !important;
+      transform: none !important;
       width: 100% !important;
       height: 440px !important;
       min-height: 440px !important;
@@ -2180,7 +2182,7 @@
        BARRA FLOTANTE CONTEXTUAL EDITORIAL AUSTRAL (.canva-floating-toolbar)
        ========================================================================== */
     .canva-floating-toolbar {
-      position: absolute;
+      position: fixed;
       display: none;
       align-items: center;
       gap: 0.35rem;
@@ -2190,14 +2192,14 @@
       border-radius: 2px;
       border: 1px solid rgba(0, 53, 127, 0.25);
       border-left: 3px solid #00357f;
-      box-shadow: 0 4px 16px rgba(0, 35, 87, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 35, 87, 0.16);
       z-index: 150;
       font-size: 0.73rem;
       pointer-events: auto;
       transform: translateY(-100%);
       margin-top: -8px;
       flex-wrap: wrap;
-      max-width: min(94vw, 920px);
+      max-width: min(94vw, 960px);
       user-select: none;
       touch-action: none;
     }
@@ -2207,8 +2209,13 @@
       z-index: 150;
     }
 
+    #canvaFloatingToolbar.active,
+    #panelLienzo.mode-dashboard-grid #canvaFloatingToolbar.active {
+      z-index: 99990;
+    }
+
     .context-toolbar {
-      z-index: 150;
+      z-index: 99990;
     }
 
     .canva-floating-toolbar.active,
@@ -2220,7 +2227,7 @@
     .canva-floating-toolbar.user-docked,
     .context-toolbar.user-docked,
     #floating-toolbar.user-docked {
-      position: absolute;
+      position: fixed;
       transform: none !important;
       margin-top: 0 !important;
     }
@@ -2380,46 +2387,147 @@
 
     /* Popover Inteligente de Sugerencias Filtradas */
     .smart-cross-popover {
-      position: absolute;
+      position: fixed;
       display: none;
+      flex-direction: column;
       background: var(--bg-surface);
-      border: 1px solid var(--rule-hairline);
-      border-radius: 6px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-      width: 260px;
-      max-height: 280px;
-      overflow-y: auto;
-      z-index: 160;
-      padding: 0.4rem 0;
+      border: 1px solid rgba(0, 53, 127, 0.25);
+      border-left: 3px solid var(--cobalt);
+      border-radius: 4px;
+      box-shadow: 0 14px 36px rgba(0, 35, 87, 0.18);
+      width: min(350px, calc(100vw - 24px));
+      max-height: min(440px, calc(100vh - 80px));
+      overflow: hidden;
+      z-index: 99999;
+      padding: 0;
     }
 
     .smart-cross-popover.active {
-      display: block;
+      display: flex;
     }
 
     .popover-header {
-      padding: 0.4rem 0.75rem;
+      padding: 0.5rem 0.65rem;
       font-size: 0.68rem;
       font-weight: 700;
       color: var(--ink-muted);
       border-bottom: 1px solid var(--rule-hairline);
+      background: #fcf9f8;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .popover-search-input {
+      width: 100%;
+      padding: 0.34rem 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      color: var(--ink);
+      background: #ffffff;
+      border: 1px solid rgba(0, 53, 127, 0.26);
+      border-radius: 3px;
+      box-sizing: border-box;
+      outline: none;
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 400;
+    }
+
+    .popover-search-input:focus {
+      border-color: var(--cobalt);
+      box-shadow: 0 0 0 2px var(--cobalt-soft);
+    }
+
+    .popover-hub-group-hdr {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--cobalt);
+      background: #f0f4fc;
+      border-top: 1px solid var(--rule-hairline);
+      border-bottom: 1px solid var(--rule-hairline);
+      padding: 0.28rem 0.65rem;
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
 
     .popover-item {
-      padding: 0.4rem 0.75rem;
+      padding: 0.42rem 0.65rem;
       font-size: 0.74rem;
       cursor: pointer;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      border-bottom: 1px solid rgba(26, 25, 24, 0.05);
       transition: background 0.15s;
     }
 
     .popover-item:hover {
       background: var(--cobalt-soft);
       color: var(--cobalt);
+    }
+
+    .btn-card-mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #fcf9f8;
+      border: 1px solid rgba(0, 53, 127, 0.22);
+      color: var(--cobalt);
+      font-family: var(--font-mono);
+      font-size: 0.60rem;
+      font-weight: 600;
+      padding: 0.14rem 0.42rem;
+      border-radius: 2px;
+      cursor: pointer;
+      line-height: 1.1;
+      white-space: nowrap;
+      transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+    }
+
+    .btn-card-mini-pill:hover,
+    .btn-card-mini-pill.active {
+      background: var(--cobalt);
+      color: #ffffff;
+      border-color: var(--cobalt);
+    }
+
+    .card-synthesis-panel {
+      background: #fcf9f8;
+      border-top: 1px solid rgba(0, 53, 127, 0.18);
+      border-left: 3px solid var(--cobalt);
+      padding: 0.55rem 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--ink);
+      max-height: 165px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .card-synthesis-panel .synth-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--cobalt);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-synthesis-panel ul {
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    .card-synthesis-panel li {
+      margin-bottom: 0.25rem;
     }
 
     /* ==========================================================================
@@ -4036,12 +4144,17 @@
         <span>Ajustar en grilla</span>
       </button>
 
-      <!-- Menú Proyecto (Guardar, Cargar, Reporte) -->
+      <button class="btn-action-tool" id="btnCopyShareLink" title="Copiar enlace compartible con el estado de esta mesa">
+        <span>Copiar Enlace</span>
+      </button>
+
+      <!-- Menú Proyecto (Guardar, Cargar, Enlace, Reporte) -->
       <div class="dropdown-project" id="dropdownProjectWrap">
         <button class="btn-action-tool" id="btnProjectMenu" aria-haspopup="menu" aria-expanded="false" aria-controls="projectMenuDropdown">
           <span>Proyecto ▾</span>
         </button>
         <div class="dropdown-project-content" id="projectMenuDropdown" role="menu" aria-label="Proyecto">
+          <button class="dropdown-project-item" role="menuitem" id="btnShareWorkspaceUrl">Copiar enlace de esta mesa</button>
           <button class="dropdown-project-item" role="menuitem" id="btnExportarJson">Guardar Proyecto (.json)</button>
           <button class="dropdown-project-item" role="menuitem" id="btnImportarJson">Abrir Proyecto (.json)</button>
           <button class="dropdown-project-item" role="menuitem" id="btnExportarReporte">Exportar Reporte (PDF)</button>
@@ -4167,7 +4280,7 @@
         </div>
       </div>
       <script>
-        if (/[?&](varX|preset|prop|hub|node|cecan_prop)=/.test(window.location.search || '')) {
+        if (/[?&](cards|slicer|nocoy|varX|preset|prop|hub|node|cecan_prop)=/.test(window.location.search || '')) {
           var _hEmpty = document.getElementById('heroEmptyCanvas');
           if (_hEmpty) _hEmpty.style.display = 'none';
           var _sWidgets = document.getElementById('canvasStatusWidgets');
@@ -4204,7 +4317,9 @@
           <button class="floating-btn" id="tbBtnAverage" title="Línea media / 4 cuadrantes">Promedio</button>
           <button class="floating-btn" id="tbBtnTrend" title="Regresión lineal">Tendencia</button>
           <button class="floating-btn" id="tbBtnReflection" title="Invocar tarjeta de reflexión">+ Pregunta</button>
+          <button class="floating-btn" id="tbBtnSynthesis" title="Generar Síntesis Ejecutiva de Datos">Síntesis</button>
           <button class="floating-btn" id="tbBtnCsv" title="Descargar CSV con UTF-8 BOM" aria-label="Descargar CSV">CSV</button>
+          <button class="floating-btn" id="tbBtnPng" title="Exportar imagen PNG de la tarjeta" aria-label="Exportar imagen PNG">PNG</button>
           <button class="floating-btn" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del cálculo">Sin Coyhaique</button>
         </div>
 
@@ -4221,8 +4336,14 @@
 
       <!-- Popover de Sugerencias para Cruzar Variables -->
       <div class="smart-cross-popover" id="smartPopover" role="menu" aria-label="Variables compatibles para cruzar">
-        <div class="popover-header">Variables Compatibles</div>
-        <div id="popoverListContainer"></div>
+        <div class="popover-header" style="display: flex; flex-direction: column; gap: 0.35rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Variables Compatibles</span>
+            <span id="smartPopoverCount" style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--cobalt);"></span>
+          </div>
+          <input type="search" id="smartPopoverSearch" class="popover-search-input" placeholder="Filtrar variable para eje Y..." aria-label="Filtrar variable para eje Y" />
+        </div>
+        <div id="popoverListContainer" style="flex: 1; overflow-y: auto; max-height: 340px;"></div>
       </div>
 
       <!-- Menú Contextual Personalizado con Clic Derecho -->
@@ -4745,6 +4866,32 @@
           '¿Qué hace la naturaleza por tu localidad (agua, leña, turismo) y qué pasaría si se deteriorara?',
           '¿Qué especies invasoras notas en tu comuna y qué daño causan?',
           '¿Cómo se equilibran la protección ambiental y el empleo en tu territorio?'
+        ],
+        'salud': [
+          '¿Cuánto demora un paciente de tu localidad en acceder a atención de especialidad o urgencia en Coyhaique?',
+          '¿Qué rol cumplen las postas rurales y el SAMU frente al aislamiento geográfico de la comuna?',
+          '¿Cómo incide la contaminación por humo de leña en las consultas respiratorias invernales?',
+          '¿Qué brechas persisten entre las comunas con hospital y aquellas con atención primaria básica?'
+        ],
+        'cultura': [
+          '¿Qué patrimonios locales o inmuebles históricos corren riesgo por falta de financiamiento municipal?',
+          '¿Cómo se distribuyen los fondos concursables de cultura entre la capital regional y las comunas extremas?',
+          '¿Qué tradiciones y oficios territoriales sostienen la identidad comunitaria fuera del circuito urbano?'
+        ],
+        'cultura_patrimonio': [
+          '¿Qué patrimonios locales o inmuebles históricos corren riesgo por falta de financiamiento municipal?',
+          '¿Cómo se distribuyen los fondos concursables de cultura entre la capital regional y las comunas extremas?',
+          '¿Qué tradiciones y oficios territoriales sostienen la identidad comunitaria fuera del circuito urbano?'
+        ],
+        'ctci': [
+          '¿Cuántos proyectos de investigación científica generan capacidades locales permanentes frente a equipos visitantes?',
+          '¿Qué problemas productivos o ambientales de tu comuna requieren conocimiento aplicado desarrollado en Aysén?',
+          '¿Cómo se articulan centros regionales, universidad e industria local para innovar con pertinencia territorial?'
+        ],
+        'ctci_innovacion': [
+          '¿Cuántos proyectos de investigación científica generan capacidades locales permanentes frente a equipos visitantes?',
+          '¿Qué problemas productivos o ambientales de tu comuna requieren conocimiento aplicado desarrollado en Aysén?',
+          '¿Cómo se articulan centros regionales, universidad e industria local para innovar con pertinencia territorial?'
         ]
       };
 
@@ -4974,6 +5121,26 @@
           name: 'Corporación Nacional de Desarrollo Indígena (CONADI)',
           url: 'https://www.conadi.gob.cl',
           collectionDate: '17 Oct 2026'
+        },
+        cplt: {
+          name: 'Consejo para la Transparencia (CPLT — Fiscalización Transparencia Activa 2026)',
+          url: 'https://www.consejotransparencia.cl',
+          collectionDate: '2026'
+        },
+        gore_fndr_datosgob: {
+          name: 'GORE Aysén / DIPRES / SUBDERE FET Royalty Minero (datos.gob.cl / BCN)',
+          url: 'https://datos.gob.cl',
+          collectionDate: 'Jul 2026 (2015–2025)'
+        },
+        bidat_rsh: {
+          name: 'MDSF Registro Social de Hogares (BIDAT / BCN Reportes Comunales 2026)',
+          url: 'https://www.bcn.cl/siit/reportescomunales',
+          collectionDate: 'Jun 2026'
+        },
+        servel_hist: {
+          name: 'Servicio Electoral de Chile (SERVEL / TRICEL / BCN — Serie 1989–2026)',
+          url: 'https://www.servel.cl',
+          collectionDate: 'Nov 2026 (1989–2026)'
         }
       };
 
@@ -4981,6 +5148,10 @@
         const k = String(varKey || '').toLowerCase();
         const h = String(hubId || '').toLowerCase();
 
+        if (/transparencia_activa_cplt/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cplt;
+        if (/fet_royalty|fndr_gore_|fondos_concursables|ingresos_mun_bcn/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.gore_fndr_datosgob;
+        if (/^rsh_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.bidat_rsh;
+        if (/participacion_presidencial|padron_electoral/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.servel_hist;
         if (/glaciar|glaciares/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
         if (/fondart/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
         if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|patentes_|ingresos_municipales|juntas_vecinos/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinim;
@@ -5002,7 +5173,7 @@
         if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
         if (/infor|consumo_lena|informalidad_lena/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.infor;
         if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_|subsidio_fiscal_diesel|costo_real_generacion/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
-        if (/internet_fijo|estado_foa|conectividad_|telecom/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
+        if (/internet_fijo|estado_foa|conectividad_|telecom|conexiones_fijas_subtel|conexiones_residenciales_subtel|variacion_conexiones_2015/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
         if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
         if (/visitantes_snaspe|superficie_snaspe|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
         if (/dias_sobre_norma_mp25|mp25_|fauna_|flora_|sinca|dga|daa_|humedales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
@@ -6276,6 +6447,285 @@
           source: 'SLEP Aysén / MINEDUC',
           sourceTag: 'SLEP-MINEDUC',
           desc: 'Establecimientos de educación pública administrados por el Servicio Local de Educación Pública de Aysén.'
+        },
+        'transparencia_activa_cplt_2026_pct': {
+          title: 'Cumplimiento Transparencia Activa Municipal CPLT 2026 (%)',
+          short: 'Transparencia CPLT 2026',
+          unit: '%',
+          unitLabel: '%',
+          source: 'Consejo para la Transparencia (CPLT 2026)',
+          sourceTag: 'CPLT',
+          desc: 'Porcentaje de cumplimiento municipal en fiscalización nacional de Transparencia Activa (promedio Aysén 73,8% vs 88,5% nacional).'
+        },
+        'participacion_presidencial_2025_2v_pct': {
+          title: 'Participación Electoral Presidencial 2da Vuelta Dic 2025 (%)',
+          short: 'Participación Pres. 2025',
+          unit: '%',
+          unitLabel: '%',
+          source: 'SERVEL / TRICEL (Dic 2025)',
+          sourceTag: 'SERVEL',
+          desc: 'Porcentaje de participación del padrón electoral comunal habilitado en la segunda vuelta presidencial del 14 de diciembre de 2025.'
+        },
+        'padron_electoral_nov_2025': {
+          title: 'Padrón Electoral Comunal Habilitado (Nov 2025)',
+          short: 'Padrón Electoral Nov 2025',
+          unit: 'electores',
+          unitLabel: 'electores',
+          source: 'SERVEL (Nov 2025)',
+          sourceTag: 'SERVEL',
+          desc: 'Total de electores habilitados para sufragar por comuna según padrón definitivo del Servicio Electoral (99.575 regional).'
+        },
+        'ingresos_mun_bcn_2025_mclp': {
+          title: 'Ingresos Municipales Percibidos SINIM / BCN 2025 (MM$)',
+          short: 'Ingresos Municipales 2025',
+          unit: 'M$ CLP',
+          unitLabel: 'M$ CLP',
+          source: 'BCN Reportes Comunales / SINIM 2026',
+          sourceTag: 'BCN-SINIM',
+          desc: 'Ingresos municipales totales percibidos registrados por la Biblioteca del Congreso Nacional y SINIM para el ejercicio 2025.'
+        },
+        'fet_royalty_minero_2024_mclp': {
+          title: 'Fondo Equidad Territorial Royalty Minero 2024 (MM$)',
+          short: 'FET Royalty Minero 2024',
+          unit: 'M$ CLP',
+          unitLabel: 'M$ CLP',
+          source: 'SUBDERE / BCN Reportes Comunales 2026',
+          sourceTag: 'SUBDERE-BCN',
+          desc: 'Transferencia por Fondo de Equidad Territorial (Ley de Royalty Minero) recibida por el municipio en el año 2024.'
+        },
+        'fet_royalty_minero_2025_mclp': {
+          title: 'Fondo Equidad Territorial Royalty Minero 2025 (MM$)',
+          short: 'FET Royalty Minero 2025',
+          unit: 'M$ CLP',
+          unitLabel: 'M$ CLP',
+          source: 'SUBDERE / BCN Reportes Comunales 2026',
+          sourceTag: 'SUBDERE-BCN',
+          desc: 'Transferencia anual del Fondo de Equidad Territorial del Royalty Minero 2025 ($3.207,74 MM regionales).'
+        },
+        'fndr_gore_2023_proyectos_n': {
+          title: 'Iniciativas FNDR GORE Aysén por Comuna 2023 (N°)',
+          short: 'Iniciativas FNDR GORE 2023',
+          unit: 'proyectos',
+          unitLabel: 'proyectos',
+          source: 'GORE Aysén (datos.gob.cl)',
+          sourceTag: 'GORE-DatosGob',
+          desc: 'Número de ítems e iniciativas FNDR con localización comunal asignadas en el catálogo abierto del Gobierno Regional de Aysén.'
+        },
+        'fndr_gore_2023_asignado_mclp': {
+          title: 'Presupuesto Asignado FNDR GORE Aysén 2023 (MM$)',
+          short: 'FNDR GORE Asignado 2023',
+          unit: 'M$ CLP',
+          unitLabel: 'M$ CLP',
+          source: 'GORE Aysén (datos.gob.cl)',
+          sourceTag: 'GORE-DatosGob',
+          desc: 'Marco presupuestario vigente asignado por iniciativa FNDR con desagregación comunal en los registros abiertos del GORE Aysén.'
+        },
+        'fndr_gore_2023_ejecutado_mclp': {
+          title: 'Gasto Ejecutado FNDR GORE Aysén 2023 (MM$)',
+          short: 'FNDR GORE Ejecutado 2023',
+          unit: 'M$ CLP',
+          unitLabel: 'M$ CLP',
+          source: 'GORE Aysén (datos.gob.cl)',
+          sourceTag: 'GORE-DatosGob',
+          desc: 'Ejecución financiera efectiva del Fondo Nacional de Desarrollo Regional asignado con trazabilidad comunal (90,1% ejecución regional).'
+        },
+        'fndr_gore_2023_ejecucion_pct': {
+          title: 'Tasa de Ejecución FNDR GORE Aysén 2023 (%)',
+          short: '% Ejecución FNDR GORE 2023',
+          unit: '%',
+          unitLabel: '%',
+          source: 'GORE Aysén (datos.gob.cl)',
+          sourceTag: 'GORE-DatosGob',
+          desc: 'Porcentaje del presupuesto FNDR asignado a la comuna que alcanzó devengamiento efectivo durante el ejercicio.'
+        },
+        'fondos_concursables_gore_2023_n': {
+          title: 'Proyectos Fondos Concursables GORE Aysén 2023 (N°)',
+          short: 'Proyectos 8% GORE 2023',
+          unit: 'proyectos',
+          unitLabel: 'proyectos',
+          source: 'GORE Aysén (datos.gob.cl)',
+          sourceTag: 'GORE-DatosGob',
+          desc: 'Cantidad de proyectos ciudadanos adjudicados en fondos concursables FNDR GORE por comuna (560 ítems regionales en cartera).'
+        },
+        'fondos_concursables_gore_2023_mclp': {
+          title: 'Monto Fondos Concursables GORE Aysén 2023 (MM$)',
+          short: 'Monto Fondos GORE 2023',
+          unit: 'M$ CLP',
+          unitLabel: 'M$ CLP',
+          source: 'GORE Aysén (datos.gob.cl)',
+          sourceTag: 'GORE-DatosGob',
+          desc: 'Recursos transferidos a organizaciones comunitarias y deportivas mediante fondos concursables del Gobierno Regional.'
+        },
+        'rsh_carencia_servicios_basicos_jun2026_pct': {
+          title: 'Carencia de Servicios Básicos RSH (Junio 2026 %)',
+          short: 'Carencia Serv. Básicos RSH',
+          unit: '%',
+          unitLabel: '%',
+          source: 'MDSF Registro Social de Hogares (Jun 2026)',
+          sourceTag: 'MDSF-RSH',
+          desc: 'Porcentaje de hogares calificados en el RSH que carece de agua potable o alcantarillado formal (promedio regional 12,4%).'
+        },
+        'rsh_hacinamiento_jun2026_pct': {
+          title: 'Hogares con Hacinamiento RSH (Junio 2026 %)',
+          short: 'Hacinamiento RSH Jun 2026',
+          unit: '%',
+          unitLabel: '%',
+          source: 'MDSF Registro Social de Hogares (Jun 2026)',
+          sourceTag: 'MDSF-RSH',
+          desc: 'Porcentaje de hogares del Registro Social de Hogares en condición de hacinamiento (>2,5 personas por dormitorio).'
+        },
+        'ruralidad_censo_2024_pct': {
+          title: 'Ruralidad Poblacional Oficial (Censo 2024 %)',
+          short: 'Ruralidad Censo 2024',
+          unit: '%',
+          unitLabel: '%',
+          source: 'INE Censo 2024 / BCN 2026',
+          sourceTag: 'Censo 2024 INE',
+          desc: 'Porcentaje de la población comunal residente en entidades rurales según tabulación oficial del Censo 2024.'
+        },
+        'conexiones_fijas_subtel_jun2026_n': {
+          title: 'Conexiones Internet Fija Totales SUBTEL (Junio 2026)',
+          short: 'Conexiones Fijas SUBTEL',
+          unit: 'conexiones',
+          unitLabel: 'conexiones',
+          source: 'SUBTEL Serie Conexiones Internet Fija (Jun 2026)',
+          sourceTag: 'SUBTEL',
+          desc: 'Total de accesos fijos activos a internet (FTTX fibra óptica + Starlink satelital + xDSL) registrados a junio de 2026 (26.294 regional).'
+        },
+        'conexiones_residenciales_subtel_jun2026_n': {
+          title: 'Conexiones Internet Fija Residencial SUBTEL (Junio 2026)',
+          short: 'Conexiones Resid. SUBTEL',
+          unit: 'conexiones',
+          unitLabel: 'conexiones',
+          source: 'SUBTEL Serie Conexiones Internet Fija (Jun 2026)',
+          sourceTag: 'SUBTEL',
+          desc: 'Accesos fijos residenciales activos por comuna al corte de junio de 2026 en la serie corregida Tabla 7.7.1 SUBTEL.'
+        },
+        'variacion_conexiones_2015_2026_pct': {
+          title: 'Crecimiento Conexiones Fijas Internet 2015–Jun 2026 (%)',
+          short: 'Crec. Internet 2015–2026',
+          unit: '%',
+          unitLabel: '%',
+          source: 'SUBTEL Serie Histórica 2015–2026',
+          sourceTag: 'SUBTEL',
+          desc: 'Variación porcentual acumulada de accesos fijos a internet en la comuna entre 2015 y junio de 2026 (+135,5% regional).'
+        },
+        'visitas_por_cama_turistica': {
+          title: 'Ratio Visitas SNASPE por Cama Turística Disponible',
+          short: 'Visitas SNASPE / Cama',
+          unit: 'visitas/cama',
+          unitLabel: 'visitas/cama',
+          source: 'CONAF SNASPE / SERNATUR',
+          sourceTag: 'CONAF-SERNATUR',
+          desc: 'Visitantes anuales en parques nacionales divididos por la capacidad estimada de camas turísticas de la comuna.'
+        },
+        'visitas_por_pernoctacion_ratio': {
+          title: 'Ratio Visitas SNASPE / Pernoctaciones EMAT',
+          short: 'Visitas / Pernoctación',
+          unit: 'ratio',
+          unitLabel: 'ratio',
+          source: 'CONAF SNASPE / INE EMAT',
+          sourceTag: 'CONAF-EMAT',
+          desc: 'Proporción entre visitantes anuales de parques nacionales y noches totales de alojamiento turístico registradas en EMAT.'
+        },
+        'visitantes_extranjeros_pct': {
+          title: 'Proporción de Visitantes Internacionales Receptivos (%)',
+          short: '% Visitantes Extranjeros',
+          unit: '%',
+          unitLabel: '%',
+          source: 'CONAF SNASPE / SERNATUR',
+          sourceTag: 'CONAF-SERNATUR',
+          desc: 'Porcentaje de turistas extranjeros dentro de los flujos de visitación turística en la comuna.'
+        },
+        'visitantes_extranjeros_snaspe_n': {
+          title: 'Visitantes Extranjeros Anuales en SNASPE',
+          short: 'Extranjeros SNASPE (N)',
+          unit: 'visitantes',
+          unitLabel: 'visitantes',
+          source: 'CONAF SNASPE',
+          sourceTag: 'CONAF',
+          desc: 'Volumen estimado anual de visitantes internacionales que ingresan a áreas silvestres protegidas de la comuna.'
+        },
+        'tasa_ocupacion_estival_pct': {
+          title: 'Tasa de Ocupación Hotelera Estival Ene–Feb (%)',
+          short: 'Ocupación Estival (%)',
+          unit: '%',
+          unitLabel: '%',
+          source: 'INE EMAT / SERNATUR',
+          sourceTag: 'INE-EMAT',
+          desc: 'Porcentaje promedio de ocupación de plazas turísticas durante los meses de temporada alta estival (enero y febrero).'
+        },
+        'tasa_ocupacion_invernal_pct': {
+          title: 'Tasa de Ocupación Hotelera Invernal May–Ago (%)',
+          short: 'Ocupación Invernal (%)',
+          unit: '%',
+          unitLabel: '%',
+          source: 'INE EMAT / SERNATUR',
+          sourceTag: 'INE-EMAT',
+          desc: 'Porcentaje promedio de ocupación de plazas turísticas en temporada baja invernal (mayo a agosto).'
+        },
+        'concentracion_estival_pct': {
+          title: 'Índice de Concentración Estacional Estival (%)',
+          short: 'Concentración Estival',
+          unit: '%',
+          unitLabel: '%',
+          source: 'INE EMAT / SERNATUR',
+          sourceTag: 'INE-EMAT',
+          desc: 'Peso relativo de la temporada alta respecto del ciclo anual estival-invernal; mide la exposición al riesgo de valle invernal.'
+        },
+        'estadia_promedio_dias': {
+          title: 'Estadía Media Turística (días / noches)',
+          short: 'Estadía Media EMAT',
+          unit: 'días',
+          unitLabel: 'días',
+          source: 'INE EMAT / SERNATUR',
+          sourceTag: 'INE-EMAT',
+          desc: 'Número promedio de días de permanencia por turista en establecimientos de alojamiento de la comuna.'
+        },
+        'gasto_diario_turista_usd': {
+          title: 'Gasto Diario Promedio por Turista (US$)',
+          short: 'Gasto Diario Turista US$',
+          unit: 'US$',
+          unitLabel: 'US$',
+          source: 'SERNATUR Turismo Receptivo / Interno',
+          sourceTag: 'SERNATUR',
+          desc: 'Gasto diario estimado en dólares por visitante en destino según categoría de oferta turística local.'
+        },
+        'tarifa_adr_estimada_usd': {
+          title: 'Tarifa Promedio Diaria Estimada ADR (US$/noche)',
+          short: 'Tarifa ADR (US$)',
+          unit: 'US$/noche',
+          unitLabel: 'US$/noche',
+          source: 'INE EMAT / SERNATUR',
+          sourceTag: 'SERNATUR-EMAT',
+          desc: 'Tarifa promedio diaria estimada por noche de alojamiento turístico según perfil de demanda y gasto diario.'
+        },
+        'revpar_estimado_usd': {
+          title: 'Ingreso por Habitación Disponible RevPAR (US$)',
+          short: 'RevPAR Estimado (US$)',
+          unit: 'US$',
+          unitLabel: 'US$',
+          source: 'INE EMAT / SERNATUR',
+          sourceTag: 'SERNATUR-EMAT',
+          desc: 'Ingreso promedio por habitación disponible ponderando tarifa ADR estimada y tasas de ocupación estacional.'
+        },
+        'largo_pista_aerodromo_m': {
+          title: 'Longitud de Pista del Aeródromo Principal (m)',
+          short: 'Pista Aeródromo (m)',
+          unit: 'm',
+          unitLabel: 'm',
+          source: 'DGAC / MOP Dirección de Aeropuertos',
+          sourceTag: 'DGAC-MOP',
+          desc: 'Largo de pista disponible en el principal aeródromo o aeropuerto de la comuna para conectividad aérea interior y chárter.'
+        },
+        'operaciones_aerodromo_interior_anual': {
+          title: 'Operaciones Aéreas Anuales en Aeródromos Interiores',
+          short: 'Ops. Aeródromos Interiores',
+          unit: 'operaciones/año',
+          unitLabel: 'ops/año',
+          source: 'JAC / DGAC',
+          sourceTag: 'JAC-DGAC',
+          desc: 'Flujo anual de operaciones de aerotaxis, vuelos subsidiados MTT, aviación general y evacuaciones aéreas en la comuna.'
         }
       };
 
@@ -6489,8 +6939,9 @@
           if (/ctci|anid|corfo_innova|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones/i.test(k)) return 'ctci';
           if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit/i.test(k)) return 'turismo';
           if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca/i.test(k)) return 'salmonicultura';
-          if (/diesel|gasolina|lena|saidi|tarifa|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion/i.test(k)) return 'energia';
-          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct/i.test(k)) return 'gobernanza';
+          if (/diesel|gasolina|lena|saidi|tarifa|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones/i.test(k)) return 'energia';
+          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|ingresos_mun_bcn|participacion_presidencial|padron_electoral/i.test(k)) return 'gobernanza';
+          if (/rsh_|fondos_concursables|ruralidad_censo/i.test(k)) return 'social';
           if (/seia|empresas_sii|trabajadores_sii|concesiones_mineras|parcelaciones|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
           if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|fauna|cuenca_bna/i.test(k)) return 'biodiversidad';
           return 'social';
@@ -6523,6 +6974,9 @@
             if (k.includes('organizaciones') || k.includes('juntas_vecinos')) return 'organizaciones';
             if (k.includes('sindicatos')) return 'sindicatos';
             if (k.endsWith('_mw')) return 'MW';
+            if (/padron_electoral/i.test(k)) return 'electores';
+            if (/conexiones_fijas_subtel|conexiones_residenciales_subtel/i.test(k)) return 'conexiones';
+            if (/fndr_gore_.*_proyectos_n|fondos_concursables_gore_.*_n/i.test(k)) return 'proyectos';
             if (k.endsWith('_n')) return 'unidades';
             return 'unidades';
           };
@@ -7002,6 +7456,28 @@
           });
         }
 
+        const goreSeriesObj = (AppState.hubsData?.goreFndrSeries || window.AYSEN_HUBS_DATA?.goreFndrSeries)?.serie_fndr_regional_datosgob_2015_2023;
+        if (goreSeriesObj && typeof goreSeriesObj === 'object') {
+          const goreYears = Object.keys(goreSeriesObj).sort();
+          if (goreYears.length > 0) {
+            syncSeriesDefs.push({
+              id: 'fndr_gore_ejecutado_datosgob_hist',
+              aliases: ['fndr_ejecutado_datosgob_2015_2023'],
+              name: 'Ejecución FNDR GORE Aysén Observada (datos.gob.cl 2015–2023)',
+              shortName: 'FNDR Ejecutado (datos.gob.cl)',
+              hubId: 'gobernanza',
+              hubTitle: 'IV. Gobernanza',
+              unit: 'M$ CLP',
+              aggMode: 'sum',
+              sourceName: 'GORE Aysén / datos.gob.cl',
+              sourceUrl: 'https://datos.gob.cl',
+              collectionDate: '2015-2023 (Jul 2026)',
+              labels: goreYears,
+              data: goreYears.map(yr => Number(goreSeriesObj[yr]?.gasto_actual_mclp) || 0)
+            });
+          }
+        }
+
         if (appSeries.barometro && appSeries.barometro.indicadores) {
           const baroPeriods = appSeries.barometro.periodos || ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
           const firstIndKey = Object.keys(appSeries.barometro.indicadores)[0];
@@ -7038,6 +7514,68 @@
               collectionDate: '2018-2026',
               labels: baroPeriods,
               data: bVals
+            });
+          });
+        }
+
+        // 3b.3 Curva de estacionalidad mensual EMAT y desglose 2015–2026 por Parque Nacional SNASPE
+        const monthlyEmat = AppState.hubsData?.seriesMensualesEmat || window.AYSEN_HUBS_DATA?.seriesMensualesEmat || [];
+        if (Array.isArray(monthlyEmat) && monthlyEmat.length === 12) {
+          const mLabels = monthlyEmat.map(m => m.mes);
+          syncSeriesDefs.push({
+            id: 'estacionalidad_mensual_emat',
+            aliases: ['pernoctaciones_mensuales_emat'],
+            name: 'Estacionalidad Mensual de Pernoctaciones EMAT (Ene–Dic)',
+            shortName: 'Estacionalidad Mensual EMAT',
+            hubId: 'turismo',
+            hubTitle: 'I. Turismo',
+            unit: 'noches',
+            aggMode: 'sum',
+            sourceName: 'INE EMAT / SERNATUR',
+            sourceUrl: 'https://www.sernatur.cl/dataturismo/',
+            collectionDate: 'Ciclo Mensual Ene–Dic',
+            labels: mLabels,
+            data: monthlyEmat.map(m => Number(m.pernoctaciones_total) || 0)
+          });
+          syncSeriesDefs.push({
+            id: 'ocupacion_mensual_emat_pct',
+            aliases: ['tasa_ocupacion_mensual_emat'],
+            name: 'Curva Mensual de Tasa de Ocupación Hotelera EMAT (%)',
+            shortName: 'Ocupación Mensual EMAT %',
+            hubId: 'turismo',
+            hubTitle: 'I. Turismo',
+            unit: '%',
+            aggMode: 'mean',
+            sourceName: 'INE EMAT / SERNATUR',
+            sourceUrl: 'https://www.sernatur.cl/dataturismo/',
+            collectionDate: 'Ciclo Mensual Ene–Dic',
+            labels: mLabels,
+            data: monthlyEmat.map(m => Number(m.tasa_ocupacion_pct) || 0)
+          });
+        }
+
+        const parkAnnual = appSeries.snaspe_por_parque_anual || [];
+        if (Array.isArray(parkAnnual) && parkAnnual.length > 0) {
+          const pLabels = parkAnnual.map(r => String(r.anio));
+          [
+            { id: 'pn_queulat_visitas_hist', key: 'pn_queulat', name: 'Visitación Anual Parque Nacional Queulat (2015–2026)', shortName: 'Visitas PN Queulat' },
+            { id: 'pn_laguna_san_rafael_visitas_hist', key: 'pn_laguna_san_rafael', name: 'Visitación Anual PN Laguna San Rafael (2015–2026)', shortName: 'Visitas PN San Rafael' },
+            { id: 'pn_cerro_castillo_visitas_hist', key: 'pn_cerro_castillo', name: 'Visitación Anual PN Cerro Castillo (2015–2026)', shortName: 'Visitas PN Cerro Castillo' },
+            { id: 'pn_patagonia_visitas_hist', key: 'pn_patagonia', name: 'Visitación Anual PN Patagonia (2015–2026)', shortName: 'Visitas PN Patagonia' }
+          ].forEach(pk => {
+            syncSeriesDefs.push({
+              id: pk.id,
+              name: pk.name,
+              shortName: pk.shortName,
+              hubId: 'turismo',
+              hubTitle: 'I. Turismo',
+              unit: 'visitantes',
+              aggMode: 'sum',
+              sourceName: 'CONAF Estadísticas SNASPE',
+              sourceUrl: 'https://www.conaf.cl/',
+              collectionDate: '2015-2026',
+              labels: pLabels,
+              data: parkAnnual.map(r => Number(r[pk.key]) || 0)
             });
           });
         }
@@ -8220,11 +8758,20 @@
         updateConnections();
       }
 
-      function toggleDashboardViewMode() {
+      function toggleDashboardViewMode(forceMode) {
         const panel = document.getElementById('panelLienzo');
         const btn = document.getElementById('btnToggleDashboardMode');
         if (!panel) return;
-        const isGrid = panel.classList.toggle('mode-dashboard-grid');
+        let isGrid;
+        if (forceMode === 'grid') {
+          panel.classList.add('mode-dashboard-grid');
+          isGrid = true;
+        } else if (forceMode === 'canvas') {
+          panel.classList.remove('mode-dashboard-grid');
+          isGrid = false;
+        } else {
+          isGrid = panel.classList.toggle('mode-dashboard-grid');
+        }
         AppState.dashboardViewMode = isGrid ? 'grid' : 'canvas';
         if (btn) {
           btn.textContent = isGrid ? 'Modo Lienzo 2D' : 'Ajustar en grilla';
@@ -8239,6 +8786,9 @@
             setTimeout(() => w.instance.invalidateSize(), 120);
           }
         });
+        setTimeout(() => {
+          updateFloatingToolbarPosition();
+        }, 60);
       }
 
       function initCanvasZoomHud() {
@@ -8359,6 +8909,7 @@
           showBuffers: Boolean(config.showBuffers),
           bufferRadiusM: Number(config.bufferRadiusM || 25000),
           layers: config.layers || [],
+          customChartSpec: config.customChartSpec || null,
           instance: null,
           resizeObserver: null
         };
@@ -8367,8 +8918,10 @@
         syncHeroVisibility();
         renderWidgetCardDOM(widget);
         selectActiveCard(widget.id);
+        bringWidgetToFront(widget.id);
         renderWindowTabs();
         updateStatus();
+        updateFloatingToolbarPosition();
         autoSave();
         updateConnections();
         return widget;
@@ -8392,8 +8945,18 @@
           const center = getCanvasCenterWorld();
           const ancho = cfg.w || 500;
           const alto = cfg.h || 370;
-          if (cfg.x === undefined) cfg.x = Math.round(center.x - ancho / 2);
-          if (cfg.y === undefined) cfg.y = Math.max(92, Math.round(center.y - alto / 2));
+          const visibles = AppState.widgets.filter(w => !w.minimized);
+          const step = visibles.length % 5;
+          let candX = Math.round(center.x - ancho / 2 + (step - 1) * 44);
+          let candY = Math.max(92, Math.round(center.y - alto / 2 + step * 40));
+          let guard = 0;
+          while (guard < 8 && visibles.some(ew => Math.abs((ew.x || 0) - candX) < 32 && Math.abs((ew.y || 0) - candY) < 32)) {
+            candX += 44;
+            candY += 40;
+            guard++;
+          }
+          if (cfg.x === undefined) cfg.x = candX;
+          if (cfg.y === undefined) cfg.y = candY;
           else cfg.y = Math.max(92, cfg.y);
         } else {
           cfg.y = Math.max(92, cfg.y);
@@ -8401,7 +8964,13 @@
 
         pushHistory('crear ventana');
         const widget = createWidget(tipoFinal, cfg);
-        if (widget) widget.origen = origen;
+        if (widget) {
+          widget.origen = origen;
+          const cardEl = document.getElementById(`widget-card-${widget.id}`);
+          if (cardEl && AppState.dashboardViewMode === 'grid' && typeof cardEl.scrollIntoView === 'function') {
+            setTimeout(() => cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+          }
+        }
         return widget;
       }
 
@@ -8496,20 +9065,53 @@
           descText = infoX?.desc || `Mide indicador territorial con valor en ${vX.unit}.`;
         }
 
-        let footerHtml = '';
-        if (!vX) {
-          footerHtml = `<span class="prov-text">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>`;
-        } else if (!vY) {
-          footerHtml = `
-            <span class="prov-text" title="${vX.sourceName}">Fuente: <strong>${vX.sourceName}</strong> · Corte: <strong>${vX.collectionDate}</strong></span>
-            <a href="${vX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente oficial ↗</a>
+        function buildCardFooterHtml(widget) {
+          const wvX = widget.varX ? (AppState.catalogItems.find(v => v.id === widget.varX) || AppState.catalogItems[0]) : null;
+          const wvY = widget.varY ? AppState.catalogItems.find(v => v.id === widget.varY) : null;
+          const exportBtns = `
+            <span style="display:inline-flex; align-items:center; gap:0.25rem; flex-shrink:0;">
+              <button type="button" class="btn-card-mini-pill" id="btnCsvCard-${widget.id}" title="Exportar CSV con UTF-8 BOM">CSV</button>
+              <button type="button" class="btn-card-mini-pill" id="btnPngCard-${widget.id}" title="Exportar tarjeta a imagen PNG">PNG</button>
+            </span>
           `;
-        } else {
-          footerHtml = `
-            <span class="prov-text" title="[X] ${vX.sourceName} | [Y] ${vY.sourceName}">Fuentes: [X] <strong>${vX.sourceName}</strong> (${vX.collectionDate}) × [Y] <strong>${vY.sourceName}</strong> (${vY.collectionDate})</span>
-            <span style="font-size: 0.58rem; color: var(--ink-muted);">Cruce Bivariable</span>
+          if (!wvX) {
+            return `<span class="prov-text">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>${exportBtns}`;
+          }
+          if (!wvY) {
+            return `
+              <span class="prov-text" title="${wvX.sourceName}">Fuente: <strong>${wvX.sourceName}</strong> · Corte: <strong>${wvX.collectionDate}</strong></span>
+              <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-shrink:0;">
+                <a href="${wvX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente ↗</a>
+                ${exportBtns}
+              </span>
+            `;
+          }
+          return `
+            <span class="prov-text" title="[X] ${wvX.sourceName} | [Y] ${wvY.sourceName}">Fuentes: [X] <strong>${wvX.sourceName}</strong> × [Y] <strong>${wvY.sourceName}</strong></span>
+            ${exportBtns}
           `;
         }
+
+        function bindCardFooterActions(cardEl, widget) {
+          const btnCsvCard = cardEl.querySelector(`#btnCsvCard-${widget.id}`);
+          if (btnCsvCard && !btnCsvCard._boundCsv) {
+            btnCsvCard.addEventListener('click', (e) => {
+              e.stopPropagation();
+              exportCsv(widget);
+            });
+            btnCsvCard._boundCsv = true;
+          }
+          const btnPngCard = cardEl.querySelector(`#btnPngCard-${widget.id}`);
+          if (btnPngCard && !btnPngCard._boundPng) {
+            btnPngCard.addEventListener('click', (e) => {
+              e.stopPropagation();
+              exportPng(widget);
+            });
+            btnPngCard._boundPng = true;
+          }
+        }
+
+        let footerHtml = buildCardFooterHtml(w);
 
         let timeFilterHtml = '';
         if (vX && vX.dim === 'tiempo' && vX.hasProjection) {
@@ -8642,7 +9244,10 @@
           if (hubTag) hubTag.textContent = hubTitle;
 
           const footer = existingCard.querySelector(`#provenance-footer-${w.id}`);
-          if (footer) footer.innerHTML = footerHtml;
+          if (footer) {
+            footer.innerHTML = footerHtml;
+            bindCardFooterActions(existingCard, w);
+          }
 
           const syncBtn = existingCard.querySelector(`#btnSyncCard-${w.id}`);
           if (syncBtn) {
@@ -8691,7 +9296,11 @@
             mapBar.remove();
           }
 
-          renderWidgetVisual(w);
+          try {
+            renderWidgetVisual(w);
+          } catch (errVis) {
+            console.error('[Laboratorio] Error renderizando visual in-place:', errVis);
+          }
           return;
         }
 
@@ -8742,6 +9351,7 @@
                   </svg>
                   <span>+ Cruzar</span>
                 </button>
+                <button class="btn-card-mini-pill" id="btnSynthCard-${w.id}" title="Generar Síntesis Ejecutiva de Datos">Síntesis</button>
                 <button class="btn-card-format" id="btnFormatCard-${w.id}" title="Mostrar/Ocultar barra de herramientas y formato">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="3"></circle>
@@ -8762,6 +9372,9 @@
             <!-- Inyectado vía renderWidgetVisual -->
           </div>
 
+          <!-- Cápsula desplegable de Síntesis Ejecutiva de Datos -->
+          <div class="card-synthesis-panel" id="synthesis-panel-${w.id}" style="display: none;"></div>
+
           <!-- Pie de Trazabilidad Institucional Obligatorio -->
           <div class="widget-provenance-footer" id="provenance-footer-${w.id}">
             ${footerHtml}
@@ -8772,9 +9385,14 @@
 
         stage.appendChild(card);
         bindCardEvents(w, card);
+        bindCardFooterActions(card, w);
         bindTimeWindowEvents(card, w);
         bindMapLayerControlEvents(card, w);
-        renderWidgetVisual(w);
+        try {
+          renderWidgetVisual(w);
+        } catch (errVis) {
+          console.error('[Laboratorio] Error renderizando visual:', errVis);
+        }
 
         // ResizeObserver para adaptación perfecta de gráficos al tamaño de ventana
         if (window.ResizeObserver) {
@@ -9052,6 +9670,15 @@
           openSmartPopover(w, e.currentTarget);
         });
 
+        // Botón Síntesis Ejecutiva
+        const synthBtn = card.querySelector(`#btnSynthCard-${w.id}`);
+        if (synthBtn) {
+          synthBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            generateCardExecutiveSynthesis(w);
+          });
+        }
+
         // Botón Formato (Mostrar/Ocultar barra de customización)
         const formatBtn = card.querySelector(`#btnFormatCard-${w.id}`);
         if (formatBtn) {
@@ -9111,7 +9738,21 @@
             renderWidgetCardDOM(w);
             autoSave();
           } else {
-            showDropChoiceMenu(w, card, varId, e.clientX, e.clientY);
+            const vX = AppState.catalogItems.find(v => v.id === w.varX);
+            const vNew = AppState.catalogItems.find(v => v.id === varId);
+            const compatible = !vX || !vNew || vX.dim === vNew.dim;
+            if (compatible && varId !== w.varX) {
+              pushHistory('cruzar variable y');
+              fuseVariableIntoWidget(w, varId);
+              if (typeof showToast === 'function') {
+                const newLabel = vNew ? (vNew.shortName || vNew.name) : varId;
+                showToast(`Eje Y actualizado: ${newLabel}.`, 'Usar como X', () => {
+                  assignVarToWidget(w, varId);
+                });
+              }
+            } else {
+              showDropChoiceMenu(w, card, varId, e.clientX, e.clientY);
+            }
           }
         });
       }
@@ -9262,6 +9903,9 @@
           addConnection(sourceId, targetId, 'sync');
           wSource.syncMode = 'linked';
           wTarget.syncMode = 'linked';
+          if (wSource.excludeOutlierCoyhaique) wTarget.excludeOutlierCoyhaique = true;
+          if (wSource.scaleMode && wSource.scaleMode !== 'raw') wTarget.scaleMode = wSource.scaleMode;
+          if (wSource.perCapitaMode) wTarget.perCapitaMode = true;
           const btn1 = document.querySelector(`#btnSyncCard-${wSource.id}`);
           if (btn1) {
             btn1.className = 'btn-card-sync-pill mode-linked';
@@ -9274,6 +9918,7 @@
             const lbl = btn2.querySelector('.sync-mode-lbl');
             if (lbl) lbl.textContent = 'Red';
           }
+          renderWidgetVisual(wTarget);
           pop.remove();
           updateConnections();
           autoSave();
@@ -9281,10 +9926,14 @@
 
         pop.querySelector('#btnFuseVariables').addEventListener('click', () => {
           pushHistory('conectar ventanas');
+          if (wSource.excludeOutlierCoyhaique) wTarget.excludeOutlierCoyhaique = true;
+          if (wSource.scaleMode && wSource.scaleMode !== 'raw') wTarget.scaleMode = wSource.scaleMode;
+          if (wSource.perCapitaMode) wTarget.perCapitaMode = true;
           if (wSource.varX) {
             fuseVariableIntoWidget(wTarget, wSource.varX);
           }
           addConnection(sourceId, targetId, 'bivariate');
+          propagateTransformToConnectedWidgets(wSource);
           pop.remove();
           updateConnections();
           autoSave();
@@ -9471,35 +10120,51 @@
         }
       }
 
+      function serializeWidgetState(w) {
+        return {
+          id: w.id,
+          type: w.type,
+          chartType: w.chartType,
+          title: w.title,
+          varX: w.varX,
+          varY: w.varY,
+          color: w.color,
+          showAverage: w.showAverage,
+          showTrend: w.showTrend,
+          excludeOutlierCoyhaique: Boolean(w.excludeOutlierCoyhaique),
+          sortRanking: w.sortRanking || 'none',
+          scaleMode: w.scaleMode || 'raw',
+          perCapitaMode: Boolean(w.perCapitaMode),
+          timeWindow: w.timeWindow || 'all',
+          spatialLayer: w.spatialLayer || 'auto',
+          showBuffers: Boolean(w.showBuffers),
+          bufferRadiusM: Number(w.bufferRadiusM || 25000),
+          customChartSpec: w.customChartSpec || null,
+          isPerceptionMirror: Boolean(w.isPerceptionMirror),
+          sampleContract: w.sampleContract || null,
+          barometroQuestion: w.barometroQuestion || null,
+          minimized: w.minimized,
+          maximized: w.maximized,
+          prevBounds: w.prevBounds,
+          syncMode: w.syncMode,
+          highlightEntity: w.highlightEntity,
+          tableFilter: w.tableFilter,
+          tableSortCol: w.tableSortCol,
+          tableSortDir: w.tableSortDir,
+          x: w.x,
+          y: w.y,
+          w: w.w,
+          h: w.h
+        };
+      }
+
       function switchSubDashboard(targetId) {
         if (targetId === AppState.activeSubDashboardId) return;
 
         // 1. Guardar estado de la mesa actual
         const cur = AppState.subDashboards.find(s => s.id === AppState.activeSubDashboardId);
         if (cur) {
-          cur.widgets = AppState.widgets.map(w => ({
-            id: w.id,
-            type: w.type,
-            chartType: w.chartType,
-            title: w.title,
-            varX: w.varX,
-            varY: w.varY,
-            color: w.color,
-            showAverage: w.showAverage,
-            showTrend: w.showTrend,
-            minimized: w.minimized,
-            maximized: w.maximized,
-            prevBounds: w.prevBounds,
-            syncMode: w.syncMode,
-            highlightEntity: w.highlightEntity,
-            tableFilter: w.tableFilter,
-            tableSortCol: w.tableSortCol,
-            tableSortDir: w.tableSortDir,
-            x: w.x,
-            y: w.y,
-            w: w.w,
-            h: w.h
-          }));
+          cur.widgets = AppState.widgets.map(serializeWidgetState);
           cur.connections = [...AppState.connections];
           cur.reflectionCards = [...AppState.reflectionCards];
           cur.transform = { ...AppState.transform };
@@ -9927,6 +10592,10 @@
             <span>Agregar pregunta reflexiva</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">?</span>
           </div>
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxCardSynthesis">
+            <span>Generar síntesis de datos</span>
+            <span style="font-size: 0.62rem; color: var(--cobalt);">3 pts</span>
+          </div>
 
           <div class="context-menu-separator"></div>
 
@@ -9941,6 +10610,10 @@
           <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxExportCsv">
             <span>Exportar datos (CSV)</span>
             <span style="font-size: 0.62rem; color: var(--ink-muted);">CSV</span>
+          </div>
+          <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxExportPng">
+            <span>Exportar imagen (PNG)</span>
+            <span style="font-size: 0.62rem; color: var(--ink-muted);">PNG</span>
           </div>
           <div class="context-menu-item danger" id="ctxCloseCard">
             <span>Cerrar ventana</span>
@@ -10022,6 +10695,14 @@
           closeContextMenu();
         });
 
+        const btnCtxSynth = menu.querySelector('#ctxCardSynthesis');
+        if (btnCtxSynth) {
+          btnCtxSynth.addEventListener('click', () => {
+            generateCardExecutiveSynthesis(w);
+            closeContextMenu();
+          });
+        }
+
         menu.querySelector('#ctxMinimizeCard').addEventListener('click', () => {
           toggleMinimizeWidget(w.id);
           closeContextMenu();
@@ -10036,6 +10717,14 @@
           exportCsv(w);
           closeContextMenu();
         });
+
+        const btnCtxPng = menu.querySelector('#ctxExportPng');
+        if (btnCtxPng) {
+          btnCtxPng.addEventListener('click', () => {
+            exportPng(w);
+            closeContextMenu();
+          });
+        }
 
         menu.querySelector('#ctxCloseCard').addEventListener('click', () => {
           deleteWidgetWithUndo(w.id);
@@ -10147,13 +10836,14 @@
         if (!AppState.toolbarHiddenByCard) AppState.toolbarHiddenByCard = {};
         const isHidden = !!AppState.toolbarHiddenByCard[widgetId];
         const tb = document.getElementById('canvaFloatingToolbar');
-        const isCurrentlyActive = tb && tb.classList.contains('active');
+        const isCurrentlyActiveForThis = tb && tb.classList.contains('active') && Number(tb.dataset.targetWidgetId) === Number(widgetId);
 
-        if (isCurrentlyActive && !isHidden) {
+        if (isCurrentlyActiveForThis && !isHidden) {
           hideFloatingToolbar();
         } else {
           AppState.toolbarHiddenByCard[widgetId] = false;
-          showFloatingToolbarForCard(widgetId);
+          selectActiveCard(widgetId);
+          showFloatingToolbarForCard(widgetId, { forceShow: true });
         }
       }
 
@@ -10168,7 +10858,7 @@
         return w || null;
       }
 
-      function showFloatingToolbarForCard(widgetId) {
+      function showFloatingToolbarForCard(widgetId, opts = {}) {
         const w = AppState.widgets.find(x => x.id === widgetId);
         if (!w || w.minimized) return;
 
@@ -10179,13 +10869,16 @@
         AppState.activeWidgetId = widgetId;
 
         if (!AppState.toolbarHiddenByCard) AppState.toolbarHiddenByCard = {};
-        if (AppState.toolbarHiddenByCard[widgetId]) {
+        if (opts.forceShow) {
+          AppState.toolbarHiddenByCard[widgetId] = false;
+        } else if (AppState.toolbarHiddenByCard[widgetId]) {
           tb.classList.remove('active');
           const formatBtn = document.getElementById(`btnFormatCard-${widgetId}`);
           if (formatBtn) formatBtn.classList.remove('active');
           return;
         }
 
+        document.querySelectorAll('.btn-card-format').forEach(b => b.classList.remove('active'));
         tb.classList.add('active');
         const formatBtn = document.getElementById(`btnFormatCard-${widgetId}`);
         if (formatBtn) formatBtn.classList.add('active');
@@ -10284,57 +10977,63 @@
         if (!w || w.minimized) return;
 
         const tb = document.getElementById('canvaFloatingToolbar');
-        const viewport = document.getElementById('panelLienzo');
-        if (!tb || !viewport || !tb.classList.contains('active')) return;
+        if (!tb || !tb.classList.contains('active')) return;
 
-        const vRect = viewport.getBoundingClientRect();
+        tb.style.position = 'fixed';
+        tb.style.zIndex = '99990';
+
         const tbRect = tb.getBoundingClientRect();
-        const tbW = tbRect.width || 460;
+        const tbW = tbRect.width || Math.min(720, window.innerWidth - 24);
         const tbH = tbRect.height || 42;
+        const minTop = 62;
+        const maxLeft = Math.max(12, window.innerWidth - tbW - 12);
+        const maxTop = Math.max(minTop, window.innerHeight - tbH - 16);
 
         // Si el usuario arrastró o ancló la barra a una posición manual personalizada
         if (AppState.toolbarPosition) {
           tb.classList.add('user-docked');
-          const maxLeft = Math.max(12, vRect.width - tbW - 12);
-          const maxTop = Math.max(12, vRect.height - tbH - 12);
+          tb.style.transform = 'none';
+          tb.style.marginTop = '0px';
           const posX = Math.max(12, Math.min(AppState.toolbarPosition.x, maxLeft));
-          const posY = Math.max(12, Math.min(AppState.toolbarPosition.y, maxTop));
+          const posY = Math.max(minTop, Math.min(AppState.toolbarPosition.y, maxTop));
           tb.style.left = `${Math.round(posX)}px`;
           tb.style.top = `${Math.round(posY)}px`;
           return;
         }
 
         const cardEl = document.getElementById(`widget-card-${w.id}`);
-        let screenX = w.x * AppState.transform.scale + AppState.transform.x;
-        let screenY = w.y * AppState.transform.scale + AppState.transform.y;
-        let cardBottomY = screenY + (w.h || 370) * AppState.transform.scale;
+        let cardLeft = 100;
+        let cardTop = 120;
+        let cardBottom = 480;
 
         if (cardEl) {
           const cRect = cardEl.getBoundingClientRect();
-          screenX = cRect.left - vRect.left;
-          screenY = cRect.top - vRect.top;
-          cardBottomY = cRect.bottom - vRect.top;
+          cardLeft = cRect.left;
+          cardTop = cRect.top;
+          cardBottom = cRect.bottom;
         }
 
-        // Clamping horizontal dentro del viewport con margen de 12px
-        const minLeft = 12;
-        const maxLeft = Math.max(minLeft, vRect.width - tbW - 12);
-        screenX = Math.max(minLeft, Math.min(screenX, maxLeft));
+        const posX = Math.max(12, Math.min(cardLeft, maxLeft));
 
-        // Si hay espacio suficiente arriba de la tarjeta, colocar justo encima del borde superior sin tapar el título
-        if (screenY >= tbH + 12) {
+        // Colocar justo encima de la tarjeta usando translateY(-100%) si hay margen superior disponible
+        if (cardTop >= minTop + tbH + 8) {
           tb.classList.remove('user-docked');
           tb.style.transform = 'translateY(-100%)';
           tb.style.marginTop = '-8px';
-          tb.style.left = `${Math.round(screenX)}px`;
-          tb.style.top = `${Math.round(screenY)}px`;
-        } else {
-          // Si la tarjeta está pegada arriba, colocar debajo de la tarjeta (o en el borde inferior del lienzo) para NUNCA tapar el título
+          tb.style.left = `${Math.round(posX)}px`;
+          tb.style.top = `${Math.round(Math.min(cardTop, window.innerHeight - 16))}px`;
+        } else if (cardBottom + 8 <= maxTop) {
           tb.classList.add('user-docked');
-          tb.style.top = '12px';
-          const belowTop = Math.min(cardBottomY + 8, Math.max(12, vRect.height - tbH - 16));
-          tb.style.left = `${Math.round(screenX)}px`;
-          tb.style.top = `${Math.round(belowTop)}px`;
+          tb.style.transform = 'none';
+          tb.style.marginTop = '0px';
+          tb.style.left = `${Math.round(posX)}px`;
+          tb.style.top = `${Math.round(cardBottom + 8)}px`;
+        } else {
+          tb.classList.add('user-docked');
+          tb.style.transform = 'none';
+          tb.style.marginTop = '0px';
+          tb.style.left = `${Math.round(posX)}px`;
+          tb.style.top = `${Math.round(minTop)}px`;
         }
       }
 
@@ -10342,6 +11041,23 @@
         const tb = document.getElementById('canvaFloatingToolbar');
         if (!tb || tb._eventsInitialized) return;
         tb._eventsInitialized = true;
+
+        // Blindaje de eventos: los clics internos nunca deben propagarse al lienzo ni cerrar la barra
+        ['pointerdown', 'mousedown', 'click'].forEach(evtName => {
+          tb.addEventListener(evtName, (e) => {
+            e.stopPropagation();
+          });
+        });
+
+        const panelLienzoScroll = document.getElementById('panelLienzo');
+        if (panelLienzoScroll && !panelLienzoScroll._hasToolbarScrollSync) {
+          panelLienzoScroll.addEventListener('scroll', () => {
+            if (tb.classList.contains('active') && !AppState.toolbarPosition) {
+              updateFloatingToolbarPosition();
+            }
+          }, { passive: true });
+          panelLienzoScroll._hasToolbarScrollSync = true;
+        }
 
         // 1. Tipos de visualización
         const btnBar = document.getElementById('tbBtnBar');
@@ -10355,7 +11071,7 @@
               w.chartType = 'bar';
               renderWidgetCardDOM(w);
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10372,7 +11088,7 @@
               w.chartType = 'line';
               renderWidgetCardDOM(w);
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10389,7 +11105,7 @@
               w.chartType = 'scatter';
               renderWidgetCardDOM(w);
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               if (!w.varY) {
                 const trigger = document.getElementById('tbBtnScatter') || document.getElementById(`widget-card-${w.id}`);
                 if (trigger) openSmartPopover(w, trigger);
@@ -10409,7 +11125,7 @@
               w.type = 'map';
               renderWidgetCardDOM(w);
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10425,7 +11141,7 @@
               w.type = 'table';
               renderWidgetCardDOM(w);
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10441,7 +11157,7 @@
               w.type = 'kpi';
               renderWidgetCardDOM(w);
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10463,7 +11179,7 @@
             renderWidgetCardDOM(w);
             renderWidgetVisual(w);
             renderWindowTabs();
-            showFloatingToolbarForCard(w.id);
+            showFloatingToolbarForCard(w.id, { forceShow: true });
             autoSave();
           });
         });
@@ -10478,7 +11194,7 @@
               pushHistory('alternar promedio');
               w.showAverage = !w.showAverage;
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10493,7 +11209,7 @@
               pushHistory('alternar tendencia');
               w.showTrend = !w.showTrend;
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10506,6 +11222,19 @@
             const w = getTargetToolbarWidget();
             if (w) {
               invokeReflectionCardForWidget(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
+            }
+          });
+        }
+
+        const btnSynthTb = document.getElementById('tbBtnSynthesis');
+        if (btnSynthTb) {
+          btnSynthTb.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              generateCardExecutiveSynthesis(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
             }
           });
         }
@@ -10517,6 +11246,19 @@
             const w = getTargetToolbarWidget();
             if (w) {
               exportCsv(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
+            }
+          });
+        }
+
+        const btnPngTb = document.getElementById('tbBtnPng');
+        if (btnPngTb) {
+          btnPngTb.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              exportPng(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
             }
           });
         }
@@ -10533,7 +11275,8 @@
               btnExclude.classList.toggle('active', w.excludeOutlierCoyhaique);
               btnExclude.textContent = w.excludeOutlierCoyhaique ? 'Con Coyhaique' : 'Sin Coyhaique';
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              propagateTransformToConnectedWidgets(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
               return;
             }
@@ -10560,7 +11303,7 @@
                 w.sortRanking = 'none';
               }
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10575,7 +11318,8 @@
               pushHistory('escala bruta');
               w.scaleMode = 'raw';
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              propagateTransformToConnectedWidgets(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10590,7 +11334,8 @@
               pushHistory('escala pct');
               w.scaleMode = 'pct';
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              propagateTransformToConnectedWidgets(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10605,7 +11350,8 @@
               pushHistory('escala zscore');
               w.scaleMode = 'zscore';
               renderWidgetVisual(w);
-              showFloatingToolbarForCard(w.id);
+              propagateTransformToConnectedWidgets(w);
+              showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
             }
           });
@@ -10619,7 +11365,7 @@
           });
         }
 
-        // 5. Arrastre Draggable de la Barra Flotante (Pointer Events)
+        // 5. Arrastre Draggable de la Barra Flotante (Pointer Events en coordenadas viewport)
         const tbDragHandle = document.getElementById('toolbarDragHandle');
         if (tbDragHandle) {
           let isDraggingTb = false;
@@ -10627,19 +11373,6 @@
           let tbStartMouseY = 0;
           let tbStartLeft = 0;
           let tbStartTop = 0;
-
-          tb.addEventListener('pointerdown', (e) => {
-            if (e.target.closest('button')) {
-              e.stopPropagation();
-              return;
-            }
-          });
-          tb.addEventListener('mousedown', (e) => {
-            if (e.target.closest('button')) {
-              e.stopPropagation();
-              return;
-            }
-          });
 
           tbDragHandle.addEventListener('pointerdown', (e) => {
             if (e.target.closest('button')) return;
@@ -10649,13 +11382,13 @@
             try { tbDragHandle.setPointerCapture(e.pointerId); } catch (_) {}
 
             const rect = tb.getBoundingClientRect();
-            const parentRect = tb.offsetParent ? tb.offsetParent.getBoundingClientRect() : { left: 0, top: 0 };
-            tbStartLeft = rect.left - parentRect.left;
-            tbStartTop = rect.top - parentRect.top;
+            tbStartLeft = rect.left;
+            tbStartTop = rect.top;
             tbStartMouseX = e.clientX;
             tbStartMouseY = e.clientY;
 
             tb.classList.add('user-docked');
+            tb.style.position = 'fixed';
             tb.style.transform = 'none';
             tb.style.marginTop = '0px';
             tb.style.left = `${Math.round(tbStartLeft)}px`;
@@ -10667,8 +11400,11 @@
             e.preventDefault();
             const dx = e.clientX - tbStartMouseX;
             const dy = e.clientY - tbStartMouseY;
-            const newLeft = Math.max(8, tbStartLeft + dx);
-            const newTop = Math.max(8, tbStartTop + dy);
+            const tbRect = tb.getBoundingClientRect();
+            const maxLeft = Math.max(8, window.innerWidth - (tbRect.width || 300) - 8);
+            const maxTop = Math.max(60, window.innerHeight - (tbRect.height || 42) - 8);
+            const newLeft = Math.max(8, Math.min(tbStartLeft + dx, maxLeft));
+            const newTop = Math.max(60, Math.min(tbStartTop + dy, maxTop));
 
             tb.style.left = `${Math.round(newLeft)}px`;
             tb.style.top = `${Math.round(newTop)}px`;
@@ -10692,44 +11428,138 @@
       function openSmartPopover(w, triggerEl) {
         const popover = document.getElementById('smartPopover');
         const list = document.getElementById('popoverListContainer');
+        const searchInput = document.getElementById('smartPopoverSearch');
+        const countEl = document.getElementById('smartPopoverCount');
         if (!popover || !list) return;
 
-        const vX = AppState.catalogItems.find(v => v.id === w.varX);
-        const baseDim = vX ? vX.dim : 'comuna';
-
-        let compatible = AppState.catalogItems.filter(it => it.id !== w.varX && it.dim === baseDim);
-        if (!compatible.length) {
-          compatible = AppState.catalogItems.filter(it => it.id !== w.varX).slice(0, 8);
+        if (!popover._boundStopProp) {
+          ['click', 'pointerdown', 'mousedown'].forEach(evName => {
+            popover.addEventListener(evName, (ev) => ev.stopPropagation());
+          });
+          popover._boundStopProp = true;
         }
 
-        renderPopoverList(w, compatible.slice(0, 10));
+        const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
+        const baseDim = vX ? vX.dim : 'comuna';
 
-        const triggerRect = triggerEl.getBoundingClientRect();
-        const vRect = document.getElementById('panelLienzo').getBoundingClientRect();
+        // Exponer todas las variables compatibles sin límite artificial (.slice), filtrando solo granularidad
+        let compatible = AppState.catalogItems.filter(it => !it.isAlias && it.id !== w.varX && it.dim === baseDim);
+        if (!compatible.length) {
+          compatible = AppState.catalogItems.filter(it => !it.isAlias && it.id !== w.varX);
+        }
 
-        popover.style.left = `${triggerRect.left - vRect.left}px`;
-        popover.style.top = `${triggerRect.bottom - vRect.top + 6}px`;
+        popover._compatibleItems = compatible;
+        popover._targetWidget = w;
+
+        if (countEl) {
+          countEl.textContent = `${compatible.length} variables`;
+        }
+
+        if (searchInput) {
+          searchInput.value = '';
+          if (!searchInput._boundFilter) {
+            searchInput.addEventListener('input', () => {
+              const targetW = popover._targetWidget;
+              const allItems = popover._compatibleItems || [];
+              const q = normStr(searchInput.value || '');
+              const filtered = !q ? allItems : allItems.filter(it => {
+                const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+                const haystack = [
+                  it.id, it.name, it.shortName, it.hubTitle, it.hubId, it.sourceName, it.unit,
+                  info?.title, info?.desc, info?.sourceTag
+                ].filter(Boolean).map(normStr).join(' ');
+                return haystack.includes(q);
+              });
+              if (countEl) {
+                countEl.textContent = q ? `${filtered.length} de ${allItems.length}` : `${allItems.length} variables`;
+              }
+              renderPopoverList(targetW, filtered);
+            });
+            searchInput._boundFilter = true;
+          }
+        }
+
+        renderPopoverList(w, compatible);
+
+        // Posicionamiento fixed acotado al viewport (funciona en Lienzo 2D y Modo Grilla)
+        popover.style.position = 'fixed';
+        popover.style.zIndex = '99999';
         popover.classList.add('active');
-        const firstItem = popover.querySelector('[role="menuitem"]');
-        if (firstItem) firstItem.focus({ preventScroll: true });
+
+        const triggerRect = triggerEl ? triggerEl.getBoundingClientRect() : { left: 100, right: 180, top: 100, bottom: 128 };
+        const popW = Math.min(350, window.innerWidth - 24);
+        popover.style.width = `${popW}px`;
+        const popH = Math.min(popover.offsetHeight || 420, window.innerHeight - 74);
+
+        const left = Math.max(12, Math.min(triggerRect.left, window.innerWidth - popW - 12));
+        const spaceBelow = window.innerHeight - triggerRect.bottom - 12;
+        const top = (spaceBelow >= Math.min(260, popH))
+          ? Math.max(60, Math.min(triggerRect.bottom + 6, window.innerHeight - popH - 12))
+          : Math.max(60, triggerRect.top - popH - 6);
+
+        popover.style.left = `${Math.round(left)}px`;
+        popover.style.top = `${Math.round(top)}px`;
+
+        if (searchInput) {
+          setTimeout(() => searchInput.focus({ preventScroll: true }), 10);
+        } else {
+          const firstItem = popover.querySelector('[role="menuitem"]');
+          if (firstItem) firstItem.focus({ preventScroll: true });
+        }
       }
 
       function renderPopoverList(w, items) {
         const list = document.getElementById('popoverListContainer');
-        list.innerHTML = items.map(it => {
-          const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
-          const displayTitle = info?.title || it.name;
-          const displayDesc = info?.desc || `${it.hubTitle} · ${it.unit}`;
-          return `
-            <div class="popover-item" role="menuitem" tabindex="-1" data-var-id="${it.id}" style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 6px 10px; cursor: pointer;">
-              <div style="font-weight: 500; font-size: 0.82rem; color: #0f172a; line-height: 1.3;">${displayTitle}</div>
-              <div style="font-size: 0.68rem; color: #64748b; line-height: 1.25;">${displayDesc}</div>
-            </div>
-          `;
-        }).join('');
+        if (!list) return;
+
+        if (!items || !items.length) {
+          list.innerHTML = `<div style="padding: 0.9rem 0.75rem; font-size: 0.74rem; color: var(--ink-muted); font-style: italic; text-align: center;">No hay variables coincidentes con ese filtro.</div>`;
+          return;
+        }
+
+        const HUB_ORDER = [
+          'I. Turismo', 'II. Salmonicultura', 'III. Energía', 'IV. Gobernanza',
+          'V. Inversión', 'VI. Social', 'VII. Biodiversidad',
+          'VIII. Salud y Red Asistencial', 'IX. Cultura & Patrimonio', 'X. CTCi & Innovación'
+        ];
+        const grouped = {};
+        items.forEach(it => {
+          const hTitle = getHubTitleName(it.hubId || it.hubTitle);
+          if (!grouped[hTitle]) grouped[hTitle] = [];
+          grouped[hTitle].push(it);
+        });
+
+        const sortedHubs = Object.keys(grouped).sort((a, b) => {
+          const ia = HUB_ORDER.indexOf(a);
+          const ib = HUB_ORDER.indexOf(b);
+          if (ia !== -1 && ib !== -1) return ia - ib;
+          if (ia !== -1) return -1;
+          if (ib !== -1) return 1;
+          return a.localeCompare(b, 'es');
+        });
+
+        let html = '';
+        sortedHubs.forEach(hubTitle => {
+          const groupItems = grouped[hubTitle];
+          html += `<div class="popover-hub-group-hdr">${hubTitle} (${groupItems.length})</div>`;
+          html += groupItems.map(it => {
+            const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+            const displayTitle = info?.title || it.name;
+            const srcLabel = info?.sourceTag || it.sourceName || 'Oficial';
+            return `
+              <div class="popover-item" role="menuitem" tabindex="-1" data-var-id="${it.id}">
+                <div style="font-weight: 500; font-size: 0.78rem; color: #0f172a; line-height: 1.3;">${displayTitle}</div>
+                <div style="font-family: var(--font-mono); font-size: 0.62rem; color: #64748b; line-height: 1.25;">${it.id} · ${it.unit} · ${srcLabel}</div>
+              </div>
+            `;
+          }).join('');
+        });
+
+        list.innerHTML = html;
 
         list.querySelectorAll('.popover-item').forEach(el => {
-          el.addEventListener('click', () => {
+          el.addEventListener('click', (e) => {
+            e.stopPropagation();
             const varYId = el.getAttribute('data-var-id');
             fuseVariableIntoWidget(w, varYId);
             closeSmartPopover();
@@ -10740,6 +11570,41 @@
       function closeSmartPopover() {
         const popover = document.getElementById('smartPopover');
         if (popover) popover.classList.remove('active');
+      }
+
+      function refreshCardFooterDOM(w) {
+        const cardEl = document.getElementById(`widget-card-${w.id}`);
+        if (!cardEl) return;
+        const footer = cardEl.querySelector(`#provenance-footer-${w.id}`);
+        if (!footer) return;
+        const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
+        const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+        const exportBtns = `
+          <span style="display:inline-flex; align-items:center; gap:0.25rem; flex-shrink:0;">
+            <button type="button" class="btn-card-mini-pill" id="btnCsvCard-${w.id}" title="Exportar CSV con UTF-8 BOM">CSV</button>
+            <button type="button" class="btn-card-mini-pill" id="btnPngCard-${w.id}" title="Exportar tarjeta a imagen PNG">PNG</button>
+          </span>
+        `;
+        if (!vX) {
+          footer.innerHTML = `<span class="prov-text">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>${exportBtns}`;
+        } else if (!vY) {
+          footer.innerHTML = `
+            <span class="prov-text" title="${vX.sourceName}">Fuente: <strong>${vX.sourceName}</strong> · Corte: <strong>${vX.collectionDate}</strong></span>
+            <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-shrink:0;">
+              <a href="${vX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente ↗</a>
+              ${exportBtns}
+            </span>
+          `;
+        } else {
+          footer.innerHTML = `
+            <span class="prov-text" title="[X] ${vX.sourceName} | [Y] ${vY.sourceName}">Fuentes: [X] <strong>${vX.sourceName}</strong> × [Y] <strong>${vY.sourceName}</strong></span>
+            ${exportBtns}
+          `;
+        }
+        const bCsv = footer.querySelector(`#btnCsvCard-${w.id}`);
+        if (bCsv) bCsv.addEventListener('click', (e) => { e.stopPropagation(); exportCsv(w); });
+        const bPng = footer.querySelector(`#btnPngCard-${w.id}`);
+        if (bPng) bPng.addEventListener('click', (e) => { e.stopPropagation(); exportPng(w); });
       }
 
       function fuseVariableIntoWidget(w, varYId) {
@@ -10784,13 +11649,7 @@
           const hubTag = cardEl.querySelector(`#hub-tag-${w.id}`);
           if (hubTag) hubTag.textContent = `${vX.hubTitle} x ${vY.hubTitle}`;
 
-          const footer = cardEl.querySelector(`#provenance-footer-${w.id}`);
-          if (footer) {
-            footer.innerHTML = `
-              <span class="prov-text" title="[X] ${vX.sourceName} | [Y] ${vY.sourceName}">Fuentes: [X] <strong>${vX.sourceName}</strong> (${vX.collectionDate}) × [Y] <strong>${vY.sourceName}</strong> (${vY.collectionDate})</span>
-              <span style="font-size: 0.58rem; color: var(--ink-muted);">Cruce Bivariable</span>
-            `;
-          }
+          refreshCardFooterDOM(w);
         }
 
         renderWidgetVisual(w);
@@ -10832,13 +11691,7 @@
           const hubTag = cardEl.querySelector(`#hub-tag-${w.id}`);
           if (hubTag) hubTag.textContent = v.hubTitle;
 
-          const footer = cardEl.querySelector(`#provenance-footer-${w.id}`);
-          if (footer) {
-            footer.innerHTML = `
-              <span class="prov-text" title="${v.sourceName}">Fuente: <strong>${v.sourceName}</strong> · Corte: <strong>${v.collectionDate}</strong></span>
-              <a href="${v.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente oficial ↗</a>
-            `;
-          }
+          refreshCardFooterDOM(w);
         }
         renderWidgetVisual(w);
         renderWindowTabs();
@@ -10893,16 +11746,185 @@
       }
 
       // =======================================================================
-      // 9. TARJETAS DE REFLEXION INDEPENDIENTES (ESTILO MIRO)
+      // 9. TARJETAS DE REFLEXION INDEPENDIENTES Y SINTESIS EJECUTIVA
       // =======================================================================
+      function getOrderedQuestionPool(hubId) {
+        const rawHub = String(hubId || 'turismo').toLowerCase();
+        const normalizedHub = rawHub === 'cultura_patrimonio' ? 'cultura' : (rawHub === 'ctci_innovacion' ? 'ctci' : rawHub);
+        const hubSpecific = HUB_QUESTIONS_MAP[hubId] || HUB_QUESTIONS_MAP[normalizedHub] || [];
+        const bankList = Array.isArray(AppState.questionsBank) ? AppState.questionsBank.map(q => q.pregunta).filter(Boolean) : [];
+        const merged = [];
+        const seen = new Set();
+        [...hubSpecific, ...bankList].forEach(txt => {
+          const clean = String(txt || '').trim();
+          const key = clean.toLowerCase();
+          if (clean && !seen.has(key)) {
+            seen.add(key);
+            merged.push(clean);
+          }
+        });
+        return merged.length ? merged : (HUB_QUESTIONS_MAP['turismo'] || []);
+      }
+
+      function computeWidgetExecutiveStats(w) {
+        const payload = getWidgetDataPayload(w);
+        if (!payload || payload.mode === 'empty' || !Array.isArray(payload.labels) || !payload.labels.length) {
+          return null;
+        }
+        const labels = payload.labels;
+        const valsX = (payload.mode === 'bivariate' ? payload.dataX : payload.data).map(v => Number(v) || 0);
+        const valsY = payload.mode === 'bivariate' ? (payload.dataY || []).map(v => Number(v) || 0) : null;
+        const n = labels.length;
+
+        const summarizeSeries = (arr) => {
+          const sum = arr.reduce((a, b) => a + b, 0);
+          const mean = sum / (n || 1);
+          const variance = arr.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (n || 1);
+          const std = Math.sqrt(variance);
+          let minIdx = 0, maxIdx = 0, maxAbsZ = 0, maxAbsZIdx = 0;
+          arr.forEach((v, i) => {
+            if (v < arr[minIdx]) minIdx = i;
+            if (v > arr[maxIdx]) maxIdx = i;
+            const z = std > 0 ? Math.abs((v - mean) / std) : 0;
+            if (z >= maxAbsZ) {
+              maxAbsZ = z;
+              maxAbsZIdx = i;
+            }
+          });
+          const zVal = std > 0 ? ((arr[maxAbsZIdx] - mean) / std) : 0;
+          return {
+            sum, mean, std,
+            cv: mean !== 0 ? (std / Math.abs(mean)) * 100 : 0,
+            minIdx, maxIdx,
+            minVal: arr[minIdx], maxVal: arr[maxIdx],
+            minLbl: labels[minIdx], maxLbl: labels[maxIdx],
+            anomalyLbl: labels[maxAbsZIdx],
+            anomalyZ: zVal
+          };
+        };
+
+        const stX = summarizeSeries(valsX);
+        const stY = valsY ? summarizeSeries(valsY) : null;
+
+        let pearsonR = null;
+        let r2 = null;
+        if (valsY && n > 2) {
+          const mX = stX.mean;
+          const mY = stY.mean;
+          let sxx = 0, syy = 0, sxy = 0;
+          for (let i = 0; i < n; i++) {
+            const dx = valsX[i] - mX;
+            const dy = valsY[i] - mY;
+            sxx += dx * dx;
+            syy += dy * dy;
+            sxy += dx * dy;
+          }
+          if (sxx > 0 && syy > 0) {
+            pearsonR = sxy / Math.sqrt(sxx * syy);
+            r2 = pearsonR * pearsonR;
+          }
+        } else if (payload.dim === 'tiempo' && n > 2) {
+          let sumT = 0, stt = 0, sty = 0, syy = 0;
+          const meanT = (n - 1) / 2;
+          for (let t = 0; t < n; t++) {
+            const dt = t - meanT;
+            const dy = valsX[t] - stX.mean;
+            stt += dt * dt;
+            sty += dt * dy;
+            syy += dy * dy;
+          }
+          if (stt > 0 && syy > 0) {
+            pearsonR = sty / Math.sqrt(stt * syy);
+            r2 = pearsonR * pearsonR;
+          }
+        }
+
+        const primaryStat = stY || stX;
+        const primaryLabel = payload.mode === 'bivariate' ? (payload.nameY || 'Variable Y') : (payload.label || w.title);
+        const primaryUnit = payload.mode === 'bivariate' ? (payload.unitY || '') : (payload.unit || '');
+        const shareLeaderPct = primaryStat.sum > 0 ? (primaryStat.maxVal / primaryStat.sum) * 100 : 0;
+
+        const sliceName = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Región de Aysén';
+        const coyTag = (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique) ? ' (sin Coyhaique)' : '';
+
+        const pt1 = `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): lidera ${primaryStat.maxLbl} con ${primaryStat.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} vs. promedio ${primaryStat.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}; el mayor rezago recae en ${primaryStat.minLbl} (${primaryStat.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}).`;
+        const pt2 = pearsonR !== null
+          ? `Correlación y anomalías: r = ${pearsonR.toFixed(2)} (R² = ${r2.toFixed(2)}, ajuste ${r2 >= 0.5 ? 'fuerte' : (r2 >= 0.25 ? 'moderado' : 'débil')}); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`
+          : `Dispersión y anomalías: desviación estándar σ = ${primaryStat.std.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} (CV = ${primaryStat.cv.toFixed(1)}%); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`;
+
+        let pt3 = '';
+        if (shareLeaderPct >= 40 && primaryStat.sum > 0 && payload.dim === 'comuna') {
+          pt3 = `Lectura territorial para decisión: ${primaryStat.maxLbl} concentra ${shareLeaderPct.toFixed(1)}% del total evaluado, evidenciando asimetría espacial frente a las comunas rezagadas; conviene focalizar inversión y capacidad operativa fuera del polo dominante.`;
+        } else if (pearsonR !== null && Math.abs(pearsonR) >= 0.5) {
+          const dir = pearsonR >= 0 ? 'directa' : 'inversa';
+          pt3 = `Lectura territorial para decisión: existe una asociación lineal ${dir} significativa (${r2 >= 0.5 ? 'R² ≥ 0,50' : 'R² = ' + r2.toFixed(2)}) entre ${payload.nameX || 'tiempo'} y ${primaryLabel}; intervenciones en un factor tienden a reflejarse en el otro sobre el subconjunto ${sliceName}${coyTag}.`;
+        } else {
+          pt3 = `Lectura territorial para decisión: distribución heterogénea en ${sliceName}${coyTag} (brecha ${(primaryStat.maxVal / (Math.abs(primaryStat.minVal) || 1)).toFixed(1)}× entre extremo superior e inferior); requiere lectura desagregada por comuna antes de asignar metas uniformes.`;
+        }
+
+        return { n, primaryLabel, primaryUnit, pt1, pt2, pt3, pearsonR, r2, anomalyLbl: primaryStat.anomalyLbl, anomalyZ: primaryStat.anomalyZ };
+      }
+
+      function generateCardExecutiveSynthesis(w, targetReflCard = null) {
+        if (!w) return;
+        const synth = computeWidgetExecutiveStats(w);
+        if (!synth) {
+          if (typeof showToast === 'function') showToast('Asigna una variable con datos para generar su síntesis ejecutiva.');
+          return;
+        }
+
+        const htmlList = `
+          <ul style="margin:0; padding-left:1rem;">
+            <li><strong>(1) Liderazgo y rezago:</strong> ${synth.pt1.replace(/^Liderazgo y rezago[^:]*:\s*/, '')}</li>
+            <li><strong>(2) Correlación y anomalías:</strong> ${synth.pt2.replace(/^Correlación y anomalías:\s*|^Dispersión y anomalías:\s*/, '')}</li>
+            <li><strong>(3) Lectura territorial:</strong> ${synth.pt3.replace(/^Lectura territorial para decisión:\s*/, '')}</li>
+          </ul>
+        `;
+
+        const panel = document.getElementById(`synthesis-panel-${w.id}`);
+        if (panel) {
+          panel.style.display = 'block';
+          panel.innerHTML = `
+            <div class="synth-hdr">
+              <span>Síntesis Ejecutiva (${synth.n} entidades)</span>
+              <button type="button" class="btn-card-mini-pill" id="btnCloseSynth-${w.id}" aria-label="Cerrar síntesis">×</button>
+            </div>
+            ${htmlList}
+          `;
+          const closeBtn = panel.querySelector(`#btnCloseSynth-${w.id}`);
+          if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              panel.style.display = 'none';
+            });
+          }
+        }
+
+        if (targetReflCard) {
+          const textEl = document.getElementById(`reflText-${targetReflCard.id}`);
+          const plain = [
+            `Síntesis sobre: ${w.title}`,
+            `1. ${synth.pt1}`,
+            `2. ${synth.pt2}`,
+            `3. ${synth.pt3}`
+          ].join('\n\n');
+          targetReflCard.promptText = plain;
+          if (textEl) {
+            textEl.textContent = plain;
+          }
+          autoSave();
+        }
+      }
+
       function invokeReflectionCardForWidget(widgetId) {
         const w = AppState.widgets.find(x => x.id === widgetId);
         if (!w) return;
 
         const vX = AppState.catalogItems.find(v => v.id === w.varX);
         const hubId = vX ? vX.hubId : 'turismo';
-        const questions = HUB_QUESTIONS_MAP[hubId] || HUB_QUESTIONS_MAP['turismo'];
-        const qText = questions[Math.floor(Math.random() * questions.length)];
+        const pool = getOrderedQuestionPool(hubId);
+        const qIndex = 0;
+        const qText = pool[qIndex] || '¿Qué actor territorial gana o pierde con la distribución observada en esta variable?';
 
         const rId = AppState.nextReflectionId++;
         const reflection = {
@@ -10910,11 +11932,11 @@
           linkedWidgetId: widgetId,
           hubId: hubId,
           promptText: qText,
-          questionIndex: 0,
+          questionIndex: qIndex,
           x: w.x + w.w + 40,
-          y: w.y + 20,
-          w: 280,
-          h: 210
+          y: Math.max(92, w.y + 20),
+          w: 310,
+          h: 225
         };
 
         AppState.reflectionCards.push(reflection);
@@ -10961,13 +11983,18 @@
 
         const headerLabel = r.customTitle || getHubTitleName(r.hubId);
         const isComplexityProperty = Boolean(r.officialSource || r.returnUrl);
+        const poolLen = getOrderedQuestionPool(r.hubId).length;
         const bodyHtml = isComplexityProperty && (r.definition || r.aysenCase)
           ? `<p class="reflection-prompt-body" id="reflText-${r.id}">${r.definition ? `<strong>Definición:</strong> ${r.definition}<br><br>` : ''}${r.aysenCase || r.promptText}</p>`
           : `<p class="reflection-prompt-body" id="reflText-${r.id}" style="white-space:pre-line;">${r.promptText}</p>`;
 
         const footerHtml = isComplexityProperty
           ? `<span>Fuente oficial: ${r.officialSource || 'Fuentes Oficiales Región de Aysén'} · <a href="${r.returnUrl || ('sistemas_complejos.html?prop=' + (r.propertyNum || '01'))}">← Volver a esta propiedad en Visualizador de Complejidad</a></span>`
-          : `<span>Reflexión Sistémica</span><button class="btn-cycle-question" id="btnCycleRefl-${r.id}">Otra pregunta ↻</button>`;
+          : `<span id="reflCount-${r.id}">Reflexión Sistémica (${((r.questionIndex || 0) % poolLen) + 1}/${poolLen})</span>
+             <span style="display:inline-flex; gap:0.45rem; align-items:center;">
+               <button type="button" class="btn-cycle-question" id="btnSynthRefl-${r.id}" title="Generar resumen analítico de 3 puntos sobre los datos activos">Generar Síntesis de Datos</button>
+               <button type="button" class="btn-cycle-question" id="btnCycleRefl-${r.id}">Otra pregunta ↻</button>
+             </span>`;
 
         card.innerHTML = `
           <div class="reflection-card-header">
@@ -11080,18 +12107,41 @@
 
         const btnCycle = card.querySelector(`#btnCycleRefl-${r.id}`);
         if (btnCycle) {
-          btnCycle.addEventListener('click', () => {
+          btnCycle.addEventListener('pointerdown', (e) => e.stopPropagation());
+          btnCycle.addEventListener('click', (e) => {
+            e.stopPropagation();
             cycleReflectionQuestion(r);
+          });
+        }
+
+        const btnSynthRefl = card.querySelector(`#btnSynthRefl-${r.id}`);
+        if (btnSynthRefl) {
+          btnSynthRefl.addEventListener('pointerdown', (e) => e.stopPropagation());
+          btnSynthRefl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const targetW = AppState.widgets.find(w => w.id === r.linkedWidgetId)
+              || AppState.widgets.find(w => w.id === AppState.activeWidgetId)
+              || AppState.widgets[0];
+            if (targetW) {
+              generateCardExecutiveSynthesis(targetW, r);
+            } else if (typeof showToast === 'function') {
+              showToast('Abre o selecciona una tarjeta de datos para generar la síntesis.');
+            }
           });
         }
       }
 
       function cycleReflectionQuestion(r) {
-        const questions = HUB_QUESTIONS_MAP[r.hubId] || HUB_QUESTIONS_MAP['turismo'];
-        r.questionIndex = (r.questionIndex + 1) % questions.length;
-        r.promptText = questions[r.questionIndex];
+        const pool = getOrderedQuestionPool(r.hubId);
+        if (!pool.length) return;
+        const curIdx = pool.indexOf(r.promptText);
+        const baseIdx = curIdx !== -1 ? curIdx : (Number(r.questionIndex) || 0);
+        r.questionIndex = (baseIdx + 1) % pool.length;
+        r.promptText = pool[r.questionIndex];
         const textEl = document.getElementById(`reflText-${r.id}`);
-        if (textEl) textEl.textContent = `"${r.promptText}"`;
+        if (textEl) textEl.textContent = r.promptText;
+        const countEl = document.getElementById(`reflCount-${r.id}`);
+        if (countEl) countEl.textContent = `Reflexión Sistémica (${r.questionIndex + 1}/${pool.length})`;
         autoSave();
       }
 
@@ -11114,6 +12164,28 @@
         if (!AppState.connections.some(c => (c.from === id1 && c.to === id2) || (c.from === id2 && c.to === id1))) {
           AppState.connections.push({ from: id1, to: id2, type });
           updateConnections();
+        }
+      }
+
+      function propagateTransformToConnectedWidgets(sourceW) {
+        if (!sourceW || !Array.isArray(AppState.connections)) return;
+        const visited = new Set([sourceW.id]);
+        const queue = [sourceW.id];
+        while (queue.length > 0) {
+          const curId = queue.shift();
+          AppState.connections.forEach(c => {
+            const peerId = c.from === curId ? c.to : (c.to === curId ? c.from : null);
+            if (!peerId || visited.has(peerId)) return;
+            visited.add(peerId);
+            const peerW = AppState.widgets.find(w => w.id === peerId);
+            if (peerW) {
+              peerW.excludeOutlierCoyhaique = Boolean(sourceW.excludeOutlierCoyhaique);
+              peerW.scaleMode = sourceW.scaleMode || 'raw';
+              peerW.perCapitaMode = Boolean(sourceW.perCapitaMode);
+              renderWidgetVisual(peerW);
+              queue.push(peerId);
+            }
+          });
         }
       }
 
@@ -11267,7 +12339,7 @@
               dim: 'holding',
               chartSpec: vX.chartSpec || null
             };
-          } else if (vX.chartSpec && Array.isArray(vX.chartSpec.labels)) {
+          } else if (vX.dim !== 'comuna' && vX.chartSpec && Array.isArray(vX.chartSpec.labels)) {
             let labels = [...vX.chartSpec.labels];
             let data = [...(vX.chartSpec.datasets[0]?.data || [])];
             if (vX.dim === 'tiempo' && w.timeWindow && w.timeWindow !== 'all') {
@@ -11297,8 +12369,8 @@
               data: [...baseData],
               unit: vX.unit,
               label: vX.shortName || vX.name,
-              dim: 'comuna',
-              chartSpec: null
+              dim: vX.dim === 'comuna' ? 'comuna' : (vX.dim || 'comuna'),
+              chartSpec: (vX.chartSpec && Array.isArray(vX.chartSpec.datasets) && vX.chartSpec.datasets.length > 1) ? vX.chartSpec : null
             };
           }
         } else if (vX.dim === 'comuna' && vY.dim === 'comuna') {
@@ -11408,8 +12480,8 @@
         } else {
           res = {
             mode: 'bivariate',
-            key: 'none',
-            dim: 'none',
+            key: 'comuna',
+            dim: 'comuna',
             status: 'warn_spurious',
             labels: [...COMUNAS_ORDER],
             dataX: [...resolveCommunalVector(vX)],
@@ -11426,12 +12498,16 @@
 
         // 1. Filtrado Territorial (Slicer de Provincia / Zona)
         if (res.dim === 'comuna' && AppState.territorialFilter && AppState.territorialFilter !== 'all') {
-          const allowed = TERRITORIAL_SLICES[AppState.territorialFilter] || COMUNAS_ORDER;
-          const keep = [];
-          res.labels.forEach((lbl, i) => {
-            if (allowed.some(a => normStr(a) === normStr(lbl))) keep.push(i);
-          });
-          if (keep.length > 0) {
+          const allowed = TERRITORIAL_SLICES[AppState.territorialFilter];
+          if (Array.isArray(allowed)) {
+            const allowedNorm = allowed.map(a => normStr(a));
+            const keep = [];
+            res.labels.forEach((lbl, i) => {
+              const lNorm = normStr(lbl);
+              if (allowedNorm.some(a => a === lNorm || lNorm.includes(a) || a.includes(lNorm))) {
+                keep.push(i);
+              }
+            });
             res.labels = keep.map(i => res.labels[i]);
             if (res.mode === 'univariate') {
               res.data = keep.map(i => res.data[i]);
@@ -11442,20 +12518,18 @@
           }
         }
 
-        // 1.1 Exclusión de Outlier Coyhaique
+        // 1.1 Exclusión de Outlier Coyhaique (intersección estricta tras filtro territorial)
         if (res.dim === 'comuna' && (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique)) {
           const keep = [];
           res.labels.forEach((lbl, i) => {
-            if (normStr(lbl) !== 'coyhaique') keep.push(i);
+            if (!normStr(lbl).includes('coyhaique')) keep.push(i);
           });
-          if (keep.length > 0) {
-            res.labels = keep.map(i => res.labels[i]);
-            if (res.mode === 'univariate') {
-              res.data = keep.map(i => res.data[i]);
-            } else {
-              res.dataX = keep.map(i => res.dataX[i]);
-              res.dataY = keep.map(i => res.dataY[i]);
-            }
+          res.labels = keep.map(i => res.labels[i]);
+          if (res.mode === 'univariate') {
+            res.data = keep.map(i => res.data[i]);
+          } else {
+            res.dataX = keep.map(i => res.dataX[i]);
+            res.dataY = keep.map(i => res.dataY[i]);
           }
         }
 
@@ -12830,6 +13904,10 @@
           const minValX = Math.min(...comunasValsX, 0);
           const baseChoroColor = w.color || '#00357f';
 
+          const mapPolygonLayers = [];
+          const mapCircleMarkers = [];
+          const radiusKmLabel = bufferRadiusKm;
+
           // NIVEL 1: Poligonos Coropleticos Comunales (L.geoJSON)
           const geojsonData = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.comunasGeoJSON) || null;
           if (geojsonData && Array.isArray(geojsonData.features)) {
@@ -12852,13 +13930,14 @@
               onEachFeature: (feature, layer) => {
                 const props = feature.properties || {};
                 const cName = props.nombre || 'Coyhaique';
+                mapPolygonLayers.push({ layer, cName });
                 const valX = getComunaVal(valuesMapX, cName);
                 const valY = getComunaVal(valuesMapY, cName);
                 const nCount = comunaNodeCountMap[normStr(cName)] || 0;
                 const yRowHtml = (vYItem && vYItem.dim === 'comuna')
                   ? `<br><span style="font-size: 0.70rem; color: #4a4745;">[Y] ${vYItem.shortName || vYItem.name}:</span> <strong style="font-family: var(--font-mono);">${valY.toLocaleString('es-CL')} ${vYItem.unit || ''}</strong>`
                   : '';
-                layer.on('click', () => toggleCrossHighlight(cName, w.id));
+                layer.on('click', () => toggleCrossHighlight(cName, w.id, { keepSourceMap: true }));
                 layer.bindPopup(`
                   <div style="font-family: var(--font-sans); padding: 2px; min-width: 195px;">
                     <div style="font-family: var(--font-mono); font-size: 0.60rem; color: #4a4745; text-transform: uppercase;">Polígono Comunal · Prov. ${props.provincia || 'Aysén'}</div>
@@ -12918,6 +13997,30 @@
               const isComunaSelected = selEntity && normStr(selEntity) === normStr(n.nombre_comuna);
               const markerOpacity = (!selEntity || isComunaSelected) ? 0.92 : 0.28;
               const valComunaX = getComunaVal(valuesMapX, n.nombre_comuna);
+              const nodeLayerTitle = (SPATIAL_LAYERS_META[n.layerKey] || SPATIAL_LAYERS_META[activeLayerKey] || {}).label || activeLayerKey;
+              const nodeTitle = n.nombre || n.id || 'Nodo Territorial';
+              const nodeTipo = n.tipo || nodeLayerTitle;
+              const nodeComuna = n.nombre_comuna || 'Región de Aysén';
+              const nodeLocalidad = n.localidad ? `${n.localidad} · ` : '';
+              const nodeFuente = n.fuente || n.titular || 'Catastro Oficial Georreferenciado';
+              const estadoHtml = n.estado ? `<br><span>Estado: <strong>${n.estado}</strong></span>` : '';
+              const magHtml = (n.magnitudeValue !== undefined && n.magnitudeValue !== null)
+                ? `<strong>${n.magnitudeLabel || 'Capacidad / Magnitud'}:</strong> ${Number(n.magnitudeValue).toLocaleString('es-CL')} ${n.magnitudeUnit || ''}<br>`
+                : '';
+
+              let bufferPopupHtml = '';
+              if (w.showBuffers) {
+                const nearbyNodes = activeNodes.filter(other => other !== n && haversineDistanceKm(n.lat, n.lon, other.lat, other.lon) <= bufferRadiusKm);
+                const nearbyCabeceras = Object.entries(COMUNA_COORDS)
+                  .filter(([, coords]) => haversineDistanceKm(n.lat, n.lon, coords[0], coords[1]) <= bufferRadiusKm)
+                  .map(([cName]) => cName);
+                const previewNames = nearbyNodes.slice(0, 3).map(o => o.nombre || o.id).join(', ');
+                bufferPopupHtml = `
+                  <div style="background: #fef2f2; border-left: 2px solid #dc2626; padding: 4px 6px; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.64rem; color: #7f1d1d;">
+                    <strong>Radio ${bufferRadiusKm} km:</strong> ${nearbyNodes.length} nodo(s) cercanos${nearbyCabeceras.length ? ' · Cabeceras: ' + nearbyCabeceras.join(', ') : ''}${previewNames ? '<br>Cercanos: ' + previewNames : ''}
+                  </div>
+                `;
+              }
 
               const marker = L.circleMarker([n.lat, n.lon], {
                 radius: isComunaSelected ? ptRadius + 2.5 : ptRadius,
@@ -12928,27 +14031,66 @@
                 fillOpacity: markerOpacity
               }).addTo(map);
 
-              marker.on('click', () => toggleCrossHighlight(n.nombre_comuna, w.id));
+              mapCircleMarkers.push({ marker, ptRadius, comuna: n.nombre_comuna });
+
+              marker.bindTooltip(`
+                <div style="font-family: var(--font-sans); line-height: 1.3;">
+                  <strong style="font-size: 0.78rem; color: #00357f;">${nodeTitle}</strong><br>
+                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #4a4745;">${nodeTipo} · ${nodeComuna}</span>
+                </div>
+              `, { direction: 'top', opacity: 0.96 });
 
               marker.bindPopup(`
-                <div style="font-family: var(--font-sans); padding: 2px; min-width: 215px;">
-                  <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${n.color || '#00357f'}; font-weight: 700;">${n.tipo}</div>
-                  <strong style="color: #1c1b1b; font-size: 0.84rem; display: block; margin: 2px 0;">${n.nombre}</strong>
+                <div style="font-family: var(--font-sans); padding: 2px; min-width: 225px; max-width: 300px;">
+                  <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${n.color || '#00357f'}; font-weight: 700;">${nodeTipo}</div>
+                  <strong style="font-family: var(--font-serif); color: #1c1b1b; font-size: 0.92rem; display: block; margin: 2px 0;">${nodeTitle}</strong>
                   <div style="font-size: 0.69rem; color: #4a4745; margin-bottom: 4px;">
-                    Localidad: <strong>${n.localidad}</strong> · Comuna: <strong>${n.nombre_comuna}</strong><br>
-                    <span style="font-family: var(--font-mono); font-size: 0.62rem;">Coord: (${n.lat.toFixed(4)}, ${n.lon.toFixed(4)})</span>
+                    <strong>Comuna:</strong> ${nodeLocalidad}${nodeComuna}<br>
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem;">Coord: (${Number(n.lat).toFixed(4)}, ${Number(n.lon).toFixed(4)})</span>
+                    ${estadoHtml}
                   </div>
-                  <div style="background: #f4efec; padding: 4px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 0.69rem; margin-bottom: 4px;">
-                    <strong>${n.magnitudeLabel || 'Magnitud'}:</strong> ${Number(n.magnitudeValue).toLocaleString('es-CL')} ${n.magnitudeUnit || ''}<br>
+                  <div style="background: #f4efec; padding: 4px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 0.68rem; margin-bottom: 4px;">
+                    ${magHtml}
                     <span>Coropleta Comunal [X]: <strong>${valComunaX.toLocaleString('es-CL')} ${choroUnit}</strong></span>
                   </div>
+                  ${bufferPopupHtml}
                   <div style="font-size: 0.64rem; color: #524f4b;">
-                    Titular: <strong>${n.titular}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Fuente oficial ↗</a>
+                    Fuente oficial: <strong>${nodeFuente}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Ver registro ↗</a>
                   </div>
                 </div>
-              `);
+              `, { maxWidth: 315, autoPan: true, closeButton: true });
+
+              marker.on('click', (ev) => {
+                if (ev && window.L && L.DomEvent && typeof L.DomEvent.stopPropagation === 'function') {
+                  L.DomEvent.stopPropagation(ev);
+                }
+                marker.openPopup();
+                toggleCrossHighlight(n.nombre_comuna, w.id, { keepSourceMap: true });
+              });
             });
           }
+
+          w._updateMapHighlight = (activeEnt) => {
+            mapPolygonLayers.forEach(({ layer, cName }) => {
+              const isSelected = activeEnt && normStr(activeEnt) === normStr(cName);
+              layer.setStyle({
+                color: isSelected ? '#001d4a' : '#1e293b',
+                weight: isSelected ? 2.8 : 1.2,
+                opacity: (!activeEnt || isSelected) ? 0.85 : 0.35,
+                fillOpacity: (!activeEnt || isSelected) ? (isSelected ? 0.68 : 0.44) : 0.16
+              });
+            });
+            mapCircleMarkers.forEach(({ marker, ptRadius, comuna }) => {
+              const isSel = activeEnt && normStr(activeEnt) === normStr(comuna);
+              const op = (!activeEnt || isSel) ? 0.92 : 0.28;
+              marker.setStyle({
+                radius: isSel ? ptRadius + 2.5 : ptRadius,
+                weight: isSel ? 2.2 : 1.4,
+                opacity: op,
+                fillOpacity: op
+              });
+            });
+          };
 
           // Leyenda Bivariada Automatica en Esquina Inferior Izquierda
           const ramp = getChoroplethRampColors(baseChoroColor);
@@ -13107,26 +14249,54 @@
           const vX = AppState.catalogItems.find(v => v.id === w.varX);
           const isMean = vX ? (vX.aggMode === 'mean' || /%|\$|horas|Miles|casos/i.test(vX.unit)) : false;
 
-          const data = payload.mode === 'univariate' ? payload.data : payload.dataX;
-          const validVals = data.filter(v => typeof v === 'number' && !isNaN(v));
+          const data = (payload.mode === 'bivariate' && Array.isArray(payload.dataY)) ? payload.dataY : (payload.data || []);
+          const labels = payload.labels || [];
+          const validPairs = data.map((v, i) => ({ v: Number(v), lbl: labels[i] || `Entidad ${i + 1}` })).filter(p => typeof p.v === 'number' && !isNaN(p.v));
+          const validVals = validPairs.map(p => p.v);
           const sum = validVals.reduce((a, b) => a + b, 0);
           const avg = validVals.length ? (sum / validVals.length) : 0;
           const min = validVals.length ? Math.min(...validVals) : 0;
           const max = validVals.length ? Math.max(...validVals) : 0;
+          const minPair = validPairs.find(p => p.v === min);
+          const maxPair = validPairs.find(p => p.v === max);
+
+          const activeSliceLbl = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Todas las comunas (10)';
+          const isCoyExcluded = !!(AppState.excludeCoyhaique || w.excludeOutlierCoyhaique);
+          const scopeLabel = (AppState.territorialFilter && AppState.territorialFilter !== 'all')
+            ? `${activeSliceLbl}${isCoyExcluded ? ' · Sin Coyhaique' : ''}`
+            : (isCoyExcluded ? 'Sin Coyhaique' : 'Región de Aysén');
+          const unitLbl = (payload.mode === 'bivariate' ? (payload.unitY || payload.unitX) : payload.unit) || '';
 
           let mainValStr, mainUnitStr, subItemsHtml;
 
-          if (isMean) {
-            mainValStr = avg.toFixed(1).toLocaleString('es-CL');
-            mainUnitStr = `${payload.unit || payload.unitX} · Promedio Regional`;
+          if (validVals.length === 0) {
+            mainValStr = '0';
+            mainUnitStr = `${unitLbl} · Sin entidades en filtro (${scopeLabel})`;
             subItemsHtml = `
               <div class="kpi-stat-sub-item">
-                <span class="kpi-stat-sub-val">${min.toFixed(1).toLocaleString('es-CL')}</span>
+                <span class="kpi-stat-sub-val">–</span>
                 <span class="kpi-stat-sub-lbl">Mínimo</span>
               </div>
               <div class="kpi-stat-sub-item">
-                <span class="kpi-stat-sub-val">${max.toFixed(1).toLocaleString('es-CL')}</span>
+                <span class="kpi-stat-sub-val">–</span>
                 <span class="kpi-stat-sub-lbl">Máximo</span>
+              </div>
+              <div class="kpi-stat-sub-item">
+                <span class="kpi-stat-sub-val">0</span>
+                <span class="kpi-stat-sub-lbl">Entidades</span>
+              </div>
+            `;
+          } else if (isMean) {
+            mainValStr = avg.toLocaleString('es-CL', { maximumFractionDigits: 1 });
+            mainUnitStr = `${unitLbl} · Promedio (${scopeLabel})`;
+            subItemsHtml = `
+              <div class="kpi-stat-sub-item" title="${minPair ? minPair.lbl : ''}">
+                <span class="kpi-stat-sub-val">${min.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
+                <span class="kpi-stat-sub-lbl">Mín (${minPair ? minPair.lbl : '–'})</span>
+              </div>
+              <div class="kpi-stat-sub-item" title="${maxPair ? maxPair.lbl : ''}">
+                <span class="kpi-stat-sub-val">${max.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
+                <span class="kpi-stat-sub-lbl">Máx (${maxPair ? maxPair.lbl : '–'})</span>
               </div>
               <div class="kpi-stat-sub-item">
                 <span class="kpi-stat-sub-val">${validVals.length}</span>
@@ -13134,16 +14304,16 @@
               </div>
             `;
           } else {
-            mainValStr = sum.toLocaleString('es-CL');
-            mainUnitStr = `${payload.unit || payload.unitX} · Total Consolidado`;
+            mainValStr = sum.toLocaleString('es-CL', { maximumFractionDigits: 1 });
+            mainUnitStr = `${unitLbl} · Total (${scopeLabel})`;
             subItemsHtml = `
               <div class="kpi-stat-sub-item">
-                <span class="kpi-stat-sub-val">${avg.toFixed(1).toLocaleString('es-CL')}</span>
+                <span class="kpi-stat-sub-val">${avg.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
                 <span class="kpi-stat-sub-lbl">Promedio</span>
               </div>
-              <div class="kpi-stat-sub-item">
-                <span class="kpi-stat-sub-val">${max.toLocaleString('es-CL')}</span>
-                <span class="kpi-stat-sub-lbl">Máximo</span>
+              <div class="kpi-stat-sub-item" title="${maxPair ? maxPair.lbl : ''}">
+                <span class="kpi-stat-sub-val">${max.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
+                <span class="kpi-stat-sub-lbl">Máx (${maxPair ? maxPair.lbl : '–'})</span>
               </div>
               <div class="kpi-stat-sub-item">
                 <span class="kpi-stat-sub-val">${validVals.length}</span>
@@ -13202,7 +14372,7 @@
         return Array.from(visited);
       }
 
-      function toggleCrossHighlight(entity, sourceWidgetId) {
+      function toggleCrossHighlight(entity, sourceWidgetId, opts = {}) {
         const sourceWidget = sourceWidgetId ? AppState.widgets.find(w => w.id === sourceWidgetId) : null;
         const mode = sourceWidget ? (sourceWidget.syncMode || 'linked') : 'global';
 
@@ -13235,7 +14405,14 @@
         }
 
         targetWidgets.forEach(w => {
-          if (!w.minimized) renderWidgetVisual(w);
+          if (w.minimized) return;
+          if (opts.keepSourceMap && w.id === sourceWidgetId && w.type === 'map') {
+            if (typeof w._updateMapHighlight === 'function') {
+              w._updateMapHighlight(w.highlightEntity);
+            }
+            return;
+          }
+          renderWidgetVisual(w);
         });
 
         updateConnections();
@@ -13330,6 +14507,149 @@
         a.href = URL.createObjectURL(blob);
         a.download = `aysen_cruce_${w.id}_${new Date().toISOString().slice(0, 10)}.csv`;
         a.click();
+      }
+
+      function exportPng(w) {
+        if (!w) return;
+        const W = 1200;
+        const H = 800;
+        const outCanvas = document.createElement('canvas');
+        outCanvas.width = W;
+        outCanvas.height = H;
+        const ctx = outCanvas.getContext('2d');
+        if (!ctx) return;
+
+        // Fondo papel editorial crema
+        ctx.fillStyle = '#fcf9f8';
+        ctx.fillRect(0, 0, W, H);
+
+        // Barra superior azul cobalto de 6px
+        ctx.fillStyle = w.color || '#00357f';
+        ctx.fillRect(0, 0, W, 6);
+
+        // Borde editorial sutil
+        ctx.strokeStyle = 'rgba(28, 27, 27, 0.12)';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(1, 1, W - 2, H - 2);
+
+        const padX = 48;
+        ctx.fillStyle = '#00357f';
+        ctx.font = '700 13px "JetBrains Mono", monospace';
+        ctx.fillText('LABORATORIO SISTÉMICO DE AYSÉN · ÁLVARO CONTRERAS BARRIOS', padX, 42);
+
+        // Título de la tarjeta (con ajuste de línea máximo 2 renglones)
+        ctx.fillStyle = '#1a1918';
+        ctx.font = '700 28px "Playfair Display", Georgia, serif';
+        const titleStr = String(w.title || 'Visualización Territorial');
+        const words = titleStr.split(/\s+/);
+        let line1 = '';
+        let line2 = '';
+        words.forEach(word => {
+          const test1 = line1 ? (line1 + ' ' + word) : word;
+          if (!line2 && ctx.measureText(test1).width <= W - padX * 2) {
+            line1 = test1;
+          } else {
+            line2 = line2 ? (line2 + ' ' + word) : word;
+          }
+        });
+        ctx.fillText(line1, padX, 82);
+        let metaY = 112;
+        if (line2) {
+          ctx.fillText(line2.slice(0, 74) + (line2.length > 74 ? '...' : ''), padX, 114);
+          metaY = 142;
+        }
+
+        const payload = getWidgetDataPayload(w);
+        const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
+        const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+        const sliceTxt = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Región de Aysén';
+        const filterChips = [
+          sliceTxt,
+          (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique) ? 'Sin Coyhaique' : '',
+          w.scaleMode === 'pct' ? 'Escala % Reg.' : (w.scaleMode === 'zscore' ? 'Escala Z-Score' : 'Valores Brutos')
+        ].filter(Boolean).join(' · ');
+
+        ctx.fillStyle = '#524f4b';
+        ctx.font = '500 13px "JetBrains Mono", monospace';
+        ctx.fillText(filterChips, padX, metaY);
+
+        // Área blanca del cuerpo visual
+        const boxX = padX;
+        const boxY = metaY + 20;
+        const boxW = W - padX * 2;
+        const boxH = H - boxY - 84;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(boxX, boxY, boxW, boxH);
+        ctx.strokeStyle = 'rgba(26, 25, 24, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(boxX, boxY, boxW, boxH);
+
+        const srcChartCanvas = document.getElementById(`canvas-${w.id}`);
+        if (w.type === 'chart' && srcChartCanvas && srcChartCanvas.width > 0 && srcChartCanvas.height > 0) {
+          const innerPad = 20;
+          const availW = boxW - innerPad * 2;
+          const availH = boxH - innerPad * 2;
+          const scale = Math.min(availW / srcChartCanvas.width, availH / srcChartCanvas.height);
+          const drawW = srcChartCanvas.width * scale;
+          const drawH = srcChartCanvas.height * scale;
+          const dx = boxX + (boxW - drawW) / 2;
+          const dy = boxY + (boxH - drawH) / 2;
+          ctx.drawImage(srcChartCanvas, dx, dy, drawW, drawH);
+        } else if (payload && Array.isArray(payload.labels) && payload.labels.length > 0) {
+          const vals = (payload.mode === 'bivariate' && Array.isArray(payload.dataY)) ? payload.dataY : (payload.data || []);
+          const maxV = Math.max(...vals.map(v => Math.abs(Number(v) || 0)), 1);
+          const unitTxt = (payload.mode === 'bivariate' ? (payload.unitY || payload.unitX) : payload.unit) || '';
+          const rowsToDraw = payload.labels.slice(0, 12);
+          ctx.fillStyle = '#00357f';
+          ctx.font = '700 14px "JetBrains Mono", monospace';
+          ctx.fillText(
+            w.type === 'kpi'
+              ? `INDICADOR CONSOLIDADO (${payload.labels.length} ENTIDADES)`
+              : (w.type === 'map' ? `SÍNTESIS TERRITORIAL DE ${payload.labels.length} ENTIDADES` : `DATOS CONSOLIDADOS (${payload.labels.length} ENTIDADES)`),
+            boxX + 24,
+            boxY + 36
+          );
+          rowsToDraw.forEach((lbl, idx) => {
+            const yPos = boxY + 72 + idx * 38;
+            const val = Number(vals[idx]) || 0;
+            const barMaxW = boxW - 380;
+            const barW = Math.max(4, Math.round((Math.abs(val) / maxV) * barMaxW));
+            ctx.fillStyle = '#1a1918';
+            ctx.font = '600 14px "Inter", sans-serif';
+            ctx.fillText(String(lbl).slice(0, 24), boxX + 24, yPos);
+            ctx.fillStyle = 'rgba(0, 53, 127, 0.12)';
+            ctx.fillRect(boxX + 240, yPos - 14, barMaxW, 18);
+            ctx.fillStyle = w.color || '#00357f';
+            ctx.fillRect(boxX + 240, yPos - 14, barW, 18);
+            ctx.fillStyle = '#1a1918';
+            ctx.font = '600 13px "JetBrains Mono", monospace';
+            ctx.fillText(`${val.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${unitTxt}`, boxX + 250 + barMaxW, yPos);
+          });
+        }
+
+        // Pie institucional obligatorio
+        ctx.fillStyle = '#4a4745';
+        ctx.font = '500 12px "JetBrains Mono", monospace';
+        const srcText = vY
+          ? `Fuentes: [X] ${vX?.sourceName || 'Oficial'} × [Y] ${vY.sourceName || 'Oficial'}`
+          : `Fuente: ${vX?.sourceName || 'Fuentes Oficiales Región de Aysén'} · Corte: ${vX?.collectionDate || 'Actualizado'}`;
+        ctx.fillText(srcText.slice(0, 120), padX, H - 34);
+
+        try {
+          const dataUrl = outCanvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = dataUrl;
+          link.download = `aysen_tarjeta_${w.id}_${new Date().toISOString().slice(0, 10)}.png`;
+          link.click();
+          if (typeof showToast === 'function') {
+            showToast(`Imagen PNG exportada: ${w.title}`);
+          }
+        } catch (errPng) {
+          console.error('[Laboratorio] Error exportando PNG:', errPng);
+          if (typeof showToast === 'function') {
+            showToast('No se pudo exportar la imagen PNG de esta tarjeta.');
+          }
+        }
       }
 
       // =======================================================================
@@ -13522,7 +14842,7 @@
         });
       }
 
-      function openHubGallery(hubId = 'gobernanza') {
+      function openHubGallery(hubId = 'turismo') {
         const modal = document.getElementById('modalHubGallery');
         if (!modal) return;
         hideFloatingToolbar();
@@ -13536,12 +14856,12 @@
         const container = document.getElementById('hubGalleryTabs');
         if (!container) return;
         const hubsList = [
-          { id: 'gobernanza', num: 'I', name: 'Gobernanza y Finanzas' },
-          { id: 'energia', num: 'II', name: 'Energía y Telecomunicaciones' },
-          { id: 'salmonicultura', num: 'III', name: 'Territorio y Salmonicultura' },
-          { id: 'inversion', num: 'IV', name: 'Economía e Inversión' },
-          { id: 'social', num: 'V', name: 'Sociedad y Seguridad' },
-          { id: 'turismo', num: 'VI', name: 'Turismo y Áreas Silvestres' },
+          { id: 'turismo', num: 'I', name: 'Turismo y Áreas Silvestres' },
+          { id: 'salmonicultura', num: 'II', name: 'Territorio y Salmonicultura' },
+          { id: 'energia', num: 'III', name: 'Energía y Telecomunicaciones' },
+          { id: 'gobernanza', num: 'IV', name: 'Gobernanza y Finanzas' },
+          { id: 'inversion', num: 'V', name: 'Economía e Inversión' },
+          { id: 'social', num: 'VI', name: 'Sociedad y Seguridad' },
           { id: 'biodiversidad', num: 'VII', name: 'Biodiversidad y Ambiente' },
           { id: 'salud', num: 'VIII', name: 'Salud APS y Hospitales' }
         ];
@@ -13706,11 +15026,9 @@
             color: hubColor,
             chartType: 'line',
             showTrend: true,
+            customChartSpec: cfg.customChartSpec || null,
             x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h
           });
-          if (chartWidget && cfg.customChartSpec) {
-            chartWidget.customChartSpec = cfg.customChartSpec;
-          }
         } else if (p.format_type === 'scatter') {
           chartWidget = createWidget('chart', {
             title: p.titulo,
@@ -13786,11 +15104,28 @@
 
         clearAll();
 
-        // Renombrar la Mesa de Trabajo activa con el nombre del Hub
+        // Renombrar la Mesa de Trabajo activa con el nombre canónico del Hub
+        const CANONICAL_HUB_NUMERALS = {
+          turismo: { num: 'I', title: 'Turismo y Áreas Silvestres' },
+          salmonicultura: { num: 'II', title: 'Territorio y Salmonicultura' },
+          energia: { num: 'III', title: 'Energía y Telecomunicaciones' },
+          gobernanza: { num: 'IV', title: 'Gobernanza y Finanzas' },
+          inversion: { num: 'V', title: 'Economía e Inversión' },
+          social: { num: 'VI', title: 'Sociedad y Seguridad' },
+          biodiversidad: { num: 'VII', title: 'Biodiversidad y Ambiente' },
+          salud: { num: 'VIII', title: 'Salud APS y Hospitales' },
+          cultura: { num: 'IX', title: 'Cultura y Patrimonio' },
+          cultura_patrimonio: { num: 'IX', title: 'Cultura y Patrimonio' },
+          ctci: { num: 'X', title: 'CTCi e Innovación' },
+          ctci_innovacion: { num: 'X', title: 'CTCi e Innovación' }
+        };
+        const canonMeta = CANONICAL_HUB_NUMERALS[hubId];
         const activeSub = AppState.subDashboards.find(s => s.id === AppState.activeSubDashboardId);
-        const hubLabel = hubEntry.numeral && hubEntry.shortTitle
-          ? `Hub ${hubEntry.numeral} · ${hubEntry.shortTitle}`
-          : (hubEntry.shortTitle || hubEntry.title || hubId);
+        const hubLabel = canonMeta
+          ? `Hub ${canonMeta.num} · ${canonMeta.title}`
+          : (hubEntry.numeral && hubEntry.shortTitle
+              ? `Hub ${hubEntry.numeral} · ${hubEntry.shortTitle}`
+              : (hubEntry.shortTitle || hubEntry.title || hubId));
         if (activeSub) {
           activeSub.name = hubLabel;
           renderSubDashboards();
@@ -13815,18 +15150,22 @@
 
         hubEntry.presets.slice(0, 5).forEach((p, idx) => {
           const b = gridBounds[idx] || { x: 60 + idx * 500, y: 50, w: 480, h: 360 };
-          const w = instantiatePresetWidget(p, b, hubColor);
-          if (w) createdWidgets.push(w);
+          try {
+            const w = instantiatePresetWidget(p, b, hubColor);
+            if (w) createdWidgets.push(w);
+          } catch (errPreset) {
+            console.error('[Laboratorio] Error instanciando vista del eje:', p?.preset_id, errPreset);
+          }
         });
 
-        // Conectar las 5 tarjetas en red analítica
+        // Conectar las tarjetas instanciadas en red analítica
         if (createdWidgets.length >= 2) addConnection(createdWidgets[0].id, createdWidgets[1].id, 'sync');
         if (createdWidgets.length >= 3) addConnection(createdWidgets[1].id, createdWidgets[2].id, 'bivariate');
         if (createdWidgets.length >= 4) addConnection(createdWidgets[0].id, createdWidgets[3].id, 'sync');
         if (createdWidgets.length >= 5) {
           addConnection(createdWidgets[3].id, createdWidgets[4].id, 'bivariate');
           activeBaroWidgetId = createdWidgets[4].id;
-          updateBaroDrawerMetrics();
+          try { updateBaroDrawerMetrics(); } catch (_) {}
         }
 
         syncHeroVisibility();
@@ -13837,6 +15176,8 @@
 
         setTimeout(() => {
           fitAndCenterCanvas();
+          renderWindowTabs();
+          updateStatus();
         }, 120);
       }
 
@@ -14419,10 +15760,143 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       }
 
       // =======================================================================
-      // 17. PERSISTENCIA LOCALSTORAGE Y ENLACE DESDE INDEX.HTML
+      // 17. PERSISTENCIA LOCALSTORAGE, COMPARTIR POR URL Y ENLACE EXTERNO
       // =======================================================================
+      function buildWorkspaceShareUrl() {
+        const cardsSpec = (AppState.widgets || []).map(w => ({
+          x: w.varX || null,
+          y: w.varY || null,
+          t: w.type || 'chart',
+          c: w.chartType || 'bar',
+          n: w.scaleMode || 'raw',
+          nc: w.excludeOutlierCoyhaique ? 1 : 0,
+          tr: w.showTrend ? 1 : 0,
+          av: w.showAverage ? 1 : 0,
+          rk: (w.sortRanking && w.sortRanking !== 'none') ? w.sortRanking : undefined,
+          sl: (w.spatialLayer && w.spatialLayer !== 'auto') ? w.spatialLayer : undefined,
+          sb: w.showBuffers ? 1 : undefined,
+          tw: (w.timeWindow && w.timeWindow !== 'all') ? w.timeWindow : undefined,
+          ti: w.title || undefined,
+          co: w.color || undefined,
+          bx: Math.round(w.x || 80),
+          by: Math.max(92, Math.round(w.y || 92)),
+          bw: Math.round(w.w || 500),
+          bh: Math.round(w.h || 370)
+        }));
+        const params = new URLSearchParams();
+        if (cardsSpec.length > 0) {
+          params.set('cards', JSON.stringify(cardsSpec));
+        }
+        if (AppState.territorialFilter && AppState.territorialFilter !== 'all') {
+          params.set('slicer', AppState.territorialFilter);
+        }
+        if (AppState.excludeCoyhaique) {
+          params.set('nocoy', '1');
+        }
+        if (AppState.dashboardViewMode === 'grid') {
+          params.set('grid', '1');
+        }
+        const base = `${window.location.origin}${window.location.pathname}`;
+        const qs = params.toString();
+        return qs ? `${base}?${qs}` : base;
+      }
+
+      async function copyWorkspaceShareUrl() {
+        const shareUrl = buildWorkspaceShareUrl();
+        try {
+          if (window.history && typeof window.history.replaceState === 'function') {
+            window.history.replaceState(null, '', shareUrl);
+          }
+        } catch (_) {}
+        let copied = false;
+        try {
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+          }
+        } catch (_) {}
+        if (!copied) {
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = shareUrl;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            copied = document.execCommand('copy');
+            ta.remove();
+          } catch (_) {}
+        }
+        if (typeof showToast === 'function') {
+          showToast(copied ? 'Enlace de esta mesa copiado al portapapeles.' : `URL actualizada en el navegador: ${shareUrl}`);
+        }
+        return shareUrl;
+      }
+
       function handleUrlParamsOrLoadSaved() {
         const params = new URLSearchParams(window.location.search);
+        const cardsParam = params.get('cards');
+        const slicerParam = params.get('slicer');
+        const nocoyParam = params.get('nocoy');
+        const gridParam = params.get('grid');
+
+        if (cardsParam) {
+          try {
+            const parsedCards = JSON.parse(cardsParam);
+            if (Array.isArray(parsedCards) && parsedCards.length > 0) {
+              AppState._urlHydrationDone = true;
+              clearAll({ skipHistory: true });
+              if (slicerParam) {
+                const selectSlicer = document.getElementById('selectTerritorialSlicer');
+                AppState.territorialFilter = slicerParam;
+                if (selectSlicer && selectSlicer.querySelector(`option[value="${slicerParam}"]`)) {
+                  selectSlicer.value = slicerParam;
+                }
+              }
+              if (nocoyParam === '1' || nocoyParam === 'true') {
+                AppState.excludeCoyhaique = true;
+              }
+              parsedCards.forEach((c, idx) => {
+                createWidget(c.t || 'chart', {
+                  varX: c.x || null,
+                  varY: c.y || null,
+                  chartType: c.c || 'bar',
+                  scaleMode: c.n || 'raw',
+                  excludeOutlierCoyhaique: Boolean(c.nc || AppState.excludeCoyhaique),
+                  showTrend: Boolean(c.tr),
+                  showAverage: Boolean(c.av),
+                  sortRanking: c.rk || 'none',
+                  spatialLayer: c.sl || 'auto',
+                  showBuffers: Boolean(c.sb),
+                  timeWindow: c.tw || 'all',
+                  title: c.ti || undefined,
+                  color: c.co || undefined,
+                  x: c.bx !== undefined ? Number(c.bx) : (80 + (idx % 2) * 540),
+                  y: c.by !== undefined ? Math.max(92, Number(c.by)) : (92 + Math.floor(idx / 2) * 410),
+                  w: c.bw ? Number(c.bw) : 520,
+                  h: c.bh ? Number(c.bh) : 380
+                });
+              });
+              for (let i = 1; i < AppState.widgets.length; i++) {
+                addConnection(AppState.widgets[i - 1].id, AppState.widgets[i].id, 'sync');
+              }
+              if (gridParam === '1') {
+                toggleDashboardViewMode('grid');
+              } else {
+                setTimeout(fitAndCenterCanvas, 120);
+              }
+              syncHeroVisibility();
+              renderWindowTabs();
+              updateStatus();
+              updateConnections();
+              return;
+            }
+          } catch (errUrl) {
+            console.warn('[Laboratorio] Error hidratando URL compartida:', errUrl);
+          }
+        }
+
         const presetParam = params.get('preset');
         const propParam = params.get('prop');
         const hubParam = params.get('hub');
@@ -14874,29 +16348,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         try {
           const cur = AppState.subDashboards.find(s => s.id === AppState.activeSubDashboardId);
           if (cur) {
-            cur.widgets = AppState.widgets.map(w => ({
-              id: w.id,
-              type: w.type,
-              chartType: w.chartType,
-              title: w.title,
-              varX: w.varX,
-              varY: w.varY,
-              color: w.color,
-              showAverage: w.showAverage,
-              showTrend: w.showTrend,
-              minimized: w.minimized,
-              maximized: w.maximized,
-              prevBounds: w.prevBounds,
-              syncMode: w.syncMode,
-              highlightEntity: w.highlightEntity,
-              tableFilter: w.tableFilter,
-              tableSortCol: w.tableSortCol,
-              tableSortDir: w.tableSortDir,
-              x: w.x,
-              y: w.y,
-              w: w.w,
-              h: w.h
-            }));
+            cur.widgets = AppState.widgets.map(serializeWidgetState);
             cur.connections = AppState.connections;
             cur.reflectionCards = AppState.reflectionCards;
             cur.transform = AppState.transform;
@@ -15370,6 +16822,21 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           closeSmartPopover();
         });
 
+        const btnCopyShare = document.getElementById('btnCopyShareLink');
+        if (btnCopyShare) {
+          btnCopyShare.addEventListener('click', (e) => {
+            e.stopPropagation();
+            copyWorkspaceShareUrl();
+          });
+        }
+        const btnShareMenu = document.getElementById('btnShareWorkspaceUrl');
+        if (btnShareMenu) {
+          btnShareMenu.addEventListener('click', () => {
+            if (projectMenu) projectMenu.classList.remove('show');
+            copyWorkspaceShareUrl();
+          });
+        }
+
         document.getElementById('btnExportarJson').addEventListener('click', () => {
           if (projectMenu) projectMenu.classList.remove('show');
           exportJson();
@@ -15437,7 +16904,13 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               const btnEx = document.getElementById('btnExcludeCoyhaique');
               if (btnEx) btnEx.classList.remove('active');
             }
-            AppState.widgets.forEach(w => renderWidgetVisual(w));
+            AppState.widgets.forEach(w => {
+              renderWidgetVisual(w);
+              const synthEl = document.getElementById(`synthesis-panel-${w.id}`);
+              if (synthEl && synthEl.style.display !== 'none') {
+                generateCardExecutiveSynthesis(w);
+              }
+            });
             updateConnections();
             autoSave();
           });

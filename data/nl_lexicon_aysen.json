@@ -92,15 +92,6 @@
       "rural",
       "sin capital regional",
       "solo comunas pequenas"
-    ],
-    "vsm": [
-      "vsm",
-      "sistema viable",
-      "algedonica",
-      "alarma algedonica",
-      "viplan",
-      "ashby",
-      "variedad requerida"
     ]
   },
   "stopwords": [
@@ -194,13 +185,7 @@
         "concesiones otorgadas",
         "jaulas en el mar",
         "concesiones de salmones",
-        "jaulas marinas",
-        "lafkenche",
-        "ecmpo",
-        "pu wapi",
-        "antunen rain",
-        "ley lafkenche",
-        "espacios costeros marinos pueblos originarios"
+        "jaulas marinas"
       ]
     },
     {
@@ -564,11 +549,7 @@
       "synonyms": [
         "codigo comuna",
         "codigo territorial",
-        "cl xi",
-        "prica",
-        "prot",
-        "plan regional de ordenamiento territorial",
-        "ordenamiento territorial"
+        "cl xi"
       ]
     },
     {
@@ -639,13 +620,7 @@
         "cupos de hospital",
         "camas de hospital",
         "infraestructura hospitalaria",
-        "capacidad hospitalaria",
-        "suicidio",
-        "salud mental",
-        "tasa de suicidio",
-        "cancer gastrico",
-        "cancer de vesicula",
-        "uhce psiquiatrica"
+        "capacidad hospitalaria"
       ]
     },
     {
@@ -767,13 +742,7 @@
         "vulnerabilidad social",
         "estratificacion",
         "desigualdad social",
-        "pobreza casen",
-        "deficit habitacional",
-        "deficit habitacional minvu",
-        "ssr",
-        "apr",
-        "servicios sanitarios rurales",
-        "agua potable rural"
+        "pobreza casen"
       ]
     },
     {
@@ -903,10 +872,7 @@
         "educacion publica",
         "escuelas rurales",
         "educacion basica",
-        "educacion media",
-        "cft estatal",
-        "cft estatal aysen",
-        "educacion publica rural"
+        "educacion media"
       ]
     },
     {
@@ -1080,11 +1046,7 @@
         "quema de lena",
         "calor de hogar",
         "matriz de calefaccion",
-        "uso de lena",
-        "leña",
-        "dendroenergia",
-        "biomasa forestal",
-        "ley 21499"
+        "uso de lena"
       ]
     },
     {
@@ -1550,12 +1512,7 @@
         "rca aprobada",
         "proyectos evaluados",
         "inversion privada",
-        "inversion seia mmusd",
-        "dl 889",
-        "dfl 15",
-        "ley 889",
-        "bonificacion mano de obra",
-        "ley austral"
+        "inversion seia mmusd"
       ]
     },
     {
@@ -1761,15 +1718,7 @@
         "campo de hielo sur",
         "retroceso de glaciares",
         "criosfera",
-        "km2 glaciares",
-        "glof",
-        "glofs",
-        "cachet",
-        "lago cachet",
-        "lago cachet 2",
-        "exploradores",
-        "glaciar exploradores",
-        "vaciamiento de lagos glaciares"
+        "km2 glaciares"
       ]
     },
     {
@@ -2056,6 +2005,331 @@
         "crecida baker historica",
         "tendencia caudal baker"
       ]
+    },
+    {
+      "id": "transparencia_activa_cplt_2026_pct",
+      "canonicalId": "comuna_alcalde",
+      "name": "Cumplimiento de Transparencia Activa Municipal 2026 (CPLT)",
+      "shortName": "Transparencia CPLT 2026",
+      "unit": "% cumplimiento",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 15,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "transparencia",
+        "transparencia activa",
+        "cplt",
+        "consejo para la transparencia",
+        "fiscalizacion municipal",
+        "probidad municipal",
+        "indice transparencia"
+      ]
+    },
+    {
+      "id": "fet_royalty_minero_2025_mclp",
+      "canonicalId": "comuna_fcm_pct",
+      "name": "Fondo de Equidad Territorial (FET) Royalty Minero 2025",
+      "shortName": "Royalty Minero FET 2025",
+      "unit": "M$ CLP",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 16,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "royalty",
+        "royalty minero",
+        "fondo de equidad territorial",
+        "fet",
+        "transferencias royalty",
+        "ley royalty minero"
+      ]
+    },
+    {
+      "id": "fet_royalty_minero_2024_mclp",
+      "canonicalId": "comuna_fcm_pct",
+      "name": "Fondo de Equidad Territorial (FET) Royalty Minero 2024",
+      "shortName": "Royalty Minero FET 2024",
+      "unit": "M$ CLP",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 16,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "royalty 2024",
+        "fet 2024",
+        "royalty minero 2024"
+      ]
+    },
+    {
+      "id": "ingresos_mun_bcn_2025_mclp",
+      "canonicalId": "comuna_presupuesto_mclp",
+      "name": "Ingresos Municipales Percibidos SINIM/BCN 2025",
+      "shortName": "Ingresos Mun. 2025",
+      "unit": "M$ CLP",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 15,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "ingresos municipales 2025",
+        "ingresos totales bcn",
+        "ingresos percibidos municipio"
+      ]
+    },
+    {
+      "id": "fndr_gore_2023_ejecutado_mclp",
+      "canonicalId": "comuna_fndr_mclp",
+      "name": "Inversión FNDR GORE Ejecutada por Comuna (datos.gob.cl 2023)",
+      "shortName": "FNDR Ejecutado Comunal",
+      "unit": "M$ CLP",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "fndr ejecutado",
+        "gasto actual fndr",
+        "inversion gore ejecutada",
+        "datos gob fndr"
+      ]
+    },
+    {
+      "id": "fndr_gore_2023_asignado_mclp",
+      "canonicalId": "comuna_fndr_mclp",
+      "name": "Inversión FNDR GORE Asignada por Comuna (datos.gob.cl 2023)",
+      "shortName": "FNDR Asignado Comunal",
+      "unit": "M$ CLP",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "fndr asignado comunal",
+        "cartera fndr por comuna",
+        "asignacion gore"
+      ]
+    },
+    {
+      "id": "fndr_gore_2023_ejecucion_pct",
+      "canonicalId": "comuna_fndr_mclp",
+      "name": "Tasa de Ejecución Presupuestaria FNDR por Comuna (%)",
+      "shortName": "Ejecución FNDR %",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa ejecucion fndr",
+        "porcentaje ejecucion fndr",
+        "cumplimiento gasto gore"
+      ]
+    },
+    {
+      "id": "fndr_gore_2023_proyectos_n",
+      "canonicalId": "comuna_fndr_mclp",
+      "name": "Iniciativas de Inversión FNDR GORE Financiadas (N)",
+      "shortName": "Proyectos FNDR GORE",
+      "unit": "proyectos",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "proyectos fndr",
+        "iniciativas fndr",
+        "cantidad proyectos gore"
+      ]
+    },
+    {
+      "id": "fondos_concursables_gore_2023_n",
+      "canonicalId": "comuna_fndr_mclp",
+      "name": "Proyectos Adjudicados Fondos Concursables Comunitarios GORE (8%)",
+      "shortName": "Fondos 8% GORE (N)",
+      "unit": "proyectos",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "fondos concursables",
+        "fondo 8 porciento",
+        "8% fndr",
+        "subvenciones comunitarias gore",
+        "vinculacion con la comunidad",
+        "fondo social gore"
+      ]
+    },
+    {
+      "id": "fondos_concursables_gore_2023_mclp",
+      "canonicalId": "comuna_fndr_mclp",
+      "name": "Monto Adjudicado Fondos Concursables Comunitarios GORE (M$)",
+      "shortName": "Monto Fondos 8% (M$)",
+      "unit": "M$ CLP",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "monto fondos concursables",
+        "plata 8 porciento",
+        "millones fondos 8%"
+      ]
+    },
+    {
+      "id": "participacion_presidencial_2025_2v_pct",
+      "canonicalId": "comuna_alcalde",
+      "name": "Participación Electoral 2da Vuelta Presidencial Dic 2025 (SERVEL)",
+      "shortName": "Participación 2V 2025",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 17,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "participacion electoral 2025",
+        "voto obligatorio",
+        "eleccion presidencial 2025",
+        "participacion segunda vuelta",
+        "votantes 2025"
+      ]
+    },
+    {
+      "id": "padron_electoral_nov_2025",
+      "canonicalId": "comuna_alcalde",
+      "name": "Padrón Electoral Definitivo Noviembre 2025 (SERVEL)",
+      "shortName": "Padrón Electoral 2025",
+      "unit": "electores",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Política",
+      "nodeId": 17,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "padron electoral",
+        "habilitados para votar",
+        "inscritos votar 2025"
+      ]
+    },
+    {
+      "id": "rsh_carencia_servicios_basicos_jun2026_pct",
+      "canonicalId": "comuna_pobreza_pct",
+      "name": "Personas en Hogares Carentes de Servicios Básicos (RSH Jun 2026)",
+      "shortName": "Carencia Serv. Básicos RSH",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "carencia servicios basicos",
+        "servicios basicos rsh",
+        "bidat rsh",
+        "hogares sin servicios basicos",
+        "registro social de hogares"
+      ]
+    },
+    {
+      "id": "rsh_hacinamiento_jun2026_pct",
+      "canonicalId": "comuna_pobreza_pct",
+      "name": "Hogares Hacinados en Registro Social de Hogares (Jun 2026)",
+      "shortName": "Hacinamiento RSH 2026",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "hacinamiento rsh",
+        "hogares hacinados",
+        "hacinamiento junio 2026"
+      ]
+    },
+    {
+      "id": "ruralidad_censo_2024_pct",
+      "canonicalId": "comuna_poblacion_2024",
+      "name": "Porcentaje de Población Rural Censo 2024 (INE)",
+      "shortName": "Ruralidad Censo 2024",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ruralidad",
+        "poblacion rural",
+        "porcentaje rural censo 2024",
+        "rural aysen"
+      ]
+    },
+    {
+      "id": "conexiones_fijas_subtel_jun2026_n",
+      "canonicalId": "wp02_internet_fijo_pct",
+      "name": "Conexiones Totales de Internet Fija SUBTEL (Junio 2026)",
+      "shortName": "Conexiones Fijas SUBTEL",
+      "unit": "conexiones",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Conectividad",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "conexiones subtel",
+        "conexiones internet fija",
+        "subtel junio 2026",
+        "ftth",
+        "fibra optica",
+        "starlink",
+        "accesos internet fijo"
+      ]
+    },
+    {
+      "id": "conexiones_residenciales_subtel_jun2026_n",
+      "canonicalId": "wp02_internet_fijo_pct",
+      "name": "Conexiones Residenciales de Internet Fija SUBTEL (Junio 2026)",
+      "shortName": "Conexiones Resid. SUBTEL",
+      "unit": "conexiones",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Conectividad",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "internet residencial subtel",
+        "hogares internet fijo subtel"
+      ]
+    },
+    {
+      "id": "variacion_conexiones_2015_2026_pct",
+      "canonicalId": "wp02_internet_fijo_pct",
+      "name": "Crecimiento Conexiones Fijas de Internet 2015–Jun 2026 (SUBTEL)",
+      "shortName": "Crecimiento Internet 15-26",
+      "unit": "%",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Conectividad",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "crecimiento internet",
+        "expansion conectividad digital",
+        "aumento fibra optica"
+      ]
     }
   ],
   "nodes": [
@@ -2075,7 +2349,7 @@
     {
       "id": 2,
       "hub": "turismo",
-      "title": "Zonas de Interes Turistico (3 ZOIT)",
+      "title": "Zonas de Interes Turistico (4 ZOIT)",
       "chartType": "bar",
       "synonyms": [
         "zoit",
@@ -2139,10 +2413,11 @@
     {
       "id": 7,
       "hub": "salmonicultura",
-      "title": "Matriz de 12 Holdings Madres y Concesiones",
+      "title": "Matriz de 13 Holdings Madres y Concesiones",
       "chartType": "bar",
       "synonyms": [
         "12 holdings",
+        "13 holdings",
         "holdings salmoneros",
         "duenos de las concesiones",
         "aquachile",

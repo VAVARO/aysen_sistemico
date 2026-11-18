@@ -2,168 +2,99 @@
   "descripcion": "Catastro de autoridades locales y regionales electas en la Región de Aysén",
   "fuente": "SERVEL / BCN Reportes Parlamentarios",
   "url_fuente": "https://www.servel.cl/",
-  "periodo_electoral": "2021-2024 / 2024-2028",
+  "periodo_electoral": "Presidencial y Parlamentaria 2026-2030/2034 · Municipal y GORE 2024-2028 · CORE 2025-2029",
   "senadores_circunscripcion_14": [
     {
-      "nombre": "David Sandoval Plaza",
-      "partido": "UDI",
-      "periodo": "2018-2026"
+      "nombre": "Miguel Ángel Calisto Águila",
+      "partido": "Independiente / FREVS",
+      "periodo": "2026-2034"
     },
     {
       "nombre": "Ximena Órdenes Neira",
-      "partido": "PPD / IND",
-      "periodo": "2018-2026"
+      "partido": "Independiente / PPD",
+      "periodo": "2026-2034"
     }
   ],
   "diputados_distrito_27": [
     {
-      "nombre": "Miguel Ángel Calisto Águila",
-      "partido": "Demócratas",
-      "periodo": "2022-2026"
-    },
-    {
-      "nombre": "Marcia Raphael Mora",
-      "partido": "RN",
-      "periodo": "2022-2026"
+      "nombre": "Alejandra Valdebenito Torres",
+      "partido": "UDI / Chile Grande y Unido",
+      "periodo": "2026-2030"
     },
     {
       "nombre": "René Alinco Bustos",
-      "partido": "Independiente",
-      "periodo": "2022-2026"
+      "partido": "Independiente / FREVS",
+      "periodo": "2026-2030"
+    },
+    {
+      "nombre": "Andrea Macías Palma",
+      "partido": "PS / Unidad por Chile",
+      "periodo": "2026-2030"
     }
   ],
-  "gobernador_regional": "Andrea Macías Palma / Marcelo Santana Vargas",
-  "delegado_presidencial": "Rodrigo Araya Morales",
+  "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos, 2025-2029)",
+  "delegado_presidencial": "Luz María Vicuña Figueroa (desde 11 marzo 2026; sucesora de Jorge Díaz Guzmán 2024-2026)",
   "alcaldes_comunales": [
     {
-      "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
-      "nombre_comuna": "Coyhaique",
-      "autoridad": {
-        "alcalde_nombre": "Carlos Gatica Villegas",
-        "alcalde_partido_pacto": "Partido Demócrata Cristiano (PDC) / Chile Vamos y Centro Democrático",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 84.2,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Coyhaique",
+      "alcalde": "Carlos Gatica Villegas",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-02",
       "comuna_ine": "11102",
-      "nombre_comuna": "Lago Verde",
-      "autoridad": {
-        "alcalde_nombre": "Claudio Fica / Nelson Opazo López",
-        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 87.5,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Lago Verde",
+      "alcalde": "Claudia Valdés Vásquez",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
-      "nombre_comuna": "Aysén",
-      "autoridad": {
-        "alcalde_nombre": "Julio Uribe Alvarado",
-        "alcalde_partido_pacto": "Independiente / Por Chile y sus Regiones",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 82.8,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Aysén",
+      "alcalde": "Luis Martínez Gallardo",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
-      "nombre_comuna": "Cisnes",
-      "autoridad": {
-        "alcalde_nombre": "Francisco Roncagliolo Lepio",
-        "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 83.1,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Cisnes",
+      "alcalde": "Francisco Roncagliolo Lepio",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-05",
       "comuna_ine": "11203",
-      "nombre_comuna": "Guaitecas",
-      "autoridad": {
-        "alcalde_nombre": "Marcos Silva Miranda",
-        "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 85.9,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Guaitecas",
+      "alcalde": "Bans Puinao Carimoney",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-06",
-      "comuna_ine": "11401",
-      "nombre_comuna": "Chile Chico",
-      "autoridad": {
-        "alcalde_nombre": "Luperciano Muñoz González",
-        "alcalde_partido_pacto": "Independiente",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 83.6,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
-    },
-    {
-      "codigo_comuna": "CL-XI-07",
-      "comuna_ine": "11402",
-      "nombre_comuna": "Río Ibáñez",
-      "autoridad": {
-        "alcalde_nombre": "Marcelo Santana Vargas / Alcaldía en ejercicio",
-        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 86.4,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
-    },
-    {
-      "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
-      "nombre_comuna": "Cochrane",
-      "autoridad": {
-        "alcalde_nombre": "Patricio Ulloa Georgia / Jorge Calderón Núñez",
-        "alcalde_partido_pacto": "UDI / Chile Vamos (Ulloa) / Partido Radical (Calderón)",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 85.2,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Cochrane",
+      "alcalde": "Patricio Ulloa Georgia",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-09",
       "comuna_ine": "11302",
-      "nombre_comuna": "O'Higgins",
-      "autoridad": {
-        "alcalde_nombre": "Roberto Recabal Cárcamo / Claudio Fica",
-        "alcalde_partido_pacto": "Independiente / Chile Vamos",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 88.0,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "O'Higgins",
+      "alcalde": "José Claudio Fica Gómez",
+      "periodo": "2024-2028"
     },
     {
-      "codigo_comuna": "CL-XI-10",
       "comuna_ine": "11303",
-      "nombre_comuna": "Tortel",
-      "autoridad": {
-        "alcalde_nombre": "Abel Becerra Vidal",
-        "alcalde_partido_pacto": "Independiente / Unidos por la Dignidad",
-        "periodo_alcaldia": "2021-2024 / 2024-2028",
-        "concejo_municipal_cupos": 6,
-        "participacion_electoral_pct": 87.3,
-        "fuente_electoral": "SERVEL Elecciones Municipales / BCN Reportes Comunales"
-      }
+      "comuna": "Tortel",
+      "alcalde": "Marisela Jiménez Cruces",
+      "periodo": "2024-2028"
+    },
+    {
+      "comuna_ine": "11401",
+      "comuna": "Chile Chico",
+      "alcalde": "Ariel Keim Hermosilla",
+      "periodo": "2024-2028"
+    },
+    {
+      "comuna_ine": "11402",
+      "comuna": "Río Ibáñez",
+      "alcalde": "Marcelo Daniel Jélvez Cárdenas",
+      "periodo": "2024-2028"
     }
-  ]
+  ],
+  "fecha_corte": "2026-11-17"
 }

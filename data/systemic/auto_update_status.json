@@ -2,7 +2,7 @@
   "frequency": "Mensual (día 1 de cada mes)",
   "lastRun": "2026-11-02T12:13:30+00:00",
   "activeApiConnectors": 7,
-  "totalSources": 33,
+  "totalSources": 38,
   "summary": {
     "live_api": 5,
     "curated_fallback": 6,

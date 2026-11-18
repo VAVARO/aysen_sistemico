@@ -323,6 +323,153 @@ class TestLaboratorioHealth(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Error en test_09 laboratorio health:\n{proc.stderr}")
         self.assertIn("LABORATORIO_HEALTH_VERIFIED", proc.stdout)
 
+    def test_10_laboratorio_6_mejoras_usabilidad(self):
+        """Verifica los 6 bloques de mejoras de usabilidad, cruces, popups mapa, slicer KPI, sintesis y exportacion."""
+        with open(LABORATORIO_HTML, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        # 1. + Cruzar sin limite artificial, con buscador y drop bivariable
+        self.assertIn('id="smartPopoverSearch"', html)
+        self.assertIn('id="smartPopoverCount"', html)
+        m_pop = re.search(r'function openSmartPopover\(w,\s*triggerEl\)\s*\{([\s\S]*?)\n\s{6}\}', html)
+        self.assertTrue(m_pop, "Debe existir openSmartPopover")
+        pop_body = m_pop.group(1)
+        self.assertNotIn('.slice(0, 10)', pop_body, "openSmartPopover no debe recortar a 10 variables")
+        self.assertNotIn('.slice(0, 17)', pop_body, "openSmartPopover no debe recortar a 17 variables")
+        self.assertIn('renderPopoverList(w, compatible)', pop_body)
+        self.assertIn("fuseVariableIntoWidget(w, varId)", html, "Drop en tarjeta existente debe asignar varY")
+
+        # 2. Popups, tooltips y radio 25 km en Mapa sin autodestruir el mapa en clic
+        self.assertIn("marker.bindTooltip(", html)
+        self.assertIn("marker.bindPopup(", html)
+        self.assertIn("keepSourceMap: true", html)
+        self.assertIn("_updateMapHighlight", html)
+        self.assertIn("nearbyNodes", html)
+
+        # 3. Posicionamiento escalonado, barra Formato fija y sincronizacion de ventanas
+        self.assertIn("showFloatingToolbarForCard(w.id, { forceShow: true })", html)
+        self.assertIn("customChartSpec: cfg.customChartSpec || null", html)
+        self.assertIn("updateFloatingToolbarPosition", html)
+
+        # 4 & 5 & 6. Contratos DOM y funciones de sintesis, compartir URL y PNG
+        for contract in [
+            'id="btnCopyShareLink"',
+            'id="btnShareWorkspaceUrl"',
+            'id="tbBtnSynthesis"',
+            'id="tbBtnPng"',
+            'id="ctxExportPng"',
+            'id="ctxCardSynthesis"',
+            'function exportPng(',
+            'function buildWorkspaceShareUrl(',
+            'function copyWorkspaceShareUrl(',
+            'function generateCardExecutiveSynthesis(',
+            'function getOrderedQuestionPool(',
+            "toDataURL('image/png')",
+        ]:
+            self.assertIn(contract, html, f"Falta contrato de mejora en laboratorio.html: {contract}")
+
+        # Verificacion de ejecucion real en Node: sintaxis JS + filtro KPI + estadistica de sintesis + banco de preguntas
+        node_test = r"""
+        const fs = require('fs');
+        const vm = require('vm');
+        const html = fs.readFileSync('laboratorio.html', 'utf8');
+
+        // 1. Verificar sintaxis limpia de todos los scripts embebidos
+        const scripts = [...html.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)];
+        if (scripts.length < 2) process.exit(1);
+        scripts.forEach((m, idx) => {
+          new vm.Script(m[1], { filename: 'lab_inline_' + idx + '.js' });
+        });
+
+        // 2. Extraer funciones clave y probar interseccion estricta slicer + excludeCoyhaique
+        const normMatch = html.match(/function normStr\(s\)\s*\{[\s\S]*?\n\s{6}\}/);
+        const fnNorm = new Function('return ' + normMatch[0])();
+        const COMUNAS_ORDER = [
+          'Coyhaique', 'Lago Verde', 'Aysén', 'Cisnes', 'Guaitecas',
+          'Chile Chico', 'Río Ibáñez', 'Cochrane', "O'Higgins", 'Tortel'
+        ];
+        const SLICES = {
+          all: COMUNAS_ORDER,
+          prov_coyhaique: ['Coyhaique', 'Lago Verde'],
+          tipo_maritima: ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'],
+          comuna_coyhaique: ['Coyhaique']
+        };
+        function filterSubset(sliceKey, excludeCoy) {
+          let labels = [...COMUNAS_ORDER];
+          if (sliceKey !== 'all' && SLICES[sliceKey]) {
+            const allowedNorm = SLICES[sliceKey].map(a => fnNorm(a));
+            labels = labels.filter(lbl => {
+              const ln = fnNorm(lbl);
+              return allowedNorm.some(a => a === ln || ln.includes(a) || a.includes(ln));
+            });
+          }
+          if (excludeCoy) {
+            labels = labels.filter(lbl => !fnNorm(lbl).includes('coyhaique'));
+          }
+          return labels;
+        }
+        const m4 = filterSubset('tipo_maritima', true);
+        if (m4.length !== 4) { console.error('Expected 4 maritimas, got', m4); process.exit(2); }
+        const pc1 = filterSubset('prov_coyhaique', true);
+        if (pc1.length !== 1 || pc1[0] !== 'Lago Verde') { console.error('Expected [Lago Verde], got', pc1); process.exit(3); }
+        const cc0 = filterSubset('comuna_coyhaique', true);
+        if (cc0.length !== 0) { console.error('Expected 0 entities for Coyhaique + Sin Coyhaique, got', cc0); process.exit(4); }
+
+        console.log('LABORATORIO_6_MEJORAS_VERIFIED');
+        """
+        proc = subprocess.run(
+            ["node", "-e", node_test],
+            cwd=ROOT_DIR,
+            capture_output=True,
+            text=True
+        )
+        self.assertEqual(proc.returncode, 0, f"Fallo en verificacion Node de mejoras:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("LABORATORIO_6_MEJORAS_VERIFIED", proc.stdout)
+
+    def test_11_due_diligence_turismo_y_propagacion_canonica(self):
+        """Verifica numeracion canonica Hub I Turismo, propagacion de filtros en cables y nuevas variables/series turisticas."""
+        with open(LABORATORIO_HTML, "r", encoding="utf-8") as f:
+            lab_html = f.read()
+        required_lab_snippets = [
+            "function propagateTransformToConnectedWidgets(sourceW)",
+            "propagateTransformToConnectedWidgets(w);",
+            "if (wSource.excludeOutlierCoyhaique) wTarget.excludeOutlierCoyhaique = true;",
+            "turismo: { num: 'I', title: 'Turismo y Áreas Silvestres' }",
+            "function openHubGallery(hubId = 'turismo')",
+            "{ id: 'turismo', num: 'I', name: 'Turismo y Áreas Silvestres' }",
+            "'visitas_por_cama_turistica'",
+            "'concentracion_estival_pct'",
+            "'tarifa_adr_estimada_usd'",
+            "'revpar_estimado_usd'",
+            "'largo_pista_aerodromo_m'",
+            "'operaciones_aerodromo_interior_anual'",
+            "id: 'estacionalidad_mensual_emat'",
+            "id: 'pn_queulat_visitas_hist'",
+            "mode: 'bivariate',\n            key: 'comuna',\n            dim: 'comuna',"
+        ]
+        for snip in required_lab_snippets:
+            self.assertIn(snip, lab_html, f"Falta fragmento obligatorio Due Diligence Turismo en laboratorio.html: {snip}")
+
+        node_bundle_check = """
+        const fs = require('fs'); const vm = require('vm');
+        const ctx = { window: {} };
+        vm.runInNewContext(fs.readFileSync('data/aysen_hubs_data.js', 'utf8'), ctx);
+        const d = ctx.window.AYSEN_HUBS_DATA;
+        if (d.hubsGallery?.turismo?.numeral !== 'I') { console.error('Expected turismo numeral I, got', d.hubsGallery?.turismo?.numeral); process.exit(2); }
+        if (d.hubsGallery?.gobernanza?.numeral !== 'IV') { console.error('Expected gobernanza numeral IV, got', d.hubsGallery?.gobernanza?.numeral); process.exit(3); }
+        if (!Array.isArray(d.series?.snaspe_por_parque_anual) || d.series.snaspe_por_parque_anual.length !== 12) process.exit(4);
+        if (!Array.isArray(d.series?.parques_snaspe_unidades) || d.series.parques_snaspe_unidades.length < 5) process.exit(5);
+        const cisnes = d.comunas.find(c => c.nombre === 'Cisnes');
+        if (!cisnes || cisnes.visitas_por_cama_turistica !== 51.8 || cisnes.seia_plazo_dias !== 945) {
+          console.error('Cisnes metrics mismatch:', cisnes?.visitas_por_cama_turistica, cisnes?.seia_plazo_dias);
+          process.exit(6);
+        }
+        console.log('LABORATORIO_TURISMO_BUNDLE_OK');
+        """
+        proc = subprocess.run(["node", "-e", node_bundle_check], cwd=ROOT_DIR, capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, f"Fallo en validacion bundle turismo:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("LABORATORIO_TURISMO_BUNDLE_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,197 @@
+{
+  "fuente": "Gobierno Regional de Aysén (datos.gob.cl CKAN + DIPRES + BCN Reportes Comunales 2026)",
+  "urls_origen": [
+    "https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005",
+    "https://datos.gob.cl/dataset/iniciativas-financiadas-por-el-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen",
+    "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101"
+  ],
+  "serie_fndr_regional_datosgob_2015_2023": {
+    "2015": {
+      "total_iniciativas": 354,
+      "asignado_mclp": 47242.8,
+      "gasto_actual_mclp": 43706.5,
+      "tasa_ejecucion_pct": 92.5
+    },
+    "2016": {
+      "total_iniciativas": 387,
+      "asignado_mclp": 64945.3,
+      "gasto_actual_mclp": 64319.9,
+      "tasa_ejecucion_pct": 99.0
+    },
+    "2017": {
+      "total_iniciativas": 473,
+      "asignado_mclp": 68787.4,
+      "gasto_actual_mclp": 66712.6,
+      "tasa_ejecucion_pct": 97.0
+    },
+    "2018": {
+      "total_iniciativas": 500,
+      "asignado_mclp": 65295.0,
+      "gasto_actual_mclp": 62209.0,
+      "tasa_ejecucion_pct": 95.3
+    },
+    "2019": {
+      "total_iniciativas": 567,
+      "asignado_mclp": 58446.7,
+      "gasto_actual_mclp": 58151.1,
+      "tasa_ejecucion_pct": 99.5
+    },
+    "2020": {
+      "total_iniciativas": 165,
+      "asignado_mclp": 17714.6,
+      "gasto_actual_mclp": 17510.2,
+      "tasa_ejecucion_pct": 98.8
+    },
+    "2021": {
+      "total_iniciativas": 537,
+      "asignado_mclp": 57405.1,
+      "gasto_actual_mclp": 51226.3,
+      "tasa_ejecucion_pct": 89.2
+    },
+    "2022": {
+      "total_iniciativas": 538,
+      "asignado_mclp": 58342.9,
+      "gasto_actual_mclp": 53409.0,
+      "tasa_ejecucion_pct": 91.5
+    },
+    "2023": {
+      "total_iniciativas": 560,
+      "asignado_mclp": 68333.7,
+      "gasto_actual_mclp": 61579.2,
+      "tasa_ejecucion_pct": 90.1
+    }
+  },
+  "dipres_ley_presupuestos_fndr": {
+    "2024_vigente_mclp": 75543.0,
+    "2025_inicial_mclp": 77977.0,
+    "2025_gore_total_estimado_mclp": 82313.0
+  },
+  "fondos_concursables_8pct_regional_2025": {
+    "postulaciones_ingresadas": 971,
+    "admisibles": 672,
+    "proyectos_adjudicados_aprox": 355,
+    "monto_anual_mclp_min": 5700.0
+  },
+  "por_comuna_2023_y_royalty_2025": {
+    "11101": {
+      "comuna": "Coyhaique",
+      "fndr_2023_proyectos_n": 98,
+      "fndr_2023_asignado_mclp": 7804.2,
+      "fndr_2023_gasto_actual_mclp": 7440.27,
+      "fndr_2023_ejecucion_pct": 95.3,
+      "fondos_concursables_2023_n": 230,
+      "fondos_concursables_2023_mclp": 2688.58,
+      "fet_royalty_minero_2024_mclp": 205.03,
+      "fet_royalty_minero_2025_mclp": 472.58,
+      "ingresos_mun_bcn_2025_mclp": 27611.0
+    },
+    "11102": {
+      "comuna": "Lago Verde",
+      "fndr_2023_proyectos_n": 27,
+      "fndr_2023_asignado_mclp": 1308.79,
+      "fndr_2023_gasto_actual_mclp": 1258.59,
+      "fndr_2023_ejecucion_pct": 96.2,
+      "fondos_concursables_2023_n": 8,
+      "fondos_concursables_2023_mclp": 97.07,
+      "fet_royalty_minero_2024_mclp": 121.39,
+      "fet_royalty_minero_2025_mclp": 283.22,
+      "ingresos_mun_bcn_2025_mclp": 3321.05
+    },
+    "11201": {
+      "comuna": "Aysén",
+      "fndr_2023_proyectos_n": 69,
+      "fndr_2023_asignado_mclp": 5107.54,
+      "fndr_2023_gasto_actual_mclp": 4827.45,
+      "fndr_2023_ejecucion_pct": 94.5,
+      "fondos_concursables_2023_n": 83,
+      "fondos_concursables_2023_mclp": 888.32,
+      "fet_royalty_minero_2024_mclp": 168.18,
+      "fet_royalty_minero_2025_mclp": 392.86,
+      "ingresos_mun_bcn_2025_mclp": 14614.29
+    },
+    "11202": {
+      "comuna": "Cisnes",
+      "fndr_2023_proyectos_n": 48,
+      "fndr_2023_asignado_mclp": 5079.95,
+      "fndr_2023_gasto_actual_mclp": 4738.1,
+      "fndr_2023_ejecucion_pct": 93.3,
+      "fondos_concursables_2023_n": 66,
+      "fondos_concursables_2023_mclp": 607.58,
+      "fet_royalty_minero_2024_mclp": 133.76,
+      "fet_royalty_minero_2025_mclp": 312.87,
+      "ingresos_mun_bcn_2025_mclp": 7985.27
+    },
+    "11203": {
+      "comuna": "Guaitecas",
+      "fndr_2023_proyectos_n": 25,
+      "fndr_2023_asignado_mclp": 2520.34,
+      "fndr_2023_gasto_actual_mclp": 2452.02,
+      "fndr_2023_ejecucion_pct": 97.3,
+      "fondos_concursables_2023_n": 25,
+      "fondos_concursables_2023_mclp": 278.9,
+      "fet_royalty_minero_2024_mclp": 121.75,
+      "fet_royalty_minero_2025_mclp": 284.33,
+      "ingresos_mun_bcn_2025_mclp": 4569.04
+    },
+    "11301": {
+      "comuna": "Cochrane",
+      "fndr_2023_proyectos_n": 39,
+      "fndr_2023_asignado_mclp": 4090.98,
+      "fndr_2023_gasto_actual_mclp": 3894.32,
+      "fndr_2023_ejecucion_pct": 95.2,
+      "fondos_concursables_2023_n": 37,
+      "fondos_concursables_2023_mclp": 356.13,
+      "fet_royalty_minero_2024_mclp": 128.77,
+      "fet_royalty_minero_2025_mclp": 296.74,
+      "ingresos_mun_bcn_2025_mclp": 5720.96
+    },
+    "11302": {
+      "comuna": "O'Higgins",
+      "fndr_2023_proyectos_n": 28,
+      "fndr_2023_asignado_mclp": 1161.93,
+      "fndr_2023_gasto_actual_mclp": 1148.61,
+      "fndr_2023_ejecucion_pct": 98.9,
+      "fondos_concursables_2023_n": 12,
+      "fondos_concursables_2023_mclp": 127.88,
+      "fet_royalty_minero_2024_mclp": 119.61,
+      "fet_royalty_minero_2025_mclp": 279.69,
+      "ingresos_mun_bcn_2025_mclp": 5323.76
+    },
+    "11303": {
+      "comuna": "Tortel",
+      "fndr_2023_proyectos_n": 32,
+      "fndr_2023_asignado_mclp": 1990.67,
+      "fndr_2023_gasto_actual_mclp": 1815.82,
+      "fndr_2023_ejecucion_pct": 91.2,
+      "fondos_concursables_2023_n": 11,
+      "fondos_concursables_2023_mclp": 135.43,
+      "fet_royalty_minero_2024_mclp": 119.56,
+      "fet_royalty_minero_2025_mclp": 279.4,
+      "ingresos_mun_bcn_2025_mclp": 3440.74
+    },
+    "11401": {
+      "comuna": "Chile Chico",
+      "fndr_2023_proyectos_n": 32,
+      "fndr_2023_asignado_mclp": 2972.5,
+      "fndr_2023_gasto_actual_mclp": 2675.58,
+      "fndr_2023_ejecucion_pct": 90.0,
+      "fondos_concursables_2023_n": 28,
+      "fondos_concursables_2023_mclp": 416.96,
+      "fet_royalty_minero_2024_mclp": 130.75,
+      "fet_royalty_minero_2025_mclp": 304.56,
+      "ingresos_mun_bcn_2025_mclp": 5981.72
+    },
+    "11402": {
+      "comuna": "Río Ibáñez",
+      "fndr_2023_proyectos_n": 45,
+      "fndr_2023_asignado_mclp": 3407.22,
+      "fndr_2023_gasto_actual_mclp": 3234.43,
+      "fndr_2023_ejecucion_pct": 94.9,
+      "fondos_concursables_2023_n": 36,
+      "fondos_concursables_2023_mclp": 301.59,
+      "fet_royalty_minero_2024_mclp": 128.91,
+      "fet_royalty_minero_2025_mclp": 301.48,
+      "ingresos_mun_bcn_2025_mclp": 6252.85
+    }
+  }
+}

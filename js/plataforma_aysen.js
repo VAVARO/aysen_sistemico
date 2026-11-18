@@ -117,7 +117,7 @@
   };
 
   // ============================================================================
-  // 3. CATÁLOGO COMPLETO DE VARIABLES CUANTITATIVAS (>35 VARIABLES REALES)
+  // 3. CATÁLOGO COMPLETO DE VARIABLES CUANTITATIVAS (>180 VARIABLES REALES)
   // ============================================================================
   const VARIABLE_CATALOG = [
     // --- 1. Demografía y Territorio (Censo 2024 / CASEN) ---
@@ -1179,7 +1179,7 @@
       });
     }
 
-    // 3. Buscar en Variables Cuantitativas (>35 variables)
+    // 3. Buscar en Variables Cuantitativas (>180 variables)
     VARIABLE_CATALOG.forEach(v => {
       if (v.name.toLowerCase().includes(q) || v.id.toLowerCase().includes(q) || v.group.toLowerCase().includes(q)) {
         matches.variables.push({
