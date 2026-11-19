@@ -16,6 +16,7 @@ Verifica el Sistema Cartográfico Multicapa y Bivariado en:
 
 import json
 import math
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -142,6 +143,90 @@ class TestSpatialMultilayerMap(unittest.TestCase):
         self.assertIn("map-bivariate-legend", self.lab_html)
         self.assertIn("resolveActiveSpatialLayerKey", self.lab_html)
         self.assertNotIn("Visualización Espacial No Aplicable", self.lab_html)
+
+    def test_06_map_audit_polygons_padron745_lines_and_ux_fixes(self):
+        """Verifica P0-P2 geoespacial: polígonos SNASPE/ZOIT/ECMPO, corredores Ruta 7/Barcazas, padrón 745 y panes UX."""
+        cov = self.bundle.get("coveragePolygonsGeoJSON", {})
+        self.assertEqual(cov.get("type"), "FeatureCollection")
+        cov_feats = cov.get("features", [])
+        self.assertEqual(len(cov_feats), 18, f"Se esperaban 18 polígonos de cobertura, hay {len(cov_feats)}")
+        cov_layers = {f.get("properties", {}).get("coverageLayer") for f in cov_feats}
+        self.assertEqual(cov_layers, {"snaspe_polygons", "zoit_polygons", "ecmpo_polygons"})
+        for feat in cov_feats:
+            for lon, lat in feat.get("geometry", {}).get("coordinates", [[]])[0]:
+                self.assertTrue(-49.5 <= lat <= -43.5 and -76.0 <= lon <= -71.0, f"Polígono fuera de rango en {feat.get('properties', {}).get('id')}")
+
+        lines = self.bundle.get("connectivityLinesGeoJSON", {})
+        self.assertEqual(lines.get("type"), "FeatureCollection")
+        line_feats = lines.get("features", [])
+        self.assertEqual(len(line_feats), 12, f"Se esperaban 12 corredores lineales, hay {len(line_feats)}")
+        self.assertEqual({f.get("properties", {}).get("lineLayer") for f in line_feats}, {"ruta7_tramos", "rutas_barcazas"})
+        carpetas = {f.get("properties", {}).get("estado_carpeta") for f in line_feats if f.get("properties", {}).get("lineLayer") == "ruta7_tramos"}
+        self.assertEqual(carpetas, {"Pavimento", "Ripio"})
+        for feat in line_feats:
+            for lon, lat in feat.get("geometry", {}).get("coordinates", []):
+                self.assertTrue(-49.5 <= lat <= -43.5 and -76.0 <= lon <= -71.0, f"Corredor fuera de rango en {feat.get('properties', {}).get('id')}")
+
+        pack = self.bundle.get("concesionesPadronCompact", {})
+        self.assertEqual(pack.get("total"), 745)
+        self.assertEqual(pack.get("activos"), 245)
+        self.assertEqual(pack.get("inactivos"), 500)
+        self.assertEqual(pack.get("en_snaspe"), 312)
+        self.assertEqual(len(pack.get("rows", [])), 745)
+
+        by_layer = self.bundle.get("spatialNodesByLayer", {})
+        for key in ["aerodromos_dgac", "caletas_puertos", "mineria_faenas", "proyectos_seia_puros"]:
+            self.assertIn(key, by_layer, f"Falta capa desagregada {key}")
+            self.assertGreater(len(by_layer[key]), 0, f"Capa desagregada {key} vacía")
+
+        for token in [
+            "getHydratedSpatialLayerNodes",
+            "computeEffectiveMapOverlays",
+            "snaspePane",
+            "routesPane",
+            "buffersPane",
+            "nodesPane",
+            "map-aqua-filter-select",
+            "map-multilayer-popover",
+            "btn-map-expand-toggle",
+            "scrollWheelZoom",
+            "map.fitBounds",
+        ]:
+            self.assertIn(token, self.lab_html, f"Falta control o mecanismo {token} en laboratorio.html")
+
+        # Verificación runtime en Node del hidratador del padrón de 745 concesiones y cálculo de overlays
+        start_tok = "const SPATIAL_LAYERS_META ="
+        end_tok = "function haversineDistanceKm("
+        s_idx = self.lab_html.find(start_tok)
+        e_idx = self.lab_html.find(end_tok)
+        self.assertTrue(s_idx != -1 and e_idx != -1 and e_idx > s_idx)
+        js_snippet = self.lab_html[s_idx:e_idx]
+        node_test = f"""
+        const fs = require('fs');
+        const bundleCode = fs.readFileSync({json.dumps(str(ROOT / "data" / "aysen_hubs_data.js"))}, 'utf8');
+        const window = {{}};
+        const AppState = {{ catalogItems: [] }};
+        eval(bundleCode);
+        {js_snippet}
+        const pad = getHydratedSpatialLayerNodes('concesiones_acuicolas_padron');
+        if (!Array.isArray(pad) || pad.length !== 745) throw new Error('Padron length mismatch: ' + (pad && pad.length));
+        const act = pad.filter(n => n.estado_operativo === 'Activo').length;
+        const sn = pad.filter(n => n.en_snaspe).length;
+        if (act !== 245 || sn !== 312) throw new Error(`Counts mismatch act=${{act}} sn=${{sn}}`);
+        pad.forEach(n => {{
+          if (!(n.lat >= -49.5 && n.lat <= -43.5 && n.lon >= -76.0 && n.lon <= -71.0)) {{
+            throw new Error('Padron node out of Aysen bounds: ' + n.id);
+          }}
+        }});
+        const ovParques = computeEffectiveMapOverlays({{}}, 'parques_snaspe');
+        if (!ovParques.includes('snaspe_polygons') || !ovParques.includes('zoit_polygons')) {{
+          throw new Error('parques_snaspe should enable snaspe_polygons & zoit_polygons automatically');
+        }}
+        console.log('RUNTIME_OK');
+        """
+        proc = subprocess.run(["node", "-e", node_test], capture_output=True, text=True, check=False)
+        self.assertEqual(proc.returncode, 0, f"Fallo en test Node runtime de mapas:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("RUNTIME_OK", proc.stdout)
 
 
 if __name__ == "__main__":

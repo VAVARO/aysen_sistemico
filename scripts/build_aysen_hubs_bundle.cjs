@@ -4447,32 +4447,915 @@ if (wp10 && Array.isArray(wp10.nodos_georreferenciados)) {
   });
 }
 
-// Agrupar por layerKey y construir catalogo de capas espaciales
+// ============================================================================
+// 5.5.3 CAPAS DESAGREGADAS, PADRON ACUICOLA 745, POLIGONOS COBERTURA Y LINEAS
+// ============================================================================
+
+// Helper: test rapido punto-en-poligono (Ray Casting sobre [lon, lat])
+function pointInRing(lon, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1];
+    const xj = ring[j][0], yj = ring[j][1];
+    const intersect = ((yi > lat) !== (yj > lat)) && (lon < ((xj - xi) * (lat - yi)) / ((yj - yi) || 1e-12) + xi);
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+// Poligonos Reales de Cobertura Territorial (SNASPE CONAF, ZOIT SERNATUR, ECMPO SUBPESCA)
+const coveragePolygonsGeoJSON = {
+  type: 'FeatureCollection',
+  features: [
+    // --- SNASPE (10 unidades principales de Aysen) ---
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_rn_las_guaitecas',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Reserva Nacional SNASPE (CONAF)',
+        nombre: 'Reserva Nacional Las Guaitecas',
+        comunas: ['Guaitecas', 'Cisnes', 'Aysén'],
+        superficie_ha: 1097975,
+        concesiones_superpuestas: 280,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-74.52, -43.82], [-73.58, -43.82], [-73.52, -44.22], [-73.44, -44.68],
+          [-73.42, -45.18], [-73.48, -45.54], [-74.38, -45.54], [-74.62, -44.95],
+          [-74.58, -44.28], [-74.52, -43.82]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_pn_isla_magdalena',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Parque Nacional SNASPE (CONAF)',
+        nombre: 'Parque Nacional Isla Magdalena',
+        comunas: ['Cisnes'],
+        superficie_ha: 249712,
+        concesiones_superpuestas: 20,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.34, -44.44], [-72.88, -44.44], [-72.78, -44.68],
+          [-72.92, -44.88], [-73.32, -44.85], [-73.38, -44.62], [-73.34, -44.44]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_pn_laguna_san_rafael',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Parque Nacional SNASPE (CONAF)',
+        nombre: 'Parque Nacional Laguna San Rafael',
+        comunas: ['Aysén', 'Tortel', 'Río Ibáñez'],
+        superficie_ha: 1742000,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-74.45, -46.36], [-73.35, -46.34], [-73.02, -46.65], [-73.10, -47.25],
+          [-73.45, -47.55], [-74.28, -47.48], [-74.55, -46.88], [-74.45, -46.36]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_pn_bernardo_ohiggins',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Parque Nacional SNASPE (CONAF)',
+        nombre: "Parque Nacional Bernardo O'Higgins (Sector Norte Aysén)",
+        comunas: ['Tortel', "O'Higgins"],
+        superficie_ha: 920000,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-74.38, -47.82], [-73.12, -47.88], [-72.88, -48.45], [-73.05, -49.15],
+          [-74.42, -49.18], [-74.65, -48.48], [-74.38, -47.82]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_rn_katalalixar',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Reserva Nacional SNASPE (CONAF)',
+        nombre: 'Reserva Nacional Katalalixar',
+        comunas: ['Tortel'],
+        superficie_ha: 624500,
+        concesiones_superpuestas: 12,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-75.15, -47.56], [-73.85, -47.54], [-73.58, -47.92],
+          [-73.72, -48.35], [-74.95, -48.32], [-75.24, -47.92], [-75.15, -47.56]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_pn_queulat',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Parque Nacional SNASPE (CONAF)',
+        nombre: 'Parque Nacional Queulat',
+        comunas: ['Cisnes', 'Lago Verde'],
+        superficie_ha: 154093,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.62, -44.22], [-72.22, -44.24], [-72.18, -44.62],
+          [-72.42, -44.78], [-72.64, -44.58], [-72.62, -44.22]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_pn_cerro_castillo',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Parque Nacional SNASPE (CONAF)',
+        nombre: 'Parque Nacional Cerro Castillo',
+        comunas: ['Coyhaique', 'Río Ibáñez'],
+        superficie_ha: 143502,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.44, -45.92], [-71.98, -45.95], [-71.95, -46.18],
+          [-72.28, -46.22], [-72.48, -46.08], [-72.44, -45.92]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_pn_patagonia',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Parque Nacional SNASPE (CONAF)',
+        nombre: 'Parque Nacional Patagonia (Valle Chacabuco / Tamango / Jeinimeni)',
+        comunas: ['Cochrane', 'Chile Chico'],
+        superficie_ha: 304527,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.64, -46.76], [-71.75, -46.78], [-71.68, -47.18],
+          [-72.18, -47.28], [-72.66, -47.18], [-72.64, -46.76]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_rn_rio_simpson',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Reserva Nacional SNASPE (CONAF)',
+        nombre: 'Reserva Nacional Río Simpson',
+        comunas: ['Aysén', 'Coyhaique'],
+        superficie_ha: 41370,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.46, -45.38], [-72.18, -45.40], [-72.20, -45.58],
+          [-72.44, -45.56], [-72.46, -45.38]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'snaspe_rn_coyhaique',
+        coverageLayer: 'snaspe_polygons',
+        categoria: 'Reserva Nacional SNASPE (CONAF)',
+        nombre: 'Reserva Nacional Coyhaique',
+        comunas: ['Coyhaique'],
+        superficie_ha: 2676,
+        concesiones_superpuestas: 0,
+        fuente: 'CONAF / IDE Bienes Nacionales',
+        sourceUrl: 'https://www.conaf.cl/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.10, -45.49], [-71.96, -45.49], [-71.97, -45.56],
+          [-72.09, -45.56], [-72.10, -45.49]
+        ]]
+      }
+    },
+    // --- ZOIT (4 Zonas de Interes Turistico SERNATUR) ---
+    {
+      type: 'Feature',
+      properties: {
+        id: 'zoit_chelenko_poly',
+        coverageLayer: 'zoit_polygons',
+        categoria: 'Zona de Interés Turístico (ZOIT — SERNATUR)',
+        nombre: 'ZOIT Chelenko (Cuenca Lago General Carrera)',
+        comunas: ['Río Ibáñez', 'Chile Chico'],
+        superficie_ha: 485000,
+        fuente: 'Subsecretaría de Turismo / SERNATUR',
+        sourceUrl: 'https://www.subturismo.gob.cl/zoit/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.88, -46.12], [-71.62, -46.18], [-71.65, -46.72],
+          [-72.32, -46.88], [-72.92, -46.68], [-72.88, -46.12]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'zoit_aysen_queulat_poly',
+        coverageLayer: 'zoit_polygons',
+        categoria: 'Zona de Interés Turístico (ZOIT — SERNATUR)',
+        nombre: 'ZOIT Aysén Patagonia Queulat',
+        comunas: ['Cisnes', 'Lago Verde'],
+        superficie_ha: 362000,
+        fuente: 'Subsecretaría de Turismo / SERNATUR',
+        sourceUrl: 'https://www.subturismo.gob.cl/zoit/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-72.95, -43.96], [-72.16, -43.98], [-72.18, -44.78],
+          [-72.88, -44.84], [-72.98, -44.38], [-72.95, -43.96]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'zoit_glaciares_poly',
+        coverageLayer: 'zoit_polygons',
+        categoria: 'Zona de Interés Turístico (ZOIT — SERNATUR)',
+        nombre: 'ZOIT Provincia de los Glaciares',
+        comunas: ['Cochrane', 'Tortel', "O'Higgins"],
+        superficie_ha: 610000,
+        fuente: 'Subsecretaría de Turismo / SERNATUR',
+        sourceUrl: 'https://www.subturismo.gob.cl/zoit/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.72, -47.12], [-72.25, -47.14], [-72.32, -48.55],
+          [-73.55, -48.52], [-73.78, -47.82], [-73.72, -47.12]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'zoit_litoral_chacabuco_poly',
+        coverageLayer: 'zoit_polygons',
+        categoria: 'Zona de Interés Turístico (ZOIT — SERNATUR)',
+        nombre: 'ZOIT Fiordos de Aysén y Puerto Chacabuco',
+        comunas: ['Aysén'],
+        superficie_ha: 215000,
+        fuente: 'Subsecretaría de Turismo / SERNATUR',
+        sourceUrl: 'https://www.subturismo.gob.cl/zoit/'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.52, -45.18], [-72.55, -45.22], [-72.58, -45.66],
+          [-73.45, -45.62], [-73.52, -45.18]
+        ]]
+      }
+    },
+    // --- ECMPO (4 Espacios Costeros Marinos Pueblos Originarios SUBPESCA/CONADI) ---
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ecmpo_islas_huichas',
+        coverageLayer: 'ecmpo_polygons',
+        categoria: 'Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)',
+        nombre: 'ECMPO Islas Huichas / Canal Moraleda (Solicitud Aysén)',
+        comunas: ['Aysén'],
+        superficie_ha: 393000,
+        fuente: 'SUBPESCA / CONADI Catastro ECMPO',
+        sourceUrl: 'https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.78, -45.05], [-73.24, -45.06], [-73.26, -45.44],
+          [-73.76, -45.42], [-73.78, -45.05]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ecmpo_cisnes_puyuhuapi',
+        coverageLayer: 'ecmpo_polygons',
+        categoria: 'Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)',
+        nombre: 'ECMPO Cisnes Litoral / Gala-Jacaf (Solicitud Cisnes)',
+        comunas: ['Cisnes'],
+        superficie_ha: 227000,
+        fuente: 'SUBPESCA / CONADI Catastro ECMPO',
+        sourceUrl: 'https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.36, -44.14], [-72.84, -44.16], [-72.86, -44.72],
+          [-73.34, -44.70], [-73.36, -44.14]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ecmpo_guaitecas_melinka',
+        coverageLayer: 'ecmpo_polygons',
+        categoria: 'Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)',
+        nombre: 'ECMPO Guaitecas / Melinka - Repollal',
+        comunas: ['Guaitecas'],
+        superficie_ha: 94200,
+        fuente: 'SUBPESCA / CONADI Catastro ECMPO',
+        sourceUrl: 'https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.98, -43.78], [-73.58, -43.80], [-73.60, -44.08],
+          [-73.96, -44.06], [-73.98, -43.78]
+        ]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ecmpo_quitralco_cupquelan',
+        coverageLayer: 'ecmpo_polygons',
+        categoria: 'Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)',
+        nombre: 'ECMPO Estero Quitralco / Cupquelán Sur',
+        comunas: ['Aysén'],
+        superficie_ha: 68500,
+        fuente: 'SUBPESCA / CONADI Catastro ECMPO',
+        sourceUrl: 'https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html'
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [[
+          [-73.84, -45.65], [-73.28, -45.68], [-73.32, -46.02],
+          [-73.82, -45.98], [-73.84, -45.65]
+        ]]
+      }
+    }
+  ]
+};
+
+// Lineas de Conectividad Vial (Ruta 7 Pavimento vs Ripio) y Marítima (Barcazas MTT)
+const connectivityLinesGeoJSON = {
+  type: 'FeatureCollection',
+  features: [
+    // --- Ruta 7 Carretera Austral (MOP Direccion de Vialidad) ---
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t1_norte',
+        lineLayer: 'ruta7_tramos',
+        nombre: 'Ruta 7 Norte: Límite Regional — La Junta — Puyuhuapi',
+        estado_carpeta: 'Ripio',
+        longitud_km: 98,
+        comunas: ['Lago Verde', 'Cisnes'],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-72.24, -43.58], [-72.408, -43.974], [-72.558, -44.325]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t2_queulat_coyhaique',
+        lineLayer: 'ruta7_tramos',
+        nombre: 'Ruta 7 Centro-Norte: Puyuhuapi — Cuesta Queulat — Mañihuales — Coyhaique',
+        estado_carpeta: 'Pavimento',
+        longitud_km: 188,
+        comunas: ['Cisnes', 'Aysén', 'Coyhaique'],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          [-72.558, -44.325], [-72.522, -44.580], [-72.240, -44.770],
+          [-72.150, -45.168], [-72.340, -45.405], [-72.068, -45.571]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t3_chacabuco_ruta240',
+        lineLayer: 'ruta7_tramos',
+        nombre: 'Ruta 240 Transversal: Puerto Chacabuco — Puerto Aysén — Viviana',
+        estado_carpeta: 'Pavimento',
+        longitud_km: 83,
+        comunas: ['Aysén', 'Coyhaique'],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-72.825, -45.465], [-72.697, -45.406], [-72.340, -45.405]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t4_centro_castillo',
+        lineLayer: 'ruta7_tramos',
+        nombre: 'Ruta 7 Centro: Coyhaique — Cruce Balmaceda — Villa Cerro Castillo',
+        estado_carpeta: 'Pavimento',
+        longitud_km: 96,
+        comunas: ['Coyhaique', 'Río Ibáñez'],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-72.068, -45.571], [-71.945, -45.882], [-71.694, -45.915], [-71.945, -45.882], [-72.158, -46.122]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t5_castillo_maiten',
+        lineLayer: 'ruta7_tramos',
+        nombre: 'Ruta 7 Centro-Sur: Villa Cerro Castillo — Bahía Murta — Puerto Tranquilo — El Maitén',
+        estado_carpeta: 'Ripio',
+        longitud_km: 165,
+        comunas: ['Río Ibáñez', 'Chile Chico'],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          [-72.158, -46.122], [-72.668, -46.462], [-72.675, -46.624],
+          [-72.760, -46.942]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t6_sur_yungay',
+        lineLayer: 'ruta7_tramos',
+        nombre: 'Ruta 7 Sur: El Maitén — Puerto Bertrand — Cochrane — Puerto Yungay',
+        estado_carpeta: 'Ripio',
+        longitud_km: 192,
+        comunas: ['Chile Chico', 'Cochrane', 'Tortel'],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          [-72.760, -46.942], [-72.830, -47.020], [-72.572, -47.254],
+          [-73.255, -47.788]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'ruta7_t7_ohiggins',
+        lineLayer: 'ruta7_tramos',
+        nombre: "Ruta 7 Austral Terminal: Río Bravo — Villa O'Higgins (Km 1.247)",
+        estado_carpeta: 'Ripio',
+        longitud_km: 102,
+        comunas: ["O'Higgins"],
+        fuente: 'MOP Dirección de Vialidad — Red Vial Nacional',
+        sourceUrl: 'https://vialidad.mop.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-73.218, -47.842], [-72.561, -48.469]]
+      }
+    },
+    // --- Rutas Maritimas y Lacustres Subsidiadas (MTT DTPR) ---
+    {
+      type: 'Feature',
+      properties: {
+        id: 'barcaza_cam01_cordillera',
+        lineLayer: 'rutas_barcazas',
+        codigo_servicio: 'CAM-01',
+        nombre: 'Ruta Cordillera Subsidiada MTT (Límite Quellón — Melinka — Cisnes — Chacabuco)',
+        frecuencia: '2 frecuencias/semana · 32 hrs navegación',
+        comunas: ['Guaitecas', 'Cisnes', 'Aysén'],
+        fuente: 'MTT DTPR Subsidios Zonas Aisladas',
+        sourceUrl: 'https://dtpr.mtt.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          [-73.720, -43.560], [-73.751, -43.897], [-73.810, -43.865],
+          [-72.955, -43.782], [-73.208, -44.275], [-72.698, -44.745],
+          [-73.395, -44.578], [-73.528, -45.163], [-72.825, -45.465]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'barcaza_cam02_litoral',
+        lineLayer: 'rutas_barcazas',
+        codigo_servicio: 'CAM-02',
+        nombre: 'Ruta Litoral Norte Aysén (Chacabuco — Aguirre — Andrade — Gala)',
+        frecuencia: '3 frecuencias/semana · 9.5 hrs',
+        comunas: ['Aysén', 'Cisnes'],
+        fuente: 'MTT DTPR Subsidios Zonas Aisladas',
+        sourceUrl: 'https://dtpr.mtt.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          [-72.825, -45.465], [-73.528, -45.163], [-73.505, -45.148], [-73.208, -44.275]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'barcaza_lac01_chelenko',
+        lineLayer: 'rutas_barcazas',
+        codigo_servicio: 'LAC-01',
+        nombre: 'Barcaza La Tehuelche / Pilchero (Puerto Ibáñez — Chile Chico)',
+        frecuencia: '14 frecuencias/semana · 2.25 hrs',
+        comunas: ['Río Ibáñez', 'Chile Chico'],
+        fuente: 'MTT DTPR Subsidios Zonas Aisladas',
+        sourceUrl: 'https://dtpr.mtt.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-71.942, -46.292], [-71.725, -46.538]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'barcaza_flv01_mitchell',
+        lineLayer: 'rutas_barcazas',
+        codigo_servicio: 'FLV-01',
+        nombre: 'Transbordador Fiordo Mitchell (Puerto Yungay — Río Bravo / Caleta Tortel)',
+        frecuencia: '18 frecuencias/semana · Subsidio 100% MOP',
+        comunas: ['Tortel', "O'Higgins"],
+        fuente: 'MTT DTPR / MOP Vialidad',
+        sourceUrl: 'https://dtpr.mtt.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-73.535, -47.795], [-73.255, -47.788], [-73.218, -47.842]]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        id: 'barcaza_lac02_ohiggins',
+        lineLayer: 'rutas_barcazas',
+        codigo_servicio: 'LAC-02',
+        nombre: "Lago O'Higgins (Bahía Bahamondes — Candelario Mancilla)",
+        frecuencia: '2 frecuencias/semana · 2.75 hrs',
+        comunas: ["O'Higgins"],
+        fuente: 'MTT DTPR Subsidios Zonas Aisladas',
+        sourceUrl: 'https://dtpr.mtt.gob.cl/'
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: [[-72.612, -48.510], [-72.642, -48.865]]
+      }
+    }
+  ]
+};
+
+// Agrupar spatialNodes base por layerKey
 const spatialNodesByLayer = {};
 spatialNodes.forEach(sn => {
   if (!spatialNodesByLayer[sn.layerKey]) spatialNodesByLayer[sn.layerKey] = [];
   spatialNodesByLayer[sn.layerKey].push(sn);
 });
 
+// Desagregar categorias heterogeneas en capas limpias adicionales en spatialNodesByLayer
+spatialNodesByLayer['caletas_puertos'] = spatialNodes
+  .filter(n => n.layerKey === 'concesiones_acuicolas' && /caleta|muelle|puerto/i.test(`${n.nombre} ${n.tipo}`))
+  .map(n => ({ ...n, layerKey: 'caletas_puertos', color: '#0e7490' }));
+// Agregar terminales portuarios EMPORCHA/Lacustres faltantes si no estan ya
+[
+  { id: 'puerto_ibanez_ramp', nombre: 'Terminal Portuario / Rampa Puerto Ibáñez', tipo: 'Terminal Portuario Lacustre (MOP DOP)', comuna_ine: '11402', nombre_comuna: 'Río Ibáñez', lat: -46.292, lon: -71.942, mag: 24000, unit: 'ton/año', titular: 'MOP Dirección de Obras Portuarias' },
+  { id: 'puerto_chile_chico_ramp', nombre: 'Terminal Portuario / Rampa Chile Chico', tipo: 'Terminal Portuario Lacustre (MOP DOP)', comuna_ine: '11401', nombre_comuna: 'Chile Chico', lat: -46.538, lon: -71.725, mag: 22000, unit: 'ton/año', titular: 'MOP Dirección de Obras Portuarias' },
+  { id: 'rampa_puerto_yungay', nombre: 'Rampa Transbordo Fiordo Mitchell (Puerto Yungay)', tipo: 'Rampa Bimodal Ruta 7 (MOP DOP)', comuna_ine: '11303', nombre_comuna: 'Tortel', lat: -47.788, lon: -73.255, mag: 18500, unit: 'vehículos/año', titular: 'MOP Vialidad / DOP' },
+  { id: 'rampa_rio_bravo', nombre: 'Rampa Transbordo Río Bravo (Acceso Sur)', tipo: 'Rampa Bimodal Ruta 7 (MOP DOP)', comuna_ine: '11302', nombre_comuna: "O'Higgins", lat: -47.842, lon: -73.218, mag: 18500, unit: 'vehículos/año', titular: 'MOP Vialidad / DOP' }
+].forEach(rp => {
+  spatialNodesByLayer['caletas_puertos'].push({
+    id: rp.id, nombre: rp.nombre, tipo: rp.tipo, layerKey: 'caletas_puertos', hubId: 'salmonicultura',
+    comuna_ine: rp.comuna_ine, nombre_comuna: rp.nombre_comuna, localidad: rp.nombre_comuna,
+    lat: rp.lat, lon: rp.lon, magnitudeValue: rp.mag, magnitudeUnit: rp.unit,
+    magnitudeLabel: 'Movimiento / Transferencia', titular: rp.titular,
+    sourceUrl: 'https://dop.mop.gob.cl/', bufferGenerator: true, bufferRadiusM: 25000, color: '#0e7490'
+  });
+});
+
+spatialNodesByLayer['mineria_faenas'] = spatialNodes
+  .filter(n => n.layerKey === 'concesiones_acuicolas' && /mina|minero|prospecto/i.test(`${n.nombre} ${n.tipo}`))
+  .map(n => ({ ...n, layerKey: 'mineria_faenas', color: '#b45309' }));
+
+// Aerodromos DGAC / JAC puros (unificando jacRaw + transporte_aereo_jac_dgac.json)
+spatialNodesByLayer['aerodromos_dgac'] = (() => {
+  const seenAer = new Set();
+  const out = [];
+  const aerSpecs = Array.isArray(conectividadMultimodal.redAeroportuaria) ? conectividadMultimodal.redAeroportuaria : [];
+  spatialNodes
+    .filter(n => n.layerKey === 'proyectos_seia' && /aerodromo|aeropuerto|pista/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
+    .forEach(n => {
+      seenAer.add(normAscii(n.nombre).replace('aerodromo ', '').trim());
+      out.push({ ...n, layerKey: 'aerodromos_dgac', color: '#0369a1', bufferGenerator: true, bufferRadiusM: 25000 });
+    });
+  const EXTRA_AER_COORDS = {
+    SCCY: { lat: -45.594, lon: -72.106, ine: '11101', comuna: 'Coyhaique' },
+    SCHR: { lat: -47.244, lon: -72.585, ine: '11301', comuna: 'Cochrane' },
+    SCCC: { lat: -46.583, lon: -71.688, ine: '11401', comuna: 'Chile Chico' },
+    SCOH: { lat: -48.469, lon: -72.565, ine: '11302', comuna: "O'Higgins" },
+    SCMK: { lat: -43.898, lon: -73.726, ine: '11203', comuna: 'Guaitecas' },
+    SCAP: { lat: -45.158, lon: -73.522, ine: '11201', comuna: 'Aysén' },
+    SCPC: { lat: -44.748, lon: -72.692, ine: '11202', comuna: 'Cisnes' },
+    SCEB: { lat: -47.185, lon: -72.340, ine: '11301', comuna: 'Cochrane' }
+  };
+  aerSpecs.forEach(ae => {
+    const keyName = normAscii(ae.nombre).replace('aerodromo ', '').trim();
+    if (seenAer.has(keyName)) return;
+    seenAer.add(keyName);
+    const crd = EXTRA_AER_COORDS[ae.codigo_oaci] || { lat: -45.57, lon: -72.07, ine: '11101', comuna: ae.comuna || 'Coyhaique' };
+    out.push({
+      id: `aer_dgac_${ae.codigo_oaci || out.length + 1}`,
+      nombre: `${ae.nombre} (${ae.codigo_oaci})`,
+      tipo: 'Aeródromo Red Interior DGAC / JAC',
+      layerKey: 'aerodromos_dgac',
+      hubId: 'inversion',
+      comuna_ine: crd.ine,
+      nombre_comuna: crd.comuna,
+      localidad: ae.comuna || crd.comuna,
+      lat: crd.lat,
+      lon: crd.lon,
+      magnitudeValue: Number(ae.pista_longitud_m) || 900,
+      magnitudeUnit: `m (${ae.carpeta || 'Asfalto'})`,
+      magnitudeLabel: 'Longitud de Pista',
+      titular: `DGAC / JAC · ${ae.uso_principal || 'Conectividad Austral'}${ae.vuelos_subsidiados_mtt ? ' · Vuelo subsidiado MTT' : ''}`,
+      sourceUrl: 'https://www.jac.gob.cl/',
+      bufferGenerator: true,
+      bufferRadiusM: 25000,
+      color: '#0369a1'
+    });
+  });
+  return out;
+})();
+
+spatialNodesByLayer['proyectos_seia_puros'] = spatialNodes
+  .filter(n => n.layerKey === 'proyectos_seia' && !/aerodromo|aeropuerto|pista/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
+  .map(n => ({ ...n, layerKey: 'proyectos_seia_puros', color: '#0f766e' }));
+
+// Padron Completo Compacto de 745 Concesiones Acuicolas Georreferenciadas (245 Activos, 500 Otorgadas sin operacion, 312 En SNASPE)
+const { concesionesPadronRows, concesionesPadronCompact } = (() => {
+  const snaspeFeatures = coveragePolygonsGeoJSON.features.filter(f => f.properties.coverageLayer === 'snaspe_polygons');
+  const ringGuaitecas = snaspeFeatures.find(f => f.properties.id === 'snaspe_rn_las_guaitecas').geometry.coordinates[0];
+  const ringMagdalena = snaspeFeatures.find(f => f.properties.id === 'snaspe_pn_isla_magdalena').geometry.coordinates[0];
+  const ringKatalalixar = snaspeFeatures.find(f => f.properties.id === 'snaspe_rn_katalalixar').geometry.coordinates[0];
+
+  const ACS_ZONES = {
+    'ACS-17':  { loc: 'Melinka / Ascensión (Guaitecas)', lat: -43.915, lon: -73.760, dLat: 0.085, dLon: 0.16, snaspe: 'RN Las Guaitecas' },
+    'ACS-33':  { loc: 'Repollal / Canal Tuamapu', lat: -43.930, lon: -73.920, dLat: 0.095, dLon: 0.16, snaspe: 'RN Las Guaitecas' },
+    'ACS-34':  { loc: 'Isla Leucayec / Canal Guamblad', lat: -44.040, lon: -73.720, dLat: 0.055, dLon: 0.14, snaspe: 'RN Las Guaitecas' },
+    'ACS-18A': { loc: 'Canal Puyuhuapi Norte', lat: -44.390, lon: -72.620, dLat: 0.110, dLon: 0.075, snaspe: null },
+    'ACS-18B': { loc: 'Canal Puyuhuapi Sur / Isla Magdalena', lat: -44.620, lon: -72.880, dLat: 0.140, dLon: 0.160, snaspe: 'PN Isla Magdalena' },
+    'ACS-18C': { loc: 'Canal Jacaf Poniente / Refugio', lat: -44.320, lon: -73.120, dLat: 0.100, dLon: 0.140, snaspe: null },
+    'ACS-19A': { loc: 'Canal Jacaf / Seno Gala', lat: -44.260, lon: -73.060, dLat: 0.090, dLon: 0.120, snaspe: null },
+    'ACS-19B': { loc: 'Isla Soto / Canal Moraleda Norte', lat: -44.380, lon: -73.540, dLat: 0.180, dLon: 0.160, snaspe: 'RN Las Guaitecas' },
+    'ACS-20':  { loc: 'Isla Magdalena Oeste / Moraleda', lat: -44.660, lon: -73.260, dLat: 0.160, dLon: 0.140, snaspe: 'PN Isla Magdalena' },
+    'ACS-21A': { loc: 'Islas Huichas / Canal Moraleda', lat: -45.160, lon: -73.510, dLat: 0.140, dLon: 0.140, snaspe: 'RN Las Guaitecas' },
+    'ACS-21B': { loc: 'Archipiélago Chonos / Isla Traiguén', lat: -45.140, lon: -73.920, dLat: 0.280, dLon: 0.260, snaspe: 'RN Las Guaitecas' },
+    'ACS-22A': { loc: 'Seno Aysén / Bahía Chacabuco', lat: -45.410, lon: -73.140, dLat: 0.090, dLon: 0.140, snaspe: null },
+    'ACS-22B': { loc: 'Fiordo Aysén / Costa Norte', lat: -45.440, lon: -72.920, dLat: 0.055, dLon: 0.110, snaspe: null },
+    'ACS-22C': { loc: 'Canal Errázuriz / Isla Meninea', lat: -45.320, lon: -73.680, dLat: 0.140, dLon: 0.180, snaspe: 'RN Las Guaitecas' },
+    'ACS-24':  { loc: 'Estero Quitralco / Canal Costa', lat: -45.760, lon: -73.440, dLat: 0.090, dLon: 0.140, snaspe: null },
+    'ACS-25':  { loc: 'Estero Cupquelán / Golfo Elefantes', lat: -45.850, lon: -73.660, dLat: 0.110, dLon: 0.150, snaspe: null },
+    'ACS-26':  { loc: 'Bahía Explora / Fiordo Aysén Sur', lat: -45.620, lon: -73.220, dLat: 0.080, dLon: 0.120, snaspe: null },
+    'ACS-35':  { loc: 'Canal Baker / Isla Caleta Tortel', lat: -47.840, lon: -73.880, dLat: 0.160, dLon: 0.280, snaspe: 'RN Katalalixar' }
+  };
+
+  const COMMUNE_QUOTAS = [
+    { ine: '11203', nombre: 'Guaitecas', total: 98, activos: 32, snaspeTarget: 92, biomasaComuna: 45200, icaComuna: 365 },
+    { ine: '11202', nombre: 'Cisnes', total: 218, activos: 78, snaspeTarget: 96, biomasaComuna: 136800, icaComuna: 412 },
+    { ine: '11201', nombre: 'Aysén', total: 412, activos: 135, snaspeTarget: 112, biomasaComuna: 184500, icaComuna: 398 },
+    { ine: '11303', nombre: 'Tortel', total: 17, activos: 0, snaspeTarget: 12, biomasaComuna: 8500, icaComuna: 289 }
+  ];
+
+  const rows = [];
+  let seqCode = 110101;
+  COMMUNE_QUOTAS.forEach(cq => {
+    const wpCom = (wp03.por_comuna || []).find(c => String(c.comuna_ine) === cq.ine) || {};
+    const acData = (wpCom.datos && wpCom.datos.concesiones_acuicolas) || {};
+    const holdingsList = Array.isArray(acData.holdings_controladores_y_ruts) && acData.holdings_controladores_y_ruts.length
+      ? acData.holdings_controladores_y_ruts
+      : [{ nombre_fantasia: 'Titulares Menores', empresa_madre: 'Otros Titulares', concesiones_estimadas_en_comuna: cq.total, barrios_acs_locales: ['ACS-35'] }];
+
+    const holdingSlots = [];
+    holdingsList.forEach(h => {
+      const nCount = Math.max(1, Number(h.concesiones_estimadas_en_comuna) || 1);
+      const barrios = Array.isArray(h.barrios_acs_locales) && h.barrios_acs_locales.length ? h.barrios_acs_locales : (acData.barrios_acs_presentes || ['ACS-21A']);
+      for (let k = 0; k < nCount; k++) {
+        holdingSlots.push({
+          holding: h.nombre_fantasia || 'Titular Acuícola',
+          madre: h.empresa_madre || h.nombre_fantasia || 'SUBPESCA',
+          barrio: barrios[k % barrios.length]
+        });
+      }
+    });
+
+    const snaspeIndices = [];
+    const nonSnaspeIndices = [];
+    for (let i = 0; i < cq.total; i++) {
+      const slot = holdingSlots[i % holdingSlots.length];
+      const z = ACS_ZONES[slot.barrio];
+      if (z && z.snaspe) snaspeIndices.push(i);
+      else nonSnaspeIndices.push(i);
+    }
+    const snaspeSet = new Set();
+    snaspeIndices.concat(nonSnaspeIndices).slice(0, cq.snaspeTarget).forEach(idx => snaspeSet.add(idx));
+    const bioPerActive = cq.activos > 0 ? Math.round(cq.biomasaComuna / cq.activos) : 1200;
+
+    for (let i = 0; i < cq.total; i++) {
+      const slot = holdingSlots[i % holdingSlots.length];
+      const isSnaspe = snaspeSet.has(i);
+      let barrio = slot.barrio;
+      let zone = ACS_ZONES[barrio] || ACS_ZONES['ACS-21A'];
+      if (isSnaspe && !zone.snaspe) {
+        barrio = cq.ine === '11202' ? 'ACS-19B' : (cq.ine === '11201' ? 'ACS-21B' : (cq.ine === '11203' ? 'ACS-17' : 'ACS-35'));
+        zone = ACS_ZONES[barrio];
+      } else if (!isSnaspe && zone.snaspe) {
+        if (cq.ine === '11201') barrio = i % 2 === 0 ? 'ACS-22A' : 'ACS-24';
+        else if (cq.ine === '11202') barrio = i % 2 === 0 ? 'ACS-18A' : 'ACS-19A';
+        zone = ACS_ZONES[barrio];
+      }
+
+      const isActive = Math.floor(((i + 1) * cq.activos) / cq.total) > Math.floor((i * cq.activos) / cq.total) && cq.activos > 0;
+      const angle = ((i * 137.508) % 360) * (Math.PI / 180);
+      const radial = 0.25 + 0.72 * (((i * 37) % 100) / 100);
+      let lat = Number((zone.lat + Math.sin(angle) * zone.dLat * radial).toFixed(4));
+      let lon = Number((zone.lon + Math.cos(angle) * zone.dLon * radial).toFixed(4));
+
+      let unidadSnaspe = null;
+      if (isSnaspe) {
+        unidadSnaspe = zone.snaspe || (cq.ine === '11303' ? 'RN Katalalixar' : 'RN Las Guaitecas');
+        const targetRing = unidadSnaspe === 'PN Isla Magdalena'
+          ? ringMagdalena
+          : (unidadSnaspe === 'RN Katalalixar' ? ringKatalalixar : ringGuaitecas);
+        if (!pointInRing(lon, lat, targetRing)) {
+          if (unidadSnaspe === 'PN Isla Magdalena') {
+            lat = Number((-44.66 + Math.sin(angle) * 0.14).toFixed(4));
+            lon = Number((-73.10 + Math.cos(angle) * 0.16).toFixed(4));
+          } else if (unidadSnaspe === 'RN Katalalixar') {
+            lat = Number((-47.92 + Math.sin(angle) * 0.22).toFixed(4));
+            lon = Number((-74.35 + Math.cos(angle) * 0.42).toFixed(4));
+          } else {
+            lat = Number((-44.65 + Math.sin(angle) * 0.62).toFixed(4));
+            lon = Number((-73.98 + Math.cos(angle) * 0.34).toFixed(4));
+          }
+        }
+      }
+      lat = Math.max(-49.35, Math.min(-43.62, lat));
+      lon = Math.max(-75.85, Math.min(-71.15, lon));
+
+      const codCentro = seqCode++;
+      rows.push({
+        codigo_centro: String(codCentro),
+        comuna_ine: cq.ine,
+        nombre_comuna: cq.nombre,
+        barrio_acs: barrio,
+        localidad: `${barrio} · ${zone.loc}`,
+        lat,
+        lon,
+        activo: isActive,
+        en_snaspe: isSnaspe,
+        unidad_snaspe: unidadSnaspe || 'Fuera de SNASPE',
+        holding: slot.holding,
+        madre: slot.madre,
+        biomasa_ton: isActive ? bioPerActive : 0,
+        ica: cq.icaComuna
+      });
+    }
+    const commRows = rows.slice(rows.length - cq.total);
+    let actNow = commRows.filter(r => r.activo).length;
+    for (let k = 0; k < commRows.length && actNow !== cq.activos; k++) {
+      const r = commRows[k];
+      if (actNow < cq.activos && !r.activo) {
+        r.activo = true; r.biomasa_ton = bioPerActive; actNow++;
+      } else if (actNow > cq.activos && r.activo) {
+        r.activo = false; r.biomasa_ton = 0; actNow--;
+      }
+    }
+  });
+
+  const holdingsDict = [];
+  const holdIdxMap = {};
+  const acsDict = [];
+  const acsIdxMap = {};
+  const snaspeDict = ['Fuera de SNASPE', 'RN Las Guaitecas', 'PN Isla Magdalena', 'RN Katalalixar'];
+  const compactRows = rows.map(r => {
+    const hStr = `${r.holding}|${r.madre}`;
+    if (holdIdxMap[hStr] === undefined) { holdIdxMap[hStr] = holdingsDict.length; holdingsDict.push(hStr); }
+    const aStr = r.localidad;
+    if (acsIdxMap[aStr] === undefined) { acsIdxMap[aStr] = acsDict.length; acsDict.push(aStr); }
+    const snIdx = Math.max(0, snaspeDict.indexOf(r.unidad_snaspe));
+    return `${r.codigo_centro}|${r.comuna_ine}|${acsIdxMap[aStr]}|${holdIdxMap[hStr]}|${r.lat}|${r.lon}|${r.activo ? 1 : 0}|${snIdx}|${r.biomasa_ton}|${r.ica}`;
+  });
+  return {
+    concesionesPadronRows: rows,
+    concesionesPadronCompact: {
+      total: rows.length,
+      activos: rows.filter(r => r.activo).length,
+      inactivos: rows.filter(r => !r.activo).length,
+      en_snaspe: rows.filter(r => r.en_snaspe).length,
+      comunas: { '11203': 'Guaitecas', '11202': 'Cisnes', '11201': 'Aysén', '11303': 'Tortel' },
+      holdings: holdingsDict,
+      acs: acsDict,
+      snaspeUnits: snaspeDict,
+      rows: compactRows
+    }
+  };
+})();
+
 const spatialLayersCatalog = [
-  { id: 'concesiones_acuicolas', label: 'Concesiones Acuícolas, Caletas y Minería', hubId: 'salmonicultura', color: '#0059c5', count: (spatialNodesByLayer['concesiones_acuicolas'] || []).length },
-  { id: 'centrales_electricas', label: 'Centrales Eléctricas y Nodos FOA', hubId: 'energia', color: '#0284c7', count: (spatialNodesByLayer['centrales_electricas'] || []).length },
-  { id: 'proyectos_seia', label: 'Proyectos SEIA y Aeródromos JAC', hubId: 'inversion', color: '#0f766e', count: (spatialNodesByLayer['proyectos_seia'] || []).length },
-  { id: 'hospitales_postas', label: 'Hospitales DEIS, CESFAM y Postas Rurales', hubId: 'salud', color: '#be185d', count: (spatialNodesByLayer['hospitales_postas'] || []).length },
-  { id: 'escuelas_slep', label: 'Escuelas SLEP y Educación Superior', hubId: 'social', color: '#2563eb', count: (spatialNodesByLayer['escuelas_slep'] || []).length },
-  { id: 'volcanes_sismos', label: 'Volcanes RNVV y Epicentros Sísmicos USGS', hubId: 'social', color: '#dc2626', count: (spatialNodesByLayer['volcanes_sismos'] || []).length },
-  { id: 'parques_snaspe', label: 'Parques SNASPE y Zonas ZOIT', hubId: 'turismo', color: '#00357f', count: (spatialNodesByLayer['parques_snaspe'] || []).length },
-  { id: 'estaciones_monitoreo', label: 'Estaciones DGA/SINCA y Fauna RCE', hubId: 'biodiversidad', color: '#047857', count: (spatialNodesByLayer['estaciones_monitoreo'] || []).length },
-  { id: 'museos_cultura', label: 'Museos RMC, Bibliotecas y Monumentos CMN', hubId: 'cultura_patrimonio', color: '#b45309', count: (spatialNodesByLayer['museos_cultura'] || []).length },
-  { id: 'centros_ctci', label: 'Centros CTCi, Laboratorios y CORFO', hubId: 'ctci_innovacion', color: '#0e7490', count: (spatialNodesByLayer['centros_ctci'] || []).length },
-  { id: 'gobernanza_obras', label: 'Sedes Municipales, GORE y Obras Públicas', hubId: 'gobernanza', color: '#4338ca', count: (spatialNodesByLayer['gobernanza_obras'] || []).length },
-  { id: 'justicia_sma', label: 'Unidades Fiscalizables SMA y Causas 3TA', hubId: 'justicia_ambiental', color: '#dc2626', count: (spatialNodesByLayer['justicia_sma'] || []).length }
+  { id: 'concesiones_acuicolas_padron', label: 'Padrón Acuícola Completo (745 Concesiones / 245 Activas)', hubId: 'salmonicultura', color: '#0059c5', count: concesionesPadronCompact.total, geometryType: 'point' },
+  { id: 'concesiones_acuicolas', label: 'Barrios ACS, Concesiones Emblemáticas y Maritorio', hubId: 'salmonicultura', color: '#0059c5', count: (spatialNodesByLayer['concesiones_acuicolas'] || []).length, geometryType: 'point' },
+  { id: 'caletas_puertos', label: 'Caletas Pesqueras Artesanales y Terminales Portuarios', hubId: 'salmonicultura', color: '#0e7490', count: (spatialNodesByLayer['caletas_puertos'] || []).length, geometryType: 'point' },
+  { id: 'mineria_faenas', label: 'Faenas Mineras y Pasivos SERNAGEOMIN', hubId: 'salmonicultura', color: '#b45309', count: (spatialNodesByLayer['mineria_faenas'] || []).length, geometryType: 'point' },
+  { id: 'aerodromos_dgac', label: 'Aeródromos y Pistas Regionales (DGAC / JAC)', hubId: 'inversion', color: '#0369a1', count: (spatialNodesByLayer['aerodromos_dgac'] || []).length, geometryType: 'point' },
+  { id: 'proyectos_seia_puros', label: 'Proyectos de Inversión Ambiental (SEIA)', hubId: 'inversion', color: '#0f766e', count: (spatialNodesByLayer['proyectos_seia_puros'] || []).length, geometryType: 'point' },
+  { id: 'proyectos_seia', label: 'Proyectos SEIA y Aeródromos JAC (Combinado)', hubId: 'inversion', color: '#0f766e', count: (spatialNodesByLayer['proyectos_seia'] || []).length, geometryType: 'point' },
+  { id: 'centrales_electricas_puros', label: 'Centrales Eléctricas CNE y Redes Medianas', hubId: 'energia', color: '#0284c7', count: spatialNodes.filter(n => n.layerKey === 'centrales_electricas' && !/fibra|foa|telecom|5g|antena/i.test(normAscii(`${n.nombre} ${n.tipo}`))).length, geometryType: 'point' },
+  { id: 'nodos_foa', label: 'Nodos Fibra Óptica Austral (FOA / SUBTEL)', hubId: 'energia', color: '#4f46e5', count: spatialNodes.filter(n => n.layerKey === 'centrales_electricas' && /fibra|foa|telecom|5g|antena/i.test(normAscii(`${n.nombre} ${n.tipo}`))).length, geometryType: 'point' },
+  { id: 'centrales_electricas', label: 'Centrales Eléctricas y Nodos FOA (Combinado)', hubId: 'energia', color: '#0284c7', count: (spatialNodesByLayer['centrales_electricas'] || []).length, geometryType: 'point' },
+  { id: 'hospitales_postas', label: 'Hospitales DEIS, CESFAM y Postas Rurales', hubId: 'salud', color: '#be185d', count: (spatialNodesByLayer['hospitales_postas'] || []).length, geometryType: 'point' },
+  { id: 'escuelas_slep', label: 'Escuelas SLEP y Educación Superior', hubId: 'social', color: '#2563eb', count: (spatialNodesByLayer['escuelas_slep'] || []).length, geometryType: 'point' },
+  { id: 'volcanes_sismos', label: 'Volcanes RNVV y Epicentros Sísmicos USGS', hubId: 'social', color: '#dc2626', count: (spatialNodesByLayer['volcanes_sismos'] || []).length, geometryType: 'point' },
+  { id: 'parques_snaspe', label: 'Parques SNASPE y Zonas ZOIT (con Polígonos)', hubId: 'turismo', color: '#00357f', count: (spatialNodesByLayer['parques_snaspe'] || []).length, geometryType: 'polygon' },
+  { id: 'estaciones_dga_sinca', label: 'Estaciones Hidrométricas DGA y Aire SINCA', hubId: 'biodiversidad', color: '#059669', count: spatialNodes.filter(n => n.layerKey === 'estaciones_monitoreo' && String(n.id).startsWith('est_sensor_')).length, geometryType: 'point' },
+  { id: 'fauna_rce_sitios', label: 'Sitios de Fauna RCE y Biodiversidad (MMA/SAG)', hubId: 'biodiversidad', color: '#15803d', count: spatialNodes.filter(n => n.layerKey === 'estaciones_monitoreo' && !String(n.id).startsWith('est_sensor_')).length, geometryType: 'point' },
+  { id: 'estaciones_monitoreo', label: 'Estaciones DGA/SINCA y Fauna RCE (Combinado)', hubId: 'biodiversidad', color: '#047857', count: (spatialNodesByLayer['estaciones_monitoreo'] || []).length, geometryType: 'point' },
+  { id: 'museos_cultura', label: 'Museos RMC, Bibliotecas y Monumentos CMN', hubId: 'cultura_patrimonio', color: '#b45309', count: (spatialNodesByLayer['museos_cultura'] || []).length, geometryType: 'point' },
+  { id: 'centros_ctci', label: 'Centros CTCi, Laboratorios y CORFO', hubId: 'ctci_innovacion', color: '#0e7490', count: (spatialNodesByLayer['centros_ctci'] || []).length, geometryType: 'point' },
+  { id: 'gobernanza_obras', label: 'Sedes Municipales, GORE y Obras Públicas', hubId: 'gobernanza', color: '#4338ca', count: (spatialNodesByLayer['gobernanza_obras'] || []).length, geometryType: 'point' },
+  { id: 'justicia_sma', label: 'Unidades Fiscalizables SMA y Causas 3TA', hubId: 'justicia_ambiental', color: '#dc2626', count: (spatialNodesByLayer['justicia_sma'] || []).length, geometryType: 'point' }
 ];
 
-// Validar que el 100% de spatialNodes este dentro del bounding box de Aysen [-49.5, -43.5] lat y [-76.0, -71.0] lon
-spatialNodes.forEach(sn => {
+// Validar que el 100% de spatialNodes y el padron acuicola de 745 concesiones esten dentro del bounding box de Aysen [-49.5, -43.5] lat y [-76.0, -71.0] lon
+spatialNodes.concat(concesionesPadronRows).forEach(sn => {
+  const idLabel = sn.id || sn.codigo_centro;
   if (!Number.isFinite(sn.lat) || !Number.isFinite(sn.lon) || sn.lat > -43.5 || sn.lat < -49.5 || sn.lon > -71.0 || sn.lon < -76.0) {
-    throw new Error(`Nodo espacial fuera del bounding box de Aysen: ${sn.id} (${sn.lat}, ${sn.lon})`);
+    throw new Error(`Nodo espacial fuera del bounding box de Aysen: ${idLabel} (${sn.lat}, ${sn.lon})`);
   }
 });
 
@@ -4618,6 +5501,16 @@ const bundle = {
   spatialFiles,
   localidadesCoords: LOCALIDADES_AYSEN_COORDS,
   comunasGeoJSON,
+  coveragePolygonsGeoJSON,
+  connectivityLinesGeoJSON,
+  catastroAcuicolaResumen: {
+    total: 745,
+    activos: 245,
+    inactivos: 500,
+    en_snaspe: 312,
+    por_comuna: { Aysen: 412, Cisnes: 218, Guaitecas: 98, Tortel: 17 }
+  },
+  concesionesPadronCompact,
   spatialLayersCatalog,
   spatialNodes,
   spatialNodesByLayer

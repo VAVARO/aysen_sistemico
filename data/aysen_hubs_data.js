@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-18T13:16:25.093Z",
+  "generatedAt": "2026-11-19T11:18:19.913Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -25641,90 +25641,2296 @@ window.AYSEN_HUBS_DATA = {
       }
     ]
   },
+  "coveragePolygonsGeoJSON": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_rn_las_guaitecas",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Reserva Nacional SNASPE (CONAF)",
+          "nombre": "Reserva Nacional Las Guaitecas",
+          "comunas": [
+            "Guaitecas",
+            "Cisnes",
+            "Aysén"
+          ],
+          "superficie_ha": 1097975,
+          "concesiones_superpuestas": 280,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.52,
+                -43.82
+              ],
+              [
+                -73.58,
+                -43.82
+              ],
+              [
+                -73.52,
+                -44.22
+              ],
+              [
+                -73.44,
+                -44.68
+              ],
+              [
+                -73.42,
+                -45.18
+              ],
+              [
+                -73.48,
+                -45.54
+              ],
+              [
+                -74.38,
+                -45.54
+              ],
+              [
+                -74.62,
+                -44.95
+              ],
+              [
+                -74.58,
+                -44.28
+              ],
+              [
+                -74.52,
+                -43.82
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_pn_isla_magdalena",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Parque Nacional SNASPE (CONAF)",
+          "nombre": "Parque Nacional Isla Magdalena",
+          "comunas": [
+            "Cisnes"
+          ],
+          "superficie_ha": 249712,
+          "concesiones_superpuestas": 20,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.34,
+                -44.44
+              ],
+              [
+                -72.88,
+                -44.44
+              ],
+              [
+                -72.78,
+                -44.68
+              ],
+              [
+                -72.92,
+                -44.88
+              ],
+              [
+                -73.32,
+                -44.85
+              ],
+              [
+                -73.38,
+                -44.62
+              ],
+              [
+                -73.34,
+                -44.44
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_pn_laguna_san_rafael",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Parque Nacional SNASPE (CONAF)",
+          "nombre": "Parque Nacional Laguna San Rafael",
+          "comunas": [
+            "Aysén",
+            "Tortel",
+            "Río Ibáñez"
+          ],
+          "superficie_ha": 1742000,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.45,
+                -46.36
+              ],
+              [
+                -73.35,
+                -46.34
+              ],
+              [
+                -73.02,
+                -46.65
+              ],
+              [
+                -73.1,
+                -47.25
+              ],
+              [
+                -73.45,
+                -47.55
+              ],
+              [
+                -74.28,
+                -47.48
+              ],
+              [
+                -74.55,
+                -46.88
+              ],
+              [
+                -74.45,
+                -46.36
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_pn_bernardo_ohiggins",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Parque Nacional SNASPE (CONAF)",
+          "nombre": "Parque Nacional Bernardo O'Higgins (Sector Norte Aysén)",
+          "comunas": [
+            "Tortel",
+            "O'Higgins"
+          ],
+          "superficie_ha": 920000,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.38,
+                -47.82
+              ],
+              [
+                -73.12,
+                -47.88
+              ],
+              [
+                -72.88,
+                -48.45
+              ],
+              [
+                -73.05,
+                -49.15
+              ],
+              [
+                -74.42,
+                -49.18
+              ],
+              [
+                -74.65,
+                -48.48
+              ],
+              [
+                -74.38,
+                -47.82
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_rn_katalalixar",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Reserva Nacional SNASPE (CONAF)",
+          "nombre": "Reserva Nacional Katalalixar",
+          "comunas": [
+            "Tortel"
+          ],
+          "superficie_ha": 624500,
+          "concesiones_superpuestas": 12,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -75.15,
+                -47.56
+              ],
+              [
+                -73.85,
+                -47.54
+              ],
+              [
+                -73.58,
+                -47.92
+              ],
+              [
+                -73.72,
+                -48.35
+              ],
+              [
+                -74.95,
+                -48.32
+              ],
+              [
+                -75.24,
+                -47.92
+              ],
+              [
+                -75.15,
+                -47.56
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_pn_queulat",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Parque Nacional SNASPE (CONAF)",
+          "nombre": "Parque Nacional Queulat",
+          "comunas": [
+            "Cisnes",
+            "Lago Verde"
+          ],
+          "superficie_ha": 154093,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.62,
+                -44.22
+              ],
+              [
+                -72.22,
+                -44.24
+              ],
+              [
+                -72.18,
+                -44.62
+              ],
+              [
+                -72.42,
+                -44.78
+              ],
+              [
+                -72.64,
+                -44.58
+              ],
+              [
+                -72.62,
+                -44.22
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_pn_cerro_castillo",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Parque Nacional SNASPE (CONAF)",
+          "nombre": "Parque Nacional Cerro Castillo",
+          "comunas": [
+            "Coyhaique",
+            "Río Ibáñez"
+          ],
+          "superficie_ha": 143502,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.44,
+                -45.92
+              ],
+              [
+                -71.98,
+                -45.95
+              ],
+              [
+                -71.95,
+                -46.18
+              ],
+              [
+                -72.28,
+                -46.22
+              ],
+              [
+                -72.48,
+                -46.08
+              ],
+              [
+                -72.44,
+                -45.92
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_pn_patagonia",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Parque Nacional SNASPE (CONAF)",
+          "nombre": "Parque Nacional Patagonia (Valle Chacabuco / Tamango / Jeinimeni)",
+          "comunas": [
+            "Cochrane",
+            "Chile Chico"
+          ],
+          "superficie_ha": 304527,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.64,
+                -46.76
+              ],
+              [
+                -71.75,
+                -46.78
+              ],
+              [
+                -71.68,
+                -47.18
+              ],
+              [
+                -72.18,
+                -47.28
+              ],
+              [
+                -72.66,
+                -47.18
+              ],
+              [
+                -72.64,
+                -46.76
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_rn_rio_simpson",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Reserva Nacional SNASPE (CONAF)",
+          "nombre": "Reserva Nacional Río Simpson",
+          "comunas": [
+            "Aysén",
+            "Coyhaique"
+          ],
+          "superficie_ha": 41370,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.46,
+                -45.38
+              ],
+              [
+                -72.18,
+                -45.4
+              ],
+              [
+                -72.2,
+                -45.58
+              ],
+              [
+                -72.44,
+                -45.56
+              ],
+              [
+                -72.46,
+                -45.38
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "snaspe_rn_coyhaique",
+          "coverageLayer": "snaspe_polygons",
+          "categoria": "Reserva Nacional SNASPE (CONAF)",
+          "nombre": "Reserva Nacional Coyhaique",
+          "comunas": [
+            "Coyhaique"
+          ],
+          "superficie_ha": 2676,
+          "concesiones_superpuestas": 0,
+          "fuente": "CONAF / IDE Bienes Nacionales",
+          "sourceUrl": "https://www.conaf.cl/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.1,
+                -45.49
+              ],
+              [
+                -71.96,
+                -45.49
+              ],
+              [
+                -71.97,
+                -45.56
+              ],
+              [
+                -72.09,
+                -45.56
+              ],
+              [
+                -72.1,
+                -45.49
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "zoit_chelenko_poly",
+          "coverageLayer": "zoit_polygons",
+          "categoria": "Zona de Interés Turístico (ZOIT — SERNATUR)",
+          "nombre": "ZOIT Chelenko (Cuenca Lago General Carrera)",
+          "comunas": [
+            "Río Ibáñez",
+            "Chile Chico"
+          ],
+          "superficie_ha": 485000,
+          "fuente": "Subsecretaría de Turismo / SERNATUR",
+          "sourceUrl": "https://www.subturismo.gob.cl/zoit/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.88,
+                -46.12
+              ],
+              [
+                -71.62,
+                -46.18
+              ],
+              [
+                -71.65,
+                -46.72
+              ],
+              [
+                -72.32,
+                -46.88
+              ],
+              [
+                -72.92,
+                -46.68
+              ],
+              [
+                -72.88,
+                -46.12
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "zoit_aysen_queulat_poly",
+          "coverageLayer": "zoit_polygons",
+          "categoria": "Zona de Interés Turístico (ZOIT — SERNATUR)",
+          "nombre": "ZOIT Aysén Patagonia Queulat",
+          "comunas": [
+            "Cisnes",
+            "Lago Verde"
+          ],
+          "superficie_ha": 362000,
+          "fuente": "Subsecretaría de Turismo / SERNATUR",
+          "sourceUrl": "https://www.subturismo.gob.cl/zoit/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -72.95,
+                -43.96
+              ],
+              [
+                -72.16,
+                -43.98
+              ],
+              [
+                -72.18,
+                -44.78
+              ],
+              [
+                -72.88,
+                -44.84
+              ],
+              [
+                -72.98,
+                -44.38
+              ],
+              [
+                -72.95,
+                -43.96
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "zoit_glaciares_poly",
+          "coverageLayer": "zoit_polygons",
+          "categoria": "Zona de Interés Turístico (ZOIT — SERNATUR)",
+          "nombre": "ZOIT Provincia de los Glaciares",
+          "comunas": [
+            "Cochrane",
+            "Tortel",
+            "O'Higgins"
+          ],
+          "superficie_ha": 610000,
+          "fuente": "Subsecretaría de Turismo / SERNATUR",
+          "sourceUrl": "https://www.subturismo.gob.cl/zoit/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.72,
+                -47.12
+              ],
+              [
+                -72.25,
+                -47.14
+              ],
+              [
+                -72.32,
+                -48.55
+              ],
+              [
+                -73.55,
+                -48.52
+              ],
+              [
+                -73.78,
+                -47.82
+              ],
+              [
+                -73.72,
+                -47.12
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "zoit_litoral_chacabuco_poly",
+          "coverageLayer": "zoit_polygons",
+          "categoria": "Zona de Interés Turístico (ZOIT — SERNATUR)",
+          "nombre": "ZOIT Fiordos de Aysén y Puerto Chacabuco",
+          "comunas": [
+            "Aysén"
+          ],
+          "superficie_ha": 215000,
+          "fuente": "Subsecretaría de Turismo / SERNATUR",
+          "sourceUrl": "https://www.subturismo.gob.cl/zoit/"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.52,
+                -45.18
+              ],
+              [
+                -72.55,
+                -45.22
+              ],
+              [
+                -72.58,
+                -45.66
+              ],
+              [
+                -73.45,
+                -45.62
+              ],
+              [
+                -73.52,
+                -45.18
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ecmpo_islas_huichas",
+          "coverageLayer": "ecmpo_polygons",
+          "categoria": "Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)",
+          "nombre": "ECMPO Islas Huichas / Canal Moraleda (Solicitud Aysén)",
+          "comunas": [
+            "Aysén"
+          ],
+          "superficie_ha": 393000,
+          "fuente": "SUBPESCA / CONADI Catastro ECMPO",
+          "sourceUrl": "https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.78,
+                -45.05
+              ],
+              [
+                -73.24,
+                -45.06
+              ],
+              [
+                -73.26,
+                -45.44
+              ],
+              [
+                -73.76,
+                -45.42
+              ],
+              [
+                -73.78,
+                -45.05
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ecmpo_cisnes_puyuhuapi",
+          "coverageLayer": "ecmpo_polygons",
+          "categoria": "Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)",
+          "nombre": "ECMPO Cisnes Litoral / Gala-Jacaf (Solicitud Cisnes)",
+          "comunas": [
+            "Cisnes"
+          ],
+          "superficie_ha": 227000,
+          "fuente": "SUBPESCA / CONADI Catastro ECMPO",
+          "sourceUrl": "https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.36,
+                -44.14
+              ],
+              [
+                -72.84,
+                -44.16
+              ],
+              [
+                -72.86,
+                -44.72
+              ],
+              [
+                -73.34,
+                -44.7
+              ],
+              [
+                -73.36,
+                -44.14
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ecmpo_guaitecas_melinka",
+          "coverageLayer": "ecmpo_polygons",
+          "categoria": "Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)",
+          "nombre": "ECMPO Guaitecas / Melinka - Repollal",
+          "comunas": [
+            "Guaitecas"
+          ],
+          "superficie_ha": 94200,
+          "fuente": "SUBPESCA / CONADI Catastro ECMPO",
+          "sourceUrl": "https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.98,
+                -43.78
+              ],
+              [
+                -73.58,
+                -43.8
+              ],
+              [
+                -73.6,
+                -44.08
+              ],
+              [
+                -73.96,
+                -44.06
+              ],
+              [
+                -73.98,
+                -43.78
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ecmpo_quitralco_cupquelan",
+          "coverageLayer": "ecmpo_polygons",
+          "categoria": "Espacio Costero ECMPO (SUBPESCA / Ley Lafkenche)",
+          "nombre": "ECMPO Estero Quitralco / Cupquelán Sur",
+          "comunas": [
+            "Aysén"
+          ],
+          "superficie_ha": 68500,
+          "fuente": "SUBPESCA / CONADI Catastro ECMPO",
+          "sourceUrl": "https://www.subpesca.cl/portal/616/w3-propertyvalue-50834.html"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -73.84,
+                -45.65
+              ],
+              [
+                -73.28,
+                -45.68
+              ],
+              [
+                -73.32,
+                -46.02
+              ],
+              [
+                -73.82,
+                -45.98
+              ],
+              [
+                -73.84,
+                -45.65
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "connectivityLinesGeoJSON": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t1_norte",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 7 Norte: Límite Regional — La Junta — Puyuhuapi",
+          "estado_carpeta": "Ripio",
+          "longitud_km": 98,
+          "comunas": [
+            "Lago Verde",
+            "Cisnes"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.24,
+              -43.58
+            ],
+            [
+              -72.408,
+              -43.974
+            ],
+            [
+              -72.558,
+              -44.325
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t2_queulat_coyhaique",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 7 Centro-Norte: Puyuhuapi — Cuesta Queulat — Mañihuales — Coyhaique",
+          "estado_carpeta": "Pavimento",
+          "longitud_km": 188,
+          "comunas": [
+            "Cisnes",
+            "Aysén",
+            "Coyhaique"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.558,
+              -44.325
+            ],
+            [
+              -72.522,
+              -44.58
+            ],
+            [
+              -72.24,
+              -44.77
+            ],
+            [
+              -72.15,
+              -45.168
+            ],
+            [
+              -72.34,
+              -45.405
+            ],
+            [
+              -72.068,
+              -45.571
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t3_chacabuco_ruta240",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 240 Transversal: Puerto Chacabuco — Puerto Aysén — Viviana",
+          "estado_carpeta": "Pavimento",
+          "longitud_km": 83,
+          "comunas": [
+            "Aysén",
+            "Coyhaique"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.825,
+              -45.465
+            ],
+            [
+              -72.697,
+              -45.406
+            ],
+            [
+              -72.34,
+              -45.405
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t4_centro_castillo",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 7 Centro: Coyhaique — Cruce Balmaceda — Villa Cerro Castillo",
+          "estado_carpeta": "Pavimento",
+          "longitud_km": 96,
+          "comunas": [
+            "Coyhaique",
+            "Río Ibáñez"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.068,
+              -45.571
+            ],
+            [
+              -71.945,
+              -45.882
+            ],
+            [
+              -71.694,
+              -45.915
+            ],
+            [
+              -71.945,
+              -45.882
+            ],
+            [
+              -72.158,
+              -46.122
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t5_castillo_maiten",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 7 Centro-Sur: Villa Cerro Castillo — Bahía Murta — Puerto Tranquilo — El Maitén",
+          "estado_carpeta": "Ripio",
+          "longitud_km": 165,
+          "comunas": [
+            "Río Ibáñez",
+            "Chile Chico"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.158,
+              -46.122
+            ],
+            [
+              -72.668,
+              -46.462
+            ],
+            [
+              -72.675,
+              -46.624
+            ],
+            [
+              -72.76,
+              -46.942
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t6_sur_yungay",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 7 Sur: El Maitén — Puerto Bertrand — Cochrane — Puerto Yungay",
+          "estado_carpeta": "Ripio",
+          "longitud_km": 192,
+          "comunas": [
+            "Chile Chico",
+            "Cochrane",
+            "Tortel"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.76,
+              -46.942
+            ],
+            [
+              -72.83,
+              -47.02
+            ],
+            [
+              -72.572,
+              -47.254
+            ],
+            [
+              -73.255,
+              -47.788
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "ruta7_t7_ohiggins",
+          "lineLayer": "ruta7_tramos",
+          "nombre": "Ruta 7 Austral Terminal: Río Bravo — Villa O'Higgins (Km 1.247)",
+          "estado_carpeta": "Ripio",
+          "longitud_km": 102,
+          "comunas": [
+            "O'Higgins"
+          ],
+          "fuente": "MOP Dirección de Vialidad — Red Vial Nacional",
+          "sourceUrl": "https://vialidad.mop.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -73.218,
+              -47.842
+            ],
+            [
+              -72.561,
+              -48.469
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "barcaza_cam01_cordillera",
+          "lineLayer": "rutas_barcazas",
+          "codigo_servicio": "CAM-01",
+          "nombre": "Ruta Cordillera Subsidiada MTT (Límite Quellón — Melinka — Cisnes — Chacabuco)",
+          "frecuencia": "2 frecuencias/semana · 32 hrs navegación",
+          "comunas": [
+            "Guaitecas",
+            "Cisnes",
+            "Aysén"
+          ],
+          "fuente": "MTT DTPR Subsidios Zonas Aisladas",
+          "sourceUrl": "https://dtpr.mtt.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -73.72,
+              -43.56
+            ],
+            [
+              -73.751,
+              -43.897
+            ],
+            [
+              -73.81,
+              -43.865
+            ],
+            [
+              -72.955,
+              -43.782
+            ],
+            [
+              -73.208,
+              -44.275
+            ],
+            [
+              -72.698,
+              -44.745
+            ],
+            [
+              -73.395,
+              -44.578
+            ],
+            [
+              -73.528,
+              -45.163
+            ],
+            [
+              -72.825,
+              -45.465
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "barcaza_cam02_litoral",
+          "lineLayer": "rutas_barcazas",
+          "codigo_servicio": "CAM-02",
+          "nombre": "Ruta Litoral Norte Aysén (Chacabuco — Aguirre — Andrade — Gala)",
+          "frecuencia": "3 frecuencias/semana · 9.5 hrs",
+          "comunas": [
+            "Aysén",
+            "Cisnes"
+          ],
+          "fuente": "MTT DTPR Subsidios Zonas Aisladas",
+          "sourceUrl": "https://dtpr.mtt.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.825,
+              -45.465
+            ],
+            [
+              -73.528,
+              -45.163
+            ],
+            [
+              -73.505,
+              -45.148
+            ],
+            [
+              -73.208,
+              -44.275
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "barcaza_lac01_chelenko",
+          "lineLayer": "rutas_barcazas",
+          "codigo_servicio": "LAC-01",
+          "nombre": "Barcaza La Tehuelche / Pilchero (Puerto Ibáñez — Chile Chico)",
+          "frecuencia": "14 frecuencias/semana · 2.25 hrs",
+          "comunas": [
+            "Río Ibáñez",
+            "Chile Chico"
+          ],
+          "fuente": "MTT DTPR Subsidios Zonas Aisladas",
+          "sourceUrl": "https://dtpr.mtt.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -71.942,
+              -46.292
+            ],
+            [
+              -71.725,
+              -46.538
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "barcaza_flv01_mitchell",
+          "lineLayer": "rutas_barcazas",
+          "codigo_servicio": "FLV-01",
+          "nombre": "Transbordador Fiordo Mitchell (Puerto Yungay — Río Bravo / Caleta Tortel)",
+          "frecuencia": "18 frecuencias/semana · Subsidio 100% MOP",
+          "comunas": [
+            "Tortel",
+            "O'Higgins"
+          ],
+          "fuente": "MTT DTPR / MOP Vialidad",
+          "sourceUrl": "https://dtpr.mtt.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -73.535,
+              -47.795
+            ],
+            [
+              -73.255,
+              -47.788
+            ],
+            [
+              -73.218,
+              -47.842
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "barcaza_lac02_ohiggins",
+          "lineLayer": "rutas_barcazas",
+          "codigo_servicio": "LAC-02",
+          "nombre": "Lago O'Higgins (Bahía Bahamondes — Candelario Mancilla)",
+          "frecuencia": "2 frecuencias/semana · 2.75 hrs",
+          "comunas": [
+            "O'Higgins"
+          ],
+          "fuente": "MTT DTPR Subsidios Zonas Aisladas",
+          "sourceUrl": "https://dtpr.mtt.gob.cl/"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -72.612,
+              -48.51
+            ],
+            [
+              -72.642,
+              -48.865
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "catastroAcuicolaResumen": {
+    "total": 745,
+    "activos": 245,
+    "inactivos": 500,
+    "en_snaspe": 312,
+    "por_comuna": {
+      "Aysen": 412,
+      "Cisnes": 218,
+      "Guaitecas": 98,
+      "Tortel": 17
+    }
+  },
+  "concesionesPadronCompact": {
+    "total": 745,
+    "activos": 245,
+    "inactivos": 500,
+    "en_snaspe": 312,
+    "comunas": {
+      "11201": "Aysén",
+      "11202": "Cisnes",
+      "11203": "Guaitecas",
+      "11303": "Tortel"
+    },
+    "holdings": [
+      "Salmones Yadrán|Pesquera Yadrán S.A.",
+      "AquaChile|Agrosuper S.A.",
+      "Otros Concesionarios e Históricos|Titulares Diversos en Descanso y Traspaso",
+      "Mowi Chile|Mowi ASA",
+      "Cermaq Chile|Mitsubishi Corporation",
+      "Multi X|Multiexport Foods S.A.",
+      "Salmones Camanchaca|Compañía Pesquera Camanchaca S.A.",
+      "Salmones Blumar|Blumar S.A.",
+      "Australis Seafoods|Joyvio Food Co. / Legend Holdings",
+      "Salmones Antártica|Nissui Corporation",
+      "Cooke Aquaculture Chile|Cooke Inc.",
+      "Salmones Austral|Salmones Austral S.A.",
+      "Titulares Menores|Concesiones en Trámite y Descanso Prolongado"
+    ],
+    "acs": [
+      "ACS-17 · Melinka / Ascensión (Guaitecas)",
+      "ACS-33 · Repollal / Canal Tuamapu",
+      "ACS-34 · Isla Leucayec / Canal Guamblad",
+      "ACS-19B · Isla Soto / Canal Moraleda Norte",
+      "ACS-18B · Canal Puyuhuapi Sur / Isla Magdalena",
+      "ACS-19A · Canal Jacaf / Seno Gala",
+      "ACS-18A · Canal Puyuhuapi Norte",
+      "ACS-20 · Isla Magdalena Oeste / Moraleda",
+      "ACS-18C · Canal Jacaf Poniente / Refugio",
+      "ACS-21A · Islas Huichas / Canal Moraleda",
+      "ACS-21B · Archipiélago Chonos / Isla Traiguén",
+      "ACS-22A · Seno Aysén / Bahía Chacabuco",
+      "ACS-22B · Fiordo Aysén / Costa Norte",
+      "ACS-24 · Estero Quitralco / Canal Costa",
+      "ACS-25 · Estero Cupquelán / Golfo Elefantes",
+      "ACS-22C · Canal Errázuriz / Isla Meninea",
+      "ACS-26 · Bahía Explora / Fiordo Aysén Sur",
+      "ACS-35 · Canal Baker / Isla Caleta Tortel"
+    ],
+    "snaspeUnits": [
+      "Fuera de SNASPE",
+      "RN Las Guaitecas",
+      "PN Isla Magdalena",
+      "RN Katalalixar"
+    ],
+    "rows": [
+      "110101|11203|0|0|-43.915|-73.72|0|1|0|365",
+      "110102|11203|1|0|-43.8969|-73.9809|0|1|0|365",
+      "110103|11203|0|0|-43.9813|-73.749|0|1|0|365",
+      "110104|11203|1|0|-43.9052|-73.888|1|1|1413|365",
+      "110105|11203|0|0|-43.9238|-73.8538|0|1|0|365",
+      "110106|11203|1|0|-43.974|-73.8036|0|1|0|365",
+      "110107|11203|0|0|-43.8815|-73.777|1|1|1413|365",
+      "110108|11203|1|0|-43.9869|-73.9698|0|1|0|365",
+      "110109|11203|0|0|-43.8876|-73.6185|0|1|0|365",
+      "110110|11203|1|0|-43.9123|-73.9921|1|1|1413|365",
+      "110111|11203|0|0|-43.973|-73.7089|0|1|0|365",
+      "110112|11203|1|0|-43.9028|-73.9056|0|1|0|365",
+      "110113|11203|0|0|-43.9392|-73.8385|1|1|1413|365",
+      "110114|11203|1|0|-43.947|-73.7898|0|1|0|365",
+      "110115|11203|0|0|-43.8886|-73.7949|0|1|0|365",
+      "110116|11203|1|0|-43.9909|-73.9333|1|1|1413|365",
+      "110117|11203|0|0|-43.865|-73.6484|0|1|0|365",
+      "110118|11203|1|0|-43.9282|-73.9933|0|1|0|365",
+      "110119|11203|0|0|-43.9585|-73.6777|1|1|1413|365",
+      "110120|11203|1|0|-43.9042|-73.922|0|1|0|365",
+      "110121|11203|0|0|-43.9501|-73.8151|0|1|0|365",
+      "110122|11203|1|0|-43.9198|-73.7924|1|1|1413|365",
+      "110123|11203|0|1|-43.898|-73.8061|0|1|0|365",
+      "110124|11203|1|1|-43.9872|-73.8983|0|1|0|365",
+      "110125|11203|0|1|-43.8498|-73.6897|1|1|1413|365",
+      "110126|11203|1|1|-43.9424|-73.9855|0|1|0|365",
+      "110127|11203|0|1|-43.9398|-73.6588|0|1|0|365",
+      "110128|11203|1|1|-43.8456|-73.9795|1|1|1413|365",
+      "110129|11203|0|1|-43.9557|-73.7876|0|1|0|365",
+      "110130|11203|1|1|-43.8957|-73.8102|0|1|0|365",
+      "110131|11203|0|1|-43.908|-73.8098|1|1|1413|365",
+      "110132|11203|1|1|-43.977|-73.8691|0|1|0|365",
+      "110133|11203|0|1|-43.8434|-73.7369|0|1|0|365",
+      "110134|11203|1|1|-43.9533|-73.9707|1|1|1413|365",
+      "110135|11203|0|1|-43.9197|-73.6535|0|1|0|365",
+      "110136|11203|1|1|-43.8649|-74.0215|0|1|0|365",
+      "110137|11203|0|1|-43.9558|-73.7596|1|1|1413|365",
+      "110138|11203|1|1|-43.8774|-73.8397|0|1|0|365",
+      "110139|11203|0|1|-43.9173|-73.8067|0|1|0|365",
+      "110140|11203|1|1|-43.9621|-73.8487|1|1|1413|365",
+      "110141|11203|0|1|-43.8459|-73.7837|0|1|0|365",
+      "110142|11203|1|1|-43.9599|-73.9517|0|1|0|365",
+      "110143|11203|0|2|-43.9006|-73.6614|1|1|1413|365",
+      "110144|11203|1|2|-43.8908|-74.0489|0|1|0|365",
+      "110145|11203|2|2|-44.0633|-73.698|0|1|0|365",
+      "110146|11203|0|2|-43.8585|-73.7167|1|1|1413|365",
+      "110147|11203|1|2|-43.9408|-73.9582|0|1|0|365",
+      "110148|11203|2|2|-44.0486|-73.649|0|1|0|365",
+      "110149|11203|0|2|-43.8565|-73.8245|1|1|1413|365",
+      "110150|11203|1|2|-43.9619|-73.9315|0|1|0|365",
+      "110151|11203|2|2|-44.0206|-73.6504|0|1|0|365",
+      "110152|11203|0|2|-43.9058|-73.8992|0|1|0|365",
+      "110153|11203|1|2|-43.9606|-73.8761|1|1|1413|365",
+      "110154|11203|2|2|-44.0021|-73.7165|0|1|0|365",
+      "110155|11203|0|2|-43.9729|-73.8673|0|1|0|365",
+      "110156|11203|1|2|-43.9276|-73.8398|1|1|1413|365",
+      "110157|11203|2|2|-44.0131|-73.8029|0|1|0|365",
+      "110158|11203|0|2|-43.9415|-73.753|0|1|0|365",
+      "110159|11203|1|2|-43.8845|-73.8673|1|1|1413|365",
+      "110160|11203|2|2|-44.0505|-73.8356|0|1|0|365",
+      "110161|11203|0|2|-43.9315|-73.7051|0|1|0|365",
+      "110162|11203|1|2|-43.8703|-73.9526|1|1|1413|365",
+      "110163|11203|2|2|-44.0864|-73.7738|0|1|0|365",
+      "110164|11203|0|2|-43.8993|-73.6903|0|1|0|365",
+      "110165|11203|1|2|-43.9066|-74.0316|1|1|1413|365",
+      "110166|11203|2|2|-44.0539|-73.7012|0|1|0|365",
+      "110167|11203|0|2|-43.8695|-73.7379|0|1|0|365",
+      "110168|11203|1|2|-43.9724|-74.0298|1|1|1413|365",
+      "110169|11203|2|2|-44.0433|-73.6696|0|1|0|365",
+      "110170|11203|0|2|-43.8727|-73.8223|0|1|0|365",
+      "110171|11203|1|2|-44.0151|-73.9311|1|1|1413|365",
+      "110172|11203|2|2|-44.0233|-73.6745|0|1|0|365",
+      "110173|11203|0|2|-43.9156|-73.8737|0|1|0|365",
+      "110174|11203|1|2|-43.9463|-73.8894|1|1|1413|365",
+      "110175|11203|2|2|-44.0113|-73.7271|0|1|0|365",
+      "110176|11203|0|2|-43.9687|-73.8359|0|1|0|365",
+      "110177|11203|1|2|-43.9241|-73.8671|1|1|1413|365",
+      "110178|11203|2|2|-44.0225|-73.7917|0|1|0|365",
+      "110179|11203|0|2|-43.9862|-73.7225|0|1|0|365",
+      "110180|11203|1|2|-43.8948|-73.8899|1|1|1413|365",
+      "110181|11203|2|2|-44.0532|-73.8094|0|1|0|365",
+      "110182|11203|0|2|-43.945|-73.6192|0|1|0|365",
+      "110183|11203|1|2|-43.8876|-73.9543|1|1|1413|365",
+      "110184|11203|2|2|-44.0801|-73.7509|0|1|0|365",
+      "110185|11203|0|2|-43.9017|-73.7177|0|1|0|365",
+      "110186|11203|1|2|-43.9188|-74.0099|1|1|1413|365",
+      "110187|11203|2|2|-44.0775|-73.6514|0|1|0|365",
+      "110188|11203|0|2|-43.8824|-73.7527|0|1|0|365",
+      "110189|11203|1|2|-43.9705|-73.9992|1|1|1413|365",
+      "110190|11203|2|2|-44.0416|-73.5913|0|1|0|365",
+      "110191|11203|0|2|-43.8873|-73.8134|0|1|0|365",
+      "110192|11203|1|2|-43.9995|-73.9134|1|1|1413|365",
+      "110193|11203|2|2|-44.0281|-73.6953|0|0|0|365",
+      "110194|11203|0|2|-43.9216|-73.8463|0|0|0|365",
+      "110195|11203|1|2|-43.9734|-73.8127|1|0|1413|365",
+      "110196|11203|2|2|-44.0208|-73.7315|0|0|0|365",
+      "110197|11203|0|2|-43.9613|-73.8088|0|0|0|365",
+      "110198|11203|1|2|-43.9035|-73.7847|1|0|1413|365",
+      "110199|11202|3|1|-44.38|-73.5|0|1|0|412",
+      "110200|11202|4|1|-44.5712|-72.9409|0|2|0|412",
+      "110201|11202|3|1|-44.5204|-73.529|1|1|1754|412",
+      "110202|11202|3|1|-44.333|-73.508|0|1|0|412",
+      "110203|11202|4|1|-44.6345|-72.9738|0|2|0|412",
+      "110204|11202|3|1|-44.9828|-73.6931|1|1|1754|412",
+      "110205|11202|3|1|-44.309|-73.557|0|1|0|412",
+      "110206|11202|4|1|-44.7038|-72.9298|0|2|0|412",
+      "110207|11202|3|1|-44.4373|-73.6606|1|1|1754|412",
+      "110208|11202|3|1|-44.3465|-73.6121|0|1|0|412",
+      "110209|11202|4|1|-44.7156|-72.8289|0|2|0|412",
+      "110210|11202|3|1|-44.3284|-73.5256|1|1|1754|412",
+      "110211|11202|3|1|-44.4312|-73.6185|0|1|0|412",
+      "110212|11202|4|1|-44.6901|-72.9437|1|2|1754|412",
+      "110213|11202|5|1|-44.2321|-73.0862|0|0|0|412",
+      "110214|11202|6|1|-44.4605|-72.6262|0|0|0|412",
+      "110215|11202|4|1|-44.5698|-72.9777|1|2|1754|412",
+      "110216|11202|5|1|-44.2583|-73.115|0|0|0|412",
+      "110217|11202|6|1|-44.4463|-72.5814|0|0|0|412",
+      "110218|11202|4|1|-44.582|-72.882|1|2|1754|412",
+      "110219|11202|5|1|-44.2972|-73.1014|0|0|0|412",
+      "110220|11202|6|1|-44.3782|-72.5602|0|0|0|412",
+      "110221|11202|4|1|-44.592|-72.9261|1|2|1754|412",
+      "110222|11202|5|1|-44.3142|-73.0437|0|0|0|412",
+      "110223|11202|6|1|-44.3057|-72.5871|0|0|0|412",
+      "110224|11202|4|1|-44.6383|-72.9455|1|2|1754|412",
+      "110225|11202|5|1|-44.2863|-72.9841|0|0|0|412",
+      "110226|11202|6|1|-44.2923|-72.6479|1|0|1754|412",
+      "110227|11202|4|1|-44.6871|-72.9076|0|2|0|412",
+      "110228|11202|5|1|-44.2275|-72.9776|0|0|0|412",
+      "110229|11202|6|1|-44.381|-72.6434|1|0|1754|412",
+      "110230|11202|4|1|-44.6893|-72.8291|0|2|0|412",
+      "110231|11202|5|1|-44.1842|-73.0426|0|0|0|412",
+      "110232|11202|6|1|-44.417|-72.6438|1|0|1754|412",
+      "110233|11202|4|1|-44.6715|-72.9405|0|2|0|412",
+      "110234|11202|5|1|-44.1983|-73.1361|0|0|0|412",
+      "110235|11202|6|1|-44.4428|-72.6198|1|0|1754|412",
+      "110236|11202|4|1|-44.5563|-72.9925|0|2|0|412",
+      "110237|11202|5|1|-44.2624|-73.095|0|0|0|412",
+      "110238|11202|6|1|-44.4272|-72.5866|1|0|1754|412",
+      "110239|11202|4|1|-44.5062|-72.9037|0|2|0|412",
+      "110240|11202|5|1|-44.2884|-73.0838|1|0|1754|412",
+      "110241|11202|6|1|-44.3714|-72.5738|0|0|0|412",
+      "110242|11202|4|1|-44.5622|-73.0089|0|2|0|412",
+      "110243|11202|5|1|-44.2981|-73.0412|1|0|1754|412",
+      "110244|11202|6|1|-44.3168|-72.5997|0|0|0|412",
+      "110245|11202|4|1|-44.6359|-72.9182|0|2|0|412",
+      "110246|11202|5|1|-44.2741|-72.9991|1|0|1754|412",
+      "110247|11202|6|1|-44.3144|-72.6502|0|0|0|412",
+      "110248|11202|4|1|-44.667|-72.8915|0|2|0|412",
+      "110249|11202|5|1|-44.2282|-73.0003|1|0|1754|412",
+      "110250|11202|6|1|-44.3781|-72.6852|0|0|0|412",
+      "110251|11202|4|1|-44.6651|-72.8361|0|2|0|412",
+      "110252|11202|5|1|-44.198|-73.057|1|0|1754|412",
+      "110253|11202|6|1|-44.4649|-72.6703|0|0|0|412",
+      "110254|11202|4|1|-44.6528|-72.9402|1|2|1754|412",
+      "110255|11202|5|1|-44.216|-73.1311|0|0|0|412",
+      "110256|11202|6|1|-44.4243|-72.6167|0|0|0|412",
+      "110257|11202|4|1|-44.5447|-73.0093|1|2|1754|412",
+      "110258|11202|5|1|-44.2771|-73.1591|0|0|0|412",
+      "110259|11202|6|1|-44.4114|-72.5943|0|0|0|412",
+      "110260|11202|4|1|-44.5321|-72.9126|1|2|1754|412",
+      "110261|11202|5|1|-44.3359|-73.1061|0|0|0|412",
+      "110262|11202|6|1|-44.3697|-72.5873|0|0|0|412",
+      "110263|11202|4|1|-44.5855|-72.9916|1|2|1754|412",
+      "110264|11202|6|3|-44.4178|-72.6099|0|0|0|412",
+      "110265|11202|5|3|-44.2119|-73.0434|0|0|0|412",
+      "110266|11202|3|3|-44.4603|-73.6498|1|1|1754|412",
+      "110267|11202|6|3|-44.3966|-72.593|0|0|0|412",
+      "110268|11202|5|3|-44.2152|-73.1067|1|0|1754|412",
+      "110269|11202|3|3|-44.5412|-73.5511|0|1|0|412",
+      "110270|11202|6|3|-44.3566|-72.5957|0|0|0|412",
+      "110271|11202|5|3|-44.2606|-73.1453|1|0|1754|412",
+      "110272|11202|3|3|-44.4109|-73.5094|0|1|0|412",
+      "110273|11202|6|3|-44.3327|-72.6238|0|0|0|412",
+      "110274|11202|5|3|-44.3169|-73.1169|1|0|1754|412",
+      "110275|11202|3|3|-44.5359|-73.6458|0|1|0|412",
+      "110276|11202|6|3|-44.355|-72.6584|0|0|0|412",
+      "110277|11202|5|3|-44.3353|-73.0319|1|0|1754|412",
+      "110278|11202|3|3|-44.3133|-73.5099|0|1|0|412",
+      "110279|11202|6|3|-44.4164|-72.6679|0|0|0|412",
+      "110280|11202|5|3|-44.2918|-72.9544|1|0|1754|412",
+      "110281|11202|3|3|-44.2997|-73.5743|0|1|0|412",
+      "110282|11202|6|3|-44.4701|-72.6365|1|0|1754|412",
+      "110283|11202|5|3|-44.2459|-73.0283|0|0|0|412",
+      "110284|11202|3|3|-44.3588|-73.6299|0|1|0|412",
+      "110285|11202|6|3|-44.4651|-72.5832|1|0|1754|412",
+      "110286|11202|5|3|-44.2254|-73.0545|0|0|0|412",
+      "110287|11202|3|3|-44.4567|-73.6192|0|1|0|412",
+      "110288|11202|6|3|-44.3932|-72.5511|1|0|1754|412",
+      "110289|11202|5|3|-44.2307|-73.1|0|0|0|412",
+      "110290|11202|3|3|-44.5116|-73.5334|0|1|0|412",
+      "110291|11202|6|3|-44.3663|-72.6068|1|0|1754|412",
+      "110292|11202|5|3|-44.267|-73.1247|0|0|0|412",
+      "110293|11202|3|3|-44.9989|-73.699|0|1|0|412",
+      "110294|11202|6|3|-44.3517|-72.6262|1|0|1754|412",
+      "110295|11202|5|3|-44.309|-73.0966|0|0|0|412",
+      "110296|11202|3|3|-44.4556|-73.6572|1|1|1754|412",
+      "110297|11202|6|3|-44.3703|-72.6499|0|0|0|412",
+      "110298|11202|5|3|-44.3182|-73.0266|0|0|0|412",
+      "110299|11202|3|3|-44.3375|-73.5268|1|1|1754|412",
+      "110300|11202|6|3|-44.4169|-72.6541|0|0|0|412",
+      "110301|11202|5|3|-44.2773|-72.9689|0|0|0|412",
+      "110302|11202|3|3|-44.3305|-73.5689|1|1|1754|412",
+      "110303|11202|6|3|-44.4547|-72.6271|0|0|0|412",
+      "110304|11202|6|4|-44.3312|-72.5693|0|0|0|412",
+      "110305|11202|3|4|-44.3747|-73.6052|1|1|1754|412",
+      "110306|11202|7|4|-44.7385|-73.1951|0|2|0|412",
+      "110307|11202|6|4|-44.2865|-72.6211|1|0|1754|412",
+      "110308|11202|3|4|-44.4456|-73.5918|0|1|0|412",
+      "110309|11202|7|4|-44.6476|-73.155|0|2|0|412",
+      "110310|11202|6|4|-44.3703|-72.6381|1|0|1754|412",
+      "110311|11202|3|4|-44.4802|-73.5229|0|1|0|412",
+      "110312|11202|7|4|-44.5464|-73.1989|0|2|0|412",
+      "110313|11202|6|4|-44.4014|-72.6474|1|0|1754|412",
+      "110314|11202|3|4|-44.9274|-73.6759|0|1|0|412",
+      "110315|11202|7|4|-44.5236|-73.3056|0|2|0|412",
+      "110316|11202|6|4|-44.4369|-72.6326|1|0|1754|412",
+      "110317|11202|3|4|-44.3788|-73.6743|0|1|0|412",
+      "110318|11202|7|4|-44.6476|-73.2964|0|2|0|412",
+      "110319|11202|6|4|-44.4407|-72.5992|1|0|1754|412",
+      "110320|11202|3|4|-44.0425|-73.912|0|1|0|412",
+      "110321|11202|7|4|-44.693|-73.2997|1|2|1754|412",
+      "110322|11202|6|4|-44.3977|-72.574|0|0|0|412",
+      "110323|11202|3|4|-44.26|-73.6327|0|1|0|412",
+      "110324|11202|7|4|-44.7288|-73.2616|1|2|1754|412",
+      "110325|11202|6|4|-44.3349|-72.5837|0|0|0|412",
+      "110326|11202|3|4|-44.3906|-73.6938|0|1|0|412",
+      "110327|11202|7|4|-44.7112|-73.2046|1|2|1754|412",
+      "110328|11202|6|4|-44.3056|-72.6286|0|0|0|412",
+      "110329|11202|3|4|-44.4281|-73.5688|0|1|0|412",
+      "110330|11202|7|4|-44.6379|-73.1799|1|2|1754|412",
+      "110331|11202|6|4|-44.3445|-72.6761|0|0|0|412",
+      "110332|11202|3|4|-44.4485|-73.5196|0|1|0|412",
+      "110333|11202|7|4|-44.5624|-73.2221|1|2|1754|412",
+      "110334|11202|6|4|-44.4311|-72.6842|0|0|0|412",
+      "110335|11202|3|4|-44.851|-73.6584|1|1|1754|412",
+      "110336|11202|7|4|-44.5551|-73.31|0|2|0|412",
+      "110337|11202|4|5|-44.6598|-72.8913|0|2|0|412",
+      "110338|11202|8|5|-44.289|-73.0548|1|0|1754|412",
+      "110339|11202|5|5|-44.2485|-73.1579|0|0|0|412",
+      "110340|11202|4|5|-44.6607|-72.8428|0|2|0|412",
+      "110341|11202|8|5|-44.2563|-73.114|1|0|1754|412",
+      "110342|11202|5|5|-44.3162|-73.1386|0|0|0|412",
+      "110343|11202|4|5|-44.6187|-72.8078|0|2|0|412",
+      "110344|11202|8|5|-44.2726|-73.1955|1|0|1754|412",
+      "110345|11202|5|5|-44.2837|-73.0566|0|0|0|412",
+      "110346|11202|4|5|-44.5472|-73.0052|0|2|0|412",
+      "110347|11202|8|5|-44.3355|-73.2295|1|0|1754|412",
+      "110348|11202|5|5|-44.2761|-73.0248|0|0|0|412",
+      "110349|11202|4|5|-44.538|-72.9072|1|2|1754|412",
+      "110350|11202|8|5|-44.3986|-73.1743|0|0|0|412",
+      "110351|11202|5|5|-44.2462|-73.0127|0|0|0|412",
+      "110352|11202|4|5|-44.585|-72.9828|1|2|1754|412",
+      "110353|11202|8|5|-44.4057|-73.0609|0|0|0|412",
+      "110354|11202|5|5|-44.2166|-73.0431|0|0|0|412",
+      "110355|11202|4|5|-44.6758|-72.9851|1|2|1754|412",
+      "110356|11202|8|5|-44.3261|-73.0768|0|0|0|412",
+      "110357|11202|5|5|-44.2178|-73.1013|0|0|0|412",
+      "110358|11202|4|5|-44.738|-72.8947|1|2|1754|412",
+      "110359|11202|8|5|-44.294|-73.0785|0|0|0|412",
+      "110360|11202|5|5|-44.2587|-73.1392|0|0|0|412",
+      "110361|11202|4|5|-44.7567|-72.9843|1|2|1754|412",
+      "110362|11202|8|5|-44.2728|-73.1244|0|0|0|412",
+      "110363|11202|5|5|-44.312|-73.1155|1|0|1754|412",
+      "110364|11202|4|5|-44.6139|-72.8348|0|2|0|412",
+      "110365|11202|8|5|-44.2894|-73.1844|0|0|0|412",
+      "110366|11202|5|5|-44.3316|-73.0365|1|0|1754|412",
+      "110367|11202|4|5|-44.5751|-72.852|0|2|0|412",
+      "110368|11202|8|5|-44.3404|-73.2037|0|0|0|412",
+      "110369|11202|4|6|-44.7161|-72.9534|1|2|1754|412",
+      "110370|11202|8|6|-44.2794|-73.1452|0|0|0|412",
+      "110371|11202|5|6|-44.3206|-73.0872|0|0|0|412",
+      "110372|11202|4|6|-44.6026|-72.844|1|2|1754|412",
+      "110373|11202|8|6|-44.3077|-73.1912|0|0|0|412",
+      "110374|11202|5|6|-44.319|-73.0071|0|0|0|412",
+      "110375|11202|4|6|-44.5734|-72.872|1|2|1754|412",
+      "110376|11202|8|6|-44.3579|-73.1857|0|0|0|412",
+      "110377|11202|5|6|-44.2649|-72.9559|1|0|1754|412",
+      "110378|11202|4|6|-44.5781|-72.9261|0|2|0|412",
+      "110379|11202|8|6|-44.3882|-73.1176|0|0|0|412",
+      "110380|11202|5|6|-44.1956|-72.9853|1|0|1754|412",
+      "110381|11202|4|6|-44.6278|-72.9587|0|2|0|412",
+      "110382|11202|8|6|-44.3648|-73.0338|0|0|0|412",
+      "110383|11202|5|6|-44.2329|-73.0673|1|0|1754|412",
+      "110384|11202|4|6|-44.6889|-72.9273|0|2|0|412",
+      "110385|11202|8|6|-44.2961|-73.0072|0|0|0|412",
+      "110386|11202|5|6|-44.2447|-73.1017|1|0|1754|412",
+      "110387|11202|4|6|-44.7051|-72.8417|0|2|0|412",
+      "110388|11202|8|6|-44.2341|-73.0739|0|0|0|412",
+      "110389|11202|5|6|-44.2787|-73.11|1|0|1754|412",
+      "110390|11202|4|6|-44.6985|-72.9462|0|2|0|412",
+      "110391|11202|8|6|-44.2962|-73.1404|1|0|1754|412",
+      "110392|11202|5|6|-44.3082|-73.0724|0|0|0|412",
+      "110393|11202|4|6|-44.5766|-72.9715|0|2|0|412",
+      "110394|11202|8|6|-44.3163|-73.1699|1|0|1754|412",
+      "110395|11202|5|6|-44.302|-73.0103|0|0|0|412",
+      "110396|11202|4|6|-44.4953|-72.8777|0|2|0|412",
+      "110397|11202|8|6|-44.3518|-73.1621|1|0|1754|412",
+      "110398|11202|5|6|-44.2555|-72.9758|0|0|0|412",
+      "110399|11202|6|7|-44.3729|-72.6347|0|0|0|412",
+      "110400|11202|4|7|-44.6914|-72.8669|1|2|1754|412",
+      "110401|11202|6|7|-44.3181|-72.5877|0|0|0|412",
+      "110402|11202|4|7|-44.6312|-72.9311|0|2|0|412",
+      "110403|11202|6|7|-44.4211|-72.5807|1|0|1754|412",
+      "110404|11202|4|7|-44.506|-72.9252|0|2|0|412",
+      "110405|11202|6|7|-44.4312|-72.6321|1|0|1754|412",
+      "110406|11202|4|7|-44.6027|-72.954|0|2|0|412",
+      "110407|11202|6|7|-44.3574|-72.687|0|0|0|412",
+      "110408|11202|4|7|-44.6796|-72.842|1|2|1754|412",
+      "110409|11202|6|7|-44.3093|-72.607|0|0|0|412",
+      "110410|11202|4|7|-44.6436|-72.9198|0|2|0|412",
+      "110411|11202|6|7|-44.399|-72.5779|1|0|1754|412",
+      "110412|11202|4|7|-44.5296|-72.9643|0|2|0|412",
+      "110413|11202|6|7|-44.4317|-72.6216|0|0|0|412",
+      "110414|11202|4|7|-44.5624|-72.9853|1|2|1754|412",
+      "110415|11202|6|7|-44.393|-72.6884|0|0|0|412",
+      "110416|11202|4|7|-44.6619|-72.8244|1|2|1754|412",
+      "110417|11201|9|1|-45.16|-73.475|0|1|0|398",
+      "110418|11201|10|1|-45.0423|-74.019|0|1|0|398",
+      "110419|11201|11|1|-45.4802|-73.1304|0|0|0|398",
+      "110420|11201|12|1|-45.4256|-72.898|1|0|1367|398",
+      "110421|11201|13|1|-45.7693|-73.5221|0|0|0|398",
+      "110422|11201|14|1|-45.9009|-73.5509|0|0|0|398",
+      "110423|11201|9|1|-45.1048|-73.5248|1|1|1367|398",
+      "110424|11201|10|1|-45.3077|-74.0009|0|1|0|398",
+      "110425|11201|11|1|-45.3809|-73.0162|0|0|0|398",
+      "110426|11201|12|1|-45.4298|-72.9696|1|0|1367|398",
+      "110427|11201|13|1|-45.8215|-73.3953|0|0|0|398",
+      "110428|11201|14|1|-45.8185|-73.6465|0|0|0|398",
+      "110429|11201|9|1|-45.1998|-73.5787|1|1|1367|398",
+      "110430|11201|10|1|-45.1901|-73.7084|0|1|0|398",
+      "110431|11201|11|1|-45.3821|-73.1706|0|0|0|398",
+      "110432|11201|12|1|-45.4752|-72.9291|1|0|1367|398",
+      "110433|11201|13|1|-45.7071|-73.3423|0|0|0|398",
+      "110434|11201|14|1|-45.8479|-73.7288|0|0|0|398",
+      "110435|11201|9|1|-45.2316|-73.438|1|1|1367|398",
+      "110436|11201|10|1|-45.064|-73.9233|0|1|0|398",
+      "110437|11201|11|1|-45.4472|-73.1883|0|0|0|398",
+      "110438|11201|12|1|-45.4341|-72.8323|1|0|1367|398",
+      "110439|11201|13|1|-45.742|-73.4803|0|0|0|398",
+      "110440|11201|14|1|-45.9162|-73.6397|0|0|0|398",
+      "110441|11201|9|1|-45.0527|-73.4485|1|1|1367|398",
+      "110442|11201|10|1|-45.1766|-74.0265|0|1|0|398",
+      "110443|11201|11|1|-45.4363|-73.0515|0|0|0|398",
+      "110444|11201|12|1|-45.3912|-72.9609|1|0|1367|398",
+      "110445|11201|13|1|-45.8031|-73.4641|0|0|0|398",
+      "110446|11201|14|1|-45.8103|-73.557|0|0|0|398",
+      "110447|11201|9|1|-45.1485|-73.5536|1|1|1367|398",
+      "110448|11201|10|1|-45.2786|-73.8372|0|1|0|398",
+      "110449|11201|11|1|-45.3342|-73.1197|0|0|0|398",
+      "110450|11201|12|1|-45.4535|-72.9549|1|0|1367|398",
+      "110451|11201|13|1|-45.765|-73.3469|0|0|0|398",
+      "110452|11201|14|1|-45.7746|-73.7552|0|0|0|398",
+      "110453|11201|9|1|-45.2273|-73.5097|1|1|1367|398",
+      "110454|11201|10|1|-44.9851|-73.7896|0|1|0|398",
+      "110455|11201|11|1|-45.4124|-73.1809|0|0|0|398",
+      "110456|11201|12|1|-45.4586|-72.871|1|0|1367|398",
+      "110457|11201|13|1|-45.6869|-73.4607|0|0|0|398",
+      "110458|11201|14|1|-45.8847|-73.6897|0|0|0|398",
+      "110459|11201|9|1|-45.1363|-73.4238|1|1|1367|398",
+      "110460|11201|10|1|-45.0243|-74.1294|0|1|0|398",
+      "110461|11201|11|1|-45.4481|-73.118|0|0|0|398",
+      "110462|11201|12|1|-45.4034|-72.8902|1|0|1367|398",
+      "110463|11201|13|1|-45.7702|-73.4734|0|0|0|398",
+      "110464|11201|14|1|-45.8672|-73.5839|0|0|0|398",
+      "110465|11201|9|1|-45.0637|-73.5665|1|1|1367|398",
+      "110466|11201|10|1|-45.2341|-73.9387|0|1|0|398",
+      "110467|11201|11|1|-45.3782|-73.0704|0|0|0|398",
+      "110468|11201|12|1|-45.434|-73.0157|1|0|1367|398",
+      "110469|11201|13|1|-45.789|-73.4016|0|0|0|398",
+      "110470|11201|14|1|-45.7742|-73.6563|0|0|0|398",
+      "110471|11201|9|1|-45.2553|-73.6039|1|1|1367|398",
+      "110472|11201|10|1|-45.1328|-73.7897|0|1|0|398",
+      "110473|11201|11|1|-45.366|-73.2229|0|0|0|398",
+      "110474|11201|12|1|-45.4571|-72.9152|1|0|1367|398",
+      "110475|11201|13|1|-45.7169|-73.3939|0|0|0|398",
+      "110476|11201|14|1|-45.8709|-73.7839|0|0|0|398",
+      "110477|11201|9|1|-45.1872|-73.462|0|1|0|398",
+      "110478|11201|10|1|-44.9641|-73.973|1|1|1367|398",
+      "110479|11201|11|1|-45.4859|-73.1938|0|0|0|398",
+      "110480|11201|12|1|-45.4298|-72.8721|0|0|0|398",
+      "110481|11201|13|1|-45.7378|-73.5376|1|0|1367|398",
+      "110482|11201|14|1|-45.8778|-73.6398|0|0|0|398",
+      "110483|11201|9|1|-45.0851|-73.4907|0|1|0|398",
+      "110484|11201|10|1|-45.265|-74.0985|1|1|1367|398",
+      "110485|11201|11|1|-45.4154|-73.0896|0|0|0|398",
+      "110486|11201|12|1|-45.4126|-72.9628|0|0|0|398",
+      "110487|11201|13|1|-45.8406|-73.4497|1|0|1367|398",
+      "110488|11201|14|1|-45.8166|-73.6113|0|0|0|398",
+      "110489|11201|9|1|-45.161|-73.6095|0|1|0|398",
+      "110490|11201|10|1|-45.1881|-73.8702|1|1|1367|398",
+      "110491|11201|11|1|-45.3631|-73.1471|0|0|0|398",
+      "110492|11201|12|1|-45.4747|-72.9722|0|0|0|398",
+      "110493|11201|13|1|-45.7544|-73.3937|1|0|1367|398",
+      "110494|11201|14|1|-45.815|-73.7368|0|0|0|398",
+      "110495|11201|9|1|-45.2772|-73.4772|0|1|0|398",
+      "110496|11201|10|1|-45.0362|-73.8712|1|1|1367|398",
+      "110497|11201|11|1|-45.4316|-73.2294|0|0|0|398",
+      "110498|11201|12|1|-45.4594|-72.8232|0|0|0|398",
+      "110499|11201|13|1|-45.7199|-73.47|1|0|1367|398",
+      "110500|11201|14|1|-45.9301|-73.6931|0|0|0|398",
+      "110501|11201|9|1|-45.138|-73.473|0|1|0|398",
+      "110502|11201|10|1|-45.1071|-74.0661|1|1|1367|398",
+      "110503|11201|11|1|-45.4714|-73.0714|0|0|0|398",
+      "110504|11201|12|1|-45.4189|-72.915|0|0|0|398",
+      "110505|11201|13|1|-45.7983|-73.5093|1|0|1367|398",
+      "110506|11201|14|1|-45.8532|-73.5221|0|0|0|398",
+      "110507|11201|9|1|-45.1145|-73.5567|0|1|0|398",
+      "110508|11201|10|1|-45.3447|-73.9093|1|1|1367|398",
+      "110509|11201|11|1|-45.3906|-73.1153|0|0|0|398",
+      "110510|11201|12|1|-45.4443|-72.9794|0|0|0|398",
+      "110511|11201|13|1|-45.8011|-73.3461|1|0|1367|398",
+      "110512|11201|14|1|-45.8117|-73.6723|0|0|0|398",
+      "110513|11201|9|1|-45.2363|-73.5527|0|1|0|398",
+      "110514|11201|10|1|-45.0618|-73.7001|1|1|1367|398",
+      "110515|11201|11|1|-45.3939|-73.1958|0|0|0|398",
+      "110516|11201|12|1|-45.4755|-72.8894|0|0|0|398",
+      "110517|11201|13|1|-45.7388|-73.4285|1|0|1367|398",
+      "110518|11201|14|1|-45.8769|-73.7282|0|0|0|398",
+      "110519|11201|9|1|-44.8019|-73.6504|0|1|0|398",
+      "110520|11201|10|1|-45.063|-73.967|1|1|1367|398",
+      "110521|11201|11|1|-45.4629|-73.1533|0|0|0|398",
+      "110522|11201|12|1|-45.4106|-72.8456|0|0|0|398",
+      "110523|11201|13|1|-45.7573|-73.497|1|0|1367|398",
+      "110524|11201|14|1|-45.904|-73.5905|0|0|0|398",
+      "110525|11201|9|1|-45.0282|-73.512|0|1|0|398",
+      "110526|11201|10|1|-45.2421|-74.0042|1|1|1367|398",
+      "110527|11201|11|1|-45.403|-73.035|0|0|0|398",
+      "110528|11201|12|1|-45.4301|-72.9465|0|0|0|398",
+      "110529|11201|13|1|-45.8101|-73.425|1|0|1367|398",
+      "110530|11201|14|1|-45.7719|-73.5945|0|0|0|398",
+      "110531|11201|9|1|-45.1746|-73.5611|0|1|0|398",
+      "110532|11201|10|1|-45.2209|-73.7698|1|1|1367|398",
+      "110533|11201|11|1|-45.3333|-73.1856|0|0|0|398",
+      "110534|11201|12|1|-45.4635|-72.9385|0|0|0|398",
+      "110535|11201|13|1|-45.7314|-73.3487|0|0|0|398",
+      "110536|11201|14|1|-45.8415|-73.6991|1|0|1367|398",
+      "110537|11201|9|1|-45.2246|-73.4713|0|1|0|398",
+      "110538|11201|10|1|-44.9193|-73.8782|0|1|0|398",
+      "110539|11201|11|1|-45.4285|-73.1797|1|0|1367|398",
+      "110540|11201|12|1|-45.4439|-72.8525|0|0|0|398",
+      "110541|11201|13|1|-45.7|-73.5211|0|0|0|398",
+      "110542|11201|9|3|-45.2202|-73.5116|1|1|1367|398",
+      "110543|11201|11|3|-45.3649|-73.0723|0|0|0|398",
+      "110544|11201|13|3|-45.7653|-73.5745|0|0|0|398",
+      "110545|11201|9|3|-45.2048|-73.4546|1|1|1367|398",
+      "110546|11201|11|3|-45.341|-73.1561|0|0|0|398",
+      "110547|11201|13|3|-45.784|-73.4652|0|0|0|398",
+      "110548|11201|9|3|-45.1407|-73.4299|1|1|1367|398",
+      "110549|11201|11|3|-45.3728|-73.2447|0|0|0|398",
+      "110550|11201|13|3|-45.7942|-73.4221|0|0|0|398",
+      "110551|11201|9|3|-45.0746|-73.4721|1|1|1367|398",
+      "110552|11201|11|3|-45.4436|-73.2598|0|0|0|398",
+      "110553|11201|13|3|-45.774|-73.3764|0|0|0|398",
+      "110554|11201|9|3|-45.0682|-73.56|1|1|1367|398",
+      "110555|11201|11|3|-45.4356|-73.1499|0|0|0|398",
+      "110556|11201|13|3|-45.7321|-73.3748|0|0|0|398",
+      "110557|11201|9|3|-45.1421|-73.6243|1|1|1367|398",
+      "110558|11201|11|3|-45.4362|-73.1075|0|0|0|398",
+      "110559|11201|13|3|-45.7026|-73.434|0|0|0|398",
+      "110560|11201|9|3|-45.2475|-73.6017|1|1|1367|398",
+      "110561|11201|11|3|-45.4092|-73.0768|0|0|0|398",
+      "110562|11201|13|3|-45.7173|-73.5155|0|0|0|398",
+      "110563|11201|9|3|-45.1968|-73.506|1|1|1367|398",
+      "110564|11201|11|3|-45.3715|-73.096|0|0|0|398",
+      "110565|11201|13|3|-45.7739|-73.5495|0|0|0|398",
+      "110566|11201|9|3|-45.185|-73.4689|1|1|1367|398",
+      "110567|11201|11|3|-45.3573|-73.1638|0|0|0|398",
+      "110568|11201|13|3|-45.8307|-73.4943|0|0|0|398",
+      "110569|11201|9|3|-45.1386|-73.4548|1|1|1367|398",
+      "110570|11201|11|3|-45.3875|-73.2299|0|0|0|398",
+      "110571|11201|13|3|-45.8371|-73.3809|0|0|0|398",
+      "110572|11201|9|3|-45.0925|-73.4903|1|1|1367|398",
+      "110573|11201|11|3|-45.4459|-73.232|0|0|0|398",
+      "110574|11201|13|3|-45.7655|-73.3968|0|0|0|398",
+      "110575|11201|9|3|-45.0944|-73.5581|1|1|1367|398",
+      "110576|11201|11|3|-45.4858|-73.1529|0|0|0|398",
+      "110577|11201|13|3|-45.7366|-73.3985|0|0|0|398",
+      "110578|11201|9|3|-45.158|-73.6024|1|1|1367|398",
+      "110579|11201|11|3|-45.4676|-73.0462|0|0|0|398",
+      "110580|11201|13|3|-45.7175|-73.4444|0|0|0|398",
+      "110581|11201|9|3|-45.2408|-73.5747|1|1|1367|398",
+      "110582|11201|11|3|-45.4061|-73.1004|0|0|0|398",
+      "110583|11201|13|3|-45.7324|-73.5044|0|0|0|398",
+      "110584|11201|9|3|-45.2713|-73.4826|1|1|1367|398",
+      "110585|11201|11|3|-45.3812|-73.1155|0|0|0|398",
+      "110586|11201|13|3|-45.7784|-73.5237|0|0|0|398",
+      "110587|11201|9|3|-44.8986|-73.6685|1|1|1367|398",
+      "110588|11201|11|3|-45.3734|-73.1652|0|0|0|398",
+      "110589|11201|13|3|-45.8206|-73.4718|0|0|0|398",
+      "110590|11201|9|3|-45.1426|-73.4785|1|1|1367|398",
+      "110591|11201|11|3|-45.3989|-73.2112|0|0|0|398",
+      "110592|11201|13|3|-45.819|-73.3783|0|0|0|398",
+      "110593|11201|9|3|-45.1134|-73.503|0|1|0|398",
+      "110594|11201|11|3|-45.4441|-73.2057|1|0|1367|398",
+      "110595|11201|13|3|-45.7649|-73.3185|0|0|0|398",
+      "110596|11201|9|3|-45.1181|-73.5504|0|1|0|398",
+      "110597|11201|9|5|-45.2554|-73.5076|1|1|1367|398",
+      "110598|11201|12|5|-45.4007|-72.8515|0|0|0|398",
+      "110599|11201|13|5|-45.765|-73.5088|0|0|0|398",
+      "110600|11201|9|5|-45.0147|-73.7051|1|1|1367|398",
+      "110601|11201|12|5|-45.4234|-72.9267|0|0|0|398",
+      "110602|11201|13|5|-45.8043|-73.4814|0|0|0|398",
+      "110603|11201|9|5|-44.474|-73.654|1|1|1367|398",
+      "110604|11201|12|5|-45.4307|-72.9582|0|0|0|398",
+      "110605|11201|13|5|-45.8147|-73.4065|0|0|0|398",
+      "110606|11201|9|5|-45.0398|-73.4639|1|1|1367|398",
+      "110607|11201|12|5|-45.4514|-72.9659|0|0|0|398",
+      "110608|11201|13|5|-45.7781|-73.3414|0|0|0|398",
+      "110609|11201|9|5|-45.1267|-73.5304|1|1|1367|398",
+      "110610|11201|12|5|-45.4694|-72.9314|0|0|0|398",
+      "110611|11201|13|5|-45.7165|-73.3487|0|0|0|398",
+      "110612|11201|9|5|-45.1548|-73.5599|1|1|1367|398",
+      "110613|11201|12|5|-45.4657|-72.8744|0|0|0|398",
+      "110614|11201|13|5|-45.6798|-73.438|0|0|0|398",
+      "110615|11201|9|5|-45.2045|-73.5521|1|1|1367|398",
+      "110616|11201|12|5|-45.4372|-72.8428|0|0|0|398",
+      "110617|11201|13|5|-45.746|-73.4674|0|0|0|398",
+      "110618|11201|9|5|-45.2314|-73.4986|1|1|1367|398",
+      "110619|11201|12|5|-45.404|-72.8726|0|0|0|398",
+      "110620|11201|13|5|-45.7672|-73.4847|0|0|0|398",
+      "110621|11201|9|5|-45.1996|-73.4366|1|1|1367|398",
+      "110622|11201|12|5|-45.3952|-72.9511|0|0|0|398",
+      "110623|11201|13|5|-45.7937|-73.4627|0|0|0|398",
+      "110624|11201|9|5|-45.1213|-73.4238|1|1|1367|398",
+      "110625|11201|12|5|-45.4237|-73.0183|0|0|0|398",
+      "110626|11201|13|5|-45.7983|-73.4067|0|0|0|398",
+      "110627|11201|9|5|-45.0573|-73.4857|1|1|1367|398",
+      "110628|11201|12|5|-45.4493|-72.9473|0|0|0|398",
+      "110629|11201|13|5|-45.7674|-73.3615|0|0|0|398",
+      "110630|11201|9|5|-45.0696|-73.5837|1|1|1367|398",
+      "110631|11201|12|5|-45.4608|-72.9224|0|0|0|398",
+      "110632|11201|13|5|-45.7195|-73.3752|0|0|0|398",
+      "110633|11201|9|5|-45.1639|-73.6377|1|1|1367|398",
+      "110634|11201|12|5|-45.4565|-72.8818|0|0|0|398",
+      "110635|11201|13|5|-45.6952|-73.4519|0|0|0|398",
+      "110636|11201|9|5|-45.1909|-73.5322|1|1|1367|398",
+      "110637|11201|12|5|-45.434|-72.8621|0|0|0|398",
+      "110638|11201|13|5|-45.723|-73.5368|0|0|0|398",
+      "110639|11201|9|5|-45.207|-73.4958|1|1|1367|398",
+      "110640|11201|12|5|-45.4094|-72.8905|0|0|0|398",
+      "110641|11201|13|5|-45.7895|-73.5549|0|0|0|398",
+      "110642|11201|9|5|-45.1813|-73.4537|1|1|1367|398",
+      "110643|11201|12|5|-45.4058|-72.9545|0|0|0|398",
+      "110644|11201|13|5|-45.8434|-73.4764|0|0|0|398",
+      "110645|11201|10|4|-45.0648|-73.8075|1|1|1367|398",
+      "110646|11201|11|4|-45.3971|-73.2467|0|0|0|398",
+      "110647|11201|14|4|-45.8783|-73.631|0|0|0|398",
+      "110648|11201|10|4|-44.976|-73.9049|1|1|1367|398",
+      "110649|11201|11|4|-45.4613|-73.2291|0|0|0|398",
+      "110650|11201|14|4|-45.8505|-73.5998|0|0|0|398",
+      "110651|11201|10|4|-45.0122|-74.0467|1|1|1367|398",
+      "110652|11201|11|4|-45.4938|-73.13|0|0|0|398",
+      "110653|11201|14|4|-45.8084|-73.6155|0|0|0|398",
+      "110654|11201|10|4|-45.1741|-74.1116|0|1|0|398",
+      "110655|11201|11|4|-45.4244|-73.1056|1|0|1367|398",
+      "110656|11201|14|4|-45.7904|-73.6809|0|0|0|398",
+      "110657|11201|10|4|-45.3441|-74.0211|0|1|0|398",
+      "110658|11201|11|4|-45.3989|-73.0908|1|0|1367|398",
+      "110659|11201|14|4|-45.8225|-73.7482|0|0|0|398",
+      "110660|11201|10|4|-45.3707|-73.8226|0|1|0|398",
+      "110661|11201|11|4|-45.3714|-73.1204|1|0|1367|398",
+      "110662|11201|14|4|-45.8888|-73.7538|0|0|0|398",
+      "110663|11201|10|4|-45.1567|-73.853|0|1|0|398",
+      "110664|11201|11|4|-45.3706|-73.1821|1|0|1367|398",
+      "110665|11201|14|4|-45.9368|-73.6767|0|0|0|398",
+      "110666|11201|10|4|-45.0788|-73.8511|0|1|0|398",
+      "110667|11201|11|4|-45.4071|-73.2253|1|0|1367|398",
+      "110668|11201|14|4|-45.9188|-73.5678|0|0|0|398",
+      "110669|11201|10|4|-45.0217|-73.9239|0|1|0|398",
+      "110670|11201|11|4|-45.4572|-73.2026|1|0|1367|398",
+      "110671|11201|14|4|-45.8371|-73.5177|0|0|0|398",
+      "110672|11201|10|4|-45.0585|-74.0263|0|1|0|398",
+      "110673|11201|11|4|-45.4776|-73.1175|1|0|1367|398",
+      "110674|11201|14|4|-45.8201|-73.6361|0|0|0|398",
+      "110675|11201|10|4|-45.1878|-74.0645|0|1|0|398",
+      "110676|11201|11|4|-45.4428|-73.0328|1|0|1367|398",
+      "110677|11201|14|4|-45.8098|-73.6822|0|0|0|398",
+      "110678|11201|10|4|-45.3133|-73.9799|0|1|0|398",
+      "110679|11201|11|4|-45.372|-73.0245|1|0|1367|398",
+      "110680|11201|14|4|-45.8362|-73.7284|0|0|0|398",
+      "110681|11201|10|4|-45.3154|-73.8178|0|1|0|398",
+      "110682|11201|11|4|-45.3847|-73.1328|1|0|1367|398",
+      "110683|11201|14|4|-45.8867|-73.7261|0|0|0|398",
+      "110684|11201|10|4|-45.1614|-73.708|0|1|0|398",
+      "110685|11201|11|4|-45.3856|-73.1743|1|0|1367|398",
+      "110686|11201|14|4|-45.9195|-73.6606|0|0|0|398",
+      "110687|11201|9|7|-45.0678|-73.4245|0|1|0|398",
+      "110688|11201|11|7|-45.4133|-73.202|1|0|1367|398",
+      "110689|11201|15|7|-45.381|-73.5789|0|1|0|398",
+      "110690|11201|9|7|-45.1245|-73.5161|0|1|0|398",
+      "110691|11201|11|7|-45.4496|-73.1797|1|0|1367|398",
+      "110692|11201|15|7|-45.2919|-73.5425|0|1|0|398",
+      "110693|11201|9|7|-45.138|-73.5517|0|1|0|398",
+      "110694|11201|11|7|-45.4611|-73.1115|1|0|1367|398",
+      "110695|11201|15|7|-45.2078|-73.6194|0|1|0|398",
+      "110696|11201|9|7|-45.1843|-73.5628|0|1|0|398",
+      "110697|11201|11|7|-45.4287|-73.0491|1|0|1367|398",
+      "110698|11201|15|7|-45.2047|-73.7647|0|1|0|398",
+      "110699|11201|9|7|-45.2276|-73.5253|0|1|0|398",
+      "110700|11201|11|7|-45.3709|-73.0525|1|0|1367|398",
+      "110701|11201|15|7|-45.3142|-73.7349|0|1|0|398",
+      "110702|11201|9|7|-45.2218|-73.4586|0|1|0|398",
+      "110703|11201|11|7|-45.3344|-73.1344|1|0|1367|398",
+      "110704|11201|15|7|-45.3582|-73.7294|0|1|0|398",
+      "110705|11201|9|7|-44.6251|-73.6403|0|1|0|398",
+      "110706|11201|11|7|-45.3566|-73.2384|1|0|1367|398",
+      "110707|11201|15|7|-45.3847|-73.6693|0|1|0|398",
+      "110708|11201|9|7|-45.0762|-73.4509|0|1|0|398",
+      "110709|11201|11|7|-45.4154|-73.1781|1|0|1367|398",
+      "110710|11201|15|7|-45.3583|-73.5951|0|1|0|398",
+      "110711|11201|9|7|-45.0515|-73.5439|0|1|0|398",
+      "110712|11201|11|7|-45.4392|-73.1613|0|0|0|398",
+      "110713|11201|15|7|-45.2867|-73.5761|1|1|1367|398",
+      "110714|11201|9|7|-45.1171|-73.6271|0|1|0|398",
+      "110715|11201|11|7|-45.4449|-73.1118|0|0|0|398",
+      "110716|11201|15|7|-45.2249|-73.647|1|1|1367|398",
+      "110717|11201|9|7|-45.1788|-73.5396|0|1|0|398",
+      "110718|11201|11|7|-45.4181|-73.0688|0|0|0|398",
+      "110719|11201|11|7|-45.354|-73.2066|1|0|1367|398",
+      "110720|11201|13|7|-45.7895|-73.4441|0|0|0|398",
+      "110721|11201|11|8|-45.3738|-73.0785|0|0|0|398",
+      "110722|11201|11|8|-45.4099|-73.2607|1|0|1367|398",
+      "110723|11201|13|8|-45.7849|-73.3979|0|0|0|398",
+      "110724|11201|13|8|-45.6995|-73.4482|0|0|0|398",
+      "110725|11201|11|8|-45.4772|-73.2203|1|0|1367|398",
+      "110726|11201|13|8|-45.7524|-73.3728|0|0|0|398",
+      "110727|11201|11|8|-45.3735|-73.229|0|0|0|398",
+      "110728|11201|11|8|-45.4361|-73.1291|1|0|1367|398",
+      "110729|11201|13|8|-45.7148|-73.4034|0|0|0|398",
+      "110730|11201|13|8|-45.7857|-73.5496|0|0|0|398",
+      "110731|11201|11|8|-45.4231|-73.0909|1|0|1367|398",
+      "110732|11201|13|8|-45.7073|-73.4783|0|0|0|398",
+      "110733|11201|11|8|-45.4883|-73.1784|0|0|0|398",
+      "110734|11201|11|8|-45.3893|-73.0844|1|0|1367|398",
+      "110735|11201|13|8|-45.7459|-73.5391|0|0|0|398",
+      "110736|11201|13|8|-45.78|-73.4182|0|0|0|398",
+      "110737|11201|11|8|-45.362|-73.1302|1|0|1367|398",
+      "110738|11201|13|8|-45.8066|-73.5262|0|0|0|398",
+      "110739|11201|11|8|-45.4113|-73.0909|0|0|0|398",
+      "110740|11201|11|8|-45.3708|-73.2012|1|0|1367|398",
+      "110741|11201|13|8|-45.8394|-73.4344|0|0|0|398",
+      "110742|11201|13|8|-45.7303|-73.4014|0|0|0|398",
+      "110743|11201|11|8|-45.4183|-73.2366|1|0|1367|398",
+      "110744|11201|13|8|-45.8096|-73.3294|0|0|0|398",
+      "110745|11201|11|8|-45.3653|-73.1556|0|0|0|398",
+      "110746|11201|11|8|-45.4705|-73.1941|1|0|1367|398",
+      "110747|11201|13|8|-45.7512|-73.397|0|0|0|398",
+      "110748|11201|13|8|-45.7377|-73.5147|0|0|0|398",
+      "110749|11201|11|8|-45.481|-73.0939|1|0|1367|398",
+      "110750|11201|13|8|-45.726|-73.4209|0|0|0|398",
+      "110751|11201|11|8|-45.4379|-73.2228|0|0|0|398",
+      "110752|11201|11|8|-45.4315|-73.0136|1|0|1367|398",
+      "110753|11201|11|9|-45.3736|-73.1763|0|0|0|398",
+      "110754|11201|11|9|-45.4762|-73.1578|0|0|0|398",
+      "110755|11201|12|9|-45.4301|-72.8945|1|0|1367|398",
+      "110756|11201|16|9|-45.6163|-73.2869|0|0|0|398",
+      "110757|11201|11|9|-45.4646|-73.0615|0|0|0|398",
+      "110758|11201|11|9|-45.3765|-73.1402|1|0|1367|398",
+      "110759|11201|12|9|-45.466|-72.9673|0|0|0|398",
+      "110760|11201|16|9|-45.6134|-73.1118|0|0|0|398",
+      "110761|11201|11|9|-45.3854|-73.1903|1|0|1367|398",
+      "110762|11201|11|9|-45.4736|-73.1221|0|0|0|398",
+      "110763|11201|12|9|-45.4277|-72.9045|0|0|0|398",
+      "110764|11201|16|9|-45.6312|-73.2814|1|0|1367|398",
+      "110765|11201|11|9|-45.4428|-73.0407|0|0|0|398",
+      "110766|11201|11|9|-45.381|-73.1567|0|0|0|398",
+      "110767|11201|12|9|-45.4711|-72.9454|1|0|1367|398",
+      "110768|11201|16|9|-45.59|-73.1249|0|0|0|398",
+      "110769|11201|11|9|-45.3988|-73.1965|0|0|0|398",
+      "110770|11201|11|9|-45.4635|-73.0913|0|0|0|398",
+      "110771|11201|12|9|-45.3886|-72.8978|1|0|1367|398",
+      "110772|11201|16|9|-45.6432|-73.2691|0|0|0|398",
+      "110773|11201|11|9|-45.4186|-73.0333|0|0|0|398",
+      "110774|11201|11|9|-45.3884|-73.1685|1|0|1367|398",
+      "110775|11201|12|9|-45.4719|-72.9224|0|0|0|398",
+      "110776|11201|16|9|-45.5717|-73.1485|0|0|0|398",
+      "110777|11201|11|9|-45.4118|-73.1951|1|0|1367|398",
+      "110778|11201|11|9|-45.4479|-73.0688|0|0|0|398",
+      "110779|11201|12|9|-45.3895|-72.934|0|0|0|398",
+      "110780|11201|16|9|-45.6512|-73.2522|1|0|1367|398",
+      "110781|11201|11|10|-45.3951|-73.0391|0|0|0|398",
+      "110782|11201|13|10|-45.7473|-73.4748|0|0|0|398",
+      "110783|11201|11|10|-45.4573|-73.1162|1|0|1367|398",
+      "110784|11201|13|10|-45.693|-73.3923|0|0|0|398",
+      "110785|11201|11|10|-45.4228|-73.1871|0|0|0|398",
+      "110786|11201|13|10|-45.779|-73.3567|1|0|1367|398",
+      "110787|11201|11|10|-45.3386|-73.1989|0|0|0|398",
+      "110788|11201|13|10|-45.7987|-73.4556|0|0|0|398",
+      "110789|11201|11|10|-45.3752|-73.0565|1|0|1367|398",
+      "110790|11201|13|10|-45.7562|-73.4755|0|0|0|398",
+      "110791|11201|11|10|-45.4471|-73.0949|0|0|0|398",
+      "110792|11201|13|10|-45.6891|-73.4313|1|0|1367|398",
+      "110793|11201|11|10|-45.4307|-73.1744|0|0|0|398",
+      "110794|11201|13|10|-45.7595|-73.3556|0|0|0|398",
+      "110795|11201|11|10|-45.3577|-73.2305|1|0|1367|398",
+      "110796|11201|13|10|-45.7972|-73.4344|0|0|0|398",
+      "110797|11201|11|10|-45.361|-73.0826|0|0|0|398",
+      "110798|11201|13|10|-45.7756|-73.5705|1|0|1367|398",
+      "110799|11201|11|10|-45.4336|-73.0812|0|0|0|398",
+      "110800|11201|13|10|-45.694|-73.4686|0|0|0|398",
+      "110801|11201|11|10|-45.4347|-73.1595|1|0|1367|398",
+      "110802|11201|13|10|-45.7418|-73.3648|0|0|0|398",
+      "110803|11201|11|10|-45.3818|-73.2492|0|0|0|398",
+      "110804|11201|13|10|-45.7914|-73.4166|1|0|1367|398",
+      "110805|11201|11|10|-45.3537|-73.1134|0|0|0|398",
+      "110806|11201|13|10|-45.8021|-73.5508|0|0|0|398",
+      "110807|11201|11|6|-45.4186|-73.0762|1|0|1367|398",
+      "110808|11201|13|6|-45.7064|-73.4997|0|0|0|398",
+      "110809|11201|11|6|-45.4349|-73.1447|0|0|0|398",
+      "110810|11201|13|6|-45.728|-73.3821|1|0|1367|398",
+      "110811|11201|11|6|-45.4076|-73.2536|0|0|0|398",
+      "110812|11201|13|6|-45.7825|-73.4042|0|0|0|398",
+      "110813|11201|11|6|-45.3539|-73.1448|1|0|1367|398",
+      "110814|11201|13|6|-45.822|-73.519|0|0|0|398",
+      "110815|11201|11|6|-45.4044|-73.0794|0|0|0|398",
+      "110816|11201|13|6|-45.7243|-73.5214|1|0|1367|398",
+      "110817|11201|11|6|-45.4319|-73.132|0|0|0|398",
+      "110818|11201|13|6|-45.7195|-73.4046|0|0|0|398",
+      "110819|11201|11|6|-45.432|-73.2441|1|0|1367|398",
+      "110820|11201|13|6|-45.7722|-73.398|0|0|0|398",
+      "110821|11201|11|6|-45.3607|-73.1729|0|0|0|398",
+      "110822|11201|13|6|-45.8332|-73.4798|1|0|1367|398",
+      "110823|11201|11|6|-45.3926|-73.0896|0|0|0|398",
+      "110824|11201|13|6|-45.7451|-73.5316|0|0|0|398",
+      "110825|11201|11|11|-45.4808|-73.0677|1|0|1367|398",
+      "110826|11201|12|11|-45.4135|-72.9114|0|0|0|398",
+      "110827|11201|11|11|-45.452|-73.2229|0|0|0|398",
+      "110828|11201|12|11|-45.4412|-72.887|1|0|1367|398",
+      "110829|11303|17|12|-47.84|-73.81|0|3|0|289",
+      "110830|11303|17|12|-47.7842|-73.9866|0|3|0|289",
+      "110831|11303|17|12|-47.9648|-73.8608|0|3|0|289",
+      "110832|11303|17|12|-47.7982|-73.8239|0|3|0|289",
+      "110833|11303|17|12|-47.8566|-74.0442|0|3|0|289",
+      "110834|11303|17|12|-47.914|-73.6763|0|3|0|289",
+      "110835|11303|17|12|-47.7769|-73.9097|0|3|0|289",
+      "110836|11303|17|12|-47.9358|-73.9671|0|3|0|289",
+      "110837|11303|17|12|-47.8445|-73.9555|0|3|0|289",
+      "110838|11303|17|12|-47.8102|-74.0062|0|3|0|289",
+      "110839|11303|17|12|-47.9493|-73.7905|0|3|0|289",
+      "110840|11303|17|12|-47.7941|-73.8548|0|3|0|289",
+      "110841|11303|17|12|-47.8855|-74.0173|0|0|0|289",
+      "110842|11303|17|12|-47.8686|-73.6521|0|0|0|289",
+      "110843|11303|17|12|-47.7903|-73.9411|0|0|0|289",
+      "110844|11303|17|12|-47.9425|-73.9032|0|0|0|289",
+      "110845|11303|17|12|-47.7459|-73.6847|0|0|0|289"
+    ]
+  },
   "spatialLayersCatalog": [
     {
-      "id": "concesiones_acuicolas",
-      "label": "Concesiones Acuícolas, Caletas y Minería",
+      "id": "concesiones_acuicolas_padron",
+      "label": "Padrón Acuícola Completo (745 Concesiones / 245 Activas)",
       "hubId": "salmonicultura",
       "color": "#0059c5",
-      "count": 38
+      "count": 745,
+      "geometryType": "point"
     },
     {
-      "id": "centrales_electricas",
-      "label": "Centrales Eléctricas y Nodos FOA",
-      "hubId": "energia",
-      "color": "#0284c7",
-      "count": 46
+      "id": "concesiones_acuicolas",
+      "label": "Barrios ACS, Concesiones Emblemáticas y Maritorio",
+      "hubId": "salmonicultura",
+      "color": "#0059c5",
+      "count": 38,
+      "geometryType": "point"
+    },
+    {
+      "id": "caletas_puertos",
+      "label": "Caletas Pesqueras Artesanales y Terminales Portuarios",
+      "hubId": "salmonicultura",
+      "color": "#0e7490",
+      "count": 15,
+      "geometryType": "point"
+    },
+    {
+      "id": "mineria_faenas",
+      "label": "Faenas Mineras y Pasivos SERNAGEOMIN",
+      "hubId": "salmonicultura",
+      "color": "#b45309",
+      "count": 5,
+      "geometryType": "point"
+    },
+    {
+      "id": "aerodromos_dgac",
+      "label": "Aeródromos y Pistas Regionales (DGAC / JAC)",
+      "hubId": "inversion",
+      "color": "#0369a1",
+      "count": 12,
+      "geometryType": "point"
+    },
+    {
+      "id": "proyectos_seia_puros",
+      "label": "Proyectos de Inversión Ambiental (SEIA)",
+      "hubId": "inversion",
+      "color": "#0f766e",
+      "count": 19,
+      "geometryType": "point"
     },
     {
       "id": "proyectos_seia",
-      "label": "Proyectos SEIA y Aeródromos JAC",
+      "label": "Proyectos SEIA y Aeródromos JAC (Combinado)",
       "hubId": "inversion",
       "color": "#0f766e",
-      "count": 26
+      "count": 26,
+      "geometryType": "point"
+    },
+    {
+      "id": "centrales_electricas_puros",
+      "label": "Centrales Eléctricas CNE y Redes Medianas",
+      "hubId": "energia",
+      "color": "#0284c7",
+      "count": 30,
+      "geometryType": "point"
+    },
+    {
+      "id": "nodos_foa",
+      "label": "Nodos Fibra Óptica Austral (FOA / SUBTEL)",
+      "hubId": "energia",
+      "color": "#4f46e5",
+      "count": 16,
+      "geometryType": "point"
+    },
+    {
+      "id": "centrales_electricas",
+      "label": "Centrales Eléctricas y Nodos FOA (Combinado)",
+      "hubId": "energia",
+      "color": "#0284c7",
+      "count": 46,
+      "geometryType": "point"
     },
     {
       "id": "hospitales_postas",
       "label": "Hospitales DEIS, CESFAM y Postas Rurales",
       "hubId": "salud",
       "color": "#be185d",
-      "count": 41
+      "count": 41,
+      "geometryType": "point"
     },
     {
       "id": "escuelas_slep",
       "label": "Escuelas SLEP y Educación Superior",
       "hubId": "social",
       "color": "#2563eb",
-      "count": 57
+      "count": 57,
+      "geometryType": "point"
     },
     {
       "id": "volcanes_sismos",
       "label": "Volcanes RNVV y Epicentros Sísmicos USGS",
       "hubId": "social",
       "color": "#dc2626",
-      "count": 42
+      "count": 42,
+      "geometryType": "point"
     },
     {
       "id": "parques_snaspe",
-      "label": "Parques SNASPE y Zonas ZOIT",
+      "label": "Parques SNASPE y Zonas ZOIT (con Polígonos)",
       "hubId": "turismo",
       "color": "#00357f",
-      "count": 18
+      "count": 18,
+      "geometryType": "polygon"
+    },
+    {
+      "id": "estaciones_dga_sinca",
+      "label": "Estaciones Hidrométricas DGA y Aire SINCA",
+      "hubId": "biodiversidad",
+      "color": "#059669",
+      "count": 16,
+      "geometryType": "point"
+    },
+    {
+      "id": "fauna_rce_sitios",
+      "label": "Sitios de Fauna RCE y Biodiversidad (MMA/SAG)",
+      "hubId": "biodiversidad",
+      "color": "#15803d",
+      "count": 20,
+      "geometryType": "point"
     },
     {
       "id": "estaciones_monitoreo",
-      "label": "Estaciones DGA/SINCA y Fauna RCE",
+      "label": "Estaciones DGA/SINCA y Fauna RCE (Combinado)",
       "hubId": "biodiversidad",
       "color": "#047857",
-      "count": 36
+      "count": 36,
+      "geometryType": "point"
     },
     {
       "id": "museos_cultura",
       "label": "Museos RMC, Bibliotecas y Monumentos CMN",
       "hubId": "cultura_patrimonio",
       "color": "#b45309",
-      "count": 15
+      "count": 15,
+      "geometryType": "point"
     },
     {
       "id": "centros_ctci",
       "label": "Centros CTCi, Laboratorios y CORFO",
       "hubId": "ctci_innovacion",
       "color": "#0e7490",
-      "count": 15
+      "count": 15,
+      "geometryType": "point"
     },
     {
       "id": "gobernanza_obras",
       "label": "Sedes Municipales, GORE y Obras Públicas",
       "hubId": "gobernanza",
       "color": "#4338ca",
-      "count": 13
+      "count": 13,
+      "geometryType": "point"
     },
     {
       "id": "justicia_sma",
       "label": "Unidades Fiscalizables SMA y Causas 3TA",
       "hubId": "justicia_ambiental",
       "color": "#dc2626",
-      "count": 10
+      "count": 10,
+      "geometryType": "point"
     }
   ],
   "spatialNodes": [
@@ -40745,6 +42951,1076 @@ window.AYSEN_HUBS_DATA = {
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
         "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      }
+    ],
+    "caletas_puertos": [
+      {
+        "id": "sal_node_planta_salmones_antartica_chacabuco",
+        "nombre": "Planta de Proceso Puerto Chacabuco (Salmones Antártica)",
+        "tipo": "Planta de Proceso y Base Acuícola Emblemática",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.466,
+        "lon": -72.828,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50830.html",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_melinka",
+        "nombre": "Caleta Pesquera Artesanal Melinka",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11203",
+        "nombre_comuna": "Guaitecas",
+        "localidad": "Guaitecas",
+        "lat": -43.8965,
+        "lon": -73.751,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_repollal",
+        "nombre": "Caleta Pesquera Repollal Bajo",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11203",
+        "nombre_comuna": "Guaitecas",
+        "localidad": "Guaitecas",
+        "lat": -43.865,
+        "lon": -73.81,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_puerto_gala",
+        "nombre": "Caleta Pesquera Puerto Gala (Isla Toto)",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -44.275,
+        "lon": -73.208,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_puerto_gaviota",
+        "nombre": "Caleta Pesquera Puerto Gaviota",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -44.578,
+        "lon": -73.395,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_puerto_cisnes",
+        "nombre": "Caleta y Muelle de Pescadores Puerto Cisnes",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -44.745,
+        "lon": -72.698,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_raul_marin",
+        "nombre": "Caleta Puerto Raúl Marín Balmaceda",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -43.782,
+        "lon": -72.955,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_puerto_aguirre",
+        "nombre": "Caleta Puerto Aguirre (Islas Huichas)",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.163,
+        "lon": -73.528,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_puerto_chacabuco",
+        "nombre": "Caleta de Pescadores Artesanales Puerto Chacabuco",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.465,
+        "lon": -72.825,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_caleta_tortel",
+        "nombre": "Caleta Pesquera Caleta Tortel",
+        "tipo": "Caleta Pesquera Artesanal",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11303",
+        "nombre_comuna": "Tortel",
+        "localidad": "Tortel",
+        "lat": -47.796,
+        "lon": -73.534,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernapesca.cl/informacion-utilidad/anuarios-estadisticos-de-pesca-y-acuicultura",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_puerto_cristal_mina_silva",
+        "nombre": "Mina Silva y Campamento Minero Puerto Cristal",
+        "tipo": "Sitio Histórico Minero y Patrimonio Industrial",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11402",
+        "nombre_comuna": "Río Ibáñez",
+        "localidad": "Río Ibáñez",
+        "lat": -46.525,
+        "lon": -72.485,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/campamento-minero-puerto-cristal",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "puerto_ibanez_ramp",
+        "nombre": "Terminal Portuario / Rampa Puerto Ibáñez",
+        "tipo": "Terminal Portuario Lacustre (MOP DOP)",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11402",
+        "nombre_comuna": "Río Ibáñez",
+        "localidad": "Río Ibáñez",
+        "lat": -46.292,
+        "lon": -71.942,
+        "magnitudeValue": 24000,
+        "magnitudeUnit": "ton/año",
+        "magnitudeLabel": "Movimiento / Transferencia",
+        "titular": "MOP Dirección de Obras Portuarias",
+        "sourceUrl": "https://dop.mop.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490"
+      },
+      {
+        "id": "puerto_chile_chico_ramp",
+        "nombre": "Terminal Portuario / Rampa Chile Chico",
+        "tipo": "Terminal Portuario Lacustre (MOP DOP)",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11401",
+        "nombre_comuna": "Chile Chico",
+        "localidad": "Chile Chico",
+        "lat": -46.538,
+        "lon": -71.725,
+        "magnitudeValue": 22000,
+        "magnitudeUnit": "ton/año",
+        "magnitudeLabel": "Movimiento / Transferencia",
+        "titular": "MOP Dirección de Obras Portuarias",
+        "sourceUrl": "https://dop.mop.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490"
+      },
+      {
+        "id": "rampa_puerto_yungay",
+        "nombre": "Rampa Transbordo Fiordo Mitchell (Puerto Yungay)",
+        "tipo": "Rampa Bimodal Ruta 7 (MOP DOP)",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11303",
+        "nombre_comuna": "Tortel",
+        "localidad": "Tortel",
+        "lat": -47.788,
+        "lon": -73.255,
+        "magnitudeValue": 18500,
+        "magnitudeUnit": "vehículos/año",
+        "magnitudeLabel": "Movimiento / Transferencia",
+        "titular": "MOP Vialidad / DOP",
+        "sourceUrl": "https://dop.mop.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490"
+      },
+      {
+        "id": "rampa_rio_bravo",
+        "nombre": "Rampa Transbordo Río Bravo (Acceso Sur)",
+        "tipo": "Rampa Bimodal Ruta 7 (MOP DOP)",
+        "layerKey": "caletas_puertos",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11302",
+        "nombre_comuna": "O'Higgins",
+        "localidad": "O'Higgins",
+        "lat": -47.842,
+        "lon": -73.218,
+        "magnitudeValue": 18500,
+        "magnitudeUnit": "vehículos/año",
+        "magnitudeLabel": "Movimiento / Transferencia",
+        "titular": "MOP Vialidad / DOP",
+        "sourceUrl": "https://dop.mop.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0e7490"
+      }
+    ],
+    "mineria_faenas": [
+      {
+        "id": "sal_node_mina_el_toqui",
+        "nombre": "Mina El Toqui (Alto Mañihuales)",
+        "tipo": "Faena Minera Subterránea",
+        "layerKey": "mineria_faenas",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.025,
+        "lon": -72.04,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#b45309",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_distrito_cerro_bayo",
+        "nombre": "Distrito Minero Cerro Bayo / Laguna Verde",
+        "tipo": "Faena Minera y Planta de Procesamiento",
+        "layerKey": "mineria_faenas",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11401",
+        "nombre_comuna": "Chile Chico",
+        "localidad": "Chile Chico",
+        "lat": -46.612,
+        "lon": -71.795,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#b45309",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_mina_fachinal",
+        "nombre": "Mina Fachinal (Mallín Grande)",
+        "tipo": "Yacimiento Minero Polimetálico",
+        "layerKey": "mineria_faenas",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11401",
+        "nombre_comuna": "Chile Chico",
+        "localidad": "Chile Chico",
+        "lat": -46.685,
+        "lon": -71.95,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#b45309",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_puerto_cristal_mina_silva",
+        "nombre": "Mina Silva y Campamento Minero Puerto Cristal",
+        "tipo": "Sitio Histórico Minero y Patrimonio Industrial",
+        "layerKey": "mineria_faenas",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11402",
+        "nombre_comuna": "Río Ibáñez",
+        "localidad": "Río Ibáñez",
+        "lat": -46.525,
+        "lon": -72.485,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/campamento-minero-puerto-cristal",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#b45309",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "sal_node_prospecto_katterfeld",
+        "nombre": "Prospecto Minero Katterfeld (Ñirehuao)",
+        "tipo": "Prospecto Minero Polimetálico",
+        "layerKey": "mineria_faenas",
+        "hubId": "salmonicultura",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.22,
+        "lon": -71.78,
+        "magnitudeValue": 24,
+        "magnitudeUnit": "ha",
+        "magnitudeLabel": "Superficie",
+        "titular": "SUBPESCA / SERNAPESCA",
+        "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#b45309",
+        "geocodedBy": "explicit_coords"
+      }
+    ],
+    "aerodromos_dgac": [
+      {
+        "id": "inv_seia-04-aerodromo-teniente-vidal",
+        "nombre": "Normalización Pista y Plataforma Aeródromo Teniente Vidal",
+        "tipo": "Infraestructura de Conectividad Aérea",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.594,
+        "lon": -72.105,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_jac_1",
+        "nombre": "Aeródromo Balmaceda (BBA)",
+        "tipo": "Aerodromo Comercial DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.5663,
+        "lon": -72.0472,
+        "magnitudeValue": 542000,
+        "magnitudeUnit": "pasajeros/año",
+        "magnitudeLabel": "Flujo Aereo Anual",
+        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 1500 m (Asfalto))",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "LOCALIDADES_AYSEN_COORDS"
+      },
+      {
+        "id": "inv_jac_2",
+        "nombre": "Aeródromo Teniente Vidal (GXQ)",
+        "tipo": "Aerodromo Comercial DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Teniente Vidal",
+        "lat": -45.594,
+        "lon": -72.106,
+        "magnitudeValue": 18200,
+        "magnitudeUnit": "pasajeros/año",
+        "magnitudeLabel": "Flujo Aereo Anual",
+        "titular": "DGAC / JAC (Aviación Menor, Aeromédico y Subvencionado · Pista 1500 m (Asfalto))",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "LOCALIDADES_AYSEN_COORDS"
+      },
+      {
+        "id": "inv_jac_3",
+        "nombre": "Aeródromo Melinka",
+        "tipo": "Aerodromo Comercial DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11203",
+        "nombre_comuna": "Guaitecas",
+        "localidad": "Melinka",
+        "lat": -43.9005,
+        "lon": -73.7441,
+        "magnitudeValue": 9800,
+        "magnitudeUnit": "pasajeros/año",
+        "magnitudeLabel": "Flujo Aereo Anual",
+        "titular": "DGAC / JAC (Conectividad Insular Subvencionada · Pista 800 m (Asfalto) · Vuelo subsidiado MTT)",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "LOCALIDADES_AYSEN_COORDS"
+      },
+      {
+        "id": "inv_jac_4",
+        "nombre": "Aeródromo Puerto Aysén (Cabo Primero)",
+        "tipo": "Aerodromo Comercial DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Puerto Aysen",
+        "lat": -45.3962,
+        "lon": -72.69,
+        "magnitudeValue": 4600,
+        "magnitudeUnit": "pasajeros/año",
+        "magnitudeLabel": "Flujo Aereo Anual",
+        "titular": "DGAC / JAC (Operaciones Locales y Emergencias · Pista 600 m (Asfalto) · Vuelo subsidiado MTT)",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "LOCALIDADES_AYSEN_COORDS"
+      },
+      {
+        "id": "inv_jac_5",
+        "nombre": "Aeródromo Cochrane",
+        "tipo": "Aerodromo Comercial DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11301",
+        "nombre_comuna": "Cochrane",
+        "localidad": "Cochrane",
+        "lat": -47.2599,
+        "lon": -72.578,
+        "magnitudeValue": 3800,
+        "magnitudeUnit": "pasajeros/año",
+        "magnitudeLabel": "Flujo Aereo Anual",
+        "titular": "DGAC / JAC (Conectividad Aérea Austral y Vuelos Médicos · Pista 1200 m (Asfalto) · Vuelo subsidiado MTT)",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "LOCALIDADES_AYSEN_COORDS"
+      },
+      {
+        "id": "inv_jac_6",
+        "nombre": "Aeródromo Villa O'Higgins",
+        "tipo": "Aerodromo Comercial DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11302",
+        "nombre_comuna": "O'Higgins",
+        "localidad": "Villa O'Higgins",
+        "lat": -48.4707,
+        "lon": -72.5475,
+        "magnitudeValue": 2900,
+        "magnitudeUnit": "pasajeros/año",
+        "magnitudeLabel": "Flujo Aereo Anual",
+        "titular": "DGAC / JAC (Conectividad Extremo Sur Aislado · Pista 1300 m (Ripio compactado) · Vuelo subsidiado MTT)",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1",
+        "geocodedBy": "LOCALIDADES_AYSEN_COORDS"
+      },
+      {
+        "id": "aer_dgac_SCCY",
+        "nombre": "Aeródromo Teniente Vidal (SCCY)",
+        "tipo": "Aeródromo Red Interior DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.594,
+        "lon": -72.106,
+        "magnitudeValue": 1500,
+        "magnitudeUnit": "m (Asfalto)",
+        "magnitudeLabel": "Longitud de Pista",
+        "titular": "DGAC / JAC · Evacuaciones médicas SAMU, vuelos gubernamentales y aviación general",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1"
+      },
+      {
+        "id": "aer_dgac_SCCC",
+        "nombre": "Aeródromo Chile Chico (SCCC)",
+        "tipo": "Aeródromo Red Interior DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11401",
+        "nombre_comuna": "Chile Chico",
+        "localidad": "Chile Chico",
+        "lat": -46.583,
+        "lon": -71.688,
+        "magnitudeValue": 1180,
+        "magnitudeUnit": "m (Asfalto)",
+        "magnitudeLabel": "Longitud de Pista",
+        "titular": "DGAC / JAC · Conectividad aérea comunal frente a contingencias lacustres · Vuelo subsidiado MTT",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1"
+      },
+      {
+        "id": "aer_dgac_SCAP",
+        "nombre": "Aeródromo Puerto Aguirre (SCAP)",
+        "tipo": "Aeródromo Red Interior DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.158,
+        "lon": -73.522,
+        "magnitudeValue": 600,
+        "magnitudeUnit": "m (Asfalto)",
+        "magnitudeLabel": "Longitud de Pista",
+        "titular": "DGAC / JAC · Emergencias insulares y evacuación aeromédica de Islas Huichas · Vuelo subsidiado MTT",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1"
+      },
+      {
+        "id": "aer_dgac_SCPC",
+        "nombre": "Aeródromo Puerto Cisnes (SCPC)",
+        "tipo": "Aeródromo Red Interior DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -44.748,
+        "lon": -72.692,
+        "magnitudeValue": 900,
+        "magnitudeUnit": "m (Asfalto)",
+        "magnitudeLabel": "Longitud de Pista",
+        "titular": "DGAC / JAC · Conectividad de emergencias litoral norte · Vuelo subsidiado MTT",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1"
+      },
+      {
+        "id": "aer_dgac_SCEB",
+        "nombre": "Aeródromo Entrada Baker (SCEB)",
+        "tipo": "Aeródromo Red Interior DGAC / JAC",
+        "layerKey": "aerodromos_dgac",
+        "hubId": "inversion",
+        "comuna_ine": "11301",
+        "nombre_comuna": "Cochrane",
+        "localidad": "Cochrane",
+        "lat": -47.185,
+        "lon": -72.34,
+        "magnitudeValue": 1050,
+        "magnitudeUnit": "m (Ripio)",
+        "magnitudeLabel": "Longitud de Pista",
+        "titular": "DGAC / JAC · Acceso estancias ganaderas y Parque Patagonia",
+        "sourceUrl": "https://www.jac.gob.cl/",
+        "bufferGenerator": true,
+        "bufferRadiusM": 25000,
+        "color": "#0369a1"
+      }
+    ],
+    "proyectos_seia_puros": [
+      {
+        "id": "inv_seia-01-parque-eolico-alto-baguales",
+        "nombre": "Parque Eólico Alto Baguales (Edelaysen)",
+        "tipo": "Proyecto SEIA Energía Eólica",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.545,
+        "lon": -72.032,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2131485901",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-02-minera-el-toqui-bocamina",
+        "nombre": "Mina El Toqui - Proyecto Ampliación Yacimiento Rosa",
+        "tipo": "Proyecto SEIA Minería Polimetálica",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.028,
+        "lon": -71.954,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=3489102",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-03-relleno-sanitario-coyhaique",
+        "nombre": "Centro de Manejo de Residuos Sólidos Domiciliarios Coyhaique",
+        "tipo": "Proyecto SEIA Gestión Ambiental",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11101",
+        "nombre_comuna": "Coyhaique",
+        "localidad": "Coyhaique",
+        "lat": -45.589,
+        "lon": -72.152,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=4120893",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-05-puerto-chacabuco-terminal-maritimo",
+        "nombre": "Ampliación Terminal Portuario y Frente de Atraque Puerto Chacabuco",
+        "tipo": "Proyecto SEIA Infraestructura Portuaria",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.462,
+        "lon": -72.825,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=5610238",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-06-planta-proceso-aquachile-chacabuco",
+        "nombre": "Planta de Procesamiento Salmones Chacabuco",
+        "tipo": "Proyecto SEIA Planta Procesadora Acuícola",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.458,
+        "lon": -72.819,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2987140",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-07-central-hidroelectrica-los-condores",
+        "nombre": "Central Hidroeléctrica Los Cóndores (Río Aysén)",
+        "tipo": "Proyecto SEIA Central Hidroeléctrica",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.421,
+        "lon": -72.632,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1874921",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-08-ces-fiordo-aysen-mowi",
+        "nombre": "Centro de Engorda de Salmones Fiordo Aysén (Isla Carmen)",
+        "tipo": "Proyecto SEIA Concesión Acuícola Salmónidos",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11201",
+        "nombre_comuna": "Aysén",
+        "localidad": "Aysén",
+        "lat": -45.485,
+        "lon": -73.052,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=6392014",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-09-ces-canal-jacaf-cisnes",
+        "nombre": "Centro de Engorda de Salmones Canal Jacaf Sur",
+        "tipo": "Proyecto SEIA Concesión Acuícola Salmónidos",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -44.524,
+        "lon": -72.783,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=7182930",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-10-rampa-conectividad-puerto-cisnes",
+        "nombre": "Construcción Rampa de Conectividad y Explanada Puerto Cisnes",
+        "tipo": "Infraestructura Portuaria de Conectividad MOP",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -44.741,
+        "lon": -72.702,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8019234",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-11-mini-hidro-la-junta",
+        "nombre": "Mini Central Hidroeléctrica de Pasada Río Palena / La Junta",
+        "tipo": "Proyecto SEIA Central Hidroeléctrica",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11202",
+        "nombre_comuna": "Cisnes",
+        "localidad": "Cisnes",
+        "lat": -43.978,
+        "lon": -72.408,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8923011",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-12-rampa-melinka-guaitecas",
+        "nombre": "Ampliación Terminal y Frente de Atraque Melinka",
+        "tipo": "Infraestructura Portuaria y Logística Pesquera",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11203",
+        "nombre_comuna": "Guaitecas",
+        "localidad": "Guaitecas",
+        "lat": -43.894,
+        "lon": -73.746,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9345120",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-13-ces-isla-gran-guaiteca",
+        "nombre": "Centro de Cultivo Marino Isla Gran Guaiteca",
+        "tipo": "Proyecto SEIA Acuicultura",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11203",
+        "nombre_comuna": "Guaitecas",
+        "localidad": "Guaitecas",
+        "lat": -43.921,
+        "lon": -73.812,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9823411",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-14-minera-cerro-bayo-chile-chico",
+        "nombre": "Continuidad Operacional Minera Cerro Bayo (Planta Cascada y Relaves)",
+        "tipo": "Proyecto SEIA Minería de Oro y Plata",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11401",
+        "nombre_comuna": "Chile Chico",
+        "localidad": "Chile Chico",
+        "lat": -46.612,
+        "lon": -71.854,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1045239",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-15-barcaza-conectividad-lago-general-carrera",
+        "nombre": "Terminal de Conectividad Lacustre Puerto Chico",
+        "tipo": "Infraestructura de Conectividad Lacustre",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11401",
+        "nombre_comuna": "Chile Chico",
+        "localidad": "Chile Chico",
+        "lat": -46.539,
+        "lon": -71.725,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1182390",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-16-pavimentacion-ruta-7-cerro-castillo",
+        "nombre": "Pavimentación Ruta 7 Tramo Villa Cerro Castillo - Bahía Murta",
+        "tipo": "Proyecto SEIA Infraestructura Vial MOP",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11402",
+        "nombre_comuna": "Río Ibáñez",
+        "localidad": "Río Ibáñez",
+        "lat": -46.124,
+        "lon": -72.162,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1293845",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-17-mini-hidro-cochrane",
+        "nombre": "Mini Central Hidroeléctrica San Victorino (Río Cochrane)",
+        "tipo": "Proyecto SEIA Energía Hidroeléctrica de Pasada",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11301",
+        "nombre_comuna": "Cochrane",
+        "localidad": "Cochrane",
+        "lat": -47.248,
+        "lon": -72.521,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1384910",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-18-conectividad-puerto-yungay-tortel",
+        "nombre": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay",
+        "tipo": "Infraestructura Portuaria y Logística MOP",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11303",
+        "nombre_comuna": "Tortel",
+        "localidad": "Tortel",
+        "lat": -47.886,
+        "lon": -73.488,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1459203",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-19-conectividad-lago-ohiggins-rampa",
+        "nombre": "Rampa de Embarque y Explanada Bahía Bahamóndez (Villa O'Higgins)",
+        "tipo": "Infraestructura Lacustre y Turismo MOP",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11302",
+        "nombre_comuna": "O'Higgins",
+        "localidad": "O'Higgins",
+        "lat": -48.498,
+        "lon": -72.572,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1528491",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
+        "geocodedBy": "explicit_coords"
+      },
+      {
+        "id": "inv_seia-20-mejoramiento-ruta-x12-lago-verde",
+        "nombre": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde",
+        "tipo": "Infraestructura Vial y Conectividad Aislada MOP",
+        "layerKey": "proyectos_seia_puros",
+        "hubId": "inversion",
+        "comuna_ine": "11102",
+        "nombre_comuna": "Lago Verde",
+        "localidad": "Lago Verde",
+        "lat": -44.258,
+        "lon": -71.861,
+        "magnitudeValue": 18.5,
+        "magnitudeUnit": "km",
+        "magnitudeLabel": "Escala Tecnica",
+        "titular": "SEA SEIA / MOP",
+        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1639201",
+        "bufferGenerator": false,
+        "bufferRadiusM": 25000,
+        "color": "#0f766e",
         "geocodedBy": "explicit_coords"
       }
     ]

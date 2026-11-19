@@ -457,41 +457,55 @@
 
     /* Controles de Capas Espaciales y Leyenda Cartográfica Multicapa (Compactos) */
     .card-map-layer-bar, .spatial-layer-bar {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 0.35rem;
-      padding: 0.2rem 0.5rem;
+      gap: 0.3rem;
+      padding: 0.2rem 0.45rem;
       min-height: 28px;
       background: #f4efec;
       border-bottom: 1px solid rgba(28, 27, 27, 0.09);
       font-family: var(--font-mono);
       font-size: 0.62rem;
       color: var(--ink);
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      z-index: 15;
+      flex-wrap: wrap;
+      overflow: visible;
+      z-index: 35;
     }
     .card-map-layer-bar .map-layer-lbl, .spatial-layer-bar .map-layer-lbl {
       font-weight: 700;
       color: var(--cobalt);
       white-space: nowrap;
     }
-    .map-spatial-layer-select {
+    .map-spatial-layer-select,
+    .map-aqua-filter-select {
       flex: 1;
-      min-width: 130px;
-      padding: 0.14rem 0.35rem;
+      min-width: 115px;
+      max-width: 225px;
+      padding: 0.14rem 0.32rem;
       font-family: var(--font-sans);
-      font-size: 0.66rem;
+      font-size: 0.65rem;
       color: var(--ink);
       background: #ffffff;
       border: 1px solid rgba(28, 27, 27, 0.18);
       border-radius: 2px;
       cursor: pointer;
     }
-    .btn-map-buffer-toggle {
-      padding: 0.14rem 0.4rem;
+    .map-aqua-filter-select {
+      flex: 0 1 auto;
+      min-width: 110px;
+      max-width: 170px;
+      border-color: rgba(0, 89, 197, 0.35);
+      background: #f8fafc;
+      font-weight: 600;
+      color: #00357f;
+    }
+    .btn-map-buffer-toggle,
+    .btn-map-multilayer-toggle,
+    .btn-map-expand-toggle {
+      padding: 0.14rem 0.38rem;
       font-family: var(--font-mono);
-      font-size: 0.62rem;
+      font-size: 0.61rem;
       font-weight: 600;
       color: var(--ink);
       background: #ffffff;
@@ -504,10 +518,14 @@
                   color var(--duration-fast) var(--ease-out),
                   transform var(--duration-fast) var(--ease-out);
     }
-    .btn-map-buffer-toggle:active {
+    .btn-map-buffer-toggle:active,
+    .btn-map-multilayer-toggle:active,
+    .btn-map-expand-toggle:active {
       transform: scale(0.97);
     }
-    .btn-map-buffer-toggle:hover {
+    .btn-map-buffer-toggle:hover,
+    .btn-map-multilayer-toggle:hover,
+    .btn-map-expand-toggle:hover {
       border-color: var(--cobalt);
       color: var(--cobalt);
     }
@@ -515,6 +533,81 @@
       background: #dc2626;
       color: #ffffff;
       border-color: #b91c1c;
+    }
+    .btn-map-buffer-toggle.active-snaspe {
+      background: #047857;
+      color: #ffffff;
+      border-color: #065f46;
+    }
+    .btn-map-multilayer-toggle.active,
+    .btn-map-expand-toggle.active {
+      background: #00357f;
+      color: #ffffff;
+      border-color: #001d4a;
+    }
+    .map-multilayer-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .map-multilayer-popover {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      right: 0;
+      width: 270px;
+      max-height: 290px;
+      overflow-y: auto;
+      background: #fcf9f8;
+      border: 1px solid rgba(28, 27, 27, 0.22);
+      border-radius: 3px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      padding: 6px 8px;
+      z-index: 1200;
+      font-family: var(--font-sans);
+      font-size: 0.66rem;
+      color: #1c1b1b;
+    }
+    .map-multilayer-popover.open {
+      display: block;
+    }
+    .map-multilayer-group-title {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #00357f;
+      margin: 5px 0 3px 0;
+      padding-bottom: 2px;
+      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
+    }
+    .map-multilayer-group-title:first-child {
+      margin-top: 0;
+    }
+    .map-multilayer-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 2px;
+      cursor: pointer;
+      line-height: 1.25;
+      user-select: none;
+    }
+    .map-multilayer-item:hover {
+      background: rgba(0, 89, 197, 0.06);
+    }
+    .map-multilayer-item input[type="checkbox"] {
+      margin: 0;
+      accent-color: #00357f;
+      cursor: pointer;
+    }
+    .map-multilayer-swatch {
+      width: 9px;
+      height: 9px;
+      display: inline-block;
+      border-radius: 2px;
+      flex-shrink: 0;
     }
     .map-bivariate-legend, .spatial-map-legend {
       position: absolute;
@@ -4691,21 +4784,132 @@
       };
 
       const SPATIAL_LAYERS_META = {
-        'concesiones_acuicolas': { label: 'Concesiones Acuícolas, Caletas y Minería', color: '#0059c5' },
-        'centrales_electricas': { label: 'Centrales Eléctricas y Nodos FOA', color: '#0284c7' },
-        'proyectos_seia': { label: 'Proyectos SEIA y Aeródromos JAC', color: '#0f766e' },
-        'hospitales_postas': { label: 'Hospitales DEIS, CESFAM y Postas Rurales', color: '#be185d' },
-        'escuelas_slep': { label: 'Escuelas SLEP y Educación Superior', color: '#2563eb' },
-        'volcanes_sismos': { label: 'Volcanes RNVV y Epicentros Sísmicos USGS', color: '#dc2626' },
-        'parques_snaspe': { label: 'Parques SNASPE y Zonas ZOIT', color: '#00357f' },
-        'estaciones_monitoreo': { label: 'Estaciones DGA/SINCA y Fauna RCE', color: '#047857' },
-        'museos_cultura': { label: 'Museos RMC, Bibliotecas y Monumentos CMN', color: '#b45309' },
-        'centros_ctci': { label: 'Centros CTCi, Laboratorios y CORFO', color: '#0e7490' },
-        'gobernanza_obras': { label: 'Sedes Municipales, GORE y Obras Públicas', color: '#4338ca' },
-        'justicia_sma': { label: 'Unidades Fiscalizables SMA y Causas 3TA', color: '#dc2626' },
-        'all': { label: 'Todos los Nodos Georreferenciados (342)', color: '#00357f' },
-        'none': { label: 'Solo Coropleta Comunal', color: '#64748b' }
+        'concesiones_acuicolas_padron': { label: 'Padrón Acuícola Completo (745 Concesiones)', color: '#0059c5', isPointService: false },
+        'concesiones_acuicolas': { label: 'Barrios ACS, Concesiones y Maritorio', color: '#0059c5', isPointService: false },
+        'caletas_puertos': { label: 'Caletas Pesqueras y Terminales Portuarios', color: '#0e7490', isPointService: true },
+        'mineria_faenas': { label: 'Faenas Mineras y Pasivos SERNAGEOMIN', color: '#b45309', isPointService: false },
+        'aerodromos_dgac': { label: 'Aeródromos y Pistas Regionales (DGAC/JAC)', color: '#0369a1', isPointService: true },
+        'proyectos_seia_puros': { label: 'Proyectos de Inversión Ambiental (SEIA)', color: '#0f766e', isPointService: false },
+        'proyectos_seia': { label: 'Proyectos SEIA y Aeródromos JAC', color: '#0f766e', isPointService: true },
+        'centrales_electricas_puros': { label: 'Centrales Eléctricas CNE y Redes Medianas', color: '#0284c7', isPointService: true },
+        'nodos_foa': { label: 'Nodos Fibra Óptica Austral (FOA/SUBTEL)', color: '#4f46e5', isPointService: true },
+        'centrales_electricas': { label: 'Centrales Eléctricas y Nodos FOA', color: '#0284c7', isPointService: true },
+        'hospitales_postas': { label: 'Hospitales DEIS, CESFAM y Postas Rurales', color: '#be185d', isPointService: true },
+        'escuelas_slep': { label: 'Escuelas SLEP y Educación Superior', color: '#2563eb', isPointService: true },
+        'volcanes_sismos': { label: 'Volcanes RNVV y Epicentros Sísmicos USGS', color: '#dc2626', isPointService: false },
+        'parques_snaspe': { label: 'Parques SNASPE y Zonas ZOIT', color: '#00357f', isPointService: false },
+        'estaciones_dga_sinca': { label: 'Estaciones Hidrométricas DGA y Aire SINCA', color: '#059669', isPointService: true },
+        'fauna_rce_sitios': { label: 'Sitios de Fauna RCE y Biodiversidad (MMA)', color: '#15803d', isPointService: false },
+        'estaciones_monitoreo': { label: 'Estaciones DGA/SINCA y Fauna RCE', color: '#047857', isPointService: true },
+        'museos_cultura': { label: 'Museos RMC, Bibliotecas y Monumentos CMN', color: '#b45309', isPointService: true },
+        'centros_ctci': { label: 'Centros CTCi, Laboratorios y CORFO', color: '#0e7490', isPointService: true },
+        'gobernanza_obras': { label: 'Sedes Municipales, GORE y Obras Públicas', color: '#4338ca', isPointService: true },
+        'justicia_sma': { label: 'Unidades Fiscalizables SMA y Causas 3TA', color: '#dc2626', isPointService: true },
+        'snaspe_polygons': { label: 'Polígonos SNASPE (CONAF)', color: '#047857', isPolygon: true },
+        'zoit_polygons': { label: 'Polígonos ZOIT (SERNATUR)', color: '#0284c7', isPolygon: true },
+        'ecmpo_polygons': { label: 'Polígonos ECMPO (SUBPESCA)', color: '#7c3aed', isPolygon: true },
+        'ruta7_tramos': { label: 'Ruta 7 Carretera Austral (Pavimento vs. Ripio)', color: '#00357f', isLine: true },
+        'rutas_barcazas': { label: 'Rutas Marítimas y Barcazas Subsidiadas (MTT)', color: '#0e7490', isLine: true },
+        'all': { label: 'Todos los Nodos Georreferenciados (342)', color: '#00357f', isPointService: true },
+        'none': { label: 'Solo Coropleta Comunal', color: '#64748b', isPointService: false }
       };
+
+      function getHydratedSpatialLayerNodes(layerKey) {
+        const d = window.AYSEN_HUBS_DATA || {};
+        const allNodes = d.spatialNodes || [];
+        if (!d.spatialNodesByLayer) d.spatialNodesByLayer = {};
+        const byLayer = d.spatialNodesByLayer;
+
+        if (layerKey === 'none') return [];
+        if (layerKey === 'all') return allNodes;
+
+        if (layerKey === 'concesiones_acuicolas_padron') {
+          if (!Array.isArray(byLayer.concesiones_acuicolas_padron) || byLayer.concesiones_acuicolas_padron.length === 0) {
+            const pack = d.concesionesPadronCompact;
+            if (pack && Array.isArray(pack.rows)) {
+              byLayer.concesiones_acuicolas_padron = pack.rows.map(line => {
+                const parts = String(line).split('|');
+                const cod = parts[0];
+                const ine = parts[1];
+                const acsStr = (pack.acs && pack.acs[Number(parts[2])]) || 'ACS-21A · Canal Moraleda';
+                const holdPair = ((pack.holdings && pack.holdings[Number(parts[3])]) || 'Titular Acuícola|SUBPESCA').split('|');
+                const holdName = holdPair[0] || 'Titular Acuícola';
+                const madreName = holdPair[1] || holdName;
+                const lat = Number(parts[4]);
+                const lon = Number(parts[5]);
+                const isAct = parts[6] === '1';
+                const snIdx = Number(parts[7]) || 0;
+                const snUnit = (pack.snaspeUnits && pack.snaspeUnits[snIdx]) || 'Fuera de SNASPE';
+                const isSnaspe = snIdx > 0;
+                const bioTon = Number(parts[8]) || 0;
+                const icaVal = Number(parts[9]) || 0;
+                const cName = (pack.comunas && pack.comunas[ine]) || 'Aysén';
+                const barrioCode = acsStr.split('·')[0].trim();
+                return {
+                  id: `padron_rpca_${cod}`,
+                  codigo_centro: cod,
+                  nombre: `Centro Acuícola ${cod} (${holdName})`,
+                  tipo: isAct ? 'Centro Salmonícola Activo' : 'Concesión Otorgada sin Operación',
+                  layerKey: 'concesiones_acuicolas_padron',
+                  hubId: 'salmonicultura',
+                  comuna_ine: ine,
+                  nombre_comuna: cName,
+                  localidad: acsStr,
+                  barrio_acs: barrioCode,
+                  lat,
+                  lon,
+                  estado_operativo: isAct ? 'Activo' : 'Otorgada sin operación',
+                  en_snaspe: isSnaspe,
+                  unidad_snaspe: snUnit,
+                  titular_holding: holdName,
+                  empresa_madre: madreName,
+                  biomasa_ton: bioTon,
+                  antibioticos_ica: icaVal,
+                  magnitudeValue: isAct ? Math.max(bioTon, 100) : 120,
+                  magnitudeUnit: isAct ? 'ton biomasa' : 'ha concesión',
+                  magnitudeLabel: isAct ? 'Biomasa Activa Estimada' : 'Concesión Otorgada / En Descanso',
+                  titular: `${holdName} (${madreName})`,
+                  sourceUrl: 'https://mapas.subpesca.cl/',
+                  bufferGenerator: false,
+                  color: isSnaspe ? '#dc2626' : (isAct ? '#0059c5' : '#0284c7')
+                };
+              });
+            }
+          }
+          return byLayer.concesiones_acuicolas_padron || [];
+        }
+
+        if (Array.isArray(byLayer[layerKey]) && byLayer[layerKey].length > 0) {
+          return byLayer[layerKey];
+        }
+
+        if (layerKey === 'centrales_electricas_puros') {
+          byLayer[layerKey] = allNodes
+            .filter(n => n.layerKey === 'centrales_electricas' && !/fibra|foa|telecom|5g|antena/i.test(`${n.nombre} ${n.tipo}`))
+            .map(n => ({ ...n, layerKey: 'centrales_electricas_puros', color: '#0284c7' }));
+          return byLayer[layerKey];
+        }
+        if (layerKey === 'nodos_foa') {
+          byLayer[layerKey] = allNodes
+            .filter(n => n.layerKey === 'centrales_electricas' && /fibra|foa|telecom|5g|antena/i.test(`${n.nombre} ${n.tipo}`))
+            .map(n => ({ ...n, layerKey: 'nodos_foa', color: '#4f46e5' }));
+          return byLayer[layerKey];
+        }
+        if (layerKey === 'estaciones_dga_sinca') {
+          byLayer[layerKey] = allNodes
+            .filter(n => n.layerKey === 'estaciones_monitoreo' && String(n.id).startsWith('est_sensor_'))
+            .map(n => ({ ...n, layerKey: 'estaciones_dga_sinca', color: '#059669' }));
+          return byLayer[layerKey];
+        }
+        if (layerKey === 'fauna_rce_sitios') {
+          byLayer[layerKey] = allNodes
+            .filter(n => n.layerKey === 'estaciones_monitoreo' && !String(n.id).startsWith('est_sensor_'))
+            .map(n => ({ ...n, layerKey: 'fauna_rce_sitios', color: '#15803d' }));
+          return byLayer[layerKey];
+        }
+
+        return allNodes.filter(n => n.layerKey === layerKey);
+      }
 
       function resolveActiveSpatialLayerKey(w) {
         if (w.spatialLayer && w.spatialLayer !== 'auto') return w.spatialLayer;
@@ -4717,10 +4921,15 @@
         // Sismos / Volcanes UNICAMENTE ante seleccion explicita de sismicidad o riesgos geologicos
         if (varKey.includes('sismo') || varKey.includes('volcan') || varKey.includes('geolog') || varKey.includes('tsunami')) return 'volcanes_sismos';
 
+        // Capas especificas desagregadas cuando la variable lo pide explicitamente
+        if (varKey.includes('aerodromo') || varKey.includes('pista') || varKey.includes('pasajero_jac') || varKey.includes('vuelo')) return 'aerodromos_dgac';
+        if (varKey.includes('caleta') || varKey.includes('desembarque') || varKey.includes('pesca_artesanal')) return 'caletas_puertos';
+        if (varKey.includes('mineria') || varKey.includes('minero') || varKey.includes('relave')) return 'mineria_faenas';
+
         // Hub VIII (Salud): exclusivamente Hospitales y Postas de la Red Asistencial DEIS/SSA en tierra firme
         if (varKey.includes('salud') || varKey.includes('hospital') || varKey.includes('camas') || varKey.includes('posta') || varKey.includes('samu') || varKey.includes('medico') || hubKey === 'salud') return 'hospitales_postas';
 
-        if (varKey.includes('salmon') || varKey.includes('concesion') || varKey.includes('biomasa') || hubKey === 'salmonicultura') return 'concesiones_acuicolas';
+        if (varKey.includes('salmon') || varKey.includes('concesion') || varKey.includes('biomasa') || hubKey === 'salmonicultura') return 'concesiones_acuicolas_padron';
         if (varKey.includes('saidi') || varKey.includes('tarifa') || varKey.includes('internet') || varKey.includes('lena') || varKey.includes('diesel') || varKey.includes('electric') || hubKey === 'energia') return 'centrales_electricas';
         if (varKey.includes('seia') || varKey.includes('empresas') || varKey.includes('trabajadores') || varKey.includes('inversion') || hubKey === 'inversion') return 'proyectos_seia';
         if (varKey.includes('matricula') || varKey.includes('escolar') || varKey.includes('slep') || varKey.includes('colegio') || varKey.includes('educacion')) return 'escuelas_slep';
@@ -4732,6 +4941,68 @@
         if (varKey.includes('delito') || varKey.includes('seguridad') || varKey.includes('vif') || varKey.includes('pobreza') || varKey.includes('casen') || hubKey === 'social') return 'escuelas_slep';
         if (varKey.includes('fcm') || varKey.includes('fndr') || varKey.includes('presupuesto') || varKey.includes('ingresos') || hubKey === 'gobernanza') return 'gobernanza_obras';
         return 'gobernanza_obras';
+      }
+
+      const MULTILAYER_OVERLAY_GROUPS = [
+        {
+          title: 'Áreas de Cobertura (Polígonos)',
+          items: [
+            { id: 'snaspe_polygons', label: 'Áreas Silvestres SNASPE (CONAF)', color: '#047857' },
+            { id: 'zoit_polygons', label: 'Zonas de Interés Turístico ZOIT', color: '#0284c7' },
+            { id: 'ecmpo_polygons', label: 'Espacios Costeros ECMPO (SUBPESCA)', color: '#7c3aed' }
+          ]
+        },
+        {
+          title: 'Redes y Corredores (Líneas)',
+          items: [
+            { id: 'ruta7_tramos', label: 'Ruta 7 Carretera Austral (Pavimento vs. Ripio)', color: '#00357f' },
+            { id: 'rutas_barcazas', label: 'Rutas Marítimas y Barcazas MTT', color: '#0e7490' }
+          ]
+        },
+        {
+          title: 'Infraestructura y Unidades (Puntos)',
+          items: [
+            { id: 'concesiones_acuicolas_padron', label: 'Padrón Acuícola Completo (745 Centros)', color: '#0059c5' },
+            { id: 'caletas_puertos', label: 'Caletas Pesqueras y Terminales Portuarios', color: '#0e7490' },
+            { id: 'aerodromos_dgac', label: 'Aeródromos y Pistas Regionales (DGAC)', color: '#0369a1' },
+            { id: 'hospitales_postas', label: 'Hospitales, CESFAM y Postas Rurales', color: '#be185d' },
+            { id: 'escuelas_slep', label: 'Escuelas SLEP y Educación Superior', color: '#2563eb' },
+            { id: 'centrales_electricas_puros', label: 'Centrales Eléctricas CNE', color: '#0284c7' },
+            { id: 'nodos_foa', label: 'Nodos Fibra Óptica Austral (FOA)', color: '#4f46e5' },
+            { id: 'proyectos_seia_puros', label: 'Proyectos de Inversión SEIA', color: '#0f766e' },
+            { id: 'justicia_sma', label: 'Unidades Fiscalizables SMA', color: '#dc2626' }
+          ]
+        }
+      ];
+
+      function computeEffectiveMapOverlays(w, activeLayerKey) {
+        const disabled = new Set(Array.isArray(w.disabledAutoOverlays) ? w.disabledAutoOverlays : []);
+        const effective = new Set(Array.isArray(w.activeOverlays) ? w.activeOverlays : []);
+        const blob = `${String(w.varX || '')} ${String(w.varY || '')} ${String(w.title || '')} ${String(activeLayerKey || '')}`.toLowerCase();
+
+        // Cobertura automatica SNASPE / ZOIT / Conectividad segun el contexto del mapa (desactivable por usuario)
+        if (activeLayerKey === 'parques_snaspe' || blob.includes('snaspe') || blob.includes('turis') || blob.includes('visitantes')) {
+          if (!disabled.has('snaspe_polygons')) effective.add('snaspe_polygons');
+        }
+        if (activeLayerKey === 'parques_snaspe' || blob.includes('zoit') || blob.includes('turis')) {
+          if (!disabled.has('zoit_polygons')) effective.add('zoit_polygons');
+        }
+        if (w.aquaFilter === 'snaspe_312') {
+          if (!disabled.has('snaspe_polygons')) effective.add('snaspe_polygons');
+        }
+        if (blob.includes('ecmpo')) {
+          if (!disabled.has('ecmpo_polygons')) effective.add('ecmpo_polygons');
+        }
+        if (activeLayerKey === 'gobernanza_obras' || blob.includes('ruta') || blob.includes('ripio') || blob.includes('paviment') || blob.includes('vial') || blob.includes('conectividad')) {
+          if (!disabled.has('ruta7_tramos')) effective.add('ruta7_tramos');
+        }
+        if (blob.includes('barcaza') || blob.includes('maritim') || blob.includes('conectividad') || blob.includes('litoral')) {
+          if (!disabled.has('rutas_barcazas')) effective.add('rutas_barcazas');
+        }
+        if (activeLayerKey === 'parques_snaspe' && w.showBuffers && !disabled.has('snaspe_polygons')) {
+          effective.add('snaspe_polygons');
+        }
+        return Array.from(effective);
       }
 
       function haversineDistanceKm(lat1, lon1, lat2, lon2) {
@@ -9150,6 +9421,58 @@
           const optsHtml = catalog.map(l =>
             `<option value="${l.id}" ${curLayer === l.id ? 'selected' : ''}>${l.label} (${l.count})</option>`
           ).join('');
+
+          const isAquaLayer = autoResolved === 'concesiones_acuicolas_padron' || autoResolved === 'concesiones_acuicolas';
+          const aquaVal = w.aquaFilter || 'padron_all';
+          const aquaFilterHtml = isAquaLayer ? `
+            <select class="map-aqua-filter-select" id="map-aqua-filter-${w.id}" aria-label="Filtrar padrón de 745 concesiones acuícolas">
+              <option value="padron_all" ${aquaVal === 'padron_all' ? 'selected' : ''}>Padrón 745 (Todos)</option>
+              <option value="activos_245" ${aquaVal === 'activos_245' ? 'selected' : ''}>Solo Activos (245)</option>
+              <option value="snaspe_312" ${aquaVal === 'snaspe_312' ? 'selected' : ''}>En SNASPE (312)</option>
+              <option value="inactivos_500" ${aquaVal === 'inactivos_500' ? 'selected' : ''}>Otorgadas s/op (500)</option>
+              <option value="nodos_38" ${aquaVal === 'nodos_38' ? 'selected' : ''}>Síntesis ACS/Maritorio (38)</option>
+              <option value="holding:AquaChile" ${aquaVal === 'holding:AquaChile' ? 'selected' : ''}>Holding · AquaChile</option>
+              <option value="holding:Mowi Chile" ${aquaVal === 'holding:Mowi Chile' ? 'selected' : ''}>Holding · Mowi Chile</option>
+              <option value="holding:Multi X" ${aquaVal === 'holding:Multi X' ? 'selected' : ''}>Holding · Multi X</option>
+              <option value="holding:Cermaq Chile" ${aquaVal === 'holding:Cermaq Chile' ? 'selected' : ''}>Holding · Cermaq Chile</option>
+              <option value="holding:Salmones Blumar" ${aquaVal === 'holding:Salmones Blumar' ? 'selected' : ''}>Holding · Salmones Blumar</option>
+              <option value="holding:Australis Seafoods" ${aquaVal === 'holding:Australis Seafoods' ? 'selected' : ''}>Holding · Australis</option>
+              <option value="holding:Salmones Camanchaca" ${aquaVal === 'holding:Salmones Camanchaca' ? 'selected' : ''}>Holding · Camanchaca</option>
+              <option value="holding:Salmones Yadrán" ${aquaVal === 'holding:Salmones Yadrán' ? 'selected' : ''}>Holding · Yadrán</option>
+            </select>
+          ` : '';
+
+          const effectiveOverlays = computeEffectiveMapOverlays(w, autoResolved);
+          const overlaysCount = effectiveOverlays.length;
+          const multiPopoverHtml = MULTILAYER_OVERLAY_GROUPS.map(grp => `
+            <div class="map-multilayer-group-title">${grp.title}</div>
+            ${grp.items.map(it => {
+              const checked = effectiveOverlays.includes(it.id);
+              return `
+                <label class="map-multilayer-item">
+                  <input type="checkbox" class="map-overlay-chk" data-overlay-id="${it.id}" ${checked ? 'checked' : ''} />
+                  <span class="map-multilayer-swatch" style="background:${it.color};"></span>
+                  <span>${it.label}</span>
+                </label>
+              `;
+            }).join('')}
+          `).join('');
+
+          const isSnaspePrimary = autoResolved === 'parques_snaspe';
+          const isAquaPrimary = isAquaLayer && aquaVal !== 'nodos_38';
+          const bufferBtnLabel = isSnaspePrimary
+            ? '[▣ Polígonos SNASPE]'
+            : (isAquaPrimary ? '[▣ Superposición SNASPE]' : '[◎ Radio 25 km]');
+          const bufferBtnTitle = isSnaspePrimary
+            ? 'Mostrar u ocultar polígonos reales de Parques/Reservas SNASPE (CONAF)'
+            : (isAquaPrimary
+                ? 'Resaltar superposición entre las 312 concesiones y Áreas SNASPE'
+                : 'Activar/Desactivar anillos de cobertura de 25 km (L.circle)');
+          const bufferBtnActive = isSnaspePrimary
+            ? effectiveOverlays.includes('snaspe_polygons')
+            : (isAquaPrimary ? (effectiveOverlays.includes('snaspe_polygons') || !!w.showBuffers) : !!w.showBuffers);
+          const bufferActiveCls = bufferBtnActive ? (isSnaspePrimary ? 'active-snaspe' : 'active') : '';
+
           mapLayerControlHtml = `
             <div class="card-map-layer-bar" id="map-layer-bar-${w.id}">
               <span class="map-layer-lbl">Nodos (Y):</span>
@@ -9159,34 +9482,151 @@
                 <option value="all" ${curLayer === 'all' ? 'selected' : ''}>Todos los Nodos Georreferenciados (342)</option>
                 <option value="none" ${curLayer === 'none' ? 'selected' : ''}>Solo Polígonos Comunales (Coropleta)</option>
               </select>
-              <button type="button" class="btn-map-buffer-toggle ${w.showBuffers ? 'active' : ''}" id="map-buffer-btn-${w.id}" title="Activar/Desactivar anillos de cobertura o amenaza de 25 km (L.circle)">
-                [◎ Radio 25 km]
+              ${aquaFilterHtml}
+              <div class="map-multilayer-wrap" id="map-multilayer-wrap-${w.id}">
+                <button type="button" class="btn-map-multilayer-toggle ${overlaysCount > 0 ? 'active' : ''}" id="map-multilayer-btn-${w.id}" title="Activar/Desactivar polígonos SNASPE/ZOIT/ECMPO, Ruta 7, Barcazas y puntos adicionales">
+                  Capas ▾${overlaysCount > 0 ? ` (${overlaysCount})` : ''}
+                </button>
+                <div class="map-multilayer-popover" id="map-multilayer-pop-${w.id}">
+                  ${multiPopoverHtml}
+                </div>
+              </div>
+              <button type="button" class="btn-map-buffer-toggle ${bufferActiveCls}" id="map-buffer-btn-${w.id}" title="${bufferBtnTitle}">
+                ${bufferBtnLabel}
+              </button>
+              <button type="button" class="btn-map-expand-toggle ${w.maximized ? 'active' : ''}" id="map-expand-btn-${w.id}" title="${w.maximized ? 'Restaurar tamaño del mapa' : 'Expandir / Maximizar tarjeta del mapa'}">
+                ${w.maximized ? '[-] Reducir' : '[+] Ampliar'}
               </button>
             </div>
           `;
         }
 
         function bindMapLayerControlEvents(cardEl, widget) {
+          const bar = cardEl.querySelector(`#map-layer-bar-${widget.id}`);
+          if (bar && !bar._hasIsolationListener) {
+            bar.addEventListener('pointerdown', (e) => e.stopPropagation());
+            bar.addEventListener('click', (e) => e.stopPropagation());
+            bar._hasIsolationListener = true;
+          }
           const sel = cardEl.querySelector(`#map-layer-select-${widget.id}`);
           if (sel && !sel._hasMapLayerListener) {
             sel.addEventListener('change', (e) => {
               e.stopPropagation();
               widget.spatialLayer = sel.value;
-              renderWidgetVisual(widget);
+              if (sel.value === 'parques_snaspe') {
+                widget.showBuffers = false;
+                if (Array.isArray(widget.disabledAutoOverlays)) {
+                  widget.disabledAutoOverlays = widget.disabledAutoOverlays.filter(x => x !== 'snaspe_polygons' && x !== 'zoit_polygons');
+                }
+              }
+              renderWidgetCardDOM(widget);
               autoSave();
             });
             sel._hasMapLayerListener = true;
+          }
+          const aquaSel = cardEl.querySelector(`#map-aqua-filter-${widget.id}`);
+          if (aquaSel && !aquaSel._hasAquaListener) {
+            aquaSel.addEventListener('change', (e) => {
+              e.stopPropagation();
+              widget.aquaFilter = aquaSel.value;
+              if (aquaSel.value === 'snaspe_312') {
+                if (!Array.isArray(widget.activeOverlays)) widget.activeOverlays = [];
+                if (!widget.activeOverlays.includes('snaspe_polygons')) widget.activeOverlays.push('snaspe_polygons');
+                if (Array.isArray(widget.disabledAutoOverlays)) {
+                  widget.disabledAutoOverlays = widget.disabledAutoOverlays.filter(x => x !== 'snaspe_polygons');
+                }
+              }
+              renderWidgetCardDOM(widget);
+              autoSave();
+            });
+            aquaSel._hasAquaListener = true;
+          }
+          const multiBtn = cardEl.querySelector(`#map-multilayer-btn-${widget.id}`);
+          const multiPop = cardEl.querySelector(`#map-multilayer-pop-${widget.id}`);
+          if (multiBtn && multiPop && !multiBtn._hasMultiListener) {
+            multiBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const wasOpen = multiPop.classList.contains('open');
+              document.querySelectorAll('.map-multilayer-popover.open').forEach(p => p.classList.remove('open'));
+              if (!wasOpen) multiPop.classList.add('open');
+            });
+            multiPop.addEventListener('click', (e) => e.stopPropagation());
+            multiPop.querySelectorAll('.map-overlay-chk').forEach(chk => {
+              chk.addEventListener('change', (e) => {
+                e.stopPropagation();
+                const ovId = chk.dataset.overlayId;
+                if (!Array.isArray(widget.activeOverlays)) widget.activeOverlays = [];
+                if (!Array.isArray(widget.disabledAutoOverlays)) widget.disabledAutoOverlays = [];
+                if (chk.checked) {
+                  if (!widget.activeOverlays.includes(ovId)) widget.activeOverlays.push(ovId);
+                  widget.disabledAutoOverlays = widget.disabledAutoOverlays.filter(x => x !== ovId);
+                } else {
+                  widget.activeOverlays = widget.activeOverlays.filter(x => x !== ovId);
+                  if (!widget.disabledAutoOverlays.includes(ovId)) widget.disabledAutoOverlays.push(ovId);
+                }
+                const autoKey = resolveActiveSpatialLayerKey(widget);
+                const effCount = computeEffectiveMapOverlays(widget, autoKey).length;
+                multiBtn.classList.toggle('active', effCount > 0);
+                multiBtn.textContent = `Capas ▾${effCount > 0 ? ` (${effCount})` : ''}`;
+                renderWidgetVisual(widget);
+                autoSave();
+              });
+            });
+            if (!window._hasMapPopoverDocClose) {
+              document.addEventListener('click', (ev) => {
+                if (!ev.target.closest('.map-multilayer-wrap')) {
+                  document.querySelectorAll('.map-multilayer-popover.open').forEach(p => p.classList.remove('open'));
+                }
+              });
+              window._hasMapPopoverDocClose = true;
+            }
+            multiBtn._hasMultiListener = true;
           }
           const bufBtn = cardEl.querySelector(`#map-buffer-btn-${widget.id}`);
           if (bufBtn && !bufBtn._hasBufferListener) {
             bufBtn.addEventListener('click', (e) => {
               e.stopPropagation();
-              widget.showBuffers = !widget.showBuffers;
-              bufBtn.classList.toggle('active', widget.showBuffers);
-              renderWidgetVisual(widget);
+              const autoKey = resolveActiveSpatialLayerKey(widget);
+              const isSnaspePrimary = autoKey === 'parques_snaspe';
+              const isAquaPrimary = (autoKey === 'concesiones_acuicolas_padron' || autoKey === 'concesiones_acuicolas') && (widget.aquaFilter || 'padron_all') !== 'nodos_38';
+              if (isSnaspePrimary || isAquaPrimary) {
+                if (!Array.isArray(widget.activeOverlays)) widget.activeOverlays = [];
+                if (!Array.isArray(widget.disabledAutoOverlays)) widget.disabledAutoOverlays = [];
+                const eff = computeEffectiveMapOverlays(widget, autoKey);
+                const hasSnaspe = eff.includes('snaspe_polygons');
+                if (hasSnaspe) {
+                  widget.activeOverlays = widget.activeOverlays.filter(x => x !== 'snaspe_polygons');
+                  if (!widget.disabledAutoOverlays.includes('snaspe_polygons')) widget.disabledAutoOverlays.push('snaspe_polygons');
+                  if (isAquaPrimary) widget.showBuffers = false;
+                } else {
+                  if (!widget.activeOverlays.includes('snaspe_polygons')) widget.activeOverlays.push('snaspe_polygons');
+                  widget.disabledAutoOverlays = widget.disabledAutoOverlays.filter(x => x !== 'snaspe_polygons');
+                  if (isAquaPrimary) widget.aquaFilter = 'snaspe_312';
+                }
+                renderWidgetCardDOM(widget);
+              } else {
+                widget.showBuffers = !widget.showBuffers;
+                bufBtn.classList.toggle('active', widget.showBuffers);
+                renderWidgetVisual(widget);
+              }
               autoSave();
             });
             bufBtn._hasBufferListener = true;
+          }
+          const expBtn = cardEl.querySelector(`#map-expand-btn-${widget.id}`);
+          if (expBtn && !expBtn._hasExpandListener) {
+            expBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              toggleMaximizeWidget(widget.id);
+              expBtn.classList.toggle('active', !!widget.maximized);
+              expBtn.textContent = widget.maximized ? '[-] Reducir' : '[+] Ampliar';
+              setTimeout(() => {
+                if (widget.instance && typeof widget.instance.invalidateSize === 'function') {
+                  widget.instance.invalidateSize();
+                }
+              }, 160);
+            });
+            expBtn._hasExpandListener = true;
           }
         }
 
@@ -9412,7 +9852,17 @@
 
       function bindCardEvents(w, card) {
         card.addEventListener('pointerdown', (e) => {
-          if (!e.target.closest('.card-ctrl-btn') && !e.target.closest('.mac-btn') && !e.target.closest('.btn-card-cross-pill') && !e.target.closest('.widget-provenance-footer a')) {
+          if (
+            !e.target.closest('.card-ctrl-btn') &&
+            !e.target.closest('.mac-btn') &&
+            !e.target.closest('.btn-card-cross-pill') &&
+            !e.target.closest('.widget-provenance-footer a') &&
+            !e.target.closest('.card-map-layer-bar') &&
+            !e.target.closest('.map-multilayer-popover') &&
+            !e.target.closest('.leaflet-pane') &&
+            !e.target.closest('.leaflet-control') &&
+            !e.target.closest('.map-bivariate-legend')
+          ) {
             selectActiveCard(w.id);
             bringWidgetToFront(w.id);
           }
@@ -10028,8 +10478,8 @@
         if (w.maximized) {
           w.prevBounds = { x: w.x, y: w.y, w: w.w, h: w.h };
           const center = getCanvasCenterWorld();
-          w.w = Math.min(880, window.innerWidth - 380);
-          w.h = Math.min(560, window.innerHeight - 200);
+          w.w = Math.max(460, Math.min(920, window.innerWidth - 360));
+          w.h = Math.max(380, Math.min(620, window.innerHeight - 170));
           w.x = Math.round(center.x - w.w / 2);
           w.y = Math.max(92, Math.round(center.y - w.h / 2));
         } else if (w.prevBounds) {
@@ -10045,11 +10495,25 @@
         cardEl.style.height = `${w.h}px`;
         cardEl.style.minHeight = `${w.h}px`;
 
+        const mapExpBtn = cardEl.querySelector(`#map-expand-btn-${widgetId}`);
+        if (mapExpBtn) {
+          mapExpBtn.classList.toggle('active', !!w.maximized);
+          mapExpBtn.textContent = w.maximized ? '[-] Reducir' : '[+] Ampliar';
+        }
+
         bringWidgetToFront(widgetId);
         selectActiveCard(widgetId);
 
         if (w.instance && typeof w.instance.resize === 'function') setTimeout(() => w.instance.resize(), 100);
-        if (w.instance && typeof w.instance.invalidateSize === 'function') setTimeout(() => w.instance.invalidateSize(), 100);
+        if (w.instance && typeof w.instance.invalidateSize === 'function') {
+          setTimeout(() => {
+            w.instance.invalidateSize();
+            if (w.instance.scrollWheelZoom) {
+              if (w.maximized) w.instance.scrollWheelZoom.enable();
+              else w.instance.scrollWheelZoom.disable();
+            }
+          }, 120);
+        }
 
         updateFloatingToolbarPosition();
         updateConnections();
@@ -13826,12 +14290,39 @@
         } else if (w.type === 'map') {
           container.style.position = 'relative';
           container.innerHTML = `<div id="map-${w.id}" class="map-container-box"></div>`;
+          const mapBoxEl = container.querySelector(`#map-${w.id}`);
           const map = L.map(`map-${w.id}`, {
             center: [-46.1, -72.6],
             zoom: 6.5,
-            zoomControl: false
+            zoomControl: false,
+            scrollWheelZoom: Boolean(w.maximized)
           });
           L.control.zoom({ position: 'topright' }).addTo(map);
+
+          // Bloquear zoom accidental con rueda del raton mientras se navega el Lienzo 2D
+          if (mapBoxEl) {
+            mapBoxEl.addEventListener('click', () => {
+              if (map.scrollWheelZoom && !map.scrollWheelZoom.enabled()) {
+                map.scrollWheelZoom.enable();
+              }
+            });
+            mapBoxEl.addEventListener('mouseleave', () => {
+              if (!w.maximized && map.scrollWheelZoom && map.scrollWheelZoom.enabled()) {
+                map.scrollWheelZoom.disable();
+              }
+            });
+          }
+
+          // Jerarquia estricta de panes en Leaflet:
+          // Poligonos comunales (overlayPane 400) < snaspePane (450) < routesPane (500) < buffersPane (550) < nodesPane (650)
+          map.createPane('snaspePane');
+          map.getPane('snaspePane').style.zIndex = '450';
+          map.createPane('routesPane');
+          map.getPane('routesPane').style.zIndex = '500';
+          map.createPane('buffersPane');
+          map.getPane('buffersPane').style.zIndex = '550';
+          map.createPane('nodesPane');
+          map.getPane('nodesPane').style.zIndex = '650';
 
           L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${CARTO_API_KEY}`, {
             attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
@@ -13839,20 +14330,69 @@
             maxZoom: 19
           }).addTo(map);
 
-          // Resolver capa de nodos puntuales georreferenciados (Nivel 2)
+          // Determinar comunas permitidas por el segmentador territorial global + toggle Sin Coyhaique
+          const baseTerritorialList = (AppState.territorialFilter && TERRITORIAL_SLICES[AppState.territorialFilter])
+            ? TERRITORIAL_SLICES[AppState.territorialFilter]
+            : COMUNAS_ORDER;
+          const isExcludeCoyhaique = Boolean(w.excludeOutlierCoyhaique || w.excludeCoyhaique || AppState.excludeCoyhaique);
+          const allowedComunasSet = new Set(
+            baseTerritorialList
+              .filter(c => !(isExcludeCoyhaique && normStr(c) === 'coyhaique'))
+              .map(normStr)
+          );
+          const isTerritorialFiltered = allowedComunasSet.size > 0 && allowedComunasSet.size < COMUNAS_ORDER.length;
+
+          // Resolver capa principal y capas multicapa activas (poligonos, lineas y puntos adicionales)
           const activeLayerKey = resolveActiveSpatialLayerKey(w);
+          const effectiveOverlays = computeEffectiveMapOverlays(w, activeLayerKey);
           const allSpatialNodes = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.spatialNodes) || [];
-          const byLayerMap = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.spatialNodesByLayer) || {};
-          let activeNodes = [];
-          if (activeLayerKey === 'none') {
-            activeNodes = [];
-          } else if (activeLayerKey === 'all') {
-            activeNodes = allSpatialNodes;
-          } else {
-            activeNodes = byLayerMap[activeLayerKey] || allSpatialNodes.filter(n => n.layerKey === activeLayerKey);
+
+          const isAquaMode = activeLayerKey === 'concesiones_acuicolas_padron' || activeLayerKey === 'concesiones_acuicolas';
+          const aquaFilterVal = w.aquaFilter || 'padron_all';
+
+          const resolvePrimaryPointNodes = () => {
+            if (activeLayerKey === 'none') return [];
+            if (activeLayerKey === 'all') return allSpatialNodes;
+            if (isAquaMode && aquaFilterVal !== 'nodos_38') {
+              let padNodes = getHydratedSpatialLayerNodes('concesiones_acuicolas_padron');
+              if (aquaFilterVal === 'activos_245') {
+                padNodes = padNodes.filter(n => n.estado_operativo === 'Activo');
+              } else if (aquaFilterVal === 'snaspe_312') {
+                padNodes = padNodes.filter(n => n.en_snaspe);
+              } else if (aquaFilterVal === 'inactivos_500') {
+                padNodes = padNodes.filter(n => n.estado_operativo !== 'Activo');
+              } else if (aquaFilterVal.startsWith('holding:')) {
+                const targetHold = normStr(aquaFilterVal.slice(8));
+                padNodes = padNodes.filter(n => normStr(n.titular_holding || '').includes(targetHold));
+              }
+              return padNodes;
+            }
+            return getHydratedSpatialLayerNodes(activeLayerKey);
+          };
+
+          let activeNodes = resolvePrimaryPointNodes();
+          if (isTerritorialFiltered) {
+            activeNodes = activeNodes.filter(n => allowedComunasSet.has(normStr(n.nombre_comuna || '')));
           }
 
-          // Contar nodos activos por comuna
+          // Incorporar capas puntuales adicionales activadas en Capas (multicapa)
+          const overlayPointNodes = [];
+          const seenPointIds = new Set(activeNodes.map(n => n.id));
+          effectiveOverlays.forEach(ovId => {
+            const ovMeta = SPATIAL_LAYERS_META[ovId] || {};
+            if (ovMeta.isPolygon || ovMeta.isLine) return;
+            if (ovId === activeLayerKey) return;
+            const candidates = getHydratedSpatialLayerNodes(ovId);
+            candidates.forEach(cn => {
+              if (seenPointIds.has(cn.id)) return;
+              if (isTerritorialFiltered && !allowedComunasSet.has(normStr(cn.nombre_comuna || ''))) return;
+              seenPointIds.add(cn.id);
+              overlayPointNodes.push(cn);
+            });
+          });
+          const renderedPointNodes = activeNodes.concat(overlayPointNodes);
+
+          // Contar nodos primarios activos por comuna
           const comunaNodeCountMap = {};
           COMUNAS_ORDER.forEach(c => { comunaNodeCountMap[normStr(c)] = 0; });
           activeNodes.forEach(n => {
@@ -13905,8 +14445,10 @@
           const baseChoroColor = w.color || '#00357f';
 
           const mapPolygonLayers = [];
+          const filteredComunaLayers = [];
           const mapCircleMarkers = [];
-          const radiusKmLabel = bufferRadiusKm;
+          const bufferRadiusM = Number(w.bufferRadiusM || 25000);
+          const bufferRadiusKm = bufferRadiusM / 1000;
 
           // NIVEL 1: Poligonos Coropleticos Comunales (L.geoJSON)
           const geojsonData = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.comunasGeoJSON) || null;
@@ -13914,16 +14456,17 @@
             L.geoJSON(geojsonData, {
               style: (feature) => {
                 const cName = (feature.properties && feature.properties.nombre) || 'Coyhaique';
+                const inFilter = !isTerritorialFiltered || allowedComunasSet.has(normStr(cName));
                 const valX = getComunaVal(valuesMapX, cName);
                 const ratio = (valX - minValX) / (maxValX - minValX || 1);
                 const fillHex = getChoroplethFillColor(ratio, baseChoroColor);
                 const isSelected = selEntity && normStr(selEntity) === normStr(cName);
-                const fillOp = (!selEntity || isSelected) ? (isSelected ? 0.68 : 0.44) : 0.16;
+                const fillOp = !inFilter ? 0.06 : ((!selEntity || isSelected) ? (isSelected ? 0.62 : 0.36) : 0.14);
                 return {
                   fillColor: fillHex,
-                  color: isSelected ? '#001d4a' : '#1e293b',
-                  weight: isSelected ? 2.8 : 1.2,
-                  opacity: (!selEntity || isSelected) ? 0.85 : 0.35,
+                  color: !inFilter ? '#94a3b8' : (isSelected ? '#001d4a' : '#1e293b'),
+                  weight: !inFilter ? 0.8 : (isSelected ? 2.8 : 1.2),
+                  opacity: !inFilter ? 0.25 : ((!selEntity || isSelected) ? 0.85 : 0.35),
                   fillOpacity: fillOp
                 };
               },
@@ -13931,6 +14474,9 @@
                 const props = feature.properties || {};
                 const cName = props.nombre || 'Coyhaique';
                 mapPolygonLayers.push({ layer, cName });
+                if (!isTerritorialFiltered || allowedComunasSet.has(normStr(cName))) {
+                  filteredComunaLayers.push(layer);
+                }
                 const valX = getComunaVal(valuesMapX, cName);
                 const valY = getComunaVal(valuesMapY, cName);
                 const nCount = comunaNodeCountMap[normStr(cName)] || 0;
@@ -13954,18 +14500,133 @@
             }).addTo(map);
           }
 
-          // NIVEL 3: Radios de Cobertura / Amenaza en metros reales (L.circle)
+          // Auto-encuadre inteligente (fitBounds) al cambiar el segmentador territorial
+          if (isTerritorialFiltered && filteredComunaLayers.length > 0) {
+            try {
+              const bounds = L.featureGroup(filteredComunaLayers).getBounds();
+              if (bounds && bounds.isValid()) {
+                map.fitBounds(bounds, { padding: [18, 18], maxZoom: 9 });
+              }
+            } catch (eBounds) {}
+          }
+
+          // NIVEL 1B: Poligonos Reales de Cobertura (SNASPE CONAF, ZOIT SERNATUR, ECMPO SUBPESCA) en snaspePane
+          const coverageData = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.coveragePolygonsGeoJSON) || null;
+          const activePolygonKeys = ['snaspe_polygons', 'zoit_polygons', 'ecmpo_polygons'].filter(k => effectiveOverlays.includes(k));
+          let renderedPolygonsCount = 0;
+          if (coverageData && Array.isArray(coverageData.features) && activePolygonKeys.length > 0) {
+            const matchingFeatures = coverageData.features.filter(f => activePolygonKeys.includes(f.properties && f.properties.coverageLayer));
+            renderedPolygonsCount = matchingFeatures.length;
+            if (matchingFeatures.length > 0) {
+              L.geoJSON({ type: 'FeatureCollection', features: matchingFeatures }, {
+                pane: 'snaspePane',
+                style: (feat) => {
+                  const cl = feat.properties && feat.properties.coverageLayer;
+                  if (cl === 'snaspe_polygons') {
+                    return { fillColor: '#047857', color: '#065f46', weight: 1.6, dashArray: '4,4', opacity: 0.9, fillOpacity: 0.25 };
+                  }
+                  if (cl === 'ecmpo_polygons') {
+                    return { fillColor: '#7c3aed', color: '#5b21b6', weight: 1.5, dashArray: '5,3', opacity: 0.85, fillOpacity: 0.20 };
+                  }
+                  return { fillColor: '#0284c7', color: '#0369a1', weight: 1.4, dashArray: '3,3', opacity: 0.85, fillOpacity: 0.16 };
+                },
+                onEachFeature: (feat, pLayer) => {
+                  const pr = feat.properties || {};
+                  const supTxt = pr.superficie_ha ? `${Number(pr.superficie_ha).toLocaleString('es-CL')} ha` : 'Área declarada';
+                  const ovConc = Number(pr.concesiones_superpuestas) > 0
+                    ? `<div style="margin-top: 4px; background: #fef2f2; border-left: 2px solid #dc2626; padding: 3px 6px; font-family: var(--font-mono); font-size: 0.64rem; color: #991b1b;">Superposición acuícola: <strong>${pr.concesiones_superpuestas} concesiones</strong></div>`
+                    : '';
+                  pLayer.bindTooltip(`<strong style="font-size:0.75rem;">${pr.nombre}</strong><br><span style="font-family:var(--font-mono);font-size:0.62rem;">${pr.categoria} · ${supTxt}</span>`, { sticky: true });
+                  pLayer.bindPopup(`
+                    <div style="font-family: var(--font-sans); padding: 2px; min-width: 215px; max-width: 280px;">
+                      <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: #047857; font-weight: 700;">${pr.categoria || 'Cobertura Territorial'}</div>
+                      <strong style="font-family: var(--font-serif); color: #1c1b1b; font-size: 0.90rem; display: block; margin: 2px 0;">${pr.nombre}</strong>
+                      <div style="font-size: 0.69rem; color: #4a4745;">
+                        <strong>Comunas:</strong> ${(pr.comunas || []).join(', ')}<br>
+                        <strong>Superficie:</strong> <span style="font-family: var(--font-mono);">${supTxt}</span>
+                      </div>
+                      ${ovConc}
+                      <div style="margin-top: 4px; font-size: 0.63rem; color: #524f4b;">
+                        Fuente: <strong>${pr.fuente || 'IDE Chile'}</strong> · <a href="${pr.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Ver registro ↗</a>
+                      </div>
+                    </div>
+                  `);
+                  pLayer.on('click', (ev) => {
+                    if (ev && window.L && L.DomEvent && typeof L.DomEvent.stopPropagation === 'function') {
+                      L.DomEvent.stopPropagation(ev);
+                    }
+                    pLayer.openPopup();
+                  });
+                }
+              }).addTo(map);
+            }
+          }
+
+          // NIVEL 1C: Redes Lineales (Ruta 7 Carretera Austral Pavimento vs Ripio y Rutas de Barcazas MTT) en routesPane
+          const linesData = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.connectivityLinesGeoJSON) || null;
+          const activeLineKeys = ['ruta7_tramos', 'rutas_barcazas'].filter(k => effectiveOverlays.includes(k));
+          let renderedLinesCount = 0;
+          if (linesData && Array.isArray(linesData.features) && activeLineKeys.length > 0) {
+            const lineFeats = linesData.features.filter(f => activeLineKeys.includes(f.properties && f.properties.lineLayer));
+            renderedLinesCount = lineFeats.length;
+            if (lineFeats.length > 0) {
+              L.geoJSON({ type: 'FeatureCollection', features: lineFeats }, {
+                pane: 'routesPane',
+                style: (feat) => {
+                  const pr = feat.properties || {};
+                  if (pr.lineLayer === 'rutas_barcazas') {
+                    return { color: '#0e7490', weight: 2.5, opacity: 0.88, dashArray: '3,5' };
+                  }
+                  const isPav = String(pr.estado_carpeta || '').toLowerCase() === 'pavimento';
+                  return isPav
+                    ? { color: '#00357f', weight: 3.4, opacity: 0.92 }
+                    : { color: '#d97706', weight: 3.0, opacity: 0.92, dashArray: '6,4' };
+                },
+                onEachFeature: (feat, lLayer) => {
+                  const pr = feat.properties || {};
+                  const isMaritime = pr.lineLayer === 'rutas_barcazas';
+                  const badgeTxt = isMaritime
+                    ? `${pr.codigo_servicio || 'MTT'} · ${pr.frecuencia || 'Ruta subsidiada'}`
+                    : `Carpeta: ${pr.estado_carpeta || 'Ripio'} · ${pr.longitud_km || 0} km`;
+                  lLayer.bindTooltip(`<strong style="font-size:0.74rem;">${pr.nombre}</strong><br><span style="font-family:var(--font-mono);font-size:0.62rem;">${badgeTxt}</span>`, { sticky: true });
+                  lLayer.bindPopup(`
+                    <div style="font-family: var(--font-sans); padding: 2px; min-width: 210px; max-width: 275px;">
+                      <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${isMaritime ? '#0e7490' : '#00357f'}; font-weight: 700;">
+                        ${isMaritime ? 'Conectividad Marítima / Lacustre MTT' : 'Corredor Vial Ruta 7 (MOP Vialidad)'}
+                      </div>
+                      <strong style="font-family: var(--font-serif); color: #1c1b1b; font-size: 0.88rem; display: block; margin: 2px 0;">${pr.nombre}</strong>
+                      <div style="font-family: var(--font-mono); font-size: 0.67rem; color: #4a4745; margin-bottom: 4px;">
+                        ${badgeTxt}<br>
+                        <span>Comunas: ${(pr.comunas || []).join(', ')}</span>
+                      </div>
+                      <div style="font-size: 0.63rem; color: #524f4b;">
+                        Fuente: <strong>${pr.fuente || 'MOP / MTT'}</strong>
+                      </div>
+                    </div>
+                  `);
+                  lLayer.on('click', (ev) => {
+                    if (ev && window.L && L.DomEvent && typeof L.DomEvent.stopPropagation === 'function') {
+                      L.DomEvent.stopPropagation(ev);
+                    }
+                    lLayer.openPopup();
+                  });
+                }
+              }).addTo(map);
+            }
+          }
+
+          // NIVEL 3: Radios de Cobertura / Amenaza en metros reales (L.circle) - contextual para servicios puntuales
           let insideBufferCount = 0;
           let evalNodesTotal = activeNodes.length;
-          const bufferRadiusM = Number(w.bufferRadiusM || 25000);
-          const bufferRadiusKm = bufferRadiusM / 1000;
-          if (w.showBuffers) {
-            let bufferCenters = activeNodes.filter(n => n.bufferGenerator);
+          const allowGeometricBuffer = activeLayerKey !== 'parques_snaspe' && !(isAquaMode && aquaFilterVal !== 'nodos_38');
+          if (w.showBuffers && allowGeometricBuffer) {
+            let bufferCenters = renderedPointNodes.filter(n => n.bufferGenerator);
             if (bufferCenters.length === 0) {
               bufferCenters = allSpatialNodes.filter(n => (n.layerKey === 'hospitales_postas' || n.layerKey === 'gobernanza_obras') && n.bufferGenerator);
             }
             bufferCenters.forEach(bc => {
               L.circle([bc.lat, bc.lon], {
+                pane: 'buffersPane',
                 radius: bufferRadiusM,
                 color: bc.color || '#dc2626',
                 weight: 1.3,
@@ -13977,7 +14638,7 @@
             });
 
             // Evaluar cuantos nodos productivos/sociales caen dentro del radio de 25 km
-            const targetEvalNodes = activeNodes.length > 0 ? activeNodes : allSpatialNodes;
+            const targetEvalNodes = renderedPointNodes.length > 0 ? renderedPointNodes : allSpatialNodes;
             evalNodesTotal = targetEvalNodes.length;
             targetEvalNodes.forEach(tn => {
               const isInside = bufferCenters.some(bc => haversineDistanceKm(tn.lat, tn.lon, bc.lat, bc.lon) <= bufferRadiusKm);
@@ -13985,17 +14646,39 @@
             });
           }
 
-          // NIVEL 2: Capa de Nodos Puntuales Georreferenciados (L.circleMarker)
-          if (activeNodes.length > 0) {
-            const mags = activeNodes.map(n => Number(n.magnitudeValue) || 1);
+          // NIVEL 2: Capa de Nodos Puntuales Georreferenciados (L.circleMarker) en nodesPane (z-index 650)
+          let activePadronCount = 0;
+          let snaspePadronCount = 0;
+          if (renderedPointNodes.length > 0) {
+            const mags = renderedPointNodes.map(n => Number(n.magnitudeValue) || 1);
             const minMag = Math.min(...mags, 0);
             const maxMag = Math.max(...mags, 1);
 
-            activeNodes.forEach(n => {
+            renderedPointNodes.forEach(n => {
+              const isPadronNode = n.layerKey === 'concesiones_acuicolas_padron';
+              const isPadronActive = isPadronNode && n.estado_operativo === 'Activo';
+              const isPadronSnaspe = isPadronNode && !!n.en_snaspe;
+              if (isPadronActive) activePadronCount += 1;
+              if (isPadronSnaspe) snaspePadronCount += 1;
+
               const magRatio = (Number(n.magnitudeValue || 1) - minMag) / (maxMag - minMag || 1);
-              const ptRadius = 5 + magRatio * 7.5;
+              const baseRadius = isPadronNode ? (isPadronActive ? 4.8 : 3.7) : (5 + magRatio * 7.5);
+              const ptRadius = baseRadius;
               const isComunaSelected = selEntity && normStr(selEntity) === normStr(n.nombre_comuna);
-              const markerOpacity = (!selEntity || isComunaSelected) ? 0.92 : 0.28;
+              const markerOpacity = (!selEntity || isComunaSelected) ? (isPadronNode ? 0.94 : 0.92) : 0.25;
+              const fillOp = isPadronNode
+                ? ((!selEntity || isComunaSelected) ? (isPadronActive ? 0.88 : 0.16) : 0.12)
+                : markerOpacity;
+              const fillHex = isPadronNode
+                ? (isPadronActive ? '#0059c5' : '#bae6fd')
+                : (n.color || w.color || '#0059c5');
+              const strokeHex = isPadronNode
+                ? (isPadronSnaspe ? '#dc2626' : (isPadronActive ? '#ffffff' : '#0284c7'))
+                : '#ffffff';
+              const strokeW = isPadronNode
+                ? (isPadronSnaspe ? 1.9 : 1.3)
+                : (isComunaSelected ? 2.2 : 1.4);
+
               const valComunaX = getComunaVal(valuesMapX, n.nombre_comuna);
               const nodeLayerTitle = (SPATIAL_LAYERS_META[n.layerKey] || SPATIAL_LAYERS_META[activeLayerKey] || {}).label || activeLayerKey;
               const nodeTitle = n.nombre || n.id || 'Nodo Territorial';
@@ -14003,14 +14686,21 @@
               const nodeComuna = n.nombre_comuna || 'Región de Aysén';
               const nodeLocalidad = n.localidad ? `${n.localidad} · ` : '';
               const nodeFuente = n.fuente || n.titular || 'Catastro Oficial Georreferenciado';
-              const estadoHtml = n.estado ? `<br><span>Estado: <strong>${n.estado}</strong></span>` : '';
+              const estadoVal = n.estado_operativo || n.estado || '';
+              const estadoHtml = estadoVal ? `<br><span>Estado: <strong>${estadoVal}</strong></span>` : '';
+              const snaspeRowHtml = isPadronNode
+                ? `<br><span>SNASPE: <strong style="color:${n.en_snaspe ? '#b91c1c' : '#047857'};">${n.en_snaspe ? `Superposición · ${n.unidad_snaspe}` : 'Fuera de SNASPE'}</strong></span>`
+                : '';
+              const icaRowHtml = (isPadronNode && n.antibioticos_ica)
+                ? `<br><span>ICA Comunal Antibióticos: <strong>${Number(n.antibioticos_ica).toLocaleString('es-CL')} g/ton</strong></span>`
+                : '';
               const magHtml = (n.magnitudeValue !== undefined && n.magnitudeValue !== null)
                 ? `<strong>${n.magnitudeLabel || 'Capacidad / Magnitud'}:</strong> ${Number(n.magnitudeValue).toLocaleString('es-CL')} ${n.magnitudeUnit || ''}<br>`
                 : '';
 
               let bufferPopupHtml = '';
-              if (w.showBuffers) {
-                const nearbyNodes = activeNodes.filter(other => other !== n && haversineDistanceKm(n.lat, n.lon, other.lat, other.lon) <= bufferRadiusKm);
+              if (w.showBuffers && allowGeometricBuffer) {
+                const nearbyNodes = renderedPointNodes.filter(other => other !== n && haversineDistanceKm(n.lat, n.lon, other.lat, other.lon) <= bufferRadiusKm);
                 const nearbyCabeceras = Object.entries(COMUNA_COORDS)
                   .filter(([, coords]) => haversineDistanceKm(n.lat, n.lon, coords[0], coords[1]) <= bufferRadiusKm)
                   .map(([cName]) => cName);
@@ -14023,71 +14713,92 @@
               }
 
               const marker = L.circleMarker([n.lat, n.lon], {
-                radius: isComunaSelected ? ptRadius + 2.5 : ptRadius,
-                fillColor: n.color || w.color || '#0059c5',
-                color: '#ffffff',
-                weight: isComunaSelected ? 2.2 : 1.4,
+                pane: 'nodesPane',
+                radius: isComunaSelected ? ptRadius + 2.0 : ptRadius,
+                fillColor: fillHex,
+                color: strokeHex,
+                weight: strokeW,
                 opacity: markerOpacity,
-                fillOpacity: markerOpacity
+                fillOpacity: fillOp
               }).addTo(map);
 
-              mapCircleMarkers.push({ marker, ptRadius, comuna: n.nombre_comuna });
+              mapCircleMarkers.push({ marker, ptRadius, comuna: n.nombre_comuna, isPadronNode, fillOp, strokeW });
 
               marker.bindTooltip(`
                 <div style="font-family: var(--font-sans); line-height: 1.3;">
                   <strong style="font-size: 0.78rem; color: #00357f;">${nodeTitle}</strong><br>
-                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #4a4745;">${nodeTipo} · ${nodeComuna}</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #4a4745;">${nodeTipo} · ${nodeComuna}${isPadronSnaspe ? ' · EN SNASPE' : ''}</span>
                 </div>
               `, { direction: 'top', opacity: 0.96 });
 
               marker.bindPopup(`
-                <div style="font-family: var(--font-sans); padding: 2px; min-width: 225px; max-width: 300px;">
-                  <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${n.color || '#00357f'}; font-weight: 700;">${nodeTipo}</div>
+                <div style="font-family: var(--font-sans); padding: 2px; min-width: 228px; max-width: 305px;">
+                  <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${isPadronSnaspe ? '#dc2626' : (n.color || '#00357f')}; font-weight: 700;">${nodeTipo}</div>
                   <strong style="font-family: var(--font-serif); color: #1c1b1b; font-size: 0.92rem; display: block; margin: 2px 0;">${nodeTitle}</strong>
                   <div style="font-size: 0.69rem; color: #4a4745; margin-bottom: 4px;">
                     <strong>Comuna:</strong> ${nodeLocalidad}${nodeComuna}<br>
                     <span style="font-family: var(--font-mono); font-size: 0.62rem;">Coord: (${Number(n.lat).toFixed(4)}, ${Number(n.lon).toFixed(4)})</span>
                     ${estadoHtml}
+                    ${snaspeRowHtml}
+                    ${icaRowHtml}
                   </div>
                   <div style="background: #f4efec; padding: 4px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 0.68rem; margin-bottom: 4px;">
                     ${magHtml}
                     <span>Coropleta Comunal [X]: <strong>${valComunaX.toLocaleString('es-CL')} ${choroUnit}</strong></span>
                   </div>
                   ${bufferPopupHtml}
-                  <div style="font-size: 0.64rem; color: #524f4b;">
-                    Fuente oficial: <strong>${nodeFuente}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Ver registro ↗</a>
+                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 0.64rem; color: #524f4b;">
+                    <span>Fuente: <strong>${nodeFuente}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Registro ↗</a></span>
+                    <button type="button" class="map-popup-filter-comuna-btn" data-comuna="${nodeComuna}" style="border: 1px solid rgba(0,53,127,0.3); background: #fff; color: #00357f; font-family: var(--font-mono); font-size: 0.60rem; padding: 1px 5px; border-radius: 2px; cursor: pointer;">Filtrar comuna</button>
                   </div>
                 </div>
-              `, { maxWidth: 315, autoPan: true, closeButton: true });
+              `, { maxWidth: 320, autoPan: true, closeButton: true });
+
+              marker.on('popupopen', (popEv) => {
+                const popEl = popEv && popEv.popup && popEv.popup.getElement ? popEv.popup.getElement() : null;
+                if (popEl) {
+                  const fltBtn = popEl.querySelector('.map-popup-filter-comuna-btn');
+                  if (fltBtn && !fltBtn._hasBound) {
+                    fltBtn.addEventListener('click', (btnEv) => {
+                      btnEv.stopPropagation();
+                      toggleCrossHighlight(nodeComuna, w.id, { keepSourceMap: true });
+                    });
+                    fltBtn._hasBound = true;
+                  }
+                }
+              });
 
               marker.on('click', (ev) => {
                 if (ev && window.L && L.DomEvent && typeof L.DomEvent.stopPropagation === 'function') {
                   L.DomEvent.stopPropagation(ev);
                 }
+                if (ev && ev.originalEvent && typeof ev.originalEvent.stopPropagation === 'function') {
+                  ev.originalEvent.stopPropagation();
+                }
                 marker.openPopup();
-                toggleCrossHighlight(n.nombre_comuna, w.id, { keepSourceMap: true });
               });
             });
           }
 
           w._updateMapHighlight = (activeEnt) => {
             mapPolygonLayers.forEach(({ layer, cName }) => {
+              const inFilter = !isTerritorialFiltered || allowedComunasSet.has(normStr(cName));
               const isSelected = activeEnt && normStr(activeEnt) === normStr(cName);
               layer.setStyle({
-                color: isSelected ? '#001d4a' : '#1e293b',
-                weight: isSelected ? 2.8 : 1.2,
-                opacity: (!activeEnt || isSelected) ? 0.85 : 0.35,
-                fillOpacity: (!activeEnt || isSelected) ? (isSelected ? 0.68 : 0.44) : 0.16
+                color: !inFilter ? '#94a3b8' : (isSelected ? '#001d4a' : '#1e293b'),
+                weight: !inFilter ? 0.8 : (isSelected ? 2.8 : 1.2),
+                opacity: !inFilter ? 0.25 : ((!activeEnt || isSelected) ? 0.85 : 0.35),
+                fillOpacity: !inFilter ? 0.06 : ((!activeEnt || isSelected) ? (isSelected ? 0.62 : 0.36) : 0.14)
               });
             });
-            mapCircleMarkers.forEach(({ marker, ptRadius, comuna }) => {
+            mapCircleMarkers.forEach(({ marker, ptRadius, comuna, isPadronNode, fillOp, strokeW }) => {
               const isSel = activeEnt && normStr(activeEnt) === normStr(comuna);
-              const op = (!activeEnt || isSel) ? 0.92 : 0.28;
+              const op = (!activeEnt || isSel) ? (isPadronNode ? 0.94 : 0.92) : 0.25;
               marker.setStyle({
-                radius: isSel ? ptRadius + 2.5 : ptRadius,
-                weight: isSel ? 2.2 : 1.4,
+                radius: isSel ? ptRadius + 2.0 : ptRadius,
+                weight: isSel ? strokeW + 0.6 : strokeW,
                 opacity: op,
-                fillOpacity: op
+                fillOpacity: isPadronNode ? ((!activeEnt || isSel) ? fillOp : 0.12) : op
               });
             });
           };
@@ -14095,17 +14806,28 @@
           // Leyenda Bivariada Automatica en Esquina Inferior Izquierda
           const ramp = getChoroplethRampColors(baseChoroColor);
           const layerInfo = SPATIAL_LAYERS_META[activeLayerKey] || { label: activeLayerKey, color: '#0059c5' };
-          const bufferLegendHtml = w.showBuffers
+          const bufferLegendHtml = (w.showBuffers && allowGeometricBuffer)
             ? `<div class="legend-row" style="color: #b91c1c; font-weight: 600;">
                  <span>[◎ ${bufferRadiusKm} km]</span>
                  <span>${insideBufferCount}/${evalNodesTotal} nodos en radio</span>
+               </div>`
+            : '';
+          const padronLegendHtml = (isAquaMode && aquaFilterVal !== 'nodos_38')
+            ? `<div class="legend-row" style="color: #00357f; font-size: 0.58rem;">
+                 <span>● Activas (${activePadronCount}) · ○ Otorg. (${Math.max(0, activeNodes.length - activePadronCount)}) · Borde rojo: SNASPE (${snaspePadronCount})</span>
+               </div>`
+            : '';
+          const overlaysLegendHtml = (renderedPolygonsCount > 0 || renderedLinesCount > 0)
+            ? `<div class="legend-row" style="color: #047857; font-size: 0.58rem;">
+                 <span>Capas activas: ${renderedPolygonsCount} políg. · ${renderedLinesCount} tramos vial/mar.</span>
                </div>`
             : '';
 
           const legendDiv = document.createElement('div');
           legendDiv.className = 'map-bivariate-legend spatial-map-legend';
           legendDiv.title = 'Haz clic para colapsar o expandir la leyenda';
-          legendDiv.addEventListener('click', () => {
+          legendDiv.addEventListener('click', (ev) => {
+            ev.stopPropagation();
             legendDiv.classList.toggle('collapsed');
           });
           legendDiv.innerHTML = `
@@ -14124,8 +14846,10 @@
             </div>
             <div class="legend-row" style="margin-top: 3px;">
               <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${layerInfo.color}; border:1px solid #fff;"></span>
-              <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${layerInfo.label}">[Y] ${layerInfo.label} (n=${activeNodes.length})</span>
+              <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${layerInfo.label}">[Y] ${layerInfo.label} (n=${renderedPointNodes.length})</span>
             </div>
+            ${padronLegendHtml}
+            ${overlaysLegendHtml}
             ${bufferLegendHtml}
           `;
           container.appendChild(legendDiv);
