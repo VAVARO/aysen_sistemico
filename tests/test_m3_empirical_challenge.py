@@ -72,7 +72,7 @@ class TestM3BundleInvariantsAndArchitecture(unittest.TestCase):
         info = self.bundle_info
         self.assertTrue(info["isObject"], "window.AYSEN_HUBS_DATA is not a valid object")
         self.assertIn(info["hubsCount"], (8, 10), "Expected 8 or 10 canonical hubs")
-        self.assertIn(info["nodosCount"], (31, 39), "Expected 31 or 39 satellite nodos")
+        self.assertIn(info["nodosCount"], (31, 39, 41), "Expected 31, 39 or 41 satellite nodos")
         self.assertEqual(info["comunasCount"], 10, "Expected exactly 10 comunas")
         self.assertEqual(info["holdingsCount"], 13, "Expected exactly 13 salmon holdings")
 
@@ -340,7 +340,7 @@ class TestM3ProvenanceAndSourceWatch(unittest.TestCase):
     def test_01_provenance_catalog_invariants(self):
         """provenance_catalog must preserve total_hubs: 7, total_nodos: 31, and include CP and CTCi."""
         self.assertIn(self.prov.get("total_hubs"), (7, 8, 10), "Canonical total_hubs must remain 7, 8 or 10")
-        self.assertIn(self.prov.get("total_nodos"), (31, 39), "Canonical total_nodos must remain 31 or 39")
+        self.assertIn(self.prov.get("total_nodos"), (31, 39, 41), "Canonical total_nodos must remain 31, 39 or 41")
 
         for key, wp in [("fuente_cultura_patrimonio", "WP_09"), ("fuente_ctci_innovacion", "WP_10")]:
             self.assertIn(key, self.prov, f"Missing {key} in provenance_catalog.json")

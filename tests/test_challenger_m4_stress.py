@@ -411,7 +411,7 @@ class ChallengerM4StressTestSuite(unittest.TestCase):
 
         # Canonical Nodes invariant
         nodos = self.hubs_data.get("nodos", [])
-        self.assertIn(len(nodos), (31, 39), f"Invariante rota: len(nodos) debe ser 31 o 39, es {len(nodos)}")
+        self.assertIn(len(nodos), (31, 39, 41), f"Invariante rota: len(nodos) debe ser 31, 39 o 41, es {len(nodos)}")
 
         # Canonical Gallery invariant
         hubs_gallery = self.hubs_data.get("hubsGallery", {})

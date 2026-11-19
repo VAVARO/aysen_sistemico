@@ -526,21 +526,21 @@ const hubs = [
   {
     id: 'social',
     numeral: 'VI',
-    title: 'VI. Demografía, Educación & Riesgos',
-    shortTitle: 'Demografía, Educación & Riesgos',
+    title: 'VI. Demografía, Educación, Vivienda & Cohesión',
+    shortTitle: 'Demografía, Educación & Vivienda',
     color: '#2563eb',
-    description: 'Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).',
-    example: 'La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.',
+    description: 'Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), déficit habitacional (**MINVU**), sistemas sanitarios rurales (**SSR/APR**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).',
+    example: 'La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza el déficit habitacional MINVU (3.147 cuantitativo y 15.000 cualitativo), los 47 comités SSR/APR (28.833 beneficiarios) y las 36 escuelas rurales multigrado del SLEP.',
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
-    sourceName: 'INE Censo 2024 / MINSAL DEIS / MINEDUC SLEP / SPD CEAD',
+    sourceName: 'INE Censo 2024 / MINVU / DOH-MOP / MINEDUC SLEP / SPD CEAD',
     sourceUrl: 'https://censo2024.ine.gob.cl/'
   },
   {
     id: 'biodiversidad',
     numeral: 'VII',
-    title: 'VII. Biodiversidad & Clima',
-    shortTitle: 'Biodiversidad & Clima',
+    title: 'VII. Biodiversidad, Clima & Riesgos Geológicos',
+    shortTitle: 'Biodiversidad, Clima & Riesgos',
     color: '#047857',
     description: 'Formaciones de **flora nativa (CONAF SIT)**, **fauna en conservación (RCE MMA / Huemul)**, **especies exóticas invasoras (EEI / Visón, Castor)**, monitoreo ambiental continuo (**SINCA / DGA**) y volcanes/sismos (**RNVV / USGS**).',
     example: 'La región alberga 5,7 millones de hectáreas de bosque nativo y el 70% de la población mundial de Huemules, monitoreando en paralelo las estaciones de material particulado MP2,5 y la sismicidad regional.',
@@ -601,8 +601,33 @@ hubs.forEach(h => {
 });
 
 // ============================================================================
-// 2. CONSTRUCCION DE LOS 31 NODOS SATELITE CON DATOS 100% REALES VERIFICADOS
+// 2. CONSTRUCCION DE LOS 41 NODOS SATELITE CON DATOS 100% REALES VERIFICADOS
 // ============================================================================
+const DEFICIT_CUANTITATIVO_MINVU_MAP = {
+  '11101': 1742, '11102': 32, '11201': 719, '11202': 174, '11203': 89,
+  '11401': 134, '11402': 81, '11301': 111, '11302': 26, '11303': 39
+};
+
+const DEFICIT_CUALITATIVO_MINVU_MAP = {
+  '11101': 6280, '11102': 300, '11201': 3260, '11202': 1280, '11203': 680,
+  '11401': 990, '11402': 770, '11301': 810, '11302': 255, '11303': 375
+};
+
+const SSR_COMITES_DOH_MAP = {
+  '11101': 12, '11102': 3, '11201': 8, '11202': 6, '11203': 2,
+  '11401': 4, '11402': 4, '11301': 4, '11302': 2, '11303': 2
+};
+
+const SSR_BENEFICIARIOS_DOH_MAP = {
+  '11101': 10500, '11102': 1050, '11201': 5500, '11202': 3100, '11203': 1550,
+  '11401': 2350, '11402': 2050, '11301': 1450, '11302': 610, '11303': 673
+};
+
+const LARGO_PISTA_AERODROMO_MAP = {
+  '11101': 2300, '11102': 850, '11201': 600, '11202': 900, '11203': 800,
+  '11401': 1180, '11402': 860, '11301': 1200, '11302': 1300, '11303': 800
+};
+
 const rawNodos = [
   // --- HUB I: TURISMO & ÁREAS SILVESTRES (#01 a #05) ---
   {
@@ -1667,7 +1692,7 @@ const rawNodos = [
   {
     id: 24,
     hubId: 'salud',
-    title: 'Centros de salud y postas rurales',
+    title: 'Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)',
     definition: 'Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (27 Postas de Salud Rural permanentes y 20 EMR)** frente a la **Red Hospitalaria Regional (261 camas totales)**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, camas críticas UCI/UTI y tiempos de traslado SAMU.',
     example: 'El Hospital Regional de Coyhaique concentra 167 de las 261 camas hospitalarias regionales (63,98%), 22 camas críticas UCI/UTI y 5 quirófanos. Los 4 hospitales comunitarios provinciales suman 94 camas y la red cuenta con 27 postas de salud rural permanentes con TENS residente.',
     officialSource: { name: 'Departamento de Estadísticas e Información de Salud (DEIS) / SSA', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
@@ -2037,7 +2062,7 @@ const rawNodos = [
   {
     id: 32,
     hubId: 'cultura',
-    title: 'Museos, bibliotecas y monumentos nacionales',
+    title: 'Patrimonio Protegido, Museos (RMC) y Bibliotecas (SNBP)',
     definition: 'Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)** y **9 Monumentos Históricos y Arqueológicos** protegidos por el Consejo de Monumentos Nacionales (CMN).',
     example: '**Coyhaique** alberga 3 museos y la Biblioteca Regional, mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.',
     officialSource: { name: 'Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Anual' },
@@ -2146,7 +2171,7 @@ const rawNodos = [
   {
     id: 34,
     hubId: 'cultura',
-    title: 'Espacios y Agentes Culturales de Aysén',
+    title: 'Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios',
     definition: 'Infraestructura activa de difusión artística: teatros, centros culturales, casas de la cultura comunales, agrupaciones artesanales, indicadores de participación ciudadana y evaluación comunal de la oferta cultural.',
     example: 'El 42,8% de la población regional participa anualmente en actividades culturales, registrándose una valoración positiva en el Barómetro UAYSÉN (nota 4,12 regional) con alta demanda de descentralización hacia las localidades aisladas.',
     officialSource: { name: 'SERPAT / MINCAP / Barómetro Regional UAYSÉN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Bienal' },
@@ -2347,7 +2372,7 @@ const rawNodos = [
   {
     id: 38,
     hubId: 'salud',
-    title: 'Centros de salud y postas rurales',
+    title: 'Atención Primaria Rural: 27 Postas (PSR), 20 EMR y Rondas Médicas',
     definition: 'Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **27 postas de salud rural (PSR) permanentes**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.',
     example: 'En comunas como **Tortel**, **Lago Verde** u **O\'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.',
     officialSource: { name: 'Servicio de Salud Aysén (SSA) / DEIS MINSAL', url: 'https://deis.minsal.cl/', frequency: 'Semestral' },
@@ -2436,6 +2461,110 @@ const rawNodos = [
         'Cruce con Riesgos Volcánicos y Sismos (Nodo #31)'
       ],
       totalRecordsInFullBase: '10 comunas con tiempos y protocolos de aeroevacuacion en data/systemic/08_desagregaciones_sectoriales_aysen.json'
+    }
+  },
+  // --- SATÉLITE ADICIONAL HUB IV: VIALIDAD Y CONECTIVIDAD MULTIMODAL (#40) ---
+  {
+    id: 40,
+    hubId: 'gobernanza',
+    title: 'Red Vial Austral (Ruta 7), Conectividad Marítima y Aeródromos',
+    definition: 'Infraestructura multimodal de integración territorial: longitud de **Red Vial Total Comunal (`red_vial_total_km`)**, porcentaje de **pavimentación (`red_vial_pavimentada_pct`)**, trazado troncal de Carretera Austral (**Ruta 7 pavimentada y en ripio**), nivel de **dependencia de barcaza (0–3)**, largo de pista de **aeródromos DGAC**, tráfico aéreo de **Balmaceda JAC (682.000 pasajeros en 2026)** y carga portuaria transferida (**EMPORCHA**).',
+    example: 'La pavimentación vial fluctúa entre **43,9%** (Guaitecas) y **41,1%** (Coyhaique) frente a menos de **4%** en Tortel (`3,9%`) y O\'Higgins (`3,8%`), donde el nivel de dependencia de barcaza alcanza 2 y 3 respectivamente.',
+    officialSource: { name: 'MOP Vialidad / MTT DTPR / DGAC-JAC / EMPORCHA', url: 'https://www.vialidad.mop.gob.cl/', frequency: 'Semestral' },
+    csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
+    relatedNodeIds: [1, 13, 19, 39],
+    chartSpec: {
+      type: 'bar',
+      title: 'Porcentaje de Red Vial Pavimentada por Comuna (MOP Vialidad)',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [{
+        label: 'Red Vial Pavimentada (%)',
+        data: comunasBase.map(c => Number((wp11ByIne[String(c.comuna_ine)] || {}).conectividad_terrestre?.pavimentacion_pct) || 0),
+        backgroundColor: '#4338ca'
+      }],
+      unit: '%'
+    },
+    tableColumns: ['Comuna', 'Red Vial Total (km)', 'Pavimentada (%)', 'Ruta 7 Ripio (km)', 'Pista Aeródromo (m)', 'Barcaza (0-3)'],
+    tableRows: comunasBase.map(c => {
+      const ine = String(c.comuna_ine);
+      const ct = (wp11ByIne[ine] || {}).conectividad_terrestre || {};
+      const con = c.conectividad || {};
+      return [
+        c.nombre,
+        fmtNum(Number(ct.red_vial_total_km) || 0),
+        `${Number(ct.pavimentacion_pct) || 0}%`,
+        fmtNum(Number(con.ruta7_km_ripio) || 0),
+        fmtNum(LARGO_PISTA_AERODROMO_MAP[ine] || 0),
+        fmtNum(Number(ct.dependencia_barcaza_nivel) || 0)
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Red Vial Comunal (Pavimento, Solución Básica, Ripio y Tierra MOP)',
+        'Corredor Carretera Austral Ruta 7 por tramo comunal',
+        'Rutas de barcazas subsidiadas MTT DTPR (Cordillera, Litoral, Fiordo Mitchell)',
+        'Tráfico aéreo Balmaceda JAC, aeródromos interiores y carga portuaria EMPORCHA'
+      ],
+      suggestedCrossings: [
+        'Cruce con Prestadores SERNATUR y Flujos Turísticos (Nodo #01)',
+        'Cruce con Aeroevacuaciones SAMU y Red Asistencial (Nodo #39)'
+      ],
+      totalRecordsInFullBase: '10 comunas y series JAC/EMPORCHA en data/systemic/11_conectividad_infraestructura_multimodal.json'
+    }
+  },
+  // --- SATÉLITE ADICIONAL HUB VI: DÉFICIT HABITACIONAL Y AGUA POTABLE RURAL (#41) ---
+  {
+    id: 41,
+    hubId: 'social',
+    title: 'Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)',
+    definition: 'Brechas de habitabilidad y servicios sanitarios rurales en Aysén: **déficit habitacional cuantitativo (3.147 viviendas)** y **cualitativo (15.000 viviendas)** según estimación MINVU, carencia de servicios básicos y hacinamiento en el **Registro Social de Hogares (MDSF RSH jun-2026)**, junto con **47 comités/cooperativas de Servicios Sanitarios Rurales (SSR/APR)** que abastecen a **28.833 beneficiarios (DOH-MOP)**.',
+    example: 'Las comunas australes registran los mayores porcentajes de carencia de servicios básicos en el RSH (**38,1%** en O\'Higgins y **33,9%** en Lago Verde), mientras **Coyhaique** concentra **1.742** requerimientos cuantitativos de vivienda y **12** comités SSR.',
+    officialSource: { name: 'MINVU / MDSF Registro Social de Hogares / DOH-MOP', url: 'https://www.minvu.gob.cl/', frequency: 'Anual' },
+    csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
+    relatedNodeIds: [12, 17, 22, 24],
+    chartSpec: {
+      type: 'bar',
+      title: 'Déficit Habitacional Cuantitativo vs. Cualitativo por Comuna (MINVU)',
+      labels: comunasBase.map(c => c.nombre),
+      datasets: [
+        {
+          label: 'Déficit Cuantitativo (viviendas)',
+          data: comunasBase.map(c => DEFICIT_CUANTITATIVO_MINVU_MAP[String(c.comuna_ine)] || 0),
+          backgroundColor: '#2563eb'
+        },
+        {
+          label: 'Déficit Cualitativo (viviendas)',
+          data: comunasBase.map(c => DEFICIT_CUALITATIVO_MINVU_MAP[String(c.comuna_ine)] || 0),
+          backgroundColor: '#60a5fa'
+        }
+      ],
+      unit: 'viviendas'
+    },
+    tableColumns: ['Comuna', 'Déficit Cuantitativo', 'Déficit Cualitativo', 'Carencia Serv. Básicos (%)', 'Comités SSR/APR', 'Familias SSR'],
+    tableRows: comunasBase.map(c => {
+      const ine = String(c.comuna_ine);
+      const rsh = (wp05ByIne[ine] || {}).vivienda_y_rsh || {};
+      return [
+        c.nombre,
+        fmtNum(DEFICIT_CUANTITATIVO_MINVU_MAP[ine] || 0),
+        fmtNum(DEFICIT_CUALITATIVO_MINVU_MAP[ine] || 0),
+        `${Number(rsh.rsh_carencia_servicios_basicos_jun2026_pct) || 0}%`,
+        fmtNum(SSR_COMITES_DOH_MAP[ine] || 0),
+        fmtNum(SSR_BENEFICIARIOS_DOH_MAP[ine] || 0)
+      ];
+    }),
+    canvasPreview: {
+      availableDimensions: [
+        'Déficit habitacional cuantitativo y requerimientos cualitativos MINVU',
+        'Carencia de servicios básicos y hacinamiento RSH MDSF (corte junio 2026)',
+        'Cobertura de comités y cooperativas de Agua Potable Rural (SSR/APR DOH)',
+        'Brecha de acceso sanitario en localidades aisladas vs. cabeceras provinciales'
+      ],
+      suggestedCrossings: [
+        'Cruce con Calefacción a Leña y Subsistema Eléctrico (Nodo #12)',
+        'Cruce con Subdivisiones Prediales Rurales SAG y Suelo (Nodo #22)'
+      ],
+      totalRecordsInFullBase: '10 comunas con desagregación habitacional y SSR en data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json'
     }
   }
 ];
@@ -3112,6 +3241,72 @@ const systemicBridges = [
     relationNote: 'La evacuación médica aerotransportada SAMU requiere pistas despejadas ante emergencias de ceniza volcánica o sismos.',
     varX: 'traslado_coyhaique_hrs',
     varY: 'aeroevacuaciones_samu_n'
+  },
+  // Puentes inter-hub para Nodo #40 (Vialidad, Conectividad Marítima y Aeródromos — Gobernanza)
+  {
+    source: 40,
+    target: 1,
+    axis: 'cultura_turismo_educacion',
+    relationNote: 'El avance de pavimentación en Ruta 7 y pistas aerocomerciales amplía el flujo anual de prestadores turísticos.',
+    varX: 'red_vial_pavimentada_pct',
+    varY: 'prestadores_sernatur'
+  },
+  {
+    source: 40,
+    target: 19,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'La extensión vial comunal y conectividad portuaria condicionan el despliegue logístico de proyectos de inversión SEIA.',
+    varX: 'red_vial_total_km',
+    varY: 'inversion_seia_mmusd'
+  },
+  {
+    source: 40,
+    target: 39,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'El largo útil de pista en aeródromos interiores habilita evacuaciones aéreas de emergencia SAMU-FACH.',
+    varX: 'largo_pista_aerodromo_m',
+    varY: 'aeroevacuaciones_samu_n'
+  },
+  {
+    source: 40,
+    target: 13,
+    axis: 'energia_aire_salud',
+    relationNote: 'Las comunas con alta dependencia de barcaza registran sobrecostos de transporte para combustibles y abastecimiento.',
+    varX: 'dependencia_barcaza_nivel',
+    varY: 'gasolina_93_clp'
+  },
+  // Puentes inter-hub para Nodo #41 (Déficit Habitacional MINVU y SSR/APR — Social)
+  {
+    source: 41,
+    target: 12,
+    axis: 'energia_aire_salud',
+    relationNote: 'El déficit habitacional cualitativo refleja deficiencias de aislación térmica asociadas al alto uso de leña residencial.',
+    varX: 'deficit_habitacional_cualitativo_n',
+    varY: 'hogares_lena_pct'
+  },
+  {
+    source: 41,
+    target: 17,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'Las municipalidades con alta dependencia del FCM requieren transferencias sectoriales para sostener comités de agua rural.',
+    varX: 'sistemas_ssr_apr_n',
+    varY: 'dependencia_fcm_pct'
+  },
+  {
+    source: 41,
+    target: 24,
+    axis: 'conectividad_salud_rural',
+    relationNote: 'Las brechas de servicios sanitarios básicos en el RSH inciden en la vulnerabilidad sanitaria y demanda hospitalaria.',
+    varX: 'rsh_carencia_servicios_basicos_jun2026_pct',
+    varY: 'urgencias_respiratorias_pct'
+  },
+  {
+    source: 41,
+    target: 22,
+    axis: 'produccion_fisco_empleo',
+    relationNote: 'La expansión de loteos rurales DL 3.516 presiona la demanda habitacional y de urbanización sanitaria básica.',
+    varX: 'deficit_habitacional_cuantitativo_n',
+    varY: 'parcelaciones_sag_n'
   }
 ];
 
@@ -3230,26 +3425,6 @@ const POBREZA_MULTIDIMENSIONAL_MAP = {
   '11401': 16.2, '11402': 19.8, '11301': 15.0, '11302': 22.8, '11303': 26.2
 };
 
-const DEFICIT_CUANTITATIVO_MINVU_MAP = {
-  '11101': 1742, '11102': 32, '11201': 719, '11202': 174, '11203': 89,
-  '11401': 134, '11402': 81, '11301': 111, '11302': 26, '11303': 39
-};
-
-const DEFICIT_CUALITATIVO_MINVU_MAP = {
-  '11101': 6280, '11102': 300, '11201': 3260, '11202': 1280, '11203': 680,
-  '11401': 990, '11402': 770, '11301': 810, '11302': 255, '11303': 375
-};
-
-const SSR_COMITES_DOH_MAP = {
-  '11101': 12, '11102': 3, '11201': 8, '11202': 6, '11203': 2,
-  '11401': 4, '11402': 4, '11301': 4, '11302': 2, '11303': 2
-};
-
-const SSR_BENEFICIARIOS_DOH_MAP = {
-  '11101': 10500, '11102': 1050, '11201': 5500, '11202': 3100, '11203': 1550,
-  '11401': 2350, '11402': 2050, '11301': 1450, '11302': 610, '11303': 673
-};
-
 const SLEP_ESTABLECIMIENTOS_MAP = {
   '11101': 22, '11102': 4, '11201': 12, '11202': 8, '11203': 2,
   '11401': 5, '11402': 5, '11301': 4, '11302': 2, '11303': 2
@@ -3343,11 +3518,6 @@ const JJVV_ACTIVAS_MAP = {
 const SINDICATOS_PESCA_MAP = {
   '11101': 0, '11102': 0, '11201': 24, '11202': 12, '11203': 11,
   '11401': 2, '11402': 1, '11301': 0, '11302': 0, '11303': 2
-};
-
-const LARGO_PISTA_AERODROMO_MAP = {
-  '11101': 2300, '11102': 850, '11201': 600, '11202': 900, '11203': 800,
-  '11401': 1180, '11402': 860, '11301': 1200, '11302': 1300, '11303': 800
 };
 
 const OPS_AERODROMO_INTERIOR_MAP = {
@@ -5533,7 +5703,7 @@ fs.writeFileSync(
 
 console.log(`[OK] Generado data/aysen_hubs_data.js (${fs.statSync(outPath).size} bytes):`);
 console.log(`  - ${hubs.length} Hubs con datos reales (I a X)`);
-console.log(`  - ${nodos.length} Nodos satelite (#01 a #39) verificados al 100%`);
+console.log(`  - ${nodos.length} Nodos satelite (#01 a #${nodos.length}) verificados al 100%`);
 console.log(`  - 0 celdas nulas o undefined`);
 console.log(`  - 0 emojis detectados`);
 console.log(`  - ${comunas.length} comunas consolidadas y ${holdings.length} holdings salmoneros`);

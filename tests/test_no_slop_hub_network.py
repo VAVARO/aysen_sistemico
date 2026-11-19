@@ -164,9 +164,9 @@ class TestNoSlopHubNetwork(unittest.TestCase):
                     f"No existe objeto en systemicBridges para el enlace #{nid} ↔ #{target_id}"
                 )
 
-    def test_05_all_39_nodes_symmetry_and_degrees(self):
-        """Verifica que los 39 nodos (#01 a #39) tengan entre 4 y 5 conexiones inter-hub 100% simétricas."""
-        self.assertEqual(len(self.nodos), 39, "Deben existir exactamente 39 nodos")
+    def test_05_all_41_nodes_symmetry_and_degrees(self):
+        """Verifica que los 41 nodos (#01 a #41) tengan entre 4 y 5 conexiones inter-hub 100% simétricas."""
+        self.assertEqual(len(self.nodos), 41, "Deben existir exactamente 41 nodos")
         for node in self.nodos:
             nid = node['id']
             related = node.get('relatedNodeIds', [])
@@ -177,6 +177,10 @@ class TestNoSlopHubNetwork(unittest.TestCase):
                 r_node = self.node_by_id[rid]
                 self.assertNotEqual(node['hubId'], r_node['hubId'], f"Nodo #{nid} y #{rid} comparten hub {node['hubId']}")
                 self.assertIn(nid, r_node.get('relatedNodeIds', []), f"Falta simetría entre #{nid} y #{rid}")
+        for required_nid in (40, 41):
+            self.assertIn(required_nid, self.node_by_id, f"Falta nodo #{required_nid}")
+            rel = self.node_by_id[required_nid].get('relatedNodeIds', [])
+            self.assertTrue(4 <= len(rel) <= 5, f"Nodo #{required_nid} debe tener 4-5 conexiones simétricas, tiene {len(rel)}")
 
     def test_06_nine_mandatory_bridges_included(self):
         """Verifica la inclusión exacta de las 9 relaciones concretas especificadas en la tarea."""

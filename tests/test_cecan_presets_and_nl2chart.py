@@ -117,7 +117,7 @@ class TestCecanPresetsAndNl2Chart(unittest.TestCase):
         nodos = lexicon.get("nodes") or lexicon.get("satellite_nodes", [])
 
         self.assertGreaterEqual(len(variables), 70, "El lexicón debe contener al menos 70 variables comunales")
-        self.assertIn(len(nodos), (31, 39), "El lexicón debe contener 31 o 39 nodos satélites")
+        self.assertIn(len(nodos), (31, 39, 41), "El lexicón debe contener 31, 39 o 41 nodos satélites")
 
         # Verificar grupos semánticos obligatorios
         var_ids = {v["id"] for v in variables}

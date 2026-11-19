@@ -250,7 +250,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
         if (getHub('proyectos_anid_n') !== 'X') process.exit(10);
 
         const prompt = client.buildSystemPrompt();
-        if (!prompt.includes('39 Nodos Satélites')) process.exit(11);
+        if (!prompt.includes('41 Nodos Satélites')) process.exit(11);
         if (!prompt.includes('glaciares_dga_n')) process.exit(12);
 
         console.log('HUBS_PROMPT_OK');
@@ -1302,7 +1302,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             console.error('Expected panoramicIndicators >= 100, got:', idx.panoramicIndicators?.length);
             process.exit(1);
         }
-        if (!idx.panoramicNodesAndMilestones || !idx.panoramicNodesAndMilestones.includes('Nodos (39)')) {
+        if (!idx.panoramicNodesAndMilestones || !idx.panoramicNodesAndMilestones.includes('Nodos (41)')) {
             console.error('Missing panoramicNodesAndMilestones summary');
             process.exit(2);
         }
@@ -1501,7 +1501,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             const b6 = await client.query('¿Cuál es la esperanza de vida y el índice de envejecimiento de las 4 comunas más pobladas?');
             assert(b6 && b6.chart && Array.isArray(b6.chart.focusComunas) && b6.chart.focusComunas.length === 4, 'B6 debe enfocar las 4 comunas mas pobladas');
             assert(b6.chart.focusComunas.includes('Coyhaique') && b6.chart.focusComunas.includes('Aysén') && b6.chart.focusComunas.includes('Cisnes') && b6.chart.focusComunas.includes('Chile Chico'), 'B6 focusComunas incorrectas: ' + b6.chart.focusComunas.join(','));
-            assert(b6.reply.includes('Esperanza de Vida') && b6.reply.includes('Índice Envejecimiento'), 'B6 debe incluir ambas variables: ' + b6.reply);
+            assert(b6.reply.includes('Esperanza de Vida') && b6.reply.includes('Envejecimiento'), 'B6 debe incluir ambas variables: ' + b6.reply);
 
             const b8 = await client.query('¿Quién es el alcalde de Tortel y tiene hospital o aeródromo?');
             assert(b8 && b8.chart && b8.chart.render === false, 'B8 nominal compuesta debe devolver render === false');

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datos de Aysén — Álvaro Contreras Barrios</title>
-  <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 10 hubs temáticos, 39 nodos de datos y 10 comunas.">
+  <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 10 hubs temáticos, 41 nodos de datos y 10 comunas.">
 
   <!-- Google Fonts: Playfair Display (editorial), Inter (cuerpo), JetBrains Mono (código y metadatos), IBM Plex Mono/Sans (tooltips sobrios) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
     }
   </script>
 
-  <!-- Bundle local de datos de Aysén (10 Hubs, 39 Nodos, 10 Comunas) -->
+  <!-- Bundle local de datos de Aysén (10 Hubs, 41 Nodos, 10 Comunas) -->
   <script src="data/aysen_hubs_data.js"></script>
 
   <link rel="stylesheet" href="js/cabecera_global.css">
@@ -589,7 +589,7 @@
           Datos y Sistema de <span class="text-primary">Aysén</span>
         </h1>
         <p class="font-sans text-on-surface/80 leading-relaxed font-normal" style="font-size: 0.92rem; max-width: 780px; margin-bottom: 16px;">
-          Datos públicos de la Región de Aysén, ordenados en 10 ámbitos y 39 nodos. Haz clic en un ámbito o nodo para ver qué contiene, de dónde viene y sus cifras principales.
+          Datos públicos de la Región de Aysén, ordenados en 10 ámbitos y 41 nodos. Haz clic en un ámbito o nodo para ver qué contiene, de dónde viene y sus cifras principales.
         </p>
       </div>
     </div>
@@ -608,7 +608,7 @@
             aria-selected="true"
           >
             <span>Mapa de Hubs</span>
-            <span class="ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold" id="badge-count-nodos">39</span>
+            <span class="ml-0.5 text-xs font-mono bg-white/20 text-white px-1.5 py-0.5 rounded-sm font-bold" id="badge-count-nodos">41</span>
           </button>
 
           <button 
@@ -632,7 +632,7 @@
         </div>
 
         <div class="hidden md:flex items-center font-mono text-xs text-muted">
-          <span id="visible-items-counter">Mostrando 39 de 39 nodos de datos</span>
+          <span id="visible-items-counter">Mostrando 41 de 41 nodos de datos</span>
         </div>
 
       </div>
@@ -693,7 +693,7 @@
     <!-- SECCIÓN 1: MAPA DE HUBS Y NODOS DE DATOS -->
     <div id="view-nodos" class="tab-view block space-y-6">
       
-      <!-- 1.A: MAPA INTERACTIVO D3.JS (10 HUBS + 39 NODOS) -->
+      <!-- 1.A: MAPA INTERACTIVO D3.JS (10 HUBS + 41 NODOS) -->
       <div id="node-graph-wrapper" class="block">
         <div class="relative w-full rounded-sm border border-primary/20 bg-white overflow-hidden shadow-editorial">
           
@@ -797,7 +797,7 @@
 
       <!-- Pie plano de navegación hacia Metodología y Fuentes -->
       <div class="pt-2.5 pb-1 border-b border-border-subtle flex flex-wrap items-center justify-between text-xs gap-2">
-        <span class="text-muted font-mono text-[11px]">10 Hubs temáticos · 39 Nodos de datos · 10 Comunas de Aysén</span>
+        <span class="text-muted font-mono text-[11px]">10 Hubs temáticos · 41 Nodos de datos · 10 Comunas de Aysén</span>
         <a href="#seccion-arquitectura-fuentes" class="font-mono text-primary hover:text-primary-dark transition-colors duration-150 inline-flex items-center gap-1 font-medium text-[11px]">
           <span data-meta-sync="hero-fuentes-link">Ir a Funcionamiento, 38 Fuentes Oficiales y Régimen de Actualización ↓</span>
         </a>
@@ -874,14 +874,14 @@
               Nivel 01 · Los 10 Hubs Temáticos (I al X)
             </div>
             <p class="font-sans text-xs text-on-surface/80 mt-2 leading-relaxed">
-              Los 10 ámbitos temáticos: I. Turismo, II. Salmonicultura y Maritorio, III. Energía y Telecomunicaciones, IV. Gobernanza y Finanzas, V. Economía e Inversión, VI. Demografía y Social, VII. Biodiversidad y Clima, VIII. Salud APS y Hospitales, IX. Cultura y Patrimonio, X. CTCi e Innovación. Cada ámbito agrupa los nodos de su tema y las fuentes que los alimentan.
+              Los 10 ámbitos temáticos: I. Turismo, II. Salmonicultura y Maritorio, III. Energía y Telecomunicaciones, IV. Gobernanza y Finanzas, V. Economía e Inversión, VI. Demografía, Educación, Vivienda y Cohesión, VII. Biodiversidad, Clima y Riesgos Geológicos, VIII. Salud APS y Hospitales, IX. Cultura y Patrimonio, X. CTCi e Innovación. Cada ámbito agrupa los nodos de su tema y las fuentes que los alimentan.
             </p>
           </div>
 
           <!-- Nivel 02 -->
           <div class="px-0 md:px-6 py-6 md:py-0">
             <div class="font-mono text-xs font-semibold text-primary tracking-wide">
-              Nivel 02 · Los 39 Nodos Satélites (#01 al #39)
+              Nivel 02 · Los 41 Nodos Satélites (#01 al #41)
             </div>
             <p class="font-sans text-xs text-on-surface/80 mt-2 leading-relaxed">
               Cada nodo reúne datos de las 10 comunas de Aysén, con series entre 2015 y 2026 cuando la fuente las publica. Al hacer clic en cualquier nodo se abre el panel técnico lateral (<span class="font-mono text-primary">#concept-drawer</span>) con la procedencia del dato, un gráfico, una tabla resumen y la descarga en CSV.
@@ -1193,7 +1193,7 @@
             <div>
               <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Mecanismo de Respaldo</div>
               <div class="font-sans text-xs text-on-surface/90 mt-0.5">API directa, último dato válido si la fuente falla, y corte censal</div>
-              <div class="font-mono text-[11px] text-primary mt-1" data-meta-sync="flow-summary">38 Fuentes Oficiales → 10 Hubs → 39 Nodos Territoriales</div>
+              <div class="font-mono text-[11px] text-primary mt-1" data-meta-sync="flow-summary">38 Fuentes Oficiales → 10 Hubs → 41 Nodos Territoriales</div>
             </div>
             <div>
               <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Portales Oficiales</div>
@@ -1357,41 +1357,41 @@
                 <td class="py-3 pl-4 align-top"><a href="https://catastro.bienes.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">catastro.bienes.cl ↗</a></td>
               </tr>
 
-              <!-- Hub VI. Demografía, Educación y Social -->
+              <!-- Hub VI. Demografía, Educación, Vivienda y Cohesión -->
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social</td>
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación, Vivienda y Cohesión</td>
                 <td class="py-3 px-4 align-top text-on-surface/90">21. Censo de Población y Vivienda 2024 INE (100.745 hab., índice envejecimiento 66,2)</td>
                 <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
                 <td class="py-3 pl-4 align-top"><a href="https://censo2024.ine.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">censo2024.ine.gob.cl ↗</a></td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social</td>
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación, Vivienda y Cohesión</td>
                 <td class="py-3 px-4 align-top text-on-surface/90">22. Encuesta de Caracterización Socioeconómica Nacional CASEN (MDSF)</td>
                 <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
                 <td class="py-3 pl-4 align-top"><a href="https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">observatorio.ministeriodesarrollosocial.gob.cl ↗</a></td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social</td>
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación, Vivienda y Cohesión</td>
                 <td class="py-3 px-4 align-top text-on-surface/90">23. Matrícula Escolar SLEP Aysén y Educación Superior SIES-MINEDUC / SES / CNA (2.327 estudiantes)</td>
                 <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
                 <td class="py-3 pl-4 align-top"><a href="https://datosabiertos.mineduc.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">datosabiertos.mineduc.cl ↗</a></td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación y Social</td>
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VI. Demografía, Educación, Vivienda y Cohesión</td>
                 <td class="py-3 px-4 align-top text-on-surface/90">24. Estadísticas Policiales y Seguridad Ciudadana CEAD-SPD</td>
                 <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
                 <td class="py-3 pl-4 align-top"><a href="https://cead.spd.gov.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">cead.spd.gov.cl ↗</a></td>
               </tr>
 
-              <!-- Hub VII. Biodiversidad y Clima -->
+              <!-- Hub VII. Biodiversidad, Clima y Riesgos Geológicos -->
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VII. Biodiversidad y Clima</td>
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VII. Biodiversidad, Clima y Riesgos Geológicos</td>
                 <td class="py-3 px-4 align-top text-on-surface/90">25. Inventario de Flora, Fauna en Conservación (RCE) y Pisos Vegetacionales MMA / CONAF SIT / SAG</td>
                 <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
                 <td class="py-3 pl-4 align-top"><a href="https://mma.gob.cl/biodiversidad/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">mma.gob.cl/biodiversidad ↗</a></td>
               </tr>
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VII. Biodiversidad y Clima</td>
+                <td class="py-3 pr-4 align-top font-mono text-xs font-semibold text-on-surface">Hub VII. Biodiversidad, Clima y Riesgos Geológicos</td>
                 <td class="py-3 px-4 align-top text-on-surface/90">26. Red Calidad del Aire SINCA, Hidrología DGA, Residuos SISS / SINADER y Sismicidad USGS</td>
                 <td class="py-3 px-4 align-top text-muted font-mono text-[11px]">Corte 2024-2026 · 10 comunas / Serie 2015-2026</td>
                 <td class="py-3 pl-4 align-top"><a href="https://sinca.mma.gob.cl/" target="_blank" rel="noopener noreferrer" class="font-mono text-primary hover:underline text-[11px]">sinca.mma.gob.cl ↗</a></td>
@@ -1856,7 +1856,7 @@
           tipo: 'Conector API Mensual',
           periodicidad: 'Mensual (Día 1, 06:00 AM) · Serie 2015-2026',
           mecanismo: 'API directa GeoJSON / Circuit Breaker Last-Known-Good',
-          nodos: 'Alimenta Hub VII (Biodiversidad y Clima) · Nodo #26 · Monitoreo sísmico territorial y eventos geológicos',
+          nodos: 'Alimenta Hub VII (Biodiversidad, Clima y Riesgos Geológicos) · Nodo #26 · Monitoreo sísmico territorial y eventos geológicos',
           links: [{ text: 'earthquake.usgs.gov ↗', url: 'https://earthquake.usgs.gov/' }]
         },
         inst_cne: {
@@ -1872,7 +1872,7 @@
           tipo: 'Conector API Mensual',
           periodicidad: 'Mensual (Día 1, 06:00 AM) · Coyhaique y Aysén',
           mecanismo: 'API directa JSON / Circuit Breaker Last-Known-Good',
-          nodos: 'Alimenta Hub VII (Biodiversidad y Clima) y Hub VIII (Salud) · Nodos #30 y #31 · Calidad del aire, aguas servidas SISS y residuos SINADER',
+          nodos: 'Alimenta Hub VII (Biodiversidad, Clima y Riesgos Geológicos) y Hub VIII (Salud) · Nodos #30 y #31 · Calidad del aire, aguas servidas SISS y residuos SINADER',
           links: [{ text: 'sinca.mma.gob.cl ↗', url: 'https://sinca.mma.gob.cl/' }]
         },
         inst_subpesca: {
@@ -2080,11 +2080,11 @@
           links: [{ text: 'energiaabierta.cl ↗', url: 'https://energiaabierta.cl/' }, { text: 'sec.cl ↗', url: 'https://www.sec.cl/' }]
         },
         gobernanza: {
-          nombre: 'Hub IV. Gobernanza y Finanzas Municipales (4 Nodos)',
+          nombre: 'Hub IV. Gobernanza, Finanzas Municipales y Conectividad (5 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Multirrégimen (API CKAN + Cierres SINIM/DIPRES + Barómetro)',
           mecanismo: 'Circuit Breaker Last-Known-Good (Finanzas Municipales SINIM / FCM)',
-          nodos: '4 Nodos Satélites (#15 al #18) · Presupuestos SINIM, M$ 61.548 FNDR devengado vs ~M$ 395.000 sectorial y auditorías CGR',
+          nodos: '5 Nodos Satélites (#15 al #18, #40) · Presupuestos SINIM, M$ 61.548 FNDR devengado vs ~M$ 395.000 sectorial, auditorías CGR y Red Vial Ruta 7 / Barcazas',
           links: [{ text: 'datos.sinim.gov.cl ↗', url: 'https://datos.sinim.gov.cl/' }, { text: 'dipres.gob.cl ↗', url: 'https://www.dipres.gob.cl/' }]
         },
         inversion: {
@@ -2096,15 +2096,15 @@
           links: [{ text: 'seia.sea.gob.cl ↗', url: 'https://seia.sea.gob.cl/' }, { text: 'sii.cl ↗', url: 'https://www.sii.cl/sobre_finanzas/estadisticas/' }]
         },
         social: {
-          nombre: 'Hub VI. Demografía, Educación y Social (3 Nodos)',
+          nombre: 'Hub VI. Demografía, Educación, Vivienda y Cohesión (4 Nodos)',
           tipo: 'Hub Temático Sistémico',
-          periodicidad: 'Líneas Base Censales + Cierres Anuales MINEDUC/CEAD',
-          mecanismo: 'Corte Censal Oficial INE 2024 / CASEN MDSF / SLEP Aysén',
-          nodos: '3 Nodos Satélites (#23 al #25) · Demografía Censo 2024 (100.745 hab., índice envejecimiento 66,2), 2.327 estudiantes SIES y CEAD',
+          periodicidad: 'Líneas Base Censales + Cierres Anuales MINEDUC/MINVU/CEAD',
+          mecanismo: 'Corte Censal Oficial INE 2024 / CASEN MDSF / MINVU / DOH-MOP / SLEP Aysén',
+          nodos: '4 Nodos Satélites (#23 al #25, #41) · Demografía Censo 2024 (100.745 hab.), Déficit Habitacional MINVU, 47 comités SSR/APR, educación SLEP y CEAD',
           links: [{ text: 'censo2024.ine.gob.cl ↗', url: 'https://censo2024.ine.gob.cl/' }, { text: 'datosabiertos.mineduc.cl ↗', url: 'https://datosabiertos.mineduc.cl/' }]
         },
         biodiversidad: {
-          nombre: 'Hub VII. Biodiversidad y Clima (5 Nodos)',
+          nombre: 'Hub VII. Biodiversidad, Clima y Riesgos Geológicos (5 Nodos)',
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'API Mensual SINCA/USGS + Cierres MMA/CONAF',
           mecanismo: 'API directa GeoJSON/JSON / Circuit Breaker Last-Known-Good',
@@ -2150,7 +2150,7 @@
           <div>
             <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Mecanismo de Respaldo</div>
             <div class="font-sans text-xs text-on-surface/90 mt-0.5">API directa, último dato válido si la fuente falla, y corte censal</div>
-            <div class="font-mono text-[11px] text-primary mt-1" data-meta-sync="flow-summary">38 Fuentes Oficiales → 10 Hubs → 39 Nodos Territoriales</div>
+            <div class="font-mono text-[11px] text-primary mt-1" data-meta-sync="flow-summary">38 Fuentes Oficiales → 10 Hubs → 41 Nodos Territoriales</div>
           </div>
           <div>
             <div class="font-mono text-[10.5px] uppercase tracking-wider text-muted font-semibold">Portales Oficiales</div>
@@ -2587,7 +2587,7 @@
     }
 
     // ==========================================
-    // VISUALIZACIÓN D3.JS: MAPA DE 10 HUBS Y 39 NODOS
+    // VISUALIZACIÓN D3.JS: MAPA DE 10 HUBS Y 41 NODOS
     // ==========================================
     const clusterColors = {
       'turismo':              { bg: '#00357f', border: '#00255a', text: '#ffffff', numeral: 'I', label: 'Turismo' },
@@ -3766,8 +3766,8 @@
         ['V. Economía & Suelo', 'Loteos Rurales Certificados SAG', `${(c.parcelaciones_sag_n || 0).toLocaleString('es-CL')} subdivisiones (DL 3.516)`],
         ['VI. Sociedad & Educación', 'Matrícula Escolar Pública SLEP', `${(c.matricula_escolar || 0).toLocaleString('es-CL')} estudiantes`],
         ['VI. Sociedad & Educación', 'Pobreza Multidimensional CASEN', `${c.pobreza_multidim_pct || 0}% de la población comunal`],
-        ['VII. Biodiversidad & Clima', 'Glaciares DGA / Superficie', `${(c.glaciares_dga_n || 0).toLocaleString('es-CL')} glaciares (${(c.superficie_glaciar_km2 || 0).toLocaleString('es-CL')} km²)`],
-        ['VII. Biodiversidad & Clima', 'Calidad de Aire (SINCA)', `${c.dias_sobre_norma_mp25 || 0} días sobre norma MP2.5/año`],
+        ['VII. Biodiversidad, Clima & Riesgos', 'Glaciares DGA / Superficie', `${(c.glaciares_dga_n || 0).toLocaleString('es-CL')} glaciares (${(c.superficie_glaciar_km2 || 0).toLocaleString('es-CL')} km²)`],
+        ['VII. Biodiversidad, Clima & Riesgos', 'Calidad de Aire (SINCA)', `${c.dias_sobre_norma_mp25 || 0} días sobre norma MP2.5/año`],
         ['VIII. Salud APS & Hospitales', 'Red Asistencial / Postas Rurales', `${c.salud_principal || 'APS Comunal'} · ${c.postas_salud_rural || 0} postas rurales (${c.camas_hospitalarias || 0} camas)`],
         ['VIII. Salud APS & Hospitales', 'Densidad Médica / Listas No-GES', `${c.medicos_por_mil_hab || 0} méd./1.000 hab · ${(c.espera_no_ges_n || 0).toLocaleString('es-CL')} consultas espera`],
         ['IX. Cultura & Patrimonio', 'Espacios Culturales y Bibliotecas SNBP', `${c.museos_espacios_n || c.total_espacios_culturales || 0} museos/espacios · ${c.bibliotecas_snbp_n || 0} bibliotecas (${c.monumentos_nacionales_count || 0} monumentos CMN)`],
@@ -4237,7 +4237,7 @@
       const au = window.AYSEN_HUBS_DATA?.meta?.autoUpdate || {};
       const totSrc = au.totalOfficialSources || au.totalSources || 38;
       const totHubs = au.totalHubs || 10;
-      const totNodes = au.totalNodes || 39;
+      const totNodes = au.totalNodes || 41;
       document.querySelectorAll('[data-meta-sync="hero-fuentes-link"]').forEach(el => {
         el.textContent = `Ir a Funcionamiento, ${totSrc} Fuentes Oficiales y Régimen de Actualización ↓`;
       });

@@ -109,7 +109,7 @@ class TestLaboratorioM3Challenger(unittest.TestCase):
     # =========================================================================
     def test_04_empirical_truncation_on_all_probed_variables(self):
         """Simulate formatAxisTitle against 100% of data lake variables to verify mathematical bounds."""
-        self.assertIn(len(self.probed_variables), (49, 57), "Must probe all catalog variables (49 or 57 with 39 nodes)")
+        self.assertIn(len(self.probed_variables), (49, 57, 59), "Must probe all catalog variables (49, 57, or 59 with 41 nodes)")
 
         def py_format_axis_title(name, unit, max_len=28):
             if not name:

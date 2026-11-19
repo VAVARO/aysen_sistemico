@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-19T13:22:29.146Z",
+  "generatedAt": "2026-11-19T16:15:59.745Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -11,7 +11,7 @@ window.AYSEN_HUBS_DATA = {
       "totalSources": 38,
       "totalOfficialSources": 38,
       "totalHubs": 10,
-      "totalNodes": 39,
+      "totalNodes": 41,
       "totalComunaVariables": 203
     }
   },
@@ -2402,14 +2402,14 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": "social",
       "numeral": "VI",
-      "title": "VI. Demografía, Educación & Riesgos",
-      "shortTitle": "Demografía, Educación & Riesgos",
+      "title": "VI. Demografía, Educación, Vivienda & Cohesión",
+      "shortTitle": "Demografía, Educación & Vivienda",
       "color": "#2563eb",
-      "description": "Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).",
-      "example": "La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza la densidad de 0,04 hab/km2 en comunas australes con las 261 camas hospitalarias de la red, los tiempos de traslado SAMU hacia Coyhaique y las 36 escuelas rurales multigrado del SLEP.",
+      "description": "Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), déficit habitacional (**MINVU**), sistemas sanitarios rurales (**SSR/APR**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).",
+      "example": "La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza el déficit habitacional MINVU (3.147 cuantitativo y 15.000 cualitativo), los 47 comités SSR/APR (28.833 beneficiarios) y las 36 escuelas rurales multigrado del SLEP.",
       "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
       "nodesFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
-      "sourceName": "INE Censo 2024 / MINSAL DEIS / MINEDUC SLEP / SPD CEAD",
+      "sourceName": "INE Censo 2024 / MINVU / DOH-MOP / MINEDUC SLEP / SPD CEAD",
       "sourceUrl": "https://censo2024.ine.gob.cl/",
       "espejo_barometro": {
         "hub_id": "social",
@@ -2850,8 +2850,8 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": "biodiversidad",
       "numeral": "VII",
-      "title": "VII. Biodiversidad & Clima",
-      "shortTitle": "Biodiversidad & Clima",
+      "title": "VII. Biodiversidad, Clima & Riesgos Geológicos",
+      "shortTitle": "Biodiversidad, Clima & Riesgos",
       "color": "#047857",
       "description": "Formaciones de **flora nativa (CONAF SIT)**, **fauna en conservación (RCE MMA / Huemul)**, **especies exóticas invasoras (EEI / Visón, Castor)**, monitoreo ambiental continuo (**SINCA / DGA**) y volcanes/sismos (**RNVV / USGS**).",
       "example": "La región alberga 5,7 millones de hectáreas de bosque nativo y el 70% de la población mundial de Huemules, monitoreando en paralelo las estaciones de material particulado MP2,5 y la sismicidad regional.",
@@ -4675,7 +4675,8 @@ window.AYSEN_HUBS_DATA = {
         15,
         20,
         32,
-        34
+        34,
+        40
       ],
       "chartSpec": {
         "type": "bar",
@@ -6421,7 +6422,8 @@ window.AYSEN_HUBS_DATA = {
         2,
         16,
         28,
-        39
+        39,
+        41
       ],
       "chartSpec": {
         "type": "bar",
@@ -6585,7 +6587,8 @@ window.AYSEN_HUBS_DATA = {
         3,
         24,
         27,
-        30
+        30,
+        40
       ],
       "chartSpec": {
         "type": "bar",
@@ -7262,7 +7265,8 @@ window.AYSEN_HUBS_DATA = {
         10,
         23,
         26,
-        34
+        34,
+        41
       ],
       "chartSpec": {
         "type": "bar",
@@ -7593,7 +7597,8 @@ window.AYSEN_HUBS_DATA = {
         7,
         11,
         35,
-        37
+        37,
+        40
       ],
       "chartSpec": {
         "type": "bar",
@@ -8085,7 +8090,8 @@ window.AYSEN_HUBS_DATA = {
         4,
         5,
         8,
-        34
+        34,
+        41
       ],
       "chartSpec": {
         "type": "bar",
@@ -8417,7 +8423,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 24,
       "hubId": "salud",
       "isSpecial": false,
-      "title": "Centros de salud y postas rurales",
+      "title": "Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)",
       "vsm_system": "S1",
       "espejo_governance": 4,
       "metabolic_flow": "material",
@@ -8447,7 +8453,8 @@ window.AYSEN_HUBS_DATA = {
         6,
         13,
         23,
-        30
+        30,
+        41
       ],
       "chartSpec": {
         "type": "bar",
@@ -9681,7 +9688,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 32,
       "hubId": "cultura",
       "isSpecial": false,
-      "title": "Museos, bibliotecas y monumentos nacionales",
+      "title": "Patrimonio Protegido, Museos (RMC) y Bibliotecas (SNBP)",
       "vsm_system": "S1",
       "espejo_governance": 2,
       "metabolic_flow": "material",
@@ -10058,7 +10065,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 34,
       "hubId": "cultura",
       "isSpecial": false,
-      "title": "Espacios y Agentes Culturales de Aysén",
+      "title": "Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios",
       "vsm_system": "S5",
       "espejo_governance": 2,
       "metabolic_flow": "info",
@@ -10730,7 +10737,7 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 38,
       "hubId": "salud",
       "isSpecial": false,
-      "title": "Centros de salud y postas rurales",
+      "title": "Atención Primaria Rural: 27 Postas (PSR), 20 EMR y Rondas Médicas",
       "vsm_system": "S1",
       "espejo_governance": 4,
       "metabolic_flow": "material",
@@ -10923,7 +10930,8 @@ window.AYSEN_HUBS_DATA = {
         8,
         12,
         23,
-        31
+        31,
+        40
       ],
       "chartSpec": {
         "type": "bar",
@@ -11051,6 +11059,372 @@ window.AYSEN_HUBS_DATA = {
           "Cruce con Riesgos Volcánicos y Sismos (Nodo #31)"
         ],
         "totalRecordsInFullBase": "10 comunas con tiempos y protocolos de aeroevacuacion en data/systemic/08_desagregaciones_sectoriales_aysen.json"
+      }
+    },
+    {
+      "id": 40,
+      "nodeId": 40,
+      "hubId": "gobernanza",
+      "isSpecial": false,
+      "title": "Red Vial Austral (Ruta 7), Conectividad Marítima y Aeródromos",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
+      "definition": "Infraestructura multimodal de integración territorial: longitud de **Red Vial Total Comunal (`red_vial_total_km`)**, porcentaje de **pavimentación (`red_vial_pavimentada_pct`)**, trazado troncal de Carretera Austral (**Ruta 7 pavimentada y en ripio**), nivel de **dependencia de barcaza (0–3)**, largo de pista de **aeródromos DGAC**, tráfico aéreo de **Balmaceda JAC (682.000 pasajeros en 2026)** y carga portuaria transferida (**EMPORCHA**).",
+      "example": "La pavimentación vial fluctúa entre **43,9%** (Guaitecas) y **41,1%** (Coyhaique) frente a menos de **4%** en Tortel (`3,9%`) y O'Higgins (`3,8%`), donde el nivel de dependencia de barcaza alcanza 2 y 3 respectivamente.",
+      "officialSource": {
+        "name": "MOP Vialidad / MTT DTPR / DGAC-JAC / EMPORCHA",
+        "url": "https://www.vialidad.mop.gob.cl/",
+        "frequency": "Semestral"
+      },
+      "provenance": {
+        "sourceEntity": "MOP Vialidad / MTT DTPR / DGAC-JAC / EMPORCHA",
+        "sourceUrl": "https://www.vialidad.mop.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 182,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      },
+      "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
+      "relatedNodeIds": [
+        1,
+        13,
+        19,
+        39
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Porcentaje de Red Vial Pavimentada por Comuna (MOP Vialidad)",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Red Vial Pavimentada (%)",
+            "data": [
+              41.1,
+              5.8,
+              32.4,
+              17.3,
+              43.9,
+              15.8,
+              15.8,
+              9.4,
+              3.9,
+              3.8
+            ],
+            "backgroundColor": "#4338ca"
+          }
+        ],
+        "unit": "%"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Red Vial Total (km)",
+        "Pavimentada (%)",
+        "Ruta 7 Ripio (km)",
+        "Pista Aeródromo (m)",
+        "Barcaza (0-3)"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "684,2",
+          "41.1%",
+          "18",
+          "2.300",
+          "0"
+        ],
+        [
+          "Lago Verde",
+          "312,5",
+          "5.8%",
+          "75",
+          "850",
+          "0"
+        ],
+        [
+          "Aysén",
+          "495,6",
+          "32.4%",
+          "0",
+          "600",
+          "1"
+        ],
+        [
+          "Cisnes",
+          "482",
+          "17.3%",
+          "65",
+          "900",
+          "1"
+        ],
+        [
+          "Guaitecas",
+          "28,5",
+          "43.9%",
+          "0",
+          "800",
+          "3"
+        ],
+        [
+          "Chile Chico",
+          "384",
+          "15.8%",
+          "120",
+          "1.180",
+          "1"
+        ],
+        [
+          "Río Ibáñez",
+          "291",
+          "15.8%",
+          "68",
+          "860",
+          "0"
+        ],
+        [
+          "Cochrane",
+          "398",
+          "9.4%",
+          "168",
+          "1.200",
+          "0"
+        ],
+        [
+          "O'Higgins",
+          "168,4",
+          "3.9%",
+          "134",
+          "1.300",
+          "2"
+        ],
+        [
+          "Tortel",
+          "142,2",
+          "3.8%",
+          "45",
+          "800",
+          "2"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Red Vial Comunal (Pavimento, Solución Básica, Ripio y Tierra MOP)",
+          "Corredor Carretera Austral Ruta 7 por tramo comunal",
+          "Rutas de barcazas subsidiadas MTT DTPR (Cordillera, Litoral, Fiordo Mitchell)",
+          "Tráfico aéreo Balmaceda JAC, aeródromos interiores y carga portuaria EMPORCHA"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Prestadores SERNATUR y Flujos Turísticos (Nodo #01)",
+          "Cruce con Aeroevacuaciones SAMU y Red Asistencial (Nodo #39)"
+        ],
+        "totalRecordsInFullBase": "10 comunas y series JAC/EMPORCHA en data/systemic/11_conectividad_infraestructura_multimodal.json"
+      }
+    },
+    {
+      "id": 41,
+      "nodeId": 41,
+      "hubId": "social",
+      "isSpecial": false,
+      "title": "Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)",
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false,
+      "definition": "Brechas de habitabilidad y servicios sanitarios rurales en Aysén: **déficit habitacional cuantitativo (3.147 viviendas)** y **cualitativo (15.000 viviendas)** según estimación MINVU, carencia de servicios básicos y hacinamiento en el **Registro Social de Hogares (MDSF RSH jun-2026)**, junto con **47 comités/cooperativas de Servicios Sanitarios Rurales (SSR/APR)** que abastecen a **28.833 beneficiarios (DOH-MOP)**.",
+      "example": "Las comunas australes registran los mayores porcentajes de carencia de servicios básicos en el RSH (**38,1%** en O'Higgins y **33,9%** en Lago Verde), mientras **Coyhaique** concentra **1.742** requerimientos cuantitativos de vivienda y **12** comités SSR.",
+      "officialSource": {
+        "name": "MINVU / MDSF Registro Social de Hogares / DOH-MOP",
+        "url": "https://www.minvu.gob.cl/",
+        "frequency": "Anual"
+      },
+      "provenance": {
+        "sourceEntity": "MINVU / MDSF Registro Social de Hogares / DOH-MOP",
+        "sourceUrl": "https://www.minvu.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      },
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
+      "relatedNodeIds": [
+        12,
+        17,
+        22,
+        24
+      ],
+      "chartSpec": {
+        "type": "bar",
+        "title": "Déficit Habitacional Cuantitativo vs. Cualitativo por Comuna (MINVU)",
+        "labels": [
+          "Coyhaique",
+          "Lago Verde",
+          "Aysén",
+          "Cisnes",
+          "Guaitecas",
+          "Chile Chico",
+          "Río Ibáñez",
+          "Cochrane",
+          "O'Higgins",
+          "Tortel"
+        ],
+        "datasets": [
+          {
+            "label": "Déficit Cuantitativo (viviendas)",
+            "data": [
+              1742,
+              32,
+              719,
+              174,
+              89,
+              134,
+              81,
+              111,
+              26,
+              39
+            ],
+            "backgroundColor": "#2563eb"
+          },
+          {
+            "label": "Déficit Cualitativo (viviendas)",
+            "data": [
+              6280,
+              300,
+              3260,
+              1280,
+              680,
+              990,
+              770,
+              810,
+              255,
+              375
+            ],
+            "backgroundColor": "#60a5fa"
+          }
+        ],
+        "unit": "viviendas"
+      },
+      "tableColumns": [
+        "Comuna",
+        "Déficit Cuantitativo",
+        "Déficit Cualitativo",
+        "Carencia Serv. Básicos (%)",
+        "Comités SSR/APR",
+        "Familias SSR"
+      ],
+      "tableRows": [
+        [
+          "Coyhaique",
+          "1.742",
+          "6.280",
+          "11.7%",
+          "12",
+          "10.500"
+        ],
+        [
+          "Lago Verde",
+          "32",
+          "300",
+          "33.9%",
+          "3",
+          "1.050"
+        ],
+        [
+          "Aysén",
+          "719",
+          "3.260",
+          "11.7%",
+          "8",
+          "5.500"
+        ],
+        [
+          "Cisnes",
+          "174",
+          "1.280",
+          "12.2%",
+          "6",
+          "3.100"
+        ],
+        [
+          "Guaitecas",
+          "89",
+          "680",
+          "26.9%",
+          "2",
+          "1.550"
+        ],
+        [
+          "Chile Chico",
+          "134",
+          "990",
+          "9.7%",
+          "4",
+          "2.350"
+        ],
+        [
+          "Río Ibáñez",
+          "81",
+          "770",
+          "14%",
+          "4",
+          "2.050"
+        ],
+        [
+          "Cochrane",
+          "111",
+          "810",
+          "15.8%",
+          "4",
+          "1.450"
+        ],
+        [
+          "O'Higgins",
+          "26",
+          "255",
+          "13.1%",
+          "2",
+          "610"
+        ],
+        [
+          "Tortel",
+          "39",
+          "375",
+          "38.1%",
+          "2",
+          "673"
+        ]
+      ],
+      "canvasPreview": {
+        "availableDimensions": [
+          "Déficit habitacional cuantitativo y requerimientos cualitativos MINVU",
+          "Carencia de servicios básicos y hacinamiento RSH MDSF (corte junio 2026)",
+          "Cobertura de comités y cooperativas de Agua Potable Rural (SSR/APR DOH)",
+          "Brecha de acceso sanitario en localidades aisladas vs. cabeceras provinciales"
+        ],
+        "suggestedCrossings": [
+          "Cruce con Calefacción a Leña y Subsistema Eléctrico (Nodo #12)",
+          "Cruce con Subdivisiones Prediales Rurales SAG y Suelo (Nodo #22)"
+        ],
+        "totalRecordsInFullBase": "10 comunas con desagregación habitacional y SSR en data/raw/informes_territoriales/vivienda_ssr_apr_descentralizacion_minvu_sni.json"
       }
     }
   ],
@@ -16883,6 +17257,70 @@ window.AYSEN_HUBS_DATA = {
       "relationNote": "La evacuación médica aerotransportada SAMU requiere pistas despejadas ante emergencias de ceniza volcánica o sismos.",
       "varX": "traslado_coyhaique_hrs",
       "varY": "aeroevacuaciones_samu_n"
+    },
+    {
+      "source": 40,
+      "target": 1,
+      "axis": "cultura_turismo_educacion",
+      "relationNote": "El avance de pavimentación en Ruta 7 y pistas aerocomerciales amplía el flujo anual de prestadores turísticos.",
+      "varX": "red_vial_pavimentada_pct",
+      "varY": "prestadores_sernatur"
+    },
+    {
+      "source": 40,
+      "target": 19,
+      "axis": "produccion_fisco_empleo",
+      "relationNote": "La extensión vial comunal y conectividad portuaria condicionan el despliegue logístico de proyectos de inversión SEIA.",
+      "varX": "red_vial_total_km",
+      "varY": "inversion_seia_mmusd"
+    },
+    {
+      "source": 40,
+      "target": 39,
+      "axis": "conectividad_salud_rural",
+      "relationNote": "El largo útil de pista en aeródromos interiores habilita evacuaciones aéreas de emergencia SAMU-FACH.",
+      "varX": "largo_pista_aerodromo_m",
+      "varY": "aeroevacuaciones_samu_n"
+    },
+    {
+      "source": 40,
+      "target": 13,
+      "axis": "energia_aire_salud",
+      "relationNote": "Las comunas con alta dependencia de barcaza registran sobrecostos de transporte para combustibles y abastecimiento.",
+      "varX": "dependencia_barcaza_nivel",
+      "varY": "gasolina_93_clp"
+    },
+    {
+      "source": 41,
+      "target": 12,
+      "axis": "energia_aire_salud",
+      "relationNote": "El déficit habitacional cualitativo refleja deficiencias de aislación térmica asociadas al alto uso de leña residencial.",
+      "varX": "deficit_habitacional_cualitativo_n",
+      "varY": "hogares_lena_pct"
+    },
+    {
+      "source": 41,
+      "target": 17,
+      "axis": "produccion_fisco_empleo",
+      "relationNote": "Las municipalidades con alta dependencia del FCM requieren transferencias sectoriales para sostener comités de agua rural.",
+      "varX": "sistemas_ssr_apr_n",
+      "varY": "dependencia_fcm_pct"
+    },
+    {
+      "source": 41,
+      "target": 24,
+      "axis": "conectividad_salud_rural",
+      "relationNote": "Las brechas de servicios sanitarios básicos en el RSH inciden en la vulnerabilidad sanitaria y demanda hospitalaria.",
+      "varX": "rsh_carencia_servicios_basicos_jun2026_pct",
+      "varY": "urgencias_respiratorias_pct"
+    },
+    {
+      "source": 41,
+      "target": 22,
+      "axis": "produccion_fisco_empleo",
+      "relationNote": "La expansión de loteos rurales DL 3.516 presiona la demanda habitacional y de urbanización sanitaria básica.",
+      "varX": "deficit_habitacional_cuantitativo_n",
+      "varY": "parcelaciones_sag_n"
     }
   ],
   "seriesMensualesEmat": [

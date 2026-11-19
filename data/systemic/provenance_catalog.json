@@ -1,10 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "version": "2.1.0",
-  "titulo": "Catálogo Oficial de Procedencia y Trazabilidad de Datos (39 Nodos Sistémicos de Aysén)",
+  "titulo": "Catálogo Oficial de Procedencia y Trazabilidad de Datos (41 Nodos Sistémicos de Aysén)",
   "region": "Región de Aysén del General Carlos Ibáñez del Campo",
   "fecha_emision": "2026-10-17T20:00:00Z",
-  "total_nodos": 39,
+  "total_nodos": 41,
   "total_hubs": 10,
   "criterio_calidad": "Cero datos simulados. Fuentes oficiales del Estado de Chile con URL verificable, corte temporal exacto al 17 de octubre de 2026 y método de recolección documentado.",
   "nodes": [
@@ -552,8 +552,8 @@
     {
       "id": 24,
       "nodeId": 24,
-      "title": "Red Asistencial de Salud y Evacuación SAMU",
-      "hubId": "social",
+      "title": "Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)",
+      "hubId": "salud",
       "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "provenance": {
         "sourceEntity": "Ministerio de Salud (MINSAL) — Departamento de Estadísticas e Información de Salud (DEIS) / Servicio de Salud Aysén (SSA)",
@@ -744,7 +744,7 @@
     {
       "id": 32,
       "nodeId": 32,
-      "title": "Museos, bibliotecas y monumentos nacionales",
+      "title": "Patrimonio Protegido, Museos (RMC) y Bibliotecas (SNBP)",
       "hubId": "cultura",
       "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
       "provenance": {
@@ -790,7 +790,7 @@
     {
       "id": 34,
       "nodeId": 34,
-      "title": "Espacios y Agentes Culturales de Aysén",
+      "title": "Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios",
       "hubId": "cultura",
       "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
       "provenance": {
@@ -882,7 +882,7 @@
     {
       "id": 38,
       "nodeId": 38,
-      "title": "Centros de salud y postas rurales",
+      "title": "Atención Primaria Rural: 27 Postas (PSR), 20 EMR y Rondas Médicas",
       "hubId": "salud",
       "csvFile": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv",
       "provenance": {
@@ -924,6 +924,52 @@
       "espejo_governance": 4,
       "metabolic_flow": "info",
       "algedonic_trigger": true
+    },
+    {
+      "id": 40,
+      "nodeId": 40,
+      "title": "Red Vial Austral (Ruta 7), Conectividad Marítima y Aeródromos",
+      "hubId": "gobernanza",
+      "csvFile": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv",
+      "provenance": {
+        "sourceEntity": "MOP Vialidad / MTT DTPR / DGAC-JAC / EMPORCHA",
+        "sourceUrl": "https://www.vialidad.mop.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Semestral",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 182,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
+    },
+    {
+      "id": 41,
+      "nodeId": 41,
+      "title": "Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)",
+      "hubId": "social",
+      "csvFile": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv",
+      "provenance": {
+        "sourceEntity": "MINVU / MDSF Registro Social de Hogares / DOH-MOP",
+        "sourceUrl": "https://www.minvu.gob.cl/",
+        "collectionDate": "Catastro Oficial 2026",
+        "collectionMethod": "Registro administrativo oficial y estadísticas sectoriales consolidadas",
+        "updateFrequency": "Anual",
+        "nextUpdate": "Noviembre 2026",
+        "collectionDateISO": "2026-10-01",
+        "updateFrequencyDays": 365,
+        "lastAutoUpdateISO": "2026-11-02T12:13:30+00:00",
+        "extractionMode": "curated_fallback"
+      },
+      "vsm_system": "S1",
+      "espejo_governance": 4,
+      "metabolic_flow": "material",
+      "algedonic_trigger": false
     }
   ],
   "notas_esquema": "Metadatos de la Arquitectura Dual VSM (Stafford Beer / Raul Espejo): 'vsm_system' (S1 a S5 y canal de auditoria esporadica S3*); 'espejo_governance' (1: Politica-Inteligencia, 2: Politica-Operaciones, 3: Homeostato S3-S4, 4: Cohesion-Recursos, 5: Coordinacion lateral); 'metabolic_flow' (material, energy, info, financial); 'algedonic_trigger' (booleano que indica vinculacion con las 8 alarmas algedonicas vitales del territorio).",
