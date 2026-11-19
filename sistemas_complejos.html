@@ -6,7 +6,7 @@
   <title>La Representación Visual de la Complejidad | Álvaro Contreras Barrios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="js/cabecera_global.css">
   <style>
     :root {
@@ -39,7 +39,9 @@
     html, body {
       width: 100%;
       height: 100vh;
+      height: 100dvh;
       min-height: 100vh;
+      min-height: 100dvh;
       background-color: var(--paper);
       color: var(--ink);
       font-family: var(--font-sans);
@@ -95,7 +97,9 @@
       position: relative;
       width: 100%;
       height: calc(100vh - 56px);
+      height: calc(100dvh - 56px);
       min-height: calc(100vh - 56px);
+      min-height: calc(100dvh - 56px);
       overflow: hidden;
     }
 
@@ -554,203 +558,15 @@
       }
     }
 
-    /* =========================================================================
-       UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
-       ========================================================================= */
-    .mobile-nav-drawer {
-      position: fixed;
-      inset: 0;
-      z-index: 300;
-      pointer-events: none;
-      visibility: hidden;
-      transition: visibility 0.25s ease;
-    }
-
-    .mobile-nav-drawer.open {
-      pointer-events: auto;
-      visibility: visible;
-    }
-
-    .mobile-nav-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 20, 50, 0.45);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .mobile-nav-drawer.open .mobile-nav-backdrop {
-      opacity: 1;
-    }
-
-    .mobile-nav-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: min(86vw, 360px);
-      background: rgba(252, 249, 248, 0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
-      transform: translateX(100%);
-      transition: transform 0.28s var(--ease-drawer);
-      display: flex;
-      flex-direction: column;
-      padding: 1.25rem 1.25rem 2rem;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .mobile-nav-drawer.open .mobile-nav-panel {
-      transform: translateX(0);
-    }
-
-    .mobile-nav-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
-    }
-
-    .mobile-nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .mobile-nav-author {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .mobile-nav-close {
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: 1px solid rgba(0, 53, 127, 0.15);
-      border-radius: 4px;
-      color: var(--ink-secondary);
-      cursor: pointer;
-      padding: 0;
-      transition: background-color var(--duration-fast) var(--ease-out),
-                  border-color var(--duration-fast) var(--ease-out),
-                  color var(--duration-fast) var(--ease-out),
-                  transform var(--duration-fast) var(--ease-out);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav-close:active {
-      transform: scale(0.97);
-    }
-
-    .mobile-nav-close:hover {
-      color: var(--cobalt);
-      border-color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.05);
-    }
-
-    .mobile-nav-kicker {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--cobalt);
-      margin-top: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-
-    .mobile-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .mobile-nav-link {
-      min-height: 48px;
-      padding: 0.75rem 1rem;
-      border-radius: 4px;
-      border: 1px solid rgba(0, 53, 127, 0.10);
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      font-family: var(--font-sans);
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--ink);
-      transition: background-color var(--duration-fast) var(--ease-out),
-                  border-color var(--duration-fast) var(--ease-out),
-                  color var(--duration-fast) var(--ease-out),
-                  transform var(--duration-fast) var(--ease-out);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav-link:active {
-      transform: scale(0.97);
-    }
-
-    .mobile-nav-link:hover {
-      background: rgba(0, 53, 127, 0.05);
-      border-color: var(--cobalt);
-      color: var(--cobalt);
-      transform: translateX(2px);
-    }
-
-    .mobile-nav-link.active {
-      background: rgba(0, 53, 127, 0.08);
-      border-color: var(--cobalt);
-      color: var(--cobalt);
-      font-weight: 600;
-    }
-
-    .mobile-nav-num {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--cobalt);
-      font-weight: 600;
-      width: 24px;
-    }
-
-    .mobile-nav-text {
-      flex: 1;
-    }
-
-    .mobile-nav-arrow {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--ink-muted);
-    }
-
     .editorial-drawer-handle {
       display: none;
     }
 
     /* Breakpoints Responsivos */
-    @media (max-width: 820px) {
-      .brand-nav-pills {
-        display: none !important;
-      }
-      .mobile-menu-btn {
-        display: inline-flex !important;
-      }
-    }
-
     @media (max-width: 900px) {
       main {
         height: calc(100vh - 56px);
+        height: calc(100dvh - 56px);
       }
 
       #gridView {
@@ -944,7 +760,7 @@
       text-decoration: underline;
     }
   </style>
-<script src="js/cabecera_global.js"></script>
+<script src="js/cabecera_global.js" defer></script>
   <link rel="stylesheet" href="css/apple-design.css">
 </head>
 <body>
@@ -967,6 +783,10 @@
             <span class="pill-arrow">↗</span>
           </a>
         </nav>
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" id="langEs" class="lang-btn active">ES</button>
+          <button type="button" id="langEn" class="lang-btn">EN</button>
+        </div>
         <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -1016,8 +836,13 @@
           <span class="mobile-nav-text">Laboratorio Sistémico</span>
           <span class="mobile-nav-arrow">→</span>
         </a>
-        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+        <a href="consultor.html" class="mobile-nav-link">
           <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">Consultor de Datos</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">06</span>
           <span class="mobile-nav-text">LinkedIn</span>
           <span class="mobile-nav-arrow">↗</span>
         </a>
@@ -2168,6 +1993,9 @@
       } else if (currentPropId === 16) {
         state.multiScaleAligned = false;
       }
+      if (typeof REDUCED_MOTION !== 'undefined' && REDUCED_MOTION && inDetailView) {
+        renderScene(0.05, performance.now() / 1000);
+      }
     });
 
     document.getElementById('btnSecondaryAction').addEventListener('click', () => {
@@ -2224,11 +2052,15 @@
       } else if (currentPropId === 16) {
         state.multiScaleAligned = true;
       }
+      if (typeof REDUCED_MOTION !== 'undefined' && REDUCED_MOTION && inDetailView) {
+        renderScene(0.05, performance.now() / 1000);
+      }
     });
 
     // =========================================================================
     // GRILLA 4x4 INICIAL
     // =========================================================================
+    const REDUCED_MOTION = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const gridView = document.getElementById('gridView');
     const miniCanvases = [];
 
@@ -2248,27 +2080,33 @@
         cell.addEventListener('click', () => openProperty(prop.id));
         gridView.appendChild(cell);
         const canvas = cell.querySelector('canvas');
-        miniCanvases.push({ id: prop.id, canvas, ctx: canvas.getContext('2d') });
+        miniCanvases.push({ id: prop.id, canvas, ctx: canvas.getContext('2d'), staticRendered: false });
       });
       resizeMiniCanvases();
     }
 
     function resizeMiniCanvases() {
-      miniCanvases.forEach(item => {
-        const rect = item.canvas.parentElement.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
-        item.canvas.width = rect.width * dpr;
-        item.canvas.height = rect.height * dpr;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const rects = miniCanvases.map(item => item.canvas.parentElement.getBoundingClientRect());
+      miniCanvases.forEach((item, idx) => {
+        const rect = rects[idx];
+        item.canvas.width = Math.round(rect.width * dpr);
+        item.canvas.height = Math.round(rect.height * dpr);
         item.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         item.w = rect.width;
         item.h = rect.height;
+        item.staticRendered = false;
       });
+      drawMiniatures(performance.now() / 1000, true);
     }
 
-    function drawMiniatures(t) {
+    function drawMiniatures(t, forceAll = false) {
       if (inDetailView) return;
-      miniCanvases.forEach(({ id, ctx, w, h }) => {
+      miniCanvases.forEach((item) => {
+        const { id, ctx, w, h } = item;
         if (!w || !h) return;
+        const isAnimatedMini = (id === 1 || id === 4);
+        if (!forceAll && !isAnimatedMini && item.staticRendered) return;
         ctx.clearRect(0, 0, w, h);
         const cx = w * 0.5, cy = h * 0.58, r = Math.min(w, h) * 0.22;
         ctx.strokeStyle = '#1c1b1b'; ctx.fillStyle = '#1c1b1b'; ctx.lineWidth = 1.4;
@@ -2371,14 +2209,292 @@
             ctx.closePath(); ctx.stroke();
           });
         }
+        item.staticRendered = true;
       });
     }
 
     // =========================================================================
     // ICONOGRAFÍA FIGURATIVA VECTORIAL
     // =========================================================================
+    const SCENE_EN_MAP = {
+      'REFUERZA': 'REINFORCING',
+      'ESTABILIZA': 'BALANCING',
+      'PERMAFROST CONGELADO': 'FROZEN PERMAFROST',
+      'PROPIEDAD EMERGENTE (NIVEL MACRO)': 'EMERGENT PROPERTY (MACRO LEVEL)',
+      '← ONDA DEL ATASCO (VIAJA HACIA ATRÁS)': '← TRAFFIC SHOCKWAVE (TRAVELS BACKWARD)',
+      'DIRECCIÓN DE LOS AUTOMÓVILES →': 'DIRECTION OF VEHICLES →',
+      'PATRÓN EMERGENTE: CONCIENCIA INTEGRADA': 'EMERGENT PATTERN: INTEGRATED CONSCIOUSNESS',
+      'NEURONAS DISPARANDO SIN INTEGRACIÓN': 'NEURONS FIRING WITHOUT INTEGRATION',
+      'PUNTO DE FRENADO (0 m)': 'BRAKING POINT (0 m)',
+      'Auto A: 20 mph → Distancia de frenado = 6 metros (1x)': 'Car A: 20 mph → Braking distance = 6 metres (1x)',
+      'Auto B: 30 mph (+50% velocidad) → Distancia de frenado = 14 metros (2,25x — Más del doble)': 'Car B: 30 mph (+50% speed) → Braking distance = 14 metres (2.25x — Over double)',
+      'EJE X: TIEMPO / ESFUERZO COMERCIAL CONSTANTE (MESES) →': 'X AXIS: TIME / CONSTANT COMMERCIAL EFFORT (MONTHS) →',
+      'EJE Y: VENTAS ACUMULADAS (%) →': 'Y AXIS: CUMULATIVE SALES (%) →',
+      '1. Despegue lento': '1. Slow take-off',
+      '2. Aceleración explosiva (Contagio)': '2. Explosive acceleration (Contagion)',
+      '3. Saturación del mercado': '3. Market saturation',
+      'Expectativa lineal (proporcional)': 'Linear expectation (proportional)',
+      'CASQUETE POLAR (REFLEJA CALOR ↗)': 'POLAR ICE CAP (REFLECTS HEAT ↗)',
+      'OCÉANO SIN HIELO (ABSORBE CALOR ↘)': 'ICE-FREE OCEAN (ABSORBS HEAT ↘)',
+      'INGRESO = GASTO (SIN AHORRO)': 'INCOME = SPENDING (NO SAVINGS)',
+      'HOGAR CON AHORRO Y ACTIVOS': 'HOUSEHOLD WITH SAVINGS & ASSETS',
+      '▲ UMBRAL CRÍTICO (INESTABLE)': '▲ CRITICAL THRESHOLD (UNSTABLE)',
+      'Valle 1: Planeta con Hielo Polar': 'Basin 1: Ice-Covered Planet',
+      'Valle 2: Planeta sin Hielo Polar': 'Basin 2: Ice-Free Planet',
+      'Valle 1: Trampa de Pobreza': 'Basin 1: Poverty Trap',
+      'Valle 2: Ingreso Razonable Estable': 'Basin 2: Stable Reasonable Income',
+      'ANTES DEL ANTIBIÓTICO: 16 bacterias sensibles (azules) y 2 mutantes resistentes con escudo (rojas)': 'BEFORE ANTIBIOTIC: 16 sensitive bacteria (blue) and 2 shielded resistant mutants (red)',
+      'FASE 1 (SELECCIÓN): El antibiótico destruye las bacterias sensibles; las 2 con escudo sobreviven': 'PHASE 1 (SELECTION): Antibiotic kills sensitive bacteria; 2 shielded survive',
+      'FASE 2 (REPRODUCCIÓN): Sin competencia, las 2 bacterias resistentes se dividen y multiplican': 'PHASE 2 (REPRODUCTION): Without competition, resistant bacteria divide and multiply',
+      'FASE 3 (ADAPTACIÓN COMPLETA): Toda la población es ahora resistente; el antibiótico ya no hace efecto': 'PHASE 3 (FULL ADAPTATION): Entire population is now resistant; drug fails',
+      'Empresas / Contribuyentes': 'Firms / Taxpayers',
+      'Destino / Utilidades': 'Destination / Profits',
+      'CANAL A: OPERACIÓN TRADICIONAL DIRECTA': 'CHANNEL A: DIRECT TRADITIONAL OPERATION',
+      'BARRERA: NUEVO IMPUESTO / REGULACIÓN': 'BARRIER: NEW TAX / REGULATION',
+      'CANAL B ADAPTADO: SUBCONTRATACIÓN / FILIAL EXENTA': 'ADAPTED CHANNEL B: SUBCONTRACTING / EXEMPT SUBSIDIARY',
+      'CANAL C ADAPTADO: VACÍO LEGAL / OTRA JURISDICCIÓN': 'ADAPTED CHANNEL C: LOOPHOLE / OFFSHORE JURISDICTION',
+      'Hoja plana': 'Flat sheet',
+      'Pliegue Diagonal': 'Diagonal Fold',
+      'Pliegue Rectangular': 'Rectangular Fold',
+      'Base Ave': 'Bird Base',
+      'Base Caja': 'Box Base',
+      'Grulla de Origami': 'Origami Crane',
+      'Caja de Papel': 'Paper Box',
+      'Iniciativa Pública': 'Public Initiative',
+      'Lidera Agencia Ambiental': 'Environmental Agency Leads',
+      'Lidera Min. Industrial': 'Industrial Ministry Leads',
+      'Universidades y ONGs': 'Universities & NGOs',
+      'Gremios y Banca': 'Guilds & Banking',
+      'Red de Conservación': 'Conservation Network',
+      'Polo Industrial': 'Industrial Hub',
+      'Competencia Abierta': 'Open Competition',
+      'Adopción VHS / Trocha A': 'VHS Adoption / Gauge A',
+      'Betamax / Trocha B': 'Betamax / Gauge B',
+      'Videoclubes y Fábricas': 'Video Stores & Factories',
+      'Sin red comercial': 'No retail network',
+      'Estándar Consolidado': 'Locked-in Standard',
+      'Formato Abandonado': 'Abandoned Format',
+      'UMBRAL CRÍTICO: $600/m² (Capacidad máxima de vecinos históricos)': 'CRITICAL THRESHOLD: $600/m² (Max capacity of historical residents)',
+      'Torre / Lujo': 'Luxury Tower',
+      'Vecino antiguo': 'Long-time resident',
+      'Almacén barrial': 'Corner shop',
+      'PUNTO DE INFLEXIÓN SUPERADO (>60%): CAMBIO DE RÉGIMEN': 'TIPPING POINT CROSSED (>60%): REGIME SHIFT',
+      'BAJO EL UMBRAL (<60%): EL RÉGIMEN PARECE ESTABLE PESE AL MALESTAR': 'BELOW THRESHOLD (<60%): REGIME APPEARS STABLE DESPITE UNREST',
+      'Legitimidad': 'Legitimacy',
+      'Control Social': 'Social Control',
+      'Economía': 'Economy',
+      'Instituciones': 'Institutions',
+      'SUELO ORGÁNICO ENRIQUECIDO POR ETAPAS ANTERIORES': 'ORGANIC SOIL ENRICHED BY PRIOR STAGES',
+      '1. Pastos anuales': '1. Annual grasses',
+      '2. Matorrales': '2. Shrubs',
+      '3. Árboles jóvenes': '3. Young trees',
+      '4. Bosque maduro': '4. Mature woodland',
+      'MESA DE LA ALIANZA': 'PARTNERSHIP TABLE',
+      'Mayoría (3-0): Giro Verde': 'Majority (3-0): Green Shift',
+      'Mayoría (2-1): Rumbo Vial': 'Majority (2-1): Road Plan',
+      'Norma social evolucionó': 'Social norm evolved',
+      'Acuerdo inicial 2020': 'Initial 2020 agreement',
+      'Socio 1: Junta de Vecinos': 'Partner 1: Residents Board',
+      'Voto fijo: Áreas verdes': 'Fixed vote: Green areas',
+      'Socio 2: Municipio (Clave)': 'Partner 2: Municipality (Key)',
+      'GIRO → Apoya Parque Verde': 'SHIFT → Backs Green Park',
+      'Inicial → Estacionamientos': 'Initial → Parking Lots',
+      'Socio 3: Comercio / Escuela': 'Partner 3: Retail / School',
+      'Se suma a norma verde': 'Joins green norm',
+      'Inicial: Estacionamientos': 'Initial: Parking Lots',
+      'RUMBO A (INICIAL):': 'PATH A (INITIAL):',
+      'Playa Estacionamientos': 'Parking Lot',
+      '● EN EJECUCIÓN': '● IN PROGRESS',
+      '○ DESCARTADO': '○ DISCARDED',
+      'RUMBO B (NUEVO GIRO):': 'PATH B (NEW SHIFT):',
+      'Parque y Ciclovía': 'Park & Bike Lane',
+      '● ACTIVO TRAS GIRO': '● ACTIVE AFTER SHIFT',
+      '○ EN ESPERA': '○ ON HOLD',
+      'EJE Y: % DE APOYO / CONSENSO SOCIAL →': 'Y AXIS: % PUBLIC SUPPORT / CONSENSUS →',
+      'Margen Tradicional': 'Traditional Margin',
+      'Centro 1985': '1985 Centre',
+      'Centro 2005': '2005 Centre',
+      'Nuevo Centro 2025': '2025 New Centre',
+      'Vanguardia / Extremo': 'Vanguard / Edge',
+      'EJE X: ESPECTRO DE OPINIÓN PÚBLICA Y POLÍTICAS ACEPTABLES →': 'X AXIS: SPECTRUM OF ACCEPTABLE PUBLIC POLICIES →',
+      'Referencia 1985': '1985 Baseline',
+      'CONSENSO 1985': '1985 CONSENSUS',
+      'CONSENSO 2005': '2005 CONSENSUS',
+      'NUEVO CENTRO 2025': '2025 NEW CENTRE',
+      'Política X en 1985: Marginal (6%)': 'Policy X in 1985: Marginal (6%)',
+      'Política X en 2005: En debate (34%)': 'Policy X in 2005: Debated (34%)',
+      'Política X en 2025: Centro (60%)': 'Policy X in 2025: Mainstream (60%)',
+      'INSUMO 1: CACAO': 'INPUT 1: COCOA',
+      '¡SEQUÍA! Cae -70%': 'DROUGHT! Drops -70%',
+      'Clima normal: Abundante': 'Normal weather: Abundant',
+      'Costo sube +250%': 'Cost spikes +250%',
+      'Costo estable ($100)': 'Stable cost ($100)',
+      'INSUMO 2: AVENA': 'INPUT 2: OATS',
+      'Grano local estable': 'Stable local grain',
+      '→ Sustituye al cacao': '→ Substitutes cocoa',
+      '→ En reserva': '→ In reserve',
+      'FRONTERA ABIERTA (FÁBRICA)': 'OPEN BOUNDARY (FACTORY)',
+      'Línea A: Dulce Azucarado': 'Line A: Sugary Sweet',
+      '● OPERANDO AL 100%': '● OPERATING 100%',
+      'CERRADA (Insumo caro)': 'CLOSED (High input cost)',
+      'Línea B: Barra de Avena': 'Line B: Oat Bar',
+      '● ACTIVA POR ADAPTACIÓN': '● ACTIVE BY ADAPTATION',
+      '○ EN ESPERA': '○ STANDBY',
+      'CONSUMIDORES (CULTURA)': 'CONSUMERS (CULTURE)',
+      'Moda: Cero Azúcar': 'Trend: Zero Sugar',
+      'Demanda: Dulce clásico': 'Demand: Classic Sweet',
+      'Rechazan Línea A (-80%)': 'Reject Line A (-80%)',
+      'Compran Línea A (100%)': 'Buy Line A (100%)',
+      'Exigen Línea B Sana': 'Demand Healthy Line B',
+      'Sin presión de cambio': 'No shift pressure',
+      '1. INTENCIONES PRIVADAS (? = INVISIBLES)': '1. PRIVATE INTENTIONS (? = UNOBSERVABLE)',
+      'Compra': 'Buys',
+      'Ahorra?': 'Saves?',
+      'Vende?': 'Sells?',
+      'Invierte': 'Invests',
+      'Espera?': 'Waits?',
+      'Especula?': 'Speculates?',
+      '2. RESULTADO MACRO: CADA CORRIDA DIVERGE': '2. MACRO OUTCOME: EVERY RUN DIVERGES',
+      'EJE X: TIEMPO (AÑOS 1 A 10) →': 'X AXIS: TIME (YEARS 1 TO 10) →',
+      'Corrida 1: Auge (+45%)': 'Run 1: Boom (+45%)',
+      'Corrida 2: Crisis (-40%)': 'Run 2: Bust (-40%)',
+      'Corrida 3: Oscilación': 'Run 3: Oscillation',
+      'Prediccion puntual a 10 anos: Imposible': 'Point prediction at 10 years: Impossible',
+      'Uso del modelo: Comparar 3 Escenarios (A, B y C)': 'Model use: Compare 3 Scenarios (A, B & C)',
+      'HORIZONTE EXPLORATORIO (2025 → 2030 → 2035) →': 'EXPLORATORY HORIZON (2025 → 2030 → 2035) →',
+      'ESCENARIO A: Inversión Temprana en Resiliencia': 'SCENARIO A: Early Resilience Investment',
+      'Banda superior: Mayor costo hoy, evita colapsos futuros': 'Upper band: Higher cost today, avoids future collapse',
+      'ESCENARIO B: Continuidad sin Reformas (Inercia)': 'SCENARIO B: Business-as-Usual (Inertia)',
+      'Banda media: Estancamiento progresivo y fragilidad': 'Middle band: Progressive stagnation & fragility',
+      'ESCENARIO C: Desregulación y Agotamiento': 'SCENARIO C: Deregulation & Depletion',
+      'Banda inferior: Auge breve seguido de caída estructural': 'Lower band: Brief boom followed by structural decline',
+      '1. PLAN TEÓRICO DEL GOBIERNO (VISIÓN PARCIAL DEL SISTEMA):': '1. GOVERNMENT THEORETICAL PLAN (PARTIAL VIEW OF SYSTEM):',
+      'Subsidio Estatal': 'State Subsidy',
+      'Familias Compradoras': 'Buying Families',
+      'Meta frustrada': 'Goal thwarted',
+      'Meta: Vivienda Accesible': 'Goal: Affordable Housing',
+      '2. FACTOR DESCONOCIDO REVELADO (?): GRUPO INMOBILIARIO CAPTURA EL SUBSIDIO': '2. UNKNOWN FACTOR REVEALED (?): REAL ESTATE GROUP CAPTURES SUBSIDY',
+      '2. ZONA FUERA DEL RADAR DEL PLANIFICADOR (?): Haga clic arriba para lanzar la política': '2. OUTSIDE PLANNER RADAR (?): Click above to launch policy',
+      '?   Actor no contemplado en el diseño   ?': '?   Unaccounted actor in policy design   ?',
+      'Cartel de Suelo / Rentistas (?)': 'Land Cartel / Rentiers (?)',
+      'EFECTO INDIRECTO:': 'INDIRECT EFFECT:',
+      'Sube precio casas +40%': 'House prices jump +40%',
+      'ECOSISTEMA: SELVA TROPICAL': 'ECOSYSTEM: TROPICAL RAINFOREST',
+      'Flora catalogada (Conocida)': 'Catalogued flora (Known)',
+      '¡Planta Descubierta! (Alcaloide)': 'Plant Discovered! (Alkaloid)',
+      'Especie Oculta en Selva (?)': 'Hidden Species in Rainforest (?)',
+      'Compuesto bioactivo hallado': 'Bioactive compound found',
+      'Potencial médico desconocido': 'Unknown medical potential',
+      '1. Nuevo Antibiótico Hospitalario': '1. New Hospital Antibiotic',
+      '2. Tratamiento Oncológico': '2. Oncology Treatment',
+      '3. Analgésico No Adictivo': '3. Non-Addictive Analgesic',
+      '● DESBLOQUEADO POR HALLAZGO': '● UNLOCKED BY DISCOVERY',
+      '○ SIN DESCUBRIR (?)': '○ UNDISCOVERED (?)',
+      'AGENCIA CENTRAL DE SALUD (MINISTERIO)': 'CENTRAL HEALTH AGENCY (MINISTRY)',
+      'Modo Distribuido: Da recursos y autonomía a médicos locales': 'Distributed Mode: Gives resources & autonomy to local clinicians',
+      'Modo Centralizado: Impone 1 folleto único a todo el país': 'Centralised Mode: Imposes 1 uniform leaflet nationwide',
+      '1. Liceo Juvenil': '1. Youth High School',
+      'Deporte y pares': 'Sports & peers',
+      '2. Turno Nocturno': '2. Night Shift',
+      'Pausas en planta': 'Plant breaks',
+      '3. Adulto Mayor': '3. Older Adults',
+      'Visita médica': 'Home clinic visit',
+      '4. Zona Rural': '4. Rural Zone',
+      'Posta familiar': 'Family clinic post',
+      '[X] Folleto ignorado': '[X] Leaflet ignored',
+      'PARTIDO PARLAMENTARIO CENTRAL (CAPITAL)': 'CENTRAL PARLIAMENTARY PARTY (CAPITAL)',
+      'ORDEN OFICIAL: Votar a favor de Centralización →': 'PARTY WHIP: Vote in favour of Centralisation →',
+      '1. Comité Norte Minero': '1. Northern Mining Committee',
+      '← Vota EN CONTRA': '← Votes AGAINST',
+      'Sindicatos rechazan': 'Unions reject bill',
+      '2. Alcaldía Agrícola Sur': '2. Southern Agricultural Council',
+      '↑ Pide Subsidio Riego': '↑ Demands Irrigation Subsidy',
+      'Sequía es prioridad': 'Drought is priority',
+      '3. Municipio Costero': '3. Coastal Municipality',
+      '↙ Modifica la Ley': '↙ Amends the Bill',
+      'Pescadores exigen cambio': 'Fishers demand changes',
+      '4. Distrito Capital': '4. Capital District',
+      '→ Sigue a Directiva': '→ Follows Leadership',
+      'Alineado con cúpula': 'Aligned with centre',
+      '4. PLANETA (Biosfera)': '4. PLANET (Biosphere)',
+      '4. PLANETA (Biosfera Global)': '4. PLANET (Global Biosphere)',
+      '1. PLANETA (Biosfera Global)': '1. PLANET (Global Biosphere)',
+      'Aumentan emisiones de CO₂ y cambia el clima global': 'CO₂ emissions rise and alter global climate',
+      'Olas de calor y sequías golpean el territorio': 'Heatwaves and droughts hit local territories',
+      '3. SOCIEDAD (Economía)': '3. SOCIETY (Economy)',
+      '3. SOCIEDAD (Economía y Mercados)': '3. SOCIETY (Economy & Markets)',
+      '2. SOCIEDAD (Economía y Mercados)': '2. SOCIETY (Economy & Markets)',
+      'Millones de compras suman demanda industrial y energía': 'Millions of purchases drive industrial & energy demand',
+      'Cambian precios de alimentos, leyes y empleo urbano': 'Food prices, laws and urban jobs shift',
+      '2. PERSONA (Conducta)': '2. PERSON (Behaviour)',
+      '2. PERSONA (Hábitos y Consumo)': '2. PERSON (Habits & Consumption)',
+      '3. PERSONA (Hábitos y Consumo)': '3. PERSON (Habits & Consumption)',
+      'El individuo elige qué comer, comprar y cómo viajar': 'Individual chooses what to eat, buy and how to travel',
+      'El hogar altera su rutina diaria, gasto y descanso': 'Household alters daily routine, budget and rest',
+      '1. CEREBRO (Mente)': '1. BRAIN (Mind)',
+      '1. CEREBRO (Sinapsis y Emoción)': '1. BRAIN (Synapses & Emotion)',
+      '4. CEREBRO (Sinapsis y Emoción)': '4. BRAIN (Synapses & Emotion)',
+      'Neuronas y hábitos disparan una preferencia individual': 'Neurons and habits trigger an individual preference',
+      'El estrés ambiental modifica la química neuronal': 'Environmental stress alters neural chemistry',
+      'PROPAGACIÓN DE ABAJO HACIA ARRIBA (CEREBRO → PLANETA ↑)': 'BOTTOM-UP PROPAGATION (BRAIN → PLANET ↑)',
+      'PROPAGACIÓN DE ARRIBA HACIA ABAJO (PLANETA → CEREBRO ↓)': 'TOP-DOWN PROPAGATION (PLANET → BRAIN ↓)',
+      '1. Ecosistema': '1. Ecosystem',
+      'Bosque y Ríos': 'Forest & Rivers',
+      '2. Organismo': '2. Organism',
+      'Ser vivo': 'Living being',
+      '3. Célula': '3. Cell',
+      'Tejido celular': 'Cellular tissue',
+      '4. Organelo': '4. Organelle',
+      'Mitocondria': 'Mitochondrion',
+      '5. Genética': '5. Genetics',
+      'ADN / Metabolismo': 'DNA / Metabolism',
+      'ESCALA 2: EL HOGAR': 'SCALE 2: THE HOME',
+      '[+] Tiempo para cocinar sano': '[+] Time to cook healthy meals',
+      '[+] Habitos familiares activos': '[+] Active family habits',
+      '[-] Sin tiempo: Comida rapida': '[-] No time: Fast food',
+      '[-] Presupuesto familiar bajo': '[-] Tight household budget',
+      'ESCALA 3: URBANISMO LOCAL': 'SCALE 3: LOCAL URBANISM',
+      '[+] Parques seguros y ciclovias': '[+] Safe parks & bike lanes',
+      '[+] Ferias de verdura fresca': '[+] Fresh produce markets',
+      '[-] Barrio sin areas verdes': '[-] Neighbourhood lacks green space',
+      '[-] Saturado de comida chatarra': '[-] Saturated with junk food',
+      'ESCALA 4: NACION Y MERCADO': 'SCALE 4: NATION & MARKET',
+      '[+] Impuesto a ultraprocesados': '[+] Tax on ultra-processed food',
+      '[+] Subsidio a alimentos sanos': '[+] Subsidies for healthy food',
+      '[-] Ultraprocesados baratos ($)': '[-] Cheap ultra-processed food ($)',
+      '[-] Dieta saludable cara ($$$)': '[-] Expensive healthy diet ($$$)',
+      'ESCALA 1: INDIVIDUO (FISIOLOGÍA Y HÁBITOS)': 'SCALE 1: INDIVIDUAL (PHYSIOLOGY & HABITS)',
+      'Las 4 escalas apoyan al individuo → Hábito sano sostenible': 'All 4 scales support the individual → Sustainable healthy habit',
+      'Se pide dieta al individuo, pero Hogar, Barrio y Mercado lo sabotean': 'Diet urged on individual, while Home, Neighbourhood & Market undermine it',
+      'ÉXITO SOSTENIBLE DE SALUD PÚBLICA: 86%': 'SUSTAINABLE PUBLIC HEALTH SUCCESS: 86%',
+      'ÉXITO AISLADO: 14% (Fracasa por presión del entorno)': 'ISOLATED SUCCESS: 14% (Fails under environmental pressure)'
+    };
+
+    function translateSceneTextEn(str) {
+      if (!str) return str;
+      if (SCENE_EN_MAP[str]) return SCENE_EN_MAP[str];
+      if (str.startsWith('ATMÓSFERA (')) return str.replace('ATMÓSFERA (', 'ATMOSPHERE (');
+      if (str.startsWith('Precio de Mercado: $')) return str.replace('Precio de Mercado:', 'Market Price:');
+      if (str.startsWith('Compra $')) return str.replace('Compra', 'Buys');
+      if (str.startsWith('Vende $')) return str.replace('Vende', 'Sells');
+      if (/^Mes \d+: \d+% ventas$/.test(str)) return str.replace(/^Mes /, 'Month ').replace('ventas', 'sales');
+      if (/^Mes \d+$/.test(str)) return str.replace(/^Mes /, 'Month ');
+      if (str.startsWith('Corrida Activa (#')) return str.replace('Corrida Activa (#', 'Active Run (#').replace('Trayectoria distinta', 'Distinct trajectory');
+      if (str.startsWith('[OK] ')) {
+        const rest = str.slice(5);
+        return '[OK] ' + (SCENE_EN_MAP[rest] || rest);
+      }
+      if (/^Éxito: \d+%$/.test(str)) return str.replace('Éxito:', 'Success:');
+      return str;
+    }
+
     const sceneCanvas = document.getElementById('sceneCanvas');
     const ctx = sceneCanvas.getContext('2d');
+    const _rawSceneFillText = ctx.fillText.bind(ctx);
+    ctx.fillText = function (text, x, y, maxWidth) {
+      const out = currentLang === 'en' ? translateSceneTextEn(String(text)) : text;
+      return maxWidth !== undefined ? _rawSceneFillText(out, x, y, maxWidth) : _rawSceneFillText(out, x, y);
+    };
 
     function resizeCanvases() {
       const vpEl = document.getElementById('stageViewport');
@@ -2386,7 +2502,7 @@
       const w = vpEl.clientWidth;
       const h = vpEl.clientHeight;
       if (w > 0 && h > 0) {
-        const dpr = window.devicePixelRatio || 1;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
         sceneCanvas.width = Math.round(w * dpr);
         sceneCanvas.height = Math.round(h * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -4793,7 +4909,10 @@
       if (arr) arr.textContent = '▲';
       resetScenarioState(id, 0);
       renderDetailUI();
-      requestAnimationFrame(() => resizeCanvases());
+      requestAnimationFrame(() => {
+        resizeCanvases();
+        if (REDUCED_MOTION) renderScene(0.05, performance.now() / 1000);
+      });
     }
 
     function backToGrid() {
@@ -4809,7 +4928,7 @@
       lastTime = performance.now();
       requestAnimationFrame(() => {
         resizeMiniCanvases();
-        drawMiniatures(performance.now() / 1000);
+        drawMiniatures(performance.now() / 1000, true);
       });
     }
 
@@ -4842,7 +4961,10 @@
           pillText.innerHTML = pillText.innerHTML.replace(/^Based on:/, 'Basado en:');
         }
         buildGrid();
-        if (inDetailView) renderDetailUI();
+        if (inDetailView) {
+          renderDetailUI();
+          if (REDUCED_MOTION) renderScene(0.05, performance.now() / 1000);
+        }
       });
     }
 
@@ -4862,7 +4984,10 @@
           pillText.innerHTML = pillText.innerHTML.replace(/^Basado en:/, 'Based on:');
         }
         buildGrid();
-        if (inDetailView) renderDetailUI();
+        if (inDetailView) {
+          renderDetailUI();
+          if (REDUCED_MOTION) renderScene(0.05, performance.now() / 1000);
+        }
       });
     }
 
@@ -4873,16 +4998,23 @@
         const nextId = currentPropId < 16 ? currentPropId + 1 : 1;
         resetScenarioState(nextId, 0);
         renderDetailUI();
+        if (REDUCED_MOTION) renderScene(0.05, performance.now() / 1000);
       } else if (e.key === 'ArrowLeft') {
         const prevId = currentPropId > 1 ? currentPropId - 1 : 16;
         resetScenarioState(prevId, 0);
         renderDetailUI();
+        if (REDUCED_MOTION) renderScene(0.05, performance.now() / 1000);
       }
     });
 
+    let resizeTimer = null;
     window.addEventListener('resize', () => {
-      resizeMiniCanvases();
-      resizeCanvases();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resizeMiniCanvases();
+        resizeCanvases();
+        if (REDUCED_MOTION && inDetailView) renderScene(0.05, performance.now() / 1000);
+      }, 150);
     });
 
     buildGrid();
@@ -4907,41 +5039,7 @@
       }
     })();
 
-    // =========================================================================
-    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL Y DRAWER EDITORIAL
-    // =========================================================================
-    const btnMobileMenu = document.getElementById('btnMobileMenu');
-    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-    const btnMobileClose = document.getElementById('btnMobileClose');
-    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
-
-    function openMobileNav() {
-      if (!mobileNavDrawer) return;
-      mobileNavDrawer.classList.add('open');
-      mobileNavDrawer.setAttribute('aria-hidden', 'false');
-      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMobileNav() {
-      if (!mobileNavDrawer) return;
-      mobileNavDrawer.classList.remove('open');
-      mobileNavDrawer.setAttribute('aria-hidden', 'true');
-      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
-    }
-
-    if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
-    if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
-    if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
-        closeMobileNav();
-      }
-    });
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', closeMobileNav);
-    });
+    // Control de menú móvil centralizado en js/cabecera_global.js
 
     const btnToggleEditorialDrawer = document.getElementById('btnToggleEditorialDrawer');
     const editorialPane = document.getElementById('editorialPane');
@@ -4956,13 +5054,24 @@
 
     // Supresión de bucle de animación cuando la pestaña está oculta
     let isTabVisible = typeof document !== 'undefined' ? !document.hidden : true;
+    let animRafId = null;
+
     document.addEventListener('visibilitychange', () => {
       isTabVisible = !document.hidden;
+      if (!isTabVisible) {
+        if (animRafId !== null) {
+          cancelAnimationFrame(animRafId);
+          animRafId = null;
+        }
+      } else if (!REDUCED_MOTION && animRafId === null) {
+        lastTime = performance.now();
+        animRafId = requestAnimationFrame(animate);
+      }
     });
 
     let lastTime = performance.now();
     function animate(now) {
-      requestAnimationFrame(animate);
+      animRafId = null;
       if (!isTabVisible) {
         lastTime = now;
         return;
@@ -4976,8 +5085,17 @@
       } else {
         drawMiniatures(t);
       }
+
+      if (isTabVisible && !REDUCED_MOTION) {
+        animRafId = requestAnimationFrame(animate);
+      }
     }
-    requestAnimationFrame(animate);
+
+    if (REDUCED_MOTION) {
+      drawMiniatures(performance.now() / 1000, true);
+    } else if (isTabVisible) {
+      animRafId = requestAnimationFrame(animate);
+    }
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {

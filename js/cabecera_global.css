@@ -251,7 +251,7 @@
 .mobile-nav-drawer {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 1200;
   pointer-events: none;
   visibility: hidden;
   transition: visibility 0.25s ease;

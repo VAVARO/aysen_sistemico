@@ -6,24 +6,24 @@
   <title>Datos de Aysén — Álvaro Contreras Barrios</title>
   <meta name="description" content="Mapa interactivo de bases de datos de la Región de Aysén: 10 hubs temáticos, 41 nodos de datos y 10 comunas.">
 
-  <!-- Google Fonts: Playfair Display (editorial), Inter (cuerpo), JetBrains Mono (código y metadatos), IBM Plex Mono/Sans (tooltips sobrios) -->
+  <!-- Google Fonts & Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  
-  <!-- Material Symbols Outlined -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- D3.js v7.8.5 para el Mapa Interactivo de Hubs y Nodos (versión fijada + fallback) -->
+  <!-- D3.js v7.8.5 para el Mapa Interactivo de Hubs y Nodos (versión fijada + fallback sin document.write) -->
   <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"
     integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
-    crossorigin="anonymous"></script>
-  <script>if (typeof window.d3 === 'undefined') { document.write('<script src="https://d3js.org/d3.v7.min.js"><\/script>'); }</script>
+    crossorigin="anonymous" defer
+    onerror="var s=document.createElement('script');s.src='https://d3js.org/d3.v7.min.js';s.onload=function(){if(typeof initOrUpdateD3Map==='function')initOrUpdateD3Map();};document.head.appendChild(s);"></script>
 
   <!-- Chart.js v4.4.1 para Gráficos Ejecutivos en Drawer Lateral (version fijada + SRI) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
     integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
 
   <!--
     Tailwind CSS Play CDN v3.4.16 (version fijada).
@@ -72,7 +72,7 @@
   </script>
 
   <!-- Bundle local de datos de Aysén (10 Hubs, 41 Nodos, 10 Comunas) -->
-  <script src="data/aysen_hubs_data.js"></script>
+  <script src="data/aysen_hubs_data.js" defer></script>
 
   <link rel="stylesheet" href="js/cabecera_global.css">
   <style>
@@ -246,188 +246,6 @@
       flex-shrink: 0 !important;
     }
 
-    /* =========================================================================
-       UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
-       ========================================================================= */
-
-    .mobile-nav-drawer {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      pointer-events: none;
-      visibility: hidden;
-      transition: visibility 0.25s ease;
-    }
-
-    .mobile-nav-drawer.open {
-      pointer-events: auto;
-      visibility: visible;
-    }
-
-    .mobile-nav-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 20, 50, 0.45);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .mobile-nav-drawer.open .mobile-nav-backdrop {
-      opacity: 1;
-    }
-
-    .mobile-nav-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: min(86vw, 360px);
-      background: rgba(252, 249, 248, 0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-left: 1px solid rgba(0, 53, 127, 0.18);
-      box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
-      transform: translateX(100%);
-      transition: transform 0.28s var(--ease-drawer);
-      display: flex;
-      flex-direction: column;
-      padding: 1.25rem 1.25rem 2rem;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .mobile-nav-drawer.open .mobile-nav-panel {
-      transform: translateX(0);
-    }
-
-    .mobile-nav-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
-    }
-
-    .mobile-nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .mobile-nav-author {
-      font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #1c1b1b;
-    }
-
-    .mobile-nav-close {
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: 1px solid rgba(0, 53, 127, 0.15);
-      border-radius: 4px;
-      color: #66625f;
-      cursor: pointer;
-      padding: 0;
-      transition: background-color var(--duration-fast) var(--ease-out),
-                  border-color var(--duration-fast) var(--ease-out),
-                  color var(--duration-fast) var(--ease-out),
-                  transform var(--duration-fast) var(--ease-out);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav-close:active {
-      transform: scale(0.97);
-    }
-
-    .mobile-nav-close:hover {
-      color: #00357f;
-      border-color: #00357f;
-      background: rgba(0, 53, 127, 0.05);
-    }
-
-    .mobile-nav-kicker {
-      font-family: var(--font-mono, 'JetBrains Mono', monospace);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #00357f;
-      margin-top: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-
-    .mobile-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .mobile-nav-link {
-      min-height: 48px;
-      padding: 0.75rem 1rem;
-      border-radius: 4px;
-      border: 1px solid rgba(0, 53, 127, 0.10);
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      font-family: var(--font-sans, 'Inter', sans-serif);
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: #1c1b1b;
-      transition: background-color var(--duration-fast) var(--ease-out),
-                  border-color var(--duration-fast) var(--ease-out),
-                  color var(--duration-fast) var(--ease-out),
-                  transform var(--duration-fast) var(--ease-out);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav-link:active {
-      transform: scale(0.97);
-    }
-
-    .mobile-nav-link:hover {
-      background: rgba(0, 53, 127, 0.05);
-      border-color: #00357f;
-      color: #00357f;
-      transform: translateX(2px);
-    }
-
-    .mobile-nav-link.active {
-      background: rgba(0, 53, 127, 0.08);
-      border-color: #00357f;
-      color: #00357f;
-      font-weight: 600;
-    }
-
-    .mobile-nav-num {
-      font-family: var(--font-mono, 'JetBrains Mono', monospace);
-      font-size: 0.75rem;
-      color: #00357f;
-      font-weight: 600;
-      width: 24px;
-    }
-
-    .mobile-nav-text {
-      flex: 1;
-    }
-
-    .mobile-nav-arrow {
-      font-family: var(--font-mono, 'JetBrains Mono', monospace);
-      font-size: 0.85rem;
-      color: #66625f;
-    }
-
     /* Grillas fluidas responsivas */
     #nodos-grid,
     #comunas-grid {
@@ -483,7 +301,7 @@
       }
     }
   </style>
-<script src="js/cabecera_global.js"></script>
+<script src="js/cabecera_global.js" defer></script>
   <link rel="stylesheet" href="css/apple-design.css">
 </head>
 
@@ -517,6 +335,7 @@
           <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
           <a href="index.html" class="brand-pill active" aria-current="page">Datos de Aysén</a>
           <a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>
+          <a href="consultor.html" class="brand-pill">Consultor de Datos</a>
           <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
             <span>LinkedIn</span>
             <span class="pill-arrow">↗</span>
@@ -572,8 +391,13 @@
           <span class="mobile-nav-text">Laboratorio Sistémico</span>
           <span class="mobile-nav-arrow">→</span>
         </a>
-        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+        <a href="consultor.html" class="mobile-nav-link">
           <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">Consultor de Datos</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">06</span>
           <span class="mobile-nav-text">LinkedIn</span>
           <span class="mobile-nav-arrow">↗</span>
         </a>
@@ -627,7 +451,7 @@
             class="tab-button px-3.5 py-1.5 rounded-sm flex items-center gap-1.5 transition-colors duration-150 text-on-surface hover:text-primary hover:bg-white/60"
             aria-selected="false"
           >
-            <span>Funcionamiento y Fuentes (34)</span>
+            <span>Funcionamiento y Fuentes (38)</span>
           </button>
         </div>
 
@@ -1764,7 +1588,7 @@
       selectedNodeIndex: 0,
       drawerMode: 'node', // 'node' | 'hub' | 'comuna'
       tableExpanded: false,
-      data: window.AYSEN_HUBS_DATA || { hubs: [], nodos: [], comunas: [] },
+      data: { hubs: [], nodos: [], comunas: [] },
       graph: {
         simulation: null,
         svg: null,
@@ -1776,7 +1600,39 @@
     };
 
     const hubMap = {};
-    (AppState.data.hubs || []).forEach(h => { hubMap[h.id] = h; });
+
+    function precomputeSearchTextForNodos(nodosList) {
+      (nodosList || []).forEach(item => {
+        const parts = [
+          item.title,
+          item.definition,
+          item.example,
+          item.officialSource && item.officialSource.name
+        ];
+        if (Array.isArray(item.tableRows)) {
+          for (let i = 0; i < item.tableRows.length; i++) {
+            const row = item.tableRows[i];
+            if (Array.isArray(row)) parts.push(row.join(' '));
+            else if (row && typeof row === 'object') parts.push(Object.values(row).join(' '));
+            else if (row !== null && row !== undefined) parts.push(String(row));
+          }
+        }
+        if (item.id === 36) parts.push('infor ctci-nod-15');
+        item._searchText = parts.filter(Boolean).join(' ').toLowerCase();
+      });
+    }
+
+    function hydrateHubsData() {
+      if (window.AYSEN_HUBS_DATA && (!AppState.data || !AppState.data.hubs || !AppState.data.hubs.length || AppState.data !== window.AYSEN_HUBS_DATA)) {
+        AppState.data = window.AYSEN_HUBS_DATA;
+        (AppState.data.hubs || []).forEach(h => { hubMap[h.id] = h; });
+        precomputeSearchTextForNodos(AppState.data.nodos);
+      }
+    }
+
+    if (window.AYSEN_HUBS_DATA) {
+      hydrateHubsData();
+    }
 
         /* Inicializador del Diagrama de Flujo Interactivo de Procedencia */
     function initProvenanceFlowchart() {
@@ -2100,7 +1956,7 @@
           tipo: 'Hub Temático Sistémico',
           periodicidad: 'Líneas Base Censales + Cierres Anuales MINEDUC/MINVU/CEAD',
           mecanismo: 'Corte Censal Oficial INE 2024 / CASEN MDSF / MINVU / DOH-MOP / SLEP Aysén',
-          nodos: '4 Nodos Satélites (#23 al #25, #41) · Demografía Censo 2024 (100.745 hab.), Déficit Habitacional MINVU, 47 comités SSR/APR, educación SLEP y CEAD',
+          nodos: '4 Nodos Satélites (#23, #25, #26, #41) · Demografía Censo 2024 (100.745 hab.), Déficit Habitacional MINVU, 47 comités SSR/APR, educación SLEP y CEAD',
           links: [{ text: 'censo2024.ine.gob.cl ↗', url: 'https://censo2024.ine.gob.cl/' }, { text: 'datosabiertos.mineduc.cl ↗', url: 'https://datosabiertos.mineduc.cl/' }]
         },
         biodiversidad: {
@@ -2385,6 +2241,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      hydrateHubsData();
       updateBadgesCount();
       setupSearchListeners();
       setupKeyboardShortcuts();
@@ -2556,10 +2413,15 @@
       });
     }
 
-    function renderActiveView() {
+    function renderActiveView(forceRebuildGraph = false) {
       if (AppState.activeTab === 'nodos') {
         if (AppState.nodeDisplayMode === 'graph') {
-          initOrUpdateD3Map();
+          const hasGraphDom = Boolean(AppState.graph.simulation && document.querySelector('#d3-concept-svg .graph-root'));
+          if (!forceRebuildGraph && hasGraphDom) {
+            applyFilterToGraph();
+          } else {
+            initOrUpdateD3Map();
+          }
           const filtered = getFilteredNodos();
           updateCounterText(filtered.length, AppState.data.nodos.length, 'nodos de datos');
         } else {
@@ -2575,14 +2437,10 @@
       const cat = AppState.activeCategoryFilter;
       return (AppState.data.nodos || []).filter(item => {
         const matchesCat = cat === 'all' || item.hubId === cat;
-        const matchesSearch = !q ||
-          item.title.toLowerCase().includes(q) ||
-          item.definition.toLowerCase().includes(q) ||
-          item.example.toLowerCase().includes(q) ||
-          (item.officialSource && item.officialSource.name.toLowerCase().includes(q)) ||
-          JSON.stringify(item.tableRows || []).toLowerCase().includes(q) ||
-          (item.id === 36 && (q.includes('infor') || q.includes('ctci-nod-15')));
-        return matchesCat && matchesSearch;
+        if (!matchesCat) return false;
+        if (!q) return true;
+        if (item._searchText === undefined) precomputeSearchTextForNodos([item]);
+        return item._searchText.includes(q);
       });
     }
 
@@ -2606,14 +2464,16 @@
 
     function initOrUpdateD3Map() {
       if (typeof d3 === 'undefined') return;
-      const container = document.getElementById('d3-canvas-container');
+      const container = document.getElementById('d3-concept-svg') ? document.getElementById('d3-canvas-container') : null;
       const svg = d3.select('#d3-concept-svg');
       if (!container || !svg.node()) return;
 
-      if ((!AppState.data || !AppState.data.hubs || !AppState.data.hubs.length) && window.AYSEN_HUBS_DATA) {
-        AppState.data = window.AYSEN_HUBS_DATA;
-        (AppState.data.hubs || []).forEach(h => { hubMap[h.id] = h; });
+      if (AppState.graph.simulation) {
+        AppState.graph.simulation.stop();
+        AppState.graph.simulation = null;
       }
+
+      hydrateHubsData();
       if (!AppState.data || !Array.isArray(AppState.data.hubs) || !Array.isArray(AppState.data.nodos)) {
         return;
       }
@@ -3103,11 +2963,12 @@
           return false;
         }
         const matchesCat = (cat === 'all' || d.hubId === cat);
-        const matchesSearch = !q ||
+        const matchesSearch = !q || (d._searchText ? d._searchText.includes(q) : (
           d.title.toLowerCase().includes(q) ||
           d.definition.toLowerCase().includes(q) ||
           d.example.toLowerCase().includes(q) ||
-          (d.id === 36 && (q.includes('infor') || q.includes('ctci-nod-15')));
+          (d.id === 36 && (q.includes('infor') || q.includes('ctci-nod-15')))
+        ));
 
         let matchesAxis = true;
         if (axis !== 'all') {
@@ -3599,7 +3460,9 @@
             varX = bridge.varY || '';
             varY = bridge.varX || '';
           }
-          const labUrl = `laboratorio.html?varX=${encodeURIComponent(varX)}&varY=${encodeURIComponent(varY)}`;
+          const labUrl = (varX && varY)
+            ? `laboratorio.html?varX=${encodeURIComponent(varX)}&varY=${encodeURIComponent(varY)}`
+            : `laboratorio.html?node=${encodeURIComponent(rel.id)}`;
 
           return `
             <div style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; background: transparent; box-shadow: none;">
@@ -3948,6 +3811,7 @@
       let startY = 0;
       let startTime = 0;
       let deltaY = 0;
+      let panelHeight = 400;
 
       let history = []; // ultimas posiciones para estimar velocidad al soltar
       // Resistencia progresiva (rubber-banding) al arrastrar contra el borde
@@ -3961,6 +3825,7 @@
         startY = clientY;
         startTime = performance.now();
         deltaY = 0;
+        panelHeight = panel.offsetHeight || 400;
         history = [{ y: clientY, t: startTime }];
         panel.style.transition = 'none';
 
@@ -3982,7 +3847,7 @@
           panel.style.transform = 'translateY(' + deltaY + 'px)';
         } else {
           // hacia arriba: sigue al dedo con resistencia, nunca un tope duro
-          panel.style.transform = 'translateY(' + rubberband(raw, panel.offsetHeight || 400) + 'px)';
+          panel.style.transform = 'translateY(' + rubberband(raw, panelHeight) + 'px)';
         }
       };
 
@@ -4068,19 +3933,24 @@
     }
 
     // GESTIÓN DE BÚSQUEDA Y ATAJOS
+    function debounce(fn, waitMs) {
+      let timer = null;
+      return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), waitMs);
+      };
+    }
+
     function setupSearchListeners() {
       const globalInput = document.getElementById('global-search-input');
       const mobileInput = document.getElementById('mobile-search-input');
 
-      const onSearch = (val) => {
+      const onSearch = debounce((val) => {
         AppState.searchQuery = val;
         if (globalInput && globalInput.value !== val) globalInput.value = val;
         if (mobileInput && mobileInput.value !== val) mobileInput.value = val;
-        if (AppState.activeTab === 'nodos' && AppState.nodeDisplayMode === 'graph') {
-          applyFilterToGraph();
-        }
         renderActiveView();
-      };
+      }, 150);
 
       if (globalInput) globalInput.addEventListener('input', (e) => onSearch(e.target.value));
       if (mobileInput) mobileInput.addEventListener('input', (e) => onSearch(e.target.value));
@@ -4128,39 +3998,7 @@
       if (arr) arr.textContent = isHidden ? '▲' : '▼';
     }
 
-    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL
-    const btnMobileMenu = document.getElementById('btnMobileMenu');
-    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-    const btnMobileClose = document.getElementById('btnMobileClose');
-    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
-
-    function openMobileNav() {
-      if (!mobileNavDrawer) return;
-      mobileNavDrawer.classList.add('open');
-      mobileNavDrawer.setAttribute('aria-hidden', 'false');
-      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMobileNav() {
-      if (!mobileNavDrawer) return;
-      mobileNavDrawer.classList.remove('open');
-      mobileNavDrawer.setAttribute('aria-hidden', 'true');
-      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
-    }
-
-    if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
-    if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
-    if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
-        closeMobileNav();
-      }
-    });
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', closeMobileNav);
-    });
+    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL (centralizado en js/cabecera_global.js)
 
     function clearFiltersAndSearch() {
       AppState.searchQuery = '';

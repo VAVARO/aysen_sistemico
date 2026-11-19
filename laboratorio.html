@@ -9,9 +9,11 @@
     content="Lienzo de modelamiento y cruce de variables territoriales de Aysén. Análisis sistémico, pensamiento reflexivo y rigor empírico." />
   <meta name="author" content="Álvaro Contreras Barrios" />
 
-  <!-- Tipografías Oficiales: Playfair Display, Inter, JetBrains Mono -->
+  <!-- Tipografías Oficiales y Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet" />
@@ -19,7 +21,7 @@
   <!-- Chart.js v4.4.1 para Gráficos Fluidos (version fijada + SRI) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
     integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
 
   <!-- Leaflet v1.9.4 para Mapas Territoriales (version fijada + SRI) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -27,14 +29,14 @@
     crossorigin="anonymous" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
 
   <!-- Datos Oficiales: Catálogo Regional de Aysén y Preguntas Sistémicas (30) -->
-  <script src="data/aysen_hubs_data.js"></script>
-  <script src="data/preguntas_metacognitivas.js"></script>
+  <script src="data/aysen_hubs_data.js" defer></script>
+  <script src="data/preguntas_metacognitivas.js" defer></script>
   <!-- Motor Semántico NL2Chart y Motor de Inteligencia OmniRoute -->
-  <script src="js/nl2chart_engine.js"></script>
-  <script src="js/omniroute_client.js"></script>
+  <script src="js/nl2chart_engine.js" defer></script>
+  <script src="js/omniroute_client.js" defer></script>
 
   <link rel="stylesheet" href="js/cabecera_global.css">
   <style>
@@ -1218,6 +1220,7 @@
       display: flex;
       width: 100%;
       height: calc(100vh - var(--header-h) - var(--action-h) - var(--tabs-h));
+      height: calc(100dvh - var(--header-h) - var(--action-h) - var(--tabs-h));
       position: relative;
       overflow: hidden;
     }
@@ -2498,6 +2501,7 @@
       box-shadow: 0 14px 36px rgba(0, 35, 87, 0.18);
       width: min(350px, calc(100vw - 24px));
       max-height: min(440px, calc(100vh - 80px));
+      max-height: min(440px, calc(100dvh - 80px));
       overflow: hidden;
       z-index: 99999;
       padding: 0;
@@ -3739,6 +3743,13 @@
 
       .studio-app-shell {
         height: calc(100vh - var(--header-h) - var(--action-h) - var(--tabs-h) - 48px);
+        height: calc(100dvh - var(--header-h) - var(--action-h) - var(--tabs-h) - 48px);
+      }
+
+      .map-multilayer-popover {
+        left: 0;
+        right: auto;
+        max-width: calc(100vw - 32px);
       }
 
       .mobile-studio-dock {
@@ -4175,7 +4186,7 @@
       }
     }
   </style>
-<script src="js/cabecera_global.js"></script>
+  <script src="js/cabecera_global.js" defer></script>
   <link rel="stylesheet" href="css/apple-design.css">
 </head>
 
@@ -4254,8 +4265,13 @@
           <span class="mobile-nav-text">Laboratorio Sistémico</span>
           <span class="mobile-nav-arrow">→</span>
         </a>
-        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+        <a href="consultor.html" class="mobile-nav-link">
           <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">Consultor de Datos</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">06</span>
           <span class="mobile-nav-text">LinkedIn</span>
           <span class="mobile-nav-arrow">↗</span>
         </a>
@@ -7504,40 +7520,112 @@
         }
       }
 
+      function debounce(fn, waitMs = 120) {
+        let timerId = null;
+        return function (...args) {
+          if (timerId) clearTimeout(timerId);
+          timerId = setTimeout(() => {
+            timerId = null;
+            fn.apply(this, args);
+          }, waitMs);
+        };
+      }
+
+      function buildCatalogSearchText(it) {
+        if (!it || typeof it !== 'object') return '';
+        const info = typeof getAutoexplanatoryVarInfo === 'function'
+          ? getAutoexplanatoryVarInfo(it.id, it.name, it.unit)
+          : null;
+        const sgName = it.subGroup || (typeof resolveCatalogSubGroup === 'function' ? resolveCatalogSubGroup(it) : '');
+        const aliasesStr = Array.isArray(it.aliases) ? it.aliases.join(' ') : (it.aliases || '');
+        const text = [
+          it.id,
+          it.name,
+          it.shortName,
+          it.hubTitle,
+          it.hubId,
+          sgName,
+          it.unit,
+          it.sourceName,
+          info?.title,
+          info?.unitLabel,
+          info?.sourceTag,
+          info?.desc,
+          aliasesStr
+        ].filter(Boolean).map(normStr).join(' ');
+        it._searchText = text;
+        return text;
+      }
+
+      function matchesCatalogSearch(it, qNorm) {
+        if (!qNorm) return true;
+        const text = it._searchText || buildCatalogSearchText(it);
+        if (qNorm.length <= 3) {
+          const escaped = qNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const re = new RegExp(`(?:^|[^a-z0-9])${escaped}(?:$|[^a-z0-9])`);
+          return re.test(text);
+        }
+        return text.includes(qNorm);
+      }
+
+      function clearWidgetMapTimers(w) {
+        if (!w || !Array.isArray(w._mapTimers) || !w._mapTimers.length) return;
+        w._mapTimers.forEach(id => clearTimeout(id));
+        w._mapTimers.length = 0;
+      }
+
+      function scheduleMapInvalidate(w, mapRef, delayMs = 150) {
+        if (!w || !mapRef || typeof mapRef.invalidateSize !== 'function') return null;
+        if (!Array.isArray(w._mapTimers)) w._mapTimers = [];
+        const tid = setTimeout(() => {
+          w._mapTimers = (w._mapTimers || []).filter(id => id !== tid);
+          if (w.instance === mapRef && typeof mapRef.invalidateSize === 'function') {
+            try { mapRef.invalidateSize(); } catch (e) {}
+          }
+        }, delayMs);
+        w._mapTimers.push(tid);
+        return tid;
+      }
+
       async function loadDataLakeAndCatalog() {
         AppState.hubsData = window.AYSEN_HUBS_DATA || null;
         const items = [];
         const existingIds = new Set();
 
-        // 0. Cargar 16 Propiedades de Complejidad y Motor NL2Chart
-        try {
-          const respPresets = await fetch('data/cecan_16_presets_aysen.json');
-          if (respPresets.ok) {
-            const dataPresets = await respPresets.json();
-            AppState.cecanPresets = dataPresets.properties || [];
-          }
-        } catch (e) {
-          console.warn('[Laboratorio] No se pudo cargar 16 Propiedades de Complejidad:', e);
-        }
-
+        // 0. Cargar 16 Propiedades de Complejidad y Motor NL2Chart en paralelo
         let lexiconVars = [];
-        if (window.NL2ChartEngine && typeof window.NL2ChartEngine.init === 'function') {
-          try {
-            await window.NL2ChartEngine.init('data/nl_lexicon_aysen.json');
-            lexiconVars = window.NL2ChartEngine.getLexicon()?.variables || [];
-          } catch (e) {
-            console.warn('[Laboratorio] Error iniciando NL2ChartEngine:', e);
-          }
-        }
-        if (!lexiconVars.length) {
-          try {
-            const lexResp = await fetch('data/nl_lexicon_aysen.json');
-            if (lexResp.ok) {
-              const lexJson = await lexResp.json();
-              lexiconVars = lexJson.variables || [];
+        await Promise.all([
+          (async () => {
+            try {
+              const respPresets = await fetch('data/cecan_16_presets_aysen.json');
+              if (respPresets.ok) {
+                const dataPresets = await respPresets.json();
+                AppState.cecanPresets = dataPresets.properties || [];
+              }
+            } catch (e) {
+              console.warn('[Laboratorio] No se pudo cargar 16 Propiedades de Complejidad:', e);
             }
-          } catch (e) {}
-        }
+          })(),
+          (async () => {
+            if (window.NL2ChartEngine && typeof window.NL2ChartEngine.init === 'function') {
+              try {
+                await window.NL2ChartEngine.init('data/nl_lexicon_aysen.json');
+                lexiconVars = window.NL2ChartEngine.getLexicon()?.variables || [];
+              } catch (e) {
+                console.warn('[Laboratorio] Error iniciando NL2ChartEngine:', e);
+              }
+            }
+            if (!lexiconVars.length) {
+              try {
+                const lexResp = await fetch('data/nl_lexicon_aysen.json');
+                if (lexResp.ok) {
+                  const lexJson = await lexResp.json();
+                  lexiconVars = lexJson.variables || [];
+                }
+              } catch (e) {}
+            }
+          })()
+        ]);
 
         // 1. Nodos Satélites de window.AYSEN_HUBS_DATA (registrados como alias de búsqueda y soporte de enlaces)
         if (AppState.hubsData && Array.isArray(AppState.hubsData.nodos)) {
@@ -9028,6 +9116,9 @@
         }
 
         if (typeof normalizeCatalogItemsTaxonomy === 'function') normalizeCatalogItemsTaxonomy(items);
+        if (typeof buildCatalogSearchText === 'function') {
+          items.forEach(buildCatalogSearchText);
+        }
         AppState.catalogItems = items;
         renderSidebarCatalog();
       }
@@ -9093,23 +9184,7 @@
             return false;
           }
           if (!q) return true;
-          const info = getAutoexplanatoryVarInfo(item.id, item.name, item.unit);
-          const aliasesStr = Array.isArray(item.aliases) ? item.aliases.join(' ') : (item.aliases || '');
-          const searchTarget = [
-            item.id,
-            item.name,
-            item.shortName,
-            item.hubTitle,
-            item.subGroup,
-            item.unit,
-            item.sourceName,
-            info?.title,
-            info?.unitLabel,
-            info?.sourceTag,
-            info?.desc,
-            aliasesStr
-          ].filter(Boolean).map(normStr).join(' ');
-          return searchTarget.includes(q);
+          return matchesCatalogSearch(item, q);
         });
 
         const groups = {};
@@ -9467,6 +9542,7 @@
             AppState.panMoved = false;
             AppState.pointerStart = { x: e.clientX, y: e.clientY };
             AppState.panStart = { x: e.clientX - AppState.transform.x, y: e.clientY - AppState.transform.y };
+            viewport._cachedRect = viewport.getBoundingClientRect();
             viewport.classList.add('panning');
             deselectActiveCard();
             closeContextMenu();
@@ -9476,6 +9552,33 @@
         viewport.addEventListener('pointerdown', (e) => {
           if (e.target.closest('#canvaFloatingToolbar, #smartPopover, .connection-action-popover')) return;
         });
+
+        let panRafId = null;
+        let panPending = false;
+        const flushPanFrame = () => {
+          applyCanvasTransform();
+          updateFloatingToolbarPosition();
+          panPending = false;
+          panRafId = null;
+        };
+        const schedulePanFrame = () => {
+          if (panPending) return;
+          panPending = true;
+          panRafId = requestAnimationFrame(flushPanFrame);
+        };
+
+        if (!window._labResizeCacheBound) {
+          window.addEventListener('resize', () => {
+            const vp = document.getElementById('panelLienzo');
+            if (vp) vp._cachedRect = null;
+            const tb = document.getElementById('canvaFloatingToolbar');
+            if (tb) {
+              tb._cachedW = 0;
+              tb._cachedH = 0;
+            }
+          }, { passive: true });
+          window._labResizeCacheBound = true;
+        }
 
         window.addEventListener('mousemove', (e) => {
           if (AppState.isConnecting) {
@@ -9488,8 +9591,7 @@
             }
             AppState.transform.x = e.clientX - AppState.panStart.x;
             AppState.transform.y = e.clientY - AppState.panStart.y;
-            applyCanvasTransform();
-            updateFloatingToolbarPosition();
+            schedulePanFrame();
           }
         });
 
@@ -9498,7 +9600,13 @@
             finishConnectingWire(e.clientX, e.clientY);
           }
           if (AppState.isPanning) {
+            if (panRafId) {
+              cancelAnimationFrame(panRafId);
+              panRafId = null;
+            }
+            if (panPending) flushPanFrame();
             AppState.isPanning = false;
+            viewport._cachedRect = null;
             viewport.classList.remove('panning');
             setTimeout(() => {
               AppState.panMoved = false;
@@ -9543,6 +9651,7 @@
               AppState.panMoved = false;
               AppState.pointerStart = { x: touch.clientX, y: touch.clientY };
               AppState.panStart = { x: touch.clientX - AppState.transform.x, y: touch.clientY - AppState.transform.y };
+              viewport._cachedRect = viewport.getBoundingClientRect();
               viewport.classList.add('panning');
               deselectActiveCard();
               closeContextMenu();
@@ -9553,6 +9662,7 @@
             const t2 = e.touches[1];
             touchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
             initialTouchScale = AppState.transform.scale;
+            viewport._cachedRect = viewport.getBoundingClientRect();
           }
         }, { passive: false });
 
@@ -9561,8 +9671,7 @@
             const touch = e.touches[0];
             AppState.transform.x = touch.clientX - AppState.panStart.x;
             AppState.transform.y = touch.clientY - AppState.panStart.y;
-            applyCanvasTransform();
-            updateFloatingToolbarPosition();
+            schedulePanFrame();
           } else if (e.touches.length === 2 && touchStartDist > 0) {
             if (e.cancelable) e.preventDefault();
             const t1 = e.touches[0];
@@ -9570,18 +9679,24 @@
             const currentDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
             const factor = currentDist / touchStartDist;
             AppState.transform.scale = Math.min(Math.max(initialTouchScale * factor, 0.4), 2.2);
-            applyCanvasTransform();
-            updateFloatingToolbarPosition();
+            schedulePanFrame();
           }
         }, { passive: false });
 
         window.addEventListener('touchend', (e) => {
-          if (AppState.isPanning) {
+          if (AppState.isPanning || panPending) {
+            if (panRafId) {
+              cancelAnimationFrame(panRafId);
+              panRafId = null;
+            }
+            if (panPending) flushPanFrame();
             AppState.isPanning = false;
+            viewport._cachedRect = null;
             viewport.classList.remove('panning');
           }
           if (e.touches.length < 2) {
             touchStartDist = 0;
+            if (!AppState.isPanning) viewport._cachedRect = null;
           }
         });
 
@@ -9692,7 +9807,7 @@
         }
         AppState.widgets.forEach(w => {
           if (w.type === 'map' && w.instance && typeof w.instance.invalidateSize === 'function') {
-            setTimeout(() => w.instance.invalidateSize(), 120);
+            scheduleMapInvalidate(w, w.instance, 120);
           }
         });
         setTimeout(() => {
@@ -9819,13 +9934,22 @@
           bufferRadiusM: Number(config.bufferRadiusM || 25000),
           layers: config.layers || [],
           customChartSpec: config.customChartSpec || null,
+          presetId: config.presetId || null,
+          presetFormatType: config.presetFormatType || null,
+          isPerceptionMirror: Boolean(config.isPerceptionMirror),
+          sampleContract: config.sampleContract ? { ...config.sampleContract } : null,
+          barometroQuestion: config.barometroQuestion || null,
+          structuralVariable: config.structuralVariable || '',
+          mirrorSeries: config.mirrorSeries || null,
           instance: null,
           resizeObserver: null
         };
 
         AppState.widgets.push(widget);
         syncHeroVisibility();
-        renderWidgetCardDOM(widget);
+        if (!config.skipRender) {
+          renderWidgetCardDOM(widget);
+        }
         selectActiveCard(widget.id);
         bringWidgetToFront(widget.id);
         renderWindowTabs();
@@ -9941,7 +10065,7 @@
         return type === 'map' ? 'Mapa Territorial' : (type === 'kpi' ? 'Indicador Consolidado' : 'Tabla de Datos');
       }
 
-      function renderWidgetCardDOM(w) {
+      function renderWidgetCardDOM(w, opts = {}) {
         syncHeroVisibility();
 
         const vX = w.varX ? (AppState.catalogItems.find(v => v.id === w.varX) || AppState.catalogItems[0]) : null;
@@ -10044,7 +10168,6 @@
                 e.stopPropagation();
                 widget.timeWindow = btn.getAttribute('data-window');
                 renderWidgetCardDOM(widget);
-                renderWidgetVisual(widget);
                 autoSave();
               });
               btn._hasTimeClickListener = true;
@@ -10260,11 +10383,7 @@
               toggleMaximizeWidget(widget.id);
               expBtn.classList.toggle('active', !!widget.maximized);
               expBtn.textContent = widget.maximized ? '[-] Reducir' : '[+] Ampliar';
-              setTimeout(() => {
-                if (widget.instance && typeof widget.instance.invalidateSize === 'function') {
-                  widget.instance.invalidateSize();
-                }
-              }, 160);
+              scheduleMapInvalidate(widget, widget.instance, 160);
             });
             expBtn._hasExpandListener = true;
           }
@@ -10283,7 +10402,7 @@
               <span>ME ±<strong>${sc.margin_error_pct}%</strong></span>
               <span>|</span>
               <span>${semDot} ${semLbl}</span>
-              <button type="button" class="btn-toggle-sociodemo" onclick="openSociodemoDrawer(${w.id})">Filtros Demográficos ▾</button>
+              <button type="button" class="btn-toggle-sociodemo">Filtros Demográficos ▾</button>
             </div>
           `;
         }
@@ -10384,10 +10503,12 @@
             mapBar.remove();
           }
 
-          try {
-            renderWidgetVisual(w);
-          } catch (errVis) {
-            console.error('[Laboratorio] Error renderizando visual in-place:', errVis);
+          if (!opts || !opts.skipVisual) {
+            try {
+              renderWidgetVisual(w);
+            } catch (errVis) {
+              console.error('[Laboratorio] Error renderizando visual in-place:', errVis);
+            }
           }
           return;
         }
@@ -10476,10 +10597,12 @@
         bindCardFooterActions(card, w);
         bindTimeWindowEvents(card, w);
         bindMapLayerControlEvents(card, w);
-        try {
-          renderWidgetVisual(w);
-        } catch (errVis) {
-          console.error('[Laboratorio] Error renderizando visual:', errVis);
+        if (!opts || !opts.skipVisual) {
+          try {
+            renderWidgetVisual(w);
+          } catch (errVis) {
+            console.error('[Laboratorio] Error renderizando visual:', errVis);
+          }
         }
 
         // ResizeObserver para adaptación perfecta de gráficos al tamaño de ventana
@@ -10526,6 +10649,7 @@
         let touchStartCardX = 0, touchStartCardY = 0;
         let connectionsPending = false;
         let connectionsRafId = null;
+        let dragSiblings = null;
         let dragHistoryPushed = false;
         let activeDragPointerId = null;
 
@@ -10535,7 +10659,11 @@
           if (e.button !== undefined && e.button !== 0) return;
 
           isDragging = true;
+          AppState._isCardDragging = true;
           activeDragPointerId = e.pointerId;
+          const vp = document.getElementById('panelLienzo');
+          if (vp) vp._cachedRect = vp.getBoundingClientRect();
+          dragSiblings = AppState.widgets.filter(other => other.id !== w.id && !other.minimized);
           dragOffset.x = e.clientX - w.x * AppState.transform.scale;
           dragOffset.y = e.clientY - w.y * AppState.transform.scale;
           startCardX = w.x;
@@ -10558,25 +10686,27 @@
           const currentWorldY = Math.round((e.clientY - dragOffset.y) / AppState.transform.scale);
           w.x = currentWorldX;
           w.y = Math.max(92, currentWorldY);
-          const dx = currentWorldX - startCardX;
-          const dy = w.y - startCardY;
-          card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
-          updateFloatingToolbarPosition();
           if (!connectionsPending) {
             connectionsPending = true;
             connectionsRafId = requestAnimationFrame(() => {
+              const dx = w.x - startCardX;
+              const dy = w.y - startCardY;
+              card.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+              updateFloatingToolbarPosition();
               updateConnections();
+              checkCollisionWithOtherCards(w, dragSiblings);
               connectionsPending = false;
               connectionsRafId = null;
             });
           }
-          checkCollisionWithOtherCards(w);
         };
 
         const onHeaderPointerUp = (e) => {
           if (!isDragging) return;
           isDragging = false;
+          AppState._isCardDragging = false;
           dragHistoryPushed = false;
+          dragSiblings = null;
           if (e && e.pointerId !== undefined && typeof header.releasePointerCapture === 'function') {
             try {
               if (header.hasPointerCapture && header.hasPointerCapture(e.pointerId)) {
@@ -10590,11 +10720,14 @@
             connectionsRafId = null;
           }
           connectionsPending = false;
+          const vp = document.getElementById('panelLienzo');
+          if (vp) vp._cachedRect = null;
           w.y = Math.max(92, w.y);
           card.style.transform = '';
           card.style.left = `${w.x}px`;
           card.style.top = `${w.y}px`;
           updateConnections();
+          updateFloatingToolbarPosition();
           handleCardDropCollision(w);
           autoSave();
         };
@@ -10690,10 +10823,14 @@
         }
 
         w._cleanup = () => {
+          clearWidgetMapTimers(w);
           if (connectionsRafId) {
             cancelAnimationFrame(connectionsRafId);
             connectionsRafId = null;
           }
+          connectionsPending = false;
+          dragSiblings = null;
+          AppState._isCardDragging = false;
           if (resizeRafId) {
             cancelAnimationFrame(resizeRafId);
             resizeRafId = null;
@@ -11264,10 +11401,20 @@
           spatialLayer: w.spatialLayer || 'auto',
           showBuffers: Boolean(w.showBuffers),
           bufferRadiusM: Number(w.bufferRadiusM || 25000),
+          layers: Array.isArray(w.layers) ? [...w.layers] : [],
+          activeOverlays: Array.isArray(w.activeOverlays) ? [...w.activeOverlays] : undefined,
+          disabledAutoOverlays: Array.isArray(w.disabledAutoOverlays) ? [...w.disabledAutoOverlays] : undefined,
+          aquaFilter: w.aquaFilter || undefined,
           customChartSpec: w.customChartSpec || null,
+          presetId: w.presetId || null,
+          presetFormatType: w.presetFormatType || null,
           isPerceptionMirror: Boolean(w.isPerceptionMirror),
-          sampleContract: w.sampleContract || null,
+          sampleContract: w.sampleContract ? { ...w.sampleContract } : null,
           barometroQuestion: w.barometroQuestion || null,
+          structuralVariable: w.structuralVariable || '',
+          mirrorSeries: w.mirrorSeries || null,
+          activeSociodemoFilter: w.activeSociodemoFilter ? { ...w.activeSociodemoFilter } : undefined,
+          activeSociodemoInterregional: w.activeSociodemoInterregional || undefined,
           minimized: w.minimized,
           maximized: w.maximized,
           prevBounds: w.prevBounds,
@@ -11299,6 +11446,7 @@
 
         // 2. Limpiar DOM de ventanas y reflexiones actuales
         AppState.widgets.forEach(w => {
+          if (typeof w._cleanup === 'function') w._cleanup();
           if (w.resizeObserver) w.resizeObserver.disconnect();
           if (w.instance) {
             if (typeof w.instance.destroy === 'function') w.instance.destroy();
@@ -12005,6 +12153,13 @@
 
         document.querySelectorAll('.btn-card-format').forEach(b => b.classList.remove('active'));
         tb.classList.add('active');
+        if (!tb._cachedW || !tb._cachedH) {
+          const tbRectNow = tb.getBoundingClientRect();
+          if (tbRectNow.width > 0) {
+            tb._cachedW = tbRectNow.width;
+            tb._cachedH = tbRectNow.height;
+          }
+        }
         const formatBtn = document.getElementById(`btnFormatCard-${widgetId}`);
         if (formatBtn) formatBtn.classList.add('active');
 
@@ -12107,9 +12262,15 @@
         tb.style.position = 'fixed';
         tb.style.zIndex = '99990';
 
-        const tbRect = tb.getBoundingClientRect();
-        const tbW = tbRect.width || Math.min(720, window.innerWidth - 24);
-        const tbH = tbRect.height || 42;
+        if (!tb._cachedW || !tb._cachedH) {
+          const tbRect = tb.getBoundingClientRect();
+          if (tbRect.width > 0) {
+            tb._cachedW = tbRect.width;
+            tb._cachedH = tbRect.height;
+          }
+        }
+        const tbW = tb._cachedW || Math.min(720, window.innerWidth - 24);
+        const tbH = tb._cachedH || 42;
         const minTop = 62;
         const maxLeft = Math.max(12, window.innerWidth - tbW - 12);
         const maxTop = Math.max(minTop, window.innerHeight - tbH - 16);
@@ -12126,16 +12287,29 @@
           return;
         }
 
-        const cardEl = document.getElementById(`widget-card-${w.id}`);
         let cardLeft = 100;
         let cardTop = 120;
         let cardBottom = 480;
 
-        if (cardEl) {
-          const cRect = cardEl.getBoundingClientRect();
-          cardLeft = cRect.left;
-          cardTop = cRect.top;
-          cardBottom = cRect.bottom;
+        if (!isStackedLayout() && AppState.dashboardViewMode !== 'grid') {
+          const viewport = document.getElementById('panelLienzo');
+          const vpRect = (AppState.isPanning || AppState._isCardDragging)
+            ? (viewport && (viewport._cachedRect || (viewport._cachedRect = viewport.getBoundingClientRect())))
+            : (viewport && viewport.getBoundingClientRect());
+          if (vpRect) {
+            const sc = AppState.transform.scale || 1;
+            cardLeft = vpRect.left + AppState.transform.x + w.x * sc;
+            cardTop = vpRect.top + AppState.transform.y + w.y * sc;
+            cardBottom = cardTop + w.h * sc;
+          }
+        } else {
+          const cardEl = document.getElementById(`widget-card-${w.id}`);
+          if (cardEl) {
+            const cRect = cardEl.getBoundingClientRect();
+            cardLeft = cRect.left;
+            cardTop = cRect.top;
+            cardBottom = cRect.bottom;
+          }
         }
 
         const posX = Math.max(12, Math.min(cardLeft, maxLeft));
@@ -12184,6 +12358,8 @@
           panelLienzoScroll._hasToolbarScrollSync = true;
         }
 
+        const skipVisOpts = { skipVisual: true };
+
         // 1. Tipos de visualización
         const btnBar = document.getElementById('tbBtnBar');
         if (btnBar) {
@@ -12194,7 +12370,7 @@
               pushHistory('cambiar a barras');
               w.type = 'chart';
               w.chartType = 'bar';
-              renderWidgetCardDOM(w);
+              renderWidgetCardDOM(w, skipVisOpts);
               renderWidgetVisual(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
@@ -12211,7 +12387,7 @@
               pushHistory('cambiar a líneas');
               w.type = 'chart';
               w.chartType = 'line';
-              renderWidgetCardDOM(w);
+              renderWidgetCardDOM(w, skipVisOpts);
               renderWidgetVisual(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
@@ -12228,7 +12404,7 @@
               pushHistory('cambiar a dispersión');
               w.type = 'chart';
               w.chartType = 'scatter';
-              renderWidgetCardDOM(w);
+              renderWidgetCardDOM(w, skipVisOpts);
               renderWidgetVisual(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
               if (!w.varY) {
@@ -12248,7 +12424,7 @@
             if (w) {
               pushHistory('cambiar a mapa');
               w.type = 'map';
-              renderWidgetCardDOM(w);
+              renderWidgetCardDOM(w, skipVisOpts);
               renderWidgetVisual(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
@@ -12264,7 +12440,7 @@
             if (w) {
               pushHistory('cambiar a tabla');
               w.type = 'table';
-              renderWidgetCardDOM(w);
+              renderWidgetCardDOM(w, skipVisOpts);
               renderWidgetVisual(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
@@ -12280,7 +12456,7 @@
             if (w) {
               pushHistory('cambiar a kpi');
               w.type = 'kpi';
-              renderWidgetCardDOM(w);
+              renderWidgetCardDOM(w, skipVisOpts);
               renderWidgetVisual(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
               autoSave();
@@ -12301,7 +12477,7 @@
               w.customChartSpec.datasets[0].borderColor = color;
               w.customChartSpec.datasets[0].backgroundColor = color;
             }
-            renderWidgetCardDOM(w);
+            renderWidgetCardDOM(w, skipVisOpts);
             renderWidgetVisual(w);
             renderWindowTabs();
             showFloatingToolbarForCard(w.id, { forceShow: true });
@@ -12583,24 +12759,16 @@
         if (searchInput) {
           searchInput.value = '';
           if (!searchInput._boundFilter) {
-            searchInput.addEventListener('input', () => {
+            searchInput.addEventListener('input', debounce(() => {
               const targetW = popover._targetWidget;
               const allItems = popover._compatibleItems || [];
               const q = normStr(searchInput.value || '');
-              const filtered = !q ? allItems : allItems.filter(it => {
-                const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
-                const sgName = it.subGroup || resolveCatalogSubGroup(it);
-                const haystack = [
-                  it.id, it.name, it.shortName, it.hubTitle, it.hubId, sgName, it.sourceName, it.unit,
-                  info?.title, info?.desc, info?.sourceTag
-                ].filter(Boolean).map(normStr).join(' ');
-                return haystack.includes(q);
-              });
+              const filtered = !q ? allItems : allItems.filter(it => matchesCatalogSearch(it, q));
               if (countEl) {
                 countEl.textContent = q ? `${filtered.length} de ${allItems.length}` : `${allItems.length} variables`;
               }
               renderPopoverList(targetW, filtered);
-            });
+            }, 120));
             searchInput._boundFilter = true;
           }
         }
@@ -12851,12 +13019,11 @@
         autoSave();
       }
 
-      function checkCollisionWithOtherCards(sourceW) {
-        document.querySelectorAll('.studio-widget-card').forEach(c => {
-          c.classList.remove('drag-target-hover');
-        });
+      let _lastHoverTargetEl = null;
 
-        const target = AppState.widgets.find(w => {
+      function checkCollisionWithOtherCards(sourceW, candidateWidgets = null) {
+        const list = Array.isArray(candidateWidgets) ? candidateWidgets : AppState.widgets;
+        const target = list.find(w => {
           if (w.id === sourceW.id || w.minimized) return false;
           return (
             sourceW.x < w.x + w.w &&
@@ -12866,14 +13033,22 @@
           );
         });
 
-        if (target) {
-          const tCard = document.getElementById(`widget-card-${target.id}`);
-          if (tCard) tCard.classList.add('drag-target-hover');
+        const nextEl = target ? document.getElementById(`widget-card-${target.id}`) : null;
+        if (_lastHoverTargetEl && _lastHoverTargetEl !== nextEl) {
+          _lastHoverTargetEl.classList.remove('drag-target-hover');
         }
+        if (nextEl && nextEl !== _lastHoverTargetEl) {
+          nextEl.classList.add('drag-target-hover');
+        }
+        _lastHoverTargetEl = nextEl;
       }
 
       function handleCardDropCollision(sourceW) {
-        document.querySelectorAll('.studio-widget-card').forEach(c => {
+        if (_lastHoverTargetEl) {
+          _lastHoverTargetEl.classList.remove('drag-target-hover');
+          _lastHoverTargetEl = null;
+        }
+        document.querySelectorAll('.studio-widget-card.drag-target-hover').forEach(c => {
           c.classList.remove('drag-target-hover');
         });
 
@@ -12999,8 +13174,13 @@
         const sliceName = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Región de Aysén';
         const coyTag = (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique) ? ' (sin Coyhaique)' : '';
 
+        const isConstantStructX = payload.mode === 'bivariate' && stY && (
+          stX.std === 0 || (payload.dim === 'barometro_estrato' && Math.abs(stX.maxVal - stX.minVal) < 1e-9)
+        );
         const pt1 = (payload.mode === 'bivariate' && stY)
-          ? `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): en ${payload.nameX || 'Eje X'}, lidera ${stX.maxLbl} (${stX.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}, prom. ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stX.minLbl} (${stX.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}); en ${payload.nameY || 'Eje Y'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`
+          ? (isConstantStructX
+            ? `Liderazgo y rezago (${n} estratos · ${sliceName}${coyTag}): ${payload.nameX || 'Referencia estructural'} presenta promedio estructural regional homogéneo de ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}; en ${payload.nameY || 'Percepción'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`
+            : `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): en ${payload.nameX || 'Eje X'}, lidera ${stX.maxLbl} (${stX.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}, prom. ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stX.minLbl} (${stX.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}); en ${payload.nameY || 'Eje Y'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`)
           : `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): lidera ${primaryStat.maxLbl} con ${primaryStat.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} vs. promedio ${primaryStat.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}; el mayor rezago recae en ${primaryStat.minLbl} (${primaryStat.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}).`;
         const pt2 = pearsonR !== null
           ? `Correlación y anomalías: r = ${pearsonR.toFixed(2)} (R² = ${r2.toFixed(2)}, ajuste ${r2 >= 0.5 ? 'fuerte' : (r2 >= 0.25 ? 'moderado' : 'débil')}); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`
@@ -14019,6 +14199,7 @@
         const container = document.getElementById(`display-body-${w.id}`);
         if (!container) return;
 
+        clearWidgetMapTimers(w);
         if (w.instance) {
           if (typeof w.instance.destroy === 'function') w.instance.destroy();
           if (typeof w.instance.remove === 'function') w.instance.remove();
@@ -14054,22 +14235,7 @@
             const filtered = AppState.catalogItems.filter(it => {
               if (currentPillDim !== 'all' && it.dim !== currentPillDim) return false;
               if (!q) return true;
-              const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
-              const aliasesStr = Array.isArray(it.aliases) ? it.aliases.join(' ') : (it.aliases || '');
-              const searchTarget = [
-                it.id,
-                it.name,
-                it.shortName,
-                it.hubTitle,
-                it.unit,
-                it.sourceName,
-                info?.title,
-                info?.unitLabel,
-                info?.sourceTag,
-                info?.desc,
-                aliasesStr
-              ].filter(Boolean).map(normStr).join(' ');
-              return searchTarget.includes(q);
+              return matchesCatalogSearch(it, q);
             }).slice(0, 10);
 
             listEl.innerHTML = filtered.map(it => {
@@ -14117,7 +14283,7 @@
 
           renderEmptyList();
           if (searchInput) {
-            searchInput.addEventListener('input', (e) => renderEmptyList(e.target.value));
+            searchInput.addEventListener('input', debounce((e) => renderEmptyList(e.target.value), 120));
           }
 
           if (dropBox) {
@@ -14631,7 +14797,7 @@
             const sexo = af.sexo || document.getElementById('selectBaroSexo')?.value || 'todos';
             const edad = af.edad || document.getElementById('selectBaroEdad')?.value || 'todos';
             const macro = af.macro || document.getElementById('selectBaroMacro')?.value || 'todas';
-            const interreg = document.getElementById('switchBaroInterregional')?.value || 'aysen_solo';
+            const interreg = w.activeSociodemoInterregional || document.getElementById('switchBaroInterregional')?.value || 'aysen_solo';
 
             let activeDimKey = 'por_macrozona';
             let activeDimTitle = 'Macrozonas de Aysén';
@@ -14685,15 +14851,24 @@
             const baroSampleME = rawKeys.map(k => Number(dimObj[k]?.me_95 ?? dimObj[k]?.me ?? 0));
             const baroSemaforos = rawKeys.map(k => dimObj[k]?.semaforo ?? dimObj[k]?.sem ?? 'verde');
 
-            if (interreg === 'comparativa') {
+            if (interreg === 'los_lagos' || interreg === 'nacional' || interreg === 'comparativa') {
               const totalPos = baroPositiveVals.length
                 ? Number((baroPositiveVals.reduce((a, b) => a + b, 0) / baroPositiveVals.length).toFixed(1))
                 : 54.0;
-              baroLabels.push('Región de Los Lagos (Ref.)', 'Promedio Nacional (Ref.)');
-              baroPositiveVals.push(Number(Math.max(15, totalPos - 6.4).toFixed(1)), Number(Math.max(15, totalPos - 9.8).toFixed(1)));
-              baroSampleN.push(600, 1200);
-              baroSampleME.push(4.0, 2.8);
-              baroSemaforos.push('verde', 'verde');
+              if (interreg === 'los_lagos' || interreg === 'comparativa') {
+                baroLabels.push('Región de Los Lagos (Ref.)');
+                baroPositiveVals.push(Number(Math.max(15, totalPos - 6.4).toFixed(1)));
+                baroSampleN.push(600);
+                baroSampleME.push(4.0);
+                baroSemaforos.push('verde');
+              }
+              if (interreg === 'nacional' || interreg === 'comparativa') {
+                baroLabels.push('Promedio Nacional (Ref.)');
+                baroPositiveVals.push(Number(Math.max(15, totalPos - 9.8).toFixed(1)));
+                baroSampleN.push(1200);
+                baroSampleME.push(2.8);
+                baroSemaforos.push('verde');
+              }
             }
 
             const barColors = rawKeys.map((k, idx) => {
@@ -15040,6 +15215,7 @@
             center: [-46.1, -72.6],
             zoom: 6.5,
             zoomControl: false,
+            preferCanvas: true,
             scrollWheelZoom: Boolean(w.maximized)
           });
           L.control.zoom({ position: 'topright' }).addTo(map);
@@ -15068,6 +15244,7 @@
           map.getPane('buffersPane').style.zIndex = '550';
           map.createPane('nodesPane');
           map.getPane('nodesPane').style.zIndex = '650';
+          const nodesCanvasRenderer = L.canvas({ pane: 'nodesPane', padding: 0.5 });
 
           // Evitar que al cerrar popups (x) el evento burbujee hacia la tarjeta o el lienzo 2D
           map.on('popupopen', (popEv) => {
@@ -15437,41 +15614,14 @@
                 ? (isPadronSnaspe ? 1.9 : 1.3)
                 : (isComunaSelected ? 2.2 : 1.4);
 
-              const valComunaX = getComunaVal(valuesMapX, n.nombre_comuna);
               const nodeLayerTitle = (SPATIAL_LAYERS_META[n.layerKey] || SPATIAL_LAYERS_META[activeLayerKey] || {}).label || activeLayerKey;
               const nodeTitle = n.nombre || n.id || 'Nodo Territorial';
               const nodeTipo = n.tipo || nodeLayerTitle;
               const nodeComuna = n.nombre_comuna || 'Región de Aysén';
-              const nodeLocalidad = n.localidad ? `${n.localidad} · ` : '';
-              const nodeFuente = n.fuente || n.titular || 'Catastro Oficial Georreferenciado';
-              const estadoVal = n.estado_operativo || n.estado || '';
-              const estadoHtml = estadoVal ? `<br><span>Estado: <strong>${estadoVal}</strong></span>` : '';
-              const snaspeRowHtml = isPadronNode
-                ? `<br><span>SNASPE: <strong style="color:${n.en_snaspe ? '#b91c1c' : '#047857'};">${n.en_snaspe ? `Superposición · ${n.unidad_snaspe}` : 'Fuera de SNASPE'}</strong></span>`
-                : '';
-              const icaRowHtml = (isPadronNode && n.antibioticos_ica)
-                ? `<br><span>ICA Comunal Antibióticos: <strong>${Number(n.antibioticos_ica).toLocaleString('es-CL')} g/ton</strong></span>`
-                : '';
-              const magHtml = (n.magnitudeValue !== undefined && n.magnitudeValue !== null)
-                ? `<strong>${n.magnitudeLabel || 'Capacidad / Magnitud'}:</strong> ${Number(n.magnitudeValue).toLocaleString('es-CL')} ${n.magnitudeUnit || ''}<br>`
-                : '';
-
-              let bufferPopupHtml = '';
-              if (w.showBuffers && allowGeometricBuffer) {
-                const nearbyNodes = renderedPointNodes.filter(other => other !== n && haversineDistanceKm(n.lat, n.lon, other.lat, other.lon) <= bufferRadiusKm);
-                const nearbyCabeceras = Object.entries(COMUNA_COORDS)
-                  .filter(([, coords]) => haversineDistanceKm(n.lat, n.lon, coords[0], coords[1]) <= bufferRadiusKm)
-                  .map(([cName]) => cName);
-                const previewNames = nearbyNodes.slice(0, 3).map(o => o.nombre || o.id).join(', ');
-                bufferPopupHtml = `
-                  <div style="background: #fef2f2; border-left: 2px solid #dc2626; padding: 4px 6px; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.64rem; color: #7f1d1d;">
-                    <strong>Radio ${bufferRadiusKm} km:</strong> ${nearbyNodes.length} nodo(s) cercanos${nearbyCabeceras.length ? ' · Cabeceras: ' + nearbyCabeceras.join(', ') : ''}${previewNames ? '<br>Cercanos: ' + previewNames : ''}
-                  </div>
-                `;
-              }
 
               const marker = L.circleMarker([n.lat, n.lon], {
                 pane: 'nodesPane',
+                renderer: nodesCanvasRenderer,
                 radius: isComunaSelected ? ptRadius + 2.0 : ptRadius,
                 fillColor: fillHex,
                 color: strokeHex,
@@ -15482,35 +15632,66 @@
 
               mapCircleMarkers.push({ marker, ptRadius, comuna: n.nombre_comuna, isPadronNode, fillOp, strokeW });
 
-              marker.bindTooltip(`
+              marker.bindTooltip(() => `
                 <div style="font-family: var(--font-sans); line-height: 1.3;">
                   <strong style="font-size: 0.78rem; color: #00357f;">${nodeTitle}</strong><br>
                   <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #4a4745;">${nodeTipo} · ${nodeComuna}${isPadronSnaspe ? ' · EN SNASPE' : ''}</span>
                 </div>
               `, { direction: 'top', opacity: 0.96 });
 
-              marker.bindPopup(`
-                <div style="font-family: var(--font-sans); padding: 2px; min-width: 228px; max-width: 305px;">
-                  <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${isPadronSnaspe ? '#dc2626' : (n.color || '#00357f')}; font-weight: 700;">${nodeTipo}</div>
-                  <strong style="font-family: var(--font-serif); color: #1c1b1b; font-size: 0.92rem; display: block; margin: 2px 0;">${nodeTitle}</strong>
-                  <div style="font-size: 0.69rem; color: #4a4745; margin-bottom: 4px;">
-                    <strong>Comuna:</strong> ${nodeLocalidad}${nodeComuna}<br>
-                    <span style="font-family: var(--font-mono); font-size: 0.62rem;">Coord: (${Number(n.lat).toFixed(4)}, ${Number(n.lon).toFixed(4)})</span>
-                    ${estadoHtml}
-                    ${snaspeRowHtml}
-                    ${icaRowHtml}
+              marker.bindPopup(() => {
+                const valComunaX = getComunaVal(valuesMapX, n.nombre_comuna);
+                const nodeLocalidad = n.localidad ? `${n.localidad} · ` : '';
+                const nodeFuente = n.fuente || n.titular || 'Catastro Oficial Georreferenciado';
+                const estadoVal = n.estado_operativo || n.estado || '';
+                const estadoHtml = estadoVal ? `<br><span>Estado: <strong>${estadoVal}</strong></span>` : '';
+                const snaspeRowHtml = isPadronNode
+                  ? `<br><span>SNASPE: <strong style="color:${n.en_snaspe ? '#b91c1c' : '#047857'};">${n.en_snaspe ? `Superposición · ${n.unidad_snaspe}` : 'Fuera de SNASPE'}</strong></span>`
+                  : '';
+                const icaRowHtml = (isPadronNode && n.antibioticos_ica)
+                  ? `<br><span>ICA Comunal Antibióticos: <strong>${Number(n.antibioticos_ica).toLocaleString('es-CL')} g/ton</strong></span>`
+                  : '';
+                const magHtml = (n.magnitudeValue !== undefined && n.magnitudeValue !== null)
+                  ? `<strong>${n.magnitudeLabel || 'Capacidad / Magnitud'}:</strong> ${Number(n.magnitudeValue).toLocaleString('es-CL')} ${n.magnitudeUnit || ''}<br>`
+                  : '';
+
+                let bufferPopupHtml = '';
+                if (w.showBuffers && allowGeometricBuffer) {
+                  const nearbyNodes = renderedPointNodes.filter(other => other !== n && haversineDistanceKm(n.lat, n.lon, other.lat, other.lon) <= bufferRadiusKm);
+                  const nearbyCabeceras = Object.entries(COMUNA_COORDS)
+                    .filter(([, coords]) => haversineDistanceKm(n.lat, n.lon, coords[0], coords[1]) <= bufferRadiusKm)
+                    .map(([cName]) => cName);
+                  const previewNames = nearbyNodes.slice(0, 3).map(o => o.nombre || o.id).join(', ');
+                  bufferPopupHtml = `
+                    <div style="background: #fef2f2; border-left: 2px solid #dc2626; padding: 4px 6px; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.64rem; color: #7f1d1d;">
+                      <strong>Radio ${bufferRadiusKm} km:</strong> ${nearbyNodes.length} nodo(s) cercanos${nearbyCabeceras.length ? ' · Cabeceras: ' + nearbyCabeceras.join(', ') : ''}${previewNames ? '<br>Cercanos: ' + previewNames : ''}
+                    </div>
+                  `;
+                }
+
+                return `
+                  <div style="font-family: var(--font-sans); padding: 2px; min-width: 228px; max-width: 305px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.60rem; text-transform: uppercase; color: ${isPadronSnaspe ? '#dc2626' : (n.color || '#00357f')}; font-weight: 700;">${nodeTipo}</div>
+                    <strong style="font-family: var(--font-serif); color: #1c1b1b; font-size: 0.92rem; display: block; margin: 2px 0;">${nodeTitle}</strong>
+                    <div style="font-size: 0.69rem; color: #4a4745; margin-bottom: 4px;">
+                      <strong>Comuna:</strong> ${nodeLocalidad}${nodeComuna}<br>
+                      <span style="font-family: var(--font-mono); font-size: 0.62rem;">Coord: (${Number(n.lat).toFixed(4)}, ${Number(n.lon).toFixed(4)})</span>
+                      ${estadoHtml}
+                      ${snaspeRowHtml}
+                      ${icaRowHtml}
+                    </div>
+                    <div style="background: #f4efec; padding: 4px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 0.68rem; margin-bottom: 4px;">
+                      ${magHtml}
+                      <span>Coropleta Comunal [X]: <strong>${valComunaX.toLocaleString('es-CL')} ${choroUnit}</strong></span>
+                    </div>
+                    ${bufferPopupHtml}
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 0.64rem; color: #524f4b;">
+                      <span>Fuente: <strong>${nodeFuente}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Registro ↗</a></span>
+                      <button type="button" class="map-popup-filter-comuna-btn" data-comuna="${nodeComuna}" style="border: 1px solid rgba(0,53,127,0.3); background: #fff; color: #00357f; font-family: var(--font-mono); font-size: 0.60rem; padding: 1px 5px; border-radius: 2px; cursor: pointer;">Filtrar comuna</button>
+                    </div>
                   </div>
-                  <div style="background: #f4efec; padding: 4px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 0.68rem; margin-bottom: 4px;">
-                    ${magHtml}
-                    <span>Coropleta Comunal [X]: <strong>${valComunaX.toLocaleString('es-CL')} ${choroUnit}</strong></span>
-                  </div>
-                  ${bufferPopupHtml}
-                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 0.64rem; color: #524f4b;">
-                    <span>Fuente: <strong>${nodeFuente}</strong> · <a href="${n.sourceUrl || '#'}" target="_blank" rel="noopener" style="color: #00357f; font-weight: 600;">Registro ↗</a></span>
-                    <button type="button" class="map-popup-filter-comuna-btn" data-comuna="${nodeComuna}" style="border: 1px solid rgba(0,53,127,0.3); background: #fff; color: #00357f; font-family: var(--font-mono); font-size: 0.60rem; padding: 1px 5px; border-radius: 2px; cursor: pointer;">Filtrar comuna</button>
-                  </div>
-                </div>
-              `, { maxWidth: 320, autoPan: true, closeButton: true });
+                `;
+              }, { maxWidth: 320, autoPan: true, closeButton: true });
 
               marker.on('popupopen', (popEv) => {
                 const popEl = popEv && popEv.popup && popEv.popup.getElement ? popEv.popup.getElement() : null;
@@ -15613,7 +15794,7 @@
           container.appendChild(legendDiv);
 
           w.instance = map;
-          setTimeout(() => map.invalidateSize(), 150);
+          scheduleMapInvalidate(w, map, 150);
 
         } else if (w.type === 'table') {
           const labels = payload.labels || COMUNAS_ORDER;
@@ -15985,10 +16166,12 @@
         }
 
         const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
+        a.href = url;
         a.download = `aysen_cruce_${w.id}_${new Date().toISOString().slice(0, 10)}.csv`;
         a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
       }
 
       function exportPng(w) {
@@ -16270,11 +16453,11 @@
 
       let _hubGalleryUIInitialized = false;
       function initHubGalleryUI() {
-        enrichBarometroMicroCubosFromGallery();
-        renderHeroHubsLauncher();
-
         if (_hubGalleryUIInitialized) return;
         _hubGalleryUIInitialized = true;
+
+        enrichBarometroMicroCubosFromGallery();
+        renderHeroHubsLauncher();
 
         const btnOpen = document.getElementById('btnOpenHubGallery');
         const modal = document.getElementById('modalHubGallery');
@@ -16290,6 +16473,7 @@
         if (btnClose && modal) {
           btnClose.addEventListener('click', () => {
             modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
           });
         }
         if (btnLoadAll) {
@@ -16304,6 +16488,7 @@
         if (drawerClose && drawer) {
           drawerClose.addEventListener('click', () => {
             drawer.style.display = 'none';
+            drawer.setAttribute('aria-hidden', 'true');
           });
         }
 
@@ -16316,12 +16501,26 @@
           btnReset.addEventListener('click', resetSociodemoFilters);
         }
 
-        ['selectBaroEdu', 'selectBaroNse', 'selectBaroSexo', 'selectBaroEdad', 'selectBaroMacro', 'switchBaroInterregional'].forEach(id => {
+        const dimSelectIds = ['selectBaroEdu', 'selectBaroNse', 'selectBaroSexo', 'selectBaroEdad', 'selectBaroMacro'];
+        dimSelectIds.forEach(id => {
           const el = document.getElementById(id);
           if (el) {
-            el.addEventListener('change', updateBaroDrawerMetrics);
+            el.addEventListener('change', () => {
+              dimSelectIds.forEach(otherId => {
+                if (otherId !== id) {
+                  const otherEl = document.getElementById(otherId);
+                  if (otherEl) otherEl.value = otherId === 'selectBaroMacro' ? 'todas' : 'todos';
+                }
+              });
+              applySociodemoFilters();
+            });
           }
         });
+
+        const interregEl = document.getElementById('switchBaroInterregional');
+        if (interregEl) {
+          interregEl.addEventListener('change', applySociodemoFilters);
+        }
       }
 
       function openHubGallery(hubId = 'turismo') {
@@ -16332,6 +16531,7 @@
         renderHubGalleryTabs();
         renderHubPresetsGrid(activeHubGalleryId);
         modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
       }
 
       function renderHubGalleryTabs() {
@@ -16424,7 +16624,10 @@
               const pnum = btn.getAttribute('data-prop-num');
               applyCecanPreset(pnum);
               const modal = document.getElementById('modalHubGallery');
-              if (modal) modal.style.display = 'none';
+              if (modal) {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+              }
             });
           });
           return;
@@ -16479,17 +16682,33 @@
             const shouldAppend = AppState.widgets.length > 0;
             loadHubPresetById(pid, { append: shouldAppend });
             const modal = document.getElementById('modalHubGallery');
-            if (modal) modal.style.display = 'none';
+            if (modal) {
+              modal.style.display = 'none';
+              modal.setAttribute('aria-hidden', 'true');
+            }
           });
         });
       }
 
       function instantiatePresetWidget(p, bounds = { x: 80, y: 60, w: 580, h: 400 }, hubColor = '#00357f') {
         const cfg = p.config || {};
+        const isMirrorWidget = Boolean(p.is_perception_mirror || p.format_type === 'special' || cfg.mirror_series);
+        const mirrorExtras = {
+          presetId: p.preset_id,
+          presetFormatType: p.format_type,
+          isPerceptionMirror: isMirrorWidget,
+          sampleContract: isMirrorWidget
+            ? (cfg.sample_contract ? { ...cfg.sample_contract } : { active_n: 452, universe_N: 465, margin_error_pct: 4.6 })
+            : null,
+          barometroQuestion: isMirrorWidget ? (cfg.barometro_question || 'B4_B') : null,
+          structuralVariable: isMirrorWidget ? (cfg.structural_variable || cfg.varX || '') : '',
+          mirrorSeries: isMirrorWidget ? (cfg.mirror_series || null) : null
+        };
         let chartWidget = null;
 
         if (p.format_type === 'map') {
           chartWidget = createWidget('map', {
+            ...mirrorExtras,
             title: p.titulo,
             varX: cfg.varX || (p.preset_id === 'CP_01' ? 'infraestructura_cultural_total' : (p.preset_id === 'CT_01' ? 'proyectos_anid_total' : 'visitantes_snaspe')),
             varY: cfg.varY || null,
@@ -16502,6 +16721,7 @@
           });
         } else if (p.format_type === 'line') {
           chartWidget = createWidget('chart', {
+            ...mirrorExtras,
             title: p.titulo,
             varX: cfg.varX || cfg.seriesPrimaria || 'biomasa_cosecha_salmon',
             varY: cfg.varY || cfg.seriesSecundaria || 'floracion_alexandrium_fan',
@@ -16513,6 +16733,7 @@
           });
         } else if (p.format_type === 'scatter') {
           chartWidget = createWidget('chart', {
+            ...mirrorExtras,
             title: p.titulo,
             varX: cfg.varX || 'dependencia_fcm_pct',
             varY: cfg.varY || 'fndr_mclp',
@@ -16525,6 +16746,7 @@
         } else {
           // bar o special (Espejo Ciudadano Barómetro)
           chartWidget = createWidget('chart', {
+            ...mirrorExtras,
             title: p.titulo,
             varX: cfg.varX || 'dependencia_fcm_pct',
             varY: cfg.varY || cfg.varY2 || null,
@@ -16533,23 +16755,6 @@
             showAverage: true,
             x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h
           });
-        }
-
-        if (chartWidget) {
-          chartWidget.presetId = p.preset_id;
-          chartWidget.presetFormatType = p.format_type;
-          const isMirrorWidget = Boolean(p.is_perception_mirror || p.format_type === 'special' || cfg.mirror_series);
-          if (isMirrorWidget) {
-            chartWidget.isPerceptionMirror = true;
-            chartWidget.sampleContract = cfg.sample_contract
-              ? { ...cfg.sample_contract }
-              : { active_n: 452, universe_N: 465, margin_error_pct: 4.6 };
-            chartWidget.barometroQuestion = cfg.barometro_question || 'B4_B';
-            chartWidget.structuralVariable = cfg.structural_variable || cfg.varX || '';
-            chartWidget.mirrorSeries = cfg.mirror_series || null;
-          }
-          renderWidgetCardDOM(chartWidget);
-          renderWidgetVisual(chartWidget);
         }
 
         return chartWidget;
@@ -16581,7 +16786,10 @@
         }
 
         const modal = document.getElementById('modalHubGallery');
-        if (modal) modal.style.display = 'none';
+        if (modal) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
         hideFloatingToolbar();
 
         clearAll();
@@ -16806,6 +17014,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         if (document.getElementById('selectBaroSexo')) document.getElementById('selectBaroSexo').value = af.sexo || 'todos';
         if (document.getElementById('selectBaroEdad')) document.getElementById('selectBaroEdad').value = af.edad || 'todos';
         if (document.getElementById('selectBaroMacro')) document.getElementById('selectBaroMacro').value = af.macro || 'todas';
+        if (document.getElementById('switchBaroInterregional')) document.getElementById('switchBaroInterregional').value = w?.activeSociodemoInterregional || 'aysen_solo';
       }
 
       function openSociodemoDrawer(widgetId) {
@@ -16813,6 +17022,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const drawer = document.getElementById('barometroSociodemoDrawer');
         if (drawer) {
           drawer.style.display = 'flex';
+          drawer.setAttribute('aria-hidden', 'false');
           syncSociodemoDrawerSelects(widgetId);
           updateBaroDrawerMetrics();
         }
@@ -16896,8 +17106,10 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             const macro = document.getElementById('selectBaroMacro')?.value || 'todas';
             const sexo = document.getElementById('selectBaroSexo')?.value || 'todos';
             const edad = document.getElementById('selectBaroEdad')?.value || 'todos';
+            const interreg = document.getElementById('switchBaroInterregional')?.value || 'aysen_solo';
 
             w.activeSociodemoFilter = { edu, nse, sexo, edad, macro };
+            w.activeSociodemoInterregional = interreg;
 
             let n = qData.n || qData.n_muestral || qData.n_muestral_valido || 452;
             if (edu !== 'todos' && qData.por_nivel_educativo?.[edu]) n = qData.por_nivel_educativo[edu].n_muestral || qData.por_nivel_educativo[edu].n || n;
@@ -16915,7 +17127,6 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               }
             }
             renderWidgetCardDOM(w);
-            renderWidgetVisual(w);
           }
         }
       }
@@ -17635,6 +17846,19 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         try {
           teardownCanvasEntities();
 
+          AppState.territorialFilter = snap.territorialFilter || 'all';
+          AppState.excludeCoyhaique = !!snap.excludeCoyhaique;
+
+          const selectSlicer = document.getElementById('selectTerritorialSlicer');
+          if (selectSlicer) selectSlicer.value = AppState.territorialFilter;
+          const btnExclude = document.getElementById('btnExcludeCoyhaique');
+          if (btnExclude) btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
+
+          if (snap.transform) {
+            AppState.transform = snap.transform;
+            applyCanvasTransform();
+          }
+
           (snap.widgets || []).forEach(snapW => {
             // Se renderiza el mismo objeto que vive en AppState para que
             // arrastre, redimension y edicion posteriores muten el estado real.
@@ -17650,20 +17874,6 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           AppState.connections = snap.connections || [];
           AppState.nextWidgetId = snap.nextWidgetId || (AppState.widgets.length + 1);
           AppState.nextReflectionId = snap.nextReflectionId || (AppState.reflectionCards.length + 1);
-          AppState.territorialFilter = snap.territorialFilter || 'all';
-          AppState.excludeCoyhaique = !!snap.excludeCoyhaique;
-
-          const selectSlicer = document.getElementById('selectTerritorialSlicer');
-          if (selectSlicer) selectSlicer.value = AppState.territorialFilter;
-          const btnExclude = document.getElementById('btnExcludeCoyhaique');
-          if (btnExclude) btnExclude.classList.toggle('active', AppState.excludeCoyhaique);
-
-          if (snap.transform) {
-            AppState.transform = snap.transform;
-            applyCanvasTransform();
-          }
-
-          AppState.widgets.forEach(w => renderWidgetVisual(w));
 
           if (snap.activeWidgetId && AppState.widgets.some(w => w.id === snap.activeWidgetId)) {
             selectActiveCard(snap.activeWidgetId);
@@ -17904,10 +18114,15 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
               if (Array.isArray(activeSub.widgets)) {
                 activeSub.widgets.forEach(w => {
-                  w.y = Math.max(92, w.y !== undefined ? w.y : 92);
-                  AppState.widgets.push({ ...w, instance: null, resizeObserver: null });
-                  AppState.nextWidgetId = Math.max(AppState.nextWidgetId, w.id + 1);
-                  renderWidgetCardDOM(w);
+                  const hydrated = {
+                    ...w,
+                    y: Math.max(92, w.y !== undefined ? w.y : 92),
+                    instance: null,
+                    resizeObserver: null
+                  };
+                  AppState.widgets.push(hydrated);
+                  AppState.nextWidgetId = Math.max(AppState.nextWidgetId, hydrated.id + 1);
+                  renderWidgetCardDOM(hydrated);
                 });
               }
               if (Array.isArray(activeSub.reflectionCards)) {
@@ -17936,10 +18151,15 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               return;
             } else if (Array.isArray(data.widgets) && data.widgets.length > 0) {
               data.widgets.forEach(w => {
-                w.y = Math.max(92, w.y !== undefined ? w.y : 92);
-                AppState.widgets.push({ ...w, instance: null, resizeObserver: null });
-                AppState.nextWidgetId = Math.max(AppState.nextWidgetId, w.id + 1);
-                renderWidgetCardDOM(w);
+                const hydrated = {
+                  ...w,
+                  y: Math.max(92, w.y !== undefined ? w.y : 92),
+                  instance: null,
+                  resizeObserver: null
+                };
+                AppState.widgets.push(hydrated);
+                AppState.nextWidgetId = Math.max(AppState.nextWidgetId, hydrated.id + 1);
+                renderWidgetCardDOM(hydrated);
               });
               if (Array.isArray(data.reflectionCards)) {
                 data.reflectionCards.forEach(r => {
@@ -17971,13 +18191,19 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       }
 
       function exportJson() {
+        const serializedWidgets = AppState.widgets.map(serializeWidgetState);
         const cur = AppState.subDashboards.find(s => s.id === AppState.activeSubDashboardId);
         if (cur) {
-          cur.widgets = AppState.widgets;
+          cur.widgets = serializedWidgets;
           cur.connections = AppState.connections;
           cur.reflectionCards = AppState.reflectionCards;
           cur.transform = AppState.transform;
         }
+
+        const safeSubDashboards = AppState.subDashboards.map(sd => ({
+          ...sd,
+          widgets: Array.isArray(sd.widgets) ? sd.widgets.map(serializeWidgetState) : []
+        }));
 
         const payload = {
           metadata: {
@@ -17985,20 +18211,22 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             plataforma: 'Laboratorio Sistémico · Aysén',
             fecha: new Date().toISOString()
           },
-          subDashboards: AppState.subDashboards,
+          subDashboards: safeSubDashboards,
           activeSubDashboardId: AppState.activeSubDashboardId,
           nextSubDashboardId: AppState.nextSubDashboardId,
-          widgets: AppState.widgets,
+          widgets: serializedWidgets,
           connections: AppState.connections,
           reflectionCards: AppState.reflectionCards,
           transform: AppState.transform,
           notes: document.getElementById('txtAnalystNotes')?.value || ''
         };
         const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
+        a.href = url;
         a.download = `aysen_laboratorio_${new Date().toISOString().slice(0, 10)}.json`;
         a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
       }
 
       function importJson(file) {
@@ -18015,10 +18243,15 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               const activeSub = AppState.subDashboards.find(s => s.id === AppState.activeSubDashboardId) || AppState.subDashboards[0];
               if (Array.isArray(activeSub.widgets)) {
                 activeSub.widgets.forEach(w => {
-                  w.y = Math.max(92, w.y !== undefined ? w.y : 92);
-                  AppState.widgets.push({ ...w, instance: null, resizeObserver: null });
-                  AppState.nextWidgetId = Math.max(AppState.nextWidgetId, w.id + 1);
-                  renderWidgetCardDOM(w);
+                  const hydrated = {
+                    ...w,
+                    y: Math.max(92, w.y !== undefined ? w.y : 92),
+                    instance: null,
+                    resizeObserver: null
+                  };
+                  AppState.widgets.push(hydrated);
+                  AppState.nextWidgetId = Math.max(AppState.nextWidgetId, hydrated.id + 1);
+                  renderWidgetCardDOM(hydrated);
                 });
               }
               if (Array.isArray(activeSub.reflectionCards)) {
@@ -18037,10 +18270,15 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             } else {
               if (Array.isArray(data.widgets)) {
                 data.widgets.forEach(w => {
-                  w.y = Math.max(92, w.y !== undefined ? w.y : 92);
-                  AppState.widgets.push({ ...w, instance: null, resizeObserver: null });
-                  AppState.nextWidgetId = Math.max(AppState.nextWidgetId, w.id + 1);
-                  renderWidgetCardDOM(w);
+                  const hydrated = {
+                    ...w,
+                    y: Math.max(92, w.y !== undefined ? w.y : 92),
+                    instance: null,
+                    resizeObserver: null
+                  };
+                  AppState.widgets.push(hydrated);
+                  AppState.nextWidgetId = Math.max(AppState.nextWidgetId, hydrated.id + 1);
+                  renderWidgetCardDOM(hydrated);
                 });
               }
               if (Array.isArray(data.reflectionCards)) {
@@ -18308,10 +18546,10 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }
 
         // Búsqueda y tabs de dimensión en catálogo
-        document.getElementById('inputBuscarVariable').addEventListener('input', (e) => {
+        document.getElementById('inputBuscarVariable').addEventListener('input', debounce((e) => {
           AppState.searchQuery = e.target.value;
           renderSidebarCatalog();
-        });
+        }, 120));
 
         document.querySelectorAll('.sidebar-tab-btn').forEach(btn => {
           btn.addEventListener('click', () => {
@@ -18645,40 +18883,6 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       montarCabecera({ tituloModulo: 'Laboratorio Sistémico', activo: 'laboratorio.html' });
-
-      // Control del Menú Móvil Universal
-      const btnMobileMenu = document.getElementById('btnMobileMenu');
-      const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-      const btnMobileClose = document.getElementById('btnMobileClose');
-      const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
-
-      function openMobileNav() {
-        if (!mobileNavDrawer) return;
-        mobileNavDrawer.classList.add('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'false');
-        if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
-      }
-
-      function closeMobileNav() {
-        if (!mobileNavDrawer) return;
-        mobileNavDrawer.classList.remove('open');
-        mobileNavDrawer.setAttribute('aria-hidden', 'true');
-        if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
-      }
-
-      if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
-      if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
-      if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
-
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
-          closeMobileNav();
-        }
-      });
-
-      document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', closeMobileNav);
-      });
     });
   </script>
 </body>

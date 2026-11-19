@@ -1059,6 +1059,8 @@
   let _config = Object.assign({}, DEFAULT_CONFIG);
   let _dataLake = null;
   let _lexicon = null;
+  let _initialized = false;
+  let _lexiconPromise = null;
   let _conversationMemory = [];
 
   // WP-A.3: Estado de memoria conversacional de seguimiento entre turnos
@@ -1444,7 +1446,14 @@
    * WP-C.2: Devuelve la lista deduplicada de fuentes oficiales para un conjunto de claves
    * de variables, garantizando que jamás se exponga un nombre de columna en snake_case.
    */
+  function ensureInitialized() {
+    if (!_initialized && (global && global.AYSEN_HUBS_DATA)) {
+      OmniRouteClient.init(_dataLake || global.AYSEN_HUBS_DATA);
+    }
+  }
+
   function resolveSourcesForKeys(keys) {
+    ensureInitialized();
     const out = [];
     const seen = new Set();
     (Array.isArray(keys) ? keys : []).forEach(k => {
@@ -1671,6 +1680,13 @@
           .filter(t => !QUERY_STOPWORDS.has(t) && t.length >= 4)
           .map(stemSpanishWord)
       ));
+      const synonymsList = Array.from(synonymPhrases).filter(Boolean);
+      const synonymMatchers = synonymsList
+        .filter(phrase => phrase.length >= 2)
+        .map(phrase => ({
+          re: new RegExp(`(?:^|\\s)${phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\s|$)`),
+          bonus: 14 * phrase.split(' ').length + phrase.length * 0.5
+        }));
 
       const varRecord = {
         key,
@@ -1680,7 +1696,8 @@
         isNumeric: meta.isNumeric,
         aggregation: meta.aggregation,
         source,
-        synonyms: Array.from(synonymPhrases).filter(Boolean),
+        synonyms: synonymsList,
+        synonymMatchers,
         tokens: tokensArr,
         stems: stemsArr,
         stats
@@ -2972,13 +2989,21 @@
   function scoreVariable(varRecord, qNorm, qTokens) {
     let score = 0;
 
-    for (const phrase of varRecord.synonyms) {
-      if (phrase.length >= 2) {
-        const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const re = new RegExp(`(?:^|\\s)${escaped}(?:\\s|$)`);
-        if (re.test(qNorm)) {
-          const wordCount = phrase.split(' ').length;
-          score += 14 * wordCount + phrase.length * 0.5;
+    if (Array.isArray(varRecord.synonymMatchers)) {
+      for (const m of varRecord.synonymMatchers) {
+        if (m.re.test(qNorm)) {
+          score += m.bonus;
+        }
+      }
+    } else {
+      for (const phrase of varRecord.synonyms || []) {
+        if (phrase.length >= 2) {
+          const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const re = new RegExp(`(?:^|\\s)${escaped}(?:\\s|$)`);
+          if (re.test(qNorm)) {
+            const wordCount = phrase.split(' ').length;
+            score += 14 * wordCount + phrase.length * 0.5;
+          }
         }
       }
     }
@@ -3093,7 +3118,10 @@
    * Recupera el paquete de memoria relevante (`memoryPacket`) desde `_memoryIndex`
    * para responder la consulta del usuario con datos 100% verificados.
    */
+  const REGIONAL_AYSEN_RE = /\b(?:region|regiones|comunas|todas\s+las\s+comunas|cada\s+comuna|por\s+comuna|comuna\s+por\s+comuna|10\s+comunas|territorio|provincia|provincias|gobierno\s+regional|gore|universidad|uaysen|servicio\s+de\s+salud|red\s+asistencial|slep|seremi|cft\s+estatal|corfo|conaf|sernatur|barometro(?:\s+regional)?|datos|indicadores)\s+(?:de\s+|del\s+)?aysen\b/gi;
+
   function retrieveMemoryForQuery(userText) {
+    ensureInitialized();
     let effectiveQuery = String(userText || '').trim();
     const isFollowUp = /^(y\s+)?(no\s+tienes\s+mas|que\s+mas|dame\s+mas|mas\s+datos|otros\s+datos|otras\s+variables|muestrame\s+mas|y\s+sobre\s+eso|profundiza|continua)/i.test(normalizeText(effectiveQuery));
     if (isFollowUp && _conversationMemory.length > 0) {
@@ -3245,7 +3273,7 @@
       .replace(/\b(?:aerodromo|aeropuerto)\s+(?:de\s+)?balmaceda\b/g, 'aerodromo')
       .replace(/\b(?:pn|parque\s+nacional)\s+(?:laguna\s+san\s+rafael|queulat|cerro\s+castillo|patagonia)\b/g, 'parque nacional')
       .replace(/\b(?:laguna\s+san\s+rafael|cerro\s+castillo)\b(?=.*\b(?:queulat|patagonia|desglose\s+por\s+parque|por\s+parque\s+nacional)\b)/g, 'parque')
-      .replace(/\b(?:region|comunas|todas\s+las\s+comunas|10\s+comunas|universidad|servicio\s+de\s+salud|red\s+asistencial|slep|gore|gobierno\s+regional|seremi|cft\s+estatal|corfo|conaf|sernatur|barometro(?:\s+regional)?)\s+(?:de\s+|del\s+)?aysen\b/g, ' ');
+      .replace(REGIONAL_AYSEN_RE, ' ');
 
     let matchedEntities = _memoryIndex.entities.filter(ent =>
       ent.aliases.some(alias => {
@@ -3288,7 +3316,7 @@
 
     const rawNoAccents = String(rawQuery || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const rawNoAccentsForAysen = rawNoAccents
-      .replace(/\b(?:region|comunas|todas\s+las\s+comunas|10\s+comunas|universidad|servicio\s+de\s+salud|red\s+asistencial|slep|gore|gobierno\s+regional|seremi|cft\s+estatal|corfo|conaf|sernatur|barometro(?:\s+regional)?)\s+(?:de\s+|del\s+)?aysen\b/gi, ' ');
+      .replace(REGIONAL_AYSEN_RE, ' ');
     const aysenEnt = _memoryIndex.entities.find(e => e.id === '11201');
     const otherMatchedComunasOrLocs = matchedEntities.some(e => e.id !== '11201') || matchedLocalidades.some(l => l.comuna_ine !== '11201');
     const mentionsAysenInList = aysenEnt &&
@@ -5205,45 +5233,59 @@
     return `${labelX} por Comuna`;
   }
 
+  function startLexiconFetchIfNeeded() {
+    if (_lexicon || _lexiconPromise || typeof fetch !== 'function') return _lexiconPromise;
+    _lexiconPromise = fetch(_config.lexiconUrl)
+      .then(r => (r.ok ? r.json() : null))
+      .then(json => {
+        if (json) {
+          _lexicon = json;
+          if (global && global.NL2ChartEngine && typeof global.NL2ChartEngine.setLexicon === 'function') {
+            global.NL2ChartEngine.setLexicon(json);
+          }
+          if (_dataLake) buildMemoryIndex(_dataLake, _lexicon);
+        }
+        return json;
+      })
+      .catch(() => null);
+    return _lexiconPromise;
+  }
+
   /**
    * API Pública de OmniRouteClient
    */
   const OmniRouteClient = {
     init(dataLake, customConfig = {}) {
-      _config = Object.assign({}, DEFAULT_CONFIG, customConfig);
-      _dataLake = dataLake || (global ? global.AYSEN_HUBS_DATA : null);
-      if (!_dataLake || typeof _dataLake !== 'object') return false;
+      _config = Object.assign({}, DEFAULT_CONFIG, _config, customConfig);
+      const targetLake = dataLake || _dataLake || (global ? global.AYSEN_HUBS_DATA : null);
+      if (!targetLake || typeof targetLake !== 'object') return false;
 
-      if (global && global.NL2ChartEngine && typeof global.NL2ChartEngine.getLexicon === 'function') {
+      if (!_lexicon && global && global.NL2ChartEngine && typeof global.NL2ChartEngine.getLexicon === 'function') {
         _lexicon = global.NL2ChartEngine.getLexicon();
       }
       if (!_lexicon) {
         tryLoadNodeLexicon();
       }
 
-      buildMemoryIndex(_dataLake, _lexicon);
-
-      if (!_lexicon && typeof fetch === 'function') {
-        fetch(_config.lexiconUrl)
-          .then(r => (r.ok ? r.json() : null))
-          .then(json => {
-            if (json) {
-              _lexicon = json;
-              if (global && global.NL2ChartEngine && typeof global.NL2ChartEngine.setLexicon === 'function') {
-                global.NL2ChartEngine.setLexicon(json);
-              }
-              buildMemoryIndex(_dataLake, _lexicon);
-            }
-          })
-          .catch(() => {});
+      if (_initialized && _dataLake === targetLake && _memoryIndex.variables.length > 0 && !customConfig.forceRebuild) {
+        startLexiconFetchIfNeeded();
+        return this;
       }
+
+      _dataLake = targetLake;
+      buildMemoryIndex(_dataLake, _lexicon);
+      _initialized = true;
+      startLexiconFetchIfNeeded();
 
       return this;
     },
 
     refreshMemory(newDataLake) {
       if (newDataLake) _dataLake = newDataLake;
-      buildMemoryIndex(_dataLake, _lexicon);
+      if (_dataLake) {
+        buildMemoryIndex(_dataLake, _lexicon);
+        _initialized = true;
+      }
       return _memoryIndex;
     },
 
@@ -5272,6 +5314,7 @@
     },
 
     getIndex() {
+      ensureInitialized();
       return _memoryIndex;
     },
 
@@ -5294,9 +5337,7 @@
     FUENTES_OFICIALES_COMPLEMENTARIAS,
 
     getComunaVector(varKey, excludeCoyhaique = false) {
-      if (!_memoryIndex.comunas.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
-        this.init(_dataLake || global.AYSEN_HUBS_DATA);
-      }
+      ensureInitialized();
       return (_memoryIndex.comunas || [])
         .filter(c => !(excludeCoyhaique && isCoyhaiqueComuna(c)))
         .map(c => ({
@@ -5307,9 +5348,7 @@
     },
 
     resolveClosedWorldDeterministic(userText) {
-      if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
-        this.init(_dataLake || global.AYSEN_HUBS_DATA);
-      }
+      ensureInitialized();
       const packet = retrieveMemoryForQuery(userText);
       return synthesizeFromMemoryPacket(packet);
     },
@@ -5329,9 +5368,7 @@
     },
 
     async query(userText) {
-      if (!_memoryIndex.variables.length && (_dataLake || (global && global.AYSEN_HUBS_DATA))) {
-        this.init(_dataLake || global.AYSEN_HUBS_DATA);
-      }
+      ensureInitialized();
 
       const memoryPacket = retrieveMemoryForQuery(userText);
 
@@ -5494,10 +5531,6 @@
       }
     }
   };
-
-  if (global && global.AYSEN_HUBS_DATA) {
-    OmniRouteClient.init(global.AYSEN_HUBS_DATA);
-  }
 
   return OmniRouteClient;
 });

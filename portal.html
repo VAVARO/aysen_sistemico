@@ -513,197 +513,6 @@
       background: rgba(0, 53, 127, 0.08);
       border-radius: 2px;
     }
-    
-    /* =========================================================================
-       UNIVERSAL MOBILE NAVIGATION (#btnMobileMenu & #mobileNavDrawer)
-       ========================================================================= */
-    .mobile-nav-drawer {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      pointer-events: none;
-      visibility: hidden;
-      transition: visibility 0.25s ease;
-    }
-
-    .mobile-nav-drawer.open {
-      pointer-events: auto;
-      visibility: visible;
-    }
-
-    .mobile-nav-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 20, 50, 0.45);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .mobile-nav-drawer.open .mobile-nav-backdrop {
-      opacity: 1;
-    }
-
-    .mobile-nav-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: min(86vw, 360px);
-      background: rgba(252, 249, 248, 0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-left: 1px solid rgba(0, 53, 127, 0.18);
-      box-shadow: -10px 0 30px rgba(0, 20, 50, 0.15);
-      transform: translateX(100%);
-      transition: transform 0.28s var(--ease-drawer);
-      display: flex;
-      flex-direction: column;
-      padding: 1.25rem 1.25rem 2rem;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .mobile-nav-drawer.open .mobile-nav-panel {
-      transform: translateX(0);
-    }
-
-    .mobile-nav-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(0, 53, 127, 0.12);
-    }
-
-    .mobile-nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .mobile-nav-author {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--ink-primary);
-    }
-
-    .mobile-nav-close {
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: 1px solid rgba(0, 53, 127, 0.15);
-      border-radius: 4px;
-      color: var(--ink-secondary);
-      cursor: pointer;
-      padding: 0;
-      transition: background-color var(--duration-fast) var(--ease-out),
-                  border-color var(--duration-fast) var(--ease-out),
-                  color var(--duration-fast) var(--ease-out),
-                  transform var(--duration-fast) var(--ease-out);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav-close:active {
-      transform: scale(0.97);
-    }
-
-    .mobile-nav-close:hover {
-      color: var(--cobalt);
-      border-color: var(--cobalt);
-      background: rgba(0, 53, 127, 0.05);
-    }
-
-    .mobile-nav-kicker {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--cobalt);
-      margin-top: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-
-    .mobile-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .mobile-nav-link {
-      min-height: 48px;
-      padding: 0.75rem 1rem;
-      border-radius: 4px;
-      border: 1px solid rgba(0, 53, 127, 0.10);
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      font-family: var(--font-sans);
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--ink-primary);
-      transition: background-color var(--duration-fast) var(--ease-out),
-                  border-color var(--duration-fast) var(--ease-out),
-                  color var(--duration-fast) var(--ease-out),
-                  transform var(--duration-fast) var(--ease-out);
-      touch-action: manipulation;
-    }
-
-    .mobile-nav-link:active {
-      transform: scale(0.97);
-    }
-
-    .mobile-nav-link:hover {
-      background: rgba(0, 53, 127, 0.05);
-      border-color: var(--cobalt);
-      color: var(--cobalt);
-      transform: translateX(2px);
-    }
-
-    .mobile-nav-link.active {
-      background: rgba(0, 53, 127, 0.08);
-      border-color: var(--cobalt);
-      color: var(--cobalt);
-      font-weight: 600;
-    }
-
-    .mobile-nav-num {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--cobalt);
-      font-weight: 600;
-      width: 24px;
-    }
-
-    .mobile-nav-text {
-      flex: 1;
-    }
-
-    .mobile-nav-arrow {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--ink-muted);
-    }
-
-    /* Breakpoint Navigation */
-    @media (max-width: 820px) {
-      .brand-nav-pills {
-        display: none !important;
-      }
-      .mobile-menu-btn {
-        display: inline-flex !important;
-      }
-    }
 
     /* Responsive Snap Scroll & Layout Adaptations */
     @media (max-width: 768px) {
@@ -807,7 +616,7 @@
       }
     }
   </style>
-<script src="js/cabecera_global.js"></script>
+<script src="js/cabecera_global.js" defer></script>
   <link rel="stylesheet" href="css/apple-design.css">
 </head>
 
@@ -827,6 +636,7 @@
           <a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>
           <a href="index.html" class="brand-pill">Datos de Aysén</a>
           <a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>
+          <a href="consultor.html" class="brand-pill">Consultor de Datos</a>
           <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer"
             class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">
             <span>LinkedIn</span>
@@ -882,8 +692,13 @@
           <span class="mobile-nav-text">Laboratorio Sistémico</span>
           <span class="mobile-nav-arrow">→</span>
         </a>
-        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+        <a href="consultor.html" class="mobile-nav-link">
           <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">Consultor de Datos</span>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span class="mobile-nav-num">06</span>
           <span class="mobile-nav-text">LinkedIn</span>
           <span class="mobile-nav-arrow">↗</span>
         </a>
@@ -977,12 +792,11 @@
         <div class="reading-divider"></div>
         <p class="reading-paragraph">
           Pensar una región de forma sistémica es fundamental porque las dinámicas territoriales, sociales y de gestión
-          pública y privada no funcionan de manera aislada, sino como un entramado vivo y dinámicamente interconectado
-          . A diferencia de los enfoques tradicionales que intentan resolver problemas complejos mediante intervenciones
+          pública y privada no funcionan de manera aislada, sino como un entramado vivo y dinámicamente interconectado.
+          A diferencia de los enfoques tradicionales que intentan resolver problemas complejos mediante intervenciones
           lineales o simplistas —lo que con frecuencia genera consecuencias no deseadas o desplaza las fallas a otras
-          áreas—
-          , la mirada sistémica permite comprender cómo interactúan continuamente las instituciones, las personas y los
-          recursos en el territorio
+          áreas—, la mirada sistémica permite comprender cómo interactúan continuamente las instituciones, las personas y los
+          recursos en el territorio.
         </p>
       </article>
 
@@ -1007,10 +821,12 @@
           de esta página es para enseñar cómo funcionan los Sistemas Complejos Dinámicos.
           <a href="index.html" class="editorial-inline-link"><em>Datos de Aysén</em></a>
           muestra las distintas bases de datos disponibles para modelar la región de Aysén con sus respectivas
-          interconexiones. Por último, el
+          interconexiones. El
           <a href="laboratorio.html" class="editorial-inline-link"><em>Laboratorio</em></a>
           te permite interactuar con todos estos datos; puedes generar gráficos, tablas, mapas, cruzar variables,
-          descargar planillas en .csv, entre otras opciones. Have fun!
+          descargar planillas en .csv, entre otras opciones. Por último, el
+          <a href="consultor.html" class="editorial-inline-link"><em>Consultor de Datos</em></a>
+          responde consultas territoriales directamente sobre las fuentes oficiales verificadas. Have fun!
         </p>
       </article>
 
@@ -1047,8 +863,20 @@
     // Culling de Viewport y Supresión en Segundo Plano
     let activeSectionId = 'seccion-portada';
     let isTabVisible = typeof document !== 'undefined' ? !document.hidden : true;
+    let portalRafId = null;
+    let lastDwellRenderKey = '';
+
     document.addEventListener('visibilitychange', () => {
       isTabVisible = !document.hidden;
+      if (!isTabVisible) {
+        if (portalRafId !== null) {
+          cancelAnimationFrame(portalRafId);
+          portalRafId = null;
+        }
+      } else if (typeof startPortalLoop === 'function') {
+        lastTime = performance.now();
+        startPortalLoop();
+      }
     });
 
     const snapContainerEl = document.getElementById('snapContainer');
@@ -1061,6 +889,7 @@
             // Redibujo inmediato de la nueva sección activa para evitar parpadeos
             const tSec = performance.now() / 1000;
             if (activeSectionId === 'seccion-portada') {
+              lastDwellRenderKey = '';
               drawMorphingPostcard(tSec);
             } else if (activeSectionId === 'seccion-que-es') {
               drawBackgroundQueEs(tSec);
@@ -1106,6 +935,7 @@
     ];
 
     function sampleControlPolyline(ctrlPts, microNoiseAmp = 0, seed = 0, numSamples = NUM_POINTS) {
+      const result = new Float32Array(numSamples * 2);
       const segLengths = [];
       let totalLen = 0;
       for (let i = 0; i < ctrlPts.length - 1; i++) {
@@ -1116,9 +946,13 @@
         totalLen += len;
       }
       if (totalLen === 0) {
-        return Array.from({ length: numSamples }, () => ({ x: ctrlPts[0][0], y: ctrlPts[0][1] }));
+        const x0 = ctrlPts[0][0], y0 = ctrlPts[0][1];
+        for (let s = 0; s < numSamples; s++) {
+          result[s * 2] = x0;
+          result[s * 2 + 1] = y0;
+        }
+        return result;
       }
-      const result = [];
       for (let s = 0; s < numSamples; s++) {
         const u = s / (numSamples - 1);
         const targetD = u * totalLen;
@@ -1127,13 +961,14 @@
         for (let i = 0; i < segLengths.length; i++) {
           if (acc + segLengths[i] >= targetD || i === segLengths.length - 1) {
             const localT = segLengths[i] > 0 ? (targetD - acc) / segLengths[i] : 0;
-            let x = ctrlPts[i][0] + (ctrlPts[i + 1][0] - ctrlPts[i][0]) * localT;
+            const x = ctrlPts[i][0] + (ctrlPts[i + 1][0] - ctrlPts[i][0]) * localT;
             let y = ctrlPts[i][1] + (ctrlPts[i + 1][1] - ctrlPts[i][1]) * localT;
             if (microNoiseAmp > 0 && s > 0 && s < numSamples - 1) {
               const crag = (Math.sin(u * 53 + seed * 3.1) * 0.6 + Math.cos(u * 127 + seed * 5.7) * 0.4) * microNoiseAmp;
               y += crag;
             }
-            result.push({ x, y });
+            result[s * 2] = x;
+            result[s * 2 + 1] = y;
             found = true;
             break;
           }
@@ -1141,7 +976,8 @@
         }
         if (!found) {
           const last = ctrlPts[ctrlPts.length - 1];
-          result.push({ x: last[0], y: last[1] });
+          result[s * 2] = last[0];
+          result[s * 2 + 1] = last[1];
         }
       }
       return result;
@@ -1841,6 +1677,7 @@
       nextPostalIdx = targetIdx;
       morphPhase = 'morph';
       phaseTimer = 0;
+      lastDwellRenderKey = '';
       if (landmarkTitleEl) {
         landmarkTitleEl.style.opacity = '0';
         setTimeout(() => {
@@ -1848,6 +1685,7 @@
           landmarkTitleEl.style.opacity = '1';
         }, 320);
       }
+      startPortalLoop();
     }
 
     function easeInOutQuint(t) {
@@ -1862,20 +1700,48 @@
     const bgCanvasQueEncontraras = document.getElementById('bgCanvasQueEncontraras');
     const qeCtx = bgCanvasQueEncontraras ? bgCanvasQueEncontraras.getContext('2d') : null;
 
+    const canvasDims = [
+      { w: window.innerWidth, h: window.innerHeight },
+      { w: window.innerWidth, h: window.innerHeight },
+      { w: window.innerWidth, h: window.innerHeight },
+      { w: window.innerWidth, h: window.innerHeight }
+    ];
+
     function resizeAllCanvases() {
-      const dpr = window.devicePixelRatio || 1;
-      [postalCanvas, bgCanvasQueEs, bgCanvasPorQue, bgCanvasQueEncontraras].forEach((c, idx) => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const targets = [postalCanvas, bgCanvasQueEs, bgCanvasPorQue, bgCanvasQueEncontraras];
+      const rects = targets.map(c => (
+        c && c.parentElement
+          ? { w: c.parentElement.clientWidth || window.innerWidth, h: c.parentElement.clientHeight || window.innerHeight }
+          : { w: window.innerWidth, h: window.innerHeight }
+      ));
+      targets.forEach((c, idx) => {
         if (!c) return;
-        const w = c.parentElement ? c.parentElement.clientWidth : window.innerWidth;
-        const h = c.parentElement ? c.parentElement.clientHeight : window.innerHeight;
-        c.width = w * dpr;
-        c.height = h * dpr;
+        const { w, h } = rects[idx];
+        canvasDims[idx] = { w, h };
+        c.width = Math.round(w * dpr);
+        c.height = Math.round(h * dpr);
         const context = idx === 0 ? pCtx : (idx === 1 ? qCtx : (idx === 2 ? pqCtx : qeCtx));
         if (context) context.setTransform(dpr, 0, 0, dpr, 0, 0);
       });
+      lastDwellRenderKey = '';
+      const tSec = performance.now() / 1000;
+      if (activeSectionId === 'seccion-portada') drawMorphingPostcard(tSec);
+      else if (activeSectionId === 'seccion-que-es') drawBackgroundQueEs(tSec);
+      else if (activeSectionId === 'seccion-por-que') drawBackgroundPorQue(tSec);
+      else if (activeSectionId === 'seccion-que-encontraras') drawBackgroundQueEncontraras(tSec);
     }
 
-    window.addEventListener('resize', resizeAllCanvases);
+    let resizeCanvasTimer = null;
+    const schedulePortalResize = () => {
+      clearTimeout(resizeCanvasTimer);
+      resizeCanvasTimer = setTimeout(resizeAllCanvases, 120);
+    };
+    if (window.ResizeObserver && snapContainerEl) {
+      const portalRo = new ResizeObserver(schedulePortalResize);
+      portalRo.observe(snapContainerEl);
+    }
+    window.addEventListener('resize', schedulePortalResize);
     resizeAllCanvases();
 
     // =========================================================================
@@ -1883,10 +1749,16 @@
     // =========================================================================
     let lastTime = performance.now();
 
+    function startPortalLoop() {
+      if (!isTabVisible || portalRafId !== null) return;
+      lastTime = performance.now();
+      portalRafId = requestAnimationFrame(renderFrame);
+    }
+
     function renderFrame(now) {
+      portalRafId = null;
       if (!isTabVisible) {
         lastTime = now;
-        requestAnimationFrame(renderFrame);
         return;
       }
 
@@ -1894,23 +1766,27 @@
       lastTime = now;
       const tSec = now / 1000;
 
-      phaseTimer += dt;
-      if (morphPhase === 'dwell' && phaseTimer >= DWELL_DURATION) {
-        morphPhase = 'morph';
-        phaseTimer = 0;
-        nextPostalIdx = (currentPostalIdx + 1) % LANDMARKS.length;
-        if (landmarkTitleEl) {
-          landmarkTitleEl.style.opacity = '0';
-          setTimeout(() => {
-            landmarkTitleEl.textContent = LANDMARKS[nextPostalIdx].title;
-            landmarkTitleEl.style.opacity = '1';
-          }, 320);
+      if (!REDUCED_MOTION || morphPhase === 'morph') {
+        phaseTimer += dt;
+        if (!REDUCED_MOTION && morphPhase === 'dwell' && phaseTimer >= DWELL_DURATION) {
+          morphPhase = 'morph';
+          phaseTimer = 0;
+          lastDwellRenderKey = '';
+          nextPostalIdx = (currentPostalIdx + 1) % LANDMARKS.length;
+          if (landmarkTitleEl) {
+            landmarkTitleEl.style.opacity = '0';
+            setTimeout(() => {
+              landmarkTitleEl.textContent = LANDMARKS[nextPostalIdx].title;
+              landmarkTitleEl.style.opacity = '1';
+            }, 320);
+          }
+        } else if (morphPhase === 'morph' && phaseTimer >= MORPH_DURATION) {
+          currentPostalIdx = nextPostalIdx;
+          morphPhase = 'dwell';
+          phaseTimer = 0;
+          lastDwellRenderKey = '';
+          updateActivePip();
         }
-      } else if (morphPhase === 'morph' && phaseTimer >= MORPH_DURATION) {
-        currentPostalIdx = nextPostalIdx;
-        morphPhase = 'dwell';
-        phaseTimer = 0;
-        updateActivePip();
       }
 
       if (activeSectionId === 'seccion-portada') {
@@ -1923,12 +1799,19 @@
         drawBackgroundQueEncontraras(tSec);
       }
 
-      requestAnimationFrame(renderFrame);
+      if (isTabVisible && (!REDUCED_MOTION || morphPhase === 'morph')) {
+        portalRafId = requestAnimationFrame(renderFrame);
+      }
     }
 
     function drawMorphingPostcard(tSec) {
-      const w = postalCanvas.clientWidth || window.innerWidth, h = postalCanvas.clientHeight || window.innerHeight;
+      const { w, h } = canvasDims[0] || { w: window.innerWidth, h: window.innerHeight };
       if (!w || !h) return;
+
+      const dwellKey = `${currentPostalIdx}|${w}|${h}`;
+      if (morphPhase === 'dwell' && lastDwellRenderKey === dwellKey) {
+        return;
+      }
 
       // Fondo blanco limpio a pantalla completa
       pCtx.fillStyle = '#ffffff';
@@ -1942,7 +1825,7 @@
       let scaleX = w;
       let scaleY = h;
       let offsetX = 0;
-      let offsetY = 0;
+      const offsetY = 0;
 
       if (w < h) {
         // En pantallas verticales (móviles/tablets) preservamos la silueta natural sin comprimir
@@ -1950,13 +1833,14 @@
         scaleX = Math.max(w, h * naturalAspect);
         scaleY = h;
         offsetX = (w - scaleX) / 2;
-        offsetY = 0;
       }
 
       // Dibujar las 128 capas vectoriales interpoladas a todo el ancho de la pantalla
       for (let l = 0; l < NUM_LAYERS; l++) {
         const layerA = geomA[l];
         const layerB = geomB[l];
+        const ptsA = layerA.pts;
+        const ptsB = layerB.pts;
 
         const stagger = (l / NUM_LAYERS) * 0.16;
         const localT = morphPhase === 'morph'
@@ -1975,14 +1859,21 @@
 
         pCtx.beginPath();
         for (let i = 0; i < NUM_POINTS; i++) {
-          const pA = layerA.pts[i];
-          const pB = layerB.pts[i];
+          const i2 = i * 2;
+          const ax = ptsA[i2];
+          const ay = ptsA[i2 + 1];
+          const bx = ptsB[i2];
+          const by = ptsB[i2 + 1];
 
-          const morphArc = Math.sin(m * Math.PI) * Math.sin((i / NUM_POINTS) * Math.PI * 2 + l) * 0.01;
-          const liveRipple = Math.sin(tSec * 2.0 + i * 0.35 + l) * waveAmp;
+          const morphArc = morphPhase === 'morph'
+            ? Math.sin(m * Math.PI) * Math.sin((i / NUM_POINTS) * Math.PI * 2 + l) * 0.01
+            : 0;
+          const liveRipple = (!REDUCED_MOTION && waveAmp > 0 && morphPhase === 'morph')
+            ? Math.sin(tSec * 2.0 + i * 0.35 + l) * waveAmp
+            : 0;
 
-          const nx = pA.x * (1 - m) + pB.x * m;
-          const ny = pA.y * (1 - m) + pB.y * m + morphArc + liveRipple;
+          const nx = ax * (1 - m) + bx * m;
+          const ny = ay * (1 - m) + by * m + morphArc + liveRipple;
 
           const sx = offsetX + nx * scaleX;
           const sy = offsetY + ny * scaleY;
@@ -1992,11 +1883,13 @@
         }
         pCtx.stroke();
       }
+
+      lastDwellRenderKey = (morphPhase === 'dwell') ? dwellKey : '';
     }
 
     // Fondo generativo Sección 2: Isolíneas topográficas dinámicas
     function drawBackgroundQueEs(tSec) {
-      const w = bgCanvasQueEs.clientWidth || window.innerWidth, h = bgCanvasQueEs.clientHeight || window.innerHeight;
+      const { w, h } = canvasDims[1] || { w: window.innerWidth, h: window.innerHeight };
       if (!w || !h) return;
 
       qCtx.fillStyle = '#f4efec';
@@ -2023,7 +1916,7 @@
 
     // Fondo generativo Sección 3: Malla sistémica sobre fondo cobalto profundo
     function drawBackgroundPorQue(tSec) {
-      const w = bgCanvasPorQue.clientWidth || window.innerWidth, h = bgCanvasPorQue.clientHeight || window.innerHeight;
+      const { w, h } = canvasDims[2] || { w: window.innerWidth, h: window.innerHeight };
       if (!w || !h) return;
 
       pqCtx.fillStyle = '#002357';
@@ -2078,7 +1971,7 @@
     }
 
     function drawBackgroundQueEncontraras(tSec) {
-      const w = bgCanvasQueEncontraras.clientWidth || window.innerWidth, h = bgCanvasQueEncontraras.clientHeight || window.innerHeight;
+      const { w, h } = canvasDims[3] || { w: window.innerWidth, h: window.innerHeight };
       if (!w || !h || !qeCtx) return;
 
       // Fondo editorial cálido
@@ -2162,46 +2055,11 @@
       }
     }
 
-    // =========================================================================
-    // CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL UNIVERSAL
-    // =========================================================================
-    const btnMobileMenu = document.getElementById('btnMobileMenu');
-    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-    const btnMobileClose = document.getElementById('btnMobileClose');
-    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
-
-    function openMobileNav() {
-      if (!mobileNavDrawer) return;
-      mobileNavDrawer.classList.add('open');
-      mobileNavDrawer.setAttribute('aria-hidden', 'false');
-      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
+    // Control de menú móvil centralizado en js/cabecera_global.js
+    if (REDUCED_MOTION) {
+      drawMorphingPostcard(performance.now() / 1000);
     }
-
-    function closeMobileNav() {
-      if (!mobileNavDrawer) return;
-      mobileNavDrawer.classList.remove('open');
-      mobileNavDrawer.setAttribute('aria-hidden', 'true');
-      if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
-    }
-
-    if (btnMobileMenu) btnMobileMenu.addEventListener('click', openMobileNav);
-    if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
-    if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
-        closeMobileNav();
-      }
-    });
-
-    // Cerrar el drawer al pulsar en cualquier enlace interno
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        closeMobileNav();
-      });
-    });
-
-    requestAnimationFrame(renderFrame);
+    startPortalLoop();
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {

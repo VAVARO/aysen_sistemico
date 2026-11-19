@@ -44,19 +44,151 @@
     '</div>';
   }
 
+  function generarHtmlDrawerMovil() {
+    return '<div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">' +
+      '<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>' +
+      '<div class="mobile-nav-panel" id="mobileNavPanel">' +
+        '<div class="mobile-nav-header">' +
+          '<div class="mobile-nav-brand">' +
+            '<span class="brand-dot"></span>' +
+            '<span class="mobile-nav-author">Álvaro Contreras Barrios</span>' +
+          '</div>' +
+          '<button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación" type="button">' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+              '<line x1="18" y1="6" x2="6" y2="18"></line>' +
+              '<line x1="6" y1="6" x2="18" y2="18"></line>' +
+            '</svg>' +
+          '</button>' +
+        '</div>' +
+        '<div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>' +
+        '<nav class="mobile-nav-links" aria-label="Navegación móvil">' +
+          '<a href="portal.html" class="mobile-nav-link">' +
+            '<span class="mobile-nav-num">01</span>' +
+            '<span class="mobile-nav-text">Portada</span>' +
+            '<span class="mobile-nav-arrow">→</span>' +
+          '</a>' +
+          '<a href="sistemas_complejos.html" class="mobile-nav-link">' +
+            '<span class="mobile-nav-num">02</span>' +
+            '<span class="mobile-nav-text">Visualizador de Complejidad</span>' +
+            '<span class="mobile-nav-arrow">→</span>' +
+          '</a>' +
+          '<a href="index.html" class="mobile-nav-link">' +
+            '<span class="mobile-nav-num">03</span>' +
+            '<span class="mobile-nav-text">Datos de Aysén</span>' +
+            '<span class="mobile-nav-arrow">→</span>' +
+          '</a>' +
+          '<a href="laboratorio.html" class="mobile-nav-link">' +
+            '<span class="mobile-nav-num">04</span>' +
+            '<span class="mobile-nav-text">Laboratorio Sistémico</span>' +
+            '<span class="mobile-nav-arrow">→</span>' +
+          '</a>' +
+          '<a href="consultor.html" class="mobile-nav-link">' +
+            '<span class="mobile-nav-num">05</span>' +
+            '<span class="mobile-nav-text">Consultor de Datos</span>' +
+            '<span class="mobile-nav-arrow">→</span>' +
+          '</a>' +
+          '<a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">' +
+            '<span class="mobile-nav-num">06</span>' +
+            '<span class="mobile-nav-text">LinkedIn</span>' +
+            '<span class="mobile-nav-arrow">↗</span>' +
+          '</a>' +
+        '</nav>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function openMobileNav() {
+    if (typeof document === 'undefined') return;
+    var drawer = document.getElementById('mobileNavDrawer');
+    var btn = document.getElementById('btnMobileMenu');
+    if (!drawer) return;
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMobileNav() {
+    if (typeof document === 'undefined') return;
+    var drawer = document.getElementById('mobileNavDrawer');
+    var btn = document.getElementById('btnMobileMenu');
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function bindMobileNavEvents() {
+    if (typeof document === 'undefined') return;
+    var drawer = document.getElementById('mobileNavDrawer');
+    var btnMenu = document.getElementById('btnMobileMenu');
+    if (btnMenu && !btnMenu.dataset.mobileNavBound) {
+      btnMenu.dataset.mobileNavBound = '1';
+      btnMenu.addEventListener('click', openMobileNav);
+    }
+    if (!drawer || drawer.dataset.mobileNavBound) return;
+    drawer.dataset.mobileNavBound = '1';
+
+    var btnClose = document.getElementById('btnMobileClose');
+    var backdrop = document.getElementById('mobileNavBackdrop');
+    if (btnClose) btnClose.addEventListener('click', closeMobileNav);
+    if (backdrop) backdrop.addEventListener('click', closeMobileNav);
+
+    var linksWrap = drawer.querySelector('.mobile-nav-links');
+    if (linksWrap) {
+      linksWrap.addEventListener('click', function (e) {
+        if (e.target && e.target.closest('.mobile-nav-link')) {
+          closeMobileNav();
+        }
+      });
+    }
+
+    if (typeof root !== 'undefined' && root && !root.__mobileNavEscBound) {
+      root.__mobileNavEscBound = true;
+      root.addEventListener('keydown', function (e) {
+        var activeDrawer = document.getElementById('mobileNavDrawer');
+        if (e.key === 'Escape' && activeDrawer && activeDrawer.classList.contains('open')) {
+          closeMobileNav();
+        }
+      });
+    }
+  }
+
   function montarCabecera(opciones) {
     if (typeof document === 'undefined') return null;
     var cfg = opciones || {};
     var cabecera = document.querySelector('header.brand-header, header.global-header');
     if (!cabecera) return null;
 
-    if (!cabecera.querySelector('.brand-header-inner, .global-header-inner')) {
+    var inner = cabecera.querySelector('.brand-header-inner, .global-header-inner');
+    if (!inner) {
       cabecera.innerHTML = generarHtmlCabecera(cfg.tituloModulo);
     } else {
       // Eliminar del DOM cualquier subtitulo de seccion y divisor | que colisionen con los enlaces
       cabecera.querySelectorAll('.global-header-section, .brand-module-title, .brand-divider').forEach(function (el) {
         el.remove();
       });
+      if (!document.getElementById('btnMobileMenu')) {
+        var brandRight = inner.querySelector('.brand-right, .global-header-nav');
+        if (!brandRight) {
+          brandRight = document.createElement('div');
+          brandRight.className = 'brand-right global-header-nav';
+          inner.appendChild(brandRight);
+        }
+        brandRight.insertAdjacentHTML(
+          'beforeend',
+          '<button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer" type="button">' +
+            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+              '<line x1="3" y1="6" x2="21" y2="6"></line>' +
+              '<line x1="3" y1="12" x2="21" y2="12"></line>' +
+              '<line x1="3" y1="18" x2="21" y2="18"></line>' +
+            '</svg>' +
+          '</button>'
+        );
+      }
+    }
+
+    if (!document.getElementById('mobileNavDrawer') && document.body) {
+      document.body.insertAdjacentHTML('beforeend', generarHtmlDrawerMovil());
     }
 
     // Garantizar que el enlace a consultor.html exista en .brand-nav-pills si el HTML estatico no lo contenia
@@ -101,9 +233,15 @@
         });
       }
     }
+
+    bindMobileNavEvents();
     return cabecera;
   }
 
   root.montarCabecera = montarCabecera;
-  if (typeof module !== 'undefined' && module.exports) module.exports = { montarCabecera: montarCabecera };
+  root.openMobileNav = openMobileNav;
+  root.closeMobileNav = closeMobileNav;
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { montarCabecera: montarCabecera, openMobileNav: openMobileNav, closeMobileNav: closeMobileNav };
+  }
 })(typeof window !== 'undefined' ? window : globalThis);

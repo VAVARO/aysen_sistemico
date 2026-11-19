@@ -95,9 +95,10 @@ class ChallengerM42EmpiricalStress(unittest.TestCase):
             f"Orden DOM incorrecto: top_bar={top_bar_idx}, interp={interp_idx}, display={display_body_idx}, footer={footer_idx}"
         )
 
-        # 3. Estructura del botón de filtros en la definición de sampleRobustnessHtml
+        # 3. Estructura del botón de filtros en la definición de sampleRobustnessHtml (sin onclick inline)
         self.assertIn('class="btn-toggle-sociodemo"', self.lab_html)
-        self.assertIn('onclick="openSociodemoDrawer(${w.id})"', self.lab_html)
+        self.assertNotIn('onclick="openSociodemoDrawer(${w.id})"', self.lab_html)
+        self.assertIn('openSociodemoDrawer(w.id)', self.lab_html)
 
     # -------------------------------------------------------------------------
     # TEST 2: Adversarial Stress Test of Generator Logic

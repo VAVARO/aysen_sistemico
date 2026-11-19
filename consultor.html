@@ -8,25 +8,29 @@
   <meta name="description"
     content="Consultor de inteligencia territorial de la Región de Aysén con verificación de fuentes oficiales.">
 
-  <!-- Tipografías Oficiales -->
+  <!-- Tipografías Oficiales y Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
 
   <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+    integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
+    crossorigin="anonymous" defer></script>
 
   <!-- Datos, Motor Semántico NL2Chart y Motor OmniRoute -->
-  <script src="data/aysen_hubs_data.js"></script>
-  <script src="js/nl2chart_engine.js"></script>
-  <script src="js/omniroute_client.js"></script>
+  <script src="data/aysen_hubs_data.js" defer></script>
+  <script src="js/nl2chart_engine.js" defer></script>
+  <script src="js/omniroute_client.js" defer></script>
 
   <!-- Cabecera Global y Accesibilidad -->
   <link rel="stylesheet" href="js/cabecera_global.css">
   <link rel="stylesheet" href="css/apple-design.css">
-  <script src="js/cabecera_global.js"></script>
+  <script src="js/cabecera_global.js" defer></script>
 
   <style>
     :root {
@@ -55,7 +59,9 @@
     html,
     body {
       height: 100vh;
+      height: 100dvh;
       max-height: 100vh;
+      max-height: 100dvh;
       overflow: hidden;
       background: var(--paper);
       color: var(--ink);
@@ -67,7 +73,9 @@
     /* Layout Principal 100vh Dividido en 2 Paneles */
     .consultor-layout {
       height: 100vh;
+      height: 100dvh;
       max-height: 100vh;
+      max-height: 100dvh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -363,6 +371,7 @@
       min-width: 0;
       max-width: 50%;
       height: calc(100vh - 56px);
+      height: calc(100dvh - 56px);
       background: var(--paper-subtle);
       display: flex;
       flex-direction: column;
@@ -592,16 +601,33 @@
 
     /* Responsividad Tablet y Móvil */
     @media (max-width: 960px) {
+      html,
+      body,
+      .consultor-layout {
+        height: auto;
+        max-height: none;
+        overflow-y: auto;
+      }
+
       .consultor-body {
         flex-direction: column;
+        overflow: visible;
       }
 
       .panel-chat,
-      .panel-evidence {
+      .consultor-chat-pane,
+      .panel-evidence,
+      .consultor-canvas-pane {
         max-width: 100%;
-        flex: 1 1 50%;
+        flex: none;
         height: auto;
         min-height: 0;
+        overflow-y: visible;
+      }
+
+      .chart-stage {
+        min-height: 240px;
+        height: auto;
       }
 
       .panel-chat {
@@ -637,9 +663,69 @@
               <span class="pill-arrow">↗</span>
             </a>
           </nav>
+
+          <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer" type="button">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
     </header>
+
+    <!-- CAJÓN DE NAVEGACIÓN MÓVIL UNIVERSAL -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú de navegación principal">
+      <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+      <div class="mobile-nav-panel" id="mobileNavPanel">
+        <div class="mobile-nav-header">
+          <div class="mobile-nav-brand">
+            <span class="brand-dot"></span>
+            <span class="mobile-nav-author">Álvaro Contreras Barrios</span>
+          </div>
+          <button class="mobile-nav-close" id="btnMobileClose" aria-label="Cerrar menú de navegación" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>
+        <nav class="mobile-nav-links" aria-label="Navegación móvil">
+          <a href="portal.html" class="mobile-nav-link">
+            <span class="mobile-nav-num">01</span>
+            <span class="mobile-nav-text">Portada</span>
+            <span class="mobile-nav-arrow">→</span>
+          </a>
+          <a href="sistemas_complejos.html" class="mobile-nav-link">
+            <span class="mobile-nav-num">02</span>
+            <span class="mobile-nav-text">Visualizador de Complejidad</span>
+            <span class="mobile-nav-arrow">→</span>
+          </a>
+          <a href="index.html" class="mobile-nav-link">
+            <span class="mobile-nav-num">03</span>
+            <span class="mobile-nav-text">Datos de Aysén</span>
+            <span class="mobile-nav-arrow">→</span>
+          </a>
+          <a href="laboratorio.html" class="mobile-nav-link">
+            <span class="mobile-nav-num">04</span>
+            <span class="mobile-nav-text">Laboratorio Sistémico</span>
+            <span class="mobile-nav-arrow">→</span>
+          </a>
+          <a href="consultor.html" class="mobile-nav-link active">
+            <span class="mobile-nav-num">05</span>
+            <span class="mobile-nav-text">Consultor de Datos</span>
+            <span class="mobile-nav-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+            <span class="mobile-nav-num">06</span>
+            <span class="mobile-nav-text">LinkedIn</span>
+            <span class="mobile-nav-arrow">↗</span>
+          </a>
+        </nav>
+      </div>
+    </div>
 
     <!-- Cuerpo Dividido 50% - 50% -->
     <div class="consultor-body">
@@ -699,7 +785,7 @@
             <button type="button" class="ctrl-btn" id="btnViewTable">Tabla de datos (10 comunas)</button>
             <button type="button" class="ctrl-btn" id="btnScopeFilter" style="display: none;">Solo comuna</button>
           </div>
-          <a href="#" class="btn-open-lab" id="btnOpenInLab" target="_blank">
+          <a href="#" class="btn-open-lab" id="btnOpenInLab" target="_blank" rel="noopener noreferrer">
             Abrir este gráfico en el Laboratorio Sistémico →
           </a>
         </div>
@@ -804,16 +890,6 @@
       const evidenceTableBody = document.getElementById('evidenceTableBody');
       const evidenceTableFoot = document.getElementById('evidenceTableFoot');
       const canvasEl = document.getElementById('consultorCanvas');
-
-      // Inicializar OmniRouteClient (local: OmniRoute 20128; remoto/GitHub Pages: Cloudflare Worker)
-      if (window.OmniRouteClient) {
-        const isLocalHost = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
-        window.OmniRouteClient.init(window.AYSEN_HUBS_DATA, {
-          endpoint: isLocalHost
-            ? 'http://localhost:20128/v1/chat/completions'
-            : 'https://aysen-llm-proxy.alvaroidecb.workers.dev/v1/chat/completions'
-        });
-      }
 
       function setChartTitleAndMeta(titleText, sourceText) {
         const cleanTitle = titleText || 'Panel de Evidencia y Visualización';
@@ -1095,9 +1171,13 @@
             ];
             url.searchParams.set('cards', JSON.stringify(cardsPayload));
             handledAsCards = true;
-          } else {
+          } else if (!currentChartState.varX || ['visitantes_snaspe', 'visitantes_snaspe_conaf_hist', 'pernoctaciones_anuales_emat_hist'].includes(currentChartState.varX)) {
             url.searchParams.set('varX', 'visitantes_snaspe_conaf_hist');
             url.searchParams.set('varY', 'pernoctaciones_anuales_emat_hist');
+            url.searchParams.set('type', 'line');
+          } else {
+            url.searchParams.set('varX', currentChartState.varX);
+            if (currentChartState.varY) url.searchParams.set('varY', currentChartState.varY);
             url.searchParams.set('type', 'line');
           }
         } else if (isMulti) {
@@ -2368,6 +2448,14 @@
 
       // Render inicial al cargar la página
       window.addEventListener('DOMContentLoaded', function () {
+        if (window.OmniRouteClient) {
+          const isLocalHost = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+          window.OmniRouteClient.init(window.AYSEN_HUBS_DATA, {
+            endpoint: isLocalHost
+              ? 'http://localhost:20128/v1/chat/completions'
+              : 'https://aysen-llm-proxy.alvaroidecb.workers.dev/v1/chat/completions'
+          });
+        }
         if (typeof montarCabecera === 'function') {
           montarCabecera({ tituloModulo: 'Consultor de Datos', activo: 'consultor.html' });
         }

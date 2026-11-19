@@ -186,17 +186,11 @@ class TestTransitionTokensAndNoAll(unittest.TestCase):
 
     def test_07_canonical_ease_drawer_used_on_drawers(self):
         """Verifica que las transiciones de paneles deslizantes/drawers utilicen var(--ease-drawer)"""
-        # portal.html mobile-nav-panel
+        # js/cabecera_global.css mobile-nav-panel (fuente unica de verdad para portal, sistemas, index, laboratorio y consultor)
         self.assertRegex(
-            self.portal_html,
-            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
-            "portal.html: .mobile-nav-panel debe usar var(--ease-drawer)"
-        )
-        # sistemas_complejos.html mobile-nav-panel
-        self.assertRegex(
-            self.sistemas_html,
-            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
-            "sistemas_complejos.html: .mobile-nav-panel debe usar var(--ease-drawer)"
+            self.cabecera_css,
+            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer",
+            "js/cabecera_global.css: .mobile-nav-panel debe usar var(--ease-drawer)"
         )
         # laboratorio.html studio-sidebar
         self.assertRegex(
@@ -210,12 +204,7 @@ class TestTransitionTokensAndNoAll(unittest.TestCase):
             r"\.studio-metacog-drawer\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
             "laboratorio.html: .studio-metacog-drawer debe usar var(--ease-drawer)"
         )
-        # index.html mobile-nav-panel y #drawer-panel
-        self.assertRegex(
-            self.index_html,
-            r"\.mobile-nav-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
-            "index.html: .mobile-nav-panel debe usar var(--ease-drawer)"
-        )
+        # index.html #drawer-panel
         self.assertRegex(
             self.index_html,
             r"#concept-drawer\s+#drawer-panel\s*\{[^}]*transition:\s*transform[^;]*var\(--ease-drawer\)",
