@@ -459,10 +459,13 @@
     .card-map-layer-bar, .spatial-layer-bar {
       position: relative;
       display: flex;
+      flex: 0 0 auto;
+      flex-shrink: 0;
       align-items: center;
       gap: 0.3rem;
-      padding: 0.2rem 0.45rem;
+      padding: 0.24rem 0.45rem;
       min-height: 28px;
+      height: auto;
       background: #f4efec;
       border-bottom: 1px solid rgba(28, 27, 27, 0.09);
       font-family: var(--font-mono);
@@ -470,7 +473,7 @@
       color: var(--ink);
       flex-wrap: wrap;
       overflow: visible;
-      z-index: 35;
+      z-index: 1000;
     }
     .card-map-layer-bar .map-layer-lbl, .spatial-layer-bar .map-layer-lbl {
       font-weight: 700;
@@ -549,6 +552,7 @@
       position: relative;
       display: inline-flex;
       align-items: center;
+      z-index: 1050;
     }
     .map-multilayer-popover {
       display: none;
@@ -563,7 +567,7 @@
       border-radius: 3px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
       padding: 6px 8px;
-      z-index: 1200;
+      z-index: 1100;
       font-family: var(--font-sans);
       font-size: 0.66rem;
       color: #1c1b1b;
@@ -609,11 +613,14 @@
       border-radius: 2px;
       flex-shrink: 0;
     }
+    .map-container-box .leaflet-map-pane {
+      z-index: auto !important;
+    }
     .map-bivariate-legend, .spatial-map-legend {
       position: absolute;
       bottom: 8px;
       left: 8px;
-      z-index: 500;
+      z-index: 680;
       background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(28, 27, 27, 0.16);
@@ -2002,12 +2009,12 @@
       border-color: var(--cobalt);
     }
 
-    /* Contenedor Visual Central de la Tarjeta (Full-Bleed 100% de alto y ancho) */
+    /* Contenedor Visual Central de la Tarjeta (Full-Bleed 100% del espacio flex restante) */
     .widget-stage-display,
     .card-body {
       flex: 1 1 auto;
       width: 100%;
-      height: 100%;
+      height: auto;
       min-height: 0;
       padding: 0.35rem 0.5rem;
       display: flex;
@@ -2015,6 +2022,7 @@
       align-items: stretch;
       justify-content: stretch;
       position: relative;
+      z-index: 1;
       overflow: hidden;
       background: #ffffff;
     }
@@ -9860,7 +9868,10 @@
             !e.target.closest('.card-map-layer-bar') &&
             !e.target.closest('.map-multilayer-popover') &&
             !e.target.closest('.leaflet-pane') &&
+            !e.target.closest('.leaflet-popup') &&
+            !e.target.closest('.leaflet-popup-close-button') &&
             !e.target.closest('.leaflet-control') &&
+            !e.target.closest('.map-container-box') &&
             !e.target.closest('.map-bivariate-legend')
           ) {
             selectActiveCard(w.id);
@@ -14323,6 +14334,19 @@
           map.getPane('buffersPane').style.zIndex = '550';
           map.createPane('nodesPane');
           map.getPane('nodesPane').style.zIndex = '650';
+
+          // Evitar que al cerrar popups (x) el evento burbujee hacia la tarjeta o el lienzo 2D
+          map.on('popupopen', (popEv) => {
+            const popEl = popEv && popEv.popup && popEv.popup.getElement ? popEv.popup.getElement() : null;
+            if (!popEl) return;
+            const closeBtn = popEl.querySelector('.leaflet-popup-close-button');
+            if (closeBtn && !closeBtn._hasPopupCloseGuard && window.L && L.DomEvent) {
+              ['pointerdown', 'mousedown', 'click'].forEach((evtName) => {
+                L.DomEvent.on(closeBtn, evtName, L.DomEvent.stopPropagation);
+              });
+              closeBtn._hasPopupCloseGuard = true;
+            }
+          });
 
           L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${CARTO_API_KEY}`, {
             attribution: '&copy; OpenStreetMap contributors &copy; CARTO',

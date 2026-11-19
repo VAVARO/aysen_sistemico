@@ -191,6 +191,10 @@ class TestSpatialMultilayerMap(unittest.TestCase):
             "btn-map-expand-toggle",
             "scrollWheelZoom",
             "map.fitBounds",
+            "leaflet-popup-close-button",
+            "z-index: 1000;",
+            "z-index: 1100;",
+            "z-index: 680;",
         ]:
             self.assertIn(token, self.lab_html, f"Falta control o mecanismo {token} en laboratorio.html")
 
