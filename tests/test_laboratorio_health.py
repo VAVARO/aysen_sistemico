@@ -203,7 +203,10 @@ class TestLaboratorioHealth(unittest.TestCase):
             cfg = card5.get("config", {})
             var_y = cfg.get("varY")
             self.assertIsNotNone(var_y, f"Tarjeta 5 del Hub {hub_id} no tiene varY definido")
-            self.assertTrue(var_y.startswith("barometro_"), f"Tarjeta 5 del Hub {hub_id} debe apuntar a una variable barometro_*, tiene '{var_y}'")
+            self.assertTrue(
+                var_y.startswith("barometro_") or var_y in ("nota_percepcion_cultura_b4b", "percepcion_ctci_prioritaria_pct_i1i"),
+                f"Tarjeta 5 del Hub {hub_id} debe apuntar a una variable barometro_* o espejo B4B/I1I, tiene '{var_y}'"
+            )
 
             # Verificar que la variable existe en las 10 comunas con valor numérico válido
             for comuna in comunas:
@@ -469,6 +472,196 @@ class TestLaboratorioHealth(unittest.TestCase):
         proc = subprocess.run(["node", "-e", node_bundle_check], cwd=ROOT_DIR, capture_output=True, text=True)
         self.assertEqual(proc.returncode, 0, f"Fallo en validacion bundle turismo:\n{proc.stderr}\n{proc.stdout}")
         self.assertIn("LABORATORIO_TURISMO_BUNDLE_OK", proc.stdout)
+
+    def test_12_correcciones_catalogo_sintesis_barometro_y_presets(self):
+        """Verifica unidades/hubs de laboratorio, computeWidgetExecutiveStats bivariado, window.openSociodemoDrawer, filtro demografico reactivo, cards= con comunas/summary y los 7 presets alineados."""
+        with open(LABORATORIO_HTML, "r", encoding="utf-8") as f:
+            lab_html = f.read()
+
+        for snippet in [
+            "window.openSociodemoDrawer = openSociodemoDrawer;",
+            "w.activeSociodemoFilter = { edu, nse, sexo, edad, macro };",
+            "const EXPLICIT_VAR_META =",
+            "id: 'holdings_salmoneros'",
+            "id: 'biomasa_por_holding'",
+            "id: 'emporcha_cruceros_hist'",
+            "id: 'centros_activos_salmon_hist'",
+            "id: 'dias_sobre_norma_mp25_hist'",
+            "applyComunasUrlFilter(comunasParam);"
+        ]:
+            self.assertIn(snippet, lab_html, f"Falta fragmento en laboratorio.html: {snippet}")
+
+        node_script = r"""
+        const fs = require('fs');
+        const vm = require('vm');
+        const assert = require('assert');
+
+        const html = fs.readFileSync('laboratorio.html', 'utf8');
+        const consultorHtml = fs.readFileSync('consultor.html', 'utf8');
+
+        // 1. Validar sintaxis JS limpia de todos los scripts embebidos
+        for (const [fname, content] of [['laboratorio.html', html], ['consultor.html', consultorHtml]]) {
+            const scripts = [...content.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)];
+            scripts.forEach((m, idx) => {
+                new vm.Script(m[1], { filename: `${fname}_inline_${idx}.js` });
+            });
+        }
+
+        // 2. Verificar unitInference, hubInference y EXPLICIT_VAR_META
+        const mHub = html.match(/const hubInference = \(k\) => \{([\s\S]*?)\n\s*\};/);
+        const mUnit = html.match(/const unitInference = \(k\) => \{([\s\S]*?)\n\s*\};/);
+        const mExp = html.match(/const EXPLICIT_VAR_META = (\{[\s\S]*?\n\s*\});/);
+        assert(mHub && mUnit && mExp, 'Faltan hubInference, unitInference o EXPLICIT_VAR_META');
+
+        const hubInference = new Function('k', mHub[1]);
+        const unitInference = new Function('k', mUnit[1]);
+        const EXPLICIT_VAR_META = (new Function('return ' + mExp[1]))();
+
+        assert.strictEqual(EXPLICIT_VAR_META.participacion_cultural_pct_c2.unit, '%');
+        assert.strictEqual(EXPLICIT_VAR_META.participacion_cultural_pct_c2.hubId, 'cultura');
+        assert.strictEqual(EXPLICIT_VAR_META.evaluacion_uaysen_promedio_i8.unit, 'nota (1-7)');
+        assert.strictEqual(EXPLICIT_VAR_META.evaluacion_uaysen_promedio_i8.hubId, 'ctci');
+        assert.strictEqual(unitInference('traslado_coyhaique_hrs'), 'horas');
+        assert.strictEqual(hubInference('traslado_coyhaique_hrs'), 'salud');
+        assert.strictEqual(unitInference('ha_snaspe_por_guardaparque'), 'ha/guardaparque');
+        assert.strictEqual(hubInference('ha_snaspe_por_guardaparque'), 'turismo');
+        assert.strictEqual(unitInference('tarifa_adr_estimada_usd'), 'US$');
+        assert.strictEqual(hubInference('tarifa_adr_estimada_usd'), 'turismo');
+        assert.strictEqual(hubInference('innovacion_corfo_mclp'), 'ctci');
+
+        // 3. Verificar computeWidgetExecutiveStats bivariado incluye ambas variables
+        const mStats = html.match(/function computeWidgetExecutiveStats\(w\)\s*\{([\s\S]*?)\n\s{6}\}/);
+        assert(mStats, 'Falta computeWidgetExecutiveStats');
+        const mockDocument = { querySelector: () => ({ textContent: 'Región de Aysén' }) };
+        const mockAppState = { territorialFilter: 'all', excludeCoyhaique: false };
+        const mockPayload = {
+            mode: 'bivariate',
+            dim: 'comuna',
+            labels: ['Coyhaique', 'Aysén', 'Cisnes'],
+            dataX: [100, 50, 20],
+            dataY: [5, 15, 25],
+            nameX: 'Población',
+            nameY: 'Presión Turística',
+            unitX: 'hab',
+            unitY: 'visitantes/hab'
+        };
+        const fnStats = new Function('getWidgetDataPayload', 'document', 'AppState', `return function computeWidgetExecutiveStats(w) { ${mStats[1]} };`)(
+            () => mockPayload, mockDocument, mockAppState
+        );
+        const resStats = fnStats({ id: 1, title: 'Cruce Test', excludeOutlierCoyhaique: false });
+        assert(resStats.pt1.includes('Población') && resStats.pt1.includes('Presión Turística'),
+            'pt1 debe nombrar tanto varX como varY: ' + resStats.pt1);
+
+        // 4. Verificar los 7 presets alineados en el bundle compilado
+        const ctx = { window: {} };
+        vm.runInNewContext(fs.readFileSync('data/aysen_hubs_data.js', 'utf8'), ctx);
+        const d = ctx.window.AYSEN_HUBS_DATA;
+        const allPresets = {};
+        for (const gal of [d.hubsGallery, d.extension_gallery]) {
+            for (const h of Object.values(gal || {})) {
+                for (const p of (h.presets || [])) allPresets[p.preset_id] = p;
+            }
+        }
+        assert.strictEqual(allPresets.hub_03_01.config.spatialLayer, 'concesiones_acuicolas_padron');
+        assert.strictEqual(allPresets.hub_03_04.config.varY, 'centros_activos_salmon_hist');
+        assert.strictEqual(allPresets.hub_04_01.config.spatialLayer, 'proyectos_seia_puros');
+        assert.deepStrictEqual(
+            allPresets.hub_04_04.config.customChartSpec.datasets[0].data,
+            d.series.balmaceda_pasajeros_jac.map(r => r.pasajeros)
+        );
+        assert.strictEqual(allPresets.hub_05_01.config.showBuffers, false);
+        assert.strictEqual(allPresets.hub_07_04.config.varY, 'dias_sobre_norma_mp25_hist');
+        assert.strictEqual(allPresets.CP_05.is_perception_mirror, true);
+        assert.strictEqual(allPresets.CP_05.config.varY, 'nota_percepcion_cultura_b4b');
+        assert.strictEqual(allPresets.CT_05.config.varY, 'percepcion_ctci_prioritaria_pct_i1i');
+
+        // 5. Verificar en runtime loadDataLakeAndCatalog() y getWidgetDataPayload(w)
+        function extractFn(name) {
+            const re = new RegExp(`(?:async\\s+)?function\\s+${name}\\s*\\(`);
+            const match = re.exec(html);
+            assert(match, 'Falta funcion ' + name);
+            let b = 0, st = false, end = match.index;
+            for (let i = match.index; i < html.length; i++) {
+                if (html[i] === '{') { b++; st = true; }
+                else if (html[i] === '}') { b--; if (st && b === 0) { end = i + 1; break; } }
+            }
+            return html.slice(match.index, end);
+        }
+
+        const COMUNAS_ORDER = ['Coyhaique', 'Aysén', 'Cisnes', 'Chile Chico', 'Cochrane', 'Río Ibáñez', 'Guaitecas', 'Lago Verde', 'Tortel', "O'Higgins"];
+        const runCtx = {
+            window: ctx.window,
+            console: { log: () => {}, warn: () => {}, error: () => {} },
+            COMUNAS_ORDER,
+            TERRITORIAL_SLICES: { all: COMUNAS_ORDER },
+            document: { getElementById: () => null, querySelector: () => null, querySelectorAll: () => [] },
+            fetch: async () => { throw new Error('offline-test'); },
+            renderSidebarCatalog: () => {},
+            getAutoexplanatoryVarInfo: (id, name, unit) => ({ title: name, unitLabel: unit }),
+            resolveOfficialSource: () => ({ name: 'Oficial', collectionDate: '2026', url: 'https://datos.gob.cl' }),
+            formatVarWithUnit: (n, u) => `${n} (${u})`,
+            AppState: {
+                hubsData: d,
+                catalogItems: [],
+                territorialFilter: 'all',
+                excludeCoyhaique: false
+            }
+        };
+        const runtimeCode = ['normStr', 'getHubTitleName', 'resolveCommunalVector', 'loadDataLakeAndCatalog', 'getWidgetDataPayload']
+            .map(extractFn)
+            .join('\n\n');
+        vm.runInNewContext(runtimeCode, runCtx);
+
+        (async () => {
+            await runCtx.loadDataLakeAndCatalog();
+
+            const itemEstadia = runCtx.AppState.catalogItems.find(x => x.id === 'estadia_promedio_dias');
+            assert(itemEstadia && itemEstadia.hubId === 'turismo' && itemEstadia.aggMode === 'mean',
+                'estadia_promedio_dias debe pertenecer a turismo con aggMode=mean');
+
+            const pHold = runCtx.getWidgetDataPayload({ varX: 'holdings_salmoneros', varY: 'biomasa_por_holding', chartType: 'bar' });
+            assert.strictEqual(pHold.dim, 'holding');
+            assert.strictEqual(pHold.labels.length, 12);
+            assert.strictEqual(pHold.labels[0], 'AquaChile');
+            assert.strictEqual(pHold.dataX[0], 210);
+            assert.strictEqual(pHold.dataY[0], 141937);
+
+            const pCruc = runCtx.getWidgetDataPayload({ varX: 'emporcha_cruceros_hist', varY: 'visitantes_snaspe_conaf_hist', chartType: 'line' });
+            assert.strictEqual(pCruc.dim, 'tiempo');
+            assert.strictEqual(pCruc.labels.length, 8);
+            assert.strictEqual(pCruc.labels[0], '2019');
+            assert.strictEqual(pCruc.labels[7], '2026');
+
+            const msCp05 = allPresets.CP_05.config.mirror_series;
+            const pNse = runCtx.getWidgetDataPayload({
+                varX: allPresets.CP_05.config.varX,
+                varY: allPresets.CP_05.config.varY,
+                chartType: 'bar',
+                isPerceptionMirror: true,
+                mirrorSeries: msCp05,
+                activeSociodemoFilter: { edu: 'todos', nse: 'alto', sexo: 'todos', edad: 'todos', macro: 'todas' }
+            });
+            assert.strictEqual(pNse.dim, 'barometro_estrato');
+            assert.deepStrictEqual(Array.from(pNse.labels), ['NSE Bajo', 'NSE Medio', 'NSE Alto']);
+            assert.deepStrictEqual(Array.from(pNse.dataY), [msCp05.por_nse.bajo.tasa_positiva_pct, msCp05.por_nse.medio.tasa_positiva_pct, msCp05.por_nse.alto.tasa_positiva_pct]);
+
+            const pMacro = runCtx.getWidgetDataPayload({
+                varX: allPresets.CP_05.config.varX,
+                varY: allPresets.CP_05.config.varY,
+                chartType: 'bar',
+                isPerceptionMirror: true,
+                mirrorSeries: msCp05,
+                activeSociodemoFilter: { edu: 'todos', nse: 'todos', sexo: 'todos', edad: 'todos', macro: 'sur' }
+            });
+            assert.strictEqual(pMacro.dim, 'barometro_estrato');
+            assert.deepStrictEqual(Array.from(pMacro.dataX), [msCp05.structural_by_macrozona.centro, msCp05.structural_by_macrozona.norte, msCp05.structural_by_macrozona.sur]);
+
+            console.log('LABORATORIO_AUDIT_FIXES_OK');
+        })().catch(err => { console.error(err); process.exit(1); });
+        """
+        proc = subprocess.run(["node", "-e", node_script], cwd=ROOT_DIR, capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, f"Fallo en test_12:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("LABORATORIO_AUDIT_FIXES_OK", proc.stdout)
 
 
 if __name__ == "__main__":

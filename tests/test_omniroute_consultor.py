@@ -1621,6 +1621,213 @@ class TestOmniRouteConsultor(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Error en test_30:\n{proc.stderr}\n{proc.stdout}")
         self.assertIn("DUE_DILIGENCE_TURISMO_CONSULTOR_OK", proc.stdout)
 
+    def test_31_correccion_multi_actor_10_hubs_y_transicion_lab(self):
+        """
+        Verifica los 14 fallos corregidos: punto final en normalizeText, anti-falso-positivo Comuna Aysen (11201),
+        consultas multi-variable de 4 variables en los 10 Hubs, variables intensivas, deduplicacion de gemelos,
+        4 comunas en holdings, serializacion updateLabLink (cards=, series, holdings) e higiene thVarY.
+        """
+        node_script = r"""
+        const fs = require('fs');
+        const vm = require('vm');
+        const assert = require('assert');
+
+        const ctx = {
+            window: {},
+            global: {},
+            console,
+            location: { protocol: 'http:', hostname: 'localhost', href: 'http://localhost/consultor.html' },
+            URL,
+            URLSearchParams,
+            fetch: async () => { throw new Error('offline-test'); }
+        };
+        ctx.window = ctx;
+        ctx.global = ctx;
+
+        vm.runInNewContext(fs.readFileSync('data/aysen_hubs_data.js', 'utf8'), ctx);
+        const lex = JSON.parse(fs.readFileSync('data/nl_lexicon_aysen.json', 'utf8'));
+        vm.runInNewContext(fs.readFileSync('js/nl2chart_engine.js', 'utf8'), ctx);
+        if (ctx.NL2ChartEngine && ctx.NL2ChartEngine.setLexicon) ctx.NL2ChartEngine.setLexicon(lex);
+        vm.runInNewContext(fs.readFileSync('js/omniroute_client.js', 'utf8'), ctx);
+
+        const client = ctx.OmniRouteClient.init(ctx.AYSEN_HUBS_DATA);
+
+        (async () => {
+            // 1. Punto final tras localidad ("Puyuhuapi.") no rompe deteccion + gasto_diario es intensiva (Prom: 120,9)
+            client.clearConversationMemory();
+            const qTour = await client.query('Soy un pequeño tour operador en Puerto Río Tranquilo y Puyuhuapi. ¿Cuál es la estadía promedio, el gasto diario turista y la estacionalidad mes a mes?');
+            assert(qTour && qTour.chart && qTour.chart.render === true, 'Tour operador debe renderizar');
+            assert.strictEqual(qTour.chart.singleComunaMode, false, 'No debe activar singleComunaMode con 2 localidades');
+            assert(Array.isArray(qTour.chart.focusComunas) && qTour.chart.focusComunas.includes('Río Ibáñez') && qTour.chart.focusComunas.includes('Cisnes'),
+                'Debe incluir Río Ibáñez y Cisnes en focusComunas: ' + JSON.stringify(qTour.chart.focusComunas));
+            assert(qTour.chart.type !== 'scatter' && qTour.chart.type !== 'line', 'Con 2 comunas no debe usar scatter ni secuestrar a line: ' + qTour.chart.type);
+            assert(qTour.reply.includes('120,9') && !qTour.reply.includes('1.209'), 'gasto_diario_turista_usd debe reportar Prom 120,9 y no Tot 1.209: ' + qTour.reply);
+
+            // 2. Anti-falso-positivo Comuna de Aysen (11201) en "10 comunas de Aysen" y "Universidad de Aysen"
+            const q10Com = await client.query('Compara la tasa de pobreza multidimensional, la matrícula escolar, el índice de envejecimiento y la ruralidad en las 10 comunas de Aysén');
+            assert.strictEqual(q10Com.chart.singleComunaMode, false, '10 comunas de Aysén no debe activar singleComunaMode');
+            assert.strictEqual(q10Com.chart.focusComunas, null, '10 comunas de Aysén no debe filtrar focusComunas a Aysén 11201');
+            assert(Array.isArray(q10Com.chart.multiCharts) && q10Com.chart.multiCharts.length === 2, 'Debe generar 2 multiCharts');
+            assert(q10Com.chart.varW, 'Debe incluir 4ta variable varW');
+            assert(q10Com.reply.includes('Pobreza Multidimensional') && q10Com.reply.includes('Matrícula Escolar') && q10Com.reply.includes('Envejecimiento') && q10Com.reply.includes('Rural'),
+                'Reply debe incluir las 4 variables: ' + q10Com.reply);
+
+            const qUAysen = await client.query('Compara proyectos CTCi, monto ANID, innovación CORFO y evaluación de la Universidad de Aysén por comuna');
+            assert.strictEqual(qUAysen.chart.singleComunaMode, false, 'Universidad de Aysén no debe activar singleComunaMode');
+            assert.strictEqual(qUAysen.chart.focusComunas, null, 'Universidad de Aysén no debe filtrar a Comuna de Aysén');
+            assert(Array.isArray(qUAysen.chart.multiCharts) && qUAysen.chart.multiCharts.length === 2, 'CTCi 4 vars debe generar 2 multiCharts');
+            assert(qUAysen.chart.varW, 'CTCi debe incluir 4ta variable varW');
+
+            // 3. Comparativas multi-variable en los Hubs restantes (sin secuestro por reconciledTopic)
+            const multiCases = [
+                {
+                    q: 'Compara los sindicatos de pesca artesanal, las áreas AMERB, las hectáreas ECMPO y las concesiones salmoneras en las comunas marítimas',
+                    mustIncludeVars: ['sindicatos_pesca_artesanal', 'amerb_decretadas', 'ecmpo_solicitadas_ha', 'concesiones_salmon'],
+                    expectedFocusLen: 4
+                },
+                {
+                    q: 'Compara la superficie de bosque nativo, glaciares, derechos de agua y MP2.5 en las comunas de Aysén',
+                    mustIncludeVars: ['cobertura_vegetal_nativa_ha', 'superficie_glaciares_km2', 'daa_no_consuntivos_m3s', 'dias_sobre_norma_mp25'],
+                    expectedFocusLen: null
+                },
+                {
+                    q: 'Compara camas hospitalarias, médicos por mil hab, espera quirúrgica y aeroevacuaciones SAMU por comuna',
+                    mustIncludeVars: ['camas_hospitalarias', 'medicos_por_mil_hab', 'mediana_espera_quirurgica_dias', 'aeroevacuaciones_samu_n'],
+                    expectedFocusLen: null
+                },
+                {
+                    q: 'Compara espacios culturales, monumentos, fondos concursables adjudicados y bibliotecas por comuna',
+                    mustIncludeVars: ['total_espacios_culturales', 'monumentos_nacionales_count', 'fondos_cultura_adjudicados_mclp', 'bibliotecas_snbp_n'],
+                    expectedFocusLen: null
+                },
+                {
+                    q: 'Compara la tasa de aprobación RS, la participación electoral, la profesionalización municipal y la dependencia FCM por comuna',
+                    mustIncludeVars: ['tasa_aprobacion_rs_sni_pct', 'participacion_presidencial_2025_2v_pct', 'profesionalizacion_pct', 'dependencia_fcm_pct'],
+                    expectedFocusLen: null
+                }
+            ];
+
+            for (const mc of multiCases) {
+                const res = await client.query(mc.q);
+                const gotVars = [res.chart.varX, res.chart.varY, res.chart.varZ, res.chart.varW];
+                for (const mv of mc.mustIncludeVars) {
+                    assert(gotVars.includes(mv), `Falta ${mv} en ${JSON.stringify(gotVars)} para: ${mc.q}`);
+                }
+                assert(Array.isArray(res.chart.multiCharts) && res.chart.multiCharts.length === 2, `Deben existir 2 multiCharts para: ${mc.q}`);
+                if (mc.expectedFocusLen) {
+                    assert.strictEqual(res.chart.focusComunas?.length, mc.expectedFocusLen);
+                } else {
+                    assert.strictEqual(res.chart.focusComunas, null, `No debe filtrar comunas en: ${mc.q}`);
+                }
+            }
+
+            // 4. Guardaparques + presion turistica sobre residentes (no debe contaminarse con poblacion ni investigadores)
+            const qGuard = await client.query('¿Cuál es la dotación de guardaparques (hectáreas por guardaparque) y la presión turística sobre residentes por comuna?');
+            const guardVars = [qGuard.chart.varX, qGuard.chart.varY];
+            assert(guardVars.includes('ha_snaspe_por_guardaparque') && guardVars.includes('ratio_presion_turistica'),
+                'Guardaparques + presión debe seleccionar ambas variables, got: ' + JSON.stringify(guardVars));
+
+            // 5. Deduplicacion de columnas gemelas en gasto municipal en cultura per capita
+            const qCultPc = await client.query('¿Cuál es el gasto municipal en cultura per cápita por comuna?');
+            assert.strictEqual(qCultPc.chart.varX, 'gasto_cultura_per_capita_clp');
+            assert.notStrictEqual(qCultPc.chart.varY, 'gasto_cultural_per_capita_clp', 'No debe graficar columna gemela contra si misma');
+
+            // 6. Holdings menciona las 4 comunas salmoneras (incluyendo Tortel)
+            const qHold = await client.query('¿Cómo se distribuyen las concesiones salmoneras según holdings o empresas?');
+            assert(qHold.reply.includes('Tortel'), 'buildHoldingsReply debe mencionar Tortel: ' + qHold.reply);
+
+            // 7. Verificar updateLabLink() y restoreStandardTableHead() en consultor.html
+            const consultorHtml = fs.readFileSync('consultor.html', 'utf8');
+            const mUpd = consultorHtml.match(/function updateLabLink\(\)\s*\{[\s\S]*?\n\s{6}\}/);
+            assert(mUpd, 'Debe existir updateLabLink() en consultor.html');
+            const mHead = consultorHtml.match(/function restoreStandardTableHead\([^)]*\)\s*\{[\s\S]*?\n\s{6}\}/);
+            assert(mHead, 'Debe existir restoreStandardTableHead() en consultor.html');
+
+            const btnOpenInLab = { href: '' };
+            const evidenceTableHead = { innerHTML: '' };
+            let currentChartState = {};
+            const sandboxFn = new Function(
+                'btnOpenInLab', 'evidenceTableHead', 'getState', 'window', 'URL',
+                `return {
+                    setState(s) { currentChartState = s; },
+                    ${mUpd[0].replace('function updateLabLink()', 'updateLabLink()')},
+                    ${mHead[0].replace('function restoreStandardTableHead(', 'restoreStandardTableHead(')}
+                };`
+            );
+            const helperEnv = {
+                set currentChartState(v) { currentChartState = v; },
+                location: { href: 'http://localhost/consultor.html' }
+            };
+            const uiFns = new Function(
+                'btnOpenInLab', 'evidenceTableHead', 'window', 'URL',
+                `let currentChartState = {};
+                 ${mUpd[0]}
+                 ${mHead[0]}
+                 return { setState: (s) => { currentChartState = s; }, updateLabLink, restoreStandardTableHead };`
+            )(btnOpenInLab, evidenceTableHead, helperEnv, URL);
+
+            // 7a. multiCharts -> cards= con 2 tarjetas + summary
+            uiFns.setState({
+                varX: q10Com.chart.varX,
+                varY: q10Com.chart.varY,
+                varZ: q10Com.chart.varZ,
+                varW: q10Com.chart.varW,
+                type: 'bar',
+                multiCharts: q10Com.chart.multiCharts,
+                title: q10Com.chart.title,
+                summary: q10Com.reply
+            });
+            const uMulti = new URL(uiFns.updateLabLink());
+            const cardsMulti = JSON.parse(uMulti.searchParams.get('cards'));
+            assert.strictEqual(cardsMulti.length, 2, 'updateLabLink debe serializar 2 tarjetas en cards=');
+            assert(uMulti.searchParams.get('summary'), 'updateLabLink debe conservar summary');
+
+            // 7b. Estacionalidad mensual EMAT -> varX=estacionalidad_mensual_emat
+            const qEmatM = await client.query('¿Cuál es la estacionalidad mensual de enero a diciembre del turismo y ocupación hotelera EMAT en Aysén?');
+            uiFns.setState(Object.assign({}, qEmatM.chart, { summary: qEmatM.reply }));
+            const uEmat = new URL(uiFns.updateLabLink());
+            assert.strictEqual(uEmat.searchParams.get('varX'), 'estacionalidad_mensual_emat');
+            assert.strictEqual(uEmat.searchParams.get('varY'), 'ocupacion_mensual_emat_pct');
+
+            // 7c. Balmaceda + Cruceros -> cards= con serie temporal
+            const qBalm = await client.query('¿Cómo ha evolucionado el flujo anual de pasajeros en el Aeródromo Balmaceda y los pasajeros de cruceros turísticos entre 2015 y 2026 frente a las visitas a parques nacionales?');
+            uiFns.setState(Object.assign({}, qBalm.chart, { summary: qBalm.reply }));
+            const uBalm = new URL(uiFns.updateLabLink());
+            const cardsBalm = JSON.parse(uBalm.searchParams.get('cards'));
+            assert.strictEqual(cardsBalm.length, 2);
+            assert.strictEqual(cardsBalm[0].x, 'trafico_aereo_pasajeros_balmaceda_jac');
+            assert.strictEqual(cardsBalm[0].y, 'visitantes_snaspe_conaf_hist');
+            assert.strictEqual(cardsBalm[1].x, 'emporcha_cruceros_hist');
+            assert.strictEqual(cardsBalm[1].y, 'visitantes_snaspe_conaf_hist');
+
+            // 7c-bis. Desglose por Parque Nacional SNASPE -> cards= con 4 parques
+            const qParks = await client.query('Muéstrame la evolución de visitantes SNASPE con desglose por parque nacional 2015-2026');
+            uiFns.setState(Object.assign({}, qParks.chart, { summary: qParks.reply }));
+            const uParks = new URL(uiFns.updateLabLink());
+            const cardsParks = JSON.parse(uParks.searchParams.get('cards'));
+            assert.strictEqual(cardsParks.length, 2);
+            assert.strictEqual(cardsParks[0].x, 'pn_queulat_visitas_hist');
+            assert.strictEqual(cardsParks[0].y, 'pn_laguna_san_rafael_visitas_hist');
+            assert.strictEqual(cardsParks[1].x, 'pn_cerro_castillo_visitas_hist');
+            assert.strictEqual(cardsParks[1].y, 'pn_patagonia_visitas_hist');
+
+            // 7d. Holdings -> varX=holdings_salmoneros & varY=biomasa_por_holding
+            uiFns.setState(Object.assign({}, qHold.chart, { summary: qHold.reply }));
+            const uHold = new URL(uiFns.updateLabLink());
+            assert.strictEqual(uHold.searchParams.get('varX'), 'holdings_salmoneros');
+            assert.strictEqual(uHold.searchParams.get('varY'), 'biomasa_por_holding');
+
+            // 7e. Tabla univariada sin columna fantasma thVarY
+            uiFns.restoreStandardTableHead(false, false, false);
+            assert(!evidenceTableHead.innerHTML.includes('thVarY'), 'Tabla univariada no debe contener thVarY');
+
+            console.log('MULTI_ACTOR_10_HUBS_AND_LAB_BRIDGE_OK');
+        })().catch(err => { console.error(err); process.exit(1); });
+        """
+        proc = subprocess.run(["node", "-e", node_script], cwd=ROOT_DIR, capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, f"Error en test_31:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("MULTI_ACTOR_10_HUBS_AND_LAB_BRIDGE_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

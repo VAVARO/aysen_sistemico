@@ -1037,22 +1037,112 @@
       function updateLabLink() {
         if (!btnOpenInLab) return;
         const url = new URL('laboratorio.html', window.location.href);
-        const vx = currentChartState.varX === 'holdings_salmoneros' ? 'concesiones_salmon' : currentChartState.varX;
-        if (vx) url.searchParams.set('varX', vx);
-        if (currentChartState.varY) url.searchParams.set('varY', currentChartState.varY);
-        if (currentChartState.type) url.searchParams.set('type', currentChartState.type);
+        const cts = currentChartState.customTemporalSeries;
+        const isMulti = Array.isArray(currentChartState.multiCharts) && currentChartState.multiCharts.length > 1;
+        let handledAsCards = false;
+
+        if (cts && currentChartState.type === 'line') {
+          const firstLbl = String((cts.labels && cts.labels[0]) || '');
+          const isMonthlyEmat = currentChartState.varX === 'pernoctaciones_emat' ||
+            (/^(ene|jan)/i.test(firstLbl) && Array.isArray(cts.labels) && cts.labels.length === 12);
+          if (isMonthlyEmat) {
+            url.searchParams.set('varX', 'estacionalidad_mensual_emat');
+            url.searchParams.set('varY', 'ocupacion_mensual_emat_pct');
+            url.searchParams.set('type', 'line');
+          } else if (currentChartState.varX === 'balmaceda_pasajeros_jac') {
+            const cardsPayload = [
+              {
+                t: 'chart',
+                x: 'trafico_aereo_pasajeros_balmaceda_jac',
+                y: 'visitantes_snaspe_conaf_hist',
+                c: 'line',
+                tr: 1,
+                ti: 'Pasajeros Aeródromo Balmaceda (JAC) vs. Visitas SNASPE (2015–2026)',
+                bx: 80, by: 92, bw: 540, bh: 390
+              },
+              {
+                t: 'chart',
+                x: 'emporcha_cruceros_hist',
+                y: 'visitantes_snaspe_conaf_hist',
+                c: 'line',
+                tr: 1,
+                ti: 'Cruceros EMPORCHA vs. Visitas SNASPE (2019–2026)',
+                bx: 640, by: 92, bw: 540, bh: 390
+              }
+            ];
+            url.searchParams.set('cards', JSON.stringify(cardsPayload));
+            handledAsCards = true;
+          } else if (currentChartState.varX === 'visitantes_snaspe' && Array.isArray(cts.datasets) && cts.datasets.length >= 4) {
+            const cardsPayload = [
+              {
+                t: 'chart',
+                x: 'pn_queulat_visitas_hist',
+                y: 'pn_laguna_san_rafael_visitas_hist',
+                c: 'line',
+                tr: 1,
+                ti: 'Visitación Anual PN Queulat vs. PN Laguna San Rafael (2015–2026)',
+                bx: 80, by: 92, bw: 540, bh: 390
+              },
+              {
+                t: 'chart',
+                x: 'pn_cerro_castillo_visitas_hist',
+                y: 'pn_patagonia_visitas_hist',
+                c: 'line',
+                tr: 1,
+                ti: 'Visitación Anual PN Cerro Castillo vs. PN Patagonia (2015–2026)',
+                bx: 640, by: 92, bw: 540, bh: 390
+              }
+            ];
+            url.searchParams.set('cards', JSON.stringify(cardsPayload));
+            handledAsCards = true;
+          } else {
+            url.searchParams.set('varX', 'visitantes_snaspe_conaf_hist');
+            url.searchParams.set('varY', 'pernoctaciones_anuales_emat_hist');
+            url.searchParams.set('type', 'line');
+          }
+        } else if (isMulti) {
+          const cardsPayload = currentChartState.multiCharts.map((mc, idx) => ({
+            t: 'chart',
+            x: mc.varX,
+            y: mc.varY || null,
+            c: mc.type || 'bar',
+            tr: mc.type === 'scatter' ? 1 : 0,
+            ti: mc.title,
+            bx: 80 + (idx % 2) * 560,
+            by: 92 + Math.floor(idx / 2) * 430,
+            bw: 540,
+            bh: 390
+          }));
+          url.searchParams.set('cards', JSON.stringify(cardsPayload));
+          handledAsCards = true;
+        } else if (currentChartState.varX === 'holdings_salmoneros') {
+          url.searchParams.set('varX', 'holdings_salmoneros');
+          url.searchParams.set('varY', 'biomasa_por_holding');
+          url.searchParams.set('type', 'bar');
+        } else if (currentChartState.type === 'line' && currentChartState.varX === 'visitantes_snaspe' && currentChartState.varY === 'pernoctaciones_emat') {
+          url.searchParams.set('varX', 'visitantes_snaspe_conaf_hist');
+          url.searchParams.set('varY', 'pernoctaciones_anuales_emat_hist');
+          url.searchParams.set('type', 'line');
+        } else {
+          if (currentChartState.varX) url.searchParams.set('varX', currentChartState.varX);
+          if (currentChartState.varY) url.searchParams.set('varY', currentChartState.varY);
+          if (currentChartState.type) url.searchParams.set('type', currentChartState.type);
+        }
+
         if (currentChartState.excludeCoyhaique) url.searchParams.set('excludeCoyhaique', 'true');
         if (currentChartState.onlyFocusedComunas && Array.isArray(currentChartState.focusComunas) && currentChartState.focusComunas.length > 0 && currentChartState.focusComunas.length < 10) {
           url.searchParams.set('comunas', currentChartState.focusComunas.join(','));
         }
         const hasScatterSub = Array.isArray(currentChartState.multiCharts) && currentChartState.multiCharts.some(m => m && m.type === 'scatter');
-        if (currentChartState.type === 'scatter' || hasScatterSub) {
+        if (!handledAsCards && (currentChartState.type === 'scatter' || hasScatterSub)) {
           url.searchParams.set('trend', '1');
         }
         if (currentChartState.title) url.searchParams.set('title', currentChartState.title);
         if (currentChartState.summary) url.searchParams.set('summary', currentChartState.summary);
         btnOpenInLab.href = url.toString();
+        return btnOpenInLab.href;
       }
+      window.updateLabLink = updateLabLink;
 
       // Función Principal de Envío de Consulta
       async function submitQuery() {
@@ -1988,12 +2078,12 @@
         };
       }
 
-      function restoreStandardTableHead(hasVarZ = false, hasVarW = false) {
+      function restoreStandardTableHead(hasVarZ = false, hasVarW = false, hasVarY = true) {
         if (!evidenceTableHead) return;
         evidenceTableHead.innerHTML = `<tr>
           <th id="thEntity">Comuna</th>
           <th class="td-num" id="thVarX">Variable X</th>
-          <th class="td-num" id="thVarY" style="display: none;">Variable Y</th>
+          ${hasVarY ? '<th class="td-num" id="thVarY" style="display: none;">Variable Y</th>' : ''}
           ${hasVarZ ? '<th class="td-num" id="thVarZ">Variable Z</th>' : ''}
           ${hasVarW ? '<th class="td-num" id="thVarW">Variable W</th>' : ''}
         </tr>`;
@@ -2050,7 +2140,7 @@
             <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumConc.toLocaleString('es-CL')} concesiones</td>
             <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumCtrs.toLocaleString('es-CL')} centros</td>
             <td class="td-num" style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">${sumBio.toLocaleString('es-CL')} ton</td>
-            <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Aysén, Cisnes, Guaitecas</td>
+            <td style="font-weight: 700; background: #f8fafc; border-top: 2px solid var(--border-strong);">Aysén, Cisnes, Guaitecas, Tortel</td>
           </tr>`;
         }
       }
@@ -2089,7 +2179,7 @@
 
       function populateTableComunas(comunas, varX, varY, highlightComuna, varZ = null, regionalRefComunas = null, varW = null) {
         if (!evidenceTableBody) return;
-        restoreStandardTableHead(Boolean(varZ), Boolean(varW));
+        restoreStandardTableHead(Boolean(varZ), Boolean(varW), Boolean(varY));
         const thEntity = document.getElementById('thEntity');
         const thVarX = document.getElementById('thVarX');
         const thVarY = document.getElementById('thVarY');

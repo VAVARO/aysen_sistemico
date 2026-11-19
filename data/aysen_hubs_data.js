@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-19T11:18:19.913Z",
+  "generatedAt": "2026-11-19T13:22:29.146Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -17950,7 +17950,7 @@ window.AYSEN_HUBS_DATA = {
               "label": "Importancia percibida de salmonicultura",
               "show_sample_n": true
             },
-            "spatialLayer": "concesiones_acuicolas",
+            "spatialLayer": "concesiones_acuicolas_padron",
             "showBuffers": false,
             "bufferRadiusM": 25000
           },
@@ -18021,9 +18021,9 @@ window.AYSEN_HUBS_DATA = {
             "widget_type": "chart",
             "chartType": "line",
             "varX": "biomasa_cosecha_salmon",
-            "varY": "floracion_alexandrium_fan",
+            "varY": "centros_activos_salmon_hist",
             "seriesPrimaria": "biomasa_cosecha_salmon",
-            "seriesSecundaria": "floracion_alexandrium_fan",
+            "seriesSecundaria": "centros_activos_salmon_hist",
             "showDualAxis": true,
             "showTrend": true,
             "customChartSpec": {
@@ -18305,7 +18305,7 @@ window.AYSEN_HUBS_DATA = {
               "label": "Percepción momento actual región",
               "show_sample_n": true
             },
-            "spatialLayer": "proyectos_seia",
+            "spatialLayer": "proyectos_seia_puros",
             "showBuffers": false,
             "bufferRadiusM": 25000
           },
@@ -18404,14 +18404,14 @@ window.AYSEN_HUBS_DATA = {
                     455000,
                     490000,
                     530000,
-                    560000,
-                    245000,
-                    380000,
-                    495000,
-                    525000,
-                    542000,
-                    568000,
-                    590000
+                    585000,
+                    240000,
+                    365000,
+                    520000,
+                    605000,
+                    648000,
+                    665000,
+                    682000
                   ],
                   "unit": "pasajeros",
                   "yAxisID": "y"
@@ -18661,7 +18661,7 @@ window.AYSEN_HUBS_DATA = {
               "show_sample_n": true
             },
             "spatialLayer": "volcanes_sismos",
-            "showBuffers": true,
+            "showBuffers": false,
             "bufferRadiusM": 25000
           },
           "what_it_shows": "Red de seguridad pública y pasos fronterizos DIFROL en un territorio de más de 107.000 km².",
@@ -19430,7 +19430,7 @@ window.AYSEN_HUBS_DATA = {
         {
           "preset_id": "hub_07_04",
           "hub_id": "biodiversidad",
-          "titulo": "4. Serie Histórica Multieje: MP2.5 Coyhaique vs. Temperatura Balmaceda (2015-2026)",
+          "titulo": "4. Serie Histórica Multieje: MP2.5 Invernal Coyhaique (µg/m³) vs. Días sobre Norma MP2.5 (días) (2015-2026)",
           "format_type": "line",
           "subtype": "multi_axis_series",
           "inter_hub_cross": {
@@ -19441,9 +19441,9 @@ window.AYSEN_HUBS_DATA = {
             "widget_type": "chart",
             "chartType": "line",
             "varX": "mp25_invernal_coyhaique",
-            "varY": "temperatura_minima_balmaceda",
+            "varY": "dias_sobre_norma_mp25_hist",
             "seriesPrimaria": "mp25_invernal_coyhaique",
-            "seriesSecundaria": "temperatura_minima_balmaceda",
+            "seriesSecundaria": "dias_sobre_norma_mp25_hist",
             "showDualAxis": true,
             "showTrend": true,
             "customChartSpec": {
@@ -19503,7 +19503,7 @@ window.AYSEN_HUBS_DATA = {
               ]
             }
           },
-          "what_it_shows": "Correlación estacional directa: a menores temperaturas en junio-julio se disparan los picos de material particulado por sobre los 100 µg/m³.",
+          "what_it_shows": "Descenso sostenido entre 2015 y 2026 de la concentración invernal de MP2.5 y de los días anuales sobre norma diaria en Coyhaique conforme avanza el Plan de Descontaminación Atmosférica (PDA).",
           "why_complex_system": "Inversión térmica y no linealidad: caídas de 2°C bajo cero duplican el encendido simultáneo de calefactores, colapsando la capa de ventilación."
         },
         {
@@ -20255,7 +20255,7 @@ window.AYSEN_HUBS_DATA = {
           "titulo": "5. Espejo Ciudadano: Oferta Cultural y Recreación (B4_B) vs. Infraestructura Cultural",
           "format_type": "special",
           "subtype": "dumbbell_gap",
-          "is_perception_mirror": false,
+          "is_perception_mirror": true,
           "inter_hub_cross": {
             "cross_hub": "energia",
             "descripcion": "Cruza la brecha de espacios culturales formales y gasto municipal con la evaluación ciudadana de oportunidades de recreación y cultura (Barómetro B4_B)"
@@ -20265,7 +20265,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "gasto_cultura_per_capita_clp",
-            "varY": "barometro_orgullo_identidad_pct",
+            "varY": "nota_percepcion_cultura_b4b",
             "varBase": "coyhaique",
             "varCompare": "comunas_aisladas",
             "metrics": [
@@ -20658,7 +20658,7 @@ window.AYSEN_HUBS_DATA = {
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "investigadores_residentes_est",
-            "varY": "barometro_prioridad_conectividad_pct",
+            "varY": "percepcion_ctci_prioritaria_pct_i1i",
             "axes": [
               "investigadores_residentes_est",
               "monto_anid_acumulado_mclp",

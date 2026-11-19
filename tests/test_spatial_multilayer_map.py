@@ -117,6 +117,8 @@ class TestSpatialMultilayerMap(unittest.TestCase):
     def test_04_map_presets_have_canonical_spatial_layers(self):
         """Los 10 presets [MAP] (#1 de cada Hub + CP_01 + CT_01) deben declarar spatialLayer válida."""
         by_layer = self.bundle.get("spatialNodesByLayer", {})
+        catalog_ids = {c.get("id") for c in self.bundle.get("spatialLayersCatalog", [])}
+        padron_rows = self.bundle.get("concesionesPadronCompact", {}).get("rows", [])
         hubs_gal = self.bundle.get("hubsGallery", {})
         ext_gal = self.bundle.get("extension_gallery", {})
 
@@ -130,8 +132,12 @@ class TestSpatialMultilayerMap(unittest.TestCase):
         for p in map_presets:
             cfg = p.get("config", {})
             sl = cfg.get("spatialLayer")
-            self.assertIn(sl, by_layer, f"Preset {p.get('preset_id')} tiene spatialLayer inválida: {sl}")
-            self.assertGreater(len(by_layer[sl]), 0, f"Capa {sl} vacía para preset {p.get('preset_id')}")
+            if sl == "concesiones_acuicolas_padron":
+                self.assertIn(sl, catalog_ids, f"Preset {p.get('preset_id')} falta {sl} en spatialLayersCatalog")
+                self.assertEqual(len(padron_rows), 745, "concesionesPadronCompact debe tener 745 concesiones")
+            else:
+                self.assertIn(sl, by_layer, f"Preset {p.get('preset_id')} tiene spatialLayer inválida: {sl}")
+                self.assertGreater(len(by_layer[sl]), 0, f"Capa {sl} vacía para preset {p.get('preset_id')}")
 
     def test_05_laboratorio_multilayer_leaflet_engine_and_ui_controls(self):
         """laboratorio.html debe integrar L.geoJSON, L.circleMarker, L.circle, selector de capas y leyenda."""

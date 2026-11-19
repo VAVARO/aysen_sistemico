@@ -7152,30 +7152,61 @@
         }
 
         // 2. Variables de Dimensión Holding (12 Holdings)
-        const holdingLabels = [
-          'AquaChile', 'Mowi Chile', 'Multi X', 'Cermaq Chile', 'Salmones Blumar',
-          'Australis Seafoods', 'Salmones Camanchaca', 'Salmones Yadrán', 'Invermar',
-          'Salmones Austral', 'Salmones Antártica', 'Cooke Aquaculture'
-        ];
+        const holdingsList = (AppState.hubsData?.holdings || window.AYSEN_HUBS_DATA?.holdings || [])
+          .filter(h => h.holding_id !== 'holding_otros_menores')
+          .slice()
+          .sort((a, b) => (Number(b.total_concesiones_aysen) || 0) - (Number(a.total_concesiones_aysen) || 0));
+
+        const holdingLabels = holdingsList.length
+          ? holdingsList.map(h => h.nombre_fantasia)
+          : [
+              'AquaChile', 'Mowi Chile', 'Multi X', 'Cermaq Chile', 'Salmones Blumar',
+              'Australis Seafoods', 'Salmones Camanchaca', 'Salmones Yadrán', 'Invermar',
+              'Salmones Austral', 'Salmones Antártica', 'Cooke Aquaculture'
+            ];
+        const holdingConcData = holdingsList.length
+          ? holdingsList.map(h => Number(h.total_concesiones_aysen) || 0)
+          : [210, 95, 80, 75, 62, 46, 38, 31, 27, 24, 20, 18];
+        const holdingBioData = holdingsList.length
+          ? holdingsList.map(h => Number(h.biomasa_estimada_ton) || 0)
+          : [141937, 64196, 54076, 50702, 41891, 31088, 25681, 20950, 18247, 16219, 13516, 12164];
+        const holdingPctData = holdingsList.length
+          ? holdingsList.map(h => Number(h.porcentaje_regional_concesiones) || 0)
+          : [28.19, 12.75, 10.74, 10.07, 8.32, 6.17, 5.10, 4.16, 3.62, 3.22, 2.68, 2.42];
+        const holdingRutData = holdingsList.length
+          ? holdingsList.map(h => Array.isArray(h.filiales_y_ruts) ? h.filiales_y_ruts.length : 1)
+          : [7, 1, 5, 3, 5, 5, 3, 4, 3, 3, 1, 1];
 
         const holdingVars = [
+          {
+            id: 'holdings_salmoneros', name: 'Concesiones Acuícolas Otorgadas por Holding', shortName: 'Concesiones por Holding',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
+            sourceName: 'CMF / SUBPESCA / SERNAPESCA', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
+            labels: holdingLabels, data: holdingConcData
+          },
+          {
+            id: 'biomasa_por_holding', name: 'Biomasa Estimada de Salmón por Holding', shortName: 'Biomasa por Holding',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'ton', aggMode: 'sum', chartType: 'bar',
+            sourceName: 'CMF / SUBPESCA / SERNAPESCA', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
+            labels: holdingLabels, data: holdingBioData
+          },
           {
             id: 'holding_concesiones', name: 'Concesiones en Aysén por Holding', shortName: 'Concesiones por Holding',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
             sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            labels: holdingLabels, data: [210, 95, 80, 75, 62, 58, 48, 40, 36, 34, 28, 26]
+            labels: holdingLabels, data: holdingConcData, isAlias: true
           },
           {
             id: 'holding_participacion_pct', name: 'Participación Regional de Concesiones por Holding', shortName: 'Participación Concesiones',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: '% regional', aggMode: 'mean', chartType: 'bar',
             sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            labels: holdingLabels, data: [28.19, 12.75, 10.74, 10.07, 8.32, 7.79, 6.44, 5.37, 4.83, 4.56, 3.76, 3.49]
+            labels: holdingLabels, data: holdingPctData
           },
           {
             id: 'holding_filiales_ruts', name: 'Sociedades Filiales y RUTs Operativos por Holding', shortName: 'Filiales y RUTs Operativos',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'filiales RUT', aggMode: 'sum', chartType: 'bar',
             sourceName: 'SUBPESCA / SERNAPESCA / SERNAGEOMIN', collectionDate: '16 Oct 2026 (SUBPESCA / SERNAPESCA)', sourceUrl: 'https://www.subpesca.cl',
-            labels: holdingLabels, data: [7, 1, 5, 3, 5, 5, 3, 4, 3, 3, 1, 1]
+            labels: holdingLabels, data: holdingRutData
           }
         ];
         holdingVars.forEach(v => items.push(v));
@@ -7214,16 +7245,43 @@
 
         const hubInference = (k) => {
           if (/salud|medicos|urgencias|aeroevacuaciones|camas_hosp|traslado_coyhaique|espera_no_ges|postas_salud|establecimientos_aps|esperanza_vida|empam|pscv|uhce|espera_especialidad|espera_quirurgica|cancer_|suicidio/i.test(k)) return 'salud';
-          if (/museos|bibliotecas|monumentos|fondos_cultura|gasto_municipal_cultura|gasto_cultura|fndr_8pct_cultura|percepcion_cultura|participacion_cultural|espacios_culturales|fondart|indigena|conadi|juntas_vecinos/i.test(k)) return 'cultura';
-          if (/ctci|anid|corfo_innova|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones/i.test(k)) return 'ctci';
-          if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit/i.test(k)) return 'turismo';
+          if (/museos|bibliotecas|monumentos|fondos_cultura|gasto_municipal_cultura|gasto_cultura|fndr_8pct_cultura|percepcion_cultura|participacion_cultural|espacios_culturales|fondart|indigena|conadi/i.test(k)) return 'cultura';
+          if (/ctci|anid|corfo_innova|innovacion_corfo|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones/i.test(k)) return 'ctci';
+          if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit|tarifa_adr|revpar|estadia_promedio|tasa_ocupacion_estival|tasa_ocupacion_invernal|concentracion_estival|visitas_por_pernoctacion|visitas_por_cama|largo_pista_aerodromo|operaciones_aerodromo_interior|guardaparque/i.test(k)) return 'turismo';
           if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca/i.test(k)) return 'salmonicultura';
-          if (/diesel|gasolina|lena|saidi|tarifa|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones/i.test(k)) return 'energia';
-          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|ingresos_mun_bcn|participacion_presidencial|padron_electoral/i.test(k)) return 'gobernanza';
+          if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla/i.test(k)) return 'energia';
+          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|ingresos_mun_bcn|participacion_presidencial|padron_electoral|barometro_confianza_institucional|barometro_prioridad_conectividad|juntas_vecinos/i.test(k)) return 'gobernanza';
           if (/rsh_|fondos_concursables|ruralidad_censo/i.test(k)) return 'social';
           if (/seia|empresas_sii|trabajadores_sii|concesiones_mineras|parcelaciones|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
-          if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|fauna|cuenca_bna/i.test(k)) return 'biodiversidad';
+          if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|fauna|cuenca_bna|barometro_tension_desarrollo_conservacion/i.test(k)) return 'biodiversidad';
           return 'social';
+        };
+
+        const EXPLICIT_VAR_META = {
+          total_espacios_culturales: { title: 'Total Espacios Culturales Registrados', short: 'Espacios Culturales', unit: 'espacios', hubId: 'cultura', agg: 'sum' },
+          museos_count: { title: 'Museos Registrados (RMC)', short: 'Museos RMC', unit: 'museos', hubId: 'cultura', agg: 'sum' },
+          bibliotecas_publicas_count: { title: 'Bibliotecas Públicas (SNBP)', short: 'Bibliotecas SNBP', unit: 'bibliotecas', hubId: 'cultura', agg: 'sum' },
+          monumentos_nacionales_count: { title: 'Monumentos Nacionales Declarados (CMN)', short: 'Monumentos CMN', unit: 'monumentos', hubId: 'cultura', agg: 'sum' },
+          gasto_cultura_per_capita_clp: { title: 'Gasto Municipal en Cultura per Cápita', short: 'Gasto Cultura per Cápita', unit: '$ CLP/hab', hubId: 'cultura', agg: 'mean' },
+          gasto_municipal_cultura_mclp: { title: 'Gasto Municipal Total en Cultura (SINIM)', short: 'Gasto Municipal Cultura', unit: 'M$ CLP', hubId: 'cultura', agg: 'sum' },
+          fondos_cultura_adjudicados_mclp: { title: 'Fondos de Cultura Adjudicados (FONDART/MINCAP)', short: 'Fondos FONDART Adjudicados', unit: 'M$ CLP', hubId: 'cultura', agg: 'sum' },
+          fndr_8pct_cultura_mclp: { title: 'Inversión FNDR 8% Cultura y Patrimonio', short: 'FNDR 8% Cultura', unit: 'M$ CLP', hubId: 'cultura', agg: 'sum' },
+          participacion_cultural_pct_c2: { title: 'Participación Activa en Organizaciones Culturales', short: 'Participación Cultural C2', unit: '%', hubId: 'cultura', agg: 'mean' },
+          nota_percepcion_cultura_b4b: { title: 'Percepción Oportunidades Culturales (Barómetro B4_B)', short: 'Percepción Cultural B4_B', unit: 'nota (1-7)', hubId: 'cultura', agg: 'mean' },
+          total_proyectos_ctci: { title: 'Total Proyectos CTCi e Innovación', short: 'Proyectos CTCi', unit: 'proyectos', hubId: 'ctci', agg: 'sum' },
+          proyectos_anid_locales_count: { title: 'Proyectos ANID Capacidad Científica Endógena', short: 'Proyectos ANID Locales', unit: 'proyectos', hubId: 'ctci', agg: 'sum' },
+          proyectos_anid_extrarregionales_count: { title: 'Proyectos ANID Extrarregionales en Terreno', short: 'Proyectos ANID Extrarregionales', unit: 'proyectos', hubId: 'ctci', agg: 'sum' },
+          monto_anid_acumulado_mclp: { title: 'Monto ANID Adjudicado Acumulado', short: 'Monto ANID Acumulado', unit: 'M$ CLP', hubId: 'ctci', agg: 'sum' },
+          proyectos_corfo_innova_count: { title: 'Proyectos CORFO Innova & I+D Empresarial', short: 'Proyectos CORFO Innova', unit: 'proyectos', hubId: 'ctci', agg: 'sum' },
+          monto_corfo_innova_mclp: { title: 'Monto CORFO Innova Adjudicado', short: 'Monto CORFO Innova', unit: 'M$ CLP', hubId: 'ctci', agg: 'sum' },
+          centros_y_estaciones_ctci_count: { title: 'Centros Científicos y Estaciones de Campo', short: 'Centros & Estaciones CTCi', unit: 'centros', hubId: 'ctci', agg: 'sum' },
+          investigadores_residentes_est: { title: 'Investigadores Residentes Estimados (EJC)', short: 'Investigadores Residentes', unit: 'investigadores', hubId: 'ctci', agg: 'sum' },
+          evaluacion_uaysen_promedio_i8: { title: 'Evaluación Desempeño Universidad de Aysén', short: 'Evaluación UAysén I8', unit: 'nota (1-7)', hubId: 'ctci', agg: 'mean' },
+          percepcion_ctci_prioritaria_pct_i1i: { title: 'Percepción Actividades CTCi Prioritarias', short: 'Prioridad CTCi I1_I', unit: '%', hubId: 'ctci', agg: 'mean' },
+          ha_snaspe_por_guardaparque: { title: 'Hectáreas SNASPE por Guardaparque', short: 'Ha SNASPE / Guardaparque', unit: 'ha/guardaparque', hubId: 'turismo', agg: 'mean' },
+          medicos_por_mil_hab: { title: 'Médicos por cada 1.000 Habitantes', short: 'Médicos / 1.000 hab', unit: 'médicos/1.000 hab', hubId: 'salud', agg: 'mean' },
+          traslado_coyhaique_hrs: { title: 'Tiempo de Traslado Terrestre a Coyhaique', short: 'Traslado Coyhaique', unit: 'horas', hubId: 'salud', agg: 'mean' },
+          tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje a Coyhaique', short: 'Tiempo Viaje Coyhaique', unit: 'horas', hubId: 'gobernanza', agg: 'mean' }
         };
 
         if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas) && AppState.hubsData.comunas.length > 0) {
@@ -7231,14 +7289,24 @@
           items.forEach(it => existingIds.add(it.id));
 
           const unitInference = (k) => {
-            if (k.endsWith('_pct')) return '%';
+            if (k === 'ha_snaspe_por_guardaparque') return 'ha/guardaparque';
+            if (k === 'medicos_por_mil_hab') return 'médicos/1.000 hab';
+            if (k === 'visitas_por_cama_turistica') return 'visitas/cama';
+            if (k === 'visitas_por_pernoctacion_ratio' || k === 'ratio_presion_turistica') return 'visitantes/hab';
+            if (k === 'tarifa_adr_estimada_usd' || k === 'revpar_estimado_usd' || k === 'gasto_diario_turista_usd') return 'US$';
+            if (k === 'largo_pista_aerodromo_m') return 'metros';
+            if (k === 'operaciones_aerodromo_interior_anual') return 'operaciones/año';
+            if (k === 'evaluacion_uaysen_promedio_i8' || k === 'nota_percepcion_cultura_b4b') return 'nota (1-7)';
+            if (/_pct(_[a-z0-9]+)?$/i.test(k)) return '%';
             if (k.endsWith('_mclp')) return 'M$ CLP';
             if (k.endsWith('_clp') || k.endsWith('_clp_kwh') || k.endsWith('_kwh_clp')) return '$ CLP';
             if (k.endsWith('_mmusd')) return 'MM US$';
+            if (k.endsWith('_usd')) return 'US$';
             if (k.endsWith('_km2')) return 'km²';
             if (k.endsWith('_km')) return 'km';
             if (k.endsWith('_ha')) return 'hectáreas';
-            if (k.endsWith('_hrs') || k.endsWith('_horas_anual')) return 'horas/año';
+            if (k.endsWith('_horas_anual') || k.includes('saidi')) return 'horas/año';
+            if (k.endsWith('_hrs')) return 'horas';
             if (k.endsWith('_ton')) return 'toneladas/año';
             if (k.endsWith('_m3s')) return 'm³/s';
             if (k.endsWith('_m3')) return '$/m³';
@@ -7281,14 +7349,18 @@
             if (NON_NUMERIC_KEYS.has(key)) return;
             if (typeof c0[key] !== 'number' && isNaN(parseFloat(c0[key]))) return;
 
+            const expMeta = EXPLICIT_VAR_META[key] || null;
             const lex = lexiconVars.find(v => v.id === key || v.canonicalId === key);
-            const hubId = lex?.hub || hubInference(key);
-            const hubTitle = lex?.hubTitle || getHubTitleName(hubId);
-            const autoInfo = getAutoexplanatoryVarInfo(key, lex?.name || nameFormatter(key), lex?.unit || unitInference(key));
-            const varName = autoInfo?.title || lex?.name || nameFormatter(key);
-            const shortName = autoInfo?.short || lex?.shortName || varName;
-            const unit = lex?.unit || unitInference(key);
-            const isMean = /%|\$|horas|Miles|casos|promedio|dias|t\/|g\/|ratio|hab\/|m3/i.test(unit) || key.endsWith('_pct') || key.endsWith('_hrs');
+            const hubId = expMeta?.hubId || lex?.hub || hubInference(key);
+            const hubTitle = getHubTitleName(hubId) || lex?.hubTitle;
+            const inferredUnit = unitInference(key);
+            const autoInfo = getAutoexplanatoryVarInfo(key, expMeta?.title || lex?.name || nameFormatter(key), expMeta?.unit || inferredUnit);
+            const varName = expMeta?.title || autoInfo?.title || lex?.name || nameFormatter(key);
+            const shortName = expMeta?.short || autoInfo?.short || lex?.shortName || varName;
+            const unit = expMeta?.unit || (inferredUnit !== 'unidades' ? inferredUnit : (lex?.unit || inferredUnit));
+            const isMean = expMeta?.agg
+              ? (expMeta.agg === 'mean')
+              : (/%|\$|horas|Miles|casos|promedio|d[ií]as|t\/|g\/|ratio|hab\/|m3|nota|guardaparque|m[eé]dicos|visitas\/|visitantes\/|US\$/i.test(unit) || /_pct(_[a-z0-9]+)?$/i.test(key) || key.endsWith('_hrs'));
 
             const vec = COMUNAS_ORDER.map(cName => {
               const row = AppState.hubsData.comunas.find(c => normStr(c.nombre || c.nombre_comuna || '') === normStr(cName));
@@ -7459,12 +7531,20 @@
             data: [120, 850, 310, 1420, 480, 290, 610, 540, 1180, 720, 690, 760]
           },
           {
+            id: 'centros_activos_salmon_hist',
+            name: 'Centros Operativos Activos de Salmonicultura en Aysén (2015–2026)',
+            shortName: 'Centros Activos Salmón',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'centros', aggMode: 'mean',
+            sourceName: 'SERNAPESCA / SUBPESCA - Catastro Acuícola',
+            data: [218, 195, 215, 230, 240, 248, 238, 244, 242, 245, 242, 240]
+          },
+          {
             id: 'trafico_aereo_pasajeros_balmaceda_jac',
             name: 'Flujo Anual de Pasajeros Aeródromo Balmaceda JAC (2015–2026)',
             shortName: 'Pasajeros Aeródromo Balmaceda',
             hubId: 'inversion', hubTitle: 'V. Inversión', unit: 'Pasajeros', aggMode: 'sum',
             sourceName: 'JAC - Junta de Aeronáutica Civil',
-            data: [218450, 241320, 268910, 294150, 318740, 142680, 215490, 312850, 346920, 368410, 389250, 412600]
+            data: [420000, 455000, 490000, 530000, 585000, 240000, 365000, 520000, 605000, 648000, 665000, 682000]
           },
           {
             id: 'pib_regional_nominal_mmclp',
@@ -7522,6 +7602,14 @@
             hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', unit: 'µg/m³', aggMode: 'mean',
             sourceName: 'MMA - Red SINCA Estaciones Coyhaique I y II',
             data: [64.2, 61.8, 58.4, 55.9, 53.1, 51.4, 48.9, 46.2, 44.5, 42.8, 41.2, 39.6]
+          },
+          {
+            id: 'dias_sobre_norma_mp25_hist',
+            name: 'Días Anuales sobre Norma Diaria MP2.5 en Coyhaique (2015–2026)',
+            shortName: 'Días sobre Norma MP2.5',
+            hubId: 'biodiversidad', hubTitle: 'VII. Biodiversidad', unit: 'días', aggMode: 'sum',
+            sourceName: 'MMA - Red SINCA Calidad del Aire',
+            data: [92, 98, 86, 79, 74, 68, 62, 58, 54, 49, 45, 41]
           },
           {
             id: 'temperatura_minima_balmaceda',
@@ -7697,6 +7785,7 @@
 
         if (Array.isArray(appSeries.emporcha_cruceros) && appSeries.emporcha_cruceros.length > 0) {
           const empCrucLabels = appSeries.emporcha_cruceros.map(d => String(d.temporada));
+          const empCrucYears = appSeries.emporcha_cruceros.map(d => String(d.temporada).split('-').pop());
           const empCrucData = appSeries.emporcha_cruceros.map(d => (typeof d.pasajeros_cruceros === 'number' ? d.pasajeros_cruceros : (parseFloat(d.pasajeros_cruceros) || 0)));
           syncSeriesDefs.push({
             id: 'emporcha_cruceros',
@@ -7711,6 +7800,20 @@
             sourceUrl: 'https://www.puertochacabuco.cl',
             collectionDate: '2018-2026',
             labels: empCrucLabels,
+            data: empCrucData
+          });
+          syncSeriesDefs.push({
+            id: 'emporcha_cruceros_hist',
+            name: 'Pasajeros de Cruceros Turísticos EMPORCHA (Serie Anual)',
+            shortName: 'Cruceros EMPORCHA (2019–2026)',
+            hubId: 'turismo',
+            hubTitle: 'I. Turismo',
+            unit: 'pasajeros',
+            aggMode: 'sum',
+            sourceName: 'EMPORCHA - Turismo y Recaladas',
+            sourceUrl: 'https://www.puertochacabuco.cl',
+            collectionDate: '2019-2026',
+            labels: empCrucYears,
             data: empCrucData
           });
         }
@@ -9326,7 +9429,9 @@
           keyLabel = (vX.dim === vY.dim) ? `Cruce por ${vX.dim}` : 'Sin llave directa';
           keyClass = (vX.dim === vY.dim) ? 'valid' : 'warn';
           hubTitle = `${vX.hubTitle} x ${vY.hubTitle}`;
-          unitBadge = `X: ${vX.unit} · Y: ${vY.unit}`;
+          const ux = (w.customChartSpec?.datasets?.[0]?.unit) || vX.unit;
+          const uy = (w.customChartSpec?.datasets?.[1]?.unit) || vY.unit;
+          unitBadge = `X: ${ux} · Y: ${uy}`;
         } else if (vX) {
           keyLabel = (vX.dim === 'tiempo') ? 'Línea de Tiempo' : `Por ${vX.dim}`;
           keyClass = (vX.dim === 'tiempo') ? 'valid' : 'valid';
@@ -9726,6 +9831,14 @@
               if (topBar) topBar.insertAdjacentHTML('afterend', sampleRobustnessHtml);
             } else {
               sampleBar.outerHTML = sampleRobustnessHtml;
+            }
+            const btnSocInPlace = existingCard.querySelector('.btn-toggle-sociodemo');
+            if (btnSocInPlace && !btnSocInPlace._boundSociodemo) {
+              btnSocInPlace.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openSociodemoDrawer(w.id);
+              });
+              btnSocInPlace._boundSociodemo = true;
             }
           } else if (sampleBar) {
             sampleBar.remove();
@@ -10138,6 +10251,16 @@
             e.stopPropagation();
             generateCardExecutiveSynthesis(w);
           });
+        }
+
+        // Botón Filtros Demográficos (Barómetro Espejo)
+        const socBtn = card.querySelector('.btn-toggle-sociodemo');
+        if (socBtn && !socBtn._boundSociodemo) {
+          socBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openSociodemoDrawer(w.id);
+          });
+          socBtn._boundSociodemo = true;
         }
 
         // Botón Formato (Mostrar/Ocultar barra de customización)
@@ -12322,7 +12445,9 @@
         const sliceName = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Región de Aysén';
         const coyTag = (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique) ? ' (sin Coyhaique)' : '';
 
-        const pt1 = `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): lidera ${primaryStat.maxLbl} con ${primaryStat.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} vs. promedio ${primaryStat.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}; el mayor rezago recae en ${primaryStat.minLbl} (${primaryStat.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}).`;
+        const pt1 = (payload.mode === 'bivariate' && stY)
+          ? `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): en ${payload.nameX || 'Eje X'}, lidera ${stX.maxLbl} (${stX.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}, prom. ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stX.minLbl} (${stX.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}); en ${payload.nameY || 'Eje Y'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`
+          : `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): lidera ${primaryStat.maxLbl} con ${primaryStat.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} vs. promedio ${primaryStat.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}; el mayor rezago recae en ${primaryStat.minLbl} (${primaryStat.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}).`;
         const pt2 = pearsonR !== null
           ? `Correlación y anomalías: r = ${pearsonR.toFixed(2)} (R² = ${r2.toFixed(2)}, ajuste ${r2 >= 0.5 ? 'fuerte' : (r2 >= 0.25 ? 'moderado' : 'débil')}); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`
           : `Dispersión y anomalías: desviación estándar σ = ${primaryStat.std.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} (CV = ${primaryStat.cv.toFixed(1)}%); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`;
@@ -12970,6 +13095,59 @@
       }
 
         if (!res || res.mode === 'empty') return res;
+
+        // 0. Filtro sociodemográfico activo para tarjetas Espejo Barómetro
+        if (w.isPerceptionMirror && w.mirrorSeries && w.activeSociodemoFilter) {
+          const f = w.activeSociodemoFilter;
+          const ms = w.mirrorSeries;
+          let activeDimKey = null;
+          if (f.edu && f.edu !== 'todos' && ms.por_nivel_educativo) activeDimKey = 'por_nivel_educativo';
+          else if (f.nse && f.nse !== 'todos' && ms.por_nse) activeDimKey = 'por_nse';
+          else if (f.sexo && f.sexo !== 'todos' && ms.por_sexo) activeDimKey = 'por_sexo';
+          else if (f.edad && f.edad !== 'todos' && ms.por_tramo_edad) activeDimKey = 'por_tramo_edad';
+          else if (f.macro && f.macro !== 'todas' && ms.por_macrozona) activeDimKey = 'por_macrozona';
+
+          if (activeDimKey && ms[activeDimKey]) {
+            const dimObj = ms[activeDimKey];
+            const prettyMap = {
+              norte: 'Macrozona Norte',
+              centro: 'Macrozona Centro',
+              sur: 'Macrozona Sur',
+              basica_media: 'Educación Básica / Media',
+              tecnico_superior: 'Técnico Nivel Superior',
+              universitaria: 'Universitaria / Posgrado',
+              bajo: 'NSE Bajo',
+              medio: 'NSE Medio',
+              alto: 'NSE Alto',
+              hombre: 'Hombres',
+              mujer: 'Mujeres',
+              '18-29': '18 a 29 años',
+              '30-44': '30 a 44 años',
+              '45-59': '45 a 59 años',
+              '60+': '60 años y más'
+            };
+            const rawKeys = Object.keys(dimObj);
+            const strataLabels = rawKeys.map(k => prettyMap[k] || k);
+            const strataVals = rawKeys.map(k => Number(dimObj[k]?.tasa_positiva_pct ?? dimObj[k]?.positive_pct ?? 0));
+            const structMap = ms.structural_por_macrozona || ms.structural_by_macrozona;
+            res.labels = strataLabels;
+            res.dim = 'barometro_estrato';
+            if (res.mode === 'bivariate') {
+              res.dataY = strataVals;
+              if (activeDimKey === 'por_macrozona' && structMap) {
+                res.dataX = rawKeys.map(k => Number(structMap[k] || 0));
+              } else {
+                const meanStruct = Array.isArray(res.dataX) && res.dataX.length
+                  ? Number((res.dataX.reduce((a, b) => a + (Number(b) || 0), 0) / res.dataX.length).toFixed(2))
+                  : 0;
+                res.dataX = rawKeys.map(() => meanStruct);
+              }
+            } else {
+              res.data = strataVals;
+            }
+            return res;
+          }
+        }
 
         // 1. Filtrado Territorial (Slicer de Provincia / Zona)
         if (res.dim === 'comuna' && AppState.territorialFilter && AppState.territorialFilter !== 'all') {
@@ -13893,11 +14071,12 @@
           } else if (w.isPerceptionMirror && w.mirrorSeries && w.presetFormatType === 'special') {
             // Renderizado Dedicado para Formato #5: Espejo Ciudadano Barómetro con Visor N y Semáforo
             const ms = w.mirrorSeries;
-            const edu = document.getElementById('selectBaroEdu')?.value || 'todos';
-            const nse = document.getElementById('selectBaroNse')?.value || 'todos';
-            const sexo = document.getElementById('selectBaroSexo')?.value || 'todos';
-            const edad = document.getElementById('selectBaroEdad')?.value || 'todos';
-            const macro = document.getElementById('selectBaroMacro')?.value || 'todas';
+            const af = w.activeSociodemoFilter || {};
+            const edu = af.edu || document.getElementById('selectBaroEdu')?.value || 'todos';
+            const nse = af.nse || document.getElementById('selectBaroNse')?.value || 'todos';
+            const sexo = af.sexo || document.getElementById('selectBaroSexo')?.value || 'todos';
+            const edad = af.edad || document.getElementById('selectBaroEdad')?.value || 'todos';
+            const macro = af.macro || document.getElementById('selectBaroMacro')?.value || 'todas';
             const interreg = document.getElementById('switchBaroInterregional')?.value || 'aysen_solo';
 
             let activeDimKey = 'por_macrozona';
@@ -13985,9 +14164,10 @@
               }
             ];
 
-            const hasStructuralOverlay = activeDimKey === 'por_macrozona' && ms.structural_por_macrozona;
+            const structMap = ms.structural_por_macrozona || ms.structural_by_macrozona;
+            const hasStructuralOverlay = activeDimKey === 'por_macrozona' && Boolean(structMap);
             if (hasStructuralOverlay) {
-              const structData = rawKeys.map(k => Number(ms.structural_por_macrozona[k] || 0));
+              const structData = rawKeys.map(k => Number(structMap[k] || 0));
               while (structData.length < baroLabels.length) structData.push(null);
               datasets.push({
                 type: 'line',
@@ -16064,11 +16244,22 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }
       };
 
+      function syncSociodemoDrawerSelects(widgetId) {
+        const w = AppState.widgets.find(x => x.id === widgetId);
+        const af = w?.activeSociodemoFilter || {};
+        if (document.getElementById('selectBaroEdu')) document.getElementById('selectBaroEdu').value = af.edu || 'todos';
+        if (document.getElementById('selectBaroNse')) document.getElementById('selectBaroNse').value = af.nse || 'todos';
+        if (document.getElementById('selectBaroSexo')) document.getElementById('selectBaroSexo').value = af.sexo || 'todos';
+        if (document.getElementById('selectBaroEdad')) document.getElementById('selectBaroEdad').value = af.edad || 'todos';
+        if (document.getElementById('selectBaroMacro')) document.getElementById('selectBaroMacro').value = af.macro || 'todas';
+      }
+
       function openSociodemoDrawer(widgetId) {
         activeBaroWidgetId = widgetId;
         const drawer = document.getElementById('barometroSociodemoDrawer');
         if (drawer) {
           drawer.style.display = 'flex';
+          syncSociodemoDrawerSelects(widgetId);
           updateBaroDrawerMetrics();
         }
       }
@@ -16076,7 +16267,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       function updateBaroDrawerMetrics() {
         const activeWidget = AppState.widgets.find(x => x.id === activeBaroWidgetId);
         const qCode = activeWidget?.barometroQuestion || 'B4_B';
-        const qData = BAROMETRO_MICRO_CUBOS[qCode] || BAROMETRO_MICRO_CUBOS['B4_B'];
+        const qData = activeWidget?.mirrorSeries || BAROMETRO_MICRO_CUBOS[qCode] || BAROMETRO_MICRO_CUBOS['B4_B'];
 
         const edu = document.getElementById('selectBaroEdu')?.value || 'todos';
         const nse = document.getElementById('selectBaroNse')?.value || 'todos';
@@ -16084,7 +16275,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const edad = document.getElementById('selectBaroEdad')?.value || 'todos';
         const macro = document.getElementById('selectBaroMacro')?.value || 'todas';
 
-        let n = qData.n || qData.n_muestral || 452;
+        let n = qData.n || qData.n_muestral || qData.n_muestral_valido || 452;
         if (edu !== 'todos' && qData.por_nivel_educativo?.[edu]) {
           n = qData.por_nivel_educativo[edu].n_muestral || qData.por_nivel_educativo[edu].n || n;
         } else if (nse !== 'todos' && qData.por_nse?.[nse]) {
@@ -16097,7 +16288,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           n = qData.por_tramo_edad[edad].n_muestral || qData.por_tramo_edad[edad].n || n;
         }
 
-        const universeN = qData.N || 465;
+        const universeN = qData.N || qData.N_total || 465;
 
         let stats = null;
         if (window.NL2ChartEngine?.calculateSampleRobustness) {
@@ -16145,24 +16336,27 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           const w = AppState.widgets.find(x => x.id === activeBaroWidgetId);
           if (w) {
             const qCode = w.barometroQuestion || 'B4_B';
-            const qData = BAROMETRO_MICRO_CUBOS[qCode] || BAROMETRO_MICRO_CUBOS['B4_B'];
+            const qData = w.mirrorSeries || BAROMETRO_MICRO_CUBOS[qCode] || BAROMETRO_MICRO_CUBOS['B4_B'];
             const edu = document.getElementById('selectBaroEdu')?.value || 'todos';
             const nse = document.getElementById('selectBaroNse')?.value || 'todos';
             const macro = document.getElementById('selectBaroMacro')?.value || 'todas';
             const sexo = document.getElementById('selectBaroSexo')?.value || 'todos';
             const edad = document.getElementById('selectBaroEdad')?.value || 'todos';
 
-            let n = qData.n;
-            if (edu !== 'todos' && qData.por_nivel_educativo?.[edu]) n = qData.por_nivel_educativo[edu].n;
-            else if (nse !== 'todos' && qData.por_nse?.[nse]) n = qData.por_nse[nse].n;
-            else if (macro !== 'todas' && qData.por_macrozona?.[macro]) n = qData.por_macrozona[macro].n;
-            else if (sexo !== 'todos' && qData.por_sexo?.[sexo]) n = qData.por_sexo[sexo].n;
-            else if (edad !== 'todos' && qData.por_tramo_edad?.[edad]) n = qData.por_tramo_edad[edad].n;
+            w.activeSociodemoFilter = { edu, nse, sexo, edad, macro };
 
+            let n = qData.n || qData.n_muestral || qData.n_muestral_valido || 452;
+            if (edu !== 'todos' && qData.por_nivel_educativo?.[edu]) n = qData.por_nivel_educativo[edu].n_muestral || qData.por_nivel_educativo[edu].n || n;
+            else if (nse !== 'todos' && qData.por_nse?.[nse]) n = qData.por_nse[nse].n_muestral || qData.por_nse[nse].n || n;
+            else if (macro !== 'todas' && qData.por_macrozona?.[macro]) n = qData.por_macrozona[macro].n_muestral || qData.por_macrozona[macro].n || n;
+            else if (sexo !== 'todos' && qData.por_sexo?.[sexo]) n = qData.por_sexo[sexo].n_muestral || qData.por_sexo[sexo].n || n;
+            else if (edad !== 'todos' && qData.por_tramo_edad?.[edad]) n = qData.por_tramo_edad[edad].n_muestral || qData.por_tramo_edad[edad].n || n;
+
+            const univN = qData.N || qData.N_total || 465;
             if (w.sampleContract) {
               w.sampleContract.active_n = n;
               if (window.NL2ChartEngine?.calculateSampleRobustness) {
-                const s = window.NL2ChartEngine.calculateSampleRobustness(n, 465);
+                const s = window.NL2ChartEngine.calculateSampleRobustness(n, univN);
                 w.sampleContract.margin_error_pct = s.me_95;
               }
             }
@@ -16181,6 +16375,9 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         if (document.getElementById('switchBaroInterregional')) document.getElementById('switchBaroInterregional').value = 'aysen_solo';
         applySociodemoFilters();
       }
+      window.openSociodemoDrawer = openSociodemoDrawer;
+      window.applySociodemoFilters = applySociodemoFilters;
+      window.resetSociodemoFilters = resetSociodemoFilters;
 
 
       // 16. ESCENARIOS Y PRESETS SISTEMICOS
@@ -16582,11 +16779,46 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         return shareUrl;
       }
 
+      function applyComunasUrlFilter(comunasParam) {
+        if (!comunasParam) return;
+        const reqComunas = comunasParam.split(',').map(s => s.trim()).filter(Boolean);
+        if (reqComunas.length > 0 && reqComunas.length < 10) {
+          const reqSet = new Set(reqComunas.map(c => normStr(c)));
+          const matchedKey = Object.keys(TERRITORIAL_SLICES).find(k => {
+            if (k === 'all') return false;
+            const list = TERRITORIAL_SLICES[k] || [];
+            return list.length === reqSet.size && list.every(item => reqSet.has(normStr(item)));
+          });
+          const selectSlicer = document.getElementById('selectTerritorialSlicer');
+          if (matchedKey && selectSlicer && selectSlicer.querySelector(`option[value="${matchedKey}"]`)) {
+            AppState.territorialFilter = matchedKey;
+          } else {
+            const resolvedList = reqComunas.map(rc => COMUNAS_ORDER.find(c => normStr(c) === normStr(rc)) || rc);
+            TERRITORIAL_SLICES.custom_url = resolvedList;
+            if (selectSlicer) {
+              let opt = selectSlicer.querySelector('option[value="custom_url"]');
+              if (!opt) {
+                opt = document.createElement('option');
+                opt.value = 'custom_url';
+                selectSlicer.appendChild(opt);
+              }
+              opt.textContent = `Selección Consultor (${resolvedList.length})`;
+            }
+            AppState.territorialFilter = 'custom_url';
+          }
+          if (selectSlicer) selectSlicer.value = AppState.territorialFilter;
+        }
+      }
+
       function handleUrlParamsOrLoadSaved() {
         const params = new URLSearchParams(window.location.search);
         const cardsParam = params.get('cards');
         const slicerParam = params.get('slicer');
         const nocoyParam = params.get('nocoy');
+        const excludeParam = params.get('excludeCoyhaique');
+        const comunasParam = params.get('comunas');
+        const titleParam = params.get('title');
+        const summaryParam = params.get('summary');
         const gridParam = params.get('grid');
 
         if (cardsParam) {
@@ -16602,7 +16834,10 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
                   selectSlicer.value = slicerParam;
                 }
               }
-              if (nocoyParam === '1' || nocoyParam === 'true') {
+              if (comunasParam) {
+                applyComunasUrlFilter(comunasParam);
+              }
+              if (nocoyParam === '1' || nocoyParam === 'true' || excludeParam === '1' || excludeParam === 'true') {
                 AppState.excludeCoyhaique = true;
               }
               parsedCards.forEach((c, idx) => {
@@ -16628,6 +16863,17 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               });
               for (let i = 1; i < AppState.widgets.length; i++) {
                 addConnection(AppState.widgets[i - 1].id, AppState.widgets[i].id, 'sync');
+              }
+              if (summaryParam) {
+                createReflectionCard({
+                  linkedWidgetId: AppState.widgets[0]?.id || null,
+                  title: titleParam ? ('Síntesis: ' + titleParam) : 'Síntesis del Consultor de Datos',
+                  promptText: summaryParam,
+                  x: 80 + Math.min(2, parsedCards.length) * 560,
+                  y: 92,
+                  w: 440,
+                  h: 390
+                });
               }
               if (gridParam === '1') {
                 toggleDashboardViewMode('grid');
@@ -16710,43 +16956,13 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const varXParam = params.get('varX');
         const varYParam = params.get('varY');
         const typeParam = params.get('type');
-        const excludeParam = params.get('excludeCoyhaique');
-        const comunasParam = params.get('comunas');
         const trendParam = params.get('trend');
-        const titleParam = params.get('title');
-        const summaryParam = params.get('summary');
 
         if (varXParam) {
           AppState._urlHydrationDone = true;
           clearAll();
           if (comunasParam) {
-            const reqComunas = comunasParam.split(',').map(s => s.trim()).filter(Boolean);
-            if (reqComunas.length > 0 && reqComunas.length < 10) {
-              const reqSet = new Set(reqComunas.map(c => normStr(c)));
-              const matchedKey = Object.keys(TERRITORIAL_SLICES).find(k => {
-                if (k === 'all') return false;
-                const list = TERRITORIAL_SLICES[k] || [];
-                return list.length === reqSet.size && list.every(item => reqSet.has(normStr(item)));
-              });
-              const selectSlicer = document.getElementById('selectTerritorialSlicer');
-              if (matchedKey && selectSlicer && selectSlicer.querySelector(`option[value="${matchedKey}"]`)) {
-                AppState.territorialFilter = matchedKey;
-              } else {
-                const resolvedList = reqComunas.map(rc => COMUNAS_ORDER.find(c => normStr(c) === normStr(rc)) || rc);
-                TERRITORIAL_SLICES.custom_url = resolvedList;
-                if (selectSlicer) {
-                  let opt = selectSlicer.querySelector('option[value="custom_url"]');
-                  if (!opt) {
-                    opt = document.createElement('option');
-                    opt.value = 'custom_url';
-                    selectSlicer.appendChild(opt);
-                  }
-                  opt.textContent = `Selección Consultor (${resolvedList.length})`;
-                }
-                AppState.territorialFilter = 'custom_url';
-              }
-              if (selectSlicer) selectSlicer.value = AppState.territorialFilter;
-            }
+            applyComunasUrlFilter(comunasParam);
           }
 
           const opts = {

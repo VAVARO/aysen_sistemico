@@ -1623,7 +1623,7 @@
           "titulo": "5. Espejo Ciudadano: Oferta Cultural y Recreación (B4_B) vs. Infraestructura Cultural",
           "format_type": "special",
           "subtype": "dumbbell_gap",
-          "is_perception_mirror": false,
+          "is_perception_mirror": true,
           "inter_hub_cross": {
             "cross_hub": "energia",
             "descripcion": "Cruza la brecha de espacios culturales formales y gasto municipal con la evaluación ciudadana de oportunidades de recreación y cultura (Barómetro B4_B)"
@@ -1633,7 +1633,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "gasto_cultura_per_capita_clp",
-            "varY": "barometro_orgullo_identidad_pct",
+            "varY": "nota_percepcion_cultura_b4b",
             "varBase": "coyhaique",
             "varCompare": "comunas_aisladas",
             "metrics": [
@@ -2026,7 +2026,7 @@
             "chartType": "bar",
             "mode": "mirror_comparison",
             "varX": "investigadores_residentes_est",
-            "varY": "barometro_prioridad_conectividad_pct",
+            "varY": "percepcion_ctci_prioritaria_pct_i1i",
             "axes": [
               "investigadores_residentes_est",
               "monto_anid_acumulado_mclp",

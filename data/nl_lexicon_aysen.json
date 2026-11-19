@@ -487,7 +487,11 @@
         "profesionales en el municipio",
         "titulados municipales",
         "grado universitario funcionarios",
-        "calificacion personal municipal"
+        "calificacion personal municipal",
+        "funcionarios municipales profesionales",
+        "profesionalizacion municipal",
+        "proporcion de profesionales municipales",
+        "personal municipal profesional"
       ]
     },
     {
@@ -1465,7 +1469,13 @@
         "guardaparques por hectarea",
         "vigilancia ambiental",
         "guardabosques",
-        "conaf"
+        "conaf",
+        "hectareas por guardaparque",
+        "ha por guardaparque",
+        "superficie por guardaparque",
+        "dotacion de guardaparques",
+        "guardaparques conaf",
+        "carga por guardaparque"
       ]
     },
     {
@@ -2203,7 +2213,11 @@
         "voto obligatorio",
         "eleccion presidencial 2025",
         "participacion segunda vuelta",
-        "votantes 2025"
+        "votantes 2025",
+        "participacion electoral",
+        "participacion servel",
+        "votacion electoral",
+        "tasa de participacion electoral"
       ]
     },
     {
@@ -2329,6 +2343,27 @@
         "crecimiento internet",
         "expansion conectividad digital",
         "aumento fibra optica"
+      ]
+    },
+    {
+      "id": "tasa_aprobacion_rs_sni_pct",
+      "canonicalId": "tasa_aprobacion_rs_sni_pct",
+      "name": "Tasa de Aprobación RS Proyectos SNI/BIP",
+      "shortName": "Tasa Aprobación RS",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 15,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa de aprobacion rs",
+        "tasa aprobacion rs",
+        "tasa rs",
+        "recomendacion satisfactoria",
+        "aprobacion sni",
+        "cartera rs sni",
+        "proyectos rs"
       ]
     }
   ],

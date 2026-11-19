@@ -372,6 +372,7 @@ class ChallengerM42EmpiricalStress(unittest.TestCase):
         mirror_presets_expected = {
             "CP_02": "B4_B",
             "CP_03": "C2",
+            "CP_05": "B4_B",
             "CT_02": "I1_I",
             "CT_03": "I8",
             "CT_05": "F4_G"
@@ -391,7 +392,7 @@ class ChallengerM42EmpiricalStress(unittest.TestCase):
             self.assertTrue(math.isfinite(sc.get("margin_error_pct", -1)), f"Margen error inválido para {pid}")
 
         # Presets no espejo
-        non_mirror_expected = ["CP_01", "CP_04", "CP_05", "CT_01", "CT_04"]
+        non_mirror_expected = ["CP_01", "CP_04", "CT_01", "CT_04"]
         for pid in non_mirror_expected:
             preset = all_10.get(pid)
             self.assertIsNotNone(preset, f"Falta preset {pid}")

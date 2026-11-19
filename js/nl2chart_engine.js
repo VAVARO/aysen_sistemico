@@ -113,7 +113,9 @@ Responde UNICAMENTE en formato JSON plano:
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '') // Elimina tildes y diacríticos
       .replace(/\b(pm|mp)\s*2[.,]5\b/gi, 'mp25')
+      .replace(/(\d)\.(\d)/g, '$1_DEC_$2')
       .replace(/[^a-z0-9\s_-]/g, ' ')   // Puntuación a espacios
+      .replace(/_DEC_/g, '.')
       .replace(/\s+/g, ' ')            // Colapsar espacios múltiples
       .trim();
   }
