@@ -565,10 +565,18 @@
     },
     "concesiones_acuicolas_areas_protegidas": {
       "concesiones_en_areas_protegidas_total": 312,
-      "reserva_nacional_las_guaitecas_concesiones": 300,
+      "reserva_nacional_las_guaitecas_concesiones": 237,
       "marco_legal_conflicto": "Ley N° 21.600 (Servicio de Biodiversidad y Áreas Protegidas - SBAP) y Art. 142 Ley General de Pesca y Acuicultura",
       "diagnostico_institucional": "Más de 300 concesiones salmoneras emplazadas al interior de la Reserva Nacional Las Guaitecas en proceso de evaluación de compatibilidad ecológica, planes de manejo y caducidades administrativas por inactividad no declaradas por SSFFAA (auditorías CGR).",
-      "fuente": "SUBPESCA / SERNAPESCA / CONAF / CGR"
+      "fuente": "SUBPESCA / SERNAPESCA / CONAF / CGR",
+      "parque_nacional_isla_magdalena_concesiones": 63,
+      "reserva_nacional_katalalixar_concesiones": 12,
+      "distribucion_comunal_snaspe": {
+        "Aysen": 112,
+        "Cisnes": 96,
+        "Guaitecas": 92,
+        "Tortel": 12
+      }
     },
     "existencias_ganaderas_censo_caf": {
       "bovinos_total_cabezas": 130832,
@@ -960,41 +968,6 @@
       ]
     },
     {
-      "holding_id": "holding_cooke",
-      "empresa_madre": "Cooke Inc.",
-      "nombre_fantasia": "Cooke Aquaculture Chile",
-      "pais_matriz": "Canadá",
-      "grupo_empresarial": "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
-      "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
-      "concesiones_estimadas_aysen": 26,
-      "pct_concesiones_regional": 3.49,
-      "comunas_operacion": [
-        "Aysén"
-      ],
-      "barrios_acs_operacion": [
-        "ACS-22A",
-        "ACS-24"
-      ],
-      "plantas_y_bases_operativas": "Base flotante integral con pontones habitables en Estero Cupquelán y Fiordo Quitralco; oficinas y muelle de atraque en Puerto Chacabuco.",
-      "fuente_regulacion": "SUBPESCA / SERNAPESCA / Subsecretaría para las FF.AA.",
-      "filiales_y_ruts": [
-        {
-          "razon_social": "Cooke Aquaculture Chile S.A. (ex Salmones Cupquelán S.A.)",
-          "rut": "96.926.970-8",
-          "rol_societario": "Titular única y directa de las concesiones del grupo en el Fiordo Cupquelán",
-          "estado_societario": "Activa",
-          "origen_historico": "Salmones Cupquelán S.A. fundada en los 90s, adquirida por Cooke Inc. en 2008",
-          "comunas_aysen": [
-            "Aysén"
-          ],
-          "barrios_acs": [
-            "ACS-22A",
-            "ACS-24"
-          ]
-        }
-      ]
-    },
-    {
       "holding_id": "holding_blumar",
       "empresa_madre": "Blumar S.A.",
       "nombre_fantasia": "Blumar Seafoods / Salmones Blumar",
@@ -1100,8 +1073,8 @@
       "pais_matriz": "China",
       "grupo_empresarial": "Grupo Joyvio (filial de alimentos de Legend Holdings Corporation, matriz de Lenovo, China)",
       "resumen_corporativo": "Australis Seafoods fue fundada por Isidoro Quiroga y vendida en 2019 al holding chino Joyvio por USD 921M. Es una de las mayores empresas productoras de salmón del país, con alta presencia en fiordos de Aysén y Cisnes.",
-      "concesiones_estimadas_aysen": 58,
-      "pct_concesiones_regional": 7.79,
+      "concesiones_estimadas_aysen": 46,
+      "pct_concesiones_regional": 6.17,
       "comunas_operacion": [
         "Aysén",
         "Cisnes"
@@ -1200,8 +1173,8 @@
       "pais_matriz": "Chile",
       "grupo_empresarial": "Grupo Camanchaca (Familias Cifuentes y Stengel)",
       "resumen_corporativo": "Grupo pesquero y acuícola histórico chileno. En 2017 escindió Salmones Camanchaca S.A., cotizando en la Bolsa de Santiago y de Oslo. Adquirió Fiordo Blanco S.A. en 2004, acumulando una sólida base de concesiones en Cisnes y Aysén.",
-      "concesiones_estimadas_aysen": 48,
-      "pct_concesiones_regional": 6.44,
+      "concesiones_estimadas_aysen": 38,
+      "pct_concesiones_regional": 5.1,
       "comunas_operacion": [
         "Cisnes",
         "Aysén"
@@ -1264,78 +1237,14 @@
       ]
     },
     {
-      "holding_id": "holding_invermar",
-      "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
-      "nombre_fantasia": "Invermar",
-      "pais_matriz": "Chile",
-      "grupo_empresarial": "Grupo Alimar (Familia Izquierdo Menéndez)",
-      "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
-      "concesiones_estimadas_aysen": 36,
-      "pct_concesiones_regional": 4.83,
-      "comunas_operacion": [
-        "Cisnes",
-        "Aysén"
-      ],
-      "barrios_acs_operacion": [
-        "ACS-18A",
-        "ACS-21A",
-        "ACS-22B"
-      ],
-      "plantas_y_bases_operativas": "Centros de engorda en Canal Jacaf y Moraleda; base de avituallamiento en Puerto Chacabuco.",
-      "fuente_regulacion": "SUBPESCA / CMF / SERNAPESCA",
-      "filiales_y_ruts": [
-        {
-          "razon_social": "Invermar S.A.",
-          "rut": "79.797.990-2",
-          "rol_societario": "Sociedad anónima abierta matriz operativa inscrita en CMF",
-          "estado_societario": "Activa",
-          "origen_historico": "Adquirida por Alimar en 2015",
-          "comunas_aysen": [
-            "Cisnes",
-            "Aysén"
-          ],
-          "barrios_acs": [
-            "ACS-18A",
-            "ACS-21A"
-          ]
-        },
-        {
-          "razon_social": "Salmones Froward Limitada",
-          "rut": "76.140.476-8",
-          "rol_societario": "Filial titular de concesiones acuícolas",
-          "estado_societario": "Activa integrada",
-          "origen_historico": "Filial acuícola de Alimar integrada a Invermar",
-          "comunas_aysen": [
-            "Cisnes"
-          ],
-          "barrios_acs": [
-            "ACS-18A"
-          ]
-        },
-        {
-          "razon_social": "Cultivos Marinos Lago Yelcho SpA",
-          "rut": "76.749.470-K",
-          "rol_societario": "Filial titular de centros de cultivo",
-          "estado_societario": "Activa integrada",
-          "origen_historico": "Filial titular de derechos acuícolas",
-          "comunas_aysen": [
-            "Aysén"
-          ],
-          "barrios_acs": [
-            "ACS-22B"
-          ]
-        }
-      ]
-    },
-    {
       "holding_id": "holding_yadran",
       "empresa_madre": "Pesquera Yadrán S.A.",
       "nombre_fantasia": "Salmones Yadrán",
       "pais_matriz": "Chile",
       "grupo_empresarial": "Empresas Yadrán (Familia Briones)",
       "resumen_corporativo": "Grupo de larga tradición en Chiloé y el archipiélago de las Guaitecas. Posee una de las mayores concentraciones de concesiones en la Comuna de Guaitecas (Melinka, Isla Gran Guaiteca) y Canal Puyuhuapi.",
-      "concesiones_estimadas_aysen": 40,
-      "pct_concesiones_regional": 5.37,
+      "concesiones_estimadas_aysen": 31,
+      "pct_concesiones_regional": 4.16,
       "comunas_operacion": [
         "Guaitecas",
         "Cisnes"
@@ -1410,14 +1319,78 @@
       ]
     },
     {
+      "holding_id": "holding_invermar",
+      "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
+      "nombre_fantasia": "Invermar",
+      "pais_matriz": "Chile",
+      "grupo_empresarial": "Grupo Alimar (Familia Izquierdo Menéndez)",
+      "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
+      "concesiones_estimadas_aysen": 27,
+      "pct_concesiones_regional": 3.62,
+      "comunas_operacion": [
+        "Cisnes",
+        "Aysén"
+      ],
+      "barrios_acs_operacion": [
+        "ACS-18A",
+        "ACS-21A",
+        "ACS-22B"
+      ],
+      "plantas_y_bases_operativas": "Centros de engorda en Canal Jacaf y Moraleda; base de avituallamiento en Puerto Chacabuco.",
+      "fuente_regulacion": "SUBPESCA / CMF / SERNAPESCA",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Invermar S.A.",
+          "rut": "79.797.990-2",
+          "rol_societario": "Sociedad anónima abierta matriz operativa inscrita en CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Adquirida por Alimar en 2015",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Froward Limitada",
+          "rut": "76.140.476-8",
+          "rol_societario": "Filial titular de concesiones acuícolas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial acuícola de Alimar integrada a Invermar",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A"
+          ]
+        },
+        {
+          "razon_social": "Cultivos Marinos Lago Yelcho SpA",
+          "rut": "76.749.470-K",
+          "rol_societario": "Filial titular de centros de cultivo",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial titular de derechos acuícolas",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22B"
+          ]
+        }
+      ]
+    },
+    {
       "holding_id": "holding_salmones_austral",
       "empresa_madre": "Salmones Austral S.A.",
       "nombre_fantasia": "Salmones Austral",
       "pais_matriz": "Chile",
       "grupo_empresarial": "Salmones Austral S.A. (Familias Navarro, Hurtado y Puchi)",
       "resumen_corporativo": "Nacida en 2013 producto de la fusión de Trusal S.A. y Salmones Pacific Star S.A. Inscrita en la CMF, concentra operaciones en Canal Moraleda y Seno Gala.",
-      "concesiones_estimadas_aysen": 34,
-      "pct_concesiones_regional": 4.56,
+      "concesiones_estimadas_aysen": 24,
+      "pct_concesiones_regional": 3.22,
       "comunas_operacion": [
         "Cisnes",
         "Aysén"
@@ -1484,8 +1457,8 @@
       "pais_matriz": "Japón",
       "grupo_empresarial": "Nissui Corporation (Tokio, Japón)",
       "resumen_corporativo": "Pionera absoluta del cultivo de salmón coho en Chile, fundada en 1982 e integrada a Nissui en 1988. Opera una de las plantas de procesamiento primario más emblemáticas de la región en Puerto Chacabuco.",
-      "concesiones_estimadas_aysen": 28,
-      "pct_concesiones_regional": 3.76,
+      "concesiones_estimadas_aysen": 20,
+      "pct_concesiones_regional": 2.68,
       "comunas_operacion": [
         "Aysén"
       ],
@@ -1517,6 +1490,41 @@
       ]
     },
     {
+      "holding_id": "holding_cooke",
+      "empresa_madre": "Cooke Inc.",
+      "nombre_fantasia": "Cooke Aquaculture Chile",
+      "pais_matriz": "Canadá",
+      "grupo_empresarial": "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
+      "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
+      "concesiones_estimadas_aysen": 18,
+      "pct_concesiones_regional": 2.42,
+      "comunas_operacion": [
+        "Aysén"
+      ],
+      "barrios_acs_operacion": [
+        "ACS-22A",
+        "ACS-24"
+      ],
+      "plantas_y_bases_operativas": "Base flotante integral con pontones habitables en Estero Cupquelán y Fiordo Quitralco; oficinas y muelle de atraque en Puerto Chacabuco.",
+      "fuente_regulacion": "SUBPESCA / SERNAPESCA / Subsecretaría para las FF.AA.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Cooke Aquaculture Chile S.A. (ex Salmones Cupquelán S.A.)",
+          "rut": "96.926.970-8",
+          "rol_societario": "Titular única y directa de las concesiones del grupo en el Fiordo Cupquelán",
+          "estado_societario": "Activa",
+          "origen_historico": "Salmones Cupquelán S.A. fundada en los 90s, adquirida por Cooke Inc. en 2008",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22A",
+            "ACS-24"
+          ]
+        }
+      ]
+    },
+    {
       "holding_id": "holding_otros_menores",
       "empresa_madre": "Otros Titulares Menores / Concesiones Artesanales y en Trámite",
       "nombre_fantasia": "Titulares Menores Aysén",
@@ -1526,8 +1534,6 @@
       "concesiones_estimadas_aysen": 19,
       "pct_concesiones_regional": 2.55,
       "comunas_operacion": [
-        "Aysén",
-        "Cisnes",
         "Guaitecas",
         "Tortel"
       ],
@@ -2071,7 +2077,7 @@
               "nombre_fantasia": "AquaChile",
               "empresa_madre": "Agrosuper S.A.",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 125,
+              "concesiones_estimadas_en_comuna": 105,
               "barrios_acs_locales": [
                 "ACS-21A",
                 "ACS-21B",
@@ -2148,7 +2154,7 @@
               "nombre_fantasia": "Cermaq Chile",
               "empresa_madre": "Mitsubishi Corporation",
               "pais_matriz": "Japón",
-              "concesiones_estimadas_en_comuna": 42,
+              "concesiones_estimadas_en_comuna": 45,
               "barrios_acs_locales": [
                 "ACS-21B",
                 "ACS-22A",
@@ -2170,7 +2176,7 @@
               "nombre_fantasia": "Salmones Blumar",
               "empresa_madre": "Blumar S.A.",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 34,
+              "concesiones_estimadas_en_comuna": 42,
               "barrios_acs_locales": [
                 "ACS-21A",
                 "ACS-22A",
@@ -2214,7 +2220,7 @@
               "nombre_fantasia": "Salmones Antártica",
               "empresa_madre": "Nissui Corporation",
               "pais_matriz": "Japón",
-              "concesiones_estimadas_en_comuna": 28,
+              "concesiones_estimadas_en_comuna": 20,
               "barrios_acs_locales": [
                 "ACS-21A",
                 "ACS-22A",
@@ -2225,23 +2231,6 @@
                 {
                   "razon_social": "Salmones Antártica S.A.",
                   "rut": "86.100.500-3"
-                }
-              ]
-            },
-            {
-              "holding_id": "holding_cooke",
-              "nombre_fantasia": "Cooke Aquaculture Chile",
-              "empresa_madre": "Cooke Inc.",
-              "pais_matriz": "Canadá",
-              "concesiones_estimadas_en_comuna": 26,
-              "barrios_acs_locales": [
-                "ACS-22A",
-                "ACS-24"
-              ],
-              "filiales_activas": [
-                {
-                  "razon_social": "Cooke Aquaculture Chile S.A.",
-                  "rut": "96.926.970-8"
                 }
               ]
             },
@@ -2262,19 +2251,19 @@
               ]
             },
             {
-              "holding_id": "holding_salmones_austral",
-              "nombre_fantasia": "Salmones Austral",
-              "empresa_madre": "Salmones Austral S.A.",
-              "pais_matriz": "Chile",
+              "holding_id": "holding_cooke",
+              "nombre_fantasia": "Cooke Aquaculture Chile",
+              "empresa_madre": "Cooke Inc.",
+              "pais_matriz": "Canadá",
               "concesiones_estimadas_en_comuna": 18,
               "barrios_acs_locales": [
-                "ACS-21A",
-                "ACS-22B"
+                "ACS-22A",
+                "ACS-24"
               ],
               "filiales_activas": [
                 {
-                  "razon_social": "Salmones Pacific Star S.A.",
-                  "rut": "79.559.220-2"
+                  "razon_social": "Cooke Aquaculture Chile S.A.",
+                  "rut": "96.926.970-8"
                 }
               ]
             },
@@ -2283,7 +2272,7 @@
               "nombre_fantasia": "Invermar",
               "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 14,
+              "concesiones_estimadas_en_comuna": 15,
               "barrios_acs_locales": [
                 "ACS-21A",
                 "ACS-22B"
@@ -2292,6 +2281,23 @@
                 {
                   "razon_social": "Invermar S.A.",
                   "rut": "79.797.990-2"
+                }
+              ]
+            },
+            {
+              "holding_id": "holding_salmones_austral",
+              "nombre_fantasia": "Salmones Austral",
+              "empresa_madre": "Salmones Austral S.A.",
+              "pais_matriz": "Chile",
+              "concesiones_estimadas_en_comuna": 14,
+              "barrios_acs_locales": [
+                "ACS-21A",
+                "ACS-22B"
+              ],
+              "filiales_activas": [
+                {
+                  "razon_social": "Salmones Pacific Star S.A.",
+                  "rut": "79.559.220-2"
                 }
               ]
             }
@@ -2305,7 +2311,7 @@
             "superficie_ha": 393000,
             "estado": "Votación CRUBC Aysén 2024 / Recursos judiciales"
           },
-          "concesiones_dentro_reserva_las_guaitecas": 12
+          "concesiones_dentro_reserva_las_guaitecas": 112
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 18,
@@ -2548,32 +2554,6 @@
           "desembarque_artesanal_ton_anual": 3200.0,
           "holdings_controladores_y_ruts": [
             {
-              "holding_id": "holding_aquachile",
-              "nombre_fantasia": "AquaChile",
-              "empresa_madre": "Agrosuper S.A.",
-              "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 65,
-              "barrios_acs_locales": [
-                "ACS-18A",
-                "ACS-18B",
-                "ACS-19A"
-              ],
-              "filiales_activas": [
-                {
-                  "razon_social": "Empresas AquaChile S.A.",
-                  "rut": "86.247.400-7"
-                },
-                {
-                  "razon_social": "Exportadora Los Fiordos Limitada",
-                  "rut": "79.872.420-7"
-                },
-                {
-                  "razon_social": "AquaChile Maullín Limitada",
-                  "rut": "79.728.530-7"
-                }
-              ]
-            },
-            {
               "holding_id": "holding_mowi",
               "nombre_fantasia": "Mowi Chile",
               "empresa_madre": "Mowi ASA",
@@ -2592,24 +2572,28 @@
               ]
             },
             {
-              "holding_id": "holding_cermaq",
-              "nombre_fantasia": "Cermaq Chile",
-              "empresa_madre": "Mitsubishi Corporation",
-              "pais_matriz": "Japón",
-              "concesiones_estimadas_en_comuna": 33,
+              "holding_id": "holding_aquachile",
+              "nombre_fantasia": "AquaChile",
+              "empresa_madre": "Agrosuper S.A.",
+              "pais_matriz": "Chile",
+              "concesiones_estimadas_en_comuna": 34,
               "barrios_acs_locales": [
                 "ACS-18A",
-                "ACS-19B",
-                "ACS-20"
+                "ACS-18B",
+                "ACS-19A"
               ],
               "filiales_activas": [
                 {
-                  "razon_social": "Cermaq Chile S.A.",
-                  "rut": "79.784.980-4"
+                  "razon_social": "Empresas AquaChile S.A.",
+                  "rut": "86.247.400-7"
                 },
                 {
-                  "razon_social": "Mainstream Chile S.A.",
-                  "rut": "77.424.630-4"
+                  "razon_social": "Exportadora Los Fiordos Limitada",
+                  "rut": "79.872.420-7"
+                },
+                {
+                  "razon_social": "AquaChile Maullín Limitada",
+                  "rut": "79.728.530-7"
                 }
               ]
             },
@@ -2636,11 +2620,54 @@
               ]
             },
             {
+              "holding_id": "holding_cermaq",
+              "nombre_fantasia": "Cermaq Chile",
+              "empresa_madre": "Mitsubishi Corporation",
+              "pais_matriz": "Japón",
+              "concesiones_estimadas_en_comuna": 30,
+              "barrios_acs_locales": [
+                "ACS-18A",
+                "ACS-19B",
+                "ACS-20"
+              ],
+              "filiales_activas": [
+                {
+                  "razon_social": "Cermaq Chile S.A.",
+                  "rut": "79.784.980-4"
+                },
+                {
+                  "razon_social": "Mainstream Chile S.A.",
+                  "rut": "77.424.630-4"
+                }
+              ]
+            },
+            {
+              "holding_id": "holding_blumar",
+              "nombre_fantasia": "Salmones Blumar",
+              "empresa_madre": "Blumar S.A.",
+              "pais_matriz": "Chile",
+              "concesiones_estimadas_en_comuna": 20,
+              "barrios_acs_locales": [
+                "ACS-18A",
+                "ACS-18B"
+              ],
+              "filiales_activas": [
+                {
+                  "razon_social": "Salmones Blumar S.A.",
+                  "rut": "76.653.690-5"
+                },
+                {
+                  "razon_social": "Salmones Ice Val Limitada",
+                  "rut": "78.587.260-6"
+                }
+              ]
+            },
+            {
               "holding_id": "holding_camanchaca",
               "nombre_fantasia": "Salmones Camanchaca",
               "empresa_madre": "Compañía Pesquera Camanchaca S.A.",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 30,
+              "concesiones_estimadas_en_comuna": 20,
               "barrios_acs_locales": [
                 "ACS-18B",
                 "ACS-18C",
@@ -2658,32 +2685,11 @@
               ]
             },
             {
-              "holding_id": "holding_blumar",
-              "nombre_fantasia": "Salmones Blumar",
-              "empresa_madre": "Blumar S.A.",
-              "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 28,
-              "barrios_acs_locales": [
-                "ACS-18A",
-                "ACS-18B"
-              ],
-              "filiales_activas": [
-                {
-                  "razon_social": "Salmones Blumar S.A.",
-                  "rut": "76.653.690-5"
-                },
-                {
-                  "razon_social": "Salmones Ice Val Limitada",
-                  "rut": "78.587.260-6"
-                }
-              ]
-            },
-            {
               "holding_id": "holding_australis",
               "nombre_fantasia": "Australis Seafoods",
               "empresa_madre": "Joyvio Food Co. / Legend Holdings",
               "pais_matriz": "China",
-              "concesiones_estimadas_en_comuna": 26,
+              "concesiones_estimadas_en_comuna": 14,
               "barrios_acs_locales": [
                 "ACS-18C",
                 "ACS-19A"
@@ -2704,7 +2710,7 @@
               "nombre_fantasia": "Invermar",
               "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 22,
+              "concesiones_estimadas_en_comuna": 12,
               "barrios_acs_locales": [
                 "ACS-18A"
               ],
@@ -2720,32 +2726,11 @@
               ]
             },
             {
-              "holding_id": "holding_yadran",
-              "nombre_fantasia": "Salmones Yadrán",
-              "empresa_madre": "Pesquera Yadrán S.A.",
-              "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 18,
-              "barrios_acs_locales": [
-                "ACS-18A",
-                "ACS-18B"
-              ],
-              "filiales_activas": [
-                {
-                  "razon_social": "Cultivos Yadrán S.A.",
-                  "rut": "96.550.920-8"
-                },
-                {
-                  "razon_social": "Yadrán Cisnes S.A.",
-                  "rut": "96.883.350-2"
-                }
-              ]
-            },
-            {
               "holding_id": "holding_salmones_austral",
               "nombre_fantasia": "Salmones Austral",
               "empresa_madre": "Salmones Austral S.A.",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 16,
+              "concesiones_estimadas_en_comuna": 10,
               "barrios_acs_locales": [
                 "ACS-18B",
                 "ACS-19A"
@@ -2760,6 +2745,27 @@
                   "rut": "96.566.740-7"
                 }
               ]
+            },
+            {
+              "holding_id": "holding_yadran",
+              "nombre_fantasia": "Salmones Yadrán",
+              "empresa_madre": "Pesquera Yadrán S.A.",
+              "pais_matriz": "Chile",
+              "concesiones_estimadas_en_comuna": 6,
+              "barrios_acs_locales": [
+                "ACS-18A",
+                "ACS-18B"
+              ],
+              "filiales_activas": [
+                {
+                  "razon_social": "Cultivos Yadrán S.A.",
+                  "rut": "96.550.920-8"
+                },
+                {
+                  "razon_social": "Yadrán Cisnes S.A.",
+                  "rut": "96.883.350-2"
+                }
+              ]
             }
           ],
           "biomasa_cosechada_ton_anual": 185000,
@@ -2770,7 +2776,8 @@
             "nombre": "Pu Wapi",
             "superficie_ha": 227000,
             "estado": "Votación CRUBC Aysén 2024 / Recursos judiciales"
-          }
+          },
+          "concesiones_dentro_reserva_las_guaitecas": 96
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 8,
@@ -3008,32 +3015,11 @@
           "desembarque_artesanal_ton_anual": 5650.0,
           "holdings_controladores_y_ruts": [
             {
-              "holding_id": "holding_yadran",
-              "nombre_fantasia": "Salmones Yadrán",
-              "empresa_madre": "Pesquera Yadrán S.A.",
-              "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 22,
-              "barrios_acs_locales": [
-                "ACS-17",
-                "ACS-33"
-              ],
-              "filiales_activas": [
-                {
-                  "razon_social": "Cultivos Yadrán S.A.",
-                  "rut": "96.550.920-8"
-                },
-                {
-                  "razon_social": "Yadran Cultivos Marinos S.A.",
-                  "rut": "96.549.610-6"
-                }
-              ]
-            },
-            {
               "holding_id": "holding_aquachile",
               "nombre_fantasia": "AquaChile",
               "empresa_madre": "Agrosuper S.A.",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 20,
+              "concesiones_estimadas_en_comuna": 71,
               "barrios_acs_locales": [
                 "ACS-17",
                 "ACS-33"
@@ -3050,11 +3036,32 @@
               ]
             },
             {
+              "holding_id": "holding_yadran",
+              "nombre_fantasia": "Salmones Yadrán",
+              "empresa_madre": "Pesquera Yadrán S.A.",
+              "pais_matriz": "Chile",
+              "concesiones_estimadas_en_comuna": 25,
+              "barrios_acs_locales": [
+                "ACS-17",
+                "ACS-33"
+              ],
+              "filiales_activas": [
+                {
+                  "razon_social": "Cultivos Yadrán S.A.",
+                  "rut": "96.550.920-8"
+                },
+                {
+                  "razon_social": "Yadran Cultivos Marinos S.A.",
+                  "rut": "96.549.610-6"
+                }
+              ]
+            },
+            {
               "holding_id": "holding_otros_menores",
               "nombre_fantasia": "Otros Concesionarios e Históricos",
               "empresa_madre": "Titulares Diversos en Descanso y Traspaso",
               "pais_matriz": "Chile",
-              "concesiones_estimadas_en_comuna": 56,
+              "concesiones_estimadas_en_comuna": 2,
               "barrios_acs_locales": [
                 "ACS-17",
                 "ACS-33",
@@ -3072,7 +3079,7 @@
           "indice_consumo_antibioticos_ica_g_ton": 382.1,
           "amerb_decretadas_cantidad": 18,
           "amerb_operativas_vigentes": 7,
-          "concesiones_dentro_reserva_las_guaitecas": 300
+          "concesiones_dentro_reserva_las_guaitecas": 92
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 0,
@@ -4250,7 +4257,8 @@
           "biomasa_cosechada_ton_anual": 8500,
           "indice_consumo_antibioticos_ica_g_ton": 289.0,
           "amerb_decretadas_cantidad": 2,
-          "amerb_operativas_vigentes": 1
+          "amerb_operativas_vigentes": 1,
+          "concesiones_dentro_reserva_las_guaitecas": 12
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 1,

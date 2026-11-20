@@ -176,6 +176,15 @@
     percepcion_ctci_prioritaria_pct_i1i: 'Percepción Actividades CTCi Prioritarias (%)',
     gasto_cultura_per_capita_clp: 'Gasto Municipal en Cultura Per Cápita ($/hab)',
     ecmpo_solicitadas_ha: 'Solicitudes ECMPO Ley Lafkenche (ha)',
+    concesiones_acuicolas_en_snaspe: 'Concesiones Acuícolas en SNASPE',
+    desembarque_artesanal_ton: 'Desembarque Pesquero Artesanal (ton/año)',
+    tasa_ocupacion_concesiones_pct: 'Tasa de Operación de Concesiones Acuícolas (%)',
+    proporcion_concesiones_en_snaspe_pct: 'Proporción de Concesiones en SNASPE (%)',
+    trabajadores_sii_por_centro_activo: 'Trabajadores SII por Centro Activo (trab./centro)',
+    pesca_ind_fraccionamiento_art_pct: 'Fraccionamiento Artesanal Ley N° 21.752 (%)',
+    pesca_ind_fraccionamiento_ind_pct: 'Fraccionamiento Industrial Ley N° 21.752 (%)',
+    pesca_ind_valor_sancion_utm: 'Valor de Sanción SUBPESCA (UTM/ton)',
+    pesca_ind_impuesto_43ter_utm: 'Impuesto Específico Art. 43 ter LGPA (UTM/ton)',
     sindicatos_pesca_artesanal: 'Sindicatos de Pesca Artesanal',
     mediana_espera_quirurgica_dias: 'Mediana de Espera Quirúrgica No GES (días)',
     holdings_salmoneros: 'Holdings y Empresas de Salmonicultura en Aysén',
@@ -578,6 +587,15 @@
     antibioticos_ica_g_ton: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
     amerb_decretadas: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
     amerb_operativas: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    concesiones_acuicolas_en_snaspe: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_SNASPE,
+    desembarque_artesanal_ton: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    tasa_ocupacion_concesiones_pct: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    proporcion_concesiones_en_snaspe_pct: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_SNASPE,
+    trabajadores_sii_por_centro_activo: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    pesca_ind_fraccionamiento_art_pct: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
+    pesca_ind_fraccionamiento_ind_pct: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
+    pesca_ind_valor_sancion_utm: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
+    pesca_ind_impuesto_43ter_utm: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
     holdings_operadores_salmon: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
     holdings_salmoneros: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
     pesquerias_industriales: PROVENANCE_CATALOG_ENTRIES.HOLDINGS_ACUICOLAS,
@@ -802,7 +820,13 @@
     pobreza_multidim_pct: ['pobreza multidimensional', 'tasa de pobreza multidimensional'],
     profesionalizacion_pct: ['funcionarios municipales profesionales', 'profesionalizacion municipal', 'proporcion de profesionales municipales', 'personal municipal profesional', 'profesionalizacion'],
     amerb_decretadas: ['areas amerb', 'amerb', 'areas de manejo', 'amerb decretadas'],
-    ecmpo_solicitadas_ha: ['hectareas ecmpo', 'ecmpo', 'solicitudes ecmpo', 'ley lafkenche', 'espacios costeros pueblos originarios'],
+    amerb_operativas: ['amerb operativas', 'areas de manejo amerb operativas', 'areas de manejo operativas', 'amerb operativas vigentes', 'amerb activas'],
+    ecmpo_solicitadas_ha: ['hectareas de ecmpo', 'hectareas ecmpo', 'ecmpo solicitadas', 'ecmpo', 'solicitudes ecmpo', 'ley lafkenche', 'lafkenche', 'espacios costeros marinos', 'espacios costeros pueblos originarios'],
+    concesiones_acuicolas_en_snaspe: ['concesiones acuicolas en snaspe', 'concesiones en snaspe', 'concesiones superpuestas en snaspe', 'concesiones dentro de snaspe', 'jaulas en snaspe'],
+    desembarque_artesanal_ton: ['desembarque artesanal', 'desembarque pesquero artesanal', 'toneladas desembarque artesanal'],
+    tasa_ocupacion_concesiones_pct: ['tasa de ocupacion concesiones', 'tasa de operacion acuicola'],
+    proporcion_concesiones_en_snaspe_pct: ['proporcion concesiones en snaspe', 'porcentaje concesiones en snaspe'],
+    trabajadores_sii_por_centro_activo: ['trabajadores por centro activo', 'arraigo laboral salmon'],
     daa_no_consuntivos_m3s: ['derechos de agua', 'derechos de aprovechamiento de agua', 'daa', 'caudal derechos de agua'],
     gasto_cultura_per_capita_clp: ['gasto municipal en cultura per capita', 'gasto en cultura per capita', 'gasto cultura per capita', 'gasto cultural per capita', 'gasto municipal cultura'],
     total_espacios_culturales: ['espacios culturales', 'infraestructura cultural', 'centros culturales'],
@@ -815,7 +839,7 @@
     empresas_sii: ['empresas sii', 'numero de empresas', 'empresas activas', 'tejido empresarial'],
     trabajadores_sii: ['empleo', 'puestos de trabajo', 'trabajo formal', 'trabajadores', 'fuerza laboral'],
     parcelaciones_sag_n: ['parcelas', 'parcelaciones', 'loteos', 'subdivision predial', 'parcelas de agrado'],
-    inversion_seia_mmusd: ['inversion seia', 'proyectos aprobados seia'],
+    inversion_seia_mmusd: ['inversion aprobada seia', 'inversion seia', 'proyectos aprobados seia', 'inversion ambiental seia'],
     seia_plazo_dias: ['plazo seia', 'plazo promedio de evaluacion ambiental', 'plazo de evaluacion ambiental', 'evaluacion ambiental en el seia', 'plazo evaluacion seia', 'permisologia seia', 'dias evaluacion seia'],
     red_vial_total_km: ['red vial', 'red vial total', 'kilometros de caminos', 'vialidad'],
     red_vial_pavimentada_km: ['red vial pavimentada', 'caminos pavimentados', 'asfalto', 'rutas', 'estado de las rutas', 'rutas de entrada', 'insumos', 'abastecimiento', 'logistica', 'carretera austral', 'ruta 7'],
@@ -2120,6 +2144,12 @@
       return 'conectividad_digital_subtel_2026';
     }
 
+    // 23. Fraccionamiento Ley 21.752 / Impuesto Art. 43 ter / Desembarque Artesanal por Caleta (Nodos #08 y #10)
+    if (/\b(fraccionamiento|ley\s*21\.?752|43\s*ter|valor\s+de\s+sancion|desembarque\s+artesanal)\b/i.test(qNorm) ||
+        (/\b(merluza|congrio|bacalao)\b/i.test(qNorm) && /\b(artesanal|industrial|caletas?|desembarque|impuesto|sancion)\b/i.test(qNorm))) {
+      return 'pesquerias_fraccionamiento_caletas';
+    }
+
     return null;
   }
 
@@ -2289,10 +2319,65 @@
         };
       }
       case 'impacto_ambiental_salmon': {
+        const asksConcesionesEnSnaspe = /\bconcesiones\s+(?:acuicolas\s+|salmoneras\s+)?(?:en|dentro\s+de|superpuestas\s+en)\s+snaspe\b/i.test(qNorm);
+        const asksIcaExplicit = /\b(antibioticos?|ica)\b/i.test(qNorm);
         const marEnts = (index.entities || [])
           .filter(e => Number(e.raw?.concesiones_salmon) > 0)
           .slice()
           .sort((a, b) => (Number(b.raw?.concesiones_salmon) || 0) - (Number(a.raw?.concesiones_salmon) || 0));
+
+        if (asksConcesionesEnSnaspe) {
+          const detailSnaspe = marEnts.map(e => {
+            const er = e.raw || {};
+            const conc = Number(er.concesiones_salmon) || 0;
+            const snConc = Number(er.concesiones_acuicolas_en_snaspe) || 0;
+            const snConcPct = conc > 0 ? ((snConc / conc) * 100).toFixed(1).replace('.', ',') : '0,0';
+            return `${e.name} (${fmtNumber(snConc)}/${fmtNumber(conc)} en SNASPE [${snConcPct}%], ${fmtNumber(er.superficie_snaspe_pct)}% sup. SNASPE, ICA ${fmtNumber(er.antibioticos_ica_g_ton)} g/t)`;
+          }).join('; ');
+          const reply = `Fiscalización en áreas protegidas SNASPE y uso de antibióticos (SERNAPESCA/SUBPESCA/CONAF): 312 concesiones superpuestas en SNASPE (237 en RN Las Guaitecas, 63 en PN Isla Magdalena y 12 en RN Katalalixar; Ley SBAP N° 21.600). Desglose litoral: ${detailSnaspe}.`;
+          const focusComunas = marEnts.map(e => e.name);
+          const sources = resolveSourcesForKeys(['concesiones_acuicolas_en_snaspe', 'superficie_snaspe_pct', 'antibioticos_ica_g_ton', 'concesiones_salmon', 'concesiones_salmon_snaspe_n']);
+          return {
+            reply,
+            chart: {
+              render: true,
+              type: 'scatter',
+              varX: 'concesiones_acuicolas_en_snaspe',
+              varY: asksIcaExplicit ? 'antibioticos_ica_g_ton' : 'superficie_snaspe_pct',
+              varZ: 'superficie_snaspe_pct',
+              varW: 'antibioticos_ica_g_ton',
+              yKey: 'concesiones_acuicolas_en_snaspe',
+              y2Key: asksIcaExplicit ? 'antibioticos_ica_g_ton' : 'superficie_snaspe_pct',
+              focusComunas,
+              multiCharts: [
+                {
+                  type: 'scatter',
+                  varX: 'concesiones_acuicolas_en_snaspe',
+                  varY: 'antibioticos_ica_g_ton',
+                  focusComunas,
+                  title: 'Concesiones Acuícolas en SNASPE vs. Intensidad Antibióticos ICA (g/ton)',
+                  sourceText: resolveSourcesForKeys(['concesiones_acuicolas_en_snaspe', 'antibioticos_ica_g_ton']).map(s => s.institucion).join(' · '),
+                  excludeCoyhaique: false
+                },
+                {
+                  type: 'scatter',
+                  varX: 'concesiones_salmon',
+                  varY: 'superficie_snaspe_pct',
+                  focusComunas,
+                  title: 'Concesiones Salmoneras Totales vs. Superficie Protegida SNASPE (%)',
+                  sourceText: resolveSourcesForKeys(['concesiones_salmon', 'superficie_snaspe_pct']).map(s => s.institucion).join(' · '),
+                  excludeCoyhaique: false
+                }
+              ],
+              title: 'Cruce Litoral: Concesiones en SNASPE, Superficie Protegida (%) e ICA Antibióticos',
+              sourceText: sources.map(s => s.institucion).join(' · '),
+              excludeCoyhaique: false
+            },
+            sources,
+            relatedHub: 'II'
+          };
+        }
+
         const detailStr = marEnts.map(e => {
           const er = e.raw || {};
           return `${e.name} (${fmtNumber(er.concesiones_salmon)} conc., ${fmtNumber(er.biomasa_salmon_ton)}t, ${fmtNumber(er.superficie_snaspe_pct)}% SNASPE, ICA ${fmtNumber(er.antibioticos_ica_g_ton)} g/t)`;
@@ -2329,6 +2414,69 @@
               }
             ],
             title: 'Fiscalización Acuícola: Biomasa, Concesiones, SNASPE (%) e ICA Antibióticos',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'II'
+        };
+      }
+      case 'pesquerias_fraccionamiento_caletas': {
+        const reply = 'En pesca industrial y artesanal (Ley N° 21.752 y Art. 43 ter LGPA, Nodos #08 y #10): Merluza del sur (Norte y Sur) y Congrio dorado (Norte y Sur) establecen un fraccionamiento de 37% Industrial / 63% Artesanal, con Valor de Sanción SUBPESCA de 77 y 83 UTM/ton e Impuesto Art. 43 ter de 3,234 y 3,486 UTM/ton; Bacalao de profundidad opera 100% Industrial PEP (Valor Sanción 372 UTM/ton, ref. 15,62 UTM) y Reineta 90% Artesanal / 10% Industrial (16 UTM/ton). En desembarque pesquero por caleta (SERNAPESCA): Puerto Chacabuco (14.850 ton), Melinka (8.920 ton), Puerto Cisnes (4.210 ton) y Caleta Tortel (380 ton); desglose artesanal comunal: Guaitecas (5.650 ton), Aysén (4.850 ton), Cisnes (3.200 ton) y Tortel (120 ton; total regional 13.820 ton/año).';
+        const fishLabels = ['Merluza del sur (Norte)', 'Merluza del sur (Sur)', 'Congrio dorado (Norte)', 'Congrio dorado (Sur)', 'Merluza de cola', 'Merluza tres aletas', 'Bacalao profundidad', 'Reineta', 'Besugo / Brotula'];
+        const fishArt = [63, 63, 63, 63, 5, 5, 0, 90, 0];
+        const fishInd = [37, 37, 37, 37, 95, 95, 100, 10, 100];
+        const caletaLabels = ['Puerto Chacabuco', 'Melinka', 'Puerto Cisnes', 'Caleta Tortel'];
+        const caletaData = [14850, 8920, 4210, 380];
+        const focusComunas = ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'];
+        const sources = resolveSourcesForKeys(['pesca_ind_fraccionamiento_art_pct', 'desembarque_artesanal_ton', 'sindicatos_pesca_artesanal']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            customCategoryData: true,
+            categoryLabel: 'Pesquería',
+            varX: 'pesca_ind_fraccionamiento_art_pct',
+            varY: 'pesca_ind_fraccionamiento_ind_pct',
+            labels: fishLabels,
+            datasets: [
+              { label: '% Artesanal (Ley 21.752)', data: fishArt, unit: '%' },
+              { label: '% Industrial (LTP/PEP)', data: fishInd, unit: '%' }
+            ],
+            multiCharts: [
+              {
+                type: 'bar',
+                customCategoryData: true,
+                categoryLabel: 'Pesquería',
+                varX: 'pesca_ind_fraccionamiento_art_pct',
+                varY: 'pesca_ind_fraccionamiento_ind_pct',
+                labels: fishLabels,
+                datasets: [
+                  { label: '% Artesanal (Ley 21.752)', data: fishArt, unit: '%' },
+                  { label: '% Industrial (LTP/PEP)', data: fishInd, unit: '%' }
+                ],
+                title: 'Fraccionamiento Artesanal vs. Industrial por Pesquería (Ley N° 21.752)',
+                sourceText: 'SUBPESCA / Ley N° 21.752 / LGPA Art. 43 ter',
+                excludeCoyhaique: false
+              },
+              {
+                type: 'bar',
+                customCategoryData: true,
+                categoryLabel: 'Caleta Pesquera',
+                varX: 'desembarque_artesanal_ton',
+                varY: 'sindicatos_pesca_artesanal',
+                focusComunas,
+                labels: caletaLabels,
+                datasets: [
+                  { label: 'Desembarque por Caleta (ton/año)', data: caletaData, unit: 'ton/año' }
+                ],
+                title: 'Desembarque Pesquero por Caleta Principal (ton/año)',
+                sourceText: 'SERNAPESCA — Estadísticas de Caletas y Registro Pesquero Artesanal',
+                excludeCoyhaique: false
+              }
+            ],
+            title: 'Pesquerías Ley N° 21.752 (Fraccionamiento e Impuesto Art. 43 ter) y Desembarque en Caletas',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -3610,10 +3758,17 @@
       } catch (_) {}
     }
 
-    const allScoredVars = _memoryIndex.variables.map(v => ({
-      variable: v,
-      score: scoreVariable(v, qNormForVars, varQueryTokens) + (nlScores[v.key] || 0) * 1.2
-    }));
+    const asksEcmpoLafkenche = /\b(ecmpo|lafkenche)\b|espacios\s+costeros\s+marinos/i.test(qNorm);
+    const asksAmerbOperativas = /\bamerb\s+operativas\b|\bareas\s+de\s+manejo\s+(?:amerb\s+)?operativas\b/i.test(qNorm);
+    const asksRatioPerCenter = /\b(por\s+centro(?:\s+activo)?|arraigo\s+laboral)\b/i.test(qNorm);
+    const allScoredVars = _memoryIndex.variables.map(v => {
+      let s = scoreVariable(v, qNormForVars, varQueryTokens) + (nlScores[v.key] || 0) * 1.2;
+      if (asksEcmpoLafkenche && v.key === 'ecmpo_solicitadas_ha' && s > 0) s += 28;
+      if (asksAmerbOperativas && v.key === 'amerb_operativas' && s > 0) s += 30;
+      if (asksAmerbOperativas && v.key === 'amerb_decretadas') s -= 15;
+      if (!asksRatioPerCenter && v.key === 'trabajadores_sii_por_centro_activo') s -= 30;
+      return { variable: v, score: s };
+    });
 
     let scoredVars = allScoredVars
       .filter(item => item.score >= 5)
@@ -3737,7 +3892,9 @@
       dependencia_barcaza: 'barge_dep',
       dependencia_barcaza_nivel: 'barge_dep',
       cobertura_vegetal_nativa_ha: 'native_forest_ha',
-      bosque_nativo_ha: 'native_forest_ha'
+      bosque_nativo_ha: 'native_forest_ha',
+      amerb_decretadas: 'amerb_areas',
+      amerb_operativas: 'amerb_areas'
     };
     const seenTwinGroups = new Set();
     const topNumericVars = rawTopNumericVars.filter(item => {
@@ -3803,7 +3960,7 @@
 
     // Detectar intención de temas reconciliados oficiales (Single Source of Truth), sin secuestrar comparativas multi-variable
     const rawReconciledTopic = detectReconciledTopicIntent(qNorm, rawQuery, matchedEntities);
-    const reconciledTopic = (rawReconciledTopic && isExplicitMultiVariableComparison && rawReconciledTopic !== 'impacto_ambiental_salmon')
+    const reconciledTopic = (rawReconciledTopic && isExplicitMultiVariableComparison && rawReconciledTopic !== 'impacto_ambiental_salmon' && rawReconciledTopic !== 'pesquerias_fraccionamiento_caletas')
       ? null
       : rawReconciledTopic;
     if (reconciledTopic) {
@@ -3901,9 +4058,12 @@
       quaternaryVar = _memoryIndex.variablesByKey['visitas_por_pernoctacion_ratio'] || quaternaryVar;
     }
 
+    const explicitHighVars = topNumericVars.filter(v => v.score >= 25);
+    const isExplicitSeiaOrBiomasaCross = /\b(biomasa|seia|inversion aprobada)\b/i.test(qNorm) && explicitHighVars.length >= 3;
     const isAquacultureProdOps = /\b(concesiones|centros activos)\b/i.test(qNorm) &&
       /\b(salmon\w*|acuic\w*)\b/i.test(qNorm) &&
-      /\b(conectividad|energia|fuerza laboral|trabajadores)\b/i.test(qNorm);
+      /\b(conectividad|energia|fuerza laboral)\b/i.test(qNorm) &&
+      !isExplicitSeiaOrBiomasaCross;
     if (isAquacultureProdOps) {
       primaryVar = _memoryIndex.variablesByKey['concesiones_salmon'] || primaryVar;
       secondaryVar = _memoryIndex.variablesByKey['centros_activos_salmon'] || secondaryVar;
@@ -3960,6 +4120,7 @@
     const isBroadSectorQuery = Boolean(
       matchedSector &&
       !hasSpecificMetricFocus &&
+      !(isExplicitMultiVariableComparison && explicitHighVars.length >= 2) &&
       !asksTourismInvestmentGap &&
       !asksBalmacedaOrCruisesTemporal &&
       !asksTourismSeasonalityMonthly &&

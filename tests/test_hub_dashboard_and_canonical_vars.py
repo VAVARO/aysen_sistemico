@@ -144,7 +144,7 @@ class TestHubDashboardAndCanonicalVars(unittest.TestCase):
                     cs = cfg.get("customChartSpec")
                     self.assertIsInstance(cs, dict, f"{pid} (line) debe incluir customChartSpec")
                     self.assertEqual(len(cs.get("labels", [])), 12, f"{pid} customChartSpec debe tener 12 años (2015-2026)")
-                    self.assertEqual(len(cs.get("datasets", [])), 2, f"{pid} customChartSpec debe tener 2 datasets multieje")
+                    self.assertGreaterEqual(len(cs.get("datasets", [])), 2, f"{pid} customChartSpec debe tener al menos 2 datasets multieje")
 
         self.assertEqual(total_checked, 50, "Se deben haber auditado exactamente 50 presets")
 

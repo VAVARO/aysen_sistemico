@@ -298,9 +298,11 @@
       "synonyms": [
         "amerb operativas",
         "areas de manejo activas",
-        "sindicatos de pescadores",
         "extraccion artesanal",
-        "caletas activas"
+        "caletas activas",
+        "areas de manejo amerb operativas",
+        "areas de manejo operativas",
+        "amerb operativas vigentes"
       ]
     },
     {
@@ -2364,6 +2366,137 @@
         "aprobacion sni",
         "cartera rs sni",
         "proyectos rs"
+      ]
+    },
+    {
+      "id": "ecmpo_solicitadas_ha",
+      "canonicalId": "wp03_ecmpo_solicitadas_ha",
+      "name": "Solicitudes ECMPO Ley Lafkenche (hectáreas)",
+      "shortName": "ECMPO Solicitadas (ha)",
+      "unit": "hectáreas",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ecmpo",
+        "hectareas ecmpo",
+        "hectareas de ecmpo",
+        "ecmpo solicitadas",
+        "solicitudes ecmpo",
+        "ley lafkenche",
+        "lafkenche",
+        "espacios costeros marinos",
+        "espacios costeros pueblos originarios"
+      ]
+    },
+    {
+      "id": "concesiones_acuicolas_en_snaspe",
+      "canonicalId": "wp03_concesiones_en_snaspe",
+      "name": "Concesiones Acuícolas Superpuestas en Áreas Protegidas SNASPE",
+      "shortName": "Concesiones en SNASPE",
+      "unit": "concesiones",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 9,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "concesiones en snaspe",
+        "concesiones acuicolas en snaspe",
+        "concesiones superpuestas en snaspe",
+        "jaulas en snaspe",
+        "salmoneras en snaspe",
+        "concesiones dentro de snaspe",
+        "concesiones en areas protegidas"
+      ]
+    },
+    {
+      "id": "sindicatos_pesca_artesanal",
+      "canonicalId": "wp03_sindicatos_pesca_artesanal",
+      "name": "Sindicatos de Pesca Artesanal Activos",
+      "shortName": "Sindicatos Pesca Artesanal",
+      "unit": "sindicatos",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "sindicatos de pesca artesanal",
+        "sindicatos pesca artesanal",
+        "sindicatos de pescadores",
+        "organizaciones pesca artesanal"
+      ]
+    },
+    {
+      "id": "desembarque_artesanal_ton",
+      "canonicalId": "wp03_desembarque_artesanal_ton",
+      "name": "Desembarque Pesquero Artesanal Comunal",
+      "shortName": "Desembarque Artesanal",
+      "unit": "ton/año",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "desembarque artesanal",
+        "desembarque pesquero artesanal",
+        "toneladas desembarque artesanal",
+        "captura artesanal"
+      ]
+    },
+    {
+      "id": "tasa_ocupacion_concesiones_pct",
+      "canonicalId": "wp03_tasa_ocupacion_concesiones_pct",
+      "name": "Tasa de Operación de Concesiones Acuícolas (%)",
+      "shortName": "Tasa Ocupación Acuícola",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa de ocupacion concesiones",
+        "tasa de operacion concesiones",
+        "porcentaje centros activos"
+      ]
+    },
+    {
+      "id": "proporcion_concesiones_en_snaspe_pct",
+      "canonicalId": "wp03_proporcion_concesiones_en_snaspe_pct",
+      "name": "Proporción de Concesiones dentro de SNASPE (%)",
+      "shortName": "% Concesiones en SNASPE",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 9,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "proporcion concesiones en snaspe",
+        "porcentaje concesiones snaspe",
+        "concesiones en snaspe porcentaje"
+      ]
+    },
+    {
+      "id": "trabajadores_sii_por_centro_activo",
+      "canonicalId": "wp03_trabajadores_sii_por_centro_activo",
+      "name": "Trabajadores SII por Centro Acuícola Activo",
+      "shortName": "Trabajadores/Centro Activo",
+      "unit": "trab./centro",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "trabajadores por centro activo",
+        "arraigo laboral salmonicultura",
+        "empleo por centro activo"
       ]
     }
   ],

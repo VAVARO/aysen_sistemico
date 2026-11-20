@@ -357,41 +357,6 @@
       ]
     },
     {
-      "holding_id": "holding_cooke",
-      "empresa_madre": "Cooke Inc.",
-      "nombre_fantasia": "Cooke Aquaculture Chile",
-      "pais_matriz": "Canadá",
-      "grupo_empresarial": "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
-      "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
-      "concesiones_estimadas_aysen": 18,
-      "pct_concesiones_regional": 2.42,
-      "comunas_operacion": [
-        "Aysén"
-      ],
-      "barrios_acs_operacion": [
-        "ACS-22A",
-        "ACS-24"
-      ],
-      "plantas_y_bases_operativas": "Base flotante integral con pontones habitables en Estero Cupquelán y Fiordo Quitralco; oficinas y muelle de atraque en Puerto Chacabuco.",
-      "fuente_regulacion": "SUBPESCA / SERNAPESCA / Subsecretaría para las FF.AA.",
-      "filiales_y_ruts": [
-        {
-          "razon_social": "Cooke Aquaculture Chile S.A. (ex Salmones Cupquelán S.A.)",
-          "rut": "96.926.970-8",
-          "rol_societario": "Titular única y directa de las concesiones del grupo en el Fiordo Cupquelán",
-          "estado_societario": "Activa",
-          "origen_historico": "Salmones Cupquelán S.A. fundada en los 90s, adquirida por Cooke Inc. en 2008",
-          "comunas_aysen": [
-            "Aysén"
-          ],
-          "barrios_acs": [
-            "ACS-22A",
-            "ACS-24"
-          ]
-        }
-      ]
-    },
-    {
       "holding_id": "holding_blumar",
       "empresa_madre": "Blumar S.A.",
       "nombre_fantasia": "Blumar Seafoods / Salmones Blumar",
@@ -661,70 +626,6 @@
       ]
     },
     {
-      "holding_id": "holding_invermar",
-      "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
-      "nombre_fantasia": "Invermar",
-      "pais_matriz": "Chile",
-      "grupo_empresarial": "Grupo Alimar (Familia Izquierdo Menéndez)",
-      "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
-      "concesiones_estimadas_aysen": 27,
-      "pct_concesiones_regional": 3.62,
-      "comunas_operacion": [
-        "Cisnes",
-        "Aysén"
-      ],
-      "barrios_acs_operacion": [
-        "ACS-18A",
-        "ACS-21A",
-        "ACS-22B"
-      ],
-      "plantas_y_bases_operativas": "Centros de engorda en Canal Jacaf y Moraleda; base de avituallamiento en Puerto Chacabuco.",
-      "fuente_regulacion": "SUBPESCA / CMF / SERNAPESCA",
-      "filiales_y_ruts": [
-        {
-          "razon_social": "Invermar S.A.",
-          "rut": "79.797.990-2",
-          "rol_societario": "Sociedad anónima abierta matriz operativa inscrita en CMF",
-          "estado_societario": "Activa",
-          "origen_historico": "Adquirida por Alimar en 2015",
-          "comunas_aysen": [
-            "Cisnes",
-            "Aysén"
-          ],
-          "barrios_acs": [
-            "ACS-18A",
-            "ACS-21A"
-          ]
-        },
-        {
-          "razon_social": "Salmones Froward Limitada",
-          "rut": "76.140.476-8",
-          "rol_societario": "Filial titular de concesiones acuícolas",
-          "estado_societario": "Activa integrada",
-          "origen_historico": "Filial acuícola de Alimar integrada a Invermar",
-          "comunas_aysen": [
-            "Cisnes"
-          ],
-          "barrios_acs": [
-            "ACS-18A"
-          ]
-        },
-        {
-          "razon_social": "Cultivos Marinos Lago Yelcho SpA",
-          "rut": "76.749.470-K",
-          "rol_societario": "Filial titular de centros de cultivo",
-          "estado_societario": "Activa integrada",
-          "origen_historico": "Filial titular de derechos acuícolas",
-          "comunas_aysen": [
-            "Aysén"
-          ],
-          "barrios_acs": [
-            "ACS-22B"
-          ]
-        }
-      ]
-    },
-    {
       "holding_id": "holding_yadran",
       "empresa_madre": "Pesquera Yadrán S.A.",
       "nombre_fantasia": "Salmones Yadrán",
@@ -802,6 +703,70 @@
           ],
           "barrios_acs": [
             "ACS-18B"
+          ]
+        }
+      ]
+    },
+    {
+      "holding_id": "holding_invermar",
+      "empresa_madre": "Alimentos Marinos S.A. (Alimar)",
+      "nombre_fantasia": "Invermar",
+      "pais_matriz": "Chile",
+      "grupo_empresarial": "Grupo Alimar (Familia Izquierdo Menéndez)",
+      "resumen_corporativo": "Invermar fue fundada por la Familia Montanari y adquirida en 2015 por el Grupo Alimar de Roberto Izquierdo Phillips. Posee centros de engorda en Canal Puyuhuapi, Canal Jacaf y Canal Moraleda.",
+      "concesiones_estimadas_aysen": 27,
+      "pct_concesiones_regional": 3.62,
+      "comunas_operacion": [
+        "Cisnes",
+        "Aysén"
+      ],
+      "barrios_acs_operacion": [
+        "ACS-18A",
+        "ACS-21A",
+        "ACS-22B"
+      ],
+      "plantas_y_bases_operativas": "Centros de engorda en Canal Jacaf y Moraleda; base de avituallamiento en Puerto Chacabuco.",
+      "fuente_regulacion": "SUBPESCA / CMF / SERNAPESCA",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Invermar S.A.",
+          "rut": "79.797.990-2",
+          "rol_societario": "Sociedad anónima abierta matriz operativa inscrita en CMF",
+          "estado_societario": "Activa",
+          "origen_historico": "Adquirida por Alimar en 2015",
+          "comunas_aysen": [
+            "Cisnes",
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-18A",
+            "ACS-21A"
+          ]
+        },
+        {
+          "razon_social": "Salmones Froward Limitada",
+          "rut": "76.140.476-8",
+          "rol_societario": "Filial titular de concesiones acuícolas",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial acuícola de Alimar integrada a Invermar",
+          "comunas_aysen": [
+            "Cisnes"
+          ],
+          "barrios_acs": [
+            "ACS-18A"
+          ]
+        },
+        {
+          "razon_social": "Cultivos Marinos Lago Yelcho SpA",
+          "rut": "76.749.470-K",
+          "rol_societario": "Filial titular de centros de cultivo",
+          "estado_societario": "Activa integrada",
+          "origen_historico": "Filial titular de derechos acuícolas",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22B"
           ]
         }
       ]
@@ -914,6 +879,41 @@
       ]
     },
     {
+      "holding_id": "holding_cooke",
+      "empresa_madre": "Cooke Inc.",
+      "nombre_fantasia": "Cooke Aquaculture Chile",
+      "pais_matriz": "Canadá",
+      "grupo_empresarial": "Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke)",
+      "resumen_corporativo": "Multinacional canadiense que adquirió en 2008 Salmones Cupquelán S.A. Sus concesiones se concentran casi en su totalidad en el Fiordo Cupquelán (Comuna de Aysén), zona emblemática por su proximidad y controversias relativas a los límites del Parque Nacional Laguna San Rafael.",
+      "concesiones_estimadas_aysen": 18,
+      "pct_concesiones_regional": 2.42,
+      "comunas_operacion": [
+        "Aysén"
+      ],
+      "barrios_acs_operacion": [
+        "ACS-22A",
+        "ACS-24"
+      ],
+      "plantas_y_bases_operativas": "Base flotante integral con pontones habitables en Estero Cupquelán y Fiordo Quitralco; oficinas y muelle de atraque en Puerto Chacabuco.",
+      "fuente_regulacion": "SUBPESCA / SERNAPESCA / Subsecretaría para las FF.AA.",
+      "filiales_y_ruts": [
+        {
+          "razon_social": "Cooke Aquaculture Chile S.A. (ex Salmones Cupquelán S.A.)",
+          "rut": "96.926.970-8",
+          "rol_societario": "Titular única y directa de las concesiones del grupo en el Fiordo Cupquelán",
+          "estado_societario": "Activa",
+          "origen_historico": "Salmones Cupquelán S.A. fundada en los 90s, adquirida por Cooke Inc. en 2008",
+          "comunas_aysen": [
+            "Aysén"
+          ],
+          "barrios_acs": [
+            "ACS-22A",
+            "ACS-24"
+          ]
+        }
+      ]
+    },
+    {
       "holding_id": "holding_otros_menores",
       "empresa_madre": "Otros Titulares Menores / Concesiones Artesanales y en Trámite",
       "nombre_fantasia": "Titulares Menores Aysén",
@@ -923,8 +923,6 @@
       "concesiones_estimadas_aysen": 19,
       "pct_concesiones_regional": 2.55,
       "comunas_operacion": [
-        "Aysén",
-        "Cisnes",
         "Guaitecas",
         "Tortel"
       ],

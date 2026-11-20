@@ -368,13 +368,13 @@
     },
     {
       "ano": 2026,
-      "cosecha_salmonidos_total_ton": 435000.0,
-      "cosecha_salmon_atlantico_ton": 348000.0,
-      "cosecha_salmon_coho_ton": 70000.0,
-      "cosecha_trucha_arcoiris_ton": 17000.0,
+      "cosecha_salmonidos_total_ton": 503500.0,
+      "cosecha_salmon_atlantico_ton": 402800.0,
+      "cosecha_salmon_coho_ton": 81000.0,
+      "cosecha_trucha_arcoiris_ton": 19700.0,
       "concesiones_acuicolas_vigentes": 745,
       "hectareas_marinas_concesionadas_ha": 9450.0,
-      "centros_salmonicolas_activos_ciclo": 240,
+      "centros_salmonicolas_activos_ciclo": 245,
       "concentracion_holdings": {
         "top_3_pct": 51.9,
         "top_5_pct": 70.8,

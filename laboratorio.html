@@ -7231,7 +7231,22 @@
         barometro_prioridad_conectividad_pct: { unit: '%', hubId: 'gobernanza' },
         barometro_tension_desarrollo_conservacion_pct: { unit: '%', hubId: 'biodiversidad' },
         juntas_vecinos_activas: { unit: 'organizaciones', hubId: 'social' },
-        balmaceda_pasajeros_jac: { unit: 'pasajeros', hubId: 'gobernanza' }
+        balmaceda_pasajeros_jac: { unit: 'pasajeros', hubId: 'gobernanza' },
+        concentracion_salmon_top3_pct: { title: 'Concentración Top 3 Holdings Salmoneros (2015–2026)', short: 'Top 3 Holdings Salmón (%)', unit: '%', hubId: 'salmonicultura' },
+        concentracion_salmon_top5_pct: { title: 'Concentración Top 5 Holdings Salmoneros (2015–2026)', short: 'Top 5 Holdings Salmón (%)', unit: '%', hubId: 'salmonicultura' },
+        propiedad_capital_extranjero_salmon_pct: { title: 'Participación de Capital Extranjero en Concesiones (2015–2026)', short: 'Capital Extranjero Salmón (%)', unit: '%', hubId: 'salmonicultura' },
+        tsm_fiordo_puyuhuapi_c: { title: 'Temperatura Superficial del Mar Fiordo Puyuhuapi (2020–2026)', short: 'TSM Fiordo Puyuhuapi', unit: '°C', hubId: 'salmonicultura' },
+        alertas_fan_dias_ano: { title: 'Días de Alerta FAN Alexandrium catenella (2020–2026)', short: 'Días Alerta FAN', unit: 'días/año', hubId: 'salmonicultura' },
+        tasa_ocupacion_concesiones_pct: { title: 'Tasa de Operación de Concesiones Acuícolas (%)', short: 'Tasa Ocupación Acuícola', unit: '%', hubId: 'salmonicultura' },
+        proporcion_concesiones_en_snaspe_pct: { title: 'Proporción de Concesiones dentro de SNASPE (%)', short: '% Concesiones en SNASPE', unit: '%', hubId: 'salmonicultura' },
+        desembarque_artesanal_ton: { title: 'Desembarque Pesquero Artesanal Comunal', short: 'Desembarque Artesanal', unit: 'ton/año', hubId: 'salmonicultura' },
+        trabajadores_sii_por_centro_activo: { title: 'Trabajadores SII por Centro Acuícola Activo (Arraigo Laboral)', short: 'Trabajadores/Centro Activo', unit: 'trab./centro', hubId: 'salmonicultura' },
+        pesca_ind_fraccionamiento_art_pct: { title: 'Fraccionamiento Pesquero Artesanal Ley N° 21.752 (%)', short: '% Fraccionamiento Artesanal', unit: '%', hubId: 'salmonicultura' },
+        pesca_ind_fraccionamiento_ind_pct: { title: 'Fraccionamiento Pesquero Industrial Ley N° 21.752 (%)', short: '% Fraccionamiento Industrial', unit: '%', hubId: 'salmonicultura' },
+        pesca_ind_valor_sancion_utm: { title: 'Valor de Sanción SUBPESCA por Pesquería', short: 'Valor Sanción SUBPESCA', unit: 'UTM/ton', hubId: 'salmonicultura' },
+        pesca_ind_impuesto_43ter_utm: { title: 'Impuesto Específico Art. 43 ter LGPA por Pesquería', short: 'Impuesto Art. 43 ter', unit: 'UTM/ton', hubId: 'salmonicultura' },
+        centros_activos_por_holding: { title: 'Centros Acuícolas Activos por Holding', short: 'Centros Activos Holding', unit: 'centros', hubId: 'salmonicultura' },
+        concesiones_snaspe_por_holding: { title: 'Concesiones Acuícolas en SNASPE por Holding (Ley SBAP 21.600)', short: 'Concesiones SNASPE Holding', unit: 'concesiones', hubId: 'salmonicultura' }
       };
 
       Object.entries(CLEAR_VAR_LABELS).forEach(([k, v]) => {
@@ -7316,9 +7331,9 @@
         '1B. Flujos y Estacionalidad': ['visitantes_snaspe', 'visitantes_extranjeros_pct', 'visitantes_extranjeros_snaspe_n', 'pernoctaciones_emat', 'tasa_ocupacion_estival_pct', 'tasa_ocupacion_invernal_pct', 'concentracion_estival_pct', 'emporcha_cruceros', 'emporcha_cruceros_hist', 'estacionalidad_mensual_emat', 'ocupacion_mensual_emat_pct', 'pernoctaciones_anuales_emat_hist', 'visitantes_snaspe_conaf_hist', 'pn_queulat_visitas_hist', 'pn_laguna_san_rafael_visitas_hist', 'pn_cerro_castillo_visitas_hist', 'pn_patagonia_visitas_hist'],
         '1C. Brechas de Capacidad y Presión Territorial': ['visitas_por_cama_turistica', 'visitas_por_pernoctacion_ratio', 'ratio_presion_turistica', 'ha_snaspe_por_guardaparque'],
 
-        '2A. Concesiones y Producción Comunal': ['concesiones_salmon', 'centros_activos_salmon', 'centros_activos_salmon_hist', 'biomasa_salmon_ton', 'biomasa_cosecha_salmon', 'sp_biomasa_cosecha_salmon'],
-        '2B. Concentración Empresarial (12 Holdings)': ['holdings_salmoneros', 'holding_concesiones', 'holding_participacion_pct', 'holding_filiales_ruts', 'biomasa_por_holding'],
-        '2C. Pesca Artesanal, ECMPO y Fiscalización': ['sindicatos_pesca_artesanal', 'amerb_decretadas', 'amerb_operativas', 'ecmpo_solicitadas_ha', 'concesiones_acuicolas_en_snaspe', 'antibioticos_ica_g_ton', 'floracion_alexandrium_fan', 'sp_floracion_alexandrium_fan', 'fan_alexandrium_mensual', 'tsm_fiordos', 'sp_oxigeno_disuelto_puyuhuapi', 'sp_invasion_chinook_desove'],
+        '2A. Concesiones y Producción Comunal': ['concesiones_salmon', 'centros_activos_salmon', 'centros_activos_salmon_hist', 'biomasa_salmon_ton', 'biomasa_cosecha_salmon', 'sp_biomasa_cosecha_salmon', 'tasa_ocupacion_concesiones_pct', 'trabajadores_sii_por_centro_activo'],
+        '2B. Concentración Empresarial (12 Holdings)': ['holdings_salmoneros', 'holding_concesiones', 'holding_participacion_pct', 'holding_filiales_ruts', 'biomasa_por_holding', 'centros_activos_por_holding', 'concesiones_snaspe_por_holding', 'concentracion_salmon_top3_pct', 'concentracion_salmon_top5_pct', 'propiedad_capital_extranjero_salmon_pct'],
+        '2C. Pesca Artesanal, ECMPO y Fiscalización': ['sindicatos_pesca_artesanal', 'desembarque_artesanal_ton', 'amerb_decretadas', 'amerb_operativas', 'ecmpo_solicitadas_ha', 'concesiones_acuicolas_en_snaspe', 'proporcion_concesiones_en_snaspe_pct', 'antibioticos_ica_g_ton', 'floracion_alexandrium_fan', 'sp_floracion_alexandrium_fan', 'fan_alexandrium_mensual', 'tsm_fiordos', 'tsm_fiordo_puyuhuapi_c', 'alertas_fan_dias_ano', 'sp_oxigeno_disuelto_puyuhuapi', 'sp_invasion_chinook_desove', 'pesca_ind_fraccionamiento_art_pct', 'pesca_ind_fraccionamiento_ind_pct', 'pesca_ind_valor_sancion_utm', 'pesca_ind_impuesto_43ter_utm'],
 
         '3A. Sistemas Eléctricos y Confiabilidad': ['potencia_mw', 'saidi_horas_anual', 'tarifa_bt1_clp', 'costo_diesel_aislado_clp', 'costo_real_generacion_diesel_kwh_clp', 'subsidio_fiscal_diesel_kwh_clp', 'generacion_hidro_gwh', 'generacion_diesel_gwh', 'tarifa_bt1_regional_clp_hist', 'sp_caudal_simpson_coyhaique', 'sp_caudal_baker_bertrand'],
         '3B. Matriz Térmica, Leña y Combustibles': ['hogares_lena_pct', 'precio_lena_m3', 'consumo_lena_m3_hogar_ano', 'consumo_lena_m3_hogar_anio', 'consumo_lena_m3_solidos_anual', 'informalidad_lena_pct', 'gasolina_93_clp', 'precio_diesel_regional_cne_clp_hist', 'sp_precio_combustibles_coyhaique', 'recambio_calefactores_pda_hist', 'barometro_preocupacion_contaminacion_lena_pct', 'barometro_preocupacion_contaminacion_lena_pct_hist'],
@@ -7702,6 +7717,12 @@
         const holdingRutData = holdingsList.length
           ? holdingsList.map(h => Array.isArray(h.filiales_y_ruts) ? h.filiales_y_ruts.length : 1)
           : [7, 1, 5, 3, 5, 5, 3, 4, 3, 3, 1, 1];
+        const holdingActivosData = holdingsList.length
+          ? holdingsList.map(h => Number(h.centros_activos_padron ?? h.centros_activos_estimados) || 0)
+          : [69, 31, 26, 25, 20, 15, 13, 10, 9, 8, 7, 6];
+        const holdingSnaspeData = holdingsList.length
+          ? holdingsList.map(h => Number(h.concesiones_snaspe) || 0)
+          : [92, 41, 34, 32, 26, 19, 16, 23, 11, 10, 4, 3];
 
         const holdingVars = [
           {
@@ -7715,6 +7736,18 @@
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'ton', aggMode: 'sum', chartType: 'bar',
             sourceName: 'CMF / SUBPESCA / SERNAPESCA', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
             labels: holdingLabels, data: holdingBioData
+          },
+          {
+            id: 'centros_activos_por_holding', name: 'Centros Acuícolas Activos por Holding', shortName: 'Centros Activos Holding',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'centros', aggMode: 'sum', chartType: 'bar',
+            sourceName: 'SUBPESCA / SERNAPESCA (Padrón 2026)', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
+            labels: holdingLabels, data: holdingActivosData
+          },
+          {
+            id: 'concesiones_snaspe_por_holding', name: 'Concesiones Acuícolas en SNASPE por Holding (Ley SBAP 21.600)', shortName: 'Concesiones SNASPE Holding',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
+            sourceName: 'SUBPESCA / CONAF / Ley SBAP N° 21.600', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
+            labels: holdingLabels, data: holdingSnaspeData
           },
           {
             id: 'holding_concesiones', name: 'Concesiones en Aysén por Holding', shortName: 'Concesiones por Holding',
@@ -7806,7 +7839,11 @@
           ha_snaspe_por_guardaparque: { title: 'Superficie Protegida SNASPE por cada Guardaparque CONAF', short: 'Hectáreas por Guardaparque', unit: 'ha/guardaparque', hubId: 'turismo', agg: 'mean' },
           medicos_por_mil_hab: { title: 'Médicos por cada 1.000 Habitantes', short: 'Médicos por 1.000 hab.', unit: 'médicos/1.000 hab', hubId: 'salud', agg: 'mean' },
           traslado_coyhaique_hrs: { title: 'Tiempo de Traslado Terrestre al Hospital Regional (Coyhaique)', short: 'Traslado a Hospital Coyhaique', unit: 'horas', hubId: 'salud', agg: 'mean' },
-          tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje Terrestre a Coyhaique', short: 'Tiempo de Viaje a Coyhaique', unit: 'horas', hubId: 'gobernanza', agg: 'mean' }
+          tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje Terrestre a Coyhaique', short: 'Tiempo de Viaje a Coyhaique', unit: 'horas', hubId: 'gobernanza', agg: 'mean' },
+          desembarque_artesanal_ton: { title: 'Desembarque Pesquero Artesanal Comunal', short: 'Desembarque Artesanal', unit: 'ton/año', hubId: 'salmonicultura', agg: 'sum' },
+          tasa_ocupacion_concesiones_pct: { title: 'Tasa de Operación de Concesiones Acuícolas (%)', short: 'Tasa Ocupación Acuícola', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
+          proporcion_concesiones_en_snaspe_pct: { title: 'Proporción de Concesiones dentro de SNASPE (%)', short: '% Concesiones en SNASPE', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
+          trabajadores_sii_por_centro_activo: { title: 'Trabajadores SII por Centro Acuícola Activo (Arraigo Laboral)', short: 'Trabajadores/Centro Activo', unit: 'trab./centro', hubId: 'salmonicultura', agg: 'mean' }
         };
 
         if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas) && AppState.hubsData.comunas.length > 0) {
@@ -8075,7 +8112,43 @@
             shortName: 'Biomasa Cosecha Salmón',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'Miles Ton', aggMode: 'sum',
             sourceName: 'SERNAPESCA - Anuario Estadístico de Pesca y Acuicultura',
-            data: [412.5, 385.2, 428.9, 465.4, 492.1, 510.8, 488.3, 524.6, 538.2, 545.9, 552.4, 561.0]
+            data: [395.4, 342.1, 388.9, 432.5, 468.2, 485.6, 452.3, 478.1, 462.8, 448.5, 440.2, 503.5]
+          },
+          {
+            id: 'concentracion_salmon_top3_pct',
+            name: 'Concentración Top 3 Holdings Salmoneros (2015–2026)',
+            shortName: 'Top 3 Holdings Salmón (%)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: '%', aggMode: 'mean',
+            sourceName: 'SUBPESCA / CMF Memorias Financieras',
+            data: (() => {
+              const ev = AppState.hubsData?.evolucionHoldingsSalmoneros?.evolucion_concentracion_regional;
+              if (Array.isArray(ev) && ev.length === 12) return ev.map(r => Number(r.concentracion?.top_3_pct) || 0);
+              return [41.8, 42.1, 42.3, 42.5, 49.2, 51.2, 51.4, 51.5, 51.6, 51.68, 51.8, 51.9];
+            })()
+          },
+          {
+            id: 'concentracion_salmon_top5_pct',
+            name: 'Concentración Top 5 Holdings Salmoneros (2015–2026)',
+            shortName: 'Top 5 Holdings Salmón (%)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: '%', aggMode: 'mean',
+            sourceName: 'SUBPESCA / CMF Memorias Financieras',
+            data: (() => {
+              const ev = AppState.hubsData?.evolucionHoldingsSalmoneros?.evolucion_concentracion_regional;
+              if (Array.isArray(ev) && ev.length === 12) return ev.map(r => Number(r.concentracion?.top_5_pct) || 0);
+              return [57.2, 57.5, 57.8, 58.0, 65.4, 68.5, 69.2, 69.8, 70.0, 70.07, 70.4, 70.8];
+            })()
+          },
+          {
+            id: 'propiedad_capital_extranjero_salmon_pct',
+            name: 'Participación de Capital Extranjero en Concesiones (2015–2026)',
+            shortName: 'Capital Extranjero Salmón (%)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: '%', aggMode: 'mean',
+            sourceName: 'SUBPESCA / CMF (Noruega/Japón/China/Canadá)',
+            data: (() => {
+              const ev = AppState.hubsData?.evolucionHoldingsSalmoneros?.evolucion_concentracion_regional;
+              if (Array.isArray(ev) && ev.length === 12) return ev.map(r => Number(r.concentracion?.propiedad_capital_extranjero_pct) || 0);
+              return [25.4, 25.8, 26.1, 26.5, 31.0, 32.8, 33.2, 33.7, 34.0, 34.12, 34.3, 34.5];
+            })()
           },
           {
             id: 'floracion_alexandrium_fan',
@@ -8092,7 +8165,7 @@
             shortName: 'Centros Activos Salmón',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'centros', aggMode: 'mean',
             sourceName: 'SERNAPESCA / SUBPESCA - Catastro Acuícola',
-            data: [218, 195, 215, 230, 240, 248, 238, 244, 242, 245, 242, 240]
+            data: [218, 195, 215, 230, 240, 248, 238, 244, 242, 245, 242, 245]
           },
           {
             id: 'trafico_aereo_pasajeros_balmaceda_jac',
@@ -8562,6 +8635,159 @@
                 existingSyncIds.add(al);
               }
             });
+          }
+        });
+
+        // 3b.5 Series oceanográficas Nodo #09 (2020–2026) y Dimensión Pesquerías Industriales Nodo #10 (9 pesquerías)
+        const n09Spec = (AppState.hubsData?.nodos || window.AYSEN_HUBS_DATA?.nodos || []).find(n => n.id === 9)?.chartSpec;
+        const n09Labels = (n09Spec && Array.isArray(n09Spec.labels) && n09Spec.labels.length >= 7)
+          ? n09Spec.labels
+          : ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+        const n09TsmData = (n09Spec?.datasets?.[0]?.data && n09Spec.datasets[0].data.length === n09Labels.length)
+          ? n09Spec.datasets[0].data.map(Number)
+          : [10.4, 10.6, 10.5, 10.8, 11.1, 11.3, 11.5];
+        const n09FanData = (n09Spec?.datasets?.[1]?.data && n09Spec.datasets[1].data.length === n09Labels.length)
+          ? n09Spec.datasets[1].data.map(Number)
+          : [12, 15, 18, 22, 28, 31, 35];
+
+        [
+          {
+            id: 'tsm_fiordo_puyuhuapi_c',
+            name: 'Temperatura Superficial del Mar Fiordo Puyuhuapi (2020–2026)',
+            shortName: 'TSM Fiordo Puyuhuapi',
+            unit: '°C',
+            aggMode: 'mean',
+            data: n09TsmData
+          },
+          {
+            id: 'alertas_fan_dias_ano',
+            name: 'Días de Alerta FAN Alexandrium catenella (2020–2026)',
+            shortName: 'Días Alerta FAN',
+            unit: 'días/año',
+            aggMode: 'mean',
+            data: n09FanData
+          }
+        ].forEach(s9 => {
+          if (!existingSyncIds.has(s9.id)) {
+            items.push({
+              id: s9.id,
+              canonicalId: s9.id,
+              canonicalKey: s9.id,
+              nodeId: 9,
+              name: s9.name,
+              shortName: s9.shortName,
+              hubId: 'salmonicultura',
+              hubTitle: 'II. Salmonicultura',
+              dim: 'tiempo',
+              subDim: 'anual',
+              hasProjection: false,
+              unit: s9.unit,
+              aggMode: s9.aggMode,
+              sourceName: 'IFOP / SERNAPESCA - Monitoreo Fiordos Puyuhuapi',
+              collectionDate: '2020-2026',
+              sourceUrl: 'https://www.ifop.cl',
+              chartType: 'line',
+              chartSpec: {
+                type: 'line',
+                labels: n09Labels,
+                datasets: [{ label: s9.shortName, data: s9.data, unit: s9.unit }],
+                unit: s9.unit
+              },
+              tableRows: n09Labels.map((yr, i) => [yr, s9.data[i]]),
+              tableColumns: ['Año', `${s9.shortName} (${s9.unit})`]
+            });
+            existingSyncIds.add(s9.id);
+          }
+        });
+
+        const n10Rows = (AppState.hubsData?.nodos || window.AYSEN_HUBS_DATA?.nodos || []).find(n => n.id === 10)?.tableRows;
+        const fishLabels = (Array.isArray(n10Rows) && n10Rows.length >= 9)
+          ? n10Rows.map(r => r[0])
+          : ['Merluza del sur (Norte)', 'Merluza del sur (Sur)', 'Congrio dorado (Norte)', 'Congrio dorado (Sur)', 'Merluza de cola', 'Merluza tres aletas', 'Bacalao profundidad', 'Reineta', 'Besugo / Brotula'];
+        const parseFishPct = (regStr, re, fb) => {
+          const m = String(regStr || '').match(re);
+          return m ? Number(m[1]) : fb;
+        };
+        const parseFishNum = (cellStr, fb) => {
+          const m = String(cellStr || '').replace(/\./g, '').replace(',', '.').match(/\d+(?:\.\d+)?/);
+          return m ? Number(m[0]) : fb;
+        };
+        const fishArtFallback = [63, 63, 63, 63, 5, 5, 0, 90, 0];
+        const fishIndFallback = [37, 37, 37, 37, 95, 95, 100, 10, 100];
+        const fishVsFallback = [77, 77, 83, 83, 28, 24, 372, 16, 79];
+        const fishImpFallback = [3.234, 3.234, 3.486, 3.486, 1.176, 1.008, 15.62, 0.672, 3.318];
+        const fishArtData = (Array.isArray(n10Rows) && n10Rows.length >= 9)
+          ? n10Rows.map((r, i) => parseFishPct(r[1], /(\d+)\s*%\s*Art/i, fishArtFallback[i]))
+          : fishArtFallback;
+        const fishIndData = (Array.isArray(n10Rows) && n10Rows.length >= 9)
+          ? n10Rows.map((r, i) => parseFishPct(r[1], /(\d+)\s*%\s*Ind/i, fishIndFallback[i]))
+          : fishIndFallback;
+        const fishVsData = (Array.isArray(n10Rows) && n10Rows.length >= 9)
+          ? n10Rows.map((r, i) => parseFishNum(r[2], fishVsFallback[i]))
+          : fishVsFallback;
+        const fishImpData = (Array.isArray(n10Rows) && n10Rows.length >= 9)
+          ? n10Rows.map((r, i) => parseFishNum(r[3], fishImpFallback[i]))
+          : fishImpFallback;
+
+        [
+          {
+            id: 'pesca_ind_fraccionamiento_art_pct',
+            name: 'Fraccionamiento Pesquero Artesanal Ley N° 21.752 (%)',
+            shortName: '% Fraccionamiento Artesanal',
+            unit: '%',
+            data: fishArtData
+          },
+          {
+            id: 'pesca_ind_fraccionamiento_ind_pct',
+            name: 'Fraccionamiento Pesquero Industrial Ley N° 21.752 (%)',
+            shortName: '% Fraccionamiento Industrial',
+            unit: '%',
+            data: fishIndData
+          },
+          {
+            id: 'pesca_ind_valor_sancion_utm',
+            name: 'Valor de Sanción SUBPESCA por Pesquería (UTM/ton)',
+            shortName: 'Valor Sanción SUBPESCA',
+            unit: 'UTM/ton',
+            data: fishVsData
+          },
+          {
+            id: 'pesca_ind_impuesto_43ter_utm',
+            name: 'Impuesto Específico Art. 43 ter LGPA por Pesquería (UTM/ton)',
+            shortName: 'Impuesto Art. 43 ter',
+            unit: 'UTM/ton',
+            data: fishImpData
+          }
+        ].forEach(pf => {
+          if (!existingSyncIds.has(pf.id)) {
+            items.push({
+              id: pf.id,
+              canonicalId: pf.id,
+              canonicalKey: pf.id,
+              nodeId: 10,
+              name: pf.name,
+              shortName: pf.shortName,
+              hubId: 'salmonicultura',
+              hubTitle: 'II. Salmonicultura',
+              dim: 'pesqueria',
+              unit: pf.unit,
+              aggMode: 'mean',
+              sourceName: 'SUBPESCA / Ley N° 21.752 / LGPA Art. 43 ter',
+              collectionDate: '17 Oct 2026',
+              sourceUrl: 'https://www.subpesca.cl',
+              chartType: 'bar',
+              labels: fishLabels,
+              data: pf.data,
+              chartSpec: {
+                type: 'bar',
+                labels: fishLabels,
+                datasets: [{ label: pf.shortName, data: pf.data, unit: pf.unit }],
+                unit: pf.unit
+              },
+              tableRows: fishLabels.map((lbl, i) => [lbl, pf.data[i]]),
+              tableColumns: ['Pesquería', `${pf.shortName} (${pf.unit})`]
+            });
+            existingSyncIds.add(pf.id);
           }
         });
 
@@ -9930,6 +10156,9 @@
           h: config.h || 370,
           timeWindow: config.timeWindow || 'all',
           spatialLayer: config.spatialLayer || 'auto',
+          activeOverlays: Array.isArray(config.activeOverlays) ? [...config.activeOverlays] : undefined,
+          defaultTerritorialSlice: config.defaultTerritorialSlice || null,
+          filterComunas: Array.isArray(config.filterComunas) ? [...config.filterComunas] : null,
           showBuffers: Boolean(config.showBuffers),
           bufferRadiusM: Number(config.bufferRadiusM || 25000),
           layers: config.layers || [],
@@ -10194,14 +10423,19 @@
               <option value="snaspe_312" ${aquaVal === 'snaspe_312' ? 'selected' : ''}>En SNASPE (312)</option>
               <option value="inactivos_500" ${aquaVal === 'inactivos_500' ? 'selected' : ''}>Otorgadas s/op (500)</option>
               <option value="nodos_38" ${aquaVal === 'nodos_38' ? 'selected' : ''}>Síntesis ACS/Maritorio (38)</option>
-              <option value="holding:AquaChile" ${aquaVal === 'holding:AquaChile' ? 'selected' : ''}>Holding · AquaChile</option>
-              <option value="holding:Mowi Chile" ${aquaVal === 'holding:Mowi Chile' ? 'selected' : ''}>Holding · Mowi Chile</option>
-              <option value="holding:Multi X" ${aquaVal === 'holding:Multi X' ? 'selected' : ''}>Holding · Multi X</option>
-              <option value="holding:Cermaq Chile" ${aquaVal === 'holding:Cermaq Chile' ? 'selected' : ''}>Holding · Cermaq Chile</option>
-              <option value="holding:Salmones Blumar" ${aquaVal === 'holding:Salmones Blumar' ? 'selected' : ''}>Holding · Salmones Blumar</option>
-              <option value="holding:Australis Seafoods" ${aquaVal === 'holding:Australis Seafoods' ? 'selected' : ''}>Holding · Australis</option>
-              <option value="holding:Salmones Camanchaca" ${aquaVal === 'holding:Salmones Camanchaca' ? 'selected' : ''}>Holding · Camanchaca</option>
-              <option value="holding:Salmones Yadrán" ${aquaVal === 'holding:Salmones Yadrán' ? 'selected' : ''}>Holding · Yadrán</option>
+              <option value="holding:AquaChile" ${aquaVal === 'holding:AquaChile' ? 'selected' : ''}>Holding · AquaChile (210)</option>
+              <option value="holding:Mowi Chile" ${aquaVal === 'holding:Mowi Chile' ? 'selected' : ''}>Holding · Mowi Chile (95)</option>
+              <option value="holding:Multi X" ${aquaVal === 'holding:Multi X' ? 'selected' : ''}>Holding · Multi X (80)</option>
+              <option value="holding:Cermaq" ${aquaVal === 'holding:Cermaq' ? 'selected' : ''}>Holding · Cermaq Chile (75)</option>
+              <option value="holding:Blumar" ${aquaVal === 'holding:Blumar' ? 'selected' : ''}>Holding · Salmones Blumar (62)</option>
+              <option value="holding:Australis" ${aquaVal === 'holding:Australis' ? 'selected' : ''}>Holding · Australis (46)</option>
+              <option value="holding:Camanchaca" ${aquaVal === 'holding:Camanchaca' ? 'selected' : ''}>Holding · Camanchaca (38)</option>
+              <option value="holding:Yadrán" ${aquaVal === 'holding:Yadrán' ? 'selected' : ''}>Holding · Yadrán (31)</option>
+              <option value="holding:Invermar" ${aquaVal === 'holding:Invermar' ? 'selected' : ''}>Holding · Invermar (27)</option>
+              <option value="holding:Salmones Austral" ${aquaVal === 'holding:Salmones Austral' ? 'selected' : ''}>Holding · Salmones Austral (24)</option>
+              <option value="holding:Salmones Antártica" ${aquaVal === 'holding:Salmones Antártica' ? 'selected' : ''}>Holding · Salmones Antártica (20)</option>
+              <option value="holding:Cooke" ${aquaVal === 'holding:Cooke' ? 'selected' : ''}>Holding · Cooke Aquaculture Chile (18)</option>
+              <option value="holding:Titulares Menores" ${aquaVal === 'holding:Titulares Menores' ? 'selected' : ''}>Holding · Titulares Menores (19)</option>
             </select>
           ` : '';
 
@@ -11404,6 +11638,8 @@
           layers: Array.isArray(w.layers) ? [...w.layers] : [],
           activeOverlays: Array.isArray(w.activeOverlays) ? [...w.activeOverlays] : undefined,
           disabledAutoOverlays: Array.isArray(w.disabledAutoOverlays) ? [...w.disabledAutoOverlays] : undefined,
+          defaultTerritorialSlice: w.defaultTerritorialSlice || undefined,
+          filterComunas: Array.isArray(w.filterComunas) ? [...w.filterComunas] : undefined,
           aquaFilter: w.aquaFilter || undefined,
           customChartSpec: w.customChartSpec || null,
           presetId: w.presetId || null,
@@ -13171,8 +13407,24 @@
         const primaryUnit = payload.mode === 'bivariate' ? (payload.unitY || '') : (payload.unit || '');
         const shareLeaderPct = primaryStat.sum > 0 ? (primaryStat.maxVal / primaryStat.sum) * 100 : 0;
 
-        const sliceName = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Región de Aysén';
-        const coyTag = (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique) ? ' (sin Coyhaique)' : '';
+        const sliceName = payload.effectiveSliceLabel || document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Región de Aysén';
+        const coyTag = (payload.dim === 'comuna' && (AppState.excludeCoyhaique || w.excludeOutlierCoyhaique)) ? ' (sin Coyhaique)' : '';
+        const dimScopeLabel = payload.dim === 'tiempo'
+          ? `ventana ${payload.labels[0]}–${payload.labels[payload.labels.length - 1]}`
+          : (payload.dim === 'holding'
+            ? `${n} holdings evaluados`
+            : (payload.dim === 'pesqueria'
+              ? `${n} pesquerías evaluadas`
+              : (payload.dim === 'barometro_estrato'
+                ? `${n} estratos · ${sliceName}${coyTag}`
+                : `${sliceName}${coyTag}`)));
+        const decisionScopeClause = payload.dim === 'tiempo'
+          ? `a lo largo de la ventana temporal evaluada (${payload.labels[0]}–${payload.labels[payload.labels.length - 1]})`
+          : (payload.dim === 'holding'
+            ? `entre los ${n} holdings evaluados`
+            : (payload.dim === 'pesqueria'
+              ? `entre las ${n} pesquerías evaluadas`
+              : `sobre el subconjunto ${sliceName}${coyTag}`));
 
         const isConstantStructX = payload.mode === 'bivariate' && stY && (
           stX.std === 0 || (payload.dim === 'barometro_estrato' && Math.abs(stX.maxVal - stX.minVal) < 1e-9)
@@ -13180,8 +13432,8 @@
         const pt1 = (payload.mode === 'bivariate' && stY)
           ? (isConstantStructX
             ? `Liderazgo y rezago (${n} estratos · ${sliceName}${coyTag}): ${payload.nameX || 'Referencia estructural'} presenta promedio estructural regional homogéneo de ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}; en ${payload.nameY || 'Percepción'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`
-            : `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): en ${payload.nameX || 'Eje X'}, lidera ${stX.maxLbl} (${stX.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}, prom. ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stX.minLbl} (${stX.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}); en ${payload.nameY || 'Eje Y'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`)
-          : `Liderazgo y rezago (${n} entidades · ${sliceName}${coyTag}): lidera ${primaryStat.maxLbl} con ${primaryStat.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} vs. promedio ${primaryStat.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}; el mayor rezago recae en ${primaryStat.minLbl} (${primaryStat.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}).`;
+            : `Liderazgo y rezago (${n} entidades · ${dimScopeLabel}): en ${payload.nameX || 'Eje X'}, lidera ${stX.maxLbl} (${stX.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitX || ''}, prom. ${stX.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stX.minLbl} (${stX.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}); en ${payload.nameY || 'Eje Y'}, lidera ${stY.maxLbl} (${stY.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${payload.unitY || ''}, prom. ${stY.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })}) y rezaga ${stY.minLbl} (${stY.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })}).`)
+          : `Liderazgo y rezago (${n} entidades · ${dimScopeLabel}): lidera ${primaryStat.maxLbl} con ${primaryStat.maxVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} vs. promedio ${primaryStat.mean.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}; el mayor rezago recae en ${primaryStat.minLbl} (${primaryStat.minVal.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit}).`;
         const pt2 = pearsonR !== null
           ? `Correlación y anomalías: r = ${pearsonR.toFixed(2)} (R² = ${r2.toFixed(2)}, ajuste ${r2 >= 0.5 ? 'fuerte' : (r2 >= 0.25 ? 'moderado' : 'débil')}); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`
           : `Dispersión y anomalías: desviación estándar σ = ${primaryStat.std.toLocaleString('es-CL', { maximumFractionDigits: 2 })} ${primaryUnit} (CV = ${primaryStat.cv.toFixed(1)}%); mayor anomalía en ${primaryStat.anomalyLbl} (Z = ${primaryStat.anomalyZ >= 0 ? '+' : ''}${primaryStat.anomalyZ.toFixed(2)} σ).`;
@@ -13191,9 +13443,9 @@
           pt3 = `Lectura territorial para decisión: ${primaryStat.maxLbl} concentra ${shareLeaderPct.toFixed(1)}% del total evaluado, evidenciando asimetría espacial frente a las comunas rezagadas; conviene focalizar inversión y capacidad operativa fuera del polo dominante.`;
         } else if (pearsonR !== null && Math.abs(pearsonR) >= 0.5) {
           const dir = pearsonR >= 0 ? 'directa' : 'inversa';
-          pt3 = `Lectura territorial para decisión: existe una asociación lineal ${dir} significativa (${r2 >= 0.5 ? 'R² ≥ 0,50' : 'R² = ' + r2.toFixed(2)}) entre ${payload.nameX || 'tiempo'} y ${primaryLabel}; intervenciones en un factor tienden a reflejarse en el otro sobre el subconjunto ${sliceName}${coyTag}.`;
+          pt3 = `Lectura territorial para decisión: existe una asociación lineal ${dir} significativa (${r2 >= 0.5 ? 'R² ≥ 0,50' : 'R² = ' + r2.toFixed(2)}) entre ${payload.nameX || 'tiempo'} y ${primaryLabel}; intervenciones en un factor tienden a reflejarse en el otro ${decisionScopeClause}.`;
         } else {
-          pt3 = `Lectura territorial para decisión: distribución heterogénea en ${sliceName}${coyTag} (brecha ${(primaryStat.maxVal / (Math.abs(primaryStat.minVal) || 1)).toFixed(1)}× entre extremo superior e inferior); requiere lectura desagregada por comuna antes de asignar metas uniformes.`;
+          pt3 = `Lectura territorial para decisión: distribución heterogénea ${decisionScopeClause} (brecha ${(primaryStat.maxVal / (Math.abs(primaryStat.minVal) || 1)).toFixed(1)}× entre extremo superior e inferior); requiere lectura desagregada por entidad antes de asignar metas uniformes.`;
         }
 
         return { n, primaryLabel, primaryUnit, pt1, pt2, pt3, pearsonR, r2, anomalyLbl: primaryStat.anomalyLbl, anomalyZ: primaryStat.anomalyZ };
@@ -13663,14 +13915,14 @@
               dim: 'comuna',
               chartSpec: vX.chartSpec || null
             };
-          } else if (Array.isArray(vX.data) && vX.dim === 'holding') {
+          } else if (Array.isArray(vX.data) && (vX.dim === 'holding' || vX.dim === 'pesqueria')) {
             res = {
               mode: 'univariate',
-              labels: [...(vX.labels || holdingLabels)],
+              labels: [...(vX.labels || (vX.dim === 'holding' ? holdingLabels : []))],
               data: [...vX.data],
               unit: vX.unit,
               label: vX.shortName || vX.name,
-              dim: 'holding',
+              dim: vX.dim,
               chartSpec: vX.chartSpec || null
             };
           } else if (vX.dim !== 'comuna' && vX.chartSpec && Array.isArray(vX.chartSpec.labels)) {
@@ -13774,11 +14026,12 @@
               status: 'valid'
             };
           }
-        } else if (vX.dim === 'holding' && vY.dim === 'holding') {
+        } else if ((vX.dim === 'holding' && vY.dim === 'holding') || (vX.dim === 'pesqueria' && vY.dim === 'pesqueria')) {
+          const targetDim = vX.dim;
           const labelsX = vX.labels || vX.chartSpec?.labels || [];
           const labelsY = vY.labels || vY.chartSpec?.labels || [];
-          const sharedHoldings = labelsX.filter(l => labelsY.some(ly => normStr(ly) === normStr(l)));
-          const sLabels = sharedHoldings.length ? sharedHoldings : labelsX;
+          const sharedEntities = labelsX.filter(l => labelsY.some(ly => normStr(ly) === normStr(l)));
+          const sLabels = sharedEntities.length ? sharedEntities : labelsX;
 
           const dataX = sLabels.map(l => {
             if (Array.isArray(vX.data)) {
@@ -13800,8 +14053,8 @@
 
           res = {
             mode: 'bivariate',
-            key: 'holding',
-            dim: 'holding',
+            key: targetDim,
+            dim: targetDim,
             labels: sLabels,
             dataX,
             dataY,
@@ -13830,9 +14083,9 @@
 
         if (!res || res.mode === 'empty') return res;
 
-        // 0. Filtro sociodemográfico activo para tarjetas Espejo Barómetro
-        if (w.isPerceptionMirror && w.mirrorSeries && w.activeSociodemoFilter) {
-          const f = w.activeSociodemoFilter;
+        // 0. Filtro sociodemográfico activo para tarjetas Espejo Barómetro (con vista Macrozona por defecto)
+        if (w.isPerceptionMirror && w.mirrorSeries) {
+          const f = w.activeSociodemoFilter || { edu: 'todos', nse: 'todos', sexo: 'todos', edad: 'todos', macro: 'todas' };
           const ms = w.mirrorSeries;
           let activeDimKey = null;
           if (f.edu && f.edu !== 'todos' && ms.por_nivel_educativo) activeDimKey = 'por_nivel_educativo';
@@ -13840,6 +14093,7 @@
           else if (f.sexo && f.sexo !== 'todos' && ms.por_sexo) activeDimKey = 'por_sexo';
           else if (f.edad && f.edad !== 'todos' && ms.por_tramo_edad) activeDimKey = 'por_tramo_edad';
           else if (f.macro && f.macro !== 'todas' && ms.por_macrozona) activeDimKey = 'por_macrozona';
+          else if (ms.por_macrozona && (ms.structural_por_macrozona || ms.structural_by_macrozona)) activeDimKey = 'por_macrozona';
 
           if (activeDimKey && ms[activeDimKey]) {
             const dimObj = ms[activeDimKey];
@@ -13866,10 +14120,13 @@
             const structMap = ms.structural_por_macrozona || ms.structural_by_macrozona;
             res.labels = strataLabels;
             res.dim = 'barometro_estrato';
+            res.effectiveSliceLabel = activeDimKey === 'por_macrozona' ? '3 Macrozonas de Aysén' : 'Estratos Barómetro Regional';
             if (res.mode === 'bivariate') {
               res.dataY = strataVals;
               if (activeDimKey === 'por_macrozona' && structMap) {
                 res.dataX = rawKeys.map(k => Number(structMap[k] || 0));
+                if (ms.structural_unit) res.unitX = ms.structural_unit;
+                if (ms.structural_label) res.nameX = ms.structural_label;
               } else {
                 const meanStruct = Array.isArray(res.dataX) && res.dataX.length
                   ? Number((res.dataX.reduce((a, b) => a + (Number(b) || 0), 0) / res.dataX.length).toFixed(2))
@@ -13883,10 +14140,21 @@
           }
         }
 
-        // 1. Filtrado Territorial (Slicer de Provincia / Zona)
+        // 1. Filtrado Territorial (Slicer de Provincia / Zona o alcance por defecto del preset, p. ej. Comunas Marítimas)
+        const allowPresetSlice = !AppState._userSelectedTerritorialFilter && (!AppState.territorialFilter || AppState.territorialFilter === 'all');
+        let allowed = null;
         if (res.dim === 'comuna' && AppState.territorialFilter && AppState.territorialFilter !== 'all') {
-          const allowed = TERRITORIAL_SLICES[AppState.territorialFilter];
-          if (Array.isArray(allowed)) {
+          allowed = TERRITORIAL_SLICES[AppState.territorialFilter] || COMUNAS_ORDER;
+          res.effectiveSliceLabel = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter}"]`)?.textContent || AppState.territorialFilter;
+        } else if (res.dim === 'comuna' && allowPresetSlice && w.defaultTerritorialSlice && TERRITORIAL_SLICES[w.defaultTerritorialSlice]) {
+          allowed = TERRITORIAL_SLICES[w.defaultTerritorialSlice];
+          res.effectiveSliceLabel = document.querySelector(`#selectTerritorialSlicer option[value="${w.defaultTerritorialSlice}"]`)?.textContent
+            || (w.defaultTerritorialSlice === 'tipo_maritima' ? 'Comunas Marítimas (4)' : w.defaultTerritorialSlice);
+        } else if (res.dim === 'comuna' && allowPresetSlice && Array.isArray(w.filterComunas) && w.filterComunas.length > 0) {
+          allowed = w.filterComunas;
+          res.effectiveSliceLabel = w.filterComunas.length === 4 ? 'Comunas Marítimas (4)' : `${w.filterComunas.length} comunas seleccionadas`;
+        }
+        if (res.dim === 'comuna' && Array.isArray(allowed)) {
             const allowedNorm = allowed.map(a => normStr(a));
             const keep = [];
             res.labels.forEach((lbl, i) => {
@@ -13902,7 +14170,6 @@
               res.dataX = keep.map(i => res.dataX[i]);
               res.dataY = keep.map(i => res.dataY[i]);
             }
-          }
         }
 
         // 1.1 Exclusión de Outlier Coyhaique (intersección estricta tras filtro territorial)
@@ -14250,6 +14517,8 @@
                 displayDesc = `Serie 2015–2026 · ${displayUnit} · ${displaySigla}`;
               } else if (it.dim === 'holding') {
                 displayDesc = `12 holdings · ${displayUnit} · ${displaySigla}`;
+              } else if (it.dim === 'pesqueria') {
+                displayDesc = `9 pesquerías · ${displayUnit} · ${displaySigla}`;
               } else {
                 displayDesc = `${it.dim} · ${displayUnit} · ${displaySigla}`;
               }
@@ -14502,11 +14771,26 @@
 
           } else if (w.chartType === 'line' || payload.dim === 'tiempo') {
             const datasets = [];
+            let lineTrendBadgeText = '';
             const hasCustomDualLine = w.customChartSpec && Array.isArray(w.customChartSpec.datasets) && w.customChartSpec.datasets.length >= 2;
 
             if (hasCustomDualLine) {
               const ds0 = w.customChartSpec.datasets[0];
               const ds1 = w.customChartSpec.datasets[1];
+              const customLabels = Array.isArray(w.customChartSpec.labels) ? w.customChartSpec.labels : payload.labels;
+              const sliceCustomData = (arr, fallback) => {
+                if (!Array.isArray(arr) || arr.length === 0) return fallback || [];
+                if (Array.isArray(customLabels) && customLabels.length === arr.length && Array.isArray(payload.labels)) {
+                  const mapped = payload.labels.map(lbl => {
+                    const idx = customLabels.indexOf(lbl);
+                    return idx !== -1 ? arr[idx] : null;
+                  }).filter(v => v !== null);
+                  if (mapped.length === payload.labels.length) return mapped;
+                }
+                return arr;
+              };
+              const primaryData = sliceCustomData(ds0.data, payload.dataX);
+              const secondaryData = sliceCustomData(ds1.data, payload.dataY);
               payload.mode = 'bivariate';
               payload.nameX = ds0.label || payload.nameX || 'Serie 1';
               payload.unitX = ds0.unit || payload.unitX || '';
@@ -14514,7 +14798,7 @@
               payload.unitY = ds1.unit || payload.unitY || '';
               datasets.push({
                 label: ds0.label,
-                data: (payload.dataX && payload.dataX.length) ? payload.dataX : ds0.data,
+                data: primaryData,
                 borderColor: w.color || ds0.borderColor || primaryColor,
                 backgroundColor: ds0.backgroundColor || `${primaryColor}18`,
                 yAxisID: 'y',
@@ -14524,7 +14808,7 @@
               });
               datasets.push({
                 label: ds1.label,
-                data: (payload.dataY && payload.dataY.length) ? payload.dataY : ds1.data,
+                data: secondaryData,
                 borderColor: ds1.borderColor || '#0284c7',
                 backgroundColor: ds1.backgroundColor || 'rgba(2, 132, 199, 0.15)',
                 yAxisID: 'y1',
@@ -14532,11 +14816,25 @@
                 tension: 0.32,
                 pointRadius: 4
               });
-              if (w.showAverage && payload.dataX && payload.dataX.length) {
-                const meanX = payload.dataX.reduce((a, b) => a + b, 0) / payload.dataX.length;
+              w.customChartSpec.datasets.slice(2).forEach((dsExtra, extraIdx) => {
+                const extraColor = dsExtra.borderColor || ['#dc2626', '#047857', '#d97706'][extraIdx % 3];
+                datasets.push({
+                  label: dsExtra.label || `Serie ${extraIdx + 3}`,
+                  data: sliceCustomData(dsExtra.data, dsExtra.data),
+                  borderColor: extraColor,
+                  backgroundColor: dsExtra.backgroundColor || `${extraColor}18`,
+                  borderDash: Array.isArray(dsExtra.borderDash) ? dsExtra.borderDash : undefined,
+                  yAxisID: dsExtra.yAxisID || 'y1',
+                  fill: false,
+                  tension: 0.32,
+                  pointRadius: 4
+                });
+              });
+              if (w.showAverage && primaryData && primaryData.length) {
+                const meanX = primaryData.reduce((a, b) => a + (Number(b) || 0), 0) / primaryData.length;
                 datasets.push({
                   type: 'line',
-                  label: `Promedio (${meanX.toLocaleString('es-CL', { maximumFractionDigits: 1 })})`,
+                  label: `Promedio ${payload.nameX || 'Serie'} (${meanX.toLocaleString('es-CL', { maximumFractionDigits: 1 })})`,
                   data: payload.labels.map(() => meanX),
                   borderColor: '#b91c1c',
                   borderWidth: 1.5,
@@ -14634,7 +14932,7 @@
                   });
                 }
 
-                let lineTrendBadgeText = '';
+                lineTrendBadgeText = '';
                 if (w.showTrend && dataPts.length > 2) {
                   const n = dataPts.length;
                   let sumT = 0, sumY = 0, stt = 0, sty = 0, syy = 0;
@@ -14898,9 +15196,11 @@
             if (hasStructuralOverlay) {
               const structData = rawKeys.map(k => Number(structMap[k] || 0));
               while (structData.length < baroLabels.length) structData.push(null);
+              const structAxisLabel = ms.structural_label || payload.nameX || w.structuralVariable || 'Territorial';
+              const structUnitLabel = ms.structural_unit || payload.unitX || '';
               datasets.push({
                 type: 'line',
-                label: `Indicador Estructural (${payload.nameX || w.structuralVariable || 'Territorial'})`,
+                label: `Indicador Estructural (${structAxisLabel})`,
                 data: structData,
                 borderColor: '#0f766e',
                 backgroundColor: 'rgba(15, 118, 110, 0.15)',
@@ -14937,6 +15237,8 @@
             };
 
             if (hasStructuralOverlay) {
+              const structAxisTitle = ms.structural_label || payload.nameX || w.structuralVariable || 'Territorial';
+              const structUnitTitle = ms.structural_unit || payload.unitX || '';
               scales.y1 = {
                 beginAtZero: true,
                 position: 'right',
@@ -14944,7 +15246,7 @@
                 ticks: { font: { size: 9, family: "'JetBrains Mono', monospace" } },
                 title: {
                   display: true,
-                  text: formatAxisTitle(payload.nameX || w.structuralVariable, payload.unitX || ''),
+                  text: formatAxisTitle(structAxisTitle, structUnitTitle),
                   font: { size: 10, weight: 600, family: "'Inter', sans-serif" }
                 }
               };
@@ -14974,7 +15276,7 @@
                           const semSub = (baroSemaforos[idx] || 'verde').toUpperCase();
                           return `Percepción: ${item.raw}% (n = ${nSub} / N = ${ms.universe_N || 465} | ME ±${meSub}% | Semáforo ${semSub})`;
                         }
-                        return `${item.dataset.label}: ${Number(item.raw || 0).toLocaleString('es-CL')} ${payload.unitX || ''}`;
+                        return `${item.dataset.label}: ${Number(item.raw || 0).toLocaleString('es-CL')} ${ms.structural_unit || payload.unitX || ''}`;
                       }
                     }
                   }
@@ -14984,6 +15286,7 @@
             });
           } else {
             const datasets = [];
+            const useDualBarY = payload.mode === 'bivariate' && (normStr(payload.unitX || '') !== normStr(payload.unitY || '') || !payload.unitX || !payload.unitY);
 
             if (payload.mode === 'bivariate') {
               datasets.push({
@@ -14998,13 +15301,14 @@
                 data: payload.dataY,
                 backgroundColor: '#0284c7cc',
                 borderRadius: 4,
-                yAxisID: 'y1'
+                yAxisID: useDualBarY ? 'y1' : 'y'
               });
               if (w.showAverage && payload.dataX && payload.dataX.length) {
                 const meanX = payload.dataX.reduce((a, b) => a + b, 0) / payload.dataX.length;
+                const avgUnitStr = payload.unitX ? ` ${payload.unitX}` : '';
                 datasets.push({
                   type: 'line',
-                  label: `Promedio (${meanX.toLocaleString('es-CL', { maximumFractionDigits: 1 })})`,
+                  label: `Promedio ${payload.nameX || 'X'} (${meanX.toLocaleString('es-CL', { maximumFractionDigits: 1 })}${avgUnitStr})`,
                   data: payload.labels.map(() => meanX),
                   borderColor: '#b91c1c',
                   borderWidth: 1.5,
@@ -15107,7 +15411,11 @@
               }
             }
 
-            const xTitle = payload.dim === 'comuna' ? 'Comunas de Aysén' : (payload.dim === 'holding' ? 'Holdings Acuícolas' : 'Sectores / Categorías');
+            const xTitle = payload.dim === 'comuna'
+              ? 'Comunas de Aysén'
+              : (payload.dim === 'holding'
+                ? 'Holdings Acuícolas'
+                : (payload.dim === 'pesqueria' ? 'Pesquerías (Ley N° 21.752)' : 'Sectores / Categorías'));
             const scales = {
               x: {
                 grid: { display: false },
@@ -15147,7 +15455,7 @@
               }
             };
 
-            if (payload.mode === 'bivariate') {
+            if (payload.mode === 'bivariate' && useDualBarY) {
               scales.y1 = {
                 beginAtZero: true,
                 position: 'right',
@@ -15582,8 +15890,10 @@
           }
 
           // NIVEL 2: Capa de Nodos Puntuales Georreferenciados (L.circleMarker) en nodesPane (z-index 650)
+          let totalPadronCount = 0;
           let activePadronCount = 0;
           let snaspePadronCount = 0;
+          let biomasaPadronSum = 0;
           if (renderedPointNodes.length > 0) {
             const mags = renderedPointNodes.map(n => Number(n.magnitudeValue) || 1);
             const minMag = Math.min(...mags, 0);
@@ -15593,6 +15903,10 @@
               const isPadronNode = n.layerKey === 'concesiones_acuicolas_padron';
               const isPadronActive = isPadronNode && n.estado_operativo === 'Activo';
               const isPadronSnaspe = isPadronNode && !!n.en_snaspe;
+              if (isPadronNode) {
+                totalPadronCount += 1;
+                biomasaPadronSum += Number(n.biomasa_ton) || 0;
+              }
               if (isPadronActive) activePadronCount += 1;
               if (isPadronSnaspe) snaspePadronCount += 1;
 
@@ -15751,9 +16065,11 @@
                  <span>${insideBufferCount}/${evalNodesTotal} nodos en radio</span>
                </div>`
             : '';
+          const pctActPadron = totalPadronCount > 0 ? ((activePadronCount / totalPadronCount) * 100).toFixed(1).replace('.', ',') : '0,0';
+          const pctSnaspePadron = totalPadronCount > 0 ? ((snaspePadronCount / totalPadronCount) * 100).toFixed(1).replace('.', ',') : '0,0';
           const padronLegendHtml = (isAquaMode && aquaFilterVal !== 'nodos_38')
             ? `<div class="legend-row" style="color: #00357f; font-size: 0.58rem;">
-                 <span>● Activas (${activePadronCount}) · ○ Otorg. (${Math.max(0, activeNodes.length - activePadronCount)}) · Borde rojo: SNASPE (${snaspePadronCount})</span>
+                 <span>Total: ${totalPadronCount.toLocaleString('es-CL')} | Activos: ${activePadronCount.toLocaleString('es-CL')} (${pctActPadron}%) | En SNASPE: ${snaspePadronCount.toLocaleString('es-CL')} (${pctSnaspePadron}%) | Biomasa: ${biomasaPadronSum.toLocaleString('es-CL')} ton</span>
                </div>`
             : '';
           const overlaysLegendHtml = (renderedPolygonsCount > 0 || renderedLinesCount > 0)
@@ -15910,7 +16226,16 @@
 
         } else if (w.type === 'kpi') {
           const vX = AppState.catalogItems.find(v => v.id === w.varX);
-          const isMean = vX ? (vX.aggMode === 'mean' || /%|\$|horas|Miles|casos/i.test(vX.unit)) : false;
+          const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+          const targetVar = (payload.mode === 'bivariate' && vY) ? vY : vX;
+          const targetId = targetVar ? (targetVar.id || '') : (w.varY || w.varX || '');
+          const unitLbl = (payload.mode === 'bivariate' ? (payload.unitY || payload.unitX) : payload.unit) || (targetVar ? targetVar.unit : '') || '';
+          const INTENSIVE_KPI_RE = /(_pct|%|g\/ton|per_capita|promedio|tasa|indice|ratio|espera|dias|horas|puntaje|ica|tsm|oxigeno|psu|utm\/ton|trab\.\/centro|por_centro|por_cama|por_mil|por_100k|°c)/i;
+          const isMean = Boolean(
+            (targetVar && (targetVar.aggregation === 'avg' || targetVar.aggMode === 'mean')) ||
+            INTENSIVE_KPI_RE.test(targetId) ||
+            INTENSIVE_KPI_RE.test(unitLbl)
+          );
 
           const data = (payload.mode === 'bivariate' && Array.isArray(payload.dataY)) ? payload.dataY : (payload.data || []);
           const labels = payload.labels || [];
@@ -15923,12 +16248,19 @@
           const minPair = validPairs.find(p => p.v === min);
           const maxPair = validPairs.find(p => p.v === max);
 
-          const activeSliceLbl = document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Todas las comunas (10)';
-          const isCoyExcluded = !!(AppState.excludeCoyhaique || w.excludeOutlierCoyhaique);
-          const scopeLabel = (AppState.territorialFilter && AppState.territorialFilter !== 'all')
-            ? `${activeSliceLbl}${isCoyExcluded ? ' · Sin Coyhaique' : ''}`
-            : (isCoyExcluded ? 'Sin Coyhaique' : 'Región de Aysén');
-          const unitLbl = (payload.mode === 'bivariate' ? (payload.unitY || payload.unitX) : payload.unit) || '';
+          const activeSliceLbl = payload.effectiveSliceLabel || document.querySelector(`#selectTerritorialSlicer option[value="${AppState.territorialFilter || 'all'}"]`)?.textContent || 'Todas las comunas (10)';
+          const isCoyExcluded = payload.dim === 'comuna' && !!(AppState.excludeCoyhaique || w.excludeOutlierCoyhaique);
+          const scopeLabel = payload.dim === 'tiempo'
+            ? `Serie ${labels[0] || ''}–${labels[labels.length - 1] || ''}`
+            : (payload.dim === 'holding'
+              ? `${labels.length} holdings`
+              : (payload.dim === 'pesqueria'
+                ? `${labels.length} pesquerías`
+                : (payload.dim === 'barometro_estrato'
+                  ? `${labels.length} macrozonas / estratos`
+                  : (payload.effectiveSliceLabel || (AppState.territorialFilter && AppState.territorialFilter !== 'all')
+                    ? `${activeSliceLbl}${isCoyExcluded ? ' · Sin Coyhaique' : ''}`
+                    : (isCoyExcluded ? 'Sin Coyhaique' : 'Región de Aysén')))));
 
           let mainValStr, mainUnitStr, subItemsHtml;
 
@@ -16714,6 +17046,9 @@
             varY: cfg.varY || null,
             color: hubColor,
             spatialLayer: cfg.spatialLayer || 'auto',
+            activeOverlays: Array.isArray(cfg.activeOverlays) ? [...cfg.activeOverlays] : undefined,
+            defaultTerritorialSlice: cfg.defaultTerritorialSlice || null,
+            filterComunas: Array.isArray(cfg.filterComunas) ? [...cfg.filterComunas] : null,
             showBuffers: Boolean(cfg.showBuffers),
             bufferRadiusM: Number(cfg.bufferRadiusM || 25000),
             layers: cfg.layers || ['municipios_sedes'],
@@ -16727,6 +17062,8 @@
             varY: cfg.varY || cfg.seriesSecundaria || 'floracion_alexandrium_fan',
             color: hubColor,
             chartType: 'line',
+            defaultTerritorialSlice: cfg.defaultTerritorialSlice || null,
+            filterComunas: Array.isArray(cfg.filterComunas) ? [...cfg.filterComunas] : null,
             showTrend: true,
             customChartSpec: cfg.customChartSpec || null,
             x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h
@@ -16739,6 +17076,8 @@
             varY: cfg.varY || 'fndr_mclp',
             color: hubColor,
             chartType: 'scatter',
+            defaultTerritorialSlice: cfg.defaultTerritorialSlice || null,
+            filterComunas: Array.isArray(cfg.filterComunas) ? [...cfg.filterComunas] : null,
             showTrend: true,
             showAverage: true,
             x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h
@@ -16752,6 +17091,8 @@
             varY: cfg.varY || cfg.varY2 || null,
             color: hubColor,
             chartType: 'bar',
+            defaultTerritorialSlice: cfg.defaultTerritorialSlice || null,
+            filterComunas: Array.isArray(cfg.filterComunas) ? [...cfg.filterComunas] : null,
             showAverage: true,
             x: bounds.x, y: bounds.y, w: bounds.w, h: bounds.h
           });
@@ -17249,6 +17590,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         syncHeroVisibility();
 
         AppState.territorialFilter = 'all';
+        AppState._userSelectedTerritorialFilter = false;
         AppState.excludeCoyhaique = false;
         const selectSlicer = document.getElementById('selectTerritorialSlicer');
         if (selectSlicer) selectSlicer.value = 'all';
@@ -18654,6 +18996,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         if (selectSlicer) {
           selectSlicer.addEventListener('change', (e) => {
             pushHistory('aplicar filtro');
+            AppState._userSelectedTerritorialFilter = true;
             AppState.territorialFilter = e.target.value;
             if (e.target.value === 'all') {
               AppState.excludeCoyhaique = false;

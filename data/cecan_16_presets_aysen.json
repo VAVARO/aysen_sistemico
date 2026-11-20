@@ -2480,7 +2480,13 @@
             },
             "spatialLayer": "concesiones_acuicolas_padron",
             "showBuffers": false,
-            "bufferRadiusM": 25000
+            "bufferRadiusM": 25000,
+            "activeOverlays": [
+              "snaspe_polygons",
+              "ecmpo_polygons",
+              "zoit_polygons",
+              "caletas_puertos"
+            ]
           },
           "what_it_shows": "Mapeo completo de las 745 concesiones salmoneras otorgadas en los litorales de Cisnes, Aysén, Guaitecas y Tortel.",
           "why_complex_system": "Conflicto de uso del maritorio: superposición entre enclaves industriales intensivos y corredores de conservación turística."
@@ -2501,7 +2507,14 @@
             "varX": "concesiones_salmon",
             "varY": "dependencia_fcm_pct",
             "varY2": "dependencia_fcm_pct",
-            "showAverage": true
+            "showAverage": true,
+            "defaultTerritorialSlice": "tipo_maritima",
+            "filterComunas": [
+              "Aysén",
+              "Cisnes",
+              "Guaitecas",
+              "Tortel"
+            ]
           },
           "what_it_shows": "Las comunas litorales concentran las 745 concesiones acuícolas de la región mientras mantienen más del 70% de dependencia del FCM.",
           "why_complex_system": "Control distribuido y asimetría: las decisiones de biomasa y empleo dependen de directorios en Santiago o el extranjero, no de los gobiernos locales."
@@ -2530,7 +2543,14 @@
               "q4": "Extracción Territorial sin Arraigo Local"
             },
             "showAverage": true,
-            "showTrend": true
+            "showTrend": true,
+            "defaultTerritorialSlice": "tipo_maritima",
+            "filterComunas": [
+              "Aysén",
+              "Cisnes",
+              "Guaitecas",
+              "Tortel"
+            ]
           },
           "what_it_shows": "Aysén y Cisnes concentran la mayor mano de obra formal, mientras en Guaitecas y Tortel operan centros con cuadrillas de relevo flotantes.",
           "why_complex_system": "Emergencia económica: la alta producción física coexiste con baja recaudación tributaria local debido a la estructura de patentes."
@@ -2538,7 +2558,7 @@
         {
           "preset_id": "hub_03_04",
           "hub_id": "salmonicultura",
-          "titulo": "4. Serie Histórica Multieje: Cosechas de Salmón vs. Centros Activos (2015-2026)",
+          "titulo": "Serie Histórica Multieje: Cosechas de Salmón vs. Centros Activos y Alertas FAN 2015-2026",
           "format_type": "line",
           "subtype": "multi_axis_series",
           "inter_hub_cross": {
@@ -2584,7 +2604,7 @@
                     462800.0,
                     448500.0,
                     440200.0,
-                    435000.0
+                    503500.0
                   ],
                   "unit": "toneladas",
                   "yAxisID": "y"
@@ -2603,12 +2623,38 @@
                     242,
                     245,
                     242,
-                    240
+                    245
                   ],
                   "unit": "centros",
                   "yAxisID": "y1"
+                },
+                {
+                  "label": "Días Alerta FAN Alexandrium (IFOP)",
+                  "data": [
+                    8,
+                    45,
+                    11,
+                    16,
+                    14,
+                    12,
+                    18,
+                    24,
+                    21,
+                    28,
+                    32,
+                    35
+                  ],
+                  "borderColor": "#dc2626",
+                  "backgroundColor": "rgba(220, 38, 38, 0.08)",
+                  "borderDash": [
+                    4,
+                    3
+                  ],
+                  "yAxisID": "y1",
+                  "unit": "días/año"
                 }
-              ]
+              ],
+              "title": "Cosechas de Salmón (ton), Centros Activos y Días de Alerta FAN (2015–2026)"
             }
           },
           "what_it_shows": "Los eventos severos de marea roja coinciden con caídas drásticas de cosecha y descansos sanitarios coordinados.",
@@ -2645,9 +2691,9 @@
               "promedio_valor": 3.13,
               "structural_variable": "biomasa_salmon_ton",
               "structural_by_macrozona": {
-                "norte": 88.5,
-                "centro": 12.0,
-                "sur": 15.4
+                "centro": 52.6,
+                "norte": 45.7,
+                "sur": 1.7
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -2778,7 +2824,9 @@
                   "tasa_positiva_pct": 75.7,
                   "promedio_valor": 3.16
                 }
-              }
+              },
+              "structural_label": "Biomasa Salmonera Regional por Macrozona (%)",
+              "structural_unit": "%"
             },
             "display_controls": {
               "enable_sociodemo_filters": true,

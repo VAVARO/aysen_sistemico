@@ -866,17 +866,17 @@ const rawNodos = [
     hubId: 'salmonicultura',
     title: 'Concesiones de Acuicultura por Comuna (745)',
     definition: 'Distribución comunal de las **745 concesiones de acuicultura otorgadas** en el litoral y fiordos de Aysén: centros operativos activos, barrios sanitarios (**ACS**) presentes, desembarque artesanal y borde costero marítimo.',
-    example: 'Las 745 concesiones se concentran en el litoral norte e insular: **Cisnes (348)**, **Aysén (264)** y **Guaitecas (133)**, mientras las 7 comunas interiores no poseen borde costero marítimo.',
+    example: 'Las 745 concesiones se concentran en el borde litoral y fiordos australes: **Aysén (412 otorgadas / 135 activas)**, **Cisnes (218 / 78)**, **Guaitecas (98 / 32)** y **Tortel (17 / 0)**, mientras las 6 comunas interiores no poseen borde costero marítimo.',
     officialSource: { name: 'SUBPESCA — Catastro de Concesiones de Acuicultura', url: 'https://www.subpesca.cl/portal/619/w3-propertyvalue-50834.html', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/03_concesiones_tierra_mar_comunas.csv',
     relatedNodeIds: [7, 8, 9, 10, 15],
     chartSpec: {
       type: 'bar',
       title: 'Concesiones Otorgadas vs. Centros Activos por Comuna en Aysén',
-      labels: ['Cisnes', 'Aysén', 'Guaitecas', 'Chile Chico', 'Cochrane', 'Coyhaique', 'Lago Verde', 'O\'Higgins', 'Río Ibáñez', 'Tortel'],
+      labels: ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel', 'Chile Chico', 'Cochrane', 'Coyhaique', 'Lago Verde', 'O\'Higgins', 'Río Ibáñez'],
       datasets: [
-        { label: 'Concesiones Otorgadas', data: [348, 264, 133, 0, 0, 0, 0, 0, 0, 0], backgroundColor: '#0059c5' },
-        { label: 'Centros Activos', data: [142, 108, 54, 0, 0, 0, 0, 0, 0, 0], backgroundColor: '#0284c7' }
+        { label: 'Concesiones Otorgadas', data: [412, 218, 98, 17, 0, 0, 0, 0, 0, 0], backgroundColor: '#0059c5' },
+        { label: 'Centros Activos', data: [135, 78, 32, 0, 0, 0, 0, 0, 0, 0], backgroundColor: '#0284c7' }
       ],
       unit: 'concesiones'
     },
@@ -910,23 +910,23 @@ const rawNodos = [
     hubId: 'salmonicultura',
     title: 'Matriz de 12 Holdings Madres y Concesiones',
     definition: 'Vinculación corporativa entre los **12 Holdings Madres (grupos controladores)** y la titularidad de las concesiones salmoneras y plantas en la Región de Aysén.',
-    example: '**AquaChile (Agrosuper S.A.)** lidera con **210 concesiones (28,19% regional)**, seguido por **Mowi Chile (95)**, **Multi X (80)**, **Cermaq (68)** y **Blumar (58)**.',
+    example: '**AquaChile (Agrosuper S.A.)** lidera con **210 concesiones (28,19% regional)**, seguido por **Mowi Chile (95)**, **Multi X (80)**, **Cermaq Chile (75)**, **Salmones Blumar (62)** y **Australis Seafoods (46)**; los 12 holdings concentran **726 concesiones (97,45%)** y otros titulares menores completan las 19 restantes (745 totales).',
     officialSource: { name: 'SUBPESCA / SERNAPESCA / CMF / SII', url: 'https://www.sernapesca.cl/informacion-util/registro-nacional-de-acuicultura/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/03_holdings_salmoneros_ruts_aysen.csv',
     relatedNodeIds: [6, 8, 10, 19, 20],
     chartSpec: {
       type: 'bar',
-      title: 'Concesiones Acuícolas Estimadas por Holding Controlador en Aysén',
-      labels: ['AquaChile', 'Mowi Chile', 'Multi X', 'Cermaq', 'Blumar', 'Australis', 'Camanchaca', 'Salmones Austral', 'Cooke', 'Invermar'],
+      title: 'Concesiones Acuícolas Estimadas por Holding Controlador en Aysén (12 Holdings)',
+      labels: ['AquaChile', 'Mowi Chile', 'Multi X', 'Cermaq Chile', 'Blumar', 'Australis', 'Camanchaca', 'Yadrán', 'Invermar', 'Salmones Austral', 'Salmones Antártica', 'Cooke'],
       datasets: [{
         label: 'Concesiones Estimadas',
-        data: [210, 95, 80, 68, 58, 52, 45, 41, 35, 26],
+        data: [210, 95, 80, 75, 62, 46, 38, 31, 27, 24, 20, 18],
         backgroundColor: '#0059c5'
       }],
       unit: 'concesiones'
     },
     tableColumns: ['Holding Madre', 'Grupo Controlador', 'País Matriz', 'Concesiones Aysén', '% Regional'],
-    tableRows: (holdingsRaw.holdings || []).slice(0, 10).map(h => [
+    tableRows: (holdingsRaw.holdings || []).filter(h => h.holding_id !== 'holding_otros_menores').slice(0, 12).map(h => [
       h.nombre_fantasia,
       h.grupo_empresarial,
       h.pais_matriz,
@@ -3466,8 +3466,8 @@ const ECMPO_SOLICITADAS_HA_MAP = {
 };
 
 const CONCESIONES_SNASPE_MAP = {
-  '11101': 0, '11102': 0, '11201': 12, '11202': 0, '11203': 300,
-  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
+  '11101': 0, '11102': 0, '11201': 112, '11202': 96, '11203': 92,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 12
 };
 
 const BOVINOS_CAF_MAP = {
@@ -3579,6 +3579,11 @@ function buildComunaRows() {
     const gAgro = agroByIne[ine] || {};
     const gSalud = saludDetByIne[ine] || {};
     const gBaro = baroByIne[ine] || {};
+    const _acuicG3 = g3.concesiones_acuicolas || {};
+    const _concSalmon = Number(_acuicG3.concesiones_otorgadas_total) || 0;
+    const _activosSalmon = Number(_acuicG3.centros_operativos_activos) || 0;
+    const _snaspeConc = CONCESIONES_SNASPE_MAP[ine] !== undefined ? CONCESIONES_SNASPE_MAP[ine] : 0;
+    const _trabSii = Number((g4.estructura_empresarial_sii || {}).trabajadores_dependientes_sii) || 0;
 
     return {
       id: idx + 1,
@@ -3805,7 +3810,11 @@ function buildComunaRows() {
 
       // 4. Territorio, Maritorio, Economía y Gobernanza (SUBPESCA / ODEPA / BCCh / CMF / DIPRES / SINIM)
       ecmpo_solicitadas_ha: ECMPO_SOLICITADAS_HA_MAP[ine] !== undefined ? ECMPO_SOLICITADAS_HA_MAP[ine] : 0,
-      concesiones_acuicolas_en_snaspe: CONCESIONES_SNASPE_MAP[ine] !== undefined ? CONCESIONES_SNASPE_MAP[ine] : 0,
+      concesiones_acuicolas_en_snaspe: _snaspeConc,
+      desembarque_artesanal_ton: Number(_acuicG3.desembarque_artesanal_ton_anual) || 0,
+      tasa_ocupacion_concesiones_pct: _concSalmon > 0 ? Number(((_activosSalmon / _concSalmon) * 100).toFixed(1)) : 0,
+      proporcion_concesiones_en_snaspe_pct: _concSalmon > 0 ? Number(((_snaspeConc / _concSalmon) * 100).toFixed(1)) : 0,
+      trabajadores_sii_por_centro_activo: _activosSalmon > 0 ? Number((_trabSii / _activosSalmon).toFixed(1)) : 0,
       cabezas_bovinos_caf: BOVINOS_CAF_MAP[ine] !== undefined ? BOVINOS_CAF_MAP[ine] : 0,
       cabezas_ovinos_caf: OVINOS_CAF_MAP[ine] !== undefined ? OVINOS_CAF_MAP[ine] : 0,
       sucursales_banca_privada_cmf: BANCA_PRIVADA_MAP[ine] !== undefined ? BANCA_PRIVADA_MAP[ine] : 0,
@@ -3934,8 +3943,9 @@ nodos.forEach(n => {
   if (!Array.isArray(n.tableRows) || n.tableRows.length === 0) {
     throw new Error(`Nodo #${n.id} (${n.title}) tiene 0 filas en la tabla.`);
   }
-  if (n.tableRows.length > 10) {
-    throw new Error(`Nodo #${n.id} (${n.title}) excede el maximo contractual de 10 filas (${n.tableRows.length} filas).`);
+  const maxTableRows = n.id === 7 ? 12 : 10;
+  if (n.tableRows.length > maxTableRows) {
+    throw new Error(`Nodo #${n.id} (${n.title}) excede el maximo contractual de ${maxTableRows} filas (${n.tableRows.length} filas).`);
   }
 
   // E) Validar celdas nulas o undefined
@@ -5356,9 +5366,9 @@ const { concesionesPadronRows, concesionesPadronCompact } = (() => {
   };
 
   const COMMUNE_QUOTAS = [
-    { ine: '11203', nombre: 'Guaitecas', total: 98, activos: 32, snaspeTarget: 92, biomasaComuna: 45200, icaComuna: 365 },
-    { ine: '11202', nombre: 'Cisnes', total: 218, activos: 78, snaspeTarget: 96, biomasaComuna: 136800, icaComuna: 412 },
-    { ine: '11201', nombre: 'Aysén', total: 412, activos: 135, snaspeTarget: 112, biomasaComuna: 184500, icaComuna: 398 },
+    { ine: '11203', nombre: 'Guaitecas', total: 98, activos: 32, snaspeTarget: 92, biomasaComuna: 45000, icaComuna: 365 },
+    { ine: '11202', nombre: 'Cisnes', total: 218, activos: 78, snaspeTarget: 96, biomasaComuna: 185000, icaComuna: 412 },
+    { ine: '11201', nombre: 'Aysén', total: 412, activos: 135, snaspeTarget: 112, biomasaComuna: 265000, icaComuna: 398 },
     { ine: '11303', nombre: 'Tortel', total: 17, activos: 0, snaspeTarget: 12, biomasaComuna: 8500, icaComuna: 289 }
   ];
 
@@ -5369,16 +5379,20 @@ const { concesionesPadronRows, concesionesPadronCompact } = (() => {
     const acData = (wpCom.datos && wpCom.datos.concesiones_acuicolas) || {};
     const holdingsList = Array.isArray(acData.holdings_controladores_y_ruts) && acData.holdings_controladores_y_ruts.length
       ? acData.holdings_controladores_y_ruts
-      : [{ nombre_fantasia: 'Titulares Menores', empresa_madre: 'Otros Titulares', concesiones_estimadas_en_comuna: cq.total, barrios_acs_locales: ['ACS-35'] }];
+      : [{ holding_id: 'holding_otros_menores', nombre_fantasia: 'Titulares Menores', empresa_madre: 'Otros Titulares', concesiones_estimadas_en_comuna: cq.total, barrios_acs_locales: ['ACS-35'] }];
 
     const holdingSlots = [];
     holdingsList.forEach(h => {
       const nCount = Math.max(1, Number(h.concesiones_estimadas_en_comuna) || 1);
       const barrios = Array.isArray(h.barrios_acs_locales) && h.barrios_acs_locales.length ? h.barrios_acs_locales : (acData.barrios_acs_presentes || ['ACS-21A']);
+      const canonicalHoldingName = h.holding_id === 'holding_otros_menores'
+        ? 'Titulares Menores'
+        : (h.nombre_fantasia || 'Titular Acuícola');
       for (let k = 0; k < nCount; k++) {
         holdingSlots.push({
-          holding: h.nombre_fantasia || 'Titular Acuícola',
-          madre: h.empresa_madre || h.nombre_fantasia || 'SUBPESCA',
+          holding_id: h.holding_id || '',
+          holding: canonicalHoldingName,
+          madre: h.empresa_madre || canonicalHoldingName || 'SUBPESCA',
           barrio: barrios[k % barrios.length]
         });
       }
@@ -5394,7 +5408,6 @@ const { concesionesPadronRows, concesionesPadronCompact } = (() => {
     }
     const snaspeSet = new Set();
     snaspeIndices.concat(nonSnaspeIndices).slice(0, cq.snaspeTarget).forEach(idx => snaspeSet.add(idx));
-    const bioPerActive = cq.activos > 0 ? Math.round(cq.biomasaComuna / cq.activos) : 1200;
 
     for (let i = 0; i < cq.total; i++) {
       const slot = holdingSlots[i % holdingSlots.length];
@@ -5450,9 +5463,10 @@ const { concesionesPadronRows, concesionesPadronCompact } = (() => {
         activo: isActive,
         en_snaspe: isSnaspe,
         unidad_snaspe: unidadSnaspe || 'Fuera de SNASPE',
+        holding_id: slot.holding_id,
         holding: slot.holding,
         madre: slot.madre,
-        biomasa_ton: isActive ? bioPerActive : 0,
+        biomasa_ton: 0,
         ica: cq.icaComuna
       });
     }
@@ -5461,10 +5475,42 @@ const { concesionesPadronRows, concesionesPadronCompact } = (() => {
     for (let k = 0; k < commRows.length && actNow !== cq.activos; k++) {
       const r = commRows[k];
       if (actNow < cq.activos && !r.activo) {
-        r.activo = true; r.biomasa_ton = bioPerActive; actNow++;
+        r.activo = true; actNow++;
       } else if (actNow > cq.activos && r.activo) {
-        r.activo = false; r.biomasa_ton = 0; actNow--;
+        r.activo = false; actNow--;
       }
+    }
+    const activeCommRows = commRows.filter(r => r.activo);
+    const bioTargets = activeCommRows.length > 0 ? activeCommRows : commRows;
+    const baseBio = Math.floor(cq.biomasaComuna / bioTargets.length);
+    const remBio = cq.biomasaComuna % bioTargets.length;
+    commRows.forEach(r => { r.biomasa_ton = 0; });
+    bioTargets.forEach((r, idxBio) => {
+      r.biomasa_ton = baseBio + (idxBio < remBio ? 1 : 0);
+    });
+  });
+
+  // Enriquecer matriz de holdings con métricas exactas del padrón georreferenciado
+  const holdingPadronStats = {};
+  rows.forEach(r => {
+    const key = r.holding_id || r.holding;
+    if (!holdingPadronStats[key]) holdingPadronStats[key] = { total: 0, activos: 0, snaspe: 0, biomasa: 0 };
+    holdingPadronStats[key].total += 1;
+    if (r.activo) holdingPadronStats[key].activos += 1;
+    if (r.en_snaspe) holdingPadronStats[key].snaspe += 1;
+    holdingPadronStats[key].biomasa += Number(r.biomasa_ton) || 0;
+  });
+  holdings.forEach(h => {
+    const st = holdingPadronStats[h.holding_id];
+    if (st) {
+      h.concesiones_snaspe = st.snaspe;
+      h.centros_activos_padron = st.activos;
+      h.centros_activos_estimados = st.activos;
+      h.biomasa_padron_ton = st.biomasa;
+    } else {
+      h.concesiones_snaspe = 0;
+      h.centros_activos_padron = 0;
+      h.biomasa_padron_ton = 0;
     }
   });
 
