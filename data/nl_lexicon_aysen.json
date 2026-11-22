@@ -706,8 +706,8 @@
     {
       "id": "traslado_coyhaique_hrs",
       "canonicalId": "wp05_tiempo_hospital_hrs",
-      "name": "Tiempo de Traslado Terrestre a Coyhaique",
-      "shortName": "Tiempo a Coyhaique",
+      "name": "Tiempo de Derivación Médica al Hospital Regional Coyhaique (hrs)",
+      "shortName": "Derivación Médica Coyhaique",
       "unit": "horas",
       "hub": "salud",
       "hubTitle": "VIII. Salud",
@@ -723,7 +723,13 @@
         "horas al hospital",
         "demora en llegar",
         "cuanto se demora",
-        "distancia hospital regional"
+        "distancia hospital regional",
+        "tiempo de traslado a coyhaique en ambulancia",
+        "traslado en ambulancia",
+        "derivacion medica a coyhaique",
+        "traslado a coyhaique",
+        "horas ambulancia",
+        "traslado hospital regional"
       ]
     },
     {
@@ -2722,6 +2728,503 @@
         "padron sobre poblacion",
         "electores sobre censo",
         "padron vs censo"
+      ]
+    },
+    {
+      "id": "tasa_vif_100k",
+      "name": "Tasa de Denuncias por Violencia Intrafamiliar VIF (c/100k hab)",
+      "shortName": "Tasa VIF (c/100k)",
+      "unit": "por 100k hab",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 26,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "violencia intrafamiliar",
+        "vif",
+        "denuncias vif",
+        "tasa vif",
+        "violencia familiar",
+        "vif por comuna"
+      ]
+    },
+    {
+      "id": "tasa_dmcs_100k",
+      "name": "Tasa de Delitos de Mayor Connotación Social DMCS (c/100k hab)",
+      "shortName": "Tasa DMCS (c/100k)",
+      "unit": "por 100k hab",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 26,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "delitos de mayor connotacion social",
+        "dmcs",
+        "tasa dmcs",
+        "delitos",
+        "delincuencia",
+        "connotacion social",
+        "cead",
+        "criminalidad",
+        "seguridad ciudadana"
+      ]
+    },
+    {
+      "id": "escuelas_rurales_multigrado_n",
+      "name": "Escuelas Rurales Multigrado SLEP (n°)",
+      "shortName": "Escuelas Rurales Multigrado",
+      "unit": "escuelas",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "escuelas rurales multigrado",
+        "escuelas multigrado",
+        "escuelas rurales slep"
+      ]
+    },
+    {
+      "id": "liceos_urbanos_n",
+      "name": "Liceos de Enseñanza Media HC/TP (n°)",
+      "shortName": "Liceos Media HC/TP",
+      "unit": "liceos",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "liceos urbanos",
+        "liceos de ensenanza media",
+        "liceos"
+      ]
+    },
+    {
+      "id": "ratio_pobreza_multidim_vs_ingresos",
+      "name": "Ratio Pobreza Multidimensional / Pobreza por Ingresos (veces)",
+      "shortName": "Ratio Pobreza Multidim./Ingresos",
+      "unit": "ratio",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ratio pobreza multidimensional",
+        "brecha pobreza multidimensional ingresos"
+      ]
+    },
+    {
+      "id": "deficit_habitacional_total_por_1000_hab",
+      "name": "Déficit Habitacional Cuantitativo cada 1.000 Habitantes",
+      "shortName": "Déficit Hab. c/1.000 hab",
+      "unit": "viv./1.000 hab",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "deficit habitacional por cada 1000 habitantes",
+        "deficit habitacional cada mil habitantes",
+        "deficit habitacional relativo"
+      ]
+    },
+    {
+      "id": "matricula_ed_superior_sies",
+      "name": "Matrícula de Educación Superior SIES (estudiantes)",
+      "shortName": "Matrícula Ed. Superior SIES",
+      "unit": "estudiantes",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "educacion superior",
+        "matricula de educacion superior",
+        "matricula educacion superior sies",
+        "matricula superior",
+        "sies",
+        "cft estatal",
+        "inacap"
+      ]
+    },
+    {
+      "id": "establecimientos_slep_aysen",
+      "name": "Establecimientos Escolares Públicos SLEP Aysén (colegios)",
+      "shortName": "Establecimientos SLEP",
+      "unit": "colegios",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "establecimientos escolares slep",
+        "establecimientos slep",
+        "establecimientos escolares",
+        "colegios slep",
+        "escuelas slep"
+      ]
+    },
+    {
+      "id": "indice_masculinidad",
+      "name": "Índice de Masculinidad Comunal (Hombres por cada 100 Mujeres)",
+      "shortName": "Índice de Masculinidad",
+      "unit": "hombres/100 mujeres",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "indice de masculinidad",
+        "masculinidad",
+        "hombres por mujeres",
+        "razon de masculinidad"
+      ]
+    },
+    {
+      "id": "cobertura_ssr_apr_familias",
+      "name": "Beneficiarios SSR/APR (personas)",
+      "shortName": "Beneficiarios SSR/APR",
+      "unit": "personas",
+      "hub": "social",
+      "hubTitle": "VI. Social",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "beneficiarios ssr",
+        "beneficiarios apr",
+        "agua potable rural personas",
+        "cobertura ssr personas"
+      ]
+    },
+    {
+      "id": "especies_exoticas_invasoras_n",
+      "name": "Complejos de Especies Exóticas Invasoras Presentes (n°)",
+      "shortName": "Especies Invasoras EEI",
+      "unit": "especies",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad y Ambiente",
+      "nodeId": 29,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "especies exoticas invasoras",
+        "especies invasoras",
+        "eei",
+        "vison",
+        "castor",
+        "didymo",
+        "jabali",
+        "lupino",
+        "chinook asilvestrado"
+      ]
+    },
+    {
+      "id": "episodios_gec_mp25_anual",
+      "name": "Episodios Críticos GEC MP2.5 (>110 µg/m³, días/año)",
+      "shortName": "Episodios GEC MP2.5",
+      "unit": "días/año",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad y Ambiente",
+      "nodeId": 30,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "episodios gec",
+        "episodios criticos mp25",
+        "preemergencia y emergencia",
+        "episodios sobre 110"
+      ]
+    },
+    {
+      "id": "expedientes_fiscalizacion_sma_n",
+      "name": "Expedientes de Fiscalización Ambiental SMA (n°)",
+      "shortName": "Expedientes SMA",
+      "unit": "expedientes",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad y Ambiente",
+      "nodeId": 31,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "expedientes de fiscalizacion sma",
+        "expedientes sma",
+        "fiscalizacion sma",
+        "justicia ambiental sma",
+        "sanciones sma"
+      ]
+    },
+    {
+      "id": "amenaza_volcanica_sismica_idx",
+      "name": "Índice Integrado de Amenaza Volcánica y Sísmica (0-100)",
+      "shortName": "Amenaza Volcánica/Sísmica",
+      "unit": "índice (0-100)",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad y Ambiente",
+      "nodeId": 31,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "amenaza volcanica",
+        "amenaza sismica",
+        "volcanes activos rnvv",
+        "sismos usgs",
+        "indice amenaza volcanica"
+      ]
+    },
+    {
+      "id": "informalidad_lena_pct",
+      "name": "Informalidad y Leña Húmeda en Comercio Local (%)",
+      "shortName": "Informalidad Leña (%)",
+      "unit": "%",
+      "hub": "energia",
+      "hubTitle": "III. Energía",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "informalidad lena",
+        "informalidad de la lena",
+        "lena informal",
+        "lena humeda",
+        "comercio informal lena"
+      ]
+    },
+    {
+      "id": "establecimientos_aps_n",
+      "name": "Establecimientos de Atención Primaria APS (n°)",
+      "shortName": "Establecimientos APS",
+      "unit": "establecimientos",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "establecimientos aps",
+        "dispositivos aps",
+        "centros aps",
+        "red aps",
+        "recintos aps",
+        "cesfam y postas",
+        "atencion primaria"
+      ]
+    },
+    {
+      "id": "barometro_evaluacion_acceso_salud_pct",
+      "name": "Evaluación Ciudadana Acceso a Salud Barómetro B3_A (%)",
+      "shortName": "Evaluación Acceso Salud B3_A",
+      "unit": "%",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 39,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "evaluacion ciudadana del acceso a salud",
+        "evaluacion acceso salud",
+        "barometro salud",
+        "acceso a salud barometro",
+        "satisfaccion salud b3 a"
+      ]
+    },
+    {
+      "id": "centros_culturales_n",
+      "name": "Centros Culturales y Casas de la Cultura (n°)",
+      "shortName": "Centros Culturales",
+      "unit": "centros",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 32,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "centros culturales",
+        "casas de la cultura",
+        "infraestructura cultural"
+      ]
+    },
+    {
+      "id": "organizaciones_comunitarias_n",
+      "name": "Organizaciones Comunitarias y Territoriales Activas (n°)",
+      "shortName": "Organizaciones Comunitarias",
+      "unit": "organizaciones",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "organizaciones comunitarias",
+        "tejido asociativo",
+        "clubes camperos",
+        "comites campesinos"
+      ]
+    },
+    {
+      "id": "cultores_patrimonio_inmaterial_n",
+      "name": "Cultores Patrimonio Cultural Inmaterial SIGPA (n°)",
+      "shortName": "Cultores SIGPA",
+      "unit": "cultores",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "patrimonio cultural inmaterial",
+        "cultores sigpa",
+        "tejueleros",
+        "carpinteros de ribera",
+        "jineteadas"
+      ]
+    },
+    {
+      "id": "gasto_cultura_per_capita_clp",
+      "name": "Gasto Cultural Municipal Per Cápita ($ CLP/hab)",
+      "shortName": "Gasto Cultura Per Cápita",
+      "unit": "$ CLP/hab",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gasto cultural per capita",
+        "gasto municipal en cultura per capita",
+        "gasto cultura por habitante"
+      ]
+    },
+    {
+      "id": "fndr_8pct_cultura_mclp",
+      "name": "Inversión FNDR 8% Cultura y Patrimonio (M$ CLP)",
+      "shortName": "FNDR 8% Cultura",
+      "unit": "M$ CLP",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fndr 8% cultura",
+        "fndr 8 cultura",
+        "8% fndr cultura",
+        "fondo 8% cultura"
+      ]
+    },
+    {
+      "id": "gasto_municipal_cultura_mclp",
+      "name": "Gasto Municipal Total en Cultura SINIM (M$ CLP)",
+      "shortName": "Gasto Municipal Cultura",
+      "unit": "M$ CLP",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gasto municipal en cultura",
+        "gasto municipal cultura",
+        "presupuesto municipal cultura"
+      ]
+    },
+    {
+      "id": "fondos_cultura_adjudicados_mclp",
+      "name": "Fondos de Cultura MINCAP Adjudicados (M$ CLP)",
+      "shortName": "Fondos Cultura MINCAP",
+      "unit": "M$ CLP",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fondos de cultura mincap",
+        "fondos cultura mincap adjudicados",
+        "fondart",
+        "fondos mincap"
+      ]
+    },
+    {
+      "id": "evaluacion_uaysen_promedio_i8",
+      "name": "Evaluación Ciudadana Universidad de Aysén Barómetro I8 (nota 1-7)",
+      "shortName": "Evaluación UAysén I8",
+      "unit": "nota (1-7)",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "evaluacion uaysen",
+        "evaluacion universidad de aysen",
+        "evaluacion ciudadana de la universidad de aysen",
+        "evaluacion de la uaysen",
+        "nota uaysen",
+        "nota universidad de aysen",
+        "valoracion uaysen",
+        "reputacion uaysen",
+        "barometro uaysen i8",
+        "calificacion uaysen"
+      ]
+    },
+    {
+      "id": "aporte_universidades_f4g_pct",
+      "name": "Aporte Percibido de Universidades al Desarrollo F4_G (%)",
+      "shortName": "Aporte Universidades F4_G",
+      "unit": "%",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "aporte de las universidades",
+        "aporte universidades",
+        "rol universidades",
+        "f4 g",
+        "f4_g"
+      ]
+    },
+    {
+      "id": "proporcion_ciencia_endogena_pct",
+      "name": "Proporción de Proyectos ANID con Ciencia Endógena (%)",
+      "shortName": "% Ciencia Endógena ANID",
+      "unit": "%",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 35,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ciencia endogena",
+        "ciencia local vs extrarregional",
+        "extractivismo cientifico",
+        "investigacion endogena"
+      ]
+    },
+    {
+      "id": "matricula_educacion_superior_sies_n",
+      "name": "Matrícula Educación Superior SIES por Sede Comunal (estudiantes)",
+      "shortName": "Matrícula SIES Comunal",
+      "unit": "estudiantes",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "matricula educacion superior comunal",
+        "sede sies"
       ]
     }
   ],

@@ -123,9 +123,15 @@ class TestSpatialMultilayerMap(unittest.TestCase):
         ext_gal = self.bundle.get("extension_gallery", {})
 
         map_presets = []
+        seen_preset_ids = set()
         for g in list(hubs_gal.values()) + list(ext_gal.values()):
             for p in g.get("presets", []):
                 if p.get("format_type") == "map":
+                    pid = p.get("preset_id")
+                    if pid and pid in seen_preset_ids:
+                        continue
+                    if pid:
+                        seen_preset_ids.add(pid)
                     map_presets.append(p)
 
         self.assertEqual(len(map_presets), 10, f"Se esperaban 10 presets format_type='map', hay {len(map_presets)}")

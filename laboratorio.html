@@ -6093,11 +6093,11 @@
           desc: 'Mide los traslados aéreos de pacientes críticos desde localidades aisladas.'
         },
         'traslado_coyhaique_hrs': {
-          title: 'Tiempo de traslado terrestre hacia Coyhaique (horas)',
-          short: 'Traslado a Coyhaique',
+          title: 'Tiempo de Derivación Médica en Ambulancia/Barcaza al Hospital Regional Coyhaique (hrs)',
+          short: 'Derivación Médica Coyhaique',
           unitLabel: 'horas',
-          sourceTag: 'Vialidad / SAMU',
-          desc: 'Mide las horas de viaje por carretera hacia el principal centro de salud regional.'
+          sourceTag: 'SAMU / SSA',
+          desc: 'Mide las horas de derivación clínica de urgencia en ambulancia o barcaza hacia el Hospital Regional Coyhaique.'
         },
         'dias_sobre_norma_mp25': {
           title: 'Días al año con contaminación crítica del aire',
@@ -6296,13 +6296,13 @@
           desc: 'Distancia en kilómetros por ruta principal hasta la capital regional Coyhaique (MOP Dirección de Vialidad).'
         },
         'tiempo_viaje_coyhaique_hrs': {
-          title: 'Tiempo de Viaje Terrestre a Coyhaique',
-          short: 'Tiempo a Coyhaique',
+          title: 'Tiempo de Viaje en Transporte Público Multimodal a Coyhaique (hrs)',
+          short: 'Viaje Transporte Público Coyhaique',
           unit: 'horas',
           unitLabel: 'horas',
           source: 'MOP Vialidad',
           sourceTag: 'MOP-Vialidad',
-          desc: 'Tiempo estimado de traslado terrestre en horas hasta la capital regional Coyhaique (MOP Dirección de Vialidad).'
+          desc: 'Tiempo estimado de traslado en transporte público multimodal en horas hasta Coyhaique (MOP Dirección de Vialidad).'
         },
         'dependencia_barcaza_nivel': {
           title: 'Nivel de Dependencia de Barcaza',
@@ -6368,13 +6368,13 @@
           desc: 'Cantidad de comités y cooperativas de Agua Potable Rural / Sistemas Sanitarios Rurales activos (DOH MOP).'
         },
         'cobertura_ssr_apr_familias': {
-          title: 'Familias con Cobertura de Agua Potable Rural (SSR)',
-          short: 'Familias Cobertura SSR',
-          unit: 'familias',
-          unitLabel: 'familias',
-          source: 'DOH',
+          title: 'Beneficiarios SSR/APR (personas)',
+          short: 'Beneficiarios SSR/APR',
+          unit: 'personas',
+          unitLabel: 'personas',
+          source: 'DOH MOP',
           sourceTag: 'DOH',
-          desc: 'Cantidad de arranques y familias beneficiarias abastecidas por sistemas de agua potable rural (DOH MOP).'
+          desc: 'Población total beneficiaria abastecida por sistemas sanitarios rurales de agua potable SSR/APR (DOH MOP).'
         },
         'ganado_bovino_cabezas': {
           title: 'Existencia de Ganado Bovino',
@@ -7195,8 +7195,24 @@
         amerb_decretadas: { title: 'Áreas de Manejo Bentónico (AMERB) Decretadas', short: 'AMERB Decretadas', unit: 'áreas' },
         amerb_operativas: { title: 'Áreas de Manejo Bentónico (AMERB) Operativas', short: 'AMERB Operativas', unit: 'áreas' },
         espera_no_ges_n: { title: 'Personas en Lista de Espera de Especialidad Médica (No GES)', short: 'Lista de Espera No GES', unit: 'interconsultas' },
-        traslado_coyhaique_hrs: { title: 'Tiempo de Traslado Terrestre al Hospital Regional (Coyhaique)', short: 'Traslado a Hospital Coyhaique', unit: 'horas', hubId: 'salud' },
-        tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje Terrestre a Coyhaique', short: 'Tiempo de Viaje a Coyhaique', unit: 'horas', hubId: 'gobernanza' },
+        traslado_coyhaique_hrs: { title: 'Tiempo de Derivación Médica en Ambulancia/Barcaza al Hospital Regional Coyhaique (hrs)', short: 'Derivación Médica Coyhaique', unit: 'horas', hubId: 'salud' },
+        tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje en Transporte Público Multimodal a Coyhaique (hrs)', short: 'Viaje Multimodal Coyhaique', unit: 'horas', hubId: 'gobernanza' },
+        cobertura_ssr_apr_familias: { title: 'Beneficiarios SSR/APR (personas)', short: 'Beneficiarios SSR/APR', unit: 'personas', hubId: 'social' },
+        tasa_dmcs_100k: { title: 'Tasa de Delitos de Mayor Connotación Social DMCS (c/100k hab)', short: 'Tasa DMCS (c/100k)', unit: 'por 100k hab', hubId: 'social' },
+        tasa_vif_100k: { title: 'Tasa de Denuncias por Violencia Intrafamiliar VIF (c/100k hab)', short: 'Tasa VIF (c/100k)', unit: 'por 100k hab', hubId: 'social' },
+        escuelas_rurales_multigrado_n: { title: 'Escuelas Rurales Multigrado SLEP (n°)', short: 'Escuelas Rurales Multigrado', unit: 'escuelas', hubId: 'social' },
+        liceos_urbanos_n: { title: 'Liceos de Enseñanza Media HC/TP (n°)', short: 'Liceos Media HC/TP', unit: 'liceos', hubId: 'social' },
+        ratio_pobreza_multidim_vs_ingresos: { title: 'Ratio Pobreza Multidimensional / Pobreza por Ingresos (veces)', short: 'Ratio Pobreza Multidim./Ingresos', unit: 'ratio', hubId: 'social' },
+        deficit_habitacional_total_por_1000_hab: { title: 'Déficit Habitacional Cuantitativo cada 1.000 Habitantes', short: 'Déficit Hab. c/1.000 hab', unit: 'viv./1.000 hab', hubId: 'social' },
+        especies_exoticas_invasoras_n: { title: 'Complejos de Especies Exóticas Invasoras Presentes (n°)', short: 'Especies Invasoras EEI', unit: 'especies', hubId: 'biodiversidad' },
+        episodios_gec_mp25_anual: { title: 'Episodios Críticos GEC MP2.5 (>110 µg/m³, días/año)', short: 'Episodios GEC MP2.5', unit: 'días/año', hubId: 'biodiversidad' },
+        expedientes_fiscalizacion_sma_n: { title: 'Expedientes de Fiscalización Ambiental SMA (n°)', short: 'Expedientes SMA', unit: 'expedientes', hubId: 'biodiversidad' },
+        amenaza_volcanica_sismica_idx: { title: 'Índice Integrado de Amenaza Volcánica y Sísmica (0-100)', short: 'Amenaza Volcánica/Sísmica', unit: 'índice (0-100)', hubId: 'biodiversidad' },
+        centros_culturales_n: { title: 'Centros Culturales y Casas de la Cultura (n°)', short: 'Centros Culturales', unit: 'centros', hubId: 'cultura' },
+        organizaciones_comunitarias_n: { title: 'Organizaciones Comunitarias y Territoriales Activas (n°)', short: 'Organizaciones Comunitarias', unit: 'organizaciones', hubId: 'cultura' },
+        cultores_patrimonio_inmaterial_n: { title: 'Cultores Patrimonio Cultural Inmaterial SIGPA (n°)', short: 'Cultores SIGPA', unit: 'cultores', hubId: 'cultura' },
+        aporte_universidades_f4g_pct: { title: 'Aporte Percibido de Universidades al Desarrollo Regional F4_G (%)', short: 'Aporte Universidades F4_G', unit: '%', hubId: 'ctci' },
+        proporcion_ciencia_endogena_pct: { title: 'Proporción de Proyectos ANID con Capacidad Científica Endógena (%)', short: '% Ciencia Endógena ANID', unit: '%', hubId: 'ctci' },
         medicos_por_mil_hab: { title: 'Médicos por cada 1.000 Habitantes', short: 'Médicos por 1.000 hab.', unit: 'médicos/1.000 hab' },
         gasto_personal_pct: { title: 'Gasto Municipal en Personal (% del Presupuesto)', short: '% Gasto en Personal Municipal', unit: '%' },
         inversion_directa_pct: { title: 'Inversión Municipal Directa (% del Presupuesto)', short: '% Inversión Municipal Directa', unit: '%' },
@@ -7369,24 +7385,24 @@
         '5C. Uso del Suelo, Agro y Minería': ['parcelaciones_sag_n', 'suelo_fiscal_bbnn_pct', 'suelo_privado_pct', 'ganado_bovino_cabezas', 'ganado_ovino_cabezas', 'cabezas_bovinos_caf', 'cabezas_ovinos_caf', 'plantaciones_ha', 'concesiones_mineras_ha'],
 
         '6A. Demografía y Estructura Territorial': ['poblacion_censo_2024', 'porcentaje_regional_pct', 'superficie_km2', 'densidad_hab_km2', 'ruralidad_censo_2024_pct', 'indice_envejecimiento', 'indice_masculinidad', 'sp_poblacion_regional_proyectada'],
-        '6B. Pobreza, Vivienda y Agua Rural (SSR)': ['pobreza_multidim_pct', 'pobreza_ingresos_pct', 'pobreza_ingresos_casen_pct', 'pobreza_multidimensional_casen_pct', 'rsh_carencia_servicios_basicos_jun2026_pct', 'rsh_hacinamiento_jun2026_pct', 'deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'deficit_habitacional_cuantitativo_minvu', 'deficit_habitacional_cualitativo_minvu', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias', 'comites_ssr_apr_doh', 'beneficiarios_ssr_apr_doh'],
-        '6C. Educación, Seguridad y Cohesión': ['matricula_escolar', 'establecimientos_escolares_n', 'establecimientos_slep_aysen', 'tasa_vif_regional_por_100k_hab', 'tasa_dmcs_regional_por_100k_hab', 'juntas_vecinos_activas', 'barometro_orgullo_identidad_pct', 'barometro_orgullo_identidad_pct_hist', 'barometro_redes_apoyo_comunitario_pct', 'barometro_redes_apoyo_comunitario_pct_hist', 'barometro_intencion_migracion_juvenil_pct', 'barometro_intencion_migracion_juvenil_pct_hist'],
+        '6B. Pobreza, Vivienda y Agua Rural (SSR)': ['pobreza_multidim_pct', 'pobreza_ingresos_pct', 'pobreza_ingresos_casen_pct', 'pobreza_multidimensional_casen_pct', 'ratio_pobreza_multidim_vs_ingresos', 'rsh_carencia_servicios_basicos_jun2026_pct', 'rsh_hacinamiento_jun2026_pct', 'deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'deficit_habitacional_total_por_1000_hab', 'deficit_habitacional_cuantitativo_minvu', 'deficit_habitacional_cualitativo_minvu', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias', 'comites_ssr_apr_doh', 'beneficiarios_ssr_apr_doh'],
+        '6C. Educación, Seguridad y Cohesión': ['matricula_escolar', 'establecimientos_escolares_n', 'establecimientos_slep_aysen', 'escuelas_rurales_multigrado_n', 'liceos_urbanos_n', 'tasa_dmcs_100k', 'tasa_vif_100k', 'tasa_vif_regional_por_100k_hab', 'tasa_dmcs_regional_por_100k_hab', 'juntas_vecinos_activas', 'barometro_orgullo_identidad_pct', 'barometro_orgullo_identidad_pct_hist', 'barometro_redes_apoyo_comunitario_pct', 'barometro_redes_apoyo_comunitario_pct_hist', 'barometro_intencion_migracion_juvenil_pct', 'barometro_intencion_migracion_juvenil_pct_hist'],
 
-        '7A. Bosques, SNASPE y Fauna': ['superficie_snaspe_pct', 'cobertura_vegetal_nativa_ha', 'bosque_nativo_ha', 'cobertura_vegetal_pct', 'fauna_amenazada_n', 'superficie_bosque_nativo_snaspe_miles_ha_hist', 'superficie_incendios_forestales_conaf_ha_hist', 'barometro_tension_desarrollo_conservacion_pct', 'barometro_tension_desarrollo_conservacion_pct_hist'],
+        '7A. Bosques, SNASPE y Fauna': ['superficie_snaspe_pct', 'cobertura_vegetal_nativa_ha', 'bosque_nativo_ha', 'cobertura_vegetal_pct', 'fauna_amenazada_n', 'especies_exoticas_invasoras_n', 'expedientes_fiscalizacion_sma_n', 'superficie_bosque_nativo_snaspe_miles_ha_hist', 'superficie_incendios_forestales_conaf_ha_hist', 'barometro_tension_desarrollo_conservacion_pct', 'barometro_tension_desarrollo_conservacion_pct_hist'],
         '7B. Glaciares y Recursos Hídricos (DGA)': ['glaciares_dga_n', 'superficie_glaciar_km2', 'superficie_glaciares_km2', 'daa_consuntivos_m3s', 'daa_no_consuntivos_m3s', 'sp_retroceso_glaciar_san_rafael', 'sp_velocidad_glaciar_jorge_montt', 'sp_limnigrafo_glof_colonia'],
-        '7C. Calidad del Aire y Clima Invernal': ['dias_sobre_norma_mp25', 'dias_sobre_norma_mp25_hist', 'mp25_invernal_coyhaique', 'sp_mp25_invernal_coyhaique', 'mp25_coyhaique_mensual', 'temperatura_minima_balmaceda', 'sp_temperatura_minima_balmaceda', 'sp_precipitacion_extrema_tortel', 'sp_sismicidad_volcan_hudson'],
+        '7C. Calidad del Aire y Clima Invernal': ['dias_sobre_norma_mp25', 'episodios_gec_mp25_anual', 'amenaza_volcanica_sismica_idx', 'dias_sobre_norma_mp25_hist', 'mp25_invernal_coyhaique', 'sp_mp25_invernal_coyhaique', 'mp25_coyhaique_mensual', 'temperatura_minima_balmaceda', 'sp_temperatura_minima_balmaceda', 'sp_precipitacion_extrema_tortel', 'sp_sismicidad_volcan_hudson'],
 
         '8A. Infraestructura y Dotación Asistencial': ['camas_hospitalarias', 'camas_psiquiatricas_uhce', 'postas_salud_rural', 'establecimientos_aps_n', 'medicos_por_mil_hab'],
         '8B. Listas de Espera, Urgencias y Evacuación': ['espera_no_ges_n', 'mediana_espera_especialidad_dias', 'mediana_espera_quirurgica_dias', 'urgencias_respiratorias_pct', 'urgencias_respiratorias_anuales_ssa', 'egresos_hospitalarios_red_ssa', 'traslado_coyhaique_hrs', 'aeroevacuaciones_samu_n', 'barometro_evaluacion_acceso_salud_pct', 'barometro_evaluacion_acceso_salud_pct_hist'],
         '8C. Salud Preventiva, Esperanza de Vida y Mortalidad': ['esperanza_vida_total_anos', 'cobertura_empam_pct', 'cobertura_pscv_pct', 'tasa_mortalidad_cancer_gastrico_100k', 'tasa_mortalidad_cancer_vesicula_100k', 'tasa_mortalidad_suicidio_100k'],
 
-        '9A. Infraestructura y Patrimonio Protegido': ['total_espacios_culturales', 'museos_count', 'museos_espacios_n', 'bibliotecas_publicas_count', 'bibliotecas_snbp_n', 'monumentos_nacionales_count'],
+        '9A. Infraestructura y Patrimonio Protegido': ['total_espacios_culturales', 'museos_count', 'museos_espacios_n', 'bibliotecas_publicas_count', 'bibliotecas_snbp_n', 'monumentos_nacionales_count', 'centros_culturales_n'],
         '9B. Financiamiento Cultural (SINIM / MINCAP / GORE)': ['gasto_cultura_per_capita_clp', 'gasto_cultural_per_capita_clp', 'gasto_municipal_cultura_mclp', 'fondart_fndr_mclp', 'fondos_cultura_adjudicados_mclp', 'fndr_8pct_cultura_mclp', 'monto_adjudicado_mclp', 'proyectos_cultura_adjudicados_n'],
-        '9C. Participación e Identidad Indígena': ['participacion_cultural_pct_c2', 'nota_percepcion_cultura_b4b', 'autoidentificacion_indigena_pct', 'comunidades_indigenas_conadi'],
+        '9C. Participación e Identidad Indígena': ['participacion_cultural_pct_c2', 'nota_percepcion_cultura_b4b', 'autoidentificacion_indigena_pct', 'comunidades_indigenas_conadi', 'organizaciones_comunitarias_n', 'cultores_patrimonio_inmaterial_n'],
 
-        '10A. Capacidad Instalada y Capital Humano': ['centros_y_estaciones_ctci_count', 'investigadores_residentes_est', 'investigadores_residentes', 'matricula_ed_superior_sies'],
-        '10B. Proyectos y Financiamiento (ANID / CORFO)': ['total_proyectos_ctci', 'proyectos_ctci_total', 'proyectos_anid_n', 'proyectos_anid_locales_count', 'proyectos_anid_extrarregionales_count', 'monto_anid_acumulado_mclp', 'monto_anid_mclp', 'proyectos_corfo_innova_count', 'monto_corfo_innova_mclp', 'innovacion_corfo_mclp', 'anid_macroareas_ocde_historico', 'anid_innovacion_aplicada_historico'],
-        '10C. Valoración Social y Universidad de Aysén': ['evaluacion_uaysen_promedio_i8', 'percepcion_ctci_prioritaria_pct_i1i', 'barometro']
+        '10A. Capacidad Instalada y Capital Humano': ['centros_y_estaciones_ctci_count', 'investigadores_residentes_est', 'investigadores_residentes', 'matricula_ed_superior_sies', 'matricula_educacion_superior_sies_n'],
+        '10B. Proyectos y Financiamiento (ANID / CORFO)': ['total_proyectos_ctci', 'proyectos_ctci_total', 'proyectos_anid_n', 'proyectos_anid_locales_count', 'proyectos_anid_extrarregionales_count', 'proporcion_ciencia_endogena_pct', 'monto_anid_acumulado_mclp', 'monto_anid_mclp', 'proyectos_corfo_innova_count', 'monto_corfo_innova_mclp', 'innovacion_corfo_mclp', 'anid_macroareas_ocde_historico', 'anid_innovacion_aplicada_historico'],
+        '10C. Valoración Social y Universidad de Aysén': ['evaluacion_uaysen_promedio_i8', 'percepcion_ctci_prioritaria_pct_i1i', 'aporte_universidades_f4g_pct', 'barometro']
       };
 
       const SUBGROUP_BY_VAR = {};
@@ -7808,6 +7824,7 @@
           'monto_anid_mclp',
           'innovacion_corfo_mclp',
           'investigadores_residentes',
+          'matricula_educacion_superior_sies_n',
           'porcentaje_regional_pct',
           // Desduplicación simétrica de variables redundantes idénticas
           'pobreza_ingresos_casen_pct',
@@ -7826,15 +7843,15 @@
 
         const hubInference = (k) => {
           if (/salud|medicos|urgencias|aeroevacuaciones|camas_hosp|traslado_coyhaique|espera_no_ges|postas_salud|establecimientos_aps|esperanza_vida|empam|pscv|uhce|espera_especialidad|espera_quirurgica|cancer_|suicidio|barometro_evaluacion_acceso_salud/i.test(k)) return 'salud';
-          if (/museos|bibliotecas|monumentos|fondos_cultura|gasto_municipal_cultura|gasto_cultura|fndr_8pct_cultura|percepcion_cultura|participacion_cultural|espacios_culturales|fondart|indigena|conadi/i.test(k)) return 'cultura';
-          if (/ctci|anid|corfo_innova|innovacion_corfo|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones/i.test(k)) return 'ctci';
+          if (/museos|bibliotecas|monumentos|centros_culturales|organizaciones_comunitarias|cultores_patrimonio|fondos_cultura|gasto_municipal_cultura|gasto_cultura|fndr_8pct_cultura|percepcion_cultura|participacion_cultural|espacios_culturales|fondart|indigena|conadi/i.test(k)) return 'cultura';
+          if (/ctci|anid|corfo_innova|innovacion_corfo|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones|universidades_f4g|ciencia_endogena/i.test(k)) return 'ctci';
           if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit|tarifa_adr|revpar|estadia_promedio|tasa_ocupacion_estival|tasa_ocupacion_invernal|concentracion_estival|visitas_por_pernoctacion|visitas_por_cama|guardaparque/i.test(k)) return 'turismo';
           if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca/i.test(k)) return 'salmonicultura';
           if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena|participacion_diesel_matriz|indice_aislamiento_multimodal/i.test(k)) return 'energia';
           if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|royalty_fet|ingresos_mun_bcn|participacion_presidencial|participacion_municipales|padron_electoral|ratio_padron|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
-          if (/rsh_|ruralidad_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|matricula_escolar|establecimientos_escolares|slep_aysen|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
+          if (/rsh_|ruralidad_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|ratio_pobreza_multidim|matricula_escolar|establecimientos_escolares|escuelas_rurales_multigrado|liceos_urbanos|slep_aysen|tasa_dmcs|tasa_vif|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
           if (/seia|empresas_sii|trabajadores_sii|ventas_sii|ventas_por_empresa|concesiones_mineras|parcelaciones|suelo_fiscal_bbnn|suelo_privado|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
-          if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|fauna|cuenca_bna|barometro_tension_desarrollo_conservacion/i.test(k)) return 'biodiversidad';
+          if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|episodios_gec_mp25|amenaza_volcanica_sismica|especies_exoticas_invasoras|expedientes_fiscalizacion_sma|fauna|cuenca_bna|barometro_tension_desarrollo_conservacion/i.test(k)) return 'biodiversidad';
           return 'social';
         };
 
@@ -7843,6 +7860,9 @@
           museos_count: { title: 'Museos Registrados (RMC)', short: 'Museos RMC', unit: 'museos', hubId: 'cultura', agg: 'sum' },
           bibliotecas_publicas_count: { title: 'Bibliotecas Públicas (SNBP)', short: 'Bibliotecas SNBP', unit: 'bibliotecas', hubId: 'cultura', agg: 'sum' },
           monumentos_nacionales_count: { title: 'Monumentos Nacionales Declarados (CMN)', short: 'Monumentos CMN', unit: 'monumentos', hubId: 'cultura', agg: 'sum' },
+          centros_culturales_n: { title: 'Centros Culturales y Casas de la Cultura (n°)', short: 'Centros Culturales', unit: 'centros', hubId: 'cultura', agg: 'sum' },
+          organizaciones_comunitarias_n: { title: 'Organizaciones Comunitarias y Territoriales Activas (n°)', short: 'Organizaciones Comunitarias', unit: 'organizaciones', hubId: 'cultura', agg: 'sum' },
+          cultores_patrimonio_inmaterial_n: { title: 'Cultores Patrimonio Cultural Inmaterial SIGPA (n°)', short: 'Cultores SIGPA', unit: 'cultores', hubId: 'cultura', agg: 'sum' },
           gasto_cultura_per_capita_clp: { title: 'Gasto Municipal en Cultura per Cápita', short: 'Gasto Cultura per Cápita', unit: '$ CLP/hab', hubId: 'cultura', agg: 'mean' },
           gasto_municipal_cultura_mclp: { title: 'Gasto Municipal Total en Cultura (SINIM)', short: 'Gasto Municipal Cultura', unit: 'M$ CLP', hubId: 'cultura', agg: 'sum' },
           fondos_cultura_adjudicados_mclp: { title: 'Subtotal Fondos Sectoriales MINCAP Adjudicados (Solo FONDART)', short: 'Solo FONDART (MINCAP)', unit: 'M$ CLP', hubId: 'cultura', agg: 'sum' },
@@ -7859,10 +7879,25 @@
           investigadores_residentes_est: { title: 'Investigadores Residentes Estimados (EJC)', short: 'Investigadores Residentes', unit: 'investigadores', hubId: 'ctci', agg: 'sum' },
           evaluacion_uaysen_promedio_i8: { title: 'Evaluación Desempeño Universidad de Aysén', short: 'Evaluación UAysén I8', unit: 'nota (1-7)', hubId: 'ctci', agg: 'mean' },
           percepcion_ctci_prioritaria_pct_i1i: { title: 'Percepción Actividades CTCi Prioritarias', short: 'Prioridad CTCi I1_I', unit: '%', hubId: 'ctci', agg: 'mean' },
+          aporte_universidades_f4g_pct: { title: 'Aporte Percibido de Universidades al Desarrollo Regional F4_G (%)', short: 'Aporte Universidades F4_G', unit: '%', hubId: 'ctci', agg: 'mean' },
+          proporcion_ciencia_endogena_pct: { title: 'Proporción de Proyectos ANID con Capacidad Científica Endógena (%)', short: '% Ciencia Endógena ANID', unit: '%', hubId: 'ctci', agg: 'mean' },
+          cobertura_ssr_apr_familias: { title: 'Beneficiarios SSR/APR (personas)', short: 'Beneficiarios SSR/APR', unit: 'personas', hubId: 'social', agg: 'sum' },
+          tasa_dmcs_100k: { title: 'Tasa de Delitos de Mayor Connotación Social DMCS (c/100k hab)', short: 'Tasa DMCS (c/100k)', unit: 'por 100k hab', hubId: 'social', agg: 'mean' },
+          tasa_vif_100k: { title: 'Tasa de Denuncias por Violencia Intrafamiliar VIF (c/100k hab)', short: 'Tasa VIF (c/100k)', unit: 'por 100k hab', hubId: 'social', agg: 'mean' },
+          escuelas_rurales_multigrado_n: { title: 'Escuelas Rurales Multigrado SLEP (n°)', short: 'Escuelas Rurales Multigrado', unit: 'escuelas', hubId: 'social', agg: 'sum' },
+          liceos_urbanos_n: { title: 'Liceos de Enseñanza Media HC/TP (n°)', short: 'Liceos Media HC/TP', unit: 'liceos', hubId: 'social', agg: 'sum' },
+          ratio_pobreza_multidim_vs_ingresos: { title: 'Ratio Pobreza Multidimensional / Pobreza por Ingresos (veces)', short: 'Ratio Pobreza Multidim./Ingresos', unit: 'ratio', hubId: 'social', agg: 'mean' },
+          deficit_habitacional_total_por_1000_hab: { title: 'Déficit Habitacional Cuantitativo cada 1.000 Habitantes', short: 'Déficit Hab. c/1.000 hab', unit: 'viv./1.000 hab', hubId: 'social', agg: 'mean' },
+          fauna_amenazada_n: { title: 'Especies de Fauna Silvestre RCE Presentes por Comuna (n°)', short: 'Fauna RCE Comunal', unit: 'especies', hubId: 'biodiversidad', agg: 'mean' },
+          especies_exoticas_invasoras_n: { title: 'Complejos de Especies Exóticas Invasoras Presentes (n°)', short: 'Especies Invasoras EEI', unit: 'especies', hubId: 'biodiversidad', agg: 'mean' },
+          dias_sobre_norma_mp25: { title: 'Días al año con Superación Norma Diaria MP2.5 (>50 µg/m³)', short: 'Días sobre norma MP2.5', unit: 'días', hubId: 'biodiversidad', agg: 'mean' },
+          episodios_gec_mp25_anual: { title: 'Episodios Críticos GEC MP2.5 (>110 µg/m³, días/año)', short: 'Episodios GEC MP2.5', unit: 'días/año', hubId: 'biodiversidad', agg: 'mean' },
+          expedientes_fiscalizacion_sma_n: { title: 'Expedientes de Fiscalización Ambiental SMA (n°)', short: 'Expedientes SMA', unit: 'expedientes', hubId: 'biodiversidad', agg: 'sum' },
+          amenaza_volcanica_sismica_idx: { title: 'Índice Integrado de Amenaza Volcánica y Sísmica (0-100)', short: 'Amenaza Volcánica/Sísmica', unit: 'índice (0-100)', hubId: 'biodiversidad', agg: 'mean' },
           ha_snaspe_por_guardaparque: { title: 'Superficie Protegida SNASPE por cada Guardaparque CONAF', short: 'Hectáreas por Guardaparque', unit: 'ha/guardaparque', hubId: 'turismo', agg: 'mean' },
           medicos_por_mil_hab: { title: 'Médicos por cada 1.000 Habitantes', short: 'Médicos por 1.000 hab.', unit: 'médicos/1.000 hab', hubId: 'salud', agg: 'mean' },
-          traslado_coyhaique_hrs: { title: 'Tiempo de Traslado Terrestre al Hospital Regional (Coyhaique)', short: 'Traslado a Hospital Coyhaique', unit: 'horas', hubId: 'salud', agg: 'mean' },
-          tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje Terrestre a Coyhaique', short: 'Tiempo de Viaje a Coyhaique', unit: 'horas', hubId: 'gobernanza', agg: 'mean' },
+          traslado_coyhaique_hrs: { title: 'Tiempo de Derivación Médica en Ambulancia/Barcaza al Hospital Regional Coyhaique (hrs)', short: 'Derivación Médica Coyhaique', unit: 'horas', hubId: 'salud', agg: 'mean' },
+          tiempo_viaje_coyhaique_hrs: { title: 'Tiempo de Viaje en Transporte Público Multimodal a Coyhaique (hrs)', short: 'Viaje Multimodal Coyhaique', unit: 'horas', hubId: 'gobernanza', agg: 'mean' },
           desembarque_artesanal_ton: { title: 'Desembarque Pesquero Artesanal Comunal', short: 'Desembarque Artesanal', unit: 'ton/año', hubId: 'salmonicultura', agg: 'sum' },
           tasa_ocupacion_concesiones_pct: { title: 'Tasa de Operación de Concesiones Acuícolas (%)', short: 'Tasa Ocupación Acuícola', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
           proporcion_concesiones_en_snaspe_pct: { title: 'Proporción de Concesiones dentro de SNASPE (%)', short: '% Concesiones en SNASPE', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
@@ -7914,16 +7949,22 @@
             if (k === 'parcelaciones_sag_n') return 'parcelaciones';
             if (k === 'matricula_escolar' || k === 'matricula_ed_superior_sies') return 'estudiantes';
             if (k === 'sistemas_ssr_apr_n') return 'sistemas';
-            if (k === 'cobertura_ssr_apr_familias') return 'familias';
+            if (k === 'cobertura_ssr_apr_familias') return 'personas';
             if (k === 'postas_salud_rural') return 'postas';
             if (k === 'establecimientos_aps_n' || k === 'establecimientos_educacion_conectados_n') return 'establecimientos';
+            if (k === 'escuelas_rurales_multigrado_n') return 'escuelas';
+            if (k === 'liceos_urbanos_n') return 'liceos';
             if (k === 'aeroevacuaciones_samu_n') return 'evacuaciones/año';
-            if (k === 'fauna_amenazada_n') return 'especies';
+            if (k === 'fauna_amenazada_n' || k === 'especies_exoticas_invasoras_n') return 'especies';
             if (k === 'glaciares_dga_n') return 'glaciares';
             if (k === 'comunidades_indigenas_conadi') return 'comunidades';
+            if (k === 'expedientes_fiscalizacion_sma_n') return 'expedientes';
+            if (k === 'cultores_patrimonio_inmaterial_n') return 'cultores';
+            if (k === 'centros_culturales_n') return 'centros';
             if (k === 'fdt_ultima_milla_aprobado') return 'proyectos';
+            if (/^deficit_habitacional_total_por_1000_hab$/i.test(k)) return 'viv./1.000 hab';
             if (/^deficit_habitacional_/i.test(k)) return 'viviendas';
-            if (/tasa_mortalidad_.*100k/i.test(k)) return 'por 100k hab';
+            if (/tasa_dmcs_100k|tasa_vif_100k|tasa_mortalidad_.*100k/i.test(k)) return 'por 100k hab';
             if (/^(proyectos_|total_proyectos_ctci)/i.test(k) || /fndr_gore_.*_proyectos_n|fondos_concursables_gore_.*_n/i.test(k)) return 'proyectos';
             if (/_pct(_[a-z0-9]+)?$/i.test(k)) return '%';
             if (k.endsWith('_mclp')) return 'M$ CLP';
@@ -8263,7 +8304,9 @@
             shortName: 'Tasa Regional VIF',
             hubId: 'social', hubTitle: 'VI. Social', unit: 'Casos/100k hab', aggMode: 'mean',
             sourceName: 'SPD - CEAD Estadísticas Delictuales',
-            data: [742.5, 758.1, 771.4, 789.2, 812.6, 865.4, 848.9, 831.2, 819.5, 804.8, 792.1, 781.4]
+            data: Array.isArray(_appSeriesPre.tasa_vif_regional_por_100k_hab) && _appSeriesPre.tasa_vif_regional_por_100k_hab.length === 12
+              ? _appSeriesPre.tasa_vif_regional_por_100k_hab.map(Number)
+              : [905.8, 926.1, 918.4, 948.9, 982.3, 1056.4, 1031.2, 994.8, 962.1, 938.4, 917.6, 897.1]
           },
           {
             id: 'tasa_dmcs_regional_por_100k_hab',
@@ -8271,7 +8314,9 @@
             shortName: 'Tasa Regional DMCS',
             hubId: 'social', hubTitle: 'VI. Social', unit: 'Casos/100k hab', aggMode: 'mean',
             sourceName: 'SPD - CEAD Estadísticas Delictuales',
-            data: [1485.2, 1442.8, 1398.5, 1365.4, 1341.2, 982.6, 1094.8, 1245.6, 1289.4, 1264.1, 1238.5, 1215.0]
+            data: Array.isArray(_appSeriesPre.tasa_dmcs_regional_por_100k_hab) && _appSeriesPre.tasa_dmcs_regional_por_100k_hab.length === 12
+              ? _appSeriesPre.tasa_dmcs_regional_por_100k_hab.map(Number)
+              : [1948.5, 1998.0, 2064.2, 2108.5, 2142.3, 1706.5, 1785.0, 1942.0, 2058.4, 2124.6, 2150.9, 2107.8]
           },
           {
             id: 'pernoctaciones_anuales_emat_hist',
@@ -16350,7 +16395,7 @@
           const targetVar = (payload.mode === 'bivariate' && vY) ? vY : vX;
           const targetId = targetVar ? (targetVar.id || '') : (w.varY || w.varX || '');
           const unitLbl = (payload.mode === 'bivariate' ? (payload.unitY || payload.unitX) : payload.unit) || (targetVar ? targetVar.unit : '') || '';
-          const INTENSIVE_KPI_RE = /(_pct|%|g\/ton|per_capita|por_hab|promedio|tasa|indice|índice|ratio|tarifa|precio|gasolina|diesel|diésel|costo|saidi|dias_sobre_norma|traslado|tiempo_viaje|distancia|dependencia_barcaza_nivel|consumo_lena_m3_hogar|ventas_por_empresa|inversion_por_proyecto|espera|dias|días|horas|puntaje|ica|tsm|oxigeno|psu|utm\/ton|trab\.\/centro|por_centro|por_cama|por_mil|por_100k|°c|\/l\b|\/kwh|\/m3|\/m³|m\$\/hab|miles \$ clp\/hab)/i;
+          const INTENSIVE_KPI_RE = /(_pct|%|g\/ton|per_capita|por_hab|promedio|tasa|indice|índice|ratio|tarifa|precio|gasolina|diesel|diésel|costo|saidi|dias_sobre_norma|traslado|tiempo_viaje|distancia|dependencia_barcaza_nivel|consumo_lena_m3_hogar|ventas_por_empresa|inversion_por_proyecto|espera|dias|días|horas|puntaje|ica|tsm|oxigeno|psu|utm\/ton|trab\.\/centro|por_centro|por_cama|por_mil|por_100k|°c|\/l\b|\/kwh|\/m3|\/m³|m\$\/hab|miles \$ clp\/hab|fauna_amenazada_n|especies_exoticas_invasoras_n|episodios_gec_mp25_anual|amenaza_volcanica_sismica_idx|tasa_dmcs_100k|tasa_vif_100k|aporte_universidades_f4g_pct|proporcion_ciencia_endogena_pct|deficit_habitacional_total_por_1000_hab)/i;
           const isMean = Boolean(
             (targetVar && (targetVar.aggregation === 'avg' || targetVar.aggMode === 'mean')) ||
             INTENSIVE_KPI_RE.test(targetId) ||
@@ -16888,11 +16933,11 @@
 
         let html = '';
         orderedHubs.forEach(item => {
-          const entry = gallery[item.id] || extGallery[item.id] || (item.aliasId && (gallery[item.aliasId] || extGallery[item.aliasId])) || {};
+          const entry = (item.aliasId && (gallery[item.aliasId] || extGallery[item.aliasId])) || gallery[item.id] || extGallery[item.id] || {};
           const num = item.num;
           const title = item.title;
           const color = entry.color || item.color || '#00357f';
-          const launchId = (entry && entry.presets) ? (entry.id || item.id) : item.id;
+          const launchId = (entry && entry.presets) ? (entry.hub_id || entry.id || item.id) : item.id;
           html += `
             <button type="button" class="hero-hub-launch-card" data-launch-hub="${launchId}" data-hub-id="${launchId}" aria-label="Abrir mesa de trabajo de ${title}">
               <span class="hero-hub-dot" style="background-color: ${color};" aria-hidden="true"></span>
@@ -17108,12 +17153,19 @@
 
         const gallery = AppState.hubsGallery || (window.AYSEN_HUBS_DATA?.hubsGallery) || {};
         const extGallery = AppState.extensionGallery || (window.AYSEN_HUBS_DATA?.extension_gallery) || {};
-        const hubEntry = gallery[hubId] || extGallery[hubId] ||
-          (hubId === 'cultura' ? (extGallery['cultura_patrimonio'] || gallery['cultura_patrimonio']) : null) ||
-          (hubId === 'cultura_patrimonio' ? (extGallery['cultura'] || gallery['cultura']) : null) ||
-          (hubId === 'ctci' ? (extGallery['ctci_innovacion'] || gallery['ctci_innovacion']) : null) ||
-          (hubId === 'ctci_innovacion' ? (extGallery['ctci'] || gallery['ctci']) : null);
-        const presets = (hubEntry && Array.isArray(hubEntry.presets)) ? hubEntry.presets : [];
+        const hubEntry = (hubId === 'cultura_patrimonio' ? (gallery['cultura'] || extGallery['cultura_patrimonio']) : null) ||
+          (hubId === 'cultura' ? (gallery['cultura'] || extGallery['cultura_patrimonio']) : null) ||
+          (hubId === 'ctci_innovacion' ? (gallery['ctci'] || extGallery['ctci_innovacion']) : null) ||
+          (hubId === 'ctci' ? (gallery['ctci'] || extGallery['ctci_innovacion']) : null) ||
+          gallery[hubId] || extGallery[hubId];
+        const rawPresets = (hubEntry && Array.isArray(hubEntry.presets)) ? hubEntry.presets : [];
+        const seenPresetIds = new Set();
+        const presets = rawPresets.filter(p => {
+          const pid = p?.preset_id;
+          if (pid && seenPresetIds.has(pid)) return false;
+          if (pid) seenPresetIds.add(pid);
+          return true;
+        });
 
         if (presets.length === 0) {
           grid.innerHTML = '<div style="grid-column:1/-1; padding:2rem; text-align:center; color:#5f5c59;">No se encontraron presets para este Hub.</div>';
@@ -17250,11 +17302,11 @@
         if (!hubId) return;
         const gallery = AppState.hubsGallery || (window.AYSEN_HUBS_DATA?.hubsGallery) || {};
         const extGallery = AppState.extensionGallery || (window.AYSEN_HUBS_DATA?.extension_gallery) || {};
-        const hubEntry = gallery[hubId] || extGallery[hubId] ||
-          (hubId === 'cultura' ? (extGallery['cultura_patrimonio'] || gallery['cultura_patrimonio']) : null) ||
-          (hubId === 'cultura_patrimonio' ? (extGallery['cultura'] || gallery['cultura']) : null) ||
-          (hubId === 'ctci' ? (extGallery['ctci_innovacion'] || gallery['ctci_innovacion']) : null) ||
-          (hubId === 'ctci_innovacion' ? (extGallery['ctci'] || gallery['ctci']) : null);
+        const hubEntry = (hubId === 'cultura_patrimonio' ? (gallery['cultura'] || extGallery['cultura_patrimonio']) : null) ||
+          (hubId === 'cultura' ? (gallery['cultura'] || extGallery['cultura_patrimonio']) : null) ||
+          (hubId === 'ctci_innovacion' ? (gallery['ctci'] || extGallery['ctci_innovacion']) : null) ||
+          (hubId === 'ctci' ? (gallery['ctci'] || extGallery['ctci_innovacion']) : null) ||
+          gallery[hubId] || extGallery[hubId];
         if (!hubEntry || !Array.isArray(hubEntry.presets) || hubEntry.presets.length === 0) {
           console.warn('[Laboratorio] Hub no encontrado para Dashboard completo:', hubId);
           return;
@@ -17312,7 +17364,9 @@
           { x: 680, y: 50,  w: 580, h: 420 }, // 2. Barras Bivariadas (Col 2, Fila 1)
           { x: 60,  y: 500, w: 580, h: 420 }, // 3. Scatter 4 Cuadrantes (Col 1, Fila 2)
           { x: 680, y: 500, w: 580, h: 420 }, // 4. Serie Temporal Multieje 2015-2026 (Col 2, Fila 2)
-          { x: 60,  y: 950, w: 580, h: 420 }  // 5. Espejo Ciudadano Barómetro con Visor N (Col 1, Fila 3)
+          { x: 60,  y: 950, w: 580, h: 420 }, // 5. Espejo Ciudadano Barómetro con Visor N (Col 1, Fila 3)
+          { x: 680, y: 950, w: 580, h: 420 }, // 6. Preset Estratégico 6 (Col 2, Fila 3)
+          { x: 60,  y: 1400, w: 580, h: 420 } // 7. Preset Estratégico 7 (Col 1, Fila 4)
         ];
         // Referencia contractual de bounds:
         // { x: 60,   y: 50,  w: 480, h: 360 }
@@ -17323,8 +17377,15 @@
 
         const hubColor = hubEntry.color || '#00357f';
         const createdWidgets = [];
+        const seenFullPids = new Set();
+        const uniquePresets = (hubEntry.presets || []).filter(pr => {
+          const pid = pr?.preset_id;
+          if (pid && seenFullPids.has(pid)) return false;
+          if (pid) seenFullPids.add(pid);
+          return true;
+        });
 
-        hubEntry.presets.slice(0, 5).forEach((p, idx) => {
+        uniquePresets.forEach((p, idx) => {
           const b = gridBounds[idx] || { x: 60 + idx * 500, y: 50, w: 480, h: 360 };
           try {
             const w = instantiatePresetWidget(p, b, hubColor);

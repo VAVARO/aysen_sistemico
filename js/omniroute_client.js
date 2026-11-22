@@ -125,7 +125,7 @@
     zoit_nombre: 'Zona de Interés Turístico (ZOIT)',
     visitantes_snaspe: 'Visitantes Anuales a Parques SNASPE',
     camas_hospitalarias: 'Camas Hospitalarias Red Asistencial',
-    traslado_coyhaique_hrs: 'Tiempo de Traslado Terrestre al Hospital Regional (Coyhaique) (horas)',
+    traslado_coyhaique_hrs: 'Tiempo de Derivación Médica en Ambulancia/Barcaza al Hospital Regional Coyhaique (horas)',
     matricula_escolar: 'Matrícula Escolar Total (MINEDUC)',
     establecimientos_escolares_n: 'Total Establecimientos Escolares (Públicos + Subvencionados) (colegios)',
     establecimientos_aps_n: 'Establecimientos de Atención Primaria (APS)',
@@ -201,7 +201,7 @@
     red_vial_tierra_km: 'Red Vial en Tierra (km)',
     red_vial_pavimentada_pct: 'Porcentaje de Pavimentación Vial (%)',
     distancia_coyhaique_km: 'Distancia Terrestre a Coyhaique (km)',
-    tiempo_viaje_coyhaique_hrs: 'Tiempo de Viaje Terrestre a Coyhaique (horas)',
+    tiempo_viaje_coyhaique_hrs: 'Tiempo de Viaje en Transporte Público Multimodal a Coyhaique (horas)',
     dependencia_barcaza_nivel: 'Nivel de Dependencia de Barcaza (nivel 0-3)',
     hogares_sin_internet_fijo_pct: 'Hogares sin Conexión Fija a Internet (%)',
     cobertura_fibra_hogar_pct: 'Cobertura de Fibra Óptica al Hogar (%)',
@@ -211,7 +211,7 @@
     deficit_habitacional_cuantitativo_n: 'Déficit Habitacional Cuantitativo (viviendas)',
     deficit_habitacional_cualitativo_n: 'Déficit Habitacional Cualitativo (viviendas)',
     sistemas_ssr_apr_n: 'Sistemas de Agua Potable Rural (SSR / APR)',
-    cobertura_ssr_apr_familias: 'Familias con Agua Potable Rural SSR/APR',
+    cobertura_ssr_apr_familias: 'Beneficiarios SSR/APR (personas)',
     ganado_bovino_cabezas: 'Ganado Bovino (cabezas)',
     ganado_ovino_cabezas: 'Ganado Ovino (cabezas)',
     bosque_nativo_ha: 'Superficie de Bosque Nativo (ha)',
@@ -328,7 +328,26 @@
     emporcha_carga_transbordadores_ton: 'Carga en Transbordadores / Rodados EMPORCHA (ton)',
     emporcha_carga_comercial_ton: 'Carga Comercial General EMPORCHA (ton)',
     emporcha_graneles_mineros_ton: 'Graneles Mineros Transferidos EMPORCHA (ton)',
-    emporcha_acuicultura_pesca_ton: 'Carga Acuicultura y Pesca EMPORCHA (ton)'
+    emporcha_acuicultura_pesca_ton: 'Carga Acuicultura y Pesca EMPORCHA (ton)',
+    tasa_dmcs_100k: 'Tasa de Delitos de Mayor Connotación Social DMCS (c/100k hab)',
+    tasa_vif_100k: 'Tasa de Denuncias por Violencia Intrafamiliar VIF (c/100k hab)',
+    escuelas_rurales_multigrado_n: 'Escuelas Rurales Multigrado SLEP (n°)',
+    liceos_urbanos_n: 'Liceos de Enseñanza Media HC/TP (n°)',
+    ratio_pobreza_multidim_vs_ingresos: 'Ratio Pobreza Multidimensional / Ingresos (veces)',
+    deficit_habitacional_total_por_1000_hab: 'Déficit Habitacional Cuantitativo cada 1.000 Habitantes (viv./1.000 hab)',
+    especies_exoticas_invasoras_n: 'Complejos de Especies Exóticas Invasoras EEI Presentes (especies)',
+    episodios_gec_mp25_anual: 'Episodios Críticos GEC MP2.5 (>110 µg/m³, días/año)',
+    expedientes_fiscalizacion_sma_n: 'Expedientes de Fiscalización Ambiental SMA (expedientes)',
+    amenaza_volcanica_sismica_idx: 'Índice Integrado de Amenaza Volcánica y Sísmica (0-100)',
+    centros_culturales_n: 'Centros Culturales y Casas de la Cultura (centros)',
+    organizaciones_comunitarias_n: 'Organizaciones Comunitarias y Territoriales Activas (organizaciones)',
+    cultores_patrimonio_inmaterial_n: 'Cultores Patrimonio Cultural Inmaterial SIGPA (cultores)',
+    fndr_8pct_cultura_mclp: 'Inversión FNDR 8% Cultura y Patrimonio (M$ CLP)',
+    gasto_municipal_cultura_mclp: 'Gasto Municipal Total en Cultura SINIM (M$ CLP)',
+    aporte_universidades_f4g_pct: 'Aporte Percibido de Universidades al Desarrollo F4_G (%)',
+    proporcion_ciencia_endogena_pct: 'Proporción de Proyectos ANID con Ciencia Endógena (%)',
+    matricula_educacion_superior_sies_n: 'Matrícula Educación Superior SIES por Sede Comunal (estudiantes)',
+    matricula_ed_superior_sies: 'Matrícula de Educación Superior SIES (estudiantes)'
   };
 
   // ============================================================================
@@ -584,6 +603,21 @@
       institucion: 'SERVEL / TRICEL / Congreso Nacional / GORE Aysén — Series Históricas 1989–2026',
       titulo: 'SERVEL / GORE Aysén — Elecciones Presidenciales, Parlamento, CORE 2013–2029 y Alcaldes 1992–2028',
       url: 'https://www.goreaysen.cl/consejeros-regionales/'
+    },
+    CEAD_SPD: {
+      institucion: 'SPD / CEAD — Estadísticas Delictuales DMCS y VIF',
+      titulo: 'CEAD — Tasas Comunales y Regionales DMCS y VIF (c/100k hab)',
+      url: 'https://cead.spd.gov.cl/'
+    },
+    SMA_SNIFA: {
+      institucion: 'Superintendencia del Medio Ambiente (SMA / SNIFA)',
+      titulo: 'SMA — Expedientes de Fiscalización y Sanciones Ambientales en Aysén',
+      url: 'https://snifa.sma.gob.cl/'
+    },
+    SIGPA_SERPAT: {
+      institucion: 'MINCAP / SERPAT — Sistema de Información para la Gestión del Patrimonio Inmaterial (SIGPA)',
+      titulo: 'SERPAT SIGPA — Cultores de Patrimonio Inmaterial y Sitios Arqueológicos CMN',
+      url: 'https://www.sigpa.cl/'
     }
   };
 
@@ -807,7 +841,26 @@
     emporcha_carga_transbordadores_ton: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
     emporcha_carga_comercial_ton: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
     emporcha_graneles_mineros_ton: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
-    emporcha_acuicultura_pesca_ton: PROVENANCE_CATALOG_ENTRIES.EMPORCHA
+    emporcha_acuicultura_pesca_ton: PROVENANCE_CATALOG_ENTRIES.EMPORCHA,
+    tasa_dmcs_100k: PROVENANCE_CATALOG_ENTRIES.CEAD_SPD,
+    tasa_vif_100k: PROVENANCE_CATALOG_ENTRIES.CEAD_SPD,
+    escuelas_rurales_multigrado_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    liceos_urbanos_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    ratio_pobreza_multidim_vs_ingresos: PROVENANCE_CATALOG_ENTRIES.CASEN,
+    deficit_habitacional_total_por_1000_hab: PROVENANCE_CATALOG_ENTRIES.MINVU,
+    especies_exoticas_invasoras_n: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
+    episodios_gec_mp25_anual: PROVENANCE_CATALOG_ENTRIES.MMA_SINCA,
+    expedientes_fiscalizacion_sma_n: PROVENANCE_CATALOG_ENTRIES.SMA_SNIFA,
+    amenaza_volcanica_sismica_idx: PROVENANCE_CATALOG_ENTRIES.SERNAGEOMIN,
+    centros_culturales_n: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
+    organizaciones_comunitarias_n: PROVENANCE_CATALOG_ENTRIES.SINIM,
+    cultores_patrimonio_inmaterial_n: PROVENANCE_CATALOG_ENTRIES.SIGPA_SERPAT,
+    fndr_8pct_cultura_mclp: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
+    gasto_municipal_cultura_mclp: PROVENANCE_CATALOG_ENTRIES.SINIM,
+    aporte_universidades_f4g_pct: PROVENANCE_CATALOG_ENTRIES.BAROMETRO_UAYSEN,
+    proporcion_ciencia_endogena_pct: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
+    matricula_educacion_superior_sies_n: PROVENANCE_CATALOG_ENTRIES.SIES_MINEDUC,
+    matricula_ed_superior_sies: PROVENANCE_CATALOG_ENTRIES.SIES_MINEDUC
   };
 
   // ============================================================================
@@ -876,7 +929,7 @@
     gasto_cultura_per_capita_clp: ['gasto municipal en cultura per capita', 'gasto en cultura per capita', 'gasto cultura per capita', 'gasto cultural per capita', 'gasto municipal cultura'],
     total_espacios_culturales: ['espacios culturales', 'infraestructura cultural', 'centros culturales'],
     monumentos_nacionales_count: ['monumentos', 'monumentos nacionales', 'patrimonio monumental'],
-    fondos_cultura_adjudicados_mclp: ['fondos de cultura', 'fondos culturales', 'fondos concursables adjudicados', 'fondos concursables cultura', 'fondart'],
+    fondos_cultura_adjudicados_mclp: ['fondos de cultura', 'fondos culturales', 'fondos concursables adjudicados', 'fondos concursables cultura', 'fondos de cultura mincap', 'fondos cultura mincap adjudicados', 'fondos cultura mincap', 'fondart'],
     bibliotecas_snbp_n: ['bibliotecas', 'bibliotecas publicas', 'bibliotecas snbp'],
     proyectos_ctci_total: ['proyectos ctci', 'proyectos de ciencia', 'ciencia y tecnologia'],
     monto_anid_mclp: ['monto anid', 'fondos anid', 'financiamiento anid', 'proyectos anid'],
@@ -899,7 +952,7 @@
     hogares_sin_internet_fijo_pct: ['sin internet', 'brecha digital', 'hogares sin internet', 'internet fijo', 'fibra optica', 'conectividad digital'],
     deficit_habitacional_cuantitativo_n: ['deficit habitacional', 'deficit cuantitativo', 'viviendas nuevas', 'falta de viviendas', 'vivienda', 'casa', 'casas', 'viviendas', 'arriendo', 'arrendar', 'conseguir casa', 'techo', 'allegados', 'falta de vivienda'],
     deficit_habitacional_cualitativo_n: ['deficit cualitativo', 'mejoramiento de vivienda', 'viviendas a reparar'],
-    indice_envejecimiento: ['vejez', 'envejecimiento', 'envejecidos', 'adultos mayores', 'tercera edad', 'abuelos', 'ancianos'],
+    indice_envejecimiento: ['vejez', 'envejecimiento', 'envejecidos', 'envejecida', 'adultos mayores', 'tercera edad', 'abuelos', 'ancianos', 'indice de envejecimiento'],
     ganado_bovino_cabezas: ['ganado bovino', 'bovinos', 'vacas', 'cabezas bovinas', 'ganaderia bovina'],
     ganado_ovino_cabezas: ['ganado ovino', 'ovinos', 'ovejas', 'cabezas ovinas', 'ganaderia ovina'],
     glaciares_dga_n: ['glaciares', 'numero de glaciares', 'cantidad de glaciares', 'campos de hielo', 'reservas de agua dulce'],
@@ -910,7 +963,7 @@
     barometro_prioridad_conectividad_pct: ['prioridad conectividad', 'acceso conectividad', 'barometro conectividad'],
     barometro_tension_desarrollo_conservacion_pct: ['desarrollo vs conservacion', 'conflictos ambientales', 'tension desarrollo conservacion', 'cuidar la naturaleza', 'naturaleza vs economia', 'economia vs medio ambiente'],
     barometro_intencion_migracion_juvenil_pct: ['retencion juvenil', 'migracion juvenil', 'oportunidades trabajo jovenes', 'jovenes', 'juventud', 'irse de la region', 'quieren ir', 'emigrar', 'fuga de jovenes'],
-    barometro_evaluacion_acceso_salud_pct: ['evaluacion salud', 'satisfaccion salud', 'acceso a salud barometro'],
+    barometro_evaluacion_acceso_salud_pct: ['evaluacion salud', 'satisfaccion salud', 'acceso a salud barometro', 'evaluacion ciudadana del acceso a salud', 'evaluacion acceso salud', 'acceso a salud del barometro', 'barometro b3 a'],
     barometro_preocupacion_contaminacion_lena_pct: ['preocupacion lena', 'humo lena barometro', 'contaminacion aire barometro', 'urgencia lena'],
     esperanza_vida_total_anos: ['esperanza de vida', 'expectativa de vida', 'anos de vida', 'longevidad', 'vida al nacer', 'vivir mas anos', 'life expectancy'],
     consumo_lena_m3_hogar_ano: ['consumo de lena', 'consumo residencial lena', 'metros cubicos lena', 'lena por hogar'],
@@ -929,13 +982,13 @@
     cobertura_pscv_pct: ['pscv', 'salud cardiovascular', 'programa de salud cardiovascular', 'control cardiovascular'],
     espera_no_ges_n: ['lista de espera', 'listas de espera', 'esperando atencion', 'espera no ges', 'interconsultas pendientes'],
     mediana_espera_quirurgica_dias: ['operaciones', 'cirugias', 'espera quirurgica', 'lista de espera quirurgica'],
-    tasa_mortalidad_cancer_gastrico_100k: ['cancer', 'tumores', 'cancer gastrico', 'mortalidad por cancer'],
-    tasa_mortalidad_suicidio_100k: ['suicidio', 'suicidios', 'salud mental', 'mortalidad por suicidio'],
+    tasa_mortalidad_cancer_gastrico_100k: ['cancer', 'tumores', 'cancer gastrico', 'tasa de mortalidad por cancer gastrico', 'mortalidad por cancer'],
+    tasa_mortalidad_suicidio_100k: ['suicidio', 'suicidios', 'salud mental', 'tasa de mortalidad por suicidio', 'mortalidad por suicidio'],
     puntos_cajavecina_bancoestado: ['bancos', 'cajeros', 'sacar plata', 'caja vecina', 'cajavecina', 'banca'],
     sucursales_banca_privada_cmf: ['sucursales bancarias', 'bancos privados', 'banca privada', 'sin banco'],
     sindicatos_pesca_artesanal: ['pescadores', 'pesca artesanal', 'caletas', 'sindicatos pesqueros', 'sindicatos de pesca artesanal'],
-    autoidentificacion_indigena_pct: ['pueblos originarios', 'indigenas', 'mapuche', 'poblacion indigena'],
-    comunidades_indigenas_conadi: ['comunidades indigenas', 'conadi'],
+    autoidentificacion_indigena_pct: ['pueblos originarios', 'indigenas', 'mapuche', 'poblacion indigena', 'autoidentificacion indigena'],
+    comunidades_indigenas_conadi: ['comunidades indigenas', 'conadi', 'comunidades indigenas conadi', 'comunidades conadi'],
     juntas_vecinos_activas: ['juntas de vecinos', 'organizaciones sociales', 'organizaciones vecinales'],
 
     // Nuevas Variables Reconciliadas Oficiales
@@ -970,10 +1023,10 @@
     fet_royalty_minero_2025_mclp: ['royalty minero', 'fet', 'fondo de equidad territorial', 'ley royalty', 'royalty municipal'],
     fndr_gore_2023_ejecutado_mclp: ['fndr ejecutado', 'gasto fndr gore', 'ejecucion fndr datos gob', 'inversion gore ejecutada'],
     fondos_concursables_gore_2023_n: ['fondos concursables', '8% fndr', 'fondo 8 porciento', 'vinculacion con la comunidad gore', 'proyectos sociales 8%'],
-    evaluacion_uaysen_promedio_i8: ['evaluacion de la universidad de aysen', 'evaluacion uaysen', 'nota universidad de aysen', 'desempeno universidad de aysen'],
+    evaluacion_uaysen_promedio_i8: ['evaluacion ciudadana de la universidad de aysen', 'evaluacion de la universidad de aysen', 'evaluacion uaysen', 'evaluacion universidad de aysen', 'evaluacion de la uaysen', 'nota uaysen', 'nota universidad de aysen', 'valoracion uaysen', 'reputacion uaysen', 'barometro uaysen i8', 'calificacion uaysen', 'desempeno universidad de aysen'],
     nota_percepcion_cultura_b4b: ['percepcion cultura', 'nota percepcion cultura', 'oportunidades culturales'],
     participacion_cultural_pct_c2: ['participacion cultural', 'organizaciones culturales'],
-    percepcion_ctci_prioritaria_pct_i1i: ['percepcion ctci prioritaria', 'ctci prioritaria'],
+    percepcion_ctci_prioritaria_pct_i1i: ['percepcion ctci prioritaria', 'percepcion ciudadana de prioridad de la ciencia', 'prioridad de la ciencia ctci', 'ctci prioritaria'],
     participacion_presidencial_2025_2v_pct: ['participacion electoral', 'participacion servel', 'votacion electoral', 'tasa de participacion electoral', 'participacion electoral 2025', 'voto obligatorio 2025', 'segunda vuelta 2025', 'historia electoral', 'composicion politica'],
     rsh_carencia_servicios_basicos_jun2026_pct: ['carencia servicios basicos', 'servicios basicos rsh', 'bidat rsh', 'registro social hogares', 'hacinamiento rsh'],
     conexiones_fijas_subtel_jun2026_n: ['conexiones fijas subtel', 'subtel junio 2026', 'starlink aysen', 'fttx aysen', 'fibra ultima milla', 'telecomunicaciones subtel'],
@@ -988,7 +1041,24 @@
     royalty_fet_peso_presupuesto_pct: ['peso royalty', 'porcentaje royalty presupuesto', 'royalty sobre presupuesto'],
     participacion_municipales_2024_pct: ['participacion municipales 2024', 'elecciones municipales 2024'],
     ratio_padron_poblacion_pct: ['ratio padron poblacion', 'padron sobre poblacion'],
-    indice_aislamiento_multimodal: ['indice de aislamiento', 'aislamiento multimodal', 'vulnerabilidad energetico digital']
+    indice_aislamiento_multimodal: ['indice de aislamiento', 'aislamiento multimodal', 'vulnerabilidad energetico digital'],
+    tasa_vif_100k: ['violencia intrafamiliar', 'vif', 'denuncias vif', 'tasa vif', 'tasas de vif'],
+    tasa_dmcs_100k: ['delitos de mayor connotacion social', 'dmcs', 'tasa dmcs', 'tasas de dmcs', 'connotacion social', 'cead'],
+    establecimientos_slep_aysen: ['establecimientos escolares slep', 'establecimientos slep', 'establecimientos escolares', 'colegios slep', 'escuelas slep'],
+    matricula_ed_superior_sies: ['educacion superior', 'matricula de educacion superior', 'matricula educacion superior sies', 'matricula superior', 'sies'],
+    indice_masculinidad: ['indice de masculinidad', 'masculinidad'],
+    establecimientos_aps_n: ['establecimientos aps', 'dispositivos aps', 'centros aps', 'red aps', 'recintos aps', 'cesfam y postas', 'atencion primaria'],
+    traslado_coyhaique_hrs: ['tiempo de traslado a coyhaique en ambulancia', 'traslado en ambulancia', 'derivacion medica a coyhaique', 'tiempo de derivacion medica', 'traslado a coyhaique'],
+    consumo_lena_m3_solidos_anual: ['volumen anual de lena', 'consumo anual de lena', 'm3 solidos', 'lena quemada'],
+    informalidad_lena_pct: ['informalidad lena', 'informalidad de la lena', 'lena informal', 'lena humeda'],
+    fauna_amenazada_n: ['fauna amenazada', 'especies de fauna amenazada', 'especies rce', 'fauna rce'],
+    especies_exoticas_invasoras_n: ['especies exoticas invasoras', 'especies invasoras', 'eei'],
+    expedientes_fiscalizacion_sma_n: ['expedientes de fiscalizacion sma', 'expedientes sma', 'fiscalizacion sma'],
+    amenaza_volcanica_sismica_idx: ['amenaza volcanica', 'volcanes activos rnvv', 'sismos usgs'],
+    fndr_8pct_cultura_mclp: ['fndr 8% cultura', 'fndr 8 cultura', '8% cultura'],
+    gasto_municipal_cultura_mclp: ['gasto municipal en cultura', 'gasto municipal cultura'],
+    aporte_universidades_f4g_pct: ['aporte de las universidades', 'rol universidades', 'f4 g', 'f4_g'],
+    proporcion_ciencia_endogena_pct: ['ciencia endogena', 'ciencia local vs extrarregional', 'extractivismo cientifico']
   };
 
   // ============================================================================
@@ -1452,7 +1522,7 @@
 
     const isIntensive = Boolean(
       unit === '%' ||
-      /(pct|porcentaje|tasa|densidad|per_capita|por_mil|ratio|promedio|visitas_por_cama|estadia|gasto_diario|adr|revpar|guardaparque|evaluacion_uaysen|participacion_cultural|percepcion_ctci|plazo|horas|hrs|tarifa|precio|costo|gasolina|diesel|ica_g_ton|nota|indice|esperanza_vida|envejecimiento|masculinidad|espera_.*dias)/i.test(key)
+      /(pct|porcentaje|tasa|densidad|per_capita|por_mil|ratio|promedio|visitas_por_cama|estadia|gasto_diario|adr|revpar|guardaparque|evaluacion_uaysen|participacion_cultural|percepcion_ctci|plazo|horas|hrs|tarifa|precio|costo|gasolina|diesel|ica_g_ton|nota|indice|esperanza_vida|envejecimiento|masculinidad|espera_.*dias|fauna_amenazada_n|especies_exoticas_invasoras_n|dias_sobre_norma_mp25|episodios_gec_mp25_anual|amenaza_volcanica_sismica_idx|aporte_universidades_f4g_pct|proporcion_ciencia_endogena_pct|deficit_habitacional_total_por_1000_hab)/i.test(key)
     );
 
     const rawCn = CANONICAL_LABELS[key] || (lexiconEntry && lexiconEntry.label) || humanizeKey(key);
@@ -2079,10 +2149,28 @@
     const isSingleComunaSpecific = matchedEntities.length === 1 &&
       !/\b(regional|total|ambas|versus|vs|compar|todas|aysen|region|cuantas|cuantos|resumen)\b/i.test(qNorm);
 
-    // 1. Leña y Pellet (INFOR / SEC)
+    // 1. Leña y Pellet (INFOR / SEC) — sin secuestrar siglas INFOR en consultas sobre centros científicos CTCi
+    const hasFirewoodTerms = /\b(lena|pellet|pellets|calefaccion|dendroenerg\w*|combusti\w*|humedad|m3\s+estereos|ley 21\.?499|xilohigrometro|biocombustibles?)\b/i.test(qNorm);
+    const hasResearchCentersCtx = /\b(ciep|inia|ifop|cecs|anid|estacion\w*\s+de\s+campo|centros?\s+cientific\w*|estacion\s+patagonia\s+uc|tamel\s+aike)\b/i.test(qNorm);
     if (/\b(pellet|pellets|demanda de pellet|dendroenerg|ley 21\.?499|humedad de la le[ñn]a|xilohigrometro|consumo.*le[ñn]a.*pellet|pellet.*le[ñn]a|biocombustibles? solidos?)\b/i.test(qNorm) ||
-        (/\b(infor|volumen.*le[ñn]a)\b/i.test(qNorm) && !isSingleComunaSpecific)) {
+        ((/\b(volumen.*le[ñn]a)\b/i.test(qNorm) || (/\binfor\b/i.test(qNorm) && hasFirewoodTerms && !hasResearchCentersCtx)) && !isSingleComunaSpecific)) {
       return 'pellet_lena';
+    }
+
+    // 1b. Red de Centros Científicos CTCi y Estaciones de Campo (#35, #36, #37)
+    if (hasResearchCentersCtx && !/\b(compar\w*.*corfo|evaluacion ciudadano?a?\s+de\s+la\s+(?:universidad|uaysen))\b/i.test(qNorm) && !/\bvolcan\w*|sism\w*|sma\b/i.test(qNorm)) {
+      return 'centros_ctci_red_campo';
+    }
+
+    // 1c. Patrimonio Cultural Inmaterial SIGPA, Sitios Paleo-Arqueológicos y Tejido Asociativo (#34)
+    if (/\b(sigpa|patrimonio\s+(?:cultural\s+)?inmaterial|tejueler\w*|carpinter\w*\s+de\s+ribera|jinetead\w*|chamame|bano\s+nuevo|paredon\s+de\s+las\s+manos|chilesaurus|formacion\s+toqui|paleontolog\w*|arqueolog\w*)\b/i.test(qNorm)) {
+      return 'patrimonio_inmaterial_arqueologia_sigpa';
+    }
+
+    // 1d. Evolución Histórica VIF vs DMCS (2015–2026) y tasas comunales (#26)
+    if (/\b(vif|violencia\s+intrafamiliar)\b/i.test(qNorm) && /\b(dmcs|delitos?\s+de\s+mayor\s+connotacion|cead)\b/i.test(qNorm) &&
+        /\b(evolucion\w*|2015|2020|2021|2026|historico|historica|serie|trayectoria)\b/i.test(qNorm)) {
+      return 'seguridad_vif_dmcs';
     }
 
     // 2. Déficit habitacional cuantitativo y cualitativo (MINVU)
@@ -2119,9 +2207,33 @@
       return 'camas_hrc_postas';
     }
 
-    // 8. SLEP Aysén (traspaso 2024, 66 establecimientos) y matrícula SIES (CFT Estatal, INACAP, UAysén)
-    if (/\b(slep aysen|traspaso.*slep|sies|matricula.*superior|cft estatal|cft estatal aysen|uaysen.*inacap|inacap.*uaysen|campus errazuriz|victor cubillos|66 establecimientos|traspaso 2024)\b/i.test(qNorm)) {
+    // 8. SLEP Aysén (traspaso 2024, 66 establecimientos) y matrícula SIES / UAysén 2026 / CDPR CORFO
+    if ((/\b(slep aysen|traspaso.*slep|sies|matricula.*superior|cft estatal|cft estatal aysen|uaysen.*inacap|inacap.*uaysen|campus errazuriz|victor cubillos|66 establecimientos|traspaso 2024|uach\s+campus\s+patagonia|cdpr\s+corfo|fic-?r|administracion\s+provisional)\b/i.test(qNorm)) &&
+        !/\b(sin\s+internet\s+fijo|hogares\s+sin\s+internet)\b/i.test(qNorm)) {
       return 'slep_sies';
+    }
+
+    // 8a-1. Especies Exóticas Invasoras EEI (Nodo #29 — prioridad sobre ECMPO incluso con SNASPE)
+    if (/\b(especies?\s+(?:exotic\w*|invasor\w*)|eei\b|vison|castor|didymo|jabali|lupino|chinook\s+asilvestrad\w*|asilvestrad\w*)\b/i.test(qNorm)) {
+      return 'especies_exoticas_invasoras';
+    }
+
+    // 8a-2. Fauna Silvestre en Conservación RCE (Nodo #28 — sin secuestrar comparativas con MP2.5)
+    if (/\b(huemul|maca\s+tobiano|pudu|huillin|chungungo|ballena\s+(?:sei|azul)|delfin\s+chileno|rce\s+mma|especies?\s+en\s+conservacion)\b/i.test(qNorm) &&
+        !/\b(mp2\.?5|norma|por\s+comuna.*dias)\b/i.test(qNorm)) {
+      return 'fauna_rce_conservacion';
+    }
+
+    // 8a-3. Hidrología Mensual Baker / Simpson vs MP2.5 Coyhaique (Nodo #30)
+    if (/\b(caudal|rio\s+baker|rio\s+simpson|hidrolog\w*|estacionalidad\s+mp2\.?5)\b/i.test(qNorm) &&
+        !/\b(glof|glofs|cachet\s+2)\b/i.test(qNorm)) {
+      return 'hidrologia_caudal_mp25_mensual';
+    }
+
+    // 8a-4. Volcanes RNVV, Sismos USGS y Fiscalización SMA (Nodo #31 + justicia_sma)
+    if (/\b(volcan\w*|rnvv|sernageomin|hudson|maca\b|mentolat|melimoyu|cay\b|arenales|sism\w*|terremot\w*|usgs|liquine\s*ofqui|expedientes?\s+(?:de\s+)?fiscalizacion\s+sma|snifa|sancion\w*\s+ambiental\w*|justicia\s+ambiental)\b/i.test(qNorm) &&
+        !/\b(glof|cachet\s+2)\b/i.test(qNorm)) {
+      return 'volcanes_sismos_justicia_sma';
     }
 
     // 8b. Fiscalización ambiental acuícola, SNASPE e ICA antibióticos (Perfil Ambientalista / Fiscalizador)
@@ -2321,18 +2433,25 @@
         };
       }
       case 'cancer_suicidio': {
-        const reply = 'Según las estadísticas de vigilancia epidemiológica del DEIS MINSAL y el Registro Poblacional de Cáncer: Las neoplasias digestivas son la 1ª causa de años de vida potencialmente perdidos (AVPP) en Aysén, encabezadas por el Cáncer Gástrico (C16, tasa de 18,4 por 100k hab) y el Cáncer de Vesícula Biliar (C23, tasa de 12,6 por 100k hab). En salud mental, la región registra una tasa de mortalidad por suicidio de ~15,1 por 100k hab, existiendo un cuello de botella asistencial crítico: solo 9 camas psiquiátricas de corta estadía en la UHCE del Hospital Regional Coyhaique para toda la población regional.';
-        const sources = resolveSourcesForKeys(['tasa_cancer_gastrico_cie10', 'tasa_suicidio_por_100k']);
+        const gEnts = (index.entities || []).slice().sort((a, b) => (b.raw?.tasa_mortalidad_cancer_gastrico_100k || 0) - (a.raw?.tasa_mortalidad_cancer_gastrico_100k || 0));
+        const sEnts = (index.entities || []).slice().sort((a, b) => (b.raw?.tasa_mortalidad_suicidio_100k || 0) - (a.raw?.tasa_mortalidad_suicidio_100k || 0));
+        const gMax = gEnts[0], gMin = gEnts[gEnts.length - 1];
+        const sMax = sEnts[0], sMin = sEnts[sEnts.length - 1];
+        const diffNote = (gMax && sMax)
+          ? ` A nivel comunal, el Cáncer Gástrico alcanza su máximo en ${gMax.name} (${fmtNumber(gMax.raw.tasa_mortalidad_cancer_gastrico_100k)} c/100k) y mínimo en ${gMin.name} (${fmtNumber(gMin.raw.tasa_mortalidad_cancer_gastrico_100k)}), mientras la mortalidad por suicidio lidera en ${sMax.name} (${fmtNumber(sMax.raw.tasa_mortalidad_suicidio_100k)} c/100k) vs. ${sMin.name} (${fmtNumber(sMin.raw.tasa_mortalidad_suicidio_100k)}).`
+          : '';
+        const reply = `Según DEIS MINSAL y el Registro Poblacional de Cáncer: Las neoplasias digestivas lideran los AVPP en Aysén con Cáncer Gástrico (C16, promedio 18,4 c/100k hab) y Vesícula Biliar (C23, 12,6 c/100k hab). En salud mental, la tasa promedio regional de suicidio es de 15,1 c/100k hab con un cuello de botella crítico: solo 9 camas psiquiátricas de corta estadía (UHCE) en el Hospital Regional Coyhaique (0 en las otras 9 comunas).${diffNote}`;
+        const sources = resolveSourcesForKeys(['tasa_mortalidad_cancer_gastrico_100k', 'tasa_mortalidad_suicidio_100k', 'camas_psiquiatricas_uhce', 'barometro_evaluacion_acceso_salud_pct']);
         return {
           reply,
           chart: {
             render: true,
             type: 'bar',
-            varX: 'camas_hospitalarias',
-            varY: 'medicos_por_mil_hab',
-            yKey: 'camas_hospitalarias',
-            y2Key: 'medicos_por_mil_hab',
-            title: 'Camas Hospitalarias vs. Dotación Médica por Comuna (DEIS MINSAL)',
+            varX: 'tasa_mortalidad_cancer_gastrico_100k',
+            varY: 'tasa_mortalidad_suicidio_100k',
+            yKey: 'tasa_mortalidad_cancer_gastrico_100k',
+            y2Key: 'tasa_mortalidad_suicidio_100k',
+            title: 'Cáncer Gástrico vs. Mortalidad por Suicidio por Comuna (c/100k hab · DEIS)',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -2361,18 +2480,18 @@
         };
       }
       case 'slep_sies': {
-        const reply = 'En el ámbito educativo oficial (SLEP Aysén Ley N° 21.040 y SIES MINEDUC): El SLEP Aysén asumió la administración escolar pública efectiva el 1 de enero de 2024, articulando 66 recintos educacionales (56 escuelas/liceos y 10 jardines infantiles). En educación superior, el SIES reporta una matrícula total regional de 2.327 estudiantes: CFT Estatal Aysén (737 alumnos), INACAP Coyhaique (800) y Universidad de Aysén (790 alumnos, consolidada en su Campus Errázuriz tras culminar la administración provisional SES e iniciar la rectoría del Dr. Víctor Cubillos 2026-2030). El 66% de la matrícula superior regional corresponde a formación técnica.';
-        const sources = resolveSourcesForKeys(['matricula_escolar', 'matricula_sies_total']);
+        const reply = 'En educación escolar y superior regional (SLEP Aysén Ley N° 21.040, SIES MINEDUC y CTCi 2026): El SLEP Aysén asumió el 1 de enero de 2024 articulando 66 recintos públicos (56 escuelas/liceos y 10 jardines infantiles). En educación superior SIES 2026, Aysén registra 2.327 estudiantes: INACAP Coyhaique (800, 34,4%), Universidad de Aysén (790, 33,9%) y CFT Estatal de Aysén (737, 31,7%). Institucionalmente, el 15 de enero de 2026 finalizó formalmente la Administración Provisional SES en la UAysén tras sanear $3.000 MM de déficit histórico, asumiendo el rector electo Dr. Víctor Cubillos Godoy (2026-2030) con consolidación del Campus Errázuriz y acreditación CNA con tutoría UTA; paralelamente, UACh Campus Patagonia transita hacia investigación aplicada y posgrado, y el CDPR CORFO Aysén opera un presupuesto 100% descentralizado de $1.900-$1.930 MM/año (junto a fondos FIC-R).';
+        const sources = resolveSourcesForKeys(['matricula_escolar', 'matricula_ed_superior_sies', 'evaluacion_uaysen_promedio_i8']);
         return {
           reply,
           chart: {
             render: true,
             type: 'bar',
             varX: 'matricula_escolar',
-            varY: 'establecimientos_escolares_n',
+            varY: 'establecimientos_slep_aysen',
             yKey: 'matricula_escolar',
-            y2Key: 'establecimientos_escolares_n',
-            title: 'Matrícula Escolar y Establecimientos Educacionales por Comuna',
+            y2Key: 'establecimientos_slep_aysen',
+            title: 'Matrícula Escolar y Establecimientos Públicos SLEP Aysén por Comuna',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -2919,6 +3038,267 @@
           isContextualBridge: true
         };
       }
+      case 'centros_ctci_red_campo': {
+        const reply = (
+          'Red Científica y Estaciones de Campo CTCi en Aysén (Nodos #35, #36 y #37 · ANID/MinCiencia/CORFO): ' +
+          'Operan exactamente 16 centros científicos y estaciones de campo permanentes con 124 investigadores residentes: ' +
+          'Coyhaique (6 centros y 91 investigadores: CIEP 34, UAysén 31, INIA Tamel Aike 10, INFOR Sede Patagonia 9, UACh Campus Patagonia 5 y DGAC BBA 2), ' +
+          'Puerto Aysén (2 centros y 14 investigadores: Plataforma Bioseguridad Barrio 21B 10 y Base Glaciológica San Rafael CECs/UChile 4), ' +
+          'Cisnes (IFOP 4), Tortel (Lab. Costero CIEP 3), Cochrane (Estación Cuencas CIEP/UAysén 3), Chile Chico (Estación Agroclimática INIA 3), ' +
+          'Guaitecas (Centro Marea Roja IFOP Melinka 2), Río Ibáñez (Estación Patagonia UC Bahía Exploradores 2), Lago Verde (Nodo Ecosistémico 1) y O\'Higgins (Estación Glaciar CECs/UdeC 1). ' +
+          'En adjudicaciones ANID (120 proyectos / $17.326,8 MM: CIEP 34, UACh 32, UAysén 22, U. de Chile 3, Otras 29), la Ciencia Endógena Local alcanza 68 proyectos ($11.850,5 MM · 56,7% de proyectos y 68,4% del monto) frente a 52 expediciones extrarregionales ($5.476,3 MM), sumando además 59 proyectos CORFO Innova ($8.450 MM).'
+        );
+        const sources = resolveSourcesForKeys(['centros_y_estaciones_ctci_count', 'investigadores_residentes', 'monto_anid_mclp', 'innovacion_corfo_mclp']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'centros_y_estaciones_ctci_count',
+            varY: 'investigadores_residentes',
+            yKey: 'centros_y_estaciones_ctci_count',
+            y2Key: 'investigadores_residentes',
+            customCategoryData: true,
+            labels: ['CIEP (ANID)', 'UACh Patagonia', 'UAysén', 'U. de Chile', 'Otras Inst.', 'CORFO Innova'],
+            datasets: [{
+              label: 'Proyectos Adjudicados ANID & CORFO Innova en Aysén (n°)',
+              data: [34, 32, 22, 3, 29, 59],
+              backgroundColor: ['#00357f', '#0284c7', '#6d28d9', '#0f766e', '#64748b', '#b45309']
+            }],
+            title: 'Red CTCi (16 Centros · 124 Investigadores) y Proyectos ANID/CORFO por Institución',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'X'
+        };
+      }
+      case 'patrimonio_inmaterial_arqueologia_sigpa': {
+        const resCult = _dataLake?.extension_modules?.cultura_patrimonio?.resumen_regional || {};
+        const cultoresTotal = resCult.cultores_patrimonio_inmaterial_total || 313;
+        const orgsTotal = resCult.organizaciones_comunitarias_total || 392;
+        const reply = (
+          `Patrimonio Cultural Inmaterial SIGPA (SERPAT), Sitios Paleo-Arqueológicos CMN y Tejido Asociativo en Aysén (Nodo #34): ` +
+          `1) Patrimonio Inmaterial SIGPA (${cultoresTotal} cultores registrados): Maestros tejueleros de Ciprés de las Guaitecas (45 cultores en Melinka, Tortel y Cisnes, en riesgo por restricción de acceso a madera muerta), ` +
+          `Carpinteros de ribera y construcción naval artesanal (28 cultores activos en Puerto Aguirre, Gala, Gaviota y Melinka) y ` +
+          `Jineteadas gauchas, chamamé y tradiciones camperas (240 cultores en 38 clubes camperos en Río Ibáñez, Cochrane, Mañihuales, Lago Verde y Coyhaique). ` +
+          `2) Sitios Paleo-Arqueológicos CMN: Cueva Baño Nuevo 1 (Coyhaique, 10.200 años AP, conjunto funerario más antiguo de Patagonia occidental), Paredón de las Manos (Río Ibáñez, 3.000-6.000 años AP, D.S. 355/2008 de arte rupestre Tehuelche) y Formación Toqui en Mallín Grande (Chile Chico, 148 Ma, hallazgo mundial de Chilesaurus diegosuarezi). ` +
+          `3) Tejido Asociativo (${orgsTotal} organizaciones): 248 Juntas de Vecinos (Ley 19.418), 45 Sindicatos de Pescadores Artesanales, 38 Clubes de Huasos y Jineteada, 31 Comités Campesinos y 22 Agrupaciones de Mujeres Rurales.`
+        );
+        const sources = resolveSourcesForKeys(['cultores_patrimonio_inmaterial_n', 'monumentos_nacionales_count', 'organizaciones_comunitarias_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'cultores_patrimonio_inmaterial_n',
+            varY: 'organizaciones_comunitarias_n',
+            yKey: 'cultores_patrimonio_inmaterial_n',
+            y2Key: 'organizaciones_comunitarias_n',
+            customCategoryData: true,
+            labels: ['Cultores Camperos', 'Tejueleros de Ciprés', 'Carpinteros de Ribera', 'JJ.VV. Activas', 'Sindicatos Pesca', 'Clubes Camperos'],
+            datasets: [{
+              label: 'Patrimonio Inmaterial SIGPA (313 cultores) y Organizaciones (392)',
+              data: [240, 45, 28, 248, 45, 38],
+              backgroundColor: ['#b45309', '#d97706', '#0284c7', '#00357f', '#0f766e', '#7c2d12']
+            }],
+            title: 'Patrimonio Cultural Inmaterial SIGPA SERPAT (313) y Tejido Asociativo (392)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'IX'
+        };
+      }
+      case 'especies_exoticas_invasoras': {
+        const reply = (
+          'Especies Exóticas Invasoras EEI en Aysén y Áreas Silvestres SNASPE (Nodo #29 · SAG/CONAF/CIEP): ' +
+          'El catastro regional registra 6 complejos invasores críticos con un promedio comunal de 4,4 especies (Pool regional: Visón americano en 10/10 comunas [100%, Control biológico-trampeo SAG], Salmónidos asilvestrados Chinook y truchas en 10/10 comunas [100%, Vigilancia SERNAPESCA], Alga Didymo en 8/10 comunas [80%, Protocolo bioseguridad SERNAPESCA], Lupino/Chaqueta Amarilla en 7/10 comunas [70%, Manejo vial/CONAF], Jabalí europeo en 4/10 comunas [40%, Caza controlada SAG] y Castor canadiense en 2/10 comunas — O\'Higgins y Tortel [20%, Erradicación fronteriza SAG]). ' +
+          'El avance de estas invasoras ejerce presión directa sobre la fauna nativa RCE (Prom. comunal: 6,3 especies amenazadas por comuna) y la red SNASPE.'
+        );
+        const sources = resolveSourcesForKeys(['especies_exoticas_invasoras_n', 'fauna_amenazada_n', 'superficie_snaspe_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'especies_exoticas_invasoras_n',
+            varY: 'fauna_amenazada_n',
+            yKey: 'especies_exoticas_invasoras_n',
+            y2Key: 'fauna_amenazada_n',
+            customCategoryData: true,
+            labels: ['Visón Americano', 'Salmónidos (Chinook)', 'Alga Didymo', 'Lupino Invasor', 'Jabalí Europeo', 'Castor Canadiense'],
+            datasets: [{
+              label: 'Cobertura Comunal de Especies Exóticas Invasoras (n° de 10 comunas)',
+              data: [10, 10, 8, 7, 4, 2],
+              backgroundColor: ['#b91c1c', '#dc2626', '#d97706', '#ca8a04', '#0284c7', '#4338ca']
+            }],
+            title: 'Catastro de Especies Exóticas Invasoras EEI en Aysén (Comunas Afectadas)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII'
+        };
+      }
+      case 'fauna_rce_conservacion': {
+        const reply = (
+          'Catastro de Fauna Silvestre en Categorías de Conservación RCE MMA en Aysén (Nodo #28): ' +
+          'El pool regional suma 14 especies evaluadas (9 en categorías amenazadas CR+EN+VU y 5 en NT+LC), con un promedio comunal de 6,3 especies presentes (máx. Puerto Aysén y Cisnes con 9): ' +
+          '1 En Peligro Crítico (CR: Macá Tobiano en mesetas lacustres australes), 5 En Peligro (EN: Huemul [1.500-2.000 ind. en Patagonia], Huillín, Chungungo, Ballena Sei y Ballena Azul [600-800 ind.]), 3 Vulnerables (VU: Pudú del Sur, Chorlo de Magallanes, Becacina Grande), 3 Casi Amenazadas (NT: Cóndor Andino, Puma, Zorro Culpeo) y 2 Preocupación Menor (LC).'
+        );
+        const sources = resolveSourcesForKeys(['fauna_amenazada_n', 'superficie_snaspe_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'fauna_amenazada_n',
+            varY: 'superficie_snaspe_pct',
+            yKey: 'fauna_amenazada_n',
+            y2Key: 'superficie_snaspe_pct',
+            customCategoryData: true,
+            labels: ['En Peligro Crítico (CR)', 'En Peligro (EN)', 'Vulnerable (VU)', 'Casi Amenazada (NT)', 'Preocupación Menor (LC)'],
+            datasets: [{
+              label: 'Especies Evaluadas en Pool Regional RCE MMA Aysén (Total: 14)',
+              data: [1, 5, 3, 3, 2],
+              backgroundColor: ['#991b1b', '#dc2626', '#d97706', '#0284c7', '#059669']
+            }],
+            title: 'Pool Regional de Fauna Silvestre RCE MMA en Aysén (14 Especies · Prom. 6,3/comuna)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII'
+        };
+      }
+      case 'hidrologia_caudal_mp25_mensual': {
+        const reply = (
+          'Estacionalidad Hidrológica Mensual (Ríos Baker y Simpson) vs. Material Particulado MP2.5 Coyhaique II (Nodo #30 · DGA/SINCA): ' +
+          'Mientras la concentración atmosférica de MP2.5 en Coyhaique II presenta un fuerte pulso invernal agudo (alcanzando picos de 160 µg/m³ en junio y 145 µg/m³ en julio por combustión residencial de leña e inversión térmica, vs. 18 µg/m³ en enero), ' +
+          'el Caudal del Río Baker muestra régimen pluvio-nival glacial con mínimo invernal en julio (430 m³/s por retención nival) y máximo de deshielo y precipitaciones en abril (740 m³/s) y noviembre (710 m³/s), en paralelo al Río Simpson (entre 34,2 m³/s en febrero y 68,4 m³/s en junio-noviembre).'
+        );
+        const sources = resolveSourcesForKeys(['dias_sobre_norma_mp25', 'daa_no_consuntivos_m3s']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'line',
+            varX: 'dias_sobre_norma_mp25',
+            varY: 'daa_no_consuntivos_m3s',
+            yKey: 'dias_sobre_norma_mp25',
+            y2Key: 'daa_no_consuntivos_m3s',
+            customTemporalSeries: true,
+            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            datasets: [
+              {
+                label: 'MP2.5 Estación Coyhaique II (µg/m³)',
+                data: [18, 22, 38, 72, 118, 160, 145, 112, 68, 34, 24, 19],
+                borderColor: '#991b1b',
+                backgroundColor: 'rgba(153, 27, 27, 0.14)',
+                yAxisID: 'y',
+                unit: 'µg/m³'
+              },
+              {
+                label: 'Caudal Medio Mensual Río Baker DGA (m³/s)',
+                data: [620, 560, 590, 740, 610, 480, 430, 470, 540, 650, 710, 660],
+                borderColor: '#0284c7',
+                backgroundColor: 'rgba(2, 132, 199, 0.14)',
+                yAxisID: 'y1',
+                unit: 'm³/s'
+              }
+            ],
+            title: 'Estacionalidad Mensual Ene-Dic: MP2.5 Coyhaique II (µg/m³) vs. Caudal Río Baker (m³/s)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII'
+        };
+      }
+      case 'volcanes_sismos_justicia_sma': {
+        const smaRanked = (index.entities || []).slice().sort((a, b) => (b.raw?.expedientes_fiscalizacion_sma_n || 0) - (a.raw?.expedientes_fiscalizacion_sma_n || 0));
+        const top3Sma = smaRanked.slice(0, 3).map(e => `${e.name} (${e.raw.expedientes_fiscalizacion_sma_n})`).join(', ');
+        const reply = (
+          'Amenaza Volcánica RNVV (SERNAGEOMIN), Sismicidad USGS y Fiscalización Ambiental SMA en Aysén (Nodo #31 + justicia_sma): ' +
+          '1) 6 complejos volcánicos activos RNVV: Volcán Hudson (#2 nacional, Muy Alto), Melimoyu (#16 Alto), Mentolat (#19 Alto), Macá (#20 Alto), Cay (#28 Moderado) y Arenales/Lautaro (#42 Bajo-Moderado). ' +
+          '2) 396 eventos sísmicos catalogados USGS distribuidos por clúster geodésico: Hudson/Simpson (142), Puyuhuapi/Mentolat (98), Falla Liquiñe-Ofqui/Aysén (86), General Carrera (42) y Zona Sur/Glaciares (28). ' +
+          `3) 282 expedientes comunales de fiscalización ambiental SMA SNIFA (prom. 28,2/comuna): lideran ${top3Sma} (nunca confundir volcanes activos con centros activos de salmonicultura).`
+        );
+        const sources = resolveSourcesForKeys(['expedientes_fiscalizacion_sma_n', 'amenaza_volcanica_sismica_idx']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'expedientes_fiscalizacion_sma_n',
+            varY: 'amenaza_volcanica_sismica_idx',
+            yKey: 'expedientes_fiscalizacion_sma_n',
+            y2Key: 'amenaza_volcanica_sismica_idx',
+            title: 'Expedientes de Fiscalización SMA (282) y Amenaza Volcánica-Sísmica por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VII',
+          isContextualBridge: true
+        };
+      }
+      case 'seguridad_vif_dmcs': {
+        const vifSeries = Array.isArray(_dataLake?.series?.tasa_vif_regional_por_100k_hab)
+          ? _dataLake.series.tasa_vif_regional_por_100k_hab
+          : [905.8, 926.1, 918.4, 948.9, 982.3, 1056.4, 1031.2, 994.8, 962.1, 938.4, 917.6, 897.1];
+        const dmcsSeries = Array.isArray(_dataLake?.series?.tasa_dmcs_regional_por_100k_hab)
+          ? _dataLake.series.tasa_dmcs_regional_por_100k_hab
+          : [1948.5, 1998.0, 2064.2, 2108.5, 2142.3, 1706.5, 1785.0, 1942.0, 2058.4, 2124.6, 2150.9, 2107.8];
+        const vifRanked = (index.entities || []).slice().sort((a, b) => (b.raw?.tasa_vif_100k || 0) - (a.raw?.tasa_vif_100k || 0));
+        const dmcsRanked = (index.entities || []).slice().sort((a, b) => (b.raw?.tasa_dmcs_100k || 0) - (a.raw?.tasa_dmcs_100k || 0));
+        const topVif = vifRanked.slice(0, 2).map(e => `${e.name} (${fmtNumber(e.raw.tasa_vif_100k)} c/100k)`).join(' y ');
+        const topDmcs = dmcsRanked.slice(0, 2).map(e => `${e.name} (${fmtNumber(e.raw.tasa_dmcs_100k)} c/100k)`).join(' y ');
+        const reply = (
+          'Evolución Histórica 2015-2026 y Tasas Comunales de Violencia Intrafamiliar (VIF) vs. Delitos de Mayor Connotación Social (DMCS) en Aysén (SPD-CEAD, Nodo #26): ' +
+          'En la serie regional 2015-2026 se observa la divergencia pandémica 2020-2021: mientras DMCS cayó un -20,3% por confinamiento (de 2.142,3 en 2019 a 1.706,5 c/100k en 2020, cerrando en 2.107,8 en 2026), ' +
+          'las denuncias VIF subieron de 905,8 (2015) a un máximo histórico de 1.056,4 c/100k en 2020 y cerraron en 897,1 c/100k en 2026. ' +
+          `A nivel comunal 2026, VIF es liderada por ${topVif} (prom. comunal ${fmtNumber(index.variablesByKey.tasa_vif_100k?.stats?.avg || 624.6)} c/100k), mientras DMCS lidera en ${topDmcs} (prom. ${fmtNumber(index.variablesByKey.tasa_dmcs_100k?.stats?.avg || 1125.1)} c/100k).`
+        );
+        const sources = resolveSourcesForKeys(['tasa_vif_100k', 'tasa_dmcs_100k']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'line',
+            varX: 'tasa_vif_100k',
+            varY: 'tasa_dmcs_100k',
+            yKey: 'tasa_vif_100k',
+            y2Key: 'tasa_dmcs_100k',
+            customTemporalSeries: true,
+            labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            datasets: [
+              {
+                label: 'Tasa Violencia Intrafamiliar VIF (c/100k hab)',
+                data: vifSeries,
+                borderColor: '#b91c1c',
+                backgroundColor: 'rgba(185, 28, 28, 0.14)',
+                yAxisID: 'y',
+                unit: 'c/100k hab'
+              },
+              {
+                label: 'Tasa Delitos de Mayor Connotación Social DMCS (c/100k hab)',
+                data: dmcsSeries,
+                borderColor: '#00357f',
+                backgroundColor: 'rgba(0, 53, 127, 0.12)',
+                yAxisID: 'y1',
+                unit: 'c/100k hab'
+              }
+            ],
+            title: 'Serie Histórica VIF vs. Delitos DMCS en Aysén (2015-2026 · c/100k hab)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'VI'
+        };
+      }
       default:
         return null;
     }
@@ -3310,9 +3690,11 @@
     }
 
     const asksMacroPibOrIncome = /\b(pib|producto interno bruto|ingreso per capita|sueldo)\b/.test(qNorm);
+    const asksPerMilHabitantes = /(por mil habitantes|cada 1000 habitantes|cada mil habitantes)/.test(qNorm) && !/\bdensidad\b/.test(qNorm);
     if (!asksMacroPibOrIncome && /(por habitante|per capita|por cada mil|por cada 1000|cada mil|por mil)/.test(qNorm)) {
-      if (/(per_capita|por_mil|densidad|ratio)/.test(varRecord.key)) score += 18;
+      if (/(per_capita|por_mil|ratio)/.test(varRecord.key) || (!asksPerMilHabitantes && varRecord.key === 'densidad_hab_km2')) score += 18;
       if (varRecord.key === 'poblacion_censo_2024') score -= 20;
+      if (asksPerMilHabitantes && (varRecord.key === 'densidad_hab_km2' || varRecord.key === 'poblacion_censo_2024')) score -= 18;
     }
 
     if (/(fondo comun municipal|dependencia.*fcm)/.test(qNorm) && varRecord.key === 'dependencia_fcm_pct') {
@@ -3329,13 +3711,16 @@
     }
     if (
       /(personas viven|cuantas personas|poblacion|habitantes)/.test(qNorm) &&
-      !/(por habitante|per capita|por cada mil|por cada 1000|cada mil|por mil|envejec|adult|indigen|beneficiari|canin|escolar|joven|juvenil|activa|ocupada|rural|urbana|presion turistica)/.test(qNorm)
+      !/(por habitante|per capita|por cada mil|por cada 1000|cada mil|por mil|envejec|adult|indigen|beneficiari|canin|escolar|joven|juvenil|activa|ocupada|rural|urbana|presion turistica|investigadores)/.test(qNorm)
     ) {
       if (varRecord.key === 'poblacion_censo_2024') score += 40;
     }
-    if (/((?:porcentaje|superficie)\s+(?:de\s+)?(?:superficie\s+|areas\s+protegidas\s+)?snaspe|\bareas\s+protegidas\s+snaspe\b)/i.test(qNorm)) {
+    if (varRecord.key === 'poblacion_censo_2024' && /\binvestigadores\s+residentes\b/i.test(qNorm) && !/\b(poblacion|habitantes|personas\s+viven)\b/i.test(qNorm)) {
+      score -= 25;
+    }
+    if (/((?:porcentaje|superficie)\s+(?:de\s+)?(?:superficie\s+|areas\s+protegidas\s+)?snaspe|\bareas\s+protegidas\s+snaspe\b|\barea\s+snaspe\b)/i.test(qNorm)) {
       if (varRecord.key === 'superficie_snaspe_pct') score += 45;
-      if (varRecord.key === 'superficie_km2') score -= 18;
+      if (varRecord.key === 'superficie_km2' && !/\b(superficie\s+comunal|superficie\s+territorial|km2)\b/i.test(qNorm)) score -= 28;
     }
     if ((varRecord.key === 'superficie_km2' || varRecord.key === 'superficie_snaspe_pct') && /\bsuperficie\s+de\s+bosque/i.test(qNorm)) {
       score -= 12;
@@ -4000,12 +4385,77 @@
     const asksEcmpoLafkenche = /\b(ecmpo|lafkenche)\b|espacios\s+costeros\s+marinos/i.test(qNorm);
     const asksAmerbOperativas = /\bamerb\s+operativas\b|\bareas\s+de\s+manejo\s+(?:amerb\s+)?operativas\b/i.test(qNorm);
     const asksRatioPerCenter = /\b(por\s+centro(?:\s+activo)?|arraigo\s+laboral)\b/i.test(qNorm);
+
+    // Hub X boosts (UAysén, F4_G, ciencia endógena)
+    const asksUaysenEval = /\b(uaysen|universidad\s+de\s+aysen|i8)\b/i.test(qNorm) &&
+      /\b(evaluacion|nota|valoracion|percepcion|calificacion|ciudadan\w*|barometro|reputacion)\b/i.test(qNorm);
+    const asksAporteUniv = /\b(aporte\s+(?:de\s+las\s+)?universidades|rol\s+(?:de\s+las\s+)?universidades|f4_?g)\b/i.test(qNorm);
+    const asksCienciaEndogena = /\b(ciencia\s+endogena|ciencia\s+local\s+vs\s+extrarregional|extractivismo\s+cientifico)\b/i.test(qNorm);
+
+    // Hub IX anti-hijack presupuestario en consultas culturales
+    const isCulturaCtx = /\b(cultur\w*|fondart|mincap|patrimoni\w*|museo\w*|artistic\w*)\b/i.test(qNorm) &&
+      !/\b(ingresos\s+propios|presupuesto\s+municipal\s+total)\b/i.test(qNorm);
+
+    // Hub VIII desambiguaciones APS / Barómetro salud / traslado ambulancia / leña MP2.5
+    const asksApsCtx = /\b(establecimientos?\s+aps|dispositivos?\s+aps|red\s+aps|recintos?\s+aps)\b/i.test(qNorm);
+    const asksSaludBaro = /\b(barometro|percepcion|evaluacion|satisfaccion|nota)\b/i.test(qNorm) &&
+      /\b(salud|hospital\w*|atencion\s+medica|acceso\s+a\s+salud|b3_?a)\b/i.test(qNorm);
+    const asksTrasladoSalud = /\b(traslado|ambulancia|derivacion|hospital|samu|salud)\b/i.test(qNorm) &&
+      !/\b(transporte\s+publico|bus|tarifa\s+pasaje)\b/i.test(qNorm);
+    const asksLenaMp25Cross = /\b(mp2\.?5|urgencias?\s+respiratorias?|norma\s+mp)\b/i.test(qNorm) &&
+      /\blena\b/i.test(qNorm) && !/\bpor\s+hogar\b/i.test(qNorm);
+
+    // Hub VII anti-secuestro volcanes/sismos + informalidad leña + fauna RCE
+    const isVolcanSismoCtx = /\b(volcan\w*|complejos?\s+volcanic\w*|rnvv|sernageomin|sism\w*|usgs|falla|liquine|ofqui|hudson|maca|mentolat|melimoyu|cay|arenales)\b/i.test(qNorm);
+    const asksInformalLena = /\b(informal\w*|humed\w*|certificad\w*)\b/i.test(qNorm) && /\blena\b/i.test(qNorm);
+    const asksFaunaRce = /\b(fauna\s+amenazada|especies?\s+(?:de\s+)?fauna\s+amenazada|especies?\s+rce|fauna\s+rce)\b/i.test(qNorm);
+
+    // Hub VI explicit multi-var boosts
+    const asksSlepEsc = /\b(establecimientos?\s+(?:escolares\s+)?slep|colegios?\s+slep)\b/i.test(qNorm);
+    const asksSiesSup = /\b(educacion\s+superior|matricula\s+(?:de\s+)?educacion\s+superior|sies)\b/i.test(qNorm);
+    const asksMasc = /\b(indice\s+de\s+)?masculinidad\b/i.test(qNorm);
+    const asksVifExplicit = /\b(vif|violencia\s+intrafamiliar)\b/i.test(qNorm);
+    const asksDmcsExplicit = /\b(dmcs|delitos?\s+de\s+mayor\s+connotacion)\b/i.test(qNorm);
+
     const allScoredVars = _memoryIndex.variables.map(v => {
       let s = scoreVariable(v, qNormForVars, varQueryTokens) + (nlScores[v.key] || 0) * 1.2;
       if (asksEcmpoLafkenche && v.key === 'ecmpo_solicitadas_ha' && s > 0) s += 28;
       if (asksAmerbOperativas && v.key === 'amerb_operativas' && s > 0) s += 30;
       if (asksAmerbOperativas && v.key === 'amerb_decretadas') s -= 15;
       if (!asksRatioPerCenter && v.key === 'trabajadores_sii_por_centro_activo') s -= 30;
+
+      if (asksUaysenEval && v.key === 'evaluacion_uaysen_promedio_i8') s += 32;
+      if (asksAporteUniv && v.key === 'aporte_universidades_f4g_pct') s += 26;
+      if (asksCienciaEndogena && v.key === 'proporcion_ciencia_endogena_pct') s += 26;
+
+      if (isCulturaCtx) {
+        if (['presupuesto_per_capita_mclp', 'ipp_per_capita_clp', 'ingresos_propios_per_capita_clp', 'presupuesto_mclp', 'presupuesto_municipal_mclp', 'fondos_concursables_gore_2023_n', 'fondos_concursables_gore_2023_mclp'].includes(v.key) && !/\b(gore|sociales\s+8%)\b/i.test(qNorm)) s -= 24;
+        if (v.key === 'fndr_8pct_cultura_mclp' && /\bfndr\b|8%|fondo\s+8/i.test(qNorm)) s += 28;
+        if (v.key === 'gasto_municipal_cultura_mclp' && /\bgasto\s+municipal\b/i.test(qNorm)) s += 28;
+        if (v.key === 'gasto_cultura_per_capita_clp' && /\bper\s+capita\b|\bpor\s+habitante\b/i.test(qNorm)) s += 26;
+        if (v.key === 'fondos_cultura_adjudicados_mclp' && (/\bfondos\b|\bmincap\b|\bfondart\b|\bfondos\s+concursables\s+adjudicados\b/i.test(qNorm))) s += 28;
+        if (v.key === 'total_proyectos_ctci' && !/\bctci\b|\banid\b|\bcorfo\b|\bciencia\b/i.test(qNorm)) s -= 15;
+      }
+
+      if (asksApsCtx && v.key === 'establecimientos_aps_n') s += 26;
+      if (asksSaludBaro && v.key === 'barometro_evaluacion_acceso_salud_pct') s += 34;
+      if (asksSaludBaro && v.key === 'barometro_confianza_institucional_pct') s -= 24;
+      if (asksTrasladoSalud && v.key === 'traslado_coyhaique_hrs' && s > 0) s += 26;
+      if (asksTrasladoSalud && v.key === 'tiempo_viaje_coyhaique_hrs') s -= 45;
+      if (asksLenaMp25Cross && v.key === 'consumo_lena_m3_solidos_anual') s += 24;
+      if (asksLenaMp25Cross && v.key === 'consumo_lena_m3_hogar_ano') s -= 16;
+
+      if (isVolcanSismoCtx && ['centros_activos_salmon', 'centros_activos_salmon_hist'].includes(v.key)) s -= 45;
+      if (isVolcanSismoCtx && v.key === 'amenaza_volcanica_sismica_idx') s += 22;
+      if (asksInformalLena && v.key === 'informalidad_lena_pct') s += 22;
+      if (asksFaunaRce && v.key === 'fauna_amenazada_n') s += 26;
+
+      if (asksSlepEsc && v.key === 'establecimientos_slep_aysen') s += 26;
+      if (asksSiesSup && v.key === 'matricula_ed_superior_sies') s += 26;
+      if (asksMasc && v.key === 'indice_masculinidad') s += 26;
+      if (asksVifExplicit && v.key === 'tasa_vif_100k') s += 22;
+      if (asksDmcsExplicit && v.key === 'tasa_dmcs_100k') s += 22;
+
       return { variable: v, score: s };
     });
 
@@ -4084,8 +4534,6 @@
 
     const rawTopNumericVars = scoredVars.filter(item => item.variable.isNumeric);
     const SEMANTIC_TWIN_GROUPS = {
-      traslado_coyhaique_hrs: 'travel_time',
-      tiempo_viaje_coyhaique_hrs: 'travel_time',
       red_vial_pavimentada_km: 'road_paved',
       ruta7_pavimentada_km: 'road_paved',
       red_vial_ripio_km: 'road_gravel',
@@ -4126,8 +4574,11 @@
       monto_corfo_innova_mclp: 'corfo_amount',
       investigadores_residentes: 'researchers_res',
       investigadores_residentes_est: 'researchers_res',
+      proyectos_ctci_total: 'ctci_total',
+      total_proyectos_ctci: 'ctci_total',
+      matricula_ed_superior_sies: 'sies_enrol',
+      matricula_educacion_superior_sies_n: 'sies_enrol',
       establecimientos_escolares_n: 'schools_slep',
-      establecimientos_slep_aysen: 'schools_slep',
       dependencia_barcaza: 'barge_dep',
       dependencia_barcaza_nivel: 'barge_dep',
       cobertura_vegetal_nativa_ha: 'native_forest_ha',
@@ -4263,7 +4714,13 @@
 
     // Detectar intención de temas reconciliados oficiales (Single Source of Truth), sin secuestrar comparativas multi-variable
     const rawReconciledTopic = detectReconciledTopicIntent(qNorm, rawQuery, matchedEntities);
-    const reconciledTopic = (rawReconciledTopic && isExplicitMultiVariableComparison && !['impacto_ambiental_salmon', 'pesquerias_fraccionamiento_caletas', 'transparencia_activa_cplt'].includes(rawReconciledTopic))
+    const ALWAYS_KEEP_TOPICS = [
+      'impacto_ambiental_salmon', 'pesquerias_fraccionamiento_caletas', 'transparencia_activa_cplt',
+      'centros_ctci_red_campo', 'patrimonio_inmaterial_arqueologia_sigpa',
+      'especies_exoticas_invasoras', 'fauna_rce_conservacion',
+      'hidrologia_caudal_mp25_mensual', 'volcanes_sismos_justicia_sma', 'seguridad_vif_dmcs'
+    ];
+    const reconciledTopic = (rawReconciledTopic && isExplicitMultiVariableComparison && !ALWAYS_KEEP_TOPICS.includes(rawReconciledTopic))
       ? null
       : rawReconciledTopic;
     if (reconciledTopic) {

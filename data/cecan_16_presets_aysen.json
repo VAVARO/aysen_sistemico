@@ -3266,42 +3266,46 @@
         {
           "preset_id": "hub_05_01",
           "hub_id": "social",
-          "titulo": "1. Mapa de Vulnerabilidad Social CASEN, Pasos Fronterizos y Volcanes",
+          "titulo": "1. Mapa Territorial de Vulnerabilidad Social, Red Educativa SLEP y Servicios Sanitarios",
           "format_type": "map",
           "inter_hub_cross": {
-            "cross_hub": "biodiversidad",
-            "descripcion": "Ubicación de los 8 pasos fronterizos y comisarías frente a la zonificación de fallas activas y volcanes SERNAGEOMIN"
+            "cross_hub": "salud",
+            "descripcion": "Georreferencia los 57 establecimientos escolares SLEP/SIES (36 escuelas rurales multigrado, 18 liceos y 3 sedes superiores) junto a las 27 postas rurales y la Ruta 7 frente a la pobreza multidimensional CASEN"
           },
           "config": {
             "widget_type": "map",
             "varX": "pobreza_multidim_pct",
-            "varY": "matricula_escolar",
+            "varY": "rsh_carencia_servicios_basicos_jun2026_pct",
             "center": [
               -45.57,
               -72.06
             ],
             "zoom": 7,
             "layers": [
-              "cuarteles_carabineros",
-              "pasos_fronterizos",
-              "volcanes_activos"
+              "escuelas_slep",
+              "hospitales_postas",
+              "ruta7_tramos"
             ],
             "tooltip_mirror_indicator": {
               "question_id": "B3_F",
               "label": "Seguridad ciudadana (nota 1-7)",
               "show_sample_n": true
             },
-            "spatialLayer": "volcanes_sismos",
+            "spatialLayer": "escuelas_slep",
             "showBuffers": false,
-            "bufferRadiusM": 25000
+            "bufferRadiusM": 25000,
+            "activeOverlays": [
+              "hospitales_postas",
+              "ruta7_tramos"
+            ]
           },
-          "what_it_shows": "Red de seguridad pública y pasos fronterizos DIFROL en un territorio de más de 107.000 km².",
-          "why_complex_system": "Vulnerabilidad territorial múltiple: los recintos policiales y de rescate cubren radios operacionales gigantescos frente a amenazas naturales combinadas."
+          "what_it_shows": "Visualiza cómo las 36 escuelas rurales multigrado SLEP y las 27 postas de salud rural sostienen el tejido social en comunas con alta carencia de servicios básicos (Tortel 38,1%, Lago Verde 33,9%, Guaitecas 26,9%) y pobreza multidimensional (Guaitecas 27,4%, Tortel 26,2%, Lago Verde 24,5%).",
+          "why_complex_system": "Infraestructura social de anclaje: en territorios de baja densidad, cada escuela rural multigrado y posta sanitaria opera simultáneamente como nodo cívico, logístico y de retención poblacional."
         },
         {
           "preset_id": "hub_05_02",
           "hub_id": "social",
-          "titulo": "2. Pobreza Multidimensional CASEN (%) vs. Pobreza por Ingresos (%)",
+          "titulo": "2. La Brecha Invisible de Aysén: Pobreza Multidimensional CASEN (%) vs. Pobreza por Ingresos (%)",
           "format_type": "bar",
           "subtype": "double_axis_bar",
           "inter_hub_cross": {
@@ -3313,45 +3317,44 @@
             "chartType": "bar",
             "varX": "pobreza_multidim_pct",
             "varY": "pobreza_ingresos_pct",
-            "varY2": "pobreza_ingresos_pct",
             "showAverage": true
           },
-          "what_it_shows": "El sur austral e insular exhibe brechas severas de pobreza multidimensional asociadas a carencias de conectividad, salud y calefacción.",
-          "why_complex_system": "Diferenciación espacial: las problemáticas de seguridad urbana difieren cualitativamente de los déficits de infraestructura en zonas aisladas."
+          "what_it_shows": "Evidencia el desacople casi total entre pobreza monetaria y pobreza multidimensional en Aysén (r = 0.04, R² = 0.00): Lago Verde registra 0,9% de pobreza por ingresos frente a 24,5% multidimensional (brecha de 27,2x) y Tortel 4,6% frente a 26,2% (5,7x), impulsadas por la carencia de agua/saneamiento (38,1% en Tortel, 33,9% en Lago Verde y 26,9% en Guaitecas) y conectividad.",
+          "why_complex_system": "Falla de métricas estándar: medir la vulnerabilidad solo por ingreso monetario oculta privaciones críticas en habitabilidad, servicios sanitarios rurales (SSR) y acceso educativo en la Patagonia aislada."
         },
         {
           "preset_id": "hub_05_03",
           "hub_id": "social",
-          "titulo": "3. Cuadrantes de Cohesión Social: Matrícula SLEP vs. Pobreza por Ingresos",
+          "titulo": "3. Cuadrantes de Habitabilidad Crítica: Carencia de Servicios Básicos RSH (%) vs. Pobreza Multidimensional CASEN (%)",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "inter_hub_cross": {
             "cross_hub": "gobernanza",
-            "descripcion": "Cruza la matrícula escolar SLEP con el porcentaje de pobreza por ingresos CASEN en las 10 comunas"
+            "descripcion": "Relaciona la carencia de servicios básicos (agua, saneamiento y energía) del Registro Social de Hogares (Junio 2026) con la pobreza multidimensional CASEN"
           },
           "config": {
             "widget_type": "chart",
             "chartType": "scatter",
-            "varX": "matricula_escolar",
-            "labelX": "Matrícula Escolar Comunal SLEP (estudiantes)",
-            "varY": "pobreza_ingresos_pct",
-            "labelY": "Pobreza por Ingresos CASEN (%)",
+            "varX": "rsh_carencia_servicios_basicos_jun2026_pct",
+            "labelX": "Carencia de Servicios Básicos RSH Jun 2026 (%)",
+            "varY": "pobreza_multidim_pct",
+            "labelY": "Pobreza Multidimensional CASEN (%)",
             "quadrant_labels": {
-              "q1": "Alta Matrícula con Vulnerabilidad Residual",
-              "q2": "Baja Escala Escolar y Alta Pobreza",
-              "q3": "Inercia Rural de Baja Matrícula",
-              "q4": "Alto Capital Humano Consolidado"
+              "q1": "Rezago Sanitario y Pobreza Crítica",
+              "q2": "Vulnerabilidad Social No Sanitaria",
+              "q3": "Habitabilidad Urbana Consolidada",
+              "q4": "Déficit de Servicios Básicos Contenible"
             },
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Muestra la fuerte correlación entre escala educativa comunal y menores tasas de pobreza.",
-          "why_complex_system": "Efectos acumulativos: el capital educativo regional retiene ingresos y fortalece el tejido productivo comunal."
+          "what_it_shows": "El cruce entre carencia de servicios básicos RSH y pobreza multidimensional exhibe una fuerte relación estructural en las 10 comunas (r = 0.78, R² = 0.61; sin Coyhaique r = 0.79, R² = 0.63), destacando Tortel (38,1% carencia RSH / 26,2% pobreza multidim.), Lago Verde (33,9% / 24,5%) y Guaitecas (26,9% / 27,4%).",
+          "why_complex_system": "Acoplamiento de privaciones básicas: la falta de agua potable rural, saneamiento y electrificación continua actúa como motor directo de la pobreza multidimensional más allá de los subsidios monetarios."
         },
         {
           "preset_id": "hub_05_04",
           "hub_id": "social",
-          "titulo": "4. Serie Histórica Multieje: Denuncias de Violencia Intrafamiliar vs. Delitos DMCS (2015-2026)",
+          "titulo": "4. Serie Histórica Multieje: Denuncias VIF vs. Delitos de Mayor Connotación Social DMCS (2015-2026)",
           "format_type": "line",
           "subtype": "multi_axis_series",
           "inter_hub_cross": {
@@ -3424,13 +3427,13 @@
               ]
             }
           },
-          "what_it_shows": "La violencia intrafamiliar representa el delito más prevalente y de mayor sensibilidad invernal en el registro regional de seguridad.",
-          "why_complex_system": "Confinamiento e invierno: los meses fríos de mayor encierro en el hogar incrementan las tensiones familiares y las denuncias de agresión."
+          "what_it_shows": "Documenta la divergencia pandémica 2020-2021 en la serie anual CEAD (2015-2026): mientras los delitos en el espacio público (DMCS) cayeron -20,3% en 2020 por las cuarentenas (de 2.142,3 a 1.706,5 c/100k hab, cerrando en 2.107,8 en 2026), la Violencia Intrafamiliar (VIF) alcanzó su máximo histórico regional (1.056,4 c/100k hab en 2020) y cierra en 897,1 c/100k hab en 2026, con Puerto Aysén liderando la tasa comunal VIF (1.080,5 c/100k hab) sobre Coyhaique (940,8 c/100k hab).",
+          "why_complex_system": "Efecto desplazamiento intramuros: las restricciones de movilidad redujeron el delito callejero visible mientras amplificaron la conflictividad y violencia al interior de los hogares aislados."
         },
         {
           "preset_id": "hub_05_05",
           "hub_id": "social",
-          "titulo": "5. Realidad vs. Percepción: Sensación de Seguridad vs. Vulnerabilidad Social",
+          "titulo": "5. Espejo Ciudadano: Seguridad Pública Percibida (Barómetro B3_F) vs. Pobreza Multidimensional y Delitos DMCS",
           "format_type": "special",
           "subtype": "bubble_perception_sample_scaled",
           "is_perception_mirror": true,
@@ -3442,7 +3445,7 @@
             "widget_type": "chart",
             "chartType": "bar",
             "mode": "mirror_comparison",
-            "varX": "pobreza_multidim_pct",
+            "varX": "tasa_dmcs_100k",
             "varY": "barometro_redes_apoyo_comunitario_pct",
             "barometro_question": "B3_F",
             "structural_variable": "pobreza_multidim_pct",
@@ -3458,9 +3461,9 @@
               "promedio_valor": 4.38,
               "structural_variable": "pobreza_multidim_pct",
               "structural_by_macrozona": {
-                "norte": 15.3,
-                "centro": 12.5,
-                "sur": 15.7
+                "norte": 23.0,
+                "centro": 17.2,
+                "sur": 20.0
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -3605,7 +3608,7 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Aysén tiene las tasas de delitos más bajas de Chile, pero la percepción de temor ciudadano ha aumentado de forma significativa.",
+          "what_it_shows": "Contrapone la tasa comunal de delitos DMCS (1.425,4 c/100k promedio) y la pobreza multidimensional real por macrozona (Norte 23,0%, Centro 17,2%, Sur 20,0%) con la percepción ciudadana de seguridad ciudadana (B3_F): solo el 33,8% de los jóvenes (18-29 años) y el 38,0% del NSE Bajo evalúan positivamente la seguridad en Aysén, frente al 69,5% del NSE Alto y el 66,3% de quienes tienen educación universitaria.",
           "why_complex_system": "Amplificación de señales: el consumo de noticias nacionales genera un sesgo de percepción desfasado de las cifras efectivas locales."
         }
       ]
@@ -4005,13 +4008,13 @@
             "showBuffers": true,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "La riqueza ecosistémica de Aysén alberga más de 5,7 millones de ha de bosque nativo y el 70% de la población mundial de huemules.",
+          "what_it_shows": "Cartografía los 5.723.000 ha de cobertura vegetal nativa (incluyendo 4.713.200 ha de bosque nativo arbóreo) y 56,2% de cobertura comunal promedio en SNASPE, junto a 32 nodos ambientales limpios (20 sitios prioritarios de fauna RCE MMA + 12 estaciones hidrométricas DGA y de calidad del aire SINCA).",
           "why_complex_system": "Fragilidad y refugio: la cuenca del Baker y los fiordos actúan como santuarios biológicos frente a la fragmentación antropogénica."
         },
         {
           "preset_id": "hub_07_02",
           "hub_id": "biodiversidad",
-          "titulo": "2. Cobertura de Bosque Nativo (ha) vs. Superficie Protegida SNASPE (%)",
+          "titulo": "2. Cobertura de Bosque Nativo vs. Superficie Protegida SNASPE y Brecha de Guardaparques",
           "format_type": "bar",
           "subtype": "divergent_bar",
           "inter_hub_cross": {
@@ -4023,16 +4026,15 @@
             "chartType": "bar",
             "varX": "cobertura_vegetal_nativa_ha",
             "varY": "superficie_snaspe_pct",
-            "varY2": "superficie_snaspe_pct",
             "showAverage": true
           },
-          "what_it_shows": "Comunas como Tortel, O'Higgins y Cisnes resguardan las mayores reservas de bosque templado y subantártico del hemisferio sur.",
+          "what_it_shows": "Distingue los 5.723.000 ha de cobertura vegetal nativa total de los 4.713.200 ha de bosque nativo arbóreo y revela la brecha operativa de CONAF (ha_snaspe_por_guardaparque vs. superficie_snaspe_pct: r = +0.9085, R² = 0.8253): las comunas más protegidas (O'Higgins 78,3% -> 210.000 ha/guardaparque; Tortel 87,4% -> 195.000 ha; Cisnes 71,2% -> 168.000 ha) multiplican por más de 10 el estándar UICN (10.000-15.000 ha/guardaparque).",
           "why_complex_system": "Histéresis ecológica: un bosque patagónico calcinado tarda más de un siglo en regenerar su dosel original debido a los fuertes vientos y la erosión."
         },
         {
           "preset_id": "hub_07_03",
           "hub_id": "biodiversidad",
-          "titulo": "3. Cuadrantes Críticos: Días sobre Norma MP2.5 vs. Uso de Leña (%)",
+          "titulo": "3. Cuadrantes Críticos de Contaminación Atmosférica: Días sobre Norma MP2.5 vs. Consumo Anual de Leña (m³ sólidos)",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "inter_hub_cross": {
@@ -4044,8 +4046,8 @@
             "chartType": "scatter",
             "varX": "dias_sobre_norma_mp25",
             "labelX": "Días Anuales sobre Norma MP2.5 (días)",
-            "varY": "hogares_lena_pct",
-            "labelY": "Hogares Calefaccionados con Leña (%)",
+            "varY": "consumo_lena_m3_solidos_anual",
+            "labelY": "Consumo Anual de Leña (m³ sólidos)",
             "quadrant_labels": {
               "q1": "Crisis Ambiental e Invernada Severa",
               "q2": "Alto Uso de Leña con Mayor Ventilación",
@@ -4055,13 +4057,13 @@
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Coyhaique registra más de 80 días al año con episodios críticos de MP2.5 por la combinación de cuenca cerrada y quema de leña húmeda.",
+          "what_it_shows": "La saturación atmosférica comunal (días sobre norma MP2.5) correlaciona en r = +0.9767 (R² = 0.9539; sin Coyhaique r = +0.8942, R² = 0.7996) con el volumen total anual de leña quemada: Coyhaique (87 días / 248.800 m³ sólidos), Puerto Aysén (34 días / 128.500 m³), Cochrane (22 días / 34.800 m³) y Chile Chico (18 días / 32.600 m³), agravado por 68%-80% de leña informal húmeda.",
           "why_complex_system": "Bucle cerrado: el costo económico del recambio térmico atrapa a los hogares en el consumo de leña ineficiente, retroalimentando la nube tóxica."
         },
         {
           "preset_id": "hub_07_04",
           "hub_id": "biodiversidad",
-          "titulo": "4. Serie Histórica Multieje: MP2.5 Invernal Coyhaique (µg/m³) vs. Días sobre Norma MP2.5 (días) (2015-2026)",
+          "titulo": "4. Serie Histórica Multieje PDA Coyhaique (2015-2026): MP2.5 Invernal (µg/m³), Días sobre Norma (>50 µg/m³) y Episodios Críticos GEC (>110 µg/m³)",
           "format_type": "line",
           "subtype": "multi_axis_series",
           "inter_hub_cross": {
@@ -4113,7 +4115,28 @@
                   "yAxisID": "y"
                 },
                 {
-                  "label": "Días sobre Norma MP2.5 Anual (días)",
+                  "label": "Días sobre Norma Diaria MP2.5 (>50 µg/m³, días)",
+                  "data": [
+                    152,
+                    168,
+                    146,
+                    138,
+                    129,
+                    121,
+                    114,
+                    108,
+                    101,
+                    95,
+                    91,
+                    87
+                  ],
+                  "borderColor": "#c2410c",
+                  "backgroundColor": "rgba(194, 65, 12, 0.14)",
+                  "yAxisID": "y1",
+                  "unit": "días >50 µg/m³"
+                },
+                {
+                  "label": "Episodios Críticos Preemergencia + Emergencia GEC (>110 µg/m³, días)",
                   "data": [
                     92,
                     98,
@@ -4128,19 +4151,21 @@
                     45,
                     41
                   ],
-                  "unit": "días",
-                  "yAxisID": "y1"
+                  "borderColor": "#991b1b",
+                  "backgroundColor": "rgba(153, 27, 27, 0.12)",
+                  "yAxisID": "y1",
+                  "unit": "episodios GEC"
                 }
               ]
             }
           },
-          "what_it_shows": "Descenso sostenido entre 2015 y 2026 de la concentración invernal de MP2.5 y de los días anuales sobre norma diaria en Coyhaique conforme avanza el Plan de Descontaminación Atmosférica (PDA).",
+          "what_it_shows": "Reconcilia las tres series del PDA Coyhaique (2015-2026): la media invernal baja de 168,5 a 96,8 µg/m³, los días totales sobre la norma primaria (>50 µg/m³) descienden de 152 a 87 días (igual al dato comunal 2026 de Coyhaique), y los episodios críticos de Preemergencia + Emergencia GEC (>110 µg/m³) disminuyen de 92 a 41 episodios.",
           "why_complex_system": "Inversión térmica y no linealidad: caídas de 2°C bajo cero duplican el encendido simultáneo de calefactores, colapsando la capa de ventilación."
         },
         {
           "preset_id": "hub_07_05",
           "hub_id": "biodiversidad",
-          "titulo": "5. Realidad vs. Percepción: Urgencia de Biodiversidad y Agua vs. Superficie SNASPE",
+          "titulo": "5. Realidad vs. Percepción (Espejo Barómetro I4_E): Urgencia de Recursos Hídricos y Biodiversidad (92,0%) vs. Cobertura SNASPE (%)",
           "format_type": "special",
           "subtype": "heatmap_perception_by_age",
           "is_perception_mirror": true,
@@ -4168,9 +4193,9 @@
               "promedio_valor": 3.56,
               "structural_variable": "superficie_snaspe_pct",
               "structural_by_macrozona": {
-                "norte": 54.8,
-                "centro": 22.4,
-                "sur": 68.5
+                "norte": 58.5,
+                "centro": 39.0,
+                "sur": 65.6
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -4315,7 +4340,7 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "El 89.5% de los jóvenes y adultos considera urgente frenar la pérdida de biodiversidad y el agotamiento de recursos hídricos en la región.",
+          "what_it_shows": "El 92,0% de la población regional (n = 452 válidos) considera urgente frenar la pérdida de biodiversidad y proteger los recursos hídricos (I4_E), con promedios reales de cobertura SNASPE de 58,5% en Macrozona Norte, 39,0% en Centro y 65,6% en Sur.",
           "why_complex_system": "Valores emergentes: fuerte arraigo patagónico donde la conservación de la naturaleza se concibe como parte indisoluble de la identidad territorial."
         }
       ]
@@ -4331,7 +4356,7 @@
         {
           "preset_id": "hub_08_01",
           "hub_id": "salud",
-          "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales y 27 Postas Rurales",
+          "titulo": "1. Mapa Territorial de la Red Asistencial: 5 Hospitales, 6 CESFAM/CECOSF y 27 Postas Rurales",
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "salmonicultura",
@@ -4360,7 +4385,7 @@
             "showBuffers": true,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Georreferenciación de los 5 hospitales públicos y las 27 postas de salud rural permanentes que atienden a los 100.745 habitantes de la región.",
+          "what_it_shows": "Georreferencia los 43 dispositivos reales de la red asistencial SSA: 5 hospitales públicos con 261 camas DEIS (Coyhaique 167, Aysén 52, Cochrane 16, Chile Chico 14, Cisnes 12), 6 CESFAM/CECOSF con población inscrita FONASA, 27 Postas de Salud Rural (PSR) y 5 Estaciones Médico Rurales (EMR).",
           "why_complex_system": "Puntos de fallo único: el Hospital Regional de Coyhaique concentra la totalidad de camas UCI y especialistas de alta complejidad para 108.000 km²."
         },
         {
@@ -4368,7 +4393,7 @@
           "hub_id": "salud",
           "titulo": "2. Camas Hospitalarias Disponibles vs. Médicos por Mil Habitantes",
           "format_type": "bar",
-          "subtype": "stacked_bar",
+          "subtype": "grouped_bar",
           "inter_hub_cross": {
             "cross_hub": "social",
             "descripcion": "Compara la dotación de 261 camas hospitalarias en Aysén frente a la tasa de médicos por cada mil habitantes en las 10 comunas"
@@ -4378,10 +4403,9 @@
             "chartType": "bar",
             "varX": "camas_hospitalarias",
             "varY": "medicos_por_mil_hab",
-            "varY2": "medicos_por_mil_hab",
             "showAverage": true
           },
-          "what_it_shows": "Coyhaique alberga 167 de las 261 camas regionales (63,98%), mientras la Macrozona Sur cuenta con solo 14 camas para 5 comunas.",
+          "what_it_shows": "Coyhaique alberga 167 de las 261 camas regionales (63,98%) y 3,12 médicos/1.000 hab, Puerto Aysén 52 camas (19,92%) y Cisnes 12 camas (4,60%), mientras toda la Macrozona Sur suma 30 camas (11,49%: 16 en Cochrane y 14 en Chile Chico) y 5 comunas carecen de hospital.",
           "why_complex_system": "Centralismo intrarregional: la concentración hospitalaria en la capital regional genera extrema dependencia en evacuaciones de emergencia."
         },
         {
@@ -4410,7 +4434,7 @@
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Tortel y Villa O'Higgins distan a más de 8-10 horas de ambulancia de un quirófano, condicionando el pronóstico de pacientes críticos.",
+          "what_it_shows": "El tiempo de derivación clínica hacia el Hospital Regional Coyhaique correlaciona positivamente con las aeroevacuaciones SAMU/FACH (r = +0.6905, R² = 0.4767; r = +0.7078 con dependencia de barcaza): de los 442 traslados regionales destacan Guaitecas (96), Cisnes (72), Cochrane (54), Tortel (46) y O'Higgins (42), mientras el mayor aislamiento se asocia con menor esperanza de vida al nacer (esperanza_vida_total_anos: r = -0.7382, R² = 0.5449; Coyhaique 81,6 años vs. Tortel 79,0, O'Higgins 79,2 y Guaitecas 79,5).",
           "why_complex_system": "Isócronas vitales: la distancia física en carreteras de ripio impone demoras irreversibles en eventos cerebrovasculares o traumas agudos."
         },
         {
@@ -4489,13 +4513,13 @@
               ]
             }
           },
-          "what_it_shows": "Cada pico invernal de MP2.5 genera un aumento casi sincrónico del 40% al 65% en consultas pediátricas y geriátricas en el Hospital de Coyhaique.",
+          "what_it_shows": "Serie multianual DEIS/SSA 2015-2026 de urgencias respiratorias frente a egresos hospitalarios, acoplada al corte comunal 2026 donde la proporción de urgencias respiratorias invernales (urgencias_respiratorias_pct) correlaciona en r = +0.9617 (R² = 0.9248) con los días sobre norma MP2.5 y en r = +0.9709 (R² = 0.9426) con el consumo anual de leña (escalando de 16,5% en O'Higgins a 44,5% en Coyhaique y 28,6% en Puerto Aysén).",
           "why_complex_system": "Cascada sistémica: el frío dispara la combustión de leña, el humo satura la atmósfera y la red asistencial colapsa sus camas de hospitalización abreviada."
         },
         {
           "preset_id": "hub_08_05",
           "hub_id": "salud",
-          "titulo": "5. Realidad vs. Percepción: Satisfacción de Salud vs. Capacidad Resolutiva DEIS",
+          "titulo": "5. Espejo Ciudadano (Barómetro B3_A): Acceso y Calidad de Salud (Nota 3,48 · 23,7% positiva) vs. Médicos por 1.000 hab",
           "format_type": "special",
           "subtype": "dumbbell_perception_vs_structural",
           "is_perception_mirror": true,
@@ -4523,9 +4547,9 @@
               "promedio_valor": 3.48,
               "structural_variable": "medicos_por_mil_hab",
               "structural_by_macrozona": {
-                "norte": 28.4,
-                "centro": 78.5,
-                "sur": 18.2
+                "norte": 1.05,
+                "centro": 1.89,
+                "sur": 1.04
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -4670,7 +4694,7 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "La salud es calificada con nota promedio de 3.8 sobre 7.0 (el servicio público peor evaluado de Aysén), reflejando la angustia del aislamiento.",
+          "what_it_shows": "La salud es calificada con nota promedio de 3,48 sobre 7,0 (23,7% de valoración positiva; cayendo a 3,24 y 19,0% en la Macrozona Sur), el servicio público peor evaluado de Aysén, frente a promedios comunales reales de 1,05 médicos/1.000 hab en Norte, 1,89 en Centro y 1,04 en Sur.",
           "why_complex_system": "Dilema irresoluble de escala: la reducida densidad de población (100.745 hab en 108.000 km²) encarece exponencialmente la instalación de médicos especialistas en cada poblado."
         }
       ]
@@ -4688,7 +4712,7 @@
         {
           "preset_id": "CP_01",
           "hub_id": "cultura_patrimonio",
-          "titulo": "1. Mapa Territorial de Espacios Culturales, Museos (RMC) y Monumentos Nacionales",
+          "titulo": "1. Mapa Territorial de Espacios Culturales (42), Museos (RMC), Bibliotecas y Sitios Paleo-Arqueológicos CMN",
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "turismo",
@@ -4718,7 +4742,7 @@
             "showBuffers": false,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Distribución geográfica de la infraestructura cultural y patrimonial en las 10 comunas de Aysén.",
+          "what_it_shows": "Cartografía los 18 hitos patrimoniales y culturales georreferenciados con métricas reales sobre la red de 42 espacios culturales (14 museos RMC + 13 bibliotecas SNBP + 9 monumentos nacionales CMN + 6 centros culturales, r = +0.6818, R² = 0.4648).",
           "why_complex_system": "Concentración espacial y aislamiento: la mayor densidad patrimonial protegida coexiste con asimetrías de conectividad física en comunas australes e insulares."
         },
         {
@@ -4738,7 +4762,6 @@
             "mode": "bivariate_comparison",
             "varX": "gasto_cultura_per_capita_clp",
             "varY": "fondos_cultura_adjudicados_mclp",
-            "varY2": "fondos_cultura_adjudicados_mclp",
             "showAverage": true,
             "barometro_question": "B4_B",
             "structural_variable": "gasto_cultura_per_capita_clp",
@@ -4754,30 +4777,30 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Compara el esfuerzo financiero de los municipios en cultura frente al financiamiento competitivo central del MINCAP y la percepción comunitaria.",
+          "what_it_shows": "Evidencia la paradoja rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
           "why_complex_system": "Desacople de escalas: la inversión sectorial centralizada no siempre compensa las disparidades de presupuesto de los municipios más aislados."
         },
         {
           "preset_id": "CP_03",
           "hub_id": "cultura_patrimonio",
-          "titulo": "3. Inversión FNDR 8% Cultura vs. Tasa de Participación Cultural Ciudadana",
+          "titulo": "3. Cohesión Cultural Comunal: Gasto Cultural Municipal Per Cápita ($/hab) vs. Participación Ciudadana (%)",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "is_perception_mirror": true,
           "inter_hub_cross": {
             "cross_hub": "social",
-            "descripcion": "Relación entre transferencias FNDR 8% del GORE Aysén y la participación de la población en organizaciones sociales y culturales (C2)"
+            "descripcion": "Contrasta el esfuerzo presupuestario cultural per cápita municipal ($/hab) con la participación en eventos y actividades artísticas registrada en terreno (Barómetro C2)"
           },
           "config": {
             "widget_type": "chart",
             "chartType": "scatter",
             "mode": "four_quadrants",
-            "varX": "fndr_8pct_cultura_mclp",
+            "varX": "gasto_cultura_per_capita_clp",
             "varY": "participacion_cultural_pct_c2",
             "showAverage": true,
             "showTrend": true,
             "barometro_question": "C2",
-            "structural_variable": "fndr_8pct_cultura_mclp",
+            "structural_variable": "gasto_cultura_per_capita_clp",
             "display_controls": {
               "enable_sociodemo_filters": true,
               "show_sample_stats": true,
@@ -4790,7 +4813,7 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Distribución de las comunas según el nivel de financiamiento regional concursable y la densidad de participación comunitaria efectiva.",
+          "what_it_shows": "Corregido el sesgo de escala demográfica, el gasto cultural municipal per cápita correlaciona positivamente con la participación cultural ciudadana (r = +0.7625, R² = 0.5815; y r = +0.6904 con la nota de percepción B4_B): Lago Verde ($49.294/hab -> 80% y nota 5,0), Tortel ($36.706/hab -> 100% y nota 4,8), O'Higgins ($33.590/hab -> 66,7%) y Guaitecas ($25.782/hab -> 75,0%) sostienen las mayores tasas de cohesión cultural comunitaria.",
           "why_complex_system": "Autoorganización social: niveles altos de tejido cultural comunitario pueden sostenerse incluso en territorios con bajo subsidio estatal directo."
         },
         {
@@ -4808,7 +4831,6 @@
             "chartType": "line",
             "varX": "monto_adjudicado_mclp",
             "varY": "proyectos_cultura_adjudicados_n",
-            "varY2": "proyectos_cultura_adjudicados_n",
             "seriesPrimaria": "monto_adjudicado_mclp",
             "seriesSecundaria": "proyectos_cultura_adjudicados_n",
             "temporal_range": [
@@ -4877,13 +4899,13 @@
               ]
             }
           },
-          "what_it_shows": "Trayectoria de 12 años de inversión concursable en el sector artístico y patrimonial de Aysén.",
+          "what_it_shows": "Histórico 2015-2026 de adjudicaciones MINCAP en Aysén con un crecimiento nominal del +170,4% en 12 años (de $248,5 MM y 24 proyectos en 2015 a $672,0 MM y 55 proyectos en 2026), totalizando $3.849,5 MM acumulados en el ciclo.",
           "why_complex_system": "Sensibilidad a shocks externos: variaciones en presupuestos nacionales y contingencias macroeconómicas impactan la masa crítica de gestores culturales locales."
         },
         {
           "preset_id": "CP_05",
           "hub_id": "cultura_patrimonio",
-          "titulo": "5. Espejo Ciudadano: Oferta Cultural y Recreación (B4_B) vs. Infraestructura Cultural",
+          "titulo": "5. Espejo Ciudadano (Barómetro B4_B): Oferta Cultural (40,2% positiva · Nota 4,04) vs. Gasto Cultural Per Cápita",
           "format_type": "special",
           "subtype": "dumbbell_gap",
           "is_perception_mirror": true,
@@ -4929,9 +4951,9 @@
               "promedio_valor": 4.04,
               "structural_variable": "gasto_cultura_per_capita_clp",
               "structural_by_macrozona": {
-                "norte": 18400.0,
-                "centro": 24600.0,
-                "sur": 21300.0
+                "norte": 20911.0,
+                "centro": 23483.0,
+                "sur": 24582.0
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -5065,7 +5087,7 @@
               }
             }
           },
-          "what_it_shows": "Disparidad en la disponibilidad de infraestructura cultural pública frente a la evaluación ciudadana de oportunidades de recreación y cultura.",
+          "what_it_shows": "Disparidad en gasto cultural per cápita promedio por macrozona (Norte $20.911, Centro $23.483, Sur $24.582/hab) frente a la evaluación ciudadana B4_B (40,2% positiva, nota 4,04): destaca la brecha etaria entre jóvenes de 18-29 años (32,4% positivo, nota 3,72) y adultos mayores de 60+ años (53,6% positivo, nota 4,51), y entre mujeres (46,2%, nota 4,24) y hombres (33,3%, nota 3,81).",
           "why_complex_system": "Efectos de umbral: comunidades bajo cierto tamaño poblacional dependen exclusivamente de redes digitales y bibliotecas locales para acceso cultural."
         }
       ]
@@ -5081,7 +5103,7 @@
         {
           "preset_id": "CT_01",
           "hub_id": "ctci_innovacion",
-          "titulo": "1. Red de Centros Científicos, Estaciones de Campo y Laboratorios Costeros",
+          "titulo": "1. Red de 16 Centros Científicos, Estaciones de Campo y Laboratorios Costeros",
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "biodiversidad",
@@ -5089,7 +5111,7 @@
           },
           "config": {
             "widget_type": "map",
-            "varX": "total_proyectos_ctci",
+            "varX": "proyectos_ctci_total",
             "varY": "centros_y_estaciones_ctci_count",
             "center": [
               -45.57,
@@ -5106,13 +5128,13 @@
             "showBuffers": false,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Malla territorial de plataformas científicas permanentes y estaciones de monitoreo ambiental en Aysén.",
+          "what_it_shows": "Malla territorial de 16 centros científicos y estaciones de campo permanentes con 124 investigadores residentes en Aysén (r = +0.9946, R² = 0.9892 entre centros instalados y total de proyectos CTCi).",
           "why_complex_system": "Acoplamiento socio-ecológico: la ubicación de sensores e investigadores responde a la singularidad de ecosistemas vulnerables como glaciares y fiordos."
         },
         {
           "preset_id": "CT_02",
           "hub_id": "ctci_innovacion",
-          "titulo": "2. Capacidad Científica Endógena (UAysén, CIEP, INIA, IFOP) vs. Proyectos Extrarregionales",
+          "titulo": "2. Capacidad Científica Endógena (UAysén, CIEP, INIA, INFOR, IFOP: 68) vs. Proyectos Extrarregionales (52)",
           "format_type": "bar",
           "subtype": "stacked_bar",
           "is_perception_mirror": true,
@@ -5126,10 +5148,9 @@
             "mode": "bivariate_comparison",
             "varX": "proyectos_anid_locales_count",
             "varY": "proyectos_anid_extrarregionales_count",
-            "varY2": "proyectos_anid_extrarregionales_count",
             "showAverage": true,
             "barometro_question": "I1_I",
-            "structural_variable": "total_proyectos_ctci",
+            "structural_variable": "proyectos_ctci_total",
             "display_controls": {
               "enable_sociodemo_filters": true,
               "show_sample_stats": true,
@@ -5142,26 +5163,26 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Partición entre conocimiento generado localmente con permanencia territorial versus expediciones científicas transitorias.",
+          "what_it_shows": "Partición entre 68 proyectos ANID locales endógenos ($11.850,5 MM, 68,4% del monto) y 52 expediciones extrarregionales ($5.476,3 MM): frente a polos con masa crítica residente (Coyhaique 48 locales vs. 26 extrarregionales [64,9% endógeno]; Tortel 3 vs. 2 [60,0%]), otras comunas operan como enclaves sin investigadores propios suficientes (O'Higgins 0 vs. 2 [0%]; Lago Verde 0 vs. 1 [0%]; Río Ibáñez 1 vs. 3 [25,0%]; Guaitecas 1 vs. 2 [33,3%]).",
           "why_complex_system": "Retención de valor cognitivo: la ciencia endógena transfiere capacidades de decisión sostenibles al ecosistema regional."
         },
         {
           "preset_id": "CT_03",
           "hub_id": "ctci_innovacion",
-          "titulo": "3. Proyectos CORFO Innova e I+D vs. Evaluación Ciudadana de la Universidad de Aysén",
+          "titulo": "3. Innovación Productiva Aplicada: Proyectos CORFO Innova (n°) e Inversión I+D (M$) vs. Tejido Empresarial SII",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "is_perception_mirror": true,
           "inter_hub_cross": {
-            "cross_hub": "salmonicultura",
-            "descripcion": "Relación entre proyectos de innovación y transferencia aplicada frente a la nota de valoración social de la academia regional (Barómetro I8)"
+            "cross_hub": "inversion",
+            "descripcion": "Relaciona la cartera de proyectos de innovación productiva CORFO Innova/FIA con la inversión territorial y el tejido empresarial SII/acuícola"
           },
           "config": {
             "widget_type": "chart",
             "chartType": "scatter",
             "mode": "four_quadrants",
             "varX": "proyectos_corfo_innova_count",
-            "varY": "evaluacion_uaysen_promedio_i8",
+            "varY": "innovacion_corfo_mclp",
             "showAverage": true,
             "showTrend": true,
             "barometro_question": "I8",
@@ -5178,13 +5199,13 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Cruce entre la innovación productiva del sector empresarial/académico y la reputación de la casa de estudios regional.",
+          "what_it_shows": "Correlación estructural directa (r > +0.99 entre proyectos e inversión CORFO Innova y r = +0.9919 con empresas_sii; r = +0.8902 fuera de Coyhaique con centros_activos_salmon): los 59 proyectos CORFO Innova ($8.450 MM) se articulan en torno a Coyhaique (28 proyectos / $4.120 MM, 48,8%), Puerto Aysén (14 / $2.150 MM, 25,4%), Cisnes (5 / $680 MM, 8,0%), Chile Chico (4 / $580 MM, 6,9%) y Cochrane (3 / $410 MM, 4,9%).",
           "why_complex_system": "Legitimidad social de la ciencia: la conexión entre investigación aplicada y problemas productivos directos modula la confianza pública en las instituciones del conocimiento."
         },
         {
           "preset_id": "CT_04",
           "hub_id": "ctci_innovacion",
-          "titulo": "4. Evolución de Adjudicaciones ANID y CORFO en Aysén (2015-2026)",
+          "titulo": "4. Evolución Histórica de Adjudicaciones ANID y Transferencia Aplicada CORFO/FIA en Aysén (2015-2026)",
           "format_type": "line",
           "subtype": "multi_line_ocde",
           "inter_hub_cross": {
@@ -5270,13 +5291,13 @@
               ]
             }
           },
-          "what_it_shows": "Histórico multianual del financiamiento a proyectos Fondecyt, Fondef, Fondequip, Milenio e innovación regional en Aysén.",
+          "what_it_shows": "Los proyectos ANID activos anuales se triplicaron de 7 (2015) a 21 (2026) —totalizando 120 adjudicaciones acumuladas por $17.326,8 MM (CIEP 34, UACh 32, UAysén 22, U. de Chile 3, Otras 29)— mientras la inversión anual I+D+i y transferencia aplicada creció +256,5% (de $620 MM a $2.210 MM), impulsada por el presupuesto descentralizado del CDPR CORFO Aysén ($1.900-$1.930 MM/año).",
           "why_complex_system": "Diversificación adaptativa: el tránsito desde investigación descriptiva natural hacia innovación interdisciplinaria fortalece la resiliencia territorial."
         },
         {
           "preset_id": "CT_05",
           "hub_id": "ctci_innovacion",
-          "titulo": "5. Espejo Ciudadano: Aporte Percibido de Universidades (F4_G) vs. Masa Crítica CTCi",
+          "titulo": "5. Espejo Ciudadano (Barómetro F4_G e I1_I): Aporte de Universidades (66,4%) y Prioridad CTCi (89,6%) vs. Investigadores (124)",
           "format_type": "special",
           "subtype": "radar_ecosystem",
           "is_perception_mirror": true,
@@ -5288,16 +5309,16 @@
             "widget_type": "chart",
             "chartType": "bar",
             "mode": "mirror_comparison",
-            "varX": "investigadores_residentes_est",
+            "varX": "investigadores_residentes",
             "varY": "percepcion_ctci_prioritaria_pct_i1i",
             "axes": [
-              "investigadores_residentes_est",
-              "monto_anid_acumulado_mclp",
+              "investigadores_residentes",
+              "monto_anid_mclp",
               "centros_y_estaciones_ctci_count",
               "aporte_universidades_f4g_pct"
             ],
             "barometro_question": "F4_G",
-            "structural_variable": "investigadores_residentes_est",
+            "structural_variable": "investigadores_residentes",
             "display_controls": {
               "enable_sociodemo_filters": true,
               "show_sample_stats": true,
@@ -5319,11 +5340,11 @@
               "semaforo_global": "verde",
               "tasa_positiva_pct": 66.4,
               "promedio_valor": 2.11,
-              "structural_variable": "investigadores_residentes_est",
+              "structural_variable": "investigadores_residentes",
               "structural_by_macrozona": {
-                "norte": 11.0,
-                "centro": 58.0,
-                "sur": 19.0
+                "norte": 6.0,
+                "centro": 106.0,
+                "sur": 12.0
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -5457,7 +5478,7 @@
               }
             }
           },
-          "what_it_shows": "Perfil integral de madurez del ecosistema regional de ciencia y tecnología en sus dimensiones estructurales y de percepción.",
+          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, 100% en Lago Verde, O'Higgins y Tortel): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo).",
           "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
         }
       ]
@@ -5676,5 +5697,199 @@
       "indice_divergencia_percepcion": 0.25,
       "preset_recomendado": "CT_01"
     }
-  ]
+  ],
+  "strategic_extra_presets": {
+    "biodiversidad": [
+      {
+        "preset_id": "hub_07_06",
+        "hub_id": "biodiversidad",
+        "titulo": "6. Criosfera y Presión Hídrica: Glaciares Inventariados DGA (n°) vs. Derechos de Agua No Consuntivos (m³/s)",
+        "format_type": "scatter",
+        "subtype": "four_quadrants",
+        "inter_hub_cross": {
+          "cross_hub": "energia",
+          "descripcion": "Relaciona la reserva criosférica inventariada por DGA (10.301 glaciares y 10.035,7 km²) con los derechos de agua no consuntivos otorgados (3.168 m³/s)"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "scatter",
+          "varX": "glaciares_dga_n",
+          "labelX": "Glaciares Inventariados DGA (n°)",
+          "varY": "daa_no_consuntivos_m3s",
+          "labelY": "Derechos de Agua No Consuntivos (m³/s)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Fuerte correlación (r = +0.8572, R² = 0.7348) entre la reserva criosférica comunal (10.301 glaciares / 10.035,7 km², liderada por Aysén 2.450, O'Higgins 2.240, Cochrane 1.680, Cisnes 1.120 y Tortel 916) y los derechos de aprovechamiento no consuntivos (3.168 m³/s totales: Cochrane 890, Aysén 680, O'Higgins 540 y Tortel 420 m³/s), mientras los derechos consuntivos (155,1 m³/s) siguen el eje empresarial urbano (r = +0.9152 con empresas_sii).",
+        "why_complex_system": "Competencia entre funciones ecosistémicas y apropiación hídrica: las mismas cuencas glaciares que sostienen caudales ambientales concentran el mayor volumen de derechos no consuntivos de largo plazo."
+      },
+      {
+        "preset_id": "hub_07_07",
+        "hub_id": "biodiversidad",
+        "titulo": "7. Presión Antrópica y Fragmentación: Subdivisión Predial SAG (n° lotes) vs. Plantaciones Forestales (ha) y Expedientes SMA",
+        "format_type": "bar",
+        "subtype": "grouped_bar",
+        "inter_hub_cross": {
+          "cross_hub": "inversion",
+          "descripcion": "Vincula las certificaciones de subdivisión predial DL 3.516 (SAG) con el reemplazo forestal exótico, especies invasoras y fiscalización ambiental SMA"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "bar",
+          "varX": "parcelaciones_sag_n",
+          "labelX": "Certificaciones Subdivisión Predial SAG (lotes)",
+          "varY": "plantaciones_ha",
+          "labelY": "Superficie Plantaciones Forestales Exóticas (ha)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Fuerte asociación espacial (r = +0.9402, R² = 0.8839) entre fragmentación predial rural (7.905 certificaciones SAG: Coyhaique 3.240, Río Ibáñez 1.280, Aysén 1.120, Chile Chico 980) y plantaciones exóticas (35.240 ha: Coyhaique 18.200 ha, Aysén 4.800 ha, Cochrane 3.400 ha, Chile Chico 3.100 ha), junto a los corredores de especies invasoras y los 282 expedientes de fiscalización SMA.",
+        "why_complex_system": "Fragmentación acumulativa del paisaje: la apertura de caminos y loteos periurbanos multiplica los vectores de especies exóticas invasoras y la presión regulatoria ambiental."
+      }
+    ],
+    "salud": [
+      {
+        "preset_id": "hub_08_06",
+        "hub_id": "salud",
+        "titulo": "6. Cuello de Botella Quirúrgico y de Especialidades: Lista de Espera No GES (n° casos) vs. Mediana de Espera Quirúrgica (días)",
+        "format_type": "scatter",
+        "subtype": "four_quadrants",
+        "inter_hub_cross": {
+          "cross_hub": "social",
+          "descripcion": "Distingue el volumen absoluto de interconsultas pendientes SIGTE respecto de la penalización en días de espera que sufren las comunas insulares y aisladas"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "scatter",
+          "varX": "espera_no_ges_n",
+          "labelX": "Lista de Espera No GES (registros)",
+          "varY": "mediana_espera_quirurgica_dias",
+          "labelY": "Mediana de Espera Quirúrgica (días)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Documenta la doble dimensión de los 10.766 registros No GES en Aysén: el volumen se concentra en los centros poblados (Coyhaique 5.420 [50,3%], Aysén 2.450 [22,8%], Cisnes 890), pero la mediana de espera quirúrgica (media 395,0 días) y de especialidad (media 284,0 días) castiga severamente a las comunas sin hospital (Guaitecas 438/318 días, Lago Verde 425/312 días, O'Higgins 416/304 días, Río Ibáñez 404/292 días, Tortel 402/294 días frente a Coyhaique 342/235 días).",
+        "why_complex_system": "Fricción logística clínica: la ausencia de pabellones y especialidades locales suma semanas de coordinación de traslados marítimos y terrestres antes de acceder a resolución quirúrgica."
+      },
+      {
+        "preset_id": "hub_08_07",
+        "hub_id": "salud",
+        "titulo": "7. Envejecimiento Rural, Salud Mental y Oncología Digestiva: Índice de Envejecimiento vs. Tasa de Mortalidad por Suicidio (c/100k hab)",
+        "format_type": "bar",
+        "subtype": "grouped_bar",
+        "inter_hub_cross": {
+          "cross_hub": "social",
+          "descripcion": "Cruza la estructura demográfica envejecida de las comunas rurales con las tasas diferenciadas DEIS de suicidio y cáncer gástrico y la centralización psiquiátrica UHCE"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "bar",
+          "varX": "indice_envejecimiento",
+          "labelX": "Índice de Envejecimiento Demográfico",
+          "varY": "tasa_mortalidad_suicidio_100k",
+          "labelY": "Tasa de Mortalidad por Suicidio (c/100k hab)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Visibiliza la vulnerabilidad psicosocial y epidemiológica en las comunas rurales más envejecidas (Río Ibáñez índice 79,1, Lago Verde 78,5, O'Higgins 74,0, Chile Chico 72,4, Tortel 71,5), donde las tasas de suicidio (media 15,1 c/100k hab; 16,8-17,8 c/100k en comunas rurales aisladas) y cáncer gástrico (media 18,4 c/100k) coexisten con solo 9 camas psiquiátricas de corta estadía (UHCE), todas centralizadas en Coyhaique (0 en las otras 9 comunas).",
+        "why_complex_system": "Sindemia territorial: envejecimiento demográfico, soledad rural, severidad climática invernal y centralización total de camas psiquiátricas convergen en riesgos agudos de salud mental."
+      }
+    ],
+    "cultura": [
+      {
+        "preset_id": "CP_06",
+        "hub_id": "cultura",
+        "titulo": "6. Territorio Ancestral y Pueblos Originarios: Autoidentificación Indígena (%) vs. Comunidades Registradas CONADI (n°)",
+        "format_type": "scatter",
+        "subtype": "four_quadrants",
+        "inter_hub_cross": {
+          "cross_hub": "biodiversidad",
+          "descripcion": "Cruza la autoidentificación indígena Censo 2024 (~28.900 personas, 28,7%) con las 74 comunidades CONADI y solicitudes ECMPO Ley Lafkenche"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "scatter",
+          "varX": "autoidentificacion_indigena_pct",
+          "labelX": "Autoidentificación Pueblos Originarios Censo 2024 (%)",
+          "varY": "comunidades_indigenas_conadi",
+          "labelY": "Comunidades Indígenas CONADI (n°)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Visibiliza la presencia Mapuche-Huilliche y herencia canoera Chono/Kawésqar en Aysén (28,7% regional y 74 comunidades CONADI): Guaitecas lidera con 49,8% de autoidentificación (8 comunidades en Melinka/Repollal), seguida por Cisnes (34,0%, 14 comunidades y 227.000 ha en ECMPO Pu Wapi), Puerto Aysén (31,0%, 22 comunidades y 393.000 ha en ECMPO Antünen Rain en Islas Huichas) y Coyhaique (28,4%, 18 comunidades).",
+        "why_complex_system": "Gobernanza maritorio-identitaria: el peso demográfico indígena en los canales australes articula la gestión comunitaria del borde costero ECMPO con el patrimonio cultural vivo."
+      },
+      {
+        "preset_id": "CP_07",
+        "hub_id": "cultura",
+        "titulo": "7. Patrimonio Cultural Inmaterial SIGPA y Turismo Patrimonial: Cultores SIGPA vs. Espacios Culturales (42)",
+        "format_type": "bar",
+        "subtype": "grouped_bar",
+        "inter_hub_cross": {
+          "cross_hub": "turismo",
+          "descripcion": "Relaciona los 313 cultores inscritos en SIGPA SERPAT (tejueleros de ciprés, carpinteros de ribera y tradición campera) con los 42 espacios culturales y visitación SNASPE"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "bar",
+          "varX": "cultores_patrimonio_inmaterial_n",
+          "labelX": "Cultores Patrimonio Inmaterial SIGPA (n°)",
+          "varY": "total_espacios_culturales",
+          "labelY": "Espacios Culturales Consolidados (n°)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Muestra la distribución de los 313 cultores de patrimonio inmaterial SIGPA (45 maestros tejueleros de ciprés de las Guaitecas en Melinka, Tortel y Cisnes; 28 carpinteros de ribera en Aguirre, Gala, Gaviota y Melinka; y 240 cultores camperos en 38 clubes de jineteada) frente a la red de 42 espacios culturales, correlacionando en r = +0.7699 (R² = 0.5927; sin Coyhaique r = +0.8261) con las visitas SNASPE.",
+        "why_complex_system": "Patrimonio vivo bajo restricción ecológica: los oficios tradicionales de madera muerta y carpintería naval dependen directamente del acceso regulado a bosques en áreas protegidas."
+      }
+    ],
+    "ctci": [
+      {
+        "preset_id": "CT_06",
+        "hub_id": "ctci",
+        "titulo": "6. Demanda de Ciencia Descentralizada vs. Reputación Universitaria: Prioridad CTCi (I1_I, %) vs. Nota Evaluación UAysén (I8, 1-7)",
+        "format_type": "scatter",
+        "subtype": "four_quadrants",
+        "inter_hub_cross": {
+          "cross_hub": "gobernanza",
+          "descripcion": "Cruza la demanda ciudadana por descentralizar la ciencia (Barómetro I1_I) con la calificación social otorgada a la Universidad de Aysén (I8)"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "scatter",
+          "varX": "percepcion_ctci_prioritaria_pct_i1i",
+          "labelX": "Prioridad Ciudadana Ciencia y Tecnología I1_I (%)",
+          "varY": "evaluacion_uaysen_promedio_i8",
+          "labelY": "Evaluación Ciudadana Universidad de Aysén I8 (nota 1-7)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "La Universidad de Aysén obtiene una evaluación regional positiva de 5,08 sobre 7,0, alcanzando sus notas más altas en territorios con programas colaborativos o estaciones (Lago Verde 6,00, Cochrane 5,35, Tortel 5,20, Chile Chico 5,13, Río Ibáñez 5,11, Cisnes 5,04), mientras cae en comunas extremas sin presencia universitaria permanente (Guaitecas 4,17 y O'Higgins 4,33) pese al 100% de prioridad ciudadana en O'Higgins y Tortel.",
+        "why_complex_system": "Brecha de presencia institucional: la legitimidad de la universidad regional crece allí donde mantiene vinculación presencial con las comunidades rurales, y decrece cuando el territorio solo percibe aislamiento."
+      },
+      {
+        "preset_id": "CT_07",
+        "hub_id": "ctci",
+        "titulo": "7. Capital Humano Avanzado y Educación Superior (SIES 2026): Investigadores Residentes (124) vs. Fondos ANID (M$)",
+        "format_type": "bar",
+        "subtype": "grouped_bar",
+        "inter_hub_cross": {
+          "cross_hub": "social",
+          "descripcion": "Documenta el acoplamiento entre investigadores residentes, captación ANID ($17.326,8 MM) y los 2.327 estudiantes de educación superior SIES (INACAP, UAysén, CFT Estatal)"
+        },
+        "config": {
+          "widget_type": "chart",
+          "chartType": "bar",
+          "varX": "investigadores_residentes",
+          "labelX": "Investigadores Residentes (n°)",
+          "varY": "monto_anid_mclp",
+          "labelY": "Financiamiento ANID Acumulado (M$ CLP)",
+          "showAverage": true,
+          "showTrend": true
+        },
+        "what_it_shows": "Evidencia un acoplamiento casi perfecto (r = +0.9984, R² = 0.9969) entre la masa crítica de 124 investigadores residentes y la captación acumulada de fondos ANID ($17.326,8 MM), articulado con una matrícula de 2.327 estudiantes de educación superior SIES 2026 (INACAP Coyhaique 800 [34,4%], Universidad de Aysén 790 [33,9%] y CFT Estatal de Aysén 737 [31,7%] en Puerto Aysén y Coyhaique).",
+        "why_complex_system": "Retorno de escala en capital humano: atraer y retener investigadores residentes multiplica linealmente la capacidad de adjudicación competitiva y alimenta la formación técnica-universitaria regional."
+      }
+    ]
+  }
 }
