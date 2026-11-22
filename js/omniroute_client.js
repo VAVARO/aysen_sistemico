@@ -168,8 +168,11 @@
     proyectos_anid_n: 'Subtotal Proyectos Científicos ANID (Locales + Extrarregionales) (proyectos)',
     monto_anid_mclp: 'Inversión Acumulada en Ciencia ANID (M$)',
     innovacion_corfo_mclp: 'Inversión en Innovación CORFO Innova (M$)',
+    monto_corfo_innova_mclp: 'Inversión en Innovación CORFO Innova (M$)',
     proyectos_ctci_total: 'Total de Proyectos CTCi e Innovación',
     investigadores_residentes: 'Investigadores Residentes Estimados',
+    investigadores_residentes_est: 'Investigadores Residentes Estimados',
+    centros_y_estaciones_ctci_count: 'Centros Científicos y Estaciones de Campo CTCi (centros)',
     evaluacion_uaysen_promedio_i8: 'Evaluación Desempeño Universidad de Aysén (nota 1-7)',
     nota_percepcion_cultura_b4b: 'Percepción Oportunidades Culturales Barómetro (nota 1-7)',
     participacion_cultural_pct_c2: 'Participación en Organizaciones Culturales (%)',
@@ -730,8 +733,12 @@
     proyectos_anid_n: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
     monto_anid_mclp: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
     innovacion_corfo_mclp: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
+    monto_corfo_innova_mclp: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
     proyectos_ctci_total: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
+    total_proyectos_ctci: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
     investigadores_residentes: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
+    investigadores_residentes_est: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
+    centros_y_estaciones_ctci_count: PROVENANCE_CATALOG_ENTRIES.ANID_CORFO,
 
     // Conectividad Multimodal
     red_vial_total_km: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
@@ -1070,7 +1077,7 @@
       id: 'salmonicultura',
       title: 'Salmonicultura y Acuicultura',
       hub: 'II',
-      regex: /\b(salmonicultura|salmon|salmones|salmonera|salmoneras|acuicultura|acuicola|acuicolas|biomasa|centros de cultivo|concesiones acuicolas|concesiones salmoneras|holding|holdings|empresas salmoneras|empresa salmonera)\b/i,
+      regex: /\b(salmonicultura|salmon|salmones|salmonera|salmoneras|salmonero|salmoneros|acuicultura|acuicola|acuicolas|biomasa|centros de cultivo|concesiones acuicolas|concesiones salmoneras|holding|holdings|empresas salmoneras|empresa salmonera)\b/i,
       varX: 'concesiones_salmon',
       varY: 'biomasa_salmon_ton',
       chartTitle: 'Concesiones de Salmonicultura vs. Biomasa de Salmón Cosechada (ton)',
@@ -1154,16 +1161,27 @@
       provenanceKeys: ['cobertura_vegetal_nativa_ha', 'superficie_glaciar_km2'],
       keys: ['cobertura_vegetal_nativa_ha', 'cobertura_vegetal_pct', 'glaciares_dga_n', 'superficie_glaciar_km2', 'fauna_amenazada_n', 'daa_no_consuntivos_m3s']
     },
-    cultura_ctci: {
-      id: 'cultura_ctci',
-      title: 'Cultura, Patrimonio y Ciencia (CTCi)',
+    cultura: {
+      id: 'cultura',
+      title: 'Cultura, Patrimonio e Identidad',
       hub: 'IX',
-      regex: /\b(cultura|patrimonio|museos|bibliotecas|monumentos|ciencia|ctci|anid|corfo|innovacion)\b/i,
+      regex: /\b(cultura|cultural\w*|patrimonio|patrimonial\w*|museos?|bibliotecas?|fondart|monumentos?|sitios?\s+arqueologic\w*|artesania|fiestas?\s+costumbristas?|cultores?)\b/i,
       varX: 'total_espacios_culturales',
-      varY: 'proyectos_ctci_total',
-      chartTitle: 'Total de Espacios Culturales e Infraestructura vs. Total de Proyectos CTCi e Innovación',
-      provenanceKeys: ['total_espacios_culturales', 'proyectos_ctci_total'],
-      keys: ['total_espacios_culturales', 'bibliotecas_snbp_n', 'fondart_fndr_mclp', 'proyectos_ctci_total', 'monto_anid_mclp', 'innovacion_corfo_mclp']
+      varY: 'fondos_cultura_adjudicados_mclp',
+      chartTitle: 'Total de Espacios Culturales e Infraestructura vs. Fondos Culturales Adjudicados (M$)',
+      provenanceKeys: ['total_espacios_culturales', 'fondos_cultura_adjudicados_mclp', 'bibliotecas_snbp_n'],
+      keys: ['total_espacios_culturales', 'bibliotecas_snbp_n', 'fondos_cultura_adjudicados_mclp', 'monumentos_nacionales_count', 'museos_espacios_n', 'gasto_municipal_cultura_mclp']
+    },
+    ctci: {
+      id: 'ctci',
+      title: 'Ciencia, Tecnología e Innovación (CTCi)',
+      hub: 'X',
+      regex: /\b(ciencia|cientific\w*|investigacion|investigadores?|ctci|anid|fondecyt|corfo|innovacion|ciep|uaysen|inia|centros?\s+de\s+investigacion|laboratorios?)\b/i,
+      varX: 'total_proyectos_ctci',
+      varY: 'investigadores_residentes_est',
+      chartTitle: 'Total de Proyectos CTCi (ANID + CORFO) vs. Investigadores Residentes Estimados por Comuna',
+      provenanceKeys: ['total_proyectos_ctci', 'investigadores_residentes_est', 'monto_anid_mclp', 'monto_corfo_innova_mclp'],
+      keys: ['total_proyectos_ctci', 'investigadores_residentes_est', 'monto_anid_mclp', 'monto_corfo_innova_mclp', 'centros_y_estaciones_ctci_count', 'proyectos_anid_n']
     },
     conectividad: {
       id: 'conectividad',
@@ -1231,6 +1249,7 @@
     lastSubstantiveQuery: null,
     lastConceptualPacketId: null,
     rejectedVarKeys: [],
+    pureRepairCount: 0,
     lastQuery: ''
   };
 
@@ -2025,7 +2044,7 @@
    * WP-A.2: Detector específico de consultas por Empresa / Holding Salmonero o Pesquerías.
    */
   function detectHoldingOrFisheryIntent(qNorm, rawQuery) {
-    const holdingPattern = /\b(holding|holdings|empresas salmoneras|empresa salmonera|segun empresa|segun empresas|por empresa|por empresas|por holding|que empresas|cuales empresas|grupos economicos|grupo economico|aquachile|multi x|multix|blumar|mowi|australis|cermaq|camanchaca|cooke|yadran|ice val|salmones austral|salmones antartica|invermar|friosur|pesquerias|pesqueria|cuotas|cuota pesquera|cuota industrial|pregunte por empresas|empresas o holdings|no comunas|no por comunas)\b/i;
+    const holdingPattern = /\b(holding|holdings|holdings?\s+salmon\w*|empresas salmoneras|empresa salmonera|empresas duenas|segun empresa|segun empresas|por empresa|por empresas|por holding|que empresas|cuales empresas|grupos economicos|grupo economico|quienes son los duenos|duenos del salmon|duenos de la industria|quienes controlan|aquachile|multi x|multix|blumar|mowi|australis|cermaq|camanchaca|cooke|yadran|ice val|salmones austral|salmones antartica|invermar|friosur|pesquerias|pesqueria|cuotas|cuota pesquera|cuota industrial|pregunte por empresas|empresas o holdings|no comunas|no por comunas)\b/i;
     return holdingPattern.test(qNorm) || holdingPattern.test(String(rawQuery || ''));
   }
 
@@ -2168,7 +2187,10 @@
     }
 
     // 1b. Red de Centros Científicos CTCi y Estaciones de Campo (#35, #36, #37)
-    if (hasResearchCentersCtx && !/\b(compar\w*.*corfo|evaluacion ciudadano?a?\s+de\s+la\s+(?:universidad|uaysen))\b/i.test(qNorm) && !/\bvolcan\w*|sism\w*|sma\b/i.test(qNorm)) {
+    // Si pregunta específicamente distribución "por comuna" de ANID/investigadores sin nombrar un centro explícito, resolver vía variables comunales
+    const explicitNamedCenterCtx = /\b(ciep|inia|ifop|cecs|estacion\w*\s+de\s+campo|centros?\s+cientific\w*|centros?\s+de\s+investigacion|estacion\s+patagonia\s+uc|tamel\s+aike)\b/i.test(qNorm);
+    const asksAnidByComunaOnly = /\bpor\s+comuna\b/i.test(qNorm) && !explicitNamedCenterCtx;
+    if (hasResearchCentersCtx && !asksAnidByComunaOnly && !/\b(compar\w*.*corfo|evaluacion ciudadano?a?\s+de\s+la\s+(?:universidad|uaysen))\b/i.test(qNorm) && !/\bvolcan\w*|sism\w*|sma\b/i.test(qNorm)) {
       return 'centros_ctci_red_campo';
     }
 
@@ -3227,25 +3249,80 @@
         };
       }
       case 'volcanes_sismos_justicia_sma': {
-        const smaRanked = (index.entities || []).slice().sort((a, b) => (b.raw?.expedientes_fiscalizacion_sma_n || 0) - (a.raw?.expedientes_fiscalizacion_sma_n || 0));
-        const top3Sma = smaRanked.slice(0, 3).map(e => `${e.name} (${e.raw.expedientes_fiscalizacion_sma_n})`).join(', ');
+        const asksSmaExplicit = /\b(sma|snifa|fiscalizacion|sancion\w*|denuncia\w*|justicia\s+ambiental|expedientes?)\b/i.test(qNorm);
+        const asksSanRafael = /\b(laguna\s+san\s+rafael|glaciar\s+san\s+rafael|parque\s+nacional\s+laguna\s+san\s+rafael|campos?\s+de\s+hielo)\b/i.test(qNorm);
+
+        if (asksSmaExplicit) {
+          const smaRanked = (index.entities || []).slice().sort((a, b) => (b.raw?.expedientes_fiscalizacion_sma_n || 0) - (a.raw?.expedientes_fiscalizacion_sma_n || 0));
+          const top3Sma = smaRanked.slice(0, 3).map(e => `${e.name} (${e.raw.expedientes_fiscalizacion_sma_n})`).join(', ');
+          const reply = (
+            'Amenaza Volcánica RNVV (SERNAGEOMIN), Sismicidad USGS y Fiscalización Ambiental SMA en Aysén (Nodo #31 + justicia_sma): ' +
+            '1) 6 complejos volcánicos activos RNVV: Volcán Hudson (#2 nacional, Muy Alto), Melimoyu (#16 Alto), Mentolat (#19 Alto), Macá (#20 Alto), Cay (#28 Moderado) y Arenales/Lautaro (#42 Bajo-Moderado). ' +
+            '2) 396 eventos sísmicos catalogados USGS distribuidos por clúster geodésico: Hudson/Simpson (142), Puyuhuapi/Mentolat (98), Falla Liquiñe-Ofqui/Aysén (86), General Carrera (42) y Zona Sur/Glaciares (28). ' +
+            `3) 282 expedientes comunales de fiscalización ambiental SMA SNIFA (prom. 28,2/comuna): lideran ${top3Sma} (nunca confundir volcanes activos con centros activos de salmonicultura).`
+          );
+          const sources = resolveSourcesForKeys(['expedientes_fiscalizacion_sma_n', 'amenaza_volcanica_sismica_idx']);
+          return {
+            reply,
+            chart: {
+              render: true,
+              type: 'bar',
+              varX: 'expedientes_fiscalizacion_sma_n',
+              varY: 'amenaza_volcanica_sismica_idx',
+              yKey: 'expedientes_fiscalizacion_sma_n',
+              y2Key: 'amenaza_volcanica_sismica_idx',
+              title: 'Expedientes de Fiscalización SMA (282) y Amenaza Volcánica-Sísmica por Comuna',
+              sourceText: sources.map(s => s.institucion).join(' · '),
+              excludeCoyhaique: false
+            },
+            sources,
+            relatedHub: 'VII',
+            isContextualBridge: true
+          };
+        }
+
+        if (asksSanRafael) {
+          const reply = (
+            'Síntesis geográfica y glaciovolcánica de ambos hitos australes: ' +
+            '1) Volcán Hudson (límite Aysén / Río Ibáñez): estratovolcán con caldera activa de 10 km, #2 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo), erupciones históricas en 1971 y 1991 con lahares por el valle del Río Huemules y cenizas sobre Río Ibáñez/Chile Chico, junto a 142 eventos sísmicos USGS registrados en el clúster Hudson/Simpson. ' +
+            '2) Parque Nacional y Glaciar Laguna San Rafael (comunas de Aysén, Tortel y Río Ibáñez; 1.742.000 ha SNASPE): puerta de entrada al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional (DGA-MOP), con 39.800 visitas anuales SNASPE (CONAF 2026) y monitoreo activo en la Base Glaciológica San Rafael (CECs / Universidad de Chile).'
+          );
+          const sources = resolveSourcesForKeys(['superficie_glaciares_km2', 'visitantes_snaspe', 'amenaza_volcanica_sismica_idx']);
+          return {
+            reply,
+            chart: {
+              render: true,
+              type: 'bar',
+              varX: 'superficie_glaciares_km2',
+              varY: 'amenaza_volcanica_sismica_idx',
+              yKey: 'superficie_glaciares_km2',
+              y2Key: 'amenaza_volcanica_sismica_idx',
+              title: 'Superficie Glaciar Comunal (km²) y Amenaza Volcánica-Sísmica RNVV por Comuna',
+              sourceText: sources.map(s => s.institucion).join(' · '),
+              excludeCoyhaique: false
+            },
+            sources,
+            relatedHub: 'VII',
+            isContextualBridge: true
+          };
+        }
+
         const reply = (
-          'Amenaza Volcánica RNVV (SERNAGEOMIN), Sismicidad USGS y Fiscalización Ambiental SMA en Aysén (Nodo #31 + justicia_sma): ' +
-          '1) 6 complejos volcánicos activos RNVV: Volcán Hudson (#2 nacional, Muy Alto), Melimoyu (#16 Alto), Mentolat (#19 Alto), Macá (#20 Alto), Cay (#28 Moderado) y Arenales/Lautaro (#42 Bajo-Moderado). ' +
-          '2) 396 eventos sísmicos catalogados USGS distribuidos por clúster geodésico: Hudson/Simpson (142), Puyuhuapi/Mentolat (98), Falla Liquiñe-Ofqui/Aysén (86), General Carrera (42) y Zona Sur/Glaciares (28). ' +
-          `3) 282 expedientes comunales de fiscalización ambiental SMA SNIFA (prom. 28,2/comuna): lideran ${top3Sma} (nunca confundir volcanes activos con centros activos de salmonicultura).`
+          'Amenaza Volcánica RNVV (SERNAGEOMIN) y Sismicidad USGS en Aysén (Nodo #31): ' +
+          '1) 6 complejos volcánicos activos RNVV: Volcán Hudson (#2 nacional, Muy Alto Riesgo, caldera activa de 10 km entre Aysén y Río Ibáñez), Melimoyu (#16 Alto), Mentolat (#19 Alto), Macá (#20 Alto), Cay (#28 Moderado) y Arenales/Lautaro (#42 Bajo-Moderado). ' +
+          '2) 396 eventos sísmicos catalogados USGS distribuidos por clúster geodésico: Hudson/Simpson (142), Puyuhuapi/Mentolat (98), Falla Liquiñe-Ofqui/Aysén (86), General Carrera (42) y Zona Sur/Glaciares (28).'
         );
-        const sources = resolveSourcesForKeys(['expedientes_fiscalizacion_sma_n', 'amenaza_volcanica_sismica_idx']);
+        const sources = resolveSourcesForKeys(['amenaza_volcanica_sismica_idx', 'superficie_glaciares_km2']);
         return {
           reply,
           chart: {
             render: true,
             type: 'bar',
-            varX: 'expedientes_fiscalizacion_sma_n',
-            varY: 'amenaza_volcanica_sismica_idx',
-            yKey: 'expedientes_fiscalizacion_sma_n',
-            y2Key: 'amenaza_volcanica_sismica_idx',
-            title: 'Expedientes de Fiscalización SMA (282) y Amenaza Volcánica-Sísmica por Comuna',
+            varX: 'amenaza_volcanica_sismica_idx',
+            varY: 'superficie_glaciares_km2',
+            yKey: 'amenaza_volcanica_sismica_idx',
+            y2Key: 'superficie_glaciares_km2',
+            title: 'Amenaza Volcánica-Sísmica RNVV y Superficie Glaciar Comunal (km²)',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -3519,13 +3596,30 @@
    * WP-B.1: Construye el perfil comunal integral en 4 bloques temáticos con ranking
    * regional y comparación frente al promedio/total regional.
    */
-  function buildComunaProfileReply(ent, index) {
+  function buildComunaProfileReply(ent, index, options = {}) {
     const r = ent.raw;
     const pob = fmtNumber(r.poblacion_censo_2024);
     const pct = fmtNumber(r.porcentaje_regional_pct);
     const sup = fmtNumber(r.superficie_km2);
     const dens = fmtNumber(r.densidad_hab_km2, 2);
     const rankPob = getComunaRank(index, r.comuna_ine, 'poblacion_censo_2024') || 1;
+
+    if (options && options.evaluativeMultiCriteria) {
+      const rankAisl = getComunaRank(index, r.comuna_ine, 'indice_aislamiento_multimodal') || '-';
+      const rankFndrPc = getComunaRank(index, r.comuna_ine, 'fndr_per_capita_mclp') || '-';
+      const dieselReal = r.costo_real_generacion_diesel_kwh_clp || r.costo_diesel_aislado_clp || 0;
+      const energiaTxt = dieselReal > 0
+        ? `diésel aislado a $${fmtNumber(dieselReal)}/kWh (BT1 $${fmtNumber(r.tarifa_bt1_clp)}/kWh)`
+        : `tarifa BT1 $${fmtNumber(r.tarifa_bt1_clp)}/kWh (${fmtNumber(r.potencia_mw)} MW)`;
+      const barcazaShort = String(r.dependencia_barcaza || '').split('(')[0].trim();
+      const locCab = r.cabecera ? `${r.cabecera}, ` : '';
+      return (
+        `Radiografía territorial de ${ent.name} (${locCab}${pob} hab., ${sup} km²): ` +
+        `Aislamiento multimodal ${fmtNumber(r.indice_aislamiento_multimodal, 1)}/100 (#${rankAisl} reg.), ${fmtNumber(r.traslado_coyhaique_hrs)} hrs a Coyhaique${barcazaShort ? ` (${barcazaShort})` : ''}. ` +
+        `Inversión y Finanzas: FNDR per cápita M$ ${fmtNumber(r.fndr_per_capita_mclp, 1)}/hab (#${rankFndrPc} reg., M$ ${fmtNumber(r.fndr_mclp)}), ${fmtNumber(r.dependencia_fcm_pct, 1)}% FCM, ${fmtNumber(r.empresas_sii)} empresas SII y US$ ${fmtNumber(r.inversion_seia_mmusd)} MM SEIA. ` +
+        `Energía, Conectividad y Turismo: ${energiaTxt}, ${fmtNumber(r.cobertura_fibra_hogar_pct, 1)}% fibra hogar (${fmtNumber(r.conexiones_fijas_subtel_jun2026_n)} conexiones SUBTEL), ${fmtNumber(r.visitantes_snaspe)} visitas SNASPE (${fmtNumber(r.superficie_snaspe_pct, 1)}% protegido).`
+      );
+    }
 
     const vPresPerCap = index.variablesByKey['presupuesto_per_capita_mclp'];
     const avgPresPerCap = vPresPerCap && vPresPerCap.stats ? fmtNumber(Math.round(vPresPerCap.stats.avg)) : '2.135';
@@ -3680,9 +3774,12 @@
       }
     }
 
+    const blockDependVerbMatch = varRecord.key === 'trabajadores_sii';
     for (const qt of qTokens) {
+      const isDependVerb = blockDependVerbMatch && /^depend(?:e|en|ia|ian|encia|iendo|emos)$/.test(qt);
       let matchedExactOrPrefix = false;
       for (const vt of varRecord.tokens) {
+        if (isDependVerb && /^dependient/.test(vt)) continue;
         if (qt === vt) {
           score += 5;
           matchedExactOrPrefix = true;
@@ -3693,7 +3790,8 @@
       }
       if (!matchedExactOrPrefix && qt.length >= 4 && !QUERY_STOPWORDS.has(qt) && Array.isArray(varRecord.stems)) {
         const qtStem = stemSpanishWord(qt);
-        if (qtStem.length >= 4 && varRecord.stems.some(vs => vs === qtStem || (vs.length >= 5 && qtStem.length >= 5 && (vs.startsWith(qtStem) || qtStem.startsWith(vs))))) {
+        const allowStemCheck = !(isDependVerb && /^depend/.test(qtStem));
+        if (allowStemCheck && qtStem.length >= 4 && varRecord.stems.some(vs => vs === qtStem || (vs.length >= 5 && qtStem.length >= 5 && (vs.startsWith(qtStem) || qtStem.startsWith(vs))))) {
           score += 3.5;
         }
       }
@@ -3843,14 +3941,14 @@
       id: 'sistema_electrico_energia',
       hubId: 'energia',
       relatedHub: 'III',
-      pattern: /(como\s+funciona\s+(?:la\s+energia|el\s+sistema\s+electrico|la\s+electricidad|la\s+matriz\s+energetica)|sistemas\s+medianos\s+aislados|aislamiento\s+electrico|matriz\s+termica\s+a\s+lena)/i,
+      pattern: /(como\s+funciona\s+(?:la\s+energia|el\s+sistema\s+electrico|la\s+electricidad|la\s+matriz\s+energetica)|sistemas\s+medianos(?:\s+aislados)?|aislamiento\s+electrico|transicion\s+energetica|pobreza\s+energetica|matriz\s+termica(?:\s+a\s+lena)?|contaminacion.*hidroelectric\w*|hidroelectric\w*.*contaminacion|luz\s+es\s+muy\s+cara.*lena|luz.*cara.*lena|tarifa\s+electrica.*lena|lena.*tarifa\s+electrica)/i,
       title: 'Matriz Energética Dual de Aysén: Sistemas Eléctricos Medianos Aislados y Matriz Térmica a Leña',
       coreVariables: [
         'potencia_mw',
         'tarifa_bt1_clp',
         'hogares_lena_pct',
         'consumo_lena_m3_hogar_ano',
-        'informalidad_lena_pct',
+        'dias_sobre_norma_mp25',
         'saidi_horas_anual'
       ],
       preferredChart: {
@@ -3860,14 +3958,14 @@
         title: 'Tarifa Eléctrica Residencial BT1 ($/kWh) vs. Consumo Anual de Leña (m³/hogar/año)'
       },
       conceptualBrief:
-        'Aysén no está interconectada al Sistema Eléctrico Nacional (SEN): opera mediante Sistemas Eléctricos Medianos aislados y microrredes locales que totalizan 98,6 MW de capacidad instalada (liderados por Aysén con 42,5 MW y Coyhaique con 26,8 MW), combinando hidroelectricidad de pasada, respaldo térmico diésel y subsidios tarifarios estatales. En paralelo, la matriz residencial depende mayoritariamente de la leña para calefacción (desde 82,3% en Chile Chico hasta 99,1% en O\'Higgins, con consumos de 14,5 a 22,0 m³/hogar/año), explicando los episodios críticos invernales de MP2.5.'
+        'Aunque Aysén posee abundante recurso hídrico, la región no está interconectada al Sistema Eléctrico Nacional (SEN): opera mediante Sistemas Eléctricos Medianos aislados y microrredes con 98,6 MW instalados (42,5 MW en Aysén y 26,8 MW en Coyhaique), lo que eleva la tarifa eléctrica residencial BT1 a $224/kWh en Coyhaique ($242,3/kWh promedio regional). Ese costo eléctrico frente a la leña ($48.000/m³ en Coyhaique) explica la paradoja hidro-térmica: el 92,4% de los hogares coyhaiquinos usa leña para calefacción (14,5 m³/hogar/año; 82,3% en Chile Chico a 99,1% en O\'Higgins), generando 87 días anuales sobre la norma diaria de MP2.5 (41 episodios críticos GEC).'
     },
     {
       id: 'modelo_salmonicultor',
       hubId: 'salmonicultura',
       relatedHub: 'II',
-      pattern: /(como\s+funciona\s+(?:la\s+salmonicultura|la\s+acuicultura|la\s+industria\s+salmonera)|modelo\s+salmonero|estructura\s+salmonera)/i,
-      title: 'Estructura Territorial, Productiva y Sanitaria de la Salmonicultura en el Litoral de Aysén',
+      pattern: /(como\s+funciona\s+(?:la\s+salmonicultura|la\s+acuicultura|la\s+industria\s+salmonera|la\s+industria\s+del\s+salmon|el\s+sector\s+salmonero)|modelo\s+salmonero|estructura\s+salmonera|industria\s+del\s+salmon.*duenos|duenos.*salmon)/i,
+      title: 'Estructura Territorial, Productiva y Holdings Dueños de la Salmonicultura en Aysén',
       coreVariables: [
         'concesiones_salmon',
         'centros_activos_salmon',
@@ -3883,7 +3981,7 @@
         title: 'Biomasa Cosechada de Salmónidos (ton) y Centros Activos por Comuna'
       },
       conceptualBrief:
-        'La salmonicultura en Aysén registra 745 concesiones otorgadas totales, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada anual, operadas bajo 13 holdings salmoneros madres en cuatro comunas litoral-fiórdicas: Puerto Aysén (412 concesiones, 135 centros activos, 265.000 ton), Cisnes (218 concesiones, 78 centros, 185.000 ton), Guaitecas (98 concesiones, 32 centros, 45.000 ton) y Tortel (17 concesiones, 8.500 ton). Su dinámica sistémica cruza empleo formal SII, descansos sanitarios coordinados (ACS), uso de antibióticos (ICA) y superposición territorial con áreas SNASPE y solicitudes ECMPO.'
+        'La industria del salmón en Aysén suma 745 concesiones otorgadas, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada anual en cuatro comunas litoral-fiórdicas: Puerto Aysén (412 concesiones, 135 centros activos, 265.000 ton), Cisnes (218 conc., 78 centros, 185.000 ton), Guaitecas (98 conc., 32 centros, 45.000 ton) y Tortel (17 conc., 8.500 ton). La propiedad se organiza bajo 13 holdings salmoneros madres: AquaChile / Grupo Agrosuper (210 concesiones, 141.937 ton), Mowi Chile (95 conc., 64.196 ton), Multi X (80 conc., 54.076 ton), Cermaq Chile (75 conc., 50.702 ton), Salmones Blumar (62 conc., 41.891 ton), Australis Seafoods (46 conc.), Salmones Camanchaca (38 conc.), Salmones Yadrán (31 conc.), Invermar (27 conc.), Salmones Austral (24 conc.), Salmones Antártica (20 conc.), Cooke Aquaculture Chile (18 conc.) y Titulares Menores Aysén (19 conc.).'
     },
     {
       id: 'inversion_publica_regional',
@@ -3930,6 +4028,31 @@
       },
       conceptualBrief:
         'El Servicio de Salud Aysén articula un hospital base de alta complejidad (Hospital Regional de Coyhaique), hospitales comunitarios de baja complejidad (Puerto Aysén, Puerto Cisnes, Chile Chico y Cochrane) y 27 Postas de Salud Rural (PSR) distribuidas en las 10 comunas. La dispersión geográfica impone tiempos de derivación terrestre o marítima hacia Coyhaique desde 0 a 1,0 hora en Coyhaique y Aysén hasta 8,0 horas en Tortel, 10,0 horas en O\'Higgins y 14,0 horas en Guaitecas, complementados por aeroevacuaciones SAMU.'
+    },
+    {
+      id: 'ecosistema_ctci_ciencia',
+      hubId: 'ctci',
+      relatedHub: 'X',
+      pattern: /(quienes\s+hacen\s+ciencia|quienes\s+investigan|como\s+funciona\s+la\s+ciencia|ecosistema\s+ctci|centros\s+de\s+investigacion|investigacion\s+cientifica\s+en\s+aysen|ciencia\s+o\s+investigacion(?:\s+en\s+aysen)?)/i,
+      title: 'Ecosistema de Ciencia, Tecnología, Conocimiento e Innovación (Hub X CTCi) en Aysén',
+      coreVariables: [
+        'total_proyectos_ctci',
+        'investigadores_residentes_est',
+        'monto_anid_mclp',
+        'centros_y_estaciones_ctci_count',
+        'monto_corfo_innova_mclp',
+        'proyectos_anid_n'
+      ],
+      preferredChart: {
+        type: 'bar',
+        varX: 'total_proyectos_ctci',
+        varY: 'investigadores_residentes_est',
+        title: 'Total de Proyectos CTCi (ANID + CORFO) vs. Investigadores Residentes Estimados por Comuna'
+      },
+      conceptualBrief:
+        'El ecosistema de Ciencia, Tecnología, Conocimiento e Innovación (Hub X CTCi) de Aysén articula 16 centros científicos y estaciones geolocalizadas con 124 investigadores residentes en la región (91 concentrados en Coyhaique), 179 proyectos CTCi totales (120 proyectos ANID por 17.326,8 M$ — 68 locales y 52 extrarregionales — más 59 proyectos CORFO Innova por 8.450,0 M$). ' +
+        'Los principales actores científicos son: CIEP (34 investigadores en Coyhaique y 3 en su Laboratorio Costero Caleta Tortel), Universidad de Aysén / UAysén (Campus Río Simpson en Coyhaique, 31 investigadores), INIA Tamel Aike (10 en Coyhaique y 3 en Chile Chico), INFOR Sede Patagonia (Coyhaique, 9), Campus Patagonia UACh (Coyhaique, 5), IFOP (4 en Puerto Cisnes y 2 en Melinka/Guaitecas), Plataforma Bioseguridad Barrio 21B (Aysén, 10), Base Glaciológica San Rafael CECs/UChile (Aysén, 4), Estación Patagonia UC Bahía Exploradores (Río Ibáñez, 2), Estación Cuencas Cochrane (3), Estación Limnológica O\'Higgins (1) y Nodo Lago Verde (1). ' +
+        'Por comuna, lidera Coyhaique (102 proyectos, 91 investigadores, 11.850,5 M$ ANID), seguida de Puerto Aysén (31 proyectos, 14 investigadores) y Cisnes (11 proyectos, 4 investigadores).'
     }
   ];
 
@@ -3961,20 +4084,83 @@
         '(1) Paso Fronterizo Huemules (comuna de Coyhaique, sector Balmaceda): complejo aduanero terrestre del corredor binacional ATIT 1974 junto a la Ruta 40 argentina hacia Comodoro Rivadavia y barrera de bioseguridad fitosanitaria del SAG; ' +
         '(2) Río Huemules y Valle Huemules (sector limítrofe Aysén / Coyhaique): cuenca fluvioglaciar que drena el flanco occidental del Volcán Hudson hacia el estero Elefantes; y ' +
         '(3) Huemul (Hippocamelus bisulcus, en plural «huemules»): cérvido nativo en categoría En Peligro (EN) en el RCE MMA, con una población estimada de 1.500 a 2.000 individuos en Aysén (60% al 70% de la población mundial) protegida en áreas SNASPE como el Parque Nacional Cerro Castillo y la Reserva Nacional Tamango.'
+    },
+    {
+      id: 'volcan_hudson',
+      relatedHub: 'VII',
+      pattern: /\b(volcan\s+hudson|hudson)\b/i,
+      comunas: ['Río Ibáñez', 'Aysén'],
+      hubIds: ['biodiversidad', 'turismo', 'social'],
+      variables: [
+        'amenaza_volcanica_sismica_idx',
+        'superficie_glaciares_km2',
+        'visitantes_snaspe'
+      ],
+      preferredChart: {
+        type: 'bar',
+        varX: 'amenaza_volcanica_sismica_idx',
+        varY: 'superficie_glaciares_km2',
+        title: 'Índice de Amenaza Volcánica-Sísmica RNVV y Superficie Glaciar Comunal (km²)'
+      },
+      verifiedSynthesis:
+        'El Volcán Hudson (límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km, #2 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico, junto a 142 eventos sísmicos USGS en el clúster Hudson/Simpson.'
+    },
+    {
+      id: 'laguna_san_rafael_campos_hielo',
+      relatedHub: 'I',
+      pattern: /\b(laguna\s+san\s+rafael|glaciar\s+san\s+rafael|parque\s+nacional\s+laguna\s+san\s+rafael)\b/i,
+      comunas: ['Aysén', 'Tortel', 'Río Ibáñez'],
+      hubIds: ['turismo', 'biodiversidad', 'ctci'],
+      variables: [
+        'superficie_glaciares_km2',
+        'visitantes_snaspe',
+        'superficie_snaspe_pct'
+      ],
+      preferredChart: {
+        type: 'bar',
+        varX: 'superficie_glaciares_km2',
+        varY: 'visitantes_snaspe',
+        title: 'Superficie de Glaciares DGA (km²) vs. Visitantes Anuales Parques SNASPE por Comuna'
+      },
+      verifiedSynthesis:
+        'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional (DGA-MOP). Registra 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de retroceso glacial.'
     }
   ];
 
+  const REPAIR_PREFIX_RE = /^(?:ok\s*,?\s*)?(?:pero\s+)?(?:no\s+fue\s+lo\s+que\s+pregunte|eso\s+no\s+(?:fue|es)(?:\s+lo\s+que\s+pregunte)?|no\s+entendiste|no\s+me\s+entendiste|no\s+respondiste(?:\s+eso)?|no\s+se\s+(?:termina\s+de\s+)?entender(?:\s+(?:esta\s+cosa|esto|nada|bien))?|explicame\s+mejor|no\s+me\s+sirve|hablaba\s+de\s+otra\s+cosa|otra\s+cosa|mal\s+respondido|no\s+tiene\s+que\s+ver)[\s,.:;!-]*/i;
+  const RAW_REPAIR_PREFIX_RE = /^[¿¡\s]*(?:ok\s*,?\s*)?(?:pero\s+)?(?:no\s+fue\s+lo\s+que\s+pregunt[eé]|eso\s+no\s+(?:fue|es)(?:\s+lo\s+que\s+pregunt[eé])?|no\s+entendiste|no\s+me\s+entendiste|no\s+respondiste(?:\s+eso)?|no\s+se\s+(?:termina\s+de\s+)?entender(?:\s+(?:esta\s+cosa|esto|nada|bien))?|expl[ií]came\s+mejor|no\s+me\s+sirve|hablaba\s+de\s+otra\s+cosa|otra\s+cosa|mal\s+respondido|no\s+tiene\s+que\s+ver)[\s,.:;!?¡¿-]*/i;
+  const EVALUATIVE_OPEN_COMUNA_RE = /\b(que\s+onda|como\s+es|vale\s+la\s+pena(?:\s+invertir)?|esta\s+muy\s+aislad[oa]|que\s+tal\s+es|panorama\s+de|situacion\s+de)\b/i;
+
   function classifyConversationAct(rawQuery, qNorm) {
-    const q = String(qNorm || '');
-    const isRepair = /^(no\s+fue\s+lo\s+que\s+pregunte|eso\s+no\s+(fue|es)|no\s+entendiste|no\s+respondiste|no\s+se\s+(termina\s+de\s+)?entender|ok\s*,?\s*pero\s+no\s+se\s+(termina\s+de\s+)?entender|explicame\s+mejor|no\s+me\s+sirve|hablaba\s+de\s+otra\s+cosa|otra\s+cosa|mal\s+respondido|no\s+tiene\s+que\s+ver)/i.test(q) ||
+    const q = String(qNorm || '').trim();
+    const rawTrim = String(rawQuery || '').trim();
+    const isRepair = REPAIR_PREFIX_RE.test(q) ||
       /(no\s+fue\s+lo\s+que\s+pregunte|no\s+se\s+termina\s+de\s+entender|no\s+se\s+entiende\s+esta\s+cosa|eso\s+no\s+es\s+lo\s+que\s+pregunte)/i.test(q);
+
+    let repairRemainderRaw = '';
+    let repairRemainderNorm = '';
+    if (isRepair) {
+      repairRemainderRaw = rawTrim
+        .replace(RAW_REPAIR_PREFIX_RE, '')
+        .replace(/^(?:te\s+pregunto\s+(?:si|por|sobre|cu[aá]nt[oa]s?|c[oó]mo|qu[eé])?\s*|quiero\s+saber\s+(?:si\s+)?|me\s+refiero\s+a\s+|pregunt[eé]\s+(?:por|sobre|si)\s+)/i, '')
+        .trim();
+      repairRemainderNorm = normalizeText(repairRemainderRaw);
+    }
+
+    const remainderTokens = tokenize(repairRemainderNorm).filter(t => t.length >= 3);
+    const isGuidedRepair = isRepair && remainderTokens.length >= 2;
+    const isPureRepair = isRepair && !isGuidedRepair;
 
     const isFollowUpAdd = /^(y\s+)?(no\s+tienes\s+mas|que\s+mas|dame\s+mas|mas\s+datos|otros\s+datos|otras\s+variables|muestrame\s+mas|y\s+sobre\s+eso|profundiza|continua|amplia)(\s+datos|\s+informacion|\s+sobre\s+eso)?\??$/i.test(q);
 
-    const isConceptualHowWhy = /(explicame\s+como\s+funciona|como\s+funciona|como\s+se\s+(estructura|financia|financian|organiza|compone|distribuye)|de\s+que\s+depende|por\s+que\s+(ocurre|pasa|existe|hay)|cual\s+es\s+la\s+logica|que\s+explica)/i.test(q);
+    const isConceptualHowWhy = /(explicame\s+como\s+funciona|como\s+funciona|como\s+se\s+(estructura|financia|financian|organiza|compone|distribuye)|de\s+que\s+depende|por\s+que\s+(?:ocurre|pasa|existe|hay|tiene\s+tanta|\w+\s+tiene\s+tanta)|cual\s+es\s+la\s+logica|que\s+explica)/i.test(q);
 
     return {
       isRepair,
+      isPureRepair,
+      isGuidedRepair,
+      repairRemainderRaw,
+      repairRemainderNorm,
       isFollowUpAdd,
       isConceptualHowWhy
     };
@@ -3998,9 +4184,15 @@
         return !ma.isRepair && !ma.isFollowUpAdd && mn.length >= 4;
       }) || null;
 
-    if (conversationAct.isRepair && prevSubstantive) {
+    if (conversationAct.isGuidedRepair) {
       isConversationalRepair = true;
       originalQueryToRepair = prevSubstantive;
+      _conversationState.pureRepairCount = 0;
+      effectiveQuery = conversationAct.repairRemainderRaw;
+    } else if (conversationAct.isPureRepair && prevSubstantive) {
+      isConversationalRepair = true;
+      originalQueryToRepair = prevSubstantive;
+      _conversationState.pureRepairCount = (_conversationState.pureRepairCount || 0) + 1;
       const lastPacket = _conversationState.lastConceptualPacketId
         ? CONCEPTUAL_DOMAIN_PACKETS.find(p => p.id === _conversationState.lastConceptualPacketId)
         : null;
@@ -4013,7 +4205,10 @@
       }
       effectiveQuery = prevSubstantive;
     } else if (conversationAct.isFollowUpAdd && prevUserMsgs.length > 0) {
+      _conversationState.pureRepairCount = 0;
       effectiveQuery = prevUserMsgs[prevUserMsgs.length - 1] + ' ' + effectiveQuery;
+    } else {
+      _conversationState.pureRepairCount = 0;
     }
     const rawQuery = effectiveQuery;
     const qNorm = normalizeText(rawQuery);
@@ -4553,9 +4748,10 @@
     }
 
     // WP-A.3: Resolver referencias anafóricas de seguimiento ("¿y cuál es su relación con la salmonicultura?", "¿y en salud?", "¿y no tienes más datos?")
-    const isRegionalScope = /\b(aysen|region|regional|comunas|ranking|cada comuna|todas las comunas|empresas|holdings|provincias)\b/i.test(qNorm);
+    // o reparaciones guiadas sin comuna ni alcance regional ("te pregunto si la luz es muy cara comparada con usar leña")
+    const isRegionalScope = /\b(aysen|region|regional|comunas|por\s+comuna|ranking|cada comuna|todas las comunas|empresas|holdings|provincias)\b/i.test(qNorm);
     const isMoreDataFollowUp = /(no tienes mas|que mas tienes|otros indicadores|mas datos|que otros datos|que mas hay|mas informacion|algo mas|otra informacion)/i.test(qNorm);
-    const hasFollowUpCue = isMoreDataFollowUp || /(^¿?\s*y\b|\bsu\b|\bsus\b|\besta comuna\b|\besa comuna\b|\bahi\b|\balli\b|\ben ella\b|^¿?\s*respecto a\b|^¿?\s*en cuanto a\b)/i.test(rawQuery);
+    const hasFollowUpCue = isMoreDataFollowUp || conversationAct.isGuidedRepair || /(^¿?\s*y\b|\bsu\b|\bsus\b|\besta comuna\b|\besa comuna\b|\bahi\b|\balli\b|\ben ella\b|^¿?\s*respecto a\b|^¿?\s*en cuanto a\b)/i.test(rawQuery);
     if (matchedEntities.length === 0 && !isRegionalScope && hasFollowUpCue && _conversationState.lastComunaCode && !isMoreDataFollowUp) {
       const prevEnt = _memoryIndex.entities.find(e => String(e.id) === String(_conversationState.lastComunaCode));
       if (prevEnt) {
@@ -4631,12 +4827,30 @@
     const asksVifExplicit = /\b(vif|violencia\s+intrafamiliar)\b/i.test(qNorm);
     const asksDmcsExplicit = /\b(dmcs|delitos?\s+de\s+mayor\s+connotacion)\b/i.test(qNorm);
 
+    const asksAnidInvestigadoresByComuna = /\binvestigadores?\b/i.test(qNorm) && /\bproyectos?\s+anid\b/i.test(qNorm) && !/\bpercepcion\b/i.test(qNorm);
+    const asksExplicitSiiWorkers = /\b(?:trabajadores|empleo|dependientes)\s+sii\b/i.test(qNorm);
+    const asksSalmonEmpleo = !asksExplicitSiiWorkers &&
+      /\b(salmon\w*|acuic\w*|pesq\w*|plantas?\s+de\s+proceso)\b/i.test(qNorm) &&
+      /\b(empleo\w*|trabajo\w*|trabajador\w*|ocupacion|laboral\w*)\b/i.test(qNorm);
+
     const allScoredVars = _memoryIndex.variables.map(v => {
       let s = scoreVariable(v, qNormForVars, varQueryTokens) + (nlScores[v.key] || 0) * 1.2;
       if (asksEcmpoLafkenche && v.key === 'ecmpo_solicitadas_ha' && s > 0) s += 28;
       if (asksAmerbOperativas && v.key === 'amerb_operativas' && s > 0) s += 30;
       if (asksAmerbOperativas && v.key === 'amerb_decretadas') s -= 15;
       if (!asksRatioPerCenter && v.key === 'trabajadores_sii_por_centro_activo') s -= 30;
+
+      if (asksSalmonEmpleo) {
+        if (['biomasa_salmon_ton', 'centros_activos_salmon', 'empleo_directo_salmon_n', 'plantas_proceso_salmon_empleo'].includes(v.key)) s += 45;
+        if (v.key === 'concesiones_salmon') s += 42;
+        if (v.key === 'trabajadores_sii') s -= 60;
+      }
+
+      if (asksAnidInvestigadoresByComuna) {
+        if (v.key === 'total_proyectos_ctci') s += 28;
+        if (v.key === 'investigadores_residentes_est') s += 28;
+        if (v.key === 'monto_anid_mclp' && !/\b(monto|presupuesto|dinero|millones|mclp)\b/i.test(qNorm)) s -= 20;
+      }
 
       if (asksUaysenEval && v.key === 'evaluacion_uaysen_promedio_i8') s += 32;
       if (asksAporteUniv && v.key === 'aporte_universidades_f4g_pct') s += 26;
@@ -4670,7 +4884,7 @@
       if (asksVifExplicit && v.key === 'tasa_vif_100k') s += 22;
       if (asksDmcsExplicit && v.key === 'tasa_dmcs_100k') s += 22;
 
-      if (isConversationalRepair && _conversationState.rejectedVarKeys.includes(v.key)) {
+      if (isConversationalRepair && !conversationAct.isGuidedRepair && _conversationState.rejectedVarKeys.includes(v.key)) {
         s -= 200;
       }
 
@@ -4986,8 +5200,15 @@
       }
     }
 
-    // Detectar entidad territorial multidimensional (p.ej. "huemules", Paso Huemules / Río Huemules / Huemul RCE)
-    const matchedTerritorialEntity = (matchedEntities.length === 0 && !isHoldingQuery)
+    // Detectar entidad territorial multidimensional (p.ej. "huemules", Volcán Hudson, Laguna San Rafael)
+    const entityFromLocalityOnly = matchedLocalidades.length > 0 && matchedEntities.length === 1 && matchedEntities[0].id === matchedLocalidades[0].comuna_ine;
+    const matchedTerritorialEntity = (
+      (matchedEntities.length === 0 || entityFromLocalityOnly) &&
+      !isHoldingQuery &&
+      !asksSnaspeParkBreakdown &&
+      !hasTourismTemporalSeries &&
+      !wantsTemporal
+    )
       ? (TERRITORIAL_ENTITY_GRAPH.find(ent => ent.pattern.test(qNorm)) || null)
       : null;
 
@@ -5072,21 +5293,34 @@
       };
     }
 
-    // Detectar paquetes conceptuales multidimensionales ("explícame cómo funciona el financiamiento municipal")
+    // Detectar paquetes conceptuales multidimensionales ("explícame cómo funciona el financiamiento municipal", energía, salmonicultura+holdings, CTCi)
     const isRankingSuperlativeQuery = /\b(mayor\s+dependencia|menor\s+dependencia|ranking|top\s+\d+|primeras?\s+\d+|ultimas?\s+\d+|cuales?\s+comunas\s+tienen\s+(?:mas|menos|mayor|menor)|que\s+comuna\s+(?:tiene|lidera|registra)|compara\w*|cruza\w*|versus|\bvs\b|frente\s+a)\b/i.test(qNorm);
-    const rawConceptualPacket = (matchedEntities.length === 0 && !isHoldingQuery && !wantsScatter && !isRankingSuperlativeQuery && !asksBarcazasAtit && !asksElectricMatrixTemporal)
-      ? (CONCEPTUAL_DOMAIN_PACKETS.find(p => p.pattern.test(qNorm)) || null)
+    const isEnergyConceptCross = /\b(contaminacion|mp2\.?5|lena)\b/i.test(qNorm) && /\b(hidroelectric\w*|luz|tarifa|electric\w*)\b/i.test(qNorm);
+    const rawConceptualPacket = (!wantsScatter && (!isRankingSuperlativeQuery || isEnergyConceptCross) && !asksBarcazasAtit && !asksElectricMatrixTemporal)
+      ? (CONCEPTUAL_DOMAIN_PACKETS.find(p => {
+          if (!p.pattern.test(qNorm)) return false;
+          if (p.id === 'modelo_salmonicultor') {
+            return matchedEntities.length === 0 && (!isHoldingQuery || conversationAct.isConceptualHowWhy);
+          }
+          if (p.id === 'sistema_electrico_energia') {
+            return !isHoldingQuery && (matchedEntities.length === 0 || (matchedEntities.length === 1 && (conversationAct.isConceptualHowWhy || isEnergyConceptCross)));
+          }
+          return matchedEntities.length === 0 && !isHoldingQuery;
+        }) || null)
       : null;
     const matchedConceptualPacket = (
       rawConceptualPacket && (
         conversationAct.isConceptualHowWhy ||
         isConversationalRepair ||
-        rawConceptualPacket.id === 'financiamiento_municipal'
+        isEnergyConceptCross ||
+        rawConceptualPacket.id === 'financiamiento_municipal' ||
+        rawConceptualPacket.id === 'ecosistema_ctci_ciencia'
       )
     ) ? rawConceptualPacket : null;
 
     if (matchedConceptualPacket) {
-      const rejectedSet = new Set(_conversationState.rejectedVarKeys || []);
+      const packetHasHoldings = isHoldingQuery || matchedConceptualPacket.id === 'modelo_salmonicultor';
+      const rejectedSet = new Set(conversationAct.isGuidedRepair ? [] : (_conversationState.rejectedVarKeys || []));
       const resolvedCore = matchedConceptualPacket.coreVariables
         .map(k => _memoryIndex.variablesByKey[k])
         .filter(Boolean);
@@ -5109,7 +5343,7 @@
           return row;
         });
 
-      if (!isConversationalRepair) {
+      if (!isConversationalRepair || conversationAct.isGuidedRepair) {
         _conversationState.lastSubstantiveQuery = rawQuery;
         _conversationState.lastConceptualPacketId = matchedConceptualPacket.id;
         _conversationState.lastDomain = matchedConceptualPacket.hubId;
@@ -5130,7 +5364,7 @@
         matchedEntities,
         matchedLocalidades,
         matchedSector: matchedSector || null,
-        isHoldingQuery: false,
+        isHoldingQuery: packetHasHoldings,
         reconciledTopic: null,
         reconciledResult: null,
         isDeterministicDirect: false,
@@ -5323,10 +5557,14 @@
     const tertiaryLabel = tertiaryKey ? (CANONICAL_LABELS[tertiaryKey] || (tertiaryVar ? tertiaryVar.label : humanizeKey(tertiaryKey))) : null;
     const quaternaryLabel = quaternaryKey ? (CANONICAL_LABELS[quaternaryKey] || (quaternaryVar ? quaternaryVar.label : humanizeKey(quaternaryKey))) : null;
 
+    const isEvaluativeOpenComuna = matchedEntities.length === 1 && !matchedSector && !isHoldingQuery && EVALUATIVE_OPEN_COMUNA_RE.test(qNorm);
+
     // WP-C.2: Resolver fuentes oficiales estrictamente 1-a-1 para las variables efectivamente consultadas
     const provenanceTargetKeys = [];
     if (isHoldingQuery) {
       provenanceTargetKeys.push('holdings_salmoneros', 'biomasa_salmon_ton');
+    } else if (isEvaluativeOpenComuna) {
+      provenanceTargetKeys.push('poblacion_censo_2024', 'indice_aislamiento_multimodal', 'fndr_per_capita_mclp', 'cobertura_fibra_hogar_pct', 'costo_real_generacion_diesel_kwh_clp');
     } else if (matchedSector && isBroadSectorQuery) {
       provenanceTargetKeys.push(...matchedSector.provenanceKeys);
     } else if (matchedEntities.length === 1 && scoredVars.length === 0) {
@@ -5458,8 +5696,18 @@
 
     const isGeneralProfileMatch = matchedEntities.length === 1 && !matchedSector && !isHoldingQuery && (
       topNumericVars.length === 0 ||
+      isEvaluativeOpenComuna ||
       /\b(cuentame sobre|hablame de|perfil de|como esta|ficha de|resumen de|informacion de|todo sobre)\b/i.test(qNorm)
     );
+    if (isEvaluativeOpenComuna && matchedEntities[0]) {
+      const evEnt = matchedEntities[0];
+      const hasSal = (evEnt.raw?.concesiones_salmon || 0) > 20;
+      chartSpec.varX = hasSal ? 'concesiones_salmon' : 'indice_aislamiento_multimodal';
+      chartSpec.varY = hasSal ? 'biomasa_salmon_ton' : 'fndr_per_capita_mclp';
+      chartSpec.yKey = chartSpec.varX;
+      chartSpec.y2Key = chartSpec.varY;
+      chartSpec.title = `Perfil Multidimensional — ${evEnt.name}`;
+    }
     const isMultiEntityNoVars = matchedEntities.length >= 2 && !primaryVar && !matchedSector && !isHoldingQuery;
     const isDeterministicDirect = Boolean(
       subsetIntent ||
@@ -5490,11 +5738,13 @@
       (!primaryVar || isBroadSectorQuery || /(panorama|resumen|vision general|estado de la region|macro|hitos)/i.test(qNorm))
     );
 
-    if (!isConversationalRepair && !conversationAct.isFollowUpAdd && (primaryVar || matchedSector || isHoldingQuery || matchedEntities.length > 0)) {
-      _conversationState.lastSubstantiveQuery = rawQuery;
-      _conversationState.lastConceptualPacketId = null;
-      _conversationState.lastVarKey = primaryVar ? primaryVar.key : _conversationState.lastVarKey;
-      _conversationState.lastVarLabel = primaryVar ? (CANONICAL_LABELS[primaryVar.key] || primaryVar.label) : _conversationState.lastVarLabel;
+    if ((!isConversationalRepair || conversationAct.isGuidedRepair) && (primaryVar || matchedSector || isHoldingQuery || matchedEntities.length > 0)) {
+      if (!conversationAct.isFollowUpAdd) {
+        _conversationState.lastSubstantiveQuery = rawQuery;
+        _conversationState.lastConceptualPacketId = null;
+        _conversationState.lastVarKey = primaryVar ? primaryVar.key : _conversationState.lastVarKey;
+        _conversationState.lastVarLabel = primaryVar ? (CANONICAL_LABELS[primaryVar.key] || primaryVar.label) : _conversationState.lastVarLabel;
+      }
     }
 
     return {
@@ -5611,9 +5861,12 @@
     if (memoryPacket.matchedConceptualPacket) {
       _conversationState.lastConceptualPacketId = memoryPacket.matchedConceptualPacket.id;
     }
-    if (!memoryPacket.isConversationalRepair && !memoryPacket.conversationAct?.isFollowUpAdd && memoryPacket.query) {
+    if ((!memoryPacket.isConversationalRepair || memoryPacket.conversationAct?.isGuidedRepair) && !memoryPacket.conversationAct?.isFollowUpAdd && memoryPacket.query) {
       if (memoryPacket.primaryVar || memoryPacket.matchedConceptualPacket || memoryPacket.matchedTerritorialEntity || memoryPacket.matchedSector || memoryPacket.reconciledResult || memoryPacket.isHoldingQuery) {
         _conversationState.lastSubstantiveQuery = memoryPacket.query;
+      }
+      if (!memoryPacket.matchedConceptualPacket) {
+        _conversationState.lastConceptualPacketId = null;
       }
     }
     _conversationState.lastQuery = memoryPacket.query || '';
@@ -5807,6 +6060,23 @@
         }
       : undefined;
 
+    const includeCtciCenters = Boolean(
+      memoryPacket.matchedConceptualPacket?.id === 'ecosistema_ctci_ciencia' ||
+      memoryPacket.matchedSector?.id === 'ctci' ||
+      /\b(ciencia|ctci|centros\s+de\s+investigacion|ciep|uaysen|investigacion)\b/i.test(memoryPacket.qNorm || '')
+    );
+    const rawCtciNodes = includeCtciCenters
+      ? (_dataLake?.spatialNodesByLayer?.centros_ctci || _dataLake?.extension_modules?.ctci_innovacion?.nodos_georreferenciados || [])
+      : [];
+    const ctciCentersList = rawCtciNodes.length > 0
+      ? rawCtciNodes.map(n => ({
+          nombre: n.nombre,
+          comuna: n.nombre_comuna || n.comuna || '',
+          tipo: n.tipo || '',
+          investigadores: n.magnitudeValue ?? n.investigadores_est ?? n.investigadores ?? null
+        }))
+      : undefined;
+
     const memoryPayload = {
       consulta_usuario: memoryPacket.query,
       estado_conversacional_previo: _conversationState.lastComunaName || _conversationState.lastDomain ? _conversationState : undefined,
@@ -5819,7 +6089,10 @@
         : undefined,
       serie_historica_anual_2015_2026: annualSeriesHint,
       comunas_filtradas_solicitadas: compactFilteredComunas,
-      holdings_salmoneros_aysen: memoryPacket.isHoldingQuery ? _memoryIndex.holdings : undefined,
+      holdings_salmoneros_aysen: (memoryPacket.isHoldingQuery || memoryPacket.matchedConceptualPacket?.id === 'modelo_salmonicultor')
+        ? _memoryIndex.holdings
+        : undefined,
+      centros_ctci_verificados: ctciCentersList,
       sintesis_institucional_verificada: memoryPacket.reconciledResult ? memoryPacket.reconciledResult.reply : undefined,
       sintesis_conceptual_sistema: memoryPacket.matchedTerritorialEntity
         ? memoryPacket.matchedTerritorialEntity.verifiedSynthesis
@@ -5856,6 +6129,25 @@
     if (!Array.isArray(matchedLocalidades) || matchedLocalidades.length === 0) return '';
     const pairs = matchedLocalidades.map(l => `${l.localidadName} (${l.comunaName})`).join(', ');
     return `Nota: ${pairs} — cifras a escala comunal. `;
+  }
+
+  function buildPedagogicalBreakdownReply(title, varKeys, index, leadContext) {
+    const keys = (Array.isArray(varKeys) ? varKeys : []).slice(0, 3);
+    const points = keys.map((k, idx) => {
+      const v = index.variablesByKey[k];
+      if (!v || !v.stats) return null;
+      const lbl = CANONICAL_LABELS[k] || v.label || humanizeKey(k);
+      const isAvg = v.aggregation === 'avg' || k.endsWith('_pct') || k.endsWith('_hrs');
+      const aggTxt = isAvg
+        ? `promedio regional de ${fmtNumber(v.stats.avg, 1)}`
+        : `total regional de ${fmtNumber(v.stats.sum)}`;
+      const maxTxt = v.stats.max ? `máximo en ${v.stats.max.comuna} (${fmtNumber(v.stats.max.value)})` : '';
+      const minTxt = v.stats.min ? `mínimo en ${v.stats.min.comuna} (${fmtNumber(v.stats.min.value)})` : '';
+      const extTxt = [maxTxt, minTxt].filter(Boolean).join(' vs. ');
+      return `${idx + 1}) ${lbl}: ${aggTxt}${extTxt ? `; ${extTxt}` : ''}.`;
+    }).filter(Boolean);
+    const head = leadContext ? `${leadContext} ` : `Desglose simplificado de ${title}: `;
+    return points.length > 0 ? `${head}\n${points.join('\n')}` : leadContext || title;
   }
 
   /**
@@ -5921,8 +6213,25 @@
 
     // 0b. Entidades Territoriales Multidimensionales (p.ej. Huemules: Paso + Cuenca + Especie RCE)
     if (matchedTerritorialEntity) {
+      const repeatEntityPureRepair = Boolean(
+        isConversationalRepair &&
+        memoryPacket.conversationAct?.isPureRepair &&
+        (_conversationState.pureRepairCount >= 2 || _conversationState.lastDomain === matchedTerritorialEntity.id)
+      );
+      let entityReplyText = matchedTerritorialEntity.verifiedSynthesis;
+      if (repeatEntityPureRepair) {
+        const lead = matchedTerritorialEntity.id === 'huemules_multidimensional'
+          ? 'Resumen simplificado en 3 dimensiones para «Huemules» (Paso Fronterizo Huemules en Coyhaique, Río/Valle Huemules del Volcán Hudson y especie Huemul Hippocamelus bisulcus RCE):'
+          : `Resumen simplificado en 3 indicadores clave sobre ${matchedTerritorialEntity.id.replace(/_/g, ' ')}:`;
+        entityReplyText = buildPedagogicalBreakdownReply(
+          matchedTerritorialEntity.id,
+          matchedTerritorialEntity.variables,
+          _memoryIndex,
+          lead
+        );
+      }
       const res = {
-        reply: sanitizeTechnicalKeysInReply(`${locNote}${matchedTerritorialEntity.verifiedSynthesis}`),
+        reply: sanitizeTechnicalKeysInReply(`${locNote}${entityReplyText}`),
         chart: chartSpec,
         sources,
         relatedHub: relatedHub || matchedTerritorialEntity.relatedHub || 'VII'
@@ -5933,11 +6242,34 @@
 
     // 0c. Paquetes Conceptuales Sistémicos (y Reparaciones Conversacionales rescatadas)
     if (matchedConceptualPacket) {
-      const repairPrefix = isConversationalRepair
-        ? `Rectificando la explicación sobre ${matchedConceptualPacket.title}: `
-        : '';
+      let packetReplyText = matchedConceptualPacket.conceptualBrief;
+      if (
+        isConversationalRepair &&
+        memoryPacket.conversationAct?.isGuidedRepair &&
+        matchedConceptualPacket.id === 'sistema_electrico_energia' &&
+        /\b(luz|tarifa|bt1|cara|comparad\w*)\b/i.test(qNorm) &&
+        /\blena\b/i.test(qNorm)
+      ) {
+        packetReplyText =
+          'Comparación directa tarifa eléctrica vs. leña en Coyhaique y Aysén (CNE / INFOR): ' +
+          'la tarifa residencial eléctrica BT1 llega a $224/kWh en Coyhaique ($242,3/kWh promedio regional) porque los Sistemas Eléctricos Medianos están aislados del SEN (98,6 MW totales; 26,8 MW en Coyhaique). ' +
+          'Frente al costo de la leña ($48.000/m³ en Coyhaique), calefaccionar con electricidad resulta mucho más caro, por lo que 92,4% de los hogares coyhaiquinos usa leña (14,5 m³/hogar/año), explicando 87 días sobre la norma MP2.5 (41 episodios críticos GEC).';
+      } else if (
+        isConversationalRepair &&
+        memoryPacket.conversationAct?.isPureRepair &&
+        _conversationState.pureRepairCount >= 2
+      ) {
+        packetReplyText = buildPedagogicalBreakdownReply(
+          matchedConceptualPacket.title,
+          matchedConceptualPacket.coreVariables,
+          _memoryIndex,
+          `Síntesis pedagógica en 3 ejes sobre ${matchedConceptualPacket.title}:`
+        );
+      } else if (isConversationalRepair) {
+        packetReplyText = `Rectificando la explicación sobre ${matchedConceptualPacket.title}: ${packetReplyText}`;
+      }
       const res = {
-        reply: sanitizeTechnicalKeysInReply(`${locNote}${repairPrefix}${matchedConceptualPacket.conceptualBrief}`),
+        reply: sanitizeTechnicalKeysInReply(`${locNote}${packetReplyText}`),
         chart: chartSpec,
         sources,
         relatedHub: relatedHub || matchedConceptualPacket.relatedHub || 'IV'
@@ -6390,26 +6722,31 @@
       return res;
     }
 
-    // 5. WP-B.1: Perfil Comunal Integral en 4 bloques cuando se consulta por una comuna sin indicador único
+    // 5. WP-B.1: Perfil Comunal Integral en 4 bloques cuando se consulta por una comuna sin indicador único o en consulta coloquial evaluativa abierta
+    const isEvaluativeComunaOpen = matchedEntities.length === 1 && !matchedSector && !isHoldingQuery && EVALUATIVE_OPEN_COMUNA_RE.test(qNorm);
     const isGeneralComunaProfileRequest = matchedEntities.length === 1 && (
       topVariables.length === 0 ||
+      isEvaluativeComunaOpen ||
       /\b(cuentame sobre|hablame de|perfil de|como esta|ficha de|resumen de|informacion de|todo sobre)\b/i.test(qNorm)
     ) && !matchedSector;
 
     if (isGeneralComunaProfileRequest) {
       const ent = matchedEntities[0];
       const c = ent.raw;
-      const profileReply = buildComunaProfileReply(ent, _memoryIndex);
+      const profileReply = buildComunaProfileReply(ent, _memoryIndex, { evaluativeMultiCriteria: isEvaluativeComunaOpen });
       const profileRows = buildComunaProfileTableRows(ent, _memoryIndex);
       const hasSalmonVocation = (c.concesiones_salmon || 0) > 20;
-      const varX = hasSalmonVocation ? 'concesiones_salmon' : 'presupuesto_per_capita_mclp';
-      const varY = hasSalmonVocation ? 'biomasa_salmon_ton' : 'dependencia_fcm_pct';
-      const profSources = resolveSourcesForKeys([
-        'poblacion_censo_2024',
-        varX,
-        'presupuesto_mclp',
-        'camas_hospitalarias'
-      ]);
+      const varX = hasSalmonVocation
+        ? 'concesiones_salmon'
+        : (isEvaluativeComunaOpen ? 'indice_aislamiento_multimodal' : 'presupuesto_per_capita_mclp');
+      const varY = hasSalmonVocation
+        ? 'biomasa_salmon_ton'
+        : (isEvaluativeComunaOpen ? 'fndr_per_capita_mclp' : 'dependencia_fcm_pct');
+      const profSources = resolveSourcesForKeys(
+        isEvaluativeComunaOpen
+          ? ['poblacion_censo_2024', 'indice_aislamiento_multimodal', 'fndr_per_capita_mclp', 'cobertura_fibra_hogar_pct', 'costo_real_generacion_diesel_kwh_clp']
+          : ['poblacion_censo_2024', varX, 'presupuesto_mclp', 'camas_hospitalarias']
+      );
 
       const multiCharts = buildComunaMultiCharts(ent, _memoryIndex);
       const replyWithLoc = locNote ? `${locNote}${profileReply}` : profileReply;
@@ -6819,8 +7156,14 @@
       presupuesto_municipal_mclp: 'presupuesto_mclp',
       presupuesto_vigente_mclp: 'presupuesto_mclp',
       concesiones_operativas_n: 'centros_activos_salmon',
+      centros_cultivo_activos: 'centros_activos_salmon',
       concesiones_total_n: 'concesiones_salmon',
       biomasa_cosechada_ton: 'biomasa_salmon_ton',
+      centros_ctci_n: 'centros_y_estaciones_ctci_count',
+      fondos_corfo_innova_mclp: 'monto_corfo_innova_mclp',
+      fondos_cultura_total_mclp: 'fondos_cultura_adjudicados_mclp',
+      monumentos_nacionales_n: 'monumentos_nacionales_count',
+      museos_espacios_patrimoniales_n: 'museos_espacios_n',
       inversion_fndr_mclp: 'fndr_mclp',
       inversion_fndr_per_capita_mclp: 'fndr_per_capita_mclp',
       inversion_per_capita_mclp: 'fndr_per_capita_mclp',
@@ -7091,6 +7434,7 @@
         lastSubstantiveQuery: null,
         lastConceptualPacketId: null,
         rejectedVarKeys: [],
+        pureRepairCount: 0,
         lastQuery: ''
       };
     },
@@ -7114,6 +7458,7 @@
     },
 
     buildSystemPrompt,
+    buildMemoryGroundedPrompts,
     extractJsonFromResponse,
     retrieveMemoryForQuery,
     classifyConversationAct,

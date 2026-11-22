@@ -270,6 +270,124 @@ function loadEnv() {
   assert(!emojiRe.test(labHtml), 'laboratorio.html contiene emojis');
 
   console.log('[OK] Test 8: Cero regresión en los 10 Hubs (v5) y cero emojis verificados.');
+
+  // -------------------------------------------------------------------------
+  // 9. Test Reparación Guiada con Re-especificación en la misma frase
+  // -------------------------------------------------------------------------
+  client.clearConversationMemory();
+  const prevFinRes = await client.query('explícame cómo funciona el financiamiento municipal');
+  const guidedText = 'eso no es lo que pregunté, quiero saber cuántos investigadores y proyectos ANID hay por comuna';
+  const pkt9a = client.retrieveMemoryForQuery(guidedText);
+  assert.strictEqual(pkt9a.conversationAct.isGuidedRepair, true, 'Debe detectar isGuidedRepair === true');
+  assert.strictEqual(pkt9a.conversationAct.isPureRepair, false, 'No debe tratar reparación guiada como pura');
+  const topKeys9 = (pkt9a.topVariables || []).map(v => v.key);
+  assert(topKeys9.includes('total_proyectos_ctci'), 'Reparación guiada debe incluir total_proyectos_ctci: ' + topKeys9.join(','));
+  assert(topKeys9.includes('investigadores_residentes_est'), 'Reparación guiada debe incluir investigadores_residentes_est: ' + topKeys9.join(','));
+  const res9a = await client.query(guidedText);
+  assert(res9a && res9a.reply && res9a.reply !== prevFinRes.reply, 'Reparación guiada no puede repetir respuesta previa');
+  assert(!/Fondo Común Municipal/i.test(res9a.reply), 'Reparación guiada no debe volver a responder sobre FCM: ' + res9a.reply);
+  assert.strictEqual(res9a.chart.varX, 'total_proyectos_ctci', 'Chart varX debe ser total_proyectos_ctci');
+  assert.strictEqual(res9a.chart.varY, 'investigadores_residentes_est', 'Chart varY debe ser investigadores_residentes_est');
+
+  client.clearConversationMemory();
+  const coy1 = await client.query('¿por qué Coyhaique tiene tanta contaminación en invierno si en Aysén sobra agua para hidroeléctricas?');
+  const guidedLuzText = 'no entendiste, te pregunto si la luz es muy cara comparada con usar leña';
+  const pkt9b = client.retrieveMemoryForQuery(guidedLuzText);
+  assert.strictEqual(pkt9b.conversationAct.isGuidedRepair, true, 'Debe detectar isGuidedRepair === true en luz vs leña');
+  assert(pkt9b.matchedEntities.some(e => e.name === 'Coyhaique'), 'Debe heredar Coyhaique al no mencionar otra comuna');
+  const res9b = await client.query(guidedLuzText);
+  assert(res9b && res9b.reply && res9b.reply !== coy1.reply, 'Turno 2 luz vs leña no puede repetir respuesta previa');
+  assert(/224\/kWh|BT1/i.test(res9b.reply) && /48\.000\/m³/i.test(res9b.reply),
+    'Debe comparar tarifa eléctrica BT1 vs leña: ' + res9b.reply);
+  console.log('[OK] Test 9: Reparación guiada con re-especificación (ANID/investigadores y Coyhaique luz vs leña)');
+
+  // -------------------------------------------------------------------------
+  // 10. Test Multi-Intención Salmón + Dueños / Holdings (13 holdings y 503.500 ton)
+  // -------------------------------------------------------------------------
+  client.clearConversationMemory();
+  const q10 = '¿cómo funciona la industria del salmón en Aysén y quiénes son los dueños?';
+  const pkt10 = client.retrieveMemoryForQuery(q10);
+  assert.strictEqual(pkt10.isHoldingQuery, true, 'Debe activar isHoldingQuery === true');
+  assert(pkt10.matchedConceptualPacket && pkt10.matchedConceptualPacket.id === 'modelo_salmonicultor',
+    'Debe activar paquete modelo_salmonicultor');
+  const grounded10 = client.buildMemoryGroundedPrompts(pkt10);
+  assert(grounded10.userPromptWithMemory.includes('"holdings_salmoneros_aysen":[') &&
+    grounded10.userPromptWithMemory.includes('AquaChile'),
+    'MEMORIA_VERIFICADA debe inyectar holdings_salmoneros_aysen completos');
+  const res10 = await client.query(q10);
+  ['13 holdings', 'AquaChile', 'Multi X', 'Mowi', 'Blumar', '503.500'].forEach(tok => {
+    assert(res10.reply.includes(tok), `Respuesta de industria del salmón debe incluir ${tok}: ${res10.reply}`);
+  });
+  console.log('[OK] Test 10: Industria del salmón + 13 holdings dueños e inyección en MEMORIA_VERIFICADA');
+
+  // -------------------------------------------------------------------------
+  // 11. Test Anti-colisión léxica "depende" vs "Trabajadores Dependientes SII"
+  // -------------------------------------------------------------------------
+  client.clearConversationMemory();
+  const q11 = '¿y qué comuna depende más del empleo salmonero?';
+  const pkt11 = client.retrieveMemoryForQuery(q11);
+  assert(pkt11.topVariables && pkt11.topVariables.length > 0, 'Debe recuperar variables de Hub II');
+  assert.notStrictEqual(pkt11.topVariables[0].key, 'trabajadores_sii',
+    'trabajadores_sii NO puede liderar ante verbo "depende" + empleo salmonero');
+  const hub2Keys = ['centros_activos_salmon', 'biomasa_salmon_ton', 'concesiones_salmon', 'empleo_directo_salmon_n'];
+  assert(hub2Keys.includes(pkt11.topVariables[0].key),
+    'Variable #1 debe ser de Hub II acuícola, obtuvo: ' + pkt11.topVariables[0].key);
+  const res11 = await client.query(q11);
+  assert.notStrictEqual(res11.chart.varX, 'trabajadores_sii', 'Chart varX no debe ser trabajadores_sii');
+  assert(!/Trabajadores Dependientes SII/i.test(res11.reply),
+    'No debe responder con Trabajadores Dependientes SII liderado por Coyhaique: ' + res11.reply);
+  assert(/Aysén/i.test(res11.reply) && /(245|503\.500|745)/.test(res11.reply),
+    'Debe priorizar actividad acuícola liderada por Aysén: ' + res11.reply);
+  console.log('[OK] Test 11: Anti-colisión verbo "depende" vs Trabajadores Dependientes SII en empleo salmonero');
+
+  // -------------------------------------------------------------------------
+  // 12. Test Separación Cultura vs CTCi y 16 Centros / 124 Investigadores
+  // -------------------------------------------------------------------------
+  client.clearConversationMemory();
+  const q12 = '¿quiénes hacen ciencia o investigación en Aysén?';
+  const pkt12 = client.retrieveMemoryForQuery(q12);
+  assert(pkt12.matchedSector && pkt12.matchedSector.id === 'ctci',
+    'Debe resolver sector ctci independiente de cultura');
+  assert(pkt12.matchedConceptualPacket && pkt12.matchedConceptualPacket.id === 'ecosistema_ctci_ciencia',
+    'Debe activar paquete conceptual ecosistema_ctci_ciencia');
+  const grounded12 = client.buildMemoryGroundedPrompts(pkt12);
+  assert(grounded12.userPromptWithMemory.includes('"centros_ctci_verificados":['),
+    'MEMORIA_VERIFICADA debe incluir listado verificado centros_ctci_verificados');
+  const res12 = await client.query(q12);
+  assert.notStrictEqual(res12.chart.varX, 'total_espacios_culturales',
+    'Gráfico de ciencia JAMÁS debe ser total_espacios_culturales');
+  assert.strictEqual(res12.chart.varX, 'total_proyectos_ctci', 'Chart varX debe ser total_proyectos_ctci');
+  assert.strictEqual(res12.chart.varY, 'investigadores_residentes_est', 'Chart varY debe ser investigadores_residentes_est');
+  ['16 centros', '124 investigadores', '91', 'CIEP', 'UAysén', 'INIA Tamel Aike', 'UACh', 'IFOP'].forEach(tok => {
+    assert(res12.reply.includes(tok), `Respuesta de ciencia debe incluir ${tok}: ${res12.reply}`);
+  });
+  console.log('[OK] Test 12: Ecosistema CTCi separado de Cultura (16 centros, 124 investigadores)');
+
+  // -------------------------------------------------------------------------
+  // 13. Test Consulta Coloquial Villa O'Higgins + Volcán Hudson y Laguna San Rafael sin SMA
+  // -------------------------------------------------------------------------
+  client.clearConversationMemory();
+  const q13a = "¿qué onda Villa O'Higgins, vale la pena invertir allá o está muy aislado?";
+  const res13a = await client.query(q13a);
+  assert.notStrictEqual(res13a.chart.varX, 'costo_diesel_aislado_clp',
+    'Consulta evaluativa abierta sobre Villa O\'Higgins no debe reducirse solo a costo_diesel_aislado_clp');
+  ['O\'Higgins', '86,6', '10 hrs', '3.709,4', '620', '23,2%', '12.400'].forEach(tok => {
+    assert(res13a.reply.includes(tok), `Perfil integral de O'Higgins debe incluir ${tok}: ${res13a.reply}`);
+  });
+
+  client.clearConversationMemory();
+  const q13b = '¿qué me puedes contar del Volcán Hudson y la Laguna San Rafael?';
+  const res13b = await client.query(q13b);
+  ['Volcán Hudson', 'Laguna San Rafael', 'Campo de Hielo Norte', '10.035,7 km²'].forEach(tok => {
+    assert(res13b.reply.includes(tok), `Síntesis Hudson + San Rafael debe incluir ${tok}: ${res13b.reply}`);
+  });
+  assert(!/\bSMA\b|\bSNIFA\b|282 expedientes/i.test(res13b.reply),
+    'No debe inyectar expedientes SMA cuando no fueron solicitados: ' + res13b.reply);
+  assert.notStrictEqual(res13b.chart.varX, 'expedientes_fiscalizacion_sma_n',
+    'Chart varX no debe ser expedientes_fiscalizacion_sma_n sin mención de fiscalización/SMA');
+  assert(!emojiRe.test(fs.readFileSync(__filename, 'utf8')), 'La suite de pruebas no debe contener emojis');
+  console.log('[OK] Test 13: Perfil integral Villa O\'Higgins y Volcán Hudson + Laguna San Rafael sin SMA');
+
   console.log('ALL_CONSULTOR_LLM_AND_PDF_REPORT_TESTS_PASSED');
 })().catch(err => {
   console.error(err);
