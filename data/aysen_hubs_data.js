@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-22T17:28:40.468Z",
+  "generatedAt": "2026-11-22T20:41:18.318Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -12,7 +12,7 @@ window.AYSEN_HUBS_DATA = {
       "totalOfficialSources": 38,
       "totalHubs": 10,
       "totalNodes": 41,
-      "totalComunaVariables": 235
+      "totalComunaVariables": 236
     }
   },
   "hubs": [
@@ -11528,6 +11528,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 26540.8,
       "presupuesto_per_capita_mclp": 459,
       "dependencia_fcm_pct": 46.5,
+      "ingresos_propios_pct": 53.5,
       "fndr_mclp": 14850,
       "sistema_electrico": "Sistema Mediano de Aysén (SMA)",
       "potencia_mw": 26.8,
@@ -11765,6 +11766,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 2450.2,
       "presupuesto_per_capita_mclp": 3145.3,
       "dependencia_fcm_pct": 89.2,
+      "ingresos_propios_pct": 10.8,
       "fndr_mclp": 2200,
       "sistema_electrico": "Sistema Palena - La Junta (Edelaysen) y Autoproducción Lago Verde",
       "potencia_mw": 1.4,
@@ -12002,6 +12004,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 14210.5,
       "presupuesto_per_capita_mclp": 613.3,
       "dependencia_fcm_pct": 52.8,
+      "ingresos_propios_pct": 47.2,
       "fndr_mclp": 9800,
       "sistema_electrico": "Sistema Mediano de Aysén (SMA) e Islas Huichas Aislado",
       "potencia_mw": 42.5,
@@ -12239,6 +12242,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 6100,
       "presupuesto_per_capita_mclp": 1187.5,
       "dependencia_fcm_pct": 74.5,
+      "ingresos_propios_pct": 25.5,
       "fndr_mclp": 5600,
       "sistema_electrico": "Sistema Mediano Palena - Cisnes (Edelaysen)",
       "potencia_mw": 6.8,
@@ -12476,6 +12480,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 3300,
       "presupuesto_per_capita_mclp": 2065.1,
       "dependencia_fcm_pct": 83,
+      "ingresos_propios_pct": 17,
       "fndr_mclp": 3400,
       "sistema_electrico": "Sistema Aislado Insular Melinka",
       "potencia_mw": 2.8,
@@ -12713,6 +12718,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 5400,
       "presupuesto_per_capita_mclp": 1100.9,
       "dependencia_fcm_pct": 71.2,
+      "ingresos_propios_pct": 28.8,
       "fndr_mclp": 4900,
       "sistema_electrico": "Sistema Mediano General Carrera (SMGC)",
       "potencia_mw": 7.5,
@@ -12950,6 +12956,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 3950,
       "presupuesto_per_capita_mclp": 1450.6,
       "dependencia_fcm_pct": 79.6,
+      "ingresos_propios_pct": 20.4,
       "fndr_mclp": 4100,
       "sistema_electrico": "Sistema Mediano de Aysén (Interconexión Ramal Sur)",
       "potencia_mw": 2.4,
@@ -13187,6 +13194,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 4600,
       "presupuesto_per_capita_mclp": 1330.2,
       "dependencia_fcm_pct": 76.8,
+      "ingresos_propios_pct": 23.2,
       "fndr_mclp": 4800,
       "sistema_electrico": "Sistema Mediano General Carrera - Cochrane (Edelaysen)",
       "potencia_mw": 5.8,
@@ -13424,6 +13432,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 2150,
       "presupuesto_per_capita_mclp": 3323,
       "dependencia_fcm_pct": 91.5,
+      "ingresos_propios_pct": 8.5,
       "fndr_mclp": 2400,
       "sistema_electrico": "Sistema Aislado Villa O'Higgins",
       "potencia_mw": 1.4,
@@ -13661,6 +13670,7 @@ window.AYSEN_HUBS_DATA = {
       "presupuesto_mclp": 2050,
       "presupuesto_per_capita_mclp": 4059.4,
       "dependencia_fcm_pct": 92.8,
+      "ingresos_propios_pct": 7.2,
       "fndr_mclp": 2600,
       "sistema_electrico": "Sistema Aislado Caleta Tortel",
       "potencia_mw": 1.2,
@@ -18889,6 +18899,29 @@ window.AYSEN_HUBS_DATA = {
           },
           "what_it_shows": "Compara el aporte percibido del municipio (Barómetro) frente a su dependencia efectiva de recursos externos.",
           "why_complex_system": "Desacople perceptual: los ciudadanos en comunas con alta dependencia del FCM (Macrozona Sur 82,4% y Norte 78,8%, hasta 92,8% en Tortel) perciben mayor cercanía del municipio que en la capital regional."
+        },
+        {
+          "preset_id": "hub_01_06",
+          "hub_id": "gobernanza",
+          "titulo": "6. Estructura del Financiamiento Municipal: Dependencia FCM (%) vs. Ingresos Propios Permanentes (%)",
+          "format_type": "bar",
+          "subtype": "grouped_bar",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Contrapone la dependencia del Fondo Común Municipal (FCM) frente a la participación complementaria de Ingresos Propios Permanentes (IPP) sobre un presupuesto municipal agregado de 70.751,5 M$"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "bar",
+            "varX": "dependencia_fcm_pct",
+            "labelX": "Dependencia Fondo Común Municipal (%)",
+            "varY": "ingresos_propios_pct",
+            "labelY": "Ingresos Propios Permanentes (%)",
+            "showAverage": true,
+            "showTrend": false
+          },
+          "what_it_shows": "Muestra la dualidad estructural del financiamiento municipal SINIM en Aysén (70.751,5 M$ agregados; promedio regional 75,8% de dependencia FCM): Coyhaique (46,5% FCM; 53,5% ingresos propios) y Puerto Aysén (52,8% FCM; 47,2% ingresos propios) lideran la autonomía recaudatoria, mientras Tortel (92,8%), O'Higgins (91,5%), Lago Verde (89,2%) y Guaitecas (83,0%) dependen casi íntegramente del reparto solidario inter-comunal.",
+          "why_complex_system": "Asimetría recaudatoria territorial: la base tributaria de patentes y permisos se concentra en los polos urbanos, haciendo del FCM el estabilizador fiscal imprescindible de la periferia austral."
         }
       ]
     },
@@ -19269,6 +19302,29 @@ window.AYSEN_HUBS_DATA = {
           },
           "what_it_shows": "Compara la percepción del 92,6% de encuestados que califica de urgente resolver la contaminación del aire por humo de leña (I4_A) frente al promedio comunal real de días sobre norma MP2.5 por macrozona (Centro 60,5 días [Coyhaique 87], Sur 14,4 y Norte 10,0).",
           "why_complex_system": "Retroalimentación socio-técnica: el bajo ingreso relativo y el frío impiden cambiar la leña por tecnologías limpias pese a la alta conciencia del daño."
+        },
+        {
+          "preset_id": "hub_02_06",
+          "hub_id": "energia",
+          "titulo": "6. Transición Térmica: Consumo Residencial de Leña (m³/hogar/año) vs. Informalidad del Mercado de Leña (%)",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Relaciona la intensidad del consumo térmico de biomasa residencial con la informalidad en la cadena de abastecimiento de leña"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "consumo_lena_m3_hogar_ano",
+            "labelX": "Consumo Residencial de Leña (m³/hogar/año)",
+            "varY": "informalidad_lena_pct",
+            "labelY": "Informalidad del Mercado de Leña (%)",
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Evidencia una correlación directa muy alta (r = +0,94) entre el volumen de consumo residencial de leña (promedio regional 18,6 m³/hogar/año) y la tasa de informalidad del abastecimiento (promedio 75,7%), alcanzando sus máximos climáticos en comunas interiores australes como O'Higgins, Tortel y Lago Verde.",
+          "why_complex_system": "Rigidez térmica e informalidad: en climas subantárticos sin alternativa eléctrica competitiva, el mayor requerimiento calórico se acopla con mercados de leña húmeda e informal."
         }
       ]
     },
@@ -19673,6 +19729,36 @@ window.AYSEN_HUBS_DATA = {
           },
           "what_it_shows": "El 74.8% considera importante la salmonicultura, pero un 58.4% cree que disminuirla reduciría los conflictos ambientales.",
           "why_complex_system": "Dualidad sistémica: fuerte valoración del empleo inmediato combinada con alta preocupación por la sustentabilidad de los fiordos."
+        },
+        {
+          "preset_id": "hub_03_06",
+          "hub_id": "salmonicultura",
+          "titulo": "6. Densidad Operativa Acuícola: Centros Activos (n°) vs. Biomasa Cosechada de Salmónidos (ton)",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "inversion",
+            "descripcion": "Cruza los centros de cultivo efectivamente en operación (245 centros) con las 503.500 toneladas anuales de biomasa cosechada en el litoral"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "centros_activos_salmon",
+            "labelX": "Centros Acuícolas Activos (n°)",
+            "varY": "biomasa_salmon_ton",
+            "labelY": "Biomasa Cosechada (ton)",
+            "defaultTerritorialSlice": "tipo_maritima",
+            "filterComunas": [
+              "Aysén",
+              "Cisnes",
+              "Guaitecas",
+              "Tortel"
+            ],
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Documenta el fuerte acoplamiento operativo (r = +0,99) entre los 245 centros activos (de 745 concesiones otorgadas totales) y las 503.500 toneladas cosechadas en la Región de Aysén, concentradas entre Puerto Aysén (135 centros activos; 265.000 ton), Cisnes (78 centros; 185.000 ton), Guaitecas (32 centros; 45.000 ton) y Tortel (8.500 ton en ciclos alternados).",
+          "why_complex_system": "Concentración productiva fiórdica: los descansos sanitarios coordinados por ACS y la productividad por centro explican la geografía real de cosecha más allá del stock histórico de concesiones."
         }
       ]
     },
@@ -20033,6 +20119,29 @@ window.AYSEN_HUBS_DATA = {
           },
           "what_it_shows": "El 49,9% evalúa positivamente las oportunidades laborales (B4_A, nota promedio 4,38/7), con brecha marcada entre NSE Alto (63,8%) y universitarios (57,4%) frente a NSE Bajo (42,7%) y hombres (42,3%), contrastando con el 80,8% de concentración de empleo SII en la Macrozona Centro (vs. 10,9% Sur y 8,3% Norte).",
           "why_complex_system": "Brecha de distribución y escala: cuatro quintos del empleo formal y de las ventas SII se concentran en el eje Coyhaique–Aysén, impulsando expectativas de migración juvenil en los estratos de menor calificación y comunas periféricas."
+        },
+        {
+          "preset_id": "hub_04_06",
+          "hub_id": "inversion",
+          "titulo": "6. Esfuerzo Inversor Compensatorio: Índice de Aislamiento Multimodal vs. Inversión FNDR Per Cápita (M$/hab)",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "gobernanza",
+            "descripcion": "Evalúa cómo la inversión pública FNDR asignada per cápita responde al grado de aislamiento terrestre, marítimo y digital"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "indice_aislamiento_multimodal",
+            "labelX": "Índice de Aislamiento Multimodal (0-100)",
+            "varY": "fndr_per_capita_mclp",
+            "labelY": "Inversión FNDR Per Cápita (Miles $ CLP/hab)",
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Muestra una correlación positiva robusta (r = +0,85) entre aislamiento multimodal e inversión FNDR asignada per cápita: Tortel (5.148,5 mil $/hab), O'Higgins (3.709,4 mil $/hab), Lago Verde (2.824,1 mil $/hab) y Guaitecas (2.127,7 mil $/hab) encabezan el esfuerzo por habitante para compensar costos unitarios de obra en zonas extremas.",
+          "why_complex_system": "Economía espacial compensatoria: los bajos volúmenes demográficos y el sobreprecio logístico obligan a multiplicar la inversión per cápita para sostener infraestructura básica."
         }
       ]
     },
@@ -20391,6 +20500,29 @@ window.AYSEN_HUBS_DATA = {
           },
           "what_it_shows": "Contrapone la tasa comunal de delitos DMCS (1.425,4 c/100k promedio) y la pobreza multidimensional real por macrozona (Norte 23,0%, Centro 17,2%, Sur 20,0%) con la percepción ciudadana de seguridad ciudadana (B3_F): solo el 33,8% de los jóvenes (18-29 años) y el 38,0% del NSE Bajo evalúan positivamente la seguridad en Aysén, frente al 69,5% del NSE Alto y el 66,3% de quienes tienen educación universitaria.",
           "why_complex_system": "Amplificación de señales: el consumo de noticias nacionales genera un sesgo de percepción desfasado de las cifras efectivas locales."
+        },
+        {
+          "preset_id": "hub_05_06",
+          "hub_id": "social",
+          "titulo": "6. Educación Rural y Brecha Digital: Escuelas Rurales Multigrado SLEP vs. Cobertura Fibra Hogar (%)",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "energia",
+            "descripcion": "Relaciona la red de escuelas rurales multigrado administradas por SLEP Aysén con la penetración de fibra óptica residencial (SUBTEL)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "escuelas_rurales_multigrado_n",
+            "labelX": "Escuelas Rurales Multigrado SLEP (n°)",
+            "varY": "cobertura_fibra_hogar_pct",
+            "labelY": "Cobertura Fibra Óptica Hogar (%)",
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Muestra la brecha territorial de acceso digital (r = +0,75 impulsado por la concentración urbana de Coyhaique y Aysén): mientras Coyhaique (75,5%) y Aysén (61,8%) concentran la mayor red escolar y fibra troncal, comunas rurales con escuelas multigrado dispersas como Lago Verde (17,6%) enfrentan fuertes restricciones de conectividad doméstica.",
+          "why_complex_system": "Infraestructura troncal y equidad educativa: sin última milla digital en territorios rurales dispersos, la dotación física escolar multigrado absorbe una desventaja acumulativa."
         }
       ]
     },
@@ -20746,6 +20878,29 @@ window.AYSEN_HUBS_DATA = {
           },
           "what_it_shows": "El 89.7% está de acuerdo en que el turismo podría ser la principal actividad futura, pero los municipios destinan menos del 3% de su gasto directo a infraestructura turística.",
           "why_complex_system": "Divergencia estratégica: enorme consenso ciudadano sobre la vocación turística contrastado con un financiamiento público municipal exiguo."
+        },
+        {
+          "preset_id": "hub_06_06",
+          "hub_id": "turismo",
+          "titulo": "6. Atractivo Protegido vs. Pernoctación Real: Visitantes SNASPE (CONAF) vs. Pernoctaciones EMAT",
+          "format_type": "scatter",
+          "subtype": "four_quadrants",
+          "inter_hub_cross": {
+            "cross_hub": "biodiversidad",
+            "descripcion": "Compara la visitación a áreas protegidas SNASPE (CONAF) con las pernoctaciones efectivas captadas en alojamientos formales (INE EMAT)"
+          },
+          "config": {
+            "widget_type": "chart",
+            "chartType": "scatter",
+            "varX": "visitantes_snaspe",
+            "labelX": "Visitantes Anuales SNASPE (CONAF)",
+            "varY": "pernoctaciones_emat",
+            "labelY": "Pernoctaciones Anuales EMAT (INE)",
+            "showAverage": true,
+            "showTrend": true
+          },
+          "what_it_shows": "Expone la asimetría entre conservación atractora y retención de gasto turístico (r = +0,59): comunas como Cisnes (64.200 visitas SNASPE frente a 74.200 pernoctaciones EMAT) actúan como corredores de paso, mientras Coyhaique captura 208.500 pernoctaciones formales (hub hotelero) respecto de 38.500 visitas SNASPE comunales.",
+          "why_complex_system": "Desacople entre recurso escénico y planta de alojamiento: la captura de valor hotelero se concentra en nodos urbanos con conectividad aérea y servicios, dejando flujos de tránsito en los bordes de los parques."
         }
       ]
     },

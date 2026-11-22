@@ -87,7 +87,7 @@ class TestHubDashboardAndCanonicalVars(unittest.TestCase):
         seen_preset_ids = set()
         for hub_id, hub_obj in all_hubs.items():
             presets = hub_obj.get("presets", [])
-            self.assertIn(len(presets), (5, 7), f"Hub {hub_id} debe tener 5 o 7 presets")
+            self.assertIn(len(presets), (5, 6, 7), f"Hub {hub_id} debe tener 5, 6 o 7 presets")
             formats = [p.get("format_type") for p in presets]
             self.assertEqual(
                 formats[:5],
@@ -150,7 +150,7 @@ class TestHubDashboardAndCanonicalVars(unittest.TestCase):
                     self.assertEqual(len(cs.get("labels", [])), 12, f"{pid} customChartSpec debe tener 12 años (2015-2026)")
                     self.assertGreaterEqual(len(cs.get("datasets", [])), 2, f"{pid} customChartSpec debe tener al menos 2 datasets multieje")
 
-        self.assertIn(total_checked, (50, 58), "Se deben haber auditado 50 o 58 presets únicos")
+        self.assertIn(total_checked, (50, 58, 64), "Se deben haber auditado 50, 58 o 64 presets únicos")
 
     def test_02_hero_launcher_and_full_hub_dashboard_implementation(self):
         """Verificar implementación de renderHeroHubsLauncher, loadFullHubDashboard y createReflectionCard."""

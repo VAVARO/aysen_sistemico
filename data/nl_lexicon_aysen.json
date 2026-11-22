@@ -329,7 +329,14 @@
         "presupuesto comunal",
         "arca municipal",
         "millones municipales",
-        "m$ clp municipal"
+        "m$ clp municipal",
+        "financiamiento municipal",
+        "como funciona el financiamiento municipal",
+        "finanzas municipales",
+        "recursos municipales",
+        "presupuesto vigente",
+        "sinim presupuesto",
+        "como se financian los municipios"
       ]
     },
     {
@@ -406,7 +413,33 @@
         "subsidio municipal",
         "ayuda estatal municipal",
         "porcentaje fcm",
-        "cuanto depende del fondo comun"
+        "cuanto depende del fondo comun",
+        "dependencia de fondos centrales",
+        "transferencias subdere",
+        "financiamiento municipal fcm",
+        "autonomia financiera municipal",
+        "equidad territorial fiscal"
+      ]
+    },
+    {
+      "id": "ingresos_propios_pct",
+      "canonicalId": "finanzas_ingresos_propios_pct",
+      "name": "Ingresos Propios Permanentes (% del Presupuesto SINIM)",
+      "shortName": "% Ingresos Propios (IPP)",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 16,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "porcentaje de ingresos propios",
+        "ingresos propios pct",
+        "participacion ingresos propios",
+        "ipp porcentaje",
+        "autonomia fiscal porcentual",
+        "proporcion ingresos propios",
+        "financiamiento propio porcentual"
       ]
     },
     {

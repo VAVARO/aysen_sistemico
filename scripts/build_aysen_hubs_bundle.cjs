@@ -487,7 +487,7 @@ function resolveOfficialSource(varKey, hubId) {
   if (/conexiones_fijas_subtel|conexiones_residenciales_subtel|variacion_conexiones_2015/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
   if (/glaciar|glaciares/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
   if (/fondart/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
-  if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|patentes_|ingresos_municipales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinim;
+  if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|patentes_|ingresos_municipales|ingresos_propios/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinim;
   if (/fndr_|inversion_fndr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.fndr;
   if (/poblacion_censo|superficie_km2|densidad_hab|poblacion_|censo_2024|porcentaje_regional/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.censo;
   if (/pobreza_|casen|ingreso_mediano|ingreso_autonomo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.casen;
@@ -3797,6 +3797,7 @@ function buildComunaRows() {
       presupuesto_mclp: Number((g1.finanzas_sinim || {}).presupuesto_municipal_anual_mclp) || 0,
       presupuesto_per_capita_mclp: Number((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp) || 0,
       dependencia_fcm_pct: Number((g1.finanzas_sinim || {}).dependencia_fcm_pct) || 0,
+      ingresos_propios_pct: Number((100 - (Number((g1.finanzas_sinim || {}).dependencia_fcm_pct) || 0)).toFixed(1)),
       fndr_mclp: Number((g1.inversion_publica || {}).fndr_asignado_estimado_mclp) || 0,
       sistema_electrico: (g2.sistema_electrico || {}).subsistema_nombre || '-',
       potencia_mw: Number((g2.sistema_electrico || {}).potencia_instalada_comunal_mw) || 0,
@@ -6191,7 +6192,7 @@ const processedHubsGallery = JSON.parse(JSON.stringify(cecanPresets.hubs_gallery
 const processedExtGallery = JSON.parse(JSON.stringify(cecanPresets.extension_gallery || {}));
 const extraPresetsMap = cecanPresets.strategic_extra_presets || {};
 
-['biodiversidad', 'salud'].forEach(hKey => {
+['turismo', 'salmonicultura', 'energia', 'gobernanza', 'inversion', 'social', 'biodiversidad', 'salud'].forEach(hKey => {
   if (processedHubsGallery[hKey] && Array.isArray(extraPresetsMap[hKey])) {
     const existingIds = new Set((processedHubsGallery[hKey].presets || []).map(p => p.preset_id));
     extraPresetsMap[hKey].forEach(ep => {

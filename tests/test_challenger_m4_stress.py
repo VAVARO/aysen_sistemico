@@ -417,7 +417,7 @@ class ChallengerM4StressTestSuite(unittest.TestCase):
         hubs_gallery = self.hubs_data.get("hubsGallery", {})
         self.assertIn(len(hubs_gallery), (8, 10), f"Invariante rota: hubsGallery debe tener 8 o 10 hubs, tiene {len(hubs_gallery)}")
         for hid, hdata in hubs_gallery.items():
-            self.assertIn(len(hdata.get("presets", [])), (5, 7), f"Hub canónico {hid} debe tener 5 o 7 presets")
+            self.assertIn(len(hdata.get("presets", [])), (5, 6, 7), f"Hub canónico {hid} debe tener 5, 6 o 7 presets")
 
         # Extension modules invariant
         ext_modules = self.hubs_data.get("extension_modules", {})

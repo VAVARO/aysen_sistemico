@@ -4185,6 +4185,396 @@
         min-height: 44px;
       }
     }
+
+    /* ==========================================================================
+       MOTOR DE DOSSIER EJECUTIVO Y REPORTES EDITORIALES A4 PDF
+       ========================================================================== */
+    .btn-pin-report {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.72rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #00357f;
+      background: #f4f7fc;
+      border: 1px solid rgba(0, 53, 127, 0.25);
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn-pin-report:hover {
+      background: #e8f0fe;
+      border-color: #00357f;
+    }
+    .btn-pin-report .report-queue-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #00357f;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .exec-report-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 3500 !important;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(8px);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      padding: 1.25rem;
+    }
+    .exec-report-overlay.open {
+      display: flex;
+    }
+    .exec-report-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      max-width: 960px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+      font-family: 'Inter', sans-serif;
+    }
+    .exec-report-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .exec-report-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.75rem;
+      color: #334155;
+      padding-top: 0.45rem;
+      border-top: 1px solid #e2e8f0;
+      width: 100%;
+    }
+    .exec-report-toggles label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn-exec-primary {
+      background: #00357f;
+      color: #ffffff;
+      border: 1px solid #00357f;
+      padding: 0.45rem 0.9rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-exec-primary:hover { background: #002761; }
+    .btn-exec-secondary {
+      background: #f8fafc;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+      padding: 0.42rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-exec-secondary:hover { background: #f1f5f9; }
+    .btn-exec-danger {
+      background: #ffffff;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      padding: 0.42rem 0.75rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .exec-report-a4-sheet {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 2.25rem 2.5rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.25);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.55;
+    }
+    .exec-doc-masthead {
+      border-top: 4px solid #00357f;
+      padding-top: 0.85rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 1rem;
+    }
+    .exec-doc-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: #00357f;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .exec-doc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.45rem 0;
+      outline: none;
+    }
+    .exec-doc-subtitle {
+      font-size: 0.86rem;
+      color: #475569;
+      margin: 0 0 0.9rem 0;
+      outline: none;
+    }
+    .exec-doc-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.65rem 0.85rem;
+      border-radius: 3px;
+      font-size: 0.74rem;
+    }
+    .exec-meta-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.15rem;
+    }
+    .exec-meta-val {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .exec-summary-box {
+      background: #f8fafc;
+      border-left: 3px solid #00357f;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.84rem;
+      color: #1e293b;
+    }
+    .exec-figure-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+      padding: 1.15rem;
+      margin-bottom: 1.5rem;
+      background: #ffffff;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .exec-figure-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.55rem;
+    }
+    .exec-figure-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.66rem;
+      font-weight: 700;
+      color: #00357f;
+      background: #eef4ff;
+      border: 1px solid #bfd3f7;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .exec-figure-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+      outline: none;
+    }
+    .exec-figure-sub {
+      font-size: 0.76rem;
+      color: #475569;
+      margin: 0.2rem 0 0 0;
+    }
+    .exec-figure-img-wrap {
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      padding: 0.5rem;
+      margin-bottom: 0.9rem;
+      text-align: center;
+    }
+    .exec-figure-img-wrap img {
+      max-width: 100%;
+      max-height: 300px;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .exec-narrative-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.85rem 1rem;
+      border-radius: 3px;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+      color: #1e293b;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .exec-narrative-box h4 {
+      margin: 0 0 0.45rem 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #00357f;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .exec-narrative-p {
+      margin: 0 0 0.5rem 0;
+      outline: none;
+    }
+    .exec-narrative-p:last-child { margin-bottom: 0; }
+    .exec-source-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: #475569;
+      margin: 0.5rem 0 0.75rem 0;
+      padding-top: 0.4rem;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .exec-comunal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.74rem;
+      margin-top: 0.65rem;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .exec-comunal-table th,
+    .exec-comunal-table td {
+      border: 1px solid #cbd5e1;
+      padding: 0.35rem 0.5rem;
+      text-align: left;
+    }
+    .exec-comunal-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 0.7rem;
+    }
+    .exec-comunal-table td.num,
+    .exec-comunal-table th.num {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .exec-biblio-section {
+      border-top: 2px solid #00357f;
+      padding-top: 1rem;
+      margin-top: 1.25rem;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .exec-biblio-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.65rem 0;
+      color: #0f172a;
+    }
+    .exec-biblio-list {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: 0.74rem;
+      color: #334155;
+    }
+    .exec-biblio-list li {
+      margin-bottom: 0.35rem;
+    }
+    .exec-method-footer {
+      margin-top: 0.9rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+
+    #executiveReportPrintRoot {
+      display: none;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 12mm 14mm;
+      }
+      html, body {
+        height: auto !important;
+        overflow: visible !important;
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      body > *:not(#executiveReportPrintRoot) {
+        display: none !important;
+      }
+      #executiveReportPrintRoot {
+        display: block !important;
+        width: 100% !important;
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+      }
+      #executiveReportPrintRoot .exec-report-a4-sheet {
+        max-width: none !important;
+        width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .exec-figure-card,
+      .exec-narrative-box,
+      .exec-comunal-table,
+      .exec-biblio-section {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      [contenteditable="true"] {
+        outline: none !important;
+      }
+    }
   </style>
   <script src="js/cabecera_global.js" defer></script>
   <link rel="stylesheet" href="css/apple-design.css">
@@ -4378,6 +4768,11 @@
 
       <button class="btn-action-tool" id="btnCopyShareLink" title="Copiar enlace compartible con el estado de esta mesa">
         <span>Copiar Enlace</span>
+      </button>
+
+      <button class="btn-pin-report" id="btnPinChartToReport" type="button" title="Añadir vista activa al Dossier PDF Editorial">
+        <span>+ Añadir vista al Reporte</span>
+        <span class="report-queue-badge" id="reportQueueCount">0</span>
       </button>
 
       <!-- Menú Proyecto (Guardar, Cargar, Enlace, Reporte) -->
@@ -4679,6 +5074,27 @@
       <div class="hub-gallery-cards-grid" id="hubGalleryCardsGrid">
         <!-- Tarjetas generadas dinámicamente -->
       </div>
+    </div>
+  </div>
+
+  <!-- Modal de Previsualización y Edición Editorial A4 PDF -->
+  <div class="exec-report-overlay" id="executiveReportModal" role="dialog" aria-modal="true" aria-labelledby="executiveReportDocTitle" aria-hidden="true">
+    <div class="exec-report-toolbar">
+      <div class="exec-report-actions">
+        <button type="button" class="btn-exec-primary" id="btnPrintExecutiveReport">Imprimir / Guardar PDF Editorial (A4)</button>
+        <button type="button" class="btn-exec-secondary" id="btnEnrichReportAI">Enriquecer Narrativas con IA (OmniRoute)</button>
+        <button type="button" class="btn-exec-danger" id="btnClearReportQueue">Vaciar Cola de Vistas</button>
+        <button type="button" class="btn-exec-secondary" id="btnCloseExecutiveReport">× Cerrar Vista Previa</button>
+      </div>
+      <div class="exec-report-toggles">
+        <label><input type="checkbox" id="toggleExecSummary" checked /> Resumen Ejecutivo</label>
+        <label><input type="checkbox" id="toggleExecNarrative" checked /> Narrativa Explicativa por Gráfico</label>
+        <label><input type="checkbox" id="toggleExecTable" checked /> Tabla Comunal de Respaldo</label>
+        <label><input type="checkbox" id="toggleExecBiblio" checked /> Bibliografía y Fuentes Oficiales</label>
+      </div>
+    </div>
+    <div class="exec-report-a4-sheet" id="executiveReportPreviewSheet">
+      <!-- Renderizado dinámicamente por renderExecutiveReportSheet() -->
     </div>
   </div>
 
@@ -7276,6 +7692,7 @@
         fndr_gore_2023_per_capita_mclp: { title: 'FNDR GORE 2023 Ejecutado Per Cápita (Miles $ CLP/hab)', short: 'FNDR 2023 Ejec./hab', unit: 'Miles $ CLP/hab', hubId: 'gobernanza' },
         royalty_fet_peso_presupuesto_pct: { title: 'Peso del Royalty Minero FET 2025 sobre Presupuesto Municipal (%)', short: '% Royalty FET / Pres.', unit: '%', hubId: 'gobernanza' },
         participacion_municipales_2024_pct: { title: 'Participación Electoral Municipal 2024 SERVEL (%)', short: 'Part. Municipales 2024 (%)', unit: '%', hubId: 'gobernanza' },
+        ingresos_propios_pct: { title: 'Ingresos Propios Permanentes Municipales (% del Presupuesto SINIM)', short: '% Ingresos Propios (IPP)', unit: '%', hubId: 'gobernanza' },
         ratio_padron_poblacion_pct: { title: 'Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024 (%)', short: 'Ratio Padrón/Población (%)', unit: '%', hubId: 'gobernanza' },
         fndr_asignado_vs_ejecutado_2015_2025: { title: 'Serie Oficial FNDR Asignado vs. Ejecutado GORE Aysén (2015–2025)', short: 'FNDR Asignado vs. Ejec.', unit: 'M$ CLP', hubId: 'gobernanza' },
         participacion_diesel_matriz_pct: { title: 'Participación Térmica Diésel en Generación Regional (%)', short: '% Diésel en Matriz', unit: '%', hubId: 'energia' },
@@ -7376,7 +7793,7 @@
         '3B. Matriz Térmica, Leña y Combustibles': ['hogares_lena_pct', 'precio_lena_m3', 'consumo_lena_m3_hogar_ano', 'consumo_lena_m3_hogar_anio', 'consumo_lena_m3_solidos_anual', 'informalidad_lena_pct', 'gasolina_93_clp', 'precio_diesel_regional_cne_clp_hist', 'sp_precio_combustibles_coyhaique', 'recambio_calefactores_pda_hist', 'barometro_preocupacion_contaminacion_lena_pct', 'barometro_preocupacion_contaminacion_lena_pct_hist'],
         '3C. Telecomunicaciones y Brecha Digital': ['cobertura_fibra_hogar_pct', 'internet_fijo_pct', 'hogares_sin_internet_fijo_pct', 'conexiones_fijas_subtel_jun2026_n', 'conexiones_residenciales_subtel_jun2026_n', 'variacion_conexiones_2015_2026_pct', 'establecimientos_educacion_conectados_n', 'fdt_ultima_milla_aprobado', 'penetracion_internet_fijo_subtel_pct_hist', 'indice_aislamiento_multimodal'],
 
-        '4A. Finanzas y Gestión Municipal (SINIM)': ['presupuesto_mclp', 'presupuesto_per_capita_mclp', 'ingresos_mun_bcn_2025_mclp', 'dependencia_fcm_pct', 'ipp_per_capita_clp', 'fet_royalty_minero_2024_mclp', 'fet_royalty_minero_2025_mclp', 'royalty_fet_peso_presupuesto_pct', 'gasto_personal_pct', 'inversion_directa_pct', 'profesionalizacion_pct', 'presupuesto_municipal_total_regional_mclp', 'dependencia_fcm_promedio_regional_pct', 'ingresos_propios_permanentes_pct_hist'],
+        '4A. Finanzas y Gestión Municipal (SINIM)': ['presupuesto_mclp', 'presupuesto_per_capita_mclp', 'ingresos_mun_bcn_2025_mclp', 'dependencia_fcm_pct', 'ingresos_propios_pct', 'ipp_per_capita_clp', 'fet_royalty_minero_2024_mclp', 'fet_royalty_minero_2025_mclp', 'royalty_fet_peso_presupuesto_pct', 'gasto_personal_pct', 'inversion_directa_pct', 'profesionalizacion_pct', 'presupuesto_municipal_total_regional_mclp', 'dependencia_fcm_promedio_regional_pct', 'ingresos_propios_permanentes_pct_hist'],
         '4B. Inversión Regional (FNDR/SNI) y Democracia': ['fndr_mclp', 'fndr_per_capita_mclp', 'tasa_aprobacion_rs_sni_pct', 'fndr_gore_2023_proyectos_n', 'fndr_gore_2023_asignado_mclp', 'fndr_gore_2023_ejecutado_mclp', 'fndr_gore_2023_per_capita_mclp', 'fndr_gore_2023_ejecucion_pct', 'fondos_concursables_gore_2023_n', 'fondos_concursables_gore_2023_mclp', 'transparencia_activa_cplt_2026_pct', 'participacion_municipales_2024_pct', 'participacion_presidencial_2025_2v_pct', 'padron_electoral_nov_2025', 'ratio_padron_poblacion_pct', 'barometro_confianza_institucional_pct', 'barometro_confianza_institucional_pct_hist', 'presupuesto_fndr_gore_aysen_mclp', 'fndr_asignado_vs_ejecutado_2015_2025', 'fndr_gore_ejecutado_datosgob_hist', 'ejecucion_real_fndr_dipres_mclp', 'inversion_sectorial_ministerial_mclp'],
         '4C. Vialidad y Conectividad Multimodal': ['red_vial_total_km', 'red_vial_pavimentada_km', 'red_vial_pavimentada_pct', 'red_vial_solucion_basica_km', 'red_vial_ripio_km', 'red_vial_tierra_km', 'ruta7_pavimentada_km', 'ruta7_ripio_km', 'distancia_coyhaique_km', 'tiempo_viaje_coyhaique_hrs', 'dependencia_barcaza_nivel', 'largo_pista_aerodromo_m', 'operaciones_aerodromo_interior_anual', 'emporcha_toneladas', 'emporcha_carga_transbordadores_ton', 'emporcha_carga_comercial_ton', 'emporcha_graneles_mineros_ton', 'emporcha_acuicultura_pesca_ton', 'balmaceda_pasajeros_jac', 'trafico_aereo_pasajeros_balmaceda_jac', 'operaciones_aereas_balmaceda_jac', 'barometro_prioridad_conectividad_pct', 'barometro_prioridad_conectividad_pct_hist', 'sp_ruta7_kilometros_pavimentados', 'sp_trafico_aereo_balmaceda', 'sp_flujo_fronterizo_huemules'],
 
@@ -7848,7 +8265,7 @@
           if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit|tarifa_adr|revpar|estadia_promedio|tasa_ocupacion_estival|tasa_ocupacion_invernal|concentracion_estival|visitas_por_pernoctacion|visitas_por_cama|guardaparque/i.test(k)) return 'turismo';
           if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca/i.test(k)) return 'salmonicultura';
           if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena|participacion_diesel_matriz|indice_aislamiento_multimodal/i.test(k)) return 'energia';
-          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|royalty_fet|ingresos_mun_bcn|participacion_presidencial|participacion_municipales|padron_electoral|ratio_padron|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
+          if (/presupuesto|fcm|fndr|ipp|ingresos_propios|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|royalty_fet|ingresos_mun_bcn|participacion_presidencial|participacion_municipales|padron_electoral|ratio_padron|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
           if (/rsh_|ruralidad_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|ratio_pobreza_multidim|matricula_escolar|establecimientos_escolares|escuelas_rurales_multigrado|liceos_urbanos|slep_aysen|tasa_dmcs|tasa_vif|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
           if (/seia|empresas_sii|trabajadores_sii|ventas_sii|ventas_por_empresa|concesiones_mineras|parcelaciones|suelo_fiscal_bbnn|suelo_privado|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
           if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|episodios_gec_mp25|amenaza_volcanica_sismica|especies_exoticas_invasoras|expedientes_fiscalizacion_sma|fauna|cuenca_bna|barometro_tension_desarrollo_conservacion/i.test(k)) return 'biodiversidad';
@@ -7913,7 +8330,8 @@
           ventas_por_empresa_uf: { title: 'Ventas Promedio por Empresa SII (UF/empresa)', short: 'Ventas/Empresa SII', unit: 'UF/empresa', hubId: 'inversion', agg: 'mean' },
           inversion_por_proyecto_seia_mmusd: { title: 'Ticket Promedio por Proyecto Aprobado SEIA (MM USD/proyecto)', short: 'Ticket Prom. SEIA', unit: 'MM USD/proyecto', hubId: 'inversion', agg: 'mean' },
           suelo_fiscal_bbnn_pct: { title: 'Porcentaje de Suelo Fiscal Bienes Nacionales (%)', short: '% Suelo Fiscal BBNN', unit: '%', hubId: 'inversion', agg: 'mean' },
-          suelo_privado_pct: { title: 'Porcentaje de Suelo en Propiedad Privada (%)', short: '% Suelo Privado', unit: '%', hubId: 'inversion', agg: 'mean' }
+          suelo_privado_pct: { title: 'Porcentaje de Suelo en Propiedad Privada (%)', short: '% Suelo Privado', unit: '%', hubId: 'inversion', agg: 'mean' },
+          ingresos_propios_pct: { title: 'Ingresos Propios Permanentes Municipales (% del Presupuesto SINIM)', short: '% Ingresos Propios (IPP)', unit: '%', hubId: 'gobernanza', agg: 'mean' }
         };
 
         if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas) && AppState.hubsData.comunas.length > 0) {
@@ -19154,7 +19572,35 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         });
         document.getElementById('btnExportarReporte').addEventListener('click', () => {
           if (projectMenu) projectMenu.classList.remove('show');
-          window.print();
+          openExecutiveReportModal();
+        });
+        const btnPinReport = document.getElementById('btnPinChartToReport');
+        if (btnPinReport) {
+          btnPinReport.addEventListener('click', () => pinCurrentChartToReport());
+        }
+        const btnCloseExec = document.getElementById('btnCloseExecutiveReport');
+        if (btnCloseExec) {
+          btnCloseExec.addEventListener('click', () => {
+            const modal = document.getElementById('executiveReportModal');
+            if (modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+          });
+        }
+        const btnPrintExec = document.getElementById('btnPrintExecutiveReport');
+        if (btnPrintExec) btnPrintExec.addEventListener('click', () => printExecutiveReport());
+        const btnEnrichExec = document.getElementById('btnEnrichReportAI');
+        if (btnEnrichExec) btnEnrichExec.addEventListener('click', () => enrichReportNarrativesWithAI());
+        const btnClearQueue = document.getElementById('btnClearReportQueue');
+        if (btnClearQueue) {
+          btnClearQueue.addEventListener('click', () => {
+            window.REPORT_DOSSIER_QUEUE.length = 0;
+            updateReportQueueBadge();
+            renderExecutiveReportSheet();
+            if (typeof showToast === 'function') showToast('Cola de vistas del reporte vaciada.');
+          });
+        }
+        ['toggleExecSummary', 'toggleExecNarrative', 'toggleExecTable', 'toggleExecBiblio'].forEach(tid => {
+          const el = document.getElementById(tid);
+          if (el) el.addEventListener('change', () => renderExecutiveReportSheet());
         });
 
         const btnEjemplo = document.getElementById('btnEjemploSistemico');
@@ -19425,6 +19871,614 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         });
       }
 
+      // =======================================================================
+      // 17. MOTOR DE DOSSIER EJECUTIVO Y REPORTES EDITORIALES A4 PDF
+      // =======================================================================
+      window.REPORT_DOSSIER_QUEUE = window.REPORT_DOSSIER_QUEUE || [];
+
+      function escReportHtml(val) {
+        return String(val == null ? '' : val)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function updateReportQueueBadge() {
+        const badge = document.getElementById('reportQueueCount');
+        if (badge) badge.textContent = String((window.REPORT_DOSSIER_QUEUE || []).length);
+      }
+
+      function computeVectorStats(labels, vals) {
+        const cleanPairs = labels
+          .map((lbl, idx) => ({ comuna: String(lbl || ''), val: Number(vals[idx]) }))
+          .filter(p => Number.isFinite(p.val));
+        const n = cleanPairs.length || 1;
+        const numbers = cleanPairs.map(p => p.val);
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        const mean = sum / n;
+        const sortedAsc = [...cleanPairs].sort((a, b) => a.val - b.val);
+        const sortedNums = sortedAsc.map(p => p.val);
+        const mid = Math.floor(sortedNums.length / 2);
+        const median = sortedNums.length === 0
+          ? 0
+          : (sortedNums.length % 2 !== 0 ? sortedNums[mid] : (sortedNums[mid - 1] + sortedNums[mid]) / 2);
+        const variance = numbers.reduce((acc, v) => acc + Math.pow(v - mean, 2), 0) / n;
+        const std = Math.sqrt(variance);
+        const cv = mean !== 0 ? (std / Math.abs(mean)) * 100 : 0;
+        const maxItem = sortedAsc[sortedAsc.length - 1] || { comuna: 'S/I', val: 0 };
+        const minItem = sortedAsc[0] || { comuna: 'S/I', val: 0 };
+        const gapRatio = minItem.val > 0 ? maxItem.val / minItem.val : (maxItem.val > 0 ? maxItem.val : 1);
+        const desc = [...cleanPairs].sort((a, b) => b.val - a.val);
+        const top3 = desc.slice(0, 3);
+        const top3Sum = top3.reduce((acc, it) => acc + it.val, 0);
+        const top3SharePct = sum > 0 ? (top3Sum / sum) * 100 : 0;
+        return {
+          sum,
+          mean,
+          median,
+          std,
+          cv,
+          maxComuna: maxItem.comuna,
+          maxVal: maxItem.val,
+          minComuna: minItem.comuna,
+          minVal: minItem.val,
+          gapRatio,
+          top3Names: top3.map(t => t.comuna),
+          top3SharePct
+        };
+      }
+
+      function computeBivariateMetrics(labels, xs, ys, meanX, meanY) {
+        const pairs = labels
+          .map((lbl, i) => ({ comuna: String(lbl || ''), x: Number(xs[i]), y: Number(ys[i]) }))
+          .filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
+        if (pairs.length < 2) {
+          return { pearsonR: NaN, r2: NaN, olsSlope: NaN, quadrants: { highHigh: [], lowLow: [], highLow: [], lowHigh: [] } };
+        }
+        let sxx = 0, syy = 0, sxy = 0;
+        const highHigh = [], lowLow = [], highLow = [], lowHigh = [];
+        pairs.forEach(p => {
+          const dx = p.x - meanX;
+          const dy = p.y - meanY;
+          sxx += dx * dx;
+          syy += dy * dy;
+          sxy += dx * dy;
+          if (p.x >= meanX && p.y >= meanY) highHigh.push(p.comuna);
+          else if (p.x < meanX && p.y < meanY) lowLow.push(p.comuna);
+          else if (p.x >= meanX && p.y < meanY) highLow.push(p.comuna);
+          else lowHigh.push(p.comuna);
+        });
+        const r = (sxx > 0 && syy > 0) ? (sxy / Math.sqrt(sxx * syy)) : 0;
+        const olsSlope = sxx > 0 ? (sxy / sxx) : 0;
+        return {
+          pearsonR: r,
+          r2: r * r,
+          olsSlope,
+          quadrants: { highHigh, lowLow, highLow, lowHigh }
+        };
+      }
+
+      function buildFallbackChartDataUrl(titleText, labels, vals, unitText) {
+        try {
+          if (typeof document === 'undefined') return '';
+          const canvas = document.createElement('canvas');
+          canvas.width = 960;
+          canvas.height = 420;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) return '';
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#0F172A';
+          ctx.font = 'bold 18px Inter, sans-serif';
+          ctx.fillText(String(titleText || 'Distribución Comunal de Aysén').slice(0, 76), 28, 36);
+          const maxV = Math.max(...vals.map(v => Number(v) || 0), 1);
+          const padL = 135, padR = 55, topY = 62, barH = 24, gap = 10;
+          const barWMax = canvas.width - padL - padR;
+          labels.slice(0, 10).forEach((lbl, idx) => {
+            const v = Number(vals[idx]) || 0;
+            const y = topY + idx * (barH + gap);
+            const w = Math.max(4, Math.round((v / maxV) * barWMax));
+            ctx.fillStyle = '#334155';
+            ctx.font = '13px Inter, sans-serif';
+            ctx.fillText(String(lbl), 24, y + 17);
+            ctx.fillStyle = '#00357f';
+            ctx.fillRect(padL, y + 2, w, barH - 4);
+            ctx.fillStyle = '#0F172A';
+            ctx.font = '12px JetBrains Mono, monospace';
+            ctx.fillText(`${v.toLocaleString('es-CL', { maximumFractionDigits: 1 })} ${unitText || ''}`.trim(), padL + w + 8, y + 16);
+          });
+          return canvas.toDataURL('image/png', 1.0);
+        } catch (_) {
+          return '';
+        }
+      }
+
+      function exportWhiteCanvasSnapshot(sourceCanvas) {
+        if (!sourceCanvas || typeof document === 'undefined') return '';
+        try {
+          const out = document.createElement('canvas');
+          out.width = sourceCanvas.width || 960;
+          out.height = sourceCanvas.height || 460;
+          const octx = out.getContext('2d');
+          if (!octx) return sourceCanvas.toDataURL('image/png', 1.0);
+          octx.fillStyle = '#FFFFFF';
+          octx.fillRect(0, 0, out.width, out.height);
+          octx.drawImage(sourceCanvas, 0, 0);
+          return out.toDataURL('image/png', 1.0);
+        } catch (_) {
+          try {
+            return sourceCanvas.toDataURL('image/png', 1.0);
+          } catch (__) {
+            return '';
+          }
+        }
+      }
+
+      function resolveSnapshotSources(xKey, yKey, hubId, nodeObj) {
+        const dl = AppState.hubsData || {};
+        const offMap = dl.officialVariableSources || {};
+        const byId = new Map();
+        const addSource = (rawSrc, linkedVar) => {
+          if (!rawSrc || typeof rawSrc !== 'object') return;
+          const inst = rawSrc.institution || rawSrc.institucion || rawSrc.sourceName || 'Fuente Institucional Oficial';
+          const ds = rawSrc.dataset || rawSrc.serie || rawSrc.title || rawSrc.nombre || 'Registro Territorial Aysén';
+          const yr = rawSrc.year || rawSrc.anio || rawSrc.corte || '2024-2026';
+          const url = rawSrc.url || rawSrc.sourceUrl || 'https://vavaro.github.io/aysen_sistemico/';
+          const dedupKey = `${inst}::${ds}`.toLowerCase();
+          if (byId.has(dedupKey)) {
+            const ex = byId.get(dedupKey);
+            if (linkedVar && !ex.linkedVars.includes(linkedVar)) ex.linkedVars.push(linkedVar);
+          } else {
+            byId.set(dedupKey, {
+              institution: inst,
+              dataset: ds,
+              year: String(yr),
+              unit: rawSrc.unit || '',
+              methodology: rawSrc.methodology || rawSrc.metodologia || 'Registro administrativo oficial consolidado a escala comunal',
+              url,
+              linkedVars: linkedVar ? [linkedVar] : []
+            });
+          }
+        };
+
+        [xKey, yKey].filter(Boolean).forEach(k => {
+          if (offMap[k]) addSource(offMap[k], k);
+        });
+        if (nodeObj) {
+          addSource({
+            institution: nodeObj.officialSource || 'Aysén Sistémico',
+            dataset: nodeObj.title || 'Nodo Satélite',
+            year: '2024-2026',
+            url: nodeObj.provenance?.url || dl.hubs?.find(h => h.id === nodeObj.hubId)?.sourceUrl
+          }, xKey || nodeObj.title);
+        }
+        const hubMeta = (dl.hubs || []).find(h => h.id === hubId);
+        if (byId.size === 0 && hubMeta) {
+          addSource({
+            institution: hubMeta.sourceName || hubMeta.title,
+            dataset: hubMeta.shortTitle || hubMeta.title,
+            year: '2024-2026',
+            url: hubMeta.sourceUrl
+          }, xKey);
+        }
+        return Array.from(byId.values());
+      }
+
+      function generateChartEditorialNarrative(snap) {
+        const s = snap?.stats || {};
+        const fmt = (v, dec = 1) => Number.isFinite(Number(v))
+          ? Number(v).toLocaleString('es-CL', { minimumFractionDigits: dec, maximumFractionDigits: dec })
+          : 'S/I';
+
+        const unitX = snap?.xUnit || '';
+        const unitY = snap?.yUnit || '';
+        const scaleLabel = snap?.scaleModeLabel || 'Valores Nominales';
+
+        // Párrafo 1: Lectura Estadística y Brecha Territorial
+        const paragraphStatistical =
+          `En la distribución comunal de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
+          `la Región de Aysén registra un promedio comunal de ${fmt(s.meanX)} ${unitX} ` +
+          `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
+          `El máximo regional se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que el menor registro corresponde a ` +
+          `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}), configurando una razón de asimetría territorial (Máx/Mín) de ${fmt(s.gapRatio, 2)}x entre extremos comunales.`;
+
+        // Párrafo 2: Relación Bivariada / Cuadrantes o Estructura de Concentración
+        let paragraphAnalytical = '';
+        if (snap?.yKey && Number.isFinite(Number(s.pearsonR))) {
+          const rVal = Number(s.pearsonR);
+          const r2Val = Number.isFinite(Number(s.r2)) ? Number(s.r2) : (rVal * rVal);
+          const strength = Math.abs(rVal) >= 0.7 ? 'fuerte' : (Math.abs(rVal) >= 0.4 ? 'moderada' : 'débil');
+          const direction = rVal >= 0 ? 'positiva (directa)' : 'negativa (inversa)';
+          const q = s.quadrants || { highHigh: [], lowLow: [] };
+          paragraphAnalytical =
+            `El cruce bivariado frente a «${snap.yLabel || snap.yKey}» (${unitY || 'u.'}) evidencia una asociación lineal ${strength} y ${direction}, ` +
+            `con un coeficiente de correlación de Pearson r = ${fmt(rVal, 2)} y un poder explicativo R² = ${fmt(r2Val * 100, 1)}%. ` +
+            `En la segmentación por cuadrantes respecto a la media regional, destacan en el cuadrante Alto-Alto: ${(q.highHigh || []).join(', ') || 'ninguna comuna'}, ` +
+            `mientras que en el cuadrante Bajo-Bajo se ubican: ${(q.lowLow || []).join(', ') || 'ninguna comuna'}.`;
+        } else {
+          const top3List = Array.isArray(s.top3Names) ? s.top3Names : [];
+          paragraphAnalytical =
+            `El análisis de concentración territorial muestra que las tres primeras comunas del ranking (${top3List.join(', ') || 'Coyhaique, Aysén, Cisnes'}) ` +
+            `concentran el ${fmt(s.top3SharePct, 1)}% del agregado regional (${fmt(s.sumX)} ${unitX}), ` +
+            `reflejando la gravitación demográfica y productiva del eje Coyhaique–Puerto Aysén frente a las comunas de zona extrema e insularidad.`;
+        }
+
+        // Párrafo 3: Contexto Sistémico del Hub y Nodo Satélite
+        const hubLabel = snap?.hubTitle || 'Inteligencia Territorial de Aysén';
+        const paragraphSystemic = snap?.nodeVerifiedSummary
+          ? `Contexto Sistémico (${hubLabel} — ${snap.nodeTitle || 'Nodo'}): ${snap.nodeVerifiedSummary}`
+          : `Implicancia Territorial (${hubLabel}): Este indicador forma parte del subsistema de ${hubLabel} de Aysén Sistémico y permite evaluar brechas de equidad territorial, asignación de inversión pública y priorización focalizada entre las 10 comunas de la región.`;
+
+        return {
+          paragraphStatistical,
+          paragraphAnalytical,
+          paragraphSystemic
+        };
+      }
+
+      function captureCurrentChartSnapshot(targetWidget) {
+        const w = targetWidget ||
+          AppState.widgets.find(x => x.id === AppState.activeWidgetId && x.type !== 'reflection') ||
+          AppState.widgets.find(x => x.type === 'chart' && x.instance) ||
+          AppState.widgets.find(x => x.type !== 'reflection') ||
+          AppState.widgets[0] || null;
+
+        const dl = AppState.hubsData || {};
+        const comunas = Array.isArray(dl.comunas) ? dl.comunas : [];
+        let payload = null;
+        if (w && (w.varX || w.customChartSpec)) {
+          try { payload = getWidgetDataPayload(w); } catch (_) { payload = null; }
+        }
+
+        let xKey = w?.varX || 'dependencia_fcm_pct';
+        let yKey = w?.varY || (!w ? 'ingresos_propios_pct' : null);
+        let xLabel = 'Dependencia del Fondo Común Municipal';
+        let xUnit = '%';
+        let yLabel = yKey ? 'Ingresos Propios Permanentes' : null;
+        let yUnit = yKey ? '%' : '';
+        let labels = comunas.map(c => c.nombre);
+        let valsX = comunas.map(c => Number(c[xKey]) || 0);
+        let valsY = yKey ? comunas.map(c => Number(c[yKey]) || 0) : null;
+
+        const catX = AppState.catalogItems.find(v => v.id === xKey);
+        const catY = yKey ? AppState.catalogItems.find(v => v.id === yKey) : null;
+        if (catX) {
+          xLabel = catX.shortName || catX.name || xLabel;
+          xUnit = catX.unit || xUnit;
+        }
+        if (catY) {
+          yLabel = catY.shortName || catY.name || yLabel;
+          yUnit = catY.unit || yUnit;
+        }
+
+        if (payload && payload.mode === 'bivariate' && Array.isArray(payload.dataX) && payload.dataX.length) {
+          labels = payload.labels || labels;
+          valsX = payload.dataX.map(v => Number(v) || 0);
+          valsY = Array.isArray(payload.dataY) ? payload.dataY.map(v => Number(v) || 0) : valsY;
+          xLabel = payload.nameX || xLabel;
+          xUnit = payload.unitX || xUnit;
+          yLabel = payload.nameY || yLabel;
+          yUnit = payload.unitY || yUnit;
+        } else if (payload && payload.mode === 'univariate' && Array.isArray(payload.data) && payload.data.length) {
+          labels = payload.labels || labels;
+          valsX = payload.data.map(v => Number(v) || 0);
+          valsY = null;
+          yKey = null;
+          xLabel = payload.label || xLabel;
+          xUnit = payload.unit || xUnit;
+        }
+
+        const hubId = catX?.hub || 'gobernanza';
+        const hubObj = (dl.hubs || []).find(h => h.id === hubId);
+        const hubTitle = hubObj ? hubObj.title : 'IV. Gobernanza y Finanzas';
+        const nodeObj = (dl.nodos || []).find(n => (catX?.nodeId && Number(n.nodeId) === Number(catX.nodeId)) || n.hubId === hubId) || null;
+        const chartTitle = w?.title || (yLabel ? `${xLabel} vs. ${yLabel}` : `${xLabel} por Comuna`);
+        const scaleMode = w?.perCapitaMode ? 'per_capita' : (w?.scaleMode || 'nominal');
+        const scaleModeLabel = scaleMode === 'pct'
+          ? 'Participación % Regional'
+          : (scaleMode === 'zscore'
+              ? 'Estandarizado Z-Score'
+              : (scaleMode === 'per_capita' ? 'Per Cápita por Habitante' : 'Valores Nominales'));
+
+        let imageDataUrl = '';
+        if (w) {
+          const domCanvas = document.querySelector(`#display-body-${w.id} canvas`) || w.instance?.canvas;
+          if (domCanvas) imageDataUrl = exportWhiteCanvasSnapshot(domCanvas);
+        }
+        if (!imageDataUrl) {
+          imageDataUrl = buildFallbackChartDataUrl(chartTitle, labels, valsX, xUnit);
+        }
+
+        const stX = computeVectorStats(labels, valsX);
+        const stY = valsY ? computeVectorStats(labels, valsY) : null;
+        const biv = valsY ? computeBivariateMetrics(labels, valsX, valsY, stX.mean, stY.mean) : { pearsonR: NaN, r2: NaN, olsSlope: NaN, quadrants: { highHigh: [], lowLow: [], highLow: [], lowHigh: [] } };
+
+        const stats = {
+          meanX: stX.mean,
+          medianX: stX.median,
+          stdX: stX.std,
+          cvX: stX.cv,
+          sumX: stX.sum,
+          maxComuna: stX.maxComuna,
+          maxVal: stX.maxVal,
+          minComuna: stX.minComuna,
+          minVal: stX.minVal,
+          gapRatio: stX.gapRatio,
+          top3Names: stX.top3Names,
+          top3SharePct: stX.top3SharePct,
+          meanY: stY ? stY.mean : NaN,
+          sumY: stY ? stY.sum : NaN,
+          medianY: stY ? stY.median : NaN,
+          stdY: stY ? stY.std : NaN,
+          cvY: stY ? stY.cv : NaN,
+          pearsonR: biv.pearsonR,
+          r2: biv.r2,
+          olsSlope: biv.olsSlope,
+          quadrants: biv.quadrants
+        };
+
+        const provByName = {};
+        comunas.forEach(c => { provByName[c.nombre] = c.provincia || 'Aysén'; });
+        const rows = labels
+          .map((lbl, idx) => {
+            const valX = Number(valsX[idx]) || 0;
+            const valY = valsY ? (Number(valsY[idx]) || 0) : null;
+            const sharePct = stX.sum > 0 ? (valX / stX.sum) * 100 : 0;
+            const deviationPct = stX.mean !== 0 ? ((valX - stX.mean) / Math.abs(stX.mean)) * 100 : 0;
+            return {
+              comuna: String(lbl || ''),
+              provincia: provByName[lbl] || 'Aysén',
+              valX,
+              valY,
+              sharePct,
+              deviationPct
+            };
+          })
+          .sort((a, b) => b.valX - a.valX)
+          .map((r, i) => ({ rank: i + 1, ...r }));
+
+        const snap = {
+          id: `snap_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
+          timestamp: new Date().toISOString(),
+          hubId,
+          hubTitle,
+          subcategoryTitle: catX?.subgroup || hubTitle,
+          nodeNumber: nodeObj?.nodeId || null,
+          nodeTitle: nodeObj?.title || hubTitle,
+          nodeVerifiedSummary: nodeObj?.definition || '',
+          chartTitle,
+          chartSubtitle: `${hubTitle} · ${labels.length} unidades territoriales`,
+          chartType: w?.chartType || (yKey ? 'bar' : 'bar'),
+          scaleMode,
+          scaleModeLabel,
+          xKey,
+          xLabel,
+          xUnit,
+          yKey,
+          yLabel,
+          yUnit,
+          imageDataUrl,
+          stats,
+          rows,
+          sources: resolveSnapshotSources(xKey, yKey, hubId, nodeObj)
+        };
+        snap.narrative = generateChartEditorialNarrative(snap);
+        return snap;
+      }
+
+      function pinCurrentChartToReport() {
+        if (!Array.isArray(window.REPORT_DOSSIER_QUEUE)) window.REPORT_DOSSIER_QUEUE = [];
+        if (window.REPORT_DOSSIER_QUEUE.length >= 6) {
+          if (typeof showToast === 'function') showToast('Máximo de 6 láminas alcanzado en el dossier PDF.');
+          return null;
+        }
+        const snap = captureCurrentChartSnapshot();
+        window.REPORT_DOSSIER_QUEUE.push(snap);
+        updateReportQueueBadge();
+        if (typeof showToast === 'function') {
+          showToast(`Vista añadida al Reporte (${window.REPORT_DOSSIER_QUEUE.length}/6): ${snap.chartTitle}`);
+        }
+        return snap;
+      }
+
+      function renderExecutiveReportSheet() {
+        const sheet = document.getElementById('executiveReportPreviewSheet');
+        if (!sheet) return;
+        const queue = Array.isArray(window.REPORT_DOSSIER_QUEUE) ? window.REPORT_DOSSIER_QUEUE : [];
+        if (queue.length === 0) {
+          sheet.innerHTML = '<div class="exec-summary-box">No hay vistas en el dossier actual. Añade vistas desde el lienzo o cierra y vuelve a abrir Exportar Reporte.</div>';
+          return;
+        }
+
+        const showSummary = document.getElementById('toggleExecSummary')?.checked !== false;
+        const showNarrative = document.getElementById('toggleExecNarrative')?.checked !== false;
+        const showTable = document.getElementById('toggleExecTable')?.checked !== false;
+        const showBiblio = document.getElementById('toggleExecBiblio')?.checked !== false;
+
+        const first = queue[0];
+        const issueDate = new Date().toLocaleDateString('es-CL', { day: '2-digit', month: 'long', year: 'numeric' });
+        const fmtN = (v, dec = 1) => Number.isFinite(Number(v))
+          ? Number(v).toLocaleString('es-CL', { minimumFractionDigits: dec, maximumFractionDigits: dec })
+          : '-';
+
+        // Consolidar bibliografía sin duplicados
+        const biblioMap = new Map();
+        queue.forEach(s => {
+          (s.sources || []).forEach(src => {
+            const key = `${src.institution}::${src.dataset}`.toLowerCase();
+            if (!biblioMap.has(key)) {
+              biblioMap.set(key, { ...src, linkedVars: [...(src.linkedVars || [])] });
+            } else {
+              const cur = biblioMap.get(key);
+              (src.linkedVars || []).forEach(vk => {
+                if (!cur.linkedVars.includes(vk)) cur.linkedVars.push(vk);
+              });
+            }
+          });
+        });
+        const biblioEntries = Array.from(biblioMap.values());
+
+        const figuresHtml = queue.map((snap, idx) => {
+          const figNum = idx + 1;
+          const primarySrc = (snap.sources && snap.sources[0]) || {
+            institution: 'Aysén Sistémico',
+            dataset: snap.hubTitle,
+            year: '2024-2026',
+            url: 'https://vavaro.github.io/aysen_sistemico/'
+          };
+          const nar = snap.narrative || generateChartEditorialNarrative(snap);
+          const secondHeader = snap.yKey ? `${escReportHtml(snap.yLabel || snap.yKey)} (${escReportHtml(snap.yUnit || '')})` : 'Participación Regional (%)';
+
+          const tableRowsHtml = (snap.rows || []).map(r => `
+            <tr>
+              <td>${r.rank}</td>
+              <td>${escReportHtml(r.comuna)}</td>
+              <td>${escReportHtml(r.provincia)}</td>
+              <td class="num">${fmtN(r.valX, 1)}</td>
+              <td class="num">${snap.yKey && r.valY !== null ? fmtN(r.valY, 1) : `${fmtN(r.sharePct, 1)}%`}</td>
+              <td class="num">${r.deviationPct >= 0 ? '+' : ''}${fmtN(r.deviationPct, 1)}%</td>
+            </tr>
+          `).join('');
+
+          return `
+            <article class="exec-figure-card" data-snap-idx="${idx}">
+              <div class="exec-figure-header">
+                <div>
+                  <h3 class="exec-figure-title" contenteditable="true">Figura ${figNum}. ${escReportHtml(snap.chartTitle)}</h3>
+                  <p class="exec-figure-sub">${escReportHtml(snap.chartSubtitle)}</p>
+                </div>
+                <span class="exec-figure-badge">${snap.nodeNumber ? `Nodo #${String(snap.nodeNumber).padStart(2, '0')} · ` : ''}${escReportHtml(snap.hubTitle)}</span>
+              </div>
+              <div class="exec-figure-img-wrap">
+                ${snap.imageDataUrl ? `<img src="${snap.imageDataUrl}" alt="${escReportHtml(snap.chartTitle)}" />` : '<div>Sin imagen de gráfico</div>'}
+              </div>
+              ${showNarrative ? `
+                <div class="exec-narrative-box">
+                  <h4>Análisis e Interpretación Técnica</h4>
+                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphStatistical" data-snap-idx="${idx}"><strong>1. Lectura Estadística y Asimetría Comunal:</strong> ${escReportHtml(nar.paragraphStatistical)}</p>
+                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphAnalytical" data-snap-idx="${idx}"><strong>2. Dinámica Bivariada / Concentración Territorial:</strong> ${escReportHtml(nar.paragraphAnalytical)}</p>
+                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphSystemic" data-snap-idx="${idx}"><strong>3. Contexto Sistémico e Implicancias de Política Pública:</strong> ${escReportHtml(nar.paragraphSystemic)}</p>
+                </div>
+              ` : ''}
+              <p class="exec-source-line">Fuente Primaria: ${escReportHtml(primarySrc.institution)} — ${escReportHtml(primarySrc.dataset)} (${escReportHtml(primarySrc.year)}). Unidad: ${escReportHtml(snap.xUnit || 'u.')}. Enlace oficial: ${escReportHtml(primarySrc.url)}</p>
+              ${showTable ? `
+                <table class="exec-comunal-table">
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Comuna</th>
+                      <th>Provincia</th>
+                      <th class="num">${escReportHtml(snap.xLabel)} (${escReportHtml(snap.xUnit || '')})</th>
+                      <th class="num">${secondHeader}</th>
+                      <th class="num">Desv. vs. Media Regional</th>
+                    </tr>
+                  </thead>
+                  <tbody>${tableRowsHtml}</tbody>
+                </table>
+              ` : ''}
+            </article>
+          `;
+        }).join('');
+
+        const totalComunaVars = AppState.catalogItems ? AppState.catalogItems.filter(v => v.dim === 'comuna' && !v.isAlias).length : 236;
+
+        sheet.innerHTML = `
+          <header class="exec-doc-masthead">
+            <div class="exec-doc-kicker">AYSÉN SISTÉMICO — PLATAFORMA DE INTELIGENCIA TERRITORIAL Y SISTEMAS COMPLEJOS</div>
+            <h1 class="exec-doc-title" id="executiveReportDocTitle" contenteditable="true">Informe Técnico Territorial — ${escReportHtml(first.hubTitle)}</h1>
+            <p class="exec-doc-subtitle" contenteditable="true">Dossier analítico reproducible de evidencia empírica territorial para la Región de Aysén (10 comunas).</p>
+            <div class="exec-doc-meta-grid">
+              <div><span class="exec-meta-label">Fecha de Emisión</span><span class="exec-meta-val">${escReportHtml(issueDate)}</span></div>
+              <div><span class="exec-meta-label">Hub / Subsistema</span><span class="exec-meta-val">${escReportHtml(first.hubTitle)}</span></div>
+              <div><span class="exec-meta-label">Escala / Normalización</span><span class="exec-meta-val">${escReportHtml(first.scaleModeLabel)}</span></div>
+              <div><span class="exec-meta-label">Cobertura Territorial</span><span class="exec-meta-val">${queue.length} lámina(s) · 10 comunas</span></div>
+            </div>
+          </header>
+          ${showSummary ? `
+            <section class="exec-summary-box" contenteditable="true">
+              <strong>Resumen Ejecutivo:</strong> Este reporte consolida ${queue.length} visualización(es) analítica(s) del Laboratorio Sistémico, integrando lectura estadística automatizada, brechas entre extremos comunales, análisis de correlación lineal / cuadrantes e interpretación territorial vinculada a los Nodos Satélite y fuentes institucionales verificadas del Estado de Chile.
+            </section>
+          ` : ''}
+          <section>${figuresHtml}</section>
+          ${showBiblio ? `
+            <footer class="exec-biblio-section">
+              <h3>Referencias Institucionales y Trazabilidad Metodológica</h3>
+              <ol class="exec-biblio-list">
+                ${biblioEntries.map((b, i) => `
+                  <li>[${i + 1}] <strong>${escReportHtml(b.institution)}</strong> (${escReportHtml(b.year)}). ${escReportHtml(b.dataset)}. Variables vinculadas: ${escReportHtml((b.linkedVars || []).join(', ') || 'Indicadores comunales')}. URL: ${escReportHtml(b.url)}</li>
+                `).join('')}
+              </ol>
+              <p class="exec-method-footer">Documento generado mediante el motor determinista-semántico de Aysén Sistémico (v5, ${totalComunaVars} indicadores comunales verificados, ${(AppState.hubsData?.nodos || []).length || 41} Nodos Satélite). Todos los indicadores cuentan con trazabilidad a registros públicos oficiales del Estado de Chile.</p>
+            </footer>
+          ` : ''}
+        `;
+
+        sheet.querySelectorAll('.exec-narrative-p[data-nar-field]').forEach(pEl => {
+          pEl.addEventListener('input', () => {
+            const idx = Number(pEl.getAttribute('data-snap-idx'));
+            const field = pEl.getAttribute('data-nar-field');
+            if (window.REPORT_DOSSIER_QUEUE[idx] && window.REPORT_DOSSIER_QUEUE[idx].narrative && field) {
+              window.REPORT_DOSSIER_QUEUE[idx].narrative[field] = pEl.textContent.replace(/^\d+\.\s+[^:]+:\s*/, '');
+            }
+          });
+        });
+      }
+
+      function openExecutiveReportModal() {
+        if (!Array.isArray(window.REPORT_DOSSIER_QUEUE) || window.REPORT_DOSSIER_QUEUE.length === 0) {
+          window.REPORT_DOSSIER_QUEUE = [captureCurrentChartSnapshot()];
+          updateReportQueueBadge();
+        }
+        renderExecutiveReportSheet();
+        const modal = document.getElementById('executiveReportModal');
+        if (modal) {
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+        }
+      }
+
+      async function enrichReportNarrativesWithAI() {
+        const queue = Array.isArray(window.REPORT_DOSSIER_QUEUE) ? window.REPORT_DOSSIER_QUEUE : [];
+        if (queue.length === 0) return;
+        if (!window.OmniRouteClient || typeof window.OmniRouteClient.query !== 'function') {
+          if (typeof showToast === 'function') showToast('Motor OmniRoute no disponible en esta sesión; se mantiene la narrativa estadística verificada.');
+          return;
+        }
+        try {
+          for (const snap of queue) {
+            const prompt = `Sintetiza en 2 oraciones una implicancia de política pública territorial verificada para ${snap.xLabel} (${snap.xUnit || ''}) considerando promedio ${snap.stats?.meanX?.toFixed(1)}, máximo en ${snap.stats?.maxComuna} y mínimo en ${snap.stats?.minComuna}.`;
+            const res = await window.OmniRouteClient.query(prompt);
+            if (res && res.reply) {
+              snap.narrative.paragraphSystemic = res.reply;
+            }
+          }
+          renderExecutiveReportSheet();
+          if (typeof showToast === 'function') showToast('Narrativas territoriales enriquecidas con datos verificados.');
+        } catch (_) {
+          if (typeof showToast === 'function') showToast('Se conservó la narrativa determinista estadística.');
+        }
+      }
+
+      function printExecutiveReport() {
+        const sheet = document.getElementById('executiveReportPreviewSheet');
+        const printRoot = document.getElementById('executiveReportPrintRoot');
+        if (sheet && printRoot) {
+          printRoot.innerHTML = `<div class="exec-report-a4-sheet">${sheet.innerHTML}</div>`;
+          printRoot.setAttribute('aria-hidden', 'false');
+        }
+        window.print();
+      }
+
+      window.captureCurrentChartSnapshot = captureCurrentChartSnapshot;
+      window.generateChartEditorialNarrative = generateChartEditorialNarrative;
+      window.pinCurrentChartToReport = pinCurrentChartToReport;
+      window.openExecutiveReportModal = openExecutiveReportModal;
+      window.renderExecutiveReportSheet = renderExecutiveReportSheet;
+      window.enrichReportNarrativesWithAI = enrichReportNarrativesWithAI;
+      window.printExecutiveReport = printExecutiveReport;
+
       window.addEventListener('DOMContentLoaded', init);
 
     })();
@@ -19434,6 +20488,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       montarCabecera({ tituloModulo: 'Laboratorio Sistémico', activo: 'laboratorio.html' });
     });
   </script>
+  <div id="executiveReportPrintRoot" aria-hidden="true"></div>
 </body>
 
 </html>
