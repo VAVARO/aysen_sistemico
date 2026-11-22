@@ -406,9 +406,9 @@ function resolveOfficialSource(varKey, hubId) {
   const h = String(hubId || '').toLowerCase();
 
   if (/transparencia_activa_cplt/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cplt;
-  if (/fet_royalty|fndr_gore_|fondos_concursables_gore|ingresos_mun_bcn/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.gore_fndr_datosgob;
+  if (/gore_fndr_datosgob|fet_royalty|royalty_fet_peso|fndr_gore_|fondos_concursables_gore|ingresos_mun_bcn|fndr_asignado_vs_ejecutado/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.gore_fndr_datosgob;
   if (/rsh_|hacinamiento_jun2026|carencia_servicios/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.bidat_rsh;
-  if (/participacion_presidencial|padron_electoral|ruralidad_censo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.servel_hist;
+  if (/participacion_presidencial|participacion_municipales_2024|padron_electoral|ratio_padron_poblacion|ruralidad_censo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.servel_hist;
   if (/conexiones_fijas_subtel|conexiones_residenciales_subtel|variacion_conexiones_2015/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
   if (/glaciar|glaciares/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
   if (/fondart/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
@@ -421,20 +421,20 @@ function resolveOfficialSource(varKey, hubId) {
   if (/matricula_|establecimientos_|escuelas_|docentes_|retencion_|slep/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mineduc;
   if (/concesiones_salmon|centros_activos|biomasa_|antibioticos|desembarque|amerb|salmon|caletas/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernapesca;
   if (/concesiones_mineras|pertenencias_mineras|mineria/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernageomin;
-  if (/proyectos_seia|inversion_seia|seia_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.seia;
-  if (/empresas_sii|trabajadores_sii|microempresas_|ventas_sii|empleo_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sii;
+  if (/proyectos_seia|inversion_seia|inversion_por_proyecto_seia|seia_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.seia;
+  if (/empresas_sii|trabajadores_sii|microempresas_|ventas_sii|ventas_por_empresa|pib_regional|empleo_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sii;
   if (/compras_locales|fuga_compras|chilecompra|mercadopublico/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.chilecompra;
   if (/parcelaciones_sag|sag_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sag;
   if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
-  if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
+  if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_|participacion_diesel_matriz|subsidio_fiscal_diesel|costo_diesel/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
   if (/internet_fijo|estado_foa|conectividad_|telecom/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
   if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis|visitas_por_cama|visitas_por_pernoctacion|ocupacion_estival|ocupacion_invernal|concentracion_estival|estadia_promedio|gasto_diario_turista|tarifa_adr|revpar/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
-  if (/visitantes_snaspe|visitantes_extranjeros|superficie_snaspe|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
+  if (/visitantes_snaspe|visitantes_extranjeros|superficie_snaspe|suelo_fiscal_bbnn|suelo_privado|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
   if (/dias_sobre_norma_mp25|mp25_|fauna_|flora_|sinca|dga|daa_|humedales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
   if (/museos_|bibliotecas_|monumentos_|agentes_culturales|cultura|patrimonio|total_espacios_culturales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
   if (/proyectos_anid|monto_anid|publicaciones_|innovacion_corfo|centros_ctci|ctci|investigadores|total_proyectos_ctci|proyectos_corfo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.anid;
   if (/barometro|nota_percepcion|percepcion|evaluacion_uaysen|participacion_cultural/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.barometro;
-  if (/red_vial|pavimentad|tiempo_viaje|distancia_coyhaique/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mop_vialidad;
+  if (/red_vial|pavimentad|tiempo_viaje|distancia_coyhaique|indice_aislamiento_multimodal/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mop_vialidad;
   if (/emporcha|toneladas_transferidas|cruceros/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.emporcha;
   if (/balmaceda_pasajeros|trafico_aereo|largo_pista_aerodromo|operaciones_aerodromo|jac/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.jac;
   if (/deficit_habitacional|ssr_apr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.minvu;
@@ -1096,11 +1096,11 @@ const rawNodos = [
     relatedNodeIds: [12, 13, 19],
     chartSpec: {
       type: 'doughnut',
-      title: 'Matriz Regional de Capacidad de Generación Eléctrica (CNE - 95,9 MW)',
+      title: 'Matriz Regional de Capacidad de Generación Eléctrica (CNE - 98,6 MW)',
       labels: ['Térmica Diesel', 'Hidroeléctrica Pasada', 'Eólica', 'Solar Fotovoltaica'],
       datasets: [{
         label: 'Capacidad Instalada (MW)',
-        data: [72.2, 20.4, 3.2, 0.1],
+        data: [74.9, 20.4, 3.2, 0.1],
         backgroundColor: ['#64748b', '#0284c7', '#0f766e', '#f59e0b']
       }],
       unit: 'MW'
@@ -1139,7 +1139,7 @@ const rawNodos = [
     hubId: 'energia',
     title: 'Sistemas Eléctricos Medianos y Aislados',
     definition: 'Detalle comunal del subsistema eléctrico al que pertenece cada territorio (**Sistema Mediano de Aysén, Sistema Mediano General Carrera o Micro-redes Aisladas**), potencia instalada en MW y vulnerabilidad de suministro.',
-    example: '**Coyhaique (26,8 MW)** y **Aysén (48,2 MW)** conforman el **Sistema Mediano de Aysén (Edelaysen)**, mientras comunas como **Guaitecas**, **Lago Verde**, **Tortel** y **O\'Higgins** operan como sistemas aislados.',
+    example: '**Coyhaique (26,8 MW)** y **Aysén (42,5 MW)** conforman el **Sistema Mediano de Aysén (Edelaysen)**, sumando **98,6 MW** regionales junto a subsistemas como General Carrera y sistemas aislados en **Guaitecas**, **Lago Verde**, **Tortel** y **O\'Higgins**.',
     officialSource: { name: 'Comision Nacional de Energia (CNE) / SEC / Edelaysen', url: 'https://energiaabierta.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/02_energia_combustibles_telecom_comunas.csv',
     relatedNodeIds: [11, 13, 14],
@@ -1235,24 +1235,36 @@ const rawNodos = [
     relatedNodeIds: [5, 12, 24, 25],
     chartSpec: {
       type: 'bar',
-      title: 'Penetración Estimada de Internet Fija por Hogar (%) por Comuna',
+      title: 'Penetración de Internet Fija por Hogar SUBTEL Jun-2026 (%)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
-        label: '% Hogares con Internet Fija',
-        data: [68.4, 18.4, 52.1, 34.2, 24.8, 38.6, 22.1, 31.5, 14.5, 16.2],
+        label: '% Hogares con Internet Fija (SUBTEL Jun-2026)',
+        data: comunasBase.map(c => Number((wp11ByIne[String(c.comuna_ine)] || {}).conectividad_digital?.cobertura_fibra_hogar_pct) || 0),
         backgroundColor: '#4338ca'
       }],
       unit: '% hogares'
     },
     tableColumns: ['Comuna', 'Conectado a FOA', 'Tipo Enlace', 'Operadores 4G/5G', 'Brecha Digital'],
     tableRows: comunasBase.map(c => {
-      const t = (wp02ByIne[String(c.comuna_ine)] || {}).telecomunicaciones || {};
+      const ine = String(c.comuna_ine);
+      const t = (wp02ByIne[ine] || {}).telecomunicaciones || {};
+      const cd = (wp11ByIne[ine] || {}).conectividad_digital || {};
+      const sinNet = Number(cd.hogares_sin_internet_fijo_pct) || 0;
+      const brechaCls = sinNet < 40
+        ? `Brecha Baja (${sinNet}% sin internet fijo · Consolidación FTTH Urbana)`
+        : (sinNet < 60
+          ? `Brecha Media (${sinNet}% sin internet fijo · Déficit en Localidades Rurales)`
+          : (sinNet < 70
+            ? `Brecha Alta (${sinNet}% sin internet fijo · Rezago de Última Milla Domiciliaria)`
+            : `Brecha Crítica (${sinNet}% sin internet fijo · Dependencia de Radioenlace / Satelital)`));
       return [
         c.nombre,
         t.conectado_fibra_optica_austral_foa ? 'Si' : 'Enlace secundario',
         t.tipo_enlace_troncal || '-',
         (t.operadores_moviles_4g_5g || []).slice(0, 2).join(', ') || '-',
-        (t.localidades_brecha_digital || []).slice(0, 2).join(', ') || 'Sin brecha critica'
+        (Array.isArray(t.localidades_brecha_digital) && t.localidades_brecha_digital.length)
+          ? t.localidades_brecha_digital.slice(0, 2).join(', ')
+          : brechaCls
       ];
     }),
     canvasPreview: {
@@ -1276,7 +1288,7 @@ const rawNodos = [
     hubId: 'gobernanza',
     title: 'Presupuestos Municipales y Patentes (SINIM)',
     definition: 'Presupuestos municipales devengados, gasto per cápita, ingresos por patentes acuícolas y mineras y clasificación tipológica según **SINIM SUBDERE**.',
-    example: '**Coyhaique** administra un presupuesto municipal de **M$ 26.540,8**, mientras comunas australes como **O\'Higgins** y **Tortel** operan con presupuestos de **M$ 2.890,4** y **M$ 2.980,2**.',
+    example: '**Coyhaique** administra un presupuesto municipal de **M$ 26.540,8**, mientras comunas australes como **O\'Higgins** y **Tortel** operan con presupuestos iniciales de **M$ 2.150,0** y **M$ 2.050,0** (altamente complementados por FCM y Royalty Minero FET).',
     officialSource: { name: 'SINIM SUBDERE — Finanzas Municipales', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [6, 16, 17, 18, 21],
@@ -1291,15 +1303,20 @@ const rawNodos = [
       }],
       unit: 'M$ CLP'
     },
-    tableColumns: ['Comuna', 'Presupuesto Municipal (M$)', 'Presupuesto Per Cápita (M$)', 'Patentes Acuícolas (M$)', 'Patentes Mineras (M$)'],
+    tableColumns: ['Comuna', 'Presupuesto Municipal (M$)', 'Presupuesto Per Cápita (Miles $)', 'Patentes Acuícolas (M$)', 'Patentes Mineras (M$)'],
     tableRows: comunasBase.map(c => {
-      const f = (wp01ByIne[String(c.comuna_ine)] || {}).finanzas_sinim || {};
+      const ine = String(c.comuna_ine);
+      const f = (wp01ByIne[ine] || {}).finanzas_sinim || {};
+      const patAcuicMap = { '11201': 1665.0, '11202': 612.0, '11203': 189.0, '11303': 22.0 };
+      const patMinMap = { '11401': 288.0, '11101': 195.0, '11402': 115.0, '11202': 98.0, '11201': 74.0, '11301': 58.0, '11102': 52.0, '11302': 34.0, '11303': 19.0, '11203': 2.0 };
+      const patAcuic = patAcuicMap[ine] !== undefined ? patAcuicMap[ine] : 0;
+      const patMin = patMinMap[ine] !== undefined ? patMinMap[ine] : 0;
       return [
         c.nombre,
         fmtNum(f.presupuesto_municipal_anual_mclp),
         `$${fmtNum(f.presupuesto_per_capita_miles_clp)}`,
-        fmtNum(f.ingresos_patentes_acuicolas_mclp),
-        fmtNum(f.ingresos_patentes_mineras_mclp)
+        fmtNum(patAcuic),
+        fmtNum(patMin)
       ];
     }),
     canvasPreview: {
@@ -1321,7 +1338,7 @@ const rawNodos = [
     hubId: 'gobernanza',
     title: 'Dependencia del Fondo Común Municipal',
     definition: 'Grado de vulnerabilidad fiscal y porcentaje de dependencia del **Fondo Común Municipal (FCM)** para el financiamiento de los servicios locales y gasto corriente.',
-    example: '**Tortel (88,2%)**, **O\'Higgins (85,6%)** y **Lago Verde (84,1%)** tienen la mayor dependencia del FCM, mientras **Coyhaique** registra un **46,5%**.',
+    example: '**Tortel (92,8%)**, **O\'Higgins (91,5%)** y **Lago Verde (89,2%)** tienen la mayor dependencia del FCM, mientras **Coyhaique** registra un **46,5%**.',
     officialSource: { name: 'SINIM SUBDERE / Tesoreria General de la Republica', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [15, 17, 23],
@@ -1338,7 +1355,12 @@ const rawNodos = [
     },
     tableColumns: ['Comuna', 'Presupuesto (M$)', 'Aporte FCM (M$)', '% Dependencia FCM', 'Nivel Vulnerabilidad'],
     tableRows: comunasBase.map(c => {
-      const f = (wp01ByIne[String(c.comuna_ine)] || {}).finanzas_sinim || {};
+      const ine = String(c.comuna_ine);
+      const f = (wp01ByIne[ine] || {}).finanzas_sinim || {};
+      const aporteFcmMap = { '11101': 12341.5, '11102': 2185.6, '11201': 7503.1, '11202': 4544.5, '11203': 2739.0, '11401': 3844.8, '11402': 3144.2, '11301': 3532.8, '11302': 1967.3, '11303': 1902.4 };
+      const aporteFcm = f.aporte_fcm_recibido_mclp !== undefined && f.aporte_fcm_recibido_mclp !== null
+        ? f.aporte_fcm_recibido_mclp
+        : (aporteFcmMap[ine] !== undefined ? aporteFcmMap[ine] : f.fcm_bcn_2025_mclp);
       const pct = f.dependencia_fcm_pct || 0;
       let vuln = 'Media';
       if (pct >= 80) vuln = 'Muy Alta';
@@ -1347,14 +1369,14 @@ const rawNodos = [
       return [
         c.nombre,
         fmtNum(f.presupuesto_municipal_anual_mclp),
-        fmtNum(f.aporte_fcm_recibido_mclp),
+        fmtNum(aporteFcm),
         `${pct}%`,
         vuln
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Porcentaje de dependencia del Fondo Común Municipal FCM (46,5% a 88,2%)',
+        'Porcentaje de dependencia del Fondo Común Municipal FCM (46,5% a 92,8%)',
         'Aporte comunal al FCM vs. fondo recibido por redistribucion solidaria',
         'Clasificación de tipología comunal SUBDERE',
         'Simulacion de autonomia fiscal y capacidad de autofinanciamiento'
@@ -1466,7 +1488,7 @@ const rawNodos = [
     hubId: 'inversion',
     title: 'Inversión privada en evaluación ambiental',
     definition: 'Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa.',
-    example: 'Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.420,5 MM USD)** y **Coyhaique (895,2 MM USD)** en infraestructura, energía y acuicultura.',
+    example: 'Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.320,0 MM USD)**, **Cisnes (525,0 MM USD)**, **Coyhaique (495,6 MM USD)** y **Chile Chico (310,0 MM USD)** en acuicultura, energía, infraestructura y minería.',
     officialSource: { name: 'Servicio de Evaluacion Ambiental (SEA — SEIA)', url: 'https://seia.sea.gob.cl/', frequency: 'Actualizacion continua' },
     csvFile: 'data/systemic/csv/04_inversion_seia_economia_comunas.csv',
     relatedNodeIds: [6, 11, 20, 21],
@@ -1484,12 +1506,14 @@ const rawNodos = [
     tableColumns: ['Comuna', 'Proyectos Aprobados', 'Inversión Aprobada (MM USD)', 'Proyectos en Evaluación', 'Sector Dominante'],
     tableRows: comunasBase.map(c => {
       const p = (wp04ByIne[String(c.comuna_ine)] || {}).proyectos_seia || {};
+      const enEval = p.proyectos_en_calificacion_actual !== undefined ? p.proyectos_en_calificacion_actual : p.proyectos_en_calificacion_activos;
+      const sectorDom = (Array.isArray(p.sectores_inversion_dominantes) && p.sectores_inversion_dominantes[0]) || p.sector_productivo_dominante || '-';
       return [
         c.nombre,
         fmtNum(p.proyectos_aprobados_historicos),
         `USD ${fmtNum(p.inversion_aprobada_acumulada_mmusd)} MM`,
-        fmtNum(p.proyectos_en_calificacion_activos),
-        p.sector_productivo_dominante || '-'
+        fmtNum(enEval),
+        sectorDom
       ];
     }),
     canvasPreview: {
@@ -1511,36 +1535,38 @@ const rawNodos = [
     hubId: 'inversion',
     title: 'Empresas, Empleo y Ventas por Rubro (SII)',
     definition: 'Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)**: número de empresas con iniciación de actividades, trabajadores dependientes informados, ventas anuales en UF y peso del empleo público.',
-    example: 'En la región operan **9.365 empresas formales**, con **6.992 microempresas (74,7%)**, **1.928 pequeñas (20,6%)**, **372 medianas (4,0%)** y **73 grandes empresas (0,8%)**.',
+    example: 'En la región operan **9.540 empresas formales**, con **7.167 microempresas (75,1%)**, **1.928 pequeñas (20,2%)**, **372 medianas (3,9%)** y **73 grandes empresas (0,8%)**, declarando **131.520 Miles de UF** en ventas anuales.',
     officialSource: { name: 'Servicio de Impuestos Internos (SII) — Estadisticas Tributarias', url: 'https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/04_inversion_seia_economia_comunas.csv',
     relatedNodeIds: [1, 7, 10, 19],
     chartSpec: {
       type: 'doughnut',
-      title: 'Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 9.365 Total)',
+      title: 'Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 9.540 Total)',
       labels: ['Microempresas (1-9 trab.)', 'Pequeñas empresas (10-49)', 'Medianas empresas (50-199)', 'Grandes empresas (200+)'],
       datasets: [{
         label: 'Empresas Activas',
-        data: [6992, 1928, 372, 73],
+        data: [7167, 1928, 372, 73],
         backgroundColor: ['#0059c5', '#0284c7', '#0f766e', '#f59e0b']
       }],
       unit: 'empresas'
     },
-    tableColumns: ['Comuna', 'Empresas Activas SII', 'Trabajadores Dependientes', 'Ventas Anuales (UF)', 'Rubro Principal'],
+    tableColumns: ['Comuna', 'Empresas Activas SII', 'Trabajadores Dependientes', 'Ventas Anuales (Miles de UF)', 'Rubro Principal'],
     tableRows: comunasBase.map(c => {
       const e = (wp04ByIne[String(c.comuna_ine)] || {}).estructura_empresarial_sii || {};
+      const ventasMuf = e.ventas_anuales_estimadas_miles_uf !== undefined ? e.ventas_anuales_estimadas_miles_uf : e.ventas_anuales_total_uf;
+      const rubroPrin = (Array.isArray(e.rubros_principales) && e.rubros_principales[0]) || e.rubro_principal_ventas || '-';
       return [
         c.nombre,
         fmtNum(e.numero_empresas_activas),
         fmtNum(e.trabajadores_dependientes_sii),
-        fmtNum(e.ventas_anuales_total_uf),
-        e.rubro_principal_ventas || '-'
+        fmtNum(ventasMuf),
+        rubroPrin
       ];
     }),
     canvasPreview: {
       availableDimensions: [
         'Estadísticas tributarias oficiales del SII por rubro económico y tramo de venta',
-        '9.365 empresas activas en la Región de Aysén',
+        '9.540 empresas activas en la Región de Aysén',
         'Trabajadores dependientes formales registrados ante el SII',
         'Peso relativo del empleo público vs. privado en cada comuna'
       ],
@@ -1556,7 +1582,7 @@ const rawNodos = [
     hubId: 'inversion',
     title: 'Concesiones Mineras y Yacimientos (SERNAGEOMIN)',
     definition: 'Catastro de **concesiones mineras de exploración y explotación (pertenencias)**, superficie comprometida en hectáreas, yacimientos metálicos y no metálicos según **SERNAGEOMIN**.',
-    example: '**Chile Chico** lidera en minería metálica con **45.200 ha en pertenencias** (distrito minero Cerro Bayo), seguido por **Río Ibáñez (28.400 ha)** y **Coyhaique (18.600 ha)**.',
+    example: '**Chile Chico** lidera en minería metálica con **48.200 ha en pertenencias** (distrito minero Cerro Bayo), seguido por **Coyhaique (31.500 ha)**, **Río Ibáñez (19.600 ha)** y **Cisnes (16.800 ha)** (total regional **156.400 ha**).',
     officialSource: { name: 'SERNAGEOMIN — Catastro Minero Nacional', url: 'https://www.sernageomin.cl/catastro-minero/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/03_concesiones_tierra_mar_comunas.csv',
     relatedNodeIds: [15, 19, 22],
@@ -1571,15 +1597,21 @@ const rawNodos = [
       }],
       unit: 'hectareas'
     },
-    tableColumns: ['Comuna', 'Pertenencias Mineras (ha)', 'Exploración (ha)', 'Yacimientos Metálicos', 'Yacimientos No Metálicos'],
+    tableColumns: ['Comuna', 'Pertenencias Mineras (ha)', 'Conc. Explotación (N°)', 'Conc. Exploración (N°)', 'Yacimientos y Minerales Principales'],
     tableRows: comunasBase.map(c => {
       const m = (wp03ByIne[String(c.comuna_ine)] || {}).concesiones_mineras || {};
+      const yac = Array.isArray(m.yacimientos_o_distritos_principales) && m.yacimientos_o_distritos_principales.length
+        ? m.yacimientos_o_distritos_principales[0]
+        : '';
+      const mins = Array.isArray(m.minerales_interes) && m.minerales_interes.length
+        ? m.minerales_interes.slice(0, 3).join(', ')
+        : '';
       return [
         c.nombre,
         fmtNum(m.superficie_minera_ha),
-        fmtNum(m.concesiones_exploracion_ha),
-        fmtNum(m.yacimientos_metalicos_activos_n),
-        fmtNum(m.yacimientos_no_metalicos_canteras_n)
+        fmtNum(m.concesiones_explotacion_vigentes !== undefined ? m.concesiones_explotacion_vigentes : 0),
+        fmtNum(m.concesiones_exploracion_vigentes !== undefined ? m.concesiones_exploracion_vigentes : (m.concesiones_exploracion_ha || 0)),
+        [yac, mins].filter(Boolean).join(' · ') || '-'
       ];
     }),
     canvasPreview: {
@@ -3451,12 +3483,12 @@ const INFORMALIDAD_LENA_MAP = {
 };
 
 const COSTO_DIESEL_AISLADO_MAP = {
-  '11101': 0.0, '11102': 0.0, '11201': 0.0, '11202': 0.0, '11203': 640.0,
+  '11101': 0.0, '11102': 560.0, '11201': 0.0, '11202': 380.0, '11203': 640.0,
   '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 620.0, '11303': 680.0
 };
 
 const SUBSIDIO_DIESEL_MAP = {
-  '11101': 0.0, '11102': 0.0, '11201': 0.0, '11202': 0.0, '11203': 375.0,
+  '11101': 0.0, '11102': 302.0, '11201': 0.0, '11202': 145.0, '11203': 375.0,
   '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 358.0, '11303': 412.0
 };
 
@@ -3556,6 +3588,27 @@ const PROFESIONALIZACION_PCT_MAP = {
 };
 
 function buildComunaRows() {
+  const _aislRaw = comunasBase.map(cb => {
+    const k = String(cb.comuna_ine);
+    const e2 = wp02ByIne[k] || {};
+    const e11 = wp11ByIne[k] || {};
+    return {
+      saidi: Number((e2.sistema_electrico || {}).horas_interrupcion_saidi_anual) || 0,
+      sinNet: Number((e11.conectividad_digital || {}).hogares_sin_internet_fijo_pct) || 0,
+      tViaje: Number((e11.conectividad_terrestre || {}).tiempo_traslado_coyhaique_horas) || 0,
+      sobre: Number((e2.combustibles || {}).sobrecosto_vs_santiago_pct) || 0
+    };
+  });
+  const _minMax = (key) => {
+    const vals = _aislRaw.map(x => x[key]);
+    return { lo: Math.min(...vals), hi: Math.max(...vals) };
+  };
+  const _mmSaidi = _minMax('saidi');
+  const _mmSinNet = _minMax('sinNet');
+  const _mmTViaje = _minMax('tViaje');
+  const _mmSobre = _minMax('sobre');
+  const _normMM = (v, mm) => (mm.hi > mm.lo ? ((v - mm.lo) / (mm.hi - mm.lo)) * 100.0 : 0);
+
   return comunasBase.map((c, idx) => {
     const ine = String(c.comuna_ine);
     const d = c.demografia || {};
@@ -3584,6 +3637,23 @@ function buildComunaRows() {
     const _activosSalmon = Number(_acuicG3.centros_operativos_activos) || 0;
     const _snaspeConc = CONCESIONES_SNASPE_MAP[ine] !== undefined ? CONCESIONES_SNASPE_MAP[ine] : 0;
     const _trabSii = Number((g4.estructura_empresarial_sii || {}).trabajadores_dependientes_sii) || 0;
+    const _pop = Number(d.censo_2024_poblacion) || 0;
+    const _presMclp = Number((g1.finanzas_sinim || {}).presupuesto_municipal_anual_mclp) || 0;
+    const _fndrMclp = Number((g1.inversion_publica || {}).fndr_asignado_estimado_mclp) || 0;
+    const _fndr23Ejec = Number((g1.inversion_publica || {}).fndr_gore_2023_ejecutado_mclp) || 0;
+    const _roy25 = Number((g1.finanzas_sinim || {}).fet_royalty_minero_2025_mclp) || 0;
+    const _padron = Number((g1.autoridades || {}).padron_electoral_nov_2025) || 0;
+    const _empSii = Number((g4.estructura_empresarial_sii || {}).numero_empresas_activas) || 0;
+    const _ventasMuf = Number((g4.estructura_empresarial_sii || {}).ventas_anuales_estimadas_miles_uf || (g4.estructura_empresarial_sii || {}).ventas_anuales_total_uf) || 0;
+    const _projSeia = Number((g4.proyectos_seia || {}).proyectos_aprobados_historicos) || 0;
+    const _invSeia = Number((g4.proyectos_seia || {}).inversion_aprobada_acumulada_mmusd) || 0;
+    const _rawA = _aislRaw[idx];
+    const _indiceAislamiento = Number((0.25 * (
+      _normMM(_rawA.saidi, _mmSaidi) +
+      _normMM(_rawA.sinNet, _mmSinNet) +
+      _normMM(_rawA.tViaje, _mmTViaje) +
+      _normMM(_rawA.sobre, _mmSobre)
+    )).toFixed(1));
 
     return {
       id: idx + 1,
@@ -3602,7 +3672,10 @@ function buildComunaRows() {
       pobreza_multidim_pct: POBREZA_MULTIDIMENSIONAL_MAP[ine] !== undefined ? POBREZA_MULTIDIMENSIONAL_MAP[ine] : (Number(p.pobreza_multidimensional_pct) || 0),
       superficie_snaspe_pct: Number(conaf.superficie_protegida_pct) || 0,
       unidades_snaspe: (conaf.unidades_snaspe || []).join(', '),
-      ruta7_pavimentada_km: Number(con.ruta7_km_pavimentados) || 0,
+      ruta7_pavimentada_km: Math.min(
+        Number(con.ruta7_km_pavimentados) || 0,
+        Number((g11.conectividad_terrestre || {}).red_vial_pavimentada_km) || 0
+      ),
       ruta7_ripio_km: Number(con.ruta7_km_ripio) || 0,
       dependencia_barcaza: con.dependencia_barcaza || '-',
       salud_principal: (g8.salud_diferenciada?.red_hospitalaria || {}).establecimiento_hospitalario || eq.salud_principal || '-',
@@ -3681,7 +3754,9 @@ function buildComunaRows() {
       saidi_horas_anual: Number((g2.sistema_electrico || {}).horas_interrupcion_saidi_anual) || 0,
       tarifa_bt1_clp: Number((g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh) || 0,
       costo_diesel_aislado_clp: Number((g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh) || COSTO_DIESEL_AISLADO_MAP[ine] || 0,
-      internet_fijo_pct: Number((g2.telecomunicaciones || {}).penetracion_internet_fijo_hogares_pct) || 0,
+      internet_fijo_pct: (g11.conectividad_digital && Number.isFinite(Number(g11.conectividad_digital.cobertura_fibra_hogar_pct)))
+        ? Number(g11.conectividad_digital.cobertura_fibra_hogar_pct)
+        : (Number((g2.telecomunicaciones || {}).penetracion_internet_fijo_hogares_pct) || 0),
       biomasa_salmon_ton: Number((g3.concesiones_acuicolas || {}).biomasa_cosechada_ton_anual) || 0,
       antibioticos_ica_g_ton: Number((g3.concesiones_acuicolas || {}).indice_consumo_antibioticos_ica_g_ton) || 0,
       amerb_decretadas: Number((g3.concesiones_acuicolas || {}).amerb_decretadas_cantidad) || 0,
@@ -3803,23 +3878,31 @@ function buildComunaRows() {
 
       // 3. Energía y Biomasa (INFOR / CNE / SEC)
       consumo_lena_m3_solidos_anual: CONSUMO_LENA_SOLIDOS_MAP[ine] !== undefined ? CONSUMO_LENA_SOLIDOS_MAP[ine] : 0,
-      consumo_lena_m3_hogar_anio: CONSUMO_LENA_HOGAR_MAP[ine] !== undefined ? CONSUMO_LENA_HOGAR_MAP[ine] : 0,
       informalidad_lena_pct: INFORMALIDAD_LENA_MAP[ine] !== undefined ? INFORMALIDAD_LENA_MAP[ine] : 75.0,
       costo_real_generacion_diesel_kwh_clp: COSTO_DIESEL_AISLADO_MAP[ine] !== undefined ? COSTO_DIESEL_AISLADO_MAP[ine] : 0.0,
       subsidio_fiscal_diesel_kwh_clp: SUBSIDIO_DIESEL_MAP[ine] !== undefined ? SUBSIDIO_DIESEL_MAP[ine] : 0.0,
+      indice_aislamiento_multimodal: _indiceAislamiento,
 
-      // 4. Territorio, Maritorio, Economía y Gobernanza (SUBPESCA / ODEPA / BCCh / CMF / DIPRES / SINIM)
+      // 4. Territorio, Maritorio, Economía y Gobernanza (SUBPESCA / ODEPA / BCCh / CMF / DIPRES / SINIM / SERNAGEOMIN / BBNN)
       ecmpo_solicitadas_ha: ECMPO_SOLICITADAS_HA_MAP[ine] !== undefined ? ECMPO_SOLICITADAS_HA_MAP[ine] : 0,
       concesiones_acuicolas_en_snaspe: _snaspeConc,
       desembarque_artesanal_ton: Number(_acuicG3.desembarque_artesanal_ton_anual) || 0,
       tasa_ocupacion_concesiones_pct: _concSalmon > 0 ? Number(((_activosSalmon / _concSalmon) * 100).toFixed(1)) : 0,
       proporcion_concesiones_en_snaspe_pct: _concSalmon > 0 ? Number(((_snaspeConc / _concSalmon) * 100).toFixed(1)) : 0,
       trabajadores_sii_por_centro_activo: _activosSalmon > 0 ? Number((_trabSii / _activosSalmon).toFixed(1)) : 0,
-      cabezas_bovinos_caf: BOVINOS_CAF_MAP[ine] !== undefined ? BOVINOS_CAF_MAP[ine] : 0,
-      cabezas_ovinos_caf: OVINOS_CAF_MAP[ine] !== undefined ? OVINOS_CAF_MAP[ine] : 0,
+      ventas_sii_muf: _ventasMuf,
+      ventas_por_empresa_uf: _empSii > 0 ? Math.round((_ventasMuf * 1000) / _empSii) : 0,
+      inversion_por_proyecto_seia_mmusd: _projSeia > 0 ? Number((_invSeia / _projSeia).toFixed(2)) : 0,
+      suelo_fiscal_bbnn_pct: Number((g3.tenencia_tierra_conservacion || {}).tierra_fiscal_bienes_nacionales_pct) || 0,
+      suelo_privado_pct: Number((g3.tenencia_tierra_conservacion || {}).propiedad_privada_y_subdivision_pct) || 0,
+      fndr_per_capita_mclp: _pop > 0 ? Number(((_fndrMclp * 1000) / _pop).toFixed(1)) : 0,
+      fndr_gore_2023_per_capita_mclp: _pop > 0 ? Number(((_fndr23Ejec * 1000) / _pop).toFixed(1)) : 0,
+      royalty_fet_peso_presupuesto_pct: _presMclp > 0 ? Number(((_roy25 / _presMclp) * 100).toFixed(1)) : 0,
+      participacion_municipales_2024_pct: Number((g1.autoridades || {}).participacion_electoral_pct) || 0,
+      ratio_padron_poblacion_pct: _pop > 0 ? Number(((_padron / _pop) * 100).toFixed(1)) : 0,
       sucursales_banca_privada_cmf: BANCA_PRIVADA_MAP[ine] !== undefined ? BANCA_PRIVADA_MAP[ine] : 0,
       puntos_cajavecina_bancoestado: CAJAVECINA_MAP[ine] !== undefined ? CAJAVECINA_MAP[ine] : 0,
-      tasa_aprobacion_rs_sni_pct: RS_SNI_MAP[ine] !== undefined ? RS_SNI_MAP[ine] : 37.5,
+      tasa_aprobacion_rs_sni_pct: RS_SNI_MAP[ine] !== undefined ? RS_SNI_MAP[ine] : 31.5,
       autoidentificacion_indigena_pct: AUTOIDENTIFICACION_INDIGENA_MAP[ine] !== undefined ? AUTOIDENTIFICACION_INDIGENA_MAP[ine] : 28.7,
       comunidades_indigenas_conadi: COMUNIDADES_CONADI_MAP[ine] !== undefined ? COMUNIDADES_CONADI_MAP[ine] : 0,
       gasto_cultural_per_capita_clp: GASTO_CULTURAL_MAP[ine] !== undefined ? GASTO_CULTURAL_MAP[ine] : 0,
@@ -4156,7 +4239,19 @@ function pushSpatialNode(raw) {
 }
 
 // 1) Hub Gobernanza: 01_gob_poder_finanzas.json (13 nodos)
+const GOB_NODE_OVERRIDES = {
+  node_gore_aysen: { mag: 78950, label: 'Presupuesto FNDR Vigente', titular: 'Gobernador Regional: Marcelo Santana Vargas' },
+  node_dpr_aysen: { mag: 3850, label: 'Presupuesto Operacional', titular: 'Delegación Presidencial Regional (Ministerio del Interior)' },
+  node_cgr_aysen: { mag: 2420, label: 'Presupuesto Fiscalización', titular: 'Contraloría General de la República — Sede Regional Aysén' }
+};
 (wp01.nodos_georreferenciados || []).forEach(n => {
+  const atr = n.atributos || {};
+  const ov = GOB_NODE_OVERRIDES[n.id];
+  const fin = (wp01ByIne[String(n.comuna_ine)] || {}).finanzas_sinim || {};
+  const aut = (wp01ByIne[String(n.comuna_ine)] || {}).autoridades || {};
+  const munMag = Number(atr.presupuesto_anual_mclp || n.presupuesto_anual_mclp || fin.presupuesto_municipal_anual_mclp);
+  const munAlcalde = atr.alcalde_titular || n.alcalde_titular || aut.alcalde_nombre;
+  const munCleanName = String(n.nombre || '').replace(/\s*\(Edificio Consistorial\)\s*/i, '').trim();
   pushSpatialNode({
     id: `gob_${n.id}`,
     nombre: n.nombre,
@@ -4166,33 +4261,47 @@ function pushSpatialNode(raw) {
     comuna_ine: n.comuna_ine,
     lat: n.lat,
     lon: n.lng,
-    magnitudeValue: n.presupuesto_anual_mclp || n.presupuesto_fndr_anual_mclp || 4500,
+    magnitudeValue: ov ? ov.mag : (Number.isFinite(munMag) && munMag > 0 ? munMag : 2050),
     magnitudeUnit: 'M$',
-    magnitudeLabel: 'Presupuesto Anual',
-    titular: n.alcalde_titular || n.gobernador_regional || n.delegado_presidencial || 'Estado de Chile',
+    magnitudeLabel: ov ? ov.label : 'Presupuesto Anual',
+    titular: ov ? ov.titular : `${munCleanName} · Alcalde: ${munAlcalde || 'Alcaldía Municipal'}`,
     sourceUrl: n.source_url || 'https://datos.sinim.gov.cl/',
     bufferGenerator: false,
     color: '#4338ca'
   });
 });
 
-// 2) Hub Energia y Telecom: 02_energia_combustibles_telecom.json + CNE + FOA
+// 2) Hub Energia y Telecom: 02_energia_combustibles_telecom.json (solo nodos unicos no duplicados en CNE/FOA) + CNE + FOA
+const WP02_UNIQUE_INFRA_OVERRIDES = {
+  'nodo-combustibles-chacabuco': {
+    mag: 18500,
+    unit: 'm³',
+    label: 'Capacidad Almacenamiento',
+    titular: 'Enex / Copec S.A.'
+  },
+  'nodo-elec-subestacion-coyhaique': {
+    mag: 66,
+    unit: 'kV',
+    label: 'Tensión Nominal',
+    titular: 'Edelaysen S.A.'
+  }
+};
 (wp02.nodos_georreferenciados || []).forEach(n => {
-  const isPower = Number(n.potencia_mw) > 0;
-  const isFoa = Number(n.capacidad_diseno_tbps) > 0;
+  const ov = WP02_UNIQUE_INFRA_OVERRIDES[String(n.id)];
+  if (!ov) return; // Evita duplicar los 22 nodos centrales/FOA ya provistos por cneRaw y foaRaw con unidades reales
   pushSpatialNode({
     id: `ene_${n.id}`,
     nombre: n.nombre,
-    tipo: n.tipo || 'Infraestructura Energetica / Telecom',
+    tipo: n.tipo || 'Infraestructura Energetica',
     layerKey: 'centrales_electricas',
     hubId: 'energia',
     comuna_ine: n.comuna_ine,
     lat: n.lat,
     lon: n.lng,
-    magnitudeValue: isPower ? n.potencia_mw : (isFoa ? n.capacidad_diseno_tbps : (n.capacidad_m3 || 12)),
-    magnitudeUnit: isPower ? 'MW' : (isFoa ? 'Tbps' : 'm3'),
-    magnitudeLabel: isPower ? 'Potencia Instalada' : (isFoa ? 'Capacidad Troncal FOA' : 'Capacidad'),
-    titular: n.operador || n.operador_troncal || 'Edelaysen / SUBTEL',
+    magnitudeValue: ov.mag,
+    magnitudeUnit: ov.unit,
+    magnitudeLabel: ov.label,
+    titular: ov.titular,
     sourceUrl: n.source_url || 'https://energiaabierta.cl/',
     bufferGenerator: true,
     bufferRadiusM: 25000,
@@ -4243,13 +4352,71 @@ if (fs.existsSync(foaRawPath)) {
       sourceUrl: 'https://www.subtel.gob.cl/',
       bufferGenerator: true,
       bufferRadiusM: 25000,
-      color: '#0284c7'
+      color: '#4f46e5'
     });
   });
 }
 
-// 3) Hub Salmonicultura y Maritorio: 03_concesiones_tierra_mar.json (38 nodos)
+// 3) Hub Salmonicultura y Maritorio (33 acuicolas/caletas) + Hub Inversion Mineria SERNAGEOMIN (5 faenas)
+const MINERIA_FAENAS_SPECS = {
+  node_mina_el_toqui: {
+    id: 'inv_min_el_toqui',
+    mag: 18500,
+    unit: 'ha',
+    label: 'Concesiones Mineras',
+    titular: 'SCM El Toqui (Zinc, Plomo, Oro y Plata) · Fiscalización SERNAGEOMIN'
+  },
+  node_distrito_cerro_bayo: {
+    id: 'inv_min_cerro_bayo',
+    mag: 29450,
+    unit: 'ha',
+    label: 'Concesiones Mineras',
+    titular: 'Cía. Minera Cerro Bayo / Equus Mining (Oro y Plata) · SERNAGEOMIN'
+  },
+  node_mina_fachinal: {
+    id: 'inv_min_fachinal',
+    mag: 12800,
+    unit: 'ha',
+    label: 'Concesiones Mineras',
+    titular: 'Coeur Mining / Cía. Minera Cerro Bayo (Oro y Plata en cierre/exploración) · SERNAGEOMIN'
+  },
+  node_puerto_cristal_mina_silva: {
+    id: 'inv_min_puerto_cristal_mina_silva',
+    mag: 4200,
+    unit: 'ha',
+    label: 'Sitio y Pertenencias',
+    titular: 'Monumento Histórico Nacional CMN / Pasivo Ambiental Minero SERNAGEOMIN (Plomo y Zinc)'
+  },
+  node_prospecto_katterfeld: {
+    id: 'inv_min_prospecto_katterfeld',
+    mag: 8600,
+    unit: 'ha',
+    label: 'Concesiones de Exploración',
+    titular: 'Exploración Polimetálica Katterfeld · Catastro SERNAGEOMIN'
+  }
+};
 (wp03.nodos_georreferenciados || []).forEach(n => {
+  const minSpec = MINERIA_FAENAS_SPECS[n.id];
+  if (minSpec) {
+    pushSpatialNode({
+      id: minSpec.id,
+      nombre: n.nombre,
+      tipo: n.tipo || 'Faena o Yacimiento Minero',
+      layerKey: 'mineria_faenas',
+      hubId: 'inversion',
+      comuna_ine: n.comuna_ine,
+      lat: n.lat,
+      lon: n.lng,
+      magnitudeValue: minSpec.mag,
+      magnitudeUnit: minSpec.unit,
+      magnitudeLabel: minSpec.label,
+      titular: minSpec.titular,
+      sourceUrl: n.source_url || 'https://www.sernageomin.cl/catastro-minero/',
+      bufferGenerator: false,
+      color: '#b45309'
+    });
+    return;
+  }
   const hasConc = Number(n.concesiones_integradas) > 0;
   const hasPesc = Number(n.pescadores_inscritos) > 0;
   pushSpatialNode({
@@ -4272,7 +4439,33 @@ if (fs.existsSync(foaRawPath)) {
 });
 
 // 4) Hub Inversion y SEIA: 04_inversion_seia_economia.json + SEIA + JAC
+const SEIA_OFFICIAL_SPECS = {
+  'seia-01-parque-eolico-alto-baguales': { mmusd: 14.5, titular: 'Edelaysen S.A. (Grupo Saesa)' },
+  'seia-02-minera-el-toqui-bocamina': { mmusd: 68.0, titular: 'Sociedad Contractual Minera El Toqui' },
+  'seia-03-relleno-sanitario-coyhaique': { mmusd: 12.4, titular: 'Ilustre Municipalidad de Coyhaique / GORE Aysén' },
+  'seia-04-aerodromo-teniente-vidal': { mmusd: 18.5, titular: 'Dirección de Aeropuertos MOP' },
+  'seia-05-puerto-chacabuco-terminal-maritimo': { mmusd: 42.0, titular: 'Empresa Portuaria Chacabuco (EMPORCHA) / DOP MOP' },
+  'seia-06-planta-proceso-aquachile-chacabuco': { mmusd: 85.0, titular: 'Empresas AquaChile S.A.' },
+  'seia-07-central-hidroelectrica-los-condores': { mmusd: 120.0, titular: 'Edelaysen S.A. / Energía Austral' },
+  'seia-08-ces-fiordo-aysen-mowi': { mmusd: 16.8, titular: 'Mowi Chile S.A.' },
+  'seia-09-ces-canal-jacaf-cisnes': { mmusd: 15.2, titular: 'Salmones Multi X S.A.' },
+  'seia-10-rampa-conectividad-puerto-cisnes': { mmusd: 14.8, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
+  'seia-11-mini-hidro-la-junta': { mmusd: 19.5, titular: 'Edelaysen S.A.' },
+  'seia-12-rampa-melinka-guaitecas': { mmusd: 16.4, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
+  'seia-13-ces-isla-gran-guaiteca': { mmusd: 14.0, titular: 'Salmones Yadrán S.A.' },
+  'seia-14-minera-cerro-bayo-chile-chico': { mmusd: 145.0, titular: 'Compañía Minera Cerro Bayo Ltda. / Equus Mining' },
+  'seia-15-barcaza-conectividad-lago-general-carrera': { mmusd: 22.0, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
+  'seia-16-pavimentacion-ruta-7-cerro-castillo': { mmusd: 64.0, titular: 'Dirección de Vialidad MOP' },
+  'seia-17-mini-hidro-cochrane': { mmusd: 28.5, titular: 'Edelaysen S.A.' },
+  'seia-18-conectividad-puerto-yungay-tortel': { mmusd: 19.2, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
+  'seia-19-conectividad-lago-ohiggins-rampa': { mmusd: 15.8, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
+  'seia-20-mejoramiento-ruta-x12-lago-verde': { mmusd: 24.0, titular: 'Dirección de Vialidad MOP' }
+};
 (wp04.nodos_georreferenciados || []).forEach(n => {
+  const sp = SEIA_OFFICIAL_SPECS[n.id];
+  const atr = n.atributos || {};
+  const mmusd = sp ? sp.mmusd : (Number(atr.monto_inversion_mmusd || n.monto_inversion_mmusd) || 18.5);
+  const titular = sp ? sp.titular : (atr.titular || n.titular || 'Titular SEIA Oficial');
   pushSpatialNode({
     id: `inv_${n.id}`,
     nombre: n.nombre,
@@ -4282,10 +4475,10 @@ if (fs.existsSync(foaRawPath)) {
     comuna_ine: n.comuna_ine,
     lat: n.lat,
     lon: n.lng,
-    magnitudeValue: n.monto_inversion_mmusd || n.capacidad_mw || n.longitud_km || 18.5,
-    magnitudeUnit: n.monto_inversion_mmusd ? 'MM US$' : (n.capacidad_mw ? 'MW' : 'km'),
-    magnitudeLabel: n.monto_inversion_mmusd ? 'Inversion SEIA' : 'Escala Tecnica',
-    titular: n.titular || 'SEA SEIA / MOP',
+    magnitudeValue: mmusd,
+    magnitudeUnit: 'MM USD',
+    magnitudeLabel: 'Inversión RCA',
+    titular,
     sourceUrl: n.source_url || 'https://seia.sea.gob.cl/',
     bufferGenerator: false,
     color: '#0f766e'
@@ -4299,7 +4492,14 @@ if (fs.existsSync(jacRawPath)) {
     const matchSpec = aerSpecs.find(s =>
       (ae.nombre && s.nombre && (ae.nombre.toLowerCase().includes(s.nombre.toLowerCase().replace('aeródromo ', '')) || s.comuna === ae.comuna))
     );
-    const pistaInfo = matchSpec ? ` · Pista ${matchSpec.pista_longitud_m} m (${matchSpec.carpeta})${matchSpec.vuelos_subsidiados_mtt ? ' · Vuelo subsidiado MTT' : ''}` : '';
+    const nameAscii = normAscii(ae.nombre || '');
+    const isBalmaceda = nameAscii.includes('balmaceda');
+    const isTenienteVidal = nameAscii.includes('teniente vidal');
+    const pistaInfo = isBalmaceda
+      ? ' · Pista 2.501 m (Asfalto)'
+      : (isTenienteVidal
+        ? ' · Pista 1.500 m (Asfalto)'
+        : (matchSpec ? ` · Pista ${matchSpec.pista_longitud_m} m (${matchSpec.carpeta})${matchSpec.vuelos_subsidiados_mtt ? ' · Vuelo subsidiado MTT' : ''}` : ''));
     pushSpatialNode({
       id: `inv_jac_${idx + 1}`,
       nombre: ae.nombre,
@@ -4307,7 +4507,11 @@ if (fs.existsSync(jacRawPath)) {
       layerKey: 'proyectos_seia',
       hubId: 'inversion',
       comuna: ae.comuna,
-      magnitudeValue: ae.pasajeros_anuales || 3500,
+      comuna_ine: isBalmaceda || isTenienteVidal ? '11101' : undefined,
+      localidad: isBalmaceda ? 'Balmaceda' : ae.comuna,
+      lat: isBalmaceda ? -45.9160 : (isTenienteVidal ? -45.5940 : undefined),
+      lon: isBalmaceda ? -71.6890 : (isTenienteVidal ? -72.1060 : undefined),
+      magnitudeValue: isBalmaceda ? 682000 : (isTenienteVidal ? 18200 : (ae.pasajeros_anuales || 3500)),
       magnitudeUnit: 'pasajeros/año',
       magnitudeLabel: 'Flujo Aereo Anual',
       titular: `DGAC / JAC (${ae.rol || 'Conectividad Aerea'}${pistaInfo})`,
@@ -5279,19 +5483,34 @@ spatialNodesByLayer['caletas_puertos'] = spatialNodes
   });
 });
 
-spatialNodesByLayer['mineria_faenas'] = spatialNodes
-  .filter(n => n.layerKey === 'concesiones_acuicolas' && /mina|minero|prospecto/i.test(`${n.nombre} ${n.tipo}`))
-  .map(n => ({ ...n, layerKey: 'mineria_faenas', color: '#b45309' }));
+spatialNodesByLayer['centrales_electricas_puros'] = (spatialNodesByLayer['centrales_electricas'] || [])
+  .filter(n => !String(n.id).startsWith('ene_foa_') && !/fibra|foa|telecom|5g|antena/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
+  .map(n => ({ ...n, layerKey: 'centrales_electricas_puros', color: '#0284c7' }));
 
-// Aerodromos DGAC / JAC puros (unificando jacRaw + transporte_aereo_jac_dgac.json)
+spatialNodesByLayer['nodos_foa'] = (spatialNodesByLayer['centrales_electricas'] || [])
+  .filter(n => String(n.id).startsWith('ene_foa_') || /fibra|foa|telecom|5g|antena/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
+  .map(n => ({ ...n, layerKey: 'nodos_foa', color: '#4f46e5' }));
+
+spatialNodesByLayer['mineria_faenas'] = spatialNodes
+  .filter(n => n.layerKey === 'mineria_faenas' || (n.layerKey === 'concesiones_acuicolas' && /mina|minero|prospecto/i.test(`${n.nombre} ${n.tipo}`)))
+  .map(n => ({ ...n, layerKey: 'mineria_faenas', hubId: 'inversion', color: '#b45309' }));
+
+// Aerodromos DGAC / JAC puros (unificando jacRaw + transporte_aereo_jac_dgac.json, sin duplicar Teniente Vidal ni inv_seia-04)
 spatialNodesByLayer['aerodromos_dgac'] = (() => {
   const seenAer = new Set();
   const out = [];
+  const canonAerName = s => normAscii(String(s || ''))
+    .replace(/\(.*?\)/g, '')
+    .replace(/\baerodromo\b|\baeropuerto\b|\bcomercial\b|\bred interior\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
   const aerSpecs = Array.isArray(conectividadMultimodal.redAeroportuaria) ? conectividadMultimodal.redAeroportuaria : [];
   spatialNodes
-    .filter(n => n.layerKey === 'proyectos_seia' && /aerodromo|aeropuerto|pista/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
+    .filter(n => n.layerKey === 'proyectos_seia' && !String(n.id).startsWith('inv_seia-') && /aerodromo|aeropuerto|pista/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
     .forEach(n => {
-      seenAer.add(normAscii(n.nombre).replace('aerodromo ', '').trim());
+      const kName = canonAerName(n.nombre);
+      if (seenAer.has(kName)) return;
+      seenAer.add(kName);
       out.push({ ...n, layerKey: 'aerodromos_dgac', color: '#0369a1', bufferGenerator: true, bufferRadiusM: 25000 });
     });
   const EXTRA_AER_COORDS = {
@@ -5305,7 +5524,7 @@ spatialNodesByLayer['aerodromos_dgac'] = (() => {
     SCEB: { lat: -47.185, lon: -72.340, ine: '11301', comuna: 'Cochrane' }
   };
   aerSpecs.forEach(ae => {
-    const keyName = normAscii(ae.nombre).replace('aerodromo ', '').trim();
+    const keyName = canonAerName(ae.nombre);
     if (seenAer.has(keyName)) return;
     seenAer.add(keyName);
     const crd = EXTRA_AER_COORDS[ae.codigo_oaci] || { lat: -45.57, lon: -72.07, ine: '11101', comuna: ae.comuna || 'Coyhaique' };
@@ -5334,7 +5553,7 @@ spatialNodesByLayer['aerodromos_dgac'] = (() => {
 })();
 
 spatialNodesByLayer['proyectos_seia_puros'] = spatialNodes
-  .filter(n => n.layerKey === 'proyectos_seia' && !/aerodromo|aeropuerto|pista/i.test(normAscii(`${n.nombre} ${n.tipo}`)))
+  .filter(n => n.layerKey === 'proyectos_seia' && !String(n.id).startsWith('inv_jac_'))
   .map(n => ({ ...n, layerKey: 'proyectos_seia_puros', color: '#0f766e' }));
 
 // Padron Completo Compacto de 745 Concesiones Acuicolas Georreferenciadas (245 Activos, 500 Otorgadas sin operacion, 312 En SNASPE)
@@ -5547,12 +5766,12 @@ const spatialLayersCatalog = [
   { id: 'concesiones_acuicolas_padron', label: 'Padrón Acuícola Completo (745 Concesiones / 245 Activas)', hubId: 'salmonicultura', color: '#0059c5', count: concesionesPadronCompact.total, geometryType: 'point' },
   { id: 'concesiones_acuicolas', label: 'Barrios ACS, Concesiones Emblemáticas y Maritorio', hubId: 'salmonicultura', color: '#0059c5', count: (spatialNodesByLayer['concesiones_acuicolas'] || []).length, geometryType: 'point' },
   { id: 'caletas_puertos', label: 'Caletas Pesqueras Artesanales y Terminales Portuarios', hubId: 'salmonicultura', color: '#0e7490', count: (spatialNodesByLayer['caletas_puertos'] || []).length, geometryType: 'point' },
-  { id: 'mineria_faenas', label: 'Faenas Mineras y Pasivos SERNAGEOMIN', hubId: 'salmonicultura', color: '#b45309', count: (spatialNodesByLayer['mineria_faenas'] || []).length, geometryType: 'point' },
+  { id: 'mineria_faenas', label: 'Faenas Mineras y Pasivos SERNAGEOMIN', hubId: 'inversion', color: '#b45309', count: (spatialNodesByLayer['mineria_faenas'] || []).length, geometryType: 'point' },
   { id: 'aerodromos_dgac', label: 'Aeródromos y Pistas Regionales (DGAC / JAC)', hubId: 'inversion', color: '#0369a1', count: (spatialNodesByLayer['aerodromos_dgac'] || []).length, geometryType: 'point' },
   { id: 'proyectos_seia_puros', label: 'Proyectos de Inversión Ambiental (SEIA)', hubId: 'inversion', color: '#0f766e', count: (spatialNodesByLayer['proyectos_seia_puros'] || []).length, geometryType: 'point' },
   { id: 'proyectos_seia', label: 'Proyectos SEIA y Aeródromos JAC (Combinado)', hubId: 'inversion', color: '#0f766e', count: (spatialNodesByLayer['proyectos_seia'] || []).length, geometryType: 'point' },
-  { id: 'centrales_electricas_puros', label: 'Centrales Eléctricas CNE y Redes Medianas', hubId: 'energia', color: '#0284c7', count: spatialNodes.filter(n => n.layerKey === 'centrales_electricas' && !/fibra|foa|telecom|5g|antena/i.test(normAscii(`${n.nombre} ${n.tipo}`))).length, geometryType: 'point' },
-  { id: 'nodos_foa', label: 'Nodos Fibra Óptica Austral (FOA / SUBTEL)', hubId: 'energia', color: '#4f46e5', count: spatialNodes.filter(n => n.layerKey === 'centrales_electricas' && /fibra|foa|telecom|5g|antena/i.test(normAscii(`${n.nombre} ${n.tipo}`))).length, geometryType: 'point' },
+  { id: 'centrales_electricas_puros', label: 'Centrales Eléctricas CNE y Redes Medianas', hubId: 'energia', color: '#0284c7', count: (spatialNodesByLayer['centrales_electricas_puros'] || []).length, geometryType: 'point' },
+  { id: 'nodos_foa', label: 'Nodos Fibra Óptica Austral (FOA / SUBTEL)', hubId: 'energia', color: '#4f46e5', count: (spatialNodesByLayer['nodos_foa'] || []).length, geometryType: 'point' },
   { id: 'centrales_electricas', label: 'Centrales Eléctricas y Nodos FOA (Combinado)', hubId: 'energia', color: '#0284c7', count: (spatialNodesByLayer['centrales_electricas'] || []).length, geometryType: 'point' },
   { id: 'hospitales_postas', label: 'Hospitales DEIS, CESFAM y Postas Rurales', hubId: 'salud', color: '#be185d', count: (spatialNodesByLayer['hospitales_postas'] || []).length, geometryType: 'point' },
   { id: 'escuelas_slep', label: 'Escuelas SLEP y Educación Superior', hubId: 'social', color: '#2563eb', count: (spatialNodesByLayer['escuelas_slep'] || []).length, geometryType: 'point' },
@@ -5668,6 +5887,49 @@ const bundle = {
     balmaceda_pasajeros_jac: (wp11 && wp11.series_multianuales && wp11.series_multianuales.balmaceda_pasajeros_jac) || [],
     emporcha_toneladas: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_toneladas_transferidas) || [],
     emporcha_cruceros: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_pasajeros_cruceros) || [],
+    pib_regional_nominal_mmclp: (() => {
+      const sObj = (wp04.resumen_regional && Array.isArray(wp04.resumen_regional.series_historicas_regionales))
+        ? wp04.resumen_regional.series_historicas_regionales.find(s => s.indicador === 'pib_regional_nominal_mmclp')
+        : null;
+      return (sObj && Array.isArray(sObj.valores))
+        ? sObj.valores.map(v => ({ periodo: String(v.periodo), fecha: v.fecha, valor: Number(v.valor) || 0 }))
+        : [];
+    })(),
+    generacion_electrica_anual: (wp02.resumen_regional && Array.isArray(wp02.resumen_regional.series_historicas_regionales))
+      ? wp02.resumen_regional.series_historicas_regionales.map(r => {
+          const tot = Number(r.generacion_electrica_total_gwh) || 0;
+          const diesel = Number(r.generacion_termica_diesel_gwh) || 0;
+          return {
+            periodo: String(r.ano),
+            anio: String(r.ano),
+            generacion_total_gwh: tot,
+            generacion_hidro_gwh: Number(r.generacion_hidroelectrica_gwh) || 0,
+            generacion_diesel_gwh: diesel,
+            generacion_eolica_gwh: Number(r.generacion_eolica_gwh) || 0,
+            generacion_solar_gwh: Number(r.generacion_solar_gwh) || 0,
+            participacion_diesel_matriz_pct: tot > 0 ? Number(((diesel / tot) * 100).toFixed(1)) : 0
+          };
+        })
+      : [],
+    fndr_asignado_vs_ejecutado_2015_2025: (() => {
+      const hist = (goreFndrSeries && goreFndrSeries.serie_fndr_regional_datosgob_2015_2023) || {};
+      const rows = Object.keys(hist).sort().map(yr => ({
+        periodo: String(yr),
+        anio: String(yr),
+        total_iniciativas: Number(hist[yr].total_iniciativas) || 0,
+        asignado_mclp: Number(hist[yr].asignado_mclp) || 0,
+        gasto_actual_mclp: Number(hist[yr].gasto_actual_mclp) || 0,
+        tasa_ejecucion_pct: Number(hist[yr].tasa_ejecucion_pct) || 0
+      }));
+      const dip = (goreFndrSeries && goreFndrSeries.dipres_ley_presupuestos_fndr) || {};
+      if (dip['2024_vigente_mclp']) {
+        rows.push({ periodo: '2024', anio: '2024', asignado_mclp: Number(dip['2024_vigente_mclp']) });
+      }
+      if (dip['2025_inicial_mclp']) {
+        rows.push({ periodo: '2025', anio: '2025', asignado_mclp: Number(dip['2025_inicial_mclp']) });
+      }
+      return rows;
+    })(),
     snaspe_por_parque_anual: (wp06.resumen_regional && Array.isArray(wp06.resumen_regional.series_historicas_regionales))
       ? wp06.resumen_regional.series_historicas_regionales.map(row => ({
           anio: String(row.anio),

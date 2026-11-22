@@ -1145,7 +1145,10 @@
         "petroleo para luz",
         "sistemas aislados diesel",
         "microredes diesel",
-        "generacion cara"
+        "generacion cara",
+        "costo de generacion diesel aislado",
+        "costo real generacion diesel",
+        "costo diesel aislado"
       ]
     },
     {
@@ -1662,7 +1665,6 @@
         "proveedores locales",
         "licitaciones locales",
         "compras municipales locales",
-        "fuga de compras",
         "compras publicas"
       ]
     },
@@ -1821,7 +1823,12 @@
         "territorio protegido",
         "conaf parques",
         "santuario de la naturaleza",
-        "monumento natural"
+        "monumento natural",
+        "superficie snaspe",
+        "porcentaje snaspe",
+        "porcentaje de superficie snaspe",
+        "porcentaje de areas protegidas",
+        "areas protegidas snaspe"
       ]
     },
     {
@@ -2497,6 +2504,224 @@
         "trabajadores por centro activo",
         "arraigo laboral salmonicultura",
         "empleo por centro activo"
+      ]
+    },
+    {
+      "id": "subsidio_fiscal_diesel_kwh_clp",
+      "canonicalId": "wp02_subsidio_diesel",
+      "name": "Subsidio Fiscal a Generación Diésel Aislada",
+      "shortName": "Subsidio Fiscal Diésel",
+      "unit": "$/kWh",
+      "hub": "energia",
+      "hubTitle": "III. Energía, Combustibles y Conectividad Digital",
+      "nodeId": 12,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "subsidio fiscal diesel",
+        "subsidio diesel",
+        "subsidio electrico",
+        "subsidio tarifa diesel",
+        "subsidio sistemas aislados"
+      ]
+    },
+    {
+      "id": "indice_aislamiento_multimodal",
+      "canonicalId": "wp11_aislamiento_multimodal",
+      "name": "Índice Compuesto de Aislamiento Multimodal",
+      "shortName": "Índice Aislamiento",
+      "unit": "Índice (0-100)",
+      "hub": "energia",
+      "hubTitle": "III. Energía, Combustibles y Conectividad Digital",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "indice de aislamiento",
+        "aislamiento multimodal",
+        "vulnerabilidad energetico digital",
+        "indice aislamiento"
+      ]
+    },
+    {
+      "id": "ventas_sii_muf",
+      "canonicalId": "wp04_ventas_sii_muf",
+      "name": "Ventas Anuales Declaradas SII",
+      "shortName": "Ventas SII (MUF)",
+      "unit": "Miles de UF",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "ventas sii",
+        "ventas anuales sii",
+        "miles de uf",
+        "facturacion empresas sii",
+        "ventas en uf"
+      ]
+    },
+    {
+      "id": "ventas_por_empresa_uf",
+      "canonicalId": "wp04_ventas_por_empresa_uf",
+      "name": "Ventas Promedio por Empresa SII",
+      "shortName": "Ventas/Empresa SII",
+      "unit": "UF/empresa",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ventas por empresa",
+        "facturacion por empresa",
+        "uf por empresa",
+        "tamano de ventas promedio"
+      ]
+    },
+    {
+      "id": "inversion_por_proyecto_seia_mmusd",
+      "canonicalId": "wp04_inversion_por_proyecto_seia",
+      "name": "Ticket Promedio por Proyecto Aprobado SEIA",
+      "shortName": "Ticket Prom. SEIA",
+      "unit": "MM USD/proyecto",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 19,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ticket promedio seia",
+        "inversion por proyecto seia",
+        "tamano proyecto seia",
+        "mm usd por proyecto"
+      ]
+    },
+    {
+      "id": "suelo_fiscal_bbnn_pct",
+      "canonicalId": "wp03_suelo_fiscal_bbnn_pct",
+      "name": "Porcentaje de Suelo Fiscal Bienes Nacionales",
+      "shortName": "% Suelo Fiscal BBNN",
+      "unit": "%",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "suelo fiscal",
+        "tierra fiscal",
+        "bienes nacionales",
+        "porcentaje suelo fiscal",
+        "tenencia fiscal"
+      ]
+    },
+    {
+      "id": "suelo_privado_pct",
+      "canonicalId": "wp03_suelo_privado_pct",
+      "name": "Porcentaje de Suelo en Propiedad Privada",
+      "shortName": "% Suelo Privado",
+      "unit": "%",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "suelo privado",
+        "propiedad privada",
+        "porcentaje de suelo privado",
+        "porcentaje suelo privado",
+        "tierra privada"
+      ]
+    },
+    {
+      "id": "fndr_per_capita_mclp",
+      "canonicalId": "wp01_fndr_per_capita",
+      "name": "Inversión FNDR Asignada Per Cápita",
+      "shortName": "FNDR Per Cápita",
+      "unit": "Miles $ CLP/hab",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fndr per capita",
+        "inversion fndr por habitante",
+        "fndr por persona",
+        "fndr per capita miles"
+      ]
+    },
+    {
+      "id": "fndr_gore_2023_per_capita_mclp",
+      "canonicalId": "wp01_fndr_2023_per_capita",
+      "name": "FNDR GORE 2023 Ejecutado Per Cápita",
+      "shortName": "FNDR 2023 Ejec./hab",
+      "unit": "Miles $ CLP/hab",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fndr ejecutado per capita",
+        "fndr 2023 per capita",
+        "gasto fndr por habitante"
+      ]
+    },
+    {
+      "id": "royalty_fet_peso_presupuesto_pct",
+      "canonicalId": "wp01_royalty_peso_pres",
+      "name": "Peso del Royalty Minero FET 2025 sobre Presupuesto",
+      "shortName": "% Royalty FET / Pres.",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
+      "nodeId": 15,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "peso royalty",
+        "porcentaje royalty presupuesto",
+        "impacto royalty minero",
+        "royalty sobre presupuesto"
+      ]
+    },
+    {
+      "id": "participacion_municipales_2024_pct",
+      "canonicalId": "wp01_part_mun_2024",
+      "name": "Participación Electoral Municipal 2024 SERVEL",
+      "shortName": "Part. Municipales 2024 (%)",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
+      "nodeId": 17,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "participacion municipales 2024",
+        "elecciones municipales 2024",
+        "participacion municipal servel"
+      ]
+    },
+    {
+      "id": "ratio_padron_poblacion_pct",
+      "canonicalId": "wp01_ratio_padron_pop",
+      "name": "Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024",
+      "shortName": "Ratio Padrón/Población (%)",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
+      "nodeId": 17,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ratio padron poblacion",
+        "padron sobre poblacion",
+        "electores sobre censo",
+        "padron vs censo"
       ]
     }
   ],

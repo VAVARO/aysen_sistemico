@@ -1764,7 +1764,11 @@
             },
             "spatialLayer": "gobernanza_obras",
             "showBuffers": false,
-            "bufferRadiusM": 25000
+            "bufferRadiusM": 25000,
+            "activeOverlays": [
+              "ruta7_tramos",
+              "nodos_foa"
+            ]
           },
           "what_it_shows": "Superpone los 10 municipios de Aysén sobre la red de conectividad física y digital.",
           "why_complex_system": "Sistemas anidados: los municipios más dependientes territorialmente coinciden con las zonas de mayor aislamiento vial."
@@ -1772,7 +1776,7 @@
         {
           "preset_id": "hub_01_02",
           "hub_id": "gobernanza",
-          "titulo": "2. Presupuesto Municipal per Cápita vs. Dependencia del FCM (%)",
+          "titulo": "2. Rigidez Presupuestaria: Presupuesto Per Cápita (Miles $/hab) vs. Dependencia del FCM (%)",
           "format_type": "bar",
           "subtype": "double_axis_bar",
           "inter_hub_cross": {
@@ -1790,15 +1794,16 @@
               "question_id": "F4_C",
               "label": "Aporte percibido del Municipio",
               "show_sample_n": true
-            }
+            },
+            "showDualAxis": true
           },
-          "what_it_shows": "Muestra la brecha entre comunas con alta dependencia del FCM (>80%) frente a centros urbanos con mayor autonomía fiscal.",
+          "what_it_shows": "Con doble eje Y (Miles $ CLP/hab vs. % FCM), evidencia cómo municipios australes reciben mayor gasto por habitante (Tortel $4.059 mil/hab y 92,8% FCM; O'Higgins $3.323 mil/hab y 91,5% FCM) frente a Coyhaique ($459 mil/hab y 46,5% FCM).",
           "why_complex_system": "Dependencia del camino: la matriz fiscal comunal perpetúa la vulnerabilidad de las comunas rurales aisladas."
         },
         {
           "preset_id": "hub_01_03",
           "hub_id": "gobernanza",
-          "titulo": "3. Cuadrantes de Autonomía Fiscal: Dependencia FCM vs. Inversión FNDR",
+          "titulo": "3. Cuadrantes de Autonomía y Compensación Fiscal: Dependencia FCM (%) vs. Inversión FNDR Per Cápita",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "inter_hub_cross": {
@@ -1810,8 +1815,8 @@
             "chartType": "scatter",
             "varX": "dependencia_fcm_pct",
             "labelX": "Dependencia del Fondo Común Municipal (%)",
-            "varY": "fndr_mclp",
-            "labelY": "Inversión FNDR Asignada (M$ CLP)",
+            "varY": "fndr_per_capita_mclp",
+            "labelY": "Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab)",
             "quadrant_labels": {
               "q1": "Alta Dependencia y Alto FNDR Compensatorio",
               "q2": "Baja Dependencia y Alto FNDR",
@@ -1821,13 +1826,13 @@
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Clasifica las 10 comunas en cuatro cuadrantes según su nivel de subsidio compensatorio del Estado.",
-          "why_complex_system": "Palancas y nodos centrales: el FNDR actúa como amortiguador para evitar el colapso operativo de municipios australes."
+          "what_it_shows": "Al expresar la inversión FNDR en términos per cápita (Miles $ CLP/hab), la correlación con la dependencia del FCM se invierte a r = +0,83 (R² = 0,69): Tortel ($5.148,5 mil/hab), O'Higgins ($3.709,4), Lago Verde ($2.824,1) y Guaitecas ($2.127,7) ocupan el Cuadrante 1 de compensación fiscal.",
+          "why_complex_system": "Palancas y nodos centrales: aunque Coyhaique (14.850 M$) y Aysén (9.800 M$) concentran el volumen nominal, el FNDR per cápita actúa efectivamente como amortiguador redistributivo (Q1) para sostener las comunas australes e insulares."
         },
         {
           "preset_id": "hub_01_04",
           "hub_id": "gobernanza",
-          "titulo": "4. Serie Multianual: Evolución Presupuestaria y Asignaciones FNDR (2015-2026)",
+          "titulo": "4. Serie Multianual Oficial: FNDR Asignado vs. Ejecutado GORE Aysén y Presupuesto Municipal (2015–2026)",
           "format_type": "line",
           "subtype": "multi_axis_series",
           "inter_hub_cross": {
@@ -1860,7 +1865,7 @@
               ],
               "datasets": [
                 {
-                  "label": "Presupuesto Municipal Regional (M$ CLP)",
+                  "label": "Presupuesto Municipal Regional Consolidado (M$ CLP)",
                   "data": [
                     39353.4,
                     41693.1,
@@ -1879,28 +1884,48 @@
                   "yAxisID": "y"
                 },
                 {
-                  "label": "Presupuesto FNDR GORE Aysén (M$ CLP)",
+                  "label": "FNDR Asignado GORE Aysén (M$ CLP · CKAN / DIPRES)",
                   "data": [
-                    46500.0,
-                    48200.0,
-                    50800.0,
-                    53400.0,
-                    56100.0,
-                    58900.0,
-                    62300.0,
-                    66700.0,
-                    69800.0,
-                    72450.0,
-                    75800.0,
+                    47242.8,
+                    64945.3,
+                    68787.4,
+                    65295.0,
+                    58446.7,
+                    17714.6,
+                    57405.1,
+                    58342.9,
+                    68333.7,
+                    75543.0,
+                    77977.0,
                     78950.0
                   ],
                   "unit": "M$ CLP",
                   "yAxisID": "y1"
+                },
+                {
+                  "label": "FNDR Ejecutado Real GORE Aysén (M$ CLP · datos.gob.cl)",
+                  "data": [
+                    43706.5,
+                    64319.9,
+                    66712.6,
+                    62209.0,
+                    58151.1,
+                    17510.2,
+                    51226.3,
+                    53409.0,
+                    61579.2
+                  ],
+                  "unit": "M$ CLP",
+                  "yAxisID": "y1",
+                  "borderDash": [
+                    4,
+                    4
+                  ]
                 }
               ]
             }
           },
-          "what_it_shows": "Evolución de los fondos públicos regionales consolidados en los últimos 11 años.",
+          "what_it_shows": "Serie histórica oficial CKAN GORE / DIPRES (2015–2026): muestra la reasignación presupuestaria de 2020 (caída FNDR a 17.714,6 M$ asignado / 17.510,2 M$ ejecutado) y la brecha anual entre presupuesto asignado y devengado (68.333,7 vs. 61.579,2 M$ [90,1%] en 2023; 75.543 M$ DIPRES en 2024 y 77.977 M$ inicial en 2025).",
           "why_complex_system": "Cambio en el tiempo: los desfases presupuestarios entre aprobación y ejecución generan fluctuaciones cíclicas de liquidez comunal."
         },
         {
@@ -1934,9 +1959,9 @@
               "promedio_valor": 2.33,
               "structural_variable": "dependencia_fcm_pct",
               "structural_by_macrozona": {
-                "norte": 79.4,
-                "centro": 58.6,
-                "sur": 86.2
+                "norte": 78.8,
+                "centro": 62.8,
+                "sur": 82.4
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -2082,7 +2107,7 @@
             }
           },
           "what_it_shows": "Compara el aporte percibido del municipio (Barómetro) frente a su dependencia efectiva de recursos externos.",
-          "why_complex_system": "Desacople perceptual: los ciudadanos en comunas con 88% de dependencia del FCM perciben mayor cercanía institucional que en la capital regional."
+          "why_complex_system": "Desacople perceptual: los ciudadanos en comunas con alta dependencia del FCM (Macrozona Sur 82,4% y Norte 78,8%, hasta 92,8% en Tortel) perciben mayor cercanía del municipio que en la capital regional."
         }
       ]
     },
@@ -2097,16 +2122,16 @@
         {
           "preset_id": "hub_02_01",
           "hub_id": "energia",
-          "titulo": "1. Mapa de Infraestructura Energética y Cortes Eléctricos SAIDI",
+          "titulo": "1. Mapa Multimodal de Infraestructura Crítica: Centrales, Red FOA, Ruta 7 y Barcazas",
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "salud",
-            "descripcion": "Superpone las centrales hidroeléctricas y micro-redes diésel con la cobertura de postas rurales y fibra óptica"
+            "descripcion": "Superpone centrales CNE (16) y nodos FOA (8) con la coropleta SAIDI / brecha digital, Ruta 7, barcazas MTT y postas rurales"
           },
           "config": {
             "widget_type": "map",
             "varX": "saidi_horas_anual",
-            "varY": "costo_diesel_aislado_clp",
+            "varY": "hogares_sin_internet_fijo_pct",
             "center": [
               -45.57,
               -72.06
@@ -2124,36 +2149,42 @@
             },
             "spatialLayer": "centrales_electricas",
             "showBuffers": true,
-            "bufferRadiusM": 25000
+            "bufferRadiusM": 25000,
+            "activeOverlays": [
+              "ruta7_tramos",
+              "rutas_barcazas",
+              "hospitales_postas"
+            ]
           },
-          "what_it_shows": "Georreferenciación de los 4 sistemas eléctricos aislados y los nodos FOA en localidades remotas.",
-          "why_complex_system": "Acoplamiento crítico: la resiliencia de la red de salud rural depende de la autonomía energética de los micro-generadores locales."
+          "what_it_shows": "Coropleta de cortes eléctricos SAIDI y brecha digital fija SUBTEL Jun-2026 junto a 16 instalaciones energéticas CNE, 8 nodos de Fibra Óptica Austral (FOA), Ruta 7, rutas de barcazas subsidiadas MTT y postas rurales.",
+          "why_complex_system": "Acoplamiento crítico multimodal: electricidad, fibra óptica, cabotaje y conectividad terrestre comparten corredores y puntos únicos de falla en las localidades insulares y australes."
         },
         {
           "preset_id": "hub_02_02",
           "hub_id": "energia",
-          "titulo": "2. Precio de Combustibles CNE ($/L) vs. Costo Generación Diésel Aislado",
+          "titulo": "2. Fricción Logística y Aislamiento: Distancia a Coyhaique vs. Precio Gasolina 93 ($/L)",
           "format_type": "bar",
           "subtype": "divergent_bar",
           "inter_hub_cross": {
             "cross_hub": "gobernanza",
-            "descripcion": "Diferencial de precios de Gasolina 93 y Diésel respecto al promedio nacional CNE cruzado con la lejanía comunal"
+            "descripcion": "Efecto de la distancia a Coyhaique y saltos de barcaza sobre el sobrecosto de combustibles CNE respecto a la capital regional y Santiago"
           },
           "config": {
             "widget_type": "chart",
             "chartType": "bar",
-            "varX": "gasolina_93_clp",
-            "varY": "costo_diesel_aislado_clp",
-            "varY2": "costo_diesel_aislado_clp",
-            "showAverage": true
+            "varX": "distancia_coyhaique_km",
+            "varY": "gasolina_93_clp",
+            "varY2": "gasolina_93_clp",
+            "showAverage": true,
+            "showDualAxis": true
           },
-          "what_it_shows": "Muestra que el litro de bencina en Melinka o Tortel cuesta entre 18% y 28% más que en Coyhaique por flete marítimo/terrestre.",
+          "what_it_shows": "Relación lineal fuerte (r = 0,91, R² = 0,82): cada 100 km de distancia o salto de barcaza eleva el combustible desde $1.362/L en Coyhaique y $1.375/L en Aysén hasta $1.560/L en Guaitecas (+14,5%), $1.580/L en Tortel (+16,0%) y $1.620/L en Villa O'Higgins (+18,9% vs. Coyhaique y +30,8% vs. Santiago).",
           "why_complex_system": "Fricción de distancia: el costo logístico de la energía penaliza exponencialmente a las periferias del sistema."
         },
         {
           "preset_id": "hub_02_03",
           "hub_id": "energia",
-          "titulo": "3. Cuadrantes de Vulnerabilidad Energética: Tarifa BT1 vs. Uso de Leña (%)",
+          "titulo": "3. Trampa de Pobreza Energética y Biomasa: Tarifa Eléctrica BT1 ($/kWh) vs. Consumo de Leña por Hogar",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "inter_hub_cross": {
@@ -2165,24 +2196,24 @@
             "chartType": "scatter",
             "varX": "tarifa_bt1_clp",
             "labelX": "Tarifa Eléctrica BT1 ($/kWh)",
-            "varY": "hogares_lena_pct",
-            "labelY": "Hogares Calefaccionados con Leña (%)",
+            "varY": "consumo_lena_m3_hogar_ano",
+            "labelY": "Consumo Anual de Leña por Hogar (m³/hogar/año)",
             "quadrant_labels": {
-              "q1": "Alta Tarifa y Máxima Dependencia de Biomasa",
-              "q2": "Tarifa Media con Leña Dominante",
-              "q3": "Matriz Mixta Urbana",
-              "q4": "Zona de Aislamiento Diésel Caro"
+              "q1": "Alta Tarifa BT1 y Máximo Consumo de Leña",
+              "q2": "Tarifa Media con Alto Consumo Térmico",
+              "q3": "Menor Tarifa Relativa (Polo PDA Coyhaique-Aysén)",
+              "q4": "Transición Mixta Intermedia"
             },
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Compara las 10 comunas en su balance entre tarifa eléctrica regulada y uso intensivo de biomasa.",
+          "what_it_shows": "Cruce eléctrico-térmico (r = 0,84, R² = 0,70): las comunas con tarifa BT1 más cara (O'Higgins $262/kWh y 22,0 m³/hogar, Tortel $268/kWh y 21,5 m³/hogar, Lago Verde $258/kWh y 21,0 m³/hogar) queman un 51% más de leña por vivienda que Coyhaique ($224/kWh y 14,5 m³/hogar).",
           "why_complex_system": "Trampa de dependencia: altas tarifas eléctricas bloquean la transición energética hacia calefacción limpia, perpetuando el uso de leña húmeda."
         },
         {
           "preset_id": "hub_02_04",
           "hub_id": "energia",
-          "titulo": "4. Serie Multianual: Generación Hidroeléctrica vs. Térmica Diésel (2015-2026)",
+          "titulo": "4. Serie Multianual: Matriz de Generación Hidroeléctrica vs. Térmica Diésel y Eólica (2015–2026)",
           "format_type": "line",
           "subtype": "multi_axis_series",
           "inter_hub_cross": {
@@ -2251,12 +2282,31 @@
                   ],
                   "unit": "GWh",
                   "yAxisID": "y1"
+                },
+                {
+                  "label": "Generación Eólica y ERNC No Convencional (GWh · Parque Alto Baguales / Solar)",
+                  "data": [
+                    6.5,
+                    6.7,
+                    7.1,
+                    7.3,
+                    7.5,
+                    7.8,
+                    7.9,
+                    8.1,
+                    8.4,
+                    8.6,
+                    8.8,
+                    9.4
+                  ],
+                  "unit": "GWh",
+                  "yAxisID": "y"
                 }
               ]
             }
           },
-          "what_it_shows": "Demuestra la estacionalidad inversa: en invierno se reduce el caudal por congelamiento y aumenta la quema de diésel de respaldo.",
-          "why_complex_system": "No linealidad: los picos de demanda invernal coinciden con las menores eficiencias de escorrentía hidráulica."
+          "what_it_shows": "Evidencia el shock de la megasequía de 2016 (caída hidroeléctrica a 62,1 GWh compensada con 82,4 GWh de diésel) y el sorpasso térmico sostenido desde 2021 hasta 2026 (89,8 GWh diésel vs. 86,5 GWh hidro y 9,4 GWh ERNC eólica/solar: el diésel representa el 50,9% del binomio hidro-térmico y 48,4% del total).",
+          "why_complex_system": "No linealidad climática y rezago de transmisión: las caídas de escorrentía y la falta de almacenamiento obligan a despachar generación térmica con petróleo importado, elevando costos y vulnerabilidad logística."
         },
         {
           "preset_id": "hub_02_05",
@@ -2289,9 +2339,9 @@
               "promedio_valor": 3.72,
               "structural_variable": "dias_sobre_norma_mp25",
               "structural_by_macrozona": {
-                "norte": 28.5,
-                "centro": 84.0,
-                "sur": 34.2
+                "norte": 10.0,
+                "centro": 60.5,
+                "sur": 14.4
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -2436,7 +2486,7 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Compara la percepción del 80.2% de encuestados que califica de muy urgente resolver la contaminación por leña con las mediciones reales.",
+          "what_it_shows": "Compara la percepción del 92,6% de encuestados que califica de urgente resolver la contaminación del aire por humo de leña (I4_A) frente al promedio comunal real de días sobre norma MP2.5 por macrozona (Centro 60,5 días [Coyhaique 87], Sur 14,4 y Norte 10,0).",
           "why_complex_system": "Retroalimentación socio-técnica: el bajo ingreso relativo y el frío impiden cambiar la leña por tecnologías limpias pese a la alta conciencia del daño."
         }
       ]
@@ -2856,7 +2906,7 @@
         {
           "preset_id": "hub_04_01",
           "hub_id": "inversion",
-          "titulo": "1. Mapa Territorial de los 722 Proyectos SEIA y Concesiones Mineras",
+          "titulo": "1. Mapa Territorial de Proyectos SEIA, Faenas Mineras y Áreas Protegidas",
           "format_type": "map",
           "inter_hub_cross": {
             "cross_hub": "biodiversidad",
@@ -2883,7 +2933,11 @@
             },
             "spatialLayer": "proyectos_seia_puros",
             "showBuffers": false,
-            "bufferRadiusM": 25000
+            "bufferRadiusM": 25000,
+            "activeOverlays": [
+              "mineria_faenas",
+              "snaspe_polygons"
+            ]
           },
           "what_it_shows": "Distribución espacial de 3.355 millones de USD en inversión ambientalmente evaluada en Aysén.",
           "why_complex_system": "Acoplamiento territorial: las mayores concentraciones de inversión minera y de generación coinciden con cuencas hídricas sensibles."
@@ -2891,7 +2945,7 @@
         {
           "preset_id": "hub_04_02",
           "hub_id": "inversion",
-          "titulo": "2. Inversión Aprobada SEIA (MM USD) vs. Empresas Formales SII",
+          "titulo": "2. Enclaves de Capital vs. Tejido PyME: Inversión SEIA (MM USD) vs. Empresas Formales SII",
           "format_type": "bar",
           "subtype": "stacked_bar",
           "inter_hub_cross": {
@@ -2904,38 +2958,39 @@
             "varX": "inversion_seia_mmusd",
             "varY": "empresas_sii",
             "varY2": "empresas_sii",
-            "showAverage": true
+            "showAverage": true,
+            "showDualAxis": true
           },
-          "what_it_shows": "El sector acuícola y energético concentran el 72% del capital en SEIA pero menos del 15% del número total de RUTs comerciales.",
+          "what_it_shows": "Con doble eje Y (MM USD vs. N° Empresas SII), revela la bifurcación estructural: Coyhaique concentra el 58,0% de las empresas (5.535) pero solo 14,8% de la inversión SEIA (495,6 MM USD) y 36,9% de las ventas SII, mientras Aysén + Cisnes reúnen el 28,5% de las empresas pero el 55,0% del capital SEIA (1.845 MM USD) y 49,7% de las ventas en Miles de UF (r = 0,99 y R² = 0,98 al excluir Coyhaique).",
           "why_complex_system": "Estructura oligopólica: alta concentración de capital frente a un tejido masivo de micro y pequeñas empresas de servicios."
         },
         {
           "preset_id": "hub_04_03",
           "hub_id": "inversion",
-          "titulo": "3. Cuadrantes Dinámicos: Empresas SII vs. Inversión Pública FNDR",
+          "titulo": "3. Cuadrantes de Retención Económica Local: Empresas SII vs. Fuga Extrarregional de Compras (%)",
           "format_type": "scatter",
           "subtype": "four_quadrants",
           "inter_hub_cross": {
             "cross_hub": "gobernanza",
-            "descripcion": "Cruza el tejido de empresas activas SII con el presupuesto de inversión pública FNDR asignado"
+            "descripcion": "Cruza la densidad de empresas formales SII con la proporción de compras públicas adjudicadas fuera de la comuna (ChileCompra)"
           },
           "config": {
             "widget_type": "chart",
             "chartType": "scatter",
             "varX": "empresas_sii",
             "labelX": "Empresas Activas Registradas SII (N)",
-            "varY": "fndr_mclp",
-            "labelY": "Inversión FNDR Asignada (M$ CLP)",
+            "varY": "fuga_compras_pct",
+            "labelY": "Fuga de Compras hacia Proveedores Extrarregionales (%)",
             "quadrant_labels": {
-              "q1": "Dinamismo Mixto Público-Privado",
-              "q2": "Tracción Exclusiva del Estado",
-              "q3": "Inercia Económica Rural",
-              "q4": "Emprendimiento Autónomo sin Apoyo Estatal"
+              "q1": "Masa Crítica con Fuga Persistente",
+              "q2": "Alta Fuga y Baja Densidad Empresarial",
+              "q3": "Baja Densidad con Contención Moderada",
+              "q4": "Polo de Retención Comercial (Menor Fuga)"
             },
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Coyhaique lidera en nuevos emprendimientos comerciales, mientras comunas australes dependen del gasto público en obras viales.",
+          "what_it_shows": "Correlación inversa estructural (r = -0,72, R² = 0,52; y r = -0,78 sin Coyhaique): en O'Higgins (81,6%), Tortel (79,0%), Lago Verde (77,9%), Guaitecas (75,5%), Río Ibáñez (67,2%) y Cisnes (61,8%) más de dos tercios del gasto se fuga fuera de la comuna.",
           "why_complex_system": "Dependencia del camino: el dinamismo privado requiere umbrales de escala poblacional para volverse autosustentable."
         },
         {
@@ -3014,7 +3069,7 @@
               ]
             }
           },
-          "what_it_shows": "El flujo de pasajeros aéreos actúa como indicador adelantado de la actividad económica y turística regional.",
+          "what_it_shows": "Entre 2015 y 2026 el PIB Regional Nominal de Aysén creció +86,7% ($980.000 MM a $1.830.000 MM CLP) junto a un alza de +62,4% en el tráfico aéreo de Balmaceda (420.000 a 682.000 pasajeros; r = 0,78, R² = 0,61), con contracción sincrónica en el shock de 2020 (240.000 pax / $1.240.000 MM).",
           "why_complex_system": "Sistemas abiertos: la economía de Aysén se sincroniza fuertemente con el flujo de capitales y pasajeros que ingresan desde Santiago y Puerto Montt."
         },
         {
@@ -3048,9 +3103,9 @@
               "promedio_valor": 4.38,
               "structural_variable": "trabajadores_sii",
               "structural_by_macrozona": {
-                "norte": 48.2,
-                "centro": 74.5,
-                "sur": 28.0
+                "norte": 8.3,
+                "centro": 80.8,
+                "sur": 10.9
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -3195,8 +3250,8 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "El 58.3% de los encuestados percibe estancamiento o decadencia en la región a pesar del alto PIB per cápita estadístico.",
-          "why_complex_system": "Brecha de distribución: el PIB regional engrosado por enclaves extractivos no se traduce en percepción de bienestar en los hogares de menor NSE."
+          "what_it_shows": "El 49,9% evalúa positivamente las oportunidades laborales (B4_A, nota promedio 4,38/7), con brecha marcada entre NSE Alto (63,8%) y universitarios (57,4%) frente a NSE Bajo (42,7%) y hombres (42,3%), contrastando con el 80,8% de concentración de empleo SII en la Macrozona Centro (vs. 10,9% Sur y 8,3% Norte).",
+          "why_complex_system": "Brecha de distribución y escala: cuatro quintos del empleo formal y de las ventas SII se concentran en el eje Coyhaique–Aysén, impulsando expectativas de migración juvenil en los estratos de menor calificación y comunas periféricas."
         }
       ]
     },

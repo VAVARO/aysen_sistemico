@@ -1125,7 +1125,7 @@
             url.searchParams.set('varX', 'estacionalidad_mensual_emat');
             url.searchParams.set('varY', 'ocupacion_mensual_emat_pct');
             url.searchParams.set('type', 'line');
-          } else if (currentChartState.varX === 'balmaceda_pasajeros_jac') {
+          } else if (currentChartState.varX === 'balmaceda_pasajeros_jac' && !['emporcha_toneladas', 'pib_regional_nominal_mmclp'].includes(currentChartState.varY)) {
             const cardsPayload = [
               {
                 t: 'chart',

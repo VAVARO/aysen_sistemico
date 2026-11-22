@@ -5108,6 +5108,7 @@
             { id: 'escuelas_slep', label: 'Escuelas SLEP y Educación Superior', color: '#2563eb' },
             { id: 'centrales_electricas_puros', label: 'Centrales Eléctricas CNE', color: '#0284c7' },
             { id: 'nodos_foa', label: 'Nodos Fibra Óptica Austral (FOA)', color: '#4f46e5' },
+            { id: 'mineria_faenas', label: 'Faenas Mineras y Pasivos SERNAGEOMIN', color: '#b45309' },
             { id: 'proyectos_seia_puros', label: 'Proyectos de Inversión SEIA', color: '#0f766e' },
             { id: 'justicia_sma', label: 'Unidades Fiscalizables SMA', color: '#dc2626' }
           ]
@@ -5189,6 +5190,7 @@
         'O\'Higgins': { pop: 647, casen: 18.6, prov: 'Capitán Prat' },
         'Tortel': { pop: 505, casen: 16.5, prov: 'Capitán Prat' }
       };
+      const COMUNAS_DATA = COMUNAS_CONTEXT_MAP;
 
       const TERRITORIAL_SLICES = {
         all: COMUNAS_ORDER,
@@ -5774,11 +5776,12 @@
           desc: 'Mide el tiempo promedio sin servicio eléctrico por usuario según SEC.'
         },
         'costo_diesel_aislado_clp': {
-          title: 'Costo de generación con diésel en sistemas aislados',
-          short: 'Costo térmico diésel',
+          title: 'Costo Real de Generación en Sistemas Aislados Diésel ($/kWh)',
+          short: 'Costo Diésel Aislado',
+          unit: '$/kWh',
           unitLabel: '$/kWh',
-          sourceTag: 'CNE',
-          desc: 'Mide el costo unitario de generar electricidad con combustible diésel en microredes.'
+          sourceTag: 'CNE / FNDR',
+          desc: 'Costo unitario real de generación eléctrica con diésel en las 5 comunas con sistemas aislados o micro-redes.'
         },
         'generacion_hidro_gwh': {
           title: 'Generación eléctrica hidroeléctrica y eólica',
@@ -5865,11 +5868,12 @@
           desc: 'Mide los recursos monetarios administrados anualmente por cada municipio.'
         },
         'presupuesto_per_capita_mclp': {
-          title: 'Gasto presupuestario municipal por habitante',
-          short: 'Gasto municipal por hab.',
-          unitLabel: 'M$/hab.',
+          title: 'Presupuesto municipal por habitante (Miles $ CLP/hab)',
+          short: 'Presupuesto/hab.',
+          unit: 'Miles $ CLP/hab',
+          unitLabel: 'Miles $ CLP/hab',
           sourceTag: 'SINIM',
-          desc: 'Mide el presupuesto comunal dividido por la población total residente.'
+          desc: 'Mide el presupuesto municipal anual expresado en miles de pesos chilenos por habitante (ej. Coyhaique $459 mil/hab vs. Tortel $4.059 mil/hab).'
         },
         'presupuesto_municipal_total_regional_mclp': {
           title: 'Presupuesto municipal consolidado regional',
@@ -6319,13 +6323,13 @@
           desc: 'Porcentaje de hogares sin acceso a banda ancha fija residencial en la comuna (SUBTEL).'
         },
         'cobertura_fibra_hogar_pct': {
-          title: 'Cobertura de Fibra Óptica al Hogar',
-          short: 'Fibra al Hogar %',
+          title: 'Penetración de Internet Fija por Hogar SUBTEL Jun-2026 (%)',
+          short: 'Internet Fija SUBTEL Jun-2026 (%)',
           unit: '%',
           unitLabel: '%',
-          source: 'SUBTEL',
-          sourceTag: 'SUBTEL',
-          desc: 'Porcentaje de cobertura de fibra óptica residencial respecto al total comunal (SUBTEL).'
+          source: 'SUBTEL Jun-2026',
+          sourceTag: 'SUBTEL Jun-2026',
+          desc: 'Porcentaje de hogares con banda ancha fija activa a junio de 2026 (= 100 - hogares sin internet fijo).'
         },
         'establecimientos_educacion_conectados_n': {
           title: 'Establecimientos Educacionales Conectados',
@@ -7246,7 +7250,24 @@
         pesca_ind_valor_sancion_utm: { title: 'Valor de Sanción SUBPESCA por Pesquería', short: 'Valor Sanción SUBPESCA', unit: 'UTM/ton', hubId: 'salmonicultura' },
         pesca_ind_impuesto_43ter_utm: { title: 'Impuesto Específico Art. 43 ter LGPA por Pesquería', short: 'Impuesto Art. 43 ter', unit: 'UTM/ton', hubId: 'salmonicultura' },
         centros_activos_por_holding: { title: 'Centros Acuícolas Activos por Holding', short: 'Centros Activos Holding', unit: 'centros', hubId: 'salmonicultura' },
-        concesiones_snaspe_por_holding: { title: 'Concesiones Acuícolas en SNASPE por Holding (Ley SBAP 21.600)', short: 'Concesiones SNASPE Holding', unit: 'concesiones', hubId: 'salmonicultura' }
+        concesiones_snaspe_por_holding: { title: 'Concesiones Acuícolas en SNASPE por Holding (Ley SBAP 21.600)', short: 'Concesiones SNASPE Holding', unit: 'concesiones', hubId: 'salmonicultura' },
+        ventas_sii_muf: { title: 'Ventas Anuales Declaradas SII (Miles de UF)', short: 'Ventas SII (MUF)', unit: 'Miles de UF', hubId: 'inversion' },
+        ventas_por_empresa_uf: { title: 'Ventas Promedio por Empresa SII (UF/empresa)', short: 'Ventas/Empresa SII', unit: 'UF/empresa', hubId: 'inversion' },
+        inversion_por_proyecto_seia_mmusd: { title: 'Ticket Promedio por Proyecto Aprobado SEIA (MM USD/proyecto)', short: 'Ticket Prom. SEIA', unit: 'MM USD/proyecto', hubId: 'inversion' },
+        suelo_fiscal_bbnn_pct: { title: 'Porcentaje de Suelo Fiscal Bienes Nacionales (%)', short: '% Suelo Fiscal BBNN', unit: '%', hubId: 'inversion' },
+        suelo_privado_pct: { title: 'Porcentaje de Suelo en Propiedad Privada (%)', short: '% Suelo Privado', unit: '%', hubId: 'inversion' },
+        fndr_per_capita_mclp: { title: 'Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab)', short: 'FNDR Per Cápita', unit: 'Miles $ CLP/hab', hubId: 'gobernanza' },
+        fndr_gore_2023_per_capita_mclp: { title: 'FNDR GORE 2023 Ejecutado Per Cápita (Miles $ CLP/hab)', short: 'FNDR 2023 Ejec./hab', unit: 'Miles $ CLP/hab', hubId: 'gobernanza' },
+        royalty_fet_peso_presupuesto_pct: { title: 'Peso del Royalty Minero FET 2025 sobre Presupuesto Municipal (%)', short: '% Royalty FET / Pres.', unit: '%', hubId: 'gobernanza' },
+        participacion_municipales_2024_pct: { title: 'Participación Electoral Municipal 2024 SERVEL (%)', short: 'Part. Municipales 2024 (%)', unit: '%', hubId: 'gobernanza' },
+        ratio_padron_poblacion_pct: { title: 'Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024 (%)', short: 'Ratio Padrón/Población (%)', unit: '%', hubId: 'gobernanza' },
+        fndr_asignado_vs_ejecutado_2015_2025: { title: 'Serie Oficial FNDR Asignado vs. Ejecutado GORE Aysén (2015–2025)', short: 'FNDR Asignado vs. Ejec.', unit: 'M$ CLP', hubId: 'gobernanza' },
+        participacion_diesel_matriz_pct: { title: 'Participación Térmica Diésel en Generación Regional (%)', short: '% Diésel en Matriz', unit: '%', hubId: 'energia' },
+        indice_aislamiento_multimodal: { title: 'Índice Compuesto de Aislamiento y Vulnerabilidad Energético-Digital (0–100)', short: 'Índice Aislamiento Multimodal', unit: 'Índice (0-100)', hubId: 'energia' },
+        emporcha_carga_transbordadores_ton: { title: 'Carga en Transbordadores / Rodados EMPORCHA (ton)', short: 'EMPORCHA Transbordadores', unit: 'toneladas', hubId: 'gobernanza' },
+        emporcha_carga_comercial_ton: { title: 'Carga Comercial General EMPORCHA (ton)', short: 'EMPORCHA Carga Comercial', unit: 'toneladas', hubId: 'gobernanza' },
+        emporcha_graneles_mineros_ton: { title: 'Graneles Mineros Transferidos EMPORCHA (ton)', short: 'EMPORCHA Graneles Mineros', unit: 'toneladas', hubId: 'gobernanza' },
+        emporcha_acuicultura_pesca_ton: { title: 'Carga de Acuicultura y Pesca EMPORCHA (ton)', short: 'EMPORCHA Acuicultura/Pesca', unit: 'toneladas', hubId: 'gobernanza' }
       };
 
       Object.entries(CLEAR_VAR_LABELS).forEach(([k, v]) => {
@@ -7335,17 +7356,17 @@
         '2B. Concentración Empresarial (12 Holdings)': ['holdings_salmoneros', 'holding_concesiones', 'holding_participacion_pct', 'holding_filiales_ruts', 'biomasa_por_holding', 'centros_activos_por_holding', 'concesiones_snaspe_por_holding', 'concentracion_salmon_top3_pct', 'concentracion_salmon_top5_pct', 'propiedad_capital_extranjero_salmon_pct'],
         '2C. Pesca Artesanal, ECMPO y Fiscalización': ['sindicatos_pesca_artesanal', 'desembarque_artesanal_ton', 'amerb_decretadas', 'amerb_operativas', 'ecmpo_solicitadas_ha', 'concesiones_acuicolas_en_snaspe', 'proporcion_concesiones_en_snaspe_pct', 'antibioticos_ica_g_ton', 'floracion_alexandrium_fan', 'sp_floracion_alexandrium_fan', 'fan_alexandrium_mensual', 'tsm_fiordos', 'tsm_fiordo_puyuhuapi_c', 'alertas_fan_dias_ano', 'sp_oxigeno_disuelto_puyuhuapi', 'sp_invasion_chinook_desove', 'pesca_ind_fraccionamiento_art_pct', 'pesca_ind_fraccionamiento_ind_pct', 'pesca_ind_valor_sancion_utm', 'pesca_ind_impuesto_43ter_utm'],
 
-        '3A. Sistemas Eléctricos y Confiabilidad': ['potencia_mw', 'saidi_horas_anual', 'tarifa_bt1_clp', 'costo_diesel_aislado_clp', 'costo_real_generacion_diesel_kwh_clp', 'subsidio_fiscal_diesel_kwh_clp', 'generacion_hidro_gwh', 'generacion_diesel_gwh', 'tarifa_bt1_regional_clp_hist', 'sp_caudal_simpson_coyhaique', 'sp_caudal_baker_bertrand'],
+        '3A. Sistemas Eléctricos y Confiabilidad': ['potencia_mw', 'saidi_horas_anual', 'tarifa_bt1_clp', 'costo_diesel_aislado_clp', 'costo_real_generacion_diesel_kwh_clp', 'subsidio_fiscal_diesel_kwh_clp', 'generacion_hidro_gwh', 'generacion_diesel_gwh', 'participacion_diesel_matriz_pct', 'tarifa_bt1_regional_clp_hist', 'sp_caudal_simpson_coyhaique', 'sp_caudal_baker_bertrand'],
         '3B. Matriz Térmica, Leña y Combustibles': ['hogares_lena_pct', 'precio_lena_m3', 'consumo_lena_m3_hogar_ano', 'consumo_lena_m3_hogar_anio', 'consumo_lena_m3_solidos_anual', 'informalidad_lena_pct', 'gasolina_93_clp', 'precio_diesel_regional_cne_clp_hist', 'sp_precio_combustibles_coyhaique', 'recambio_calefactores_pda_hist', 'barometro_preocupacion_contaminacion_lena_pct', 'barometro_preocupacion_contaminacion_lena_pct_hist'],
-        '3C. Telecomunicaciones y Brecha Digital': ['cobertura_fibra_hogar_pct', 'internet_fijo_pct', 'hogares_sin_internet_fijo_pct', 'conexiones_fijas_subtel_jun2026_n', 'conexiones_residenciales_subtel_jun2026_n', 'variacion_conexiones_2015_2026_pct', 'establecimientos_educacion_conectados_n', 'fdt_ultima_milla_aprobado', 'penetracion_internet_fijo_subtel_pct_hist'],
+        '3C. Telecomunicaciones y Brecha Digital': ['cobertura_fibra_hogar_pct', 'internet_fijo_pct', 'hogares_sin_internet_fijo_pct', 'conexiones_fijas_subtel_jun2026_n', 'conexiones_residenciales_subtel_jun2026_n', 'variacion_conexiones_2015_2026_pct', 'establecimientos_educacion_conectados_n', 'fdt_ultima_milla_aprobado', 'penetracion_internet_fijo_subtel_pct_hist', 'indice_aislamiento_multimodal'],
 
-        '4A. Finanzas y Gestión Municipal (SINIM)': ['presupuesto_mclp', 'presupuesto_per_capita_mclp', 'ingresos_mun_bcn_2025_mclp', 'dependencia_fcm_pct', 'ipp_per_capita_clp', 'fet_royalty_minero_2024_mclp', 'fet_royalty_minero_2025_mclp', 'gasto_personal_pct', 'inversion_directa_pct', 'profesionalizacion_pct', 'presupuesto_municipal_total_regional_mclp', 'dependencia_fcm_promedio_regional_pct', 'ingresos_propios_permanentes_pct_hist'],
-        '4B. Inversión Regional (FNDR/SNI) y Democracia': ['fndr_mclp', 'tasa_aprobacion_rs_sni_pct', 'fndr_gore_2023_proyectos_n', 'fndr_gore_2023_asignado_mclp', 'fndr_gore_2023_ejecutado_mclp', 'fndr_gore_2023_ejecucion_pct', 'fondos_concursables_gore_2023_n', 'fondos_concursables_gore_2023_mclp', 'transparencia_activa_cplt_2026_pct', 'participacion_presidencial_2025_2v_pct', 'padron_electoral_nov_2025', 'barometro_confianza_institucional_pct', 'barometro_confianza_institucional_pct_hist', 'presupuesto_fndr_gore_aysen_mclp', 'fndr_gore_ejecutado_datosgob_hist', 'ejecucion_real_fndr_dipres_mclp', 'inversion_sectorial_ministerial_mclp'],
-        '4C. Vialidad y Conectividad Multimodal': ['red_vial_total_km', 'red_vial_pavimentada_km', 'red_vial_pavimentada_pct', 'red_vial_solucion_basica_km', 'red_vial_ripio_km', 'red_vial_tierra_km', 'ruta7_pavimentada_km', 'ruta7_ripio_km', 'distancia_coyhaique_km', 'tiempo_viaje_coyhaique_hrs', 'dependencia_barcaza_nivel', 'largo_pista_aerodromo_m', 'operaciones_aerodromo_interior_anual', 'emporcha_toneladas', 'balmaceda_pasajeros_jac', 'trafico_aereo_pasajeros_balmaceda_jac', 'operaciones_aereas_balmaceda_jac', 'barometro_prioridad_conectividad_pct', 'barometro_prioridad_conectividad_pct_hist', 'sp_ruta7_kilometros_pavimentados', 'sp_trafico_aereo_balmaceda', 'sp_flujo_fronterizo_huemules'],
+        '4A. Finanzas y Gestión Municipal (SINIM)': ['presupuesto_mclp', 'presupuesto_per_capita_mclp', 'ingresos_mun_bcn_2025_mclp', 'dependencia_fcm_pct', 'ipp_per_capita_clp', 'fet_royalty_minero_2024_mclp', 'fet_royalty_minero_2025_mclp', 'royalty_fet_peso_presupuesto_pct', 'gasto_personal_pct', 'inversion_directa_pct', 'profesionalizacion_pct', 'presupuesto_municipal_total_regional_mclp', 'dependencia_fcm_promedio_regional_pct', 'ingresos_propios_permanentes_pct_hist'],
+        '4B. Inversión Regional (FNDR/SNI) y Democracia': ['fndr_mclp', 'fndr_per_capita_mclp', 'tasa_aprobacion_rs_sni_pct', 'fndr_gore_2023_proyectos_n', 'fndr_gore_2023_asignado_mclp', 'fndr_gore_2023_ejecutado_mclp', 'fndr_gore_2023_per_capita_mclp', 'fndr_gore_2023_ejecucion_pct', 'fondos_concursables_gore_2023_n', 'fondos_concursables_gore_2023_mclp', 'transparencia_activa_cplt_2026_pct', 'participacion_municipales_2024_pct', 'participacion_presidencial_2025_2v_pct', 'padron_electoral_nov_2025', 'ratio_padron_poblacion_pct', 'barometro_confianza_institucional_pct', 'barometro_confianza_institucional_pct_hist', 'presupuesto_fndr_gore_aysen_mclp', 'fndr_asignado_vs_ejecutado_2015_2025', 'fndr_gore_ejecutado_datosgob_hist', 'ejecucion_real_fndr_dipres_mclp', 'inversion_sectorial_ministerial_mclp'],
+        '4C. Vialidad y Conectividad Multimodal': ['red_vial_total_km', 'red_vial_pavimentada_km', 'red_vial_pavimentada_pct', 'red_vial_solucion_basica_km', 'red_vial_ripio_km', 'red_vial_tierra_km', 'ruta7_pavimentada_km', 'ruta7_ripio_km', 'distancia_coyhaique_km', 'tiempo_viaje_coyhaique_hrs', 'dependencia_barcaza_nivel', 'largo_pista_aerodromo_m', 'operaciones_aerodromo_interior_anual', 'emporcha_toneladas', 'emporcha_carga_transbordadores_ton', 'emporcha_carga_comercial_ton', 'emporcha_graneles_mineros_ton', 'emporcha_acuicultura_pesca_ton', 'balmaceda_pasajeros_jac', 'trafico_aereo_pasajeros_balmaceda_jac', 'operaciones_aereas_balmaceda_jac', 'barometro_prioridad_conectividad_pct', 'barometro_prioridad_conectividad_pct_hist', 'sp_ruta7_kilometros_pavimentados', 'sp_trafico_aereo_balmaceda', 'sp_flujo_fronterizo_huemules'],
 
-        '5A. Inversión de Capital y Evaluación SEIA': ['inversion_seia_mmusd', 'proyectos_seia_aprobados', 'seia_plazo_dias', 'flujo_anual_inversion_seia_aprobada_mmusd', 'flujo_anual_proyectos_seia_aprobados', 'pib_regional_nominal_mmclp', 'pib_regional_variacion_real_anual_pct'],
-        '5B. Tejido Empresarial, Empleo y Banca': ['empresas_sii', 'trabajadores_sii', 'empresas_totales_regionales_sii', 'trabajadores_dependientes_regionales_sii', 'compras_locales_pct', 'fuga_compras_pct', 'retencion_compras_publicas_locales_pct_hist', 'transacciones_compras_publicas_mclp', 'sucursales_banca_privada_cmf', 'puntos_cajavecina_bancoestado'],
-        '5C. Uso del Suelo, Agro y Minería': ['parcelaciones_sag_n', 'ganado_bovino_cabezas', 'ganado_ovino_cabezas', 'cabezas_bovinos_caf', 'cabezas_ovinos_caf', 'plantaciones_ha', 'concesiones_mineras_ha'],
+        '5A. Inversión de Capital y Evaluación SEIA': ['inversion_seia_mmusd', 'proyectos_seia_aprobados', 'inversion_por_proyecto_seia_mmusd', 'seia_plazo_dias', 'flujo_anual_inversion_seia_aprobada_mmusd', 'flujo_anual_proyectos_seia_aprobados', 'pib_regional_nominal_mmclp', 'pib_regional_variacion_real_anual_pct'],
+        '5B. Tejido Empresarial, Empleo y Banca': ['empresas_sii', 'trabajadores_sii', 'ventas_sii_muf', 'ventas_por_empresa_uf', 'empresas_totales_regionales_sii', 'trabajadores_dependientes_regionales_sii', 'compras_locales_pct', 'fuga_compras_pct', 'retencion_compras_publicas_locales_pct_hist', 'transacciones_compras_publicas_mclp', 'sucursales_banca_privada_cmf', 'puntos_cajavecina_bancoestado'],
+        '5C. Uso del Suelo, Agro y Minería': ['parcelaciones_sag_n', 'suelo_fiscal_bbnn_pct', 'suelo_privado_pct', 'ganado_bovino_cabezas', 'ganado_ovino_cabezas', 'cabezas_bovinos_caf', 'cabezas_ovinos_caf', 'plantaciones_ha', 'concesiones_mineras_ha'],
 
         '6A. Demografía y Estructura Territorial': ['poblacion_censo_2024', 'porcentaje_regional_pct', 'superficie_km2', 'densidad_hab_km2', 'ruralidad_censo_2024_pct', 'indice_envejecimiento', 'indice_masculinidad', 'sp_poblacion_regional_proyectada'],
         '6B. Pobreza, Vivienda y Agua Rural (SSR)': ['pobreza_multidim_pct', 'pobreza_ingresos_pct', 'pobreza_ingresos_casen_pct', 'pobreza_multidimensional_casen_pct', 'rsh_carencia_servicios_basicos_jun2026_pct', 'rsh_hacinamiento_jun2026_pct', 'deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'deficit_habitacional_cuantitativo_minvu', 'deficit_habitacional_cualitativo_minvu', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias', 'comites_ssr_apr_doh', 'beneficiarios_ssr_apr_doh'],
@@ -7798,7 +7819,9 @@
           'consumo_lena_m3_hogar_anio',
           'cabezas_bovinos_caf',
           'cabezas_ovinos_caf',
-          'gasto_cultural_per_capita_clp'
+          'gasto_cultural_per_capita_clp',
+          'costo_real_generacion_diesel_kwh_clp',
+          'internet_fijo_pct'
         ]);
 
         const hubInference = (k) => {
@@ -7807,10 +7830,10 @@
           if (/ctci|anid|corfo_innova|innovacion_corfo|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones/i.test(k)) return 'ctci';
           if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit|tarifa_adr|revpar|estadia_promedio|tasa_ocupacion_estival|tasa_ocupacion_invernal|concentracion_estival|visitas_por_pernoctacion|visitas_por_cama|guardaparque/i.test(k)) return 'turismo';
           if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca/i.test(k)) return 'salmonicultura';
-          if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena/i.test(k)) return 'energia';
-          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|ingresos_mun_bcn|participacion_presidencial|padron_electoral|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
+          if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena|participacion_diesel_matriz|indice_aislamiento_multimodal/i.test(k)) return 'energia';
+          if (/presupuesto|fcm|fndr|ipp|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|royalty_fet|ingresos_mun_bcn|participacion_presidencial|participacion_municipales|padron_electoral|ratio_padron|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
           if (/rsh_|ruralidad_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|matricula_escolar|establecimientos_escolares|slep_aysen|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
-          if (/seia|empresas_sii|trabajadores_sii|concesiones_mineras|parcelaciones|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
+          if (/seia|empresas_sii|trabajadores_sii|ventas_sii|ventas_por_empresa|concesiones_mineras|parcelaciones|suelo_fiscal_bbnn|suelo_privado|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
           if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|fauna|cuenca_bna|barometro_tension_desarrollo_conservacion/i.test(k)) return 'biodiversidad';
           return 'social';
         };
@@ -7843,7 +7866,19 @@
           desembarque_artesanal_ton: { title: 'Desembarque Pesquero Artesanal Comunal', short: 'Desembarque Artesanal', unit: 'ton/año', hubId: 'salmonicultura', agg: 'sum' },
           tasa_ocupacion_concesiones_pct: { title: 'Tasa de Operación de Concesiones Acuícolas (%)', short: 'Tasa Ocupación Acuícola', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
           proporcion_concesiones_en_snaspe_pct: { title: 'Proporción de Concesiones dentro de SNASPE (%)', short: '% Concesiones en SNASPE', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
-          trabajadores_sii_por_centro_activo: { title: 'Trabajadores SII por Centro Acuícola Activo (Arraigo Laboral)', short: 'Trabajadores/Centro Activo', unit: 'trab./centro', hubId: 'salmonicultura', agg: 'mean' }
+          trabajadores_sii_por_centro_activo: { title: 'Trabajadores SII por Centro Acuícola Activo (Arraigo Laboral)', short: 'Trabajadores/Centro Activo', unit: 'trab./centro', hubId: 'salmonicultura', agg: 'mean' },
+          presupuesto_per_capita_mclp: { title: 'Presupuesto municipal por habitante (Miles $ CLP/hab)', short: 'Presupuesto/hab.', unit: 'Miles $ CLP/hab', hubId: 'gobernanza', agg: 'mean' },
+          fndr_per_capita_mclp: { title: 'Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab)', short: 'FNDR Per Cápita', unit: 'Miles $ CLP/hab', hubId: 'gobernanza', agg: 'mean' },
+          fndr_gore_2023_per_capita_mclp: { title: 'FNDR GORE 2023 Ejecutado Per Cápita (Miles $ CLP/hab)', short: 'FNDR 2023 Ejec./hab', unit: 'Miles $ CLP/hab', hubId: 'gobernanza', agg: 'mean' },
+          royalty_fet_peso_presupuesto_pct: { title: 'Peso del Royalty Minero FET 2025 sobre Presupuesto Municipal (%)', short: '% Royalty FET / Pres.', unit: '%', hubId: 'gobernanza', agg: 'mean' },
+          participacion_municipales_2024_pct: { title: 'Participación Electoral Municipal 2024 SERVEL (%)', short: 'Part. Municipales 2024 (%)', unit: '%', hubId: 'gobernanza', agg: 'mean' },
+          ratio_padron_poblacion_pct: { title: 'Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024 (%)', short: 'Ratio Padrón/Población (%)', unit: '%', hubId: 'gobernanza', agg: 'mean' },
+          indice_aislamiento_multimodal: { title: 'Índice Compuesto de Aislamiento y Vulnerabilidad Energético-Digital (0–100)', short: 'Índice Aislamiento Multimodal', unit: 'Índice (0-100)', hubId: 'energia', agg: 'mean' },
+          ventas_sii_muf: { title: 'Ventas Anuales Declaradas SII (Miles de UF)', short: 'Ventas SII (MUF)', unit: 'Miles de UF', hubId: 'inversion', agg: 'sum' },
+          ventas_por_empresa_uf: { title: 'Ventas Promedio por Empresa SII (UF/empresa)', short: 'Ventas/Empresa SII', unit: 'UF/empresa', hubId: 'inversion', agg: 'mean' },
+          inversion_por_proyecto_seia_mmusd: { title: 'Ticket Promedio por Proyecto Aprobado SEIA (MM USD/proyecto)', short: 'Ticket Prom. SEIA', unit: 'MM USD/proyecto', hubId: 'inversion', agg: 'mean' },
+          suelo_fiscal_bbnn_pct: { title: 'Porcentaje de Suelo Fiscal Bienes Nacionales (%)', short: '% Suelo Fiscal BBNN', unit: '%', hubId: 'inversion', agg: 'mean' },
+          suelo_privado_pct: { title: 'Porcentaje de Suelo en Propiedad Privada (%)', short: '% Suelo Privado', unit: '%', hubId: 'inversion', agg: 'mean' }
         };
 
         if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas) && AppState.hubsData.comunas.length > 0) {
@@ -8064,6 +8099,18 @@
         // 3b. Registro síncrono inmediato de Series Multianuales 2015-2026 para los 10 Hubs/Módulos
         const existingSyncIds = new Set(items.map(it => it.id));
         const years12Sync = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+        const _appSeriesPre = AppState.hubsData?.series || window.AYSEN_HUBS_DATA?.series || {};
+        const _genElectricAnual = Array.isArray(_appSeriesPre.generacion_electrica_anual) ? _appSeriesPre.generacion_electrica_anual : [];
+        const _pibNominalSerie = Array.isArray(_appSeriesPre.pib_regional_nominal_mmclp) ? _appSeriesPre.pib_regional_nominal_mmclp : [];
+        const _goreFndrHistObj = (AppState.hubsData?.goreFndrSeries || window.AYSEN_HUBS_DATA?.goreFndrSeries)?.serie_fndr_regional_datosgob_2015_2023 || {};
+        const _fndr12Data = years12Sync.map(yr => {
+          if (_goreFndrHistObj[yr] && _goreFndrHistObj[yr].asignado_mclp !== undefined) return Number(_goreFndrHistObj[yr].asignado_mclp);
+          const dip = (AppState.hubsData?.goreFndrSeries || window.AYSEN_HUBS_DATA?.goreFndrSeries)?.dipres_ley_presupuestos_fndr || {};
+          if (yr === '2024' && dip['2024_vigente_mclp']) return Number(dip['2024_vigente_mclp']);
+          if (yr === '2025' && dip['2025_inicial_mclp']) return Number(dip['2025_inicial_mclp']);
+          if (yr === '2026') return 78950.0;
+          return 0;
+        });
         const syncTemporalSeries = [
           {
             id: 'presupuesto_municipal_total_regional_mclp',
@@ -8071,15 +8118,17 @@
             shortName: 'Presupuesto Municipal Total',
             hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', unit: 'M$ CLP', aggMode: 'sum',
             sourceName: 'SUBDERE - SINIM',
-            data: [44280, 47150, 50320, 53890, 57410, 55920, 62450, 69840, 76120, 82450, 88190, 93420]
+            data: [39353.4, 41693.1, 44764.1, 48263.8, 51344.5, 53644.9, 57743.4, 62864.5, 67163.4, 70751.5, 75524.1, 80001.3]
           },
           {
             id: 'presupuesto_fndr_gore_aysen_mclp',
             name: 'Presupuesto de Inversión Regional FNDR GORE Aysén (2015–2026)',
             shortName: 'Inversión FNDR GORE Aysén',
             hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', unit: 'M$ CLP', aggMode: 'sum',
-            sourceName: 'DIPRES - GORE Aysén',
-            data: [48500, 51200, 54800, 56900, 59400, 61200, 65800, 70400, 74900, 79361, 82500, 85900]
+            sourceName: 'DIPRES - GORE Aysén (datos.gob.cl)',
+            data: _fndr12Data.every(v => v === 0)
+              ? [47242.8, 64945.3, 68787.4, 65295.0, 58446.7, 17714.6, 57405.1, 58342.9, 68333.7, 75543.0, 77977.0, 78950.0]
+              : _fndr12Data
           },
           {
             id: 'dependencia_fcm_promedio_regional_pct',
@@ -8091,11 +8140,13 @@
           },
           {
             id: 'generacion_hidro_gwh',
-            name: 'Generación Eléctrica Renovable Hidro + Eólica en Aysén (2015–2026)',
-            shortName: 'Generación Hidro + Eólica',
+            name: 'Generación Hidroeléctrica Anual en Aysén (2015–2026)',
+            shortName: 'Generación Hidroeléctrica',
             hubId: 'energia', hubTitle: 'III. Energía', unit: 'GWh', aggMode: 'sum',
             sourceName: 'CNE - Anuario Estadístico de Energía',
-            data: [92.4, 96.8, 101.2, 105.5, 110.3, 108.9, 115.4, 121.8, 127.5, 133.2, 138.6, 144.0]
+            data: _genElectricAnual.length === 12
+              ? _genElectricAnual.map(r => Number(r.generacion_hidro_gwh) || 0)
+              : [78.2, 62.1, 75.4, 81.2, 79.6, 76.5, 74.2, 78.0, 82.5, 84.1, 85.3, 86.5]
           },
           {
             id: 'generacion_diesel_gwh',
@@ -8103,7 +8154,19 @@
             shortName: 'Generación Térmica Diésel',
             hubId: 'energia', hubTitle: 'III. Energía', unit: 'GWh', aggMode: 'sum',
             sourceName: 'CNE - SEC Sistemas Medianos y Aislados',
-            data: [68.5, 70.1, 71.8, 72.4, 71.0, 66.8, 69.5, 67.2, 64.8, 61.5, 58.9, 55.4]
+            data: _genElectricAnual.length === 12
+              ? _genElectricAnual.map(r => Number(r.generacion_diesel_gwh) || 0)
+              : [63.8, 82.4, 71.8, 69.5, 75.1, 72.0, 83.5, 84.2, 83.8, 86.2, 88.1, 89.8]
+          },
+          {
+            id: 'participacion_diesel_matriz_pct',
+            name: 'Participación Térmica Diésel en Generación Regional (%)',
+            shortName: '% Diésel en Matriz',
+            hubId: 'energia', hubTitle: 'III. Energía', unit: '%', aggMode: 'mean',
+            sourceName: 'CNE - Anuario Estadístico de Energía',
+            data: _genElectricAnual.length === 12
+              ? _genElectricAnual.map(r => Number(r.participacion_diesel_matriz_pct) || 0)
+              : [43.0, 54.5, 46.5, 44.0, 46.3, 46.1, 50.4, 49.4, 48.0, 48.2, 48.4, 48.4]
           },
           {
             id: 'biomasa_cosecha_salmon',
@@ -8178,11 +8241,13 @@
           },
           {
             id: 'pib_regional_nominal_mmclp',
-            name: 'Producto Interno Bruto Regional Aysén (2015–2026)',
+            name: 'PIB Regional Nominal de Aysén (2015–2026)',
             shortName: 'PIB Regional Aysén',
             hubId: 'inversion', hubTitle: 'V. Inversión', unit: 'MM$ CLP', aggMode: 'sum',
             sourceName: 'Banco Central de Chile - Cuentas Nacionales Regionales',
-            data: [985400, 1042800, 1115600, 1189400, 1254200, 1218900, 1365400, 1489200, 1592800, 1684500, 1772300, 1865900]
+            data: _pibNominalSerie.length === 12
+              ? _pibNominalSerie.map(r => Number(r.valor) || 0)
+              : [980000, 1045000, 1120000, 1215000, 1260000, 1240000, 1410000, 1540000, 1620000, 1680000, 1755000, 1830000]
           },
           {
             id: 'flujo_anual_inversion_seia_aprobada_mmusd',
@@ -8392,11 +8457,11 @@
 
         // 3b.2 Series específicas de conectividad y barómetro desde AppState.hubsData.series
         const syncSeriesDefs = [];
-        const appSeries = AppState.hubsData?.series || window.AYSEN_HUBS_DATA?.series || {};
+        const appSeriesSync = AppState.hubsData?.series || window.AYSEN_HUBS_DATA?.series || {};
 
-        if (Array.isArray(appSeries.emporcha_toneladas) && appSeries.emporcha_toneladas.length > 0) {
-          const empTonLabels = appSeries.emporcha_toneladas.map(d => String(d.periodo));
-          const empTonData = appSeries.emporcha_toneladas.map(d => (typeof d.toneladas_totales === 'number' ? d.toneladas_totales : (parseFloat(d.toneladas_totales) || 0)));
+        if (Array.isArray(appSeriesSync.emporcha_toneladas) && appSeriesSync.emporcha_toneladas.length > 0) {
+          const empTonLabels = appSeriesSync.emporcha_toneladas.map(d => String(d.periodo));
+          const empTonData = appSeriesSync.emporcha_toneladas.map(d => (typeof d.toneladas_totales === 'number' ? d.toneladas_totales : (parseFloat(d.toneladas_totales) || 0)));
           syncSeriesDefs.push({
             id: 'emporcha_toneladas',
             aliases: ['emporcha_toneladas_transferidas'],
@@ -8412,7 +8477,47 @@
             labels: empTonLabels,
             data: empTonData
           });
+          [
+            { id: 'emporcha_carga_transbordadores_ton', field: 'carga_transbordadores', name: 'Carga en Transbordadores / Rodados EMPORCHA (2018–2026)', shortName: 'EMPORCHA Transbordadores' },
+            { id: 'emporcha_carga_comercial_ton', field: 'carga_comercial', name: 'Carga Comercial General EMPORCHA (2018–2026)', shortName: 'EMPORCHA Carga Comercial' },
+            { id: 'emporcha_graneles_mineros_ton', field: 'graneles_mineros', name: 'Graneles Mineros Transferidos EMPORCHA (2018–2026)', shortName: 'EMPORCHA Graneles Mineros' },
+            { id: 'emporcha_acuicultura_pesca_ton', field: 'acuicultura_pesca', name: 'Carga de Acuicultura y Pesca EMPORCHA (2018–2026)', shortName: 'EMPORCHA Acuicultura/Pesca' }
+          ].forEach(esub => {
+            syncSeriesDefs.push({
+              id: esub.id,
+              name: esub.name,
+              shortName: esub.shortName,
+              hubId: 'gobernanza',
+              hubTitle: 'IV. Gobernanza',
+              unit: 'toneladas',
+              aggMode: 'sum',
+              sourceName: 'EMPORCHA - Empresa Portuaria Chacabuco',
+              sourceUrl: 'https://www.puertochacabuco.cl',
+              collectionDate: '2018-2026',
+              labels: empTonLabels,
+              data: appSeriesSync.emporcha_toneladas.map(d => Number(d[esub.field]) || 0)
+            });
+          });
         }
+
+        const fndrCompSerie = Array.isArray(appSeriesSync.fndr_asignado_vs_ejecutado_2015_2025) ? appSeriesSync.fndr_asignado_vs_ejecutado_2015_2025 : [];
+        if (fndrCompSerie.length > 0) {
+          syncSeriesDefs.push({
+            id: 'fndr_asignado_vs_ejecutado_2015_2025',
+            name: 'Serie Oficial FNDR Asignado vs. Ejecutado GORE Aysén (2015–2025)',
+            shortName: 'FNDR Asignado (2015–2025)',
+            hubId: 'gobernanza',
+            hubTitle: 'IV. Gobernanza',
+            unit: 'M$ CLP',
+            aggMode: 'sum',
+            sourceName: 'GORE Aysén / datos.gob.cl / DIPRES',
+            sourceUrl: 'https://datos.gob.cl',
+            collectionDate: '2015-2025 (Jul 2026)',
+            labels: fndrCompSerie.map(r => String(r.anio || r.periodo)),
+            data: fndrCompSerie.map(r => Number(r.asignado_mclp) || 0)
+          });
+        }
+        const appSeries = appSeriesSync;
 
         if (Array.isArray(appSeries.emporcha_cruceros) && appSeries.emporcha_cruceros.length > 0) {
           const empCrucLabels = appSeries.emporcha_cruceros.map(d => String(d.temporada));
@@ -14189,27 +14294,43 @@
 
         // 1.2 Modo Per Cápita
         if (res.dim === 'comuna' && (AppState.perCapitaMode || w.perCapitaMode)) {
-          const isRate = (u) => /%|ratio|tasa|per_capita|promedio|horas|por_mil/i.test(u);
-          if (res.mode === 'univariate' && !isRate(res.unit)) {
-            res.data = res.labels.map((lbl, i) => {
-              const pop = COMUNAS_DATA[lbl]?.pop || 1;
-              return Number((res.data[i] / pop).toFixed(4));
-            });
-            res.unit = `${res.unit}/hab`;
-          } else if (res.mode === 'bivariate') {
-            if (!isRate(res.unitX)) {
-              res.dataX = res.labels.map((lbl, i) => {
-                const pop = COMUNAS_DATA[lbl]?.pop || 1;
-                return Number((res.dataX[i] / pop).toFixed(4));
-              });
-              res.unitX = `${res.unitX}/hab`;
+          const isRate = (u, varId) => /(_pct|%|ratio|tasa|per_capita|por_hab|promedio|horas|dias|días|km|nivel|puntaje|indice|índice|tarifa|precio|gasolina|diesel|diésel|costo|por_mil|\/hab)/i.test(`${u || ''} ${varId || ''}`);
+          const scalePerCapitaVal = (val, pop, unitStr) => {
+            const u = String(unitStr || '');
+            if (/M\$\s*CLP|^M\$$/i.test(u.trim()) || u.includes('M$')) {
+              return { v: Number(((val * 1000) / pop).toFixed(2)), u: 'Miles $ CLP/hab' };
             }
-            if (!isRate(res.unitY)) {
-              res.dataY = res.labels.map((lbl, i) => {
-                const pop = COMUNAS_DATA[lbl]?.pop || 1;
-                return Number((res.dataY[i] / pop).toFixed(4));
+            return { v: Number((val / pop).toFixed(4)), u: `${u}/hab` };
+          };
+          if (res.mode === 'univariate' && !isRate(res.unit, w.varX)) {
+            let nextUnit = res.unit;
+            res.data = res.labels.map((lbl, i) => {
+              const pop = COMUNAS_CONTEXT_MAP[lbl]?.pop || COMUNAS_DATA[lbl]?.pop || 1;
+              const sc = scalePerCapitaVal(res.data[i], pop, res.unit);
+              nextUnit = sc.u;
+              return sc.v;
+            });
+            res.unit = nextUnit;
+          } else if (res.mode === 'bivariate') {
+            if (!isRate(res.unitX, w.varX)) {
+              let nextUX = res.unitX;
+              res.dataX = res.labels.map((lbl, i) => {
+                const pop = COMUNAS_CONTEXT_MAP[lbl]?.pop || COMUNAS_DATA[lbl]?.pop || 1;
+                const sc = scalePerCapitaVal(res.dataX[i], pop, res.unitX);
+                nextUX = sc.u;
+                return sc.v;
               });
-              res.unitY = `${res.unitY}/hab`;
+              res.unitX = nextUX;
+            }
+            if (!isRate(res.unitY, w.varY)) {
+              let nextUY = res.unitY;
+              res.dataY = res.labels.map((lbl, i) => {
+                const pop = COMUNAS_CONTEXT_MAP[lbl]?.pop || COMUNAS_DATA[lbl]?.pop || 1;
+                const sc = scalePerCapitaVal(res.dataY[i], pop, res.unitY);
+                nextUY = sc.u;
+                return sc.v;
+              });
+              res.unitY = nextUY;
             }
           }
         }
@@ -14611,8 +14732,8 @@
                 let xVal = i + 1;
                 if (popVec && popVec[i] !== undefined) {
                   xVal = popVec[i];
-                } else if (COMUNAS_DATA[c]?.pop) {
-                  xVal = COMUNAS_DATA[c].pop;
+                } else if (COMUNAS_CONTEXT_MAP[c]?.pop) {
+                  xVal = COMUNAS_CONTEXT_MAP[c].pop;
                 }
                 return {
                   x: xVal,
@@ -14780,12 +14901,11 @@
               const customLabels = Array.isArray(w.customChartSpec.labels) ? w.customChartSpec.labels : payload.labels;
               const sliceCustomData = (arr, fallback) => {
                 if (!Array.isArray(arr) || arr.length === 0) return fallback || [];
-                if (Array.isArray(customLabels) && customLabels.length === arr.length && Array.isArray(payload.labels)) {
-                  const mapped = payload.labels.map(lbl => {
+                if (Array.isArray(customLabels) && arr.length <= customLabels.length && Array.isArray(payload.labels)) {
+                  return payload.labels.map(lbl => {
                     const idx = customLabels.indexOf(lbl);
-                    return idx !== -1 ? arr[idx] : null;
-                  }).filter(v => v !== null);
-                  if (mapped.length === payload.labels.length) return mapped;
+                    return (idx !== -1 && idx < arr.length) ? arr[idx] : null;
+                  });
                 }
                 return arr;
               };
@@ -16230,7 +16350,7 @@
           const targetVar = (payload.mode === 'bivariate' && vY) ? vY : vX;
           const targetId = targetVar ? (targetVar.id || '') : (w.varY || w.varX || '');
           const unitLbl = (payload.mode === 'bivariate' ? (payload.unitY || payload.unitX) : payload.unit) || (targetVar ? targetVar.unit : '') || '';
-          const INTENSIVE_KPI_RE = /(_pct|%|g\/ton|per_capita|promedio|tasa|indice|ratio|espera|dias|horas|puntaje|ica|tsm|oxigeno|psu|utm\/ton|trab\.\/centro|por_centro|por_cama|por_mil|por_100k|°c)/i;
+          const INTENSIVE_KPI_RE = /(_pct|%|g\/ton|per_capita|por_hab|promedio|tasa|indice|índice|ratio|tarifa|precio|gasolina|diesel|diésel|costo|saidi|dias_sobre_norma|traslado|tiempo_viaje|distancia|dependencia_barcaza_nivel|consumo_lena_m3_hogar|ventas_por_empresa|inversion_por_proyecto|espera|dias|días|horas|puntaje|ica|tsm|oxigeno|psu|utm\/ton|trab\.\/centro|por_centro|por_cama|por_mil|por_100k|°c|\/l\b|\/kwh|\/m3|\/m³|m\$\/hab|miles \$ clp\/hab)/i;
           const isMean = Boolean(
             (targetVar && (targetVar.aggregation === 'avg' || targetVar.aggMode === 'mean')) ||
             INTENSIVE_KPI_RE.test(targetId) ||
@@ -16239,7 +16359,7 @@
 
           const data = (payload.mode === 'bivariate' && Array.isArray(payload.dataY)) ? payload.dataY : (payload.data || []);
           const labels = payload.labels || [];
-          const validPairs = data.map((v, i) => ({ v: Number(v), lbl: labels[i] || `Entidad ${i + 1}` })).filter(p => typeof p.v === 'number' && !isNaN(p.v));
+          const validPairs = data.map((v, i) => ({ v: v === null || v === undefined ? NaN : Number(v), lbl: labels[i] || `Entidad ${i + 1}` })).filter(p => typeof p.v === 'number' && !isNaN(p.v));
           const validVals = validPairs.map(p => p.v);
           const sum = validVals.reduce((a, b) => a + b, 0);
           const avg = validVals.length ? (sum / validVals.length) : 0;
@@ -16296,6 +16416,27 @@
               <div class="kpi-stat-sub-item">
                 <span class="kpi-stat-sub-val">${validVals.length}</span>
                 <span class="kpi-stat-sub-lbl">Entidades</span>
+              </div>
+            `;
+          } else if (payload.dim === 'tiempo' && validPairs.length >= 2) {
+            const firstP = validPairs[0];
+            const lastP = validPairs[validPairs.length - 1];
+            const pctDelta = firstP.v !== 0 ? ((lastP.v - firstP.v) / Math.abs(firstP.v)) * 100 : 0;
+            const deltaStr = `${pctDelta >= 0 ? '+' : ''}${pctDelta.toLocaleString('es-CL', { maximumFractionDigits: 1 })}%`;
+            mainValStr = lastP.v.toLocaleString('es-CL', { maximumFractionDigits: 1 });
+            mainUnitStr = `${unitLbl} · Cierre ${lastP.lbl} (${deltaStr} vs. ${firstP.lbl})`;
+            subItemsHtml = `
+              <div class="kpi-stat-sub-item" title="${firstP.lbl}">
+                <span class="kpi-stat-sub-val">${firstP.v.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
+                <span class="kpi-stat-sub-lbl">Apertura (${firstP.lbl})</span>
+              </div>
+              <div class="kpi-stat-sub-item">
+                <span class="kpi-stat-sub-val">${avg.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
+                <span class="kpi-stat-sub-lbl">Prom. Anual</span>
+              </div>
+              <div class="kpi-stat-sub-item" title="${maxPair ? maxPair.lbl : ''}">
+                <span class="kpi-stat-sub-val">${max.toLocaleString('es-CL', { maximumFractionDigits: 1 })}</span>
+                <span class="kpi-stat-sub-lbl">Máx (${maxPair ? maxPair.lbl : '–'})</span>
               </div>
             `;
           } else {
@@ -17073,9 +17214,11 @@
             ...mirrorExtras,
             title: p.titulo,
             varX: cfg.varX || 'dependencia_fcm_pct',
-            varY: cfg.varY || 'fndr_mclp',
+            varY: cfg.varY || 'fndr_per_capita_mclp',
             color: hubColor,
             chartType: 'scatter',
+            perCapitaMode: Boolean(cfg.perCapitaMode),
+            excludeOutlierCoyhaique: Boolean(cfg.excludeOutlierCoyhaique),
             defaultTerritorialSlice: cfg.defaultTerritorialSlice || null,
             filterComunas: Array.isArray(cfg.filterComunas) ? [...cfg.filterComunas] : null,
             showTrend: true,
@@ -17091,6 +17234,8 @@
             varY: cfg.varY || cfg.varY2 || null,
             color: hubColor,
             chartType: 'bar',
+            perCapitaMode: Boolean(cfg.perCapitaMode),
+            excludeOutlierCoyhaique: Boolean(cfg.excludeOutlierCoyhaique),
             defaultTerritorialSlice: cfg.defaultTerritorialSlice || null,
             filterComunas: Array.isArray(cfg.filterComunas) ? [...cfg.filterComunas] : null,
             showAverage: true,
