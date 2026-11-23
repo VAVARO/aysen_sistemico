@@ -234,8 +234,55 @@
       }
     }
 
+    // Inicialización universal e idempotente del menú hamburguesa móvil (#btnMobileMenu -> #mobileNavDrawer)
+    var btnMobileMenu = document.getElementById('btnMobileMenu');
+    var mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    var btnMobileClose = document.getElementById('btnMobileClose');
+    var mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+    if (btnMobileMenu && mobileNavDrawer && !btnMobileMenu._hasUniversalMobileNav) {
+      btnMobileMenu._hasUniversalMobileNav = true;
+
+      var openMobileNav = function (ev) {
+        if (ev) ev.stopPropagation();
+        mobileNavDrawer.classList.add('open');
+        mobileNavDrawer.setAttribute('aria-hidden', 'false');
+        btnMobileMenu.setAttribute('aria-expanded', 'true');
+      };
+
+      var closeMobileNav = function () {
+        mobileNavDrawer.classList.remove('open');
+        mobileNavDrawer.setAttribute('aria-hidden', 'true');
+        btnMobileMenu.setAttribute('aria-expanded', 'false');
+      };
+
+      btnMobileMenu.addEventListener('click', openMobileNav);
+      if (btnMobileClose) btnMobileClose.addEventListener('click', closeMobileNav);
+      if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
+          closeMobileNav();
+        }
+      });
+
+      mobileNavDrawer.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+        link.addEventListener('click', closeMobileNav);
+      });
+    }
+
     bindMobileNavEvents();
     return cabecera;
+  }
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        bindMobileNavEvents();
+      });
+    } else {
+      bindMobileNavEvents();
+    }
   }
 
   root.montarCabecera = montarCabecera;

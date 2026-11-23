@@ -41,3 +41,7 @@ La bitácora cronológica (`wiki/log.md`) registra de manera inmutable todas las
 
 ## [2026-11-23] lint | Instanciación de la Wiki Compilada de Karpathy y Sincronización con Obsidian Vault
 - Compilación de 77 páginas canónicas en `wiki/` ([[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]), verificación de 0 enlaces rotos, 0 páginas huérfanas y 100% de paridad numérica contra `data/aysen_hubs_data.js`.
+
+## [2026-11-23] adr | Motor Python de 25 Hallazgos Estadísticos Multicriterio, Reparación Móvil y Visibilidad de Fiordos
+- Pre-cálculo en Python (`scripts/precompute_curated_discoveries.py` -> `data/aysen_hallazgos_precalculados.js`) de 25 hallazgos inter-Hubs con 5 pruebas (OLS + Benjamini-Hochberg FDR < 0,05, Spearman, correlación parcial por población, Leave-Coyhaique-Out y primeras diferencias 2015–2026), reparación universal del menú móvil (`js/cabecera_global.js`, `sistemas_complejos.html`, `laboratorio.html`) y transparencia automática de polígonos sobre fiordos en Leaflet ([[adr/adr_004_normalizacion_per_capita_y_colinealidad|ADR-004]]).
+

@@ -31,8 +31,9 @@
     integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
     crossorigin="anonymous" defer></script>
 
-  <!-- Datos Oficiales: Catálogo Regional de Aysén y Preguntas Sistémicas (30) -->
+  <!-- Datos Oficiales: Catálogo Regional de Aysén, Hallazgos Pre-Calculados (25) y Preguntas Sistémicas (30) -->
   <script src="data/aysen_hubs_data.js" defer></script>
+  <script src="data/aysen_hallazgos_precalculados.js" defer></script>
   <script src="data/preguntas_metacognitivas.js" defer></script>
   <!-- Motor Semántico NL2Chart y Motor de Inteligencia OmniRoute -->
   <script src="js/nl2chart_engine.js" defer></script>
@@ -4184,6 +4185,34 @@
         min-width: 44px;
         min-height: 44px;
       }
+
+      #heroEmptyCanvas,
+      .hero-studio-card {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: calc(100% - 20px) !important;
+        max-width: 100% !important;
+        margin: 10px auto 72px auto !important;
+        padding: 1rem 0.9rem !important;
+        max-height: none !important;
+        overflow: visible !important;
+      }
+
+      .hero-hubs-launcher-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.4rem !important;
+      }
+
+      .hero-hub-launch-card {
+        padding: 0.5rem 0.55rem !important;
+        min-height: 44px !important;
+      }
+
+      #canvasZoomHud {
+        display: none !important;
+      }
     }
 
     /* ==========================================================================
@@ -4762,6 +4791,10 @@
         <span>Galería <span class="badge-count-subtle">50</span></span>
       </button>
 
+      <button class="btn-action-tool" id="btnOpenDiscoveriesDrawer" style="border-color: #0059c5; color: #00357f; font-weight: 600; background: #eef6ff;" title="Galería curada en Python de 25 hallazgos estadísticos entre Hubs y explicabilidad local por comuna (Estilo DashAI)">
+        <span>Hallazgos &amp; Explicabilidad <span class="badge-count-subtle">25</span></span>
+      </button>
+
       <button class="btn-action-tool" id="btnToggleDashboardMode" title="Alternar entre ajustar en grilla y modo lienzo 2D libre">
         <span>Ajustar en grilla</span>
       </button>
@@ -5073,6 +5106,35 @@
       <!-- Grilla de las 5 visualizaciones del Hub activo -->
       <div class="hub-gallery-cards-grid" id="hubGalleryCardsGrid">
         <!-- Tarjetas generadas dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Galería Pre-Procesada en Python de 25 Hallazgos y Explicabilidad Local (Estilo DashAI) -->
+  <div class="hub-gallery-overlay" id="modalCuratedDiscoveries" role="dialog" aria-modal="true" aria-labelledby="discoveriesModalTitle" aria-hidden="true" style="display:none;">
+    <div class="hub-gallery-modal" style="max-width: 1120px;">
+      <div class="hub-gallery-header">
+        <div>
+          <span class="hub-gallery-kicker">Motor Estadístico Multicriterio en Python (5 Pruebas + DashAI Local Explainability)</span>
+          <h2 id="discoveriesModalTitle" class="hub-gallery-title">25 Hallazgos y Relaciones No Obvias entre Hubs de Aysén</h2>
+          <p class="hub-gallery-subtitle">Cada relación pre-calculada en Python supera simultáneamente 5 pruebas: Regresión OLS + Benjamini-Hochberg (FDR &lt; 0,05), Ranking de Spearman, Correlación Parcial controlando por Población, Robustez sin Coyhaique y Primeras Diferencias 2015–2026.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <button type="button" class="hub-gallery-close" id="btnDiscoveriesModalClose" aria-label="Cerrar galería de hallazgos">×</button>
+        </div>
+      </div>
+
+      <!-- Filtros Rápidos -->
+      <div class="hub-gallery-tabs" id="discoveriesFilterTabs" role="tablist">
+        <button type="button" class="hub-tab-btn active" data-disc-filter="all">Todos los Hallazgos (25)</button>
+        <button type="button" class="hub-tab-btn" data-disc-filter="cruce_comunal_oculto">Cruces Comunales No Obvios (20)</button>
+        <button type="button" class="hub-tab-btn" data-disc-filter="acoplamiento_temporal_2015_2026">Acoplamientos en el Tiempo 2015–2026 (5)</button>
+        <button type="button" class="hub-tab-btn" data-disc-filter="comunas_explain">Radiografía por Comuna (10)</button>
+      </div>
+
+      <!-- Grilla de los 25 Hallazgos o Radiografías Comunales -->
+      <div class="hub-gallery-cards-grid" id="discoveriesCardsGrid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+        <!-- Renderizado dinámicamente por renderCuratedDiscoveriesGrid() -->
       </div>
     </div>
   </div>
@@ -10410,6 +10472,9 @@
 
         viewport.addEventListener('wheel', (e) => {
           if (isStackedLayout() || AppState.dashboardViewMode === 'grid') return;
+          if (e.target.closest('.map-container-box, .leaflet-container')) {
+            return; // Dejar que Leaflet maneje su propio zoom cartográfico sin escalar el Lienzo 2D
+          }
           const scrollable = e.target.closest('.table-container-box, .empty-var-list, .smart-cross-popover, .clean-table, .sidebar-items-scroll');
           if (scrollable && !e.ctrlKey && !e.metaKey) {
             return;
@@ -10461,6 +10526,8 @@
         }, { passive: false });
 
         window.addEventListener('touchmove', (e) => {
+          if (isStackedLayout()) return;
+          if (e.target && e.target.closest && e.target.closest('.map-container-box, .leaflet-container')) return;
           if (AppState.isPanning && e.touches.length === 1) {
             const touch = e.touches[0];
             AppState.transform.x = touch.clientX - AppState.panStart.x;
@@ -11363,6 +11430,7 @@
                   <span>+ Cruzar</span>
                 </button>
                 <button class="btn-card-mini-pill" id="btnSynthCard-${w.id}" title="Generar Síntesis Ejecutiva de Datos">Síntesis</button>
+                <button class="btn-card-mini-pill" id="btnExplainCard-${w.id}" style="color: #00357f; border-color: rgba(0, 53, 127, 0.35); background: #f0f7ff;" title="Explicabilidad estadística multicriterio y radiografía local (Estilo DashAI)">Explicar</button>
                 <button class="btn-card-format" id="btnFormatCard-${w.id}" title="Mostrar/Ocultar barra de herramientas y formato">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="3"></circle>
@@ -11716,6 +11784,17 @@
           synthBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             generateCardExecutiveSynthesis(w);
+          });
+        }
+
+        // Botón Explicabilidad Estadística (Estilo DashAI)
+        const explainBtn = card.querySelector(`#btnExplainCard-${w.id}`);
+        if (explainBtn) {
+          explainBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (typeof explainCardWithCuratedDiscovery === 'function') {
+              explainCardWithCuratedDiscovery(w);
+            }
           });
         }
 
@@ -13065,6 +13144,21 @@
 
         tb.style.position = 'fixed';
         tb.style.zIndex = '99990';
+
+        if (isStackedLayout()) {
+          tb.classList.add('user-docked');
+          tb.style.bottom = '54px';
+          tb.style.top = 'auto';
+          tb.style.left = '8px';
+          tb.style.right = '8px';
+          tb.style.width = 'calc(100vw - 16px)';
+          tb.style.transform = 'none';
+          tb.style.marginTop = '0px';
+          return;
+        }
+        tb.style.bottom = '';
+        tb.style.right = '';
+        tb.style.width = '';
 
         if (!tb._cachedW || !tb._cachedH) {
           const tbRect = tb.getBoundingClientRect();
@@ -16107,22 +16201,14 @@
             zoom: 6.5,
             zoomControl: false,
             preferCanvas: true,
-            scrollWheelZoom: Boolean(w.maximized)
+            scrollWheelZoom: true,
+            touchZoom: true
           });
           L.control.zoom({ position: 'topright' }).addTo(map);
 
-          // Bloquear zoom accidental con rueda del raton mientras se navega el Lienzo 2D
-          if (mapBoxEl) {
-            mapBoxEl.addEventListener('click', () => {
-              if (map.scrollWheelZoom && !map.scrollWheelZoom.enabled()) {
-                map.scrollWheelZoom.enable();
-              }
-            });
-            mapBoxEl.addEventListener('mouseleave', () => {
-              if (!w.maximized && map.scrollWheelZoom && map.scrollWheelZoom.enabled()) {
-                map.scrollWheelZoom.disable();
-              }
-            });
+          if (mapBoxEl && window.L && L.DomEvent) {
+            L.DomEvent.disableScrollPropagation(mapBoxEl);
+            L.DomEvent.disableClickPropagation(mapBoxEl);
           }
 
           // Jerarquia estricta de panes en Leaflet:
@@ -16150,11 +16236,48 @@
             }
           });
 
-          L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${CARTO_API_KEY}`, {
-            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-            subdomains: 'abcd',
-            maxZoom: 19
-          }).addTo(map);
+          const baseTileLayers = {
+            voyager: L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${CARTO_API_KEY}`, {
+              attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+              subdomains: 'abcd',
+              maxNativeZoom: 18,
+              maxZoom: 19
+            }),
+            topo_fiordos: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+              attribution: 'Tiles &copy; Esri &mdash; Relieve, Fiordos y Batimetría',
+              maxNativeZoom: 18,
+              maxZoom: 19
+            })
+          };
+          const currentBasemapKey = w.basemapStyle === 'topo_fiordos' ? 'topo_fiordos' : 'voyager';
+          baseTileLayers[currentBasemapKey].addTo(map);
+
+          const basemapToggleDiv = document.createElement('div');
+          basemapToggleDiv.className = 'map-basemap-switcher';
+          basemapToggleDiv.style.cssText = 'position:absolute;top:8px;left:8px;z-index:820;display:inline-flex;background:rgba(255,255,255,0.94);border:1px solid rgba(0,53,127,0.28);border-radius:3px;box-shadow:0 2px 6px rgba(15,23,42,0.12);overflow:hidden;font-family:var(--font-mono);font-size:0.60rem;';
+          basemapToggleDiv.innerHTML = `
+            <button type="button" data-basemap="voyager" style="border:none;padding:3px 7px;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:${currentBasemapKey === 'voyager' ? '700' : '500'};background:${currentBasemapKey === 'voyager' ? '#00357f' : 'transparent'};color:${currentBasemapKey === 'voyager' ? '#ffffff' : '#1c1b1b'};">Cartográfico</button>
+            <button type="button" data-basemap="topo_fiordos" style="border:none;border-left:1px solid rgba(0,53,127,0.18);padding:3px 7px;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:${currentBasemapKey === 'topo_fiordos' ? '700' : '500'};background:${currentBasemapKey === 'topo_fiordos' ? '#00357f' : 'transparent'};color:${currentBasemapKey === 'topo_fiordos' ? '#ffffff' : '#1c1b1b'};">Fiordos &amp; Relieve</button>
+          `;
+          basemapToggleDiv.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            const btn = ev.target.closest('button[data-basemap]');
+            if (!btn) return;
+            const nextKey = btn.getAttribute('data-basemap');
+            if (!nextKey || !baseTileLayers[nextKey]) return;
+            w.basemapStyle = nextKey;
+            Object.keys(baseTileLayers).forEach((k) => {
+              if (map.hasLayer(baseTileLayers[k])) map.removeLayer(baseTileLayers[k]);
+            });
+            baseTileLayers[nextKey].addTo(map);
+            basemapToggleDiv.querySelectorAll('button[data-basemap]').forEach((b) => {
+              const active = b.getAttribute('data-basemap') === nextKey;
+              b.style.background = active ? '#00357f' : 'transparent';
+              b.style.color = active ? '#ffffff' : '#1c1b1b';
+              b.style.fontWeight = active ? '700' : '500';
+            });
+          });
+          container.appendChild(basemapToggleDiv);
 
           // Determinar comunas permitidas por el segmentador territorial global + toggle Sin Coyhaique
           const baseTerritorialList = (AppState.territorialFilter && TERRITORIAL_SLICES[AppState.territorialFilter])
@@ -16277,24 +16400,41 @@
           const bufferRadiusKm = bufferRadiusM / 1000;
 
           // NIVEL 1: Poligonos Coropleticos Comunales (L.geoJSON)
+          const isMaritimeFiordosLayer = isAquaMode || activeLayerKey === 'caletas_puertos';
+          const computeComunaPolygonStyle = (cName, activeEnt, zoomLvl) => {
+            const inFilter = !isTerritorialFiltered || allowedComunasSet.has(normStr(cName));
+            const valX = getComunaVal(valuesMapX, cName);
+            const ratio = (valX - minValX) / (maxValX - minValX || 1);
+            const fillHex = getChoroplethFillColor(ratio, baseChoroColor);
+            const isSelected = activeEnt && normStr(activeEnt) === normStr(cName);
+            const attenuateForFiordos = isMaritimeFiordosLayer || (Number(zoomLvl) >= 8);
+            if (attenuateForFiordos) {
+              return {
+                fillColor: fillHex,
+                color: !inFilter ? '#94a3b8' : (isSelected ? '#00357f' : '#334155'),
+                weight: isSelected ? 2.2 : 1.0,
+                dashArray: isSelected ? '' : '3,3',
+                opacity: !inFilter ? 0.22 : (isSelected ? 0.85 : 0.45),
+                fillOpacity: isSelected ? 0.12 : 0.04
+              };
+            }
+            const fillOp = !inFilter ? 0.06 : ((!activeEnt || isSelected) ? (isSelected ? 0.62 : 0.36) : 0.14);
+            return {
+              fillColor: fillHex,
+              color: !inFilter ? '#94a3b8' : (isSelected ? '#001d4a' : '#1e293b'),
+              weight: !inFilter ? 0.8 : (isSelected ? 2.8 : 1.2),
+              dashArray: '',
+              opacity: !inFilter ? 0.25 : ((!activeEnt || isSelected) ? 0.85 : 0.35),
+              fillOpacity: fillOp
+            };
+          };
+
           const geojsonData = (window.AYSEN_HUBS_DATA && window.AYSEN_HUBS_DATA.comunasGeoJSON) || null;
           if (geojsonData && Array.isArray(geojsonData.features)) {
             L.geoJSON(geojsonData, {
               style: (feature) => {
                 const cName = (feature.properties && feature.properties.nombre) || 'Coyhaique';
-                const inFilter = !isTerritorialFiltered || allowedComunasSet.has(normStr(cName));
-                const valX = getComunaVal(valuesMapX, cName);
-                const ratio = (valX - minValX) / (maxValX - minValX || 1);
-                const fillHex = getChoroplethFillColor(ratio, baseChoroColor);
-                const isSelected = selEntity && normStr(selEntity) === normStr(cName);
-                const fillOp = !inFilter ? 0.06 : ((!selEntity || isSelected) ? (isSelected ? 0.62 : 0.36) : 0.14);
-                return {
-                  fillColor: fillHex,
-                  color: !inFilter ? '#94a3b8' : (isSelected ? '#001d4a' : '#1e293b'),
-                  weight: !inFilter ? 0.8 : (isSelected ? 2.8 : 1.2),
-                  opacity: !inFilter ? 0.25 : ((!selEntity || isSelected) ? 0.85 : 0.35),
-                  fillOpacity: fillOp
-                };
+                return computeComunaPolygonStyle(cName, selEntity, map.getZoom());
               },
               onEachFeature: (feature, layer) => {
                 const props = feature.properties || {};
@@ -16494,12 +16634,12 @@
               if (isPadronSnaspe) snaspePadronCount += 1;
 
               const magRatio = (Number(n.magnitudeValue || 1) - minMag) / (maxMag - minMag || 1);
-              const baseRadius = isPadronNode ? (isPadronActive ? 4.8 : 3.7) : (5 + magRatio * 7.5);
+              const baseRadius = isPadronNode ? (isPadronActive ? 4.8 : 3.9) : (5 + magRatio * 7.5);
               const ptRadius = baseRadius;
               const isComunaSelected = selEntity && normStr(selEntity) === normStr(n.nombre_comuna);
               const markerOpacity = (!selEntity || isComunaSelected) ? (isPadronNode ? 0.94 : 0.92) : 0.25;
               const fillOp = isPadronNode
-                ? ((!selEntity || isComunaSelected) ? (isPadronActive ? 0.88 : 0.16) : 0.12)
+                ? ((!selEntity || isComunaSelected) ? (isPadronActive ? 0.88 : 0.48) : 0.16)
                 : markerOpacity;
               const fillHex = isPadronNode
                 ? (isPadronActive ? '#0059c5' : '#bae6fd')
@@ -16508,7 +16648,7 @@
                 ? (isPadronSnaspe ? '#dc2626' : (isPadronActive ? '#ffffff' : '#0284c7'))
                 : '#ffffff';
               const strokeW = isPadronNode
-                ? (isPadronSnaspe ? 1.9 : 1.3)
+                ? (isPadronSnaspe ? 1.9 : 1.6)
                 : (isComunaSelected ? 2.2 : 1.4);
 
               const nodeLayerTitle = (SPATIAL_LAYERS_META[n.layerKey] || SPATIAL_LAYERS_META[activeLayerKey] || {}).label || activeLayerKey;
@@ -16527,7 +16667,7 @@
                 fillOpacity: fillOp
               }).addTo(map);
 
-              mapCircleMarkers.push({ marker, ptRadius, comuna: n.nombre_comuna, isPadronNode, fillOp, strokeW });
+              mapCircleMarkers.push({ marker, ptRadius, comuna: n.nombre_comuna, isPadronNode, isPadronActive, fillOp, strokeW });
 
               marker.bindTooltip(() => `
                 <div style="font-family: var(--font-sans); line-height: 1.3;">
@@ -16616,27 +16756,35 @@
             });
           }
 
-          w._updateMapHighlight = (activeEnt) => {
+          const syncZoomAndHighlightStyles = (activeEnt) => {
+            const zoom = map.getZoom();
+            const zoomScale = zoom >= 10 ? 1.55 : (zoom >= 8 ? 1.25 : 1.0);
             mapPolygonLayers.forEach(({ layer, cName }) => {
-              const inFilter = !isTerritorialFiltered || allowedComunasSet.has(normStr(cName));
-              const isSelected = activeEnt && normStr(activeEnt) === normStr(cName);
-              layer.setStyle({
-                color: !inFilter ? '#94a3b8' : (isSelected ? '#001d4a' : '#1e293b'),
-                weight: !inFilter ? 0.8 : (isSelected ? 2.8 : 1.2),
-                opacity: !inFilter ? 0.25 : ((!activeEnt || isSelected) ? 0.85 : 0.35),
-                fillOpacity: !inFilter ? 0.06 : ((!activeEnt || isSelected) ? (isSelected ? 0.62 : 0.36) : 0.14)
-              });
+              layer.setStyle(computeComunaPolygonStyle(cName, activeEnt, zoom));
             });
-            mapCircleMarkers.forEach(({ marker, ptRadius, comuna, isPadronNode, fillOp, strokeW }) => {
+            mapCircleMarkers.forEach(({ marker, ptRadius, comuna, isPadronNode, isPadronActive, fillOp, strokeW }) => {
               const isSel = activeEnt && normStr(activeEnt) === normStr(comuna);
-              const op = (!activeEnt || isSel) ? (isPadronNode ? 0.94 : 0.92) : 0.25;
+              const op = (!activeEnt || isSel) ? (isPadronNode ? 0.96 : 0.92) : 0.25;
+              const scaledR = ptRadius * (isPadronNode ? zoomScale : (zoom >= 9 ? 1.2 : 1.0));
+              const inactiveFill = zoom >= 8 ? 0.56 : 0.48;
+              const dynamicFillOp = isPadronNode
+                ? ((!activeEnt || isSel) ? (isPadronActive ? 0.90 : inactiveFill) : 0.16)
+                : op;
               marker.setStyle({
-                radius: isSel ? ptRadius + 2.0 : ptRadius,
+                radius: isSel ? scaledR + 2.0 : scaledR,
                 weight: isSel ? strokeW + 0.6 : strokeW,
                 opacity: op,
-                fillOpacity: isPadronNode ? ((!activeEnt || isSel) ? fillOp : 0.12) : op
+                fillOpacity: dynamicFillOp
               });
             });
+          };
+
+          map.on('zoomend', () => {
+            syncZoomAndHighlightStyles(AppState.selectedEntity);
+          });
+
+          w._updateMapHighlight = (activeEnt) => {
+            syncZoomAndHighlightStyles(activeEnt);
           };
 
           // Leyenda Bivariada Automatica en Esquina Inferior Izquierda
@@ -17457,6 +17605,271 @@
         if (interregEl) {
           interregEl.addEventListener('change', applySociodemoFilters);
         }
+
+        initCuratedDiscoveriesUI();
+      }
+
+      let activeDiscoveriesFilter = 'all';
+
+      function initCuratedDiscoveriesUI() {
+        const btnOpen = document.getElementById('btnOpenDiscoveriesDrawer');
+        const modal = document.getElementById('modalCuratedDiscoveries');
+        const btnClose = document.getElementById('btnDiscoveriesModalClose');
+        const tabsWrap = document.getElementById('discoveriesFilterTabs');
+
+        if (btnOpen && !btnOpen._hasDiscoveriesBound) {
+          btnOpen._hasDiscoveriesBound = true;
+          btnOpen.addEventListener('click', () => {
+            openCuratedDiscoveriesDrawer('all');
+          });
+        }
+
+        if (btnClose && modal && !btnClose._hasDiscoveriesCloseBound) {
+          btnClose._hasDiscoveriesCloseBound = true;
+          btnClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+          });
+        }
+
+        if (tabsWrap && !tabsWrap._hasDiscoveriesTabsBound) {
+          tabsWrap._hasDiscoveriesTabsBound = true;
+          tabsWrap.querySelectorAll('button[data-disc-filter]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const flt = btn.getAttribute('data-disc-filter') || 'all';
+              activeDiscoveriesFilter = flt;
+              tabsWrap.querySelectorAll('button[data-disc-filter]').forEach((b) => {
+                b.classList.toggle('active', b.getAttribute('data-disc-filter') === flt);
+              });
+              renderCuratedDiscoveriesGrid(flt);
+            });
+          });
+        }
+      }
+
+      function openCuratedDiscoveriesDrawer(filterKey = 'all') {
+        const modal = document.getElementById('modalCuratedDiscoveries');
+        if (!modal) return;
+        hideFloatingToolbar();
+        activeDiscoveriesFilter = filterKey || 'all';
+        const tabsWrap = document.getElementById('discoveriesFilterTabs');
+        if (tabsWrap) {
+          tabsWrap.querySelectorAll('button[data-disc-filter]').forEach((b) => {
+            b.classList.toggle('active', b.getAttribute('data-disc-filter') === activeDiscoveriesFilter);
+          });
+        }
+        renderCuratedDiscoveriesGrid(activeDiscoveriesFilter);
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      function renderCuratedDiscoveriesGrid(filterKey = 'all') {
+        const grid = document.getElementById('discoveriesCardsGrid');
+        if (!grid) return;
+        const discBundle = window.AYSEN_DISCOVERIES_DATA || {};
+        const list = Array.isArray(discBundle.curatedDiscoveries) ? discBundle.curatedDiscoveries : [];
+        const comunasExplain = discBundle.comunasExplain || {};
+
+        if (filterKey === 'comunas_explain') {
+          const cNames = Object.keys(comunasExplain);
+          if (cNames.length === 0) {
+            grid.innerHTML = '<div style="grid-column:1/-1;padding:2rem;text-align:center;">No hay radiografías comunales cargadas.</div>';
+            return;
+          }
+          let html = '';
+          cNames.forEach((cName) => {
+            const info = comunasExplain[cName];
+            const aboveHtml = (info.topAboveRegionalMean || []).slice(0, 3).map((it) =>
+              `<li style="margin-bottom:3px;"><strong style="color:#047857;">[+]</strong> ${it.plainSummary}</li>`
+            ).join('');
+            const belowHtml = (info.topBelowRegionalMean || []).slice(0, 3).map((it) =>
+              `<li style="margin-bottom:3px;"><strong style="color:#b91c1c;">[–]</strong> ${it.plainSummary}</li>`
+            ).join('');
+            const twinsHtml = (info.twinComunas || []).map((tw) =>
+              `<span style="display:inline-block;background:#eef6ff;border:1px solid rgba(0,53,127,0.22);color:#00357f;font-family:var(--font-mono);font-size:0.64rem;padding:2px 6px;border-radius:2px;margin-right:4px;">${tw.comuna} (${tw.similitudPct}%)</span>`
+            ).join('');
+            html += `
+              <div class="hub-preset-card" data-comuna-explain="${cName}">
+                <div>
+                  <div class="hub-preset-header">
+                    <span class="format-pill">[PROV. ${(info.provincia || 'AYSÉN').toUpperCase()}]</span>
+                    <span class="cross-pill">${Number(info.poblacionCenso2024 || 0).toLocaleString('es-CL')} hab. (${info.porcentajeRegionalPct}% reg.)</span>
+                  </div>
+                  <h4 class="hub-preset-title">Radiografía Local DashAI: ${cName}</h4>
+                  <p class="hub-preset-desc" style="margin-bottom:8px;">${info.narrativeDigest || ''}</p>
+                  <div style="font-size:0.72rem;color:#1c1b1b;background:#f8fafc;border:1px solid rgba(15,23,42,0.08);padding:6px 8px;border-radius:3px;margin-bottom:6px;">
+                    <div style="font-family:var(--font-mono);font-size:0.62rem;font-weight:700;color:#00357f;text-transform:uppercase;margin-bottom:4px;">Indicadores Destacados vs. Media Regional</div>
+                    <ul style="list-style:none;padding:0;margin:0;">${aboveHtml}${belowHtml}</ul>
+                  </div>
+                  <div style="margin-top:4px;">
+                    <span style="font-family:var(--font-mono);font-size:0.62rem;color:#4a4745;display:block;margin-bottom:3px;">Comunas Gemelas más parecidas:</span>
+                    ${twinsHtml}
+                  </div>
+                </div>
+                <button type="button" class="btn-load-preset" data-filter-comuna="${cName}">
+                  <span>Enfocar ${cName} en el Lienzo →</span>
+                </button>
+              </div>
+            `;
+          });
+          grid.innerHTML = html;
+          grid.querySelectorAll('button[data-filter-comuna]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const cName = btn.getAttribute('data-filter-comuna');
+              if (cName) {
+                toggleCrossHighlight(cName, null);
+              }
+              const modal = document.getElementById('modalCuratedDiscoveries');
+              if (modal) {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+              }
+            });
+          });
+          return;
+        }
+
+        const filtered = filterKey === 'all'
+          ? list
+          : list.filter((d) => d.category === filterKey);
+
+        let html = '';
+        filtered.forEach((d) => {
+          const st = d.statProofBadges || {};
+          const reg = d.regressionLine || {};
+          const r2Pct = Number(st.fuerzaExplicativaPct || reg.rSquaredPct || 0);
+          const isTemporal = d.category === 'acoplamiento_temporal_2015_2026';
+          const badge3Label = isTemporal
+            ? `Delta Interanual: ${String(st.firstDiffCorrDelta || st.partialCorrPop).replace('.', ',')}`
+            : `Control Pob.: ${String(st.partialCorrPop).replace('.', ',')}`;
+          const badge4Label = isTemporal
+            ? `Sin 2020: ${String(st.rWithoutCoyhaique).replace('.', ',')}`
+            : `Sin Coyhaique: ${String(st.rWithoutCoyhaique).replace('.', ',')}`;
+
+          html += `
+            <div class="hub-preset-card discovery-curated-card" data-discovery-id="${d.id}">
+              <div>
+                <div class="hub-preset-header">
+                  <span class="format-pill">[${d.hubX} ↔ ${d.hubY}]</span>
+                  <span class="cross-pill">${reg.directionLabel || 'Regresión OLS'}</span>
+                </div>
+                <h4 class="hub-preset-title">#${String(d.order || '').padStart(2, '0')} · ${d.headline}</h4>
+                <div style="margin: 6px 0 8px;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:0.65rem;color:#00357f;font-weight:700;margin-bottom:3px;">
+                    <span>Fuerza Explicativa (R² = ${String(reg.rSquaredPct || r2Pct).replace('.', ',')}%)</span>
+                    <span>r = ${String(st.pearsonR).replace('.', ',')} · FDR p &lt; 0,01</span>
+                  </div>
+                  <div style="width:100%;height:7px;background:#e2e8f0;border-radius:999px;overflow:hidden;">
+                    <div class="discovery-r2-bar" style="width:${Math.min(100, Math.max(12, r2Pct))}%;height:100%;background:linear-gradient(90deg,#00357f,#0059c5);"></div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;">
+                  <span style="background:#f0f7ff;border:1px solid rgba(0,53,127,0.2);color:#00357f;font-family:var(--font-mono);font-size:0.60rem;padding:2px 5px;border-radius:2px;">Spearman: ${String(st.spearmanRho).replace('.', ',')}</span>
+                  <span style="background:#f0fdf4;border:1px solid rgba(4,120,87,0.25);color:#047857;font-family:var(--font-mono);font-size:0.60rem;padding:2px 5px;border-radius:2px;">${badge4Label}</span>
+                  <span style="background:#fefce8;border:1px solid rgba(180,83,9,0.25);color:#92400e;font-family:var(--font-mono);font-size:0.60rem;padding:2px 5px;border-radius:2px;">${badge3Label}</span>
+                </div>
+                <p class="hub-preset-desc" style="font-size:0.75rem;line-height:1.45;color:#1c1b1b;margin-bottom:6px;">${d.plainExplanation}</p>
+                <div style="font-family:var(--font-mono);font-size:0.62rem;color:#475569;background:#f8fafc;padding:5px 7px;border-left:2px solid #00357f;">
+                  ${st.veredictoSimple || ''}
+                </div>
+              </div>
+              <button type="button" class="btn-load-preset btn-load-discovery-regression" data-discovery-id="${d.id}">
+                <span>Graficar con Recta de Regresión →</span>
+              </button>
+            </div>
+          `;
+        });
+
+        grid.innerHTML = html;
+
+        grid.querySelectorAll('.btn-load-discovery-regression').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const discId = btn.getAttribute('data-discovery-id');
+            loadCuratedDiscoveryIntoCanvas(discId);
+            const modal = document.getElementById('modalCuratedDiscoveries');
+            if (modal) {
+              modal.style.display = 'none';
+              modal.setAttribute('aria-hidden', 'true');
+            }
+          });
+        });
+      }
+
+      function loadCuratedDiscoveryIntoCanvas(discoveryId) {
+        const discBundle = window.AYSEN_DISCOVERIES_DATA || {};
+        const list = Array.isArray(discBundle.curatedDiscoveries) ? discBundle.curatedDiscoveries : [];
+        const d = list.find((item) => item.id === discoveryId) || list[0];
+        if (!d) return null;
+
+        pushHistory(`cargar hallazgo ${d.id}`);
+
+        const isTemporal = d.category === 'acoplamiento_temporal_2015_2026' || d.dim === 'tiempo';
+        const offsetCount = AppState.widgets.length;
+        const w = createWidget('chart', {
+          title: `${d.headline}`,
+          varX: d.varX,
+          varY: d.varY,
+          chartType: 'scatter',
+          showTrend: true,
+          showAverage: true,
+          discoveryId: d.id,
+          color: '#00357f',
+          x: 80 + (offsetCount % 3) * 40,
+          y: 70 + (offsetCount % 3) * 35,
+          w: 620,
+          h: 440
+        });
+
+        // Mostrar ficha explicativa debajo del gráfico en su panel de síntesis
+        if (w) {
+          explainCardWithCuratedDiscovery(w, d);
+          selectActiveCard(w.id);
+        }
+        autoSave();
+        return w;
+      }
+
+      function explainCardWithCuratedDiscovery(w, explicitDiscovery = null) {
+        if (!w) return;
+        const discBundle = window.AYSEN_DISCOVERIES_DATA || {};
+        const list = Array.isArray(discBundle.curatedDiscoveries) ? discBundle.curatedDiscoveries : [];
+        const matched = explicitDiscovery || list.find((d) =>
+          (d.id && w.discoveryId === d.id) ||
+          (d.varX === w.varX && d.varY === w.varY) ||
+          (d.varX === w.varY && d.varY === w.varX)
+        );
+
+        const panel = document.getElementById(`synthesis-panel-${w.id}`);
+        if (!panel) return;
+
+        if (matched) {
+          const st = matched.statProofBadges || {};
+          const reg = matched.regressionLine || {};
+          panel.style.display = 'block';
+          panel.innerHTML = `
+            <div class="synth-hdr">
+              <span>Hallazgo Estadístico Curado (${matched.hubX} ↔ ${matched.hubY} · R² = ${String(reg.rSquaredPct || st.fuerzaExplicativaPct).replace('.', ',')}%)</span>
+              <button type="button" class="btn-card-mini-pill" id="btnCloseSynth-${w.id}" aria-label="Cerrar explicación">×</button>
+            </div>
+            <div style="font-size:0.75rem;line-height:1.48;color:#1c1b1b;">
+              <p style="margin:0 0 6px;"><strong>Mecanismo Territorial:</strong> ${matched.plainExplanation}</p>
+              <p style="margin:0;font-family:var(--font-mono);font-size:0.66rem;color:#00357f;">
+                <strong>Verificación (5 Pruebas Python):</strong> ${st.veredictoSimple} · Recta OLS: Y = ${reg.interceptBeta0} + (${reg.slopeBeta1})·X
+              </p>
+            </div>
+          `;
+          const closeBtn = panel.querySelector(`#btnCloseSynth-${w.id}`);
+          if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              panel.style.display = 'none';
+            });
+          }
+          return;
+        }
+
+        // Si no es uno de los 25 pares exactos, combinar la síntesis ejecutiva de la tarjeta con la radiografía DashAI de la comuna líder
+        generateCardExecutiveSynthesis(w);
       }
 
       function openHubGallery(hubId = 'turismo') {
