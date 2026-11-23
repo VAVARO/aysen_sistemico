@@ -1,0 +1,58 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#hub",
+      "color": {
+        "a": 1,
+        "rgb": 13695
+      }
+    },
+    {
+      "query": "tag:#comuna",
+      "color": {
+        "a": 1,
+        "rgb": 22981
+      }
+    },
+    {
+      "query": "tag:#concepto",
+      "color": {
+        "a": 1,
+        "rgb": 1136025
+      }
+    },
+    {
+      "query": "tag:#adr",
+      "color": {
+        "a": 1,
+        "rgb": 9127187
+      }
+    },
+    {
+      "query": "tag:#nodo",
+      "color": {
+        "a": 1,
+        "rgb": 4674917
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.15,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 240,
+  "scale": 1,
+  "close": false
+}

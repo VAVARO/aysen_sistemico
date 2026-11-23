@@ -33,3 +33,20 @@
 - CSV Exports: UTF-8 BOM (`\uFEFF`) and RFC 4180 format.
 - Canonical Data Lake: 10 Hubs (`I` to `X`), 39 Satellite Nodes (`#01` to `#39`), 10 Comunas of Aysén.
 - DOM Contract Preservation: Never remove or alter contractual IDs (`#concept-drawer`, `#repoHealthBadge`, `#healthScore`, `#miniChart`, etc.).
+
+## LLM Wiki Workflow (Karpathy Pattern + Obsidian Vault)
+- **Separación Estricta entre Verdad Numérica Tipada y Wiki Semántica Compilada**:
+  - Los vectores cuantitativos (`235` variables × `10` comunas y series históricas 2015–2026) viven en `scripts/build_aysen_hubs_bundle.cjs` y `data/aysen_hubs_data.js` como fuente de verdad matemática inmutable.
+  - La carpeta `wiki/` almacena el conocimiento acumulado y compuesto (`77` notas canónicas interconectadas con YAML frontmatter compatible con Obsidian Dataview y `[[wikilinks]]`): `wiki/index.md`, `wiki/log.md`, `10` páginas en `wiki/hubs/`, `10` páginas en `wiki/comunas/`, `41` fichas en `wiki/nodos/`, `8` paquetes conceptuales y entidades territoriales en `wiki/conceptos/` y `6` ADRs en `wiki/adr/`.
+- **Comandos Oficiales de la Wiki**:
+  - `node scripts/init_and_compile_llm_wiki.cjs`: Regenera/actualiza la estructura base de `wiki/` desde el Data Lake y compila `data/aysen_wiki_compiled.js`.
+  - `node scripts/obsidian_wiki_bridge.cjs --lint`: Ejecuta el linter determinista sobre los archivos Markdown de `wiki/` (0 wikilinks rotos, 0 huérfanos, 0 claves inválidas, 0 cifras obsoletas).
+  - `node scripts/obsidian_wiki_bridge.cjs --compile`: Compila las síntesis editadas en Obsidian (`wiki/`) hacia `data/aysen_wiki_compiled.js` (`window.AYSEN_WIKI_COMPILED`), hidratando automáticamente `window.OmniRouteClient`.
+  - `node scripts/obsidian_wiki_bridge.cjs --sync-to-vault --vault-path "<RUTA_VAULT>"`: Sincroniza `wiki/` hacia la carpeta `Aysen_Sistemico/` del Vault principal de Obsidian del usuario.
+  - `node scripts/obsidian_wiki_bridge.cjs --pull-from-vault`: Trae ediciones desde el Vault de Obsidian, ejecuta el Linter y recompila el Consultor.
+- **Protocolo Obligatorio para el Agente en cada `Ingest` o Cambio Metodológico**:
+  1. Actualizar el vector numérico en `scripts/build_aysen_hubs_bundle.cjs` y regenerar `data/aysen_hubs_data.js`.
+  2. Actualizar las páginas afectadas en `wiki/hubs/`, `wiki/comunas/`, `wiki/nodos/` o `wiki/conceptos/` (aplicando siempre *"Extend, Don't Create"*).
+  3. Si se tomó una decisión metodológica o arquitectónica nueva, documentarla en `wiki/adr/` y registrar una entrada con prefijo `## [YYYY-MM-DD] ingest|lint|adr | Título` al final de `wiki/log.md`.
+  4. Ejecutar `node scripts/obsidian_wiki_bridge.cjs --lint && node scripts/obsidian_wiki_bridge.cjs --compile`.
+

@@ -1627,7 +1627,44 @@
    * WP-C.2: Devuelve la lista deduplicada de fuentes oficiales para un conjunto de claves
    * de variables, garantizando que jamás se exponga un nombre de columna en snake_case.
    */
+  /**
+   * Sincroniza dinámicamente CONCEPTUAL_DOMAIN_PACKETS y TERRITORIAL_ENTITY_GRAPH
+   * con las síntesis pre-compiladas desde la Wiki de Karpathy / Obsidian Vault
+   * (`window.AYSEN_WIKI_COMPILED`), manteniendo las síntesis en código como fallback.
+   */
+  function syncCompiledWikiKnowledge(customWikiBundle) {
+    const wikiBundle = customWikiBundle || (global && global.AYSEN_WIKI_COMPILED) || null;
+    if (!wikiBundle || typeof wikiBundle !== 'object') return false;
+    const conceptsById = wikiBundle.conceptsById || {};
+    let updatedCount = 0;
+
+    CONCEPTUAL_DOMAIN_PACKETS.forEach(packet => {
+      const entry = conceptsById[packet.id];
+      if (entry) {
+        const text = String(entry.conceptualBrief || entry.synthesis || '').trim();
+        if (text) {
+          packet.conceptualBrief = text;
+          updatedCount++;
+        }
+      }
+    });
+
+    TERRITORIAL_ENTITY_GRAPH.forEach(entity => {
+      const entry = conceptsById[entity.id];
+      if (entry) {
+        const text = String(entry.verifiedSynthesis || entry.synthesis || '').trim();
+        if (text) {
+          entity.verifiedSynthesis = text;
+          updatedCount++;
+        }
+      }
+    });
+
+    return updatedCount > 0;
+  }
+
   function ensureInitialized() {
+    syncCompiledWikiKnowledge();
     if (!_initialized && (global && global.AYSEN_HUBS_DATA)) {
       OmniRouteClient.init(_dataLake || global.AYSEN_HUBS_DATA);
     }
@@ -7404,12 +7441,15 @@
       }
 
       _dataLake = targetLake;
+      syncCompiledWikiKnowledge();
       buildMemoryIndex(_dataLake, _lexicon);
       _initialized = true;
       startLexiconFetchIfNeeded();
 
       return this;
     },
+
+    syncCompiledWikiKnowledge,
 
     refreshMemory(newDataLake) {
       if (newDataLake) _dataLake = newDataLake;

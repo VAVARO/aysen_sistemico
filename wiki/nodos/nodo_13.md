@@ -1,0 +1,55 @@
+---
+id: nodo_13
+title: "Nodo #13 — Precios de Combustibles y Leña por Comuna (CNE)"
+type: nodo
+hub_id: energia
+hub_roman: III
+variables_clave:
+  - gasolina_93_clp
+  - precio_lena_m3
+  - hogares_lena_pct
+  - consumo_lena_m3_hogar_ano
+fuentes_oficiales:
+  - "Comisión Nacional de Energía (CNE) — Sistema de Información de Precios en Línea"
+updated_at: "2026-11-23"
+tags:
+  - aysen-sistemico
+  - nodo
+  - hub-iii
+---
+
+# Nodo #13 — Precios de Combustibles y Leña por Comuna (CNE)
+
+## Síntesis Compilada (Consultor IA)
+
+Comparativa comunal de precios de gasolina 93 ($/litro), petróleo diesel ($/litro), porcentaje de sobrecosto respecto a Santiago y precio del metro cúbico de leña seca ($/m3). En Coyhaique la gasolina 93 promedia $1.365/L (+10,8% vs. Santiago) y el 92,4% de los hogares usa leña ($42.000/m3), mientras en comunas australes e insulares el sobrecosto de combustibles supera el 20%-26%.
+
+## Indicadores Comunales Verificados
+
+| Comuna | Gasolina 93 ($/L) | Diesel ($/L) | Sobrecosto vs. Stgo | Precio Leña ($/m3) |
+| --- | --- | --- | --- | --- |
+| [[comunas/coyhaique|Coyhaique]] | $1.362 | $1.098 | +10.8% | $48.000 |
+| [[comunas/lago_verde|Lago Verde]] | $1.520 | $1.260 | +22.5% | $38.000 |
+| [[comunas/aysen|Aysén]] | $1.375 | $1.115 | +11.2% | $46.000 |
+| [[comunas/cisnes|Cisnes]] | $1.440 | $1.190 | +16.4% | $42.000 |
+| [[comunas/guaitecas|Guaitecas]] | $1.560 | $1.290 | +26.2% | $55.000 |
+| [[comunas/chile_chico|Chile Chico]] | $1.430 | $1.180 | +15.6% | $50.000 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | $1.420 | $1.170 | +14.8% | $44.000 |
+| [[comunas/cochrane|Cochrane]] | $1.410 | $1.150 | +13.9% | $42.000 |
+| [[comunas/ohiggins|O'Higgins]] | $1.620 | $1.340 | +30.8% | $36.000 |
+| [[comunas/tortel|Tortel]] | $1.580 | $1.310 | +27.6% | $40.000 |
+
+## Metadatos de Procedencia Institucional
+
+- **Entidad Oficial**: Comisión Nacional de Energía (CNE) — Sistema de Información de Precios en Línea
+- **Fecha de Corte**: Precios semanales en estaciones de servicio y catastro CNE de leña · Corte Octubre 2026
+- **Método de Captura**: Reporte obligatorio de precios de venta a público informado por distribuidores minoristas a CNE
+- **Subsistema VSM**: S1 · Flujo metabólico: energy
+
+## Conexiones Sistémicas (`[[Wikilinks]]`)
+
+- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]
+- **Hub Perteneciente**: [[hubs/hub_03_energia|Hub III — Energía, Sistemas Medianos Aislados, Matriz Térmica y Telecomunicaciones]]
+- **Nodos Satélite Relacionados**: [[nodos/nodo_03|Nodo #03]] · [[nodos/nodo_24|Nodo #24]] · [[nodos/nodo_27|Nodo #27]] · [[nodos/nodo_30|Nodo #30]] · [[nodos/nodo_40|Nodo #40]]
+- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]
+- **ADRs de Referencia**: [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]] · [[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]
