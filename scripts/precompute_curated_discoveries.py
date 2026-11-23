@@ -3,18 +3,16 @@
 """
 scripts/precompute_curated_discoveries.py
 ===============================================================================
-Motor Estadístico Multicriterio en Python (NumPy + SciPy) para la Galería Curada
-de 25 Hallazgos y Relaciones No Obvias entre Hubs Distintos + Explicabilidad
-Local por Comuna (Estilo DashAI) de Aysén Sistémico.
+Cálculo estadístico territorial de Aysén para la galería curada de 25 cruces
+verificados entre ejes temáticos y perfiles comunales comparados.
 
-Ejecuta 5 pruebas estadísticas complementarias sobre window.AYSEN_HUBS_DATA:
-  1. Regresión Lineal OLS (Y = beta0 + beta1 * X), R², test t exacto y corrección
-     por múltiples comparaciones de Benjamini-Hochberg (FDR < 0.05).
-  2. Correlación No Paramétrica por Rangos de Spearman (rho_s) y Tau de Kendall (tau).
-  3. Correlación Parcial Controlando por Tamaño Poblacional r(X, Y | ln(Pob)).
-  4. Prueba de Robustez Leave-Coyhaique-Out (r_sin_Coyhaique y Distancia de Cook).
-  5. Regresión en Primeras Diferencias Interanuales (Delta Y_t vs Delta X_t, r_Delta)
-     y correlación sin tendencia lineal (r_detrended) en series históricas 2015–2026.
+Evalúa 5 criterios estadísticos bajo el capó sobre window.AYSEN_HUBS_DATA:
+  1. Regresión lineal OLS (R², test t y ajuste Benjamini-Hochberg FDR < 0.05).
+  2. Correlación por rangos de Spearman (rho_s) y Tau de Kendall (tau).
+  3. Correlación parcial controlando por tamaño poblacional r(X, Y | ln(Pob)).
+  4. Robustez excluyendo Coyhaique (r sin Coyhaique y Distancia de Cook).
+  5. Primeras diferencias interanuales (Delta Y_t vs Delta X_t) y series sin
+     tendencia lineal en el período 2015–2026.
 
 Genera: data/aysen_hallazgos_precalculados.js (window.AYSEN_DISCOVERIES_DATA).
 """
@@ -323,209 +321,212 @@ VARIABLE_META = {
 }
 
 
-# 20 pares inter-Hubs no obvios curados por su mecanismo territorial real en Aysén (todos superan simultáneamente las 5 pruebas: p_FDR < 0.01, |Spearman| >= 0.65, |r_parcial_pob| >= 0.65 y |r_sin_Coyhaique| >= 0.65)
+# 20 pares inter-Hubs curados por su mecanismo territorial real en Aysén
 CURATED_20_CROSS_SPECS = [
     {
         "varX": "tarifa_bt1_clp",
         "varY": "indice_aislamiento_multimodal",
-        "headline": "Aislamiento Multimodal vs. Sobrecosto de Tarifa Eléctrica Residencial BT1",
-        "mechanism": (
-            "Las comunas con mayor índice compuesto de aislamiento multimodal (Tortel, O'Higgins, Lago Verde y Guaitecas) "
-            "operan con sistemas eléctricos medianos o aislados sin economía de escala ni interconexión al Sistema Eléctrico Nacional, "
-            "lo que eleva estructuralmente la tarifa residencial BT1 por cada kWh consumido."
+        "headline": "Tarifa Eléctrica Residencial BT1 vs. Aislamiento Multimodal",
+        "shortX": "tarifa eléctrica BT1",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Los sistemas aislados sin interconexión encarecen la cuenta de luz: {hi_c} alcanza {hi_x} {ux} "
+            f"con {hi_y} puntos de aislamiento, frente a {lo_c} ({lo_x} {ux} y {lo_y} puntos)."
         ),
     },
     {
         "varX": "tarifa_bt1_clp",
         "varY": "cobertura_empam_pct",
-        "headline": "Tarifa Eléctrica Residencial BT1 vs. Cobertura Preventiva de Adulto Mayor (EMPAM)",
-        "mechanism": (
-            "Los subsistemas eléctricos aislados con tarifas residenciales BT1 más elevadas coinciden con territorios de alta "
-            "dispersión rural o insular donde los adultos mayores enfrentan mayores barreras climáticas y de transporte para acudir "
-            "a sus controles preventivos EMPAM en postas y centros de salud."
+        "headline": "Tarifa Eléctrica Residencial BT1 vs. Cobertura Preventiva EMPAM",
+        "shortX": "tarifa eléctrica BT1",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Donde la electricidad residencial es más cara, baja la cobertura de controles del adulto mayor: "
+            f"{hi_c} ({hi_x} {ux}) registra {hi_y}%, mientras {lo_c} ({lo_x} {ux}) sube a {lo_y}%."
         ),
     },
     {
         "varX": "cobertura_fibra_hogar_pct",
         "varY": "compras_locales_pct",
-        "headline": "Conectividad Fibra Óptica al Hogar vs. Retención de Compras Públicas Locales",
-        "mechanism": (
-            "Donde la Fibra Óptica Austral y las redes FTTH alcanzan mayor penetración residencial y comercial, las micro y pequeñas "
-            "empresas locales logran operar activamente en el portal Mercado Público (ChileCompra), reteniendo una mayor fracción del "
-            "gasto estatal dentro de la propia comuna."
+        "headline": "Cobertura de Fibra Óptica al Hogar vs. Retención de Compras Locales",
+        "shortX": "cobertura de fibra óptica",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Con mayor fibra óptica al hogar, las pymes locales captan más compras públicas: "
+            f"{hi_c} ({hi_x}% de fibra) retiene {hi_y}% del gasto en la comuna, versus {lo_y}% en {lo_c} ({lo_x}%)."
         ),
     },
     {
         "varX": "seia_plazo_dias",
         "varY": "participacion_municipales_2024_pct",
-        "headline": "Plazo de Evaluación Ambiental SEIA vs. Participación Ciudadana Municipal",
-        "mechanism": (
-            "Las comunas donde los proyectos de inversión requieren plazos más extensos de evaluación ambiental en el SEIA "
-            "(por superposición con áreas protegidas o complejidad logística) exhiben una relación inversa altamente significativa "
-            "con las tasas de participación electoral municipal."
+        "headline": "Plazo de Evaluación Ambiental SEIA vs. Participación Municipal",
+        "shortX": "plazo de evaluación SEIA",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Las comunas con tramitación ambiental más extensa registran menor votación municipal: "
+            f"{hi_c} ({hi_x} {ux}) marca {hi_y}% de participación, frente a {lo_y}% en {lo_c} ({lo_x} {ux})."
         ),
     },
     {
         "varX": "saidi_horas_anual",
         "varY": "cobertura_empam_pct",
-        "headline": "Interrupciones Eléctricas Anuales (SAIDI) vs. Cobertura Preventiva de Adulto Mayor (EMPAM)",
-        "mechanism": (
-            "Las comunas con mayor fragilidad en el suministro eléctrico (mayor número de horas anuales sin luz según el índice SAIDI de la SEC) "
-            "enfrentan simultáneamente mayores interrupciones en la cadena de frío, telecomunicaciones de postas rurales y acceso "
-            "a controles preventivos de salud del adulto mayor."
+        "headline": "Interrupciones Eléctricas (SAIDI) vs. Cobertura Preventiva EMPAM",
+        "shortX": "interrupciones eléctricas",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"A más horas anuales sin suministro eléctrico, menor control preventivo de mayores: "
+            f"en {hi_c} ({hi_x} h/año) la cobertura llega a {hi_y}%, contra {lo_y}% en {lo_c} ({lo_x} h/año)."
         ),
     },
     {
         "varX": "saidi_horas_anual",
         "varY": "tasa_aprobacion_rs_sni_pct",
-        "headline": "Inestabilidad Eléctrica Comunal (SAIDI) vs. Capacidad Municipal para Aprobar Proyectos RS (SNI)",
-        "mechanism": (
-            "El rezago en infraestructura eléctrica confiable (altas horas de corte SAIDI) se acopla directamente con las brechas "
-            "de capacidad técnica municipal (SECPLAN) para formular y obtener Recomendación Satisfactoria (RS) en proyectos del "
-            "Sistema Nacional de Inversiones."
+        "headline": "Interrupciones Eléctricas (SAIDI) vs. Aprobación de Proyectos RS",
+        "shortX": "cortes eléctricos anuales",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"El rezago eléctrico coincide con brechas de inversión pública: {hi_c} suma {hi_x} horas de corte "
+            f"y aprueba {hi_y}% de proyectos RS, mientras {lo_c} ({lo_x} h) logra {lo_y}%."
         ),
     },
     {
         "varX": "saidi_horas_anual",
         "varY": "pobreza_multidim_pct",
-        "headline": "Cortes de Suministro Eléctrico (SAIDI) vs. Pobreza Multidimensional CASEN",
-        "mechanism": (
-            "En Aysén, la vulnerabilidad energética medida por las horas anuales de interrupción eléctrica SAIDI constituye un "
-            "predictor directo de la pobreza multidimensional CASEN, superando ampliamente a los indicadores de ingreso monetario "
-            "incluso al descontar el tamaño poblacional."
+        "headline": "Cortes Eléctricos Anuales (SAIDI) vs. Pobreza Multidimensional",
+        "shortX": "horas de corte eléctrico",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"La fragilidad eléctrica va de la mano con carencias multidimensionales: {hi_c} ({hi_x} h al año) "
+            f"alcanza {hi_y}% en CASEN, más del doble que {lo_c} ({lo_y}% con {lo_x} h)."
         ),
     },
     {
         "varX": "saidi_horas_anual",
         "varY": "deficit_habitacional_total_por_1000_hab",
-        "headline": "Interrupciones Eléctricas Anuales (SAIDI) vs. Déficit Habitacional Relativo (MINVU)",
-        "mechanism": (
-            "La fragilidad de las microrredes eléctricas con altos índices de corte anual SAIDI coincide espacialmente con las comunas "
-            "que presentan mayor proporción de viviendas con déficit cualitativo o cuantitativo por cada mil habitantes, configurando "
-            "un núcleo duro de vulnerabilidad energética y habitacional."
+        "headline": "Interrupciones Eléctricas (SAIDI) vs. Déficit Habitacional",
+        "shortX": "horas sin suministro",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Las comunas con suministro más inestable arrastran mayor déficit habitacional: "
+            f"{hi_c} ({hi_x} h/año) registra {hi_y} viviendas deficitarias por mil hab., frente a {lo_y} en {lo_c}."
         ),
     },
     {
         "varX": "gasolina_93_clp",
         "varY": "tasa_aprobacion_rs_sni_pct",
-        "headline": "Sobrecosto de Combustibles (Gasolina 93) vs. Tasa de Aprobación de Proyectos RS (SNI)",
-        "mechanism": (
-            "El sobrecosto logístico del transporte de combustible hacia las comunas extremas de Aysén encarece los presupuestos "
-            "de obras civiles por encima de los valores referenciales del Ministerio de Desarrollo Social, dificultando que las "
-            "licitaciones comunales obtengan rentabilidad social RS al primer intento."
+        "headline": "Precio de Gasolina 93 vs. Aprobación Técnica de Proyectos RS",
+        "shortX": "precio de la gasolina",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"El sobrecosto logístico encarece las obras sobre los valores referenciales: "
+            f"en {hi_c} (gasolina a {hi_x} {ux}) solo {hi_y}% obtiene RS, versus {lo_y}% en {lo_c} ({lo_x} {ux})."
         ),
     },
     {
         "varX": "gasolina_93_clp",
         "varY": "cobertura_empam_pct",
-        "headline": "Precio Comunal de Combustible (Gasolina 93) vs. Acceso a Salud Preventiva (EMPAM)",
-        "mechanism": (
-            "El mayor costo por litro de combustible en zonas aisladas encarece tanto las rondas médicas rurales como el traslado "
-            "particular de personas mayores desde sectores apartados hacia las postas y consultorios de atención primaria."
+        "headline": "Precio de Gasolina 93 vs. Cobertura Preventiva EMPAM",
+        "shortX": "precio de combustible",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"El combustible más caro encarece rondas rurales y traslados médicos: "
+            f"{hi_c} ({hi_x} {ux}) cubre al {hi_y}% de sus adultos mayores, diez puntos bajo {lo_c} ({lo_y}%)."
         ),
     },
     {
         "varX": "costo_real_generacion_diesel_kwh_clp",
         "varY": "indice_aislamiento_multimodal",
-        "headline": "Aislamiento Multimodal vs. Costo Real de Generación Eléctrica Diésel Aislada",
-        "mechanism": (
-            "La fricción logística para transportar diésel por carretera de ripio y barcaza hacia sistemas eléctricos aislados "
-            "(como Melinka en Guaitecas, Tortel o Villa O'Higgins) encarece directamente el costo real por kWh generado frente al "
-            "subsistema hidro-eólico de Coyhaique y Puerto Aysén."
+        "headline": "Costo de Generación Diésel Aislada vs. Aislamiento Multimodal",
+        "shortX": "costo de generación diésel",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Transportar diésel por ripio y barcaza dispara el costo real eléctrico: "
+            f"{hi_c} genera a {hi_x} {ux} con {hi_y} puntos de aislamiento, frente a {lo_c} ({lo_x} {ux})."
         ),
     },
     {
         "varX": "subsidio_fiscal_diesel_kwh_clp",
         "varY": "tasa_aprobacion_rs_sni_pct",
-        "headline": "Subsidio Fiscal a Sistemas Eléctricos Aislados vs. Aprobación Técnica de Proyectos RS",
-        "mechanism": (
-            "Las comunas que requieren mayores subsidios fiscales por kWh para sostener sus plantas eléctricas diésel o microcentrales "
-            "aisladas son aquellas donde las secretarías de planificación municipal enfrentan mayores cuellos de botella técnicos para "
-            "aprobar carteras de inversión en el SNI."
+        "headline": "Subsidio Fiscal Diésel vs. Aprobación de Proyectos RS",
+        "shortX": "subsidio fiscal diésel",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Los municipios con mayor subsidio diésel también enfrentan más trabas técnicas en inversión: "
+            f"{hi_c} recibe {hi_x} {ux} y aprueba {hi_y}% RS, ante {lo_y}% en {lo_c} ({lo_x} {ux})."
         ),
     },
     {
         "varX": "tasa_aprobacion_rs_sni_pct",
         "varY": "cobertura_empam_pct",
-        "headline": "Capacidad Técnica Municipal (Proyectos RS) vs. Cobertura Preventiva del Adulto Mayor",
-        "mechanism": (
-            "La capacidad de gestión institucional de una comuna para destrabar proyectos de inversión pública (tasa RS en el SNI) "
-            "se mueve en estrecha sintonía con la efectividad operativa de su red local de atención primaria para cubrir a la población "
-            "adulta mayor."
+        "headline": "Aprobación Técnica RS (SNI) vs. Cobertura Preventiva EMPAM",
+        "shortX": "tasa de aprobación RS",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Donde el municipio logra aprobar más proyectos, la salud primaria también cubre más: "
+            f"{hi_c} ({hi_x}% RS) alcanza {hi_y}% en EMPAM, frente a {lo_y}% en {lo_c} ({lo_x}% RS)."
         ),
     },
     {
         "varX": "tasa_aprobacion_rs_sni_pct",
         "varY": "cobertura_pscv_pct",
-        "headline": "Aprobación de Proyectos de Inversión (RS) vs. Cobertura de Salud Cardiovascular (PSCV)",
-        "mechanism": (
-            "Los municipios con mayor solidez técnica en formulación de proyectos logran modernizar su infraestructura de postas, "
-            "equipamiento clínico y conectividad vial, permitiendo sostener coberturas más altas en el Programa de Salud Cardiovascular."
+        "headline": "Aprobación de Proyectos RS vs. Salud Cardiovascular (PSCV)",
+        "shortX": "tasa de proyectos RS",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"La capacidad para sacar adelante carteras de inversión se refleja en la red clínica: "
+            f"{hi_c} aprueba {hi_x}% RS y sostiene {hi_y}% cardiovascular, versus {lo_y}% en {lo_c} ({lo_x}%)."
         ),
     },
     {
         "varX": "indice_aislamiento_multimodal",
         "varY": "cobertura_empam_pct",
-        "headline": "Índice de Aislamiento Multimodal vs. Cobertura Preventiva de Adulto Mayor (EMPAM)",
-        "mechanism": (
-            "Aun descontando el tamaño poblacional y excluyendo a Coyhaique, el grado de aislamiento multimodal (combinación de "
-            "horas de viaje, ripio y dependencia de barcaza) explica de forma inversa más del 90% de la variación en la cobertura "
-            "preventiva de salud de las personas mayores."
+        "headline": "Índice de Aislamiento Multimodal vs. Cobertura Preventiva EMPAM",
+        "shortX": "aislamiento multimodal",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"La fricción de viaje por ripio y navegación reduce el control preventivo de mayores: "
+            f"{hi_c} ({hi_x} puntos de aislamiento) cubre {hi_y}%, mientras {lo_c} ({lo_x} puntos) llega a {lo_y}%."
         ),
     },
     {
         "varX": "centros_activos_salmon",
         "varY": "proyectos_seia_aprobados",
-        "headline": "Centros Activos de Salmonicultura vs. Proyectos Aprobados en el SEIA por Comuna",
-        "mechanism": (
-            "En las comunas del litoral y canales patagónicos (Aysén, Cisnes y Guaitecas), la operación de centros de engorda de "
-            "salmónidos constituye el principal motor de ingreso de Declaraciones y Estudios de Impacto Ambiental aprobados en el SEIA, "
-            "manteniendo una correlación superior a 0,90 incluso sin Coyhaique."
+        "headline": "Centros Activos de Salmonicultura vs. Proyectos Aprobados SEIA",
+        "shortX": "centros activos de salmón",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"En el litoral de canales, la acuicultura concentra la evaluación ambiental: "
+            f"{hi_c} reúne {hi_x} centros activos y {hi_y} proyectos SEIA aprobados, versus {lo_x} y {lo_y} en {lo_c}."
         ),
     },
     {
         "varX": "ecmpo_solicitadas_ha",
         "varY": "inversion_seia_mmusd",
-        "headline": "Superficie Solicitada en ECMPO (Ley Lafkenche) vs. Inversión Privada Aprobada en el SEIA",
-        "mechanism": (
-            "La superposición espacial en el maritorio de Aysén no es aleatoria: las comunas costeras que concentran el mayor volumen "
-            "de inversión acuícola y portuaria aprobada en el SEIA son exactamente aquellas donde las comunidades indígenas han solicitado "
-            "mayor superficie de Espacios Costeros Marinos de Pueblos Originarios (ECMPO)."
+        "headline": "Superficie Solicitada ECMPO vs. Inversión Aprobada en el SEIA",
+        "shortX": "superficie ECMPO solicitada",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Las solicitudes costeras indígenas se superponen con los polos de inversión litoral: "
+            f"{hi_c} suma {hi_x} ha ECMPO y {hi_y} {uy} en el SEIA, frente a {lo_x} ha y {lo_y} {uy} en {lo_c}."
         ),
     },
     {
         "varX": "potencia_mw",
         "varY": "inversion_seia_mmusd",
-        "headline": "Capacidad Eléctrica Instalada (MW) vs. Stock de Inversión Aprobada en el SEIA",
-        "mechanism": (
-            "La disponibilidad de potencia eléctrica firme en el subsistema comunal (hidroeléctrica y eólica) actúa como condición "
-            "habilitante para la localización de plantas de proceso, frigoríficos e infraestructura industrial evaluada en el SEIA."
+        "headline": "Capacidad Eléctrica Instalada vs. Inversión Aprobada SEIA",
+        "shortX": "potencia eléctrica instalada",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"Disponer de potencia firme habilita plantas de proceso e infraestructura: "
+            f"{hi_c} suma {hi_x} MW y {hi_y} {uy} aprobados en el SEIA, ante {lo_x} MW y {lo_y} {uy} en {lo_c}."
         ),
     },
     {
         "varX": "pernoctaciones_emat",
         "varY": "parcelaciones_sag_n",
-        "headline": "Pernoctaciones Turísticas Formales (EMAT) vs. Presión de Subdivisiones Prediales Rurales (SAG)",
-        "mechanism": (
-            "El atractivo paisajístico que impulsa las pernoctaciones turísticas actúa como precursor directo del mercado de "
-            "subdivisiones de predios rústicos (parcelas de 0,5 ha certificadas por el SAG), generando presión sobre valles "
-            "agropecuarios y bordes de áreas protegidas."
+        "headline": "Pernoctaciones Turísticas (EMAT) vs. Parcelaciones Rurales (SAG)",
+        "shortX": "pernoctaciones turísticas",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"El atractivo turístico impulsa el loteo de predios rústicos: {hi_c} suma {hi_x} noches "
+            f"y {hi_y} subdivisiones certificadas por el SAG, contra {lo_x} noches y {lo_y} predios en {lo_c}."
         ),
     },
     {
         "varX": "episodios_gec_mp25_anual",
         "varY": "urgencias_respiratorias_pct",
-        "headline": "Episodios Críticos de Contaminación por Leña (GEC MP2.5) vs. Urgencias Respiratorias Invernales",
-        "mechanism": (
-            "En los valles interiores con inversión térmica invernal y alto consumo de leña húmeda, la frecuencia anual de episodios "
-            "críticos de material particulado fino MP2.5 (Gestión de Episodios Críticos SINCA) se traduce directamente en una mayor "
-            "proporción de consultas de urgencia por causa respiratoria en la red asistencial."
+        "headline": "Episodios Críticos de MP2.5 vs. Urgencias Respiratorias",
+        "shortX": "episodios críticos MP2.5",
+        "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
+            f"En valles con inversión térmica y leña, el humo eleva la demanda clínica: "
+            f"{hi_c} sufre {hi_x} episodios críticos y {hi_y}% de urgencias respiratorias, vs. {lo_y}% en {lo_c}."
         ),
     },
 ]
 
 
-# 5 hallazgos longitudinales 2015-2026 con prueba de primeras diferencias (Delta Y vs Delta X)
+# 5 cruces longitudinales 2015-2026 con prueba de primeras diferencias (Delta Y vs Delta X)
 CURATED_5_TEMPORAL_SPECS = [
     {
         "varX": "recambio_calefactores_pda_hist",
@@ -539,11 +540,10 @@ CURATED_5_TEMPORAL_SPECS = [
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
         "dataX": [0, 450, 1280, 2340, 3650, 4890, 6420, 8150, 9640, 11020, 12180, 13250],
         "dataY": [96, 94, 90, 86, 80, 75, 69, 61, 55, 49, 45, 41],
-        "headline": "Efectividad Descontaminación 2015–2026: Recambio de Calefactores PDA vs. Días Críticos MP2.5",
-        "mechanism": (
-            "Entre 2015 y 2026, el despliegue acumulado de 13.250 recambios de calefactores a leña por sistemas de pellet, "
-            "kerosene y climatización eléctrica dentro del Plan de Descontaminación Atmosférica (PDA) redujo de 96 a 41 los días "
-            "anuales sobre la norma diaria de MP2.5 en Coyhaique, superando la prueba de primeras diferencias interanuales."
+        "headline": "Recambio de Calefactores PDA vs. Días Críticos MP2.5 (2015–2026)",
+        "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
+            f"Entre 2015 y 2026, reemplazar {x1} calefactores a leña en Coyhaique bajó los días sobre norma MP2.5 "
+            f"de {y0} a {y1} al año, con avance sostenido año a año."
         ),
     },
     {
@@ -558,11 +558,10 @@ CURATED_5_TEMPORAL_SPECS = [
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
         "dataX": [298400, 324500, 358900, 381200, 396400, 118500, 194200, 342800, 389500, 418600, 442100, 468900],
         "dataY": [420000, 455000, 490000, 530000, 585000, 240000, 365000, 520000, 605000, 648000, 665000, 682000],
-        "headline": "Acoplamiento Aerocomercial 2015–2026: Pernoctaciones EMAT vs. Flujo de Pasajeros en Balmaceda",
-        "mechanism": (
-            "Las variaciones interanuales (Delta t) del tráfico aéreo en el Aeródromo de Balmaceda (JAC) y las pernoctaciones "
-            "hoteleras EMAT se mueven en sincronía casi perfecta (incluyendo la contracción de 2020 y la recuperación 2022–2026), "
-            "demostrando que la conectividad aérea es el cuello de botella maestro de la actividad turística formal en Aysén."
+        "headline": "Pernoctaciones EMAT vs. Tráfico Aéreo Balmaceda (2015–2026)",
+        "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
+            f"El flujo aéreo de Balmaceda y las pernoctaciones hoteleras marchan a la par entre 2015 y 2026 "
+            f"(de {x0} a {x1} noches y de {y0} a {y1} pasajeros), incluida la caída de 2020."
         ),
     },
     {
@@ -577,11 +576,10 @@ CURATED_5_TEMPORAL_SPECS = [
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
         "dataX": [112400, 128900, 146500, 162300, 174800, 142100, 168600, 184200, 193400, 201900, 208400, 216500],
         "dataY": [980000, 1045000, 1120000, 1215000, 1260000, 1180000, 1360000, 1510000, 1610000, 1685000, 1755000, 1830000],
-        "headline": "Tracción de Naturaleza 2015–2026: Visitación a Parques SNASPE vs. Expansión del PIB Regional",
-        "mechanism": (
-            "El flujo anual de visitantes a las áreas silvestres protegidas SNASPE de Aysén (Queulat, Laguna San Rafael, Cerro Castillo "
-            "y Parque Nacional Patagonia) exhibe un acoplamiento directo en niveles y en primeras diferencias interanuales con el "
-            "Producto Interno Bruto regional."
+        "headline": "Visitantes a Parques SNASPE vs. PIB Regional (2015–2026)",
+        "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
+            f"Las visitas a parques nacionales pasaron de {x0} a {x1} entre 2015 y 2026 en sincronía con el PIB regional, "
+            f"que creció de {y0} a {y1} millones en la década."
         ),
     },
     {
@@ -596,11 +594,10 @@ CURATED_5_TEMPORAL_SPECS = [
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
         "dataX": [610, 635, 665, 715, 755, 780, 860, 1025, 1110, 1145, 1172, 1198],
         "dataY": [162, 168, 174, 181, 189, 194, 204, 221, 234, 243, 252, 261],
-        "headline": "Transmisión de Shocks de Combustible 2015–2026: Precio del Diésel vs. Tarifa Residencial BT1",
-        "mechanism": (
-            "Debido al peso de la generación térmica en los sistemas medianos y aislados de Aysén, los shocks en el precio "
-            "del litro de petróleo diésel se transmiten directamente a los decretos tarifarios residenciales BT1 que pagan "
-            "los hogares patagónicos año a año."
+        "headline": "Precio Regional del Diésel vs. Tarifa Eléctrica BT1 (2015–2026)",
+        "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
+            f"Por el peso térmico en sistemas aislados, el alza del diésel de {x0} a {x1} $/L entre 2015 y 2026 "
+            f"se traspasó directo a la tarifa residencial (de {y0} a {y1} $/kWh)."
         ),
     },
     {
@@ -615,10 +612,10 @@ CURATED_5_TEMPORAL_SPECS = [
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
         "dataX": [620, 685, 740, 890, 1120, 1050, 1280, 1490, 1680, 1850, 2040, 2210],
         "dataY": [980000, 1045000, 1120000, 1215000, 1260000, 1240000, 1410000, 1540000, 1620000, 1680000, 1755000, 1830000],
-        "headline": "Tracción Basada en Conocimiento 2015–2026: Inversión en I+D+i (ANID/CORFO) vs. PIB Regional",
-        "mechanism": (
-            "La consolidación de centros regionales (CIEP, Universidad de Aysén, INIA) y proyectos de innovación productiva CORFO "
-            "muestra un acoplamiento positivo tanto en nivel como en variaciones interanuales con la expansión del PIB regional."
+        "headline": "Inversión en I+D+i (ANID/CORFO) vs. PIB Regional (2015–2026)",
+        "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
+            f"El gasto anual en ciencia e innovación aplicada creció de {x0} a {x1} millones entre 2015 y 2026, "
+            f"acompañando la expansión del PIB regional de Aysén."
         ),
     },
 ]
@@ -679,6 +676,22 @@ def fmt_dec(val, digits=2):
     return f"{val:.{digits}f}".replace(".", ",")
 
 
+def fmt_signed(val, digits=2):
+    sign = "+" if val >= 0 else "–"
+    return f"{sign}{abs(val):.{digits}f}".replace(".", ",")
+
+
+def fmt_val(val, unit=""):
+    int_units = (
+        "$/kWh", "$/L", "$/m³", "habitantes", "noches", "visitantes",
+        "hectáreas", "predios", "calefactores", "pasajeros", "pernoctaciones",
+        "M$", "MM$ CLP", "proyectos", "centros", "episodios",
+    )
+    if (abs(val) >= 100 or unit in int_units) and abs(val - round(val)) < 0.05:
+        return f"{int(round(val)):,}".replace(",", ".")
+    return fmt_dec(val, 1)
+
+
 def compute_curated_discoveries(data_lake):
     comunas = data_lake["comunas"]
     comuna_names = [c["nombre"] for c in comunas]
@@ -688,7 +701,7 @@ def compute_curated_discoveries(data_lake):
     raw_records = []
     raw_pvalues = []
 
-    # 1. Evaluar los 20 hallazgos transversales comunales inter-Hubs
+    # 1. Evaluar los 20 cruces transversales comunales inter-Hubs
     for idx, spec in enumerate(CURATED_20_CROSS_SPECS, start=1):
         vx = spec["varX"]
         vy = spec["varY"]
@@ -711,11 +724,60 @@ def compute_curated_discoveries(data_lake):
         r_no_coy = calc_pearson_ols(x_no_coy, y_no_coy)["r"]
         max_cook = cooks_distance_max(x, y)
 
-        # Identificar comunas en los extremos para enriquecer la explicación
+        # Identificar comunas en los extremos y construir lectura editorial humana
         max_x_idx = max(range(len(x)), key=lambda i: x[i])
         min_x_idx = min(range(len(x)), key=lambda i: x[i])
-        extremo_alto = f"{comuna_names[max_x_idx]} ({fmt_dec(x[max_x_idx], 1)} {unit_x} → {fmt_dec(y[max_x_idx], 1)} {unit_y})"
-        extremo_bajo = f"{comuna_names[min_x_idx]} ({fmt_dec(x[min_x_idx], 1)} {unit_x} → {fmt_dec(y[min_x_idx], 1)} {unit_y})"
+        hi_c = comuna_names[max_x_idx]
+        lo_c = comuna_names[min_x_idx]
+        hi_x = fmt_val(x[max_x_idx], unit_x)
+        hi_y = fmt_val(y[max_x_idx], unit_y)
+        lo_x = fmt_val(x[min_x_idx], unit_x)
+        lo_y = fmt_val(y[min_x_idx], unit_y)
+        reading_text = spec["readingBuilder"](hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, unit_x, unit_y)
+
+        # Residuos locales respecto a la tendencia regional
+        slope = float(lin["slope"])
+        intercept = float(lin["intercept"])
+        resids = [y_i - (intercept + slope * x_i) for x_i, y_i in zip(x, y)]
+        std_resid = _std(resids)
+        short_x = spec.get("shortX", label_x.lower())
+
+        residuals_by_comuna = {}
+        top_abs_z = 0.0
+        top_z_idx = 0
+        for i, c_name in enumerate(comuna_names):
+            expected_y = intercept + slope * x[i]
+            diff = resids[i]
+            z_res = (diff / std_resid) if std_resid > 1e-9 else 0.0
+            if abs(z_res) >= 0.45:
+                rel_dir = "por encima" if diff > 0 else "por debajo"
+                note = (
+                    f"{c_name} registra {fmt_val(y[i], unit_y)} {unit_y}, "
+                    f"{fmt_val(abs(diff), unit_y)} {unit_y} {rel_dir} de lo esperado según su nivel de {short_x}."
+                )
+            else:
+                note = f"{c_name} ({fmt_val(y[i], unit_y)} {unit_y}) se ubica prácticamente en línea con la tendencia regional."
+            residuals_by_comuna[c_name] = {
+                "actualY": round(float(y[i]), 2),
+                "expectedY": round(float(expected_y), 2),
+                "diffY": round(float(diff), 2),
+                "zResid": round(float(z_res), 2),
+                "note": note,
+            }
+            if abs(z_res) > top_abs_z:
+                top_abs_z = abs(z_res)
+                top_z_idx = i
+
+        notable_commune = ""
+        if top_abs_z >= 1.15:
+            c_top = comuna_names[top_z_idx]
+            diff_top = resids[top_z_idx]
+            dir_word = "por encima" if diff_top > 0 else "por debajo"
+            sign_top = "+" if diff_top > 0 else "–"
+            notable_commune = (
+                f"Caso atípico: {c_top} registra {sign_top}{fmt_val(abs(diff_top), unit_y)} {unit_y} "
+                f"{dir_word} de lo esperado para su nivel en el eje X."
+            )
 
         raw_pvalues.append(p_val)
         raw_records.append(
@@ -724,6 +786,7 @@ def compute_curated_discoveries(data_lake):
                 "order": idx,
                 "category": "cruce_comunal_oculto",
                 "dim": "comuna",
+                "title": spec["headline"],
                 "headline": spec["headline"],
                 "hubX": hub_x,
                 "hubY": hub_y,
@@ -737,8 +800,8 @@ def compute_curated_discoveries(data_lake):
                 "dataX": [round(float(v), 3) for v in x],
                 "dataY": [round(float(v), 3) for v in y],
                 "regressionLine": {
-                    "slopeBeta1": round(float(lin["slope"]), 5),
-                    "interceptBeta0": round(float(lin["intercept"]), 4),
+                    "slopeBeta1": round(slope, 5),
+                    "interceptBeta0": round(intercept, 4),
                     "rSquaredPct": r_sq_pct,
                     "directionLabel": "Relación Directa (+)" if pearson_r >= 0 else "Relación Inversa (–)",
                 },
@@ -751,13 +814,14 @@ def compute_curated_discoveries(data_lake):
                     "maxCooksDistance": round(max_cook, 3),
                     "pValueRaw": p_val,
                 },
-                "plainExplanation": (
-                    f"{spec['mechanism']} Extremos observados en Aysén: {extremo_alto} frente a {extremo_bajo}."
-                ),
+                "reading": reading_text,
+                "plainExplanation": reading_text,
+                "notable_commune": notable_commune,
+                "residualsByComuna": residuals_by_comuna,
             }
         )
 
-    # 2. Evaluar los 5 hallazgos longitudinales 2015-2026 con prueba de Primeras Diferencias (Delta Y vs Delta X)
+    # 2. Evaluar los 5 cruces longitudinales 2015-2026 con primeras diferencias (Delta Y vs Delta X)
     for offset, tspec in enumerate(CURATED_5_TEMPORAL_SPECS, start=21):
         x = [float(v) for v in tspec["dataX"]]
         y = [float(v) for v in tspec["dataY"]]
@@ -783,6 +847,15 @@ def compute_curated_discoveries(data_lake):
         y_no_2020 = [v for i, v in enumerate(y) if i != 5]
         r_no_shock = calc_pearson_ols(x_no_2020, y_no_2020)["r"]
 
+        reading_text = tspec["readingBuilder"](
+            fmt_val(x[0], tspec["unitX"]),
+            fmt_val(x[-1], tspec["unitX"]),
+            fmt_val(y[0], tspec["unitY"]),
+            fmt_val(y[-1], tspec["unitY"]),
+            tspec["unitX"],
+            tspec["unitY"],
+        )
+
         raw_pvalues.append(p_val)
         raw_records.append(
             {
@@ -790,6 +863,7 @@ def compute_curated_discoveries(data_lake):
                 "order": offset,
                 "category": "acoplamiento_temporal_2015_2026",
                 "dim": "tiempo",
+                "title": tspec["headline"],
                 "headline": tspec["headline"],
                 "hubX": tspec["hubX"],
                 "hubY": tspec["hubY"],
@@ -818,11 +892,10 @@ def compute_curated_discoveries(data_lake):
                     "detrendedCorr": round(float(r_detrended), 3),
                     "pValueRaw": p_val,
                 },
-                "plainExplanation": (
-                    f"{tspec['mechanism']} En la década 2015–2026 pasa de "
-                    f"{fmt_dec(x[0], 1)} {tspec['unitX']} ({fmt_dec(y[0], 1)} {tspec['unitY']} en 2015) a "
-                    f"{fmt_dec(x[-1], 1)} {tspec['unitX']} ({fmt_dec(y[-1], 1)} {tspec['unitY']} en 2026)."
-                ),
+                "reading": reading_text,
+                "plainExplanation": reading_text,
+                "notable_commune": "",
+                "residualsByComuna": {},
             }
         )
 
@@ -836,20 +909,19 @@ def compute_curated_discoveries(data_lake):
         is_temporal = rec["category"] == "acoplamiento_temporal_2015_2026"
 
         if is_temporal:
-            veredicto = (
-                f"Supera las 5 pruebas longitudinales (2015–2026): explica el {r_sq_int}% de la variación "
-                f"(r = {fmt_dec(st['pearsonR'])}, Spearman {fmt_dec(st['spearmanRho'])}), mantiene acoplamiento en "
-                f"primeras diferencias año a año (Delta = {fmt_dec(st.get('firstDiffCorrDelta', st['partialCorrPop']))}) "
-                f"y persiste sin el shock 2020 ({fmt_dec(st['rWithoutCoyhaique'])})."
+            metrics_line = (
+                f"R² {r_sq_int}% · r = {fmt_signed(st['pearsonR'])} · "
+                f"Sin 2020: {fmt_signed(st['rWithoutCoyhaique'])} · "
+                f"Variación anual: {fmt_signed(st.get('firstDiffCorrDelta', st['partialCorrPop']))}"
             )
         else:
-            veredicto = (
-                f"Supera las 5 pruebas estadísticas: explica el {r_sq_int}% de la variación, mantiene el ranking "
-                f"(Spearman {fmt_dec(st['spearmanRho'])}) y sigue firme en las 9 comunas sin Coyhaique "
-                f"({fmt_dec(st['rWithoutCoyhaique'])}) aun descontando el tamaño poblacional "
-                f"(r parcial {fmt_dec(st['partialCorrPop'])})."
+            metrics_line = (
+                f"R² {r_sq_int}% · r = {fmt_signed(st['pearsonR'])} · "
+                f"Sin Coyhaique: {fmt_signed(st['rWithoutCoyhaique'])} · "
+                f"Control pob.: {fmt_signed(st['partialCorrPop'])}"
             )
 
+        rec["metrics_line"] = metrics_line
         rec["statProofBadges"] = {
             "fuerzaExplicativaPct": r_sq_int,
             "pearsonR": st["pearsonR"],
@@ -859,7 +931,7 @@ def compute_curated_discoveries(data_lake):
             "rWithoutCoyhaique": st["rWithoutCoyhaique"],
             "firstDiffCorrDelta": st.get("firstDiffCorrDelta", st["partialCorrPop"]),
             "pValueFdr": round(float(fdr_p), 6),
-            "veredictoSimple": veredicto,
+            "veredictoSimple": metrics_line,
         }
         curated_discoveries.append(rec)
 
@@ -868,10 +940,10 @@ def compute_curated_discoveries(data_lake):
 
 def compute_comunas_explain(data_lake):
     """
-    Para cada una de las 10 comunas, pre-calcula estilo DashAI:
+    Para cada una de las 10 comunas, pre-calcula su perfil comparado:
       - Sus 5 indicadores donde más destaca sobre el promedio regional (+)
       - Sus 5 indicadores donde está más bajo el promedio regional (–)
-      - Sus 2 comunas gemelas más parecidas (similitudPct%)
+      - Sus 2 comunas con perfil más parecido (similitudPct%)
     """
     comunas = data_lake["comunas"]
     n_com = len(comunas)
@@ -1008,6 +1080,7 @@ def compute_comunas_explain(data_lake):
         sims.sort(key=lambda item: item["similitudPct"], reverse=True)
         twin_comunas = sims[:2]
 
+        pop_fmt = f"{int(c.get('poblacion_censo_2024', 0)):,}".replace(",", ".")
         comunas_explain[c_name] = {
             "comuna": c_name,
             "provincia": c.get("provincia", "Aysén"),
@@ -1017,13 +1090,13 @@ def compute_comunas_explain(data_lake):
             "topBelowRegionalMean": top_below,
             "twinComunas": twin_comunas,
             "narrativeDigest": (
-                f"{c_name} ({c.get('provincia', 'Aysén')}, {int(c.get('poblacion_censo_2024', 0)):,} hab.) "
+                f"{c_name} ({c.get('provincia', 'Aysén')}, {pop_fmt} hab.) "
                 f"destaca sobre la media regional en {top_above[0]['label']} ({fmt_dec(top_above[0]['comunaValue'], 1)} {top_above[0]['unit']}) "
                 f"y {top_above[1]['label']}, mientras presenta sus valores más bajos frente al promedio en "
                 f"{top_below[0]['label']}. Sus perfiles territoriales más parecidos son "
                 f"{twin_comunas[0]['comuna']} ({twin_comunas[0]['similitudPct']}%) y "
                 f"{twin_comunas[1]['comuna']} ({twin_comunas[1]['similitudPct']}%)."
-            ).replace(",", "."),
+            ),
         }
 
     return comunas_explain
@@ -1034,23 +1107,31 @@ def main():
     curated_discoveries = compute_curated_discoveries(data_lake)
     comunas_explain = compute_comunas_explain(data_lake)
 
-    # Verificar que ninguna explicación contenga snake_case
+    # Verificar que las lecturas sean concisas, sin snake_case ni texto robótico
     snake_re = re.compile(r"\b[a-z0-9]+_[a-z0-9_]+\b")
     for d in curated_discoveries:
-        m = snake_re.search(d["plainExplanation"])
-        if m:
-            raise AssertionError(f"Se detectó clave snake_case en plainExplanation de {d['id']}: {m.group(0)}")
+        reading_str = d["reading"]
+        if not (40 < len(reading_str) <= 220):
+            raise AssertionError(f"Lectura fuera de rango (41..220) en {d['id']} ({len(reading_str)}): {reading_str}")
+        for txt in (reading_str, d["plainExplanation"], d.get("notable_commune", "")):
+            m = snake_re.search(txt)
+            if m:
+                raise AssertionError(f"Se detectó clave snake_case en {d['id']}: {m.group(0)}")
+        for c_info in d.get("residualsByComuna", {}).values():
+            m = snake_re.search(c_info.get("note", ""))
+            if m:
+                raise AssertionError(f"Se detectó clave snake_case en nota comunal de {d['id']}: {m.group(0)}")
 
     payload = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "methodology": {
-            "engine": "Python NumPy + SciPy Multicriteria Statistical Discovery Engine",
+            "engine": "Cálculo estadístico territorial de Aysén",
             "testsApplied": [
-                "1. Regresión Lineal OLS (pendiente Beta1, intercepto Beta0, R²) y ajuste de falsos positivos Benjamini-Hochberg (FDR < 0.05)",
-                "2. Correlación No Paramétrica por Rangos de Spearman (rho_s) y Tau de Kendall (tau)",
-                "3. Correlación Parcial Controlando por Tamaño Poblacional r(X, Y | ln(Población Censo 2024))",
-                "4. Robustez Leave-Coyhaique-Out (r en las 9 comunas sin la capital regional y Distancia de Cook)",
-                "5. Regresión en Primeras Diferencias Interanuales (Delta Y_t vs Delta X_t) y series sin tendencia 2015–2026",
+                "1. Regresión lineal (R², pendiente y control de falsos positivos Benjamini-Hochberg FDR < 0,05)",
+                "2. Correlación por rangos de Spearman y Tau de Kendall",
+                "3. Correlación parcial controlando por tamaño poblacional (Censo 2024)",
+                "4. Robustez excluyendo Coyhaique y análisis de observaciones influyentes",
+                "5. Variación interanual y series sin tendencia lineal (2015–2026)",
             ],
             "totalCuratedDiscoveries": len(curated_discoveries),
             "crossComunalCount": sum(1 for d in curated_discoveries if d["category"] == "cruce_comunal_oculto"),
@@ -1066,8 +1147,8 @@ def main():
     js_content = (
         "/**\n"
         " * data/aysen_hallazgos_precalculados.js\n"
-        " * Galería Curada de 25 Hallazgos Estadísticos No Obvios entre Hubs y Radiografía Local por Comuna (Estilo DashAI).\n"
-        " * Generado automáticamente por: python3 scripts/precompute_curated_discoveries.py\n"
+        " * Relaciones estadísticas curadas entre ejes temáticos y perfiles comunales comparados de Aysén.\n"
+        " * Generado por: python scripts/precompute_curated_discoveries.py\n"
         " */\n"
         "(function (root) {\n"
         "  'use strict';\n"
@@ -1081,13 +1162,26 @@ def main():
         "})(typeof window !== 'undefined' ? window : globalThis);\n"
     )
 
+    forbidden_terms = [
+        "DashAI",
+        "5 Pruebas Python",
+        "Supera las 5 pruebas",
+        "Motor Estadístico Multicriterio",
+        "Recta OLS:",
+        "Mecanismo Territorial:",
+        "Radiografía Local DashAI",
+    ]
+    for term in forbidden_terms:
+        if term in js_content:
+            raise AssertionError(f"Se detectó término prohibido en data/aysen_hallazgos_precalculados.js: {term}")
+
     with open(OUTPUT_JS_PATH, "w", encoding="utf-8", newline="\n") as f:
         f.write(js_content)
 
     print(
         f"[precompute_curated_discoveries] OK: Generado data/aysen_hallazgos_precalculados.js "
-        f"con {len(curated_discoveries)} hallazgos verificados (20 transversales + 5 temporales 2015-2026) "
-        f"y {len(comunas_explain)} radiografías comunales DashAI."
+        f"con {len(curated_discoveries)} cruces verificados (20 comunales + 5 temporales 2015-2026) "
+        f"y {len(comunas_explain)} perfiles comunales."
     )
 
 

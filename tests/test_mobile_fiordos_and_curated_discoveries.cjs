@@ -3,12 +3,14 @@
  * tests/test_mobile_fiordos_and_curated_discoveries.cjs
  * ============================================================================
  * Suite Automatizada de Verificación para:
- *   1. Motor Python Multicriterio — 25 Hallazgos Curados (`scripts/precompute_curated_discoveries.py` -> `data/aysen_hallazgos_precalculados.js`) + 10 comunas DashAI.
+ *   1. Cálculo Estadístico Territorial — 25 Cruces Curados (`scripts/precompute_curated_discoveries.py` -> `data/aysen_hallazgos_precalculados.js`) + 10 perfiles comunales.
  *   2. Menú Móvil Universal en `js/cabecera_global.js` (`#btnMobileMenu`, `#btnMobileClose`, `#mobileNavBackdrop`).
  *   3. Responsividad Móvil de `sistemas_complejos.html` (`mobileScale`, `.prop-stepper` 1 fila, `touch-action: pan-y`).
  *   4. Responsividad Móvil de `laboratorio.html` (`#heroEmptyCanvas` `position: relative !important; transform: none !important;`, `#canvasZoomHud`, `isStackedLayout()`).
  *   5. Zoom y Visibilidad de Fiordos en el Mapa de Concesiones (`wheel` excluye `.map-container-box, .leaflet-container`, `L.DomEvent.disableScrollPropagation`, `zoomend` baja `fillOpacity` a `0.04` y conmutador de mapa base con relieve de fiordos).
- *   6. Galería Visual de 25 Hallazgos en `laboratorio.html` (`data/aysen_hallazgos_precalculados.js`, `#btnOpenDiscoveriesDrawer`, barras visuales `R²%` y carga con recta de regresión lineal `showTrend: true`).
+ *   6. Modal Unificado `Vistas y Cruces` (`#modalHubGallery`, `#curatedDiscoveriesGrid`, fichas editoriales `.discovery-notebook-card` y carga con recta de regresión `showTrend: true`).
+ *   7. Auditoría Anti-AI-Slop Textual sobre `laboratorio.html` y `data/aysen_hallazgos_precalculados.js`.
+ *   8. Auditoría de Poda de Botones e Higiene Visual Editorial (`.canvas-action-bar`, `.widget-header-actions`, `.workspace-tabs-bar`, `renderCuratedDiscoveriesGrid`).
  */
 
 'use strict';
@@ -20,15 +22,20 @@ const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 
+function runPythonScript(argsStr) {
+  try {
+    return execSync(`python3 ${argsStr}`, { cwd: ROOT_DIR, stdio: 'pipe' });
+  } catch (_) {
+    return execSync(`python ${argsStr}`, { cwd: ROOT_DIR, stdio: 'pipe' });
+  }
+}
+
 function runTest1PythonMulticriteriaDiscoveries() {
-  console.log('--- Test 1: Motor Python Multicriterio — 25 Hallazgos Curados y 10 Radiografías Comunales ---');
+  console.log('--- Test 1: Cálculo Estadístico Territorial — 25 Cruces Curados y 10 Perfiles Comunales ---');
   const pyScript = path.join(ROOT_DIR, 'scripts', 'precompute_curated_discoveries.py');
   assert.ok(fs.existsSync(pyScript), 'Falta scripts/precompute_curated_discoveries.py');
 
-  execSync('python scripts/precompute_curated_discoveries.py', {
-    cwd: ROOT_DIR,
-    stdio: 'pipe'
-  });
+  runPythonScript('scripts/precompute_curated_discoveries.py');
 
   const outPath = path.join(ROOT_DIR, 'data', 'aysen_hallazgos_precalculados.js');
   assert.ok(fs.existsSync(outPath), 'No se generó data/aysen_hallazgos_precalculados.js');
@@ -36,28 +43,32 @@ function runTest1PythonMulticriteriaDiscoveries() {
   delete require.cache[require.resolve(outPath)];
   const bundle = require(outPath);
   assert.ok(bundle && Array.isArray(bundle.curatedDiscoveries), 'Falta curatedDiscoveries en AYSEN_DISCOVERIES_DATA');
-  assert.strictEqual(bundle.curatedDiscoveries.length, 25, `Se esperaban 25 hallazgos, encontrados: ${bundle.curatedDiscoveries.length}`);
+  assert.strictEqual(bundle.curatedDiscoveries.length, 25, `Se esperaban 25 cruces, encontrados: ${bundle.curatedDiscoveries.length}`);
 
   const crossCount = bundle.curatedDiscoveries.filter(d => d.category === 'cruce_comunal_oculto').length;
   const tempCount = bundle.curatedDiscoveries.filter(d => d.category === 'acoplamiento_temporal_2015_2026').length;
-  assert.strictEqual(crossCount, 20, `Se esperaban 20 hallazgos transversales inter-Hubs, encontrados: ${crossCount}`);
-  assert.strictEqual(tempCount, 5, `Se esperaban 5 hallazgos longitudinales 2015-2026, encontrados: ${tempCount}`);
+  assert.strictEqual(crossCount, 20, `Se esperaban 20 cruces comunales, encontrados: ${crossCount}`);
+  assert.strictEqual(tempCount, 5, `Se esperaban 5 cruces longitudinales 2015-2026, encontrados: ${tempCount}`);
 
   const snakeCaseRe = /\b[a-z0-9]+_[a-z0-9_]+\b/;
   bundle.curatedDiscoveries.forEach((d, idx) => {
     assert.strictEqual(d.id, `disc_${String(idx + 1).padStart(2, '0')}`);
-    assert.notStrictEqual(d.hubX, d.hubY, `El hallazgo ${d.id} debe conectar dos Hubs distintos (${d.hubX} vs ${d.hubY})`);
+    assert.notStrictEqual(d.hubX, d.hubY, `El cruce ${d.id} debe conectar dos ejes distintos (${d.hubX} vs ${d.hubY})`);
+    assert.ok(typeof d.title === 'string' && d.title.length > 10, `Falta title en ${d.id}`);
+    assert.ok(typeof d.reading === 'string' && d.reading.length > 40 && d.reading.length <= 220, `reading fuera de rango (41..220) en ${d.id}: len=${d.reading ? d.reading.length : 0}`);
+    assert.ok(!snakeCaseRe.test(d.reading), `reading contiene snake_case en ${d.id}: ${d.reading}`);
+    assert.ok(typeof d.metrics_line === 'string' && d.metrics_line.includes('R²'), `Falta metrics_line con R² en ${d.id}`);
     assert.ok(d.regressionLine && typeof d.regressionLine.slopeBeta1 === 'number', `Falta slopeBeta1 en ${d.id}`);
     assert.ok(d.regressionLine && typeof d.regressionLine.interceptBeta0 === 'number', `Falta interceptBeta0 en ${d.id}`);
     assert.ok(d.statProofBadges, `Faltan statProofBadges en ${d.id}`);
 
     const st = d.statProofBadges;
     ['pearsonR', 'spearmanRho', 'partialCorrPop', 'rWithoutCoyhaique', 'pValueFdr'].forEach(k => {
-      assert.strictEqual(typeof st[k], 'number', `La prueba ${k} debe ser numérica en ${d.id}`);
+      assert.strictEqual(typeof st[k], 'number', `La métrica ${k} debe ser numérica en ${d.id}`);
     });
-    assert.ok(st.pValueFdr < 0.05, `El hallazgo ${d.id} debe tener pValueFdr < 0.05 (obtenido: ${st.pValueFdr})`);
-    assert.ok(Math.abs(st.partialCorrPop) >= 0.65, `El hallazgo ${d.id} debe tener |partialCorrPop| >= 0.65 (obtenido: ${st.partialCorrPop})`);
-    assert.ok(Math.abs(st.rWithoutCoyhaique) >= 0.65, `El hallazgo ${d.id} debe tener |rWithoutCoyhaique| >= 0.65 (obtenido: ${st.rWithoutCoyhaique})`);
+    assert.ok(st.pValueFdr < 0.05, `El cruce ${d.id} debe tener pValueFdr < 0.05 (obtenido: ${st.pValueFdr})`);
+    assert.ok(Math.abs(st.partialCorrPop) >= 0.65, `El cruce ${d.id} debe tener |partialCorrPop| >= 0.65 (obtenido: ${st.partialCorrPop})`);
+    assert.ok(Math.abs(st.rWithoutCoyhaique) >= 0.65, `El cruce ${d.id} debe tener |rWithoutCoyhaique| >= 0.65 (obtenido: ${st.rWithoutCoyhaique})`);
     assert.ok(typeof d.plainExplanation === 'string' && d.plainExplanation.length > 40, `Falta plainExplanation en ${d.id}`);
     assert.ok(!snakeCaseRe.test(d.plainExplanation), `plainExplanation contiene snake_case en ${d.id}: ${d.plainExplanation}`);
   });
@@ -69,10 +80,10 @@ function runTest1PythonMulticriteriaDiscoveries() {
     const info = bundle.comunasExplain[cName];
     assert.strictEqual(info.topAboveRegionalMean.length, 5, `${cName} debe tener 5 indicadores sobre la media regional`);
     assert.strictEqual(info.topBelowRegionalMean.length, 5, `${cName} debe tener 5 indicadores bajo la media regional`);
-    assert.strictEqual(info.twinComunas.length, 2, `${cName} debe tener 2 comunas gemelas`);
+    assert.strictEqual(info.twinComunas.length, 2, `${cName} debe tener 2 comunas similares`);
   });
 
-  console.log('  [PASS] Test 1: 25 hallazgos curados (5 pruebas estadísticas superadas) y 10 radiografías comunales verificadas.');
+  console.log('  [PASS] Test 1: 25 cruces curados (lecturas <= 220 caracteres, 5 criterios estadísticos) y 10 perfiles comunales verificados.');
 }
 
 function runTest2UniversalMobileNav() {
@@ -168,33 +179,107 @@ function runTest5LeafletZoomAndFiordosVisibility() {
 }
 
 function runTest6CuratedDiscoveriesGalleryUI() {
-  console.log('--- Test 6: Galería Visual de 25 Hallazgos y Recta de Regresión en laboratorio.html ---');
+  console.log('--- Test 6: Modal Unificado Vistas y Cruces y Recta de Regresión en laboratorio.html ---');
   const html = fs.readFileSync(path.join(ROOT_DIR, 'laboratorio.html'), 'utf8');
   assert.ok(
     html.includes('<script src="data/aysen_hallazgos_precalculados.js" defer></script>'),
     'laboratorio.html no carga data/aysen_hallazgos_precalculados.js'
   );
   assert.ok(
-    html.includes('id="btnOpenDiscoveriesDrawer"'),
-    'Falta botón #btnOpenDiscoveriesDrawer en la barra superior de laboratorio.html'
+    html.includes('id="btnOpenHubGallery"') &&
+    html.includes('id="btnOpenDiscoveriesDrawer"') &&
+    html.includes('id="modalHubGallery"') &&
+    html.includes('id="curatedDiscoveriesGrid"'),
+    'Falta modal unificado #modalHubGallery con pestaña #btnOpenDiscoveriesDrawer y grilla #curatedDiscoveriesGrid'
   );
   assert.ok(
-    html.includes('id="btnExplainCard-${w.id}"'),
-    'Falta botón #btnExplainCard-${w.id} en las tarjetas del Laboratorio'
+    !html.includes('id="modalCuratedDiscoveries"'),
+    'El modal duplicado #modalCuratedDiscoveries debe haber sido fusionado en #modalHubGallery'
   );
   assert.ok(
-    html.includes('id="modalCuratedDiscoveries"') &&
-    html.includes('discovery-r2-bar') &&
-    html.includes('Graficar con Recta de Regresión →'),
-    'Falta modal #modalCuratedDiscoveries con barras R²% y botón Graficar con Recta de Regresión'
+    html.includes('id="btnExplainCard-${widget.id}"') &&
+    html.includes('Ver lectura de datos'),
+    'Falta botón discreto de lectura de datos #btnExplainCard-${widget.id} en el pie de tarjeta'
+  );
+  assert.ok(
+    html.includes('discovery-notebook-card') &&
+    html.includes('Abrir gráfico en la mesa →'),
+    'Faltan fichas editoriales .discovery-notebook-card y enlace Abrir gráfico en la mesa →'
   );
   assert.ok(
     html.includes('function loadCuratedDiscoveryIntoCanvas') &&
     html.includes('showTrend: true') &&
-    html.includes('showAverage: true'),
-    'loadCuratedDiscoveryIntoCanvas no activa showTrend: true y showAverage: true'
+    html.includes('showAverage: true') &&
+    html.includes('customChartSpec: customSpec'),
+    'loadCuratedDiscoveryIntoCanvas no activa showTrend: true, showAverage: true y customChartSpec temporal'
   );
-  console.log('  [PASS] Test 6: Galería de 25 hallazgos, barras R²% y carga con recta de regresión verificadas en laboratorio.html.');
+  console.log('  [PASS] Test 6: Modal unificado Vistas y Cruces, fichas editoriales y carga con regresión verificadas.');
+}
+
+function runTest7AntiAISlopTextual() {
+  console.log('--- Test 7: Auditoría Anti-AI-Slop Textual en laboratorio.html y aysen_hallazgos_precalculados.js ---');
+  const html = fs.readFileSync(path.join(ROOT_DIR, 'laboratorio.html'), 'utf8');
+  const dataJs = fs.readFileSync(path.join(ROOT_DIR, 'data', 'aysen_hallazgos_precalculados.js'), 'utf8');
+  const forbidden = [
+    'Radiografía Local DashAI',
+    'DashAI',
+    'Supera las 5 pruebas estadísticas',
+    'Supera las 5 pruebas longitudinales',
+    '5 Pruebas Python',
+    'Motor Estadístico Multicriterio',
+    'Recta OLS:',
+    'Mecanismo Territorial:'
+  ];
+  for (const term of forbidden) {
+    assert.ok(!html.includes(term), `laboratorio.html contiene texto prohibido ("AI slop"): "${term}"`);
+    assert.ok(!dataJs.includes(term), `data/aysen_hallazgos_precalculados.js contiene texto prohibido ("AI slop"): "${term}"`);
+  }
+  console.log('  [PASS] Test 7: 0 apariciones de jerga interna o plantillas AI-slop en UI y bundle de cruces.');
+}
+
+function runTest8ButtonPruningAndVisualHygiene() {
+  console.log('--- Test 8: Poda de Botones e Higiene Visual Editorial en laboratorio.html ---');
+  const html = fs.readFileSync(path.join(ROOT_DIR, 'laboratorio.html'), 'utf8');
+
+  // 1. .canvas-action-bar podada: sin #btnOpenDiscoveriesDrawer, acciones de proyecto dentro de #projectMenuDropdown
+  const actionBarMatch = html.match(/<div class="canvas-action-bar"[^>]*>([\s\S]*?)<\/div>\s*<!--\s*={5,}/);
+  assert.ok(actionBarMatch, 'No se encontró .canvas-action-bar seguida del comentario separador');
+  const actionBarHtml = actionBarMatch[1];
+  assert.ok(!actionBarHtml.includes('id="btnOpenDiscoveriesDrawer"'), '#btnOpenDiscoveriesDrawer no debe estar suelto en .canvas-action-bar');
+  const projMenuMatch = actionBarHtml.match(/<div class="dropdown-project-content" id="projectMenuDropdown"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/);
+  assert.ok(projMenuMatch, 'No se encontró #projectMenuDropdown dentro de .canvas-action-bar');
+  const projMenuHtml = projMenuMatch[1];
+  ['btnPinChartToReport', 'btnShareWorkspaceUrl', 'btnToggleDashboardMode', 'btnTileWindowsGrid', 'btnClearCanvas'].forEach((id) => {
+    assert.ok(projMenuHtml.includes(`id="${id}"`), `El control #${id} debe vivir dentro de #projectMenuDropdown`);
+  });
+
+  // 2. .widget-header-actions reducida a solo 2 botones (+ Cruzar y Formato)
+  const headerActionsMatch = html.match(/<div class="widget-header-actions">([\s\S]*?)<\/div>\s*<\/div>\s*\$\{timeFilterHtml\}/);
+  assert.ok(headerActionsMatch, 'No se encontró .widget-header-actions en renderWidgetCardDOM');
+  const headerActionsHtml = headerActionsMatch[1];
+  assert.ok(headerActionsHtml.includes('id="btnCrossCard-${w.id}"'), 'Falta #btnCrossCard en cabecera de tarjeta');
+  assert.ok(headerActionsHtml.includes('id="btnFormatCard-${w.id}"'), 'Falta #btnFormatCard en cabecera de tarjeta');
+  assert.ok(!headerActionsHtml.includes('btnSyncCard-'), 'btnSyncCard no debe estar en la cabecera de tarjeta');
+  assert.ok(!headerActionsHtml.includes('btnSynthCard-'), 'btnSynthCard no debe estar en la cabecera de tarjeta');
+  assert.ok(!headerActionsHtml.includes('btnExplainCard-'), 'btnExplainCard no debe duplicarse en la cabecera de tarjeta');
+
+  // 3. renderCuratedDiscoveriesGrid sin gradientes ni píldoras pastel SaaS
+  const renderGridStart = html.indexOf('function renderCuratedDiscoveriesGrid');
+  const renderGridEnd = html.indexOf('function loadCuratedDiscoveryIntoCanvas');
+  assert.ok(renderGridStart !== -1 && renderGridEnd > renderGridStart, 'No se pudo aislar renderCuratedDiscoveriesGrid');
+  const renderGridBody = html.slice(renderGridStart, renderGridEnd);
+  ['linear-gradient', 'border-radius:999px', 'border-radius: 999px', '#f0f7ff', '#f0fdf4', '#fefce8', '#eef6ff'].forEach((badCss) => {
+    assert.ok(!renderGridBody.includes(badCss), `renderCuratedDiscoveriesGrid contiene estilo SaaS-slop prohibido: ${badCss}`);
+  });
+
+  // 4. .workspace-tabs-bar sin botón Auto-ordenar duplicado ni texto redundante "Sin ventanas. Usa + Tarjeta"
+  const tabsBarMatch = html.match(/<div class="workspace-tabs-bar" id="workspaceWindowTabs">([\s\S]*?)<\/div>\s*<!-- Input oculto/);
+  assert.ok(tabsBarMatch, 'No se encontró .workspace-tabs-bar');
+  const tabsBarHtml = tabsBarMatch[1];
+  assert.ok(!tabsBarHtml.includes('Auto-ordenar'), '.workspace-tabs-bar no debe tener el botón duplicado Auto-ordenar');
+  assert.ok(!html.includes('Sin ventanas. Usa + Tarjeta'), 'laboratorio.html no debe mostrar texto redundante Sin ventanas. Usa + Tarjeta');
+
+  console.log('  [PASS] Test 8: Poda de botones, menú Proyecto consolidado, tarjetas editoriales limpias y barra compacta verificadas.');
 }
 
 function main() {
@@ -204,7 +289,9 @@ function main() {
   runTest4LaboratorioMobile();
   runTest5LeafletZoomAndFiordosVisibility();
   runTest6CuratedDiscoveriesGalleryUI();
-  console.log('\n[test_mobile_fiordos_and_curated_discoveries] 6/6 TESTS PASARON AL 100%.');
+  runTest7AntiAISlopTextual();
+  runTest8ButtonPruningAndVisualHygiene();
+  console.log('\n[test_mobile_fiordos_and_curated_discoveries] 8/8 TESTS PASARON AL 100%.');
 }
 
 main();

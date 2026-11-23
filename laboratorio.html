@@ -276,6 +276,126 @@
       background: #0059c5;
     }
 
+    /* Pestañas editoriales del modal unificado Vistas y Cruces */
+    .gallery-mode-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 1.75rem;
+      background: #fcf9f8;
+      border-bottom: 1px solid #e4dedb;
+      flex-shrink: 0;
+    }
+    .gallery-mode-tab {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.72rem 0.15rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #5f5c59;
+      cursor: pointer;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .gallery-mode-tab:hover {
+      color: #00357f;
+    }
+    .gallery-mode-tab.active {
+      color: #00357f;
+      font-weight: 600;
+      border-bottom-color: #00357f;
+    }
+
+    /* Ficha de cuaderno cartográfico para cruces estadísticos y perfiles comunales */
+    .discovery-notebook-card {
+      background: #ffffff;
+      border: 1px solid #e4dedb;
+      border-radius: 2px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transition: border-color 0.15s ease;
+    }
+    .discovery-notebook-card:hover {
+      border-color: #00357f;
+    }
+    .discovery-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .discovery-card-axes {
+      color: #6b6661;
+    }
+    .discovery-card-r2 {
+      color: #00357f;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .discovery-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #1c1b1b;
+      line-height: 1.32;
+      margin: 0 0 0.45rem 0;
+    }
+    .discovery-card-reading {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: #3f3c3a;
+      margin: 0;
+    }
+    .discovery-card-notable {
+      margin: 0.55rem 0 0 0;
+      padding-left: 0.55rem;
+      border-left: 2px solid #d6cfc9;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: #57534e;
+    }
+    .discovery-card-foot {
+      border-top: 1px solid #efeae6;
+      padding-top: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .discovery-card-metrics {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      line-height: 1.4;
+      color: #6b6661;
+    }
+    .discovery-card-action {
+      align-self: flex-start;
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #00357f;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .discovery-card-action:hover {
+      text-decoration: underline;
+      color: #0059c5;
+    }
+
     /* BARÓMETRO SOCIODEMO DRAWER */
     .barometro-sociodemo-drawer {
       position: fixed;
@@ -808,7 +928,7 @@
       --font-mono: 'JetBrains Mono', monospace;
       --header-h: 56px;
       --action-h: 40px;
-      --tabs-h: 34px;
+      --tabs-h: 30px;
       --sidebar-w: 290px;
     }
 
@@ -941,12 +1061,25 @@
       min-width: 215px;
     }
 
+    #projectMenuDropdown {
+      min-width: 245px;
+    }
+
+    .dropdown-project-sep {
+      height: 1px;
+      background: var(--rule-hairline);
+      margin: 0.25rem 0;
+    }
+
     .dropdown-project-content.show {
       display: block;
     }
 
     .dropdown-project-item {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
       width: 100%;
       text-align: left;
       padding: 0.45rem 0.85rem;
@@ -965,16 +1098,17 @@
     }
 
     /* ==========================================================================
-       BARRA DE PESTAÑAS DE VENTANAS (#workspaceWindowTabs - 34px)
+       BARRA DE PESTAÑAS DE VENTANAS (#workspaceWindowTabs - 30px)
        ========================================================================== */
     .workspace-tabs-bar {
       height: var(--tabs-h);
+      min-height: 30px;
       background: var(--bg-subtle);
       border-bottom: 1px solid var(--rule-hairline);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 0.85rem;
+      justify-content: flex-start;
+      padding: 0 0.75rem;
       z-index: 85;
       user-select: none;
     }
@@ -2019,7 +2153,7 @@
       flex: 1 1 auto;
       width: 100%;
       height: auto;
-      min-height: 0;
+      min-height: 190px;
       padding: 0.35rem 0.5rem;
       display: flex;
       flex-direction: column;
@@ -2642,16 +2776,36 @@
       border-color: var(--cobalt);
     }
 
+    .btn-card-reading-toggle {
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-family: var(--font-sans);
+      font-size: 0.66rem;
+      font-weight: 600;
+      color: var(--cobalt);
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .btn-card-reading-toggle:hover {
+      text-decoration: underline;
+      color: var(--cobalt-light);
+    }
+
     .card-synthesis-panel {
       background: #fcf9f8;
-      border-top: 1px solid rgba(0, 53, 127, 0.18);
-      border-left: 3px solid var(--cobalt);
+      border-top: 1px solid #e4dedb;
+      border-left: 2px solid #00357f;
       padding: 0.55rem 0.75rem;
       font-family: var(--font-sans);
-      font-size: 0.72rem;
-      line-height: 1.45;
+      font-size: 0.74rem;
+      line-height: 1.48;
       color: var(--ink);
-      max-height: 165px;
+      max-height: 145px;
       overflow-y: auto;
       flex-shrink: 0;
     }
@@ -2662,9 +2816,10 @@
       align-items: center;
       font-family: var(--font-mono);
       font-size: 0.62rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--cobalt);
       text-transform: uppercase;
+      letter-spacing: 0.04em;
       margin-bottom: 0.3rem;
     }
 
@@ -4779,51 +4934,41 @@
           <input type="text" id="nlSearchInput" class="nl-search-input" placeholder="Pregunta..." autocomplete="off" />
           <button type="button" class="btn-action-tool" id="btnNlSearch" title="Interpretar"><span>Interpretar</span></button>
         </div>
+        <button type="button" id="btnCopyShareLink" tabindex="-1">Copiar Enlace</button>
       </div>
     </div>
 
     <div class="action-bar-right">
+      <button class="btn-action-tool" id="btnOpenHubGallery" style="border-color: #00357f; color: #00357f; font-weight: 600; background: #fcf9f8;" title="Explorar vistas por eje temático y cruces estadísticos">
+        <span>Vistas y Cruces</span>
+      </button>
+
       <button class="btn-action-tool secondary" id="btnToggleMetacog" title="Abrir preguntas reflexivas">
-        <span>Preguntas <span class="badge-count-subtle">30</span></span>
+        <span>Preguntas</span>
       </button>
 
-      <button class="btn-action-tool" id="btnOpenHubGallery" style="border-color: #00357f; color: #00357f; font-weight: 600; background: #f0f4fc;" title="Galería de 50 visualizaciones por eje temático">
-        <span>Galería <span class="badge-count-subtle">50</span></span>
-      </button>
-
-      <button class="btn-action-tool" id="btnOpenDiscoveriesDrawer" style="border-color: #0059c5; color: #00357f; font-weight: 600; background: #eef6ff;" title="Galería curada en Python de 25 hallazgos estadísticos entre Hubs y explicabilidad local por comuna (Estilo DashAI)">
-        <span>Hallazgos &amp; Explicabilidad <span class="badge-count-subtle">25</span></span>
-      </button>
-
-      <button class="btn-action-tool" id="btnToggleDashboardMode" title="Alternar entre ajustar en grilla y modo lienzo 2D libre">
-        <span>Ajustar en grilla</span>
-      </button>
-
-      <button class="btn-action-tool" id="btnCopyShareLink" title="Copiar enlace compartible con el estado de esta mesa">
-        <span>Copiar Enlace</span>
-      </button>
-
-      <button class="btn-pin-report" id="btnPinChartToReport" type="button" title="Añadir vista activa al Dossier PDF Editorial">
-        <span>+ Añadir vista al Reporte</span>
-        <span class="report-queue-badge" id="reportQueueCount">0</span>
-      </button>
-
-      <!-- Menú Proyecto (Guardar, Cargar, Enlace, Reporte) -->
+      <!-- Menú Proyecto (Reporte, Enlace, Grilla, Guardar/Abrir, Limpiar) -->
       <div class="dropdown-project" id="dropdownProjectWrap">
         <button class="btn-action-tool" id="btnProjectMenu" aria-haspopup="menu" aria-expanded="false" aria-controls="projectMenuDropdown">
           <span>Proyecto ▾</span>
         </button>
         <div class="dropdown-project-content" id="projectMenuDropdown" role="menu" aria-label="Proyecto">
-          <button class="dropdown-project-item" role="menuitem" id="btnShareWorkspaceUrl">Copiar enlace de esta mesa</button>
-          <button class="dropdown-project-item" role="menuitem" id="btnExportarJson">Guardar Proyecto (.json)</button>
-          <button class="dropdown-project-item" role="menuitem" id="btnImportarJson">Abrir Proyecto (.json)</button>
-          <button class="dropdown-project-item" role="menuitem" id="btnExportarReporte">Exportar Reporte (PDF)</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnPinChartToReport" title="Añadir vista activa al Dossier PDF Editorial">
+            <span>Añadir vista al Reporte PDF</span>
+            <span class="report-queue-badge" id="reportQueueCount">0</span>
+          </button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnExportarReporte">Abrir Constructor de Reporte PDF</button>
+          <div class="dropdown-project-sep" role="separator"></div>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnShareWorkspaceUrl">Copiar enlace de esta mesa</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnToggleDashboardMode">Ajustar en grilla</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnTileWindowsGrid">Ordenar tarjetas en grilla</button>
+          <div class="dropdown-project-sep" role="separator"></div>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnExportarJson">Guardar proyecto (.json)</button>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnImportarJson">Abrir proyecto (.json)</button>
+          <div class="dropdown-project-sep" role="separator"></div>
+          <button type="button" class="dropdown-project-item" role="menuitem" id="btnClearCanvas" style="color: #b91c1c; font-weight: 600;">Limpiar mesa</button>
         </div>
       </div>
-
-      <button class="btn-action-tool" id="btnClearCanvas" style="color: #b91c1c; font-weight: 600; border-color: rgba(185, 28, 28, 0.35); background: #fff5f5;" title="Reiniciar y limpiar todo el lienzo">
-        <span>Limpiar</span>
-      </button>
 
       <span id="canvasStatusWidgets"
         style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-muted); margin-left: 0.4rem;">0 ventanas</span>
@@ -4831,27 +4976,14 @@
   </div>
 
   <!-- ========================================================================
-       3. BARRA DE PESTAÑAS DE VENTANAS ABIERTAS (#workspaceWindowTabs - 34px)
+       3. BARRA DE PESTAÑAS DE VENTANAS ABIERTAS (#workspaceWindowTabs - 30px)
        ======================================================================== -->
   <div class="workspace-tabs-bar" id="workspaceWindowTabs">
     <div class="subdashboards-strip" id="subDashboardsStrip">
       <!-- Inyectado dinámicamente: Mesas de trabajo independientes -->
     </div>
     <div class="subdash-divider"></div>
-    <div class="tabs-scroll-area" id="windowTabsScroll">
-      <span style="font-size: 0.68rem; color: var(--ink-muted); font-style: italic;">Sin ventanas. Usa + Tarjeta o arrastra una variable del catálogo</span>
-    </div>
-    <div class="tabs-actions-right">
-      <button class="btn-tab-action" id="btnTileWindowsGrid" title="Auto-ordenar ventanas en grilla de 2 columnas">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="7" height="7"></rect>
-          <rect x="14" y="3" width="7" height="7"></rect>
-          <rect x="14" y="14" width="7" height="7"></rect>
-          <rect x="3" y="14" width="7" height="7"></rect>
-        </svg>
-        <span>Auto-ordenar</span>
-      </button>
-    </div>
+    <div class="tabs-scroll-area" id="windowTabsScroll"></div>
   </div>
 
   <!-- Input oculto para abrir proyectos JSON -->
@@ -4977,7 +5109,8 @@
           <button class="floating-btn" id="tbBtnAverage" title="Línea media / 4 cuadrantes">Promedio</button>
           <button class="floating-btn" id="tbBtnTrend" title="Regresión lineal">Tendencia</button>
           <button class="floating-btn" id="tbBtnReflection" title="Invocar tarjeta de reflexión">+ Pregunta</button>
-          <button class="floating-btn" id="tbBtnSynthesis" title="Generar Síntesis Ejecutiva de Datos">Síntesis</button>
+          <button class="floating-btn" id="tbBtnSynthesis" title="Mostrar u ocultar lectura de datos">Lectura</button>
+          <button class="floating-btn" id="tbBtnSyncMode" title="Sincronizar selección con otras tarjetas (Red / Aislada / Global)">Red: Conectada</button>
           <button class="floating-btn" id="tbBtnCsv" title="Descargar CSV con UTF-8 BOM" aria-label="Descargar CSV">CSV</button>
           <button class="floating-btn" id="tbBtnPng" title="Exportar imagen PNG de la tarjeta" aria-label="Exportar imagen PNG">PNG</button>
           <button class="floating-btn" id="btnExcludeCoyhaique" title="Excluir o incluir Coyhaique del cálculo">Sin Coyhaique</button>
@@ -5081,14 +5214,14 @@
     </div>
   </div>
 
-  <!-- Modal Galería de 40 Visualizaciones por Hub -->
+  <!-- Modal Unificado: Vistas por Eje y Cruces Estadísticos -->
   <div class="hub-gallery-overlay" id="modalHubGallery" role="dialog" aria-modal="true" aria-labelledby="hubGalleryTitle" aria-hidden="true" style="display:none;">
-    <div class="hub-gallery-modal">
+    <div class="hub-gallery-modal" style="max-width: 1120px;">
       <div class="hub-gallery-header">
         <div>
-          <span class="hub-gallery-kicker">Catálogo Editorial Austral</span>
-          <h2 id="hubGalleryTitle" class="hub-gallery-title">Galería de Vistas por Eje Temático</h2>
-          <p class="hub-gallery-subtitle">5 vistas integradas (Mapa territorial, Barras bivariadas, Dispersión en 4 cuadrantes, Serie temporal y Percepción ciudadana) para los 10 ejes de Aysén.</p>
+          <span class="hub-gallery-kicker">Cuaderno Editorial Austral</span>
+          <h2 id="hubGalleryTitle" class="hub-gallery-title">Vistas y Cruces de Aysén</h2>
+          <p class="hub-gallery-subtitle">Explora vistas curadas por eje temático o relaciones estadísticas verificadas entre ejes.</p>
         </div>
         <div style="display:flex; align-items:center; gap:0.75rem;">
           <button type="button" class="btn-load-full-hub-dashboard" id="btnLoadFullHubDashboard">
@@ -5098,43 +5231,33 @@
         </div>
       </div>
 
-      <!-- Pestañas de los 8 Hubs -->
-      <div class="hub-gallery-tabs" id="hubGalleryTabs" role="tablist">
-        <!-- Generado dinámicamente -->
+      <!-- Selector editorial de dos modos -->
+      <div class="gallery-mode-bar" role="tablist" aria-label="Modo de exploración">
+        <button type="button" class="gallery-mode-tab active" id="btnGalleryModeHubs" data-gallery-mode="hubs" role="tab" aria-selected="true">Por Eje Temático (50)</button>
+        <button type="button" class="gallery-mode-tab" id="btnOpenDiscoveriesDrawer" data-gallery-mode="discoveries" role="tab" aria-selected="false">Cruces Estadísticos (25)</button>
       </div>
 
-      <!-- Grilla de las 5 visualizaciones del Hub activo -->
-      <div class="hub-gallery-cards-grid" id="hubGalleryCardsGrid">
-        <!-- Tarjetas generadas dinámicamente -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Galería Pre-Procesada en Python de 25 Hallazgos y Explicabilidad Local (Estilo DashAI) -->
-  <div class="hub-gallery-overlay" id="modalCuratedDiscoveries" role="dialog" aria-modal="true" aria-labelledby="discoveriesModalTitle" aria-hidden="true" style="display:none;">
-    <div class="hub-gallery-modal" style="max-width: 1120px;">
-      <div class="hub-gallery-header">
-        <div>
-          <span class="hub-gallery-kicker">Motor Estadístico Multicriterio en Python (5 Pruebas + DashAI Local Explainability)</span>
-          <h2 id="discoveriesModalTitle" class="hub-gallery-title">25 Hallazgos y Relaciones No Obvias entre Hubs de Aysén</h2>
-          <p class="hub-gallery-subtitle">Cada relación pre-calculada en Python supera simultáneamente 5 pruebas: Regresión OLS + Benjamini-Hochberg (FDR &lt; 0,05), Ranking de Spearman, Correlación Parcial controlando por Población, Robustez sin Coyhaique y Primeras Diferencias 2015–2026.</p>
+      <!-- Modo 1: Por Eje Temático (50) -->
+      <div id="galleryHubsPanel" style="display:flex; flex-direction:column; flex:1; min-height:0; overflow:hidden;">
+        <div class="hub-gallery-tabs" id="hubGalleryTabs" role="tablist">
+          <!-- Generado dinámicamente -->
         </div>
-        <div style="display:flex; align-items:center; gap:0.75rem;">
-          <button type="button" class="hub-gallery-close" id="btnDiscoveriesModalClose" aria-label="Cerrar galería de hallazgos">×</button>
+        <div class="hub-gallery-cards-grid" id="hubGalleryCardsGrid">
+          <!-- Tarjetas generadas dinámicamente -->
         </div>
       </div>
 
-      <!-- Filtros Rápidos -->
-      <div class="hub-gallery-tabs" id="discoveriesFilterTabs" role="tablist">
-        <button type="button" class="hub-tab-btn active" data-disc-filter="all">Todos los Hallazgos (25)</button>
-        <button type="button" class="hub-tab-btn" data-disc-filter="cruce_comunal_oculto">Cruces Comunales No Obvios (20)</button>
-        <button type="button" class="hub-tab-btn" data-disc-filter="acoplamiento_temporal_2015_2026">Acoplamientos en el Tiempo 2015–2026 (5)</button>
-        <button type="button" class="hub-tab-btn" data-disc-filter="comunas_explain">Radiografía por Comuna (10)</button>
-      </div>
-
-      <!-- Grilla de los 25 Hallazgos o Radiografías Comunales -->
-      <div class="hub-gallery-cards-grid" id="discoveriesCardsGrid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
-        <!-- Renderizado dinámicamente por renderCuratedDiscoveriesGrid() -->
+      <!-- Modo 2: Cruces Estadísticos (25) y Perfil por Comuna -->
+      <div id="galleryDiscoveriesPanel" style="display:none; flex-direction:column; flex:1; min-height:0; overflow:hidden;">
+        <div class="hub-gallery-tabs" id="discoveriesFilterTabs" role="tablist">
+          <button type="button" class="hub-tab-btn active" data-disc-filter="all">Todos (25)</button>
+          <button type="button" class="hub-tab-btn" data-disc-filter="cruce_comunal_oculto">Entre Comunas (20)</button>
+          <button type="button" class="hub-tab-btn" data-disc-filter="acoplamiento_temporal_2015_2026">En el Tiempo 2015–2026 (5)</button>
+          <button type="button" class="hub-tab-btn" data-disc-filter="comunas_explain">Perfil por Comuna (10)</button>
+        </div>
+        <div class="hub-gallery-cards-grid" id="curatedDiscoveriesGrid" style="grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));">
+          <!-- Renderizado dinámicamente por renderCuratedDiscoveriesGrid() -->
+        </div>
       </div>
     </div>
   </div>
@@ -10659,7 +10782,7 @@
         }
         AppState.dashboardViewMode = isGrid ? 'grid' : 'canvas';
         if (btn) {
-          btn.textContent = isGrid ? 'Modo Lienzo 2D' : 'Ajustar en grilla';
+          btn.textContent = isGrid ? 'Cambiar a lienzo 2D libre' : 'Ajustar en grilla';
           btn.classList.toggle('active', isGrid);
         }
         if (!isGrid) {
@@ -10745,6 +10868,8 @@
         if (btnMode && !btnMode._hasHudListener) {
           btnMode.addEventListener('click', (e) => {
             e.stopPropagation();
+            const pm = document.getElementById('projectMenuDropdown');
+            if (pm) pm.classList.remove('show');
             toggleDashboardViewMode();
           });
           btnMode._hasHudListener = true;
@@ -10932,8 +11057,12 @@
       function renderWidgetCardDOM(w, opts = {}) {
         syncHeroVisibility();
 
-        const vX = w.varX ? (AppState.catalogItems.find(v => v.id === w.varX) || AppState.catalogItems[0]) : null;
+        const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
         const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+        const matchedDisc = w.discoveryId
+          ? ((window.AYSEN_DISCOVERIES_DATA?.curatedDiscoveries || []).find(d => d.id === w.discoveryId) || null)
+          : null;
+        const hasCustomBivariate = !!(w.customChartSpec && Array.isArray(w.customChartSpec.datasets) && w.customChartSpec.datasets.length >= 2);
 
         let keyLabel = 'Sin variable';
         let keyClass = 'none';
@@ -10943,13 +11072,20 @@
         if (vX && vY) {
           keyLabel = (vX.dim === vY.dim) ? `Cruce por ${vX.dim}` : 'Sin llave directa';
           keyClass = (vX.dim === vY.dim) ? 'valid' : 'warn';
-          hubTitle = `${vX.hubTitle} x ${vY.hubTitle}`;
+          hubTitle = `${vX.hubTitle} × ${vY.hubTitle}`;
           const ux = (w.customChartSpec?.datasets?.[0]?.unit) || vX.unit;
           const uy = (w.customChartSpec?.datasets?.[1]?.unit) || vY.unit;
           unitBadge = `X: ${ux} · Y: ${uy}`;
+        } else if (hasCustomBivariate) {
+          keyLabel = matchedDisc?.dim === 'tiempo' ? 'Serie 2015–2026' : 'Cruce';
+          keyClass = 'valid';
+          hubTitle = matchedDisc ? `${matchedDisc.hubX} × ${matchedDisc.hubY}` : 'Cruce Territorial';
+          const ux = w.customChartSpec.datasets[0]?.unit || matchedDisc?.unitX || '';
+          const uy = w.customChartSpec.datasets[1]?.unit || matchedDisc?.unitY || '';
+          unitBadge = `X: ${ux} · Y: ${uy}`;
         } else if (vX) {
           keyLabel = (vX.dim === 'tiempo') ? 'Línea de Tiempo' : `Por ${vX.dim}`;
-          keyClass = (vX.dim === 'tiempo') ? 'valid' : 'valid';
+          keyClass = 'valid';
           hubTitle = (vX.dim === 'tiempo') ? `${vX.hubTitle} · Serie Multianual` : vX.hubTitle;
           unitBadge = `Unidad: ${vX.unit}`;
         }
@@ -10959,39 +11095,66 @@
           const infoX = getAutoexplanatoryVarInfo(vX.id, vX.name, vX.unit);
           const infoY = getAutoexplanatoryVarInfo(vY.id, vY.name, vY.unit);
           descText = `Cruce: [X] ${infoX?.desc || vX.name} × [Y] ${infoY?.desc || vY.name}`;
+        } else if (hasCustomBivariate && matchedDisc) {
+          descText = `Cruce: [X] ${matchedDisc.labelX} × [Y] ${matchedDisc.labelY}`;
         } else if (vX) {
           const infoX = getAutoexplanatoryVarInfo(vX.id, vX.name, vX.unit);
           descText = infoX?.desc || `Mide indicador territorial con valor en ${vX.unit}.`;
         }
 
         function buildCardFooterHtml(widget) {
-          const wvX = widget.varX ? (AppState.catalogItems.find(v => v.id === widget.varX) || AppState.catalogItems[0]) : null;
+          const wvX = widget.varX ? AppState.catalogItems.find(v => v.id === widget.varX) : null;
           const wvY = widget.varY ? AppState.catalogItems.find(v => v.id === widget.varY) : null;
+          const hasCustom = !!(widget.customChartSpec && Array.isArray(widget.customChartSpec.datasets) && widget.customChartSpec.datasets.length > 0);
+          const panelEl = document.getElementById(`synthesis-panel-${widget.id}`);
+          const isOpen = !!(panelEl && panelEl.style.display !== 'none');
+          const readingBtn = (wvX || hasCustom)
+            ? `<button type="button" class="btn-card-reading-toggle" id="btnExplainCard-${widget.id}" title="Ver u ocultar lectura de datos">${isOpen ? 'Ocultar lectura ▴' : 'Ver lectura de datos ▾'}</button>`
+            : '';
           const exportBtns = `
             <span style="display:inline-flex; align-items:center; gap:0.25rem; flex-shrink:0;">
+              ${readingBtn}
               <button type="button" class="btn-card-mini-pill" id="btnCsvCard-${widget.id}" title="Exportar CSV con UTF-8 BOM">CSV</button>
               <button type="button" class="btn-card-mini-pill" id="btnPngCard-${widget.id}" title="Exportar tarjeta a imagen PNG">PNG</button>
             </span>
           `;
-          if (!wvX) {
-            return `<span class="prov-text">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>${exportBtns}`;
+          if (!wvX && !hasCustom) {
+            return `<span class="prov-text" style="flex:1;min-width:0;">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>${exportBtns}`;
+          }
+          if (hasCustom && !wvX) {
+            return `<span class="prov-text" style="flex:1;min-width:0;">Fuentes oficiales consolidadas (2015–2026)</span>${exportBtns}`;
           }
           if (!wvY) {
             return `
-              <span class="prov-text" title="${wvX.sourceName}">Fuente: <strong>${wvX.sourceName}</strong> · Corte: <strong>${wvX.collectionDate}</strong></span>
-              <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-shrink:0;">
+              <span class="prov-text" style="flex:1;min-width:0;" title="${wvX.sourceName}">Fuente: <strong>${wvX.sourceName}</strong> · Corte: <strong>${wvX.collectionDate}</strong></span>
+              <span style="display:inline-flex; align-items:center; gap:0.4rem; flex-shrink:0;">
                 <a href="${wvX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente ↗</a>
                 ${exportBtns}
               </span>
             `;
           }
           return `
-            <span class="prov-text" title="[X] ${wvX.sourceName} | [Y] ${wvY.sourceName}">Fuentes: [X] <strong>${wvX.sourceName}</strong> × [Y] <strong>${wvY.sourceName}</strong></span>
+            <span class="prov-text" style="flex:1;min-width:0;" title="[X] ${wvX.sourceName} | [Y] ${wvY.sourceName}">Fuentes: [X] <strong>${wvX.sourceName}</strong> × [Y] <strong>${wvY.sourceName}</strong></span>
             ${exportBtns}
           `;
         }
 
         function bindCardFooterActions(cardEl, widget) {
+          const btnReadCard = cardEl.querySelector(`#btnExplainCard-${widget.id}`);
+          if (btnReadCard && !btnReadCard._boundExplain) {
+            btnReadCard.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const panelEl = document.getElementById(`synthesis-panel-${widget.id}`);
+              if (panelEl && panelEl.style.display !== 'none') {
+                panelEl.style.display = 'none';
+                btnReadCard.textContent = 'Ver lectura de datos ▾';
+              } else if (typeof explainCardWithCuratedDiscovery === 'function') {
+                explainCardWithCuratedDiscovery(widget);
+                btnReadCard.textContent = 'Ocultar lectura ▴';
+              }
+            });
+            btnReadCard._boundExplain = true;
+          }
           const btnCsvCard = cardEl.querySelector(`#btnCsvCard-${widget.id}`);
           if (btnCsvCard && !btnCsvCard._boundCsv) {
             btnCsvCard.addEventListener('click', (e) => {
@@ -11301,7 +11464,7 @@
 
           const validTag = existingCard.querySelector(`#valid-tag-${w.id}`);
           if (validTag) {
-            validTag.className = `widget-meta-tag ${keyClass}`;
+            validTag.style.color = keyClass === 'warn' ? '#b91c1c' : '#6b6661';
             validTag.textContent = keyLabel;
           }
 
@@ -11315,13 +11478,6 @@
           if (footer) {
             footer.innerHTML = footerHtml;
             bindCardFooterActions(existingCard, w);
-          }
-
-          const syncBtn = existingCard.querySelector(`#btnSyncCard-${w.id}`);
-          if (syncBtn) {
-            syncBtn.className = `btn-card-sync-pill mode-${w.syncMode || 'linked'}`;
-            const lbl = syncBtn.querySelector('.sync-mode-lbl');
-            if (lbl) lbl.textContent = (w.syncMode === 'isolated') ? 'Aislada' : ((w.syncMode === 'global') ? 'Global' : 'Red');
           }
 
           let twBar = existingCard.querySelector(`#time-window-bar-${w.id}`);
@@ -11412,16 +11568,14 @@
             </div>
             ${descText ? `<div class="widget-var-desc" id="widget-desc-${w.id}">${descText}</div>` : `<div class="widget-var-desc" id="widget-desc-${w.id}" style="display:none;"></div>`}
             <div class="widget-header-line2 card-controls-row">
-              <div class="widget-meta-line">
-                <span class="widget-meta-tag ${keyClass}" id="valid-tag-${w.id}">${keyLabel}</span>
-                <span class="widget-unit-badge" style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--cobalt); font-weight: 600;" id="unit-tag-${w.id}">${unitBadge}</span>
-                <span style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-muted);" id="hub-tag-${w.id}">${hubTitle}</span>
+              <div class="widget-meta-line" style="font-size: 11px; color: #6b6661; font-family: var(--font-mono);">
+                <span id="valid-tag-${w.id}" style="color: ${keyClass === 'warn' ? '#b91c1c' : '#6b6661'};">${keyLabel}</span>
+                <span aria-hidden="true">·</span>
+                <span class="widget-unit-badge" style="color: #00357f; font-weight: 600;" id="unit-tag-${w.id}">${unitBadge}</span>
+                <span aria-hidden="true">·</span>
+                <span id="hub-tag-${w.id}">${hubTitle}</span>
               </div>
               <div class="widget-header-actions">
-                <button class="btn-card-sync-pill mode-${w.syncMode || 'linked'}" id="btnSyncCard-${w.id}" title="Sincronización: Red (conectados), Aislada o Global">
-                  <span class="sync-dot"></span>
-                  <span class="sync-mode-lbl">${(w.syncMode === 'isolated') ? 'Aislada' : ((w.syncMode === 'global') ? 'Global' : 'Red')}</span>
-                </button>
                 <button class="btn-card-cross-pill" id="btnCrossCard-${w.id}" title="Cruzar con otra variable compatible">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -11429,8 +11583,6 @@
                   </svg>
                   <span>+ Cruzar</span>
                 </button>
-                <button class="btn-card-mini-pill" id="btnSynthCard-${w.id}" title="Generar Síntesis Ejecutiva de Datos">Síntesis</button>
-                <button class="btn-card-mini-pill" id="btnExplainCard-${w.id}" style="color: #00357f; border-color: rgba(0, 53, 127, 0.35); background: #f0f7ff;" title="Explicabilidad estadística multicriterio y radiografía local (Estilo DashAI)">Explicar</button>
                 <button class="btn-card-format" id="btnFormatCard-${w.id}" title="Mostrar/Ocultar barra de herramientas y formato">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="3"></circle>
@@ -11778,26 +11930,6 @@
           openSmartPopover(w, e.currentTarget);
         });
 
-        // Botón Síntesis Ejecutiva
-        const synthBtn = card.querySelector(`#btnSynthCard-${w.id}`);
-        if (synthBtn) {
-          synthBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            generateCardExecutiveSynthesis(w);
-          });
-        }
-
-        // Botón Explicabilidad Estadística (Estilo DashAI)
-        const explainBtn = card.querySelector(`#btnExplainCard-${w.id}`);
-        if (explainBtn) {
-          explainBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (typeof explainCardWithCuratedDiscovery === 'function') {
-              explainCardWithCuratedDiscovery(w);
-            }
-          });
-        }
-
         // Botón Filtros Demográficos (Barómetro Espejo)
         const socBtn = card.querySelector('.btn-toggle-sociodemo');
         if (socBtn && !socBtn._boundSociodemo) {
@@ -11814,21 +11946,6 @@
           formatBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleFloatingToolbarForCard(w.id);
-          });
-        }
-
-        // Selector de Modo de Sincronización (Red, Aislada, Global)
-        const syncBtn = card.querySelector(`#btnSyncCard-${w.id}`);
-        if (syncBtn) {
-          syncBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const currentMode = w.syncMode || 'linked';
-            const nextMode = currentMode === 'linked' ? 'isolated' : (currentMode === 'isolated' ? 'global' : 'linked');
-            w.syncMode = nextMode;
-            syncBtn.className = `btn-card-sync-pill mode-${nextMode}`;
-            const lbl = syncBtn.querySelector('.sync-mode-lbl');
-            if (lbl) lbl.textContent = nextMode === 'isolated' ? 'Aislada' : (nextMode === 'global' ? 'Global' : 'Red');
-            autoSave();
           });
         }
 
@@ -12035,19 +12152,10 @@
           if (wSource.excludeOutlierCoyhaique) wTarget.excludeOutlierCoyhaique = true;
           if (wSource.scaleMode && wSource.scaleMode !== 'raw') wTarget.scaleMode = wSource.scaleMode;
           if (wSource.perCapitaMode) wTarget.perCapitaMode = true;
-          const btn1 = document.querySelector(`#btnSyncCard-${wSource.id}`);
-          if (btn1) {
-            btn1.className = 'btn-card-sync-pill mode-linked';
-            const lbl = btn1.querySelector('.sync-mode-lbl');
-            if (lbl) lbl.textContent = 'Red';
-          }
-          const btn2 = document.querySelector(`#btnSyncCard-${wTarget.id}`);
-          if (btn2) {
-            btn2.className = 'btn-card-sync-pill mode-linked';
-            const lbl = btn2.querySelector('.sync-mode-lbl');
-            if (lbl) lbl.textContent = 'Red';
-          }
           renderWidgetVisual(wTarget);
+          if (AppState.activeWidgetId === wSource.id || AppState.activeWidgetId === wTarget.id) {
+            showFloatingToolbarForCard(AppState.activeWidgetId);
+          }
           pop.remove();
           updateConnections();
           autoSave();
@@ -12543,7 +12651,7 @@
         if (!tabsContainer) return;
 
         if (!AppState.widgets.length) {
-          tabsContainer.innerHTML = '<span style="font-size: 0.68rem; color: var(--ink-muted); font-style: italic;">Sin ventanas. Usa + Tarjeta o arrastra una variable del catálogo</span>';
+          tabsContainer.innerHTML = '';
           return;
         }
 
@@ -12749,8 +12857,8 @@
             <span style="font-size: 0.62rem; color: var(--ink-muted);">?</span>
           </div>
           <div class="context-menu-item" role="menuitem" tabindex="-1" id="ctxCardSynthesis">
-            <span>Generar síntesis de datos</span>
-            <span style="font-size: 0.62rem; color: var(--cobalt);">3 pts</span>
+            <span>Ver lectura de datos</span>
+            <span style="font-size: 0.62rem; color: var(--cobalt);">▾</span>
           </div>
 
           <div class="context-menu-separator"></div>
@@ -12854,7 +12962,11 @@
         const btnCtxSynth = menu.querySelector('#ctxCardSynthesis');
         if (btnCtxSynth) {
           btnCtxSynth.addEventListener('click', () => {
-            generateCardExecutiveSynthesis(w);
+            if (typeof explainCardWithCuratedDiscovery === 'function') {
+              explainCardWithCuratedDiscovery(w);
+            } else {
+              generateCardExecutiveSynthesis(w);
+            }
             closeContextMenu();
           });
         }
@@ -13132,6 +13244,15 @@
         if (btnZ) {
           if (mode === 'zscore') btnZ.classList.add('active');
           else btnZ.classList.remove('active');
+        }
+
+        const btnSyncTb = document.getElementById('tbBtnSyncMode');
+        if (btnSyncTb) {
+          const sm = w.syncMode || 'linked';
+          btnSyncTb.classList.toggle('active', sm !== 'isolated');
+          btnSyncTb.textContent = sm === 'isolated'
+            ? 'Red: Aislada'
+            : (sm === 'global' ? 'Red: Global' : 'Red: Conectada');
         }
       }
 
@@ -13432,8 +13553,31 @@
             e.stopPropagation();
             const w = getTargetToolbarWidget();
             if (w) {
-              generateCardExecutiveSynthesis(w);
+              const panelEl = document.getElementById(`synthesis-panel-${w.id}`);
+              const readBtn = document.getElementById(`btnExplainCard-${w.id}`);
+              if (panelEl && panelEl.style.display !== 'none') {
+                panelEl.style.display = 'none';
+                if (readBtn) readBtn.textContent = 'Ver lectura de datos ▾';
+              } else if (typeof explainCardWithCuratedDiscovery === 'function') {
+                explainCardWithCuratedDiscovery(w);
+              } else {
+                generateCardExecutiveSynthesis(w);
+              }
               showFloatingToolbarForCard(w.id, { forceShow: true });
+            }
+          });
+        }
+
+        const btnSyncTb = document.getElementById('tbBtnSyncMode');
+        if (btnSyncTb) {
+          btnSyncTb.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = getTargetToolbarWidget();
+            if (w) {
+              const cur = w.syncMode || 'linked';
+              w.syncMode = cur === 'linked' ? 'isolated' : (cur === 'isolated' ? 'global' : 'linked');
+              showFloatingToolbarForCard(w.id, { forceShow: true });
+              autoSave();
             }
           });
         }
@@ -13731,6 +13875,39 @@
         });
 
         let html = '';
+
+        // Priorizar variables con relación estadística verificada para w.varX
+        if (w && w.varX) {
+          const discList = (window.AYSEN_DISCOVERIES_DATA && Array.isArray(window.AYSEN_DISCOVERIES_DATA.curatedDiscoveries))
+            ? window.AYSEN_DISCOVERIES_DATA.curatedDiscoveries
+            : [];
+          const verifiedMatches = new Map();
+          discList.forEach(d => {
+            const partnerId = d.varX === w.varX ? d.varY : (d.varY === w.varX ? d.varX : null);
+            if (partnerId) {
+              const r2 = d.regressionLine?.rSquaredPct ?? d.statProofBadges?.fuerzaExplicativaPct;
+              verifiedMatches.set(partnerId, r2);
+            }
+          });
+          const prioritized = items.filter(it => verifiedMatches.has(it.id));
+          if (prioritized.length) {
+            html += `<div class="popover-hub-group-hdr">Relaciones estadísticas verificadas (${prioritized.length})</div>`;
+            html += prioritized.map(it => {
+              const info = getAutoexplanatoryVarInfo(it.id, it.name, it.unit);
+              const displayTitle = info?.title || it.name;
+              const srcLabel = info?.sourceTag || it.sourceName || 'Oficial';
+              const r2Val = verifiedMatches.get(it.id);
+              const r2Text = r2Val !== undefined ? `R² ${String(Math.round(Number(r2Val)))}% · ` : '';
+              return `
+                <div class="popover-item" role="menuitem" tabindex="-1" data-var-id="${it.id}">
+                  <div style="font-weight: 600; font-size: 0.78rem; color: #00357f; line-height: 1.3;">${displayTitle}</div>
+                  <div style="font-family: var(--font-mono); font-size: 0.62rem; color: #6b6661; line-height: 1.25;">${r2Text}${it.unit} · ${srcLabel}</div>
+                </div>
+              `;
+            }).join('');
+          }
+        }
+
         sortedHubs.forEach(hubTitle => {
           const groupItems = grouped[hubTitle];
           const sgMap = {};
@@ -13797,27 +13974,50 @@
         if (!footer) return;
         const vX = w.varX ? AppState.catalogItems.find(v => v.id === w.varX) : null;
         const vY = w.varY ? AppState.catalogItems.find(v => v.id === w.varY) : null;
+        const hasCustom = !!(w.customChartSpec && Array.isArray(w.customChartSpec.datasets) && w.customChartSpec.datasets.length > 0);
+        const panelEl = document.getElementById(`synthesis-panel-${w.id}`);
+        const isOpen = !!(panelEl && panelEl.style.display !== 'none');
+        const readingBtn = (vX || hasCustom)
+          ? `<button type="button" class="btn-card-reading-toggle" id="btnExplainCard-${w.id}" title="Ver u ocultar lectura de datos">${isOpen ? 'Ocultar lectura ▴' : 'Ver lectura de datos ▾'}</button>`
+          : '';
         const exportBtns = `
           <span style="display:inline-flex; align-items:center; gap:0.25rem; flex-shrink:0;">
+            ${readingBtn}
             <button type="button" class="btn-card-mini-pill" id="btnCsvCard-${w.id}" title="Exportar CSV con UTF-8 BOM">CSV</button>
             <button type="button" class="btn-card-mini-pill" id="btnPngCard-${w.id}" title="Exportar tarjeta a imagen PNG">PNG</button>
           </span>
         `;
-        if (!vX) {
-          footer.innerHTML = `<span class="prov-text">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>${exportBtns}`;
+        if (!vX && !hasCustom) {
+          footer.innerHTML = `<span class="prov-text" style="flex:1;min-width:0;">Sin variable asignada · Selecciona o arrastra un dato del catálogo</span>${exportBtns}`;
+        } else if (hasCustom && !vX) {
+          footer.innerHTML = `<span class="prov-text" style="flex:1;min-width:0;">Fuentes oficiales consolidadas (2015–2026)</span>${exportBtns}`;
         } else if (!vY) {
           footer.innerHTML = `
-            <span class="prov-text" title="${vX.sourceName}">Fuente: <strong>${vX.sourceName}</strong> · Corte: <strong>${vX.collectionDate}</strong></span>
-            <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-shrink:0;">
+            <span class="prov-text" style="flex:1;min-width:0;" title="${vX.sourceName}">Fuente: <strong>${vX.sourceName}</strong> · Corte: <strong>${vX.collectionDate}</strong></span>
+            <span style="display:inline-flex; align-items:center; gap:0.4rem; flex-shrink:0;">
               <a href="${vX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente ↗</a>
               ${exportBtns}
             </span>
           `;
         } else {
           footer.innerHTML = `
-            <span class="prov-text" title="[X] ${vX.sourceName} | [Y] ${vY.sourceName}">Fuentes: [X] <strong>${vX.sourceName}</strong> × [Y] <strong>${vY.sourceName}</strong></span>
+            <span class="prov-text" style="flex:1;min-width:0;" title="[X] ${vX.sourceName} | [Y] ${vY.sourceName}">Fuentes: [X] <strong>${vX.sourceName}</strong> × [Y] <strong>${vY.sourceName}</strong></span>
             ${exportBtns}
           `;
+        }
+        const btnReadCard = footer.querySelector(`#btnExplainCard-${w.id}`);
+        if (btnReadCard) {
+          btnReadCard.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const pEl = document.getElementById(`synthesis-panel-${w.id}`);
+            if (pEl && pEl.style.display !== 'none') {
+              pEl.style.display = 'none';
+              btnReadCard.textContent = 'Ver lectura de datos ▾';
+            } else if (typeof explainCardWithCuratedDiscovery === 'function') {
+              explainCardWithCuratedDiscovery(w);
+              btnReadCard.textContent = 'Ocultar lectura ▴';
+            }
+          });
         }
         const bCsv = footer.querySelector(`#btnCsvCard-${w.id}`);
         if (bCsv) bCsv.addEventListener('click', (e) => { e.stopPropagation(); exportCsv(w); });
@@ -13858,19 +14058,23 @@
           const validTag = cardEl.querySelector(`#valid-tag-${w.id}`);
           if (validTag) {
             validTag.textContent = vX.dim === vY.dim ? `Cruce por ${vX.dim}` : 'Sin llave directa';
-            validTag.className = `widget-meta-tag ${vX.dim === vY.dim ? 'valid' : 'warn'}`;
+            validTag.style.color = vX.dim === vY.dim ? '#6b6661' : '#b91c1c';
           }
           const unitTag = cardEl.querySelector(`#unit-tag-${w.id}`);
           if (unitTag) {
             unitTag.textContent = `X: ${vX.unit} · Y: ${vY.unit}`;
           }
           const hubTag = cardEl.querySelector(`#hub-tag-${w.id}`);
-          if (hubTag) hubTag.textContent = `${vX.hubTitle} x ${vY.hubTitle}`;
+          if (hubTag) hubTag.textContent = `${vX.hubTitle} × ${vY.hubTitle}`;
 
           refreshCardFooterDOM(w);
         }
 
         renderWidgetVisual(w);
+        const synthEl = document.getElementById(`synthesis-panel-${w.id}`);
+        if (synthEl && synthEl.style.display !== 'none' && typeof explainCardWithCuratedDiscovery === 'function') {
+          explainCardWithCuratedDiscovery(w);
+        }
         renderWindowTabs();
         updateStatus();
         autoSave();
@@ -13902,7 +14106,7 @@
           const validTag = cardEl.querySelector(`#valid-tag-${w.id}`);
           if (validTag) {
             validTag.textContent = `Por ${v.dim}`;
-            validTag.className = 'widget-meta-tag valid';
+            validTag.style.color = '#6b6661';
           }
           const unitTag = cardEl.querySelector(`#unit-tag-${w.id}`);
           if (unitTag) unitTag.textContent = `Unidad: ${v.unit}`;
@@ -13912,6 +14116,10 @@
           refreshCardFooterDOM(w);
         }
         renderWidgetVisual(w);
+        const synthEl = document.getElementById(`synthesis-panel-${w.id}`);
+        if (synthEl && synthEl.style.display !== 'none' && typeof explainCardWithCuratedDiscovery === 'function') {
+          explainCardWithCuratedDiscovery(w);
+        }
         renderWindowTabs();
         updateStatus();
         autoSave();
@@ -14113,37 +14321,190 @@
         return { n, primaryLabel, primaryUnit, pt1, pt2, pt3, pearsonR, r2, anomalyLbl: primaryStat.anomalyLbl, anomalyZ: primaryStat.anomalyZ };
       }
 
+      function getFocusedComunaForWidget(w) {
+        const candidate = (w && w.highlightEntity) || AppState.selectedEntity || null;
+        if (candidate) {
+          const candNorm = normStr(candidate);
+          const hit = COMUNAS_ORDER.find(c => normStr(c) === candNorm);
+          if (hit) return hit;
+        }
+        const tf = AppState.territorialFilter;
+        if (tf && tf !== 'all' && typeof TERRITORIAL_SLICES !== 'undefined' && Array.isArray(TERRITORIAL_SLICES[tf]) && TERRITORIAL_SLICES[tf].length === 1) {
+          return TERRITORIAL_SLICES[tf][0];
+        }
+        return null;
+      }
+
+      function fmtPlainNum(val, digits = 1) {
+        if (!Number.isFinite(val)) return '–';
+        return val.toLocaleString('es-CL', { maximumFractionDigits: digits });
+      }
+
+      function fmtSignedCorr(val) {
+        if (!Number.isFinite(val)) return '0,00';
+        const sign = val >= 0 ? '+' : '–';
+        return `${sign}${Math.abs(val).toFixed(2).replace('.', ',')}`;
+      }
+
       function generateCardExecutiveSynthesis(w, targetReflCard = null) {
         if (!w) return;
         const synth = computeWidgetExecutiveStats(w);
         if (!synth) {
-          if (typeof showToast === 'function') showToast('Asigna una variable con datos para generar su síntesis ejecutiva.');
+          if (typeof showToast === 'function') showToast('Asigna una variable con datos para ver la lectura de datos.');
           return;
         }
 
-        const htmlList = `
-          <ul style="margin:0; padding-left:1rem;">
-            <li><strong>(1) Liderazgo y rezago:</strong> ${synth.pt1.replace(/^Liderazgo y rezago[^:]*:\s*/, '')}</li>
-            <li><strong>(2) Correlación y anomalías:</strong> ${synth.pt2.replace(/^Correlación y anomalías:\s*|^Dispersión y anomalías:\s*/, '')}</li>
-            <li><strong>(3) Lectura territorial:</strong> ${synth.pt3.replace(/^Lectura territorial para decisión:\s*/, '')}</li>
-          </ul>
-        `;
-
+        const payload = getWidgetDataPayload(w);
+        const focusedComuna = getFocusedComunaForWidget(w);
         const panel = document.getElementById(`synthesis-panel-${w.id}`);
-        if (panel) {
+
+        if (panel && payload && payload.mode !== 'empty') {
+          let headerText = 'Lectura de datos';
+          let bodyHtml = '';
+
+          if (payload.mode === 'bivariate' && Array.isArray(payload.dataX) && Array.isArray(payload.dataY)) {
+            headerText = 'Lectura del cruce';
+            const xs = payload.dataX.map(v => Number(v) || 0);
+            const ys = payload.dataY.map(v => Number(v) || 0);
+            const lbls = payload.labels || [];
+            const n = Math.min(xs.length, ys.length);
+            let minXIdx = 0, maxXIdx = 0;
+            for (let i = 1; i < n; i++) {
+              if (xs[i] < xs[minXIdx]) minXIdx = i;
+              if (xs[i] > xs[maxXIdx]) maxXIdx = i;
+            }
+            const ux = payload.unitX || '';
+            const uy = payload.unitY || '';
+            const rVal = synth.pearsonR !== null ? synth.pearsonR : 0;
+            const r2Pct = synth.r2 !== null ? Math.round(synth.r2 * 100) : 0;
+            const dirLabel = rVal >= 0 ? 'directa' : 'inversa';
+            const leadSentence = n >= 2
+              ? `Asociación ${dirLabel} entre ${payload.nameX || 'eje X'} y ${payload.nameY || 'eje Y'}: ${lbls[maxXIdx]} registra ${fmtPlainNum(xs[maxXIdx])} ${ux} (${fmtPlainNum(ys[maxXIdx])} ${uy}), frente a ${lbls[minXIdx]} (${fmtPlainNum(xs[minXIdx])} ${ux} y ${fmtPlainNum(ys[minXIdx])} ${uy}).`
+              : `Cruce observado para ${lbls[0] || 'el territorio seleccionado'}: ${fmtPlainNum(xs[0])} ${ux} y ${fmtPlainNum(ys[0])} ${uy}.`;
+
+            let comunaNote = '';
+            if (n >= 3) {
+              const mx = xs.reduce((a, b) => a + b, 0) / n;
+              const my = ys.reduce((a, b) => a + b, 0) / n;
+              let sxx = 0, sxy = 0;
+              for (let i = 0; i < n; i++) {
+                sxx += (xs[i] - mx) * (xs[i] - mx);
+                sxy += (xs[i] - mx) * (ys[i] - my);
+              }
+              const slope = sxx > 1e-12 ? (sxy / sxx) : 0;
+              const intercept = my - slope * mx;
+              const resids = ys.map((yv, i) => yv - (intercept + slope * xs[i]));
+              const rVar = resids.reduce((a, b) => a + b * b, 0) / n;
+              const rStd = Math.sqrt(rVar);
+
+              if (focusedComuna && payload.dim === 'comuna') {
+                const fIdx = lbls.findIndex(l => normStr(l) === normStr(focusedComuna));
+                if (fIdx !== -1) {
+                  const diff = resids[fIdx];
+                  const z = rStd > 1e-9 ? diff / rStd : 0;
+                  if (Math.abs(z) >= 0.45) {
+                    comunaNote = `${lbls[fIdx]} registra ${fmtPlainNum(ys[fIdx])} ${uy}, ${fmtPlainNum(Math.abs(diff))} ${uy} ${diff > 0 ? 'por encima' : 'por debajo'} de la tendencia regional esperada.`;
+                  } else {
+                    comunaNote = `${lbls[fIdx]} (${fmtPlainNum(ys[fIdx])} ${uy}) se ubica en línea con la tendencia regional esperada.`;
+                  }
+                }
+              } else if (rStd > 1e-9) {
+                let topIdx = 0;
+                resids.forEach((rv, i) => {
+                  if (Math.abs(rv) > Math.abs(resids[topIdx])) topIdx = i;
+                });
+                const topZ = Math.abs(resids[topIdx] / rStd);
+                if (topZ >= 1.15) {
+                  const diff = resids[topIdx];
+                  comunaNote = `Caso atípico: ${lbls[topIdx]} registra ${diff > 0 ? '+' : '–'}${fmtPlainNum(Math.abs(diff))} ${uy} ${diff > 0 ? 'por encima' : 'por debajo'} de lo esperado para su nivel en el eje X.`;
+                }
+              }
+            }
+
+            let metricsText = `R² = ${r2Pct}% · r = ${fmtSignedCorr(rVal)}`;
+            if (payload.dim === 'comuna' && n >= 5) {
+              const noCoyIdx = [];
+              lbls.forEach((l, i) => { if (!normStr(l).includes('coyhaique')) noCoyIdx.push(i); });
+              if (noCoyIdx.length >= 4 && noCoyIdx.length < n) {
+                const nx = noCoyIdx.map(i => xs[i]);
+                const ny = noCoyIdx.map(i => ys[i]);
+                const mnx = nx.reduce((a, b) => a + b, 0) / nx.length;
+                const mny = ny.reduce((a, b) => a + b, 0) / ny.length;
+                let nsxx = 0, nsyy = 0, nsxy = 0;
+                for (let i = 0; i < nx.length; i++) {
+                  nsxx += (nx[i] - mnx) ** 2;
+                  nsyy += (ny[i] - mny) ** 2;
+                  nsxy += (nx[i] - mnx) * (ny[i] - mny);
+                }
+                if (nsxx > 0 && nsyy > 0) {
+                  const rNoCoy = nsxy / Math.sqrt(nsxx * nsyy);
+                  metricsText += ` · Sin Coyhaique: ${fmtSignedCorr(rNoCoy)}`;
+                }
+              }
+            }
+
+            bodyHtml = `
+              <p style="margin:0 0 0.35rem; color:#1c1b1b;">${leadSentence}</p>
+              ${comunaNote ? `<p style="margin:0 0 0.35rem; color:#4a4745; padding-left:0.5rem; border-left:2px solid #d6cfc9;">${comunaNote}</p>` : ''}
+              <p style="margin:0; font-family:var(--font-mono); font-size:10.5px; color:#6b6661;">${metricsText}</p>
+            `;
+          } else {
+            const vals = (payload.data || []).map(v => Number(v) || 0);
+            const lbls = payload.labels || [];
+            const n = vals.length || 1;
+            const meanVal = vals.reduce((a, b) => a + b, 0) / n;
+            let minIdx = 0, maxIdx = 0;
+            vals.forEach((v, i) => {
+              if (v < vals[minIdx]) minIdx = i;
+              if (v > vals[maxIdx]) maxIdx = i;
+            });
+            const unitStr = payload.unit || '';
+            const line1 = `Promedio regional: ${fmtPlainNum(meanVal)} ${unitStr} · Mayor: ${lbls[maxIdx]} (${fmtPlainNum(vals[maxIdx])} ${unitStr}) · Menor: ${lbls[minIdx]} (${fmtPlainNum(vals[minIdx])} ${unitStr}).`;
+
+            let line2 = '';
+            if (focusedComuna && payload.dim === 'comuna') {
+              const fIdx = lbls.findIndex(l => normStr(l) === normStr(focusedComuna));
+              if (fIdx !== -1) {
+                const v = vals[fIdx];
+                const diffPct = Math.abs(meanVal) > 1e-9 ? ((v - meanVal) / Math.abs(meanVal)) * 100 : 0;
+                const posWord = diffPct >= 0 ? 'sobre' : 'bajo';
+                line2 = `${lbls[fIdx]} registra ${fmtPlainNum(v)} ${unitStr} (${fmtPlainNum(Math.abs(diffPct))}% ${posWord} el promedio regional).`;
+              }
+            }
+            if (!line2) {
+              if (payload.dim === 'tiempo' && n >= 2) {
+                line2 = `Evolución en el período ${lbls[0]}–${lbls[n - 1]}: pasa de ${fmtPlainNum(vals[0])} a ${fmtPlainNum(vals[n - 1])} ${unitStr}.`;
+              } else {
+                const gapRatio = Math.abs(vals[minIdx]) > 1e-9 ? (vals[maxIdx] / Math.abs(vals[minIdx])) : null;
+                line2 = gapRatio !== null && gapRatio > 1.05
+                  ? `Brecha de ${fmtPlainNum(gapRatio)}× entre el valor máximo y el mínimo dentro de ${n} unidades observadas.`
+                  : `Distribución homogénea entre las ${n} unidades observadas.`;
+              }
+            }
+
+            bodyHtml = `
+              <p style="margin:0 0 0.28rem; color:#1c1b1b;">${line1}</p>
+              <p style="margin:0; color:#4a4745;">${line2}</p>
+            `;
+          }
+
           panel.style.display = 'block';
           panel.innerHTML = `
             <div class="synth-hdr">
-              <span>Síntesis Ejecutiva (${synth.n} entidades)</span>
-              <button type="button" class="btn-card-mini-pill" id="btnCloseSynth-${w.id}" aria-label="Cerrar síntesis">×</button>
+              <span>${headerText}</span>
+              <button type="button" class="btn-card-mini-pill" id="btnCloseSynth-${w.id}" aria-label="Cerrar lectura">×</button>
             </div>
-            ${htmlList}
+            ${bodyHtml}
           `;
+          const readToggleBtn = document.getElementById(`btnExplainCard-${w.id}`);
+          if (readToggleBtn) readToggleBtn.textContent = 'Ocultar lectura ▴';
           const closeBtn = panel.querySelector(`#btnCloseSynth-${w.id}`);
           if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
               e.stopPropagation();
               panel.style.display = 'none';
+              const rBtn = document.getElementById(`btnExplainCard-${w.id}`);
+              if (rBtn) rBtn.textContent = 'Ver lectura de datos ▾';
             });
           }
         }
@@ -17157,9 +17518,13 @@
             if (typeof w._updateMapHighlight === 'function') {
               w._updateMapHighlight(w.highlightEntity);
             }
-            return;
+          } else {
+            renderWidgetVisual(w);
           }
-          renderWidgetVisual(w);
+          const synthEl = document.getElementById(`synthesis-panel-${w.id}`);
+          if (synthEl && synthEl.style.display !== 'none' && typeof explainCardWithCuratedDiscovery === 'function') {
+            explainCardWithCuratedDiscovery(w);
+          }
         });
 
         updateConnections();
@@ -17536,6 +17901,53 @@
       }
 
       let _hubGalleryUIInitialized = false;
+      let activeGalleryMode = 'hubs';
+      let activeDiscoveriesFilter = 'all';
+
+      function closeUnifiedHubGalleryModal() {
+        const modal = document.getElementById('modalHubGallery');
+        if (modal) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      function switchUnifiedGalleryMode(mode = 'hubs', discFilter = null) {
+        activeGalleryMode = mode === 'discoveries' ? 'discoveries' : 'hubs';
+        const hubsPanel = document.getElementById('galleryHubsPanel');
+        const discPanel = document.getElementById('galleryDiscoveriesPanel');
+        const btnLoadAll = document.getElementById('btnLoadFullHubDashboard');
+        const tabHubs = document.getElementById('btnGalleryModeHubs');
+        const tabDisc = document.getElementById('btnOpenDiscoveriesDrawer');
+
+        if (hubsPanel) hubsPanel.style.display = activeGalleryMode === 'hubs' ? 'flex' : 'none';
+        if (discPanel) discPanel.style.display = activeGalleryMode === 'discoveries' ? 'flex' : 'none';
+        if (btnLoadAll) btnLoadAll.style.display = activeGalleryMode === 'hubs' ? 'inline-flex' : 'none';
+
+        if (tabHubs) {
+          tabHubs.classList.toggle('active', activeGalleryMode === 'hubs');
+          tabHubs.setAttribute('aria-selected', activeGalleryMode === 'hubs' ? 'true' : 'false');
+        }
+        if (tabDisc) {
+          tabDisc.classList.toggle('active', activeGalleryMode === 'discoveries');
+          tabDisc.setAttribute('aria-selected', activeGalleryMode === 'discoveries' ? 'true' : 'false');
+        }
+
+        if (activeGalleryMode === 'discoveries') {
+          if (discFilter) activeDiscoveriesFilter = discFilter;
+          const tabsWrap = document.getElementById('discoveriesFilterTabs');
+          if (tabsWrap) {
+            tabsWrap.querySelectorAll('button[data-disc-filter]').forEach((b) => {
+              b.classList.toggle('active', b.getAttribute('data-disc-filter') === activeDiscoveriesFilter);
+            });
+          }
+          renderCuratedDiscoveriesGrid(activeDiscoveriesFilter);
+        } else {
+          renderHubGalleryTabs();
+          renderHubPresetsGrid(activeHubGalleryId);
+        }
+      }
+
       function initHubGalleryUI() {
         if (_hubGalleryUIInitialized) return;
         _hubGalleryUIInitialized = true;
@@ -17555,9 +17967,9 @@
           });
         }
         if (btnClose && modal) {
-          btnClose.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
+          btnClose.addEventListener('click', closeUnifiedHubGalleryModal);
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeUnifiedHubGalleryModal();
           });
         }
         if (btnLoadAll) {
@@ -17609,27 +18021,19 @@
         initCuratedDiscoveriesUI();
       }
 
-      let activeDiscoveriesFilter = 'all';
-
       function initCuratedDiscoveriesUI() {
-        const btnOpen = document.getElementById('btnOpenDiscoveriesDrawer');
-        const modal = document.getElementById('modalCuratedDiscoveries');
-        const btnClose = document.getElementById('btnDiscoveriesModalClose');
+        const tabHubs = document.getElementById('btnGalleryModeHubs');
+        const tabDisc = document.getElementById('btnOpenDiscoveriesDrawer');
         const tabsWrap = document.getElementById('discoveriesFilterTabs');
 
-        if (btnOpen && !btnOpen._hasDiscoveriesBound) {
-          btnOpen._hasDiscoveriesBound = true;
-          btnOpen.addEventListener('click', () => {
-            openCuratedDiscoveriesDrawer('all');
-          });
+        if (tabHubs && !tabHubs._hasModeBound) {
+          tabHubs._hasModeBound = true;
+          tabHubs.addEventListener('click', () => switchUnifiedGalleryMode('hubs'));
         }
 
-        if (btnClose && modal && !btnClose._hasDiscoveriesCloseBound) {
-          btnClose._hasDiscoveriesCloseBound = true;
-          btnClose.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-          });
+        if (tabDisc && !tabDisc._hasDiscoveriesBound) {
+          tabDisc._hasDiscoveriesBound = true;
+          tabDisc.addEventListener('click', () => switchUnifiedGalleryMode('discoveries', activeDiscoveriesFilter));
         }
 
         if (tabsWrap && !tabsWrap._hasDiscoveriesTabsBound) {
@@ -17647,24 +18051,21 @@
         }
       }
 
-      function openCuratedDiscoveriesDrawer(filterKey = 'all') {
-        const modal = document.getElementById('modalCuratedDiscoveries');
+      function openCuratedDiscoveriesModal(filterKey = 'all') {
+        const modal = document.getElementById('modalHubGallery');
         if (!modal) return;
         hideFloatingToolbar();
-        activeDiscoveriesFilter = filterKey || 'all';
-        const tabsWrap = document.getElementById('discoveriesFilterTabs');
-        if (tabsWrap) {
-          tabsWrap.querySelectorAll('button[data-disc-filter]').forEach((b) => {
-            b.classList.toggle('active', b.getAttribute('data-disc-filter') === activeDiscoveriesFilter);
-          });
-        }
-        renderCuratedDiscoveriesGrid(activeDiscoveriesFilter);
+        switchUnifiedGalleryMode('discoveries', filterKey || 'all');
         modal.style.display = 'flex';
         modal.setAttribute('aria-hidden', 'false');
       }
 
+      function openCuratedDiscoveriesDrawer(filterKey = 'all') {
+        openCuratedDiscoveriesModal(filterKey);
+      }
+
       function renderCuratedDiscoveriesGrid(filterKey = 'all') {
-        const grid = document.getElementById('discoveriesCardsGrid');
+        const grid = document.getElementById('curatedDiscoveriesGrid');
         if (!grid) return;
         const discBundle = window.AYSEN_DISCOVERIES_DATA || {};
         const list = Array.isArray(discBundle.curatedDiscoveries) ? discBundle.curatedDiscoveries : [];
@@ -17673,43 +18074,45 @@
         if (filterKey === 'comunas_explain') {
           const cNames = Object.keys(comunasExplain);
           if (cNames.length === 0) {
-            grid.innerHTML = '<div style="grid-column:1/-1;padding:2rem;text-align:center;">No hay radiografías comunales cargadas.</div>';
+            grid.innerHTML = '<div style="grid-column:1/-1;padding:2rem;text-align:center;color:#6b6661;">No hay perfiles comunales cargados.</div>';
             return;
           }
           let html = '';
           cNames.forEach((cName) => {
             const info = comunasExplain[cName];
             const aboveHtml = (info.topAboveRegionalMean || []).slice(0, 3).map((it) =>
-              `<li style="margin-bottom:3px;"><strong style="color:#047857;">[+]</strong> ${it.plainSummary}</li>`
+              `<li style="margin-bottom:3px;"><span style="color:#00357f;font-weight:600;">+</span> ${it.plainSummary}</li>`
             ).join('');
             const belowHtml = (info.topBelowRegionalMean || []).slice(0, 3).map((it) =>
-              `<li style="margin-bottom:3px;"><strong style="color:#b91c1c;">[–]</strong> ${it.plainSummary}</li>`
+              `<li style="margin-bottom:3px;"><span style="color:#6b6661;font-weight:600;">–</span> ${it.plainSummary}</li>`
             ).join('');
             const twinsHtml = (info.twinComunas || []).map((tw) =>
-              `<span style="display:inline-block;background:#eef6ff;border:1px solid rgba(0,53,127,0.22);color:#00357f;font-family:var(--font-mono);font-size:0.64rem;padding:2px 6px;border-radius:2px;margin-right:4px;">${tw.comuna} (${tw.similitudPct}%)</span>`
+              `<span style="display:inline-block;background:#fcf9f8;border:1px solid #e4dedb;color:#3f3c3a;font-family:var(--font-mono);font-size:10px;padding:2px 6px;border-radius:2px;margin-right:4px;">${tw.comuna} (${tw.similitudPct}%)</span>`
             ).join('');
             html += `
-              <div class="hub-preset-card" data-comuna-explain="${cName}">
+              <article class="discovery-notebook-card" data-comuna-explain="${cName}">
                 <div>
-                  <div class="hub-preset-header">
-                    <span class="format-pill">[PROV. ${(info.provincia || 'AYSÉN').toUpperCase()}]</span>
-                    <span class="cross-pill">${Number(info.poblacionCenso2024 || 0).toLocaleString('es-CL')} hab. (${info.porcentajeRegionalPct}% reg.)</span>
+                  <div class="discovery-card-top">
+                    <span class="discovery-card-axes">PROV. ${(info.provincia || 'AYSÉN').toUpperCase()}</span>
+                    <span class="discovery-card-r2">${Number(info.poblacionCenso2024 || 0).toLocaleString('es-CL')} hab.</span>
                   </div>
-                  <h4 class="hub-preset-title">Radiografía Local DashAI: ${cName}</h4>
-                  <p class="hub-preset-desc" style="margin-bottom:8px;">${info.narrativeDigest || ''}</p>
-                  <div style="font-size:0.72rem;color:#1c1b1b;background:#f8fafc;border:1px solid rgba(15,23,42,0.08);padding:6px 8px;border-radius:3px;margin-bottom:6px;">
-                    <div style="font-family:var(--font-mono);font-size:0.62rem;font-weight:700;color:#00357f;text-transform:uppercase;margin-bottom:4px;">Indicadores Destacados vs. Media Regional</div>
-                    <ul style="list-style:none;padding:0;margin:0;">${aboveHtml}${belowHtml}</ul>
+                  <h4 class="discovery-card-title">${cName}</h4>
+                  <p class="discovery-card-reading" style="margin-bottom:0.65rem;">${info.narrativeDigest || ''}</p>
+                  <div style="font-size:11.5px;color:#3f3c3a;background:#fcf9f8;border:1px solid #e4dedb;padding:0.5rem 0.6rem;border-radius:2px;margin-bottom:0.5rem;">
+                    <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:#6b6661;text-transform:uppercase;margin-bottom:4px;">Diferencias respecto al promedio regional</div>
+                    <ul style="list-style:none;padding:0;margin:0;line-height:1.4;">${aboveHtml}${belowHtml}</ul>
                   </div>
-                  <div style="margin-top:4px;">
-                    <span style="font-family:var(--font-mono);font-size:0.62rem;color:#4a4745;display:block;margin-bottom:3px;">Comunas Gemelas más parecidas:</span>
+                  <div>
+                    <span style="font-family:var(--font-mono);font-size:10px;color:#6b6661;display:block;margin-bottom:3px;">Comunas de perfil similar:</span>
                     ${twinsHtml}
                   </div>
                 </div>
-                <button type="button" class="btn-load-preset" data-filter-comuna="${cName}">
-                  <span>Enfocar ${cName} en el Lienzo →</span>
-                </button>
-              </div>
+                <div class="discovery-card-foot">
+                  <button type="button" class="discovery-card-action" data-filter-comuna="${cName}">
+                    <span>Enfocar ${cName} en la mesa →</span>
+                  </button>
+                </div>
+              </article>
             `;
           });
           grid.innerHTML = html;
@@ -17719,11 +18122,7 @@
               if (cName) {
                 toggleCrossHighlight(cName, null);
               }
-              const modal = document.getElementById('modalCuratedDiscoveries');
-              if (modal) {
-                modal.style.display = 'none';
-                modal.setAttribute('aria-hidden', 'true');
-              }
+              closeUnifiedHubGalleryModal();
             });
           });
           return;
@@ -17737,46 +18136,34 @@
         filtered.forEach((d) => {
           const st = d.statProofBadges || {};
           const reg = d.regressionLine || {};
-          const r2Pct = Number(st.fuerzaExplicativaPct || reg.rSquaredPct || 0);
-          const isTemporal = d.category === 'acoplamiento_temporal_2015_2026';
-          const badge3Label = isTemporal
-            ? `Delta Interanual: ${String(st.firstDiffCorrDelta || st.partialCorrPop).replace('.', ',')}`
-            : `Control Pob.: ${String(st.partialCorrPop).replace('.', ',')}`;
-          const badge4Label = isTemporal
-            ? `Sin 2020: ${String(st.rWithoutCoyhaique).replace('.', ',')}`
-            : `Sin Coyhaique: ${String(st.rWithoutCoyhaique).replace('.', ',')}`;
+          const r2Pct = Math.round(Number(st.fuerzaExplicativaPct || reg.rSquaredPct || 0));
+          const axisXCode = String(d.hubX || '').split('.')[0].trim();
+          const axisYCode = String(d.hubY || '').split('.')[0].trim();
+          const axisPairLabel = axisXCode && axisYCode ? `EJE ${axisXCode} × EJE ${axisYCode}` : `${d.hubX} × ${d.hubY}`;
+          const readingTxt = d.reading || d.plainExplanation || '';
+          const metricsTxt = d.metrics_line || st.veredictoSimple || '';
+          const notableHtml = d.notable_commune
+            ? `<p class="discovery-card-notable">${d.notable_commune}</p>`
+            : '';
 
           html += `
-            <div class="hub-preset-card discovery-curated-card" data-discovery-id="${d.id}">
+            <article class="discovery-notebook-card discovery-curated-card" data-discovery-id="${d.id}">
               <div>
-                <div class="hub-preset-header">
-                  <span class="format-pill">[${d.hubX} ↔ ${d.hubY}]</span>
-                  <span class="cross-pill">${reg.directionLabel || 'Regresión OLS'}</span>
+                <div class="discovery-card-top">
+                  <span class="discovery-card-axes">${axisPairLabel}</span>
+                  <span class="discovery-card-r2">R² ${r2Pct}%</span>
                 </div>
-                <h4 class="hub-preset-title">#${String(d.order || '').padStart(2, '0')} · ${d.headline}</h4>
-                <div style="margin: 6px 0 8px;">
-                  <div style="display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:0.65rem;color:#00357f;font-weight:700;margin-bottom:3px;">
-                    <span>Fuerza Explicativa (R² = ${String(reg.rSquaredPct || r2Pct).replace('.', ',')}%)</span>
-                    <span>r = ${String(st.pearsonR).replace('.', ',')} · FDR p &lt; 0,01</span>
-                  </div>
-                  <div style="width:100%;height:7px;background:#e2e8f0;border-radius:999px;overflow:hidden;">
-                    <div class="discovery-r2-bar" style="width:${Math.min(100, Math.max(12, r2Pct))}%;height:100%;background:linear-gradient(90deg,#00357f,#0059c5);"></div>
-                  </div>
-                </div>
-                <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;">
-                  <span style="background:#f0f7ff;border:1px solid rgba(0,53,127,0.2);color:#00357f;font-family:var(--font-mono);font-size:0.60rem;padding:2px 5px;border-radius:2px;">Spearman: ${String(st.spearmanRho).replace('.', ',')}</span>
-                  <span style="background:#f0fdf4;border:1px solid rgba(4,120,87,0.25);color:#047857;font-family:var(--font-mono);font-size:0.60rem;padding:2px 5px;border-radius:2px;">${badge4Label}</span>
-                  <span style="background:#fefce8;border:1px solid rgba(180,83,9,0.25);color:#92400e;font-family:var(--font-mono);font-size:0.60rem;padding:2px 5px;border-radius:2px;">${badge3Label}</span>
-                </div>
-                <p class="hub-preset-desc" style="font-size:0.75rem;line-height:1.45;color:#1c1b1b;margin-bottom:6px;">${d.plainExplanation}</p>
-                <div style="font-family:var(--font-mono);font-size:0.62rem;color:#475569;background:#f8fafc;padding:5px 7px;border-left:2px solid #00357f;">
-                  ${st.veredictoSimple || ''}
-                </div>
+                <h4 class="discovery-card-title">${d.title || d.headline}</h4>
+                <p class="discovery-card-reading">${readingTxt}</p>
+                ${notableHtml}
               </div>
-              <button type="button" class="btn-load-preset btn-load-discovery-regression" data-discovery-id="${d.id}">
-                <span>Graficar con Recta de Regresión →</span>
-              </button>
-            </div>
+              <div class="discovery-card-foot">
+                <div class="discovery-card-metrics">${metricsTxt}</div>
+                <button type="button" class="discovery-card-action btn-load-discovery-regression" data-discovery-id="${d.id}">
+                  <span>Abrir gráfico en la mesa →</span>
+                </button>
+              </div>
+            </article>
           `;
         });
 
@@ -17786,11 +18173,7 @@
           btn.addEventListener('click', () => {
             const discId = btn.getAttribute('data-discovery-id');
             loadCuratedDiscoveryIntoCanvas(discId);
-            const modal = document.getElementById('modalCuratedDiscoveries');
-            if (modal) {
-              modal.style.display = 'none';
-              modal.setAttribute('aria-hidden', 'true');
-            }
+            closeUnifiedHubGalleryModal();
           });
         });
       }
@@ -17801,26 +18184,37 @@
         const d = list.find((item) => item.id === discoveryId) || list[0];
         if (!d) return null;
 
-        pushHistory(`cargar hallazgo ${d.id}`);
+        pushHistory(`cargar cruce ${d.id}`);
 
         const isTemporal = d.category === 'acoplamiento_temporal_2015_2026' || d.dim === 'tiempo';
         const offsetCount = AppState.widgets.length;
+        const customSpec = isTemporal && Array.isArray(d.labels) && Array.isArray(d.dataX) && Array.isArray(d.dataY)
+          ? {
+              labels: [...d.labels],
+              datasets: [
+                { label: d.labelX, data: [...d.dataX], unit: d.unitX },
+                { label: d.labelY, data: [...d.dataY], unit: d.unitY }
+              ]
+            }
+          : null;
+
         const w = createWidget('chart', {
-          title: `${d.headline}`,
+          title: `${d.title || d.headline}`,
           varX: d.varX,
           varY: d.varY,
           chartType: 'scatter',
           showTrend: true,
           showAverage: true,
           discoveryId: d.id,
+          customChartSpec: customSpec,
           color: '#00357f',
           x: 80 + (offsetCount % 3) * 40,
           y: 70 + (offsetCount % 3) * 35,
           w: 620,
-          h: 440
+          h: 490
         });
 
-        // Mostrar ficha explicativa debajo del gráfico en su panel de síntesis
+        // Mostrar lectura territorial debajo del gráfico
         if (w) {
           explainCardWithCuratedDiscovery(w, d);
           selectActiveCard(w.id);
@@ -17844,31 +18238,42 @@
 
         if (matched) {
           const st = matched.statProofBadges || {};
-          const reg = matched.regressionLine || {};
+          const readingTxt = matched.reading || matched.plainExplanation || '';
+          const metricsTxt = matched.metrics_line || st.veredictoSimple || '';
+          const focused = typeof getFocusedComunaForWidget === 'function' ? getFocusedComunaForWidget(w) : null;
+          let comunaDetail = '';
+          if (focused && matched.residualsByComuna && matched.residualsByComuna[focused]) {
+            comunaDetail = matched.residualsByComuna[focused].note || '';
+          } else if (matched.notable_commune) {
+            comunaDetail = matched.notable_commune;
+          }
+
           panel.style.display = 'block';
           panel.innerHTML = `
             <div class="synth-hdr">
-              <span>Hallazgo Estadístico Curado (${matched.hubX} ↔ ${matched.hubY} · R² = ${String(reg.rSquaredPct || st.fuerzaExplicativaPct).replace('.', ',')}%)</span>
-              <button type="button" class="btn-card-mini-pill" id="btnCloseSynth-${w.id}" aria-label="Cerrar explicación">×</button>
+              <span>Lectura del cruce</span>
+              <button type="button" class="btn-card-mini-pill" id="btnCloseSynth-${w.id}" aria-label="Cerrar lectura">×</button>
             </div>
             <div style="font-size:0.75rem;line-height:1.48;color:#1c1b1b;">
-              <p style="margin:0 0 6px;"><strong>Mecanismo Territorial:</strong> ${matched.plainExplanation}</p>
-              <p style="margin:0;font-family:var(--font-mono);font-size:0.66rem;color:#00357f;">
-                <strong>Verificación (5 Pruebas Python):</strong> ${st.veredictoSimple} · Recta OLS: Y = ${reg.interceptBeta0} + (${reg.slopeBeta1})·X
-              </p>
+              <p style="margin:0 0 0.35rem;">${readingTxt}</p>
+              ${comunaDetail ? `<p style="margin:0 0 0.35rem;color:#4a4745;padding-left:0.5rem;border-left:2px solid #d6cfc9;">${comunaDetail}</p>` : ''}
+              <p style="margin:0;font-family:var(--font-mono);font-size:10.5px;color:#6b6661;">${metricsTxt}</p>
             </div>
           `;
+          const readToggleBtn = document.getElementById(`btnExplainCard-${w.id}`);
+          if (readToggleBtn) readToggleBtn.textContent = 'Ocultar lectura ▴';
           const closeBtn = panel.querySelector(`#btnCloseSynth-${w.id}`);
           if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
               e.stopPropagation();
               panel.style.display = 'none';
+              const rBtn = document.getElementById(`btnExplainCard-${w.id}`);
+              if (rBtn) rBtn.textContent = 'Ver lectura de datos ▾';
             });
           }
           return;
         }
 
-        // Si no es uno de los 25 pares exactos, combinar la síntesis ejecutiva de la tarjeta con la radiografía DashAI de la comuna líder
         generateCardExecutiveSynthesis(w);
       }
 
@@ -17877,8 +18282,7 @@
         if (!modal) return;
         hideFloatingToolbar();
         activeHubGalleryId = hubId;
-        renderHubGalleryTabs();
-        renderHubPresetsGrid(activeHubGalleryId);
+        switchUnifiedGalleryMode('hubs');
         modal.style.display = 'flex';
         modal.setAttribute('aria-hidden', 'false');
       }
@@ -19772,6 +20176,8 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           crearTarjeta('kpi', 'barra');
         });
         document.getElementById('btnClearCanvas').addEventListener('click', () => {
+          const pm = document.getElementById('projectMenuDropdown');
+          if (pm) pm.classList.remove('show');
           // Accion directa y reversible en vez de confirm() bloqueante:
           // clearAll() registra el historial, asi que Ctrl+Z la revierte.
           const habia = AppState.widgets.length + AppState.reflectionCards.length;
@@ -19784,7 +20190,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           showToast(`Lienzo reiniciado: ${habia} elemento(s) retirados.`, 'Deshacer', undo);
         });
 
-        // Botón Auto-ordenar en Barra Superior y Barra de Pestañas
+        // Botón ordenar ventanas en grilla
         const btnTopAuto = document.getElementById('btnTopAutoLayout');
         if (btnTopAuto) {
           btnTopAuto.addEventListener('click', () => {
@@ -19792,6 +20198,8 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           });
         }
         document.getElementById('btnTileWindowsGrid').addEventListener('click', () => {
+          const pm = document.getElementById('projectMenuDropdown');
+          if (pm) pm.classList.remove('show');
           tileWindowsInGrid();
         });
 
@@ -19989,7 +20397,10 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         });
         const btnPinReport = document.getElementById('btnPinChartToReport');
         if (btnPinReport) {
-          btnPinReport.addEventListener('click', () => pinCurrentChartToReport());
+          btnPinReport.addEventListener('click', () => {
+            if (projectMenu) projectMenu.classList.remove('show');
+            pinCurrentChartToReport();
+          });
         }
         const btnCloseExec = document.getElementById('btnCloseExecutiveReport');
         if (btnCloseExec) {
@@ -20072,7 +20483,11 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               renderWidgetVisual(w);
               const synthEl = document.getElementById(`synthesis-panel-${w.id}`);
               if (synthEl && synthEl.style.display !== 'none') {
-                generateCardExecutiveSynthesis(w);
+                if (typeof explainCardWithCuratedDiscovery === 'function') {
+                  explainCardWithCuratedDiscovery(w);
+                } else {
+                  generateCardExecutiveSynthesis(w);
+                }
               }
             });
             updateConnections();
@@ -20105,6 +20520,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }
         window.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
+            closeUnifiedHubGalleryModal();
             document.querySelectorAll('.dropdown-project-content.show').forEach(m => m.classList.remove('show'));
             const tb = document.getElementById('canvaFloatingToolbar');
             if (tb && tb.classList.contains('active')) {
