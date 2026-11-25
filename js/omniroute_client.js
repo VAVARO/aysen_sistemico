@@ -4253,7 +4253,7 @@
 
     const excludeCoyhaique = /(sin coyhaique|excluir coyhaique|excepto coyhaique|sacar coyhaique|sin la capital)/.test(qNorm);
     const isEnglishQuery = /\b(which|what|how|where|we are|evaluating|communes|highest|lowest|available|overnight stays|across the region|show me|comparing|firewood)\b/i.test(rawQuery);
-    const wantsScatter = /(cruza|cruzar|correlacion|vs\b|versus|frente a|contra|relacion entre|comparar .+ con|scatter|dispersion|comparing .+ and)/.test(qNorm);
+    const wantsScatter = /(cruza|cruzar|correlacion|vs\b|versus|frente a|contra|relacion entre|como afecta|afecta a|impacta en|incide en|influye en|asociacion entre|comparar .+ con|scatter|dispersion|comparing .+ and)/.test(qNorm);
     const wantsBivariateComparison = wantsScatter || /(como se comparan|como contrasta|comparado con|junto con|y sus|y los|y las|\bto\b|\band how\b|\bacross the\b)/.test(qNorm);
     const qNoTravelTime = qNorm.replace(/\btiempo\s+(?:de\s+)?(?:traslado|viaje|desplazamiento)(?:\s+(?:a|hacia|hasta)\s+(?:coyhaique(?:\s+balmaceda)?|balmaceda))?\b/g, ' ');
     const wantsTemporal = /\b(evolucion\w*|historic\w*|serie\w*|anual\w*|mensual\w*|2015|2016|2017|2018|2019|2020|2021|2022|2023|2025|2026|tendencia|mes a mes|estacionalidad|enero a diciembre|desde \d{4} hasta \d{4})\b/.test(qNoTravelTime) ||

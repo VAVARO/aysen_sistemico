@@ -364,6 +364,16 @@
       line-height: 1.45;
       color: #57534e;
     }
+    .discovery-card-caveat {
+      margin: 0.45rem 0 0 0;
+      padding: 0.38rem 0.55rem;
+      background: #faf8f5;
+      border: 1px solid #e7e2dc;
+      border-radius: 2px;
+      font-size: 0.68rem;
+      line-height: 1.42;
+      color: #5a5550;
+    }
     .discovery-card-foot {
       border-top: 1px solid #efeae6;
       padding-top: 0.6rem;
@@ -4947,6 +4957,10 @@
         <span>Preguntas</span>
       </button>
 
+      <button type="button" class="btn-action-tool" id="btnQuickExecutiveReport" title="Abrir Constructor de Reporte Ejecutivo A4 PDF">
+        <span>Reporte PDF (<span id="reportQueueCountTop">0</span>)</span>
+      </button>
+
       <!-- Menú Proyecto (Reporte, Enlace, Grilla, Guardar/Abrir, Limpiar) -->
       <div class="dropdown-project" id="dropdownProjectWrap">
         <button class="btn-action-tool" id="btnProjectMenu" aria-haspopup="menu" aria-expanded="false" aria-controls="projectMenuDropdown">
@@ -5962,198 +5976,237 @@
       const OFFICIAL_VARIABLE_SOURCES = {
         sinim: {
           name: 'SUBDERE - Sistema Nacional de Información Municipal (SINIM)',
-          url: 'https://datos.sinim.gov.cl',
+          url: 'https://datos.sinim.gov.cl/',
+          dataYear: 'SINIM 2024–2025',
           collectionDate: '17 Oct 2026'
         },
         fndr: {
           name: 'DIPRES / Gobierno Regional de Aysén (FNDR)',
-          url: 'https://www.dipres.gob.cl',
+          url: 'https://www.dipres.gob.cl/598/w3-propertyname-706.html',
+          dataYear: 'FNDR 2023–2025',
           collectionDate: '17 Oct 2026'
         },
         censo: {
           name: 'INE - Censo de Población y Vivienda 2024',
-          url: 'https://censo2024.ine.gob.cl',
+          url: 'https://censo2024.ine.gob.cl/',
+          dataYear: 'Censo 2024',
           collectionDate: '17 Oct 2026'
         },
         casen: {
           name: 'Ministerio de Desarrollo Social y Familia - Encuesta CASEN',
-          url: 'https://observatorio.ministeriodesarrollosocial.gob.cl',
+          url: 'https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen',
+          dataYear: 'CASEN 2022 SAE',
           collectionDate: '17 Oct 2026'
         },
         cead: {
           name: 'SPD - Centro de Estudios y Análisis del Delito (CEAD)',
-          url: 'https://cead.spd.gob.cl',
+          url: 'https://cead.minsegpublica.gob.cl/',
+          dataYear: 'CEAD 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         deis: {
           name: 'DEIS - Ministerio de Salud / Servicio de Salud Aysén',
-          url: 'https://deis.minsal.cl',
+          url: 'https://deis.minsal.cl/',
+          dataYear: 'DEIS 2024–2026',
           collectionDate: '17 Oct 2026'
         },
         mineduc: {
           name: 'Centro de Estudios MINEDUC / SLEP Aysén',
-          url: 'https://datosabiertos.mineduc.cl',
+          url: 'https://datosabiertos.mineduc.cl/',
+          dataYear: 'MINEDUC 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sernapesca: {
           name: 'SERNAPESCA / SUBPESCA',
-          url: 'https://www.sernapesca.cl',
+          url: 'https://www.sernapesca.cl/areas-de-accion/acuicultura/',
+          dataYear: 'SERNAPESCA 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sernageomin: {
           name: 'SERNAGEOMIN - Catastro Minero Nacional',
-          url: 'https://www.sernageomin.cl',
+          url: 'https://www.sernageomin.cl/mineria/',
+          dataYear: 'SERNAGEOMIN 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         seia: {
           name: 'Servicio de Evaluación Ambiental (SEA - SEIA)',
-          url: 'https://seia.sea.gob.cl',
+          url: 'https://seia.sea.gob.cl/',
+          dataYear: 'SEIA 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sii: {
           name: 'Servicio de Impuestos Internos (SII) - Estadísticas de Empresas',
-          url: 'https://www.sii.cl',
+          url: 'https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html',
+          dataYear: 'SII AT 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         chilecompra: {
           name: 'Dirección ChileCompra - Datos Abiertos MercadoPúblico',
-          url: 'https://datos-abiertos.chilecompra.cl',
+          url: 'https://datos-abiertos.chilecompra.cl/',
+          dataYear: 'MercadoPúblico 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sag: {
           name: 'Servicio Agrícola y Ganadero (SAG)',
-          url: 'https://www.sag.gob.cl',
+          url: 'https://www.sag.gob.cl/',
+          dataYear: 'SAG 2024–2026',
           collectionDate: '17 Oct 2026'
         },
         cne: {
           name: 'Comisión Nacional de Energía (CNE)',
-          url: 'https://www.cne.cl',
+          url: 'https://energiaabierta.cl/',
+          dataYear: 'CNE 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sec: {
           name: 'Superintendencia de Electricidad y Combustibles (SEC)',
-          url: 'https://www.sec.cl',
+          url: 'https://www.sec.cl/',
+          dataYear: 'SEC 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         subtel: {
           name: 'Subsecretaría de Telecomunicaciones (SUBTEL)',
-          url: 'https://www.subtel.gob.cl',
+          url: 'https://www.subtel.gob.cl/',
+          dataYear: 'SUBTEL 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sernatur: {
           name: 'SERNATUR / INE Encuesta Mensual de Alojamiento Turístico (EMAT)',
-          url: 'https://www.sernatur.cl',
+          url: 'https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo',
+          dataYear: 'EMAT 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         conaf: {
           name: 'CONAF - SNASPE y Catastro Vegetacional',
-          url: 'https://www.conaf.cl',
+          url: 'https://www.conaf.cl/centro-documental/visitacion-ap-2025/',
+          dataYear: 'CONAF 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         sinca_mma: {
           name: 'Ministerio del Medio Ambiente (SINCA / RCE) y DGA-MOP',
-          url: 'https://sinca.mma.gob.cl',
+          url: 'https://sinca.mma.gob.cl/',
+          dataYear: 'MMA SINCA 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         mincap: {
           name: 'MINCAP / Servicio Nacional del Patrimonio Cultural (SERPAT - CMN)',
-          url: 'https://www.patrimoniocultural.gob.cl',
+          url: 'https://ide.patrimoniocultural.gob.cl/',
+          dataYear: 'SERPAT/MINCAP 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         anid: {
           name: 'ANID DataCiencia / MinCiencia y CORFO',
-          url: 'https://dataciencia.anid.cl',
+          url: 'https://observa.minciencia.gob.cl/',
+          dataYear: 'ANID/CORFO 2024–2026',
           collectionDate: '17 Oct 2026'
         },
         mop_vialidad: {
           name: 'Ministerio de Obras Públicas - Dirección de Vialidad',
-          url: 'https://vialidad.mop.gob.cl',
+          url: 'https://www.vialidad.mop.gob.cl/',
+          dataYear: 'MOP Vialidad 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         emporcha: {
           name: 'Empresa Portuaria Chacabuco (EMPORCHA)',
-          url: 'https://chacabucoport.cl',
+          url: 'https://chacabucoport.cl/',
+          dataYear: 'EMPORCHA 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         mtt_dtpr: {
           name: 'Ministerio de Transportes y Telecomunicaciones - DTPR',
-          url: 'https://dtpr.mtt.gob.cl',
+          url: 'https://dtpr.mtt.gob.cl/',
+          dataYear: 'MTT DTPR 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         jac: {
           name: 'Junta de Aeronáutica Civil (JAC) / DGAC',
-          url: 'https://www.jac.gob.cl',
+          url: 'https://www.jac.gob.cl/',
+          dataYear: 'JAC 2015–2026',
           collectionDate: '17 Oct 2026'
         },
         minvu: {
           name: 'Ministerio de Vivienda y Urbanismo (MINVU)',
-          url: 'https://www.minvu.gob.cl',
+          url: 'https://www.minvu.gob.cl/',
+          dataYear: 'MINVU 2024–2026',
           collectionDate: '17 Oct 2026'
         },
         odepa: {
           name: 'Oficina de Estudios y Políticas Agrarias (ODEPA) / INE',
-          url: 'https://www.odepa.gob.cl',
+          url: 'https://www.odepa.gob.cl/',
+          dataYear: 'Censo Agropecuario 2021 / ODEPA',
           collectionDate: '17 Oct 2026'
         },
         dga: {
           name: 'Dirección General de Aguas (DGA) - Inventario Glaciares',
-          url: 'https://dga.mop.gob.cl',
+          url: 'https://dga.mop.gob.cl/',
+          dataYear: 'DGA Inventario Glaciares 2022–2026',
           collectionDate: '17 Oct 2026'
         },
         barometro: {
           name: 'Universidad de Aysén — Barómetro Patagonia',
-          url: 'https://uaysen.cl',
+          url: 'https://uaysen.cl/',
+          dataYear: 'Barómetro Patagonia 2025',
           collectionDate: '17 Oct 2026'
         },
         infor: {
           name: 'Instituto Forestal (INFOR) / Ministerio de Agricultura',
-          url: 'https://infor.cl',
+          url: 'https://infor.cl/',
+          dataYear: 'INFOR 2024–2026',
           collectionDate: '17 Oct 2026'
         },
         cmf: {
           name: 'Comisión para el Mercado Financiero (CMF)',
-          url: 'https://www.cmfchile.cl',
+          url: 'https://www.cmfchile.cl/',
+          dataYear: 'CMF 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         bancoestado: {
           name: 'BancoEstado (Red CajaVecina)',
-          url: 'https://www.bancoestado.cl',
+          url: 'https://www.bancoestado.cl/',
+          dataYear: 'BancoEstado 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         subpesca: {
           name: 'Subsecretaría de Pesca y Acuicultura (SUBPESCA) / CRUBC',
-          url: 'https://www.subpesca.cl',
+          url: 'https://www.subpesca.cl/portal/619/w3-propertyvalue-50834.html',
+          dataYear: 'SUBPESCA 2026',
           collectionDate: '17 Oct 2026'
         },
         mideso: {
           name: 'Ministerio de Desarrollo Social y Familia (MIDESO) / BIP SNI',
-          url: 'https://sni.gob.cl',
+          url: 'https://sni.gob.cl/',
+          dataYear: 'SNI 2024–2026',
           collectionDate: '17 Oct 2026'
         },
         conadi: {
           name: 'Corporación Nacional de Desarrollo Indígena (CONADI)',
-          url: 'https://www.conadi.gob.cl',
+          url: 'https://www.conadi.gob.cl/',
+          dataYear: 'CONADI 2025–2026',
           collectionDate: '17 Oct 2026'
         },
         cplt: {
           name: 'Consejo para la Transparencia (CPLT — Fiscalización Transparencia Activa 2026)',
-          url: 'https://www.consejotransparencia.cl',
+          url: 'https://www.consejotransparencia.cl/',
+          dataYear: 'CPLT 2026',
           collectionDate: '2026'
         },
         gore_fndr_datosgob: {
           name: 'GORE Aysén / DIPRES / SUBDERE FET Royalty Minero (datos.gob.cl / BCN)',
-          url: 'https://datos.gob.cl',
-          collectionDate: 'Jul 2026 (2015–2025)'
+          url: 'https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005',
+          dataYear: 'FNDR / Royalty 2015–2025',
+          collectionDate: 'Jul 2026'
         },
         bidat_rsh: {
           name: 'MDSF Registro Social de Hogares (BIDAT / BCN Reportes Comunales 2026)',
-          url: 'https://www.bcn.cl/siit/reportescomunales',
+          url: 'https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101',
+          dataYear: 'RSH Jun 2026',
           collectionDate: 'Jun 2026'
         },
         servel_hist: {
           name: 'Servicio Electoral de Chile (SERVEL / TRICEL / BCN — Serie 1989–2026)',
-          url: 'https://www.servel.cl',
-          collectionDate: 'Nov 2026 (1989–2026)'
+          url: 'https://www.servel.cl/',
+          dataYear: 'SERVEL 1989–2026',
+          collectionDate: 'Nov 2026'
         }
       };
 
@@ -8657,6 +8710,7 @@
                 unit: unit,
                 aggMode: isMean ? 'mean' : 'sum',
                 sourceName: offSrc.name,
+                dataYear: offSrc.dataYear || null,
                 collectionDate: offSrc.collectionDate || '17 Oct 2026',
                 sourceUrl: offSrc.url || 'https://datos.gob.cl',
                 chartType: 'bar',
@@ -11114,6 +11168,7 @@
           const exportBtns = `
             <span style="display:inline-flex; align-items:center; gap:0.25rem; flex-shrink:0;">
               ${readingBtn}
+              <button type="button" class="btn-card-mini-pill" id="btnPdfCard-${widget.id}" title="Añadir esta tarjeta al Reporte Ejecutivo PDF">+ PDF</button>
               <button type="button" class="btn-card-mini-pill" id="btnCsvCard-${widget.id}" title="Exportar CSV con UTF-8 BOM">CSV</button>
               <button type="button" class="btn-card-mini-pill" id="btnPngCard-${widget.id}" title="Exportar tarjeta a imagen PNG">PNG</button>
             </span>
@@ -11125,8 +11180,11 @@
             return `<span class="prov-text" style="flex:1;min-width:0;">Fuentes oficiales consolidadas (2015–2026)</span>${exportBtns}`;
           }
           if (!wvY) {
+            const dateMetaHtml = wvX.dataYear
+              ? `Datos: <strong>${wvX.dataYear}</strong> · Consulta: <strong>${wvX.collectionDate}</strong>`
+              : `Corte: <strong>${wvX.collectionDate}</strong>`;
             return `
-              <span class="prov-text" style="flex:1;min-width:0;" title="${wvX.sourceName}">Fuente: <strong>${wvX.sourceName}</strong> · Corte: <strong>${wvX.collectionDate}</strong></span>
+              <span class="prov-text" style="flex:1;min-width:0;" title="${wvX.sourceName}">Fuente: <strong>${wvX.sourceName}</strong> · ${dateMetaHtml}</span>
               <span style="display:inline-flex; align-items:center; gap:0.4rem; flex-shrink:0;">
                 <a href="${wvX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente ↗</a>
                 ${exportBtns}
@@ -11154,6 +11212,14 @@
               }
             });
             btnReadCard._boundExplain = true;
+          }
+          const btnPdfCard = cardEl.querySelector(`#btnPdfCard-${widget.id}`);
+          if (btnPdfCard && !btnPdfCard._boundPdf) {
+            btnPdfCard.addEventListener('click', (e) => {
+              e.stopPropagation();
+              pinCurrentChartToReport(widget);
+            });
+            btnPdfCard._boundPdf = true;
           }
           const btnCsvCard = cardEl.querySelector(`#btnCsvCard-${widget.id}`);
           if (btnCsvCard && !btnCsvCard._boundCsv) {
@@ -11650,6 +11716,7 @@
             !e.target.closest('.mac-btn') &&
             !e.target.closest('.btn-card-cross-pill') &&
             !e.target.closest('.widget-provenance-footer a') &&
+            !e.target.closest('.widget-provenance-footer button') &&
             !e.target.closest('.card-map-layer-bar') &&
             !e.target.closest('.map-multilayer-popover') &&
             !e.target.closest('.leaflet-pane') &&
@@ -13983,6 +14050,7 @@
         const exportBtns = `
           <span style="display:inline-flex; align-items:center; gap:0.25rem; flex-shrink:0;">
             ${readingBtn}
+            <button type="button" class="btn-card-mini-pill" id="btnPdfCard-${w.id}" title="Añadir esta tarjeta al Reporte Ejecutivo PDF">+ PDF</button>
             <button type="button" class="btn-card-mini-pill" id="btnCsvCard-${w.id}" title="Exportar CSV con UTF-8 BOM">CSV</button>
             <button type="button" class="btn-card-mini-pill" id="btnPngCard-${w.id}" title="Exportar tarjeta a imagen PNG">PNG</button>
           </span>
@@ -13992,8 +14060,11 @@
         } else if (hasCustom && !vX) {
           footer.innerHTML = `<span class="prov-text" style="flex:1;min-width:0;">Fuentes oficiales consolidadas (2015–2026)</span>${exportBtns}`;
         } else if (!vY) {
+          const dateMetaHtml = vX.dataYear
+            ? `Datos: <strong>${vX.dataYear}</strong> · Consulta: <strong>${vX.collectionDate}</strong>`
+            : `Corte: <strong>${vX.collectionDate}</strong>`;
           footer.innerHTML = `
-            <span class="prov-text" style="flex:1;min-width:0;" title="${vX.sourceName}">Fuente: <strong>${vX.sourceName}</strong> · Corte: <strong>${vX.collectionDate}</strong></span>
+            <span class="prov-text" style="flex:1;min-width:0;" title="${vX.sourceName}">Fuente: <strong>${vX.sourceName}</strong> · ${dateMetaHtml}</span>
             <span style="display:inline-flex; align-items:center; gap:0.4rem; flex-shrink:0;">
               <a href="${vX.sourceUrl || '#'}" target="_blank" rel="noopener">Fuente ↗</a>
               ${exportBtns}
@@ -14019,6 +14090,8 @@
             }
           });
         }
+        const bPdf = footer.querySelector(`#btnPdfCard-${w.id}`);
+        if (bPdf) bPdf.addEventListener('click', (e) => { e.stopPropagation(); pinCurrentChartToReport(w); });
         const bCsv = footer.querySelector(`#btnCsvCard-${w.id}`);
         if (bCsv) bCsv.addEventListener('click', (e) => { e.stopPropagation(); exportCsv(w); });
         const bPng = footer.querySelector(`#btnPngCard-${w.id}`);
@@ -18145,6 +18218,9 @@
           const notableHtml = d.notable_commune
             ? `<p class="discovery-card-notable">${d.notable_commune}</p>`
             : '';
+          const caveatHtml = d.methodologicalCaveat
+            ? `<p class="discovery-card-caveat">${d.methodologicalCaveat}</p>`
+            : '';
 
           html += `
             <article class="discovery-notebook-card discovery-curated-card" data-discovery-id="${d.id}">
@@ -18156,6 +18232,7 @@
                 <h4 class="discovery-card-title">${d.title || d.headline}</h4>
                 <p class="discovery-card-reading">${readingTxt}</p>
                 ${notableHtml}
+                ${caveatHtml}
               </div>
               <div class="discovery-card-foot">
                 <div class="discovery-card-metrics">${metricsTxt}</div>
@@ -19482,10 +19559,12 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
         if (nodeParam) {
           const nodeId = parseInt(nodeParam, 10);
-          const targetVar = AppState.catalogItems.find(v => v.nodeId === nodeId);
+          const targetVar =
+            AppState.catalogItems.find(v => Number(v.nodeId) === nodeId && !v.isAlias) ||
+            AppState.catalogItems.find(v => v.id === `nodo_${nodeId}` || Number(v.nodeId) === nodeId);
           if (targetVar) {
             AppState._urlHydrationDone = true;
-          clearAll();
+            clearAll();
             createWidget('chart', {
               varX: targetVar.id,
               x: 120, y: 80, w: 520, h: 370
@@ -19548,6 +19627,21 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }
 
         loadSavedOrPreset();
+        if (slicerParam) {
+          const selectSlicer = document.getElementById('selectTerritorialSlicer');
+          if (TERRITORIAL_SLICES[slicerParam] && selectSlicer && selectSlicer.querySelector(`option[value="${slicerParam}"]`)) {
+            AppState.territorialFilter = slicerParam;
+            AppState._userSelectedTerritorialFilter = true;
+            selectSlicer.value = slicerParam;
+          } else {
+            AppState._userSelectedTerritorialFilter = true;
+            applyComunasUrlFilter(slicerParam);
+          }
+          AppState.widgets.forEach(w => {
+            try { renderWidgetVisual(w); } catch (_) {}
+          });
+          updateConnections();
+        }
         finishHydration();
       }
 
@@ -20395,6 +20489,13 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           if (projectMenu) projectMenu.classList.remove('show');
           openExecutiveReportModal();
         });
+        const btnQuickReport = document.getElementById('btnQuickExecutiveReport');
+        if (btnQuickReport) {
+          btnQuickReport.addEventListener('click', () => {
+            if (projectMenu) projectMenu.classList.remove('show');
+            openExecutiveReportModal();
+          });
+        }
         const btnPinReport = document.getElementById('btnPinChartToReport');
         if (btnPinReport) {
           btnPinReport.addEventListener('click', () => {
@@ -20715,8 +20816,11 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
       }
 
       function updateReportQueueBadge() {
+        const count = String((window.REPORT_DOSSIER_QUEUE || []).length);
         const badge = document.getElementById('reportQueueCount');
-        if (badge) badge.textContent = String((window.REPORT_DOSSIER_QUEUE || []).length);
+        if (badge) badge.textContent = count;
+        const badgeTop = document.getElementById('reportQueueCountTop');
+        if (badgeTop) badgeTop.textContent = count;
       }
 
       function computeVectorStats(labels, vals) {
@@ -20738,7 +20842,11 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const cv = mean !== 0 ? (std / Math.abs(mean)) * 100 : 0;
         const maxItem = sortedAsc[sortedAsc.length - 1] || { comuna: 'S/I', val: 0 };
         const minItem = sortedAsc[0] || { comuna: 'S/I', val: 0 };
-        const gapRatio = minItem.val > 0 ? maxItem.val / minItem.val : (maxItem.val > 0 ? maxItem.val : 1);
+        const positiveItems = sortedAsc.filter(p => p.val > 0);
+        const minPositiveItem = positiveItems[0] || null;
+        const gapRatio = minItem.val > 0
+          ? (maxItem.val / minItem.val)
+          : (minPositiveItem && minPositiveItem.val > 0 ? (maxItem.val / minPositiveItem.val) : 1);
         const desc = [...cleanPairs].sort((a, b) => b.val - a.val);
         const top3 = desc.slice(0, 3);
         const top3Sum = top3.reduce((acc, it) => acc + it.val, 0);
@@ -20753,6 +20861,9 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           maxVal: maxItem.val,
           minComuna: minItem.comuna,
           minVal: minItem.val,
+          hasZeroMin: minItem.val <= 0,
+          minPositiveComuna: minPositiveItem ? minPositiveItem.comuna : maxItem.comuna,
+          minPositiveVal: minPositiveItem ? minPositiveItem.val : maxItem.val,
           gapRatio,
           top3Names: top3.map(t => t.comuna),
           top3SharePct
@@ -20851,10 +20962,16 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const byId = new Map();
         const addSource = (rawSrc, linkedVar) => {
           if (!rawSrc || typeof rawSrc !== 'object') return;
-          const inst = rawSrc.institution || rawSrc.institucion || rawSrc.sourceName || 'Fuente Institucional Oficial';
-          const ds = rawSrc.dataset || rawSrc.serie || rawSrc.title || rawSrc.nombre || 'Registro Territorial Aysén';
-          const yr = rawSrc.year || rawSrc.anio || rawSrc.corte || '2024-2026';
-          const url = rawSrc.url || rawSrc.sourceUrl || 'https://vavaro.github.io/aysen_sistemico/';
+          const rawInst = rawSrc.institution || rawSrc.institucion || rawSrc.sourceName || rawSrc.name || 'Fuente Institucional Oficial';
+          const inst = (typeof rawInst === 'object' && rawInst !== null)
+            ? (rawInst.name || rawInst.title || rawInst.institution || 'Fuente Institucional Oficial')
+            : String(rawInst);
+          const ds = rawSrc.dataset || rawSrc.serie || rawSrc.title || rawSrc.nombre || rawSrc.name || 'Registro Territorial Aysén';
+          const yr = rawSrc.dataYear || rawSrc.year || rawSrc.anio || rawSrc.collectionDate || rawSrc.corte || '2024–2026';
+          const colDt = rawSrc.collectionDate || rawSrc.corte || '';
+          const url = (typeof rawInst === 'object' && rawInst?.url)
+            ? rawInst.url
+            : (rawSrc.url || rawSrc.sourceUrl || 'https://vavaro.github.io/aysen_sistemico/');
           const dedupKey = `${inst}::${ds}`.toLowerCase();
           if (byId.has(dedupKey)) {
             const ex = byId.get(dedupKey);
@@ -20862,33 +20979,64 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           } else {
             byId.set(dedupKey, {
               institution: inst,
-              dataset: ds,
+              dataset: String(ds),
               year: String(yr),
+              collectionDate: colDt ? String(colDt) : '',
               unit: rawSrc.unit || '',
               methodology: rawSrc.methodology || rawSrc.metodologia || 'Registro administrativo oficial consolidado a escala comunal',
-              url,
+              url: String(url),
               linkedVars: linkedVar ? [linkedVar] : []
             });
           }
         };
 
         [xKey, yKey].filter(Boolean).forEach(k => {
-          if (offMap[k]) addSource(offMap[k], k);
+          const catItem = (AppState.catalogItems || []).find(v => v.id === k);
+          if (offMap[k]) {
+            addSource(offMap[k], k);
+          } else if (catItem && catItem.sourceName) {
+            addSource({
+              institution: catItem.sourceName,
+              dataset: catItem.name || k,
+              dataYear: catItem.dataYear || undefined,
+              collectionDate: catItem.collectionDate || '17 Oct 2026',
+              url: catItem.sourceUrl || 'https://datos.gob.cl'
+            }, k);
+          } else if (typeof resolveOfficialSource === 'function') {
+            const resolved = resolveOfficialSource(k, catItem?.hubId || hubId);
+            if (resolved) {
+              addSource({
+                institution: resolved.name,
+                dataset: catItem?.name || k,
+                dataYear: resolved.dataYear || undefined,
+                collectionDate: resolved.collectionDate || '17 Oct 2026',
+                url: resolved.url
+              }, k);
+            }
+          }
         });
+
         if (nodeObj) {
+          const nodeInst = (typeof nodeObj.officialSource === 'object' && nodeObj.officialSource !== null)
+            ? (nodeObj.officialSource.name || nodeObj.provenance?.sourceEntity || 'Institución Oficial')
+            : (nodeObj.officialSource || nodeObj.provenance?.sourceEntity || 'Institución Oficial');
+          const nodeUrl = (typeof nodeObj.officialSource === 'object' && nodeObj.officialSource?.url)
+            ? nodeObj.officialSource.url
+            : (nodeObj.provenance?.sourceUrl || nodeObj.provenance?.url || dl.hubs?.find(h => h.id === nodeObj.hubId)?.sourceUrl);
           addSource({
-            institution: nodeObj.officialSource || 'Aysén Sistémico',
+            institution: nodeInst,
             dataset: nodeObj.title || 'Nodo Satélite',
-            year: '2024-2026',
-            url: nodeObj.provenance?.url || dl.hubs?.find(h => h.id === nodeObj.hubId)?.sourceUrl
+            year: nodeObj.provenance?.collectionDate || '2024–2026',
+            url: nodeUrl
           }, xKey || nodeObj.title);
         }
+
         const hubMeta = (dl.hubs || []).find(h => h.id === hubId);
         if (byId.size === 0 && hubMeta) {
           addSource({
             institution: hubMeta.sourceName || hubMeta.title,
             dataset: hubMeta.shortTitle || hubMeta.title,
-            year: '2024-2026',
+            year: '2024–2026',
             url: hubMeta.sourceUrl
           }, xKey);
         }
@@ -20904,14 +21052,34 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const unitX = snap?.xUnit || '';
         const unitY = snap?.yUnit || '';
         const scaleLabel = snap?.scaleModeLabel || 'Valores Nominales';
+        const isTemporal = snap?.dimMode === 'tiempo';
+        const isHolding = snap?.dimMode === 'holding';
 
-        // Párrafo 1: Lectura Estadística y Brecha Territorial
-        const paragraphStatistical =
-          `En la distribución comunal de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
-          `la Región de Aysén registra un promedio comunal de ${fmt(s.meanX)} ${unitX} ` +
-          `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
-          `El máximo regional se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que el menor registro corresponde a ` +
-          `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}), configurando una razón de asimetría territorial (Máx/Mín) de ${fmt(s.gapRatio, 2)}x entre extremos comunales.`;
+        // Párrafo 1: Lectura Estadística y Brecha Territorial o Temporal
+        let paragraphStatistical = '';
+        if (isTemporal) {
+          paragraphStatistical =
+            `En la evolución temporal de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
+            `la serie registra un promedio del período de ${fmt(s.meanX)} ${unitX} ` +
+            `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
+            `El registro más alto se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que el menor valor corresponde a ` +
+            `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}).`;
+        } else if (Number(s.minVal) <= 0) {
+          paragraphStatistical =
+            `En la distribución ${isHolding ? 'por holding' : 'comunal'} de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
+            `la Región de Aysén registra un promedio de ${fmt(s.meanX)} ${unitX} ` +
+            `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
+            `El máximo regional se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que ${s.minComuna || 'S/I'} registra 0,0 ${unitX} ` +
+            `(entre las unidades con presencia activa, el menor registro positivo corresponde a ${s.minPositiveComuna || s.maxComuna || 'S/I'} con ${fmt(s.minPositiveVal)} ${unitX}, ` +
+            `configurando una razón Máx/Mín positivo de ${fmt(s.gapRatio, 2)}x).`;
+        } else {
+          paragraphStatistical =
+            `En la distribución ${isHolding ? 'por holding' : 'comunal'} de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
+            `la Región de Aysén registra un promedio comunal de ${fmt(s.meanX)} ${unitX} ` +
+            `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
+            `El máximo regional se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que el menor registro corresponde a ` +
+            `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}), configurando una razón de asimetría territorial (Máx/Mín) de ${fmt(s.gapRatio, 2)}x entre extremos comunales.`;
+        }
 
         // Párrafo 2: Relación Bivariada / Cuadrantes o Estructura de Concentración
         let paragraphAnalytical = '';
@@ -20921,15 +21089,28 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           const strength = Math.abs(rVal) >= 0.7 ? 'fuerte' : (Math.abs(rVal) >= 0.4 ? 'moderada' : 'débil');
           const direction = rVal >= 0 ? 'positiva (directa)' : 'negativa (inversa)';
           const q = s.quadrants || { highHigh: [], lowLow: [] };
+          if (isTemporal) {
+            paragraphAnalytical =
+              `El cruce longitudinal frente a «${snap.yLabel || snap.yKey}» (${unitY || 'u.'}) muestra una trayectoria conjunta ${strength} y ${direction}, ` +
+              `con un coeficiente de correlación de Pearson r = ${fmt(rVal, 2)} y R² = ${fmt(r2Val * 100, 1)}% sobre los años observados. ` +
+              `Coinciden por sobre la media histórica los períodos: ${(q.highHigh || []).join(', ') || 'ningún período'}.`;
+          } else {
+            paragraphAnalytical =
+              `El cruce bivariado frente a «${snap.yLabel || snap.yKey}» (${unitY || 'u.'}) evidencia una asociación lineal ${strength} y ${direction}, ` +
+              `con un coeficiente de correlación de Pearson r = ${fmt(rVal, 2)} y un poder explicativo R² = ${fmt(r2Val * 100, 1)}%. ` +
+              `En la segmentación por cuadrantes respecto a la media regional, destacan en el cuadrante Alto-Alto: ${(q.highHigh || []).join(', ') || 'ninguna comuna'}, ` +
+              `mientras que en el cuadrante Bajo-Bajo se ubican: ${(q.lowLow || []).join(', ') || 'ninguna comuna'}.`;
+          }
+        } else if (isTemporal) {
+          const top3List = Array.isArray(s.top3Names) ? s.top3Names : [];
           paragraphAnalytical =
-            `El cruce bivariado frente a «${snap.yLabel || snap.yKey}» (${unitY || 'u.'}) evidencia una asociación lineal ${strength} y ${direction}, ` +
-            `con un coeficiente de correlación de Pearson r = ${fmt(rVal, 2)} y un poder explicativo R² = ${fmt(r2Val * 100, 1)}%. ` +
-            `En la segmentación por cuadrantes respecto a la media regional, destacan en el cuadrante Alto-Alto: ${(q.highHigh || []).join(', ') || 'ninguna comuna'}, ` +
-            `mientras que en el cuadrante Bajo-Bajo se ubican: ${(q.lowLow || []).join(', ') || 'ninguna comuna'}.`;
+            `La trayectoria temporal muestra los mayores niveles de la serie en ${top3List.join(', ') || 'los años recientes'}, ` +
+            `con una amplitud total entre ${fmt(s.minVal)} ${unitX} (${s.minComuna || 'mínimo'}) y ${fmt(s.maxVal)} ${unitX} (${s.maxComuna || 'máximo'}), ` +
+            `lo que permite evaluar cambios estructurales y puntos de inflexión interanuales en la región.`;
         } else {
           const top3List = Array.isArray(s.top3Names) ? s.top3Names : [];
           paragraphAnalytical =
-            `El análisis de concentración territorial muestra que las tres primeras comunas del ranking (${top3List.join(', ') || 'Coyhaique, Aysén, Cisnes'}) ` +
+            `El análisis de concentración territorial muestra que las tres primeras unidades del ranking (${top3List.join(', ') || 'Coyhaique, Aysén, Cisnes'}) ` +
             `concentran el ${fmt(s.top3SharePct, 1)}% del agregado regional (${fmt(s.sumX)} ${unitX}), ` +
             `reflejando la gravitación demográfica y productiva del eje Coyhaique–Puerto Aysén frente a las comunas de zona extrema e insularidad.`;
         }
@@ -20999,10 +21180,20 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           xUnit = payload.unit || xUnit;
         }
 
-        const hubId = catX?.hub || 'gobernanza';
+        const hubId = catX?.hubId || catX?.hub || (typeof hubInference === 'function' ? hubInference(xKey) : 'gobernanza');
         const hubObj = (dl.hubs || []).find(h => h.id === hubId);
-        const hubTitle = hubObj ? hubObj.title : 'IV. Gobernanza y Finanzas';
-        const nodeObj = (dl.nodos || []).find(n => (catX?.nodeId && Number(n.nodeId) === Number(catX.nodeId)) || n.hubId === hubId) || null;
+        const hubTitle = hubObj ? hubObj.title : (catX?.hubTitle || (typeof getHubTitleName === 'function' ? getHubTitleName(hubId) : '') || 'IV. Gobernanza y Finanzas');
+        const nodeObj = (dl.nodos || []).find(n => (catX?.nodeId && Number(n.id || n.nodeId) === Number(catX.nodeId)))
+          || (dl.nodos || []).find(n => n.hubId === hubId)
+          || null;
+        const allYearLabels = labels.length > 0 && labels.every(l => /^\d{4}(?:[-–]\d{2,4})?$/.test(String(l).trim()));
+        const dimMode = (catX?.dim === 'tiempo' || allYearLabels)
+          ? 'tiempo'
+          : (catX?.dim === 'holding' ? 'holding' : 'comuna');
+        const unitPlural = dimMode === 'tiempo'
+          ? 'periodos'
+          : (dimMode === 'holding' ? 'holdings' : 'unidades territoriales');
+
         const chartTitle = w?.title || (yLabel ? `${xLabel} vs. ${yLabel}` : `${xLabel} por Comuna`);
         const scaleMode = w?.perCapitaMode ? 'per_capita' : (w?.scaleMode || 'nominal');
         const scaleModeLabel = scaleMode === 'pct'
@@ -21034,6 +21225,9 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           maxVal: stX.maxVal,
           minComuna: stX.minComuna,
           minVal: stX.minVal,
+          hasZeroMin: stX.hasZeroMin,
+          minPositiveComuna: stX.minPositiveComuna,
+          minPositiveVal: stX.minPositiveVal,
           gapRatio: stX.gapRatio,
           top3Names: stX.top3Names,
           top3SharePct: stX.top3SharePct,
@@ -21050,35 +21244,39 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
         const provByName = {};
         comunas.forEach(c => { provByName[c.nombre] = c.provincia || 'Aysén'; });
-        const rows = labels
-          .map((lbl, idx) => {
-            const valX = Number(valsX[idx]) || 0;
-            const valY = valsY ? (Number(valsY[idx]) || 0) : null;
-            const sharePct = stX.sum > 0 ? (valX / stX.sum) * 100 : 0;
-            const deviationPct = stX.mean !== 0 ? ((valX - stX.mean) / Math.abs(stX.mean)) * 100 : 0;
-            return {
-              comuna: String(lbl || ''),
-              provincia: provByName[lbl] || 'Aysén',
-              valX,
-              valY,
-              sharePct,
-              deviationPct
-            };
-          })
-          .sort((a, b) => b.valX - a.valX)
+        const rawRows = labels.map((lbl, idx) => {
+          const valX = Number(valsX[idx]) || 0;
+          const valY = valsY ? (Number(valsY[idx]) || 0) : null;
+          const sharePct = stX.sum > 0 ? (valX / stX.sum) * 100 : 0;
+          const deviationPct = stX.mean !== 0 ? ((valX - stX.mean) / Math.abs(stX.mean)) * 100 : 0;
+          const scopeLbl = dimMode === 'tiempo'
+            ? 'Serie Regional'
+            : (dimMode === 'holding' ? 'Industria Regional' : (provByName[lbl] || 'Aysén'));
+          return {
+            comuna: String(lbl || ''),
+            provincia: scopeLbl,
+            valX,
+            valY,
+            sharePct,
+            deviationPct
+          };
+        });
+        const rows = (dimMode === 'tiempo' ? rawRows : rawRows.sort((a, b) => b.valX - a.valX))
           .map((r, i) => ({ rank: i + 1, ...r }));
 
         const snap = {
           id: `snap_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
+          widgetId: w?.id || null,
+          dimMode,
           timestamp: new Date().toISOString(),
           hubId,
           hubTitle,
           subcategoryTitle: catX?.subgroup || hubTitle,
-          nodeNumber: nodeObj?.nodeId || null,
+          nodeNumber: nodeObj?.id || nodeObj?.nodeId || null,
           nodeTitle: nodeObj?.title || hubTitle,
           nodeVerifiedSummary: nodeObj?.definition || '',
           chartTitle,
-          chartSubtitle: `${hubTitle} · ${labels.length} unidades territoriales`,
+          chartSubtitle: `${hubTitle} · ${labels.length} ${unitPlural}`,
           chartType: w?.chartType || (yKey ? 'bar' : 'bar'),
           scaleMode,
           scaleModeLabel,
@@ -21097,13 +21295,25 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         return snap;
       }
 
-      function pinCurrentChartToReport() {
+      function pinCurrentChartToReport(targetWidget) {
         if (!Array.isArray(window.REPORT_DOSSIER_QUEUE)) window.REPORT_DOSSIER_QUEUE = [];
+        const snap = captureCurrentChartSnapshot(targetWidget);
+        const dupIdx = window.REPORT_DOSSIER_QUEUE.findIndex(item =>
+          (snap.widgetId && item.widgetId && item.widgetId === snap.widgetId) ||
+          (item.xKey === snap.xKey && (item.yKey || null) === (snap.yKey || null) && item.chartTitle === snap.chartTitle)
+        );
+        if (dupIdx !== -1) {
+          window.REPORT_DOSSIER_QUEUE[dupIdx] = snap;
+          updateReportQueueBadge();
+          if (typeof showToast === 'function') {
+            showToast(`Vista actualizada en el Reporte (${window.REPORT_DOSSIER_QUEUE.length}/6): ${snap.chartTitle}`);
+          }
+          return snap;
+        }
         if (window.REPORT_DOSSIER_QUEUE.length >= 6) {
           if (typeof showToast === 'function') showToast('Máximo de 6 láminas alcanzado en el dossier PDF.');
           return null;
         }
-        const snap = captureCurrentChartSnapshot();
         window.REPORT_DOSSIER_QUEUE.push(snap);
         updateReportQueueBadge();
         if (typeof showToast === 'function') {
@@ -21196,9 +21406,9 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
                 <table class="exec-comunal-table">
                   <thead>
                     <tr>
-                      <th>Rank</th>
-                      <th>Comuna</th>
-                      <th>Provincia</th>
+                      <th>${snap.dimMode === 'tiempo' ? 'Orden' : 'Rank'}</th>
+                      <th>${snap.dimMode === 'tiempo' ? 'Periodo' : (snap.dimMode === 'holding' ? 'Holding / Empresa' : 'Comuna')}</th>
+                      <th>${snap.dimMode === 'comuna' ? 'Provincia' : 'Alcance'}</th>
                       <th class="num">${escReportHtml(snap.xLabel)} (${escReportHtml(snap.xUnit || '')})</th>
                       <th class="num">${secondHeader}</th>
                       <th class="num">Desv. vs. Media Regional</th>
@@ -21257,7 +21467,12 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
       function openExecutiveReportModal() {
         if (!Array.isArray(window.REPORT_DOSSIER_QUEUE) || window.REPORT_DOSSIER_QUEUE.length === 0) {
-          window.REPORT_DOSSIER_QUEUE = [captureCurrentChartSnapshot()];
+          const chartWidgets = (AppState.widgets || []).filter(w => w.type !== 'reflection');
+          if (chartWidgets.length > 0) {
+            window.REPORT_DOSSIER_QUEUE = chartWidgets.slice(0, 6).map(w => captureCurrentChartSnapshot(w));
+          } else {
+            window.REPORT_DOSSIER_QUEUE = [captureCurrentChartSnapshot()];
+          }
           updateReportQueueBadge();
         }
         renderExecutiveReportSheet();

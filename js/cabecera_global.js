@@ -23,12 +23,12 @@
       '</div>' +
       '<div class="brand-right global-header-nav">' +
         '<nav class="brand-nav-pills" aria-label="Navegación principal">' +
-          '<a href="portal.html" class="brand-pill">Portada</a>' +
-          '<a href="sistemas_complejos.html" class="brand-pill">Visualizador de Complejidad</a>' +
-          '<a href="index.html" class="brand-pill">Datos de Aysén</a>' +
-          '<a href="laboratorio.html" class="brand-pill">Laboratorio Sistémico</a>' +
-          '<a href="consultor.html" class="brand-pill">Consultor de Datos</a>' +
-          '<a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="brand-pill" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">' +
+          '<a href="portal.html" class="brand-pill" aria-label="Ir a Portada">Portada</a>' +
+          '<a href="sistemas_complejos.html" class="brand-pill" aria-label="Ir al Visualizador de Complejidad">Visualizador de Complejidad</a>' +
+          '<a href="index.html" class="brand-pill" aria-label="Ir a Datos de Aysén">Datos de Aysén</a>' +
+          '<a href="laboratorio.html" class="brand-pill" aria-label="Ir al Laboratorio Sistémico">Laboratorio Sistémico</a>' +
+          '<a href="consultor.html" class="brand-pill" aria-label="Ir al Consultor de Datos">Consultor de Datos</a>' +
+          '<a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="brand-pill" aria-label="Visitar perfil de LinkedIn de Álvaro Contreras Barrios" title="Visitar perfil de LinkedIn de Álvaro Contreras Barrios">' +
             '<span>LinkedIn</span>' +
             '<span class="pill-arrow">↗</span>' +
           '</a>' +
@@ -62,32 +62,32 @@
         '</div>' +
         '<div class="mobile-nav-kicker">Plataforma Sistémica de Aysén</div>' +
         '<nav class="mobile-nav-links" aria-label="Navegación móvil">' +
-          '<a href="portal.html" class="mobile-nav-link">' +
+          '<a href="portal.html" class="mobile-nav-link" aria-label="Ir a Portada">' +
             '<span class="mobile-nav-num">01</span>' +
             '<span class="mobile-nav-text">Portada</span>' +
             '<span class="mobile-nav-arrow">→</span>' +
           '</a>' +
-          '<a href="sistemas_complejos.html" class="mobile-nav-link">' +
+          '<a href="sistemas_complejos.html" class="mobile-nav-link" aria-label="Ir al Visualizador de Complejidad">' +
             '<span class="mobile-nav-num">02</span>' +
             '<span class="mobile-nav-text">Visualizador de Complejidad</span>' +
             '<span class="mobile-nav-arrow">→</span>' +
           '</a>' +
-          '<a href="index.html" class="mobile-nav-link">' +
+          '<a href="index.html" class="mobile-nav-link" aria-label="Ir a Datos de Aysén">' +
             '<span class="mobile-nav-num">03</span>' +
             '<span class="mobile-nav-text">Datos de Aysén</span>' +
             '<span class="mobile-nav-arrow">→</span>' +
           '</a>' +
-          '<a href="laboratorio.html" class="mobile-nav-link">' +
+          '<a href="laboratorio.html" class="mobile-nav-link" aria-label="Ir al Laboratorio Sistémico">' +
             '<span class="mobile-nav-num">04</span>' +
             '<span class="mobile-nav-text">Laboratorio Sistémico</span>' +
             '<span class="mobile-nav-arrow">→</span>' +
           '</a>' +
-          '<a href="consultor.html" class="mobile-nav-link">' +
+          '<a href="consultor.html" class="mobile-nav-link" aria-label="Ir al Consultor de Datos">' +
             '<span class="mobile-nav-num">05</span>' +
             '<span class="mobile-nav-text">Consultor de Datos</span>' +
             '<span class="mobile-nav-arrow">→</span>' +
           '</a>' +
-          '<a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">' +
+          '<a href="https://www.linkedin.com/in/alvarocontrerasbarrios/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" aria-label="Visitar perfil de LinkedIn">' +
             '<span class="mobile-nav-num">06</span>' +
             '<span class="mobile-nav-text">LinkedIn</span>' +
             '<span class="mobile-nav-arrow">↗</span>' +

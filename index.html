@@ -36,38 +36,49 @@
     migrarlas a CSS propio requiere una pasada dedicada.
     Ver AGENTS.md, seccion "Deuda Tecnica Declarada".
   -->
+  <style id="tailwind-fallback-css">
+    .hidden { display: none !important; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .grid { display: grid; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+  </style>
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#00357f',        /* Cobalt profundo oficial */
-            'primary-dark': '#00255a',
-            'primary-light': '#0059c5',
-            'primary-container': '#004aad',
-            'primary-fixed': '#d9e2ff',
-            background: '#fcf9f8',     /* Off-white cálido, papel editorial */
-            'surface-alt': '#f5f0ea',  /* Tono pergamino sutil */
-            'on-surface': '#1c1b1b',   /* Carbón profundo */
-            muted: '#66625f',          /* Gris cálido para metadatos */
-            'border-subtle': 'rgba(28, 27, 27, 0.09)',
-            'border-strong': 'rgba(28, 27, 27, 0.18)',
-            'cobalt-subtle': 'rgba(0, 53, 127, 0.06)',
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          boxShadow: {
-            'editorial': '0 1px 3px rgba(28, 27, 27, 0.04), 0 6px 16px rgba(28, 27, 27, 0.03)',
-            'cobalt-glow': '0 0 24px rgba(0, 53, 127, 0.12)',
-            'drawer': '-10px 0 30px rgba(28, 27, 27, 0.08)',
+    if (typeof window.tailwind !== 'undefined') {
+      window.tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00357f',        /* Cobalt profundo oficial */
+              'primary-dark': '#00255a',
+              'primary-light': '#0059c5',
+              'primary-container': '#004aad',
+              'primary-fixed': '#d9e2ff',
+              background: '#fcf9f8',     /* Off-white cálido, papel editorial */
+              'surface-alt': '#f5f0ea',  /* Tono pergamino sutil */
+              'on-surface': '#1c1b1b',   /* Carbón profundo */
+              muted: '#66625f',          /* Gris cálido para metadatos */
+              'border-subtle': 'rgba(28, 27, 27, 0.09)',
+              'border-strong': 'rgba(28, 27, 27, 0.18)',
+              'cobalt-subtle': 'rgba(0, 53, 127, 0.06)',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'Georgia', 'serif'],
+              sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            boxShadow: {
+              'editorial': '0 1px 3px rgba(28, 27, 27, 0.04), 0 6px 16px rgba(28, 27, 27, 0.03)',
+              'cobalt-glow': '0 0 24px rgba(0, 53, 127, 0.12)',
+              'drawer': '-10px 0 30px rgba(28, 27, 27, 0.08)',
+            }
           }
         }
-      }
+      };
     }
   </script>
 
@@ -1601,13 +1612,37 @@
 
     const hubMap = {};
 
+    const HUB_VAR_KEYWORDS = {
+      turismo: 'prestadores sernatur emat pernoctaciones snaspe visitantes parques presion turistica ocupacion estival adr revpar zoit',
+      salmonicultura: 'concesiones salmon centros activos biomasa antibioticos ica desembarque artesanal amerb ecmpo holdings',
+      energia: 'potencia mw tarifa bt1 diesel aislado subsidio saidi cortes luz gasolina lena internet fijo fibra optica foa',
+      gobernanza: 'presupuesto municipal sinim fcm fondo comun ipp ingresos propios fndr gore transparencia cplt sni aislamiento',
+      inversion: 'seia proyectos inversion empresas trabajadores sii compras locales fuga sag parcelaciones suelo fiscal banca cmf',
+      social: 'poblacion censo densidad ruralidad pobreza multidimensional casen rsh deficit habitacional escuelas slep vif dmcs barometro',
+      biodiversidad: 'snaspe bosque nativo fauna amenazada rce glaciares dga mp25 episodios gec amenaza volcanica sismica especies invasoras',
+      salud: 'camas hospitalarias postas rurales medicos traslado coyhaique espera quirurgica especialidad urgencias samu esperanza vida empam pscv cancer',
+      cultura: 'espacios culturales museos monumentos nacionales fondart bibliotecas snbp gasto cultura participacion cultural',
+      ctci: 'proyectos ctci anid corfo investigadores residentes centros estaciones ciencia endogena'
+    };
+
+    function normSearchStr(str) {
+      return String(str || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/['’`´]/g, '')
+        .toLowerCase()
+        .trim();
+    }
+
     function precomputeSearchTextForNodos(nodosList) {
       (nodosList || []).forEach(item => {
         const parts = [
           item.title,
           item.definition,
           item.example,
-          item.officialSource && item.officialSource.name
+          item.officialSource && item.officialSource.name,
+          hubMap[item.hubId] && hubMap[item.hubId].title,
+          HUB_VAR_KEYWORDS[item.hubId]
         ];
         if (Array.isArray(item.tableRows)) {
           for (let i = 0; i < item.tableRows.length; i++) {
@@ -1618,7 +1653,7 @@
           }
         }
         if (item.id === 36) parts.push('infor ctci-nod-15');
-        item._searchText = parts.filter(Boolean).join(' ').toLowerCase();
+        item._searchText = normSearchStr(parts.filter(Boolean).join(' '));
       });
     }
 
@@ -2433,7 +2468,7 @@
     }
 
     function getFilteredNodos() {
-      const q = AppState.searchQuery.toLowerCase().trim();
+      const q = normSearchStr(AppState.searchQuery);
       const cat = AppState.activeCategoryFilter;
       return (AppState.data.nodos || []).filter(item => {
         const matchesCat = cat === 'all' || item.hubId === cat;
@@ -2953,7 +2988,7 @@
       if (!AppState.graph.simulation) return;
       const cat = AppState.activeCategoryFilter;
       const axis = AppState.activeAxisFilter || 'all';
-      const q = AppState.searchQuery.toLowerCase().trim();
+      const q = normSearchStr(AppState.searchQuery);
 
       updateHubTogglesUI();
 
@@ -2964,9 +2999,9 @@
         }
         const matchesCat = (cat === 'all' || d.hubId === cat);
         const matchesSearch = !q || (d._searchText ? d._searchText.includes(q) : (
-          d.title.toLowerCase().includes(q) ||
-          d.definition.toLowerCase().includes(q) ||
-          d.example.toLowerCase().includes(q) ||
+          normSearchStr(d.title).includes(q) ||
+          normSearchStr(d.definition).includes(q) ||
+          normSearchStr(d.example).includes(q) ||
           (d.id === 36 && (q.includes('infor') || q.includes('ctci-nod-15')))
         ));
 
@@ -3075,16 +3110,18 @@
     function renderComunasCards() {
       const grid = document.getElementById('comunas-grid');
       const emptyState = document.getElementById('empty-state');
-      const q = AppState.searchQuery.toLowerCase().trim();
+      const q = normSearchStr(AppState.searchQuery);
       const cat = AppState.activeCategoryFilter;
 
       const filtered = (AppState.data.comunas || []).filter(c => {
         const matchesCat = cat === 'all' || c.provincia === cat;
         const matchesSearch = !q ||
-          c.nombre_comuna.toLowerCase().includes(q) ||
-          c.cabecera.toLowerCase().includes(q) ||
-          c.alcalde.toLowerCase().includes(q) ||
-          c.comuna_ine.includes(q);
+          normSearchStr(c.nombre_comuna).includes(q) ||
+          normSearchStr(c.cabecera).includes(q) ||
+          normSearchStr(c.provincia).includes(q) ||
+          normSearchStr(c.cuenca_bna).includes(q) ||
+          normSearchStr(c.alcalde).includes(q) ||
+          String(c.comuna_ine || '').includes(q);
         return matchesCat && matchesSearch;
       });
 
@@ -3611,7 +3648,16 @@
       if (exampleSection) exampleSection.classList.add('hidden');
 
       const actionsBar = document.getElementById('drawer-actions-bar');
-      actionsBar.classList.add('hidden');
+      actionsBar.classList.remove('hidden');
+      actionsBar.innerHTML = `
+        <a
+          href="laboratorio.html?slicer=${encodeURIComponent(c.nombre_comuna)}"
+          class="btn-action inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-sm bg-primary text-white hover:bg-primary-dark text-xs font-semibold transition-colors font-mono"
+        >
+          <span>Explorar ${escapeHtml(c.nombre_comuna)} en el Laboratorio</span>
+          <span class="font-mono text-xs">↗</span>
+        </a>
+      `;
 
       const rows = [
         ['I. Turismo & Áreas Silvestres', 'Prestadores inscritos SERNATUR', `${c.prestadores_sernatur} prestadores`],

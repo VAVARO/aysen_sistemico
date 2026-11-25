@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-23T18:11:31Z",
+  "generatedAt": "2026-11-25T13:19:39Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -27,16 +27,16 @@
       "order": 1,
       "category": "cruce_comunal_oculto",
       "dim": "comuna",
-      "title": "Tarifa Eléctrica Residencial BT1 vs. Aislamiento Multimodal",
-      "headline": "Tarifa Eléctrica Residencial BT1 vs. Aislamiento Multimodal",
-      "hubX": "III. Energía",
-      "hubY": "IV. Gobernanza",
-      "varX": "tarifa_bt1_clp",
-      "varY": "indice_aislamiento_multimodal",
-      "labelX": "Tarifa Eléctrica Residencial BT1",
-      "labelY": "Índice Compuesto de Aislamiento Multimodal",
-      "unitX": "$/kWh",
-      "unitY": "puntos",
+      "title": "Escuelas Rurales Multigrado vs. Postas de Salud Rural",
+      "headline": "Escuelas Rurales Multigrado vs. Postas de Salud Rural",
+      "hubX": "VI. Social",
+      "hubY": "VIII. Salud",
+      "varX": "escuelas_rurales_multigrado_n",
+      "varY": "postas_salud_rural",
+      "labelX": "Escuelas Rurales Multigrado (SLEP Aysén)",
+      "labelY": "Postas de Salud Rural (PSR)",
+      "unitX": "escuelas",
+      "unitY": "postas",
       "labels": [
         "Coyhaique",
         "Lago Verde",
@@ -50,121 +50,122 @@
         "Tortel"
       ],
       "dataX": [
-        224.0,
-        258.0,
-        222.0,
-        235.0,
-        265.0,
-        228.0,
-        231.0,
-        230.0,
-        262.0,
-        268.0
+        12.0,
+        3.0,
+        6.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0
       ],
       "dataY": [
-        0.0,
-        67.5,
-        8.9,
-        33.0,
-        87.1,
-        27.9,
-        31.0,
-        28.7,
-        86.6,
-        79.2
+        7.0,
+        3.0,
+        4.0,
+        4.0,
+        1.0,
+        2.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0
       ],
       "regressionLine": {
-        "slopeBeta1": 1.69824,
-        "interceptBeta0": -366.494,
-        "rSquaredPct": 94.9,
+        "slopeBeta1": 0.54492,
+        "interceptBeta0": 0.7383,
+        "rSquaredPct": 89.2,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "Los sistemas aislados sin interconexión encarecen la cuenta de luz: Tortel alcanza 268 $/kWh con 79,2 puntos de aislamiento, frente a Aysén (222 $/kWh y 8,9 puntos).",
-      "plainExplanation": "Los sistemas aislados sin interconexión encarecen la cuenta de luz: Tortel alcanza 268 $/kWh con 79,2 puntos de aislamiento, frente a Aysén (222 $/kWh y 8,9 puntos).",
-      "notable_commune": "Caso atípico: Coyhaique registra –13,9 puntos por debajo de lo esperado para su nivel en el eje X.",
+      "reading": "En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: Coyhaique suma 12,0 escuelas y 7,0 postas, frente a 1,0 y 1,0 en Cochrane.",
+      "plainExplanation": "En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: Coyhaique suma 12,0 escuelas y 7,0 postas, frente a 1,0 y 1,0 en Cochrane.",
+      "notable_commune": "Caso atípico: Río Ibáñez registra +1,2 postas por encima de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
-          "actualY": 0.0,
-          "expectedY": 13.91,
-          "diffY": -13.91,
-          "zResid": -2.0,
-          "note": "Coyhaique registra 0,0 puntos, 13,9 puntos por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 7.0,
+          "expectedY": 7.28,
+          "diffY": -0.28,
+          "zResid": -0.46,
+          "note": "Coyhaique registra 7,0 postas, 0,3 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Lago Verde": {
-          "actualY": 67.5,
-          "expectedY": 71.65,
-          "diffY": -4.15,
-          "zResid": -0.6,
-          "note": "Lago Verde registra 67,5 puntos, 4,2 puntos por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 3.0,
+          "expectedY": 2.37,
+          "diffY": 0.63,
+          "zResid": 1.03,
+          "note": "Lago Verde registra 3,0 postas, 0,6 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Aysén": {
-          "actualY": 8.9,
-          "expectedY": 10.52,
-          "diffY": -1.62,
-          "zResid": -0.23,
-          "note": "Aysén (8,9 puntos) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 4.0,
+          "expectedY": 4.01,
+          "diffY": -0.01,
+          "zResid": -0.01,
+          "note": "Aysén (4,0 postas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Cisnes": {
-          "actualY": 33.0,
-          "expectedY": 32.59,
-          "diffY": 0.41,
-          "zResid": 0.06,
-          "note": "Cisnes (33,0 puntos) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 4.0,
+          "expectedY": 3.46,
+          "diffY": 0.54,
+          "zResid": 0.88,
+          "note": "Cisnes registra 4,0 postas, 0,5 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Guaitecas": {
-          "actualY": 87.1,
-          "expectedY": 83.54,
-          "diffY": 3.56,
-          "zResid": 0.51,
-          "note": "Guaitecas registra 87,1 puntos, 3,6 puntos por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 1.0,
+          "expectedY": 1.83,
+          "diffY": -0.83,
+          "zResid": -1.36,
+          "note": "Guaitecas registra 1,0 postas, 0,8 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Chile Chico": {
-          "actualY": 27.9,
-          "expectedY": 20.71,
-          "diffY": 7.19,
-          "zResid": 1.04,
-          "note": "Chile Chico registra 27,9 puntos, 7,2 puntos por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 2.0,
+          "expectedY": 1.83,
+          "diffY": 0.17,
+          "zResid": 0.28,
+          "note": "Chile Chico (2,0 postas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Río Ibáñez": {
-          "actualY": 31.0,
-          "expectedY": 25.8,
-          "diffY": 5.2,
-          "zResid": 0.75,
-          "note": "Río Ibáñez registra 31,0 puntos, 5,2 puntos por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 3.0,
+          "expectedY": 1.83,
+          "diffY": 1.17,
+          "zResid": 1.93,
+          "note": "Río Ibáñez registra 3,0 postas, 1,2 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Cochrane": {
-          "actualY": 28.7,
-          "expectedY": 24.1,
-          "diffY": 4.6,
-          "zResid": 0.66,
-          "note": "Cochrane registra 28,7 puntos, 4,6 puntos por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 1.0,
+          "expectedY": 1.28,
+          "diffY": -0.28,
+          "zResid": -0.47,
+          "note": "Cochrane registra 1,0 postas, 0,3 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "O'Higgins": {
-          "actualY": 86.6,
-          "expectedY": 78.45,
-          "diffY": 8.15,
-          "zResid": 1.17,
-          "note": "O'Higgins registra 86,6 puntos, 8,2 puntos por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "actualY": 1.0,
+          "expectedY": 1.28,
+          "diffY": -0.28,
+          "zResid": -0.47,
+          "note": "O'Higgins registra 1,0 postas, 0,3 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Tortel": {
-          "actualY": 79.2,
-          "expectedY": 88.63,
-          "diffY": -9.43,
+          "actualY": 1.0,
+          "expectedY": 1.83,
+          "diffY": -0.83,
           "zResid": -1.36,
-          "note": "Tortel registra 79,2 puntos, 9,4 puntos por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
+          "note": "Tortel registra 1,0 postas, 0,8 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         }
       },
-      "metrics_line": "R² 95% · r = +0,97 · Sin Coyhaique: +0,98 · Control pob.: +0,91",
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
+      "metrics_line": "R² 89% · r = +0,94 · Sin Coyhaique: +0,87 · Control pob.: +0,83",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 95,
-        "pearsonR": 0.974,
-        "spearmanRho": 0.952,
-        "kendallTau": 0.867,
-        "partialCorrPop": 0.909,
-        "rWithoutCoyhaique": 0.983,
-        "firstDiffCorrDelta": 0.909,
-        "pValueFdr": 6e-06,
-        "veredictoSimple": "R² 95% · r = +0,97 · Sin Coyhaique: +0,98 · Control pob.: +0,91"
+        "fuerzaExplicativaPct": 89,
+        "pearsonR": 0.944,
+        "spearmanRho": 0.902,
+        "kendallTau": 0.853,
+        "partialCorrPop": 0.835,
+        "rWithoutCoyhaique": 0.869,
+        "firstDiffCorrDelta": 0.835,
+        "pValueFdr": 4.9e-05,
+        "veredictoSimple": "R² 89% · r = +0,94 · Sin Coyhaique: +0,87 · Control pob.: +0,83"
       }
     },
     {
@@ -299,6 +300,7 @@
           "note": "Tortel registra 68,8 %, 0,4 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,89",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -308,7 +310,7 @@
         "partialCorrPop": -0.893,
         "rWithoutCoyhaique": -0.973,
         "firstDiffCorrDelta": -0.893,
-        "pValueFdr": 6e-06,
+        "pValueFdr": 7e-06,
         "veredictoSimple": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,89"
       }
     },
@@ -444,6 +446,7 @@
           "note": "Tortel registra 21,0 %, 3,8 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 95% · r = +0,97 · Sin Coyhaique: +0,97 · Control pob.: +0,66",
       "statProofBadges": {
         "fuerzaExplicativaPct": 95,
@@ -589,6 +592,7 @@
           "note": "Tortel registra 87,3 %, 0,6 % por debajo de lo esperado según su nivel de plazo de evaluación SEIA."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,90",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -598,7 +602,7 @@
         "partialCorrPop": -0.904,
         "rWithoutCoyhaique": -0.968,
         "firstDiffCorrDelta": -0.904,
-        "pValueFdr": 7e-06,
+        "pValueFdr": 8e-06,
         "veredictoSimple": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,90"
       }
     },
@@ -734,6 +738,7 @@
           "note": "Tortel registra 68,8 %, 0,6 % por debajo de lo esperado según su nivel de interrupciones eléctricas."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 96% · r = –0,98 · Sin Coyhaique: –0,97 · Control pob.: –0,91",
       "statProofBadges": {
         "fuerzaExplicativaPct": 96,
@@ -879,6 +884,7 @@
           "note": "Tortel registra 18,0 %, 1,7 % por debajo de lo esperado según su nivel de cortes eléctricos anuales."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 93% · r = –0,96 · Sin Coyhaique: –0,96 · Control pob.: –0,84",
       "statProofBadges": {
         "fuerzaExplicativaPct": 93,
@@ -888,7 +894,7 @@
         "partialCorrPop": -0.844,
         "rWithoutCoyhaique": -0.964,
         "firstDiffCorrDelta": -0.844,
-        "pValueFdr": 1.1e-05,
+        "pValueFdr": 1.2e-05,
         "veredictoSimple": "R² 93% · r = –0,96 · Sin Coyhaique: –0,96 · Control pob.: –0,84"
       }
     },
@@ -1024,6 +1030,7 @@
           "note": "Tortel (26,2 %) se ubica prácticamente en línea con la tendencia regional."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 91% · r = +0,95 · Sin Coyhaique: +0,95 · Control pob.: +0,80",
       "statProofBadges": {
         "fuerzaExplicativaPct": 91,
@@ -1033,7 +1040,7 @@
         "partialCorrPop": 0.802,
         "rWithoutCoyhaique": 0.95,
         "firstDiffCorrDelta": 0.802,
-        "pValueFdr": 2.9e-05,
+        "pValueFdr": 3e-05,
         "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,95 · Control pob.: +0,80"
       }
     },
@@ -1169,6 +1176,7 @@
           "note": "Tortel registra 77,2 viv/1.000 hab, 20,6 viv/1.000 hab por encima de lo esperado según su nivel de horas sin suministro."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 66% · r = +0,81 · Sin Coyhaique: +0,81 · Control pob.: +0,69",
       "statProofBadges": {
         "fuerzaExplicativaPct": 66,
@@ -1314,6 +1322,7 @@
           "note": "Tortel registra 18,0 %, 2,9 % por debajo de lo esperado según su nivel de precio de la gasolina."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,88",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -1323,7 +1332,7 @@
         "partialCorrPop": -0.882,
         "rWithoutCoyhaique": -0.971,
         "firstDiffCorrDelta": -0.882,
-        "pValueFdr": 6e-06,
+        "pValueFdr": 7e-06,
         "veredictoSimple": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,88"
       }
     },
@@ -1459,6 +1468,7 @@
           "note": "Tortel registra 68,8 %, 1,3 % por debajo de lo esperado según su nivel de precio de combustible."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 93% · r = –0,96 · Sin Coyhaique: –0,95 · Control pob.: –0,83",
       "statProofBadges": {
         "fuerzaExplicativaPct": 93,
@@ -1468,7 +1478,7 @@
         "partialCorrPop": -0.827,
         "rWithoutCoyhaique": -0.954,
         "firstDiffCorrDelta": -0.827,
-        "pValueFdr": 1.2e-05,
+        "pValueFdr": 1.3e-05,
         "veredictoSimple": "R² 93% · r = –0,96 · Sin Coyhaique: –0,95 · Control pob.: –0,83"
       }
     },
@@ -1477,16 +1487,16 @@
       "order": 11,
       "category": "cruce_comunal_oculto",
       "dim": "comuna",
-      "title": "Costo de Generación Diésel Aislada vs. Aislamiento Multimodal",
-      "headline": "Costo de Generación Diésel Aislada vs. Aislamiento Multimodal",
-      "hubX": "III. Energía",
-      "hubY": "IV. Gobernanza",
-      "varX": "costo_real_generacion_diesel_kwh_clp",
-      "varY": "indice_aislamiento_multimodal",
-      "labelX": "Costo de Generación Eléctrica Aislada",
-      "labelY": "Índice Compuesto de Aislamiento Multimodal",
-      "unitX": "$/kWh",
-      "unitY": "puntos",
+      "title": "Profesionalización Municipal vs. Dotación Médica Comunal",
+      "headline": "Profesionalización Municipal vs. Dotación Médica Comunal",
+      "hubX": "IV. Gobernanza",
+      "hubY": "VIII. Salud",
+      "varX": "profesionalizacion_pct",
+      "varY": "medicos_por_mil_hab",
+      "labelX": "Profesionalización de la Planta Municipal",
+      "labelY": "Dotación de Médicos por cada 1.000 Habitantes",
+      "unitX": "%",
+      "unitY": "médicos/1.000 hab",
       "labels": [
         "Coyhaique",
         "Lago Verde",
@@ -1500,121 +1510,122 @@
         "Tortel"
       ],
       "dataX": [
-        0.0,
-        560.0,
-        0.0,
-        380.0,
-        640.0,
-        0.0,
-        0.0,
-        0.0,
-        620.0,
-        680.0
+        36.4,
+        12.5,
+        28.2,
+        18.6,
+        11.8,
+        15.4,
+        14.1,
+        16.2,
+        10.5,
+        9.8
       ],
       "dataY": [
-        0.0,
-        67.5,
-        8.9,
-        33.0,
-        87.1,
-        27.9,
-        31.0,
-        28.7,
-        86.6,
-        79.2
+        3.12,
+        0.82,
+        1.74,
+        1.15,
+        0.95,
+        1.28,
+        0.88,
+        1.42,
+        0.78,
+        0.85
       ],
       "regressionLine": {
-        "slopeBeta1": 0.09499,
-        "interceptBeta0": 17.6334,
-        "rSquaredPct": 84.9,
+        "slopeBeta1": 0.07888,
+        "interceptBeta0": -0.0695,
+        "rSquaredPct": 89.8,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "Transportar diésel por ripio y barcaza dispara el costo real eléctrico: Tortel genera a 680 $/kWh con 79,2 puntos de aislamiento, frente a Coyhaique (0 $/kWh).",
-      "plainExplanation": "Transportar diésel por ripio y barcaza dispara el costo real eléctrico: Tortel genera a 680 $/kWh con 79,2 puntos de aislamiento, frente a Coyhaique (0 $/kWh).",
-      "notable_commune": "Caso atípico: Cisnes registra –20,7 puntos por debajo de lo esperado para su nivel en el eje X.",
+      "reading": "Los municipios con mayor planta profesional también sostienen mayor dotación médica: Coyhaique (36,4% profesional) alcanza 3,1 médicos/1.000 hab, frente a 0,8 en Tortel (9,8%).",
+      "plainExplanation": "Los municipios con mayor planta profesional también sostienen mayor dotación médica: Coyhaique (36,4% profesional) alcanza 3,1 médicos/1.000 hab, frente a 0,8 en Tortel (9,8%).",
+      "notable_commune": "Caso atípico: Aysén registra –0,4 médicos/1.000 hab por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
-          "actualY": 0.0,
-          "expectedY": 17.63,
-          "diffY": -17.63,
-          "zResid": -1.48,
-          "note": "Coyhaique registra 0,0 puntos, 17,6 puntos por debajo de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 3.12,
+          "expectedY": 2.8,
+          "diffY": 0.32,
+          "zResid": 1.48,
+          "note": "Coyhaique registra 3,1 médicos/1.000 hab, 0,3 médicos/1.000 hab por encima de lo esperado según su nivel de profesionalización municipal."
         },
         "Lago Verde": {
-          "actualY": 67.5,
-          "expectedY": 70.83,
-          "diffY": -3.33,
-          "zResid": -0.28,
-          "note": "Lago Verde (67,5 puntos) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 0.82,
+          "expectedY": 0.92,
+          "diffY": -0.1,
+          "zResid": -0.45,
+          "note": "Lago Verde (0,8 médicos/1.000 hab) se ubica prácticamente en línea con la tendencia regional."
         },
         "Aysén": {
-          "actualY": 8.9,
-          "expectedY": 17.63,
-          "diffY": -8.73,
-          "zResid": -0.73,
-          "note": "Aysén registra 8,9 puntos, 8,7 puntos por debajo de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 1.74,
+          "expectedY": 2.15,
+          "diffY": -0.41,
+          "zResid": -1.93,
+          "note": "Aysén registra 1,7 médicos/1.000 hab, 0,4 médicos/1.000 hab por debajo de lo esperado según su nivel de profesionalización municipal."
         },
         "Cisnes": {
-          "actualY": 33.0,
-          "expectedY": 53.73,
-          "diffY": -20.73,
-          "zResid": -1.74,
-          "note": "Cisnes registra 33,0 puntos, 20,7 puntos por debajo de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 1.15,
+          "expectedY": 1.4,
+          "diffY": -0.25,
+          "zResid": -1.15,
+          "note": "Cisnes registra 1,1 médicos/1.000 hab, 0,2 médicos/1.000 hab por debajo de lo esperado según su nivel de profesionalización municipal."
         },
         "Guaitecas": {
-          "actualY": 87.1,
-          "expectedY": 78.43,
-          "diffY": 8.67,
-          "zResid": 0.73,
-          "note": "Guaitecas registra 87,1 puntos, 8,7 puntos por encima de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 0.95,
+          "expectedY": 0.86,
+          "diffY": 0.09,
+          "zResid": 0.41,
+          "note": "Guaitecas (0,9 médicos/1.000 hab) se ubica prácticamente en línea con la tendencia regional."
         },
         "Chile Chico": {
-          "actualY": 27.9,
-          "expectedY": 17.63,
-          "diffY": 10.27,
-          "zResid": 0.86,
-          "note": "Chile Chico registra 27,9 puntos, 10,3 puntos por encima de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 1.28,
+          "expectedY": 1.15,
+          "diffY": 0.13,
+          "zResid": 0.63,
+          "note": "Chile Chico registra 1,3 médicos/1.000 hab, 0,1 médicos/1.000 hab por encima de lo esperado según su nivel de profesionalización municipal."
         },
         "Río Ibáñez": {
-          "actualY": 31.0,
-          "expectedY": 17.63,
-          "diffY": 13.37,
-          "zResid": 1.12,
-          "note": "Río Ibáñez registra 31,0 puntos, 13,4 puntos por encima de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 0.88,
+          "expectedY": 1.04,
+          "diffY": -0.16,
+          "zResid": -0.76,
+          "note": "Río Ibáñez registra 0,9 médicos/1.000 hab, 0,2 médicos/1.000 hab por debajo de lo esperado según su nivel de profesionalización municipal."
         },
         "Cochrane": {
-          "actualY": 28.7,
-          "expectedY": 17.63,
-          "diffY": 11.07,
-          "zResid": 0.93,
-          "note": "Cochrane registra 28,7 puntos, 11,1 puntos por encima de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 1.42,
+          "expectedY": 1.21,
+          "diffY": 0.21,
+          "zResid": 0.98,
+          "note": "Cochrane registra 1,4 médicos/1.000 hab, 0,2 médicos/1.000 hab por encima de lo esperado según su nivel de profesionalización municipal."
         },
         "O'Higgins": {
-          "actualY": 86.6,
-          "expectedY": 76.53,
-          "diffY": 10.07,
-          "zResid": 0.85,
-          "note": "O'Higgins registra 86,6 puntos, 10,1 puntos por encima de lo esperado según su nivel de costo de generación diésel."
+          "actualY": 0.78,
+          "expectedY": 0.76,
+          "diffY": 0.02,
+          "zResid": 0.1,
+          "note": "O'Higgins (0,8 médicos/1.000 hab) se ubica prácticamente en línea con la tendencia regional."
         },
         "Tortel": {
-          "actualY": 79.2,
-          "expectedY": 82.23,
-          "diffY": -3.03,
-          "zResid": -0.25,
-          "note": "Tortel (79,2 puntos) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 0.85,
+          "expectedY": 0.7,
+          "diffY": 0.15,
+          "zResid": 0.68,
+          "note": "Tortel registra 0,8 médicos/1.000 hab, 0,1 médicos/1.000 hab por encima de lo esperado según su nivel de profesionalización municipal."
         }
       },
-      "metrics_line": "R² 85% · r = +0,92 · Sin Coyhaique: +0,93 · Control pob.: +0,82",
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
+      "metrics_line": "R² 90% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,73",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 85,
-        "pearsonR": 0.921,
-        "spearmanRho": 0.899,
-        "kendallTau": 0.781,
-        "partialCorrPop": 0.825,
-        "rWithoutCoyhaique": 0.925,
-        "firstDiffCorrDelta": 0.825,
-        "pValueFdr": 0.000181,
-        "veredictoSimple": "R² 85% · r = +0,92 · Sin Coyhaique: +0,93 · Control pob.: +0,82"
+        "fuerzaExplicativaPct": 90,
+        "pearsonR": 0.948,
+        "spearmanRho": 0.879,
+        "kendallTau": 0.733,
+        "partialCorrPop": 0.726,
+        "rWithoutCoyhaique": 0.895,
+        "firstDiffCorrDelta": 0.726,
+        "pValueFdr": 4.1e-05,
+        "veredictoSimple": "R² 90% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,73"
       }
     },
     {
@@ -1749,6 +1760,7 @@
           "note": "Tortel registra 18,0 %, 1,8 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 84% · r = –0,92 · Sin Coyhaique: –0,93 · Control pob.: –0,82",
       "statProofBadges": {
         "fuerzaExplicativaPct": 84,
@@ -1894,6 +1906,7 @@
           "note": "Tortel (68,8 %) se ubica prácticamente en línea con la tendencia regional."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 94% · r = +0,97 · Sin Coyhaique: +0,97 · Control pob.: +0,85",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -1903,7 +1916,7 @@
         "partialCorrPop": 0.849,
         "rWithoutCoyhaique": 0.967,
         "firstDiffCorrDelta": 0.849,
-        "pValueFdr": 6e-06,
+        "pValueFdr": 7e-06,
         "veredictoSimple": "R² 94% · r = +0,97 · Sin Coyhaique: +0,97 · Control pob.: +0,85"
       }
     },
@@ -2039,6 +2052,7 @@
           "note": "Tortel registra 63,5 %, 0,5 % por debajo de lo esperado según su nivel de tasa de proyectos RS."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 91% · r = +0,95 · Sin Coyhaique: +0,94 · Control pob.: +0,84",
       "statProofBadges": {
         "fuerzaExplicativaPct": 91,
@@ -2048,7 +2062,7 @@
         "partialCorrPop": 0.838,
         "rWithoutCoyhaique": 0.938,
         "firstDiffCorrDelta": 0.838,
-        "pValueFdr": 2.8e-05,
+        "pValueFdr": 2.9e-05,
         "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,94 · Control pob.: +0,84"
       }
     },
@@ -2184,6 +2198,7 @@
           "note": "Tortel registra 68,8 %, 1,8 % por debajo de lo esperado según su nivel de aislamiento multimodal."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: el Índice de Aislamiento Multimodal es un indicador sintético (25% SAIDI, 25% brecha de internet fijo, 25% tiempo de viaje a Coyhaique y 25% sobrecosto de combustible) cruzado aquí contra cobertura preventiva de salud externa.",
       "metrics_line": "R² 93% · r = –0,96 · Sin Coyhaique: –0,96 · Control pob.: –0,81",
       "statProofBadges": {
         "fuerzaExplicativaPct": 93,
@@ -2193,7 +2208,7 @@
         "partialCorrPop": -0.812,
         "rWithoutCoyhaique": -0.956,
         "firstDiffCorrDelta": -0.812,
-        "pValueFdr": 1.1e-05,
+        "pValueFdr": 1.2e-05,
         "veredictoSimple": "R² 93% · r = –0,96 · Sin Coyhaique: –0,96 · Control pob.: –0,81"
       }
     },
@@ -2329,6 +2344,7 @@
           "note": "Tortel registra 18 proyectos, 17,6 proyectos por debajo de lo esperado según su nivel de centros activos de salmón."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 82% · r = +0,91 · Sin Coyhaique: +0,98 · Control pob.: +0,96",
       "statProofBadges": {
         "fuerzaExplicativaPct": 82,
@@ -2474,6 +2490,7 @@
           "note": "Tortel registra 66,5 MM US$, 110 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 82% · r = +0,90 · Sin Coyhaique: +0,95 · Control pob.: +0,94",
       "statProofBadges": {
         "fuerzaExplicativaPct": 82,
@@ -2619,6 +2636,7 @@
           "note": "Tortel (66,5 MM US$) se ubica prácticamente en línea con la tendencia regional."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 86% · r = +0,93 · Sin Coyhaique: +0,97 · Control pob.: +0,83",
       "statProofBadges": {
         "fuerzaExplicativaPct": 86,
@@ -2628,7 +2646,7 @@
         "partialCorrPop": 0.828,
         "rWithoutCoyhaique": 0.966,
         "firstDiffCorrDelta": 0.828,
-        "pValueFdr": 0.000162,
+        "pValueFdr": 0.000154,
         "veredictoSimple": "R² 86% · r = +0,93 · Sin Coyhaique: +0,97 · Control pob.: +0,83"
       }
     },
@@ -2764,6 +2782,7 @@
           "note": "Tortel registra 65 predios, 165,7 predios por debajo de lo esperado según su nivel de pernoctaciones turísticas."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 94% · r = +0,97 · Sin Coyhaique: +0,89 · Control pob.: +0,89",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -2773,7 +2792,7 @@
         "partialCorrPop": 0.888,
         "rWithoutCoyhaique": 0.886,
         "firstDiffCorrDelta": 0.888,
-        "pValueFdr": 8e-06,
+        "pValueFdr": 9e-06,
         "veredictoSimple": "R² 94% · r = +0,97 · Sin Coyhaique: +0,89 · Control pob.: +0,89"
       }
     },
@@ -2909,6 +2928,7 @@
           "note": "Tortel registra 17,8 %, 1,7 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
         }
       },
+      "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
       "metrics_line": "R² 94% · r = +0,97 · Sin Coyhaique: +0,83 · Control pob.: +0,90",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -2989,6 +3009,7 @@
       "plainExplanation": "Entre 2015 y 2026, reemplazar 13.250 calefactores a leña en Coyhaique bajó los días sobre norma MP2.5 de 96,0 a 41,0 al año, con avance sostenido año a año.",
       "notable_commune": "",
       "residualsByComuna": {},
+      "methodologicalCaveat": "Nota metodológica: serie 2015–2026 reconstruida con interpolación entre hitos administrativos; la variabilidad meteorológica invernal interanual no está modelada en el ajuste lineal.",
       "metrics_line": "R² 100% · r = –1,00 · Sin 2020: –1,00 · Variación anual: –0,95",
       "statProofBadges": {
         "fuerzaExplicativaPct": 100,
@@ -3069,6 +3090,7 @@
       "plainExplanation": "El flujo aéreo de Balmaceda y las pernoctaciones hoteleras marchan a la par entre 2015 y 2026 (de 298.400 a 468.900 noches y de 420.000 a 682.000 pasajeros), incluida la caída de 2020.",
       "notable_commune": "",
       "residualsByComuna": {},
+      "methodologicalCaveat": "Nota metodológica: acoplamiento longitudinal 2015–2026 con tramos reconstruidos entre hitos oficiales; las métricas ilustran trayectoria agregada y no 12 mediciones anuales independientes.",
       "metrics_line": "R² 94% · r = +0,97 · Sin 2020: +0,95 · Variación anual: +0,99",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -3149,6 +3171,7 @@
       "plainExplanation": "Las visitas a parques nacionales pasaron de 112.400 a 216.500 entre 2015 y 2026 en sincronía con el PIB regional, que creció de 980.000 a 1.830.000 millones en la década.",
       "notable_commune": "",
       "residualsByComuna": {},
+      "methodologicalCaveat": "Nota metodológica: acoplamiento longitudinal 2015–2026 con tramos reconstruidos entre hitos oficiales; las métricas ilustran trayectoria agregada y no 12 mediciones anuales independientes.",
       "metrics_line": "R² 94% · r = +0,97 · Sin 2020: +0,97 · Variación anual: +0,89",
       "statProofBadges": {
         "fuerzaExplicativaPct": 94,
@@ -3229,6 +3252,7 @@
       "plainExplanation": "Por el peso térmico en sistemas aislados, el alza del diésel de 610 a 1.198 $/L entre 2015 y 2026 se traspasó directo a la tarifa residencial (de 162 a 261 $/kWh).",
       "notable_commune": "",
       "residualsByComuna": {},
+      "methodologicalCaveat": "Nota metodológica: acoplamiento longitudinal 2015–2026 con tramos reconstruidos entre hitos oficiales; las métricas ilustran trayectoria agregada y no 12 mediciones anuales independientes.",
       "metrics_line": "R² 99% · r = +0,99 · Sin 2020: +0,99 · Variación anual: +0,90",
       "statProofBadges": {
         "fuerzaExplicativaPct": 99,
@@ -3309,6 +3333,7 @@
       "plainExplanation": "El gasto anual en ciencia e innovación aplicada creció de 620 a 2.210 millones entre 2015 y 2026, acompañando la expansión del PIB regional de Aysén.",
       "notable_commune": "",
       "residualsByComuna": {},
+      "methodologicalCaveat": "Nota metodológica: acoplamiento longitudinal 2015–2026 con tramos reconstruidos entre hitos oficiales; las métricas ilustran trayectoria agregada y no 12 mediciones anuales independientes.",
       "metrics_line": "R² 98% · r = +0,99 · Sin 2020: +0,99 · Variación anual: +0,69",
       "statProofBadges": {
         "fuerzaExplicativaPct": 98,

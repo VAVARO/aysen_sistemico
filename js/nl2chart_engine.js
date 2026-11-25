@@ -373,9 +373,18 @@ Responde UNICAMENTE en formato JSON plano:
         }
       }
 
+      const NON_PLOTTABLE_IDS = new Set([
+        'id', 'comuna_ine', 'codigo_comuna', 'nombre', 'nombre_comuna',
+        'provincia', 'cabecera', 'cuenca_bna', 'alcalde', 'partido_alcalde',
+        'salud_principal', 'aerodromo', 'sistema_electrico', 'estado_foa',
+        'zoit_nombre', 'dependencia_barcaza', 'unidades_snaspe',
+        'holdings_operadores_salmon', 'fdt_ultima_milla_aprobado'
+      ]);
+
       // Comprobar coincidencia exacta con límites de palabra en la consulta normalizada
       const synonymMatches = [];
       for (const cand of candidateSet) {
+        if (NON_PLOTTABLE_IDS.has(cand.variable.id)) continue;
         let searchFrom = 0;
         while (searchFrom < normQuery.length) {
           const idx = normQuery.indexOf(cand.nSyn, searchFrom);
@@ -421,14 +430,33 @@ Responde UNICAMENTE en formato JSON plano:
       // Ordenar según aparición en el texto
       selectedSpans.sort((a, b) => a.startIdx - b.startIdx);
 
+      // Desambiguación de frase nominal intra-Hub (ej: "biomasa de salmon vs pobreza" no debe consumir "salmon" como varY)
+      const resolvedSpans = [];
+      for (let i = 0; i < selectedSpans.length; i++) {
+        const curr = selectedSpans[i];
+        const prev = resolvedSpans.length > 0 ? resolvedSpans[resolvedSpans.length - 1] : null;
+        if (prev && prev.variable.hub && prev.variable.hub === curr.variable.hub) {
+          const between = normQuery.slice(prev.endIdx, curr.startIdx).trim();
+          const isSameNounPhrase = ['','de','del','en','por','a'].includes(between);
+          const hasAnotherAfter = (i + 1 < selectedSpans.length) || /\b(vs|versus|contra|frente a|con|y)\b/.test(normQuery.slice(curr.endIdx));
+          if (isSameNounPhrase && hasAnotherAfter) {
+            if (curr.wordCount > prev.wordCount || (curr.wordCount === prev.wordCount && curr.weight > prev.weight)) {
+              resolvedSpans[resolvedSpans.length - 1] = curr;
+            }
+            continue;
+          }
+        }
+        resolvedSpans.push(curr);
+      }
+
       // D) Asignación de varX, varY y varZ
       let varXObj = null;
       let varYObj = null;
       let varZObj = null;
       const matchedTokens = [];
 
-      if (selectedSpans.length > 0) {
-        const first = selectedSpans[0];
+      if (resolvedSpans.length > 0) {
+        const first = resolvedSpans[0];
         varXObj = {
           id: first.variable.id,
           name: first.variable.name,
@@ -443,8 +471,8 @@ Responde UNICAMENTE en formato JSON plano:
         matchedTokens.push(first.matchedToken);
       }
 
-      if (selectedSpans.length > 1) {
-        const second = selectedSpans[1];
+      if (resolvedSpans.length > 1) {
+        const second = resolvedSpans[1];
         varYObj = {
           id: second.variable.id,
           name: second.variable.name,
@@ -459,8 +487,8 @@ Responde UNICAMENTE en formato JSON plano:
         matchedTokens.push(second.matchedToken);
       }
 
-      if (selectedSpans.length > 2) {
-        const third = selectedSpans[2];
+      if (resolvedSpans.length > 2) {
+        const third = resolvedSpans[2];
         varZObj = {
           id: third.variable.id,
           name: third.variable.name,
@@ -475,10 +503,10 @@ Responde UNICAMENTE en formato JSON plano:
 
       if (isTemporalIntent) {
         chartType = 'temporal';
-        confidence = varXObj ? Math.min(0.95, selectedSpans[0].weight + 0.02) : 0.80;
+        confidence = varXObj ? Math.min(0.95, resolvedSpans[0].weight + 0.02) : 0.80;
       } else if (isHoldingIntent) {
         chartType = 'holding';
-        confidence = varXObj ? Math.min(0.95, selectedSpans[0].weight + 0.02) : 0.85;
+        confidence = varXObj ? Math.min(0.95, resolvedSpans[0].weight + 0.02) : 0.85;
       } else if (varXObj && varYObj) {
         // Cruce bivariado detectado
         if (wantsBar) {
@@ -489,11 +517,11 @@ Responde UNICAMENTE en formato JSON plano:
           // Por defecto en laboratorio, dos variables continuas comunales se visualizan en dispersión
           chartType = 'scatter';
         }
-        confidence = Math.min(0.98, ((selectedSpans[0].weight + selectedSpans[1].weight) / 2));
+        confidence = Math.min(0.98, ((resolvedSpans[0].weight + resolvedSpans[1].weight) / 2));
       } else if (varXObj) {
         // Variable única
         chartType = 'bar';
-        confidence = Math.min(0.92, selectedSpans[0].weight);
+        confidence = Math.min(0.92, resolvedSpans[0].weight);
       } else {
         // No se identificaron variables
         confidence = 0.15;

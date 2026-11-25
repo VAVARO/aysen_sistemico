@@ -1,6 +1,6 @@
 # Plataforma y Base de Datos Sistémica de Aysén
 
-Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comunas, 7 Hubs sistémicos, 31 nodos satélites, 7 paquetes de trabajo WP_01–WP_07).
+Repositorio de datos e inteligencia territorial de la Región de Aysén (10 comunas, 10 Hubs sistémicos `I` a `X`, 41 nodos satélites `#01` a `#41`, 30 subcategorías, 236 variables comunales [218 numéricas], 38 fuentes oficiales y 10 paquetes de trabajo `WP_01`–`WP_10`).
 
 - **Autor**: Álvaro Contreras Barrios
 - **Costo de infraestructura**: \$0 (archivos estáticos JSON/CSV, HTML/CSS/JS vanilla, Canvas 2D, SVG, Chart.js, Leaflet, D3).
@@ -19,13 +19,15 @@ La plataforma implementa una cabecera global unificada con identidad editorial a
    - Explorador pedagógico de las 16 propiedades sistémicas del marco CECAN con simulaciones interactivas en canvas.
    - Panel de lectura editorial bilingüe (Español / Inglés) con sincronización dinámica.
 3. **[index.html](index.html) — Data Hub e Inteligencia Territorial**:
-   - Data Lake local empaquetado: 7 Hubs temáticos equilibrados, 31 nodos y las 10 comunas de la región.
-   - Vistas duales: Mapa de Hubs (31) y Las 10 Comunas (10) con buscador integrado `#global-search-input`.
+   - Data Lake local empaquetado: 10 Hubs temáticos equilibrados, 41 nodos satélites (`#01` a `#41`) y las 10 comunas de la región.
+   - Vistas duales: Mapa de Hubs (41) y Las 10 Comunas (10) con buscador integrado `#global-search-input`.
    - Drawer lateral ejecutivo con ficha de procedencia institucional (corte 17-Oct-2026), gráfico acotado y descarga CSV con UTF-8 BOM.
 4. **[laboratorio.html](laboratorio.html) — Laboratorio Sistémico (Estudio Cartográfico 2D)**:
    - Lienzo espacial 2D infinito interactivo con ventanas flotantes libres de tamaño dinámico.
-   - Conexiones de red entre ventanas, propagación de filtros territoriales, drag-and-drop de variables desde el catálogo oficial, capas de cálculo real (Promedio y Tendencia $R^2$), y soporte de sub-dashboards múltiples.
-   - Persistencia completa en `LocalStorage`, exportación/importación `.json` y generación de informes listos para imprimir/PDF.
+   - Conexiones de red entre ventanas, propagación de filtros territoriales, drag-and-drop de variables desde el catálogo oficial (236 variables comunales), capas de cálculo real (Promedio y Tendencia $R^2$), y soporte de sub-dashboards múltiples.
+   - Persistencia completa en `LocalStorage`, exportación/importación `.json` y generación de informes ejecutivos A4 listos para imprimir/PDF.
+5. **[consultor.html](consultor.html) — Consultor de Datos Territorial (Motor RAG en Memoria)**:
+   - Interfaz conversacional de pantalla dividida con lienzo de evidencia interactivo y trazabilidad directa hacia 38 fuentes oficiales y el Laboratorio Sistémico.
 
 ---
 
@@ -36,6 +38,7 @@ La plataforma implementa una cabecera global unificada con identidad editorial a
 ├── portal.html                          # Portada interactiva y postales morfológicas
 ├── sistemas_complejos.html              # Visualizador pedagógico de 16 propiedades CECAN
 ├── laboratorio.html                     # Laboratorio sistémico y estudio cartográfico 2D
+├── consultor.html                         # Consultor de Datos Territorial (RAG en memoria)
 ├── plataforma_aysen.html                # Visor territorial unificado
 ├── mapa_territorial.html                # Atlas prospectivo (18 series temporales 2030-2035)
 ├── AGENTS.md                            # Reglas operativas y arquitectura del repositorio
@@ -51,7 +54,7 @@ La plataforma implementa una cabecera global unificada con identidad editorial a
 │   ├── systemic/source_watch_report.md  # Digest del watchdog de fuentes (generado)
 │   ├── systemic/source_watch_workorder.json # Orden de trabajo de refresco (generado)
 │   ├── raw/                             # Fuentes primarias y matrices institucionales
-│   └── systemic/                        # Data Lake estructurado (WP_01 a WP_07 + 08)
+│   └── systemic/                        # Data Lake estructurado (WP_01 a WP_10)
 │       ├── 01_gob_poder_finanzas.json
 │       ├── 02_energia_combustibles_telecom.json
 │       ├── 03_concesiones_tierra_mar.json
@@ -60,7 +63,7 @@ La plataforma implementa una cabecera global unificada con identidad editorial a
 │       ├── 06_turismo_sernatur_conaf.json
 │       ├── 07_biodiversidad_flora_fauna_aysen.json
 │       ├── 08_desagregaciones_sectoriales_aysen.json
-│       ├── provenance_catalog.json      # Trazabilidad y gobernanza de 31 nodos
+│       ├── provenance_catalog.json      # Trazabilidad y gobernanza de 41 nodos y 38 fuentes oficiales
 │       └── csv/                         # 14+ planillas CSV UTF-8 BOM
 │
 ├── js/                                  # Hojas de estilo y controladores de módulos
@@ -82,7 +85,7 @@ node scripts/build_aysen_hubs_bundle.cjs
 # Verificar que el bundle versionado corresponde a sus fuentes
 node scripts/verify_bundle_sync.cjs
 
-# Validar integridad del Data Lake (WP_01 a WP_07)
+# Validar integridad del Data Lake (WP_01 a WP_10)
 python scripts/validate_data_lake.py --all
 
 # Correr suite de integridad territorial (37 pruebas)
@@ -107,7 +110,7 @@ Estas mismas suites corren automáticamente en cada `push` y `pull_request` sobr
 Este repositorio declara trazabilidad institucional por nodo, no verificación
 exhaustiva de cada punto. Lo que eso significa en concreto:
 
-- **Procedencia declarada**: los 31 nodos registran organismo, URL, método de
+- **Procedencia declarada**: los 41 nodos y 38 fuentes oficiales registran organismo, URL, método de
   recolección, fecha de corte y periodicidad en
   [`data/systemic/provenance_catalog.json`](data/systemic/provenance_catalog.json),
   con los campos procesables `collectionDateISO` y `updateFrequencyDays`.
@@ -122,6 +125,6 @@ exhaustiva de cada punto. Lo que eso significa en concreto:
   proyecciones de tendencia con intervalos de confianza, explícitamente
   separadas del histórico observado.
 - **Vigencia de las fuentes**: se audita con
-  `scripts/` + la skill `aysen-data-refresh`, que sondea las 31 URLs, detecta
+  `scripts/` + la skill `aysen-data-refresh`, que sondea las 41 URLs de nodos, detecta
   cambios reales de contenido y emite una orden de trabajo. Ninguna
   actualización entra al Data Lake sin revisión humana.

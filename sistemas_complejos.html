@@ -4965,6 +4965,9 @@
     }
 
     function openProperty(id) {
+      const targetProp = COMPLEXITY_PROPERTIES.find(p => p.id === Number(id) || String(p.num) === String(id).padStart(2, '0'));
+      if (!targetProp) return;
+      const validId = targetProp.id;
       inDetailView = true;
       gridView.classList.add('hidden');
       const pill = document.getElementById('gridAttributionPill');
@@ -4976,7 +4979,7 @@
       if (ep) ep.classList.remove('expanded');
       const arr = document.getElementById('editorialDrawerArrow');
       if (arr) arr.textContent = '▲';
-      resetScenarioState(id, 0);
+      resetScenarioState(validId, 0);
       renderDetailUI();
       requestAnimationFrame(() => {
         resizeCanvases();

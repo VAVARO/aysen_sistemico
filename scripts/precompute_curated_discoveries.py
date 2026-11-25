@@ -324,13 +324,13 @@ VARIABLE_META = {
 # 20 pares inter-Hubs curados por su mecanismo territorial real en Aysén
 CURATED_20_CROSS_SPECS = [
     {
-        "varX": "tarifa_bt1_clp",
-        "varY": "indice_aislamiento_multimodal",
-        "headline": "Tarifa Eléctrica Residencial BT1 vs. Aislamiento Multimodal",
-        "shortX": "tarifa eléctrica BT1",
+        "varX": "escuelas_rurales_multigrado_n",
+        "varY": "postas_salud_rural",
+        "headline": "Escuelas Rurales Multigrado vs. Postas de Salud Rural",
+        "shortX": "escuelas rurales multigrado",
         "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
-            f"Los sistemas aislados sin interconexión encarecen la cuenta de luz: {hi_c} alcanza {hi_x} {ux} "
-            f"con {hi_y} puntos de aislamiento, frente a {lo_c} ({lo_x} {ux} y {lo_y} puntos)."
+            f"En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: "
+            f"{hi_c} suma {hi_x} escuelas y {hi_y} postas, frente a {lo_x} y {lo_y} en {lo_c}."
         ),
     },
     {
@@ -424,13 +424,13 @@ CURATED_20_CROSS_SPECS = [
         ),
     },
     {
-        "varX": "costo_real_generacion_diesel_kwh_clp",
-        "varY": "indice_aislamiento_multimodal",
-        "headline": "Costo de Generación Diésel Aislada vs. Aislamiento Multimodal",
-        "shortX": "costo de generación diésel",
+        "varX": "profesionalizacion_pct",
+        "varY": "medicos_por_mil_hab",
+        "headline": "Profesionalización Municipal vs. Dotación Médica Comunal",
+        "shortX": "profesionalización municipal",
         "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
-            f"Transportar diésel por ripio y barcaza dispara el costo real eléctrico: "
-            f"{hi_c} genera a {hi_x} {ux} con {hi_y} puntos de aislamiento, frente a {lo_c} ({lo_x} {ux})."
+            f"Los municipios con mayor planta profesional también sostienen mayor dotación médica: "
+            f"{hi_c} ({hi_x}% profesional) alcanza {hi_y} {uy}, frente a {lo_y} en {lo_c} ({lo_x}%)."
         ),
     },
     {
@@ -921,6 +921,30 @@ def compute_curated_discoveries(data_lake):
                 f"Control pob.: {fmt_signed(st['partialCorrPop'])}"
             )
 
+        if is_temporal:
+            if rec["varX"] == "recambio_calefactores_pda_hist":
+                caveat = (
+                    "Nota metodológica: serie 2015–2026 reconstruida con interpolación entre hitos administrativos; "
+                    "la variabilidad meteorológica invernal interanual no está modelada en el ajuste lineal."
+                )
+            else:
+                caveat = (
+                    "Nota metodológica: acoplamiento longitudinal 2015–2026 con tramos reconstruidos entre hitos oficiales; "
+                    "las métricas ilustran trayectoria agregada y no 12 mediciones anuales independientes."
+                )
+        elif "indice_aislamiento_multimodal" in (rec["varX"], rec["varY"]):
+            caveat = (
+                "Nota metodológica: el Índice de Aislamiento Multimodal es un indicador sintético (25% SAIDI, "
+                "25% brecha de internet fijo, 25% tiempo de viaje a Coyhaique y 25% sobrecosto de combustible) "
+                "cruzado aquí contra cobertura preventiva de salud externa."
+            )
+        else:
+            caveat = (
+                "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros "
+                "administrativos independientes (correlación estadística no implica causalidad directa)."
+            )
+
+        rec["methodologicalCaveat"] = caveat
         rec["metrics_line"] = metrics_line
         rec["statProofBadges"] = {
             "fuerzaExplicativaPct": r_sq_int,

@@ -211,6 +211,8 @@
         "kilos de salmon",
         "tonelaje salmonero",
         "extraccion salmon",
+        "biomasa de salmon",
+        "biomasa de salmones",
         "cosecha de salmones"
       ]
     },
@@ -298,11 +300,9 @@
       "synonyms": [
         "amerb operativas",
         "areas de manejo activas",
+        "sindicatos de pescadores",
         "extraccion artesanal",
-        "caletas activas",
-        "areas de manejo amerb operativas",
-        "areas de manejo operativas",
-        "amerb operativas vigentes"
+        "caletas activas"
       ]
     },
     {
@@ -329,14 +329,7 @@
         "presupuesto comunal",
         "arca municipal",
         "millones municipales",
-        "m$ clp municipal",
-        "financiamiento municipal",
-        "como funciona el financiamiento municipal",
-        "finanzas municipales",
-        "recursos municipales",
-        "presupuesto vigente",
-        "sinim presupuesto",
-        "como se financian los municipios"
+        "m$ clp municipal"
       ]
     },
     {
@@ -413,33 +406,7 @@
         "subsidio municipal",
         "ayuda estatal municipal",
         "porcentaje fcm",
-        "cuanto depende del fondo comun",
-        "dependencia de fondos centrales",
-        "transferencias subdere",
-        "financiamiento municipal fcm",
-        "autonomia financiera municipal",
-        "equidad territorial fiscal"
-      ]
-    },
-    {
-      "id": "ingresos_propios_pct",
-      "canonicalId": "finanzas_ingresos_propios_pct",
-      "name": "Ingresos Propios Permanentes (% del Presupuesto SINIM)",
-      "shortName": "% Ingresos Propios (IPP)",
-      "unit": "%",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Finanzas",
-      "nodeId": 16,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "porcentaje de ingresos propios",
-        "ingresos propios pct",
-        "participacion ingresos propios",
-        "ipp porcentaje",
-        "autonomia fiscal porcentual",
-        "proporcion ingresos propios",
-        "financiamiento propio porcentual"
+        "cuanto depende del fondo comun"
       ]
     },
     {
@@ -522,11 +489,7 @@
         "profesionales en el municipio",
         "titulados municipales",
         "grado universitario funcionarios",
-        "calificacion personal municipal",
-        "funcionarios municipales profesionales",
-        "profesionalizacion municipal",
-        "proporcion de profesionales municipales",
-        "personal municipal profesional"
+        "calificacion personal municipal"
       ]
     },
     {
@@ -739,8 +702,8 @@
     {
       "id": "traslado_coyhaique_hrs",
       "canonicalId": "wp05_tiempo_hospital_hrs",
-      "name": "Tiempo de Derivación Médica al Hospital Regional Coyhaique (hrs)",
-      "shortName": "Derivación Médica Coyhaique",
+      "name": "Tiempo de Traslado Terrestre a Coyhaique",
+      "shortName": "Tiempo a Coyhaique",
       "unit": "horas",
       "hub": "salud",
       "hubTitle": "VIII. Salud",
@@ -756,13 +719,7 @@
         "horas al hospital",
         "demora en llegar",
         "cuanto se demora",
-        "distancia hospital regional",
-        "tiempo de traslado a coyhaique en ambulancia",
-        "traslado en ambulancia",
-        "derivacion medica a coyhaique",
-        "traslado a coyhaique",
-        "horas ambulancia",
-        "traslado hospital regional"
+        "distancia hospital regional"
       ]
     },
     {
@@ -1184,10 +1141,7 @@
         "petroleo para luz",
         "sistemas aislados diesel",
         "microredes diesel",
-        "generacion cara",
-        "costo de generacion diesel aislado",
-        "costo real generacion diesel",
-        "costo diesel aislado"
+        "generacion cara"
       ]
     },
     {
@@ -1513,13 +1467,7 @@
         "guardaparques por hectarea",
         "vigilancia ambiental",
         "guardabosques",
-        "conaf",
-        "hectareas por guardaparque",
-        "ha por guardaparque",
-        "superficie por guardaparque",
-        "dotacion de guardaparques",
-        "guardaparques conaf",
-        "carga por guardaparque"
+        "conaf"
       ]
     },
     {
@@ -1704,6 +1652,7 @@
         "proveedores locales",
         "licitaciones locales",
         "compras municipales locales",
+        "fuga de compras",
         "compras publicas"
       ]
     },
@@ -1862,12 +1811,7 @@
         "territorio protegido",
         "conaf parques",
         "santuario de la naturaleza",
-        "monumento natural",
-        "superficie snaspe",
-        "porcentaje snaspe",
-        "porcentaje de superficie snaspe",
-        "porcentaje de areas protegidas",
-        "areas protegidas snaspe"
+        "monumento natural"
       ]
     },
     {
@@ -2214,8 +2158,8 @@
       "name": "Proyectos Adjudicados Fondos Concursables Comunitarios GORE (8%)",
       "shortName": "Fondos 8% GORE (N)",
       "unit": "proyectos",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Finanzas",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2234,8 +2178,8 @@
       "name": "Monto Adjudicado Fondos Concursables Comunitarios GORE (M$)",
       "shortName": "Monto Fondos 8% (M$)",
       "unit": "M$ CLP",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Finanzas",
+      "hub": "social",
+      "hubTitle": "VI. Social y Educación",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2261,11 +2205,7 @@
         "voto obligatorio",
         "eleccion presidencial 2025",
         "participacion segunda vuelta",
-        "votantes 2025",
-        "participacion electoral",
-        "participacion servel",
-        "votacion electoral",
-        "tasa de participacion electoral"
+        "votantes 2025"
       ]
     },
     {
@@ -2394,10 +2334,619 @@
       ]
     },
     {
-      "id": "tasa_aprobacion_rs_sni_pct",
-      "canonicalId": "tasa_aprobacion_rs_sni_pct",
-      "name": "Tasa de Aprobación RS Proyectos SNI/BIP",
-      "shortName": "Tasa Aprobación RS",
+      "id": "visitas_por_cama_turistica",
+      "canonicalId": "visitas_por_cama_turistica",
+      "name": "Visitas por Cama Turística",
+      "shortName": "Visitas por Cama",
+      "unit": "visitas/cama",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "visitas por cama",
+        "rotacion camas turisticas"
+      ]
+    },
+    {
+      "id": "visitas_por_pernoctacion_ratio",
+      "canonicalId": "visitas_por_pernoctacion_ratio",
+      "name": "Ratio Visitas por Pernoctación",
+      "shortName": "Visitas / Pernoctación",
+      "unit": "ratio",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "visitas por pernoctacion",
+        "ratio visitas pernoctacion"
+      ]
+    },
+    {
+      "id": "visitantes_extranjeros_pct",
+      "canonicalId": "visitantes_extranjeros_pct",
+      "name": "Proporción de Visitantes Extranjeros SNASPE",
+      "shortName": "Visitantes Extranjeros %",
+      "unit": "%",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 4,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "visitantes extranjeros",
+        "turistas extranjeros",
+        "porcentaje extranjeros parques"
+      ]
+    },
+    {
+      "id": "visitantes_extranjeros_snaspe_n",
+      "canonicalId": "visitantes_extranjeros_snaspe_n",
+      "name": "Número de Visitantes Extranjeros SNASPE",
+      "shortName": "Extranjeros SNASPE",
+      "unit": "visitantes",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 4,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "numero turistas extranjeros",
+        "extranjeros en parques"
+      ]
+    },
+    {
+      "id": "tasa_ocupacion_estival_pct",
+      "canonicalId": "tasa_ocupacion_estival_pct",
+      "name": "Tasa de Ocupación Hotelera Estival",
+      "shortName": "Ocupación Estival",
+      "unit": "%",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ocupacion estival",
+        "ocupacion verano",
+        "tasa ocupacion estival"
+      ]
+    },
+    {
+      "id": "tasa_ocupacion_invernal_pct",
+      "canonicalId": "tasa_ocupacion_invernal_pct",
+      "name": "Tasa de Ocupación Hotelera Invernal",
+      "shortName": "Ocupación Invernal",
+      "unit": "%",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ocupacion invernal",
+        "ocupacion invierno",
+        "temporada baja"
+      ]
+    },
+    {
+      "id": "concentracion_estival_pct",
+      "canonicalId": "concentracion_estival_pct",
+      "name": "Concentración Turística Estival",
+      "shortName": "Concentración Estival",
+      "unit": "%",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "estacionalidad turistica",
+        "concentracion estival"
+      ]
+    },
+    {
+      "id": "estadia_promedio_dias",
+      "canonicalId": "estadia_promedio_dias",
+      "name": "Estadía Turística Promedio",
+      "shortName": "Estadía Promedio",
+      "unit": "días",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "estadia promedio",
+        "dias de estadia",
+        "noches promedio turista"
+      ]
+    },
+    {
+      "id": "gasto_diario_turista_usd",
+      "canonicalId": "gasto_diario_turista_usd",
+      "name": "Gasto Diario Promedio por Turista",
+      "shortName": "Gasto Diario Turista",
+      "unit": "US$/día",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gasto diario turista",
+        "gasto turista",
+        "dolares por turista"
+      ]
+    },
+    {
+      "id": "tarifa_adr_estimada_usd",
+      "canonicalId": "tarifa_adr_estimada_usd",
+      "name": "Tarifa Diaria Promedio Hotelera (ADR)",
+      "shortName": "Tarifa Hotelera ADR",
+      "unit": "US$",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tarifa adr",
+        "precio hotel",
+        "tarifa hotelera"
+      ]
+    },
+    {
+      "id": "revpar_estimado_usd",
+      "canonicalId": "revpar_estimado_usd",
+      "name": "Ingreso por Habitación Disponible (RevPAR)",
+      "shortName": "RevPAR",
+      "unit": "US$",
+      "hub": "turismo",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "nodeId": 3,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "revpar",
+        "ingreso por habitacion"
+      ]
+    },
+    {
+      "id": "largo_pista_aerodromo_m",
+      "canonicalId": "largo_pista_aerodromo_m",
+      "name": "Largo de Pista de Aeródromo",
+      "shortName": "Pista Aeródromo",
+      "unit": "metros",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "largo pista",
+        "pista aerodromo",
+        "aerodromo pista"
+      ]
+    },
+    {
+      "id": "operaciones_aerodromo_interior_anual",
+      "canonicalId": "operaciones_aerodromo_interior_anual",
+      "name": "Operaciones Aéreas Anuales en Aeródromo",
+      "shortName": "Operaciones Aéreas",
+      "unit": "operaciones",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "operaciones aereas",
+        "vuelos locales",
+        "trafico aerodromo"
+      ]
+    },
+    {
+      "id": "red_vial_total_km",
+      "canonicalId": "red_vial_total_km",
+      "name": "Extensión Total de Red Vial Comunal (MOP)",
+      "shortName": "Red Vial Total",
+      "unit": "km",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "red vial total",
+        "kilometros de caminos",
+        "caminos totales"
+      ]
+    },
+    {
+      "id": "red_vial_pavimentada_km",
+      "canonicalId": "red_vial_pavimentada_km",
+      "name": "Red Vial Comunal Pavimentada (MOP)",
+      "shortName": "Red Vial Pavimentada km",
+      "unit": "km",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "red vial pavimentada",
+        "kilometros pavimentados"
+      ]
+    },
+    {
+      "id": "red_vial_solucion_basica_km",
+      "canonicalId": "red_vial_solucion_basica_km",
+      "name": "Red Vial con Solución Básica",
+      "shortName": "Red Solución Básica",
+      "unit": "km",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "solucion basica vial",
+        "caminos solucion basica"
+      ]
+    },
+    {
+      "id": "red_vial_ripio_km",
+      "canonicalId": "red_vial_ripio_km",
+      "name": "Red Vial de Ripio (MOP)",
+      "shortName": "Red Vial Ripio km",
+      "unit": "km",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "red vial de ripio",
+        "caminos ripiados mop"
+      ]
+    },
+    {
+      "id": "red_vial_tierra_km",
+      "canonicalId": "red_vial_tierra_km",
+      "name": "Red Vial de Tierra (MOP)",
+      "shortName": "Red Vial Tierra",
+      "unit": "km",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "caminos de tierra mop",
+        "red vial tierra"
+      ]
+    },
+    {
+      "id": "red_vial_pavimentada_pct",
+      "canonicalId": "red_vial_pavimentada_pct",
+      "name": "Porcentaje de Red Vial Pavimentada",
+      "shortName": "% Red Pavimentada",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "porcentaje pavimentado",
+        "pavimentacion vial",
+        "cobertura pavimento"
+      ]
+    },
+    {
+      "id": "distancia_coyhaique_km",
+      "canonicalId": "distancia_coyhaique_km",
+      "name": "Distancia Terrestre/Marítima a Coyhaique",
+      "shortName": "Distancia a Coyhaique",
+      "unit": "km",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "distancia a coyhaique",
+        "kilometros a coyhaique"
+      ]
+    },
+    {
+      "id": "tiempo_viaje_coyhaique_hrs",
+      "canonicalId": "tiempo_viaje_coyhaique_hrs",
+      "name": "Tiempo de Viaje Multimodal hacia Coyhaique",
+      "shortName": "Tiempo Viaje Coyhaique",
+      "unit": "horas",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tiempo de viaje multimodal",
+        "horas de traslado a coyhaique"
+      ]
+    },
+    {
+      "id": "dependencia_barcaza_nivel",
+      "canonicalId": "dependencia_barcaza_nivel",
+      "name": "Nivel de Dependencia de Barcaza o Transbordador",
+      "shortName": "Dependencia Barcaza",
+      "unit": "nivel 0-3",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 40,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "dependencia de barcaza",
+        "barcaza",
+        "transbordador",
+        "conectividad maritima"
+      ]
+    },
+    {
+      "id": "hogares_sin_internet_fijo_pct",
+      "canonicalId": "hogares_sin_internet_fijo_pct",
+      "name": "Hogares sin Conexión Fija a Internet",
+      "shortName": "Sin Internet Fijo %",
+      "unit": "%",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "sin internet fijo",
+        "brecha digital",
+        "hogares sin internet",
+        "desconectados digital"
+      ]
+    },
+    {
+      "id": "establecimientos_educacion_conectados_n",
+      "canonicalId": "establecimientos_educacion_conectados_n",
+      "name": "Establecimientos Educacionales Conectados",
+      "shortName": "Escuelas Conectadas",
+      "unit": "establecimientos",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "escuelas conectadas",
+        "internet en escuelas"
+      ]
+    },
+    {
+      "id": "consumo_lena_m3_hogar_ano",
+      "canonicalId": "consumo_lena_m3_hogar_ano",
+      "name": "Consumo Residencial de Leña por Hogar",
+      "shortName": "Consumo Leña/Hogar",
+      "unit": "m³/hogar/año",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "consumo de lena por hogar",
+        "metros cubicos por hogar",
+        "gasto residencial de lena"
+      ]
+    },
+    {
+      "id": "consumo_lena_m3_solidos_anual",
+      "canonicalId": "consumo_lena_m3_solidos_anual",
+      "name": "Consumo Total Anual de Leña Sólida (INFOR)",
+      "shortName": "Consumo Total Leña",
+      "unit": "m³ sólidos/año",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "consumo total de lena",
+        "volumen total de lena",
+        "metros solidos de lena"
+      ]
+    },
+    {
+      "id": "ganado_bovino_cabezas",
+      "canonicalId": "ganado_bovino_cabezas",
+      "name": "Masa Ganadera Bovina (Censo Agropecuario)",
+      "shortName": "Ganado Bovino",
+      "unit": "cabezas",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ganado bovino",
+        "vacunos",
+        "vacas",
+        "ganaderia bovina"
+      ]
+    },
+    {
+      "id": "ganado_ovino_cabezas",
+      "canonicalId": "ganado_ovino_cabezas",
+      "name": "Masa Ganadera Ovina (Censo Agropecuario)",
+      "shortName": "Ganado Ovino",
+      "unit": "cabezas",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ganado ovino",
+        "ovejas",
+        "lana",
+        "ganaderia ovina"
+      ]
+    },
+    {
+      "id": "bosque_nativo_ha",
+      "canonicalId": "bosque_nativo_ha",
+      "name": "Superficie de Bosque Nativo (CONAF)",
+      "shortName": "Bosque Nativo ha",
+      "unit": "hectáreas",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 27,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "bosque nativo",
+        "hectareas bosque nativo",
+        "superficie bosque"
+      ]
+    },
+    {
+      "id": "plantaciones_ha",
+      "canonicalId": "plantaciones_ha",
+      "name": "Superficie de Plantaciones Forestales",
+      "shortName": "Plantaciones ha",
+      "unit": "hectáreas",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "plantaciones forestales",
+        "pino",
+        "forestales"
+      ]
+    },
+    {
+      "id": "sucursales_banca_privada_cmf",
+      "canonicalId": "sucursales_banca_privada_cmf",
+      "name": "Sucursales de Banca Privada (CMF)",
+      "shortName": "Sucursales Bancarias",
+      "unit": "sucursales",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "bancos",
+        "sucursales bancarias",
+        "banca privada",
+        "cmf"
+      ]
+    },
+    {
+      "id": "puntos_cajavecina_bancoestado",
+      "canonicalId": "puntos_cajavecina_bancoestado",
+      "name": "Puntos CajaVecina BancoEstado",
+      "shortName": "Puntos CajaVecina",
+      "unit": "puntos",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cajavecina",
+        "caja vecina",
+        "bancoestado",
+        "inclusion financiera"
+      ]
+    },
+    {
+      "id": "establecimientos_escolares_n",
+      "canonicalId": "establecimientos_escolares_n",
+      "name": "Establecimientos Escolares (SLEP / MINEDUC)",
+      "shortName": "Establecimientos Escolares",
+      "unit": "establecimientos",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "establecimientos escolares",
+        "colegios",
+        "escuelas totales",
+        "liceos"
+      ]
+    },
+    {
+      "id": "deficit_habitacional_cuantitativo_n",
+      "canonicalId": "deficit_habitacional_cuantitativo_n",
+      "name": "Déficit Habitacional Cuantitativo (MINVU)",
+      "shortName": "Déficit Cuantitativo Viv.",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "deficit habitacional",
+        "deficit de vivienda",
+        "falta de viviendas",
+        "viviendas faltantes"
+      ]
+    },
+    {
+      "id": "deficit_habitacional_cualitativo_n",
+      "canonicalId": "deficit_habitacional_cualitativo_n",
+      "name": "Déficit Habitacional Cualitativo (MINVU)",
+      "shortName": "Déficit Cualitativo Viv.",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "deficit cualitativo",
+        "viviendas por mejorar",
+        "mejoramiento vivienda"
+      ]
+    },
+    {
+      "id": "sistemas_ssr_apr_n",
+      "canonicalId": "sistemas_ssr_apr_n",
+      "name": "Sistemas de Agua Potable Rural (SSR / APR)",
+      "shortName": "Sistemas APR / SSR",
+      "unit": "sistemas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "apr",
+        "agua potable rural",
+        "comites apr",
+        "sistemas ssr"
+      ]
+    },
+    {
+      "id": "barometro_confianza_institucional_pct",
+      "canonicalId": "barometro_confianza_institucional_pct",
+      "name": "Confianza Ciudadana en el Municipio (Barómetro UAysén)",
+      "shortName": "Confianza Municipal",
       "unit": "%",
       "hub": "gobernanza",
       "hubTitle": "IV. Gobernanza y Finanzas",
@@ -2405,742 +2954,388 @@
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "tasa de aprobacion rs",
-        "tasa aprobacion rs",
-        "tasa rs",
-        "recomendacion satisfactoria",
-        "aprobacion sni",
-        "cartera rs sni",
-        "proyectos rs"
+        "confianza institucional",
+        "confianza municipal",
+        "barometro confianza"
       ]
     },
     {
-      "id": "ecmpo_solicitadas_ha",
-      "canonicalId": "wp03_ecmpo_solicitadas_ha",
-      "name": "Solicitudes ECMPO Ley Lafkenche (hectáreas)",
-      "shortName": "ECMPO Solicitadas (ha)",
-      "unit": "hectáreas",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "ecmpo",
-        "hectareas ecmpo",
-        "hectareas de ecmpo",
-        "ecmpo solicitadas",
-        "solicitudes ecmpo",
-        "ley lafkenche",
-        "lafkenche",
-        "espacios costeros marinos",
-        "espacios costeros pueblos originarios"
-      ]
-    },
-    {
-      "id": "concesiones_acuicolas_en_snaspe",
-      "canonicalId": "wp03_concesiones_en_snaspe",
-      "name": "Concesiones Acuícolas Superpuestas en Áreas Protegidas SNASPE",
-      "shortName": "Concesiones en SNASPE",
-      "unit": "concesiones",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 9,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "concesiones en snaspe",
-        "concesiones acuicolas en snaspe",
-        "concesiones superpuestas en snaspe",
-        "jaulas en snaspe",
-        "salmoneras en snaspe",
-        "concesiones dentro de snaspe",
-        "concesiones en areas protegidas"
-      ]
-    },
-    {
-      "id": "sindicatos_pesca_artesanal",
-      "canonicalId": "wp03_sindicatos_pesca_artesanal",
-      "name": "Sindicatos de Pesca Artesanal Activos",
-      "shortName": "Sindicatos Pesca Artesanal",
-      "unit": "sindicatos",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "sindicatos de pesca artesanal",
-        "sindicatos pesca artesanal",
-        "sindicatos de pescadores",
-        "organizaciones pesca artesanal"
-      ]
-    },
-    {
-      "id": "desembarque_artesanal_ton",
-      "canonicalId": "wp03_desembarque_artesanal_ton",
-      "name": "Desembarque Pesquero Artesanal Comunal",
-      "shortName": "Desembarque Artesanal",
-      "unit": "ton/año",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 6,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "desembarque artesanal",
-        "desembarque pesquero artesanal",
-        "toneladas desembarque artesanal",
-        "captura artesanal"
-      ]
-    },
-    {
-      "id": "tasa_ocupacion_concesiones_pct",
-      "canonicalId": "wp03_tasa_ocupacion_concesiones_pct",
-      "name": "Tasa de Operación de Concesiones Acuícolas (%)",
-      "shortName": "Tasa Ocupación Acuícola",
+      "id": "barometro_redes_apoyo_comunitario_pct",
+      "canonicalId": "barometro_redes_apoyo_comunitario_pct",
+      "name": "Redes de Apoyo Comunitario (Barómetro UAysén)",
+      "shortName": "Redes de Apoyo",
       "unit": "%",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 6,
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 26,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "tasa de ocupacion concesiones",
-        "tasa de operacion concesiones",
-        "porcentaje centros activos"
+        "redes de apoyo",
+        "apoyo comunitario",
+        "cohesion social"
       ]
     },
     {
-      "id": "proporcion_concesiones_en_snaspe_pct",
-      "canonicalId": "wp03_proporcion_concesiones_en_snaspe_pct",
-      "name": "Proporción de Concesiones dentro de SNASPE (%)",
-      "shortName": "% Concesiones en SNASPE",
+      "id": "barometro_orgullo_identidad_pct",
+      "canonicalId": "barometro_orgullo_identidad_pct",
+      "name": "Orgullo e Identidad Territorial (Barómetro UAysén)",
+      "shortName": "Orgullo Territorial",
       "unit": "%",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 9,
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 26,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "proporcion concesiones en snaspe",
-        "porcentaje concesiones snaspe",
-        "concesiones en snaspe porcentaje"
+        "orgullo regional",
+        "identidad territorial",
+        "pertenencia"
       ]
     },
     {
-      "id": "trabajadores_sii_por_centro_activo",
-      "canonicalId": "wp03_trabajadores_sii_por_centro_activo",
-      "name": "Trabajadores SII por Centro Acuícola Activo",
-      "shortName": "Trabajadores/Centro Activo",
-      "unit": "trab./centro",
-      "hub": "salmonicultura",
-      "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 6,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "trabajadores por centro activo",
-        "arraigo laboral salmonicultura",
-        "empleo por centro activo"
-      ]
-    },
-    {
-      "id": "subsidio_fiscal_diesel_kwh_clp",
-      "canonicalId": "wp02_subsidio_diesel",
-      "name": "Subsidio Fiscal a Generación Diésel Aislada",
-      "shortName": "Subsidio Fiscal Diésel",
-      "unit": "$/kWh",
-      "hub": "energia",
-      "hubTitle": "III. Energía, Combustibles y Conectividad Digital",
-      "nodeId": 12,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "subsidio fiscal diesel",
-        "subsidio diesel",
-        "subsidio electrico",
-        "subsidio tarifa diesel",
-        "subsidio sistemas aislados"
-      ]
-    },
-    {
-      "id": "indice_aislamiento_multimodal",
-      "canonicalId": "wp11_aislamiento_multimodal",
-      "name": "Índice Compuesto de Aislamiento Multimodal",
-      "shortName": "Índice Aislamiento",
-      "unit": "Índice (0-100)",
-      "hub": "energia",
-      "hubTitle": "III. Energía, Combustibles y Conectividad Digital",
+      "id": "barometro_prioridad_conectividad_pct",
+      "canonicalId": "barometro_prioridad_conectividad_pct",
+      "name": "Prioridad Ciudadana en Conectividad (Barómetro)",
+      "shortName": "Prioridad Conectividad",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 40,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "indice de aislamiento",
-        "aislamiento multimodal",
-        "vulnerabilidad energetico digital",
-        "indice aislamiento"
+        "prioridad conectividad",
+        "demanda conectividad"
       ]
     },
     {
-      "id": "ventas_sii_muf",
-      "canonicalId": "wp04_ventas_sii_muf",
-      "name": "Ventas Anuales Declaradas SII",
-      "shortName": "Ventas SII (MUF)",
-      "unit": "Miles de UF",
-      "hub": "inversion",
-      "hubTitle": "V. Economía, Inversión y Suelo",
-      "nodeId": 20,
-      "dim": "comuna",
-      "outlierBiased": true,
-      "synonyms": [
-        "ventas sii",
-        "ventas anuales sii",
-        "miles de uf",
-        "facturacion empresas sii",
-        "ventas en uf"
-      ]
-    },
-    {
-      "id": "ventas_por_empresa_uf",
-      "canonicalId": "wp04_ventas_por_empresa_uf",
-      "name": "Ventas Promedio por Empresa SII",
-      "shortName": "Ventas/Empresa SII",
-      "unit": "UF/empresa",
-      "hub": "inversion",
-      "hubTitle": "V. Economía, Inversión y Suelo",
-      "nodeId": 20,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "ventas por empresa",
-        "facturacion por empresa",
-        "uf por empresa",
-        "tamano de ventas promedio"
-      ]
-    },
-    {
-      "id": "inversion_por_proyecto_seia_mmusd",
-      "canonicalId": "wp04_inversion_por_proyecto_seia",
-      "name": "Ticket Promedio por Proyecto Aprobado SEIA",
-      "shortName": "Ticket Prom. SEIA",
-      "unit": "MM USD/proyecto",
-      "hub": "inversion",
-      "hubTitle": "V. Economía, Inversión y Suelo",
-      "nodeId": 19,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "ticket promedio seia",
-        "inversion por proyecto seia",
-        "tamano proyecto seia",
-        "mm usd por proyecto"
-      ]
-    },
-    {
-      "id": "suelo_fiscal_bbnn_pct",
-      "canonicalId": "wp03_suelo_fiscal_bbnn_pct",
-      "name": "Porcentaje de Suelo Fiscal Bienes Nacionales",
-      "shortName": "% Suelo Fiscal BBNN",
+      "id": "barometro_tension_desarrollo_conservacion_pct",
+      "canonicalId": "barometro_tension_desarrollo_conservacion_pct",
+      "name": "Tensión Desarrollo vs. Conservación (Barómetro)",
+      "shortName": "Tensión Desarrollo/Conservación",
       "unit": "%",
-      "hub": "inversion",
-      "hubTitle": "V. Economía, Inversión y Suelo",
-      "nodeId": 22,
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 27,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "suelo fiscal",
-        "tierra fiscal",
-        "bienes nacionales",
-        "porcentaje suelo fiscal",
-        "tenencia fiscal"
+        "tension conservacion",
+        "desarrollo vs conservacion"
       ]
     },
     {
-      "id": "suelo_privado_pct",
-      "canonicalId": "wp03_suelo_privado_pct",
-      "name": "Porcentaje de Suelo en Propiedad Privada",
-      "shortName": "% Suelo Privado",
+      "id": "barometro_intencion_migracion_juvenil_pct",
+      "canonicalId": "barometro_intencion_migracion_juvenil_pct",
+      "name": "Retención y Oportunidades Juveniles (Barómetro)",
+      "shortName": "Retención Juvenil",
       "unit": "%",
-      "hub": "inversion",
-      "hubTitle": "V. Economía, Inversión y Suelo",
-      "nodeId": 22,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "suelo privado",
-        "propiedad privada",
-        "porcentaje de suelo privado",
-        "porcentaje suelo privado",
-        "tierra privada"
-      ]
-    },
-    {
-      "id": "fndr_per_capita_mclp",
-      "canonicalId": "wp01_fndr_per_capita",
-      "name": "Inversión FNDR Asignada Per Cápita",
-      "shortName": "FNDR Per Cápita",
-      "unit": "Miles $ CLP/hab",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
-      "nodeId": 18,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "fndr per capita",
-        "inversion fndr por habitante",
-        "fndr por persona",
-        "fndr per capita miles"
-      ]
-    },
-    {
-      "id": "fndr_gore_2023_per_capita_mclp",
-      "canonicalId": "wp01_fndr_2023_per_capita",
-      "name": "FNDR GORE 2023 Ejecutado Per Cápita",
-      "shortName": "FNDR 2023 Ejec./hab",
-      "unit": "Miles $ CLP/hab",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
-      "nodeId": 18,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "fndr ejecutado per capita",
-        "fndr 2023 per capita",
-        "gasto fndr por habitante"
-      ]
-    },
-    {
-      "id": "royalty_fet_peso_presupuesto_pct",
-      "canonicalId": "wp01_royalty_peso_pres",
-      "name": "Peso del Royalty Minero FET 2025 sobre Presupuesto",
-      "shortName": "% Royalty FET / Pres.",
-      "unit": "%",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
-      "nodeId": 15,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "peso royalty",
-        "porcentaje royalty presupuesto",
-        "impacto royalty minero",
-        "royalty sobre presupuesto"
-      ]
-    },
-    {
-      "id": "participacion_municipales_2024_pct",
-      "canonicalId": "wp01_part_mun_2024",
-      "name": "Participación Electoral Municipal 2024 SERVEL",
-      "shortName": "Part. Municipales 2024 (%)",
-      "unit": "%",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
-      "nodeId": 17,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "participacion municipales 2024",
-        "elecciones municipales 2024",
-        "participacion municipal servel"
-      ]
-    },
-    {
-      "id": "ratio_padron_poblacion_pct",
-      "canonicalId": "wp01_ratio_padron_pop",
-      "name": "Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024",
-      "shortName": "Ratio Padrón/Población (%)",
-      "unit": "%",
-      "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza, Finanzas Públicas y Transporte",
-      "nodeId": 17,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "ratio padron poblacion",
-        "padron sobre poblacion",
-        "electores sobre censo",
-        "padron vs censo"
-      ]
-    },
-    {
-      "id": "tasa_vif_100k",
-      "name": "Tasa de Denuncias por Violencia Intrafamiliar VIF (c/100k hab)",
-      "shortName": "Tasa VIF (c/100k)",
-      "unit": "por 100k hab",
       "hub": "social",
-      "hubTitle": "VI. Social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 26,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "violencia intrafamiliar",
-        "vif",
-        "denuncias vif",
-        "tasa vif",
-        "violencia familiar",
-        "vif por comuna"
+        "migracion juvenil",
+        "jovenes se van",
+        "retencion juvenil"
       ]
     },
     {
-      "id": "tasa_dmcs_100k",
-      "name": "Tasa de Delitos de Mayor Connotación Social DMCS (c/100k hab)",
-      "shortName": "Tasa DMCS (c/100k)",
-      "unit": "por 100k hab",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 26,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "delitos de mayor connotacion social",
-        "dmcs",
-        "tasa dmcs",
-        "delitos",
-        "delincuencia",
-        "connotacion social",
-        "cead",
-        "criminalidad",
-        "seguridad ciudadana"
-      ]
-    },
-    {
-      "id": "escuelas_rurales_multigrado_n",
-      "name": "Escuelas Rurales Multigrado SLEP (n°)",
-      "shortName": "Escuelas Rurales Multigrado",
-      "unit": "escuelas",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 25,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "escuelas rurales multigrado",
-        "escuelas multigrado",
-        "escuelas rurales slep"
-      ]
-    },
-    {
-      "id": "liceos_urbanos_n",
-      "name": "Liceos de Enseñanza Media HC/TP (n°)",
-      "shortName": "Liceos Media HC/TP",
-      "unit": "liceos",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 25,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "liceos urbanos",
-        "liceos de ensenanza media",
-        "liceos"
-      ]
-    },
-    {
-      "id": "ratio_pobreza_multidim_vs_ingresos",
-      "name": "Ratio Pobreza Multidimensional / Pobreza por Ingresos (veces)",
-      "shortName": "Ratio Pobreza Multidim./Ingresos",
-      "unit": "ratio",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 23,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "ratio pobreza multidimensional",
-        "brecha pobreza multidimensional ingresos"
-      ]
-    },
-    {
-      "id": "deficit_habitacional_total_por_1000_hab",
-      "name": "Déficit Habitacional Cuantitativo cada 1.000 Habitantes",
-      "shortName": "Déficit Hab. c/1.000 hab",
-      "unit": "viv./1.000 hab",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 41,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "deficit habitacional por cada 1000 habitantes",
-        "deficit habitacional cada mil habitantes",
-        "deficit habitacional relativo"
-      ]
-    },
-    {
-      "id": "matricula_ed_superior_sies",
-      "name": "Matrícula de Educación Superior SIES (estudiantes)",
-      "shortName": "Matrícula Ed. Superior SIES",
-      "unit": "estudiantes",
-      "hub": "ctci",
-      "hubTitle": "X. CTCi e Innovación",
-      "nodeId": 37,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "educacion superior",
-        "matricula de educacion superior",
-        "matricula educacion superior sies",
-        "matricula superior",
-        "sies",
-        "cft estatal",
-        "inacap"
-      ]
-    },
-    {
-      "id": "establecimientos_slep_aysen",
-      "name": "Establecimientos Escolares Públicos SLEP Aysén (colegios)",
-      "shortName": "Establecimientos SLEP",
-      "unit": "colegios",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 25,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "establecimientos escolares slep",
-        "establecimientos slep",
-        "establecimientos escolares",
-        "colegios slep",
-        "escuelas slep"
-      ]
-    },
-    {
-      "id": "indice_masculinidad",
-      "name": "Índice de Masculinidad Comunal (Hombres por cada 100 Mujeres)",
-      "shortName": "Índice de Masculinidad",
-      "unit": "hombres/100 mujeres",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 23,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "indice de masculinidad",
-        "masculinidad",
-        "hombres por mujeres",
-        "razon de masculinidad"
-      ]
-    },
-    {
-      "id": "cobertura_ssr_apr_familias",
-      "name": "Beneficiarios SSR/APR (personas)",
-      "shortName": "Beneficiarios SSR/APR",
-      "unit": "personas",
-      "hub": "social",
-      "hubTitle": "VI. Social",
-      "nodeId": 41,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "beneficiarios ssr",
-        "beneficiarios apr",
-        "agua potable rural personas",
-        "cobertura ssr personas"
-      ]
-    },
-    {
-      "id": "especies_exoticas_invasoras_n",
-      "name": "Complejos de Especies Exóticas Invasoras Presentes (n°)",
-      "shortName": "Especies Invasoras EEI",
-      "unit": "especies",
-      "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Ambiente",
-      "nodeId": 29,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "especies exoticas invasoras",
-        "especies invasoras",
-        "eei",
-        "vison",
-        "castor",
-        "didymo",
-        "jabali",
-        "lupino",
-        "chinook asilvestrado"
-      ]
-    },
-    {
-      "id": "episodios_gec_mp25_anual",
-      "name": "Episodios Críticos GEC MP2.5 (>110 µg/m³, días/año)",
-      "shortName": "Episodios GEC MP2.5",
-      "unit": "días/año",
-      "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Ambiente",
-      "nodeId": 30,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "episodios gec",
-        "episodios criticos mp25",
-        "preemergencia y emergencia",
-        "episodios sobre 110"
-      ]
-    },
-    {
-      "id": "expedientes_fiscalizacion_sma_n",
-      "name": "Expedientes de Fiscalización Ambiental SMA (n°)",
-      "shortName": "Expedientes SMA",
-      "unit": "expedientes",
-      "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Ambiente",
-      "nodeId": 31,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "expedientes de fiscalizacion sma",
-        "expedientes sma",
-        "fiscalizacion sma",
-        "justicia ambiental sma",
-        "sanciones sma"
-      ]
-    },
-    {
-      "id": "amenaza_volcanica_sismica_idx",
-      "name": "Índice Integrado de Amenaza Volcánica y Sísmica (0-100)",
-      "shortName": "Amenaza Volcánica/Sísmica",
-      "unit": "índice (0-100)",
-      "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Ambiente",
-      "nodeId": 31,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "amenaza volcanica",
-        "amenaza sismica",
-        "volcanes activos rnvv",
-        "sismos usgs",
-        "indice amenaza volcanica"
-      ]
-    },
-    {
-      "id": "informalidad_lena_pct",
-      "name": "Informalidad y Leña Húmeda en Comercio Local (%)",
-      "shortName": "Informalidad Leña (%)",
+      "id": "barometro_preocupacion_contaminacion_lena_pct",
+      "canonicalId": "barometro_preocupacion_contaminacion_lena_pct",
+      "name": "Preocupación por Contaminación por Leña (Barómetro)",
+      "shortName": "Preocupación Humo/Leña",
       "unit": "%",
       "hub": "energia",
-      "hubTitle": "III. Energía",
-      "nodeId": 14,
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "informalidad lena",
-        "informalidad de la lena",
-        "lena informal",
-        "lena humeda",
-        "comercio informal lena"
+        "preocupacion lena",
+        "percepcion contaminacion"
       ]
     },
     {
-      "id": "establecimientos_aps_n",
-      "name": "Establecimientos de Atención Primaria APS (n°)",
-      "shortName": "Establecimientos APS",
-      "unit": "establecimientos",
+      "id": "indice_envejecimiento",
+      "canonicalId": "indice_envejecimiento",
+      "name": "Índice de Envejecimiento Demográfico",
+      "shortName": "Índice Envejecimiento",
+      "unit": "adultos/100 menores",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "envejecimiento",
+        "indice de envejecimiento",
+        "adultos mayores proporcion"
+      ]
+    },
+    {
+      "id": "autoidentificacion_indigena_pct",
+      "canonicalId": "autoidentificacion_indigena_pct",
+      "name": "Autoidentificación Indígena (Censo 2024)",
+      "shortName": "Población Indígena %",
+      "unit": "%",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "pueblos originarios",
+        "poblacion indigena",
+        "autoidentificacion indigena"
+      ]
+    },
+    {
+      "id": "comunidades_indigenas_conadi",
+      "canonicalId": "comunidades_indigenas_conadi",
+      "name": "Comunidades Indígenas Registradas (CONADI)",
+      "shortName": "Comunidades Indígenas",
+      "unit": "comunidades",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "comunidades indigenas",
+        "conadi"
+      ]
+    },
+    {
+      "id": "juntas_vecinos_activas",
+      "canonicalId": "juntas_vecinos_activas",
+      "name": "Juntas de Vecinos Activas (SINIM)",
+      "shortName": "Juntas de Vecinos",
+      "unit": "juntas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "juntas de vecinos",
+        "organizaciones vecinales"
+      ]
+    },
+    {
+      "id": "postas_salud_rural",
+      "canonicalId": "postas_salud_rural",
+      "name": "Postas de Salud Rural (PSR)",
+      "shortName": "Postas Rurales",
+      "unit": "postas",
       "hub": "salud",
-      "hubTitle": "VIII. Salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "establecimientos aps",
-        "dispositivos aps",
-        "centros aps",
-        "red aps",
-        "recintos aps",
-        "cesfam y postas",
-        "atencion primaria"
+        "postas de salud rural",
+        "psr",
+        "postas",
+        "centros rurales salud"
       ]
     },
     {
-      "id": "barometro_evaluacion_acceso_salud_pct",
-      "name": "Evaluación Ciudadana Acceso a Salud Barómetro B3_A (%)",
-      "shortName": "Evaluación Acceso Salud B3_A",
-      "unit": "%",
+      "id": "esperanza_vida_total_anos",
+      "canonicalId": "esperanza_vida_total_anos",
+      "name": "Esperanza de Vida al Nacer (DEIS)",
+      "shortName": "Esperanza de Vida",
+      "unit": "años",
       "hub": "salud",
-      "hubTitle": "VIII. Salud",
-      "nodeId": 39,
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "evaluacion ciudadana del acceso a salud",
-        "evaluacion acceso salud",
-        "barometro salud",
-        "acceso a salud barometro",
-        "satisfaccion salud b3 a"
+        "esperanza de vida",
+        "longevidad",
+        "anos de vida"
       ]
     },
     {
-      "id": "centros_culturales_n",
-      "name": "Centros Culturales y Casas de la Cultura (n°)",
-      "shortName": "Centros Culturales",
-      "unit": "centros",
+      "id": "cobertura_empam_pct",
+      "canonicalId": "cobertura_empam_pct",
+      "name": "Cobertura Preventiva del Adulto Mayor (EMPAM)",
+      "shortName": "Cobertura EMPAM",
+      "unit": "%",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "empam",
+        "cobertura empam",
+        "salud preventiva",
+        "control adulto mayor",
+        "examen preventivo adulto mayor"
+      ]
+    },
+    {
+      "id": "cobertura_pscv_pct",
+      "canonicalId": "cobertura_pscv_pct",
+      "name": "Cobertura Programa de Salud Cardiovascular (PSCV)",
+      "shortName": "Cobertura PSCV",
+      "unit": "%",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "pscv",
+        "salud cardiovascular",
+        "control cardiovascular"
+      ]
+    },
+    {
+      "id": "camas_psiquiatricas_uhce",
+      "canonicalId": "camas_psiquiatricas_uhce",
+      "name": "Camas Psiquiátricas UHCE",
+      "shortName": "Camas Psiquiátricas",
+      "unit": "camas",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "camas psiquiatricas",
+        "salud mental camas",
+        "uhce"
+      ]
+    },
+    {
+      "id": "mediana_espera_especialidad_dias",
+      "canonicalId": "mediana_espera_especialidad_dias",
+      "name": "Mediana de Espera en Consulta de Especialidad",
+      "shortName": "Espera Especialidad",
+      "unit": "días",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "espera especialidad",
+        "dias espera especialista",
+        "demora especialista"
+      ]
+    },
+    {
+      "id": "mediana_espera_quirurgica_dias",
+      "canonicalId": "mediana_espera_quirurgica_dias",
+      "name": "Mediana de Espera Quirúrgica No GES",
+      "shortName": "Espera Quirúrgica",
+      "unit": "días",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "espera quirurgica",
+        "dias espera cirugia",
+        "lista espera cirugia"
+      ]
+    },
+    {
+      "id": "tasa_mortalidad_cancer_gastrico_100k",
+      "canonicalId": "tasa_mortalidad_cancer_gastrico_100k",
+      "name": "Tasa de Mortalidad por Cáncer Gástrico (DEIS)",
+      "shortName": "Mortalidad Cáncer Gástrico",
+      "unit": "def/100k hab",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cancer",
+        "mortalidad por cancer",
+        "cancer gastrico",
+        "tasa de cancer"
+      ]
+    },
+    {
+      "id": "tasa_mortalidad_cancer_vesicula_100k",
+      "canonicalId": "tasa_mortalidad_cancer_vesicula_100k",
+      "name": "Tasa de Mortalidad por Cáncer de Vesícula (DEIS)",
+      "shortName": "Mortalidad Cáncer Vesícula",
+      "unit": "def/100k hab",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cancer de vesicula",
+        "vesicula"
+      ]
+    },
+    {
+      "id": "tasa_mortalidad_suicidio_100k",
+      "canonicalId": "tasa_mortalidad_suicidio_100k",
+      "name": "Tasa de Mortalidad por Suicidio (DEIS)",
+      "shortName": "Mortalidad Suicidio",
+      "unit": "def/100k hab",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud APS y Hospitales",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "suicidio",
+        "mortalidad salud mental",
+        "tasa suicidio"
+      ]
+    },
+    {
+      "id": "museos_espacios_n",
+      "canonicalId": "museos_espacios_n",
+      "name": "Museos y Espacios Culturales",
+      "shortName": "Espacios Culturales",
+      "unit": "espacios",
       "hub": "cultura",
       "hubTitle": "IX. Cultura y Patrimonio",
       "nodeId": 32,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "centros culturales",
-        "casas de la cultura",
-        "infraestructura cultural"
+        "museos",
+        "espacios culturales",
+        "centros culturales"
       ]
     },
     {
-      "id": "organizaciones_comunitarias_n",
-      "name": "Organizaciones Comunitarias y Territoriales Activas (n°)",
-      "shortName": "Organizaciones Comunitarias",
-      "unit": "organizaciones",
+      "id": "bibliotecas_snbp_n",
+      "canonicalId": "bibliotecas_snbp_n",
+      "name": "Bibliotecas Públicas (SNBP)",
+      "shortName": "Bibliotecas SNBP",
+      "unit": "bibliotecas",
       "hub": "cultura",
       "hubTitle": "IX. Cultura y Patrimonio",
-      "nodeId": 34,
+      "nodeId": 32,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "organizaciones comunitarias",
-        "tejido asociativo",
-        "clubes camperos",
-        "comites campesinos"
+        "bibliotecas",
+        "bibliotecas publicas",
+        "snbp"
       ]
     },
     {
-      "id": "cultores_patrimonio_inmaterial_n",
-      "name": "Cultores Patrimonio Cultural Inmaterial SIGPA (n°)",
-      "shortName": "Cultores SIGPA",
-      "unit": "cultores",
-      "hub": "cultura",
-      "hubTitle": "IX. Cultura y Patrimonio",
-      "nodeId": 34,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "patrimonio cultural inmaterial",
-        "cultores sigpa",
-        "tejueleros",
-        "carpinteros de ribera",
-        "jineteadas"
-      ]
-    },
-    {
-      "id": "gasto_cultura_per_capita_clp",
-      "name": "Gasto Cultural Municipal Per Cápita ($ CLP/hab)",
-      "shortName": "Gasto Cultura Per Cápita",
-      "unit": "$ CLP/hab",
-      "hub": "cultura",
-      "hubTitle": "IX. Cultura y Patrimonio",
-      "nodeId": 33,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "gasto cultural per capita",
-        "gasto municipal en cultura per capita",
-        "gasto cultura por habitante"
-      ]
-    },
-    {
-      "id": "fndr_8pct_cultura_mclp",
-      "name": "Inversión FNDR 8% Cultura y Patrimonio (M$ CLP)",
-      "shortName": "FNDR 8% Cultura",
+      "id": "fondart_fndr_mclp",
+      "canonicalId": "fondart_fndr_mclp",
+      "name": "Inversión FONDART y Cultura FNDR",
+      "shortName": "Fondos Cultura",
       "unit": "M$ CLP",
       "hub": "cultura",
       "hubTitle": "IX. Cultura y Patrimonio",
@@ -3148,116 +3343,261 @@
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "fndr 8% cultura",
-        "fndr 8 cultura",
-        "8% fndr cultura",
-        "fondo 8% cultura"
-      ]
-    },
-    {
-      "id": "gasto_municipal_cultura_mclp",
-      "name": "Gasto Municipal Total en Cultura SINIM (M$ CLP)",
-      "shortName": "Gasto Municipal Cultura",
-      "unit": "M$ CLP",
-      "hub": "cultura",
-      "hubTitle": "IX. Cultura y Patrimonio",
-      "nodeId": 33,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "gasto municipal en cultura",
-        "gasto municipal cultura",
-        "presupuesto municipal cultura"
-      ]
-    },
-    {
-      "id": "fondos_cultura_adjudicados_mclp",
-      "name": "Fondos de Cultura MINCAP Adjudicados (M$ CLP)",
-      "shortName": "Fondos Cultura MINCAP",
-      "unit": "M$ CLP",
-      "hub": "cultura",
-      "hubTitle": "IX. Cultura y Patrimonio",
-      "nodeId": 33,
-      "dim": "comuna",
-      "outlierBiased": false,
-      "synonyms": [
-        "fondos de cultura mincap",
-        "fondos cultura mincap adjudicados",
         "fondart",
-        "fondos mincap"
+        "fondos de cultura",
+        "financiamiento cultural"
       ]
     },
     {
-      "id": "evaluacion_uaysen_promedio_i8",
-      "name": "Evaluación Ciudadana Universidad de Aysén Barómetro I8 (nota 1-7)",
-      "shortName": "Evaluación UAysén I8",
-      "unit": "nota (1-7)",
-      "hub": "ctci",
-      "hubTitle": "X. CTCi e Innovación",
-      "nodeId": 37,
+      "id": "monumentos_nacionales_count",
+      "canonicalId": "monumentos_nacionales_count",
+      "name": "Monumentos Nacionales Declarados (CMN)",
+      "shortName": "Monumentos CMN",
+      "unit": "monumentos",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 32,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "evaluacion uaysen",
-        "evaluacion universidad de aysen",
-        "evaluacion ciudadana de la universidad de aysen",
-        "evaluacion de la uaysen",
-        "nota uaysen",
-        "nota universidad de aysen",
-        "valoracion uaysen",
-        "reputacion uaysen",
-        "barometro uaysen i8",
-        "calificacion uaysen"
+        "monumentos",
+        "monumentos nacionales",
+        "patrimonio protegido",
+        "cmn"
       ]
     },
     {
-      "id": "aporte_universidades_f4g_pct",
-      "name": "Aporte Percibido de Universidades al Desarrollo F4_G (%)",
-      "shortName": "Aporte Universidades F4_G",
-      "unit": "%",
-      "hub": "ctci",
-      "hubTitle": "X. CTCi e Innovación",
-      "nodeId": 37,
+      "id": "museos_count",
+      "canonicalId": "museos_count",
+      "name": "Museos Inscritos en RMC",
+      "shortName": "Museos RMC",
+      "unit": "museos",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 32,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "aporte de las universidades",
-        "aporte universidades",
-        "rol universidades",
-        "f4 g",
-        "f4_g"
+        "museos inscritos",
+        "registro museos"
       ]
     },
     {
-      "id": "proporcion_ciencia_endogena_pct",
-      "name": "Proporción de Proyectos ANID con Ciencia Endógena (%)",
-      "shortName": "% Ciencia Endógena ANID",
+      "id": "nota_percepcion_cultura_b4b",
+      "canonicalId": "nota_percepcion_cultura_b4b",
+      "name": "Evaluación Ciudadana Oferta Cultural",
+      "shortName": "Nota Cultura",
+      "unit": "nota 1-7",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "nota cultura",
+        "percepcion cultural"
+      ]
+    },
+    {
+      "id": "participacion_cultural_pct_c2",
+      "canonicalId": "participacion_cultural_pct_c2",
+      "name": "Participación en Organizaciones Culturales",
+      "shortName": "Participación Cultural",
       "unit": "%",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "participacion cultural",
+        "actividad cultural"
+      ]
+    },
+    {
+      "id": "proyectos_anid_n",
+      "canonicalId": "proyectos_anid_n",
+      "name": "Proyectos ANID Adjudicados",
+      "shortName": "Proyectos ANID",
+      "unit": "proyectos",
       "hub": "ctci",
       "hubTitle": "X. CTCi e Innovación",
       "nodeId": 35,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "ciencia endogena",
-        "ciencia local vs extrarregional",
-        "extractivismo cientifico",
-        "investigacion endogena"
+        "proyectos anid",
+        "anid",
+        "fondecyt",
+        "fondef"
       ]
     },
     {
-      "id": "matricula_educacion_superior_sies_n",
-      "name": "Matrícula Educación Superior SIES por Sede Comunal (estudiantes)",
-      "shortName": "Matrícula SIES Comunal",
-      "unit": "estudiantes",
+      "id": "monto_anid_mclp",
+      "canonicalId": "monto_anid_mclp",
+      "name": "Financiamiento ANID Adjudicado",
+      "shortName": "Monto ANID",
+      "unit": "M$ CLP",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 35,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "monto anid",
+        "plata ciencia",
+        "financiamiento anid"
+      ]
+    },
+    {
+      "id": "innovacion_corfo_mclp",
+      "canonicalId": "innovacion_corfo_mclp",
+      "name": "Financiamiento CORFO Innovación",
+      "shortName": "CORFO Innova",
+      "unit": "M$ CLP",
       "hub": "ctci",
       "hubTitle": "X. CTCi e Innovación",
       "nodeId": 37,
       "dim": "comuna",
       "outlierBiased": false,
       "synonyms": [
-        "matricula educacion superior comunal",
-        "sede sies"
+        "corfo",
+        "innovacion corfo",
+        "fondos corfo"
+      ]
+    },
+    {
+      "id": "proyectos_ctci_total",
+      "canonicalId": "proyectos_ctci_total",
+      "name": "Total de Proyectos de Ciencia e Innovación",
+      "shortName": "Proyectos CTCi",
+      "unit": "proyectos",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 35,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "proyectos ctci",
+        "proyectos de ciencia",
+        "proyectos de investigacion"
+      ]
+    },
+    {
+      "id": "investigadores_residentes",
+      "canonicalId": "investigadores_residentes",
+      "name": "Investigadores Residentes en Aysén",
+      "shortName": "Investigadores Residentes",
+      "unit": "investigadores",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 36,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "investigadores",
+        "cientificos",
+        "investigadores residentes"
+      ]
+    },
+    {
+      "id": "proyectos_anid_locales_count",
+      "canonicalId": "proyectos_anid_locales_count",
+      "name": "Proyectos ANID con Dirección Local",
+      "shortName": "ANID Locales",
+      "unit": "proyectos",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 36,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "anid locales",
+        "ciencia local"
+      ]
+    },
+    {
+      "id": "proyectos_anid_extrarregionales_count",
+      "canonicalId": "proyectos_anid_extrarregionales_count",
+      "name": "Proyectos ANID Ejecutados desde Fuera",
+      "shortName": "ANID Extrarregionales",
+      "unit": "proyectos",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 36,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "anid extrarregionales",
+        "ciencia externa"
+      ]
+    },
+    {
+      "id": "proyectos_corfo_innova_count",
+      "canonicalId": "proyectos_corfo_innova_count",
+      "name": "Número de Proyectos CORFO Innova",
+      "shortName": "Proyectos CORFO",
+      "unit": "proyectos",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "proyectos corfo",
+        "numero corfo"
+      ]
+    },
+    {
+      "id": "centros_y_estaciones_ctci_count",
+      "canonicalId": "centros_y_estaciones_ctci_count",
+      "name": "Centros y Estaciones Científicas CTCi",
+      "shortName": "Centros CTCi",
+      "unit": "centros",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 36,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "centros cientificos",
+        "estaciones de campo",
+        "ciep",
+        "centros ctci"
+      ]
+    },
+    {
+      "id": "percepcion_ctci_prioritaria_pct_i1i",
+      "canonicalId": "percepcion_ctci_prioritaria_pct_i1i",
+      "name": "Valoración Ciudadana de Ciencia y Tecnología",
+      "shortName": "Valoración Ciencia",
+      "unit": "%",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 36,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "valoracion ciencia",
+        "importancia ciencia"
+      ]
+    },
+    {
+      "id": "pib_regional_nominal_mmclp",
+      "canonicalId": "pib_regional_nominal_mmclp",
+      "name": "Producto Interno Bruto (PIB) Regional Nominal (2015–2026)",
+      "shortName": "PIB Regional",
+      "unit": "MM$ CLP",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "tiempo",
+      "outlierBiased": false,
+      "synonyms": [
+        "pib",
+        "pib regional",
+        "producto interno bruto",
+        "crecimiento economico aysen"
       ]
     }
   ],

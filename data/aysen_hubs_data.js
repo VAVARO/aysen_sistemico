@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-22T20:41:18.318Z",
+  "generatedAt": "2026-11-25T13:14:10.051Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -23389,167 +23389,200 @@ window.AYSEN_HUBS_DATA = {
   "officialVariableSources": {
     "sinim": {
       "name": "SUBDERE - Sistema Nacional de Información Municipal (SINIM)",
-      "url": "https://datos.sinim.gov.cl",
+      "url": "https://datos.sinim.gov.cl/",
+      "dataYear": "SINIM 2024–2025",
       "collectionDate": "17 Oct 2026"
     },
     "fndr": {
       "name": "DIPRES / Gobierno Regional de Aysén (FNDR)",
-      "url": "https://www.dipres.gob.cl",
+      "url": "https://www.dipres.gob.cl/598/w3-propertyname-706.html",
+      "dataYear": "FNDR 2023–2025",
       "collectionDate": "17 Oct 2026"
     },
     "censo": {
       "name": "INE - Censo de Población y Vivienda 2024",
-      "url": "https://censo2024.ine.gob.cl",
+      "url": "https://censo2024.ine.gob.cl/",
+      "dataYear": "Censo 2024",
       "collectionDate": "17 Oct 2026"
     },
     "casen": {
       "name": "Ministerio de Desarrollo Social y Familia - Encuesta CASEN",
-      "url": "https://observatorio.ministeriodesarrollosocial.gob.cl",
+      "url": "https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen",
+      "dataYear": "CASEN 2022 SAE",
       "collectionDate": "17 Oct 2026"
     },
     "cead": {
       "name": "SPD - Centro de Estudios y Análisis del Delito (CEAD)",
-      "url": "https://cead.spd.gob.cl",
+      "url": "https://cead.minsegpublica.gob.cl/",
+      "dataYear": "CEAD 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "deis": {
       "name": "DEIS - Ministerio de Salud / Servicio de Salud Aysén",
-      "url": "https://deis.minsal.cl",
+      "url": "https://deis.minsal.cl/",
+      "dataYear": "DEIS 2024–2026",
       "collectionDate": "17 Oct 2026"
     },
     "mineduc": {
       "name": "Centro de Estudios MINEDUC / SLEP Aysén",
-      "url": "https://datosabiertos.mineduc.cl",
+      "url": "https://datosabiertos.mineduc.cl/",
+      "dataYear": "MINEDUC 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sernapesca": {
       "name": "SERNAPESCA / SUBPESCA",
-      "url": "https://www.sernapesca.cl",
+      "url": "https://www.sernapesca.cl/areas-de-accion/acuicultura/",
+      "dataYear": "SERNAPESCA 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sernageomin": {
       "name": "SERNAGEOMIN - Catastro Minero Nacional",
-      "url": "https://www.sernageomin.cl",
+      "url": "https://www.sernageomin.cl/mineria/",
+      "dataYear": "SERNAGEOMIN 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "seia": {
       "name": "Servicio de Evaluación Ambiental (SEA - SEIA)",
-      "url": "https://seia.sea.gob.cl",
+      "url": "https://seia.sea.gob.cl/",
+      "dataYear": "SEIA 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sii": {
       "name": "Servicio de Impuestos Internos (SII) - Estadísticas de Empresas",
-      "url": "https://www.sii.cl",
+      "url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
+      "dataYear": "SII AT 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "chilecompra": {
       "name": "Dirección ChileCompra - Datos Abiertos MercadoPúblico",
-      "url": "https://datos-abiertos.chilecompra.cl",
+      "url": "https://datos-abiertos.chilecompra.cl/",
+      "dataYear": "MercadoPúblico 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sag": {
       "name": "Servicio Agrícola y Ganadero (SAG)",
-      "url": "https://www.sag.gob.cl",
+      "url": "https://www.sag.gob.cl/",
+      "dataYear": "SAG 2024–2026",
       "collectionDate": "17 Oct 2026"
     },
     "cne": {
       "name": "Comisión Nacional de Energía (CNE)",
-      "url": "https://www.cne.cl",
+      "url": "https://energiaabierta.cl/",
+      "dataYear": "CNE 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sec": {
       "name": "Superintendencia de Electricidad y Combustibles (SEC)",
-      "url": "https://www.sec.cl",
+      "url": "https://www.sec.cl/",
+      "dataYear": "SEC 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "subtel": {
       "name": "Subsecretaría de Telecomunicaciones (SUBTEL)",
-      "url": "https://www.subtel.gob.cl",
+      "url": "https://www.subtel.gob.cl/",
+      "dataYear": "SUBTEL 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sernatur": {
       "name": "SERNATUR / INE Encuesta Mensual de Alojamiento Turístico (EMAT)",
-      "url": "https://www.sernatur.cl",
+      "url": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+      "dataYear": "EMAT 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "conaf": {
       "name": "CONAF - SNASPE y Catastro Vegetacional",
-      "url": "https://www.conaf.cl",
+      "url": "https://www.conaf.cl/centro-documental/visitacion-ap-2025/",
+      "dataYear": "CONAF 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "sinca_mma": {
       "name": "Ministerio del Medio Ambiente (SINCA / RCE) y DGA-MOP",
-      "url": "https://sinca.mma.gob.cl",
+      "url": "https://sinca.mma.gob.cl/",
+      "dataYear": "MMA SINCA 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "mincap": {
       "name": "MINCAP / Servicio Nacional del Patrimonio Cultural (SERPAT - CMN)",
-      "url": "https://www.patrimoniocultural.gob.cl",
+      "url": "https://ide.patrimoniocultural.gob.cl/",
+      "dataYear": "SERPAT/MINCAP 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "anid": {
       "name": "ANID DataCiencia / MinCiencia y CORFO",
-      "url": "https://dataciencia.anid.cl",
+      "url": "https://observa.minciencia.gob.cl/",
+      "dataYear": "ANID/CORFO 2024–2026",
       "collectionDate": "17 Oct 2026"
     },
     "mop_vialidad": {
       "name": "Ministerio de Obras Públicas - Dirección de Vialidad",
-      "url": "https://vialidad.mop.gob.cl",
+      "url": "https://www.vialidad.mop.gob.cl/",
+      "dataYear": "MOP Vialidad 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "emporcha": {
       "name": "Empresa Portuaria Chacabuco (EMPORCHA)",
-      "url": "https://chacabucoport.cl",
+      "url": "https://chacabucoport.cl/",
+      "dataYear": "EMPORCHA 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "mtt_dtpr": {
       "name": "Ministerio de Transportes y Telecomunicaciones - DTPR",
-      "url": "https://dtpr.mtt.gob.cl",
+      "url": "https://dtpr.mtt.gob.cl/",
+      "dataYear": "MTT DTPR 2025–2026",
       "collectionDate": "17 Oct 2026"
     },
     "jac": {
       "name": "Junta de Aeronáutica Civil (JAC) / DGAC",
-      "url": "https://www.jac.gob.cl",
+      "url": "https://www.jac.gob.cl/",
+      "dataYear": "JAC 2015–2026",
       "collectionDate": "17 Oct 2026"
     },
     "minvu": {
       "name": "Ministerio de Vivienda y Urbanismo (MINVU)",
-      "url": "https://www.minvu.gob.cl",
+      "url": "https://www.minvu.gob.cl/",
+      "dataYear": "MINVU 2024–2026",
       "collectionDate": "17 Oct 2026"
     },
     "odepa": {
       "name": "Oficina de Estudios y Políticas Agrarias (ODEPA) / INE",
-      "url": "https://www.odepa.gob.cl",
+      "url": "https://www.odepa.gob.cl/",
+      "dataYear": "Censo Agropecuario 2021 / ODEPA",
       "collectionDate": "17 Oct 2026"
     },
     "dga": {
       "name": "Dirección General de Aguas (DGA) - Inventario Glaciares",
-      "url": "https://dga.mop.gob.cl",
+      "url": "https://dga.mop.gob.cl/",
+      "dataYear": "DGA Inventario Glaciares 2022–2026",
       "collectionDate": "17 Oct 2026"
     },
     "barometro": {
       "name": "Universidad de Aysén — Barómetro Patagonia",
-      "url": "https://uaysen.cl",
+      "url": "https://uaysen.cl/",
+      "dataYear": "Barómetro Patagonia 2025",
       "collectionDate": "17 Oct 2026"
     },
     "cplt": {
       "name": "Consejo para la Transparencia (CPLT) — Fiscalización Transparencia Activa 2026",
-      "url": "https://www.consejotransparencia.cl",
+      "url": "https://www.consejotransparencia.cl/",
+      "dataYear": "CPLT 2026",
       "collectionDate": "2026"
     },
     "gore_fndr_datosgob": {
       "name": "GORE Aysén (datos.gob.cl CKAN) / BCN-SUBDERE Royalty Minero FET",
       "url": "https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005",
-      "collectionDate": "2015–2025 (corte 22 Jul 2026)"
+      "dataYear": "FNDR / Royalty 2015–2025",
+      "collectionDate": "22 Jul 2026"
     },
     "bidat_rsh": {
       "name": "Ministerio de Desarrollo Social y Familia (BIDAT) — Registro Social de Hogares",
       "url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101",
+      "dataYear": "RSH Jun 2026",
       "collectionDate": "Junio 2026"
     },
     "servel_hist": {
       "name": "SERVEL / TRICEL / Congreso Nacional / GORE Aysén (Histórico 1989–2026)",
-      "url": "https://www.goreaysen.cl/consejeros-regionales/",
+      "url": "https://www.servel.cl/",
+      "dataYear": "SERVEL 1989–2026",
       "collectionDate": "17 Nov 2026"
     }
   },
