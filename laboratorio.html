@@ -15251,6 +15251,11 @@
           res.effectiveSliceLabel = w.filterComunas.length === 4 ? 'Comunas Marítimas (4)' : `${w.filterComunas.length} comunas seleccionadas`;
         }
         if (res.dim === 'comuna' && Array.isArray(allowed)) {
+          if (allowed.length === 1) {
+            res.highlightComuna = allowed[0];
+            if (!w.highlightEntity) w.highlightEntity = allowed[0];
+            res.effectiveSliceLabel = `${allowed[0]} (resaltada sobre 10 comunas)`;
+          } else {
             const allowedNorm = allowed.map(a => normStr(a));
             const keep = [];
             res.labels.forEach((lbl, i) => {
@@ -15266,6 +15271,7 @@
               res.dataX = keep.map(i => res.dataX[i]);
               res.dataY = keep.map(i => res.dataY[i]);
             }
+          }
         }
 
         // 1.1 Exclusión de Outlier Coyhaique (intersección estricta tras filtro territorial)
@@ -19627,6 +19633,16 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }
 
         loadSavedOrPreset();
+        const singleComunaFromUrl = slicerParam ? resolveSingleComunaFromSlicer(slicerParam) : null;
+        if (singleComunaFromUrl) {
+          clearAll({ skipHistory: true });
+          loadComunaBrechasWorkspace(singleComunaFromUrl);
+          finishHydration();
+          return;
+        }
+        if (AppState.widgets.length === 0 && params.get('empty') !== '1') {
+          loadDefaultLiveWorkspace();
+        }
         if (slicerParam) {
           const selectSlicer = document.getElementById('selectTerritorialSlicer');
           if (TERRITORIAL_SLICES[slicerParam] && selectSlicer && selectSlicer.querySelector(`option[value="${slicerParam}"]`)) {
@@ -19643,6 +19659,106 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           updateConnections();
         }
         finishHydration();
+      }
+
+      function resolveSingleComunaFromSlicer(rawVal) {
+        if (!rawVal || rawVal === 'all') return null;
+        const rawStr = String(rawVal).trim();
+        if (TERRITORIAL_SLICES[rawStr] && TERRITORIAL_SLICES[rawStr].length === 1) {
+          return TERRITORIAL_SLICES[rawStr][0];
+        }
+        const matched = COMUNAS_ORDER.find(c => normStr(c) === normStr(rawStr));
+        return matched || null;
+      }
+
+      function loadDefaultLiveWorkspace() {
+        const disc0 = window.AYSEN_DISCOVERIES_DATA?.curatedDiscoveries?.[0] || null;
+        const wMap = createWidget('map', {
+          varX: 'concesiones_salmon',
+          spatialLayer: 'auto',
+          showBuffers: true,
+          title: 'Mapa Territorial de Aysén — Concesiones y Áreas SNASPE',
+          x: 80, y: 92, w: 540, h: 400
+        });
+        const wChart = createWidget('chart', {
+          varX: disc0?.varX || 'escuelas_rurales_multigrado_n',
+          varY: disc0?.varY || 'postas_salud_rural',
+          chartType: 'scatter',
+          showTrend: true,
+          showAverage: true,
+          title: disc0?.headline || 'Escuelas Rurales Multigrado vs. Postas de Salud Rural',
+          x: 650, y: 92, w: 560, h: 400
+        });
+        if (wMap && wChart) addConnection(wMap.id, wChart.id, 'sync');
+        syncHeroVisibility();
+        renderWindowTabs();
+        updateStatus();
+        updateConnections();
+        setTimeout(fitAndCenterCanvas, 120);
+      }
+
+      function loadComunaBrechasWorkspace(comunaName) {
+        const explain = window.AYSEN_DISCOVERIES_DATA?.comunasExplain?.[comunaName] || null;
+        const catalogIds = new Set((AppState.catalogItems || []).map(v => v.id));
+        const picked = [];
+        const addIfValid = (k) => {
+          if (k && catalogIds.has(k) && !picked.includes(k)) picked.push(k);
+        };
+        if (explain) {
+          (explain.topAboveRegionalMean || []).forEach(it => {
+            if (picked.length < 2) addIfValid(it.varKey);
+          });
+          (explain.topBelowRegionalMean || []).forEach(it => {
+            if (picked.length < 3) addIfValid(it.varKey);
+          });
+        }
+        ['indice_aislamiento_multimodal', 'dependencia_fcm_pct', 'saidi_horas_anual'].forEach(fk => {
+          if (picked.length < 3) addIfValid(fk);
+        });
+
+        const matchedKey = Object.keys(TERRITORIAL_SLICES).find(
+          k => k.startsWith('comuna_') && normStr(TERRITORIAL_SLICES[k][0]) === normStr(comunaName)
+        );
+        const selectSlicer = document.getElementById('selectTerritorialSlicer');
+        if (matchedKey) {
+          AppState.territorialFilter = matchedKey;
+          AppState._userSelectedTerritorialFilter = true;
+          if (selectSlicer && selectSlicer.querySelector(`option[value="${matchedKey}"]`)) {
+            selectSlicer.value = matchedKey;
+          }
+        } else {
+          AppState.territorialFilter = 'all';
+        }
+
+        const created = [];
+        picked.slice(0, 3).forEach((varKey, idx) => {
+          const catItem = AppState.catalogItems.find(v => v.id === varKey);
+          const varLabel = catItem?.shortName || catItem?.name || varKey;
+          const w = createWidget('chart', {
+            varX: varKey,
+            chartType: 'bar',
+            showAverage: true,
+            title: `${comunaName} en la Región: ${varLabel}`,
+            x: 60 + idx * 450,
+            y: 92,
+            w: 420,
+            h: 370
+          });
+          if (w) created.push(w);
+        });
+        for (let i = 1; i < created.length; i++) {
+          addConnection(created[i - 1].id, created[i].id, 'sync');
+        }
+        AppState.selectedEntity = null;
+        toggleCrossHighlight(comunaName, null);
+        syncHeroVisibility();
+        renderWindowTabs();
+        updateStatus();
+        updateConnections();
+        setTimeout(fitAndCenterCanvas, 120);
+        if (typeof showToast === 'function') {
+          showToast(`Perfil de ${comunaName}: resaltada frente a las 10 comunas en sus 3 mayores brechas regionales.`);
+        }
       }
 
       // =======================================================================
@@ -20579,6 +20695,19 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               AppState.excludeCoyhaique = false;
               const btnEx = document.getElementById('btnExcludeCoyhaique');
               if (btnEx) btnEx.classList.remove('active');
+              AppState.selectedEntity = null;
+              AppState.widgets.forEach(w => { w.highlightEntity = null; });
+            } else {
+              const singleComuna = resolveSingleComunaFromSlicer(e.target.value);
+              if (singleComuna) {
+                if (AppState.widgets.length === 0) {
+                  loadComunaBrechasWorkspace(singleComuna);
+                  autoSave();
+                  return;
+                }
+                AppState.selectedEntity = singleComuna;
+                AppState.widgets.forEach(w => { w.highlightEntity = singleComuna; });
+              }
             }
             AppState.widgets.forEach(w => {
               renderWidgetVisual(w);

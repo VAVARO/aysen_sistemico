@@ -1033,6 +1033,9 @@
           onlyFocusedComunas: spec.onlyFocusedComunas !== undefined ? Boolean(spec.onlyFocusedComunas) : hasFocusedScope,
           multiCharts: Array.isArray(spec.multiCharts) ? spec.multiCharts : null,
           highlightComuna: spec.highlightComuna || null,
+          wantsMap: Boolean(spec.wantsMap),
+          mapVarX: spec.mapVarX || null,
+          queryText: spec.queryText || '',
           summary: spec.summary || ''
         });
 
@@ -1117,8 +1120,40 @@
         const cts = currentChartState.customTemporalSeries;
         const isMulti = Array.isArray(currentChartState.multiCharts) && currentChartState.multiCharts.length > 1;
         let handledAsCards = false;
+        const isSpatialQuery = Boolean(currentChartState.wantsMap) ||
+          /\b(mapa|georreferencia\w*|ubicacion\w*|superpon\w*|superposicion|poligonos?\s+snaspe|fiordos?)\b/i.test(String(currentChartState.queryText || ''));
 
-        if (cts && currentChartState.type === 'line') {
+        if (isSpatialQuery) {
+          const mapVar = currentChartState.mapVarX ||
+            (/(salmon|concesion|acuicol|fiordo|snaspe)/i.test(`${currentChartState.queryText || ''} ${currentChartState.varX || ''} ${currentChartState.varY || ''}`)
+              ? 'concesiones_salmon'
+              : (currentChartState.varX || 'concesiones_salmon'));
+          const cardsPayload = [
+            {
+              t: 'map',
+              x: mapVar,
+              sl: 'auto',
+              sb: 1,
+              ti: mapVar === 'concesiones_salmon'
+                ? 'Mapa de Concesiones de Salmón y Áreas Protegidas SNASPE'
+                : (currentChartState.title || 'Mapa Territorial de Aysén'),
+              bx: 80, by: 92, bw: 580, bh: 420
+            }
+          ];
+          if (currentChartState.varX) {
+            cardsPayload.push({
+              t: 'chart',
+              x: currentChartState.varX,
+              y: currentChartState.varY || null,
+              c: currentChartState.type === 'scatter' ? 'scatter' : 'bar',
+              tr: currentChartState.type === 'scatter' ? 1 : 0,
+              ti: currentChartState.title || 'Evidencia Comunal Asociada',
+              bx: 690, by: 92, bw: 520, bh: 420
+            });
+          }
+          url.searchParams.set('cards', JSON.stringify(cardsPayload));
+          handledAsCards = true;
+        } else if (cts && currentChartState.type === 'line') {
           const firstLbl = String((cts.labels && cts.labels[0]) || '');
           const isMonthlyEmat = currentChartState.varX === 'pernoctaciones_emat' ||
             (/^(ene|jan)/i.test(firstLbl) && Array.isArray(cts.labels) && cts.labels.length === 12);
@@ -1259,6 +1294,7 @@
 
             applyChartSpec(Object.assign({}, res.chart, {
               sourceText: srcFromRes,
+              queryText: text,
               summary: res.reply || ''
             }));
           } else {

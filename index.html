@@ -516,6 +516,16 @@
           <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 text-primary pointer-events-none" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <kbd class="hidden sm:inline-block absolute right-2 top-1/2 -translate-y-1/2 font-mono text-[10px] text-muted border border-border-subtle rounded px-1 py-0.5 bg-surface-alt pointer-events-none">/</kbd>
         </div>
+        <button
+          type="button"
+          id="btn-download-master-csv"
+          onclick="exportMasterComunasCsv()"
+          class="px-3 py-1.5 rounded-sm text-xs font-mono font-semibold border border-primary/30 bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-150 shrink-0 cursor-pointer"
+          title="Descargar Matriz Maestra CSV (10 comunas × 236 variables) con metadatos institucionales y UTF-8 BOM"
+          aria-label="Descargar Matriz Maestra CSV de 10 comunas por 236 variables"
+        >
+          <span>Matriz Maestra CSV (10×236) ↓</span>
+        </button>
         <input type="hidden" id="mobile-search-input" />
       </div>
 
@@ -3711,6 +3721,104 @@
     }
 
     window.openComunaProfileModal = openComunaDrawerByIne;
+
+    function resolveMasterCsvMeta(colKey) {
+      const k = String(colKey || '').toLowerCase();
+      const offMap = (AppState.data && AppState.data.officialVariableSources) || {};
+      let src = offMap.sinim || { name: 'Aysén Sistémico', dataYear: '2024–2026' };
+
+      if (/transparencia_activa_cplt/.test(k) && offMap.cplt) src = offMap.cplt;
+      else if (/gore_fndr_datosgob|fet_royalty|royalty_fet_peso|fndr_gore_|fondos_concursables_gore|ingresos_mun_bcn/.test(k) && offMap.gore_fndr_datosgob) src = offMap.gore_fndr_datosgob;
+      else if (/rsh_|hacinamiento_jun2026|carencia_servicios/.test(k) && offMap.bidat_rsh) src = offMap.bidat_rsh;
+      else if (/participacion_presidencial|participacion_municipales_2024|padron_electoral|ratio_padron_poblacion|ruralidad_censo/.test(k) && offMap.servel_hist) src = offMap.servel_hist;
+      else if (/conexiones_fijas_subtel|conexiones_residenciales_subtel|variacion_conexiones_2015|internet_fijo|estado_foa|cobertura_fibra|establecimientos_educacion_conectados/.test(k) && offMap.subtel) src = offMap.subtel;
+      else if (/glaciar|glaciares|dias_sobre_norma_mp25|episodios_gec|fauna_|cobertura_vegetal|especies_exoticas|expedientes_fiscalizacion|amenaza_volcanica/.test(k) && offMap.sinca_mma) src = offMap.sinca_mma;
+      else if (/museos_|bibliotecas_|monumentos_|fondart|total_espacios_culturales|cultura|patrimonio/.test(k) && offMap.mincap) src = offMap.mincap;
+      else if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|inversion_directa|ingresos_propios|juntas_vecinos/.test(k) && offMap.sinim) src = offMap.sinim;
+      else if (/fndr_|inversion_fndr/.test(k) && offMap.fndr) src = offMap.fndr;
+      else if (/poblacion_censo|superficie_km2|densidad_hab|porcentaje_regional|indice_envejecimiento|indice_masculinidad|autoidentificacion_indigena|comuna_ine|codigo_comuna|nombre|provincia|cabecera/.test(k) && offMap.censo) src = offMap.censo;
+      else if (/pobreza_|casen/.test(k) && offMap.casen) src = offMap.casen;
+      else if (/tasa_vif|tasa_dmcs|delitos_/.test(k) && offMap.cead) src = offMap.cead;
+      else if (/medicos_|camas_hosp|camas_psiq|urgencias_|espera_|aeroevacuaciones|traslado_|postas_|salud_|esperanza_vida|empam|pscv|cancer_|suicidio|establecimientos_aps/.test(k) && offMap.deis) src = offMap.deis;
+      else if (/matricula_|establecimientos_escolares|escuelas_|slep/.test(k) && offMap.mineduc) src = offMap.mineduc;
+      else if (/concesiones_salmon|centros_activos|biomasa_|antibioticos|desembarque|amerb|ecmpo|sindicatos_pesca|holdings_operadores/.test(k) && offMap.sernapesca) src = offMap.sernapesca;
+      else if (/concesiones_mineras/.test(k) && offMap.sernageomin) src = offMap.sernageomin;
+      else if (/proyectos_seia|inversion_seia|seia_/.test(k) && offMap.seia) src = offMap.seia;
+      else if (/empresas_sii|trabajadores_sii|ventas_sii|ventas_por_empresa|banca_privada|cajavecina/.test(k) && offMap.sii) src = offMap.sii;
+      else if (/compras_locales|fuga_compras/.test(k) && offMap.chilecompra) src = offMap.chilecompra;
+      else if (/parcelaciones_sag/.test(k) && offMap.sag) src = offMap.sag;
+      else if (/saidi_/.test(k) && offMap.sec) src = offMap.sec;
+      else if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|subsidio_fiscal|costo_diesel|costo_real_generacion|precio_lena|hogares_lena|consumo_lena|informalidad_lena|generacion_/.test(k) && offMap.cne) src = offMap.cne;
+      else if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|ocupacion_estival|ocupacion_invernal|concentracion_estival|estadia_promedio|gasto_diario_turista|tarifa_adr|revpar|visitas_por_/.test(k) && offMap.sernatur) src = offMap.sernatur;
+      else if (/visitantes_|superficie_snaspe|suelo_fiscal|suelo_privado|bosque_nativo|plantaciones_ha|ha_snaspe|ruta7|unidades_snaspe/.test(k) && offMap.conaf) src = offMap.conaf;
+      else if (/proyectos_anid|monto_anid|innovacion_corfo|proyectos_ctci|total_proyectos_ctci|investigadores|centros_y_estaciones|proporcion_ciencia|monto_corfo/.test(k) && offMap.anid) src = offMap.anid;
+      else if (/barometro|nota_percepcion|participacion_cultural|percepcion_ctci/.test(k) && offMap.barometro) src = offMap.barometro;
+      else if (/red_vial|distancia_coyhaique|tiempo_viaje|dependencia_barcaza|indice_aislamiento/.test(k) && offMap.mop_vialidad) src = offMap.mop_vialidad;
+      else if (/aerodromo|pista_aerodromo/.test(k) && offMap.jac) src = offMap.jac;
+      else if (/deficit_habitacional|ssr_apr/.test(k) && offMap.minvu) src = offMap.minvu;
+      else if (/ganado_/.test(k) && offMap.odepa) src = offMap.odepa;
+
+      const sampleVal = AppState.data && AppState.data.comunas && AppState.data.comunas[0] ? AppState.data.comunas[0][colKey] : null;
+      let unit = 'unidades';
+      if (typeof sampleVal === 'string') unit = 'texto';
+      else if (/_pct$|_pct_/.test(k)) unit = '%';
+      else if (/_mclp$/.test(k)) unit = 'M$ CLP';
+      else if (/_clp$/.test(k)) unit = '$ CLP';
+      else if (/_mmusd$/.test(k)) unit = 'MM US$';
+      else if (/_usd$/.test(k)) unit = 'US$';
+      else if (/_km2$/.test(k)) unit = 'km2';
+      else if (/_km$/.test(k)) unit = 'km';
+      else if (/_hrs$|_horas/.test(k)) unit = 'horas';
+      else if (/_dias$/.test(k)) unit = 'dias';
+      else if (/_ton$/.test(k)) unit = 'toneladas';
+      else if (/_100k$/.test(k)) unit = 'por 100k hab';
+      else if (/_ha$/.test(k)) unit = 'hectareas';
+      else if (/_n$/.test(k)) unit = 'conteo';
+
+      return {
+        unit,
+        sourceName: src.name || 'Aysén Sistémico',
+        dataYear: src.dataYear || src.collectionDate || '2024–2026'
+      };
+    }
+
+    function escapeCsvCell(val) {
+      const s = val === null || val === undefined ? '' : String(val);
+      if (/[",\n\r]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+      return s;
+    }
+
+    function exportMasterComunasCsv() {
+      const comunas = (AppState.data && Array.isArray(AppState.data.comunas)) ? AppState.data.comunas : [];
+      if (comunas.length === 0) return null;
+      const cols = Object.keys(comunas[0]);
+      const metas = cols.map(c => resolveMasterCsvMeta(c));
+
+      const lines = [
+        cols.map(escapeCsvCell).join(','),
+        cols.map((c, idx) => escapeCsvCell(idx === 0 ? '# METADATO_UNIDAD' : metas[idx].unit)).join(','),
+        cols.map((c, idx) => escapeCsvCell(idx === 0 ? '# METADATO_FUENTE' : metas[idx].sourceName)).join(','),
+        cols.map((c, idx) => escapeCsvCell(idx === 0 ? '# METADATO_ANIO_DATO' : metas[idx].dataYear)).join(',')
+      ];
+      comunas.forEach(row => {
+        lines.push(cols.map(c => escapeCsvCell(row[c])).join(','));
+      });
+
+      const csvContent = '\uFEFF' + lines.join('\n') + '\n';
+      if (typeof Blob !== 'undefined' && typeof URL !== 'undefined' && typeof document !== 'undefined') {
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const dlUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = dlUrl;
+        a.download = 'aysen_matriz_maestra_10_comunas_236_vars.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(dlUrl), 1000);
+      }
+      return csvContent;
+    }
+    window.exportMasterComunasCsv = exportMasterComunasCsv;
 
     let currentDrawerTableData = { heading: '', columns: [], rows: [] };
 

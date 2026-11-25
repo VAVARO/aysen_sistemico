@@ -1044,9 +1044,9 @@
     inversion_por_proyecto_seia_mmusd: ['ticket promedio seia', 'inversion por proyecto seia'],
     suelo_fiscal_bbnn_pct: ['suelo fiscal', 'bienes nacionales', 'porcentaje suelo fiscal'],
     suelo_privado_pct: ['suelo privado', 'propiedad privada', 'porcentaje de suelo privado', 'porcentaje suelo privado'],
-    fndr_per_capita_mclp: ['fndr per capita', 'inversion fndr por habitante'],
-    fndr_gore_2023_per_capita_mclp: ['fndr 2023 per capita', 'fndr ejecutado per capita'],
-    royalty_fet_peso_presupuesto_pct: ['peso royalty', 'porcentaje royalty presupuesto', 'royalty sobre presupuesto'],
+    fndr_per_capita_mclp: ['fndr per capita', 'inversion fndr por habitante', 'inversion fndr per capita'],
+    fndr_gore_2023_per_capita_mclp: ['fndr 2023 per capita', 'fndr ejecutado per capita', 'fndr ejecutada per capita', 'inversion fndr ejecutada per capita', 'inversion fndr per capita', 'fndr per capita'],
+    royalty_fet_peso_presupuesto_pct: ['peso royalty', 'porcentaje royalty presupuesto', 'royalty sobre presupuesto', 'peso tiene en su presupuesto', 'peso en el presupuesto', 'peso en su presupuesto', 'peso presupuesto royalty'],
     participacion_municipales_2024_pct: ['participacion municipales 2024', 'elecciones municipales 2024'],
     ratio_padron_poblacion_pct: ['ratio padron poblacion', 'padron sobre poblacion'],
     indice_aislamiento_multimodal: ['indice de aislamiento', 'aislamiento multimodal', 'vulnerabilidad energetico digital'],
@@ -2257,7 +2257,8 @@
     }
 
     // 4. Pobreza multidimensional vs ingresos (CASEN MDSF)
-    if (/\b(pobreza multidimensional|multidimensional.*ingresos|ingresos.*multidimensional|casen multidimensional|pobreza monetaria.*multidimensional)\b/i.test(qNorm)) {
+    if (/\b(pobreza multidimensional|multidimensional.*ingresos|ingresos.*multidimensional|casen multidimensional|pobreza monetaria.*multidimensional)\b/i.test(qNorm) &&
+        !/\b(fndr|royalty|saidi|tarifa|salmon|biomasa|concesion\w*|presupuesto|medicos|empam|turismo|pernoctacion\w*|seia|glaciar\w*|lena|mp25)\b/i.test(qNorm)) {
       return 'pobreza_multidim';
     }
 
@@ -3067,10 +3068,25 @@
           .map(e => `${e.name} $${fmtNumber(e.raw.fet_royalty_minero_2025_mclp, 2)} MM`)
           .join(', ');
         const reply = `En cartera GORE/DIPRES (datos.gob.cl), el FNDR 2023 ejecutó $${exec23.toLocaleString('es-CL')} MM de $${asig23.toLocaleString('es-CL')} MM en ${init23} iniciativas (${pct23}%), con presupuestos DIPRES de $75.543 MM (2024) y $82.313 MM estimado (2025), y tasa promedio SNI RS comunal de 31,5%. Vía SUBDERE/BCN, el Fondo de Equidad Territorial (FET) Royalty Minero 2025 transfirió $${fmtNumber(sumRoy25, 2)} MM a las 10 comunas (+${fmtNumber(pctVarRoy, 1)}% frente a $${fmtNumber(sumRoy24, 2)} MM en 2024): ${royDesglose}. Relativamente, equivale al 13,6% del presupuesto en Tortel y 13,0% en O'Higgins frente a 1,8% en Coyhaique.`;
-        const sources = resolveSourcesForKeys(['fet_royalty_minero_2025_mclp', 'fndr_gore_2023_ejecutado_mclp']);
+        const asksBudgetWeight = /\b(peso\b|porcentaje|proporcion|incidencia|participacion)\b/i.test(qNorm) && /\b(presupuesto|municipal)\b/i.test(qNorm);
+        const sources = resolveSourcesForKeys(
+          asksBudgetWeight
+            ? ['fet_royalty_minero_2025_mclp', 'royalty_fet_peso_presupuesto_pct']
+            : ['fet_royalty_minero_2025_mclp', 'fndr_gore_2023_ejecutado_mclp']
+        );
         return {
           reply,
-          chart: {
+          chart: asksBudgetWeight ? {
+            render: true,
+            type: 'scatter',
+            varX: 'fet_royalty_minero_2025_mclp',
+            varY: 'royalty_fet_peso_presupuesto_pct',
+            yKey: 'fet_royalty_minero_2025_mclp',
+            y2Key: 'royalty_fet_peso_presupuesto_pct',
+            title: 'Royalty Minero FET 2025 (MM$ CLP) vs. Peso sobre Presupuesto Municipal (%)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          } : {
             render: true,
             type: 'bar',
             varX: 'fet_royalty_minero_2025_mclp',
@@ -4253,7 +4269,11 @@
 
     const excludeCoyhaique = /(sin coyhaique|excluir coyhaique|excepto coyhaique|sacar coyhaique|sin la capital)/.test(qNorm);
     const isEnglishQuery = /\b(which|what|how|where|we are|evaluating|communes|highest|lowest|available|overnight stays|across the region|show me|comparing|firewood)\b/i.test(rawQuery);
-    const wantsScatter = /(cruza|cruzar|correlacion|vs\b|versus|frente a|contra|relacion entre|como afecta|afecta a|impacta en|incide en|influye en|asociacion entre|comparar .+ con|scatter|dispersion|comparing .+ and)/.test(qNorm);
+    const wantsScatter = /(cruza|cruzar|correlacion|vs\b|versus|frente a|contra|relacion entre|como afecta|afecta a|impacta en|incide en|influye en|asociacion entre|comparar .+ con|pero\s+(?:mayor|menor|mas|menos)|scatter|dispersion|comparing .+ and)/.test(qNorm);
+    const wantsSpatialMap = /\b(mapa|mapear|georreferencia\w*|ubicacion\w*|superpon\w*|superposicion|poligonos?\s+snaspe|fiordos?|donde\s+(?:estan|se\s+ubican|se\s+superponen|hay))\b/i.test(qNorm);
+    const spatialMapVarX = /(salmon|concesion\w*|acuicol\w*|fiordo\w*|snaspe)/i.test(qNorm)
+      ? 'concesiones_salmon'
+      : (/(hospital\w*|posta\w*|salud|camas)/i.test(qNorm) ? 'camas_hospitalarias' : null);
     const wantsBivariateComparison = wantsScatter || /(como se comparan|como contrasta|comparado con|junto con|y sus|y los|y las|\bto\b|\band how\b|\bacross the\b)/.test(qNorm);
     const qNoTravelTime = qNorm.replace(/\btiempo\s+(?:de\s+)?(?:traslado|viaje|desplazamiento)(?:\s+(?:a|hacia|hasta)\s+(?:coyhaique(?:\s+balmaceda)?|balmaceda))?\b/g, ' ');
     const wantsTemporal = /\b(evolucion\w*|historic\w*|serie\w*|anual\w*|mensual\w*|2015|2016|2017|2018|2019|2020|2021|2022|2023|2025|2026|tendencia|mes a mes|estacionalidad|enero a diciembre|desde \d{4} hasta \d{4})\b/.test(qNoTravelTime) ||
@@ -5174,6 +5194,7 @@
     const highScoredDistinct = distinctDomainTop.filter(i => i.score >= 16);
     const distinctHighHubs = new Set(highScoredDistinct.slice(0, 4).map(i => i.variable.hub));
     const hasExplicitMultiList = /\b(compara\w*|cruza\w*|contrasta\w*|relacion\s+entre)\b/i.test(qNorm) ||
+      /\b(pero\s+(?:mayor|menor|mas|menos|alta|baja|peor|mejor)|vs\b|versus|frente\s+a|contra)\b/i.test(qNorm) ||
       (/\b(como\s+se\s+distribuy\w*|distribucion\s+de)\b/i.test(qNorm) && rawQuery.includes(',') && /\s+(?:y|e)\s+/i.test(qNorm)) ||
       (rawQuery.match(/,/g) || []).length >= 2;
     const isExplicitMultiVariableComparison = hasExplicitMultiList && (
@@ -5206,6 +5227,12 @@
             return row;
           })
           : [];
+        if (wantsSpatialMap && topicReply.chart) {
+          topicReply.chart = Object.assign({}, topicReply.chart, {
+            wantsMap: true,
+            mapVarX: spatialMapVarX || topicReply.chart.varX || 'concesiones_salmon'
+          });
+        }
         return {
           query: rawQuery,
           qNorm,
@@ -5661,7 +5688,9 @@
                     : (secondaryLabel ? `${primaryLabel} vs. ${secondaryLabel}` : `${primaryLabel} por Comuna`)))
             : `${primaryLabel} por Comuna`),
       sourceText,
-      excludeCoyhaique
+      excludeCoyhaique,
+      wantsMap: wantsSpatialMap,
+      mapVarX: wantsSpatialMap ? (spatialMapVarX || primaryKey || 'concesiones_salmon') : null
     };
 
     if (hasTourismTemporalSeries) {

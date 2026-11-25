@@ -715,8 +715,8 @@ variables = [
         "dim": "comuna",
         "outlierBiased": False,
         "synonyms": [
-            "tarifa de luz", "boleta de luz", "cuenta de luz", "precio del kwh",
-            "tarifa bt1", "cuanto cuesta la luz", "electricidad residencial",
+            "tarifa de luz", "tarifa electrica", "tarifa de electricidad", "boleta de luz", "cuenta de luz", "precio del kwh",
+            "tarifa bt1", "cuanto cuesta la luz", "electricidad residencial", "precio electricidad", "precio de la luz", "valor kwh",
             "cobro electrico", "costo energia electrica"
         ]
     },
@@ -1756,7 +1756,7 @@ REQUIRED_SYNONYMS_BY_VAR = {
     "precio_lena_m3": ["precio lena", "precio de lena", "cuanto vale la lena", "costo metro cubico lena", "metro de lena", "lena seca"],
     # 5. Electricidad
     "saidi_horas_anual": ["cortes de luz", "apagones", "interrupciones electricas", "saidi", "horas sin luz", "falla de luz"],
-    "tarifa_bt1_clp": ["tarifa de luz", "tarifa bt1", "boleta de luz", "precio del kwh", "tarifa electrica bt1", "cuanto cuesta la luz"],
+    "tarifa_bt1_clp": ["tarifa de luz", "tarifa electrica", "tarifa de electricidad", "tarifa bt1", "boleta de luz", "precio del kwh", "tarifa electrica bt1", "cuanto cuesta la luz", "precio electricidad", "precio de la luz", "valor kwh"],
     "costo_diesel_aislado_clp": ["costo diesel", "diesel aislado", "generador diesel", "sistemas aislados diesel"],
     # 6. Conectividad
     "ruta7_ripio_km": ["caminos de ripio", "ripio", "camino de tierra", "carretera de ripio", "ruta 7 ripio", "carretera austral ripio"],
