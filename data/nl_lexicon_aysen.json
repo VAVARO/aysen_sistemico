@@ -3604,6 +3604,300 @@
         "producto interno bruto",
         "crecimiento economico aysen"
       ]
+    },
+    {
+      "id": "patente_acuicola_pua_mclp",
+      "canonicalId": "patente_acuicola_pua_mclp",
+      "name": "Ingreso Municipal por Patente Única de Acuicultura Art. 84 LGPA",
+      "shortName": "Patente Acuícola PUA",
+      "unit": "M$ CLP/año",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "patente acuicola",
+        "patentes salmoneras",
+        "pua",
+        "articulo 84 lgpa",
+        "tributos salmoneros",
+        "impuestos salmoneras municipio",
+        "ingresos patentes acuicolas"
+      ]
+    },
+    {
+      "id": "peso_pua_ingresos_propios_pct",
+      "canonicalId": "peso_pua_ingresos_propios_pct",
+      "name": "Peso de la Patente Acuícola (PUA) sobre Ingresos Propios Municipales (%)",
+      "shortName": "Peso PUA / IPP (%)",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "peso patente acuicola ingresos propios",
+        "dependencia patente salmonera",
+        "pua sobre ingresos propios",
+        "dependencia tributaria acuicultura"
+      ]
+    },
+    {
+      "id": "superficie_concesionada_mar_ha",
+      "canonicalId": "superficie_concesionada_mar_ha",
+      "name": "Superficie Marina Concesionada de Acuicultura (SUBPESCA)",
+      "shortName": "Superficie Marina Acuíc.",
+      "unit": "ha",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "superficie concesionada acuicultura",
+        "hectareas concesionadas salmon",
+        "hectareas marinas acuicolas"
+      ]
+    },
+    {
+      "id": "empleo_directo_acuicola_n",
+      "canonicalId": "empleo_directo_acuicola_n",
+      "name": "Empleo Directo en Salmonicultura (Centros + Plantas + Soporte)",
+      "shortName": "Empleo Directo Salmón",
+      "unit": "trabajadores",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "empleo directo salmon",
+        "trabajadores salmoneros",
+        "empleo plantas de proceso chacabuco",
+        "empleo acuicola directo"
+      ]
+    },
+    {
+      "id": "sancionatorios_sma_acuicolas_n",
+      "canonicalId": "sancionatorios_sma_acuicolas_n",
+      "name": "Procedimientos Sancionatorios SMA en Centros Acuícolas (SNIFA)",
+      "shortName": "Sancionatorios SMA Acuícola",
+      "unit": "expedientes",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 9,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "sanciones sma",
+        "snifa",
+        "sobreproduccion salmones",
+        "fiscalizacion ambiental salmoneras",
+        "expedientes sancionatorios sma acuicolas"
+      ]
+    },
+    {
+      "id": "centros_infa_anaerobica_n",
+      "canonicalId": "centros_infa_anaerobica_n",
+      "name": "Centros Acuícolas con Condición INFA Anaeróbica Subyacente",
+      "shortName": "Centros INFA Anaeróbica",
+      "unit": "centros",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 9,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "infa anaerobica",
+        "fondo marino sin oxigeno",
+        "centros anaerobicos infa",
+        "sedimento anaerobico salmoneras"
+      ]
+    },
+    {
+      "id": "ecmpo_traslape_acuicola_n",
+      "canonicalId": "ecmpo_traslape_acuicola_n",
+      "name": "Concesiones Afectadas por Traslape ECMPO (Art. 10 Ley 20.249)",
+      "shortName": "Traslape ECMPO Acuícola",
+      "unit": "concesiones",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "traslape ecmpo acuicola",
+        "concesiones suspendidas ecmpo",
+        "articulo 10 ley 20249"
+      ]
+    },
+    {
+      "id": "desembarque_muelles_total_ton",
+      "canonicalId": "desembarque_muelles_total_ton",
+      "name": "Descarga Física Total en Muelles (Incl. Zona Contigua)",
+      "shortName": "Descarga Total Muelles",
+      "unit": "ton/año",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "descarga total muelles",
+        "desembarque zona contigua los lagos",
+        "transferencia fisica caletas"
+      ]
+    },
+    {
+      "id": "sancionatorios_sma_por_holding",
+      "canonicalId": "sancionatorios_sma_por_holding",
+      "name": "Expedientes Sancionatorios SMA-SNIFA por Holding",
+      "shortName": "Sanciones SMA por Holding",
+      "unit": "expedientes",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 7,
+      "dim": "holding",
+      "outlierBiased": false,
+      "synonyms": [
+        "sanciones sma por holding",
+        "snifa holdings salmoneros",
+        "sobreproduccion australis aquachile"
+      ]
+    },
+    {
+      "id": "acs_concesiones_totales",
+      "canonicalId": "acs_concesiones_totales",
+      "name": "Concesiones Otorgadas por Barrio ACS",
+      "shortName": "Concesiones por Barrio ACS",
+      "unit": "concesiones",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "barrios acuicolas",
+        "barrios sanitarios",
+        "concesiones por barrio acs",
+        "agrupaciones de concesiones acs"
+      ]
+    },
+    {
+      "id": "acs_centros_activos",
+      "canonicalId": "acs_centros_activos",
+      "name": "Centros Activos por Barrio ACS",
+      "shortName": "Centros Activos por ACS",
+      "unit": "centros",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "centros activos por barrio acs",
+        "operacion por barrio sanitario"
+      ]
+    },
+    {
+      "id": "acs_biomasa_cosechada_ton",
+      "canonicalId": "acs_biomasa_cosechada_ton",
+      "name": "Biomasa Cosechada por Barrio ACS",
+      "shortName": "Biomasa por Barrio ACS",
+      "unit": "ton",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "biomasa por barrio acs",
+        "cosecha por barrio sanitario acs"
+      ]
+    },
+    {
+      "id": "acs_antibioticos_ica_g_ton",
+      "canonicalId": "acs_antibioticos_ica_g_ton",
+      "name": "Uso de Antibióticos ICA por Barrio ACS",
+      "shortName": "ICA Antibióticos por ACS",
+      "unit": "g/ton",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "antibioticos por barrio acs",
+        "ica por barrio sanitario",
+        "consumo antimicrobianos por acs"
+      ]
+    },
+    {
+      "id": "acs_mortalidad_ciclo_pct",
+      "canonicalId": "acs_mortalidad_ciclo_pct",
+      "name": "Mortalidad en Ciclo por Barrio ACS (SERNAPESCA)",
+      "shortName": "Mortalidad Ciclo por ACS (%)",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "mortalidad en ciclo por barrio acs",
+        "mortalidad salmon por barrio sanitario"
+      ]
+    },
+    {
+      "id": "acs_densidad_max_kg_m3",
+      "canonicalId": "acs_densidad_max_kg_m3",
+      "name": "Densidad Máxima de Siembra Autorizada SUBPESCA por ACS",
+      "shortName": "Densidad Máx. por ACS",
+      "unit": "kg/m³",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "densidad de cultivo por barrio",
+        "densidad maxima siembra acs",
+        "clasificacion bioseguridad subpesca acs"
+      ]
+    },
+    {
+      "id": "acs_infa_aerobica_pct",
+      "canonicalId": "acs_infa_aerobica_pct",
+      "name": "Centros con Condición INFA Aeróbica por Barrio ACS (%)",
+      "shortName": "% INFA Aeróbica por ACS",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "infa aerobica por barrio acs",
+        "condicion aerobica por acs"
+      ]
+    },
+    {
+      "id": "acs_concesiones_en_snaspe",
+      "canonicalId": "acs_concesiones_en_snaspe",
+      "name": "Concesiones dentro de SNASPE por Barrio ACS",
+      "shortName": "En SNASPE por ACS",
+      "unit": "concesiones",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "acs",
+      "outlierBiased": false,
+      "synonyms": [
+        "snaspe por barrio acs",
+        "concesiones en areas protegidas por acs"
+      ]
     }
   ],
   "nodes": [

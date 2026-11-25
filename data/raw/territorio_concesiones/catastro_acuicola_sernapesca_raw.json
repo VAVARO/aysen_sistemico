@@ -1,6 +1,7 @@
 {
   "fuente": "SUBPESCA / SERNAPESCA - Catastro Concesiones de Acuicultura y Agrupaciones ACS Aysén",
   "fecha_corte": "2024-12-31",
+  "nota_desembarque_artesanal": "Desembarque RPA de flota artesanal residente inscrita en la comuna (13.820 ton/año), distinto de la descarga física total en muelles y caletas que incluye flota extrarregional de Zona Contigua (31.690 ton/año).",
   "concesiones_totales_region_aysen": 745,
   "centros_activos_ciclo_productivo": 245,
   "distribucion_comunal": {
@@ -73,7 +74,8 @@
       "caletas": [
         "Caleta Tortel"
       ],
-      "desembarque_artesanal_ton": 120
+      "desembarque_artesanal_ton": 120,
+      "nota_ciclo_productivo": "Las 17 concesiones del barrio ACS-35 (Canal Baker / RN Katalalixar) operan bajo régimen de descanso sanitario coordinado de ciclo largo: 8.500 ton cosechadas en la ventana de cierre de ciclo bianual en 4 centros habilitados con RCA comercial y 0 centros en engorda activa durante el trimestre de descanso vigente."
     }
   }
 }

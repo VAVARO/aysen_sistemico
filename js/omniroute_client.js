@@ -179,8 +179,25 @@
     percepcion_ctci_prioritaria_pct_i1i: 'Percepción Actividades CTCi Prioritarias (%)',
     gasto_cultura_per_capita_clp: 'Gasto Municipal en Cultura Per Cápita ($/hab)',
     ecmpo_solicitadas_ha: 'Solicitudes ECMPO Ley Lafkenche (ha)',
+    ecmpo_traslape_acuicola_n: 'Concesiones Acuícolas con Traslape ECMPO',
     concesiones_acuicolas_en_snaspe: 'Concesiones Acuícolas en SNASPE',
-    desembarque_artesanal_ton: 'Desembarque Pesquero Artesanal (ton/año)',
+    desembarque_artesanal_ton: 'Desembarque Pesquero Artesanal Flota Local RPA (ton/año)',
+    desembarque_muelles_total_ton: 'Descarga Física Total en Muelles Incl. Zona Contigua (ton/año)',
+    patente_acuicola_pua_mclp: 'Ingreso Municipal Patente Única de Acuicultura Art. 84 LGPA (M$ CLP/año)',
+    peso_pua_ingresos_propios_pct: 'Peso de Patente Acuícola PUA sobre Ingresos Propios Municipales (%)',
+    superficie_concesionada_mar_ha: 'Superficie Marina Concesionada de Acuicultura (ha)',
+    empleo_directo_acuicola_n: 'Empleo Directo en Salmonicultura (trabajadores)',
+    sancionatorios_sma_acuicolas_n: 'Procedimientos Sancionatorios SMA en Centros Acuícolas (SNIFA)',
+    centros_infa_anaerobica_n: 'Centros Acuícolas con Condición INFA Anaeróbica',
+    sancionatorios_sma_por_holding: 'Expedientes Sancionatorios SMA-SNIFA por Holding',
+    acs_concesiones_totales: 'Concesiones Otorgadas por Barrio ACS',
+    acs_centros_activos: 'Centros Activos por Barrio ACS',
+    acs_biomasa_cosechada_ton: 'Biomasa Cosechada por Barrio ACS (ton)',
+    acs_antibioticos_ica_g_ton: 'Uso de Antibióticos ICA por Barrio ACS (g/ton)',
+    acs_mortalidad_ciclo_pct: 'Mortalidad en Ciclo por Barrio ACS (%)',
+    acs_densidad_max_kg_m3: 'Densidad Máxima Autorizada SUBPESCA por Barrio ACS (kg/m³)',
+    acs_infa_aerobica_pct: 'Centros con Condición INFA Aeróbica por Barrio ACS (%)',
+    acs_concesiones_en_snaspe: 'Concesiones dentro de SNASPE por Barrio ACS',
     tasa_ocupacion_concesiones_pct: 'Tasa de Operación de Concesiones Acuícolas (%)',
     proporcion_concesiones_en_snaspe_pct: 'Proporción de Concesiones en SNASPE (%)',
     trabajadores_sii_por_centro_activo: 'Trabajadores SII por Centro Activo (trab./centro)',
@@ -597,6 +614,16 @@
       titulo: 'GORE Aysén / SUBDERE — Inversión FNDR 2015–2023, Fondos Concursables y Royalty Minero 2024–2025',
       url: 'https://datos.gob.cl/dataset/inversion-anual-del-fondo-nacional-de-desarrollo-regional-del-gobierno-regional-de-aysen-anos-2005'
     },
+    PUA_TGR_SINIM: {
+      institucion: 'SINIM / Tesorería General de la República / Aduanas DUS (Art. 84 LGPA)',
+      titulo: 'PUA Art. 84 LGPA, Empleo Directo Acuícola y Fuga de Procesamiento a Los Lagos',
+      url: 'https://datos.sinim.gov.cl/'
+    },
+    SMA_SNIFA_INFA: {
+      institucion: 'Superintendencia del Medio Ambiente (SNIFA) / SERNAPESCA / SUBPESCA (Res. Ex. 8228)',
+      titulo: 'Fiscalización Ambiental Acuícola: Sancionatorios SNIFA, INFAs Anaeróbicas y Límite ICA 400 g/t',
+      url: 'https://snifa.sma.gob.cl/'
+    },
     BIDAT_RSH_2026: {
       institucion: 'Ministerio de Desarrollo Social y Familia (BIDAT) vía BCN — Registro Social de Hogares Junio 2026',
       titulo: 'BIDAT MDSF — Carencia de Servicios Básicos y Hacinamiento Comunal (Junio 2026)',
@@ -649,6 +676,23 @@
     amerb_operativas: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
     concesiones_acuicolas_en_snaspe: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_SNASPE,
     desembarque_artesanal_ton: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    desembarque_muelles_total_ton: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    ecmpo_traslape_acuicola_n: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_CRUBC,
+    patente_acuicola_pua_mclp: PROVENANCE_CATALOG_ENTRIES.PUA_TGR_SINIM,
+    peso_pua_ingresos_propios_pct: PROVENANCE_CATALOG_ENTRIES.PUA_TGR_SINIM,
+    superficie_concesionada_mar_ha: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    empleo_directo_acuicola_n: PROVENANCE_CATALOG_ENTRIES.PUA_TGR_SINIM,
+    sancionatorios_sma_acuicolas_n: PROVENANCE_CATALOG_ENTRIES.SMA_SNIFA_INFA,
+    centros_infa_anaerobica_n: PROVENANCE_CATALOG_ENTRIES.SMA_SNIFA_INFA,
+    sancionatorios_sma_por_holding: PROVENANCE_CATALOG_ENTRIES.SMA_SNIFA_INFA,
+    acs_concesiones_totales: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    acs_centros_activos: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    acs_biomasa_cosechada_ton: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    acs_antibioticos_ica_g_ton: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    acs_mortalidad_ciclo_pct: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    acs_densidad_max_kg_m3: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
+    acs_infa_aerobica_pct: PROVENANCE_CATALOG_ENTRIES.SMA_SNIFA_INFA,
+    acs_concesiones_en_snaspe: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_SNASPE,
     tasa_ocupacion_concesiones_pct: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
     proporcion_concesiones_en_snaspe_pct: PROVENANCE_CATALOG_ENTRIES.SUBPESCA_SNASPE,
     trabajadores_sii_por_centro_activo: PROVENANCE_CATALOG_ENTRIES.SERNAPESCA_SUBPESCA,
@@ -930,6 +974,23 @@
     ecmpo_solicitadas_ha: ['hectareas de ecmpo', 'hectareas ecmpo', 'ecmpo solicitadas', 'ecmpo', 'solicitudes ecmpo', 'ley lafkenche', 'lafkenche', 'espacios costeros marinos', 'espacios costeros pueblos originarios'],
     concesiones_acuicolas_en_snaspe: ['concesiones acuicolas en snaspe', 'concesiones en snaspe', 'concesiones superpuestas en snaspe', 'concesiones dentro de snaspe', 'jaulas en snaspe'],
     desembarque_artesanal_ton: ['desembarque artesanal', 'desembarque pesquero artesanal', 'toneladas desembarque artesanal'],
+    desembarque_muelles_total_ton: ['descarga total muelles', 'desembarque zona contigua', 'transferencia fisica caletas'],
+    ecmpo_traslape_acuicola_n: ['traslape ecmpo acuicola', 'concesiones suspendidas ecmpo'],
+    patente_acuicola_pua_mclp: ['patente acuicola', 'patentes salmoneras', 'pua', 'articulo 84 lgpa', 'tributos salmoneros', 'impuestos salmoneras municipio'],
+    peso_pua_ingresos_propios_pct: ['peso patente acuicola', 'dependencia patente salmonera', 'pua sobre ingresos propios'],
+    superficie_concesionada_mar_ha: ['superficie concesionada acuicultura', 'hectareas marinas acuicolas'],
+    empleo_directo_acuicola_n: ['empleo directo salmon', 'trabajadores salmoneros', 'empleo plantas de proceso chacabuco'],
+    sancionatorios_sma_acuicolas_n: ['sanciones sma', 'snifa', 'sobreproduccion salmones', 'fiscalizacion ambiental salmoneras'],
+    centros_infa_anaerobica_n: ['infa anaerobica', 'fondo marino sin oxigeno'],
+    sancionatorios_sma_por_holding: ['sanciones sma por holding', 'snifa por holding'],
+    acs_concesiones_totales: ['barrios acuicolas', 'barrios sanitarios', 'acs', 'concesiones por barrio acs'],
+    acs_centros_activos: ['centros activos por barrio acs'],
+    acs_biomasa_cosechada_ton: ['biomasa por barrio acs'],
+    acs_antibioticos_ica_g_ton: ['antibioticos por barrio acs', 'ica por barrio'],
+    acs_mortalidad_ciclo_pct: ['mortalidad por barrio acs', 'mortalidad ciclo salmon'],
+    acs_densidad_max_kg_m3: ['densidad de cultivo por barrio', 'densidad maxima acs'],
+    acs_infa_aerobica_pct: ['infa aerobica por acs'],
+    acs_concesiones_en_snaspe: ['snaspe por barrio acs'],
     tasa_ocupacion_concesiones_pct: ['tasa de ocupacion concesiones', 'tasa de operacion acuicola'],
     proporcion_concesiones_en_snaspe_pct: ['proporcion concesiones en snaspe', 'porcentaje concesiones en snaspe'],
     trabajadores_sii_por_centro_activo: ['trabajadores por centro activo', 'arraigo laboral salmon'],
@@ -2300,6 +2361,23 @@
       return 'hidrologia_caudal_mp25_mensual';
     }
 
+    // 8a-3b. Barrios Acuícolas (ACS-17 a ACS-35) — Nueva dimensión N=18
+    if (/\b(barrios?\s+acuicol\w*|barrios?\s+sanitari\w*|agrupacion(?:es)?\s+de\s+concesiones|acs[-\s]?\d{2}|densidad\s+(?:de\s+siembra|maxima|por\s+barrio)|antibioticos?\s+por\s+barrio|mortalidad\s+(?:por\s+barrio|en\s+ciclo)|18\s+barrios)\b/i.test(qNorm) &&
+        !/\b(fraccionamiento|ley\s*21\.?752|desembarque\s+artesanal|caletas?)\b/i.test(qNorm)) {
+      return 'barrios_acs_aysen';
+    }
+
+    // 8a-3c. Patente Única de Acuicultura (PUA Art. 84 LGPA), Empleo Directo y Fuga de Exportación a Los Lagos
+    if (/\b(patentes?\s+acuicol\w*|patentes?\s+salmoner\w*|pua\b|art\.?\s*84\s+lgpa|tributos?\s+salmoner\w*|impuestos?\s+salmoneras|fuga\s+(?:de\s+)?(?:procesamiento|exportacion|valor|wellboats?)|wellboats?|aduanas?.*los\s+lagos|empleo\s+directo\s+(?:en\s+)?(?:salmon\w*|acuic\w*)|plantas?\s+de\s+proceso\s+chacabuco)\b/i.test(qNorm)) {
+      return 'patente_pua_fuga_exportacion';
+    }
+
+    // 8a-3d. Fiscalización Ambiental Acuícola (SMA-SNIFA), INFAs Anaeróbicas y Límite ICA 400 g/t
+    if (/\b((?:sancion\w*|expedientes?\s+sancion\w*|multas?|sobreproduccion|fiscalizacion).*(?:salmon\w*|acuic\w*|snifa|infa)|infa\s+anaerobica|fondo\s+marino\s+sin\s+oxigeno|res\.?\s*ex\.?\s*8228|400\s*g\/t|piscirickettsia|tenacibaculosis|snifa.*(?:australis|aquachile|cooke|mowi|salmon\w*))\b/i.test(qNorm) &&
+        !/\b(volcan\w*|hudson|sism\w*|usgs|rnvv)\b/i.test(qNorm)) {
+      return 'fiscalizacion_sma_infa_salmon';
+    }
+
     // 8a-4. Volcanes RNVV, Sismos USGS y Fiscalización SMA (Nodo #31 + justicia_sma)
     if (/\b(volcan\w*|rnvv|sernageomin|hudson|maca\b|mentolat|melimoyu|cay\b|arenales|sism\w*|terremot\w*|usgs|liquine\s*ofqui|expedientes?\s+(?:de\s+)?fiscalizacion\s+sma|snifa|sancion\w*\s+ambiental\w*|justicia\s+ambiental)\b/i.test(qNorm) &&
         !/\b(glof|cachet\s+2)\b/i.test(qNorm)) {
@@ -2673,7 +2751,7 @@
         };
       }
       case 'pesquerias_fraccionamiento_caletas': {
-        const reply = 'En pesca industrial y artesanal (Ley N° 21.752 y Art. 43 ter LGPA, Nodos #08 y #10): Merluza del sur (Norte y Sur) y Congrio dorado (Norte y Sur) establecen un fraccionamiento de 37% Industrial / 63% Artesanal, con Valor de Sanción SUBPESCA de 77 y 83 UTM/ton e Impuesto Art. 43 ter de 3,234 y 3,486 UTM/ton; Bacalao de profundidad opera 100% Industrial PEP (Valor Sanción 372 UTM/ton, ref. 15,62 UTM) y Reineta 90% Artesanal / 10% Industrial (16 UTM/ton). En desembarque pesquero por caleta (SERNAPESCA): Puerto Chacabuco (14.850 ton), Melinka (8.920 ton), Puerto Cisnes (4.210 ton) y Caleta Tortel (380 ton); desglose artesanal comunal: Guaitecas (5.650 ton), Aysén (4.850 ton), Cisnes (3.200 ton) y Tortel (120 ton; total regional 13.820 ton/año).';
+        const reply = 'En pesca industrial y artesanal (Ley N° 21.752 y Art. 43 ter LGPA, Nodos #08 y #10): Merluza del sur (Norte y Sur) y Congrio dorado (Norte y Sur) establecen un fraccionamiento de 37% Industrial / 63% Artesanal, con Valor de Sanción SUBPESCA de 77 y 83 UTM/ton e Impuesto Art. 43 ter de 3,234 y 3,486 UTM/ton; Bacalao de profundidad opera 100% Industrial PEP (Valor Sanción 372 UTM/ton, ref. 15,62 UTM) y Reineta 90% Artesanal / 10% Industrial (16 UTM/ton). Distinción clave de desembarque (SERNAPESCA): mientras la descarga física total en muelles y caletas asciende a 31.690 ton/año incluyendo lanchas extrarregionales de Los Lagos en Zona Contigua —Puerto Chacabuco (14.850 ton), Melinka (8.920 ton), Puerto Cisnes (4.210 ton) y Caleta Tortel (380 ton)—, el desembarque de flota artesanal residente inscrita en el RPA comunal totaliza 13.820 ton/año: Guaitecas (5.650 ton), Aysén (4.850 ton), Cisnes (3.200 ton) y Tortel (120 ton).';
         const fishLabels = ['Merluza del sur (Norte)', 'Merluza del sur (Sur)', 'Congrio dorado (Norte)', 'Congrio dorado (Sur)', 'Merluza de cola', 'Merluza tres aletas', 'Bacalao profundidad', 'Reineta', 'Besugo / Brotula'];
         const fishArt = [63, 63, 63, 63, 5, 5, 0, 90, 0];
         const fishInd = [37, 37, 37, 37, 95, 95, 100, 10, 100];
@@ -2735,8 +2813,84 @@
           relatedHub: 'II'
         };
       }
+      case 'barrios_acs_aysen': {
+        const dl = _dataLake || (global && global.AYSEN_HUBS_DATA) || {};
+        const acsList = Array.isArray(dl.barriosAcs) && dl.barriosAcs.length ? dl.barriosAcs : [
+          { codigo_acs: 'ACS-17', comuna: 'Guaitecas', concesiones_totales: 44, centros_activos: 15, biomasa_cosechada_ton: 21100, antibioticos_ica_g_ton: 392.0, mortalidad_ciclo_pct: 9.1, densidad_max_kg_m3: 12.0, infa_aerobica_pct: 83.5 },
+          { codigo_acs: 'ACS-22A', comuna: 'Aysén', concesiones_totales: 72, centros_activos: 24, biomasa_cosechada_ton: 47100, antibioticos_ica_g_ton: 364.5, mortalidad_ciclo_pct: 8.8, densidad_max_kg_m3: 12.0, infa_aerobica_pct: 82.8 },
+          { codigo_acs: 'ACS-35', comuna: 'Tortel', concesiones_totales: 17, centros_activos: 0, biomasa_cosechada_ton: 8500, antibioticos_ica_g_ton: 289.0, mortalidad_ciclo_pct: 6.4, densidad_max_kg_m3: 17.0, infa_aerobica_pct: 95.0 }
+        ];
+        const sortedBio = [...acsList].sort((a, b) => (Number(b.biomasa_cosechada_ton) || 0) - (Number(a.biomasa_cosechada_ton) || 0));
+        const top3Bio = sortedBio.slice(0, 3).map(b => `${b.codigo_acs} (${b.comuna}: ${fmtNumber(b.biomasa_cosechada_ton)} t, ICA ${fmtNumber(b.antibioticos_ica_g_ton)} g/t, ${b.densidad_max_kg_m3} kg/m³)`).join('; ');
+        const tortelAcs = acsList.find(b => b.codigo_acs === 'ACS-35');
+        const reply = `Los 18 Barrios Acuícolas (Agrupaciones de Concesiones de Salmónidos ACS-17 a ACS-35) de Aysén concentran 745 concesiones, 245 centros activos, 312 concesiones en SNASPE y 503.500 ton cosechadas. Mayor producción e intensidad sanitaria: ${top3Bio}. En el extremo austral, ${tortelAcs ? `${tortelAcs.codigo_acs} (Caleta Tortel)` : 'ACS-35'} opera bajo descanso sanitario coordinado de ciclo largo (17 concesiones, 0 centros activos vigentes, 8.500 ton de cierre de ciclo bianual en 4 centros con RCA comercial, ICA 289,0 g/t e INFA aeróbica 95,0%).`;
+        const sources = resolveSourcesForKeys(['acs_biomasa_cosechada_ton', 'acs_antibioticos_ica_g_ton', 'acs_infa_aerobica_pct']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            customCategoryData: true,
+            categoryLabel: 'Barrio ACS',
+            varX: 'acs_biomasa_cosechada_ton',
+            varY: 'acs_antibioticos_ica_g_ton',
+            labels: acsList.map(b => b.codigo_acs),
+            datasets: [
+              { label: 'Biomasa Cosechada (ton)', data: acsList.map(b => Number(b.biomasa_cosechada_ton) || 0), unit: 'ton' },
+              { label: 'ICA Antibióticos (g/ton)', data: acsList.map(b => Number(b.antibioticos_ica_g_ton) || 0), unit: 'g/ton' }
+            ],
+            title: 'Los 18 Barrios Sanitarios ACS de Aysén: Biomasa Cosechada (ton) e ICA Antibióticos (g/ton)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'II'
+        };
+      }
+      case 'patente_pua_fuga_exportacion': {
+        const reply = 'Según SINIM, Tesorería General de la República (Art. 84 LGPA), SUBPESCA y Aduanas DUS: Las 9.304 ha marinas concesionadas generan 3.249,5 M$ CLP/año directos para los municipios litoral-fiórdicos (50% de 20 UTM/ha; otros 3.249,5 M$ CLP/año ingresan al FNDR del GORE Aysén): Aysén recibe 1.485,0 M$ CLP (22,1% de sus ingresos propios), Cisnes 1.190,0 M$ CLP (29,3% IPP), Guaitecas 492,0 M$ CLP (87,7% de sus ingresos propios permanentes) y Tortel 82,5 M$ CLP (55,9% IPP). A nivel laboral, el empleo directo acuícola alcanza 7.055 trabajadores (4.850 en Aysén/Chacabuco, 1.420 Cisnes, 410 Guaitecas, 340 Coyhaique, 35 Tortel). Pese a producir más del 50% del salmón del Atlántico del país (503.500 ton/año), más del 80% se traslada en wellboats a plantas y puertos de Los Lagos (>US$ 5.600 millones/año facturados), exportándose directamente por Aduanas desde Aysén solo US$ 209 millones/año.';
+        const sources = resolveSourcesForKeys(['patente_acuicola_pua_mclp', 'peso_pua_ingresos_propios_pct', 'empleo_directo_acuicola_n']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'patente_acuicola_pua_mclp',
+            varY: 'peso_pua_ingresos_propios_pct',
+            yKey: 'patente_acuicola_pua_mclp',
+            y2Key: 'peso_pua_ingresos_propios_pct',
+            focusComunas: ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'],
+            title: 'Patente Única de Acuicultura Art. 84 LGPA (M$ CLP/año) vs. Peso en Ingresos Propios (%)',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'II'
+        };
+      }
+      case 'fiscalizacion_sma_infa_salmon': {
+        const reply = 'De acuerdo con SNIFA-SMA, SERNAPESCA y Res. Ex. N° 8228 SUBPESCA (abril 2026): La acuicultura en Aysén acumula 66 expedientes sancionatorios SMA-SNIFA (Aysén 31, Cisnes 21, Guaitecas 12, Tortel 2; liderados por AquaChile 18, Mowi Chile 8 y Australis Seafoods 8 por autodenuncia de sobreproducción, Multi X 7, Cermaq 6, Blumar 5 y Cooke Aquaculture 3 en Cupquelán) y 32 centros con condición INFA anaeróbica subyacente (Aysén 16, Cisnes 10, Guaitecas 6, Tortel 0). El límite regulatorio ICA 2026 fija un tope máximo de 400 g/t (comunas vigentes: Guaitecas 382,1 g/t, Aysén 335,4 g/t, Cisnes 324,8 g/t, Tortel 289,0 g/t), con mortalidad promedio ~0,7%/mes en Salmón del Atlántico dominada por SRS / Piscirickettsia salmonis (52,8%) y Tenacibaculosis (31,5%).';
+        const sources = resolveSourcesForKeys(['sancionatorios_sma_acuicolas_n', 'centros_infa_anaerobica_n', 'antibioticos_ica_g_ton']);
+        return {
+          reply,
+          chart: {
+            render: true,
+            type: 'bar',
+            varX: 'sancionatorios_sma_acuicolas_n',
+            varY: 'centros_infa_anaerobica_n',
+            yKey: 'sancionatorios_sma_acuicolas_n',
+            y2Key: 'centros_infa_anaerobica_n',
+            focusComunas: ['Aysén', 'Cisnes', 'Guaitecas', 'Tortel'],
+            title: 'Expedientes Sancionatorios SMA-SNIFA vs. Centros con INFA Anaeróbica por Comuna',
+            sourceText: sources.map(s => s.institucion).join(' · '),
+            excludeCoyhaique: false
+          },
+          sources,
+          relatedHub: 'II'
+        };
+      }
       case 'ecmpo_snaspe': {
-        const reply = 'Según registros oficiales de SUBPESCA, CONADI, CRUBC Aysén y CONAF: Se encuentran en tramitación administrativa y judicial más de 620.000 ha en solicitudes de Espacios Costeros Marinos para Pueblos Originarios (ECMPO Ley N° 20.249), destacando Pu Wapi (227.000 ha en Cisnes) y Antünen Rain (393.000 ha en Islas Huichas). Paralelamente, más de 300 concesiones salmoneras (312 en catastro SNASPE) operan al interior de la Reserva Nacional Las Guaitecas, bajo auditorías de la Contraloría General de la República y el marco de la Ley SBAP N° 21.600.';
+        const reply = 'Según registros oficiales de SUBPESCA, CONADI, CRUBC Aysén y CONAF: Se encuentran en tramitación más de 620.000 ha en las grandes solicitudes ECMPO continentales-insulares (Antünen Rain 393.000 ha en Aysén y Pu Wapi 227.000 ha en Cisnes), a las que se suman 148.000 ha en Las Guaitecas y 18.500 ha en Tortel (total regional 786.500 ha bajo Ley N° 20.249), generando traslape o suspensión (Art. 10) en 338 concesiones (Aysén 164, Cisnes 112, Guaitecas 58, Tortel 4). Paralelamente, 312 concesiones salmoneras operan dentro de áreas SNASPE (237 en RN Las Guaitecas, 53 en PN Isla Magdalena, 12 en RN Katalalixar y 10 en borde PN Laguna San Rafael / Cupquelán), bajo auditorías de Contraloría y la Ley SBAP N° 21.600.';
         const sources = resolveSourcesForKeys(['solicitudes_ecmpo_ha', 'concesiones_salmon_snaspe_n']);
         return {
           reply,

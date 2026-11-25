@@ -8,9 +8,11 @@ variables_clave:
   - concesiones_salmon
   - biomasa_salmon_ton
   - trabajadores_sii
+  - desembarque_artesanal_ton
+  - desembarque_muelles_total_ton
 fuentes_oficiales:
-  - "Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) / SUBPESCA"
-updated_at: "2026-11-23"
+  - "Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) / SUBPESCA (18 Barrios ACS)"
+updated_at: "2026-11-25"
 tags:
   - aysen-sistemico
   - nodo
@@ -21,20 +23,30 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Nodos georreferenciados de Agrupaciones de Concesiones de Acuicultura (Barrios ACS), plantas de proceso (Puerto Chacabuco) y caletas pesqueras artesanales (Melinka, Repollal, Islas Huichas, Cisnes, Gala y Gaviota). Detalla las concesiones integradas en cada barrio sanitario (ACS-17, ACS-18, ACS-19, ACS-20, ACS-21, ACS-28) junto con las caletas bento-demersales del archipiélago.
+Catastro multiescala de los 18 Barrios Sanitarios Acuícolas (ACS-17 a ACS-35) de Aysén (745 concesiones, 245 activos, 312 en SNASPE, 503.500 ton cosechadas), plantas de proceso de Puerto Chacabuco y caletas artesanales. Reconcilia el desembarque de flota artesanal residente RPA comunal (13.820 ton/año) frente a la transferencia física total en muelles y caletas incluyendo lanchas de Los Lagos en Zona Contigua (31.690 ton/año: Puerto Chacabuco 14.850 t, Melinka 8.920 t, Puerto Cisnes 4.210 t, Caleta Tortel 380 t).
 
 ## Indicadores Comunales Verificados
 
-| Nodo / Caleta / ACS | Comuna INE | Tipo | Detalle Operativo | Coordenadas |
-| --- | --- | --- | --- | --- |
-| Barrio Sanitario ACS 17 (Guaitecas / Gran Guaiteca) | 11203 | Agrupación de Concesiones de Acuicultura (ACS) | categoria: Salmonicultura Marina · subpesca codigo barrio: ACS-17 | -43.912, -73.725 |
-| Barrio Sanitario ACS 18A (Canal Puyuhuapi Norte) | 11202 | Agrupación de Concesiones de Acuicultura (ACS) | categoria: Salmonicultura Marina · subpesca codigo barrio: ACS-18A | -44.385, -72.58 |
-| Barrio Sanitario ACS 19A (Canal Jacaf / Seno Gala) | 11202 | Agrupación de Concesiones de Acuicultura (ACS) | categoria: Salmonicultura Marina · subpesca codigo barrio: ACS-19A | -44.25, -73.05 |
-| Barrio Sanitario ACS 21A (Canal Moraleda Norte) | 11201 | Agrupación de Concesiones de Acuicultura (ACS) | categoria: Salmonicultura Marina · subpesca codigo barrio: ACS-21A | -45.15, -73.45 |
-| Barrio Sanitario ACS 22A (Seno Aysén / Bahía Chacabuco) | 11201 | Agrupación de Concesiones de Acuicultura (ACS) | categoria: Salmonicultura Marina · subpesca codigo barrio: ACS-22A | -45.42, -73.1 |
-| Barrio Sanitario ACS 24 (Estero Quitralco / Fiordo Cuptana) | 11201 | Agrupación de Concesiones de Acuicultura (ACS) | categoria: Salmonicultura Marina · subpesca codigo barrio: ACS-24 | -45.81, -73.48 |
-| Planta de Proceso y Centro Operativo Chacabuco (AquaChile) | 11201 | Planta de Proceso y Base Acuícola Emblemática | categoria: Infraestructura Acuícola y Procesamiento · holding controlador: AquaChile (Agrosuper) | -45.462, -72.821 |
-| Planta de Proceso Puerto Chacabuco (Salmones Antártica) | 11201 | Planta de Proceso y Base Acuícola Emblemática | categoria: Infraestructura Acuícola y Procesamiento · holding controlador: Salmones Antártica (Nissui Corporation - Japón) | -45.466, -72.828 |
+| Barrio ACS / Sector | Comuna | Concesiones (Activas) | Biomasa (ton) | ICA (g/t) | Densidad Máx · INFA Aerób. |
+| --- | --- | --- | --- | --- | --- |
+| ACS-17 · Melinka / Isla Ascensión | Guaitecas | 44 (15) | 21.100 | 392,0 | 12 kg/m3 · 83,5% |
+| ACS-33 · Repollal / Canal Tuamapu | Guaitecas | 36 (12) | 16.900 | 378,5 | 13 kg/m3 · 86,0% |
+| ACS-34 · Isla Leucayec / Guamblad | Guaitecas | 18 (5) | 7.000 | 361,0 | 14 kg/m3 · 89,2% |
+| ACS-18A · Canal Puyuhuapi Norte | Cisnes | 46 (17) | 40.300 | 345,8 | 14 kg/m3 · 85,4% |
+| ACS-18B · Puyuhuapi Sur / Isla Magdalena | Cisnes | 42 (15) | 35.600 | 334,0 | 15 kg/m3 · 88,1% |
+| ACS-18C · Canal Jacaf Poniente | Cisnes | 28 (10) | 23.700 | 312,0 | 15 kg/m3 · 90,5% |
+| ACS-19A · Canal Jacaf / Seno Gala | Cisnes | 40 (14) | 33.200 | 319,0 | 15 kg/m3 · 89,8% |
+| ACS-19B · Isla Soto / Moraleda Norte | Cisnes | 34 (12) | 28.500 | 315,0 | 15 kg/m3 · 91,0% |
+| ACS-20 · Isla Magdalena Oeste | Cisnes | 28 (10) | 23.700 | 308,0 | 17 kg/m3 · 92,4% |
+| ACS-21A · Islas Huichas / Moraleda | Aysén | 68 (23) | 45.200 | 354,0 | 13 kg/m3 · 86,2% |
+| ACS-21B · Archipiélago Chonos / Traiguén | Aysén | 58 (19) | 37.300 | 326,0 | 15 kg/m3 · 91,2% |
+| ACS-22A · Seno Aysén / Chacabuco | Aysén | 72 (24) | 47.100 | 364,5 | 12 kg/m3 · 82,8% |
+| ACS-22B · Fiordo Aysén / Costa Norte | Aysén | 54 (18) | 35.300 | 346,5 | 13 kg/m3 · 85,0% |
+| ACS-22C · Canal Errázuriz / Meninea | Aysén | 38 (12) | 23.500 | 322,0 | 15 kg/m3 · 90,8% |
+| ACS-24 · Estero Quitralco / Costa | Aysén | 52 (17) | 33.400 | 314,0 | 17 kg/m3 · 92,5% |
+| ACS-25 · Estero Cupquelán / San Rafael | Aysén | 42 (13) | 25.500 | 305,0 | 17 kg/m3 · 93,4% |
+| ACS-26 · Bahía Explora / Fiordo Sur | Aysén | 28 (9) | 17.700 | 310,0 | 17 kg/m3 · 93,0% |
+| ACS-35 · Canal Baker / Caleta Tortel | Tortel | 17 (0 · Descanso) | 8.500 | 289,0 | 17 kg/m3 · 95,0% |
 
 ## Metadatos de Procedencia Institucional
 

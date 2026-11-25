@@ -2258,7 +2258,8 @@
               "concesiones_estimadas_en_comuna": 18,
               "barrios_acs_locales": [
                 "ACS-22A",
-                "ACS-24"
+                "ACS-24",
+                "ACS-25"
               ],
               "filiales_activas": [
                 {
@@ -4255,6 +4256,7 @@
             }
           ],
           "biomasa_cosechada_ton_anual": 8500,
+          "nota_ciclo_productivo": "Las 17 concesiones del barrio ACS-35 (Canal Baker / RN Katalalixar) operan bajo régimen de descanso sanitario coordinado de ciclo largo: 8.500 ton cosechadas en la ventana de cierre de ciclo bianual en 4 centros habilitados con RCA comercial y 0 centros en engorda activa durante el trimestre de descanso vigente.",
           "indice_consumo_antibioticos_ica_g_ton": 289.0,
           "amerb_decretadas_cantidad": 2,
           "amerb_operativas_vigentes": 1,

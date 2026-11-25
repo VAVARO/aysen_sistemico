@@ -7,9 +7,11 @@ hub_roman: II
 variables_clave:
   - biomasa_salmon_ton
   - antibioticos_ica_g_ton
+  - concesiones_acuicolas_en_snaspe
+  - sancionatorios_sma_acuicolas_n
 fuentes_oficiales:
-  - "Comisión para el Mercado Financiero (CMF) / SUBPESCA / SERNAPESCA"
-updated_at: "2026-11-23"
+  - "Comisión para el Mercado Financiero (CMF) / SUBPESCA / SERNAPESCA / SMA-SNIFA"
+updated_at: "2026-11-25"
 tags:
   - aysen-sistemico
   - nodo
@@ -20,24 +22,24 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Vinculación corporativa entre los 13 holdings Madres (grupos controladores) y la titularidad de las concesiones salmoneras y plantas en la Región de Aysén. AquaChile (Agrosuper S.A.) lidera con 210 concesiones (28,19% regional), seguido por Mowi Chile (95), Multi X (80), Cermaq Chile (75), Salmones Blumar (62) y Australis Seafoods (46); los 13 holdings concentran 726 concesiones (97,45%) y otros titulares menores completan las 19 restantes (745 totales).
+Vinculación corporativa entre los 13 holdings madres (grupos controladores), su titularidad sobre las 745 concesiones salmoneras, su superposición efectiva en SNASPE (312 concesiones totales) y sus expedientes sancionatorios SMA-SNIFA (66 casos) en Aysén. AquaChile (Agrosuper S.A.) lidera con 210 concesiones (28,19%, 106 en SNASPE, 18 SMA-SNIFA), seguido por Mowi Chile (95 conc., 29 SNASPE, 8 SMA), Multi X (80 conc., 25 SNASPE, 7 SMA), Cermaq Chile (75 conc., 29 SNASPE, 6 SMA), Salmones Blumar (62 conc., 21 SNASPE, 5 SMA), Australis Seafoods (46 conc., 15 SNASPE, 8 SMA por autodenuncia de sobreproducción) y Cooke Aquaculture Chile (18 conc., 10 en borde PN Laguna San Rafael / Estero Cupquelán, 3 SMA). Las métricas `biomasa_por_holding` y `centros_activos_por_holding` se explicitan como estimación proporcional por cartera SERNAPESCA/SUBPESCA.
 
 ## Indicadores Comunales Verificados
 
-| Holding Madre | Grupo Controlador | País Matriz | Concesiones Aysén | % Regional |
-| --- | --- | --- | --- | --- |
-| AquaChile | Grupo Agrosuper (Familia Vial) | Chile | 210 | 28.19% |
-| Mowi Chile | Grupo Mowi ASA (Bergen, Noruega) | Noruega | 95 | 12.75% |
-| Multi X | Multiexport Foods S.A. en alianza estratégica con Mitsui & Co. (Japón) y Cargill Inc. (EE.UU.) | Chile / Japón / Estados Unidos | 80 | 10.74% |
-| Cermaq Chile | Mitsubishi Corporation (Japón) / Cermaq Group AS | Japón | 75 | 10.07% |
-| Blumar Seafoods / Salmones Blumar | Grupos empresariales Yaconi-Santa Cruz y Sarquis | Chile | 62 | 8.32% |
-| Australis Seafoods | Grupo Joyvio (filial de alimentos de Legend Holdings Corporation, matriz de Lenovo, China) | China | 46 | 6.17% |
-| Salmones Camanchaca | Grupo Camanchaca (Familias Cifuentes y Stengel) | Chile | 38 | 5.1% |
-| Salmones Yadrán | Empresas Yadrán (Familia Briones) | Chile | 31 | 4.16% |
-| Invermar | Grupo Alimar (Familia Izquierdo Menéndez) | Chile | 27 | 3.62% |
-| Salmones Austral | Salmones Austral S.A. (Familias Navarro, Hurtado y Puchi) | Chile | 24 | 3.22% |
-| Salmones Antártica | Nissui Corporation (Tokio, Japón) | Japón | 20 | 2.68% |
-| Cooke Aquaculture Chile | Cooke Inc. (Blacks Harbour, New Brunswick, Canadá - Familia Cooke) | Canadá | 18 | 2.42% |
+| Holding Madre | Grupo Controlador | País Matriz | Concesiones Aysén | % Regional | Concesiones SNASPE | Expedientes SMA-SNIFA |
+| --- | --- | --- | --- | --- | --- | --- |
+| AquaChile | Grupo Agrosuper (Familia Vial) | Chile | 210 | 28.19% | 106 | 18 |
+| Mowi Chile | Grupo Mowi ASA (Bergen, Noruega) | Noruega | 95 | 12.75% | 29 | 8 |
+| Multi X | Multiexport Foods S.A. con Mitsui y Cargill | Chile / Japón / Estados Unidos | 80 | 10.74% | 25 | 7 |
+| Cermaq Chile | Mitsubishi Corporation (Japón) / Cermaq Group AS | Japón | 75 | 10.07% | 29 | 6 |
+| Blumar Seafoods / Salmones Blumar | Grupos empresariales Yaconi-Santa Cruz y Sarquis | Chile | 62 | 8.32% | 21 | 5 |
+| Australis Seafoods | Grupo Joyvio (Legend Holdings, China) | China | 46 | 6.17% | 15 | 8 |
+| Salmones Camanchaca | Grupo Camanchaca (Familias Cifuentes y Stengel) | Chile | 38 | 5.1% | 12 | 3 |
+| Salmones Yadrán | Empresas Yadrán (Familia Briones) | Chile | 31 | 4.16% | 27 | 3 |
+| Invermar | Grupo Alimar (Familia Izquierdo Menéndez) | Chile | 27 | 3.62% | 9 | 2 |
+| Salmones Austral | Salmones Austral S.A. (Navarro, Hurtado y Puchi) | Chile | 24 | 3.22% | 10 | 2 |
+| Salmones Antártica | Nissui Corporation (Tokio, Japón) | Japón | 20 | 2.68% | 5 | 1 |
+| Cooke Aquaculture Chile | Cooke Inc. (Canadá - Familia Cooke) | Canadá | 18 | 2.42% | 10 | 3 |
 
 ## Metadatos de Procedencia Institucional
 

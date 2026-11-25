@@ -32,7 +32,8 @@ const FORBIDDEN_STALE_CLAIMS = [
   '12 holdings',
   '6.410 km',
   '1.842 sitios',
-  '28 postas'
+  '28 postas',
+  '235 variables'
 ];
 
 const EMOJI_REGEX = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
@@ -358,8 +359,16 @@ function compileWikiToBundle(options = {}) {
     }
   }
 
+  const maxUpdatedDate = [conceptsById, hubsById, comunasById, nodosById, adrsById]
+    .flatMap(bucket => Object.values(bucket).map(r => String(r.updated_at || '').trim()))
+    .filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d))
+    .sort()
+    .pop();
+
   const compiledPayload = {
-    generatedAt: '2026-11-23T00:00:00.000Z',
+    generatedAt: maxUpdatedDate
+      ? `${maxUpdatedDate}T00:00:00.000Z`
+      : `${new Date().toISOString().slice(0, 10)}T00:00:00.000Z`,
     totalPages: mdFiles.length,
     conceptsById,
     hubsById,
@@ -596,7 +605,8 @@ function parseCliArgs(argv) {
     syncRestApi: false,
     vaultPath: null,
     apiUrl: null,
-    token: null
+    token: null,
+    noVaultSync: false
   };
 
   for (let i = 0; i < argv.length; i++) {
@@ -630,6 +640,13 @@ async function runCli() {
   }
   if (args.compile) {
     compileWikiToBundle();
+    const skipAutoVault = args.noVaultSync || process.argv.includes('--no-vault-sync');
+    if (!args.syncToVault && !skipAutoVault) {
+      const { vaultRoot } = resolveVaultTargetDir(args.vaultPath);
+      if (vaultRoot && fs.existsSync(vaultRoot)) {
+        syncToVault(args.vaultPath);
+      }
+    }
   }
   if (args.syncToVault) {
     syncToVault(args.vaultPath);

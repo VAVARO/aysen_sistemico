@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-25T13:19:39Z",
+  "generatedAt": "2026-11-25T19:06:01Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -2390,12 +2390,12 @@
         0.0,
         393000.0,
         227000.0,
+        148000.0,
         0.0,
         0.0,
         0.0,
         0.0,
-        0.0,
-        0.0
+        18500.0
       ],
       "dataY": [
         495.6,
@@ -2410,98 +2410,98 @@
         66.5
       ],
       "regressionLine": {
-        "slopeBeta1": 0.00257,
-        "interceptBeta0": 176.4611,
-        "rSquaredPct": 81.6,
+        "slopeBeta1": 0.00247,
+        "interceptBeta0": 141.0051,
+        "rSquaredPct": 75.3,
         "directionLabel": "Relación Directa (+)"
       },
       "reading": "Las solicitudes costeras indígenas se superponen con los polos de inversión litoral: Aysén suma 393.000 ha ECMPO y 1.320 MM US$ en el SEIA, frente a 0 ha y 495,6 MM US$ en Coyhaique.",
       "plainExplanation": "Las solicitudes costeras indígenas se superponen con los polos de inversión litoral: Aysén suma 393.000 ha ECMPO y 1.320 MM US$ en el SEIA, frente a 0 ha y 495,6 MM US$ en Coyhaique.",
-      "notable_commune": "Caso atípico: Coyhaique registra +319,1 MM US$ por encima de lo esperado para su nivel en el eje X.",
+      "notable_commune": "Caso atípico: Coyhaique registra +354,6 MM US$ por encima de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 495.6,
-          "expectedY": 176.46,
-          "diffY": 319.14,
-          "zResid": 2.03,
-          "note": "Coyhaique registra 495,6 MM US$, 319,1 MM US$ por encima de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 141.01,
+          "diffY": 354.59,
+          "zResid": 1.94,
+          "note": "Coyhaique registra 495,6 MM US$, 354,6 MM US$ por encima de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Lago Verde": {
           "actualY": 31.4,
-          "expectedY": 176.46,
-          "diffY": -145.06,
-          "zResid": -0.92,
-          "note": "Lago Verde registra 31,4 MM US$, 145,1 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 141.01,
+          "diffY": -109.61,
+          "zResid": -0.6,
+          "note": "Lago Verde registra 31,4 MM US$, 109,6 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Aysén": {
           "actualY": 1320.0,
-          "expectedY": 1184.88,
-          "diffY": 135.12,
-          "zResid": 0.86,
-          "note": "Aysén registra 1.320 MM US$, 135,1 MM US$ por encima de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 1113.11,
+          "diffY": 206.89,
+          "zResid": 1.13,
+          "note": "Aysén registra 1.320 MM US$, 206,9 MM US$ por encima de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Cisnes": {
           "actualY": 525.0,
-          "expectedY": 758.93,
-          "diffY": -233.93,
-          "zResid": -1.48,
-          "note": "Cisnes registra 525 MM US$, 233,9 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 702.5,
+          "diffY": -177.5,
+          "zResid": -0.97,
+          "note": "Cisnes registra 525 MM US$, 177,5 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Guaitecas": {
           "actualY": 245.0,
-          "expectedY": 176.46,
-          "diffY": 68.54,
-          "zResid": 0.44,
-          "note": "Guaitecas (245 MM US$) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 507.09,
+          "diffY": -262.09,
+          "zResid": -1.44,
+          "note": "Guaitecas registra 245 MM US$, 262,1 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Chile Chico": {
           "actualY": 310.0,
-          "expectedY": 176.46,
-          "diffY": 133.54,
-          "zResid": 0.85,
-          "note": "Chile Chico registra 310 MM US$, 133,5 MM US$ por encima de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 141.01,
+          "diffY": 168.99,
+          "zResid": 0.93,
+          "note": "Chile Chico registra 310 MM US$, 169 MM US$ por encima de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Río Ibáñez": {
           "actualY": 142.0,
-          "expectedY": 176.46,
-          "diffY": -34.46,
-          "zResid": -0.22,
+          "expectedY": 141.01,
+          "diffY": 0.99,
+          "zResid": 0.01,
           "note": "Río Ibáñez (142 MM US$) se ubica prácticamente en línea con la tendencia regional."
         },
         "Cochrane": {
           "actualY": 172.0,
-          "expectedY": 176.46,
-          "diffY": -4.46,
-          "zResid": -0.03,
+          "expectedY": 141.01,
+          "diffY": 30.99,
+          "zResid": 0.17,
           "note": "Cochrane (172 MM US$) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
           "actualY": 48.0,
-          "expectedY": 176.46,
-          "diffY": -128.46,
-          "zResid": -0.82,
-          "note": "O'Higgins registra 48,0 MM US$, 128,5 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 141.01,
+          "diffY": -93.01,
+          "zResid": -0.51,
+          "note": "O'Higgins registra 48,0 MM US$, 93,0 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
         },
         "Tortel": {
           "actualY": 66.5,
-          "expectedY": 176.46,
-          "diffY": -109.96,
-          "zResid": -0.7,
-          "note": "Tortel registra 66,5 MM US$, 110 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
+          "expectedY": 186.77,
+          "diffY": -120.27,
+          "zResid": -0.66,
+          "note": "Tortel registra 66,5 MM US$, 120,3 MM US$ por debajo de lo esperado según su nivel de superficie ECMPO solicitada."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 82% · r = +0,90 · Sin Coyhaique: +0,95 · Control pob.: +0,94",
+      "metrics_line": "R² 75% · r = +0,87 · Sin Coyhaique: +0,93 · Control pob.: +0,93",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 82,
-        "pearsonR": 0.904,
-        "spearmanRho": 0.701,
-        "kendallTau": 0.615,
-        "partialCorrPop": 0.939,
-        "rWithoutCoyhaique": 0.949,
-        "firstDiffCorrDelta": 0.939,
-        "pValueFdr": 0.000351,
-        "veredictoSimple": "R² 82% · r = +0,90 · Sin Coyhaique: +0,95 · Control pob.: +0,94"
+        "fuerzaExplicativaPct": 75,
+        "pearsonR": 0.868,
+        "spearmanRho": 0.574,
+        "kendallTau": 0.49,
+        "partialCorrPop": 0.933,
+        "rWithoutCoyhaique": 0.926,
+        "firstDiffCorrDelta": 0.933,
+        "pValueFdr": 0.001179,
+        "veredictoSimple": "R² 75% · r = +0,87 · Sin Coyhaique: +0,93 · Control pob.: +0,93"
       }
     },
     {

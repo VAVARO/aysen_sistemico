@@ -16,7 +16,7 @@ fuentes_oficiales:
   - "SUBDERE — SINIM"
   - "DIPRES / GORE Aysén — FNDR"
   - "SUBPESCA / SERNAPESCA / DGA / DEIS / ANID"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 tags:
   - aysen-sistemico
   - index
@@ -28,7 +28,7 @@ Catálogo rector orientado a contenido bajo el patrón **`llm-wiki` de Andrej Ka
 
 ## Síntesis Compilada (Consultor IA)
 
-La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de la Región de Aysén (100.745 habitantes Censo 2024, 10 comunas, 235 variables comunales y 38 fuentes oficiales) en 77 páginas canónicas interconectadas: 1 índice maestro (`index.md`), 1 bitácora cronológica (`log.md`), 10 Hubs temáticos (`I` al `X`), 10 radiografías comunales, 41 fichas de Nodos Satélite (`#01` al `#41`), 8 paquetes conceptuales y entidades territoriales multidimensionales, y 6 registros de decisiones de arquitectura y datos (`ADR-001` a `ADR-006`).
+La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de la Región de Aysén (100.745 habitantes Censo 2024, 10 comunas, 245 variables comunales —226 numéricas—, 18 Barrios Acuícolas ACS y 38 fuentes oficiales) en 77 páginas canónicas interconectadas: 1 índice maestro (`index.md`), 1 bitácora cronológica (`log.md`), 10 Hubs temáticos (`I` al `X`), 10 radiografías comunales, 41 fichas de Nodos Satélite (`#01` al `#41`), 8 paquetes conceptuales y entidades territoriales multidimensionales, y 6 registros de decisiones de arquitectura y datos (`ADR-001` a `ADR-006`).
 
 ## 1. Gobernanza del Conocimiento y Bitácora
 

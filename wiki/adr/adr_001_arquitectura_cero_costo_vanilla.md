@@ -12,7 +12,7 @@ fuentes_oficiales:
   - "INE — Censo de Población y Vivienda 2024"
   - "SUBDERE — SINIM"
   - "GORE Aysén — Datos Abiertos"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 tags:
   - aysen-sistemico
   - adr
@@ -23,7 +23,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Aysén Sistémico adopta una arquitectura de costo de infraestructura cero ($0/mes) basada en HTML5, CSS3 y JavaScript Vanilla ES6+ sin dependencias de Node.js en tiempo de ejecución ni bases de datos relacionales pagadas. El pipeline de compilación estática (`scripts/build_aysen_hubs_bundle.cjs`) empaqueta 235 variables comunales verificadas, 10 Hubs temáticos (`I` al `X`), 41 Nodos Satélite (`#01` al `#41`) y 38 fuentes oficiales en `data/aysen_hubs_data.js`, alimentando cinco módulos integrados bajo la identidad visual Cuaderno Editorial y Cartográfico Austral: Portada Vectorial (`portal.html`), Visualizador de Complejidad (`sistemas_complejos.html`), Data Hub Territorial (`index.html`), Laboratorio Cartográfico 2D (`laboratorio.html`) y Consultor Semántico IA (`consultor.html`).
+Aysén Sistémico adopta una arquitectura de costo de infraestructura cero ($0/mes) basada en HTML5, CSS3 y JavaScript Vanilla ES6+ sin dependencias de Node.js en tiempo de ejecución ni bases de datos relacionales pagadas. El pipeline de compilación estática (`scripts/build_aysen_hubs_bundle.cjs`) empaqueta 245 variables comunales (226 numéricas) verificadas, 18 Barrios Acuícolas ACS, 10 Hubs temáticos (`I` al `X`), 41 Nodos Satélite (`#01` al `#41`) y 38 fuentes oficiales en `data/aysen_hubs_data.js`, alimentando cinco módulos integrados bajo la identidad visual Cuaderno Editorial y Cartográfico Austral: Portada Vectorial (`portal.html`), Visualizador de Complejidad (`sistemas_complejos.html`), Data Hub Territorial (`index.html`), Laboratorio Cartográfico 2D (`laboratorio.html`) y Consultor Semántico IA (`consultor.html`).
 
 ## Contexto, Decisión e Implicancias de Ingeniería
 

@@ -5597,13 +5597,14 @@
                 const isSnaspe = snIdx > 0;
                 const bioTon = Number(parts[8]) || 0;
                 const icaVal = Number(parts[9]) || 0;
+                const cicloCerrado = parts[10] === '1';
                 const cName = (pack.comunas && pack.comunas[ine]) || 'Aysén';
                 const barrioCode = acsStr.split('·')[0].trim();
                 return {
                   id: `padron_rpca_${cod}`,
                   codigo_centro: cod,
                   nombre: `Centro Acuícola ${cod} (${holdName})`,
-                  tipo: isAct ? 'Centro Salmonícola Activo' : 'Concesión Otorgada sin Operación',
+                  tipo: isAct ? 'Centro Salmonícola Activo' : (cicloCerrado ? 'Centro en Descanso Sanitario (Cierre de Ciclo Bianual)' : 'Concesión Otorgada sin Operación'),
                   layerKey: 'concesiones_acuicolas_padron',
                   hubId: 'salmonicultura',
                   comuna_ine: ine,
@@ -5613,15 +5614,16 @@
                   lat,
                   lon,
                   estado_operativo: isAct ? 'Activo' : 'Otorgada sin operación',
+                  ciclo_cerrado_reciente: cicloCerrado,
                   en_snaspe: isSnaspe,
                   unidad_snaspe: snUnit,
                   titular_holding: holdName,
                   empresa_madre: madreName,
                   biomasa_ton: bioTon,
                   antibioticos_ica: icaVal,
-                  magnitudeValue: isAct ? Math.max(bioTon, 100) : 120,
-                  magnitudeUnit: isAct ? 'ton biomasa' : 'ha concesión',
-                  magnitudeLabel: isAct ? 'Biomasa Activa Estimada' : 'Concesión Otorgada / En Descanso',
+                  magnitudeValue: (isAct || cicloCerrado) ? Math.max(bioTon, 100) : 120,
+                  magnitudeUnit: (isAct || cicloCerrado) ? 'ton biomasa' : 'ha concesión',
+                  magnitudeLabel: isAct ? 'Biomasa Activa Estimada' : (cicloCerrado ? 'Biomasa Cosechada Cierre Ciclo (ACS-35)' : 'Concesión Otorgada / En Descanso'),
                   titular: `${holdName} (${madreName})`,
                   sourceUrl: 'https://mapas.subpesca.cl/',
                   bufferGenerator: false,
@@ -6392,7 +6394,84 @@
           short: 'Uso de antibióticos (ICA)',
           unitLabel: 'g / ton',
           sourceTag: 'ICA SERNAPESCA',
-          desc: 'Mide los gramos de principio activo farmacológico por tonelada de biomasa.'
+          desc: 'Mide los gramos de principio activo farmacológico por tonelada de biomasa (tope regulatorio 2026: 400 g/t).'
+        },
+        'biomasa_por_holding': {
+          title: 'Biomasa de Salmón por Holding (Estimación proporcional)',
+          short: 'Biomasa por Holding (Est.)',
+          unitLabel: 'ton',
+          sourceTag: 'SERNAPESCA / SUBPESCA',
+          desc: 'Estimación proporcional por cartera de concesiones SERNAPESCA/SUBPESCA entre los 12 principales holdings.'
+        },
+        'centros_activos_por_holding': {
+          title: 'Centros Activos por Holding (Estimación proporcional)',
+          short: 'Centros Activos Holding (Est.)',
+          unitLabel: 'centros',
+          sourceTag: 'SERNAPESCA / SUBPESCA',
+          desc: 'Estimación proporcional por cartera de concesiones SERNAPESCA/SUBPESCA según el padrón georreferenciado.'
+        },
+        'desembarque_artesanal_ton': {
+          title: 'Desembarque Artesanal Flota Local RPA',
+          short: 'Desemb. Artesanal (Flota RPA)',
+          unitLabel: 'ton/año',
+          sourceTag: 'SERNAPESCA RPA',
+          desc: 'Captura desembarcada por flota artesanal residente inscrita en el RPA comunal (13.820 t; distinto de descarga total en muelles 31.690 t).'
+        },
+        'desembarque_muelles_total_ton': {
+          title: 'Descarga Física Total en Muelles y Caletas (Zona Contigua)',
+          short: 'Descarga Total Muelles',
+          unitLabel: 'ton/año',
+          sourceTag: 'SERNAPESCA',
+          desc: 'Transferencia total en puertos/caletas comunales incluyendo flota artesanal de Los Lagos en Zona Contigua (31.690 t/año).'
+        },
+        'patente_acuicola_pua_mclp': {
+          title: 'Ingreso Municipal por Patente Única de Acuicultura (Art. 84 LGPA)',
+          short: 'Patente Acuícola PUA Municipal',
+          unitLabel: 'M$ CLP/año',
+          sourceTag: 'SINIM / TGR',
+          desc: 'Recaudación municipal directa (50% de 20 UTM/ha) por concesiones acuícolas vigentes en cada comuna.'
+        },
+        'peso_pua_ingresos_propios_pct': {
+          title: 'Peso de la Patente Acuícola (PUA) en Ingresos Propios (%)',
+          short: 'Peso PUA / Ingresos Propios (%)',
+          unitLabel: '%',
+          sourceTag: 'SINIM / TGR',
+          desc: 'Porcentaje de ingresos propios permanentes municipales dependientes de la Patente Única de Acuicultura.'
+        },
+        'superficie_concesionada_mar_ha': {
+          title: 'Superficie Marina Concesionada de Acuicultura',
+          short: 'Superficie Concesionada Mar',
+          unitLabel: 'ha',
+          sourceTag: 'SUBPESCA',
+          desc: 'Total de hectáreas marinas otorgadas en concesión acuícola (9.304 ha regionales).'
+        },
+        'empleo_directo_acuicola_n': {
+          title: 'Empleo Directo en Salmonicultura (Centros + Plantas)',
+          short: 'Empleo Directo Acuícola',
+          unitLabel: 'trabajadores',
+          sourceTag: 'Obs. Laboral / SERNAPESCA',
+          desc: 'Dotación directa estimada en centros de cultivo, plantas de proceso (Puerto Chacabuco) y soporte marítimo.'
+        },
+        'sancionatorios_sma_acuicolas_n': {
+          title: 'Procedimientos Sancionatorios SMA en Centros Acuícolas',
+          short: 'Sancionatorios SMA-SNIFA',
+          unitLabel: 'expedientes',
+          sourceTag: 'SMA / SNIFA',
+          desc: 'Expedientes sancionatorios ambientales por sobreproducción, INFAs anaeróbicas, escapes o posicionamiento.'
+        },
+        'centros_infa_anaerobica_n': {
+          title: 'Centros con Condición INFA Anaeróbica Subyacente',
+          short: 'Centros INFA Anaeróbica',
+          unitLabel: 'centros',
+          sourceTag: 'SERNAPESCA INFA',
+          desc: 'Centros de cultivo con pérdida de condición aeróbica en sedimento marino bajo las balsas-jaula.'
+        },
+        'ecmpo_traslape_acuicola_n': {
+          title: 'Concesiones Afectadas por Traslape ECMPO (Art. 10 Ley 20.249)',
+          short: 'Concesiones con Traslape ECMPO',
+          unitLabel: 'concesiones',
+          sourceTag: 'SUBPESCA / CONADI',
+          desc: 'Número de concesiones acuícolas en suspensión o traslape espacial con solicitudes ECMPO vigentes.'
         },
         'floracion_alexandrium_fan': {
           title: 'Monitoreo de Marea Roja Alexandrium',
@@ -7913,13 +7992,35 @@
         alertas_fan_dias_ano: { title: 'Días de Alerta FAN Alexandrium catenella (2020–2026)', short: 'Días Alerta FAN', unit: 'días/año', hubId: 'salmonicultura' },
         tasa_ocupacion_concesiones_pct: { title: 'Tasa de Operación de Concesiones Acuícolas (%)', short: 'Tasa Ocupación Acuícola', unit: '%', hubId: 'salmonicultura' },
         proporcion_concesiones_en_snaspe_pct: { title: 'Proporción de Concesiones dentro de SNASPE (%)', short: '% Concesiones en SNASPE', unit: '%', hubId: 'salmonicultura' },
-        desembarque_artesanal_ton: { title: 'Desembarque Pesquero Artesanal Comunal', short: 'Desembarque Artesanal', unit: 'ton/año', hubId: 'salmonicultura' },
+        desembarque_artesanal_ton: { title: 'Desembarque Pesquero Artesanal Flota Local RPA', short: 'Desemb. Artesanal (Flota RPA)', unit: 'ton/año', hubId: 'salmonicultura' },
+        desembarque_muelles_total_ton: { title: 'Descarga Física Total en Muelles (Incl. Zona Contigua)', short: 'Descarga Total Muelles', unit: 'ton/año', hubId: 'salmonicultura' },
+        ecmpo_traslape_acuicola_n: { title: 'Concesiones Acuícolas con Traslape ECMPO (Art. 10 Ley 20.249)', short: 'Traslape ECMPO Acuícola', unit: 'concesiones', hubId: 'salmonicultura' },
+        patente_acuicola_pua_mclp: { title: 'Ingreso Municipal Patente Única de Acuicultura (Art. 84 LGPA)', short: 'Patente Acuícola PUA', unit: 'M$ CLP/año', hubId: 'salmonicultura' },
+        peso_pua_ingresos_propios_pct: { title: 'Peso de Patente Acuícola (PUA) sobre Ingresos Propios (%)', short: 'Peso PUA / IPP (%)', unit: '%', hubId: 'salmonicultura' },
+        superficie_concesionada_mar_ha: { title: 'Superficie Marina Concesionada de Acuicultura (SUBPESCA)', short: 'Superficie Marina Acuíc.', unit: 'ha', hubId: 'salmonicultura' },
+        empleo_directo_acuicola_n: { title: 'Empleo Directo en Salmonicultura (Centros + Plantas + Soporte)', short: 'Empleo Directo Salmón', unit: 'trabajadores', hubId: 'salmonicultura' },
+        sancionatorios_sma_acuicolas_n: { title: 'Procedimientos Sancionatorios SMA en Centros Acuícolas (SNIFA)', short: 'Sancionatorios SMA Acuícola', unit: 'expedientes', hubId: 'salmonicultura' },
+        centros_infa_anaerobica_n: { title: 'Centros Acuícolas con Condición INFA Anaeróbica', short: 'Centros INFA Anaeróbica', unit: 'centros', hubId: 'salmonicultura' },
+        sancionatorios_sma_por_holding: { title: 'Expedientes Sancionatorios SMA-SNIFA por Holding (Estimado/SNIFA)', short: 'Sanciones SMA por Holding', unit: 'expedientes', hubId: 'salmonicultura' },
+        acs_concesiones_totales: { title: 'Concesiones Otorgadas por Barrio ACS', short: 'Concesiones por Barrio ACS', unit: 'concesiones', hubId: 'salmonicultura' },
+        acs_centros_activos: { title: 'Centros Activos por Barrio ACS', short: 'Centros Activos por ACS', unit: 'centros', hubId: 'salmonicultura' },
+        acs_biomasa_cosechada_ton: { title: 'Biomasa Cosechada por Barrio ACS', short: 'Biomasa por Barrio ACS', unit: 'ton', hubId: 'salmonicultura' },
+        acs_antibioticos_ica_g_ton: { title: 'Uso de Antibióticos ICA por Barrio ACS', short: 'ICA Antibióticos por ACS', unit: 'g/ton', hubId: 'salmonicultura' },
+        acs_mortalidad_ciclo_pct: { title: 'Mortalidad en Ciclo por Barrio ACS (SERNAPESCA)', short: 'Mortalidad Ciclo por ACS (%)', unit: '%', hubId: 'salmonicultura' },
+        acs_densidad_max_kg_m3: { title: 'Densidad Máxima de Siembra Autorizada SUBPESCA por ACS', short: 'Densidad Máx. por ACS', unit: 'kg/m³', hubId: 'salmonicultura' },
+        acs_infa_aerobica_pct: { title: 'Centros con Condición INFA Aeróbica por Barrio ACS (%)', short: '% INFA Aeróbica por ACS', unit: '%', hubId: 'salmonicultura' },
+        acs_concesiones_en_snaspe: { title: 'Concesiones dentro de SNASPE por Barrio ACS', short: 'En SNASPE por ACS', unit: 'concesiones', hubId: 'salmonicultura' },
+        cosecha_salmon_atlantico_hist: { title: 'Cosecha Regional de Salmón del Atlántico (2015–2026)', short: 'Salmón Atlántico (Hist.)', unit: 'Miles Ton', hubId: 'salmonicultura' },
+        cosecha_salmon_coho_hist: { title: 'Cosecha Regional de Salmón Coho (2015–2026)', short: 'Salmón Coho (Hist.)', unit: 'Miles Ton', hubId: 'salmonicultura' },
+        cosecha_trucha_arcoiris_hist: { title: 'Cosecha Regional de Trucha Arcoíris (2015–2026)', short: 'Trucha Arcoíris (Hist.)', unit: 'Miles Ton', hubId: 'salmonicultura' },
+        hectareas_marinas_concesionadas_hist: { title: 'Superficie Marina Concesionada Regional (2015–2026)', short: 'Hectáreas Marinas (Hist.)', unit: 'ha', hubId: 'salmonicultura' },
         trabajadores_sii_por_centro_activo: { title: 'Trabajadores SII por Centro Acuícola Activo (Arraigo Laboral)', short: 'Trabajadores/Centro Activo', unit: 'trab./centro', hubId: 'salmonicultura' },
         pesca_ind_fraccionamiento_art_pct: { title: 'Fraccionamiento Pesquero Artesanal Ley N° 21.752 (%)', short: '% Fraccionamiento Artesanal', unit: '%', hubId: 'salmonicultura' },
         pesca_ind_fraccionamiento_ind_pct: { title: 'Fraccionamiento Pesquero Industrial Ley N° 21.752 (%)', short: '% Fraccionamiento Industrial', unit: '%', hubId: 'salmonicultura' },
         pesca_ind_valor_sancion_utm: { title: 'Valor de Sanción SUBPESCA por Pesquería', short: 'Valor Sanción SUBPESCA', unit: 'UTM/ton', hubId: 'salmonicultura' },
         pesca_ind_impuesto_43ter_utm: { title: 'Impuesto Específico Art. 43 ter LGPA por Pesquería', short: 'Impuesto Art. 43 ter', unit: 'UTM/ton', hubId: 'salmonicultura' },
-        centros_activos_por_holding: { title: 'Centros Acuícolas Activos por Holding', short: 'Centros Activos Holding', unit: 'centros', hubId: 'salmonicultura' },
+        biomasa_por_holding: { title: 'Biomasa de Salmón por Holding (Estimación proporcional por cartera SUBPESCA)', short: 'Biomasa por Holding (Est.)', unit: 'ton', hubId: 'salmonicultura' },
+        centros_activos_por_holding: { title: 'Centros Acuícolas Activos por Holding (Estimación proporcional por cartera SUBPESCA)', short: 'Centros Activos Holding (Est.)', unit: 'centros', hubId: 'salmonicultura' },
         concesiones_snaspe_por_holding: { title: 'Concesiones Acuícolas en SNASPE por Holding (Ley SBAP 21.600)', short: 'Concesiones SNASPE Holding', unit: 'concesiones', hubId: 'salmonicultura' },
         ventas_sii_muf: { title: 'Ventas Anuales Declaradas SII (Miles de UF)', short: 'Ventas SII (MUF)', unit: 'Miles de UF', hubId: 'inversion' },
         ventas_por_empresa_uf: { title: 'Ventas Promedio por Empresa SII (UF/empresa)', short: 'Ventas/Empresa SII', unit: 'UF/empresa', hubId: 'inversion' },
@@ -8023,9 +8124,23 @@
         '1B. Flujos y Estacionalidad': ['visitantes_snaspe', 'visitantes_extranjeros_pct', 'visitantes_extranjeros_snaspe_n', 'pernoctaciones_emat', 'tasa_ocupacion_estival_pct', 'tasa_ocupacion_invernal_pct', 'concentracion_estival_pct', 'emporcha_cruceros', 'emporcha_cruceros_hist', 'estacionalidad_mensual_emat', 'ocupacion_mensual_emat_pct', 'pernoctaciones_anuales_emat_hist', 'visitantes_snaspe_conaf_hist', 'pn_queulat_visitas_hist', 'pn_laguna_san_rafael_visitas_hist', 'pn_cerro_castillo_visitas_hist', 'pn_patagonia_visitas_hist'],
         '1C. Brechas de Capacidad y Presión Territorial': ['visitas_por_cama_turistica', 'visitas_por_pernoctacion_ratio', 'ratio_presion_turistica', 'ha_snaspe_por_guardaparque'],
 
-        '2A. Concesiones y Producción Comunal': ['concesiones_salmon', 'centros_activos_salmon', 'centros_activos_salmon_hist', 'biomasa_salmon_ton', 'biomasa_cosecha_salmon', 'sp_biomasa_cosecha_salmon', 'tasa_ocupacion_concesiones_pct', 'trabajadores_sii_por_centro_activo'],
-        '2B. Concentración Empresarial (12 Holdings)': ['holdings_salmoneros', 'holding_concesiones', 'holding_participacion_pct', 'holding_filiales_ruts', 'biomasa_por_holding', 'centros_activos_por_holding', 'concesiones_snaspe_por_holding', 'concentracion_salmon_top3_pct', 'concentracion_salmon_top5_pct', 'propiedad_capital_extranjero_salmon_pct'],
-        '2C. Pesca Artesanal, ECMPO y Fiscalización': ['sindicatos_pesca_artesanal', 'desembarque_artesanal_ton', 'amerb_decretadas', 'amerb_operativas', 'ecmpo_solicitadas_ha', 'concesiones_acuicolas_en_snaspe', 'proporcion_concesiones_en_snaspe_pct', 'antibioticos_ica_g_ton', 'floracion_alexandrium_fan', 'sp_floracion_alexandrium_fan', 'fan_alexandrium_mensual', 'tsm_fiordos', 'tsm_fiordo_puyuhuapi_c', 'alertas_fan_dias_ano', 'sp_oxigeno_disuelto_puyuhuapi', 'sp_invasion_chinook_desove', 'pesca_ind_fraccionamiento_art_pct', 'pesca_ind_fraccionamiento_ind_pct', 'pesca_ind_valor_sancion_utm', 'pesca_ind_impuesto_43ter_utm'],
+        '2A. Concesiones y Producción Comunal': [
+          'concesiones_salmon', 'centros_activos_salmon', 'centros_activos_salmon_hist', 'biomasa_salmon_ton', 'biomasa_cosecha_salmon',
+          'sp_biomasa_cosecha_salmon', 'tasa_ocupacion_concesiones_pct', 'trabajadores_sii_por_centro_activo',
+          'patente_acuicola_pua_mclp', 'peso_pua_ingresos_propios_pct', 'superficie_concesionada_mar_ha', 'empleo_directo_acuicola_n',
+          'acs_concesiones_totales', 'acs_centros_activos', 'acs_biomasa_cosechada_ton',
+          'cosecha_salmon_atlantico_hist', 'cosecha_salmon_coho_hist', 'cosecha_trucha_arcoiris_hist', 'hectareas_marinas_concesionadas_hist'
+        ],
+        '2B. Concentración Empresarial (12 Holdings)': ['holdings_salmoneros', 'holding_concesiones', 'holding_participacion_pct', 'holding_filiales_ruts', 'biomasa_por_holding', 'centros_activos_por_holding', 'concesiones_snaspe_por_holding', 'sancionatorios_sma_por_holding', 'concentracion_salmon_top3_pct', 'concentracion_salmon_top5_pct', 'propiedad_capital_extranjero_salmon_pct'],
+        '2C. Pesca Artesanal, ECMPO y Fiscalización': [
+          'sindicatos_pesca_artesanal', 'desembarque_artesanal_ton', 'desembarque_muelles_total_ton',
+          'amerb_decretadas', 'amerb_operativas', 'ecmpo_solicitadas_ha', 'ecmpo_traslape_acuicola_n',
+          'concesiones_acuicolas_en_snaspe', 'proporcion_concesiones_en_snaspe_pct', 'antibioticos_ica_g_ton',
+          'sancionatorios_sma_acuicolas_n', 'centros_infa_anaerobica_n',
+          'acs_antibioticos_ica_g_ton', 'acs_mortalidad_ciclo_pct', 'acs_densidad_max_kg_m3', 'acs_infa_aerobica_pct', 'acs_concesiones_en_snaspe',
+          'floracion_alexandrium_fan', 'sp_floracion_alexandrium_fan', 'fan_alexandrium_mensual', 'tsm_fiordos', 'tsm_fiordo_puyuhuapi_c', 'alertas_fan_dias_ano', 'sp_oxigeno_disuelto_puyuhuapi', 'sp_invasion_chinook_desove',
+          'pesca_ind_fraccionamiento_art_pct', 'pesca_ind_fraccionamiento_ind_pct', 'pesca_ind_valor_sancion_utm', 'pesca_ind_impuesto_43ter_utm'
+        ],
 
         '3A. Sistemas Eléctricos y Confiabilidad': ['potencia_mw', 'saidi_horas_anual', 'tarifa_bt1_clp', 'costo_diesel_aislado_clp', 'costo_real_generacion_diesel_kwh_clp', 'subsidio_fiscal_diesel_kwh_clp', 'generacion_hidro_gwh', 'generacion_diesel_gwh', 'participacion_diesel_matriz_pct', 'tarifa_bt1_regional_clp_hist', 'sp_caudal_simpson_coyhaique', 'sp_caudal_baker_bertrand'],
         '3B. Matriz Térmica, Leña y Combustibles': ['hogares_lena_pct', 'precio_lena_m3', 'consumo_lena_m3_hogar_ano', 'consumo_lena_m3_hogar_anio', 'consumo_lena_m3_solidos_anual', 'informalidad_lena_pct', 'gasolina_93_clp', 'precio_diesel_regional_cne_clp_hist', 'sp_precio_combustibles_coyhaique', 'recambio_calefactores_pda_hist', 'barometro_preocupacion_contaminacion_lena_pct', 'barometro_preocupacion_contaminacion_lena_pct_hist'],
@@ -8081,7 +8196,11 @@
         }
         if (hId === 'salmonicultura') {
           if (item.dim === 'holding' || /holding/i.test(id)) return sgList[1];
-          if (/amerb|ecmpo|sindicato|antibiotico|alexandrium|fan|tsm|oxigeno|chinook/i.test(id)) return sgList[2];
+          if (item.dim === 'acs') {
+            if (/antibioticos|mortalidad|densidad|infa|snaspe/i.test(id)) return sgList[2];
+            return sgList[0];
+          }
+          if (/amerb|ecmpo|sindicato|antibiotico|alexandrium|fan|tsm|oxigeno|chinook|sancionatorios_sma|infa|desembarque/i.test(id)) return sgList[2];
           return sgList[0];
         }
         if (hId === 'energia') {
@@ -8415,6 +8534,9 @@
         const holdingSnaspeData = holdingsList.length
           ? holdingsList.map(h => Number(h.concesiones_snaspe) || 0)
           : [92, 41, 34, 32, 26, 19, 16, 23, 11, 10, 4, 3];
+        const holdingSmaData = holdingsList.length
+          ? holdingsList.map(h => Number(h.sancionatorios_sma_snifa) || 0)
+          : [18, 8, 7, 6, 5, 8, 3, 3, 2, 2, 1, 3];
 
         const holdingVars = [
           {
@@ -8424,15 +8546,15 @@
             labels: holdingLabels, data: holdingConcData
           },
           {
-            id: 'biomasa_por_holding', name: 'Biomasa Estimada de Salmón por Holding', shortName: 'Biomasa por Holding',
+            id: 'biomasa_por_holding', name: 'Biomasa de Salmón por Holding (Estimación proporcional por cartera de concesiones SERNAPESCA/SUBPESCA)', shortName: 'Biomasa por Holding (Est.)',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'ton', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'CMF / SUBPESCA / SERNAPESCA', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
+            sourceName: 'CMF / SUBPESCA / SERNAPESCA (Est. proporcional)', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
             labels: holdingLabels, data: holdingBioData
           },
           {
-            id: 'centros_activos_por_holding', name: 'Centros Acuícolas Activos por Holding', shortName: 'Centros Activos Holding',
+            id: 'centros_activos_por_holding', name: 'Centros Acuícolas Activos por Holding (Estimación proporcional por cartera de concesiones SERNAPESCA/SUBPESCA)', shortName: 'Centros Activos Holding (Est.)',
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'centros', aggMode: 'sum', chartType: 'bar',
-            sourceName: 'SUBPESCA / SERNAPESCA (Padrón 2026)', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
+            sourceName: 'SUBPESCA / SERNAPESCA (Est. proporcional Padrón 2026)', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
             labels: holdingLabels, data: holdingActivosData
           },
           {
@@ -8440,6 +8562,12 @@
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
             sourceName: 'SUBPESCA / CONAF / Ley SBAP N° 21.600', collectionDate: '17 Oct 2026', sourceUrl: 'https://www.subpesca.cl',
             labels: holdingLabels, data: holdingSnaspeData
+          },
+          {
+            id: 'sancionatorios_sma_por_holding', name: 'Expedientes Sancionatorios SMA-SNIFA por Holding', shortName: 'Sancionatorios SMA Holding',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'holding', unit: 'expedientes', aggMode: 'sum', chartType: 'bar',
+            sourceName: 'Superintendencia del Medio Ambiente (SNIFA)', collectionDate: '25 Nov 2026', sourceUrl: 'https://snifa.sma.gob.cl/',
+            labels: holdingLabels, data: holdingSmaData
           },
           {
             id: 'holding_concesiones', name: 'Concesiones en Aysén por Holding', shortName: 'Concesiones por Holding',
@@ -8462,12 +8590,69 @@
         ];
         holdingVars.forEach(v => items.push(v));
 
+        // 2.5 Nueva Dimensión dim: 'acs' — Los 18 Barrios Acuícolas de Aysén (ACS-17 a ACS-35)
+        const acsRawList = Array.isArray(AppState.hubsData?.barriosAcs) ? AppState.hubsData.barriosAcs : [];
+        if (acsRawList.length > 0) {
+          const acsLabels = acsRawList.map(b => b.codigo_acs);
+          const acsVars = [
+            {
+              id: 'acs_concesiones_totales', name: 'Concesiones Otorgadas por Barrio ACS', shortName: 'Concesiones por Barrio ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
+              sourceName: 'SUBPESCA / SERNAPESCA (Barrios ACS)', collectionDate: '25 Nov 2026', sourceUrl: 'https://geoportal.subpesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.concesiones_totales) || 0)
+            },
+            {
+              id: 'acs_centros_activos', name: 'Centros Activos por Barrio ACS', shortName: 'Centros Activos por ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: 'centros', aggMode: 'sum', chartType: 'bar',
+              sourceName: 'SERNAPESCA (Descansos Sanitarios ACS)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.sernapesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.centros_activos) || 0)
+            },
+            {
+              id: 'acs_biomasa_cosechada_ton', name: 'Biomasa Cosechada por Barrio ACS', shortName: 'Biomasa por Barrio ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: 'ton', aggMode: 'sum', chartType: 'bar',
+              sourceName: 'SERNAPESCA / SUBPESCA (18 Barrios ACS)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.sernapesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.biomasa_cosechada_ton) || 0)
+            },
+            {
+              id: 'acs_antibioticos_ica_g_ton', name: 'Uso de Antibióticos ICA por Barrio ACS', shortName: 'ICA Antibióticos por ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: 'g/ton', aggMode: 'mean', chartType: 'bar',
+              sourceName: 'SERNAPESCA (Informe Antimicrobianos ICA)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.sernapesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.antibioticos_ica_g_ton) || 0)
+            },
+            {
+              id: 'acs_mortalidad_ciclo_pct', name: 'Mortalidad en Ciclo por Barrio ACS (SERNAPESCA)', shortName: 'Mortalidad Ciclo por ACS (%)',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: '%', aggMode: 'mean', chartType: 'bar',
+              sourceName: 'SERNAPESCA (Sanidad Acuícola)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.sernapesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.mortalidad_ciclo_pct) || 0)
+            },
+            {
+              id: 'acs_densidad_max_kg_m3', name: 'Densidad Máxima de Siembra Autorizada SUBPESCA por ACS', shortName: 'Densidad Máx. por ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: 'kg/m³', aggMode: 'mean', chartType: 'bar',
+              sourceName: 'SUBPESCA (Score de Bioseguridad ACS)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.subpesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.densidad_max_kg_m3) || 0)
+            },
+            {
+              id: 'acs_infa_aerobica_pct', name: 'Centros con Condición INFA Aeróbica por Barrio ACS (%)', shortName: '% INFA Aeróbica por ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: '%', aggMode: 'mean', chartType: 'bar',
+              sourceName: 'SERNAPESCA (Informes Ambientales INFA)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.sernapesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.infa_aerobica_pct) || 0)
+            },
+            {
+              id: 'acs_concesiones_en_snaspe', name: 'Concesiones dentro de SNASPE por Barrio ACS', shortName: 'En SNASPE por ACS',
+              hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', dim: 'acs', unit: 'concesiones', aggMode: 'sum', chartType: 'bar',
+              sourceName: 'SUBPESCA / CONAF (Ley SBAP 21.600)', collectionDate: '25 Nov 2026', sourceUrl: 'https://www.subpesca.cl/',
+              labels: acsLabels, data: acsRawList.map(b => Number(b.concesiones_en_snaspe) || 0)
+            }
+          ];
+          acsVars.forEach(v => items.push(v));
+        }
+
         // 3. Catálogo Canónico Comunal Unificado desde window.AYSEN_HUBS_DATA.comunas (100% numérico, sin duplicados ni campos de texto)
         const NON_NUMERIC_KEYS = new Set([
           'id', 'comuna_ine', 'codigo_comuna', 'nombre', 'nombre_comuna', 'provincia',
           'cabecera', 'cuenca_bna', 'unidades_snaspe', 'dependencia_barcaza',
           'salud_principal', 'aerodromo', 'alcalde', 'partido_alcalde', 'sistema_electrico',
-          'estado_foa', 'zoit_nombre'
+          'estado_foa', 'zoit_nombre', 'nota_ciclo_productivo'
         ]);
 
         const aliasComunaKeys = new Set([
@@ -8501,7 +8686,7 @@
           if (/museos|bibliotecas|monumentos|centros_culturales|organizaciones_comunitarias|cultores_patrimonio|fondos_cultura|gasto_municipal_cultura|gasto_cultura|fndr_8pct_cultura|percepcion_cultura|participacion_cultural|espacios_culturales|fondart|indigena|conadi/i.test(k)) return 'cultura';
           if (/ctci|anid|corfo_innova|innovacion_corfo|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones|universidades_f4g|ciencia_endogena/i.test(k)) return 'ctci';
           if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit|tarifa_adr|revpar|estadia_promedio|tasa_ocupacion_estival|tasa_ocupacion_invernal|concentracion_estival|visitas_por_pernoctacion|visitas_por_cama|guardaparque/i.test(k)) return 'turismo';
-          if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca/i.test(k)) return 'salmonicultura';
+          if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca|patente_acuicola|peso_pua|superficie_concesionada_mar|empleo_directo_acuicola|sancionatorios_sma_acuicolas|centros_infa_anaerobica|desembarque_muelles|^acs_|cosecha_salmon_|cosecha_trucha_|hectareas_marinas_concesionadas/i.test(k)) return 'salmonicultura';
           if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena|participacion_diesel_matriz|indice_aislamiento_multimodal/i.test(k)) return 'energia';
           if (/presupuesto|fcm|fndr|ipp|ingresos_propios|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|royalty_fet|ingresos_mun_bcn|participacion_presidencial|participacion_municipales|padron_electoral|ratio_padron|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
           if (/rsh_|ruralidad_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|ratio_pobreza_multidim|matricula_escolar|establecimientos_escolares|escuelas_rurales_multigrado|liceos_urbanos|slep_aysen|tasa_dmcs|tasa_vif|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
@@ -8543,6 +8728,14 @@
           liceos_urbanos_n: { title: 'Liceos de Enseñanza Media HC/TP (n°)', short: 'Liceos Media HC/TP', unit: 'liceos', hubId: 'social', agg: 'sum' },
           ratio_pobreza_multidim_vs_ingresos: { title: 'Ratio Pobreza Multidimensional / Pobreza por Ingresos (veces)', short: 'Ratio Pobreza Multidim./Ingresos', unit: 'ratio', hubId: 'social', agg: 'mean' },
           deficit_habitacional_total_por_1000_hab: { title: 'Déficit Habitacional Cuantitativo cada 1.000 Habitantes', short: 'Déficit Hab. c/1.000 hab', unit: 'viv./1.000 hab', hubId: 'social', agg: 'mean' },
+          patente_acuicola_pua_mclp: { title: 'Ingreso Municipal por Patente Única de Acuicultura (Art. 84 LGPA)', short: 'Patente Acuícola PUA', unit: 'M$ CLP/año', hubId: 'salmonicultura', agg: 'sum' },
+          peso_pua_ingresos_propios_pct: { title: 'Peso de la Patente Acuícola (PUA) sobre Ingresos Propios (%)', short: 'Peso PUA / IPP (%)', unit: '%', hubId: 'salmonicultura', agg: 'mean' },
+          superficie_concesionada_mar_ha: { title: 'Superficie Marina Concesionada de Acuicultura (SUBPESCA)', short: 'Superficie Concesionada Mar', unit: 'ha', hubId: 'salmonicultura', agg: 'sum' },
+          empleo_directo_acuicola_n: { title: 'Empleo Directo en Salmonicultura (Centros + Plantas + Soporte)', short: 'Empleo Directo Salmón', unit: 'trabajadores', hubId: 'salmonicultura', agg: 'sum' },
+          sancionatorios_sma_acuicolas_n: { title: 'Procedimientos Sancionatorios SMA en Centros Acuícolas (SNIFA)', short: 'Sancionatorios SMA Acuícola', unit: 'expedientes', hubId: 'salmonicultura', agg: 'sum' },
+          centros_infa_anaerobica_n: { title: 'Centros Acuícolas con Condición INFA Anaeróbica', short: 'Centros INFA Anaeróbica', unit: 'centros', hubId: 'salmonicultura', agg: 'sum' },
+          ecmpo_traslape_acuicola_n: { title: 'Concesiones Acuícolas con Traslape ECMPO (Art. 10 Ley 20.249)', short: 'Traslape ECMPO Acuícola', unit: 'concesiones', hubId: 'salmonicultura', agg: 'sum' },
+          desembarque_muelles_total_ton: { title: 'Descarga Física Total en Muelles (Incl. Zona Contigua)', short: 'Descarga Total Muelles', unit: 'ton/año', hubId: 'salmonicultura', agg: 'sum' },
           fauna_amenazada_n: { title: 'Especies de Fauna Silvestre RCE Presentes por Comuna (n°)', short: 'Fauna RCE Comunal', unit: 'especies', hubId: 'biodiversidad', agg: 'mean' },
           especies_exoticas_invasoras_n: { title: 'Complejos de Especies Exóticas Invasoras Presentes (n°)', short: 'Especies Invasoras EEI', unit: 'especies', hubId: 'biodiversidad', agg: 'mean' },
           dias_sobre_norma_mp25: { title: 'Días al año con Superación Norma Diaria MP2.5 (>50 µg/m³)', short: 'Días sobre norma MP2.5', unit: 'días', hubId: 'biodiversidad', agg: 'mean' },
@@ -8874,6 +9067,54 @@
             hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'Miles Ton', aggMode: 'sum',
             sourceName: 'SERNAPESCA - Anuario Estadístico de Pesca y Acuicultura',
             data: [395.4, 342.1, 388.9, 432.5, 468.2, 485.6, 452.3, 478.1, 462.8, 448.5, 440.2, 503.5]
+          },
+          {
+            id: 'cosecha_salmon_atlantico_hist',
+            name: 'Cosecha Regional de Salmón del Atlántico (2015–2026)',
+            shortName: 'Salmón Atlántico (Hist.)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'Miles Ton', aggMode: 'sum',
+            sourceName: 'SERNAPESCA / SUBPESCA - Anuario Acuícola por Especie',
+            data: (() => {
+              const sAc = AppState.hubsData?.seriesAcuiculturaAnual;
+              if (Array.isArray(sAc) && sAc.length === 12) return sAc.map(r => Number(((Number(r.cosecha_salmon_atlantico_ton) || 0) / 1000).toFixed(1)));
+              return [295.0, 258.0, 298.5, 338.0, 369.0, 386.2, 361.5, 384.2, 372.5, 361.0, 355.4, 410.5];
+            })()
+          },
+          {
+            id: 'cosecha_salmon_coho_hist',
+            name: 'Cosecha Regional de Salmón Coho (2015–2026)',
+            shortName: 'Salmón Coho (Hist.)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'Miles Ton', aggMode: 'sum',
+            sourceName: 'SERNAPESCA / SUBPESCA - Anuario Acuícola por Especie',
+            data: (() => {
+              const sAc = AppState.hubsData?.seriesAcuiculturaAnual;
+              if (Array.isArray(sAc) && sAc.length === 12) return sAc.map(r => Number(((Number(r.cosecha_salmon_coho_ton) || 0) / 1000).toFixed(1)));
+              return [68.4, 59.1, 64.2, 69.5, 74.8, 76.5, 70.2, 73.1, 70.8, 68.5, 67.1, 74.2];
+            })()
+          },
+          {
+            id: 'cosecha_trucha_arcoiris_hist',
+            name: 'Cosecha Regional de Trucha Arcoíris (2015–2026)',
+            shortName: 'Trucha Arcoíris (Hist.)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'Miles Ton', aggMode: 'sum',
+            sourceName: 'SERNAPESCA / SUBPESCA - Anuario Acuícola por Especie',
+            data: (() => {
+              const sAc = AppState.hubsData?.seriesAcuiculturaAnual;
+              if (Array.isArray(sAc) && sAc.length === 12) return sAc.map(r => Number(((Number(r.cosecha_trucha_arcoiris_ton) || 0) / 1000).toFixed(1)));
+              return [32.0, 25.0, 26.2, 25.0, 24.4, 22.9, 20.6, 20.8, 19.5, 19.0, 17.7, 18.8];
+            })()
+          },
+          {
+            id: 'hectareas_marinas_concesionadas_hist',
+            name: 'Superficie Marina Concesionada Regional (2015–2026)',
+            shortName: 'Hectáreas Marinas (Hist.)',
+            hubId: 'salmonicultura', hubTitle: 'II. Salmonicultura', unit: 'ha', aggMode: 'mean',
+            sourceName: 'SUBPESCA / SERNAPESCA - Catastro de Concesiones',
+            data: (() => {
+              const sAc = AppState.hubsData?.seriesAcuiculturaAnual;
+              if (Array.isArray(sAc) && sAc.length === 12) return sAc.map(r => Number(r.hectareas_marinas_concesionadas_ha) || 0);
+              return [9210, 9260, 9305, 9350, 9400, 9450, 9480, 9510, 9540, 9560, 9580, 9304];
+            })()
           },
           {
             id: 'concentracion_salmon_top3_pct',
@@ -10392,6 +10633,8 @@
                         displaySub = `Serie 2015–2026 · ${displayUnit} · ${displaySigla}`;
                       } else if (it.dim === 'holding') {
                         displaySub = `12 holdings · ${displayUnit} · ${displaySigla}`;
+                      } else if (it.dim === 'acs') {
+                        displaySub = `18 barrios ACS · ${displayUnit} · ${displaySigla}`;
                       } else {
                         displaySub = `${it.dim} · ${displayUnit} · ${displaySigla}`;
                       }
@@ -10946,21 +11189,28 @@
         const hasVarX = ('varX' in config);
         const varX = hasVarX ? config.varX : 'seia_inversion_mmusd';
         const vX = varX ? (AppState.catalogItems.find(v => v.id === varX) || AppState.catalogItems[0]) : null;
+        const rawVarY = config.varY || null;
+        const vY = rawVarY ? AppState.catalogItems.find(v => v.id === rawVarY) : null;
+        const dimX = vX ? (vX.dim || 'comuna') : 'comuna';
+        const dimY = vY ? (vY.dim || 'comuna') : dimX;
+        const hasIncompatibleDims = Boolean(vX && vY && dimX !== dimY);
+        const effectiveVarY = hasIncompatibleDims ? null : rawVarY;
 
         const pos = getNextSmartPosition();
         const widget = {
           id,
           type,
           chartType: config.chartType || (type === 'chart' ? (vX ? (vX.chartType || 'bar') : 'bar') : null),
-          title: config.title || getDefaultTitle(type, varX, config.varY || null),
+          title: config.title || getDefaultTitle(type, varX, effectiveVarY),
           varX: varX,
-          varY: config.varY || null,
+          varY: effectiveVarY,
           color: config.color || (vX ? getHubColor(vX.hubId) : '#00357f'),
           showAverage: config.showAverage || false,
           showTrend: config.showTrend || false,
           excludeOutlierCoyhaique: Boolean(config.excludeOutlierCoyhaique),
           sortRanking: config.sortRanking || 'none',
           scaleMode: config.scaleMode || 'raw',
+          perCapitaMode: Boolean(config.perCapitaMode || config.scaleMode === 'per_capita'),
           minimized: false,
           maximized: false,
           prevBounds: null,
@@ -11000,6 +11250,27 @@
         updateFloatingToolbarPosition();
         autoSave();
         updateConnections();
+
+        if (rawVarY && widget.varY === null) {
+          const incompatibleV = AppState.catalogItems.find(v => v.id === rawVarY);
+          const curVX = AppState.catalogItems.find(v => v.id === varX);
+          if (incompatibleV && curVX && (curVX.dim || 'comuna') !== (incompatibleV.dim || 'comuna') && !config._splitSibling) {
+            const sibling = createWidget(type, {
+              varX: rawVarY,
+              chartType: incompatibleV.chartType || 'bar',
+              scaleMode: config.scaleMode || 'raw',
+              perCapitaMode: Boolean(config.perCapitaMode || config.scaleMode === 'per_capita'),
+              skipRender: config.skipRender,
+              _splitSibling: true
+            });
+            if (sibling) {
+              addConnection(widget.id, sibling.id, 'sync');
+              if (typeof showToast === 'function') {
+                showToast(`Dimensiones incompatibles (${curVX.dim || 'comuna'} vs ${incompatibleV.dim || 'comuna'}): se separaron en 2 láminas vinculadas.`);
+              }
+            }
+          }
+        }
         return widget;
       }
 
@@ -13727,6 +13998,7 @@
             if (w) {
               pushHistory('escala bruta');
               w.scaleMode = 'raw';
+              w.perCapitaMode = false;
               renderWidgetVisual(w);
               propagateTransformToConnectedWidgets(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
@@ -13743,6 +14015,7 @@
             if (w) {
               pushHistory('escala pct');
               w.scaleMode = 'pct';
+              w.perCapitaMode = false;
               renderWidgetVisual(w);
               propagateTransformToConnectedWidgets(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
@@ -13759,6 +14032,7 @@
             if (w) {
               pushHistory('escala zscore');
               w.scaleMode = 'zscore';
+              w.perCapitaMode = false;
               renderWidgetVisual(w);
               propagateTransformToConnectedWidgets(w);
               showFloatingToolbarForCard(w.id, { forceShow: true });
@@ -14104,15 +14378,36 @@
           return;
         }
 
-        w.varY = varYId;
         const vX = AppState.catalogItems.find(v => v.id === w.varX);
         const vY = AppState.catalogItems.find(v => v.id === varYId);
+        const dimX = vX ? (vX.dim || 'comuna') : 'comuna';
+        const dimY = vY ? (vY.dim || 'comuna') : 'comuna';
+
+        if (vX && vY && dimX !== dimY) {
+          const sibling = createWidget(w.type === 'reflection' ? 'chart' : (w.type || 'chart'), {
+            varX: varYId,
+            chartType: vY.chartType || 'bar',
+            scaleMode: w.scaleMode || 'raw',
+            perCapitaMode: Boolean(w.perCapitaMode),
+            _splitSibling: true
+          });
+          if (sibling) {
+            addConnection(w.id, sibling.id, 'sync');
+            selectActiveCard(w.id);
+          }
+          if (typeof showToast === 'function') {
+            showToast(`Cruce bloqueado (${dimX} vs ${dimY}): se creó una lámina paralela vinculada para evitar correlaciones espurias.`);
+          }
+          return;
+        }
+
+        w.varY = varYId;
 
         const infoX = getAutoexplanatoryVarInfo(vX.id, vX.shortName || vX.name, vX.unit);
         const infoY = getAutoexplanatoryVarInfo(vY.id, vY.shortName || vY.name, vY.unit);
         w.title = `${infoY?.short || infoY?.title || vY.shortName || vY.name} vs. ${infoX?.short || infoX?.title || vX.shortName || vX.name}`;
         if (w.type === 'chart') {
-          w.chartType = (vX.dim === 'comuna' && vY.dim === 'comuna') ? 'scatter' : 'bar';
+          w.chartType = ((vX.dim === 'comuna' && vY.dim === 'comuna') || (vX.dim === 'acs' && vY.dim === 'acs')) ? 'scatter' : 'bar';
         }
 
         const cardEl = document.getElementById(`widget-card-${w.id}`);
@@ -14356,18 +14651,22 @@
           ? `ventana ${payload.labels[0]}–${payload.labels[payload.labels.length - 1]}`
           : (payload.dim === 'holding'
             ? `${n} holdings evaluados`
-            : (payload.dim === 'pesqueria'
-              ? `${n} pesquerías evaluadas`
-              : (payload.dim === 'barometro_estrato'
-                ? `${n} estratos · ${sliceName}${coyTag}`
-                : `${sliceName}${coyTag}`)));
+            : (payload.dim === 'acs'
+              ? `${n} barrios ACS evaluados`
+              : (payload.dim === 'pesqueria'
+                ? `${n} pesquerías evaluadas`
+                : (payload.dim === 'barometro_estrato'
+                  ? `${n} estratos · ${sliceName}${coyTag}`
+                  : `${sliceName}${coyTag}`))));
         const decisionScopeClause = payload.dim === 'tiempo'
           ? `a lo largo de la ventana temporal evaluada (${payload.labels[0]}–${payload.labels[payload.labels.length - 1]})`
           : (payload.dim === 'holding'
             ? `entre los ${n} holdings evaluados`
-            : (payload.dim === 'pesqueria'
-              ? `entre las ${n} pesquerías evaluadas`
-              : `sobre el subconjunto ${sliceName}${coyTag}`));
+            : (payload.dim === 'acs'
+              ? `entre los ${n} barrios acuícolas ACS`
+              : (payload.dim === 'pesqueria'
+                ? `entre las ${n} pesquerías evaluadas`
+                : `sobre el subconjunto ${sliceName}${coyTag}`)));
 
         const isConstantStructX = payload.mode === 'bivariate' && stY && (
           stX.std === 0 || (payload.dim === 'barometro_estrato' && Math.abs(stX.maxVal - stX.minVal) < 1e-9)
@@ -15011,7 +15310,7 @@
               dim: 'comuna',
               chartSpec: vX.chartSpec || null
             };
-          } else if (Array.isArray(vX.data) && (vX.dim === 'holding' || vX.dim === 'pesqueria')) {
+          } else if (Array.isArray(vX.data) && (vX.dim === 'holding' || vX.dim === 'pesqueria' || vX.dim === 'acs')) {
             res = {
               mode: 'univariate',
               labels: [...(vX.labels || (vX.dim === 'holding' ? holdingLabels : []))],
@@ -15122,7 +15421,7 @@
               status: 'valid'
             };
           }
-        } else if ((vX.dim === 'holding' && vY.dim === 'holding') || (vX.dim === 'pesqueria' && vY.dim === 'pesqueria')) {
+        } else if ((vX.dim === 'holding' && vY.dim === 'holding') || (vX.dim === 'pesqueria' && vY.dim === 'pesqueria') || (vX.dim === 'acs' && vY.dim === 'acs')) {
           const targetDim = vX.dim;
           const labelsX = vX.labels || vX.chartSpec?.labels || [];
           const labelsY = vY.labels || vY.chartSpec?.labels || [];
@@ -15161,18 +15460,22 @@
             status: 'valid'
           };
         } else {
+          const nativeLabels = (vX.dim || 'comuna') === 'comuna'
+            ? [...COMUNAS_ORDER]
+            : [...(vX.labels || vX.chartSpec?.labels || COMUNAS_ORDER)];
+          const nativeData = (vX.dim || 'comuna') === 'comuna'
+            ? [...resolveCommunalVector(vX)]
+            : [...(Array.isArray(vX.data) ? vX.data : (vX.chartSpec?.datasets?.[0]?.data || nativeLabels.map(() => 0)))];
           res = {
-            mode: 'bivariate',
-            key: 'comuna',
-            dim: 'comuna',
-            status: 'warn_spurious',
-            labels: [...COMUNAS_ORDER],
-            dataX: [...resolveCommunalVector(vX)],
-            dataY: [...resolveCommunalVector(vY)],
-            unitX: vX.unit,
-            unitY: vY.unit,
-            nameX: vX.shortName || vX.name,
-            nameY: vY.shortName || vY.name
+            mode: 'univariate',
+            key: vX.dim || 'comuna',
+            dim: vX.dim || 'comuna',
+            status: 'blocked_incompatible_dim',
+            blockedCross: true,
+            labels: nativeLabels,
+            data: nativeData,
+            unit: vX.unit,
+            label: vX.shortName || vX.name
           };
         }
       }
@@ -15290,11 +15593,17 @@
         }
 
         // 1.2 Modo Per Cápita
-        if (res.dim === 'comuna' && (AppState.perCapitaMode || w.perCapitaMode)) {
+        if (res.dim === 'comuna' && (AppState.perCapitaMode || w.perCapitaMode || w.scaleMode === 'per_capita')) {
           const isRate = (u, varId) => /(_pct|%|ratio|tasa|per_capita|por_hab|promedio|horas|dias|días|km|nivel|puntaje|indice|índice|tarifa|precio|gasolina|diesel|diésel|costo|por_mil|\/hab)/i.test(`${u || ''} ${varId || ''}`);
           const scalePerCapitaVal = (val, pop, unitStr) => {
-            const u = String(unitStr || '');
-            if (/M\$\s*CLP|^M\$$/i.test(u.trim()) || u.includes('M$')) {
+            const u = String(unitStr || '').trim();
+            if (/MM\s*US\$|millones\s*(?:de\s*)?(?:US\$|USD)/i.test(u)) {
+              return { v: Number(((val * 1000000) / pop).toFixed(2)), u: 'US$/hab' };
+            }
+            if (/M\s*US\$|miles\s*(?:de\s*)?(?:US\$|USD)/i.test(u)) {
+              return { v: Number(((val * 1000) / pop).toFixed(2)), u: 'US$/hab' };
+            }
+            if (/M\$\s*CLP|^M\$$|MM\$/i.test(u) || u.includes('M$')) {
               return { v: Number(((val * 1000) / pop).toFixed(2)), u: 'Miles $ CLP/hab' };
             }
             return { v: Number((val / pop).toFixed(4)), u: `${u}/hab` };
@@ -15402,8 +15711,18 @@
 
       function resolveCommunalVector(item) {
         if (!item) return COMUNAS_ORDER.map(() => 0);
-        if (Array.isArray(item.data) && item.dim === 'comuna') {
+        const itemDim = item.dim || 'comuna';
+        if (Array.isArray(item.data) && itemDim === 'comuna') {
           return item.data;
+        }
+        if (itemDim !== 'comuna') {
+          if (item.valuesByComuna && typeof item.valuesByComuna === 'object') {
+            return COMUNAS_ORDER.map(cName => {
+              const key = Object.keys(item.valuesByComuna).find(k => normStr(k) === normStr(cName));
+              return key !== undefined ? (Number(item.valuesByComuna[key]) || 0) : 0;
+            });
+          }
+          return COMUNAS_ORDER.map(() => 0);
         }
         if (AppState.hubsData && Array.isArray(AppState.hubsData.comunas)) {
           const vKey = item.canonicalId || item.id;
@@ -15635,6 +15954,8 @@
                 displayDesc = `Serie 2015–2026 · ${displayUnit} · ${displaySigla}`;
               } else if (it.dim === 'holding') {
                 displayDesc = `12 holdings · ${displayUnit} · ${displaySigla}`;
+              } else if (it.dim === 'acs') {
+                displayDesc = `18 barrios ACS · ${displayUnit} · ${displaySigla}`;
               } else if (it.dim === 'pesqueria') {
                 displayDesc = `9 pesquerías · ${displayUnit} · ${displaySigla}`;
               } else {
@@ -16532,7 +16853,9 @@
               ? 'Comunas de Aysén'
               : (payload.dim === 'holding'
                 ? 'Holdings Acuícolas'
-                : (payload.dim === 'pesqueria' ? 'Pesquerías (Ley N° 21.752)' : 'Sectores / Categorías'));
+                : (payload.dim === 'acs'
+                  ? 'Barrios Acuícolas (ACS-17 a ACS-35)'
+                  : (payload.dim === 'pesqueria' ? 'Pesquerías (Ley N° 21.752)' : 'Sectores / Categorías')));
             const scales = {
               x: {
                 grid: { display: false },
@@ -17425,13 +17748,15 @@
             ? `Serie ${labels[0] || ''}–${labels[labels.length - 1] || ''}`
             : (payload.dim === 'holding'
               ? `${labels.length} holdings`
-              : (payload.dim === 'pesqueria'
+              : (payload.dim === 'acs'
+                ? `${labels.length} barrios ACS`
+                : (payload.dim === 'pesqueria'
                 ? `${labels.length} pesquerías`
                 : (payload.dim === 'barometro_estrato'
                   ? `${labels.length} macrozonas / estratos`
                   : (payload.effectiveSliceLabel || (AppState.territorialFilter && AppState.territorialFilter !== 'all')
                     ? `${activeSliceLbl}${isCoyExcluded ? ' · Sin Coyhaique' : ''}`
-                    : (isCoyExcluded ? 'Sin Coyhaique' : 'Región de Aysén')))));
+                    : (isCoyExcluded ? 'Sin Coyhaique' : 'Región de Aysén'))))));
 
           let mainValStr, mainUnitStr, subItemsHtml;
 
@@ -20944,6 +21269,12 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           .replace(/'/g, '&#39;');
       }
 
+      function formatReportRichText(val) {
+        return escReportHtml(val)
+          .replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>')
+          .replace(/`([^`\n]+)`/g, '<code>$1</code>');
+      }
+
       function updateReportQueueBadge() {
         const count = String((window.REPORT_DOSSIER_QUEUE || []).length);
         const badge = document.getElementById('reportQueueCount');
@@ -21183,10 +21514,24 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const scaleLabel = snap?.scaleModeLabel || 'Valores Nominales';
         const isTemporal = snap?.dimMode === 'tiempo';
         const isHolding = snap?.dimMode === 'holding';
+        const isAcs = snap?.dimMode === 'acs';
+        const isZScore = snap?.scaleMode === 'zscore'
+          || String(unitX || '').includes('σ')
+          || String(scaleLabel || '').toLowerCase().includes('z-score');
 
         // Párrafo 1: Lectura Estadística y Brecha Territorial o Temporal
         let paragraphStatistical = '';
-        if (isTemporal) {
+        if (isZScore) {
+          const scopeNoun = isTemporal ? 'serie temporal' : (isHolding ? 'distribución por holding' : (isAcs ? 'distribución por barrio ACS' : 'distribución comunal'));
+          const maxSign = Number(s.maxVal) >= 0 ? '+' : '';
+          const minSign = Number(s.minVal) >= 0 ? '+' : '';
+          paragraphStatistical =
+            `En la ${scopeNoun} estandarizada de «${snap?.xLabel || 'Indicador Principal'}» (escala Z-Score, μ = 0,0 σ; DE = 1,0 σ), ` +
+            `los valores expresan desviaciones estándar respecto de la media regional. ` +
+            `El registro más alto corresponde a ${s.maxComuna || 'S/I'} (${maxSign}${fmt(s.maxVal, 2)} σ), ` +
+            `mientras que el extremo inferior se ubica en ${s.minComuna || 'S/I'} (${minSign}${fmt(s.minVal, 2)} σ), ` +
+            `con mediana de ${fmt(s.medianX, 2)} σ y amplitud estandarizada total de ${fmt(Number(s.maxVal) - Number(s.minVal), 2)} σ.`;
+        } else if (isTemporal) {
           paragraphStatistical =
             `En la evolución temporal de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
             `la serie registra un promedio del período de ${fmt(s.meanX)} ${unitX} ` +
@@ -21195,7 +21540,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}).`;
         } else if (Number(s.minVal) <= 0) {
           paragraphStatistical =
-            `En la distribución ${isHolding ? 'por holding' : 'comunal'} de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
+            `En la distribución ${isHolding ? 'por holding' : (isAcs ? 'por barrio acuícola ACS' : 'comunal')} de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
             `la Región de Aysén registra un promedio de ${fmt(s.meanX)} ${unitX} ` +
             `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
             `El máximo regional se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que ${s.minComuna || 'S/I'} registra 0,0 ${unitX} ` +
@@ -21203,11 +21548,11 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
             `configurando una razón Máx/Mín positivo de ${fmt(s.gapRatio, 2)}x).`;
         } else {
           paragraphStatistical =
-            `En la distribución ${isHolding ? 'por holding' : 'comunal'} de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
-            `la Región de Aysén registra un promedio comunal de ${fmt(s.meanX)} ${unitX} ` +
+            `En la distribución ${isHolding ? 'por holding' : (isAcs ? 'por barrio acuícola ACS' : 'comunal')} de «${snap?.xLabel || 'Indicador Principal'}» (${unitX || 'u.'}) bajo modalidad ${scaleLabel}, ` +
+            `la Región de Aysén registra un promedio ${isAcs ? 'entre barrios ACS' : (isHolding ? 'por holding' : 'comunal')} de ${fmt(s.meanX)} ${unitX} ` +
             `(mediana: ${fmt(s.medianX)}; desviación estándar: ${fmt(s.stdX)}; coeficiente de variación: ${fmt(s.cvX)}%). ` +
             `El máximo regional se observa en ${s.maxComuna || 'S/I'} (${fmt(s.maxVal)} ${unitX}), mientras que el menor registro corresponde a ` +
-            `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}), configurando una razón de asimetría territorial (Máx/Mín) de ${fmt(s.gapRatio, 2)}x entre extremos comunales.`;
+            `${s.minComuna || 'S/I'} (${fmt(s.minVal)} ${unitX}), configurando una razón de asimetría (Máx/Mín) de ${fmt(s.gapRatio, 2)}x entre extremos.`;
         }
 
         // Párrafo 2: Relación Bivariada / Cuadrantes o Estructura de Concentración
@@ -21246,15 +21591,98 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
 
         // Párrafo 3: Contexto Sistémico del Hub y Nodo Satélite
         const hubLabel = snap?.hubTitle || 'Inteligencia Territorial de Aysén';
-        const paragraphSystemic = snap?.nodeVerifiedSummary
-          ? `Contexto Sistémico (${hubLabel} — ${snap.nodeTitle || 'Nodo'}): ${snap.nodeVerifiedSummary}`
-          : `Implicancia Territorial (${hubLabel}): Este indicador forma parte del subsistema de ${hubLabel} de Aysén Sistémico y permite evaluar brechas de equidad territorial, asignación de inversión pública y priorización focalizada entre las 10 comunas de la región.`;
+        let paragraphSystemic = '';
+        if (snap?.yKey && Number.isFinite(Number(s.pearsonR))) {
+          const rVal = Number(s.pearsonR);
+          const r2Val = Number.isFinite(Number(s.r2)) ? Number(s.r2) : (rVal * rVal);
+          const q = s.quadrants || {};
+          const hh = (q.highHigh || []).join(', ') || 'ninguna';
+          const hl = (q.highLow || []).join(', ') || 'ninguna';
+          const lh = (q.lowHigh || []).join(', ') || 'ninguna';
+          const ll = (q.lowLow || []).join(', ') || 'ninguna';
+          const bridgeLabel = (snap?.yHubTitle && snap.yHubTitle !== hubLabel)
+            ? `articulación transversal entre ${hubLabel} y ${snap.yHubTitle}`
+            : `dinámica interna del subsistema ${hubLabel}`;
+          const baseCtx = snap?.nodeVerifiedSummary
+            ? `${snap.nodeVerifiedSummary} `
+            : `Este cruce bivariado permite evaluar brechas estructurales y prioridades de focalización entre las 10 comunas de Aysén. `;
+          paragraphSystemic =
+            `Contexto Sistémico (${bridgeLabel}): ${baseCtx}` +
+            `Con r = ${fmt(rVal, 2)} (R² = ${fmt(r2Val * 100, 1)}%), la tipología territorial se distribuye en cuatro cuadrantes: ` +
+            `Alto-Alto (${hh}), Alto-Bajo (${hl}), Bajo-Alto (${lh}) y Bajo-Bajo (${ll}).`;
+        } else {
+          paragraphSystemic = snap?.nodeVerifiedSummary
+            ? `Contexto Sistémico (${hubLabel} — ${snap.nodeTitle || 'Nodo'}): ${snap.nodeVerifiedSummary}`
+            : `Implicancia Territorial (${hubLabel}): Este indicador forma parte del subsistema de ${hubLabel} de Aysén Sistémico y permite evaluar brechas de equidad territorial, asignación de inversión pública y priorización focalizada entre las 10 comunas de la región.`;
+        }
 
         return {
           paragraphStatistical,
           paragraphAnalytical,
           paragraphSystemic
         };
+      }
+
+      function resolveNodeForVariable(varKey, catItem, hubId, nodos) {
+        const list = Array.isArray(nodos) ? nodos : [];
+        if (catItem?.nodeId) {
+          const explicit = list.find(n => Number(n.id || n.nodeId) === Number(catItem.nodeId));
+          if (explicit) return explicit;
+        }
+        const hay = `${varKey || ''} ${catItem?.id || ''} ${catItem?.shortName || ''} ${catItem?.name || ''}`;
+        const rules = [
+          { nodeId: 30, re: /mp25|mp10|gec|contaminacion.*aire|calidad.*aire|hidrolog|glaciar|caudal/i },
+          { nodeId: 31, re: /volcan|sism|terremoto|rnvv|usgs/i },
+          { nodeId: 27, re: /bosque|flora|vegetacion|nativo|forestal|snaspe.*ha/i },
+          { nodeId: 28, re: /huemul|fauna|rce|conservacion|biodiversidad/i },
+          { nodeId: 29, re: /exotica|invasora|castor|vison|jabal/i },
+          { nodeId: 24, re: /hospital|camas|urgencia|uci|uti/i },
+          { nodeId: 38, re: /posta|psr|aps|emr|ronda_medica/i },
+          { nodeId: 39, re: /lista_espera|quirurg|aeroevacuacion|samu|defuncion/i },
+          { nodeId: 23, re: /censo|poblacion|pobreza|casen|hacinamiento|ruralidad/i },
+          { nodeId: 25, re: /matricula|simce|paes|slep|educacion|escolar/i },
+          { nodeId: 26, re: /vif|violencia_intrafamiliar|cead|delito|seguridad|homicidio/i },
+          { nodeId: 41, re: /habitacional|vivienda|ssr|apr|agua_potable/i },
+          { nodeId: 15, re: /presupuesto|patente|sinim|gasto_municipal|ingreso_municipal/i },
+          { nodeId: 16, re: /fcm|dependencia_fcm|ingresos_propios|fondo_comun/i },
+          { nodeId: 17, re: /alcalde|concejo|participacion_electoral|servel/i },
+          { nodeId: 18, re: /gore|fndr|inversion_publica|bip/i },
+          { nodeId: 40, re: /ruta_7|vial|carretera|aerodromo|maritima|conectividad/i },
+          { nodeId: 19, re: /seia|rca|proyecto.*ambiental/i },
+          { nodeId: 20, re: /sii|empresa|empleo|venta|trabajador/i },
+          { nodeId: 21, re: /minera|sernageomin|yacimiento/i },
+          { nodeId: 22, re: /suelo_fiscal|bienes_nacionales|tenencia/i },
+          { nodeId: 1, re: /turistic|sernatur|sello_q|sello_s|alojamiento/i },
+          { nodeId: 3, re: /pernoct|emat|ocupacion_hotel/i },
+          { nodeId: 4, re: /parque_nacional|reserva_nacional|visitantes_asp/i },
+          { nodeId: 6, re: /concesion.*acuic|concesiones_salm|centro_cultivo/i },
+          { nodeId: 7, re: /holding|produccion_salm|cosecha/i },
+          { nodeId: 11, re: /generacion_electrica|central_electrica|mw/i },
+          { nodeId: 12, re: /sistema_mediano|tarifa_electrica|sec|kwh/i },
+          { nodeId: 13, re: /lena|leña|combustible|bencina|diesel|petroleo/i },
+          { nodeId: 14, re: /fibra_optica|foa|telecom|conectividad_digital/i },
+          { nodeId: 35, re: /investigacion|fondecyt|anid|ctci|publicaciones/i },
+          { nodeId: 37, re: /innovacion|corfo|patente_inv/i }
+        ];
+        for (const r of rules) {
+          if (r.re.test(hay)) {
+            const matched = list.find(n => Number(n.id || n.nodeId) === r.nodeId);
+            if (matched) return matched;
+          }
+        }
+        const hubNodes = list.filter(n => n.hubId === hubId);
+        const tokens = String(hay).toLowerCase().split(/[^a-z0-9áéíóúñ]+/i).filter(t => t.length >= 4);
+        let bestNode = null;
+        let bestScore = 0;
+        hubNodes.forEach(n => {
+          const desc = `${n.title || ''} ${n.definition || ''}`.toLowerCase();
+          const score = tokens.reduce((acc, tk) => acc + (desc.includes(tk) ? 1 : 0), 0);
+          if (score > bestScore) {
+            bestScore = score;
+            bestNode = n;
+          }
+        });
+        return bestNode || hubNodes[0] || null;
       }
 
       function captureCurrentChartSnapshot(targetWidget) {
@@ -21312,16 +21740,17 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         const hubId = catX?.hubId || catX?.hub || (typeof hubInference === 'function' ? hubInference(xKey) : 'gobernanza');
         const hubObj = (dl.hubs || []).find(h => h.id === hubId);
         const hubTitle = hubObj ? hubObj.title : (catX?.hubTitle || (typeof getHubTitleName === 'function' ? getHubTitleName(hubId) : '') || 'IV. Gobernanza y Finanzas');
-        const nodeObj = (dl.nodos || []).find(n => (catX?.nodeId && Number(n.id || n.nodeId) === Number(catX.nodeId)))
-          || (dl.nodos || []).find(n => n.hubId === hubId)
-          || null;
+        const yHubId = yKey ? (catY?.hubId || catY?.hub || (typeof hubInference === 'function' ? hubInference(yKey) : '')) : '';
+        const yHubObj = yHubId ? (dl.hubs || []).find(h => h.id === yHubId) : null;
+        const yHubTitle = yHubObj ? yHubObj.title : (catY?.hubTitle || (yHubId && typeof getHubTitleName === 'function' ? getHubTitleName(yHubId) : '') || '');
+        const nodeObj = resolveNodeForVariable(xKey, catX, hubId, dl.nodos);
         const allYearLabels = labels.length > 0 && labels.every(l => /^\d{4}(?:[-–]\d{2,4})?$/.test(String(l).trim()));
         const dimMode = (catX?.dim === 'tiempo' || allYearLabels)
           ? 'tiempo'
-          : (catX?.dim === 'holding' ? 'holding' : 'comuna');
+          : (catX?.dim === 'holding' ? 'holding' : (catX?.dim === 'acs' ? 'acs' : 'comuna'));
         const unitPlural = dimMode === 'tiempo'
           ? 'periodos'
-          : (dimMode === 'holding' ? 'holdings' : 'unidades territoriales');
+          : (dimMode === 'holding' ? 'holdings' : (dimMode === 'acs' ? 'barrios ACS' : 'unidades territoriales'));
 
         const chartTitle = w?.title || (yLabel ? `${xLabel} vs. ${yLabel}` : `${xLabel} por Comuna`);
         const scaleMode = w?.perCapitaMode ? 'per_capita' : (w?.scaleMode || 'nominal');
@@ -21380,7 +21809,7 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           const deviationPct = stX.mean !== 0 ? ((valX - stX.mean) / Math.abs(stX.mean)) * 100 : 0;
           const scopeLbl = dimMode === 'tiempo'
             ? 'Serie Regional'
-            : (dimMode === 'holding' ? 'Industria Regional' : (provByName[lbl] || 'Aysén'));
+            : (dimMode === 'holding' ? 'Industria Regional' : (dimMode === 'acs' ? 'Maritorio Aysén' : (provByName[lbl] || 'Aysén')));
           return {
             comuna: String(lbl || ''),
             provincia: scopeLbl,
@@ -21400,6 +21829,8 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           timestamp: new Date().toISOString(),
           hubId,
           hubTitle,
+          yHubId,
+          yHubTitle,
           subcategoryTitle: catX?.subgroup || hubTitle,
           nodeNumber: nodeObj?.id || nodeObj?.nodeId || null,
           nodeTitle: nodeObj?.title || hubTitle,
@@ -21525,18 +21956,18 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
               ${showNarrative ? `
                 <div class="exec-narrative-box">
                   <h4>Análisis e Interpretación Técnica</h4>
-                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphStatistical" data-snap-idx="${idx}"><strong>1. Lectura Estadística y Asimetría Comunal:</strong> ${escReportHtml(nar.paragraphStatistical)}</p>
-                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphAnalytical" data-snap-idx="${idx}"><strong>2. Dinámica Bivariada / Concentración Territorial:</strong> ${escReportHtml(nar.paragraphAnalytical)}</p>
-                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphSystemic" data-snap-idx="${idx}"><strong>3. Contexto Sistémico e Implicancias de Política Pública:</strong> ${escReportHtml(nar.paragraphSystemic)}</p>
+                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphStatistical" data-snap-idx="${idx}"><strong>1. Lectura Estadística y Asimetría Comunal:</strong> ${formatReportRichText(nar.paragraphStatistical)}</p>
+                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphAnalytical" data-snap-idx="${idx}"><strong>2. Dinámica Bivariada / Concentración Territorial:</strong> ${formatReportRichText(nar.paragraphAnalytical)}</p>
+                  <p class="exec-narrative-p" contenteditable="true" data-nar-field="paragraphSystemic" data-snap-idx="${idx}"><strong>3. Contexto Sistémico e Implicancias de Política Pública:</strong> ${formatReportRichText(nar.paragraphSystemic)}</p>
                 </div>
               ` : ''}
-              <p class="exec-source-line">Fuente Primaria: ${escReportHtml(primarySrc.institution)} — ${escReportHtml(primarySrc.dataset)} (${escReportHtml(primarySrc.year)}). Unidad: ${escReportHtml(snap.xUnit || 'u.')}. Enlace oficial: ${escReportHtml(primarySrc.url)}</p>
+              <p class="exec-source-line">Fuente Primaria: ${escReportHtml(primarySrc.institution)} — ${escReportHtml(primarySrc.dataset)} (${escReportHtml(primarySrc.year)}). Unidad: ${escReportHtml(snap.xUnit || 'u.')}. Enlace oficial: ${escReportHtml(primarySrc.url)}${snap.dimMode === 'tiempo' ? ' Nota metodológica (metodologia_series_historicas): Las series 2015–2026 combinan valores ancla oficiales (2015 y 2026) con años intermedios ajustados por eventos o interpolación lineal.' : ''}</p>
               ${showTable ? `
                 <table class="exec-comunal-table">
                   <thead>
                     <tr>
                       <th>${snap.dimMode === 'tiempo' ? 'Orden' : 'Rank'}</th>
-                      <th>${snap.dimMode === 'tiempo' ? 'Periodo' : (snap.dimMode === 'holding' ? 'Holding / Empresa' : 'Comuna')}</th>
+                      <th>${snap.dimMode === 'tiempo' ? 'Periodo' : (snap.dimMode === 'holding' ? 'Holding / Empresa' : (snap.dimMode === 'acs' ? 'Barrio ACS' : 'Comuna'))}</th>
                       <th>${snap.dimMode === 'comuna' ? 'Provincia' : 'Alcance'}</th>
                       <th class="num">${escReportHtml(snap.xLabel)} (${escReportHtml(snap.xUnit || '')})</th>
                       <th class="num">${secondHeader}</th>
@@ -21551,15 +21982,25 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }).join('');
 
         const totalComunaVars = AppState.catalogItems ? AppState.catalogItems.filter(v => v.dim === 'comuna' && !v.isAlias).length : 236;
+        const uniqueHubs = Array.from(new Set(queue.map(s => s.hubTitle).filter(Boolean)));
+        const reportScopeTitle = uniqueHubs.length > 1
+          ? 'Análisis Sistémico Transversal Multi-Hub'
+          : (first.hubTitle || 'Inteligencia Territorial de Aysén');
+        const reportHubMeta = uniqueHubs.length > 1
+          ? uniqueHubs.join(' · ')
+          : (first.hubTitle || 'Región de Aysén');
+        const reportSubtitle = uniqueHubs.length > 1
+          ? `Dossier analítico transversal de ${uniqueHubs.length} subsistemas (${uniqueHubs.join(', ')}) para la Región de Aysén (10 comunas).`
+          : 'Dossier analítico reproducible de evidencia empírica territorial para la Región de Aysén (10 comunas).';
 
         sheet.innerHTML = `
           <header class="exec-doc-masthead">
             <div class="exec-doc-kicker">AYSÉN SISTÉMICO — PLATAFORMA DE INTELIGENCIA TERRITORIAL Y SISTEMAS COMPLEJOS</div>
-            <h1 class="exec-doc-title" id="executiveReportDocTitle" contenteditable="true">Informe Técnico Territorial — ${escReportHtml(first.hubTitle)}</h1>
-            <p class="exec-doc-subtitle" contenteditable="true">Dossier analítico reproducible de evidencia empírica territorial para la Región de Aysén (10 comunas).</p>
+            <h1 class="exec-doc-title" id="executiveReportDocTitle" contenteditable="true">Informe Técnico Territorial — ${escReportHtml(reportScopeTitle)}</h1>
+            <p class="exec-doc-subtitle" contenteditable="true">${escReportHtml(reportSubtitle)}</p>
             <div class="exec-doc-meta-grid">
               <div><span class="exec-meta-label">Fecha de Emisión</span><span class="exec-meta-val">${escReportHtml(issueDate)}</span></div>
-              <div><span class="exec-meta-label">Hub / Subsistema</span><span class="exec-meta-val">${escReportHtml(first.hubTitle)}</span></div>
+              <div><span class="exec-meta-label">Hub / Subsistema</span><span class="exec-meta-val">${escReportHtml(reportHubMeta)}</span></div>
               <div><span class="exec-meta-label">Escala / Normalización</span><span class="exec-meta-val">${escReportHtml(first.scaleModeLabel)}</span></div>
               <div><span class="exec-meta-label">Cobertura Territorial</span><span class="exec-meta-val">${queue.length} lámina(s) · 10 comunas</span></div>
             </div>
@@ -21612,6 +22053,26 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
         }
       }
 
+      async function isLiveLLMConnected() {
+        if (window.OmniRouteClient && window.OmniRouteClient.isLiveLLM === true) return true;
+        if (typeof fetch !== 'function') return false;
+        const cfg = window.OmniRouteClient?.getConfig?.() || {};
+        const endpointBase = String(cfg.endpointUrl || 'http://localhost:20128/v1').replace(/\/+$/, '');
+        const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        const timer = controller ? setTimeout(() => controller.abort(), 1200) : null;
+        try {
+          const resp = await fetch(`${endpointBase}/models`, {
+            method: 'GET',
+            signal: controller ? controller.signal : undefined
+          });
+          return Boolean(resp && resp.ok);
+        } catch (_) {
+          return false;
+        } finally {
+          if (timer) clearTimeout(timer);
+        }
+      }
+
       async function enrichReportNarrativesWithAI() {
         const queue = Array.isArray(window.REPORT_DOSSIER_QUEUE) ? window.REPORT_DOSSIER_QUEUE : [];
         if (queue.length === 0) return;
@@ -21619,16 +22080,38 @@ Cruce Inter-Hub: ${p.inter_hub_cross?.descripcion || ''}`;
           if (typeof showToast === 'function') showToast('Motor OmniRoute no disponible en esta sesión; se mantiene la narrativa estadística verificada.');
           return;
         }
+        const liveConnected = await isLiveLLMConnected();
+        if (!liveConnected) {
+          if (typeof showToast === 'function') showToast('LLM local (OmniRoute) no conectado; se conserva la narrativa estadística verificada.');
+          return;
+        }
         try {
+          let enrichedCount = 0;
           for (const snap of queue) {
-            const prompt = `Sintetiza en 2 oraciones una implicancia de política pública territorial verificada para ${snap.xLabel} (${snap.xUnit || ''}) considerando promedio ${snap.stats?.meanX?.toFixed(1)}, máximo en ${snap.stats?.maxComuna} y mínimo en ${snap.stats?.minComuna}.`;
+            const bivClause = (snap.yKey && Number.isFinite(Number(snap.stats?.pearsonR)))
+              ? ` y su asociación bivariada con ${snap.yLabel || snap.yKey} (${snap.yUnit || ''}) con r = ${Number(snap.stats.pearsonR).toFixed(2)} y R² = ${(Number(snap.stats.r2 || 0) * 100).toFixed(1)}%`
+              : '';
+            const prompt = `Sintetiza en máximo 2 oraciones analíticas (sin listas ni rankings) una implicancia de política pública territorial verificada para ${snap.xLabel} (${snap.xUnit || ''})${bivClause}, considerando promedio ${snap.stats?.meanX?.toFixed(1)}, máximo en ${snap.stats?.maxComuna} y mínimo en ${snap.stats?.minComuna}.`;
             const res = await window.OmniRouteClient.query(prompt);
-            if (res && res.reply) {
-              snap.narrative.paragraphSystemic = res.reply;
+            const replyTxt = String(res?.reply || '').trim();
+            const isRankingOrDeterministic = /^(?:para la variable|top\s*3|ranking|1\.\s)/i.test(replyTxt)
+              || /Top\s*3\s+comunas|Valor promedio:/i.test(replyTxt);
+            if (replyTxt && !isRankingOrDeterministic) {
+              const baseSys = String(snap.narrative?.paragraphSystemic || '').trim();
+              if (!baseSys.includes(replyTxt)) {
+                snap.narrative.paragraphSystemic = baseSys
+                  ? `${baseSys} Lectura complementaria: ${replyTxt}`
+                  : replyTxt;
+                enrichedCount++;
+              }
             }
           }
           renderExecutiveReportSheet();
-          if (typeof showToast === 'function') showToast('Narrativas territoriales enriquecidas con datos verificados.');
+          if (typeof showToast === 'function') {
+            showToast(enrichedCount > 0
+              ? 'Narrativas territoriales enriquecidas con síntesis complementaria.'
+              : 'Se conservó la narrativa determinista estadística verificada.');
+          }
         } catch (_) {
           if (typeof showToast === 'function') showToast('Se conservó la narrativa determinista estadística.');
         }

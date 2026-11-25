@@ -397,6 +397,146 @@ class TestHub2SalmoniculturaReengineering(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, f"Fallo Block 5:\n{proc.stderr}\n{proc.stdout}")
         self.assertIn("BLOCK5_OK", proc.stdout)
 
+    def test_04_sprint4_barrios_acs_pua_snifa_y_coherencia_ica(self):
+        node_script = r"""
+        const assert = require('assert');
+        const fs = require('fs');
+        const vm = require('vm');
+        const path = require('path');
+
+        const bundleCode = fs.readFileSync(path.join(process.cwd(), 'data/aysen_hubs_data.js'), 'utf8');
+        const labHtml = fs.readFileSync(path.join(process.cwd(), 'laboratorio.html'), 'utf8');
+        const lex = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data/nl_lexicon_aysen.json'), 'utf8'));
+
+        const ctx = { window: {} };
+        vm.runInNewContext(bundleCode, ctx);
+        const D = ctx.window.AYSEN_HUBS_DATA;
+
+        // 1. 18 Barrios ACS reconciliados 1:1 (745 conc, 245 activos, 312 SNASPE, 503500 ton)
+        assert(Array.isArray(D.barriosAcs) && D.barriosAcs.length === 18, `Se esperaban 18 barriosAcs, hay ${D.barriosAcs?.length}`);
+        assert.strictEqual(D.barriosAcs.reduce((a, b) => a + b.concesiones_totales, 0), 745);
+        assert.strictEqual(D.barriosAcs.reduce((a, b) => a + b.centros_activos, 0), 245);
+        assert.strictEqual(D.barriosAcs.reduce((a, b) => a + b.concesiones_en_snaspe, 0), 312);
+        assert.strictEqual(D.barriosAcs.reduce((a, b) => a + b.biomasa_cosechada_ton, 0), 503500);
+
+        // 2. Cooke, Australis y Yadran con presencia real en SNASPE (total 312)
+        const hCooke = D.holdings.find(h => h.holding_id === 'holding_cooke');
+        const hAust = D.holdings.find(h => h.holding_id === 'holding_australis');
+        const hYad = D.holdings.find(h => h.holding_id === 'holding_yadran');
+        assert(hCooke && hCooke.concesiones_snaspe >= 9, `Cooke SNASPE = ${hCooke?.concesiones_snaspe}`);
+        assert(hAust && hAust.concesiones_snaspe >= 12, `Australis SNASPE = ${hAust?.concesiones_snaspe}`);
+        assert(hYad && hYad.concesiones_snaspe >= 24, `Yadran SNASPE = ${hYad?.concesiones_snaspe}`);
+        assert.strictEqual(D.holdings.reduce((a, h) => a + Number(h.concesiones_snaspe || 0), 0), 312);
+
+        // 3. Coherencia ICA entre D.comunas, D.barriosAcs y D.concesionesPadronCompact + Paradoja Tortel (4x2125, 13x0)
+        const pad = D.concesionesPadronCompact;
+        ['11201', '11202', '11203', '11303'].forEach(ine => {
+          const comObj = D.comunas.find(c => String(c.comuna_ine) === ine);
+          const expectedIca = Number(comObj.antibioticos_ica_g_ton);
+
+          const bCom = D.barriosAcs.filter(b => b.comuna_ine === ine);
+          const bBio = bCom.reduce((a, b) => a + b.biomasa_cosechada_ton, 0);
+          const bWeightedIca = bCom.reduce((a, b) => a + b.biomasa_cosechada_ton * b.antibioticos_ica_g_ton, 0) / bBio;
+          assert(Math.abs(bWeightedIca - expectedIca) <= 0.15, `Divergencia ICA barriosAcs ${ine}: ${bWeightedIca} != ${expectedIca}`);
+
+          const pCom = pad.rows.map(r => r.split('|')).filter(p => p[1] === ine);
+          const pBio = pCom.reduce((a, p) => a + Number(p[8]), 0);
+          const pWeightedIca = pCom.reduce((a, p) => a + Number(p[8]) * Number(p[9]), 0) / pBio;
+          assert(Math.abs(pWeightedIca - expectedIca) <= 0.15, `Divergencia ICA padron ${ine}: ${pWeightedIca} != ${expectedIca}`);
+        });
+
+        const tortelParts = pad.rows.map(r => r.split('|')).filter(p => p[1] === '11303');
+        assert.strictEqual(tortelParts.filter(p => Number(p[8]) === 2125 && p[10] === '1').length, 4);
+        assert.strictEqual(tortelParts.filter(p => Number(p[8]) === 0 && p[10] === '0').length, 13);
+
+        // 4. Variables dim:acs, comunales PUA/SMA/Empleo/ECMPO/Muelles y series en catalogo de laboratorio.html
+        function extractFn(name) {
+          const re = new RegExp(`(?:async\\s+)?function\\s+${name}\\s*\\(`);
+          const match = re.exec(labHtml);
+          assert(match, 'Falta funcion ' + name);
+          let b = 0, st = false, end = match.index;
+          for (let i = match.index; i < labHtml.length; i++) {
+            if (labHtml[i] === '{') { b++; st = true; }
+            else if (labHtml[i] === '}') { b--; if (st && b === 0) { end = i + 1; break; } }
+          }
+          return labHtml.slice(match.index, end);
+        }
+        const elements = {};
+        const makeEl = (id) => elements[id] || (elements[id] = { id, innerHTML: '', textContent: '', value: 'all', style: {}, classList: { add(){}, remove(){}, toggle(){}, contains:()=>false }, setAttribute(){}, addEventListener(){}, querySelector:()=>null, querySelectorAll:()=>[] });
+        const COMUNAS_ORDER = ['Coyhaique', 'Aysén', 'Cisnes', 'Chile Chico', 'Cochrane', 'Río Ibáñez', 'Guaitecas', 'Lago Verde', 'Tortel', "O'Higgins"];
+        const runCtx = {
+          window: ctx.window, console: { log:()=>{}, warn:()=>{}, error:()=>{} },
+          Math, Date, Array, Object, String, Number, Boolean, Set, Map, JSON, RegExp,
+          COMUNAS_ORDER, TERRITORIAL_SLICES: { all: COMUNAS_ORDER }, CLEAR_VAR_LABELS: {}, AYSEN_HUBS_DATA: D,
+          document: { getElementById: makeEl, querySelector: ()=>null, querySelectorAll: ()=>[], createElement: makeEl },
+          fetch: async () => { throw new Error('offline'); },
+          renderSidebarCatalog: ()=>{}, clearWidgetMapTimers: ()=>{}, getHubColor: ()=>'#00357f',
+          getAutoexplanatoryVarInfo: (id, name, unit) => ({ title: name, unitLabel: unit }),
+          resolveOfficialSource: () => ({ name: 'Oficial', collectionDate: '2026', url: 'https://datos.gob.cl' }),
+          formatVarWithUnit: (n, u) => `${n} (${u})`,
+          toggleCrossHighlight: ()=>{},
+          AppState: { hubsData: D, catalogItems: [], territorialFilter: 'all', _userSelectedTerritorialFilter: false, excludeCoyhaique: false }
+        };
+        vm.runInNewContext(['normStr','getHubTitleName','formatAxisTitle','resolveCommunalVector','loadDataLakeAndCatalog','getWidgetDataPayload'].map(extractFn).join('\n\n'), runCtx);
+
+        (async () => {
+          await runCtx.loadDataLakeAndCatalog();
+          const cat = runCtx.AppState.catalogItems;
+          const reqDims = {
+            acs_concesiones_totales: 'acs', acs_centros_activos: 'acs', acs_biomasa_cosechada_ton: 'acs',
+            acs_antibioticos_ica_g_ton: 'acs', acs_mortalidad_ciclo_pct: 'acs', acs_densidad_max_kg_m3: 'acs',
+            acs_infa_aerobica_pct: 'acs', acs_concesiones_en_snaspe: 'acs',
+            patente_acuicola_pua_mclp: 'comuna', peso_pua_ingresos_propios_pct: 'comuna',
+            superficie_concesionada_mar_ha: 'comuna', empleo_directo_acuicola_n: 'comuna',
+            sancionatorios_sma_acuicolas_n: 'comuna', centros_infa_anaerobica_n: 'comuna',
+            ecmpo_traslape_acuicola_n: 'comuna', desembarque_muelles_total_ton: 'comuna',
+            sancionatorios_sma_por_holding: 'holding',
+            cosecha_salmon_atlantico_hist: 'tiempo', cosecha_salmon_coho_hist: 'tiempo',
+            cosecha_trucha_arcoiris_hist: 'tiempo', hectareas_marinas_concesionadas_hist: 'tiempo'
+          };
+          Object.entries(reqDims).forEach(([vid, dim]) => {
+            const it = cat.find(v => v.id === vid && !v.isAlias);
+            assert(it, `Falta variable Sprint 4 en catalogo: ${vid}`);
+            assert.strictEqual(it.dim, dim, `Dim incorrecta para ${vid}: ${it.dim}`);
+          });
+
+          const pAcs = runCtx.getWidgetDataPayload({ id: 990, type: 'chart', chartType: 'scatter', varX: 'acs_biomasa_cosechada_ton', varY: 'acs_antibioticos_ica_g_ton' });
+          assert.strictEqual(pAcs.mode, 'bivariate');
+          assert.strictEqual(pAcs.dim, 'acs');
+          assert.strictEqual(pAcs.labels.length, 18);
+
+          const pBlock = runCtx.getWidgetDataPayload({ id: 991, type: 'chart', chartType: 'bar', varX: 'acs_biomasa_cosechada_ton', varY: 'patente_acuicola_pua_mclp' });
+          assert.strictEqual(pBlock.mode, 'univariate');
+          assert.strictEqual(pBlock.status, 'blocked_incompatible_dim');
+
+          // 5. Consultor OmniRoute: Barrios ACS, Patente PUA / fuga Los Lagos, y Sanciones SMA / INFA anaerobica
+          const omniBox = {
+            window: { location: { href: 'http://localhost/' }, AYSEN_HUBS_DATA: D },
+            navigator: {}, console, fetch: async () => ({ ok: false }),
+            URL, URLSearchParams, Set, Map, RegExp, Math, Number, String, Array, Object, JSON
+          };
+          omniBox.global = omniBox;
+          vm.createContext(omniBox);
+          vm.runInContext(fs.readFileSync(path.join(process.cwd(), 'js/nl2chart_engine.js'), 'utf8'), omniBox);
+          if (omniBox.window.NL2ChartEngine?.initWithData) omniBox.window.NL2ChartEngine.initWithData(lex);
+          vm.runInContext(fs.readFileSync(path.join(process.cwd(), 'js/omniroute_client.js'), 'utf8'), omniBox);
+          const oc = omniBox.window.OmniRouteClient;
+          oc.refreshMemory(D);
+
+          const qAcs = oc.resolveClosedWorldDeterministic('Compara biomasa y antibioticos ICA entre los 18 barrios acuicolas ACS');
+          assert(qAcs.reply.includes('18 Barrios Acuícolas') && qAcs.chart.varX === 'acs_biomasa_cosechada_ton', qAcs.reply);
+          const qPua = oc.resolveClosedWorldDeterministic('Cuanto recaudan por patente acuicola PUA Art. 84 LGPA y cual es la fuga de exportacion en wellboats hacia Los Lagos?');
+          assert(qPua.reply.includes('3.249,5') && qPua.reply.includes('209') && qPua.reply.includes('5.600') && qPua.chart.varX === 'patente_acuicola_pua_mclp', qPua.reply);
+          const qSma = oc.resolveClosedWorldDeterministic('Cuantas sanciones SMA SNIFA y centros con INFA anaerobica tienen las salmoneras en Aysen bajo limite 400 g/t?');
+          assert(qSma.reply.includes('66') && qSma.reply.includes('32') && qSma.reply.includes('400 g/t') && qSma.chart.varX === 'sancionatorios_sma_acuicolas_n', qSma.reply);
+
+          console.log('SPRINT4_OK');
+        })().catch(e => { console.error(e); process.exit(1); });
+        """
+        proc = subprocess.run(["node", "-e", node_script], cwd=ROOT_DIR, capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, f"Fallo Sprint 4:\n{proc.stderr}\n{proc.stdout}")
+        self.assertIn("SPRINT4_OK", proc.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,6 @@
 ---
 id: nodo_09
-title: "Nodo #09 — Monitoreo Marino, Oxígeno Disuelto y FAN"
+title: "Nodo #09 — Monitoreo Marino, Oxígeno Disuelto, FAN y Fiscalización SMA"
 type: nodo
 hub_id: salmonicultura
 hub_roman: II
@@ -8,31 +8,36 @@ variables_clave:
   - desembarque_artesanal_ton
   - amerb_decretadas
   - sindicatos_pesca_artesanal
+  - antibioticos_ica_g_ton
+  - sancionatorios_sma_acuicolas_n
+  - centros_infa_anaerobica_n
 fuentes_oficiales:
-  - "Instituto de Fomento Pesquero (IFOP) / SERNAPESCA / SHOA"
-updated_at: "2026-11-23"
+  - "Instituto de Fomento Pesquero (IFOP) / SERNAPESCA / SUBPESCA / SMA-SNIFA"
+updated_at: "2026-11-25"
 tags:
   - aysen-sistemico
   - nodo
   - hub-ii
 ---
 
-# Nodo #09 — Monitoreo Marino, Oxígeno Disuelto y FAN
+# Nodo #09 — Monitoreo Marino, Oxígeno Disuelto, FAN y Fiscalización SMA
 
 ## Síntesis Compilada (Consultor IA)
 
-Monitoreo ambiental de temperatura superficial del mar (TSM), floraciones algales nocivas (FAN / Alexandrium catenella), oxígeno disuelto y condición aeróbica en fiordos y canales de Aysén. Cruza las estaciones oceanográficas de IFOP / SHOA y los informes ambientales INFA de SERNAPESCA para seguir la condición aeróbica de los fiordos donde operan los barrios salmoneros.
+Monitoreo ambiental de temperatura superficial del mar (TSM), floraciones algales nocivas (FAN / Alexandrium catenella), oxígeno disuelto, límite regulatorio ICA 2026 (máximo 400 g/t según modificación Res. Ex. N° 8228 SUBPESCA de abril 2026), estructura de mortalidad sanitaria SERNAPESCA (~0,7%/mes en Salmón Atlántico, con causas infecciosas dominadas por SRS / Piscirickettsia salmonis con 52,8% y Tenacibaculosis con 31,5%), 32 centros con condición INFA anaeróbica subyacente (Aysén 16, Cisnes 10, Guaitecas 6) y 66 expedientes sancionatorios en SNIFA-SMA (Aysén 31, Cisnes 21, Guaitecas 12, Tortel 2).
 
 ## Indicadores Comunales Verificados
 
-| Indicador Marino | Estación / Sensor | Institución | Frecuencia | Valor 2026 | Condición |
+| Indicador Marino / Regulatorio | Estación / Fuente | Institución | Frecuencia | Valor 2026 | Condición |
 | --- | --- | --- | --- | --- | --- |
 | TSM Fiordo Puyuhuapi | Boya Puyuhuapi (CIEP/IFOP) | IFOP | Horaria | 11,5 C | Óptima |
 | Alertas FAN Alexandrium | Canal Moraleda (iFAN) | IFOP | Semanal | 35 dias/ano | Alerta Activa |
+| Límite Regulatorio ICA 2026 | Res. Ex. N° 8228 (Abril 2026) | SUBPESCA | Anual | Tope 400 g/t | Norma Vigente |
+| Mortalidad Infecciosa Salmón | SRS (52,8%) / Tenacibaculosis (31,5%) | SERNAPESCA | Mensual | ~0,7%/mes Atl. | Vigilancia Sanitaria |
+| Centros INFA Anaeróbica | Aysén (16) / Cisnes (10) / Guaitecas (6) | SERNAPESCA | Semestral | 32 centros | Subyacente Anaeróbica |
+| Expedientes Sancionatorios SMA | Sobreproducción, INFA y Posicionamiento | SMA / SNIFA | Continua | 66 expedientes | Aysén 31 · Cisnes 21 · Guait. 12 · Tortel 2 |
 | Oxígeno Disuelto Fondo | Seno Aysén (Estación 4) | SERNAPESCA | Mensual | 6,8 mg/L | Aeróbica |
 | Salinidad Superficial | Boca Puyuhuapi | SHOA | Continua | 28,4 PSU | Normal |
-| Monitoreo Dinophysis | Islas Huichas | IFOP | Quincenal | 1.200 cel/L | Sub-umbral |
-| Condición INFA Centros | Barrio ACS 21B | SERNAPESCA | Semestral | 91,2% Aeróbico | Conforme |
 
 ## Metadatos de Procedencia Institucional
 
