@@ -18,7 +18,8 @@ conectores_fallback: 6
 etapas_restauradas: 1
 umbral_outlier_operativo_pct: 20
 umbral_outlier_estructural_pct: 5
-estado_revision_humana: "pendiente"
+estado_revision_humana: "aprobada"
+fecha_aprobacion_humana: "2026-11-26T21:36:23.226Z"
 tags:
   - aysen-sistemico
   - auditoria-indicadores
