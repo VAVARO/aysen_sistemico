@@ -16,7 +16,7 @@ fuentes_oficiales:
   - "SUBDERE — SINIM"
   - "DIPRES / GORE Aysén — FNDR"
   - "SUBPESCA / SERNAPESCA / DGA / DEIS / ANID"
-updated_at: "2026-11-25"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - index
@@ -28,7 +28,7 @@ Catálogo rector orientado a contenido bajo el patrón **`llm-wiki` de Andrej Ka
 
 ## Síntesis Compilada (Consultor IA)
 
-La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de la Región de Aysén (100.745 habitantes Censo 2024, 10 comunas, 245 variables comunales —226 numéricas—, 18 Barrios Acuícolas ACS y 38 fuentes oficiales) en 77 páginas canónicas interconectadas: 1 índice maestro (`index.md`), 1 bitácora cronológica (`log.md`), 10 Hubs temáticos (`I` al `X`), 10 radiografías comunales, 41 fichas de Nodos Satélite (`#01` al `#41`), 8 paquetes conceptuales y entidades territoriales multidimensionales, y 6 registros de decisiones de arquitectura y datos (`ADR-001` a `ADR-006`).
+La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de la Región de Aysén (100.745 habitantes Censo 2024, 10 comunas, indicadores comunales verificados y fuentes institucionales) en 77 páginas canónicas interconectadas: 1 índice maestro (`index.md`), 1 bitácora cronológica (`log.md`), 10 Hubs temáticos (`I` al `X`), 10 radiografías comunales, 41 fichas de Nodos Satélite (`#01` al `#41`), 8 paquetes conceptuales y entidades territoriales multidimensionales, y 6 registros de decisiones de arquitectura y datos (`ADR-001` a `ADR-006`).
 
 ## 1. Gobernanza del Conocimiento y Bitácora
 
@@ -89,9 +89,9 @@ La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de 
 - [[nodos/nodo_04|Nodo #04 — Visitas a Parques y Reservas Nacionales]]
 - [[nodos/nodo_05|Nodo #05 — Atractivos y Nodos Turísticos Georreferenciados]]
 - [[nodos/nodo_06|Nodo #06 — Concesiones de Acuicultura por Comuna (745)]]
-- [[nodos/nodo_07|Nodo #07 — Matriz de 13 holdings Madres y Concesiones]]
+- [[nodos/nodo_07|Nodo #07 — Matriz de 13 Holdings Madres y Concesiones]]
 - [[nodos/nodo_08|Nodo #08 — Barrios Sanitarios (ACS) y Caletas Pesqueras]]
-- [[nodos/nodo_09|Nodo #09 — Monitoreo Marino, Oxígeno Disuelto y FAN]]
+- [[nodos/nodo_09|Nodo #09 — Monitoreo Marino, Oxígeno Disuelto, FAN y Fiscalización SMA]]
 - [[nodos/nodo_10|Nodo #10 — Pesca Industrial por Pesquería e Impuesto Específico (Art. 43 ter)]]
 - [[nodos/nodo_11|Nodo #11 — Generación y Centrales Eléctricas]]
 - [[nodos/nodo_12|Nodo #12 — Sistemas Eléctricos Medianos y Aislados]]

@@ -12,7 +12,7 @@ fuentes_oficiales:
   - "ANID DataCiencia — Cartera CTCi Aysén"
   - "CORFO Innova Aysén — Portafolio Regional"
   - "CIEP / Universidad de Aysén — Gestión del Conocimiento Territorial"
-updated_at: "2026-11-25"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - adr
@@ -23,7 +23,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Para superar la amnesia entre sesiones de los agentes LLM sin poner en riesgo la integridad de las 245 variables comunales (226 numéricas) y 18 Barrios ACS del Data Lake, Aysén Sistémico implementa el patrón `llm-wiki` de Andrej Karpathy bajo una arquitectura dual: los vectores cuantitativos permanecen inmutables en `scripts/build_aysen_hubs_bundle.cjs` y `data/aysen_hubs_data.js`, mientras que el conocimiento semántico, causal y regulatorio se compila en `wiki/` (77 notas Markdown interconectadas con YAML frontmatter para Obsidian Dataview, `wiki/index.md` y `wiki/log.md`). El puente `scripts/obsidian_wiki_bridge.cjs` sincroniza bidireccionalmente la carpeta `wiki/` con el Vault de Obsidian del autor en Google Drive (`Aysen_Sistemico/`), valida 5 invariantes deterministas (`--lint`) y compila las síntesis editadas en Obsidian hacia `data/aysen_wiki_compiled.js` (`--compile`), hidratando en vivo a `window.OmniRouteClient`.
+Para superar la amnesia entre sesiones de los agentes LLM sin poner en riesgo la integridad de las variables numéricas del Data Lake, Aysén Sistémico implementa el patrón `llm-wiki` de Andrej Karpathy bajo una arquitectura dual: los vectores cuantitativos permanecen inmutables en `scripts/build_aysen_hubs_bundle.cjs` y `data/aysen_hubs_data.js`, mientras que el conocimiento semántico, causal y regulatorio se compila en `wiki/` (77 notas Markdown interconectadas con YAML frontmatter para Obsidian Dataview, `wiki/index.md` y `wiki/log.md`). El puente `scripts/obsidian_wiki_bridge.cjs` sincroniza bidireccionalmente la carpeta `wiki/` con el Vault de Obsidian del autor en Google Drive (`Aysen_Sistemico/`), valida 5 invariantes deterministas (`--lint`) y compila las síntesis editadas en Obsidian hacia `data/aysen_wiki_compiled.js` (`--compile`), hidratando en vivo a `window.OmniRouteClient`.
 
 ## Contexto, Decisión e Implicancias de Ingeniería
 

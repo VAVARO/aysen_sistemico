@@ -10,7 +10,7 @@ variables_clave:
   - tasa_ocupacion_invernal_pct
 fuentes_oficiales:
   - "Instituto Nacional de Estadísticas (INE) / SERNATUR"
-updated_at: "2026-11-26"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - nodo
@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Estadísticas oficiales INE EMAT 2025 consolidadas para Aysén: 364.039 pernoctaciones y 196.611 llegadas anuales (estancia por establecimiento de 1,85 noches; ocupación anual continua en habitaciones de 24,5%, subiendo a 42,1% en ene–feb 2026 vs. 76,3%–76,8% en fechas pico SERNATUR; ADR real de $70.213 CLP y RevPAR de $17.203 CLP). Según la Encuesta de Salida Balmaceda 2025 (SIT UACh, n=400), el viaje regional dura 10,0 días promedio con gasto nacional de $51.551 CLP/día vs. hasta $186.713 CLP/día internacional (EE.UU.).
+Corte consolidado INE EMAT Aysén: `364.039` pernoctaciones y `196.611` llegadas (estancia media por establecimiento `1,85` noches vs. `10,0` días de estadía regional según Encuesta Aeródromo Balmaceda 2025, $n=400$). ADR anual 2025: `$70.213 CLP` (~US$ 74); RevPAR anual: `$17.203 CLP` (~US$ 18). Distingue ocupación mensual continua EMAT (`24,5%` anual; `39,7%` ene y `44,5%` feb 2026) de fechas pico SERNATUR (`76,3%–76,8%` regional; `89,9%` Coyhaique–Aysén). En febrero 2026 la EMAT alcanzó 69.909 pernoctaciones y 40.634 llegadas (`44,5%` ocupación habitaciones, ADR `$76.471 CLP`, RevPAR `$34.025 CLP`), cayendo en septiembre 2026 a `16.833` pernoctaciones (`17,2%`, `-22,2% YoY`). Gasto diario nacional `$51.551 CLP` vs. EE.UU. `$186.713 CLP`.
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Pernoctaciones EMAT | Llegadas EMAT | Ocup. EMAT Ene–Feb | Ocup. Pico SERNATUR | ADR EMAT ($ CLP) | RevPAR EMAT ($ CLP) |
-| --- | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 138.400 | 73.200 | 45,8% | 89,9% | $67.512 | $17.981 |
-| [[comunas/lago_verde|Lago Verde]] | 2.800 | 1.500 | 29,5% | 64,5% | $49.800 | $7.570 |
-| [[comunas/aysen|Aysén]] | 58.200 | 31.800 | 43,2% | 84,2% | $81.200 | $20.625 |
-| [[comunas/cisnes|Cisnes]] | 44.800 | 24.600 | 41,6% | 70,0% | $84.900 | $20.376 |
-| [[comunas/guaitecas|Guaitecas]] | 2.300 | 1.200 | 28,4% | 62,0% | $53.400 | $8.811 |
-| [[comunas/chile_chico|Chile Chico]] | 26.500 | 14.100 | 39,8% | 76,2% | $59.600 | $13.470 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 51.400 | 29.100 | 44,1% | 78,8% | $62.400 | $13.790 |
-| [[comunas/cochrane|Cochrane]] | 22.800 | 11.900 | 40,5% | 79,4% | $73.800 | $16.531 |
-| [[comunas/ohiggins|O'Higgins]] | 6.439 | 3.361 | 38,2% | 80,5% | $58.600 | $10.196 |
-| [[comunas/tortel|Tortel]] | 10.400 | 5.850 | 37,9% | 78,6% | $55.600 | $10.675 |
+| Comuna | Pernoctaciones EMAT | Llegadas EMAT | ADR EMAT ($ CLP) | Occ. Pico vs. EMAT (%) |
+| --- | --- | --- | --- | --- |
+| [[comunas/coyhaique|Coyhaique]] | 138.400 | 73.200 | $67.512 | 89.9% / 45.8% |
+| [[comunas/lago_verde|Lago Verde]] | 2.800 | 1.500 | $49.800 | 64.5% / 29.5% |
+| [[comunas/aysen|Aysén]] | 58.200 | 31.800 | $81.200 | 84.2% / 43.2% |
+| [[comunas/cisnes|Cisnes]] | 44.800 | 24.600 | $84.900 | 70% / 41.6% |
+| [[comunas/guaitecas|Guaitecas]] | 2.300 | 1.200 | $53.400 | 62% / 28.4% |
+| [[comunas/chile_chico|Chile Chico]] | 26.500 | 14.100 | $59.600 | 76.2% / 39.8% |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 51.400 | 29.100 | $62.400 | 78.8% / 44.1% |
+| [[comunas/cochrane|Cochrane]] | 22.800 | 11.900 | $73.800 | 79.4% / 40.5% |
+| [[comunas/ohiggins|O'Higgins]] | 6.439 | 3.361 | $58.600 | 80.5% / 38.2% |
+| [[comunas/tortel|Tortel]] | 10.400 | 5.850 | $55.600 | 78.6% / 37.9% |
 
 ## Metadatos de Procedencia Institucional
 

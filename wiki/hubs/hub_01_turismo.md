@@ -17,7 +17,7 @@ fuentes_oficiales:
   - "SUBTURISMO — Zonas de Interés Turístico (ZOIT)"
   - "INE — Encuesta Mensual de Alojamiento Turístico (EMAT)"
   - "CONAF — Estadísticas de Visitación SNASPE"
-updated_at: "2026-11-26"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - hub

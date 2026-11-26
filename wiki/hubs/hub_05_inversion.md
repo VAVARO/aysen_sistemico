@@ -17,7 +17,7 @@ fuentes_oficiales:
   - "SII — Estadísticas Tributarias de Empresas, Ventas y Empleo"
   - "ChileCompra — Transacciones Mercado Público"
   - "MBN / SERNAGEOMIN — Catastro de Propiedad Fiscal y Concesiones Mineras"
-updated_at: "2026-11-26"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - hub
@@ -36,13 +36,13 @@ El Hub V (Economía, Inversión y Suelo) integra la evaluación ambiental de pro
 | --- | --- | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | 118 | 495,6 | 7.620 | 20.950 | 48.500 |
 | [[comunas/lago_verde|Lago Verde]] | 9 | 31,4 | 118 | 132 | 450 |
-| [[comunas/aysen|Aysén]] | 254 | 1320,0 | 2.840 | 9.890 | 56.200 |
-| [[comunas/cisnes|Cisnes]] | 122 | 525,0 | 895 | 1.920 | 9.100 |
-| [[comunas/guaitecas|Guaitecas]] | 86 | 245,0 | 242 | 265 | 2.450 |
-| [[comunas/chile_chico|Chile Chico]] | 41 | 310,0 | 648 | 1.140 | 6.300 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 27 | 142,0 | 418 | 512 | 3.200 |
-| [[comunas/cochrane|Cochrane]] | 33 | 172,0 | 492 | 845 | 4.400 |
-| [[comunas/ohiggins|O'Higgins]] | 14 | 48,0 | 96 | 98 | 530 |
+| [[comunas/aysen|Aysén]] | 254 | 1.320 | 2.840 | 9.890 | 56.200 |
+| [[comunas/cisnes|Cisnes]] | 122 | 525 | 895 | 1.920 | 9.100 |
+| [[comunas/guaitecas|Guaitecas]] | 86 | 245 | 242 | 265 | 2.450 |
+| [[comunas/chile_chico|Chile Chico]] | 41 | 310 | 648 | 1.140 | 6.300 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 27 | 142 | 418 | 512 | 3.200 |
+| [[comunas/cochrane|Cochrane]] | 33 | 172 | 492 | 845 | 4.400 |
+| [[comunas/ohiggins|O'Higgins]] | 14 | 48 | 96 | 98 | 530 |
 | [[comunas/tortel|Tortel]] | 18 | 66,5 | 84 | 80 | 390 |
 
 ## Nodos Satélite del Hub

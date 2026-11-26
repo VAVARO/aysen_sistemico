@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Conectividad comunal al troncal terrestre y submarino de la Fibra Óptica Austral (FOA — SUBTEL), tipo de enlace troncal, operadores móviles 4G/5G activos y localidades con brecha digital. Detalla el tipo de enlace (FOA Terrestre, Ramal Submarino o radioenlace) en cada una de las 10 comunas y las localidades interiores que aún presentan rezago de conectividad.
+Conectividad comunal según Informe Nacional FDT SUBTEL 3T-2026: Troncal Submarina CTR (FDT-2017-01, único aterrizaje en Caleta Tortel), Cable Submarino Austral GTD (Puerto Chacabuco), Troncal Terrestre Silica (14 POIITs, FDT-2018-02) y adjudicaciones Fibra Tortel–Villa O'Higgins (1S-2028) y Última Milla FDT-2025-03 (33 localidades). Reconcilia 26.294 conexiones fijas (24.782 residenciales, 75,96% FTTX y 21,48% Starlink) al corte SUBTEL junio 2026 frente a 37.645 hogares Censo 2024: Lago Verde (17,5% internet, 0,0% fibra) y Villa O'Higgins (23,2% internet, 0,0% fibra hasta enlace 1S-2028) operan 100% sobre Starlink y radioenlace.
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Conectado a FOA | Tipo Enlace | Operadores 4G/5G | Brecha Digital |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | Si | FOA Terrestre + Ramal Submarino (CTR / Conexión Troncal Austral) | Entel, Movistar | Brecha Baja (24.5% sin internet fijo · Consolidación FTTH Urbana) |
-| [[comunas/lago_verde|Lago Verde]] | Enlace secundario | Radioenlace Microondas Digital + Starlink Institucional Subtel | Entel, Movistar | Brecha Crítica (82.4% sin internet fijo · Dependencia de Radioenlace / Satelital) |
-| [[comunas/aysen|Aysén]] | Si | FOA Submarina (Punto Aterrizaje Chacabuco y Puerto Aguirre) + FOA Terrestre hacia Coyhaique | Entel, Movistar | Brecha Baja (38.2% sin internet fijo · Consolidación FTTH Urbana) |
-| [[comunas/cisnes|Cisnes]] | Si | FOA Submarina (Aterrizaje Puerto Cisnes) + FOA Terrestre Carretera Austral | Entel, Movistar | Brecha Media (56.4% sin internet fijo · Déficit en Localidades Rurales) |
-| [[comunas/guaitecas|Guaitecas]] | Si | FOA Submarina (Punto de Aterrizaje Submarino Melinka de CTR/SUBTEL) | Entel, Movistar | Brecha Alta (68.2% sin internet fijo · Rezago de Última Milla Domiciliaria) |
-| [[comunas/chile_chico|Chile Chico]] | Si | FOA Terrestre (Ramal Troncal General Carrera) | Entel, Movistar | Brecha Media (52.1% sin internet fijo · Déficit en Localidades Rurales) |
-| [[comunas/rio_ibanez|Río Ibáñez]] | Si | FOA Terrestre (Troncal Carretera Austral con empalme en Cerro Castillo y Puerto Ibáñez) | Entel, Movistar | Brecha Alta (64.8% sin internet fijo · Rezago de Última Milla Domiciliaria) |
-| [[comunas/cochrane|Cochrane]] | Si | FOA Terrestre (Nodo Cabecera Provincial Troncal Austral Cochrane) | Entel, Movistar | Brecha Media (48.6% sin internet fijo · Déficit en Localidades Rurales) |
-| [[comunas/ohiggins|O'Higgins]] | Enlace secundario | Radioenlace Digital UHF/Microondas + Satelital Starlink Subtel | Entel | Brecha Crítica (76.8% sin internet fijo · Dependencia de Radioenlace / Satelital) |
-| [[comunas/tortel|Tortel]] | Si | FOA Submarina (Punto de Aterrizaje FOA Caleta Tortel) + FOA Terrestre desde Cochrane | Entel, Movistar | Brecha Crítica (72.5% sin internet fijo · Dependencia de Radioenlace / Satelital) |
+| [[comunas/coyhaique|Coyhaique]] | Si | Troncal Terrestre Silica Networks (FDT-2018-02) + Cable Submarino Austral GTD vía Puerto Chacabuco | Entel, Movistar | Brecha Baja (29.9% sin internet fijo · Consolidación FTTH Urbana) |
+| [[comunas/lago_verde|Lago Verde]] | Enlace secundario | Satelital Starlink / Radioenlace UHF (FTTH hogar en despliegue FDT-2025-03 hacia Lago Verde y Villa La Tapera) | Entel, Movistar | Brecha Crítica (82.5% sin internet fijo · Dependencia de Radioenlace / Satelital) |
+| [[comunas/aysen|Aysén]] | Si | Cable Submarino Austral GTD / Telefónica del Sur (Puerto Chacabuco) + Red Troncal Regional Coyhaique | Entel, Movistar | Brecha Baja (33.5% sin internet fijo · Consolidación FTTH Urbana) |
+| [[comunas/cisnes|Cisnes]] | Si | Red Troncal Terrestre Norte Ruta 7 (La Junta/Puyuhuapi/Cisnes) + adjudicación FDT-2025-03 Última Milla | Entel, Movistar | Brecha Baja (27.5% sin internet fijo · Consolidación FTTH Urbana) |
+| [[comunas/guaitecas|Guaitecas]] | Enlace secundario | Radioenlace Microondas / Starlink + Proyecto Última Milla FDT-2025-03 (Melinka y Repollal, sin aterrizaje CTR) | Entel, Movistar | Brecha Media (48.1% sin internet fijo · Déficit en Localidades Rurales) |
+| [[comunas/chile_chico|Chile Chico]] | Si | Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Guadal, Mallín Grande y Chile Chico) | Entel, Movistar | Brecha Media (59.6% sin internet fijo · Déficit en Localidades Rurales) |
+| [[comunas/rio_ibanez|Río Ibáñez]] | Si | Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Cerro Castillo, Puerto Ibáñez, Bahía Murta y Río Tranquilo) | Entel, Movistar | Brecha Media (47.6% sin internet fijo · Déficit en Localidades Rurales) |
+| [[comunas/cochrane|Cochrane]] | Si | Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Bertrand, Cochrane y Los Ñadis) | Entel, Movistar | Brecha Baja (39.2% sin internet fijo · Consolidación FTTH Urbana) |
+| [[comunas/ohiggins|O'Higgins]] | Enlace secundario | Satelital Starlink / Radioenlace UHF (Fibra Tortel-Villa O'Higgins adjudicada D.O. 28-abr-2026; operación 1S-2028) | Entel | Brecha Crítica (76.8% sin internet fijo · Dependencia de Radioenlace / Satelital) |
+| [[comunas/tortel|Tortel]] | Si | Único Aterrizaje Submarino FOA CTR en Aysén (FDT-2017-01) + POIIT Silica FDT-2018-02 + FDT-2025-03 FTTH | Entel, Movistar | Brecha Crítica (77.9% sin internet fijo · Dependencia de Radioenlace / Satelital) |
 
 ## Metadatos de Procedencia Institucional
 

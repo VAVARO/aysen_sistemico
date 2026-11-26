@@ -29,22 +29,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-El Hub III (Energía y Telecomunicaciones) caracteriza la condición de aislamiento energético de Aysén respecto del Sistema Eléctrico Nacional (SEN). La región opera mediante Sistemas Eléctricos Medianos aislados (Aysén-Coyhaique, General Carrera y Palena/Cisnes) y microrredes locales que suman 98,6 MW de capacidad instalada, con una tarifa residencial BT1 promedio de $242,3/kWh ($224/kWh en Coyhaique) y costos reales de generación diésel aislada superiores a $450/kWh en comunas extremas. Esta estructura tarifaria perpetúa la dependencia térmica de la leña (más del 90% de los hogares regionales, con un consumo de 14,5 a 22,0 m³/hogar/año), mientras en telecomunicaciones la Fibra Óptica Austral (FOA) y enlaces satelitales totalizan 26.294 conexiones fijas SUBTEL.
+El Hub III (Energía y Telecomunicaciones) caracteriza el aislamiento eléctrico, térmico y digital de Aysén frente al SEN. Opera mediante Sistemas Medianos (SMA, SMGC, Puerto Cisnes/Palena) y Sistemas Aislados <= 1,50 MW (Art. 173° LGSE) que suman 67,10 MW operativos (+18,98 MW ERNC en construcción 2026), bajo Pliego BT1 Edelaysen Decreto N° 8T nov-2026 en $287,8/kWh en Coyhaique/Aysén y 13.448 hogares beneficiarios del Subsidio Eléctrico Ley 21.667. Al 19-nov-2026 (CNE), la gasolina 93 promedia $1.696/L y kerosene $1.497/L (+$282/L FEPP) vía único MBM Copec Chacabuco (6.674 m³ activos), mientras INFOR BES N° 11 certifica 334.274 m³ sólidos/año de leña (Coyhaique 147.080 m³s [44,0%], 68,8% hogares). En telecomunicaciones (SUBTEL jun-2026 / FDT 3T-2026) suma 26.294 conexiones fijas (24.782 residenciales), con único aterrizaje submarino CTR en Caleta Tortel, Cable Austral privado GTD en Puerto Chacabuco, 14 POIITs Silica y despliegues FDT-2025-03 / Tortel-O'Higgins (1S-2028).
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Capacidad Eléctrica Instalada en el Subsistema (MW) | Tarifa Eléctrica Residencial BT1 ($/kWh) | Matriz de Calefacción a Leña (% hogares) | Consumo Residencial de Leña (m³/hogar/año) | Precio Leña Seca ($/m³) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 26,8 | 224 | 92,4 | 14,5 | 48.000 |
-| [[comunas/lago_verde|Lago Verde]] | 1,4 | 258 | 98,2 | 21 | 38.000 |
-| [[comunas/aysen|Aysén]] | 42,5 | 222 | 87,8 | 15 | 46.000 |
-| [[comunas/cisnes|Cisnes]] | 6,8 | 235 | 95,1 | 18,5 | 42.000 |
-| [[comunas/guaitecas|Guaitecas]] | 2,8 | 265 | 94,6 | 19 | 55.000 |
-| [[comunas/chile_chico|Chile Chico]] | 7,5 | 228 | 82,3 | 16,5 | 50.000 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 2,4 | 231 | 94,2 | 19,5 | 44.000 |
-| [[comunas/cochrane|Cochrane]] | 5,8 | 230 | 96 | 18 | 42.000 |
-| [[comunas/ohiggins|O'Higgins]] | 1,4 | 262 | 99,1 | 22 | 36.000 |
-| [[comunas/tortel|Tortel]] | 1,2 | 268 | 98,4 | 21,5 | 40.000 |
+| [[comunas/coyhaique|Coyhaique]] | 33,95 | 287,8 | 68,8 | 9,81 | 48.000 |
+| [[comunas/lago_verde|Lago Verde]] | 0,35 | 294 | 98,1 | 15,1 | 36.000 |
+| [[comunas/aysen|Aysén]] | 18,48 | 287,8 | 84,5 | 13,2 | 46.000 |
+| [[comunas/cisnes|Cisnes]] | 2,83 | 292,4 | 94 | 13,95 | 44.000 |
+| [[comunas/guaitecas|Guaitecas]] | 1,45 | 312 | 94,2 | 13,1 | 52.000 |
+| [[comunas/chile_chico|Chile Chico]] | 3,9 | 289,5 | 82 | 11,95 | 50.000 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 1,4 | 289,5 | 94,2 | 14,05 | 44.000 |
+| [[comunas/cochrane|Cochrane]] | 2,54 | 291,2 | 95,5 | 14,35 | 42.000 |
+| [[comunas/ohiggins|O'Higgins]] | 1,25 | 308 | 98,8 | 15,5 | 36.000 |
+| [[comunas/tortel|Tortel]] | 0,95 | 318 | 98,5 | 15,2 | 40.000 |
 
 ## Nodos Satélite del Hub
 

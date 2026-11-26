@@ -32,16 +32,16 @@ El Servicio de Salud Aysén articula un hospital base de alta complejidad (Hospi
 
 | Comuna | Camas Hospitalarias Red Asistencial | Postas de Salud Rural (PSR) | Médicos por cada 1.000 Habitantes (médicos/1.000 hab) | Tiempo de Derivación Médica en Ambulancia/Barcaza al Hospital Regional Coyhaique (horas) | Mediana de Espera Quirúrgica No GES (días) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 167 | 7 | 3,12 | 0 | 342 |
-| [[comunas/lago_verde|Lago Verde]] | 0 | 3 | 0,82 | 4,5 | 425 |
-| [[comunas/aysen|Aysén]] | 52 | 4 | 1,74 | 1 | 365 |
-| [[comunas/cisnes|Cisnes]] | 12 | 4 | 1,15 | 3,5 | 388 |
-| [[comunas/guaitecas|Guaitecas]] | 0 | 1 | 0,95 | 14 | 438 |
-| [[comunas/chile_chico|Chile Chico]] | 14 | 2 | 1,28 | 4 | 378 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 0 | 3 | 0,88 | 1,5 | 404 |
-| [[comunas/cochrane|Cochrane]] | 16 | 1 | 1,42 | 6 | 392 |
-| [[comunas/ohiggins|O'Higgins]] | 0 | 1 | 0,78 | 10 | 416 |
-| [[comunas/tortel|Tortel]] | 0 | 1 | 0,85 | 8 | 402 |
+| [[comunas/coyhaique|Coyhaique]] | 167 | 7 | 3,12 | 0 | 318 |
+| [[comunas/lago_verde|Lago Verde]] | 0 | 3 | 0,82 | 4,5 | 418 |
+| [[comunas/aysen|Aysén]] | 52 | 4 | 1,74 | 1 | 354 |
+| [[comunas/cisnes|Cisnes]] | 12 | 4 | 1,15 | 3,5 | 412 |
+| [[comunas/guaitecas|Guaitecas]] | 0 | 1 | 0,95 | 14 | 468 |
+| [[comunas/chile_chico|Chile Chico]] | 14 | 2 | 1,28 | 4 | 364 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 0 | 3 | 0,88 | 1,5 | 424 |
+| [[comunas/cochrane|Cochrane]] | 16 | 1 | 1,42 | 6 | 368 |
+| [[comunas/ohiggins|O'Higgins]] | 0 | 1 | 0,78 | 10 | 436 |
+| [[comunas/tortel|Tortel]] | 0 | 1 | 0,85 | 8 | 388 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

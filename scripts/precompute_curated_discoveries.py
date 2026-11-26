@@ -209,8 +209,8 @@ VARIABLE_META = {
     "tasa_ocupacion_estival_pct": ("I. Turismo", "Ocupación Hotelera Estival (Enero-Febrero)", "%"),
     "estadia_promedio_dias": ("I. Turismo", "Estadía Turística Promedio en la Comuna", "días"),
     "gasto_diario_turista_usd": ("I. Turismo", "Gasto Diario Promedio por Turista", "US$/día"),
-    "tarifa_adr_estimada_usd": ("I. Turismo", "Tarifa Diaria Promedio Hotelera (ADR)", "US$"),
-    "revpar_estimado_usd": ("I. Turismo", "Ingreso por Habitación Disponible (RevPAR)", "US$"),
+    "tarifa_adr_emat_clp": ("I. Turismo", "Tarifa Diaria Promedio EMAT Real (INE)", "$ CLP"),
+    "revpar_emat_clp": ("I. Turismo", "Ingreso por Habitación Disponible EMAT (RevPAR)", "$ CLP"),
     "ratio_presion_turistica": ("I. Turismo", "Ratio de Presión Turística Estacional", "visitas/hab"),
     "ha_snaspe_por_guardaparque": ("I. Turismo", "Superficie Protegida SNASPE por Guardaparque", "ha/guardaparque"),
     # Hub II - Salmonicultura y Maritorio
@@ -228,18 +228,20 @@ VARIABLE_META = {
     "subsidio_fiscal_diesel_kwh_clp": ("III. Energía", "Subsidio Fiscal a Sistemas Eléctricos Aislados", "$/kWh"),
     "saidi_horas_anual": ("III. Energía", "Tiempo Anual de Interrupción Eléctrica (SAIDI)", "horas/año"),
     "gasolina_93_clp": ("III. Energía", "Precio Minorista de Gasolina 93 Octanos", "$/L"),
+    "diesel_clp_litro": ("III. Energía", "Precio Minorista de Petróleo Diésel CNE", "$/L"),
+    "kerosene_clp_litro": ("III. Energía", "Precio Minorista de Kerosene Doméstico CNE", "$/L"),
+    "cobertura_subsidio_electrico_pct": ("III. Energía", "Cobertura del Subsidio Eléctrico sobre Hogares", "%"),
+    "ratio_costo_calefaccion_electrica_vs_lena": ("III. Energía", "Ratio Costo Térmico Útil Bomba de Calor vs. Leña", "veces"),
     "precio_lena_m3": ("III. Energía", "Precio Comercial del Metro Cúbico de Leña", "$/m³"),
     "hogares_lena_pct": ("III. Energía", "Hogares con Calefacción Principal a Leña", "%"),
     "consumo_lena_m3_hogar_ano": ("III. Energía", "Consumo Residencial Anual de Leña por Hogar", "m³/hogar/año"),
     "informalidad_lena_pct": ("III. Energía", "Informalidad en el Mercado Comunal de Leña", "%"),
     "internet_fijo_pct": ("III. Energía", "Penetración de Internet Fijo en Hogares", "%"),
-    "hogares_sin_internet_fijo_pct": ("III. Energía", "Hogares sin Conexión Fija a Internet", "%"),
     "cobertura_fibra_hogar_pct": ("III. Energía", "Cobertura de Fibra Óptica al Hogar (FTTH)", "%"),
     # Hub IV - Gobernanza y Finanzas Municipales
     "presupuesto_mclp": ("IV. Gobernanza", "Presupuesto Municipal Vigente (SINIM)", "M$"),
     "presupuesto_per_capita_mclp": ("IV. Gobernanza", "Presupuesto Municipal Per Cápita", "M$/hab"),
     "dependencia_fcm_pct": ("IV. Gobernanza", "Dependencia del Fondo Común Municipal (FCM)", "%"),
-    "ingresos_propios_pct": ("IV. Gobernanza", "Autonomía por Ingresos Propios Permanentes (IPP)", "%"),
     "ipp_per_capita_clp": ("IV. Gobernanza", "Ingresos Propios Permanentes Per Cápita", "$/hab"),
     "gasto_personal_pct": ("IV. Gobernanza", "Gasto Municipal en Personal sobre Presupuesto", "%"),
     "inversion_directa_pct": ("IV. Gobernanza", "Inversión Municipal Directa sobre Presupuesto", "%"),
@@ -261,7 +263,6 @@ VARIABLE_META = {
     "trabajadores_sii": ("V. Inversión", "Trabajadores Dependientes Formales (SII)", "trabajadores"),
     "ventas_por_empresa_uf": ("V. Inversión", "Ventas Anuales Promedio por Empresa (SII)", "UF/empresa"),
     "compras_locales_pct": ("V. Inversión", "Retención de Compras Públicas en Proveedores Locales", "%"),
-    "fuga_compras_pct": ("V. Inversión", "Fuga Extrarregional de Compras Públicas", "%"),
     "parcelaciones_sag_n": ("V. Inversión", "Subdivisiones Prediales Rurales Certificadas (SAG)", "predios"),
     "suelo_fiscal_bbnn_pct": ("V. Inversión", "Proporción de Suelo Fiscal (Bienes Nacionales)", "%"),
     "suelo_privado_pct": ("V. Inversión", "Proporción de Suelo de Propiedad Privada", "%"),
@@ -413,13 +414,13 @@ CURATED_20_CROSS_SPECS = [
         ),
     },
     {
-        "varX": "gasolina_93_clp",
-        "varY": "cobertura_empam_pct",
-        "headline": "Precio de Gasolina 93 vs. Cobertura Preventiva EMPAM",
-        "shortX": "precio de combustible",
+        "varX": "tarifa_bt1_clp",
+        "varY": "tasa_aprobacion_rs_sni_pct",
+        "headline": "Tarifa Eléctrica Residencial BT1 vs. Aprobación Técnica de Proyectos RS",
+        "shortX": "tarifa eléctrica BT1",
         "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
-            f"El combustible más caro encarece rondas rurales y traslados médicos: "
-            f"{hi_c} ({hi_x} {ux}) cubre al {hi_y}% de sus adultos mayores, diez puntos bajo {lo_c} ({lo_y}%)."
+            f"Las comunas con Sistemas Aislados y mayor tarifa BT1 enfrentan mayores brechas para lograr aprobación RS en el SNI: "
+            f"{hi_c} ({hi_x} {ux}) alcanza {hi_y}% RS, frente a {lo_y}% en {lo_c} ({lo_x} {ux})."
         ),
     },
     {
@@ -494,12 +495,12 @@ CURATED_20_CROSS_SPECS = [
     },
     {
         "varX": "potencia_mw",
-        "varY": "inversion_seia_mmusd",
-        "headline": "Capacidad Eléctrica Instalada vs. Inversión Aprobada SEIA",
+        "varY": "empresas_sii",
+        "headline": "Capacidad Eléctrica Instalada vs. Tejido Empresarial Formal (SII)",
         "shortX": "potencia eléctrica instalada",
         "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
-            f"Disponer de potencia firme habilita plantas de proceso e infraestructura: "
-            f"{hi_c} suma {hi_x} MW y {hi_y} {uy} aprobados en el SEIA, ante {lo_x} MW y {lo_y} {uy} en {lo_c}."
+            f"El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: "
+            f"{hi_c} reúne {hi_x} MW y {hi_y} {uy}, ante {lo_x} MW y {lo_y} {uy} en {lo_c}."
         ),
     },
     {

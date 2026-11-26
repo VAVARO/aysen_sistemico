@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * tests/test_obsidian_indicator_audit.cjs (Versión 2 — 11 Evals Portables)
+ * tests/test_obsidian_indicator_audit.cjs (Versión 3 — 16 Evals con Invariantes Físicos y Regulatorios)
  * Suite de Evals y pruebas automatizadas para scripts/obsidian_indicator_audit.cjs.
  *
  * Portable en CI/shallow clones: si `git show HEAD~1` no está disponible, usa
@@ -224,7 +224,84 @@ function runTests() {
   console.log('  [PASS] Eval 12: SNASPE N=19, dedup isAliasOf y fallback shallow-clone verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/12 evals automatizados de auditoría Obsidian V2 pasaron correctamente.`);
+  // --- EVAL 13: Invariante Demográfico de Hogares (INVARIANTE_DEMOGRAFICO_HOGARES) ---
+  console.log('--- Eval 13: Invariante demográfico de hogares (leña y SUBTEL vs. Censo 2024) ---');
+  assert.strictEqual(
+    audit.evaluatePhysicalAndDemographicInvariants(currSnap).filter(a => a.code === 'VIOLACION_INVARIANTE_DEMOGRAFICO').length,
+    0,
+    'El bundle actual saneado debe pasar con 0 violaciones demográficas'
+  );
+  const badDemoSnap = JSON.parse(JSON.stringify(currSnap));
+  badDemoSnap.indicators.consumo_lena_m3_solidos_anual.values['11303'] = 14000; // 651+ hogares vs 195 hogares reales en Tortel
+  const badDemoDiff = audit.compareSnapshots(currSnap, badDemoSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badDemoDiff.semaforo, 'ROJO');
+  assert(
+    badDemoDiff.verificationAlerts.some(a => a.code === 'VIOLACION_INVARIANTE_DEMOGRAFICO' && a.detail.includes('Tortel')),
+    'Debe disparar ALTA · VIOLACION_INVARIANTE_DEMOGRAFICO cuando leña implícita supera hogares reales'
+  );
+  console.log('  [PASS] Eval 13: Invariante demográfico detecta corrupción en Tortel -> ROJO y valida 0 violaciones en bundle sano.');
+  passed++;
+
+  // --- EVAL 14: Invariante de Conservación de Potencia MW y Umbral Legal SSAA <= 1,50 MW ---
+  console.log('--- Eval 14: Invariante de conservación MW y umbral legal Art. 173 LGSE SSAA <= 1,50 MW ---');
+  assert.strictEqual(
+    audit.evaluatePhysicalAndDemographicInvariants(currSnap).filter(a => a.code === 'VIOLACION_INVARIANTE_FISICO_MW').length,
+    0,
+    'El bundle actual saneado debe pasar con 0 violaciones físicas MW'
+  );
+  const badMwSnap = JSON.parse(JSON.stringify(currSnap));
+  const melinkaNode = badMwSnap.centralesElectricas.find(p => p.id.includes('MELINKA'));
+  assert(melinkaNode, 'Debe existir central Melinka en snapshot');
+  melinkaNode.potencia_mw = 2.8; // Viola tanto umbral SSAA <= 1.50 MW como conservacion con comuna (1.45 MW)
+  const badMwDiff = audit.compareSnapshots(currSnap, badMwSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badMwDiff.semaforo, 'ROJO');
+  assert(
+    badMwDiff.verificationAlerts.some(a => a.code === 'VIOLACION_INVARIANTE_FISICO_MW' && a.detail.includes('1,50 MW')),
+    'Debe disparar ALTA · VIOLACION_INVARIANTE_FISICO_MW ante SSAA > 1,50 MW y descalce comunal'
+  );
+  console.log('  [PASS] Eval 14: Invariante de potencia MW y límite SSAA Art. 173 LGSE verificados.');
+  passed++;
+
+  // --- EVAL 15: Invariante Anti-Colinealidad Bilateral Activa (|r| >= 0.9995) ---
+  console.log('--- Eval 15: Invariante Anti-Colinealidad Bilateral Activa (|r| >= 0.9995) ---');
+  assert.strictEqual(
+    audit.evaluatePhysicalAndDemographicInvariants(currSnap).filter(a => a.code === 'COLINEALIDAD_ESPURIA_ACTIVA').length,
+    0,
+    'El bundle actual saneado debe tener 0 pares activos con colinealidad espuria |r| >= 0.9995'
+  );
+  const badColSnap = JSON.parse(JSON.stringify(currSnap));
+  const compVals = {};
+  for (const ine of Object.keys(badColSnap.indicators.internet_fijo_pct.values)) {
+    compVals[ine] = Number((100 - Number(badColSnap.indicators.internet_fijo_pct.values[ine])).toFixed(1));
+  }
+  badColSnap.indicators.indicador_complemento_sin_etiqueta = { type: 'numeric', values: compVals };
+  const badColDiff = audit.compareSnapshots(currSnap, badColSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badColDiff.semaforo, 'ROJO');
+  assert(
+    badColDiff.verificationAlerts.some(a => a.code === 'COLINEALIDAD_ESPURIA_ACTIVA' && a.indicator.includes('indicador_complemento_sin_etiqueta')),
+    'Debe disparar ALTA · COLINEALIDAD_ESPURIA_ACTIVA cuando un complemento 100-X carece de etiqueta'
+  );
+  console.log('  [PASS] Eval 15: Cero colinealidad activa en bundle real y detección automática de complemento sin etiqueta.');
+  passed++;
+
+  // --- EVAL 16: Trazabilidad de Cambio Regulatorio Documentado (CAMBIO_REGULATORIO_DOCUMENTADO) ---
+  console.log('--- Eval 16: Trazabilidad normativa ante salto tarifario/combustibles >= 20% ---');
+  const regBase = JSON.parse(JSON.stringify(currSnap));
+  const regCurr = JSON.parse(JSON.stringify(currSnap));
+  regBase.indicators.tarifa_bt1_clp.values['11101'] = 224.0;
+  regCurr.indicators.tarifa_bt1_clp.values['11101'] = 287.8; // +28.5% -> outlier + cita Decreto 8T/2026
+  const regDiff = audit.compareSnapshots(regBase, regCurr, { autoUpdateStatus: allGreenApi });
+  const bt1Alert = regDiff.verificationAlerts.find(a => a.code === 'OUTLIER_SALTO' && a.indicator === 'tarifa_bt1_clp');
+  assert(bt1Alert, 'Debe disparar OUTLIER_SALTO en tarifa_bt1_clp');
+  assert.strictEqual(bt1Alert.regulatoryTag, 'CAMBIO_REGULATORIO_DOCUMENTADO');
+  assert(
+    bt1Alert.detail.includes('[NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO]') && bt1Alert.detail.includes('Decreto N° 8T'),
+    `La alerta debe citar Decreto N° 8T MinEnergía: ${bt1Alert.detail}`
+  );
+  console.log('  [PASS] Eval 16: Clasificador de shock regulatorio adjunta cita normativa verificada.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/16 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

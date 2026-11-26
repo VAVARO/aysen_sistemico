@@ -2207,7 +2207,7 @@
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Cruce eléctrico-térmico (r = 0,84, R² = 0,70): las comunas con tarifa BT1 más cara (O'Higgins $262/kWh y 22,0 m³/hogar, Tortel $268/kWh y 21,5 m³/hogar, Lago Verde $258/kWh y 21,0 m³/hogar) queman un 51% más de leña por vivienda que Coyhaique ($224/kWh y 14,5 m³/hogar).",
+          "what_it_shows": "Cruce eléctrico-térmico (Pliego Edelaysen nov-2026 e INFOR): las comunas de Sistemas Aislados Municipales con mayor tarifa BT1 (O'Higgins $308,0/kWh y 15,5 m³s/hogar, Tortel $318,0/kWh y 15,2 m³s/hogar, Lago Verde $294,0/kWh y 15,1 m³s/hogar) consumen ~55% más leña sólida por hogar que Coyhaique ($287,8/kWh y 9,81 m³s/hogar tras 10.999 recambios PDA).",
           "why_complex_system": "Trampa de dependencia: altas tarifas eléctricas bloquean la transición energética hacia calefacción limpia, perpetuando el uso de leña húmeda."
         },
         {

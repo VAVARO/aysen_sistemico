@@ -138,6 +138,15 @@
     profesionalizacion_pct: 'Profesionalización de Planta Municipal (%)',
     saidi_horas_anual: 'Índice de Interrupción Eléctrica SAIDI (hrs/año)',
     tarifa_bt1_clp: 'Tarifa Eléctrica Residencial BT1 ($/kWh)',
+    potencia_ernc_en_construccion_mw: 'Potencia ERNC en Construcción 2026 (MW)',
+    cobertura_subsidio_electrico_hogares_n: 'Beneficiarios Subsidio Eléctrico Ley 21.667 (hogares)',
+    cobertura_subsidio_electrico_pct: 'Cobertura Subsidio Eléctrico (% hogares)',
+    diesel_clp_litro: 'Precio Petróleo Diésel CNE ($/L)',
+    kerosene_clp_litro: 'Precio Kerosene Doméstico CNE ($/L)',
+    costo_kwh_termico_util_lena_clp: 'Costo kWh Térmico Útil Leña ($/kWh_útil)',
+    costo_kwh_termico_util_kerosene_clp: 'Costo kWh Térmico Útil Kerosene ($/kWh_útil)',
+    ratio_costo_calefaccion_electrica_vs_lena: 'Ratio Costo Calefacción Bomba de Calor vs. Leña (veces)',
+    hogares_censo_2024: 'Hogares Censales Estimados Censo 2024 (hogares)',
     costo_diesel_aislado_clp: 'Costo de Generación Diésel Aislado ($/kWh)',
     internet_fijo_pct: 'Penetración de Internet Fijo en Hogares (%)',
     biomasa_salmon_ton: 'Biomasa de Salmón Cosechada (ton)',
@@ -743,6 +752,14 @@
     tarifa_bt1_clp: PROVENANCE_CATALOG_ENTRIES.CNE,
     costo_diesel_aislado_clp: PROVENANCE_CATALOG_ENTRIES.CNE,
     gasolina_93_clp: PROVENANCE_CATALOG_ENTRIES.CNE,
+    potencia_ernc_en_construccion_mw: PROVENANCE_CATALOG_ENTRIES.CNE,
+    cobertura_subsidio_electrico_hogares_n: PROVENANCE_CATALOG_ENTRIES.CNE,
+    cobertura_subsidio_electrico_pct: PROVENANCE_CATALOG_ENTRIES.CNE,
+    diesel_clp_litro: PROVENANCE_CATALOG_ENTRIES.CNE,
+    kerosene_clp_litro: PROVENANCE_CATALOG_ENTRIES.CNE,
+    costo_kwh_termico_util_lena_clp: PROVENANCE_CATALOG_ENTRIES.CNE,
+    costo_kwh_termico_util_kerosene_clp: PROVENANCE_CATALOG_ENTRIES.CNE,
+    ratio_costo_calefaccion_electrica_vs_lena: PROVENANCE_CATALOG_ENTRIES.CNE,
     precio_lena_m3: PROVENANCE_CATALOG_ENTRIES.CNE,
     hogares_lena_pct: PROVENANCE_CATALOG_ENTRIES.CNE,
     saidi_horas_anual: PROVENANCE_CATALOG_ENTRIES.SEC,
@@ -998,6 +1015,14 @@
     gasolina_93_clp: ['bencina', 'gasolina', 'combustible', 'combustibles', 'precio de la bencina', 'nafta'],
     precio_lena_m3: ['precio de la lena', 'valor de la lena', 'metro de lena', 'costo de la lena'],
     potencia_mw: ['capacidad instalada', 'potencia instalada', 'megavatios', 'generacion electrica', 'matriz energetica', 'nudos criticos energeticos', 'materia energetica'],
+    potencia_ernc_en_construccion_mw: ['ernc en construccion', 'alto baguales ampliacion', 'bess coyhaique', 'cerro sombrero solar'],
+    cobertura_subsidio_electrico_hogares_n: ['subsidio electrico hogares', 'ley 21667', 'quinto proceso subsidio electrico'],
+    cobertura_subsidio_electrico_pct: ['cobertura subsidio electrico', 'porcentaje subsidio electrico'],
+    diesel_clp_litro: ['precio diesel', 'petroleo diesel', 'diesel por litro'],
+    kerosene_clp_litro: ['kerosene', 'parafina', 'fepp kerosene', 'shock kerosene'],
+    costo_kwh_termico_util_lena_clp: ['costo kwh util lena', 'costo termico lena'],
+    costo_kwh_termico_util_kerosene_clp: ['costo kwh util kerosene', 'costo termico parafina'],
+    ratio_costo_calefaccion_electrica_vs_lena: ['ratio calefaccion electrica vs lena', 'bomba de calor vs lena', 'brecha termica electrica lena'],
     camas_hospitalarias: ['camas hospitalarias', 'camas de hospital', 'hospitales'],
     medicos_por_mil_hab: ['medicos por mil habitantes', 'medicos por mil hab', 'dotacion medica', 'medicos', 'doctores', 'especialistas', 'falta de medicos'],
     urgencias_respiratorias_pct: ['enfermedades respiratorias', 'problemas respiratorios', 'urgencias respiratorias', 'bronquitis', 'asma'],
@@ -2139,7 +2164,7 @@
       'Corredor binacional ATIT 1974 via RN40 y Paso Cardenal Samore hacia Huemules, Jeinimeni, Coyhaique Alto y Roballos',
       'EMPORCHA Puerto Chacabuco 468.200 ton (2024) y proy. 495.000 ton (2026) + CAM-01 + barcazas DTPR',
       'Red vial MOP 3.386,4 km totales (412,8 km pavimentados [12,2%] vs 2.438,0 km ripio)',
-      '3 subsistemas electricos medianos aislados SEN (98,6 MW totales) + SAIDI prom 36,0 h/ano + Lena INFOR 565.456 m3/ano + Pellet 20.000 ton/ano maritimo',
+      'Sistemas Medianos y Aislados desconectados del SEN (67,10 MW operativos + 18,98 MW ERNC en construccion 2026) + Decreto 8T Nov-2026 BT1 $287,8/kWh + 13.448 hogares Subsidio Electrico + Lena INFOR BES 11 334.274 m3s/ano (Coyhaique 147.080 m3s [44,0%]) + unico MBM activo Copec Chacabuco 6.674 m3 + CTR submarina solo en Caleta Tortel',
       'Finanzas municipales SINIM: presupuesto agregado regional de 70.751,5 M$ (promedio 7.075,2 M$/comuna) y dependencia promedio FCM de 75,8% (min 46,5% Coyhaique; max 92,8% Tortel)',
       'Bosque nativo CONAF 4.832.500 ha + 35.240 ha plantaciones + 5.723.000 ha vegetacion nativa',
       'Huemul RCE MMA 1.500-2.000 individuos (amenaza perros asilvestrados); Ganado ODEPA 130.832 bovinos y 177.934 ovinos',
@@ -2520,7 +2545,7 @@
   function buildReconciledTopicReply(topicKey, userText, qNorm, index) {
     switch (topicKey) {
       case 'pellet_lena': {
-        const reply = 'En la matriz energética y dendroenergética regional (fuentes oficiales INFOR y SEC Ley N° 21.499): El consumo de leña residencial totaliza 565.456 m³ sólidos/año (~850.000 m³ estéreos/año) con un consumo específico promedio de 17,5 m³ sólidos/hogar/año (INFOR), representando el 80% al 92,8% de la matriz térmica regional. La demanda regional de pellet de madera asciende a ~20.000 ton/año, abastecida en un 100% mediante cabotaje marítimo hacia Puerto Chacabuco (Mesa del Pellet / SEREMI de Energía). Bajo la Ley N° 21.499, la SEC fiscaliza el estándar de humedad < 25% con xilohigrómetros e inscripción obligatoria de Centros de Procesamiento de Biomasa (CPB).';
+        const reply = 'En la matriz energética y dendroenergética regional (INFOR Observatorio BES N° 11 y SEC Ley N° 21.499): El consumo de leña residencial certificado asciende a 334.274 m³ sólidos/año (~550.000 m³ estéreos/año, factor ~0,64 m³s/m³st). En Coyhaique (147.080 m³s/año, 44,0% regional), tras 10.999 recambios de calefactores al 25-ago-2026 (73,3% de la meta PDA vigente y Anteproyecto Res. Ex. N° 8.940/2026 hacia 20.000 recambios), el uso de leña bajó al 68,8% de los hogares (9,81 m³s/hogar/año; $45,7/kWh_útil frente a $102,8/kWh_útil en bomba de calor BT1 $287,8/kWh y $174,7/kWh_útil en kerosene tras el shock FEPP de octubre 2026). La demanda de pellet (~20.000 ton/año) llega 100% por vía marítima a Puerto Chacabuco, mientras la SEC fiscaliza humedad < 25% bajo la Ley N° 21.499.';
         const sources = resolveSourcesForKeys(['volumen_regional_lena_m3', 'demanda_pellet_ton_ano']);
         return {
           reply,
@@ -3049,7 +3074,7 @@
         };
       }
       case 'nudos_criticos_energia': {
-        const reply = 'Los principales nudos críticos energéticos en Aysén son cuatro: 1) Desconexión del SEN nacional: opera en 3 subsistemas aislados (98,6 MW instalados totales) dependientes de diésel térmico en comunas insulares/australes; 2) Calidad de suministro y tarifas: SAIDI promedio de 36,0 h/año (hasta 64,3 h en Tortel y 62,1 h en Guaitecas) y tarifa BT1 promedio de $242,3/kWh; 3) Matriz térmica a leña: 93,8% promedio de hogares usa leña (565.456 m³/año INFOR) y 100% del pellet (~20.000 ton/año) llega por vía marítima; 4) Contaminación atmosférica: Coyhaique registra 87 días/año sobre norma MP2.5 (Aysén 34 días).';
+        const reply = 'Nudos críticos energéticos en Aysén (CNE / SEC / INFOR / MMA): 1) Desconexión del SEN: 67,10 MW operativos (+18,98 MW ERNC en construcción) y SSAA <= 1,50 MW; 2) Calidad y tarifas: SAIDI 36,0 h/año (64,3 h Tortel, 62,1 h Guaitecas) y BT1 $287,8/kWh en Coyhaique/Aysén (Decreto 8T nov-2026; 13.448 hogares con Subsidio Eléctrico); 3) Combustibles y leña: gasolina $1.696/L y kerosene $1.497/L vía único MBM Copec Chacabuco (6.674 m³) más 334.274 m³s/año de leña (Coyhaique 68,8% hogares); 4) Aire: Coyhaique suma 87 días/año sobre norma MP2.5.';
         const sources = resolveSourcesForKeys(['hogares_lena_pct', 'dias_sobre_norma_mp25', 'saidi_horas_anual', 'demanda_pellet_ton_ano']);
         return {
           reply,
@@ -4204,7 +4229,7 @@
         title: 'Tarifa Eléctrica Residencial BT1 ($/kWh) vs. Consumo Anual de Leña (m³/hogar/año)'
       },
       conceptualBrief:
-        'Aunque Aysén posee abundante recurso hídrico, la región no está interconectada al Sistema Eléctrico Nacional (SEN): opera mediante Sistemas Eléctricos Medianos aislados y microrredes con 98,6 MW instalados (42,5 MW en Aysén y 26,8 MW en Coyhaique), lo que eleva la tarifa eléctrica residencial BT1 a $224/kWh en Coyhaique ($242,3/kWh promedio regional). Ese costo eléctrico frente a la leña ($48.000/m³ en Coyhaique) explica la paradoja hidro-térmica: el 92,4% de los hogares coyhaiquinos usa leña para calefacción (14,5 m³/hogar/año; 82,3% en Chile Chico a 99,1% en O\'Higgins), generando 87 días anuales sobre la norma diaria de MP2.5 (41 episodios críticos GEC).'
+        'Aunque Aysén posee abundante recurso hídrico, no está conectada al SEN: opera en Sistemas Medianos (SMA, SMGC, Cisnes/Palena) y Sistemas Aislados <= 1,50 MW que suman 67,10 MW operativos (33,95 MW en Coyhaique y 18,48 MW en Aysén, más +18,98 MW ERNC en construcción 2026). El Pliego Edelaysen vigente al 1-nov-2026 (Decreto N° 8T/2026) sitúa la tarifa BT1 en $287,8/kWh en Coyhaique/Aysén (hasta $318,0/kWh en Tortel, donde el Subsidio Eléctrico Ley 21.667 excluye a los SSAA). Al convertir a $/kWh térmico útil, calefaccionar con bomba de calor cuesta ~$102,8/kWh_útil (y con kerosene $174,7/kWh_útil tras el shock FEPP de +$282/L), frente a ~$45,7/kWh_útil de la leña ($48.000/m³ en Coyhaique), explicando por qué el 68,8% de hogares coyhaiquinos (9,81 m³s/hogar; 147.080 m³s de 334.274 m³s regionales) y >94% en comunas extremas siguen usando leña, generando 87 días/año sobre norma MP2.5 en Coyhaique.'
     },
     {
       id: 'modelo_salmonicultor',
@@ -6510,9 +6535,9 @@
         /\blena\b/i.test(qNorm)
       ) {
         packetReplyText =
-          'Comparación directa tarifa eléctrica vs. leña en Coyhaique y Aysén (CNE / INFOR): ' +
-          'la tarifa residencial eléctrica BT1 llega a $224/kWh en Coyhaique ($242,3/kWh promedio regional) porque los Sistemas Eléctricos Medianos están aislados del SEN (98,6 MW totales; 26,8 MW en Coyhaique). ' +
-          'Frente al costo de la leña ($48.000/m³ en Coyhaique), calefaccionar con electricidad resulta mucho más caro, por lo que 92,4% de los hogares coyhaiquinos usa leña (14,5 m³/hogar/año), explicando 87 días sobre la norma MP2.5 (41 episodios críticos GEC).';
+          'Comparación directa tarifa eléctrica vs. leña en Coyhaique y Aysén (CNE Decreto N° 8T/2026 e INFOR BES N° 11): ' +
+          'la tarifa residencial BT1 vigente al 1-nov-2026 alcanza $287,8/kWh en Coyhaique y Aysén (67,10 MW regionales operativos + 18,98 MW ERNC en construcción; 33,95 MW en Coyhaique y 18,48 MW en Aysén). ' +
+          'En costo por kWh térmico útil, la leña cuesta $45,7/kWh_útil ($48.000/m³) frente a $102,8/kWh_útil con bomba de calor BT1 y $174,7/kWh_útil con kerosene, por lo que 68,8% de los hogares coyhaiquinos (9,81 m³s/hogar; 147.080 m³s) mantiene calefacción a leña y 87 días sobre norma MP2.5.';
       } else if (
         isConversationalRepair &&
         memoryPacket.conversationAct?.isPureRepair &&

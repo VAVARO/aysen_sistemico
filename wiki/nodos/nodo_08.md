@@ -8,11 +8,9 @@ variables_clave:
   - concesiones_salmon
   - biomasa_salmon_ton
   - trabajadores_sii
-  - desembarque_artesanal_ton
-  - desembarque_muelles_total_ton
 fuentes_oficiales:
-  - "Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) / SUBPESCA (18 Barrios ACS)"
-updated_at: "2026-11-25"
+  - "Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) / SUBPESCA"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - nodo
@@ -23,11 +21,11 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro multiescala de los 18 Barrios Sanitarios Acuícolas (ACS-17 a ACS-35) de Aysén (745 concesiones, 245 activos, 312 en SNASPE, 503.500 ton cosechadas), plantas de proceso de Puerto Chacabuco y caletas artesanales. Reconcilia el desembarque de flota artesanal residente RPA comunal (13.820 ton/año) frente a la transferencia física total en muelles y caletas incluyendo lanchas de Los Lagos en Zona Contigua (31.690 ton/año: Puerto Chacabuco 14.850 t, Melinka 8.920 t, Puerto Cisnes 4.210 t, Caleta Tortel 380 t).
+Catastro completo de las 18 Agrupaciones de Concesiones de Salmónidos (Barrios ACS-17 a ACS-35), caletas pesqueras artesanales y plantas de proceso. Reconcilia el Desembarque RPA de Flota Local Residente (13.820 ton/año) frente a la Transferencia Total en Muelles (31.690 ton/año), que incorpora descargas de lanchas de Zona Contigua desde Los Lagos en Puerto Chacabuco (14.850 t) y Melinka (8.920 t). Desglosa los 18 Barrios Sanitarios ACS (`745` concesiones, `245` centros activos, `503.500 ton`) con su densidad máxima (`12–17 kg/m³`), tasa de mortalidad en ciclo (`6,4%–9,1%`), ICA (`289–392 g/ton`) e INFA aeróbica (`82,8%–95,0%`), junto a las plantas de proceso de Puerto Chacabuco y caletas bentónicas.
 
 ## Indicadores Comunales Verificados
 
-| Barrio ACS / Sector | Comuna | Concesiones (Activas) | Biomasa (ton) | ICA (g/t) | Densidad Máx · INFA Aerób. |
+| Barrio ACS / Sector | Comuna | Concesiones (Activas) | Biomasa (ton) | ICA (g/t) | Densidad · INFA Aerób. |
 | --- | --- | --- | --- | --- | --- |
 | ACS-17 · Melinka / Isla Ascensión | Guaitecas | 44 (15) | 21.100 | 392,0 | 12 kg/m3 · 83,5% |
 | ACS-33 · Repollal / Canal Tuamapu | Guaitecas | 36 (12) | 16.900 | 378,5 | 13 kg/m3 · 86,0% |

@@ -163,7 +163,7 @@ const HUB_META = [
     conceptLinks: ['conceptos/sistema_electrico_energia', 'conceptos/inversion_publica_regional'],
     adrLinks: ['adr/adr_004_normalizacion_per_capita_y_colinealidad', 'adr/adr_002_reconciliacion_38_fuentes_invariantes'],
     synthesis:
-      'El Hub III (Energía y Telecomunicaciones) caracteriza la condición de aislamiento energético de Aysén respecto del Sistema Eléctrico Nacional (SEN). La región opera mediante Sistemas Eléctricos Medianos aislados (Aysén-Coyhaique, General Carrera y Palena/Cisnes) y microrredes locales que suman 98,6 MW de capacidad instalada, con una tarifa residencial BT1 promedio de $242,3/kWh ($224/kWh en Coyhaique) y costos reales de generación diésel aislada superiores a $450/kWh en comunas extremas. Esta estructura tarifaria perpetúa la dependencia térmica de la leña (más del 90% de los hogares regionales, con un consumo de 14,5 a 22,0 m³/hogar/año), mientras en telecomunicaciones la Fibra Óptica Austral (FOA) y enlaces satelitales totalizan 26.294 conexiones fijas SUBTEL.'
+      'El Hub III (Energía y Telecomunicaciones) caracteriza el aislamiento eléctrico, térmico y digital de Aysén frente al SEN. Opera mediante Sistemas Medianos (SMA, SMGC, Puerto Cisnes/Palena) y Sistemas Aislados <= 1,50 MW (Art. 173° LGSE) que suman 67,10 MW operativos (+18,98 MW ERNC en construcción 2026), bajo Pliego BT1 Edelaysen Decreto N° 8T nov-2026 en $287,8/kWh en Coyhaique/Aysén y 13.448 hogares beneficiarios del Subsidio Eléctrico Ley 21.667. Al 19-nov-2026 (CNE), la gasolina 93 promedia $1.696/L y kerosene $1.497/L (+$282/L FEPP) vía único MBM Copec Chacabuco (6.674 m³ activos), mientras INFOR BES N° 11 certifica 334.274 m³ sólidos/año de leña (Coyhaique 147.080 m³s [44,0%], 68,8% hogares). En telecomunicaciones (SUBTEL jun-2026 / FDT 3T-2026) suma 26.294 conexiones fijas (24.782 residenciales), con único aterrizaje submarino CTR en Caleta Tortel, Cable Austral privado GTD en Puerto Chacabuco, 14 POIITs Silica y despliegues FDT-2025-03 / Tortel-O\'Higgins (1S-2028).'
   },
   {
     idx: 4,
@@ -429,7 +429,7 @@ const CONCEPT_SPECS = [
     relatedNodos: [11, 12, 13, 30],
     relatedAdrs: ['adr_004_normalizacion_per_capita_y_colinealidad', 'adr_002_reconciliacion_38_fuentes_invariantes'],
     synthesis:
-      'Aunque Aysén posee abundante recurso hídrico, la región no está interconectada al Sistema Eléctrico Nacional (SEN): opera mediante Sistemas Eléctricos Medianos aislados y microrredes con 98,6 MW instalados (42,5 MW en Aysén y 26,8 MW en Coyhaique), lo que eleva la tarifa eléctrica residencial BT1 a $224/kWh en Coyhaique ($242,3/kWh promedio regional). Ese costo eléctrico frente a la leña ($48.000/m³ en Coyhaique) explica la paradoja hidro-térmica: el 92,4% de los hogares coyhaiquinos usa leña para calefacción (14,5 m³/hogar/año; 82,3% en Chile Chico a 99,1% en O\'Higgins), generando 87 días anuales sobre la norma diaria de MP2.5 (41 episodios críticos GEC).'
+      'Aunque Aysén posee abundante recurso hídrico, no está conectada al SEN: opera mediante Sistemas Medianos y Sistemas Aislados <= 1,50 MW que totalizan 67,10 MW operativos (33,95 MW en Coyhaique y 18,48 MW en Aysén, más 18,98 MW ERNC en construcción 2026), con tarifa BT1 vigente nov-2026 (Decreto N° 8T/2026) de $287,8/kWh en Coyhaique/Aysén y hasta $318,0/kWh en Tortel. En $/kWh térmico útil, calefaccionar con bomba de calor (COP 2,8) cuesta ~$102,8/kWh_útil y con kerosene $174,7/kWh_útil tras el shock FEPP de octubre 2026, frente a $45,7/kWh_útil de leña ($48.000/m³ en Coyhaique), explicando que 334.274 m³ sólidos/año sigan sosteniendo la calefacción regional (Coyhaique 147.080 m³s [44,0%], 68,8% hogares a 9,81 m³s/hogar tras 10.999 recambios PDA) y 87 días sobre norma MP2.5.'
   },
   {
     id: 'modelo_salmonicultor',
@@ -708,7 +708,7 @@ const ADR_SPECS = [
     relatedComunas: ['coyhaique', 'aysen'],
     relatedConcepts: ['financiamiento_municipal', 'ecosistema_ctci_ciencia'],
     synthesis:
-      'Aysén Sistémico adopta una arquitectura de costo de infraestructura cero ($0/mes) basada en HTML5, CSS3 y JavaScript Vanilla ES6+ sin dependencias de Node.js en tiempo de ejecución ni bases de datos relacionales pagadas. El pipeline de compilación estática (`scripts/build_aysen_hubs_bundle.cjs`) empaqueta 235 variables comunales verificadas, 10 Hubs temáticos (`I` al `X`), 41 Nodos Satélite (`#01` al `#41`) y 38 fuentes oficiales en `data/aysen_hubs_data.js`, alimentando cinco módulos integrados bajo la identidad visual Cuaderno Editorial y Cartográfico Austral: Portada Vectorial (`portal.html`), Visualizador de Complejidad (`sistemas_complejos.html`), Data Hub Territorial (`index.html`), Laboratorio Cartográfico 2D (`laboratorio.html`) y Consultor Semántico IA (`consultor.html`).',
+      'Aysén Sistémico adopta una arquitectura de costo de infraestructura cero ($0/mes) basada en HTML5, CSS3 y JavaScript Vanilla ES6+ sin dependencias de Node.js en tiempo de ejecución ni bases de datos relacionales pagadas. El pipeline de compilación estática (`scripts/build_aysen_hubs_bundle.cjs`) empaqueta las variables comunales verificadas del Data Lake, 10 Hubs temáticos (`I` al `X`), 41 Nodos Satélite (`#01` al `#41`) y fuentes oficiales en `data/aysen_hubs_data.js`, alimentando cinco módulos integrados bajo la identidad visual Cuaderno Editorial y Cartográfico Austral: Portada Vectorial (`portal.html`), Visualizador de Complejidad (`sistemas_complejos.html`), Data Hub Territorial (`index.html`), Laboratorio Cartográfico 2D (`laboratorio.html`) y Consultor Semántico IA (`consultor.html`).',
     context:
       'Las plataformas públicas de datos regionales suelen fracasar por costos recurrentes de servidores cloud, fragmentación de microservicios o acoplamiento a licencias BI propietarias que quedan obsoletas al terminar un convenio.',
     decision:
@@ -856,7 +856,7 @@ const ADR_SPECS = [
     relatedComunas: ['coyhaique', 'aysen'],
     relatedConcepts: ['ecosistema_ctci_ciencia', 'financiamiento_municipal'],
     synthesis:
-      'Para superar la amnesia entre sesiones de los agentes LLM sin poner en riesgo la integridad de las 235 variables numéricas del Data Lake, Aysén Sistémico implementa el patrón `llm-wiki` de Andrej Karpathy bajo una arquitectura dual: los vectores cuantitativos permanecen inmutables en `scripts/build_aysen_hubs_bundle.cjs` y `data/aysen_hubs_data.js`, mientras que el conocimiento semántico, causal y regulatorio se compila en `wiki/` (77 notas Markdown interconectadas con YAML frontmatter para Obsidian Dataview, `wiki/index.md` y `wiki/log.md`). El puente `scripts/obsidian_wiki_bridge.cjs` sincroniza bidireccionalmente la carpeta `wiki/` con el Vault de Obsidian del autor en Google Drive (`Aysen_Sistemico/`), valida 5 invariantes deterministas (`--lint`) y compila las síntesis editadas en Obsidian hacia `data/aysen_wiki_compiled.js` (`--compile`), hidratando en vivo a `window.OmniRouteClient`.',
+      'Para superar la amnesia entre sesiones de los agentes LLM sin poner en riesgo la integridad de las variables numéricas del Data Lake, Aysén Sistémico implementa el patrón `llm-wiki` de Andrej Karpathy bajo una arquitectura dual: los vectores cuantitativos permanecen inmutables en `scripts/build_aysen_hubs_bundle.cjs` y `data/aysen_hubs_data.js`, mientras que el conocimiento semántico, causal y regulatorio se compila en `wiki/` (77 notas Markdown interconectadas con YAML frontmatter para Obsidian Dataview, `wiki/index.md` y `wiki/log.md`). El puente `scripts/obsidian_wiki_bridge.cjs` sincroniza bidireccionalmente la carpeta `wiki/` con el Vault de Obsidian del autor en Google Drive (`Aysen_Sistemico/`), valida 5 invariantes deterministas (`--lint`) y compila las síntesis editadas en Obsidian hacia `data/aysen_wiki_compiled.js` (`--compile`), hidratando en vivo a `window.OmniRouteClient`.',
     context:
       'El conocimiento cualitativo sobre mecanismos legales, historia institucional y lectura territorial necesita evolucionar continuamente en el entorno PKM del autor (Obsidian) y reflejarse en el Consultor Web.',
     decision:
@@ -1425,15 +1425,15 @@ function generateLogPage() {
     '',
     '## Síntesis Compilada (Consultor IA)',
     '',
-    'La bitácora cronológica (`wiki/log.md`) registra de manera inmutable todas las operaciones de ingesta estadística (`ingest`), decisiones arquitectónicas (`adr`) y validaciones deterministas (`lint`) sobre la base de conocimiento de Aysén Sistémico (10 comunas, 10 Hubs, 41 Nodos Satélite, 235 variables comunales y 38 fuentes oficiales).',
+    'La bitácora cronológica (`wiki/log.md`) registra de manera inmutable todas las operaciones de ingesta estadística (`ingest`), decisiones arquitectónicas (`adr`) y validaciones deterministas (`lint`) sobre la base de conocimiento de Aysén Sistémico (10 comunas, 10 Hubs, 41 Nodos Satélite y fuentes oficiales verificadas).',
     '',
-    '## [2026-10-16] ingest | Inicialización del Data Lake Territorial (10 Comunas, 38 Fuentes Oficiales)',
+    '## [2026-10-16] ingest | Inicialización del Data Lake Territorial (10 Comunas, Fuentes Oficiales)',
     '- Compilación inicial de indicadores comunales CENSO 2024, SINIM, SERNATUR, CONAF, SERNAPESCA, CNE, SEC, DEIS y ANID hacia [[index|Índice Maestro de la Wiki]] y [[comunas/coyhaique|Coyhaique]].',
     '',
     '## [2026-11-21] adr | Reorganización Taxonómica en 10 Hubs, 41 Nodos Satélite y 30 Subcategorías',
     '- Commit `6497827`: Estandarización de la ontología territorial en 10 Hubs equilibrados (`I` al `X`) documentada en [[adr/adr_001_arquitectura_cero_costo_vanilla|ADR-001]] y [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]].',
     '',
-    '## [2026-11-22] ingest | Reingeniería Integral de los Hubs II al X (235 Variables Comunales Verificadas)',
+    '## [2026-11-22] ingest | Reingeniería Integral de los Hubs II al X (Variables Comunales Verificadas)',
     '- Commits `50ab91a`, `a4d8c79`, `2890ce3`, `e9ea303`: Incorporación de varianza real en vectores clínicos DEIS ([[hubs/hub_08_salud|Hub VIII — Salud]]), 16 centros CTCi con 124 investigadores ([[hubs/hub_10_ctci|Hub X — CTCi]]), 18 espacios museográficos ([[hubs/hub_09_cultura|Hub IX — Cultura]]), 10.035,7 km² glaciares DGA ([[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]]) y 27 Postas de Salud Rural ([[nodos/nodo_38|Nodo #38]]). Véase [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]].',
     '',
     '## [2026-11-22] adr | Arquitectura Semántica LLM-First en Consultor y Motor de Dossier PDF A4 en Laboratorio',
@@ -1441,6 +1441,17 @@ function generateLogPage() {
     '',
     '## [2026-11-23] lint | Instanciación de la Wiki Compilada de Karpathy y Sincronización con Obsidian Vault',
     '- Compilación de 77 páginas canónicas en `wiki/` ([[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]), verificación de 0 enlaces rotos, 0 páginas huérfanas y 100% de paridad numérica contra `data/aysen_hubs_data.js`.',
+    '',
+    '## [2026-11-25] ingest | Sprint 4: Reingeniería Forense Hub II (18 Barrios ACS, Padrón SUBPESCA, PUA Art. 84 LGPA y SNIFA-SMA)',
+    '- Unificación de `antibioticos_ica_g_ton`, resolución de `ACS-35` Tortel, solicitudes ECMPO Guaitecas/Tortel, catastro real SUBPESCA y `barriosAcs` en [[hubs/hub_02_salmonicultura|Hub II]], [[conceptos/modelo_salmonicultor|Modelo Salmonicultor]] y [[nodos/nodo_06|Nodos #06]]–[[nodos/nodo_09|#09]].',
+    '',
+    '## [2026-11-26] ingest | Sprint 5: Reingeniería Forense Hub I Turismo/SNASPE y Saneamiento Transversal 10 Hubs',
+    '- Reconciliación EMAT 2025 (364.039 pernoctaciones), RNPST (1.728 servicios), dimensión `dim: \'snaspe\'` (N=19), asimetría SII real (13.453 empresas / 35.832 trabajadores) y Auditoría Obsidian V2 en [[hubs/hub_01_turismo|Hub I]] y [[hubs/hub_05_inversion|Hub V]].',
+    '',
+    '## [2026-11-26] ingest | Sprint 6: Reingeniería Forense del Hub III (Energía, Combustibles, Matriz Térmica, SUBTEL/FOA) e Invariantes Obsidian V3',
+    '- Erradicación del nodo alucinado `Cabo Juan Román`, catastro reconciliado de 21 centrales operativas sumando exactamente `67,10 MW` (+`18,98 MW` ERNC en construcción 2026) con SSAA `<= 1,50 MW` (Art. 173° LGSE), BT1 nov-2026 `Decreto N° 8T/2026` (`$287,8/kWh`), `13.448` hogares Subsidio Eléctrico Ley 21.667 y `data/raw/energia_telecom/marco_regulatorio_tarifario_aysen_2024_2028.json`.',
+    '- Corte combustibles CNE 19-nov-2026 (`$1.696/L` gasolina 93, `$1.663/L` diésel, `$1.497/L` kerosene FEPP), Terminal MBM Copec Chacabuco `6.674 m³` activos (`10.474 m³` totales), leña INFOR BES N° 11 `334.274 m³ sólidos/año` (`Coyhaique 147.080 m³s [44,0%]`, `68,8%` hogares, `9,81 m³s/hogar`), trazado real SUBTEL/FOA (único aterrizaje CTR en [[comunas/tortel|Tortel]], GTD privado en Puerto Chacabuco, 14 POIITs Silica, `FDT-2025-03` y Tortel–O\'Higgins 1S-2028) y paridad censal `26.294`/`24.782` conexiones en [[hubs/hub_03_energia|Hub III]] y [[nodos/nodo_11|Nodos #11]]–[[nodos/nodo_14|#14]].',
+    '- Cierre residuales Sprint 5 (`isAliasOf` USD/CLP, neutralización bilateral de 3 complementos `100 - X` y `comuna_principal`/`comuna_ine` en 19 `unidadesSnaspe`) y evolución a **Obsidian Indicator Audit V3** (Evals E13–E16).',
     ''
   ].join('\n');
 
@@ -1503,7 +1514,7 @@ function generateIndexPage(dataLake) {
     '',
     '## Síntesis Compilada (Consultor IA)',
     '',
-    'La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de la Región de Aysén (100.745 habitantes Censo 2024, 10 comunas, 235 variables comunales y 38 fuentes oficiales) en 77 páginas canónicas interconectadas: 1 índice maestro (`index.md`), 1 bitácora cronológica (`log.md`), 10 Hubs temáticos (`I` al `X`), 10 radiografías comunales, 41 fichas de Nodos Satélite (`#01` al `#41`), 8 paquetes conceptuales y entidades territoriales multidimensionales, y 6 registros de decisiones de arquitectura y datos (`ADR-001` a `ADR-006`).',
+    'La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de la Región de Aysén (100.745 habitantes Censo 2024, 10 comunas, indicadores comunales verificados y fuentes institucionales) en 77 páginas canónicas interconectadas: 1 índice maestro (`index.md`), 1 bitácora cronológica (`log.md`), 10 Hubs temáticos (`I` al `X`), 10 radiografías comunales, 41 fichas de Nodos Satélite (`#01` al `#41`), 8 paquetes conceptuales y entidades territoriales multidimensionales, y 6 registros de decisiones de arquitectura y datos (`ADR-001` a `ADR-006`).',
     '',
     '## 1. Gobernanza del Conocimiento y Bitácora',
     '',

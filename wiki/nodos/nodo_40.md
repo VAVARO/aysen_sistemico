@@ -22,7 +22,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Infraestructura multimodal de integración territorial: longitud de Red Vial Total Comunal (`red_vial_total_km`), porcentaje de pavimentación (`red_vial_pavimentada_pct`), trazado troncal de Carretera Austral (Ruta 7 pavimentada y en ripio), nivel de dependencia de barcaza (0–3), largo de pista de aeródromos DGAC, tráfico aéreo de Balmaceda JAC (682.000 pasajeros en 2026) y carga portuaria transferida (EMPORCHA). La pavimentación vial fluctúa entre 43,9% (Guaitecas) y 41,1% (Coyhaique) frente a menos de 4% en Tortel (`3,9%`) y O'Higgins (`3,8%`), donde el nivel de dependencia de barcaza alcanza 2 y 3 respectivamente.
+Infraestructura multimodal de integración territorial: longitud de Red Vial Total Comunal (`red_vial_total_km`), porcentaje de pavimentación (`red_vial_pavimentada_pct`), trazado troncal de Carretera Austral (Ruta 7 pavimentada y en ripio), nivel de dependencia de barcaza (0–3), largo de pista de aeródromos DGAC, tráfico aéreo de Balmaceda JAC (605.945 pasajeros en 2025; nuevo terminal 12.391 m² en oct. 2026) y carga portuaria transferida (EMPORCHA). La pavimentación vial fluctúa entre 43,9% (Guaitecas) y 41,1% (Coyhaique) frente a menos de 4% en Tortel (`3,9%`) y O'Higgins (`3,8%`), donde el nivel de dependencia de barcaza alcanza 2 y 3 respectivamente.
 
 ## Indicadores Comunales Verificados
 

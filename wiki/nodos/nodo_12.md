@@ -20,22 +20,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Detalle comunal del subsistema eléctrico al que pertenece cada territorio (Sistema Mediano de Aysén, Sistema Mediano General Carrera o Micro-redes Aisladas), potencia instalada en MW y vulnerabilidad de suministro. Coyhaique (26,8 MW) y Aysén (42,5 MW) conforman el Sistema Mediano de Aysén (Edelaysen), sumando 98,6 MW regionales junto a subsistemas como General Carrera y sistemas aislados en Guaitecas, Lago Verde, Tortel y O'Higgins.
+Detalle comunal del subsistema eléctrico al que pertenece cada territorio (Sistema Mediano de Aysén, Sistema Mediano General Carrera o Micro-redes Aisladas), potencia instalada en MW y vulnerabilidad de suministro. Coyhaique (33,95 MW) y Aysén (18,48 MW) articulan el Sistema Mediano de Aysén (SMA) dentro de 67,10 MW regionales operativos junto a General Carrera (3,90 MW Chile Chico, 2,54 MW Cochrane) y Sistemas Aislados <= 1,50 MW (Art. 173° LGSE): Melinka (1,45 MW), O'Higgins (1,25 MW), Tortel (0,95 MW), Puerto Aguirre (0,48 MW) y micro-redes Cisnes/Lago Verde. Pliego BT1 Edelaysen nov-2026 Decreto N° 8T: $287,8/kWh en Coyhaique/Aysén (+13.448 hogares con Subsidio Eléctrico).
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Subsistema Eléctrico | Tipo de Red | Potencia Comunal (MW) | Vulnerabilidad |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | Sistema Mediano de Aysén (SMA) | Sistema Mediano Interconectado Regional | 26.8 MW | Media (Dependencia de diésel para puntas de demanda y estiaje invernal hídrico) |
-| [[comunas/lago_verde|Lago Verde]] | Sistema Palena - La Junta (Edelaysen) y Autoproducción Lago Verde | Sistema Mediano Extendido / Aislado Cordillerano | 1.4 MW | Alta (Línea de distribución vulnerable a nevadas, temporales y caídas de árboles) |
-| [[comunas/aysen|Aysén]] | Sistema Mediano de Aysén (SMA) e Islas Huichas Aislado | Sistema Mediano (Continental) y Sistema Aislado Insular (Aguirre) | 42.5 MW | Media-Baja en continente; Alta en archipiélago Islas Huichas por flete marítimo |
-| [[comunas/cisnes|Cisnes]] | Sistema Mediano Palena - Cisnes (Edelaysen) | Sistema Mediano Costero-Norte | 6.8 MW | Alta (Riesgo de corte vial en Cuesta Queulat / Barcazas y aislamiento de caletas) |
-| [[comunas/guaitecas|Guaitecas]] | Sistema Aislado Insular Melinka | Sistema Aislado Municipal Insular | 2.8 MW | Crítica (Dependencia absoluta de barcaza de combustible desde Quellón; riesgo de racionamiento por temporal marítimo) |
-| [[comunas/chile_chico|Chile Chico]] | Sistema Mediano General Carrera (SMGC) | Sistema Mediano Lacustre | 7.5 MW | Media-Alta (Dependencia de barcaza lacustre o tránsito internacional por Argentina) |
-| [[comunas/rio_ibanez|Río Ibáñez]] | Sistema Mediano de Aysén (Interconexión Ramal Sur) | Sistema Mediano Interconectado | 2.4 MW | Media (Línea de transmisión expuesta a nevadas y viento blanco en Portezuelo Ibáñez) |
-| [[comunas/cochrane|Cochrane]] | Sistema Mediano General Carrera - Cochrane (Edelaysen) | Sistema Mediano Austral | 5.8 MW | Media-Alta (Fin del anillo de transmisión lacustre y alta distancia terrestre de logística) |
-| [[comunas/ohiggins|O'Higgins]] | Sistema Aislado Villa O'Higgins | Sistema Aislado Municipal Extremo | 1.4 MW | Extrema (Término austral de Ruta 7; congelamiento de bocatoma en invierno y cruce marítimo-lacustre en barcaza Puerto Yungay) |
-| [[comunas/tortel|Tortel]] | Sistema Aislado Caleta Tortel | Sistema Aislado Municipal - Fluvial | 1.2 MW | Muy Alta (Poblado de pasarelas peatonales; combustible descargado en tambores y lanchas fluviales) |
+| [[comunas/coyhaique|Coyhaique]] | Sistema Mediano de Aysén (SMA) | Sistema Mediano Interconectado Regional | 33.95 MW | Media (Dependencia de diésel para puntas de demanda y estiaje invernal hídrico) |
+| [[comunas/lago_verde|Lago Verde]] | Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual | Sistema Mediano Extendido / Aislado Cordillerano | 0.35 MW | Alta (Línea de distribución vulnerable a nevadas, temporales y caídas de árboles) |
+| [[comunas/aysen|Aysén]] | SMA Continental, Autogeneración El Toqui e Islas Huichas (SSAA) | Sistema Mediano (Continental) y Sistema Aislado Insular (Aguirre) | 18.48 MW | Media-Baja en continente; Alta en archipiélago Islas Huichas por flete marítimo |
+| [[comunas/cisnes|Cisnes]] | SM Puerto Cisnes (1.67 MW), SM Palena (0.80 MW) y 3 SSAA Litorales (0.36 MW) | Sistema Mediano Costero-Norte | 2.83 MW | Alta (Riesgo de corte vial en Cuesta Queulat / Barcazas y aislamiento de caletas) |
+| [[comunas/guaitecas|Guaitecas]] | Sistema Aislado Municipal Melinka-Repollal | Sistema Aislado Municipal Insular | 1.45 MW | Crítica (Dependencia absoluta de barcaza de combustible desde Quellón; riesgo de racionamiento por temporal marítimo) |
+| [[comunas/chile_chico|Chile Chico]] | Sistema Mediano General Carrera (SMGC) | Sistema Mediano Lacustre | 3.9 MW | Media-Alta (Dependencia de barcaza lacustre o tránsito internacional por Argentina) |
+| [[comunas/rio_ibanez|Río Ibáñez]] | Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez | Sistema Mediano Interconectado | 1.4 MW | Media (Línea de transmisión expuesta a nevadas y viento blanco en Portezuelo Ibáñez) |
+| [[comunas/cochrane|Cochrane]] | Sistema Mediano General Carrera - Cochrane (SMGC) | Sistema Mediano Austral | 2.54 MW | Media-Alta (Fin del anillo de transmisión lacustre y alta distancia terrestre de logística) |
+| [[comunas/ohiggins|O'Higgins]] | Sistema Aislado Municipal Villa O'Higgins | Sistema Aislado Municipal Extremo | 1.25 MW | Extrema (Término austral de Ruta 7; congelamiento de bocatoma en invierno y cruce marítimo-lacustre en barcaza Puerto Yungay) |
+| [[comunas/tortel|Tortel]] | Sistema Aislado Municipal Caleta Tortel | Sistema Aislado Municipal - Fluvial | 0.95 MW | Muy Alta (Poblado de pasarelas peatonales; combustible descargado en tambores y lanchas fluviales) |
 
 ## Metadatos de Procedencia Institucional
 

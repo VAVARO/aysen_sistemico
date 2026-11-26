@@ -37,6 +37,7 @@ const LEXICON_PATH = path.join(ROOT_DIR, 'data', 'nl_lexicon_aysen.json');
 const PROVENANCE_PATH = path.join(ROOT_DIR, 'data', 'systemic', 'provenance_catalog.json');
 const AUTO_UPDATE_STATUS_PATH = path.join(ROOT_DIR, 'data', 'systemic', 'auto_update_status.json');
 const PADRON_REAL_PATH = path.join(ROOT_DIR, 'data', 'raw', 'territorio_concesiones', 'padron_real_subpesca_aysen.json');
+const MARCO_REGULATORIO_PATH = path.join(ROOT_DIR, 'data', 'raw', 'energia_telecom', 'marco_regulatorio_tarifario_aysen_2024_2028.json');
 const DEFAULT_OUT_DIR = path.join(ROOT_DIR, 'auditoria_obsidian');
 const DEFAULT_VAULT_ROOT = path.resolve(ROOT_DIR, '..', 'Obsidian Vault');
 const VAULT_SUBFOLDER = 'Aysen_Sistemico_Auditoria';
@@ -332,6 +333,20 @@ function extractAdditionalScopes(dataLake, options = {}) {
     }
   }
 
+  // e) Centrales Electricas CNE / SSAA (nodos MW operativos)
+  const centralesRaw = dataLake.spatialNodesByLayer && Array.isArray(dataLake.spatialNodesByLayer.centrales_electricas)
+    ? dataLake.spatialNodesByLayer.centrales_electricas.filter(n => n && n.magnitudeUnit === 'MW')
+    : [];
+  if (centralesRaw.length > 0) {
+    const mwVals = {};
+    for (const c of centralesRaw) {
+      if (c.id) mwVals[String(c.id)] = Number(c.magnitudeValue) || 0;
+    }
+    scopes.centralesElectricas = {
+      centrales_potencia_mw: { type: 'numeric', values: mwVals }
+    };
+  }
+
   return scopes;
 }
 
@@ -342,7 +357,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
   const lexiconJson = readJsonSafe(options.lexiconPath || LEXICON_PATH, { variables: [] });
   const aliasKeys = new Set(
     (Array.isArray(lexiconJson.variables) ? lexiconJson.variables : [])
-      .filter(v => v && v.isAliasOf)
+      .filter(v => v && (v.isAliasOf || v.isComplementOf))
       .map(v => v.id)
   );
   const comunas = dataLake.comunas.map(c => ({
@@ -373,13 +388,35 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
 
   const scopes = extractAdditionalScopes(dataLake, options);
 
+  const centralesElectricas = (dataLake.spatialNodesByLayer && Array.isArray(dataLake.spatialNodesByLayer.centrales_electricas)
+    ? dataLake.spatialNodesByLayer.centrales_electricas.filter(n => n && n.magnitudeUnit === 'MW')
+    : []).map(c => ({
+    id: String(c.id || ''),
+    nombre: String(c.nombre || ''),
+    comuna_ine: String(c.comuna_ine || ''),
+    sistema: String(c.sistema || ''),
+    potencia_mw: Number(c.magnitudeValue) || 0
+  }));
+  const comunaHogares = {};
+  const comunaPoblacion = {};
+  for (const row of (dataLake.comunas || [])) {
+    const ine = String(row.comuna_ine || row.codigo_comuna || '');
+    if (ine) {
+      if (typeof row.hogares_censo_2024 === 'number') comunaHogares[ine] = row.hogares_censo_2024;
+      if (typeof row.poblacion_censo_2024 === 'number') comunaPoblacion[ine] = row.poblacion_censo_2024;
+    }
+  }
+
   return {
-    schemaVersion: '2.0.0',
+    schemaVersion: '3.0.0',
     label,
     capturedAt: new Date().toISOString(),
     bundleGeneratedAt: dataLake.generatedAt || null,
     autoUpdateMeta: (dataLake.meta && dataLake.meta.autoUpdate) || null,
     comunas,
+    comunaHogares,
+    comunaPoblacion,
+    centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
     indicators,
@@ -445,7 +482,8 @@ function compareAdditionalScopes(baselineScopes = {}, currentScopes = {}, option
     { id: 'unidadesSnaspe', label: 'Unidades SNASPE (N=19)', hubTitle: CANONICAL_HUB_TITLES.turismo },
     { id: 'holdings', label: 'Holdings Salmoneros (N=13)', hubTitle: CANONICAL_HUB_TITLES.salmonicultura },
     { id: 'padronInvariants', label: 'Invariantes Padrón SUBPESCA', hubTitle: CANONICAL_HUB_TITLES.salmonicultura },
-    { id: 'seriesLatest', label: 'Series Anuales (Último Corte)', hubTitle: 'Series Históricas Regionales' }
+    { id: 'seriesLatest', label: 'Series Anuales (Último Corte)', hubTitle: 'Series Históricas Regionales' },
+    { id: 'centralesElectricas', label: 'Centrales Eléctricas CNE (MW)', hubTitle: CANONICAL_HUB_TITLES.energia }
   ];
 
   const summary = [];
@@ -537,6 +575,177 @@ function compareAdditionalScopes(baselineScopes = {}, currentScopes = {}, option
   return { summary, changes, alerts };
 }
 
+function evaluatePhysicalAndDemographicInvariants(snapshot, options = {}) {
+  const alerts = [];
+  if (!snapshot || typeof snapshot !== 'object') return alerts;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const lexiconJson = options.lexicon || readJsonSafe(options.lexiconPath || LEXICON_PATH, { variables: [] });
+  const excludedAliasSet = new Set(
+    (Array.isArray(lexiconJson.variables) ? lexiconJson.variables : [])
+      .filter(v => v && (v.isAliasOf || v.isComplementOf))
+      .map(v => v.id)
+  );
+
+  // Invariante 1: INVARIANTE_DEMOGRAFICO_HOGARES (hogares implicitos en leña y conexiones residenciales SUBTEL <= 1.05 * hogares_censo_2024 <= poblacion)
+  for (const c of comunas) {
+    const ine = String(c.comuna_ine || '');
+    const cName = c.nombre || ine;
+    if (!ine) continue;
+    const hogRaw = (snapshot.comunaHogares && snapshot.comunaHogares[ine] !== undefined)
+      ? snapshot.comunaHogares[ine]
+      : indicators.hogares_censo_2024?.values?.[ine];
+    const pobRaw = (snapshot.comunaPoblacion && snapshot.comunaPoblacion[ine] !== undefined)
+      ? snapshot.comunaPoblacion[ine]
+      : indicators.poblacion_censo_2024?.values?.[ine];
+    const hogares = (typeof hogRaw === 'number' && Number.isFinite(hogRaw)) ? hogRaw : null;
+    const pob = (typeof pobRaw === 'number' && Number.isFinite(pobRaw)) ? pobRaw : null;
+
+    const lenaVol = indicators.consumo_lena_m3_solidos_anual?.values?.[ine];
+    const lenaHog = indicators.consumo_lena_m3_hogar_ano?.values?.[ine];
+    if (typeof lenaVol === 'number' && Number.isFinite(lenaVol) && typeof lenaHog === 'number' && Number.isFinite(lenaHog) && lenaHog > 0) {
+      const impliedHog = lenaVol / lenaHog;
+      if ((hogares !== null && hogares > 0 && impliedHog > 1.05 * hogares) || (pob !== null && pob > 0 && impliedHog > pob)) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'VIOLACION_INVARIANTE_DEMOGRAFICO',
+          invariant: 'INVARIANTE_DEMOGRAFICO_HOGARES',
+          indicator: 'consumo_lena_m3_solidos_anual',
+          hub: CANONICAL_HUB_TITLES.energia,
+          detail: `[INVARIANTE_DEMOGRAFICO_HOGARES] ${cName}: ${Math.round(impliedHog)} hogares implícitos de leña (${formatNumberCL(lenaVol)} m³ / ${formatNumberCL(lenaHog)} m³/hogar) exceden 1.05x hogares Censo 2024 (${hogares ?? 'N/D'}) o población (${pob ?? 'N/D'}).`
+        });
+      }
+    }
+
+    const subtelRes = indicators.conexiones_residenciales_subtel_jun2026_n?.values?.[ine];
+    if (typeof subtelRes === 'number' && Number.isFinite(subtelRes)) {
+      if ((hogares !== null && hogares > 0 && subtelRes > 1.05 * hogares) || (pob !== null && pob > 0 && subtelRes > pob)) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'VIOLACION_INVARIANTE_DEMOGRAFICO',
+          invariant: 'INVARIANTE_DEMOGRAFICO_HOGARES',
+          indicator: 'conexiones_residenciales_subtel_jun2026_n',
+          hub: CANONICAL_HUB_TITLES.energia,
+          detail: `[INVARIANTE_DEMOGRAFICO_HOGARES] ${cName}: ${formatNumberCL(subtelRes)} conexiones residenciales SUBTEL exceden hogares Censo 2024 (${hogares ?? 'N/D'}).`
+        });
+      }
+    }
+  }
+
+  // Invariante 2: INVARIANTE_CONSERVACION_POTENCIA_MW (SUM comunas == SUM centrales <= 0.1 MW y SSAA <= 1.50 MW Art. 173 LGSE)
+  const centrales = Array.isArray(snapshot.centralesElectricas) ? snapshot.centralesElectricas : [];
+  if (indicators.potencia_mw && centrales.length > 0 && comunas.length > 0) {
+    const sumComunas = comunas.reduce((acc, c) => acc + (Number(indicators.potencia_mw.values?.[c.comuna_ine]) || 0), 0);
+    const sumPlantas = centrales.reduce((acc, p) => acc + (Number(p.potencia_mw) || 0), 0);
+    if (Math.abs(sumComunas - sumPlantas) > 0.1) {
+      alerts.push({
+        severity: 'ALTA',
+        code: 'VIOLACION_INVARIANTE_FISICO_MW',
+        invariant: 'INVARIANTE_CONSERVACION_POTENCIA_MW',
+        indicator: 'potencia_mw',
+        hub: CANONICAL_HUB_TITLES.energia,
+        detail: `[INVARIANTE_CONSERVACION_POTENCIA_MW] Descalce de conservación eléctrica: SUM(comunas.potencia_mw) = ${sumComunas.toFixed(2)} MW vs. SUM(centrales.potencia_mw) = ${sumPlantas.toFixed(2)} MW (tolerancia <= 0,10 MW).`
+      });
+    }
+
+    const byIne = {};
+    for (const p of centrales) {
+      if (!p.comuna_ine) continue;
+      byIne[p.comuna_ine] = (byIne[p.comuna_ine] || 0) + (Number(p.potencia_mw) || 0);
+      if (/sistema\s+aislado/i.test(p.sistema || '') && !/sistema\s+mediano/i.test(p.sistema || '') && Number(p.potencia_mw) > 1.50) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'VIOLACION_INVARIANTE_FISICO_MW',
+          invariant: 'INVARIANTE_CONSERVACION_POTENCIA_MW',
+          indicator: 'potencia_mw',
+          hub: CANONICAL_HUB_TITLES.energia,
+          detail: `[INVARIANTE_CONSERVACION_POTENCIA_MW] Central "${p.nombre || p.id}" clasificada como Sistema Aislado declara ${Number(p.potencia_mw).toFixed(2)} MW, violando límite legal <= 1,50 MW (Art. 173° LGSE).`
+        });
+      }
+    }
+    for (const c of comunas) {
+      if (byIne[c.comuna_ine] === undefined) continue;
+      const cmw = Number(indicators.potencia_mw.values?.[c.comuna_ine]) || 0;
+      const pmw = byIne[c.comuna_ine];
+      if (Math.abs(cmw - pmw) > 0.1) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'VIOLACION_INVARIANTE_FISICO_MW',
+          invariant: 'INVARIANTE_CONSERVACION_POTENCIA_MW',
+          indicator: 'potencia_mw',
+          hub: CANONICAL_HUB_TITLES.energia,
+          detail: `[INVARIANTE_CONSERVACION_POTENCIA_MW] ${c.nombre}: potencia comunal (${cmw.toFixed(2)} MW) difiere de centrales (${pmw.toFixed(2)} MW) > 0,10 MW.`
+        });
+      }
+    }
+  }
+
+  // Invariante 3: INVARIANTE_CERO_COLINEALIDAD_ACTIVA (|r| >= 0.9995 afín/complementaria entre indicadores activos)
+  if (comunas.length >= 5) {
+    const ines = comunas.map(c => String(c.comuna_ine));
+    const coyIdx = ines.indexOf('11101');
+    const aysIdx = ines.indexOf('11201');
+    const activeVecs = [];
+    for (const [k, obj] of Object.entries(indicators)) {
+      if (excludedAliasSet.has(k) || !obj || obj.type !== 'numeric' || !obj.values) continue;
+      const xs = ines.map(ine => Number(obj.values[ine]));
+      if (xs.some(v => !Number.isFinite(v))) continue;
+      const mx = xs.reduce((a, b) => a + b, 0) / xs.length;
+      const dx = xs.reduce((a, b) => a + (b - mx) * (b - mx), 0);
+      if (dx <= 1e-12) continue;
+      activeVecs.push({ k, xs, mx, dx });
+    }
+    for (let i = 0; i < activeVecs.length; i++) {
+      for (let j = i + 1; j < activeVecs.length; j++) {
+        const A = activeVecs[i], B = activeVecs[j];
+        let num = 0;
+        for (let t = 0; t < A.xs.length; t++) num += (A.xs[t] - A.mx) * (B.xs[t] - B.mx);
+        const r = num / Math.sqrt(A.dx * B.dx);
+        if (Math.abs(r) < 0.9995) continue;
+
+        let isRedundant = r <= -0.9995;
+        if (!isRedundant) {
+          const slope = num / A.dx;
+          const intercept = B.mx - slope * A.mx;
+          const rngY = (Math.max(...B.xs) - Math.min(...B.xs)) || 1;
+          let maxRelResid = 0;
+          for (let t = 0; t < A.xs.length; t++) {
+            maxRelResid = Math.max(maxRelResid, Math.abs(B.xs[t] - (intercept + slope * A.xs[t])) / rngY);
+          }
+          const xs2 = A.xs.filter((_, idx) => idx !== coyIdx && idx !== aysIdx);
+          const ys2 = B.xs.filter((_, idx) => idx !== coyIdx && idx !== aysIdx);
+          let rNoCA = 0;
+          if (xs2.length >= 3) {
+            const m2x = xs2.reduce((a, b) => a + b, 0) / xs2.length;
+            const m2y = ys2.reduce((a, b) => a + b, 0) / ys2.length;
+            let n2 = 0, d2x = 0, d2y = 0;
+            for (let t = 0; t < xs2.length; t++) {
+              n2 += (xs2[t] - m2x) * (ys2[t] - m2y);
+              d2x += (xs2[t] - m2x) * (xs2[t] - m2x);
+              d2y += (ys2[t] - m2y) * (ys2[t] - m2y);
+            }
+            if (d2x > 0 && d2y > 0) rNoCA = n2 / Math.sqrt(d2x * d2y);
+          }
+          isRedundant = Math.abs(rNoCA) >= 0.9995 && maxRelResid <= 0.0065;
+        }
+
+        if (isRedundant) {
+          alerts.push({
+            severity: 'ALTA',
+            code: 'COLINEALIDAD_ESPURIA_ACTIVA',
+            invariant: 'INVARIANTE_CERO_COLINEALIDAD_ACTIVA',
+            indicator: `${A.k} ~ ${B.k}`,
+            hub: 'Transversal (Calidad Estadística)',
+            detail: `[INVARIANTE_CERO_COLINEALIDAD_ACTIVA] Par activo colineal detectado sin etiqueta isAliasOf/isComplementOf: ${A.k} vs ${B.k} (r = ${r.toFixed(6)}).`
+          });
+        }
+      }
+    }
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -545,6 +754,10 @@ function compareSnapshots(baseline, current, options = {}) {
   const autoUpdateStatus = options.autoUpdateStatus !== undefined
     ? options.autoUpdateStatus
     : readJsonSafe(AUTO_UPDATE_STATUS_PATH, null);
+  const marcoRegulatorio = options.marcoRegulatorio !== undefined
+    ? options.marcoRegulatorio
+    : readJsonSafe(MARCO_REGULATORIO_PATH, null);
+  const regRules = (marcoRegulatorio && marcoRegulatorio.reglas_auditoria_indicadores) || {};
 
   const comunaNameByIne = new Map();
   for (const c of current.comunas) comunaNameByIne.set(c.comuna_ine, c.nombre);
@@ -702,12 +915,16 @@ function compareSnapshots(baseline, current, options = {}) {
         const detailStr = outlierCells
           .map(c => `${c.comuna}: ${formatNumberCL(c.prev)} -> ${formatNumberCL(c.curr)} (${c.outlierReason})`)
           .join('; ');
+        const regRule = regRules[key] || null;
+        const regSuffix = regRule ? ` · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] ${regRule.cita_normativa}` : '';
         verificationAlerts.push({
           severity: 'ALTA',
           code: 'OUTLIER_SALTO',
+          regulatoryTag: regRule ? 'CAMBIO_REGULATORIO_DOCUMENTADO' : null,
+          regulatoryCitation: regRule ? regRule.cita_normativa : null,
           indicator: key,
           hub: meta.hubTitle,
-          detail: detailStr
+          detail: detailStr + regSuffix
         });
       }
 
@@ -784,11 +1001,18 @@ function compareSnapshots(baseline, current, options = {}) {
     .map(([hubTitle, count]) => ({ hubTitle, count }))
     .sort((a, b) => a.hubTitle.localeCompare(b.hubTitle));
 
+  // Invariantes físicos, demográficos y anti-colinealidad (Audit V3)
+  const invariantAlerts = evaluatePhysicalAndDemographicInvariants(current, options);
+  for (const invAlert of invariantAlerts) {
+    verificationAlerts.push(invAlert);
+  }
+
   const highAlerts = verificationAlerts.filter(a => a.severity === 'ALTA');
   const medAlerts = verificationAlerts.filter(a => a.severity === 'MEDIA');
+  const regDocumentedCount = verificationAlerts.filter(a => a.regulatoryTag === 'CAMBIO_REGULATORIO_DOCUMENTADO').length;
   const hasRemovedScope = additionalScopes.summary.some(s => s.removed > 0);
   let semaforo = 'VERDE';
-  if (removed.length > 0 || hasRemovedScope || connectorSummary.stagesRestored > 0) {
+  if (removed.length > 0 || hasRemovedScope || connectorSummary.stagesRestored > 0 || invariantAlerts.length > 0) {
     semaforo = 'ROJO';
   } else if (highAlerts.length > 0 || medAlerts.length > 0) {
     semaforo = 'AMARILLO';
@@ -812,6 +1036,8 @@ function compareSnapshots(baseline, current, options = {}) {
       unchanged: unchanged.length,
       alertsHigh: highAlerts.length,
       alertsMedium: medAlerts.length,
+      invariantViolations: invariantAlerts.length,
+      regulatoryDocumented: regDocumentedCount,
       alertsTotal: verificationAlerts.length
     },
     connectorSummary,
@@ -1427,6 +1653,7 @@ module.exports = {
   loadBundleFromGitRef,
   buildMetadataCatalog,
   extractSnapshotFromBundle,
+  evaluatePhysicalAndDemographicInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

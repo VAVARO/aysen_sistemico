@@ -8062,7 +8062,16 @@
         snaspe_concesiones_salmon_dentro_n: { title: 'Concesiones Salmoneras Dentro de Unidad SNASPE (SUBPESCA)', short: 'Salmón en SNASPE', unit: 'concesiones', hubId: 'turismo' },
         snaspe_superficie_salmon_ha: { title: 'Superficie Acuícola Dentro de Unidad SNASPE (ha)', short: 'Sup. Salmón en SNASPE', unit: 'hectáreas', hubId: 'turismo' },
         snaspe_inversion_pdze_mclp: { title: 'Inversión Habilitante PDZE Proyectada por Unidad SNASPE', short: 'Inversión PDZE SNASPE', unit: 'M$ CLP', hubId: 'turismo' },
-        pasos_fronterizos_pdi_aysen: { title: 'Control Migratorio Pasos Fronterizos PDI Aysén (2015–2026)', short: 'Pasos Fronterizos PDI', unit: 'controles', hubId: 'gobernanza' }
+        pasos_fronterizos_pdi_aysen: { title: 'Control Migratorio Pasos Fronterizos PDI Aysén (2015–2026)', short: 'Pasos Fronterizos PDI', unit: 'controles', hubId: 'gobernanza' },
+        hogares_censo_2024: { title: 'Hogares Censales Estimados (Censo 2024)', short: 'Hogares Censo 2024', unit: 'hogares', hubId: 'social' },
+        potencia_ernc_en_construccion_mw: { title: 'Potencia ERNC en Construcción 2026 (REx CNE 100-2026 / RCA)', short: 'ERNC en Construcción', unit: 'MW', hubId: 'energia' },
+        cobertura_subsidio_electrico_hogares_n: { title: 'Hogares Beneficiarios Subsidio Eléctrico 5° Proceso (Ley 21.667)', short: 'Hogares Subsidio Eléctrico', unit: 'hogares', hubId: 'energia' },
+        cobertura_subsidio_electrico_pct: { title: 'Cobertura Comunal del Subsidio Eléctrico (% Hogares)', short: 'Cobertura Subsidio Eléctrico %', unit: '%', hubId: 'energia' },
+        diesel_clp_litro: { title: 'Precio Minorista Petróleo Diésel CNE (19-Nov-2026)', short: 'Precio Diésel ($/L)', unit: '$/L', hubId: 'energia' },
+        kerosene_clp_litro: { title: 'Precio Minorista Kerosene Doméstico CNE (19-Nov-2026)', short: 'Precio Kerosene ($/L)', unit: '$/L', hubId: 'energia' },
+        costo_kwh_termico_util_lena_clp: { title: 'Costo Efectivo kWh Térmico Útil Leña', short: 'Costo kWh Útil Leña', unit: '$/kWh_útil', hubId: 'energia' },
+        costo_kwh_termico_util_kerosene_clp: { title: 'Costo Efectivo kWh Térmico Útil Kerosene', short: 'Costo kWh Útil Kerosene', unit: '$/kWh_útil', hubId: 'energia' },
+        ratio_costo_calefaccion_electrica_vs_lena: { title: 'Ratio Costo Térmico Útil Bomba de Calor BT1 vs. Leña', short: 'Ratio Eléctrica / Leña', unit: 'veces', hubId: 'energia' }
       };
 
       Object.entries(CLEAR_VAR_LABELS).forEach(([k, v]) => {
@@ -8165,8 +8174,8 @@
           'pesca_ind_fraccionamiento_art_pct', 'pesca_ind_fraccionamiento_ind_pct', 'pesca_ind_valor_sancion_utm', 'pesca_ind_impuesto_43ter_utm'
         ],
 
-        '3A. Sistemas Eléctricos y Confiabilidad': ['potencia_mw', 'saidi_horas_anual', 'tarifa_bt1_clp', 'costo_diesel_aislado_clp', 'costo_real_generacion_diesel_kwh_clp', 'subsidio_fiscal_diesel_kwh_clp', 'generacion_hidro_gwh', 'generacion_diesel_gwh', 'participacion_diesel_matriz_pct', 'tarifa_bt1_regional_clp_hist', 'sp_caudal_simpson_coyhaique', 'sp_caudal_baker_bertrand'],
-        '3B. Matriz Térmica, Leña y Combustibles': ['hogares_lena_pct', 'precio_lena_m3', 'consumo_lena_m3_hogar_ano', 'consumo_lena_m3_hogar_anio', 'consumo_lena_m3_solidos_anual', 'informalidad_lena_pct', 'gasolina_93_clp', 'precio_diesel_regional_cne_clp_hist', 'sp_precio_combustibles_coyhaique', 'recambio_calefactores_pda_hist', 'barometro_preocupacion_contaminacion_lena_pct', 'barometro_preocupacion_contaminacion_lena_pct_hist'],
+        '3A. Sistemas Eléctricos y Confiabilidad': ['potencia_mw', 'potencia_ernc_en_construccion_mw', 'saidi_horas_anual', 'tarifa_bt1_clp', 'cobertura_subsidio_electrico_hogares_n', 'cobertura_subsidio_electrico_pct', 'costo_diesel_aislado_clp', 'costo_real_generacion_diesel_kwh_clp', 'subsidio_fiscal_diesel_kwh_clp', 'generacion_hidro_gwh', 'generacion_diesel_gwh', 'participacion_diesel_matriz_pct', 'tarifa_bt1_regional_clp_hist', 'sp_caudal_simpson_coyhaique', 'sp_caudal_baker_bertrand'],
+        '3B. Matriz Térmica, Leña y Combustibles': ['hogares_lena_pct', 'precio_lena_m3', 'consumo_lena_m3_hogar_ano', 'consumo_lena_m3_hogar_anio', 'consumo_lena_m3_solidos_anual', 'informalidad_lena_pct', 'gasolina_93_clp', 'diesel_clp_litro', 'kerosene_clp_litro', 'costo_kwh_termico_util_lena_clp', 'costo_kwh_termico_util_kerosene_clp', 'ratio_costo_calefaccion_electrica_vs_lena', 'precio_diesel_regional_cne_clp_hist', 'sp_precio_combustibles_coyhaique', 'recambio_calefactores_pda_hist', 'barometro_preocupacion_contaminacion_lena_pct', 'barometro_preocupacion_contaminacion_lena_pct_hist'],
         '3C. Telecomunicaciones y Brecha Digital': ['cobertura_fibra_hogar_pct', 'internet_fijo_pct', 'hogares_sin_internet_fijo_pct', 'conexiones_fijas_subtel_jun2026_n', 'conexiones_residenciales_subtel_jun2026_n', 'variacion_conexiones_2015_2026_pct', 'establecimientos_educacion_conectados_n', 'fdt_ultima_milla_aprobado', 'penetracion_internet_fijo_subtel_pct_hist', 'indice_aislamiento_multimodal'],
 
         '4A. Finanzas y Gestión Municipal (SINIM)': ['presupuesto_mclp', 'presupuesto_per_capita_mclp', 'ingresos_mun_bcn_2025_mclp', 'dependencia_fcm_pct', 'ingresos_propios_pct', 'ipp_per_capita_clp', 'fet_royalty_minero_2024_mclp', 'fet_royalty_minero_2025_mclp', 'royalty_fet_peso_presupuesto_pct', 'gasto_personal_pct', 'inversion_directa_pct', 'profesionalizacion_pct', 'presupuesto_municipal_total_regional_mclp', 'dependencia_fcm_promedio_regional_pct', 'ingresos_propios_permanentes_pct_hist'],
@@ -8177,7 +8186,7 @@
         '5B. Tejido Empresarial, Empleo y Banca': ['empresas_sii', 'trabajadores_sii', 'ventas_sii_muf', 'ventas_por_empresa_uf', 'empresas_totales_regionales_sii', 'trabajadores_dependientes_regionales_sii', 'compras_locales_pct', 'fuga_compras_pct', 'retencion_compras_publicas_locales_pct_hist', 'transacciones_compras_publicas_mclp', 'sucursales_banca_privada_cmf', 'puntos_cajavecina_bancoestado'],
         '5C. Uso del Suelo, Agro y Minería': ['parcelaciones_sag_n', 'suelo_fiscal_bbnn_pct', 'suelo_privado_pct', 'ganado_bovino_cabezas', 'ganado_ovino_cabezas', 'cabezas_bovinos_caf', 'cabezas_ovinos_caf', 'plantaciones_ha', 'concesiones_mineras_ha'],
 
-        '6A. Demografía y Estructura Territorial': ['poblacion_censo_2024', 'porcentaje_regional_pct', 'superficie_km2', 'densidad_hab_km2', 'ruralidad_censo_2024_pct', 'indice_envejecimiento', 'indice_masculinidad', 'sp_poblacion_regional_proyectada'],
+        '6A. Demografía y Estructura Territorial': ['poblacion_censo_2024', 'hogares_censo_2024', 'porcentaje_regional_pct', 'superficie_km2', 'densidad_hab_km2', 'ruralidad_censo_2024_pct', 'indice_envejecimiento', 'indice_masculinidad', 'sp_poblacion_regional_proyectada'],
         '6B. Pobreza, Vivienda y Agua Rural (SSR)': ['pobreza_multidim_pct', 'pobreza_ingresos_pct', 'pobreza_ingresos_casen_pct', 'pobreza_multidimensional_casen_pct', 'ratio_pobreza_multidim_vs_ingresos', 'rsh_carencia_servicios_basicos_jun2026_pct', 'rsh_hacinamiento_jun2026_pct', 'deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'deficit_habitacional_total_por_1000_hab', 'deficit_habitacional_cuantitativo_minvu', 'deficit_habitacional_cualitativo_minvu', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias', 'comites_ssr_apr_doh', 'beneficiarios_ssr_apr_doh'],
         '6C. Educación, Seguridad y Cohesión': ['matricula_escolar', 'establecimientos_escolares_n', 'establecimientos_slep_aysen', 'escuelas_rurales_multigrado_n', 'liceos_urbanos_n', 'tasa_dmcs_100k', 'tasa_vif_100k', 'tasa_vif_regional_por_100k_hab', 'tasa_dmcs_regional_por_100k_hab', 'juntas_vecinos_activas', 'barometro_orgullo_identidad_pct', 'barometro_orgullo_identidad_pct_hist', 'barometro_redes_apoyo_comunitario_pct', 'barometro_redes_apoyo_comunitario_pct_hist', 'barometro_intencion_migracion_juvenil_pct', 'barometro_intencion_migracion_juvenil_pct_hist'],
 
@@ -8749,7 +8758,14 @@
           'cabezas_bovinos_caf',
           'cabezas_ovinos_caf',
           'gasto_cultural_per_capita_clp',
-          'costo_real_generacion_diesel_kwh_clp'
+          'costo_real_generacion_diesel_kwh_clp',
+          'tarifa_adr_estimada_usd',
+          'revpar_estimado_usd',
+          'hogares_sin_internet_fijo_pct',
+          'ingresos_propios_pct',
+          'fuga_compras_pct',
+          'costo_kwh_termico_util_lena_clp',
+          'costo_kwh_termico_util_kerosene_clp'
         ]);
 
         const hubInference = (k) => {
@@ -8758,9 +8774,9 @@
           if (/ctci|anid|corfo_innova|innovacion_corfo|investigadores_residentes|uaysen_promedio|matricula_ed_superior|centros_y_estaciones|universidades_f4g|ciencia_endogena/i.test(k)) return 'ctci';
           if (/turis|emat|visitantes|sernatur|camas_tur|cruceros|zoit|tarifa_adr|revpar|estadia_promedio|estadia_regional|tasa_ocupacion_estival|tasa_ocupacion_emat|tasa_ocupacion_invernal|concentracion_estival|visitas_por_pernoctacion|visitas_por_cama|llegadas_por_cama|llegadas_turistas|guardaparque|rnpst|vigencia_patente|atractivos_totales|act_turismo|snaspe_/i.test(k)) return 'turismo';
           if (/salmon|amerb|biomasa_salmon|antibiotico|_ica\b|pesquera|artesanal|ecmpo|concesiones_acuicolas|sindicatos_pesca|patente_acuicola|peso_pua|superficie_concesionada_mar|empleo_directo_acuicola|sancionatorios_sma_acuicolas|centros_infa_anaerobica|desembarque_muelles|^acs_|cosecha_salmon_|cosecha_trucha_|hectareas_marinas_concesionadas/i.test(k)) return 'salmonicultura';
-          if (/diesel|gasolina|lena|saidi|tarifa_bt1|tarifa_elec|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena|participacion_diesel_matriz|indice_aislamiento_multimodal/i.test(k)) return 'energia';
+          if (/diesel|gasolina|kerosene|lena|saidi|tarifa_bt1|tarifa_elec|cobertura_subsidio_electrico|potencia|internet|fibra_hogar|educacion_conectados|foa|biomasa_calefaccion|informalidad_lena|subsidio_fiscal_diesel|costo_real_generacion|costo_kwh_termico|ratio_costo_calefaccion|conexiones_.*subtel|variacion_conexiones|fdt_ultima_milla|barometro_preocupacion_contaminacion_lena|participacion_diesel_matriz|indice_aislamiento_multimodal/i.test(k)) return 'energia';
           if (/presupuesto|fcm|fndr|ipp|ingresos_propios|inversion_directa|profesionalizacion|gasto_personal|ruta7|red_vial|distancia_coyhaique|tiempo_viaje_coyhaique|dependencia_barcaza|emporcha|balmaceda_pasajeros|alcalde|sni_pct|transparencia_activa_cplt|fet_royalty|royalty_fet|ingresos_mun_bcn|participacion_presidencial|participacion_municipales|padron_electoral|ratio_padron|largo_pista_aerodromo|operaciones_aerodromo_interior|fondos_concursables|barometro_confianza_institucional|barometro_prioridad_conectividad/i.test(k)) return 'gobernanza';
-          if (/rsh_|ruralidad_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|ratio_pobreza_multidim|matricula_escolar|establecimientos_escolares|escuelas_rurales_multigrado|liceos_urbanos|slep_aysen|tasa_dmcs|tasa_vif|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
+          if (/rsh_|ruralidad_censo|hogares_censo|juntas_vecinos|deficit_habitacional|ssr_apr|pobreza|ratio_pobreza_multidim|matricula_escolar|establecimientos_escolares|escuelas_rurales_multigrado|liceos_urbanos|slep_aysen|tasa_dmcs|tasa_vif|poblacion|densidad_hab|superficie_km2|envejecimiento|masculinidad|barometro_orgullo|barometro_redes_apoyo|barometro_intencion_migracion/i.test(k)) return 'social';
           if (/seia|empresas_sii|trabajadores_sii|ventas_sii|ventas_por_empresa|concesiones_mineras|parcelaciones|suelo_fiscal_bbnn|suelo_privado|compras_locales|fuga_compras|ganado_bovino|ganado_ovino|plantaciones_ha|cabezas_bovinos|cabezas_ovinos|banca_privada|cajavecina|fbcf/i.test(k)) return 'inversion';
           if (/snaspe|cobertura_vegetal|bosque_nativo|glaciar|daa_|dias_sobre_norma|episodios_gec_mp25|amenaza_volcanica_sismica|especies_exoticas_invasoras|expedientes_fiscalizacion_sma|fauna|cuenca_bna|barometro_tension_desarrollo_conservacion/i.test(k)) return 'biodiversidad';
           return 'social';
@@ -8887,6 +8903,10 @@
             if (/tasa_dmcs_100k|tasa_vif_100k|tasa_mortalidad_.*100k/i.test(k)) return 'por 100k hab';
             if (/^(proyectos_|total_proyectos_ctci)/i.test(k) || /fndr_gore_.*_proyectos_n|fondos_concursables_gore_.*_n/i.test(k)) return 'proyectos';
             if (/_pct(_[a-z0-9]+)?$/i.test(k)) return '%';
+            if (k === 'diesel_clp_litro' || k === 'kerosene_clp_litro' || k === 'gasolina_93_clp') return '$/L';
+            if (k.startsWith('costo_kwh_termico_util_')) return '$/kWh_útil';
+            if (k === 'ratio_costo_calefaccion_electrica_vs_lena') return 'veces';
+            if (k === 'hogares_censo_2024' || k === 'cobertura_subsidio_electrico_hogares_n') return 'hogares';
             if (k.endsWith('_mclp')) return 'M$ CLP';
             if (k.endsWith('_clp') || k.endsWith('_clp_kwh') || k.endsWith('_kwh_clp')) return '$ CLP';
             if (k.endsWith('_mmusd')) return 'MM US$';
@@ -8962,7 +8982,7 @@
               const offSrc = resolveOfficialSource(key, hubId);
               items.push({
                 id: key,
-                isAlias: aliasComunaKeys.has(key) || (lex?.id === key && Boolean(lex?.isAliasOf)),
+                isAlias: aliasComunaKeys.has(key) || (lex?.id === key && Boolean(lex?.isAliasOf || lex?.isComplementOf)),
                 canonicalId: lex?.canonicalId || key,
                 nodeId: lex?.nodeId || null,
                 name: varName,
@@ -8994,6 +9014,41 @@
               }
             }
           });
+
+          // Deduplicación bilateral automática: bloquea pares con colinealidad afín o complementaria |r| >= 0.9995
+          const activeComunaItems = items.filter(it => !it.isAlias && it.dim === 'comuna' && Array.isArray(it.data) && it.data.length === 10);
+          for (let i = 0; i < activeComunaItems.length; i++) {
+            const itA = activeComunaItems[i];
+            if (itA.isAlias) continue;
+            for (let j = i + 1; j < activeComunaItems.length; j++) {
+              const itB = activeComunaItems[j];
+              if (itB.isAlias) continue;
+              const xs = itA.data, ys = itB.data;
+              const n = xs.length;
+              const mx = xs.reduce((a, b) => a + b, 0) / n;
+              const my = ys.reduce((a, b) => a + b, 0) / n;
+              let num = 0, dx = 0, dy = 0;
+              for (let k = 0; k < n; k++) { const ax = xs[k] - mx, by = ys[k] - my; num += ax * by; dx += ax * ax; dy += by * by; }
+              if (dx <= 0 || dy <= 0) continue;
+              const r = num / Math.sqrt(dx * dy);
+              if (r <= -0.9995) {
+                itB.isAlias = true;
+              } else if (r >= 0.9995) {
+                const slope = num / dx, intercept = my - slope * mx;
+                const rngY = (Math.max(...ys) - Math.min(...ys)) || 1;
+                let maxRes = 0;
+                for (let k = 0; k < n; k++) maxRes = Math.max(maxRes, Math.abs(ys[k] - (intercept + slope * xs[k])) / rngY);
+                const xsNo = xs.filter((_, idx) => idx !== 0 && idx !== 2);
+                const ysNo = ys.filter((_, idx) => idx !== 0 && idx !== 2);
+                const m2x = xsNo.reduce((a, b) => a + b, 0) / xsNo.length;
+                const m2y = ysNo.reduce((a, b) => a + b, 0) / ysNo.length;
+                let n2 = 0, d2x = 0, d2y = 0;
+                for (let k = 0; k < xsNo.length; k++) { const ax = xsNo[k] - m2x, by = ysNo[k] - m2y; n2 += ax * by; d2x += ax * ax; d2y += by * by; }
+                const rNoCA = (d2x > 0 && d2y > 0) ? (n2 / Math.sqrt(d2x * d2y)) : 0;
+                if (Math.abs(rNoCA) >= 0.9995 && maxRes <= 0.0065) itB.isAlias = true;
+              }
+            }
+          }
 
           // Aliases canónicos heredados para compatibilidad total con proyectos y scripts
           const LEGACY_CANONICAL_MAP = {

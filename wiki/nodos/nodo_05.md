@@ -9,7 +9,7 @@ variables_clave:
   - largo_pista_aerodromo_m
 fuentes_oficiales:
   - "SERNATUR / Subsecretaría de Turismo / CONAF"
-updated_at: "2026-11-26"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - nodo
@@ -20,7 +20,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de hitos turísticos georreferenciados, puertas de entrada multimodales (Aeródromo Balmaceda 605.945 pax en 2025 y nuevo terminal de 12.391 m² en oct. 2026; Pasos Fronterizos PDI 350.257 controles; Cruceros 22.093 pax en 29 recaladas) y economía ACT (3.152 empresas, 11.569.086 UF y 5.270 empleos): Parques Nacionales (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia), Santuario Capillas de Mármol, Termas de Puyuhuapi, Caleta Tortel y Glaciar Exploradores. Entrega las coordenadas geográficas (`lat`, `lng`), comuna INE, tipo de atractivo y atributos operativos o de visitación de cada hito turístico.
+Catastro de hitos turísticos y puertas de entrada multimodales: Aeródromo Balmaceda (`605.945` pax 2025; nuevo terminal `12.391 m²` oct 2026), Pasos Fronterizos PDI (`350.257` controlados 2024: Jeinimeni `233.327`, Coyhaique Alto `63.045`, Huemules `53.885`), Cruceros (`22.093` pax en `29` recaladas: Chacabuco `20.047`, Tortel `2.046`) y 18 hitos georreferenciados. Permite separar la visitación oficial CONAF SNASPE (86.117) del flujo en geositios, santuarios e hitos viales externos como Capillas de Mármol (48.500), Caleta Tortel (14.200) y Villa O'Higgins (9.800) (total atractivos `273.900`).
 
 ## Indicadores Comunales Verificados
 

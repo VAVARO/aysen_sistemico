@@ -20,20 +20,20 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro georreferenciado de las centrales de generación eléctrica en la Región de Aysén: hidroeléctricas de pasada, parques eólicos y plantas térmicas diesel en sistemas medianos y aislados. Incluye la Central Hidroeléctrica Río Aysén (12,5 MW), el Parque Eólico Alto Baguales, la Central Térmica Tehuelche y las plantas de generación en Melinka, Chile Chico, Cochrane, Tortel y Villa O'Higgins.
+Catastro georreferenciado de las centrales de generación eléctrica en la Región de Aysén: hidroeléctricas de pasada, parques eólicos y plantas térmicas diesel en sistemas medianos y aislados. Catastro reconciliado de 21 unidades operativas (67,10 MW): Central Térmica Tehuelche (17,98 MW), Lago Atravesado (11,00 MW), Planta Solar El Blanco (2,99 MW), Parque Eólico Alto Baguales (1,98 MW + 15 MW/2,5 MW BESS en construcción), Puerto Chacabuco (10,00 MW) y Sistemas Aislados <= 1,50 MW (Melinka 1,45 MW, O'Higgins 1,25 MW, Tortel 0,95 MW, Puerto Aguirre 0,48 MW).
 
 ## Indicadores Comunales Verificados
 
 | Central / Nodo de Generación | Comuna INE | Tipo de Central | Detalle Técnico (MW) | Coordenadas |
 | --- | --- | --- | --- | --- |
-| Central Hidroeléctrica Río Aysén / Cabo Juan Román | 11201 | Central Hidroeléctrica de Pasada | potencia mw: 12.5 · tecnologia: Hidroeléctrica pasada | -45.412, -72.635 |
-| Central Hidroeléctrica Lago Atravesado | 11101 | Central Hidroeléctrica de Pasada | potencia mw: 0.8 · tecnologia: Hidroeléctrica pasada | -45.688, -72.285 |
-| Central Hidroeléctrica Río Mañihuales | 11201 | Central Hidroeléctrica de Pasada | potencia mw: 3.4 · tecnologia: Hidroeléctrica pasada | -45.168, -72.155 |
-| Central Hidroeléctrica Los Maquis (Puerto Guadal) | 11401 | Central Hidroeléctrica de Pasada | potencia mw: 1 · tecnologia: Hidroeléctrica pasada | -46.685, -72.715 |
-| Central Hidroeléctrica Río Mosco (Villa O'Higgins) | 11302 | Central Hidroeléctrica de Pasada | potencia mw: 0.6 · tecnologia: Hidroeléctrica pasada | -48.472, -72.548 |
-| Parque Eólico Alto Baguales | 11101 | Parque Eólico | potencia mw: 3.2 · tecnologia: Aerogeneradores eólicos | -45.552, -72.042 |
-| Central Térmica Tehuelche (Coyhaique) | 11101 | Central Térmica Diésel | potencia mw: 19.8 · tecnologia: Motores diésel de respaldo y punta | -45.578, -72.072 |
-| Central Térmica Chacabuco | 11201 | Central Térmica Diésel | potencia mw: 23.5 · tecnologia: Motores diésel base industrial | -45.465, -72.821 |
+| Central Hidroeléctrica Lago Atravesado | 11101 | Hidroeléctrica de pasada | potencia mw: 11 · tecnologia: Hidroeléctrica de pasada | -45.688, -72.285 |
+| Central Mini-Hidroeléctrica Río Aysén / Puerto Aysén | 11201 | Hidroeléctrica de pasada | potencia mw: 2 · tecnologia: Hidroeléctrica de pasada | -45.405, -72.685 |
+| Central Hidroeléctrica El Toqui (Autogeneración Minera) | 11201 | Hidroeléctrica de pasada | potencia mw: 2 · tecnologia: Hidroeléctrica de pasada | -45.052, -71.931 |
+| Microcentrales SSAA Litoral Cisnes (Pto. Gaviota, Pto. Gala y Melimoyu) | 11202 | Híbrida Microhidro + Diésel | potencia mw: 0.36 · tecnologia: Híbrida Microhidro + Diésel | -44.525, -73.205 |
+| Central Hidroeléctrica Los Maquis (Puerto Guadal) | 11401 | Hidroeléctrica de pasada | potencia mw: 1 · tecnologia: Hidroeléctrica de pasada | -46.685, -72.715 |
+| Central Hidroeléctrica El Traro | 11301 | Hidroeléctrica de pasada | potencia mw: 0.64 · tecnologia: Hidroeléctrica de pasada | -47.231, -72.512 |
+| Central Híbrida Municipal Caleta Tortel (Diésel + Microhidro Pelton) | 11303 | Híbrida Diésel + Microhidro | potencia mw: 0.95 · tecnologia: Híbrida Diésel + Microhidro | -47.798, -73.538 |
+| Central Híbrida Río Mosco / Villa O'Higgins (Hidro + Respaldo Diésel) | 11302 | Híbrida Hidroeléctrica + Diésel | potencia mw: 1.25 · tecnologia: Híbrida Hidroeléctrica + Diésel | -48.472, -72.548 |
 
 ## Metadatos de Procedencia Institucional
 

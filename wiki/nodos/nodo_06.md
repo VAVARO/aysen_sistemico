@@ -8,15 +8,9 @@ variables_clave:
   - concesiones_salmon
   - centros_activos_salmon
   - tasa_ocupacion_concesiones_pct
-  - superficie_concesionada_mar_ha
-  - patente_acuicola_pua_mclp
-  - peso_pua_ingresos_propios_pct
-  - empleo_directo_acuicola_n
-  - desembarque_artesanal_ton
-  - desembarque_muelles_total_ton
 fuentes_oficiales:
-  - "SUBPESCA (geoportal.subpesca.cl) / SERNAPESCA / TGR / SINIM / Aduanas DUS"
-updated_at: "2026-11-25"
+  - "Subsecretaría de Pesca y Acuicultura (SUBPESCA) / Servicio Nacional de Pesca y Acuicultura (SERNAPESCA)"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - nodo
@@ -27,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Distribución comunal de las 745 concesiones de acuicultura otorgadas (9.304 ha marinas), 245 centros activos, 3.249,5 M$ CLP/año en Patente Única de Acuicultura municipal (PUA Art. 84 LGPA; más 3.249,5 M$ al FNDR) y 7.055 empleos directos en Aysén: Aysén (412 otorgadas / 135 activas; 5.180 ha; PUA 1.485,0 M$ CLP [22,1% IPP]; 4.850 empleos directos), Cisnes (218 / 78; 2.740 ha; PUA 1.190,0 M$ [29,3% IPP]; 1.420 empleos), Guaitecas (98 / 32; 1.185 ha; PUA 492,0 M$ [87,7% IPP]; 410 empleos) y Tortel (17 / 0 activas bajo descanso sanitario coordinado de ciclo largo en ACS-35 con 8.500 ton de cierre de ciclo bianual en 4 centros con RCA comercial; 199 ha; PUA 82,5 M$ [55,9% IPP]; 35 empleos), más 340 empleos directos en Coyhaique. Pese a producir >50% del salmón del Atlántico nacional (503.500 ton/año), >80% se traslada en wellboats hacia plantas de proceso y puertos de Los Lagos (>US$ 5.600M/año), exportándose directamente por Aduanas desde Aysén solo US$ 209M/año. Reconcilia además el desembarque RPA de flota local residente (13.820 ton) frente a la transferencia física total en muelles (31.690 ton).
+Distribución comunal de las 745 concesiones de acuicultura otorgadas (`9.304 ha` marinas), centros activos (`245`), recaudación municipal por Patente Única de Acuicultura (PUA Art. 84 LGPA: 3.249,5 M$ CLP/año a municipios y 3.249,5 M$ al FNDR) y la Fuga Interregional de Procesamiento y Exportación: Aysén cosecha 503.500 ton/año (>50% del salmón del Atlántico nacional), pero >80% sale en *wellboats* a plantas y puertos de Los Lagos (`>US$ 5.600M/año`), exportándose directamente por Aduanas desde Aysén solo US$ 209M/año. Además distingue el Desembarque RPA Flota Local Residente (13.820 ton) de la Transferencia Total en Muelles (31.690 ton). Las 745 concesiones se distribuyen en Aysén (412 otorgadas / 135 activas; 5.180 ha; PUA 1.485,0 M$ CLP), Cisnes (218 / 78; 2.740 ha; PUA 1.190,0 M$ CLP), Guaitecas (98 / 32; 1.185 ha; PUA 492,0 M$ CLP = 87,7% IPP) y Tortel (17 / 0 activas en descanso bianual ACS-35 con 8.500 ton de cierre de ciclo; 199 ha; PUA 82,5 M$ CLP).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Concesiones (Activas) | Superficie (ha) | PUA Municipal (M$ CLP · % IPP) | Desemb. RPA Local vs. Muelles (ton) | Empleo Directo (trab.) |
+| Comuna | Concesiones (Activas) | Superficie (ha) | PUA Municipal (M$ CLP) | Desemb. RPA Local vs. Muelles (ton) | Empleo Directo (trab.) |
 | --- | --- | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | 0 (0) | 0 | 0 | 0 / 0 | 340 |
 | [[comunas/lago_verde|Lago Verde]] | 0 (0) | 0 | 0 | 0 / 0 | 0 |
-| [[comunas/aysen|Aysén]] | 412 (135) | 5.180 | 1.485,0 (22,1%) | 4.850 / 17.320 | 4.850 |
-| [[comunas/cisnes|Cisnes]] | 218 (78) | 2.740 | 1.190,0 (29,3%) | 3.200 / 5.270 | 1.420 |
-| [[comunas/guaitecas|Guaitecas]] | 98 (32) | 1.185 | 492,0 (87,7%) | 5.650 / 8.920 | 410 |
+| [[comunas/aysen|Aysén]] | 412 (135) | 5.180 | 1.485,0 | 4.850 / 17.320 | 4.850 |
+| [[comunas/cisnes|Cisnes]] | 218 (78) | 2.740 | 1.190,0 | 3.200 / 5.270 | 1.420 |
+| [[comunas/guaitecas|Guaitecas]] | 98 (32) | 1.185 | 492,0 (87,7% IPP) | 5.650 / 8.920 | 410 |
 | [[comunas/chile_chico|Chile Chico]] | 0 (0) | 0 | 0 | 0 / 0 | 0 |
 | [[comunas/rio_ibanez|Río Ibáñez]] | 0 (0) | 0 | 0 | 0 / 0 | 0 |
 | [[comunas/cochrane|Cochrane]] | 0 (0) | 0 | 0 | 0 / 0 | 0 |
 | [[comunas/ohiggins|O'Higgins]] | 0 (0) | 0 | 0 | 0 / 0 | 0 |
-| [[comunas/tortel|Tortel]] | 17 (0) | 199 | 82,5 (55,9%) | 120 / 180 | 35 |
+| [[comunas/tortel|Tortel]] | 17 (0) | 199 | 82,5 | 120 / 180 | 35 |
 
 ## Metadatos de Procedencia Institucional
 

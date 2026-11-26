@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-26T13:06:02Z",
+  "generatedAt": "2026-11-26T15:37:20Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -164,7 +164,7 @@
         "partialCorrPop": 0.835,
         "rWithoutCoyhaique": 0.869,
         "firstDiffCorrDelta": 0.835,
-        "pValueFdr": 5.5e-05,
+        "pValueFdr": 5.8e-05,
         "veredictoSimple": "R² 89% · r = +0,94 · Sin Coyhaique: +0,87 · Control pob.: +0,83"
       }
     },
@@ -196,16 +196,16 @@
         "Tortel"
       ],
       "dataX": [
-        224.0,
-        258.0,
-        222.0,
-        235.0,
-        265.0,
-        228.0,
-        231.0,
-        230.0,
-        262.0,
-        268.0
+        287.8,
+        294.0,
+        287.8,
+        292.4,
+        312.0,
+        289.5,
+        289.5,
+        291.2,
+        308.0,
+        318.0
       ],
       "dataY": [
         80.8,
@@ -220,98 +220,98 @@
         68.4
       ],
       "regressionLine": {
-        "slopeBeta1": -0.23581,
-        "interceptBeta0": 132.006,
-        "rSquaredPct": 93.9,
+        "slopeBeta1": -0.35971,
+        "interceptBeta0": 181.7124,
+        "rSquaredPct": 80.0,
         "directionLabel": "Relación Inversa (–)"
       },
-      "reading": "Donde la electricidad residencial es más cara, baja la cobertura de controles del adulto mayor: Tortel (268 $/kWh) registra 68,4%, mientras Aysén (222 $/kWh) sube a 78,4%.",
-      "plainExplanation": "Donde la electricidad residencial es más cara, baja la cobertura de controles del adulto mayor: Tortel (268 $/kWh) registra 68,4%, mientras Aysén (222 $/kWh) sube a 78,4%.",
-      "notable_commune": "Caso atípico: Río Ibáñez registra –1,6 % por debajo de lo esperado para su nivel en el eje X.",
+      "reading": "Donde la electricidad residencial es más cara, baja la cobertura de controles del adulto mayor: Tortel (318 $/kWh) registra 68,4%, mientras Coyhaique (287,8 $/kWh) sube a 80,8%.",
+      "plainExplanation": "Donde la electricidad residencial es más cara, baja la cobertura de controles del adulto mayor: Tortel (318 $/kWh) registra 68,4%, mientras Coyhaique (287,8 $/kWh) sube a 80,8%.",
+      "notable_commune": "Caso atípico: Lago Verde registra –4,2 % por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 80.8,
-          "expectedY": 79.19,
-          "diffY": 1.61,
-          "zResid": 1.52,
-          "note": "Coyhaique registra 80,8 %, 1,6 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "expectedY": 78.19,
+          "diffY": 2.61,
+          "zResid": 1.36,
+          "note": "Coyhaique registra 80,8 %, 2,6 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Lago Verde": {
           "actualY": 71.8,
-          "expectedY": 71.17,
-          "diffY": 0.63,
-          "zResid": 0.6,
-          "note": "Lago Verde registra 71,8 %, 0,6 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "expectedY": 75.96,
+          "diffY": -4.16,
+          "zResid": -2.17,
+          "note": "Lago Verde registra 71,8 %, 4,2 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Aysén": {
           "actualY": 78.4,
-          "expectedY": 79.66,
-          "diffY": -1.26,
-          "zResid": -1.19,
-          "note": "Aysén registra 78,4 %, 1,3 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
+          "expectedY": 78.19,
+          "diffY": 0.21,
+          "zResid": 0.11,
+          "note": "Aysén (78,4 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Cisnes": {
           "actualY": 76.5,
-          "expectedY": 76.59,
-          "diffY": -0.09,
-          "zResid": -0.09,
+          "expectedY": 76.53,
+          "diffY": -0.03,
+          "zResid": -0.02,
           "note": "Cisnes (76,5 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Guaitecas": {
           "actualY": 70.6,
-          "expectedY": 69.52,
-          "diffY": 1.08,
-          "zResid": 1.02,
+          "expectedY": 69.48,
+          "diffY": 1.12,
+          "zResid": 0.58,
           "note": "Guaitecas registra 70,6 %, 1,1 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Chile Chico": {
           "actualY": 79.4,
-          "expectedY": 78.24,
-          "diffY": 1.16,
-          "zResid": 1.09,
-          "note": "Chile Chico registra 79,4 %, 1,2 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
+          "expectedY": 77.58,
+          "diffY": 1.82,
+          "zResid": 0.95,
+          "note": "Chile Chico registra 79,4 %, 1,8 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Río Ibáñez": {
           "actualY": 75.9,
-          "expectedY": 77.53,
-          "diffY": -1.63,
-          "zResid": -1.54,
-          "note": "Río Ibáñez registra 75,9 %, 1,6 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
+          "expectedY": 77.58,
+          "diffY": -1.68,
+          "zResid": -0.87,
+          "note": "Río Ibáñez registra 75,9 %, 1,7 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Cochrane": {
           "actualY": 77.8,
-          "expectedY": 77.77,
-          "diffY": 0.03,
-          "zResid": 0.03,
+          "expectedY": 76.96,
+          "diffY": 0.84,
+          "zResid": 0.44,
           "note": "Cochrane (77,8 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
           "actualY": 69.1,
-          "expectedY": 70.22,
-          "diffY": -1.12,
-          "zResid": -1.06,
-          "note": "O'Higgins registra 69,1 %, 1,1 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
+          "expectedY": 70.92,
+          "diffY": -1.82,
+          "zResid": -0.95,
+          "note": "O'Higgins registra 69,1 %, 1,8 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Tortel": {
           "actualY": 68.4,
-          "expectedY": 68.81,
-          "diffY": -0.41,
-          "zResid": -0.39,
-          "note": "Tortel (68,4 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 67.32,
+          "diffY": 1.08,
+          "zResid": 0.56,
+          "note": "Tortel registra 68,4 %, 1,1 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,88",
+      "metrics_line": "R² 80% · r = –0,89 · Sin Coyhaique: –0,90 · Control pob.: –0,80",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 94,
-        "pearsonR": -0.969,
-        "spearmanRho": -0.939,
-        "kendallTau": -0.822,
-        "partialCorrPop": -0.88,
-        "rWithoutCoyhaique": -0.972,
-        "firstDiffCorrDelta": -0.88,
-        "pValueFdr": 1e-05,
-        "veredictoSimple": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,88"
+        "fuerzaExplicativaPct": 80,
+        "pearsonR": -0.894,
+        "spearmanRho": -0.909,
+        "kendallTau": -0.796,
+        "partialCorrPop": -0.795,
+        "rWithoutCoyhaique": -0.896,
+        "firstDiffCorrDelta": -0.795,
+        "pValueFdr": 0.000572,
+        "veredictoSimple": "R² 80% · r = –0,89 · Sin Coyhaique: –0,90 · Control pob.: –0,80"
       }
     },
     {
@@ -343,14 +343,14 @@
       ],
       "dataX": [
         68.4,
-        0.8,
+        0.0,
         54.2,
         24.8,
         2.4,
         36.5,
         21.4,
         39.2,
-        1.5,
+        0.0,
         2.1
       ],
       "dataY": [
@@ -366,98 +366,98 @@
         21.0
       ],
       "regressionLine": {
-        "slopeBeta1": 0.58235,
-        "interceptBeta0": 20.9356,
-        "rSquaredPct": 97.9,
+        "slopeBeta1": 0.57698,
+        "interceptBeta0": 21.2032,
+        "rSquaredPct": 98.2,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "Con mayor fibra óptica al hogar, las pymes locales captan más compras públicas: Coyhaique (68,4% de fibra) retiene 58,4% del gasto en la comuna, versus 22,1% en Lago Verde (0,8%).",
-      "plainExplanation": "Con mayor fibra óptica al hogar, las pymes locales captan más compras públicas: Coyhaique (68,4% de fibra) retiene 58,4% del gasto en la comuna, versus 22,1% en Lago Verde (0,8%).",
-      "notable_commune": "Caso atípico: O'Higgins registra –3,4 % por debajo de lo esperado para su nivel en el eje X.",
+      "reading": "Con mayor fibra óptica al hogar, las pymes locales captan más compras públicas: Coyhaique (68,4% de fibra) retiene 58,4% del gasto en la comuna, versus 22,1% en Lago Verde (0,0%).",
+      "plainExplanation": "Con mayor fibra óptica al hogar, las pymes locales captan más compras públicas: Coyhaique (68,4% de fibra) retiene 58,4% del gasto en la comuna, versus 22,1% en Lago Verde (0,0%).",
+      "notable_commune": "Caso atípico: O'Higgins registra –2,8 % por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 58.4,
-          "expectedY": 60.77,
-          "diffY": -2.37,
-          "zResid": -1.21,
-          "note": "Coyhaique registra 58,4 %, 2,4 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
+          "expectedY": 60.67,
+          "diffY": -2.27,
+          "zResid": -1.24,
+          "note": "Coyhaique registra 58,4 %, 2,3 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Lago Verde": {
           "actualY": 22.1,
-          "expectedY": 21.4,
-          "diffY": 0.7,
-          "zResid": 0.36,
-          "note": "Lago Verde (22,1 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 21.2,
+          "diffY": 0.9,
+          "zResid": 0.49,
+          "note": "Lago Verde registra 22,1 %, 0,9 % por encima de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Aysén": {
           "actualY": 54.6,
-          "expectedY": 52.5,
-          "diffY": 2.1,
-          "zResid": 1.08,
+          "expectedY": 52.48,
+          "diffY": 2.12,
+          "zResid": 1.16,
           "note": "Aysén registra 54,6 %, 2,1 % por encima de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Cisnes": {
           "actualY": 38.2,
-          "expectedY": 35.38,
-          "diffY": 2.82,
-          "zResid": 1.45,
-          "note": "Cisnes registra 38,2 %, 2,8 % por encima de lo esperado según su nivel de cobertura de fibra óptica."
+          "expectedY": 35.51,
+          "diffY": 2.69,
+          "zResid": 1.47,
+          "note": "Cisnes registra 38,2 %, 2,7 % por encima de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Guaitecas": {
           "actualY": 24.5,
-          "expectedY": 22.33,
-          "diffY": 2.17,
-          "zResid": 1.11,
-          "note": "Guaitecas registra 24,5 %, 2,2 % por encima de lo esperado según su nivel de cobertura de fibra óptica."
+          "expectedY": 22.59,
+          "diffY": 1.91,
+          "zResid": 1.05,
+          "note": "Guaitecas registra 24,5 %, 1,9 % por encima de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Chile Chico": {
           "actualY": 41.2,
-          "expectedY": 42.19,
-          "diffY": -0.99,
-          "zResid": -0.51,
-          "note": "Chile Chico registra 41,2 %, 1,0 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
+          "expectedY": 42.26,
+          "diffY": -1.06,
+          "zResid": -0.58,
+          "note": "Chile Chico registra 41,2 %, 1,1 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Río Ibáñez": {
           "actualY": 32.8,
-          "expectedY": 33.4,
-          "diffY": -0.6,
-          "zResid": -0.31,
+          "expectedY": 33.55,
+          "diffY": -0.75,
+          "zResid": -0.41,
           "note": "Río Ibáñez (32,8 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Cochrane": {
           "actualY": 44.5,
-          "expectedY": 43.76,
-          "diffY": 0.74,
-          "zResid": 0.38,
+          "expectedY": 43.82,
+          "diffY": 0.68,
+          "zResid": 0.37,
           "note": "Cochrane (44,5 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
           "actualY": 18.4,
-          "expectedY": 21.81,
-          "diffY": -3.41,
-          "zResid": -1.75,
-          "note": "O'Higgins registra 18,4 %, 3,4 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
+          "expectedY": 21.2,
+          "diffY": -2.8,
+          "zResid": -1.53,
+          "note": "O'Higgins registra 18,4 %, 2,8 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
         },
         "Tortel": {
           "actualY": 21.0,
-          "expectedY": 22.16,
-          "diffY": -1.16,
-          "zResid": -0.59,
-          "note": "Tortel registra 21,0 %, 1,2 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
+          "expectedY": 22.41,
+          "diffY": -1.41,
+          "zResid": -0.77,
+          "note": "Tortel registra 21,0 %, 1,4 % por debajo de lo esperado según su nivel de cobertura de fibra óptica."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 98% · r = +0,99 · Sin Coyhaique: +0,99 · Control pob.: +0,86",
+      "metrics_line": "R² 98% · r = +0,99 · Sin Coyhaique: +0,99 · Control pob.: +0,88",
       "statProofBadges": {
         "fuerzaExplicativaPct": 98,
-        "pearsonR": 0.99,
-        "spearmanRho": 0.964,
-        "kendallTau": 0.911,
-        "partialCorrPop": 0.864,
-        "rWithoutCoyhaique": 0.989,
-        "firstDiffCorrDelta": 0.864,
+        "pearsonR": 0.991,
+        "spearmanRho": 0.979,
+        "kendallTau": 0.944,
+        "partialCorrPop": 0.88,
+        "rWithoutCoyhaique": 0.99,
+        "firstDiffCorrDelta": 0.88,
         "pValueFdr": 0.0,
-        "veredictoSimple": "R² 98% · r = +0,99 · Sin Coyhaique: +0,99 · Control pob.: +0,86"
+        "veredictoSimple": "R² 98% · r = +0,99 · Sin Coyhaique: +0,99 · Control pob.: +0,88"
       }
     },
     {
@@ -602,7 +602,7 @@
         "partialCorrPop": -0.904,
         "rWithoutCoyhaique": -0.968,
         "firstDiffCorrDelta": -0.904,
-        "pValueFdr": 1e-05,
+        "pValueFdr": 9e-06,
         "veredictoSimple": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,90"
       }
     },
@@ -748,7 +748,7 @@
         "partialCorrPop": -0.9,
         "rWithoutCoyhaique": -0.975,
         "firstDiffCorrDelta": -0.9,
-        "pValueFdr": 5e-06,
+        "pValueFdr": 4e-06,
         "veredictoSimple": "R² 96% · r = –0,98 · Sin Coyhaique: –0,97 · Control pob.: –0,90"
       }
     },
@@ -1040,7 +1040,7 @@
         "partialCorrPop": 0.802,
         "rWithoutCoyhaique": 0.95,
         "firstDiffCorrDelta": 0.802,
-        "pValueFdr": 3.4e-05,
+        "pValueFdr": 3.7e-05,
         "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,95 · Control pob.: +0,80"
       }
     },
@@ -1186,7 +1186,7 @@
         "partialCorrPop": 0.691,
         "rWithoutCoyhaique": 0.808,
         "firstDiffCorrDelta": 0.691,
-        "pValueFdr": 0.004506,
+        "pValueFdr": 0.004693,
         "veredictoSimple": "R² 66% · r = +0,81 · Sin Coyhaique: +0,81 · Control pob.: +0,69"
       }
     },
@@ -1218,16 +1218,16 @@
         "Tortel"
       ],
       "dataX": [
-        1362.0,
-        1520.0,
-        1375.0,
-        1440.0,
-        1560.0,
-        1430.0,
-        1420.0,
-        1410.0,
-        1620.0,
-        1580.0
+        1652.0,
+        1765.0,
+        1651.0,
+        1695.0,
+        1785.0,
+        1710.0,
+        1705.0,
+        1714.0,
+        1812.0,
+        1790.0
       ],
       "dataY": [
         45.0,
@@ -1242,98 +1242,98 @@
         18.0
       ],
       "regressionLine": {
-        "slopeBeta1": -0.09825,
-        "interceptBeta0": 176.0905,
-        "rSquaredPct": 94.5,
+        "slopeBeta1": -0.15706,
+        "interceptBeta0": 302.8885,
+        "rSquaredPct": 95.2,
         "directionLabel": "Relación Inversa (–)"
       },
-      "reading": "El sobrecosto logístico encarece las obras sobre los valores referenciales: en O'Higgins (gasolina a 1.620 $/L) solo 20,0% obtiene RS, versus 45,0% en Coyhaique (1.362 $/L).",
-      "plainExplanation": "El sobrecosto logístico encarece las obras sobre los valores referenciales: en O'Higgins (gasolina a 1.620 $/L) solo 20,0% obtiene RS, versus 45,0% en Coyhaique (1.362 $/L).",
-      "notable_commune": "Caso atípico: O'Higgins registra +3,1 % por encima de lo esperado para su nivel en el eje X.",
+      "reading": "El sobrecosto logístico encarece las obras sobre los valores referenciales: en O'Higgins (gasolina a 1.812 $/L) solo 20,0% obtiene RS, versus 42,0% en Aysén (1.651 $/L).",
+      "plainExplanation": "El sobrecosto logístico encarece las obras sobre los valores referenciales: en O'Higgins (gasolina a 1.812 $/L) solo 20,0% obtiene RS, versus 42,0% en Aysén (1.651 $/L).",
+      "notable_commune": "Caso atípico: Tortel registra –3,7 % por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 45.0,
-          "expectedY": 42.28,
-          "diffY": 2.72,
-          "zResid": 1.33,
-          "note": "Coyhaique registra 45,0 %, 2,7 % por encima de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 43.42,
+          "diffY": 1.58,
+          "zResid": 0.83,
+          "note": "Coyhaique registra 45,0 %, 1,6 % por encima de lo esperado según su nivel de precio de la gasolina."
         },
         "Lago Verde": {
           "actualY": 28.0,
-          "expectedY": 26.75,
-          "diffY": 1.25,
-          "zResid": 0.61,
-          "note": "Lago Verde registra 28,0 %, 1,2 % por encima de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 25.67,
+          "diffY": 2.33,
+          "zResid": 1.22,
+          "note": "Lago Verde registra 28,0 %, 2,3 % por encima de lo esperado según su nivel de precio de la gasolina."
         },
         "Aysén": {
           "actualY": 42.0,
-          "expectedY": 41.0,
-          "diffY": 1.0,
-          "zResid": 0.49,
-          "note": "Aysén registra 42,0 %, 1,0 % por encima de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 43.58,
+          "diffY": -1.58,
+          "zResid": -0.83,
+          "note": "Aysén registra 42,0 %, 1,6 % por debajo de lo esperado según su nivel de precio de la gasolina."
         },
         "Cisnes": {
           "actualY": 35.0,
-          "expectedY": 34.61,
-          "diffY": 0.39,
-          "zResid": 0.19,
-          "note": "Cisnes (35,0 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 36.67,
+          "diffY": -1.67,
+          "zResid": -0.88,
+          "note": "Cisnes registra 35,0 %, 1,7 % por debajo de lo esperado según su nivel de precio de la gasolina."
         },
         "Guaitecas": {
           "actualY": 22.0,
-          "expectedY": 22.82,
-          "diffY": -0.82,
-          "zResid": -0.4,
+          "expectedY": 22.53,
+          "diffY": -0.53,
+          "zResid": -0.28,
           "note": "Guaitecas (22,0 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Chile Chico": {
           "actualY": 36.0,
-          "expectedY": 35.6,
-          "diffY": 0.4,
-          "zResid": 0.2,
-          "note": "Chile Chico (36,0 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 34.31,
+          "diffY": 1.69,
+          "zResid": 0.89,
+          "note": "Chile Chico registra 36,0 %, 1,7 % por encima de lo esperado según su nivel de precio de la gasolina."
         },
         "Río Ibáñez": {
           "actualY": 34.0,
-          "expectedY": 36.58,
-          "diffY": -2.58,
-          "zResid": -1.26,
-          "note": "Río Ibáñez registra 34,0 %, 2,6 % por debajo de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 35.1,
+          "diffY": -1.1,
+          "zResid": -0.58,
+          "note": "Río Ibáñez registra 34,0 %, 1,1 % por debajo de lo esperado según su nivel de precio de la gasolina."
         },
         "Cochrane": {
           "actualY": 35.0,
-          "expectedY": 37.56,
-          "diffY": -2.56,
-          "zResid": -1.25,
-          "note": "Cochrane registra 35,0 %, 2,6 % por debajo de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 33.68,
+          "diffY": 1.32,
+          "zResid": 0.69,
+          "note": "Cochrane registra 35,0 %, 1,3 % por encima de lo esperado según su nivel de precio de la gasolina."
         },
         "O'Higgins": {
           "actualY": 20.0,
-          "expectedY": 16.93,
-          "diffY": 3.07,
-          "zResid": 1.5,
-          "note": "O'Higgins registra 20,0 %, 3,1 % por encima de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 18.29,
+          "diffY": 1.71,
+          "zResid": 0.9,
+          "note": "O'Higgins registra 20,0 %, 1,7 % por encima de lo esperado según su nivel de precio de la gasolina."
         },
         "Tortel": {
           "actualY": 18.0,
-          "expectedY": 20.86,
-          "diffY": -2.86,
-          "zResid": -1.4,
-          "note": "Tortel registra 18,0 %, 2,9 % por debajo de lo esperado según su nivel de precio de la gasolina."
+          "expectedY": 21.75,
+          "diffY": -3.75,
+          "zResid": -1.97,
+          "note": "Tortel registra 18,0 %, 3,7 % por debajo de lo esperado según su nivel de precio de la gasolina."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,88",
+      "metrics_line": "R² 95% · r = –0,98 · Sin Coyhaique: –0,97 · Control pob.: –0,82",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 94,
-        "pearsonR": -0.972,
-        "spearmanRho": -0.912,
-        "kendallTau": -0.809,
-        "partialCorrPop": -0.882,
-        "rWithoutCoyhaique": -0.971,
-        "firstDiffCorrDelta": -0.882,
-        "pValueFdr": 1e-05,
-        "veredictoSimple": "R² 94% · r = –0,97 · Sin Coyhaique: –0,97 · Control pob.: –0,88"
+        "fuerzaExplicativaPct": 95,
+        "pearsonR": -0.976,
+        "spearmanRho": -0.9,
+        "kendallTau": -0.764,
+        "partialCorrPop": -0.82,
+        "rWithoutCoyhaique": -0.97,
+        "firstDiffCorrDelta": -0.82,
+        "pValueFdr": 5e-06,
+        "veredictoSimple": "R² 95% · r = –0,98 · Sin Coyhaique: –0,97 · Control pob.: –0,82"
       }
     },
     {
@@ -1341,15 +1341,15 @@
       "order": 10,
       "category": "cruce_comunal_oculto",
       "dim": "comuna",
-      "title": "Precio de Gasolina 93 vs. Cobertura Preventiva EMPAM",
-      "headline": "Precio de Gasolina 93 vs. Cobertura Preventiva EMPAM",
+      "title": "Tarifa Eléctrica Residencial BT1 vs. Aprobación Técnica de Proyectos RS",
+      "headline": "Tarifa Eléctrica Residencial BT1 vs. Aprobación Técnica de Proyectos RS",
       "hubX": "III. Energía",
-      "hubY": "VIII. Salud",
-      "varX": "gasolina_93_clp",
-      "varY": "cobertura_empam_pct",
-      "labelX": "Precio Minorista de Gasolina 93 Octanos",
-      "labelY": "Cobertura de Control Preventivo del Adulto Mayor (EMPAM)",
-      "unitX": "$/L",
+      "hubY": "IV. Gobernanza",
+      "varX": "tarifa_bt1_clp",
+      "varY": "tasa_aprobacion_rs_sni_pct",
+      "labelX": "Tarifa Eléctrica Residencial BT1",
+      "labelY": "Tasa de Aprobación Técnica RS de Proyectos (SNI)",
+      "unitX": "$/kWh",
       "unitY": "%",
       "labels": [
         "Coyhaique",
@@ -1364,122 +1364,122 @@
         "Tortel"
       ],
       "dataX": [
-        1362.0,
-        1520.0,
-        1375.0,
-        1440.0,
-        1560.0,
-        1430.0,
-        1420.0,
-        1410.0,
-        1620.0,
-        1580.0
+        287.8,
+        294.0,
+        287.8,
+        292.4,
+        312.0,
+        289.5,
+        289.5,
+        291.2,
+        308.0,
+        318.0
       ],
       "dataY": [
-        80.8,
-        71.8,
-        78.4,
-        76.5,
-        70.6,
-        79.4,
-        75.9,
-        77.8,
-        69.1,
-        68.4
+        45.0,
+        28.0,
+        42.0,
+        35.0,
+        22.0,
+        36.0,
+        34.0,
+        35.0,
+        20.0,
+        18.0
       ],
       "regressionLine": {
-        "slopeBeta1": -0.04765,
-        "interceptBeta0": 144.9998,
-        "rSquaredPct": 92.3,
+        "slopeBeta1": -0.752,
+        "interceptBeta0": 254.8598,
+        "rSquaredPct": 84.2,
         "directionLabel": "Relación Inversa (–)"
       },
-      "reading": "El combustible más caro encarece rondas rurales y traslados médicos: O'Higgins (1.620 $/L) cubre al 69,1% de sus adultos mayores, diez puntos bajo Coyhaique (80,8%).",
-      "plainExplanation": "El combustible más caro encarece rondas rurales y traslados médicos: O'Higgins (1.620 $/L) cubre al 69,1% de sus adultos mayores, diez puntos bajo Coyhaique (80,8%).",
-      "notable_commune": "Caso atípico: Chile Chico registra +2,5 % por encima de lo esperado para su nivel en el eje X.",
+      "reading": "Las comunas con Sistemas Aislados y mayor tarifa BT1 enfrentan mayores brechas para lograr aprobación RS en el SNI: Tortel (318 $/kWh) alcanza 18,0% RS, frente a 45,0% en Coyhaique (287,8 $/kWh).",
+      "plainExplanation": "Las comunas con Sistemas Aislados y mayor tarifa BT1 enfrentan mayores brechas para lograr aprobación RS en el SNI: Tortel (318 $/kWh) alcanza 18,0% RS, frente a 45,0% en Coyhaique (287,8 $/kWh).",
+      "notable_commune": "Caso atípico: Coyhaique registra +6,6 % por encima de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
-          "actualY": 80.8,
-          "expectedY": 80.1,
-          "diffY": 0.7,
-          "zResid": 0.59,
-          "note": "Coyhaique registra 80,8 %, 0,7 % por encima de lo esperado según su nivel de precio de combustible."
+          "actualY": 45.0,
+          "expectedY": 38.43,
+          "diffY": 6.57,
+          "zResid": 1.9,
+          "note": "Coyhaique registra 45,0 %, 6,6 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Lago Verde": {
-          "actualY": 71.8,
-          "expectedY": 72.57,
-          "diffY": -0.77,
-          "zResid": -0.65,
-          "note": "Lago Verde registra 71,8 %, 0,8 % por debajo de lo esperado según su nivel de precio de combustible."
+          "actualY": 28.0,
+          "expectedY": 33.77,
+          "diffY": -5.77,
+          "zResid": -1.67,
+          "note": "Lago Verde registra 28,0 %, 5,8 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Aysén": {
-          "actualY": 78.4,
-          "expectedY": 79.48,
-          "diffY": -1.08,
-          "zResid": -0.91,
-          "note": "Aysén registra 78,4 %, 1,1 % por debajo de lo esperado según su nivel de precio de combustible."
+          "actualY": 42.0,
+          "expectedY": 38.43,
+          "diffY": 3.57,
+          "zResid": 1.03,
+          "note": "Aysén registra 42,0 %, 3,6 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Cisnes": {
-          "actualY": 76.5,
-          "expectedY": 76.38,
-          "diffY": 0.12,
-          "zResid": 0.1,
-          "note": "Cisnes (76,5 %) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 35.0,
+          "expectedY": 34.97,
+          "diffY": 0.03,
+          "zResid": 0.01,
+          "note": "Cisnes (35,0 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Guaitecas": {
-          "actualY": 70.6,
-          "expectedY": 70.66,
-          "diffY": -0.06,
-          "zResid": -0.05,
-          "note": "Guaitecas (70,6 %) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 22.0,
+          "expectedY": 20.24,
+          "diffY": 1.76,
+          "zResid": 0.51,
+          "note": "Guaitecas registra 22,0 %, 1,8 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Chile Chico": {
-          "actualY": 79.4,
-          "expectedY": 76.86,
-          "diffY": 2.54,
-          "zResid": 2.14,
-          "note": "Chile Chico registra 79,4 %, 2,5 % por encima de lo esperado según su nivel de precio de combustible."
+          "actualY": 36.0,
+          "expectedY": 37.16,
+          "diffY": -1.16,
+          "zResid": -0.33,
+          "note": "Chile Chico (36,0 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Río Ibáñez": {
-          "actualY": 75.9,
-          "expectedY": 77.33,
-          "diffY": -1.43,
-          "zResid": -1.2,
-          "note": "Río Ibáñez registra 75,9 %, 1,4 % por debajo de lo esperado según su nivel de precio de combustible."
+          "actualY": 34.0,
+          "expectedY": 37.16,
+          "diffY": -3.16,
+          "zResid": -0.91,
+          "note": "Río Ibáñez registra 34,0 %, 3,2 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Cochrane": {
-          "actualY": 77.8,
-          "expectedY": 77.81,
-          "diffY": -0.01,
-          "zResid": -0.01,
-          "note": "Cochrane (77,8 %) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 35.0,
+          "expectedY": 35.88,
+          "diffY": -0.88,
+          "zResid": -0.25,
+          "note": "Cochrane (35,0 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
-          "actualY": 69.1,
-          "expectedY": 67.8,
-          "diffY": 1.3,
-          "zResid": 1.09,
-          "note": "O'Higgins registra 69,1 %, 1,3 % por encima de lo esperado según su nivel de precio de combustible."
+          "actualY": 20.0,
+          "expectedY": 23.24,
+          "diffY": -3.24,
+          "zResid": -0.94,
+          "note": "O'Higgins registra 20,0 %, 3,2 % por debajo de lo esperado según su nivel de tarifa eléctrica BT1."
         },
         "Tortel": {
-          "actualY": 68.4,
-          "expectedY": 69.71,
-          "diffY": -1.31,
-          "zResid": -1.1,
-          "note": "Tortel registra 68,4 %, 1,3 % por debajo de lo esperado según su nivel de precio de combustible."
+          "actualY": 18.0,
+          "expectedY": 15.72,
+          "diffY": 2.28,
+          "zResid": 0.66,
+          "note": "Tortel registra 18,0 %, 2,3 % por encima de lo esperado según su nivel de tarifa eléctrica BT1."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 92% · r = –0,96 · Sin Coyhaique: –0,95 · Control pob.: –0,82",
+      "metrics_line": "R² 84% · r = –0,92 · Sin Coyhaique: –0,94 · Control pob.: –0,97",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 92,
-        "pearsonR": -0.961,
-        "spearmanRho": -0.891,
-        "kendallTau": -0.778,
-        "partialCorrPop": -0.819,
-        "rWithoutCoyhaique": -0.952,
-        "firstDiffCorrDelta": -0.819,
-        "pValueFdr": 1.7e-05,
-        "veredictoSimple": "R² 92% · r = –0,96 · Sin Coyhaique: –0,95 · Control pob.: –0,82"
+        "fuerzaExplicativaPct": 84,
+        "pearsonR": -0.918,
+        "spearmanRho": -0.93,
+        "kendallTau": -0.828,
+        "partialCorrPop": -0.97,
+        "rWithoutCoyhaique": -0.937,
+        "firstDiffCorrDelta": -0.97,
+        "pValueFdr": 0.000239,
+        "veredictoSimple": "R² 84% · r = –0,92 · Sin Coyhaique: –0,94 · Control pob.: –0,97"
       }
     },
     {
@@ -1624,7 +1624,7 @@
         "partialCorrPop": 0.726,
         "rWithoutCoyhaique": 0.895,
         "firstDiffCorrDelta": 0.726,
-        "pValueFdr": 4.5e-05,
+        "pValueFdr": 4.8e-05,
         "veredictoSimple": "R² 90% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,73"
       }
     },
@@ -1657,15 +1657,15 @@
       ],
       "dataX": [
         0.0,
-        302.0,
+        246.0,
+        192.0,
+        245.0,
+        328.0,
         0.0,
-        145.0,
-        375.0,
         0.0,
         0.0,
-        0.0,
-        358.0,
-        412.0
+        312.0,
+        362.0
       ],
       "dataY": [
         45.0,
@@ -1680,98 +1680,98 @@
         18.0
       ],
       "regressionLine": {
-        "slopeBeta1": -0.04639,
-        "interceptBeta0": 38.8845,
-        "rSquaredPct": 84.1,
+        "slopeBeta1": -0.04573,
+        "interceptBeta0": 39.2056,
+        "rSquaredPct": 57.6,
         "directionLabel": "Relación Inversa (–)"
       },
-      "reading": "Los municipios con mayor subsidio diésel también enfrentan más trabas técnicas en inversión: Tortel recibe 412 $/kWh y aprueba 18,0% RS, ante 45,0% en Coyhaique (0 $/kWh).",
-      "plainExplanation": "Los municipios con mayor subsidio diésel también enfrentan más trabas técnicas en inversión: Tortel recibe 412 $/kWh y aprueba 18,0% RS, ante 45,0% en Coyhaique (0 $/kWh).",
-      "notable_commune": "Caso atípico: Coyhaique registra +6,1 % por encima de lo esperado para su nivel en el eje X.",
+      "reading": "Los municipios con mayor subsidio diésel también enfrentan más trabas técnicas en inversión: Tortel recibe 362 $/kWh y aprueba 18,0% RS, ante 45,0% en Coyhaique (0 $/kWh).",
+      "plainExplanation": "Los municipios con mayor subsidio diésel también enfrentan más trabas técnicas en inversión: Tortel recibe 362 $/kWh y aprueba 18,0% RS, ante 45,0% en Coyhaique (0 $/kWh).",
+      "notable_commune": "Caso atípico: Aysén registra +11,6 % por encima de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 45.0,
-          "expectedY": 38.88,
-          "diffY": 6.12,
-          "zResid": 1.76,
-          "note": "Coyhaique registra 45,0 %, 6,1 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 39.21,
+          "diffY": 5.79,
+          "zResid": 1.02,
+          "note": "Coyhaique registra 45,0 %, 5,8 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "Lago Verde": {
           "actualY": 28.0,
-          "expectedY": 24.88,
-          "diffY": 3.12,
-          "zResid": 0.9,
-          "note": "Lago Verde registra 28,0 %, 3,1 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 27.96,
+          "diffY": 0.04,
+          "zResid": 0.01,
+          "note": "Lago Verde (28,0 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Aysén": {
           "actualY": 42.0,
-          "expectedY": 38.88,
-          "diffY": 3.12,
-          "zResid": 0.9,
-          "note": "Aysén registra 42,0 %, 3,1 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 30.43,
+          "diffY": 11.57,
+          "zResid": 2.04,
+          "note": "Aysén registra 42,0 %, 11,6 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "Cisnes": {
           "actualY": 35.0,
-          "expectedY": 32.16,
-          "diffY": 2.84,
-          "zResid": 0.82,
-          "note": "Cisnes registra 35,0 %, 2,8 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 28.0,
+          "diffY": 7.0,
+          "zResid": 1.23,
+          "note": "Cisnes registra 35,0 %, 7,0 % por encima de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "Guaitecas": {
           "actualY": 22.0,
-          "expectedY": 21.49,
-          "diffY": 0.51,
-          "zResid": 0.15,
+          "expectedY": 24.21,
+          "diffY": -2.21,
+          "zResid": -0.39,
           "note": "Guaitecas (22,0 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Chile Chico": {
           "actualY": 36.0,
-          "expectedY": 38.88,
-          "diffY": -2.88,
-          "zResid": -0.83,
-          "note": "Chile Chico registra 36,0 %, 2,9 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 39.21,
+          "diffY": -3.21,
+          "zResid": -0.56,
+          "note": "Chile Chico registra 36,0 %, 3,2 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "Río Ibáñez": {
           "actualY": 34.0,
-          "expectedY": 38.88,
-          "diffY": -4.88,
-          "zResid": -1.41,
-          "note": "Río Ibáñez registra 34,0 %, 4,9 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 39.21,
+          "diffY": -5.21,
+          "zResid": -0.92,
+          "note": "Río Ibáñez registra 34,0 %, 5,2 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "Cochrane": {
           "actualY": 35.0,
-          "expectedY": 38.88,
-          "diffY": -3.88,
-          "zResid": -1.12,
-          "note": "Cochrane registra 35,0 %, 3,9 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 39.21,
+          "diffY": -4.21,
+          "zResid": -0.74,
+          "note": "Cochrane registra 35,0 %, 4,2 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "O'Higgins": {
           "actualY": 20.0,
-          "expectedY": 22.28,
-          "diffY": -2.28,
-          "zResid": -0.66,
-          "note": "O'Higgins registra 20,0 %, 2,3 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 24.94,
+          "diffY": -4.94,
+          "zResid": -0.87,
+          "note": "O'Higgins registra 20,0 %, 4,9 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
         },
         "Tortel": {
           "actualY": 18.0,
-          "expectedY": 19.77,
-          "diffY": -1.77,
-          "zResid": -0.51,
-          "note": "Tortel registra 18,0 %, 1,8 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
+          "expectedY": 22.65,
+          "diffY": -4.65,
+          "zResid": -0.82,
+          "note": "Tortel registra 18,0 %, 4,7 % por debajo de lo esperado según su nivel de subsidio fiscal diésel."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 84% · r = –0,92 · Sin Coyhaique: –0,93 · Control pob.: –0,82",
+      "metrics_line": "R² 58% · r = –0,76 · Sin Coyhaique: –0,71 · Control pob.: –0,68",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 84,
-        "pearsonR": -0.917,
-        "spearmanRho": -0.869,
-        "kendallTau": -0.764,
-        "partialCorrPop": -0.82,
-        "rWithoutCoyhaique": -0.93,
-        "firstDiffCorrDelta": -0.82,
-        "pValueFdr": 0.000222,
-        "veredictoSimple": "R² 84% · r = –0,92 · Sin Coyhaique: –0,93 · Control pob.: –0,82"
+        "fuerzaExplicativaPct": 58,
+        "pearsonR": -0.759,
+        "spearmanRho": -0.8,
+        "kendallTau": -0.676,
+        "partialCorrPop": -0.679,
+        "rWithoutCoyhaique": -0.708,
+        "firstDiffCorrDelta": -0.679,
+        "pValueFdr": 0.010916,
+        "veredictoSimple": "R² 58% · r = –0,76 · Sin Coyhaique: –0,71 · Control pob.: –0,68"
       }
     },
     {
@@ -2062,7 +2062,7 @@
         "partialCorrPop": 0.67,
         "rWithoutCoyhaique": 0.854,
         "firstDiffCorrDelta": 0.67,
-        "pValueFdr": 0.000695,
+        "pValueFdr": 0.000726,
         "veredictoSimple": "R² 78% · r = +0,89 · Sin Coyhaique: +0,85 · Control pob.: +0,67"
       }
     },
@@ -2094,16 +2094,16 @@
         "Tortel"
       ],
       "dataX": [
-        0.0,
+        1.1,
         67.5,
-        8.9,
-        33.0,
-        87.1,
-        27.9,
-        31.0,
-        28.7,
-        86.6,
-        79.2
+        5.8,
+        19.2,
+        77.6,
+        30.6,
+        22.7,
+        23.6,
+        86.4,
+        81.4
       ],
       "dataY": [
         80.8,
@@ -2118,98 +2118,98 @@
         68.4
       ],
       "regressionLine": {
-        "slopeBeta1": -0.13436,
-        "interceptBeta0": 80.9146,
-        "rSquaredPct": 92.6,
+        "slopeBeta1": -0.13025,
+        "interceptBeta0": 80.2871,
+        "rSquaredPct": 90.6,
         "directionLabel": "Relación Inversa (–)"
       },
-      "reading": "La fricción de viaje por ripio y navegación reduce el control preventivo de mayores: Guaitecas (87,1 puntos de aislamiento) cubre 70,6%, mientras Coyhaique (0,0 puntos) llega a 80,8%.",
-      "plainExplanation": "La fricción de viaje por ripio y navegación reduce el control preventivo de mayores: Guaitecas (87,1 puntos de aislamiento) cubre 70,6%, mientras Coyhaique (0,0 puntos) llega a 80,8%.",
-      "notable_commune": "Caso atípico: Chile Chico registra +2,2 % por encima de lo esperado para su nivel en el eje X.",
+      "reading": "La fricción de viaje por ripio y navegación reduce el control preventivo de mayores: O'Higgins (86,4 puntos de aislamiento) cubre 69,1%, mientras Coyhaique (1,1 puntos) llega a 80,8%.",
+      "plainExplanation": "La fricción de viaje por ripio y navegación reduce el control preventivo de mayores: O'Higgins (86,4 puntos de aislamiento) cubre 69,1%, mientras Coyhaique (1,1 puntos) llega a 80,8%.",
+      "notable_commune": "Caso atípico: Chile Chico registra +3,1 % por encima de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 80.8,
-          "expectedY": 80.91,
-          "diffY": -0.11,
-          "zResid": -0.1,
-          "note": "Coyhaique (80,8 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 80.14,
+          "diffY": 0.66,
+          "zResid": 0.5,
+          "note": "Coyhaique registra 80,8 %, 0,7 % por encima de lo esperado según su nivel de aislamiento multimodal."
         },
         "Lago Verde": {
           "actualY": 71.8,
-          "expectedY": 71.85,
-          "diffY": -0.05,
-          "zResid": -0.04,
+          "expectedY": 71.5,
+          "diffY": 0.3,
+          "zResid": 0.23,
           "note": "Lago Verde (71,8 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Aysén": {
           "actualY": 78.4,
-          "expectedY": 79.72,
-          "diffY": -1.32,
-          "zResid": -1.14,
-          "note": "Aysén registra 78,4 %, 1,3 % por debajo de lo esperado según su nivel de aislamiento multimodal."
+          "expectedY": 79.53,
+          "diffY": -1.13,
+          "zResid": -0.86,
+          "note": "Aysén registra 78,4 %, 1,1 % por debajo de lo esperado según su nivel de aislamiento multimodal."
         },
         "Cisnes": {
           "actualY": 76.5,
-          "expectedY": 76.48,
-          "diffY": 0.02,
-          "zResid": 0.02,
-          "note": "Cisnes (76,5 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 77.79,
+          "diffY": -1.29,
+          "zResid": -0.98,
+          "note": "Cisnes registra 76,5 %, 1,3 % por debajo de lo esperado según su nivel de aislamiento multimodal."
         },
         "Guaitecas": {
           "actualY": 70.6,
-          "expectedY": 69.21,
-          "diffY": 1.39,
-          "zResid": 1.19,
-          "note": "Guaitecas registra 70,6 %, 1,4 % por encima de lo esperado según su nivel de aislamiento multimodal."
+          "expectedY": 70.18,
+          "diffY": 0.42,
+          "zResid": 0.32,
+          "note": "Guaitecas (70,6 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Chile Chico": {
           "actualY": 79.4,
-          "expectedY": 77.17,
-          "diffY": 2.23,
-          "zResid": 1.92,
-          "note": "Chile Chico registra 79,4 %, 2,2 % por encima de lo esperado según su nivel de aislamiento multimodal."
+          "expectedY": 76.3,
+          "diffY": 3.1,
+          "zResid": 2.36,
+          "note": "Chile Chico registra 79,4 %, 3,1 % por encima de lo esperado según su nivel de aislamiento multimodal."
         },
         "Río Ibáñez": {
           "actualY": 75.9,
-          "expectedY": 76.75,
-          "diffY": -0.85,
-          "zResid": -0.73,
-          "note": "Río Ibáñez registra 75,9 %, 0,8 % por debajo de lo esperado según su nivel de aislamiento multimodal."
+          "expectedY": 77.33,
+          "diffY": -1.43,
+          "zResid": -1.09,
+          "note": "Río Ibáñez registra 75,9 %, 1,4 % por debajo de lo esperado según su nivel de aislamiento multimodal."
         },
         "Cochrane": {
           "actualY": 77.8,
-          "expectedY": 77.06,
-          "diffY": 0.74,
-          "zResid": 0.64,
-          "note": "Cochrane registra 77,8 %, 0,7 % por encima de lo esperado según su nivel de aislamiento multimodal."
+          "expectedY": 77.21,
+          "diffY": 0.59,
+          "zResid": 0.45,
+          "note": "Cochrane (77,8 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
           "actualY": 69.1,
-          "expectedY": 69.28,
-          "diffY": -0.18,
-          "zResid": -0.15,
+          "expectedY": 69.03,
+          "diffY": 0.07,
+          "zResid": 0.05,
           "note": "O'Higgins (69,1 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Tortel": {
           "actualY": 68.4,
-          "expectedY": 70.27,
-          "diffY": -1.87,
-          "zResid": -1.61,
-          "note": "Tortel registra 68,4 %, 1,9 % por debajo de lo esperado según su nivel de aislamiento multimodal."
+          "expectedY": 69.68,
+          "diffY": -1.28,
+          "zResid": -0.98,
+          "note": "Tortel registra 68,4 %, 1,3 % por debajo de lo esperado según su nivel de aislamiento multimodal."
         }
       },
       "methodologicalCaveat": "Nota metodológica: el Índice de Aislamiento Multimodal es un indicador sintético (25% SAIDI, 25% brecha de internet fijo, 25% tiempo de viaje a Coyhaique y 25% sobrecosto de combustible) cruzado aquí contra cobertura preventiva de salud externa.",
-      "metrics_line": "R² 93% · r = –0,96 · Sin Coyhaique: –0,95 · Control pob.: –0,81",
+      "metrics_line": "R² 91% · r = –0,95 · Sin Coyhaique: –0,94 · Control pob.: –0,76",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 93,
-        "pearsonR": -0.963,
-        "spearmanRho": -0.927,
-        "kendallTau": -0.778,
-        "partialCorrPop": -0.81,
-        "rWithoutCoyhaique": -0.952,
-        "firstDiffCorrDelta": -0.81,
-        "pValueFdr": 1.5e-05,
-        "veredictoSimple": "R² 93% · r = –0,96 · Sin Coyhaique: –0,95 · Control pob.: –0,81"
+        "fuerzaExplicativaPct": 91,
+        "pearsonR": -0.952,
+        "spearmanRho": -0.83,
+        "kendallTau": -0.689,
+        "partialCorrPop": -0.762,
+        "rWithoutCoyhaique": -0.94,
+        "firstDiffCorrDelta": -0.762,
+        "pValueFdr": 3.7e-05,
+        "veredictoSimple": "R² 91% · r = –0,95 · Sin Coyhaique: –0,94 · Control pob.: –0,76"
       }
     },
     {
@@ -2354,7 +2354,7 @@
         "partialCorrPop": 0.96,
         "rWithoutCoyhaique": 0.982,
         "firstDiffCorrDelta": 0.96,
-        "pValueFdr": 0.000367,
+        "pValueFdr": 0.000404,
         "veredictoSimple": "R² 82% · r = +0,91 · Sin Coyhaique: +0,98 · Control pob.: +0,96"
       }
     },
@@ -2500,7 +2500,7 @@
         "partialCorrPop": 0.933,
         "rWithoutCoyhaique": 0.926,
         "firstDiffCorrDelta": 0.933,
-        "pValueFdr": 0.001179,
+        "pValueFdr": 0.00123,
         "veredictoSimple": "R² 75% · r = +0,87 · Sin Coyhaique: +0,93 · Control pob.: +0,93"
       }
     },
@@ -2509,16 +2509,16 @@
       "order": 18,
       "category": "cruce_comunal_oculto",
       "dim": "comuna",
-      "title": "Capacidad Eléctrica Instalada vs. Inversión Aprobada SEIA",
-      "headline": "Capacidad Eléctrica Instalada vs. Inversión Aprobada SEIA",
+      "title": "Capacidad Eléctrica Instalada vs. Tejido Empresarial Formal (SII)",
+      "headline": "Capacidad Eléctrica Instalada vs. Tejido Empresarial Formal (SII)",
       "hubX": "III. Energía",
       "hubY": "V. Inversión",
       "varX": "potencia_mw",
-      "varY": "inversion_seia_mmusd",
+      "varY": "empresas_sii",
       "labelX": "Capacidad Eléctrica Instalada en el Subsistema",
-      "labelY": "Inversión Privada Aprobada en el SEIA",
+      "labelY": "Empresas Formales Vigentes en el SII",
       "unitX": "MW",
-      "unitY": "MM US$",
+      "unitY": "empresas",
       "labels": [
         "Coyhaique",
         "Lago Verde",
@@ -2532,122 +2532,122 @@
         "Tortel"
       ],
       "dataX": [
-        26.8,
+        33.95,
+        0.35,
+        18.48,
+        2.83,
+        1.45,
+        3.9,
         1.4,
-        42.5,
-        6.8,
-        2.8,
-        7.5,
-        2.4,
-        5.8,
-        1.4,
-        1.2
+        2.54,
+        1.25,
+        0.95
       ],
       "dataY": [
-        495.6,
-        31.4,
-        1320.0,
-        525.0,
-        245.0,
-        310.0,
-        142.0,
-        172.0,
-        48.0,
-        66.5
+        7620.0,
+        118.0,
+        2840.0,
+        895.0,
+        242.0,
+        648.0,
+        418.0,
+        492.0,
+        96.0,
+        84.0
       ],
       "regressionLine": {
-        "slopeBeta1": 26.00892,
-        "interceptBeta0": 79.1021,
-        "rSquaredPct": 85.5,
+        "slopeBeta1": 211.44335,
+        "interceptBeta0": -73.4849,
+        "rSquaredPct": 97.1,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "Disponer de potencia firme habilita plantas de proceso e infraestructura: Aysén suma 42,5 MW y 1.320 MM US$ aprobados en el SEIA, ante 1,2 MW y 66,5 MM US$ en Tortel.",
-      "plainExplanation": "Disponer de potencia firme habilita plantas de proceso e infraestructura: Aysén suma 42,5 MW y 1.320 MM US$ aprobados en el SEIA, ante 1,2 MW y 66,5 MM US$ en Tortel.",
-      "notable_commune": "Caso atípico: Coyhaique registra –280,5 MM US$ por debajo de lo esperado para su nivel en el eje X.",
+      "reading": "El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: Coyhaique reúne 34,0 MW y 7.620 empresas, ante 0,3 MW y 118 empresas en Lago Verde.",
+      "plainExplanation": "El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: Coyhaique reúne 34,0 MW y 7.620 empresas, ante 0,3 MW y 118 empresas en Lago Verde.",
+      "notable_commune": "Caso atípico: Aysén registra –994 empresas por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
-          "actualY": 495.6,
-          "expectedY": 776.14,
-          "diffY": -280.54,
-          "zResid": -2.0,
-          "note": "Coyhaique registra 495,6 MM US$, 280,5 MM US$ por debajo de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 7620.0,
+          "expectedY": 7105.02,
+          "diffY": 514.98,
+          "zResid": 1.35,
+          "note": "Coyhaique registra 7.620 empresas, 515 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Lago Verde": {
-          "actualY": 31.4,
-          "expectedY": 115.51,
-          "diffY": -84.11,
-          "zResid": -0.6,
-          "note": "Lago Verde registra 31,4 MM US$, 84,1 MM US$ por debajo de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 118.0,
+          "expectedY": 0.52,
+          "diffY": 117.48,
+          "zResid": 0.31,
+          "note": "Lago Verde (118 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Aysén": {
-          "actualY": 1320.0,
-          "expectedY": 1184.48,
-          "diffY": 135.52,
-          "zResid": 0.97,
-          "note": "Aysén registra 1.320 MM US$, 135,5 MM US$ por encima de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 2840.0,
+          "expectedY": 3833.99,
+          "diffY": -993.99,
+          "zResid": -2.6,
+          "note": "Aysén registra 2.840 empresas, 994 empresas por debajo de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Cisnes": {
-          "actualY": 525.0,
-          "expectedY": 255.96,
-          "diffY": 269.04,
-          "zResid": 1.92,
-          "note": "Cisnes registra 525 MM US$, 269 MM US$ por encima de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 895.0,
+          "expectedY": 524.9,
+          "diffY": 370.1,
+          "zResid": 0.97,
+          "note": "Cisnes registra 895 empresas, 370,1 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Guaitecas": {
-          "actualY": 245.0,
-          "expectedY": 151.93,
-          "diffY": 93.07,
-          "zResid": 0.66,
-          "note": "Guaitecas registra 245 MM US$, 93,1 MM US$ por encima de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 242.0,
+          "expectedY": 233.11,
+          "diffY": 8.89,
+          "zResid": 0.02,
+          "note": "Guaitecas (242 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Chile Chico": {
-          "actualY": 310.0,
-          "expectedY": 274.17,
-          "diffY": 35.83,
-          "zResid": 0.26,
-          "note": "Chile Chico (310 MM US$) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 648.0,
+          "expectedY": 751.14,
+          "diffY": -103.14,
+          "zResid": -0.27,
+          "note": "Chile Chico (648 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Río Ibáñez": {
-          "actualY": 142.0,
-          "expectedY": 141.52,
-          "diffY": 0.48,
-          "zResid": 0.0,
-          "note": "Río Ibáñez (142 MM US$) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 418.0,
+          "expectedY": 222.54,
+          "diffY": 195.46,
+          "zResid": 0.51,
+          "note": "Río Ibáñez registra 418 empresas, 195,5 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Cochrane": {
-          "actualY": 172.0,
-          "expectedY": 229.95,
-          "diffY": -57.95,
-          "zResid": -0.41,
-          "note": "Cochrane (172 MM US$) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 492.0,
+          "expectedY": 463.58,
+          "diffY": 28.42,
+          "zResid": 0.07,
+          "note": "Cochrane (492 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
-          "actualY": 48.0,
-          "expectedY": 115.51,
-          "diffY": -67.51,
-          "zResid": -0.48,
-          "note": "O'Higgins registra 48,0 MM US$, 67,5 MM US$ por debajo de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 96.0,
+          "expectedY": 190.82,
+          "diffY": -94.82,
+          "zResid": -0.25,
+          "note": "O'Higgins (96,0 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Tortel": {
-          "actualY": 66.5,
-          "expectedY": 110.31,
-          "diffY": -43.81,
-          "zResid": -0.31,
-          "note": "Tortel (66,5 MM US$) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 84.0,
+          "expectedY": 127.39,
+          "diffY": -43.39,
+          "zResid": -0.11,
+          "note": "Tortel (84,0 empresas) se ubica prácticamente en línea con la tendencia regional."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 86% · r = +0,93 · Sin Coyhaique: +0,97 · Control pob.: +0,83",
+      "metrics_line": "R² 97% · r = +0,98 · Sin Coyhaique: +0,98 · Control pob.: +0,95",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 86,
-        "pearsonR": 0.925,
-        "spearmanRho": 0.912,
-        "kendallTau": 0.764,
-        "partialCorrPop": 0.828,
-        "rWithoutCoyhaique": 0.966,
-        "firstDiffCorrDelta": 0.828,
-        "pValueFdr": 0.000162,
-        "veredictoSimple": "R² 86% · r = +0,93 · Sin Coyhaique: +0,97 · Control pob.: +0,83"
+        "fuerzaExplicativaPct": 97,
+        "pearsonR": 0.985,
+        "spearmanRho": 0.939,
+        "kendallTau": 0.822,
+        "partialCorrPop": 0.947,
+        "rWithoutCoyhaique": 0.982,
+        "firstDiffCorrDelta": 0.947,
+        "pValueFdr": 1e-06,
+        "veredictoSimple": "R² 97% · r = +0,98 · Sin Coyhaique: +0,98 · Control pob.: +0,95"
       }
     },
     {
@@ -2938,7 +2938,7 @@
         "partialCorrPop": 0.902,
         "rWithoutCoyhaique": 0.832,
         "firstDiffCorrDelta": 0.902,
-        "pValueFdr": 1e-05,
+        "pValueFdr": 9e-06,
         "veredictoSimple": "R² 94% · r = +0,97 · Sin Coyhaique: +0,83 · Control pob.: +0,90"
       }
     },
@@ -3100,7 +3100,7 @@
         "partialCorrPop": 0.866,
         "rWithoutCoyhaique": 0.835,
         "firstDiffCorrDelta": 0.866,
-        "pValueFdr": 5.7e-05,
+        "pValueFdr": 6e-05,
         "veredictoSimple": "R² 83% · r = +0,91 · Sin 2020: +0,83 · Variación anual: +0,87"
       }
     },
@@ -3181,7 +3181,7 @@
         "partialCorrPop": 0.925,
         "rWithoutCoyhaique": 0.915,
         "firstDiffCorrDelta": 0.925,
-        "pValueFdr": 1e-05,
+        "pValueFdr": 9e-06,
         "veredictoSimple": "R² 90% · r = +0,95 · Sin 2020: +0,92 · Variación anual: +0,93"
       }
     },
@@ -3413,6 +3413,17 @@
       ],
       "topBelowRegionalMean": [
         {
+          "varKey": "consumo_lena_m3_hogar_ano",
+          "hub": "III. Energía",
+          "label": "Consumo Residencial Anual de Leña por Hogar",
+          "unit": "m³/hogar/año",
+          "comunaValue": 9.81,
+          "regionalMean": 13.62,
+          "zScore": -2.33,
+          "diffVsMeanPct": -28.0,
+          "plainSummary": "Consumo Residencial Anual de Leña por Hogar: 9,8 m³/hogar/año (promedio regional: 13,6 m³/hogar/año)"
+        },
+        {
           "varKey": "dependencia_fcm_pct",
           "hub": "IV. Gobernanza",
           "label": "Dependencia del Fondo Común Municipal (FCM)",
@@ -3422,17 +3433,6 @@
           "zScore": -1.98,
           "diffVsMeanPct": -38.6,
           "plainSummary": "Dependencia del Fondo Común Municipal (FCM): 46,5 % (promedio regional: 75,8 %)"
-        },
-        {
-          "varKey": "hogares_sin_internet_fijo_pct",
-          "hub": "III. Energía",
-          "label": "Hogares sin Conexión Fija a Internet",
-          "unit": "%",
-          "comunaValue": 24.5,
-          "regionalMean": 58.45,
-          "zScore": -1.98,
-          "diffVsMeanPct": -58.1,
-          "plainSummary": "Hogares sin Conexión Fija a Internet: 24,5 % (promedio regional: 58,5 %)"
         },
         {
           "varKey": "superficie_snaspe_pct",
@@ -3457,30 +3457,30 @@
           "plainSummary": "Mediana de Espera Quirúrgica No GES: 318,0 días (promedio regional: 395,0 días)"
         },
         {
-          "varKey": "fuga_compras_pct",
-          "hub": "V. Inversión",
-          "label": "Fuga Extrarregional de Compras Públicas",
+          "varKey": "pobreza_multidim_pct",
+          "hub": "VI. Social",
+          "label": "Pobreza Multidimensional (CASEN)",
           "unit": "%",
-          "comunaValue": 41.6,
-          "regionalMean": 64.43,
-          "zScore": -1.69,
-          "diffVsMeanPct": -35.4,
-          "plainSummary": "Fuga Extrarregional de Compras Públicas: 41,6 % (promedio regional: 64,4 %)"
+          "comunaValue": 11.8,
+          "regionalMean": 19.75,
+          "zScore": -1.58,
+          "diffVsMeanPct": -40.3,
+          "plainSummary": "Pobreza Multidimensional (CASEN): 11,8 % (promedio regional: 19,8 %)"
         }
       ],
       "twinComunas": [
         {
-          "comuna": "Aysén",
-          "provincia": "Aysén",
-          "similitudPct": 56
-        },
-        {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
           "similitudPct": 56
+        },
+        {
+          "comuna": "Aysén",
+          "provincia": "Aysén",
+          "similitudPct": 54
         }
       ],
-      "narrativeDigest": "Coyhaique (Coyhaique, 57.823 hab.) destaca sobre la media regional en Total de Proyectos de Ciencia e Innovación (ANID + CORFO) (102,0 proyectos) y Días Anuales sobre Norma Diaria de MP2.5 (SINCA), mientras presenta sus valores más bajos frente al promedio en Dependencia del Fondo Común Municipal (FCM). Sus perfiles territoriales más parecidos son Aysén (56%) y Chile Chico (56%)."
+      "narrativeDigest": "Coyhaique (Coyhaique, 57.823 hab.) destaca sobre la media regional en Total de Proyectos de Ciencia e Innovación (ANID + CORFO) (102,0 proyectos) y Días Anuales sobre Norma Diaria de MP2.5 (SINCA), mientras presenta sus valores más bajos frente al promedio en Consumo Residencial Anual de Leña por Hogar. Sus perfiles territoriales más parecidos son Chile Chico (56%) y Aysén (54%)."
     },
     "Lago Verde": {
       "comuna": "Lago Verde",
@@ -3511,17 +3511,6 @@
           "plainSummary": "Hogares con Carencia de Servicios Básicos (RSH): 33,9 % (promedio regional: 18,7 %)"
         },
         {
-          "varKey": "hogares_sin_internet_fijo_pct",
-          "hub": "III. Energía",
-          "label": "Hogares sin Conexión Fija a Internet",
-          "unit": "%",
-          "comunaValue": 82.4,
-          "regionalMean": 58.45,
-          "zScore": 1.4,
-          "diffVsMeanPct": 41.0,
-          "plainSummary": "Hogares sin Conexión Fija a Internet: 82,4 % (promedio regional: 58,5 %)"
-        },
-        {
           "varKey": "ruralidad_censo_2024_pct",
           "hub": "VI. Social",
           "label": "Porcentaje de Población Rural (Censo 2024)",
@@ -3542,6 +3531,17 @@
           "zScore": 1.09,
           "diffVsMeanPct": 67.9,
           "plainSummary": "Presupuesto Municipal Per Cápita: 3145,3 M$/hab (promedio regional: 1873,4 M$/hab)"
+        },
+        {
+          "varKey": "suelo_privado_pct",
+          "hub": "V. Inversión",
+          "label": "Proporción de Suelo de Propiedad Privada",
+          "unit": "%",
+          "comunaValue": 37.3,
+          "regionalMean": 19.95,
+          "zScore": 1.0,
+          "diffVsMeanPct": 87.0,
+          "plainSummary": "Proporción de Suelo de Propiedad Privada: 37,3 % (promedio regional: 19,9 %)"
         }
       ],
       "topBelowRegionalMean": [
@@ -3605,15 +3605,15 @@
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 65
+          "similitudPct": 63
         },
         {
           "comuna": "Guaitecas",
           "provincia": "Aysén",
-          "similitudPct": 61
+          "similitudPct": 59
         }
       ],
-      "narrativeDigest": "Lago Verde (Coyhaique, 779 hab.) destaca sobre la media regional en Gasto Municipal en Cultura Per Cápita (49294,0 $/hab) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son O'Higgins (65%) y Guaitecas (61%)."
+      "narrativeDigest": "Lago Verde (Coyhaique, 779 hab.) destaca sobre la media regional en Gasto Municipal en Cultura Per Cápita (49294,0 $/hab) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son O'Higgins (63%) y Guaitecas (59%)."
     },
     "Aysén": {
       "comuna": "Aysén",
@@ -3655,17 +3655,6 @@
           "plainSummary": "Biomasa Anual de Salmón Cosechada: 265000,0 toneladas (promedio regional: 50350,0 toneladas)"
         },
         {
-          "varKey": "ingresos_propios_pct",
-          "hub": "IV. Gobernanza",
-          "label": "Autonomía por Ingresos Propios Permanentes (IPP)",
-          "unit": "%",
-          "comunaValue": 47.2,
-          "regionalMean": 24.21,
-          "zScore": 1.55,
-          "diffVsMeanPct": 95.0,
-          "plainSummary": "Autonomía por Ingresos Propios Permanentes (IPP): 47,2 % (promedio regional: 24,2 %)"
-        },
-        {
           "varKey": "transparencia_activa_cplt_2026_pct",
           "hub": "IV. Gobernanza",
           "label": "Cumplimiento de Transparencia Activa Municipal (CPLT)",
@@ -3675,6 +3664,17 @@
           "zScore": 1.42,
           "diffVsMeanPct": 30.3,
           "plainSummary": "Cumplimiento de Transparencia Activa Municipal (CPLT): 96,1 % (promedio regional: 73,8 %)"
+        },
+        {
+          "varKey": "compras_locales_pct",
+          "hub": "V. Inversión",
+          "label": "Retención de Compras Públicas en Proveedores Locales",
+          "unit": "%",
+          "comunaValue": 54.6,
+          "regionalMean": 35.57,
+          "zScore": 1.41,
+          "diffVsMeanPct": 53.5,
+          "plainSummary": "Retención de Compras Públicas en Proveedores Locales: 54,6 % (promedio regional: 35,6 %)"
         }
       ],
       "topBelowRegionalMean": [
@@ -3690,28 +3690,6 @@
           "plainSummary": "Dependencia del Fondo Común Municipal (FCM): 52,8 % (promedio regional: 75,8 %)"
         },
         {
-          "varKey": "consumo_lena_m3_hogar_ano",
-          "hub": "III. Energía",
-          "label": "Consumo Residencial Anual de Leña por Hogar",
-          "unit": "m³/hogar/año",
-          "comunaValue": 15.0,
-          "regionalMean": 18.55,
-          "zScore": -1.43,
-          "diffVsMeanPct": -19.1,
-          "plainSummary": "Consumo Residencial Anual de Leña por Hogar: 15,0 m³/hogar/año (promedio regional: 18,6 m³/hogar/año)"
-        },
-        {
-          "varKey": "fuga_compras_pct",
-          "hub": "V. Inversión",
-          "label": "Fuga Extrarregional de Compras Públicas",
-          "unit": "%",
-          "comunaValue": 45.4,
-          "regionalMean": 64.43,
-          "zScore": -1.41,
-          "diffVsMeanPct": -29.5,
-          "plainSummary": "Fuga Extrarregional de Compras Públicas: 45,4 % (promedio regional: 64,4 %)"
-        },
-        {
           "varKey": "participacion_cultural_pct_c2",
           "hub": "IX. Cultura",
           "label": "Participación Activa en Organizaciones Culturales",
@@ -3723,30 +3701,52 @@
           "plainSummary": "Participación Activa en Organizaciones Culturales: 40,4 % (promedio regional: 63,2 %)"
         },
         {
-          "varKey": "hogares_sin_internet_fijo_pct",
-          "hub": "III. Energía",
-          "label": "Hogares sin Conexión Fija a Internet",
-          "unit": "%",
-          "comunaValue": 38.2,
-          "regionalMean": 58.45,
+          "varKey": "gasto_cultura_per_capita_clp",
+          "hub": "IX. Cultura",
+          "label": "Gasto Municipal en Cultura Per Cápita",
+          "unit": "$/hab",
+          "comunaValue": 9306.0,
+          "regionalMean": 23518.0,
           "zScore": -1.18,
-          "diffVsMeanPct": -34.6,
-          "plainSummary": "Hogares sin Conexión Fija a Internet: 38,2 % (promedio regional: 58,5 %)"
+          "diffVsMeanPct": -60.4,
+          "plainSummary": "Gasto Municipal en Cultura Per Cápita: 9306,0 $/hab (promedio regional: 23518,0 $/hab)"
+        },
+        {
+          "varKey": "indice_aislamiento_multimodal",
+          "hub": "IV. Gobernanza",
+          "label": "Índice Compuesto de Aislamiento Multimodal",
+          "unit": "puntos",
+          "comunaValue": 5.8,
+          "regionalMean": 41.59,
+          "zScore": -1.14,
+          "diffVsMeanPct": -86.1,
+          "plainSummary": "Índice Compuesto de Aislamiento Multimodal: 5,8 puntos (promedio regional: 41,6 puntos)"
+        },
+        {
+          "varKey": "saidi_horas_anual",
+          "hub": "III. Energía",
+          "label": "Tiempo Anual de Interrupción Eléctrica (SAIDI)",
+          "unit": "horas/año",
+          "comunaValue": 13.8,
+          "regionalMean": 35.97,
+          "zScore": -1.1,
+          "diffVsMeanPct": -61.6,
+          "plainSummary": "Tiempo Anual de Interrupción Eléctrica (SAIDI): 13,8 horas/año (promedio regional: 36,0 horas/año)"
         }
       ],
       "twinComunas": [
         {
           "comuna": "Cisnes",
           "provincia": "Aysén",
-          "similitudPct": 63
+          "similitudPct": 65
         },
         {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
-          "similitudPct": 61
+          "similitudPct": 60
         }
       ],
-      "narrativeDigest": "Aysén (Aysén, 23.170 hab.) destaca sobre la media regional en Ventas Anuales Promedio por Empresa (SII) (19789,0 UF/empresa) y Concesiones de Salmonicultura Otorgadas, mientras presenta sus valores más bajos frente al promedio en Dependencia del Fondo Común Municipal (FCM). Sus perfiles territoriales más parecidos son Cisnes (63%) y Chile Chico (61%)."
+      "narrativeDigest": "Aysén (Aysén, 23.170 hab.) destaca sobre la media regional en Ventas Anuales Promedio por Empresa (SII) (19789,0 UF/empresa) y Concesiones de Salmonicultura Otorgadas, mientras presenta sus valores más bajos frente al promedio en Dependencia del Fondo Común Municipal (FCM). Sus perfiles territoriales más parecidos son Cisnes (65%) y Chile Chico (60%)."
     },
     "Cisnes": {
       "comuna": "Cisnes",
@@ -3834,6 +3834,17 @@
           "plainSummary": "Cumplimiento de Transparencia Activa Municipal (CPLT): 61,6 % (promedio regional: 73,8 %)"
         },
         {
+          "varKey": "indice_aislamiento_multimodal",
+          "hub": "IV. Gobernanza",
+          "label": "Índice Compuesto de Aislamiento Multimodal",
+          "unit": "puntos",
+          "comunaValue": 19.2,
+          "regionalMean": 41.59,
+          "zScore": -0.72,
+          "diffVsMeanPct": -53.8,
+          "plainSummary": "Índice Compuesto de Aislamiento Multimodal: 19,2 puntos (promedio regional: 41,6 puntos)"
+        },
+        {
           "varKey": "suelo_privado_pct",
           "hub": "V. Inversión",
           "label": "Proporción de Suelo de Propiedad Privada",
@@ -3854,32 +3865,21 @@
           "zScore": -0.67,
           "diffVsMeanPct": -34.8,
           "plainSummary": "Hogares con Carencia de Servicios Básicos (RSH): 12,2 % (promedio regional: 18,7 %)"
-        },
-        {
-          "varKey": "ruralidad_censo_2024_pct",
-          "hub": "VI. Social",
-          "label": "Porcentaje de Población Rural (Censo 2024)",
-          "unit": "%",
-          "comunaValue": 28.1,
-          "regionalMean": 52.89,
-          "zScore": -0.63,
-          "diffVsMeanPct": -46.9,
-          "plainSummary": "Porcentaje de Población Rural (Censo 2024): 28,1 % (promedio regional: 52,9 %)"
         }
       ],
       "twinComunas": [
         {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
-          "similitudPct": 73
+          "similitudPct": 72
         },
         {
           "comuna": "Cochrane",
           "provincia": "Capitán Prat",
-          "similitudPct": 71
+          "similitudPct": 70
         }
       ],
-      "narrativeDigest": "Cisnes (Aysén, 5.137 hab.) destaca sobre la media regional en Biomasa Anual de Salmón Cosechada (185000,0 toneladas) y Concesiones de Salmonicultura Otorgadas, mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Chile Chico (73%) y Cochrane (71%)."
+      "narrativeDigest": "Cisnes (Aysén, 5.137 hab.) destaca sobre la media regional en Biomasa Anual de Salmón Cosechada (185000,0 toneladas) y Concesiones de Salmonicultura Otorgadas, mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Chile Chico (72%) y Cochrane (70%)."
     },
     "Guaitecas": {
       "comuna": "Guaitecas",
@@ -3994,25 +3994,25 @@
           "label": "Cobertura de Fibra Óptica al Hogar (FTTH)",
           "unit": "%",
           "comunaValue": 2.4,
-          "regionalMean": 25.13,
-          "zScore": -0.99,
+          "regionalMean": 24.9,
+          "zScore": -0.97,
           "diffVsMeanPct": -90.4,
-          "plainSummary": "Cobertura de Fibra Óptica al Hogar (FTTH): 2,4 % (promedio regional: 25,1 %)"
+          "plainSummary": "Cobertura de Fibra Óptica al Hogar (FTTH): 2,4 % (promedio regional: 24,9 %)"
         }
       ],
       "twinComunas": [
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 61
+          "similitudPct": 59
         },
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 58
+          "similitudPct": 57
         }
       ],
-      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (61%) y O'Higgins (58%)."
+      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (59%) y O'Higgins (57%)."
     },
     "Chile Chico": {
       "comuna": "Chile Chico",
@@ -4078,6 +4078,17 @@
       ],
       "topBelowRegionalMean": [
         {
+          "varKey": "costo_diesel_aislado_clp",
+          "hub": "III. Energía",
+          "label": "Costo Real de Generación Diésel Aislada",
+          "unit": "$/kWh",
+          "comunaValue": 0.0,
+          "regionalMean": 345.5,
+          "zScore": -1.2,
+          "diffVsMeanPct": -100.0,
+          "plainSummary": "Costo Real de Generación Diésel Aislada: 0,0 $/kWh (promedio regional: 345,5 $/kWh)"
+        },
+        {
           "varKey": "transparencia_activa_cplt_2026_pct",
           "hub": "IV. Gobernanza",
           "label": "Cumplimiento de Transparencia Activa Municipal (CPLT)",
@@ -4089,15 +4100,15 @@
           "plainSummary": "Cumplimiento de Transparencia Activa Municipal (CPLT): 57,5 % (promedio regional: 73,8 %)"
         },
         {
-          "varKey": "costo_diesel_aislado_clp",
+          "varKey": "consumo_lena_m3_hogar_ano",
           "hub": "III. Energía",
-          "label": "Costo Real de Generación Diésel Aislada",
-          "unit": "$/kWh",
-          "comunaValue": 0.0,
-          "regionalMean": 288.0,
-          "zScore": -0.97,
-          "diffVsMeanPct": -100.0,
-          "plainSummary": "Costo Real de Generación Diésel Aislada: 0,0 $/kWh (promedio regional: 288,0 $/kWh)"
+          "label": "Consumo Residencial Anual de Leña por Hogar",
+          "unit": "m³/hogar/año",
+          "comunaValue": 11.95,
+          "regionalMean": 13.62,
+          "zScore": -1.02,
+          "diffVsMeanPct": -12.3,
+          "plainSummary": "Consumo Residencial Anual de Leña por Hogar: 11,9 m³/hogar/año (promedio regional: 13,6 m³/hogar/año)"
         },
         {
           "varKey": "rsh_carencia_servicios_basicos_jun2026_pct",
@@ -4120,32 +4131,21 @@
           "zScore": -0.85,
           "diffVsMeanPct": -31.5,
           "plainSummary": "Déficit Habitacional Relativo (MINVU): 27,3 viv/1.000 hab (promedio regional: 39,8 viv/1.000 hab)"
-        },
-        {
-          "varKey": "consumo_lena_m3_hogar_ano",
-          "hub": "III. Energía",
-          "label": "Consumo Residencial Anual de Leña por Hogar",
-          "unit": "m³/hogar/año",
-          "comunaValue": 16.5,
-          "regionalMean": 18.55,
-          "zScore": -0.83,
-          "diffVsMeanPct": -11.1,
-          "plainSummary": "Consumo Residencial Anual de Leña por Hogar: 16,5 m³/hogar/año (promedio regional: 18,6 m³/hogar/año)"
         }
       ],
       "twinComunas": [
         {
           "comuna": "Cochrane",
           "provincia": "Capitán Prat",
-          "similitudPct": 84
+          "similitudPct": 82
         },
         {
           "comuna": "Cisnes",
           "provincia": "Aysén",
-          "similitudPct": 73
+          "similitudPct": 72
         }
       ],
-      "narrativeDigest": "Chile Chico (General Carrera, 4.905 hab.) destaca sobre la media regional en Cobertura del Programa de Salud Cardiovascular (PSCV) (74,1 %) y Esperanza de Vida al Nacer Comunal (DEIS), mientras presenta sus valores más bajos frente al promedio en Cumplimiento de Transparencia Activa Municipal (CPLT). Sus perfiles territoriales más parecidos son Cochrane (84%) y Cisnes (73%)."
+      "narrativeDigest": "Chile Chico (General Carrera, 4.905 hab.) destaca sobre la media regional en Cobertura del Programa de Salud Cardiovascular (PSCV) (74,1 %) y Esperanza de Vida al Nacer Comunal (DEIS), mientras presenta sus valores más bajos frente al promedio en Costo Real de Generación Diésel Aislada. Sus perfiles territoriales más parecidos son Cochrane (82%) y Cisnes (72%)."
     },
     "Río Ibáñez": {
       "comuna": "Río Ibáñez",
@@ -4216,10 +4216,10 @@
           "label": "Costo Real de Generación Diésel Aislada",
           "unit": "$/kWh",
           "comunaValue": 0.0,
-          "regionalMean": 288.0,
-          "zScore": -0.97,
+          "regionalMean": 345.5,
+          "zScore": -1.2,
           "diffVsMeanPct": -100.0,
-          "plainSummary": "Costo Real de Generación Diésel Aislada: 0,0 $/kWh (promedio regional: 288,0 $/kWh)"
+          "plainSummary": "Costo Real de Generación Diésel Aislada: 0,0 $/kWh (promedio regional: 345,5 $/kWh)"
         },
         {
           "varKey": "traslado_coyhaique_hrs",
@@ -4255,30 +4255,30 @@
           "plainSummary": "Tiempo de Viaje Multimodal hacia Coyhaique: 1,7 horas (promedio regional: 6,1 horas)"
         },
         {
-          "varKey": "deficit_habitacional_total_por_1000_hab",
-          "hub": "VI. Social",
-          "label": "Déficit Habitacional Relativo (MINVU)",
-          "unit": "viv/1.000 hab",
-          "comunaValue": 29.7,
-          "regionalMean": 39.83,
-          "zScore": -0.69,
-          "diffVsMeanPct": -25.4,
-          "plainSummary": "Déficit Habitacional Relativo (MINVU): 29,7 viv/1.000 hab (promedio regional: 39,8 viv/1.000 hab)"
+          "varKey": "tarifa_bt1_clp",
+          "hub": "III. Energía",
+          "label": "Tarifa Eléctrica Residencial BT1",
+          "unit": "$/kWh",
+          "comunaValue": 289.5,
+          "regionalMean": 297.02,
+          "zScore": -0.71,
+          "diffVsMeanPct": -2.5,
+          "plainSummary": "Tarifa Eléctrica Residencial BT1: 289,5 $/kWh (promedio regional: 297,0 $/kWh)"
         }
       ],
       "twinComunas": [
         {
-          "comuna": "Cisnes",
-          "provincia": "Aysén",
-          "similitudPct": 69
-        },
-        {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
           "similitudPct": 69
+        },
+        {
+          "comuna": "Cisnes",
+          "provincia": "Aysén",
+          "similitudPct": 68
         }
       ],
-      "narrativeDigest": "Río Ibáñez (General Carrera, 2.723 hab.) destaca sobre la media regional en Cumplimiento de Transparencia Activa Municipal (CPLT) (100,0 %) y Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN), mientras presenta sus valores más bajos frente al promedio en Costo Real de Generación Diésel Aislada. Sus perfiles territoriales más parecidos son Cisnes (69%) y Chile Chico (69%)."
+      "narrativeDigest": "Río Ibáñez (General Carrera, 2.723 hab.) destaca sobre la media regional en Cumplimiento de Transparencia Activa Municipal (CPLT) (100,0 %) y Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN), mientras presenta sus valores más bajos frente al promedio en Costo Real de Generación Diésel Aislada. Sus perfiles territoriales más parecidos son Chile Chico (69%) y Cisnes (68%)."
     },
     "Cochrane": {
       "comuna": "Cochrane",
@@ -4336,10 +4336,10 @@
           "label": "Cobertura de Fibra Óptica al Hogar (FTTH)",
           "unit": "%",
           "comunaValue": 39.2,
-          "regionalMean": 25.13,
-          "zScore": 0.61,
-          "diffVsMeanPct": 56.0,
-          "plainSummary": "Cobertura de Fibra Óptica al Hogar (FTTH): 39,2 % (promedio regional: 25,1 %)"
+          "regionalMean": 24.9,
+          "zScore": 0.62,
+          "diffVsMeanPct": 57.4,
+          "plainSummary": "Cobertura de Fibra Óptica al Hogar (FTTH): 39,2 % (promedio regional: 24,9 %)"
         }
       ],
       "topBelowRegionalMean": [
@@ -4360,10 +4360,10 @@
           "label": "Costo Real de Generación Diésel Aislada",
           "unit": "$/kWh",
           "comunaValue": 0.0,
-          "regionalMean": 288.0,
-          "zScore": -0.97,
+          "regionalMean": 345.5,
+          "zScore": -1.2,
           "diffVsMeanPct": -100.0,
-          "plainSummary": "Costo Real de Generación Diésel Aislada: 0,0 $/kWh (promedio regional: 288,0 $/kWh)"
+          "plainSummary": "Costo Real de Generación Diésel Aislada: 0,0 $/kWh (promedio regional: 345,5 $/kWh)"
         },
         {
           "varKey": "pobreza_multidim_pct",
@@ -4403,15 +4403,15 @@
         {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
-          "similitudPct": 84
+          "similitudPct": 82
         },
         {
           "comuna": "Cisnes",
           "provincia": "Aysén",
-          "similitudPct": 71
+          "similitudPct": 70
         }
       ],
-      "narrativeDigest": "Cochrane (Capitán Prat, 3.458 hab.) destaca sobre la media regional en Cobertura del Programa de Salud Cardiovascular (PSCV) (73,4 %) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN). Sus perfiles territoriales más parecidos son Chile Chico (84%) y Cisnes (71%)."
+      "narrativeDigest": "Cochrane (Capitán Prat, 3.458 hab.) destaca sobre la media regional en Cobertura del Programa de Salud Cardiovascular (PSCV) (73,4 %) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN). Sus perfiles territoriales más parecidos son Chile Chico (82%) y Cisnes (70%)."
     },
     "O'Higgins": {
       "comuna": "O'Higgins",
@@ -4431,37 +4431,15 @@
           "plainSummary": "Superficie Glaciar Comunal (DGA): 3450,0 km² (promedio regional: 1003,6 km²)"
         },
         {
-          "varKey": "consumo_lena_m3_hogar_ano",
-          "hub": "III. Energía",
-          "label": "Consumo Residencial Anual de Leña por Hogar",
-          "unit": "m³/hogar/año",
-          "comunaValue": 22.0,
-          "regionalMean": 18.55,
-          "zScore": 1.39,
-          "diffVsMeanPct": 18.6,
-          "plainSummary": "Consumo Residencial Anual de Leña por Hogar: 22,0 m³/hogar/año (promedio regional: 18,6 m³/hogar/año)"
-        },
-        {
           "varKey": "indice_aislamiento_multimodal",
           "hub": "IV. Gobernanza",
           "label": "Índice Compuesto de Aislamiento Multimodal",
           "unit": "puntos",
-          "comunaValue": 86.6,
-          "regionalMean": 44.99,
-          "zScore": 1.36,
-          "diffVsMeanPct": 92.5,
-          "plainSummary": "Índice Compuesto de Aislamiento Multimodal: 86,6 puntos (promedio regional: 45,0 puntos)"
-        },
-        {
-          "varKey": "fuga_compras_pct",
-          "hub": "V. Inversión",
-          "label": "Fuga Extrarregional de Compras Públicas",
-          "unit": "%",
-          "comunaValue": 81.6,
-          "regionalMean": 64.43,
-          "zScore": 1.27,
-          "diffVsMeanPct": 26.6,
-          "plainSummary": "Fuga Extrarregional de Compras Públicas: 81,6 % (promedio regional: 64,4 %)"
+          "comunaValue": 86.4,
+          "regionalMean": 41.59,
+          "zScore": 1.43,
+          "diffVsMeanPct": 107.7,
+          "plainSummary": "Índice Compuesto de Aislamiento Multimodal: 86,4 puntos (promedio regional: 41,6 puntos)"
         },
         {
           "varKey": "presupuesto_per_capita_mclp",
@@ -4473,6 +4451,28 @@
           "zScore": 1.24,
           "diffVsMeanPct": 77.4,
           "plainSummary": "Presupuesto Municipal Per Cápita: 3323,0 M$/hab (promedio regional: 1873,4 M$/hab)"
+        },
+        {
+          "varKey": "ruralidad_censo_2024_pct",
+          "hub": "VI. Social",
+          "label": "Porcentaje de Población Rural (Censo 2024)",
+          "unit": "%",
+          "comunaValue": 100.0,
+          "regionalMean": 52.89,
+          "zScore": 1.2,
+          "diffVsMeanPct": 89.1,
+          "plainSummary": "Porcentaje de Población Rural (Censo 2024): 100,0 % (promedio regional: 52,9 %)"
+        },
+        {
+          "varKey": "fndr_per_capita_mclp",
+          "hub": "IV. Gobernanza",
+          "label": "Inversión Pública FNDR Per Cápita",
+          "unit": "Miles $/hab",
+          "comunaValue": 3709.4,
+          "regionalMean": 1947.24,
+          "zScore": 1.2,
+          "diffVsMeanPct": 90.5,
+          "plainSummary": "Inversión Pública FNDR Per Cápita: 3709,4 Miles $/hab (promedio regional: 1947,2 Miles $/hab)"
         }
       ],
       "topBelowRegionalMean": [
@@ -4536,15 +4536,15 @@
         {
           "comuna": "Tortel",
           "provincia": "Capitán Prat",
-          "similitudPct": 68
+          "similitudPct": 66
         },
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 65
+          "similitudPct": 63
         }
       ],
-      "narrativeDigest": "O'Higgins (Capitán Prat, 647 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3450,0 km²) y Consumo Residencial Anual de Leña por Hogar, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (68%) y Lago Verde (65%)."
+      "narrativeDigest": "O'Higgins (Capitán Prat, 647 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3450,0 km²) y Índice Compuesto de Aislamiento Multimodal, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (66%) y Lago Verde (63%)."
     },
     "Tortel": {
       "comuna": "Tortel",
@@ -4669,15 +4669,15 @@
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 68
+          "similitudPct": 66
         },
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 59
+          "similitudPct": 56
         }
       ],
-      "narrativeDigest": "Tortel (Capitán Prat, 505 hab.) destaca sobre la media regional en Déficit Habitacional Relativo (MINVU) (77,2 viv/1.000 hab) y Ratio de Presión Turística Estacional, mientras presenta sus valores más bajos frente al promedio en Tasa de Aprobación Técnica RS de Proyectos (SNI). Sus perfiles territoriales más parecidos son O'Higgins (68%) y Lago Verde (59%)."
+      "narrativeDigest": "Tortel (Capitán Prat, 505 hab.) destaca sobre la media regional en Déficit Habitacional Relativo (MINVU) (77,2 viv/1.000 hab) y Ratio de Presión Turística Estacional, mientras presenta sus valores más bajos frente al promedio en Tasa de Aprobación Técnica RS de Proyectos (SNI). Sus perfiles territoriales más parecidos son O'Higgins (66%) y Lago Verde (56%)."
     }
   }
 };

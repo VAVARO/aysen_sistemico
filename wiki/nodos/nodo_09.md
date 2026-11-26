@@ -8,12 +8,9 @@ variables_clave:
   - desembarque_artesanal_ton
   - amerb_decretadas
   - sindicatos_pesca_artesanal
-  - antibioticos_ica_g_ton
-  - sancionatorios_sma_acuicolas_n
-  - centros_infa_anaerobica_n
 fuentes_oficiales:
-  - "Instituto de Fomento Pesquero (IFOP) / SERNAPESCA / SUBPESCA / SMA-SNIFA"
-updated_at: "2026-11-25"
+  - "Instituto de Fomento Pesquero (IFOP) / SERNAPESCA / SHOA"
+updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
   - nodo
@@ -24,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Monitoreo ambiental de temperatura superficial del mar (TSM), floraciones algales nocivas (FAN / Alexandrium catenella), oxígeno disuelto, límite regulatorio ICA 2026 (máximo 400 g/t según modificación Res. Ex. N° 8228 SUBPESCA de abril 2026), estructura de mortalidad sanitaria SERNAPESCA (~0,7%/mes en Salmón Atlántico, con causas infecciosas dominadas por SRS / Piscirickettsia salmonis con 52,8% y Tenacibaculosis con 31,5%), 32 centros con condición INFA anaeróbica subyacente (Aysén 16, Cisnes 10, Guaitecas 6) y 66 expedientes sancionatorios en SNIFA-SMA (Aysén 31, Cisnes 21, Guaitecas 12, Tortel 2).
+Monitoreo ambiental de TSM, floraciones algales nocivas (FAN), oxígeno disuelto, límite regulatorio de antibióticos ICA (tope máximo 400 g/t, Res. Ex. N° 8228 SUBPESCA abril 2026), mortalidad sanitaria (~0,7%/mes, liderada por SRS 52,8% y Tenacibaculosis 31,5%), 32 centros con INFA anaeróbica y 66 expedientes sancionatorios SNIFA-SMA. Cruza boyas oceanográficas IFOP/SHOA con fiscalización bentónica y ambiental: 66 expedientes sancionatorios SMA (`Aysén 31`, `Cisnes 21`, `Guaitecas 12`, `Tortel 2`) y 32 centros con INFA anaeróbica (`16/10/6/0`), junto a causales infecciosas de mortalidad SERNAPESCA (SRS / Piscirickettsia salmonis 52,8% y Tenacibaculosis 31,5%).
 
 ## Indicadores Comunales Verificados
 

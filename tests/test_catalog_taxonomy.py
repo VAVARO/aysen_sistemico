@@ -329,8 +329,8 @@ vm.runInNewContext(mainCode, ctx);
         by_id = {it["id"]: it for it in self.data["nonAlias"]}
         expected_hubs = {
             # Turismo
-            "tarifa_adr_estimada_usd": "turismo",
-            "revpar_estimado_usd": "turismo",
+            "tarifa_adr_emat_clp": "turismo",
+            "revpar_emat_clp": "turismo",
             "estadia_promedio_dias": "turismo",
             "tasa_ocupacion_estival_pct": "turismo",
             "tasa_ocupacion_invernal_pct": "turismo",
@@ -362,6 +362,14 @@ vm.runInNewContext(mainCode, ctx);
         for var_id, exp_hub in expected_hubs.items():
             self.assertIn(var_id, by_id, f"Falta variable no-alias esperada: {var_id}")
             self.assertEqual(by_id[var_id]["hubId"], exp_hub, f"{var_id} en hub incorrecto: {by_id[var_id]['hubId']}")
+
+        alias_id_set = {x["id"] for x in self.data["aliasIds"]}
+        for hidden_k in (
+            "tarifa_adr_estimada_usd", "revpar_estimado_usd",
+            "hogares_sin_internet_fijo_pct", "ingresos_propios_pct", "fuga_compras_pct",
+            "costo_kwh_termico_util_lena_clp", "costo_kwh_termico_util_kerosene_clp",
+        ):
+            self.assertIn(hidden_k, alias_id_set, f"Se esperaba {hidden_k} oculto como alias/complemento")
 
         self.assertEqual(
             self.data["clearVarLabels"]["fdt_ultima_milla_aprobado"]["hubId"],

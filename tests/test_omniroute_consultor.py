@@ -604,7 +604,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             '74,5% dependencia FCM',
             '12 camas',
             '980 alumnos',
-            '95,1% leña'
+            '94% leña'
         ];
         for (const s of requiredSnippets) {
             if (!r.includes(s)) {
@@ -1233,7 +1233,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             },
             {
                 q: 'cuáles son los principales nudos críticos en materia energética en Aysén',
-                expectedKeywords: ['98,6 MW', 'SAIDI', 'leña', 'MP2.5'],
+                expectedKeywords: ['67,10 MW', 'SAIDI', 'leña', 'MP2.5'],
                 forbiddenSources: ['SERNAPESCA']
             },
             {

@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "titulo": "Marco Regulatorio Tarifario, Subsidios Energéticos y Transición Térmica en Aysén (2024-2028)",
+    "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
+    "fecha_corte": "2026-11-19",
+    "fuentes": [
+      "Ministerio de Energía / Comisión Nacional de Energía (CNE)",
+      "Superintendencia de Electricidad y Combustibles (SEC)",
+      "Ministerio del Medio Ambiente (MMA) / Seremi MA Aysén",
+      "Subsecretaría de Telecomunicaciones (SUBTEL) - FDT",
+      "Instituto Forestal (INFOR) - Observatorio BES N° 11"
+    ]
+  },
+  "parametros_energeticos_referencia": {
+    "corte_tarifa_bt1_fecha": "2026-11-01",
+    "tarifa_bt1_edelaysen_sma_clp_kwh": 287.8,
+    "cargo_fijo_mensual_bt1_clp": 1319,
+    "cuenta_tipo_180kwh_aysen_clp": 53118,
+    "tarifa_bt1_enel_santiago_ref_clp_kwh": 237.6,
+    "sobrecosto_aysen_vs_santiago_pct": 21.1,
+    "corte_combustibles_fecha": "2026-11-19",
+    "promedio_regional_gasolina_93_clp": 1696.0,
+    "promedio_regional_diesel_clp": 1663.0,
+    "promedio_regional_kerosene_clp": 1497.0,
+    "shock_kerosene_oct_2026_clp_litro": 282,
+    "poder_calorifico_util_lena_kwh_m3st": 1050,
+    "cop_bomba_calor_inverter_referencia": 2.8,
+    "poder_calorifico_util_kerosene_kwh_litro": 8.5,
+    "potencia_operativa_regional_mw": 67.1,
+    "potencia_ernc_construccion_2026_mw": 18.98,
+    "umbral_legal_ssaa_lgse_mw": 1.5,
+    "subsidio_electrico_5to_proceso_hogares_n": 13448,
+    "consumo_lena_infor_m3_solidos_anual": 334274,
+    "subtel_conexiones_fijas_jun2026": 26294,
+    "subtel_conexiones_residenciales_jun2026": 24782
+  },
+  "hitos_normativos": [
+    {
+      "id": "LEY-21185-21472-21667",
+      "norma": "Leyes N° 21.185 (PEC), N° 21.472 (MPC) y N° 21.667 (Normalización Tarifaria y Subsidio Eléctrico)",
+      "fecha": "2024-04-30",
+      "sector": "electricidad",
+      "resumen": "Descongelamiento gradual de tarifas reguladas tras acumulación de deuda PEC y creación del Subsidio Eléctrico focalizado. En Aysén, el 5° Proceso (agosto 2026) cubre 13.448 hogares vulnerables, pero la Ley excluye legalmente a los 9 Sistemas Aislados (SSAA) municipales/no concesionados.",
+      "indicadores_afectados": [
+        "tarifa_bt1_clp",
+        "cobertura_subsidio_electrico_hogares_n",
+        "cobertura_subsidio_electrico_pct"
+      ]
+    },
+    {
+      "id": "DECRETOS-TARIFARIOS-SSMM-2025-2026",
+      "norma": "REx CNE N° 203/2025 y Decretos N° 10T/2025, N° 24T/2026, N° 8T/2026 (19-ago-2026) y N° 14T/2026",
+      "fecha": "2026-11-01",
+      "sector": "electricidad",
+      "resumen": "Reajuste tarifario SSMM Aysén (+22% ene-2025, +1,8% abr-2026 y +2,2% ago-2026 vía Decreto N° 8T/2026) que fija el pliego Edelaysen S.A. al 1-nov-2026 en $287,8/kWh BT1 aéreo en Coyhaique/Aysén ($53.118 por 180 kWh), mientras el Decreto N° 14T/2026 elimina septiembre de horas punta.",
+      "indicadores_afectados": [
+        "tarifa_bt1_clp",
+        "ratio_costo_calefaccion_electrica_vs_lena"
+      ]
+    },
+    {
+      "id": "LGSE-ART-173-SSAA",
+      "norma": "DFL N° 4 LGSE Art. 173° (Umbral 1,50 MW Sistemas Aislados) y Subsidios FNDR GORE/SUBDERE",
+      "fecha": "2026-10-15",
+      "sector": "electricidad_ssaa",
+      "resumen": "Limita los Sistemas Aislados (SSAA) a capacidad instalada <= 1,50 MW (1.500 kW): Melinka (1,45 MW), Villa O'Higgins (1,25 MW), Caleta Tortel (0,95 MW), Islas Huichas/Pto. Aguirre (0,48 MW) y micro-redes Cisnes/Lago Verde; al superar 1.500 kW Puerto Cisnes (1,67 MW) opera como Sistema Mediano.",
+      "indicadores_afectados": [
+        "potencia_mw",
+        "costo_diesel_aislado_clp",
+        "subsidio_fiscal_diesel_kwh_clp"
+      ]
+    },
+    {
+      "id": "REX-CNE-100-2026-ERNC",
+      "norma": "REx CNE N° 100-2026 / EIA-DIA Coyhaique y Los Maquis (Inversión ERNC + BESS 2026-2027)",
+      "fecha": "2026-06-01",
+      "sector": "generacion",
+      "resumen": "Habilita +18,98 MW ERNC en construcción 2026 (+15,0 MW eólicos Alto Baguales con BESS 2,5 MW por US$ 30 MM, +2,98 MW FV Cerro Sombrero y +1,00 MW rehabilitación hidro Los Maquis), proyectando capacidad regional de 67,10 MW a 86,08 MW en 2027.",
+      "indicadores_afectados": [
+        "potencia_mw",
+        "potencia_ernc_en_construccion_mw"
+      ]
+    },
+    {
+      "id": "MEPCO-VS-FEPP-COMBUSTIBLES-2026",
+      "norma": "Ley N° 20.765 (Bandas MEPCO Gasolina/Diésel) vs. Ley N° 19.030 (FEPP Kerosene Doméstico)",
+      "fecha": "2026-11-19",
+      "sector": "combustibles",
+      "resumen": "Al 19-nov-2026, Aysén registra la bencina 93 más cara de Chile ($1.696/L promedio regional; diésel $1.663/L; kerosene $1.497/L tras shock FEPP de +$282/L en oct-2026), dependiente de un único terminal MBM activo Copec (6.674 m³) en Bahía Chacabuco abastecido por B/T Puerto Aysén.",
+      "indicadores_afectados": [
+        "gasolina_93_clp",
+        "diesel_clp_litro",
+        "kerosene_clp_litro",
+        "costo_kwh_termico_util_kerosene_clp"
+      ]
+    },
+    {
+      "id": "LEY-21499-PDA-COYHAIQUE-8940",
+      "norma": "Ley N° 21.499 de Biocombustibles Sólidos, Anteproyecto PDA Coyhaique Res. Ex. N° 8.940/2026 e INFOR BES N° 11",
+      "fecha": "2026-08-25",
+      "sector": "biomasa_calefaccion",
+      "resumen": "Sincroniza el consumo regional de leña a 334.274 m³ sólidos/año (Coyhaique 147.080 m³s, 44,0%), tras 10.999 recambios de calefactores al 25-ago-2026 (73,3% de meta 15.000) y Anteproyecto Res. Ex. 8.940/2026 a 20.000 recambios.",
+      "indicadores_afectados": [
+        "consumo_lena_m3_solidos_anual",
+        "hogares_lena_pct",
+        "costo_kwh_termico_util_lena_clp"
+      ]
+    },
+    {
+      "id": "SUBTEL-FDT-2025-03-Y-TORTEL",
+      "norma": "Informe FDT SUBTEL 3T-2026, Concurso FDT-2017-01/2018-02 y Adjudicaciones FDT-2025-03 / D.O. 28-abr-2026",
+      "fecha": "2026-09-30",
+      "sector": "telecomunicaciones",
+      "resumen": "Rectifica trazado FOA: único aterrizaje submarino CTR en Caleta Tortel, Cable Submarino Austral GTD en Puerto Chacabuco, 14 POIITs terrestres Silica Networks, Fibra Tortel-Villa O'Higgins (1S-2028) y Última Milla FDT-2025-03 en 33 localidades; alinea SUBTEL jun-2026 a 26.294 conexiones fijas (24.782 residenciales).",
+      "indicadores_afectados": [
+        "internet_fijo_pct",
+        "cobertura_fibra_hogar_pct",
+        "conexiones_fijas_subtel_jun2026_n",
+        "conexiones_residenciales_subtel_jun2026_n"
+      ]
+    }
+  ],
+  "reglas_auditoria_indicadores": {
+    "tarifa_bt1_clp": {
+      "hito_id": "DECRETOS-TARIFARIOS-SSMM-2025-2026",
+      "cita_normativa": "Decreto N° 8T MinEnergía 19-ago-2026 / Pliego Edelaysen Nov-2026 (Leyes PEC/MPC 21.472 y 21.667)"
+    },
+    "cobertura_subsidio_electrico_hogares_n": {
+      "hito_id": "LEY-21185-21472-21667",
+      "cita_normativa": "Ley N° 21.667 / 5° Proceso Subsidio Eléctrico Ago-2026 (13.448 hogares Aysén; exclusión legal SSAA)"
+    },
+    "potencia_mw": {
+      "hito_id": "LGSE-ART-173-SSAA",
+      "cita_normativa": "Catastro CNE / Grupo Saesa / CIEP 2025-2026 (67,10 MW operativos; erradicación nodo aeródromo WPA/SCAS; Art. 173 LGSE SSAA <= 1,50 MW)"
+    },
+    "costo_diesel_aislado_clp": {
+      "hito_id": "LGSE-ART-173-SSAA",
+      "cita_normativa": "Art. 173° LGSE / Pliegos SSAA FNDR GORE-SUBDERE (reconciliación 6 comunas con micro-redes aisladas)"
+    },
+    "subsidio_fiscal_diesel_kwh_clp": {
+      "hito_id": "LGSE-ART-173-SSAA",
+      "cita_normativa": "Subsidio operación diésel FNDR/SUBDERE en SSAA y micro-redes litorales/insulares"
+    },
+    "gasolina_93_clp": {
+      "hito_id": "MEPCO-VS-FEPP-COMBUSTIBLES-2026",
+      "cita_normativa": "Bandas MEPCO Ley 20.765 / CNE Bencina en Línea corte 19-nov-2026 (promedio regional $1.696/L)"
+    },
+    "diesel_clp_litro": {
+      "hito_id": "MEPCO-VS-FEPP-COMBUSTIBLES-2026",
+      "cita_normativa": "Bandas MEPCO Ley 20.765 / CNE Bencina en Línea corte 19-nov-2026 (promedio regional $1.663/L)"
+    },
+    "kerosene_clp_litro": {
+      "hito_id": "MEPCO-VS-FEPP-COMBUSTIBLES-2026",
+      "cita_normativa": "Bandas MEPCO / Shock FEPP Ley 19.030 Kerosene Oct-Nov 2026 (+$282/L; promedio regional $1.497/L)"
+    },
+    "consumo_lena_m3_solidos_anual": {
+      "hito_id": "LEY-21499-PDA-COYHAIQUE-8940",
+      "cita_normativa": "INFOR Observatorio BES N° 11 (334.274 m³ sólidos/año) / Ley 21.499 / Anteproyecto PDA Coyhaique Res. Ex. 8.940/2026"
+    },
+    "consumo_lena_m3_hogar_ano": {
+      "hito_id": "LEY-21499-PDA-COYHAIQUE-8940",
+      "cita_normativa": "INFOR Observatorio BES N° 11 (conversión estéreos -> m³ sólidos factor ~0,64) / PDA Res. Ex. 8.940/2026"
+    },
+    "hogares_lena_pct": {
+      "hito_id": "LEY-21499-PDA-COYHAIQUE-8940",
+      "cita_normativa": "INFOR / MMA 10.999 recambios de calefactores al 25-ago-2026 / PDA Res. Ex. 8.940/2026"
+    },
+    "cobertura_fibra_hogar_pct": {
+      "hito_id": "SUBTEL-FDT-2025-03-Y-TORTEL",
+      "cita_normativa": "Informe Nacional FDT SUBTEL 3T-2026 / Adjudicaciones Tortel-O'Higgins (1S-2028) y FDT-2025-03 (33 localidades)"
+    },
+    "conexiones_fijas_subtel_jun2026_n": {
+      "hito_id": "SUBTEL-FDT-2025-03-Y-TORTEL",
+      "cita_normativa": "Series SUBTEL Junio 2026 (26.294 conexiones fijas regionales) reconciliadas con Censo 2024"
+    },
+    "conexiones_residenciales_subtel_jun2026_n": {
+      "hito_id": "SUBTEL-FDT-2025-03-Y-TORTEL",
+      "cita_normativa": "Series SUBTEL Junio 2026 (24.782 residenciales <= hogares Censo 2024 por comuna)"
+    }
+  }
+}

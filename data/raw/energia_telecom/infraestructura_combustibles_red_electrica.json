@@ -1,26 +1,29 @@
 {
   "metadata": {
-    "fuente": "Superintendencia de Electricidad y Combustibles (SEC) / CNE",
-    "fecha_catastro": "2026-10-15"
+    "fuente": "Superintendencia de Electricidad y Combustibles (SEC) / CNE / Estudio CIEP Ago-2025",
+    "fecha_catastro": "2026-11-19"
   },
   "nodos": [
     {
       "id": "PLANT-COMB-PUERTO-CHACABUCO",
-      "nombre": "Planta de Almacenamiento y Bunkering Enex/Copec Puerto Chacabuco",
-      "tipo": "Terminal Marítimo de Almacenamiento de Combustibles",
+      "nombre": "Terminal Marítimo MBM Copec (6.674 m³ activos) y Estanques Comaco (3.800 m³) Puerto Chacabuco",
+      "tipo": "Terminal Marítimo MBM y Almacenamiento de Hidrocarburos",
       "comuna": "Aysén",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "lat": -45.462,
       "lng": -72.818,
-      "capacidad_m3": 18500,
+      "capacidad_m3": 6674,
+      "capacidad_total_instalada_m3": 10474,
+      "capacidad_comaco_estanques_m3": 3800,
+      "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
       "productos": [
-        "Gasolina 93",
-        "Gasolina 97",
+        "Gasolina 93/97",
         "Petróleo Diésel",
-        "Kerosene Doméstico"
+        "Kerosene Doméstico (único estanque regional en Copec)"
       ],
-      "operadores": "Enex / Copec / Petrobras"
+      "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+      "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
     },
     {
       "id": "SUBESTACION-ELEC-COYHAIQUE",

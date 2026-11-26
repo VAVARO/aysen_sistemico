@@ -80,6 +80,7 @@ const wp10Path = path.join(ROOT, 'data/systemic/10_ctci_innovacion.json');
 if (fs.existsSync(wp10Path)) {
   wp10 = readJson('data/systemic/10_ctci_innovacion.json');
 }
+const marcoRegulatorioEnergiaRaw = readJson('data/raw/energia_telecom/marco_regulatorio_tarifario_aysen_2024_2028.json');
 
 // Reconciliacion en memoria (sin alterar JSON/CSV en disco) para Hubs VI-X
 const RECONCILED_GASTO_CULTURA_PC = {
@@ -578,7 +579,7 @@ function resolveOfficialSource(varKey, hubId) {
   if (/fondart/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
   if (/presupuesto_|dependencia_fcm|ipp_|gasto_personal|profesionalizacion|patentes_|ingresos_municipales|ingresos_propios/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinim;
   if (/fndr_|inversion_fndr/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.fndr;
-  if (/poblacion_censo|superficie_km2|densidad_hab|poblacion_|censo_2024|porcentaje_regional/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.censo;
+  if (/poblacion_censo|hogares_censo|superficie_km2|densidad_hab|poblacion_|censo_2024|porcentaje_regional/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.censo;
   if (/pobreza_|casen|ingreso_mediano|ingreso_autonomo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.casen;
   if (/tasa_vif|delitos_|tasa_regional|tasa_dmcs|denuncias_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cead;
   if (/medicos_|camas_hosp|urgencias_|espera_|aeroevacuaciones|traslado_|postas_|salud_|egresos_|camas_hospitalarias/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.deis;
@@ -590,7 +591,7 @@ function resolveOfficialSource(varKey, hubId) {
   if (/compras_locales|fuga_compras|chilecompra|mercadopublico/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.chilecompra;
   if (/parcelaciones_sag|sag_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sag;
   if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
-  if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_|participacion_diesel_matriz|subsidio_fiscal_diesel|costo_diesel/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
+  if (/potencia_mw|potencia_ernc|tarifa_bt1|cobertura_subsidio_electrico|gasolina_|diesel_|kerosene_|precio_lena|hogares_lena|costo_kwh_termico|ratio_costo_calefaccion|electricidad|energia|generacion_|participacion_diesel_matriz|subsidio_fiscal_diesel|costo_diesel/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
   if (/internet_fijo|estado_foa|conectividad_|telecom/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
   if (/^snaspe_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf_sbap_snaspe;
   if (/act_turismo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtrab_act_turismo;
@@ -1277,17 +1278,17 @@ const rawNodos = [
     hubId: 'energia',
     title: 'Generación y Centrales Eléctricas',
     definition: 'Catastro georreferenciado de las **centrales de generación eléctrica** en la Región de Aysén: hidroeléctricas de pasada, parques eólicos y plantas térmicas diesel en sistemas medianos y aislados.',
-    example: 'Incluye la **Central Hidroeléctrica Río Aysén (12,5 MW)**, el **Parque Eólico Alto Baguales**, la **Central Térmica Tehuelche** y las plantas de generación en **Melinka**, **Chile Chico**, **Cochrane**, **Tortel** y **Villa O\'Higgins**.',
+    example: 'Catastro reconciliado de **21 unidades operativas (67,10 MW)**: **Central Térmica Tehuelche (17,98 MW)**, **Lago Atravesado (11,00 MW)**, **Planta Solar El Blanco (2,99 MW)**, **Parque Eólico Alto Baguales (1,98 MW + 15 MW/2,5 MW BESS en construcción)**, **Puerto Chacabuco (10,00 MW)** y **Sistemas Aislados <= 1,50 MW** (Melinka 1,45 MW, O\'Higgins 1,25 MW, Tortel 0,95 MW, Puerto Aguirre 0,48 MW).',
     officialSource: { name: 'Energia Abierta CNE — Catastro de Centrales de Generacion', url: 'https://energiaabierta.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/02_energia_combustibles_telecom_nodos.csv',
     relatedNodeIds: [12, 13, 19],
     chartSpec: {
       type: 'doughnut',
-      title: 'Matriz Regional de Capacidad de Generación Eléctrica (CNE - 98,6 MW)',
-      labels: ['Térmica Diesel', 'Hidroeléctrica Pasada', 'Eólica', 'Solar Fotovoltaica'],
+      title: 'Matriz Regional de Capacidad Eléctrica Operativa (CNE - 67,10 MW)',
+      labels: ['Térmica Diésel', 'Hidroeléctrica Pasada', 'Solar Fotovoltaica', 'Eólica'],
       datasets: [{
-        label: 'Capacidad Instalada (MW)',
-        data: [74.9, 20.4, 3.2, 0.1],
+        label: 'Capacidad Instalada Operativa (MW)',
+        data: [40.94, 21.19, 2.99, 1.98],
         backgroundColor: ['#64748b', '#0284c7', '#0f766e', '#f59e0b']
       }],
       unit: 'MW'
@@ -1309,7 +1310,7 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Catastro georreferenciado de 15 plantas de generación eléctrica en Aysén',
+        'Catastro georreferenciado de 21 plantas/nodos operativos en Aysén (67,10 MW + 18,98 MW ERNC en construcción)',
         'Potencia neta instalada y generación bruta mensual en GWh',
         'Operadores del sistema (Edelaysen, cooperativas municipales)',
         'Tipo de tecnologia (hidraulica de pasada, turbodiesel, aerogenerador)'
@@ -1318,7 +1319,7 @@ const rawNodos = [
         'Cruce con Emisiones y Proyectos SEIA (Nodo #19)',
         'Cruce con Precios de Combustibles (Nodo #13)'
       ],
-      totalRecordsInFullBase: '15 centrales de generacion en data/systemic/csv/02_energia_combustibles_telecom_nodos.csv'
+      totalRecordsInFullBase: '21 unidades de generacion operativas (67,10 MW) en data/systemic/csv/02_energia_combustibles_telecom_nodos.csv'
     }
   },
   {
@@ -1326,7 +1327,7 @@ const rawNodos = [
     hubId: 'energia',
     title: 'Sistemas Eléctricos Medianos y Aislados',
     definition: 'Detalle comunal del subsistema eléctrico al que pertenece cada territorio (**Sistema Mediano de Aysén, Sistema Mediano General Carrera o Micro-redes Aisladas**), potencia instalada en MW y vulnerabilidad de suministro.',
-    example: '**Coyhaique (26,8 MW)** y **Aysén (42,5 MW)** conforman el **Sistema Mediano de Aysén (Edelaysen)**, sumando **98,6 MW** regionales junto a subsistemas como General Carrera y sistemas aislados en **Guaitecas**, **Lago Verde**, **Tortel** y **O\'Higgins**.',
+    example: '**Coyhaique (33,95 MW)** y **Aysén (18,48 MW)** articulan el **Sistema Mediano de Aysén (SMA)** dentro de **67,10 MW regionales operativos** junto a General Carrera (**3,90 MW** Chile Chico, **2,54 MW** Cochrane) y Sistemas Aislados **<= 1,50 MW** (Art. 173° LGSE): **Melinka (1,45 MW)**, **O\'Higgins (1,25 MW)**, **Tortel (0,95 MW)**, **Puerto Aguirre (0,48 MW)** y micro-redes Cisnes/Lago Verde. Pliego BT1 Edelaysen nov-2026 **Decreto N° 8T**: **$287,8/kWh** en Coyhaique/Aysén (+13.448 hogares con Subsidio Eléctrico).',
     officialSource: { name: 'Comision Nacional de Energia (CNE) / SEC / Edelaysen', url: 'https://energiaabierta.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/02_energia_combustibles_telecom_comunas.csv',
     relatedNodeIds: [11, 13, 14],
@@ -1371,7 +1372,7 @@ const rawNodos = [
     hubId: 'energia',
     title: 'Precios de Combustibles y Leña por Comuna (CNE)',
     definition: 'Comparativa comunal de precios de **gasolina 93 ($/litro)**, **petróleo diesel ($/litro)**, porcentaje de **sobrecosto respecto a Santiago** y precio del **metro cúbico de leña seca ($/m3)**.',
-    example: 'En **Coyhaique** la gasolina 93 promedia **$1.365/L** (+10,8% vs. Santiago) y el 92,4% de los hogares usa leña ($42.000/m3), mientras en comunas australes e insulares el sobrecosto de combustibles supera el **20%-26%**.',
+    example: 'Al **19-nov-2026 (CNE)**, Aysén registra la gasolina 93 más cara de Chile (**$1.696/L** promedio regional; **$1.652/L** Coyhaique, **$1.651/L** Aysén), diésel **$1.663/L** y kerosene **$1.497/L** (shock FEPP +$282/L oct-2026), dependientes del único MBM activo Copec en Chacabuco (**6.674 m³** activos / **10.474 m³** totales). En leña, **INFOR BES N° 11** certifica **334.274 m³ sólidos/año** (**Coyhaique 147.080 m³s [44,0%]**, 68,8% hogares a 9,81 m³s/hogar tras 10.999 recambios PDA).',
     officialSource: { name: 'CNE — Sistema de Informacion en Linea de Precios de Combustibles', url: 'https://www.bencinaenlinea.cl/', frequency: 'Semanal / Mensual' },
     csvFile: 'data/systemic/csv/02_energia_combustibles_telecom_comunas.csv',
     relatedNodeIds: [11, 12, 23, 27, 30],
@@ -1415,8 +1416,8 @@ const rawNodos = [
     id: 14,
     hubId: 'energia',
     title: 'Fibra Óptica Austral (FOA) y Telecomunicaciones',
-    definition: 'Conectividad comunal al troncal terrestre y submarino de la **Fibra Óptica Austral (FOA — SUBTEL)**, tipo de enlace troncal, operadores móviles 4G/5G activos y localidades con brecha digital.',
-    example: 'Detalla el tipo de enlace (FOA Terrestre, Ramal Submarino o radioenlace) en cada una de las 10 comunas y las localidades interiores que aún presentan rezago de conectividad.',
+    definition: 'Conectividad comunal según **Informe Nacional FDT SUBTEL 3T-2026**: **Troncal Submarina CTR (FDT-2017-01, único aterrizaje en Caleta Tortel)**, **Cable Submarino Austral GTD (Puerto Chacabuco)**, **Troncal Terrestre Silica (14 POIITs, FDT-2018-02)** y adjudicaciones **Fibra Tortel–Villa O\'Higgins (1S-2028)** y **Última Milla FDT-2025-03 (33 localidades)**.',
+    example: 'Reconcilia **26.294 conexiones fijas** (**24.782 residenciales**, **75,96% FTTX** y **21,48% Starlink**) al corte SUBTEL junio 2026 frente a **37.645 hogares Censo 2024**: **Lago Verde** (17,5% internet, **0,0% fibra**) y **Villa O\'Higgins** (23,2% internet, **0,0% fibra** hasta enlace 1S-2028) operan 100% sobre Starlink y radioenlace.',
     officialSource: { name: 'SUBTEL — Proyecto Fibra Optica Austral (FOA)', url: 'https://www.subtel.gob.cl/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/02_energia_combustibles_telecom_comunas.csv',
     relatedNodeIds: [5, 12, 24, 25],
@@ -3691,14 +3692,19 @@ const MATRICULA_SIES_MAP = {
   '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
 };
 
+const HOGARES_CENSO_2024_MAP = {
+  '11101': 21800, '11102': 320, '11201': 8200, '11202': 2050, '11203': 520,
+  '11401': 1950, '11402': 1060, '11301': 1300, '11302': 250, '11303': 195
+};
+
 const CONSUMO_LENA_SOLIDOS_MAP = {
-  '11101': 248800, '11102': 16200, '11201': 128500, '11202': 38400, '11203': 18200,
-  '11401': 32600, '11402': 22400, '11301': 34800, '11302': 11556, '11303': 14000
+  '11101': 147080, '11102': 4740, '11201': 91453, '11202': 26882, '11203': 6417,
+  '11401': 19108, '11402': 14029, '11301': 17816, '11302': 3829, '11303': 2920
 };
 
 const CONSUMO_LENA_HOGAR_MAP = {
-  '11101': 14.5, '11102': 21.0, '11201': 15.0, '11202': 18.5, '11203': 19.0,
-  '11401': 16.5, '11402': 19.5, '11301': 18.0, '11302': 22.0, '11303': 21.5
+  '11101': 9.81, '11102': 15.10, '11201': 13.20, '11202': 13.95, '11203': 13.10,
+  '11401': 11.95, '11402': 14.05, '11301': 14.35, '11302': 15.50, '11303': 15.20
 };
 
 const INFORMALIDAD_LENA_MAP = {
@@ -3707,13 +3713,23 @@ const INFORMALIDAD_LENA_MAP = {
 };
 
 const COSTO_DIESEL_AISLADO_MAP = {
-  '11101': 0.0, '11102': 560.0, '11201': 0.0, '11202': 380.0, '11203': 640.0,
+  '11101': 0.0, '11102': 540.0, '11201': 480.0, '11202': 495.0, '11203': 640.0,
   '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 620.0, '11303': 680.0
 };
 
 const SUBSIDIO_DIESEL_MAP = {
-  '11101': 0.0, '11102': 302.0, '11201': 0.0, '11202': 145.0, '11203': 375.0,
-  '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 358.0, '11303': 412.0
+  '11101': 0.0, '11102': 246.0, '11201': 192.0, '11202': 245.0, '11203': 328.0,
+  '11401': 0.0, '11402': 0.0, '11301': 0.0, '11302': 312.0, '11303': 362.0
+};
+
+const POTENCIA_ERNC_EN_CONSTRUCCION_MAP = {
+  '11101': 17.98, '11102': 0.0, '11201': 0.0, '11202': 0.0, '11203': 0.0,
+  '11401': 1.00, '11402': 0.0, '11301': 0.0, '11302': 0.0, '11303': 0.0
+};
+
+const SUBSIDIO_ELECTRICO_HOGARES_MAP = {
+  '11101': 7820, '11102': 82, '11201': 3190, '11202': 745, '11203': 148,
+  '11401': 590, '11402': 340, '11301': 445, '11302': 48, '11303': 40
 };
 
 const ECMPO_SOLICITADAS_HA_MAP = {
@@ -4036,8 +4052,32 @@ function buildComunaRows() {
       inversion_directa_pct: Number((g1.finanzas_sinim || {}).inversion_real_directa_pct) || INVERSION_DIRECTA_PCT_MAP[ine] || 0,
       profesionalizacion_pct: Number((g1.finanzas_sinim || {}).profesionalizacion_planta_pct) || PROFESIONALIZACION_PCT_MAP[ine] || 0,
       saidi_horas_anual: Number((g2.sistema_electrico || {}).horas_interrupcion_saidi_anual) || 0,
+      hogares_censo_2024: HOGARES_CENSO_2024_MAP[ine] || 0,
+      potencia_ernc_en_construccion_mw: POTENCIA_ERNC_EN_CONSTRUCCION_MAP[ine] ?? (Number((g2.sistema_electrico || {}).potencia_ernc_en_construccion_mw) || 0),
       tarifa_bt1_clp: Number((g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh) || 0,
-      costo_diesel_aislado_clp: Number((g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh) || COSTO_DIESEL_AISLADO_MAP[ine] || 0,
+      cobertura_subsidio_electrico_hogares_n: SUBSIDIO_ELECTRICO_HOGARES_MAP[ine] ?? (Number((g2.sistema_electrico || {}).cobertura_subsidio_electrico_hogares_n) || 0),
+      cobertura_subsidio_electrico_pct: (() => {
+        const ben = SUBSIDIO_ELECTRICO_HOGARES_MAP[ine] ?? (Number((g2.sistema_electrico || {}).cobertura_subsidio_electrico_hogares_n) || 0);
+        const hog = HOGARES_CENSO_2024_MAP[ine] || 0;
+        return hog > 0 ? Number(((ben / hog) * 100).toFixed(1)) : 0;
+      })(),
+      diesel_clp_litro: Number((g2.combustibles || {}).diesel_clp_litro) || 0,
+      kerosene_clp_litro: Number((g2.combustibles || {}).kerosene_clp_litro) || 0,
+      costo_kwh_termico_util_lena_clp: (() => {
+        const pl = Number((g2.combustibles || {}).precio_m3_lena_seca_clp) || 0;
+        return pl > 0 ? Number((pl / 1050).toFixed(1)) : 0;
+      })(),
+      costo_kwh_termico_util_kerosene_clp: (() => {
+        const pk = Number((g2.combustibles || {}).kerosene_clp_litro) || 0;
+        return pk > 0 ? Number((pk / 8.5).toFixed(1)) : 0;
+      })(),
+      ratio_costo_calefaccion_electrica_vs_lena: (() => {
+        const bt1 = Number((g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh) || 0;
+        const pl = Number((g2.combustibles || {}).precio_m3_lena_seca_clp) || 0;
+        const utilLena = pl > 0 ? Number((pl / 1050).toFixed(1)) : 0;
+        return (bt1 > 0 && utilLena > 0) ? Number(((bt1 / 2.8) / utilLena).toFixed(2)) : 0;
+      })(),
+      costo_diesel_aislado_clp: COSTO_DIESEL_AISLADO_MAP[ine] ?? (Number((g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh) || 0),
       internet_fijo_pct: (g11.conectividad_digital && Number.isFinite(Number(g11.conectividad_digital.hogares_sin_internet_fijo_pct)))
         ? Number((100 - Number(g11.conectividad_digital.hogares_sin_internet_fijo_pct)).toFixed(1))
         : (Number((g2.telecomunicaciones || {}).penetracion_internet_fijo_hogares_pct) || 0),
@@ -4312,25 +4352,25 @@ const holdings = (holdingsRaw.holdings || []).map(h => {
 
 // Coleccion canonica de 19 Unidades SNASPE de Aysen (CONAF / Subturismo Oct 2025 / SBAP Ley 21.600)
 const unidadesSnaspe = [
-  { id: 'snaspe_pn_queulat', nombre: 'PN Queulat', categoria: 'Parque Nacional', comunas: 'Cisnes / Lago Verde', superficie_ha: 154093, visitantes_anuales_n: 25619, guardaparques_permanentes_n: 6, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 17245, hito_gestion: 'Reapertura senderos La Morrena y Laguna Témpanos (10 ene 2026, Res. N° 7/2026; $1.900 M$ ejecutados)' },
-  { id: 'snaspe_pn_patagonia', nombre: 'PN Patagonia', categoria: 'Parque Nacional', comunas: 'Cochrane / Chile Chico', superficie_ha: 304528, visitantes_anuales_n: 16453, guardaparques_permanentes_n: 8, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 4825, hito_gestion: 'Sectores Valle Chacabuco, Tamango y Jeinimeni / Cueva de las Manos (PDZE 2026–2028)' },
-  { id: 'snaspe_pn_cerro_castillo', nombre: 'PN Cerro Castillo', categoria: 'Parque Nacional', comunas: 'Río Ibáñez / Coyhaique', superficie_ha: 143502, visitantes_anuales_n: 13907, guardaparques_permanentes_n: 4, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 5350, hito_gestion: '1ª Área Protegida de Chile en la Lista Verde UICN (12 sept 2025); 3 GP + 1 admin' },
-  { id: 'snaspe_rn_coyhaique', nombre: 'RN Coyhaique', categoria: 'Reserva Nacional', comunas: 'Coyhaique', superficie_ha: 2150, visitantes_anuales_n: 13552, guardaparques_permanentes_n: 4, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Principal área silvestre periurbana de la capital regional' },
-  { id: 'snaspe_rn_rio_simpson', nombre: 'RN Río Simpson', categoria: 'Reserva Nacional', comunas: 'Aysén / Coyhaique', superficie_ha: 41621, visitantes_anuales_n: 7961, guardaparques_permanentes_n: 3, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Corredor Ruta 240 Coyhaique–Puerto Aysén' },
-  { id: 'snaspe_pn_laguna_san_rafael', nombre: 'PN Laguna San Rafael', categoria: 'Parque Nacional', comunas: 'Aysén / Río Ibáñez / Tortel / Chile Chico', superficie_ha: 1742000, visitantes_anuales_n: 5900, guardaparques_permanentes_n: 6, concesiones_salmon_dentro_n: 2, concesiones_salmon_parcial_o_borde_n: 8, superficie_salmon_ha: 3.0, inversion_pdze_mclp: 15591, hito_gestion: 'Cierre definitivo acceso frontal sobre hielo en Glaciar Exploradores (2 dic 2025, Corte Suprema ROL N° 7.477-2026); 2 concesiones Cooke dentro + 8 en borde Estero Cupquelán' },
-  { id: 'snaspe_mn_dos_lagunas', nombre: 'MN Dos Lagunas', categoria: 'Monumento Natural', comunas: 'Coyhaique', superficie_ha: 181, visitantes_anuales_n: 2638, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Ruta Coyhaique–Coyhaique Alto' },
-  { id: 'snaspe_rn_lago_carlota', nombre: 'RN Lago Carlota', categoria: 'Reserva Nacional', comunas: 'Coyhaique', superficie_ha: 27110, visitantes_anuales_n: 87, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Estepa andina en alto Ñirehuao (visitación acotada con registro permanente)' },
-  { id: 'snaspe_mn_cinco_hermanas', nombre: 'MN Cinco Hermanas', categoria: 'Monumento Natural', comunas: 'Aysén', superficie_ha: 228, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Guardaparque compartido con gestión insular; sin portería continua' },
-  { id: 'snaspe_rn_lago_rosselot', nombre: 'RN Lago Rosselot', categoria: 'Reserva Nacional', comunas: 'Cisnes / Lago Verde', superficie_ha: 12725, visitantes_anuales_n: 0, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Sin conteo oficial de portería publicado' },
-  { id: 'snaspe_rn_lago_las_torres', nombre: 'RN Lago Las Torres', categoria: 'Reserva Nacional', comunas: 'Lago Verde / Cisnes', superficie_ha: 16516, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Sin conteo oficial de portería en Ruta 7 Norte' },
-  { id: 'snaspe_rn_trapananda', nombre: 'RN Trapananda', categoria: 'Reserva Nacional', comunas: 'Coyhaique', superficie_ha: 2305, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Protección de cuenca media Mañihuales–Simpson' },
-  { id: 'snaspe_rn_manihuales', nombre: 'RN Mañihuales', categoria: 'Reserva Nacional', comunas: 'Aysén', superficie_ha: 3715, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Conservación forestal en cuenca Mañihuales' },
-  { id: 'snaspe_pn_isla_magdalena', nombre: 'PN Isla Magdalena', categoria: 'Parque Nacional', comunas: 'Cisnes', superficie_ha: 249712, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 4, concesiones_salmon_parcial_o_borde_n: 4, superficie_salmon_ha: 38.48, inversion_pdze_mclp: 0, hito_gestion: '4 concesiones salmón dentro (38,48 ha) + 4 parciales (26,35 ha); D.E. N° 146/2025 eliminó AAA para nuevas concesiones' },
-  { id: 'snaspe_pn_melimoyu', nombre: 'PN Melimoyu', categoria: 'Parque Nacional', comunas: 'Cisnes', superficie_ha: 105500, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'AAA marinas eliminadas por D.E. N° 146 del 31 jul 2025; sin guardaparques permanentes' },
-  { id: 'snaspe_pn_isla_guamblin', nombre: 'PN Isla Guamblin', categoria: 'Parque Nacional', comunas: 'Cisnes / Guaitecas', superficie_ha: 10625, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Acceso marítimo oceánico sin infraestructura ni dotación residente' },
-  { id: 'snaspe_rn_las_guaitecas', nombre: 'RN Las Guaitecas', categoria: 'Reserva Nacional', comunas: 'Guaitecas / Cisnes / Aysén', superficie_ha: 1097975, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 312, concesiones_salmon_parcial_o_borde_n: 1, superficie_salmon_ha: 2159.13, inversion_pdze_mclp: 0, hito_gestion: 'CONAF declara "no posee infraestructura"; 312 concesiones salmón totalmente dentro (2.159,13 ha, 77% indefinidas) + 1 parcial (6,77 ha)' },
-  { id: 'snaspe_rn_katalalixar', nombre: 'RN Katalalixar', categoria: 'Reserva Nacional', comunas: 'Tortel', superficie_ha: 674500, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Archipiélago prístino sin infraestructura turística ni guardaparques residentes' },
-  { id: 'snaspe_pn_bernardo_ohiggins_aysen', nombre: 'PN Bernardo O\'Higgins (Sector Norte Aysén)', categoria: 'Parque Nacional', comunas: 'Tortel / O\'Higgins', superficie_ha: 1212000, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: '3.525.901 ha birregional (28.499 visitas contabilizadas en Magallanes); D.E. N° 146/2025 eliminó AAA' }
+  { id: 'snaspe_pn_queulat', nombre: 'PN Queulat', categoria: 'Parque Nacional', comunas: 'Cisnes / Lago Verde', comuna_principal: 'Cisnes', comuna_ine: '11202', superficie_ha: 154093, visitantes_anuales_n: 25619, guardaparques_permanentes_n: 6, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 17245, hito_gestion: 'Reapertura senderos La Morrena y Laguna Témpanos (10 ene 2026, Res. N° 7/2026; $1.900 M$ ejecutados)' },
+  { id: 'snaspe_pn_patagonia', nombre: 'PN Patagonia', categoria: 'Parque Nacional', comunas: 'Cochrane / Chile Chico', comuna_principal: 'Cochrane', comuna_ine: '11301', superficie_ha: 304528, visitantes_anuales_n: 16453, guardaparques_permanentes_n: 8, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 4825, hito_gestion: 'Sectores Valle Chacabuco, Tamango y Jeinimeni / Cueva de las Manos (PDZE 2026–2028)' },
+  { id: 'snaspe_pn_cerro_castillo', nombre: 'PN Cerro Castillo', categoria: 'Parque Nacional', comunas: 'Río Ibáñez / Coyhaique', comuna_principal: 'Río Ibáñez', comuna_ine: '11402', superficie_ha: 143502, visitantes_anuales_n: 13907, guardaparques_permanentes_n: 4, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 5350, hito_gestion: '1ª Área Protegida de Chile en la Lista Verde UICN (12 sept 2025); 3 GP + 1 admin' },
+  { id: 'snaspe_rn_coyhaique', nombre: 'RN Coyhaique', categoria: 'Reserva Nacional', comunas: 'Coyhaique', comuna_principal: 'Coyhaique', comuna_ine: '11101', superficie_ha: 2150, visitantes_anuales_n: 13552, guardaparques_permanentes_n: 4, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Principal área silvestre periurbana de la capital regional' },
+  { id: 'snaspe_rn_rio_simpson', nombre: 'RN Río Simpson', categoria: 'Reserva Nacional', comunas: 'Aysén / Coyhaique', comuna_principal: 'Aysén', comuna_ine: '11201', superficie_ha: 41621, visitantes_anuales_n: 7961, guardaparques_permanentes_n: 3, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Corredor Ruta 240 Coyhaique–Puerto Aysén' },
+  { id: 'snaspe_pn_laguna_san_rafael', nombre: 'PN Laguna San Rafael', categoria: 'Parque Nacional', comunas: 'Aysén / Río Ibáñez / Tortel / Chile Chico', comuna_principal: 'Aysén', comuna_ine: '11201', superficie_ha: 1742000, visitantes_anuales_n: 5900, guardaparques_permanentes_n: 6, concesiones_salmon_dentro_n: 2, concesiones_salmon_parcial_o_borde_n: 8, superficie_salmon_ha: 3.0, inversion_pdze_mclp: 15591, hito_gestion: 'Cierre definitivo acceso frontal sobre hielo en Glaciar Exploradores (2 dic 2025, Corte Suprema ROL N° 7.477-2026); 2 concesiones Cooke dentro + 8 en borde Estero Cupquelán' },
+  { id: 'snaspe_mn_dos_lagunas', nombre: 'MN Dos Lagunas', categoria: 'Monumento Natural', comunas: 'Coyhaique', comuna_principal: 'Coyhaique', comuna_ine: '11101', superficie_ha: 181, visitantes_anuales_n: 2638, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Ruta Coyhaique–Coyhaique Alto' },
+  { id: 'snaspe_rn_lago_carlota', nombre: 'RN Lago Carlota', categoria: 'Reserva Nacional', comunas: 'Coyhaique', comuna_principal: 'Coyhaique', comuna_ine: '11101', superficie_ha: 27110, visitantes_anuales_n: 87, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Estepa andina en alto Ñirehuao (visitación acotada con registro permanente)' },
+  { id: 'snaspe_mn_cinco_hermanas', nombre: 'MN Cinco Hermanas', categoria: 'Monumento Natural', comunas: 'Aysén', comuna_principal: 'Aysén', comuna_ine: '11201', superficie_ha: 228, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Guardaparque compartido con gestión insular; sin portería continua' },
+  { id: 'snaspe_rn_lago_rosselot', nombre: 'RN Lago Rosselot', categoria: 'Reserva Nacional', comunas: 'Cisnes / Lago Verde', comuna_principal: 'Cisnes', comuna_ine: '11202', superficie_ha: 12725, visitantes_anuales_n: 0, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Sin conteo oficial de portería publicado' },
+  { id: 'snaspe_rn_lago_las_torres', nombre: 'RN Lago Las Torres', categoria: 'Reserva Nacional', comunas: 'Lago Verde / Cisnes', comuna_principal: 'Lago Verde', comuna_ine: '11102', superficie_ha: 16516, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Sin conteo oficial de portería en Ruta 7 Norte' },
+  { id: 'snaspe_rn_trapananda', nombre: 'RN Trapananda', categoria: 'Reserva Nacional', comunas: 'Coyhaique', comuna_principal: 'Coyhaique', comuna_ine: '11101', superficie_ha: 2305, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Protección de cuenca media Mañihuales–Simpson' },
+  { id: 'snaspe_rn_manihuales', nombre: 'RN Mañihuales', categoria: 'Reserva Nacional', comunas: 'Aysén', comuna_principal: 'Aysén', comuna_ine: '11201', superficie_ha: 3715, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Conservación forestal en cuenca Mañihuales' },
+  { id: 'snaspe_pn_isla_magdalena', nombre: 'PN Isla Magdalena', categoria: 'Parque Nacional', comunas: 'Cisnes', comuna_principal: 'Cisnes', comuna_ine: '11202', superficie_ha: 249712, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 4, concesiones_salmon_parcial_o_borde_n: 4, superficie_salmon_ha: 38.48, inversion_pdze_mclp: 0, hito_gestion: '4 concesiones salmón dentro (38,48 ha) + 4 parciales (26,35 ha); D.E. N° 146/2025 eliminó AAA para nuevas concesiones' },
+  { id: 'snaspe_pn_melimoyu', nombre: 'PN Melimoyu', categoria: 'Parque Nacional', comunas: 'Cisnes', comuna_principal: 'Cisnes', comuna_ine: '11202', superficie_ha: 105500, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'AAA marinas eliminadas por D.E. N° 146 del 31 jul 2025; sin guardaparques permanentes' },
+  { id: 'snaspe_pn_isla_guamblin', nombre: 'PN Isla Guamblin', categoria: 'Parque Nacional', comunas: 'Cisnes / Guaitecas', comuna_principal: 'Cisnes', comuna_ine: '11202', superficie_ha: 10625, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Acceso marítimo oceánico sin infraestructura ni dotación residente' },
+  { id: 'snaspe_rn_las_guaitecas', nombre: 'RN Las Guaitecas', categoria: 'Reserva Nacional', comunas: 'Guaitecas / Cisnes / Aysén', comuna_principal: 'Guaitecas', comuna_ine: '11203', superficie_ha: 1097975, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 312, concesiones_salmon_parcial_o_borde_n: 1, superficie_salmon_ha: 2159.13, inversion_pdze_mclp: 0, hito_gestion: 'CONAF declara "no posee infraestructura"; 312 concesiones salmón totalmente dentro (2.159,13 ha, 77% indefinidas) + 1 parcial (6,77 ha)' },
+  { id: 'snaspe_rn_katalalixar', nombre: 'RN Katalalixar', categoria: 'Reserva Nacional', comunas: 'Tortel', comuna_principal: 'Tortel', comuna_ine: '11303', superficie_ha: 674500, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Archipiélago prístino sin infraestructura turística ni guardaparques residentes' },
+  { id: 'snaspe_pn_bernardo_ohiggins_aysen', nombre: 'PN Bernardo O\'Higgins (Sector Norte Aysén)', categoria: 'Parque Nacional', comunas: 'Tortel / O\'Higgins', comuna_principal: 'Tortel', comuna_ine: '11303', superficie_ha: 1212000, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: '3.525.901 ha birregional (28.499 visitas contabilizadas en Magallanes); D.E. N° 146/2025 eliminó AAA' }
 ];
 
 // Coleccion canonica de 18 Barrios Acuicolas (ACS-17 a ACS-35) reconciliada 1:1 con comunas y padron 745
@@ -4605,6 +4645,7 @@ function pushSpatialNode(raw) {
     magnitudeUnit: String(raw.magnitudeUnit || 'unid.'),
     magnitudeLabel: String(raw.magnitudeLabel || 'Magnitud'),
     titular: String(raw.titular || 'Institucion Oficial'),
+    ...(raw.sistema ? { sistema: String(raw.sistema) } : {}),
     sourceUrl: String(raw.sourceUrl || 'https://datos.gob.cl'),
     bufferGenerator: Boolean(raw.bufferGenerator),
     bufferRadiusM: Number(raw.bufferRadiusM || 25000),
@@ -4649,10 +4690,10 @@ const GOB_NODE_OVERRIDES = {
 // 2) Hub Energia y Telecom: 02_energia_combustibles_telecom.json (solo nodos unicos no duplicados en CNE/FOA) + CNE + FOA
 const WP02_UNIQUE_INFRA_OVERRIDES = {
   'nodo-combustibles-chacabuco': {
-    mag: 18500,
+    mag: 6674,
     unit: 'm³',
-    label: 'Capacidad Almacenamiento',
-    titular: 'Enex / Copec S.A.'
+    label: 'Capacidad MBM Activa Copec (10.474 m³ total con Comaco)',
+    titular: 'Copec S.A. (MBM activo 6.674 m³) / Comaco (3.800 m³)'
   },
   'nodo-elec-subestacion-coyhaique': {
     mag: 66,
@@ -4696,7 +4737,9 @@ if (fs.existsSync(cneRawPath)) {
       comuna_ine: c.comuna_ine,
       lat: c.lat,
       lon: c.lng,
-      magnitudeValue: c.potencia_mw || 2.5,
+      sistema: c.sistema || '',
+      nota_regulatoria: c.nota_regulatoria || '',
+      magnitudeValue: Number(c.potencia_mw) || 0,
       magnitudeUnit: 'MW',
       magnitudeLabel: 'Potencia Instalada',
       titular: c.operador || 'Edelaysen S.A.',
@@ -6798,6 +6841,7 @@ const bundle = {
   barriosAcs,
   unidadesSnaspe,
   seriesAcuiculturaAnual: seriesAcuiculturaRaw.series_regionales || [],
+  marcoRegulatorioEnergia: marcoRegulatorioEnergiaRaw,
   spatialLayersCatalog,
   spatialNodes,
   spatialNodesByLayer

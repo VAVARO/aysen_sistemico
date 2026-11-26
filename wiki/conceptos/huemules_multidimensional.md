@@ -30,16 +30,16 @@ En la Región de Aysén, «Huemules» alude a tres entidades territoriales y eco
 
 | Comuna | Especies de Fauna Amenazada en la Comuna | Superficie Protegida SNASPE (%) | Red Vial Total Comunal (km) | Visitantes Anuales a Parques SNASPE |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 5 | 19,2 | 684,2 | 38.500 |
-| [[comunas/lago_verde|Lago Verde]] | 5 | 34,5 | 312,5 | 1.800 |
-| [[comunas/aysen|Aysén]] | 9 | 63,4 | 495,6 | 29.600 |
-| [[comunas/cisnes|Cisnes]] | 9 | 71,2 | 482 | 64.200 |
-| [[comunas/guaitecas|Guaitecas]] | 5 | 45,8 | 28,5 | 2.400 |
-| [[comunas/chile_chico|Chile Chico]] | 5 | 48,6 | 384 | 34.200 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 5 | 61,7 | 291 | 41.000 |
-| [[comunas/cochrane|Cochrane]] | 7 | 52,1 | 398 | 35.600 |
-| [[comunas/ohiggins|O'Higgins]] | 5 | 78,3 | 168,4 | 12.400 |
-| [[comunas/tortel|Tortel]] | 8 | 87,4 | 142,2 | 14.200 |
+| [[comunas/coyhaique|Coyhaique]] | 5 | 19,2 | 684,2 | 21.190 |
+| [[comunas/lago_verde|Lago Verde]] | 5 | 34,5 | 312,5 | 0 |
+| [[comunas/aysen|Aysén]] | 9 | 63,4 | 495,6 | 7.048 |
+| [[comunas/cisnes|Cisnes]] | 9 | 71,2 | 482 | 25.619 |
+| [[comunas/guaitecas|Guaitecas]] | 5 | 45,8 | 28,5 | 0 |
+| [[comunas/chile_chico|Chile Chico]] | 5 | 48,6 | 384 | 6.600 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 5 | 61,7 | 291 | 15.807 |
+| [[comunas/cochrane|Cochrane]] | 7 | 52,1 | 398 | 9.853 |
+| [[comunas/ohiggins|O'Higgins]] | 5 | 78,3 | 168,4 | 0 |
+| [[comunas/tortel|Tortel]] | 8 | 87,4 | 142,2 | 0 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

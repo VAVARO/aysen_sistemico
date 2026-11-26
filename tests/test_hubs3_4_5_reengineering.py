@@ -258,14 +258,14 @@ class TestHubs345Reengineering(unittest.TestCase):
         centrales = self.bundle["layers"]["centrales_electricas"]
         puros = self.bundle["layers"]["centrales_electricas_puros"]
         foa = self.bundle["layers"]["nodos_foa"]
-        self.assertEqual(len(centrales), 24)
-        self.assertEqual(len(puros), 16)
+        self.assertEqual(len(centrales), 31)
+        self.assertEqual(len(puros), 23)
         self.assertEqual(len(foa), 8)
         self._assert_aysen_bbox(centrales, "centrales_electricas")
 
         chac_comb = next((x for x in centrales if x["id"] == "ene_nodo-combustibles-chacabuco"), None)
         self.assertIsNotNone(chac_comb)
-        self.assertEqual(chac_comb["magnitudeValue"], 18500)
+        self.assertEqual(chac_comb["magnitudeValue"], 6674)
         sub_coy = next((x for x in centrales if x["id"] == "ene_nodo-elec-subestacion-coyhaique"), None)
         self.assertIsNotNone(sub_coy)
         self.assertEqual(sub_coy["magnitudeValue"], 66)
@@ -273,8 +273,8 @@ class TestHubs345Reengineering(unittest.TestCase):
             self.assertFalse(x.get("magnitudeValue") == 12 and "m3" in str(x.get("magnitudeUnit", "")))
 
         comunas = self.bundle["comunas"]
-        self.assertEqual([c["costo_diesel_aislado_clp"] for c in comunas], [0, 560, 0, 380, 640, 0, 0, 0, 620, 680])
-        self.assertEqual([c["subsidio_fiscal_diesel_kwh_clp"] for c in comunas], [0, 302, 0, 145, 375, 0, 0, 0, 358, 412])
+        self.assertEqual([c["costo_diesel_aislado_clp"] for c in comunas], [0, 540, 480, 495, 640, 0, 0, 0, 620, 680])
+        self.assertEqual([c["subsidio_fiscal_diesel_kwh_clp"] for c in comunas], [0, 246, 192, 245, 328, 0, 0, 0, 312, 362])
         for c in comunas:
             self.assertLessEqual(c["ruta7_pavimentada_km"], c["red_vial_pavimentada_km"])
             self.assertNotIn("cabezas_bovinos_caf", c)
@@ -283,10 +283,10 @@ class TestHubs345Reengineering(unittest.TestCase):
             self.assertIn("indice_aislamiento_multimodal", c)
 
         n11 = self.bundle["nodesById"]["11"]
-        self.assertEqual(n11["chartSpec"]["datasets"][0]["data"], [74.9, 20.4, 3.2, 0.1])
-        self.assertAlmostEqual(sum(n11["chartSpec"]["datasets"][0]["data"]), 98.6, places=1)
+        self.assertEqual(n11["chartSpec"]["datasets"][0]["data"], [40.94, 21.19, 2.99, 1.98])
+        self.assertAlmostEqual(sum(n11["chartSpec"]["datasets"][0]["data"]), 67.1, places=2)
         n12 = self.bundle["nodesById"]["12"]
-        self.assertEqual(n12["chartSpec"]["datasets"][0]["data"][2], 42.5)
+        self.assertEqual(n12["chartSpec"]["datasets"][0]["data"][2], 18.48)
         n14 = self.bundle["nodesById"]["14"]
         self.assertEqual(n14["chartSpec"]["datasets"][0]["data"], [c["internet_fijo_pct"] for c in comunas])
         for row in n14["tableRows"]:

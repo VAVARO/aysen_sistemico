@@ -1148,7 +1148,8 @@
         "sistemas aislados diesel",
         "microredes diesel",
         "generacion cara"
-      ]
+      ],
+      "notaRegulatoria": "Aplica a 6 comunas con SSAA o micro-redes aisladas: Guaitecas ($640/kWh), Tortel ($680/kWh), O'Higgins ($620/kWh), Aysén Islas Huichas ($480/kWh), Cisnes litoral ($495/kWh) y Lago Verde rural ($540/kWh)."
     },
     {
       "id": "potencia_mw",
@@ -1664,7 +1665,7 @@
     },
     {
       "id": "fuga_compras_pct",
-      "canonicalId": "wp04_compras_locales_pct",
+      "canonicalId": "compras_locales_pct",
       "name": "Fuga de Compras Públicas Extrarregional",
       "shortName": "Fuga Compras %",
       "unit": "% compras",
@@ -1680,7 +1681,9 @@
         "perdida de compras locales",
         "compras a santiago",
         "fuga de gasto publico"
-      ]
+      ],
+      "isComplementOf": "compras_locales_pct",
+      "isAliasOf": "compras_locales_pct"
     },
     {
       "id": "seia_plazo_dias",
@@ -2490,7 +2493,7 @@
     },
     {
       "id": "tarifa_adr_estimada_usd",
-      "canonicalId": "tarifa_adr_estimada_usd",
+      "canonicalId": "tarifa_adr_emat_clp",
       "name": "Tarifa Diaria Promedio Hotelera (ADR)",
       "shortName": "Tarifa Hotelera ADR",
       "unit": "US$",
@@ -2503,11 +2506,12 @@
         "tarifa adr",
         "precio hotel",
         "tarifa hotelera"
-      ]
+      ],
+      "isAliasOf": "tarifa_adr_emat_clp"
     },
     {
       "id": "revpar_estimado_usd",
-      "canonicalId": "revpar_estimado_usd",
+      "canonicalId": "revpar_emat_clp",
       "name": "Ingreso por Habitación Disponible (RevPAR)",
       "shortName": "RevPAR",
       "unit": "US$",
@@ -2519,7 +2523,8 @@
       "synonyms": [
         "revpar",
         "ingreso por habitacion"
-      ]
+      ],
+      "isAliasOf": "revpar_emat_clp"
     },
     {
       "id": "largo_pista_aerodromo_m",
@@ -2705,7 +2710,7 @@
     },
     {
       "id": "hogares_sin_internet_fijo_pct",
-      "canonicalId": "hogares_sin_internet_fijo_pct",
+      "canonicalId": "internet_fijo_pct",
       "name": "Hogares sin Conexión Fija a Internet",
       "shortName": "Sin Internet Fijo %",
       "unit": "%",
@@ -2719,7 +2724,9 @@
         "brecha digital",
         "hogares sin internet",
         "desconectados digital"
-      ]
+      ],
+      "isComplementOf": "internet_fijo_pct",
+      "isAliasOf": "internet_fijo_pct"
     },
     {
       "id": "establecimientos_educacion_conectados_n",
@@ -3907,7 +3914,7 @@
     },
     {
       "id": "ingresos_propios_pct",
-      "canonicalId": "ingresos_propios_pct",
+      "canonicalId": "dependencia_fcm_pct",
       "name": "Porcentaje de Ingresos Propios Permanentes",
       "shortName": "Ingresos Propios %",
       "unit": "%",
@@ -3919,7 +3926,9 @@
       "synonyms": [
         "ingresos propios pct",
         "ingresos propios %"
-      ]
+      ],
+      "isComplementOf": "dependencia_fcm_pct",
+      "isAliasOf": "dependencia_fcm_pct"
     },
     {
       "id": "fndr_per_capita_mclp",
@@ -5583,6 +5592,162 @@
       "canonicalId": "parques_snaspe_unidades",
       "hubTitle": "I. Turismo y Áreas Silvestres",
       "outlierBiased": false
+    },
+    {
+      "id": "hogares_censo_2024",
+      "canonicalId": "hogares_censo_2024",
+      "name": "Hogares Censales Estimados (Censo 2024)",
+      "shortName": "Hogares Censo 2024",
+      "unit": "hogares",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "hogares censo 2024",
+        "numero de hogares",
+        "viviendas ocupadas",
+        "total hogares"
+      ]
+    },
+    {
+      "id": "potencia_ernc_en_construccion_mw",
+      "canonicalId": "potencia_ernc_en_construccion_mw",
+      "name": "Potencia ERNC en Construcción 2026 (REx CNE 100-2026 / RCA)",
+      "shortName": "ERNC en Construcción",
+      "unit": "MW",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 11,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ernc en construccion",
+        "alto baguales ampliacion",
+        "cerro sombrero solar",
+        "proyectos electricos 2026"
+      ]
+    },
+    {
+      "id": "cobertura_subsidio_electrico_hogares_n",
+      "canonicalId": "cobertura_subsidio_electrico_hogares_n",
+      "name": "Hogares Beneficiarios Subsidio Eléctrico 5° Proceso (Ley 21.667)",
+      "shortName": "Hogares Subsidio Eléctrico",
+      "unit": "hogares",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 12,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "subsidio electrico hogares",
+        "beneficiarios subsidio electrico",
+        "ley 21667"
+      ]
+    },
+    {
+      "id": "cobertura_subsidio_electrico_pct",
+      "canonicalId": "cobertura_subsidio_electrico_pct",
+      "name": "Cobertura Comunal del Subsidio Eléctrico (% sobre Hogares)",
+      "shortName": "Cobertura Subsidio Eléctrico %",
+      "unit": "%",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 12,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cobertura subsidio electrico pct",
+        "porcentaje subsidio electrico"
+      ]
+    },
+    {
+      "id": "diesel_clp_litro",
+      "canonicalId": "diesel_clp_litro",
+      "name": "Precio Minorista Petróleo Diésel CNE (19-Nov-2026)",
+      "shortName": "Precio Diésel ($/L)",
+      "unit": "$/L",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "precio diesel",
+        "petroleo diesel",
+        "litro de diesel",
+        "bencina en linea diesel"
+      ]
+    },
+    {
+      "id": "kerosene_clp_litro",
+      "canonicalId": "kerosene_clp_litro",
+      "name": "Precio Minorista Kerosene Doméstico CNE (19-Nov-2026)",
+      "shortName": "Precio Kerosene ($/L)",
+      "unit": "$/L",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "precio kerosene",
+        "parafina",
+        "kerosene domestico",
+        "fepp kerosene"
+      ]
+    },
+    {
+      "id": "ratio_costo_calefaccion_electrica_vs_lena",
+      "canonicalId": "ratio_costo_calefaccion_electrica_vs_lena",
+      "name": "Ratio Costo Térmico Útil Bomba de Calor BT1 vs. Leña",
+      "shortName": "Ratio Calefacción Eléctrica/Leña",
+      "unit": "veces",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ratio calefaccion electrica lena",
+        "brecha termica electrica lena",
+        "cop bomba calor vs lena"
+      ]
+    },
+    {
+      "id": "costo_kwh_termico_util_lena_clp",
+      "canonicalId": "costo_kwh_termico_util_lena_clp",
+      "name": "Costo Efectivo por kWh Térmico Útil de Leña (1.050 kWh_útil/m³st)",
+      "shortName": "Costo kWh Útil Leña",
+      "unit": "$/kWh_útil",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "isAliasOf": "precio_lena_m3",
+      "synonyms": [
+        "costo kwh util lena",
+        "kwh termico lena"
+      ]
+    },
+    {
+      "id": "costo_kwh_termico_util_kerosene_clp",
+      "canonicalId": "costo_kwh_termico_util_kerosene_clp",
+      "name": "Costo Efectivo por kWh Térmico Útil de Kerosene (8,5 kWh_útil/L)",
+      "shortName": "Costo kWh Útil Kerosene",
+      "unit": "$/kWh_útil",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "isAliasOf": "kerosene_clp_litro",
+      "synonyms": [
+        "costo kwh util kerosene",
+        "kwh termico parafina"
+      ]
     }
   ],
   "nodes": [

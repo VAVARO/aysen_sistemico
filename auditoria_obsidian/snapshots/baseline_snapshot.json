@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "2.0.0",
-  "label": "HEAD",
-  "capturedAt": "2026-11-25T19:57:51.900Z",
-  "bundleGeneratedAt": "2026-11-25T19:04:22.560Z",
+  "schemaVersion": "3.0.0",
+  "label": "HEAD_APROBADO",
+  "capturedAt": "2026-11-26T15:51:35.044Z",
+  "bundleGeneratedAt": "1970-01-01T00:00:01.000Z",
   "autoUpdateMeta": {
     "frequency": "Mensual (día 1 de cada mes)",
     "lastRun": "2026-11-02T12:13:30+00:00",
@@ -11,7 +11,7 @@
     "totalOfficialSources": 38,
     "totalHubs": 10,
     "totalNodes": 41,
-    "totalComunaVariables": 245
+    "totalComunaVariables": 269
   },
   "comunas": [
     {
@@ -55,8 +55,181 @@
       "nombre": "Tortel"
     }
   ],
-  "totalKeys": 245,
-  "indicatorCount": 237,
+  "comunaHogares": {
+    "11101": 21800,
+    "11102": 320,
+    "11201": 8200,
+    "11202": 2050,
+    "11203": 520,
+    "11301": 1300,
+    "11302": 250,
+    "11303": 195,
+    "11401": 1950,
+    "11402": 1060
+  },
+  "comunaPoblacion": {
+    "11101": 57823,
+    "11102": 779,
+    "11201": 23170,
+    "11202": 5137,
+    "11203": 1598,
+    "11301": 3458,
+    "11302": 647,
+    "11303": 505,
+    "11401": 4905,
+    "11402": 2723
+  },
+  "centralesElectricas": [
+    {
+      "id": "ene_cne_CENTRAL-TERMICA-TEHUELCHE",
+      "nombre": "Central Térmica Tehuelche",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 17.98
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-LAGO-ATRAVESADO",
+      "nombre": "Central Hidroeléctrica Lago Atravesado",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 11
+    },
+    {
+      "id": "ene_cne_PLANTA-SOLAR-EL-BLANCO",
+      "nombre": "Planta Solar Fotovoltaica El Blanco",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 2.99
+    },
+    {
+      "id": "ene_cne_PARQUE-EOLICO-ALTO-BAGUALES",
+      "nombre": "Parque Eólico Alto Baguales",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 1.98
+    },
+    {
+      "id": "ene_cne_CENTRAL-TERMICA-CHACABUCO",
+      "nombre": "Central Térmica Puerto Chacabuco",
+      "comuna_ine": "11201",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 10
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-RIO-AYSEN-HIST",
+      "nombre": "Central Mini-Hidroeléctrica Río Aysén / Puerto Aysén",
+      "comuna_ine": "11201",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 2
+    },
+    {
+      "id": "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-HIDRO",
+      "nombre": "Central Hidroeléctrica El Toqui (Autogeneración Minera)",
+      "comuna_ine": "11201",
+      "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
+      "potencia_mw": 2
+    },
+    {
+      "id": "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-DIESEL",
+      "nombre": "Central Térmica El Toqui (Respaldo Autogeneración)",
+      "comuna_ine": "11201",
+      "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
+      "potencia_mw": 4
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-PUERTO-AGUIRRE",
+      "nombre": "Central Térmica Puerto Aguirre (Islas Huichas)",
+      "comuna_ine": "11201",
+      "sistema": "Sistema Aislado Insular Islas Huichas",
+      "potencia_mw": 0.48
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-PUERTO-CISNES",
+      "nombre": "Central Térmica Puerto Cisnes",
+      "comuna_ine": "11202",
+      "sistema": "Sistema Mediano de Puerto Cisnes",
+      "potencia_mw": 1.67
+    },
+    {
+      "id": "ene_cne_CENTRAL-SM-PALENA-LA-JUNTA-PUYUHUAPI",
+      "nombre": "Centrales La Junta (0,51 MW) y Puyuhuapi (0,29 MW) - Fracción SM Palena",
+      "comuna_ine": "11202",
+      "sistema": "Sistema Mediano Palena (fracción Cisnes en sistema bi-regional de 7,18 MW)",
+      "potencia_mw": 0.8
+    },
+    {
+      "id": "ene_cne_MICROCENTRAL-SSAA-LITORAL-CISNES",
+      "nombre": "Microcentrales SSAA Litoral Cisnes (Pto. Gaviota, Pto. Gala y Melimoyu)",
+      "comuna_ine": "11202",
+      "sistema": "Sistema Aislado Litoral Cisnes",
+      "potencia_mw": 0.36
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-CHILE-CHICO",
+      "nombre": "Central Térmica Chile Chico",
+      "comuna_ine": "11401",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 2.9
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-LOS-MAQUIS",
+      "nombre": "Central Hidroeléctrica Los Maquis (Puerto Guadal)",
+      "comuna_ine": "11401",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 1
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-COCHRANE",
+      "nombre": "Central Térmica Cochrane",
+      "comuna_ine": "11301",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 1.9
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-EL-TRARO",
+      "nombre": "Central Hidroeléctrica El Traro",
+      "comuna_ine": "11301",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 0.64
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-MELINKA",
+      "nombre": "Central Térmica Municipal Melinka-Repollal",
+      "comuna_ine": "11203",
+      "sistema": "Sistema Aislado Municipal Melinka-Repollal",
+      "potencia_mw": 1.45
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIBRIDA-CALETA-TORTEL",
+      "nombre": "Central Híbrida Municipal Caleta Tortel (Diésel + Microhidro Pelton)",
+      "comuna_ine": "11303",
+      "sistema": "Sistema Aislado Municipal Caleta Tortel",
+      "potencia_mw": 0.95
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIBRIDA-RIO-MOSCO-OHIGGINS",
+      "nombre": "Central Híbrida Río Mosco / Villa O'Higgins (Hidro + Respaldo Diésel)",
+      "comuna_ine": "11302",
+      "sistema": "Sistema Aislado Municipal Villa O'Higgins",
+      "potencia_mw": 1.25
+    },
+    {
+      "id": "ene_cne_CENTRAL-RESPALDO-RIO-IBANEZ",
+      "nombre": "Grupos Térmicos de Respaldo Local Cerro Castillo - Puerto Ibáñez",
+      "comuna_ine": "11402",
+      "sistema": "Ramal Sur SMA / Respaldo Local",
+      "potencia_mw": 1.4
+    },
+    {
+      "id": "ene_cne_CENTRAL-LOCAL-LAGO-VERDE",
+      "nombre": "Central Local SM Palena / Micro-redes Villa La Tapera y Amengual",
+      "comuna_ine": "11102",
+      "sistema": "Fracción Sistema Mediano Palena y Sistema Aislado Rural Lago Verde",
+      "potencia_mw": 0.35
+    }
+  ],
+  "totalKeys": 269,
+  "indicatorCount": 236,
   "indicators": {
     "poblacion_censo_2024": {
       "type": "numeric",
@@ -71,21 +244,6 @@
         "11303": 505,
         "11401": 4905,
         "11402": 2723
-      }
-    },
-    "porcentaje_regional_pct": {
-      "type": "numeric",
-      "values": {
-        "11101": 57.4,
-        "11102": 0.77,
-        "11201": 23,
-        "11202": 5.1,
-        "11203": 1.59,
-        "11301": 3.43,
-        "11302": 0.64,
-        "11303": 0.5,
-        "11401": 4.87,
-        "11402": 2.7
       }
     },
     "superficie_km2": {
@@ -328,21 +486,6 @@
         "11402": 79.6
       }
     },
-    "ingresos_propios_pct": {
-      "type": "numeric",
-      "values": {
-        "11101": 53.5,
-        "11102": 10.8,
-        "11201": 47.2,
-        "11202": 25.5,
-        "11203": 17,
-        "11301": 23.2,
-        "11302": 8.5,
-        "11303": 7.2,
-        "11401": 28.8,
-        "11402": 20.4
-      }
-    },
     "fndr_mclp": {
       "type": "numeric",
       "values": {
@@ -362,55 +505,55 @@
       "type": "categorical",
       "values": {
         "11101": "Sistema Mediano de Aysén (SMA)",
-        "11102": "Sistema Palena - La Junta (Edelaysen) y Autoproducción Lago Verde",
-        "11201": "Sistema Mediano de Aysén (SMA) e Islas Huichas Aislado",
-        "11202": "Sistema Mediano Palena - Cisnes (Edelaysen)",
-        "11203": "Sistema Aislado Insular Melinka",
-        "11301": "Sistema Mediano General Carrera - Cochrane (Edelaysen)",
-        "11302": "Sistema Aislado Villa O'Higgins",
-        "11303": "Sistema Aislado Caleta Tortel",
+        "11102": "Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual",
+        "11201": "SMA Continental, Autogeneración El Toqui e Islas Huichas (SSAA)",
+        "11202": "SM Puerto Cisnes (1.67 MW), SM Palena (0.80 MW) y 3 SSAA Litorales (0.36 MW)",
+        "11203": "Sistema Aislado Municipal Melinka-Repollal",
+        "11301": "Sistema Mediano General Carrera - Cochrane (SMGC)",
+        "11302": "Sistema Aislado Municipal Villa O'Higgins",
+        "11303": "Sistema Aislado Municipal Caleta Tortel",
         "11401": "Sistema Mediano General Carrera (SMGC)",
-        "11402": "Sistema Mediano de Aysén (Interconexión Ramal Sur)"
+        "11402": "Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez"
       }
     },
     "potencia_mw": {
       "type": "numeric",
       "values": {
-        "11101": 26.8,
-        "11102": 1.4,
-        "11201": 42.5,
-        "11202": 6.8,
-        "11203": 2.8,
-        "11301": 5.8,
-        "11302": 1.4,
-        "11303": 1.2,
-        "11401": 7.5,
-        "11402": 2.4
+        "11101": 33.95,
+        "11102": 0.35,
+        "11201": 18.48,
+        "11202": 2.83,
+        "11203": 1.45,
+        "11301": 2.54,
+        "11302": 1.25,
+        "11303": 0.95,
+        "11401": 3.9,
+        "11402": 1.4
       }
     },
     "gasolina_93_clp": {
       "type": "numeric",
       "values": {
-        "11101": 1362,
-        "11102": 1520,
-        "11201": 1375,
-        "11202": 1440,
-        "11203": 1560,
-        "11301": 1410,
-        "11302": 1620,
-        "11303": 1580,
-        "11401": 1430,
-        "11402": 1420
+        "11101": 1652,
+        "11102": 1765,
+        "11201": 1651,
+        "11202": 1695,
+        "11203": 1785,
+        "11301": 1714,
+        "11302": 1812,
+        "11303": 1790,
+        "11401": 1710,
+        "11402": 1705
       }
     },
     "precio_lena_m3": {
       "type": "numeric",
       "values": {
         "11101": 48000,
-        "11102": 38000,
+        "11102": 36000,
         "11201": 46000,
-        "11202": 42000,
-        "11203": 55000,
+        "11202": 44000,
+        "11203": 52000,
         "11301": 42000,
         "11302": 36000,
         "11303": 40000,
@@ -421,31 +564,31 @@
     "hogares_lena_pct": {
       "type": "numeric",
       "values": {
-        "11101": 92.4,
-        "11102": 98.2,
-        "11201": 87.8,
-        "11202": 95.1,
-        "11203": 94.6,
-        "11301": 96,
-        "11302": 99.1,
-        "11303": 98.4,
-        "11401": 82.3,
+        "11101": 68.8,
+        "11102": 98.1,
+        "11201": 84.5,
+        "11202": 94,
+        "11203": 94.2,
+        "11301": 95.5,
+        "11302": 98.8,
+        "11303": 98.5,
+        "11401": 82,
         "11402": 94.2
       }
     },
     "estado_foa": {
       "type": "categorical",
       "values": {
-        "11101": "FOA Terrestre + Ramal Submarino (CTR / Conexión Troncal Austral)",
-        "11102": "Radioenlace Microondas Digital + Starlink Institucional Subtel",
-        "11201": "FOA Submarina (Punto Aterrizaje Chacabuco y Puerto Aguirre) + FOA Terrestre hacia Coyhaique",
-        "11202": "FOA Submarina (Aterrizaje Puerto Cisnes) + FOA Terrestre Carretera Austral",
-        "11203": "FOA Submarina (Punto de Aterrizaje Submarino Melinka de CTR/SUBTEL)",
-        "11301": "FOA Terrestre (Nodo Cabecera Provincial Troncal Austral Cochrane)",
-        "11302": "Radioenlace Digital UHF/Microondas + Satelital Starlink Subtel",
-        "11303": "FOA Submarina (Punto de Aterrizaje FOA Caleta Tortel) + FOA Terrestre desde Cochrane",
-        "11401": "FOA Terrestre (Ramal Troncal General Carrera)",
-        "11402": "FOA Terrestre (Troncal Carretera Austral con empalme en Cerro Castillo y Puerto Ibáñez)"
+        "11101": "Troncal Terrestre Silica Networks (FDT-2018-02) + Cable Submarino Austral GTD vía Puerto Chacabuco",
+        "11102": "Satelital Starlink / Radioenlace UHF (FTTH hogar en despliegue FDT-2025-03 hacia Lago Verde y Villa La Tapera)",
+        "11201": "Cable Submarino Austral GTD / Telefónica del Sur (Puerto Chacabuco) + Red Troncal Regional Coyhaique",
+        "11202": "Red Troncal Terrestre Norte Ruta 7 (La Junta/Puyuhuapi/Cisnes) + adjudicación FDT-2025-03 Última Milla",
+        "11203": "Radioenlace Microondas / Starlink + Proyecto Última Milla FDT-2025-03 (Melinka y Repollal, sin aterrizaje CTR)",
+        "11301": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Bertrand, Cochrane y Los Ñadis)",
+        "11302": "Satelital Starlink / Radioenlace UHF (Fibra Tortel-Villa O'Higgins adjudicada D.O. 28-abr-2026; operación 1S-2028)",
+        "11303": "Único Aterrizaje Submarino FOA CTR en Aysén (FDT-2017-01) + POIIT Silica FDT-2018-02 + FDT-2025-03 FTTH",
+        "11401": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Guadal, Mallín Grande y Chile Chico)",
+        "11402": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Cerro Castillo, Puerto Ibáñez, Bahía Murta y Río Tranquilo)"
       }
     },
     "concesiones_salmon": {
@@ -526,46 +669,121 @@
     "empresas_sii": {
       "type": "numeric",
       "values": {
-        "11101": 5535,
-        "11102": 76,
-        "11201": 2100,
-        "11202": 620,
-        "11203": 171,
-        "11301": 295,
-        "11302": 57,
-        "11303": 48,
-        "11401": 400,
-        "11402": 238
+        "11101": 7620,
+        "11102": 118,
+        "11201": 2840,
+        "11202": 895,
+        "11203": 242,
+        "11301": 492,
+        "11302": 96,
+        "11303": 84,
+        "11401": 648,
+        "11402": 418
       }
     },
     "trabajadores_sii": {
       "type": "numeric",
       "values": {
-        "11101": 33650,
-        "11102": 460,
-        "11201": 12780,
-        "11202": 3770,
-        "11203": 1040,
-        "11301": 1790,
-        "11302": 345,
-        "11303": 295,
-        "11401": 2430,
-        "11402": 1445
+        "11101": 20950,
+        "11102": 132,
+        "11201": 9890,
+        "11202": 1920,
+        "11203": 265,
+        "11301": 845,
+        "11302": 98,
+        "11303": 80,
+        "11401": 1140,
+        "11402": 512
       }
     },
     "prestadores_sernatur": {
       "type": "numeric",
       "values": {
-        "11101": 412,
-        "11102": 24,
-        "11201": 185,
-        "11202": 138,
-        "11203": 21,
-        "11301": 83,
-        "11302": 29,
-        "11303": 42,
-        "11401": 95,
-        "11402": 132
+        "11101": 489,
+        "11102": 26,
+        "11201": 126,
+        "11202": 215,
+        "11203": 25,
+        "11301": 96,
+        "11302": 31,
+        "11303": 44,
+        "11401": 231,
+        "11402": 445
+      }
+    },
+    "alojamientos_turisticos_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 212,
+        "11102": 14,
+        "11201": 56,
+        "11202": 108,
+        "11203": 13,
+        "11301": 42,
+        "11302": 16,
+        "11303": 21,
+        "11401": 78,
+        "11402": 112
+      }
+    },
+    "operadores_aventura_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 82,
+        "11102": 1,
+        "11201": 20,
+        "11202": 26,
+        "11203": 3,
+        "11301": 22,
+        "11302": 6,
+        "11303": 10,
+        "11401": 36,
+        "11402": 70
+      }
+    },
+    "guias_turismo_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 94,
+        "11102": 3,
+        "11201": 22,
+        "11202": 17,
+        "11203": 3,
+        "11301": 18,
+        "11302": 5,
+        "11303": 7,
+        "11401": 46,
+        "11402": 146
+      }
+    },
+    "restaurantes_turisticos_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 58,
+        "11102": 5,
+        "11201": 16,
+        "11202": 38,
+        "11203": 4,
+        "11301": 8,
+        "11302": 2,
+        "11303": 4,
+        "11401": 24,
+        "11402": 30
+      }
+    },
+    "prestadores_vigencia_patente_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 64.2,
+        "11102": 19.2,
+        "11201": 52.4,
+        "11202": 11,
+        "11203": 28,
+        "11301": 44.8,
+        "11302": 38.7,
+        "11303": 40.9,
+        "11401": 34.2,
+        "11402": 30.3
       }
     },
     "camas_turisticas": {
@@ -586,24 +804,39 @@
     "pernoctaciones_emat": {
       "type": "numeric",
       "values": {
-        "11101": 208500,
-        "11102": 6800,
-        "11201": 98400,
-        "11202": 74200,
-        "11203": 5400,
-        "11301": 49200,
-        "11302": 16400,
-        "11303": 27000,
-        "11401": 58600,
-        "11402": 86200
+        "11101": 138400,
+        "11102": 2800,
+        "11201": 58200,
+        "11202": 44800,
+        "11203": 2300,
+        "11301": 22800,
+        "11302": 6439,
+        "11303": 10400,
+        "11401": 26500,
+        "11402": 51400
+      }
+    },
+    "llegadas_turistas_emat_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 73200,
+        "11102": 1500,
+        "11201": 31800,
+        "11202": 24600,
+        "11203": 1200,
+        "11301": 11900,
+        "11302": 3361,
+        "11303": 5850,
+        "11401": 14100,
+        "11402": 29100
       }
     },
     "zoit_nombre": {
       "type": "categorical",
       "values": {
-        "11101": "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
+        "11101": "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén)",
         "11102": "ZOIT Aysén Patagonia Queulat",
-        "11201": "ZOIT Aysén Patagonia Queulat (Sector Sur)",
+        "11201": "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén y Portal Marítimo PN Laguna San Rafael)",
         "11202": "ZOIT Aysén Patagonia Queulat",
         "11203": "Sin declaratoria ZOIT vigente",
         "11301": "ZOIT Provincia de los Glaciares",
@@ -616,46 +849,76 @@
     "visitantes_snaspe": {
       "type": "numeric",
       "values": {
-        "11101": 38500,
-        "11102": 1800,
-        "11201": 29600,
-        "11202": 64200,
-        "11203": 2400,
-        "11301": 35600,
-        "11302": 12400,
+        "11101": 21190,
+        "11102": 0,
+        "11201": 7048,
+        "11202": 25619,
+        "11203": 0,
+        "11301": 9853,
+        "11302": 0,
+        "11303": 0,
+        "11401": 6600,
+        "11402": 15807
+      }
+    },
+    "visitantes_atractivos_totales_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 49400,
+        "11102": 4200,
+        "11201": 31800,
+        "11202": 48200,
+        "11203": 3800,
+        "11301": 20200,
+        "11302": 9800,
         "11303": 14200,
-        "11401": 34200,
-        "11402": 41000
+        "11401": 26900,
+        "11402": 65400
+      }
+    },
+    "llegadas_por_cama_turistica": {
+      "type": "numeric",
+      "values": {
+        "11101": 21.4,
+        "11102": 9.1,
+        "11201": 17.2,
+        "11202": 19.8,
+        "11203": 8.3,
+        "11301": 17.2,
+        "11302": 14,
+        "11303": 16.3,
+        "11401": 18.1,
+        "11402": 25.3
       }
     },
     "visitas_por_cama_turistica": {
       "type": "numeric",
       "values": {
-        "11101": 11.3,
-        "11102": 10.9,
-        "11201": 16,
-        "11202": 51.8,
-        "11203": 16.6,
-        "11301": 51.6,
-        "11302": 51.7,
-        "11303": 39.4,
-        "11401": 43.8,
-        "11402": 35.7
+        "11101": 6.2,
+        "11102": 0,
+        "11201": 3.8,
+        "11202": 20.7,
+        "11203": 0,
+        "11301": 14.3,
+        "11302": 0,
+        "11303": 0,
+        "11401": 8.5,
+        "11402": 13.7
       }
     },
     "visitas_por_pernoctacion_ratio": {
       "type": "numeric",
       "values": {
-        "11101": 0.18,
-        "11102": 0.26,
-        "11201": 0.3,
-        "11202": 0.87,
-        "11203": 0.44,
-        "11301": 0.72,
-        "11302": 0.76,
-        "11303": 0.53,
-        "11401": 0.58,
-        "11402": 0.48
+        "11101": 0.15,
+        "11102": 0,
+        "11201": 0.12,
+        "11202": 0.57,
+        "11203": 0,
+        "11301": 0.43,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0.25,
+        "11402": 0.31
       }
     },
     "visitantes_extranjeros_pct": {
@@ -676,121 +939,196 @@
     "visitantes_extranjeros_snaspe_n": {
       "type": "numeric",
       "values": {
-        "11101": 10318,
-        "11102": 261,
-        "11201": 10123,
-        "11202": 26643,
-        "11203": 432,
-        "11301": 15842,
-        "11302": 6820,
-        "11303": 6106,
-        "11401": 13167,
-        "11402": 19680
+        "11101": 5679,
+        "11102": 0,
+        "11201": 2410,
+        "11202": 10632,
+        "11203": 0,
+        "11301": 4385,
+        "11302": 0,
+        "11303": 0,
+        "11401": 2541,
+        "11402": 7587
       }
     },
     "tasa_ocupacion_estival_pct": {
       "type": "numeric",
       "values": {
-        "11101": 76.5,
-        "11102": 58.2,
-        "11201": 72.1,
-        "11202": 84.5,
-        "11203": 64,
-        "11301": 81,
-        "11302": 86.5,
-        "11303": 85,
-        "11401": 82,
-        "11402": 89.2
+        "11101": 89.9,
+        "11102": 64.5,
+        "11201": 84.2,
+        "11202": 70,
+        "11203": 62,
+        "11301": 79.4,
+        "11302": 80.5,
+        "11303": 78.6,
+        "11401": 76.2,
+        "11402": 78.8
+      }
+    },
+    "tasa_ocupacion_emat_estival_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 45.8,
+        "11102": 29.5,
+        "11201": 43.2,
+        "11202": 41.6,
+        "11203": 28.4,
+        "11301": 40.5,
+        "11302": 38.2,
+        "11303": 37.9,
+        "11401": 39.8,
+        "11402": 44.1
       }
     },
     "tasa_ocupacion_invernal_pct": {
       "type": "numeric",
       "values": {
-        "11101": 32.4,
-        "11102": 12,
-        "11201": 28.6,
-        "11202": 18.2,
-        "11203": 14.5,
-        "11301": 16,
-        "11302": 7.5,
-        "11303": 11,
-        "11401": 21,
-        "11402": 14.5
+        "11101": 28.4,
+        "11102": 8.5,
+        "11201": 24.6,
+        "11202": 15.8,
+        "11203": 11.2,
+        "11301": 13.8,
+        "11302": 6.8,
+        "11303": 9.2,
+        "11401": 17.5,
+        "11402": 12.4
       }
     },
     "concentracion_estival_pct": {
       "type": "numeric",
       "values": {
-        "11101": 70.2,
-        "11102": 82.9,
-        "11201": 71.6,
-        "11202": 82.3,
-        "11203": 81.5,
-        "11301": 83.5,
-        "11302": 92,
-        "11303": 88.5,
-        "11401": 79.6,
-        "11402": 86
+        "11101": 54.8,
+        "11102": 81.2,
+        "11201": 61.4,
+        "11202": 77.8,
+        "11203": 69.5,
+        "11301": 80.4,
+        "11302": 88.2,
+        "11303": 86.8,
+        "11401": 74.6,
+        "11402": 85.6
       }
     },
     "estadia_promedio_dias": {
       "type": "numeric",
       "values": {
-        "11101": 2.7,
-        "11102": 2,
-        "11201": 2.3,
-        "11202": 2.1,
-        "11203": 2.3,
-        "11301": 2.5,
-        "11302": 2.8,
-        "11303": 1.9,
-        "11401": 2.4,
-        "11402": 2.1
+        "11101": 1.89,
+        "11102": 1.87,
+        "11201": 1.83,
+        "11202": 1.82,
+        "11203": 1.92,
+        "11301": 1.92,
+        "11302": 1.92,
+        "11303": 1.78,
+        "11401": 1.88,
+        "11402": 1.77
+      }
+    },
+    "estadia_regional_viaje_dias": {
+      "type": "numeric",
+      "values": {
+        "11101": 8.4,
+        "11102": 10.2,
+        "11201": 8.8,
+        "11202": 9.5,
+        "11203": 10.4,
+        "11301": 11.2,
+        "11302": 12.1,
+        "11303": 11.6,
+        "11401": 10.8,
+        "11402": 10.3
       }
     },
     "gasto_diario_turista_usd": {
       "type": "numeric",
       "values": {
-        "11101": 118,
-        "11102": 68,
-        "11201": 135,
-        "11202": 145,
-        "11203": 85,
-        "11301": 130,
-        "11302": 138,
+        "11101": 64,
+        "11102": 58,
+        "11201": 96,
+        "11202": 108,
+        "11203": 66,
+        "11301": 104,
+        "11302": 112,
+        "11303": 95,
+        "11401": 74,
+        "11402": 114
+      }
+    },
+    "tarifa_adr_emat_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 67512,
+        "11102": 49800,
+        "11201": 81200,
+        "11202": 84900,
+        "11203": 53400,
+        "11301": 73800,
+        "11302": 58600,
+        "11303": 55600,
+        "11401": 59600,
+        "11402": 62400
+      }
+    },
+    "revpar_emat_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 17981,
+        "11102": 7570,
+        "11201": 20625,
+        "11202": 20376,
+        "11203": 8811,
+        "11301": 16531,
+        "11302": 10196,
+        "11303": 10675,
+        "11401": 13470,
+        "11402": 13790
+      }
+    },
+    "empresas_act_turismo_sii_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 1485,
+        "11102": 42,
+        "11201": 468,
+        "11202": 324,
+        "11203": 29,
+        "11301": 162,
+        "11302": 38,
+        "11303": 64,
+        "11401": 228,
+        "11402": 312
+      }
+    },
+    "ventas_act_turismo_uf": {
+      "type": "numeric",
+      "values": {
+        "11101": 5420000,
+        "11102": 82000,
+        "11201": 1985000,
+        "11202": 1310000,
+        "11203": 67000,
+        "11301": 585000,
+        "11302": 115000,
+        "11303": 218086,
+        "11401": 742000,
+        "11402": 1045000
+      }
+    },
+    "empleo_act_turismo_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2340,
+        "11102": 65,
+        "11201": 820,
+        "11202": 585,
+        "11203": 60,
+        "11301": 295,
+        "11302": 75,
         "11303": 115,
-        "11401": 125,
-        "11402": 150
-      }
-    },
-    "tarifa_adr_estimada_usd": {
-      "type": "numeric",
-      "values": {
-        "11101": 159,
-        "11102": 92,
-        "11201": 182,
-        "11202": 196,
-        "11203": 115,
-        "11301": 176,
-        "11302": 186,
-        "11303": 155,
-        "11401": 169,
-        "11402": 203
-      }
-    },
-    "revpar_estimado_usd": {
-      "type": "numeric",
-      "values": {
-        "11101": 79.6,
-        "11102": 28,
-        "11201": 83.7,
-        "11202": 87.7,
-        "11203": 39.4,
-        "11301": 73.9,
-        "11302": 72.7,
-        "11303": 62.9,
-        "11401": 76.7,
-        "11402": 90.1
+        "11401": 385,
+        "11402": 530
       }
     },
     "largo_pista_aerodromo_m": {
@@ -988,28 +1326,133 @@
         "11402": 24.6
       }
     },
+    "hogares_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 21800,
+        "11102": 320,
+        "11201": 8200,
+        "11202": 2050,
+        "11203": 520,
+        "11301": 1300,
+        "11302": 250,
+        "11303": 195,
+        "11401": 1950,
+        "11402": 1060
+      }
+    },
+    "potencia_ernc_en_construccion_mw": {
+      "type": "numeric",
+      "values": {
+        "11101": 17.98,
+        "11102": 0,
+        "11201": 0,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 1,
+        "11402": 0
+      }
+    },
     "tarifa_bt1_clp": {
       "type": "numeric",
       "values": {
-        "11101": 224,
-        "11102": 258,
-        "11201": 222,
-        "11202": 235,
-        "11203": 265,
-        "11301": 230,
-        "11302": 262,
-        "11303": 268,
-        "11401": 228,
-        "11402": 231
+        "11101": 287.8,
+        "11102": 294,
+        "11201": 287.8,
+        "11202": 292.4,
+        "11203": 312,
+        "11301": 291.2,
+        "11302": 308,
+        "11303": 318,
+        "11401": 289.5,
+        "11402": 289.5
+      }
+    },
+    "cobertura_subsidio_electrico_hogares_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 7820,
+        "11102": 82,
+        "11201": 3190,
+        "11202": 745,
+        "11203": 148,
+        "11301": 445,
+        "11302": 48,
+        "11303": 40,
+        "11401": 590,
+        "11402": 340
+      }
+    },
+    "cobertura_subsidio_electrico_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 35.9,
+        "11102": 25.6,
+        "11201": 38.9,
+        "11202": 36.3,
+        "11203": 28.5,
+        "11301": 34.2,
+        "11302": 19.2,
+        "11303": 20.5,
+        "11401": 30.3,
+        "11402": 32.1
+      }
+    },
+    "diesel_clp_litro": {
+      "type": "numeric",
+      "values": {
+        "11101": 1595,
+        "11102": 1710,
+        "11201": 1585,
+        "11202": 1645,
+        "11203": 1740,
+        "11301": 1735,
+        "11302": 1802,
+        "11303": 1775,
+        "11401": 1675,
+        "11402": 1668
+      }
+    },
+    "kerosene_clp_litro": {
+      "type": "numeric",
+      "values": {
+        "11101": 1485,
+        "11102": 1530,
+        "11201": 1470,
+        "11202": 1495,
+        "11203": 1535,
+        "11301": 1525,
+        "11302": 1541,
+        "11303": 1538,
+        "11401": 1510,
+        "11402": 1505
+      }
+    },
+    "ratio_costo_calefaccion_electrica_vs_lena": {
+      "type": "numeric",
+      "values": {
+        "11101": 2.25,
+        "11102": 3.06,
+        "11201": 2.35,
+        "11202": 2.49,
+        "11203": 2.25,
+        "11301": 2.6,
+        "11302": 3.21,
+        "11303": 2.98,
+        "11401": 2.17,
+        "11402": 2.47
       }
     },
     "costo_diesel_aislado_clp": {
       "type": "numeric",
       "values": {
         "11101": 0,
-        "11102": 560,
-        "11201": 0,
-        "11202": 380,
+        "11102": 540,
+        "11201": 480,
+        "11202": 495,
         "11203": 640,
         "11301": 0,
         "11302": 620,
@@ -1021,16 +1464,16 @@
     "internet_fijo_pct": {
       "type": "numeric",
       "values": {
-        "11101": 75.5,
-        "11102": 17.6,
-        "11201": 61.8,
-        "11202": 43.6,
-        "11203": 31.8,
-        "11301": 51.4,
+        "11101": 70.1,
+        "11102": 17.5,
+        "11201": 66.5,
+        "11202": 72.5,
+        "11203": 51.9,
+        "11301": 60.8,
         "11302": 23.2,
-        "11303": 27.5,
-        "11401": 47.9,
-        "11402": 35.2
+        "11303": 22.1,
+        "11401": 40.4,
+        "11402": 52.4
       }
     },
     "biomasa_salmon_ton": {
@@ -1121,21 +1564,6 @@
         "11303": 21,
         "11401": 41.2,
         "11402": 32.8
-      }
-    },
-    "fuga_compras_pct": {
-      "type": "numeric",
-      "values": {
-        "11101": 41.6,
-        "11102": 77.9,
-        "11201": 45.4,
-        "11202": 61.8,
-        "11203": 75.5,
-        "11301": 55.5,
-        "11302": 81.6,
-        "11303": 79,
-        "11401": 58.8,
-        "11402": 67.2
       }
     },
     "parcelaciones_sag_n": {
@@ -1333,21 +1761,6 @@
         "11402": 3
       }
     },
-    "museos_espacios_n": {
-      "type": "numeric",
-      "values": {
-        "11101": 8,
-        "11102": 2,
-        "11201": 6,
-        "11202": 6,
-        "11203": 2,
-        "11301": 3,
-        "11302": 2,
-        "11303": 2,
-        "11401": 5,
-        "11402": 6
-      }
-    },
     "centros_culturales_n": {
       "type": "numeric",
       "values": {
@@ -1391,21 +1804,6 @@
         "11303": 19,
         "11401": 24,
         "11402": 46
-      }
-    },
-    "bibliotecas_snbp_n": {
-      "type": "numeric",
-      "values": {
-        "11101": 1,
-        "11102": 1,
-        "11201": 1,
-        "11202": 3,
-        "11203": 1,
-        "11301": 1,
-        "11302": 1,
-        "11303": 1,
-        "11401": 2,
-        "11402": 1
       }
     },
     "fondart_fndr_mclp": {
@@ -1573,21 +1971,6 @@
         "11402": 4
       }
     },
-    "monto_anid_mclp": {
-      "type": "numeric",
-      "values": {
-        "11101": 11850.5,
-        "11102": 45,
-        "11201": 2450,
-        "11202": 680,
-        "11203": 280,
-        "11301": 460,
-        "11302": 190,
-        "11303": 361.3,
-        "11401": 490,
-        "11402": 520
-      }
-    },
     "monto_anid_acumulado_mclp": {
       "type": "numeric",
       "values": {
@@ -1601,21 +1984,6 @@
         "11303": 361.3,
         "11401": 490,
         "11402": 520
-      }
-    },
-    "innovacion_corfo_mclp": {
-      "type": "numeric",
-      "values": {
-        "11101": 4120,
-        "11102": 30,
-        "11201": 2150,
-        "11202": 680,
-        "11203": 140,
-        "11301": 410,
-        "11302": 50,
-        "11303": 180,
-        "11401": 580,
-        "11402": 110
       }
     },
     "monto_corfo_innova_mclp": {
@@ -1633,21 +2001,6 @@
         "11402": 110
       }
     },
-    "proyectos_ctci_total": {
-      "type": "numeric",
-      "values": {
-        "11101": 102,
-        "11102": 2,
-        "11201": 31,
-        "11202": 11,
-        "11203": 4,
-        "11301": 7,
-        "11302": 3,
-        "11303": 6,
-        "11401": 8,
-        "11402": 5
-      }
-    },
     "total_proyectos_ctci": {
       "type": "numeric",
       "values": {
@@ -1661,21 +2014,6 @@
         "11303": 6,
         "11401": 8,
         "11402": 5
-      }
-    },
-    "investigadores_residentes": {
-      "type": "numeric",
-      "values": {
-        "11101": 91,
-        "11102": 1,
-        "11201": 14,
-        "11202": 4,
-        "11203": 2,
-        "11301": 3,
-        "11302": 1,
-        "11303": 3,
-        "11401": 3,
-        "11402": 2
       }
     },
     "investigadores_residentes_est": {
@@ -1811,21 +2149,6 @@
         "11303": 60,
         "11401": 50,
         "11402": 25
-      }
-    },
-    "matricula_educacion_superior_sies_n": {
-      "type": "numeric",
-      "values": {
-        "11101": 1890,
-        "11102": 0,
-        "11201": 437,
-        "11202": 0,
-        "11203": 0,
-        "11301": 0,
-        "11302": 0,
-        "11303": 0,
-        "11401": 0,
-        "11402": 0
       }
     },
     "establecimientos_escolares_n": {
@@ -2008,34 +2331,19 @@
         "11402": 0
       }
     },
-    "hogares_sin_internet_fijo_pct": {
-      "type": "numeric",
-      "values": {
-        "11101": 24.5,
-        "11102": 82.4,
-        "11201": 38.2,
-        "11202": 56.4,
-        "11203": 68.2,
-        "11301": 48.6,
-        "11302": 76.8,
-        "11303": 72.5,
-        "11401": 52.1,
-        "11402": 64.8
-      }
-    },
     "cobertura_fibra_hogar_pct": {
       "type": "numeric",
       "values": {
-        "11101": 75.5,
-        "11102": 17.6,
-        "11201": 61.8,
-        "11202": 43.6,
-        "11203": 31.8,
-        "11301": 51.4,
-        "11302": 23.2,
-        "11303": 27.5,
-        "11401": 47.9,
-        "11402": 35.2
+        "11101": 68.4,
+        "11102": 0,
+        "11201": 54.2,
+        "11202": 24.8,
+        "11203": 2.4,
+        "11301": 39.2,
+        "11302": 0,
+        "11303": 2.1,
+        "11401": 36.5,
+        "11402": 21.4
       }
     },
     "establecimientos_educacion_conectados_n": {
@@ -2158,21 +2466,6 @@
         "11402": 42100
       }
     },
-    "bosque_nativo_ha": {
-      "type": "numeric",
-      "values": {
-        "11101": 385000,
-        "11102": 345000,
-        "11201": 1285000,
-        "11202": 920000,
-        "11203": 48200,
-        "11301": 410000,
-        "11302": 295000,
-        "11303": 565000,
-        "11401": 215000,
-        "11402": 245000
-      }
-    },
     "plantaciones_ha": {
       "type": "numeric",
       "values": {
@@ -2191,31 +2484,16 @@
     "consumo_lena_m3_hogar_ano": {
       "type": "numeric",
       "values": {
-        "11101": 14.5,
-        "11102": 21,
-        "11201": 15,
-        "11202": 18.5,
-        "11203": 19,
-        "11301": 18,
-        "11302": 22,
-        "11303": 21.5,
-        "11401": 16.5,
-        "11402": 19.5
-      }
-    },
-    "superficie_glaciares_km2": {
-      "type": "numeric",
-      "values": {
-        "11101": 42.5,
-        "11102": 38.2,
-        "11201": 1850,
-        "11202": 480,
-        "11203": 0,
-        "11301": 890,
-        "11302": 3450,
-        "11303": 2680,
-        "11401": 145,
-        "11402": 460
+        "11101": 9.81,
+        "11102": 15.1,
+        "11201": 13.2,
+        "11202": 13.95,
+        "11203": 13.1,
+        "11301": 14.35,
+        "11302": 15.5,
+        "11303": 15.2,
+        "11401": 11.95,
+        "11402": 14.05
       }
     },
     "especies_exoticas_invasoras_n": {
@@ -2296,31 +2574,31 @@
     "cobertura_empam_pct": {
       "type": "numeric",
       "values": {
-        "11101": 80.2,
-        "11102": 72.1,
-        "11201": 78.6,
+        "11101": 80.8,
+        "11102": 71.8,
+        "11201": 78.4,
         "11202": 76.5,
-        "11203": 71,
-        "11301": 77.4,
-        "11302": 69.5,
-        "11303": 68.8,
-        "11401": 79.1,
-        "11402": 75.8
+        "11203": 70.6,
+        "11301": 77.8,
+        "11302": 69.1,
+        "11303": 68.4,
+        "11401": 79.4,
+        "11402": 75.9
       }
     },
     "cobertura_pscv_pct": {
       "type": "numeric",
       "values": {
-        "11101": 74.5,
-        "11102": 68,
-        "11201": 71.2,
-        "11202": 70.4,
-        "11203": 65.8,
-        "11301": 72.1,
-        "11302": 64.2,
-        "11303": 63.5,
-        "11401": 73,
-        "11402": 69.8
+        "11101": 74.8,
+        "11102": 67.8,
+        "11201": 70.2,
+        "11202": 71.8,
+        "11203": 66.4,
+        "11301": 73.4,
+        "11302": 63.4,
+        "11303": 63.9,
+        "11401": 74.1,
+        "11402": 68.9
       }
     },
     "barometro_confianza_institucional_pct": {
@@ -2491,31 +2769,31 @@
     "mediana_espera_especialidad_dias": {
       "type": "numeric",
       "values": {
-        "11101": 235,
-        "11102": 312,
-        "11201": 254,
-        "11202": 278,
-        "11203": 318,
-        "11301": 285,
-        "11302": 304,
-        "11303": 294,
-        "11401": 268,
-        "11402": 292
+        "11101": 218,
+        "11102": 334,
+        "11201": 242,
+        "11202": 274,
+        "11203": 346,
+        "11301": 269,
+        "11302": 305,
+        "11303": 288,
+        "11401": 262,
+        "11402": 302
       }
     },
     "mediana_espera_quirurgica_dias": {
       "type": "numeric",
       "values": {
-        "11101": 342,
-        "11102": 425,
-        "11201": 365,
-        "11202": 388,
-        "11203": 438,
-        "11301": 392,
-        "11302": 416,
-        "11303": 402,
-        "11401": 378,
-        "11402": 404
+        "11101": 318,
+        "11102": 418,
+        "11201": 354,
+        "11202": 412,
+        "11203": 468,
+        "11301": 368,
+        "11302": 436,
+        "11303": 388,
+        "11401": 364,
+        "11402": 424
       }
     },
     "tasa_mortalidad_cancer_gastrico_100k": {
@@ -2653,96 +2931,6 @@
         "11402": 29.7
       }
     },
-    "pobreza_ingresos_casen_pct": {
-      "type": "numeric",
-      "values": {
-        "11101": 2.9,
-        "11102": 0.9,
-        "11201": 5.3,
-        "11202": 5,
-        "11203": 6.1,
-        "11301": 6.3,
-        "11302": 9.2,
-        "11303": 4.6,
-        "11401": 6.2,
-        "11402": 7
-      }
-    },
-    "pobreza_multidimensional_casen_pct": {
-      "type": "numeric",
-      "values": {
-        "11101": 11.8,
-        "11102": 24.5,
-        "11201": 15.2,
-        "11202": 18.6,
-        "11203": 27.4,
-        "11301": 15,
-        "11302": 22.8,
-        "11303": 26.2,
-        "11401": 16.2,
-        "11402": 19.8
-      }
-    },
-    "deficit_habitacional_cuantitativo_minvu": {
-      "type": "numeric",
-      "values": {
-        "11101": 1742,
-        "11102": 32,
-        "11201": 719,
-        "11202": 174,
-        "11203": 89,
-        "11301": 111,
-        "11302": 26,
-        "11303": 39,
-        "11401": 134,
-        "11402": 81
-      }
-    },
-    "deficit_habitacional_cualitativo_minvu": {
-      "type": "numeric",
-      "values": {
-        "11101": 6280,
-        "11102": 300,
-        "11201": 3260,
-        "11202": 1280,
-        "11203": 680,
-        "11301": 810,
-        "11302": 255,
-        "11303": 375,
-        "11401": 990,
-        "11402": 770
-      }
-    },
-    "comites_ssr_apr_doh": {
-      "type": "numeric",
-      "values": {
-        "11101": 12,
-        "11102": 3,
-        "11201": 8,
-        "11202": 6,
-        "11203": 2,
-        "11301": 4,
-        "11302": 2,
-        "11303": 2,
-        "11401": 4,
-        "11402": 4
-      }
-    },
-    "beneficiarios_ssr_apr_doh": {
-      "type": "numeric",
-      "values": {
-        "11101": 10500,
-        "11102": 620,
-        "11201": 5500,
-        "11202": 3100,
-        "11203": 1420,
-        "11301": 1450,
-        "11302": 610,
-        "11303": 480,
-        "11401": 2350,
-        "11402": 2050
-      }
-    },
     "establecimientos_slep_aysen": {
       "type": "numeric",
       "values": {
@@ -2776,16 +2964,16 @@
     "consumo_lena_m3_solidos_anual": {
       "type": "numeric",
       "values": {
-        "11101": 248800,
-        "11102": 16200,
-        "11201": 128500,
-        "11202": 38400,
-        "11203": 18200,
-        "11301": 34800,
-        "11302": 11556,
-        "11303": 14000,
-        "11401": 32600,
-        "11402": 22400
+        "11101": 147080,
+        "11102": 4740,
+        "11201": 91453,
+        "11202": 26882,
+        "11203": 6417,
+        "11301": 17816,
+        "11302": 3829,
+        "11303": 2920,
+        "11401": 19108,
+        "11402": 14029
       }
     },
     "informalidad_lena_pct": {
@@ -2803,32 +2991,17 @@
         "11402": 76
       }
     },
-    "costo_real_generacion_diesel_kwh_clp": {
-      "type": "numeric",
-      "values": {
-        "11101": 0,
-        "11102": 560,
-        "11201": 0,
-        "11202": 380,
-        "11203": 640,
-        "11301": 0,
-        "11302": 620,
-        "11303": 680,
-        "11401": 0,
-        "11402": 0
-      }
-    },
     "subsidio_fiscal_diesel_kwh_clp": {
       "type": "numeric",
       "values": {
         "11101": 0,
-        "11102": 302,
-        "11201": 0,
-        "11202": 145,
-        "11203": 375,
+        "11102": 246,
+        "11201": 192,
+        "11202": 245,
+        "11203": 328,
         "11301": 0,
-        "11302": 358,
-        "11303": 412,
+        "11302": 312,
+        "11303": 362,
         "11401": 0,
         "11402": 0
       }
@@ -2836,16 +3009,16 @@
     "indice_aislamiento_multimodal": {
       "type": "numeric",
       "values": {
-        "11101": 0,
+        "11101": 1.1,
         "11102": 67.5,
-        "11201": 8.9,
-        "11202": 33,
-        "11203": 87.1,
-        "11301": 28.7,
-        "11302": 86.6,
-        "11303": 79.2,
-        "11401": 27.9,
-        "11402": 31
+        "11201": 5.8,
+        "11202": 19.2,
+        "11203": 77.6,
+        "11301": 23.6,
+        "11302": 86.4,
+        "11303": 81.4,
+        "11401": 30.6,
+        "11402": 22.7
       }
     },
     "ecmpo_solicitadas_ha": {
@@ -3063,9 +3236,9 @@
       "values": {
         "11101": 0,
         "11102": 0,
-        "11201": 94.7,
-        "11202": 48.3,
-        "11203": 32.5,
+        "11201": 73.3,
+        "11202": 24.6,
+        "11203": 8.3,
         "11301": 0,
         "11302": 0,
         "11303": 0,
@@ -3091,16 +3264,16 @@
     "ventas_por_empresa_uf": {
       "type": "numeric",
       "values": {
-        "11101": 8762,
-        "11102": 5921,
-        "11201": 26762,
-        "11202": 14677,
-        "11203": 14327,
-        "11301": 14915,
-        "11302": 9298,
-        "11303": 8125,
-        "11401": 15750,
-        "11402": 13445
+        "11101": 6365,
+        "11102": 3814,
+        "11201": 19789,
+        "11202": 10168,
+        "11203": 10124,
+        "11301": 8943,
+        "11302": 5521,
+        "11303": 4643,
+        "11401": 9722,
+        "11402": 7656
       }
     },
     "inversion_por_proyecto_seia_mmusd": {
@@ -3296,21 +3469,6 @@
         "11303": 1,
         "11401": 3,
         "11402": 4
-      }
-    },
-    "gasto_cultural_per_capita_clp": {
-      "type": "numeric",
-      "values": {
-        "11101": 11850,
-        "11102": 49294,
-        "11201": 9306,
-        "11202": 16040,
-        "11203": 25782,
-        "11301": 18045,
-        "11302": 33590,
-        "11303": 36706,
-        "11401": 15250,
-        "11402": 19317
       }
     },
     "juntas_vecinos_activas": {
@@ -3571,13 +3729,13 @@
     "conexiones_fijas_subtel_jun2026_n": {
       "type": "numeric",
       "values": {
-        "11101": 15785,
-        "11102": 189,
-        "11201": 5748,
+        "11101": 15986,
+        "11102": 68,
+        "11201": 5868,
         "11202": 1638,
         "11203": 345,
         "11301": 835,
-        "11302": 272,
+        "11302": 72,
         "11303": 56,
         "11401": 845,
         "11402": 581
@@ -3586,13 +3744,13 @@
     "conexiones_residenciales_subtel_jun2026_n": {
       "type": "numeric",
       "values": {
-        "11101": 15088,
-        "11102": 159,
-        "11201": 5353,
+        "11101": 15279,
+        "11102": 56,
+        "11201": 5456,
         "11202": 1486,
         "11203": 270,
         "11301": 791,
-        "11302": 249,
+        "11302": 58,
         "11303": 43,
         "11401": 788,
         "11402": 555
@@ -3801,6 +3959,152 @@
         }
       }
     },
+    "unidadesSnaspe": {
+      "snaspe_superficie_ha": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 154093,
+          "snaspe_pn_patagonia": 304528,
+          "snaspe_pn_cerro_castillo": 143502,
+          "snaspe_rn_coyhaique": 2150,
+          "snaspe_rn_rio_simpson": 41621,
+          "snaspe_pn_laguna_san_rafael": 1742000,
+          "snaspe_mn_dos_lagunas": 181,
+          "snaspe_rn_lago_carlota": 27110,
+          "snaspe_mn_cinco_hermanas": 228,
+          "snaspe_rn_lago_rosselot": 12725,
+          "snaspe_rn_lago_las_torres": 16516,
+          "snaspe_rn_trapananda": 2305,
+          "snaspe_rn_manihuales": 3715,
+          "snaspe_pn_isla_magdalena": 249712,
+          "snaspe_pn_melimoyu": 105500,
+          "snaspe_pn_isla_guamblin": 10625,
+          "snaspe_rn_las_guaitecas": 1097975,
+          "snaspe_rn_katalalixar": 674500,
+          "snaspe_pn_bernardo_ohiggins_aysen": 1212000
+        }
+      },
+      "snaspe_visitantes_anuales_n": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 25619,
+          "snaspe_pn_patagonia": 16453,
+          "snaspe_pn_cerro_castillo": 13907,
+          "snaspe_rn_coyhaique": 13552,
+          "snaspe_rn_rio_simpson": 7961,
+          "snaspe_pn_laguna_san_rafael": 5900,
+          "snaspe_mn_dos_lagunas": 2638,
+          "snaspe_rn_lago_carlota": 87,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 0,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 0,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_guardaparques_permanentes_n": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 6,
+          "snaspe_pn_patagonia": 8,
+          "snaspe_pn_cerro_castillo": 4,
+          "snaspe_rn_coyhaique": 4,
+          "snaspe_rn_rio_simpson": 3,
+          "snaspe_pn_laguna_san_rafael": 6,
+          "snaspe_mn_dos_lagunas": 2,
+          "snaspe_rn_lago_carlota": 2,
+          "snaspe_mn_cinco_hermanas": 1,
+          "snaspe_rn_lago_rosselot": 2,
+          "snaspe_rn_lago_las_torres": 1,
+          "snaspe_rn_trapananda": 1,
+          "snaspe_rn_manihuales": 1,
+          "snaspe_pn_isla_magdalena": 0,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 0,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_concesiones_salmon_dentro_n": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 0,
+          "snaspe_pn_patagonia": 0,
+          "snaspe_pn_cerro_castillo": 0,
+          "snaspe_rn_coyhaique": 0,
+          "snaspe_rn_rio_simpson": 0,
+          "snaspe_pn_laguna_san_rafael": 2,
+          "snaspe_mn_dos_lagunas": 0,
+          "snaspe_rn_lago_carlota": 0,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 4,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 312,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_superficie_salmon_ha": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 0,
+          "snaspe_pn_patagonia": 0,
+          "snaspe_pn_cerro_castillo": 0,
+          "snaspe_rn_coyhaique": 0,
+          "snaspe_rn_rio_simpson": 0,
+          "snaspe_pn_laguna_san_rafael": 3,
+          "snaspe_mn_dos_lagunas": 0,
+          "snaspe_rn_lago_carlota": 0,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 38.48,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 2159.13,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_inversion_pdze_mclp": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 17245,
+          "snaspe_pn_patagonia": 4825,
+          "snaspe_pn_cerro_castillo": 5350,
+          "snaspe_rn_coyhaique": 0,
+          "snaspe_rn_rio_simpson": 0,
+          "snaspe_pn_laguna_san_rafael": 15591,
+          "snaspe_mn_dos_lagunas": 0,
+          "snaspe_rn_lago_carlota": 0,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 0,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 0,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      }
+    },
     "holdings": {
       "holding_total_concesiones_aysen": {
         "type": "numeric",
@@ -3965,7 +4269,31 @@
       "serie_balmaceda_pasajeros_jac__pasajeros": {
         "type": "numeric",
         "values": {
-          "2026": 682000
+          "2026": 620000
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__parcial_ene_may_2026": {
+        "type": "numeric",
+        "values": {
+          "2026": 286666
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__nuevo_terminal_m2": {
+        "type": "numeric",
+        "values": {
+          "2026": 12391
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__puentes_embarque": {
+        "type": "numeric",
+        "values": {
+          "2026": 5
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__capacidad_anual_pax": {
+        "type": "numeric",
+        "values": {
+          "2026": 1000000
         }
       },
       "serie_balmaceda_pasajeros_jac__carga_ton": {
@@ -4007,19 +4335,43 @@
       "serie_emporcha_cruceros__recaladas_cruceros": {
         "type": "numeric",
         "values": {
-          "ultimo": 28
+          "ultimo": 29
         }
       },
       "serie_emporcha_cruceros__pasajeros_cruceros": {
         "type": "numeric",
         "values": {
-          "ultimo": 28500
+          "ultimo": 22093
+        }
+      },
+      "serie_emporcha_cruceros__puerto_chacabuco_recaladas": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 20
+        }
+      },
+      "serie_emporcha_cruceros__puerto_chacabuco_pasajeros": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 20047
+        }
+      },
+      "serie_emporcha_cruceros__caleta_tortel_recaladas": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 9
+        }
+      },
+      "serie_emporcha_cruceros__caleta_tortel_pasajeros": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 2046
         }
       },
       "serie_emporcha_cruceros__tripulantes": {
         "type": "numeric",
         "values": {
-          "ultimo": 12400
+          "ultimo": 9850
         }
       },
       "serie_pib_regional_nominal_mmclp__valor": {
@@ -4103,43 +4455,43 @@
       "serie_snaspe_por_parque_anual__visitantes_snaspe_total": {
         "type": "numeric",
         "values": {
-          "2026": 284000
+          "2026": 86117
         }
       },
       "serie_snaspe_por_parque_anual__pernoctaciones_emat": {
         "type": "numeric",
         "values": {
-          "2026": 472000
+          "2026": 364039
         }
       },
       "serie_snaspe_por_parque_anual__pn_queulat": {
         "type": "numeric",
         "values": {
-          "2026": 58500
+          "2026": 25619
         }
       },
       "serie_snaspe_por_parque_anual__pn_laguna_san_rafael": {
         "type": "numeric",
         "values": {
-          "2026": 39800
+          "2026": 5900
         }
       },
       "serie_snaspe_por_parque_anual__pn_cerro_castillo": {
         "type": "numeric",
         "values": {
-          "2026": 37200
+          "2026": 13907
         }
       },
       "serie_snaspe_por_parque_anual__pn_patagonia": {
         "type": "numeric",
         "values": {
-          "2026": 32400
+          "2026": 16453
         }
       },
       "serie_snaspe_por_parque_anual__otras_unidades": {
         "type": "numeric",
         "values": {
-          "2026": 116100
+          "2026": 24238
         }
       },
       "serie_parques_snaspe_unidades__visitantes_anuales": {
@@ -4169,25 +4521,25 @@
       "serie_acuicultura__cosecha_salmonidos_total_ton": {
         "type": "numeric",
         "values": {
-          "2026": 503500
+          "2026": 435000
         }
       },
       "serie_acuicultura__cosecha_salmon_atlantico_ton": {
         "type": "numeric",
         "values": {
-          "2026": 402800
+          "2026": 348000
         }
       },
       "serie_acuicultura__cosecha_salmon_coho_ton": {
         "type": "numeric",
         "values": {
-          "2026": 81000
+          "2026": 70000
         }
       },
       "serie_acuicultura__cosecha_trucha_arcoiris_ton": {
         "type": "numeric",
         "values": {
-          "2026": 19700
+          "2026": 17000
         }
       },
       "serie_acuicultura__concesiones_acuicolas_vigentes": {
@@ -4205,7 +4557,7 @@
       "serie_acuicultura__centros_salmonicolas_activos_ciclo": {
         "type": "numeric",
         "values": {
-          "2026": 245
+          "2026": 240
         }
       },
       "serie_acuicultura_concentracion_holdings__top_3_pct": {
@@ -4296,6 +4648,34 @@
         "type": "numeric",
         "values": {
           "2026": 25.4
+        }
+      }
+    },
+    "centralesElectricas": {
+      "centrales_potencia_mw": {
+        "type": "numeric",
+        "values": {
+          "ene_cne_CENTRAL-TERMICA-TEHUELCHE": 17.98,
+          "ene_cne_CENTRAL-HIDRO-LAGO-ATRAVESADO": 11,
+          "ene_cne_PLANTA-SOLAR-EL-BLANCO": 2.99,
+          "ene_cne_PARQUE-EOLICO-ALTO-BAGUALES": 1.98,
+          "ene_cne_CENTRAL-TERMICA-CHACABUCO": 10,
+          "ene_cne_CENTRAL-HIDRO-RIO-AYSEN-HIST": 2,
+          "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-HIDRO": 2,
+          "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-DIESEL": 4,
+          "ene_cne_CENTRAL-DIESEL-PUERTO-AGUIRRE": 0.48,
+          "ene_cne_CENTRAL-DIESEL-PUERTO-CISNES": 1.67,
+          "ene_cne_CENTRAL-SM-PALENA-LA-JUNTA-PUYUHUAPI": 0.8,
+          "ene_cne_MICROCENTRAL-SSAA-LITORAL-CISNES": 0.36,
+          "ene_cne_CENTRAL-DIESEL-CHILE-CHICO": 2.9,
+          "ene_cne_CENTRAL-HIDRO-LOS-MAQUIS": 1,
+          "ene_cne_CENTRAL-DIESEL-COCHRANE": 1.9,
+          "ene_cne_CENTRAL-HIDRO-EL-TRARO": 0.64,
+          "ene_cne_CENTRAL-DIESEL-MELINKA": 1.45,
+          "ene_cne_CENTRAL-HIBRIDA-CALETA-TORTEL": 0.95,
+          "ene_cne_CENTRAL-HIBRIDA-RIO-MOSCO-OHIGGINS": 1.25,
+          "ene_cne_CENTRAL-RESPALDO-RIO-IBANEZ": 1.4,
+          "ene_cne_CENTRAL-LOCAL-LAGO-VERDE": 0.35
         }
       }
     }

@@ -40,16 +40,16 @@ from scripts.ingesta.build_historical_raw_data import (
 )
 
 WP02_INDICATORS = {
-    "11101": {"saidi": 11.4, "bt1": 224.0, "diesel_cost": 0.0, "internet": 75.5},
-    "11102": {"saidi": 54.2, "bt1": 258.0, "diesel_cost": 560.0, "internet": 17.6},
-    "11201": {"saidi": 13.8, "bt1": 222.0, "diesel_cost": 0.0, "internet": 61.8},
-    "11202": {"saidi": 28.5, "bt1": 235.0, "diesel_cost": 380.0, "internet": 43.6},
-    "11203": {"saidi": 62.1, "bt1": 265.0, "diesel_cost": 640.0, "internet": 31.8},
-    "11401": {"saidi": 19.3, "bt1": 228.0, "diesel_cost": 0.0, "internet": 47.9},
-    "11402": {"saidi": 24.6, "bt1": 231.0, "diesel_cost": 0.0, "internet": 35.2},
-    "11301": {"saidi": 22.8, "bt1": 230.0, "diesel_cost": 0.0, "internet": 51.4},
-    "11302": {"saidi": 58.7, "bt1": 262.0, "diesel_cost": 620.0, "internet": 23.2},
-    "11303": {"saidi": 64.3, "bt1": 268.0, "diesel_cost": 680.0, "internet": 27.5},
+    "11101": {"saidi": 11.4, "bt1": 287.8, "diesel_cost": 0.0, "internet": 70.1},
+    "11102": {"saidi": 54.2, "bt1": 294.0, "diesel_cost": 540.0, "internet": 17.5},
+    "11201": {"saidi": 13.8, "bt1": 287.8, "diesel_cost": 480.0, "internet": 66.5},
+    "11202": {"saidi": 28.5, "bt1": 292.4, "diesel_cost": 495.0, "internet": 72.5},
+    "11203": {"saidi": 62.1, "bt1": 312.0, "diesel_cost": 640.0, "internet": 51.9},
+    "11401": {"saidi": 19.3, "bt1": 289.5, "diesel_cost": 0.0, "internet": 40.4},
+    "11402": {"saidi": 24.6, "bt1": 289.5, "diesel_cost": 0.0, "internet": 52.4},
+    "11301": {"saidi": 22.8, "bt1": 291.2, "diesel_cost": 0.0, "internet": 60.8},
+    "11302": {"saidi": 58.7, "bt1": 308.0, "diesel_cost": 620.0, "internet": 23.2},
+    "11303": {"saidi": 64.3, "bt1": 318.0, "diesel_cost": 680.0, "internet": 22.1},
 }
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 AysenAtlasIngest/1.0"
@@ -115,387 +115,16 @@ def fetch_and_save_raw_snapshots():
 
 
 def create_curated_raw_databases():
-    """Guarda catastros crudos de centrales, sistemas eléctricos, combustibles y FOA en data/raw/."""
-    # 1. Catastro de Centrales Eléctricas en Aysén
-    centrales_catastro = {
-        "metadata": {
-            "fuente": "Comisión Nacional de Energía (CNE) & Edelaysen S.A.",
-            "fecha_catastro": "2026-10-15",
-            "region": "Aysén (CL-XI)",
-            "descripcion": "Catastro georreferenciado de centrales de generación del Sistema Mediano de Aysén, General Carrera y Sistemas Aislados"
-        },
-        "centrales": [
-            {
-                "id": "CENTRAL-HIDRO-RIO-AYSEN",
-                "nombre": "Central Hidroeléctrica Río Aysén / Cabo Juan Román",
-                "tipo": "Hidroeléctrica de pasada",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "potencia_mw": 12.5,
-                "operador": "Edelaysen S.A. (Grupo Saesa)",
-                "sistema": "Sistema Mediano de Aysén (SMA)",
-                "lat": -45.4120,
-                "lng": -72.6350,
-                "rio_cuenca": "Río Aysén / Cuenca 113",
-                "ano_puesta_marcha": 1984
-            },
-            {
-                "id": "CENTRAL-HIDRO-LAGO-ATRAVESADO",
-                "nombre": "Central Hidroeléctrica Lago Atravesado",
-                "tipo": "Hidroeléctrica de pasada",
-                "comuna": "Coyhaique",
-                "codigo_comuna": "CL-XI-01",
-                "comuna_ine": "11101",
-                "potencia_mw": 0.8,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén (SMA)",
-                "lat": -45.6880,
-                "lng": -72.2850,
-                "rio_cuenca": "Lago Atravesado / Cuenca 113",
-                "ano_puesta_marcha": 1968
-            },
-            {
-                "id": "CENTRAL-HIDRO-MANIHUALES",
-                "nombre": "Central Hidroeléctrica Río Mañihuales",
-                "tipo": "Hidroeléctrica de pasada",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "potencia_mw": 3.4,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén (SMA)",
-                "lat": -45.1680,
-                "lng": -72.1550,
-                "rio_cuenca": "Río Mañihuales / Cuenca 113",
-                "ano_puesta_marcha": 1999
-            },
-            {
-                "id": "CENTRAL-HIDRO-LOS-MAQUIS",
-                "nombre": "Central Hidroeléctrica Los Maquis",
-                "tipo": "Hidroeléctrica de pasada",
-                "comuna": "Chile Chico",
-                "codigo_comuna": "CL-XI-06",
-                "comuna_ine": "11401",
-                "potencia_mw": 1.0,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano General Carrera (SMGC)",
-                "lat": -46.6850,
-                "lng": -72.7150,
-                "rio_cuenca": "Río Los Maquis / Cuenca 115",
-                "ano_puesta_marcha": 1973
-            },
-            {
-                "id": "CENTRAL-HIDRO-RIO-MOSCO",
-                "nombre": "Central Hidroeléctrica Río Mosco",
-                "tipo": "Hidroeléctrica de pasada",
-                "comuna": "O'Higgins",
-                "codigo_comuna": "CL-XI-09",
-                "comuna_ine": "11302",
-                "potencia_mw": 0.6,
-                "operador": "Ilustre Municipalidad de O'Higgins",
-                "sistema": "Sistema Aislado Villa O'Higgins",
-                "lat": -48.4720,
-                "lng": -72.5480,
-                "rio_cuenca": "Río Mosco / Cuenca 117",
-                "ano_puesta_marcha": 2002
-            },
-            {
-                "id": "PARQUE-EOLICO-ALTO-BAGUALES",
-                "nombre": "Parque Eólico Alto Baguales",
-                "tipo": "Parque Eólico",
-                "comuna": "Coyhaique",
-                "codigo_comuna": "CL-XI-01",
-                "comuna_ine": "11101",
-                "potencia_mw": 3.2,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén (SMA)",
-                "lat": -45.5520,
-                "lng": -72.0420,
-                "turbinas": 3,
-                "ano_puesta_marcha": 2001
-            },
-            {
-                "id": "CENTRAL-TERMICA-TEHUELCHE",
-                "nombre": "Central Térmica Tehuelche",
-                "tipo": "Térmica Diésel de respaldo y punta",
-                "comuna": "Coyhaique",
-                "codigo_comuna": "CL-XI-01",
-                "comuna_ine": "11101",
-                "potencia_mw": 19.8,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén (SMA)",
-                "lat": -45.5780,
-                "lng": -72.0720,
-                "combustible": "Petróleo Diésel",
-                "ano_puesta_marcha": 1988
-            },
-            {
-                "id": "CENTRAL-TERMICA-CHACABUCO",
-                "nombre": "Central Térmica Chacabuco",
-                "tipo": "Térmica Diésel de base",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "potencia_mw": 23.5,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén (SMA)",
-                "lat": -45.4650,
-                "lng": -72.8210,
-                "combustible": "Petróleo Diésel",
-                "ano_puesta_marcha": 1982
-            },
-            {
-                "id": "CENTRAL-DIESEL-CHILE-CHICO",
-                "nombre": "Central Térmica Diésel Chile Chico",
-                "tipo": "Térmica Diésel de respaldo",
-                "comuna": "Chile Chico",
-                "codigo_comuna": "CL-XI-06",
-                "comuna_ine": "11401",
-                "potencia_mw": 4.8,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano General Carrera (SMGC)",
-                "lat": -46.5450,
-                "lng": -71.7280,
-                "combustible": "Petróleo Diésel",
-                "ano_puesta_marcha": 1980
-            },
-            {
-                "id": "CENTRAL-DIESEL-COCHRANE",
-                "nombre": "Central Térmica Diésel Cochrane",
-                "tipo": "Térmica Diésel",
-                "comuna": "Cochrane",
-                "codigo_comuna": "CL-XI-08",
-                "comuna_ine": "11301",
-                "potencia_mw": 3.8,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano General Carrera (SMGC)",
-                "lat": -47.2580,
-                "lng": -72.5780,
-                "combustible": "Petróleo Diésel",
-                "ano_puesta_marcha": 1986
-            },
-            {
-                "id": "CENTRAL-DIESEL-MELINKA",
-                "nombre": "Central Generación Diésel Melinka",
-                "tipo": "Térmica Diésel de generación continua",
-                "comuna": "Guaitecas",
-                "codigo_comuna": "CL-XI-05",
-                "comuna_ine": "11203",
-                "potencia_mw": 2.8,
-                "operador": "Ilustre Municipalidad de Guaitecas",
-                "sistema": "Sistema Aislado Melinka",
-                "lat": -43.8980,
-                "lng": -73.7450,
-                "combustible": "Petróleo Diésel subsidiado marítimo",
-                "ano_puesta_marcha": 1994
-            },
-            {
-                "id": "CENTRAL-DIESEL-PUERTO-AGUIRRE",
-                "nombre": "Central Térmica Puerto Aguirre (Islas Huichas)",
-                "tipo": "Térmica Diésel",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "potencia_mw": 2.2,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Aislado Islas Huichas",
-                "lat": -45.1640,
-                "lng": -73.5230,
-                "combustible": "Petróleo Diésel",
-                "ano_puesta_marcha": 1991
-            },
-            {
-                "id": "CENTRAL-DIESEL-TORTEL",
-                "nombre": "Central Generación Diésel Caleta Tortel",
-                "tipo": "Térmica Diésel",
-                "comuna": "Tortel",
-                "codigo_comuna": "CL-XI-10",
-                "comuna_ine": "11303",
-                "potencia_mw": 1.1,
-                "operador": "Ilustre Municipalidad de Tortel",
-                "sistema": "Sistema Aislado Caleta Tortel",
-                "lat": -47.7980,
-                "lng": -73.5380,
-                "combustible": "Petróleo Diésel acarreado por vía fluvial",
-                "ano_puesta_marcha": 2003
-            },
-            {
-                "id": "CENTRAL-DIESEL-PUERTO-CISNES",
-                "nombre": "Central Térmica Puerto Cisnes",
-                "tipo": "Térmica Diésel",
-                "comuna": "Cisnes",
-                "codigo_comuna": "CL-XI-04",
-                "comuna_ine": "11202",
-                "potencia_mw": 3.5,
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano Palena-Cisnes",
-                "lat": -44.7410,
-                "lng": -72.6950,
-                "combustible": "Petróleo Diésel",
-                "ano_puesta_marcha": 1985
-            }
-        ]
-    }
-    with open(RAW_DIR / "catastro_centrales_electricas_cne_edelaysen.json", "w", encoding="utf-8") as f:
-        json.dump(centrales_catastro, f, indent=2, ensure_ascii=False)
-
-    # 2. Catastro de Nodos Troncales Fibra Óptica Austral (FOA) y Telecomunicaciones
-    foa_catastro = {
-        "metadata": {
-            "fuente": "Subsecretaría de Telecomunicaciones (SUBTEL) - CTR / Conductores Ópticos Australes",
-            "fecha_catastro": "2026-10-15",
-            "region": "Aysén (CL-XI)",
-            "descripcion": "Puntos de aterrizaje submarino y nodos troncales terrestres de la Fibra Óptica Austral"
-        },
-        "nodos": [
-            {
-                "id": "FOA-NODO-MELINKA",
-                "nombre": "Nodo Troncal FOA Melinka (Aterrizaje Submarino)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral Submarina",
-                "comuna": "Guaitecas",
-                "codigo_comuna": "CL-XI-05",
-                "comuna_ine": "11203",
-                "lat": -43.8940,
-                "lng": -73.7420,
-                "tramo": "Troncal Submarino Quellón - Caleta Tortel",
-                "capacidad_tbps": 16.0,
-                "operador": "CTR (Comunicación y Telefonía Rural) / SUBTEL"
-            },
-            {
-                "id": "FOA-NODO-PUERTO-AGUIRRE",
-                "nombre": "Nodo Troncal FOA Puerto Aguirre (Aterrizaje Submarino)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral Submarina",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "lat": -45.1610,
-                "lng": -73.5200,
-                "tramo": "Derivación Submarina Islas Huichas",
-                "capacidad_tbps": 16.0,
-                "operador": "CTR / SUBTEL"
-            },
-            {
-                "id": "FOA-NODO-PUERTO-CISNES",
-                "nombre": "Nodo Troncal FOA Puerto Cisnes (Aterrizaje Submarino y Terrestre)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral",
-                "comuna": "Cisnes",
-                "codigo_comuna": "CL-XI-04",
-                "comuna_ine": "11202",
-                "lat": -44.7450,
-                "lng": -72.6980,
-                "tramo": "Troncal Submarino y Empalme Terrestre Ruta 7",
-                "capacidad_tbps": 16.0,
-                "operador": "CTR / Silice / SUBTEL"
-            },
-            {
-                "id": "FOA-NODO-CHACABUCO",
-                "nombre": "Nodo Troncal FOA Puerto Chacabuco (Aterrizaje Submarino / Terrestre)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "lat": -45.4680,
-                "lng": -72.8250,
-                "tramo": "Aterrizaje Submarino y conexión terrestre por Ruta 240 a Coyhaique",
-                "capacidad_tbps": 16.0,
-                "operador": "CTR / SUBTEL"
-            },
-            {
-                "id": "FOA-NODO-COYHAIQUE",
-                "nombre": "Nodo Troncal FOA Coyhaique (Centro de Distribución Regional)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral Terrestre",
-                "comuna": "Coyhaique",
-                "codigo_comuna": "CL-XI-01",
-                "comuna_ine": "11101",
-                "lat": -45.5690,
-                "lng": -72.0650,
-                "tramo": "Troncal Terrestre Regional Aysén",
-                "capacidad_tbps": 16.0,
-                "operador": "CTR / Silice / Conductores Ópticos Australes"
-            },
-            {
-                "id": "FOA-NODO-CHILE-CHICO",
-                "nombre": "Nodo Troncal FOA Chile Chico (Poblado Lacustre)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral Terrestre",
-                "comuna": "Chile Chico",
-                "codigo_comuna": "CL-XI-06",
-                "comuna_ine": "11401",
-                "lat": -46.5390,
-                "lng": -71.7200,
-                "tramo": "Troncal Terrestre Cuenca General Carrera",
-                "capacidad_tbps": 10.0,
-                "operador": "Silice / SUBTEL"
-            },
-            {
-                "id": "FOA-NODO-COCHRANE",
-                "nombre": "Nodo Troncal FOA Cochrane (Troncal Sur Provincial)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral Terrestre",
-                "comuna": "Cochrane",
-                "codigo_comuna": "CL-XI-08",
-                "comuna_ine": "11301",
-                "lat": -47.2520,
-                "lng": -72.5680,
-                "tramo": "Troncal Terrestre Ruta 7 Sur Capitán Prat",
-                "capacidad_tbps": 10.0,
-                "operador": "Silice / SUBTEL"
-            },
-            {
-                "id": "FOA-NODO-TORTEL",
-                "nombre": "Nodo Troncal FOA Caleta Tortel (Aterrizaje Submarino Sur)",
-                "tipo": "Nodo Troncal Fibra Óptica Austral Submarina",
-                "comuna": "Tortel",
-                "codigo_comuna": "CL-XI-10",
-                "comuna_ine": "11303",
-                "lat": -47.7930,
-                "lng": -73.5320,
-                "tramo": "Troncal Submarino Sur hacia Puerto Williams y Enlace Cochrane",
-                "capacidad_tbps": 16.0,
-                "operador": "CTR / SUBTEL"
-            }
-        ]
-    }
-    with open(RAW_DIR / "subtel_foa_conectividad_movil_catastro.json", "w", encoding="utf-8") as f:
-        json.dump(foa_catastro, f, indent=2, ensure_ascii=False)
-
-    # 3. Base de Datos de Infraestructura de Combustibles y Subestaciones Eléctricas
-    infra_adicional = {
-        "metadata": {
-            "fuente": "Superintendencia de Electricidad y Combustibles (SEC) / CNE",
-            "fecha_catastro": "2026-10-15"
-        },
-        "nodos": [
-            {
-                "id": "PLANT-COMB-PUERTO-CHACABUCO",
-                "nombre": "Planta de Almacenamiento y Bunkering Enex/Copec Puerto Chacabuco",
-                "tipo": "Terminal Marítimo de Almacenamiento de Combustibles",
-                "comuna": "Aysén",
-                "codigo_comuna": "CL-XI-03",
-                "comuna_ine": "11201",
-                "lat": -45.4620,
-                "lng": -72.8180,
-                "capacidad_m3": 18500,
-                "productos": ["Gasolina 93", "Gasolina 97", "Petróleo Diésel", "Kerosene Doméstico"],
-                "operadores": "Enex / Copec / Petrobras"
-            },
-            {
-                "id": "SUBESTACION-ELEC-COYHAIQUE",
-                "nombre": "Subestación Eléctrica Coyhaique 23/66 kV",
-                "tipo": "Subestación de Transformación y Despacho",
-                "comuna": "Coyhaique",
-                "codigo_comuna": "CL-XI-01",
-                "comuna_ine": "11101",
-                "lat": -45.5750,
-                "lng": -72.0580,
-                "tension_kv": "23/66",
-                "operador": "Edelaysen S.A."
-            }
-        ]
-    }
-    with open(RAW_DIR / "infraestructura_combustibles_red_electrica.json", "w", encoding="utf-8") as f:
-        json.dump(infra_adicional, f, indent=2, ensure_ascii=False)
-
-    # 4. Generar respaldos crudos estructurados de series históricas 2015-2026
+    """Valida y conserva los catastros crudos verificados en data/raw/energia_telecom/ y genera respaldos históricos."""
+    required = [
+        RAW_DIR / "catastro_centrales_electricas_cne_edelaysen.json",
+        RAW_DIR / "subtel_foa_conectividad_movil_catastro.json",
+        RAW_DIR / "infraestructura_combustibles_red_electrica.json",
+        RAW_DIR / "marco_regulatorio_tarifario_aysen_2024_2028.json",
+    ]
+    for fp in required:
+        if not fp.exists():
+            raise FileNotFoundError(f"Falta catastro crudo requerido: {fp}")
     generate_raw_files()
 
 
@@ -573,7 +202,7 @@ def generate_systemic_dataset():
         "region_codigo": "CL-XI",
         "region_nombre": "Aysén del General Carlos Ibáñez del Campo",
         "poblacion_censo_2024": 100745,
-        "potencia_instalada_regional_total_mw": 95.9,
+        "potencia_instalada_regional_total_mw": 67.10,
         "sistemas_electricos_principales": [
             "Sistema Mediano de Aysén (SMA)",
             "Sistema Mediano General Carrera (SMGC)",
@@ -587,8 +216,8 @@ def generate_systemic_dataset():
             "eolica": 3.8,
             "solar_fotovoltaica_piloto": 0.2
         },
-        "precio_promedio_gasolina_93_clp": 1450.7,
-        "precio_promedio_diesel_clp": 1201.3,
+        "precio_promedio_gasolina_93_clp": 1696.0,
+        "precio_promedio_diesel_clp": 1663.0,
         "sobrecosto_promedio_combustibles_vs_santiago_pct": 18.7,
         "promedio_regional_calefaccion_lena_pct": 92.8,
         "cobertura_foa_comunas": "8/10 comunas conectadas por fibra óptica directa; 2/10 mediante radioenlace/satelital (Lago Verde y Villa O'Higgins)",
@@ -686,7 +315,7 @@ def generate_systemic_dataset():
                     "tipo_red": "Sistema Mediano (Continental) y Sistema Aislado Insular (Aguirre)",
                     "operador_distribucion": "Edelaysen S.A.",
                     "potencia_instalada_comunal_mw": 42.5,
-                    "matriz_fuentes": ["Hidroeléctrica de pasada (Río Aysén / Cabo Juan Román / Mañihuales)", "Térmica Diésel base (Chacabuco y Puerto Aguirre)"],
+                    "matriz_fuentes": ["Hidroeléctrica de pasada (Río Aysén / Mañihuales / Autogeneración El Toqui)", "Térmica Diésel base (Chacabuco y Puerto Aguirre)"],
                     "vulnerabilidad_suministro": "Media-Baja en continente; Alta en archipiélago Islas Huichas por flete marítimo",
                     "matriz_calefaccion_hogar_lena_pct": 87.8
                 },
@@ -696,7 +325,7 @@ def generate_systemic_dataset():
                     "diesel_clp_litro": 1115,
                     "sobrecosto_vs_santiago_pct": 11.2,
                     "precio_m3_lena_seca_clp": 46000,
-                    "abastecimiento_logistico": "Desembarco directo marítimo en Terminal Petrolero Puerto Chacabuco (Enex/Copec/Petrobras)"
+                    "abastecimiento_logistico": "Desembarco marítimo vía único Terminal MBM Copec Puerto Chacabuco (6.674 m³ activos) y estanques Comaco (3.800 m³)"
                 },
                 "telecomunicaciones": {
                     "conectado_fibra_optica_austral_foa": True,
@@ -972,405 +601,60 @@ def generate_systemic_dataset():
         c["datos"]["series_historicas"] = build_comuna_series_wp02(ine)
 
     # 24 nodos georreferenciados (centrales hidro, eólicas, diésel, nodos FOA y subestaciones)
-    nodos_georreferenciados = [
-        {
-            "id": "nodo-elec-rio-aysen",
-            "nombre": "Central Hidroeléctrica Río Aysén / Cabo Juan Román",
-            "tipo": "Central Hidroeléctrica de Pasada",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.4120,
-            "lng": -72.6350,
+    with open(RAW_DIR / "catastro_centrales_electricas_cne_edelaysen.json", "r", encoding="utf-8") as f:
+        _cne_raw = json.load(f)
+    with open(RAW_DIR / "subtel_foa_conectividad_movil_catastro.json", "r", encoding="utf-8") as f:
+        _foa_raw = json.load(f)
+    with open(RAW_DIR / "infraestructura_combustibles_red_electrica.json", "r", encoding="utf-8") as f:
+        _inf_raw = json.load(f)
+    nodos_georreferenciados = []
+    for _c in _cne_raw.get("centrales", []):
+        nodos_georreferenciados.append({
+            "id": "nodo-elec-" + str(_c["id"]).lower(),
+            "nombre": _c["nombre"],
+            "tipo": _c["tipo"],
+            "codigo_comuna": _c["codigo_comuna"],
+            "comuna_ine": _c["comuna_ine"],
+            "lat": _c["lat"],
+            "lng": _c["lng"],
             "atributos": {
-                "potencia_mw": 12.5,
-                "tecnologia": "Hidroeléctrica pasada",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "fuente_hidrica": "Río Aysén"
+                "potencia_mw": _c["potencia_mw"],
+                "tecnologia": _c["tipo"],
+                "operador": _c["operador"],
+                "sistema": _c["sistema"],
             },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-lago-atravesado",
-            "nombre": "Central Hidroeléctrica Lago Atravesado",
-            "tipo": "Central Hidroeléctrica de Pasada",
-            "codigo_comuna": "CL-XI-01",
-            "comuna_ine": "11101",
-            "lat": -45.6880,
-            "lng": -72.2850,
+            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/",
+        })
+    for _fn in _foa_raw.get("nodos", []):
+        nodos_georreferenciados.append({
+            "id": "nodo-foa-" + str(_fn["id"]).lower(),
+            "nombre": _fn["nombre"],
+            "tipo": _fn["tipo"],
+            "codigo_comuna": _fn["codigo_comuna"],
+            "comuna_ine": _fn["comuna_ine"],
+            "lat": _fn["lat"],
+            "lng": _fn["lng"],
             "atributos": {
-                "potencia_mw": 0.8,
-                "tecnologia": "Hidroeléctrica pasada",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "fuente_hidrica": "Lago Atravesado"
+                "tipo_enlace": _fn["tramo"],
+                "capacidad_diseno_tbps": _fn["capacidad_tbps"],
+                "operador_troncal": _fn["operador"],
+                "mandante": "SUBTEL",
             },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-manihuales",
-            "nombre": "Central Hidroeléctrica Río Mañihuales",
-            "tipo": "Central Hidroeléctrica de Pasada",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.1680,
-            "lng": -72.1550,
-            "atributos": {
-                "potencia_mw": 3.4,
-                "tecnologia": "Hidroeléctrica pasada",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "fuente_hidrica": "Río Mañihuales"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-los-maquis",
-            "nombre": "Central Hidroeléctrica Los Maquis (Puerto Guadal)",
-            "tipo": "Central Hidroeléctrica de Pasada",
-            "codigo_comuna": "CL-XI-06",
-            "comuna_ine": "11401",
-            "lat": -46.6850,
-            "lng": -72.7150,
-            "atributos": {
-                "potencia_mw": 1.0,
-                "tecnologia": "Hidroeléctrica pasada",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano General Carrera",
-                "fuente_hidrica": "Río Los Maquis"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-rio-mosco",
-            "nombre": "Central Hidroeléctrica Río Mosco (Villa O'Higgins)",
-            "tipo": "Central Hidroeléctrica de Pasada",
-            "codigo_comuna": "CL-XI-09",
-            "comuna_ine": "11302",
-            "lat": -48.4720,
-            "lng": -72.5480,
-            "atributos": {
-                "potencia_mw": 0.6,
-                "tecnologia": "Hidroeléctrica pasada",
-                "operador": "Ilustre Municipalidad de O'Higgins",
-                "sistema": "Sistema Aislado Villa O'Higgins",
-                "fuente_hidrica": "Río Mosco"
-            },
-            "source_url": "https://www.cne.cl/estadisticas/electricidad/"
-        },
-        {
-            "id": "nodo-elec-alto-baguales",
-            "nombre": "Parque Eólico Alto Baguales",
-            "tipo": "Parque Eólico",
-            "codigo_comuna": "CL-XI-01",
-            "comuna_ine": "11101",
-            "lat": -45.5520,
-            "lng": -72.0420,
-            "atributos": {
-                "potencia_mw": 3.2,
-                "tecnologia": "Aerogeneradores eólicos",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "aerogeneradores": 3
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-tehuelche",
-            "nombre": "Central Térmica Tehuelche (Coyhaique)",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-01",
-            "comuna_ine": "11101",
-            "lat": -45.5780,
-            "lng": -72.0720,
-            "atributos": {
-                "potencia_mw": 19.8,
-                "tecnologia": "Motores diésel de respaldo y punta",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-chacabuco",
-            "nombre": "Central Térmica Chacabuco",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.4650,
-            "lng": -72.8210,
-            "atributos": {
-                "potencia_mw": 23.5,
-                "tecnologia": "Motores diésel base industrial",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-chile-chico",
-            "nombre": "Central Térmica Diésel Chile Chico",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-06",
-            "comuna_ine": "11401",
-            "lat": -46.5450,
-            "lng": -71.7280,
-            "atributos": {
-                "potencia_mw": 4.8,
-                "tecnologia": "Generación diésel sistema lacustre",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano General Carrera",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-cochrane",
-            "nombre": "Central Térmica Diésel Cochrane",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-08",
-            "comuna_ine": "11301",
-            "lat": -47.2580,
-            "lng": -72.5780,
-            "atributos": {
-                "potencia_mw": 3.8,
-                "tecnologia": "Generación diésel sistema austral",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano General Carrera",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-melinka",
-            "nombre": "Central Generación Diésel Melinka",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-05",
-            "comuna_ine": "11203",
-            "lat": -43.8980,
-            "lng": -73.7450,
-            "atributos": {
-                "potencia_mw": 2.8,
-                "tecnologia": "Generación diésel sistema aislado insular",
-                "operador": "Ilustre Municipalidad de Guaitecas",
-                "sistema": "Sistema Aislado Melinka",
-                "combustible": "Petróleo Diésel subsidiado marítimo"
-            },
-            "source_url": "https://www.cne.cl/estadisticas/electricidad/"
-        },
-        {
-            "id": "nodo-elec-puerto-aguirre",
-            "nombre": "Central Térmica Puerto Aguirre (Islas Huichas)",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.1640,
-            "lng": -73.5230,
-            "atributos": {
-                "potencia_mw": 2.2,
-                "tecnologia": "Generación diésel sistema insular",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Aislado Islas Huichas",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-elec-caleta-tortel",
-            "nombre": "Central Generación Diésel Caleta Tortel",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-10",
-            "comuna_ine": "11303",
-            "lat": -47.7980,
-            "lng": -73.5380,
-            "atributos": {
-                "potencia_mw": 1.1,
-                "tecnologia": "Generación diésel sistema aislado",
-                "operador": "Ilustre Municipalidad de Tortel",
-                "sistema": "Sistema Aislado Caleta Tortel",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://www.cne.cl/estadisticas/electricidad/"
-        },
-        {
-            "id": "nodo-elec-puerto-cisnes",
-            "nombre": "Central Térmica Puerto Cisnes",
-            "tipo": "Central Térmica Diésel",
-            "codigo_comuna": "CL-XI-04",
-            "comuna_ine": "11202",
-            "lat": -44.7410,
-            "lng": -72.6950,
-            "atributos": {
-                "potencia_mw": 3.5,
-                "tecnologia": "Generación diésel sistema mediano norte",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano Palena-Cisnes",
-                "combustible": "Petróleo Diésel"
-            },
-            "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-        },
-        {
-            "id": "nodo-foa-melinka",
-            "nombre": "Nodo Troncal FOA Melinka (Aterrizaje Submarino)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-05",
-            "comuna_ine": "11203",
-            "lat": -43.8940,
-            "lng": -73.7420,
-            "atributos": {
-                "tipo_enlace": "Submarino",
-                "capacidad_diseno_tbps": 16.0,
-                "operador_troncal": "Comunicación y Telefonía Rural (CTR)",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-puerto-aguirre",
-            "nombre": "Nodo Troncal FOA Puerto Aguirre (Aterrizaje Submarino)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.1610,
-            "lng": -73.5200,
-            "atributos": {
-                "tipo_enlace": "Submarino",
-                "capacidad_diseno_tbps": 16.0,
-                "operador_troncal": "Comunicación y Telefonía Rural (CTR)",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-puerto-cisnes",
-            "nombre": "Nodo Troncal FOA Puerto Cisnes (Aterrizaje Submarino y Terrestre)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-04",
-            "comuna_ine": "11202",
-            "lat": -44.7450,
-            "lng": -72.6980,
-            "atributos": {
-                "tipo_enlace": "Submarino / Terrestre",
-                "capacidad_diseno_tbps": 16.0,
-                "operador_troncal": "CTR / Silice",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-chacabuco",
-            "nombre": "Nodo Troncal FOA Chacabuco (Aterrizaje Submarino / Terrestre)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.4680,
-            "lng": -72.8250,
-            "atributos": {
-                "tipo_enlace": "Submarino y conexión terrestre a Coyhaique",
-                "capacidad_diseno_tbps": 16.0,
-                "operador_troncal": "CTR",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-coyhaique",
-            "nombre": "Nodo Troncal FOA Coyhaique (Centro Distribución Regional)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-01",
-            "comuna_ine": "11101",
-            "lat": -45.5690,
-            "lng": -72.0650,
-            "atributos": {
-                "tipo_enlace": "Terrestre / Hub Regional",
-                "conecta": "Aysén, Balmaceda, Ruta 7 Sur",
-                "operador_troncal": "CTR / Conductores Ópticos Australes",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-chile-chico",
-            "nombre": "Nodo Troncal FOA Chile Chico (Poblado Lacustre)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-06",
-            "comuna_ine": "11401",
-            "lat": -46.5390,
-            "lng": -71.7200,
-            "atributos": {
-                "tipo_enlace": "Terrestre Lacustre",
-                "operador_troncal": "Silice / SUBTEL",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-cochrane",
-            "nombre": "Nodo Troncal FOA Cochrane (Troncal Sur Provincial)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-08",
-            "comuna_ine": "11301",
-            "lat": -47.2520,
-            "lng": -72.5680,
-            "atributos": {
-                "tipo_enlace": "Terrestre Ruta 7",
-                "conecta": "Río Tranquilo, Cochrane, derivación Tortel",
-                "operador_troncal": "Silice / SUBTEL",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-foa-tortel",
-            "nombre": "Nodo Troncal FOA Caleta Tortel (Aterrizaje Submarino Sur)",
-            "tipo": "Nodo Troncal Fibra Óptica Austral",
-            "codigo_comuna": "CL-XI-10",
-            "comuna_ine": "11303",
-            "lat": -47.7930,
-            "lng": -73.5320,
-            "atributos": {
-                "tipo_enlace": "Submarino / Terrestre extremo",
-                "capacidad_diseno_tbps": 16.0,
-                "operador_troncal": "CTR",
-                "mandante": "SUBTEL"
-            },
-            "source_url": "https://www.subtel.gob.cl/foa/"
-        },
-        {
-            "id": "nodo-combustibles-chacabuco",
-            "nombre": "Terminal Marítimo y Planta de Combustibles Enex / Copec Puerto Chacabuco",
-            "tipo": "Terminal de Almacenamiento y Distribución de Combustibles",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -45.4620,
-            "lng": -72.8180,
-            "atributos": {
-                "tipo": "Bunkering marítimo y estanques terrestres",
-                "productos": ["Gasolina 93/97", "Petróleo Diésel", "Kerosene Doméstico"],
-                "operadores": "Enex / Copec / Petrobras",
-                "capacidad_m3": 18500
-            },
-            "source_url": "https://www.sec.cl"
-        },
-        {
-            "id": "nodo-elec-subestacion-coyhaique",
-            "nombre": "Subestación Eléctrica Coyhaique 23/66 kV",
-            "tipo": "Subestación de Transformación y Despacho",
-            "codigo_comuna": "CL-XI-01",
-            "comuna_ine": "11101",
-            "lat": -45.5750,
-            "lng": -72.0580,
-            "atributos": {
-                "tension_kv": "23/66",
-                "operador": "Edelaysen S.A.",
-                "sistema": "Sistema Mediano de Aysén",
-                "funcion": "Transformación y despacho troncal Coyhaique - Aysén"
-            },
-            "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen"
-        }
-    ]
+            "source_url": "https://www.subtel.gob.cl/foa/",
+        })
+    for _ir in _inf_raw.get("nodos", []):
+        _nid = "nodo-combustibles-chacabuco" if "CHACABUCO" in _ir["id"] else "nodo-elec-subestacion-coyhaique"
+        nodos_georreferenciados.append({
+            "id": _nid,
+            "nombre": _ir["nombre"],
+            "tipo": _ir["tipo"],
+            "codigo_comuna": _ir["codigo_comuna"],
+            "comuna_ine": _ir["comuna_ine"],
+            "lat": _ir["lat"],
+            "lng": _ir["lng"],
+            "atributos": {k: v for k, v in _ir.items() if k not in ("id", "nombre", "tipo", "codigo_comuna", "comuna_ine", "lat", "lng")},
+            "source_url": "https://www.sec.cl",
+        })
 
     dataset = {
         "$schema": "https://json-schema.org/draft/2020-12/schema",

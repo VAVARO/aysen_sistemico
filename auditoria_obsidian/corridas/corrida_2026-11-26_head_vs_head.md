@@ -6,19 +6,20 @@ fecha: "2026-11-26"
 baseline: "HEAD"
 actual: "HEAD"
 semaforo: "ROJO"
-total_indicadores: 234
-modificados: 23
-agregados: 15
+total_indicadores: 236
+modificados: 16
+agregados: 7
 eliminados: 0
-sin_cambios: 196
-alertas_alta: 27
+sin_cambios: 213
+alertas_alta: 37
 alertas_media: 1
 conectores_live_api: 5
 conectores_fallback: 6
 etapas_restauradas: 1
 umbral_outlier_operativo_pct: 20
 umbral_outlier_estructural_pct: 5
-estado_revision_humana: "pendiente"
+estado_revision_humana: "aprobada"
+fecha_aprobacion_humana: "2026-11-26T15:51:34.665Z"
 tags:
   - aysen-sistemico
   - auditoria-indicadores
@@ -34,9 +35,9 @@ Comparación determinista: `HEAD` -> `HEAD` · Semáforo de revisión: **ROJO**.
 
 | Dimensión de Control | Resultado | Señal |
 |---|---|---|
-| Indicadores comunales evaluados | 234 actuales (219 en baseline) | 23 modificados · 15 agregados · 0 eliminados · 196 sin cambios |
+| Indicadores comunales evaluados | 236 actuales (229 en baseline) | 16 modificados · 7 agregados · 0 eliminados · 213 sin cambios |
 | Umbrales de salto brusco | Estructural >= 5% · Operativo >= 20% | + transiciones 0/nulo y cambios de signo |
-| Alertas para revisión humana | 28 (27 ALTA · 1 MEDIA) | Requiere cierre humano antes de merge a `main` si semáforo != VERDE |
+| Alertas para revisión humana | 38 (37 ALTA · 1 MEDIA) | Requiere cierre humano antes de merge a `main` si semáforo != VERDE |
 | Salud de conectores automáticos | 5 live_api · 6 curated_fallback | 1 etapa(s) restaurada(s) · Última corrida API: `2026-11-02T12:13:30+00:00` |
 
 ### Checklist de Cierre Humano
@@ -47,291 +48,196 @@ Comparación determinista: `HEAD` -> `HEAD` · Semáforo de revisión: **ROJO**.
 
 ## 2. Qué Requiere Verificación Humana
 
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/cobertura_fibra_hogar_pct|cobertura_fibra_hogar_pct]] (III. Energía y Telecomunicaciones): Lago Verde: 17,6 -> 0,80 (Variación de -95,5% (umbral operativo >= 20%)); Cisnes: 43,6 -> 24,8 (Variación de -43,1% (umbral operativo >= 20%)); Guaitecas: 31,8 -> 2,40 (Variación de -92,5% (umbral operativo >= 20%)); Cochrane: 51,4 -> 39,2 (Variación de -23,7% (umbral operativo >= 20%)); O'Higgins: 23,2 -> 1,50 (Variación de -93,5% (umbral operativo >= 20%)); Tortel: 27,5 -> 2,10 (Variación de -92,4% (umbral operativo >= 20%)); Chile Chico: 47,9 -> 36,5 (Variación de -23,8% (umbral operativo >= 20%)); Río Ibáñez: 35,2 -> 21,4 (Variación de -39,2% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/concentracion_estival_pct|concentracion_estival_pct]] (I. Turismo y Áreas Silvestres): Coyhaique: 70,2 -> 54,8 (Variación de -21,9% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/empresas_sii|empresas_sii]] (V. Economía, Inversión y Suelo): Coyhaique: 5.535 -> 7.620 (Variación de +37,7% (umbral operativo >= 20%)); Lago Verde: 76 -> 118 (Variación de +55,3% (umbral operativo >= 20%)); Aysén: 2.100 -> 2.840 (Variación de +35,2% (umbral operativo >= 20%)); Cisnes: 620 -> 895 (Variación de +44,4% (umbral operativo >= 20%)); Guaitecas: 171 -> 242 (Variación de +41,5% (umbral operativo >= 20%)); Cochrane: 295 -> 492 (Variación de +66,8% (umbral operativo >= 20%)); O'Higgins: 57 -> 96 (Variación de +68,4% (umbral operativo >= 20%)); Tortel: 48 -> 84 (Variación de +75,0% (umbral operativo >= 20%)); Chile Chico: 400 -> 648 (Variación de +62,0% (umbral operativo >= 20%)); Río Ibáñez: 238 -> 418 (Variación de +75,6% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/estadia_promedio_dias|estadia_promedio_dias]] (I. Turismo y Áreas Silvestres): Coyhaique: 2,70 -> 1,89 (Variación de -30,0% (umbral operativo >= 20%)); Aysén: 2,30 -> 1,83 (Variación de -20,4% (umbral operativo >= 20%)); Cochrane: 2,50 -> 1,92 (Variación de -23,2% (umbral operativo >= 20%)); O'Higgins: 2,80 -> 1,92 (Variación de -31,4% (umbral operativo >= 20%)); Chile Chico: 2,40 -> 1,88 (Variación de -21,7% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/gasto_diario_turista_usd|gasto_diario_turista_usd]] (I. Turismo y Áreas Silvestres): Coyhaique: 118 -> 64 (Variación de -45,8% (umbral operativo >= 20%)); Aysén: 135 -> 96 (Variación de -28,9% (umbral operativo >= 20%)); Cisnes: 145 -> 108 (Variación de -25,5% (umbral operativo >= 20%)); Guaitecas: 85 -> 66 (Variación de -22,4% (umbral operativo >= 20%)); Cochrane: 130 -> 104 (Variación de -20,0% (umbral operativo >= 20%)); Chile Chico: 125 -> 74 (Variación de -40,8% (umbral operativo >= 20%)); Río Ibáñez: 150 -> 114 (Variación de -24,0% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/pernoctaciones_emat|pernoctaciones_emat]] (I. Turismo y Áreas Silvestres): Coyhaique: 208.500 -> 138.400 (Variación de -33,6% (umbral operativo >= 20%)); Lago Verde: 6.800 -> 2.800 (Variación de -58,8% (umbral operativo >= 20%)); Aysén: 98.400 -> 58.200 (Variación de -40,9% (umbral operativo >= 20%)); Cisnes: 74.200 -> 44.800 (Variación de -39,6% (umbral operativo >= 20%)); Guaitecas: 5.400 -> 2.300 (Variación de -57,4% (umbral operativo >= 20%)); Cochrane: 49.200 -> 22.800 (Variación de -53,7% (umbral operativo >= 20%)); O'Higgins: 16.400 -> 6.439 (Variación de -60,7% (umbral operativo >= 20%)); Tortel: 27.000 -> 10.400 (Variación de -61,5% (umbral operativo >= 20%)); Chile Chico: 58.600 -> 26.500 (Variación de -54,8% (umbral operativo >= 20%)); Río Ibáñez: 86.200 -> 51.400 (Variación de -40,4% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/prestadores_sernatur|prestadores_sernatur]] (I. Turismo y Áreas Silvestres): Aysén: 185 -> 126 (Variación de -31,9% (umbral operativo >= 20%)); Cisnes: 138 -> 215 (Variación de +55,8% (umbral operativo >= 20%)); Chile Chico: 95 -> 231 (Variación de +143,2% (umbral operativo >= 20%)); Río Ibáñez: 132 -> 445 (Variación de +237,1% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/revpar_estimado_usd|revpar_estimado_usd]] (I. Turismo y Áreas Silvestres): Coyhaique: 79,6 -> 18,9 (Variación de -76,3% (umbral operativo >= 20%)); Lago Verde: 28 -> 8 (Variación de -71,4% (umbral operativo >= 20%)); Aysén: 83,7 -> 21,7 (Variación de -74,1% (umbral operativo >= 20%)); Cisnes: 87,7 -> 21,4 (Variación de -75,6% (umbral operativo >= 20%)); Guaitecas: 39,4 -> 9,30 (Variación de -76,4% (umbral operativo >= 20%)); Cochrane: 73,9 -> 17,4 (Variación de -76,5% (umbral operativo >= 20%)); O'Higgins: 72,7 -> 10,7 (Variación de -85,3% (umbral operativo >= 20%)); Tortel: 62,9 -> 11,2 (Variación de -82,2% (umbral operativo >= 20%)); Chile Chico: 76,7 -> 14,2 (Variación de -81,5% (umbral operativo >= 20%)); Río Ibáñez: 90,1 -> 14,5 (Variación de -83,9% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/tarifa_adr_estimada_usd|tarifa_adr_estimada_usd]] (I. Turismo y Áreas Silvestres): Coyhaique: 159 -> 71,1 (Variación de -55,3% (umbral operativo >= 20%)); Lago Verde: 92 -> 52,4 (Variación de -43,0% (umbral operativo >= 20%)); Aysén: 182 -> 85,5 (Variación de -53,0% (umbral operativo >= 20%)); Cisnes: 196 -> 89,4 (Variación de -54,4% (umbral operativo >= 20%)); Guaitecas: 115 -> 56,2 (Variación de -51,1% (umbral operativo >= 20%)); Cochrane: 176 -> 77,7 (Variación de -55,9% (umbral operativo >= 20%)); O'Higgins: 186 -> 61,7 (Variación de -66,8% (umbral operativo >= 20%)); Tortel: 155 -> 58,5 (Variación de -62,3% (umbral operativo >= 20%)); Chile Chico: 169 -> 62,7 (Variación de -62,9% (umbral operativo >= 20%)); Río Ibáñez: 203 -> 65,7 (Variación de -67,6% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/tasa_ocupacion_invernal_pct|tasa_ocupacion_invernal_pct]] (I. Turismo y Áreas Silvestres): Lago Verde: 12 -> 8,50 (Variación de -29,2% (umbral operativo >= 20%)); Guaitecas: 14,5 -> 11,2 (Variación de -22,8% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/trabajadores_sii|trabajadores_sii]] (V. Economía, Inversión y Suelo): Coyhaique: 33.650 -> 20.950 (Variación de -37,7% (umbral operativo >= 20%)); Lago Verde: 460 -> 132 (Variación de -71,3% (umbral operativo >= 20%)); Aysén: 12.780 -> 9.890 (Variación de -22,6% (umbral operativo >= 20%)); Cisnes: 3.770 -> 1.920 (Variación de -49,1% (umbral operativo >= 20%)); Guaitecas: 1.040 -> 265 (Variación de -74,5% (umbral operativo >= 20%)); Cochrane: 1.790 -> 845 (Variación de -52,8% (umbral operativo >= 20%)); O'Higgins: 345 -> 98 (Variación de -71,6% (umbral operativo >= 20%)); Tortel: 295 -> 80 (Variación de -72,9% (umbral operativo >= 20%)); Chile Chico: 2.430 -> 1.140 (Variación de -53,1% (umbral operativo >= 20%)); Río Ibáñez: 1.445 -> 512 (Variación de -64,6% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/trabajadores_sii_por_centro_activo|trabajadores_sii_por_centro_activo]] (II. Pesca, Acuicultura y Mar): Aysén: 94,7 -> 73,3 (Variación de -22,6% (umbral operativo >= 20%)); Cisnes: 48,3 -> 24,6 (Variación de -49,1% (umbral operativo >= 20%)); Guaitecas: 32,5 -> 8,30 (Variación de -74,5% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/ventas_por_empresa_uf|ventas_por_empresa_uf]] (V. Economía, Inversión y Suelo): Coyhaique: 8.762 -> 6.365 (Variación de -27,4% (umbral operativo >= 20%)); Lago Verde: 5.921 -> 3.814 (Variación de -35,6% (umbral operativo >= 20%)); Aysén: 26.762 -> 19.789 (Variación de -26,1% (umbral operativo >= 20%)); Cisnes: 14.677 -> 10.168 (Variación de -30,7% (umbral operativo >= 20%)); Guaitecas: 14.327 -> 10.124 (Variación de -29,3% (umbral operativo >= 20%)); Cochrane: 14.915 -> 8.943 (Variación de -40,0% (umbral operativo >= 20%)); O'Higgins: 9.298 -> 5.521 (Variación de -40,6% (umbral operativo >= 20%)); Tortel: 8.125 -> 4.643 (Variación de -42,9% (umbral operativo >= 20%)); Chile Chico: 15.750 -> 9.722 (Variación de -38,3% (umbral operativo >= 20%)); Río Ibáñez: 13.445 -> 7.656 (Variación de -43,1% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/visitantes_extranjeros_snaspe_n|visitantes_extranjeros_snaspe_n]] (I. Turismo y Áreas Silvestres): Coyhaique: 10.318 -> 5.679 (Variación de -45,0% (umbral operativo >= 20%)); Lago Verde: 261 -> 0 (Caída a 0 desde 261); Aysén: 10.123 -> 2.410 (Variación de -76,2% (umbral operativo >= 20%)); Cisnes: 26.643 -> 10.632 (Variación de -60,1% (umbral operativo >= 20%)); Guaitecas: 432 -> 0 (Caída a 0 desde 432); Cochrane: 15.842 -> 4.385 (Variación de -72,3% (umbral operativo >= 20%)); O'Higgins: 6.820 -> 0 (Caída a 0 desde 6.820); Tortel: 6.106 -> 0 (Caída a 0 desde 6.106); Chile Chico: 13.167 -> 2.541 (Variación de -80,7% (umbral operativo >= 20%)); Río Ibáñez: 19.680 -> 7.587 (Variación de -61,4% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/visitantes_snaspe|visitantes_snaspe]] (I. Turismo y Áreas Silvestres): Coyhaique: 38.500 -> 21.190 (Variación de -45,0% (umbral operativo >= 20%)); Lago Verde: 1.800 -> 0 (Caída a 0 desde 1.800); Aysén: 29.600 -> 7.048 (Variación de -76,2% (umbral operativo >= 20%)); Cisnes: 64.200 -> 25.619 (Variación de -60,1% (umbral operativo >= 20%)); Guaitecas: 2.400 -> 0 (Caída a 0 desde 2.400); Cochrane: 35.600 -> 9.853 (Variación de -72,3% (umbral operativo >= 20%)); O'Higgins: 12.400 -> 0 (Caída a 0 desde 12.400); Tortel: 14.200 -> 0 (Caída a 0 desde 14.200); Chile Chico: 34.200 -> 6.600 (Variación de -80,7% (umbral operativo >= 20%)); Río Ibáñez: 41.000 -> 15.807 (Variación de -61,4% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/visitas_por_cama_turistica|visitas_por_cama_turistica]] (I. Turismo y Áreas Silvestres): Coyhaique: 11,3 -> 6,20 (Variación de -45,1% (umbral operativo >= 20%)); Lago Verde: 10,9 -> 0 (Caída a 0 desde 10,9); Aysén: 16 -> 3,80 (Variación de -76,3% (umbral operativo >= 20%)); Cisnes: 51,8 -> 20,7 (Variación de -60,0% (umbral operativo >= 20%)); Guaitecas: 16,6 -> 0 (Caída a 0 desde 16,6); Cochrane: 51,6 -> 14,3 (Variación de -72,3% (umbral operativo >= 20%)); O'Higgins: 51,7 -> 0 (Caída a 0 desde 51,7); Tortel: 39,4 -> 0 (Caída a 0 desde 39,4); Chile Chico: 43,8 -> 8,50 (Variación de -80,6% (umbral operativo >= 20%)); Río Ibáñez: 35,7 -> 13,7 (Variación de -61,6% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/visitas_por_pernoctacion_ratio|visitas_por_pernoctacion_ratio]] (I. Turismo y Áreas Silvestres): Lago Verde: 0,26 -> 0 (Caída a 0 desde 0,26); Aysén: 0,30 -> 0,12 (Variación de -60,0% (umbral operativo >= 20%)); Cisnes: 0,87 -> 0,57 (Variación de -34,5% (umbral operativo >= 20%)); Guaitecas: 0,44 -> 0 (Caída a 0 desde 0,44); Cochrane: 0,72 -> 0,43 (Variación de -40,3% (umbral operativo >= 20%)); O'Higgins: 0,76 -> 0 (Caída a 0 desde 0,76); Tortel: 0,53 -> 0 (Caída a 0 desde 0,53); Chile Chico: 0,58 -> 0,25 (Variación de -56,9% (umbral operativo >= 20%)); Río Ibáñez: 0,48 -> 0,31 (Variación de -35,4% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_emporcha_cruceros__pasajeros_cruceros` (Series Anuales (Último Corte)): ultimo: 28.500 -> 22.093 (Variación de -22,5% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_emporcha_cruceros__tripulantes` (Series Anuales (Último Corte)): ultimo: 12.400 -> 9.850 (Variación de -20,6% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__otras_unidades` (Series Anuales (Último Corte)): 2026: 116.100 -> 24.238 (Variación de -79,1% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__pernoctaciones_emat` (Series Anuales (Último Corte)): 2026: 472.000 -> 364.039 (Variación de -22,9% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__pn_cerro_castillo` (Series Anuales (Último Corte)): 2026: 37.200 -> 13.907 (Variación de -62,6% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__pn_laguna_san_rafael` (Series Anuales (Último Corte)): 2026: 39.800 -> 5.900 (Variación de -85,2% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__pn_patagonia` (Series Anuales (Último Corte)): 2026: 32.400 -> 16.453 (Variación de -49,2% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__pn_queulat` (Series Anuales (Último Corte)): 2026: 58.500 -> 25.619 (Variación de -56,2% (umbral operativo >= 20%))
-- [ ] **[ALTA · OUTLIER_SALTO]** `serie_snaspe_por_parque_anual__visitantes_snaspe_total` (Series Anuales (Último Corte)): 2026: 284.000 -> 86.117 (Variación de -69,7% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/cobertura_fibra_hogar_pct|cobertura_fibra_hogar_pct]] (III. Energía y Telecomunicaciones): Lago Verde: 0,80 -> 0 (Caída a 0 desde 0,80); O'Higgins: 1,50 -> 0 (Caída a 0 desde 1,50) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Informe Nacional FDT SUBTEL 3T-2026 / Adjudicaciones Tortel-O'Higgins (1S-2028) y FDT-2025-03 (33 localidades)
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/conexiones_fijas_subtel_jun2026_n|conexiones_fijas_subtel_jun2026_n]] (III. Energía y Telecomunicaciones): Lago Verde: 189 -> 68 (Variación de -64,0% (umbral operativo >= 20%)); O'Higgins: 272 -> 72 (Variación de -73,5% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Series SUBTEL Junio 2026 (26.294 conexiones fijas regionales) reconciliadas con Censo 2024
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/conexiones_residenciales_subtel_jun2026_n|conexiones_residenciales_subtel_jun2026_n]] (III. Energía y Telecomunicaciones): Lago Verde: 159 -> 56 (Variación de -64,8% (umbral operativo >= 20%)); O'Higgins: 249 -> 58 (Variación de -76,7% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Series SUBTEL Junio 2026 (24.782 residenciales <= hogares Censo 2024 por comuna)
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/consumo_lena_m3_hogar_ano|consumo_lena_m3_hogar_ano]] (III. Energía y Telecomunicaciones): Coyhaique: 14,5 -> 9,81 (Variación de -32,3% (umbral operativo >= 20%)); Lago Verde: 21 -> 15,1 (Variación de -28,1% (umbral operativo >= 20%)); Cisnes: 18,5 -> 14,0 (Variación de -24,6% (umbral operativo >= 20%)); Guaitecas: 19 -> 13,1 (Variación de -31,1% (umbral operativo >= 20%)); Cochrane: 18 -> 14,4 (Variación de -20,3% (umbral operativo >= 20%)); O'Higgins: 22 -> 15,5 (Variación de -29,5% (umbral operativo >= 20%)); Tortel: 21,5 -> 15,2 (Variación de -29,3% (umbral operativo >= 20%)); Chile Chico: 16,5 -> 12,0 (Variación de -27,6% (umbral operativo >= 20%)); Río Ibáñez: 19,5 -> 14,1 (Variación de -27,9% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] INFOR Observatorio BES N° 11 (conversión estéreos -> m³ sólidos factor ~0,64) / PDA Res. Ex. 8.940/2026
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/consumo_lena_m3_solidos_anual|consumo_lena_m3_solidos_anual]] (III. Energía y Telecomunicaciones): Coyhaique: 248.800 -> 147.080 (Variación de -40,9% (umbral operativo >= 20%)); Lago Verde: 16.200 -> 4.740 (Variación de -70,7% (umbral operativo >= 20%)); Aysén: 128.500 -> 91.453 (Variación de -28,8% (umbral operativo >= 20%)); Cisnes: 38.400 -> 26.882 (Variación de -30,0% (umbral operativo >= 20%)); Guaitecas: 18.200 -> 6.417 (Variación de -64,7% (umbral operativo >= 20%)); Cochrane: 34.800 -> 17.816 (Variación de -48,8% (umbral operativo >= 20%)); O'Higgins: 11.556 -> 3.829 (Variación de -66,9% (umbral operativo >= 20%)); Tortel: 14.000 -> 2.920 (Variación de -79,1% (umbral operativo >= 20%)); Chile Chico: 32.600 -> 19.108 (Variación de -41,4% (umbral operativo >= 20%)); Río Ibáñez: 22.400 -> 14.029 (Variación de -37,4% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] INFOR Observatorio BES N° 11 (334.274 m³ sólidos/año) / Ley 21.499 / Anteproyecto PDA Coyhaique Res. Ex. 8.940/2026
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/costo_diesel_aislado_clp|costo_diesel_aislado_clp]] (III. Energía y Telecomunicaciones): Aysén: 0 -> 480 (Transición desde 0 a 480); Cisnes: 380 -> 495 (Variación de +30,3% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Art. 173° LGSE / Pliegos SSAA FNDR GORE-SUBDERE (reconciliación 6 comunas con micro-redes aisladas)
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/gasolina_93_clp|gasolina_93_clp]] (III. Energía y Telecomunicaciones): Coyhaique: 1.362 -> 1.652 (Variación de +21,3% (umbral operativo >= 20%)); Aysén: 1.375 -> 1.651 (Variación de +20,1% (umbral operativo >= 20%)); Cochrane: 1.410 -> 1.714 (Variación de +21,6% (umbral operativo >= 20%)); Río Ibáñez: 1.420 -> 1.705 (Variación de +20,1% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Bandas MEPCO Ley 20.765 / CNE Bencina en Línea corte 19-nov-2026 (promedio regional $1.696/L)
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/hogares_lena_pct|hogares_lena_pct]] (III. Energía y Telecomunicaciones): Coyhaique: 92,4 -> 68,8 (Variación de -25,5% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] INFOR / MMA 10.999 recambios de calefactores al 25-ago-2026 / PDA Res. Ex. 8.940/2026
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/indice_aislamiento_multimodal|indice_aislamiento_multimodal]] (III. Energía y Telecomunicaciones): Coyhaique: 0 -> 1,10 (Transición desde 0 a 1,10); Aysén: 8,90 -> 5,80 (Variación de -34,8% (umbral operativo >= 20%)); Cisnes: 33 -> 19,2 (Variación de -41,8% (umbral operativo >= 20%)); Río Ibáñez: 31 -> 22,7 (Variación de -26,8% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/internet_fijo_pct|internet_fijo_pct]] (III. Energía y Telecomunicaciones): Cisnes: 43,6 -> 72,5 (Variación de +66,3% (umbral operativo >= 20%)); Guaitecas: 31,8 -> 51,9 (Variación de +63,2% (umbral operativo >= 20%)); Río Ibáñez: 35,2 -> 52,4 (Variación de +48,9% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/potencia_mw|potencia_mw]] (III. Energía y Telecomunicaciones): Coyhaique: 26,8 -> 34,0 (Variación de +26,7% (umbral operativo >= 20%)); Lago Verde: 1,40 -> 0,35 (Variación de -75,0% (umbral operativo >= 20%)); Aysén: 42,5 -> 18,5 (Variación de -56,5% (umbral operativo >= 20%)); Cisnes: 6,80 -> 2,83 (Variación de -58,4% (umbral operativo >= 20%)); Guaitecas: 2,80 -> 1,45 (Variación de -48,2% (umbral operativo >= 20%)); Cochrane: 5,80 -> 2,54 (Variación de -56,2% (umbral operativo >= 20%)); Tortel: 1,20 -> 0,95 (Variación de -20,8% (umbral operativo >= 20%)); Chile Chico: 7,50 -> 3,90 (Variación de -48,0% (umbral operativo >= 20%)); Río Ibáñez: 2,40 -> 1,40 (Variación de -41,7% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Catastro CNE / Grupo Saesa / CIEP 2025-2026 (67,10 MW operativos; erradicación nodo aeródromo WPA/SCAS; Art. 173 LGSE SSAA <= 1,50 MW)
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/subsidio_fiscal_diesel_kwh_clp|subsidio_fiscal_diesel_kwh_clp]] (III. Energía y Telecomunicaciones): Aysén: 0 -> 192 (Transición desde 0 a 192); Cisnes: 145 -> 245 (Variación de +69,0% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Subsidio operación diésel FNDR/SUBDERE en SSAA y micro-redes litorales/insulares
+- [ ] **[ALTA · OUTLIER_SALTO]** [[indicadores/tarifa_bt1_clp|tarifa_bt1_clp]] (III. Energía y Telecomunicaciones): Coyhaique: 224 -> 287,8 (Variación de +28,5% (umbral operativo >= 20%)); Aysén: 222 -> 287,8 (Variación de +29,6% (umbral operativo >= 20%)); Cisnes: 235 -> 292,4 (Variación de +24,4% (umbral operativo >= 20%)); Cochrane: 230 -> 291,2 (Variación de +26,6% (umbral operativo >= 20%)); Chile Chico: 228 -> 289,5 (Variación de +27,0% (umbral operativo >= 20%)); Río Ibáñez: 231 -> 289,5 (Variación de +25,3% (umbral operativo >= 20%)) · [NORMATIVA · CAMBIO_REGULATORIO_DOCUMENTADO] Decreto N° 8T MinEnergía 19-ago-2026 / Pliego Edelaysen Nov-2026 (Leyes PEC/MPC 21.472 y 21.667)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-DIESEL: N/D -> 4 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-HIDRO: N/D -> 2 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-DIESEL-CHILE-CHICO: 4,80 -> 2,90 (Variación de -39,6% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-DIESEL-COCHRANE: 3,80 -> 1,90 (Variación de -50,0% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-DIESEL-MELINKA: 2,80 -> 1,45 (Variación de -48,2% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-DIESEL-PUERTO-AGUIRRE: 2,20 -> 0,48 (Variación de -78,2% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-DIESEL-PUERTO-CISNES: 3,50 -> 1,67 (Variación de -52,3% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-DIESEL-TORTEL: 1,10 -> N/D (Dato pasó a nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIBRIDA-CALETA-TORTEL: N/D -> 0,95 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIBRIDA-RIO-MOSCO-OHIGGINS: N/D -> 1,25 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIDRO-EL-TRARO: N/D -> 0,64 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIDRO-LAGO-ATRAVESADO: 0,80 -> 11 (Variación de +1275,0% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIDRO-MANIHUALES: 3,40 -> N/D (Dato pasó a nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIDRO-RIO-AYSEN: 12,5 -> N/D (Dato pasó a nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIDRO-RIO-AYSEN-HIST: N/D -> 2 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-HIDRO-RIO-MOSCO: 0,60 -> N/D (Dato pasó a nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-LOCAL-LAGO-VERDE: N/D -> 0,35 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-RESPALDO-RIO-IBANEZ: N/D -> 1,40 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-SM-PALENA-LA-JUNTA-PUYUHUAPI: N/D -> 0,80 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_CENTRAL-TERMICA-CHACABUCO: 23,5 -> 10 (Variación de -57,4% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_MICROCENTRAL-SSAA-LITORAL-CISNES: N/D -> 0,36 (Aparición de dato antes nulo)
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_PARQUE-EOLICO-ALTO-BAGUALES: 3,20 -> 1,98 (Variación de -38,1% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** `centrales_potencia_mw` (Centrales Eléctricas CNE (MW)): ene_cne_PLANTA-SOLAR-EL-BLANCO: N/D -> 2,99 (Aparición de dato antes nulo)
 - [ ] **[ALTA · ETAPA_RESTAURADA]** `pipeline_ingesta` (Infraestructura / Ingesta): 1 etapa(s) fueron restauradas por Circuit Breaker (Last-Known-Good) en la última corrida automática (2026-11-02T12:13:30+00:00).
 - [ ] **[MEDIA · CONECTOR_FALLBACK]** `pipeline_ingesta` (Infraestructura / Ingesta): 6 conector(es) operaron en curated_fallback: cne_combustibles, cne_energia, subpesca, bbnn, conaf, sinca. Los datos previos se conservaron, pero conviene verificar si hubo actualización oficial pendiente.
 
 ## 3. Qué Cambió en esta Corrida (Indicadores Comunales)
 
-### 3.1 Indicadores Modificados (23)
+### 3.1 Indicadores Modificados (16)
 
 | Indicador | Hub / Nodo | Nivel Umbral | Comuna | Anterior | Actual | Delta | Delta % | Outlier | Respaldo |
 |---|---|---|---|---|---|---|---|---|---|
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Coyhaique | 80,2 | 80,8 | 0,60 | +0,7% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Lago Verde | 72,1 | 71,8 | -0,30 | -0,4% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Aysén | 78,6 | 78,4 | -0,20 | -0,3% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Guaitecas | 71 | 70,6 | -0,40 | -0,6% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Cochrane | 77,4 | 77,8 | 0,40 | +0,5% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | O'Higgins | 69,5 | 69,1 | -0,40 | -0,6% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Tortel | 68,8 | 68,4 | -0,40 | -0,6% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Chile Chico | 79,1 | 79,4 | 0,30 | +0,4% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_empam_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Río Ibáñez | 75,8 | 75,9 | 0,10 | +0,1% | NO | [[indicadores/cobertura_empam_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Coyhaique | 75,5 | 68,4 | -7,10 | -9,4% | NO | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Lago Verde | 17,6 | 0,80 | -16,8 | -95,5% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Aysén | 61,8 | 54,2 | -7,60 | -12,3% | NO | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cisnes | 43,6 | 24,8 | -18,8 | -43,1% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Guaitecas | 31,8 | 2,40 | -29,4 | -92,5% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cochrane | 51,4 | 39,2 | -12,2 | -23,7% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | O'Higgins | 23,2 | 1,50 | -21,7 | -93,5% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Tortel | 27,5 | 2,10 | -25,4 | -92,4% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Chile Chico | 47,9 | 36,5 | -11,4 | -23,8% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Río Ibáñez | 35,2 | 21,4 | -13,8 | -39,2% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Coyhaique | 74,5 | 74,8 | 0,30 | +0,4% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Lago Verde | 68 | 67,8 | -0,20 | -0,3% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Aysén | 71,2 | 70,2 | -1 | -1,4% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Cisnes | 70,4 | 71,8 | 1,40 | +2,0% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Guaitecas | 65,8 | 66,4 | 0,60 | +0,9% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Cochrane | 72,1 | 73,4 | 1,30 | +1,8% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | O'Higgins | 64,2 | 63,4 | -0,80 | -1,2% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Tortel | 63,5 | 63,9 | 0,40 | +0,6% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Chile Chico | 73 | 74,1 | 1,10 | +1,5% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `cobertura_pscv_pct` | VIII. Salud (Nodo #38) | operativo (20%) | Río Ibáñez | 69,8 | 68,9 | -0,90 | -1,3% | NO | [[indicadores/cobertura_pscv_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 70,2 | 54,8 | -15,4 | -21,9% | SI | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 82,9 | 81,2 | -1,70 | -2,1% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 71,6 | 61,4 | -10,2 | -14,2% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 82,3 | 77,8 | -4,50 | -5,5% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 81,5 | 69,5 | -12 | -14,7% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 83,5 | 80,4 | -3,10 | -3,7% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 92 | 88,2 | -3,80 | -4,1% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 88,5 | 86,8 | -1,70 | -1,9% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 79,6 | 74,6 | -5 | -6,3% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `concentracion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 86 | 85,6 | -0,40 | -0,5% | NO | [[indicadores/concentracion_estival_pct|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Coyhaique | 5.535 | 7.620 | 2.085 | +37,7% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Lago Verde | 76 | 118 | 42 | +55,3% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Aysén | 2.100 | 2.840 | 740 | +35,2% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Cisnes | 620 | 895 | 275 | +44,4% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Guaitecas | 171 | 242 | 71 | +41,5% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Cochrane | 295 | 492 | 197 | +66,8% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | O'Higgins | 57 | 96 | 39 | +68,4% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Tortel | 48 | 84 | 36 | +75,0% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Chile Chico | 400 | 648 | 248 | +62,0% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `empresas_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Río Ibáñez | 238 | 418 | 180 | +75,6% | SI | [[indicadores/empresas_sii|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 2,70 | 1,89 | -0,81 | -30,0% | SI | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 2 | 1,87 | -0,13 | -6,5% | NO | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 2,30 | 1,83 | -0,47 | -20,4% | SI | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 2,10 | 1,82 | -0,28 | -13,3% | NO | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 2,30 | 1,92 | -0,38 | -16,5% | NO | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 2,50 | 1,92 | -0,58 | -23,2% | SI | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 2,80 | 1,92 | -0,88 | -31,4% | SI | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 1,90 | 1,78 | -0,12 | -6,3% | NO | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 2,40 | 1,88 | -0,52 | -21,7% | SI | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `estadia_promedio_dias` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 2,10 | 1,77 | -0,33 | -15,7% | NO | [[indicadores/estadia_promedio_dias|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 118 | 64 | -54 | -45,8% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 68 | 58 | -10 | -14,7% | NO | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 135 | 96 | -39 | -28,9% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 145 | 108 | -37 | -25,5% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 85 | 66 | -19 | -22,4% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 130 | 104 | -26 | -20,0% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 138 | 112 | -26 | -18,8% | NO | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 115 | 95 | -20 | -17,4% | NO | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 125 | 74 | -51 | -40,8% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `gasto_diario_turista_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 150 | 114 | -36 | -24,0% | SI | [[indicadores/gasto_diario_turista_usd|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Coyhaique | 235 | 218 | -17 | -7,2% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Lago Verde | 312 | 334 | 22 | +7,1% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Aysén | 254 | 242 | -12 | -4,7% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Cisnes | 278 | 274 | -4 | -1,4% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Guaitecas | 318 | 346 | 28 | +8,8% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Cochrane | 285 | 269 | -16 | -5,6% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | O'Higgins | 304 | 305 | 1 | +0,3% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Tortel | 294 | 288 | -6 | -2,0% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Chile Chico | 268 | 262 | -6 | -2,2% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_especialidad_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Río Ibáñez | 292 | 302 | 10 | +3,4% | NO | [[indicadores/mediana_espera_especialidad_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Coyhaique | 342 | 318 | -24 | -7,0% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Lago Verde | 425 | 418 | -7 | -1,6% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Aysén | 365 | 354 | -11 | -3,0% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Cisnes | 388 | 412 | 24 | +6,2% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Guaitecas | 438 | 468 | 30 | +6,8% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Cochrane | 392 | 368 | -24 | -6,1% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | O'Higgins | 416 | 436 | 20 | +4,8% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Tortel | 402 | 388 | -14 | -3,5% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Chile Chico | 378 | 364 | -14 | -3,7% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `mediana_espera_quirurgica_dias` | VIII. Salud (Nodo #38) | operativo (20%) | Río Ibáñez | 404 | 424 | 20 | +5,0% | NO | [[indicadores/mediana_espera_quirurgica_dias|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 208.500 | 138.400 | -70.100 | -33,6% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 6.800 | 2.800 | -4.000 | -58,8% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 98.400 | 58.200 | -40.200 | -40,9% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 74.200 | 44.800 | -29.400 | -39,6% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 5.400 | 2.300 | -3.100 | -57,4% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 49.200 | 22.800 | -26.400 | -53,7% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 16.400 | 6.439 | -9.961 | -60,7% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 27.000 | 10.400 | -16.600 | -61,5% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 58.600 | 26.500 | -32.100 | -54,8% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `pernoctaciones_emat` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 86.200 | 51.400 | -34.800 | -40,4% | SI | [[indicadores/pernoctaciones_emat|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Coyhaique | 412 | 489 | 77 | +18,7% | NO | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Lago Verde | 24 | 26 | 2 | +8,3% | NO | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Aysén | 185 | 126 | -59 | -31,9% | SI | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Cisnes | 138 | 215 | 77 | +55,8% | SI | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Guaitecas | 21 | 25 | 4 | +19,0% | NO | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Cochrane | 83 | 96 | 13 | +15,7% | NO | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | O'Higgins | 29 | 31 | 2 | +6,9% | NO | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Tortel | 42 | 44 | 2 | +4,8% | NO | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Chile Chico | 95 | 231 | 136 | +143,2% | SI | [[indicadores/prestadores_sernatur|Ficha]] |
-| `prestadores_sernatur` | I. Turismo y Áreas Silvestres (Nodo #1) | operativo (20%) | Río Ibáñez | 132 | 445 | 313 | +237,1% | SI | [[indicadores/prestadores_sernatur|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 79,6 | 18,9 | -60,7 | -76,3% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 28 | 8 | -20 | -71,4% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 83,7 | 21,7 | -62 | -74,1% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 87,7 | 21,4 | -66,3 | -75,6% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 39,4 | 9,30 | -30,1 | -76,4% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 73,9 | 17,4 | -56,5 | -76,5% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 72,7 | 10,7 | -62 | -85,3% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 62,9 | 11,2 | -51,7 | -82,2% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 76,7 | 14,2 | -62,5 | -81,5% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `revpar_estimado_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 90,1 | 14,5 | -75,6 | -83,9% | SI | [[indicadores/revpar_estimado_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 159 | 71,1 | -87,9 | -55,3% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 92 | 52,4 | -39,6 | -43,0% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 182 | 85,5 | -96,5 | -53,0% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 196 | 89,4 | -106,6 | -54,4% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 115 | 56,2 | -58,8 | -51,1% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 176 | 77,7 | -98,3 | -55,9% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 186 | 61,7 | -124,3 | -66,8% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 155 | 58,5 | -96,5 | -62,3% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 169 | 62,7 | -106,3 | -62,9% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tarifa_adr_estimada_usd` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 203 | 65,7 | -137,3 | -67,6% | SI | [[indicadores/tarifa_adr_estimada_usd|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 76,5 | 89,9 | 13,4 | +17,5% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 58,2 | 64,5 | 6,30 | +10,8% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 72,1 | 84,2 | 12,1 | +16,8% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 84,5 | 70 | -14,5 | -17,2% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 64 | 62 | -2 | -3,1% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 81 | 79,4 | -1,60 | -2,0% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 86,5 | 80,5 | -6 | -6,9% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 85 | 78,6 | -6,40 | -7,5% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 82 | 76,2 | -5,80 | -7,1% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_estival_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 89,2 | 78,8 | -10,4 | -11,7% | NO | [[indicadores/tasa_ocupacion_estival_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 32,4 | 28,4 | -4 | -12,3% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 12 | 8,50 | -3,50 | -29,2% | SI | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 28,6 | 24,6 | -4 | -14,0% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 18,2 | 15,8 | -2,40 | -13,2% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 14,5 | 11,2 | -3,30 | -22,8% | SI | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 16 | 13,8 | -2,20 | -13,7% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 7,50 | 6,80 | -0,70 | -9,3% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 11 | 9,20 | -1,80 | -16,4% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 21 | 17,5 | -3,50 | -16,7% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `tasa_ocupacion_invernal_pct` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 14,5 | 12,4 | -2,10 | -14,5% | NO | [[indicadores/tasa_ocupacion_invernal_pct|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Coyhaique | 33.650 | 20.950 | -12.700 | -37,7% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Lago Verde | 460 | 132 | -328 | -71,3% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Aysén | 12.780 | 9.890 | -2.890 | -22,6% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Cisnes | 3.770 | 1.920 | -1.850 | -49,1% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Guaitecas | 1.040 | 265 | -775 | -74,5% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Cochrane | 1.790 | 845 | -945 | -52,8% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | O'Higgins | 345 | 98 | -247 | -71,6% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Tortel | 295 | 80 | -215 | -72,9% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Chile Chico | 2.430 | 1.140 | -1.290 | -53,1% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Río Ibáñez | 1.445 | 512 | -933 | -64,6% | SI | [[indicadores/trabajadores_sii|Ficha]] |
-| `trabajadores_sii_por_centro_activo` | II. Pesca, Acuicultura y Mar (Nodo #6) | operativo (20%) | Aysén | 94,7 | 73,3 | -21,4 | -22,6% | SI | [[indicadores/trabajadores_sii_por_centro_activo|Ficha]] |
-| `trabajadores_sii_por_centro_activo` | II. Pesca, Acuicultura y Mar (Nodo #6) | operativo (20%) | Cisnes | 48,3 | 24,6 | -23,7 | -49,1% | SI | [[indicadores/trabajadores_sii_por_centro_activo|Ficha]] |
-| `trabajadores_sii_por_centro_activo` | II. Pesca, Acuicultura y Mar (Nodo #6) | operativo (20%) | Guaitecas | 32,5 | 8,30 | -24,2 | -74,5% | SI | [[indicadores/trabajadores_sii_por_centro_activo|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Coyhaique | 8.762 | 6.365 | -2.397 | -27,4% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Lago Verde | 5.921 | 3.814 | -2.107 | -35,6% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Aysén | 26.762 | 19.789 | -6.973 | -26,1% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Cisnes | 14.677 | 10.168 | -4.509 | -30,7% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Guaitecas | 14.327 | 10.124 | -4.203 | -29,3% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Cochrane | 14.915 | 8.943 | -5.972 | -40,0% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | O'Higgins | 9.298 | 5.521 | -3.777 | -40,6% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Tortel | 8.125 | 4.643 | -3.482 | -42,9% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Chile Chico | 15.750 | 9.722 | -6.028 | -38,3% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `ventas_por_empresa_uf` | V. Economía, Inversión y Suelo (Nodo #20) | operativo (20%) | Río Ibáñez | 13.445 | 7.656 | -5.789 | -43,1% | SI | [[indicadores/ventas_por_empresa_uf|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Coyhaique | 10.318 | 5.679 | -4.639 | -45,0% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Lago Verde | 261 | 0 | -261 | -100,0% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Aysén | 10.123 | 2.410 | -7.713 | -76,2% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Cisnes | 26.643 | 10.632 | -16.011 | -60,1% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Guaitecas | 432 | 0 | -432 | -100,0% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Cochrane | 15.842 | 4.385 | -11.457 | -72,3% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | O'Higgins | 6.820 | 0 | -6.820 | -100,0% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Tortel | 6.106 | 0 | -6.106 | -100,0% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Chile Chico | 13.167 | 2.541 | -10.626 | -80,7% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_extranjeros_snaspe_n` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Río Ibáñez | 19.680 | 7.587 | -12.093 | -61,4% | SI | [[indicadores/visitantes_extranjeros_snaspe_n|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Coyhaique | 38.500 | 21.190 | -17.310 | -45,0% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Lago Verde | 1.800 | 0 | -1.800 | -100,0% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Aysén | 29.600 | 7.048 | -22.552 | -76,2% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Cisnes | 64.200 | 25.619 | -38.581 | -60,1% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Guaitecas | 2.400 | 0 | -2.400 | -100,0% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Cochrane | 35.600 | 9.853 | -25.747 | -72,3% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | O'Higgins | 12.400 | 0 | -12.400 | -100,0% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Tortel | 14.200 | 0 | -14.200 | -100,0% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Chile Chico | 34.200 | 6.600 | -27.600 | -80,7% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitantes_snaspe` | I. Turismo y Áreas Silvestres (Nodo #4) | operativo (20%) | Río Ibáñez | 41.000 | 15.807 | -25.193 | -61,4% | SI | [[indicadores/visitantes_snaspe|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 11,3 | 6,20 | -5,10 | -45,1% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 10,9 | 0 | -10,9 | -100,0% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 16 | 3,80 | -12,2 | -76,3% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 51,8 | 20,7 | -31,1 | -60,0% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 16,6 | 0 | -16,6 | -100,0% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 51,6 | 14,3 | -37,3 | -72,3% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 51,7 | 0 | -51,7 | -100,0% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 39,4 | 0 | -39,4 | -100,0% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 43,8 | 8,50 | -35,3 | -80,6% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_cama_turistica` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 35,7 | 13,7 | -22,0 | -61,6% | SI | [[indicadores/visitas_por_cama_turistica|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Coyhaique | 0,18 | 0,15 | -0,03 | -16,7% | NO | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Lago Verde | 0,26 | 0 | -0,26 | -100,0% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Aysén | 0,30 | 0,12 | -0,18 | -60,0% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cisnes | 0,87 | 0,57 | -0,30 | -34,5% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Guaitecas | 0,44 | 0 | -0,44 | -100,0% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Cochrane | 0,72 | 0,43 | -0,29 | -40,3% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | O'Higgins | 0,76 | 0 | -0,76 | -100,0% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Tortel | 0,53 | 0 | -0,53 | -100,0% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Chile Chico | 0,58 | 0,25 | -0,33 | -56,9% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `visitas_por_pernoctacion_ratio` | I. Turismo y Áreas Silvestres (Nodo #3) | operativo (20%) | Río Ibáñez | 0,48 | 0,31 | -0,17 | -35,4% | SI | [[indicadores/visitas_por_pernoctacion_ratio|Ficha]] |
-| `zoit_nombre` | I. Turismo y Áreas Silvestres (Nodo #2) | operativo (20%) | Coyhaique | Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT) | Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén) | N/D | N/A (desde 0) | NO | [[indicadores/zoit_nombre|Ficha]] |
-| `zoit_nombre` | I. Turismo y Áreas Silvestres (Nodo #2) | operativo (20%) | Aysén | ZOIT Aysén Patagonia Queulat (Sector Sur) | Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén y Portal Marítimo PN Laguna San Rafael) | N/D | N/A (desde 0) | NO | [[indicadores/zoit_nombre|Ficha]] |
+| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Lago Verde | 0,80 | 0 | -0,80 | -100,0% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
+| `cobertura_fibra_hogar_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | O'Higgins | 1,50 | 0 | -1,50 | -100,0% | SI | [[indicadores/cobertura_fibra_hogar_pct|Ficha]] |
+| `conexiones_fijas_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Coyhaique | 15.785 | 15.986 | 201 | +1,3% | NO | [[indicadores/conexiones_fijas_subtel_jun2026_n|Ficha]] |
+| `conexiones_fijas_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Lago Verde | 189 | 68 | -121 | -64,0% | SI | [[indicadores/conexiones_fijas_subtel_jun2026_n|Ficha]] |
+| `conexiones_fijas_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Aysén | 5.748 | 5.868 | 120 | +2,1% | NO | [[indicadores/conexiones_fijas_subtel_jun2026_n|Ficha]] |
+| `conexiones_fijas_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | O'Higgins | 272 | 72 | -200 | -73,5% | SI | [[indicadores/conexiones_fijas_subtel_jun2026_n|Ficha]] |
+| `conexiones_residenciales_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Coyhaique | 15.088 | 15.279 | 191 | +1,3% | NO | [[indicadores/conexiones_residenciales_subtel_jun2026_n|Ficha]] |
+| `conexiones_residenciales_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Lago Verde | 159 | 56 | -103 | -64,8% | SI | [[indicadores/conexiones_residenciales_subtel_jun2026_n|Ficha]] |
+| `conexiones_residenciales_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Aysén | 5.353 | 5.456 | 103 | +1,9% | NO | [[indicadores/conexiones_residenciales_subtel_jun2026_n|Ficha]] |
+| `conexiones_residenciales_subtel_jun2026_n` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | O'Higgins | 249 | 58 | -191 | -76,7% | SI | [[indicadores/conexiones_residenciales_subtel_jun2026_n|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Coyhaique | 14,5 | 9,81 | -4,69 | -32,3% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Lago Verde | 21 | 15,1 | -5,90 | -28,1% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Aysén | 15 | 13,2 | -1,80 | -12,0% | NO | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cisnes | 18,5 | 14,0 | -4,55 | -24,6% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Guaitecas | 19 | 13,1 | -5,90 | -31,1% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cochrane | 18 | 14,4 | -3,65 | -20,3% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | O'Higgins | 22 | 15,5 | -6,50 | -29,5% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Tortel | 21,5 | 15,2 | -6,30 | -29,3% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Chile Chico | 16,5 | 12,0 | -4,55 | -27,6% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_hogar_ano` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Río Ibáñez | 19,5 | 14,1 | -5,45 | -27,9% | SI | [[indicadores/consumo_lena_m3_hogar_ano|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Coyhaique | 248.800 | 147.080 | -101.720 | -40,9% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Lago Verde | 16.200 | 4.740 | -11.460 | -70,7% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Aysén | 128.500 | 91.453 | -37.047 | -28,8% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cisnes | 38.400 | 26.882 | -11.518 | -30,0% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Guaitecas | 18.200 | 6.417 | -11.783 | -64,7% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cochrane | 34.800 | 17.816 | -16.984 | -48,8% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | O'Higgins | 11.556 | 3.829 | -7.727 | -66,9% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Tortel | 14.000 | 2.920 | -11.080 | -79,1% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Chile Chico | 32.600 | 19.108 | -13.492 | -41,4% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `consumo_lena_m3_solidos_anual` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Río Ibáñez | 22.400 | 14.029 | -8.371 | -37,4% | SI | [[indicadores/consumo_lena_m3_solidos_anual|Ficha]] |
+| `costo_diesel_aislado_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Lago Verde | 560 | 540 | -20 | -3,6% | NO | [[indicadores/costo_diesel_aislado_clp|Ficha]] |
+| `costo_diesel_aislado_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Aysén | 0 | 480 | 480 | N/A (desde 0) | SI | [[indicadores/costo_diesel_aislado_clp|Ficha]] |
+| `costo_diesel_aislado_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Cisnes | 380 | 495 | 115 | +30,3% | SI | [[indicadores/costo_diesel_aislado_clp|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Coyhaique | FOA Terrestre + Ramal Submarino (CTR / Conexión Troncal Austral) | Troncal Terrestre Silica Networks (FDT-2018-02) + Cable Submarino Austral GTD vía Puerto Chacabuco | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Lago Verde | Radioenlace Microondas Digital + Starlink Institucional Subtel | Satelital Starlink / Radioenlace UHF (FTTH hogar en despliegue FDT-2025-03 hacia Lago Verde y Villa La Tapera) | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Aysén | FOA Submarina (Punto Aterrizaje Chacabuco y Puerto Aguirre) + FOA Terrestre hacia Coyhaique | Cable Submarino Austral GTD / Telefónica del Sur (Puerto Chacabuco) + Red Troncal Regional Coyhaique | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cisnes | FOA Submarina (Aterrizaje Puerto Cisnes) + FOA Terrestre Carretera Austral | Red Troncal Terrestre Norte Ruta 7 (La Junta/Puyuhuapi/Cisnes) + adjudicación FDT-2025-03 Última Milla | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Guaitecas | FOA Submarina (Punto de Aterrizaje Submarino Melinka de CTR/SUBTEL) | Radioenlace Microondas / Starlink + Proyecto Última Milla FDT-2025-03 (Melinka y Repollal, sin aterrizaje CTR) | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cochrane | FOA Terrestre (Nodo Cabecera Provincial Troncal Austral Cochrane) | Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Bertrand, Cochrane y Los Ñadis) | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | O'Higgins | Radioenlace Digital UHF/Microondas + Satelital Starlink Subtel | Satelital Starlink / Radioenlace UHF (Fibra Tortel-Villa O'Higgins adjudicada D.O. 28-abr-2026; operación 1S-2028) | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Tortel | FOA Submarina (Punto de Aterrizaje FOA Caleta Tortel) + FOA Terrestre desde Cochrane | Único Aterrizaje Submarino FOA CTR en Aysén (FDT-2017-01) + POIIT Silica FDT-2018-02 + FDT-2025-03 FTTH | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Chile Chico | FOA Terrestre (Ramal Troncal General Carrera) | Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Guadal, Mallín Grande y Chile Chico) | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `estado_foa` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Río Ibáñez | FOA Terrestre (Troncal Carretera Austral con empalme en Cerro Castillo y Puerto Ibáñez) | Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Cerro Castillo, Puerto Ibáñez, Bahía Murta y Río Tranquilo) | N/D | N/A (desde 0) | NO | [[indicadores/estado_foa|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Coyhaique | 1.362 | 1.652 | 290 | +21,3% | SI | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Lago Verde | 1.520 | 1.765 | 245 | +16,1% | NO | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Aysén | 1.375 | 1.651 | 276 | +20,1% | SI | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cisnes | 1.440 | 1.695 | 255 | +17,7% | NO | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Guaitecas | 1.560 | 1.785 | 225 | +14,4% | NO | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cochrane | 1.410 | 1.714 | 304 | +21,6% | SI | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | O'Higgins | 1.620 | 1.812 | 192 | +11,9% | NO | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Tortel | 1.580 | 1.790 | 210 | +13,3% | NO | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Chile Chico | 1.430 | 1.710 | 280 | +19,6% | NO | [[indicadores/gasolina_93_clp|Ficha]] |
+| `gasolina_93_clp` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Río Ibáñez | 1.420 | 1.705 | 285 | +20,1% | SI | [[indicadores/gasolina_93_clp|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Coyhaique | 92,4 | 68,8 | -23,6 | -25,5% | SI | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Lago Verde | 98,2 | 98,1 | -0,10 | -0,1% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Aysén | 87,8 | 84,5 | -3,30 | -3,8% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cisnes | 95,1 | 94 | -1,10 | -1,2% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Guaitecas | 94,6 | 94,2 | -0,40 | -0,4% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cochrane | 96 | 95,5 | -0,50 | -0,5% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | O'Higgins | 99,1 | 98,8 | -0,30 | -0,3% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Tortel | 98,4 | 98,5 | 0,10 | +0,1% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `hogares_lena_pct` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Chile Chico | 82,3 | 82 | -0,30 | -0,4% | NO | [[indicadores/hogares_lena_pct|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Coyhaique | 0 | 1,10 | 1,10 | N/A (desde 0) | SI | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Aysén | 8,90 | 5,80 | -3,10 | -34,8% | SI | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cisnes | 33 | 19,2 | -13,8 | -41,8% | SI | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Guaitecas | 87,1 | 77,6 | -9,50 | -10,9% | NO | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cochrane | 28,7 | 23,6 | -5,10 | -17,8% | NO | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | O'Higgins | 86,6 | 86,4 | -0,20 | -0,2% | NO | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Tortel | 79,2 | 81,4 | 2,20 | +2,8% | NO | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Chile Chico | 27,9 | 30,6 | 2,70 | +9,7% | NO | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `indice_aislamiento_multimodal` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Río Ibáñez | 31 | 22,7 | -8,30 | -26,8% | SI | [[indicadores/indice_aislamiento_multimodal|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Coyhaique | 75,5 | 70,1 | -5,40 | -7,2% | NO | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Lago Verde | 17,6 | 17,5 | -0,10 | -0,6% | NO | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Aysén | 61,8 | 66,5 | 4,70 | +7,6% | NO | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cisnes | 43,6 | 72,5 | 28,9 | +66,3% | SI | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Guaitecas | 31,8 | 51,9 | 20,1 | +63,2% | SI | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Cochrane | 51,4 | 60,8 | 9,40 | +18,3% | NO | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Tortel | 27,5 | 22,1 | -5,40 | -19,6% | NO | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Chile Chico | 47,9 | 40,4 | -7,50 | -15,7% | NO | [[indicadores/internet_fijo_pct|Ficha]] |
+| `internet_fijo_pct` | III. Energía y Telecomunicaciones (Nodo #14) | operativo (20%) | Río Ibáñez | 35,2 | 52,4 | 17,2 | +48,9% | SI | [[indicadores/internet_fijo_pct|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Coyhaique | 26,8 | 34,0 | 7,15 | +26,7% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Lago Verde | 1,40 | 0,35 | -1,05 | -75,0% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Aysén | 42,5 | 18,5 | -24,0 | -56,5% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Cisnes | 6,80 | 2,83 | -3,97 | -58,4% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Guaitecas | 2,80 | 1,45 | -1,35 | -48,2% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Cochrane | 5,80 | 2,54 | -3,26 | -56,2% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | O'Higgins | 1,40 | 1,25 | -0,15 | -10,7% | NO | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Tortel | 1,20 | 0,95 | -0,25 | -20,8% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Chile Chico | 7,50 | 3,90 | -3,60 | -48,0% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `potencia_mw` | III. Energía y Telecomunicaciones (Nodo #11) | operativo (20%) | Río Ibáñez | 2,40 | 1,40 | -1 | -41,7% | SI | [[indicadores/potencia_mw|Ficha]] |
+| `precio_lena_m3` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Lago Verde | 38.000 | 36.000 | -2.000 | -5,3% | NO | [[indicadores/precio_lena_m3|Ficha]] |
+| `precio_lena_m3` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Cisnes | 42.000 | 44.000 | 2.000 | +4,8% | NO | [[indicadores/precio_lena_m3|Ficha]] |
+| `precio_lena_m3` | III. Energía y Telecomunicaciones (Nodo #13) | operativo (20%) | Guaitecas | 55.000 | 52.000 | -3.000 | -5,5% | NO | [[indicadores/precio_lena_m3|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Lago Verde | Sistema Palena - La Junta (Edelaysen) y Autoproducción Lago Verde | Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Aysén | Sistema Mediano de Aysén (SMA) e Islas Huichas Aislado | SMA Continental, Autogeneración El Toqui e Islas Huichas (SSAA) | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Cisnes | Sistema Mediano Palena - Cisnes (Edelaysen) | SM Puerto Cisnes (1.67 MW), SM Palena (0.80 MW) y 3 SSAA Litorales (0.36 MW) | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Guaitecas | Sistema Aislado Insular Melinka | Sistema Aislado Municipal Melinka-Repollal | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Cochrane | Sistema Mediano General Carrera - Cochrane (Edelaysen) | Sistema Mediano General Carrera - Cochrane (SMGC) | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | O'Higgins | Sistema Aislado Villa O'Higgins | Sistema Aislado Municipal Villa O'Higgins | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Tortel | Sistema Aislado Caleta Tortel | Sistema Aislado Municipal Caleta Tortel | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `sistema_electrico` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Río Ibáñez | Sistema Mediano de Aysén (Interconexión Ramal Sur) | Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez | N/D | N/A (desde 0) | NO | [[indicadores/sistema_electrico|Ficha]] |
+| `subsidio_fiscal_diesel_kwh_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Lago Verde | 302 | 246 | -56 | -18,5% | NO | [[indicadores/subsidio_fiscal_diesel_kwh_clp|Ficha]] |
+| `subsidio_fiscal_diesel_kwh_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Aysén | 0 | 192 | 192 | N/A (desde 0) | SI | [[indicadores/subsidio_fiscal_diesel_kwh_clp|Ficha]] |
+| `subsidio_fiscal_diesel_kwh_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Cisnes | 145 | 245 | 100 | +69,0% | SI | [[indicadores/subsidio_fiscal_diesel_kwh_clp|Ficha]] |
+| `subsidio_fiscal_diesel_kwh_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Guaitecas | 375 | 328 | -47 | -12,5% | NO | [[indicadores/subsidio_fiscal_diesel_kwh_clp|Ficha]] |
+| `subsidio_fiscal_diesel_kwh_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | O'Higgins | 358 | 312 | -46 | -12,8% | NO | [[indicadores/subsidio_fiscal_diesel_kwh_clp|Ficha]] |
+| `subsidio_fiscal_diesel_kwh_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Tortel | 412 | 362 | -50 | -12,1% | NO | [[indicadores/subsidio_fiscal_diesel_kwh_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Coyhaique | 224 | 287,8 | 63,8 | +28,5% | SI | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Lago Verde | 258 | 294 | 36 | +14,0% | NO | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Aysén | 222 | 287,8 | 65,8 | +29,6% | SI | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Cisnes | 235 | 292,4 | 57,4 | +24,4% | SI | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Guaitecas | 265 | 312 | 47 | +17,7% | NO | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Cochrane | 230 | 291,2 | 61,2 | +26,6% | SI | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | O'Higgins | 262 | 308 | 46 | +17,6% | NO | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Tortel | 268 | 318 | 50 | +18,7% | NO | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Chile Chico | 228 | 289,5 | 61,5 | +27,0% | SI | [[indicadores/tarifa_bt1_clp|Ficha]] |
+| `tarifa_bt1_clp` | III. Energía y Telecomunicaciones (Nodo #12) | operativo (20%) | Río Ibáñez | 231 | 289,5 | 58,5 | +25,3% | SI | [[indicadores/tarifa_bt1_clp|Ficha]] |
 
-### 3.2 Indicadores Agregados (15)
+### 3.2 Indicadores Agregados (7)
 
 | Indicador | Tipo | Hub | Comunas con valor != 0 | En léxico oficial | Respaldo |
 |---|---|---|---|---|---|
-| `alojamientos_turisticos_rnpst_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/alojamientos_turisticos_rnpst_n|Ficha]] |
-| `empleo_act_turismo_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/empleo_act_turismo_n|Ficha]] |
-| `empresas_act_turismo_sii_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/empresas_act_turismo_sii_n|Ficha]] |
-| `estadia_regional_viaje_dias` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/estadia_regional_viaje_dias|Ficha]] |
-| `guias_turismo_rnpst_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/guias_turismo_rnpst_n|Ficha]] |
-| `llegadas_por_cama_turistica` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/llegadas_por_cama_turistica|Ficha]] |
-| `llegadas_turistas_emat_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/llegadas_turistas_emat_n|Ficha]] |
-| `operadores_aventura_rnpst_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/operadores_aventura_rnpst_n|Ficha]] |
-| `prestadores_vigencia_patente_pct` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/prestadores_vigencia_patente_pct|Ficha]] |
-| `restaurantes_turisticos_rnpst_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/restaurantes_turisticos_rnpst_n|Ficha]] |
-| `revpar_emat_clp` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/revpar_emat_clp|Ficha]] |
-| `tarifa_adr_emat_clp` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/tarifa_adr_emat_clp|Ficha]] |
-| `tasa_ocupacion_emat_estival_pct` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/tasa_ocupacion_emat_estival_pct|Ficha]] |
-| `ventas_act_turismo_uf` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/ventas_act_turismo_uf|Ficha]] |
-| `visitantes_atractivos_totales_n` | numeric | I. Turismo y Áreas Silvestres | 10 / 10 | SI | [[indicadores/visitantes_atractivos_totales_n|Ficha]] |
+| `cobertura_subsidio_electrico_hogares_n` | numeric | III. Energía y Telecomunicaciones | 10 / 10 | SI | [[indicadores/cobertura_subsidio_electrico_hogares_n|Ficha]] |
+| `cobertura_subsidio_electrico_pct` | numeric | III. Energía y Telecomunicaciones | 10 / 10 | SI | [[indicadores/cobertura_subsidio_electrico_pct|Ficha]] |
+| `diesel_clp_litro` | numeric | III. Energía y Telecomunicaciones | 10 / 10 | SI | [[indicadores/diesel_clp_litro|Ficha]] |
+| `hogares_censo_2024` | numeric | VI. Demografía, Educación y Sociedad | 10 / 10 | SI | [[indicadores/hogares_censo_2024|Ficha]] |
+| `kerosene_clp_litro` | numeric | III. Energía y Telecomunicaciones | 10 / 10 | SI | [[indicadores/kerosene_clp_litro|Ficha]] |
+| `potencia_ernc_en_construccion_mw` | numeric | III. Energía y Telecomunicaciones | 2 / 10 | SI | [[indicadores/potencia_ernc_en_construccion_mw|Ficha]] |
+| `ratio_costo_calefaccion_electrica_vs_lena` | numeric | III. Energía y Telecomunicaciones | 10 / 10 | SI | [[indicadores/ratio_costo_calefaccion_electrica_vs_lena|Ficha]] |
 
 ## 4. Qué Quedó Igual (Resumen por 10 Hubs Canónicos)
 
-**196 indicadores comunales** mantuvieron valores idénticos en las 10 comunas de Aysén. No se generan fichas individuales vacías para evitar ruido en el grafo de Obsidian.
+**213 indicadores comunales** mantuvieron valores idénticos en las 10 comunas de Aysén. No se generan fichas individuales vacías para evitar ruido en el grafo de Obsidian.
 
 | Hub Canónico | Indicadores sin cambios |
 |---|---|
-| I. Turismo y Áreas Silvestres | 4 |
-| II. Pesca, Acuicultura y Mar | 22 |
-| III. Energía y Telecomunicaciones | 22 |
-| IV. Gobernanza y Finanzas | 43 |
+| I. Turismo y Áreas Silvestres | 31 |
+| II. Pesca, Acuicultura y Mar | 23 |
+| III. Energía y Telecomunicaciones | 6 |
+| IV. Gobernanza y Finanzas | 42 |
 | IX. Cultura y Patrimonio | 15 |
-| V. Economía, Inversión y Suelo | 16 |
+| V. Economía, Inversión y Suelo | 18 |
 | VI. Demografía, Educación y Sociedad | 30 |
 | VII. Biodiversidad, Clima y Riesgos | 15 |
-| VIII. Salud | 15 |
+| VIII. Salud | 19 |
 | X. CTCi e Innovación | 14 |
 
 ## 5. Cobertura Extendida (Barrios ACS, Holdings, Padrón SUBPESCA y Series Anuales)
@@ -339,40 +245,45 @@ Comparación determinista: `HEAD` -> `HEAD` · Semáforo de revisión: **ROJO**.
 | Ámbito Estructural | Series/Métricas Actuales | Modificadas | Agregadas | Eliminadas | Sin cambios |
 |---|---|---|---|---|---|
 | Barrios ACS (N=18) | 8 | 0 | 0 | 0 | 8 |
-| Unidades SNASPE (N=19) | 6 | 0 | 6 | 0 | 0 |
+| Unidades SNASPE (N=19) | 6 | 0 | 0 | 0 | 6 |
 | Holdings Salmoneros (N=13) | 7 | 0 | 0 | 0 | 7 |
 | Invariantes Padrón SUBPESCA | 5 | 0 | 0 | 0 | 5 |
-| Series Anuales (Último Corte) | 64 | 11 | 8 | 0 | 45 |
+| Series Anuales (Último Corte) | 64 | 5 | 0 | 0 | 59 |
+| Centrales Eléctricas CNE (MW) | 1 | 1 | 0 | 0 | 0 |
 
 ### Cambios Detectados en Ámbitos Extendidos
 
 | Ámbito | Métrica | Entidad / Periodo | Estado | Anterior | Actual | Outlier |
 |---|---|---|---|---|---|---|
-| Unidades SNASPE (N=19) | `snaspe_concesiones_salmon_dentro_n` | múltiples | agregada | N/D | 19 registros | NO |
-| Unidades SNASPE (N=19) | `snaspe_guardaparques_permanentes_n` | múltiples | agregada | N/D | 19 registros | NO |
-| Unidades SNASPE (N=19) | `snaspe_inversion_pdze_mclp` | múltiples | agregada | N/D | 19 registros | NO |
-| Unidades SNASPE (N=19) | `snaspe_superficie_ha` | múltiples | agregada | N/D | 19 registros | NO |
-| Unidades SNASPE (N=19) | `snaspe_superficie_salmon_ha` | múltiples | agregada | N/D | 19 registros | NO |
-| Unidades SNASPE (N=19) | `snaspe_visitantes_anuales_n` | múltiples | agregada | N/D | 19 registros | NO |
-| Series Anuales (Último Corte) | `serie_balmaceda_pasajeros_jac__capacidad_anual_pax` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_balmaceda_pasajeros_jac__nuevo_terminal_m2` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_balmaceda_pasajeros_jac__parcial_ene_may_2026` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_balmaceda_pasajeros_jac__pasajeros` | 2026 | modificada | 682.000 | 620.000 | NO |
-| Series Anuales (Último Corte) | `serie_balmaceda_pasajeros_jac__puentes_embarque` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__caleta_tortel_pasajeros` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__caleta_tortel_recaladas` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__pasajeros_cruceros` | ultimo | modificada | 28.500 | 22.093 | SI |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__puerto_chacabuco_pasajeros` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__puerto_chacabuco_recaladas` | múltiples | agregada | N/D | 1 registros | NO |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__recaladas_cruceros` | ultimo | modificada | 28 | 29 | NO |
-| Series Anuales (Último Corte) | `serie_emporcha_cruceros__tripulantes` | ultimo | modificada | 12.400 | 9.850 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__otras_unidades` | 2026 | modificada | 116.100 | 24.238 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__pernoctaciones_emat` | 2026 | modificada | 472.000 | 364.039 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__pn_cerro_castillo` | 2026 | modificada | 37.200 | 13.907 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__pn_laguna_san_rafael` | 2026 | modificada | 39.800 | 5.900 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__pn_patagonia` | 2026 | modificada | 32.400 | 16.453 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__pn_queulat` | 2026 | modificada | 58.500 | 25.619 | SI |
-| Series Anuales (Último Corte) | `serie_snaspe_por_parque_anual__visitantes_snaspe_total` | 2026 | modificada | 284.000 | 86.117 | SI |
+| Series Anuales (Último Corte) | `serie_acuicultura__centros_salmonicolas_activos_ciclo` | 2026 | modificada | 245 | 240 | NO |
+| Series Anuales (Último Corte) | `serie_acuicultura__cosecha_salmon_atlantico_ton` | 2026 | modificada | 402.800 | 348.000 | NO |
+| Series Anuales (Último Corte) | `serie_acuicultura__cosecha_salmon_coho_ton` | 2026 | modificada | 81.000 | 70.000 | NO |
+| Series Anuales (Último Corte) | `serie_acuicultura__cosecha_salmonidos_total_ton` | 2026 | modificada | 503.500 | 435.000 | NO |
+| Series Anuales (Último Corte) | `serie_acuicultura__cosecha_trucha_arcoiris_ton` | 2026 | modificada | 19.700 | 17.000 | NO |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-DIESEL | modificada | N/D | 4 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-HIDRO | modificada | N/D | 2 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-DIESEL-CHILE-CHICO | modificada | 4,80 | 2,90 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-DIESEL-COCHRANE | modificada | 3,80 | 1,90 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-DIESEL-MELINKA | modificada | 2,80 | 1,45 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-DIESEL-PUERTO-AGUIRRE | modificada | 2,20 | 0,48 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-DIESEL-PUERTO-CISNES | modificada | 3,50 | 1,67 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-DIESEL-TORTEL | modificada | 1,10 | N/D | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIBRIDA-CALETA-TORTEL | modificada | N/D | 0,95 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIBRIDA-RIO-MOSCO-OHIGGINS | modificada | N/D | 1,25 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIDRO-EL-TRARO | modificada | N/D | 0,64 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIDRO-LAGO-ATRAVESADO | modificada | 0,80 | 11 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIDRO-MANIHUALES | modificada | 3,40 | N/D | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIDRO-RIO-AYSEN | modificada | 12,5 | N/D | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIDRO-RIO-AYSEN-HIST | modificada | N/D | 2 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-HIDRO-RIO-MOSCO | modificada | 0,60 | N/D | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-LOCAL-LAGO-VERDE | modificada | N/D | 0,35 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-RESPALDO-RIO-IBANEZ | modificada | N/D | 1,40 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-SM-PALENA-LA-JUNTA-PUYUHUAPI | modificada | N/D | 0,80 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-TERMICA-CHACABUCO | modificada | 23,5 | 10 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_CENTRAL-TERMICA-TEHUELCHE | modificada | 19,8 | 18,0 | NO |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_MICROCENTRAL-SSAA-LITORAL-CISNES | modificada | N/D | 0,36 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_PARQUE-EOLICO-ALTO-BAGUALES | modificada | 3,20 | 1,98 | SI |
+| Centrales Eléctricas CNE (MW) | `centrales_potencia_mw` | ene_cne_PLANTA-SOLAR-EL-BLANCO | modificada | N/D | 2,99 | SI |
 
 ## 6. Detalle de Conectores en `curated_fallback`
 

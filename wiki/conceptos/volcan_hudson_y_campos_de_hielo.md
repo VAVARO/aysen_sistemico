@@ -43,16 +43,16 @@ El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y
 
 | Comuna | Índice Integrado de Amenaza Volcánica y Sísmica (0-100) | Superficie de Glaciares DGA (km²) | Glaciares Inventariados DGA | Visitantes Anuales a Parques SNASPE | Superficie Protegida SNASPE (%) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 78,5 | 42,5 | 310 | 38.500 | 19,2 |
-| [[comunas/lago_verde|Lago Verde]] | 42 | 38,2 | 285 | 1.800 | 34,5 |
-| [[comunas/aysen|Aysén]] | 94,2 | 1.850 | 2.450 | 29.600 | 63,4 |
-| [[comunas/cisnes|Cisnes]] | 88,6 | 480 | 1.120 | 64.200 | 71,2 |
-| [[comunas/guaitecas|Guaitecas]] | 64 | 0 | 0 | 2.400 | 45,8 |
-| [[comunas/chile_chico|Chile Chico]] | 72,4 | 145 | 410 | 34.200 | 48,6 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 91,5 | 460 | 890 | 41.000 | 61,7 |
-| [[comunas/cochrane|Cochrane]] | 48 | 890 | 1.680 | 35.600 | 52,1 |
-| [[comunas/ohiggins|O'Higgins]] | 56,5 | 3.450 | 2.240 | 12.400 | 78,3 |
-| [[comunas/tortel|Tortel]] | 61 | 2.680 | 916 | 14.200 | 87,4 |
+| [[comunas/coyhaique|Coyhaique]] | 78,5 | 42,5 | 310 | 21.190 | 19,2 |
+| [[comunas/lago_verde|Lago Verde]] | 42 | 38,2 | 285 | 0 | 34,5 |
+| [[comunas/aysen|Aysén]] | 94,2 | 1.850 | 2.450 | 7.048 | 63,4 |
+| [[comunas/cisnes|Cisnes]] | 88,6 | 480 | 1.120 | 25.619 | 71,2 |
+| [[comunas/guaitecas|Guaitecas]] | 64 | 0 | 0 | 0 | 45,8 |
+| [[comunas/chile_chico|Chile Chico]] | 72,4 | 145 | 410 | 6.600 | 48,6 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 91,5 | 460 | 890 | 15.807 | 61,7 |
+| [[comunas/cochrane|Cochrane]] | 48 | 890 | 1.680 | 9.853 | 52,1 |
+| [[comunas/ohiggins|O'Higgins]] | 56,5 | 3.450 | 2.240 | 0 | 78,3 |
+| [[comunas/tortel|Tortel]] | 61 | 2.680 | 916 | 0 | 87,4 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

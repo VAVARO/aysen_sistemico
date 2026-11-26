@@ -5,7 +5,7 @@
   "dataset_id": "02_energia_combustibles_telecom",
   "titulo": "Energía, Sistemas Medianos y Aislados, Precios de Combustibles y Conectividad Telecomunicaciones en Aysén",
   "region": "Aysén del General Carlos Ibáñez del Campo (CL-XI)",
-  "fecha_extraccion": "2026-11-17T00:00:00Z",
+  "fecha_extraccion": "2026-11-19T12:00:00Z",
   "metodologia_series_historicas": {
     "advertencia": "Las series anuales 2015-2026 NO son 12 observaciones independientes. Se reconstruyen por interpolacion lineal entre valores ancla y solo algunos anos corresponden a valores reportados por la fuente oficial.",
     "campo_trazabilidad": "origen",
@@ -100,7 +100,7 @@
     "region_codigo": "CL-XI",
     "region_nombre": "Aysén del General Carlos Ibáñez del Campo",
     "poblacion_censo_2024": 100745,
-    "potencia_instalada_regional_total_mw": 95.9,
+    "potencia_instalada_regional_total_mw": 67.1,
     "sistemas_electricos_principales": [
       "Sistema Mediano de Aysén (SMA)",
       "Sistema Mediano General Carrera (SMGC)",
@@ -109,16 +109,17 @@
       "Sistemas Aislados Municipales (Caleta Tortel, Villa O'Higgins)"
     ],
     "fuentes_generacion_matriz_pct": {
-      "hidroelectrica_pasada": 44.5,
-      "termica_diesel": 51.5,
-      "eolica": 3.8,
+      "termica_diesel": 61.0,
+      "hidroelectrica_pasada": 31.6,
+      "solar_fotovoltaica": 4.5,
+      "eolica": 2.9,
       "solar_fotovoltaica_piloto": 0.2
     },
-    "precio_promedio_gasolina_93_clp": 1450.7,
-    "precio_promedio_diesel_clp": 1201.3,
+    "precio_promedio_gasolina_93_clp": 1696.0,
+    "precio_promedio_diesel_clp": 1663.0,
     "sobrecosto_promedio_combustibles_vs_santiago_pct": 18.7,
     "promedio_regional_calefaccion_lena_pct": 92.8,
-    "cobertura_foa_comunas": "8/10 comunas conectadas por fibra óptica directa; 2/10 mediante radioenlace/satelital (Lago Verde y Villa O'Higgins)",
+    "cobertura_foa_comunas": "Único aterrizaje submarino CTR en Caleta Tortel (FDT-2017-01); Cable Submarino Austral privado GTD en Puerto Chacabuco; 14 POIITs terrestres Silica Networks (FDT-2018-02); adjudicaciones Fibra Tortel-O'Higgins (1S-2028) y Última Milla FDT-2025-03 (33 localidades).",
     "diagnostico_vulnerabilidad_critica": "Extrema vulnerabilidad logística por dependencia de cabotaje marítimo de petróleo diésel para generación de electricidad en Guaitecas e Islas Huichas, y cortes invernales en Ruta 7.",
     "series_historicas_regionales": [
       {
@@ -403,18 +404,18 @@
         "generacion_termica_diesel_gwh": 89.8,
         "generacion_eolica_gwh": 9.1,
         "generacion_solar_gwh": 0.3,
-        "tarifa_electrica_bt1_promedio_clp_kwh": 232.5,
+        "tarifa_electrica_bt1_promedio_clp_kwh": 287.8,
         "combustibles": {
-          "gasolina_93_coyhaique_clp": 1425.0,
-          "diesel_coyhaique_clp": 1148.0,
-          "kerosene_coyhaique_clp": 1290.0,
+          "gasolina_93_coyhaique_clp": 1652.0,
+          "diesel_coyhaique_clp": 1595.0,
+          "kerosene_coyhaique_clp": 1485.0,
           "lena_seca_m3_coyhaique_clp": 52000
         },
         "telecomunicaciones": {
-          "accesos_internet_fijo_regional": 24750,
+          "accesos_internet_fijo_regional": 26294,
           "penetracion_internet_fijo_hogares_pct": 74.2,
           "abonados_internet_movil_4g_5g": 133400,
-          "despliegue_foa_estado": "Madurez operativa del sistema FOA regional y cierre progresivo de brecha digital rural"
+          "despliegue_foa_estado": "Reconciliación 3T-2026: 26.294 conexiones fijas (19.972 FTTX, 5.648 Starlink, 674 inalámbricas); adjudicación FDT-2025-03 (33 localidades) y Fibra Tortel-O'Higgins (1S-2028)"
         },
         "calidad_servicio_electrico": {
           "saidi_horas_interrupcion_regional": 11.2,
@@ -422,7 +423,7 @@
         }
       }
     ],
-    "volumen_lena_infor_m3_solidos_ano": 565456,
+    "volumen_lena_infor_m3_solidos_ano": 334274,
     "volumen_lena_m3_estereos_ano": 850000,
     "factor_apilamiento_estereos_solidos": 0.665,
     "consumo_lena_promedio_hogar_m3_ano": 17.5,
@@ -484,7 +485,18 @@
     "subtel_fttx_jun2026": 19972,
     "subtel_fttx_pct": 75.96,
     "subtel_starlink_jun2026": 5648,
-    "subtel_starlink_pct": 21.48
+    "subtel_starlink_pct": 21.48,
+    "potencia_ernc_en_construccion_2026_mw": 18.98,
+    "potencia_proyectada_2027_mw": 86.08,
+    "capacidad_instalada_tecnologia_mw": {
+      "termica_diesel": 40.94,
+      "hidroelectrica_pasada": 21.19,
+      "solar_fotovoltaica": 2.99,
+      "eolica": 1.98
+    },
+    "precio_promedio_kerosene_clp": 1497.0,
+    "consumo_regional_lena_m3_solidos_anual": 334274,
+    "cobertura_subsidio_electrico_hogares_total_n": 13448
   },
   "por_comuna": [
     {
@@ -502,43 +514,47 @@
           "subsistema_nombre": "Sistema Mediano de Aysén (SMA)",
           "tipo_red": "Sistema Mediano Interconectado Regional",
           "operador_distribucion": "Empresa Eléctrica de Aysén S.A. (Edelaysen - Grupo Saesa)",
-          "potencia_instalada_comunal_mw": 26.8,
+          "potencia_instalada_comunal_mw": 33.95,
           "matriz_fuentes": [
             "Hidroeléctrica de pasada",
             "Eólica (Alto Baguales)",
             "Térmica Diésel de respaldo (Tehuelche)"
           ],
           "vulnerabilidad_suministro": "Media (Dependencia de diésel para puntas de demanda y estiaje invernal hídrico)",
-          "matriz_calefaccion_hogar_lena_pct": 92.4,
+          "matriz_calefaccion_hogar_lena_pct": 68.8,
           "horas_interrupcion_saidi_anual": 11.4,
-          "tarifa_residencial_bt1_clp_kwh": 224.0,
+          "tarifa_residencial_bt1_clp_kwh": 287.8,
           "costo_generacion_diesel_aislado_clp_kwh": 0.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": false,
             "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 224.0,
+            "tarifa_usuario_clp_kwh": 287.8,
             "subsidio_fndr_subdere_clp_kwh": 0.0,
             "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "sistema": "Interconectado Sistema Mediano de Aysén (SMA)"
+          },
+          "potencia_ernc_en_construccion_mw": 17.98,
+          "cobertura_subsidio_electrico_hogares_n": 7820
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 8,
-          "gasolina_93_clp_litro": 1362,
-          "diesel_clp_litro": 1098,
+          "gasolina_93_clp_litro": 1652,
+          "diesel_clp_litro": 1595,
           "sobrecosto_vs_santiago_pct": 10.8,
           "precio_m3_lena_seca_clp": 48000,
           "abastecimiento_logistico": "Camión cisterna desde muelle petrolero Puerto Chacabuco (Ruta 240 / Ruta 7)",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 248800,
-            "consumo_hogar_m3_solidos_ano": 14.5,
+            "volumen_anual_m3_solidos": 147080,
+            "consumo_hogar_m3_solidos_ano": 9.81,
             "demanda_pellet_ton_ano": 14500,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 21800
+          },
+          "kerosene_clp_litro": 1485
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Terrestre + Ramal Submarino (CTR / Conexión Troncal Austral)",
+          "tipo_enlace_troncal": "Troncal Terrestre Silica Networks (FDT-2018-02) + Cable Submarino Austral GTD vía Puerto Chacabuco",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar",
@@ -551,10 +567,11 @@
             "Seis Lagunas",
             "El Richard"
           ],
-          "penetracion_internet_fijo_hogares_pct": 75.5,
-          "conexiones_fijas_subtel_jun2026_n": 15785,
-          "conexiones_residenciales_subtel_jun2026_n": 15088,
-          "cne_estacion_bencina_en_linea_continua": true
+          "penetracion_internet_fijo_hogares_pct": 70.1,
+          "conexiones_fijas_subtel_jun2026_n": 15986,
+          "conexiones_residenciales_subtel_jun2026_n": 15279,
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 68.4
         },
         "series_historicas": [
           {
@@ -703,15 +720,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 112000,
-            "tarifa_bt1_clp_kwh": 232.5,
-            "gasolina_93_clp_litro": 1425,
-            "diesel_clp_litro": 1148,
-            "precio_m3_lena_seca_clp": 52000,
-            "accesos_internet_fijo": 16200,
-            "penetracion_internet_fijo_pct": 72.8,
+            "tarifa_bt1_clp_kwh": 287.8,
+            "gasolina_93_clp_litro": 1652,
+            "diesel_clp_litro": 1595,
+            "precio_m3_lena_seca_clp": 48000,
+            "accesos_internet_fijo": 15986,
+            "penetracion_internet_fijo_pct": 70.1,
             "saidi_horas_anual": 10.5,
             "saifi_veces_anual": 3.0,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1485
           }
         ]
       }
@@ -728,45 +746,49 @@
       "source_url": "https://www.cne.cl/tarificacion/electrica/sistemas-medianos/",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Palena - La Junta (Edelaysen) y Autoproducción Lago Verde",
+          "subsistema_nombre": "Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual",
           "tipo_red": "Sistema Mediano Extendido / Aislado Cordillerano",
           "operador_distribucion": "Edelaysen S.A.",
-          "potencia_instalada_comunal_mw": 1.4,
+          "potencia_instalada_comunal_mw": 0.35,
           "matriz_fuentes": [
             "Generación Diésel local",
             "Interconexión radial 23 kV desde La Junta"
           ],
           "vulnerabilidad_suministro": "Alta (Línea de distribución vulnerable a nevadas, temporales y caídas de árboles)",
-          "matriz_calefaccion_hogar_lena_pct": 98.2,
+          "matriz_calefaccion_hogar_lena_pct": 98.1,
           "horas_interrupcion_saidi_anual": 54.2,
-          "tarifa_residencial_bt1_clp_kwh": 258.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 560.0,
+          "tarifa_residencial_bt1_clp_kwh": 294.0,
+          "costo_generacion_diesel_aislado_clp_kwh": 540.0,
           "subsidio_operacion_diesel_fndr": {
-            "aplica": false,
-            "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 258.0,
-            "subsidio_fndr_subdere_clp_kwh": 0.0,
-            "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "aplica": true,
+            "costo_real_clp_kwh": 540.0,
+            "tarifa_usuario_clp_kwh": 294.0,
+            "subsidio_fndr_subdere_clp_kwh": 246.0,
+            "cobertura_subsidio_pct": 45.6,
+            "sistema": "Micro-redes rurales Villa La Tapera / Villa Amengual / pasos fronterizos"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 82
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 0,
-          "gasolina_93_clp_litro": 1520,
-          "diesel_clp_litro": 1260,
+          "gasolina_93_clp_litro": 1765,
+          "diesel_clp_litro": 1710,
           "sobrecosto_vs_santiago_pct": 22.5,
-          "precio_m3_lena_seca_clp": 38000,
+          "precio_m3_lena_seca_clp": 36000,
           "abastecimiento_logistico": "Camión cisterna secundario y tambores vía Ruta 7 Norte y desvío cordillerano X-111",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 16200,
-            "consumo_hogar_m3_solidos_ano": 21.0,
+            "volumen_anual_m3_solidos": 4740,
+            "consumo_hogar_m3_solidos_ano": 15.1,
             "demanda_pellet_ton_ano": 50,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 320
+          },
+          "kerosene_clp_litro": 1530
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": false,
-          "tipo_enlace_troncal": "Radioenlace Microondas Digital + Starlink Institucional Subtel",
+          "tipo_enlace_troncal": "Satelital Starlink / Radioenlace UHF (FTTH hogar en despliegue FDT-2025-03 hacia Lago Verde y Villa La Tapera)",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar"
@@ -776,10 +798,11 @@
             "Villa La Tapera periférica",
             "Paso Las Pampas"
           ],
-          "penetracion_internet_fijo_hogares_pct": 17.6,
-          "conexiones_fijas_subtel_jun2026_n": 189,
-          "conexiones_residenciales_subtel_jun2026_n": 159,
-          "cne_estacion_bencina_en_linea_continua": false
+          "penetracion_internet_fijo_hogares_pct": 17.5,
+          "conexiones_fijas_subtel_jun2026_n": 68,
+          "conexiones_residenciales_subtel_jun2026_n": 56,
+          "cne_estacion_bencina_en_linea_continua": false,
+          "cobertura_fibra_hogar_pct": 0.0
         },
         "series_historicas": [
           {
@@ -928,15 +951,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 1550,
-            "tarifa_bt1_clp_kwh": 268.0,
-            "gasolina_93_clp_litro": 1590,
-            "diesel_clp_litro": 1317,
-            "precio_m3_lena_seca_clp": 41167,
-            "accesos_internet_fijo": 85,
-            "penetracion_internet_fijo_pct": 4.8,
+            "tarifa_bt1_clp_kwh": 294.0,
+            "gasolina_93_clp_litro": 1765,
+            "diesel_clp_litro": 1710,
+            "precio_m3_lena_seca_clp": 36000,
+            "accesos_internet_fijo": 68,
+            "penetracion_internet_fijo_pct": 17.5,
             "saidi_horas_anual": 48.0,
             "saifi_veces_anual": 8.6,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1530
           }
         ]
       }
@@ -953,45 +977,49 @@
       "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Mediano de Aysén (SMA) e Islas Huichas Aislado",
+          "subsistema_nombre": "SMA Continental, Autogeneración El Toqui e Islas Huichas (SSAA)",
           "tipo_red": "Sistema Mediano (Continental) y Sistema Aislado Insular (Aguirre)",
           "operador_distribucion": "Edelaysen S.A.",
-          "potencia_instalada_comunal_mw": 42.5,
+          "potencia_instalada_comunal_mw": 18.48,
           "matriz_fuentes": [
-            "Hidroeléctrica de pasada (Río Aysén / Cabo Juan Román / Mañihuales)",
+            "Hidroeléctrica de pasada (Río Aysén / Mañihuales / Autogeneración El Toqui)",
             "Térmica Diésel base (Chacabuco y Puerto Aguirre)"
           ],
           "vulnerabilidad_suministro": "Media-Baja en continente; Alta en archipiélago Islas Huichas por flete marítimo",
-          "matriz_calefaccion_hogar_lena_pct": 87.8,
+          "matriz_calefaccion_hogar_lena_pct": 84.5,
           "horas_interrupcion_saidi_anual": 13.8,
-          "tarifa_residencial_bt1_clp_kwh": 222.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 0.0,
+          "tarifa_residencial_bt1_clp_kwh": 287.8,
+          "costo_generacion_diesel_aislado_clp_kwh": 480.0,
           "subsidio_operacion_diesel_fndr": {
-            "aplica": false,
-            "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 222.0,
-            "subsidio_fndr_subdere_clp_kwh": 0.0,
-            "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "aplica": true,
+            "costo_real_clp_kwh": 480.0,
+            "tarifa_usuario_clp_kwh": 287.8,
+            "subsidio_fndr_subdere_clp_kwh": 192.0,
+            "cobertura_subsidio_pct": 40.0,
+            "sistema": "Sistema Aislado Insular Islas Huichas / Puerto Aguirre (0.48 MW <= 1.50 MW)"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 3190
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 5,
-          "gasolina_93_clp_litro": 1375,
-          "diesel_clp_litro": 1115,
+          "gasolina_93_clp_litro": 1651,
+          "diesel_clp_litro": 1585,
           "sobrecosto_vs_santiago_pct": 11.2,
           "precio_m3_lena_seca_clp": 46000,
-          "abastecimiento_logistico": "Desembarco directo marítimo en Terminal Petrolero Puerto Chacabuco (Enex/Copec/Petrobras)",
+          "abastecimiento_logistico": "Desembarco marítimo vía único Terminal MBM Copec Puerto Chacabuco (6.674 m³ activos) y estanques Comaco (3.800 m³)",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 128500,
-            "consumo_hogar_m3_solidos_ano": 15.0,
+            "volumen_anual_m3_solidos": 91453,
+            "consumo_hogar_m3_solidos_ano": 13.2,
             "demanda_pellet_ton_ano": 3200,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 8200
+          },
+          "kerosene_clp_litro": 1470
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Submarina (Punto Aterrizaje Chacabuco y Puerto Aguirre) + FOA Terrestre hacia Coyhaique",
+          "tipo_enlace_troncal": "Cable Submarino Austral GTD / Telefónica del Sur (Puerto Chacabuco) + Red Troncal Regional Coyhaique",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar",
@@ -1004,10 +1032,11 @@
             "Río Los Palos interior",
             "Río Riesco"
           ],
-          "penetracion_internet_fijo_hogares_pct": 61.8,
-          "conexiones_fijas_subtel_jun2026_n": 5748,
-          "conexiones_residenciales_subtel_jun2026_n": 5353,
-          "cne_estacion_bencina_en_linea_continua": true
+          "penetracion_internet_fijo_hogares_pct": 66.5,
+          "conexiones_fijas_subtel_jun2026_n": 5868,
+          "conexiones_residenciales_subtel_jun2026_n": 5456,
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 54.2
         },
         "series_historicas": [
           {
@@ -1156,15 +1185,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 46500,
-            "tarifa_bt1_clp_kwh": 229.0,
-            "gasolina_93_clp_litro": 1439,
-            "diesel_clp_litro": 1166,
-            "precio_m3_lena_seca_clp": 49833,
-            "accesos_internet_fijo": 5350,
-            "penetracion_internet_fijo_pct": 53.2,
+            "tarifa_bt1_clp_kwh": 287.8,
+            "gasolina_93_clp_litro": 1651,
+            "diesel_clp_litro": 1585,
+            "precio_m3_lena_seca_clp": 46000,
+            "accesos_internet_fijo": 5868,
+            "penetracion_internet_fijo_pct": 66.5,
             "saidi_horas_anual": 12.2,
             "saifi_veces_anual": 3.4,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1470
           }
         ]
       }
@@ -1181,45 +1211,49 @@
       "source_url": "https://www.cne.cl/estadisticas/electricidad/",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Mediano Palena - Cisnes (Edelaysen)",
+          "subsistema_nombre": "SM Puerto Cisnes (1.67 MW), SM Palena (0.80 MW) y 3 SSAA Litorales (0.36 MW)",
           "tipo_red": "Sistema Mediano Costero-Norte",
           "operador_distribucion": "Edelaysen S.A.",
-          "potencia_instalada_comunal_mw": 6.8,
+          "potencia_instalada_comunal_mw": 2.83,
           "matriz_fuentes": [
             "Generación Térmica Diésel (Puerto Cisnes / La Junta)",
             "Mini-hidroeléctrica de pasada"
           ],
           "vulnerabilidad_suministro": "Alta (Riesgo de corte vial en Cuesta Queulat / Barcazas y aislamiento de caletas)",
-          "matriz_calefaccion_hogar_lena_pct": 95.1,
+          "matriz_calefaccion_hogar_lena_pct": 94.0,
           "horas_interrupcion_saidi_anual": 28.5,
-          "tarifa_residencial_bt1_clp_kwh": 235.0,
-          "costo_generacion_diesel_aislado_clp_kwh": 380.0,
+          "tarifa_residencial_bt1_clp_kwh": 292.4,
+          "costo_generacion_diesel_aislado_clp_kwh": 495.0,
           "subsidio_operacion_diesel_fndr": {
-            "aplica": false,
-            "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 235.0,
-            "subsidio_fndr_subdere_clp_kwh": 0.0,
-            "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "aplica": true,
+            "costo_real_clp_kwh": 495.0,
+            "tarifa_usuario_clp_kwh": 292.4,
+            "subsidio_fndr_subdere_clp_kwh": 245.0,
+            "cobertura_subsidio_pct": 49.5,
+            "sistema": "3 micro-redes aisladas litorales: Puerto Gala (18 h/d), Puerto Gaviota (24 h) y Melimoyu (12 h/d)"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 745
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 2,
-          "gasolina_93_clp_litro": 1440,
-          "diesel_clp_litro": 1190,
+          "gasolina_93_clp_litro": 1695,
+          "diesel_clp_litro": 1645,
           "sobrecosto_vs_santiago_pct": 16.4,
-          "precio_m3_lena_seca_clp": 42000,
+          "precio_m3_lena_seca_clp": 44000,
           "abastecimiento_logistico": "Camión cisterna Ruta 7 Norte y barcazas bimodal Puerto Montt - Chaitén - Cisnes",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 38400,
-            "consumo_hogar_m3_solidos_ano": 18.5,
+            "volumen_anual_m3_solidos": 26882,
+            "consumo_hogar_m3_solidos_ano": 13.95,
             "demanda_pellet_ton_ano": 600,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 2050
+          },
+          "kerosene_clp_litro": 1495
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Submarina (Aterrizaje Puerto Cisnes) + FOA Terrestre Carretera Austral",
+          "tipo_enlace_troncal": "Red Troncal Terrestre Norte Ruta 7 (La Junta/Puyuhuapi/Cisnes) + adjudicación FDT-2025-03 Última Milla",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar",
@@ -1231,10 +1265,11 @@
             "Puerto Gala",
             "Puyuhuapi interior"
           ],
-          "penetracion_internet_fijo_hogares_pct": 43.6,
+          "penetracion_internet_fijo_hogares_pct": 72.5,
           "conexiones_fijas_subtel_jun2026_n": 1638,
           "conexiones_residenciales_subtel_jun2026_n": 1486,
-          "cne_estacion_bencina_en_linea_continua": true
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 24.8
         },
         "series_historicas": [
           {
@@ -1383,15 +1418,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 9400,
-            "tarifa_bt1_clp_kwh": 244.0,
-            "gasolina_93_clp_litro": 1507,
-            "diesel_clp_litro": 1244,
-            "precio_m3_lena_seca_clp": 45500,
-            "accesos_internet_fijo": 1460,
-            "penetracion_internet_fijo_pct": 31.5,
+            "tarifa_bt1_clp_kwh": 292.4,
+            "gasolina_93_clp_litro": 1695,
+            "diesel_clp_litro": 1645,
+            "precio_m3_lena_seca_clp": 44000,
+            "accesos_internet_fijo": 1638,
+            "penetracion_internet_fijo_pct": 72.5,
             "saidi_horas_anual": 25.0,
             "saifi_veces_anual": 5.5,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1495
           }
         ]
       }
@@ -1408,43 +1444,48 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_interfaz.html?cod_comuna=11203",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Aislado Insular Melinka",
+          "subsistema_nombre": "Sistema Aislado Municipal Melinka-Repollal",
           "tipo_red": "Sistema Aislado Municipal Insular",
           "operador_distribucion": "Ilustre Municipalidad de Guaitecas (Servicio Eléctrico Municipal)",
-          "potencia_instalada_comunal_mw": 2.8,
+          "potencia_instalada_comunal_mw": 1.45,
           "matriz_fuentes": [
             "Generación Térmica Diésel 100%"
           ],
           "vulnerabilidad_suministro": "Crítica (Dependencia absoluta de barcaza de combustible desde Quellón; riesgo de racionamiento por temporal marítimo)",
-          "matriz_calefaccion_hogar_lena_pct": 94.6,
+          "matriz_calefaccion_hogar_lena_pct": 94.2,
           "horas_interrupcion_saidi_anual": 62.1,
-          "tarifa_residencial_bt1_clp_kwh": 265.0,
+          "tarifa_residencial_bt1_clp_kwh": 312.0,
           "costo_generacion_diesel_aislado_clp_kwh": 640.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": true,
             "costo_real_clp_kwh": 640.0,
-            "tarifa_usuario_clp_kwh": 265.0,
-            "subsidio_fndr_subdere_clp_kwh": 375.0,
-            "cobertura_subsidio_pct": 58.6
-          }
+            "tarifa_usuario_clp_kwh": 312.0,
+            "subsidio_fndr_subdere_clp_kwh": 328.0,
+            "cobertura_subsidio_pct": 51.2,
+            "sistema": "Sistema Aislado Municipal Melinka-Repollal (1.45 MW <= 1.50 MW, Art. 173 LGSE)"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 148
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 1,
-          "gasolina_93_clp_litro": 1560,
-          "diesel_clp_litro": 1290,
+          "gasolina_93_clp_litro": 1785,
+          "diesel_clp_litro": 1740,
           "sobrecosto_vs_santiago_pct": 26.2,
-          "precio_m3_lena_seca_clp": 55000,
+          "precio_m3_lena_seca_clp": 52000,
           "abastecimiento_logistico": "Transporte marítimo en barcaza subvencionada desde Isla de Chiloé (Quellón)",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 18200,
-            "consumo_hogar_m3_solidos_ano": 19.0,
+            "volumen_anual_m3_solidos": 6417,
+            "consumo_hogar_m3_solidos_ano": 13.1,
             "demanda_pellet_ton_ano": 150,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 520
+          },
+          "kerosene_clp_litro": 1535
         },
         "telecomunicaciones": {
-          "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Submarina (Punto de Aterrizaje Submarino Melinka de CTR/SUBTEL)",
+          "conectado_fibra_optica_austral_foa": false,
+          "tipo_enlace_troncal": "Radioenlace Microondas / Starlink + Proyecto Última Milla FDT-2025-03 (Melinka y Repollal, sin aterrizaje CTR)",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar"
@@ -1455,10 +1496,11 @@
             "Islote Betecoi",
             "Islotes Gran Guaiteca"
           ],
-          "penetracion_internet_fijo_hogares_pct": 31.8,
+          "penetracion_internet_fijo_hogares_pct": 51.9,
           "conexiones_fijas_subtel_jun2026_n": 345,
           "conexiones_residenciales_subtel_jun2026_n": 270,
-          "cne_estacion_bencina_en_linea_continua": true
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 2.4
         },
         "series_historicas": [
           {
@@ -1607,15 +1649,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 3650,
-            "tarifa_bt1_clp_kwh": 275.0,
-            "gasolina_93_clp_litro": 1632,
-            "diesel_clp_litro": 1349,
-            "precio_m3_lena_seca_clp": 59583,
-            "accesos_internet_fijo": 115,
-            "penetracion_internet_fijo_pct": 7.1,
+            "tarifa_bt1_clp_kwh": 312.0,
+            "gasolina_93_clp_litro": 1785,
+            "diesel_clp_litro": 1740,
+            "precio_m3_lena_seca_clp": 52000,
+            "accesos_internet_fijo": 345,
+            "penetracion_internet_fijo_pct": 51.9,
             "saidi_horas_anual": 54.0,
             "saifi_veces_anual": 9.8,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1535
           }
         ]
       }
@@ -1635,43 +1678,47 @@
           "subsistema_nombre": "Sistema Mediano General Carrera (SMGC)",
           "tipo_red": "Sistema Mediano Lacustre",
           "operador_distribucion": "Edelaysen S.A.",
-          "potencia_instalada_comunal_mw": 7.5,
+          "potencia_instalada_comunal_mw": 3.9,
           "matriz_fuentes": [
             "Generación Térmica Diésel (Chile Chico)",
             "Hidroeléctrica Los Maquis (Guadal)",
             "Eólica/Solar piloto"
           ],
           "vulnerabilidad_suministro": "Media-Alta (Dependencia de barcaza lacustre o tránsito internacional por Argentina)",
-          "matriz_calefaccion_hogar_lena_pct": 82.3,
+          "matriz_calefaccion_hogar_lena_pct": 82.0,
           "horas_interrupcion_saidi_anual": 19.3,
-          "tarifa_residencial_bt1_clp_kwh": 228.0,
+          "tarifa_residencial_bt1_clp_kwh": 289.5,
           "costo_generacion_diesel_aislado_clp_kwh": 0.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": false,
             "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 228.0,
+            "tarifa_usuario_clp_kwh": 289.5,
             "subsidio_fndr_subdere_clp_kwh": 0.0,
             "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "sistema": "Interconectado Sistema Mediano General Carrera (SMGC)"
+          },
+          "potencia_ernc_en_construccion_mw": 1.0,
+          "cobertura_subsidio_electrico_hogares_n": 590
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 1,
-          "gasolina_93_clp_litro": 1430,
-          "diesel_clp_litro": 1180,
+          "gasolina_93_clp_litro": 1710,
+          "diesel_clp_litro": 1675,
           "sobrecosto_vs_santiago_pct": 15.6,
           "precio_m3_lena_seca_clp": 50000,
           "abastecimiento_logistico": "Camión cisterna vía barcaza La Tehuelche por Lago General Carrera o circunvalación por Argentina (Ruta 40)",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 32600,
-            "consumo_hogar_m3_solidos_ano": 16.5,
+            "volumen_anual_m3_solidos": 19108,
+            "consumo_hogar_m3_solidos_ano": 11.95,
             "demanda_pellet_ton_ano": 500,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 1950
+          },
+          "kerosene_clp_litro": 1510
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Terrestre (Ramal Troncal General Carrera)",
+          "tipo_enlace_troncal": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Guadal, Mallín Grande y Chile Chico)",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar",
@@ -1683,10 +1730,11 @@
             "Puerto Guadal rural",
             "Mina Silva"
           ],
-          "penetracion_internet_fijo_hogares_pct": 47.9,
+          "penetracion_internet_fijo_hogares_pct": 40.4,
           "conexiones_fijas_subtel_jun2026_n": 845,
           "conexiones_residenciales_subtel_jun2026_n": 788,
-          "cne_estacion_bencina_en_linea_continua": true
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 36.5
         },
         "series_historicas": [
           {
@@ -1835,15 +1883,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 6800,
-            "tarifa_bt1_clp_kwh": 238.0,
-            "gasolina_93_clp_litro": 1496,
-            "diesel_clp_litro": 1234,
-            "precio_m3_lena_seca_clp": 54167,
-            "accesos_internet_fijo": 950,
-            "penetracion_internet_fijo_pct": 34.0,
+            "tarifa_bt1_clp_kwh": 289.5,
+            "gasolina_93_clp_litro": 1710,
+            "diesel_clp_litro": 1675,
+            "precio_m3_lena_seca_clp": 50000,
+            "accesos_internet_fijo": 845,
+            "penetracion_internet_fijo_pct": 40.4,
             "saidi_horas_anual": 17.2,
             "saifi_veces_anual": 4.1,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1510
           }
         ]
       }
@@ -1860,10 +1909,10 @@
       "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Mediano de Aysén (Interconexión Ramal Sur)",
+          "subsistema_nombre": "Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez",
           "tipo_red": "Sistema Mediano Interconectado",
           "operador_distribucion": "Edelaysen S.A.",
-          "potencia_instalada_comunal_mw": 2.4,
+          "potencia_instalada_comunal_mw": 1.4,
           "matriz_fuentes": [
             "Transmisión 23 kV desde SMA Coyhaique",
             "Respaldo Diésel local Cerro Castillo"
@@ -1871,34 +1920,38 @@
           "vulnerabilidad_suministro": "Media (Línea de transmisión expuesta a nevadas y viento blanco en Portezuelo Ibáñez)",
           "matriz_calefaccion_hogar_lena_pct": 94.2,
           "horas_interrupcion_saidi_anual": 24.6,
-          "tarifa_residencial_bt1_clp_kwh": 231.0,
+          "tarifa_residencial_bt1_clp_kwh": 289.5,
           "costo_generacion_diesel_aislado_clp_kwh": 0.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": false,
             "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 231.0,
+            "tarifa_usuario_clp_kwh": 289.5,
             "subsidio_fndr_subdere_clp_kwh": 0.0,
             "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "sistema": "Interconectado Ramal Sur SMA con respaldo local Edelaysen"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 340
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 2,
-          "gasolina_93_clp_litro": 1420,
-          "diesel_clp_litro": 1170,
+          "gasolina_93_clp_litro": 1705,
+          "diesel_clp_litro": 1668,
           "sobrecosto_vs_santiago_pct": 14.8,
           "precio_m3_lena_seca_clp": 44000,
           "abastecimiento_logistico": "Camión cisterna por Carretera Austral (Ruta 7 Sur) y cruce CH-265",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 22400,
-            "consumo_hogar_m3_solidos_ano": 19.5,
+            "volumen_anual_m3_solidos": 14029,
+            "consumo_hogar_m3_solidos_ano": 14.05,
             "demanda_pellet_ton_ano": 200,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 1060
+          },
+          "kerosene_clp_litro": 1505
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Terrestre (Troncal Carretera Austral con empalme en Cerro Castillo y Puerto Ibáñez)",
+          "tipo_enlace_troncal": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Cerro Castillo, Puerto Ibáñez, Bahía Murta y Río Tranquilo)",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar"
@@ -1909,10 +1962,11 @@
             "Península de Levican",
             "Villa Cerro Castillo rural"
           ],
-          "penetracion_internet_fijo_hogares_pct": 35.2,
+          "penetracion_internet_fijo_hogares_pct": 52.4,
           "conexiones_fijas_subtel_jun2026_n": 581,
           "conexiones_residenciales_subtel_jun2026_n": 555,
-          "cne_estacion_bencina_en_linea_continua": true
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 21.4
         },
         "series_historicas": [
           {
@@ -2061,15 +2115,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 3450,
-            "tarifa_bt1_clp_kwh": 241.0,
-            "gasolina_93_clp_litro": 1486,
-            "diesel_clp_litro": 1223,
-            "precio_m3_lena_seca_clp": 47667,
-            "accesos_internet_fijo": 520,
-            "penetracion_internet_fijo_pct": 21.5,
+            "tarifa_bt1_clp_kwh": 289.5,
+            "gasolina_93_clp_litro": 1705,
+            "diesel_clp_litro": 1668,
+            "precio_m3_lena_seca_clp": 44000,
+            "accesos_internet_fijo": 581,
+            "penetracion_internet_fijo_pct": 52.4,
             "saidi_horas_anual": 21.8,
             "saifi_veces_anual": 4.8,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1505
           }
         ]
       }
@@ -2086,45 +2141,49 @@
       "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-general-carrera",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Mediano General Carrera - Cochrane (Edelaysen)",
+          "subsistema_nombre": "Sistema Mediano General Carrera - Cochrane (SMGC)",
           "tipo_red": "Sistema Mediano Austral",
           "operador_distribucion": "Edelaysen S.A.",
-          "potencia_instalada_comunal_mw": 5.8,
+          "potencia_instalada_comunal_mw": 2.54,
           "matriz_fuentes": [
             "Generación Térmica Diésel (Central Cochrane)",
             "Hidroeléctrica Cochrane / San Lorenzo"
           ],
           "vulnerabilidad_suministro": "Media-Alta (Fin del anillo de transmisión lacustre y alta distancia terrestre de logística)",
-          "matriz_calefaccion_hogar_lena_pct": 96.0,
+          "matriz_calefaccion_hogar_lena_pct": 95.5,
           "horas_interrupcion_saidi_anual": 22.8,
-          "tarifa_residencial_bt1_clp_kwh": 230.0,
+          "tarifa_residencial_bt1_clp_kwh": 291.2,
           "costo_generacion_diesel_aislado_clp_kwh": 0.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": false,
             "costo_real_clp_kwh": 0.0,
-            "tarifa_usuario_clp_kwh": 230.0,
+            "tarifa_usuario_clp_kwh": 291.2,
             "subsidio_fndr_subdere_clp_kwh": 0.0,
             "cobertura_subsidio_pct": 0.0,
-            "sistema": "Interconectado SMA o SMGC"
-          }
+            "sistema": "Interconectado Sistema Mediano General Carrera (SMGC)"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 445
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 1,
-          "gasolina_93_clp_litro": 1410,
-          "diesel_clp_litro": 1150,
+          "gasolina_93_clp_litro": 1714,
+          "diesel_clp_litro": 1735,
           "sobrecosto_vs_santiago_pct": 13.9,
           "precio_m3_lena_seca_clp": 42000,
           "abastecimiento_logistico": "Camión cisterna por Ruta 7 Sur (330 km desde Coyhaique con tramos de ripio)",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 34800,
-            "consumo_hogar_m3_solidos_ano": 18.0,
+            "volumen_anual_m3_solidos": 17816,
+            "consumo_hogar_m3_solidos_ano": 14.35,
             "demanda_pellet_ton_ano": 600,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 1300
+          },
+          "kerosene_clp_litro": 1525
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Terrestre (Nodo Cabecera Provincial Troncal Austral Cochrane)",
+          "tipo_enlace_troncal": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Bertrand, Cochrane y Los Ñadis)",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar",
@@ -2136,10 +2195,11 @@
             "Valle Grande",
             "Colonia San Martín"
           ],
-          "penetracion_internet_fijo_hogares_pct": 51.4,
+          "penetracion_internet_fijo_hogares_pct": 60.8,
           "conexiones_fijas_subtel_jun2026_n": 835,
           "conexiones_residenciales_subtel_jun2026_n": 791,
-          "cne_estacion_bencina_en_linea_continua": true
+          "cne_estacion_bencina_en_linea_continua": true,
+          "cobertura_fibra_hogar_pct": 39.2
         },
         "series_historicas": [
           {
@@ -2288,15 +2348,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 5550,
-            "tarifa_bt1_clp_kwh": 240.0,
-            "gasolina_93_clp_litro": 1475,
-            "diesel_clp_litro": 1202,
-            "precio_m3_lena_seca_clp": 45500,
-            "accesos_internet_fijo": 725,
-            "penetracion_internet_fijo_pct": 27.2,
+            "tarifa_bt1_clp_kwh": 291.2,
+            "gasolina_93_clp_litro": 1714,
+            "diesel_clp_litro": 1735,
+            "precio_m3_lena_seca_clp": 42000,
+            "accesos_internet_fijo": 835,
+            "penetracion_internet_fijo_pct": 60.8,
             "saidi_horas_anual": 20.1,
             "saifi_veces_anual": 4.5,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1525
           }
         ]
       }
@@ -2313,44 +2374,49 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_interfaz.html?cod_comuna=11302",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Aislado Villa O'Higgins",
+          "subsistema_nombre": "Sistema Aislado Municipal Villa O'Higgins",
           "tipo_red": "Sistema Aislado Municipal Extremo",
           "operador_distribucion": "Ilustre Municipalidad de O'Higgins",
-          "potencia_instalada_comunal_mw": 1.4,
+          "potencia_instalada_comunal_mw": 1.25,
           "matriz_fuentes": [
             "Hidroeléctrica de pasada (Central Río Mosco 0.6 MW)",
             "Grupos Térmicos Diésel de respaldo (0.8 MW)"
           ],
           "vulnerabilidad_suministro": "Extrema (Término austral de Ruta 7; congelamiento de bocatoma en invierno y cruce marítimo-lacustre en barcaza Puerto Yungay)",
-          "matriz_calefaccion_hogar_lena_pct": 99.1,
+          "matriz_calefaccion_hogar_lena_pct": 98.8,
           "horas_interrupcion_saidi_anual": 58.7,
-          "tarifa_residencial_bt1_clp_kwh": 262.0,
+          "tarifa_residencial_bt1_clp_kwh": 308.0,
           "costo_generacion_diesel_aislado_clp_kwh": 620.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": true,
             "costo_real_clp_kwh": 620.0,
-            "tarifa_usuario_clp_kwh": 262.0,
-            "subsidio_fndr_subdere_clp_kwh": 358.0,
-            "cobertura_subsidio_pct": 57.7
-          }
+            "tarifa_usuario_clp_kwh": 308.0,
+            "subsidio_fndr_subdere_clp_kwh": 312.0,
+            "cobertura_subsidio_pct": 50.3,
+            "sistema": "Sistema Aislado Municipal Villa O'Higgins (1.25 MW <= 1.50 MW, excl. Ley 21.472)"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 48
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 0,
-          "gasolina_93_clp_litro": 1620,
-          "diesel_clp_litro": 1340,
+          "gasolina_93_clp_litro": 1812,
+          "diesel_clp_litro": 1802,
           "sobrecosto_vs_santiago_pct": 30.8,
           "precio_m3_lena_seca_clp": 36000,
           "abastecimiento_logistico": "Camión cisterna con transbordo en barcaza Fiordo Mitchell (Puerto Yungay - Río Bravo) y 100 km ripio extremo",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 11556,
-            "consumo_hogar_m3_solidos_ano": 22.0,
+            "volumen_anual_m3_solidos": 3829,
+            "consumo_hogar_m3_solidos_ano": 15.5,
             "demanda_pellet_ton_ano": 100,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 250
+          },
+          "kerosene_clp_litro": 1541
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": false,
-          "tipo_enlace_troncal": "Radioenlace Digital UHF/Microondas + Satelital Starlink Subtel",
+          "tipo_enlace_troncal": "Satelital Starlink / Radioenlace UHF (Fibra Tortel-Villa O'Higgins adjudicada D.O. 28-abr-2026; operación 1S-2028)",
           "operadores_moviles_4g_5g": [
             "Entel"
           ],
@@ -2361,9 +2427,10 @@
             "Río Mayer"
           ],
           "penetracion_internet_fijo_hogares_pct": 23.2,
-          "conexiones_fijas_subtel_jun2026_n": 272,
-          "conexiones_residenciales_subtel_jun2026_n": 249,
-          "cne_estacion_bencina_en_linea_continua": false
+          "conexiones_fijas_subtel_jun2026_n": 72,
+          "conexiones_residenciales_subtel_jun2026_n": 58,
+          "cne_estacion_bencina_en_linea_continua": false,
+          "cobertura_fibra_hogar_pct": 0.0
         },
         "series_historicas": [
           {
@@ -2512,15 +2579,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 1250,
-            "tarifa_bt1_clp_kwh": 272.0,
-            "gasolina_93_clp_litro": 1695,
-            "diesel_clp_litro": 1401,
-            "precio_m3_lena_seca_clp": 39000,
-            "accesos_internet_fijo": 55,
-            "penetracion_internet_fijo_pct": 3.6,
+            "tarifa_bt1_clp_kwh": 308.0,
+            "gasolina_93_clp_litro": 1812,
+            "diesel_clp_litro": 1802,
+            "precio_m3_lena_seca_clp": 36000,
+            "accesos_internet_fijo": 72,
+            "penetracion_internet_fijo_pct": 23.2,
             "saidi_horas_anual": 51.5,
             "saifi_veces_anual": 9.4,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1541
           }
         ]
       }
@@ -2537,44 +2605,49 @@
       "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_interfaz.html?cod_comuna=11303",
       "datos": {
         "sistema_electrico": {
-          "subsistema_nombre": "Sistema Aislado Caleta Tortel",
+          "subsistema_nombre": "Sistema Aislado Municipal Caleta Tortel",
           "tipo_red": "Sistema Aislado Municipal - Fluvial",
           "operador_distribucion": "Ilustre Municipalidad de Tortel",
-          "potencia_instalada_comunal_mw": 1.2,
+          "potencia_instalada_comunal_mw": 0.95,
           "matriz_fuentes": [
             "Generación Térmica Diésel 90%",
             "Mini-hidroeléctrica piloto 10%"
           ],
           "vulnerabilidad_suministro": "Muy Alta (Poblado de pasarelas peatonales; combustible descargado en tambores y lanchas fluviales)",
-          "matriz_calefaccion_hogar_lena_pct": 98.4,
+          "matriz_calefaccion_hogar_lena_pct": 98.5,
           "horas_interrupcion_saidi_anual": 64.3,
-          "tarifa_residencial_bt1_clp_kwh": 268.0,
+          "tarifa_residencial_bt1_clp_kwh": 318.0,
           "costo_generacion_diesel_aislado_clp_kwh": 680.0,
           "subsidio_operacion_diesel_fndr": {
             "aplica": true,
             "costo_real_clp_kwh": 680.0,
-            "tarifa_usuario_clp_kwh": 268.0,
-            "subsidio_fndr_subdere_clp_kwh": 412.0,
-            "cobertura_subsidio_pct": 60.6
-          }
+            "tarifa_usuario_clp_kwh": 318.0,
+            "subsidio_fndr_subdere_clp_kwh": 362.0,
+            "cobertura_subsidio_pct": 53.2,
+            "sistema": "Sistema Aislado Municipal Caleta Tortel (0.95 MW <= 1.50 MW, Art. 173 LGSE)"
+          },
+          "potencia_ernc_en_construccion_mw": 0.0,
+          "cobertura_subsidio_electrico_hogares_n": 40
         },
         "combustibles": {
           "estaciones_servicio_cantidad": 0,
-          "gasolina_93_clp_litro": 1580,
-          "diesel_clp_litro": 1310,
+          "gasolina_93_clp_litro": 1790,
+          "diesel_clp_litro": 1775,
           "sobrecosto_vs_santiago_pct": 27.6,
           "precio_m3_lena_seca_clp": 40000,
           "abastecimiento_logistico": "Camión cisterna hasta rampa de estacionamiento en rocas (Ruta X-904) y acarreo en botes",
           "biomasa_calefaccion_infor": {
-            "volumen_anual_m3_solidos": 14000,
-            "consumo_hogar_m3_solidos_ano": 21.5,
+            "volumen_anual_m3_solidos": 2920,
+            "consumo_hogar_m3_solidos_ano": 15.2,
             "demanda_pellet_ton_ano": 100,
-            "ley_21499_estandar_humedad": "<25% SEC"
-          }
+            "ley_21499_estandar_humedad": "<25% SEC",
+            "hogares_censo_2024": 195
+          },
+          "kerosene_clp_litro": 1538
         },
         "telecomunicaciones": {
           "conectado_fibra_optica_austral_foa": true,
-          "tipo_enlace_troncal": "FOA Submarina (Punto de Aterrizaje FOA Caleta Tortel) + FOA Terrestre desde Cochrane",
+          "tipo_enlace_troncal": "Único Aterrizaje Submarino FOA CTR en Aysén (FDT-2017-01) + POIIT Silica FDT-2018-02 + FDT-2025-03 FTTH",
           "operadores_moviles_4g_5g": [
             "Entel",
             "Movistar"
@@ -2585,10 +2658,11 @@
             "Isla de los Muertos",
             "Steffen"
           ],
-          "penetracion_internet_fijo_hogares_pct": 27.5,
+          "penetracion_internet_fijo_hogares_pct": 22.1,
           "conexiones_fijas_subtel_jun2026_n": 56,
           "conexiones_residenciales_subtel_jun2026_n": 43,
-          "cne_estacion_bencina_en_linea_continua": false
+          "cne_estacion_bencina_en_linea_continua": false,
+          "cobertura_fibra_hogar_pct": 2.1
         },
         "series_historicas": [
           {
@@ -2737,15 +2811,16 @@
           {
             "ano": 2026,
             "generacion_o_demanda_mwh": 1150,
-            "tarifa_bt1_clp_kwh": 278.0,
-            "gasolina_93_clp_litro": 1653,
-            "diesel_clp_litro": 1370,
-            "precio_m3_lena_seca_clp": 43333,
-            "accesos_internet_fijo": 72,
-            "penetracion_internet_fijo_pct": 5.4,
+            "tarifa_bt1_clp_kwh": 318.0,
+            "gasolina_93_clp_litro": 1790,
+            "diesel_clp_litro": 1775,
+            "precio_m3_lena_seca_clp": 40000,
+            "accesos_internet_fijo": 56,
+            "penetracion_internet_fijo_pct": 22.1,
             "saidi_horas_anual": 56.8,
             "saifi_veces_anual": 10.2,
-            "origen": "ancla"
+            "origen": "ancla",
+            "kerosene_clp_litro": 1538
           }
         ]
       }
@@ -2753,387 +2828,606 @@
   ],
   "nodos_georreferenciados": [
     {
-      "id": "nodo-elec-rio-aysen",
-      "nombre": "Central Hidroeléctrica Río Aysén / Cabo Juan Román",
-      "tipo": "Central Hidroeléctrica de Pasada",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -45.412,
-      "lng": -72.635,
+      "id": "nodo-elec-central-termica-tehuelche",
+      "nombre": "Central Térmica Tehuelche",
+      "tipo": "Térmica Diésel",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.552,
+      "lng": -72.092,
       "atributos": {
-        "potencia_mw": 12.5,
-        "tecnologia": "Hidroeléctrica pasada",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "fuente_hidrica": "Río Aysén"
+        "potencia_mw": 17.98,
+        "tecnologia": "Térmica Diésel",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "comuna": "Coyhaique",
+        "tension_kv": "23/66"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-elec-lago-atravesado",
+      "id": "nodo-elec-central-hidro-lago-atravesado",
       "nombre": "Central Hidroeléctrica Lago Atravesado",
-      "tipo": "Central Hidroeléctrica de Pasada",
+      "tipo": "Hidroeléctrica de pasada",
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "lat": -45.688,
       "lng": -72.285,
       "atributos": {
-        "potencia_mw": 0.8,
-        "tecnologia": "Hidroeléctrica pasada",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "fuente_hidrica": "Lago Atravesado"
+        "potencia_mw": 11.0,
+        "tecnologia": "Hidroeléctrica de pasada",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "comuna": "Coyhaique",
+        "tension_kv": "23/66"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-elec-manihuales",
-      "nombre": "Central Hidroeléctrica Río Mañihuales",
-      "tipo": "Central Hidroeléctrica de Pasada",
+      "id": "nodo-elec-planta-solar-el-blanco",
+      "nombre": "Planta Solar Fotovoltaica El Blanco",
+      "tipo": "Solar Fotovoltaica",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.843,
+      "lng": -71.936,
+      "atributos": {
+        "potencia_mw": 2.99,
+        "tecnologia": "Solar Fotovoltaica",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "comuna": "Coyhaique",
+        "tension_kv": "23/66"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-parque-eolico-alto-baguales",
+      "nombre": "Parque Eólico Alto Baguales",
+      "tipo": "Eólica",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.545,
+      "lng": -72.125,
+      "atributos": {
+        "potencia_mw": 1.98,
+        "tecnologia": "Eólica",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "comuna": "Coyhaique",
+        "tension_kv": "23/66"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-termica-chacabuco",
+      "nombre": "Central Térmica Puerto Chacabuco",
+      "tipo": "Térmica Diésel",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
-      "lat": -45.168,
-      "lng": -72.155,
+      "lat": -45.468,
+      "lng": -72.812,
       "atributos": {
-        "potencia_mw": 3.4,
-        "tecnologia": "Hidroeléctrica pasada",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "fuente_hidrica": "Río Mañihuales"
+        "potencia_mw": 10.0,
+        "tecnologia": "Térmica Diésel",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
+        "productos": [
+          "Gasolina 93/97",
+          "Petróleo Diésel",
+          "Kerosene Doméstico (único estanque regional en Copec)"
+        ],
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-elec-los-maquis",
+      "id": "nodo-elec-central-hidro-rio-aysen-hist",
+      "nombre": "Central Mini-Hidroeléctrica Río Aysén / Puerto Aysén",
+      "tipo": "Hidroeléctrica de pasada",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.405,
+      "lng": -72.685,
+      "atributos": {
+        "potencia_mw": 2.0,
+        "tecnologia": "Hidroeléctrica de pasada",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
+        "productos": [
+          "Gasolina 93/97",
+          "Petróleo Diésel",
+          "Kerosene Doméstico (único estanque regional en Copec)"
+        ],
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-autogen-el-toqui-hidro",
+      "nombre": "Central Hidroeléctrica El Toqui (Autogeneración Minera)",
+      "tipo": "Hidroeléctrica de pasada",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.052,
+      "lng": -71.931,
+      "atributos": {
+        "potencia_mw": 2.0,
+        "tecnologia": "Hidroeléctrica de pasada",
+        "operador": "SCM El Toqui",
+        "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
+        "productos": [
+          "Gasolina 93/97",
+          "Petróleo Diésel",
+          "Kerosene Doméstico (único estanque regional en Copec)"
+        ],
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-autogen-el-toqui-diesel",
+      "nombre": "Central Térmica El Toqui (Respaldo Autogeneración)",
+      "tipo": "Térmica Diésel",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.054,
+      "lng": -71.928,
+      "atributos": {
+        "potencia_mw": 4.0,
+        "tecnologia": "Térmica Diésel",
+        "operador": "SCM El Toqui",
+        "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
+        "productos": [
+          "Gasolina 93/97",
+          "Petróleo Diésel",
+          "Kerosene Doméstico (único estanque regional en Copec)"
+        ],
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-diesel-puerto-aguirre",
+      "nombre": "Central Térmica Puerto Aguirre (Islas Huichas)",
+      "tipo": "Térmica Diésel",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.164,
+      "lng": -73.523,
+      "atributos": {
+        "potencia_mw": 0.48,
+        "tecnologia": "Térmica Diésel",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Aislado Insular Islas Huichas",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
+        "productos": [
+          "Gasolina 93/97",
+          "Petróleo Diésel",
+          "Kerosene Doméstico (único estanque regional en Copec)"
+        ],
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-diesel-puerto-cisnes",
+      "nombre": "Central Térmica Puerto Cisnes",
+      "tipo": "Térmica Diésel",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.741,
+      "lng": -72.695,
+      "atributos": {
+        "potencia_mw": 1.67,
+        "tecnologia": "Térmica Diésel",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano de Puerto Cisnes"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-sm-palena-la-junta-puyuhuapi",
+      "nombre": "Centrales La Junta (0,51 MW) y Puyuhuapi (0,29 MW) - Fracción SM Palena",
+      "tipo": "Térmica Diésel / Mixta SM",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -43.975,
+      "lng": -72.405,
+      "atributos": {
+        "potencia_mw": 0.8,
+        "tecnologia": "Térmica Diésel / Mixta SM",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano Palena (fracción Cisnes en sistema bi-regional de 7,18 MW)"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-microcentral-ssaa-litoral-cisnes",
+      "nombre": "Microcentrales SSAA Litoral Cisnes (Pto. Gaviota, Pto. Gala y Melimoyu)",
+      "tipo": "Híbrida Microhidro + Diésel",
+      "codigo_comuna": "CL-XI-04",
+      "comuna_ine": "11202",
+      "lat": -44.525,
+      "lng": -73.205,
+      "atributos": {
+        "potencia_mw": 0.36,
+        "tecnologia": "Híbrida Microhidro + Diésel",
+        "operador": "Ilustre Municipalidad de Cisnes / Comités Comunitarios",
+        "sistema": "Sistema Aislado Litoral Cisnes"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-diesel-chile-chico",
+      "nombre": "Central Térmica Chile Chico",
+      "tipo": "Térmica Diésel",
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "lat": -46.544,
+      "lng": -71.725,
+      "atributos": {
+        "potencia_mw": 2.9,
+        "tecnologia": "Térmica Diésel",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano General Carrera (SMGC)",
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (Cuenca General Carrera)",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-hidro-los-maquis",
       "nombre": "Central Hidroeléctrica Los Maquis (Puerto Guadal)",
-      "tipo": "Central Hidroeléctrica de Pasada",
+      "tipo": "Hidroeléctrica de pasada",
       "codigo_comuna": "CL-XI-06",
       "comuna_ine": "11401",
       "lat": -46.685,
       "lng": -72.715,
       "atributos": {
         "potencia_mw": 1.0,
-        "tecnologia": "Hidroeléctrica pasada",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano General Carrera",
-        "fuente_hidrica": "Río Los Maquis"
+        "tecnologia": "Hidroeléctrica de pasada",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano General Carrera (SMGC)",
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (Cuenca General Carrera)",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-elec-rio-mosco",
-      "nombre": "Central Hidroeléctrica Río Mosco (Villa O'Higgins)",
-      "tipo": "Central Hidroeléctrica de Pasada",
-      "codigo_comuna": "CL-XI-09",
-      "comuna_ine": "11302",
-      "lat": -48.472,
-      "lng": -72.548,
-      "atributos": {
-        "potencia_mw": 0.6,
-        "tecnologia": "Hidroeléctrica pasada",
-        "operador": "Ilustre Municipalidad de O'Higgins",
-        "sistema": "Sistema Aislado Villa O'Higgins",
-        "fuente_hidrica": "Río Mosco"
-      },
-      "source_url": "https://www.cne.cl/estadisticas/electricidad/"
-    },
-    {
-      "id": "nodo-elec-alto-baguales",
-      "nombre": "Parque Eólico Alto Baguales",
-      "tipo": "Parque Eólico",
-      "codigo_comuna": "CL-XI-01",
-      "comuna_ine": "11101",
-      "lat": -45.552,
-      "lng": -72.042,
-      "atributos": {
-        "potencia_mw": 3.2,
-        "tecnologia": "Aerogeneradores eólicos",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "aerogeneradores": 3
-      },
-      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-    },
-    {
-      "id": "nodo-elec-tehuelche",
-      "nombre": "Central Térmica Tehuelche (Coyhaique)",
-      "tipo": "Central Térmica Diésel",
-      "codigo_comuna": "CL-XI-01",
-      "comuna_ine": "11101",
-      "lat": -45.578,
-      "lng": -72.072,
-      "atributos": {
-        "potencia_mw": 19.8,
-        "tecnologia": "Motores diésel de respaldo y punta",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "combustible": "Petróleo Diésel"
-      },
-      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-    },
-    {
-      "id": "nodo-elec-chacabuco",
-      "nombre": "Central Térmica Chacabuco",
-      "tipo": "Central Térmica Diésel",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -45.465,
-      "lng": -72.821,
-      "atributos": {
-        "potencia_mw": 23.5,
-        "tecnologia": "Motores diésel base industrial",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "combustible": "Petróleo Diésel"
-      },
-      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-    },
-    {
-      "id": "nodo-elec-chile-chico",
-      "nombre": "Central Térmica Diésel Chile Chico",
-      "tipo": "Central Térmica Diésel",
-      "codigo_comuna": "CL-XI-06",
-      "comuna_ine": "11401",
-      "lat": -46.545,
-      "lng": -71.728,
-      "atributos": {
-        "potencia_mw": 4.8,
-        "tecnologia": "Generación diésel sistema lacustre",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano General Carrera",
-        "combustible": "Petróleo Diésel"
-      },
-      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
-    },
-    {
-      "id": "nodo-elec-cochrane",
-      "nombre": "Central Térmica Diésel Cochrane",
-      "tipo": "Central Térmica Diésel",
+      "id": "nodo-elec-central-diesel-cochrane",
+      "nombre": "Central Térmica Cochrane",
+      "tipo": "Térmica Diésel",
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
-      "lat": -47.258,
-      "lng": -72.578,
+      "lat": -47.256,
+      "lng": -72.575,
       "atributos": {
-        "potencia_mw": 3.8,
-        "tecnologia": "Generación diésel sistema austral",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano General Carrera",
-        "combustible": "Petróleo Diésel"
+        "potencia_mw": 1.9,
+        "tecnologia": "Térmica Diésel",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano General Carrera (SMGC)",
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 Ruta 7 Sur",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-elec-melinka",
-      "nombre": "Central Generación Diésel Melinka",
-      "tipo": "Central Térmica Diésel",
+      "id": "nodo-elec-central-hidro-el-traro",
+      "nombre": "Central Hidroeléctrica El Traro",
+      "tipo": "Hidroeléctrica de pasada",
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "lat": -47.231,
+      "lng": -72.512,
+      "atributos": {
+        "potencia_mw": 0.64,
+        "tecnologia": "Hidroeléctrica de pasada",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Sistema Mediano General Carrera (SMGC)",
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 Ruta 7 Sur",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
+    },
+    {
+      "id": "nodo-elec-central-diesel-melinka",
+      "nombre": "Central Térmica Municipal Melinka-Repollal",
+      "tipo": "Térmica Diésel",
       "codigo_comuna": "CL-XI-05",
       "comuna_ine": "11203",
-      "lat": -43.898,
-      "lng": -73.745,
+      "lat": -43.899,
+      "lng": -73.748,
       "atributos": {
-        "potencia_mw": 2.8,
-        "tecnologia": "Generación diésel sistema aislado insular",
+        "potencia_mw": 1.45,
+        "tecnologia": "Térmica Diésel",
         "operador": "Ilustre Municipalidad de Guaitecas",
-        "sistema": "Sistema Aislado Melinka",
-        "combustible": "Petróleo Diésel subsidiado marítimo"
-      },
-      "source_url": "https://www.cne.cl/estadisticas/electricidad/"
-    },
-    {
-      "id": "nodo-elec-puerto-aguirre",
-      "nombre": "Central Térmica Puerto Aguirre (Islas Huichas)",
-      "tipo": "Central Térmica Diésel",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -45.164,
-      "lng": -73.523,
-      "atributos": {
-        "potencia_mw": 2.2,
-        "tecnologia": "Generación diésel sistema insular",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Aislado Islas Huichas",
-        "combustible": "Petróleo Diésel"
+        "sistema": "Sistema Aislado Municipal Melinka-Repollal",
+        "tipo_enlace": "FTTH domiciliaria 33 localidades inc. Melinka, Repollal, La Junta, Puyuhuapi y Lago Verde (adj. 23-jul-2026)",
+        "capacidad_diseno_tbps": 1.0,
+        "operador_troncal": "Pacífico Cable SpA + DB Terra Chile Holdco SpA / GORE-SUBTEL",
+        "mandante": "SUBTEL"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-elec-caleta-tortel",
-      "nombre": "Central Generación Diésel Caleta Tortel",
-      "tipo": "Central Térmica Diésel",
+      "id": "nodo-elec-central-hibrida-caleta-tortel",
+      "nombre": "Central Híbrida Municipal Caleta Tortel (Diésel + Microhidro Pelton)",
+      "tipo": "Híbrida Diésel + Microhidro",
       "codigo_comuna": "CL-XI-10",
       "comuna_ine": "11303",
       "lat": -47.798,
       "lng": -73.538,
       "atributos": {
-        "potencia_mw": 1.1,
-        "tecnologia": "Generación diésel sistema aislado",
+        "potencia_mw": 0.95,
+        "tecnologia": "Híbrida Diésel + Microhidro",
         "operador": "Ilustre Municipalidad de Tortel",
-        "sistema": "Sistema Aislado Caleta Tortel",
-        "combustible": "Petróleo Diésel"
-      },
-      "source_url": "https://www.cne.cl/estadisticas/electricidad/"
-    },
-    {
-      "id": "nodo-elec-puerto-cisnes",
-      "nombre": "Central Térmica Puerto Cisnes",
-      "tipo": "Central Térmica Diésel",
-      "codigo_comuna": "CL-XI-04",
-      "comuna_ine": "11202",
-      "lat": -44.741,
-      "lng": -72.695,
-      "atributos": {
-        "potencia_mw": 3.5,
-        "tecnologia": "Generación diésel sistema mediano norte",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano Palena-Cisnes",
-        "combustible": "Petróleo Diésel"
+        "sistema": "Sistema Aislado Municipal Caleta Tortel",
+        "tipo_enlace": "Único POIIT Aysén de Troncal Submarina Austral (FDT-2017-01, Puerto Montt - Tortel - Punta Arenas - Williams)",
+        "capacidad_diseno_tbps": 16.0,
+        "operador_troncal": "CTR S.A. / SUBTEL",
+        "mandante": "SUBTEL"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-foa-melinka",
-      "nombre": "Nodo Troncal FOA Melinka (Aterrizaje Submarino)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-05",
-      "comuna_ine": "11203",
-      "lat": -43.894,
-      "lng": -73.742,
+      "id": "nodo-elec-central-hibrida-rio-mosco-ohiggins",
+      "nombre": "Central Híbrida Río Mosco / Villa O'Higgins (Hidro + Respaldo Diésel)",
+      "tipo": "Híbrida Hidroeléctrica + Diésel",
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "lat": -48.472,
+      "lng": -72.548,
       "atributos": {
-        "tipo_enlace": "Submarino",
-        "capacidad_diseno_tbps": 16.0,
-        "operador_troncal": "Comunicación y Telefonía Rural (CTR)",
+        "potencia_mw": 1.25,
+        "tecnologia": "Híbrida Hidroeléctrica + Diésel",
+        "operador": "Ilustre Municipalidad de O'Higgins",
+        "sistema": "Sistema Aislado Municipal Villa O'Higgins",
+        "tipo_enlace": ">150 km (42 km submarinos Fiordo Mitchell), D.O. 28-abr-2026",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Consorcio Pacífico Cable SpA + DB Terra Chile Holdco SpA / SUBTEL",
         "mandante": "SUBTEL"
       },
-      "source_url": "https://www.subtel.gob.cl/foa/"
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-foa-puerto-aguirre",
-      "nombre": "Nodo Troncal FOA Puerto Aguirre (Aterrizaje Submarino)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -45.161,
-      "lng": -73.52,
+      "id": "nodo-elec-central-respaldo-rio-ibanez",
+      "nombre": "Grupos Térmicos de Respaldo Local Cerro Castillo - Puerto Ibáñez",
+      "tipo": "Térmica Diésel de Respaldo",
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "lat": -46.291,
+      "lng": -71.936,
       "atributos": {
-        "tipo_enlace": "Submarino",
-        "capacidad_diseno_tbps": 16.0,
-        "operador_troncal": "Comunicación y Telefonía Rural (CTR)",
+        "potencia_mw": 1.4,
+        "tecnologia": "Térmica Diésel de Respaldo",
+        "operador": "Edelaysen S.A. (Grupo Saesa)",
+        "sistema": "Ramal Sur SMA / Respaldo Local",
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (4 POIITs Silica Networks)",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
         "mandante": "SUBTEL"
       },
-      "source_url": "https://www.subtel.gob.cl/foa/"
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-foa-puerto-cisnes",
-      "nombre": "Nodo Troncal FOA Puerto Cisnes (Aterrizaje Submarino y Terrestre)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-04",
-      "comuna_ine": "11202",
-      "lat": -44.745,
-      "lng": -72.698,
+      "id": "nodo-elec-central-local-lago-verde",
+      "nombre": "Central Local SM Palena / Micro-redes Villa La Tapera y Amengual",
+      "tipo": "Térmica Diésel / Micro-redes",
+      "codigo_comuna": "CL-XI-02",
+      "comuna_ine": "11102",
+      "lat": -44.241,
+      "lng": -71.8465,
       "atributos": {
-        "tipo_enlace": "Submarino / Terrestre",
-        "capacidad_diseno_tbps": 16.0,
-        "operador_troncal": "CTR / Silice",
-        "mandante": "SUBTEL"
+        "potencia_mw": 0.35,
+        "tecnologia": "Térmica Diésel / Micro-redes",
+        "operador": "Edelaysen S.A. / Ilustre Municipalidad de Lago Verde",
+        "sistema": "Fracción Sistema Mediano Palena y Sistema Aislado Rural Lago Verde"
       },
-      "source_url": "https://www.subtel.gob.cl/foa/"
+      "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
     {
-      "id": "nodo-foa-chacabuco",
-      "nombre": "Nodo Troncal FOA Chacabuco (Aterrizaje Submarino / Terrestre)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -45.468,
-      "lng": -72.825,
-      "atributos": {
-        "tipo_enlace": "Submarino y conexión terrestre a Coyhaique",
-        "capacidad_diseno_tbps": 16.0,
-        "operador_troncal": "CTR",
-        "mandante": "SUBTEL"
-      },
-      "source_url": "https://www.subtel.gob.cl/foa/"
-    },
-    {
-      "id": "nodo-foa-coyhaique",
-      "nombre": "Nodo Troncal FOA Coyhaique (Centro Distribución Regional)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-01",
-      "comuna_ine": "11101",
-      "lat": -45.569,
-      "lng": -72.065,
-      "atributos": {
-        "tipo_enlace": "Terrestre / Hub Regional",
-        "conecta": "Aysén, Balmaceda, Ruta 7 Sur",
-        "operador_troncal": "CTR / Conductores Ópticos Australes",
-        "mandante": "SUBTEL"
-      },
-      "source_url": "https://www.subtel.gob.cl/foa/"
-    },
-    {
-      "id": "nodo-foa-chile-chico",
-      "nombre": "Nodo Troncal FOA Chile Chico (Poblado Lacustre)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-06",
-      "comuna_ine": "11401",
-      "lat": -46.539,
-      "lng": -71.72,
-      "atributos": {
-        "tipo_enlace": "Terrestre Lacustre",
-        "operador_troncal": "Silice / SUBTEL",
-        "mandante": "SUBTEL"
-      },
-      "source_url": "https://www.subtel.gob.cl/foa/"
-    },
-    {
-      "id": "nodo-foa-cochrane",
-      "nombre": "Nodo Troncal FOA Cochrane (Troncal Sur Provincial)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
-      "codigo_comuna": "CL-XI-08",
-      "comuna_ine": "11301",
-      "lat": -47.252,
-      "lng": -72.568,
-      "atributos": {
-        "tipo_enlace": "Terrestre Ruta 7",
-        "conecta": "Río Tranquilo, Cochrane, derivación Tortel",
-        "operador_troncal": "Silice / SUBTEL",
-        "mandante": "SUBTEL"
-      },
-      "source_url": "https://www.subtel.gob.cl/foa/"
-    },
-    {
-      "id": "nodo-foa-tortel",
-      "nombre": "Nodo Troncal FOA Caleta Tortel (Aterrizaje Submarino Sur)",
-      "tipo": "Nodo Troncal Fibra Óptica Austral",
+      "id": "nodo-foa-foa-nodo-tortel",
+      "nombre": "Nodo Troncal FOA Caleta Tortel (Único Aterrizaje Submarino CTR en Aysén)",
+      "tipo": "Nodo Troncal Fibra Óptica Austral Submarina CTR",
       "codigo_comuna": "CL-XI-10",
       "comuna_ine": "11303",
       "lat": -47.793,
       "lng": -73.532,
       "atributos": {
-        "tipo_enlace": "Submarino / Terrestre extremo",
+        "tipo_enlace": "Único POIIT Aysén de Troncal Submarina Austral (FDT-2017-01, Puerto Montt - Tortel - Punta Arenas - Williams)",
         "capacidad_diseno_tbps": 16.0,
-        "operador_troncal": "CTR",
+        "operador_troncal": "CTR S.A. / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-cable-submarino-gtd-chacabuco",
+      "nombre": "Aterrizaje Cable Submarino Austral Privado GTD / Telsur (Puerto Chacabuco)",
+      "tipo": "Cable Submarino Austral Privado GTD / Telefónica del Sur",
+      "codigo_comuna": "CL-XI-03",
+      "comuna_ine": "11201",
+      "lat": -45.468,
+      "lng": -72.825,
+      "atributos": {
+        "tipo_enlace": "Cable Submarino privado ~400 km desde Quellón (operativo desde 2014) -> Coyhaique -> Cable Prat",
+        "capacidad_diseno_tbps": 12.0,
+        "operador_troncal": "GTD / Telefónica del Sur (Privado)",
+        "mandante": "SUBTEL",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
+        "productos": [
+          "Gasolina 93/97",
+          "Petróleo Diésel",
+          "Kerosene Doméstico (único estanque regional en Copec)"
+        ],
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-foa-nodo-coyhaique",
+      "nombre": "POIIT Troncal Terrestre FOA Coyhaique - El Blanco - Balmaceda (Silica Networks)",
+      "tipo": "Nodo Troncal Terrestre Fibra Óptica Austral",
+      "codigo_comuna": "CL-XI-01",
+      "comuna_ine": "11101",
+      "lat": -45.569,
+      "lng": -72.065,
+      "atributos": {
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (>617 km, 14 POIITs Silica Networks)",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL",
+        "comuna": "Coyhaique",
+        "tension_kv": "23/66",
+        "operador": "Edelaysen S.A."
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-foa-nodo-chile-chico",
+      "nombre": "POIITs Troncal Terrestre Cuenca General Carrera (Puerto Guadal - Mallín Grande - Chile Chico)",
+      "tipo": "Nodo Troncal Terrestre Fibra Óptica Austral",
+      "codigo_comuna": "CL-XI-06",
+      "comuna_ine": "11401",
+      "lat": -46.539,
+      "lng": -71.72,
+      "atributos": {
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (Cuenca General Carrera)",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-foa-nodo-cochrane",
+      "nombre": "POIITs Troncal Terrestre Capitán Prat (Puerto Bertrand - Cochrane - Los Ñadis)",
+      "tipo": "Nodo Troncal Terrestre Fibra Óptica Austral",
+      "codigo_comuna": "CL-XI-08",
+      "comuna_ine": "11301",
+      "lat": -47.252,
+      "lng": -72.568,
+      "atributos": {
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 Ruta 7 Sur",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-foa-nodo-rio-ibanez-tranquilo",
+      "nombre": "POIITs Troncal Terrestre Cerro Castillo - Puerto Ibáñez - Bahía Murta - Río Tranquilo",
+      "tipo": "Nodo Troncal Terrestre Fibra Óptica Austral",
+      "codigo_comuna": "CL-XI-07",
+      "comuna_ine": "11402",
+      "lat": -46.291,
+      "lng": -71.936,
+      "atributos": {
+        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (4 POIITs Silica Networks)",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-fdt-fibra-tortel-ohiggins",
+      "nombre": "Enlace Fibra Óptica Tortel - Puerto Yungay - Villa O'Higgins (1S-2028)",
+      "tipo": "Proyecto FDT Submarino/Terrestre en Despliegue",
+      "codigo_comuna": "CL-XI-09",
+      "comuna_ine": "11302",
+      "lat": -48.468,
+      "lng": -72.56,
+      "atributos": {
+        "tipo_enlace": ">150 km (42 km submarinos Fiordo Mitchell), D.O. 28-abr-2026",
+        "capacidad_diseno_tbps": 10.0,
+        "operador_troncal": "Consorcio Pacífico Cable SpA + DB Terra Chile Holdco SpA / SUBTEL",
+        "mandante": "SUBTEL"
+      },
+      "source_url": "https://www.subtel.gob.cl/foa/"
+    },
+    {
+      "id": "nodo-foa-fdt-ultima-milla-33-loc",
+      "nombre": "Proyecto Última Milla Aysén Servicio Hogar FDT-2025-03 (33 Localidades)",
+      "tipo": "Red FTTH Última Milla FDT-2025-03 (En despliegue)",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.894,
+      "lng": -73.742,
+      "atributos": {
+        "tipo_enlace": "FTTH domiciliaria 33 localidades inc. Melinka, Repollal, La Junta, Puyuhuapi y Lago Verde (adj. 23-jul-2026)",
+        "capacidad_diseno_tbps": 1.0,
+        "operador_troncal": "Pacífico Cable SpA + DB Terra Chile Holdco SpA / GORE-SUBTEL",
         "mandante": "SUBTEL"
       },
       "source_url": "https://www.subtel.gob.cl/foa/"
     },
     {
       "id": "nodo-combustibles-chacabuco",
-      "nombre": "Terminal Marítimo y Planta de Combustibles Enex / Copec Puerto Chacabuco",
+      "nombre": "Terminal Marítimo MBM Copec (6.674 m³ activos) y Estanques Comaco (3.800 m³) Puerto Chacabuco",
       "tipo": "Terminal de Almacenamiento y Distribución de Combustibles",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "lat": -45.462,
       "lng": -72.818,
       "atributos": {
-        "tipo": "Bunkering marítimo y estanques terrestres",
+        "tipo": "Terminal Marítimo MBM y estanques terrestres",
         "productos": [
           "Gasolina 93/97",
           "Petróleo Diésel",
           "Kerosene Doméstico"
         ],
-        "operadores": "Enex / Copec / Petrobras",
-        "capacidad_m3": 18500
+        "operadores": "Copec (MBM activo) / Enex-Shell y Esmax-Aramco vía Comaco",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³)",
+        "comuna": "Aysén",
+        "capacidad_comaco_estanques_m3": 3800,
+        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
       },
       "source_url": "https://www.sec.cl"
     },
@@ -3148,8 +3442,9 @@
       "atributos": {
         "tension_kv": "23/66",
         "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén",
-        "funcion": "Transformación y despacho troncal Coyhaique - Aysén"
+        "sistema": "Sistema Mediano de Aysén (SMA)",
+        "funcion": "Transformación y despacho troncal Coyhaique - Aysén",
+        "comuna": "Coyhaique"
       },
       "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen"
     }
