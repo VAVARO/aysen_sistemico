@@ -401,6 +401,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
   const comunaHogares = {};
   const comunaPoblacion = {};
   const ingresosMunBcn2025ByIne = {};
+  const bosqueNativoByIne = {};
   const nameToIne = {};
   for (const row of (dataLake.comunas || [])) {
     const ine = String(row.comuna_ine || row.codigo_comuna || '');
@@ -409,6 +410,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
       if (typeof row.hogares_censo_2024 === 'number') comunaHogares[ine] = row.hogares_censo_2024;
       if (typeof row.poblacion_censo_2024 === 'number') comunaPoblacion[ine] = row.poblacion_censo_2024;
       if (typeof row.ingresos_mun_bcn_2025_mclp === 'number') ingresosMunBcn2025ByIne[ine] = row.ingresos_mun_bcn_2025_mclp;
+      if (typeof row.bosque_nativo_ha === 'number') bosqueNativoByIne[ine] = row.bosque_nativo_ha;
     }
   }
 
@@ -438,6 +440,71 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     }
   }
 
+  // Contexto Hub V (Sprint 8 - Eval E18)
+  const hub4Obj = Array.isArray(dataLake.hubs) ? dataLake.hubs.find(h => h && h.id === 'inversion') : null;
+  const nodo20 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 20) : null;
+  const wp04Json = readJsonSafe(options.wp04Path || path.join(ROOT_DIR, 'data', 'systemic', '04_inversion_seia_economia.json'), null);
+  const wp03Json = readJsonSafe(options.wp03Path || path.join(ROOT_DIR, 'data', 'systemic', '03_concesiones_tierra_mar.json'), null);
+  const seiaSpatialNodes = (dataLake.spatialNodesByLayer && Array.isArray(dataLake.spatialNodesByLayer.proyectos_seia_puros))
+    ? dataLake.spatialNodesByLayer.proyectos_seia_puros.map(n => ({
+        id: String(n.id || ''),
+        nombre: String(n.nombre || ''),
+        magnitudeValue: Number(n.magnitudeValue) || 0,
+        sourceUrl: String(n.sourceUrl || n.source_url || '')
+      }))
+    : [];
+  const wp04SeiaNodes = (wp04Json && Array.isArray(wp04Json.nodos_georreferenciados))
+    ? wp04Json.nodos_georreferenciados.map(n => ({
+        id: String(n.id || ''),
+        nombre: String(n.nombre || ''),
+        monto_inversion_mmusd: Number((n.atributos && n.atributos.monto_inversion_mmusd) || 0),
+        source_url: String(n.source_url || '')
+      }))
+    : [];
+  const mineriaFaenas = (dataLake.spatialNodesByLayer && Array.isArray(dataLake.spatialNodesByLayer.mineria_faenas))
+    ? dataLake.spatialNodesByLayer.mineria_faenas.map(n => ({
+        id: String(n.id || ''),
+        nombre: String(n.nombre || ''),
+        titular: String(n.titular || ''),
+        magnitudeValue: Number(n.magnitudeValue) || 0
+      }))
+    : [];
+  const pibSeriesArr = (dataLake.series && Array.isArray(dataLake.series.pib_regional_nominal_mmclp))
+    ? dataLake.series.pib_regional_nominal_mmclp
+    : [];
+  const pib2025Entry = pibSeriesArr.find(r => String(r.periodo || r.anio || '') === '2025') || null;
+  const mpSeriesArr = (dataLake.series && Array.isArray(dataLake.series.transacciones_compras_publicas_mclp))
+    ? dataLake.series.transacciones_compras_publicas_mclp
+    : [];
+  const mp2026Entry = mpSeriesArr.find(r => String(r.periodo || r.anio || '') === '2026') || null;
+  const wp03Res = (wp03Json && wp03Json.resumen_regional) || {};
+  const wp07Json = readJsonSafe(path.join(ROOT_DIR, 'data', 'systemic', '07_biodiversidad_flora_fauna_aysen.json'), null);
+  const wp07Conaf2026 = (dataLake.catastroVegetacionalConaf2026) || (wp07Json && wp07Json.resumen_regional && wp07Json.resumen_regional.catastro_vegetacional_conaf_2026) || {};
+
+  const hub5EconomyAudit = {
+    hub4ExampleText: String((hub4Obj && hub4Obj.example) || ''),
+    nodo20TramosData: Array.isArray(nodo20 && nodo20.chartSpec && nodo20.chartSpec.datasets && nodo20.chartSpec.datasets[0] && nodo20.chartSpec.datasets[0].data)
+      ? nodo20.chartSpec.datasets[0].data.map(Number)
+      : [],
+    seiaSpatialNodes,
+    wp04SeiaNodes,
+    mineriaFaenas,
+    sernageominResumen: {
+      concesiones_totales: Number(wp03Res.concesiones_mineras_totales || ((Number(wp03Res.concesiones_mineras_explotacion_totales) || 0) + (Number(wp03Res.concesiones_mineras_exploracion_totales) || 0))) || 0,
+      explotacion: Number(wp03Res.concesiones_mineras_explotacion_totales) || 0,
+      exploracion: Number(wp03Res.concesiones_mineras_exploracion_totales) || 0,
+      superficie_ha: Number(wp03Res.superficie_concesionada_mineria_ha) || 0
+    },
+    pib2025Mmclp: pib2025Entry ? Number(pib2025Entry.valor) : null,
+    chilecompra2026YtdMclp: mp2026Entry ? Number(mp2026Entry.valor) : Number((dataLake.chilecompraMercadoPublico && dataLake.chilecompraMercadoPublico['2026_ytd_22oct'] && dataLake.chilecompraMercadoPublico['2026_ytd_22oct'].monto_mclp) || 0),
+    bosqueNativoByIne,
+    conaf2026: {
+      superficie_catastrada_ha: Number(wp07Conaf2026.superficie_catastrada_ha) || 0,
+      bosque_nativo_ha: Number(wp07Conaf2026.bosque_nativo_ha) || 0,
+      bosques_en_snaspe_ha: Number(wp07Conaf2026.bosques_en_snaspe_ha) || 0
+    }
+  };
+
   return {
     schemaVersion: '3.0.0',
     label,
@@ -454,6 +521,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
       padronOct2024ByIne,
       votantesOct2024ByIne
     },
+    hub5EconomyAudit,
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -914,6 +982,144 @@ function evaluateHub4FiscalAndElectoralInvariants(bundleOrSnapshot, options = {}
   return alerts;
 }
 
+function evaluateHub5EconomyInvestmentLandInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'direct', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h5 = snapshot.hub5EconomyAudit || {};
+  if (comunas.length === 0 || !h5.nodo20TramosData) return alerts;
+
+  // 1. Erradicación de "Central Hidroeléctrica Los Cóndores" + 0 id_expediente + sincronía 1:1 SEIA
+  const seiaSp = Array.isArray(h5.seiaSpatialNodes) ? h5.seiaSpatialNodes : [];
+  const wp04Seia = Array.isArray(h5.wp04SeiaNodes) ? h5.wp04SeiaNodes : [];
+  const hasLosCondores = seiaSp.some(n => /los[-_\s]?c[oó]ndores/i.test(`${n.id} ${n.nombre}`)) ||
+    wp04Seia.some(n => /los[-_\s]?c[oó]ndores/i.test(`${n.id} ${n.nombre}`));
+  const hasFakeExpediente = seiaSp.some(n => /id_expediente=/i.test(n.sourceUrl || '')) ||
+    wp04Seia.some(n => /id_expediente=/i.test(n.source_url || ''));
+  let seiaMismatchDetail = '';
+  if (seiaSp.length !== 20 || wp04Seia.length !== 20) {
+    seiaMismatchDetail = `Conteo SEIA distinto de 20 (bundle=${seiaSp.length}, wp04=${wp04Seia.length})`;
+  } else {
+    const wp04Map = new Map(wp04Seia.map(n => [`inv_${n.id}`, n.monto_inversion_mmusd]));
+    for (const sn of seiaSp) {
+      const expM = wp04Map.get(sn.id);
+      if (expM === undefined || Math.abs(sn.magnitudeValue - expM) > 0.01) {
+        seiaMismatchDetail = `Desincronia 1:1 en ${sn.id}: bundle=${sn.magnitudeValue} vs wp04=${expM}`;
+        break;
+      }
+    }
+  }
+  if (hasLosCondores || hasFakeExpediente || seiaMismatchDetail) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_GEOGRAFICO_SEIA_LOS_CONDORES',
+      invariant: 'INVARIANTE_SEIA_GEO_Y_SINCRONIA_1A1',
+      indicator: 'inversion_seia_mmusd',
+      hub: CANONICAL_HUB_TITLES.inversion,
+      detail: `[ERROR_GEOGRAFICO_SEIA_LOS_CONDORES] SEIA invalido: losCondores=${hasLosCondores}, idExpedienteFicticio=${hasFakeExpediente}, sync=${seiaMismatchDetail || 'OK'}.`
+    });
+  }
+
+  // 2. Contradicción SII (0 9.365/56.475, 5 tramos = 12.953 y ventas locales 25.800 vs bruto 131.520)
+  const hub4Ex = String(h5.hub4ExampleText || '');
+  const hasOldSiiExample = /9\.365|56\.475/.test(hub4Ex);
+  const tramos = Array.isArray(h5.nodo20TramosData) ? h5.nodo20TramosData : [];
+  const tramosSum = tramos.reduce((a, b) => a + (Number(b) || 0), 0);
+  const sumVentasLocal = comunas.reduce((a, c) => a + (Number(indicators.ventas_sii_domicilio_local_muf?.values?.[c.comuna_ine]) || 0), 0);
+  const sumVentasBruto = comunas.reduce((a, c) => a + (Number(indicators.ventas_sii_muf?.values?.[c.comuna_ine]) || 0), 0);
+  if (hasOldSiiExample || tramos.length !== 5 || tramosSum !== 12953 || Math.abs(sumVentasLocal - 25800) > 1 || Math.abs(sumVentasBruto - 131520) > 1) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CONTRADICCION_SII_TRAMOS_Y_VENTAS',
+      invariant: 'INVARIANTE_SII_5_TRAMOS_Y_VENTAS_UF',
+      indicator: 'ventas_sii_domicilio_local_muf',
+      hub: CANONICAL_HUB_TITLES.inversion,
+      detail: `[ERROR_CONTRADICCION_SII_TRAMOS_Y_VENTAS] SII inconsistente: oldEx=${hasOldSiiExample}, tramos=${tramos.length} (sum=${tramosSum}), localMUF=${sumVentasLocal}, brutoMUF=${sumVentasBruto}.`
+    });
+  }
+
+  // 3. Catastro Minero SERNAGEOMIN (356 conc. / 128.511 ha) y titulares reales El Toqui / Cerro Bayo
+  const sumMinHa = comunas.reduce((a, c) => a + (Number(indicators.concesiones_mineras_ha?.values?.[c.comuna_ine]) || 0), 0);
+  const ccMinHa = Number(indicators.concesiones_mineras_ha?.values?.['11401']) || 0;
+  const torMinHa = Number(indicators.concesiones_mineras_ha?.values?.['11303']) || 0;
+  const guaMinHa = Number(indicators.concesiones_mineras_ha?.values?.['11203']) || 0;
+  const sernRes = h5.sernageominResumen || {};
+  const faenas = Array.isArray(h5.mineriaFaenas) ? h5.mineriaFaenas : [];
+  const toquiNode = faenas.find(f => f.id === 'inv_min_el_toqui');
+  const bayoNode = faenas.find(f => f.id === 'inv_min_cerro_bayo');
+  const titularesOk = Boolean(
+    toquiNode && /Pac[ií]fico del Sur/i.test(toquiNode.titular) &&
+    bayoNode && /Andean Silver/i.test(bayoNode.titular)
+  );
+  if (
+    Math.abs(sumMinHa - 128511) > 1 ||
+    ccMinHa !== 47537 ||
+    torMinHa !== 0 ||
+    guaMinHa !== 0 ||
+    (sernRes.explotacion + sernRes.exploracion) !== 356 ||
+    !titularesOk
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CATASTRO_MINERO_SERNAGEOMIN',
+      invariant: 'INVARIANTE_SERNAGEOMIN_356_CONCESIONES',
+      indicator: 'concesiones_mineras_ha',
+      hub: CANONICAL_HUB_TITLES.inversion,
+      detail: `[ERROR_CATASTRO_MINERO_SERNAGEOMIN] Catastro minero inconsistente: sumHa=${sumMinHa}, ChileChico=${ccMinHa}, Tortel=${torMinHa}, Guaitecas=${guaMinHa}, conc=${sernRes.explotacion}+${sernRes.exploracion}, titularesOk=${titularesOk}.`
+    });
+  }
+
+  // 4. Masa Ganadera ODEPA (144.118 bovinos y 177.972 ovinos)
+  const sumBov = comunas.reduce((a, c) => a + (Number(indicators.ganado_bovino_cabezas?.values?.[c.comuna_ine]) || 0), 0);
+  const sumOv = comunas.reduce((a, c) => a + (Number(indicators.ganado_ovino_cabezas?.values?.[c.comuna_ine]) || 0), 0);
+  if (sumBov !== 144118 || sumOv !== 177972) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_MASA_GANADERA_ODEPA',
+      invariant: 'INVARIANTE_MASA_GANADERA_ODEPA',
+      indicator: 'ganado_bovino_cabezas',
+      hub: CANONICAL_HUB_TITLES.inversion,
+      detail: `[ERROR_MASA_GANADERA_ODEPA] Masa ganadera incoherente: bovinos=${sumBov} (esp. 144118), ovinos=${sumOv} (esp. 177972).`
+    });
+  }
+
+  // 5. PIB BCCh 2025 (1.991.000 MM$) y ChileCompra 2026 YTD (228.874,2 M$)
+  if (Number(h5.pib2025Mmclp) !== 1991000 || Math.abs((Number(h5.chilecompra2026YtdMclp) || 0) - 228874.2) > 0.2) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_PIB_BCCH_Y_CHILECOMPRA',
+      invariant: 'INVARIANTE_BCCH_PIB_Y_CHILECOMPRA',
+      indicator: 'pib_regional_nominal_mmclp',
+      hub: CANONICAL_HUB_TITLES.inversion,
+      detail: `[ERROR_PIB_BCCH_Y_CHILECOMPRA] PIB 2025=${h5.pib2025Mmclp} (esp. 1991000) o ChileCompra 2026 YTD=${h5.chilecompra2026YtdMclp} (esp. 228874.2).`
+    });
+  }
+
+  // 6. Banca CMF en D.comunas y Catastro Vegetacional CONAF 2026 (5.152.384,3 ha / 2.387.525,4 ha SNASPE)
+  const hasAllCmfKeys = ['sucursales_bancarias_n', 'cajeros_automaticos_n', 'cajavecina_puntos_n'].every(k => Boolean(indicators[k]));
+  const sumBosque = comunas.reduce((a, c) => {
+    const v = indicators.bosque_nativo_ha?.values?.[c.comuna_ine] ?? h5.bosqueNativoByIne?.[c.comuna_ine] ?? 0;
+    return a + (Number(v) || 0);
+  }, 0);
+  const c26 = h5.conaf2026 || {};
+  if (!hasAllCmfKeys || Math.abs(sumBosque - 5152384.3) > 0.5 || Math.abs((Number(c26.bosques_en_snaspe_ha) || 0) - 2387525.4) > 0.5) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_BANCA_CMF_Y_CONAF_2026',
+      invariant: 'INVARIANTE_CMF_Y_CONAF_2026',
+      indicator: 'bosque_nativo_ha',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_BANCA_CMF_Y_CONAF_2026] hasAllCmfKeys=${hasAllCmfKeys}, sumBosque=${sumBosque.toFixed(1)} (esp. 5152384.3), snaspeBosque=${c26.bosques_en_snaspe_ha}.`
+    });
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -1169,10 +1375,11 @@ function compareSnapshots(baseline, current, options = {}) {
     .map(([hubTitle, count]) => ({ hubTitle, count }))
     .sort((a, b) => a.hubTitle.localeCompare(b.hubTitle));
 
-  // Invariantes físicos, demográficos, fiscales Hub IV y anti-colinealidad (Audit V3 / E17)
+  // Invariantes físicos, demográficos, fiscales Hub IV, económicos Hub V y anti-colinealidad (Audit V3 / E17-E18)
   const invariantAlerts = [
     ...evaluatePhysicalAndDemographicInvariants(current, options),
-    ...evaluateHub4FiscalAndElectoralInvariants(current, options)
+    ...evaluateHub4FiscalAndElectoralInvariants(current, options),
+    ...evaluateHub5EconomyInvestmentLandInvariants(current, options)
   ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
@@ -1826,6 +2033,7 @@ module.exports = {
   extractSnapshotFromBundle,
   evaluatePhysicalAndDemographicInvariants,
   evaluateHub4FiscalAndElectoralInvariants,
+  evaluateHub5EconomyInvestmentLandInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

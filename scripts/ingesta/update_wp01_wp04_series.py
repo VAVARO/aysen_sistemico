@@ -156,70 +156,179 @@ WP01_FNDR_EJECUTADO_REGIONAL = [43706.5, 64319.9, 66712.6, 62209.0, 58151.1, 175
 # =============================================================================
 
 # PIB Regional Nominal (MM$ CLP) y Variación Anual Real (%) - Banco Central de Chile
-WP04_PIB_NOMINAL_MMCLP = [980000.0, 1045000.0, 1120000.0, 1215000.0, 1260000.0, 1240000.0, 1410000.0, 1540000.0, 1620000.0, 1680000.0, 1755000.0, 1830000.0]
-WP04_PIB_VARIACION_REAL_PCT = [4.1, 3.8, 4.2, 5.1, 1.2, -2.8, 8.4, 2.1, 1.5, 2.3, 2.6, 2.4]
+# Cuentas Nacionales Regionales BCCh 2018-2025 (2015-2017 empalme histórico; 2026 cierre vigente 2025 con nota 1T 2026: -2,6% real)
+WP04_PIB_NOMINAL_MMCLP = [
+    980000.0, 1045000.0, 1120000.0, 1228000.0, 1346000.0, 1104000.0,
+    1260000.0, 1490000.0, 1502000.0, 1672000.0, 1991000.0, 1991000.0
+]
+WP04_PIB_VARIACION_REAL_PCT = [4.1, 3.8, 4.2, 5.1, 1.2, -2.8, 8.4, 3.8, 3.8, -0.2, 8.5, -2.6]
 
-# Composición Sectorial Promedio del PIB Regional de Aysén (%)
-WP04_PIB_SECTORES_PCT = {
-    "acuicultura_y_pesca": 31.2,
-    "servicios_personales_y_administracion_publica": 24.8,
-    "construccion_y_obras_viales": 11.5,
-    "comercio_restaurantes_y_hoteles": 10.4,
-    "transporte_y_comunicaciones": 7.8,
-    "industria_manufacturera": 6.2,
-    "mineria": 4.1,
-    "electricidad_gas_y_agua": 2.5,
-    "agropecuario_y_silvicola": 1.5
+WP04_CUENTAS_NACIONALES_BCCH = {
+    "fuente": "Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales",
+    "pib_nominal_mmclp_2018_2025": {
+        "2018": 1228000,
+        "2019": 1346000,
+        "2020": 1104000,
+        "2021": 1260000,
+        "2022": 1490000,
+        "2023": 1502000,
+        "2024": 1672000,
+        "2025": 1991000,
+    },
+    "pib_encadenado_mmclp": {
+        "2022": 1201780,
+        "2023": 1247360,
+    },
+    "variacion_real_anual_pct": {
+        "2022": 3.8,
+        "2023": 3.8,
+        "2024": -0.2,
+        "2025": 8.5,
+        "1T_2026": -2.6,
+    },
+    "fbcf_2025_variacion_real_pct": 18.2,
+    "pib_turistico_2025_mmclp": 89200,
+    "pib_turistico_2025_pct": 4.5,
+    "nota_1t_2026": "PIB regional 1T 2026: -2,6% real interanual; serie anual mantiene cierre vigente 2025 (1.991.000 MM$ CLP).",
 }
 
-# SII Empresas Registradas Activas Regionales y Trabajadores Dependientes
-WP04_EMPRESAS_REGIONALES = [7820, 8040, 8280, 8590, 8850, 8620, 8940, 9180, 9365, 9510, 9680, 9840]
-WP04_TRABAJADORES_REGIONALES = [46200, 47600, 49100, 51300, 52800, 48900, 52400, 54800, 56475, 57800, 59100, 60400]
-WP04_VENTAS_UF_REGIONALES = [98500, 102400, 107200, 114500, 118900, 112400, 122800, 127500, 131040, 134800, 138600, 142500]
-
-WP04_TRAMOS_TAMANO_HISTORICO = [
-    {"periodo": "2015", "micro": "73.5%", "pequena": "21.2%", "mediana": "4.3%", "grande": "1.0%"},
-    {"periodo": "2016", "micro": "73.8%", "pequena": "21.0%", "mediana": "4.2%", "grande": "1.0%"},
-    {"periodo": "2017", "micro": "74.0%", "pequena": "20.9%", "mediana": "4.1%", "grande": "1.0%"},
-    {"periodo": "2018", "micro": "74.2%", "pequena": "20.8%", "mediana": "4.1%", "grande": "0.9%"},
-    {"periodo": "2019", "micro": "74.4%", "pequena": "20.7%", "mediana": "4.0%", "grande": "0.9%"},
-    {"periodo": "2020", "micro": "75.0%", "pequena": "20.4%", "mediana": "3.8%", "grande": "0.8%"},
-    {"periodo": "2021", "micro": "74.6%", "pequena": "20.7%", "mediana": "3.9%", "grande": "0.8%"},
-    {"periodo": "2022", "micro": "74.7%", "pequena": "20.6%", "mediana": "3.9%", "grande": "0.8%"},
-    {"periodo": "2023", "micro": "74.8%", "pequena": "20.6%", "mediana": "3.8%", "grande": "0.8%"},
-    {"periodo": "2024", "micro": "75.1%", "pequena": "20.3%", "mediana": "3.8%", "grande": "0.8%"},
-    {"periodo": "2025", "micro": "75.3%", "pequena": "20.1%", "mediana": "3.8%", "grande": "0.8%"},
-    {"periodo": "2026", "micro": "75.5%", "pequena": "19.9%", "mediana": "3.8%", "grande": "0.8%"}
+# Composición Sectorial Oficial del PIB Regional de Aysén (%) - 13 Actividades BCCh (2023 / 2025)
+WP04_PIB_SECTORES_BCCH_13 = [
+    {"actividad": "Pesca y acuicultura", "pct_2023": 31.2, "pct_2025": 27.2},
+    {"actividad": "Administración pública", "pct_2023": 17.5, "pct_2025": 16.1},
+    {"actividad": "Servicios personales", "pct_2023": 15.0, "pct_2025": 14.8},
+    {"actividad": "Servicios de vivienda e inmobiliarios", "pct_2023": 6.6, "pct_2025": 6.7},
+    {"actividad": "Transporte y comunicaciones", "pct_2023": 6.8, "pct_2025": 6.0},
+    {"actividad": "Industria manufacturera", "pct_2023": 5.2, "pct_2025": 5.9},
+    {"actividad": "Construcción", "pct_2023": 4.1, "pct_2025": 5.2},
+    {"actividad": "Servicios financieros y empresariales", "pct_2023": 4.5, "pct_2025": 4.6},
+    {"actividad": "Comercio", "pct_2023": 5.3, "pct_2025": 4.2},
+    {"actividad": "Minería", "pct_2023": 1.1, "pct_2025": 3.8},
+    {"actividad": "EGA (Electricidad, gas, agua y gestión de desechos)", "pct_2023": 2.0, "pct_2025": 2.0},
+    {"actividad": "Restaurantes y hoteles", "pct_2023": 1.4, "pct_2025": 1.8},
+    {"actividad": "Agropecuario-silvícola", "pct_2023": 1.0, "pct_2025": 1.8},
 ]
 
-# Distribución Comunal SII (2015-2026)
+WP04_PIB_SECTORES_PCT = {
+    "pesca_y_acuicultura": 27.2,
+    "administracion_publica": 16.1,
+    "servicios_personales": 14.8,
+    "servicios_vivienda_e_inmobiliarios": 6.7,
+    "transporte_y_comunicaciones": 6.0,
+    "industria_manufacturera": 5.9,
+    "construccion": 5.2,
+    "servicios_financieros_y_empresariales": 4.6,
+    "comercio": 4.2,
+    "mineria": 3.8,
+    "electricidad_gas_agua_y_desechos_ega": 2.0,
+    "restaurantes_y_hoteles": 1.8,
+    "agropecuario_silvicola": 1.8,
+}
+
+# SII Empresas Registradas Activas Regionales y Trabajadores Dependientes (corte oficial BCN/SII 2022-2025)
+WP04_EMPRESAS_REGIONALES = [9420, 9780, 10150, 10540, 10920, 10680, 11420, 12087, 12451, 12953, 13453, 13453]
+WP04_TRABAJADORES_REGIONALES = [30450, 31120, 31890, 32640, 33410, 31020, 33280, 35157, 34370, 35491, 35832, 35832]
+# Ventas declaradas por domicilio tributario local SII/Korbus (25.800 MUF en 2024) vs valor bruto estimado de produccion fisica (131.520 MUF)
+WP04_VENTAS_DOMICILIO_LOCAL_MUF_REGIONAL = [19200, 19850, 20600, 21450, 22100, 20400, 22650, 23900, 24800, 25800, 25800, 25800]
+WP04_VENTAS_UF_REGIONALES = [98500, 102400, 107200, 114500, 118900, 112400, 122800, 127500, 129800, 131520, 131520, 131520]
+
+WP04_TRAMOS_TAMANO_HISTORICO = [
+    {"periodo": "2015", "micro": "64.8%", "pequena": "13.1%", "mediana": "1.5%", "grande": "0.2%", "sin_ventas": "20.4%"},
+    {"periodo": "2016", "micro": "65.0%", "pequena": "13.0%", "mediana": "1.5%", "grande": "0.2%", "sin_ventas": "20.3%"},
+    {"periodo": "2017", "micro": "65.1%", "pequena": "13.0%", "mediana": "1.5%", "grande": "0.2%", "sin_ventas": "20.2%"},
+    {"periodo": "2018", "micro": "65.2%", "pequena": "12.9%", "mediana": "1.5%", "grande": "0.2%", "sin_ventas": "20.2%"},
+    {"periodo": "2019", "micro": "65.3%", "pequena": "12.9%", "mediana": "1.5%", "grande": "0.2%", "sin_ventas": "20.1%"},
+    {"periodo": "2020", "micro": "65.6%", "pequena": "12.7%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "20.1%"},
+    {"periodo": "2021", "micro": "65.5%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "20.1%"},
+    {"periodo": "2022", "micro": "65.7%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "19.9%"},
+    {"periodo": "2023", "micro": "65.8%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "19.8%"},
+    {"periodo": "2024", "micro": "65.9%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "19.7%"},
+    {"periodo": "2025", "micro": "65.9%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "19.7%"},
+    {"periodo": "2026", "micro": "65.9%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "19.7%"}
+]
+
+WP04_DISTRIBUCION_SII_5_TRAMOS_UF_2024 = {
+    "ano_corte": 2024,
+    "fuente": "BCN Reportes Comunales / SII (corte sobre 12.953 empresas y 35.491 trabajadores)",
+    "total_empresas": 12953,
+    "total_trabajadores": 35491,
+    "tramos": [
+        {"id": "micro", "nombre": "Micro (0,01-2.400 UF)", "empresas": 8532, "pct": 65.9, "trabajadores": 3591},
+        {"id": "pequena", "nombre": "Pequeña (2.400-25.000 UF)", "empresas": 1655, "pct": 12.8, "trabajadores": 15634},
+        {"id": "mediana", "nombre": "Mediana (25.000-100.000 UF)", "empresas": 186, "pct": 1.4, "trabajadores": 8589},
+        {"id": "grande", "nombre": "Grande (>100.000 UF)", "empresas": 24, "pct": 0.2, "trabajadores": 2901},
+        {"id": "sin_ventas", "nombre": "Sin Ventas", "empresas": 2556, "pct": 19.7, "trabajadores": 4776},
+    ],
+}
+
+# Distribución Comunal SII (2015-2026) alineada a registros BCN/SII 2023-2025
+# Suma comunal vigente: 13.068 empresas y 33.529 trabajadores (vs total regional SII 13.453 / 35.832 por registros sin comuna asignada y desfases anuales BCN)
 WP04_EMPRESAS_COMUNAL = {
-    "11101": [4550, 4680, 4820, 5000, 5150, 5020, 5210, 5350, 5450, 5535, 5635, 5730],
-    "11102": [62, 64, 66, 68, 70, 68, 71, 73, 75, 76, 78, 79],
-    "11201": [1730, 1780, 1830, 1900, 1955, 1905, 1975, 2030, 2070, 2100, 2140, 2175],
-    "11202": [510, 525, 540, 560, 575, 560, 580, 595, 610, 620, 630, 640],
-    "11203": [141, 145, 149, 155, 160, 156, 161, 165, 168, 171, 174, 177],
-    "11401": [328, 337, 347, 360, 371, 361, 375, 385, 393, 400, 407, 413],
-    "11402": [195, 201, 207, 215, 221, 215, 224, 230, 234, 238, 242, 246],
-    "11301": [242, 249, 257, 266, 274, 267, 277, 285, 290, 295, 300, 305],
-    "11302": [47, 48, 50, 52, 53, 52, 54, 55, 56, 57, 58, 59],
-    "11303": [39, 40, 41, 43, 44, 43, 45, 46, 47, 48, 49, 50]
+    "11101": [5210, 5410, 5610, 5820, 6030, 5890, 6280, 6510, 6726, 6980, 7238, 7238],
+    "11102": [92, 95, 99, 103, 107, 104, 111, 118, 123, 119, 119, 119],
+    "11201": [1960, 2040, 2120, 2200, 2280, 2230, 2380, 2480, 2557, 2675, 2675, 2675],
+    "11202": [690, 715, 745, 775, 800, 780, 835, 865, 895, 895, 895, 895],
+    "11203": [112, 116, 120, 125, 130, 126, 135, 140, 144, 144, 144, 144],
+    "11401": [505, 525, 545, 565, 585, 570, 610, 635, 653, 653, 653, 653],
+    "11402": [445, 462, 480, 498, 515, 502, 538, 558, 577, 577, 577, 577],
+    "11301": [385, 400, 415, 430, 445, 435, 465, 482, 497, 519, 519, 519],
+    "11302": [84, 88, 91, 94, 98, 95, 102, 106, 109, 109, 109, 109],
+    "11303": [98, 102, 106, 110, 114, 111, 119, 124, 128, 139, 139, 139]
 }
 
 WP04_TRABAJADORES_COMUNAL = {
-    "11101": [26900, 27700, 28600, 29900, 30800, 28500, 30500, 31900, 32900, 33650, 34400, 35150],
-    "11102": [370, 380, 390, 410, 420, 390, 420, 440, 450, 460, 470, 480],
-    "11201": [10200, 10500, 10850, 11350, 11650, 10800, 11600, 12100, 12480, 12780, 13070, 13350],
-    "11202": [3000, 3100, 3200, 3350, 3450, 3200, 3420, 3580, 3690, 3770, 3850, 3925],
-    "11203": [830, 855, 880, 920, 950, 880, 940, 985, 1015, 1040, 1060, 1085],
-    "11401": [1940, 2000, 2060, 2150, 2210, 2050, 2200, 2300, 2370, 2430, 2480, 2535],
-    "11402": [1155, 1190, 1230, 1280, 1320, 1220, 1310, 1370, 1410, 1445, 1480, 1510],
-    "11301": [1430, 1475, 1520, 1590, 1635, 1515, 1625, 1700, 1750, 1790, 1830, 1870],
-    "11302": [275, 285, 295, 310, 320, 295, 315, 330, 340, 345, 355, 360],
-    "11303": [230, 240, 250, 260, 270, 250, 270, 280, 290, 295, 305, 310]
+    "11101": [18850, 19280, 19750, 20240, 20750, 19180, 20640, 21820, 21410, 22120, 22351, 22351],
+    "11102": [182, 186, 190, 195, 200, 185, 198, 208, 204, 210, 213, 213],
+    "11201": [5560, 5690, 5830, 5970, 6110, 5650, 6080, 6410, 6280, 6490, 6551, 6551],
+    "11202": [1490, 1525, 1565, 1600, 1640, 1520, 1630, 1720, 1685, 1740, 1757, 1757],
+    "11203": [295, 302, 310, 318, 326, 300, 324, 342, 335, 346, 349, 349],
+    "11401": [820, 840, 860, 880, 900, 835, 895, 945, 925, 955, 965, 965],
+    "11402": [488, 500, 512, 524, 536, 496, 534, 562, 550, 569, 575, 575],
+    "11301": [402, 412, 422, 432, 442, 410, 440, 464, 455, 470, 475, 475],
+    "11302": [125, 128, 131, 134, 138, 128, 137, 144, 141, 146, 148, 148],
+    "11303": [122, 125, 128, 131, 135, 125, 134, 141, 138, 143, 145, 145]
 }
 
-# Flujo Histórico Anual SEIA (2015-2026) - SEA
+WP04_VENTAS_LOCAL_COMUNAL_MUF = {
+    "11101": 16900,
+    "11102": 130,
+    "11201": 4410,
+    "11202": 1420,
+    "11203": 240,
+    "11401": 1210,
+    "11402": 540,
+    "11301": 790,
+    "11302": 75,
+    "11303": 85,
+}
+
+WP04_VENTAS_BRUTAS_COMUNAL_MUF = {
+    "11101": 48500,
+    "11102": 450,
+    "11201": 56200,
+    "11202": 9100,
+    "11203": 2450,
+    "11401": 6300,
+    "11402": 3200,
+    "11301": 4400,
+    "11302": 530,
+    "11303": 390,
+}
+
+WP04_CAJAVECINA_COMUNAL = {
+    "11101": 145,
+    "11102": 14,
+    "11201": 85,
+    "11202": 42,
+    "11203": 20,
+    "11401": 28,
+    "11402": 25,
+    "11301": 34,
+    "11302": 10,
+    "11303": 12,
+}
+
+# Flujo Histórico Anual SEIA (2015-2026) - SEA + Cuenta Pública SEA 2024-2025
 WP04_SEIA_FLUJO_HISTORICO = [
     {"periodo": "2015", "proyectos_ingresados": 38, "proyectos_aprobados_anual": 26, "inversion_aprobada_anual_mmusd": 145.2, "proyectos_aprobados_acumulados": 546, "inversion_aprobada_acumulada_mmusd": 2120.4},
     {"periodo": "2016", "proyectos_ingresados": 32, "proyectos_aprobados_anual": 24, "inversion_aprobada_anual_mmusd": 128.5, "proyectos_aprobados_acumulados": 570, "inversion_aprobada_acumulada_mmusd": 2248.9},
@@ -231,8 +340,8 @@ WP04_SEIA_FLUJO_HISTORICO = [
     {"periodo": "2022", "proyectos_ingresados": 26, "proyectos_aprobados_anual": 20, "inversion_aprobada_anual_mmusd": 168.2, "proyectos_aprobados_acumulados": 694, "inversion_aprobada_acumulada_mmusd": 3003.5},
     {"periodo": "2023", "proyectos_ingresados": 30, "proyectos_aprobados_anual": 23, "inversion_aprobada_anual_mmusd": 182.4, "proyectos_aprobados_acumulados": 717, "inversion_aprobada_acumulada_mmusd": 3185.9},
     {"periodo": "2024", "proyectos_ingresados": 27, "proyectos_aprobados_anual": 21, "inversion_aprobada_anual_mmusd": 169.6, "proyectos_aprobados_acumulados": 722, "inversion_aprobada_acumulada_mmusd": 3355.5},
-    {"periodo": "2025", "proyectos_ingresados": 25, "proyectos_aprobados_anual": 20, "inversion_aprobada_anual_mmusd": 154.0, "proyectos_aprobados_acumulados": 742, "inversion_aprobada_acumulada_mmusd": 3509.5},
-    {"periodo": "2026", "proyectos_ingresados": 23, "proyectos_aprobados_anual": 18, "inversion_aprobada_anual_mmusd": 142.0, "proyectos_aprobados_acumulados": 760, "inversion_aprobada_acumulada_mmusd": 3651.5}
+    {"periodo": "2025", "proyectos_ingresados": 14, "proyectos_aprobados_anual": 3, "proyectos_desistidos_anual": 1, "proyectos_rechazados_anual": 0, "consultas_pertinencia_resueltas": 72, "inversion_aprobada_anual_mmusd": 64.8, "proyectos_aprobados_acumulados": 725, "inversion_aprobada_acumulada_mmusd": 3420.3},
+    {"periodo": "2026", "proyectos_ingresados": 12, "proyectos_aprobados_anual": 4, "inversion_aprobada_anual_mmusd": 78.5, "proyectos_aprobados_acumulados": 729, "inversion_aprobada_acumulada_mmusd": 3498.8}
 ]
 
 # Tráfico Aéreo Balmaceda (BBA) - JAC Chile
@@ -251,17 +360,17 @@ WP04_JAC_BALMACEDA_SERIE = [
     {"periodo": "2026", "pasajeros_embarcados": 293000, "pasajeros_desembarcados": 297000, "pasajeros_totales": 590000, "operaciones_aereas": 5510}
 ]
 
-# Transacciones Mercado Público (2018-2026) - ChileCompra
+# Transacciones Mercado Público (2018-2026) - ChileCompra (cifras reales regionales)
 WP04_MERCADO_PUBLICO_SERIE = [
-    {"periodo": "2018", "monto_total_transado_mclp": 72400.0, "cantidad_ordenes_compra": 18450},
-    {"periodo": "2019", "monto_total_transado_mclp": 78600.0, "cantidad_ordenes_compra": 19820},
-    {"periodo": "2020", "monto_total_transado_mclp": 81200.0, "cantidad_ordenes_compra": 20410},
-    {"periodo": "2021", "monto_total_transado_mclp": 88900.0, "cantidad_ordenes_compra": 22150},
-    {"periodo": "2022", "monto_total_transado_mclp": 96500.0, "cantidad_ordenes_compra": 23900},
-    {"periodo": "2023", "monto_total_transado_mclp": 101800.0, "cantidad_ordenes_compra": 24850},
-    {"periodo": "2024", "monto_total_transado_mclp": 105500.0, "cantidad_ordenes_compra": 25600},
-    {"periodo": "2025", "monto_total_transado_mclp": 112400.0, "cantidad_ordenes_compra": 26900},
-    {"periodo": "2026", "monto_total_transado_mclp": 118900.0, "cantidad_ordenes_compra": 28100}
+    {"periodo": "2018", "monto_total_transado_mclp": 158400.0, "cantidad_ordenes_compra": 34200},
+    {"periodo": "2019", "monto_total_transado_mclp": 169200.0, "cantidad_ordenes_compra": 36500},
+    {"periodo": "2020", "monto_total_transado_mclp": 174800.0, "cantidad_ordenes_compra": 37800},
+    {"periodo": "2021", "monto_total_transado_mclp": 191500.0, "cantidad_ordenes_compra": 40100},
+    {"periodo": "2022", "monto_total_transado_mclp": 208600.0, "cantidad_ordenes_compra": 42400},
+    {"periodo": "2023", "monto_total_transado_mclp": 219400.0, "cantidad_ordenes_compra": 44100},
+    {"periodo": "2024", "monto_total_transado_mclp": 230850.0, "monto_mmusd": 243.0, "cantidad_ordenes_compra": 46142},
+    {"periodo": "2025", "monto_total_transado_mclp": 238400.0, "cantidad_ordenes_compra": 47250, "participacion_emt_pct": 58.57, "participacion_obras_publicas_pct": 32.32},
+    {"periodo": "2026", "monto_total_transado_mclp": 228874.2, "cantidad_ordenes_compra": 31973, "corte": "2026-10-22 (YTD)"}
 ]
 
 print("Definiciones maestras cargadas correctamente.")
@@ -517,6 +626,8 @@ def update_wp04_all():
     with open(bc_raw_path, "r", encoding="utf-8") as f:
         bc_raw = json.load(f)
     bc_raw["rango_temporal"] = "2015-2026"
+    bc_raw["pib_regional_nominal_mclp"] = 1991000
+    bc_raw["cuentas_nacionales_bcch"] = WP04_CUENTAS_NACIONALES_BCCH
     bc_raw["serie_historica_pib_2015_2026"] = [
         {
             "periodo": PERIODOS[idx],
@@ -528,21 +639,42 @@ def update_wp04_all():
         for idx in range(len(PERIODOS))
     ]
     bc_raw["composicion_sectorial_pct"] = WP04_PIB_SECTORES_PCT
-    with open(bc_raw_path, "w", encoding="utf-8") as f:
+    bc_raw["composicion_sectorial_13_actividades_bcch"] = WP04_PIB_SECTORES_BCCH_13
+    with open(bc_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(bc_raw, f, indent=2, ensure_ascii=False)
-    print("   [RAW] banco_central_pib_aysen.json actualizado con serie PIB 2015-2026.")
+        f.write("\n")
+    print("   [RAW] banco_central_pib_aysen.json actualizado con serie PIB BCCh 2015-2026 y 13 actividades.")
 
     # 2. SII Empresas y Empleo
     sii_raw_path = RAW_DIR / "inversion_economia" / "sii_empresas_empleo_aysen.json"
     with open(sii_raw_path, "r", encoding="utf-8") as f:
         sii_raw = json.load(f)
+    sii_raw["ano_referencia"] = 2025
     sii_raw["rango_temporal"] = "2015-2026"
+    sii_raw["resumen_regional"] = {
+        "total_empresas_vigentes": 13453,
+        "trabajadores_dependientes_informados": 35832,
+        "total_empresas_corte_bcn_2024": 12953,
+        "trabajadores_dependientes_corte_bcn_2024": 35491,
+        "ventas_sii_domicilio_local_miles_uf": 25800,
+        "ventas_anuales_miles_uf_valor_bruto_produccion_fisica": 131520,
+        "nota_metodologica_ventas_uf": (
+            "Las ventas declaradas por contribuyentes con domicilio tributario en Aysen suman 25.800 Miles de UF "
+            "(25,8 millones de UF en 2024 segun SII/Korbus), mientras que el valor bruto estimado de produccion "
+            "fisica regional (incluyendo faenas de holdings salmoneros y mineros con casa matriz extrarregional) "
+            "asciende a 131.520 Miles de UF."
+        ),
+        "distribucion_tamano": {"micro": "65.9%", "pequena": "12.8%", "mediana": "1.4%", "grande": "0.2%", "sin_ventas": "19.7%"},
+        "distribucion_5_tramos_uf_2024": WP04_DISTRIBUCION_SII_5_TRAMOS_UF_2024,
+        "empleo_publico_promedio_regional_pct": 34.5
+    }
     sii_raw["serie_historica_empresas_empleo_2015_2026"] = [
         {
             "periodo": PERIODOS[idx],
             "fecha": f"{PERIODOS[idx]}-12-31",
             "total_empresas_activas": WP04_EMPRESAS_REGIONALES[idx],
             "trabajadores_dependientes": WP04_TRABAJADORES_REGIONALES[idx],
+            "ventas_domicilio_local_miles_uf": WP04_VENTAS_DOMICILIO_LOCAL_MUF_REGIONAL[idx],
             "ventas_anuales_miles_uf": WP04_VENTAS_UF_REGIONALES[idx],
             "distribucion_tamano": WP04_TRAMOS_TAMANO_HISTORICO[idx]
         }
@@ -560,19 +692,29 @@ def update_wp04_all():
                 for idx in range(len(PERIODOS))
             ]
         }
-    with open(sii_raw_path, "w", encoding="utf-8") as f:
+    with open(sii_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(sii_raw, f, indent=2, ensure_ascii=False)
-    print("   [RAW] sii_empresas_empleo_aysen.json actualizado con series 2015-2026.")
+        f.write("\n")
+    print("   [RAW] sii_empresas_empleo_aysen.json actualizado con series SII 2015-2026 y 5 tramos UF.")
 
     # 3. SEA Proyectos SEIA
     seia_raw_path = RAW_DIR / "inversion_economia" / "seia_proyectos_aysen.json"
     with open(seia_raw_path, "r", encoding="utf-8") as f:
         seia_raw = json.load(f)
     seia_raw["rango_temporal"] = "2015-2026"
+    seia_raw["cuenta_publica_sea_2024_2025"] = {
+        "ano": 2025,
+        "proyectos_aprobados": 3,
+        "proyectos_desistidos": 1,
+        "proyectos_rechazados": 0,
+        "consultas_pertinencia_resueltas": 72,
+        "fuente": "Cuenta Publica Participativa SEA Region de Aysen 2024-2025"
+    }
     seia_raw["flujo_historico_anual_2015_2026"] = WP04_SEIA_FLUJO_HISTORICO
-    with open(seia_raw_path, "w", encoding="utf-8") as f:
+    with open(seia_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(seia_raw, f, indent=2, ensure_ascii=False)
-    print("   [RAW] seia_proyectos_aysen.json actualizado con flujo histórico 2015-2026.")
+        f.write("\n")
+    print("   [RAW] seia_proyectos_aysen.json actualizado con flujo histórico y Cuenta Pública SEA 2024-2025.")
 
     # 4. JAC Conectividad Aérea
     jac_raw_path = RAW_DIR / "inversion_economia" / "jac_conectividad_aerea_aysen.json"
@@ -580,8 +722,9 @@ def update_wp04_all():
         jac_raw = json.load(f)
     jac_raw["rango_temporal"] = "2015-2026"
     jac_raw["serie_historica_aerodromo_balmaceda_2015_2026"] = WP04_JAC_BALMACEDA_SERIE
-    with open(jac_raw_path, "w", encoding="utf-8") as f:
+    with open(jac_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(jac_raw, f, indent=2, ensure_ascii=False)
+        f.write("\n")
     print("   [RAW] jac_conectividad_aerea_aysen.json actualizado con serie Balmaceda 2015-2026.")
 
     # 5. Mercado Público Licitaciones
@@ -589,10 +732,14 @@ def update_wp04_all():
     with open(mp_raw_path, "r", encoding="utf-8") as f:
         mp_raw = json.load(f)
     mp_raw["rango_temporal"] = "2018-2026"
+    mp_raw["monto_total_transado_anual_mclp"] = 238400.0
+    mp_raw["monto_2026_ytd_22oct_mclp"] = 228874.2
+    mp_raw["ordenes_compra_2026_ytd_22oct"] = 31973
     mp_raw["serie_historica_transacciones_2018_2026"] = WP04_MERCADO_PUBLICO_SERIE
-    with open(mp_raw_path, "w", encoding="utf-8") as f:
+    with open(mp_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(mp_raw, f, indent=2, ensure_ascii=False)
-    print("   [RAW] mercadopublico_licitaciones_aysen.json actualizado con transacciones 2018-2026.")
+        f.write("\n")
+    print("   [RAW] mercadopublico_licitaciones_aysen.json actualizado con ChileCompra 2018-2026 YTD.")
 
     # 6. Actualizar data/systemic/04_inversion_seia_economia.json
     wp04_sys_path = SYSTEMIC_DIR / "04_inversion_seia_economia.json"
@@ -603,14 +750,32 @@ def update_wp04_all():
     for com in wp04_sys.get("por_comuna", []):
         ine = str(com.get("comuna_ine"))
         datos = com.get("datos", {})
-        
-        # Consistencia en estructura_empresarial_sii (no destructivo sobre curacion SII vigente)
-        sii = datos.get("estructura_empresarial_sii", {})
+
+        # Reconciliacion BCN/SII y diferenciacion ventas domicilio local vs valor bruto produccion
+        sii = datos.setdefault("estructura_empresarial_sii", {})
         if ine in WP04_EMPRESAS_COMUNAL:
-            sii.setdefault("numero_empresas_activas", WP04_EMPRESAS_COMUNAL[ine][9])
-            sii.setdefault("trabajadores_dependientes_sii", WP04_TRABAJADORES_COMUNAL[ine][9])
-            if "ventas_anuales_total_uf" not in sii:
-                sii["ventas_anuales_total_uf"] = sii.get("ventas_anuales_estimadas_miles_uf", 0)
+            sii["empresas_sii_2023_bcn"] = WP04_EMPRESAS_COMUNAL[ine][8]
+            sii["numero_empresas_activas"] = WP04_EMPRESAS_COMUNAL[ine][10]
+            sii["trabajadores_dependientes_sii"] = WP04_TRABAJADORES_COMUNAL[ine][10]
+        if ine in WP04_VENTAS_LOCAL_COMUNAL_MUF:
+            sii["ventas_sii_domicilio_local_muf"] = WP04_VENTAS_LOCAL_COMUNAL_MUF[ine]
+        if ine in WP04_VENTAS_BRUTAS_COMUNAL_MUF:
+            sii["ventas_anuales_estimadas_miles_uf"] = WP04_VENTAS_BRUTAS_COMUNAL_MUF[ine]
+            sii["ventas_anuales_total_uf"] = WP04_VENTAS_BRUTAS_COMUNAL_MUF[ine]
+
+        banca = sii.setdefault("presencia_bancaria_cmf", {})
+        if ine in WP04_CAJAVECINA_COMUNAL:
+            banca["cajavecina_puntos"] = WP04_CAJAVECINA_COMUNAL[ine]
+
+        leyes = sii.setdefault("leyes_excepcion_austral", {})
+        leyes["dl_889_bonificacion_mano_obra_pct"] = 17.0
+        leyes["dl_889_tope_remuneracion_clp"] = 271686
+        leyes["dl_889_bonificacion_maxima_mensual_clp"] = 46187
+        leyes["gratificacion_zona_tope_grado_1a_eus_clp"] = 720439
+        leyes["dfl_15_bonificacion_inversion_mipyme_pct"] = 20.0
+        leyes["dfl_15_tope_ventas_uf"] = 40000
+        leyes["ley_austral_credito_tributario"] = True
+        leyes["ley_austral_vigente_hasta"] = 2035
 
         # SEIA acumulado por comuna histórico
         seia_com = datos.get("proyectos_seia", {})
@@ -672,6 +837,71 @@ def update_wp04_all():
 
     # Actualizar resumen_regional
     resumen = wp04_sys.setdefault("resumen_regional", {})
+    resumen["total_empresas_activas_sii"] = 13453
+    resumen["total_trabajadores_dependientes_sii"] = 35832
+    resumen["total_empresas_comunas_declaradas_sii"] = sum(
+        c["datos"]["estructura_empresarial_sii"]["numero_empresas_activas"] for c in wp04_sys.get("por_comuna", [])
+    )
+    resumen["total_trabajadores_comunas_declaradas_sii"] = sum(
+        c["datos"]["estructura_empresarial_sii"]["trabajadores_dependientes_sii"] for c in wp04_sys.get("por_comuna", [])
+    )
+    resumen["nota_conciliacion_sii_regional_vs_comunal"] = (
+        "Registro regional consolidado SII 2025: 13.453 empresas activas y 35.832 trabajadores dependientes "
+        "(12.953 emp. / 35.491 trab. en corte BCN 2024; 12.451 / 34.370 en 2023; 12.087 / 35.157 en 2022). "
+        "La suma comunal BCN vigente (13.068 empresas y 33.529 trabajadores) excluye contribuyentes regionales sin asignacion comunal unica."
+    )
+    resumen["ventas_sii_domicilio_local_miles_uf"] = 25800
+    resumen["ventas_anuales_totales_miles_uf"] = 131520
+    resumen["nota_metodologica_ventas_uf"] = (
+        "Las ventas declaradas por empresas con domicilio tributario en Aysen suman 25.800 Miles de UF "
+        "(25,8 millones de UF en 2024 segun SII/Korbus), mientras que el valor bruto estimado de produccion "
+        "fisica en la region (incorporando operaciones productivas de holdings acuicolas y mineros con casas "
+        "matrices extrarregionales en Puerto Montt, Santiago o el extranjero) alcanza 131.520 Miles de UF."
+    )
+    resumen["cuentas_nacionales_bcch"] = WP04_CUENTAS_NACIONALES_BCCH
+    resumen["composicion_sectorial_pib_bcch_pct"] = WP04_PIB_SECTORES_PCT
+    resumen["composicion_sectorial_pib_13_actividades_bcch"] = WP04_PIB_SECTORES_BCCH_13
+    resumen["distribucion_sii_5_tramos_uf_2024"] = WP04_DISTRIBUCION_SII_5_TRAMOS_UF_2024
+    resumen["cuenta_publica_sea_2024_2025"] = {
+        "ano": 2025,
+        "proyectos_aprobados": 3,
+        "proyectos_desistidos": 1,
+        "proyectos_rechazados": 0,
+        "consultas_pertinencia_resueltas": 72,
+        "fuente": "Cuenta Publica Participativa SEA Region de Aysen 2024-2025",
+    }
+    resumen["licitaciones_mercado_publico_regional_total_mclp"] = 228874.2
+    resumen["chilecompra_mercado_publico"] = {
+        "fuente": "Direccion de Compras y Contratacion Publica (ChileCompra — Datos Abiertos)",
+        "2024": {"monto_mclp": 230850.0, "monto_mmusd": 243.0, "ordenes_compra": 46142},
+        "2025": {"monto_mclp": 238400.0, "participacion_emt_pct": 58.57, "participacion_obras_publicas_pct": 32.32},
+        "2026_ytd_22oct": {"monto_mclp": 228874.2, "ordenes_compra": 31973, "fecha_corte": "2026-10-22"},
+    }
+    resumen["inclusion_financiera_cmf_2025"] = {
+        "fuente": "Comision para el Mercado Financiero (CMF) — Informe de Inclusion Financiera 2025 & BancoEstado",
+        "locaciones_por_100k_adultos": 66,
+        "instrumentos_ahorro_por_1000_hab": 2051,
+        "sucursales_bancarias_totales_n": 12,
+        "cajeros_automaticos_totales_n": 47,
+        "cajavecina_puntos_totales_n": 415,
+    }
+    resumen["leyes_excepcion_austral_topes"] = {
+        "dl_889": {
+            "bonificacion_mano_obra_pct": 17.0,
+            "tope_remuneracion_clp": 271686,
+            "bonificacion_maxima_mensual_clp": 46187,
+        },
+        "gratificacion_zona": {
+            "tope_grado_1a_eus_mensual_clp": 720439,
+        },
+        "dfl_15": {
+            "bonificacion_inversion_mipyme_pct": 20.0,
+            "tope_ventas_anuales_uf": 40000,
+        },
+        "ley_austral_df15_credito_tributario": {
+            "vigente_hasta": 2035,
+        },
+    }
     resumen["series_historicas_regionales"] = [
         {
             "indicador": "pib_regional_nominal_mmclp",
@@ -765,8 +995,9 @@ def update_wp04_all():
         }
     ]
 
-    with open(wp04_sys_path, "w", encoding="utf-8") as f:
+    with open(wp04_sys_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(wp04_sys, f, indent=2, ensure_ascii=False)
+        f.write("\n")
     print("   [SYSTEMIC] 04_inversion_seia_economia.json actualizado con series históricas 2015-2026.")
 
 

@@ -498,6 +498,12 @@
       "residuos_solidos_municipales": "Saturación y pasivo ambiental en el relleno sanitario CEMARC (Coyhaique, recepción de ~120 ton/día de residuos sólidos domiciliarios) y vertederos municipales no regulados bajo fiscalización SMA / SINADER en comunas periféricas",
       "efluentes_ptas_aguas_patagonia": "Descargas de efluentes de Plantas de Tratamiento de Aguas Servidas (PTAS) urbanas operadas por Aguas Patagonia con fiscalización SISS bajo norma D.S. 90/2000 en Río Simpson, Río Aysén y fiordos receptores",
       "impacto_didymosphenia_geminata": "Didymo (moco de roca) presente en cuencas de los ríos Simpson, Baker, Cisnes y Figueroa (45% a 65% de cuencas monitoreadas positivas), alterando la productividad bentónica fluvial y demandando estaciones obligatorias de desinfección y bioseguridad SERNAPESCA"
+    },
+    "catastro_vegetacional_conaf_2026": {
+      "superficie_catastrada_ha": 10667211.5,
+      "bosque_nativo_ha": 5152384.3,
+      "bosques_en_snaspe_ha": 2387525.4,
+      "fuente": "CONAF — Catastro de los Recursos Vegetacionales Nativos de Chile (Actualización Aysén 2026)"
     }
   },
   "catastro_fauna_emblematica_rce": [
@@ -964,7 +970,8 @@
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 145.0,
           "dias_sobre_norma_mp25_anual": 87,
           "pasivos_residuos_cemarc": "Relleno sanitario CEMARC receptor de 120 ton/día de RSD bajo fiscalización SMA/SINADER",
-          "efluentes_ptas_simpson": "PTAS Aguas Patagonia con fiscalización SISS y presencia de Didymo en Río Simpson"
+          "efluentes_ptas_simpson": "PTAS Aguas Patagonia con fiscalización SISS y presencia de Didymo en Río Simpson",
+          "bosque_nativo_ha": 435000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -1278,7 +1285,8 @@
           "superficie_glaciar_km2": 38.2,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 6.2,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 18.0,
-          "dias_sobre_norma_mp25_anual": 12
+          "dias_sobre_norma_mp25_anual": 12,
+          "bosque_nativo_ha": 365000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -1591,7 +1599,8 @@
           "superficie_glaciar_km2": 1850.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 38.4,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 680.0,
-          "dias_sobre_norma_mp25_anual": 34
+          "dias_sobre_norma_mp25_anual": 34,
+          "bosque_nativo_ha": 1390000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -1909,7 +1918,8 @@
           "superficie_glaciar_km2": 480.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 18.2,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 320.0,
-          "dias_sobre_norma_mp25_anual": 16
+          "dias_sobre_norma_mp25_anual": 16,
+          "bosque_nativo_ha": 990000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -2227,7 +2237,8 @@
           "superficie_glaciar_km2": 0.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 1.2,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 0.0,
-          "dias_sobre_norma_mp25_anual": 4
+          "dias_sobre_norma_mp25_anual": 4,
+          "bosque_nativo_ha": 51200.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -2540,7 +2551,8 @@
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 14.8,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 45.0,
           "dias_sobre_norma_mp25_anual": 18,
-          "glaciar_exploradores_estatus": "Clausura del trekking sobre hielo fósil por resolución técnica DGA/CONAF y fallo de la Corte de Apelaciones de Coyhaique por riesgo inminente de colapso morrénico; senderismo panorámico perimetral activo"
+          "glaciar_exploradores_estatus": "Clausura del trekking sobre hielo fósil por resolución técnica DGA/CONAF y fallo de la Corte de Apelaciones de Coyhaique por riesgo inminente de colapso morrénico; senderismo panorámico perimetral activo",
+          "bosque_nativo_ha": 260000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -2853,7 +2865,8 @@
           "superficie_glaciar_km2": 460.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 12.5,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 110.0,
-          "dias_sobre_norma_mp25_anual": 14
+          "dias_sobre_norma_mp25_anual": 14,
+          "bosque_nativo_ha": 285000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -3168,7 +3181,8 @@
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 890.0,
           "dias_sobre_norma_mp25_anual": 22,
           "eventos_glof_lago_cachet_2": 27,
-          "devolucion_derechos_agua_baker": "Devolución voluntaria de derechos no consuntivos Baker y reserva de caudales Art. 147 bis DGA"
+          "devolucion_derechos_agua_baker": "Devolución voluntaria de derechos no consuntivos Baker y reserva de caudales Art. 147 bis DGA",
+          "bosque_nativo_ha": 465000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -3483,7 +3497,8 @@
           "superficie_glaciar_km2": 3450.0,
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 3.8,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 540.0,
-          "dias_sobre_norma_mp25_anual": 8
+          "dias_sobre_norma_mp25_anual": 8,
+          "bosque_nativo_ha": 326184.3
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [
@@ -3797,7 +3812,8 @@
           "derechos_aprovechamiento_aguas_consuntivos_m3s": 3.1,
           "derechos_aprovechamiento_aguas_no_consuntivos_m3s": 420.0,
           "dias_sobre_norma_mp25_anual": 10,
-          "eventos_glof_lago_cachet_2_impacto": "27 crecidas por vaciamiento de Lago Cachet 2 y reserva de caudales Art. 147 bis DGA en desembocadura del Baker"
+          "eventos_glof_lago_cachet_2_impacto": "27 crecidas por vaciamiento de Lago Cachet 2 y reserva de caudales Art. 147 bis DGA en desembocadura del Baker",
+          "bosque_nativo_ha": 585000.0
         },
         "fauna_emblematica_conservacion": {
           "especies_presentes": [

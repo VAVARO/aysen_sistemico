@@ -21,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Proyectos sometidos al Sistema de Evaluación de Impacto Ambiental (SEIA — SEA): proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa. Aysén acumula 722 proyectos aprobados (3.355,5 MM USD) y 22 en calificación, liderados por Aysén (1.320,0 MM USD), Cisnes (525,0 MM USD), Coyhaique (495,6 MM USD) y Chile Chico (310,0 MM USD) en acuicultura, energía, infraestructura y minería.
+Proyectos sometidos al Sistema de Evaluación de Impacto Ambiental (SEIA — SEA): proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD, consultas de pertinencia y proyectos en evaluación activa. Aysén acumula 722 proyectos aprobados (3.355,5 MM USD) y 22 en calificación, liderados por Aysén (1.320,0 MM USD), Cisnes (525,0 MM USD), Coyhaique (495,6 MM USD) y Chile Chico (310,0 MM USD). Según la Cuenta Pública SEA 2024–2025, en 2025 se registraron 3 proyectos aprobados, 1 desistido, 0 rechazados y 72 consultas de pertinencia resueltas.
 
 ## Indicadores Comunales Verificados
 

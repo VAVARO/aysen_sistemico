@@ -9,14 +9,22 @@ variables_clave:
   - inversion_seia_mmusd
   - empresas_sii
   - trabajadores_sii
+  - ventas_sii_domicilio_local_muf
   - ventas_sii_muf
+  - sucursales_bancarias_n
+  - cajeros_automaticos_n
+  - cajavecina_puntos_n
   - concesiones_mineras_ha
+  - ganado_bovino_cabezas
+  - ganado_ovino_cabezas
   - suelo_fiscal_bbnn_pct
 fuentes_oficiales:
+  - "Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales"
   - "SEA — Sistema de Evaluación de Impacto Ambiental (SEIA)"
   - "SII — Estadísticas Tributarias de Empresas, Ventas y Empleo"
   - "ChileCompra — Transacciones Mercado Público"
-  - "MBN / SERNAGEOMIN — Catastro de Propiedad Fiscal y Concesiones Mineras"
+  - "CMF / BancoEstado — Inclusión Financiera y CajaVecina"
+  - "MBN / SERNAGEOMIN / BCN / ODEPA / CONAF 2026"
 updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
@@ -28,22 +36,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-El Hub V (Economía, Inversión y Suelo) integra la evaluación ambiental de proyectos en el SEIA, la demografía empresarial formal del Servicio de Impuestos Internos (SII), la retención de compras públicas en ChileCompra y el régimen de propiedad del suelo. Coyhaique y Aysén concentran más del 78% de las empresas vigentes SII y del empleo formal dependiente, mientras que en las comunas rurales y costeras la estructura territorial está marcada por una alta proporción de suelo fiscal administrado por Bienes Nacionales y unidades SNASPE, junto con presiones de subdivisión predial rural certificadas por el SAG y carteras de exploración minera en Chile Chico y Cisnes.
+El Hub V (Economía, Inversión y Suelo) integra las Cuentas Nacionales Regionales del Banco Central (PIB nominal 2025 de 1.991.000 MM$ CLP, +8,5% real, FBCF +18,2%, PIB turístico 89.200 MM$ = 4,5%, nota 1T 2026: -2,6% real y 13 actividades económicas), el SEIA (722 proyectos aprobados históricos; Cuenta Pública SEA 2024-2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias en 2025; sin alucinaciones extrarregionales), la demografía empresarial SII (13.453 empresas y 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF de ventas por domicilio tributario local frente a 131.520 MUF de valor bruto de producción física), compras públicas ChileCompra (230.850 M$ en 2024, 238.400 M$ en 2025 y 228.874,2 M$ en 2026 YTD), CMF 2025 (12 sucursales, 47 ATM y 415 puntos CajaVecina), catastro SERNAGEOMIN (356 concesiones / 128.511 ha; Pacífico del Sur en El Toqui y Andean Silver en Cerro Bayo), masa ganadera BCN/ODEPA (144.118 bovinos y 177.972 ovinos) y Catastro Vegetacional CONAF 2026 (10.667.211,5 ha catastradas; 5.152.384,3 ha bosque nativo; 2.387.525,4 ha en SNASPE).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Proyectos Aprobados en el SEIA (RCA) | Inversión Aprobada SEIA (MM US$) | Empresas Vigentes SII | Trabajadores Dependientes SII | Ventas Anuales Declaradas SII (Miles de UF) |
+| Comuna | Proyectos Aprobados en el SEIA (RCA) | Inversión Aprobada SEIA (MM US$) | Empresas Vigentes SII | Trabajadores Dependientes SII | Ventas SII con Domicilio Tributario en Aysén (Miles de UF) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 118 | 495,6 | 7.620 | 20.950 | 48.500 |
-| [[comunas/lago_verde|Lago Verde]] | 9 | 31,4 | 118 | 132 | 450 |
-| [[comunas/aysen|Aysén]] | 254 | 1.320 | 2.840 | 9.890 | 56.200 |
-| [[comunas/cisnes|Cisnes]] | 122 | 525 | 895 | 1.920 | 9.100 |
-| [[comunas/guaitecas|Guaitecas]] | 86 | 245 | 242 | 265 | 2.450 |
-| [[comunas/chile_chico|Chile Chico]] | 41 | 310 | 648 | 1.140 | 6.300 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 27 | 142 | 418 | 512 | 3.200 |
-| [[comunas/cochrane|Cochrane]] | 33 | 172 | 492 | 845 | 4.400 |
-| [[comunas/ohiggins|O'Higgins]] | 14 | 48 | 96 | 98 | 530 |
-| [[comunas/tortel|Tortel]] | 18 | 66,5 | 84 | 80 | 390 |
+| [[comunas/coyhaique|Coyhaique]] | 118 | 495,6 | 7.238 | 22.351 | 16.900 |
+| [[comunas/lago_verde|Lago Verde]] | 9 | 31,4 | 119 | 213 | 130 |
+| [[comunas/aysen|Aysén]] | 254 | 1.320 | 2.675 | 6.551 | 4.410 |
+| [[comunas/cisnes|Cisnes]] | 122 | 525 | 895 | 1.757 | 1.420 |
+| [[comunas/guaitecas|Guaitecas]] | 86 | 245 | 144 | 349 | 240 |
+| [[comunas/chile_chico|Chile Chico]] | 41 | 310 | 653 | 965 | 1.210 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 27 | 142 | 577 | 575 | 540 |
+| [[comunas/cochrane|Cochrane]] | 33 | 172 | 519 | 475 | 790 |
+| [[comunas/ohiggins|O'Higgins]] | 14 | 48 | 109 | 148 | 75 |
+| [[comunas/tortel|Tortel]] | 18 | 66,5 | 139 | 145 | 85 |
 
 ## Nodos Satélite del Hub
 

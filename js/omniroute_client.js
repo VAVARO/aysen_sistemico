@@ -337,7 +337,11 @@
     barometro_evaluacion_acceso_salud_pct_hist: 'Serie Barómetro (2018–2026): Evaluación del Acceso a Salud (%)',
     subsidio_fiscal_diesel_kwh_clp: 'Subsidio Fiscal a Generación Diésel Aislada ($/kWh)',
     indice_aislamiento_multimodal: 'Índice Compuesto de Aislamiento Multimodal (0–100)',
-    ventas_sii_muf: 'Ventas Anuales Declaradas SII (Miles de UF)',
+    ventas_sii_domicilio_local_muf: 'Ventas SII con Domicilio Tributario en Aysén (Miles de UF)',
+    ventas_sii_muf: 'Valor Bruto de Producción Física Regional SII (Miles de UF)',
+    sucursales_bancarias_n: 'Sucursales Bancarias Totales CMF (Privada + BancoEstado)',
+    cajeros_automaticos_n: 'Cajeros Automáticos ATM CMF (N°)',
+    cajavecina_puntos_n: 'Puntos de Corresponsalía CajaVecina BancoEstado (N°)',
     ventas_por_empresa_uf: 'Ventas Promedio por Empresa SII (UF/empresa)',
     inversion_por_proyecto_seia_mmusd: 'Ticket Promedio por Proyecto SEIA (MM USD/proy.)',
     suelo_fiscal_bbnn_pct: 'Porcentaje de Suelo Fiscal Bienes Nacionales (%)',
@@ -423,6 +427,11 @@
       institucion: 'DIPRES / GORE Aysén — Ejecución Presupuestaria Regional FNDR',
       titulo: 'DIPRES / GORE Aysén — Ejecución Presupuestaria Regional FNDR',
       url: 'https://www.dipres.gob.cl/'
+    },
+    BCCH_CNR: {
+      institucion: 'Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales',
+      titulo: 'Banco Central de Chile — PIB Regional de Aysén y 13 Actividades Económicas',
+      url: 'https://si3.bcentral.cl/'
     },
     SERVEL: {
       institucion: 'SERVEL — Resultados Electorales y Autoridades Comunales (2024-2028)',
@@ -918,8 +927,12 @@
     variacion_conexiones_2015_2026_pct: PROVENANCE_CATALOG_ENTRIES.SUBTEL,
     subsidio_fiscal_diesel_kwh_clp: PROVENANCE_CATALOG_ENTRIES.CNE,
     indice_aislamiento_multimodal: PROVENANCE_CATALOG_ENTRIES.MOP_VIALIDAD,
+    ventas_sii_domicilio_local_muf: PROVENANCE_CATALOG_ENTRIES.SII,
     ventas_sii_muf: PROVENANCE_CATALOG_ENTRIES.SII,
     ventas_por_empresa_uf: PROVENANCE_CATALOG_ENTRIES.SII,
+    sucursales_bancarias_n: PROVENANCE_CATALOG_ENTRIES.CMF_BANCOESTADO,
+    cajeros_automaticos_n: PROVENANCE_CATALOG_ENTRIES.CMF_BANCOESTADO,
+    cajavecina_puntos_n: PROVENANCE_CATALOG_ENTRIES.CMF_BANCOESTADO,
     inversion_por_proyecto_seia_mmusd: PROVENANCE_CATALOG_ENTRIES.SEA_SEIA,
     suelo_fiscal_bbnn_pct: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
     suelo_privado_pct: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
@@ -928,7 +941,7 @@
     royalty_fet_peso_presupuesto_pct: PROVENANCE_CATALOG_ENTRIES.GORE_FNDR_DATOSGOB,
     participacion_municipales_2024_pct: PROVENANCE_CATALOG_ENTRIES.SERVEL_HISTORICO,
     ratio_padron_poblacion_pct: PROVENANCE_CATALOG_ENTRIES.SERVEL_HISTORICO,
-    pib_regional_nominal_mmclp: PROVENANCE_CATALOG_ENTRIES.SII,
+    pib_regional_nominal_mmclp: PROVENANCE_CATALOG_ENTRIES.BCCH_CNR,
     generacion_hidro_gwh: PROVENANCE_CATALOG_ENTRIES.CNE,
     generacion_diesel_gwh: PROVENANCE_CATALOG_ENTRIES.CNE,
     participacion_diesel_matriz_pct: PROVENANCE_CATALOG_ENTRIES.CNE,
@@ -1168,7 +1181,11 @@
     rsh_carencia_servicios_basicos_jun2026_pct: ['carencia servicios basicos', 'servicios basicos rsh', 'bidat rsh', 'registro social hogares', 'hacinamiento rsh'],
     conexiones_fijas_subtel_jun2026_n: ['conexiones fijas subtel', 'subtel junio 2026', 'starlink aysen', 'fttx aysen', 'fibra ultima milla', 'telecomunicaciones subtel'],
     superficie_snaspe_pct: ['superficie snaspe', 'porcentaje snaspe', 'porcentaje de superficie snaspe', 'areas protegidas snaspe', 'superficie protegida snaspe'],
-    ventas_sii_muf: ['ventas sii', 'ventas anuales sii', 'miles de uf', 'ventas declaradas sii'],
+    ventas_sii_domicilio_local_muf: ['ventas domicilio local', 'ventas locales sii', '25800 muf', 'ventas tributarias locales'],
+    ventas_sii_muf: ['ventas sii', 'ventas anuales sii', 'miles de uf', 'ventas declaradas sii', 'valor bruto produccion'],
+    sucursales_bancarias_n: ['sucursales bancarias totales', 'sucursales bancarias', 'bancos en la comuna'],
+    cajeros_automaticos_n: ['cajeros automaticos', 'cajeros', 'atm'],
+    cajavecina_puntos_n: ['puntos cajavecina', 'cajavecina puntos', 'corresponsalia cajavecina'],
     ventas_por_empresa_uf: ['ventas por empresa', 'uf por empresa', 'ventas promedio por empresa'],
     inversion_por_proyecto_seia_mmusd: ['ticket promedio seia', 'inversion por proyecto seia'],
     suelo_fiscal_bbnn_pct: ['suelo fiscal', 'bienes nacionales', 'porcentaje suelo fiscal'],
@@ -2170,8 +2187,8 @@
       'Red vial MOP 3.386,4 km totales (412,8 km pavimentados [12,2%] vs 2.438,0 km ripio)',
       'Sistemas Medianos y Aislados desconectados del SEN (67,10 MW operativos + 18,98 MW ERNC en construccion 2026) + Decreto 8T Nov-2026 BT1 $287,8/kWh + 13.448 hogares Subsidio Electrico + Lena INFOR BES 11 334.274 m3s/ano (Coyhaique 147.080 m3s [44,0%]) + unico MBM activo Copec Chacabuco 6.674 m3 + CTR submarina solo en Caleta Tortel',
       'Finanzas municipales BCN/SINIM 2025: ingresos municipales agregados de 84.820,68 M$ (promedio 8.482,1 M$/comuna), IPP 19.243,52 M$, FCM 41.753,32 M$ (dependencia FCM 68,5% ponderada / 77,5% simple; min 48,7% Cisnes, 58,4% Coyhaique; max 95,4% Tortel), FNDR 2025 devengado récord 73.863,0 M$ (92,0% sobre 80.200,0 M$) y participación municipal oct-2024 de 72,9% (SERVEL)',
-      'Bosque nativo CONAF 4.832.500 ha + 35.240 ha plantaciones + 5.723.000 ha vegetacion nativa',
-      'Huemul RCE MMA 1.500-2.000 individuos (amenaza perros asilvestrados); Ganado ODEPA 130.832 bovinos y 177.934 ovinos',
+      'Bosque nativo CONAF 2026: 5.152.384,3 ha (10.667.211,5 ha catastradas; 2.387.525,4 ha en SNASPE) + 35.240 ha plantaciones + 5.723.000 ha vegetacion nativa',
+      'Huemul RCE MMA 1.500-2.000 individuos (amenaza perros asilvestrados); Ganado BCN/ODEPA 144.118 bovinos y 177.972 ovinos',
       'Listas espera SIGTE 11.420 interconsultas; GLOFs Cachet 2 cuenca Baker; 3 ZOITs decretadas'
     ].join(' | ');
     const panoramicNodesAndMilestones = `Hitos regionales: ${regionalMilestones}. Nodos (${indexedNodes.length}): ${nodeSummaryList}`;
@@ -2978,7 +2995,7 @@
         };
       }
       case 'ganaderia_bovina_ovina': {
-        const reply = 'Según el VIII Censo Nacional Agropecuario y Forestal (CAF 2021) de ODEPA e INE: La Región de Aysén cuenta con 130.832 cabezas de ganado bovino y 177.934 cabezas de ganado ovino. La mayor dotación pecuaria se concentra en Coyhaique (48.500 bovinos y 62.000 ovinos), Río Ibáñez (24.200 bovinos y 38.500 ovinos), Chile Chico (15.400 bovinos y 28.600 ovinos) y Cochrane (16.200 bovinos y 22.400 ovinos).';
+        const reply = 'Según los registros oficiales BCN / ODEPA (VIII Censo Nacional Agropecuario y Forestal): La Región de Aysén cuenta con 144.118 cabezas de ganado bovino y 177.972 cabezas de ganado ovino. La mayor dotación bovina se concentra en Coyhaique (46.816 bovinos), Lago Verde (20.048), Cochrane (18.065), Río Ibáñez (17.405) y Aysén (15.532), mientras la masa ovina lidera en Río Ibáñez (42.110), Chile Chico (38.210), Cochrane (34.808) y Coyhaique (32.010).';
         const sources = resolveSourcesForKeys(['ganado_bovino_cabezas', 'ganado_ovino_cabezas']);
         return {
           reply,
@@ -3018,7 +3035,7 @@
         };
       }
       case 'exclusion_bancaria_cajavecina': {
-        const reply = 'Según estadísticas oficiales de la Comisión para el Mercado Financiero (CMF) y BancoEstado: 8 de las 10 comunas de Aysén (80%) carecen de sucursales bancarias privadas, existiendo presencia comercial exclusiva en Coyhaique y Puerto Aysén. La red comunal de más de 400 puntos de corresponsalía CajaVecina de BancoEstado instalados en almacenes y comercios locales representa la infraestructura crítica de inclusión financiera y transaccional para la población rural y aislada.';
+        const reply = 'Según estadísticas oficiales de la Comisión para el Mercado Financiero (CMF 2025) y BancoEstado: 8 de las 10 comunas de Aysén (80%) carecen de sucursales bancarias privadas (12 sucursales totales: 7 privadas concentradas en Coyhaique/Aysén y 5 BancoEstado) y existen 47 cajeros automáticos (66 locaciones por cada 100.000 adultos y 2.051 instrumentos de ahorro cada 1.000 habitantes). La red comunal de 415 puntos CajaVecina de BancoEstado sostiene la inclusión financiera rural y aislada.';
         const sources = resolveSourcesForKeys(['exclusion_bancaria_comunas_pct', 'puntos_cajavecina_n']);
         return {
           reply,
@@ -3141,7 +3158,7 @@
         };
       }
       case 'fauna_perros_ganaderia': {
-        const reply = 'Las fuentes oficiales no registran un censo comunal de perros o mascotas domésticas. Sin embargo, existen dos registros faunísticos vinculados en la base: 1) Biodiversidad (RCE MMA / CONAF): los perros asilvestrados figuran como amenaza directa crítica sobre los 1.500 a 2.000 huemules de Aysén (60%–70% de la población mundial); 2) Censo Agropecuario (ODEPA / INE): el ganado doméstico censado alcanza 130.832 bovinos y 177.934 ovinos en la región (liderando Coyhaique con 42.500 bovinos y Río Ibáñez con 42.100 ovinos).';
+        const reply = 'Las fuentes oficiales no registran un censo comunal de perros o mascotas domésticas. Sin embargo, existen dos registros faunísticos vinculados en la base: 1) Biodiversidad (RCE MMA / CONAF): los perros asilvestrados figuran como amenaza directa crítica sobre los 1.500 a 2.000 huemules de Aysén (60%–70% de la población mundial); 2) Censo Agropecuario (BCN / ODEPA): el ganado doméstico censado alcanza 144.118 bovinos y 177.972 ovinos en la región (liderando Coyhaique con 46.816 bovinos y Río Ibáñez con 42.110 ovinos).';
         const sources = resolveSourcesForKeys(['ganado_bovino_cabezas', 'fauna_amenazada_n']);
         return {
           reply,
@@ -5316,7 +5333,14 @@
       let baseList = topNumericVars;
       // Si la consulta menciona "sucursales bancarias o puntos CajaVecina" junto a otros >= 2 indicadores (ej. empresas SII, compras locales),
       // priorizar el primer representante bancario y diferir el segundo para no desplazar indicadores de otro subdominio del top 4.
-      const bankingKeys = new Set(['sucursales_banca_privada_cmf', 'puntos_cajavecina_bancoestado', 'puntos_cajavecina_n']);
+      const bankingKeys = new Set([
+        'sucursales_banca_privada_cmf',
+        'sucursales_bancarias_n',
+        'cajeros_automaticos_n',
+        'cajavecina_puntos_n',
+        'puntos_cajavecina_bancoestado',
+        'puntos_cajavecina_n'
+      ]);
       const highBankingCount = baseList.filter(i => bankingKeys.has(i.variable.key) && i.score >= 12).length;
       const nonBankingHighCount = baseList.filter(i => !bankingKeys.has(i.variable.key) && i.score >= 12).length;
       if (highBankingCount >= 2 && nonBankingHighCount >= 2 && /\b(banc\w*|cajavecina)\b/i.test(qNorm)) {
@@ -5354,7 +5378,8 @@
       const hasComprasLoc = baseList.some(i => i.variable.key === 'compras_locales_pct' && i.score >= 12);
       const hasFugaComp = baseList.some(i => i.variable.key === 'fuga_compras_pct' && i.score >= 12);
       const bankCountAfter = highBankingCount >= 2 ? 1 : highBankingCount;
-      const otherNonBankNonComp = baseList.filter(i => !['compras_locales_pct', 'fuga_compras_pct'].includes(i.variable.key) && !bankingKeys.has(i.variable.key) && i.score >= 12).length;
+      const realOtherThreshold = Math.max(16, Math.min(20, (baseList[0]?.score || 0) * 0.14));
+      const otherNonBankNonComp = baseList.filter(i => !['compras_locales_pct', 'fuga_compras_pct'].includes(i.variable.key) && !bankingKeys.has(i.variable.key) && i.score >= realOtherThreshold).length;
       const otherEffectiveCount = otherNonBankNonComp + bankCountAfter;
       if (hasComprasLoc && hasFugaComp && otherEffectiveCount >= 3) {
         let keptCompras = false;

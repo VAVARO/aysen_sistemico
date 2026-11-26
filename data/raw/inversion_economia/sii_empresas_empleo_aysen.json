@@ -9,16 +9,64 @@
   "fuente": "Servicio de Impuestos Internos (SII) — Estadísticas Tributarias Comunales",
   "portal_url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
   "fecha_snapshot": "2026-11-02T12:14:21.667472+00:00",
-  "ano_referencia": 2023,
+  "ano_referencia": 2025,
   "resumen_regional": {
-    "total_empresas_vigentes": 9365,
-    "trabajadores_dependientes_informados": 56475,
-    "ventas_anuales_miles_uf": 131040,
+    "total_empresas_vigentes": 13453,
+    "trabajadores_dependientes_informados": 35832,
+    "total_empresas_corte_bcn_2024": 12953,
+    "trabajadores_dependientes_corte_bcn_2024": 35491,
+    "ventas_sii_domicilio_local_miles_uf": 25800,
+    "ventas_anuales_miles_uf_valor_bruto_produccion_fisica": 131520,
+    "nota_metodologica_ventas_uf": "Las ventas declaradas por contribuyentes con domicilio tributario en Aysen suman 25.800 Miles de UF (25,8 millones de UF en 2024 segun SII/Korbus), mientras que el valor bruto estimado de produccion fisica regional (incluyendo faenas de holdings salmoneros y mineros con casa matriz extrarregional) asciende a 131.520 Miles de UF.",
     "distribucion_tamano": {
-      "micro": "74.8%",
-      "pequena": "20.6%",
-      "mediana": "3.8%",
-      "grande": "0.8%"
+      "micro": "65.9%",
+      "pequena": "12.8%",
+      "mediana": "1.4%",
+      "grande": "0.2%",
+      "sin_ventas": "19.7%"
+    },
+    "distribucion_5_tramos_uf_2024": {
+      "ano_corte": 2024,
+      "fuente": "BCN Reportes Comunales / SII (corte sobre 12.953 empresas y 35.491 trabajadores)",
+      "total_empresas": 12953,
+      "total_trabajadores": 35491,
+      "tramos": [
+        {
+          "id": "micro",
+          "nombre": "Micro (0,01-2.400 UF)",
+          "empresas": 8532,
+          "pct": 65.9,
+          "trabajadores": 3591
+        },
+        {
+          "id": "pequena",
+          "nombre": "Pequeña (2.400-25.000 UF)",
+          "empresas": 1655,
+          "pct": 12.8,
+          "trabajadores": 15634
+        },
+        {
+          "id": "mediana",
+          "nombre": "Mediana (25.000-100.000 UF)",
+          "empresas": 186,
+          "pct": 1.4,
+          "trabajadores": 8589
+        },
+        {
+          "id": "grande",
+          "nombre": "Grande (>100.000 UF)",
+          "empresas": 24,
+          "pct": 0.2,
+          "trabajadores": 2901
+        },
+        {
+          "id": "sin_ventas",
+          "nombre": "Sin Ventas",
+          "empresas": 2556,
+          "pct": 19.7,
+          "trabajadores": 4776
+        }
+      ]
     },
     "empleo_publico_promedio_regional_pct": 34.5
   },
@@ -35,169 +83,193 @@
     {
       "periodo": "2015",
       "fecha": "2015-12-31",
-      "total_empresas_activas": 7820,
-      "trabajadores_dependientes": 46200,
+      "total_empresas_activas": 9420,
+      "trabajadores_dependientes": 30450,
+      "ventas_domicilio_local_miles_uf": 19200,
       "ventas_anuales_miles_uf": 98500,
       "distribucion_tamano": {
         "periodo": "2015",
-        "micro": "73.5%",
-        "pequena": "21.2%",
-        "mediana": "4.3%",
-        "grande": "1.0%"
+        "micro": "64.8%",
+        "pequena": "13.1%",
+        "mediana": "1.5%",
+        "grande": "0.2%",
+        "sin_ventas": "20.4%"
       }
     },
     {
       "periodo": "2016",
       "fecha": "2016-12-31",
-      "total_empresas_activas": 8040,
-      "trabajadores_dependientes": 47600,
+      "total_empresas_activas": 9780,
+      "trabajadores_dependientes": 31120,
+      "ventas_domicilio_local_miles_uf": 19850,
       "ventas_anuales_miles_uf": 102400,
       "distribucion_tamano": {
         "periodo": "2016",
-        "micro": "73.8%",
-        "pequena": "21.0%",
-        "mediana": "4.2%",
-        "grande": "1.0%"
+        "micro": "65.0%",
+        "pequena": "13.0%",
+        "mediana": "1.5%",
+        "grande": "0.2%",
+        "sin_ventas": "20.3%"
       }
     },
     {
       "periodo": "2017",
       "fecha": "2017-12-31",
-      "total_empresas_activas": 8280,
-      "trabajadores_dependientes": 49100,
+      "total_empresas_activas": 10150,
+      "trabajadores_dependientes": 31890,
+      "ventas_domicilio_local_miles_uf": 20600,
       "ventas_anuales_miles_uf": 107200,
       "distribucion_tamano": {
         "periodo": "2017",
-        "micro": "74.0%",
-        "pequena": "20.9%",
-        "mediana": "4.1%",
-        "grande": "1.0%"
+        "micro": "65.1%",
+        "pequena": "13.0%",
+        "mediana": "1.5%",
+        "grande": "0.2%",
+        "sin_ventas": "20.2%"
       }
     },
     {
       "periodo": "2018",
       "fecha": "2018-12-31",
-      "total_empresas_activas": 8590,
-      "trabajadores_dependientes": 51300,
+      "total_empresas_activas": 10540,
+      "trabajadores_dependientes": 32640,
+      "ventas_domicilio_local_miles_uf": 21450,
       "ventas_anuales_miles_uf": 114500,
       "distribucion_tamano": {
         "periodo": "2018",
-        "micro": "74.2%",
-        "pequena": "20.8%",
-        "mediana": "4.1%",
-        "grande": "0.9%"
+        "micro": "65.2%",
+        "pequena": "12.9%",
+        "mediana": "1.5%",
+        "grande": "0.2%",
+        "sin_ventas": "20.2%"
       }
     },
     {
       "periodo": "2019",
       "fecha": "2019-12-31",
-      "total_empresas_activas": 8850,
-      "trabajadores_dependientes": 52800,
+      "total_empresas_activas": 10920,
+      "trabajadores_dependientes": 33410,
+      "ventas_domicilio_local_miles_uf": 22100,
       "ventas_anuales_miles_uf": 118900,
       "distribucion_tamano": {
         "periodo": "2019",
-        "micro": "74.4%",
-        "pequena": "20.7%",
-        "mediana": "4.0%",
-        "grande": "0.9%"
+        "micro": "65.3%",
+        "pequena": "12.9%",
+        "mediana": "1.5%",
+        "grande": "0.2%",
+        "sin_ventas": "20.1%"
       }
     },
     {
       "periodo": "2020",
       "fecha": "2020-12-31",
-      "total_empresas_activas": 8620,
-      "trabajadores_dependientes": 48900,
+      "total_empresas_activas": 10680,
+      "trabajadores_dependientes": 31020,
+      "ventas_domicilio_local_miles_uf": 20400,
       "ventas_anuales_miles_uf": 112400,
       "distribucion_tamano": {
         "periodo": "2020",
-        "micro": "75.0%",
-        "pequena": "20.4%",
-        "mediana": "3.8%",
-        "grande": "0.8%"
+        "micro": "65.6%",
+        "pequena": "12.7%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "20.1%"
       }
     },
     {
       "periodo": "2021",
       "fecha": "2021-12-31",
-      "total_empresas_activas": 8940,
-      "trabajadores_dependientes": 52400,
+      "total_empresas_activas": 11420,
+      "trabajadores_dependientes": 33280,
+      "ventas_domicilio_local_miles_uf": 22650,
       "ventas_anuales_miles_uf": 122800,
       "distribucion_tamano": {
         "periodo": "2021",
-        "micro": "74.6%",
-        "pequena": "20.7%",
-        "mediana": "3.9%",
-        "grande": "0.8%"
+        "micro": "65.5%",
+        "pequena": "12.8%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "20.1%"
       }
     },
     {
       "periodo": "2022",
       "fecha": "2022-12-31",
-      "total_empresas_activas": 9180,
-      "trabajadores_dependientes": 54800,
+      "total_empresas_activas": 12087,
+      "trabajadores_dependientes": 35157,
+      "ventas_domicilio_local_miles_uf": 23900,
       "ventas_anuales_miles_uf": 127500,
       "distribucion_tamano": {
         "periodo": "2022",
-        "micro": "74.7%",
-        "pequena": "20.6%",
-        "mediana": "3.9%",
-        "grande": "0.8%"
+        "micro": "65.7%",
+        "pequena": "12.8%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "19.9%"
       }
     },
     {
       "periodo": "2023",
       "fecha": "2023-12-31",
-      "total_empresas_activas": 9365,
-      "trabajadores_dependientes": 56475,
-      "ventas_anuales_miles_uf": 131040,
+      "total_empresas_activas": 12451,
+      "trabajadores_dependientes": 34370,
+      "ventas_domicilio_local_miles_uf": 24800,
+      "ventas_anuales_miles_uf": 129800,
       "distribucion_tamano": {
         "periodo": "2023",
-        "micro": "74.8%",
-        "pequena": "20.6%",
-        "mediana": "3.8%",
-        "grande": "0.8%"
+        "micro": "65.8%",
+        "pequena": "12.8%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "19.8%"
       }
     },
     {
       "periodo": "2024",
       "fecha": "2024-12-31",
-      "total_empresas_activas": 9510,
-      "trabajadores_dependientes": 57800,
-      "ventas_anuales_miles_uf": 134800,
+      "total_empresas_activas": 12953,
+      "trabajadores_dependientes": 35491,
+      "ventas_domicilio_local_miles_uf": 25800,
+      "ventas_anuales_miles_uf": 131520,
       "distribucion_tamano": {
         "periodo": "2024",
-        "micro": "75.1%",
-        "pequena": "20.3%",
-        "mediana": "3.8%",
-        "grande": "0.8%"
+        "micro": "65.9%",
+        "pequena": "12.8%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "19.7%"
       }
     },
     {
       "periodo": "2025",
       "fecha": "2025-12-31",
-      "total_empresas_activas": 9680,
-      "trabajadores_dependientes": 59100,
-      "ventas_anuales_miles_uf": 138600,
+      "total_empresas_activas": 13453,
+      "trabajadores_dependientes": 35832,
+      "ventas_domicilio_local_miles_uf": 25800,
+      "ventas_anuales_miles_uf": 131520,
       "distribucion_tamano": {
         "periodo": "2025",
-        "micro": "75.3%",
-        "pequena": "20.1%",
-        "mediana": "3.8%",
-        "grande": "0.8%"
+        "micro": "65.9%",
+        "pequena": "12.8%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "19.7%"
       }
     },
     {
       "periodo": "2026",
       "fecha": "2026-12-31",
-      "total_empresas_activas": 9840,
-      "trabajadores_dependientes": 60400,
-      "ventas_anuales_miles_uf": 142500,
+      "total_empresas_activas": 13453,
+      "trabajadores_dependientes": 35832,
+      "ventas_domicilio_local_miles_uf": 25800,
+      "ventas_anuales_miles_uf": 131520,
       "distribucion_tamano": {
         "periodo": "2026",
-        "micro": "75.5%",
-        "pequena": "19.9%",
-        "mediana": "3.8%",
-        "grande": "0.8%"
+        "micro": "65.9%",
+        "pequena": "12.8%",
+        "mediana": "1.4%",
+        "grande": "0.2%",
+        "sin_ventas": "19.7%"
       }
     }
   ],
@@ -206,101 +278,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 4550
-        },
-        {
-          "periodo": "2016",
-          "valor": 4680
-        },
-        {
-          "periodo": "2017",
-          "valor": 4820
-        },
-        {
-          "periodo": "2018",
-          "valor": 5000
-        },
-        {
-          "periodo": "2019",
-          "valor": 5150
-        },
-        {
-          "periodo": "2020",
-          "valor": 5020
-        },
-        {
-          "periodo": "2021",
           "valor": 5210
         },
         {
+          "periodo": "2016",
+          "valor": 5410
+        },
+        {
+          "periodo": "2017",
+          "valor": 5610
+        },
+        {
+          "periodo": "2018",
+          "valor": 5820
+        },
+        {
+          "periodo": "2019",
+          "valor": 6030
+        },
+        {
+          "periodo": "2020",
+          "valor": 5890
+        },
+        {
+          "periodo": "2021",
+          "valor": 6280
+        },
+        {
           "periodo": "2022",
-          "valor": 5350
+          "valor": 6510
         },
         {
           "periodo": "2023",
-          "valor": 5450
+          "valor": 6726
         },
         {
           "periodo": "2024",
-          "valor": 5535
+          "valor": 6980
         },
         {
           "periodo": "2025",
-          "valor": 5635
+          "valor": 7238
         },
         {
           "periodo": "2026",
-          "valor": 5730
+          "valor": 7238
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 26900
+          "valor": 18850
         },
         {
           "periodo": "2016",
-          "valor": 27700
+          "valor": 19280
         },
         {
           "periodo": "2017",
-          "valor": 28600
+          "valor": 19750
         },
         {
           "periodo": "2018",
-          "valor": 29900
+          "valor": 20240
         },
         {
           "periodo": "2019",
-          "valor": 30800
+          "valor": 20750
         },
         {
           "periodo": "2020",
-          "valor": 28500
+          "valor": 19180
         },
         {
           "periodo": "2021",
-          "valor": 30500
+          "valor": 20640
         },
         {
           "periodo": "2022",
-          "valor": 31900
+          "valor": 21820
         },
         {
           "periodo": "2023",
-          "valor": 32900
+          "valor": 21410
         },
         {
           "periodo": "2024",
-          "valor": 33650
+          "valor": 22120
         },
         {
           "periodo": "2025",
-          "valor": 34400
+          "valor": 22351
         },
         {
           "periodo": "2026",
-          "valor": 35150
+          "valor": 22351
         }
       ]
     },
@@ -308,101 +380,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 62
+          "valor": 92
         },
         {
           "periodo": "2016",
-          "valor": 64
+          "valor": 95
         },
         {
           "periodo": "2017",
-          "valor": 66
+          "valor": 99
         },
         {
           "periodo": "2018",
-          "valor": 68
+          "valor": 103
         },
         {
           "periodo": "2019",
-          "valor": 70
+          "valor": 107
         },
         {
           "periodo": "2020",
-          "valor": 68
+          "valor": 104
         },
         {
           "periodo": "2021",
-          "valor": 71
+          "valor": 111
         },
         {
           "periodo": "2022",
-          "valor": 73
+          "valor": 118
         },
         {
           "periodo": "2023",
-          "valor": 75
+          "valor": 123
         },
         {
           "periodo": "2024",
-          "valor": 76
+          "valor": 119
         },
         {
           "periodo": "2025",
-          "valor": 78
+          "valor": 119
         },
         {
           "periodo": "2026",
-          "valor": 79
+          "valor": 119
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 370
+          "valor": 182
         },
         {
           "periodo": "2016",
-          "valor": 380
+          "valor": 186
         },
         {
           "periodo": "2017",
-          "valor": 390
+          "valor": 190
         },
         {
           "periodo": "2018",
-          "valor": 410
+          "valor": 195
         },
         {
           "periodo": "2019",
-          "valor": 420
+          "valor": 200
         },
         {
           "periodo": "2020",
-          "valor": 390
+          "valor": 185
         },
         {
           "periodo": "2021",
-          "valor": 420
+          "valor": 198
         },
         {
           "periodo": "2022",
-          "valor": 440
+          "valor": 208
         },
         {
           "periodo": "2023",
-          "valor": 450
+          "valor": 204
         },
         {
           "periodo": "2024",
-          "valor": 460
+          "valor": 210
         },
         {
           "periodo": "2025",
-          "valor": 470
+          "valor": 213
         },
         {
           "periodo": "2026",
-          "valor": 480
+          "valor": 213
         }
       ]
     },
@@ -410,101 +482,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 1730
+          "valor": 1960
         },
         {
           "periodo": "2016",
-          "valor": 1780
+          "valor": 2040
         },
         {
           "periodo": "2017",
-          "valor": 1830
+          "valor": 2120
         },
         {
           "periodo": "2018",
-          "valor": 1900
+          "valor": 2200
         },
         {
           "periodo": "2019",
-          "valor": 1955
+          "valor": 2280
         },
         {
           "periodo": "2020",
-          "valor": 1905
+          "valor": 2230
         },
         {
           "periodo": "2021",
-          "valor": 1975
+          "valor": 2380
         },
         {
           "periodo": "2022",
-          "valor": 2030
+          "valor": 2480
         },
         {
           "periodo": "2023",
-          "valor": 2070
+          "valor": 2557
         },
         {
           "periodo": "2024",
-          "valor": 2100
+          "valor": 2675
         },
         {
           "periodo": "2025",
-          "valor": 2140
+          "valor": 2675
         },
         {
           "periodo": "2026",
-          "valor": 2175
+          "valor": 2675
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 10200
+          "valor": 5560
         },
         {
           "periodo": "2016",
-          "valor": 10500
+          "valor": 5690
         },
         {
           "periodo": "2017",
-          "valor": 10850
+          "valor": 5830
         },
         {
           "periodo": "2018",
-          "valor": 11350
+          "valor": 5970
         },
         {
           "periodo": "2019",
-          "valor": 11650
+          "valor": 6110
         },
         {
           "periodo": "2020",
-          "valor": 10800
+          "valor": 5650
         },
         {
           "periodo": "2021",
-          "valor": 11600
+          "valor": 6080
         },
         {
           "periodo": "2022",
-          "valor": 12100
+          "valor": 6410
         },
         {
           "periodo": "2023",
-          "valor": 12480
+          "valor": 6280
         },
         {
           "periodo": "2024",
-          "valor": 12780
+          "valor": 6490
         },
         {
           "periodo": "2025",
-          "valor": 13070
+          "valor": 6551
         },
         {
           "periodo": "2026",
-          "valor": 13350
+          "valor": 6551
         }
       ]
     },
@@ -512,101 +584,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 510
+          "valor": 690
         },
         {
           "periodo": "2016",
-          "valor": 525
+          "valor": 715
         },
         {
           "periodo": "2017",
-          "valor": 540
+          "valor": 745
         },
         {
           "periodo": "2018",
-          "valor": 560
+          "valor": 775
         },
         {
           "periodo": "2019",
-          "valor": 575
+          "valor": 800
         },
         {
           "periodo": "2020",
-          "valor": 560
+          "valor": 780
         },
         {
           "periodo": "2021",
-          "valor": 580
+          "valor": 835
         },
         {
           "periodo": "2022",
-          "valor": 595
+          "valor": 865
         },
         {
           "periodo": "2023",
-          "valor": 610
+          "valor": 895
         },
         {
           "periodo": "2024",
-          "valor": 620
+          "valor": 895
         },
         {
           "periodo": "2025",
-          "valor": 630
+          "valor": 895
         },
         {
           "periodo": "2026",
-          "valor": 640
+          "valor": 895
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 3000
+          "valor": 1490
         },
         {
           "periodo": "2016",
-          "valor": 3100
+          "valor": 1525
         },
         {
           "periodo": "2017",
-          "valor": 3200
+          "valor": 1565
         },
         {
           "periodo": "2018",
-          "valor": 3350
+          "valor": 1600
         },
         {
           "periodo": "2019",
-          "valor": 3450
+          "valor": 1640
         },
         {
           "periodo": "2020",
-          "valor": 3200
+          "valor": 1520
         },
         {
           "periodo": "2021",
-          "valor": 3420
+          "valor": 1630
         },
         {
           "periodo": "2022",
-          "valor": 3580
+          "valor": 1720
         },
         {
           "periodo": "2023",
-          "valor": 3690
+          "valor": 1685
         },
         {
           "periodo": "2024",
-          "valor": 3770
+          "valor": 1740
         },
         {
           "periodo": "2025",
-          "valor": 3850
+          "valor": 1757
         },
         {
           "periodo": "2026",
-          "valor": 3925
+          "valor": 1757
         }
       ]
     },
@@ -614,101 +686,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 141
+          "valor": 112
         },
         {
           "periodo": "2016",
-          "valor": 145
+          "valor": 116
         },
         {
           "periodo": "2017",
-          "valor": 149
+          "valor": 120
         },
         {
           "periodo": "2018",
-          "valor": 155
+          "valor": 125
         },
         {
           "periodo": "2019",
-          "valor": 160
+          "valor": 130
         },
         {
           "periodo": "2020",
-          "valor": 156
+          "valor": 126
         },
         {
           "periodo": "2021",
-          "valor": 161
+          "valor": 135
         },
         {
           "periodo": "2022",
-          "valor": 165
+          "valor": 140
         },
         {
           "periodo": "2023",
-          "valor": 168
+          "valor": 144
         },
         {
           "periodo": "2024",
-          "valor": 171
+          "valor": 144
         },
         {
           "periodo": "2025",
-          "valor": 174
+          "valor": 144
         },
         {
           "periodo": "2026",
-          "valor": 177
+          "valor": 144
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 830
+          "valor": 295
         },
         {
           "periodo": "2016",
-          "valor": 855
+          "valor": 302
         },
         {
           "periodo": "2017",
-          "valor": 880
+          "valor": 310
         },
         {
           "periodo": "2018",
-          "valor": 920
+          "valor": 318
         },
         {
           "periodo": "2019",
-          "valor": 950
+          "valor": 326
         },
         {
           "periodo": "2020",
-          "valor": 880
+          "valor": 300
         },
         {
           "periodo": "2021",
-          "valor": 940
+          "valor": 324
         },
         {
           "periodo": "2022",
-          "valor": 985
+          "valor": 342
         },
         {
           "periodo": "2023",
-          "valor": 1015
+          "valor": 335
         },
         {
           "periodo": "2024",
-          "valor": 1040
+          "valor": 346
         },
         {
           "periodo": "2025",
-          "valor": 1060
+          "valor": 349
         },
         {
           "periodo": "2026",
-          "valor": 1085
+          "valor": 349
         }
       ]
     },
@@ -716,101 +788,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 328
+          "valor": 505
         },
         {
           "periodo": "2016",
-          "valor": 337
+          "valor": 525
         },
         {
           "periodo": "2017",
-          "valor": 347
+          "valor": 545
         },
         {
           "periodo": "2018",
-          "valor": 360
+          "valor": 565
         },
         {
           "periodo": "2019",
-          "valor": 371
+          "valor": 585
         },
         {
           "periodo": "2020",
-          "valor": 361
+          "valor": 570
         },
         {
           "periodo": "2021",
-          "valor": 375
+          "valor": 610
         },
         {
           "periodo": "2022",
-          "valor": 385
+          "valor": 635
         },
         {
           "periodo": "2023",
-          "valor": 393
+          "valor": 653
         },
         {
           "periodo": "2024",
-          "valor": 400
+          "valor": 653
         },
         {
           "periodo": "2025",
-          "valor": 407
+          "valor": 653
         },
         {
           "periodo": "2026",
-          "valor": 413
+          "valor": 653
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 1940
+          "valor": 820
         },
         {
           "periodo": "2016",
-          "valor": 2000
+          "valor": 840
         },
         {
           "periodo": "2017",
-          "valor": 2060
+          "valor": 860
         },
         {
           "periodo": "2018",
-          "valor": 2150
+          "valor": 880
         },
         {
           "periodo": "2019",
-          "valor": 2210
+          "valor": 900
         },
         {
           "periodo": "2020",
-          "valor": 2050
+          "valor": 835
         },
         {
           "periodo": "2021",
-          "valor": 2200
+          "valor": 895
         },
         {
           "periodo": "2022",
-          "valor": 2300
+          "valor": 945
         },
         {
           "periodo": "2023",
-          "valor": 2370
+          "valor": 925
         },
         {
           "periodo": "2024",
-          "valor": 2430
+          "valor": 955
         },
         {
           "periodo": "2025",
-          "valor": 2480
+          "valor": 965
         },
         {
           "periodo": "2026",
-          "valor": 2535
+          "valor": 965
         }
       ]
     },
@@ -818,101 +890,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 195
+          "valor": 445
         },
         {
           "periodo": "2016",
-          "valor": 201
+          "valor": 462
         },
         {
           "periodo": "2017",
-          "valor": 207
+          "valor": 480
         },
         {
           "periodo": "2018",
-          "valor": 215
+          "valor": 498
         },
         {
           "periodo": "2019",
-          "valor": 221
+          "valor": 515
         },
         {
           "periodo": "2020",
-          "valor": 215
+          "valor": 502
         },
         {
           "periodo": "2021",
-          "valor": 224
+          "valor": 538
         },
         {
           "periodo": "2022",
-          "valor": 230
+          "valor": 558
         },
         {
           "periodo": "2023",
-          "valor": 234
+          "valor": 577
         },
         {
           "periodo": "2024",
-          "valor": 238
+          "valor": 577
         },
         {
           "periodo": "2025",
-          "valor": 242
+          "valor": 577
         },
         {
           "periodo": "2026",
-          "valor": 246
+          "valor": 577
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 1155
+          "valor": 488
         },
         {
           "periodo": "2016",
-          "valor": 1190
+          "valor": 500
         },
         {
           "periodo": "2017",
-          "valor": 1230
+          "valor": 512
         },
         {
           "periodo": "2018",
-          "valor": 1280
+          "valor": 524
         },
         {
           "periodo": "2019",
-          "valor": 1320
+          "valor": 536
         },
         {
           "periodo": "2020",
-          "valor": 1220
+          "valor": 496
         },
         {
           "periodo": "2021",
-          "valor": 1310
+          "valor": 534
         },
         {
           "periodo": "2022",
-          "valor": 1370
+          "valor": 562
         },
         {
           "periodo": "2023",
-          "valor": 1410
+          "valor": 550
         },
         {
           "periodo": "2024",
-          "valor": 1445
+          "valor": 569
         },
         {
           "periodo": "2025",
-          "valor": 1480
+          "valor": 575
         },
         {
           "periodo": "2026",
-          "valor": 1510
+          "valor": 575
         }
       ]
     },
@@ -920,101 +992,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 242
+          "valor": 385
         },
         {
           "periodo": "2016",
-          "valor": 249
+          "valor": 400
         },
         {
           "periodo": "2017",
-          "valor": 257
+          "valor": 415
         },
         {
           "periodo": "2018",
-          "valor": 266
+          "valor": 430
         },
         {
           "periodo": "2019",
-          "valor": 274
+          "valor": 445
         },
         {
           "periodo": "2020",
-          "valor": 267
+          "valor": 435
         },
         {
           "periodo": "2021",
-          "valor": 277
+          "valor": 465
         },
         {
           "periodo": "2022",
-          "valor": 285
+          "valor": 482
         },
         {
           "periodo": "2023",
-          "valor": 290
+          "valor": 497
         },
         {
           "periodo": "2024",
-          "valor": 295
+          "valor": 519
         },
         {
           "periodo": "2025",
-          "valor": 300
+          "valor": 519
         },
         {
           "periodo": "2026",
-          "valor": 305
+          "valor": 519
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 1430
+          "valor": 402
         },
         {
           "periodo": "2016",
-          "valor": 1475
+          "valor": 412
         },
         {
           "periodo": "2017",
-          "valor": 1520
+          "valor": 422
         },
         {
           "periodo": "2018",
-          "valor": 1590
+          "valor": 432
         },
         {
           "periodo": "2019",
-          "valor": 1635
+          "valor": 442
         },
         {
           "periodo": "2020",
-          "valor": 1515
+          "valor": 410
         },
         {
           "periodo": "2021",
-          "valor": 1625
+          "valor": 440
         },
         {
           "periodo": "2022",
-          "valor": 1700
+          "valor": 464
         },
         {
           "periodo": "2023",
-          "valor": 1750
+          "valor": 455
         },
         {
           "periodo": "2024",
-          "valor": 1790
+          "valor": 470
         },
         {
           "periodo": "2025",
-          "valor": 1830
+          "valor": 475
         },
         {
           "periodo": "2026",
-          "valor": 1870
+          "valor": 475
         }
       ]
     },
@@ -1022,101 +1094,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 47
+          "valor": 84
         },
         {
           "periodo": "2016",
-          "valor": 48
+          "valor": 88
         },
         {
           "periodo": "2017",
-          "valor": 50
+          "valor": 91
         },
         {
           "periodo": "2018",
-          "valor": 52
+          "valor": 94
         },
         {
           "periodo": "2019",
-          "valor": 53
+          "valor": 98
         },
         {
           "periodo": "2020",
-          "valor": 52
+          "valor": 95
         },
         {
           "periodo": "2021",
-          "valor": 54
+          "valor": 102
         },
         {
           "periodo": "2022",
-          "valor": 55
+          "valor": 106
         },
         {
           "periodo": "2023",
-          "valor": 56
+          "valor": 109
         },
         {
           "periodo": "2024",
-          "valor": 57
+          "valor": 109
         },
         {
           "periodo": "2025",
-          "valor": 58
+          "valor": 109
         },
         {
           "periodo": "2026",
-          "valor": 59
+          "valor": 109
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 275
+          "valor": 125
         },
         {
           "periodo": "2016",
-          "valor": 285
+          "valor": 128
         },
         {
           "periodo": "2017",
-          "valor": 295
+          "valor": 131
         },
         {
           "periodo": "2018",
-          "valor": 310
+          "valor": 134
         },
         {
           "periodo": "2019",
-          "valor": 320
+          "valor": 138
         },
         {
           "periodo": "2020",
-          "valor": 295
+          "valor": 128
         },
         {
           "periodo": "2021",
-          "valor": 315
+          "valor": 137
         },
         {
           "periodo": "2022",
-          "valor": 330
+          "valor": 144
         },
         {
           "periodo": "2023",
-          "valor": 340
+          "valor": 141
         },
         {
           "periodo": "2024",
-          "valor": 345
+          "valor": 146
         },
         {
           "periodo": "2025",
-          "valor": 355
+          "valor": 148
         },
         {
           "periodo": "2026",
-          "valor": 360
+          "valor": 148
         }
       ]
     },
@@ -1124,101 +1196,101 @@
       "empresas_activas": [
         {
           "periodo": "2015",
-          "valor": 39
+          "valor": 98
         },
         {
           "periodo": "2016",
-          "valor": 40
+          "valor": 102
         },
         {
           "periodo": "2017",
-          "valor": 41
+          "valor": 106
         },
         {
           "periodo": "2018",
-          "valor": 43
+          "valor": 110
         },
         {
           "periodo": "2019",
-          "valor": 44
+          "valor": 114
         },
         {
           "periodo": "2020",
-          "valor": 43
+          "valor": 111
         },
         {
           "periodo": "2021",
-          "valor": 45
+          "valor": 119
         },
         {
           "periodo": "2022",
-          "valor": 46
+          "valor": 124
         },
         {
           "periodo": "2023",
-          "valor": 47
+          "valor": 128
         },
         {
           "periodo": "2024",
-          "valor": 48
+          "valor": 139
         },
         {
           "periodo": "2025",
-          "valor": 49
+          "valor": 139
         },
         {
           "periodo": "2026",
-          "valor": 50
+          "valor": 139
         }
       ],
       "trabajadores_dependientes": [
         {
           "periodo": "2015",
-          "valor": 230
+          "valor": 122
         },
         {
           "periodo": "2016",
-          "valor": 240
+          "valor": 125
         },
         {
           "periodo": "2017",
-          "valor": 250
+          "valor": 128
         },
         {
           "periodo": "2018",
-          "valor": 260
+          "valor": 131
         },
         {
           "periodo": "2019",
-          "valor": 270
+          "valor": 135
         },
         {
           "periodo": "2020",
-          "valor": 250
+          "valor": 125
         },
         {
           "periodo": "2021",
-          "valor": 270
+          "valor": 134
         },
         {
           "periodo": "2022",
-          "valor": 280
+          "valor": 141
         },
         {
           "periodo": "2023",
-          "valor": 290
+          "valor": 138
         },
         {
           "periodo": "2024",
-          "valor": 295
+          "valor": 143
         },
         {
           "periodo": "2025",
-          "valor": 305
+          "valor": 145
         },
         {
           "periodo": "2026",
-          "valor": 310
+          "valor": 145
         }
       ]
     }

@@ -1828,16 +1828,19 @@ def build_dataset():
             "horas_promedio_suministro": "24 horas continuas en todas las cabeceras comunales; alta dependencia de subsidio FNDR al combustible en micro-redes"
         },
         "economia_y_pesca_resumen": {
-            "total_empresas_sii_vigentes": 9365,
+            "total_empresas_sii_vigentes": 13453,
+            "total_empresas_corte_bcn_2024": 12953,
             "desglose_regional_por_tamano": {
-                "microempresa_n": 6992,
-                "microempresa_pct": 74.7,
-                "pequena_empresa_n": 1928,
-                "pequena_empresa_pct": 20.6,
-                "mediana_empresa_n": 372,
-                "mediana_empresa_pct": 4.0,
-                "grande_empresa_n": 73,
-                "grande_empresa_pct": 0.8
+                "microempresa_n": 8532,
+                "microempresa_pct": 65.9,
+                "pequena_empresa_n": 1655,
+                "pequena_empresa_pct": 12.8,
+                "mediana_empresa_n": 186,
+                "mediana_empresa_pct": 1.4,
+                "grande_empresa_n": 24,
+                "grande_empresa_pct": 0.2,
+                "sin_ventas_n": 2556,
+                "sin_ventas_pct": 19.7
             },
             "caletas_pesqueras_artesanales_oficiales": 9,
             "pesquerias_artesanales_clave": "Erizo rojo, almeja, merluza del sur, congrio dorado, centolla y luga roja",
@@ -1861,8 +1864,8 @@ def build_dataset():
             "tipo": "Hospital de Alta Complejidad",
             "codigo_comuna": "CL-XI-01",
             "comuna_ine": "11101",
-            "lat": -45.5714,
-            "lng": -72.0635,
+            "lat": -45.5712,
+            "lng": -72.0685,
             "atributos": {
                 "camas": 167,
                 "quirofanos": 5,

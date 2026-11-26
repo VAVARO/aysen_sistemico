@@ -587,7 +587,9 @@ function resolveOfficialSource(varKey, hubId) {
   if (/concesiones_salmon|centros_activos|biomasa_|antibioticos|desembarque|amerb|salmon|caletas/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernapesca;
   if (/concesiones_mineras|pertenencias_mineras|mineria/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernageomin;
   if (/proyectos_seia|inversion_seia|inversion_por_proyecto_seia|seia_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.seia;
-  if (/empresas_sii|trabajadores_sii|microempresas_|ventas_sii|ventas_por_empresa|pib_regional|empleo_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sii;
+  if (/sucursales_banca|sucursales_bancarias|cajeros_automaticos|cajavecina/i.test(k)) return { name: 'CMF — Informe de Inclusión Financiera 2025 / BancoEstado', url: 'https://www.cmfchile.cl/', dataYear: 'CMF 2025', collectionDate: '26 Nov 2026' };
+  if (/pib_regional/i.test(k)) return { name: 'Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales', url: 'https://si3.bcentral.cl/', dataYear: 'BCCh 2018–2026', collectionDate: '26 Nov 2026' };
+  if (/empresas_sii|trabajadores_sii|microempresas_|ventas_sii|ventas_por_empresa|empleo_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sii;
   if (/compras_locales|fuga_compras|chilecompra|mercadopublico/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.chilecompra;
   if (/parcelaciones_sag|sag_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sag;
   if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
@@ -686,7 +688,7 @@ const hubs = [
     shortTitle: 'Economía, Inversión & Suelo',
     color: '#0f766e',
     description: 'Proyectos aprobados en el **SEIA (3.355,5 MM USD)**, estadísticas tributarias de empresas, empleo y ventas por rubro (**SII**), pertenencias mineras (**SERNAGEOMIN**) y tenencia de suelo (**Bienes Nacionales / SNASPE**).',
-    example: 'Registra **722 proyectos aprobados** y **22 en calificación** en el SEIA, junto con las 9.365 empresas ante el SII, las pertenencias mineras y la proporción de suelo comunal fiscal vs. privado.',
+    example: 'Registra **722 proyectos aprobados** y **22 en calificación** en el SEIA (Cuenta Pública SEA 2024–2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias en 2025), **13.453 empresas** y **35.832 trabajadores** ante el SII (5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs 131.520 MUF bruto), **356 concesiones mineras (128.511 ha SERNAGEOMIN)** y **PIB BCCh 1.991.000 MM$ (2025, +8,5% real)**.',
     csvFile: 'data/systemic/csv/04_inversion_seia_economia_comunas.csv',
     nodesFile: 'data/systemic/csv/03_concesiones_tierra_mar_nodos.csv',
     sourceName: 'SEA SEIA / Servicio de Impuestos Internos (SII) / SERNAGEOMIN / Bienes Nacionales',
@@ -1670,8 +1672,8 @@ const rawNodos = [
     id: 19,
     hubId: 'inversion',
     title: 'Inversión privada en evaluación ambiental',
-    definition: 'Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa.',
-    example: 'Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.320,0 MM USD)**, **Cisnes (525,0 MM USD)**, **Coyhaique (495,6 MM USD)** y **Chile Chico (310,0 MM USD)** en acuicultura, energía, infraestructura y minería.',
+    definition: 'Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD, consultas de pertinencia y proyectos en evaluación activa.',
+    example: 'Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.320,0 MM USD)**, **Cisnes (525,0 MM USD)**, **Coyhaique (495,6 MM USD)** y **Chile Chico (310,0 MM USD)**. Según la **Cuenta Pública SEA 2024–2025**, en 2025 se registraron **3 proyectos aprobados, 1 desistido, 0 rechazados y 72 consultas de pertinencia resueltas**.',
     officialSource: { name: 'Servicio de Evaluacion Ambiental (SEA — SEIA)', url: 'https://seia.sea.gob.cl/', frequency: 'Actualizacion continua' },
     csvFile: 'data/systemic/csv/04_inversion_seia_economia_comunas.csv',
     relatedNodeIds: [6, 11, 20, 21],
@@ -1702,7 +1704,7 @@ const rawNodos = [
     canvasPreview: {
       availableDimensions: [
         '722 proyectos aprobados con Resolucion de Calificación Ambiental (RCA)',
-        '22 proyectos actualmente en calificacion ambiental activa',
+        'Cuenta Pública SEA 2024–2025: 3 aprobados, 1 desistido, 0 rechazados y 72 consultas de pertinencia resueltas en 2025',
         'Monto acumulado de inversión aprobada (3.355,5 MM USD)',
         'Desglose sectorial SEIA (Acuicultura, Energía, Minería, Transporte, Saneamiento)'
       ],
@@ -1717,19 +1719,25 @@ const rawNodos = [
     id: 20,
     hubId: 'inversion',
     title: 'Empresas, Empleo y Ventas por Rubro (SII)',
-    definition: 'Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)**: número de empresas con iniciación de actividades, trabajadores dependientes informados, ventas anuales en UF y peso del empleo público.',
-    example: 'En la región operan **13.453 empresas con casa matriz regional** y **35.832 trabajadores dependientes informados** (**SII Año Comercial 2025, act. oct. 2026**): **10.117 microempresas (75,2%)**, **2.718 pequeñas (20,2%)**, **515 medianas (3,8%)** y **103 grandes (0,8%)**, con **1.483 empresas** en Rubro I Alojamiento y Comidas (`11,0%` regional) y **131.520 Miles de UF** en ventas.',
+    definition: 'Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)** y **Banco Central (BCCh)**: empresas por tramo en UF, trabajadores dependientes informados, ventas con domicilio tributario local vs. valor bruto de producción física y cuentas regionales.',
+    example: 'En 2025 operan **13.453 empresas** y **35.832 trabajadores** en Aysén (serie SII: 2022 `12.087 / 35.157`, 2023 `12.451 / 34.370`, 2024 `12.953 / 35.491`). En **5 tramos en UF (corte BCN 2024, 12.953 emp.)**: **Micro 0,01–2.400 UF: 8.532 (65,9% / 3.591 trab.)**, **Pequeña 2.400–25.000 UF: 1.655 (12,8% / 15.634 trab.)**, **Mediana 25.000–100.000 UF: 186 (1,4% / 8.589 trab.)**, **Grande >100.000 UF: 24 (0,2% / 2.901 trab.)** y **Sin Ventas: 2.556 (19,7% / 4.776 trab.)**. Las ventas declaradas con **domicilio tributario local suman 25.800 Miles de UF (25,8 millones de UF en 2024 según SII/Korbus)**, frente a **131.520 Miles de UF** de valor bruto estimado de producción física con casas matrices extrarregionales.',
     officialSource: { name: 'Servicio de Impuestos Internos (SII) — Estadisticas Tributarias', url: 'https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/04_inversion_seia_economia_comunas.csv',
     relatedNodeIds: [1, 7, 10, 19],
     chartSpec: {
       type: 'doughnut',
-      title: 'Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 13.453 Total)',
-      labels: ['Microempresas (1-9 trab.)', 'Pequeñas empresas (10-49)', 'Medianas empresas (50-199)', 'Grandes empresas (200+)'],
+      title: 'Distribución Oficial SII en 5 Tramos por Ventas en UF (BCN 2024 - 12.953 Empresas)',
+      labels: [
+        'Micro (0,01–2.400 UF)',
+        'Pequeña (2.400–25.000 UF)',
+        'Mediana (25.000–100.000 UF)',
+        'Grande (>100.000 UF)',
+        'Sin Ventas'
+      ],
       datasets: [{
-        label: 'Empresas Activas',
-        data: [10117, 2718, 515, 103],
-        backgroundColor: ['#0059c5', '#0284c7', '#0f766e', '#f59e0b']
+        label: 'Empresas por Tramo UF (BCN 2024)',
+        data: [8532, 1655, 186, 24, 2556],
+        backgroundColor: ['#0059c5', '#0284c7', '#0f766e', '#f59e0b', '#94a3b8']
       }],
       unit: 'empresas'
     },
@@ -1748,10 +1756,10 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Estadísticas tributarias oficiales del SII por rubro económico y tramo de venta',
-        '13.453 empresas con casa matriz y 35.832 trabajadores en Aysén (SII)',
-        'Trabajadores dependientes formales registrados ante el SII',
-        'Peso relativo del empleo público vs. privado en cada comuna'
+        '5 tramos en UF BCN 2024 (Micro 8.532, Pequeña 1.655, Mediana 186, Grande 24, Sin Ventas 2.556)',
+        'Serie regional SII 2022–2025 (13.453 empresas / 35.832 trabajadores) y detalle comunal BCN',
+        'Ventas domicilio tributario local (25.800 MUF) vs valor bruto produccion fisica (131.520 MUF)',
+        'PIB Regional BCCh 2025: 1.991.000 MM$ (+8,5% real; FBCF +18,2%; PIB turístico 89.200 MM$ = 4,5%; 1T 2026 -2,6% real)'
       ],
       suggestedCrossings: [
         'Cruce con Pesca Industrial e Impuesto Específico (Nodo #10)',
@@ -1765,7 +1773,7 @@ const rawNodos = [
     hubId: 'inversion',
     title: 'Concesiones Mineras y Yacimientos (SERNAGEOMIN)',
     definition: 'Catastro de **concesiones mineras de exploración y explotación (pertenencias)**, superficie comprometida en hectáreas, yacimientos metálicos y no metálicos según **SERNAGEOMIN**.',
-    example: '**Chile Chico** lidera en minería metálica con **48.200 ha en pertenencias** (distrito minero Cerro Bayo), seguido por **Coyhaique (31.500 ha)**, **Río Ibáñez (19.600 ha)** y **Cisnes (16.800 ha)** (total regional **156.400 ha**).',
+    example: 'El catastro **SERNAGEOMIN** registra **356 concesiones vigentes** (**131 de explotación + 225 de exploración**) y **128.511 ha** en Aysén: **Chile Chico (127 conc. [94+33] / 47.537 ha)**, **Lago Verde (82 conc. [1+81] / 24.800 ha)**, **Coyhaique (75 conc. / 21.573 ha)**, **Aysén (30 conc. / 13.900 ha)**, **O\'Higgins (22 conc. / 9.800 ha)**, **Río Ibáñez (14 conc. / 7.400 ha)**, **Cisnes (4 conc. / 2.300 ha)**, **Cochrane (2 conc. / 1.201 ha)** y **0 concesiones en Tortel y Guaitecas**.',
     officialSource: { name: 'SERNAGEOMIN — Catastro Minero Nacional', url: 'https://www.sernageomin.cl/catastro-minero/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/03_concesiones_tierra_mar_comunas.csv',
     relatedNodeIds: [15, 19, 22],
@@ -1799,10 +1807,10 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Catastro oficial de pertenencias mineras vigentes (SERNAGEOMIN)',
-        'Concesiones de exploración y explotación de minerales metálicos y no metálicos',
-        'Yacimientos emblematicos (Cerro Bayo en Chile Chico, Mina El Toqui en Coyhaique)',
-        'Superficie comunal comprometida bajo régimen minero'
+        'Catastro oficial de 356 concesiones mineras vigentes y 128.511 ha (SERNAGEOMIN)',
+        '131 concesiones de explotación y 225 concesiones de exploración',
+        'Titulares: Pacífico del Sur SpA (El Toqui) y Andean Silver Ltd. (Cerro Bayo, 136 Moz AgEq JORC jul-2026)',
+        'Superficie comunal comprometida bajo régimen minero (0 ha en Tortel y Guaitecas)'
       ],
       suggestedCrossings: [
         'Cruce con Tenencia de Suelo Fiscal y SNASPE (Nodo #22)',
@@ -1815,9 +1823,9 @@ const rawNodos = [
     id: 22,
     hubId: 'inversion',
     title: 'Tenencia de Suelo Fiscal, SNASPE y Privada (BBNN / CONAF)',
-    definition: 'Estructura de tenencia de la tierra según el **Ministerio de Bienes Nacionales y CONAF**: hectáreas y porcentaje de suelo fiscal, propiedad privada y unidades bajo protección **SNASPE**.',
-    example: 'En comunas como **Tortel (91,4% fiscal/SNASPE)** y **O\'Higgins (86,8%)** la mayor parte del territorio esta bajo dominio del Estado, contrastando con **Coyhaique**, donde el **62,3%** es propiedad privada y presenta presión por loteos rurales.',
-    officialSource: { name: 'Ministerio de Bienes Nacionales / CONAF SIT', url: 'https://ide.patrimonio.cl/', frequency: 'Anual' },
+    definition: 'Estructura de tenencia de la tierra según el **Ministerio de Bienes Nacionales y CONAF** junto al **Catastro Vegetacional CONAF 2026** y dotación pecuaria **BCN/ODEPA**: hectáreas de suelo fiscal, propiedad privada, SNASPE y masa ganadera.',
+    example: 'En **Tortel (91,4% fiscal/SNASPE)** y **O\'Higgins (86,8%)** predomina el dominio estatal, frente a **Coyhaique (62,3% privado)**. El **Catastro Vegetacional CONAF 2026** cubre **10.667.211,5 ha** (**5.152.384,3 ha de bosque nativo** y **2.387.525,4 ha de bosques en SNASPE**), coexistiendo con **144.118 bovinos** y **177.972 ovinos** (BCN/ODEPA).',
+    officialSource: { name: 'Ministerio de Bienes Nacionales / CONAF SIT / ODEPA', url: 'https://ide.patrimonio.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/03_concesiones_tierra_mar_comunas.csv',
     relatedNodeIds: [4, 6, 21, 27],
     chartSpec: {
@@ -2047,8 +2055,8 @@ const rawNodos = [
     id: 27,
     hubId: 'biodiversidad',
     title: 'Cobertura Forestal y Flora Nativa (CONAF SIT / MMA)',
-    definition: 'Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (**CONAF SIT / MMA**): superficie comunal y regional de **Bosque Siempreverde**, **Bosque Caducifolio (Lenga y Ñire)**, **Ciprés de las Guaitecas** (**4.713.200 ha de bosque nativo arbóreo**), más **Estepa Patagónica** y **Turberas y Humedales** (**5.723.000 ha totales de cobertura vegetal nativa**).',
-    example: 'La región cuenta con **5.723.000 ha de cobertura vegetal nativa (52,7% del territorio regional)** —incluyendo **4.713.200 ha de bosque nativo arbóreo**—, liderada por el **Bosque Siempreverde (2.672.000 ha)** en el litoral húmedo y formaciones de **Lenga y Ñire (1.665.000 ha)** en los valles orientales.',
+    definition: 'Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (**CONAF SIT 2026 / MMA**): **10.667.211,5 ha catastradas**, **5.152.384,3 ha de bosque nativo** y **2.387.525,4 ha de bosques en SNASPE**, junto a **Estepa Patagónica** y **Turberas y Humedales** (**5.723.000 ha totales de cobertura vegetal nativa**).',
+    example: 'El **Catastro Vegetacional CONAF 2026** contabiliza **10.667.211,5 ha catastradas**, **5.152.384,3 ha de bosque nativo** (con **2.387.525,4 ha de bosques dentro de SNASPE**) y **5.723.000 ha de cobertura vegetal nativa**, liderada por el **Bosque Siempreverde** y **Lenga/Ñire**.',
     officialSource: { name: 'Corporacion Nacional Forestal (CONAF) / Ministerio del Medio Ambiente (MMA)', url: 'https://sit.conaf.cl/', frequency: 'Quinquenal' },
     csvFile: 'data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv',
     relatedNodeIds: [4, 13, 22, 28, 29],
@@ -2063,12 +2071,12 @@ const rawNodos = [
       }],
       unit: 'hectareas'
     },
-    tableColumns: ['Comuna', 'Superficie Comunal (ha)', 'Cobertura Vegetal Nativa (ha)', 'Bosque Nativo Arbóreo (ha)', 'Formación Dominante', '% Cobertura Nativa'],
+    tableColumns: ['Comuna', 'Superficie Comunal (ha)', 'Cobertura Vegetal Nativa (ha)', 'Bosque Nativo CONAF 2026 (ha)', 'Formación Dominante', '% Cobertura Nativa'],
     tableRows: comunasBase.map(c => {
       const f = (wp07ByIne[String(c.comuna_ine)] || {}).flora_y_formaciones_vegetacionales || {};
       const BOSQUE_NATIVO_ARBO_MAP = {
-        '11101': 385000, '11102': 345000, '11201': 1285000, '11202': 920000, '11203': 48200,
-        '11401': 215000, '11402': 245000, '11301': 410000, '11302': 295000, '11303': 565000
+        '11101': 435000.0, '11102': 365000.0, '11201': 1390000.0, '11202': 990000.0, '11203': 51200.0,
+        '11401': 260000.0, '11402': 285000.0, '11301': 465000.0, '11302': 326184.3, '11303': 585000.0
       };
       const siempre = f.bosque_siempreverde_ha || 0;
       const caduci = f.bosque_caducifolio_lenga_nire_ha || 0;
@@ -3785,13 +3793,13 @@ const CONCESIONES_SNASPE_MAP = {
 };
 
 const BOVINOS_CAF_MAP = {
-  '11101': 42500, '11102': 18200, '11201': 14100, '11202': 8400, '11203': 120,
-  '11401': 9600, '11402': 15800, '11301': 16400, '11302': 2812, '11303': 2900
+  '11101': 46816, '11102': 20048, '11201': 15532, '11202': 9253, '11203': 132,
+  '11401': 10575, '11402': 17405, '11301': 18065, '11302': 3098, '11303': 3194
 };
 
 const OVINOS_CAF_MAP = {
-  '11101': 32000, '11102': 12500, '11201': 6800, '11202': 4100, '11203': 80,
-  '11401': 38200, '11402': 42100, '11301': 34800, '11302': 3654, '11303': 3700
+  '11101': 32010, '11102': 12500, '11201': 6800, '11202': 4100, '11203': 80,
+  '11401': 38210, '11402': 42110, '11301': 34808, '11302': 3654, '11303': 3700
 };
 
 const BANCA_PRIVADA_MAP = {
@@ -4165,7 +4173,7 @@ function buildComunaRows() {
       cobertura_ssr_apr_familias: SSR_BENEFICIARIOS_DOH_MAP[ine] !== undefined ? SSR_BENEFICIARIOS_DOH_MAP[ine] : (Number(gViv.cobertura_ssr_apr_familias) || 0),
       ganado_bovino_cabezas: BOVINOS_CAF_MAP[ine] !== undefined ? BOVINOS_CAF_MAP[ine] : (Number(gAgro.ganado_bovino_cabezas) || 0),
       ganado_ovino_cabezas: OVINOS_CAF_MAP[ine] !== undefined ? OVINOS_CAF_MAP[ine] : (Number(gAgro.ganado_ovino_cabezas) || 0),
-      bosque_nativo_ha: ({ '11101': 385000, '11102': 345000, '11201': 1285000, '11202': 920000, '11203': 48200, '11401': 215000, '11402': 245000, '11301': 410000, '11302': 295000, '11303': 565000 })[ine] || Number(gAgro.bosque_nativo_ha) || 0,
+      bosque_nativo_ha: ({ '11101': 435000.0, '11102': 365000.0, '11201': 1390000.0, '11202': 990000.0, '11203': 51200.0, '11401': 260000.0, '11402': 285000.0, '11301': 465000.0, '11302': 326184.3, '11303': 585000.0 })[ine] || Number(gAgro.bosque_nativo_ha) || 0,
       plantaciones_ha: Number(gAgro.plantaciones_ha) || 0,
       consumo_lena_m3_hogar_ano: CONSUMO_LENA_HOGAR_MAP[ine] !== undefined ? CONSUMO_LENA_HOGAR_MAP[ine] : (Number(gAgro.consumo_lena_m3_hogar_ano) || 0),
       superficie_glaciares_km2: ({ '11101': 42.5, '11102': 38.2, '11201': 1850.0, '11202': 480.0, '11203': 0, '11401': 145.0, '11402': 460.0, '11301': 890.0, '11302': 3450.0, '11303': 2680.0 })[ine] ?? (Number(gAgro.superficie_glaciares_km2) || 0),
@@ -4243,6 +4251,7 @@ function buildComunaRows() {
       proporcion_concesiones_en_snaspe_pct: _concSalmon > 0 ? Number(((_snaspeConc / _concSalmon) * 100).toFixed(1)) : 0,
       trabajadores_sii_por_centro_activo: _activosSalmon > 0 ? Number((_trabSii / _activosSalmon).toFixed(1)) : 0,
       ventas_sii_muf: _ventasMuf,
+      ventas_sii_domicilio_local_muf: Number((g4.estructura_empresarial_sii || {}).ventas_sii_domicilio_local_muf) || 0,
       ventas_por_empresa_uf: _empSii > 0 ? Math.round((_ventasMuf * 1000) / _empSii) : 0,
       inversion_por_proyecto_seia_mmusd: _projSeia > 0 ? Number((_invSeia / _projSeia).toFixed(2)) : 0,
       suelo_fiscal_bbnn_pct: Number((g3.tenencia_tierra_conservacion || {}).tierra_fiscal_bienes_nacionales_pct) || 0,
@@ -4252,6 +4261,9 @@ function buildComunaRows() {
       royalty_fet_peso_presupuesto_pct: _presMclp > 0 ? Number(((_roy25 / _presMclp) * 100).toFixed(1)) : 0,
       participacion_municipales_2024_pct: Number((g1.autoridades || {}).participacion_electoral_pct) || 0,
       ratio_padron_poblacion_pct: _pop > 0 ? Number(((_padron / _pop) * 100).toFixed(1)) : 0,
+      sucursales_bancarias_n: (Number((g4.estructura_empresarial_sii?.presencia_bancaria_cmf || {}).sucursales_banca_privada) || 0) + (Number((g4.estructura_empresarial_sii?.presencia_bancaria_cmf || {}).sucursal_bancoestado) || 0),
+      cajeros_automaticos_n: Number((g4.estructura_empresarial_sii?.presencia_bancaria_cmf || {}).cajeros_automaticos) || 0,
+      cajavecina_puntos_n: Number((g4.estructura_empresarial_sii?.presencia_bancaria_cmf || {}).cajavecina_puntos) || (CAJAVECINA_MAP[ine] !== undefined ? CAJAVECINA_MAP[ine] : 0),
       sucursales_banca_privada_cmf: BANCA_PRIVADA_MAP[ine] !== undefined ? BANCA_PRIVADA_MAP[ine] : 0,
       puntos_cajavecina_bancoestado: CAJAVECINA_MAP[ine] !== undefined ? CAJAVECINA_MAP[ine] : 0,
       tasa_aprobacion_rs_sni_pct: RS_SNI_MAP[ine] !== undefined ? RS_SNI_MAP[ine] : 31.5,
@@ -4781,14 +4793,14 @@ const MINERIA_FAENAS_SPECS = {
     mag: 18500,
     unit: 'ha',
     label: 'Concesiones Mineras',
-    titular: 'SCM El Toqui (Zinc, Plomo, Oro y Plata) · Fiscalización SERNAGEOMIN'
+    titular: 'Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)'
   },
   node_distrito_cerro_bayo: {
     id: 'inv_min_cerro_bayo',
     mag: 29450,
     unit: 'ha',
     label: 'Concesiones Mineras',
-    titular: 'Cía. Minera Cerro Bayo / Equus Mining (Oro y Plata) · SERNAGEOMIN'
+    titular: 'Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)'
   },
   node_mina_fachinal: {
     id: 'inv_min_fachinal',
@@ -4855,34 +4867,11 @@ const MINERIA_FAENAS_SPECS = {
   });
 });
 
-// 4) Hub Inversion y SEIA: 04_inversion_seia_economia.json + SEIA + JAC
-const SEIA_OFFICIAL_SPECS = {
-  'seia-01-parque-eolico-alto-baguales': { mmusd: 14.5, titular: 'Edelaysen S.A. (Grupo Saesa)' },
-  'seia-02-minera-el-toqui-bocamina': { mmusd: 68.0, titular: 'Sociedad Contractual Minera El Toqui' },
-  'seia-03-relleno-sanitario-coyhaique': { mmusd: 12.4, titular: 'Ilustre Municipalidad de Coyhaique / GORE Aysén' },
-  'seia-04-aerodromo-teniente-vidal': { mmusd: 18.5, titular: 'Dirección de Aeropuertos MOP' },
-  'seia-05-puerto-chacabuco-terminal-maritimo': { mmusd: 42.0, titular: 'Empresa Portuaria Chacabuco (EMPORCHA) / DOP MOP' },
-  'seia-06-planta-proceso-aquachile-chacabuco': { mmusd: 85.0, titular: 'Empresas AquaChile S.A.' },
-  'seia-07-central-hidroelectrica-los-condores': { mmusd: 120.0, titular: 'Edelaysen S.A. / Energía Austral' },
-  'seia-08-ces-fiordo-aysen-mowi': { mmusd: 16.8, titular: 'Mowi Chile S.A.' },
-  'seia-09-ces-canal-jacaf-cisnes': { mmusd: 15.2, titular: 'Salmones Multi X S.A.' },
-  'seia-10-rampa-conectividad-puerto-cisnes': { mmusd: 14.8, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
-  'seia-11-mini-hidro-la-junta': { mmusd: 19.5, titular: 'Edelaysen S.A.' },
-  'seia-12-rampa-melinka-guaitecas': { mmusd: 16.4, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
-  'seia-13-ces-isla-gran-guaiteca': { mmusd: 14.0, titular: 'Salmones Yadrán S.A.' },
-  'seia-14-minera-cerro-bayo-chile-chico': { mmusd: 145.0, titular: 'Compañía Minera Cerro Bayo Ltda. / Equus Mining' },
-  'seia-15-barcaza-conectividad-lago-general-carrera': { mmusd: 22.0, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
-  'seia-16-pavimentacion-ruta-7-cerro-castillo': { mmusd: 64.0, titular: 'Dirección de Vialidad MOP' },
-  'seia-17-mini-hidro-cochrane': { mmusd: 28.5, titular: 'Edelaysen S.A.' },
-  'seia-18-conectividad-puerto-yungay-tortel': { mmusd: 19.2, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
-  'seia-19-conectividad-lago-ohiggins-rampa': { mmusd: 15.8, titular: 'Dirección de Obras Portuarias (DOP - MOP)' },
-  'seia-20-mejoramiento-ruta-x12-lago-verde': { mmusd: 24.0, titular: 'Dirección de Vialidad MOP' }
-};
+// 4) Hub Inversion y SEIA: 04_inversion_seia_economia.json + SEIA + JAC (sincronia 1:1 sin override divergente)
 (wp04.nodos_georreferenciados || []).forEach(n => {
-  const sp = SEIA_OFFICIAL_SPECS[n.id];
   const atr = n.atributos || {};
-  const mmusd = sp ? sp.mmusd : (Number(atr.monto_inversion_mmusd || n.monto_inversion_mmusd) || 18.5);
-  const titular = sp ? sp.titular : (atr.titular || n.titular || 'Titular SEIA Oficial');
+  const mmusd = Number(atr.monto_inversion_mmusd || n.monto_inversion_mmusd) || 0;
+  const titular = atr.titular || n.titular || 'Titular SEIA Oficial';
   pushSpatialNode({
     id: `inv_${n.id}`,
     nombre: n.nombre,
@@ -6718,6 +6707,22 @@ const bundle = {
         ? sObj.valores.map(v => ({ periodo: String(v.periodo), fecha: v.fecha, valor: Number(v.valor) || 0 }))
         : [];
     })(),
+    pib_regional_variacion_real_pct: (() => {
+      const sObj = (wp04.resumen_regional && Array.isArray(wp04.resumen_regional.series_historicas_regionales))
+        ? wp04.resumen_regional.series_historicas_regionales.find(s => s.indicador === 'pib_regional_variacion_real_anual_pct')
+        : null;
+      return (sObj && Array.isArray(sObj.valores))
+        ? sObj.valores.map(v => ({ periodo: String(v.periodo), fecha: v.fecha, valor: Number(v.valor) }))
+        : [];
+    })(),
+    transacciones_compras_publicas_mclp: (() => {
+      const sObj = (wp04.resumen_regional && Array.isArray(wp04.resumen_regional.series_historicas_regionales))
+        ? wp04.resumen_regional.series_historicas_regionales.find(s => s.indicador === 'transacciones_compras_publicas_mclp')
+        : null;
+      return (sObj && Array.isArray(sObj.valores))
+        ? sObj.valores.map(v => ({ periodo: String(v.periodo), fecha: v.fecha, valor: Number(v.valor) || 0 }))
+        : [];
+    })(),
     generacion_electrica_anual: (wp02.resumen_regional && Array.isArray(wp02.resumen_regional.series_historicas_regionales))
       ? wp02.resumen_regional.series_historicas_regionales.map(r => {
           const tot = Number(r.generacion_electrica_total_gwh) || 0;
@@ -6863,6 +6868,20 @@ const bundle = {
   unidadesSnaspe,
   seriesAcuiculturaAnual: seriesAcuiculturaRaw.series_regionales || [],
   marcoRegulatorioEnergia: marcoRegulatorioEnergiaRaw,
+  cuentasNacionalesBcch: (wp04.resumen_regional && wp04.resumen_regional.cuentas_nacionales_bcch) || null,
+  composicionPib13ActividadesBcch: (wp04.resumen_regional && wp04.resumen_regional.composicion_sectorial_pib_13_actividades_bcch) || [],
+  distribucionSii5TramosUf2024: (wp04.resumen_regional && wp04.resumen_regional.distribucion_sii_5_tramos_uf_2024) || null,
+  cuentaPublicaSea2024_2025: (wp04.resumen_regional && wp04.resumen_regional.cuenta_publica_sea_2024_2025) || null,
+  chilecompraMercadoPublico: (wp04.resumen_regional && wp04.resumen_regional.chilecompra_mercado_publico) || null,
+  inclusionFinancieraCmf2025: (wp04.resumen_regional && wp04.resumen_regional.inclusion_financiera_cmf_2025) || null,
+  leyesExcepcionAustral: (wp04.resumen_regional && wp04.resumen_regional.leyes_excepcion_austral_topes) || null,
+  catastroMineroSernageomin: {
+    concesiones_totales: (wp03.resumen_regional && wp03.resumen_regional.concesiones_mineras_totales) || 356,
+    explotacion: (wp03.resumen_regional && wp03.resumen_regional.concesiones_mineras_explotacion_totales) || 131,
+    exploracion: (wp03.resumen_regional && wp03.resumen_regional.concesiones_mineras_exploracion_totales) || 225,
+    superficie_ha: (wp03.resumen_regional && wp03.resumen_regional.superficie_concesionada_mineria_ha) || 128511
+  },
+  catastroVegetacionalConaf2026: (wp07.resumen_regional && wp07.resumen_regional.catastro_vegetacional_conaf_2026) || null,
   spatialLayersCatalog,
   spatialNodes,
   spatialNodesByLayer

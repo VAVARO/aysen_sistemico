@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-26T19:32:02Z",
+  "generatedAt": "2026-11-26T22:56:18Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -2544,110 +2544,110 @@
         0.95
       ],
       "dataY": [
-        7620.0,
-        118.0,
-        2840.0,
+        7238.0,
+        119.0,
+        2675.0,
         895.0,
-        242.0,
-        648.0,
-        418.0,
-        492.0,
-        96.0,
-        84.0
+        144.0,
+        653.0,
+        577.0,
+        519.0,
+        109.0,
+        139.0
       ],
       "regressionLine": {
-        "slopeBeta1": 211.44335,
-        "interceptBeta0": -73.4849,
-        "rSquaredPct": 97.1,
+        "slopeBeta1": 199.22579,
+        "interceptBeta0": -30.005,
+        "rSquaredPct": 96.6,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: Coyhaique reúne 34,0 MW y 7.620 empresas, ante 0,3 MW y 118 empresas en Lago Verde.",
-      "plainExplanation": "El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: Coyhaique reúne 34,0 MW y 7.620 empresas, ante 0,3 MW y 118 empresas en Lago Verde.",
-      "notable_commune": "Caso atípico: Aysén registra –994 empresas por debajo de lo esperado para su nivel en el eje X.",
+      "reading": "El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: Coyhaique reúne 34,0 MW y 7.238 empresas, ante 0,3 MW y 119 empresas en Lago Verde.",
+      "plainExplanation": "El respaldo eléctrico en Sistemas Medianos se concentra donde existe mayor actividad empresarial formal: Coyhaique reúne 34,0 MW y 7.238 empresas, ante 0,3 MW y 119 empresas en Lago Verde.",
+      "notable_commune": "Caso atípico: Aysén registra –976,7 empresas por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
-          "actualY": 7620.0,
-          "expectedY": 7105.02,
-          "diffY": 514.98,
-          "zResid": 1.35,
-          "note": "Coyhaique registra 7.620 empresas, 515 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 7238.0,
+          "expectedY": 6733.71,
+          "diffY": 504.29,
+          "zResid": 1.31,
+          "note": "Coyhaique registra 7.238 empresas, 504,3 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Lago Verde": {
-          "actualY": 118.0,
-          "expectedY": 0.52,
-          "diffY": 117.48,
-          "zResid": 0.31,
-          "note": "Lago Verde (118 empresas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 119.0,
+          "expectedY": 39.72,
+          "diffY": 79.28,
+          "zResid": 0.21,
+          "note": "Lago Verde (119 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Aysén": {
-          "actualY": 2840.0,
-          "expectedY": 3833.99,
-          "diffY": -993.99,
-          "zResid": -2.6,
-          "note": "Aysén registra 2.840 empresas, 994 empresas por debajo de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 2675.0,
+          "expectedY": 3651.69,
+          "diffY": -976.69,
+          "zResid": -2.53,
+          "note": "Aysén registra 2.675 empresas, 976,7 empresas por debajo de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Cisnes": {
           "actualY": 895.0,
-          "expectedY": 524.9,
-          "diffY": 370.1,
-          "zResid": 0.97,
-          "note": "Cisnes registra 895 empresas, 370,1 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
+          "expectedY": 533.8,
+          "diffY": 361.2,
+          "zResid": 0.94,
+          "note": "Cisnes registra 895 empresas, 361,2 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Guaitecas": {
-          "actualY": 242.0,
-          "expectedY": 233.11,
-          "diffY": 8.89,
-          "zResid": 0.02,
-          "note": "Guaitecas (242 empresas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 144.0,
+          "expectedY": 258.87,
+          "diffY": -114.87,
+          "zResid": -0.3,
+          "note": "Guaitecas (144 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Chile Chico": {
-          "actualY": 648.0,
-          "expectedY": 751.14,
-          "diffY": -103.14,
-          "zResid": -0.27,
-          "note": "Chile Chico (648 empresas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 653.0,
+          "expectedY": 746.98,
+          "diffY": -93.98,
+          "zResid": -0.24,
+          "note": "Chile Chico (653 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Río Ibáñez": {
-          "actualY": 418.0,
-          "expectedY": 222.54,
-          "diffY": 195.46,
-          "zResid": 0.51,
-          "note": "Río Ibáñez registra 418 empresas, 195,5 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
+          "actualY": 577.0,
+          "expectedY": 248.91,
+          "diffY": 328.09,
+          "zResid": 0.85,
+          "note": "Río Ibáñez registra 577 empresas, 328,1 empresas por encima de lo esperado según su nivel de potencia eléctrica instalada."
         },
         "Cochrane": {
-          "actualY": 492.0,
-          "expectedY": 463.58,
-          "diffY": 28.42,
-          "zResid": 0.07,
-          "note": "Cochrane (492 empresas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 519.0,
+          "expectedY": 476.03,
+          "diffY": 42.97,
+          "zResid": 0.11,
+          "note": "Cochrane (519 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "O'Higgins": {
-          "actualY": 96.0,
-          "expectedY": 190.82,
-          "diffY": -94.82,
-          "zResid": -0.25,
-          "note": "O'Higgins (96,0 empresas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 109.0,
+          "expectedY": 219.03,
+          "diffY": -110.03,
+          "zResid": -0.29,
+          "note": "O'Higgins (109 empresas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Tortel": {
-          "actualY": 84.0,
-          "expectedY": 127.39,
-          "diffY": -43.39,
-          "zResid": -0.11,
-          "note": "Tortel (84,0 empresas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 139.0,
+          "expectedY": 159.26,
+          "diffY": -20.26,
+          "zResid": -0.05,
+          "note": "Tortel (139 empresas) se ubica prácticamente en línea con la tendencia regional."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 97% · r = +0,98 · Sin Coyhaique: +0,98 · Control pob.: +0,95",
+      "metrics_line": "R² 97% · r = +0,98 · Sin Coyhaique: +0,97 · Control pob.: +0,94",
       "statProofBadges": {
         "fuerzaExplicativaPct": 97,
-        "pearsonR": 0.985,
-        "spearmanRho": 0.939,
-        "kendallTau": 0.822,
-        "partialCorrPop": 0.947,
-        "rWithoutCoyhaique": 0.982,
-        "firstDiffCorrDelta": 0.947,
-        "pValueFdr": 1e-06,
-        "veredictoSimple": "R² 97% · r = +0,98 · Sin Coyhaique: +0,98 · Control pob.: +0,95"
+        "pearsonR": 0.983,
+        "spearmanRho": 0.915,
+        "kendallTau": 0.778,
+        "partialCorrPop": 0.938,
+        "rWithoutCoyhaique": 0.972,
+        "firstDiffCorrDelta": 0.938,
+        "pValueFdr": 2e-06,
+        "veredictoSimple": "R² 97% · r = +0,98 · Sin Coyhaique: +0,97 · Control pob.: +0,94"
       }
     },
     {
@@ -3313,20 +3313,20 @@
         980000.0,
         1045000.0,
         1120000.0,
-        1215000.0,
+        1228000.0,
+        1346000.0,
+        1104000.0,
         1260000.0,
-        1240000.0,
-        1410000.0,
-        1540000.0,
-        1620000.0,
-        1680000.0,
-        1755000.0,
-        1830000.0
+        1490000.0,
+        1502000.0,
+        1672000.0,
+        1991000.0,
+        1991000.0
       ],
       "regressionLine": {
-        "slopeBeta1": 525.09706,
-        "interceptBeta0": 706217.1299,
-        "rSquaredPct": 98.5,
+        "slopeBeta1": 610.09033,
+        "interceptBeta0": 598169.6531,
+        "rSquaredPct": 93.0,
         "directionLabel": "Relación Directa (+)"
       },
       "reading": "El gasto anual en ciencia e innovación aplicada creció de 620 a 2.210 millones entre 2015 y 2026, acompañando la expansión del PIB regional de Aysén.",
@@ -3334,17 +3334,17 @@
       "notable_commune": "",
       "residualsByComuna": {},
       "methodologicalCaveat": "Nota metodológica: acoplamiento longitudinal 2015–2026 con tramos reconstruidos entre hitos oficiales; las métricas ilustran trayectoria agregada y no 12 mediciones anuales independientes.",
-      "metrics_line": "R² 98% · r = +0,99 · Sin 2020: +0,99 · Variación anual: +0,69",
+      "metrics_line": "R² 93% · r = +0,96 · Sin 2020: +0,97 · Variación anual: +0,74",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 98,
-        "pearsonR": 0.993,
-        "spearmanRho": 1.0,
-        "kendallTau": 1.0,
-        "partialCorrPop": 0.691,
-        "rWithoutCoyhaique": 0.993,
-        "firstDiffCorrDelta": 0.691,
-        "pValueFdr": 0.0,
-        "veredictoSimple": "R² 98% · r = +0,99 · Sin 2020: +0,99 · Variación anual: +0,69"
+        "fuerzaExplicativaPct": 93,
+        "pearsonR": 0.964,
+        "spearmanRho": 0.97,
+        "kendallTau": 0.901,
+        "partialCorrPop": 0.74,
+        "rWithoutCoyhaique": 0.97,
+        "firstDiffCorrDelta": 0.74,
+        "pValueFdr": 2e-06,
+        "veredictoSimple": "R² 93% · r = +0,96 · Sin 2020: +0,97 · Variación anual: +0,74"
       }
     }
   ],
@@ -3579,17 +3579,6 @@
           "plainSummary": "Ocupación Hotelera Estival (Enero-Febrero): 64,5 % (promedio regional: 76,4 %)"
         },
         {
-          "varKey": "ventas_por_empresa_uf",
-          "hub": "V. Inversión",
-          "label": "Ventas Anuales Promedio por Empresa (SII)",
-          "unit": "UF/empresa",
-          "comunaValue": 3814.0,
-          "regionalMean": 8674.5,
-          "zScore": -1.13,
-          "diffVsMeanPct": -56.0,
-          "plainSummary": "Ventas Anuales Promedio por Empresa (SII): 3814,0 UF/empresa (promedio regional: 8674,5 UF/empresa)"
-        },
-        {
           "varKey": "superficie_snaspe_pct",
           "hub": "VII. Biodiversidad",
           "label": "Superficie Comunal bajo Protección SNASPE",
@@ -3599,6 +3588,17 @@
           "zScore": -1.12,
           "diffVsMeanPct": -38.6,
           "plainSummary": "Superficie Comunal bajo Protección SNASPE: 34,5 % (promedio regional: 56,2 %)"
+        },
+        {
+          "varKey": "cobertura_fibra_hogar_pct",
+          "hub": "III. Energía",
+          "label": "Cobertura de Fibra Óptica al Hogar (FTTH)",
+          "unit": "%",
+          "comunaValue": 0.0,
+          "regionalMean": 24.9,
+          "zScore": -1.07,
+          "diffVsMeanPct": -100.0,
+          "plainSummary": "Cobertura de Fibra Óptica al Hogar (FTTH): 0,0 % (promedio regional: 24,9 %)"
         }
       ],
       "twinComunas": [
@@ -3608,12 +3608,12 @@
           "similitudPct": 62
         },
         {
-          "comuna": "Guaitecas",
-          "provincia": "Aysén",
+          "comuna": "Río Ibáñez",
+          "provincia": "General Carrera",
           "similitudPct": 59
         }
       ],
-      "narrativeDigest": "Lago Verde (Coyhaique, 779 hab.) destaca sobre la media regional en Gasto Municipal en Cultura Per Cápita (49294,0 $/hab) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son O'Higgins (62%) y Guaitecas (59%)."
+      "narrativeDigest": "Lago Verde (Coyhaique, 779 hab.) destaca sobre la media regional en Gasto Municipal en Cultura Per Cápita (49294,0 $/hab) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son O'Higgins (62%) y Río Ibáñez (59%)."
     },
     "Aysén": {
       "comuna": "Aysén",
@@ -3621,17 +3621,6 @@
       "poblacionCenso2024": 23170,
       "porcentajeRegionalPct": 23.0,
       "topAboveRegionalMean": [
-        {
-          "varKey": "ventas_por_empresa_uf",
-          "hub": "V. Inversión",
-          "label": "Ventas Anuales Promedio por Empresa (SII)",
-          "unit": "UF/empresa",
-          "comunaValue": 19789.0,
-          "regionalMean": 8674.5,
-          "zScore": 2.58,
-          "diffVsMeanPct": 128.1,
-          "plainSummary": "Ventas Anuales Promedio por Empresa (SII): 19789,0 UF/empresa (promedio regional: 8674,5 UF/empresa)"
-        },
         {
           "varKey": "concesiones_salmon",
           "hub": "II. Salmonicultura",
@@ -3653,6 +3642,17 @@
           "zScore": 2.38,
           "diffVsMeanPct": 426.3,
           "plainSummary": "Biomasa Anual de Salmón Cosechada: 265000,0 toneladas (promedio regional: 50350,0 toneladas)"
+        },
+        {
+          "varKey": "ventas_por_empresa_uf",
+          "hub": "V. Inversión",
+          "label": "Ventas Anuales Promedio por Empresa (SII)",
+          "unit": "UF/empresa",
+          "comunaValue": 21009.0,
+          "regionalMean": 9001.4,
+          "zScore": 2.16,
+          "diffVsMeanPct": 133.4,
+          "plainSummary": "Ventas Anuales Promedio por Empresa (SII): 21009,0 UF/empresa (promedio regional: 9001,4 UF/empresa)"
         },
         {
           "varKey": "transparencia_activa_cplt_2026_pct",
@@ -3738,15 +3738,15 @@
         {
           "comuna": "Cisnes",
           "provincia": "Aysén",
-          "similitudPct": 65
+          "similitudPct": 66
         },
         {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
-          "similitudPct": 59
+          "similitudPct": 60
         }
       ],
-      "narrativeDigest": "Aysén (Aysén, 23.170 hab.) destaca sobre la media regional en Ventas Anuales Promedio por Empresa (SII) (19789,0 UF/empresa) y Concesiones de Salmonicultura Otorgadas, mientras presenta sus valores más bajos frente al promedio en Participación Activa en Organizaciones Culturales. Sus perfiles territoriales más parecidos son Cisnes (65%) y Chile Chico (59%)."
+      "narrativeDigest": "Aysén (Aysén, 23.170 hab.) destaca sobre la media regional en Concesiones de Salmonicultura Otorgadas (412,0 concesiones) y Biomasa Anual de Salmón Cosechada, mientras presenta sus valores más bajos frente al promedio en Participación Activa en Organizaciones Culturales. Sus perfiles territoriales más parecidos son Cisnes (66%) y Chile Chico (60%)."
     },
     "Cisnes": {
       "comuna": "Cisnes",
@@ -4004,15 +4004,15 @@
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 59
+          "similitudPct": 58
         },
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 56
+          "similitudPct": 55
         }
       ],
-      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (59%) y O'Higgins (56%)."
+      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (58%) y O'Higgins (55%)."
     },
     "Chile Chico": {
       "comuna": "Chile Chico",
@@ -4536,7 +4536,7 @@
         {
           "comuna": "Tortel",
           "provincia": "Capitán Prat",
-          "similitudPct": 67
+          "similitudPct": 66
         },
         {
           "comuna": "Lago Verde",
@@ -4544,7 +4544,7 @@
           "similitudPct": 62
         }
       ],
-      "narrativeDigest": "O'Higgins (Capitán Prat, 647 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3450,0 km²) y Presupuesto Municipal Per Cápita, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (67%) y Lago Verde (62%)."
+      "narrativeDigest": "O'Higgins (Capitán Prat, 647 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3450,0 km²) y Presupuesto Municipal Per Cápita, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (66%) y Lago Verde (62%)."
     },
     "Tortel": {
       "comuna": "Tortel",
@@ -4669,7 +4669,7 @@
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 67
+          "similitudPct": 66
         },
         {
           "comuna": "Lago Verde",
@@ -4677,7 +4677,7 @@
           "similitudPct": 56
         }
       ],
-      "narrativeDigest": "Tortel (Capitán Prat, 505 hab.) destaca sobre la media regional en Déficit Habitacional Relativo (MINVU) (77,2 viv/1.000 hab) y Ratio de Presión Turística Estacional, mientras presenta sus valores más bajos frente al promedio en Tasa de Aprobación Técnica RS de Proyectos (SNI). Sus perfiles territoriales más parecidos son O'Higgins (67%) y Lago Verde (56%)."
+      "narrativeDigest": "Tortel (Capitán Prat, 505 hab.) destaca sobre la media regional en Déficit Habitacional Relativo (MINVU) (77,2 viv/1.000 hab) y Ratio de Presión Turística Estacional, mientras presenta sus valores más bajos frente al promedio en Tasa de Aprobación Técnica RS de Proyectos (SNI). Sus perfiles territoriales más parecidos son O'Higgins (66%) y Lago Verde (56%)."
     }
   }
 };

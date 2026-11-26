@@ -348,7 +348,49 @@ function runTests() {
   console.log('  [PASS] Eval 17: Coherencia presupuestaria, patentes acuícolas 0 en interior, IPP/hab y SERVEL 2024 verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/17 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 18: Invariantes Hub V (BCCh PIB, SII 5 tramos/ventas, SEIA sin Los Cóndores, SERNAGEOMIN, ODEPA, CMF/CONAF 2026) ---
+  console.log('--- Eval 18: Invariantes Hub V BCCh, SII 5 tramos, SEIA 1:1, SERNAGEOMIN 356, ODEPA y CONAF 2026 ---');
+  assert.strictEqual(
+    audit.evaluateHub5EconomyInvestmentLandInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 18 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub5EconomyInvestmentLandInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 18 con 0 alertas'
+  );
+
+  // 18a: Reintroduccion de Los Condores en SEIA -> ROJO
+  const badSeiaSnap = JSON.parse(JSON.stringify(currSnap));
+  badSeiaSnap.hub5EconomyAudit.seiaSpatialNodes[6] = {
+    id: 'inv_seia-07-central-hidroelectrica-los-condores',
+    nombre: 'Central Hidroeléctrica Los Cóndores',
+    magnitudeValue: 120,
+    sourceUrl: 'https://seia.sea.gob.cl/?id_expediente=1874921'
+  };
+  const badSeiaDiff = audit.compareSnapshots(currSnap, badSeiaSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badSeiaDiff.semaforo, 'ROJO');
+  assert(
+    badSeiaDiff.verificationAlerts.some(a => a.code === 'ERROR_GEOGRAFICO_SEIA_LOS_CONDORES'),
+    'Debe disparar ALTA · [ERROR_GEOGRAFICO_SEIA_LOS_CONDORES] si reaparece Los Cóndores o id_expediente'
+  );
+
+  // 18b: Corrupcion catastro minero Tortel > 0 y masa bovina != 144118 -> ROJO
+  const badMinGanSnap = JSON.parse(JSON.stringify(currSnap));
+  badMinGanSnap.indicators.concesiones_mineras_ha.values['11303'] = 3200;
+  badMinGanSnap.indicators.ganado_bovino_cabezas.values['11101'] = 42500;
+  const badMinGanDiff = audit.compareSnapshots(currSnap, badMinGanSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badMinGanDiff.semaforo, 'ROJO');
+  assert(
+    badMinGanDiff.verificationAlerts.some(a => a.code === 'ERROR_CATASTRO_MINERO_SERNAGEOMIN') &&
+    badMinGanDiff.verificationAlerts.some(a => a.code === 'ERROR_MASA_GANADERA_ODEPA'),
+    'Debe detectar corrupción en catastro minero SERNAGEOMIN y masa ganadera ODEPA'
+  );
+  console.log('  [PASS] Eval 18: Erradicación Los Cóndores, SII 5 tramos, SERNAGEOMIN 356, ODEPA 144.118/177.972, BCCh/ChileCompra y CONAF 2026 verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/18 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

@@ -29,22 +29,23 @@ tags:
 - **Unidad**: trabajadores/centro
 - **Fuente oficial**: Subsecretaría de Pesca y Acuicultura (SUBPESCA) / Servicio Nacional de Pesca y Acuicultura (SERNAPESCA) (https://www.subpesca.cl/portal/619/w3-propertyvalue-50834.html)
 - **Frecuencia / Modo**: Trimestral · `curated_fallback`
-- **Última auditoría**: [[corridas/corrida_2026-11-26_head_vs_head|Corrida 2026-11-26]] · [[index_auditoria|Índice de Auditoría]]
+- **Última auditoría**: [[corridas/corrida_2026-11-26_head_aprobado_vs_head|Corrida 2026-11-26]] · [[index_auditoria|Índice de Auditoría]]
 
 ## Alertas Activas en esta Corrida
 
-- [ ] **[ALTA · OUTLIER_SALTO]** Aysén: 94,7 -> 73,3 (Variación de -22,6% (umbral operativo >= 20%)); Cisnes: 48,3 -> 24,6 (Variación de -49,1% (umbral operativo >= 20%)); Guaitecas: 32,5 -> 8,30 (Variación de -74,5% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** Aysén: 73,3 -> 48,5 (Variación de -33,8% (umbral operativo >= 20%)); Guaitecas: 8,30 -> 10,9 (Variación de +31,3% (umbral operativo >= 20%))
 
-## Comparación Comunal (HEAD vs HEAD)
+## Comparación Comunal (HEAD_APROBADO vs HEAD)
 
 | INE | Comuna | Anterior | Actual | Delta | Delta % | Outlier |
 |---|---|---|---|---|---|---|
-| `11201` | Aysén | 94,7 | 73,3 | -21,4 | -22,6% | SI (Variación de -22,6% (umbral operativo >= 20%)) |
-| `11202` | Cisnes | 48,3 | 24,6 | -23,7 | -49,1% | SI (Variación de -49,1% (umbral operativo >= 20%)) |
-| `11203` | Guaitecas | 32,5 | 8,30 | -24,2 | -74,5% | SI (Variación de -74,5% (umbral operativo >= 20%)) |
+| `11201` | Aysén | 73,3 | 48,5 | -24,8 | -33,8% | SI (Variación de -33,8% (umbral operativo >= 20%)) |
+| `11202` | Cisnes | 24,6 | 22,5 | -2,10 | -8,5% | NO |
+| `11203` | Guaitecas | 8,30 | 10,9 | 2,60 | +31,3% | SI (Variación de +31,3% (umbral operativo >= 20%)) |
 
 ## Historial de Corridas
 
+- **2026-11-26** ([[corridas/corrida_2026-11-26_head_aprobado_vs_head|corrida_2026-11-26_head_aprobado_vs_head]]): estado `modificada` · 3 comuna(s) con cambio/registro · alertas: 1.
 - **2026-11-26** ([[corridas/corrida_2026-11-26_head_vs_head|corrida_2026-11-26_head_vs_head]]): estado `modificada` · 3 comuna(s) con cambio/registro · alertas: 1.
 
 ## Revisión Humana (Notas Preservadas)

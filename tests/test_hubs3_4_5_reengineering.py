@@ -132,28 +132,30 @@ class TestHubs345Reengineering(unittest.TestCase):
 
         n20 = self.bundle["nodesById"]["20"]
         emp_bins = n20["chartSpec"]["datasets"][0]["data"]
-        self.assertEqual(emp_bins, [10117, 2718, 515, 103])
-        self.assertEqual(sum(emp_bins), 13453)
+        self.assertEqual(emp_bins, [8532, 1655, 186, 24, 2556])
+        self.assertEqual(sum(emp_bins), 12953)
         self.assertIn("Ventas Anuales (Miles de UF)", n20["tableColumns"])
 
         n21 = self.bundle["nodesById"]["21"]
         chile_chico_ha = n21["chartSpec"]["datasets"][0]["data"][5]
-        self.assertEqual(chile_chico_ha, 48200)
+        self.assertEqual(chile_chico_ha, 47537)
         for row in n21["tableRows"]:
             for cell in row:
                 self.assertNotEqual(str(cell).strip(), "-", f"Celda placeholder '-' en Nodo 21: {row}")
 
         comunas = self.bundle["comunas"]
         self.assertEqual(sum(c["ventas_sii_muf"] for c in comunas), 131520)
+        self.assertEqual(sum(c["ventas_sii_domicilio_local_muf"] for c in comunas), 25800)
         for c in comunas:
-            for key in ("ventas_sii_muf", "ventas_por_empresa_uf", "inversion_por_proyecto_seia_mmusd", "suelo_fiscal_bbnn_pct", "suelo_privado_pct"):
+            for key in ("ventas_sii_muf", "ventas_sii_domicilio_local_muf", "ventas_por_empresa_uf", "inversion_por_proyecto_seia_mmusd", "suelo_fiscal_bbnn_pct", "suelo_privado_pct"):
                 self.assertIn(key, c)
                 self.assertIsInstance(c[key], (int, float))
 
         pib_series = self.bundle["series"]["pib_regional_nominal_mmclp"]
         self.assertEqual(len(pib_series), 12)
         self.assertEqual(pib_series[0]["valor"], 980000)
-        self.assertEqual(pib_series[-1]["valor"], 1830000)
+        self.assertEqual(pib_series[3]["valor"], 1228000)
+        self.assertEqual(pib_series[-1]["valor"], 1991000)
 
         inv_presets = self.presets["hubs_gallery"]["inversion"]["presets"]
         self.assertEqual([p["preset_id"] for p in inv_presets], [f"hub_04_0{i}" for i in range(1, 6)])

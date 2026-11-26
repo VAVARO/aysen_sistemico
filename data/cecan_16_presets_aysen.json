@@ -3055,15 +3055,15 @@
                     980000.0,
                     1045000.0,
                     1120000.0,
-                    1215000.0,
+                    1228000.0,
+                    1346000.0,
+                    1104000.0,
                     1260000.0,
-                    1240000.0,
-                    1410000.0,
-                    1540000.0,
-                    1620000.0,
-                    1680000.0,
-                    1755000.0,
-                    1830000.0
+                    1490000.0,
+                    1502000.0,
+                    1672000.0,
+                    1991000.0,
+                    1991000.0
                   ],
                   "unit": "MM$ CLP",
                   "yAxisID": "y1"
@@ -3071,7 +3071,7 @@
               ]
             }
           },
-          "what_it_shows": "Entre 2015 y 2026 el PIB Regional Nominal de Aysén creció +86,7% ($980.000 MM a $1.830.000 MM CLP) junto a un alza de +62,4% en el tráfico aéreo de Balmaceda (420.000 a 682.000 pasajeros; r = 0,78, R² = 0,61), con contracción sincrónica en el shock de 2020 (240.000 pax / $1.240.000 MM).",
+          "what_it_shows": "Entre 2015 y 2025 el PIB Regional Nominal oficial (BCCh Cuentas Nacionales Regionales) escaló de $980.000 MM a $1.991.000 MM CLP (+8,5% real en 2025; FBCF +18,2%; PIB turístico $89.200 MM = 4,5%; nota 1T 2026: -2,6% real), acoplado al flujo aéreo de Balmaceda (r = 0,74), con contracción sincrónica en 2020 (252.810 pax / $1.104.000 MM).",
           "why_complex_system": "Sistemas abiertos: la economía de Aysén se sincroniza fuertemente con el flujo de capitales y pasajeros que ingresan desde Santiago y Puerto Montt."
         },
         {

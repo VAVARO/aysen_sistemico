@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (CONAF SIT / MMA): superficie comunal y regional de Bosque Siempreverde, Bosque Caducifolio (Lenga y Ñire), Ciprés de las Guaitecas (4.713.200 ha de bosque nativo arbóreo), más Estepa Patagónica y Turberas y Humedales (5.723.000 ha totales de cobertura vegetal nativa). La región cuenta con 5.723.000 ha de cobertura vegetal nativa (52,7% del territorio regional) —incluyendo 4.713.200 ha de bosque nativo arbóreo—, liderada por el Bosque Siempreverde (2.672.000 ha) en el litoral húmedo y formaciones de Lenga y Ñire (1.665.000 ha) en los valles orientales.
+Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (CONAF SIT 2026 / MMA): 10.667.211,5 ha catastradas, 5.152.384,3 ha de bosque nativo y 2.387.525,4 ha de bosques en SNASPE, junto a Estepa Patagónica y Turberas y Humedales (5.723.000 ha totales de cobertura vegetal nativa). El Catastro Vegetacional CONAF 2026 contabiliza 10.667.211,5 ha catastradas, 5.152.384,3 ha de bosque nativo (con 2.387.525,4 ha de bosques dentro de SNASPE) y 5.723.000 ha de cobertura vegetal nativa, liderada por el Bosque Siempreverde y Lenga/Ñire.
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Superficie Comunal (ha) | Cobertura Vegetal Nativa (ha) | Bosque Nativo Arbóreo (ha) | Formación Dominante | % Cobertura Nativa |
+| Comuna | Superficie Comunal (ha) | Cobertura Vegetal Nativa (ha) | Bosque Nativo CONAF 2026 (ha) | Formación Dominante | % Cobertura Nativa |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 729.020 | 524.500 | 385.000 | Bosque Lenga / Ñire | 72% |
-| [[comunas/lago_verde|Lago Verde]] | 542.230 | 390.000 | 345.000 | Bosque Lenga / Ñire | 71.9% |
-| [[comunas/aysen|Aysén]] | 2.979.640 | 1.430.000 | 1.285.000 | Bosque Siempreverde | 48% |
-| [[comunas/cisnes|Cisnes]] | 1.609.300 | 1.025.000 | 920.000 | Bosque Siempreverde | 63.7% |
-| [[comunas/guaitecas|Guaitecas]] | 62.060 | 53.000 | 48.200 | Bosque Siempreverde | 85.4% |
-| [[comunas/chile_chico|Chile Chico]] | 573.710 | 328.500 | 215.000 | Estepa Patagónica | 57.3% |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 599.720 | 342.000 | 245.000 | Bosque Lenga / Ñire | 57% |
-| [[comunas/cochrane|Cochrane]] | 859.950 | 543.000 | 410.000 | Bosque Lenga / Ñire | 63.1% |
-| [[comunas/ohiggins|O'Higgins]] | 818.250 | 372.000 | 295.000 | Bosque Lenga / Ñire | 45.5% |
-| [[comunas/tortel|Tortel]] | 1.971.060 | 715.000 | 565.000 | Bosque Siempreverde | 36.3% |
+| [[comunas/coyhaique|Coyhaique]] | 729.020 | 524.500 | 435.000 | Bosque Lenga / Ñire | 72% |
+| [[comunas/lago_verde|Lago Verde]] | 542.230 | 390.000 | 365.000 | Bosque Lenga / Ñire | 71.9% |
+| [[comunas/aysen|Aysén]] | 2.979.640 | 1.430.000 | 1.390.000 | Bosque Siempreverde | 48% |
+| [[comunas/cisnes|Cisnes]] | 1.609.300 | 1.025.000 | 990.000 | Bosque Siempreverde | 63.7% |
+| [[comunas/guaitecas|Guaitecas]] | 62.060 | 53.000 | 51.200 | Bosque Siempreverde | 85.4% |
+| [[comunas/chile_chico|Chile Chico]] | 573.710 | 328.500 | 260.000 | Estepa Patagónica | 57.3% |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 599.720 | 342.000 | 285.000 | Bosque Lenga / Ñire | 57% |
+| [[comunas/cochrane|Cochrane]] | 859.950 | 543.000 | 465.000 | Bosque Lenga / Ñire | 63.1% |
+| [[comunas/ohiggins|O'Higgins]] | 818.250 | 372.000 | 326.184,3 | Bosque Lenga / Ñire | 45.5% |
+| [[comunas/tortel|Tortel]] | 1.971.060 | 715.000 | 585.000 | Bosque Siempreverde | 36.3% |
 
 ## Metadatos de Procedencia Institucional
 

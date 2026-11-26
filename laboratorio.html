@@ -6699,6 +6699,34 @@
           sourceTag: 'SII',
           desc: 'Mide los empleos asalariados reportados en declaraciones juradas del SII.'
         },
+        'ventas_sii_domicilio_local_muf': {
+          title: 'Ventas declaradas SII con domicilio tributario local',
+          short: 'Ventas locales SII (MUF)',
+          unitLabel: 'Miles de UF',
+          sourceTag: 'SII / Korbus',
+          desc: 'Mide las ventas declaradas por contribuyentes con casa matriz tributaria en Aysén (25.800 MUF total regional).'
+        },
+        'sucursales_bancarias_n': {
+          title: 'Sucursales bancarias totales (Privada + BancoEstado)',
+          short: 'Sucursales bancarias CMF',
+          unitLabel: 'sucursales',
+          sourceTag: 'CMF',
+          desc: 'Mide la dotación total de sucursales bancarias físicas en cada comuna según la CMF.'
+        },
+        'cajeros_automaticos_n': {
+          title: 'Cajeros automáticos ATM por comuna',
+          short: 'Cajeros automáticos ATM',
+          unitLabel: 'cajeros',
+          sourceTag: 'CMF',
+          desc: 'Mide la red física de cajeros automáticos instalados por comuna según la CMF.'
+        },
+        'cajavecina_puntos_n': {
+          title: 'Puntos de corresponsalía CajaVecina BancoEstado',
+          short: 'Puntos CajaVecina CMF',
+          unitLabel: 'puntos',
+          sourceTag: 'CMF / BancoEstado',
+          desc: 'Mide los almacenes y comercios adheridos a CajaVecina como red crítica de inclusión financiera.'
+        },
         'concesiones_mineras_ha': {
           title: 'Superficie concesionada para minería (hectáreas)',
           short: 'Concesiones mineras',
@@ -8187,7 +8215,7 @@
         '4C. Vialidad y Conectividad Multimodal': ['red_vial_total_km', 'red_vial_pavimentada_km', 'red_vial_pavimentada_pct', 'red_vial_solucion_basica_km', 'red_vial_ripio_km', 'red_vial_tierra_km', 'ruta7_pavimentada_km', 'ruta7_ripio_km', 'distancia_coyhaique_km', 'tiempo_viaje_coyhaique_hrs', 'dependencia_barcaza_nivel', 'largo_pista_aerodromo_m', 'operaciones_aerodromo_interior_anual', 'emporcha_toneladas', 'emporcha_carga_transbordadores_ton', 'emporcha_carga_comercial_ton', 'emporcha_graneles_mineros_ton', 'emporcha_acuicultura_pesca_ton', 'balmaceda_pasajeros_jac', 'trafico_aereo_pasajeros_balmaceda_jac', 'operaciones_aereas_balmaceda_jac', 'barometro_prioridad_conectividad_pct', 'barometro_prioridad_conectividad_pct_hist', 'sp_ruta7_kilometros_pavimentados', 'sp_trafico_aereo_balmaceda', 'sp_flujo_fronterizo_huemules'],
 
         '5A. Inversión de Capital y Evaluación SEIA': ['inversion_seia_mmusd', 'proyectos_seia_aprobados', 'inversion_por_proyecto_seia_mmusd', 'seia_plazo_dias', 'flujo_anual_inversion_seia_aprobada_mmusd', 'flujo_anual_proyectos_seia_aprobados', 'pib_regional_nominal_mmclp', 'pib_regional_variacion_real_anual_pct'],
-        '5B. Tejido Empresarial, Empleo y Banca': ['empresas_sii', 'trabajadores_sii', 'ventas_sii_muf', 'ventas_por_empresa_uf', 'empresas_totales_regionales_sii', 'trabajadores_dependientes_regionales_sii', 'compras_locales_pct', 'fuga_compras_pct', 'retencion_compras_publicas_locales_pct_hist', 'transacciones_compras_publicas_mclp', 'sucursales_banca_privada_cmf', 'puntos_cajavecina_bancoestado'],
+        '5B. Tejido Empresarial, Empleo y Banca': ['empresas_sii', 'trabajadores_sii', 'ventas_sii_domicilio_local_muf', 'ventas_sii_muf', 'ventas_por_empresa_uf', 'empresas_totales_regionales_sii', 'trabajadores_dependientes_regionales_sii', 'compras_locales_pct', 'fuga_compras_pct', 'retencion_compras_publicas_locales_pct_hist', 'transacciones_compras_publicas_mclp', 'sucursales_bancarias_n', 'cajeros_automaticos_n', 'cajavecina_puntos_n', 'sucursales_banca_privada_cmf', 'puntos_cajavecina_bancoestado'],
         '5C. Uso del Suelo, Agro y Minería': ['parcelaciones_sag_n', 'suelo_fiscal_bbnn_pct', 'suelo_privado_pct', 'ganado_bovino_cabezas', 'ganado_ovino_cabezas', 'cabezas_bovinos_caf', 'cabezas_ovinos_caf', 'plantaciones_ha', 'concesiones_mineras_ha'],
 
         '6A. Demografía y Estructura Territorial': ['poblacion_censo_2024', 'hogares_censo_2024', 'porcentaje_regional_pct', 'superficie_km2', 'densidad_hab_km2', 'ruralidad_censo_2024_pct', 'indice_envejecimiento', 'indice_masculinidad', 'sp_poblacion_regional_proyectada'],
@@ -8849,7 +8877,11 @@
           participacion_municipales_2024_pct: { title: 'Participación Electoral Municipal 2024 SERVEL (%)', short: 'Part. Municipales 2024 (%)', unit: '%', hubId: 'gobernanza', agg: 'mean' },
           ratio_padron_poblacion_pct: { title: 'Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024 (%)', short: 'Ratio Padrón/Población (%)', unit: '%', hubId: 'gobernanza', agg: 'mean' },
           indice_aislamiento_multimodal: { title: 'Índice Compuesto de Aislamiento y Vulnerabilidad Energético-Digital (0–100)', short: 'Índice Aislamiento Multimodal', unit: 'Índice (0-100)', hubId: 'energia', agg: 'mean' },
-          ventas_sii_muf: { title: 'Ventas Anuales Declaradas SII (Miles de UF)', short: 'Ventas SII (MUF)', unit: 'Miles de UF', hubId: 'inversion', agg: 'sum' },
+          ventas_sii_domicilio_local_muf: { title: 'Ventas SII Domicilio Tributario Aysén (25.800 MUF Regional, Miles de UF)', short: 'Ventas Locales SII (MUF)', unit: 'Miles de UF', hubId: 'inversion', agg: 'sum' },
+          ventas_sii_muf: { title: 'Valor Bruto de Producción Física SII (131.520 MUF Regional, Miles de UF)', short: 'Ventas Brutas (MUF)', unit: 'Miles de UF', hubId: 'inversion', agg: 'sum' },
+          sucursales_bancarias_n: { title: 'Sucursales Bancarias Totales (CMF: Privada + BancoEstado)', short: 'Sucursales Bancarias CMF', unit: 'sucursales', hubId: 'inversion', agg: 'sum' },
+          cajeros_automaticos_n: { title: 'Cajeros Automáticos ATM por Comuna (CMF)', short: 'Cajeros Automáticos ATM', unit: 'cajeros', hubId: 'inversion', agg: 'sum' },
+          cajavecina_puntos_n: { title: 'Puntos de Corresponsalía CajaVecina BancoEstado (CMF)', short: 'Puntos CajaVecina CMF', unit: 'puntos', hubId: 'inversion', agg: 'sum' },
           ventas_por_empresa_uf: { title: 'Ventas Promedio por Empresa SII (UF/empresa)', short: 'Ventas/Empresa SII', unit: 'UF/empresa', hubId: 'inversion', agg: 'mean' },
           inversion_por_proyecto_seia_mmusd: { title: 'Ticket Promedio por Proyecto Aprobado SEIA (MM USD/proyecto)', short: 'Ticket Prom. SEIA', unit: 'MM USD/proyecto', hubId: 'inversion', agg: 'mean' },
           suelo_fiscal_bbnn_pct: { title: 'Porcentaje de Suelo Fiscal Bienes Nacionales (%)', short: '% Suelo Fiscal BBNN', unit: '%', hubId: 'inversion', agg: 'mean' },
@@ -9319,7 +9351,7 @@
             sourceName: 'Banco Central de Chile - Cuentas Nacionales Regionales',
             data: _pibNominalSerie.length === 12
               ? _pibNominalSerie.map(r => Number(r.valor) || 0)
-              : [980000, 1045000, 1120000, 1215000, 1260000, 1240000, 1410000, 1540000, 1620000, 1680000, 1755000, 1830000]
+              : [980000, 1045000, 1120000, 1228000, 1346000, 1104000, 1260000, 1490000, 1502000, 1672000, 1991000, 1991000]
           },
           {
             id: 'flujo_anual_inversion_seia_aprobada_mmusd',

@@ -180,8 +180,8 @@ class TestHub1TurismoAndCrossHubIntegrity(unittest.TestCase):
         """Audita 0 duplicados r=1.0 activos, SII asimetrico CV>0.25, SUBTEL!=FTTH y 100% clasificacion."""
         sum_emp = sum(c["empresas_sii"] for c in self.comunas)
         sum_trab = sum(c["trabajadores_sii"] for c in self.comunas)
-        self.assertEqual(sum_emp, 13453)
-        self.assertEqual(sum_trab, 35832)
+        self.assertEqual(sum_emp, 13068)
+        self.assertEqual(sum_trab, 33529)
         ratios = [c["trabajadores_sii"] / c["empresas_sii"] for c in self.comunas]
         mean_ratio = sum(ratios) / len(ratios)
         std_ratio = math.sqrt(sum((x - mean_ratio) ** 2 for x in ratios) / len(ratios))

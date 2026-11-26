@@ -1123,7 +1123,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             {
                 topic: 'ganaderia_censo',
                 query: 'existencias ganaderas bovinas y ovinas odepa',
-                expectedKeywords: ['ODEPA', '130.832', '177.934'],
+                expectedKeywords: ['ODEPA', '144.118', '177.972'],
                 expectedSource: 'ODEPA'
             },
             {
@@ -1228,7 +1228,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
         const indirectCases = [
             {
                 q: 'cuántos perros hay en Aysen',
-                expectedKeywords: ['huemules', '130.832', '177.934'],
+                expectedKeywords: ['huemules', '144.118', '177.972'],
                 forbiddenSources: ['SERNAPESCA']
             },
             {
@@ -1509,7 +1509,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
 
             const b9 = await client.query('Compara Puerto Aysén, Bahía Murta y Caleta Andrade con Providencia en PIB per cápita y dime el top 15 de comunas con más empresas');
             assert(b9 && b9.reply && b9.reply.includes('Nota:'), 'B9 debe incluir nota de localidades: ' + b9.reply);
-            assert(b9.reply.includes('Aysén registra 2.840') && b9.reply.includes('Río Ibáñez registra 418'), 'B9 debe resumir SII de Aysen (2.840) y Rio Ibanez (418): ' + b9.reply);
+            assert(b9.reply.includes('Aysén registra 2.675') && b9.reply.includes('Río Ibáñez registra 577'), 'B9 debe resumir SII de Aysen (2.675) y Rio Ibanez (577): ' + b9.reply);
             assert(b9.reply.includes('10 comunas'), 'B9 debe aclarar total de 10 comunas ante pedido top 15: ' + b9.reply);
 
             // 10. Perfiles Verticales Salmonicultura v2.2 (Proveedor B2B, Productor, Ambientalista, Tomador de Decision)

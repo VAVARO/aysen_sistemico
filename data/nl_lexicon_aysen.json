@@ -2781,7 +2781,7 @@
     {
       "id": "ganado_bovino_cabezas",
       "canonicalId": "ganado_bovino_cabezas",
-      "name": "Masa Ganadera Bovina (Censo Agropecuario)",
+      "name": "Masa Ganadera Bovina (BCN / ODEPA)",
       "shortName": "Ganado Bovino",
       "unit": "cabezas",
       "hub": "inversion",
@@ -2799,7 +2799,7 @@
     {
       "id": "ganado_ovino_cabezas",
       "canonicalId": "ganado_ovino_cabezas",
-      "name": "Masa Ganadera Ovina (Censo Agropecuario)",
+      "name": "Masa Ganadera Ovina (BCN / ODEPA)",
       "shortName": "Ganado Ovino",
       "unit": "cabezas",
       "hub": "inversion",
@@ -2817,7 +2817,7 @@
     {
       "id": "bosque_nativo_ha",
       "canonicalId": "bosque_nativo_ha",
-      "name": "Superficie de Bosque Nativo (CONAF)",
+      "name": "Superficie de Bosque Nativo (CONAF 2026)",
       "shortName": "Bosque Nativo ha",
       "unit": "hectáreas",
       "hub": "biodiversidad",
@@ -2850,10 +2850,81 @@
       ]
     },
     {
+      "id": "ventas_sii_domicilio_local_muf",
+      "canonicalId": "ventas_sii_domicilio_local_muf",
+      "name": "Ventas SII con Domicilio Tributario en Aysén (Miles de UF)",
+      "shortName": "Ventas Locales SII (MUF)",
+      "unit": "Miles de UF",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "ventas domicilio local",
+        "ventas tributarias locales",
+        "25800 muf",
+        "ventas sii aysen"
+      ]
+    },
+    {
+      "id": "sucursales_bancarias_n",
+      "canonicalId": "sucursales_bancarias_n",
+      "name": "Sucursales Bancarias Totales (CMF: Privada + BancoEstado)",
+      "shortName": "Sucursales Bancarias Totales",
+      "unit": "sucursales",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "sucursales bancarias totales",
+        "sucursales bancos",
+        "sucursales cmf",
+        "bancos comuna"
+      ]
+    },
+    {
+      "id": "cajeros_automaticos_n",
+      "canonicalId": "cajeros_automaticos_n",
+      "name": "Cajeros Automáticos ATM (CMF)",
+      "shortName": "Cajeros Automáticos",
+      "unit": "cajeros",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cajeros automaticos",
+        "cajeros",
+        "atm",
+        "dispensadores"
+      ]
+    },
+    {
+      "id": "cajavecina_puntos_n",
+      "canonicalId": "cajavecina_puntos_n",
+      "name": "Puntos CajaVecina BancoEstado (CMF)",
+      "shortName": "Puntos CajaVecina CMF",
+      "unit": "puntos",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cajavecina puntos",
+        "corresponsalia cajavecina",
+        "bancoestado puntos"
+      ]
+    },
+    {
       "id": "sucursales_banca_privada_cmf",
       "canonicalId": "sucursales_banca_privada_cmf",
       "name": "Sucursales de Banca Privada (CMF)",
-      "shortName": "Sucursales Bancarias",
+      "shortName": "Sucursales Banca Privada",
       "unit": "sucursales",
       "hub": "inversion",
       "hubTitle": "V. Economía, Inversión y Suelo",
@@ -2862,14 +2933,15 @@
       "outlierBiased": false,
       "synonyms": [
         "bancos",
-        "sucursales bancarias",
+        "sucursales bancarias privadas",
         "banca privada",
         "cmf"
       ]
     },
     {
       "id": "puntos_cajavecina_bancoestado",
-      "canonicalId": "puntos_cajavecina_bancoestado",
+      "canonicalId": "cajavecina_puntos_n",
+      "isAliasOf": "cajavecina_puntos_n",
       "name": "Puntos CajaVecina BancoEstado",
       "shortName": "Puntos CajaVecina",
       "unit": "puntos",
@@ -4989,8 +5061,8 @@
     {
       "id": "ventas_sii_muf",
       "canonicalId": "ventas_sii_muf",
-      "name": "Ventas Anuales Empresas SII",
-      "shortName": "Ventas SII",
+      "name": "Valor Bruto de Producción Física Regional SII (incluye casas matrices extrarregionales, Miles de UF)",
+      "shortName": "Valor Bruto Prod. (MUF)",
       "unit": "M UF",
       "hub": "inversion",
       "hubTitle": "V. Economía, Inversión y Suelo",

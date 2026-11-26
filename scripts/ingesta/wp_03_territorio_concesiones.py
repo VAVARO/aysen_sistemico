@@ -860,24 +860,27 @@ def build_raw_baselines():
     # 3. Catastro Minero Oficial SERNAGEOMIN
     minero_raw = {
         "fuente": "SERNAGEOMIN - Anuario de la Minería de Chile y Catastro Nacional de Concesiones Mineras",
-        "fecha_corte": "2024-12-31",
-        "total_concesiones_explotacion_regional": 195,
-        "total_concesiones_exploracion_regional": 339,
-        "superficie_minera_total_ha": 154200,
+        "fecha_corte": "2026-10-18",
+        "total_concesiones_regional": 356,
+        "total_concesiones_explotacion_regional": 131,
+        "total_concesiones_exploracion_regional": 225,
+        "superficie_minera_total_ha": 128511,
         "distritos_clave": [
             {
                 "distrito": "El Toqui",
                 "comuna": "Coyhaique",
+                "titular_real": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
                 "tipo_faena": "Subterránea polimetálica",
                 "minerales": ["Zinc", "Oro", "Plata", "Plomo"],
-                "estado": "Operación y mantención con proyectos de reapertura de flotación"
+                "estado": "Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM"
             },
             {
                 "distrito": "Distrito Cerro Bayo / Laguna Verde",
                 "comuna": "Chile Chico",
+                "titular_real": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
                 "tipo_faena": "Subterránea y planta concentración",
                 "minerales": ["Oro", "Plata"],
-                "estado": "Reactivación y exploración de recursos en vetas Casagrande y Coyita"
+                "estado": "136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027"
             },
             {
                 "distrito": "Mina Fachinal",
@@ -1302,12 +1305,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": []
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 45,
-                    "concesiones_exploracion_vigentes": 72,
-                    "superficie_minera_ha": 31500,
+                    "concesiones_explotacion_vigentes": 21,
+                    "concesiones_exploracion_vigentes": 54,
+                    "superficie_minera_ha": 21573,
                     "yacimientos_o_distritos_principales": ["Mina El Toqui (Alto Mañihuales)", "Distrito Polimetálico Katterfeld (Ñirehuao)"],
                     "minerales_interes": ["Zinc", "Plomo", "Oro", "Plata"],
-                    "nivel_actividad_minera": "Media / Operación y exploración subterránea polimetálica"
+                    "nivel_actividad_minera": "Media / Operación y litigio ambiental garantía de cierre"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 729020,
@@ -1339,12 +1342,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": []
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 5,
-                    "concesiones_exploracion_vigentes": 19,
-                    "superficie_minera_ha": 8900,
+                    "concesiones_explotacion_vigentes": 1,
+                    "concesiones_exploracion_vigentes": 81,
+                    "superficie_minera_ha": 24800,
                     "yacimientos_o_distritos_principales": ["Prospecto Río Pico", "Sector Amengual / La Tapera"],
                     "minerales_interes": ["Cobre", "Oro", "Zinc"],
-                    "nivel_actividad_minera": "Baja / Prospección inicial y áridos"
+                    "nivel_actividad_minera": "Alta exploración / 82 concesiones vigentes (1 explotación + 81 exploración)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 542230,
@@ -1376,12 +1379,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": holdings_aysen_comuna
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 18,
-                    "concesiones_exploracion_vigentes": 28,
-                    "superficie_minera_ha": 12400,
+                    "concesiones_explotacion_vigentes": 6,
+                    "concesiones_exploracion_vigentes": 24,
+                    "superficie_minera_ha": 13900,
                     "yacimientos_o_distritos_principales": ["Distrito Río Mañihuales Poniente", "Sector Río Simpson Bajo"],
                     "minerales_interes": ["Zinc", "Plomo", "Piedra caliza", "Áridos"],
-                    "nivel_actividad_minera": "Media-Baja / Exploración y extracción de áridos y calizas"
+                    "nivel_actividad_minera": "Media-Baja / 30 concesiones vigentes (6 explotación + 24 exploración)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 2979640,
@@ -1413,12 +1416,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": holdings_cisnes_comuna
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 8,
-                    "concesiones_exploracion_vigentes": 34,
-                    "superficie_minera_ha": 16800,
+                    "concesiones_explotacion_vigentes": 1,
+                    "concesiones_exploracion_vigentes": 3,
+                    "superficie_minera_ha": 2300,
                     "yacimientos_o_distritos_principales": ["Prospección El Moro", "Cuesta Queulat", "Sector Alto Río Cisnes"],
                     "minerales_interes": ["Cobre", "Zinc", "Áridos"],
-                    "nivel_actividad_minera": "Baja / Prospección y canteras viales"
+                    "nivel_actividad_minera": "Baja / 4 concesiones vigentes (1 explotación + 3 exploración)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 1609300,
@@ -1451,11 +1454,11 @@ def generate_systemic_dataset():
                 },
                 "concesiones_mineras": {
                     "concesiones_explotacion_vigentes": 0,
-                    "concesiones_exploracion_vigentes": 2,
-                    "superficie_minera_ha": 400,
-                    "yacimientos_o_distritos_principales": ["Ninguno de envergadura"],
-                    "minerales_interes": ["Áridos marinos"],
-                    "nivel_actividad_minera": "Nula / Marginal"
+                    "concesiones_exploracion_vigentes": 0,
+                    "superficie_minera_ha": 0,
+                    "yacimientos_o_distritos_principales": ["Sin concesiones mineras vigentes"],
+                    "minerales_interes": ["Sin actividad minera vigente"],
+                    "nivel_actividad_minera": "Nula (0 concesiones en catastro SERNAGEOMIN)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 62060,
@@ -1487,12 +1490,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": []
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 84,
-                    "concesiones_exploracion_vigentes": 112,
-                    "superficie_minera_ha": 48200,
+                    "concesiones_explotacion_vigentes": 94,
+                    "concesiones_exploracion_vigentes": 33,
+                    "superficie_minera_ha": 47537,
                     "yacimientos_o_distritos_principales": ["Distrito Minero Cerro Bayo (Vetas Casagrande, Coyita, Laguna Verde)", "Mina Fachinal", "Sector Mallín Grande"],
                     "minerales_interes": ["Oro", "Plata", "Zinc", "Cobre"],
-                    "nivel_actividad_minera": "Alta / Reactivación de faena subterránea y exploración avanzada"
+                    "nivel_actividad_minera": "Alta / 127 concesiones (94 explotación + 33 exploración), 136 Moz AgEq JORC jul-2026"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 573710,
@@ -1524,12 +1527,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": []
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 26,
-                    "concesiones_exploracion_vigentes": 42,
-                    "superficie_minera_ha": 19600,
+                    "concesiones_explotacion_vigentes": 6,
+                    "concesiones_exploracion_vigentes": 8,
+                    "superficie_minera_ha": 7400,
                     "yacimientos_o_distritos_principales": ["Mina Silva / Puerto Cristal (Plomo-Zinc histórico)", "Puerto Sánchez", "Mina Escondida"],
                     "minerales_interes": ["Plomo", "Zinc", "Cobre", "Plata"],
-                    "nivel_actividad_minera": "Histórica patrimonial / Exploración residual"
+                    "nivel_actividad_minera": "Histórica patrimonial / 14 concesiones vigentes (6 explotación + 8 exploración)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 599720,
@@ -1561,12 +1564,12 @@ def generate_systemic_dataset():
                     "holdings_controladores_y_ruts": []
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 6,
-                    "concesiones_exploracion_vigentes": 22,
-                    "superficie_minera_ha": 9800,
+                    "concesiones_explotacion_vigentes": 0,
+                    "concesiones_exploracion_vigentes": 2,
+                    "superficie_minera_ha": 1201,
                     "yacimientos_o_distritos_principales": ["Prospección San Lorenzo", "Sector Alto Río Baker"],
                     "minerales_interes": ["Cobre", "Zinc", "Molibdeno"],
-                    "nivel_actividad_minera": "Baja / Prospección sin faenas activas"
+                    "nivel_actividad_minera": "Baja / 2 concesiones vigentes de exploración"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 859950,
@@ -1599,11 +1602,11 @@ def generate_systemic_dataset():
                 },
                 "concesiones_mineras": {
                     "concesiones_explotacion_vigentes": 2,
-                    "concesiones_exploracion_vigentes": 14,
-                    "superficie_minera_ha": 5600,
+                    "concesiones_exploracion_vigentes": 20,
+                    "superficie_minera_ha": 9800,
                     "yacimientos_o_distritos_principales": ["Manifestaciones cordilleranas Ventisquero Chico / Río Mayer"],
                     "minerales_interes": ["Cobre", "Plomo"],
-                    "nivel_actividad_minera": "Nula / Restricción ambiental estricta SNASPE y Campos de Hielo"
+                    "nivel_actividad_minera": "Exploración cordillerana / 22 concesiones vigentes (2 explotación + 20 exploración)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 818250,
@@ -1647,12 +1650,12 @@ def generate_systemic_dataset():
                     ]
                 },
                 "concesiones_mineras": {
-                    "concesiones_explotacion_vigentes": 1,
-                    "concesiones_exploracion_vigentes": 8,
-                    "superficie_minera_ha": 3200,
-                    "yacimientos_o_distritos_principales": ["Prospección Delta Baker / Caleta Tortel"],
-                    "minerales_interes": ["Áridos", "Cobre"],
-                    "nivel_actividad_minera": "Nula / Restricción de áreas silvestres protegidas"
+                    "concesiones_explotacion_vigentes": 0,
+                    "concesiones_exploracion_vigentes": 0,
+                    "superficie_minera_ha": 0,
+                    "yacimientos_o_distritos_principales": ["Sin concesiones mineras vigentes (SNASPE)"],
+                    "minerales_interes": ["Sin actividad minera vigente"],
+                    "nivel_actividad_minera": "Nula (0 concesiones en catastro SERNAGEOMIN)"
                 },
                 "tenencia_tierra_conservacion": {
                     "superficie_comunal_ha": 1971060,
@@ -2192,10 +2195,10 @@ def generate_systemic_dataset():
             "lng": -72.0400,
             "atributos": {
                 "categoria": "Minería Polimetálica",
-                "operador_titular": "Sociedad Minera El Toqui S.A. / Southern Silver",
+                "operador_titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
                 "minerales_principales": ["Zinc", "Oro", "Plata", "Plomo"],
                 "infraestructura": "Planta de flotación de concentrados, mina subterránea y tranque de relaves",
-                "estado_operativo": "Operación y mantención con programas de exploración profunda"
+                "estado_operativo": "Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM"
             },
             "source_url": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/"
         },
@@ -2209,10 +2212,10 @@ def generate_systemic_dataset():
             "lng": -71.7950,
             "atributos": {
                 "categoria": "Minería Epitermal de Metales Preciosos",
-                "operador_titular": "Compañía Minera Cerro Bayo / Guanaco Mining Company",
+                "operador_titular": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
                 "minerales_principales": ["Oro", "Plata"],
                 "infraestructura": "Planta de flotación Laguna Verde, vetas subterráneas Coyita y Casagrande",
-                "estado_operativo": "Reactivación de faenas y desarrollo de nuevas vetas argentíferas"
+                "estado_operativo": "Exploración avanzada 136 Moz AgEq JORC jul-2026 para reinicio 2027"
             },
             "source_url": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/"
         },
@@ -2473,9 +2476,10 @@ def generate_systemic_dataset():
             "concesiones_acuicolas_totales": 745,
             "centros_salmonicolas_operativos_rotacion": 245,
             "desembarque_artesanal_total_ton_anual": 13820.0,
-            "concesiones_mineras_explotacion_totales": 195,
-            "concesiones_mineras_exploracion_totales": 339,
-            "superficie_concesionada_mineria_ha": 154200,
+            "concesiones_mineras_totales": 356,
+            "concesiones_mineras_explotacion_totales": 131,
+            "concesiones_mineras_exploracion_totales": 225,
+            "superficie_concesionada_mineria_ha": 128511,
             "total_nodos_georreferenciados": len(nodos_georreferenciados),
             "holdings_salmoneros_resumen": {
                 "total_holdings_mapeados": len(HOLDINGS_SALMONEROS_AYSEN),

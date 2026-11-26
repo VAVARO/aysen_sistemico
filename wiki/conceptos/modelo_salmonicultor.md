@@ -32,16 +32,16 @@ La industria del salmón en Aysén suma 745 concesiones otorgadas, 245 centros o
 
 | Comuna | Concesiones de Salmonicultura | Centros de Cultivo Activos | Biomasa de Salmón Cosechada (ton) | Trabajadores Dependientes SII | Uso de Antibióticos en Salmonicultura ICA (g/ton) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 0 | 0 | 0 | 20.950 | 0 |
-| [[comunas/lago_verde|Lago Verde]] | 0 | 0 | 0 | 132 | 0 |
-| [[comunas/aysen|Aysén]] | 412 | 135 | 265.000 | 9.890 | 335,4 |
-| [[comunas/cisnes|Cisnes]] | 218 | 78 | 185.000 | 1.920 | 324,8 |
-| [[comunas/guaitecas|Guaitecas]] | 98 | 32 | 45.000 | 265 | 382,1 |
-| [[comunas/chile_chico|Chile Chico]] | 0 | 0 | 0 | 1.140 | 0 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 0 | 0 | 0 | 512 | 0 |
-| [[comunas/cochrane|Cochrane]] | 0 | 0 | 0 | 845 | 0 |
-| [[comunas/ohiggins|O'Higgins]] | 0 | 0 | 0 | 98 | 0 |
-| [[comunas/tortel|Tortel]] | 17 | 0 | 8.500 | 80 | 289 |
+| [[comunas/coyhaique|Coyhaique]] | 0 | 0 | 0 | 22.351 | 0 |
+| [[comunas/lago_verde|Lago Verde]] | 0 | 0 | 0 | 213 | 0 |
+| [[comunas/aysen|Aysén]] | 412 | 135 | 265.000 | 6.551 | 335,4 |
+| [[comunas/cisnes|Cisnes]] | 218 | 78 | 185.000 | 1.757 | 324,8 |
+| [[comunas/guaitecas|Guaitecas]] | 98 | 32 | 45.000 | 349 | 382,1 |
+| [[comunas/chile_chico|Chile Chico]] | 0 | 0 | 0 | 965 | 0 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 0 | 0 | 0 | 575 | 0 |
+| [[comunas/cochrane|Cochrane]] | 0 | 0 | 0 | 475 | 0 |
+| [[comunas/ohiggins|O'Higgins]] | 0 | 0 | 0 | 148 | 0 |
+| [[comunas/tortel|Tortel]] | 17 | 0 | 8.500 | 145 | 289 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

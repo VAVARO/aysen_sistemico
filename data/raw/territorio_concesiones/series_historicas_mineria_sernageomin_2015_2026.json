@@ -86,17 +86,17 @@
     {
       "ano": 2025,
       "mineria": {
-        "concesiones_explotacion_vigentes": 196,
-        "concesiones_exploracion_vigentes": 332,
-        "superficie_minera_amparada_ha": 153000
+        "concesiones_explotacion_vigentes": 131,
+        "concesiones_exploracion_vigentes": 225,
+        "superficie_minera_amparada_ha": 128511
       }
     },
     {
       "ano": 2026,
       "mineria": {
-        "concesiones_explotacion_vigentes": 197,
-        "concesiones_exploracion_vigentes": 325,
-        "superficie_minera_amparada_ha": 151800
+        "concesiones_explotacion_vigentes": 131,
+        "concesiones_exploracion_vigentes": 225,
+        "superficie_minera_amparada_ha": 128511
       }
     }
   ],
@@ -164,15 +164,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 62,
-        "exploracion": 105,
-        "superficie_ha": 44800
+        "explotacion": 21,
+        "exploracion": 54,
+        "superficie_ha": 21573
       },
       {
         "ano": 2026,
-        "explotacion": 62,
-        "exploracion": 105,
-        "superficie_ha": 44800
+        "explotacion": 21,
+        "exploracion": 54,
+        "superficie_ha": 21573
       }
     ],
     "11102": [
@@ -238,15 +238,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 4,
-        "exploracion": 18,
-        "superficie_ha": 3400
+        "explotacion": 1,
+        "exploracion": 81,
+        "superficie_ha": 24800
       },
       {
         "ano": 2026,
-        "explotacion": 4,
-        "exploracion": 18,
-        "superficie_ha": 3400
+        "explotacion": 1,
+        "exploracion": 81,
+        "superficie_ha": 24800
       }
     ],
     "11201": [
@@ -312,15 +312,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 12,
-        "exploracion": 25,
-        "superficie_ha": 9800
+        "explotacion": 6,
+        "exploracion": 24,
+        "superficie_ha": 13900
       },
       {
         "ano": 2026,
-        "explotacion": 12,
-        "exploracion": 25,
-        "superficie_ha": 9800
+        "explotacion": 6,
+        "exploracion": 24,
+        "superficie_ha": 13900
       }
     ],
     "11202": [
@@ -386,15 +386,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 8,
-        "exploracion": 20,
-        "superficie_ha": 6200
+        "explotacion": 1,
+        "exploracion": 3,
+        "superficie_ha": 2300
       },
       {
         "ano": 2026,
-        "explotacion": 8,
-        "exploracion": 20,
-        "superficie_ha": 6200
+        "explotacion": 1,
+        "exploracion": 3,
+        "superficie_ha": 2300
       }
     ],
     "11203": [
@@ -461,14 +461,14 @@
       {
         "ano": 2025,
         "explotacion": 0,
-        "exploracion": 2,
-        "superficie_ha": 300
+        "exploracion": 0,
+        "superficie_ha": 0
       },
       {
         "ano": 2026,
         "explotacion": 0,
-        "exploracion": 2,
-        "superficie_ha": 300
+        "exploracion": 0,
+        "superficie_ha": 0
       }
     ],
     "11401": [
@@ -534,15 +534,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 84,
-        "exploracion": 142,
-        "superficie_ha": 68500
+        "explotacion": 94,
+        "exploracion": 33,
+        "superficie_ha": 47537
       },
       {
         "ano": 2026,
-        "explotacion": 84,
-        "exploracion": 142,
-        "superficie_ha": 68500
+        "explotacion": 94,
+        "exploracion": 33,
+        "superficie_ha": 47537
       }
     ],
     "11402": [
@@ -608,15 +608,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 18,
-        "exploracion": 22,
-        "superficie_ha": 16400
+        "explotacion": 6,
+        "exploracion": 8,
+        "superficie_ha": 7400
       },
       {
         "ano": 2026,
-        "explotacion": 18,
-        "exploracion": 22,
-        "superficie_ha": 16400
+        "explotacion": 6,
+        "exploracion": 8,
+        "superficie_ha": 7400
       }
     ],
     "11301": [
@@ -682,15 +682,15 @@
       },
       {
         "ano": 2025,
-        "explotacion": 5,
-        "exploracion": 12,
-        "superficie_ha": 4100
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 1201
       },
       {
         "ano": 2026,
-        "explotacion": 5,
-        "exploracion": 12,
-        "superficie_ha": 4100
+        "explotacion": 0,
+        "exploracion": 2,
+        "superficie_ha": 1201
       }
     ],
     "11302": [
@@ -757,14 +757,14 @@
       {
         "ano": 2025,
         "explotacion": 2,
-        "exploracion": 6,
-        "superficie_ha": 2200
+        "exploracion": 20,
+        "superficie_ha": 9800
       },
       {
         "ano": 2026,
         "explotacion": 2,
-        "exploracion": 6,
-        "superficie_ha": 2200
+        "exploracion": 20,
+        "superficie_ha": 9800
       }
     ],
     "11303": [
@@ -831,14 +831,14 @@
       {
         "ano": 2025,
         "explotacion": 0,
-        "exploracion": 3,
-        "superficie_ha": 1200
+        "exploracion": 0,
+        "superficie_ha": 0
       },
       {
         "ano": 2026,
         "explotacion": 0,
-        "exploracion": 3,
-        "superficie_ha": 1200
+        "exploracion": 0,
+        "superficie_ha": 0
       }
     ]
   }

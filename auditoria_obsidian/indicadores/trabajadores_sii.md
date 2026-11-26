@@ -29,29 +29,30 @@ tags:
 - **Unidad**: trabajadores
 - **Fuente oficial**: Servicio de Impuestos Internos (SII) — Subdirección de Estudios (https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html)
 - **Frecuencia / Modo**: Anual · `curated_fallback`
-- **Última auditoría**: [[corridas/corrida_2026-11-26_head_vs_head|Corrida 2026-11-26]] · [[index_auditoria|Índice de Auditoría]]
+- **Última auditoría**: [[corridas/corrida_2026-11-26_head_aprobado_vs_head|Corrida 2026-11-26]] · [[index_auditoria|Índice de Auditoría]]
 
 ## Alertas Activas en esta Corrida
 
-- [ ] **[ALTA · OUTLIER_SALTO]** Coyhaique: 33.650 -> 20.950 (Variación de -37,7% (umbral operativo >= 20%)); Lago Verde: 460 -> 132 (Variación de -71,3% (umbral operativo >= 20%)); Aysén: 12.780 -> 9.890 (Variación de -22,6% (umbral operativo >= 20%)); Cisnes: 3.770 -> 1.920 (Variación de -49,1% (umbral operativo >= 20%)); Guaitecas: 1.040 -> 265 (Variación de -74,5% (umbral operativo >= 20%)); Cochrane: 1.790 -> 845 (Variación de -52,8% (umbral operativo >= 20%)); O'Higgins: 345 -> 98 (Variación de -71,6% (umbral operativo >= 20%)); Tortel: 295 -> 80 (Variación de -72,9% (umbral operativo >= 20%)); Chile Chico: 2.430 -> 1.140 (Variación de -53,1% (umbral operativo >= 20%)); Río Ibáñez: 1.445 -> 512 (Variación de -64,6% (umbral operativo >= 20%))
+- [ ] **[ALTA · OUTLIER_SALTO]** Lago Verde: 132 -> 213 (Variación de +61,4% (umbral operativo >= 20%)); Aysén: 9.890 -> 6.551 (Variación de -33,8% (umbral operativo >= 20%)); Guaitecas: 265 -> 349 (Variación de +31,7% (umbral operativo >= 20%)); Cochrane: 845 -> 475 (Variación de -43,8% (umbral operativo >= 20%)); O'Higgins: 98 -> 148 (Variación de +51,0% (umbral operativo >= 20%)); Tortel: 80 -> 145 (Variación de +81,3% (umbral operativo >= 20%))
 
-## Comparación Comunal (HEAD vs HEAD)
+## Comparación Comunal (HEAD_APROBADO vs HEAD)
 
 | INE | Comuna | Anterior | Actual | Delta | Delta % | Outlier |
 |---|---|---|---|---|---|---|
-| `11101` | Coyhaique | 33.650 | 20.950 | -12.700 | -37,7% | SI (Variación de -37,7% (umbral operativo >= 20%)) |
-| `11102` | Lago Verde | 460 | 132 | -328 | -71,3% | SI (Variación de -71,3% (umbral operativo >= 20%)) |
-| `11201` | Aysén | 12.780 | 9.890 | -2.890 | -22,6% | SI (Variación de -22,6% (umbral operativo >= 20%)) |
-| `11202` | Cisnes | 3.770 | 1.920 | -1.850 | -49,1% | SI (Variación de -49,1% (umbral operativo >= 20%)) |
-| `11203` | Guaitecas | 1.040 | 265 | -775 | -74,5% | SI (Variación de -74,5% (umbral operativo >= 20%)) |
-| `11301` | Cochrane | 1.790 | 845 | -945 | -52,8% | SI (Variación de -52,8% (umbral operativo >= 20%)) |
-| `11302` | O'Higgins | 345 | 98 | -247 | -71,6% | SI (Variación de -71,6% (umbral operativo >= 20%)) |
-| `11303` | Tortel | 295 | 80 | -215 | -72,9% | SI (Variación de -72,9% (umbral operativo >= 20%)) |
-| `11401` | Chile Chico | 2.430 | 1.140 | -1.290 | -53,1% | SI (Variación de -53,1% (umbral operativo >= 20%)) |
-| `11402` | Río Ibáñez | 1.445 | 512 | -933 | -64,6% | SI (Variación de -64,6% (umbral operativo >= 20%)) |
+| `11101` | Coyhaique | 20.950 | 22.351 | 1.401 | +6,7% | NO |
+| `11102` | Lago Verde | 132 | 213 | 81 | +61,4% | SI (Variación de +61,4% (umbral operativo >= 20%)) |
+| `11201` | Aysén | 9.890 | 6.551 | -3.339 | -33,8% | SI (Variación de -33,8% (umbral operativo >= 20%)) |
+| `11202` | Cisnes | 1.920 | 1.757 | -163 | -8,5% | NO |
+| `11203` | Guaitecas | 265 | 349 | 84 | +31,7% | SI (Variación de +31,7% (umbral operativo >= 20%)) |
+| `11301` | Cochrane | 845 | 475 | -370 | -43,8% | SI (Variación de -43,8% (umbral operativo >= 20%)) |
+| `11302` | O'Higgins | 98 | 148 | 50 | +51,0% | SI (Variación de +51,0% (umbral operativo >= 20%)) |
+| `11303` | Tortel | 80 | 145 | 65 | +81,3% | SI (Variación de +81,3% (umbral operativo >= 20%)) |
+| `11401` | Chile Chico | 1.140 | 965 | -175 | -15,4% | NO |
+| `11402` | Río Ibáñez | 512 | 575 | 63 | +12,3% | NO |
 
 ## Historial de Corridas
 
+- **2026-11-26** ([[corridas/corrida_2026-11-26_head_aprobado_vs_head|corrida_2026-11-26_head_aprobado_vs_head]]): estado `modificada` · 10 comuna(s) con cambio/registro · alertas: 1.
 - **2026-11-26** ([[corridas/corrida_2026-11-26_head_vs_head|corrida_2026-11-26_head_vs_head]]): estado `modificada` · 10 comuna(s) con cambio/registro · alertas: 1.
 
 ## Revisión Humana (Notas Preservadas)

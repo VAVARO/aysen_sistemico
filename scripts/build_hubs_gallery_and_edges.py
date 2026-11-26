@@ -662,7 +662,7 @@ def build_hubs_gallery(barometro_data):
                             "labels": YEARS_12,
                             "datasets": [
                                 {"label": "Pasajeros Aeródromo Balmaceda (JAC)", "data": [420000, 455000, 490000, 530000, 560000, 245000, 380000, 495000, 525000, 542000, 568000, 590000], "unit": "pasajeros", "yAxisID": "y"},
-                                {"label": "PIB Regional Nominal (MM$ CLP)", "data": [980000.0, 1045000.0, 1120000.0, 1215000.0, 1260000.0, 1240000.0, 1410000.0, 1540000.0, 1620000.0, 1680000.0, 1755000.0, 1830000.0], "unit": "MM$ CLP", "yAxisID": "y1"}
+                                {"label": "PIB Regional Nominal (MM$ CLP)", "data": [980000.0, 1045000.0, 1120000.0, 1228000.0, 1346000.0, 1104000.0, 1260000.0, 1490000.0, 1502000.0, 1672000.0, 1991000.0, 1991000.0], "unit": "MM$ CLP", "yAxisID": "y1"}
                             ]
                         }
                     },

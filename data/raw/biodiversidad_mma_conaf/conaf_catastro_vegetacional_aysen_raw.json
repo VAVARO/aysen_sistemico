@@ -17,5 +17,11 @@
     "cipres_de_las_guaitecas": "Pilgerodendron uviferum, conífera endémica austral adaptada a suelos saturados de agua, turberas y costas rocosas",
     "turberas": "Ecosistemas hidromórficos dominados por briófitos del género Sphagnum magellanicum y ciperáceas pulvinadas",
     "estepa_patagonica": "Pastizales xerófilos y matorrales achaparrados con Festuca pallescens (coirón blanco), Stipa speciosa y Berberis microphylla (calafate)"
+  },
+  "catastro_vegetacional_conaf_2026": {
+    "superficie_catastrada_ha": 10667211.5,
+    "bosque_nativo_ha": 5152384.3,
+    "bosques_en_snaspe_ha": 2387525.4,
+    "fuente": "CONAF — Catastro de los Recursos Vegetacionales Nativos de Chile (Actualización Aysén 2026)"
   }
 }

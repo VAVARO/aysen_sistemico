@@ -20,22 +20,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de concesiones mineras de exploración y explotación (pertenencias), superficie comprometida en hectáreas, yacimientos metálicos y no metálicos según SERNAGEOMIN. Chile Chico lidera en minería metálica con 48.200 ha en pertenencias (distrito minero Cerro Bayo), seguido por Coyhaique (31.500 ha), Río Ibáñez (19.600 ha) y Cisnes (16.800 ha) (total regional 156.400 ha).
+Catastro de concesiones mineras de exploración y explotación (pertenencias), superficie comprometida en hectáreas, yacimientos metálicos y no metálicos según SERNAGEOMIN. El catastro SERNAGEOMIN registra 356 concesiones vigentes (131 de explotación + 225 de exploración) y 128.511 ha en Aysén: Chile Chico (127 conc. [94+33] / 47.537 ha), Lago Verde (82 conc. [1+81] / 24.800 ha), Coyhaique (75 conc. / 21.573 ha), Aysén (30 conc. / 13.900 ha), O'Higgins (22 conc. / 9.800 ha), Río Ibáñez (14 conc. / 7.400 ha), Cisnes (4 conc. / 2.300 ha), Cochrane (2 conc. / 1.201 ha) y 0 concesiones en Tortel y Guaitecas.
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Pertenencias Mineras (ha) | Conc. Explotación (N°) | Conc. Exploración (N°) | Yacimientos y Minerales Principales |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 31.500 | 45 | 72 | Mina El Toqui (Alto Mañihuales) · Zinc, Plomo, Oro |
-| [[comunas/lago_verde|Lago Verde]] | 8.900 | 5 | 19 | Prospecto Río Pico · Cobre, Oro, Zinc |
-| [[comunas/aysen|Aysén]] | 12.400 | 18 | 28 | Distrito Río Mañihuales Poniente · Zinc, Plomo, Piedra caliza |
-| [[comunas/cisnes|Cisnes]] | 16.800 | 8 | 34 | Prospección El Moro · Cobre, Zinc, Áridos |
-| [[comunas/guaitecas|Guaitecas]] | 400 | 0 | 2 | Ninguno de envergadura · Áridos marinos |
-| [[comunas/chile_chico|Chile Chico]] | 48.200 | 84 | 112 | Distrito Minero Cerro Bayo (Vetas Casagrande, Coyita, Laguna Verde) · Oro, Plata, Zinc |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 19.600 | 26 | 42 | Mina Silva / Puerto Cristal (Plomo-Zinc histórico) · Plomo, Zinc, Cobre |
-| [[comunas/cochrane|Cochrane]] | 9.800 | 6 | 22 | Prospección San Lorenzo · Cobre, Zinc, Molibdeno |
-| [[comunas/ohiggins|O'Higgins]] | 5.600 | 2 | 14 | Manifestaciones cordilleranas Ventisquero Chico / Río Mayer · Cobre, Plomo |
-| [[comunas/tortel|Tortel]] | 3.200 | 1 | 8 | Prospección Delta Baker / Caleta Tortel · Áridos, Cobre |
+| [[comunas/coyhaique|Coyhaique]] | 21.573 | 21 | 54 | Mina El Toqui (Alto Mañihuales) · Zinc, Plomo, Oro |
+| [[comunas/lago_verde|Lago Verde]] | 24.800 | 1 | 81 | Prospecto Río Pico · Cobre, Oro, Zinc |
+| [[comunas/aysen|Aysén]] | 13.900 | 6 | 24 | Distrito Río Mañihuales Poniente · Zinc, Plomo, Piedra caliza |
+| [[comunas/cisnes|Cisnes]] | 2.300 | 1 | 3 | Prospección El Moro · Cobre, Zinc, Áridos |
+| [[comunas/guaitecas|Guaitecas]] | 0 | 0 | 0 | Sin concesiones mineras vigentes · Sin actividad minera vigente |
+| [[comunas/chile_chico|Chile Chico]] | 47.537 | 94 | 33 | Distrito Minero Cerro Bayo (Vetas Casagrande, Coyita, Laguna Verde) · Oro, Plata, Zinc |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 7.400 | 6 | 8 | Mina Silva / Puerto Cristal (Plomo-Zinc histórico) · Plomo, Zinc, Cobre |
+| [[comunas/cochrane|Cochrane]] | 1.201 | 0 | 2 | Prospección San Lorenzo · Cobre, Zinc, Molibdeno |
+| [[comunas/ohiggins|O'Higgins]] | 9.800 | 2 | 20 | Manifestaciones cordilleranas Ventisquero Chico / Río Mayer · Cobre, Plomo |
+| [[comunas/tortel|Tortel]] | 0 | 0 | 0 | Sin concesiones mineras vigentes · Sin actividad minera vigente |
 
 ## Metadatos de Procedencia Institucional
 

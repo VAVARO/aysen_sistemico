@@ -21,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Estructura de tenencia de la tierra según el Ministerio de Bienes Nacionales y CONAF: hectáreas y porcentaje de suelo fiscal, propiedad privada y unidades bajo protección SNASPE. En comunas como Tortel (91,4% fiscal/SNASPE) y O'Higgins (86,8%) la mayor parte del territorio esta bajo dominio del Estado, contrastando con Coyhaique, donde el 62,3% es propiedad privada y presenta presión por loteos rurales.
+Estructura de tenencia de la tierra según el Ministerio de Bienes Nacionales y CONAF junto al Catastro Vegetacional CONAF 2026 y dotación pecuaria BCN/ODEPA: hectáreas de suelo fiscal, propiedad privada, SNASPE y masa ganadera. En Tortel (91,4% fiscal/SNASPE) y O'Higgins (86,8%) predomina el dominio estatal, frente a Coyhaique (62,3% privado). El Catastro Vegetacional CONAF 2026 cubre 10.667.211,5 ha (5.152.384,3 ha de bosque nativo y 2.387.525,4 ha de bosques en SNASPE), coexistiendo con 144.118 bovinos y 177.972 ovinos (BCN/ODEPA).
 
 ## Indicadores Comunales Verificados
 

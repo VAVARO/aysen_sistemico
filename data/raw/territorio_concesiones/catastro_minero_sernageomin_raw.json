@@ -1,9 +1,9 @@
 {
   "fuente": "SERNAGEOMIN - Anuario de la Minería de Chile y Catastro Nacional de Concesiones Mineras",
-  "fecha_corte": "2024-12-31",
-  "total_concesiones_explotacion_regional": 195,
-  "total_concesiones_exploracion_regional": 339,
-  "superficie_minera_total_ha": 154200,
+  "fecha_corte": "2026-10-18",
+  "total_concesiones_explotacion_regional": 131,
+  "total_concesiones_exploracion_regional": 225,
+  "superficie_minera_total_ha": 128511,
   "distritos_clave": [
     {
       "distrito": "El Toqui",
@@ -15,7 +15,8 @@
         "Plata",
         "Plomo"
       ],
-      "estado": "Operación y mantención con proyectos de reapertura de flotación"
+      "estado": "Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM",
+      "titular_real": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)"
     },
     {
       "distrito": "Distrito Cerro Bayo / Laguna Verde",
@@ -25,7 +26,8 @@
         "Oro",
         "Plata"
       ],
-      "estado": "Reactivación y exploración de recursos en vetas Casagrande y Coyita"
+      "estado": "136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027",
+      "titular_real": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)"
     },
     {
       "distrito": "Mina Fachinal",
@@ -50,5 +52,6 @@
       ],
       "estado": "Monumento Histórico Nacional y pasivo ambiental monitoreado"
     }
-  ]
+  ],
+  "total_concesiones_regional": 356
 }

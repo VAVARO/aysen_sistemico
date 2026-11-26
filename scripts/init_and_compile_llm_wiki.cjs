@@ -202,20 +202,28 @@ const HUB_META = [
       'inversion_seia_mmusd',
       'empresas_sii',
       'trabajadores_sii',
+      'ventas_sii_domicilio_local_muf',
       'ventas_sii_muf',
+      'sucursales_bancarias_n',
+      'cajeros_automaticos_n',
+      'cajavecina_puntos_n',
       'concesiones_mineras_ha',
+      'ganado_bovino_cabezas',
+      'ganado_ovino_cabezas',
       'suelo_fiscal_bbnn_pct'
     ],
     fuentes_oficiales: [
+      'Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales',
       'SEA — Sistema de Evaluación de Impacto Ambiental (SEIA)',
       'SII — Estadísticas Tributarias de Empresas, Ventas y Empleo',
       'ChileCompra — Transacciones Mercado Público',
-      'MBN / SERNAGEOMIN — Catastro de Propiedad Fiscal y Concesiones Mineras'
+      'CMF / BancoEstado — Inclusión Financiera y CajaVecina',
+      'MBN / SERNAGEOMIN / BCN / ODEPA / CONAF 2026'
     ],
     conceptLinks: ['conceptos/inversion_publica_regional', 'conceptos/financiamiento_municipal'],
     adrLinks: ['adr/adr_004_normalizacion_per_capita_y_colinealidad', 'adr/adr_002_reconciliacion_38_fuentes_invariantes'],
     synthesis:
-      'El Hub V (Economía, Inversión y Suelo) integra la evaluación ambiental de proyectos en el SEIA, la demografía empresarial formal del Servicio de Impuestos Internos (SII), la retención de compras públicas en ChileCompra y el régimen de propiedad del suelo. Coyhaique y Aysén concentran más del 78% de las empresas vigentes SII y del empleo formal dependiente, mientras que en las comunas rurales y costeras la estructura territorial está marcada por una alta proporción de suelo fiscal administrado por Bienes Nacionales y unidades SNASPE, junto con presiones de subdivisión predial rural certificadas por el SAG y carteras de exploración minera en Chile Chico y Cisnes.'
+      'El Hub V (Economía, Inversión y Suelo) integra las Cuentas Nacionales Regionales del Banco Central (PIB nominal 2025 de 1.991.000 MM$ CLP, +8,5% real, FBCF +18,2%, PIB turístico 89.200 MM$ = 4,5%, nota 1T 2026: -2,6% real y 13 actividades económicas), el SEIA (722 proyectos aprobados históricos; Cuenta Pública SEA 2024-2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias en 2025; sin alucinaciones extrarregionales), la demografía empresarial SII (13.453 empresas y 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF de ventas por domicilio tributario local frente a 131.520 MUF de valor bruto de producción física), compras públicas ChileCompra (230.850 M$ en 2024, 238.400 M$ en 2025 y 228.874,2 M$ en 2026 YTD), CMF 2025 (12 sucursales, 47 ATM y 415 puntos CajaVecina), catastro SERNAGEOMIN (356 concesiones / 128.511 ha; Pacífico del Sur en El Toqui y Andean Silver en Cerro Bayo), masa ganadera BCN/ODEPA (144.118 bovinos y 177.972 ovinos) y Catastro Vegetacional CONAF 2026 (10.667.211,5 ha catastradas; 5.152.384,3 ha bosque nativo; 2.387.525,4 ha en SNASPE).'
   },
   {
     idx: 6,
@@ -742,7 +750,7 @@ const ADR_SPECS = [
     relatedComunas: ['coyhaique', 'aysen', 'cisnes', 'guaitecas', 'tortel', 'ohiggins'],
     relatedConcepts: ['modelo_salmonicultor', 'ecosistema_ctci_ciencia', 'red_asistencial_salud', 'volcan_hudson_y_campos_de_hielo'],
     synthesis:
-      'Tras auditar los 10 Hubs con 50 perfiles de usuarios expertos, se establecieron invariantes numéricos únicos en todo el repositorio para eliminar discrepancias entre tablas comunales, nodos satélite y respuestas del Consultor IA: (1) Salmonicultura: 13 holdings salmoneros madres con 745 concesiones otorgadas en las 4 comunas costeras (793 en el catastro histórico ampliado con relocalizaciones), 245 centros operativos activos y 503.500 toneladas de biomasa cosechada; (2) Criósfera DGA: 10.035,7 km² de superficie glaciar regional; (3) Salud Rural: exactamente 27 Postas de Salud Rural (PSR) y 5 hospitales con 261 camas; (4) Ecosistema CTCi: 16 centros científicos y estaciones de campo con 124 investigadores residentes y 179 proyectos totales (120 ANID + 59 CORFO); y (5) Finanzas GORE y Municipales: ingresos municipales BCN/SINIM 2025 de 84.820,68 M$ (FCM 41.753,32 M$ brutos; 68,5% ponderada / 77,5% simple), y distinción explícita entre el récord devengado FNDR GORE 2025 (73.863,0 M$ / 92,0% sobre 80.200,0 M$ vigentes), el cierre 2024 (44.765,5 M$ / 59,3%), las transferencias e inversión directa 2023 (61.579,2 M$ CKAN / 61.548,0 M$ DIPRES sobre 68.333,7 M$) y el acuerdo Hacienda 2027 (80.748,0 M$).',
+      'Tras auditar los 10 Hubs, se establecieron invariantes numéricos únicos en todo el repositorio para eliminar discrepancias entre tablas comunales, nodos satélite y respuestas del Consultor IA: (1) Salmonicultura: 13 holdings salmoneros madres con 745 concesiones otorgadas en las 4 comunas costeras, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada; (2) Criósfera DGA: 10.035,7 km² de superficie glaciar regional; (3) Salud Rural: 27 Postas de Salud Rural (PSR) y 5 hospitales con 261 camas; (4) Ecosistema CTCi: 16 centros científicos con 124 investigadores residentes y 179 proyectos totales (120 ANID + 59 CORFO); (5) Finanzas GORE y Municipales: ingresos municipales BCN/SINIM 2025 de 84.820,68 M$ (FCM 41.753,32 M$ brutos), FNDR 2025 devengado de 73.863,0 M$ (92,0%) y acuerdo Hacienda 2027 en 80.748,0 M$; y (6) Economía, Inversión y Suelo (Hub V — Sprint 8): PIB nominal BCCh 2025 de 1.991.000 MM$ (+8,5% real, 13 actividades, 1T 2026 -2,6% real), demografía SII (13.453 empresas / 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs. 131.520 MUF valor bruto de producción), SEIA sin alucinaciones extrarregionales y sincronía 1:1 (Cuenta Pública SEA 2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias), ChileCompra 2026 YTD (228.874,2 M$ en 31.973 OC), SERNAGEOMIN (356 concesiones / 128.511 ha; Pacífico del Sur en El Toqui y Andean Silver en Cerro Bayo), ODEPA (144.118 bovinos / 177.972 ovinos) y Catastro Vegetacional CONAF 2026 (10.667.211,5 ha; 5.152.384,3 ha bosque nativo; 2.387.525,4 ha en SNASPE).',
     context:
       'Los catastros administrativos chilenos publican cortes temporales distintos (por ejemplo, concesiones acuícolas otorgadas vs. operativas, o presupuesto FNDR ley inicial vs. devengado anual), lo que inducía contradicciones aparentes cuando un analista cruzaba dos módulos.',
     decision:
@@ -1134,7 +1142,7 @@ const NODE_KEY_VARS_MAP = {
   17: ['participacion_municipales_2024_pct', 'transparencia_activa_cplt_2026_pct'],
   18: ['fndr_mclp', 'fndr_per_capita_mclp', 'fndr_gore_2023_ejecucion_pct'],
   19: ['proyectos_seia_aprobados', 'inversion_seia_mmusd', 'seia_plazo_dias'],
-  20: ['empresas_sii', 'trabajadores_sii', 'ventas_sii_muf'],
+  20: ['empresas_sii', 'trabajadores_sii', 'ventas_sii_domicilio_local_muf', 'ventas_sii_muf', 'sucursales_bancarias_n', 'cajeros_automaticos_n', 'cajavecina_puntos_n'],
   21: ['concesiones_mineras_ha', 'fet_royalty_minero_2025_mclp'],
   22: ['suelo_fiscal_bbnn_pct', 'superficie_snaspe_pct', 'parcelaciones_sag_n'],
   23: ['poblacion_censo_2024', 'pobreza_ingresos_pct', 'pobreza_multidim_pct'],
@@ -1452,6 +1460,10 @@ function generateLogPage() {
     '- Erradicación del nodo alucinado `Cabo Juan Román`, catastro reconciliado de 21 centrales operativas sumando exactamente `67,10 MW` (+`18,98 MW` ERNC en construcción 2026) con SSAA `<= 1,50 MW` (Art. 173° LGSE), BT1 nov-2026 `Decreto N° 8T/2026` (`$287,8/kWh`), `13.448` hogares Subsidio Eléctrico Ley 21.667 y `data/raw/energia_telecom/marco_regulatorio_tarifario_aysen_2024_2028.json`.',
     '- Corte combustibles CNE 19-nov-2026 (`$1.696/L` gasolina 93, `$1.663/L` diésel, `$1.497/L` kerosene FEPP), Terminal MBM Copec Chacabuco `6.674 m³` activos (`10.474 m³` totales), leña INFOR BES N° 11 `334.274 m³ sólidos/año` (`Coyhaique 147.080 m³s [44,0%]`, `68,8%` hogares, `9,81 m³s/hogar`), trazado real SUBTEL/FOA (único aterrizaje CTR en [[comunas/tortel|Tortel]], GTD privado en Puerto Chacabuco, 14 POIITs Silica, `FDT-2025-03` y Tortel–O\'Higgins 1S-2028) y paridad censal `26.294`/`24.782` conexiones en [[hubs/hub_03_energia|Hub III]] y [[nodos/nodo_11|Nodos #11]]–[[nodos/nodo_14|#14]].',
     '- Cierre residuales Sprint 5 (`isAliasOf` USD/CLP, neutralización bilateral de 3 complementos `100 - X` y `comuna_principal`/`comuna_ine` en 19 `unidadesSnaspe`) y evolución a **Obsidian Indicator Audit V3** (Evals E13–E16).',
+    '',
+    '## [2026-11-26] ingest | Sprint 8: Reingeniería Forense del Hub V (BCCh, SII 5 Tramos, SEIA 1:1, SERNAGEOMIN, ChileCompra, CMF, ODEPA y CONAF 2026)',
+    '- Reconciliación macroeconómica BCCh Cuentas Nacionales Regionales 2018–2025 (`1.991.000 MM$` en 2025, `+8,5%` real, FBCF `+18,2%`, PIB turístico `89.200 MM$` = `4,5%`, 1T 2026 `-2,6%` real, 13 actividades económicas) y eliminación de contradicción SII (`9.365/56.475`) mediante 5 tramos UF BCN 2024 (`12.953` emp.), ventas domicilio local (`25.800 MUF`) vs valor bruto producción (`131.520 MUF`) y series SII 2022–2025 en [[hubs/hub_05_inversion|Hub V]] y [[nodos/nodo_20|Nodo #20]].',
+    '- Erradicación geográfica de `Los Cóndores` (Maule) reemplazada por `Central Hidroeléctrica Río Mañihuales` (`Edelaysen S.A.`), limpieza de parámetros ficticios `id_expediente=`, sincronía 1:1 SEIA, Cuenta Pública SEA 2025 (`3` aprobados, `1` desistido, `0` rechazados, `72` pertinencias), catastro SERNAGEOMIN (`356` conc. / `128.511 ha` con Pacífico del Sur y Andean Silver), ChileCompra (`230.850 M$` 2024 / `238.400 M$` 2025 / `228.874,2 M$` 2026 YTD), banca CMF 2025 + leyes de excepción, ODEPA (`144.118` bovinos / `177.972` ovinos), CONAF 2026 (`10.667.211,5 ha` / `5.152.384,3 ha` bosque nativo / `2.387.525,4 ha` en SNASPE) y **Eval E18** en [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]].',
     ''
   ].join('\n');
 

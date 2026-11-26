@@ -89,7 +89,7 @@
     "ventas_anuales_totales_miles_uf": 131520,
     "peso_empleo_publico_regional_promedio_pct": 34.5,
     "pernoctaciones_anuales_regionales_total": 364039,
-    "licitaciones_mercado_publico_regional_total_mclp": 105400,
+    "licitaciones_mercado_publico_regional_total_mclp": 228874.2,
     "total_nodos_georreferenciados": 20,
     "series_historicas_regionales": [
       {
@@ -116,47 +116,47 @@
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 1215000.0
+            "valor": 1228000.0
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 1260000.0
+            "valor": 1346000.0
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 1240000.0
+            "valor": 1104000.0
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 1410000.0
+            "valor": 1260000.0
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 1540000.0
+            "valor": 1490000.0
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 1620000.0
+            "valor": 1502000.0
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 1680000.0
+            "valor": 1672000.0
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 1755000.0
+            "valor": 1991000.0
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 1830000.0
+            "valor": 1991000.0
           }
         ]
       },
@@ -204,27 +204,27 @@
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 2.1
+            "valor": 3.8
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 1.5
+            "valor": 3.8
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 2.3
+            "valor": -0.2
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 2.6
+            "valor": 8.5
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 2.4
+            "valor": -2.6
           }
         ]
       },
@@ -237,62 +237,62 @@
           {
             "periodo": "2015",
             "fecha": "2015-12-31",
-            "valor": 7820
+            "valor": 9420
           },
           {
             "periodo": "2016",
             "fecha": "2016-12-31",
-            "valor": 8040
+            "valor": 9780
           },
           {
             "periodo": "2017",
             "fecha": "2017-12-31",
-            "valor": 8280
+            "valor": 10150
           },
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 8590
+            "valor": 10540
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 8850
+            "valor": 10920
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 8620
+            "valor": 10680
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 8940
+            "valor": 11420
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 9180
+            "valor": 12087
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 9365
+            "valor": 12451
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 9510
+            "valor": 12953
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 9680
+            "valor": 13453
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 9840
+            "valor": 13453
           }
         ]
       },
@@ -305,62 +305,62 @@
           {
             "periodo": "2015",
             "fecha": "2015-12-31",
-            "valor": 46200
+            "valor": 30450
           },
           {
             "periodo": "2016",
             "fecha": "2016-12-31",
-            "valor": 47600
+            "valor": 31120
           },
           {
             "periodo": "2017",
             "fecha": "2017-12-31",
-            "valor": 49100
+            "valor": 31890
           },
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 51300
+            "valor": 32640
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 52800
+            "valor": 33410
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 48900
+            "valor": 31020
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 52400
+            "valor": 33280
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 54800
+            "valor": 35157
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 56475
+            "valor": 34370
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 57800
+            "valor": 35491
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 59100
+            "valor": 35832
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 60400
+            "valor": 35832
           }
         ]
       },
@@ -423,12 +423,12 @@
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 20
+            "valor": 3
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 18
+            "valor": 4
           }
         ]
       },
@@ -491,12 +491,12 @@
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 154.0
+            "valor": 64.8
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 142.0
+            "valor": 78.5
           }
         ]
       },
@@ -645,47 +645,47 @@
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 72400.0
+            "valor": 158400.0
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 78600.0
+            "valor": 169200.0
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 81200.0
+            "valor": 174800.0
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 88900.0
+            "valor": 191500.0
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 96500.0
+            "valor": 208600.0
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 101800.0
+            "valor": 219400.0
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 105500.0
+            "valor": 230850.0
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 112400.0
+            "valor": 238400.0
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 118900.0
+            "valor": 228874.2
           }
         ]
       }
@@ -741,6 +741,215 @@
       "sectores_criticos": "Salmonicultura (centros de engorda en fiordos con turnos 7x7 y 14x14) y faenas de construcción de obras públicas",
       "impacto_economico": "Drenaje del multiplicador salarial local: los salarios son devengados en Aysén pero consumidos e invertidos en las regiones de residencia permanente de los trabajadores (Los Lagos, Los Ríos, Araucanía, Biobío)",
       "fuente": "Observatorio Laboral SENCE / INE Encuesta Nacional de Empleo (ENE)"
+    },
+    "total_empresas_comunas_declaradas_sii": 13068,
+    "total_trabajadores_comunas_declaradas_sii": 33529,
+    "nota_conciliacion_sii_regional_vs_comunal": "Registro regional consolidado SII 2025: 13.453 empresas activas y 35.832 trabajadores dependientes (12.953 emp. / 35.491 trab. en corte BCN 2024; 12.451 / 34.370 en 2023; 12.087 / 35.157 en 2022). La suma comunal BCN vigente (13.068 empresas y 33.529 trabajadores) excluye contribuyentes regionales sin asignacion comunal unica.",
+    "ventas_sii_domicilio_local_miles_uf": 25800,
+    "nota_metodologica_ventas_uf": "Las ventas declaradas por empresas con domicilio tributario en Aysen suman 25.800 Miles de UF (25,8 millones de UF en 2024 segun SII/Korbus), mientras que el valor bruto estimado de produccion fisica en la region (incorporando operaciones productivas de holdings acuicolas y mineros con casas matrices extrarregionales en Puerto Montt, Santiago o el extranjero) alcanza 131.520 Miles de UF.",
+    "cuentas_nacionales_bcch": {
+      "fuente": "Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales",
+      "pib_nominal_mmclp_2018_2025": {
+        "2018": 1228000,
+        "2019": 1346000,
+        "2020": 1104000,
+        "2021": 1260000,
+        "2022": 1490000,
+        "2023": 1502000,
+        "2024": 1672000,
+        "2025": 1991000
+      },
+      "pib_encadenado_mmclp": {
+        "2022": 1201780,
+        "2023": 1247360
+      },
+      "variacion_real_anual_pct": {
+        "2022": 3.8,
+        "2023": 3.8,
+        "2024": -0.2,
+        "2025": 8.5,
+        "1T_2026": -2.6
+      },
+      "fbcf_2025_variacion_real_pct": 18.2,
+      "pib_turistico_2025_mmclp": 89200,
+      "pib_turistico_2025_pct": 4.5,
+      "nota_1t_2026": "PIB regional 1T 2026: -2,6% real interanual; serie anual mantiene cierre vigente 2025 (1.991.000 MM$ CLP)."
+    },
+    "composicion_sectorial_pib_bcch_pct": {
+      "pesca_y_acuicultura": 27.2,
+      "administracion_publica": 16.1,
+      "servicios_personales": 14.8,
+      "servicios_vivienda_e_inmobiliarios": 6.7,
+      "transporte_y_comunicaciones": 6.0,
+      "industria_manufacturera": 5.9,
+      "construccion": 5.2,
+      "servicios_financieros_y_empresariales": 4.6,
+      "comercio": 4.2,
+      "mineria": 3.8,
+      "electricidad_gas_agua_y_desechos_ega": 2.0,
+      "restaurantes_y_hoteles": 1.8,
+      "agropecuario_silvicola": 1.8
+    },
+    "composicion_sectorial_pib_13_actividades_bcch": [
+      {
+        "actividad": "Pesca y acuicultura",
+        "pct_2023": 31.2,
+        "pct_2025": 27.2
+      },
+      {
+        "actividad": "Administración pública",
+        "pct_2023": 17.5,
+        "pct_2025": 16.1
+      },
+      {
+        "actividad": "Servicios personales",
+        "pct_2023": 15.0,
+        "pct_2025": 14.8
+      },
+      {
+        "actividad": "Servicios de vivienda e inmobiliarios",
+        "pct_2023": 6.6,
+        "pct_2025": 6.7
+      },
+      {
+        "actividad": "Transporte y comunicaciones",
+        "pct_2023": 6.8,
+        "pct_2025": 6.0
+      },
+      {
+        "actividad": "Industria manufacturera",
+        "pct_2023": 5.2,
+        "pct_2025": 5.9
+      },
+      {
+        "actividad": "Construcción",
+        "pct_2023": 4.1,
+        "pct_2025": 5.2
+      },
+      {
+        "actividad": "Servicios financieros y empresariales",
+        "pct_2023": 4.5,
+        "pct_2025": 4.6
+      },
+      {
+        "actividad": "Comercio",
+        "pct_2023": 5.3,
+        "pct_2025": 4.2
+      },
+      {
+        "actividad": "Minería",
+        "pct_2023": 1.1,
+        "pct_2025": 3.8
+      },
+      {
+        "actividad": "EGA (Electricidad, gas, agua y gestión de desechos)",
+        "pct_2023": 2.0,
+        "pct_2025": 2.0
+      },
+      {
+        "actividad": "Restaurantes y hoteles",
+        "pct_2023": 1.4,
+        "pct_2025": 1.8
+      },
+      {
+        "actividad": "Agropecuario-silvícola",
+        "pct_2023": 1.0,
+        "pct_2025": 1.8
+      }
+    ],
+    "distribucion_sii_5_tramos_uf_2024": {
+      "ano_corte": 2024,
+      "fuente": "BCN Reportes Comunales / SII (corte sobre 12.953 empresas y 35.491 trabajadores)",
+      "total_empresas": 12953,
+      "total_trabajadores": 35491,
+      "tramos": [
+        {
+          "id": "micro",
+          "nombre": "Micro (0,01-2.400 UF)",
+          "empresas": 8532,
+          "pct": 65.9,
+          "trabajadores": 3591
+        },
+        {
+          "id": "pequena",
+          "nombre": "Pequeña (2.400-25.000 UF)",
+          "empresas": 1655,
+          "pct": 12.8,
+          "trabajadores": 15634
+        },
+        {
+          "id": "mediana",
+          "nombre": "Mediana (25.000-100.000 UF)",
+          "empresas": 186,
+          "pct": 1.4,
+          "trabajadores": 8589
+        },
+        {
+          "id": "grande",
+          "nombre": "Grande (>100.000 UF)",
+          "empresas": 24,
+          "pct": 0.2,
+          "trabajadores": 2901
+        },
+        {
+          "id": "sin_ventas",
+          "nombre": "Sin Ventas",
+          "empresas": 2556,
+          "pct": 19.7,
+          "trabajadores": 4776
+        }
+      ]
+    },
+    "cuenta_publica_sea_2024_2025": {
+      "ano": 2025,
+      "proyectos_aprobados": 3,
+      "proyectos_desistidos": 1,
+      "proyectos_rechazados": 0,
+      "consultas_pertinencia_resueltas": 72,
+      "fuente": "Cuenta Publica Participativa SEA Region de Aysen 2024-2025"
+    },
+    "chilecompra_mercado_publico": {
+      "fuente": "Direccion de Compras y Contratacion Publica (ChileCompra — Datos Abiertos)",
+      "2024": {
+        "monto_mclp": 230850.0,
+        "monto_mmusd": 243.0,
+        "ordenes_compra": 46142
+      },
+      "2025": {
+        "monto_mclp": 238400.0,
+        "participacion_emt_pct": 58.57,
+        "participacion_obras_publicas_pct": 32.32
+      },
+      "2026_ytd_22oct": {
+        "monto_mclp": 228874.2,
+        "ordenes_compra": 31973,
+        "fecha_corte": "2026-10-22"
+      }
+    },
+    "inclusion_financiera_cmf_2025": {
+      "fuente": "Comision para el Mercado Financiero (CMF) — Informe de Inclusion Financiera 2025 & BancoEstado",
+      "locaciones_por_100k_adultos": 66,
+      "instrumentos_ahorro_por_1000_hab": 2051,
+      "sucursales_bancarias_totales_n": 12,
+      "cajeros_automaticos_totales_n": 47,
+      "cajavecina_puntos_totales_n": 415
+    },
+    "leyes_excepcion_austral_topes": {
+      "dl_889": {
+        "bonificacion_mano_obra_pct": 17.0,
+        "tope_remuneracion_clp": 271686,
+        "bonificacion_maxima_mensual_clp": 46187
+      },
+      "gratificacion_zona": {
+        "tope_grado_1a_eus_mensual_clp": 720439
+      },
+      "dfl_15": {
+        "bonificacion_inversion_mipyme_pct": 20.0,
+        "tope_ventas_anuales_uf": 40000
+      },
+      "ley_austral_df15_credito_tributario": {
+        "vigente_hasta": 2035
+      }
     }
   },
   "por_comuna": [
@@ -767,8 +976,8 @@
           "proyecto_emblematico_reciente": "Parque Eólico Alto Baguales y Ampliación (Edelaysen, 18.5 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 7620,
-          "trabajadores_dependientes_sii": 20950,
+          "numero_empresas_activas": 7238,
+          "trabajadores_dependientes_sii": 22351,
           "ventas_anuales_estimadas_miles_uf": 48500,
           "rubros_principales": [
             "Comercio al por mayor y al por menor",
@@ -781,14 +990,21 @@
             "sucursales_banca_privada": 5,
             "sucursal_bancoestado": 1,
             "cajeros_automaticos": 28,
-            "cajavecina_puntos": 120,
+            "cajavecina_puntos": 145,
             "clasificacion": "Centro Financiero Regional"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 6726,
+          "ventas_sii_domicilio_local_muf": 16900
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 62.5,
@@ -809,62 +1025,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 4550
+                "valor": 5210
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 4680
+                "valor": 5410
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 4820
+                "valor": 5610
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 5000
+                "valor": 5820
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 5150
+                "valor": 6030
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 5020
+                "valor": 5890
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 5210
+                "valor": 6280
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 5350
+                "valor": 6510
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 5450
+                "valor": 6726
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 5535
+                "valor": 6980
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 5635
+                "valor": 7238
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 5730
+                "valor": 7238
               }
             ]
           },
@@ -877,62 +1093,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 26900
+                "valor": 18850
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 27700
+                "valor": 19280
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 28600
+                "valor": 19750
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 29900
+                "valor": 20240
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 30800
+                "valor": 20750
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 28500
+                "valor": 19180
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 30500
+                "valor": 20640
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 31900
+                "valor": 21820
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 32900
+                "valor": 21410
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 33650
+                "valor": 22120
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 34400
+                "valor": 22351
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 35150
+                "valor": 22351
               }
             ]
           },
@@ -995,12 +1211,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 121
+                "valor": 118
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 124
+                "valor": 119
               }
             ]
           },
@@ -1063,12 +1279,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 518.3
+                "valor": 505.2
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 539.3
+                "valor": 516.8
               }
             ]
           }
@@ -1098,8 +1314,8 @@
           "proyecto_emblematico_reciente": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde (MOP Vialidad, 15.2 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 118,
-          "trabajadores_dependientes_sii": 132,
+          "numero_empresas_activas": 119,
+          "trabajadores_dependientes_sii": 213,
           "ventas_anuales_estimadas_miles_uf": 450,
           "rubros_principales": [
             "Ganadería Bovina y Ovina",
@@ -1112,14 +1328,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 0,
             "cajeros_automaticos": 1,
-            "cajavecina_puntos": 12,
+            "cajavecina_puntos": 14,
             "clasificacion": "Exclusión Bancaria / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 123,
+          "ventas_sii_domicilio_local_muf": 130
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 54.8,
@@ -1140,62 +1363,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 62
+                "valor": 92
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 64
+                "valor": 95
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 66
+                "valor": 99
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 68
+                "valor": 103
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 70
+                "valor": 107
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 68
+                "valor": 104
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 71
+                "valor": 111
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 73
+                "valor": 118
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 75
+                "valor": 123
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 76
+                "valor": 119
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 78
+                "valor": 119
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 79
+                "valor": 119
               }
             ]
           },
@@ -1208,62 +1431,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 370
+                "valor": 182
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 380
+                "valor": 186
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 390
+                "valor": 190
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 410
+                "valor": 195
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 420
+                "valor": 200
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 390
+                "valor": 185
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 420
+                "valor": 198
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 440
+                "valor": 208
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 450
+                "valor": 204
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 460
+                "valor": 210
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 470
+                "valor": 213
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 480
+                "valor": 213
               }
             ]
           },
@@ -1394,12 +1617,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 32.8
+                "valor": 32.0
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 34.2
+                "valor": 32.7
               }
             ]
           }
@@ -1429,8 +1652,8 @@
           "proyecto_emblematico_reciente": "Planta de Procesamiento y Congelado Chacabuco (AquaChile, 35.0 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 2840,
-          "trabajadores_dependientes_sii": 9890,
+          "numero_empresas_activas": 2675,
+          "trabajadores_dependientes_sii": 6551,
           "ventas_anuales_estimadas_miles_uf": 56200,
           "rubros_principales": [
             "Pesca y Acuicultura Industrial de Salmónidos",
@@ -1443,14 +1666,21 @@
             "sucursales_banca_privada": 2,
             "sucursal_bancoestado": 1,
             "cajeros_automaticos": 8,
-            "cajavecina_puntos": 75,
+            "cajavecina_puntos": 85,
             "clasificacion": "Centro Secundario / Eje Portuario"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 2557,
+          "ventas_sii_domicilio_local_muf": 4410
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 64.0,
@@ -1471,62 +1701,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1730
+                "valor": 1960
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1780
+                "valor": 2040
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 1830
+                "valor": 2120
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 1900
+                "valor": 2200
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 1955
+                "valor": 2280
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 1905
+                "valor": 2230
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 1975
+                "valor": 2380
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 2030
+                "valor": 2480
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 2070
+                "valor": 2557
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 2100
+                "valor": 2675
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 2140
+                "valor": 2675
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 2175
+                "valor": 2675
               }
             ]
           },
@@ -1539,62 +1769,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 10200
+                "valor": 5560
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 10500
+                "valor": 5690
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 10850
+                "valor": 5830
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 11350
+                "valor": 5970
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 11650
+                "valor": 6110
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 10800
+                "valor": 5650
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 11600
+                "valor": 6080
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 12100
+                "valor": 6410
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 12480
+                "valor": 6280
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 12780
+                "valor": 6490
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 13070
+                "valor": 6551
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 13350
+                "valor": 6551
               }
             ]
           },
@@ -1657,12 +1887,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 261
+                "valor": 255
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 267
+                "valor": 256
               }
             ]
           },
@@ -1725,12 +1955,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 1380.6
+                "valor": 1345.5
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 1436.4
+                "valor": 1376.4
               }
             ]
           }
@@ -1761,7 +1991,7 @@
         },
         "estructura_empresarial_sii": {
           "numero_empresas_activas": 895,
-          "trabajadores_dependientes_sii": 1920,
+          "trabajadores_dependientes_sii": 1757,
           "ventas_anuales_estimadas_miles_uf": 9100,
           "rubros_principales": [
             "Cultivo y Cosecha de Salmónidos",
@@ -1774,14 +2004,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 1,
             "cajeros_automaticos": 2,
-            "cajavecina_puntos": 35,
+            "cajavecina_puntos": 42,
             "clasificacion": "Banca Pública / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 895,
+          "ventas_sii_domicilio_local_muf": 1420
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 61.5,
@@ -1802,62 +2039,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 510
+                "valor": 690
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 525
+                "valor": 715
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 540
+                "valor": 745
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 560
+                "valor": 775
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 575
+                "valor": 800
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 560
+                "valor": 780
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 580
+                "valor": 835
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 595
+                "valor": 865
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 610
+                "valor": 895
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 620
+                "valor": 895
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 630
+                "valor": 895
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 640
+                "valor": 895
               }
             ]
           },
@@ -1870,62 +2107,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 3000
+                "valor": 1490
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 3100
+                "valor": 1525
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 3200
+                "valor": 1565
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 3350
+                "valor": 1600
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 3450
+                "valor": 1640
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 3200
+                "valor": 1520
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 3420
+                "valor": 1630
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 3580
+                "valor": 1720
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 3690
+                "valor": 1685
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 3770
+                "valor": 1740
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 3850
+                "valor": 1757
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 3925
+                "valor": 1757
               }
             ]
           },
@@ -1988,12 +2225,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 125
+                "valor": 123
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 128
+                "valor": 123
               }
             ]
           },
@@ -2056,12 +2293,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 549.1
+                "valor": 535.1
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 571.3
+                "valor": 547.4
               }
             ]
           }
@@ -2091,8 +2328,8 @@
           "proyecto_emblematico_reciente": "Conservación Rampa y Muelle Conectividad Melinka (MOP DOP, 8.4 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 242,
-          "trabajadores_dependientes_sii": 265,
+          "numero_empresas_activas": 144,
+          "trabajadores_dependientes_sii": 349,
           "ventas_anuales_estimadas_miles_uf": 2450,
           "rubros_principales": [
             "Pesca Artesanal y Extracción Bentónica",
@@ -2105,14 +2342,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 0,
             "cajeros_automaticos": 1,
-            "cajavecina_puntos": 18,
+            "cajavecina_puntos": 20,
             "clasificacion": "Exclusión Bancaria Insular / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 144,
+          "ventas_sii_domicilio_local_muf": 240
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 58.2,
@@ -2133,62 +2377,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 141
+                "valor": 112
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 145
+                "valor": 116
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 149
+                "valor": 120
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 155
+                "valor": 125
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 160
+                "valor": 130
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 156
+                "valor": 126
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 161
+                "valor": 135
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 165
+                "valor": 140
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 168
+                "valor": 144
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 171
+                "valor": 144
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 174
+                "valor": 144
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 177
+                "valor": 144
               }
             ]
           },
@@ -2201,62 +2445,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 830
+                "valor": 295
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 855
+                "valor": 302
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 880
+                "valor": 310
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 920
+                "valor": 318
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 950
+                "valor": 326
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 880
+                "valor": 300
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 940
+                "valor": 324
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 985
+                "valor": 342
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 1015
+                "valor": 335
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 1040
+                "valor": 346
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 1060
+                "valor": 349
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 1085
+                "valor": 349
               }
             ]
           },
@@ -2319,12 +2563,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 88
+                "valor": 86
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 91
+                "valor": 87
               }
             ]
           },
@@ -2387,12 +2631,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 256.2
+                "valor": 249.7
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 266.6
+                "valor": 255.5
               }
             ]
           }
@@ -2419,11 +2663,11 @@
             "Fruticultura de Primor y Riego",
             "Conectividad Lacustre y Vial"
           ],
-          "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Compañía Minera Cerro Bayo, 32.0 MM USD)"
+          "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Andean Silver / Cía. Minera Cerro Bayo, 145.0 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 648,
-          "trabajadores_dependientes_sii": 1140,
+          "numero_empresas_activas": 653,
+          "trabajadores_dependientes_sii": 965,
           "ventas_anuales_estimadas_miles_uf": 6300,
           "rubros_principales": [
             "Explotación de Minas y Canteras",
@@ -2436,14 +2680,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 1,
             "cajeros_automaticos": 2,
-            "cajavecina_puntos": 25,
+            "cajavecina_puntos": 28,
             "clasificacion": "Banca Pública / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 653,
+          "ventas_sii_domicilio_local_muf": 1210
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 60.4,
@@ -2464,62 +2715,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 328
+                "valor": 505
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 337
+                "valor": 525
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 347
+                "valor": 545
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 360
+                "valor": 565
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 371
+                "valor": 585
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 361
+                "valor": 570
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 375
+                "valor": 610
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 385
+                "valor": 635
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 393
+                "valor": 653
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 400
+                "valor": 653
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 407
+                "valor": 653
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 413
+                "valor": 653
               }
             ]
           },
@@ -2532,62 +2783,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1940
+                "valor": 820
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 2000
+                "valor": 840
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 2060
+                "valor": 860
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 2150
+                "valor": 880
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 2210
+                "valor": 900
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 2050
+                "valor": 835
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 2200
+                "valor": 895
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 2300
+                "valor": 945
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 2370
+                "valor": 925
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 2430
+                "valor": 955
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 2480
+                "valor": 965
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 2535
+                "valor": 965
               }
             ]
           },
@@ -2650,12 +2901,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 42
+                "valor": 41
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 43
+                "valor": 41
               }
             ]
           },
@@ -2718,12 +2969,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 324.2
+                "valor": 316.0
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 337.3
+                "valor": 323.2
               }
             ]
           }
@@ -2753,8 +3004,8 @@
           "proyecto_emblematico_reciente": "Pavimentación y Obras de Seguridad Ruta 7 Villa Cerro Castillo - Bahía Murta (MOP, 34.5 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 418,
-          "trabajadores_dependientes_sii": 512,
+          "numero_empresas_activas": 577,
+          "trabajadores_dependientes_sii": 575,
           "ventas_anuales_estimadas_miles_uf": 3200,
           "rubros_principales": [
             "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento",
@@ -2767,14 +3018,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 0,
             "cajeros_automaticos": 1,
-            "cajavecina_puntos": 22,
+            "cajavecina_puntos": 25,
             "clasificacion": "Exclusión Bancaria / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 577,
+          "ventas_sii_domicilio_local_muf": 540
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 59.0,
@@ -2795,62 +3053,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 195
+                "valor": 445
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 201
+                "valor": 462
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 207
+                "valor": 480
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 215
+                "valor": 498
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 221
+                "valor": 515
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 215
+                "valor": 502
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 224
+                "valor": 538
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 230
+                "valor": 558
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 234
+                "valor": 577
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 238
+                "valor": 577
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 242
+                "valor": 577
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 246
+                "valor": 577
               }
             ]
           },
@@ -2863,62 +3121,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1155
+                "valor": 488
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1190
+                "valor": 500
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 1230
+                "valor": 512
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 1280
+                "valor": 524
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 1320
+                "valor": 536
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 1220
+                "valor": 496
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 1310
+                "valor": 534
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 1370
+                "valor": 562
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 1410
+                "valor": 550
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 1445
+                "valor": 569
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 1480
+                "valor": 575
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 1510
+                "valor": 575
               }
             ]
           },
@@ -2981,12 +3239,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 28
+                "valor": 27
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 28
+                "valor": 27
               }
             ]
           },
@@ -3049,12 +3307,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 148.5
+                "valor": 144.7
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 154.5
+                "valor": 148.1
               }
             ]
           }
@@ -3084,8 +3342,8 @@
           "proyecto_emblematico_reciente": "Mini Central Hidroeléctrica San Victorino (Edelaysen, 9.8 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 492,
-          "trabajadores_dependientes_sii": 845,
+          "numero_empresas_activas": 519,
+          "trabajadores_dependientes_sii": 475,
           "ventas_anuales_estimadas_miles_uf": 4400,
           "rubros_principales": [
             "Administración Pública Provincial y Municipal",
@@ -3098,14 +3356,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 1,
             "cajeros_automaticos": 2,
-            "cajavecina_puntos": 30,
+            "cajavecina_puntos": 34,
             "clasificacion": "Banca Pública / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 497,
+          "ventas_sii_domicilio_local_muf": 790
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 60.1,
@@ -3126,62 +3391,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 242
+                "valor": 385
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 249
+                "valor": 400
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 257
+                "valor": 415
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 266
+                "valor": 430
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 274
+                "valor": 445
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 267
+                "valor": 435
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 277
+                "valor": 465
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 285
+                "valor": 482
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 290
+                "valor": 497
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 295
+                "valor": 519
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 300
+                "valor": 519
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 305
+                "valor": 519
               }
             ]
           },
@@ -3194,62 +3459,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1430
+                "valor": 402
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1475
+                "valor": 412
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 1520
+                "valor": 422
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 1590
+                "valor": 432
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 1635
+                "valor": 442
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 1515
+                "valor": 410
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 1625
+                "valor": 440
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 1700
+                "valor": 464
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 1750
+                "valor": 455
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 1790
+                "valor": 470
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 1830
+                "valor": 475
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 1870
+                "valor": 475
               }
             ]
           },
@@ -3312,12 +3577,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 34
+                "valor": 33
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 35
+                "valor": 33
               }
             ]
           },
@@ -3380,12 +3645,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 179.9
+                "valor": 175.3
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 187.2
+                "valor": 179.3
               }
             ]
           }
@@ -3415,8 +3680,8 @@
           "proyecto_emblematico_reciente": "Rampa de Embarque y Explanada Bahía Bahamóndez (MOP DOP, 8.2 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 96,
-          "trabajadores_dependientes_sii": 98,
+          "numero_empresas_activas": 109,
+          "trabajadores_dependientes_sii": 148,
           "ventas_anuales_estimadas_miles_uf": 530,
           "rubros_principales": [
             "Administración Municipal y Servicios Estatales",
@@ -3429,14 +3694,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 0,
             "cajeros_automaticos": 1,
-            "cajavecina_puntos": 8,
+            "cajavecina_puntos": 10,
             "clasificacion": "Exclusión Bancaria Extrema / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 109,
+          "ventas_sii_domicilio_local_muf": 75
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 56.4,
@@ -3457,62 +3729,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 47
+                "valor": 84
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 48
+                "valor": 88
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 50
+                "valor": 91
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 52
+                "valor": 94
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 53
+                "valor": 98
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 52
+                "valor": 95
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 54
+                "valor": 102
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 55
+                "valor": 106
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 56
+                "valor": 109
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 57
+                "valor": 109
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 58
+                "valor": 109
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 59
+                "valor": 109
               }
             ]
           },
@@ -3525,62 +3797,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 275
+                "valor": 125
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 285
+                "valor": 128
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 295
+                "valor": 131
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 310
+                "valor": 134
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 320
+                "valor": 138
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 295
+                "valor": 128
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 315
+                "valor": 137
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 330
+                "valor": 144
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 340
+                "valor": 141
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 345
+                "valor": 146
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 355
+                "valor": 148
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 360
+                "valor": 148
               }
             ]
           },
@@ -3648,7 +3920,7 @@
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 15
+                "valor": 14
               }
             ]
           },
@@ -3711,12 +3983,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 50.2
+                "valor": 48.9
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 52.2
+                "valor": 50.0
               }
             ]
           }
@@ -3746,8 +4018,8 @@
           "proyecto_emblematico_reciente": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay (MOP DOP, 12.4 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 84,
-          "trabajadores_dependientes_sii": 80,
+          "numero_empresas_activas": 139,
+          "trabajadores_dependientes_sii": 145,
           "ventas_anuales_estimadas_miles_uf": 390,
           "rubros_principales": [
             "Administración Pública y Comunal",
@@ -3760,14 +4032,21 @@
             "sucursales_banca_privada": 0,
             "sucursal_bancoestado": 0,
             "cajeros_automaticos": 1,
-            "cajavecina_puntos": 10,
+            "cajavecina_puntos": 12,
             "clasificacion": "Exclusión Bancaria Extrema / Dependencia CajaVecina"
           },
           "leyes_excepcion_austral": {
             "dl_889_bonificacion_mano_obra_pct": 17.0,
             "dfl_15_bonificacion_inversion_mipyme_pct": 20.0,
-            "ley_austral_credito_tributario": true
-          }
+            "ley_austral_credito_tributario": true,
+            "dl_889_tope_remuneracion_clp": 271686,
+            "dl_889_bonificacion_maxima_mensual_clp": 46187,
+            "gratificacion_zona_tope_grado_1a_eus_clp": 720439,
+            "dfl_15_tope_ventas_uf": 40000,
+            "ley_austral_vigente_hasta": 2035
+          },
+          "empresas_sii_2023_bcn": 128,
+          "ventas_sii_domicilio_local_muf": 85
         },
         "empleo_y_turismo": {
           "tasa_ocupacion_estimada_pct": 53.8,
@@ -3788,62 +4067,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 39
+                "valor": 98
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 40
+                "valor": 102
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 41
+                "valor": 106
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 43
+                "valor": 110
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 44
+                "valor": 114
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 43
+                "valor": 111
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 45
+                "valor": 119
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 46
+                "valor": 124
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 47
+                "valor": 128
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 48
+                "valor": 139
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 49
+                "valor": 139
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 50
+                "valor": 139
               }
             ]
           },
@@ -3856,62 +4135,62 @@
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 230
+                "valor": 122
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 240
+                "valor": 125
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 250
+                "valor": 128
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 260
+                "valor": 131
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 270
+                "valor": 135
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 250
+                "valor": 125
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 270
+                "valor": 134
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 280
+                "valor": 141
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 290
+                "valor": 138
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 295
+                "valor": 143
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 305
+                "valor": 145
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 310
+                "valor": 145
               }
             ]
           },
@@ -3979,7 +4258,7 @@
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 19
+                "valor": 18
               }
             ]
           },
@@ -4042,12 +4321,12 @@
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 69.6
+                "valor": 67.8
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 72.4
+                "valor": 69.3
               }
             ]
           }
@@ -4064,10 +4343,10 @@
       "comuna_ine": "11101",
       "lat": -45.545,
       "lng": -72.032,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2131485901",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
-        "monto_inversion_mmusd": 18.5,
+        "titular": "Edelaysen S.A. (Grupo Saesa)",
+        "monto_inversion_mmusd": 14.5,
         "estado_seia": "Aprobado (Operativo y Ampliaciones)",
         "capacidad_mw": 5.4,
         "sistema_electrico": "Sistema Mediano de Aysén",
@@ -4082,10 +4361,10 @@
       "comuna_ine": "11101",
       "lat": -45.028,
       "lng": -71.954,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=3489102",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Sociedad Contractual Minera El Toqui",
-        "monto_inversion_mmusd": 45.0,
+        "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold)",
+        "monto_inversion_mmusd": 68.0,
         "estado_seia": "Aprobado",
         "minerales_principales": "Zinc, Plomo, Oro y Plata",
         "tipo_operacion": "Subterránea y Flotación",
@@ -4100,10 +4379,10 @@
       "comuna_ine": "11101",
       "lat": -45.589,
       "lng": -72.152,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=4120893",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Ilustre Municipalidad de Coyhaique / SUBDERE",
-        "monto_inversion_mmusd": 12.0,
+        "titular": "Ilustre Municipalidad de Coyhaique / GORE Aysén",
+        "monto_inversion_mmusd": 12.4,
         "estado_seia": "Aprobado",
         "vida_util_anos": 25,
         "capacidad_t_dia": 75.0,
@@ -4121,7 +4400,7 @@
       "source_url": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/",
       "atributos": {
         "titular": "Dirección de Aeropuertos MOP",
-        "monto_inversion_mmusd": 14.5,
+        "monto_inversion_mmusd": 18.5,
         "estado_seia": "Aprobado / Sectorial MOP",
         "longitud_pista_m": 1500,
         "sector": "Conectividad Aérea Regional"
@@ -4135,10 +4414,10 @@
       "comuna_ine": "11201",
       "lat": -45.462,
       "lng": -72.825,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=5610238",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Empresa Portuaria Chacabuco (EMPORCHA)",
-        "monto_inversion_mmusd": 28.0,
+        "titular": "Empresa Portuaria Chacabuco (EMPORCHA) / DOP MOP",
+        "monto_inversion_mmusd": 42.0,
         "estado_seia": "Aprobado",
         "frente_atraque_m": 220,
         "calado_maximo_m": 9.5,
@@ -4153,10 +4432,10 @@
       "comuna_ine": "11201",
       "lat": -45.458,
       "lng": -72.819,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2987140",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
         "titular": "Empresas AquaChile S.A.",
-        "monto_inversion_mmusd": 35.0,
+        "monto_inversion_mmusd": 85.0,
         "estado_seia": "Aprobado (Operativo)",
         "capacidad_procesamiento_t_dia": 320.0,
         "empleo_directo_turnos": 850,
@@ -4164,21 +4443,22 @@
       }
     },
     {
-      "id": "seia-07-central-hidroelectrica-los-condores",
-      "nombre": "Central Hidroeléctrica Los Cóndores (Río Aysén)",
+      "id": "seia-07-central-hidro-rio-manihuales",
+      "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
       "tipo": "Proyecto SEIA Central Hidroeléctrica",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
-      "lat": -45.421,
-      "lng": -72.632,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1874921",
+      "lat": -45.289,
+      "lng": -72.418,
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
-        "monto_inversion_mmusd": 22.0,
-        "estado_seia": "Aprobado",
-        "potencia_instalada_mw": 6.8,
+        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen S.A. — Grupo Saesa)",
+        "monto_inversion_mmusd": 22.5,
+        "estado_seia": "Aprobado (Operativo SMA)",
+        "potencia_instalada_mw": 7.0,
         "caudal_diseno_m3s": 24.5,
-        "sector": "Energía Hidroeléctrica"
+        "sistema_electrico": "Sistema Mediano de Aysén (SMA)",
+        "sector": "Energía Hidroeléctrica de Pasada"
       }
     },
     {
@@ -4189,10 +4469,10 @@
       "comuna_ine": "11201",
       "lat": -45.485,
       "lng": -73.052,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=6392014",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
         "titular": "Mowi Chile S.A.",
-        "monto_inversion_mmusd": 7.5,
+        "monto_inversion_mmusd": 16.8,
         "estado_seia": "Aprobado",
         "biomasa_maxima_autorizada_t": 5500,
         "especie": "Salmo salar (Salmón del Atlántico)",
@@ -4207,10 +4487,10 @@
       "comuna_ine": "11202",
       "lat": -44.524,
       "lng": -72.783,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=7182930",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Australis Mar S.A.",
-        "monto_inversion_mmusd": 8.5,
+        "titular": "Salmones Multi X S.A.",
+        "monto_inversion_mmusd": 15.2,
         "estado_seia": "Aprobado",
         "biomasa_maxima_autorizada_t": 6000,
         "especie": "Salmo salar",
@@ -4225,10 +4505,10 @@
       "comuna_ine": "11202",
       "lat": -44.741,
       "lng": -72.702,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8019234",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Dirección de Obras Portuarias MOP",
-        "monto_inversion_mmusd": 11.2,
+        "titular": "Dirección de Obras Portuarias (DOP - MOP)",
+        "monto_inversion_mmusd": 14.8,
         "estado_seia": "Aprobado",
         "tipo_infraestructura": "Rampa de transbordadores y explanada de acopio",
         "sector": "Transporte y Conectividad Fluvial/Marítima"
@@ -4242,10 +4522,10 @@
       "comuna_ine": "11202",
       "lat": -43.978,
       "lng": -72.408,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8923011",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Energías Renovables de la Patagonia SpA",
-        "monto_inversion_mmusd": 6.8,
+        "titular": "Edelaysen S.A.",
+        "monto_inversion_mmusd": 19.5,
         "estado_seia": "Aprobado",
         "potencia_instalada_mw": 2.2,
         "sector": "Energía Renovable de Pasada"
@@ -4259,10 +4539,10 @@
       "comuna_ine": "11203",
       "lat": -43.894,
       "lng": -73.746,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9345120",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Dirección de Obras Portuarias MOP",
-        "monto_inversion_mmusd": 8.4,
+        "titular": "Dirección de Obras Portuarias (DOP - MOP)",
+        "monto_inversion_mmusd": 16.4,
         "estado_seia": "Aprobado",
         "tipo_infraestructura": "Terminal marítimo y muelle de atraque barcazas",
         "sector": "Conectividad Insular y Pesca Artesanal"
@@ -4276,10 +4556,10 @@
       "comuna_ine": "11203",
       "lat": -43.921,
       "lng": -73.812,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9823411",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Salmones Camanchaca S.A.",
-        "monto_inversion_mmusd": 6.5,
+        "titular": "Salmones Yadrán S.A.",
+        "monto_inversion_mmusd": 14.0,
         "estado_seia": "Aprobado",
         "biomasa_maxima_autorizada_t": 4800,
         "sector": "Acuicultura Marina Industrial"
@@ -4293,11 +4573,11 @@
       "comuna_ine": "11401",
       "lat": -46.612,
       "lng": -71.854,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1045239",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Compañía Minera Cerro Bayo Ltda.",
-        "monto_inversion_mmusd": 32.0,
-        "estado_seia": "Aprobado / Reanudación",
+        "titular": "Andean Silver Limited (ASX: ASL) · Cía. Minera Cerro Bayo Ltda.",
+        "monto_inversion_mmusd": 145.0,
+        "estado_seia": "Aprobado / Exploración Avanzada JORC",
         "minerales_principales": "Oro y Plata doré",
         "metodo_procesamiento": "Flotación y lixiviación",
         "sector": "Minería Metálica"
@@ -4311,10 +4591,10 @@
       "comuna_ine": "11401",
       "lat": -46.539,
       "lng": -71.725,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1182390",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Dirección de Obras Portuarias MOP",
-        "monto_inversion_mmusd": 9.2,
+        "titular": "Dirección de Obras Portuarias (DOP - MOP)",
+        "monto_inversion_mmusd": 22.0,
         "estado_seia": "Aprobado",
         "embarcacion_recalada": "Barcaza Tehuelche / Pilchero",
         "sector": "Transporte Lacustre General Carrera"
@@ -4328,10 +4608,10 @@
       "comuna_ine": "11402",
       "lat": -46.124,
       "lng": -72.162,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1293845",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
         "titular": "Dirección de Vialidad MOP",
-        "monto_inversion_mmusd": 34.5,
+        "monto_inversion_mmusd": 64.0,
         "estado_seia": "Aprobado (En Ejecución por Fases)",
         "longitud_km": 42.5,
         "ancho_calzada_m": 7.0,
@@ -4346,10 +4626,10 @@
       "comuna_ine": "11301",
       "lat": -47.248,
       "lng": -72.521,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1384910",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen)",
-        "monto_inversion_mmusd": 9.8,
+        "titular": "Edelaysen S.A.",
+        "monto_inversion_mmusd": 28.5,
         "estado_seia": "Aprobado",
         "potencia_instalada_mw": 3.1,
         "sistema_electrico": "Sistema Aislado de Cochrane",
@@ -4364,10 +4644,10 @@
       "comuna_ine": "11303",
       "lat": -47.886,
       "lng": -73.488,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1459203",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Dirección de Obras Portuarias MOP",
-        "monto_inversion_mmusd": 12.4,
+        "titular": "Dirección de Obras Portuarias (DOP - MOP)",
+        "monto_inversion_mmusd": 19.2,
         "estado_seia": "Aprobado",
         "tipo_infraestructura": "Rampa de atraque bimodal y terminal de resguardo",
         "sector": "Conectividad Bimodal Carretera Austral Sur"
@@ -4381,10 +4661,10 @@
       "comuna_ine": "11302",
       "lat": -48.498,
       "lng": -72.572,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1528491",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
-        "titular": "Dirección de Obras Portuarias MOP",
-        "monto_inversion_mmusd": 8.2,
+        "titular": "Dirección de Obras Portuarias (DOP - MOP)",
+        "monto_inversion_mmusd": 15.8,
         "estado_seia": "Aprobado",
         "destino_navegacion": "Glaciar O'Higgins y Candelario Mancilla",
         "sector": "Conectividad Lacustre Extremo Austral"
@@ -4398,10 +4678,10 @@
       "comuna_ine": "11102",
       "lat": -44.258,
       "lng": -71.861,
-      "source_url": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1639201",
+      "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "atributos": {
         "titular": "Dirección de Vialidad MOP",
-        "monto_inversion_mmusd": 15.2,
+        "monto_inversion_mmusd": 24.0,
         "estado_seia": "Aprobado",
         "longitud_km": 38.0,
         "sector": "Conectividad Vial Fronteriza"

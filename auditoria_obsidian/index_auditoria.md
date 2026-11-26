@@ -4,7 +4,7 @@ title: "Índice de Auditoría y Respaldos por Indicador — Aysén Sistémico"
 type: index_auditoria
 updated_at: "2026-11-26"
 total_corridas: 3
-total_fichas_indicadores: 82
+total_fichas_indicadores: 90
 tags:
   - aysen-sistemico
   - auditoria-indicadores
@@ -23,6 +23,8 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 ## Fichas de Respaldo por Indicador (Modificados / Nuevos / Alertados)
 
 - [[indicadores/alojamientos_turisticos_rnpst_n|alojamientos_turisticos_rnpst_n]]
+- [[indicadores/cajavecina_puntos_n|cajavecina_puntos_n]]
+- [[indicadores/cajeros_automaticos_n|cajeros_automaticos_n]]
 - [[indicadores/centros_infa_anaerobica_n|centros_infa_anaerobica_n]]
 - [[indicadores/cobertura_empam_pct|cobertura_empam_pct]]
 - [[indicadores/cobertura_fibra_hogar_pct|cobertura_fibra_hogar_pct]]
@@ -30,6 +32,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/cobertura_subsidio_electrico_hogares_n|cobertura_subsidio_electrico_hogares_n]]
 - [[indicadores/cobertura_subsidio_electrico_pct|cobertura_subsidio_electrico_pct]]
 - [[indicadores/concentracion_estival_pct|concentracion_estival_pct]]
+- [[indicadores/concesiones_mineras_ha|concesiones_mineras_ha]]
 - [[indicadores/conexiones_fijas_subtel_jun2026_n|conexiones_fijas_subtel_jun2026_n]]
 - [[indicadores/conexiones_residenciales_subtel_jun2026_n|conexiones_residenciales_subtel_jun2026_n]]
 - [[indicadores/consumo_lena_m3_hogar_ano|consumo_lena_m3_hogar_ano]]
@@ -48,6 +51,8 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/estadia_regional_viaje_dias|estadia_regional_viaje_dias]]
 - [[indicadores/estado_foa|estado_foa]]
 - [[indicadores/fcm_bcn_2025_mclp|fcm_bcn_2025_mclp]]
+- [[indicadores/ganado_bovino_cabezas|ganado_bovino_cabezas]]
+- [[indicadores/ganado_ovino_cabezas|ganado_ovino_cabezas]]
 - [[indicadores/gasolina_93_clp|gasolina_93_clp]]
 - [[indicadores/gasto_diario_turista_usd|gasto_diario_turista_usd]]
 - [[indicadores/gastos_corrientes_bcn_pct|gastos_corrientes_bcn_pct]]
@@ -79,6 +84,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/prestadores_vigencia_patente_pct|prestadores_vigencia_patente_pct]]
 - [[indicadores/presupuesto_mclp|presupuesto_mclp]]
 - [[indicadores/presupuesto_per_capita_mclp|presupuesto_per_capita_mclp]]
+- [[indicadores/puntos_cajavecina_bancoestado|puntos_cajavecina_bancoestado]]
 - [[indicadores/ratio_costo_calefaccion_electrica_vs_lena|ratio_costo_calefaccion_electrica_vs_lena]]
 - [[indicadores/restaurantes_turisticos_rnpst_n|restaurantes_turisticos_rnpst_n]]
 - [[indicadores/revpar_emat_clp|revpar_emat_clp]]
@@ -87,6 +93,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/sancionatorios_sma_acuicolas_n|sancionatorios_sma_acuicolas_n]]
 - [[indicadores/sistema_electrico|sistema_electrico]]
 - [[indicadores/subsidio_fiscal_diesel_kwh_clp|subsidio_fiscal_diesel_kwh_clp]]
+- [[indicadores/sucursales_bancarias_n|sucursales_bancarias_n]]
 - [[indicadores/superficie_concesionada_mar_ha|superficie_concesionada_mar_ha]]
 - [[indicadores/tarifa_adr_emat_clp|tarifa_adr_emat_clp]]
 - [[indicadores/tarifa_adr_estimada_usd|tarifa_adr_estimada_usd]]
@@ -98,6 +105,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/trabajadores_sii_por_centro_activo|trabajadores_sii_por_centro_activo]]
 - [[indicadores/ventas_act_turismo_uf|ventas_act_turismo_uf]]
 - [[indicadores/ventas_por_empresa_uf|ventas_por_empresa_uf]]
+- [[indicadores/ventas_sii_domicilio_local_muf|ventas_sii_domicilio_local_muf]]
 - [[indicadores/visitantes_atractivos_totales_n|visitantes_atractivos_totales_n]]
 - [[indicadores/visitantes_extranjeros_snaspe_n|visitantes_extranjeros_snaspe_n]]
 - [[indicadores/visitantes_snaspe|visitantes_snaspe]]

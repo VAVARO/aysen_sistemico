@@ -158,19 +158,30 @@
     },
     {
       "periodo": "2025",
-      "proyectos_ingresados": 25,
-      "proyectos_aprobados_anual": 20,
-      "inversion_aprobada_anual_mmusd": 154.0,
-      "proyectos_aprobados_acumulados": 742,
-      "inversion_aprobada_acumulada_mmusd": 3509.5
+      "proyectos_ingresados": 14,
+      "proyectos_aprobados_anual": 3,
+      "proyectos_desistidos_anual": 1,
+      "proyectos_rechazados_anual": 0,
+      "consultas_pertinencia_resueltas": 72,
+      "inversion_aprobada_anual_mmusd": 64.8,
+      "proyectos_aprobados_acumulados": 725,
+      "inversion_aprobada_acumulada_mmusd": 3420.3
     },
     {
       "periodo": "2026",
-      "proyectos_ingresados": 23,
-      "proyectos_aprobados_anual": 18,
-      "inversion_aprobada_anual_mmusd": 142.0,
-      "proyectos_aprobados_acumulados": 760,
-      "inversion_aprobada_acumulada_mmusd": 3651.5
+      "proyectos_ingresados": 12,
+      "proyectos_aprobados_anual": 4,
+      "inversion_aprobada_anual_mmusd": 78.5,
+      "proyectos_aprobados_acumulados": 729,
+      "inversion_aprobada_acumulada_mmusd": 3498.8
     }
-  ]
+  ],
+  "cuenta_publica_sea_2024_2025": {
+    "ano": 2025,
+    "proyectos_aprobados": 3,
+    "proyectos_desistidos": 1,
+    "proyectos_rechazados": 0,
+    "consultas_pertinencia_resueltas": 72,
+    "fuente": "Cuenta Publica Participativa SEA Region de Aysen 2024-2025"
+  }
 }

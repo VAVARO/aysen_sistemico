@@ -4,10 +4,10 @@
   "url_origen": "https://www.odepa.gob.cl",
   "fecha_corte": "2026-10-17",
   "resumen_regional": {
-    "bosque_nativo_total_ha": 4832500.0,
+    "bosque_nativo_total_ha": 5152384.3,
     "plantaciones_forestales_ha": 35240.0,
-    "masa_bovina_total_cabezas": 145000,
-    "masa_ovina_total_cabezas": 180000,
+    "masa_bovina_total_cabezas": 144118,
+    "masa_ovina_total_cabezas": 177972,
     "consumo_residencial_promedio_lena_m3_hogar_ano": 17.8,
     "porcentaje_informalidad_mercado_lena_pct": 64.5,
     "total_glaciares_inventario_dga": 10301,
@@ -48,16 +48,18 @@
         "campo_de_hielo": "Campo de Hielo Norte",
         "tipo": "Descarga lacustre"
       }
-    ]
+    ],
+    "superficie_catastrada_conaf_2026_ha": 10667211.5,
+    "bosques_en_snaspe_conaf_2026_ha": 2387525.4
   },
   "por_comuna": [
     {
       "comuna_ine": "11101",
       "comuna_nombre": "Coyhaique",
-      "bosque_nativo_ha": 285400.0,
+      "bosque_nativo_ha": 435000.0,
       "plantaciones_ha": 18200.0,
-      "ganado_bovino_cabezas": 48500,
-      "ganado_ovino_cabezas": 68000,
+      "ganado_bovino_cabezas": 46816,
+      "ganado_ovino_cabezas": 32010,
       "consumo_lena_m3_hogar_ano": 18.5,
       "superficie_glaciares_km2": 95.0,
       "glaciares_dga_n": 340
@@ -65,10 +67,10 @@
     {
       "comuna_ine": "11102",
       "comuna_nombre": "Lago Verde",
-      "bosque_nativo_ha": 345000.0,
+      "bosque_nativo_ha": 365000.0,
       "plantaciones_ha": 1200.0,
-      "ganado_bovino_cabezas": 7600,
-      "ganado_ovino_cabezas": 28000,
+      "ganado_bovino_cabezas": 20048,
+      "ganado_ovino_cabezas": 12500,
       "consumo_lena_m3_hogar_ano": 19.8,
       "superficie_glaciares_km2": 45.0,
       "glaciares_dga_n": 210
@@ -76,10 +78,10 @@
     {
       "comuna_ine": "11201",
       "comuna_nombre": "Aysén",
-      "bosque_nativo_ha": 1120000.0,
+      "bosque_nativo_ha": 1390000.0,
       "plantaciones_ha": 4800.0,
-      "ganado_bovino_cabezas": 21800,
-      "ganado_ovino_cabezas": 6200,
+      "ganado_bovino_cabezas": 15532,
+      "ganado_ovino_cabezas": 6800,
       "consumo_lena_m3_hogar_ano": 17.2,
       "superficie_glaciares_km2": 1920.0,
       "glaciares_dga_n": 2450
@@ -87,10 +89,10 @@
     {
       "comuna_ine": "11202",
       "comuna_nombre": "Cisnes",
-      "bosque_nativo_ha": 860000.0,
+      "bosque_nativo_ha": 990000.0,
       "plantaciones_ha": 2100.0,
-      "ganado_bovino_cabezas": 9800,
-      "ganado_ovino_cabezas": 2800,
+      "ganado_bovino_cabezas": 9253,
+      "ganado_ovino_cabezas": 4100,
       "consumo_lena_m3_hogar_ano": 16.5,
       "superficie_glaciares_km2": 180.0,
       "glaciares_dga_n": 820
@@ -98,10 +100,10 @@
     {
       "comuna_ine": "11203",
       "comuna_nombre": "Guaitecas",
-      "bosque_nativo_ha": 42000.0,
+      "bosque_nativo_ha": 51200.0,
       "plantaciones_ha": 50.0,
-      "ganado_bovino_cabezas": 100,
-      "ganado_ovino_cabezas": 0,
+      "ganado_bovino_cabezas": 132,
+      "ganado_ovino_cabezas": 80,
       "consumo_lena_m3_hogar_ano": 15.0,
       "superficie_glaciares_km2": 0.0,
       "glaciares_dga_n": 0
@@ -109,10 +111,10 @@
     {
       "comuna_ine": "11301",
       "comuna_nombre": "Cochrane",
-      "bosque_nativo_ha": 380000.0,
+      "bosque_nativo_ha": 465000.0,
       "plantaciones_ha": 3400.0,
-      "ganado_bovino_cabezas": 16500,
-      "ganado_ovino_cabezas": 14800,
+      "ganado_bovino_cabezas": 18065,
+      "ganado_ovino_cabezas": 34808,
       "consumo_lena_m3_hogar_ano": 20.4,
       "superficie_glaciares_km2": 540.0,
       "glaciares_dga_n": 1150
@@ -120,10 +122,10 @@
     {
       "comuna_ine": "11302",
       "comuna_nombre": "O'Higgins",
-      "bosque_nativo_ha": 490000.0,
+      "bosque_nativo_ha": 326184.3,
       "plantaciones_ha": 450.0,
-      "ganado_bovino_cabezas": 900,
-      "ganado_ovino_cabezas": 900,
+      "ganado_bovino_cabezas": 3098,
+      "ganado_ovino_cabezas": 3654,
       "consumo_lena_m3_hogar_ano": 21.0,
       "superficie_glaciares_km2": 1650.0,
       "glaciares_dga_n": 1890
@@ -131,10 +133,10 @@
     {
       "comuna_ine": "11303",
       "comuna_nombre": "Tortel",
-      "bosque_nativo_ha": 780000.0,
+      "bosque_nativo_ha": 585000.0,
       "plantaciones_ha": 240.0,
-      "ganado_bovino_cabezas": 1400,
-      "ganado_ovino_cabezas": 300,
+      "ganado_bovino_cabezas": 3194,
+      "ganado_ovino_cabezas": 3700,
       "consumo_lena_m3_hogar_ano": 19.5,
       "superficie_glaciares_km2": 1480.0,
       "glaciares_dga_n": 1720
@@ -144,8 +146,8 @@
       "comuna_nombre": "Chile Chico",
       "bosque_nativo_ha": 260000.0,
       "plantaciones_ha": 3100.0,
-      "ganado_bovino_cabezas": 14200,
-      "ganado_ovino_cabezas": 36500,
+      "ganado_bovino_cabezas": 10575,
+      "ganado_ovino_cabezas": 38210,
       "consumo_lena_m3_hogar_ano": 16.8,
       "superficie_glaciares_km2": 290.0,
       "glaciares_dga_n": 890
@@ -153,10 +155,10 @@
     {
       "comuna_ine": "11402",
       "comuna_nombre": "Río Ibáñez",
-      "bosque_nativo_ha": 270100.0,
+      "bosque_nativo_ha": 285000.0,
       "plantaciones_ha": 1700.0,
-      "ganado_bovino_cabezas": 24200,
-      "ganado_ovino_cabezas": 22500,
+      "ganado_bovino_cabezas": 17405,
+      "ganado_ovino_cabezas": 42110,
       "consumo_lena_m3_hogar_ano": 18.2,
       "superficie_glaciares_km2": 210.0,
       "glaciares_dga_n": 831

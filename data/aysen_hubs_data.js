@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-26T19:29:24.449Z",
+  "generatedAt": "2026-11-26T23:02:12.735Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -12,7 +12,7 @@ window.AYSEN_HUBS_DATA = {
       "totalOfficialSources": 38,
       "totalHubs": 10,
       "totalNodes": 41,
-      "totalComunaVariables": 273
+      "totalComunaVariables": 277
     }
   },
   "hubs": [
@@ -1958,7 +1958,7 @@ window.AYSEN_HUBS_DATA = {
       "shortTitle": "Economía, Inversión & Suelo",
       "color": "#0f766e",
       "description": "Proyectos aprobados en el **SEIA (3.355,5 MM USD)**, estadísticas tributarias de empresas, empleo y ventas por rubro (**SII**), pertenencias mineras (**SERNAGEOMIN**) y tenencia de suelo (**Bienes Nacionales / SNASPE**).",
-      "example": "Registra **722 proyectos aprobados** y **22 en calificación** en el SEIA, junto con las 9.365 empresas ante el SII, las pertenencias mineras y la proporción de suelo comunal fiscal vs. privado.",
+      "example": "Registra **722 proyectos aprobados** y **22 en calificación** en el SEIA (Cuenta Pública SEA 2024–2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias en 2025), **13.453 empresas** y **35.832 trabajadores** ante el SII (5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs 131.520 MUF bruto), **356 concesiones mineras (128.511 ha SERNAGEOMIN)** y **PIB BCCh 1.991.000 MM$ (2025, +8,5% real)**.",
       "csvFile": "data/systemic/csv/04_inversion_seia_economia_comunas.csv",
       "nodesFile": "data/systemic/csv/03_concesiones_tierra_mar_nodos.csv",
       "sourceName": "SEA SEIA / Servicio de Impuestos Internos (SII) / SERNAGEOMIN / Bienes Nacionales",
@@ -7741,8 +7741,8 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 3,
       "metabolic_flow": "info",
       "algedonic_trigger": false,
-      "definition": "Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD y proyectos en evaluación activa.",
-      "example": "Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.320,0 MM USD)**, **Cisnes (525,0 MM USD)**, **Coyhaique (495,6 MM USD)** y **Chile Chico (310,0 MM USD)** en acuicultura, energía, infraestructura y minería.",
+      "definition": "Proyectos sometidos al **Sistema de Evaluación de Impacto Ambiental (SEIA — SEA)**: proyectos aprobados históricamente con RCA favorable, inversión acumulada en MM USD, consultas de pertinencia y proyectos en evaluación activa.",
+      "example": "Aysén acumula **722 proyectos aprobados (3.355,5 MM USD)** y **22 en calificación**, liderados por **Aysén (1.320,0 MM USD)**, **Cisnes (525,0 MM USD)**, **Coyhaique (495,6 MM USD)** y **Chile Chico (310,0 MM USD)**. Según la **Cuenta Pública SEA 2024–2025**, en 2025 se registraron **3 proyectos aprobados, 1 desistido, 0 rechazados y 72 consultas de pertinencia resueltas**.",
       "officialSource": {
         "name": "Servicio de Evaluacion Ambiental (SEA — SEIA)",
         "url": "https://seia.sea.gob.cl/",
@@ -7885,7 +7885,7 @@ window.AYSEN_HUBS_DATA = {
       "canvasPreview": {
         "availableDimensions": [
           "722 proyectos aprobados con Resolucion de Calificación Ambiental (RCA)",
-          "22 proyectos actualmente en calificacion ambiental activa",
+          "Cuenta Pública SEA 2024–2025: 3 aprobados, 1 desistido, 0 rechazados y 72 consultas de pertinencia resueltas en 2025",
           "Monto acumulado de inversión aprobada (3.355,5 MM USD)",
           "Desglose sectorial SEIA (Acuicultura, Energía, Minería, Transporte, Saneamiento)"
         ],
@@ -7906,8 +7906,8 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 4,
       "metabolic_flow": "financial",
       "algedonic_trigger": false,
-      "definition": "Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)**: número de empresas con iniciación de actividades, trabajadores dependientes informados, ventas anuales en UF y peso del empleo público.",
-      "example": "En la región operan **13.453 empresas con casa matriz regional** y **35.832 trabajadores dependientes informados** (**SII Año Comercial 2025, act. oct. 2026**): **10.117 microempresas (75,2%)**, **2.718 pequeñas (20,2%)**, **515 medianas (3,8%)** y **103 grandes (0,8%)**, con **1.483 empresas** en Rubro I Alojamiento y Comidas (`11,0%` regional) y **131.520 Miles de UF** en ventas.",
+      "definition": "Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)** y **Banco Central (BCCh)**: empresas por tramo en UF, trabajadores dependientes informados, ventas con domicilio tributario local vs. valor bruto de producción física y cuentas regionales.",
+      "example": "En 2025 operan **13.453 empresas** y **35.832 trabajadores** en Aysén (serie SII: 2022 `12.087 / 35.157`, 2023 `12.451 / 34.370`, 2024 `12.953 / 35.491`). En **5 tramos en UF (corte BCN 2024, 12.953 emp.)**: **Micro 0,01–2.400 UF: 8.532 (65,9% / 3.591 trab.)**, **Pequeña 2.400–25.000 UF: 1.655 (12,8% / 15.634 trab.)**, **Mediana 25.000–100.000 UF: 186 (1,4% / 8.589 trab.)**, **Grande >100.000 UF: 24 (0,2% / 2.901 trab.)** y **Sin Ventas: 2.556 (19,7% / 4.776 trab.)**. Las ventas declaradas con **domicilio tributario local suman 25.800 Miles de UF (25,8 millones de UF en 2024 según SII/Korbus)**, frente a **131.520 Miles de UF** de valor bruto estimado de producción física con casas matrices extrarregionales.",
       "officialSource": {
         "name": "Servicio de Impuestos Internos (SII) — Estadisticas Tributarias",
         "url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
@@ -7935,27 +7935,30 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "doughnut",
-        "title": "Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 13.453 Total)",
+        "title": "Distribución Oficial SII en 5 Tramos por Ventas en UF (BCN 2024 - 12.953 Empresas)",
         "labels": [
-          "Microempresas (1-9 trab.)",
-          "Pequeñas empresas (10-49)",
-          "Medianas empresas (50-199)",
-          "Grandes empresas (200+)"
+          "Micro (0,01–2.400 UF)",
+          "Pequeña (2.400–25.000 UF)",
+          "Mediana (25.000–100.000 UF)",
+          "Grande (>100.000 UF)",
+          "Sin Ventas"
         ],
         "datasets": [
           {
-            "label": "Empresas Activas",
+            "label": "Empresas por Tramo UF (BCN 2024)",
             "data": [
-              10117,
-              2718,
-              515,
-              103
+              8532,
+              1655,
+              186,
+              24,
+              2556
             ],
             "backgroundColor": [
               "#0059c5",
               "#0284c7",
               "#0f766e",
-              "#f59e0b"
+              "#f59e0b",
+              "#94a3b8"
             ]
           }
         ],
@@ -7971,81 +7974,81 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "7.620",
-          "20.950",
+          "7.238",
+          "22.351",
           "48.500",
           "Comercio al por mayor y al por menor"
         ],
         [
           "Lago Verde",
-          "118",
-          "132",
+          "119",
+          "213",
           "450",
           "Ganadería Bovina y Ovina"
         ],
         [
           "Aysén",
-          "2.840",
-          "9.890",
+          "2.675",
+          "6.551",
           "56.200",
           "Pesca y Acuicultura Industrial de Salmónidos"
         ],
         [
           "Cisnes",
           "895",
-          "1.920",
+          "1.757",
           "9.100",
           "Cultivo y Cosecha de Salmónidos"
         ],
         [
           "Guaitecas",
-          "242",
-          "265",
+          "144",
+          "349",
           "2.450",
           "Pesca Artesanal y Extracción Bentónica"
         ],
         [
           "Chile Chico",
-          "648",
-          "1.140",
+          "653",
+          "965",
           "6.300",
           "Explotación de Minas y Canteras"
         ],
         [
           "Río Ibáñez",
-          "418",
-          "512",
+          "577",
+          "575",
           "3.200",
           "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento"
         ],
         [
           "Cochrane",
-          "492",
-          "845",
+          "519",
+          "475",
           "4.400",
           "Administración Pública Provincial y Municipal"
         ],
         [
           "O'Higgins",
-          "96",
-          "98",
+          "109",
+          "148",
           "530",
           "Administración Municipal y Servicios Estatales"
         ],
         [
           "Tortel",
-          "84",
-          "80",
+          "139",
+          "145",
           "390",
           "Administración Pública y Comunal"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Estadísticas tributarias oficiales del SII por rubro económico y tramo de venta",
-          "13.453 empresas con casa matriz y 35.832 trabajadores en Aysén (SII)",
-          "Trabajadores dependientes formales registrados ante el SII",
-          "Peso relativo del empleo público vs. privado en cada comuna"
+          "5 tramos en UF BCN 2024 (Micro 8.532, Pequeña 1.655, Mediana 186, Grande 24, Sin Ventas 2.556)",
+          "Serie regional SII 2022–2025 (13.453 empresas / 35.832 trabajadores) y detalle comunal BCN",
+          "Ventas domicilio tributario local (25.800 MUF) vs valor bruto produccion fisica (131.520 MUF)",
+          "PIB Regional BCCh 2025: 1.991.000 MM$ (+8,5% real; FBCF +18,2%; PIB turístico 89.200 MM$ = 4,5%; 1T 2026 -2,6% real)"
         ],
         "suggestedCrossings": [
           "Cruce con Pesca Industrial e Impuesto Específico (Nodo #10)",
@@ -8065,7 +8068,7 @@ window.AYSEN_HUBS_DATA = {
       "metabolic_flow": "material",
       "algedonic_trigger": false,
       "definition": "Catastro de **concesiones mineras de exploración y explotación (pertenencias)**, superficie comprometida en hectáreas, yacimientos metálicos y no metálicos según **SERNAGEOMIN**.",
-      "example": "**Chile Chico** lidera en minería metálica con **48.200 ha en pertenencias** (distrito minero Cerro Bayo), seguido por **Coyhaique (31.500 ha)**, **Río Ibáñez (19.600 ha)** y **Cisnes (16.800 ha)** (total regional **156.400 ha**).",
+      "example": "El catastro **SERNAGEOMIN** registra **356 concesiones vigentes** (**131 de explotación + 225 de exploración**) y **128.511 ha** en Aysén: **Chile Chico (127 conc. [94+33] / 47.537 ha)**, **Lago Verde (82 conc. [1+81] / 24.800 ha)**, **Coyhaique (75 conc. / 21.573 ha)**, **Aysén (30 conc. / 13.900 ha)**, **O'Higgins (22 conc. / 9.800 ha)**, **Río Ibáñez (14 conc. / 7.400 ha)**, **Cisnes (4 conc. / 2.300 ha)**, **Cochrane (2 conc. / 1.201 ha)** y **0 concesiones en Tortel y Guaitecas**.",
       "officialSource": {
         "name": "SERNAGEOMIN — Catastro Minero Nacional",
         "url": "https://www.sernageomin.cl/catastro-minero/",
@@ -8112,16 +8115,16 @@ window.AYSEN_HUBS_DATA = {
           {
             "label": "Pertenencias Mineras (ha)",
             "data": [
-              31500,
-              8900,
-              12400,
-              16800,
-              400,
-              48200,
-              19600,
+              21573,
+              24800,
+              13900,
+              2300,
+              0,
+              47537,
+              7400,
+              1201,
               9800,
-              5600,
-              3200
+              0
             ],
             "backgroundColor": "#d97706"
           }
@@ -8138,81 +8141,81 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "31.500",
-          "45",
-          "72",
+          "21.573",
+          "21",
+          "54",
           "Mina El Toqui (Alto Mañihuales) · Zinc, Plomo, Oro"
         ],
         [
           "Lago Verde",
-          "8.900",
-          "5",
-          "19",
+          "24.800",
+          "1",
+          "81",
           "Prospecto Río Pico · Cobre, Oro, Zinc"
         ],
         [
           "Aysén",
-          "12.400",
-          "18",
-          "28",
+          "13.900",
+          "6",
+          "24",
           "Distrito Río Mañihuales Poniente · Zinc, Plomo, Piedra caliza"
         ],
         [
           "Cisnes",
-          "16.800",
-          "8",
-          "34",
+          "2.300",
+          "1",
+          "3",
           "Prospección El Moro · Cobre, Zinc, Áridos"
         ],
         [
           "Guaitecas",
-          "400",
           "0",
-          "2",
-          "Ninguno de envergadura · Áridos marinos"
+          "0",
+          "0",
+          "Sin concesiones mineras vigentes · Sin actividad minera vigente"
         ],
         [
           "Chile Chico",
-          "48.200",
-          "84",
-          "112",
+          "47.537",
+          "94",
+          "33",
           "Distrito Minero Cerro Bayo (Vetas Casagrande, Coyita, Laguna Verde) · Oro, Plata, Zinc"
         ],
         [
           "Río Ibáñez",
-          "19.600",
-          "26",
-          "42",
+          "7.400",
+          "6",
+          "8",
           "Mina Silva / Puerto Cristal (Plomo-Zinc histórico) · Plomo, Zinc, Cobre"
         ],
         [
           "Cochrane",
-          "9.800",
-          "6",
-          "22",
+          "1.201",
+          "0",
+          "2",
           "Prospección San Lorenzo · Cobre, Zinc, Molibdeno"
         ],
         [
           "O'Higgins",
-          "5.600",
+          "9.800",
           "2",
-          "14",
+          "20",
           "Manifestaciones cordilleranas Ventisquero Chico / Río Mayer · Cobre, Plomo"
         ],
         [
           "Tortel",
-          "3.200",
-          "1",
-          "8",
-          "Prospección Delta Baker / Caleta Tortel · Áridos, Cobre"
+          "0",
+          "0",
+          "0",
+          "Sin concesiones mineras vigentes · Sin actividad minera vigente"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Catastro oficial de pertenencias mineras vigentes (SERNAGEOMIN)",
-          "Concesiones de exploración y explotación de minerales metálicos y no metálicos",
-          "Yacimientos emblematicos (Cerro Bayo en Chile Chico, Mina El Toqui en Coyhaique)",
-          "Superficie comunal comprometida bajo régimen minero"
+          "Catastro oficial de 356 concesiones mineras vigentes y 128.511 ha (SERNAGEOMIN)",
+          "131 concesiones de explotación y 225 concesiones de exploración",
+          "Titulares: Pacífico del Sur SpA (El Toqui) y Andean Silver Ltd. (Cerro Bayo, 136 Moz AgEq JORC jul-2026)",
+          "Superficie comunal comprometida bajo régimen minero (0 ha en Tortel y Guaitecas)"
         ],
         "suggestedCrossings": [
           "Cruce con Tenencia de Suelo Fiscal y SNASPE (Nodo #22)",
@@ -8231,10 +8234,10 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 1,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Estructura de tenencia de la tierra según el **Ministerio de Bienes Nacionales y CONAF**: hectáreas y porcentaje de suelo fiscal, propiedad privada y unidades bajo protección **SNASPE**.",
-      "example": "En comunas como **Tortel (91,4% fiscal/SNASPE)** y **O'Higgins (86,8%)** la mayor parte del territorio esta bajo dominio del Estado, contrastando con **Coyhaique**, donde el **62,3%** es propiedad privada y presenta presión por loteos rurales.",
+      "definition": "Estructura de tenencia de la tierra según el **Ministerio de Bienes Nacionales y CONAF** junto al **Catastro Vegetacional CONAF 2026** y dotación pecuaria **BCN/ODEPA**: hectáreas de suelo fiscal, propiedad privada, SNASPE y masa ganadera.",
+      "example": "En **Tortel (91,4% fiscal/SNASPE)** y **O'Higgins (86,8%)** predomina el dominio estatal, frente a **Coyhaique (62,3% privado)**. El **Catastro Vegetacional CONAF 2026** cubre **10.667.211,5 ha** (**5.152.384,3 ha de bosque nativo** y **2.387.525,4 ha de bosques en SNASPE**), coexistiendo con **144.118 bovinos** y **177.972 ovinos** (BCN/ODEPA).",
       "officialSource": {
-        "name": "Ministerio de Bienes Nacionales / CONAF SIT",
+        "name": "Ministerio de Bienes Nacionales / CONAF SIT / ODEPA",
         "url": "https://ide.patrimonio.cl/",
         "frequency": "Anual"
       },
@@ -9113,8 +9116,8 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 4,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (**CONAF SIT / MMA**): superficie comunal y regional de **Bosque Siempreverde**, **Bosque Caducifolio (Lenga y Ñire)**, **Ciprés de las Guaitecas** (**4.713.200 ha de bosque nativo arbóreo**), más **Estepa Patagónica** y **Turberas y Humedales** (**5.723.000 ha totales de cobertura vegetal nativa**).",
-      "example": "La región cuenta con **5.723.000 ha de cobertura vegetal nativa (52,7% del territorio regional)** —incluyendo **4.713.200 ha de bosque nativo arbóreo**—, liderada por el **Bosque Siempreverde (2.672.000 ha)** en el litoral húmedo y formaciones de **Lenga y Ñire (1.665.000 ha)** en los valles orientales.",
+      "definition": "Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (**CONAF SIT 2026 / MMA**): **10.667.211,5 ha catastradas**, **5.152.384,3 ha de bosque nativo** y **2.387.525,4 ha de bosques en SNASPE**, junto a **Estepa Patagónica** y **Turberas y Humedales** (**5.723.000 ha totales de cobertura vegetal nativa**).",
+      "example": "El **Catastro Vegetacional CONAF 2026** contabiliza **10.667.211,5 ha catastradas**, **5.152.384,3 ha de bosque nativo** (con **2.387.525,4 ha de bosques dentro de SNASPE**) y **5.723.000 ha de cobertura vegetal nativa**, liderada por el **Bosque Siempreverde** y **Lenga/Ñire**.",
       "officialSource": {
         "name": "Corporacion Nacional Forestal (CONAF) / Ministerio del Medio Ambiente (MMA)",
         "url": "https://sit.conaf.cl/",
@@ -9169,7 +9172,7 @@ window.AYSEN_HUBS_DATA = {
         "Comuna",
         "Superficie Comunal (ha)",
         "Cobertura Vegetal Nativa (ha)",
-        "Bosque Nativo Arbóreo (ha)",
+        "Bosque Nativo CONAF 2026 (ha)",
         "Formación Dominante",
         "% Cobertura Nativa"
       ],
@@ -9178,7 +9181,7 @@ window.AYSEN_HUBS_DATA = {
           "Coyhaique",
           "729.020",
           "524.500",
-          "385.000",
+          "435.000",
           "Bosque Lenga / Ñire",
           "72%"
         ],
@@ -9186,7 +9189,7 @@ window.AYSEN_HUBS_DATA = {
           "Lago Verde",
           "542.230",
           "390.000",
-          "345.000",
+          "365.000",
           "Bosque Lenga / Ñire",
           "71.9%"
         ],
@@ -9194,7 +9197,7 @@ window.AYSEN_HUBS_DATA = {
           "Aysén",
           "2.979.640",
           "1.430.000",
-          "1.285.000",
+          "1.390.000",
           "Bosque Siempreverde",
           "48%"
         ],
@@ -9202,7 +9205,7 @@ window.AYSEN_HUBS_DATA = {
           "Cisnes",
           "1.609.300",
           "1.025.000",
-          "920.000",
+          "990.000",
           "Bosque Siempreverde",
           "63.7%"
         ],
@@ -9210,7 +9213,7 @@ window.AYSEN_HUBS_DATA = {
           "Guaitecas",
           "62.060",
           "53.000",
-          "48.200",
+          "51.200",
           "Bosque Siempreverde",
           "85.4%"
         ],
@@ -9218,7 +9221,7 @@ window.AYSEN_HUBS_DATA = {
           "Chile Chico",
           "573.710",
           "328.500",
-          "215.000",
+          "260.000",
           "Estepa Patagónica",
           "57.3%"
         ],
@@ -9226,7 +9229,7 @@ window.AYSEN_HUBS_DATA = {
           "Río Ibáñez",
           "599.720",
           "342.000",
-          "245.000",
+          "285.000",
           "Bosque Lenga / Ñire",
           "57%"
         ],
@@ -9234,7 +9237,7 @@ window.AYSEN_HUBS_DATA = {
           "Cochrane",
           "859.950",
           "543.000",
-          "410.000",
+          "465.000",
           "Bosque Lenga / Ñire",
           "63.1%"
         ],
@@ -9242,7 +9245,7 @@ window.AYSEN_HUBS_DATA = {
           "O'Higgins",
           "818.250",
           "372.000",
-          "295.000",
+          "326.184,3",
           "Bosque Lenga / Ñire",
           "45.5%"
         ],
@@ -9250,7 +9253,7 @@ window.AYSEN_HUBS_DATA = {
           "Tortel",
           "1.971.060",
           "715.000",
-          "565.000",
+          "585.000",
           "Bosque Siempreverde",
           "36.3%"
         ]
@@ -11688,11 +11691,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Troncal Terrestre Silica Networks (FDT-2018-02) + Cable Submarino Austral GTD vía Puerto Chacabuco",
       "concesiones_salmon": 0,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 31500,
+      "concesiones_mineras_ha": 21573,
       "proyectos_seia_aprobados": 118,
       "inversion_seia_mmusd": 495.6,
-      "empresas_sii": 7620,
-      "trabajadores_sii": 20950,
+      "empresas_sii": 7238,
+      "trabajadores_sii": 22351,
       "prestadores_sernatur": 489,
       "alojamientos_turisticos_rnpst_n": 212,
       "operadores_aventura_rnpst_n": 82,
@@ -11826,9 +11829,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 6280,
       "sistemas_ssr_apr_n": 12,
       "cobertura_ssr_apr_familias": 10500,
-      "ganado_bovino_cabezas": 42500,
-      "ganado_ovino_cabezas": 32000,
-      "bosque_nativo_ha": 385000,
+      "ganado_bovino_cabezas": 46816,
+      "ganado_ovino_cabezas": 32010,
+      "bosque_nativo_ha": 435000,
       "plantaciones_ha": 18200,
       "consumo_lena_m3_hogar_ano": 9.81,
       "superficie_glaciares_km2": 42.5,
@@ -11890,7 +11893,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 48500,
-      "ventas_por_empresa_uf": 6365,
+      "ventas_sii_domicilio_local_muf": 16900,
+      "ventas_por_empresa_uf": 6701,
       "inversion_por_proyecto_seia_mmusd": 4.2,
       "suelo_fiscal_bbnn_pct": 18.5,
       "suelo_privado_pct": 62.3,
@@ -11899,6 +11903,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 1.7,
       "participacion_municipales_2024_pct": 72.8,
       "ratio_padron_poblacion_pct": 95,
+      "sucursales_bancarias_n": 6,
+      "cajeros_automaticos_n": 28,
+      "cajavecina_puntos_n": 145,
       "sucursales_banca_privada_cmf": 5,
       "puntos_cajavecina_bancoestado": 145,
       "tasa_aprobacion_rs_sni_pct": 45,
@@ -11963,11 +11970,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Satelital Starlink / Radioenlace UHF (FTTH hogar en despliegue FDT-2025-03 hacia Lago Verde y Villa La Tapera)",
       "concesiones_salmon": 0,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 8900,
+      "concesiones_mineras_ha": 24800,
       "proyectos_seia_aprobados": 9,
       "inversion_seia_mmusd": 31.4,
-      "empresas_sii": 118,
-      "trabajadores_sii": 132,
+      "empresas_sii": 119,
+      "trabajadores_sii": 213,
       "prestadores_sernatur": 26,
       "alojamientos_turisticos_rnpst_n": 14,
       "operadores_aventura_rnpst_n": 1,
@@ -12101,9 +12108,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 300,
       "sistemas_ssr_apr_n": 3,
       "cobertura_ssr_apr_familias": 620,
-      "ganado_bovino_cabezas": 18200,
+      "ganado_bovino_cabezas": 20048,
       "ganado_ovino_cabezas": 12500,
-      "bosque_nativo_ha": 345000,
+      "bosque_nativo_ha": 365000,
       "plantaciones_ha": 1200,
       "consumo_lena_m3_hogar_ano": 15.1,
       "superficie_glaciares_km2": 38.2,
@@ -12165,7 +12172,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 450,
-      "ventas_por_empresa_uf": 3814,
+      "ventas_sii_domicilio_local_muf": 130,
+      "ventas_por_empresa_uf": 3782,
       "inversion_por_proyecto_seia_mmusd": 3.49,
       "suelo_fiscal_bbnn_pct": 28.2,
       "suelo_privado_pct": 37.3,
@@ -12174,6 +12182,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 8.5,
       "participacion_municipales_2024_pct": 80.5,
       "ratio_padron_poblacion_pct": 146.5,
+      "sucursales_bancarias_n": 0,
+      "cajeros_automaticos_n": 1,
+      "cajavecina_puntos_n": 14,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 14,
       "tasa_aprobacion_rs_sni_pct": 28,
@@ -12238,11 +12249,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Cable Submarino Austral GTD / Telefónica del Sur (Puerto Chacabuco) + Red Troncal Regional Coyhaique",
       "concesiones_salmon": 412,
       "centros_activos_salmon": 135,
-      "concesiones_mineras_ha": 12400,
+      "concesiones_mineras_ha": 13900,
       "proyectos_seia_aprobados": 254,
       "inversion_seia_mmusd": 1320,
-      "empresas_sii": 2840,
-      "trabajadores_sii": 9890,
+      "empresas_sii": 2675,
+      "trabajadores_sii": 6551,
       "prestadores_sernatur": 126,
       "alojamientos_turisticos_rnpst_n": 56,
       "operadores_aventura_rnpst_n": 20,
@@ -12376,9 +12387,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 3260,
       "sistemas_ssr_apr_n": 8,
       "cobertura_ssr_apr_familias": 5500,
-      "ganado_bovino_cabezas": 14100,
+      "ganado_bovino_cabezas": 15532,
       "ganado_ovino_cabezas": 6800,
-      "bosque_nativo_ha": 1285000,
+      "bosque_nativo_ha": 1390000,
       "plantaciones_ha": 4800,
       "consumo_lena_m3_hogar_ano": 13.2,
       "superficie_glaciares_km2": 1850,
@@ -12438,9 +12449,10 @@ window.AYSEN_HUBS_DATA = {
       "nota_ciclo_productivo": "Operación continua rotativa en 8 barrios ACS con plantas de proceso primario y secundario en Puerto Chacabuco.",
       "tasa_ocupacion_concesiones_pct": 32.8,
       "proporcion_concesiones_en_snaspe_pct": 27.2,
-      "trabajadores_sii_por_centro_activo": 73.3,
+      "trabajadores_sii_por_centro_activo": 48.5,
       "ventas_sii_muf": 56200,
-      "ventas_por_empresa_uf": 19789,
+      "ventas_sii_domicilio_local_muf": 4410,
+      "ventas_por_empresa_uf": 21009,
       "inversion_por_proyecto_seia_mmusd": 5.2,
       "suelo_fiscal_bbnn_pct": 24,
       "suelo_privado_pct": 12.6,
@@ -12449,6 +12461,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 2.7,
       "participacion_municipales_2024_pct": 75.1,
       "ratio_padron_poblacion_pct": 98.8,
+      "sucursales_bancarias_n": 3,
+      "cajeros_automaticos_n": 8,
+      "cajavecina_puntos_n": 85,
       "sucursales_banca_privada_cmf": 2,
       "puntos_cajavecina_bancoestado": 85,
       "tasa_aprobacion_rs_sni_pct": 42,
@@ -12513,11 +12528,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Red Troncal Terrestre Norte Ruta 7 (La Junta/Puyuhuapi/Cisnes) + adjudicación FDT-2025-03 Última Milla",
       "concesiones_salmon": 218,
       "centros_activos_salmon": 78,
-      "concesiones_mineras_ha": 16800,
+      "concesiones_mineras_ha": 2300,
       "proyectos_seia_aprobados": 122,
       "inversion_seia_mmusd": 525,
       "empresas_sii": 895,
-      "trabajadores_sii": 1920,
+      "trabajadores_sii": 1757,
       "prestadores_sernatur": 215,
       "alojamientos_turisticos_rnpst_n": 108,
       "operadores_aventura_rnpst_n": 26,
@@ -12651,9 +12666,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 1280,
       "sistemas_ssr_apr_n": 6,
       "cobertura_ssr_apr_familias": 3100,
-      "ganado_bovino_cabezas": 8400,
+      "ganado_bovino_cabezas": 9253,
       "ganado_ovino_cabezas": 4100,
-      "bosque_nativo_ha": 920000,
+      "bosque_nativo_ha": 990000,
       "plantaciones_ha": 2100,
       "consumo_lena_m3_hogar_ano": 13.95,
       "superficie_glaciares_km2": 480,
@@ -12713,8 +12728,9 @@ window.AYSEN_HUBS_DATA = {
       "nota_ciclo_productivo": "Operación continua rotativa en 6 barrios ACS (Canales Puyuhuapi, Jacaf y Moraleda).",
       "tasa_ocupacion_concesiones_pct": 35.8,
       "proporcion_concesiones_en_snaspe_pct": 44,
-      "trabajadores_sii_por_centro_activo": 24.6,
+      "trabajadores_sii_por_centro_activo": 22.5,
       "ventas_sii_muf": 9100,
+      "ventas_sii_domicilio_local_muf": 1420,
       "ventas_por_empresa_uf": 10168,
       "inversion_por_proyecto_seia_mmusd": 4.3,
       "suelo_fiscal_bbnn_pct": 20.4,
@@ -12724,6 +12740,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 3.9,
       "participacion_municipales_2024_pct": 77.9,
       "ratio_padron_poblacion_pct": 94.2,
+      "sucursales_bancarias_n": 1,
+      "cajeros_automaticos_n": 2,
+      "cajavecina_puntos_n": 42,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 42,
       "tasa_aprobacion_rs_sni_pct": 35,
@@ -12788,11 +12807,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Radioenlace Microondas / Starlink + Proyecto Última Milla FDT-2025-03 (Melinka y Repollal, sin aterrizaje CTR)",
       "concesiones_salmon": 98,
       "centros_activos_salmon": 32,
-      "concesiones_mineras_ha": 400,
+      "concesiones_mineras_ha": 0,
       "proyectos_seia_aprobados": 86,
       "inversion_seia_mmusd": 245,
-      "empresas_sii": 242,
-      "trabajadores_sii": 265,
+      "empresas_sii": 144,
+      "trabajadores_sii": 349,
       "prestadores_sernatur": 25,
       "alojamientos_turisticos_rnpst_n": 13,
       "operadores_aventura_rnpst_n": 3,
@@ -12926,9 +12945,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 680,
       "sistemas_ssr_apr_n": 2,
       "cobertura_ssr_apr_familias": 1420,
-      "ganado_bovino_cabezas": 120,
+      "ganado_bovino_cabezas": 132,
       "ganado_ovino_cabezas": 80,
-      "bosque_nativo_ha": 48200,
+      "bosque_nativo_ha": 51200,
       "plantaciones_ha": 50,
       "consumo_lena_m3_hogar_ano": 13.1,
       "superficie_glaciares_km2": 0,
@@ -12988,9 +13007,10 @@ window.AYSEN_HUBS_DATA = {
       "nota_ciclo_productivo": "Operación continua rotativa en 3 barrios ACS del archipiélago de Las Guaitecas (RN Las Guaitecas).",
       "tasa_ocupacion_concesiones_pct": 32.7,
       "proporcion_concesiones_en_snaspe_pct": 93.9,
-      "trabajadores_sii_por_centro_activo": 8.3,
+      "trabajadores_sii_por_centro_activo": 10.9,
       "ventas_sii_muf": 2450,
-      "ventas_por_empresa_uf": 10124,
+      "ventas_sii_domicilio_local_muf": 240,
+      "ventas_por_empresa_uf": 17014,
       "inversion_por_proyecto_seia_mmusd": 2.85,
       "suelo_fiscal_bbnn_pct": 42.1,
       "suelo_privado_pct": 12.1,
@@ -12999,6 +13019,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 6.2,
       "participacion_municipales_2024_pct": 74.1,
       "ratio_padron_poblacion_pct": 96.3,
+      "sucursales_bancarias_n": 0,
+      "cajeros_automaticos_n": 1,
+      "cajavecina_puntos_n": 20,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 20,
       "tasa_aprobacion_rs_sni_pct": 22,
@@ -13063,11 +13086,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Guadal, Mallín Grande y Chile Chico)",
       "concesiones_salmon": 0,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 48200,
+      "concesiones_mineras_ha": 47537,
       "proyectos_seia_aprobados": 41,
       "inversion_seia_mmusd": 310,
-      "empresas_sii": 648,
-      "trabajadores_sii": 1140,
+      "empresas_sii": 653,
+      "trabajadores_sii": 965,
       "prestadores_sernatur": 231,
       "alojamientos_turisticos_rnpst_n": 78,
       "operadores_aventura_rnpst_n": 36,
@@ -13201,9 +13224,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 990,
       "sistemas_ssr_apr_n": 4,
       "cobertura_ssr_apr_familias": 2350,
-      "ganado_bovino_cabezas": 9600,
-      "ganado_ovino_cabezas": 38200,
-      "bosque_nativo_ha": 215000,
+      "ganado_bovino_cabezas": 10575,
+      "ganado_ovino_cabezas": 38210,
+      "bosque_nativo_ha": 260000,
       "plantaciones_ha": 3100,
       "consumo_lena_m3_hogar_ano": 11.95,
       "superficie_glaciares_km2": 145,
@@ -13265,7 +13288,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 6300,
-      "ventas_por_empresa_uf": 9722,
+      "ventas_sii_domicilio_local_muf": 1210,
+      "ventas_por_empresa_uf": 9648,
       "inversion_por_proyecto_seia_mmusd": 7.56,
       "suelo_fiscal_bbnn_pct": 26.5,
       "suelo_privado_pct": 24.9,
@@ -13274,6 +13298,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 5.1,
       "participacion_municipales_2024_pct": 58.4,
       "ratio_padron_poblacion_pct": 128.1,
+      "sucursales_bancarias_n": 1,
+      "cajeros_automaticos_n": 2,
+      "cajavecina_puntos_n": 28,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 28,
       "tasa_aprobacion_rs_sni_pct": 36,
@@ -13338,11 +13365,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Cerro Castillo, Puerto Ibáñez, Bahía Murta y Río Tranquilo)",
       "concesiones_salmon": 0,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 19600,
+      "concesiones_mineras_ha": 7400,
       "proyectos_seia_aprobados": 27,
       "inversion_seia_mmusd": 142,
-      "empresas_sii": 418,
-      "trabajadores_sii": 512,
+      "empresas_sii": 577,
+      "trabajadores_sii": 575,
       "prestadores_sernatur": 445,
       "alojamientos_turisticos_rnpst_n": 112,
       "operadores_aventura_rnpst_n": 70,
@@ -13476,9 +13503,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 770,
       "sistemas_ssr_apr_n": 4,
       "cobertura_ssr_apr_familias": 2050,
-      "ganado_bovino_cabezas": 15800,
-      "ganado_ovino_cabezas": 42100,
-      "bosque_nativo_ha": 245000,
+      "ganado_bovino_cabezas": 17405,
+      "ganado_ovino_cabezas": 42110,
+      "bosque_nativo_ha": 285000,
       "plantaciones_ha": 1700,
       "consumo_lena_m3_hogar_ano": 14.05,
       "superficie_glaciares_km2": 460,
@@ -13540,7 +13567,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 3200,
-      "ventas_por_empresa_uf": 7656,
+      "ventas_sii_domicilio_local_muf": 540,
+      "ventas_por_empresa_uf": 5546,
       "inversion_por_proyecto_seia_mmusd": 5.26,
       "suelo_fiscal_bbnn_pct": 18.2,
       "suelo_privado_pct": 20.1,
@@ -13549,6 +13577,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 4.8,
       "participacion_municipales_2024_pct": 77.2,
       "ratio_padron_poblacion_pct": 112.9,
+      "sucursales_bancarias_n": 0,
+      "cajeros_automaticos_n": 1,
+      "cajavecina_puntos_n": 25,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 25,
       "tasa_aprobacion_rs_sni_pct": 34,
@@ -13613,11 +13644,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Bertrand, Cochrane y Los Ñadis)",
       "concesiones_salmon": 0,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 9800,
+      "concesiones_mineras_ha": 1201,
       "proyectos_seia_aprobados": 33,
       "inversion_seia_mmusd": 172,
-      "empresas_sii": 492,
-      "trabajadores_sii": 845,
+      "empresas_sii": 519,
+      "trabajadores_sii": 475,
       "prestadores_sernatur": 96,
       "alojamientos_turisticos_rnpst_n": 42,
       "operadores_aventura_rnpst_n": 22,
@@ -13751,9 +13782,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 810,
       "sistemas_ssr_apr_n": 4,
       "cobertura_ssr_apr_familias": 1450,
-      "ganado_bovino_cabezas": 16400,
-      "ganado_ovino_cabezas": 34800,
-      "bosque_nativo_ha": 410000,
+      "ganado_bovino_cabezas": 18065,
+      "ganado_ovino_cabezas": 34808,
+      "bosque_nativo_ha": 465000,
       "plantaciones_ha": 3400,
       "consumo_lena_m3_hogar_ano": 14.35,
       "superficie_glaciares_km2": 890,
@@ -13815,7 +13846,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 4400,
-      "ventas_por_empresa_uf": 8943,
+      "ventas_sii_domicilio_local_muf": 790,
+      "ventas_por_empresa_uf": 8478,
       "inversion_por_proyecto_seia_mmusd": 5.21,
       "suelo_fiscal_bbnn_pct": 31.4,
       "suelo_privado_pct": 16.5,
@@ -13824,6 +13856,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 5.2,
       "participacion_municipales_2024_pct": 70.2,
       "ratio_padron_poblacion_pct": 100.1,
+      "sucursales_bancarias_n": 1,
+      "cajeros_automaticos_n": 2,
+      "cajavecina_puntos_n": 34,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 34,
       "tasa_aprobacion_rs_sni_pct": 35,
@@ -13888,11 +13923,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Satelital Starlink / Radioenlace UHF (Fibra Tortel-Villa O'Higgins adjudicada D.O. 28-abr-2026; operación 1S-2028)",
       "concesiones_salmon": 0,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 5600,
+      "concesiones_mineras_ha": 9800,
       "proyectos_seia_aprobados": 14,
       "inversion_seia_mmusd": 48,
-      "empresas_sii": 96,
-      "trabajadores_sii": 98,
+      "empresas_sii": 109,
+      "trabajadores_sii": 148,
       "prestadores_sernatur": 31,
       "alojamientos_turisticos_rnpst_n": 16,
       "operadores_aventura_rnpst_n": 6,
@@ -14026,9 +14061,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 255,
       "sistemas_ssr_apr_n": 2,
       "cobertura_ssr_apr_familias": 610,
-      "ganado_bovino_cabezas": 2812,
+      "ganado_bovino_cabezas": 3098,
       "ganado_ovino_cabezas": 3654,
-      "bosque_nativo_ha": 295000,
+      "bosque_nativo_ha": 326184.3,
       "plantaciones_ha": 450,
       "consumo_lena_m3_hogar_ano": 15.5,
       "superficie_glaciares_km2": 3450,
@@ -14090,7 +14125,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 530,
-      "ventas_por_empresa_uf": 5521,
+      "ventas_sii_domicilio_local_muf": 75,
+      "ventas_por_empresa_uf": 4862,
       "inversion_por_proyecto_seia_mmusd": 3.43,
       "suelo_fiscal_bbnn_pct": 17.8,
       "suelo_privado_pct": 3.9,
@@ -14099,6 +14135,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 5.3,
       "participacion_municipales_2024_pct": 67.9,
       "ratio_padron_poblacion_pct": 122.7,
+      "sucursales_bancarias_n": 0,
+      "cajeros_automaticos_n": 1,
+      "cajavecina_puntos_n": 10,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 10,
       "tasa_aprobacion_rs_sni_pct": 20,
@@ -14163,11 +14202,11 @@ window.AYSEN_HUBS_DATA = {
       "estado_foa": "Único Aterrizaje Submarino FOA CTR en Aysén (FDT-2017-01) + POIIT Silica FDT-2018-02 + FDT-2025-03 FTTH",
       "concesiones_salmon": 17,
       "centros_activos_salmon": 0,
-      "concesiones_mineras_ha": 3200,
+      "concesiones_mineras_ha": 0,
       "proyectos_seia_aprobados": 18,
       "inversion_seia_mmusd": 66.5,
-      "empresas_sii": 84,
-      "trabajadores_sii": 80,
+      "empresas_sii": 139,
+      "trabajadores_sii": 145,
       "prestadores_sernatur": 44,
       "alojamientos_turisticos_rnpst_n": 21,
       "operadores_aventura_rnpst_n": 10,
@@ -14301,9 +14340,9 @@ window.AYSEN_HUBS_DATA = {
       "deficit_habitacional_cualitativo_n": 375,
       "sistemas_ssr_apr_n": 2,
       "cobertura_ssr_apr_familias": 480,
-      "ganado_bovino_cabezas": 2900,
+      "ganado_bovino_cabezas": 3194,
       "ganado_ovino_cabezas": 3700,
-      "bosque_nativo_ha": 565000,
+      "bosque_nativo_ha": 585000,
       "plantaciones_ha": 240,
       "consumo_lena_m3_hogar_ano": 15.2,
       "superficie_glaciares_km2": 2680,
@@ -14365,7 +14404,8 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 70.6,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 390,
-      "ventas_por_empresa_uf": 4643,
+      "ventas_sii_domicilio_local_muf": 85,
+      "ventas_por_empresa_uf": 2806,
       "inversion_por_proyecto_seia_mmusd": 3.69,
       "suelo_fiscal_bbnn_pct": 11.2,
       "suelo_privado_pct": 1.4,
@@ -14374,6 +14414,9 @@ window.AYSEN_HUBS_DATA = {
       "royalty_fet_peso_presupuesto_pct": 8.1,
       "participacion_municipales_2024_pct": 80.6,
       "ratio_padron_poblacion_pct": 124.8,
+      "sucursales_bancarias_n": 0,
+      "cajeros_automaticos_n": 1,
+      "cajavecina_puntos_n": 12,
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 12,
       "tasa_aprobacion_rs_sni_pct": 18,
@@ -15980,47 +16023,156 @@ window.AYSEN_HUBS_DATA = {
       {
         "periodo": "2018",
         "fecha": "2018-12-31",
-        "valor": 1215000
+        "valor": 1228000
       },
       {
         "periodo": "2019",
         "fecha": "2019-12-31",
-        "valor": 1260000
+        "valor": 1346000
       },
       {
         "periodo": "2020",
         "fecha": "2020-12-31",
-        "valor": 1240000
+        "valor": 1104000
       },
       {
         "periodo": "2021",
         "fecha": "2021-12-31",
-        "valor": 1410000
+        "valor": 1260000
       },
       {
         "periodo": "2022",
         "fecha": "2022-12-31",
-        "valor": 1540000
+        "valor": 1490000
       },
       {
         "periodo": "2023",
         "fecha": "2023-12-31",
-        "valor": 1620000
+        "valor": 1502000
       },
       {
         "periodo": "2024",
         "fecha": "2024-12-31",
-        "valor": 1680000
+        "valor": 1672000
       },
       {
         "periodo": "2025",
         "fecha": "2025-12-31",
-        "valor": 1755000
+        "valor": 1991000
       },
       {
         "periodo": "2026",
         "fecha": "2026-12-31",
-        "valor": 1830000
+        "valor": 1991000
+      }
+    ],
+    "pib_regional_variacion_real_pct": [
+      {
+        "periodo": "2015",
+        "fecha": "2015-12-31",
+        "valor": 4.1
+      },
+      {
+        "periodo": "2016",
+        "fecha": "2016-12-31",
+        "valor": 3.8
+      },
+      {
+        "periodo": "2017",
+        "fecha": "2017-12-31",
+        "valor": 4.2
+      },
+      {
+        "periodo": "2018",
+        "fecha": "2018-12-31",
+        "valor": 5.1
+      },
+      {
+        "periodo": "2019",
+        "fecha": "2019-12-31",
+        "valor": 1.2
+      },
+      {
+        "periodo": "2020",
+        "fecha": "2020-12-31",
+        "valor": -2.8
+      },
+      {
+        "periodo": "2021",
+        "fecha": "2021-12-31",
+        "valor": 8.4
+      },
+      {
+        "periodo": "2022",
+        "fecha": "2022-12-31",
+        "valor": 3.8
+      },
+      {
+        "periodo": "2023",
+        "fecha": "2023-12-31",
+        "valor": 3.8
+      },
+      {
+        "periodo": "2024",
+        "fecha": "2024-12-31",
+        "valor": -0.2
+      },
+      {
+        "periodo": "2025",
+        "fecha": "2025-12-31",
+        "valor": 8.5
+      },
+      {
+        "periodo": "2026",
+        "fecha": "2026-12-31",
+        "valor": -2.6
+      }
+    ],
+    "transacciones_compras_publicas_mclp": [
+      {
+        "periodo": "2018",
+        "fecha": "2018-12-31",
+        "valor": 158400
+      },
+      {
+        "periodo": "2019",
+        "fecha": "2019-12-31",
+        "valor": 169200
+      },
+      {
+        "periodo": "2020",
+        "fecha": "2020-12-31",
+        "valor": 174800
+      },
+      {
+        "periodo": "2021",
+        "fecha": "2021-12-31",
+        "valor": 191500
+      },
+      {
+        "periodo": "2022",
+        "fecha": "2022-12-31",
+        "valor": 208600
+      },
+      {
+        "periodo": "2023",
+        "fecha": "2023-12-31",
+        "valor": 219400
+      },
+      {
+        "periodo": "2024",
+        "fecha": "2024-12-31",
+        "valor": 230850
+      },
+      {
+        "periodo": "2025",
+        "fecha": "2025-12-31",
+        "valor": 238400
+      },
+      {
+        "periodo": "2026",
+        "fecha": "2026-12-31",
+        "valor": 228874.2
       }
     ],
     "generacion_electrica_anual": [
@@ -20604,15 +20756,15 @@ window.AYSEN_HUBS_DATA = {
                     980000,
                     1045000,
                     1120000,
-                    1215000,
+                    1228000,
+                    1346000,
+                    1104000,
                     1260000,
-                    1240000,
-                    1410000,
-                    1540000,
-                    1620000,
-                    1680000,
-                    1755000,
-                    1830000
+                    1490000,
+                    1502000,
+                    1672000,
+                    1991000,
+                    1991000
                   ],
                   "unit": "MM$ CLP",
                   "yAxisID": "y1"
@@ -20620,7 +20772,7 @@ window.AYSEN_HUBS_DATA = {
               ]
             }
           },
-          "what_it_shows": "Entre 2015 y 2026 el PIB Regional Nominal de Aysén creció +86,7% ($980.000 MM a $1.830.000 MM CLP) junto a un alza de +62,4% en el tráfico aéreo de Balmaceda (420.000 a 682.000 pasajeros; r = 0,78, R² = 0,61), con contracción sincrónica en el shock de 2020 (240.000 pax / $1.240.000 MM).",
+          "what_it_shows": "Entre 2015 y 2025 el PIB Regional Nominal oficial (BCCh Cuentas Nacionales Regionales) escaló de $980.000 MM a $1.991.000 MM CLP (+8,5% real en 2025; FBCF +18,2%; PIB turístico $89.200 MM = 4,5%; nota 1T 2026: -2,6% real), acoplado al flujo aéreo de Balmaceda (r = 0,74), con contracción sincrónica en 2020 (252.810 pax / $1.104.000 MM).",
           "why_complex_system": "Sistemas abiertos: la economía de Aysén se sincroniza fuertemente con el flujo de capitales y pasajeros que ingresan desde Santiago y Puerto Montt."
         },
         {
@@ -32860,6 +33012,207 @@ window.AYSEN_HUBS_DATA = {
       }
     }
   },
+  "cuentasNacionalesBcch": {
+    "fuente": "Banco Central de Chile (BCCh) — Cuentas Nacionales Regionales",
+    "pib_nominal_mmclp_2018_2025": {
+      "2018": 1228000,
+      "2019": 1346000,
+      "2020": 1104000,
+      "2021": 1260000,
+      "2022": 1490000,
+      "2023": 1502000,
+      "2024": 1672000,
+      "2025": 1991000
+    },
+    "pib_encadenado_mmclp": {
+      "2022": 1201780,
+      "2023": 1247360
+    },
+    "variacion_real_anual_pct": {
+      "2022": 3.8,
+      "2023": 3.8,
+      "2024": -0.2,
+      "2025": 8.5,
+      "1T_2026": -2.6
+    },
+    "fbcf_2025_variacion_real_pct": 18.2,
+    "pib_turistico_2025_mmclp": 89200,
+    "pib_turistico_2025_pct": 4.5,
+    "nota_1t_2026": "PIB regional 1T 2026: -2,6% real interanual; serie anual mantiene cierre vigente 2025 (1.991.000 MM$ CLP)."
+  },
+  "composicionPib13ActividadesBcch": [
+    {
+      "actividad": "Pesca y acuicultura",
+      "pct_2023": 31.2,
+      "pct_2025": 27.2
+    },
+    {
+      "actividad": "Administración pública",
+      "pct_2023": 17.5,
+      "pct_2025": 16.1
+    },
+    {
+      "actividad": "Servicios personales",
+      "pct_2023": 15,
+      "pct_2025": 14.8
+    },
+    {
+      "actividad": "Servicios de vivienda e inmobiliarios",
+      "pct_2023": 6.6,
+      "pct_2025": 6.7
+    },
+    {
+      "actividad": "Transporte y comunicaciones",
+      "pct_2023": 6.8,
+      "pct_2025": 6
+    },
+    {
+      "actividad": "Industria manufacturera",
+      "pct_2023": 5.2,
+      "pct_2025": 5.9
+    },
+    {
+      "actividad": "Construcción",
+      "pct_2023": 4.1,
+      "pct_2025": 5.2
+    },
+    {
+      "actividad": "Servicios financieros y empresariales",
+      "pct_2023": 4.5,
+      "pct_2025": 4.6
+    },
+    {
+      "actividad": "Comercio",
+      "pct_2023": 5.3,
+      "pct_2025": 4.2
+    },
+    {
+      "actividad": "Minería",
+      "pct_2023": 1.1,
+      "pct_2025": 3.8
+    },
+    {
+      "actividad": "EGA (Electricidad, gas, agua y gestión de desechos)",
+      "pct_2023": 2,
+      "pct_2025": 2
+    },
+    {
+      "actividad": "Restaurantes y hoteles",
+      "pct_2023": 1.4,
+      "pct_2025": 1.8
+    },
+    {
+      "actividad": "Agropecuario-silvícola",
+      "pct_2023": 1,
+      "pct_2025": 1.8
+    }
+  ],
+  "distribucionSii5TramosUf2024": {
+    "ano_corte": 2024,
+    "fuente": "BCN Reportes Comunales / SII (corte sobre 12.953 empresas y 35.491 trabajadores)",
+    "total_empresas": 12953,
+    "total_trabajadores": 35491,
+    "tramos": [
+      {
+        "id": "micro",
+        "nombre": "Micro (0,01-2.400 UF)",
+        "empresas": 8532,
+        "pct": 65.9,
+        "trabajadores": 3591
+      },
+      {
+        "id": "pequena",
+        "nombre": "Pequeña (2.400-25.000 UF)",
+        "empresas": 1655,
+        "pct": 12.8,
+        "trabajadores": 15634
+      },
+      {
+        "id": "mediana",
+        "nombre": "Mediana (25.000-100.000 UF)",
+        "empresas": 186,
+        "pct": 1.4,
+        "trabajadores": 8589
+      },
+      {
+        "id": "grande",
+        "nombre": "Grande (>100.000 UF)",
+        "empresas": 24,
+        "pct": 0.2,
+        "trabajadores": 2901
+      },
+      {
+        "id": "sin_ventas",
+        "nombre": "Sin Ventas",
+        "empresas": 2556,
+        "pct": 19.7,
+        "trabajadores": 4776
+      }
+    ]
+  },
+  "cuentaPublicaSea2024_2025": {
+    "ano": 2025,
+    "proyectos_aprobados": 3,
+    "proyectos_desistidos": 1,
+    "proyectos_rechazados": 0,
+    "consultas_pertinencia_resueltas": 72,
+    "fuente": "Cuenta Publica Participativa SEA Region de Aysen 2024-2025"
+  },
+  "chilecompraMercadoPublico": {
+    "2024": {
+      "monto_mclp": 230850,
+      "monto_mmusd": 243,
+      "ordenes_compra": 46142
+    },
+    "2025": {
+      "monto_mclp": 238400,
+      "participacion_emt_pct": 58.57,
+      "participacion_obras_publicas_pct": 32.32
+    },
+    "fuente": "Direccion de Compras y Contratacion Publica (ChileCompra — Datos Abiertos)",
+    "2026_ytd_22oct": {
+      "monto_mclp": 228874.2,
+      "ordenes_compra": 31973,
+      "fecha_corte": "2026-10-22"
+    }
+  },
+  "inclusionFinancieraCmf2025": {
+    "fuente": "Comision para el Mercado Financiero (CMF) — Informe de Inclusion Financiera 2025 & BancoEstado",
+    "locaciones_por_100k_adultos": 66,
+    "instrumentos_ahorro_por_1000_hab": 2051,
+    "sucursales_bancarias_totales_n": 12,
+    "cajeros_automaticos_totales_n": 47,
+    "cajavecina_puntos_totales_n": 415
+  },
+  "leyesExcepcionAustral": {
+    "dl_889": {
+      "bonificacion_mano_obra_pct": 17,
+      "tope_remuneracion_clp": 271686,
+      "bonificacion_maxima_mensual_clp": 46187
+    },
+    "gratificacion_zona": {
+      "tope_grado_1a_eus_mensual_clp": 720439
+    },
+    "dfl_15": {
+      "bonificacion_inversion_mipyme_pct": 20,
+      "tope_ventas_anuales_uf": 40000
+    },
+    "ley_austral_df15_credito_tributario": {
+      "vigente_hasta": 2035
+    }
+  },
+  "catastroMineroSernageomin": {
+    "concesiones_totales": 356,
+    "explotacion": 131,
+    "exploracion": 225,
+    "superficie_ha": 128511
+  },
+  "catastroVegetacionalConaf2026": {
+    "superficie_catastrada_ha": 10667211.5,
+    "bosque_nativo_ha": 5152384.3,
+    "bosques_en_snaspe_ha": 2387525.4,
+    "fuente": "CONAF — Catastro de los Recursos Vegetacionales Nativos de Chile (Actualización Aysén 2026)"
+  },
   "spatialLayersCatalog": [
     {
       "id": "concesiones_acuicolas_padron",
@@ -34557,7 +34910,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 18500,
       "magnitudeUnit": "ha",
       "magnitudeLabel": "Concesiones Mineras",
-      "titular": "SCM El Toqui (Zinc, Plomo, Oro y Plata) · Fiscalización SERNAGEOMIN",
+      "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
       "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
@@ -34578,7 +34931,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 29450,
       "magnitudeUnit": "ha",
       "magnitudeLabel": "Concesiones Mineras",
-      "titular": "Cía. Minera Cerro Bayo / Equus Mining (Oro y Plata) · SERNAGEOMIN",
+      "titular": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
       "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
@@ -34789,7 +35142,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Edelaysen S.A. (Grupo Saesa)",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2131485901",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34809,8 +35162,8 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 68,
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
-      "titular": "Sociedad Contractual Minera El Toqui",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=3489102",
+      "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold)",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34831,7 +35184,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Ilustre Municipalidad de Coyhaique / GORE Aysén",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=4120893",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34873,7 +35226,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Empresa Portuaria Chacabuco (EMPORCHA) / DOP MOP",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=5610238",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34894,28 +35247,28 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Empresas AquaChile S.A.",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2987140",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
       "geocodedBy": "explicit_coords"
     },
     {
-      "id": "inv_seia-07-central-hidroelectrica-los-condores",
-      "nombre": "Central Hidroeléctrica Los Cóndores (Río Aysén)",
+      "id": "inv_seia-07-central-hidro-rio-manihuales",
+      "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
       "tipo": "Proyecto SEIA Central Hidroeléctrica",
       "layerKey": "proyectos_seia",
       "hubId": "inversion",
       "comuna_ine": "11201",
       "nombre_comuna": "Aysén",
       "localidad": "Aysén",
-      "lat": -45.421,
-      "lon": -72.632,
-      "magnitudeValue": 120,
+      "lat": -45.289,
+      "lon": -72.418,
+      "magnitudeValue": 22.5,
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
-      "titular": "Edelaysen S.A. / Energía Austral",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1874921",
+      "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen S.A. — Grupo Saesa)",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34936,7 +35289,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Mowi Chile S.A.",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=6392014",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34957,7 +35310,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Salmones Multi X S.A.",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=7182930",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34978,7 +35331,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8019234",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -34999,7 +35352,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Edelaysen S.A.",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8923011",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35020,7 +35373,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9345120",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35041,7 +35394,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Salmones Yadrán S.A.",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9823411",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35061,8 +35414,8 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 145,
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
-      "titular": "Compañía Minera Cerro Bayo Ltda. / Equus Mining",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1045239",
+      "titular": "Andean Silver Limited (ASX: ASL) · Cía. Minera Cerro Bayo Ltda.",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35083,7 +35436,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1182390",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35104,7 +35457,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Vialidad MOP",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1293845",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35125,7 +35478,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Edelaysen S.A.",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1384910",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35146,7 +35499,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1459203",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35167,7 +35520,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1528491",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -35188,7 +35541,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "MM USD",
       "magnitudeLabel": "Inversión RCA",
       "titular": "Dirección de Vialidad MOP",
-      "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1639201",
+      "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#0f766e",
@@ -41937,7 +42290,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 18500,
         "magnitudeUnit": "ha",
         "magnitudeLabel": "Concesiones Mineras",
-        "titular": "SCM El Toqui (Zinc, Plomo, Oro y Plata) · Fiscalización SERNAGEOMIN",
+        "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
         "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
@@ -41958,7 +42311,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 29450,
         "magnitudeUnit": "ha",
         "magnitudeLabel": "Concesiones Mineras",
-        "titular": "Cía. Minera Cerro Bayo / Equus Mining (Oro y Plata) · SERNAGEOMIN",
+        "titular": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
         "sourceUrl": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
@@ -42045,7 +42398,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Edelaysen S.A. (Grupo Saesa)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2131485901",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42065,8 +42418,8 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 68,
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
-        "titular": "Sociedad Contractual Minera El Toqui",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=3489102",
+        "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold)",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42087,7 +42440,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Ilustre Municipalidad de Coyhaique / GORE Aysén",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=4120893",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42129,7 +42482,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Empresa Portuaria Chacabuco (EMPORCHA) / DOP MOP",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=5610238",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42150,28 +42503,28 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Empresas AquaChile S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2987140",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
         "geocodedBy": "explicit_coords"
       },
       {
-        "id": "inv_seia-07-central-hidroelectrica-los-condores",
-        "nombre": "Central Hidroeléctrica Los Cóndores (Río Aysén)",
+        "id": "inv_seia-07-central-hidro-rio-manihuales",
+        "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
         "tipo": "Proyecto SEIA Central Hidroeléctrica",
         "layerKey": "proyectos_seia",
         "hubId": "inversion",
         "comuna_ine": "11201",
         "nombre_comuna": "Aysén",
         "localidad": "Aysén",
-        "lat": -45.421,
-        "lon": -72.632,
-        "magnitudeValue": 120,
+        "lat": -45.289,
+        "lon": -72.418,
+        "magnitudeValue": 22.5,
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
-        "titular": "Edelaysen S.A. / Energía Austral",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1874921",
+        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen S.A. — Grupo Saesa)",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42192,7 +42545,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Mowi Chile S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=6392014",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42213,7 +42566,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Salmones Multi X S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=7182930",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42234,7 +42587,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8019234",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42255,7 +42608,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Edelaysen S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8923011",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42276,7 +42629,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9345120",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42297,7 +42650,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Salmones Yadrán S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9823411",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42317,8 +42670,8 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 145,
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
-        "titular": "Compañía Minera Cerro Bayo Ltda. / Equus Mining",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1045239",
+        "titular": "Andean Silver Limited (ASX: ASL) · Cía. Minera Cerro Bayo Ltda.",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42339,7 +42692,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1182390",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42360,7 +42713,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Vialidad MOP",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1293845",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42381,7 +42734,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Edelaysen S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1384910",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42402,7 +42755,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1459203",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42423,7 +42776,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1528491",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -42444,7 +42797,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Vialidad MOP",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1639201",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49417,7 +49770,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Edelaysen S.A. (Grupo Saesa)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2131485901",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49437,8 +49790,8 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 68,
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
-        "titular": "Sociedad Contractual Minera El Toqui",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=3489102",
+        "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold)",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49459,7 +49812,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Ilustre Municipalidad de Coyhaique / GORE Aysén",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=4120893",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49501,7 +49854,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Empresa Portuaria Chacabuco (EMPORCHA) / DOP MOP",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=5610238",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49522,28 +49875,28 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Empresas AquaChile S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=2987140",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
         "geocodedBy": "explicit_coords"
       },
       {
-        "id": "inv_seia-07-central-hidroelectrica-los-condores",
-        "nombre": "Central Hidroeléctrica Los Cóndores (Río Aysén)",
+        "id": "inv_seia-07-central-hidro-rio-manihuales",
+        "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
         "tipo": "Proyecto SEIA Central Hidroeléctrica",
         "layerKey": "proyectos_seia_puros",
         "hubId": "inversion",
         "comuna_ine": "11201",
         "nombre_comuna": "Aysén",
         "localidad": "Aysén",
-        "lat": -45.421,
-        "lon": -72.632,
-        "magnitudeValue": 120,
+        "lat": -45.289,
+        "lon": -72.418,
+        "magnitudeValue": 22.5,
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
-        "titular": "Edelaysen S.A. / Energía Austral",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1874921",
+        "titular": "Empresa Eléctrica de Aysén S.A. (Edelaysen S.A. — Grupo Saesa)",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49564,7 +49917,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Mowi Chile S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=6392014",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49585,7 +49938,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Salmones Multi X S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=7182930",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49606,7 +49959,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8019234",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49627,7 +49980,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Edelaysen S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=8923011",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49648,7 +50001,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9345120",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49669,7 +50022,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Salmones Yadrán S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=9823411",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49689,8 +50042,8 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 145,
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
-        "titular": "Compañía Minera Cerro Bayo Ltda. / Equus Mining",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1045239",
+        "titular": "Andean Silver Limited (ASX: ASL) · Cía. Minera Cerro Bayo Ltda.",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49711,7 +50064,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1182390",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49732,7 +50085,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Vialidad MOP",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1293845",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49753,7 +50106,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Edelaysen S.A.",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1384910",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49774,7 +50127,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1459203",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49795,7 +50148,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Obras Portuarias (DOP - MOP)",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1528491",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",
@@ -49816,7 +50169,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "MM USD",
         "magnitudeLabel": "Inversión RCA",
         "titular": "Dirección de Vialidad MOP",
-        "sourceUrl": "https://seia.sea.gob.cl/expediente/ficha/fichaPrincipal.php?modo=ficha&id_expediente=1639201",
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#0f766e",

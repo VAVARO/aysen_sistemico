@@ -130,9 +130,9 @@
     "concesiones_acuicolas_totales": 745,
     "centros_salmonicolas_operativos_rotacion": 245,
     "desembarque_artesanal_total_ton_anual": 13820.0,
-    "concesiones_mineras_explotacion_totales": 195,
-    "concesiones_mineras_exploracion_totales": 339,
-    "superficie_concesionada_mineria_ha": 154200,
+    "concesiones_mineras_explotacion_totales": 131,
+    "concesiones_mineras_exploracion_totales": 225,
+    "superficie_concesionada_mineria_ha": 128511,
     "total_nodos_georreferenciados": 38,
     "holdings_salmoneros_resumen": {
       "total_holdings_mapeados": 13,
@@ -489,9 +489,9 @@
           "propiedad_capital_extranjero_pct": 34.3
         },
         "mineria": {
-          "concesiones_explotacion_vigentes": 196,
-          "concesiones_exploracion_vigentes": 332,
-          "superficie_minera_amparada_ha": 153000
+          "concesiones_explotacion_vigentes": 131,
+          "concesiones_exploracion_vigentes": 225,
+          "superficie_minera_amparada_ha": 128511
         },
         "pesca_artesanal": {
           "desembarque_artesanal_total_ton": 14050.0,
@@ -522,9 +522,9 @@
           "propiedad_capital_extranjero_pct": 34.5
         },
         "mineria": {
-          "concesiones_explotacion_vigentes": 197,
-          "concesiones_exploracion_vigentes": 325,
-          "superficie_minera_amparada_ha": 151800
+          "concesiones_explotacion_vigentes": 131,
+          "concesiones_exploracion_vigentes": 225,
+          "superficie_minera_amparada_ha": 128511
         },
         "pesca_artesanal": {
           "desembarque_artesanal_total_ton": 14250.0,
@@ -615,6 +615,18 @@
           "estado_alerta": "Operaciones subterráneas condicionadas y pasivos bajo planes de fiscalización y cierre ante SERNAGEOMIN."
         }
       ]
+    },
+    "concesiones_mineras_totales": 356,
+    "masa_ganadera_odepa_regional": {
+      "ganado_bovino_cabezas": 144118,
+      "ganado_ovino_cabezas": 177972,
+      "fuente": "BCN / ODEPA — VIII Censo Agropecuario y Forestal"
+    },
+    "catastro_vegetacional_conaf_2026": {
+      "superficie_catastrada_ha": 10667211.5,
+      "bosque_nativo_ha": 5152384.3,
+      "bosques_en_snaspe_ha": 2387525.4,
+      "fuente": "CONAF — Catastro de los Recursos Vegetacionales Nativos de Chile (Actualización Aysén 2026)"
     }
   },
   "holdings_salmoneros_matriz_ruts": [
@@ -1590,9 +1602,9 @@
           "amerb_operativas_vigentes": 0
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 45,
-          "concesiones_exploracion_vigentes": 72,
-          "superficie_minera_ha": 31500,
+          "concesiones_explotacion_vigentes": 21,
+          "concesiones_exploracion_vigentes": 54,
+          "superficie_minera_ha": 21573,
           "yacimientos_o_distritos_principales": [
             "Mina El Toqui (Alto Mañihuales)",
             "Distrito Polimetálico Katterfeld (Ñirehuao)"
@@ -1603,7 +1615,7 @@
             "Oro",
             "Plata"
           ],
-          "nivel_actividad_minera": "Media / Operación y exploración subterránea polimetálica",
+          "nivel_actividad_minera": "Media / Operación y litigio ambiental garantía de cierre",
           "pasivos_ambientales_relaves": [
             {
               "nombre": "Tranque Confluencia",
@@ -1629,8 +1641,9 @@
             "Reserva Nacional Cerro Castillo"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 42500,
-            "ovinos_cabezas": 32000
+            "bovinos_cabezas": 46816,
+            "ovinos_cabezas": 32010,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -1834,9 +1847,9 @@
           "amerb_operativas_vigentes": 0
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 5,
-          "concesiones_exploracion_vigentes": 19,
-          "superficie_minera_ha": 8900,
+          "concesiones_explotacion_vigentes": 1,
+          "concesiones_exploracion_vigentes": 81,
+          "superficie_minera_ha": 24800,
           "yacimientos_o_distritos_principales": [
             "Prospecto Río Pico",
             "Sector Amengual / La Tapera"
@@ -1846,7 +1859,7 @@
             "Oro",
             "Zinc"
           ],
-          "nivel_actividad_minera": "Baja / Prospección inicial y áridos"
+          "nivel_actividad_minera": "Alta exploración / 82 concesiones vigentes (1 explotación + 81 exploración)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 542230,
@@ -1859,8 +1872,9 @@
             "Reserva Nacional Lago Las Torres"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 18200,
-            "ovinos_cabezas": 12500
+            "bovinos_cabezas": 20048,
+            "ovinos_cabezas": 12500,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -2315,9 +2329,9 @@
           "concesiones_dentro_reserva_las_guaitecas": 112
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 18,
-          "concesiones_exploracion_vigentes": 28,
-          "superficie_minera_ha": 12400,
+          "concesiones_explotacion_vigentes": 6,
+          "concesiones_exploracion_vigentes": 24,
+          "superficie_minera_ha": 13900,
           "yacimientos_o_distritos_principales": [
             "Distrito Río Mañihuales Poniente",
             "Sector Río Simpson Bajo"
@@ -2328,7 +2342,7 @@
             "Piedra caliza",
             "Áridos"
           ],
-          "nivel_actividad_minera": "Media-Baja / Exploración y extracción de áridos y calizas"
+          "nivel_actividad_minera": "Media-Baja / 30 concesiones vigentes (6 explotación + 24 exploración)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 2979640,
@@ -2342,8 +2356,9 @@
             "Reserva Nacional Las Guaitecas (sector sur)"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 14100,
-            "ovinos_cabezas": 6800
+            "bovinos_cabezas": 15532,
+            "ovinos_cabezas": 6800,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -2781,9 +2796,9 @@
           "concesiones_dentro_reserva_las_guaitecas": 96
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 8,
-          "concesiones_exploracion_vigentes": 34,
-          "superficie_minera_ha": 16800,
+          "concesiones_explotacion_vigentes": 1,
+          "concesiones_exploracion_vigentes": 3,
+          "superficie_minera_ha": 2300,
           "yacimientos_o_distritos_principales": [
             "Prospección El Moro",
             "Cuesta Queulat",
@@ -2794,7 +2809,7 @@
             "Zinc",
             "Áridos"
           ],
-          "nivel_actividad_minera": "Baja / Prospección y canteras viales"
+          "nivel_actividad_minera": "Baja / 4 concesiones vigentes (1 explotación + 3 exploración)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 1609300,
@@ -2808,8 +2823,9 @@
             "Parque Nacional Isla Magdalena"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 8400,
-            "ovinos_cabezas": 4100
+            "bovinos_cabezas": 9253,
+            "ovinos_cabezas": 4100,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -3084,15 +3100,15 @@
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 0,
-          "concesiones_exploracion_vigentes": 2,
-          "superficie_minera_ha": 400,
+          "concesiones_exploracion_vigentes": 0,
+          "superficie_minera_ha": 0,
           "yacimientos_o_distritos_principales": [
-            "Ninguno de envergadura"
+            "Sin concesiones mineras vigentes"
           ],
           "minerales_interes": [
-            "Áridos marinos"
+            "Sin actividad minera vigente"
           ],
-          "nivel_actividad_minera": "Nula / Marginal"
+          "nivel_actividad_minera": "Nula (0 concesiones en catastro SERNAGEOMIN)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 62060,
@@ -3104,8 +3120,9 @@
             "Reserva Nacional Las Guaitecas"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 120,
-            "ovinos_cabezas": 80
+            "bovinos_cabezas": 132,
+            "ovinos_cabezas": 80,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -3309,9 +3326,9 @@
           "amerb_operativas_vigentes": 0
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 84,
-          "concesiones_exploracion_vigentes": 112,
-          "superficie_minera_ha": 48200,
+          "concesiones_explotacion_vigentes": 94,
+          "concesiones_exploracion_vigentes": 33,
+          "superficie_minera_ha": 47537,
           "yacimientos_o_distritos_principales": [
             "Distrito Minero Cerro Bayo (Vetas Casagrande, Coyita, Laguna Verde)",
             "Mina Fachinal",
@@ -3323,7 +3340,7 @@
             "Zinc",
             "Cobre"
           ],
-          "nivel_actividad_minera": "Alta / Reactivación de faena subterránea y exploración avanzada",
+          "nivel_actividad_minera": "Alta / 127 concesiones (94 explotación + 33 exploración), 136 Moz AgEq JORC jul-2026",
           "pasivos_ambientales_relaves": [
             {
               "nombre": "Mina Delia II",
@@ -3344,8 +3361,9 @@
             "Reserva Nacional Lago Jeinimeni"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 9600,
-            "ovinos_cabezas": 38200
+            "bovinos_cabezas": 10575,
+            "ovinos_cabezas": 38210,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -3549,9 +3567,9 @@
           "amerb_operativas_vigentes": 0
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 26,
-          "concesiones_exploracion_vigentes": 42,
-          "superficie_minera_ha": 19600,
+          "concesiones_explotacion_vigentes": 6,
+          "concesiones_exploracion_vigentes": 8,
+          "superficie_minera_ha": 7400,
           "yacimientos_o_distritos_principales": [
             "Mina Silva / Puerto Cristal (Plomo-Zinc histórico)",
             "Puerto Sánchez",
@@ -3563,7 +3581,7 @@
             "Cobre",
             "Plata"
           ],
-          "nivel_actividad_minera": "Histórica patrimonial / Exploración residual"
+          "nivel_actividad_minera": "Histórica patrimonial / 14 concesiones vigentes (6 explotación + 8 exploración)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 599720,
@@ -3577,8 +3595,9 @@
             "Santuario de la Naturaleza Capillas de Mármol"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 15800,
-            "ovinos_cabezas": 42100
+            "bovinos_cabezas": 17405,
+            "ovinos_cabezas": 42110,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -3782,9 +3801,9 @@
           "amerb_operativas_vigentes": 0
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 6,
-          "concesiones_exploracion_vigentes": 22,
-          "superficie_minera_ha": 9800,
+          "concesiones_explotacion_vigentes": 0,
+          "concesiones_exploracion_vigentes": 2,
+          "superficie_minera_ha": 1201,
           "yacimientos_o_distritos_principales": [
             "Prospección San Lorenzo",
             "Sector Alto Río Baker"
@@ -3794,7 +3813,7 @@
             "Zinc",
             "Molibdeno"
           ],
-          "nivel_actividad_minera": "Baja / Prospección sin faenas activas"
+          "nivel_actividad_minera": "Baja / 2 concesiones vigentes de exploración"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 859950,
@@ -3807,8 +3826,9 @@
             "Reserva Nacional Tamango"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 16400,
-            "ovinos_cabezas": 34800
+            "bovinos_cabezas": 18065,
+            "ovinos_cabezas": 34808,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -4013,8 +4033,8 @@
         },
         "concesiones_mineras": {
           "concesiones_explotacion_vigentes": 2,
-          "concesiones_exploracion_vigentes": 14,
-          "superficie_minera_ha": 5600,
+          "concesiones_exploracion_vigentes": 20,
+          "superficie_minera_ha": 9800,
           "yacimientos_o_distritos_principales": [
             "Manifestaciones cordilleranas Ventisquero Chico / Río Mayer"
           ],
@@ -4022,7 +4042,7 @@
             "Cobre",
             "Plomo"
           ],
-          "nivel_actividad_minera": "Nula / Restricción ambiental estricta SNASPE y Campos de Hielo"
+          "nivel_actividad_minera": "Exploración cordillerana / 22 concesiones vigentes (2 explotación + 20 exploración)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 818250,
@@ -4035,8 +4055,9 @@
             "Bienes Nacionales Glaciar O'Higgins / Campo de Hielo Sur"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 2812,
-            "ovinos_cabezas": 3654
+            "bovinos_cabezas": 3098,
+            "ovinos_cabezas": 3654,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -4263,17 +4284,16 @@
           "concesiones_dentro_reserva_las_guaitecas": 12
         },
         "concesiones_mineras": {
-          "concesiones_explotacion_vigentes": 1,
-          "concesiones_exploracion_vigentes": 8,
-          "superficie_minera_ha": 3200,
+          "concesiones_explotacion_vigentes": 0,
+          "concesiones_exploracion_vigentes": 0,
+          "superficie_minera_ha": 0,
           "yacimientos_o_distritos_principales": [
-            "Prospección Delta Baker / Caleta Tortel"
+            "Sin concesiones mineras vigentes"
           ],
           "minerales_interes": [
-            "Áridos",
-            "Cobre"
+            "Sin actividad minera vigente"
           ],
-          "nivel_actividad_minera": "Nula / Restricción de áreas silvestres protegidas"
+          "nivel_actividad_minera": "Nula (0 concesiones en catastro SERNAGEOMIN)"
         },
         "tenencia_tierra_conservacion": {
           "superficie_comunal_ha": 1971060,
@@ -4287,8 +4307,9 @@
             "Parque Nacional Laguna San Rafael (sector sur)"
           ],
           "existencias_ganaderas_censo_caf": {
-            "bovinos_cabezas": 2900,
-            "ovinos_cabezas": 3700
+            "bovinos_cabezas": 3194,
+            "ovinos_cabezas": 3700,
+            "fuente": "BCN Reportes Comunales / VIII Censo Nacional Agropecuario y Forestal (ODEPA/INE)"
           },
           "regulacion_loteos_dl3516_circular475_sag": {
             "aplica_circular_475": true,
@@ -5113,7 +5134,7 @@
       "lng": -72.04,
       "atributos": {
         "categoria": "Minería Polimetálica",
-        "operador_titular": "Sociedad Minera El Toqui S.A. / Southern Silver",
+        "operador_titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
         "minerales_principales": [
           "Zinc",
           "Oro",
@@ -5121,7 +5142,7 @@
           "Plomo"
         ],
         "infraestructura": "Planta de flotación de concentrados, mina subterránea y tranque de relaves",
-        "estado_operativo": "Operación y mantención con programas de exploración profunda"
+        "estado_operativo": "Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM"
       },
       "source_url": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/"
     },
@@ -5135,13 +5156,13 @@
       "lng": -71.795,
       "atributos": {
         "categoria": "Minería Epitermal de Metales Preciosos",
-        "operador_titular": "Compañía Minera Cerro Bayo / Guanaco Mining Company",
+        "operador_titular": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
         "minerales_principales": [
           "Oro",
           "Plata"
         ],
         "infraestructura": "Planta de flotación Laguna Verde, vetas subterráneas Coyita y Casagrande",
-        "estado_operativo": "Reactivación de faenas y desarrollo de nuevas vetas argentíferas"
+        "estado_operativo": "Exploración avanzada 136 Moz AgEq JORC jul-2026 para reinicio 2027"
       },
       "source_url": "https://www.sernageomin.cl/anuario-de-la-mineria-de-chile/"
     },

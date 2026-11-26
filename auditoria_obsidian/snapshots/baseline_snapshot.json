@@ -1,8 +1,8 @@
 {
   "schemaVersion": "3.0.0",
   "label": "HEAD_APROBADO",
-  "capturedAt": "2026-11-26T21:36:23.708Z",
-  "bundleGeneratedAt": "2026-11-26T19:29:24.449Z",
+  "capturedAt": "2026-11-26T23:35:19.310Z",
+  "bundleGeneratedAt": "2026-11-26T23:02:12.735Z",
   "autoUpdateMeta": {
     "frequency": "Mensual (día 1 de cada mes)",
     "lastRun": "2026-11-02T12:13:30+00:00",
@@ -11,7 +11,7 @@
     "totalOfficialSources": 38,
     "totalHubs": 10,
     "totalNodes": 41,
-    "totalComunaVariables": 273
+    "totalComunaVariables": 277
   },
   "comunas": [
     {
@@ -139,6 +139,317 @@
       "11303": 564,
       "11401": 3703,
       "11402": 2409
+    }
+  },
+  "hub5EconomyAudit": {
+    "hub4ExampleText": "Registra **722 proyectos aprobados** y **22 en calificación** en el SEIA (Cuenta Pública SEA 2024–2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias en 2025), **13.453 empresas** y **35.832 trabajadores** ante el SII (5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs 131.520 MUF bruto), **356 concesiones mineras (128.511 ha SERNAGEOMIN)** y **PIB BCCh 1.991.000 MM$ (2025, +8,5% real)**.",
+    "nodo20TramosData": [
+      8532,
+      1655,
+      186,
+      24,
+      2556
+    ],
+    "seiaSpatialNodes": [
+      {
+        "id": "inv_seia-01-parque-eolico-alto-baguales",
+        "nombre": "Parque Eólico Alto Baguales (Edelaysen)",
+        "magnitudeValue": 14.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-02-minera-el-toqui-bocamina",
+        "nombre": "Mina El Toqui - Proyecto Ampliación Yacimiento Rosa",
+        "magnitudeValue": 68,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-03-relleno-sanitario-coyhaique",
+        "nombre": "Centro de Manejo de Residuos Sólidos Domiciliarios Coyhaique",
+        "magnitudeValue": 12.4,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-04-aerodromo-teniente-vidal",
+        "nombre": "Normalización Pista y Plataforma Aeródromo Teniente Vidal",
+        "magnitudeValue": 18.5,
+        "sourceUrl": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/"
+      },
+      {
+        "id": "inv_seia-05-puerto-chacabuco-terminal-maritimo",
+        "nombre": "Ampliación Terminal Portuario y Frente de Atraque Puerto Chacabuco",
+        "magnitudeValue": 42,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-06-planta-proceso-aquachile-chacabuco",
+        "nombre": "Planta de Procesamiento Salmones Chacabuco",
+        "magnitudeValue": 85,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-07-central-hidro-rio-manihuales",
+        "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
+        "magnitudeValue": 22.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-08-ces-fiordo-aysen-mowi",
+        "nombre": "Centro de Engorda de Salmones Fiordo Aysén (Isla Carmen)",
+        "magnitudeValue": 16.8,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-09-ces-canal-jacaf-cisnes",
+        "nombre": "Centro de Engorda de Salmones Canal Jacaf Sur",
+        "magnitudeValue": 15.2,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-10-rampa-conectividad-puerto-cisnes",
+        "nombre": "Construcción Rampa de Conectividad y Explanada Puerto Cisnes",
+        "magnitudeValue": 14.8,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-11-mini-hidro-la-junta",
+        "nombre": "Mini Central Hidroeléctrica de Pasada Río Palena / La Junta",
+        "magnitudeValue": 19.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-12-rampa-melinka-guaitecas",
+        "nombre": "Ampliación Terminal y Frente de Atraque Melinka",
+        "magnitudeValue": 16.4,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-13-ces-isla-gran-guaiteca",
+        "nombre": "Centro de Cultivo Marino Isla Gran Guaiteca",
+        "magnitudeValue": 14,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-14-minera-cerro-bayo-chile-chico",
+        "nombre": "Continuidad Operacional Minera Cerro Bayo (Planta Cascada y Relaves)",
+        "magnitudeValue": 145,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-15-barcaza-conectividad-lago-general-carrera",
+        "nombre": "Terminal de Conectividad Lacustre Puerto Chico",
+        "magnitudeValue": 22,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-16-pavimentacion-ruta-7-cerro-castillo",
+        "nombre": "Pavimentación Ruta 7 Tramo Villa Cerro Castillo - Bahía Murta",
+        "magnitudeValue": 64,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-17-mini-hidro-cochrane",
+        "nombre": "Mini Central Hidroeléctrica San Victorino (Río Cochrane)",
+        "magnitudeValue": 28.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-18-conectividad-puerto-yungay-tortel",
+        "nombre": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay",
+        "magnitudeValue": 19.2,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-19-conectividad-lago-ohiggins-rampa",
+        "nombre": "Rampa de Embarque y Explanada Bahía Bahamóndez (Villa O'Higgins)",
+        "magnitudeValue": 15.8,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-20-mejoramiento-ruta-x12-lago-verde",
+        "nombre": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde",
+        "magnitudeValue": 24,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      }
+    ],
+    "wp04SeiaNodes": [
+      {
+        "id": "seia-01-parque-eolico-alto-baguales",
+        "nombre": "Parque Eólico Alto Baguales (Edelaysen)",
+        "monto_inversion_mmusd": 14.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-02-minera-el-toqui-bocamina",
+        "nombre": "Mina El Toqui - Proyecto Ampliación Yacimiento Rosa",
+        "monto_inversion_mmusd": 68,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-03-relleno-sanitario-coyhaique",
+        "nombre": "Centro de Manejo de Residuos Sólidos Domiciliarios Coyhaique",
+        "monto_inversion_mmusd": 12.4,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-04-aerodromo-teniente-vidal",
+        "nombre": "Normalización Pista y Plataforma Aeródromo Teniente Vidal",
+        "monto_inversion_mmusd": 18.5,
+        "source_url": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/"
+      },
+      {
+        "id": "seia-05-puerto-chacabuco-terminal-maritimo",
+        "nombre": "Ampliación Terminal Portuario y Frente de Atraque Puerto Chacabuco",
+        "monto_inversion_mmusd": 42,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-06-planta-proceso-aquachile-chacabuco",
+        "nombre": "Planta de Procesamiento Salmones Chacabuco",
+        "monto_inversion_mmusd": 85,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-07-central-hidro-rio-manihuales",
+        "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
+        "monto_inversion_mmusd": 22.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-08-ces-fiordo-aysen-mowi",
+        "nombre": "Centro de Engorda de Salmones Fiordo Aysén (Isla Carmen)",
+        "monto_inversion_mmusd": 16.8,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-09-ces-canal-jacaf-cisnes",
+        "nombre": "Centro de Engorda de Salmones Canal Jacaf Sur",
+        "monto_inversion_mmusd": 15.2,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-10-rampa-conectividad-puerto-cisnes",
+        "nombre": "Construcción Rampa de Conectividad y Explanada Puerto Cisnes",
+        "monto_inversion_mmusd": 14.8,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-11-mini-hidro-la-junta",
+        "nombre": "Mini Central Hidroeléctrica de Pasada Río Palena / La Junta",
+        "monto_inversion_mmusd": 19.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-12-rampa-melinka-guaitecas",
+        "nombre": "Ampliación Terminal y Frente de Atraque Melinka",
+        "monto_inversion_mmusd": 16.4,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-13-ces-isla-gran-guaiteca",
+        "nombre": "Centro de Cultivo Marino Isla Gran Guaiteca",
+        "monto_inversion_mmusd": 14,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-14-minera-cerro-bayo-chile-chico",
+        "nombre": "Continuidad Operacional Minera Cerro Bayo (Planta Cascada y Relaves)",
+        "monto_inversion_mmusd": 145,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-15-barcaza-conectividad-lago-general-carrera",
+        "nombre": "Terminal de Conectividad Lacustre Puerto Chico",
+        "monto_inversion_mmusd": 22,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-16-pavimentacion-ruta-7-cerro-castillo",
+        "nombre": "Pavimentación Ruta 7 Tramo Villa Cerro Castillo - Bahía Murta",
+        "monto_inversion_mmusd": 64,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-17-mini-hidro-cochrane",
+        "nombre": "Mini Central Hidroeléctrica San Victorino (Río Cochrane)",
+        "monto_inversion_mmusd": 28.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-18-conectividad-puerto-yungay-tortel",
+        "nombre": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay",
+        "monto_inversion_mmusd": 19.2,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-19-conectividad-lago-ohiggins-rampa",
+        "nombre": "Rampa de Embarque y Explanada Bahía Bahamóndez (Villa O'Higgins)",
+        "monto_inversion_mmusd": 15.8,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-20-mejoramiento-ruta-x12-lago-verde",
+        "nombre": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde",
+        "monto_inversion_mmusd": 24,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      }
+    ],
+    "mineriaFaenas": [
+      {
+        "id": "inv_min_el_toqui",
+        "nombre": "Mina El Toqui (Alto Mañihuales)",
+        "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
+        "magnitudeValue": 18500
+      },
+      {
+        "id": "inv_min_cerro_bayo",
+        "nombre": "Distrito Minero Cerro Bayo / Laguna Verde",
+        "titular": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
+        "magnitudeValue": 29450
+      },
+      {
+        "id": "inv_min_fachinal",
+        "nombre": "Mina Fachinal (Mallín Grande)",
+        "titular": "Coeur Mining / Cía. Minera Cerro Bayo (Oro y Plata en cierre/exploración) · SERNAGEOMIN",
+        "magnitudeValue": 12800
+      },
+      {
+        "id": "inv_min_puerto_cristal_mina_silva",
+        "nombre": "Mina Silva y Campamento Minero Puerto Cristal",
+        "titular": "Monumento Histórico Nacional CMN / Pasivo Ambiental Minero SERNAGEOMIN (Plomo y Zinc)",
+        "magnitudeValue": 4200
+      },
+      {
+        "id": "inv_min_prospecto_katterfeld",
+        "nombre": "Prospecto Minero Katterfeld (Ñirehuao)",
+        "titular": "Exploración Polimetálica Katterfeld · Catastro SERNAGEOMIN",
+        "magnitudeValue": 8600
+      }
+    ],
+    "sernageominResumen": {
+      "concesiones_totales": 356,
+      "explotacion": 131,
+      "exploracion": 225,
+      "superficie_ha": 128511
+    },
+    "pib2025Mmclp": 1991000,
+    "chilecompra2026YtdMclp": 228874.2,
+    "bosqueNativoByIne": {
+      "11101": 435000,
+      "11102": 365000,
+      "11201": 1390000,
+      "11202": 990000,
+      "11203": 51200,
+      "11301": 465000,
+      "11302": 326184.3,
+      "11303": 585000,
+      "11401": 260000,
+      "11402": 285000
+    },
+    "conaf2026": {
+      "superficie_catastrada_ha": 10667211.5,
+      "bosque_nativo_ha": 5152384.3,
+      "bosques_en_snaspe_ha": 2387525.4
     }
   },
   "centralesElectricas": [
@@ -290,8 +601,8 @@
       "potencia_mw": 0.35
     }
   ],
-  "totalKeys": 273,
-  "indicatorCount": 239,
+  "totalKeys": 277,
+  "indicatorCount": 242,
   "indicators": {
     "poblacion_censo_2024": {
       "type": "numeric",
@@ -686,16 +997,16 @@
     "concesiones_mineras_ha": {
       "type": "numeric",
       "values": {
-        "11101": 31500,
-        "11102": 8900,
-        "11201": 12400,
-        "11202": 16800,
-        "11203": 400,
-        "11301": 9800,
-        "11302": 5600,
-        "11303": 3200,
-        "11401": 48200,
-        "11402": 19600
+        "11101": 21573,
+        "11102": 24800,
+        "11201": 13900,
+        "11202": 2300,
+        "11203": 0,
+        "11301": 1201,
+        "11302": 9800,
+        "11303": 0,
+        "11401": 47537,
+        "11402": 7400
       }
     },
     "proyectos_seia_aprobados": {
@@ -731,31 +1042,31 @@
     "empresas_sii": {
       "type": "numeric",
       "values": {
-        "11101": 7620,
-        "11102": 118,
-        "11201": 2840,
+        "11101": 7238,
+        "11102": 119,
+        "11201": 2675,
         "11202": 895,
-        "11203": 242,
-        "11301": 492,
-        "11302": 96,
-        "11303": 84,
-        "11401": 648,
-        "11402": 418
+        "11203": 144,
+        "11301": 519,
+        "11302": 109,
+        "11303": 139,
+        "11401": 653,
+        "11402": 577
       }
     },
     "trabajadores_sii": {
       "type": "numeric",
       "values": {
-        "11101": 20950,
-        "11102": 132,
-        "11201": 9890,
-        "11202": 1920,
-        "11203": 265,
-        "11301": 845,
-        "11302": 98,
-        "11303": 80,
-        "11401": 1140,
-        "11402": 512
+        "11101": 22351,
+        "11102": 213,
+        "11201": 6551,
+        "11202": 1757,
+        "11203": 349,
+        "11301": 475,
+        "11302": 148,
+        "11303": 145,
+        "11401": 965,
+        "11402": 575
       }
     },
     "prestadores_sernatur": {
@@ -2561,31 +2872,31 @@
     "ganado_bovino_cabezas": {
       "type": "numeric",
       "values": {
-        "11101": 42500,
-        "11102": 18200,
-        "11201": 14100,
-        "11202": 8400,
-        "11203": 120,
-        "11301": 16400,
-        "11302": 2812,
-        "11303": 2900,
-        "11401": 9600,
-        "11402": 15800
+        "11101": 46816,
+        "11102": 20048,
+        "11201": 15532,
+        "11202": 9253,
+        "11203": 132,
+        "11301": 18065,
+        "11302": 3098,
+        "11303": 3194,
+        "11401": 10575,
+        "11402": 17405
       }
     },
     "ganado_ovino_cabezas": {
       "type": "numeric",
       "values": {
-        "11101": 32000,
+        "11101": 32010,
         "11102": 12500,
         "11201": 6800,
         "11202": 4100,
         "11203": 80,
-        "11301": 34800,
+        "11301": 34808,
         "11302": 3654,
         "11303": 3700,
-        "11401": 38200,
-        "11402": 42100
+        "11401": 38210,
+        "11402": 42110
       }
     },
     "plantaciones_ha": {
@@ -3358,9 +3669,9 @@
       "values": {
         "11101": 0,
         "11102": 0,
-        "11201": 73.3,
-        "11202": 24.6,
-        "11203": 8.3,
+        "11201": 48.5,
+        "11202": 22.5,
+        "11203": 10.9,
         "11301": 0,
         "11302": 0,
         "11303": 0,
@@ -3383,19 +3694,34 @@
         "11402": 3200
       }
     },
+    "ventas_sii_domicilio_local_muf": {
+      "type": "numeric",
+      "values": {
+        "11101": 16900,
+        "11102": 130,
+        "11201": 4410,
+        "11202": 1420,
+        "11203": 240,
+        "11301": 790,
+        "11302": 75,
+        "11303": 85,
+        "11401": 1210,
+        "11402": 540
+      }
+    },
     "ventas_por_empresa_uf": {
       "type": "numeric",
       "values": {
-        "11101": 6365,
-        "11102": 3814,
-        "11201": 19789,
+        "11101": 6701,
+        "11102": 3782,
+        "11201": 21009,
         "11202": 10168,
-        "11203": 10124,
-        "11301": 8943,
-        "11302": 5521,
-        "11303": 4643,
-        "11401": 9722,
-        "11402": 7656
+        "11203": 17014,
+        "11301": 8478,
+        "11302": 4862,
+        "11303": 2806,
+        "11401": 9648,
+        "11402": 5546
       }
     },
     "inversion_por_proyecto_seia_mmusd": {
@@ -3518,6 +3844,51 @@
         "11402": 112.9
       }
     },
+    "sucursales_bancarias_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 6,
+        "11102": 0,
+        "11201": 3,
+        "11202": 1,
+        "11203": 0,
+        "11301": 1,
+        "11302": 0,
+        "11303": 0,
+        "11401": 1,
+        "11402": 0
+      }
+    },
+    "cajeros_automaticos_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 28,
+        "11102": 1,
+        "11201": 8,
+        "11202": 2,
+        "11203": 1,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
+        "11401": 2,
+        "11402": 1
+      }
+    },
+    "cajavecina_puntos_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 145,
+        "11102": 14,
+        "11201": 85,
+        "11202": 42,
+        "11203": 20,
+        "11301": 34,
+        "11302": 10,
+        "11303": 12,
+        "11401": 28,
+        "11402": 25
+      }
+    },
     "sucursales_banca_privada_cmf": {
       "type": "numeric",
       "values": {
@@ -3531,21 +3902,6 @@
         "11303": 0,
         "11401": 0,
         "11402": 0
-      }
-    },
-    "puntos_cajavecina_bancoestado": {
-      "type": "numeric",
-      "values": {
-        "11101": 145,
-        "11102": 14,
-        "11201": 85,
-        "11202": 42,
-        "11203": 20,
-        "11301": 34,
-        "11302": 10,
-        "11303": 12,
-        "11401": 28,
-        "11402": 25
       }
     },
     "tasa_aprobacion_rs_sni_pct": {
@@ -4484,7 +4840,19 @@
       "serie_pib_regional_nominal_mmclp__valor": {
         "type": "numeric",
         "values": {
-          "2026": 1830000
+          "2026": 1991000
+        }
+      },
+      "serie_pib_regional_variacion_real_pct__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": -2.6
+        }
+      },
+      "serie_transacciones_compras_publicas_mclp__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": 228874.2
         }
       },
       "serie_generacion_electrica_anual__generacion_total_gwh": {

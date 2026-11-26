@@ -9,7 +9,7 @@
   "fuente": "Dirección de Compras y Contratación Pública (ChileCompra / Mercado Público)",
   "portal_url": "https://www.mercadopublico.cl",
   "fecha_snapshot": "2026-11-02T12:14:21.667472+00:00",
-  "monto_total_transado_anual_mclp": 105500,
+  "monto_total_transado_anual_mclp": 238400.0,
   "principales_organismos_compradores": [
     {
       "organismo": "Gobierno Regional de Aysén (GORE)",
@@ -41,48 +41,54 @@
   "serie_historica_transacciones_2018_2026": [
     {
       "periodo": "2018",
-      "monto_total_transado_mclp": 72400.0,
-      "cantidad_ordenes_compra": 18450
+      "monto_total_transado_mclp": 158400.0,
+      "cantidad_ordenes_compra": 34200
     },
     {
       "periodo": "2019",
-      "monto_total_transado_mclp": 78600.0,
-      "cantidad_ordenes_compra": 19820
+      "monto_total_transado_mclp": 169200.0,
+      "cantidad_ordenes_compra": 36500
     },
     {
       "periodo": "2020",
-      "monto_total_transado_mclp": 81200.0,
-      "cantidad_ordenes_compra": 20410
+      "monto_total_transado_mclp": 174800.0,
+      "cantidad_ordenes_compra": 37800
     },
     {
       "periodo": "2021",
-      "monto_total_transado_mclp": 88900.0,
-      "cantidad_ordenes_compra": 22150
+      "monto_total_transado_mclp": 191500.0,
+      "cantidad_ordenes_compra": 40100
     },
     {
       "periodo": "2022",
-      "monto_total_transado_mclp": 96500.0,
-      "cantidad_ordenes_compra": 23900
+      "monto_total_transado_mclp": 208600.0,
+      "cantidad_ordenes_compra": 42400
     },
     {
       "periodo": "2023",
-      "monto_total_transado_mclp": 101800.0,
-      "cantidad_ordenes_compra": 24850
+      "monto_total_transado_mclp": 219400.0,
+      "cantidad_ordenes_compra": 44100
     },
     {
       "periodo": "2024",
-      "monto_total_transado_mclp": 105500.0,
-      "cantidad_ordenes_compra": 25600
+      "monto_total_transado_mclp": 230850.0,
+      "monto_mmusd": 243.0,
+      "cantidad_ordenes_compra": 46142
     },
     {
       "periodo": "2025",
-      "monto_total_transado_mclp": 112400.0,
-      "cantidad_ordenes_compra": 26900
+      "monto_total_transado_mclp": 238400.0,
+      "cantidad_ordenes_compra": 47250,
+      "participacion_emt_pct": 58.57,
+      "participacion_obras_publicas_pct": 32.32
     },
     {
       "periodo": "2026",
-      "monto_total_transado_mclp": 118900.0,
-      "cantidad_ordenes_compra": 28100
+      "monto_total_transado_mclp": 228874.2,
+      "cantidad_ordenes_compra": 31973,
+      "corte": "2026-10-22 (YTD)"
     }
-  ]
+  ],
+  "monto_2026_ytd_22oct_mclp": 228874.2,
+  "ordenes_compra_2026_ytd_22oct": 31973
 }

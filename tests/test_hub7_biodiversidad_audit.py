@@ -55,7 +55,7 @@ class TestHub7BiodiversidadAudit(unittest.TestCase):
         for c in self.comunas:
             self.assertLessEqual(c["bosque_nativo_ha"], c["cobertura_vegetal_nativa_ha"])
         self.assertEqual(sum(c["cobertura_vegetal_nativa_ha"] for c in self.comunas), 5723000)
-        self.assertEqual(sum(c["bosque_nativo_ha"] for c in self.comunas), 4713200)
+        self.assertAlmostEqual(sum(c["bosque_nativo_ha"] for c in self.comunas), 5152384.3, places=1)
 
         macro75 = presets["hub_07_05"]["config"]["mirror_series"]["structural_by_macrozona"]
         self.assertEqual(macro75, {"norte": 58.5, "centro": 39.0, "sur": 65.6})
