@@ -8030,6 +8030,10 @@
         fndr_per_capita_mclp: { title: 'Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab)', short: 'FNDR Per Cápita', unit: 'Miles $ CLP/hab', hubId: 'gobernanza' },
         fndr_gore_2023_per_capita_mclp: { title: 'FNDR GORE 2023 Ejecutado Per Cápita (Miles $ CLP/hab)', short: 'FNDR 2023 Ejec./hab', unit: 'Miles $ CLP/hab', hubId: 'gobernanza' },
         royalty_fet_peso_presupuesto_pct: { title: 'Peso del Royalty Minero FET 2025 sobre Presupuesto Municipal (%)', short: '% Royalty FET / Pres.', unit: '%', hubId: 'gobernanza' },
+        fcm_bcn_2025_mclp: { title: 'Aporte Fondo Común Municipal (FCM) BCN-SINIM 2025', short: 'Aporte FCM BCN 2025', unit: 'M$ CLP', hubId: 'gobernanza' },
+        ipp_bcn_2025_mclp: { title: 'Ingresos Propios Permanentes (IPP) BCN-SINIM 2025', short: 'IPP BCN 2025', unit: 'M$ CLP', hubId: 'gobernanza' },
+        participacion_fcm_ingreso_total_pct: { title: 'Participación del FCM sobre Ingreso Municipal Total (%)', short: '% FCM / Ingreso Total', unit: '%', hubId: 'gobernanza' },
+        gastos_corrientes_bcn_pct: { title: 'Proporción de Gastos Corrientes Municipales BCN (%)', short: '% Gastos Corrientes', unit: '%', hubId: 'gobernanza' },
         participacion_municipales_2024_pct: { title: 'Participación Electoral Municipal 2024 SERVEL (%)', short: 'Part. Municipales 2024 (%)', unit: '%', hubId: 'gobernanza' },
         ingresos_propios_pct: { title: 'Ingresos Propios Permanentes Municipales (% del Presupuesto SINIM)', short: '% Ingresos Propios (IPP)', unit: '%', hubId: 'gobernanza' },
         ratio_padron_poblacion_pct: { title: 'Ratio Padrón Electoral Nov-2025 sobre Población Censo 2024 (%)', short: 'Ratio Padrón/Población (%)', unit: '%', hubId: 'gobernanza' },
@@ -8245,6 +8249,7 @@
           return sgList[0];
         }
         if (hId === 'gobernanza') {
+          if (/^participacion_fcm/i.test(id) || /gastos_corrientes|fcm_bcn|ipp_bcn/i.test(id)) return sgList[0];
           if (/ruta7|red_vial|coyhaique|barcaza|emporcha|balmaceda|aerodromo|conectividad|fronterizo|trafico/i.test(id)) return sgList[2];
           if (/fndr|sni|fondos_concursables|transparencia|participacion|padron|confianza|inversion_sectorial/i.test(id)) return sgList[1];
           return sgList[0];
@@ -9124,18 +9129,18 @@
           if (_goreFndrHistObj[yr] && _goreFndrHistObj[yr].asignado_mclp !== undefined) return Number(_goreFndrHistObj[yr].asignado_mclp);
           const dip = (AppState.hubsData?.goreFndrSeries || window.AYSEN_HUBS_DATA?.goreFndrSeries)?.dipres_ley_presupuestos_fndr || {};
           if (yr === '2024' && dip['2024_vigente_mclp']) return Number(dip['2024_vigente_mclp']);
-          if (yr === '2025' && dip['2025_inicial_mclp']) return Number(dip['2025_inicial_mclp']);
-          if (yr === '2026') return 78950.0;
+          if (yr === '2025' && (dip['2025_vigente_mclp'] || dip['2025_inicial_mclp'])) return Number(dip['2025_vigente_mclp'] || dip['2025_inicial_mclp']);
+          if (yr === '2026' && dip['2026_inicial_mclp']) return Number(dip['2026_inicial_mclp']);
           return 0;
         });
         const syncTemporalSeries = [
           {
             id: 'presupuesto_municipal_total_regional_mclp',
-            name: 'Presupuesto Municipal Total Regional SINIM (2015–2026)',
-            shortName: 'Presupuesto Municipal Total',
+            name: 'Ingresos Municipales Totales Regionales BCN-SINIM (2015–2026)',
+            shortName: 'Ingresos Municipales Totales',
             hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', unit: 'M$ CLP', aggMode: 'sum',
-            sourceName: 'SUBDERE - SINIM',
-            data: [39353.4, 41693.1, 44764.1, 48263.8, 51344.5, 53644.9, 57743.4, 62864.5, 67163.4, 70751.5, 75524.1, 80001.3]
+            sourceName: 'SUBDERE - SINIM / BCN',
+            data: [43080.0, 46050.0, 49480.0, 53290.0, 56880.0, 60190.0, 65220.0, 70830.0, 75580.0, 78736.96, 84820.68, 88213.6]
           },
           {
             id: 'presupuesto_fndr_gore_aysen_mclp',
@@ -9144,16 +9149,16 @@
             hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', unit: 'M$ CLP', aggMode: 'sum',
             sourceName: 'DIPRES - GORE Aysén (datos.gob.cl)',
             data: _fndr12Data.every(v => v === 0)
-              ? [47242.8, 64945.3, 68787.4, 65295.0, 58446.7, 17714.6, 57405.1, 58342.9, 68333.7, 75543.0, 77977.0, 78950.0]
+              ? [47242.8, 64945.3, 68787.4, 65295.0, 58446.7, 17714.6, 57405.1, 58342.9, 68333.7, 75543.0, 80200.0, 81812.0]
               : _fndr12Data
           },
           {
             id: 'dependencia_fcm_promedio_regional_pct',
-            name: 'Dependencia Promedio Regional del Fondo Común Municipal (2015–2026)',
+            name: 'Dependencia Promedio Comunal del Fondo Común Municipal (2015–2026)',
             shortName: 'Dependencia FCM Regional',
             hubId: 'gobernanza', hubTitle: 'IV. Gobernanza', unit: '%', aggMode: 'mean',
-            sourceName: 'SUBDERE - SINIM',
-            data: [66.4, 65.8, 65.1, 64.5, 64.0, 65.2, 63.8, 63.1, 62.5, 62.0, 61.6, 61.2]
+            sourceName: 'SUBDERE - SINIM / BCN',
+            data: [78.6, 78.3, 78.0, 77.7, 77.4, 78.4, 77.8, 77.4, 77.0, 76.8, 77.5, 77.2]
           },
           {
             id: 'generacion_hidro_gwh',

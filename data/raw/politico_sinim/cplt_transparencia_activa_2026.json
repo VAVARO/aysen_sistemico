@@ -1,19 +1,33 @@
 {
-  "fuente": "Consejo para la Transparencia (CPLT) — Informe de Fiscalización de Transparencia Activa Municipal 2026",
+  "fuente": "Consejo para la Transparencia (CPLT) — Informe de Fiscalización de Transparencia Activa Municipal 2025–2026 y GORES 2026",
   "url_origen": "https://www.consejotransparencia.cl/",
   "fecha_corte": "2026",
   "promedio_regional_aysen_pct": 73.8,
   "promedio_nacional_pct": 88.5,
   "ranking_regional": "16 de 16 regiones",
-  "nota": "Río Ibáñez obtuvo 100,0% (1er lugar nacional compartido entre 23 municipios); Chile Chico quedó entre los 10 puntajes más bajos del país.",
+  "nota": "Río Ibáñez obtuvo 100,0% (1er lugar nacional compartido entre 23 municipios); Chile Chico quedó entre los 10 puntajes más bajos del país. El GORE Aysén alcanzó 99,9% (+8,4 pts vs 2025), generando una brecha de 26,1 pts respecto al promedio municipal regional.",
+  "gore_aysen_cplt_2026": {
+    "entidad": "Gobierno Regional de Aysén (GORE Aysén)",
+    "transparencia_activa_2025_pct": 91.5,
+    "transparencia_activa_2026_pct": 99.9,
+    "variacion_2025_2026_pts": 8.4,
+    "ranking_nacional_gores": "2° lugar nacional (detrás de Biobío y Los Lagos con 100%)",
+    "brecha_gore_vs_promedio_municipal_pts": 26.1,
+    "observacion_cplt_royalty": "CPLT observó que 14 de 16 GORE (incluido Aysén) aún no publicaban el informe específico del Fondo Regional para la Productividad y el Desarrollo (Royalty Minero) exigido por la Ley de Presupuestos 2026.",
+    "url_fuente": "https://www.consejotransparencia.cl/wp-content/uploads/2026/07/REPORTE-GLOBAL-DE-RESULTADOS-DE-FISCALIZACIO%CC%81N-DE-CUMPLIMIENTO-GORES-2026_v3.pdf"
+  },
   "por_comuna": {
     "11101": {
       "comuna": "Coyhaique",
-      "transparencia_activa_pct": 74.45
+      "transparencia_activa_2025_pct": 59.1,
+      "transparencia_activa_pct": 74.45,
+      "delta_2025_2026_pts": 15.35
     },
     "11102": {
       "comuna": "Lago Verde",
-      "transparencia_activa_pct": 59.24
+      "transparencia_activa_2025_pct": 64.3,
+      "transparencia_activa_pct": 59.24,
+      "delta_2025_2026_pts": -5.06
     },
     "11201": {
       "comuna": "Aysén",
@@ -21,11 +35,15 @@
     },
     "11202": {
       "comuna": "Cisnes",
-      "transparencia_activa_pct": 61.6
+      "transparencia_activa_2025_pct": 66.27,
+      "transparencia_activa_pct": 61.6,
+      "delta_2025_2026_pts": -4.67
     },
     "11203": {
       "comuna": "Guaitecas",
-      "transparencia_activa_pct": 92.63
+      "transparencia_activa_2025_pct": 63.7,
+      "transparencia_activa_pct": 92.63,
+      "delta_2025_2026_pts": 28.93
     },
     "11301": {
       "comuna": "Cochrane",
@@ -41,7 +59,9 @@
     },
     "11401": {
       "comuna": "Chile Chico",
-      "transparencia_activa_pct": 57.46
+      "transparencia_activa_2025_pct": 73.51,
+      "transparencia_activa_pct": 57.46,
+      "delta_2025_2026_pts": -16.05
     },
     "11402": {
       "comuna": "Río Ibáñez",

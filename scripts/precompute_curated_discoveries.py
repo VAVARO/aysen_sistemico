@@ -249,6 +249,7 @@ VARIABLE_META = {
     "fndr_mclp": ("IV. Gobernanza", "Inversión Pública Regional FNDR Asignada", "M$"),
     "fndr_per_capita_mclp": ("IV. Gobernanza", "Inversión Pública FNDR Per Cápita", "Miles $/hab"),
     "fndr_gore_2023_ejecucion_pct": ("IV. Gobernanza", "Ejecución Presupuestaria Efectiva FNDR GORE", "%"),
+    "royalty_fet_peso_presupuesto_pct": ("IV. Gobernanza", "Peso del Royalty Minero FET 2025 sobre Presupuesto Municipal", "%"),
     "tasa_aprobacion_rs_sni_pct": ("IV. Gobernanza", "Tasa de Aprobación Técnica RS de Proyectos (SNI)", "%"),
     "transparencia_activa_cplt_2026_pct": ("IV. Gobernanza", "Cumplimiento de Transparencia Activa Municipal (CPLT)", "%"),
     "participacion_municipales_2024_pct": ("IV. Gobernanza", "Participación Electoral Municipal", "%"),
@@ -354,13 +355,13 @@ CURATED_20_CROSS_SPECS = [
         ),
     },
     {
-        "varX": "seia_plazo_dias",
-        "varY": "participacion_municipales_2024_pct",
-        "headline": "Plazo de Evaluación Ambiental SEIA vs. Participación Municipal",
-        "shortX": "plazo de evaluación SEIA",
+        "varX": "royalty_fet_peso_presupuesto_pct",
+        "varY": "rsh_carencia_servicios_basicos_jun2026_pct",
+        "headline": "Peso Fiscal del Royalty Minero FET vs. Carencia de Servicios Básicos RSH",
+        "shortX": "peso del Royalty FET",
         "readingBuilder": lambda hi_c, hi_x, hi_y, lo_c, lo_x, lo_y, ux, uy: (
-            f"Las comunas con tramitación ambiental más extensa registran menor votación municipal: "
-            f"{hi_c} ({hi_x} {ux}) marca {hi_y}% de participación, frente a {lo_y}% en {lo_c} ({lo_x} {ux})."
+            f"El Royalty FET pesa más en municipios con mayor rezago de servicios: "
+            f"{hi_c} recibe {hi_x}% de su presupuesto con {hi_y}% de carencia RSH, frente a {lo_c} ({lo_x}% y {lo_y}%)."
         ),
     },
     {

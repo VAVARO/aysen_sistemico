@@ -1,20 +1,31 @@
 {
-  "descripcion": "Respaldos estructurados y series históricas (2015-2026) de finanzas municipales SINIM SUBDERE para las 10 comunas de Aysén",
-  "fuente": "SINIM (Sistema Nacional de Información Municipal - SUBDERE)",
+  "descripcion": "Respaldos estructurados y series históricas (2015-2026) de finanzas municipales SINIM/BCN para las 10 comunas de Aysén",
+  "fuente": "SINIM (SUBDERE) / BCN Reportes Comunales 2025-2026 / TGR IFC Abril 2026",
   "url_fuente": "https://datos.sinim.gov.cl/",
-  "ejercicio_fiscal": 2024,
+  "ejercicio_fiscal": 2025,
   "registros_comunales": [
     {
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
       "nombre_comuna": "Coyhaique",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 26540.8,
-        "presupuesto_per_capita_miles_clp": 459.0,
-        "dependencia_fcm_pct": 46.5,
-        "ingresos_patentes_acuicolas_mineras_mclp": 1450.0,
-        "autonomia_financiera_nivel": "Media-Alta (Menor dependencia FCM regional)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 27611.0,
+        "ingresos_municipales_bcn_2025_mclp": 27611.0,
+        "ingresos_municipales_bcn_2024_mclp": 27391.05,
+        "presupuesto_per_capita_miles_clp": 477.5,
+        "ipp_bcn_2025_mclp": 8571.21,
+        "ipp_bcn_2024_mclp": 8091.06,
+        "ingresos_propios_permanentes_per_capita_clp": 148232,
+        "fcm_bcn_2025_mclp": 12047.74,
+        "fcm_bcn_2024_mclp": 11806.81,
+        "dependencia_fcm_pct": 58.4,
+        "participacion_fcm_ingreso_total_pct": 43.6,
+        "gastos_corrientes_bcn_pct": 85.4,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 77.9,
+        "ingresos_patentes_acuicolas_mineras_mclp": 77.9,
+        "autonomia_financiera_nivel": "Media-Alta (Mayor recaudación IPP regional)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -22,12 +33,23 @@
       "comuna_ine": "11102",
       "nombre_comuna": "Lago Verde",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 2450.2,
-        "presupuesto_per_capita_miles_clp": 3145.3,
-        "dependencia_fcm_pct": 89.2,
-        "ingresos_patentes_acuicolas_mineras_mclp": 35.0,
-        "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 3321.05,
+        "ingresos_municipales_bcn_2025_mclp": 3321.05,
+        "ingresos_municipales_bcn_2024_mclp": 2881.38,
+        "presupuesto_per_capita_miles_clp": 4263.2,
+        "ipp_bcn_2025_mclp": 430.75,
+        "ipp_bcn_2024_mclp": 344.02,
+        "ingresos_propios_permanentes_per_capita_clp": 552952,
+        "fcm_bcn_2025_mclp": 2249.3,
+        "fcm_bcn_2024_mclp": 1972.15,
+        "dependencia_fcm_pct": 83.9,
+        "participacion_fcm_ingreso_total_pct": 67.7,
+        "gastos_corrientes_bcn_pct": 75.6,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 20.26,
+        "ingresos_patentes_acuicolas_mineras_mclp": 20.26,
+        "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -35,12 +57,23 @@
       "comuna_ine": "11201",
       "nombre_comuna": "Aysén",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 14210.5,
-        "presupuesto_per_capita_miles_clp": 613.3,
-        "dependencia_fcm_pct": 52.8,
-        "ingresos_patentes_acuicolas_mineras_mclp": 1850.0,
+        "presupuesto_municipal_anual_mclp": 14614.29,
+        "ingresos_municipales_bcn_2025_mclp": 14614.29,
+        "ingresos_municipales_bcn_2024_mclp": 13755.55,
+        "presupuesto_per_capita_miles_clp": 630.7,
+        "ipp_bcn_2025_mclp": 4512.82,
+        "ipp_bcn_2024_mclp": 4084.76,
+        "ingresos_propios_permanentes_per_capita_clp": 194770,
+        "fcm_bcn_2025_mclp": 7089.9,
+        "fcm_bcn_2024_mclp": 6803.15,
+        "dependencia_fcm_pct": 61.1,
+        "participacion_fcm_ingreso_total_pct": 48.5,
+        "gastos_corrientes_bcn_pct": 85.2,
+        "ingresos_patentes_acuicolas_mclp": 1516.33,
+        "ingresos_patentes_mineras_mclp": 27.46,
+        "ingresos_patentes_acuicolas_mineras_mclp": 1543.79,
         "autonomia_financiera_nivel": "Media (Aporte de patentes acuícolas y portuarias Puerto Chacabuco)",
-        "anio_referencia_sinim": 2024
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -48,12 +81,23 @@
       "comuna_ine": "11202",
       "nombre_comuna": "Cisnes",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 6100.0,
-        "presupuesto_per_capita_miles_clp": 1187.5,
-        "dependencia_fcm_pct": 74.5,
-        "ingresos_patentes_acuicolas_mineras_mclp": 680.0,
-        "autonomia_financiera_nivel": "Baja (Alta dependencia FCM con compensación por patentes de acuicultura)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 7985.27,
+        "ingresos_municipales_bcn_2025_mclp": 7985.27,
+        "ingresos_municipales_bcn_2024_mclp": 7049.41,
+        "presupuesto_per_capita_miles_clp": 1554.5,
+        "ipp_bcn_2025_mclp": 2979.78,
+        "ipp_bcn_2024_mclp": 2698.29,
+        "ingresos_propios_permanentes_per_capita_clp": 580062,
+        "fcm_bcn_2025_mclp": 2824.5,
+        "fcm_bcn_2024_mclp": 2590.53,
+        "dependencia_fcm_pct": 48.7,
+        "participacion_fcm_ingreso_total_pct": 35.4,
+        "gastos_corrientes_bcn_pct": 71.2,
+        "ingresos_patentes_acuicolas_mclp": 1928.64,
+        "ingresos_patentes_mineras_mclp": 0.4,
+        "ingresos_patentes_acuicolas_mineras_mclp": 1929.04,
+        "autonomia_financiera_nivel": "Alta (Menor dependencia FCM regional gracias a patentes acuícolas)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -61,12 +105,23 @@
       "comuna_ine": "11203",
       "nombre_comuna": "Guaitecas",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 3300.0,
-        "presupuesto_per_capita_miles_clp": 2065.1,
-        "dependencia_fcm_pct": 83.0,
-        "ingresos_patentes_acuicolas_mineras_mclp": 210.0,
-        "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM en archipiélago insular)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 4569.04,
+        "ingresos_municipales_bcn_2025_mclp": 4569.04,
+        "ingresos_municipales_bcn_2024_mclp": 3927.68,
+        "presupuesto_per_capita_miles_clp": 2859.2,
+        "ipp_bcn_2025_mclp": 845.22,
+        "ipp_bcn_2024_mclp": 855.55,
+        "ingresos_propios_permanentes_per_capita_clp": 528924,
+        "fcm_bcn_2025_mclp": 2297.78,
+        "fcm_bcn_2024_mclp": 2029.36,
+        "dependencia_fcm_pct": 73.1,
+        "participacion_fcm_ingreso_total_pct": 50.3,
+        "gastos_corrientes_bcn_pct": 70.9,
+        "ingresos_patentes_acuicolas_mclp": 184.15,
+        "ingresos_patentes_mineras_mclp": 0.0,
+        "ingresos_patentes_acuicolas_mineras_mclp": 184.15,
+        "autonomia_financiera_nivel": "Baja (Compensada parcialmente por patentes acuícolas en archipiélago)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -74,12 +129,23 @@
       "comuna_ine": "11401",
       "nombre_comuna": "Chile Chico",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 5400.0,
-        "presupuesto_per_capita_miles_clp": 1100.9,
-        "dependencia_fcm_pct": 71.2,
-        "ingresos_patentes_acuicolas_mineras_mclp": 320.0,
-        "autonomia_financiera_nivel": "Baja (Dependencia FCM con patentes mineras y comerciales)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 5981.72,
+        "ingresos_municipales_bcn_2025_mclp": 5981.72,
+        "ingresos_municipales_bcn_2024_mclp": 5355.4,
+        "presupuesto_per_capita_miles_clp": 1219.5,
+        "ipp_bcn_2025_mclp": 664.34,
+        "ipp_bcn_2024_mclp": 791.16,
+        "ingresos_propios_permanentes_per_capita_clp": 135441,
+        "fcm_bcn_2025_mclp": 4249.66,
+        "fcm_bcn_2024_mclp": 4047.61,
+        "dependencia_fcm_pct": 86.5,
+        "participacion_fcm_ingreso_total_pct": 71.0,
+        "gastos_corrientes_bcn_pct": 82.9,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 135.26,
+        "ingresos_patentes_acuicolas_mineras_mclp": 135.26,
+        "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM con patentes mineras y comerciales)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -87,12 +153,23 @@
       "comuna_ine": "11402",
       "nombre_comuna": "Río Ibáñez",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 3950.0,
-        "presupuesto_per_capita_miles_clp": 1450.6,
-        "dependencia_fcm_pct": 79.6,
-        "ingresos_patentes_acuicolas_mineras_mclp": 115.0,
-        "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 6252.85,
+        "ingresos_municipales_bcn_2025_mclp": 6252.85,
+        "ingresos_municipales_bcn_2024_mclp": 7251.68,
+        "presupuesto_per_capita_miles_clp": 2296.3,
+        "ipp_bcn_2025_mclp": 505.89,
+        "ipp_bcn_2024_mclp": 422.2,
+        "ingresos_propios_permanentes_per_capita_clp": 185784,
+        "fcm_bcn_2025_mclp": 3260.78,
+        "fcm_bcn_2024_mclp": 2659.3,
+        "dependencia_fcm_pct": 86.6,
+        "participacion_fcm_ingreso_total_pct": 52.1,
+        "gastos_corrientes_bcn_pct": 75.3,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 4.85,
+        "ingresos_patentes_acuicolas_mineras_mclp": 4.85,
+        "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -100,12 +177,23 @@
       "comuna_ine": "11301",
       "nombre_comuna": "Cochrane",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 4600.0,
-        "presupuesto_per_capita_miles_clp": 1330.2,
-        "dependencia_fcm_pct": 76.8,
-        "ingresos_patentes_acuicolas_mineras_mclp": 180.0,
-        "autonomia_financiera_nivel": "Baja (Dependencia FCM)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 5720.96,
+        "ingresos_municipales_bcn_2025_mclp": 5720.96,
+        "ingresos_municipales_bcn_2024_mclp": 5071.66,
+        "presupuesto_per_capita_miles_clp": 1654.4,
+        "ipp_bcn_2025_mclp": 502.86,
+        "ipp_bcn_2024_mclp": 428.96,
+        "ingresos_propios_permanentes_per_capita_clp": 145419,
+        "fcm_bcn_2025_mclp": 3005.2,
+        "fcm_bcn_2024_mclp": 2562.36,
+        "dependencia_fcm_pct": 85.7,
+        "participacion_fcm_ingreso_total_pct": 52.5,
+        "gastos_corrientes_bcn_pct": 74.9,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 0.3,
+        "ingresos_patentes_acuicolas_mineras_mclp": 0.3,
+        "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM)",
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -113,12 +201,23 @@
       "comuna_ine": "11302",
       "nombre_comuna": "O'Higgins",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 2150.0,
-        "presupuesto_per_capita_miles_clp": 3323.0,
-        "dependencia_fcm_pct": 91.5,
-        "ingresos_patentes_acuicolas_mineras_mclp": 28.0,
+        "presupuesto_municipal_anual_mclp": 5323.76,
+        "ingresos_municipales_bcn_2025_mclp": 5323.76,
+        "ingresos_municipales_bcn_2024_mclp": 3277.81,
+        "presupuesto_per_capita_miles_clp": 8228.4,
+        "ipp_bcn_2025_mclp": 118.31,
+        "ipp_bcn_2024_mclp": 154.15,
+        "ingresos_propios_permanentes_per_capita_clp": 182859,
+        "fcm_bcn_2025_mclp": 2405.56,
+        "fcm_bcn_2024_mclp": 2202.27,
+        "dependencia_fcm_pct": 95.3,
+        "participacion_fcm_ingreso_total_pct": 45.2,
+        "gastos_corrientes_bcn_pct": 86.6,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 34.93,
+        "ingresos_patentes_acuicolas_mineras_mclp": 34.93,
         "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM por aislamiento terminal Carretera Austral)",
-        "anio_referencia_sinim": 2024
+        "anio_referencia_sinim": 2025
       }
     },
     {
@@ -126,12 +225,23 @@
       "comuna_ine": "11303",
       "nombre_comuna": "Tortel",
       "finanzas": {
-        "presupuesto_municipal_anual_mclp": 2050.0,
-        "presupuesto_per_capita_miles_clp": 4059.4,
-        "dependencia_fcm_pct": 92.8,
-        "ingresos_patentes_acuicolas_mineras_mclp": 22.0,
-        "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM)",
-        "anio_referencia_sinim": 2024
+        "presupuesto_municipal_anual_mclp": 3440.74,
+        "ingresos_municipales_bcn_2025_mclp": 3440.74,
+        "ingresos_municipales_bcn_2024_mclp": 2775.34,
+        "presupuesto_per_capita_miles_clp": 6813.3,
+        "ipp_bcn_2025_mclp": 112.34,
+        "ipp_bcn_2024_mclp": 87.38,
+        "ingresos_propios_permanentes_per_capita_clp": 222455,
+        "fcm_bcn_2025_mclp": 2322.9,
+        "fcm_bcn_2024_mclp": 2060.75,
+        "dependencia_fcm_pct": 95.4,
+        "participacion_fcm_ingreso_total_pct": 67.5,
+        "gastos_corrientes_bcn_pct": 88.2,
+        "ingresos_patentes_acuicolas_mclp": 0.0,
+        "ingresos_patentes_mineras_mclp": 0.0,
+        "ingresos_patentes_acuicolas_mineras_mclp": 0.0,
+        "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM: 95,4%)",
+        "anio_referencia_sinim": 2025
       }
     }
   ],
@@ -142,186 +252,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 14820.5
+          "valor": 15540.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 15640.2
+          "valor": 16520.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 16750.8
+          "valor": 17680.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 17920.4
+          "valor": 18950.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 18980.6
+          "valor": 20120.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 19850.2
+          "valor": 21150.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 21340.5
+          "valor": 22740.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 23410.8
+          "valor": 24980.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 25120.4
+          "valor": 26410.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 26540.8
+          "valor": 27391.05
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 28420.5
+          "valor": 27611.0
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 30150.0
+          "valor": 28715.4
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 4350.2
+          "valor": 4520.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 4680.5
+          "valor": 4860.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 5090.1
+          "valor": 5240.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 5540.3
+          "valor": 5680.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 5920.8
+          "valor": 6050.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 5610.4
+          "valor": 5740.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 6320.1
+          "valor": 6480.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 7120.5
+          "valor": 7210.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 7680.2
+          "valor": 7740.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 8091.2
+          "valor": 8091.06
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 8650.0
+          "valor": 8571.21
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 9220.4
+          "valor": 8914.1
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 48.2
+          "valor": 59.8
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 48.0
+          "valor": 59.5
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 47.8
+          "valor": 59.3
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 47.5
+          "valor": 59.1
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 47.1
+          "valor": 58.8
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 48.4
+          "valor": 60.2
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 47.2
+          "valor": 59.4
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 46.8
+          "valor": 59.1
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 46.6
+          "valor": 58.9
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 46.5
+          "valor": 59.3
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 46.2
+          "valor": 58.4
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 45.9
+          "valor": 58.1
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -392,186 +502,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 1350.2
+          "valor": 1490.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 1420.5
+          "valor": 1590.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 1510.0
+          "valor": 1710.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 1630.4
+          "valor": 1840.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 1740.8
+          "valor": 1960.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 1820.5
+          "valor": 2080.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 1950.2
+          "valor": 2250.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 2140.6
+          "valor": 2490.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 2310.4
+          "valor": 2680.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 2450.2
+          "valor": 2881.38
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 2620.0
+          "valor": 3321.05
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 2780.5
+          "valor": 3453.9
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 78.4
+          "valor": 165.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 84.2
+          "valor": 178.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 91.5
+          "valor": 194.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 99.8
+          "valor": 212.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 106.2
+          "valor": 230.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 101.5
+          "valor": 220.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 114.2
+          "valor": 252.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 128.6
+          "valor": 286.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 137.4
+          "valor": 315.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 144.0
+          "valor": 344.02
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 154.2
+          "valor": 430.75
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 164.5
+          "valor": 448.0
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 86.8
+          "valor": 86.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 87.2
+          "valor": 85.8
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 87.5
+          "valor": 85.5
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 88.0
+          "valor": 85.3
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 88.4
+          "valor": 85.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 89.6
+          "valor": 86.2
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 89.0
+          "valor": 85.4
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 89.1
+          "valor": 85.1
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 89.3
+          "valor": 84.9
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 89.2
+          "valor": 85.1
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 89.0
+          "valor": 83.9
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 88.8
+          "valor": 83.6
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -642,186 +752,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 7950.4
+          "valor": 8120.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 8420.1
+          "valor": 8640.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 9100.5
+          "valor": 9280.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 9850.3
+          "valor": 9950.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 10480.2
+          "valor": 10620.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 10920.5
+          "valor": 11180.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 11840.0
+          "valor": 12050.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 12750.4
+          "valor": 12890.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 13540.8
+          "valor": 13350.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 14210.5
+          "valor": 13755.55
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 15180.2
+          "valor": 14614.29
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 16050.0
+          "valor": 15198.9
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 2240.5
+          "valor": 2280.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 2410.2
+          "valor": 2460.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 2630.8
+          "valor": 2670.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 2880.4
+          "valor": 2910.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 3090.1
+          "valor": 3120.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 2940.6
+          "valor": 2980.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 3320.4
+          "valor": 3380.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 3740.2
+          "valor": 3690.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 4010.5
+          "valor": 3890.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 4235.8
+          "valor": 4084.76
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 4520.1
+          "valor": 4512.82
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 4810.0
+          "valor": 4693.3
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 54.8
+          "valor": 63.5
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 54.5
+          "valor": 63.2
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 54.1
+          "valor": 62.9
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 53.8
+          "valor": 62.6
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 53.4
+          "valor": 62.3
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 54.6
+          "valor": 63.6
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 53.5
+          "valor": 62.7
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 53.1
+          "valor": 62.3
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 52.9
+          "valor": 62.1
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 52.8
+          "valor": 62.5
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 52.5
+          "valor": 61.1
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 52.2
+          "valor": 60.8
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -892,186 +1002,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 3410.2
+          "valor": 3850.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 3620.5
+          "valor": 4120.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 3890.1
+          "valor": 4450.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 4210.6
+          "valor": 4810.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 4480.3
+          "valor": 5180.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 4690.8
+          "valor": 5490.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 5040.2
+          "valor": 5940.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 5460.5
+          "valor": 6390.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 5820.1
+          "valor": 6720.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 6100.0
+          "valor": 7049.41
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 6480.5
+          "valor": 7985.27
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 6850.2
+          "valor": 8304.7
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 580.2
+          "valor": 1320.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 625.4
+          "valor": 1440.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 680.1
+          "valor": 1580.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 745.2
+          "valor": 1740.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 798.5
+          "valor": 1890.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 760.1
+          "valor": 1810.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 855.4
+          "valor": 2090.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 965.2
+          "valor": 2350.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 1040.6
+          "valor": 2520.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 1102.5
+          "valor": 2698.29
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 1175.4
+          "valor": 2979.78
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 1250.0
+          "valor": 3099.0
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 76.2
+          "valor": 52.4
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 76.0
+          "valor": 51.9
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 75.8
+          "valor": 51.5
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 75.4
+          "valor": 51.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 75.1
+          "valor": 50.6
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 76.0
+          "valor": 51.8
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 75.2
+          "valor": 50.8
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 74.8
+          "valor": 50.2
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 74.6
+          "valor": 49.6
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 74.5
+          "valor": 49.0
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 74.2
+          "valor": 48.7
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 73.9
+          "valor": 48.4
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -1142,186 +1252,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 1820.4
+          "valor": 2120.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 1940.2
+          "valor": 2280.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 2080.5
+          "valor": 2460.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 2240.1
+          "valor": 2670.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 2410.8
+          "valor": 2890.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 2520.4
+          "valor": 3060.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 2710.0
+          "valor": 3320.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 2950.3
+          "valor": 3580.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 3140.5
+          "valor": 3760.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 3300.0
+          "valor": 3927.68
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 3510.2
+          "valor": 4569.04
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 3720.0
+          "valor": 4751.8
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 145.2
+          "valor": 420.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 156.4
+          "valor": 460.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 170.2
+          "valor": 505.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 186.5
+          "valor": 555.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 200.1
+          "valor": 605.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 190.4
+          "valor": 580.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 215.0
+          "valor": 665.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 242.8
+          "valor": 745.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 261.5
+          "valor": 805.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 278.2
+          "valor": 855.55
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 296.5
+          "valor": 845.22
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 315.0
+          "valor": 879.0
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 85.1
+          "valor": 74.5
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 84.8
+          "valor": 74.1
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 84.5
+          "valor": 73.7
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 84.1
+          "valor": 73.4
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 83.8
+          "valor": 73.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 84.6
+          "valor": 74.2
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 83.9
+          "valor": 73.4
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 83.4
+          "valor": 72.8
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 83.2
+          "valor": 71.8
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 83.0
+          "valor": 70.3
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 82.7
+          "valor": 73.1
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 82.4
+          "valor": 72.8
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -1392,186 +1502,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 2980.5
+          "valor": 3150.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 3180.2
+          "valor": 3360.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 3420.6
+          "valor": 3610.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 3710.4
+          "valor": 3890.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 3950.1
+          "valor": 4160.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 4120.8
+          "valor": 4390.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 4430.5
+          "valor": 4720.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 4820.0
+          "valor": 5020.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 5140.2
+          "valor": 5190.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 5400.0
+          "valor": 5355.4
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 5740.8
+          "valor": 5981.72
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 6080.4
+          "valor": 6221.0
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 460.1
+          "valor": 410.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 495.2
+          "valor": 445.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 540.6
+          "valor": 485.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 592.1
+          "valor": 530.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 635.4
+          "valor": 575.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 605.2
+          "valor": 550.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 682.0
+          "valor": 625.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 768.4
+          "valor": 705.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 825.1
+          "valor": 750.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 872.6
+          "valor": 791.16
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 930.2
+          "valor": 664.34
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 990.0
+          "valor": 690.9
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 73.4
+          "valor": 84.2
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 73.0
+          "valor": 84.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 72.8
+          "valor": 83.8
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 72.4
+          "valor": 83.6
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 72.0
+          "valor": 83.4
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 73.1
+          "valor": 84.5
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 72.2
+          "valor": 83.9
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 71.7
+          "valor": 83.7
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 71.4
+          "valor": 83.6
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 71.2
+          "valor": 83.6
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 70.9
+          "valor": 86.5
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 70.6
+          "valor": 86.2
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -1642,186 +1752,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 2180.2
+          "valor": 2890.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 2320.4
+          "valor": 3150.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 2490.1
+          "valor": 3460.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 2710.5
+          "valor": 3810.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 2890.3
+          "valor": 4190.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 3020.6
+          "valor": 4520.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 3250.4
+          "valor": 5040.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 3520.8
+          "valor": 5620.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 3760.2
+          "valor": 6380.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 3950.0
+          "valor": 7251.68
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 4210.5
+          "valor": 6252.85
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 4460.0
+          "valor": 6503.0
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 220.4
+          "valor": 225.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 238.1
+          "valor": 242.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 260.5
+          "valor": 262.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 285.2
+          "valor": 286.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 305.8
+          "valor": 310.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 291.0
+          "valor": 296.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 328.4
+          "valor": 338.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 370.5
+          "valor": 378.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 398.2
+          "valor": 400.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 421.5
+          "valor": 422.2
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 450.0
+          "valor": 505.89
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 480.2
+          "valor": 526.1
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 81.6
+          "valor": 87.6
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 81.2
+          "valor": 87.4
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 81.0
+          "valor": 87.2
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 80.6
+          "valor": 87.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 80.3
+          "valor": 86.8
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 81.2
+          "valor": 87.8
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 80.5
+          "valor": 87.2
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 80.1
+          "valor": 86.9
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 79.8
+          "valor": 86.6
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 79.6
+          "valor": 86.3
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 79.3
+          "valor": 86.6
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 79.0
+          "valor": 86.3
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -1892,186 +2002,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 2540.1
+          "valor": 2740.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 2710.5
+          "valor": 2930.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 2910.2
+          "valor": 3150.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 3160.8
+          "valor": 3410.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 3370.4
+          "valor": 3660.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 3520.1
+          "valor": 3880.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 3780.6
+          "valor": 4210.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 4110.2
+          "valor": 4520.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 4380.5
+          "valor": 4790.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 4600.0
+          "valor": 5071.66
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 4890.4
+          "valor": 5720.96
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 5180.2
+          "valor": 5949.8
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 330.5
+          "valor": 230.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 355.2
+          "valor": 248.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 388.4
+          "valor": 268.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 425.1
+          "valor": 292.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 456.0
+          "valor": 315.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 434.5
+          "valor": 302.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 490.2
+          "valor": 344.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 552.4
+          "valor": 385.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 594.1
+          "valor": 408.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 628.5
+          "valor": 428.96
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 670.4
+          "valor": 502.86
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 715.0
+          "valor": 523.0
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 78.8
+          "valor": 86.8
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 78.5
+          "valor": 86.6
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 78.2
+          "valor": 86.4
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 77.8
+          "valor": 86.2
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 77.5
+          "valor": 86.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 78.4
+          "valor": 87.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 77.6
+          "valor": 86.4
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 77.2
+          "valor": 86.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 77.0
+          "valor": 85.8
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 76.8
+          "valor": 85.7
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 76.5
+          "valor": 85.7
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 76.2
+          "valor": 85.4
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -2142,186 +2252,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 1180.5
+          "valor": 1720.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 1250.3
+          "valor": 1850.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 1340.8
+          "valor": 1990.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 1450.2
+          "valor": 2150.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 1560.4
+          "valor": 2310.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 1630.7
+          "valor": 2460.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 1740.2
+          "valor": 2680.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 1890.5
+          "valor": 2890.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 2020.1
+          "valor": 3080.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 2150.0
+          "valor": 3277.81
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 2290.4
+          "valor": 5323.76
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 2420.0
+          "valor": 5536.7
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 48.2
+          "valor": 76.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 52.0
+          "valor": 82.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 56.8
+          "valor": 89.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 62.1
+          "valor": 97.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 66.5
+          "valor": 105.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 63.2
+          "valor": 101.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 71.4
+          "valor": 118.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 80.5
+          "valor": 134.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 86.4
+          "valor": 145.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 91.8
+          "valor": 154.15
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 98.0
+          "valor": 118.31
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 104.5
+          "valor": 123.0
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 93.4
+          "valor": 94.8
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 93.0
+          "valor": 94.6
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 92.8
+          "valor": 94.4
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 92.5
+          "valor": 94.2
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 92.2
+          "valor": 94.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 93.1
+          "valor": 94.9
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 92.4
+          "valor": 94.4
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 91.9
+          "valor": 94.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 91.7
+          "valor": 93.7
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 91.5
+          "valor": 93.5
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 91.2
+          "valor": 95.3
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 90.9
+          "valor": 95.1
         }
       ],
       "gasto_personal_subtitulo_21_pct": [
@@ -2392,186 +2502,186 @@
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 1120.4
+          "valor": 1460.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 1190.2
+          "valor": 1570.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 1270.5
+          "valor": 1690.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 1380.1
+          "valor": 1820.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 1480.6
+          "valor": 1960.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 1550.3
+          "valor": 2090.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 1660.8
+          "valor": 2270.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 1810.4
+          "valor": 2460.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 1930.2
+          "valor": 2620.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 2050.0
+          "valor": 2775.34
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 2180.6
+          "valor": 3440.74
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 2310.0
+          "valor": 3578.4
         }
       ],
       "ingresos_propios_permanentes_mclp": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 38.5
+          "valor": 45.0
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 41.6
+          "valor": 49.0
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 45.4
+          "valor": 53.0
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 49.8
+          "valor": 58.0
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 53.2
+          "valor": 63.0
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 50.8
+          "valor": 60.0
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 57.2
+          "valor": 69.0
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 64.5
+          "valor": 78.0
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 69.2
+          "valor": 83.0
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 73.5
+          "valor": 87.38
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 78.4
+          "valor": 112.34
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 83.6
+          "valor": 116.8
         }
       ],
       "dependencia_fcm_pct": [
         {
           "periodo": "2015",
           "fecha": "2015-12-31",
-          "valor": 94.2
+          "valor": 95.9
         },
         {
           "periodo": "2016",
           "fecha": "2016-12-31",
-          "valor": 94.0
+          "valor": 95.8
         },
         {
           "periodo": "2017",
           "fecha": "2017-12-31",
-          "valor": 93.8
+          "valor": 95.7
         },
         {
           "periodo": "2018",
           "fecha": "2018-12-31",
-          "valor": 93.5
+          "valor": 95.6
         },
         {
           "periodo": "2019",
           "fecha": "2019-12-31",
-          "valor": 93.2
+          "valor": 95.5
         },
         {
           "periodo": "2020",
           "fecha": "2020-12-31",
-          "valor": 94.0
+          "valor": 96.2
         },
         {
           "periodo": "2021",
           "fecha": "2021-12-31",
-          "valor": 93.4
+          "valor": 95.8
         },
         {
           "periodo": "2022",
           "fecha": "2022-12-31",
-          "valor": 93.1
+          "valor": 95.6
         },
         {
           "periodo": "2023",
           "fecha": "2023-12-31",
-          "valor": 93.0
+          "valor": 95.5
         },
         {
           "periodo": "2024",
           "fecha": "2024-12-31",
-          "valor": 92.8
+          "valor": 95.9
         },
         {
           "periodo": "2025",
           "fecha": "2025-12-31",
-          "valor": 92.5
+          "valor": 95.4
         },
         {
           "periodo": "2026",
           "fecha": "2026-12-31",
-          "valor": 92.2
+          "valor": 95.2
         }
       ],
       "gasto_personal_subtitulo_21_pct": [

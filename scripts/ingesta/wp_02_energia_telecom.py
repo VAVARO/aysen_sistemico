@@ -608,6 +608,7 @@ def generate_systemic_dataset():
     with open(RAW_DIR / "infraestructura_combustibles_red_electrica.json", "r", encoding="utf-8") as f:
         _inf_raw = json.load(f)
     nodos_georreferenciados = []
+    # Solo centrales CNE/Edelaysen en nodo-elec-* (nunca atributos de combustibles o FOA)
     for _c in _cne_raw.get("centrales", []):
         nodos_georreferenciados.append({
             "id": "nodo-elec-" + str(_c["id"]).lower(),
@@ -625,6 +626,7 @@ def generate_systemic_dataset():
             },
             "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/",
         })
+    # Solo nodos telecomunicaciones/FOA en nodo-foa-*
     for _fn in _foa_raw.get("nodos", []):
         nodos_georreferenciados.append({
             "id": "nodo-foa-" + str(_fn["id"]).lower(),
@@ -642,8 +644,15 @@ def generate_systemic_dataset():
             },
             "source_url": "https://www.subtel.gob.cl/foa/",
         })
+    # Solo infraestructura puntual exacta (PLANT-COMB-PUERTO-CHACABUCO y SUBESTACION-ELEC-COYHAIQUE)
     for _ir in _inf_raw.get("nodos", []):
-        _nid = "nodo-combustibles-chacabuco" if "CHACABUCO" in _ir["id"] else "nodo-elec-subestacion-coyhaique"
+        ir_id = str(_ir.get("id", ""))
+        if ir_id == "PLANT-COMB-PUERTO-CHACABUCO":
+            _nid = "nodo-combustibles-chacabuco"
+        elif ir_id == "SUBESTACION-ELEC-COYHAIQUE":
+            _nid = "nodo-elec-subestacion-coyhaique"
+        else:
+            continue
         nodos_georreferenciados.append({
             "id": _nid,
             "nombre": _ir["nombre"],
@@ -689,7 +698,11 @@ def generate_systemic_dataset():
     if str(Path(__file__).resolve().parent) not in _nd_sys.path:
         _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
     from non_destructive_merge import save_systemic_json_non_destructive
-    save_systemic_json_non_destructive(OUTPUT_JSON, dataset)
+    save_systemic_json_non_destructive(
+        OUTPUT_JSON,
+        dataset,
+        live_overrides={"nodos_georreferenciados": nodos_georreferenciados},
+    )
 
     print(f"\n[OK] Generado dataset sistémico: {OUTPUT_JSON.relative_to(REPO_ROOT)}")
     print(f"     Comunas: {len(comunas_data)} | Nodos: {len(nodos_georreferenciados)}")

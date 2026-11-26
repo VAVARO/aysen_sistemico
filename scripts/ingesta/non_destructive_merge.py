@@ -21,11 +21,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
 KEY_FIELDS: Sequence[str] = (
-    "comuna_ine",
-    "codigo_comuna",
+    "id",
     "holding_id",
     "codigo_acs",
-    "id",
+    "comuna_ine",
+    "codigo_comuna",
     "nombre",
     "nombre_comuna",
 )

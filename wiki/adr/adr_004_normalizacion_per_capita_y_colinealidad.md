@@ -38,16 +38,16 @@ Debido a que Coyhaique concentra 61.210 de los 100.745 habitantes de Aysén (60,
 
 | Comuna | Población Censo 2024 (hab.) | Participación Poblacional Regional (%) | Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab) | Presupuesto Municipal Per Cápita (M$/hab) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 57.823 | 57,4 | 256,8 | 459 |
-| [[comunas/lago_verde|Lago Verde]] | 779 | 0,77 | 2.824,1 | 3.145,3 |
-| [[comunas/aysen|Aysén]] | 23.170 | 23 | 423 | 613,3 |
-| [[comunas/cisnes|Cisnes]] | 5.137 | 5,1 | 1.090,1 | 1.187,5 |
-| [[comunas/guaitecas|Guaitecas]] | 1.598 | 1,59 | 2.127,7 | 2.065,1 |
-| [[comunas/chile_chico|Chile Chico]] | 4.905 | 4,87 | 999 | 1.100,9 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 2.723 | 2,7 | 1.505,7 | 1.450,6 |
-| [[comunas/cochrane|Cochrane]] | 3.458 | 3,43 | 1.388,1 | 1.330,2 |
-| [[comunas/ohiggins|O'Higgins]] | 647 | 0,64 | 3.709,4 | 3.323 |
-| [[comunas/tortel|Tortel]] | 505 | 0,5 | 5.148,5 | 4.059,4 |
+| [[comunas/coyhaique|Coyhaique]] | 57.823 | 57,4 | 256,8 | 477,5 |
+| [[comunas/lago_verde|Lago Verde]] | 779 | 0,77 | 2.824,1 | 4.263,2 |
+| [[comunas/aysen|Aysén]] | 23.170 | 23 | 423 | 630,7 |
+| [[comunas/cisnes|Cisnes]] | 5.137 | 5,1 | 1.090,1 | 1.554,5 |
+| [[comunas/guaitecas|Guaitecas]] | 1.598 | 1,59 | 2.127,7 | 2.859,2 |
+| [[comunas/chile_chico|Chile Chico]] | 4.905 | 4,87 | 999 | 1.219,5 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 2.723 | 2,7 | 1.505,7 | 2.296,3 |
+| [[comunas/cochrane|Cochrane]] | 3.458 | 3,43 | 1.388,1 | 1.654,4 |
+| [[comunas/ohiggins|O'Higgins]] | 647 | 0,64 | 3.709,4 | 8.228,4 |
+| [[comunas/tortel|Tortel]] | 505 | 0,5 | 5.148,5 | 6.813,3 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

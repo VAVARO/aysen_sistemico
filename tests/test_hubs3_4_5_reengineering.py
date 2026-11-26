@@ -224,15 +224,15 @@ class TestHubs345Reengineering(unittest.TestCase):
         p_by_comuna = {r[0]: (r[1], r[2], r[3], r[4]) for r in n15["tableRows"]}
         for interior in ["Coyhaique", "Lago Verde", "Chile Chico", "Río Ibáñez", "Cochrane", "O'Higgins"]:
             self.assertEqual(p_by_comuna[interior][2], "0", f"Patente acuicola no nula en {interior}")
-        self.assertEqual(p_by_comuna["O'Higgins"][0], "2.150")
-        self.assertEqual(p_by_comuna["Tortel"][0], "2.050")
+        self.assertEqual(p_by_comuna["O'Higgins"][0], "5.323,76")
+        self.assertEqual(p_by_comuna["Tortel"][0], "3.440,74")
 
         n16 = self.bundle["nodesById"]["16"]
         self.assertIn("Aporte FCM (M$)", n16["tableColumns"])
         fcm_vals = n16["chartSpec"]["datasets"][0]["data"]
-        self.assertEqual(fcm_vals[9], 92.8)
-        self.assertEqual(fcm_vals[8], 91.5)
-        self.assertEqual(fcm_vals[1], 89.2)
+        self.assertEqual(fcm_vals[9], 95.4)
+        self.assertEqual(fcm_vals[8], 95.3)
+        self.assertEqual(fcm_vals[1], 83.9)
 
         for c in self.bundle["comunas"]:
             for k in ("fndr_per_capita_mclp", "fndr_gore_2023_per_capita_mclp", "royalty_fet_peso_presupuesto_pct", "participacion_municipales_2024_pct", "ratio_padron_poblacion_pct"):
@@ -249,7 +249,7 @@ class TestHubs345Reengineering(unittest.TestCase):
         idx2020 = gov_presets[3]["config"]["customChartSpec"]["labels"].index("2020")
         self.assertEqual(gov_presets[3]["config"]["customChartSpec"]["datasets"][1]["data"][idx2020], 17714.6)
         self.assertEqual(gov_presets[3]["config"]["customChartSpec"]["datasets"][2]["data"][idx2020], 17510.2)
-        self.assertEqual(gov_presets[4]["config"]["mirror_series"]["structural_by_macrozona"], {"norte": 78.8, "centro": 62.8, "sur": 82.4})
+        self.assertEqual(gov_presets[4]["config"]["mirror_series"]["structural_by_macrozona"], {"norte": 68.6, "centro": 68.7, "sur": 90.7})
 
     # ------------------------------------------------------------------
     # BLOQUE HUB III: ENERGIA, CONECTIVIDAD MULTIMODAL Y TELECOMUNICACIONES
@@ -394,7 +394,8 @@ class TestHubs345Reengineering(unittest.TestCase):
         self.assertIn("3.207,73", q["iv1_roy"]["reply"])
         self.assertIn("472,58", q["iv1_roy"]["reply"])
         self.assertIn("392,86", q["iv1_roy"]["reply"])
-        self.assertIn("13,6%", q["iv1_roy"]["reply"])
+        self.assertIn("8,1%", q["iv1_roy"]["reply"])
+        self.assertIn("8,5%", q["iv1_roy"]["reply"])
 
         iv1d_keys = {q["iv1_dist"]["chart"]["varX"], q["iv1_dist"]["chart"]["varY"], q["iv1_dist"]["chart"].get("varZ")}
         for m in (q["iv1_dist"]["chart"].get("multiCharts") or []):

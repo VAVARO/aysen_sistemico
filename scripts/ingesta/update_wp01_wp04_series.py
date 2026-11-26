@@ -32,46 +32,89 @@ SYSTEMIC_DIR = DATA_DIR / "systemic"
 
 PERIODOS = [str(y) for y in range(2015, 2027)]
 
-# Presupuesto Municipal Anual (M$ CLP) - SINIM SUBDERE
+# Ingresos / Presupuesto Municipal Efectivo (M$ CLP) - SINIM / BCN Reportes Comunales 2025-2026
+# Indices 2015..2023 escalados/BNC; 2024 ([9], sum 78736.96) y 2025 ([10], sum 84820.68) exactos BCN; 2026 ([11]) proy.
 WP01_PRESUPUESTO = {
-    "11101": [14820.5, 15640.2, 16750.8, 17920.4, 18980.6, 19850.2, 21340.5, 23410.8, 25120.4, 26540.8, 28420.5, 30150.0],
-    "11102": [1350.2, 1420.5, 1510.0, 1630.4, 1740.8, 1820.5, 1950.2, 2140.6, 2310.4, 2450.2, 2620.0, 2780.5],
-    "11201": [7950.4, 8420.1, 9100.5, 9850.3, 10480.2, 10920.5, 11840.0, 12750.4, 13540.8, 14210.5, 15180.2, 16050.0],
-    "11202": [3410.2, 3620.5, 3890.1, 4210.6, 4480.3, 4690.8, 5040.2, 5460.5, 5820.1, 6100.0, 6480.5, 6850.2],
-    "11203": [1820.4, 1940.2, 2080.5, 2240.1, 2410.8, 2520.4, 2710.0, 2950.3, 3140.5, 3300.0, 3510.2, 3720.0],
-    "11401": [2980.5, 3180.2, 3420.6, 3710.4, 3950.1, 4120.8, 4430.5, 4820.0, 5140.2, 5400.0, 5740.8, 6080.4],
-    "11402": [2180.2, 2320.4, 2490.1, 2710.5, 2890.3, 3020.6, 3250.4, 3520.8, 3760.2, 3950.0, 4210.5, 4460.0],
-    "11301": [2540.1, 2710.5, 2910.2, 3160.8, 3370.4, 3520.1, 3780.6, 4110.2, 4380.5, 4600.0, 4890.4, 5180.2],
-    "11302": [1180.5, 1250.3, 1340.8, 1450.2, 1560.4, 1630.7, 1740.2, 1890.5, 2020.1, 2150.0, 2290.4, 2420.0],
-    "11303": [1120.4, 1190.2, 1270.5, 1380.1, 1480.6, 1550.3, 1660.8, 1810.4, 1930.2, 2050.0, 2180.6, 2310.0]
+    "11101": [15540.0, 16520.0, 17680.0, 18950.0, 20120.0, 21150.0, 22740.0, 24980.0, 26410.0, 27391.05, 27611.00, 28715.4],
+    "11102": [1490.0, 1590.0, 1710.0, 1840.0, 1960.0, 2080.0, 2250.0, 2490.0, 2680.0, 2881.38, 3321.05, 3453.9],
+    "11201": [8120.0, 8640.0, 9280.0, 9950.0, 10620.0, 11180.0, 12050.0, 12890.0, 13350.0, 13755.55, 14614.29, 15198.9],
+    "11202": [3850.0, 4120.0, 4450.0, 4810.0, 5180.0, 5490.0, 5940.0, 6390.0, 6720.0, 7049.41, 7985.27, 8304.7],
+    "11203": [2120.0, 2280.0, 2460.0, 2670.0, 2890.0, 3060.0, 3320.0, 3580.0, 3760.0, 3927.68, 4569.04, 4751.8],
+    "11401": [3150.0, 3360.0, 3610.0, 3890.0, 4160.0, 4390.0, 4720.0, 5020.0, 5190.0, 5355.40, 5981.72, 6221.0],
+    "11402": [2890.0, 3150.0, 3460.0, 3810.0, 4190.0, 4520.0, 5040.0, 5620.0, 6380.0, 7251.68, 6252.85, 6503.0],
+    "11301": [2740.0, 2930.0, 3150.0, 3410.0, 3660.0, 3880.0, 4210.0, 4520.0, 4790.0, 5071.66, 5720.96, 5949.8],
+    "11302": [1720.0, 1850.0, 1990.0, 2150.0, 2310.0, 2460.0, 2680.0, 2890.0, 3080.0, 3277.81, 5323.76, 5536.7],
+    "11303": [1460.0, 1570.0, 1690.0, 1820.0, 1960.0, 2090.0, 2270.0, 2460.0, 2620.0, 2775.34, 3440.74, 3578.4],
 }
 
-# Ingresos Propios Permanentes (IPP M$ CLP) - SINIM SUBDERE
+# Ingresos Propios Permanentes (IPP M$ CLP) - SINIM / BCN 2024 ([9]) y 2025 ([10], sum 19243.52) exactos
 WP01_IPP = {
-    "11101": [4350.2, 4680.5, 5090.1, 5540.3, 5920.8, 5610.4, 6320.1, 7120.5, 7680.2, 8091.2, 8650.0, 9220.4],
-    "11102": [78.4, 84.2, 91.5, 99.8, 106.2, 101.5, 114.2, 128.6, 137.4, 144.0, 154.2, 164.5],
-    "11201": [2240.5, 2410.2, 2630.8, 2880.4, 3090.1, 2940.6, 3320.4, 3740.2, 4010.5, 4235.8, 4520.1, 4810.0],
-    "11202": [580.2, 625.4, 680.1, 745.2, 798.5, 760.1, 855.4, 965.2, 1040.6, 1102.5, 1175.4, 1250.0],
-    "11203": [145.2, 156.4, 170.2, 186.5, 200.1, 190.4, 215.0, 242.8, 261.5, 278.2, 296.5, 315.0],
-    "11401": [460.1, 495.2, 540.6, 592.1, 635.4, 605.2, 682.0, 768.4, 825.1, 872.6, 930.2, 990.0],
-    "11402": [220.4, 238.1, 260.5, 285.2, 305.8, 291.0, 328.4, 370.5, 398.2, 421.5, 450.0, 480.2],
-    "11301": [330.5, 355.2, 388.4, 425.1, 456.0, 434.5, 490.2, 552.4, 594.1, 628.5, 670.4, 715.0],
-    "11302": [48.2, 52.0, 56.8, 62.1, 66.5, 63.2, 71.4, 80.5, 86.4, 91.8, 98.0, 104.5],
-    "11303": [38.5, 41.6, 45.4, 49.8, 53.2, 50.8, 57.2, 64.5, 69.2, 73.5, 78.4, 83.6]
+    "11101": [4520.0, 4860.0, 5240.0, 5680.0, 6050.0, 5740.0, 6480.0, 7210.0, 7740.0, 8091.06, 8571.21, 8914.1],
+    "11102": [165.0, 178.0, 194.0, 212.0, 230.0, 220.0, 252.0, 286.0, 315.0, 344.02, 430.75, 448.0],
+    "11201": [2280.0, 2460.0, 2670.0, 2910.0, 3120.0, 2980.0, 3380.0, 3690.0, 3890.0, 4084.76, 4512.82, 4693.3],
+    "11202": [1320.0, 1440.0, 1580.0, 1740.0, 1890.0, 1810.0, 2090.0, 2350.0, 2520.0, 2698.29, 2979.78, 3099.0],
+    "11203": [420.0, 460.0, 505.0, 555.0, 605.0, 580.0, 665.0, 745.0, 805.0, 855.55, 845.22, 879.0],
+    "11401": [410.0, 445.0, 485.0, 530.0, 575.0, 550.0, 625.0, 705.0, 750.0, 791.16, 664.34, 690.9],
+    "11402": [225.0, 242.0, 262.0, 286.0, 310.0, 296.0, 338.0, 378.0, 400.0, 422.20, 505.89, 526.1],
+    "11301": [230.0, 248.0, 268.0, 292.0, 315.0, 302.0, 344.0, 385.0, 408.0, 428.96, 502.86, 523.0],
+    "11302": [76.0, 82.0, 89.0, 97.0, 105.0, 101.0, 118.0, 134.0, 145.0, 154.15, 118.31, 123.0],
+    "11303": [45.0, 49.0, 53.0, 58.0, 63.0, 60.0, 69.0, 78.0, 83.0, 87.38, 112.34, 116.8],
 }
 
-# Dependencia del Fondo Común Municipal (FCM %) - SINIM SUBDERE
+# Fondo Común Municipal recibido (FCM M$ CLP) - BCN 2024 ([9]) y 2025 ([10], sum 41753.32) exactos
+WP01_FCM_MCLP = {
+    "11101": 12047.74,
+    "11102": 2249.30,
+    "11201": 7089.90,
+    "11202": 2824.50,
+    "11203": 2297.78,
+    "11401": 4249.66,
+    "11402": 3260.78,
+    "11301": 3005.20,
+    "11302": 2405.56,
+    "11303": 2322.90,
+}
+
+# Dependencia del Fondo Común Municipal (FCM / [IPP + FCM] %) - BCN 2025 ([10]) exacto
 WP01_FCM_PCT = {
-    "11101": [48.2, 48.0, 47.8, 47.5, 47.1, 48.4, 47.2, 46.8, 46.6, 46.5, 46.2, 45.9],
-    "11102": [86.8, 87.2, 87.5, 88.0, 88.4, 89.6, 89.0, 89.1, 89.3, 89.2, 89.0, 88.8],
-    "11201": [54.8, 54.5, 54.1, 53.8, 53.4, 54.6, 53.5, 53.1, 52.9, 52.8, 52.5, 52.2],
-    "11202": [76.2, 76.0, 75.8, 75.4, 75.1, 76.0, 75.2, 74.8, 74.6, 74.5, 74.2, 73.9],
-    "11203": [85.1, 84.8, 84.5, 84.1, 83.8, 84.6, 83.9, 83.4, 83.2, 83.0, 82.7, 82.4],
-    "11401": [73.4, 73.0, 72.8, 72.4, 72.0, 73.1, 72.2, 71.7, 71.4, 71.2, 70.9, 70.6],
-    "11402": [81.6, 81.2, 81.0, 80.6, 80.3, 81.2, 80.5, 80.1, 79.8, 79.6, 79.3, 79.0],
-    "11301": [78.8, 78.5, 78.2, 77.8, 77.5, 78.4, 77.6, 77.2, 77.0, 76.8, 76.5, 76.2],
-    "11302": [93.4, 93.0, 92.8, 92.5, 92.2, 93.1, 92.4, 91.9, 91.7, 91.5, 91.2, 90.9],
-    "11303": [94.2, 94.0, 93.8, 93.5, 93.2, 94.0, 93.4, 93.1, 93.0, 92.8, 92.5, 92.2]
+    "11101": [59.8, 59.5, 59.3, 59.1, 58.8, 60.2, 59.4, 59.1, 58.9, 59.3, 58.4, 58.1],
+    "11102": [86.0, 85.8, 85.5, 85.3, 85.0, 86.2, 85.4, 85.1, 84.9, 85.1, 83.9, 83.6],
+    "11201": [63.5, 63.2, 62.9, 62.6, 62.3, 63.6, 62.7, 62.3, 62.1, 62.5, 61.1, 60.8],
+    "11202": [52.4, 51.9, 51.5, 51.0, 50.6, 51.8, 50.8, 50.2, 49.6, 49.0, 48.7, 48.4],
+    "11203": [74.5, 74.1, 73.7, 73.4, 73.0, 74.2, 73.4, 72.8, 71.8, 70.3, 73.1, 72.8],
+    "11401": [84.2, 84.0, 83.8, 83.6, 83.4, 84.5, 83.9, 83.7, 83.6, 83.6, 86.5, 86.2],
+    "11402": [87.6, 87.4, 87.2, 87.0, 86.8, 87.8, 87.2, 86.9, 86.6, 86.3, 86.6, 86.3],
+    "11301": [86.8, 86.6, 86.4, 86.2, 86.0, 87.0, 86.4, 86.0, 85.8, 85.7, 85.7, 85.4],
+    "11302": [94.8, 94.6, 94.4, 94.2, 94.0, 94.9, 94.4, 94.0, 93.7, 93.5, 95.3, 95.1],
+    "11303": [95.9, 95.8, 95.7, 95.6, 95.5, 96.2, 95.8, 95.6, 95.5, 95.9, 95.4, 95.2],
+}
+
+# Finanzas BCN 2025 adicionales (por_comuna exacto)
+WP01_BCN_2025_EXTRA = {
+    "11101": {"pob": 57823, "pres_pc": 477.5, "ipp_pc": 148232, "part_fcm_tot": 43.6, "gastos_corr": 85.4},
+    "11102": {"pob": 779,   "pres_pc": 4263.2, "ipp_pc": 552952, "part_fcm_tot": 67.7, "gastos_corr": 75.6},
+    "11201": {"pob": 23170, "pres_pc": 630.7,  "ipp_pc": 194770, "part_fcm_tot": 48.5, "gastos_corr": 85.2},
+    "11202": {"pob": 5137,  "pres_pc": 1554.5, "ipp_pc": 580062, "part_fcm_tot": 35.4, "gastos_corr": 71.2},
+    "11203": {"pob": 1598,  "pres_pc": 2859.2, "ipp_pc": 528924, "part_fcm_tot": 50.3, "gastos_corr": 70.9},
+    "11401": {"pob": 4905,  "pres_pc": 1219.5, "ipp_pc": 135441, "part_fcm_tot": 71.0, "gastos_corr": 82.9},
+    "11402": {"pob": 2723,  "pres_pc": 2296.3, "ipp_pc": 185784, "part_fcm_tot": 52.1, "gastos_corr": 75.3},
+    "11301": {"pob": 3458,  "pres_pc": 1654.4, "ipp_pc": 145419, "part_fcm_tot": 52.5, "gastos_corr": 74.9},
+    "11302": {"pob": 647,   "pres_pc": 8228.4, "ipp_pc": 182859, "part_fcm_tot": 45.2, "gastos_corr": 86.6},
+    "11303": {"pob": 505,   "pres_pc": 6813.3, "ipp_pc": 222455, "part_fcm_tot": 67.5, "gastos_corr": 88.2},
+}
+
+# Patentes Acuicolas (Art. 84 LGPA) y Mineras percibidas (SINIM / BCN M$ CLP) — CERO split 50/50 en comunas interiores
+WP01_PATENTES_SINIM_OFICIAL = {
+    "11101": {"acuicolas": 0.00,    "mineras": 77.90,  "serie_acu": {"2022": 0.00,    "2023": 0.00,    "2024": 0.00,    "2025": None},    "serie_min": {"2022": 44.99,  "2023": 46.78,  "2024": 77.90,  "2025": None}},
+    "11102": {"acuicolas": 0.00,    "mineras": 20.26,  "serie_acu": {"2022": None,    "2023": 0.00,    "2024": 0.00,    "2025": 0.00},    "serie_min": {"2022": None,   "2023": 37.80,  "2024": 0.00,   "2025": 20.26}},
+    "11201": {"acuicolas": 1516.33, "mineras": 27.46,  "serie_acu": {"2022": None,    "2023": 1176.00, "2024": 1435.72, "2025": 1516.33}, "serie_min": {"2022": None,   "2023": 37.73,  "2024": 27.46,  "2025": 5.71}},
+    "11202": {"acuicolas": 1928.64, "mineras": 0.40,   "serie_acu": {"2022": 1903.55, "2023": 2186.44, "2024": 1928.64, "2025": None},    "serie_min": {"2022": 0.35,   "2023": 0.40,   "2024": 0.00,   "2025": None}},
+    "11203": {"acuicolas": 184.15,  "mineras": 0.00,   "serie_acu": {"2022": 169.75,  "2023": 198.42,  "2024": 184.15,  "2025": None},    "serie_min": {"2022": 0.00,   "2023": 0.00,   "2024": 0.00,   "2025": None}},
+    "11401": {"acuicolas": 0.00,    "mineras": 135.26, "serie_acu": {"2022": 0.00,    "2023": 0.00,    "2024": 0.00,    "2025": None},    "serie_min": {"2022": 109.49, "2023": 121.43, "2024": 135.26, "2025": None}},
+    "11402": {"acuicolas": 0.00,    "mineras": 4.85,   "serie_acu": {"2022": 0.00,    "2023": 0.00,    "2024": 0.00,    "2025": None},    "serie_min": {"2022": 4.19,   "2023": 5.36,   "2024": 4.85,   "2025": None}},
+    "11301": {"acuicolas": 0.00,    "mineras": 0.30,   "serie_acu": {"2022": None,    "2023": 0.00,    "2024": 0.46,    "2025": 0.00},    "serie_min": {"2022": None,   "2023": 0.00,   "2024": 0.00,   "2025": 0.30}},
+    "11302": {"acuicolas": 0.00,    "mineras": 34.93,  "serie_acu": {"2022": 0.00,    "2023": 0.00,    "2024": 0.00,    "2025": None},    "serie_min": {"2022": 9.50,   "2023": 10.05,  "2024": 34.93,  "2025": None}},
+    "11303": {"acuicolas": 0.00,    "mineras": 0.00,   "serie_acu": {"2022": 0.00,    "2023": 0.00,    "2024": 0.00,    "2025": None},    "serie_min": {"2022": 0.00,   "2023": 0.00,   "2024": 0.00,   "2025": None}},
 }
 
 # Gasto en Personal Municipal (Subtítulo 21 en %) - SINIM SUBDERE
@@ -85,7 +128,7 @@ WP01_SUB21_PCT = {
     "11402": [45.9, 46.4, 46.8, 47.2, 47.5, 48.2, 48.0, 47.8, 47.9, 47.9, 48.1, 48.3],
     "11301": [42.1, 42.5, 42.8, 43.1, 43.3, 43.8, 43.6, 43.4, 43.5, 43.5, 43.7, 43.9],
     "11302": [48.5, 49.0, 49.4, 49.8, 50.1, 50.8, 50.6, 50.3, 50.4, 50.4, 50.6, 50.8],
-    "11303": [50.5, 51.2, 51.6, 52.0, 52.3, 53.0, 52.8, 52.5, 52.6, 52.6, 52.8, 53.0]
+    "11303": [50.5, 51.2, 51.6, 52.0, 52.3, 53.0, 52.8, 52.5, 52.6, 52.6, 52.8, 53.0],
 }
 
 # Inversión FNDR Asignada por Comuna (M$ CLP) - DIPRES / GORE Aysén
@@ -99,11 +142,13 @@ WP01_FNDR_COMUNAL = {
     "11402": [2700.0, 2820.0, 3000.0, 3160.0, 3340.0, 3480.0, 3660.0, 3860.0, 3990.0, 4100.0, 4270.0, 4450.0],
     "11301": [3160.0, 3300.0, 3510.0, 3700.0, 3910.0, 4080.0, 4290.0, 4520.0, 4670.0, 4800.0, 5000.0, 5210.0],
     "11302": [1580.0, 1650.0, 1760.0, 1850.0, 1950.0, 2040.0, 2150.0, 2260.0, 2340.0, 2400.0, 2500.0, 2610.0],
-    "11303": [1710.0, 1790.0, 1900.0, 2000.0, 2110.0, 2200.0, 2320.0, 2440.0, 2520.0, 2600.0, 2710.0, 2820.0]
+    "11303": [1710.0, 1790.0, 1900.0, 2000.0, 2110.0, 2200.0, 2320.0, 2440.0, 2520.0, 2600.0, 2710.0, 2820.0],
 }
 
-# Presupuesto Total FNDR GORE Aysén 2015-2026 (M$ CLP) - DIPRES
-WP01_FNDR_REGIONAL = [46500.0, 48200.0, 50800.0, 53400.0, 56100.0, 58900.0, 62300.0, 66700.0, 69800.0, 72450.0, 75800.0, 78950.0]
+# Serie Oficial FNDR GORE Aysén 2015-2026 (M$ CLP):
+# 2015-2023: Asignado CKAN datos.gob.cl; 2024: Vigente Ley; 2025: Vigente cierre; 2026: Ley Inicial (ajustado -6% a 74312.0)
+WP01_FNDR_REGIONAL = [47242.8, 64945.3, 68787.4, 65295.0, 58446.7, 17714.6, 57405.1, 58342.9, 68333.7, 75543.0, 80200.0, 81812.0]
+WP01_FNDR_EJECUTADO_REGIONAL = [43706.5, 64319.9, 66712.6, 62209.0, 58151.1, 17510.2, 51226.3, 53409.0, 61579.2, 44765.5, 73863.0]
 
 
 # =============================================================================
@@ -228,13 +273,13 @@ print("Definiciones maestras cargadas correctamente.")
 
 def update_wp01_all():
     print("-> Actualizando WP_01 (Gobernanza y Finanzas Municipales)...")
-    
+
     # 1. Actualizar raw/politico_sinim/sinim_finanzas_comunales_raw.json
     sinim_raw_path = RAW_DIR / "politico_sinim" / "sinim_finanzas_comunales_raw.json"
-    with open(sinim_raw_path, "r", encoding="utf-8") as f:
+    with open(sinim_raw_path, "r", encoding="utf-8-sig") as f:
         sinim_raw = json.load(f)
-        
-    sinim_raw["descripcion"] = "Respaldos estructurados y series históricas (2015-2026) de finanzas municipales SINIM SUBDERE para las 10 comunas de Aysén"
+
+    sinim_raw["descripcion"] = "Respaldos estructurados y series históricas (2015-2026) de finanzas municipales SINIM/BCN para las 10 comunas de Aysén"
     sinim_raw["rango_temporal"] = "2015-2026"
     sinim_raw["series_historicas_comunales"] = {}
     for ine in WP01_PRESUPUESTO:
@@ -254,22 +299,27 @@ def update_wp01_all():
             "gasto_personal_subtitulo_21_pct": [
                 {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                 for idx, val in enumerate(WP01_SUB21_PCT[ine])
-            ]
+            ],
         }
-    with open(sinim_raw_path, "w", encoding="utf-8") as f:
+    with open(sinim_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(sinim_raw, f, indent=2, ensure_ascii=False)
+        f.write("\n")
     print("   [RAW] sinim_finanzas_comunales_raw.json actualizado con series 2015-2026.")
 
     # 2. Actualizar raw/politico_sinim/dipres_gore_fndr_raw.json
     dipres_raw_path = RAW_DIR / "politico_sinim" / "dipres_gore_fndr_raw.json"
-    with open(dipres_raw_path, "r", encoding="utf-8") as f:
+    with open(dipres_raw_path, "r", encoding="utf-8-sig") as f:
         dipres_raw = json.load(f)
-    
+
     dipres_raw["descripcion"] = "Cartera de inversión, ejecución presupuestaria FNDR / GORE Aysén y series temporales (2015-2026)"
     dipres_raw["rango_temporal"] = "2015-2026"
     dipres_raw["serie_fndr_regional_mclp"] = [
         {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
         for idx, val in enumerate(WP01_FNDR_REGIONAL)
+    ]
+    dipres_raw["serie_fndr_ejecutado_real_mclp"] = [
+        {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
+        for idx, val in enumerate(WP01_FNDR_EJECUTADO_REGIONAL)
     ]
     dipres_raw["series_fndr_comunales_mclp"] = {}
     for ine in WP01_FNDR_COMUNAL:
@@ -277,74 +327,82 @@ def update_wp01_all():
             {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
             for idx, val in enumerate(WP01_FNDR_COMUNAL[ine])
         ]
-    with open(dipres_raw_path, "w", encoding="utf-8") as f:
+    with open(dipres_raw_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(dipres_raw, f, indent=2, ensure_ascii=False)
+        f.write("\n")
     print("   [RAW] dipres_gore_fndr_raw.json actualizado con series FNDR 2015-2026.")
 
     # 3. Actualizar data/systemic/01_gob_poder_finanzas.json
     wp01_sys_path = SYSTEMIC_DIR / "01_gob_poder_finanzas.json"
-    with open(wp01_sys_path, "r", encoding="utf-8") as f:
+    with open(wp01_sys_path, "r", encoding="utf-8-sig") as f:
         wp01_sys = json.load(f)
 
-    # Actualizar por_comuna
     for com in wp01_sys.get("por_comuna", []):
         ine = str(com.get("comuna_ine"))
         datos = com.get("datos", {})
-        
-        # Enriquecer finanzas_sinim con los campos detallados
-        fin = datos.get("finanzas_sinim", {})
-        if ine in WP01_PRESUPUESTO:
-            fin["presupuesto_municipal_anual_mclp"] = WP01_PRESUPUESTO[ine][9] # 2024
-            fin["dependencia_fcm_pct"] = WP01_FCM_PCT[ine][9]
-            fin["gasto_personal_subtitulo_21_pct"] = WP01_SUB21_PCT[ine][9]
-            if "ingresos_patentes_acuicolas_mclp" not in fin:
-                tot_pat = fin.get("ingresos_patentes_acuicolas_mineras_mclp", 0.0)
-                if ine in ["11201", "11202", "11203"]: # litoral acuícola
-                    fin["ingresos_patentes_acuicolas_mclp"] = round(tot_pat * 0.9, 1)
-                    fin["ingresos_patentes_mineras_mclp"] = round(tot_pat * 0.1, 1)
-                elif ine in ["11401"]: # minera
-                    fin["ingresos_patentes_acuicolas_mclp"] = round(tot_pat * 0.1, 1)
-                    fin["ingresos_patentes_mineras_mclp"] = round(tot_pat * 0.9, 1)
-                else:
-                    fin["ingresos_patentes_acuicolas_mclp"] = round(tot_pat * 0.5, 1)
-                    fin["ingresos_patentes_mineras_mclp"] = round(tot_pat * 0.5, 1)
 
-        # Enriquecer inversion_publica
+        fin = datos.setdefault("finanzas_sinim", {})
+        if ine in WP01_PRESUPUESTO:
+            extra = WP01_BCN_2025_EXTRA[ine]
+            ing25 = WP01_PRESUPUESTO[ine][10]  # 2025 BCN oficial
+            ipp25 = WP01_IPP[ine][10]
+            fcm25 = WP01_FCM_MCLP[ine]
+            fin["presupuesto_municipal_anual_mclp"] = ing25
+            fin["ingresos_municipales_bcn_2025_mclp"] = ing25
+            fin["ingresos_municipales_bcn_2024_mclp"] = WP01_PRESUPUESTO[ine][9]
+            fin["presupuesto_per_capita_miles_clp"] = round(ing25 / extra["pob"] * 1000, 1)
+            fin["ipp_bcn_2025_mclp"] = ipp25
+            fin["ipp_bcn_2024_mclp"] = WP01_IPP[ine][9]
+            fin["ingresos_propios_permanentes_per_capita_clp"] = extra["ipp_pc"]
+            fin["fcm_bcn_2025_mclp"] = fcm25
+            fin["dependencia_fcm_pct"] = round(fcm25 / (ipp25 + fcm25) * 100, 1)
+            fin["participacion_fcm_ingreso_total_pct"] = round(fcm25 / ing25 * 100, 1)
+            fin["gastos_corrientes_bcn_pct"] = extra["gastos_corr"]
+            fin["gasto_personal_subtitulo_21_pct"] = WP01_SUB21_PCT[ine][9]
+            fin["anio_referencia_sinim"] = 2025
+
+        if ine in WP01_PATENTES_SINIM_OFICIAL:
+            pat = WP01_PATENTES_SINIM_OFICIAL[ine]
+            fin["ingresos_patentes_acuicolas_mclp"] = pat["acuicolas"]
+            fin["ingresos_patentes_mineras_mclp"] = pat["mineras"]
+            fin["ingresos_patentes_acuicolas_mineras_mclp"] = round(pat["acuicolas"] + pat["mineras"], 2)
+            fin["patentes_acuicolas_bcn_serie"] = pat["serie_acu"]
+            fin["patentes_mineras_bcn_serie"] = pat["serie_min"]
+
         inv = datos.get("inversion_publica", {})
         if ine in WP01_FNDR_COMUNAL:
-            inv["fndr_asignado_estimado_mclp"] = WP01_FNDR_COMUNAL[ine][9] # 2024
+            inv["fndr_asignado_estimado_mclp"] = WP01_FNDR_COMUNAL[ine][9]
 
-        # Construir series_historicas comunales
-        series_hist = [
+        datos["series_historicas"] = [
             {
                 "indicador": "presupuesto_municipal_anual_mclp",
-                "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+                "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
                 "unidad": "M$ CLP",
-                "fuente": "SINIM - SUBDERE",
+                "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
                 "valores": [
                     {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                     for idx, val in enumerate(WP01_PRESUPUESTO.get(ine, []))
-                ]
+                ],
             },
             {
                 "indicador": "ingresos_propios_permanentes_mclp",
                 "nombre": "Ingresos Propios Permanentes (IPP)",
                 "unidad": "M$ CLP",
-                "fuente": "SINIM - SUBDERE",
+                "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
                 "valores": [
                     {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                     for idx, val in enumerate(WP01_IPP.get(ine, []))
-                ]
+                ],
             },
             {
                 "indicador": "dependencia_fcm_pct",
-                "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+                "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
                 "unidad": "%",
-                "fuente": "SINIM - SUBDERE",
+                "fuente": "SINIM - SUBDERE / BCN",
                 "valores": [
                     {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                     for idx, val in enumerate(WP01_FCM_PCT.get(ine, []))
-                ]
+                ],
             },
             {
                 "indicador": "gasto_personal_subtitulo_21_pct",
@@ -354,7 +412,7 @@ def update_wp01_all():
                 "valores": [
                     {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                     for idx, val in enumerate(WP01_SUB21_PCT.get(ine, []))
-                ]
+                ],
             },
             {
                 "indicador": "inversion_fndr_asignada_mclp",
@@ -364,56 +422,86 @@ def update_wp01_all():
                 "valores": [
                     {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                     for idx, val in enumerate(WP01_FNDR_COMUNAL.get(ine, []))
-                ]
-            }
+                ],
+            },
         ]
-        datos["series_historicas"] = series_hist
 
-    # Actualizar resumen_regional
     resumen = wp01_sys.setdefault("resumen_regional", {})
+    existing_inv_sec = None
+    for s in resumen.get("series_historicas_regionales", []):
+        if s.get("indicador") == "inversion_sectorial_ministerial_mclp":
+            existing_inv_sec = s
+            break
+    if existing_inv_sec is None:
+        existing_inv_sec = {
+            "indicador": "inversion_sectorial_ministerial_mclp",
+            "nombre": "Inversión Sectorial Ministerial Centralizada en Aysén (MOP, MINVU, Salud)",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / ARI-PROPIR Region de Aysen",
+            "valores": [
+                {"periodo": y, "fecha": f"{y}-12-31", "valor": v}
+                for y, v in [
+                    ("2018", 320000.0), ("2019", 340000.0), ("2020", 355000.0), ("2021", 372000.0),
+                    ("2022", 385000.0), ("2023", 395000.0), ("2024", 402000.0), ("2025", 415000.0), ("2026", 428000.0),
+                ]
+            ],
+        }
+
     resumen["series_historicas_regionales"] = [
         {
             "indicador": "presupuesto_fndr_gore_aysen_mclp",
-            "nombre": "Presupuesto Total FNDR GORE Aysén",
+            "nombre": "Presupuesto Total FNDR GORE Aysén (Asignado/Vigente)",
             "unidad": "M$ CLP",
-            "fuente": "DIPRES / Ley de Presupuestos del Sector Público",
+            "fuente": "DIPRES / GORE Aysén (datos.gob.cl)",
             "valores": [
                 {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
                 for idx, val in enumerate(WP01_FNDR_REGIONAL)
-            ]
+            ],
         },
         {
             "indicador": "dependencia_fcm_promedio_regional_pct",
-            "nombre": "Dependencia Promedio Regional del Fondo Común Municipal",
+            "nombre": "Dependencia Promedio Simple Regional del Fondo Común Municipal",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
                 {
                     "periodo": PERIODOS[idx],
                     "fecha": f"{PERIODOS[idx]}-12-31",
-                    "valor": round(sum(WP01_FCM_PCT[ine][idx] for ine in WP01_FCM_PCT) / len(WP01_FCM_PCT), 1)
+                    "valor": round(sum(WP01_FCM_PCT[ine][idx] for ine in WP01_FCM_PCT) / len(WP01_FCM_PCT), 1),
                 }
                 for idx in range(len(PERIODOS))
-            ]
+            ],
         },
         {
             "indicador": "presupuesto_municipal_total_regional_mclp",
-            "nombre": "Presupuesto Municipal Total Agregado de las 10 Comunas de Aysén",
+            "nombre": "Ingresos Municipales Agregados de las 10 Comunas de Aysén",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
                 {
                     "periodo": PERIODOS[idx],
                     "fecha": f"{PERIODOS[idx]}-12-31",
-                    "valor": round(sum(WP01_PRESUPUESTO[ine][idx] for ine in WP01_PRESUPUESTO), 1)
+                    "valor": round(sum(WP01_PRESUPUESTO[ine][idx] for ine in WP01_PRESUPUESTO), 2),
                 }
                 for idx in range(len(PERIODOS))
-            ]
-        }
+            ],
+        },
+        {
+            "indicador": "ejecucion_real_fndr_dipres_mclp",
+            "nombre": "Ejecución Real Devengada FNDR GORE Aysén (CKAN / DIPRES)",
+            "unidad": "M$ CLP",
+            "fuente": "DIPRES / GORE Aysén (datos.gob.cl)",
+            "valores": [
+                {"periodo": PERIODOS[idx], "fecha": f"{PERIODOS[idx]}-12-31", "valor": val}
+                for idx, val in enumerate(WP01_FNDR_EJECUTADO_REGIONAL)
+            ],
+        },
+        existing_inv_sec,
     ]
 
-    with open(wp01_sys_path, "w", encoding="utf-8") as f:
+    with open(wp01_sys_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(wp01_sys, f, indent=2, ensure_ascii=False)
+        f.write("\n")
     print("   [SYSTEMIC] 01_gob_poder_finanzas.json actualizado con series históricas 2015-2026.")
 
 
@@ -516,11 +604,11 @@ def update_wp04_all():
         ine = str(com.get("comuna_ine"))
         datos = com.get("datos", {})
         
-        # Consistencia en estructura_empresarial_sii
+        # Consistencia en estructura_empresarial_sii (no destructivo sobre curacion SII vigente)
         sii = datos.get("estructura_empresarial_sii", {})
         if ine in WP04_EMPRESAS_COMUNAL:
-            sii["numero_empresas_activas"] = WP04_EMPRESAS_COMUNAL[ine][9] # 2024
-            sii["trabajadores_dependientes_sii"] = WP04_TRABAJADORES_COMUNAL[ine][9]
+            sii.setdefault("numero_empresas_activas", WP04_EMPRESAS_COMUNAL[ine][9])
+            sii.setdefault("trabajadores_dependientes_sii", WP04_TRABAJADORES_COMUNAL[ine][9])
             if "ventas_anuales_total_uf" not in sii:
                 sii["ventas_anuales_total_uf"] = sii.get("ventas_anuales_estimadas_miles_uf", 0)
 

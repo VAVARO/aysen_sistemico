@@ -1,8 +1,12 @@
 {
   "descripcion": "Cartera de inversión, ejecución presupuestaria FNDR / GORE Aysén y series temporales (2015-2026)",
-  "fuente": "DIPRES / GORE Aysén",
+  "fuente": "DIPRES / GORE Aysén (datos.gob.cl)",
   "url_fuente": "https://www.dipres.gob.cl/",
-  "presupuesto_fndr_global_mclp": 72450.0,
+  "presupuesto_fndr_global_mclp": 80200.0,
+  "ejecucion_fndr_2025_devengado_mclp": 73863.0,
+  "ejecucion_fndr_2025_cierre_pct": 92.0,
+  "ejecucion_fndr_2024_devengado_mclp": 44765.5,
+  "presupuesto_fndr_2027_acuerdo_hacienda_mclp": 80748.0,
   "distribucion_comunal": [
     {
       "codigo_comuna": "CL-XI-01",
@@ -150,62 +154,119 @@
     {
       "periodo": "2015",
       "fecha": "2015-12-31",
-      "valor": 46500.0
+      "valor": 47242.8
     },
     {
       "periodo": "2016",
       "fecha": "2016-12-31",
-      "valor": 48200.0
+      "valor": 64945.3
     },
     {
       "periodo": "2017",
       "fecha": "2017-12-31",
-      "valor": 50800.0
+      "valor": 68787.4
     },
     {
       "periodo": "2018",
       "fecha": "2018-12-31",
-      "valor": 53400.0
+      "valor": 65295.0
     },
     {
       "periodo": "2019",
       "fecha": "2019-12-31",
-      "valor": 56100.0
+      "valor": 58446.7
     },
     {
       "periodo": "2020",
       "fecha": "2020-12-31",
-      "valor": 58900.0
+      "valor": 17714.6
     },
     {
       "periodo": "2021",
       "fecha": "2021-12-31",
-      "valor": 62300.0
+      "valor": 57405.1
     },
     {
       "periodo": "2022",
       "fecha": "2022-12-31",
-      "valor": 66700.0
+      "valor": 58342.9
     },
     {
       "periodo": "2023",
       "fecha": "2023-12-31",
-      "valor": 69800.0
+      "valor": 68333.7
     },
     {
       "periodo": "2024",
       "fecha": "2024-12-31",
-      "valor": 72450.0
+      "valor": 75543.0
     },
     {
       "periodo": "2025",
       "fecha": "2025-12-31",
-      "valor": 75800.0
+      "valor": 80200.0
     },
     {
       "periodo": "2026",
       "fecha": "2026-12-31",
-      "valor": 78950.0
+      "valor": 81812.0
+    }
+  ],
+  "serie_fndr_ejecutado_real_mclp": [
+    {
+      "periodo": "2015",
+      "fecha": "2015-12-31",
+      "valor": 43706.5
+    },
+    {
+      "periodo": "2016",
+      "fecha": "2016-12-31",
+      "valor": 64319.9
+    },
+    {
+      "periodo": "2017",
+      "fecha": "2017-12-31",
+      "valor": 66712.6
+    },
+    {
+      "periodo": "2018",
+      "fecha": "2018-12-31",
+      "valor": 62209.0
+    },
+    {
+      "periodo": "2019",
+      "fecha": "2019-12-31",
+      "valor": 58151.1
+    },
+    {
+      "periodo": "2020",
+      "fecha": "2020-12-31",
+      "valor": 17510.2
+    },
+    {
+      "periodo": "2021",
+      "fecha": "2021-12-31",
+      "valor": 51226.3
+    },
+    {
+      "periodo": "2022",
+      "fecha": "2022-12-31",
+      "valor": 53409.0
+    },
+    {
+      "periodo": "2023",
+      "fecha": "2023-12-31",
+      "valor": 61579.2
+    },
+    {
+      "periodo": "2024",
+      "fecha": "2024-12-31",
+      "valor": 44765.5
+    },
+    {
+      "periodo": "2025",
+      "fecha": "2025-12-31",
+      "valor": 73863.0
     }
   ],
   "series_fndr_comunales_mclp": {

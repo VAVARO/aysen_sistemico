@@ -44,7 +44,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Coyhaique (capital comunal: Coyhaique; Provincia de Coyhaique; cuenca principal: Cuenca 113 (Río Aysén)) cuenta con una población verificada de 57.823 habitantes según el Censo 2024 (57,4% del total regional de 100.745 hab.) distribuidos en 7.290,2 km² (densidad de 7,93 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Carlos Gatica Villegas), administra un presupuesto vigente de 26.540,8 M$ con una dependencia del Fondo Común Municipal de 46,5% (53,5% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 14.850 M$ (256,8 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 489 prestadores SERNATUR (3.420 camas), 21.190 visitas anuales a áreas protegidas SNASPE y 42,5 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Mediano de Aysén (SMA) con tarifa residencial BT1 de $287,8/kWh y 68,8% de hogares calefaccionados a leña; dispone de 167 camas hospitalarias y 7 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 0 horas), y registra 102 proyectos CTCi con 91 investigadores residentes estimados.
+La comuna de Coyhaique (capital comunal: Coyhaique; Provincia de Coyhaique; cuenca principal: Cuenca 113 (Río Aysén)) cuenta con una población verificada de 57.823 habitantes según el Censo 2024 (57,4% del total regional de 100.745 hab.) distribuidos en 7.290,2 km² (densidad de 7,93 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Carlos Gatica Villegas), administra un presupuesto vigente de 27.611 M$ con una dependencia del Fondo Común Municipal de 58,4% (41,6% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 14.850 M$ (256,8 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 489 prestadores SERNATUR (3.420 camas), 21.190 visitas anuales a áreas protegidas SNASPE y 42,5 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Mediano de Aysén (SMA) con tarifa residencial BT1 de $287,8/kWh y 68,8% de hogares calefaccionados a leña; dispone de 167 camas hospitalarias y 7 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 0 horas), y registra 102 proyectos CTCi con 91 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
@@ -52,9 +52,9 @@ La comuna de Coyhaique (capital comunal: Coyhaique; Provincia de Coyhaique; cuen
 | --- | --- | --- |
 | Población Censo 2024 (hab.) | 57.823 (57,4% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 7.290,2 km² (7,93 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
-| Alcalde en Ejercicio (2024-2028) | Carlos Gatica Villegas (Partido Democrata Cristiano (DC) / Contigo Chile Mejor) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Presupuesto Municipal Vigente (M$) | 26.540,8 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Dependencia Fondo Común Municipal (%) | 46,5% (Ingresos Propios: 53,5%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Alcalde en Ejercicio (2024-2028) | Carlos Gatica Villegas (Partido Demócrata Cristiano (DC) / Contigo Chile Mejor) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Presupuesto Municipal Vigente (M$) | 27.611 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Dependencia Fondo Común Municipal (%) | 58,4% (Ingresos Propios: 41,6%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Inversión Pública FNDR Asignada (M$) | 14.850 M$ (256,8 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 489 prestadores / 3.420 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 21.190 visitantes (Reserva Nacional Coyhaique, Reserva Nacional Río Simpson, Reserva Nacional Cerro Castillo) | [[hubs/hub_01_turismo|Hub I — Turismo]] |

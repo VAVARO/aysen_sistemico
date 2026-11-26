@@ -301,7 +301,54 @@ function runTests() {
   console.log('  [PASS] Eval 16: Clasificador de shock regulatorio adjunta cita normativa verificada.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/16 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 17: Invariantes Fiscales, Geográficos (Patentes Acuícolas) y Electorales Hub IV (Sprint 7) ---
+  console.log('--- Eval 17: Invariantes fiscales BCN/SINIM, patentes acuícolas 0 en interior y SERVEL Oct-2024 ---');
+  assert.strictEqual(
+    audit.evaluateHub4FiscalAndElectoralInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 17 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub4FiscalAndElectoralInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 17 con 0 alertas'
+  );
+
+  // 17a: Presupuesto menor que FCM en O'Higgins (como ocurría antes del Sprint 7) -> ROJO
+  const badBudgetSnap = JSON.parse(JSON.stringify(currSnap));
+  badBudgetSnap.indicators.presupuesto_mclp.values['11302'] = 2150.0;
+  const badBudgetDiff = audit.compareSnapshots(currSnap, badBudgetSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badBudgetDiff.semaforo, 'ROJO');
+  assert(
+    badBudgetDiff.verificationAlerts.some(a => a.code === 'ERROR_CONTABLE_PRESUPUESTO_MENOR_QUE_FCM' && a.detail.includes('[ERROR_CONTABLE_PRESUPUESTO_MENOR_QUE_FCM]')),
+    'Debe disparar ALTA · [ERROR_CONTABLE_PRESUPUESTO_MENOR_QUE_FCM] cuando presupuesto < FCM'
+  );
+
+  // 17b: Patente acuicola falsa en comuna interior sin mar (Coyhaique = 725 M$) -> ROJO
+  const badPatSnap = JSON.parse(JSON.stringify(currSnap));
+  badPatSnap.hub4FiscalAudit.wp01PatentesAcuicolasByIne['11101'] = 725.0;
+  const badPatDiff = audit.compareSnapshots(currSnap, badPatSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badPatDiff.semaforo, 'ROJO');
+  assert(
+    badPatDiff.verificationAlerts.some(a => a.code === 'ERROR_PATENTE_ACUICOLA_COMUNA_INTERIOR' && a.detail.includes('[ERROR_PATENTE_ACUICOLA_COMUNA_INTERIOR]')),
+    'Debe disparar ALTA · [ERROR_PATENTE_ACUICOLA_COMUNA_INTERIOR] ante patente acuícola en comuna sin mar'
+  );
+
+  // 17c: Desviacion IPP per capita y participacion SERVEL fuera de rango -> ROJO
+  const badFcmElecSnap = JSON.parse(JSON.stringify(currSnap));
+  badFcmElecSnap.indicators.ipp_per_capita_clp.values['11202'] = 999999;
+  badFcmElecSnap.indicators.participacion_municipales_2024_pct.values['11302'] = 88.0;
+  const badFcmElecDiff = audit.compareSnapshots(currSnap, badFcmElecSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badFcmElecDiff.semaforo, 'ROJO');
+  assert(
+    badFcmElecDiff.verificationAlerts.some(a => a.code === 'ERROR_CONTABLE_IPP_PER_CAPITA') &&
+    badFcmElecDiff.verificationAlerts.some(a => a.code === 'ERROR_ELECTORAL_SERVEL_2024'),
+    'Debe detectar inconsistencia IPP per cápita y SERVEL Oct-2024'
+  );
+  console.log('  [PASS] Eval 17: Coherencia presupuestaria, patentes acuícolas 0 en interior, IPP/hab y SERVEL 2024 verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/17 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

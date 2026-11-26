@@ -672,8 +672,8 @@ const hubs = [
     title: 'IV. Gobernanza & Finanzas Municipales',
     shortTitle: 'Gobernanza & Finanzas',
     color: '#4338ca',
-    description: 'Presupuestos municipales (**SINIM**), dependencia del **Fondo Común Municipal (FCM)**, autoridades electas 2024-2028 (**SERVEL**) y cartera de inversión pública (**M$ 61.548 FNDR devengado vs ~M$ 395.000 de inversión sectorial ministerial centralizada**).',
-    example: 'Mientras **Coyhaique** maneja un presupuesto municipal de **M$ 26.540,8** con un **46,5% de dependencia del FCM**, comunas australes como **Tortel**, **Lago Verde** u **O\'Higgins** superan el **84%-88%** de dependencia. A nivel regional, el gasto devengado FNDR fue de M$ 61.548 frente a ~M$ 395.000 de inversión ministerial centralizada.',
+    description: 'Ingresos y presupuestos municipales reales (**BCN / SINIM 2025: 84.820,68 M$**), dependencia del **Fondo Común Municipal (FCM: 68,5% ponderada / 77,5% promedio comunal)**, autoridades electas 2024-2028 (**SERVEL**) y cartera de inversión pública (**M$ 73.863,0 FNDR devengado 2025 [92,0%] y M$ 61.548,0 DIPRES 2023 vs ~M$ 395.000 sectorial ministerial centralizada**).',
+    example: 'Mientras **Coyhaique** ejecuta **M$ 27.611,00** (**58,4%** de dependencia FCM) y **Cisnes** alcanza **48,7% FCM** gracias a patentes acuícolas, **Tortel (95,4%)** y **O\'Higgins (95,3%)** dependen casi íntegros del FCM. El FNDR GORE cerró 2025 con récord histórico de **M$ 73.863,0** (**92,0%** sobre M$ 80.200,0 vigente).',
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     nodesFile: 'data/systemic/csv/01_gob_poder_finanzas_nodos.csv',
     sourceName: 'SINIM SUBDERE / SERVEL / DIPRES GORE Aysén',
@@ -1475,17 +1475,17 @@ const rawNodos = [
     id: 15,
     hubId: 'gobernanza',
     title: 'Presupuestos Municipales y Patentes (SINIM)',
-    definition: 'Presupuestos municipales devengados, gasto per cápita, ingresos por patentes acuícolas y mineras y clasificación tipológica según **SINIM SUBDERE**.',
-    example: '**Coyhaique** administra un presupuesto municipal de **M$ 26.540,8**, mientras comunas australes como **O\'Higgins** y **Tortel** operan con presupuestos iniciales de **M$ 2.150,0** y **M$ 2.050,0** (altamente complementados por FCM y Royalty Minero FET).',
-    officialSource: { name: 'SINIM SUBDERE — Finanzas Municipales', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
+    definition: 'Ingresos municipales efectivos BCN/SINIM 2025 (**84.820,68 M$ regionales**), gasto per cápita, recaudación efectiva por patentes acuícolas (litoral: **Cisnes, Aysén y Guaitecas = 3.629,12 M$**; **0 M$** en comunas interiores sin mar) y patentes mineras (**301,36 M$**).',
+    example: '**Coyhaique** administra **M$ 27.611,00**, mientras **O\'Higgins (M$ 5.323,76)** y **Tortel (M$ 3.440,74)** operan sostenidas por **FCM (M$ 2.405,56 y M$ 2.322,90)** y **Royalty FET**. En patentes acuícolas SINIM lideran **Cisnes (M$ 1.928,64)**, **Aysén (M$ 1.516,33)** y **Guaitecas (M$ 184,15)**.',
+    officialSource: { name: 'SINIM SUBDERE / BCN Reportes Comunales 2025', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [6, 16, 17, 18, 21],
     chartSpec: {
       type: 'bar',
-      title: 'Presupuesto Municipal Inicial por Comuna (M$ CLP - SINIM)',
+      title: 'Ingresos / Presupuesto Municipal Efectivo BCN-SINIM 2025 (M$ CLP)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
-        label: 'Presupuesto Municipal (M$ CLP)',
+        label: 'Ingresos Municipales (M$ CLP)',
         data: comunasBase.map(c => (wp01ByIne[String(c.comuna_ine)] || {}).finanzas_sinim?.presupuesto_municipal_anual_mclp || 0),
         backgroundColor: '#4338ca'
       }],
@@ -1495,10 +1495,8 @@ const rawNodos = [
     tableRows: comunasBase.map(c => {
       const ine = String(c.comuna_ine);
       const f = (wp01ByIne[ine] || {}).finanzas_sinim || {};
-      const patAcuicMap = { '11201': 1665.0, '11202': 612.0, '11203': 189.0, '11303': 22.0 };
-      const patMinMap = { '11401': 288.0, '11101': 195.0, '11402': 115.0, '11202': 98.0, '11201': 74.0, '11301': 58.0, '11102': 52.0, '11302': 34.0, '11303': 19.0, '11203': 2.0 };
-      const patAcuic = patAcuicMap[ine] !== undefined ? patAcuicMap[ine] : 0;
-      const patMin = patMinMap[ine] !== undefined ? patMinMap[ine] : 0;
+      const patAcuic = Number(f.ingresos_patentes_acuicolas_mclp) || 0;
+      const patMin = Number(f.ingresos_patentes_mineras_mclp) || 0;
       return [
         c.nombre,
         fmtNum(f.presupuesto_municipal_anual_mclp),
@@ -1525,14 +1523,14 @@ const rawNodos = [
     id: 16,
     hubId: 'gobernanza',
     title: 'Dependencia del Fondo Común Municipal',
-    definition: 'Grado de vulnerabilidad fiscal y porcentaje de dependencia del **Fondo Común Municipal (FCM)** para el financiamiento de los servicios locales y gasto corriente.',
-    example: '**Tortel (92,8%)**, **O\'Higgins (91,5%)** y **Lago Verde (89,2%)** tienen la mayor dependencia del FCM, mientras **Coyhaique** registra un **46,5%**.',
-    officialSource: { name: 'SINIM SUBDERE / Tesoreria General de la Republica', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
+    definition: 'Grado de vulnerabilidad fiscal y porcentaje de dependencia del **Fondo Común Municipal (`FCM / [IPP + FCM]`)** según BCN/SINIM 2025 (41.753,32 M$ brutos; 38.580 M$ transferencia TGR neta).',
+    example: '**Tortel (95,4%)**, **O\'Higgins (95,3%)**, **Río Ibáñez (86,6%)** y **Chile Chico (86,5%)** exhiben máxima dependencia del FCM, frente a **Cisnes (48,7%)** y **Coyhaique (58,4%)** (promedio regional **68,5%** ponderado / **77,5%** simple).',
+    officialSource: { name: 'SINIM SUBDERE / Tesorería General de la República / BCN 2025', url: 'https://datos.sinim.gov.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [15, 17, 23],
     chartSpec: {
       type: 'bar',
-      title: 'Porcentaje de Dependencia del Fondo Común Municipal (FCM)',
+      title: 'Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP + FCM])',
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
         label: '% Dependencia FCM',
@@ -1545,10 +1543,7 @@ const rawNodos = [
     tableRows: comunasBase.map(c => {
       const ine = String(c.comuna_ine);
       const f = (wp01ByIne[ine] || {}).finanzas_sinim || {};
-      const aporteFcmMap = { '11101': 12341.5, '11102': 2185.6, '11201': 7503.1, '11202': 4544.5, '11203': 2739.0, '11401': 3844.8, '11402': 3144.2, '11301': 3532.8, '11302': 1967.3, '11303': 1902.4 };
-      const aporteFcm = f.aporte_fcm_recibido_mclp !== undefined && f.aporte_fcm_recibido_mclp !== null
-        ? f.aporte_fcm_recibido_mclp
-        : (aporteFcmMap[ine] !== undefined ? aporteFcmMap[ine] : f.fcm_bcn_2025_mclp);
+      const aporteFcm = Number(f.fcm_bcn_2025_mclp) || 0;
       const pct = f.dependencia_fcm_pct || 0;
       let vuln = 'Media';
       if (pct >= 80) vuln = 'Muy Alta';
@@ -1564,10 +1559,10 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Porcentaje de dependencia del Fondo Común Municipal FCM (46,5% a 92,8%)',
-        'Aporte comunal al FCM vs. fondo recibido por redistribucion solidaria',
+        'Porcentaje de dependencia del Fondo Común Municipal FCM (48,7% a 95,4%)',
+        'Aporte comunal al FCM vs. fondo recibido por redistribución solidaria (41.753,32 M$)',
         'Clasificación de tipología comunal SUBDERE',
-        'Simulacion de autonomia fiscal y capacidad de autofinanciamiento'
+        'Simulación de autonomía fiscal y capacidad de autofinanciamiento'
       ],
       suggestedCrossings: [
         'Cruce con Pobreza Multidimensional CASEN (Nodo #23)',
@@ -1581,7 +1576,7 @@ const rawNodos = [
     hubId: 'gobernanza',
     title: 'Alcaldes (2024-2028), Concejos y Participación',
     definition: 'Autoridades comunales electas para el periodo **2024-2028 (SERVEL)**: alcaldes en ejercicio, pacto político, composición de los concejos municipales y porcentaje de participación con voto obligatorio.',
-    example: 'Detalla los 10 alcaldes y 60 concejales de la región, con tasas de participación electoral que fluctuaron entre **79,8%** (Chile Chico) y **88,1%** (Tortel).',
+    example: 'Detalla los 10 alcaldes y 60 concejales de la región (período 2024-2028), con una participación electoral regional de **72,9%** en octubre de 2024 (12 puntos bajo el 84,9% nacional), fluctuando entre **58,4%** (Chile Chico) y **80,6%** (Tortel) debido a la sobreinscripción del padrón en comunas fronterizas y rurales.',
     officialSource: { name: 'Servicio Electoral de Chile (SERVEL)', url: 'https://www.servel.cl/', frequency: 'Electoral cuadrienal' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [15, 16, 23],
@@ -1625,8 +1620,8 @@ const rawNodos = [
     id: 18,
     hubId: 'gobernanza',
     title: 'Inversión pública del Gobierno Regional',
-    definition: 'Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)**: **M$ 61.548 FNDR devengado (88,2% de ejecución presupuestaria) frente a ~M$ 395.000 anuales de inversión sectorial ministerial centralizada**, junto con el estado de la **Carretera Austral (Ruta 7)**.',
-    example: 'Descentralización nominal vs. real: el gasto FNDR devengado real del GORE Aysén es de M$ 61.548 anuales, mientras que la inversión sectorial ministerial centralizada (MOP, MINVU, Salud) alcanza ~M$ 395.000 anuales (x5 a x6 veces el FNDR). En la Ruta 7 se extienden 835 km en la región con tramos de ripio al sur de Cerro Castillo.',
+    definition: 'Inversión pública regional asignada por el **Fondo Nacional de Desarrollo Regional (FNDR)**: cierre récord 2025 de **M$ 73.863,0 devengado (92,0% sobre M$ 80.200,0 vigente)**, tras **M$ 44.765,5 (59,3%) en 2024** y **M$ 61.548,0 DIPRES / M$ 61.579,2 CKAN en 2023** frente a **~M$ 395.000 anuales de inversión sectorial ministerial centralizada**, junto con el estado de la **Carretera Austral (Ruta 7)**.',
+    example: 'Descentralización nominal vs. real: el FNDR GORE saltó +65,0% a **M$ 73.863,0 (92,0%)** en 2025 (marco 2026 inicial M$ 81.812,0 / ajustado M$ 74.312,0 y acuerdo Hacienda 2027 M$ 80.748,0), mientras la inversión sectorial ministerial centralizada (MOP, MINVU, Salud) alcanza ~M$ 395.000–415.000 anuales.',
     officialSource: { name: 'DIPRES / GORE Aysen / Direccion de Vialidad MOP', url: 'https://datos.dipres.gob.cl/', frequency: 'Trimestral / Anual' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
     relatedNodeIds: [2, 14, 27],
@@ -4046,8 +4041,12 @@ function buildComunaRows() {
       fauna_amenazada_n: ((g7.fauna_emblematica_conservacion || {}).especies_presentes || []).length,
 
       // Indicadores Sistémicos Profundos (Investigación Multi-Agente 2026)
+      fcm_bcn_2025_mclp: Number((g1.finanzas_sinim || {}).fcm_bcn_2025_mclp) || 0,
+      ipp_bcn_2025_mclp: Number((g1.finanzas_sinim || {}).ipp_bcn_2025_mclp) || 0,
+      participacion_fcm_ingreso_total_pct: Number((g1.finanzas_sinim || {}).participacion_fcm_ingreso_total_pct) || 0,
+      gastos_corrientes_bcn_pct: Number((g1.finanzas_sinim || {}).gastos_corrientes_bcn_pct) || 0,
       ipp_per_capita_clp: (g1.finanzas_sinim || {}).ingresos_propios_permanentes_per_capita_clp ||
-        Math.round(((100 - ((g1.finanzas_sinim || {}).dependencia_fcm_pct || 0)) / 100) * ((g1.finanzas_sinim || {}).presupuesto_per_capita_miles_clp || 0) * 1000),
+        (_pop > 0 ? Math.round(((Number((g1.finanzas_sinim || {}).ipp_bcn_2025_mclp) || 0) * 1000000) / _pop) : 0),
       gasto_personal_pct: Number((g1.finanzas_sinim || {}).gasto_personal_subtitulo_21_pct) || 0,
       inversion_directa_pct: Number((g1.finanzas_sinim || {}).inversion_real_directa_pct) || INVERSION_DIRECTA_PCT_MAP[ine] || 0,
       profesionalizacion_pct: Number((g1.finanzas_sinim || {}).profesionalizacion_planta_pct) || PROFESIONALIZACION_PCT_MAP[ine] || 0,
@@ -4656,8 +4655,8 @@ function pushSpatialNode(raw) {
 
 // 1) Hub Gobernanza: 01_gob_poder_finanzas.json (13 nodos)
 const GOB_NODE_OVERRIDES = {
-  node_gore_aysen: { mag: 78950, label: 'Presupuesto FNDR Vigente', titular: 'Gobernador Regional: Marcelo Santana Vargas' },
-  node_dpr_aysen: { mag: 3850, label: 'Presupuesto Operacional', titular: 'Delegación Presidencial Regional (Ministerio del Interior)' },
+  node_gore_aysen: { mag: 80200, label: 'Presupuesto FNDR Vigente 2025', titular: 'Gobernador Regional: Marcelo Santana Vargas' },
+  node_dpr_aysen: { mag: 3850, label: 'Presupuesto Operacional', titular: 'Delegada Presidencial Regional: Luz María Vicuña Figueroa (RN)' },
   node_cgr_aysen: { mag: 2420, label: 'Presupuesto Fiscalización', titular: 'Contraloría General de la República — Sede Regional Aysén' }
 };
 (wp01.nodos_georreferenciados || []).forEach(n => {
@@ -6747,10 +6746,32 @@ const bundle = {
       }));
       const dip = (goreFndrSeries && goreFndrSeries.dipres_ley_presupuestos_fndr) || {};
       if (dip['2024_vigente_mclp']) {
-        rows.push({ periodo: '2024', anio: '2024', asignado_mclp: Number(dip['2024_vigente_mclp']) });
+        rows.push({
+          periodo: '2024',
+          anio: '2024',
+          asignado_mclp: Number(dip['2024_vigente_mclp']),
+          gasto_actual_mclp: dip['2024_devengado_mclp'] !== undefined ? Number(dip['2024_devengado_mclp']) : null,
+          tasa_ejecucion_pct: dip['2024_ejecucion_pct'] !== undefined ? Number(dip['2024_ejecucion_pct']) : null
+        });
       }
-      if (dip['2025_inicial_mclp']) {
-        rows.push({ periodo: '2025', anio: '2025', asignado_mclp: Number(dip['2025_inicial_mclp']) });
+      if (dip['2025_vigente_mclp'] || dip['2025_inicial_mclp']) {
+        rows.push({
+          periodo: '2025',
+          anio: '2025',
+          inicial_mclp: Number(dip['2025_inicial_mclp'] || 80128.0),
+          asignado_mclp: Number(dip['2025_vigente_mclp'] || dip['2025_inicial_mclp']),
+          gasto_actual_mclp: dip['2025_devengado_mclp'] !== undefined ? Number(dip['2025_devengado_mclp']) : null,
+          tasa_ejecucion_pct: dip['2025_ejecucion_pct'] !== undefined ? Number(dip['2025_ejecucion_pct']) : null
+        });
+      }
+      if (dip['2026_inicial_mclp']) {
+        rows.push({
+          periodo: '2026',
+          anio: '2026',
+          asignado_mclp: Number(dip['2026_inicial_mclp']),
+          marco_ajustado_mclp: Number(dip['2026_marco_ajustado_mclp'] || 74312.0),
+          gasto_actual_mclp: null
+        });
       }
       return rows;
     })(),

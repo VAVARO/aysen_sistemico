@@ -601,7 +601,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             '218 concesiones',
             '78 centros activos',
             '185.000 ton',
-            '74,5% dependencia FCM',
+            '48,7% dependencia FCM',
             '12 camas',
             '980 alumnos',
             '94% leña'

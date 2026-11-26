@@ -2839,9 +2839,7 @@
         "potencia_mw": 17.98,
         "tecnologia": "Térmica Diésel",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "comuna": "Coyhaique",
-        "tension_kv": "23/66"
+        "sistema": "Sistema Mediano de Aysén (SMA)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2857,9 +2855,7 @@
         "potencia_mw": 11.0,
         "tecnologia": "Hidroeléctrica de pasada",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "comuna": "Coyhaique",
-        "tension_kv": "23/66"
+        "sistema": "Sistema Mediano de Aysén (SMA)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2875,9 +2871,7 @@
         "potencia_mw": 2.99,
         "tecnologia": "Solar Fotovoltaica",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "comuna": "Coyhaique",
-        "tension_kv": "23/66"
+        "sistema": "Sistema Mediano de Aysén (SMA)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2893,9 +2887,7 @@
         "potencia_mw": 1.98,
         "tecnologia": "Eólica",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "comuna": "Coyhaique",
-        "tension_kv": "23/66"
+        "sistema": "Sistema Mediano de Aysén (SMA)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2911,19 +2903,7 @@
         "potencia_mw": 10.0,
         "tecnologia": "Térmica Diésel",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "comuna": "Aysén",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "capacidad_comaco_estanques_m3": 3800,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
-        "productos": [
-          "Gasolina 93/97",
-          "Petróleo Diésel",
-          "Kerosene Doméstico (único estanque regional en Copec)"
-        ],
-        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
-        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+        "sistema": "Sistema Mediano de Aysén (SMA)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2939,19 +2919,7 @@
         "potencia_mw": 2.0,
         "tecnologia": "Hidroeléctrica de pasada",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "comuna": "Aysén",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "capacidad_comaco_estanques_m3": 3800,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
-        "productos": [
-          "Gasolina 93/97",
-          "Petróleo Diésel",
-          "Kerosene Doméstico (único estanque regional en Copec)"
-        ],
-        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
-        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+        "sistema": "Sistema Mediano de Aysén (SMA)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2967,19 +2935,7 @@
         "potencia_mw": 2.0,
         "tecnologia": "Hidroeléctrica de pasada",
         "operador": "SCM El Toqui",
-        "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
-        "comuna": "Aysén",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "capacidad_comaco_estanques_m3": 3800,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
-        "productos": [
-          "Gasolina 93/97",
-          "Petróleo Diésel",
-          "Kerosene Doméstico (único estanque regional en Copec)"
-        ],
-        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
-        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+        "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -2995,19 +2951,7 @@
         "potencia_mw": 4.0,
         "tecnologia": "Térmica Diésel",
         "operador": "SCM El Toqui",
-        "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
-        "comuna": "Aysén",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "capacidad_comaco_estanques_m3": 3800,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
-        "productos": [
-          "Gasolina 93/97",
-          "Petróleo Diésel",
-          "Kerosene Doméstico (único estanque regional en Copec)"
-        ],
-        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
-        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+        "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3023,19 +2967,7 @@
         "potencia_mw": 0.48,
         "tecnologia": "Térmica Diésel",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Aislado Insular Islas Huichas",
-        "comuna": "Aysén",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "capacidad_comaco_estanques_m3": 3800,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
-        "productos": [
-          "Gasolina 93/97",
-          "Petróleo Diésel",
-          "Kerosene Doméstico (único estanque regional en Copec)"
-        ],
-        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
-        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+        "sistema": "Sistema Aislado Insular Islas Huichas"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3099,11 +3031,7 @@
         "potencia_mw": 2.9,
         "tecnologia": "Térmica Diésel",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano General Carrera (SMGC)",
-        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (Cuenca General Carrera)",
-        "capacidad_diseno_tbps": 10.0,
-        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Mediano General Carrera (SMGC)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3119,11 +3047,7 @@
         "potencia_mw": 1.0,
         "tecnologia": "Hidroeléctrica de pasada",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano General Carrera (SMGC)",
-        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (Cuenca General Carrera)",
-        "capacidad_diseno_tbps": 10.0,
-        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Mediano General Carrera (SMGC)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3139,11 +3063,7 @@
         "potencia_mw": 1.9,
         "tecnologia": "Térmica Diésel",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano General Carrera (SMGC)",
-        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 Ruta 7 Sur",
-        "capacidad_diseno_tbps": 10.0,
-        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Mediano General Carrera (SMGC)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3159,11 +3079,7 @@
         "potencia_mw": 0.64,
         "tecnologia": "Hidroeléctrica de pasada",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Sistema Mediano General Carrera (SMGC)",
-        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 Ruta 7 Sur",
-        "capacidad_diseno_tbps": 10.0,
-        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Mediano General Carrera (SMGC)"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3179,11 +3095,7 @@
         "potencia_mw": 1.45,
         "tecnologia": "Térmica Diésel",
         "operador": "Ilustre Municipalidad de Guaitecas",
-        "sistema": "Sistema Aislado Municipal Melinka-Repollal",
-        "tipo_enlace": "FTTH domiciliaria 33 localidades inc. Melinka, Repollal, La Junta, Puyuhuapi y Lago Verde (adj. 23-jul-2026)",
-        "capacidad_diseno_tbps": 1.0,
-        "operador_troncal": "Pacífico Cable SpA + DB Terra Chile Holdco SpA / GORE-SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Aislado Municipal Melinka-Repollal"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3199,11 +3111,7 @@
         "potencia_mw": 0.95,
         "tecnologia": "Híbrida Diésel + Microhidro",
         "operador": "Ilustre Municipalidad de Tortel",
-        "sistema": "Sistema Aislado Municipal Caleta Tortel",
-        "tipo_enlace": "Único POIIT Aysén de Troncal Submarina Austral (FDT-2017-01, Puerto Montt - Tortel - Punta Arenas - Williams)",
-        "capacidad_diseno_tbps": 16.0,
-        "operador_troncal": "CTR S.A. / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Aislado Municipal Caleta Tortel"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3219,11 +3127,7 @@
         "potencia_mw": 1.25,
         "tecnologia": "Híbrida Hidroeléctrica + Diésel",
         "operador": "Ilustre Municipalidad de O'Higgins",
-        "sistema": "Sistema Aislado Municipal Villa O'Higgins",
-        "tipo_enlace": ">150 km (42 km submarinos Fiordo Mitchell), D.O. 28-abr-2026",
-        "capacidad_diseno_tbps": 10.0,
-        "operador_troncal": "Consorcio Pacífico Cable SpA + DB Terra Chile Holdco SpA / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Sistema Aislado Municipal Villa O'Higgins"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3239,11 +3143,7 @@
         "potencia_mw": 1.4,
         "tecnologia": "Térmica Diésel de Respaldo",
         "operador": "Edelaysen S.A. (Grupo Saesa)",
-        "sistema": "Ramal Sur SMA / Respaldo Local",
-        "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (4 POIITs Silica Networks)",
-        "capacidad_diseno_tbps": 10.0,
-        "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
-        "mandante": "SUBTEL"
+        "sistema": "Ramal Sur SMA / Respaldo Local"
       },
       "source_url": "https://energiaabierta.cl/catastro-centrales-generacion/"
     },
@@ -3291,19 +3191,7 @@
         "tipo_enlace": "Cable Submarino privado ~400 km desde Quellón (operativo desde 2014) -> Coyhaique -> Cable Prat",
         "capacidad_diseno_tbps": 12.0,
         "operador_troncal": "GTD / Telefónica del Sur (Privado)",
-        "mandante": "SUBTEL",
-        "comuna": "Aysén",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "capacidad_comaco_estanques_m3": 3800,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
-        "productos": [
-          "Gasolina 93/97",
-          "Petróleo Diésel",
-          "Kerosene Doméstico (único estanque regional en Copec)"
-        ],
-        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
-        "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
+        "mandante": "SUBTEL"
       },
       "source_url": "https://www.subtel.gob.cl/foa/"
     },
@@ -3319,10 +3207,7 @@
         "tipo_enlace": "Troncal Terrestre Aysén FDT-2018-02 (>617 km, 14 POIITs Silica Networks)",
         "capacidad_diseno_tbps": 10.0,
         "operador_troncal": "Silica Networks Chile S.A. / SUBTEL",
-        "mandante": "SUBTEL",
-        "comuna": "Coyhaique",
-        "tension_kv": "23/66",
-        "operador": "Edelaysen S.A."
+        "mandante": "SUBTEL"
       },
       "source_url": "https://www.subtel.gob.cl/foa/"
     },
@@ -3409,24 +3294,23 @@
     {
       "id": "nodo-combustibles-chacabuco",
       "nombre": "Terminal Marítimo MBM Copec (6.674 m³ activos) y Estanques Comaco (3.800 m³) Puerto Chacabuco",
-      "tipo": "Terminal de Almacenamiento y Distribución de Combustibles",
+      "tipo": "Terminal Marítimo MBM y Almacenamiento de Hidrocarburos",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "lat": -45.462,
       "lng": -72.818,
       "atributos": {
-        "tipo": "Terminal Marítimo MBM y estanques terrestres",
+        "comuna": "Aysén",
+        "capacidad_m3": 6674,
+        "capacidad_total_instalada_m3": 10474,
+        "capacidad_comaco_estanques_m3": 3800,
+        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³) desde ENAP San Vicente",
         "productos": [
           "Gasolina 93/97",
           "Petróleo Diésel",
-          "Kerosene Doméstico"
+          "Kerosene Doméstico (único estanque regional en Copec)"
         ],
-        "operadores": "Copec (MBM activo) / Enex-Shell y Esmax-Aramco vía Comaco",
-        "capacidad_m3": 6674,
-        "capacidad_total_instalada_m3": 10474,
-        "buque_abastecedor": "B/T Puerto Aysén (12.978 m³)",
-        "comuna": "Aysén",
-        "capacidad_comaco_estanques_m3": 3800,
+        "operadores": "Copec (único MBM marítimo activo) / Enex-Shell y Esmax-Aramco vía Comaco (manifold Copec)",
         "nota_vulnerabilidad": "Estudio Sociotécnico CIEP (ago-2025): terminal Comaco inactivo >10 años para descarga directa desde buque; 100% de la logística de hidrocarburos líquidos y kerosene depende del único MBM operativo de Copec (6.674 m³)."
       },
       "source_url": "https://www.sec.cl"
@@ -3440,13 +3324,11 @@
       "lat": -45.575,
       "lng": -72.058,
       "atributos": {
+        "comuna": "Coyhaique",
         "tension_kv": "23/66",
-        "operador": "Edelaysen S.A.",
-        "sistema": "Sistema Mediano de Aysén (SMA)",
-        "funcion": "Transformación y despacho troncal Coyhaique - Aysén",
-        "comuna": "Coyhaique"
+        "operador": "Edelaysen S.A."
       },
-      "source_url": "https://energiaabierta.cl/sistemas-electricos/sistema-mediano-aysen"
+      "source_url": "https://www.sec.cl"
     }
   ],
   "auditoria_bencina_en_linea_cne": {

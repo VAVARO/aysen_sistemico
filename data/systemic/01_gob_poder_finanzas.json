@@ -72,8 +72,8 @@
     }
   ],
   "resumen_regional": {
-    "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos · Período 2025-2029 · 54,39% 1ra vuelta oct 2024)",
-    "delegado_presidencial_regional": "Luz María Vicuña Figueroa (desde 11 mar 2026; antecesor Jorge Díaz Guzmán 2024-2026)",
+    "gobernador_regional": "Marcelo Santana Vargas (UDI / Chile Vamos · Período 2025-2029 · 54,37% / 33.883 v.)",
+    "delegado_presidencial_regional": "Luz María Vicuña Figueroa (RN, en ejercicio desde 11 mar 2026; antecesor Jorge Díaz Guzmán nov 2024 - mar 2026)",
     "senadores_circunscripcion_14": [
       {
         "nombre": "Miguel Ángel Calisto Águila",
@@ -103,264 +103,274 @@
         "periodo": "2026-2030"
       }
     ],
-    "presupuesto_fndr_regional_mclp": 72450.0,
-    "dependencia_fcm_promedio_regional_pct": 76.8,
+    "presupuesto_fndr_regional_mclp": 80200.0,
+    "dependencia_fcm_promedio_regional_pct": 77.5,
     "total_comunas": 10,
     "series_historicas_regionales": [
       {
         "indicador": "presupuesto_fndr_gore_aysen_mclp",
-        "nombre": "Presupuesto Total FNDR GORE Aysén",
+        "nombre": "Presupuesto Total FNDR GORE Aysén (Asignado/Vigente)",
         "unidad": "M$ CLP",
-        "fuente": "DIPRES / Ley de Presupuestos del Sector Público",
+        "fuente": "DIPRES / GORE Aysén (datos.gob.cl)",
         "valores": [
           {
             "periodo": "2015",
             "fecha": "2015-12-31",
-            "valor": 46500.0
+            "valor": 47242.8
           },
           {
             "periodo": "2016",
             "fecha": "2016-12-31",
-            "valor": 48200.0
+            "valor": 64945.3
           },
           {
             "periodo": "2017",
             "fecha": "2017-12-31",
-            "valor": 50800.0
+            "valor": 68787.4
           },
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 53400.0
+            "valor": 65295.0
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 56100.0
+            "valor": 58446.7
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 58900.0
+            "valor": 17714.6
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 62300.0
+            "valor": 57405.1
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 66700.0
+            "valor": 58342.9
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 69800.0
+            "valor": 68333.7
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 72450.0
+            "valor": 75543.0
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 75800.0
+            "valor": 80200.0
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 78950.0
+            "valor": 81812.0
           }
         ]
       },
       {
         "indicador": "dependencia_fcm_promedio_regional_pct",
-        "nombre": "Dependencia Promedio Regional del Fondo Común Municipal",
+        "nombre": "Dependencia Promedio Simple Regional del Fondo Común Municipal",
         "unidad": "%",
-        "fuente": "SINIM - SUBDERE",
+        "fuente": "SINIM - SUBDERE / BCN",
         "valores": [
           {
             "periodo": "2015",
             "fecha": "2015-12-31",
-            "valor": 77.2
+            "valor": 78.5
           },
           {
             "periodo": "2016",
             "fecha": "2016-12-31",
-            "valor": 77.0
+            "valor": 78.3
           },
           {
             "periodo": "2017",
             "fecha": "2017-12-31",
-            "valor": 76.8
+            "valor": 78.0
           },
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 76.6
+            "valor": 77.8
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 76.3
+            "valor": 77.5
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 77.3
+            "valor": 78.6
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 76.5
+            "valor": 77.9
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 76.1
+            "valor": 77.6
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 76.0
+            "valor": 77.2
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 75.8
+            "valor": 77.1
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 75.5
+            "valor": 77.5
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 75.2
+            "valor": 77.2
           }
         ]
       },
       {
         "indicador": "presupuesto_municipal_total_regional_mclp",
-        "nombre": "Presupuesto Municipal Total Agregado de las 10 Comunas de Aysén",
+        "nombre": "Ingresos Municipales Agregados de las 10 Comunas de Aysén",
         "unidad": "M$ CLP",
-        "fuente": "SINIM - SUBDERE",
+        "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
         "valores": [
           {
             "periodo": "2015",
             "fecha": "2015-12-31",
-            "valor": 39353.4
+            "valor": 43080.0
           },
           {
             "periodo": "2016",
             "fecha": "2016-12-31",
-            "valor": 41693.1
+            "valor": 46010.0
           },
           {
             "periodo": "2017",
             "fecha": "2017-12-31",
-            "valor": 44764.1
+            "valor": 49480.0
           },
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 48263.8
+            "valor": 53300.0
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 51344.5
+            "valor": 57050.0
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 53644.9
+            "valor": 60300.0
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 57743.4
+            "valor": 65220.0
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 62864.5
+            "valor": 70840.0
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 67163.4
+            "valor": 74980.0
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 70751.5
+            "valor": 78736.96
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 75524.1
+            "valor": 84820.68
           },
           {
             "periodo": "2026",
             "fecha": "2026-12-31",
-            "valor": 80001.3
+            "valor": 88213.6
           }
         ]
       },
       {
         "indicador": "ejecucion_real_fndr_dipres_mclp",
-        "nombre": "Ejecucion Real Devengada FNDR GORE Aysen (DIPRES)",
+        "nombre": "Ejecución Real Devengada FNDR GORE Aysén (CKAN / DIPRES)",
         "unidad": "M$ CLP",
-        "fuente": "DIPRES / Balances de Ejecucion Presupuestaria Gobiernos Regionales",
+        "fuente": "DIPRES / GORE Aysén (datos.gob.cl)",
         "valores": [
+          {
+            "periodo": "2015",
+            "fecha": "2015-12-31",
+            "valor": 43706.5
+          },
+          {
+            "periodo": "2016",
+            "fecha": "2016-12-31",
+            "valor": 64319.9
+          },
+          {
+            "periodo": "2017",
+            "fecha": "2017-12-31",
+            "valor": 66712.6
+          },
           {
             "periodo": "2018",
             "fecha": "2018-12-31",
-            "valor": 51200.0
+            "valor": 62209.0
           },
           {
             "periodo": "2019",
             "fecha": "2019-12-31",
-            "valor": 54300.0
+            "valor": 58151.1
           },
           {
             "periodo": "2020",
             "fecha": "2020-12-31",
-            "valor": 56100.0
+            "valor": 17510.2
           },
           {
             "periodo": "2021",
             "fecha": "2021-12-31",
-            "valor": 60500.0
+            "valor": 51226.3
           },
           {
             "periodo": "2022",
             "fecha": "2022-12-31",
-            "valor": 64800.0
+            "valor": 53409.0
           },
           {
             "periodo": "2023",
             "fecha": "2023-12-31",
-            "valor": 61548.0
+            "valor": 61579.2
           },
           {
             "periodo": "2024",
             "fecha": "2024-12-31",
-            "valor": 57235.5
+            "valor": 44765.5
           },
           {
             "periodo": "2025",
             "fecha": "2025-12-31",
-            "valor": 62500.0
-          },
-          {
-            "periodo": "2026",
-            "fecha": "2026-12-31",
-            "valor": 66800.0
+            "valor": 73863.0
           }
         ]
       },
@@ -418,9 +428,9 @@
         ]
       }
     ],
-    "autoridades_vigentes_corte": "Periodo Constitucional 2024-2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026)",
+    "autoridades_vigentes_corte": "Período Constitucional 2024-2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026) y DPR vigente desde 11-mar-2026",
     "ejecucion_fndr_2023_devengado_mclp": 61548.0,
-    "ejecucion_fndr_2024_cierre_pct": 79.0,
+    "ejecucion_fndr_2024_cierre_pct": 59.3,
     "inversion_sectorial_ministerial_mclp": 395000.0,
     "politica_zonas_extremas": {
       "norma": "Decreto Supremo N 43 de 2023 del Ministerio del Interior y Seguridad Publica / SUBDERE",
@@ -464,30 +474,57 @@
       {
         "id": "CGR-GUA-01",
         "entidad": "Ilustre Municipalidad de Las Guaitecas",
-        "caso": "Fraude al Fisco Historico en Melinka",
-        "informe_cgr": "Informe Especial de Investigacion N 76 de 2017 de la Contraloria Regional de Aysen",
+        "caso": "Fraude al Fisco Histórico en Melinka",
+        "informe_cgr": "Informe Especial de Investigación N° 76 de 2017 de la Contraloría Regional de Aysén",
         "monto_sustraido_mclp": 351.0,
-        "sentencia_penal": "Condena penal de 10 anos de presidio efectivo al exalcalde Cristian Alvarado Oyarzo por malversacion continuada de caudales publicos (2013-2016), ratificada a firme por la Corte de Apelaciones de Puerto Montt"
+        "sentencia_penal": "Condena penal de 10 años de presidio efectivo al exalcalde Cristián Alvarado Oyarzo por malversación continuada de caudales públicos (2013-2016), ratificada a firme por la Corte de Apelaciones de Puerto Montt"
       },
       {
         "id": "CGR-TOR-02",
         "entidad": "Ilustre Municipalidad de Caleta Tortel",
         "caso": "Contrato de Alcantarillado y Planta de Tratamiento de Aguas Servidas",
-        "informe_cgr": "Informes de Auditoria de la Contraloria Regional de Aysen sobre Contrato ICAFAL / Municipio",
+        "informe_cgr": "Informes de Auditoría de la Contraloría Regional de Aysén sobre Contrato ICAFAL / Municipio",
         "monto_sentencia_mclp": 670.0,
-        "sentencia_civil": "Sentencia judicial del Juzgado de Letras de Cochrane que condena a Tortel por $670 MM en litigio por retrasos de 583 dias e incumplimientos contractuales en obras de alcantarillado"
+        "sentencia_civil": "Sentencia judicial del Juzgado de Letras de Cochrane que condena a Tortel por $670 MM en litigio por retrasos de 583 días e incumplimientos contractuales en obras de alcantarillado"
       },
       {
         "id": "CGR-GOR-03",
-        "entidad": "Gobierno Regional de Aysen (GORE) / Fundacion ProCultura",
-        "caso": "Caso Convenios - Programa Familias Rezagadas Provincia Capitan Prat",
-        "informe_cgr": "Investigacion Especial CGR y Dictamenes sobre transferencias directas",
+        "entidad": "Gobierno Regional de Aysén (GORE) / Fundación ProCultura",
+        "caso": "Caso Convenios - Programa Familias Rezagadas Provincia Capitán Prat",
+        "informe_cgr": "Investigación Especial CGR y Dictámenes sobre transferencias directas",
         "monto_convenio_mclp": 1673.356,
-        "resolucion": "Anulacion formal del convenio de $1.673 MM en agosto de 2023 por votacion del Consejo Regional (CORE) antes de toma de razon ante el escandalo nacional del Caso Convenios, al detectarse sobrecosto de mas de $23 MM por familia para 70 beneficiarios"
+        "resolucion": "Anulación formal del convenio de $1.673 MM en agosto de 2023 por votación del Consejo Regional (CORE) antes de toma de razón ante el Caso Convenios, al detectarse sobrecosto superior a $23 MM por familia para 70 beneficiarios"
+      },
+      {
+        "id": "CGR-COY-04",
+        "entidad": "Ilustre Municipalidad de Coyhaique",
+        "caso": "Servicios Esenciales sin Licitar y Requerimiento ante el TER (2025-2026)",
+        "informe_cgr": "Auditorías Contraloría Regional de Aysén, Oficio 31-jul-2025 (sumario confirmado por Corte Suprema) y pronunciamiento 24-nov-2026",
+        "monto_objetado_mclp": 6000.0,
+        "detalle_hallazgos": "Más de $6.000 MM pagados sin licitación pública entre 2022 y 2025 mediante 471 decretos de Regulariza/Reconoce (basura, cementerios y alcantarillado), doble pago/factura por $31 MM (Los Vásquez, perjuicio fiscal $21 MM), omisión de multas parquímetros por 252 UTM y deuda previsional por $118,87 MM a dic-2025 en requerimiento TER ene-2026; más pronunciamiento CGR 24-nov-2026 desestimando denuncia contra licitación $1.000 MM Festival de la Patagonia.",
+        "url_fuente": "https://www.biobiochile.cl/especial/bbcl-investiga/noticias/articulos/2026/02/12/alcalde-de-coyhaique-bajo-la-lupa-6-mil-millones-sin-licitar-y-doble-pago-ficticio-a-los-vasquez.shtml"
+      },
+      {
+        "id": "CGR-COY-05",
+        "entidad": "Liceo Bicentenario Altos del Mackay (Coyhaique)",
+        "caso": "Ampliación sin Permiso de Edificación ni Sello Verde SEC",
+        "informe_cgr": "Informe Final CGR N° 183 de junio de 2026",
+        "superficie_m2": 896,
+        "estudiantes_afectados": 391,
+        "detalle_hallazgos": "Ampliación de 896 m² operando en zona de restricción ZR-2 sin permiso de edificación, sin recepción definitiva municipal y sin Sello Verde SEC en instalaciones eléctricas y gas de respaldo geotérmico para 391 estudiantes.",
+        "url_fuente": "https://www.latercera.com/nacional/noticia/sin-permiso-de-edificacion-ni-sello-verde-de-la-sec-contraloria-de-aysen-detecta-irregularidades-en-ampliacion-de-liceo-bicentenario-en-coyhaique/"
+      },
+      {
+        "id": "CGR-REG-06",
+        "entidad": "Servicios Públicos y Municipios de la Región de Aysén",
+        "caso": "Viajes al Extranjero y Partos con Licencias Médicas Vigentes",
+        "informe_cgr": "Consolidados de Información Circularizada CGR CIC N° 9 y N° 10 de 2025",
+        "funcionarios_involucrados_min": 400,
+        "detalle_hallazgos": "Más de 400 funcionarios públicos de la Región de Aysén registraron viajes fuera del país durante licencias médicas (2023-2024) y al menos 4 partos fueron asistidos por personal de salud con licencia vigente."
       }
     ],
     "transparencia_activa_cplt_2026_promedio_pct": 73.8,
-    "fet_royalty_minero_total_regional_2025_mclp": 3207.74,
+    "fet_royalty_minero_total_regional_2025_mclp": 3207.73,
     "participacion_presidencial_2025_2v_regional_pct": 73.3,
     "fndr_datosgob_2023_asignado_mclp": 68333.7,
     "fndr_datosgob_2023_ejecutado_mclp": 61579.2,
@@ -564,7 +601,29 @@
         "partido": "UDI"
       }
     ],
-    "nota_metodologica_royalty_fet": "Los montos comunales de fet_royalty_minero_2024_mclp (Fondo Puente 2024, 42,8% del regimen) y fet_royalty_minero_2025_mclp (regimen permanente 100%, Ley N 21.591, total regional 3.207,73 M$ CLP) provienen de los decretos oficiales SUBDERE. El escalonamiento de ~2,33x entre 2024 y 2025 refleja la transicion legal del Fondo Puente al Fondo de Equidad Territorial (FET) pleno bajo la misma formula, sin comunas categorizadas como Comuna Minera activa en Aysen."
+    "nota_metodologica_royalty_fet": "Los montos comunales de fet_royalty_minero_2024_mclp (Fondo Puente 2024, 42,8% del regimen) y fet_royalty_minero_2025_mclp (regimen permanente 100%, Ley N 21.591, total regional 3.207,73 M$ CLP) provienen de los decretos oficiales SUBDERE. El escalonamiento de ~2,33x entre 2024 y 2025 refleja la transicion legal del Fondo Puente al Fondo de Equidad Territorial (FET) pleno bajo la misma formula, sin comunas categorizadas como Comuna Minera activa en Aysen.",
+    "ejecucion_fndr_2025_devengado_mclp": 73863.0,
+    "ejecucion_fndr_2025_cierre_pct": 92.0,
+    "ejecucion_fndr_2024_devengado_mclp": 44765.5,
+    "presupuesto_fndr_2026_inicial_mclp": 81812.0,
+    "presupuesto_fndr_2026_vigente_ajustado_mclp": 74312.0,
+    "presupuesto_fndr_2027_acuerdo_hacienda_mclp": 80748.0,
+    "presupuesto_municipal_total_regional_2025_mclp": 84820.68,
+    "presupuesto_municipal_total_regional_2024_mclp": 78736.96,
+    "ipp_total_regional_2025_mclp": 19243.52,
+    "fcm_total_regional_2025_mclp": 41753.32,
+    "fcm_tgr_neta_2025_mclp": 38580.0,
+    "dependencia_fcm_ponderada_regional_pct": 68.5,
+    "participacion_fcm_ingreso_total_ponderada_pct": 49.2,
+    "gastos_corrientes_bcn_promedio_pct": 79.6,
+    "fet_royalty_minero_total_regional_2024_mclp": 1377.71,
+    "fet_royalty_minero_1s_2026_abril_mclp": 1652.0,
+    "fcmi_comunas_mineras_regional_2024_2026_mclp": 0.0,
+    "participacion_municipales_2024_regional_pct": 72.9,
+    "padron_electoral_oct_2024_regional": 99049,
+    "votantes_municipales_oct_2024_regional": 72161,
+    "padron_electoral_nov_2025_regional": 99575,
+    "nota_metodologica_patentes_acuicolas_y_mineras": "Distinción contable Hub IV vs. Hub II y reforma minera nov-2026: (1) ingresos_patentes_acuicolas_mclp en Hub IV refleja el flujo efectivamente percibido en el clasificador presupuestario municipal SINIM SUBDERE (Cisnes 1.928,64 M$, Aysén 1.516,33 M$, Guaitecas 184,15 M$, total regional 3.629,12 M$; exactamente 0 M$ en las 6 comunas interiores sin borde costero marítimo y en Tortel), mientras patente_acuicola_pua_mclp en Hub II mide el devengo bruto TGR por superficie de concesiones SUBPESCA (incluidas 6 concesiones en Tortel con rezago/exención de liquidación). (2) Patentes mineras (SINIM/BCN): reforma legal aprobada en noviembre de 2026 elimina el cobro progresivo y posterga hasta el 28 de febrero de 2027 el pago de las patentes mineras correspondientes al ejercicio 2026."
   },
   "por_comuna": [
     {
@@ -575,34 +634,57 @@
       "codigo_cuenca": "113",
       "lat": -45.5712,
       "lng": -72.0685,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11101",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2025&idcom=11101",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Carlos Gatica Villegas",
-          "alcalde_partido_pacto": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
+          "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor",
           "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 84.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 72.8,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 74.45,
           "participacion_presidencial_2025_2v_pct": 74.2,
-          "padron_electoral_nov_2025": 54921
+          "padron_electoral_nov_2025": 54921,
+          "votos_alcalde_2024_n": 13291,
+          "votos_alcalde_2024_pct": 37.47,
+          "padron_electoral_oct_2024": 54210,
+          "votantes_municipales_oct_2024": 39488,
+          "ratio_padron_poblacion_pct": 95.0
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 26540.8,
-          "presupuesto_per_capita_miles_clp": 459.0,
-          "dependencia_fcm_pct": 46.5,
-          "ingresos_patentes_acuicolas_mineras_mclp": 1450.0,
-          "autonomia_financiera_nivel": "Media-Alta (Menor dependencia FCM regional)",
+          "presupuesto_municipal_anual_mclp": 27611.0,
+          "presupuesto_per_capita_miles_clp": 477.5,
+          "dependencia_fcm_pct": 58.4,
+          "ingresos_patentes_acuicolas_mineras_mclp": 77.9,
+          "autonomia_financiera_nivel": "Media-Alta (Mayor recaudación IPP regional)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 42.1,
-          "ingresos_patentes_acuicolas_mclp": 725.0,
-          "ingresos_patentes_mineras_mclp": 725.0,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 77.9,
           "ingresos_municipales_bcn_2025_mclp": 27611.0,
           "fcm_bcn_2025_mclp": 12047.74,
           "ipp_bcn_2025_mclp": 8571.21,
           "fet_royalty_minero_2024_mclp": 205.03,
-          "fet_royalty_minero_2025_mclp": 472.58
+          "fet_royalty_minero_2025_mclp": 472.58,
+          "ingresos_municipales_bcn_2024_mclp": 27391.05,
+          "ipp_bcn_2024_mclp": 8091.06,
+          "ingresos_propios_permanentes_per_capita_clp": 148232,
+          "fcm_bcn_2024_mclp": 11806.81,
+          "participacion_fcm_ingreso_total_pct": 43.6,
+          "gastos_corrientes_bcn_pct": 85.4,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 44.99,
+            "2023": 46.78,
+            "2024": 77.9,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 14850.0,
@@ -622,69 +704,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 14820.5
+                "valor": 15540.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 15640.2
+                "valor": 16520.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 16750.8
+                "valor": 17680.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 17920.4
+                "valor": 18950.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 18980.6
+                "valor": 20120.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 19850.2
+                "valor": 21150.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 21340.5
+                "valor": 22740.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 23410.8
+                "valor": 24980.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 25120.4
+                "valor": 26410.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 26540.8
+                "valor": 27391.05
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 28420.5
+                "valor": 27611.0
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 30150.0
+                "valor": 28715.4
               }
             ]
           },
@@ -692,135 +774,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 4350.2
+                "valor": 4520.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 4680.5
+                "valor": 4860.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 5090.1
+                "valor": 5240.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 5540.3
+                "valor": 5680.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 5920.8
+                "valor": 6050.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 5610.4
+                "valor": 5740.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 6320.1
+                "valor": 6480.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 7120.5
+                "valor": 7210.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 7680.2
+                "valor": 7740.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 8091.2
+                "valor": 8091.06
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 8650.0
+                "valor": 8571.21
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 9220.4
+                "valor": 8914.1
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 48.2
+                "valor": 59.8
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 48.0
+                "valor": 59.5
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 47.8
+                "valor": 59.3
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 47.5
+                "valor": 59.1
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 47.1
+                "valor": 58.8
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 48.4
+                "valor": 60.2
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 47.2
+                "valor": 59.4
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 46.8
+                "valor": 59.1
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 46.6
+                "valor": 58.9
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 46.5
+                "valor": 59.3
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 46.2
+                "valor": 58.4
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 45.9
+                "valor": 58.1
               }
             ]
           },
@@ -975,30 +1057,53 @@
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Claudia Valdés Vásquez",
-          "alcalde_partido_pacto": "Independiente / Contigo Chile Mejor",
+          "alcalde_partido_pacto": "Independiente (cupo PPD) / Contigo Chile Mejor",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 87.5,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 80.5,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 59.24,
           "participacion_presidencial_2025_2v_pct": 67.8,
-          "padron_electoral_nov_2025": 1141
+          "padron_electoral_nov_2025": 1141,
+          "votos_alcalde_2024_n": 506,
+          "votos_alcalde_2024_pct": 51.01,
+          "padron_electoral_oct_2024": 1261,
+          "votantes_municipales_oct_2024": 1015,
+          "ratio_padron_poblacion_pct": 146.5
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 2450.2,
-          "presupuesto_per_capita_miles_clp": 3145.3,
-          "dependencia_fcm_pct": 89.2,
-          "ingresos_patentes_acuicolas_mineras_mclp": 35.0,
-          "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM)",
+          "presupuesto_municipal_anual_mclp": 3321.05,
+          "presupuesto_per_capita_miles_clp": 4263.2,
+          "dependencia_fcm_pct": 83.9,
+          "ingresos_patentes_acuicolas_mineras_mclp": 20.26,
+          "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 48.5,
-          "ingresos_patentes_acuicolas_mclp": 17.5,
-          "ingresos_patentes_mineras_mclp": 17.5,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 20.26,
           "ingresos_municipales_bcn_2025_mclp": 3321.05,
           "fcm_bcn_2025_mclp": 2249.3,
           "ipp_bcn_2025_mclp": 430.75,
           "fet_royalty_minero_2024_mclp": 121.39,
-          "fet_royalty_minero_2025_mclp": 283.22
+          "fet_royalty_minero_2025_mclp": 283.22,
+          "ingresos_municipales_bcn_2024_mclp": 2881.38,
+          "ipp_bcn_2024_mclp": 344.02,
+          "ingresos_propios_permanentes_per_capita_clp": 552952,
+          "fcm_bcn_2024_mclp": 1972.15,
+          "participacion_fcm_ingreso_total_pct": 67.7,
+          "gastos_corrientes_bcn_pct": 75.6,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": null,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": 0.0
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": null,
+            "2023": 37.8,
+            "2024": 0.0,
+            "2025": 20.26
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2200.0,
@@ -1018,69 +1123,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1350.2
+                "valor": 1490.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1420.5
+                "valor": 1590.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 1510.0
+                "valor": 1710.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 1630.4
+                "valor": 1840.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 1740.8
+                "valor": 1960.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 1820.5
+                "valor": 2080.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 1950.2
+                "valor": 2250.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 2140.6
+                "valor": 2490.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 2310.4
+                "valor": 2680.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 2450.2
+                "valor": 2881.38
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 2620.0
+                "valor": 3321.05
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 2780.5
+                "valor": 3453.9
               }
             ]
           },
@@ -1088,135 +1193,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 78.4
+                "valor": 165.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 84.2
+                "valor": 178.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 91.5
+                "valor": 194.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 99.8
+                "valor": 212.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 106.2
+                "valor": 230.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 101.5
+                "valor": 220.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 114.2
+                "valor": 252.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 128.6
+                "valor": 286.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 137.4
+                "valor": 315.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 144.0
+                "valor": 344.02
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 154.2
+                "valor": 430.75
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 164.5
+                "valor": 448.0
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 86.8
+                "valor": 86.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 87.2
+                "valor": 85.8
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 87.5
+                "valor": 85.5
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 88.0
+                "valor": 85.3
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 88.4
+                "valor": 85.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 89.6
+                "valor": 86.2
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 89.0
+                "valor": 85.4
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 89.1
+                "valor": 85.1
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 89.3
+                "valor": 84.9
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 89.2
+                "valor": 85.1
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 89.0
+                "valor": 83.9
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 88.8
+                "valor": 83.6
               }
             ]
           },
@@ -1367,34 +1472,57 @@
       "codigo_cuenca": "113",
       "lat": -45.405,
       "lng": -72.693,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11201",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/reporpdf.html?anno=2026&idcom=11201",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Luis Martínez Gallardo",
-          "alcalde_partido_pacto": "Union Democrata Independiente (UDI) / Chile Vamos",
+          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 82.8,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 75.1,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 96.09,
           "participacion_presidencial_2025_2v_pct": 75.5,
-          "padron_electoral_nov_2025": 22894
+          "padron_electoral_nov_2025": 22894,
+          "votos_alcalde_2024_n": 9295,
+          "votos_alcalde_2024_pct": 59.47,
+          "padron_electoral_oct_2024": 22747,
+          "votantes_municipales_oct_2024": 17076,
+          "ratio_padron_poblacion_pct": 98.8
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 14210.5,
-          "presupuesto_per_capita_miles_clp": 613.3,
-          "dependencia_fcm_pct": 52.8,
-          "ingresos_patentes_acuicolas_mineras_mclp": 1850.0,
+          "presupuesto_municipal_anual_mclp": 14614.29,
+          "presupuesto_per_capita_miles_clp": 630.7,
+          "dependencia_fcm_pct": 61.1,
+          "ingresos_patentes_acuicolas_mineras_mclp": 1543.79,
           "autonomia_financiera_nivel": "Media (Aporte de patentes acuícolas y portuarias Puerto Chacabuco)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 44.2,
-          "ingresos_patentes_acuicolas_mclp": 1665.0,
-          "ingresos_patentes_mineras_mclp": 185.0,
+          "ingresos_patentes_acuicolas_mclp": 1516.33,
+          "ingresos_patentes_mineras_mclp": 27.46,
           "ingresos_municipales_bcn_2025_mclp": 14614.29,
           "fcm_bcn_2025_mclp": 7089.9,
           "ipp_bcn_2025_mclp": 4512.82,
           "fet_royalty_minero_2024_mclp": 168.18,
-          "fet_royalty_minero_2025_mclp": 392.86
+          "fet_royalty_minero_2025_mclp": 392.86,
+          "ingresos_municipales_bcn_2024_mclp": 13755.55,
+          "ipp_bcn_2024_mclp": 4084.76,
+          "ingresos_propios_permanentes_per_capita_clp": 194770,
+          "fcm_bcn_2024_mclp": 6803.15,
+          "participacion_fcm_ingreso_total_pct": 48.5,
+          "gastos_corrientes_bcn_pct": 85.2,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": null,
+            "2023": 1176.0,
+            "2024": 1435.72,
+            "2025": 1516.33
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": null,
+            "2023": 37.73,
+            "2024": 27.46,
+            "2025": 5.71
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 9800.0,
@@ -1414,69 +1542,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 7950.4
+                "valor": 8120.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 8420.1
+                "valor": 8640.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 9100.5
+                "valor": 9280.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 9850.3
+                "valor": 9950.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 10480.2
+                "valor": 10620.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 10920.5
+                "valor": 11180.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 11840.0
+                "valor": 12050.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 12750.4
+                "valor": 12890.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 13540.8
+                "valor": 13350.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 14210.5
+                "valor": 13755.55
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 15180.2
+                "valor": 14614.29
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 16050.0
+                "valor": 15198.9
               }
             ]
           },
@@ -1484,135 +1612,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 2240.5
+                "valor": 2280.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 2410.2
+                "valor": 2460.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 2630.8
+                "valor": 2670.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 2880.4
+                "valor": 2910.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 3090.1
+                "valor": 3120.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 2940.6
+                "valor": 2980.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 3320.4
+                "valor": 3380.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 3740.2
+                "valor": 3690.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 4010.5
+                "valor": 3890.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 4235.8
+                "valor": 4084.76
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 4520.1
+                "valor": 4512.82
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 4810.0
+                "valor": 4693.3
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 54.8
+                "valor": 63.5
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 54.5
+                "valor": 63.2
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 54.1
+                "valor": 62.9
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 53.8
+                "valor": 62.6
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 53.4
+                "valor": 62.3
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 54.6
+                "valor": 63.6
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 53.5
+                "valor": 62.7
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 53.1
+                "valor": 62.3
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 52.9
+                "valor": 62.1
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 52.8
+                "valor": 62.5
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 52.5
+                "valor": 61.1
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 52.2
+                "valor": 60.8
               }
             ]
           },
@@ -1763,34 +1891,57 @@
       "codigo_cuenca": "112",
       "lat": -44.743,
       "lng": -72.699,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11202",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/reporpdf.html?anno=2025&idcom=11202",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Francisco Roncagliolo Lepio",
-          "alcalde_partido_pacto": "Renovacion Nacional (RN) / Chile Vamos",
+          "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos",
           "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 83.1,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 77.9,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 61.6,
           "participacion_presidencial_2025_2v_pct": 77.1,
-          "padron_electoral_nov_2025": 4838
+          "padron_electoral_nov_2025": 4838,
+          "votos_alcalde_2024_n": 1955,
+          "votos_alcalde_2024_pct": 54.11,
+          "padron_electoral_oct_2024": 4848,
+          "votantes_municipales_oct_2024": 3777,
+          "ratio_padron_poblacion_pct": 94.2
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 6100.0,
-          "presupuesto_per_capita_miles_clp": 1187.5,
-          "dependencia_fcm_pct": 74.5,
-          "ingresos_patentes_acuicolas_mineras_mclp": 680.0,
-          "autonomia_financiera_nivel": "Baja (Alta dependencia FCM con compensación por patentes de acuicultura)",
+          "presupuesto_municipal_anual_mclp": 7985.27,
+          "presupuesto_per_capita_miles_clp": 1554.5,
+          "dependencia_fcm_pct": 48.7,
+          "ingresos_patentes_acuicolas_mineras_mclp": 1929.04,
+          "autonomia_financiera_nivel": "Alta (Menor dependencia FCM regional gracias a patentes acuícolas)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 39.8,
-          "ingresos_patentes_acuicolas_mclp": 612.0,
-          "ingresos_patentes_mineras_mclp": 68.0,
+          "ingresos_patentes_acuicolas_mclp": 1928.64,
+          "ingresos_patentes_mineras_mclp": 0.4,
           "ingresos_municipales_bcn_2025_mclp": 7985.27,
           "fcm_bcn_2025_mclp": 2824.5,
           "ipp_bcn_2025_mclp": 2979.78,
           "fet_royalty_minero_2024_mclp": 133.76,
-          "fet_royalty_minero_2025_mclp": 312.87
+          "fet_royalty_minero_2025_mclp": 312.87,
+          "ingresos_municipales_bcn_2024_mclp": 7049.41,
+          "ipp_bcn_2024_mclp": 2698.29,
+          "ingresos_propios_permanentes_per_capita_clp": 580062,
+          "fcm_bcn_2024_mclp": 2590.53,
+          "participacion_fcm_ingreso_total_pct": 35.4,
+          "gastos_corrientes_bcn_pct": 71.2,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 1903.55,
+            "2023": 2186.44,
+            "2024": 1928.64,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 0.35,
+            "2023": 0.4,
+            "2024": 0.0,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 5600.0,
@@ -1810,69 +1961,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 3410.2
+                "valor": 3850.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 3620.5
+                "valor": 4120.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 3890.1
+                "valor": 4450.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 4210.6
+                "valor": 4810.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 4480.3
+                "valor": 5180.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 4690.8
+                "valor": 5490.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 5040.2
+                "valor": 5940.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 5460.5
+                "valor": 6390.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 5820.1
+                "valor": 6720.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 6100.0
+                "valor": 7049.41
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 6480.5
+                "valor": 7985.27
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 6850.2
+                "valor": 8304.7
               }
             ]
           },
@@ -1880,135 +2031,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 580.2
+                "valor": 1320.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 625.4
+                "valor": 1440.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 680.1
+                "valor": 1580.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 745.2
+                "valor": 1740.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 798.5
+                "valor": 1890.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 760.1
+                "valor": 1810.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 855.4
+                "valor": 2090.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 965.2
+                "valor": 2350.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 1040.6
+                "valor": 2520.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 1102.5
+                "valor": 2698.29
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 1175.4
+                "valor": 2979.78
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 1250.0
+                "valor": 3099.0
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 76.2
+                "valor": 52.4
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 76.0
+                "valor": 51.9
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 75.8
+                "valor": 51.5
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 75.4
+                "valor": 51.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 75.1
+                "valor": 50.6
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 76.0
+                "valor": 51.8
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 75.2
+                "valor": 50.8
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 74.8
+                "valor": 50.2
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 74.6
+                "valor": 49.6
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 74.5
+                "valor": 49.0
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 74.2
+                "valor": 48.7
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 73.9
+                "valor": 48.4
               }
             ]
           },
@@ -2159,34 +2310,57 @@
       "codigo_cuenca": "110",
       "lat": -43.896,
       "lng": -73.748,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11203",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2025&idcom=11203",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Bans Puinao Carimoney",
-          "alcalde_partido_pacto": "Evolucion Politica (Evopoli) / Chile Vamos",
+          "alcalde_partido_pacto": "Evolución Política (Evópoli) / Chile Vamos",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 85.9,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 74.1,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 92.63,
           "participacion_presidencial_2025_2v_pct": 71.0,
-          "padron_electoral_nov_2025": 1539
+          "padron_electoral_nov_2025": 1539,
+          "votos_alcalde_2024_n": 583,
+          "votos_alcalde_2024_pct": 52.29,
+          "padron_electoral_oct_2024": 1557,
+          "votantes_municipales_oct_2024": 1154,
+          "ratio_padron_poblacion_pct": 96.3
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 3300.0,
-          "presupuesto_per_capita_miles_clp": 2065.1,
-          "dependencia_fcm_pct": 83.0,
-          "ingresos_patentes_acuicolas_mineras_mclp": 210.0,
-          "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM en archipiélago insular)",
+          "presupuesto_municipal_anual_mclp": 4569.04,
+          "presupuesto_per_capita_miles_clp": 2859.2,
+          "dependencia_fcm_pct": 73.1,
+          "ingresos_patentes_acuicolas_mineras_mclp": 184.15,
+          "autonomia_financiera_nivel": "Baja (Compensada parcialmente por patentes acuícolas en archipiélago)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 51.2,
-          "ingresos_patentes_acuicolas_mclp": 189.0,
-          "ingresos_patentes_mineras_mclp": 21.0,
+          "ingresos_patentes_acuicolas_mclp": 184.15,
+          "ingresos_patentes_mineras_mclp": 0.0,
           "ingresos_municipales_bcn_2025_mclp": 4569.04,
           "fcm_bcn_2025_mclp": 2297.78,
           "ipp_bcn_2025_mclp": 845.22,
           "fet_royalty_minero_2024_mclp": 121.75,
-          "fet_royalty_minero_2025_mclp": 284.33
+          "fet_royalty_minero_2025_mclp": 284.33,
+          "ingresos_municipales_bcn_2024_mclp": 3927.68,
+          "ipp_bcn_2024_mclp": 855.55,
+          "ingresos_propios_permanentes_per_capita_clp": 528924,
+          "fcm_bcn_2024_mclp": 2029.36,
+          "participacion_fcm_ingreso_total_pct": 50.3,
+          "gastos_corrientes_bcn_pct": 70.9,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 169.75,
+            "2023": 198.42,
+            "2024": 184.15,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 3400.0,
@@ -2206,69 +2380,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1820.4
+                "valor": 2120.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1940.2
+                "valor": 2280.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 2080.5
+                "valor": 2460.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 2240.1
+                "valor": 2670.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 2410.8
+                "valor": 2890.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 2520.4
+                "valor": 3060.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 2710.0
+                "valor": 3320.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 2950.3
+                "valor": 3580.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 3140.5
+                "valor": 3760.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 3300.0
+                "valor": 3927.68
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 3510.2
+                "valor": 4569.04
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 3720.0
+                "valor": 4751.8
               }
             ]
           },
@@ -2276,135 +2450,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 145.2
+                "valor": 420.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 156.4
+                "valor": 460.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 170.2
+                "valor": 505.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 186.5
+                "valor": 555.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 200.1
+                "valor": 605.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 190.4
+                "valor": 580.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 215.0
+                "valor": 665.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 242.8
+                "valor": 745.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 261.5
+                "valor": 805.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 278.2
+                "valor": 855.55
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 296.5
+                "valor": 845.22
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 315.0
+                "valor": 879.0
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 85.1
+                "valor": 74.5
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 84.8
+                "valor": 74.1
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 84.5
+                "valor": 73.7
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 84.1
+                "valor": 73.4
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 83.8
+                "valor": 73.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 84.6
+                "valor": 74.2
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 83.9
+                "valor": 73.4
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 83.4
+                "valor": 72.8
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 83.2
+                "valor": 71.8
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 83.0
+                "valor": 70.3
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 82.7
+                "valor": 73.1
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 82.4
+                "valor": 72.8
               }
             ]
           },
@@ -2555,34 +2729,57 @@
       "codigo_cuenca": "115",
       "lat": -46.541,
       "lng": -71.722,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11401",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/reporpdf.html?anno=2025&idcom=11401",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Ariel Keim Hermosilla",
-          "alcalde_partido_pacto": "Independiente",
+          "alcalde_partido_pacto": "Independiente (Fuera de pacto)",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 83.6,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 58.4,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 57.46,
           "participacion_presidencial_2025_2v_pct": 58.4,
-          "padron_electoral_nov_2025": 6284
+          "padron_electoral_nov_2025": 6284,
+          "votos_alcalde_2024_n": 1850,
+          "votos_alcalde_2024_pct": 52.57,
+          "padron_electoral_oct_2024": 6343,
+          "votantes_municipales_oct_2024": 3703,
+          "ratio_padron_poblacion_pct": 128.1
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 5400.0,
-          "presupuesto_per_capita_miles_clp": 1100.9,
-          "dependencia_fcm_pct": 71.2,
-          "ingresos_patentes_acuicolas_mineras_mclp": 320.0,
-          "autonomia_financiera_nivel": "Baja (Dependencia FCM con patentes mineras y comerciales)",
+          "presupuesto_municipal_anual_mclp": 5981.72,
+          "presupuesto_per_capita_miles_clp": 1219.5,
+          "dependencia_fcm_pct": 86.5,
+          "ingresos_patentes_acuicolas_mineras_mclp": 135.26,
+          "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM con patentes mineras y comerciales)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 46.7,
-          "ingresos_patentes_acuicolas_mclp": 32.0,
-          "ingresos_patentes_mineras_mclp": 288.0,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 135.26,
           "ingresos_municipales_bcn_2025_mclp": 5981.72,
           "fcm_bcn_2025_mclp": 4249.66,
           "ipp_bcn_2025_mclp": 664.34,
           "fet_royalty_minero_2024_mclp": 130.75,
-          "fet_royalty_minero_2025_mclp": 304.56
+          "fet_royalty_minero_2025_mclp": 304.56,
+          "ingresos_municipales_bcn_2024_mclp": 5355.4,
+          "ipp_bcn_2024_mclp": 791.16,
+          "ingresos_propios_permanentes_per_capita_clp": 135441,
+          "fcm_bcn_2024_mclp": 4047.61,
+          "participacion_fcm_ingreso_total_pct": 71.0,
+          "gastos_corrientes_bcn_pct": 82.9,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 109.49,
+            "2023": 121.43,
+            "2024": 135.26,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4900.0,
@@ -2602,69 +2799,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 2980.5
+                "valor": 3150.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 3180.2
+                "valor": 3360.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 3420.6
+                "valor": 3610.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 3710.4
+                "valor": 3890.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 3950.1
+                "valor": 4160.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 4120.8
+                "valor": 4390.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 4430.5
+                "valor": 4720.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 4820.0
+                "valor": 5020.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 5140.2
+                "valor": 5190.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 5400.0
+                "valor": 5355.4
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 5740.8
+                "valor": 5981.72
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 6080.4
+                "valor": 6221.0
               }
             ]
           },
@@ -2672,135 +2869,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 460.1
+                "valor": 410.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 495.2
+                "valor": 445.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 540.6
+                "valor": 485.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 592.1
+                "valor": 530.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 635.4
+                "valor": 575.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 605.2
+                "valor": 550.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 682.0
+                "valor": 625.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 768.4
+                "valor": 705.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 825.1
+                "valor": 750.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 872.6
+                "valor": 791.16
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 930.2
+                "valor": 664.34
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 990.0
+                "valor": 690.9
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 73.4
+                "valor": 84.2
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 73.0
+                "valor": 84.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 72.8
+                "valor": 83.8
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 72.4
+                "valor": 83.6
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 72.0
+                "valor": 83.4
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 73.1
+                "valor": 84.5
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 72.2
+                "valor": 83.9
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 71.7
+                "valor": 83.7
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 71.4
+                "valor": 83.6
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 71.2
+                "valor": 83.6
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 70.9
+                "valor": 86.5
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 70.6
+                "valor": 86.2
               }
             ]
           },
@@ -2951,34 +3148,57 @@
       "codigo_cuenca": "113",
       "lat": -46.291,
       "lng": -71.936,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11402",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2025&idcom=11402",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Marcelo Daniel Jélvez Cárdenas",
-          "alcalde_partido_pacto": "Union Democrata Independiente (UDI) / Chile Vamos",
+          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 86.4,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 77.2,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 100.0,
           "participacion_presidencial_2025_2v_pct": 75.7,
-          "padron_electoral_nov_2025": 3073
+          "padron_electoral_nov_2025": 3073,
+          "votos_alcalde_2024_n": 1151,
+          "votos_alcalde_2024_pct": 50.17,
+          "padron_electoral_oct_2024": 3119,
+          "votantes_municipales_oct_2024": 2409,
+          "ratio_padron_poblacion_pct": 112.9
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 3950.0,
-          "presupuesto_per_capita_miles_clp": 1450.6,
-          "dependencia_fcm_pct": 79.6,
-          "ingresos_patentes_acuicolas_mineras_mclp": 115.0,
-          "autonomia_financiera_nivel": "Muy Baja (Dependencia FCM)",
+          "presupuesto_municipal_anual_mclp": 6252.85,
+          "presupuesto_per_capita_miles_clp": 2296.3,
+          "dependencia_fcm_pct": 86.6,
+          "ingresos_patentes_acuicolas_mineras_mclp": 4.85,
+          "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 47.9,
-          "ingresos_patentes_acuicolas_mclp": 57.5,
-          "ingresos_patentes_mineras_mclp": 57.5,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 4.85,
           "ingresos_municipales_bcn_2025_mclp": 6252.85,
           "fcm_bcn_2025_mclp": 3260.78,
           "ipp_bcn_2025_mclp": 505.89,
           "fet_royalty_minero_2024_mclp": 128.91,
-          "fet_royalty_minero_2025_mclp": 301.48
+          "fet_royalty_minero_2025_mclp": 301.48,
+          "ingresos_municipales_bcn_2024_mclp": 7251.68,
+          "ipp_bcn_2024_mclp": 422.2,
+          "ingresos_propios_permanentes_per_capita_clp": 185784,
+          "fcm_bcn_2024_mclp": 2659.3,
+          "participacion_fcm_ingreso_total_pct": 52.1,
+          "gastos_corrientes_bcn_pct": 75.3,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 4.19,
+            "2023": 5.36,
+            "2024": 4.85,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4100.0,
@@ -2998,69 +3218,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 2180.2
+                "valor": 2890.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 2320.4
+                "valor": 3150.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 2490.1
+                "valor": 3460.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 2710.5
+                "valor": 3810.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 2890.3
+                "valor": 4190.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 3020.6
+                "valor": 4520.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 3250.4
+                "valor": 5040.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 3520.8
+                "valor": 5620.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 3760.2
+                "valor": 6380.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 3950.0
+                "valor": 7251.68
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 4210.5
+                "valor": 6252.85
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 4460.0
+                "valor": 6503.0
               }
             ]
           },
@@ -3068,135 +3288,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 220.4
+                "valor": 225.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 238.1
+                "valor": 242.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 260.5
+                "valor": 262.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 285.2
+                "valor": 286.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 305.8
+                "valor": 310.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 291.0
+                "valor": 296.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 328.4
+                "valor": 338.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 370.5
+                "valor": 378.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 398.2
+                "valor": 400.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 421.5
+                "valor": 422.2
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 450.0
+                "valor": 505.89
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 480.2
+                "valor": 526.1
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 81.6
+                "valor": 87.6
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 81.2
+                "valor": 87.4
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 81.0
+                "valor": 87.2
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 80.6
+                "valor": 87.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 80.3
+                "valor": 86.8
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 81.2
+                "valor": 87.8
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 80.5
+                "valor": 87.2
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 80.1
+                "valor": 86.9
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 79.8
+                "valor": 86.6
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 79.6
+                "valor": 86.3
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 79.3
+                "valor": 86.6
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 79.0
+                "valor": 86.3
               }
             ]
           },
@@ -3351,30 +3571,53 @@
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Patricio Ulloa Georgia",
-          "alcalde_partido_pacto": "Independiente / Chile Vamos",
+          "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 85.2,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 70.2,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 60.58,
           "participacion_presidencial_2025_2v_pct": 70.8,
-          "padron_electoral_nov_2025": 3461
+          "padron_electoral_nov_2025": 3461,
+          "votos_alcalde_2024_n": 1195,
+          "votos_alcalde_2024_pct": 51.69,
+          "padron_electoral_oct_2024": 3435,
+          "votantes_municipales_oct_2024": 2412,
+          "ratio_padron_poblacion_pct": 100.1
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 4600.0,
-          "presupuesto_per_capita_miles_clp": 1330.2,
-          "dependencia_fcm_pct": 76.8,
-          "ingresos_patentes_acuicolas_mineras_mclp": 180.0,
-          "autonomia_financiera_nivel": "Baja (Dependencia FCM)",
+          "presupuesto_municipal_anual_mclp": 5720.96,
+          "presupuesto_per_capita_miles_clp": 1654.4,
+          "dependencia_fcm_pct": 85.7,
+          "ingresos_patentes_acuicolas_mineras_mclp": 0.3,
+          "autonomia_financiera_nivel": "Muy Baja (Alta dependencia FCM)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 43.5,
-          "ingresos_patentes_acuicolas_mclp": 90.0,
-          "ingresos_patentes_mineras_mclp": 90.0,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 0.3,
           "ingresos_municipales_bcn_2025_mclp": 5720.96,
           "fcm_bcn_2025_mclp": 3005.2,
           "ipp_bcn_2025_mclp": 502.86,
           "fet_royalty_minero_2024_mclp": 128.77,
-          "fet_royalty_minero_2025_mclp": 296.74
+          "fet_royalty_minero_2025_mclp": 296.74,
+          "ingresos_municipales_bcn_2024_mclp": 5071.66,
+          "ipp_bcn_2024_mclp": 428.96,
+          "ingresos_propios_permanentes_per_capita_clp": 145419,
+          "fcm_bcn_2024_mclp": 2562.36,
+          "participacion_fcm_ingreso_total_pct": 52.5,
+          "gastos_corrientes_bcn_pct": 74.9,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": null,
+            "2023": 0.0,
+            "2024": 0.46,
+            "2025": 0.0
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": null,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": 0.3
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 4800.0,
@@ -3394,69 +3637,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 2540.1
+                "valor": 2740.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 2710.5
+                "valor": 2930.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 2910.2
+                "valor": 3150.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 3160.8
+                "valor": 3410.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 3370.4
+                "valor": 3660.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 3520.1
+                "valor": 3880.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 3780.6
+                "valor": 4210.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 4110.2
+                "valor": 4520.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 4380.5
+                "valor": 4790.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 4600.0
+                "valor": 5071.66
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 4890.4
+                "valor": 5720.96
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 5180.2
+                "valor": 5949.8
               }
             ]
           },
@@ -3464,135 +3707,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 330.5
+                "valor": 230.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 355.2
+                "valor": 248.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 388.4
+                "valor": 268.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 425.1
+                "valor": 292.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 456.0
+                "valor": 315.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 434.5
+                "valor": 302.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 490.2
+                "valor": 344.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 552.4
+                "valor": 385.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 594.1
+                "valor": 408.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 628.5
+                "valor": 428.96
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 670.4
+                "valor": 502.86
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 715.0
+                "valor": 523.0
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 78.8
+                "valor": 86.8
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 78.5
+                "valor": 86.6
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 78.2
+                "valor": 86.4
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 77.8
+                "valor": 86.2
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 77.5
+                "valor": 86.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 78.4
+                "valor": 87.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 77.6
+                "valor": 86.4
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 77.2
+                "valor": 86.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 77.0
+                "valor": 85.8
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 76.8
+                "valor": 85.7
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 76.5
+                "valor": 85.7
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 76.2
+                "valor": 85.4
               }
             ]
           },
@@ -3743,34 +3986,57 @@
       "codigo_cuenca": "117",
       "lat": -48.468,
       "lng": -72.56,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11302",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2025&idcom=11302",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "José Claudio Fica Gómez",
-          "alcalde_partido_pacto": "Partido Democrata Cristiano (DC) / Contigo Chile Mejor",
-          "periodo_alcaldia": "2024-2028",
+          "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor",
+          "periodo_alcaldia": "2024-2028 (Reelecto)",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 88.0,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 67.9,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 62.71,
           "participacion_presidencial_2025_2v_pct": 57.8,
-          "padron_electoral_nov_2025": 794
+          "padron_electoral_nov_2025": 794,
+          "votos_alcalde_2024_n": 185,
+          "votos_alcalde_2024_pct": 33.33,
+          "padron_electoral_oct_2024": 829,
+          "votantes_municipales_oct_2024": 563,
+          "ratio_padron_poblacion_pct": 122.7
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 2150.0,
-          "presupuesto_per_capita_miles_clp": 3323.0,
-          "dependencia_fcm_pct": 91.5,
-          "ingresos_patentes_acuicolas_mineras_mclp": 28.0,
+          "presupuesto_municipal_anual_mclp": 5323.76,
+          "presupuesto_per_capita_miles_clp": 8228.4,
+          "dependencia_fcm_pct": 95.3,
+          "ingresos_patentes_acuicolas_mineras_mclp": 34.93,
           "autonomia_financiera_nivel": "Crítica (Extrema dependencia FCM por aislamiento terminal Carretera Austral)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 50.4,
-          "ingresos_patentes_acuicolas_mclp": 14.0,
-          "ingresos_patentes_mineras_mclp": 14.0,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 34.93,
           "ingresos_municipales_bcn_2025_mclp": 5323.76,
           "fcm_bcn_2025_mclp": 2405.56,
           "ipp_bcn_2025_mclp": 118.31,
           "fet_royalty_minero_2024_mclp": 119.61,
-          "fet_royalty_minero_2025_mclp": 279.69
+          "fet_royalty_minero_2025_mclp": 279.69,
+          "ingresos_municipales_bcn_2024_mclp": 3277.81,
+          "ipp_bcn_2024_mclp": 154.15,
+          "ingresos_propios_permanentes_per_capita_clp": 182859,
+          "fcm_bcn_2024_mclp": 2202.27,
+          "participacion_fcm_ingreso_total_pct": 45.2,
+          "gastos_corrientes_bcn_pct": 86.6,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 9.5,
+            "2023": 10.05,
+            "2024": 34.93,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2400.0,
@@ -3790,69 +4056,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1180.5
+                "valor": 1720.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1250.3
+                "valor": 1850.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 1340.8
+                "valor": 1990.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 1450.2
+                "valor": 2150.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 1560.4
+                "valor": 2310.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 1630.7
+                "valor": 2460.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 1740.2
+                "valor": 2680.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 1890.5
+                "valor": 2890.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 2020.1
+                "valor": 3080.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 2150.0
+                "valor": 3277.81
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 2290.4
+                "valor": 5323.76
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 2420.0
+                "valor": 5536.7
               }
             ]
           },
@@ -3860,135 +4126,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 48.2
+                "valor": 76.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 52.0
+                "valor": 82.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 56.8
+                "valor": 89.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 62.1
+                "valor": 97.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 66.5
+                "valor": 105.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 63.2
+                "valor": 101.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 71.4
+                "valor": 118.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 80.5
+                "valor": 134.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 86.4
+                "valor": 145.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 91.8
+                "valor": 154.15
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 98.0
+                "valor": 118.31
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 104.5
+                "valor": 123.0
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 93.4
+                "valor": 94.8
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 93.0
+                "valor": 94.6
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 92.8
+                "valor": 94.4
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 92.5
+                "valor": 94.2
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 92.2
+                "valor": 94.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 93.1
+                "valor": 94.9
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 92.4
+                "valor": 94.4
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 91.9
+                "valor": 94.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 91.7
+                "valor": 93.7
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 91.5
+                "valor": 93.5
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 91.2
+                "valor": 95.3
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 90.9
+                "valor": 95.1
               }
             ]
           },
@@ -4139,34 +4405,57 @@
       "codigo_cuenca": "115",
       "lat": -47.795,
       "lng": -73.535,
-      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2026&idcom=11303",
+      "source_url": "https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2025&idcom=11303",
       "datos": {
         "autoridades": {
           "alcalde_nombre": "Marisela Jiménez Cruces",
-          "alcalde_partido_pacto": "Independiente",
+          "alcalde_partido_pacto": "Independiente (Fuera de pacto)",
           "periodo_alcaldia": "2024-2028",
           "concejo_municipal_cupos": 6,
-          "participacion_electoral_pct": 87.3,
-          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)",
+          "participacion_electoral_pct": 80.6,
+          "fuente_electoral": "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)",
           "transparencia_activa_cplt_2026_pct": 72.92,
           "participacion_presidencial_2025_2v_pct": 64.4,
-          "padron_electoral_nov_2025": 630
+          "padron_electoral_nov_2025": 630,
+          "votos_alcalde_2024_n": 271,
+          "votos_alcalde_2024_pct": 48.74,
+          "padron_electoral_oct_2024": 700,
+          "votantes_municipales_oct_2024": 564,
+          "ratio_padron_poblacion_pct": 124.8
         },
         "finanzas_sinim": {
-          "presupuesto_municipal_anual_mclp": 2050.0,
-          "presupuesto_per_capita_miles_clp": 4059.4,
-          "dependencia_fcm_pct": 92.8,
-          "ingresos_patentes_acuicolas_mineras_mclp": 22.0,
-          "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM)",
+          "presupuesto_municipal_anual_mclp": 3440.74,
+          "presupuesto_per_capita_miles_clp": 6813.3,
+          "dependencia_fcm_pct": 95.4,
+          "ingresos_patentes_acuicolas_mineras_mclp": 0.0,
+          "autonomia_financiera_nivel": "Crítica (Máxima dependencia regional del FCM: 95,4%)",
           "anio_referencia_sinim": 2025,
           "gasto_personal_subtitulo_21_pct": 52.6,
-          "ingresos_patentes_acuicolas_mclp": 11.0,
-          "ingresos_patentes_mineras_mclp": 11.0,
+          "ingresos_patentes_acuicolas_mclp": 0.0,
+          "ingresos_patentes_mineras_mclp": 0.0,
           "ingresos_municipales_bcn_2025_mclp": 3440.74,
           "fcm_bcn_2025_mclp": 2322.9,
           "ipp_bcn_2025_mclp": 112.34,
           "fet_royalty_minero_2024_mclp": 119.56,
-          "fet_royalty_minero_2025_mclp": 279.4
+          "fet_royalty_minero_2025_mclp": 279.4,
+          "ingresos_municipales_bcn_2024_mclp": 2775.34,
+          "ipp_bcn_2024_mclp": 87.38,
+          "ingresos_propios_permanentes_per_capita_clp": 222455,
+          "fcm_bcn_2024_mclp": 2060.75,
+          "participacion_fcm_ingreso_total_pct": 67.5,
+          "gastos_corrientes_bcn_pct": 88.2,
+          "patentes_acuicolas_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          },
+          "patentes_mineras_bcn_serie": {
+            "2022": 0.0,
+            "2023": 0.0,
+            "2024": 0.0,
+            "2025": null
+          }
         },
         "inversion_publica": {
           "fndr_asignado_estimado_mclp": 2600.0,
@@ -4186,69 +4475,69 @@
         "series_historicas": [
           {
             "indicador": "presupuesto_municipal_anual_mclp",
-            "nombre": "Presupuesto Municipal Anual Devengado/Vigente",
+            "nombre": "Presupuesto Municipal Anual Efectivo (Ingresos BCN/SINIM)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 1120.4
+                "valor": 1460.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 1190.2
+                "valor": 1570.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 1270.5
+                "valor": 1690.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 1380.1
+                "valor": 1820.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 1480.6
+                "valor": 1960.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 1550.3
+                "valor": 2090.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 1660.8
+                "valor": 2270.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 1810.4
+                "valor": 2460.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 1930.2
+                "valor": 2620.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 2050.0
+                "valor": 2775.34
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 2180.6
+                "valor": 3440.74
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 2310.0
+                "valor": 3578.4
               }
             ]
           },
@@ -4256,135 +4545,135 @@
             "indicador": "ingresos_propios_permanentes_mclp",
             "nombre": "Ingresos Propios Permanentes (IPP)",
             "unidad": "M$ CLP",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN Reportes Comunales",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 38.5
+                "valor": 45.0
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 41.6
+                "valor": 49.0
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 45.4
+                "valor": 53.0
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 49.8
+                "valor": 58.0
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 53.2
+                "valor": 63.0
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 50.8
+                "valor": 60.0
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 57.2
+                "valor": 69.0
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 64.5
+                "valor": 78.0
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 69.2
+                "valor": 83.0
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 73.5
+                "valor": 87.38
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 78.4
+                "valor": 112.34
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 83.6
+                "valor": 116.8
               }
             ]
           },
           {
             "indicador": "dependencia_fcm_pct",
-            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM %)",
+            "nombre": "Porcentaje de Dependencia del Fondo Común Municipal (FCM / [IPP+FCM])",
             "unidad": "%",
-            "fuente": "SINIM - SUBDERE",
+            "fuente": "SINIM - SUBDERE / BCN",
             "valores": [
               {
                 "periodo": "2015",
                 "fecha": "2015-12-31",
-                "valor": 94.2
+                "valor": 95.9
               },
               {
                 "periodo": "2016",
                 "fecha": "2016-12-31",
-                "valor": 94.0
+                "valor": 95.8
               },
               {
                 "periodo": "2017",
                 "fecha": "2017-12-31",
-                "valor": 93.8
+                "valor": 95.7
               },
               {
                 "periodo": "2018",
                 "fecha": "2018-12-31",
-                "valor": 93.5
+                "valor": 95.6
               },
               {
                 "periodo": "2019",
                 "fecha": "2019-12-31",
-                "valor": 93.2
+                "valor": 95.5
               },
               {
                 "periodo": "2020",
                 "fecha": "2020-12-31",
-                "valor": 94.0
+                "valor": 96.2
               },
               {
                 "periodo": "2021",
                 "fecha": "2021-12-31",
-                "valor": 93.4
+                "valor": 95.8
               },
               {
                 "periodo": "2022",
                 "fecha": "2022-12-31",
-                "valor": 93.1
+                "valor": 95.6
               },
               {
                 "periodo": "2023",
                 "fecha": "2023-12-31",
-                "valor": 93.0
+                "valor": 95.5
               },
               {
                 "periodo": "2024",
                 "fecha": "2024-12-31",
-                "valor": 92.8
+                "valor": 95.9
               },
               {
                 "periodo": "2025",
                 "fecha": "2025-12-31",
-                "valor": 92.5
+                "valor": 95.4
               },
               {
                 "periodo": "2026",
                 "fecha": "2026-12-31",
-                "valor": 92.2
+                "valor": 95.2
               }
             ]
           },
@@ -4535,17 +4824,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
-      "lat": -45.5752,
-      "lng": -72.0662,
+      "lat": -45.5712,
+      "lng": -72.0685,
       "atributos": {
         "direccion": "Francisco Bilbao 357, Coyhaique",
-        "alcalde_titular": "Carlos Gatica Villegas (2024-2028)",
-        "presupuesto_anual_mclp": 26540.8,
-        "dependencia_fcm_pct": 46.5,
+        "alcalde_titular": "Carlos Gatica Villegas",
+        "presupuesto_anual_mclp": 27611.0,
+        "dependencia_fcm_pct": 58.4,
         "telefono": "+56 67 267 5100",
-        "categoria": "Municipio Capital Regional",
-        "transparencia_activa_cplt_2026_pct": 74.45,
-        "fet_royalty_minero_2025_mclp": 472.58
+        "categoria": "Municipio Capital Regional"
       },
       "source_url": "https://www.coyhaique.cl/"
     },
@@ -4555,17 +4842,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-02",
       "comuna_ine": "11102",
-      "lat": -44.2403,
-      "lng": -71.8494,
+      "lat": -44.241,
+      "lng": -71.8465,
       "atributos": {
         "direccion": "Los Guindos s/n, Lago Verde",
-        "alcalde_titular": "Claudia Valdés Vásquez (2024-2028)",
-        "presupuesto_anual_mclp": 2450.2,
-        "dependencia_fcm_pct": 89.2,
+        "alcalde_titular": "Claudia Valdés Vásquez",
+        "presupuesto_anual_mclp": 3321.05,
+        "dependencia_fcm_pct": 83.9,
         "telefono": "+56 67 241 1200",
-        "categoria": "Municipio Rural Cordillerano",
-        "transparencia_activa_cplt_2026_pct": 59.24,
-        "fet_royalty_minero_2025_mclp": 283.22
+        "categoria": "Municipio Rural Cordillerano"
       },
       "source_url": "https://www.lagoverdeaysen.cl/"
     },
@@ -4575,17 +4860,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
-      "lat": -45.403,
-      "lng": -72.6915,
+      "lat": -45.405,
+      "lng": -72.693,
       "atributos": {
         "direccion": "Kalstrom 565, Puerto Aysén",
-        "alcalde_titular": "Luis Martínez Gallardo (2024-2028)",
-        "presupuesto_anual_mclp": 14210.5,
-        "dependencia_fcm_pct": 52.8,
+        "alcalde_titular": "Luis Martínez Gallardo",
+        "presupuesto_anual_mclp": 14614.29,
+        "dependencia_fcm_pct": 61.1,
         "telefono": "+56 67 233 6000",
-        "categoria": "Municipio Marítimo-Portuario",
-        "transparencia_activa_cplt_2026_pct": 96.09,
-        "fet_royalty_minero_2025_mclp": 392.86
+        "categoria": "Municipio Marítimo-Portuario"
       },
       "source_url": "https://www.puertoaysen.cl/"
     },
@@ -4595,17 +4878,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
-      "lat": -44.7278,
-      "lng": -72.6806,
+      "lat": -44.743,
+      "lng": -72.699,
       "atributos": {
         "direccion": "Rafael Sotomayor 191, Puerto Cisnes",
-        "alcalde_titular": "Francisco Roncagliolo Lepio (2024-2028)",
-        "presupuesto_anual_mclp": 6100.0,
-        "dependencia_fcm_pct": 74.5,
+        "alcalde_titular": "Francisco Roncagliolo Lepio",
+        "presupuesto_anual_mclp": 7985.27,
+        "dependencia_fcm_pct": 48.7,
         "telefono": "+56 67 234 6400",
-        "categoria": "Municipio Litoral Fiordos Norte",
-        "transparencia_activa_cplt_2026_pct": 61.6,
-        "fet_royalty_minero_2025_mclp": 312.87
+        "categoria": "Municipio Litoral Fiordos Norte"
       },
       "source_url": "https://www.municipalidadcisnes.cl/"
     },
@@ -4615,17 +4896,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-05",
       "comuna_ine": "11203",
-      "lat": -43.8975,
-      "lng": -73.7458,
+      "lat": -43.896,
+      "lng": -73.748,
       "atributos": {
         "direccion": "Felipe Westhoff s/n, Melinka",
-        "alcalde_titular": "Bans Puinao Carimoney (2024-2028)",
-        "presupuesto_anual_mclp": 3300.0,
-        "dependencia_fcm_pct": 83.0,
+        "alcalde_titular": "Bans Puinao Carimoney",
+        "presupuesto_anual_mclp": 4569.04,
+        "dependencia_fcm_pct": 73.1,
         "telefono": "+56 67 243 1220",
-        "categoria": "Municipio Archipiélago Insular Aislado",
-        "transparencia_activa_cplt_2026_pct": 92.63,
-        "fet_royalty_minero_2025_mclp": 284.33
+        "categoria": "Municipio Archipiélago Insular Aislado"
       },
       "source_url": "https://www.muniguaitecas.cl/"
     },
@@ -4636,16 +4915,14 @@
       "codigo_comuna": "CL-XI-06",
       "comuna_ine": "11401",
       "lat": -46.541,
-      "lng": -71.7219,
+      "lng": -71.722,
       "atributos": {
         "direccion": "Bernardo O'Higgins 333, Chile Chico",
-        "alcalde_titular": "Ariel Keim Hermosilla (2024-2028)",
-        "presupuesto_anual_mclp": 5400.0,
-        "dependencia_fcm_pct": 71.2,
+        "alcalde_titular": "Ariel Keim Hermosilla",
+        "presupuesto_anual_mclp": 5981.72,
+        "dependencia_fcm_pct": 86.5,
         "telefono": "+56 67 241 1260",
-        "categoria": "Municipio Cuenca Lacustre Fronterizo",
-        "transparencia_activa_cplt_2026_pct": 57.46,
-        "fet_royalty_minero_2025_mclp": 304.56
+        "categoria": "Municipio Cuenca Lacustre Fronterizo"
       },
       "source_url": "https://www.chilechico.cl/"
     },
@@ -4655,17 +4932,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-07",
       "comuna_ine": "11402",
-      "lat": -46.2925,
-      "lng": -71.9378,
+      "lat": -46.291,
+      "lng": -71.936,
       "atributos": {
         "direccion": "Carlos Soza 161, Puerto Ingeniero Ibáñez",
-        "alcalde_titular": "Marcelo Daniel Jélvez Cárdenas (2024-2028)",
-        "presupuesto_anual_mclp": 3950.0,
-        "dependencia_fcm_pct": 79.6,
+        "alcalde_titular": "Marcelo Daniel Jélvez Cárdenas",
+        "presupuesto_anual_mclp": 6252.85,
+        "dependencia_fcm_pct": 86.6,
         "telefono": "+56 67 242 3200",
-        "categoria": "Municipio Turístico-Rural Lacustre",
-        "transparencia_activa_cplt_2026_pct": 100.0,
-        "fet_royalty_minero_2025_mclp": 301.48
+        "categoria": "Municipio Turístico-Rural Lacustre"
       },
       "source_url": "https://www.rioibanez.cl/"
     },
@@ -4675,17 +4950,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
-      "lat": -47.2539,
-      "lng": -72.5694,
+      "lat": -47.254,
+      "lng": -72.571,
       "atributos": {
         "direccion": "San Valentín 555, Cochrane",
-        "alcalde_titular": "Patricio Ulloa Georgia (2024-2028)",
-        "presupuesto_anual_mclp": 4600.0,
-        "dependencia_fcm_pct": 76.8,
+        "alcalde_titular": "Patricio Ulloa Georgia",
+        "presupuesto_anual_mclp": 5720.96,
+        "dependencia_fcm_pct": 85.7,
         "telefono": "+56 67 252 2100",
-        "categoria": "Municipio Capital Provincial Capitán Prat",
-        "transparencia_activa_cplt_2026_pct": 60.58,
-        "fet_royalty_minero_2025_mclp": 296.74
+        "categoria": "Municipio Capital Provincial Capitán Prat"
       },
       "source_url": "https://www.cochrane.cl/"
     },
@@ -4695,17 +4968,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-09",
       "comuna_ine": "11302",
-      "lat": -48.4689,
-      "lng": -72.5614,
+      "lat": -48.468,
+      "lng": -72.56,
       "atributos": {
         "direccion": "Pasaje Lago Christie 36, Villa O'Higgins",
-        "alcalde_titular": "José Claudio Fica Gómez (2024-2028)",
-        "presupuesto_anual_mclp": 2150.0,
-        "dependencia_fcm_pct": 91.5,
+        "alcalde_titular": "José Claudio Fica Gómez",
+        "presupuesto_anual_mclp": 5323.76,
+        "dependencia_fcm_pct": 95.3,
         "telefono": "+56 67 243 1800",
-        "categoria": "Municipio Terminal Carretera Austral",
-        "transparencia_activa_cplt_2026_pct": 62.71,
-        "fet_royalty_minero_2025_mclp": 279.69
+        "categoria": "Municipio Terminal Carretera Austral"
       },
       "source_url": "https://www.muni-ohiggins.cl/"
     },
@@ -4715,17 +4986,15 @@
       "tipo": "Municipalidad",
       "codigo_comuna": "CL-XI-10",
       "comuna_ine": "11303",
-      "lat": -47.7969,
-      "lng": -73.5322,
+      "lat": -47.795,
+      "lng": -73.535,
       "atributos": {
         "direccion": "Pasarela Costanera s/n, Caleta Tortel",
-        "alcalde_titular": "Marisela Jiménez Cruces (2024-2028)",
-        "presupuesto_anual_mclp": 2050.0,
-        "dependencia_fcm_pct": 92.8,
+        "alcalde_titular": "Marisela Jiménez Cruces",
+        "presupuesto_anual_mclp": 3440.74,
+        "dependencia_fcm_pct": 95.4,
         "telefono": "+56 67 243 1820",
-        "categoria": "Municipio Fluvial-Delta Pasarelas",
-        "transparencia_activa_cplt_2026_pct": 72.92,
-        "fet_royalty_minero_2025_mclp": 279.4
+        "categoria": "Municipio Fluvial-Delta Pasarelas"
       },
       "source_url": "https://www.municipalidaddetortel.cl/"
     },
@@ -4740,11 +5009,13 @@
       "atributos": {
         "direccion": "Calle Ejército 405, Coyhaique",
         "gobernador_regional": "Marcelo Santana Vargas (UDI)",
-        "presupuesto_fndr_anual_mclp": 72450.0,
+        "presupuesto_fndr_anual_mclp": 80200.0,
+        "ejecucion_fndr_2025_devengado_mclp": 73863.0,
+        "ejecucion_fndr_2025_cierre_pct": 92.0,
         "consejeros_regionales_total": 14,
         "telefono": "+56 67 221 5000",
         "rol": "Administración superior y asignación del Fondo Nacional de Desarrollo Regional (FNDR)",
-        "delegado_presidencial": "Luz María Vicuña Figueroa (desde mar 2026)",
+        "delegado_presidencial": "Luz María Vicuña Figueroa (RN, en ejercicio desde 11 mar 2026; antecesor Jorge Díaz Guzmán nov 2024 - mar 2026)",
         "senadores_2026_2034": "Miguel Ángel Calisto (Ind-FREVS), Ximena Órdenes (Ind-PPD)",
         "diputados_2026_2030": "Alejandra Valdebenito (UDI), René Alinco (Ind-FREVS), Andrea Macías (PS)"
       },
@@ -4760,7 +5031,7 @@
       "lng": -72.0678,
       "atributos": {
         "direccion": "General Parra 101, Coyhaique",
-        "delegado_presidencial": "Rodrigo Araya Morales",
+        "delegado_presidencial": "Luz María Vicuña Figueroa (RN, en ejercicio desde 11 mar 2026; antecesor Jorge Díaz Guzmán nov 2024 - mar 2026)",
         "rol": "Representación del Presidente de la República, coordinación de seremías y orden público",
         "telefono": "+56 67 221 4400"
       },

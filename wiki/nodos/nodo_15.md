@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Presupuestos municipales devengados, gasto per cápita, ingresos por patentes acuícolas y mineras y clasificación tipológica según SINIM SUBDERE. Coyhaique administra un presupuesto municipal de M$ 26.540,8, mientras comunas australes como O'Higgins y Tortel operan con presupuestos iniciales de M$ 2.150,0 y M$ 2.050,0 (altamente complementados por FCM y Royalty Minero FET).
+Ingresos municipales efectivos BCN/SINIM 2025 (84.820,68 M$ regionales), gasto per cápita, recaudación efectiva por patentes acuícolas (litoral: Cisnes, Aysén y Guaitecas = 3.629,12 M$; 0 M$ en comunas interiores sin mar) y patentes mineras (301,36 M$). Coyhaique administra M$ 27.611,00, mientras O'Higgins (M$ 5.323,76) y Tortel (M$ 3.440,74) operan sostenidas por FCM (M$ 2.405,56 y M$ 2.322,90) y Royalty FET. En patentes acuícolas SINIM lideran Cisnes (M$ 1.928,64), Aysén (M$ 1.516,33) y Guaitecas (M$ 184,15).
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Presupuesto Municipal (M$) | Presupuesto Per Cápita (Miles $) | Patentes Acuícolas (M$) | Patentes Mineras (M$) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 26.540,8 | $459 | 0 | 195 |
-| [[comunas/lago_verde|Lago Verde]] | 2.450,2 | $3.145,3 | 0 | 52 |
-| [[comunas/aysen|Aysén]] | 14.210,5 | $613,3 | 1.665 | 74 |
-| [[comunas/cisnes|Cisnes]] | 6.100 | $1.187,5 | 612 | 98 |
-| [[comunas/guaitecas|Guaitecas]] | 3.300 | $2.065,1 | 189 | 2 |
-| [[comunas/chile_chico|Chile Chico]] | 5.400 | $1.100,9 | 0 | 288 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 3.950 | $1.450,6 | 0 | 115 |
-| [[comunas/cochrane|Cochrane]] | 4.600 | $1.330,2 | 0 | 58 |
-| [[comunas/ohiggins|O'Higgins]] | 2.150 | $3.323 | 0 | 34 |
-| [[comunas/tortel|Tortel]] | 2.050 | $4.059,4 | 22 | 19 |
+| [[comunas/coyhaique|Coyhaique]] | 27.611 | $477,5 | 0 | 77,9 |
+| [[comunas/lago_verde|Lago Verde]] | 3.321,05 | $4.263,2 | 0 | 20,26 |
+| [[comunas/aysen|Aysén]] | 14.614,29 | $630,7 | 1.516,33 | 27,46 |
+| [[comunas/cisnes|Cisnes]] | 7.985,27 | $1.554,5 | 1.928,64 | 0,4 |
+| [[comunas/guaitecas|Guaitecas]] | 4.569,04 | $2.859,2 | 184,15 | 0 |
+| [[comunas/chile_chico|Chile Chico]] | 5.981,72 | $1.219,5 | 0 | 135,26 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 6.252,85 | $2.296,3 | 0 | 4,85 |
+| [[comunas/cochrane|Cochrane]] | 5.720,96 | $1.654,4 | 0 | 0,3 |
+| [[comunas/ohiggins|O'Higgins]] | 5.323,76 | $8.228,4 | 0 | 34,93 |
+| [[comunas/tortel|Tortel]] | 3.440,74 | $6.813,3 | 0 | 0 |
 
 ## Metadatos de Procedencia Institucional
 

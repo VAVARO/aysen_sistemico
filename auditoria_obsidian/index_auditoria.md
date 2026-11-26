@@ -3,8 +3,8 @@ id: index_auditoria_indicadores
 title: "Índice de Auditoría y Respaldos por Indicador — Aysén Sistémico"
 type: index_auditoria
 updated_at: "2026-11-26"
-total_corridas: 2
-total_fichas_indicadores: 70
+total_corridas: 3
+total_fichas_indicadores: 82
 tags:
   - aysen-sistemico
   - auditoria-indicadores
@@ -17,6 +17,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 ## Corridas Registradas
 
 - [[corridas/corrida_2026-11-26_head_vs_head|corrida_2026-11-26_head_vs_head]]
+- [[corridas/corrida_2026-11-26_head_aprobado_vs_head|corrida_2026-11-26_head_aprobado_vs_head]]
 - [[corridas/corrida_2026-11-25_head_1_vs_head|corrida_2026-11-25_head_1_vs_head]]
 
 ## Fichas de Respaldo por Indicador (Modificados / Nuevos / Alertados)
@@ -34,6 +35,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/consumo_lena_m3_hogar_ano|consumo_lena_m3_hogar_ano]]
 - [[indicadores/consumo_lena_m3_solidos_anual|consumo_lena_m3_solidos_anual]]
 - [[indicadores/costo_diesel_aislado_clp|costo_diesel_aislado_clp]]
+- [[indicadores/dependencia_fcm_pct|dependencia_fcm_pct]]
 - [[indicadores/desembarque_muelles_total_ton|desembarque_muelles_total_ton]]
 - [[indicadores/diesel_clp_litro|diesel_clp_litro]]
 - [[indicadores/ecmpo_solicitadas_ha|ecmpo_solicitadas_ha]]
@@ -45,13 +47,18 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/estadia_promedio_dias|estadia_promedio_dias]]
 - [[indicadores/estadia_regional_viaje_dias|estadia_regional_viaje_dias]]
 - [[indicadores/estado_foa|estado_foa]]
+- [[indicadores/fcm_bcn_2025_mclp|fcm_bcn_2025_mclp]]
 - [[indicadores/gasolina_93_clp|gasolina_93_clp]]
 - [[indicadores/gasto_diario_turista_usd|gasto_diario_turista_usd]]
+- [[indicadores/gastos_corrientes_bcn_pct|gastos_corrientes_bcn_pct]]
 - [[indicadores/guias_turismo_rnpst_n|guias_turismo_rnpst_n]]
 - [[indicadores/hogares_censo_2024|hogares_censo_2024]]
 - [[indicadores/hogares_lena_pct|hogares_lena_pct]]
 - [[indicadores/indice_aislamiento_multimodal|indice_aislamiento_multimodal]]
+- [[indicadores/ingresos_mun_bcn_2025_mclp|ingresos_mun_bcn_2025_mclp]]
 - [[indicadores/internet_fijo_pct|internet_fijo_pct]]
+- [[indicadores/ipp_bcn_2025_mclp|ipp_bcn_2025_mclp]]
+- [[indicadores/ipp_per_capita_clp|ipp_per_capita_clp]]
 - [[indicadores/kerosene_clp_litro|kerosene_clp_litro]]
 - [[indicadores/llegadas_por_cama_turistica|llegadas_por_cama_turistica]]
 - [[indicadores/llegadas_turistas_emat_n|llegadas_turistas_emat_n]]
@@ -59,6 +66,9 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/mediana_espera_quirurgica_dias|mediana_espera_quirurgica_dias]]
 - [[indicadores/nota_ciclo_productivo|nota_ciclo_productivo]]
 - [[indicadores/operadores_aventura_rnpst_n|operadores_aventura_rnpst_n]]
+- [[indicadores/participacion_fcm_ingreso_total_pct|participacion_fcm_ingreso_total_pct]]
+- [[indicadores/participacion_municipales_2024_pct|participacion_municipales_2024_pct]]
+- [[indicadores/partido_alcalde|partido_alcalde]]
 - [[indicadores/patente_acuicola_pua_mclp|patente_acuicola_pua_mclp]]
 - [[indicadores/pernoctaciones_emat|pernoctaciones_emat]]
 - [[indicadores/peso_pua_ingresos_propios_pct|peso_pua_ingresos_propios_pct]]
@@ -67,10 +77,13 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/precio_lena_m3|precio_lena_m3]]
 - [[indicadores/prestadores_sernatur|prestadores_sernatur]]
 - [[indicadores/prestadores_vigencia_patente_pct|prestadores_vigencia_patente_pct]]
+- [[indicadores/presupuesto_mclp|presupuesto_mclp]]
+- [[indicadores/presupuesto_per_capita_mclp|presupuesto_per_capita_mclp]]
 - [[indicadores/ratio_costo_calefaccion_electrica_vs_lena|ratio_costo_calefaccion_electrica_vs_lena]]
 - [[indicadores/restaurantes_turisticos_rnpst_n|restaurantes_turisticos_rnpst_n]]
 - [[indicadores/revpar_emat_clp|revpar_emat_clp]]
 - [[indicadores/revpar_estimado_usd|revpar_estimado_usd]]
+- [[indicadores/royalty_fet_peso_presupuesto_pct|royalty_fet_peso_presupuesto_pct]]
 - [[indicadores/sancionatorios_sma_acuicolas_n|sancionatorios_sma_acuicolas_n]]
 - [[indicadores/sistema_electrico|sistema_electrico]]
 - [[indicadores/subsidio_fiscal_diesel_kwh_clp|subsidio_fiscal_diesel_kwh_clp]]

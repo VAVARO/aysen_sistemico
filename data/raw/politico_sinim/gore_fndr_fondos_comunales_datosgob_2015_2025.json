@@ -58,13 +58,25 @@
       "total_iniciativas": 560,
       "asignado_mclp": 68333.7,
       "gasto_actual_mclp": 61579.2,
-      "tasa_ejecucion_pct": 90.1
+      "tasa_ejecucion_pct": 90.1,
+      "ejecutado_dipres_mclp": 61548.0,
+      "tasa_ejecucion_dipres_pct": 90.0
     }
   },
   "dipres_ley_presupuestos_fndr": {
     "2024_vigente_mclp": 75543.0,
-    "2025_inicial_mclp": 77977.0,
-    "2025_gore_total_estimado_mclp": 82313.0
+    "2024_devengado_mclp": 44765.5,
+    "2024_ejecucion_pct": 59.3,
+    "2025_inicial_mclp": 80128.0,
+    "2025_vigente_mclp": 80200.0,
+    "2025_devengado_mclp": 73863.0,
+    "2025_ejecucion_pct": 92.0,
+    "2025_variacion_vs_2024_pct": 65.0,
+    "2025_premio_eficiencia_dto_1184_mclp": 412.0,
+    "2026_inicial_mclp": 81812.0,
+    "2026_marco_ajustado_mclp": 74312.0,
+    "2026_recorte_dipres_pct": -6.0,
+    "2027_acuerdo_hacienda_mclp": 80748.0
   },
   "fondos_concursables_8pct_regional_2025": {
     "postulaciones_ingresadas": 971,

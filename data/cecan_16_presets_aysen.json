@@ -1797,7 +1797,7 @@
             },
             "showDualAxis": true
           },
-          "what_it_shows": "Con doble eje Y (Miles $ CLP/hab vs. % FCM), evidencia cómo municipios australes reciben mayor gasto por habitante (Tortel $4.059 mil/hab y 92,8% FCM; O'Higgins $3.323 mil/hab y 91,5% FCM) frente a Coyhaique ($459 mil/hab y 46,5% FCM).",
+          "what_it_shows": "Con doble eje Y (Miles $ CLP/hab vs. % FCM), evidencia cómo municipios australes reciben mayor gasto por habitante (O'Higgins $8.228 mil/hab y 95,3% FCM; Tortel $6.813 mil/hab y 95,4% FCM) frente a Coyhaique ($478 mil/hab y 58,4% FCM) y Cisnes ($1.555 mil/hab y 48,7% FCM).",
           "why_complex_system": "Dependencia del camino: la matriz fiscal comunal perpetúa la vulnerabilidad de las comunas rurales aisladas."
         },
         {
@@ -1826,7 +1826,7 @@
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Al expresar la inversión FNDR en términos per cápita (Miles $ CLP/hab), la correlación con la dependencia del FCM se invierte a r = +0,83 (R² = 0,69): Tortel ($5.148,5 mil/hab), O'Higgins ($3.709,4), Lago Verde ($2.824,1) y Guaitecas ($2.127,7) ocupan el Cuadrante 1 de compensación fiscal.",
+          "what_it_shows": "Al expresar la inversión FNDR en términos per cápita (Miles $ CLP/hab), la correlación con la dependencia del FCM es r = +0,70 (R² = 0,49): Tortel, O'Higgins, Lago Verde y Guaitecas ocupan el Cuadrante 1 de compensación fiscal.",
           "why_complex_system": "Palancas y nodos centrales: aunque Coyhaique (14.850 M$) y Aysén (9.800 M$) concentran el volumen nominal, el FNDR per cápita actúa efectivamente como amortiguador redistributivo (Q1) para sostener las comunas australes e insulares."
         },
         {
@@ -1865,26 +1865,26 @@
               ],
               "datasets": [
                 {
-                  "label": "Presupuesto Municipal Regional Consolidado (M$ CLP)",
+                  "label": "Ingresos Municipales Regionales Consolidados BCN/SINIM (M$ CLP)",
                   "data": [
-                    39353.4,
-                    41693.1,
-                    44764.1,
-                    48263.8,
-                    51344.5,
-                    53644.9,
-                    57743.4,
-                    62864.5,
-                    67163.4,
-                    70751.5,
-                    75524.1,
-                    80001.3
+                    43080.0,
+                    46050.0,
+                    49480.0,
+                    53290.0,
+                    56880.0,
+                    60190.0,
+                    65220.0,
+                    70830.0,
+                    75580.0,
+                    78736.96,
+                    84820.68,
+                    88213.6
                   ],
                   "unit": "M$ CLP",
                   "yAxisID": "y"
                 },
                 {
-                  "label": "FNDR Asignado GORE Aysén (M$ CLP · CKAN / DIPRES)",
+                  "label": "FNDR Asignado / Vigente GORE Aysén (M$ CLP · CKAN / DIPRES)",
                   "data": [
                     47242.8,
                     64945.3,
@@ -1896,14 +1896,14 @@
                     58342.9,
                     68333.7,
                     75543.0,
-                    77977.0,
-                    78950.0
+                    80200.0,
+                    81812.0
                   ],
                   "unit": "M$ CLP",
                   "yAxisID": "y1"
                 },
                 {
-                  "label": "FNDR Ejecutado Real GORE Aysén (M$ CLP · datos.gob.cl)",
+                  "label": "FNDR Ejecutado Real GORE Aysén (M$ CLP · datos.gob.cl / DIPRES)",
                   "data": [
                     43706.5,
                     64319.9,
@@ -1913,7 +1913,9 @@
                     17510.2,
                     51226.3,
                     53409.0,
-                    61579.2
+                    61579.2,
+                    44765.5,
+                    73863.0
                   ],
                   "unit": "M$ CLP",
                   "yAxisID": "y1",
@@ -1925,7 +1927,7 @@
               ]
             }
           },
-          "what_it_shows": "Serie histórica oficial CKAN GORE / DIPRES (2015–2026): muestra la reasignación presupuestaria de 2020 (caída FNDR a 17.714,6 M$ asignado / 17.510,2 M$ ejecutado) y la brecha anual entre presupuesto asignado y devengado (68.333,7 vs. 61.579,2 M$ [90,1%] en 2023; 75.543 M$ DIPRES en 2024 y 77.977 M$ inicial en 2025).",
+          "what_it_shows": "Serie histórica oficial CKAN GORE / DIPRES (2015–2026): muestra la caída de pandemia en 2020 (17.714,6 M$ asignado / 17.510,2 M$ ejecutado), el cierre 2023 (68.333,7 vs. 61.579,2 M$ CKAN / 61.548,0 M$ DIPRES [90,0%]), el piso 2024 (44.765,5 M$ / 59,3%) y el salto récord de 2025 a 73.863,0 M$ devengados sobre 80.200,0 M$ vigentes (92,0%, +65,0% vs 2024).",
           "why_complex_system": "Cambio en el tiempo: los desfases presupuestarios entre aprobación y ejecución generan fluctuaciones cíclicas de liquidez comunal."
         },
         {
@@ -1959,9 +1961,9 @@
               "promedio_valor": 2.33,
               "structural_variable": "dependencia_fcm_pct",
               "structural_by_macrozona": {
-                "norte": 78.8,
-                "centro": 62.8,
-                "sur": 82.4
+                "norte": 68.6,
+                "centro": 68.7,
+                "sur": 90.7
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -2107,7 +2109,7 @@
             }
           },
           "what_it_shows": "Compara el aporte percibido del municipio (Barómetro) frente a su dependencia efectiva de recursos externos.",
-          "why_complex_system": "Desacople perceptual: los ciudadanos en comunas con alta dependencia del FCM (Macrozona Sur 82,4% y Norte 78,8%, hasta 92,8% en Tortel) perciben mayor cercanía del municipio que en la capital regional."
+          "why_complex_system": "Desacople perceptual: los ciudadanos en comunas con alta dependencia del FCM (Macrozona Sur 90,7% y Norte 68,6%, hasta 95,4% en Tortel) perciben mayor cercanía del municipio que en la capital regional."
         }
       ]
     },
@@ -5708,7 +5710,7 @@
         "subtype": "grouped_bar",
         "inter_hub_cross": {
           "cross_hub": "inversion",
-          "descripcion": "Contrapone la dependencia del Fondo Común Municipal (FCM) frente a la participación complementaria de Ingresos Propios Permanentes (IPP) sobre un presupuesto municipal agregado de 70.751,5 M$"
+          "descripcion": "Contrapone la dependencia del Fondo Común Municipal (FCM) frente a la participación complementaria de Ingresos Propios Permanentes (IPP) sobre ingresos municipales BCN/SINIM 2025 de 84.820,68 M$"
         },
         "config": {
           "widget_type": "chart",
@@ -5720,7 +5722,7 @@
           "showAverage": true,
           "showTrend": false
         },
-        "what_it_shows": "Muestra la dualidad estructural del financiamiento municipal SINIM en Aysén (70.751,5 M$ agregados; promedio regional 75,8% de dependencia FCM): Coyhaique (46,5% FCM; 53,5% ingresos propios) y Puerto Aysén (52,8% FCM; 47,2% ingresos propios) lideran la autonomía recaudatoria, mientras Tortel (92,8%), O'Higgins (91,5%), Lago Verde (89,2%) y Guaitecas (83,0%) dependen casi íntegramente del reparto solidario inter-comunal.",
+        "what_it_shows": "Muestra la dualidad estructural del financiamiento municipal BCN/SINIM 2025 en Aysén (84.820,68 M$ agregados; dependencia FCM de 68,5% ponderada / 77,5% promedio simple): Cisnes (48,7% FCM gracias a 1.928,64 M$ en patentes acuícolas), Coyhaique (58,4% FCM) y Aysén (61,1% FCM) lideran la autonomía recaudatoria, mientras Tortel (95,4%), O'Higgins (95,3%), Río Ibáñez (86,6%) y Chile Chico (86,5%) dependen casi íntegramente del reparto solidario.",
         "why_complex_system": "Asimetría recaudatoria territorial: la base tributaria de patentes y permisos se concentra en los polos urbanos, haciendo del FCM el estabilizador fiscal imprescindible de la periferia austral."
       }
     ],

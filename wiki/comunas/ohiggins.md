@@ -44,7 +44,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de O'Higgins (capital comunal: Villa O'Higgins; Provincia de Capitán Prat; cuenca principal: Cuenca 117 (Río Pascua)) cuenta con una población verificada de 647 habitantes según el Censo 2024 (0,64% del total regional de 100.745 hab.) distribuidos en 8.182,5 km² (densidad de 0,08 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: José Claudio Fica Gómez), administra un presupuesto vigente de 2.150 M$ con una dependencia del Fondo Común Municipal de 91,5% (8,5% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 2.400 M$ (3.709,4 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 31 prestadores SERNATUR (240 camas), 0 visitas anuales a áreas protegidas SNASPE y 3.450 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Aislado Municipal Villa O'Higgins con tarifa residencial BT1 de $308/kWh y 98,8% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 10 horas), y registra 3 proyectos CTCi con 1 investigadores residentes estimados.
+La comuna de O'Higgins (capital comunal: Villa O'Higgins; Provincia de Capitán Prat; cuenca principal: Cuenca 117 (Río Pascua)) cuenta con una población verificada de 647 habitantes según el Censo 2024 (0,64% del total regional de 100.745 hab.) distribuidos en 8.182,5 km² (densidad de 0,08 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: José Claudio Fica Gómez), administra un presupuesto vigente de 5.323,76 M$ con una dependencia del Fondo Común Municipal de 95,3% (4,7% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 2.400 M$ (3.709,4 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 31 prestadores SERNATUR (240 camas), 0 visitas anuales a áreas protegidas SNASPE y 3.450 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Aislado Municipal Villa O'Higgins con tarifa residencial BT1 de $308/kWh y 98,8% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 10 horas), y registra 3 proyectos CTCi con 1 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
@@ -52,9 +52,9 @@ La comuna de O'Higgins (capital comunal: Villa O'Higgins; Provincia de Capitán 
 | --- | --- | --- |
 | Población Censo 2024 (hab.) | 647 (0,64% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 8.182,5 km² (0,08 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
-| Alcalde en Ejercicio (2024-2028) | José Claudio Fica Gómez (Partido Democrata Cristiano (DC) / Contigo Chile Mejor) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Presupuesto Municipal Vigente (M$) | 2.150 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Dependencia Fondo Común Municipal (%) | 91,5% (Ingresos Propios: 8,5%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Alcalde en Ejercicio (2024-2028) | José Claudio Fica Gómez (Partido Demócrata Cristiano (DC) / Contigo Chile Mejor) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Presupuesto Municipal Vigente (M$) | 5.323,76 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Dependencia Fondo Común Municipal (%) | 95,3% (Ingresos Propios: 4,7%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Inversión Pública FNDR Asignada (M$) | 2.400 M$ (3.709,4 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 31 prestadores / 240 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 0 visitantes (Parque Nacional Bernardo O'Higgins (sector norte)) | [[hubs/hub_01_turismo|Hub I — Turismo]] |

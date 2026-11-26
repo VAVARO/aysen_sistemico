@@ -1869,6 +1869,11 @@ ADDITIONAL_CANONICAL_VARIABLES = [
     {"id": "proyectos_corfo_innova_count", "canonicalId": "proyectos_corfo_innova_count", "name": "Número de Proyectos CORFO Innova", "shortName": "Proyectos CORFO", "unit": "proyectos", "hub": "ctci", "hubTitle": "X. CTCi e Innovación", "nodeId": 37, "dim": "comuna", "outlierBiased": False, "synonyms": ["proyectos corfo", "numero corfo"]},
     {"id": "centros_y_estaciones_ctci_count", "canonicalId": "centros_y_estaciones_ctci_count", "name": "Centros y Estaciones Científicas CTCi", "shortName": "Centros CTCi", "unit": "centros", "hub": "ctci", "hubTitle": "X. CTCi e Innovación", "nodeId": 36, "dim": "comuna", "outlierBiased": False, "synonyms": ["centros cientificos", "estaciones de campo", "ciep", "centros ctci"]},
     {"id": "percepcion_ctci_prioritaria_pct_i1i", "canonicalId": "percepcion_ctci_prioritaria_pct_i1i", "name": "Valoración Ciudadana de Ciencia y Tecnología", "shortName": "Valoración Ciencia", "unit": "%", "hub": "ctci", "hubTitle": "X. CTCi e Innovación", "nodeId": 36, "dim": "comuna", "outlierBiased": False, "synonyms": ["valoracion ciencia", "importancia ciencia"]},
+    # Hub IV - Finanzas Municipales BCN/SINIM 2025 (Sprint 7)
+    {"id": "fcm_bcn_2025_mclp", "canonicalId": "fcm_bcn_2025_mclp", "name": "Aporte Fondo Común Municipal (FCM) BCN-SINIM 2025", "shortName": "Aporte FCM BCN 2025", "unit": "M$ CLP", "hub": "gobernanza", "hubTitle": "IV. Gobernanza y Finanzas", "nodeId": 16, "dim": "comuna", "outlierBiased": True, "synonyms": ["aporte fcm", "fondo comun municipal monto", "fcm bcn 2025", "transferencia fcm"]},
+    {"id": "ipp_bcn_2025_mclp", "canonicalId": "ipp_bcn_2025_mclp", "name": "Ingresos Propios Permanentes (IPP) BCN-SINIM 2025", "shortName": "IPP BCN 2025", "unit": "M$ CLP", "hub": "gobernanza", "hubTitle": "IV. Gobernanza y Finanzas", "nodeId": 15, "dim": "comuna", "outlierBiased": True, "synonyms": ["ipp monto", "ingresos propios permanentes monto", "ipp bcn 2025", "recaudacion propia municipal"]},
+    {"id": "participacion_fcm_ingreso_total_pct", "canonicalId": "participacion_fcm_ingreso_total_pct", "name": "Participación del FCM sobre Ingreso Municipal Total (%)", "shortName": "% FCM / Ingreso Total", "unit": "%", "hub": "gobernanza", "hubTitle": "IV. Gobernanza y Finanzas", "nodeId": 16, "dim": "comuna", "outlierBiased": False, "synonyms": ["participacion fcm ingreso total", "peso fcm ingreso municipal", "fcm sobre ingreso total"]},
+    {"id": "gastos_corrientes_bcn_pct", "canonicalId": "gastos_corrientes_bcn_pct", "name": "Proporción de Gastos Corrientes Municipales BCN (%)", "shortName": "% Gastos Corrientes", "unit": "%", "hub": "gobernanza", "hubTitle": "IV. Gobernanza y Finanzas", "nodeId": 15, "dim": "comuna", "outlierBiased": False, "synonyms": ["gastos corrientes", "gasto corriente municipal", "gastos funcionamiento municipio"]},
     # Serie temporal clave
     {"id": "pib_regional_nominal_mmclp", "canonicalId": "pib_regional_nominal_mmclp", "name": "Producto Interno Bruto (PIB) Regional Nominal (2015–2026)", "shortName": "PIB Regional", "unit": "MM$ CLP", "hub": "inversion", "hubTitle": "V. Economía, Inversión y Suelo", "nodeId": 20, "dim": "tiempo", "outlierBiased": False, "synonyms": ["pib", "pib regional", "producto interno bruto", "crecimiento economico aysen"]}
 ]
@@ -1879,7 +1884,50 @@ for add_v in ADDITIONAL_CANONICAL_VARIABLES:
         variables.append(add_v)
         existing_lex_ids.add(add_v["id"])
 
+# Merge no destructivo con data/nl_lexicon_aysen.json en disco para conservar las curaciones
+# de Sprints 4, 5 y 6 (variables adicionales y etiquetas isAliasOf / isComplementOf)
+disk_lex_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "nl_lexicon_aysen.json")
+if os.path.isfile(disk_lex_path):
+    with open(disk_lex_path, "r", encoding="utf-8-sig") as f_disk:
+        disk_lex = json.load(f_disk)
+    disk_vars = disk_lex.get("variables", [])
+    disk_by_id = {v.get("id"): v for v in disk_vars if isinstance(v, dict) and v.get("id")}
+    gen_by_id = {v["id"]: v for v in variables}
+    for vid, gen_v in gen_by_id.items():
+        dv = disk_by_id.get(vid)
+        if dv:
+            if dv.get("isAliasOf") and "isAliasOf" not in gen_v:
+                gen_v["isAliasOf"] = dv["isAliasOf"]
+            if dv.get("isComplementOf") and "isComplementOf" not in gen_v:
+                gen_v["isComplementOf"] = dv["isComplementOf"]
+    for dv in disk_vars:
+        vid = dv.get("id")
+        if vid and vid not in existing_lex_ids:
+            variables.append(dv)
+            existing_lex_ids.add(vid)
+
 var_by_id = {v["id"]: v for v in variables}
+# Sprint 7: ingresos_mun_bcn_2025_mclp === presupuesto_mclp (r = 1.000000), marcar alias para Audit V3
+if "ingresos_mun_bcn_2025_mclp" in var_by_id:
+    var_by_id["ingresos_mun_bcn_2025_mclp"]["isAliasOf"] = "presupuesto_mclp"
+
+CANONICAL_HUB_TITLES = {
+    "turismo": "I. Turismo y Áreas Silvestres",
+    "salmonicultura": "II. Pesca, Acuicultura y Mar",
+    "energia": "III. Energía y Telecomunicaciones",
+    "gobernanza": "IV. Gobernanza y Finanzas",
+    "inversion": "V. Economía, Inversión y Suelo",
+    "social": "VI. Demografía, Educación y Sociedad",
+    "biodiversidad": "VII. Biodiversidad, Clima y Riesgos",
+    "salud": "VIII. Salud",
+    "cultura": "IX. Cultura y Patrimonio",
+    "ctci": "X. CTCi e Innovación",
+}
+for v in variables:
+    hub_key = v.get("hub")
+    if hub_key in CANONICAL_HUB_TITLES:
+        v["hubTitle"] = CANONICAL_HUB_TITLES[hub_key]
+
 for var_id, terms in REQUIRED_SYNONYMS_BY_VAR.items():
     if var_id in var_by_id:
         existing = set(var_by_id[var_id]["synonyms"])
@@ -1900,8 +1948,9 @@ lexicon_output = {
     "nodes": satellite_nodes
 }
 
-with open('data/nl_lexicon_aysen.json', 'w', encoding='utf-8') as f:
+with open('data/nl_lexicon_aysen.json', 'w', encoding='utf-8', newline='\n') as f:
     json.dump(lexicon_output, f, ensure_ascii=False, indent=2)
+    f.write('\n')
 
 print(f"Generated data/nl_lexicon_aysen.json with {len(variables)} variables and {len(satellite_nodes)} nodes.")
 

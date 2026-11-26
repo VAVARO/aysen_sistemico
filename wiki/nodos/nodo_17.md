@@ -20,22 +20,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Autoridades comunales electas para el periodo 2024-2028 (SERVEL): alcaldes en ejercicio, pacto político, composición de los concejos municipales y porcentaje de participación con voto obligatorio. Detalla los 10 alcaldes y 60 concejales de la región, con tasas de participación electoral que fluctuaron entre 79,8% (Chile Chico) y 88,1% (Tortel).
+Autoridades comunales electas para el periodo 2024-2028 (SERVEL): alcaldes en ejercicio, pacto político, composición de los concejos municipales y porcentaje de participación con voto obligatorio. Detalla los 10 alcaldes y 60 concejales de la región (período 2024-2028), con una participación electoral regional de 72,9% en octubre de 2024 (12 puntos bajo el 84,9% nacional), fluctuando entre 58,4% (Chile Chico) y 80,6% (Tortel) debido a la sobreinscripción del padrón en comunas fronterizas y rurales.
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Alcalde Electo (2024-2028) | Pacto Político | Concejales (N) | Participación (%) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | Carlos Gatica Villegas | Partido Democrata Cristiano (DC) / Contigo Chile Mejor | 6 | 84.2% |
-| [[comunas/lago_verde|Lago Verde]] | Claudia Valdés Vásquez | Independiente / Contigo Chile Mejor | 6 | 87.5% |
-| [[comunas/aysen|Aysén]] | Luis Martínez Gallardo | Union Democrata Independiente (UDI) / Chile Vamos | 6 | 82.8% |
-| [[comunas/cisnes|Cisnes]] | Francisco Roncagliolo Lepio | Renovacion Nacional (RN) / Chile Vamos | 6 | 83.1% |
-| [[comunas/guaitecas|Guaitecas]] | Bans Puinao Carimoney | Evolucion Politica (Evopoli) / Chile Vamos | 6 | 85.9% |
-| [[comunas/chile_chico|Chile Chico]] | Ariel Keim Hermosilla | Independiente | 6 | 83.6% |
-| [[comunas/rio_ibanez|Río Ibáñez]] | Marcelo Daniel Jélvez Cárdenas | Union Democrata Independiente (UDI) / Chile Vamos | 6 | 86.4% |
-| [[comunas/cochrane|Cochrane]] | Patricio Ulloa Georgia | Independiente / Chile Vamos | 6 | 85.2% |
-| [[comunas/ohiggins|O'Higgins]] | José Claudio Fica Gómez | Partido Democrata Cristiano (DC) / Contigo Chile Mejor | 6 | 88% |
-| [[comunas/tortel|Tortel]] | Marisela Jiménez Cruces | Independiente | 6 | 87.3% |
+| [[comunas/coyhaique|Coyhaique]] | Carlos Gatica Villegas | Partido Demócrata Cristiano (DC) / Contigo Chile Mejor | 6 | 72.8% |
+| [[comunas/lago_verde|Lago Verde]] | Claudia Valdés Vásquez | Independiente (cupo PPD) / Contigo Chile Mejor | 6 | 80.5% |
+| [[comunas/aysen|Aysén]] | Luis Martínez Gallardo | Unión Demócrata Independiente (UDI) / Chile Vamos | 6 | 75.1% |
+| [[comunas/cisnes|Cisnes]] | Francisco Roncagliolo Lepio | Renovación Nacional (RN) / Chile Vamos | 6 | 77.9% |
+| [[comunas/guaitecas|Guaitecas]] | Bans Puinao Carimoney | Evolución Política (Evópoli) / Chile Vamos | 6 | 74.1% |
+| [[comunas/chile_chico|Chile Chico]] | Ariel Keim Hermosilla | Independiente (Fuera de pacto) | 6 | 58.4% |
+| [[comunas/rio_ibanez|Río Ibáñez]] | Marcelo Daniel Jélvez Cárdenas | Unión Demócrata Independiente (UDI) / Chile Vamos | 6 | 77.2% |
+| [[comunas/cochrane|Cochrane]] | Patricio Ulloa Georgia | Unión Demócrata Independiente (UDI) / Chile Vamos | 6 | 70.2% |
+| [[comunas/ohiggins|O'Higgins]] | José Claudio Fica Gómez | Partido Demócrata Cristiano (DC) / Contigo Chile Mejor | 6 | 67.9% |
+| [[comunas/tortel|Tortel]] | Marisela Jiménez Cruces | Independiente (Fuera de pacto) | 6 | 80.6% |
 
 ## Metadatos de Procedencia Institucional
 

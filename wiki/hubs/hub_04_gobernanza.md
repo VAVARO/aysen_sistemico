@@ -28,22 +28,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-El Hub IV (Gobernanza y Finanzas Municipales) examina la estructura fiscal, administrativa y política de los 10 municipios y del Gobierno Regional de Aysén. El presupuesto municipal agregado alcanza 70.751,5 M$ con una dependencia promedio del Fondo Común Municipal (FCM) de 75,8%: solo Coyhaique (46,5% FCM; 53,5% ingresos propios) y Aysén (52,8% FCM; 47,2% ingresos propios) poseen tracción tributaria autónoma relevante, mientras Tortel (92,8% FCM), O'Higgins (91,5% FCM) y Lago Verde (89,2% FCM) dependen estructuralmente de transferencias solidarias y del Fondo de Equidad Territorial (FET Royalty Minero). En inversión regional, el devengado FNDR GORE alcanza 80.001,3 M$ anuales (con 54.650,0 M$ territorializados por comuna y 61.579,2 M$ en transferencias e inversión directa 2023).
+El Hub IV (Gobernanza y Finanzas Municipales) examina la estructura fiscal, administrativa y política de los 10 municipios y del Gobierno Regional de Aysén según BCN / SINIM 2025, TGR y SERVEL. Los ingresos municipales efectivos alcanzan 84.820,68 M$ (2025; 78.736,96 M$ en 2024), con IPP de 19.243,52 M$ y transferencias FCM de 41.753,32 M$ (dependencia FCM de 68,5% ponderada y 77,5% promedio simple comunal): Cisnes lidera en autonomía (48,7% FCM gracias a 1.928,64 M$ en patentes acuícolas SINIM), seguido de Coyhaique (58,4% FCM; 27.611,00 M$) y Aysén (61,1% FCM; 14.614,29 M$; 1.516,33 M$ patentes acuícolas), mientras Tortel (95,4% FCM; 3.440,74 M$) y O'Higgins (95,3% FCM; 5.323,76 M$) presentan máxima dependencia del FCM y del Royalty Minero FET (3.207,73 M$ 2025; FCMI = 0 M$). En inversión regional, el FNDR GORE cerró 2025 con un devengado récord de 73.863,0 M$ (92,0% sobre 80.200,0 M$ vigentes; +65,0% respecto a los 44.765,5 M$ [59,3%] de 2024, y tras los 61.579,2 M$ CKAN / 61.548,0 M$ DIPRES de 2023), con acuerdo Hacienda 2027 en 80.748,0 M$.
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Presupuesto Municipal Vigente (M$) | Dependencia del Fondo Común Municipal (%) | Ingresos Propios Permanentes (%) | Profesionalización de Planta Municipal (%) | Inversión Pública FNDR Asignada (M$) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 26.540,8 | 46,5 | 53,5 | 36,4 | 14.850 |
-| [[comunas/lago_verde|Lago Verde]] | 2.450,2 | 89,2 | 10,8 | 12,5 | 2.200 |
-| [[comunas/aysen|Aysén]] | 14.210,5 | 52,8 | 47,2 | 28,2 | 9.800 |
-| [[comunas/cisnes|Cisnes]] | 6.100 | 74,5 | 25,5 | 18,6 | 5.600 |
-| [[comunas/guaitecas|Guaitecas]] | 3.300 | 83 | 17 | 11,8 | 3.400 |
-| [[comunas/chile_chico|Chile Chico]] | 5.400 | 71,2 | 28,8 | 15,4 | 4.900 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 3.950 | 79,6 | 20,4 | 14,1 | 4.100 |
-| [[comunas/cochrane|Cochrane]] | 4.600 | 76,8 | 23,2 | 16,2 | 4.800 |
-| [[comunas/ohiggins|O'Higgins]] | 2.150 | 91,5 | 8,5 | 10,5 | 2.400 |
-| [[comunas/tortel|Tortel]] | 2.050 | 92,8 | 7,2 | 9,8 | 2.600 |
+| [[comunas/coyhaique|Coyhaique]] | 27.611 | 58,4 | 41,6 | 36,4 | 14.850 |
+| [[comunas/lago_verde|Lago Verde]] | 3.321,05 | 83,9 | 16,1 | 12,5 | 2.200 |
+| [[comunas/aysen|Aysén]] | 14.614,29 | 61,1 | 38,9 | 28,2 | 9.800 |
+| [[comunas/cisnes|Cisnes]] | 7.985,27 | 48,7 | 51,3 | 18,6 | 5.600 |
+| [[comunas/guaitecas|Guaitecas]] | 4.569,04 | 73,1 | 26,9 | 11,8 | 3.400 |
+| [[comunas/chile_chico|Chile Chico]] | 5.981,72 | 86,5 | 13,5 | 15,4 | 4.900 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 6.252,85 | 86,6 | 13,4 | 14,1 | 4.100 |
+| [[comunas/cochrane|Cochrane]] | 5.720,96 | 85,7 | 14,3 | 16,2 | 4.800 |
+| [[comunas/ohiggins|O'Higgins]] | 5.323,76 | 95,3 | 4,7 | 10,5 | 2.400 |
+| [[comunas/tortel|Tortel]] | 3.440,74 | 95,4 | 4,6 | 9,8 | 2.600 |
 
 ## Nodos Satélite del Hub
 

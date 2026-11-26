@@ -345,6 +345,10 @@
     fndr_per_capita_mclp: 'Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab)',
     fndr_gore_2023_per_capita_mclp: 'FNDR GORE 2023 Ejecutado Per Cápita (Miles $ CLP/hab)',
     royalty_fet_peso_presupuesto_pct: 'Peso del Royalty Minero FET 2025 sobre Presupuesto (%)',
+    fcm_bcn_2025_mclp: 'Aporte Fondo Común Municipal (FCM) BCN 2025 (M$)',
+    ipp_bcn_2025_mclp: 'Ingresos Propios Permanentes (IPP) BCN 2025 (M$)',
+    participacion_fcm_ingreso_total_pct: 'Participación FCM sobre Ingreso Municipal Total (%)',
+    gastos_corrientes_bcn_pct: 'Gastos Corrientes Municipales BCN (%)',
     participacion_municipales_2024_pct: 'Participación Electoral Municipal 2024 SERVEL (%)',
     ratio_padron_poblacion_pct: 'Ratio Padrón Electoral Nov-2025 / Censo 2024 (%)',
     pib_regional_nominal_mmclp: 'PIB Regional Nominal de Aysén (MM$ CLP)',
@@ -2165,7 +2169,7 @@
       'EMPORCHA Puerto Chacabuco 468.200 ton (2024) y proy. 495.000 ton (2026) + CAM-01 + barcazas DTPR',
       'Red vial MOP 3.386,4 km totales (412,8 km pavimentados [12,2%] vs 2.438,0 km ripio)',
       'Sistemas Medianos y Aislados desconectados del SEN (67,10 MW operativos + 18,98 MW ERNC en construccion 2026) + Decreto 8T Nov-2026 BT1 $287,8/kWh + 13.448 hogares Subsidio Electrico + Lena INFOR BES 11 334.274 m3s/ano (Coyhaique 147.080 m3s [44,0%]) + unico MBM activo Copec Chacabuco 6.674 m3 + CTR submarina solo en Caleta Tortel',
-      'Finanzas municipales SINIM: presupuesto agregado regional de 70.751,5 M$ (promedio 7.075,2 M$/comuna) y dependencia promedio FCM de 75,8% (min 46,5% Coyhaique; max 92,8% Tortel)',
+      'Finanzas municipales BCN/SINIM 2025: ingresos municipales agregados de 84.820,68 M$ (promedio 8.482,1 M$/comuna), IPP 19.243,52 M$, FCM 41.753,32 M$ (dependencia FCM 68,5% ponderada / 77,5% simple; min 48,7% Cisnes, 58,4% Coyhaique; max 95,4% Tortel), FNDR 2025 devengado récord 73.863,0 M$ (92,0% sobre 80.200,0 M$) y participación municipal oct-2024 de 72,9% (SERVEL)',
       'Bosque nativo CONAF 4.832.500 ha + 35.240 ha plantaciones + 5.723.000 ha vegetacion nativa',
       'Huemul RCE MMA 1.500-2.000 individuos (amenaza perros asilvestrados); Ganado ODEPA 130.832 bovinos y 177.934 ovinos',
       'Listas espera SIGTE 11.420 interconsultas; GLOFs Cachet 2 cuenca Baker; 3 ZOITs decretadas'
@@ -3245,7 +3249,7 @@
           const execData = fndrSeries.map(r => (r.gasto_actual_mclp !== null && r.gasto_actual_mclp !== undefined ? Number(r.gasto_actual_mclp) : null));
           const sources = resolveSourcesForKeys(['fndr_gore_2023_ejecutado_mclp', 'tasa_aprobacion_rs_sni_pct']);
           return {
-            reply: 'Según la serie oficial del GORE Aysén (datos.gob.cl / DIPRES 2015–2025), el FNDR pasó de $47.242,8 MM asignados ($43.706,5 MM ejecutados, 92,5%) en 2015 a un pico de $68.787,4 MM en 2017, sufrió una reasignación extraordinaria por pandemia en 2020 ($17.714,6 MM asignados / $17.510,2 MM ejecutados en 165 iniciativas) y se recuperó en 2023 ($68.333,7 MM asignados / $61.579,2 MM ejecutados en 560 iniciativas, 90,1%), alcanzando presupuestos DIPRES de $75.543 MM (2024) y $77.977 MM inicial ($82.313 MM estimado GORE, 2025). En el SNI, las carteras municipales promedian una tasa de aprobación RS de 31,5% (rango de 18% en Tortel a 45% en Coyhaique).',
+            reply: 'Según la serie oficial del GORE Aysén (datos.gob.cl / DIPRES 2015–2026), el FNDR pasó de $47.242,8 MM asignados ($43.706,5 MM ejecutados, 92,5%) en 2015 a $68.787,4 MM en 2017, sufrió una contracción extraordinaria por pandemia en 2020 ($17.714,6 MM asignados / $17.510,2 MM ejecutados en 165 iniciativas) y cerró 2023 con $68.333,7 MM asignados ($61.579,2 MM ejecutados CKAN / $61.548,0 MM cierre DIPRES = 90,0% en 560 iniciativas). Tras caer en 2024 a $44.765,5 MM devengados sobre $75.543,0 MM vigentes (59,3%), el ejercicio 2025 alcanzó un récord histórico de $73.863,0 MM devengados sobre $80.200,0 MM vigentes (92,0%, +65,0% vs 2024), proyectándose $81.812,0 MM iniciales en 2026 (marco ajustado $74.312,0 MM) y $80.748,0 MM para 2027 por acuerdo con Hacienda. En el SNI, las carteras municipales promedian una tasa de aprobación RS de 31,5% (rango de 18% en Tortel a 45% en Coyhaique).',
             chart: {
               render: true,
               type: 'line',
@@ -3285,7 +3289,7 @@
         const royDesglose = comunasRoy
           .map(e => `${e.name} $${fmtNumber(e.raw.fet_royalty_minero_2025_mclp, 2)} MM`)
           .join(', ');
-        const reply = `En cartera GORE/DIPRES (datos.gob.cl), el FNDR 2023 ejecutó $${exec23.toLocaleString('es-CL')} MM de $${asig23.toLocaleString('es-CL')} MM en ${init23} iniciativas (${pct23}%), con presupuestos DIPRES de $75.543 MM (2024) y $82.313 MM estimado (2025), y tasa promedio SNI RS comunal de 31,5%. Vía SUBDERE/BCN, el Fondo de Equidad Territorial (FET) Royalty Minero 2025 transfirió $${fmtNumber(sumRoy25, 2)} MM a las 10 comunas (+${fmtNumber(pctVarRoy, 1)}% frente a $${fmtNumber(sumRoy24, 2)} MM en 2024): ${royDesglose}. Relativamente, equivale al 13,6% del presupuesto en Tortel y 13,0% en O'Higgins frente a 1,8% en Coyhaique.`;
+        const reply = `En cartera GORE/DIPRES (datos.gob.cl), el FNDR 2023 ejecutó $${exec23.toLocaleString('es-CL')} MM de $${asig23.toLocaleString('es-CL')} MM en ${init23} iniciativas (${pct23}%), en 2024 devengó $44.765,5 MM sobre $75.543,0 MM (59,3%) y en 2025 alcanzó récord de $73.863,0 MM sobre $80.200,0 MM vigentes (92,0%; acuerdo 2027 $80.748,0 MM), con tasa promedio SNI RS comunal de 31,5%. Vía SUBDERE/TGR, el Fondo de Equidad Territorial (FET) Royalty Minero 2025 transfirió $${fmtNumber(sumRoy25, 2)} MM a las 10 comunas (+${fmtNumber(pctVarRoy, 1)}% frente a $${fmtNumber(sumRoy24, 2)} MM en 2024 y $1.652,0 MM en 1S 2026; FCMI = $0 MM): ${royDesglose}. Relativamente sobre ingresos municipales BCN 2025 ($84.820,68 MM), equivale al 8,5% en Lago Verde, 8,1% en Tortel y 5,3% en O'Higgins frente a 1,7% en Coyhaique.`;
         const asksBudgetWeight = /\b(peso\b|porcentaje|proporcion|incidencia|participacion)\b/i.test(qNorm) && /\b(presupuesto|municipal)\b/i.test(qNorm);
         const sources = resolveSourcesForKeys(
           asksBudgetWeight
@@ -4206,7 +4210,7 @@
         '(1) Ingresos Propios Permanentes (IPP): recaudación comunal directa por patentes comerciales, industriales y acuícolas, permisos de circulación, derechos de aseo e impuesto territorial; ' +
         '(2) Fondo Común Municipal (FCM): mecanismo constitucional de redistribución solidaria intercomunal administrado por SUBDERE que compensa la menor base tributaria de comunas rurales o aisladas; y ' +
         '(3) Transferencias de Capital e Inversión Regional (FNDR GORE Aysén, PMU, PMB y FRIL). ' +
-        'En Aysén, el presupuesto municipal agregado suma 70.751,5 M$ (promedio 7.075,2 M$ por comuna) con una dependencia FCM promedio de 75,8%: Coyhaique concentra 26.540,8 M$ con solo 46,5% de dependencia FCM (53,5% ingresos propios) y Puerto Aysén alcanza 14.210,5 M$ con 52,8% FCM (47,2% ingresos propios), mientras las comunas extremas e insulares dependen mayoritariamente del FCM: Tortel (92,8% FCM; 2.050,0 M$), O\'Higgins (91,5% FCM), Lago Verde (89,2% FCM) y Guaitecas (83,0% FCM).'
+        'En Aysén, los ingresos municipales BCN/SINIM 2025 suman 84.820,68 M$ (promedio 8.482,1 M$ por comuna), con IPP de 19.243,52 M$, FCM de 41.753,32 M$ (dependencia FCM de 68,5% ponderada / 77,5% simple comunal): Cisnes (48,7% FCM gracias a 1.928,64 M$ de patentes acuícolas), Coyhaique (58,4% FCM; 27.611,00 M$) y Aysén (61,1% FCM; 14.614,29 M$) concentran la recaudación propia, mientras Tortel (95,4% FCM; 3.440,74 M$), O\'Higgins (95,3% FCM; 5.323,76 M$), Río Ibáñez (86,6% FCM) y Chile Chico (86,5% FCM) dependen mayoritariamente del FCM y Royalty FET.'
     },
     {
       id: 'sistema_electrico_energia',
@@ -7446,7 +7450,7 @@
       const govFallbackPacket = CONCEPTUAL_DOMAIN_PACKETS[0];
       const repairSources = resolveSourcesForKeys(govFallbackPacket.coreVariables);
       const res = {
-        reply: sanitizeTechnicalKeysInReply(`Disculpa el desvío en la respuesta anterior${originalQueryToRepair ? ` sobre "${originalQueryToRepair}"` : ''}. A modo de referencia directa del sistema regional (Hub IV SINIM), las comunas de Aysén reúnen 70.751,5 M$ de presupuesto municipal con 75,8% de dependencia promedio del Fondo Común Municipal; indícame qué variable o comuna específica deseas profundizar.`),
+        reply: sanitizeTechnicalKeysInReply(`Disculpa el desvío en la respuesta anterior${originalQueryToRepair ? ` sobre "${originalQueryToRepair}"` : ''}. A modo de referencia directa del sistema regional (Hub IV BCN/SINIM 2025), las 10 comunas de Aysén reúnen 84.820,68 M$ de ingresos municipales con 68,5% de dependencia FCM ponderada (77,5% promedio comunal simple); indícame qué variable o comuna específica deseas profundizar.`),
         chart: {
           render: true,
           type: 'bar',

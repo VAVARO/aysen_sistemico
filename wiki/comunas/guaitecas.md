@@ -44,7 +44,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Guaitecas (capital comunal: Melinka; Provincia de Aysén; cuenca principal: Cuenca 110 (Costeras e Islas Río Palena - Río Aysén)) cuenta con una población verificada de 1.598 habitantes según el Censo 2024 (1,59% del total regional de 100.745 hab.) distribuidos en 620,6 km² (densidad de 2,58 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Bans Puinao Carimoney), administra un presupuesto vigente de 3.300 M$ con una dependencia del Fondo Común Municipal de 83% (17% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 3.400 M$ (2.127,7 mil $/hab). En el maritorio acuícola (Hub II), registra 98 concesiones de salmonicultura otorgadas (32 centros activos) y 45.000 toneladas anuales de biomasa cosechada. En turismo y conservación (Hub I y Hub VII), contabiliza 25 prestadores SERNATUR (145 camas), 0 visitas anuales a áreas protegidas SNASPE y 0 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Aislado Municipal Melinka-Repollal con tarifa residencial BT1 de $312/kWh y 94,2% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 14 horas), y registra 4 proyectos CTCi con 2 investigadores residentes estimados.
+La comuna de Guaitecas (capital comunal: Melinka; Provincia de Aysén; cuenca principal: Cuenca 110 (Costeras e Islas Río Palena - Río Aysén)) cuenta con una población verificada de 1.598 habitantes según el Censo 2024 (1,59% del total regional de 100.745 hab.) distribuidos en 620,6 km² (densidad de 2,58 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Bans Puinao Carimoney), administra un presupuesto vigente de 4.569,04 M$ con una dependencia del Fondo Común Municipal de 73,1% (26,9% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 3.400 M$ (2.127,7 mil $/hab). En el maritorio acuícola (Hub II), registra 98 concesiones de salmonicultura otorgadas (32 centros activos) y 45.000 toneladas anuales de biomasa cosechada. En turismo y conservación (Hub I y Hub VII), contabiliza 25 prestadores SERNATUR (145 camas), 0 visitas anuales a áreas protegidas SNASPE y 0 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Aislado Municipal Melinka-Repollal con tarifa residencial BT1 de $312/kWh y 94,2% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 14 horas), y registra 4 proyectos CTCi con 2 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
@@ -52,9 +52,9 @@ La comuna de Guaitecas (capital comunal: Melinka; Provincia de Aysén; cuenca pr
 | --- | --- | --- |
 | Población Censo 2024 (hab.) | 1.598 (1,59% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 620,6 km² (2,58 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
-| Alcalde en Ejercicio (2024-2028) | Bans Puinao Carimoney (Evolucion Politica (Evopoli) / Chile Vamos) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Presupuesto Municipal Vigente (M$) | 3.300 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Dependencia Fondo Común Municipal (%) | 83% (Ingresos Propios: 17%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Alcalde en Ejercicio (2024-2028) | Bans Puinao Carimoney (Evolución Política (Evópoli) / Chile Vamos) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Presupuesto Municipal Vigente (M$) | 4.569,04 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
+| Dependencia Fondo Común Municipal (%) | 73,1% (Ingresos Propios: 26,9%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Inversión Pública FNDR Asignada (M$) | 3.400 M$ (2.127,7 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 25 prestadores / 145 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 0 visitantes (Reserva Nacional Las Guaitecas) | [[hubs/hub_01_turismo|Hub I — Turismo]] |

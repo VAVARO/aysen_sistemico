@@ -38,6 +38,7 @@ const PROVENANCE_PATH = path.join(ROOT_DIR, 'data', 'systemic', 'provenance_cata
 const AUTO_UPDATE_STATUS_PATH = path.join(ROOT_DIR, 'data', 'systemic', 'auto_update_status.json');
 const PADRON_REAL_PATH = path.join(ROOT_DIR, 'data', 'raw', 'territorio_concesiones', 'padron_real_subpesca_aysen.json');
 const MARCO_REGULATORIO_PATH = path.join(ROOT_DIR, 'data', 'raw', 'energia_telecom', 'marco_regulatorio_tarifario_aysen_2024_2028.json');
+const WP01_SYSTEMIC_PATH = path.join(ROOT_DIR, 'data', 'systemic', '01_gob_poder_finanzas.json');
 const DEFAULT_OUT_DIR = path.join(ROOT_DIR, 'auditoria_obsidian');
 const DEFAULT_VAULT_ROOT = path.resolve(ROOT_DIR, '..', 'Obsidian Vault');
 const VAULT_SUBFOLDER = 'Aysen_Sistemico_Auditoria';
@@ -399,11 +400,41 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
   }));
   const comunaHogares = {};
   const comunaPoblacion = {};
+  const ingresosMunBcn2025ByIne = {};
+  const nameToIne = {};
   for (const row of (dataLake.comunas || [])) {
     const ine = String(row.comuna_ine || row.codigo_comuna || '');
     if (ine) {
+      if (row.nombre) nameToIne[String(row.nombre)] = ine;
       if (typeof row.hogares_censo_2024 === 'number') comunaHogares[ine] = row.hogares_censo_2024;
       if (typeof row.poblacion_censo_2024 === 'number') comunaPoblacion[ine] = row.poblacion_censo_2024;
+      if (typeof row.ingresos_mun_bcn_2025_mclp === 'number') ingresosMunBcn2025ByIne[ine] = row.ingresos_mun_bcn_2025_mclp;
+    }
+  }
+
+  const wp01Json = readJsonSafe(options.wp01Path || WP01_SYSTEMIC_PATH, null);
+  const wp01PatentesAcuicolasByIne = {};
+  const padronOct2024ByIne = {};
+  const votantesOct2024ByIne = {};
+  if (wp01Json && Array.isArray(wp01Json.por_comuna)) {
+    for (const pc of wp01Json.por_comuna) {
+      const ine = String(pc.comuna_ine || '');
+      if (!ine) continue;
+      const fin = (pc.datos && pc.datos.finanzas_sinim) || {};
+      const aut = (pc.datos && pc.datos.autoridades) || {};
+      wp01PatentesAcuicolasByIne[ine] = Number(fin.ingresos_patentes_acuicolas_mclp) || 0;
+      padronOct2024ByIne[ine] = Number(aut.padron_electoral_oct_2024) || 0;
+      votantesOct2024ByIne[ine] = Number(aut.votantes_municipales_oct_2024) || 0;
+    }
+  }
+  const nodo15PatentesAcuicolasByIne = {};
+  const nodo15 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 15) : null;
+  if (nodo15 && Array.isArray(nodo15.tableRows)) {
+    for (const r of nodo15.tableRows) {
+      const ine = nameToIne[String(r[0] || '')];
+      if (!ine) continue;
+      const parsed = Number(String(r[3] || '0').replace(/\./g, '').replace(',', '.'));
+      nodo15PatentesAcuicolasByIne[ine] = Number.isFinite(parsed) ? parsed : 0;
     }
   }
 
@@ -416,6 +447,13 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     comunas,
     comunaHogares,
     comunaPoblacion,
+    hub4FiscalAudit: {
+      ingresosMunBcn2025ByIne,
+      wp01PatentesAcuicolasByIne,
+      nodo15PatentesAcuicolasByIne,
+      padronOct2024ByIne,
+      votantesOct2024ByIne
+    },
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -746,6 +784,136 @@ function evaluatePhysicalAndDemographicInvariants(snapshot, options = {}) {
   return alerts;
 }
 
+function evaluateHub4FiscalAndElectoralInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'direct', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h4 = snapshot.hub4FiscalAudit || {};
+  if (comunas.length === 0 || !indicators.presupuesto_mclp) return alerts;
+
+  let totalPadron24 = 0;
+  let totalVotantes24 = 0;
+
+  for (const c of comunas) {
+    const ine = String(c.comuna_ine || '');
+    const cName = c.nombre || ine;
+    if (!ine) continue;
+
+    const pres = Number(indicators.presupuesto_mclp?.values?.[ine]);
+    const ingBcn = Number(
+      h4.ingresosMunBcn2025ByIne?.[ine] !== undefined
+        ? h4.ingresosMunBcn2025ByIne[ine]
+        : indicators.ingresos_mun_bcn_2025_mclp?.values?.[ine]
+    );
+    const fcm = Number(indicators.fcm_bcn_2025_mclp?.values?.[ine]);
+    const ipp = Number(indicators.ipp_bcn_2025_mclp?.values?.[ine]);
+
+    // 1. Invariante de Coherencia Presupuestaria Municipal
+    if (Number.isFinite(pres) && Number.isFinite(fcm) && Number.isFinite(ipp)) {
+      if (pres < fcm || pres <= fcm + 0.5 * ipp || (Number.isFinite(ingBcn) && Math.abs(pres - ingBcn) > 0.5)) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'ERROR_CONTABLE_PRESUPUESTO_MENOR_QUE_FCM',
+          invariant: 'INVARIANTE_COHERENCIA_PRESUPUESTO_MUNICIPAL',
+          indicator: 'presupuesto_mclp',
+          hub: CANONICAL_HUB_TITLES.gobernanza,
+          detail: `[ERROR_CONTABLE_PRESUPUESTO_MENOR_QUE_FCM] ${cName}: presupuesto (${formatNumberCL(pres)} M$) incoherente frente a FCM (${formatNumberCL(fcm)} M$) + 0,5*IPP (${formatNumberCL(0.5 * ipp)} M$) o BCN 2025 (${formatNumberCL(ingBcn)} M$).`
+        });
+      }
+
+      // 3a. Invariante Contable de Dependencia FCM
+      const dep = Number(indicators.dependencia_fcm_pct?.values?.[ine]);
+      if (Number.isFinite(dep) && (ipp + fcm) > 0) {
+        const expDep = Number(((fcm / (ipp + fcm)) * 100).toFixed(1));
+        if (Math.abs(dep - expDep) > 0.2) {
+          alerts.push({
+            severity: 'ALTA',
+            code: 'ERROR_CONTABLE_DEPENDENCIA_FCM',
+            invariant: 'INVARIANTE_CONTABLE_FCM_Y_IPP_PC',
+            indicator: 'dependencia_fcm_pct',
+            hub: CANONICAL_HUB_TITLES.gobernanza,
+            detail: `[ERROR_CONTABLE_DEPENDENCIA_FCM] ${cName}: dependencia_fcm_pct=${dep}% difiere de FCM/(IPP+FCM)=${expDep}% (>0,2%).`
+          });
+        }
+      }
+
+      // 3b. Invariante Contable IPP Per Capita (ipp_bcn_2025_mclp en M$ -> CLP/hab)
+      const ippPc = Number(indicators.ipp_per_capita_clp?.values?.[ine]);
+      const pop = Number(indicators.poblacion_censo_2024?.values?.[ine] ?? snapshot.comunaPoblacion?.[ine]);
+      if (Number.isFinite(ippPc) && Number.isFinite(pop) && pop > 0) {
+        const expIppPc = Math.round((ipp * 1000000) / pop);
+        if (Math.abs(ippPc - expIppPc) > 5) {
+          alerts.push({
+            severity: 'ALTA',
+            code: 'ERROR_CONTABLE_IPP_PER_CAPITA',
+            invariant: 'INVARIANTE_CONTABLE_FCM_Y_IPP_PC',
+            indicator: 'ipp_per_capita_clp',
+            hub: CANONICAL_HUB_TITLES.gobernanza,
+            detail: `[ERROR_CONTABLE_IPP_PER_CAPITA] ${cName}: ipp_per_capita_clp=${ippPc} difiere de round(IPP*1e6/pob)=${expIppPc} (>5 CLP).`
+          });
+        }
+      }
+    }
+
+    // 2. Invariante Geografico de Patentes Acuicolas (0 en comunas sin concesiones_salmon)
+    const concSalmon = Number(indicators.concesiones_salmon?.values?.[ine]) || 0;
+    if (concSalmon === 0) {
+      const wp01Acu = Number(h4.wp01PatentesAcuicolasByIne?.[ine]) || 0;
+      const n15Acu = Number(h4.nodo15PatentesAcuicolasByIne?.[ine]) || 0;
+      if (wp01Acu > 0 || n15Acu > 0) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'ERROR_PATENTE_ACUICOLA_COMUNA_INTERIOR',
+          invariant: 'INVARIANTE_GEOGRAFICO_PATENTES_ACUICOLAS',
+          indicator: 'ingresos_patentes_acuicolas_mclp',
+          hub: CANONICAL_HUB_TITLES.gobernanza,
+          detail: `[ERROR_PATENTE_ACUICOLA_COMUNA_INTERIOR] ${cName} (${ine}) tiene 0 concesiones salmoneras pero registra patentes acuicolas > 0 (WP01=${wp01Acu} M$, Nodo #15=${n15Acu} M$).`
+        });
+      }
+    }
+
+    // 4. Invariante Electoral SERVEL Municipales Oct-2024
+    const part24 = Number(indicators.participacion_municipales_2024_pct?.values?.[ine]);
+    const pad24 = Number(h4.padronOct2024ByIne?.[ine]) || 0;
+    const vot24 = Number(h4.votantesOct2024ByIne?.[ine]) || 0;
+    if (pad24 > 0) totalPadron24 += pad24;
+    if (vot24 > 0) totalVotantes24 += vot24;
+    if (Number.isFinite(part24)) {
+      const expPart24 = pad24 > 0 ? Number(((vot24 / pad24) * 100).toFixed(1)) : part24;
+      if (part24 < 55 || part24 > 82 || (pad24 > 0 && Math.abs(part24 - expPart24) > 0.15)) {
+        alerts.push({
+          severity: 'ALTA',
+          code: 'ERROR_ELECTORAL_SERVEL_2024',
+          invariant: 'INVARIANTE_ELECTORAL_SERVEL_2024',
+          indicator: 'participacion_municipales_2024_pct',
+          hub: CANONICAL_HUB_TITLES.gobernanza,
+          detail: `[ERROR_ELECTORAL_SERVEL_2024] ${cName}: participacion_municipales_2024_pct=${part24}% fuera de rango [55%, 82%] o inconsistente con vot/pad (${expPart24}%).`
+        });
+      }
+    }
+  }
+
+  if (totalPadron24 > 0 && totalVotantes24 > 0) {
+    const regPart24 = Number(((totalVotantes24 / totalPadron24) * 100).toFixed(1));
+    if (Math.abs(regPart24 - 72.9) > 0.2) {
+      alerts.push({
+        severity: 'ALTA',
+        code: 'ERROR_ELECTORAL_SERVEL_2024',
+        invariant: 'INVARIANTE_ELECTORAL_SERVEL_2024',
+        indicator: 'participacion_municipales_2024_pct',
+        hub: CANONICAL_HUB_TITLES.gobernanza,
+        detail: `[ERROR_ELECTORAL_SERVEL_2024] Promedio regional ponderado=${regPart24}% difiere de 72,9%.`
+      });
+    }
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -1001,8 +1169,11 @@ function compareSnapshots(baseline, current, options = {}) {
     .map(([hubTitle, count]) => ({ hubTitle, count }))
     .sort((a, b) => a.hubTitle.localeCompare(b.hubTitle));
 
-  // Invariantes físicos, demográficos y anti-colinealidad (Audit V3)
-  const invariantAlerts = evaluatePhysicalAndDemographicInvariants(current, options);
+  // Invariantes físicos, demográficos, fiscales Hub IV y anti-colinealidad (Audit V3 / E17)
+  const invariantAlerts = [
+    ...evaluatePhysicalAndDemographicInvariants(current, options),
+    ...evaluateHub4FiscalAndElectoralInvariants(current, options)
+  ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
   }
@@ -1654,6 +1825,7 @@ module.exports = {
   buildMetadataCatalog,
   extractSnapshotFromBundle,
   evaluatePhysicalAndDemographicInvariants,
+  evaluateHub4FiscalAndElectoralInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

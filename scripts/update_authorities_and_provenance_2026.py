@@ -1,73 +1,37 @@
 # scripts/update_authorities_and_provenance_2026.py
-# Actualiza autoridades electas (Alcaldes 2024-2028) y sincroniza todas las fechas de recoleccion y corte
+# Actualiza autoridades electas (Alcaldes 2024-2028, DPR vigente 2026) y sincroniza fechas de corte
 # tomando como ancla estricta HOY: 17 de octubre de 2026.
 
-import json
 import csv
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# 1. ACTUALIZAR 01_gob_poder_finanzas.json
 wp01_path = ROOT / "data" / "systemic" / "01_gob_poder_finanzas.json"
-with open(wp01_path, "r", encoding="utf-8") as f:
+with open(wp01_path, "r", encoding="utf-8-sig") as f:
     wp01 = json.load(f)
 
 wp01["fecha_extraccion"] = "2026-10-17T19:00:00Z"
-wp01["resumen_regional"]["gobernador_regional"] = "Marcelo Santana Vargas (UDI / Chile Vamos · Período 2024–2028)"
-wp01["resumen_regional"]["autoridades_vigentes_corte"] = "Período Constitucional 2024–2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026)"
+wp01["resumen_regional"]["gobernador_regional"] = "Marcelo Santana Vargas (UDI / Chile Vamos · Período 2025-2029 · 54,37% / 33.883 v.)"
+wp01["resumen_regional"]["delegado_presidencial_regional"] = (
+    "Luz María Vicuña Figueroa (RN, en ejercicio desde 11 mar 2026; antecesor Jorge Díaz Guzmán nov 2024 - mar 2026)"
+)
+wp01["resumen_regional"]["autoridades_vigentes_corte"] = (
+    "Período Constitucional 2024-2028 (Elecciones SERVEL Octubre 2024, en ejercicio a Octubre 2026) y DPR vigente desde 11-mar-2026"
+)
 
 ALCALDES_2024_2028 = {
-    "11101": { # Coyhaique
-        "alcalde_nombre": "Carlos Gatica Villegas",
-        "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor",
-        "periodo_alcaldia": "2024–2028 (Reelecto)"
-    },
-    "11102": { # Lago Verde
-        "alcalde_nombre": "Claudia Valdés Vásquez",
-        "alcalde_partido_pacto": "Independiente / Contigo Chile Mejor",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11201": { # Aysén
-        "alcalde_nombre": "Luis Martínez Gallardo",
-        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11202": { # Cisnes
-        "alcalde_nombre": "Francisco Roncagliolo Lepío",
-        "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos",
-        "periodo_alcaldia": "2024–2028 (Reelecto)"
-    },
-    "11203": { # Guaitecas
-        "alcalde_nombre": "Bans Puinao Carimoney",
-        "alcalde_partido_pacto": "Evolución Política (Evópoli) / Chile Vamos",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11401": { # Chile Chico
-        "alcalde_nombre": "Ariel Keim Hermosilla",
-        "alcalde_partido_pacto": "Independiente",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11402": { # Río Ibáñez
-        "alcalde_nombre": "Marcelo Jélvez Cárdenas",
-        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11301": { # Cochrane
-        "alcalde_nombre": "Patricio Ulloa Georgia",
-        "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11302": { # O'Higgins
-        "alcalde_nombre": "José Claudio Fica Gómez",
-        "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC)",
-        "periodo_alcaldia": "2024–2028"
-    },
-    "11303": { # Tortel
-        "alcalde_nombre": "Marisela Jiménez Cruces",
-        "alcalde_partido_pacto": "Independiente",
-        "periodo_alcaldia": "2024–2028"
-    }
+    "11101": {"alcalde_nombre": "Carlos Gatica Villegas", "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor", "periodo_alcaldia": "2024-2028 (Reelecto)"},
+    "11102": {"alcalde_nombre": "Claudia Valdés Vásquez", "alcalde_partido_pacto": "Independiente (cupo PPD) / Contigo Chile Mejor", "periodo_alcaldia": "2024-2028"},
+    "11201": {"alcalde_nombre": "Luis Martínez Gallardo", "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos", "periodo_alcaldia": "2024-2028"},
+    "11202": {"alcalde_nombre": "Francisco Roncagliolo Lepio", "alcalde_partido_pacto": "Renovación Nacional (RN) / Chile Vamos", "periodo_alcaldia": "2024-2028 (Reelecto)"},
+    "11203": {"alcalde_nombre": "Bans Puinao Carimoney", "alcalde_partido_pacto": "Evolución Política (Evópoli) / Chile Vamos", "periodo_alcaldia": "2024-2028"},
+    "11401": {"alcalde_nombre": "Ariel Keim Hermosilla", "alcalde_partido_pacto": "Independiente (Fuera de pacto)", "periodo_alcaldia": "2024-2028"},
+    "11402": {"alcalde_nombre": "Marcelo Daniel Jélvez Cárdenas", "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos", "periodo_alcaldia": "2024-2028"},
+    "11301": {"alcalde_nombre": "Patricio Ulloa Georgia", "alcalde_partido_pacto": "Unión Demócrata Independiente (UDI) / Chile Vamos", "periodo_alcaldia": "2024-2028"},
+    "11302": {"alcalde_nombre": "José Claudio Fica Gómez", "alcalde_partido_pacto": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor", "periodo_alcaldia": "2024-2028 (Reelecto)"},
+    "11303": {"alcalde_nombre": "Marisela Jiménez Cruces", "alcalde_partido_pacto": "Independiente (Fuera de pacto)", "periodo_alcaldia": "2024-2028"},
 }
 
 for item in wp01["por_comuna"]:
@@ -77,15 +41,22 @@ for item in wp01["por_comuna"]:
         item["datos"]["autoridades"]["alcalde_nombre"] = alc["alcalde_nombre"]
         item["datos"]["autoridades"]["alcalde_partido_pacto"] = alc["alcalde_partido_pacto"]
         item["datos"]["autoridades"]["periodo_alcaldia"] = alc["periodo_alcaldia"]
-        item["datos"]["autoridades"]["fuente_electoral"] = "SERVEL Elecciones Municipales Octubre 2024 (En ejercicio a Octubre 2026)"
+        item["datos"]["autoridades"]["fuente_electoral"] = "SERVEL Elecciones Municipales Octubre 2024 / BCN Reporte Distrital 27 (Corte Octubre 2026)"
         item["datos"]["finanzas_sinim"]["anio_referencia_sinim"] = 2025
 
-with open(wp01_path, "w", encoding="utf-8") as f:
+for node in wp01.get("nodos_georreferenciados", []):
+    if node.get("id") == "node_dpr_aysen":
+        node.setdefault("atributos", {})["delegado_presidencial"] = wp01["resumen_regional"]["delegado_presidencial_regional"]
+    elif node.get("id") == "node_gore_aysen":
+        node.setdefault("atributos", {})["delegado_presidencial"] = wp01["resumen_regional"]["delegado_presidencial_regional"]
+        node["atributos"]["gobernador_regional"] = "Marcelo Santana Vargas (UDI)"
+
+with open(wp01_path, "w", encoding="utf-8", newline="\n") as f:
     json.dump(wp01, f, indent=2, ensure_ascii=False)
+    f.write("\n")
 
-print("[OK] 01_gob_poder_finanzas.json actualizado con Alcaldes 2024-2028 y Gobernador Marcelo Santana.")
+print("[OK] 01_gob_poder_finanzas.json actualizado con Alcaldes 2024-2028, DPR Luz María Vicuña y Gobernador Marcelo Santana.")
 
-# 2. REGENERAR CSV 01_gob_poder_finanzas_comunas.csv
 csv_wp01_path = ROOT / "data" / "systemic" / "csv" / "01_gob_poder_finanzas_comunas.csv"
 fieldnames = [
     "codigo_comuna", "comuna_ine", "nombre_comuna", "provincia", "codigo_cuenca", "lat", "lng", "source_url",
@@ -93,13 +64,16 @@ fieldnames = [
     "autoridades_concejo_municipal_cupos", "autoridades_participacion_electoral_pct", "autoridades_fuente_electoral",
     "finanzas_sinim_presupuesto_municipal_anual_mclp", "finanzas_sinim_presupuesto_per_capita_miles_clp",
     "finanzas_sinim_dependencia_fcm_pct", "finanzas_sinim_ingresos_patentes_acuicolas_mineras_mclp",
+    "finanzas_sinim_ingresos_patentes_acuicolas_mclp", "finanzas_sinim_ingresos_patentes_mineras_mclp",
+    "finanzas_sinim_ipp_bcn_2025_mclp", "finanzas_sinim_fcm_bcn_2025_mclp",
+    "finanzas_sinim_participacion_fcm_ingreso_total_pct", "finanzas_sinim_gastos_corrientes_bcn_pct",
     "finanzas_sinim_autonomia_financiera_nivel", "finanzas_sinim_anio_referencia_sinim",
     "inversion_publica_fndr_asignado_estimado_mclp", "inversion_publica_subdere_pmu_pmb_mclp",
-    "inversion_publica_principales_focos_inversion"
+    "inversion_publica_principales_focos_inversion",
 ]
 
 with open(csv_wp01_path, "w", encoding="utf-8-sig", newline="") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, lineterminator="\n")
     writer.writerow(fieldnames)
     for c in wp01["por_comuna"]:
         d = c["datos"]
@@ -114,8 +88,11 @@ with open(csv_wp01_path, "w", encoding="utf-8-sig", newline="") as f:
             aut.get("concejo_municipal_cupos"), aut.get("participacion_electoral_pct"), aut.get("fuente_electoral"),
             fin.get("presupuesto_municipal_anual_mclp"), fin.get("presupuesto_per_capita_miles_clp"),
             fin.get("dependencia_fcm_pct"), fin.get("ingresos_patentes_acuicolas_mineras_mclp"),
+            fin.get("ingresos_patentes_acuicolas_mclp"), fin.get("ingresos_patentes_mineras_mclp"),
+            fin.get("ipp_bcn_2025_mclp"), fin.get("fcm_bcn_2025_mclp"),
+            fin.get("participacion_fcm_ingreso_total_pct"), fin.get("gastos_corrientes_bcn_pct"),
             fin.get("autonomia_financiera_nivel"), fin.get("anio_referencia_sinim"),
-            inv.get("fndr_asignado_estimado_mclp"), inv.get("subdere_pmu_pmb_mclp"), focos
+            inv.get("fndr_asignado_estimado_mclp"), inv.get("subdere_pmu_pmb_mclp"), focos,
         ])
 
 print("[OK] 01_gob_poder_finanzas_comunas.csv regenerado.")
@@ -344,7 +321,7 @@ if "nodesById" in prov:
             node_p["updateFrequency"] = u["updateFrequency"]
             node_p["nextUpdate"] = u["nextUpdate"]
 
-with open(prov_path, "w", encoding="utf-8") as f:
+with open(prov_path, "w", encoding="utf-8", newline="\n") as f:
     json.dump(prov, f, indent=2, ensure_ascii=False)
 
 print("[OK] provenance_catalog.json sincronizado para los 32 nodos con fechas coherentes a Octubre 2026 (y nextUpdate estrictamente futuro).")

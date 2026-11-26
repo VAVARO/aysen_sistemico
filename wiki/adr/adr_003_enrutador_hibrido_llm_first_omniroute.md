@@ -37,16 +37,16 @@ El Consultor Territorial (`js/omniroute_client.js`) implementa un enrutador híb
 
 | Comuna | Dependencia del Fondo Común Municipal (%) | Ingresos Propios Permanentes (%) | Tarifa Eléctrica Residencial BT1 ($/kWh) | Consumo Residencial de Leña (m³/hogar/año) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 46,5 | 53,5 | 287,8 | 9,81 |
-| [[comunas/lago_verde|Lago Verde]] | 89,2 | 10,8 | 294 | 15,1 |
-| [[comunas/aysen|Aysén]] | 52,8 | 47,2 | 287,8 | 13,2 |
-| [[comunas/cisnes|Cisnes]] | 74,5 | 25,5 | 292,4 | 13,95 |
-| [[comunas/guaitecas|Guaitecas]] | 83 | 17 | 312 | 13,1 |
-| [[comunas/chile_chico|Chile Chico]] | 71,2 | 28,8 | 289,5 | 11,95 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 79,6 | 20,4 | 289,5 | 14,05 |
-| [[comunas/cochrane|Cochrane]] | 76,8 | 23,2 | 291,2 | 14,35 |
-| [[comunas/ohiggins|O'Higgins]] | 91,5 | 8,5 | 308 | 15,5 |
-| [[comunas/tortel|Tortel]] | 92,8 | 7,2 | 318 | 15,2 |
+| [[comunas/coyhaique|Coyhaique]] | 58,4 | 41,6 | 287,8 | 9,81 |
+| [[comunas/lago_verde|Lago Verde]] | 83,9 | 16,1 | 294 | 15,1 |
+| [[comunas/aysen|Aysén]] | 61,1 | 38,9 | 287,8 | 13,2 |
+| [[comunas/cisnes|Cisnes]] | 48,7 | 51,3 | 292,4 | 13,95 |
+| [[comunas/guaitecas|Guaitecas]] | 73,1 | 26,9 | 312 | 13,1 |
+| [[comunas/chile_chico|Chile Chico]] | 86,5 | 13,5 | 289,5 | 11,95 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 86,6 | 13,4 | 289,5 | 14,05 |
+| [[comunas/cochrane|Cochrane]] | 85,7 | 14,3 | 291,2 | 14,35 |
+| [[comunas/ohiggins|O'Higgins]] | 95,3 | 4,7 | 308 | 15,5 |
+| [[comunas/tortel|Tortel]] | 95,4 | 4,6 | 318 | 15,2 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

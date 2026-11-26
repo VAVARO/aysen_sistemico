@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Grado de vulnerabilidad fiscal y porcentaje de dependencia del Fondo Común Municipal (FCM) para el financiamiento de los servicios locales y gasto corriente. Tortel (92,8%), O'Higgins (91,5%) y Lago Verde (89,2%) tienen la mayor dependencia del FCM, mientras Coyhaique registra un 46,5%.
+Grado de vulnerabilidad fiscal y porcentaje de dependencia del Fondo Común Municipal (`FCM / [IPP + FCM]`) según BCN/SINIM 2025 (41.753,32 M$ brutos; 38.580 M$ transferencia TGR neta). Tortel (95,4%), O'Higgins (95,3%), Río Ibáñez (86,6%) y Chile Chico (86,5%) exhiben máxima dependencia del FCM, frente a Cisnes (48,7%) y Coyhaique (58,4%) (promedio regional 68,5% ponderado / 77,5% simple).
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Presupuesto (M$) | Aporte FCM (M$) | % Dependencia FCM | Nivel Vulnerabilidad |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 26.540,8 | 12.341,5 | 46.5% | Moderada |
-| [[comunas/lago_verde|Lago Verde]] | 2.450,2 | 2.185,6 | 89.2% | Muy Alta |
-| [[comunas/aysen|Aysén]] | 14.210,5 | 7.503,1 | 52.8% | Media |
-| [[comunas/cisnes|Cisnes]] | 6.100 | 4.544,5 | 74.5% | Alta |
-| [[comunas/guaitecas|Guaitecas]] | 3.300 | 2.739 | 83% | Muy Alta |
-| [[comunas/chile_chico|Chile Chico]] | 5.400 | 3.844,8 | 71.2% | Alta |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 3.950 | 3.144,2 | 79.6% | Alta |
-| [[comunas/cochrane|Cochrane]] | 4.600 | 3.532,8 | 76.8% | Alta |
-| [[comunas/ohiggins|O'Higgins]] | 2.150 | 1.967,3 | 91.5% | Muy Alta |
-| [[comunas/tortel|Tortel]] | 2.050 | 1.902,4 | 92.8% | Muy Alta |
+| [[comunas/coyhaique|Coyhaique]] | 27.611 | 12.047,74 | 58.4% | Media |
+| [[comunas/lago_verde|Lago Verde]] | 3.321,05 | 2.249,3 | 83.9% | Muy Alta |
+| [[comunas/aysen|Aysén]] | 14.614,29 | 7.089,9 | 61.1% | Media |
+| [[comunas/cisnes|Cisnes]] | 7.985,27 | 2.824,5 | 48.7% | Moderada |
+| [[comunas/guaitecas|Guaitecas]] | 4.569,04 | 2.297,78 | 73.1% | Alta |
+| [[comunas/chile_chico|Chile Chico]] | 5.981,72 | 4.249,66 | 86.5% | Muy Alta |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 6.252,85 | 3.260,78 | 86.6% | Muy Alta |
+| [[comunas/cochrane|Cochrane]] | 5.720,96 | 3.005,2 | 85.7% | Muy Alta |
+| [[comunas/ohiggins|O'Higgins]] | 5.323,76 | 2.405,56 | 95.3% | Muy Alta |
+| [[comunas/tortel|Tortel]] | 3.440,74 | 2.322,9 | 95.4% | Muy Alta |
 
 ## Metadatos de Procedencia Institucional
 

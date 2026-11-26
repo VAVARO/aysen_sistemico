@@ -21,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Inversión pública regional asignada por el Fondo Nacional de Desarrollo Regional (FNDR): M$ 61.548 FNDR devengado (88,2% de ejecución presupuestaria) frente a ~M$ 395.000 anuales de inversión sectorial ministerial centralizada, junto con el estado de la Carretera Austral (Ruta 7). Descentralización nominal vs. real: el gasto FNDR devengado real del GORE Aysén es de M$ 61.548 anuales, mientras que la inversión sectorial ministerial centralizada (MOP, MINVU, Salud) alcanza ~M$ 395.000 anuales (x5 a x6 veces el FNDR). En la Ruta 7 se extienden 835 km en la región con tramos de ripio al sur de Cerro Castillo.
+Inversión pública regional asignada por el Fondo Nacional de Desarrollo Regional (FNDR): cierre récord 2025 de M$ 73.863,0 devengado (92,0% sobre M$ 80.200,0 vigente), tras M$ 44.765,5 (59,3%) en 2024 y M$ 61.548,0 DIPRES / M$ 61.579,2 CKAN en 2023 frente a ~M$ 395.000 anuales de inversión sectorial ministerial centralizada, junto con el estado de la Carretera Austral (Ruta 7). Descentralización nominal vs. real: el FNDR GORE saltó +65,0% a M$ 73.863,0 (92,0%) en 2025 (marco 2026 inicial M$ 81.812,0 / ajustado M$ 74.312,0 y acuerdo Hacienda 2027 M$ 80.748,0), mientras la inversión sectorial ministerial centralizada (MOP, MINVU, Salud) alcanza ~M$ 395.000–415.000 anuales.
 
 ## Indicadores Comunales Verificados
 
