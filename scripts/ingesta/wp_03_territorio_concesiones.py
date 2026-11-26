@@ -2494,8 +2494,11 @@ def generate_systemic_dataset():
     }
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(dataset, f, indent=2, ensure_ascii=False)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(OUTPUT_JSON, dataset)
 
     print(f"  [OK] Dataset sistémico generado con éxito en {OUTPUT_JSON.relative_to(REPO_ROOT)}")
     print(f"       - Comunas incluidas: {len(por_comuna)}/10")

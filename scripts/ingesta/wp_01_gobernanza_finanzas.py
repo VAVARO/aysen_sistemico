@@ -938,8 +938,11 @@ def main():
     }
 
     systemic_json_path = SYSTEMIC_DIR / "01_gob_poder_finanzas.json"
-    with open(systemic_json_path, "w", encoding="utf-8") as f:
-        json.dump(systemic_data, f, indent=2, ensure_ascii=False)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(systemic_json_path, systemic_data)
 
     # Inyección y sincronización de series temporales históricas (2015-2026)
     try:

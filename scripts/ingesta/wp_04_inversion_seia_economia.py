@@ -296,8 +296,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Parque Eólico Alto Baguales y Ampliación (Edelaysen, 18.5 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 5240,
-                    "trabajadores_dependientes_sii": 29800,
+                    "numero_empresas_activas": 7620,
+                    "trabajadores_dependientes_sii": 20950,
                     "ventas_anuales_estimadas_miles_uf": 48500,
                     "rubros_principales": [
                         "Comercio al por mayor y al por menor",
@@ -338,8 +338,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde (MOP Vialidad, 15.2 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 86,
-                    "trabajadores_dependientes_sii": 390,
+                    "numero_empresas_activas": 118,
+                    "trabajadores_dependientes_sii": 132,
                     "ventas_anuales_estimadas_miles_uf": 450,
                     "rubros_principales": [
                         "Ganadería Bovina y Ovina",
@@ -380,8 +380,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Planta de Procesamiento y Congelado Chacabuco (AquaChile, 35.0 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 2180,
-                    "trabajadores_dependientes_sii": 16400,
+                    "numero_empresas_activas": 2840,
+                    "trabajadores_dependientes_sii": 9890,
                     "ventas_anuales_estimadas_miles_uf": 56200,
                     "rubros_principales": [
                         "Pesca y Acuicultura Industrial de Salmónidos",
@@ -422,8 +422,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Centro de Engorda Canal Jacaf Sur (Australis Mar, 8.5 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 490,
-                    "trabajadores_dependientes_sii": 3250,
+                    "numero_empresas_activas": 895,
+                    "trabajadores_dependientes_sii": 1920,
                     "ventas_anuales_estimadas_miles_uf": 9100,
                     "rubros_principales": [
                         "Cultivo y Cosecha de Salmónidos",
@@ -464,8 +464,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Conservación Rampa y Muelle Conectividad Melinka (MOP DOP, 8.4 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 198,
-                    "trabajadores_dependientes_sii": 930,
+                    "numero_empresas_activas": 242,
+                    "trabajadores_dependientes_sii": 265,
                     "ventas_anuales_estimadas_miles_uf": 2450,
                     "rubros_principales": [
                         "Pesca Artesanal y Extracción Bentónica",
@@ -506,8 +506,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Compañía Minera Cerro Bayo, 32.0 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 415,
-                    "trabajadores_dependientes_sii": 2280,
+                    "numero_empresas_activas": 648,
+                    "trabajadores_dependientes_sii": 1140,
                     "ventas_anuales_estimadas_miles_uf": 6300,
                     "rubros_principales": [
                         "Explotación de Minas y Canteras",
@@ -548,8 +548,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Pavimentación y Obras de Seguridad Ruta 7 Villa Cerro Castillo - Bahía Murta (MOP, 34.5 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 265,
-                    "trabajadores_dependientes_sii": 1210,
+                    "numero_empresas_activas": 418,
+                    "trabajadores_dependientes_sii": 512,
                     "ventas_anuales_estimadas_miles_uf": 3200,
                     "rubros_principales": [
                         "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento",
@@ -590,8 +590,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Mini Central Hidroeléctrica San Victorino (Edelaysen, 9.8 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 345,
-                    "trabajadores_dependientes_sii": 1680,
+                    "numero_empresas_activas": 492,
+                    "trabajadores_dependientes_sii": 845,
                     "ventas_anuales_estimadas_miles_uf": 4400,
                     "rubros_principales": [
                         "Administración Pública Provincial y Municipal",
@@ -632,8 +632,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Rampa de Embarque y Explanada Bahía Bahamóndez (MOP DOP, 8.2 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 78,
-                    "trabajadores_dependientes_sii": 290,
+                    "numero_empresas_activas": 96,
+                    "trabajadores_dependientes_sii": 98,
                     "ventas_anuales_estimadas_miles_uf": 530,
                     "rubros_principales": [
                         "Administración Municipal y Servicios Estatales",
@@ -674,8 +674,8 @@ def build_systemic_dataset(fuentes_primarias: List[Dict[str, str]]) -> Dict[str,
                     "proyecto_emblematico_reciente": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay (MOP DOP, 12.4 MM USD)"
                 },
                 "estructura_empresarial_sii": {
-                    "numero_empresas_activas": 68,
-                    "trabajadores_dependientes_sii": 245,
+                    "numero_empresas_activas": 84,
+                    "trabajadores_dependientes_sii": 80,
                     "ventas_anuales_estimadas_miles_uf": 390,
                     "rubros_principales": [
                         "Administración Pública y Comunal",
@@ -1098,8 +1098,11 @@ def main() -> int:
 
     output_path = SYSTEMIC_DIR / "04_inversion_seia_economia.json"
     print(f"\n-> Escribiendo dataset sistémico en: {output_path}...")
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(dataset, f, indent=2, ensure_ascii=False)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(output_path, dataset)
 
     # Inyección y sincronización de series temporales históricas (2015-2026)
     try:

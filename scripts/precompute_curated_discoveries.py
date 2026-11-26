@@ -225,7 +225,6 @@ VARIABLE_META = {
     "potencia_mw": ("III. Energía", "Capacidad Eléctrica Instalada en el Subsistema", "MW"),
     "tarifa_bt1_clp": ("III. Energía", "Tarifa Eléctrica Residencial BT1", "$/kWh"),
     "costo_diesel_aislado_clp": ("III. Energía", "Costo Real de Generación Diésel Aislada", "$/kWh"),
-    "costo_real_generacion_diesel_kwh_clp": ("III. Energía", "Costo de Generación Eléctrica Aislada", "$/kWh"),
     "subsidio_fiscal_diesel_kwh_clp": ("III. Energía", "Subsidio Fiscal a Sistemas Eléctricos Aislados", "$/kWh"),
     "saidi_horas_anual": ("III. Energía", "Tiempo Anual de Interrupción Eléctrica (SAIDI)", "horas/año"),
     "gasolina_93_clp": ("III. Energía", "Precio Minorista de Gasolina 93 Octanos", "$/L"),
@@ -286,7 +285,7 @@ VARIABLE_META = {
     "cobertura_vegetal_pct": ("VII. Biodiversidad", "Cobertura de Bosque y Vegetación Nativa", "%"),
     "fauna_amenazada_n": ("VII. Biodiversidad", "Especies de Fauna Amenazada Registradas (RCE)", "especies"),
     "glaciares_dga_n": ("VII. Biodiversidad", "Glaciares Inventariados por la DGA", "glaciares"),
-    "superficie_glaciares_km2": ("VII. Biodiversidad", "Superficie Glaciar Comunal (DGA)", "km²"),
+    "superficie_glaciar_km2": ("VII. Biodiversidad", "Superficie Glaciar Comunal (DGA)", "km²"),
     "dias_sobre_norma_mp25": ("VII. Biodiversidad", "Días Anuales sobre Norma Diaria de MP2.5 (SINCA)", "días/año"),
     "episodios_gec_mp25_anual": ("VII. Biodiversidad", "Episodios Críticos de Contaminación MP2.5 (GEC)", "episodios"),
     "amenaza_volcanica_sismica_idx": ("VII. Biodiversidad", "Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN)", "puntos"),
@@ -548,7 +547,7 @@ CURATED_5_TEMPORAL_SPECS = [
     },
     {
         "varX": "pernoctaciones_anuales_emat_hist",
-        "varY": "trafico_aereo_pasajeros_balmaceda_jac",
+        "varY": "balmaceda_pasajeros_jac",
         "hubX": "I. Turismo",
         "hubY": "IV. Gobernanza",
         "labelX": "Pernoctaciones Turísticas Anuales EMAT en Aysén (2015–2026)",
@@ -556,30 +555,30 @@ CURATED_5_TEMPORAL_SPECS = [
         "unitX": "pernoctaciones",
         "unitY": "pasajeros",
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
-        "dataX": [298400, 324500, 358900, 381200, 396400, 118500, 194200, 342800, 389500, 418600, 442100, 468900],
-        "dataY": [420000, 455000, 490000, 530000, 585000, 240000, 365000, 520000, 605000, 648000, 665000, 682000],
+        "dataX": [284100, 302400, 324800, 341200, 352800, 108400, 178500, 312600, 338400, 351200, 364039, 364039],
+        "dataY": [446000, 482000, 535000, 592000, 678660, 252810, 375174, 408402, 594114, 625501, 605945, 620000],
         "headline": "Pernoctaciones EMAT vs. Tráfico Aéreo Balmaceda (2015–2026)",
         "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
-            f"El flujo aéreo de Balmaceda y las pernoctaciones hoteleras marchan a la par entre 2015 y 2026 "
-            f"(de {x0} a {x1} noches y de {y0} a {y1} pasajeros), incluida la caída de 2020."
+            f"El tráfico aéreo de Balmaceda y las pernoctaciones EMAT marchan acoplados entre 2015 y 2026 "
+            f"(de {x0} a {x1} noches y de {y0} a {y1} pasajeros), reflejando la contracción de 2020 y el rebote post-pandemia."
         ),
     },
     {
         "varX": "visitantes_snaspe_conaf_hist",
-        "varY": "pib_regional_nominal_mmclp",
+        "varY": "balmaceda_pasajeros_jac",
         "hubX": "I. Turismo",
-        "hubY": "V. Inversión",
-        "labelX": "Visitantes Anuales a Parques Nacionales SNASPE en Aysén (2015–2026)",
-        "labelY": "Producto Interno Bruto (PIB) Regional de Aysén (2015–2026)",
+        "hubY": "IV. Gobernanza",
+        "labelX": "Visitantes Anuales a Áreas Silvestres Protegidas SNASPE CONAF (2015–2026)",
+        "labelY": "Flujo Anual de Pasajeros Aeródromo Balmaceda JAC (2015–2026)",
         "unitX": "visitantes",
-        "unitY": "MM$ CLP",
+        "unitY": "pasajeros",
         "years": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
-        "dataX": [112400, 128900, 146500, 162300, 174800, 142100, 168600, 184200, 193400, 201900, 208400, 216500],
-        "dataY": [980000, 1045000, 1120000, 1215000, 1260000, 1180000, 1360000, 1510000, 1610000, 1685000, 1755000, 1830000],
-        "headline": "Visitantes a Parques SNASPE vs. PIB Regional (2015–2026)",
+        "dataX": [64200, 71400, 79500, 88200, 96400, 22400, 44800, 72500, 81900, 84500, 86117, 86117],
+        "dataY": [446000, 482000, 535000, 592000, 678660, 252810, 375174, 408402, 594114, 625501, 605945, 620000],
+        "headline": "Visitantes a Parques SNASPE vs. Tráfico Aéreo Balmaceda (2015–2026)",
         "readingBuilder": lambda x0, x1, y0, y1, ux, uy: (
-            f"Las visitas a parques nacionales pasaron de {x0} a {x1} entre 2015 y 2026 en sincronía con el PIB regional, "
-            f"que creció de {y0} a {y1} millones en la década."
+            f"Las visitas oficiales CONAF en parques SNASPE (de {x0} a {x1}) evolucionan acopladas al flujo aéreo de Balmaceda "
+            f"(de {y0} a {y1} pasajeros) entre 2015 y 2026."
         ),
     },
     {
@@ -985,7 +984,7 @@ def compute_comunas_explain(data_lake):
         "tiempo_viaje_coyhaique_hrs",
         "indice_aislamiento_multimodal",
         "tarifa_bt1_clp",
-        "costo_real_generacion_diesel_kwh_clp",
+        "costo_diesel_aislado_clp",
         "saidi_horas_anual",
         "consumo_lena_m3_hogar_ano",
         "cobertura_fibra_hogar_pct",
@@ -1000,7 +999,7 @@ def compute_comunas_explain(data_lake):
         "rsh_carencia_servicios_basicos_jun2026_pct",
         "deficit_habitacional_total_por_1000_hab",
         "superficie_snaspe_pct",
-        "superficie_glaciares_km2",
+        "superficie_glaciar_km2",
         "dias_sobre_norma_mp25",
         "amenaza_volcanica_sismica_idx",
         "medicos_por_mil_hab",
@@ -1019,7 +1018,12 @@ def compute_comunas_explain(data_lake):
         "total_proyectos_ctci",
     ]
 
-    valid_keys = [k for k in explain_keys if k in VARIABLE_META and k in comunas[0]]
+    lex_path = os.path.join(ROOT_DIR, "data", "nl_lexicon_aysen.json")
+    alias_keys = set()
+    if os.path.exists(lex_path):
+        with open(lex_path, "r", encoding="utf-8") as lf:
+            alias_keys = {v.get("id") for v in json.load(lf).get("variables", []) if v.get("isAliasOf")}
+    valid_keys = [k for k in explain_keys if k in VARIABLE_META and k in comunas[0] and k not in alias_keys]
     m_vars = len(valid_keys)
     mat = [[0.0] * m_vars for _ in range(n_com)]
     means = [0.0] * m_vars

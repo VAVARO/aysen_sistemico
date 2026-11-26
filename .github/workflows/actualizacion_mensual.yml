@@ -1,15 +1,17 @@
 name: Actualizacion mensual
 
-# Actualizacion mensual automatizada por API de Aysen Sistemico.
+# Actualizacion mensual automatizada por API de Aysen Sistemico con compuerta HITL.
 #
 # Corre el dia 1 de cada mes a las 09:00 UTC (06:00 en Chile continental con horario de
 # verano, UTC-3) y puede lanzarse a mano desde la pestana Actions (workflow_dispatch).
 #
-# Principio: una API estatal caida NO rompe la base. scripts/run_monthly_update.py aplica
-# un Circuit Breaker con Last-Known-Good: ante timeout, 403/500 o datos vacios/corruptos
-# restaura el ultimo dato valido de esa fuente y continua con las demas. Solo si la
-# compuerta de calidad (bundle + validador + sincronia) falla, el script revierte todo y
-# el workflow termina en rojo sin publicar nada.
+# Principio HITL (Human-in-the-Loop):
+#   - NUNCA hace `git push` directo a `main`.
+#   - Genera la nota de auditoria en `auditoria_obsidian/corridas/corrida_*.md`
+#     comparando contra `HEAD~1` (fetch-depth: 2).
+#   - Si hay cambios o alertas, publica la rama `data-ingest/corrida-YYYY-MM` y abre
+#     (o actualiza) un Pull Request hacia `main` cuyo cuerpo es la nota de auditoria
+#     para tu revision de 5 minutos antes de aprobar el merge.
 
 on:
   schedule:
@@ -18,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: actualizacion-mensual
@@ -25,13 +28,15 @@ concurrency:
 
 jobs:
   actualizar:
-    name: Extraer, validar y publicar
+    name: Extraer, auditar y abrir PR HITL
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
     steps:
-      - name: Checkout
+      - name: Checkout (con HEAD~1 para auditoria de cambios)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Configurar Python 3.11
         uses: actions/setup-python@v5
@@ -43,23 +48,54 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Actualizar datos desde APIs oficiales
+      - name: Actualizar datos desde APIs oficiales y compuerta de calidad
         run: python3 scripts/run_monthly_update.py
 
-      - name: Validar Data Lake
-        run: python3 scripts/validate_data_lake.py --all
-
-      - name: Verificar sincronia del bundle
-        run: node scripts/verify_bundle_sync.cjs
-
-      - name: Confirmar y publicar cambios
+      - name: Generar nota de auditoria Obsidian (HEAD~1 vs corrida actual)
+        id: audit
         run: |
-          if [ -n "$(git status --porcelain data/)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/
-            git commit -m "chore(data): actualización mensual automática desde APIs oficiales"
-            git push
+          node scripts/obsidian_indicator_audit.cjs --against-git HEAD~1 --sync-to-vault --no-fail-missing-vault
+          LATEST_NOTE=$(ls -t auditoria_obsidian/corridas/corrida_*.md | head -n 1)
+          SEMAFORO=$(grep -m1 '^semaforo:' "$LATEST_NOTE" | sed 's/semaforo:[[:space:]]*"\{0,1\}\([^"]*\)"\{0,1\}/\1/')
+          echo "note_path=$LATEST_NOTE" >> "$GITHUB_OUTPUT"
+          echo "semaforo=$SEMAFORO" >> "$GITHUB_OUTPUT"
+          echo "Nota generada: $LATEST_NOTE (Semaforo: $SEMAFORO)"
+
+      - name: Verificar sincronia del bundle y evals de auditoria
+        run: |
+          python3 scripts/validate_data_lake.py --all
+          node scripts/verify_bundle_sync.cjs
+          node tests/test_obsidian_indicator_audit.cjs
+
+      - name: Publicar rama y abrir/actualizar PR HITL hacia main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/ wiki/ auditoria_obsidian/)" ]; then
+            echo "Sin cambios en data/, wiki/ o auditoria_obsidian/: no se requiere PR."
+            exit 0
+          fi
+
+          MONTH_TAG=$(date -u +%Y-%m)
+          BRANCH_NAME="data-ingest/corrida-${MONTH_TAG}"
+          NOTE_PATH="${{ steps.audit.outputs.note_path }}"
+          SEMAFORO="${{ steps.audit.outputs.semaforo }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B "$BRANCH_NAME"
+          git add data/ wiki/ auditoria_obsidian/
+          git commit -m "chore(data): corrida mensual ${MONTH_TAG} [semaforo: ${SEMAFORO}]"
+          git push --force-with-lease origin "$BRANCH_NAME"
+
+          PR_TITLE="chore(data): auditoria mensual ${MONTH_TAG} [Semaforo: ${SEMAFORO}]"
+          EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --base main --state open --json number --jq '.[0].number')
+
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr edit "$EXISTING_PR" --title "$PR_TITLE" --body-file "$NOTE_PATH"
+            echo "PR #${EXISTING_PR} actualizado con la nota de auditoria ${NOTE_PATH}."
           else
-            echo "Sin cambios en data/: no hay nada que publicar."
+            gh pr create --base main --head "$BRANCH_NAME" --title "$PR_TITLE" --body-file "$NOTE_PATH"
+            echo "PR HITL creado desde ${BRANCH_NAME} hacia main."
           fi

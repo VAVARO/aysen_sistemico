@@ -753,8 +753,11 @@ def build_ctci_dataset():
 
     # Guardar JSON
     json_path = SYSTEMIC_DIR / "10_ctci_innovacion.json"
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(json_dataset, f, ensure_ascii=False, indent=2)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(json_path, json_dataset)
     print(f"JSON generado exitosamente: {json_path}")
 
     # Guardar CSV Comunas (14 columnas exactas con UTF-8 BOM)

@@ -3,20 +3,22 @@
   "total_sources": 33,
   "sources": {
     "1": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "9b96f1c8a4bfb1395c1469cf119f6df66716c1a253bf1e6dd2b0a208ebe31b35",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv (44451 bytes)",
       "checked_at": "2026-10-20T19:50:46.254892+00:00",
       "sourceUrl": "https://serviciosturisticos.sernatur.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv"
     },
     "2": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "9b96f1c8a4bfb1395c1469cf119f6df66716c1a253bf1e6dd2b0a208ebe31b35",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv (44451 bytes)",
       "checked_at": "2026-10-20T19:50:46.254892+00:00",
       "sourceUrl": "https://www.subturismo.gob.cl/zoit/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv"
     },
     "3": {
       "sha256": "7913839f275f926d4e85887c58317b7d0f3755cfd3fe9b7a1b9d15bdb8749745",
@@ -27,85 +29,95 @@
       "extraction_mode": "curated_fallback"
     },
     "5": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "a0ccdb4cdfd3c29ca74a401801401262e16849de5139e5a905b9ad724d87a47e",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv (5706 bytes)",
       "checked_at": "2026-10-20T19:50:46.261845+00:00",
       "sourceUrl": "https://www.sernatur.cl/dataturismo/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv"
     },
     "6": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "e5dd7a5fa78a0b57c73b96c0351e410d9c5169326723f641ffe57ca57f611989",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03_concesiones_tierra_mar_comunas.csv (69050 bytes)",
       "checked_at": "2026-10-20T19:50:46.261845+00:00",
       "sourceUrl": "https://www.subpesca.cl/portal/619/w3-propertyvalue-50834.html",
       "last_run": "2026-11-02T12:13:30+00:00",
       "http_status": 404,
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv"
     },
     "7": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "79f4e222b9c15a2913e56c8ec836011d7396ee8ddfab2ad2e3559cd71b422b89",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03_holdings_salmoneros_ruts_aysen.csv (19928 bytes)",
       "checked_at": "2026-10-20T19:50:46.261845+00:00",
       "sourceUrl": "https://www.cmfchile.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/03_holdings_salmoneros_ruts_aysen.csv"
     },
     "8": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "83bde0dca4cdbb825b153aae45fca0f1cc353877c8410d125cb8531b80382ca8",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03_concesiones_tierra_mar_nodos.csv (17239 bytes)",
       "checked_at": "2026-10-20T19:50:46.261845+00:00",
       "sourceUrl": "https://www.sernapesca.cl/areas-de-accion/acuicultura/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/03_concesiones_tierra_mar_nodos.csv"
     },
     "9": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "e5dd7a5fa78a0b57c73b96c0351e410d9c5169326723f641ffe57ca57f611989",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03_concesiones_tierra_mar_comunas.csv (69050 bytes)",
       "checked_at": "2026-10-20T19:50:46.493506+00:00",
       "sourceUrl": "https://www.ifop.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv"
     },
     "10": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "c02bdae35a653f906ee32c5fcde5b4c9dd7a13323febb90865d775ed9a43f983",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03c_pesca_industrial_pesquerias_impuesto_aysen.csv (1126 bytes)",
       "checked_at": "2026-10-20T19:50:46.526944+00:00",
       "sourceUrl": "https://www.subpesca.cl/portal/616/w3-propertyvalue-50827.html",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/03c_pesca_industrial_pesquerias_impuesto_aysen.csv"
     },
     "11": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "2ff8890353773d5a3243fc5b7c561c9c25ec8b387678d5e015bffef621f16202",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/02_energia_combustibles_telecom_nodos.csv (6903 bytes)",
       "checked_at": "2026-10-20T19:50:46.537183+00:00",
       "sourceUrl": "https://energiaabierta.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/02_energia_combustibles_telecom_nodos.csv"
     },
     "12": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "b1a6351907c747bd612b97b476dcfe298d19b667c6b60f6a2aa92698190c7fe9",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/02_energia_combustibles_telecom_comunas.csv (50792 bytes)",
       "checked_at": "2026-10-20T19:50:46.571172+00:00",
       "sourceUrl": "https://www.sec.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv"
     },
     "13": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "b1a6351907c747bd612b97b476dcfe298d19b667c6b60f6a2aa92698190c7fe9",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/02_energia_combustibles_telecom_comunas.csv (50792 bytes)",
       "checked_at": "2026-10-20T19:50:46.912077+00:00",
       "sourceUrl": "https://www.bencinaenlinea.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv"
     },
     "14": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "b1a6351907c747bd612b97b476dcfe298d19b667c6b60f6a2aa92698190c7fe9",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/02_energia_combustibles_telecom_comunas.csv (50792 bytes)",
       "checked_at": "2026-10-20T19:50:46.933509+00:00",
       "sourceUrl": "https://www.subtel.gob.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/02_energia_combustibles_telecom_comunas.csv"
     },
     "15": {
       "sha256": "a34fabc705016c289f29a57a271750e821504a2f81a856bb8046a111fa538888",
@@ -126,12 +138,13 @@
       "extraction_mode": "live_api"
     },
     "17": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "d633a0dbb170d5fdf8be9731c2a4d00a45bf6bef09ec9457d932f38fa60b8769",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/01_gob_poder_finanzas_comunas.csv (59146 bytes)",
       "checked_at": "2026-10-20T19:50:47.043645+00:00",
       "sourceUrl": "https://www.servel.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv"
     },
     "19": {
       "sha256": "9ecde5ddae81c11c88d7e51331ee4901b67669ce78a311769e67f3a75c19b034",
@@ -150,38 +163,42 @@
       "extraction_mode": "curated_fallback"
     },
     "23": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "81fdbed5fe6e3d77420db278ecc1f4be4595d02984919bdf36a838bfca3a554c",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv (75907 bytes)",
       "checked_at": "2026-10-20T19:50:47.573347+00:00",
       "sourceUrl": "https://censo2024.ine.gob.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv"
     },
     "24": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "478a517b4015614f20ede0d3b15bbd33cac283a87ac9c77299decd2a5f02a562",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv (24097 bytes)",
       "checked_at": "2026-10-20T19:50:47.692030+00:00",
       "sourceUrl": "https://deis.minsal.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
       "http_status": 200,
-      "extraction_mode": "live_api"
+      "extraction_mode": "live_api",
+      "hash_source": "data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv"
     },
     "25": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "81fdbed5fe6e3d77420db278ecc1f4be4595d02984919bdf36a838bfca3a554c",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv (75907 bytes)",
       "checked_at": "2026-10-20T19:50:47.692030+00:00",
       "sourceUrl": "https://datosabiertos.mineduc.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
       "http_status": 200,
-      "extraction_mode": "live_api"
+      "extraction_mode": "live_api",
+      "hash_source": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv"
     },
     "27": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "ef143ca2cd5c73319a539835ed5348df7341f81a88ead9fbdce6aa230d5779bd",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv (10841 bytes)",
       "checked_at": "2026-10-20T19:50:47.975444+00:00",
       "sourceUrl": "https://sit.conaf.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv"
     },
     "28": {
       "sha256": "1f145a59b1e052dc750a2fb7bea3aad9edfaf9393b24e0bcb34571338b5b45e3",
@@ -201,78 +218,87 @@
       "extraction_mode": "curated_fallback"
     },
     "31": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "35790e8c6fa14603e108640ac2c9c22bf35967dd04de11155c053773af9fb9d3",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv (10261 bytes)",
       "checked_at": "2026-10-20T19:50:48.328598+00:00",
       "sourceUrl": "https://earthquake.usgs.gov/",
       "last_run": "2026-11-02T12:13:30+00:00",
       "http_status": 200,
-      "extraction_mode": "live_api"
+      "extraction_mode": "live_api",
+      "hash_source": "data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv"
     },
     "4": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "9b96f1c8a4bfb1395c1469cf119f6df66716c1a253bf1e6dd2b0a208ebe31b35",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv (44451 bytes)",
       "checked_at": "2026-10-20T19:50:46.261845+00:00",
       "sourceUrl": "https://www.conaf.cl/centro-documental/visitacion-ap-2025/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv"
     },
     "18": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "d633a0dbb170d5fdf8be9731c2a4d00a45bf6bef09ec9457d932f38fa60b8769",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/01_gob_poder_finanzas_comunas.csv (59146 bytes)",
       "checked_at": "2026-10-20T19:50:47.064046+00:00",
       "sourceUrl": "https://www.dipres.gob.cl/598/w3-propertyname-706.html",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/01_gob_poder_finanzas_comunas.csv"
     },
     "21": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "e5dd7a5fa78a0b57c73b96c0351e410d9c5169326723f641ffe57ca57f611989",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03_concesiones_tierra_mar_comunas.csv (69050 bytes)",
       "checked_at": "2026-10-20T19:50:47.294144+00:00",
       "sourceUrl": "https://www.sernageomin.cl/mineria/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv"
     },
     "22": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "e5dd7a5fa78a0b57c73b96c0351e410d9c5169326723f641ffe57ca57f611989",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/03_concesiones_tierra_mar_comunas.csv (69050 bytes)",
       "checked_at": "2026-10-20T19:50:47.557306+00:00",
       "sourceUrl": "https://idembn.bienes.cl/idembn/catalog",
       "last_run": "2026-11-02T12:13:30+00:00",
       "http_status": 200,
-      "extraction_mode": "live_api"
+      "extraction_mode": "live_api",
+      "hash_source": "data/systemic/csv/03_concesiones_tierra_mar_comunas.csv"
     },
     "26": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "81fdbed5fe6e3d77420db278ecc1f4be4595d02984919bdf36a838bfca3a554c",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv (75907 bytes)",
       "checked_at": "2026-10-20T19:50:47.822287+00:00",
       "sourceUrl": "https://cead.minsegpublica.gob.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv"
     },
     "29": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "ef143ca2cd5c73319a539835ed5348df7341f81a88ead9fbdce6aa230d5779bd",
+      "snapshot": "Respaldo local verificado: data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv (10841 bytes)",
       "checked_at": "2026-10-20T19:50:48.275882+00:00",
       "sourceUrl": "https://especies-exoticas.mma.gob.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv"
     },
     "fuente_cultura_patrimonio": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "snapshot": "Metadato de procedencia nodo #fuente_cultura_patrimonio",
       "checked_at": "2026-10-24T00:00:00.000000+00:00",
       "sourceUrl": "https://ide.patrimoniocultural.gob.cl/",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/provenance_catalog.json"
     },
     "fuente_ctci_innovacion": {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "snapshot": "",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "snapshot": "Metadato de procedencia nodo #fuente_ctci_innovacion",
       "checked_at": "2026-10-24T00:00:00.000000+00:00",
       "sourceUrl": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv",
       "last_run": "2026-11-02T12:13:30+00:00",
-      "extraction_mode": "curated_fallback"
+      "extraction_mode": "curated_fallback",
+      "hash_source": "data/systemic/provenance_catalog.json"
     }
   }
 }

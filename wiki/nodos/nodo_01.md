@@ -9,7 +9,7 @@ variables_clave:
   - camas_turisticas
 fuentes_oficiales:
   - "Servicio Nacional de Turismo (SERNATUR) / Subsecretaría de Turismo"
-updated_at: "2026-11-23"
+updated_at: "2026-11-26"
 tags:
   - aysen-sistemico
   - nodo
@@ -20,22 +20,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro comunal de servicios turísticos formales inscritos en el Registro Nacional de Prestadores de SERNATUR: total de prestadores, alojamientos turísticos, operadores de turismo aventura, guías registrados y capacidad estimada en camas. Coyhaique lidera con 412 prestadores registrados (178 alojamientos, 74 operadores de aventura y 3.420 camas), seguido por Río Ibáñez, Aysén, Cisnes, Chile Chico y Cochrane.
+Catastro RNPST SERNATUR consolidado con 1.728 servicios inscritos en Aysén (676 en General Carrera [39,1%], 515 en Coyhaique [29,8%], 366 en Aysén [21,2%] y 171 en Capitán Prat [9,9%]) y 10.040 camas formales. Registra brecha crítica de vigencia de patentes: solo 31,6% de los registros históricos en ZOIT Chelenko (291 de 922) y 11,8% en ZOIT Queulat (36 de 307) mantienen su patente vigente al día.
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Prestadores Totales | Alojamientos | Turismo Aventura | Camas Estimadas |
-| --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 412 | 178 | 74 | 3.420 |
-| [[comunas/lago_verde|Lago Verde]] | 24 | 14 | 5 | 165 |
-| [[comunas/aysen|Aysén]] | 185 | 82 | 31 | 1.850 |
-| [[comunas/cisnes|Cisnes]] | 138 | 68 | 28 | 1.240 |
-| [[comunas/guaitecas|Guaitecas]] | 21 | 12 | 4 | 145 |
-| [[comunas/chile_chico|Chile Chico]] | 95 | 45 | 22 | 780 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 132 | 58 | 32 | 1.150 |
-| [[comunas/cochrane|Cochrane]] | 83 | 38 | 21 | 690 |
-| [[comunas/ohiggins|O'Higgins]] | 29 | 15 | 6 | 240 |
-| [[comunas/tortel|Tortel]] | 42 | 20 | 11 | 360 |
+| Comuna | Total RNPST | Alojamientos | Turismo Aventura | Guías | Camas | % Patente Vigente |
+| --- | --- | --- | --- | --- | --- | --- |
+| [[comunas/coyhaique|Coyhaique]] | 489 | 212 | 82 | 94 | 3.420 | 64,2% |
+| [[comunas/lago_verde|Lago Verde]] | 26 | 14 | 1 | 3 | 165 | 19,2% |
+| [[comunas/aysen|Aysén]] | 126 | 56 | 20 | 22 | 1.850 | 52,4% |
+| [[comunas/cisnes|Cisnes]] | 215 | 108 | 26 | 17 | 1.240 | 11,0% |
+| [[comunas/guaitecas|Guaitecas]] | 25 | 13 | 3 | 3 | 145 | 28,0% |
+| [[comunas/chile_chico|Chile Chico]] | 231 | 78 | 36 | 46 | 780 | 34,2% |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 445 | 112 | 70 | 146 | 1.150 | 30,3% |
+| [[comunas/cochrane|Cochrane]] | 96 | 42 | 22 | 18 | 690 | 44,8% |
+| [[comunas/ohiggins|O'Higgins]] | 31 | 16 | 6 | 5 | 240 | 38,7% |
+| [[comunas/tortel|Tortel]] | 44 | 21 | 10 | 7 | 360 | 40,9% |
 
 ## Metadatos de Procedencia Institucional
 

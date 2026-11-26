@@ -9,7 +9,7 @@ variables_clave:
   - visitantes_snaspe
 fuentes_oficiales:
   - "Subsecretaría de Turismo / Comité de Ministros del Turismo"
-updated_at: "2026-11-23"
+updated_at: "2026-11-26"
 tags:
   - aysen-sistemico
   - nodo
@@ -28,7 +28,7 @@ Delimitación comunal, atractivos ancla, vocación principal y cuellos de botell
 | --- | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT) | Hub receptor regional, pesca con mosca (fly fishing), gastronomía y turismo de eventos | Reserva Nacional Coyhaique, Río Simpson (Pesca con Mosca) | Estacionalidad invernal y dependencia de vuelos al Aeródromo Balmaceda |
 | [[comunas/lago_verde|Lago Verde]] | ZOIT Aysén Patagonia Queulat | Turismo rural campesino, cabalgatas andinas, pesca deportiva prístina y articulación territorial con la ZOIT Aysén Patagonia Queulat | Lago Verde, Río Cisnes Alto | Aislamiento vial interior y escasa conectividad digital |
-| [[comunas/aysen|Aysén]] | ZOIT Aysén Patagonia Queulat (Sector Sur) | Navegación a fiordos y glaciares marítimos, senderismo y avistamiento de fauna | Parque Nacional Laguna San Rafael, Bahía Acantilada | Logística marítima costosa y meteorología marítima severa |
+| [[comunas/aysen|Aysén]] | Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén) | Navegación a fiordos y glaciares marítimos, senderismo y avistamiento de fauna | Parque Nacional Laguna San Rafael, Bahía Acantilada | Logística marítima costosa y meteorología marítima severa |
 | [[comunas/cisnes|Cisnes]] | ZOIT Aysén Patagonia Queulat | Senderismo en selva valdiviana, avistamiento de glaciares colgantes y termalismo | Parque Nacional Queulat (Ventisquero Colgante), Termas de Puyuhuapi | Cortes en Carretera Austral por remociones en masa y conectividad de barcazas |
 | [[comunas/guaitecas|Guaitecas]] | Sin declaratoria ZOIT vigente | Ecoturismo marino, navegación de fiordos y gastronomía de productos del mar | Avistamiento de Ballenas Golfo Corcovado, Canales de Las Guaitecas | Aislamiento insular y dependencia exclusiva de transporte aéreo/marítimo |
 | [[comunas/chile_chico|Chile Chico]] | ZOIT Chelenko | Geoturismo, trekking estepario-andino, agroturismo y conexión binacional con Los Antiguos | Parque Nacional Patagonia (Sector Jeinimeni), Cueva de las Manos | Dependencia del servicio de barcaza lacustre La Tehuelche y vientos intensos |

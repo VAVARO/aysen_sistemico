@@ -22,8 +22,8 @@
       "comuna_ine": "11101",
       "comuna_nombre": "Coyhaique",
       "esperanza_vida_total_anos": 81.6,
-      "cobertura_empam_pct": 80.2,
-      "cobertura_pscv_pct": 74.5,
+      "cobertura_empam_pct": 80.8,
+      "cobertura_pscv_pct": 74.8,
       "aeroevacuaciones_samu_anual": 45,
       "tasa_natalidad_por_mil": 9.4
     },
@@ -31,8 +31,8 @@
       "comuna_ine": "11102",
       "comuna_nombre": "Lago Verde",
       "esperanza_vida_total_anos": 79.8,
-      "cobertura_empam_pct": 72.1,
-      "cobertura_pscv_pct": 68.0,
+      "cobertura_empam_pct": 71.8,
+      "cobertura_pscv_pct": 67.8,
       "aeroevacuaciones_samu_anual": 8,
       "tasa_natalidad_por_mil": 6.8
     },
@@ -40,8 +40,8 @@
       "comuna_ine": "11201",
       "comuna_nombre": "Aysén",
       "esperanza_vida_total_anos": 81.1,
-      "cobertura_empam_pct": 78.6,
-      "cobertura_pscv_pct": 71.2,
+      "cobertura_empam_pct": 78.4,
+      "cobertura_pscv_pct": 70.2,
       "aeroevacuaciones_samu_anual": 38,
       "tasa_natalidad_por_mil": 9.1
     },
@@ -50,7 +50,7 @@
       "comuna_nombre": "Cisnes",
       "esperanza_vida_total_anos": 80.4,
       "cobertura_empam_pct": 76.5,
-      "cobertura_pscv_pct": 70.4,
+      "cobertura_pscv_pct": 71.8,
       "aeroevacuaciones_samu_anual": 19,
       "tasa_natalidad_por_mil": 8.2
     },
@@ -58,8 +58,8 @@
       "comuna_ine": "11203",
       "comuna_nombre": "Guaitecas",
       "esperanza_vida_total_anos": 79.5,
-      "cobertura_empam_pct": 71.0,
-      "cobertura_pscv_pct": 65.8,
+      "cobertura_empam_pct": 70.6,
+      "cobertura_pscv_pct": 66.4,
       "aeroevacuaciones_samu_anual": 22,
       "tasa_natalidad_por_mil": 8.0
     },
@@ -67,8 +67,8 @@
       "comuna_ine": "11301",
       "comuna_nombre": "Cochrane",
       "esperanza_vida_total_anos": 80.8,
-      "cobertura_empam_pct": 77.4,
-      "cobertura_pscv_pct": 72.1,
+      "cobertura_empam_pct": 77.8,
+      "cobertura_pscv_pct": 73.4,
       "aeroevacuaciones_samu_anual": 15,
       "tasa_natalidad_por_mil": 8.5
     },
@@ -76,8 +76,8 @@
       "comuna_ine": "11302",
       "comuna_nombre": "O'Higgins",
       "esperanza_vida_total_anos": 79.2,
-      "cobertura_empam_pct": 69.5,
-      "cobertura_pscv_pct": 64.2,
+      "cobertura_empam_pct": 69.1,
+      "cobertura_pscv_pct": 63.4,
       "aeroevacuaciones_samu_anual": 12,
       "tasa_natalidad_por_mil": 6.2
     },
@@ -85,8 +85,8 @@
       "comuna_ine": "11303",
       "comuna_nombre": "Tortel",
       "esperanza_vida_total_anos": 79.0,
-      "cobertura_empam_pct": 68.8,
-      "cobertura_pscv_pct": 63.5,
+      "cobertura_empam_pct": 68.4,
+      "cobertura_pscv_pct": 63.9,
       "aeroevacuaciones_samu_anual": 14,
       "tasa_natalidad_por_mil": 6.5
     },
@@ -94,8 +94,8 @@
       "comuna_ine": "11401",
       "comuna_nombre": "Chile Chico",
       "esperanza_vida_total_anos": 81.3,
-      "cobertura_empam_pct": 79.1,
-      "cobertura_pscv_pct": 73.0,
+      "cobertura_empam_pct": 79.4,
+      "cobertura_pscv_pct": 74.1,
       "aeroevacuaciones_samu_anual": 16,
       "tasa_natalidad_por_mil": 8.6
     },
@@ -103,8 +103,8 @@
       "comuna_ine": "11402",
       "comuna_nombre": "Río Ibáñez",
       "esperanza_vida_total_anos": 80.2,
-      "cobertura_empam_pct": 75.8,
-      "cobertura_pscv_pct": 69.8,
+      "cobertura_empam_pct": 75.9,
+      "cobertura_pscv_pct": 68.9,
       "aeroevacuaciones_samu_anual": 11,
       "tasa_natalidad_por_mil": 7.5
     }

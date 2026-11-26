@@ -729,7 +729,7 @@
       "shortName": "Pobreza Multidimensional",
       "unit": "% pob.",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -754,7 +754,7 @@
       "shortName": "Pobreza Ingresos",
       "unit": "% pob.",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -775,7 +775,7 @@
       "shortName": "Población Censo 2024",
       "unit": "habitantes",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": true,
@@ -798,7 +798,7 @@
       "shortName": "Densidad hab/km²",
       "unit": "hab/km²",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": true,
@@ -819,7 +819,7 @@
       "shortName": "Superficie km²",
       "unit": "km²",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -835,12 +835,12 @@
     },
     {
       "id": "porcentaje_regional_pct",
-      "canonicalId": "comuna_poblacion_2024",
+      "canonicalId": "poblacion_censo_2024",
       "name": "Porcentaje Regional de Población",
       "shortName": "Peso Demográfico %",
       "unit": "% regional",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": true,
@@ -850,7 +850,8 @@
         "participacion regional",
         "cuanto pesa la comuna",
         "proporcion regional"
-      ]
+      ],
+      "isAliasOf": "poblacion_censo_2024"
     },
     {
       "id": "matricula_escolar",
@@ -859,7 +860,7 @@
       "shortName": "Matrícula Escolar",
       "unit": "alumnos",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 25,
       "dim": "comuna",
       "outlierBiased": true,
@@ -906,7 +907,7 @@
       "shortName": "Aeródromo DGAC",
       "unit": "aeródromo",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 24,
       "dim": "comuna",
       "outlierBiased": false,
@@ -928,7 +929,7 @@
       "shortName": "Comuna",
       "unit": "comuna",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -947,7 +948,7 @@
       "shortName": "Provincia",
       "unit": "provincia",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -966,7 +967,7 @@
       "shortName": "Cabecera Comunal",
       "unit": "cabecera",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -984,7 +985,7 @@
       "shortName": "ID Comuna",
       "unit": "id",
       "hub": "social",
-      "hubTitle": "VI. Sociedad: Demografía, Salud y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1001,7 +1002,7 @@
       "shortName": "Días Alerta MP2.5",
       "unit": "días/año",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "comuna",
       "outlierBiased": true,
@@ -1197,9 +1198,9 @@
     },
     {
       "id": "internet_fijo_pct",
-      "canonicalId": "wp02_internet_fijo_pct",
-      "name": "Penetración de Internet Fijo Residencial",
-      "shortName": "Internet Fijo %",
+      "canonicalId": "internet_fijo_pct",
+      "name": "Penetración de Internet Fijo Total SUBTEL (% Hogares)",
+      "shortName": "Internet Fijo Total (%)",
       "unit": "% hogares",
       "hub": "energia",
       "hubTitle": "III. Energía y Telecomunicaciones",
@@ -1710,7 +1711,7 @@
       "shortName": "Superficie Glaciar km²",
       "unit": "km²",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1735,7 +1736,7 @@
       "shortName": "Glaciares DGA",
       "unit": "glaciares",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1754,7 +1755,7 @@
       "shortName": "DAA No Consuntivos m³/s",
       "unit": "m³/s",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1780,7 +1781,7 @@
       "shortName": "DAA Consuntivos m³/s",
       "unit": "m³/s",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1801,7 +1802,7 @@
       "shortName": "Superficie SNASPE %",
       "unit": "% territorio",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 22,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1826,7 +1827,7 @@
       "shortName": "Unidades SNASPE",
       "unit": "unidades",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 4,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1847,7 +1848,7 @@
       "shortName": "Cuenca DGA",
       "unit": "cuenca",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1869,7 +1870,7 @@
       "shortName": "Flora Nativa ha",
       "unit": "ha",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 27,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1893,7 +1894,7 @@
       "shortName": "Cobertura Vegetal %",
       "unit": "% territorio",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 27,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1913,7 +1914,7 @@
       "shortName": "Fauna Amenazada",
       "unit": "especies",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 28,
       "dim": "comuna",
       "outlierBiased": false,
@@ -1981,7 +1982,7 @@
       "shortName": "MP2.5 Coyhaique Histórico",
       "unit": "µg/m³",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "tiempo",
       "outlierBiased": true,
@@ -2001,7 +2002,7 @@
       "shortName": "Caudal Baker Histórico",
       "unit": "m³/s",
       "hub": "biodiversidad",
-      "hubTitle": "VII. Biodiversidad y Medio Ambiente",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
       "nodeId": 30,
       "dim": "tiempo",
       "outlierBiased": false,
@@ -2020,7 +2021,7 @@
       "shortName": "Transparencia CPLT 2026",
       "unit": "% cumplimiento",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 15,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2041,7 +2042,7 @@
       "shortName": "Royalty Minero FET 2025",
       "unit": "M$ CLP",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 16,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2061,7 +2062,7 @@
       "shortName": "Royalty Minero FET 2024",
       "unit": "M$ CLP",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 16,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2078,7 +2079,7 @@
       "shortName": "Ingresos Mun. 2025",
       "unit": "M$ CLP",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 15,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2095,7 +2096,7 @@
       "shortName": "FNDR Ejecutado Comunal",
       "unit": "M$ CLP",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2113,7 +2114,7 @@
       "shortName": "FNDR Asignado Comunal",
       "unit": "M$ CLP",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2130,7 +2131,7 @@
       "shortName": "Ejecución FNDR %",
       "unit": "%",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2147,7 +2148,7 @@
       "shortName": "Proyectos FNDR GORE",
       "unit": "proyectos",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2164,7 +2165,7 @@
       "shortName": "Fondos 8% GORE (N)",
       "unit": "proyectos",
       "hub": "social",
-      "hubTitle": "VI. Social y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2184,7 +2185,7 @@
       "shortName": "Monto Fondos 8% (M$)",
       "unit": "M$ CLP",
       "hub": "social",
-      "hubTitle": "VI. Social y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 18,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2201,7 +2202,7 @@
       "shortName": "Participación 2V 2025",
       "unit": "%",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 17,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2220,7 +2221,7 @@
       "shortName": "Padrón Electoral 2025",
       "unit": "electores",
       "hub": "gobernanza",
-      "hubTitle": "IV. Gobernanza y Política",
+      "hubTitle": "IV. Gobernanza y Finanzas",
       "nodeId": 17,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2237,7 +2238,7 @@
       "shortName": "Carencia Serv. Básicos RSH",
       "unit": "%",
       "hub": "social",
-      "hubTitle": "VI. Social y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2256,7 +2257,7 @@
       "shortName": "Hacinamiento RSH 2026",
       "unit": "%",
       "hub": "social",
-      "hubTitle": "VI. Social y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2273,7 +2274,7 @@
       "shortName": "Ruralidad Censo 2024",
       "unit": "%",
       "hub": "social",
-      "hubTitle": "VI. Social y Educación",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
       "nodeId": 23,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2291,7 +2292,7 @@
       "shortName": "Conexiones Fijas SUBTEL",
       "unit": "conexiones",
       "hub": "energia",
-      "hubTitle": "III. Energía y Conectividad",
+      "hubTitle": "III. Energía y Telecomunicaciones",
       "nodeId": 14,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2312,7 +2313,7 @@
       "shortName": "Conexiones Resid. SUBTEL",
       "unit": "conexiones",
       "hub": "energia",
-      "hubTitle": "III. Energía y Conectividad",
+      "hubTitle": "III. Energía y Telecomunicaciones",
       "nodeId": 14,
       "dim": "comuna",
       "outlierBiased": true,
@@ -2328,7 +2329,7 @@
       "shortName": "Crecimiento Internet 15-26",
       "unit": "%",
       "hub": "energia",
-      "hubTitle": "III. Energía y Conectividad",
+      "hubTitle": "III. Energía y Telecomunicaciones",
       "nodeId": 14,
       "dim": "comuna",
       "outlierBiased": false,
@@ -2808,7 +2809,7 @@
     },
     {
       "id": "bosque_nativo_ha",
-      "canonicalId": "bosque_nativo_ha",
+      "canonicalId": "cobertura_vegetal_nativa_ha",
       "name": "Superficie de Bosque Nativo (CONAF)",
       "shortName": "Bosque Nativo ha",
       "unit": "hectáreas",
@@ -2821,7 +2822,8 @@
         "bosque nativo",
         "hectareas bosque nativo",
         "superficie bosque"
-      ]
+      ],
+      "isAliasOf": "cobertura_vegetal_nativa_ha"
     },
     {
       "id": "plantaciones_ha",
@@ -3136,7 +3138,7 @@
       "shortName": "Postas Rurales",
       "unit": "postas",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3154,7 +3156,7 @@
       "shortName": "Esperanza de Vida",
       "unit": "años",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3171,7 +3173,7 @@
       "shortName": "Cobertura EMPAM",
       "unit": "%",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3190,7 +3192,7 @@
       "shortName": "Cobertura PSCV",
       "unit": "%",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3207,7 +3209,7 @@
       "shortName": "Camas Psiquiátricas",
       "unit": "camas",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3224,7 +3226,7 @@
       "shortName": "Espera Especialidad",
       "unit": "días",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3241,7 +3243,7 @@
       "shortName": "Espera Quirúrgica",
       "unit": "días",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3258,7 +3260,7 @@
       "shortName": "Mortalidad Cáncer Gástrico",
       "unit": "def/100k hab",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3276,7 +3278,7 @@
       "shortName": "Mortalidad Cáncer Vesícula",
       "unit": "def/100k hab",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3292,7 +3294,7 @@
       "shortName": "Mortalidad Suicidio",
       "unit": "def/100k hab",
       "hub": "salud",
-      "hubTitle": "VIII. Salud APS y Hospitales",
+      "hubTitle": "VIII. Salud",
       "nodeId": 38,
       "dim": "comuna",
       "outlierBiased": false,
@@ -3304,7 +3306,7 @@
     },
     {
       "id": "museos_espacios_n",
-      "canonicalId": "museos_espacios_n",
+      "canonicalId": "total_espacios_culturales",
       "name": "Museos y Espacios Culturales",
       "shortName": "Espacios Culturales",
       "unit": "espacios",
@@ -3317,11 +3319,12 @@
         "museos",
         "espacios culturales",
         "centros culturales"
-      ]
+      ],
+      "isAliasOf": "total_espacios_culturales"
     },
     {
       "id": "bibliotecas_snbp_n",
-      "canonicalId": "bibliotecas_snbp_n",
+      "canonicalId": "bibliotecas_publicas_count",
       "name": "Bibliotecas Públicas (SNBP)",
       "shortName": "Bibliotecas SNBP",
       "unit": "bibliotecas",
@@ -3334,7 +3337,8 @@
         "bibliotecas",
         "bibliotecas publicas",
         "snbp"
-      ]
+      ],
+      "isAliasOf": "bibliotecas_publicas_count"
     },
     {
       "id": "fondart_fndr_mclp",
@@ -3439,7 +3443,7 @@
     },
     {
       "id": "monto_anid_mclp",
-      "canonicalId": "monto_anid_mclp",
+      "canonicalId": "monto_anid_acumulado_mclp",
       "name": "Financiamiento ANID Adjudicado",
       "shortName": "Monto ANID",
       "unit": "M$ CLP",
@@ -3452,11 +3456,12 @@
         "monto anid",
         "plata ciencia",
         "financiamiento anid"
-      ]
+      ],
+      "isAliasOf": "monto_anid_acumulado_mclp"
     },
     {
       "id": "innovacion_corfo_mclp",
-      "canonicalId": "innovacion_corfo_mclp",
+      "canonicalId": "monto_corfo_innova_mclp",
       "name": "Financiamiento CORFO Innovación",
       "shortName": "CORFO Innova",
       "unit": "M$ CLP",
@@ -3469,11 +3474,12 @@
         "corfo",
         "innovacion corfo",
         "fondos corfo"
-      ]
+      ],
+      "isAliasOf": "monto_corfo_innova_mclp"
     },
     {
       "id": "proyectos_ctci_total",
-      "canonicalId": "proyectos_ctci_total",
+      "canonicalId": "total_proyectos_ctci",
       "name": "Total de Proyectos de Ciencia e Innovación",
       "shortName": "Proyectos CTCi",
       "unit": "proyectos",
@@ -3486,11 +3492,12 @@
         "proyectos ctci",
         "proyectos de ciencia",
         "proyectos de investigacion"
-      ]
+      ],
+      "isAliasOf": "total_proyectos_ctci"
     },
     {
       "id": "investigadores_residentes",
-      "canonicalId": "investigadores_residentes",
+      "canonicalId": "investigadores_residentes_est",
       "name": "Investigadores Residentes en Aysén",
       "shortName": "Investigadores Residentes",
       "unit": "investigadores",
@@ -3503,7 +3510,8 @@
         "investigadores",
         "cientificos",
         "investigadores residentes"
-      ]
+      ],
+      "isAliasOf": "investigadores_residentes_est"
     },
     {
       "id": "proyectos_anid_locales_count",
@@ -3825,62 +3833,60 @@
       "unit": "g/ton",
       "hub": "salmonicultura",
       "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
+      "nodeId": 9,
       "dim": "acs",
       "outlierBiased": false,
       "synonyms": [
-        "antibioticos por barrio acs",
-        "ica por barrio sanitario",
-        "consumo antimicrobianos por acs"
+        "antibioticos por acs",
+        "ica barrio acuicola"
       ]
     },
     {
       "id": "acs_mortalidad_ciclo_pct",
       "canonicalId": "acs_mortalidad_ciclo_pct",
-      "name": "Mortalidad en Ciclo por Barrio ACS (SERNAPESCA)",
+      "name": "Mortalidad en Ciclo por Barrio ACS",
       "shortName": "Mortalidad Ciclo por ACS (%)",
       "unit": "%",
       "hub": "salmonicultura",
       "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
+      "nodeId": 9,
       "dim": "acs",
       "outlierBiased": false,
       "synonyms": [
-        "mortalidad en ciclo por barrio acs",
-        "mortalidad salmon por barrio sanitario"
+        "mortalidad por acs",
+        "mortalidad salmon acs"
       ]
     },
     {
       "id": "acs_densidad_max_kg_m3",
       "canonicalId": "acs_densidad_max_kg_m3",
-      "name": "Densidad Máxima de Siembra Autorizada SUBPESCA por ACS",
+      "name": "Densidad Máxima Autorizada por Barrio ACS",
       "shortName": "Densidad Máx. por ACS",
       "unit": "kg/m³",
       "hub": "salmonicultura",
       "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
+      "nodeId": 9,
       "dim": "acs",
       "outlierBiased": false,
       "synonyms": [
-        "densidad de cultivo por barrio",
-        "densidad maxima siembra acs",
-        "clasificacion bioseguridad subpesca acs"
+        "densidad siembra acs",
+        "bioseguridad acs"
       ]
     },
     {
       "id": "acs_infa_aerobica_pct",
       "canonicalId": "acs_infa_aerobica_pct",
-      "name": "Centros con Condición INFA Aeróbica por Barrio ACS (%)",
+      "name": "Centros INFA Aeróbica por Barrio ACS (%)",
       "shortName": "% INFA Aeróbica por ACS",
       "unit": "%",
       "hub": "salmonicultura",
       "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
+      "nodeId": 9,
       "dim": "acs",
       "outlierBiased": false,
       "synonyms": [
-        "infa aerobica por barrio acs",
-        "condicion aerobica por acs"
+        "infa aerobica acs",
+        "condicion ambiental acs"
       ]
     },
     {
@@ -3891,13 +3897,1692 @@
       "unit": "concesiones",
       "hub": "salmonicultura",
       "hubTitle": "II. Pesca, Acuicultura y Mar",
-      "nodeId": 8,
+      "nodeId": 6,
       "dim": "acs",
       "outlierBiased": false,
       "synonyms": [
-        "snaspe por barrio acs",
-        "concesiones en areas protegidas por acs"
+        "concesiones snaspe acs",
+        "traslape snaspe barrio"
       ]
+    },
+    {
+      "id": "ingresos_propios_pct",
+      "canonicalId": "ingresos_propios_pct",
+      "name": "Porcentaje de Ingresos Propios Permanentes",
+      "shortName": "Ingresos Propios %",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 15,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ingresos propios pct",
+        "ingresos propios %"
+      ]
+    },
+    {
+      "id": "fndr_per_capita_mclp",
+      "canonicalId": "fndr_per_capita_mclp",
+      "name": "Inversión FNDR Per Cápita",
+      "shortName": "FNDR Per Cápita",
+      "unit": "M$ CLP/hab",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fndr per capita mclp",
+        "fndr per cápita"
+      ]
+    },
+    {
+      "id": "fndr_gore_2023_per_capita_mclp",
+      "canonicalId": "fndr_gore_2023_per_capita_mclp",
+      "name": "Inversión FNDR GORE 2023 Per Cápita",
+      "shortName": "FNDR 2023 Per Cápita",
+      "unit": "M$ CLP/hab",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fndr gore 2023 per capita mclp",
+        "fndr 2023 per cápita"
+      ]
+    },
+    {
+      "id": "royalty_fet_peso_presupuesto_pct",
+      "canonicalId": "royalty_fet_peso_presupuesto_pct",
+      "name": "Peso Royalty / FET sobre Presupuesto Municipal",
+      "shortName": "Peso Royalty/FET %",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 15,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "royalty fet peso presupuesto pct",
+        "peso royalty/fet %"
+      ]
+    },
+    {
+      "id": "participacion_municipales_2024_pct",
+      "canonicalId": "participacion_municipales_2024_pct",
+      "name": "Participación Electoral Municipales 2024",
+      "shortName": "Participación 2024",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 17,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "participacion municipales 2024 pct",
+        "participación 2024"
+      ]
+    },
+    {
+      "id": "ratio_padron_poblacion_pct",
+      "canonicalId": "ratio_padron_poblacion_pct",
+      "name": "Razón Padrón Electoral sobre Población",
+      "shortName": "Padrón/Población %",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 17,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ratio padron poblacion pct",
+        "padrón/población %"
+      ]
+    },
+    {
+      "id": "tasa_aprobacion_rs_sni_pct",
+      "canonicalId": "tasa_aprobacion_rs_sni_pct",
+      "name": "Tasa de Aprobación RS Sistema Nacional de Inversiones",
+      "shortName": "Aprobación RS SNI %",
+      "unit": "%",
+      "hub": "gobernanza",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "nodeId": 18,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa aprobacion rs sni pct",
+        "aprobación rs sni %"
+      ]
+    },
+    {
+      "id": "centros_culturales_n",
+      "canonicalId": "centros_culturales_n",
+      "name": "Centros Culturales Comunales",
+      "shortName": "Centros Culturales",
+      "unit": "recintos",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "centros culturales n",
+        "centros culturales"
+      ]
+    },
+    {
+      "id": "organizaciones_comunitarias_n",
+      "canonicalId": "organizaciones_comunitarias_n",
+      "name": "Organizaciones Culturales Comunitarias",
+      "shortName": "Org. Comunitarias",
+      "unit": "organizaciones",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "organizaciones comunitarias n",
+        "org. comunitarias"
+      ]
+    },
+    {
+      "id": "cultores_patrimonio_inmaterial_n",
+      "canonicalId": "cultores_patrimonio_inmaterial_n",
+      "name": "Cultores de Patrimonio Cultural Inmaterial",
+      "shortName": "Cultores Patrimonio",
+      "unit": "personas",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cultores patrimonio inmaterial n",
+        "cultores patrimonio"
+      ]
+    },
+    {
+      "id": "total_espacios_culturales",
+      "canonicalId": "total_espacios_culturales",
+      "name": "Total de Espacios Culturales",
+      "shortName": "Espacios Culturales",
+      "unit": "espacios",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 32,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "total espacios culturales",
+        "espacios culturales"
+      ]
+    },
+    {
+      "id": "fondos_cultura_adjudicados_mclp",
+      "canonicalId": "fondos_cultura_adjudicados_mclp",
+      "name": "Fondos Cultura MINCAP Adjudicados",
+      "shortName": "Fondos Cultura",
+      "unit": "M$ CLP",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fondos cultura adjudicados mclp",
+        "fondos cultura"
+      ]
+    },
+    {
+      "id": "gasto_municipal_cultura_mclp",
+      "canonicalId": "gasto_municipal_cultura_mclp",
+      "name": "Gasto Municipal en Cultura",
+      "shortName": "Gasto Mun. Cultura",
+      "unit": "M$ CLP",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gasto municipal cultura mclp",
+        "gasto mun. cultura"
+      ]
+    },
+    {
+      "id": "gasto_cultura_per_capita_clp",
+      "canonicalId": "gasto_cultura_per_capita_clp",
+      "name": "Gasto Cultural Per Cápita",
+      "shortName": "Cultura Per Cápita",
+      "unit": "CLP/hab",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gasto cultura per capita clp",
+        "cultura per cápita"
+      ]
+    },
+    {
+      "id": "gasto_cultural_per_capita_clp",
+      "canonicalId": "gasto_cultura_per_capita_clp",
+      "name": "Gasto Cultural Municipal Per Cápita",
+      "shortName": "Gasto Cultural p/c",
+      "unit": "CLP/hab",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gasto cultural per capita clp",
+        "gasto cultural p/c"
+      ],
+      "isAliasOf": "gasto_cultura_per_capita_clp"
+    },
+    {
+      "id": "fndr_8pct_cultura_mclp",
+      "canonicalId": "fndr_8pct_cultura_mclp",
+      "name": "Fondo FNDR 8% Cultura",
+      "shortName": "FNDR 8% Cultura",
+      "unit": "M$ CLP",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 33,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fndr 8pct cultura mclp",
+        "fndr 8% cultura"
+      ]
+    },
+    {
+      "id": "monto_anid_acumulado_mclp",
+      "canonicalId": "monto_anid_acumulado_mclp",
+      "name": "Monto ANID Acumulado",
+      "shortName": "Monto ANID",
+      "unit": "M$ CLP",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 35,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "monto anid acumulado mclp",
+        "monto anid"
+      ]
+    },
+    {
+      "id": "monto_corfo_innova_mclp",
+      "canonicalId": "monto_corfo_innova_mclp",
+      "name": "Monto CORFO Innova Acumulado",
+      "shortName": "Monto CORFO Innova",
+      "unit": "M$ CLP",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 36,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "monto corfo innova mclp",
+        "monto corfo innova"
+      ]
+    },
+    {
+      "id": "total_proyectos_ctci",
+      "canonicalId": "total_proyectos_ctci",
+      "name": "Total Proyectos CTCi Adjudicados",
+      "shortName": "Proyectos CTCi",
+      "unit": "proyectos",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 35,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "total proyectos ctci",
+        "proyectos ctci"
+      ]
+    },
+    {
+      "id": "investigadores_residentes_est",
+      "canonicalId": "investigadores_residentes_est",
+      "name": "Investigadores Residentes Estimados",
+      "shortName": "Investigadores Res.",
+      "unit": "personas",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "investigadores residentes est",
+        "investigadores res."
+      ]
+    },
+    {
+      "id": "evaluacion_uaysen_promedio_i8",
+      "canonicalId": "evaluacion_uaysen_promedio_i8",
+      "name": "Evaluación Promedio Universidad de Aysén (Barómetro I8)",
+      "shortName": "Eval. UAysén (I8)",
+      "unit": "puntos (1-7)",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "evaluacion uaysen promedio i8",
+        "eval. uaysén (i8)"
+      ]
+    },
+    {
+      "id": "aporte_universidades_f4g_pct",
+      "canonicalId": "aporte_universidades_f4g_pct",
+      "name": "Percepción Aporte Universidades (Barómetro F4g)",
+      "shortName": "Aporte Univ. %",
+      "unit": "%",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "aporte universidades f4g pct",
+        "aporte univ. %"
+      ]
+    },
+    {
+      "id": "proporcion_ciencia_endogena_pct",
+      "canonicalId": "proporcion_ciencia_endogena_pct",
+      "name": "Proporción de Ciencia Endógena",
+      "shortName": "Ciencia Endógena %",
+      "unit": "%",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 35,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "proporcion ciencia endogena pct",
+        "ciencia endógena %"
+      ]
+    },
+    {
+      "id": "matricula_educacion_superior_sies_n",
+      "canonicalId": "total_proyectos_ctci",
+      "name": "Matrícula Educación Superior SIES",
+      "shortName": "Matrícula Ed. Sup.",
+      "unit": "estudiantes",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "matricula educacion superior sies n",
+        "matrícula ed. sup."
+      ],
+      "isAliasOf": "total_proyectos_ctci"
+    },
+    {
+      "id": "matricula_ed_superior_sies",
+      "canonicalId": "matricula_ed_superior_sies",
+      "name": "Matrícula Educación Superior SIES (Comuna)",
+      "shortName": "Matrícula SIES",
+      "unit": "estudiantes",
+      "hub": "ctci",
+      "hubTitle": "X. CTCi e Innovación",
+      "nodeId": 37,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "matricula ed superior sies",
+        "matrícula sies"
+      ]
+    },
+    {
+      "id": "establecimientos_aps_n",
+      "canonicalId": "establecimientos_aps_n",
+      "name": "Establecimientos de Atención Primaria de Salud (APS)",
+      "shortName": "Establecimientos APS",
+      "unit": "establecimientos",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "establecimientos aps n",
+        "establecimientos aps"
+      ]
+    },
+    {
+      "id": "barometro_evaluacion_acceso_salud_pct",
+      "canonicalId": "barometro_evaluacion_acceso_salud_pct",
+      "name": "Evaluación Acceso a Salud (Barómetro Regional)",
+      "shortName": "Eval. Acceso Salud %",
+      "unit": "%",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 24,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "barometro evaluacion acceso salud pct",
+        "eval. acceso salud %"
+      ]
+    },
+    {
+      "id": "holdings_operadores_salmon",
+      "canonicalId": "holdings_operadores_salmon",
+      "name": "Holdings Operadores de Salmonicultura",
+      "shortName": "Holdings Salmón",
+      "unit": "holdings",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 7,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "holdings operadores salmon",
+        "holdings salmón"
+      ]
+    },
+    {
+      "id": "ecmpo_solicitadas_ha",
+      "canonicalId": "ecmpo_solicitadas_ha",
+      "name": "Superficie de Solicitudes ECMPO",
+      "shortName": "ECMPO Solicitadas",
+      "unit": "ha",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ecmpo solicitadas ha",
+        "ecmpo solicitadas"
+      ]
+    },
+    {
+      "id": "concesiones_acuicolas_en_snaspe",
+      "canonicalId": "concesiones_acuicolas_en_snaspe",
+      "name": "Concesiones Acuícolas en Áreas SNASPE",
+      "shortName": "Concesiones SNASPE",
+      "unit": "concesiones",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "concesiones acuicolas en snaspe",
+        "concesiones snaspe"
+      ]
+    },
+    {
+      "id": "desembarque_artesanal_ton",
+      "canonicalId": "desembarque_artesanal_ton",
+      "name": "Desembarque Pesquero Artesanal RPA",
+      "shortName": "Desembarque Art.",
+      "unit": "toneladas",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "desembarque artesanal ton",
+        "desembarque art."
+      ]
+    },
+    {
+      "id": "nota_ciclo_productivo",
+      "canonicalId": "nota_ciclo_productivo",
+      "name": "Nota Técnica de Ciclo Productivo Acuícola",
+      "shortName": "Nota Ciclo Acuícola",
+      "unit": "texto",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "nota ciclo productivo",
+        "nota ciclo acuícola"
+      ]
+    },
+    {
+      "id": "tasa_ocupacion_concesiones_pct",
+      "canonicalId": "tasa_ocupacion_concesiones_pct",
+      "name": "Tasa de Ocupación de Concesiones Acuícolas",
+      "shortName": "Ocupación Conc. %",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa ocupacion concesiones pct",
+        "ocupación conc. %"
+      ]
+    },
+    {
+      "id": "proporcion_concesiones_en_snaspe_pct",
+      "canonicalId": "proporcion_concesiones_en_snaspe_pct",
+      "name": "Proporción de Concesiones en SNASPE",
+      "shortName": "Conc. en SNASPE %",
+      "unit": "%",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "proporcion concesiones en snaspe pct",
+        "conc. en snaspe %"
+      ]
+    },
+    {
+      "id": "trabajadores_sii_por_centro_activo",
+      "canonicalId": "trabajadores_sii_por_centro_activo",
+      "name": "Trabajadores SII por Centro Acuícola Activo",
+      "shortName": "Trab./Centro Activo",
+      "unit": "trabajadores/centro",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 6,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "trabajadores sii por centro activo",
+        "trab./centro activo"
+      ]
+    },
+    {
+      "id": "sindicatos_pesca_artesanal",
+      "canonicalId": "sindicatos_pesca_artesanal",
+      "name": "Sindicatos de Pesca Artesanal",
+      "shortName": "Sindicatos Pesca Art.",
+      "unit": "sindicatos",
+      "hub": "salmonicultura",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "nodeId": 8,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "sindicatos pesca artesanal",
+        "sindicatos pesca art."
+      ]
+    },
+    {
+      "id": "cobertura_fibra_hogar_pct",
+      "canonicalId": "cobertura_fibra_hogar_pct",
+      "name": "Cobertura de Fibra Óptica Residencial",
+      "shortName": "Fibra Hogar %",
+      "unit": "%",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cobertura fibra hogar pct",
+        "fibra hogar %"
+      ]
+    },
+    {
+      "id": "fdt_ultima_milla_aprobado",
+      "canonicalId": "fdt_ultima_milla_aprobado",
+      "name": "Proyectos FDT Última Milla Aprobados",
+      "shortName": "FDT Última Milla",
+      "unit": "proyectos",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "fdt ultima milla aprobado",
+        "fdt última milla"
+      ]
+    },
+    {
+      "id": "informalidad_lena_pct",
+      "canonicalId": "informalidad_lena_pct",
+      "name": "Informalidad en Mercado de Leña",
+      "shortName": "Informalidad Leña %",
+      "unit": "%",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 13,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "informalidad lena pct",
+        "informalidad leña %"
+      ]
+    },
+    {
+      "id": "costo_real_generacion_diesel_kwh_clp",
+      "canonicalId": "costo_diesel_aislado_clp",
+      "name": "Costo Real de Generación Diésel",
+      "shortName": "Costo Diésel kWh",
+      "unit": "CLP/kWh",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 12,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "costo real generacion diesel kwh clp",
+        "costo diésel kwh"
+      ],
+      "isAliasOf": "costo_diesel_aislado_clp"
+    },
+    {
+      "id": "subsidio_fiscal_diesel_kwh_clp",
+      "canonicalId": "subsidio_fiscal_diesel_kwh_clp",
+      "name": "Subsidio Fiscal a Generación Diésel",
+      "shortName": "Subsidio Diésel kWh",
+      "unit": "CLP/kWh",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 12,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "subsidio fiscal diesel kwh clp",
+        "subsidio diésel kwh"
+      ]
+    },
+    {
+      "id": "indice_aislamiento_multimodal",
+      "canonicalId": "indice_aislamiento_multimodal",
+      "name": "Índice de Aislamiento Multimodal",
+      "shortName": "Aislamiento Multimodal",
+      "unit": "índice",
+      "hub": "energia",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "nodeId": 14,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "indice aislamiento multimodal",
+        "aislamiento multimodal"
+      ]
+    },
+    {
+      "id": "superficie_glaciares_km2",
+      "canonicalId": "superficie_glaciar_km2",
+      "name": "Superficie de Glaciares DGA",
+      "shortName": "Superficie Glaciares",
+      "unit": "km2",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 27,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "superficie glaciares km2",
+        "superficie glaciares"
+      ],
+      "isAliasOf": "superficie_glaciar_km2"
+    },
+    {
+      "id": "especies_exoticas_invasoras_n",
+      "canonicalId": "especies_exoticas_invasoras_n",
+      "name": "Especies Exóticas Invasoras Registradas",
+      "shortName": "Especies Invasoras",
+      "unit": "especies",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 29,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "especies exoticas invasoras n",
+        "especies invasoras"
+      ]
+    },
+    {
+      "id": "episodios_gec_mp25_anual",
+      "canonicalId": "episodios_gec_mp25_anual",
+      "name": "Episodios Críticos MP2,5 (GEC) Anuales",
+      "shortName": "Episodios MP2,5",
+      "unit": "días/año",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 30,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "episodios gec mp25 anual",
+        "episodios mp2,5"
+      ]
+    },
+    {
+      "id": "expedientes_fiscalizacion_sma_n",
+      "canonicalId": "expedientes_fiscalizacion_sma_n",
+      "name": "Expedientes de Fiscalización Ambiental SMA",
+      "shortName": "Expedientes SMA",
+      "unit": "expedientes",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 30,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "expedientes fiscalizacion sma n",
+        "expedientes sma"
+      ]
+    },
+    {
+      "id": "amenaza_volcanica_sismica_idx",
+      "canonicalId": "amenaza_volcanica_sismica_idx",
+      "name": "Índice de Amenaza Volcánica y Sísmica",
+      "shortName": "Amenaza Volc./Sísm.",
+      "unit": "índice",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 31,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "amenaza volcanica sismica idx",
+        "amenaza volc./sísm."
+      ]
+    },
+    {
+      "id": "cobertura_ssr_apr_familias",
+      "canonicalId": "cobertura_ssr_apr_familias",
+      "name": "Cobertura Servicios Sanitarios Rurales (APR)",
+      "shortName": "Cobertura SSR/APR",
+      "unit": "familias",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "cobertura ssr apr familias",
+        "cobertura ssr/apr"
+      ]
+    },
+    {
+      "id": "comites_ssr_apr_doh",
+      "canonicalId": "sistemas_ssr_apr_n",
+      "name": "Comités de Agua Potable Rural (SSR/APR DOH)",
+      "shortName": "Comités SSR/APR",
+      "unit": "comités",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "comites ssr apr doh",
+        "comités ssr/apr"
+      ],
+      "isAliasOf": "sistemas_ssr_apr_n"
+    },
+    {
+      "id": "beneficiarios_ssr_apr_doh",
+      "canonicalId": "cobertura_ssr_apr_familias",
+      "name": "Beneficiarios Agua Potable Rural (SSR/APR DOH)",
+      "shortName": "Beneficiarios APR",
+      "unit": "personas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "beneficiarios ssr apr doh",
+        "beneficiarios apr"
+      ],
+      "isAliasOf": "cobertura_ssr_apr_familias"
+    },
+    {
+      "id": "indice_masculinidad",
+      "canonicalId": "indice_masculinidad",
+      "name": "Índice de Masculinidad Censo 2024",
+      "shortName": "Índice Masculinidad",
+      "unit": "hombres/100 mujeres",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "indice masculinidad",
+        "índice masculinidad"
+      ]
+    },
+    {
+      "id": "tasa_dmcs_100k",
+      "canonicalId": "tasa_dmcs_100k",
+      "name": "Tasa Delitos de Mayor Connotación Social (DMCS)",
+      "shortName": "Tasa DMCS /100k",
+      "unit": "casos/100k hab",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 26,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa dmcs 100k",
+        "tasa dmcs /100k"
+      ]
+    },
+    {
+      "id": "tasa_vif_100k",
+      "canonicalId": "tasa_vif_100k",
+      "name": "Tasa Denuncias Violencia Intrafamiliar (VIF)",
+      "shortName": "Tasa VIF /100k",
+      "unit": "casos/100k hab",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 26,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "tasa vif 100k",
+        "tasa vif /100k"
+      ]
+    },
+    {
+      "id": "escuelas_rurales_multigrado_n",
+      "canonicalId": "escuelas_rurales_multigrado_n",
+      "name": "Escuelas Rurales Multigrado",
+      "shortName": "Escuelas Rurales",
+      "unit": "establecimientos",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "escuelas rurales multigrado n",
+        "escuelas rurales"
+      ]
+    },
+    {
+      "id": "liceos_urbanos_n",
+      "canonicalId": "liceos_urbanos_n",
+      "name": "Liceos Urbanos",
+      "shortName": "Liceos Urbanos",
+      "unit": "establecimientos",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "liceos urbanos n",
+        "liceos urbanos"
+      ]
+    },
+    {
+      "id": "establecimientos_slep_aysen",
+      "canonicalId": "establecimientos_slep_aysen",
+      "name": "Establecimientos Educacionales SLEP Aysén",
+      "shortName": "Establecimientos SLEP",
+      "unit": "establecimientos",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "establecimientos slep aysen",
+        "establecimientos slep"
+      ]
+    },
+    {
+      "id": "ratio_pobreza_multidim_vs_ingresos",
+      "canonicalId": "ratio_pobreza_multidim_vs_ingresos",
+      "name": "Razón Pobreza Multidimensional sobre Ingresos",
+      "shortName": "Ratio Pobreza",
+      "unit": "razón",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ratio pobreza multidim vs ingresos",
+        "ratio pobreza"
+      ]
+    },
+    {
+      "id": "deficit_habitacional_total_por_1000_hab",
+      "canonicalId": "deficit_habitacional_total_por_1000_hab",
+      "name": "Déficit Habitacional Total por 1.000 Habitantes",
+      "shortName": "Déficit Hab. /1000",
+      "unit": "viviendas/1000 hab",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "deficit habitacional total por 1000 hab",
+        "déficit hab. /1000"
+      ]
+    },
+    {
+      "id": "pobreza_ingresos_casen_pct",
+      "canonicalId": "pobreza_ingresos_pct",
+      "name": "Pobreza por Ingresos CASEN",
+      "shortName": "Pobreza Ingresos %",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "pobreza ingresos casen pct",
+        "pobreza ingresos %"
+      ],
+      "isAliasOf": "pobreza_ingresos_pct"
+    },
+    {
+      "id": "pobreza_multidimensional_casen_pct",
+      "canonicalId": "pobreza_multidim_pct",
+      "name": "Pobreza Multidimensional CASEN",
+      "shortName": "Pobreza Multidim. %",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "pobreza multidimensional casen pct",
+        "pobreza multidim. %"
+      ],
+      "isAliasOf": "pobreza_multidim_pct"
+    },
+    {
+      "id": "deficit_habitacional_cuantitativo_minvu",
+      "canonicalId": "deficit_habitacional_cuantitativo_n",
+      "name": "Déficit Habitacional Cuantitativo MINVU",
+      "shortName": "Déficit Cuantitativo",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "deficit habitacional cuantitativo minvu",
+        "déficit cuantitativo"
+      ],
+      "isAliasOf": "deficit_habitacional_cuantitativo_n"
+    },
+    {
+      "id": "deficit_habitacional_cualitativo_minvu",
+      "canonicalId": "deficit_habitacional_cualitativo_n",
+      "name": "Déficit Habitacional Cualitativo MINVU",
+      "shortName": "Déficit Cualitativo",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "deficit habitacional cualitativo minvu",
+        "déficit cualitativo"
+      ],
+      "isAliasOf": "deficit_habitacional_cualitativo_n"
+    },
+    {
+      "id": "ventas_sii_muf",
+      "canonicalId": "ventas_sii_muf",
+      "name": "Ventas Anuales Empresas SII",
+      "shortName": "Ventas SII",
+      "unit": "M UF",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ventas sii muf",
+        "ventas sii"
+      ]
+    },
+    {
+      "id": "ventas_por_empresa_uf",
+      "canonicalId": "ventas_por_empresa_uf",
+      "name": "Ventas Promedio por Empresa SII",
+      "shortName": "Ventas/Empresa",
+      "unit": "UF/empresa",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 20,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "ventas por empresa uf",
+        "ventas/empresa"
+      ]
+    },
+    {
+      "id": "inversion_por_proyecto_seia_mmusd",
+      "canonicalId": "inversion_por_proyecto_seia_mmusd",
+      "name": "Inversión Promedio por Proyecto SEIA",
+      "shortName": "Inv./Proyecto SEIA",
+      "unit": "MM US$",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 19,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "inversion por proyecto seia mmusd",
+        "inv./proyecto seia"
+      ]
+    },
+    {
+      "id": "suelo_fiscal_bbnn_pct",
+      "canonicalId": "suelo_fiscal_bbnn_pct",
+      "name": "Porcentaje de Suelo Fiscal Bienes Nacionales",
+      "shortName": "Suelo Fiscal %",
+      "unit": "%",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "suelo fiscal bbnn pct",
+        "suelo fiscal %"
+      ]
+    },
+    {
+      "id": "suelo_privado_pct",
+      "canonicalId": "suelo_privado_pct",
+      "name": "Porcentaje de Suelo Privado",
+      "shortName": "Suelo Privado %",
+      "unit": "%",
+      "hub": "inversion",
+      "hubTitle": "V. Economía, Inversión y Suelo",
+      "nodeId": 22,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "suelo privado pct",
+        "suelo privado %"
+      ]
+    },
+    {
+      "id": "alojamientos_turisticos_rnpst_n",
+      "name": "Alojamientos Turísticos Registrados (RNPST SERNATUR)",
+      "shortName": "Alojamientos RNPST",
+      "unit": "establecimientos",
+      "hub": "turismo",
+      "nodeId": 1,
+      "dim": "comuna",
+      "synonyms": [
+        "alojamientos sernatur",
+        "hoteles cabanas rnpst",
+        "alojamiento turistico"
+      ],
+      "canonicalId": "alojamientos_turisticos_rnpst_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "operadores_aventura_rnpst_n",
+      "name": "Operadores de Turismo Aventura Registrados (RNPST)",
+      "shortName": "Operadores Aventura RNPST",
+      "unit": "operadores",
+      "hub": "turismo",
+      "nodeId": 1,
+      "dim": "comuna",
+      "synonyms": [
+        "turismo aventura",
+        "operadores rnpst",
+        "agencias aventura"
+      ],
+      "canonicalId": "operadores_aventura_rnpst_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "guias_turismo_rnpst_n",
+      "name": "Guías de Turismo Registrados (RNPST SERNATUR)",
+      "shortName": "Guías Turismo RNPST",
+      "unit": "guías",
+      "hub": "turismo",
+      "nodeId": 1,
+      "dim": "comuna",
+      "synonyms": [
+        "guias de turismo",
+        "guias rnpst",
+        "guias sernatur"
+      ],
+      "canonicalId": "guias_turismo_rnpst_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "restaurantes_turisticos_rnpst_n",
+      "name": "Restaurantes Turísticos Registrados (RNPST SERNATUR)",
+      "shortName": "Restaurantes RNPST",
+      "unit": "restaurantes",
+      "hub": "turismo",
+      "nodeId": 1,
+      "dim": "comuna",
+      "synonyms": [
+        "restaurantes turisticos",
+        "gastronomia rnpst"
+      ],
+      "canonicalId": "restaurantes_turisticos_rnpst_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "prestadores_vigencia_patente_pct",
+      "name": "Vigencia Formal de Patente en Prestadores RNPST (%)",
+      "shortName": "Vigencia Patente RNPST (%)",
+      "unit": "%",
+      "hub": "turismo",
+      "nodeId": 1,
+      "dim": "comuna",
+      "synonyms": [
+        "vigencia patente rnpst",
+        "patentes vencidas sernatur",
+        "brecha vigencia rnpst"
+      ],
+      "canonicalId": "prestadores_vigencia_patente_pct",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "llegadas_turistas_emat_n",
+      "name": "Llegadas de Pasajeros a Alojamientos EMAT (INE 2025)",
+      "shortName": "Llegadas EMAT (2025)",
+      "unit": "llegadas",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "comuna",
+      "synonyms": [
+        "llegadas turistas",
+        "llegadas emat",
+        "pasajeros alojados ine"
+      ],
+      "canonicalId": "llegadas_turistas_emat_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "visitantes_atractivos_totales_n",
+      "name": "Visitantes a Atractivos Turísticos Totales (SNASPE + Privados)",
+      "shortName": "Visitas Atractivos Totales",
+      "unit": "visitas",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "comuna",
+      "synonyms": [
+        "atractivos turisticos totales",
+        "capillas de marmol visitantes",
+        "visitantes snaspe y privados"
+      ],
+      "canonicalId": "visitantes_atractivos_totales_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "llegadas_por_cama_turistica",
+      "name": "Llegadas EMAT por Cama Turística Disponible (rotación)",
+      "shortName": "Llegadas / Cama Turística",
+      "unit": "llegadas/cama",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "comuna",
+      "synonyms": [
+        "llegadas por cama",
+        "rotacion camas turisticas",
+        "capacidad de camas"
+      ],
+      "canonicalId": "llegadas_por_cama_turistica",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "tasa_ocupacion_emat_estival_pct",
+      "name": "Tasa de Ocupación Habitaciones INE EMAT (Ene–Feb 2026)",
+      "shortName": "Ocupación EMAT Ene–Feb (%)",
+      "unit": "%",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "comuna",
+      "synonyms": [
+        "ocupacion emat verano",
+        "ocupacion habitaciones ene feb",
+        "emat estival"
+      ],
+      "canonicalId": "tasa_ocupacion_emat_estival_pct",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "estadia_regional_viaje_dias",
+      "name": "Estadía Media del Viaje Turístico en Aysén (SIT UACh)",
+      "shortName": "Estadía Viaje Regional (días)",
+      "unit": "días",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "comuna",
+      "synonyms": [
+        "estadia viaje balmaceda",
+        "dias en la region",
+        "estadia uach",
+        "duracion viaje regional"
+      ],
+      "canonicalId": "estadia_regional_viaje_dias",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "tarifa_adr_emat_clp",
+      "name": "Tarifa Promedio Diaria EMAT Real (ADR CLP INE 2025)",
+      "shortName": "ADR EMAT Real ($ CLP)",
+      "unit": "$ CLP",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "comuna",
+      "synonyms": [
+        "tarifa adr emat clp",
+        "adr pesos chilenos",
+        "tarifa hotelera emat"
+      ],
+      "canonicalId": "tarifa_adr_emat_clp",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "revpar_emat_clp",
+      "name": "Ingreso por Habitación Disponible EMAT Real (RevPAR CLP)",
+      "shortName": "RevPAR EMAT ($ CLP)",
+      "unit": "$ CLP",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "comuna",
+      "synonyms": [
+        "revpar emat clp",
+        "revpar pesos",
+        "ingreso habitacion disponible"
+      ],
+      "canonicalId": "revpar_emat_clp",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "empresas_act_turismo_sii_n",
+      "name": "Empresas en Actividades Características del Turismo (SII)",
+      "shortName": "Empresas ACT Turismo (SII)",
+      "unit": "empresas",
+      "hub": "turismo",
+      "nodeId": 5,
+      "dim": "comuna",
+      "synonyms": [
+        "empresas act turismo",
+        "empresas turismo sii",
+        "actividades caracteristicas turismo"
+      ],
+      "canonicalId": "empresas_act_turismo_sii_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "ventas_act_turismo_uf",
+      "name": "Ventas Anuales en Actividades Características del Turismo (UF)",
+      "shortName": "Ventas ACT Turismo (UF)",
+      "unit": "UF",
+      "hub": "turismo",
+      "nodeId": 5,
+      "dim": "comuna",
+      "synonyms": [
+        "ventas act turismo",
+        "facturacion turismo uf",
+        "ventas turismo sii"
+      ],
+      "canonicalId": "ventas_act_turismo_uf",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "empleo_act_turismo_n",
+      "name": "Empleo Dependiente Informado en ACT Turismo (SII)",
+      "shortName": "Empleo ACT Turismo (SII)",
+      "unit": "empleos",
+      "hub": "turismo",
+      "nodeId": 5,
+      "dim": "comuna",
+      "synonyms": [
+        "empleo turismo sii",
+        "trabajadores act turismo",
+        "empleo hoteleria gastronomia"
+      ],
+      "canonicalId": "empleo_act_turismo_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_superficie_ha",
+      "name": "Superficie Protegida SNASPE por Unidad (ha CONAF)",
+      "shortName": "Superficie Unidad SNASPE",
+      "unit": "hectáreas",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "superficie unidad snaspe",
+        "hectareas parque nacional",
+        "superficie reserva nacional"
+      ],
+      "canonicalId": "snaspe_superficie_ha",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_visitantes_anuales_n",
+      "name": "Visitantes Anuales Oficiales CONAF por Unidad SNASPE",
+      "shortName": "Visitas por Unidad SNASPE",
+      "unit": "visitas",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "visitantes por parque",
+        "visitas unidad snaspe",
+        "conaf por parque"
+      ],
+      "canonicalId": "snaspe_visitantes_anuales_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_guardaparques_permanentes_n",
+      "name": "Guardaparques Permanentes CONAF por Unidad SNASPE",
+      "shortName": "Guardaparques SNASPE",
+      "unit": "guardaparques",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "guardaparques por parque",
+        "dotacion guardaparques conaf"
+      ],
+      "canonicalId": "snaspe_guardaparques_permanentes_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_concesiones_salmon_dentro_n",
+      "name": "Concesiones Salmoneras Dentro de Unidad SNASPE (SUBPESCA)",
+      "shortName": "Salmón en SNASPE",
+      "unit": "concesiones",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "concesiones dentro snaspe",
+        "salmoneras dentro reserva",
+        "ley sbap snaspe"
+      ],
+      "canonicalId": "snaspe_concesiones_salmon_dentro_n",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_superficie_salmon_ha",
+      "name": "Superficie Acuícola Dentro de Unidad SNASPE (ha)",
+      "shortName": "Sup. Salmón en SNASPE",
+      "unit": "hectáreas",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "superficie salmonera snaspe",
+        "hectareas acuicolas parque"
+      ],
+      "canonicalId": "snaspe_superficie_salmon_ha",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_inversion_pdze_mclp",
+      "name": "Inversión Habilitante PDZE Proyectada por Unidad SNASPE",
+      "shortName": "Inversión PDZE SNASPE",
+      "unit": "M$ CLP",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "inversion pdze parques",
+        "plan zonas extremas snaspe",
+        "habilitacion conaf pdze"
+      ],
+      "canonicalId": "snaspe_inversion_pdze_mclp",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "acs_concesiones_otorgadas_n",
+      "name": "Concesiones Otorgadas por Barrio ACS",
+      "shortName": "Concesiones por ACS",
+      "unit": "concesiones",
+      "hub": "salmonicultura",
+      "nodeId": 6,
+      "dim": "acs",
+      "synonyms": [
+        "concesiones por barrio acs",
+        "barrios acuicolas concesiones"
+      ],
+      "canonicalId": "acs_concesiones_otorgadas_n",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "outlierBiased": false
+    },
+    {
+      "id": "acs_centros_activos_ciclo_n",
+      "name": "Centros Activos en Ciclo por Barrio ACS",
+      "shortName": "Centros Activos por ACS",
+      "unit": "centros",
+      "hub": "salmonicultura",
+      "nodeId": 7,
+      "dim": "acs",
+      "synonyms": [
+        "centros activos acs",
+        "operacion barrios acuicolas"
+      ],
+      "canonicalId": "acs_centros_activos_ciclo_n",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "outlierBiased": false
+    },
+    {
+      "id": "acs_cosecha_ton",
+      "name": "Cosecha Promedio por Barrio ACS (ton)",
+      "shortName": "Cosecha por ACS (ton)",
+      "unit": "ton",
+      "hub": "salmonicultura",
+      "nodeId": 8,
+      "dim": "acs",
+      "synonyms": [
+        "cosecha por acs",
+        "produccion barrio acuicola"
+      ],
+      "canonicalId": "acs_cosecha_ton",
+      "hubTitle": "II. Pesca, Acuicultura y Mar",
+      "outlierBiased": false
+    },
+    {
+      "id": "barometro",
+      "name": "Series Históricas Barómetro Regional UAysén (2018–2026)",
+      "shortName": "Barómetro Regional",
+      "unit": "%",
+      "hub": "gobernanza",
+      "nodeId": 18,
+      "dim": "tiempo",
+      "synonyms": [
+        "barometro regional",
+        "encuesta barometro uaysen"
+      ],
+      "canonicalId": "barometro",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "outlierBiased": false
+    },
+    {
+      "id": "balmaceda_pasajeros_jac",
+      "name": "Tráfico Anual de Pasajeros Aeródromo Balmaceda JAC",
+      "shortName": "Pasajeros Balmaceda JAC",
+      "unit": "pasajeros",
+      "hub": "gobernanza",
+      "nodeId": 40,
+      "dim": "tiempo",
+      "synonyms": [
+        "aeropuerto balmaceda",
+        "pasajeros balmaceda jac",
+        "trafico aereo balmaceda"
+      ],
+      "canonicalId": "balmaceda_pasajeros_jac",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "outlierBiased": false
+    },
+    {
+      "id": "emporcha_toneladas",
+      "name": "Transferencia Anual de Carga Portuaria EMPORCHA",
+      "shortName": "Carga Portuaria EMPORCHA",
+      "unit": "toneladas",
+      "hub": "gobernanza",
+      "nodeId": 41,
+      "dim": "tiempo",
+      "synonyms": [
+        "carga portuaria emporcha",
+        "toneladas puerto chacabuco"
+      ],
+      "canonicalId": "emporcha_toneladas",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "outlierBiased": false
+    },
+    {
+      "id": "emporcha_cruceros",
+      "name": "Pasajeros y Recaladas de Cruceros EMPORCHA",
+      "shortName": "Cruceros EMPORCHA",
+      "unit": "pasajeros",
+      "hub": "turismo",
+      "nodeId": 3,
+      "dim": "tiempo",
+      "synonyms": [
+        "cruceros emporcha",
+        "recaladas puerto chacabuco tortel"
+      ],
+      "canonicalId": "emporcha_cruceros",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "pasos_fronterizos_pdi_aysen",
+      "name": "Control Migratorio Pasos Fronterizos PDI Aysén (2015–2026)",
+      "shortName": "Pasos Fronterizos PDI",
+      "unit": "controles",
+      "hub": "gobernanza",
+      "nodeId": 40,
+      "dim": "tiempo",
+      "synonyms": [
+        "pasos fronterizos pdi",
+        "jeinimeni coyhaique alto huemules",
+        "flujo fronterizo"
+      ],
+      "canonicalId": "pasos_fronterizos_pdi_aysen",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "outlierBiased": false
+    },
+    {
+      "id": "generacion_electrica_anual",
+      "name": "Generación Eléctrica Bruta Anual CNE Aysén (GWh)",
+      "shortName": "Generación Eléctrica CNE",
+      "unit": "GWh",
+      "hub": "energia",
+      "nodeId": 11,
+      "dim": "tiempo",
+      "synonyms": [
+        "generacion electrica cne",
+        "matriz electrica aysen gwh"
+      ],
+      "canonicalId": "generacion_electrica_anual",
+      "hubTitle": "III. Energía y Telecomunicaciones",
+      "outlierBiased": false
+    },
+    {
+      "id": "fndr_asignado_vs_ejecutado_2015_2025",
+      "name": "FNDR Asignado vs. Ejecutado GORE Aysén (2015–2025)",
+      "shortName": "FNDR Asignado vs Ejecutado",
+      "unit": "M$ CLP",
+      "hub": "gobernanza",
+      "nodeId": 16,
+      "dim": "tiempo",
+      "synonyms": [
+        "fndr asignado vs ejecutado",
+        "presupuesto gore 2015 2025"
+      ],
+      "canonicalId": "fndr_asignado_vs_ejecutado_2015_2025",
+      "hubTitle": "IV. Gobernanza y Finanzas",
+      "outlierBiased": false
+    },
+    {
+      "id": "tasa_vif_regional_por_100k_hab",
+      "name": "Tasa Regional de Violencia Intrafamiliar (VIF c/100k hab)",
+      "shortName": "Tasa VIF Regional Hist.",
+      "unit": "por 100k hab",
+      "hub": "social",
+      "nodeId": 24,
+      "dim": "tiempo",
+      "synonyms": [
+        "serie tasa vif",
+        "vif regional historico"
+      ],
+      "canonicalId": "tasa_vif_regional_por_100k_hab",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "outlierBiased": false
+    },
+    {
+      "id": "tasa_dmcs_regional_por_100k_hab",
+      "name": "Tasa Regional de Delitos DMCS (c/100k hab)",
+      "shortName": "Tasa DMCS Regional Hist.",
+      "unit": "por 100k hab",
+      "hub": "social",
+      "nodeId": 24,
+      "dim": "tiempo",
+      "synonyms": [
+        "serie tasa dmcs",
+        "delitos mayor connotacion historico"
+      ],
+      "canonicalId": "tasa_dmcs_regional_por_100k_hab",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "outlierBiased": false
+    },
+    {
+      "id": "mp25_pda_coyhaique_2015_2026",
+      "name": "Serie MP2.5 y Recambio Calefactores PDA Coyhaique",
+      "shortName": "MP2.5 PDA Coyhaique",
+      "unit": "días/µg/m³",
+      "hub": "biodiversidad",
+      "nodeId": 30,
+      "dim": "tiempo",
+      "synonyms": [
+        "pda coyhaique mp25",
+        "recambio calefactores serie"
+      ],
+      "canonicalId": "mp25_pda_coyhaique_2015_2026",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "outlierBiased": false
+    },
+    {
+      "id": "snaspe_por_parque_anual",
+      "name": "Visitación Anual por Parque Nacional SNASPE (CONAF)",
+      "shortName": "Visitación Parques SNASPE",
+      "unit": "visitas",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "tiempo",
+      "synonyms": [
+        "visitacion por parque snaspe",
+        "queulat cerro castillo patagonia serie"
+      ],
+      "canonicalId": "snaspe_por_parque_anual",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
+    },
+    {
+      "id": "parques_snaspe_unidades",
+      "name": "Catastro de Unidades SNASPE de Aysén (CONAF)",
+      "shortName": "Unidades SNASPE Catastro",
+      "unit": "visitas",
+      "hub": "turismo",
+      "nodeId": 4,
+      "dim": "snaspe",
+      "synonyms": [
+        "unidades snaspe aysen",
+        "parques y reservas conaf"
+      ],
+      "canonicalId": "parques_snaspe_unidades",
+      "hubTitle": "I. Turismo y Áreas Silvestres",
+      "outlierBiased": false
     }
   ],
   "nodes": [

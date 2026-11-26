@@ -517,8 +517,11 @@ def main():
 
     # Guardar JSON integrado
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump(cubes, f, indent=2, ensure_ascii=False)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(OUTPUT_PATH, cubes)
 
     print(f"[OK] Archivo generado: {OUTPUT_PATH} ({os.path.getsize(OUTPUT_PATH)} bytes)")
 

@@ -534,6 +534,30 @@ const OFFICIAL_VARIABLE_SOURCES = {
     url: 'https://www.observatorionacional.cl/',
     dataYear: 'Empleo Acuícola 2025–2026',
     collectionDate: '25 Nov 2026'
+  },
+  sit_aysen_balmaceda: {
+    name: 'Estadísticas Aysén Patagonia (SIT Aysén / UACh / INE EMAT)',
+    url: 'https://estadisticas.aysenpatagonia.cl/',
+    dataYear: 'EMAT 2025–2026 / Encuesta Balmaceda 2025',
+    collectionDate: '26 Nov 2026'
+  },
+  subtrab_act_turismo: {
+    name: 'Subsecretaría del Trabajo / SII / INE (Actividades Características del Turismo)',
+    url: 'https://www.sernatur.cl/dataturismo/',
+    dataYear: 'Anuario Sernatur 2024 / SII 2025 / Subtrab Ene 2026',
+    collectionDate: '26 Nov 2026'
+  },
+  pdi_pasos_fronterizos: {
+    name: 'PDI / Unidad de Pasos Fronterizos (Ministerio del Interior)',
+    url: 'https://www.pasosfronterizos.gov.cl/',
+    dataYear: 'Balance Migratorio 2024',
+    collectionDate: '26 Nov 2026'
+  },
+  conaf_sbap_snaspe: {
+    name: 'CONAF / MMA-SBAP (Ley N° 21.600) / Subsecretaría de Turismo',
+    url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/',
+    dataYear: 'CONAF 2024 / Plan Infraestructura AP Oct 2025',
+    collectionDate: '26 Nov 2026'
   }
 };
 
@@ -568,7 +592,11 @@ function resolveOfficialSource(varKey, hubId) {
   if (/saidi_|saifi_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sec;
   if (/potencia_mw|tarifa_bt1|gasolina_|diesel_|precio_lena|hogares_lena|electricidad|energia|generacion_|participacion_diesel_matriz|subsidio_fiscal_diesel|costo_diesel/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.cne;
   if (/internet_fijo|estado_foa|conectividad_|telecom/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtel;
-  if (/prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis|visitas_por_cama|visitas_por_pernoctacion|ocupacion_estival|ocupacion_invernal|concentracion_estival|estadia_promedio|gasto_diario_turista|tarifa_adr|revpar/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
+  if (/^snaspe_/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf_sbap_snaspe;
+  if (/act_turismo/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.subtrab_act_turismo;
+  if (/tarifa_adr_emat_clp|revpar_emat_clp|estadia_regional_viaje|tasa_ocupacion_emat_estival|llegadas_turistas_emat|llegadas_por_cama/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sit_aysen_balmaceda;
+  if (/pasos_fronterizos/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.pdi_pasos_fronterizos;
+  if (/rnpst|vigencia_patente|visitantes_atractivos_totales|prestadores_sernatur|pernoctaciones_emat|camas_turisticas|ratio_presion|zoit|turis|visitas_por_cama|visitas_por_pernoctacion|ocupacion_estival|ocupacion_invernal|concentracion_estival|estadia_promedio|gasto_diario_turista|tarifa_adr|revpar/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sernatur;
   if (/visitantes_snaspe|visitantes_extranjeros|superficie_snaspe|suelo_fiscal_bbnn|suelo_privado|cobertura_vegetal|incendios_|snaspe|conaf|ruta7/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.conaf;
   if (/dias_sobre_norma_mp25|mp25_|fauna_|flora_|sinca|dga|daa_|humedales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.sinca_mma;
   if (/museos_|bibliotecas_|monumentos_|agentes_culturales|cultura|patrimonio|total_espacios_culturales/i.test(k)) return OFFICIAL_VARIABLE_SOURCES.mincap;
@@ -604,12 +632,12 @@ const hubs = [
     title: 'I. Turismo & Áreas Silvestres',
     shortTitle: 'Turismo & Áreas Silvestres',
     color: '#00357f',
-    description: 'Oferta registrada en **SERNATUR**, las **3 Zonas de Interés Turístico (ZOIT)** oficiales de Aysén (Chelenko, Aysén Patagonia Queulat, Provincia de los Glaciares), **361.942 pernoctaciones anuales registradas por INE EMAT** y **~38.000 visitas al Parque Nacional Queulat** (**CONAF SNASPE**).',
-    example: 'En **Coyhaique** operan **412 prestadores registrados** (3.420 camas), con ocupación de 76%-82% en enero-febrero y de 22%-32% en invierno.',
+    description: 'Oferta **RNPST SERNATUR (1.728 servicios)** y economía **ACT (3.152 empresas, 11,57 M UF, 5.270 empleos)**, las **3 Zonas de Interés Turístico (ZOIT)** reales (Chelenko, Aysén Patagonia Queulat [Cisnes y Lago Verde], Provincia de los Glaciares), **364.039 pernoctaciones y 196.611 llegadas** (INE EMAT 2025, ADR $70.213 CLP) y **86.117 visitas** oficiales CONAF en **19 unidades SNASPE** (54% del territorio, **41 guardaparques**).',
+    example: 'En **Coyhaique** se concentran **489 prestadores RNPST** (3.420 camas) y **138.400 pernoctaciones**, mientras el **PN Queulat (25.619 visitas)**, **PN Patagonia (16.453)** y **PN Cerro Castillo (13.907, Lista Verde UICN)** lideran la visitación SNASPE.',
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     nodesFile: 'data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv',
-    sourceName: 'SERNATUR / Subsecretaría de Turismo / INE EMAT / CONAF',
-    sourceUrl: 'https://www.sernatur.cl/dataturismo/'
+    sourceName: 'SERNATUR / Subsecretaría de Turismo / INE EMAT / CONAF / SIT Aysén',
+    sourceUrl: 'https://estadisticas.aysenpatagonia.cl/'
   },
   {
     id: 'salmonicultura',
@@ -774,23 +802,23 @@ const rawNodos = [
     id: 1,
     hubId: 'turismo',
     title: 'Servicios turísticos registrados',
-    definition: 'Catastro comunal de **servicios turísticos formales** inscritos en el Registro Nacional de Prestadores de SERNATUR: total de prestadores, alojamientos turísticos, operadores de turismo aventura, guías registrados y capacidad estimada en camas.',
-    example: '**Coyhaique** lidera con **412 prestadores registrados** (178 alojamientos, 74 operadores de aventura y 3.420 camas), seguido por **Río Ibáñez**, **Aysén**, **Cisnes**, **Chile Chico** y **Cochrane**.',
-    officialSource: { name: 'Registro Nacional de Prestadores SERNATUR', url: 'https://serviciosturisticos.sernatur.cl/', frequency: 'Actualizacion mensual' },
+    definition: 'Catastro oficial **RNPST SERNATUR (1.728 servicios inscritos)**: alojamientos (`672`), guías (`379`), turismo aventura (`295`), restaurantes (`189`), brecha de **vigencia de patente** en ZOIT (`31,6%` vigente en Chelenko y `11,8%` en Queulat), más economía **ACT**: `3.152` empresas (`1.483` en Rubro I SII = `11,0%` regional), `11.569.086 UF` y `5.270` empleos (`47,4%` informalidad estival).',
+    example: '**Coyhaique (489)** y **Río Ibáñez (445)** lideran el RNPST, seguidos por **Chile Chico (231)**, **Cisnes (215)** y **Aysén (126)**. En ZOIT Chelenko solo `291 de 922` inscritos históricos mantienen patente al día (`31,6%`) y en ZOIT Queulat `36 de 307` (`11,8%`).',
+    officialSource: { name: 'RNPST SERNATUR / Subtrab / SII ACT', url: 'https://serviciosturisticos.sernatur.cl/', frequency: 'Actualizacion mensual' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [2, 3, 4, 20],
     chartSpec: {
       type: 'bar',
-      title: 'Prestadores de Servicios Turísticos Registrados por Comuna (SERNATUR)',
+      title: 'Servicios Turísticos Inscritos RNPST por Comuna (Total Regional: 1.728)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
-        label: 'Prestadores Registrados',
+        label: 'Servicios RNPST (1.728)',
         data: comunasBase.map(c => (wp06ByIne[String(c.comuna_ine)] || {}).oferta_sernatur?.prestadores_registrados_total || 0),
         backgroundColor: '#00357f'
       }],
       unit: 'prestadores'
     },
-    tableColumns: ['Comuna', 'Prestadores Totales', 'Alojamientos', 'Turismo Aventura', 'Camas Estimadas'],
+    tableColumns: ['Comuna', 'Prestadores RNPST', 'Alojamientos', 'Turismo Aventura', '% Patente Vigente', 'Camas Estimadas'],
     tableRows: comunasBase.map(c => {
       const t = (wp06ByIne[String(c.comuna_ine)] || {}).oferta_sernatur || {};
       return [
@@ -798,39 +826,40 @@ const rawNodos = [
         fmtNum(t.prestadores_registrados_total),
         fmtNum(t.alojamientos_turisticos_sernatur),
         fmtNum(t.operadores_turismo_aventura),
+        `${t.prestadores_vigencia_patente_pct || 0}%`,
         fmtNum(t.capacidad_camas_estimada)
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Desglose por tipología de servicios (alojamientos, turismo aventura, guías registrados, agencias de viaje)',
-        'Capacidad formal estimada en camas hoteleras por comuna',
-        'Distincion de Sellos de Calidad Turistica (Q) y Sustentabilidad (S)',
-        'Directorio formal de prestadores registrados ante SERNATUR'
+        'Catastro RNPST consolidado (1.728 servicios) por tipología: alojamientos, guías, aventura y restaurantes',
+        'Brecha de vigencia de patente municipal: 31,6% en ZOIT Chelenko y 11,8% en ZOIT Queulat',
+        'Economía ACT: 3.152 empresas SII, 1.483 Rubro I (11,0% regional), 11.569.086 UF y 5.270 empleos',
+        'Capacidad estimada en camas formales (10.040 camas)'
       ],
       suggestedCrossings: [
-        'Cruce con Pernoctaciones y Estacionalidad EMAT (Nodo #03) para contrastar capacidad hotelera vs. ocupación',
-        'Cruce con Zonas de Interés Turístico (Nodo #02) para evaluar formalización de servicios en polígonos ZOIT'
+        'Cruce con Pernoctaciones y Estacionalidad EMAT (Nodo #03)',
+        'Cruce con Zonas de Interés Turístico (Nodo #02) para evaluar vigencia normativa ZOIT'
       ],
-      totalRecordsInFullBase: '10 comunas con 19 columnas de oferta turistica formal en data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv'
+      totalRecordsInFullBase: '10 comunas con desglose RNPST, vigencia y economía ACT en data/systemic/06_turismo_sernatur_conaf.json'
     }
   },
   {
     id: 2,
     hubId: 'turismo',
     title: 'Zonas de Interés Turístico (3 ZOIT)',
-    definition: 'Delimitación comunal, atractivos ancla, vocación principal y cuellos de botella de las **3 Zonas de Interés Turístico (ZOIT)** decretadas oficialmente por la Subsecretaría de Turismo en la Región de Aysén: **ZOIT Chelenko**, **ZOIT Aysén Patagonia Queulat** (incorporando Lago Verde) y **ZOIT Provincia de los Glaciares**.',
-    example: 'Las 3 ZOIT decretadas articulan el territorio: **ZOIT Chelenko** (Río Ibáñez y Chile Chico), **ZOIT Aysén Patagonia Queulat** (Cisnes, Aysén y Lago Verde) y **ZOIT Provincia de los Glaciares** (Cochrane, O\'Higgins y Tortel), mientras Coyhaique opera como nodo de servicios sin decreto ZOIT.',
-    officialSource: { name: 'Subsecretaria de Turismo — ZOIT', url: 'https://www.subturismo.gob.cl/zoit/', frequency: 'Decretos plurianuales' },
+    definition: 'Delimitación legal de las **3 Zonas de Interés Turístico (ZOIT)** decretadas por Subturismo: **ZOIT Chelenko** (Chile Chico y Río Ibáñez), **ZOIT Aysén Patagonia Queulat** (**solo Cisnes y Lago Verde**) y **ZOIT Provincia de los Glaciares** (Cochrane, Tortel y O\'Higgins). La comuna de **Aysén** no integra la ZOIT Queulat (`pertenece_a_zoit: false`), formando parte del Destino Priorizado SERNATUR Coyhaique–Puerto Aysén.',
+    example: '**7 de 10 comunas** integran las 3 ZOIT decretadas (`Queulat 2`, `Chelenko 2`, `Glaciares 3`), mientras **Coyhaique, Aysén y Guaitecas** operan sin declaratoria ZOIT vigente. Planes de Acción ZOIT 2026–2030.',
+    officialSource: { name: 'Subsecretaría de Turismo — ZOIT 2026–2030', url: 'https://www.subturismo.gob.cl/zoit/', frequency: 'Decretos plurianuales' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [1, 4, 5, 6, 18],
     chartSpec: {
       type: 'bar',
       title: 'Comunas Vinculadas por Zona de Interés Turístico (ZOIT)',
-      labels: ['ZOIT Aysén Queulat', 'ZOIT Chelenko', 'ZOIT Prov. Glaciares', 'Zona Amortiguación (Sin ZOIT)'],
+      labels: ['ZOIT Aysén Queulat', 'ZOIT Chelenko', 'ZOIT Prov. Glaciares', 'Sin Declaratoria ZOIT'],
       datasets: [{
         label: 'Comunas Articuladas',
-        data: [3, 2, 3, 2],
+        data: [2, 2, 3, 3],
         backgroundColor: '#0284c7'
       }],
       unit: 'comunas articuladas'
@@ -840,7 +869,7 @@ const rawNodos = [
       const z = (wp06ByIne[String(c.comuna_ine)] || {}).zoit_y_atractivos || {};
       return [
         c.nombre,
-        z.nombre_zoit || 'Zona amortiguación',
+        z.nombre_zoit || 'Sin declaratoria ZOIT',
         z.vocacion_turistica_principal || '-',
         (z.atractivos_ancla || []).slice(0, 2).join(', ') || '-',
         z.cuello_de_botella_turistico || '-'
@@ -848,130 +877,130 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Polígonos oficiales de declaratoria y Decretos Supremos de las 3 ZOITs oficiales',
-        'Cartera de planes de acción interministeriales y vocaciones estratégicas',
-        'Catastro de 24 atractivos ancla y sitios de alta concurrencia',
-        'Análisis de brechas de infraestructura pública y cuellos de botella'
+        'Polígonos legales vigentes: Queulat (Cisnes, Lago Verde), Chelenko (Chile Chico, Río Ibáñez) y Glaciares (3 comunas sur)',
+        'Brecha de formalización vigente dentro de las ZOIT (Planes de Acción dic. 2025)',
+        'Puertas de entrada: Aeródromo Balmaceda (605.945 pax 2025), Pasos PDI (350.257 controlados) y Cruceros (22.093 pax)',
+        'Resiliencia de barcazas MTT (Queulat, La Tehuelche y Padre Antonio Ronchi / Pitipulla)'
       ],
       suggestedCrossings: [
-        'Cruce con Inversión Pública FNDR (Nodo #18) para monitorear financiamiento del plan ZOIT',
-        'Cruce con Pavimentacion Ruta 7 (Nodo #18) para evaluar accesibilidad a los atractivos ancla'
+        'Cruce con Inversión Pública FNDR (Nodo #18)',
+        'Cruce con Red Vial Ruta 7 y Conectividad Multimodal (Nodo #40)'
       ],
-      totalRecordsInFullBase: '3 zonas ZOIT oficiales consolidadas y matrices comunales en data/systemic/06_turismo_sernatur_conaf.json'
+      totalRecordsInFullBase: '3 zonas ZOIT oficiales y conectividad multimodal en data/systemic/06_turismo_sernatur_conaf.json'
     }
   },
   {
     id: 3,
     hubId: 'turismo',
     title: 'Noches de alojamiento turístico',
-    definition: 'Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: **361.942 pernoctaciones anuales registradas oficialmente**, llegadas anuales, proporción de extranjeros y brecha de ocupación estacional.',
-    example: 'A nivel regional, la EMAT registra 361.942 pernoctaciones anuales oficiales. En enero se alcanzan **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación desciende al **20%-32%**.',
-    officialSource: { name: 'INE / SERNATUR — Encuesta Mensual de Alojamiento Turistico (EMAT)', url: 'https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo', frequency: 'Publicacion mensual' },
+    definition: 'Corte consolidado **INE EMAT Aysén**: **`364.039` pernoctaciones** y **`196.611` llegadas** (estancia media por establecimiento **`1,85` noches** vs. **`10,0` días de estadía regional** según Encuesta Aeródromo Balmaceda 2025, $n=400$). **ADR anual 2025: `$70.213 CLP`** (~US$ 74); **RevPAR anual: `$17.203 CLP`** (~US$ 18). Distingue **ocupación mensual continua EMAT** (`24,5%` anual; `39,7%` ene y `44,5%` feb 2026) de **fechas pico SERNATUR** (`76,3%–76,8%` regional; `89,9%` Coyhaique–Aysén).',
+    example: 'En **febrero 2026** la EMAT alcanzó **69.909 pernoctaciones** y **40.634 llegadas** (`44,5%` ocupación habitaciones, ADR `$76.471 CLP`, RevPAR `$34.025 CLP`), cayendo en **septiembre 2026** a `16.833` pernoctaciones (`17,2%`, `-22,2% YoY`). Gasto diario nacional `$51.551 CLP` vs. EE.UU. `$186.713 CLP`.',
+    officialSource: { name: 'INE EMAT / Estadísticas Aysén Patagonia / SERNATUR', url: 'https://estadisticas.aysenpatagonia.cl/', frequency: 'Publicacion mensual' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [1, 4, 15, 30],
     chartSpec: {
       type: 'line',
-      title: 'Curva Mensual de Pernoctaciones Turísticas en Aysén (EMAT INE)',
-      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      title: 'Curva Mensual de Pernoctaciones Turísticas en Aysén (INE EMAT = 364.039)',
+      labels: (wp06.series_mensuales_emat_sernatur || []).map(m => String(m.mes || '').slice(0, 3)),
       datasets: [{
         label: 'Pernoctaciones Mensuales',
-        data: [48500, 45200, 31800, 20400, 14200, 11800, 15600, 13400, 18900, 24100, 32700, 41300],
+        data: (wp06.series_mensuales_emat_sernatur || []).map(m => Number(m.pernoctaciones_total) || 0),
         borderColor: '#0059c5',
         backgroundColor: 'rgba(0,89,197,0.1)',
         fill: true
       }],
       unit: 'pernoctaciones'
     },
-    tableColumns: ['Comuna', 'Pernoctaciones EMAT', '% Extranjeros', 'Ocupación Alta', 'Ocupación Baja'],
+    tableColumns: ['Comuna', 'Pernoctaciones EMAT', 'Llegadas EMAT', 'ADR EMAT ($ CLP)', 'Occ. Pico vs. EMAT (%)'],
     tableRows: comunasBase.map(c => {
       const d = (wp06ByIne[String(c.comuna_ine)] || {}).demanda_emat_visitantes || {};
       return [
         c.nombre,
         fmtNum(d.pernoctaciones_anuales_emat),
-        `${d.proporcion_extranjeros_pct}%`,
-        `${d.ocupacion_alta_enero_febrero_pct}%`,
-        `${d.ocupacion_baja_invierno_pct}%`
+        fmtNum(d.llegadas_turistas_anual),
+        `$${fmtNum(d.tarifa_adr_emat_clp)}`,
+        `${d.ocupacion_alta_enero_febrero_pct}% / ${d.ocupacion_emat_estival_pct}%`
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Serie mensual completa de 12 meses (llegadas y pernoctaciones EMAT)',
-        'Tasas de ocupación en habitaciones por destino y mes calendario',
-        'Gasto diario promedio por visitante extranjero vs. turista nacional',
-        'Ingreso por habitacion disponible (RevPAR) y tarifa diaria promedio (ADR)'
+        'Reconciliación exacta 1:1 a 364.039 pernoctaciones y 196.611 llegadas (sin igualar pasajeros a noches)',
+        'ADR real ($70.213 CLP anual; $76.471 feb 2026) y RevPAR real ($17.203 CLP anual)',
+        'Ocupación mensual continua EMAT (42,1% ver.) vs. ocupación fechas pico SERNATUR (76,5%)',
+        'Estadía por establecimiento (1,85 noches) vs. estadía total en la región (10,0 días)'
       ],
       suggestedCrossings: [
         'Cruce con Monitoreo de Estaciones Ambientales (Nodo #30)',
-        'Cruce con Concesiones de Acuicultura (Nodo #06) para separar ocupación de negocios vs. ocio'
+        'Cruce con Concesiones de Acuicultura (Nodo #06) para separar ocupación corporativa vs. turismo estacional'
       ],
-      totalRecordsInFullBase: 'Serie mensual regional de 12 meses y 10 comunas en data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv'
+      totalRecordsInFullBase: 'Serie mensual de 12 meses (=364.039 noches) y 10 comunas en data/systemic/06_turismo_sernatur_conaf.json'
     }
   },
   {
     id: 4,
     hubId: 'turismo',
     title: 'Visitas a Parques y Reservas Nacionales',
-    definition: 'Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna: registro de **~38.000 visitas anuales al Parque Nacional Queulat** (principal atractivo regional) y superficie comunal protegida.',
-    example: 'El Parque Nacional Queulat lidera el flujo regional con **~38.000 visitas anuales**, conviviendo con una proporción de territorio protegido SNASPE que alcanza **87,4% en Tortel**, **78,3% en O\'Higgins** y **71,2% en Cisnes**.',
-    officialSource: { name: 'CONAF — Estadisticas de Visitacion SNASPE', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', frequency: 'Anual / Mensual' },
+    definition: 'Visitación anual oficial registrada por **CONAF** en porterías de las **19 Áreas Silvestres Protegidas del Estado (SNASPE)** de Aysén (**`86.117` visitas anuales** en 2024; separadas de atractivos fuera del SNASPE como Capillas de Mármol o Caleta Tortel que elevan el flujo total a `273.900`). Operadas por **`41` guardaparques permanentes** en 10 de 19 unidades en transición al **SBAP (Ley N° 21.600, marzo 2027)**.',
+    example: 'Lidera **PN Queulat (25.619 visitas; -$17.245 M PDZE)**, seguido de **PN Patagonia (16.453)**, **PN Cerro Castillo (13.907, 1a AP de Chile en Lista Verde UICN 12 sept 2025)**, **RN Coyhaique (13.552)**, **RN Río Simpson (7.961)** y **PN Laguna San Rafael (5.900; cierre definitivo sobre hielo Glaciar Exploradores Corte Suprema ROL 7.477-2026)**. `318` concesiones salmón totalmente dentro (`312` RN Las Guaitecas, `4` PN Isla Magdalena, `2` San Rafael).',
+    officialSource: { name: 'CONAF SNASPE / Subturismo Plan Infraestructura AP Oct 2025 / SBAP', url: 'https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/', frequency: 'Anual / Mensual' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv',
     relatedNodeIds: [2, 3, 5, 22, 27, 28],
     chartSpec: {
       type: 'bar',
-      title: 'Visitantes Anuales a Unidades SNASPE por Comuna (CONAF)',
+      title: 'Visitantes Anuales Oficiales en Porterías CONAF SNASPE (Total Regional: 86.117)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
-        label: 'Visitantes Anuales',
+        label: 'Visitantes SNASPE CONAF',
         data: comunasBase.map(c => (wp06ByIne[String(c.comuna_ine)] || {}).demanda_emat_visitantes?.visitantes_snaspe_conaf_anual || 0),
         backgroundColor: '#0f766e'
       }],
       unit: 'visitantes/ano'
     },
-    tableColumns: ['Comuna', 'Visitantes SNASPE', '% Comuna en SNASPE', 'Superficie Protegida (ha)', 'Unidades SNASPE'],
+    tableColumns: ['Comuna', 'Visitas SNASPE CONAF', 'Visitas Tot. Atractivos', '% Comuna SNASPE', 'Unidades SNASPE'],
     tableRows: comunasBase.map(c => {
       const d = (wp06ByIne[String(c.comuna_ine)] || {}).demanda_emat_visitantes || {};
       const conaf = c.conservacion_conaf || {};
       return [
         c.nombre,
         fmtNum(d.visitantes_snaspe_conaf_anual),
+        fmtNum(d.visitantes_atractivos_totales_anual),
         `${conaf.superficie_protegida_pct}%`,
-        fmtNum(conaf.superficie_protegida_ha),
         (conaf.unidades_snaspe || []).slice(0, 2).join(', ') || '-'
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Visitación desagregada por unidad (Parques Queulat, Laguna San Rafael, Cerro Castillo, Patagonia, Isla Magdalena)',
-        'Superficie comunal protegida bajo SNASPE (hasta 87,4% en Tortel)',
-        'Flujo de senderistas nacionales vs. extranjeros registrados en porteria',
-        'Días de estancia media por destino y capacidades de carga turistica'
+        'Dimensión analítica dim: snaspe con las 19 Áreas Protegidas (superficie, visitas, guardaparques, concesiones salmón e inversión PDZE)',
+        'Separación estricta entre porterías CONAF (86.117) y flujo total a atractivos no SNASPE (273.900)',
+        'Hitos jurídicos y de gestión: Lista Verde UICN (Cerro Castillo), Corte Suprema ROL 7.477-2026 (Exploradores) y D.E. 146/2025 AAA',
+        'Transición institucional de CONAF al SBAP (Ley N° 21.600) en marzo 2027'
       ],
       suggestedCrossings: [
-        'Cruce con Cobertura Forestal y Flora Nativa (Nodo #27)',
-        'Cruce con Fauna Silvestre y Especies en Conservación (Nodo #28)'
+        'Cruce en Laboratorio con dim: snaspe (19 unidades: guardaparques vs. visitantes e inversión PDZE)',
+        'Cruce con Fauna Silvestre y Cobertura Forestal (Nodos #27 y #28)'
       ],
-      totalRecordsInFullBase: '10 comunas y 8 unidades SNASPE en data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv'
+      totalRecordsInFullBase: '10 comunas y 19 unidades SNASPE en data/aysen_hubs_data.js (unidadesSnaspe)'
     }
   },
   {
     id: 5,
     hubId: 'turismo',
     title: 'Atractivos y Nodos Turísticos Georreferenciados',
-    definition: 'Catastro de hitos turísticos georreferenciados de Aysén: Parques Nacionales (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia), Santuario Capillas de Mármol, Termas de Puyuhuapi, Caleta Tortel y Glaciar Exploradores.',
-    example: 'Entrega las coordenadas geográficas (`lat`, `lng`), comuna INE, tipo de atractivo y atributos operativos o de visitación de cada hito turístico.',
-    officialSource: { name: 'SERNATUR / Subsecretaria de Turismo / CONAF', url: 'https://www.sernatur.cl/dataturismo/', frequency: 'Anual' },
+    definition: 'Catastro de hitos turísticos y puertas de entrada multimodales: **Aeródromo Balmaceda (`605.945` pax 2025; nuevo terminal `12.391 m²` oct 2026)**, **Pasos Fronterizos PDI (`350.257` controlados 2024: Jeinimeni `233.327`, Coyhaique Alto `63.045`, Huemules `53.885`)**, **Cruceros (`22.093` pax en `29` recaladas: Chacabuco `20.047`, Tortel `2.046`)** y **18 hitos georreferenciados**.',
+    example: 'Permite separar la visitación oficial **CONAF SNASPE (86.117)** del flujo en geositios, santuarios e hitos viales externos como **Capillas de Mármol (48.500)**, **Caleta Tortel (14.200)** y **Villa O\'Higgins (9.800)** (total atractivos `273.900`).',
+    officialSource: { name: 'SERNATUR / JAC / PDI / EMPORCHA / CONAF', url: 'https://www.sernatur.cl/dataturismo/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv',
     relatedNodeIds: [1, 2, 4, 14, 18],
     chartSpec: {
       type: 'doughnut',
-      title: 'Distribución de los 24 Nodos Turísticos por Categoría',
-      labels: ['Parques Nacionales', 'Reservas Nacionales', 'Monumentos y Santuarios', 'Hitos Escénicos / Glaciares', 'Polígonos ZOIT'],
+      title: 'Puertas de Entrada Multimodales y Nodos Turísticos de Aysén',
+      labels: ['Pasos PDI (2024)', 'Balmaceda JAC (2025)', 'Atractivos Regionales', 'Cruceros Chacabuco/Tortel'],
       datasets: [{
-        label: 'Nodos Turísticos',
-        data: [5, 4, 3, 8, 4],
-        backgroundColor: ['#00357f', '#0059c5', '#0284c7', '#0f766e', '#4338ca']
+        label: 'Flujo Anual Registrado',
+        data: [350257, 605945, 273900, 22093],
+        backgroundColor: ['#00357f', '#0059c5', '#0f766e', '#0284c7']
       }],
-      unit: 'nodos'
+      unit: 'personas'
     },
     tableColumns: ['Atractivo / Hito Turístico', 'Comuna', 'Tipo de Atractivo', 'Detalle Operativo', 'Coordenadas'],
     tableRows: (wp06.nodos_georreferenciados || []).slice(0, 8).map(n => {
@@ -987,16 +1016,16 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Coordenadas geográficas exactas (lat, lng) de los 24 hitos turísticos auditados',
-        'Jerarquizacion turistica SERNATUR (atractivos internacionales, nacionales y regionales)',
-        'Tipo de equipamiento y estacionalidad de acceso terrestre/marítimo',
-        'Conexion con la traza de la Carretera Austral (Ruta 7)'
+        'Coordenadas geográficas exactas (lat, lng) de hitos turísticos y porterías SNASPE',
+        'Pasos fronterizos PDI (Jeinimeni 233.327, Coyhaique Alto 63.045, Huemules 53.885)',
+        'Cruceros Chacabuco (20 recaladas / 20.047 pax) y Tortel (9 / 2.046 pax)',
+        'Subsidios MTT de barcazas ($19.460 M 2024 a ~$25.400 M 2025-2026): Queulat, La Tehuelche y Ronchi/Pitipulla'
       ],
       suggestedCrossings: [
-        'Cruce con Red Vial Ruta 7 (Nodo #18) para calcular distancia y estado de carpeta',
-        'Cruce con Telecomunicaciones FOA (Nodo #14) para mapear cobertura celular'
+        'Cruce con Red Vial Ruta 7 (Nodo #18)',
+        'Cruce con Telecomunicaciones FOA (Nodo #14)'
       ],
-      totalRecordsInFullBase: '24 hitos turisticos georreferenciados en data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv'
+      totalRecordsInFullBase: '18 hitos georreferenciados y puertas multimodales en data/systemic/06_turismo_sernatur_conaf.json'
     }
   },
 
@@ -1397,7 +1426,7 @@ const rawNodos = [
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
         label: '% Hogares con Internet Fija (SUBTEL Jun-2026)',
-        data: comunasBase.map(c => Number((wp11ByIne[String(c.comuna_ine)] || {}).conectividad_digital?.cobertura_fibra_hogar_pct) || 0),
+        data: comunasBase.map(c => Number((100 - (Number((wp11ByIne[String(c.comuna_ine)] || {}).conectividad_digital?.hogares_sin_internet_fijo_pct) || 0)).toFixed(1))),
         backgroundColor: '#4338ca'
       }],
       unit: '% hogares'
@@ -1693,17 +1722,17 @@ const rawNodos = [
     hubId: 'inversion',
     title: 'Empresas, Empleo y Ventas por Rubro (SII)',
     definition: 'Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)**: número de empresas con iniciación de actividades, trabajadores dependientes informados, ventas anuales en UF y peso del empleo público.',
-    example: 'En la región operan **9.540 empresas formales**, con **7.167 microempresas (75,1%)**, **1.928 pequeñas (20,2%)**, **372 medianas (3,9%)** y **73 grandes empresas (0,8%)**, declarando **131.520 Miles de UF** en ventas anuales.',
+    example: 'En la región operan **13.453 empresas con casa matriz regional** y **35.832 trabajadores dependientes informados** (**SII Año Comercial 2025, act. oct. 2026**): **10.117 microempresas (75,2%)**, **2.718 pequeñas (20,2%)**, **515 medianas (3,8%)** y **103 grandes (0,8%)**, con **1.483 empresas** en Rubro I Alojamiento y Comidas (`11,0%` regional) y **131.520 Miles de UF** en ventas.',
     officialSource: { name: 'Servicio de Impuestos Internos (SII) — Estadisticas Tributarias', url: 'https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/04_inversion_seia_economia_comunas.csv',
     relatedNodeIds: [1, 7, 10, 19],
     chartSpec: {
       type: 'doughnut',
-      title: 'Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 9.540 Total)',
+      title: 'Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 13.453 Total)',
       labels: ['Microempresas (1-9 trab.)', 'Pequeñas empresas (10-49)', 'Medianas empresas (50-199)', 'Grandes empresas (200+)'],
       datasets: [{
         label: 'Empresas Activas',
-        data: [7167, 1928, 372, 73],
+        data: [10117, 2718, 515, 103],
         backgroundColor: ['#0059c5', '#0284c7', '#0f766e', '#f59e0b']
       }],
       unit: 'empresas'
@@ -1724,7 +1753,7 @@ const rawNodos = [
     canvasPreview: {
       availableDimensions: [
         'Estadísticas tributarias oficiales del SII por rubro económico y tramo de venta',
-        '9.540 empresas activas en la Región de Aysén',
+        '13.453 empresas con casa matriz y 35.832 trabajadores en Aysén (SII)',
         'Trabajadores dependientes formales registrados ante el SII',
         'Peso relativo del empleo público vs. privado en cada comuna'
       ],
@@ -2695,7 +2724,7 @@ const rawNodos = [
     id: 40,
     hubId: 'gobernanza',
     title: 'Red Vial Austral (Ruta 7), Conectividad Marítima y Aeródromos',
-    definition: 'Infraestructura multimodal de integración territorial: longitud de **Red Vial Total Comunal (`red_vial_total_km`)**, porcentaje de **pavimentación (`red_vial_pavimentada_pct`)**, trazado troncal de Carretera Austral (**Ruta 7 pavimentada y en ripio**), nivel de **dependencia de barcaza (0–3)**, largo de pista de **aeródromos DGAC**, tráfico aéreo de **Balmaceda JAC (682.000 pasajeros en 2026)** y carga portuaria transferida (**EMPORCHA**).',
+    definition: 'Infraestructura multimodal de integración territorial: longitud de **Red Vial Total Comunal (`red_vial_total_km`)**, porcentaje de **pavimentación (`red_vial_pavimentada_pct`)**, trazado troncal de Carretera Austral (**Ruta 7 pavimentada y en ripio**), nivel de **dependencia de barcaza (0–3)**, largo de pista de **aeródromos DGAC**, tráfico aéreo de **Balmaceda JAC (605.945 pasajeros en 2025; nuevo terminal 12.391 m² en oct. 2026)** y carga portuaria transferida (**EMPORCHA**).',
     example: 'La pavimentación vial fluctúa entre **43,9%** (Guaitecas) y **41,1%** (Coyhaique) frente a menos de **4%** en Tortel (`3,9%`) y O\'Higgins (`3,8%`), donde el nivel de dependencia de barcaza alcanza 2 y 3 respectivamente.',
     officialSource: { name: 'MOP Vialidad / MTT DTPR / DGAC-JAC / EMPORCHA', url: 'https://www.vialidad.mop.gob.cl/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/01_gob_poder_finanzas_comunas.csv',
@@ -3943,10 +3972,22 @@ function buildComunaRows() {
       empresas_sii: Number((g4.estructura_empresarial_sii || {}).numero_empresas_activas) || 0,
       trabajadores_sii: Number((g4.estructura_empresarial_sii || {}).trabajadores_dependientes_sii) || 0,
       prestadores_sernatur: Number((g6.oferta_sernatur || {}).prestadores_registrados_total) || 0,
+      alojamientos_turisticos_rnpst_n: Number((g6.oferta_sernatur || {}).alojamientos_turisticos_sernatur) || 0,
+      operadores_aventura_rnpst_n: Number((g6.oferta_sernatur || {}).operadores_turismo_aventura) || 0,
+      guias_turismo_rnpst_n: Number((g6.oferta_sernatur || {}).guias_turismo_registrados) || 0,
+      restaurantes_turisticos_rnpst_n: Number((g6.oferta_sernatur || {}).restaurantes_turisticos_rnpst) || 0,
+      prestadores_vigencia_patente_pct: Number((g6.oferta_sernatur || {}).prestadores_vigencia_patente_pct) || 0,
       camas_turisticas: Number((g6.oferta_sernatur || {}).capacidad_camas_estimada) || 0,
       pernoctaciones_emat: Number((g6.demanda_emat_visitantes || {}).pernoctaciones_anuales_emat) || 0,
+      llegadas_turistas_emat_n: Number((g6.demanda_emat_visitantes || {}).llegadas_turistas_anual) || 0,
       zoit_nombre: (g6.zoit_y_atractivos || {}).nombre_zoit || '-',
       visitantes_snaspe: Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0,
+      visitantes_atractivos_totales_n: Number((g6.demanda_emat_visitantes || {}).visitantes_atractivos_totales_anual) || 0,
+      llegadas_por_cama_turistica: (() => {
+        const lleg = Number((g6.demanda_emat_visitantes || {}).llegadas_turistas_anual) || 0;
+        const camas = Number((g6.oferta_sernatur || {}).capacidad_camas_estimada) || 0;
+        return camas > 0 ? Number((lleg / camas).toFixed(1)) : 0;
+      })(),
       visitas_por_cama_turistica: (() => {
         const vis = Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0;
         const camas = Number((g6.oferta_sernatur || {}).capacidad_camas_estimada) || 0;
@@ -3960,25 +4001,25 @@ function buildComunaRows() {
       visitantes_extranjeros_pct: Number((g6.demanda_emat_visitantes || {}).proporcion_extranjeros_pct) || 0,
       visitantes_extranjeros_snaspe_n: Math.round(((Number((g6.demanda_emat_visitantes || {}).visitantes_snaspe_conaf_anual) || 0) * (Number((g6.demanda_emat_visitantes || {}).proporcion_extranjeros_pct) || 0)) / 100),
       tasa_ocupacion_estival_pct: Number((g6.demanda_emat_visitantes || {}).ocupacion_alta_enero_febrero_pct) || 0,
+      tasa_ocupacion_emat_estival_pct: Number((g6.demanda_emat_visitantes || {}).ocupacion_emat_estival_pct) || 0,
       tasa_ocupacion_invernal_pct: Number((g6.demanda_emat_visitantes || {}).ocupacion_baja_invierno_pct) || 0,
-      concentracion_estival_pct: (() => {
-        const oEst = Number((g6.demanda_emat_visitantes || {}).ocupacion_alta_enero_febrero_pct) || 0;
-        const oInv = Number((g6.demanda_emat_visitantes || {}).ocupacion_baja_invierno_pct) || 0;
-        return (oEst + oInv) > 0 ? Number(((oEst / (oEst + oInv)) * 100).toFixed(1)) : 0;
-      })(),
+      concentracion_estival_pct: Number((g6.demanda_emat_visitantes || {}).concentracion_estival_dic_mar_pct) || 0,
       estadia_promedio_dias: Number((g6.demanda_emat_visitantes || {}).estancia_media_dias) || 0,
+      estadia_regional_viaje_dias: Number((g6.demanda_emat_visitantes || {}).estadia_regional_viaje_dias) || 10.0,
       gasto_diario_turista_usd: Number((g6.demanda_emat_visitantes || {}).gasto_diario_promedio_usd) || 0,
+      tarifa_adr_emat_clp: Number((g6.demanda_emat_visitantes || {}).tarifa_adr_emat_clp) || 0,
+      revpar_emat_clp: Number((g6.demanda_emat_visitantes || {}).revpar_emat_clp) || 0,
       tarifa_adr_estimada_usd: (() => {
-        const gasto = Number((g6.demanda_emat_visitantes || {}).gasto_diario_promedio_usd) || 0;
-        return gasto > 0 ? Math.round(gasto * 1.35) : 0;
+        const adrClp = Number((g6.demanda_emat_visitantes || {}).tarifa_adr_emat_clp) || 0;
+        return adrClp > 0 ? Number((adrClp / 950).toFixed(1)) : 0;
       })(),
       revpar_estimado_usd: (() => {
-        const gasto = Number((g6.demanda_emat_visitantes || {}).gasto_diario_promedio_usd) || 0;
-        const oEst = Number((g6.demanda_emat_visitantes || {}).ocupacion_alta_enero_febrero_pct) || 0;
-        const oInv = Number((g6.demanda_emat_visitantes || {}).ocupacion_baja_invierno_pct) || 0;
-        const adr = gasto > 0 ? Math.round(gasto * 1.35) : 0;
-        return adr > 0 ? Number((adr * ((oEst * 0.4 + oInv * 0.6) / 100)).toFixed(1)) : 0;
+        const revClp = Number((g6.demanda_emat_visitantes || {}).revpar_emat_clp) || 0;
+        return revClp > 0 ? Number((revClp / 950).toFixed(1)) : 0;
       })(),
+      empresas_act_turismo_sii_n: Number((g6.economia_act || {}).empresas_act_turismo_sii_n) || 0,
+      ventas_act_turismo_uf: Number((g6.economia_act || {}).ventas_act_turismo_uf) || 0,
+      empleo_act_turismo_n: Number((g6.economia_act || {}).empleo_act_turismo_n) || 0,
       largo_pista_aerodromo_m: LARGO_PISTA_AERODROMO_MAP[ine] || 0,
       operaciones_aerodromo_interior_anual: OPS_AERODROMO_INTERIOR_MAP[ine] || 0,
       camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
@@ -3997,8 +4038,8 @@ function buildComunaRows() {
       saidi_horas_anual: Number((g2.sistema_electrico || {}).horas_interrupcion_saidi_anual) || 0,
       tarifa_bt1_clp: Number((g2.sistema_electrico || {}).tarifa_residencial_bt1_clp_kwh) || 0,
       costo_diesel_aislado_clp: Number((g2.sistema_electrico || {}).costo_generacion_diesel_aislado_clp_kwh) || COSTO_DIESEL_AISLADO_MAP[ine] || 0,
-      internet_fijo_pct: (g11.conectividad_digital && Number.isFinite(Number(g11.conectividad_digital.cobertura_fibra_hogar_pct)))
-        ? Number(g11.conectividad_digital.cobertura_fibra_hogar_pct)
+      internet_fijo_pct: (g11.conectividad_digital && Number.isFinite(Number(g11.conectividad_digital.hogares_sin_internet_fijo_pct)))
+        ? Number((100 - Number(g11.conectividad_digital.hogares_sin_internet_fijo_pct)).toFixed(1))
         : (Number((g2.telecomunicaciones || {}).penetracion_internet_fijo_hogares_pct) || 0),
       biomasa_salmon_ton: Number((g3.concesiones_acuicolas || {}).biomasa_cosechada_ton_anual) || 0,
       antibioticos_ica_g_ton: Number((g3.concesiones_acuicolas || {}).indice_consumo_antibioticos_ica_g_ton) || 0,
@@ -4117,8 +4158,8 @@ function buildComunaRows() {
       camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
       postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
       camas_psiquiatricas_uhce: CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] !== undefined ? CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] : 0,
-      mediana_espera_especialidad_dias: ({ '11101': 235, '11102': 312, '11201': 254, '11202': 278, '11203': 318, '11401': 268, '11402': 292, '11301': 285, '11302': 304, '11303': 294 })[ine] || 284,
-      mediana_espera_quirurgica_dias: ({ '11101': 342, '11102': 425, '11201': 365, '11202': 388, '11203': 438, '11401': 378, '11402': 404, '11301': 392, '11302': 416, '11303': 402 })[ine] || 395,
+      mediana_espera_especialidad_dias: ({ '11101': 218, '11102': 334, '11201': 242, '11202': 274, '11203': 346, '11401': 262, '11402': 302, '11301': 269, '11302': 305, '11303': 288 })[ine] || 284,
+      mediana_espera_quirurgica_dias: ({ '11101': 318, '11102': 418, '11201': 354, '11202': 412, '11203': 468, '11401': 364, '11402': 424, '11301': 368, '11302': 436, '11303': 388 })[ine] || 395,
       tasa_mortalidad_cancer_gastrico_100k: ({ '11101': 16.2, '11102': 21.8, '11201': 17.5, '11202': 18.1, '11203': 16.8, '11401': 19.4, '11402': 21.2, '11301': 17.8, '11302': 18.0, '11303': 17.2 })[ine] || 18.4,
       tasa_mortalidad_cancer_vesicula_100k: ({ '11101': 10.8, '11102': 14.9, '11201': 12.1, '11202': 12.4, '11203': 13.5, '11401': 13.2, '11402': 14.2, '11301': 11.8, '11302': 11.6, '11303': 11.5 })[ine] || 12.6,
       tasa_mortalidad_suicidio_100k: ({ '11101': 13.4, '11102': 17.8, '11201': 15.6, '11202': 14.8, '11203': 16.2, '11401': 14.5, '11402': 16.8, '11301': 13.9, '11302': 14.2, '11303': 13.8 })[ine] || 15.1,
@@ -4268,6 +4309,29 @@ const holdings = (holdingsRaw.holdings || []).map(h => {
     filiales_y_ruts: h.filiales_y_ruts || []
   };
 });
+
+// Coleccion canonica de 19 Unidades SNASPE de Aysen (CONAF / Subturismo Oct 2025 / SBAP Ley 21.600)
+const unidadesSnaspe = [
+  { id: 'snaspe_pn_queulat', nombre: 'PN Queulat', categoria: 'Parque Nacional', comunas: 'Cisnes / Lago Verde', superficie_ha: 154093, visitantes_anuales_n: 25619, guardaparques_permanentes_n: 6, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 17245, hito_gestion: 'Reapertura senderos La Morrena y Laguna Témpanos (10 ene 2026, Res. N° 7/2026; $1.900 M$ ejecutados)' },
+  { id: 'snaspe_pn_patagonia', nombre: 'PN Patagonia', categoria: 'Parque Nacional', comunas: 'Cochrane / Chile Chico', superficie_ha: 304528, visitantes_anuales_n: 16453, guardaparques_permanentes_n: 8, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 4825, hito_gestion: 'Sectores Valle Chacabuco, Tamango y Jeinimeni / Cueva de las Manos (PDZE 2026–2028)' },
+  { id: 'snaspe_pn_cerro_castillo', nombre: 'PN Cerro Castillo', categoria: 'Parque Nacional', comunas: 'Río Ibáñez / Coyhaique', superficie_ha: 143502, visitantes_anuales_n: 13907, guardaparques_permanentes_n: 4, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 5350, hito_gestion: '1ª Área Protegida de Chile en la Lista Verde UICN (12 sept 2025); 3 GP + 1 admin' },
+  { id: 'snaspe_rn_coyhaique', nombre: 'RN Coyhaique', categoria: 'Reserva Nacional', comunas: 'Coyhaique', superficie_ha: 2150, visitantes_anuales_n: 13552, guardaparques_permanentes_n: 4, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Principal área silvestre periurbana de la capital regional' },
+  { id: 'snaspe_rn_rio_simpson', nombre: 'RN Río Simpson', categoria: 'Reserva Nacional', comunas: 'Aysén / Coyhaique', superficie_ha: 41621, visitantes_anuales_n: 7961, guardaparques_permanentes_n: 3, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Corredor Ruta 240 Coyhaique–Puerto Aysén' },
+  { id: 'snaspe_pn_laguna_san_rafael', nombre: 'PN Laguna San Rafael', categoria: 'Parque Nacional', comunas: 'Aysén / Río Ibáñez / Tortel / Chile Chico', superficie_ha: 1742000, visitantes_anuales_n: 5900, guardaparques_permanentes_n: 6, concesiones_salmon_dentro_n: 2, concesiones_salmon_parcial_o_borde_n: 8, superficie_salmon_ha: 3.0, inversion_pdze_mclp: 15591, hito_gestion: 'Cierre definitivo acceso frontal sobre hielo en Glaciar Exploradores (2 dic 2025, Corte Suprema ROL N° 7.477-2026); 2 concesiones Cooke dentro + 8 en borde Estero Cupquelán' },
+  { id: 'snaspe_mn_dos_lagunas', nombre: 'MN Dos Lagunas', categoria: 'Monumento Natural', comunas: 'Coyhaique', superficie_ha: 181, visitantes_anuales_n: 2638, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Ruta Coyhaique–Coyhaique Alto' },
+  { id: 'snaspe_rn_lago_carlota', nombre: 'RN Lago Carlota', categoria: 'Reserva Nacional', comunas: 'Coyhaique', superficie_ha: 27110, visitantes_anuales_n: 87, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Estepa andina en alto Ñirehuao (visitación acotada con registro permanente)' },
+  { id: 'snaspe_mn_cinco_hermanas', nombre: 'MN Cinco Hermanas', categoria: 'Monumento Natural', comunas: 'Aysén', superficie_ha: 228, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Guardaparque compartido con gestión insular; sin portería continua' },
+  { id: 'snaspe_rn_lago_rosselot', nombre: 'RN Lago Rosselot', categoria: 'Reserva Nacional', comunas: 'Cisnes / Lago Verde', superficie_ha: 12725, visitantes_anuales_n: 0, guardaparques_permanentes_n: 2, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Sin conteo oficial de portería publicado' },
+  { id: 'snaspe_rn_lago_las_torres', nombre: 'RN Lago Las Torres', categoria: 'Reserva Nacional', comunas: 'Lago Verde / Cisnes', superficie_ha: 16516, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Sin conteo oficial de portería en Ruta 7 Norte' },
+  { id: 'snaspe_rn_trapananda', nombre: 'RN Trapananda', categoria: 'Reserva Nacional', comunas: 'Coyhaique', superficie_ha: 2305, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Protección de cuenca media Mañihuales–Simpson' },
+  { id: 'snaspe_rn_manihuales', nombre: 'RN Mañihuales', categoria: 'Reserva Nacional', comunas: 'Aysén', superficie_ha: 3715, visitantes_anuales_n: 0, guardaparques_permanentes_n: 1, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Conservación forestal en cuenca Mañihuales' },
+  { id: 'snaspe_pn_isla_magdalena', nombre: 'PN Isla Magdalena', categoria: 'Parque Nacional', comunas: 'Cisnes', superficie_ha: 249712, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 4, concesiones_salmon_parcial_o_borde_n: 4, superficie_salmon_ha: 38.48, inversion_pdze_mclp: 0, hito_gestion: '4 concesiones salmón dentro (38,48 ha) + 4 parciales (26,35 ha); D.E. N° 146/2025 eliminó AAA para nuevas concesiones' },
+  { id: 'snaspe_pn_melimoyu', nombre: 'PN Melimoyu', categoria: 'Parque Nacional', comunas: 'Cisnes', superficie_ha: 105500, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'AAA marinas eliminadas por D.E. N° 146 del 31 jul 2025; sin guardaparques permanentes' },
+  { id: 'snaspe_pn_isla_guamblin', nombre: 'PN Isla Guamblin', categoria: 'Parque Nacional', comunas: 'Cisnes / Guaitecas', superficie_ha: 10625, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Acceso marítimo oceánico sin infraestructura ni dotación residente' },
+  { id: 'snaspe_rn_las_guaitecas', nombre: 'RN Las Guaitecas', categoria: 'Reserva Nacional', comunas: 'Guaitecas / Cisnes / Aysén', superficie_ha: 1097975, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 312, concesiones_salmon_parcial_o_borde_n: 1, superficie_salmon_ha: 2159.13, inversion_pdze_mclp: 0, hito_gestion: 'CONAF declara "no posee infraestructura"; 312 concesiones salmón totalmente dentro (2.159,13 ha, 77% indefinidas) + 1 parcial (6,77 ha)' },
+  { id: 'snaspe_rn_katalalixar', nombre: 'RN Katalalixar', categoria: 'Reserva Nacional', comunas: 'Tortel', superficie_ha: 674500, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: 'Archipiélago prístino sin infraestructura turística ni guardaparques residentes' },
+  { id: 'snaspe_pn_bernardo_ohiggins_aysen', nombre: 'PN Bernardo O\'Higgins (Sector Norte Aysén)', categoria: 'Parque Nacional', comunas: 'Tortel / O\'Higgins', superficie_ha: 1212000, visitantes_anuales_n: 0, guardaparques_permanentes_n: 0, concesiones_salmon_dentro_n: 0, concesiones_salmon_parcial_o_borde_n: 0, superficie_salmon_ha: 0, inversion_pdze_mclp: 0, hito_gestion: '3.525.901 ha birregional (28.499 visitas contabilizadas en Magallanes); D.E. N° 146/2025 eliminó AAA' }
+];
 
 // Coleccion canonica de 18 Barrios Acuicolas (ACS-17 a ACS-35) reconciliada 1:1 con comunas y padron 745
 const barriosAcs = [
@@ -4807,7 +4871,7 @@ if (fs.existsSync(jacRawPath)) {
     const isBalmaceda = nameAscii.includes('balmaceda');
     const isTenienteVidal = nameAscii.includes('teniente vidal');
     const pistaInfo = isBalmaceda
-      ? ' · Pista 2.501 m (Asfalto)'
+      ? ' · Pista 2.501 m (Asfalto) · Nuevo Terminal 12.391 m² (oct. 2026)'
       : (isTenienteVidal
         ? ' · Pista 1.500 m (Asfalto)'
         : (matchSpec ? ` · Pista ${matchSpec.pista_longitud_m} m (${matchSpec.carpeta})${matchSpec.vuelos_subsidiados_mtt ? ' · Vuelo subsidiado MTT' : ''}` : ''));
@@ -4822,7 +4886,7 @@ if (fs.existsSync(jacRawPath)) {
       localidad: isBalmaceda ? 'Balmaceda' : ae.comuna,
       lat: isBalmaceda ? -45.9160 : (isTenienteVidal ? -45.5940 : undefined),
       lon: isBalmaceda ? -71.6890 : (isTenienteVidal ? -72.1060 : undefined),
-      magnitudeValue: isBalmaceda ? 682000 : (isTenienteVidal ? 18200 : (ae.pasajeros_anuales || 3500)),
+      magnitudeValue: isBalmaceda ? 605945 : (isTenienteVidal ? 18200 : (ae.pasajeros_anuales || 3500)),
       magnitudeUnit: 'pasajeros/año',
       magnitudeLabel: 'Flujo Aereo Anual',
       titular: `DGAC / JAC (${ae.rol || 'Conectividad Aerea'}${pistaInfo})`,
@@ -6603,6 +6667,7 @@ const bundle = {
     balmaceda_pasajeros_jac: (wp11 && wp11.series_multianuales && wp11.series_multianuales.balmaceda_pasajeros_jac) || [],
     emporcha_toneladas: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_toneladas_transferidas) || [],
     emporcha_cruceros: (wp11 && wp11.series_multianuales && wp11.series_multianuales.emporcha_pasajeros_cruceros) || [],
+    pasos_fronterizos_pdi_aysen: (wp11 && wp11.series_multianuales && wp11.series_multianuales.pasos_fronterizos_pdi_aysen) || (wp06.resumen_regional && wp06.resumen_regional.pasos_fronterizos_pdi_2024) || {},
     pib_regional_nominal_mmclp: (() => {
       const sObj = (wp04.resumen_regional && Array.isArray(wp04.resumen_regional.series_historicas_regionales))
         ? wp04.resumen_regional.series_historicas_regionales.find(s => s.indicador === 'pib_regional_nominal_mmclp')
@@ -6731,6 +6796,7 @@ const bundle = {
   },
   concesionesPadronCompact,
   barriosAcs,
+  unidadesSnaspe,
   seriesAcuiculturaAnual: seriesAcuiculturaRaw.series_regionales || [],
   spatialLayersCatalog,
   spatialNodes,

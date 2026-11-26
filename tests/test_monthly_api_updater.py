@@ -442,15 +442,20 @@ class TestMonthlyWorkflow(unittest.TestCase):
         self.assertRegex(self.text, r"(?ms)^permissions:\s*\n\s+contents:\s*write")
 
     def test_required_steps_in_order(self):
-        order = ["python3 scripts/run_monthly_update.py",
-                 "python3 scripts/validate_data_lake.py",
+        order = ["fetch-depth: 2",
+                 "python3 scripts/run_monthly_update.py",
+                 "node scripts/obsidian_indicator_audit.cjs --against-git HEAD~1",
+                 "python3 scripts/validate_data_lake.py --all",
                  "node scripts/verify_bundle_sync.cjs",
-                 "git status --porcelain data/"]
+                 "node tests/test_obsidian_indicator_audit.cjs",
+                 "git status --porcelain data/ wiki/ auditoria_obsidian/"]
         positions = [self.text.find(s) for s in order]
         self.assertTrue(all(p >= 0 for p in positions), positions)
         self.assertEqual(positions, sorted(positions))
-        self.assertIn('git commit -m "chore(data): actualización mensual automática desde APIs oficiales"', self.text)
-        self.assertRegex(self.text, r"(?m)^\s+git push\s*$")
+        self.assertIn("data-ingest/corrida-", self.text)
+        self.assertIn("git push --force-with-lease origin", self.text)
+        self.assertIn("gh pr create", self.text)
+        self.assertIn("gh pr edit", self.text)
 
     def test_no_step_ignores_errors(self):
         self.assertNotIn("continue-on-error", self.text)

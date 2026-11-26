@@ -10,7 +10,7 @@ variables_clave:
   - ha_snaspe_por_guardaparque
 fuentes_oficiales:
   - "Corporación Nacional Forestal (CONAF) — Gerencia de Áreas Silvestres Protegidas"
-updated_at: "2026-11-23"
+updated_at: "2026-11-26"
 tags:
   - aysen-sistemico
   - nodo
@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Visitación anual registrada por CONAF en las unidades del Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE) por comuna: registro de ~38.000 visitas anuales al Parque Nacional Queulat (principal atractivo regional) y superficie comunal protegida. El Parque Nacional Queulat lidera el flujo regional con ~38.000 visitas anuales, conviviendo con una proporción de territorio protegido SNASPE que alcanza 87,4% en Tortel, 78,3% en O'Higgins y 71,2% en Cisnes.
+Visitación oficial en porterías CONAF SNASPE: 86.117 visitas anuales en las 19 áreas protegidas de Aysén (54% del territorio terrestre, atendidas por 41 guardaparques permanentes rumbo al SBAP Ley N° 21.600 en marzo de 2027), separando 273.900 visitas agregadas en atractivos no-SNASPE (Capillas de Mármol 48.500, Caleta Tortel 14.200). Destacan PN Queulat (25.619), PN Patagonia (16.453), PN Cerro Castillo (13.907; Lista Verde UICN sept. 2025), RN Coyhaique (13.552), RN Río Simpson (7.961) y PN Laguna San Rafael (5.900; cierre definitivo sobre hielo Glaciar Exploradores ratificado Corte Suprema ROL N° 7.477-2026). Persisten 318 concesiones salmoneras totalmente dentro de SNASPE (312 en RN Las Guaitecas).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Visitantes SNASPE | % Comuna en SNASPE | Superficie Protegida (ha) | Unidades SNASPE |
-| --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 38.500 | 19.2% | 139.971,8 | Reserva Nacional Coyhaique, Reserva Nacional Río Simpson |
-| [[comunas/lago_verde|Lago Verde]] | 1.800 | 34.5% | 187.069,3 | Parque Nacional Lago Rosselot (sector este), Reserva Nacional Lago Las Torres |
-| [[comunas/aysen|Aysén]] | 29.600 | 63.4% | 1.889.091,7 | Parque Nacional Laguna San Rafael, Reserva Nacional Río Simpson (sector poniente) |
-| [[comunas/cisnes|Cisnes]] | 64.200 | 71.2% | 1.145.821,6 | Parque Nacional Queulat, Parque Nacional Melimoyu |
-| [[comunas/guaitecas|Guaitecas]] | 2.400 | 45.8% | 28.423,5 | Reserva Nacional Las Guaitecas |
-| [[comunas/chile_chico|Chile Chico]] | 34.200 | 48.6% | 278.823,1 | Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 41.000 | 61.7% | 370.027,2 | Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael |
-| [[comunas/cochrane|Cochrane]] | 35.600 | 52.1% | 448.033,9 | Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango |
-| [[comunas/ohiggins|O'Higgins]] | 12.400 | 78.3% | 640.689,7 | Parque Nacional Bernardo O'Higgins (sector norte) |
-| [[comunas/tortel|Tortel]] | 14.200 | 87.4% | 1.722.706,4 | Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar |
+| Comuna | Visitantes Oficiales SNASPE | Visitantes Atractivos Totales | % Comuna en SNASPE | ha/Guardaparque | Unidades SNASPE |
+| --- | --- | --- | --- | --- | --- |
+| [[comunas/coyhaique|Coyhaique]] | 21.190 | 49.400 | 19,2% | 38.500 | Reserva Nacional Coyhaique, Reserva Nacional Río Simpson, Reserva Nacional Cerro Castillo (0 ha) |
+| [[comunas/lago_verde|Lago Verde]] | 0 | 4.200 | 34,5% | 82.000 | Parque Nacional Lago Rosselot (sector este), Reserva Nacional Lago Las Torres (0 ha) |
+| [[comunas/aysen|Aysén]] | 7.048 | 31.800 | 63,4% | 145.000 | Parque Nacional Laguna San Rafael, Reserva Nacional Río Simpson (sector poniente), Reserva Nacional Las Guaitecas (sector sur) (0 ha) |
+| [[comunas/cisnes|Cisnes]] | 25.619 | 48.200 | 71,2% | 168.000 | Parque Nacional Queulat, Parque Nacional Melimoyu, Parque Nacional Isla Magdalena (0 ha) |
+| [[comunas/guaitecas|Guaitecas]] | 0 | 3.800 | 45,8% | 95.000 | Reserva Nacional Las Guaitecas (0 ha) |
+| [[comunas/chile_chico|Chile Chico]] | 6.600 | 26.900 | 48,6% | 112.000 | Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni (0 ha) |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 15.807 | 65.400 | 61,7% | 86.000 | Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael, Santuario de la Naturaleza Capillas de Mármol (0 ha) |
+| [[comunas/cochrane|Cochrane]] | 9.853 | 20.200 | 52,1% | 142.000 | Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango (0 ha) |
+| [[comunas/ohiggins|O'Higgins]] | 0 | 9.800 | 78,3% | 210.000 | Parque Nacional Bernardo O'Higgins (sector norte) (0 ha) |
+| [[comunas/tortel|Tortel]] | 0 | 14.200 | 87,4% | 195.000 | Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar, Parque Nacional Laguna San Rafael (sector sur) (0 ha) |
 
 ## Metadatos de Procedencia Institucional
 

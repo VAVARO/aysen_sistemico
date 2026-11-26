@@ -367,7 +367,29 @@
     aporte_universidades_f4g_pct: 'Aporte Percibido de Universidades al Desarrollo F4_G (%)',
     proporcion_ciencia_endogena_pct: 'Proporción de Proyectos ANID con Ciencia Endógena (%)',
     matricula_educacion_superior_sies_n: 'Matrícula Educación Superior SIES por Sede Comunal (estudiantes)',
-    matricula_ed_superior_sies: 'Matrícula de Educación Superior SIES (estudiantes)'
+    matricula_ed_superior_sies: 'Matrícula de Educación Superior SIES (estudiantes)',
+    alojamientos_turisticos_rnpst_n: 'Alojamientos Turísticos Registrados RNPST (establecimientos)',
+    operadores_aventura_rnpst_n: 'Operadores de Turismo Aventura Registrados RNPST (operadores)',
+    guias_turismo_rnpst_n: 'Guías de Turismo Registrados RNPST (guías)',
+    restaurantes_turisticos_rnpst_n: 'Restaurantes Turísticos Registrados RNPST (restaurantes)',
+    prestadores_vigencia_patente_pct: 'Vigencia Formal de Patente en Prestadores RNPST (%)',
+    llegadas_turistas_emat_n: 'Llegadas de Pasajeros a Alojamientos EMAT INE 2025 (llegadas)',
+    visitantes_atractivos_totales_n: 'Visitantes a Atractivos Turísticos Totales SNASPE + Privados (visitas)',
+    llegadas_por_cama_turistica: 'Llegadas EMAT por Cama Turística Disponible (llegadas/cama)',
+    tasa_ocupacion_emat_estival_pct: 'Tasa de Ocupación Habitaciones INE EMAT Ene–Feb 2026 (%)',
+    estadia_regional_viaje_dias: 'Estadía Media del Viaje Turístico en Aysén SIT UACh (días)',
+    tarifa_adr_emat_clp: 'Tarifa Promedio Diaria EMAT Real 2025 ($ CLP)',
+    revpar_emat_clp: 'Ingreso por Habitación Disponible EMAT Real 2025 ($ CLP)',
+    empresas_act_turismo_sii_n: 'Empresas en Actividades Características del Turismo SII (empresas)',
+    ventas_act_turismo_uf: 'Ventas Anuales en Actividades Características del Turismo SII (UF)',
+    empleo_act_turismo_n: 'Empleo Dependiente Informado en ACT Turismo SII (empleos)',
+    snaspe_superficie_ha: 'Superficie Protegida SNASPE por Unidad (ha CONAF)',
+    snaspe_visitantes_anuales_n: 'Visitantes Anuales Oficiales CONAF por Unidad SNASPE (visitas)',
+    snaspe_guardaparques_permanentes_n: 'Guardaparques Permanentes CONAF por Unidad SNASPE',
+    snaspe_concesiones_salmon_dentro_n: 'Concesiones Salmoneras Dentro de Unidad SNASPE (SUBPESCA)',
+    snaspe_superficie_salmon_ha: 'Superficie Acuícola Dentro de Unidad SNASPE (ha)',
+    snaspe_inversion_pdze_mclp: 'Inversión Habilitante PDZE por Unidad SNASPE (M$ CLP)',
+    pasos_fronterizos_pdi_aysen: 'Control Migratorio Pasos Fronterizos PDI Aysén (controles)'
   };
 
   // ============================================================================
@@ -949,7 +971,24 @@
     revpar_estimado_usd: ['revpar', 'ingreso por habitacion disponible', 'revenue per available room'],
     largo_pista_aerodromo_m: ['largo de pista', 'longitud de pista', 'pista aerodromo', 'metros de pista', 'capacidad de pista', 'runway length'],
     operaciones_aerodromo_interior_anual: ['operaciones aerodromos', 'aerodromos interiores', 'aerotaxis', 'vuelos subsidiados aerodromo', 'frecuencia vuelos interiores'],
-    prestadores_sernatur: ['prestadores turisticos', 'sernatur', 'oferta turistica'],
+    prestadores_sernatur: ['prestadores turisticos', 'sernatur', 'oferta turistica', 'rnpst'],
+    alojamientos_turisticos_rnpst_n: ['alojamientos rnpst', 'alojamientos sernatur', 'hoteles cabanas registrados'],
+    operadores_aventura_rnpst_n: ['operadores turismo aventura', 'aventura rnpst'],
+    guias_turismo_rnpst_n: ['guias de turismo rnpst', 'guias registrados sernatur'],
+    restaurantes_turisticos_rnpst_n: ['restaurantes turisticos rnpst'],
+    prestadores_vigencia_patente_pct: ['vigencia patente rnpst', 'patentes vigentes turismo', 'brecha vigencia rnpst'],
+    llegadas_turistas_emat_n: ['llegadas emat', 'llegadas de pasajeros turismo'],
+    visitantes_atractivos_totales_n: ['atractivos turisticos totales', 'capillas de marmol visitantes', 'flujo total atractivos'],
+    llegadas_por_cama_turistica: ['llegadas por cama', 'rotacion camas turisticas'],
+    tasa_ocupacion_emat_estival_pct: ['ocupacion emat verano', 'ocupacion continua emat'],
+    estadia_regional_viaje_dias: ['estadia regional viaje', 'encuesta balmaceda uach', 'duracion viaje regional'],
+    tarifa_adr_emat_clp: ['adr clp', 'tarifa adr emat', 'adr pesos'],
+    revpar_emat_clp: ['revpar clp', 'revpar emat', 'revpar pesos'],
+    empresas_act_turismo_sii_n: ['empresas act turismo', 'actividades caracteristicas del turismo', 'rubro i sii'],
+    ventas_act_turismo_uf: ['ventas act turismo', 'facturacion turismo uf'],
+    empleo_act_turismo_n: ['empleo act turismo', 'ocupados turismo', 'informalidad turismo'],
+    snaspe_visitantes_anuales_n: ['unidades snaspe', 'visitantes por unidad snaspe', 'sbap snaspe', 'lista verde uicn', 'glaciar exploradores', 'rol 7477'],
+    pasos_fronterizos_pdi_aysen: ['pasos fronterizos pdi', 'control migratorio pdi', 'jeinimeni', 'coyhaique alto', 'huemules'],
     hogares_lena_pct: ['calefaccionan con lena', 'hogares que calefaccionan con lena', 'uso de lena', 'calefaccion lena', 'calefaccion a lena', 'firewood', 'firewood heating', 'wood heating', 'heating dependency', 'firewood heating dependency'],
     dias_sobre_norma_mp25: ['contaminacion critica mp25', 'contaminacion critica mp2.5', 'mp2.5', 'pm2.5', 'mp25', 'pm25', 'dias con contaminacion', 'calidad del aire', 'material particulado', 'critical days', 'air pollution', 'air quality'],
     saidi_horas_anual: ['saidi', 'cortes de luz', 'apagones', 'sin luz', 'se corta la luz', 'cortes de electricidad', 'interrupcion electrica', 'calidad electrica', 'corte electrico saidi', 'horas de corte electrico'],
@@ -6633,9 +6672,12 @@
       const lastEmp = empRows[empRows.length - 1] || { periodo: '2026', toneladas_totales: 495000, carga_transbordadores: 269500, carga_comercial: 123400, graneles_mineros: 72800, acuicultura_pesca: 29300 };
       const firstEmp = empRows[0] || { periodo: '2018', toneladas_totales: 385200 };
       const empGrowth = firstEmp.toneladas_totales > 0 ? (((lastEmp.toneladas_totales - firstEmp.toneladas_totales) / firstEmp.toneladas_totales) * 100) : 28.5;
+      const jac2018 = jacByYr.get('2018') || 592000;
+      const jac2020 = jacByYr.get('2020') || 252810;
+      const jac2025 = jacByYr.get('2025') || 605945;
       const cSources = resolveSourcesForKeys(['balmaceda_pasajeros_jac', 'emporcha_toneladas']);
       const res = {
-        reply: `Entre ${firstEmp.periodo} y ${lastEmp.periodo}, las toneladas transferidas por EMPORCHA en Puerto Chacabuco crecieron +${fmtNumber(empGrowth, 1)}% (${fmtNumber(firstEmp.toneladas_totales)} a ${fmtNumber(lastEmp.toneladas_totales)} ton), mientras el Aeródromo Balmaceda (JAC) pasó de 530.000 pasajeros en 2018 (caída a 240.000 en 2020) a 682.000 pasajeros en 2026. Desglose EMPORCHA ${lastEmp.periodo} (${fmtNumber(lastEmp.toneladas_totales)} ton): ${fmtNumber(lastEmp.carga_transbordadores)} ton en transbordadores/rodados, ${fmtNumber(lastEmp.carga_comercial)} ton comercial general, ${fmtNumber(lastEmp.graneles_mineros)} ton graneles mineros y ${fmtNumber(lastEmp.acuicultura_pesca)} ton acuicultura/pesca.`,
+        reply: `Entre ${firstEmp.periodo} y ${lastEmp.periodo}, las toneladas transferidas por EMPORCHA en Puerto Chacabuco crecieron +${fmtNumber(empGrowth, 1)}% (${fmtNumber(firstEmp.toneladas_totales)} a ${fmtNumber(lastEmp.toneladas_totales)} ton), mientras el Aeródromo Balmaceda (JAC) pasó de ${fmtNumber(jac2018)} pasajeros en 2018 (caída a ${fmtNumber(jac2020)} en 2020) a ${fmtNumber(jac2025)} pasajeros totales en 2025 (10° aeropuerto de Chile; nuevo terminal de 12.391 m² inaugurado el 2 oct. 2026). Desglose EMPORCHA ${lastEmp.periodo} (${fmtNumber(lastEmp.toneladas_totales)} ton): ${fmtNumber(lastEmp.carga_transbordadores)} ton en transbordadores/rodados, ${fmtNumber(lastEmp.carga_comercial)} ton comercial general, ${fmtNumber(lastEmp.graneles_mineros)} ton graneles mineros y ${fmtNumber(lastEmp.acuicultura_pesca)} ton acuicultura/pesca.`,
         chart: {
           render: true,
           type: 'line',
@@ -6678,7 +6720,7 @@
       const pasosList = Array.isArray(atit.puntos_control_fronterizo) ? atit.puntos_control_fronterizo.join(', ') : 'Paso Huemules, Paso Jeinimeni, Paso Coyhaique Alto, Paso Roballos';
       const bSources = resolveSourcesForKeys(['dependencia_barcaza_nivel', 'tiempo_viaje_coyhaique_hrs', 'distancia_coyhaique_km', 'gasolina_93_clp']);
       const res = {
-        reply: `Resiliencia de Barcazas Subsidiadas MTT y Corredores ATIT: El Fiordo Mitchell (Puerto Yungay–Río Bravo, barcaza Padre Antonio Ronchi, ${mitchell.frecuencia_nominal_cruces_diarios || 6} cruces diarios) constituye un punto único de falla con 100% de corte vehicular y rodado para Villa O'Higgins ante fallas o carena; el Lago General Carrera opera con La Tehuelche/Pilchero (14 frec/sem, 2,25 hrs) y Ruta Cordillera CAM-01 conecta Melinka–Cisnes–Chacabuco (2–3 viajes/sem, 32 hrs).${rutasResumen ? ' Detalle tarifas/operación: ' + rutasResumen + '.' : ''} Vía corredor binacional ATIT 1974 (RN40 argentina y Paso Cardenal Samoré hacia ${pasosList}), nevadas prolongadas amenazan desabastecimiento de GLP e insumos frescos en 5–7 días.`,
+        reply: `Resiliencia de Barcazas Subsidiadas MTT y Pasos Fronterizos PDI/ATIT: El MTT destinó $19.460 millones en 2024 a subsidios de conectividad en Aysén (subiendo +30% a ~$25.400 millones en 2025–2026 para 61 servicios terrestres, 22 marítimos, 6 lacustres, 4 aéreos y 2 fluviales). Rutas críticas: (1) Canal Moraleda / Litoral Norte con Barcaza Queulat (Naviera Austral, 4ª frecuencia mensual Cisnes y semanal Melinka–Quellón); (2) Lago General Carrera (Puerto Ibáñez–Chile Chico) con La Tehuelche (13 frec/sem en verano; crisis por deuda de subsidio resuelta el 6 ene. 2026); (3) Fiordo Mitchell (Puerto Yungay–Río Bravo) con Padre Antonio Ronchi y Pitipulla (corte crítico >11 días desde el 19 feb. 2026 por falla mecánica de Pitipulla, afectando a Villa O'Higgins). En controles PDI permanentes (350.257 personas en 2024: 172.520 entradas y 177.737 salidas), lidera Paso Jeinimeni (233.327, 66,6%), seguido de Coyhaique Alto (63.045, 18,0%) y Huemules (53.885, 15,4%).${rutasResumen ? ' Detalle tarifas/operación: ' + rutasResumen + '.' : ''}`,
         chart: {
           render: true,
           type: 'scatter',
@@ -6712,6 +6754,52 @@
         },
         sources: bSources,
         relatedHub: 'III'
+      };
+      updateConversationState(memoryPacket, res);
+      return res;
+    }
+
+    // 2z. Consultas Forenses Especializadas Hub I (estadisticas.aysenpatagonia.cl, RNPST, ACT, PDI, SNASPE SBAP / Exploradores)
+    const asksHub1Forensic = matchedEntities.length === 0 && !asksBarcazasAtit && !asksBalmacedaEmporchaCargo &&
+      !/\b(visitas\s+por\s+cama|visits\s+to\s+available|presion\s+turistica|tourist\s+pressure|evolucion\s+de\s+visitas\s+a\s+parques|desde\s+2015)\b/i.test(qNorm) &&
+      (
+        /\b(estadisticas\.aysenpatagonia|aysenpatagonia\.cl|sietuc|barometro\s+n?°?\s*23|encuesta\s+balmaceda|uach\s+turismo|gasto\s+diario\s+nacional|gasto\s+diario\s+ee\.?uu\.?)\b/i.test(qNorm) ||
+        /\b(vigencia\s+de?\s*patente|patente\s+vencida|rnpst\s+1\.?728|brecha\s+rnpst|economia\s+act|actividades\s+caracteristicas\s+del\s+turismo|rubro\s+i\s+sii|informalidad\s+(?:del\s+)?turismo)\b/i.test(qNorm) ||
+        /\b(lista\s+verde\s+uicn|uicn|glaciar\s+exploradores|rol\s+7\.?477|corte\s+suprema\s+exploradores|ley\s+sbap|sbap\s+marzo\s+2027|19\s+unidades\s+snaspe|unidades\s+snaspe\s+conaf)\b/i.test(qNorm) ||
+        /\b(pasos\s+fronterizos\s+pdi|jeinimeni.*coyhaique\s+alto|350\.?257|terminal\s+(?:de\s+)?12\.?391|nuevo\s+terminal\s+balmaceda|605\.?945)\b/i.test(qNorm)
+      );
+    if (asksHub1Forensic) {
+      const fSources = resolveSourcesForKeys(['prestadores_sernatur', 'pernoctaciones_emat', 'visitantes_snaspe', 'balmaceda_pasajeros_jac']);
+      const isSnaspeGov = /lista\s+verde|uicn|exploradores|7\.?477|sbap|unidades\s+snaspe|guardaparques|concesiones/i.test(qNorm);
+      const isGateway = /pasos\s+fronterizos|pdi|jeinimeni|350\.?257|12\.?391|605\.?945|balmaceda|cruceros/i.test(qNorm);
+      const isRnpstAct = /rnpst|vigencia|patente|act|rubro\s+i|informalidad|3\.?152|11\.?569|5\.?270/i.test(qNorm);
+      let replyText = '';
+      if (isSnaspeGov) {
+        replyText = 'Sistema SNASPE en Aysén (CONAF / transición al SBAP Ley N° 21.600 en marzo de 2027): comprende 19 áreas protegidas oficiales (54% de la superficie terrestre regional) con 86.117 visitas registradas en porterías CONAF (no 284.000, que mezclaba atractivos no-SNASPE como Capillas de Mármol y Tortel) y 41 guardaparques permanentes en 10 de 19 unidades. Por unidad destacan PN Queulat (25.619 visitas), PN Patagonia (16.453), PN Cerro Castillo (13.907; 1ª Área Protegida de Chile en la Lista Verde UICN, 12 sept. 2025), RN Coyhaique (13.552), RN Río Simpson (7.961), PN Laguna San Rafael (5.900; cierre definitivo sobre hielo en Glaciar Exploradores desde 2 dic. 2025 ratificado por Corte Suprema ROL N° 7.477-2026) y MN Dos Lagunas (2.638). Persisten 318 concesiones salmoneras totalmente dentro de límites SNASPE (312 en RN Las Guaitecas, 4 en PN Isla Magdalena y 2 en PN Laguna San Rafael).';
+      } else if (isGateway) {
+        replyText = 'Puertas de Entrada Multimodales de Aysén: (1) Aeródromo Balmaceda (JAC / MOP): 605.945 pasajeros bidireccionales totales en 2025 (10° aeropuerto de Chile; 286.666 entre ene–may 2026), con nuevo terminal de 12.391 m² inaugurado el 2 de octubre de 2026 (>1.000.000 pax/año); (2) Pasos Fronterizos PDI (2024): 350.257 controles en los 3 pasos permanentes (Paso Jeinimeni 233.327 [66,6%], Coyhaique Alto 63.045 [18,0%], Huemules 53.885 [15,4%]), con 108.703 llegadas de turistas extranjeros pernoctantes (+50,5% YoY); (3) Cruceros 2024-2025 (EMPORCHA/Sernatur): 22.093 cruceristas en 29 recaladas (Puerto Chacabuco 20.047 en 20 recaladas; Caleta Tortel 2.046 en 9 recaladas).';
+      } else if (isRnpstAct) {
+        replyText = 'Catastro RNPST SERNATUR y Economía Turística ACT (SII / INE / Subtrab ene. 2026): Aysén registra 1.728 servicios inscritos (General Carrera 676 [39,1%], Coyhaique 515 [29,8%], Aysén 366 [21,2%], Capitán Prat 171 [9,9%]). Alerta crítica de vigencia de patentes: solo 31,6% de los registros históricos en ZOIT Chelenko (291 de 922) y 11,8% en ZOIT Aysén Patagonia Queulat (36 de 307; excluye a la comuna de Aysén) mantienen patente vigente al día. En economía ACT (Anuario Sernatur 2024 / SII 2025): 3.152 empresas ACT facturan 11.569.086 UF anuales (con 1.483 empresas del Rubro I SII, 11,0% del tejido empresarial regional) y generan 5.270 empleos promedio (entre 4.660 en invierno y 5.890 en verano, con 47,4% de informalidad estival).';
+      } else {
+        replyText = 'Observatorio Estadísticas Aysén Patagonia (estadisticas.aysenpatagonia.cl / INE EMAT 2025 / SIT UACh Balmaceda / Barómetro N° 23 TA 2026 / SIETUC OIT): En 2025 se registraron 364.039 pernoctaciones y 196.611 llegadas EMAT (estancia por establecimiento 1,85 noches; ocupación anual en habitaciones 24,5% [42,1% ene–feb vs. 76,3%–76,8% en fechas pico SERNATUR]; ADR real $70.213 CLP y RevPAR $17.203 CLP). Según la Encuesta de Salida Balmaceda 2025 (SIT/UACh, n=400), la estadía media del viaje regional alcanza 10,0 días con gasto total promedio de $500.852 CLP: el turista nacional (83%) gasta $51.551 CLP/día y el internacional (17%) hasta $186.713 CLP/día (EE.UU.) y $111.431 CLP/día (Francia).';
+      }
+      const res = {
+        reply: replyText,
+        chart: {
+          render: true,
+          type: 'bar',
+          varX: isSnaspeGov ? 'visitantes_snaspe' : (isRnpstAct ? 'prestadores_sernatur' : 'pernoctaciones_emat'),
+          yKey: isSnaspeGov ? 'visitantes_snaspe' : (isRnpstAct ? 'prestadores_sernatur' : 'pernoctaciones_emat'),
+          title: isSnaspeGov
+            ? 'Visitación Oficial CONAF SNASPE por Comuna (Total Regional: 86.117)'
+            : (isRnpstAct
+              ? 'Prestadores Turísticos Registrados RNPST SERNATUR por Comuna (Total: 1.728)'
+              : 'Pernoctaciones Turísticas Consolidadas INE EMAT 2025 por Comuna (Total: 364.039)'),
+          sourceText: fSources.map(s => s.institucion).join(' · '),
+          excludeCoyhaique: false
+        },
+        sources: fSources,
+        relatedHub: 'I'
       };
       updateConversationState(memoryPacket, res);
       return res;
@@ -6826,7 +6914,7 @@
       const res = {
         reply: isEnglishQuery
           ? `By individual CONAF SNASPE National Park (${last.anio}, total ${last.visitantes_snaspe_total.toLocaleString('en-US')} visits): PN Queulat leads with ${last.pn_queulat.toLocaleString('en-US')} visits, followed by PN Laguna San Rafael (${last.pn_laguna_san_rafael.toLocaleString('en-US')}), PN Cerro Castillo (${last.pn_cerro_castillo.toLocaleString('en-US')}), and PN Patagonia (${last.pn_patagonia.toLocaleString('en-US')}), plus ${last.otras_unidades.toLocaleString('en-US')} in other protected reserves.`
-          : `Desglose oficial CONAF SNASPE por parque nacional (${last.anio}, total ${fmtNumber(last.visitantes_snaspe_total)} visitas): lidera PN Queulat (${fmtNumber(last.pn_queulat)}), seguido de PN Laguna San Rafael (${fmtNumber(last.pn_laguna_san_rafael)}), PN Cerro Castillo (${fmtNumber(last.pn_cerro_castillo)}) y PN Patagonia (${fmtNumber(last.pn_patagonia)}), más ${fmtNumber(last.otras_unidades)} visitas en otras unidades regionales.`,
+          : `Desglose oficial CONAF SNASPE por parque nacional (${last.anio}, total oficial en porterías CONAF: ${fmtNumber(last.visitantes_snaspe_total)} visitas en 19 unidades atendidas por 41 guardaparques permanentes rumbo al SBAP marzo 2027): lidera PN Queulat (${fmtNumber(last.pn_queulat)}), seguido de PN Patagonia (${fmtNumber(last.pn_patagonia)}), PN Cerro Castillo (${fmtNumber(last.pn_cerro_castillo)}, 1ª Área Protegida de Chile en Lista Verde UICN), RN Coyhaique/otras unidades (${fmtNumber(last.otras_unidades)}) y PN Laguna San Rafael (${fmtNumber(last.pn_laguna_san_rafael)}, con cierre definitivo sobre hielo del Glaciar Exploradores ratificado por Corte Suprema ROL N° 7.477-2026).`,
         chart: {
           render: true,
           type: 'line',

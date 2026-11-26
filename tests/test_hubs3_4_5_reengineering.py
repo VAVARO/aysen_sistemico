@@ -121,7 +121,7 @@ class TestHubs345Reengineering(unittest.TestCase):
         self.assertIsNotNone(balm)
         self.assertAlmostEqual(balm["lat"], -45.9160, places=3)
         self.assertAlmostEqual(balm["lon"], -71.6890, places=3)
-        self.assertEqual(balm["magnitudeValue"], 682000)
+        self.assertEqual(balm["magnitudeValue"], 605945)
         vidales = [x for x in aero if "teniente vidal" in x.get("nombre", "").lower()]
         self.assertEqual(len(vidales), 1)
 
@@ -132,8 +132,8 @@ class TestHubs345Reengineering(unittest.TestCase):
 
         n20 = self.bundle["nodesById"]["20"]
         emp_bins = n20["chartSpec"]["datasets"][0]["data"]
-        self.assertEqual(emp_bins, [7167, 1928, 372, 73])
-        self.assertEqual(sum(emp_bins), 9540)
+        self.assertEqual(emp_bins, [10117, 2718, 515, 103])
+        self.assertEqual(sum(emp_bins), 13453)
         self.assertIn("Ventas Anuales (Miles de UF)", n20["tableColumns"])
 
         n21 = self.bundle["nodesById"]["21"]

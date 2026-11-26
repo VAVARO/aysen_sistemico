@@ -507,8 +507,11 @@ class MonthlyUpdater:
             return False
         steps = [
             ("recompilar data/aysen_hubs_data.js", [node, "scripts/build_aysen_hubs_bundle.cjs"]),
+            ("precalcular hallazgos estadisticos", [sys.executable, "scripts/precompute_curated_discoveries.py"]),
+            ("validar y compilar wiki Obsidian", [node, "scripts/obsidian_wiki_bridge.cjs", "--lint", "--compile", "--no-vault-sync"]),
             ("validar Data Lake", [sys.executable, "scripts/validate_data_lake.py", "--all"]),
             ("verificar sincronia del bundle", [node, "scripts/verify_bundle_sync.cjs"]),
+            ("generar auditoria Obsidian por indicador", [node, "scripts/obsidian_indicator_audit.cjs", "--sync-to-vault", "--no-fail-missing-vault"]),
         ]
         env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
         for label, cmd in steps:

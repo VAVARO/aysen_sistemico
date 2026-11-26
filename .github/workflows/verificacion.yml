@@ -101,6 +101,12 @@ jobs:
       - name: Suite Coherencia Metodologica y CECAN Atlas (16 tests)
         run: python tests/test_coherencia_metodologia_y_cecan.py
 
+      - name: Suite Auditoria Obsidian por Indicador (11 evals)
+        run: node tests/test_obsidian_indicator_audit.cjs
+
+      - name: Suites Hub II Salmonicultura y Mapa Espacial Multicapa
+        run: python -m unittest tests/test_hub1_turismo_and_cross_hub_integrity.py tests/test_hub2_salmonicultura_reengineering.py tests/test_spatial_multilayer_map.py
+
       - name: Suite Pytest Completa (398 tests)
         run: |
           python -m pytest -v --tb=short tests/ 2>&1 | tee pytest_output.txt || {

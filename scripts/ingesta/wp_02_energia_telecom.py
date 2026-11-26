@@ -40,16 +40,16 @@ from scripts.ingesta.build_historical_raw_data import (
 )
 
 WP02_INDICATORS = {
-    "11101": {"saidi": 11.4, "bt1": 224.0, "diesel_cost": 0.0, "internet": 61.2},
-    "11102": {"saidi": 54.2, "bt1": 258.0, "diesel_cost": 560.0, "internet": 3.8},
-    "11201": {"saidi": 13.8, "bt1": 222.0, "diesel_cost": 0.0, "internet": 44.5},
-    "11202": {"saidi": 28.5, "bt1": 235.0, "diesel_cost": 380.0, "internet": 24.8},
-    "11203": {"saidi": 62.1, "bt1": 265.0, "diesel_cost": 640.0, "internet": 5.4},
-    "11401": {"saidi": 19.3, "bt1": 228.0, "diesel_cost": 0.0, "internet": 27.2},
-    "11402": {"saidi": 24.6, "bt1": 231.0, "diesel_cost": 0.0, "internet": 16.8},
-    "11301": {"saidi": 22.8, "bt1": 230.0, "diesel_cost": 0.0, "internet": 21.5},
-    "11302": {"saidi": 58.7, "bt1": 262.0, "diesel_cost": 620.0, "internet": 2.6},
-    "11303": {"saidi": 64.3, "bt1": 268.0, "diesel_cost": 680.0, "internet": 4.1},
+    "11101": {"saidi": 11.4, "bt1": 224.0, "diesel_cost": 0.0, "internet": 75.5},
+    "11102": {"saidi": 54.2, "bt1": 258.0, "diesel_cost": 560.0, "internet": 17.6},
+    "11201": {"saidi": 13.8, "bt1": 222.0, "diesel_cost": 0.0, "internet": 61.8},
+    "11202": {"saidi": 28.5, "bt1": 235.0, "diesel_cost": 380.0, "internet": 43.6},
+    "11203": {"saidi": 62.1, "bt1": 265.0, "diesel_cost": 640.0, "internet": 31.8},
+    "11401": {"saidi": 19.3, "bt1": 228.0, "diesel_cost": 0.0, "internet": 47.9},
+    "11402": {"saidi": 24.6, "bt1": 231.0, "diesel_cost": 0.0, "internet": 35.2},
+    "11301": {"saidi": 22.8, "bt1": 230.0, "diesel_cost": 0.0, "internet": 51.4},
+    "11302": {"saidi": 58.7, "bt1": 262.0, "diesel_cost": 620.0, "internet": 23.2},
+    "11303": {"saidi": 64.3, "bt1": 268.0, "diesel_cost": 680.0, "internet": 27.5},
 }
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 AysenAtlasIngest/1.0"
@@ -1401,8 +1401,11 @@ def generate_systemic_dataset():
         "nodos_georreferenciados": nodos_georreferenciados
     }
 
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(dataset, f, indent=2, ensure_ascii=False)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(OUTPUT_JSON, dataset)
 
     print(f"\n[OK] Generado dataset sistémico: {OUTPUT_JSON.relative_to(REPO_ROOT)}")
     print(f"     Comunas: {len(comunas_data)} | Nodos: {len(nodos_georreferenciados)}")

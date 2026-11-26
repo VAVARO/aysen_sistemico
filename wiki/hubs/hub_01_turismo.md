@@ -17,7 +17,7 @@ fuentes_oficiales:
   - "SUBTURISMO — Zonas de Interés Turístico (ZOIT)"
   - "INE — Encuesta Mensual de Alojamiento Turístico (EMAT)"
   - "CONAF — Estadísticas de Visitación SNASPE"
-updated_at: "2026-11-23"
+updated_at: "2026-11-26"
 tags:
   - aysen-sistemico
   - hub
@@ -28,22 +28,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-El Hub I (Turismo y Áreas Silvestres Protegidas) articula la oferta formal registrada en SERNATUR (1.161 prestadores y 10.040 camas turísticas regionales), las 3 Zonas de Interés Turístico (ZOIT) vigentes (Chelenko, Aysén Patagonia Queulat y Provincia de los Glaciares), las 361.942 pernoctaciones anuales medidas por INE EMAT y la visitación a las 18 unidades del SNASPE administradas por CONAF. Coyhaique concentra la mayor planta alojativa (412 prestadores y 3.420 camas), mientras que Aysén (Parque Nacional Laguna San Rafael), Cisnes (Parque Nacional Queulat) y Río Ibáñez (Parque Nacional Cerro Castillo y Capillas de Mármol) soportan la mayor presión estacional sobre infraestructura crítica y áreas protegidas.
+El Hub I (Turismo y Áreas Silvestres Protegidas) consolida los 1.728 servicios registrados en el RNPST SERNATUR (10.040 camas formales, con brecha de vigencia de patentes de 31,6% en ZOIT Chelenko y 11,8% en ZOIT Queulat), las 364.039 pernoctaciones y 196.611 llegadas anuales consolidadas en INE EMAT 2025 (estancia media de 1,85 noches por establecimiento vs. 10,0 días de viaje regional en Aeródromo Balmaceda; ADR real de $70.213 CLP y RevPAR de $17.203 CLP) y las 86.117 visitas oficiales registradas en porterías CONAF a las 19 unidades del SNASPE atendidas por 41 guardaparques permanentes rumbo al SBAP marzo 2027. En economía sectorial ACT suman 3.152 empresas, 11.569.086 UF en ventas y 5.270 empleos promedio, y la comuna de Aysén (11201) queda formalmente excluida del polígono legal de la ZOIT Aysén Patagonia Queulat (solo Cisnes y Lago Verde).
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Prestadores Turísticos SERNATUR | Capacidad de Camas Turísticas | Pernoctaciones Turísticas Anuales (EMAT) | Visitantes Anuales a Parques SNASPE | Superficie Protegida SNASPE (%) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 412 | 3.420 | 208.500 | 38.500 | 19,2 |
-| [[comunas/lago_verde|Lago Verde]] | 24 | 165 | 6.800 | 1.800 | 34,5 |
-| [[comunas/aysen|Aysén]] | 185 | 1.850 | 98.400 | 29.600 | 63,4 |
-| [[comunas/cisnes|Cisnes]] | 138 | 1.240 | 74.200 | 64.200 | 71,2 |
-| [[comunas/guaitecas|Guaitecas]] | 21 | 145 | 5.400 | 2.400 | 45,8 |
-| [[comunas/chile_chico|Chile Chico]] | 95 | 780 | 58.600 | 34.200 | 48,6 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 132 | 1.150 | 86.200 | 41.000 | 61,7 |
-| [[comunas/cochrane|Cochrane]] | 83 | 690 | 49.200 | 35.600 | 52,1 |
-| [[comunas/ohiggins|O'Higgins]] | 29 | 240 | 16.400 | 12.400 | 78,3 |
-| [[comunas/tortel|Tortel]] | 42 | 360 | 27.000 | 14.200 | 87,4 |
+| [[comunas/coyhaique|Coyhaique]] | 489 | 3.420 | 138.400 | 21.190 | 19,2 |
+| [[comunas/lago_verde|Lago Verde]] | 26 | 165 | 2.800 | 0 | 34,5 |
+| [[comunas/aysen|Aysén]] | 126 | 1.850 | 58.200 | 7.048 | 63,4 |
+| [[comunas/cisnes|Cisnes]] | 215 | 1.240 | 44.800 | 25.619 | 71,2 |
+| [[comunas/guaitecas|Guaitecas]] | 25 | 145 | 2.300 | 0 | 45,8 |
+| [[comunas/chile_chico|Chile Chico]] | 231 | 780 | 26.500 | 6.600 | 48,6 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 445 | 1.150 | 51.400 | 15.807 | 61,7 |
+| [[comunas/cochrane|Cochrane]] | 96 | 690 | 22.800 | 9.853 | 52,1 |
+| [[comunas/ohiggins|O'Higgins]] | 31 | 240 | 6.439 | 0 | 78,3 |
+| [[comunas/tortel|Tortel]] | 44 | 360 | 10.400 | 0 | 87,4 |
 
 ## Nodos Satélite del Hub
 

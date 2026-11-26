@@ -1836,8 +1836,11 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         "nodos_georreferenciados": nodos,
     }
 
-    with open(out_json, "w", encoding="utf-8") as f:
-        json.dump(dataset, f, indent=2, ensure_ascii=False)
+    import sys as _nd_sys
+    if str(Path(__file__).resolve().parent) not in _nd_sys.path:
+        _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from non_destructive_merge import save_systemic_json_non_destructive
+    save_systemic_json_non_destructive(out_json, dataset)
 
     print(f"  [OK] Archivo sistémico generado exitosamente: {out_json.relative_to(REPO_ROOT)}")
     print(f"       Comunas cubiertas: {len(por_comuna_list)}/10")

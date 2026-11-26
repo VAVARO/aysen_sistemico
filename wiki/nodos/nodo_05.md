@@ -9,7 +9,7 @@ variables_clave:
   - largo_pista_aerodromo_m
 fuentes_oficiales:
   - "SERNATUR / Subsecretaría de Turismo / CONAF"
-updated_at: "2026-11-23"
+updated_at: "2026-11-26"
 tags:
   - aysen-sistemico
   - nodo
@@ -20,7 +20,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de hitos turísticos georreferenciados de Aysén: Parques Nacionales (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia), Santuario Capillas de Mármol, Termas de Puyuhuapi, Caleta Tortel y Glaciar Exploradores. Entrega las coordenadas geográficas (`lat`, `lng`), comuna INE, tipo de atractivo y atributos operativos o de visitación de cada hito turístico.
+Catastro de hitos turísticos georreferenciados, puertas de entrada multimodales (Aeródromo Balmaceda 605.945 pax en 2025 y nuevo terminal de 12.391 m² en oct. 2026; Pasos Fronterizos PDI 350.257 controles; Cruceros 22.093 pax en 29 recaladas) y economía ACT (3.152 empresas, 11.569.086 UF y 5.270 empleos): Parques Nacionales (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia), Santuario Capillas de Mármol, Termas de Puyuhuapi, Caleta Tortel y Glaciar Exploradores. Entrega las coordenadas geográficas (`lat`, `lng`), comuna INE, tipo de atractivo y atributos operativos o de visitación de cada hito turístico.
 
 ## Indicadores Comunales Verificados
 

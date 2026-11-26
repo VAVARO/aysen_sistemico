@@ -1509,7 +1509,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
 
             const b9 = await client.query('Compara Puerto Aysén, Bahía Murta y Caleta Andrade con Providencia en PIB per cápita y dime el top 15 de comunas con más empresas');
             assert(b9 && b9.reply && b9.reply.includes('Nota:'), 'B9 debe incluir nota de localidades: ' + b9.reply);
-            assert(b9.reply.includes('Aysén registra 2.100') && b9.reply.includes('Río Ibáñez registra 238'), 'B9 debe resumir SII de Aysen (2.100) y Rio Ibanez (238): ' + b9.reply);
+            assert(b9.reply.includes('Aysén registra 2.840') && b9.reply.includes('Río Ibáñez registra 418'), 'B9 debe resumir SII de Aysen (2.840) y Rio Ibanez (418): ' + b9.reply);
             assert(b9.reply.includes('10 comunas'), 'B9 debe aclarar total de 10 comunas ante pedido top 15: ' + b9.reply);
 
             // 10. Perfiles Verticales Salmonicultura v2.2 (Proveedor B2B, Productor, Ambientalista, Tomador de Decision)
@@ -1577,7 +1577,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             client.clearConversationMemory();
             const t1 = await client.query('We are evaluating a high-end eco-lodge investment in Aysén. Which communes have the highest ratio of National Park visits (SNASPE) to available tourist beds or overnight stays, and how does summer tourist pressure compare across the region?');
             assert(t1 && t1.reply, 'Prueba 1 sin reply');
-            assert(t1.reply.includes('51.8') && t1.reply.includes('51.7') && t1.reply.includes('51.6') && t1.reply.includes('28.1'), 'Prueba 1 debe responder en ingles con cifras exactas: ' + t1.reply);
+            assert(t1.reply.includes('20.7') && t1.reply.includes('14.3') && t1.reply.includes('13.7') && t1.reply.includes('28.1'), 'Prueba 1 debe responder en ingles con cifras exactas: ' + t1.reply);
             assert(/led by|Reg\\. avg/i.test(t1.reply), 'Prueba 1 debe redactarse en ingles: ' + t1.reply);
             assert.notStrictEqual(t1.chart.varY, 'prestadores_sernatur', 'Prueba 1 no debe caer en prestadores_sernatur');
             assert.strictEqual(t1.chart.varX, 'visitas_por_cama_turistica');
@@ -1601,18 +1601,18 @@ class TestOmniRouteConsultor(unittest.TestCase):
             const t3 = await client.query('¿Cómo ha evolucionado el flujo anual de pasajeros en el Aeródromo Balmaceda y los pasajeros de cruceros turísticos entre 2015 y 2026 frente a las visitas a parques nacionales?');
             assert(t3 && t3.chart && t3.chart.type === 'line' && t3.chart.customTemporalSeries, 'Prueba 3 debe devolver customTemporalSeries multiserie');
             assert.strictEqual(t3.chart.customTemporalSeries.datasets.length, 3, 'Prueba 3 debe incluir 3 datasets');
-            assert(t3.reply.includes('Balmaceda') && t3.reply.includes('420.000') && t3.reply.includes('682.000') && t3.reply.includes('28.500'), 'Prueba 3 debe incluir cifras reales de JAC y EMPORCHA: ' + t3.reply);
+            assert(t3.reply.includes('Balmaceda') && t3.reply.includes('446.000') && t3.reply.includes('620.000') && t3.reply.includes('22.093'), 'Prueba 3 debe incluir cifras reales de JAC y EMPORCHA: ' + t3.reply);
 
             // Estacionalidad mensual EMAT y Desglose por Parque Nacional
             client.clearConversationMemory();
             const t4 = await client.query('¿Cuál es la estacionalidad mensual de enero a diciembre del turismo y ocupación hotelera EMAT en Aysén?');
             assert(t4 && t4.chart && t4.chart.customTemporalSeries && t4.chart.customTemporalSeries.labels.length === 12, 'Estacionalidad debe retornar 12 meses');
-            assert(t4.reply.includes('Febrero') && t4.reply.includes('52.100'), 'Estacionalidad debe citar pico de Febrero');
+            assert(t4.reply.includes('Febrero') && t4.reply.includes('69.909'), 'Estacionalidad debe citar pico de Febrero');
 
             client.clearConversationMemory();
             const t5 = await client.query('¿Cuál es el desglose por parque nacional de las visitas SNASPE (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia) entre 2015 y 2026?');
             assert(t5 && t5.chart && t5.chart.customTemporalSeries && t5.chart.customTemporalSeries.datasets.length === 4, 'Desglose parques debe graficar 4 parques');
-            assert(t5.reply.includes('Queulat') && t5.reply.includes('58.500'), 'Desglose parques debe reportar PN Queulat');
+            assert(t5.reply.includes('Queulat') && t5.reply.includes('25.619'), 'Desglose parques debe reportar PN Queulat');
 
             console.log('DUE_DILIGENCE_TURISMO_CONSULTOR_OK');
         })().catch(err => { console.error(err); process.exit(1); });
@@ -1661,7 +1661,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             assert(Array.isArray(qTour.chart.focusComunas) && qTour.chart.focusComunas.includes('Río Ibáñez') && qTour.chart.focusComunas.includes('Cisnes'),
                 'Debe incluir Río Ibáñez y Cisnes en focusComunas: ' + JSON.stringify(qTour.chart.focusComunas));
             assert(qTour.chart.type !== 'scatter' && qTour.chart.type !== 'line', 'Con 2 comunas no debe usar scatter ni secuestrar a line: ' + qTour.chart.type);
-            assert(qTour.reply.includes('120,9') && !qTour.reply.includes('1.209'), 'gasto_diario_turista_usd debe reportar Prom 120,9 y no Tot 1.209: ' + qTour.reply);
+            assert(qTour.reply.includes('89,1') && !qTour.reply.includes('891'), 'gasto_diario_turista_usd debe reportar Prom 89,1 y no Tot 891: ' + qTour.reply);
 
             // 2. Anti-falso-positivo Comuna de Aysen (11201) en "10 comunas de Aysen" y "Universidad de Aysen"
             const q10Com = await client.query('Compara la tasa de pobreza multidimensional, la matrícula escolar, el índice de envejecimiento y la ruralidad en las 10 comunas de Aysén');

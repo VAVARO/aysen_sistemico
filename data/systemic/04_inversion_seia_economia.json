@@ -84,11 +84,11 @@
     "total_proyectos_en_calificacion": 22,
     "inversion_aprobada_total_mmusd": 3355.5,
     "inversion_en_evaluacion_total_mmusd": 168.7,
-    "total_empresas_activas_sii": 9365,
-    "total_trabajadores_dependientes_sii": 56475,
+    "total_empresas_activas_sii": 13453,
+    "total_trabajadores_dependientes_sii": 35832,
     "ventas_anuales_totales_miles_uf": 131520,
     "peso_empleo_publico_regional_promedio_pct": 34.5,
-    "pernoctaciones_anuales_regionales_total": 502400,
+    "pernoctaciones_anuales_regionales_total": 364039,
     "licitaciones_mercado_publico_regional_total_mclp": 105400,
     "total_nodos_georreferenciados": 20,
     "series_historicas_regionales": [
@@ -767,8 +767,8 @@
           "proyecto_emblematico_reciente": "Parque Eólico Alto Baguales y Ampliación (Edelaysen, 18.5 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 5535,
-          "trabajadores_dependientes_sii": 33650,
+          "numero_empresas_activas": 7620,
+          "trabajadores_dependientes_sii": 20950,
           "ventas_anuales_estimadas_miles_uf": 48500,
           "rubros_principales": [
             "Comercio al por mayor y al por menor",
@@ -794,7 +794,7 @@
           "tasa_ocupacion_estimada_pct": 62.5,
           "informalidad_laboral_estimada_pct": 21.2,
           "destino_turistico_sernatur": "Coyhaique y Cuenca del Río Simpson",
-          "pernoctaciones_anuales_estimadas": 185000,
+          "pernoctaciones_anuales_estimadas": 138400,
           "licitaciones_mercado_publico_anual_mclp": 38500,
           "tasa_conmutacion_laboral_interregional_pct": 12.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -1098,8 +1098,8 @@
           "proyecto_emblematico_reciente": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde (MOP Vialidad, 15.2 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 76,
-          "trabajadores_dependientes_sii": 460,
+          "numero_empresas_activas": 118,
+          "trabajadores_dependientes_sii": 132,
           "ventas_anuales_estimadas_miles_uf": 450,
           "rubros_principales": [
             "Ganadería Bovina y Ovina",
@@ -1125,7 +1125,7 @@
           "tasa_ocupacion_estimada_pct": 54.8,
           "informalidad_laboral_estimada_pct": 31.0,
           "destino_turistico_sernatur": "Carretera Austral Norte - Valle de Lago Verde y La Tapera",
-          "pernoctaciones_anuales_estimadas": 4200,
+          "pernoctaciones_anuales_estimadas": 2800,
           "licitaciones_mercado_publico_anual_mclp": 2400,
           "tasa_conmutacion_laboral_interregional_pct": 18.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -1429,8 +1429,8 @@
           "proyecto_emblematico_reciente": "Planta de Procesamiento y Congelado Chacabuco (AquaChile, 35.0 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 2100,
-          "trabajadores_dependientes_sii": 12780,
+          "numero_empresas_activas": 2840,
+          "trabajadores_dependientes_sii": 9890,
           "ventas_anuales_estimadas_miles_uf": 56200,
           "rubros_principales": [
             "Pesca y Acuicultura Industrial de Salmónidos",
@@ -1456,7 +1456,7 @@
           "tasa_ocupacion_estimada_pct": 64.0,
           "informalidad_laboral_estimada_pct": 19.5,
           "destino_turistico_sernatur": "Puerto Aysén - Fiordos y Parque Nacional Laguna San Rafael",
-          "pernoctaciones_anuales_estimadas": 92000,
+          "pernoctaciones_anuales_estimadas": 58200,
           "licitaciones_mercado_publico_anual_mclp": 24800,
           "tasa_conmutacion_laboral_interregional_pct": 42.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -1760,8 +1760,8 @@
           "proyecto_emblematico_reciente": "Centro de Engorda Canal Jacaf Sur (Australis Mar, 8.5 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 620,
-          "trabajadores_dependientes_sii": 3770,
+          "numero_empresas_activas": 895,
+          "trabajadores_dependientes_sii": 1920,
           "ventas_anuales_estimadas_miles_uf": 9100,
           "rubros_principales": [
             "Cultivo y Cosecha de Salmónidos",
@@ -1787,7 +1787,7 @@
           "tasa_ocupacion_estimada_pct": 61.5,
           "informalidad_laboral_estimada_pct": 23.0,
           "destino_turistico_sernatur": "Carretera Austral Norte - Puyuhuapi, Queulat y Raúl Marín Balmaceda",
-          "pernoctaciones_anuales_estimadas": 48000,
+          "pernoctaciones_anuales_estimadas": 44800,
           "licitaciones_mercado_publico_anual_mclp": 8900,
           "tasa_conmutacion_laboral_interregional_pct": 45.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -2091,8 +2091,8 @@
           "proyecto_emblematico_reciente": "Conservación Rampa y Muelle Conectividad Melinka (MOP DOP, 8.4 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 171,
-          "trabajadores_dependientes_sii": 1040,
+          "numero_empresas_activas": 242,
+          "trabajadores_dependientes_sii": 265,
           "ventas_anuales_estimadas_miles_uf": 2450,
           "rubros_principales": [
             "Pesca Artesanal y Extracción Bentónica",
@@ -2118,7 +2118,7 @@
           "tasa_ocupacion_estimada_pct": 58.2,
           "informalidad_laboral_estimada_pct": 35.4,
           "destino_turistico_sernatur": "Archipiélago de las Guaitecas - Melinka y Ruta de la Ballena Azul",
-          "pernoctaciones_anuales_estimadas": 9500,
+          "pernoctaciones_anuales_estimadas": 2300,
           "licitaciones_mercado_publico_anual_mclp": 4600,
           "tasa_conmutacion_laboral_interregional_pct": 38.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -2422,8 +2422,8 @@
           "proyecto_emblematico_reciente": "Continuidad Operacional Minera Cerro Bayo (Compañía Minera Cerro Bayo, 32.0 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 400,
-          "trabajadores_dependientes_sii": 2430,
+          "numero_empresas_activas": 648,
+          "trabajadores_dependientes_sii": 1140,
           "ventas_anuales_estimadas_miles_uf": 6300,
           "rubros_principales": [
             "Explotación de Minas y Canteras",
@@ -2449,7 +2449,7 @@
           "tasa_ocupacion_estimada_pct": 60.4,
           "informalidad_laboral_estimada_pct": 24.1,
           "destino_turistico_sernatur": "Cuenca del Lago General Carrera - Chile Chico y Sector Jeinimeni",
-          "pernoctaciones_anuales_estimadas": 34000,
+          "pernoctaciones_anuales_estimadas": 26500,
           "licitaciones_mercado_publico_anual_mclp": 7400,
           "tasa_conmutacion_laboral_interregional_pct": 22.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -2753,8 +2753,8 @@
           "proyecto_emblematico_reciente": "Pavimentación y Obras de Seguridad Ruta 7 Villa Cerro Castillo - Bahía Murta (MOP, 34.5 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 238,
-          "trabajadores_dependientes_sii": 1445,
+          "numero_empresas_activas": 418,
+          "trabajadores_dependientes_sii": 512,
           "ventas_anuales_estimadas_miles_uf": 3200,
           "rubros_principales": [
             "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento",
@@ -2780,7 +2780,7 @@
           "tasa_ocupacion_estimada_pct": 59.0,
           "informalidad_laboral_estimada_pct": 27.8,
           "destino_turistico_sernatur": "Chelenko - Santuario de la Naturaleza Capillas de Mármol y PN Cerro Castillo",
-          "pernoctaciones_anuales_estimadas": 68000,
+          "pernoctaciones_anuales_estimadas": 51400,
           "licitaciones_mercado_publico_anual_mclp": 5800,
           "tasa_conmutacion_laboral_interregional_pct": 20.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -3084,8 +3084,8 @@
           "proyecto_emblematico_reciente": "Mini Central Hidroeléctrica San Victorino (Edelaysen, 9.8 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 295,
-          "trabajadores_dependientes_sii": 1790,
+          "numero_empresas_activas": 492,
+          "trabajadores_dependientes_sii": 845,
           "ventas_anuales_estimadas_miles_uf": 4400,
           "rubros_principales": [
             "Administración Pública Provincial y Municipal",
@@ -3111,7 +3111,7 @@
           "tasa_ocupacion_estimada_pct": 60.1,
           "informalidad_laboral_estimada_pct": 22.6,
           "destino_turistico_sernatur": "Provincia de los Glaciares - Parque Nacional Patagonia (Tamango y Valle Chacabuco)",
-          "pernoctaciones_anuales_estimadas": 31000,
+          "pernoctaciones_anuales_estimadas": 22800,
           "licitaciones_mercado_publico_anual_mclp": 6500,
           "tasa_conmutacion_laboral_interregional_pct": 24.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -3415,8 +3415,8 @@
           "proyecto_emblematico_reciente": "Rampa de Embarque y Explanada Bahía Bahamóndez (MOP DOP, 8.2 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 57,
-          "trabajadores_dependientes_sii": 345,
+          "numero_empresas_activas": 96,
+          "trabajadores_dependientes_sii": 98,
           "ventas_anuales_estimadas_miles_uf": 530,
           "rubros_principales": [
             "Administración Municipal y Servicios Estatales",
@@ -3442,7 +3442,7 @@
           "tasa_ocupacion_estimada_pct": 56.4,
           "informalidad_laboral_estimada_pct": 28.5,
           "destino_turistico_sernatur": "Extremo Sur Carretera Austral - Glaciar O'Higgins y Campos de Hielo Sur",
-          "pernoctaciones_anuales_estimadas": 12500,
+          "pernoctaciones_anuales_estimadas": 6439,
           "licitaciones_mercado_publico_anual_mclp": 3100,
           "tasa_conmutacion_laboral_interregional_pct": 30.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"
@@ -3746,8 +3746,8 @@
           "proyecto_emblematico_reciente": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay (MOP DOP, 12.4 MM USD)"
         },
         "estructura_empresarial_sii": {
-          "numero_empresas_activas": 48,
-          "trabajadores_dependientes_sii": 295,
+          "numero_empresas_activas": 84,
+          "trabajadores_dependientes_sii": 80,
           "ventas_anuales_estimadas_miles_uf": 390,
           "rubros_principales": [
             "Administración Pública y Comunal",
@@ -3773,7 +3773,7 @@
           "tasa_ocupacion_estimada_pct": 53.8,
           "informalidad_laboral_estimada_pct": 32.0,
           "destino_turistico_sernatur": "Caleta Tortel - Fiordos del Baker, Puerto Yungay y Glaciar Steffens",
-          "pernoctaciones_anuales_estimadas": 18200,
+          "pernoctaciones_anuales_estimadas": 10400,
           "licitaciones_mercado_publico_anual_mclp": 3400,
           "tasa_conmutacion_laboral_interregional_pct": 25.0,
           "fuente_conmutacion": "Observatorio Laboral SENCE / INE ENE"

@@ -111,8 +111,8 @@ ARCGIS_TARGETS: List[Dict[str, Any]] = [
     {"key": "subpesca", "connector": "arcgis_subpesca", "nodes": [6],
      "raw_dir": "territorio_concesiones", "file": "subpesca_arcgis_live_snapshot.json",
      "candidates": [
+         "https://geoportal.subpesca.cl/server/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA_SALMONES/MapServer/0",
          "https://ide.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0",
-         "https://mapas.subpesca.cl/arcgis/rest/services/IDE_PUBLICO/SRMPUB_ACUICULTURA/MapServer/0",
      ]},
     {"key": "bbnn", "connector": "arcgis_bbnn", "nodes": [22],
      "raw_dir": "territorio_concesiones", "file": "bienes_nacionales_arcgis_live_snapshot.json",

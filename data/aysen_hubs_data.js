@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-25T19:04:22.560Z",
+  "generatedAt": "2026-11-26T13:05:42.825Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -12,7 +12,7 @@ window.AYSEN_HUBS_DATA = {
       "totalOfficialSources": 38,
       "totalHubs": 10,
       "totalNodes": 41,
-      "totalComunaVariables": 245
+      "totalComunaVariables": 260
     }
   },
   "hubs": [
@@ -22,12 +22,12 @@ window.AYSEN_HUBS_DATA = {
       "title": "I. Turismo & Áreas Silvestres",
       "shortTitle": "Turismo & Áreas Silvestres",
       "color": "#00357f",
-      "description": "Oferta registrada en **SERNATUR**, las **3 Zonas de Interés Turístico (ZOIT)** oficiales de Aysén (Chelenko, Aysén Patagonia Queulat, Provincia de los Glaciares), **361.942 pernoctaciones anuales registradas por INE EMAT** y **~38.000 visitas al Parque Nacional Queulat** (**CONAF SNASPE**).",
-      "example": "En **Coyhaique** operan **412 prestadores registrados** (3.420 camas), con ocupación de 76%-82% en enero-febrero y de 22%-32% en invierno.",
+      "description": "Oferta **RNPST SERNATUR (1.728 servicios)** y economía **ACT (3.152 empresas, 11,57 M UF, 5.270 empleos)**, las **3 Zonas de Interés Turístico (ZOIT)** reales (Chelenko, Aysén Patagonia Queulat [Cisnes y Lago Verde], Provincia de los Glaciares), **364.039 pernoctaciones y 196.611 llegadas** (INE EMAT 2025, ADR $70.213 CLP) y **86.117 visitas** oficiales CONAF en **19 unidades SNASPE** (54% del territorio, **41 guardaparques**).",
+      "example": "En **Coyhaique** se concentran **489 prestadores RNPST** (3.420 camas) y **138.400 pernoctaciones**, mientras el **PN Queulat (25.619 visitas)**, **PN Patagonia (16.453)** y **PN Cerro Castillo (13.907, Lista Verde UICN)** lideran la visitación SNASPE.",
       "csvFile": "data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv",
       "nodesFile": "data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv",
-      "sourceName": "SERNATUR / Subsecretaría de Turismo / INE EMAT / CONAF",
-      "sourceUrl": "https://www.sernatur.cl/dataturismo/",
+      "sourceName": "SERNATUR / Subsecretaría de Turismo / INE EMAT / CONAF / SIT Aysén",
+      "sourceUrl": "https://estadisticas.aysenpatagonia.cl/",
       "espejo_barometro": {
         "hub_id": "turismo",
         "total_preguntas": 3,
@@ -4651,10 +4651,10 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 4,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Catastro comunal de **servicios turísticos formales** inscritos en el Registro Nacional de Prestadores de SERNATUR: total de prestadores, alojamientos turísticos, operadores de turismo aventura, guías registrados y capacidad estimada en camas.",
-      "example": "**Coyhaique** lidera con **412 prestadores registrados** (178 alojamientos, 74 operadores de aventura y 3.420 camas), seguido por **Río Ibáñez**, **Aysén**, **Cisnes**, **Chile Chico** y **Cochrane**.",
+      "definition": "Catastro oficial **RNPST SERNATUR (1.728 servicios inscritos)**: alojamientos (`672`), guías (`379`), turismo aventura (`295`), restaurantes (`189`), brecha de **vigencia de patente** en ZOIT (`31,6%` vigente en Chelenko y `11,8%` en Queulat), más economía **ACT**: `3.152` empresas (`1.483` en Rubro I SII = `11,0%` regional), `11.569.086 UF` y `5.270` empleos (`47,4%` informalidad estival).",
+      "example": "**Coyhaique (489)** y **Río Ibáñez (445)** lideran el RNPST, seguidos por **Chile Chico (231)**, **Cisnes (215)** y **Aysén (126)**. En ZOIT Chelenko solo `291 de 922` inscritos históricos mantienen patente al día (`31,6%`) y en ZOIT Queulat `36 de 307` (`11,8%`).",
       "officialSource": {
-        "name": "Registro Nacional de Prestadores SERNATUR",
+        "name": "RNPST SERNATUR / Subtrab / SII ACT",
         "url": "https://serviciosturisticos.sernatur.cl/",
         "frequency": "Actualizacion mensual"
       },
@@ -4680,7 +4680,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "bar",
-        "title": "Prestadores de Servicios Turísticos Registrados por Comuna (SERNATUR)",
+        "title": "Servicios Turísticos Inscritos RNPST por Comuna (Total Regional: 1.728)",
         "labels": [
           "Coyhaique",
           "Lago Verde",
@@ -4695,18 +4695,18 @@ window.AYSEN_HUBS_DATA = {
         ],
         "datasets": [
           {
-            "label": "Prestadores Registrados",
+            "label": "Servicios RNPST (1.728)",
             "data": [
-              412,
-              24,
-              185,
-              138,
-              21,
-              95,
-              132,
-              83,
-              29,
-              42
+              489,
+              26,
+              126,
+              215,
+              25,
+              231,
+              445,
+              96,
+              31,
+              44
             ],
             "backgroundColor": "#00357f"
           }
@@ -4715,95 +4715,106 @@ window.AYSEN_HUBS_DATA = {
       },
       "tableColumns": [
         "Comuna",
-        "Prestadores Totales",
+        "Prestadores RNPST",
         "Alojamientos",
         "Turismo Aventura",
+        "% Patente Vigente",
         "Camas Estimadas"
       ],
       "tableRows": [
         [
           "Coyhaique",
-          "412",
-          "178",
-          "74",
+          "489",
+          "212",
+          "82",
+          "64.2%",
           "3.420"
         ],
         [
           "Lago Verde",
-          "24",
+          "26",
           "14",
-          "5",
+          "1",
+          "19.2%",
           "165"
         ],
         [
           "Aysén",
-          "185",
-          "82",
-          "31",
+          "126",
+          "56",
+          "20",
+          "52.4%",
           "1.850"
         ],
         [
           "Cisnes",
-          "138",
-          "68",
-          "28",
+          "215",
+          "108",
+          "26",
+          "11%",
           "1.240"
         ],
         [
           "Guaitecas",
-          "21",
-          "12",
-          "4",
+          "25",
+          "13",
+          "3",
+          "28%",
           "145"
         ],
         [
           "Chile Chico",
-          "95",
-          "45",
-          "22",
+          "231",
+          "78",
+          "36",
+          "34.2%",
           "780"
         ],
         [
           "Río Ibáñez",
-          "132",
-          "58",
-          "32",
+          "445",
+          "112",
+          "70",
+          "30.3%",
           "1.150"
         ],
         [
           "Cochrane",
-          "83",
-          "38",
-          "21",
+          "96",
+          "42",
+          "22",
+          "44.8%",
           "690"
         ],
         [
           "O'Higgins",
-          "29",
-          "15",
+          "31",
+          "16",
           "6",
+          "38.7%",
           "240"
         ],
         [
           "Tortel",
-          "42",
-          "20",
-          "11",
+          "44",
+          "21",
+          "10",
+          "40.9%",
           "360"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Desglose por tipología de servicios (alojamientos, turismo aventura, guías registrados, agencias de viaje)",
-          "Capacidad formal estimada en camas hoteleras por comuna",
-          "Distincion de Sellos de Calidad Turistica (Q) y Sustentabilidad (S)",
-          "Directorio formal de prestadores registrados ante SERNATUR"
+          "Catastro RNPST consolidado (1.728 servicios) por tipología: alojamientos, guías, aventura y restaurantes",
+          "Brecha de vigencia de patente municipal: 31,6% en ZOIT Chelenko y 11,8% en ZOIT Queulat",
+          "Economía ACT: 3.152 empresas SII, 1.483 Rubro I (11,0% regional), 11.569.086 UF y 5.270 empleos",
+          "Capacidad estimada en camas formales (10.040 camas)"
         ],
         "suggestedCrossings": [
-          "Cruce con Pernoctaciones y Estacionalidad EMAT (Nodo #03) para contrastar capacidad hotelera vs. ocupación",
-          "Cruce con Zonas de Interés Turístico (Nodo #02) para evaluar formalización de servicios en polígonos ZOIT"
+          "Cruce con Pernoctaciones y Estacionalidad EMAT (Nodo #03)",
+          "Cruce con Zonas de Interés Turístico (Nodo #02) para evaluar vigencia normativa ZOIT"
         ],
-        "totalRecordsInFullBase": "10 comunas con 19 columnas de oferta turistica formal en data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv"
+        "totalRecordsInFullBase": "10 comunas con desglose RNPST, vigencia y economía ACT en data/systemic/06_turismo_sernatur_conaf.json"
       }
     },
     {
@@ -4816,10 +4827,10 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 5,
       "metabolic_flow": "info",
       "algedonic_trigger": false,
-      "definition": "Delimitación comunal, atractivos ancla, vocación principal y cuellos de botella de las **3 Zonas de Interés Turístico (ZOIT)** decretadas oficialmente por la Subsecretaría de Turismo en la Región de Aysén: **ZOIT Chelenko**, **ZOIT Aysén Patagonia Queulat** (incorporando Lago Verde) y **ZOIT Provincia de los Glaciares**.",
-      "example": "Las 3 ZOIT decretadas articulan el territorio: **ZOIT Chelenko** (Río Ibáñez y Chile Chico), **ZOIT Aysén Patagonia Queulat** (Cisnes, Aysén y Lago Verde) y **ZOIT Provincia de los Glaciares** (Cochrane, O'Higgins y Tortel), mientras Coyhaique opera como nodo de servicios sin decreto ZOIT.",
+      "definition": "Delimitación legal de las **3 Zonas de Interés Turístico (ZOIT)** decretadas por Subturismo: **ZOIT Chelenko** (Chile Chico y Río Ibáñez), **ZOIT Aysén Patagonia Queulat** (**solo Cisnes y Lago Verde**) y **ZOIT Provincia de los Glaciares** (Cochrane, Tortel y O'Higgins). La comuna de **Aysén** no integra la ZOIT Queulat (`pertenece_a_zoit: false`), formando parte del Destino Priorizado SERNATUR Coyhaique–Puerto Aysén.",
+      "example": "**7 de 10 comunas** integran las 3 ZOIT decretadas (`Queulat 2`, `Chelenko 2`, `Glaciares 3`), mientras **Coyhaique, Aysén y Guaitecas** operan sin declaratoria ZOIT vigente. Planes de Acción ZOIT 2026–2030.",
       "officialSource": {
-        "name": "Subsecretaria de Turismo — ZOIT",
+        "name": "Subsecretaría de Turismo — ZOIT 2026–2030",
         "url": "https://www.subturismo.gob.cl/zoit/",
         "frequency": "Decretos plurianuales"
       },
@@ -4849,16 +4860,16 @@ window.AYSEN_HUBS_DATA = {
           "ZOIT Aysén Queulat",
           "ZOIT Chelenko",
           "ZOIT Prov. Glaciares",
-          "Zona Amortiguación (Sin ZOIT)"
+          "Sin Declaratoria ZOIT"
         ],
         "datasets": [
           {
             "label": "Comunas Articuladas",
             "data": [
-              3,
+              2,
               2,
               3,
-              2
+              3
             ],
             "backgroundColor": "#0284c7"
           }
@@ -4875,7 +4886,7 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
+          "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén)",
           "Hub receptor regional, pesca con mosca (fly fishing), gastronomía y turismo de eventos",
           "Reserva Nacional Coyhaique, Río Simpson (Pesca con Mosca)",
           "Estacionalidad invernal y dependencia de vuelos al Aeródromo Balmaceda"
@@ -4889,7 +4900,7 @@ window.AYSEN_HUBS_DATA = {
         ],
         [
           "Aysén",
-          "ZOIT Aysén Patagonia Queulat (Sector Sur)",
+          "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén y Portal Marítimo PN Laguna San Rafael)",
           "Navegación a fiordos y glaciares marítimos, senderismo y avistamiento de fauna",
           "Parque Nacional Laguna San Rafael, Bahía Acantilada",
           "Logística marítima costosa y meteorología marítima severa"
@@ -4946,16 +4957,16 @@ window.AYSEN_HUBS_DATA = {
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Polígonos oficiales de declaratoria y Decretos Supremos de las 3 ZOITs oficiales",
-          "Cartera de planes de acción interministeriales y vocaciones estratégicas",
-          "Catastro de 24 atractivos ancla y sitios de alta concurrencia",
-          "Análisis de brechas de infraestructura pública y cuellos de botella"
+          "Polígonos legales vigentes: Queulat (Cisnes, Lago Verde), Chelenko (Chile Chico, Río Ibáñez) y Glaciares (3 comunas sur)",
+          "Brecha de formalización vigente dentro de las ZOIT (Planes de Acción dic. 2025)",
+          "Puertas de entrada: Aeródromo Balmaceda (605.945 pax 2025), Pasos PDI (350.257 controlados) y Cruceros (22.093 pax)",
+          "Resiliencia de barcazas MTT (Queulat, La Tehuelche y Padre Antonio Ronchi / Pitipulla)"
         ],
         "suggestedCrossings": [
-          "Cruce con Inversión Pública FNDR (Nodo #18) para monitorear financiamiento del plan ZOIT",
-          "Cruce con Pavimentacion Ruta 7 (Nodo #18) para evaluar accesibilidad a los atractivos ancla"
+          "Cruce con Inversión Pública FNDR (Nodo #18)",
+          "Cruce con Red Vial Ruta 7 y Conectividad Multimodal (Nodo #40)"
         ],
-        "totalRecordsInFullBase": "3 zonas ZOIT oficiales consolidadas y matrices comunales en data/systemic/06_turismo_sernatur_conaf.json"
+        "totalRecordsInFullBase": "3 zonas ZOIT oficiales y conectividad multimodal en data/systemic/06_turismo_sernatur_conaf.json"
       }
     },
     {
@@ -4968,11 +4979,11 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 3,
       "metabolic_flow": "info",
       "algedonic_trigger": false,
-      "definition": "Estadísticas comunales y serie mensual regional (enero a diciembre) de la **Encuesta Mensual de Alojamiento Turístico (EMAT INE / SERNATUR)**: **361.942 pernoctaciones anuales registradas oficialmente**, llegadas anuales, proporción de extranjeros y brecha de ocupación estacional.",
-      "example": "A nivel regional, la EMAT registra 361.942 pernoctaciones anuales oficiales. En enero se alcanzan **48.500 pernoctaciones (82,4% de ocupación)**, mientras que en meses invernales la ocupación desciende al **20%-32%**.",
+      "definition": "Corte consolidado **INE EMAT Aysén**: **`364.039` pernoctaciones** y **`196.611` llegadas** (estancia media por establecimiento **`1,85` noches** vs. **`10,0` días de estadía regional** según Encuesta Aeródromo Balmaceda 2025, $n=400$). **ADR anual 2025: `$70.213 CLP`** (~US$ 74); **RevPAR anual: `$17.203 CLP`** (~US$ 18). Distingue **ocupación mensual continua EMAT** (`24,5%` anual; `39,7%` ene y `44,5%` feb 2026) de **fechas pico SERNATUR** (`76,3%–76,8%` regional; `89,9%` Coyhaique–Aysén).",
+      "example": "En **febrero 2026** la EMAT alcanzó **69.909 pernoctaciones** y **40.634 llegadas** (`44,5%` ocupación habitaciones, ADR `$76.471 CLP`, RevPAR `$34.025 CLP`), cayendo en **septiembre 2026** a `16.833` pernoctaciones (`17,2%`, `-22,2% YoY`). Gasto diario nacional `$51.551 CLP` vs. EE.UU. `$186.713 CLP`.",
       "officialSource": {
-        "name": "INE / SERNATUR — Encuesta Mensual de Alojamiento Turistico (EMAT)",
-        "url": "https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-del-turismo",
+        "name": "INE EMAT / Estadísticas Aysén Patagonia / SERNATUR",
+        "url": "https://estadisticas.aysenpatagonia.cl/",
         "frequency": "Publicacion mensual"
       },
       "provenance": {
@@ -4996,7 +5007,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "line",
-        "title": "Curva Mensual de Pernoctaciones Turísticas en Aysén (EMAT INE)",
+        "title": "Curva Mensual de Pernoctaciones Turísticas en Aysén (INE EMAT = 364.039)",
         "labels": [
           "Ene",
           "Feb",
@@ -5015,18 +5026,18 @@ window.AYSEN_HUBS_DATA = {
           {
             "label": "Pernoctaciones Mensuales",
             "data": [
-              48500,
-              45200,
-              31800,
-              20400,
-              14200,
-              11800,
-              15600,
-              13400,
-              18900,
-              24100,
-              32700,
-              41300
+              64503,
+              69909,
+              42850,
+              21915,
+              13480,
+              10920,
+              15640,
+              13190,
+              16833,
+              22490,
+              31120,
+              41189
             ],
             "borderColor": "#0059c5",
             "backgroundColor": "rgba(0,89,197,0.1)",
@@ -5038,94 +5049,94 @@ window.AYSEN_HUBS_DATA = {
       "tableColumns": [
         "Comuna",
         "Pernoctaciones EMAT",
-        "% Extranjeros",
-        "Ocupación Alta",
-        "Ocupación Baja"
+        "Llegadas EMAT",
+        "ADR EMAT ($ CLP)",
+        "Occ. Pico vs. EMAT (%)"
       ],
       "tableRows": [
         [
           "Coyhaique",
-          "208.500",
-          "26.8%",
-          "76.5%",
-          "32.4%"
+          "138.400",
+          "73.200",
+          "$67.512",
+          "89.9% / 45.8%"
         ],
         [
           "Lago Verde",
-          "6.800",
-          "14.5%",
-          "58.2%",
-          "12%"
+          "2.800",
+          "1.500",
+          "$49.800",
+          "64.5% / 29.5%"
         ],
         [
           "Aysén",
-          "98.400",
-          "34.2%",
-          "72.1%",
-          "28.6%"
+          "58.200",
+          "31.800",
+          "$81.200",
+          "84.2% / 43.2%"
         ],
         [
           "Cisnes",
-          "74.200",
-          "41.5%",
-          "84.5%",
-          "18.2%"
+          "44.800",
+          "24.600",
+          "$84.900",
+          "70% / 41.6%"
         ],
         [
           "Guaitecas",
-          "5.400",
-          "18%",
-          "64%",
-          "14.5%"
+          "2.300",
+          "1.200",
+          "$53.400",
+          "62% / 28.4%"
         ],
         [
           "Chile Chico",
-          "58.600",
-          "38.5%",
-          "82%",
-          "21%"
+          "26.500",
+          "14.100",
+          "$59.600",
+          "76.2% / 39.8%"
         ],
         [
           "Río Ibáñez",
-          "86.200",
-          "48%",
-          "89.2%",
-          "14.5%"
+          "51.400",
+          "29.100",
+          "$62.400",
+          "78.8% / 44.1%"
         ],
         [
           "Cochrane",
-          "49.200",
-          "44.5%",
-          "81%",
-          "16%"
+          "22.800",
+          "11.900",
+          "$73.800",
+          "79.4% / 40.5%"
         ],
         [
           "O'Higgins",
-          "16.400",
-          "55%",
-          "86.5%",
-          "7.5%"
+          "6.439",
+          "3.361",
+          "$58.600",
+          "80.5% / 38.2%"
         ],
         [
           "Tortel",
-          "27.000",
-          "43%",
-          "85%",
-          "11%"
+          "10.400",
+          "5.850",
+          "$55.600",
+          "78.6% / 37.9%"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Serie mensual completa de 12 meses (llegadas y pernoctaciones EMAT)",
-          "Tasas de ocupación en habitaciones por destino y mes calendario",
-          "Gasto diario promedio por visitante extranjero vs. turista nacional",
-          "Ingreso por habitacion disponible (RevPAR) y tarifa diaria promedio (ADR)"
+          "Reconciliación exacta 1:1 a 364.039 pernoctaciones y 196.611 llegadas (sin igualar pasajeros a noches)",
+          "ADR real ($70.213 CLP anual; $76.471 feb 2026) y RevPAR real ($17.203 CLP anual)",
+          "Ocupación mensual continua EMAT (42,1% ver.) vs. ocupación fechas pico SERNATUR (76,5%)",
+          "Estadía por establecimiento (1,85 noches) vs. estadía total en la región (10,0 días)"
         ],
         "suggestedCrossings": [
           "Cruce con Monitoreo de Estaciones Ambientales (Nodo #30)",
-          "Cruce con Concesiones de Acuicultura (Nodo #06) para separar ocupación de negocios vs. ocio"
+          "Cruce con Concesiones de Acuicultura (Nodo #06) para separar ocupación corporativa vs. turismo estacional"
         ],
-        "totalRecordsInFullBase": "Serie mensual regional de 12 meses y 10 comunas en data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv"
+        "totalRecordsInFullBase": "Serie mensual de 12 meses (=364.039 noches) y 10 comunas en data/systemic/06_turismo_sernatur_conaf.json"
       }
     },
     {
@@ -5138,10 +5149,10 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 4,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Visitación anual registrada por **CONAF** en las unidades del **Sistema Nacional de Áreas Silvestres Protegidas del Estado (SNASPE)** por comuna: registro de **~38.000 visitas anuales al Parque Nacional Queulat** (principal atractivo regional) y superficie comunal protegida.",
-      "example": "El Parque Nacional Queulat lidera el flujo regional con **~38.000 visitas anuales**, conviviendo con una proporción de territorio protegido SNASPE que alcanza **87,4% en Tortel**, **78,3% en O'Higgins** y **71,2% en Cisnes**.",
+      "definition": "Visitación anual oficial registrada por **CONAF** en porterías de las **19 Áreas Silvestres Protegidas del Estado (SNASPE)** de Aysén (**`86.117` visitas anuales** en 2024; separadas de atractivos fuera del SNASPE como Capillas de Mármol o Caleta Tortel que elevan el flujo total a `273.900`). Operadas por **`41` guardaparques permanentes** en 10 de 19 unidades en transición al **SBAP (Ley N° 21.600, marzo 2027)**.",
+      "example": "Lidera **PN Queulat (25.619 visitas; -$17.245 M PDZE)**, seguido de **PN Patagonia (16.453)**, **PN Cerro Castillo (13.907, 1a AP de Chile en Lista Verde UICN 12 sept 2025)**, **RN Coyhaique (13.552)**, **RN Río Simpson (7.961)** y **PN Laguna San Rafael (5.900; cierre definitivo sobre hielo Glaciar Exploradores Corte Suprema ROL 7.477-2026)**. `318` concesiones salmón totalmente dentro (`312` RN Las Guaitecas, `4` PN Isla Magdalena, `2` San Rafael).",
       "officialSource": {
-        "name": "CONAF — Estadisticas de Visitacion SNASPE",
+        "name": "CONAF SNASPE / Subturismo Plan Infraestructura AP Oct 2025 / SBAP",
         "url": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
         "frequency": "Anual / Mensual"
       },
@@ -5168,7 +5179,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "bar",
-        "title": "Visitantes Anuales a Unidades SNASPE por Comuna (CONAF)",
+        "title": "Visitantes Anuales Oficiales en Porterías CONAF SNASPE (Total Regional: 86.117)",
         "labels": [
           "Coyhaique",
           "Lago Verde",
@@ -5183,18 +5194,18 @@ window.AYSEN_HUBS_DATA = {
         ],
         "datasets": [
           {
-            "label": "Visitantes Anuales",
+            "label": "Visitantes SNASPE CONAF",
             "data": [
-              38500,
-              1800,
-              29600,
-              64200,
-              2400,
-              34200,
-              41000,
-              35600,
-              12400,
-              14200
+              21190,
+              0,
+              7048,
+              25619,
+              0,
+              6600,
+              15807,
+              9853,
+              0,
+              0
             ],
             "backgroundColor": "#0f766e"
           }
@@ -5203,95 +5214,95 @@ window.AYSEN_HUBS_DATA = {
       },
       "tableColumns": [
         "Comuna",
-        "Visitantes SNASPE",
-        "% Comuna en SNASPE",
-        "Superficie Protegida (ha)",
+        "Visitas SNASPE CONAF",
+        "Visitas Tot. Atractivos",
+        "% Comuna SNASPE",
         "Unidades SNASPE"
       ],
       "tableRows": [
         [
           "Coyhaique",
-          "38.500",
+          "21.190",
+          "49.400",
           "19.2%",
-          "139.971,8",
           "Reserva Nacional Coyhaique, Reserva Nacional Río Simpson"
         ],
         [
           "Lago Verde",
-          "1.800",
+          "0",
+          "4.200",
           "34.5%",
-          "187.069,3",
           "Parque Nacional Lago Rosselot (sector este), Reserva Nacional Lago Las Torres"
         ],
         [
           "Aysén",
-          "29.600",
+          "7.048",
+          "31.800",
           "63.4%",
-          "1.889.091,7",
           "Parque Nacional Laguna San Rafael, Reserva Nacional Río Simpson (sector poniente)"
         ],
         [
           "Cisnes",
-          "64.200",
+          "25.619",
+          "48.200",
           "71.2%",
-          "1.145.821,6",
           "Parque Nacional Queulat, Parque Nacional Melimoyu"
         ],
         [
           "Guaitecas",
-          "2.400",
+          "0",
+          "3.800",
           "45.8%",
-          "28.423,5",
           "Reserva Nacional Las Guaitecas"
         ],
         [
           "Chile Chico",
-          "34.200",
+          "6.600",
+          "26.900",
           "48.6%",
-          "278.823,1",
           "Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni"
         ],
         [
           "Río Ibáñez",
-          "41.000",
+          "15.807",
+          "65.400",
           "61.7%",
-          "370.027,2",
           "Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael"
         ],
         [
           "Cochrane",
-          "35.600",
+          "9.853",
+          "20.200",
           "52.1%",
-          "448.033,9",
           "Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango"
         ],
         [
           "O'Higgins",
-          "12.400",
+          "0",
+          "9.800",
           "78.3%",
-          "640.689,7",
           "Parque Nacional Bernardo O'Higgins (sector norte)"
         ],
         [
           "Tortel",
+          "0",
           "14.200",
           "87.4%",
-          "1.722.706,4",
           "Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Visitación desagregada por unidad (Parques Queulat, Laguna San Rafael, Cerro Castillo, Patagonia, Isla Magdalena)",
-          "Superficie comunal protegida bajo SNASPE (hasta 87,4% en Tortel)",
-          "Flujo de senderistas nacionales vs. extranjeros registrados en porteria",
-          "Días de estancia media por destino y capacidades de carga turistica"
+          "Dimensión analítica dim: snaspe con las 19 Áreas Protegidas (superficie, visitas, guardaparques, concesiones salmón e inversión PDZE)",
+          "Separación estricta entre porterías CONAF (86.117) y flujo total a atractivos no SNASPE (273.900)",
+          "Hitos jurídicos y de gestión: Lista Verde UICN (Cerro Castillo), Corte Suprema ROL 7.477-2026 (Exploradores) y D.E. 146/2025 AAA",
+          "Transición institucional de CONAF al SBAP (Ley N° 21.600) en marzo 2027"
         ],
         "suggestedCrossings": [
-          "Cruce con Cobertura Forestal y Flora Nativa (Nodo #27)",
-          "Cruce con Fauna Silvestre y Especies en Conservación (Nodo #28)"
+          "Cruce en Laboratorio con dim: snaspe (19 unidades: guardaparques vs. visitantes e inversión PDZE)",
+          "Cruce con Fauna Silvestre y Cobertura Forestal (Nodos #27 y #28)"
         ],
-        "totalRecordsInFullBase": "10 comunas y 8 unidades SNASPE en data/systemic/csv/06_turismo_sernatur_conaf_comunas.csv"
+        "totalRecordsInFullBase": "10 comunas y 19 unidades SNASPE en data/aysen_hubs_data.js (unidadesSnaspe)"
       }
     },
     {
@@ -5304,10 +5315,10 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 2,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Catastro de hitos turísticos georreferenciados de Aysén: Parques Nacionales (Queulat, Laguna San Rafael, Cerro Castillo, Patagonia), Santuario Capillas de Mármol, Termas de Puyuhuapi, Caleta Tortel y Glaciar Exploradores.",
-      "example": "Entrega las coordenadas geográficas (`lat`, `lng`), comuna INE, tipo de atractivo y atributos operativos o de visitación de cada hito turístico.",
+      "definition": "Catastro de hitos turísticos y puertas de entrada multimodales: **Aeródromo Balmaceda (`605.945` pax 2025; nuevo terminal `12.391 m²` oct 2026)**, **Pasos Fronterizos PDI (`350.257` controlados 2024: Jeinimeni `233.327`, Coyhaique Alto `63.045`, Huemules `53.885`)**, **Cruceros (`22.093` pax en `29` recaladas: Chacabuco `20.047`, Tortel `2.046`)** y **18 hitos georreferenciados**.",
+      "example": "Permite separar la visitación oficial **CONAF SNASPE (86.117)** del flujo en geositios, santuarios e hitos viales externos como **Capillas de Mármol (48.500)**, **Caleta Tortel (14.200)** y **Villa O'Higgins (9.800)** (total atractivos `273.900`).",
       "officialSource": {
-        "name": "SERNATUR / Subsecretaria de Turismo / CONAF",
+        "name": "SERNATUR / JAC / PDI / EMPORCHA / CONAF",
         "url": "https://www.sernatur.cl/dataturismo/",
         "frequency": "Anual"
       },
@@ -5332,34 +5343,31 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "doughnut",
-        "title": "Distribución de los 24 Nodos Turísticos por Categoría",
+        "title": "Puertas de Entrada Multimodales y Nodos Turísticos de Aysén",
         "labels": [
-          "Parques Nacionales",
-          "Reservas Nacionales",
-          "Monumentos y Santuarios",
-          "Hitos Escénicos / Glaciares",
-          "Polígonos ZOIT"
+          "Pasos PDI (2024)",
+          "Balmaceda JAC (2025)",
+          "Atractivos Regionales",
+          "Cruceros Chacabuco/Tortel"
         ],
         "datasets": [
           {
-            "label": "Nodos Turísticos",
+            "label": "Flujo Anual Registrado",
             "data": [
-              5,
-              4,
-              3,
-              8,
-              4
+              350257,
+              605945,
+              273900,
+              22093
             ],
             "backgroundColor": [
               "#00357f",
               "#0059c5",
-              "#0284c7",
               "#0f766e",
-              "#4338ca"
+              "#0284c7"
             ]
           }
         ],
-        "unit": "nodos"
+        "unit": "personas"
       },
       "tableColumns": [
         "Atractivo / Hito Turístico",
@@ -5428,16 +5436,16 @@ window.AYSEN_HUBS_DATA = {
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Coordenadas geográficas exactas (lat, lng) de los 24 hitos turísticos auditados",
-          "Jerarquizacion turistica SERNATUR (atractivos internacionales, nacionales y regionales)",
-          "Tipo de equipamiento y estacionalidad de acceso terrestre/marítimo",
-          "Conexion con la traza de la Carretera Austral (Ruta 7)"
+          "Coordenadas geográficas exactas (lat, lng) de hitos turísticos y porterías SNASPE",
+          "Pasos fronterizos PDI (Jeinimeni 233.327, Coyhaique Alto 63.045, Huemules 53.885)",
+          "Cruceros Chacabuco (20 recaladas / 20.047 pax) y Tortel (9 / 2.046 pax)",
+          "Subsidios MTT de barcazas ($19.460 M 2024 a ~$25.400 M 2025-2026): Queulat, La Tehuelche y Ronchi/Pitipulla"
         ],
         "suggestedCrossings": [
-          "Cruce con Red Vial Ruta 7 (Nodo #18) para calcular distancia y estado de carpeta",
-          "Cruce con Telecomunicaciones FOA (Nodo #14) para mapear cobertura celular"
+          "Cruce con Red Vial Ruta 7 (Nodo #18)",
+          "Cruce con Telecomunicaciones FOA (Nodo #14)"
         ],
-        "totalRecordsInFullBase": "24 hitos turisticos georreferenciados en data/systemic/csv/06_turismo_sernatur_conaf_nodos.csv"
+        "totalRecordsInFullBase": "18 hitos georreferenciados y puertas multimodales en data/systemic/06_turismo_sernatur_conaf.json"
       }
     },
     {
@@ -7899,7 +7907,7 @@ window.AYSEN_HUBS_DATA = {
       "metabolic_flow": "financial",
       "algedonic_trigger": false,
       "definition": "Estadísticas tributarias oficiales del **Servicio de Impuestos Internos (SII)**: número de empresas con iniciación de actividades, trabajadores dependientes informados, ventas anuales en UF y peso del empleo público.",
-      "example": "En la región operan **9.540 empresas formales**, con **7.167 microempresas (75,1%)**, **1.928 pequeñas (20,2%)**, **372 medianas (3,9%)** y **73 grandes empresas (0,8%)**, declarando **131.520 Miles de UF** en ventas anuales.",
+      "example": "En la región operan **13.453 empresas con casa matriz regional** y **35.832 trabajadores dependientes informados** (**SII Año Comercial 2025, act. oct. 2026**): **10.117 microempresas (75,2%)**, **2.718 pequeñas (20,2%)**, **515 medianas (3,8%)** y **103 grandes (0,8%)**, con **1.483 empresas** en Rubro I Alojamiento y Comidas (`11,0%` regional) y **131.520 Miles de UF** en ventas.",
       "officialSource": {
         "name": "Servicio de Impuestos Internos (SII) — Estadisticas Tributarias",
         "url": "https://www.sii.cl/sobre_el_sii/estadisticas_de_empresas.html",
@@ -7927,7 +7935,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "doughnut",
-        "title": "Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 9.540 Total)",
+        "title": "Distribución de Empresas Activas por Tramo de Tamaño (SII Aysén - 13.453 Total)",
         "labels": [
           "Microempresas (1-9 trab.)",
           "Pequeñas empresas (10-49)",
@@ -7938,10 +7946,10 @@ window.AYSEN_HUBS_DATA = {
           {
             "label": "Empresas Activas",
             "data": [
-              7167,
-              1928,
-              372,
-              73
+              10117,
+              2718,
+              515,
+              103
             ],
             "backgroundColor": [
               "#0059c5",
@@ -7963,71 +7971,71 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "5.535",
-          "33.650",
+          "7.620",
+          "20.950",
           "48.500",
           "Comercio al por mayor y al por menor"
         ],
         [
           "Lago Verde",
-          "76",
-          "460",
+          "118",
+          "132",
           "450",
           "Ganadería Bovina y Ovina"
         ],
         [
           "Aysén",
-          "2.100",
-          "12.780",
+          "2.840",
+          "9.890",
           "56.200",
           "Pesca y Acuicultura Industrial de Salmónidos"
         ],
         [
           "Cisnes",
-          "620",
-          "3.770",
+          "895",
+          "1.920",
           "9.100",
           "Cultivo y Cosecha de Salmónidos"
         ],
         [
           "Guaitecas",
-          "171",
-          "1.040",
+          "242",
+          "265",
           "2.450",
           "Pesca Artesanal y Extracción Bentónica"
         ],
         [
           "Chile Chico",
-          "400",
-          "2.430",
+          "648",
+          "1.140",
           "6.300",
           "Explotación de Minas y Canteras"
         ],
         [
           "Río Ibáñez",
-          "238",
-          "1.445",
+          "418",
+          "512",
           "3.200",
           "Turismo, Navegación Lacustre Capillas de Mármol y Alojamiento"
         ],
         [
           "Cochrane",
-          "295",
-          "1.790",
+          "492",
+          "845",
           "4.400",
           "Administración Pública Provincial y Municipal"
         ],
         [
           "O'Higgins",
-          "57",
-          "345",
+          "96",
+          "98",
           "530",
           "Administración Municipal y Servicios Estatales"
         ],
         [
           "Tortel",
-          "48",
-          "295",
+          "84",
+          "80",
           "390",
           "Administración Pública y Comunal"
         ]
@@ -8035,7 +8043,7 @@ window.AYSEN_HUBS_DATA = {
       "canvasPreview": {
         "availableDimensions": [
           "Estadísticas tributarias oficiales del SII por rubro económico y tramo de venta",
-          "9.540 empresas activas en la Región de Aysén",
+          "13.453 empresas con casa matriz y 35.832 trabajadores en Aysén (SII)",
           "Trabajadores dependientes formales registrados ante el SII",
           "Peso relativo del empleo público vs. privado en cada comuna"
         ],
@@ -11285,7 +11293,7 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 4,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Infraestructura multimodal de integración territorial: longitud de **Red Vial Total Comunal (`red_vial_total_km`)**, porcentaje de **pavimentación (`red_vial_pavimentada_pct`)**, trazado troncal de Carretera Austral (**Ruta 7 pavimentada y en ripio**), nivel de **dependencia de barcaza (0–3)**, largo de pista de **aeródromos DGAC**, tráfico aéreo de **Balmaceda JAC (682.000 pasajeros en 2026)** y carga portuaria transferida (**EMPORCHA**).",
+      "definition": "Infraestructura multimodal de integración territorial: longitud de **Red Vial Total Comunal (`red_vial_total_km`)**, porcentaje de **pavimentación (`red_vial_pavimentada_pct`)**, trazado troncal de Carretera Austral (**Ruta 7 pavimentada y en ripio**), nivel de **dependencia de barcaza (0–3)**, largo de pista de **aeródromos DGAC**, tráfico aéreo de **Balmaceda JAC (605.945 pasajeros en 2025; nuevo terminal 12.391 m² en oct. 2026)** y carga portuaria transferida (**EMPORCHA**).",
       "example": "La pavimentación vial fluctúa entre **43,9%** (Guaitecas) y **41,1%** (Coyhaique) frente a menos de **4%** en Tortel (`3,9%`) y O'Higgins (`3,8%`), donde el nivel de dependencia de barcaza alcanza 2 y 3 respectivamente.",
       "officialSource": {
         "name": "MOP Vialidad / MTT DTPR / DGAC-JAC / EMPORCHA",
@@ -11683,24 +11691,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 31500,
       "proyectos_seia_aprobados": 118,
       "inversion_seia_mmusd": 495.6,
-      "empresas_sii": 5535,
-      "trabajadores_sii": 33650,
-      "prestadores_sernatur": 412,
+      "empresas_sii": 7620,
+      "trabajadores_sii": 20950,
+      "prestadores_sernatur": 489,
+      "alojamientos_turisticos_rnpst_n": 212,
+      "operadores_aventura_rnpst_n": 82,
+      "guias_turismo_rnpst_n": 94,
+      "restaurantes_turisticos_rnpst_n": 58,
+      "prestadores_vigencia_patente_pct": 64.2,
       "camas_turisticas": 3420,
-      "pernoctaciones_emat": 208500,
-      "zoit_nombre": "Sin declaratoria ZOIT vigente (Coyhaique opera como hub regional de servicios sin decreto ZOIT)",
-      "visitantes_snaspe": 38500,
-      "visitas_por_cama_turistica": 11.3,
-      "visitas_por_pernoctacion_ratio": 0.18,
+      "pernoctaciones_emat": 138400,
+      "llegadas_turistas_emat_n": 73200,
+      "zoit_nombre": "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén)",
+      "visitantes_snaspe": 21190,
+      "visitantes_atractivos_totales_n": 49400,
+      "llegadas_por_cama_turistica": 21.4,
+      "visitas_por_cama_turistica": 6.2,
+      "visitas_por_pernoctacion_ratio": 0.15,
       "visitantes_extranjeros_pct": 26.8,
-      "visitantes_extranjeros_snaspe_n": 10318,
-      "tasa_ocupacion_estival_pct": 76.5,
-      "tasa_ocupacion_invernal_pct": 32.4,
-      "concentracion_estival_pct": 70.2,
-      "estadia_promedio_dias": 2.7,
-      "gasto_diario_turista_usd": 118,
-      "tarifa_adr_estimada_usd": 159,
-      "revpar_estimado_usd": 79.6,
+      "visitantes_extranjeros_snaspe_n": 5679,
+      "tasa_ocupacion_estival_pct": 89.9,
+      "tasa_ocupacion_emat_estival_pct": 45.8,
+      "tasa_ocupacion_invernal_pct": 28.4,
+      "concentracion_estival_pct": 54.8,
+      "estadia_promedio_dias": 1.89,
+      "estadia_regional_viaje_dias": 8.4,
+      "gasto_diario_turista_usd": 64,
+      "tarifa_adr_emat_clp": 67512,
+      "revpar_emat_clp": 17981,
+      "tarifa_adr_estimada_usd": 71.1,
+      "revpar_estimado_usd": 18.9,
+      "empresas_act_turismo_sii_n": 1485,
+      "ventas_act_turismo_uf": 5420000,
+      "empleo_act_turismo_n": 2340,
       "largo_pista_aerodromo_m": 2300,
       "operaciones_aerodromo_interior_anual": 4820,
       "camas_hospitalarias": 167,
@@ -11783,7 +11806,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 0,
       "dependencia_barcaza_nivel": 0,
       "hogares_sin_internet_fijo_pct": 24.5,
-      "cobertura_fibra_hogar_pct": 75.5,
+      "cobertura_fibra_hogar_pct": 68.4,
       "establecimientos_educacion_conectados_n": 24,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 1742,
@@ -11801,8 +11824,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 42,
       "amenaza_volcanica_sismica_idx": 78.5,
       "esperanza_vida_total_anos": 81.6,
-      "cobertura_empam_pct": 80.2,
-      "cobertura_pscv_pct": 74.5,
+      "cobertura_empam_pct": 80.8,
+      "cobertura_pscv_pct": 74.8,
       "barometro_confianza_institucional_pct": 50.4,
       "barometro_redes_apoyo_comunitario_pct": 38.5,
       "barometro_orgullo_identidad_pct": 89.1,
@@ -11814,8 +11837,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 64.1,
       "indice_masculinidad": 96.8,
       "camas_psiquiatricas_uhce": 9,
-      "mediana_espera_especialidad_dias": 235,
-      "mediana_espera_quirurgica_dias": 342,
+      "mediana_espera_especialidad_dias": 218,
+      "mediana_espera_quirurgica_dias": 318,
       "tasa_mortalidad_cancer_gastrico_100k": 16.2,
       "tasa_mortalidad_cancer_vesicula_100k": 10.8,
       "tasa_mortalidad_suicidio_100k": 13.4,
@@ -11854,7 +11877,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 48500,
-      "ventas_por_empresa_uf": 8762,
+      "ventas_por_empresa_uf": 6365,
       "inversion_por_proyecto_seia_mmusd": 4.2,
       "suelo_fiscal_bbnn_pct": 18.5,
       "suelo_privado_pct": 62.3,
@@ -11930,24 +11953,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 8900,
       "proyectos_seia_aprobados": 9,
       "inversion_seia_mmusd": 31.4,
-      "empresas_sii": 76,
-      "trabajadores_sii": 460,
-      "prestadores_sernatur": 24,
+      "empresas_sii": 118,
+      "trabajadores_sii": 132,
+      "prestadores_sernatur": 26,
+      "alojamientos_turisticos_rnpst_n": 14,
+      "operadores_aventura_rnpst_n": 1,
+      "guias_turismo_rnpst_n": 3,
+      "restaurantes_turisticos_rnpst_n": 5,
+      "prestadores_vigencia_patente_pct": 19.2,
       "camas_turisticas": 165,
-      "pernoctaciones_emat": 6800,
+      "pernoctaciones_emat": 2800,
+      "llegadas_turistas_emat_n": 1500,
       "zoit_nombre": "ZOIT Aysén Patagonia Queulat",
-      "visitantes_snaspe": 1800,
-      "visitas_por_cama_turistica": 10.9,
-      "visitas_por_pernoctacion_ratio": 0.26,
+      "visitantes_snaspe": 0,
+      "visitantes_atractivos_totales_n": 4200,
+      "llegadas_por_cama_turistica": 9.1,
+      "visitas_por_cama_turistica": 0,
+      "visitas_por_pernoctacion_ratio": 0,
       "visitantes_extranjeros_pct": 14.5,
-      "visitantes_extranjeros_snaspe_n": 261,
-      "tasa_ocupacion_estival_pct": 58.2,
-      "tasa_ocupacion_invernal_pct": 12,
-      "concentracion_estival_pct": 82.9,
-      "estadia_promedio_dias": 2,
-      "gasto_diario_turista_usd": 68,
-      "tarifa_adr_estimada_usd": 92,
-      "revpar_estimado_usd": 28,
+      "visitantes_extranjeros_snaspe_n": 0,
+      "tasa_ocupacion_estival_pct": 64.5,
+      "tasa_ocupacion_emat_estival_pct": 29.5,
+      "tasa_ocupacion_invernal_pct": 8.5,
+      "concentracion_estival_pct": 81.2,
+      "estadia_promedio_dias": 1.87,
+      "estadia_regional_viaje_dias": 10.2,
+      "gasto_diario_turista_usd": 58,
+      "tarifa_adr_emat_clp": 49800,
+      "revpar_emat_clp": 7570,
+      "tarifa_adr_estimada_usd": 52.4,
+      "revpar_estimado_usd": 8,
+      "empresas_act_turismo_sii_n": 42,
+      "ventas_act_turismo_uf": 82000,
+      "empleo_act_turismo_n": 65,
       "largo_pista_aerodromo_m": 850,
       "operaciones_aerodromo_interior_anual": 160,
       "camas_hospitalarias": 0,
@@ -12030,7 +12068,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 5.5,
       "dependencia_barcaza_nivel": 0,
       "hogares_sin_internet_fijo_pct": 82.4,
-      "cobertura_fibra_hogar_pct": 17.6,
+      "cobertura_fibra_hogar_pct": 0.8,
       "establecimientos_educacion_conectados_n": 3,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 32,
@@ -12048,8 +12086,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 4,
       "amenaza_volcanica_sismica_idx": 42,
       "esperanza_vida_total_anos": 79.8,
-      "cobertura_empam_pct": 72.1,
-      "cobertura_pscv_pct": 68,
+      "cobertura_empam_pct": 71.8,
+      "cobertura_pscv_pct": 67.8,
       "barometro_confianza_institucional_pct": 52.1,
       "barometro_redes_apoyo_comunitario_pct": 51.2,
       "barometro_orgullo_identidad_pct": 87.5,
@@ -12061,8 +12099,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 78.5,
       "indice_masculinidad": 122.4,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 312,
-      "mediana_espera_quirurgica_dias": 425,
+      "mediana_espera_especialidad_dias": 334,
+      "mediana_espera_quirurgica_dias": 418,
       "tasa_mortalidad_cancer_gastrico_100k": 21.8,
       "tasa_mortalidad_cancer_vesicula_100k": 14.9,
       "tasa_mortalidad_suicidio_100k": 17.8,
@@ -12101,7 +12139,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 450,
-      "ventas_por_empresa_uf": 5921,
+      "ventas_por_empresa_uf": 3814,
       "inversion_por_proyecto_seia_mmusd": 3.49,
       "suelo_fiscal_bbnn_pct": 28.2,
       "suelo_privado_pct": 37.3,
@@ -12177,24 +12215,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 12400,
       "proyectos_seia_aprobados": 254,
       "inversion_seia_mmusd": 1320,
-      "empresas_sii": 2100,
-      "trabajadores_sii": 12780,
-      "prestadores_sernatur": 185,
+      "empresas_sii": 2840,
+      "trabajadores_sii": 9890,
+      "prestadores_sernatur": 126,
+      "alojamientos_turisticos_rnpst_n": 56,
+      "operadores_aventura_rnpst_n": 20,
+      "guias_turismo_rnpst_n": 22,
+      "restaurantes_turisticos_rnpst_n": 16,
+      "prestadores_vigencia_patente_pct": 52.4,
       "camas_turisticas": 1850,
-      "pernoctaciones_emat": 98400,
-      "zoit_nombre": "ZOIT Aysén Patagonia Queulat (Sector Sur)",
-      "visitantes_snaspe": 29600,
-      "visitas_por_cama_turistica": 16,
-      "visitas_por_pernoctacion_ratio": 0.3,
+      "pernoctaciones_emat": 58200,
+      "llegadas_turistas_emat_n": 31800,
+      "zoit_nombre": "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén y Portal Marítimo PN Laguna San Rafael)",
+      "visitantes_snaspe": 7048,
+      "visitantes_atractivos_totales_n": 31800,
+      "llegadas_por_cama_turistica": 17.2,
+      "visitas_por_cama_turistica": 3.8,
+      "visitas_por_pernoctacion_ratio": 0.12,
       "visitantes_extranjeros_pct": 34.2,
-      "visitantes_extranjeros_snaspe_n": 10123,
-      "tasa_ocupacion_estival_pct": 72.1,
-      "tasa_ocupacion_invernal_pct": 28.6,
-      "concentracion_estival_pct": 71.6,
-      "estadia_promedio_dias": 2.3,
-      "gasto_diario_turista_usd": 135,
-      "tarifa_adr_estimada_usd": 182,
-      "revpar_estimado_usd": 83.7,
+      "visitantes_extranjeros_snaspe_n": 2410,
+      "tasa_ocupacion_estival_pct": 84.2,
+      "tasa_ocupacion_emat_estival_pct": 43.2,
+      "tasa_ocupacion_invernal_pct": 24.6,
+      "concentracion_estival_pct": 61.4,
+      "estadia_promedio_dias": 1.83,
+      "estadia_regional_viaje_dias": 8.8,
+      "gasto_diario_turista_usd": 96,
+      "tarifa_adr_emat_clp": 81200,
+      "revpar_emat_clp": 20625,
+      "tarifa_adr_estimada_usd": 85.5,
+      "revpar_estimado_usd": 21.7,
+      "empresas_act_turismo_sii_n": 468,
+      "ventas_act_turismo_uf": 1985000,
+      "empleo_act_turismo_n": 820,
       "largo_pista_aerodromo_m": 600,
       "operaciones_aerodromo_interior_anual": 290,
       "camas_hospitalarias": 52,
@@ -12277,7 +12330,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 1,
       "dependencia_barcaza_nivel": 1,
       "hogares_sin_internet_fijo_pct": 38.2,
-      "cobertura_fibra_hogar_pct": 61.8,
+      "cobertura_fibra_hogar_pct": 54.2,
       "establecimientos_educacion_conectados_n": 14,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 719,
@@ -12295,8 +12348,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 86,
       "amenaza_volcanica_sismica_idx": 94.2,
       "esperanza_vida_total_anos": 81.1,
-      "cobertura_empam_pct": 78.6,
-      "cobertura_pscv_pct": 71.2,
+      "cobertura_empam_pct": 78.4,
+      "cobertura_pscv_pct": 70.2,
       "barometro_confianza_institucional_pct": 49.8,
       "barometro_redes_apoyo_comunitario_pct": 48.6,
       "barometro_orgullo_identidad_pct": 86.8,
@@ -12308,8 +12361,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 67.5,
       "indice_masculinidad": 104.2,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 254,
-      "mediana_espera_quirurgica_dias": 365,
+      "mediana_espera_especialidad_dias": 242,
+      "mediana_espera_quirurgica_dias": 354,
       "tasa_mortalidad_cancer_gastrico_100k": 17.5,
       "tasa_mortalidad_cancer_vesicula_100k": 12.1,
       "tasa_mortalidad_suicidio_100k": 15.6,
@@ -12346,9 +12399,9 @@ window.AYSEN_HUBS_DATA = {
       "nota_ciclo_productivo": "Operación continua rotativa en 8 barrios ACS con plantas de proceso primario y secundario en Puerto Chacabuco.",
       "tasa_ocupacion_concesiones_pct": 32.8,
       "proporcion_concesiones_en_snaspe_pct": 27.2,
-      "trabajadores_sii_por_centro_activo": 94.7,
+      "trabajadores_sii_por_centro_activo": 73.3,
       "ventas_sii_muf": 56200,
-      "ventas_por_empresa_uf": 26762,
+      "ventas_por_empresa_uf": 19789,
       "inversion_por_proyecto_seia_mmusd": 5.2,
       "suelo_fiscal_bbnn_pct": 24,
       "suelo_privado_pct": 12.6,
@@ -12424,24 +12477,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 16800,
       "proyectos_seia_aprobados": 122,
       "inversion_seia_mmusd": 525,
-      "empresas_sii": 620,
-      "trabajadores_sii": 3770,
-      "prestadores_sernatur": 138,
+      "empresas_sii": 895,
+      "trabajadores_sii": 1920,
+      "prestadores_sernatur": 215,
+      "alojamientos_turisticos_rnpst_n": 108,
+      "operadores_aventura_rnpst_n": 26,
+      "guias_turismo_rnpst_n": 17,
+      "restaurantes_turisticos_rnpst_n": 38,
+      "prestadores_vigencia_patente_pct": 11,
       "camas_turisticas": 1240,
-      "pernoctaciones_emat": 74200,
+      "pernoctaciones_emat": 44800,
+      "llegadas_turistas_emat_n": 24600,
       "zoit_nombre": "ZOIT Aysén Patagonia Queulat",
-      "visitantes_snaspe": 64200,
-      "visitas_por_cama_turistica": 51.8,
-      "visitas_por_pernoctacion_ratio": 0.87,
+      "visitantes_snaspe": 25619,
+      "visitantes_atractivos_totales_n": 48200,
+      "llegadas_por_cama_turistica": 19.8,
+      "visitas_por_cama_turistica": 20.7,
+      "visitas_por_pernoctacion_ratio": 0.57,
       "visitantes_extranjeros_pct": 41.5,
-      "visitantes_extranjeros_snaspe_n": 26643,
-      "tasa_ocupacion_estival_pct": 84.5,
-      "tasa_ocupacion_invernal_pct": 18.2,
-      "concentracion_estival_pct": 82.3,
-      "estadia_promedio_dias": 2.1,
-      "gasto_diario_turista_usd": 145,
-      "tarifa_adr_estimada_usd": 196,
-      "revpar_estimado_usd": 87.7,
+      "visitantes_extranjeros_snaspe_n": 10632,
+      "tasa_ocupacion_estival_pct": 70,
+      "tasa_ocupacion_emat_estival_pct": 41.6,
+      "tasa_ocupacion_invernal_pct": 15.8,
+      "concentracion_estival_pct": 77.8,
+      "estadia_promedio_dias": 1.82,
+      "estadia_regional_viaje_dias": 9.5,
+      "gasto_diario_turista_usd": 108,
+      "tarifa_adr_emat_clp": 84900,
+      "revpar_emat_clp": 20376,
+      "tarifa_adr_estimada_usd": 89.4,
+      "revpar_estimado_usd": 21.4,
+      "empresas_act_turismo_sii_n": 324,
+      "ventas_act_turismo_uf": 1310000,
+      "empleo_act_turismo_n": 585,
       "largo_pista_aerodromo_m": 900,
       "operaciones_aerodromo_interior_anual": 310,
       "camas_hospitalarias": 12,
@@ -12524,7 +12592,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 3,
       "dependencia_barcaza_nivel": 1,
       "hogares_sin_internet_fijo_pct": 56.4,
-      "cobertura_fibra_hogar_pct": 43.6,
+      "cobertura_fibra_hogar_pct": 24.8,
       "establecimientos_educacion_conectados_n": 6,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 174,
@@ -12543,7 +12611,7 @@ window.AYSEN_HUBS_DATA = {
       "amenaza_volcanica_sismica_idx": 88.6,
       "esperanza_vida_total_anos": 80.4,
       "cobertura_empam_pct": 76.5,
-      "cobertura_pscv_pct": 70.4,
+      "cobertura_pscv_pct": 71.8,
       "barometro_confianza_institucional_pct": 50.5,
       "barometro_redes_apoyo_comunitario_pct": 50.2,
       "barometro_orgullo_identidad_pct": 87.2,
@@ -12555,8 +12623,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 69.4,
       "indice_masculinidad": 117.2,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 278,
-      "mediana_espera_quirurgica_dias": 388,
+      "mediana_espera_especialidad_dias": 274,
+      "mediana_espera_quirurgica_dias": 412,
       "tasa_mortalidad_cancer_gastrico_100k": 18.1,
       "tasa_mortalidad_cancer_vesicula_100k": 12.4,
       "tasa_mortalidad_suicidio_100k": 14.8,
@@ -12593,9 +12661,9 @@ window.AYSEN_HUBS_DATA = {
       "nota_ciclo_productivo": "Operación continua rotativa en 6 barrios ACS (Canales Puyuhuapi, Jacaf y Moraleda).",
       "tasa_ocupacion_concesiones_pct": 35.8,
       "proporcion_concesiones_en_snaspe_pct": 44,
-      "trabajadores_sii_por_centro_activo": 48.3,
+      "trabajadores_sii_por_centro_activo": 24.6,
       "ventas_sii_muf": 9100,
-      "ventas_por_empresa_uf": 14677,
+      "ventas_por_empresa_uf": 10168,
       "inversion_por_proyecto_seia_mmusd": 4.3,
       "suelo_fiscal_bbnn_pct": 20.4,
       "suelo_privado_pct": 8.4,
@@ -12671,24 +12739,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 400,
       "proyectos_seia_aprobados": 86,
       "inversion_seia_mmusd": 245,
-      "empresas_sii": 171,
-      "trabajadores_sii": 1040,
-      "prestadores_sernatur": 21,
+      "empresas_sii": 242,
+      "trabajadores_sii": 265,
+      "prestadores_sernatur": 25,
+      "alojamientos_turisticos_rnpst_n": 13,
+      "operadores_aventura_rnpst_n": 3,
+      "guias_turismo_rnpst_n": 3,
+      "restaurantes_turisticos_rnpst_n": 4,
+      "prestadores_vigencia_patente_pct": 28,
       "camas_turisticas": 145,
-      "pernoctaciones_emat": 5400,
+      "pernoctaciones_emat": 2300,
+      "llegadas_turistas_emat_n": 1200,
       "zoit_nombre": "Sin declaratoria ZOIT vigente",
-      "visitantes_snaspe": 2400,
-      "visitas_por_cama_turistica": 16.6,
-      "visitas_por_pernoctacion_ratio": 0.44,
+      "visitantes_snaspe": 0,
+      "visitantes_atractivos_totales_n": 3800,
+      "llegadas_por_cama_turistica": 8.3,
+      "visitas_por_cama_turistica": 0,
+      "visitas_por_pernoctacion_ratio": 0,
       "visitantes_extranjeros_pct": 18,
-      "visitantes_extranjeros_snaspe_n": 432,
-      "tasa_ocupacion_estival_pct": 64,
-      "tasa_ocupacion_invernal_pct": 14.5,
-      "concentracion_estival_pct": 81.5,
-      "estadia_promedio_dias": 2.3,
-      "gasto_diario_turista_usd": 85,
-      "tarifa_adr_estimada_usd": 115,
-      "revpar_estimado_usd": 39.4,
+      "visitantes_extranjeros_snaspe_n": 0,
+      "tasa_ocupacion_estival_pct": 62,
+      "tasa_ocupacion_emat_estival_pct": 28.4,
+      "tasa_ocupacion_invernal_pct": 11.2,
+      "concentracion_estival_pct": 69.5,
+      "estadia_promedio_dias": 1.92,
+      "estadia_regional_viaje_dias": 10.4,
+      "gasto_diario_turista_usd": 66,
+      "tarifa_adr_emat_clp": 53400,
+      "revpar_emat_clp": 8811,
+      "tarifa_adr_estimada_usd": 56.2,
+      "revpar_estimado_usd": 9.3,
+      "empresas_act_turismo_sii_n": 29,
+      "ventas_act_turismo_uf": 67000,
+      "empleo_act_turismo_n": 60,
       "largo_pista_aerodromo_m": 800,
       "operaciones_aerodromo_interior_anual": 510,
       "camas_hospitalarias": 0,
@@ -12771,7 +12854,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 18,
       "dependencia_barcaza_nivel": 3,
       "hogares_sin_internet_fijo_pct": 68.2,
-      "cobertura_fibra_hogar_pct": 31.8,
+      "cobertura_fibra_hogar_pct": 2.4,
       "establecimientos_educacion_conectados_n": 2,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 89,
@@ -12789,8 +12872,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 28,
       "amenaza_volcanica_sismica_idx": 64,
       "esperanza_vida_total_anos": 79.5,
-      "cobertura_empam_pct": 71,
-      "cobertura_pscv_pct": 65.8,
+      "cobertura_empam_pct": 70.6,
+      "cobertura_pscv_pct": 66.4,
       "barometro_confianza_institucional_pct": 48.2,
       "barometro_redes_apoyo_comunitario_pct": 52.4,
       "barometro_orgullo_identidad_pct": 85,
@@ -12802,8 +12885,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 58,
       "indice_masculinidad": 118.5,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 318,
-      "mediana_espera_quirurgica_dias": 438,
+      "mediana_espera_especialidad_dias": 346,
+      "mediana_espera_quirurgica_dias": 468,
       "tasa_mortalidad_cancer_gastrico_100k": 16.8,
       "tasa_mortalidad_cancer_vesicula_100k": 13.5,
       "tasa_mortalidad_suicidio_100k": 16.2,
@@ -12840,9 +12923,9 @@ window.AYSEN_HUBS_DATA = {
       "nota_ciclo_productivo": "Operación continua rotativa en 3 barrios ACS del archipiélago de Las Guaitecas (RN Las Guaitecas).",
       "tasa_ocupacion_concesiones_pct": 32.7,
       "proporcion_concesiones_en_snaspe_pct": 93.9,
-      "trabajadores_sii_por_centro_activo": 32.5,
+      "trabajadores_sii_por_centro_activo": 8.3,
       "ventas_sii_muf": 2450,
-      "ventas_por_empresa_uf": 14327,
+      "ventas_por_empresa_uf": 10124,
       "inversion_por_proyecto_seia_mmusd": 2.85,
       "suelo_fiscal_bbnn_pct": 42.1,
       "suelo_privado_pct": 12.1,
@@ -12918,24 +13001,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 48200,
       "proyectos_seia_aprobados": 41,
       "inversion_seia_mmusd": 310,
-      "empresas_sii": 400,
-      "trabajadores_sii": 2430,
-      "prestadores_sernatur": 95,
+      "empresas_sii": 648,
+      "trabajadores_sii": 1140,
+      "prestadores_sernatur": 231,
+      "alojamientos_turisticos_rnpst_n": 78,
+      "operadores_aventura_rnpst_n": 36,
+      "guias_turismo_rnpst_n": 46,
+      "restaurantes_turisticos_rnpst_n": 24,
+      "prestadores_vigencia_patente_pct": 34.2,
       "camas_turisticas": 780,
-      "pernoctaciones_emat": 58600,
+      "pernoctaciones_emat": 26500,
+      "llegadas_turistas_emat_n": 14100,
       "zoit_nombre": "ZOIT Chelenko",
-      "visitantes_snaspe": 34200,
-      "visitas_por_cama_turistica": 43.8,
-      "visitas_por_pernoctacion_ratio": 0.58,
+      "visitantes_snaspe": 6600,
+      "visitantes_atractivos_totales_n": 26900,
+      "llegadas_por_cama_turistica": 18.1,
+      "visitas_por_cama_turistica": 8.5,
+      "visitas_por_pernoctacion_ratio": 0.25,
       "visitantes_extranjeros_pct": 38.5,
-      "visitantes_extranjeros_snaspe_n": 13167,
-      "tasa_ocupacion_estival_pct": 82,
-      "tasa_ocupacion_invernal_pct": 21,
-      "concentracion_estival_pct": 79.6,
-      "estadia_promedio_dias": 2.4,
-      "gasto_diario_turista_usd": 125,
-      "tarifa_adr_estimada_usd": 169,
-      "revpar_estimado_usd": 76.7,
+      "visitantes_extranjeros_snaspe_n": 2541,
+      "tasa_ocupacion_estival_pct": 76.2,
+      "tasa_ocupacion_emat_estival_pct": 39.8,
+      "tasa_ocupacion_invernal_pct": 17.5,
+      "concentracion_estival_pct": 74.6,
+      "estadia_promedio_dias": 1.88,
+      "estadia_regional_viaje_dias": 10.8,
+      "gasto_diario_turista_usd": 74,
+      "tarifa_adr_emat_clp": 59600,
+      "revpar_emat_clp": 13470,
+      "tarifa_adr_estimada_usd": 62.7,
+      "revpar_estimado_usd": 14.2,
+      "empresas_act_turismo_sii_n": 228,
+      "ventas_act_turismo_uf": 742000,
+      "empleo_act_turismo_n": 385,
       "largo_pista_aerodromo_m": 1180,
       "operaciones_aerodromo_interior_anual": 580,
       "camas_hospitalarias": 14,
@@ -13018,7 +13116,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 4.5,
       "dependencia_barcaza_nivel": 1,
       "hogares_sin_internet_fijo_pct": 52.1,
-      "cobertura_fibra_hogar_pct": 47.9,
+      "cobertura_fibra_hogar_pct": 36.5,
       "establecimientos_educacion_conectados_n": 3,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 134,
@@ -13036,8 +13134,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 19,
       "amenaza_volcanica_sismica_idx": 72.4,
       "esperanza_vida_total_anos": 81.3,
-      "cobertura_empam_pct": 79.1,
-      "cobertura_pscv_pct": 73,
+      "cobertura_empam_pct": 79.4,
+      "cobertura_pscv_pct": 74.1,
       "barometro_confianza_institucional_pct": 68.9,
       "barometro_redes_apoyo_comunitario_pct": 56.4,
       "barometro_orgullo_identidad_pct": 89.5,
@@ -13049,8 +13147,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 72.4,
       "indice_masculinidad": 111,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 268,
-      "mediana_espera_quirurgica_dias": 378,
+      "mediana_espera_especialidad_dias": 262,
+      "mediana_espera_quirurgica_dias": 364,
       "tasa_mortalidad_cancer_gastrico_100k": 19.4,
       "tasa_mortalidad_cancer_vesicula_100k": 13.2,
       "tasa_mortalidad_suicidio_100k": 14.5,
@@ -13089,7 +13187,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 6300,
-      "ventas_por_empresa_uf": 15750,
+      "ventas_por_empresa_uf": 9722,
       "inversion_por_proyecto_seia_mmusd": 7.56,
       "suelo_fiscal_bbnn_pct": 26.5,
       "suelo_privado_pct": 24.9,
@@ -13165,24 +13263,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 19600,
       "proyectos_seia_aprobados": 27,
       "inversion_seia_mmusd": 142,
-      "empresas_sii": 238,
-      "trabajadores_sii": 1445,
-      "prestadores_sernatur": 132,
+      "empresas_sii": 418,
+      "trabajadores_sii": 512,
+      "prestadores_sernatur": 445,
+      "alojamientos_turisticos_rnpst_n": 112,
+      "operadores_aventura_rnpst_n": 70,
+      "guias_turismo_rnpst_n": 146,
+      "restaurantes_turisticos_rnpst_n": 30,
+      "prestadores_vigencia_patente_pct": 30.3,
       "camas_turisticas": 1150,
-      "pernoctaciones_emat": 86200,
+      "pernoctaciones_emat": 51400,
+      "llegadas_turistas_emat_n": 29100,
       "zoit_nombre": "ZOIT Chelenko",
-      "visitantes_snaspe": 41000,
-      "visitas_por_cama_turistica": 35.7,
-      "visitas_por_pernoctacion_ratio": 0.48,
+      "visitantes_snaspe": 15807,
+      "visitantes_atractivos_totales_n": 65400,
+      "llegadas_por_cama_turistica": 25.3,
+      "visitas_por_cama_turistica": 13.7,
+      "visitas_por_pernoctacion_ratio": 0.31,
       "visitantes_extranjeros_pct": 48,
-      "visitantes_extranjeros_snaspe_n": 19680,
-      "tasa_ocupacion_estival_pct": 89.2,
-      "tasa_ocupacion_invernal_pct": 14.5,
-      "concentracion_estival_pct": 86,
-      "estadia_promedio_dias": 2.1,
-      "gasto_diario_turista_usd": 150,
-      "tarifa_adr_estimada_usd": 203,
-      "revpar_estimado_usd": 90.1,
+      "visitantes_extranjeros_snaspe_n": 7587,
+      "tasa_ocupacion_estival_pct": 78.8,
+      "tasa_ocupacion_emat_estival_pct": 44.1,
+      "tasa_ocupacion_invernal_pct": 12.4,
+      "concentracion_estival_pct": 85.6,
+      "estadia_promedio_dias": 1.77,
+      "estadia_regional_viaje_dias": 10.3,
+      "gasto_diario_turista_usd": 114,
+      "tarifa_adr_emat_clp": 62400,
+      "revpar_emat_clp": 13790,
+      "tarifa_adr_estimada_usd": 65.7,
+      "revpar_estimado_usd": 14.5,
+      "empresas_act_turismo_sii_n": 312,
+      "ventas_act_turismo_uf": 1045000,
+      "empleo_act_turismo_n": 530,
       "largo_pista_aerodromo_m": 860,
       "operaciones_aerodromo_interior_anual": 240,
       "camas_hospitalarias": 0,
@@ -13265,7 +13378,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 1.7,
       "dependencia_barcaza_nivel": 0,
       "hogares_sin_internet_fijo_pct": 64.8,
-      "cobertura_fibra_hogar_pct": 35.2,
+      "cobertura_fibra_hogar_pct": 21.4,
       "establecimientos_educacion_conectados_n": 4,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 81,
@@ -13283,8 +13396,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 12,
       "amenaza_volcanica_sismica_idx": 91.5,
       "esperanza_vida_total_anos": 80.2,
-      "cobertura_empam_pct": 75.8,
-      "cobertura_pscv_pct": 69.8,
+      "cobertura_empam_pct": 75.9,
+      "cobertura_pscv_pct": 68.9,
       "barometro_confianza_institucional_pct": 51,
       "barometro_redes_apoyo_comunitario_pct": 41.2,
       "barometro_orgullo_identidad_pct": 89.8,
@@ -13296,8 +13409,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 79.1,
       "indice_masculinidad": 116.4,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 292,
-      "mediana_espera_quirurgica_dias": 404,
+      "mediana_espera_especialidad_dias": 302,
+      "mediana_espera_quirurgica_dias": 424,
       "tasa_mortalidad_cancer_gastrico_100k": 21.2,
       "tasa_mortalidad_cancer_vesicula_100k": 14.2,
       "tasa_mortalidad_suicidio_100k": 16.8,
@@ -13336,7 +13449,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 3200,
-      "ventas_por_empresa_uf": 13445,
+      "ventas_por_empresa_uf": 7656,
       "inversion_por_proyecto_seia_mmusd": 5.26,
       "suelo_fiscal_bbnn_pct": 18.2,
       "suelo_privado_pct": 20.1,
@@ -13412,24 +13525,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 9800,
       "proyectos_seia_aprobados": 33,
       "inversion_seia_mmusd": 172,
-      "empresas_sii": 295,
-      "trabajadores_sii": 1790,
-      "prestadores_sernatur": 83,
+      "empresas_sii": 492,
+      "trabajadores_sii": 845,
+      "prestadores_sernatur": 96,
+      "alojamientos_turisticos_rnpst_n": 42,
+      "operadores_aventura_rnpst_n": 22,
+      "guias_turismo_rnpst_n": 18,
+      "restaurantes_turisticos_rnpst_n": 8,
+      "prestadores_vigencia_patente_pct": 44.8,
       "camas_turisticas": 690,
-      "pernoctaciones_emat": 49200,
+      "pernoctaciones_emat": 22800,
+      "llegadas_turistas_emat_n": 11900,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
-      "visitantes_snaspe": 35600,
-      "visitas_por_cama_turistica": 51.6,
-      "visitas_por_pernoctacion_ratio": 0.72,
+      "visitantes_snaspe": 9853,
+      "visitantes_atractivos_totales_n": 20200,
+      "llegadas_por_cama_turistica": 17.2,
+      "visitas_por_cama_turistica": 14.3,
+      "visitas_por_pernoctacion_ratio": 0.43,
       "visitantes_extranjeros_pct": 44.5,
-      "visitantes_extranjeros_snaspe_n": 15842,
-      "tasa_ocupacion_estival_pct": 81,
-      "tasa_ocupacion_invernal_pct": 16,
-      "concentracion_estival_pct": 83.5,
-      "estadia_promedio_dias": 2.5,
-      "gasto_diario_turista_usd": 130,
-      "tarifa_adr_estimada_usd": 176,
-      "revpar_estimado_usd": 73.9,
+      "visitantes_extranjeros_snaspe_n": 4385,
+      "tasa_ocupacion_estival_pct": 79.4,
+      "tasa_ocupacion_emat_estival_pct": 40.5,
+      "tasa_ocupacion_invernal_pct": 13.8,
+      "concentracion_estival_pct": 80.4,
+      "estadia_promedio_dias": 1.92,
+      "estadia_regional_viaje_dias": 11.2,
+      "gasto_diario_turista_usd": 104,
+      "tarifa_adr_emat_clp": 73800,
+      "revpar_emat_clp": 16531,
+      "tarifa_adr_estimada_usd": 77.7,
+      "revpar_estimado_usd": 17.4,
+      "empresas_act_turismo_sii_n": 162,
+      "ventas_act_turismo_uf": 585000,
+      "empleo_act_turismo_n": 295,
       "largo_pista_aerodromo_m": 1200,
       "operaciones_aerodromo_interior_anual": 640,
       "camas_hospitalarias": 16,
@@ -13512,7 +13640,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 6.5,
       "dependencia_barcaza_nivel": 0,
       "hogares_sin_internet_fijo_pct": 48.6,
-      "cobertura_fibra_hogar_pct": 51.4,
+      "cobertura_fibra_hogar_pct": 39.2,
       "establecimientos_educacion_conectados_n": 4,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 111,
@@ -13530,8 +13658,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 14,
       "amenaza_volcanica_sismica_idx": 48,
       "esperanza_vida_total_anos": 80.8,
-      "cobertura_empam_pct": 77.4,
-      "cobertura_pscv_pct": 72.1,
+      "cobertura_empam_pct": 77.8,
+      "cobertura_pscv_pct": 73.4,
       "barometro_confianza_institucional_pct": 68.4,
       "barometro_redes_apoyo_comunitario_pct": 57.8,
       "barometro_orgullo_identidad_pct": 91.2,
@@ -13543,8 +13671,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 67.5,
       "indice_masculinidad": 114.5,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 285,
-      "mediana_espera_quirurgica_dias": 392,
+      "mediana_espera_especialidad_dias": 269,
+      "mediana_espera_quirurgica_dias": 368,
       "tasa_mortalidad_cancer_gastrico_100k": 17.8,
       "tasa_mortalidad_cancer_vesicula_100k": 11.8,
       "tasa_mortalidad_suicidio_100k": 13.9,
@@ -13583,7 +13711,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 4400,
-      "ventas_por_empresa_uf": 14915,
+      "ventas_por_empresa_uf": 8943,
       "inversion_por_proyecto_seia_mmusd": 5.21,
       "suelo_fiscal_bbnn_pct": 31.4,
       "suelo_privado_pct": 16.5,
@@ -13659,24 +13787,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 5600,
       "proyectos_seia_aprobados": 14,
       "inversion_seia_mmusd": 48,
-      "empresas_sii": 57,
-      "trabajadores_sii": 345,
-      "prestadores_sernatur": 29,
+      "empresas_sii": 96,
+      "trabajadores_sii": 98,
+      "prestadores_sernatur": 31,
+      "alojamientos_turisticos_rnpst_n": 16,
+      "operadores_aventura_rnpst_n": 6,
+      "guias_turismo_rnpst_n": 5,
+      "restaurantes_turisticos_rnpst_n": 2,
+      "prestadores_vigencia_patente_pct": 38.7,
       "camas_turisticas": 240,
-      "pernoctaciones_emat": 16400,
+      "pernoctaciones_emat": 6439,
+      "llegadas_turistas_emat_n": 3361,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
-      "visitantes_snaspe": 12400,
-      "visitas_por_cama_turistica": 51.7,
-      "visitas_por_pernoctacion_ratio": 0.76,
+      "visitantes_snaspe": 0,
+      "visitantes_atractivos_totales_n": 9800,
+      "llegadas_por_cama_turistica": 14,
+      "visitas_por_cama_turistica": 0,
+      "visitas_por_pernoctacion_ratio": 0,
       "visitantes_extranjeros_pct": 55,
-      "visitantes_extranjeros_snaspe_n": 6820,
-      "tasa_ocupacion_estival_pct": 86.5,
-      "tasa_ocupacion_invernal_pct": 7.5,
-      "concentracion_estival_pct": 92,
-      "estadia_promedio_dias": 2.8,
-      "gasto_diario_turista_usd": 138,
-      "tarifa_adr_estimada_usd": 186,
-      "revpar_estimado_usd": 72.7,
+      "visitantes_extranjeros_snaspe_n": 0,
+      "tasa_ocupacion_estival_pct": 80.5,
+      "tasa_ocupacion_emat_estival_pct": 38.2,
+      "tasa_ocupacion_invernal_pct": 6.8,
+      "concentracion_estival_pct": 88.2,
+      "estadia_promedio_dias": 1.92,
+      "estadia_regional_viaje_dias": 12.1,
+      "gasto_diario_turista_usd": 112,
+      "tarifa_adr_emat_clp": 58600,
+      "revpar_emat_clp": 10196,
+      "tarifa_adr_estimada_usd": 61.7,
+      "revpar_estimado_usd": 10.7,
+      "empresas_act_turismo_sii_n": 38,
+      "ventas_act_turismo_uf": 115000,
+      "empleo_act_turismo_n": 75,
       "largo_pista_aerodromo_m": 1300,
       "operaciones_aerodromo_interior_anual": 420,
       "camas_hospitalarias": 0,
@@ -13759,7 +13902,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 12,
       "dependencia_barcaza_nivel": 2,
       "hogares_sin_internet_fijo_pct": 76.8,
-      "cobertura_fibra_hogar_pct": 23.2,
+      "cobertura_fibra_hogar_pct": 1.5,
       "establecimientos_educacion_conectados_n": 2,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 26,
@@ -13777,8 +13920,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 5,
       "amenaza_volcanica_sismica_idx": 56.5,
       "esperanza_vida_total_anos": 79.2,
-      "cobertura_empam_pct": 69.5,
-      "cobertura_pscv_pct": 64.2,
+      "cobertura_empam_pct": 69.1,
+      "cobertura_pscv_pct": 63.4,
       "barometro_confianza_institucional_pct": 71.2,
       "barometro_redes_apoyo_comunitario_pct": 62.5,
       "barometro_orgullo_identidad_pct": 92.5,
@@ -13790,8 +13933,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 74,
       "indice_masculinidad": 124.6,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 304,
-      "mediana_espera_quirurgica_dias": 416,
+      "mediana_espera_especialidad_dias": 305,
+      "mediana_espera_quirurgica_dias": 436,
       "tasa_mortalidad_cancer_gastrico_100k": 18,
       "tasa_mortalidad_cancer_vesicula_100k": 11.6,
       "tasa_mortalidad_suicidio_100k": 14.2,
@@ -13830,7 +13973,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 0,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 530,
-      "ventas_por_empresa_uf": 9298,
+      "ventas_por_empresa_uf": 5521,
       "inversion_por_proyecto_seia_mmusd": 3.43,
       "suelo_fiscal_bbnn_pct": 17.8,
       "suelo_privado_pct": 3.9,
@@ -13906,24 +14049,39 @@ window.AYSEN_HUBS_DATA = {
       "concesiones_mineras_ha": 3200,
       "proyectos_seia_aprobados": 18,
       "inversion_seia_mmusd": 66.5,
-      "empresas_sii": 48,
-      "trabajadores_sii": 295,
-      "prestadores_sernatur": 42,
+      "empresas_sii": 84,
+      "trabajadores_sii": 80,
+      "prestadores_sernatur": 44,
+      "alojamientos_turisticos_rnpst_n": 21,
+      "operadores_aventura_rnpst_n": 10,
+      "guias_turismo_rnpst_n": 7,
+      "restaurantes_turisticos_rnpst_n": 4,
+      "prestadores_vigencia_patente_pct": 40.9,
       "camas_turisticas": 360,
-      "pernoctaciones_emat": 27000,
+      "pernoctaciones_emat": 10400,
+      "llegadas_turistas_emat_n": 5850,
       "zoit_nombre": "ZOIT Provincia de los Glaciares",
-      "visitantes_snaspe": 14200,
-      "visitas_por_cama_turistica": 39.4,
-      "visitas_por_pernoctacion_ratio": 0.53,
+      "visitantes_snaspe": 0,
+      "visitantes_atractivos_totales_n": 14200,
+      "llegadas_por_cama_turistica": 16.3,
+      "visitas_por_cama_turistica": 0,
+      "visitas_por_pernoctacion_ratio": 0,
       "visitantes_extranjeros_pct": 43,
-      "visitantes_extranjeros_snaspe_n": 6106,
-      "tasa_ocupacion_estival_pct": 85,
-      "tasa_ocupacion_invernal_pct": 11,
-      "concentracion_estival_pct": 88.5,
-      "estadia_promedio_dias": 1.9,
-      "gasto_diario_turista_usd": 115,
-      "tarifa_adr_estimada_usd": 155,
-      "revpar_estimado_usd": 62.9,
+      "visitantes_extranjeros_snaspe_n": 0,
+      "tasa_ocupacion_estival_pct": 78.6,
+      "tasa_ocupacion_emat_estival_pct": 37.9,
+      "tasa_ocupacion_invernal_pct": 9.2,
+      "concentracion_estival_pct": 86.8,
+      "estadia_promedio_dias": 1.78,
+      "estadia_regional_viaje_dias": 11.6,
+      "gasto_diario_turista_usd": 95,
+      "tarifa_adr_emat_clp": 55600,
+      "revpar_emat_clp": 10675,
+      "tarifa_adr_estimada_usd": 58.5,
+      "revpar_estimado_usd": 11.2,
+      "empresas_act_turismo_sii_n": 64,
+      "ventas_act_turismo_uf": 218086,
+      "empleo_act_turismo_n": 115,
       "largo_pista_aerodromo_m": 800,
       "operaciones_aerodromo_interior_anual": 190,
       "camas_hospitalarias": 0,
@@ -14006,7 +14164,7 @@ window.AYSEN_HUBS_DATA = {
       "tiempo_viaje_coyhaique_hrs": 9,
       "dependencia_barcaza_nivel": 2,
       "hogares_sin_internet_fijo_pct": 72.5,
-      "cobertura_fibra_hogar_pct": 27.5,
+      "cobertura_fibra_hogar_pct": 2.1,
       "establecimientos_educacion_conectados_n": 2,
       "fdt_ultima_milla_aprobado": true,
       "deficit_habitacional_cuantitativo_n": 39,
@@ -14024,8 +14182,8 @@ window.AYSEN_HUBS_DATA = {
       "expedientes_fiscalizacion_sma_n": 8,
       "amenaza_volcanica_sismica_idx": 61,
       "esperanza_vida_total_anos": 79,
-      "cobertura_empam_pct": 68.8,
-      "cobertura_pscv_pct": 63.5,
+      "cobertura_empam_pct": 68.4,
+      "cobertura_pscv_pct": 63.9,
       "barometro_confianza_institucional_pct": 70.5,
       "barometro_redes_apoyo_comunitario_pct": 60.8,
       "barometro_orgullo_identidad_pct": 91.8,
@@ -14037,8 +14195,8 @@ window.AYSEN_HUBS_DATA = {
       "indice_envejecimiento": 71.5,
       "indice_masculinidad": 125.2,
       "camas_psiquiatricas_uhce": 0,
-      "mediana_espera_especialidad_dias": 294,
-      "mediana_espera_quirurgica_dias": 402,
+      "mediana_espera_especialidad_dias": 288,
+      "mediana_espera_quirurgica_dias": 388,
       "tasa_mortalidad_cancer_gastrico_100k": 17.2,
       "tasa_mortalidad_cancer_vesicula_100k": 11.5,
       "tasa_mortalidad_suicidio_100k": 13.8,
@@ -14077,7 +14235,7 @@ window.AYSEN_HUBS_DATA = {
       "proporcion_concesiones_en_snaspe_pct": 70.6,
       "trabajadores_sii_por_centro_activo": 0,
       "ventas_sii_muf": 390,
-      "ventas_por_empresa_uf": 8125,
+      "ventas_por_empresa_uf": 4643,
       "inversion_por_proyecto_seia_mmusd": 3.69,
       "suelo_fiscal_bbnn_pct": 11.2,
       "suelo_privado_pct": 1.4,
@@ -15414,62 +15572,77 @@ window.AYSEN_HUBS_DATA = {
     "balmaceda_pasajeros_jac": [
       {
         "periodo": "2015",
-        "pasajeros": 420000,
+        "pasajeros": 446000,
         "carga_ton": 820
       },
       {
         "periodo": "2016",
-        "pasajeros": 455000,
+        "pasajeros": 482000,
         "carga_ton": 890
       },
       {
         "periodo": "2017",
-        "pasajeros": 490000,
+        "pasajeros": 535000,
         "carga_ton": 950
       },
       {
         "periodo": "2018",
-        "pasajeros": 530000,
+        "pasajeros": 592000,
         "carga_ton": 1040
       },
       {
         "periodo": "2019",
-        "pasajeros": 585000,
+        "pasajeros": 678660,
+        "llegadas": 339330,
         "carga_ton": 1120
       },
       {
         "periodo": "2020",
-        "pasajeros": 240000,
+        "pasajeros": 252810,
+        "llegadas": 126405,
         "carga_ton": 680
       },
       {
         "periodo": "2021",
-        "pasajeros": 365000,
+        "pasajeros": 375174,
+        "llegadas": 187587,
         "carga_ton": 880
       },
       {
         "periodo": "2022",
-        "pasajeros": 520000,
+        "pasajeros": 408402,
+        "llegadas": 204201,
         "carga_ton": 1180
       },
       {
         "periodo": "2023",
-        "pasajeros": 605000,
+        "pasajeros": 594114,
+        "llegadas": 297057,
         "carga_ton": 1290
       },
       {
         "periodo": "2024",
-        "pasajeros": 648000,
+        "pasajeros": 625501,
+        "llegadas": 310876,
+        "salidas": 314625,
         "carga_ton": 1360
       },
       {
         "periodo": "2025",
-        "pasajeros": 665000,
+        "pasajeros": 605945,
+        "variacion_yoy_pct": -2.9,
+        "ranking_nacional_jac": 10,
         "carga_ton": 1410
       },
       {
         "periodo": "2026",
-        "pasajeros": 682000,
+        "pasajeros": 620000,
+        "parcial_ene_may_2026": 286666,
+        "nuevo_terminal_m2": 12391,
+        "inauguracion_terminal": "2026-10-02",
+        "puentes_embarque": 5,
+        "capacidad_anual_pax": 1000000,
+        "es_proyeccion_parcial": true,
         "carga_ton": 1450
       }
     ],
@@ -15581,22 +15754,51 @@ window.AYSEN_HUBS_DATA = {
       {
         "temporada": "2023-2024",
         "recaladas_cruceros": 23,
-        "pasajeros_cruceros": 22450,
-        "tripulantes": 9800
+        "pasajeros_cruceros": 20450,
+        "tripulantes": 9100
       },
       {
         "temporada": "2024-2025",
-        "recaladas_cruceros": 25,
-        "pasajeros_cruceros": 25800,
-        "tripulantes": 11200
-      },
-      {
-        "temporada": "2025-2026",
-        "recaladas_cruceros": 28,
-        "pasajeros_cruceros": 28500,
-        "tripulantes": 12400
+        "recaladas_cruceros": 29,
+        "pasajeros_cruceros": 22093,
+        "puerto_chacabuco_recaladas": 20,
+        "puerto_chacabuco_pasajeros": 20047,
+        "caleta_tortel_recaladas": 9,
+        "caleta_tortel_pasajeros": 2046,
+        "tripulantes": 9850,
+        "fuente": "Anuario de Turismo Sernatur 2024 p. 16"
       }
     ],
+    "pasos_fronterizos_pdi_aysen": {
+      "total_personas_controladas": 350257,
+      "entradas": 172520,
+      "salidas": 177737,
+      "turistas_extranjeros_pernoctantes_2024": 108703,
+      "variacion_extranjeros_yoy_pct": 50.5,
+      "por_paso": [
+        {
+          "paso": "Paso Jeinimeni",
+          "comuna": "Chile Chico",
+          "comuna_ine": "11401",
+          "controlados": 233327,
+          "participacion_pct": 66.6
+        },
+        {
+          "paso": "Paso Coyhaique Alto",
+          "comuna": "Coyhaique",
+          "comuna_ine": "11101",
+          "controlados": 63045,
+          "participacion_pct": 18
+        },
+        {
+          "paso": "Paso Huemules",
+          "comuna": "Coyhaique (Balmaceda)",
+          "comuna_ine": "11101",
+          "controlados": 53885,
+          "participacion_pct": 15.4
+        }
+      ]
+    },
     "pib_regional_nominal_mmclp": [
       {
         "periodo": "2015",
@@ -16042,123 +16244,123 @@ window.AYSEN_HUBS_DATA = {
     "snaspe_por_parque_anual": [
       {
         "anio": "2015",
-        "visitantes_snaspe_total": 148000,
-        "pernoctaciones_emat": 312000,
-        "pn_queulat": 32100,
-        "pn_laguna_san_rafael": 24500,
-        "pn_cerro_castillo": 9800,
-        "pn_patagonia": 8400,
-        "otras_unidades": 73200
+        "visitantes_snaspe_total": 76500,
+        "pernoctaciones_emat": 245000,
+        "pn_queulat": 25800,
+        "pn_laguna_san_rafael": 10200,
+        "pn_cerro_castillo": 7400,
+        "pn_patagonia": 6800,
+        "otras_unidades": 26300
       },
       {
         "anio": "2016",
-        "visitantes_snaspe_total": 165000,
-        "pernoctaciones_emat": 335000,
-        "pn_queulat": 36400,
-        "pn_laguna_san_rafael": 27200,
-        "pn_cerro_castillo": 11500,
-        "pn_patagonia": 10200,
-        "otras_unidades": 79700
+        "visitantes_snaspe_total": 84200,
+        "pernoctaciones_emat": 261000,
+        "pn_queulat": 28400,
+        "pn_laguna_san_rafael": 11100,
+        "pn_cerro_castillo": 8900,
+        "pn_patagonia": 8100,
+        "otras_unidades": 27700
       },
       {
         "anio": "2017",
-        "visitantes_snaspe_total": 185000,
-        "pernoctaciones_emat": 368000,
-        "pn_queulat": 41200,
-        "pn_laguna_san_rafael": 30100,
-        "pn_cerro_castillo": 14200,
-        "pn_patagonia": 12800,
-        "otras_unidades": 86700
+        "visitantes_snaspe_total": 91500,
+        "pernoctaciones_emat": 278000,
+        "pn_queulat": 31200,
+        "pn_laguna_san_rafael": 11900,
+        "pn_cerro_castillo": 10600,
+        "pn_patagonia": 9800,
+        "otras_unidades": 28000
       },
       {
         "anio": "2018",
-        "visitantes_snaspe_total": 204000,
-        "pernoctaciones_emat": 395000,
-        "pn_queulat": 45600,
-        "pn_laguna_san_rafael": 32800,
-        "pn_cerro_castillo": 18600,
-        "pn_patagonia": 17500,
-        "otras_unidades": 89500
+        "visitantes_snaspe_total": 98800,
+        "pernoctaciones_emat": 291000,
+        "pn_queulat": 34100,
+        "pn_laguna_san_rafael": 12800,
+        "pn_cerro_castillo": 12400,
+        "pn_patagonia": 11500,
+        "otras_unidades": 28000
       },
       {
         "anio": "2019",
-        "visitantes_snaspe_total": 215000,
-        "pernoctaciones_emat": 412000,
-        "pn_queulat": 48900,
-        "pn_laguna_san_rafael": 34500,
-        "pn_cerro_castillo": 22400,
-        "pn_patagonia": 21300,
-        "otras_unidades": 87900
+        "visitantes_snaspe_total": 105400,
+        "pernoctaciones_emat": 302000,
+        "pn_queulat": 36900,
+        "pn_laguna_san_rafael": 13600,
+        "pn_cerro_castillo": 14100,
+        "pn_patagonia": 13200,
+        "otras_unidades": 27600
       },
       {
         "anio": "2020",
-        "visitantes_snaspe_total": 78000,
-        "pernoctaciones_emat": 178000,
-        "pn_queulat": 19500,
-        "pn_laguna_san_rafael": 12400,
-        "pn_cerro_castillo": 8900,
-        "pn_patagonia": 7800,
-        "otras_unidades": 29400
+        "visitantes_snaspe_total": 39800,
+        "pernoctaciones_emat": 115000,
+        "pn_queulat": 14200,
+        "pn_laguna_san_rafael": 5100,
+        "pn_cerro_castillo": 5800,
+        "pn_patagonia": 4900,
+        "otras_unidades": 9800
       },
       {
         "anio": "2021",
-        "visitantes_snaspe_total": 118000,
-        "pernoctaciones_emat": 224000,
-        "pn_queulat": 26400,
-        "pn_laguna_san_rafael": 18200,
-        "pn_cerro_castillo": 15200,
-        "pn_patagonia": 13400,
-        "otras_unidades": 44800
+        "visitantes_snaspe_total": 61200,
+        "pernoctaciones_emat": 168000,
+        "pn_queulat": 21400,
+        "pn_laguna_san_rafael": 7800,
+        "pn_cerro_castillo": 9600,
+        "pn_patagonia": 8400,
+        "otras_unidades": 14000
       },
       {
         "anio": "2022",
-        "visitantes_snaspe_total": 195000,
-        "pernoctaciones_emat": 345000,
-        "pn_queulat": 43800,
-        "pn_laguna_san_rafael": 29800,
-        "pn_cerro_castillo": 24100,
-        "pn_patagonia": 21900,
-        "otras_unidades": 75400
+        "visitantes_snaspe_total": 104250,
+        "pernoctaciones_emat": 308000,
+        "pn_queulat": 38060,
+        "pn_laguna_san_rafael": 12911,
+        "pn_cerro_castillo": 16200,
+        "pn_patagonia": 14800,
+        "otras_unidades": 22279
       },
       {
         "anio": "2023",
-        "visitantes_snaspe_total": 235000,
-        "pernoctaciones_emat": 398000,
-        "pn_queulat": 49200,
-        "pn_laguna_san_rafael": 33400,
-        "pn_cerro_castillo": 28900,
-        "pn_patagonia": 25600,
-        "otras_unidades": 97900
+        "visitantes_snaspe_total": 98420,
+        "pernoctaciones_emat": 315371,
+        "pn_queulat": 34570,
+        "pn_laguna_san_rafael": 9850,
+        "pn_cerro_castillo": 14800,
+        "pn_patagonia": 17100,
+        "otras_unidades": 22100
       },
       {
         "anio": "2024",
-        "visitantes_snaspe_total": 256000,
-        "pernoctaciones_emat": 432000,
-        "pn_queulat": 53400,
-        "pn_laguna_san_rafael": 36200,
-        "pn_cerro_castillo": 32500,
-        "pn_patagonia": 28400,
-        "otras_unidades": 105500
+        "visitantes_snaspe_total": 86117,
+        "pernoctaciones_emat": 351598,
+        "pn_queulat": 25619,
+        "pn_laguna_san_rafael": 5900,
+        "pn_cerro_castillo": 13907,
+        "pn_patagonia": 16453,
+        "otras_unidades": 24238
       },
       {
         "anio": "2025",
-        "visitantes_snaspe_total": 273500,
-        "pernoctaciones_emat": 458000,
-        "pn_queulat": 56800,
-        "pn_laguna_san_rafael": 38500,
-        "pn_cerro_castillo": 35400,
-        "pn_patagonia": 30800,
-        "otras_unidades": 112000
+        "visitantes_snaspe_total": 86117,
+        "pernoctaciones_emat": 364039,
+        "pn_queulat": 25619,
+        "pn_laguna_san_rafael": 5900,
+        "pn_cerro_castillo": 13907,
+        "pn_patagonia": 16453,
+        "otras_unidades": 24238
       },
       {
         "anio": "2026",
-        "visitantes_snaspe_total": 284000,
-        "pernoctaciones_emat": 472000,
-        "pn_queulat": 58500,
-        "pn_laguna_san_rafael": 39800,
-        "pn_cerro_castillo": 37200,
-        "pn_patagonia": 32400,
-        "otras_unidades": 116100
+        "visitantes_snaspe_total": 86117,
+        "pernoctaciones_emat": 364039,
+        "pn_queulat": 25619,
+        "pn_laguna_san_rafael": 5900,
+        "pn_cerro_castillo": 13907,
+        "pn_patagonia": 16453,
+        "otras_unidades": 24238
       }
     ],
     "parques_snaspe_unidades": [
@@ -16168,7 +16370,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Parque Nacional SNASPE",
         "comuna": "Aysén",
         "comuna_ine": "11201",
-        "visitantes_anuales": 38500,
+        "visitantes_anuales": 5900,
         "superficie_ha": 1742000,
         "proporcion_extranjeros_pct": 34.2,
         "ha_por_guardaparque": 145000,
@@ -16180,7 +16382,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Parque Nacional SNASPE",
         "comuna": "Cisnes",
         "comuna_ine": "11202",
-        "visitantes_anuales": 38000,
+        "visitantes_anuales": 25619,
         "superficie_ha": 154093,
         "proporcion_extranjeros_pct": 41.5,
         "ha_por_guardaparque": 168000,
@@ -16192,7 +16394,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Parque Nacional SNASPE",
         "comuna": "Río Ibáñez",
         "comuna_ine": "11402",
-        "visitantes_anuales": 13900,
+        "visitantes_anuales": 13907,
         "superficie_ha": 143502,
         "proporcion_extranjeros_pct": 48,
         "ha_por_guardaparque": 86000,
@@ -16204,7 +16406,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Parque Nacional SNASPE",
         "comuna": "Cochrane",
         "comuna_ine": "11301",
-        "visitantes_anuales": 30800,
+        "visitantes_anuales": 16453,
         "superficie_ha": 304527,
         "proporcion_extranjeros_pct": 44.5,
         "ha_por_guardaparque": 142000,
@@ -16252,7 +16454,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Reserva Nacional SNASPE",
         "comuna": "Coyhaique",
         "comuna_ine": "11101",
-        "visitantes_anuales": 18200,
+        "visitantes_anuales": 7961,
         "superficie_ha": 0,
         "proporcion_extranjeros_pct": 26.8,
         "ha_por_guardaparque": 38500,
@@ -16264,7 +16466,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Reserva Nacional SNASPE",
         "comuna": "Cochrane",
         "comuna_ine": "11301",
-        "visitantes_anuales": 15800,
+        "visitantes_anuales": 5200,
         "superficie_ha": 0,
         "proporcion_extranjeros_pct": 44.5,
         "ha_por_guardaparque": 142000,
@@ -16276,7 +16478,7 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Reserva Nacional SNASPE Periurbana",
         "comuna": "Coyhaique",
         "comuna_ine": "11101",
-        "visitantes_anuales": 24800,
+        "visitantes_anuales": 13552,
         "superficie_ha": 0,
         "proporcion_extranjeros_pct": 26.8,
         "ha_por_guardaparque": 38500,
@@ -18454,98 +18656,158 @@ window.AYSEN_HUBS_DATA = {
     {
       "mes": "Enero",
       "numero_mes": 1,
-      "pernoctaciones_total": 48500,
-      "tasa_ocupacion_pct": 82.4,
-      "pasajeros_chilenos": 33950,
-      "pasajeros_extranjeros": 14550
+      "pernoctaciones_total": 64503,
+      "llegadas_pasajeros_total": 37806,
+      "llegadas_chilenos": 31001,
+      "llegadas_extranjeros": 6805,
+      "pasajeros_chilenos": 31001,
+      "pasajeros_extranjeros": 6805,
+      "tasa_ocupacion_pct": 39.7,
+      "adr_clp": 75195,
+      "revpar_clp": 29836
     },
     {
       "mes": "Febrero",
       "numero_mes": 2,
-      "pernoctaciones_total": 52100,
-      "tasa_ocupacion_pct": 85.8,
-      "pasajeros_chilenos": 36470,
-      "pasajeros_extranjeros": 15630
+      "pernoctaciones_total": 69909,
+      "llegadas_pasajeros_total": 40634,
+      "llegadas_chilenos": 33320,
+      "llegadas_extranjeros": 7314,
+      "pasajeros_chilenos": 33320,
+      "pasajeros_extranjeros": 7314,
+      "tasa_ocupacion_pct": 44.5,
+      "adr_clp": 76471,
+      "revpar_clp": 34025
     },
     {
       "mes": "Marzo",
       "numero_mes": 3,
-      "pernoctaciones_total": 31200,
-      "tasa_ocupacion_pct": 54.2,
-      "pasajeros_chilenos": 20280,
-      "pasajeros_extranjeros": 10920
+      "pernoctaciones_total": 42850,
+      "llegadas_pasajeros_total": 22910,
+      "llegadas_chilenos": 18100,
+      "llegadas_extranjeros": 4810,
+      "pasajeros_chilenos": 18100,
+      "pasajeros_extranjeros": 4810,
+      "tasa_ocupacion_pct": 28.4,
+      "adr_clp": 71200,
+      "revpar_clp": 20221
     },
     {
       "mes": "Abril",
       "numero_mes": 4,
-      "pernoctaciones_total": 18400,
-      "tasa_ocupacion_pct": 32.6,
-      "pasajeros_chilenos": 14720,
-      "pasajeros_extranjeros": 3680
+      "pernoctaciones_total": 21915,
+      "llegadas_pasajeros_total": 11420,
+      "llegadas_chilenos": 9707,
+      "llegadas_extranjeros": 1713,
+      "pasajeros_chilenos": 9707,
+      "pasajeros_extranjeros": 1713,
+      "tasa_ocupacion_pct": 19.6,
+      "adr_clp": 63400,
+      "revpar_clp": 12426
     },
     {
       "mes": "Mayo",
       "numero_mes": 5,
-      "pernoctaciones_total": 12100,
-      "tasa_ocupacion_pct": 21.5,
-      "pasajeros_chilenos": 10890,
-      "pasajeros_extranjeros": 1210
+      "pernoctaciones_total": 13480,
+      "llegadas_pasajeros_total": 6890,
+      "llegadas_chilenos": 6132,
+      "llegadas_extranjeros": 758,
+      "pasajeros_chilenos": 6132,
+      "pasajeros_extranjeros": 758,
+      "tasa_ocupacion_pct": 14.2,
+      "adr_clp": 56800,
+      "revpar_clp": 8066
     },
     {
       "mes": "Junio",
       "numero_mes": 6,
-      "pernoctaciones_total": 9800,
-      "tasa_ocupacion_pct": 17.8,
-      "pasajeros_chilenos": 9016,
-      "pasajeros_extranjeros": 784
+      "pernoctaciones_total": 10920,
+      "llegadas_pasajeros_total": 5510,
+      "llegadas_chilenos": 4959,
+      "llegadas_extranjeros": 551,
+      "pasajeros_chilenos": 4959,
+      "pasajeros_extranjeros": 551,
+      "tasa_ocupacion_pct": 12.1,
+      "adr_clp": 54900,
+      "revpar_clp": 6643
     },
     {
       "mes": "Julio",
       "numero_mes": 7,
-      "pernoctaciones_total": 14500,
-      "tasa_ocupacion_pct": 25.4,
-      "pasajeros_chilenos": 13340,
-      "pasajeros_extranjeros": 1160
+      "pernoctaciones_total": 15640,
+      "llegadas_pasajeros_total": 7920,
+      "llegadas_chilenos": 7128,
+      "llegadas_extranjeros": 792,
+      "pasajeros_chilenos": 7128,
+      "pasajeros_extranjeros": 792,
+      "tasa_ocupacion_pct": 16.5,
+      "adr_clp": 57500,
+      "revpar_clp": 9488
     },
     {
       "mes": "Agosto",
       "numero_mes": 8,
-      "pernoctaciones_total": 11200,
-      "tasa_ocupacion_pct": 19.8,
-      "pasajeros_chilenos": 10192,
-      "pasajeros_extranjeros": 1008
+      "pernoctaciones_total": 13190,
+      "llegadas_pasajeros_total": 6841,
+      "llegadas_chilenos": 6157,
+      "llegadas_extranjeros": 684,
+      "pasajeros_chilenos": 6157,
+      "pasajeros_extranjeros": 684,
+      "tasa_ocupacion_pct": 14.8,
+      "adr_clp": 56200,
+      "revpar_clp": 8318
     },
     {
       "mes": "Septiembre",
       "numero_mes": 9,
-      "pernoctaciones_total": 16800,
-      "tasa_ocupacion_pct": 29.5,
-      "pasajeros_chilenos": 15120,
-      "pasajeros_extranjeros": 1680
+      "pernoctaciones_total": 16833,
+      "llegadas_pasajeros_total": 8488,
+      "llegadas_chilenos": 7554,
+      "llegadas_extranjeros": 934,
+      "pasajeros_chilenos": 7554,
+      "pasajeros_extranjeros": 934,
+      "tasa_ocupacion_pct": 17.2,
+      "adr_clp": 58310,
+      "revpar_clp": 10013
     },
     {
       "mes": "Octubre",
       "numero_mes": 10,
-      "pernoctaciones_total": 22400,
-      "tasa_ocupacion_pct": 39.1,
-      "pasajeros_chilenos": 16800,
-      "pasajeros_extranjeros": 5600
+      "pernoctaciones_total": 22490,
+      "llegadas_pasajeros_total": 11860,
+      "llegadas_chilenos": 9725,
+      "llegadas_extranjeros": 2135,
+      "pasajeros_chilenos": 9725,
+      "pasajeros_extranjeros": 2135,
+      "tasa_ocupacion_pct": 22.8,
+      "adr_clp": 66500,
+      "revpar_clp": 15162
     },
     {
       "mes": "Noviembre",
       "numero_mes": 11,
-      "pernoctaciones_total": 34600,
-      "tasa_ocupacion_pct": 60.2,
-      "pasajeros_chilenos": 22490,
-      "pasajeros_extranjeros": 12110
+      "pernoctaciones_total": 31120,
+      "llegadas_pasajeros_total": 16240,
+      "llegadas_chilenos": 12667,
+      "llegadas_extranjeros": 3573,
+      "pasajeros_chilenos": 12667,
+      "pasajeros_extranjeros": 3573,
+      "tasa_ocupacion_pct": 29.4,
+      "adr_clp": 71800,
+      "revpar_clp": 21109
     },
     {
       "mes": "Diciembre",
       "numero_mes": 12,
-      "pernoctaciones_total": 41800,
-      "tasa_ocupacion_pct": 71.3,
-      "pasajeros_chilenos": 28424,
-      "pasajeros_extranjeros": 13376
+      "pernoctaciones_total": 41189,
+      "llegadas_pasajeros_total": 20092,
+      "llegadas_chilenos": 16737,
+      "llegadas_extranjeros": 3355,
+      "pasajeros_chilenos": 16737,
+      "pasajeros_extranjeros": 3355,
+      "tasa_ocupacion_pct": 34.8,
+      "adr_clp": 74200,
+      "revpar_clp": 25822
     }
   ],
   "edges_inter_hub": [
@@ -20144,18 +20406,18 @@ window.AYSEN_HUBS_DATA = {
                 {
                   "label": "Pasajeros Aeródromo Balmaceda (JAC)",
                   "data": [
-                    420000,
-                    455000,
-                    490000,
-                    530000,
-                    585000,
-                    240000,
-                    365000,
-                    520000,
-                    605000,
-                    648000,
-                    665000,
-                    682000
+                    446000,
+                    482000,
+                    535000,
+                    592000,
+                    678660,
+                    252810,
+                    375174,
+                    408402,
+                    594114,
+                    625501,
+                    605945,
+                    620000
                   ],
                   "unit": "pasajeros",
                   "yAxisID": "y"
@@ -20812,7 +21074,7 @@ window.AYSEN_HUBS_DATA = {
             "showBuffers": false,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Distribución de los más de 1.100 prestadores SERNATUR en torno a las áreas silvestres protegidas.",
+          "what_it_shows": "Distribución de los 1.728 servicios turísticos RNPST SERNATUR en torno a las 19 áreas silvestres protegidas (86.117 visitas oficiales CONAF).",
           "why_complex_system": "Atracción nodal: la belleza escénica de los parques actúa como ancla que activa redes de hospedaje, guías y gastronomía en los poblados aledaños."
         },
         {
@@ -20903,18 +21165,18 @@ window.AYSEN_HUBS_DATA = {
                 {
                   "label": "Pernoctaciones Anuales EMAT (N°)",
                   "data": [
-                    312000,
-                    335000,
-                    368000,
-                    395000,
-                    412000,
-                    178000,
-                    224000,
-                    345000,
-                    398000,
-                    432000,
-                    458000,
-                    472000
+                    245000,
+                    261000,
+                    278000,
+                    291000,
+                    302000,
+                    115000,
+                    168000,
+                    308000,
+                    315371,
+                    351598,
+                    364039,
+                    364039
                   ],
                   "unit": "pernoctaciones",
                   "yAxisID": "y"
@@ -20922,18 +21184,18 @@ window.AYSEN_HUBS_DATA = {
                 {
                   "label": "Visitantes Anuales Parques SNASPE (N°)",
                   "data": [
-                    148000,
-                    165000,
-                    185000,
-                    204000,
-                    215000,
-                    78000,
-                    118000,
-                    195000,
-                    235000,
-                    256000,
-                    273500,
-                    284000
+                    76500,
+                    84200,
+                    91500,
+                    98800,
+                    105400,
+                    39800,
+                    61200,
+                    104250,
+                    98420,
+                    86117,
+                    86117,
+                    86117
                   ],
                   "unit": "visitantes",
                   "yAxisID": "y1"
@@ -20941,7 +21203,7 @@ window.AYSEN_HUBS_DATA = {
               ]
             }
           },
-          "what_it_shows": "La demanda hotelera y la visitación a parques nacionales muestran alta sincronía y rápida recuperación post-pandemia.",
+          "what_it_shows": "Evolución oficial 2015–2026: 364.039 pernoctaciones INE EMAT y 86.117 visitas en porterías CONAF SNASPE en el corte vigente.",
           "why_complex_system": "Oscilación periódica: la extrema estacionalidad exige modelos de negocio hiperflexibles para subsistir los 8 meses de baja afluencia."
         },
         {
@@ -22049,7 +22311,7 @@ window.AYSEN_HUBS_DATA = {
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Evidencia la paradoja rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
+          "what_it_shows": "Evidencia la asimetría rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
           "why_complex_system": "Desacople de escalas: la inversión sectorial centralizada no siempre compensa las disparidades de presupuesto de los municipios más aislados."
         },
         {
@@ -22925,7 +23187,7 @@ window.AYSEN_HUBS_DATA = {
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Evidencia la paradoja rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
+          "what_it_shows": "Evidencia la asimetría rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
           "why_complex_system": "Desacople de escalas: la inversión sectorial centralizada no siempre compensa las disparidades de presupuesto de los municipios más aislados."
         },
         {
@@ -23848,6 +24110,30 @@ window.AYSEN_HUBS_DATA = {
       "url": "https://www.observatorionacional.cl/",
       "dataYear": "Empleo Acuícola 2025–2026",
       "collectionDate": "25 Nov 2026"
+    },
+    "sit_aysen_balmaceda": {
+      "name": "Estadísticas Aysén Patagonia (SIT Aysén / UACh / INE EMAT)",
+      "url": "https://estadisticas.aysenpatagonia.cl/",
+      "dataYear": "EMAT 2025–2026 / Encuesta Balmaceda 2025",
+      "collectionDate": "26 Nov 2026"
+    },
+    "subtrab_act_turismo": {
+      "name": "Subsecretaría del Trabajo / SII / INE (Actividades Características del Turismo)",
+      "url": "https://www.sernatur.cl/dataturismo/",
+      "dataYear": "Anuario Sernatur 2024 / SII 2025 / Subtrab Ene 2026",
+      "collectionDate": "26 Nov 2026"
+    },
+    "pdi_pasos_fronterizos": {
+      "name": "PDI / Unidad de Pasos Fronterizos (Ministerio del Interior)",
+      "url": "https://www.pasosfronterizos.gov.cl/",
+      "dataYear": "Balance Migratorio 2024",
+      "collectionDate": "26 Nov 2026"
+    },
+    "conaf_sbap_snaspe": {
+      "name": "CONAF / MMA-SBAP (Ley N° 21.600) / Subsecretaría de Turismo",
+      "url": "https://www.conaf.cl/parques-nacionales/visitanos/estadisticas-de-visitacion/",
+      "dataYear": "CONAF 2024 / Plan Infraestructura AP Oct 2025",
+      "collectionDate": "26 Nov 2026"
     }
   },
   "extension_modules": {
@@ -27057,12 +27343,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 24.5,
-              "cobertura_fibra_hogar_pct": 75.5,
+              "cobertura_fibra_hogar_pct": 68.4,
               "establecimientos_educacion_conectados_n": 24,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 15785,
               "conexiones_residenciales_subtel_jun2026_n": 15088,
-              "variacion_conexiones_2015_2026_pct": 65.1
+              "variacion_conexiones_2015_2026_pct": 65.1,
+              "penetracion_internet_fijo_total_pct": 75.5
             },
             "pasos_fronterizos_internacionales": {
               "pasos_habilitados": [
@@ -27090,12 +27377,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 82.4,
-              "cobertura_fibra_hogar_pct": 17.6,
+              "cobertura_fibra_hogar_pct": 0.8,
               "establecimientos_educacion_conectados_n": 3,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 189,
               "conexiones_residenciales_subtel_jun2026_n": 159,
-              "variacion_conexiones_2015_2026_pct": 551.7
+              "variacion_conexiones_2015_2026_pct": 551.7,
+              "penetracion_internet_fijo_total_pct": 17.6
             }
           }
         },
@@ -27116,12 +27404,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 38.2,
-              "cobertura_fibra_hogar_pct": 61.8,
+              "cobertura_fibra_hogar_pct": 54.2,
               "establecimientos_educacion_conectados_n": 14,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 5748,
               "conexiones_residenciales_subtel_jun2026_n": 5353,
-              "variacion_conexiones_2015_2026_pct": 75.7
+              "variacion_conexiones_2015_2026_pct": 75.7,
+              "penetracion_internet_fijo_total_pct": 61.8
             }
           }
         },
@@ -27142,12 +27431,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 56.4,
-              "cobertura_fibra_hogar_pct": 43.6,
+              "cobertura_fibra_hogar_pct": 24.8,
               "establecimientos_educacion_conectados_n": 6,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 1638,
               "conexiones_residenciales_subtel_jun2026_n": 1486,
-              "variacion_conexiones_2015_2026_pct": 155.1
+              "variacion_conexiones_2015_2026_pct": 155.1,
+              "penetracion_internet_fijo_total_pct": 43.6
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "servicio_maritimo": "Ruta Cordillera CAM0061 (Puerto Cisnes, Puyuhuapi, Raúl Marín)",
@@ -27172,12 +27462,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 68.2,
-              "cobertura_fibra_hogar_pct": 31.8,
+              "cobertura_fibra_hogar_pct": 2.4,
               "establecimientos_educacion_conectados_n": 2,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 345,
               "conexiones_residenciales_subtel_jun2026_n": 270,
-              "variacion_conexiones_2015_2026_pct": 219.4
+              "variacion_conexiones_2015_2026_pct": 219.4,
+              "penetracion_internet_fijo_total_pct": 31.8
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "servicio_maritimo": "Ruta Cordillera CAM0061 (Melinka y Repollal)",
@@ -27203,12 +27494,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 48.6,
-              "cobertura_fibra_hogar_pct": 51.4,
+              "cobertura_fibra_hogar_pct": 39.2,
               "establecimientos_educacion_conectados_n": 4,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 835,
               "conexiones_residenciales_subtel_jun2026_n": 791,
-              "variacion_conexiones_2015_2026_pct": 293.9
+              "variacion_conexiones_2015_2026_pct": 293.9,
+              "penetracion_internet_fijo_total_pct": 51.4
             }
           }
         },
@@ -27229,12 +27521,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 76.8,
-              "cobertura_fibra_hogar_pct": 23.2,
+              "cobertura_fibra_hogar_pct": 1.5,
               "establecimientos_educacion_conectados_n": 2,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 272,
               "conexiones_residenciales_subtel_jun2026_n": 249,
-              "variacion_conexiones_2015_2026_pct": 27100
+              "variacion_conexiones_2015_2026_pct": 27100,
+              "penetracion_internet_fijo_total_pct": 23.2
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "enlace_critico": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
@@ -27262,12 +27555,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 72.5,
-              "cobertura_fibra_hogar_pct": 27.5,
+              "cobertura_fibra_hogar_pct": 2.1,
               "establecimientos_educacion_conectados_n": 2,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 56,
               "conexiones_residenciales_subtel_jun2026_n": 43,
-              "variacion_conexiones_2015_2026_pct": 2700
+              "variacion_conexiones_2015_2026_pct": 2700,
+              "penetracion_internet_fijo_total_pct": 27.5
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "enlace_maritimo_fluvial": "Rampa Caleta Tortel / Enlace fluvial Río Mitchell y golfo",
@@ -27292,12 +27586,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 52.1,
-              "cobertura_fibra_hogar_pct": 47.9,
+              "cobertura_fibra_hogar_pct": 36.5,
               "establecimientos_educacion_conectados_n": 3,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 845,
               "conexiones_residenciales_subtel_jun2026_n": 788,
-              "variacion_conexiones_2015_2026_pct": 141.4
+              "variacion_conexiones_2015_2026_pct": 141.4,
+              "penetracion_internet_fijo_total_pct": 47.9
             },
             "resiliencia_conectividad_maritima_lacustre": {
               "enlace_lacustre": "Lago General Carrera (Chile Chico - Puerto Ibáñez)",
@@ -27327,12 +27622,13 @@ window.AYSEN_HUBS_DATA = {
             },
             "conectividad_digital": {
               "hogares_sin_internet_fijo_pct": 64.8,
-              "cobertura_fibra_hogar_pct": 35.2,
+              "cobertura_fibra_hogar_pct": 21.4,
               "establecimientos_educacion_conectados_n": 4,
               "fdt_ultima_milla_aprobado": true,
               "conexiones_fijas_subtel_jun2026_n": 581,
               "conexiones_residenciales_subtel_jun2026_n": 555,
-              "variacion_conexiones_2015_2026_pct": 1513.9
+              "variacion_conexiones_2015_2026_pct": 1513.9,
+              "penetracion_internet_fijo_total_pct": 35.2
             }
           }
         }
@@ -27446,84 +27742,128 @@ window.AYSEN_HUBS_DATA = {
           {
             "temporada": "2023-2024",
             "recaladas_cruceros": 23,
-            "pasajeros_cruceros": 22450,
-            "tripulantes": 9800
+            "pasajeros_cruceros": 20450,
+            "tripulantes": 9100
           },
           {
             "temporada": "2024-2025",
-            "recaladas_cruceros": 25,
-            "pasajeros_cruceros": 25800,
-            "tripulantes": 11200
-          },
-          {
-            "temporada": "2025-2026",
-            "recaladas_cruceros": 28,
-            "pasajeros_cruceros": 28500,
-            "tripulantes": 12400
+            "recaladas_cruceros": 29,
+            "pasajeros_cruceros": 22093,
+            "puerto_chacabuco_recaladas": 20,
+            "puerto_chacabuco_pasajeros": 20047,
+            "caleta_tortel_recaladas": 9,
+            "caleta_tortel_pasajeros": 2046,
+            "tripulantes": 9850,
+            "fuente": "Anuario de Turismo Sernatur 2024 p. 16"
           }
         ],
         "balmaceda_pasajeros_jac": [
           {
             "periodo": "2015",
-            "pasajeros": 420000,
+            "pasajeros": 446000,
             "carga_ton": 820
           },
           {
             "periodo": "2016",
-            "pasajeros": 455000,
+            "pasajeros": 482000,
             "carga_ton": 890
           },
           {
             "periodo": "2017",
-            "pasajeros": 490000,
+            "pasajeros": 535000,
             "carga_ton": 950
           },
           {
             "periodo": "2018",
-            "pasajeros": 530000,
+            "pasajeros": 592000,
             "carga_ton": 1040
           },
           {
             "periodo": "2019",
-            "pasajeros": 585000,
+            "pasajeros": 678660,
+            "llegadas": 339330,
             "carga_ton": 1120
           },
           {
             "periodo": "2020",
-            "pasajeros": 240000,
+            "pasajeros": 252810,
+            "llegadas": 126405,
             "carga_ton": 680
           },
           {
             "periodo": "2021",
-            "pasajeros": 365000,
+            "pasajeros": 375174,
+            "llegadas": 187587,
             "carga_ton": 880
           },
           {
             "periodo": "2022",
-            "pasajeros": 520000,
+            "pasajeros": 408402,
+            "llegadas": 204201,
             "carga_ton": 1180
           },
           {
             "periodo": "2023",
-            "pasajeros": 605000,
+            "pasajeros": 594114,
+            "llegadas": 297057,
             "carga_ton": 1290
           },
           {
             "periodo": "2024",
-            "pasajeros": 648000,
+            "pasajeros": 625501,
+            "llegadas": 310876,
+            "salidas": 314625,
             "carga_ton": 1360
           },
           {
             "periodo": "2025",
-            "pasajeros": 665000,
+            "pasajeros": 605945,
+            "variacion_yoy_pct": -2.9,
+            "ranking_nacional_jac": 10,
             "carga_ton": 1410
           },
           {
             "periodo": "2026",
-            "pasajeros": 682000,
+            "pasajeros": 620000,
+            "parcial_ene_may_2026": 286666,
+            "nuevo_terminal_m2": 12391,
+            "inauguracion_terminal": "2026-10-02",
+            "puentes_embarque": 5,
+            "capacidad_anual_pax": 1000000,
+            "es_proyeccion_parcial": true,
             "carga_ton": 1450
           }
-        ]
+        ],
+        "pasos_fronterizos_pdi_aysen": {
+          "total_personas_controladas": 350257,
+          "entradas": 172520,
+          "salidas": 177737,
+          "turistas_extranjeros_pernoctantes_2024": 108703,
+          "variacion_extranjeros_yoy_pct": 50.5,
+          "por_paso": [
+            {
+              "paso": "Paso Jeinimeni",
+              "comuna": "Chile Chico",
+              "comuna_ine": "11401",
+              "controlados": 233327,
+              "participacion_pct": 66.6
+            },
+            {
+              "paso": "Paso Coyhaique Alto",
+              "comuna": "Coyhaique",
+              "comuna_ine": "11101",
+              "controlados": 63045,
+              "participacion_pct": 18
+            },
+            {
+              "paso": "Paso Huemules",
+              "comuna": "Coyhaique (Balmaceda)",
+              "comuna_ine": "11101",
+              "controlados": 53885,
+              "participacion_pct": 15.4
+            }
+          ]
+        }
       },
       "resumen_regional": {
         "region_codigo": "CL-XI",
@@ -27547,8 +27887,8 @@ window.AYSEN_HUBS_DATA = {
             {
               "enlace": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
               "comuna_afectada": "Villa O'Higgins (11302)",
-              "embarcacion_titular": "Padre Antonio Ronchi",
-              "vulnerabilidad": "Aislamiento vehicular y rodado absoluto (100% de corte) ante detención, mantenimiento o falla mecánica",
+              "embarcacion_titular": "Padre Antonio Ronchi y Pitipulla",
+              "vulnerabilidad": "Corte critico superior a 11 dias desde el 19 de febrero de 2026 por falla mecanica de Pitipulla; aislamiento rodado 100%",
               "frecuencia_nominal_cruces_diarios": 6
             },
             {
@@ -27558,28 +27898,40 @@ window.AYSEN_HUBS_DATA = {
                 "La Tehuelche",
                 "Pilchero"
               ],
-              "vulnerabilidad": "Aislamiento comercial y encarecimiento del abastecimiento por vía terrestre argentina ante fallas prolongadas de carena",
-              "frecuencia_nominal": "Diaria bimodal"
+              "vulnerabilidad": "13 frecuencias semanales en verano; crisis de continuidad por deuda de subsidio resuelta el 6 de enero de 2026",
+              "frecuencia_nominal": "13 frecuencias semanales en verano"
             },
             {
-              "enlace": "Ruta Cordillera Litoral Norte (CAM0061)",
+              "enlace": "Canal Moraleda / Litoral Norte (Puerto Chacabuco - Cisnes - Melinka - Quellón)",
               "comunas_afectadas": [
                 "Guaitecas (11203)",
                 "Cisnes (11202)",
                 "Aysén (11201)"
               ],
-              "recorrido": "Puerto Montt - Melinka - Raúl Marín Balmaceda - Gala - Gaviota - Cisnes - Puerto Aguirre - Puerto Chacabuco",
-              "vulnerabilidad": "Tiempos de navegación de hasta 32 horas expuestos a marejadas en Golfo Corcovado y Canal Moraleda",
-              "frecuencia_nominal": "2 a 3 viajes semanales"
+              "embarcacion_titular": "Barcaza Queulat (Naviera Austral)",
+              "recorrido": "Cuarta frecuencia mensual Cisnes + frecuencia semanal Melinka - Quellon",
+              "vulnerabilidad": "Tiempos de navegacion expuestos a marejadas en Golfo Corcovado y Canal Moraleda",
+              "frecuencia_nominal": "Semanal Melinka-Quellon + 4a frecuencia mensual Cisnes"
             }
           ],
-          "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR"
+          "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR",
+          "presupuesto_2024_mclp": 19460,
+          "presupuesto_2025_2026_mclp": 25400
         },
         "subtel_conexiones_fijas_jun2026_total": 26294,
         "subtel_fttx_fibra_jun2026": 19972,
         "subtel_starlink_jun2026": 5648,
         "fdt_ultima_milla_ago2026_mclp": 7600,
-        "mtt_dtpr_subsidio_aislado_alza_2025": "+30% respecto a 2024 (~+$6.000 MM adicionales para rutas marítimas Fiordo Mitchell/Lago General Carrera/Litoral Norte y aéreas Cochrane-Tortel)"
+        "mtt_dtpr_subsidio_aislado_alza_2025": "+30% respecto a 2024 (~+$6.000 MM adicionales para rutas marítimas Fiordo Mitchell/Lago General Carrera/Litoral Norte y aéreas Cochrane-Tortel)",
+        "presupuesto_mtt_subsidios_2024_mclp": 19460,
+        "presupuesto_mtt_subsidios_2025_2026_mclp": 25400,
+        "servicios_subsidiados_mtt_desglose": {
+          "terrestres": 61,
+          "maritimos": 22,
+          "lacustres": 6,
+          "aereos": 4,
+          "fluviales": 2
+        }
       }
     }
   },
@@ -31447,6 +31799,274 @@ window.AYSEN_HUBS_DATA = {
       "clasificacion_bioseguridad": "Alta (En descanso)"
     }
   ],
+  "unidadesSnaspe": [
+    {
+      "id": "snaspe_pn_queulat",
+      "nombre": "PN Queulat",
+      "categoria": "Parque Nacional",
+      "comunas": "Cisnes / Lago Verde",
+      "superficie_ha": 154093,
+      "visitantes_anuales_n": 25619,
+      "guardaparques_permanentes_n": 6,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 17245,
+      "hito_gestion": "Reapertura senderos La Morrena y Laguna Témpanos (10 ene 2026, Res. N° 7/2026; $1.900 M$ ejecutados)"
+    },
+    {
+      "id": "snaspe_pn_patagonia",
+      "nombre": "PN Patagonia",
+      "categoria": "Parque Nacional",
+      "comunas": "Cochrane / Chile Chico",
+      "superficie_ha": 304528,
+      "visitantes_anuales_n": 16453,
+      "guardaparques_permanentes_n": 8,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 4825,
+      "hito_gestion": "Sectores Valle Chacabuco, Tamango y Jeinimeni / Cueva de las Manos (PDZE 2026–2028)"
+    },
+    {
+      "id": "snaspe_pn_cerro_castillo",
+      "nombre": "PN Cerro Castillo",
+      "categoria": "Parque Nacional",
+      "comunas": "Río Ibáñez / Coyhaique",
+      "superficie_ha": 143502,
+      "visitantes_anuales_n": 13907,
+      "guardaparques_permanentes_n": 4,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 5350,
+      "hito_gestion": "1ª Área Protegida de Chile en la Lista Verde UICN (12 sept 2025); 3 GP + 1 admin"
+    },
+    {
+      "id": "snaspe_rn_coyhaique",
+      "nombre": "RN Coyhaique",
+      "categoria": "Reserva Nacional",
+      "comunas": "Coyhaique",
+      "superficie_ha": 2150,
+      "visitantes_anuales_n": 13552,
+      "guardaparques_permanentes_n": 4,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Principal área silvestre periurbana de la capital regional"
+    },
+    {
+      "id": "snaspe_rn_rio_simpson",
+      "nombre": "RN Río Simpson",
+      "categoria": "Reserva Nacional",
+      "comunas": "Aysén / Coyhaique",
+      "superficie_ha": 41621,
+      "visitantes_anuales_n": 7961,
+      "guardaparques_permanentes_n": 3,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Corredor Ruta 240 Coyhaique–Puerto Aysén"
+    },
+    {
+      "id": "snaspe_pn_laguna_san_rafael",
+      "nombre": "PN Laguna San Rafael",
+      "categoria": "Parque Nacional",
+      "comunas": "Aysén / Río Ibáñez / Tortel / Chile Chico",
+      "superficie_ha": 1742000,
+      "visitantes_anuales_n": 5900,
+      "guardaparques_permanentes_n": 6,
+      "concesiones_salmon_dentro_n": 2,
+      "concesiones_salmon_parcial_o_borde_n": 8,
+      "superficie_salmon_ha": 3,
+      "inversion_pdze_mclp": 15591,
+      "hito_gestion": "Cierre definitivo acceso frontal sobre hielo en Glaciar Exploradores (2 dic 2025, Corte Suprema ROL N° 7.477-2026); 2 concesiones Cooke dentro + 8 en borde Estero Cupquelán"
+    },
+    {
+      "id": "snaspe_mn_dos_lagunas",
+      "nombre": "MN Dos Lagunas",
+      "categoria": "Monumento Natural",
+      "comunas": "Coyhaique",
+      "superficie_ha": 181,
+      "visitantes_anuales_n": 2638,
+      "guardaparques_permanentes_n": 2,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Ruta Coyhaique–Coyhaique Alto"
+    },
+    {
+      "id": "snaspe_rn_lago_carlota",
+      "nombre": "RN Lago Carlota",
+      "categoria": "Reserva Nacional",
+      "comunas": "Coyhaique",
+      "superficie_ha": 27110,
+      "visitantes_anuales_n": 87,
+      "guardaparques_permanentes_n": 2,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Estepa andina en alto Ñirehuao (visitación acotada con registro permanente)"
+    },
+    {
+      "id": "snaspe_mn_cinco_hermanas",
+      "nombre": "MN Cinco Hermanas",
+      "categoria": "Monumento Natural",
+      "comunas": "Aysén",
+      "superficie_ha": 228,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 1,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Guardaparque compartido con gestión insular; sin portería continua"
+    },
+    {
+      "id": "snaspe_rn_lago_rosselot",
+      "nombre": "RN Lago Rosselot",
+      "categoria": "Reserva Nacional",
+      "comunas": "Cisnes / Lago Verde",
+      "superficie_ha": 12725,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 2,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Sin conteo oficial de portería publicado"
+    },
+    {
+      "id": "snaspe_rn_lago_las_torres",
+      "nombre": "RN Lago Las Torres",
+      "categoria": "Reserva Nacional",
+      "comunas": "Lago Verde / Cisnes",
+      "superficie_ha": 16516,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 1,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Sin conteo oficial de portería en Ruta 7 Norte"
+    },
+    {
+      "id": "snaspe_rn_trapananda",
+      "nombre": "RN Trapananda",
+      "categoria": "Reserva Nacional",
+      "comunas": "Coyhaique",
+      "superficie_ha": 2305,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 1,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Protección de cuenca media Mañihuales–Simpson"
+    },
+    {
+      "id": "snaspe_rn_manihuales",
+      "nombre": "RN Mañihuales",
+      "categoria": "Reserva Nacional",
+      "comunas": "Aysén",
+      "superficie_ha": 3715,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 1,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Conservación forestal en cuenca Mañihuales"
+    },
+    {
+      "id": "snaspe_pn_isla_magdalena",
+      "nombre": "PN Isla Magdalena",
+      "categoria": "Parque Nacional",
+      "comunas": "Cisnes",
+      "superficie_ha": 249712,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 0,
+      "concesiones_salmon_dentro_n": 4,
+      "concesiones_salmon_parcial_o_borde_n": 4,
+      "superficie_salmon_ha": 38.48,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "4 concesiones salmón dentro (38,48 ha) + 4 parciales (26,35 ha); D.E. N° 146/2025 eliminó AAA para nuevas concesiones"
+    },
+    {
+      "id": "snaspe_pn_melimoyu",
+      "nombre": "PN Melimoyu",
+      "categoria": "Parque Nacional",
+      "comunas": "Cisnes",
+      "superficie_ha": 105500,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 0,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "AAA marinas eliminadas por D.E. N° 146 del 31 jul 2025; sin guardaparques permanentes"
+    },
+    {
+      "id": "snaspe_pn_isla_guamblin",
+      "nombre": "PN Isla Guamblin",
+      "categoria": "Parque Nacional",
+      "comunas": "Cisnes / Guaitecas",
+      "superficie_ha": 10625,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 0,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Acceso marítimo oceánico sin infraestructura ni dotación residente"
+    },
+    {
+      "id": "snaspe_rn_las_guaitecas",
+      "nombre": "RN Las Guaitecas",
+      "categoria": "Reserva Nacional",
+      "comunas": "Guaitecas / Cisnes / Aysén",
+      "superficie_ha": 1097975,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 0,
+      "concesiones_salmon_dentro_n": 312,
+      "concesiones_salmon_parcial_o_borde_n": 1,
+      "superficie_salmon_ha": 2159.13,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "CONAF declara \"no posee infraestructura\"; 312 concesiones salmón totalmente dentro (2.159,13 ha, 77% indefinidas) + 1 parcial (6,77 ha)"
+    },
+    {
+      "id": "snaspe_rn_katalalixar",
+      "nombre": "RN Katalalixar",
+      "categoria": "Reserva Nacional",
+      "comunas": "Tortel",
+      "superficie_ha": 674500,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 0,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "Archipiélago prístino sin infraestructura turística ni guardaparques residentes"
+    },
+    {
+      "id": "snaspe_pn_bernardo_ohiggins_aysen",
+      "nombre": "PN Bernardo O'Higgins (Sector Norte Aysén)",
+      "categoria": "Parque Nacional",
+      "comunas": "Tortel / O'Higgins",
+      "superficie_ha": 1212000,
+      "visitantes_anuales_n": 0,
+      "guardaparques_permanentes_n": 0,
+      "concesiones_salmon_dentro_n": 0,
+      "concesiones_salmon_parcial_o_borde_n": 0,
+      "superficie_salmon_ha": 0,
+      "inversion_pdze_mclp": 0,
+      "hito_gestion": "3.525.901 ha birregional (28.499 visitas contabilizadas en Magallanes); D.E. N° 146/2025 eliminó AAA"
+    }
+  ],
   "seriesAcuiculturaAnual": [
     {
       "ano": 2015,
@@ -34022,10 +34642,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Balmaceda",
       "lat": -45.916,
       "lon": -71.689,
-      "magnitudeValue": 682000,
+      "magnitudeValue": 605945,
       "magnitudeUnit": "pasajeros/año",
       "magnitudeLabel": "Flujo Aereo Anual",
-      "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 2.501 m (Asfalto))",
+      "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 2.501 m (Asfalto) · Nuevo Terminal 12.391 m² (oct. 2026))",
       "sourceUrl": "https://www.jac.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -36248,10 +36868,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Aysén",
       "lat": -46.702,
       "lon": -73.855,
-      "magnitudeValue": 38500,
+      "magnitudeValue": 5900,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
-      "titular": "Ventisquero San Rafael y Campo de Hielo Norte",
+      "titular": "Ventisquero San Rafael y Campo de Hielo Norte (Cierre acceso sobre hielo Glaciar Exploradores Corte Suprema ROL 7.477-2026)",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -36269,7 +36889,7 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Cisnes",
       "lat": -44.45,
       "lon": -72.55,
-      "magnitudeValue": 38000,
+      "magnitudeValue": 25619,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "Ventisquero Colgante y bosque siempreverde",
@@ -36290,10 +36910,10 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Río Ibáñez",
       "lat": -46.0667,
       "lon": -72.1833,
-      "magnitudeValue": 13900,
+      "magnitudeValue": 13907,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
-      "titular": "Circuito de trekking Las Horquetas y avistamiento de huemul",
+      "titular": "1a Area Protegida de Chile en Lista Verde UICN (12 sept 2025) y trekking Las Horquetas",
       "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -36311,7 +36931,7 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Cochrane",
       "lat": -47.1167,
       "lon": -72.4833,
-      "magnitudeValue": 30800,
+      "magnitudeValue": 16453,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "Restauración ecológica de estepa, museo de sitio y fauna",
@@ -36479,7 +37099,7 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Coyhaique",
       "lat": -45.473,
       "lon": -72.325,
-      "magnitudeValue": 18200,
+      "magnitudeValue": 7961,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "Cascada La Virgen y pesca con mosca de truchas farios",
@@ -36542,7 +37162,7 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Cochrane",
       "lat": -47.225,
       "lon": -72.518,
-      "magnitudeValue": 15800,
+      "magnitudeValue": 5200,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "CONAF SNASPE / SERNATUR",
@@ -36563,7 +37183,7 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Coyhaique",
       "lat": -45.545,
       "lon": -72.045,
-      "magnitudeValue": 24800,
+      "magnitudeValue": 13552,
       "magnitudeUnit": "visitantes/año",
       "magnitudeLabel": "Visitacion CONAF SNASPE",
       "titular": "Laguna Verde, miradores de la ciudad y senderismo familiar",
@@ -41110,10 +41730,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Balmaceda",
         "lat": -45.916,
         "lon": -71.689,
-        "magnitudeValue": 682000,
+        "magnitudeValue": 605945,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 2.501 m (Asfalto))",
+        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 2.501 m (Asfalto) · Nuevo Terminal 12.391 m² (oct. 2026))",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -43342,10 +43962,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Aysén",
         "lat": -46.702,
         "lon": -73.855,
-        "magnitudeValue": 38500,
+        "magnitudeValue": 5900,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
-        "titular": "Ventisquero San Rafael y Campo de Hielo Norte",
+        "titular": "Ventisquero San Rafael y Campo de Hielo Norte (Cierre acceso sobre hielo Glaciar Exploradores Corte Suprema ROL 7.477-2026)",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-laguna-san-rafael/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -43363,7 +43983,7 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Cisnes",
         "lat": -44.45,
         "lon": -72.55,
-        "magnitudeValue": 38000,
+        "magnitudeValue": 25619,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "Ventisquero Colgante y bosque siempreverde",
@@ -43384,10 +44004,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Río Ibáñez",
         "lat": -46.0667,
         "lon": -72.1833,
-        "magnitudeValue": 13900,
+        "magnitudeValue": 13907,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
-        "titular": "Circuito de trekking Las Horquetas y avistamiento de huemul",
+        "titular": "1a Area Protegida de Chile en Lista Verde UICN (12 sept 2025) y trekking Las Horquetas",
         "sourceUrl": "https://www.conaf.cl/parques-nacionales/parque-nacional-cerro-castillo/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -43405,7 +44025,7 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Cochrane",
         "lat": -47.1167,
         "lon": -72.4833,
-        "magnitudeValue": 30800,
+        "magnitudeValue": 16453,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "Restauración ecológica de estepa, museo de sitio y fauna",
@@ -43573,7 +44193,7 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Coyhaique",
         "lat": -45.473,
         "lon": -72.325,
-        "magnitudeValue": 18200,
+        "magnitudeValue": 7961,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "Cascada La Virgen y pesca con mosca de truchas farios",
@@ -43636,7 +44256,7 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Cochrane",
         "lat": -47.225,
         "lon": -72.518,
-        "magnitudeValue": 15800,
+        "magnitudeValue": 5200,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "CONAF SNASPE / SERNATUR",
@@ -43657,7 +44277,7 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Coyhaique",
         "lat": -45.545,
         "lon": -72.045,
-        "magnitudeValue": 24800,
+        "magnitudeValue": 13552,
         "magnitudeUnit": "visitantes/año",
         "magnitudeLabel": "Visitacion CONAF SNASPE",
         "titular": "Laguna Verde, miradores de la ciudad y senderismo familiar",
@@ -47686,10 +48306,10 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Balmaceda",
         "lat": -45.916,
         "lon": -71.689,
-        "magnitudeValue": 682000,
+        "magnitudeValue": 605945,
         "magnitudeUnit": "pasajeros/año",
         "magnitudeLabel": "Flujo Aereo Anual",
-        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 2.501 m (Asfalto))",
+        "titular": "DGAC / JAC (Hub Principal Conectividad Aérea Aysén · Pista 2.501 m (Asfalto) · Nuevo Terminal 12.391 m² (oct. 2026))",
         "sourceUrl": "https://www.jac.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,

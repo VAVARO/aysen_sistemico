@@ -3031,18 +3031,18 @@
                 {
                   "label": "Pasajeros Aeródromo Balmaceda (JAC)",
                   "data": [
-                    420000,
-                    455000,
-                    490000,
-                    530000,
-                    585000,
-                    240000,
-                    365000,
-                    520000,
-                    605000,
-                    648000,
-                    665000,
-                    682000
+                    446000,
+                    482000,
+                    535000,
+                    592000,
+                    678660,
+                    252810,
+                    375174,
+                    408402,
+                    594114,
+                    625501,
+                    605945,
+                    620000
                   ],
                   "unit": "pasajeros",
                   "yAxisID": "y"
@@ -3653,7 +3653,7 @@
             "showBuffers": false,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Distribución de los más de 1.100 prestadores SERNATUR en torno a las áreas silvestres protegidas.",
+          "what_it_shows": "Distribución de los 1.728 servicios turísticos RNPST SERNATUR en torno a las 19 áreas silvestres protegidas (86.117 visitas oficiales CONAF).",
           "why_complex_system": "Atracción nodal: la belleza escénica de los parques actúa como ancla que activa redes de hospedaje, guías y gastronomía en los poblados aledaños."
         },
         {
@@ -3744,18 +3744,18 @@
                 {
                   "label": "Pernoctaciones Anuales EMAT (N°)",
                   "data": [
-                    312000,
-                    335000,
-                    368000,
-                    395000,
-                    412000,
-                    178000,
-                    224000,
-                    345000,
-                    398000,
-                    432000,
-                    458000,
-                    472000
+                    245000,
+                    261000,
+                    278000,
+                    291000,
+                    302000,
+                    115000,
+                    168000,
+                    308000,
+                    315371,
+                    351598,
+                    364039,
+                    364039
                   ],
                   "unit": "pernoctaciones",
                   "yAxisID": "y"
@@ -3763,18 +3763,18 @@
                 {
                   "label": "Visitantes Anuales Parques SNASPE (N°)",
                   "data": [
-                    148000,
-                    165000,
-                    185000,
-                    204000,
-                    215000,
-                    78000,
-                    118000,
-                    195000,
-                    235000,
-                    256000,
-                    273500,
-                    284000
+                    76500,
+                    84200,
+                    91500,
+                    98800,
+                    105400,
+                    39800,
+                    61200,
+                    104250,
+                    98420,
+                    86117,
+                    86117,
+                    86117
                   ],
                   "unit": "visitantes",
                   "yAxisID": "y1"
@@ -3782,7 +3782,7 @@
               ]
             }
           },
-          "what_it_shows": "La demanda hotelera y la visitación a parques nacionales muestran alta sincronía y rápida recuperación post-pandemia.",
+          "what_it_shows": "Evolución oficial 2015–2026: 364.039 pernoctaciones INE EMAT y 86.117 visitas en porterías CONAF SNASPE en el corte vigente.",
           "why_complex_system": "Oscilación periódica: la extrema estacionalidad exige modelos de negocio hiperflexibles para subsistir los 8 meses de baja afluencia."
         },
         {
@@ -4777,7 +4777,7 @@
               "robustness_rule": "semaforo_n_30_50"
             }
           },
-          "what_it_shows": "Evidencia la paradoja rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
+          "what_it_shows": "Evidencia la asimetría rural-urbana: Coyhaique ($2.150,4 MM, 55,9%) y Aysén ($742,8 MM, 19,3%) concentran el 75,2% de los fondos concursables MINCAP ($3.849,5 MM), pero las comunas rurales aisladas realizan un esfuerzo municipal per cápita 3 a 4 veces superior (Lago Verde $49.294/hab, Tortel $36.706/hab, O'Higgins $33.590/hab y Guaitecas $25.782/hab frente a Coyhaique $11.850/hab y Aysén $9.306/hab).",
           "why_complex_system": "Desacople de escalas: la inversión sectorial centralizada no siempre compensa las disparidades de presupuesto de los municipios más aislados."
         },
         {
@@ -5768,7 +5768,12 @@
           "varY": "biomasa_salmon_ton",
           "labelY": "Biomasa Cosechada (ton)",
           "defaultTerritorialSlice": "tipo_maritima",
-          "filterComunas": ["Aysén", "Cisnes", "Guaitecas", "Tortel"],
+          "filterComunas": [
+            "Aysén",
+            "Cisnes",
+            "Guaitecas",
+            "Tortel"
+          ],
           "showAverage": true,
           "showTrend": true
         },

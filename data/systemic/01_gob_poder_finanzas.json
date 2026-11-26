@@ -563,7 +563,8 @@
         "nombre": "Arcadio Soto Serón",
         "partido": "UDI"
       }
-    ]
+    ],
+    "nota_metodologica_royalty_fet": "Los montos comunales de fet_royalty_minero_2024_mclp (Fondo Puente 2024, 42,8% del regimen) y fet_royalty_minero_2025_mclp (regimen permanente 100%, Ley N 21.591, total regional 3.207,73 M$ CLP) provienen de los decretos oficiales SUBDERE. El escalonamiento de ~2,33x entre 2024 y 2025 refleja la transicion legal del Fondo Puente al Fondo de Equidad Territorial (FET) pleno bajo la misma formula, sin comunas categorizadas como Comuna Minera activa en Aysen."
   },
   "por_comuna": [
     {

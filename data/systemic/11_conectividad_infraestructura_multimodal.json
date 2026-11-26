@@ -78,12 +78,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 24.5,
-          "cobertura_fibra_hogar_pct": 75.5,
+          "cobertura_fibra_hogar_pct": 68.4,
           "establecimientos_educacion_conectados_n": 24,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 15785,
           "conexiones_residenciales_subtel_jun2026_n": 15088,
-          "variacion_conexiones_2015_2026_pct": 65.1
+          "variacion_conexiones_2015_2026_pct": 65.1,
+          "penetracion_internet_fijo_total_pct": 75.5
         },
         "pasos_fronterizos_internacionales": {
           "pasos_habilitados": [
@@ -111,12 +112,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 82.4,
-          "cobertura_fibra_hogar_pct": 17.6,
+          "cobertura_fibra_hogar_pct": 0.8,
           "establecimientos_educacion_conectados_n": 3,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 189,
           "conexiones_residenciales_subtel_jun2026_n": 159,
-          "variacion_conexiones_2015_2026_pct": 551.7
+          "variacion_conexiones_2015_2026_pct": 551.7,
+          "penetracion_internet_fijo_total_pct": 17.6
         }
       }
     },
@@ -137,12 +139,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 38.2,
-          "cobertura_fibra_hogar_pct": 61.8,
+          "cobertura_fibra_hogar_pct": 54.2,
           "establecimientos_educacion_conectados_n": 14,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 5748,
           "conexiones_residenciales_subtel_jun2026_n": 5353,
-          "variacion_conexiones_2015_2026_pct": 75.7
+          "variacion_conexiones_2015_2026_pct": 75.7,
+          "penetracion_internet_fijo_total_pct": 61.8
         }
       }
     },
@@ -163,12 +166,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 56.4,
-          "cobertura_fibra_hogar_pct": 43.6,
+          "cobertura_fibra_hogar_pct": 24.8,
           "establecimientos_educacion_conectados_n": 6,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 1638,
           "conexiones_residenciales_subtel_jun2026_n": 1486,
-          "variacion_conexiones_2015_2026_pct": 155.1
+          "variacion_conexiones_2015_2026_pct": 155.1,
+          "penetracion_internet_fijo_total_pct": 43.6
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "servicio_maritimo": "Ruta Cordillera CAM0061 (Puerto Cisnes, Puyuhuapi, Raúl Marín)",
@@ -193,12 +197,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 68.2,
-          "cobertura_fibra_hogar_pct": 31.8,
+          "cobertura_fibra_hogar_pct": 2.4,
           "establecimientos_educacion_conectados_n": 2,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 345,
           "conexiones_residenciales_subtel_jun2026_n": 270,
-          "variacion_conexiones_2015_2026_pct": 219.4
+          "variacion_conexiones_2015_2026_pct": 219.4,
+          "penetracion_internet_fijo_total_pct": 31.8
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "servicio_maritimo": "Ruta Cordillera CAM0061 (Melinka y Repollal)",
@@ -224,12 +229,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 48.6,
-          "cobertura_fibra_hogar_pct": 51.4,
+          "cobertura_fibra_hogar_pct": 39.2,
           "establecimientos_educacion_conectados_n": 4,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 835,
           "conexiones_residenciales_subtel_jun2026_n": 791,
-          "variacion_conexiones_2015_2026_pct": 293.9
+          "variacion_conexiones_2015_2026_pct": 293.9,
+          "penetracion_internet_fijo_total_pct": 51.4
         }
       }
     },
@@ -250,12 +256,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 76.8,
-          "cobertura_fibra_hogar_pct": 23.2,
+          "cobertura_fibra_hogar_pct": 1.5,
           "establecimientos_educacion_conectados_n": 2,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 272,
           "conexiones_residenciales_subtel_jun2026_n": 249,
-          "variacion_conexiones_2015_2026_pct": 27100.0
+          "variacion_conexiones_2015_2026_pct": 27100.0,
+          "penetracion_internet_fijo_total_pct": 23.2
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "enlace_critico": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
@@ -283,12 +290,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 72.5,
-          "cobertura_fibra_hogar_pct": 27.5,
+          "cobertura_fibra_hogar_pct": 2.1,
           "establecimientos_educacion_conectados_n": 2,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 56,
           "conexiones_residenciales_subtel_jun2026_n": 43,
-          "variacion_conexiones_2015_2026_pct": 2700.0
+          "variacion_conexiones_2015_2026_pct": 2700.0,
+          "penetracion_internet_fijo_total_pct": 27.5
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "enlace_maritimo_fluvial": "Rampa Caleta Tortel / Enlace fluvial Río Mitchell y golfo",
@@ -313,12 +321,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 52.1,
-          "cobertura_fibra_hogar_pct": 47.9,
+          "cobertura_fibra_hogar_pct": 36.5,
           "establecimientos_educacion_conectados_n": 3,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 845,
           "conexiones_residenciales_subtel_jun2026_n": 788,
-          "variacion_conexiones_2015_2026_pct": 141.4
+          "variacion_conexiones_2015_2026_pct": 141.4,
+          "penetracion_internet_fijo_total_pct": 47.9
         },
         "resiliencia_conectividad_maritima_lacustre": {
           "enlace_lacustre": "Lago General Carrera (Chile Chico - Puerto Ibáñez)",
@@ -348,12 +357,13 @@
         },
         "conectividad_digital": {
           "hogares_sin_internet_fijo_pct": 64.8,
-          "cobertura_fibra_hogar_pct": 35.2,
+          "cobertura_fibra_hogar_pct": 21.4,
           "establecimientos_educacion_conectados_n": 4,
           "fdt_ultima_milla_aprobado": true,
           "conexiones_fijas_subtel_jun2026_n": 581,
           "conexiones_residenciales_subtel_jun2026_n": 555,
-          "variacion_conexiones_2015_2026_pct": 1513.9
+          "variacion_conexiones_2015_2026_pct": 1513.9,
+          "penetracion_internet_fijo_total_pct": 35.2
         }
       }
     }
@@ -467,84 +477,128 @@
       {
         "temporada": "2023-2024",
         "recaladas_cruceros": 23,
-        "pasajeros_cruceros": 22450,
-        "tripulantes": 9800
+        "pasajeros_cruceros": 20450,
+        "tripulantes": 9100
       },
       {
         "temporada": "2024-2025",
-        "recaladas_cruceros": 25,
-        "pasajeros_cruceros": 25800,
-        "tripulantes": 11200
-      },
-      {
-        "temporada": "2025-2026",
-        "recaladas_cruceros": 28,
-        "pasajeros_cruceros": 28500,
-        "tripulantes": 12400
+        "recaladas_cruceros": 29,
+        "pasajeros_cruceros": 22093,
+        "puerto_chacabuco_recaladas": 20,
+        "puerto_chacabuco_pasajeros": 20047,
+        "caleta_tortel_recaladas": 9,
+        "caleta_tortel_pasajeros": 2046,
+        "tripulantes": 9850,
+        "fuente": "Anuario de Turismo Sernatur 2024 p. 16"
       }
     ],
     "balmaceda_pasajeros_jac": [
       {
         "periodo": "2015",
-        "pasajeros": 420000,
+        "pasajeros": 446000,
         "carga_ton": 820
       },
       {
         "periodo": "2016",
-        "pasajeros": 455000,
+        "pasajeros": 482000,
         "carga_ton": 890
       },
       {
         "periodo": "2017",
-        "pasajeros": 490000,
+        "pasajeros": 535000,
         "carga_ton": 950
       },
       {
         "periodo": "2018",
-        "pasajeros": 530000,
+        "pasajeros": 592000,
         "carga_ton": 1040
       },
       {
         "periodo": "2019",
-        "pasajeros": 585000,
+        "pasajeros": 678660,
+        "llegadas": 339330,
         "carga_ton": 1120
       },
       {
         "periodo": "2020",
-        "pasajeros": 240000,
+        "pasajeros": 252810,
+        "llegadas": 126405,
         "carga_ton": 680
       },
       {
         "periodo": "2021",
-        "pasajeros": 365000,
+        "pasajeros": 375174,
+        "llegadas": 187587,
         "carga_ton": 880
       },
       {
         "periodo": "2022",
-        "pasajeros": 520000,
+        "pasajeros": 408402,
+        "llegadas": 204201,
         "carga_ton": 1180
       },
       {
         "periodo": "2023",
-        "pasajeros": 605000,
+        "pasajeros": 594114,
+        "llegadas": 297057,
         "carga_ton": 1290
       },
       {
         "periodo": "2024",
-        "pasajeros": 648000,
+        "pasajeros": 625501,
+        "llegadas": 310876,
+        "salidas": 314625,
         "carga_ton": 1360
       },
       {
         "periodo": "2025",
-        "pasajeros": 665000,
+        "pasajeros": 605945,
+        "variacion_yoy_pct": -2.9,
+        "ranking_nacional_jac": 10,
         "carga_ton": 1410
       },
       {
         "periodo": "2026",
-        "pasajeros": 682000,
+        "pasajeros": 620000,
+        "parcial_ene_may_2026": 286666,
+        "nuevo_terminal_m2": 12391,
+        "inauguracion_terminal": "2026-10-02",
+        "puentes_embarque": 5,
+        "capacidad_anual_pax": 1000000,
+        "es_proyeccion_parcial": true,
         "carga_ton": 1450
       }
-    ]
+    ],
+    "pasos_fronterizos_pdi_aysen": {
+      "total_personas_controladas": 350257,
+      "entradas": 172520,
+      "salidas": 177737,
+      "turistas_extranjeros_pernoctantes_2024": 108703,
+      "variacion_extranjeros_yoy_pct": 50.5,
+      "por_paso": [
+        {
+          "paso": "Paso Jeinimeni",
+          "comuna": "Chile Chico",
+          "comuna_ine": "11401",
+          "controlados": 233327,
+          "participacion_pct": 66.6
+        },
+        {
+          "paso": "Paso Coyhaique Alto",
+          "comuna": "Coyhaique",
+          "comuna_ine": "11101",
+          "controlados": 63045,
+          "participacion_pct": 18.0
+        },
+        {
+          "paso": "Paso Huemules",
+          "comuna": "Coyhaique (Balmaceda)",
+          "comuna_ine": "11101",
+          "controlados": 53885,
+          "participacion_pct": 15.4
+        }
+      ]
+    }
   },
   "resumen_regional": {
     "region_codigo": "CL-XI",
@@ -568,8 +622,8 @@
         {
           "enlace": "Fiordo Mitchell (Puerto Yungay - Río Bravo)",
           "comuna_afectada": "Villa O'Higgins (11302)",
-          "embarcacion_titular": "Padre Antonio Ronchi",
-          "vulnerabilidad": "Aislamiento vehicular y rodado absoluto (100% de corte) ante detención, mantenimiento o falla mecánica",
+          "embarcacion_titular": "Padre Antonio Ronchi y Pitipulla",
+          "vulnerabilidad": "Corte critico superior a 11 dias desde el 19 de febrero de 2026 por falla mecanica de Pitipulla; aislamiento rodado 100%",
           "frecuencia_nominal_cruces_diarios": 6
         },
         {
@@ -579,27 +633,39 @@
             "La Tehuelche",
             "Pilchero"
           ],
-          "vulnerabilidad": "Aislamiento comercial y encarecimiento del abastecimiento por vía terrestre argentina ante fallas prolongadas de carena",
-          "frecuencia_nominal": "Diaria bimodal"
+          "vulnerabilidad": "13 frecuencias semanales en verano; crisis de continuidad por deuda de subsidio resuelta el 6 de enero de 2026",
+          "frecuencia_nominal": "13 frecuencias semanales en verano"
         },
         {
-          "enlace": "Ruta Cordillera Litoral Norte (CAM0061)",
+          "enlace": "Canal Moraleda / Litoral Norte (Puerto Chacabuco - Cisnes - Melinka - Quellón)",
           "comunas_afectadas": [
             "Guaitecas (11203)",
             "Cisnes (11202)",
             "Aysén (11201)"
           ],
-          "recorrido": "Puerto Montt - Melinka - Raúl Marín Balmaceda - Gala - Gaviota - Cisnes - Puerto Aguirre - Puerto Chacabuco",
-          "vulnerabilidad": "Tiempos de navegación de hasta 32 horas expuestos a marejadas en Golfo Corcovado y Canal Moraleda",
-          "frecuencia_nominal": "2 a 3 viajes semanales"
+          "embarcacion_titular": "Barcaza Queulat (Naviera Austral)",
+          "recorrido": "Cuarta frecuencia mensual Cisnes + frecuencia semanal Melinka - Quellon",
+          "vulnerabilidad": "Tiempos de navegacion expuestos a marejadas en Golfo Corcovado y Canal Moraleda",
+          "frecuencia_nominal": "Semanal Melinka-Quellon + 4a frecuencia mensual Cisnes"
         }
       ],
-      "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR"
+      "fuente": "SEREMI de Transportes y Telecomunicaciones (SeremiTT Aysén) / DTPR / DIRECTEMAR",
+      "presupuesto_2024_mclp": 19460,
+      "presupuesto_2025_2026_mclp": 25400
     },
     "subtel_conexiones_fijas_jun2026_total": 26294,
     "subtel_fttx_fibra_jun2026": 19972,
     "subtel_starlink_jun2026": 5648,
     "fdt_ultima_milla_ago2026_mclp": 7600,
-    "mtt_dtpr_subsidio_aislado_alza_2025": "+30% respecto a 2024 (~+$6.000 MM adicionales para rutas marítimas Fiordo Mitchell/Lago General Carrera/Litoral Norte y aéreas Cochrane-Tortel)"
+    "mtt_dtpr_subsidio_aislado_alza_2025": "+30% respecto a 2024 (~+$6.000 MM adicionales para rutas marítimas Fiordo Mitchell/Lago General Carrera/Litoral Norte y aéreas Cochrane-Tortel)",
+    "presupuesto_mtt_subsidios_2024_mclp": 19460,
+    "presupuesto_mtt_subsidios_2025_2026_mclp": 25400,
+    "servicios_subsidiados_mtt_desglose": {
+      "terrestres": 61,
+      "maritimos": 22,
+      "lacustres": 6,
+      "aereos": 4,
+      "fluviales": 2
+    }
   }
 }

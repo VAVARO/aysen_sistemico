@@ -463,7 +463,7 @@ class TestLaboratorioHealth(unittest.TestCase):
         if (!Array.isArray(d.series?.snaspe_por_parque_anual) || d.series.snaspe_por_parque_anual.length !== 12) process.exit(4);
         if (!Array.isArray(d.series?.parques_snaspe_unidades) || d.series.parques_snaspe_unidades.length < 5) process.exit(5);
         const cisnes = d.comunas.find(c => c.nombre === 'Cisnes');
-        if (!cisnes || cisnes.visitas_por_cama_turistica !== 51.8 || cisnes.seia_plazo_dias !== 945) {
+        if (!cisnes || cisnes.visitas_por_cama_turistica !== 20.7 || cisnes.seia_plazo_dias !== 945) {
           console.error('Cisnes metrics mismatch:', cisnes?.visitas_por_cama_turistica, cisnes?.seia_plazo_dias);
           process.exit(6);
         }
@@ -628,9 +628,9 @@ class TestLaboratorioHealth(unittest.TestCase):
 
             const pCruc = runCtx.getWidgetDataPayload({ varX: 'emporcha_cruceros_hist', varY: 'visitantes_snaspe_conaf_hist', chartType: 'line' });
             assert.strictEqual(pCruc.dim, 'tiempo');
-            assert.strictEqual(pCruc.labels.length, 8);
+            assert.strictEqual(pCruc.labels.length, 7);
             assert.strictEqual(pCruc.labels[0], '2019');
-            assert.strictEqual(pCruc.labels[7], '2026');
+            assert.strictEqual(pCruc.labels[6], '2025');
 
             const msCp05 = allPresets.CP_05.config.mirror_series;
             const pNse = runCtx.getWidgetDataPayload({
