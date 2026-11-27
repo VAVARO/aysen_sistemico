@@ -63,7 +63,7 @@ La comuna de Cisnes (capital comunal: Puerto Cisnes; Provincia de Aysén; cuenca
 | Calefacción a Leña y Días MP2.5 | 94% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 184,3 km² (785 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Red de Salud y Tiempo de Derivación | Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes (8 camas, 4 PSR, 3,5 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
-| Infraestructura Cultural y Bibliotecas | 6 museos / 3 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
+| Infraestructura Cultural y Bibliotecas | 0 museos RMC (5 espacios) / 3 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 11 proyectos / 4 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)

@@ -63,7 +63,7 @@ La comuna de Río Ibáñez (capital comunal: Puerto Ingeniero Ibáñez; Provinci
 | Calefacción a Leña y Días MP2.5 | 94,2% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 382 km² (1.120 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Red de Salud y Tiempo de Derivación | Sin hospital en la comuna (5 PSR y 2 EMR dependientes del DAP SSA) (0 camas, 5 PSR, 1,5 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
-| Infraestructura Cultural y Bibliotecas | 6 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
+| Infraestructura Cultural y Bibliotecas | 2 museos RMC (7 espacios) / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 5 proyectos / 2 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)

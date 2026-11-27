@@ -63,7 +63,7 @@ La comuna de O'Higgins (capital comunal: Villa O'Higgins; Provincia de Capitán 
 | Calefacción a Leña y Días MP2.5 | 98,8% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 2.284,2 km² (1.680 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Red de Salud y Tiempo de Derivación | Sin hospital en la comuna (PSR Villa O'Higgins con 2 medicos EDF permanentes jun-2026) (0 camas, 1 PSR, 10 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
-| Infraestructura Cultural y Bibliotecas | 2 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
+| Infraestructura Cultural y Bibliotecas | 1 museos RMC (2 espacios) / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 3 proyectos / 1 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)

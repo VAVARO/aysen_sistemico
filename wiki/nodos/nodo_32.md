@@ -6,8 +6,9 @@ hub_id: cultura
 hub_roman: IX
 variables_clave:
   - monumentos_nacionales_count
-  - museos_espacios_n
+  - museos_count
   - bibliotecas_snbp_n
+  - total_espacios_culturales
 fuentes_oficiales:
   - "Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN"
 updated_at: "2026-11-23"
@@ -21,22 +22,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de infraestructura patrimonial oficial: 14 museos (Red de Museos de Chile), 13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes), 9 Monumentos Históricos y Arqueológicos (CMN) y 6 Centros y Casas de la Cultura Municipales/Comunitarios (42 espacios culturales totales). Coyhaique alberga 3 museos, 1 biblioteca, 2 monumentos y 2 centros culturales (8 espacios), mientras que en Río Ibáñez se protege el Sitio Arqueológico Paredón de las Manos y en Aysén el Puente Presidente Ibáñez.
+Catastro oficial SERPAT/CMN: 16 declaratorias de Monumentos Nacionales por decreto (12 decretos MH que protegen 19 inmuebles incluyendo los 8 de la Sociedad Industrial de Aisén, 1 ZT en Caleta Tortel y 3 SN: Estero Quitralco, Meullín-Puye y Capilla de Mármol en Río Ibáñez — 23 bienes protegidos más 11 Monumentos Públicos), 16 museos activos inscritos en el RMC (27 espacios en la Red de Museos de Aysén; Museo Regional de Aysén con 36.173 visitas en 2025, #12 nacional), 16 bibliotecas públicas fijas SNBP/BiblioRedes en 10/10 comunas (31.221 préstamos físicos y 7.591 socios activos en 2024; 18.199 préstamos en Biblioteca Regional) y 6 centros culturales principales (54 espacios culturales totales). Coyhaique concentra 8 museos RMC, 2 bibliotecas SNBP, 2 declaratorias CMN (9 inmuebles) y 2 centros culturales (14 espacios). Aysén suma 10 espacios (5 declaratorias CMN, 3 bibliotecas, 1 museo RMC y 1 centro cultural) y Río Ibáñez alcanza 7 espacios con 4 declaratorias CMN incluida la Capilla de Mármol (D.E. N° 281/1994).
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Museos RMC | Bibliotecas SNBP | Monumentos CMN | Centros Culturales | Total Espacios |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 3 | 1 | 2 | 2 | 8 |
-| [[comunas/lago_verde|Lago Verde]] | 0 | 1 | 0 | 1 | 2 |
-| [[comunas/aysen|Aysén]] | 2 | 1 | 2 | 1 | 6 |
-| [[comunas/cisnes|Cisnes]] | 2 | 3 | 0 | 1 | 6 |
-| [[comunas/guaitecas|Guaitecas]] | 1 | 1 | 0 | 0 | 2 |
-| [[comunas/chile_chico|Chile Chico]] | 2 | 2 | 1 | 0 | 5 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 2 | 1 | 3 | 0 | 6 |
-| [[comunas/cochrane|Cochrane]] | 1 | 1 | 0 | 1 | 3 |
+| [[comunas/coyhaique|Coyhaique]] | 8 | 2 | 2 | 2 | 14 |
+| [[comunas/lago_verde|Lago Verde]] | 0 | 1 | 1 | 1 | 3 |
+| [[comunas/aysen|Aysén]] | 1 | 3 | 5 | 1 | 10 |
+| [[comunas/cisnes|Cisnes]] | 0 | 3 | 1 | 1 | 5 |
+| [[comunas/guaitecas|Guaitecas]] | 0 | 1 | 0 | 0 | 1 |
+| [[comunas/chile_chico|Chile Chico]] | 2 | 2 | 0 | 0 | 4 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 2 | 1 | 4 | 0 | 7 |
+| [[comunas/cochrane|Cochrane]] | 2 | 1 | 1 | 1 | 5 |
 | [[comunas/ohiggins|O'Higgins]] | 1 | 1 | 0 | 0 | 2 |
-| [[comunas/tortel|Tortel]] | 0 | 1 | 1 | 0 | 2 |
+| [[comunas/tortel|Tortel]] | 0 | 1 | 2 | 0 | 3 |
 
 ## Metadatos de Procedencia Institucional
 
@@ -48,7 +49,7 @@ Catastro de infraestructura patrimonial oficial: 14 museos (Red de Museos de Chi
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 
 - **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]
-- **Hub Perteneciente**: [[hubs/hub_09_cultura|Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas y Identidad Austral]]
+- **Hub Perteneciente**: [[hubs/hub_09_cultura|Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas e Identidad Austral]]
 - **Nodos Satélite Relacionados**: [[nodos/nodo_01|Nodo #01]] · [[nodos/nodo_04|Nodo #04]] · [[nodos/nodo_10|Nodo #10]] · [[nodos/nodo_15|Nodo #15]] · [[nodos/nodo_21|Nodo #21]]
 - **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]
 - **ADRs de Referencia**: [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]] · [[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]

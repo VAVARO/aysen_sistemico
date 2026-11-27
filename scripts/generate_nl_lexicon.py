@@ -1870,8 +1870,10 @@ ADDITIONAL_CANONICAL_VARIABLES = [
     {"id": "tasa_mortalidad_cancer_vesicula_100k", "canonicalId": "tasa_mortalidad_cancer_vesicula_100k", "name": "Tasa de Mortalidad por Cáncer de Vesícula (DEIS)", "shortName": "Mortalidad Cáncer Vesícula", "unit": "def/100k hab", "hub": "salud", "hubTitle": "VIII. Salud APS y Hospitales", "nodeId": 38, "dim": "comuna", "outlierBiased": False, "synonyms": ["cancer de vesicula", "vesicula"]},
     {"id": "tasa_mortalidad_suicidio_100k", "canonicalId": "tasa_mortalidad_suicidio_100k", "name": "Tasa de Mortalidad por Suicidio (DEIS)", "shortName": "Mortalidad Suicidio", "unit": "def/100k hab", "hub": "salud", "hubTitle": "VIII. Salud APS y Hospitales", "nodeId": 38, "dim": "comuna", "outlierBiased": False, "synonyms": ["suicidio", "mortalidad salud mental", "tasa suicidio"]},
     # Hub IX - Cultura y Patrimonio
-    {"id": "museos_espacios_n", "canonicalId": "museos_espacios_n", "name": "Museos y Espacios Culturales", "shortName": "Espacios Culturales", "unit": "espacios", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 32, "dim": "comuna", "outlierBiased": False, "synonyms": ["museos", "espacios culturales", "centros culturales"]},
+    {"id": "museos_espacios_n", "canonicalId": "total_espacios_culturales", "isAliasOf": "total_espacios_culturales", "name": "Museos y Espacios Culturales", "shortName": "Espacios Culturales", "unit": "espacios", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 32, "dim": "comuna", "outlierBiased": False, "synonyms": ["museos", "espacios culturales", "centros culturales"]},
     {"id": "bibliotecas_snbp_n", "canonicalId": "bibliotecas_snbp_n", "name": "Bibliotecas Públicas (SNBP)", "shortName": "Bibliotecas SNBP", "unit": "bibliotecas", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 32, "dim": "comuna", "outlierBiased": False, "synonyms": ["bibliotecas", "bibliotecas publicas", "snbp"]},
+    {"id": "bibliotecas_publicas_count", "canonicalId": "bibliotecas_snbp_n", "isAliasOf": "bibliotecas_snbp_n", "name": "Bibliotecas Públicas Fijas SNBP (Conteo)", "shortName": "Bibliotecas Públicas", "unit": "bibliotecas", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 32, "dim": "comuna", "outlierBiased": False, "synonyms": []},
+    {"id": "puntos_cultura_comunitaria_pcc_n", "canonicalId": "puntos_cultura_comunitaria_pcc_n", "name": "Puntos de Cultura Comunitaria (PCC MINCAP)", "shortName": "Puntos Cultura PCC", "unit": "puntos", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 34, "dim": "comuna", "outlierBiased": False, "synonyms": ["puntos de cultura comunitaria", "pcc", "puntos de cultura", "organizaciones pcc"]},
     {"id": "fondart_fndr_mclp", "canonicalId": "fondart_fndr_mclp", "name": "Inversión FONDART y Cultura FNDR", "shortName": "Fondos Cultura", "unit": "M$ CLP", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 33, "dim": "comuna", "outlierBiased": False, "synonyms": ["fondart", "fondos de cultura", "financiamiento cultural"]},
     {"id": "monumentos_nacionales_count", "canonicalId": "monumentos_nacionales_count", "name": "Monumentos Nacionales Declarados (CMN)", "shortName": "Monumentos CMN", "unit": "monumentos", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 32, "dim": "comuna", "outlierBiased": False, "synonyms": ["monumentos", "monumentos nacionales", "patrimonio protegido", "cmn"]},
     {"id": "museos_count", "canonicalId": "museos_count", "name": "Museos Inscritos en RMC", "shortName": "Museos RMC", "unit": "museos", "hub": "cultura", "hubTitle": "IX. Cultura y Patrimonio", "nodeId": 32, "dim": "comuna", "outlierBiased": False, "synonyms": ["museos inscritos", "registro museos"]},
@@ -1953,6 +1955,17 @@ if "viviendas_ocupadas_censo_2024" in var_by_id:
     var_by_id["viviendas_ocupadas_censo_2024"]["canonicalId"] = "hogares_censo_2024"
 if "deficit_habitacional_cualitativo_n" in var_by_id:
     var_by_id["deficit_habitacional_cualitativo_n"]["isComplementOf"] = "hogares_censo_2024"
+# Sprint 12: Paridad y desduplicacion de alias en Hub IX (Bibliotecas SNBP y Pueblos Originarios Censo 2024)
+if "bibliotecas_snbp_n" in var_by_id:
+    var_by_id["bibliotecas_snbp_n"].pop("isAliasOf", None)
+    var_by_id["bibliotecas_snbp_n"]["canonicalId"] = "bibliotecas_snbp_n"
+    var_by_id["bibliotecas_snbp_n"]["name"] = "Bibliotecas Públicas Fijas SNBP / BiblioRedes"
+if "bibliotecas_publicas_count" in var_by_id:
+    var_by_id["bibliotecas_publicas_count"]["isAliasOf"] = "bibliotecas_snbp_n"
+    var_by_id["bibliotecas_publicas_count"]["canonicalId"] = "bibliotecas_snbp_n"
+if "autoidentificacion_indigena_pct" in var_by_id:
+    var_by_id["autoidentificacion_indigena_pct"]["isAliasOf"] = "pueblos_originarios_pct_censo_2024"
+    var_by_id["autoidentificacion_indigena_pct"]["canonicalId"] = "pueblos_originarios_pct_censo_2024"
 
 CANONICAL_HUB_TITLES = {
     "turismo": "I. Turismo y Áreas Silvestres",

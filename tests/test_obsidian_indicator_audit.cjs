@@ -520,7 +520,51 @@ function runTests() {
   console.log('  [PASS] Eval 21: Red SSA 213 camas / 8 pabellones, Leopoldo Ortega, 27 PSR / 4 CESFAM / 4 CECOSF / 9 EMR, SIGTE 14.751, SAMU 454+45, DEIS 19,9 y 0 fechas 2026-12 verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/21 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 22: Invariantes Hub IX (CMN 16/23, Capilla Marmol Rio Ibanez 11402, RMC 16/27, MRA 36173, SNBP 16, Gasto Censo 2024, Indigena 29.0% / CONADI 47 SIIC / 25 PCC, Barometro Semaforo y Wiki) ---
+  console.log('--- Eval 22: Invariantes Hub IX Cultura, Patrimonio CMN, RMC/SNBP, Gasto Censo 2024, Indigena/CONADI/PCC y Barometro ---');
+  assert.strictEqual(
+    audit.evaluateHub9CulturaPatrimonioConadiBarometroInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 22 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub9CulturaPatrimonioConadiBarometroInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 22 con 0 alertas'
+  );
+
+  // 22a: Regresion CMN (Chile Chico=1, Lago Verde=0) y RMC/MRA (Coyhaique=3, MRA=24500) -> ROJO
+  const badCmnRmcSnap = JSON.parse(JSON.stringify(currSnap));
+  badCmnRmcSnap.indicators.monumentos_nacionales_count.values['11401'] = 1;
+  badCmnRmcSnap.indicators.monumentos_nacionales_count.values['11102'] = 0;
+  badCmnRmcSnap.indicators.museos_count.values['11101'] = 3;
+  badCmnRmcSnap.hub9CulturaAudit.mraVisitas2025 = 24500;
+  const badCmnRmcDiff = audit.compareSnapshots(currSnap, badCmnRmcSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badCmnRmcDiff.semaforo, 'ROJO');
+  assert(
+    badCmnRmcDiff.verificationAlerts.some(a => a.code === 'ERROR_CATASTRO_CMN_MONUMENTOS_NACIONALES') &&
+    badCmnRmcDiff.verificationAlerts.some(a => a.code === 'ERROR_CATASTRO_RMC_MUSEOS_Y_SNBP_BIBLIOTECAS'),
+    'Debe detectar regresion en CMN (Chile Chico/Lago Verde) y RMC/MRA (36173 -> 24500)'
+  );
+
+  // 22b: Regresion gasto per capita (Lago Verde=49294), indigena (Tortel=19.0%), PCC (Coyhaique=0) y texto obsoleto Wiki -> ROJO
+  const badCultDemSnap = JSON.parse(JSON.stringify(currSnap));
+  badCultDemSnap.indicators.gasto_cultura_per_capita_clp.values['11102'] = 49294;
+  badCultDemSnap.indicators.pueblos_originarios_pct_censo_2024.values['11303'] = 19.0;
+  badCultDemSnap.indicators.puntos_cultura_comunitaria_pcc_n.values['11101'] = 0;
+  badCultDemSnap.hub9CulturaAudit.wikiHasObsolete18Rmc = true;
+  const badCultDemDiff = audit.compareSnapshots(currSnap, badCultDemSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badCultDemDiff.semaforo, 'ROJO');
+  assert(
+    badCultDemDiff.verificationAlerts.some(a => a.code === 'ERROR_GASTO_CULTURAL_PER_CAPITA_CENSO_2024') &&
+    badCultDemDiff.verificationAlerts.some(a => a.code === 'ERROR_DEMOGRAFIA_INDIGENA_CENSO_2024_Y_CONADI_PCC') &&
+    badCultDemDiff.verificationAlerts.some(a => a.code === 'ERROR_WIKI_HUB09_Y_BAROMETRO_SEMAFORO'),
+    'Debe detectar regresiones en gasto cultural Censo 2024, indigena/PCC y Wiki Hub IX'
+  );
+  console.log('  [PASS] Eval 22: CMN 16/23 (Capilla Marmol Rio Ibanez), RMC 16/27 (MRA 36.173), SNBP 16 (54 esp.), Gasto Censo 2024, Indigena 29,0% / 47 SIIC / 25 PCC y Barometro verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/22 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

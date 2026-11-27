@@ -3366,7 +3366,7 @@
     },
     {
       "id": "autoidentificacion_indigena_pct",
-      "canonicalId": "autoidentificacion_indigena_pct",
+      "canonicalId": "pueblos_originarios_pct_censo_2024",
       "name": "Autoidentificación Indígena (Censo 2024)",
       "shortName": "Población Indígena %",
       "unit": "%",
@@ -3379,7 +3379,8 @@
         "pueblos originarios",
         "poblacion indigena",
         "autoidentificacion indigena"
-      ]
+      ],
+      "isAliasOf": "pueblos_originarios_pct_censo_2024"
     },
     {
       "id": "comunidades_indigenas_conadi",
@@ -3640,7 +3641,8 @@
     },
     {
       "id": "museos_espacios_n",
-      "canonicalId": "museos_espacios_n",
+      "canonicalId": "total_espacios_culturales",
+      "isAliasOf": "total_espacios_culturales",
       "name": "Museos y Espacios Culturales",
       "shortName": "Espacios Culturales",
       "unit": "espacios",
@@ -3653,13 +3655,12 @@
         "museos",
         "espacios culturales",
         "centros culturales"
-      ],
-      "isAliasOf": "total_espacios_culturales"
+      ]
     },
     {
       "id": "bibliotecas_snbp_n",
       "canonicalId": "bibliotecas_snbp_n",
-      "name": "Bibliotecas Públicas (SNBP)",
+      "name": "Bibliotecas Públicas Fijas SNBP / BiblioRedes",
       "shortName": "Bibliotecas SNBP",
       "unit": "bibliotecas",
       "hub": "cultura",
@@ -3671,8 +3672,39 @@
         "bibliotecas",
         "bibliotecas publicas",
         "snbp"
-      ],
-      "isAliasOf": "bibliotecas_publicas_count"
+      ]
+    },
+    {
+      "id": "bibliotecas_publicas_count",
+      "canonicalId": "bibliotecas_snbp_n",
+      "isAliasOf": "bibliotecas_snbp_n",
+      "name": "Bibliotecas Públicas Fijas SNBP (Conteo)",
+      "shortName": "Bibliotecas Públicas",
+      "unit": "bibliotecas",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 32,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": []
+    },
+    {
+      "id": "puntos_cultura_comunitaria_pcc_n",
+      "canonicalId": "puntos_cultura_comunitaria_pcc_n",
+      "name": "Puntos de Cultura Comunitaria (PCC MINCAP)",
+      "shortName": "Puntos Cultura PCC",
+      "unit": "puntos",
+      "hub": "cultura",
+      "hubTitle": "IX. Cultura y Patrimonio",
+      "nodeId": 34,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "puntos de cultura comunitaria",
+        "pcc",
+        "puntos de cultura",
+        "organizaciones pcc"
+      ]
     },
     {
       "id": "fondart_fndr_mclp",

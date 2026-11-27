@@ -319,26 +319,29 @@ const HUB_META = [
     fileSlug: 'hub_09_cultura',
     hubId: 'cultura',
     roman: 'IX',
-    title: 'Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas y Identidad Austral',
+    title: 'Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas e Identidad Austral',
     variables_clave: [
-      'museos_espacios_n',
+      'museos_count',
       'bibliotecas_snbp_n',
       'monumentos_nacionales_count',
-      'fondart_fndr_mclp',
-      'gasto_cultura_per_capita_clp',
       'total_espacios_culturales',
-      'participacion_cultural_pct_c2'
+      'gasto_cultura_per_capita_clp',
+      'fondart_fndr_mclp',
+      'participacion_cultural_pct_c2',
+      'puntos_cultura_comunitaria_pcc_n',
+      'pueblos_originarios_pct_censo_2024'
     ],
     fuentes_oficiales: [
-      'MINCAP / SERPAT — Registro de Museos de Chile (RMC) y Sistema Nacional de Bibliotecas Públicas (SNBP)',
-      'Consejo de Monumentos Nacionales (CMN) — Catastro de Monumentos Nacionales en Aysén',
-      'GORE Aysén / MINCAP — Fondos Concursables FONDART y 8% FNDR Cultura',
-      'Universidad de Aysén — Barómetro Regional Patagonia (Dimensión Identidad y Cultura)'
+      'MINCAP / SERPAT — Registro de Museos de Chile (RMC 16/27), SNBP (16 fijas / 31.221 préstamos), PCC (25) y ENPCCL 2024',
+      'Consejo de Monumentos Nacionales (CMN Ley N° 17.288) — 16 declaratorias / 23 bienes protegidos en Aysén',
+      'INE Censo 2024 / BCN Reporte Distrital 27 / CONADI SIIC — Pueblos Originarios (29,0%) y 47 Comunidades SIIC',
+      'GORE Aysén / MINCAP / SINIM — Fondos Cultura 2022–2026, PAOCC, Red Cultura, 8% FNDR y Gasto Municipal',
+      'Universidad de Aysén — Barómetro Regional Patagonia (N=465, B4_B = 4,04, semáforo comunal n<30)'
     ],
     conceptLinks: ['conceptos/financiamiento_municipal'],
     adrLinks: ['adr/adr_002_reconciliacion_38_fuentes_invariantes', 'adr/adr_005_motor_reportes_ejecutivos_pdf_a4'],
     synthesis:
-      'El Hub IX (Cultura, Artes y Patrimonio) sistematiza la infraestructura cultural y patrimonial de las 10 comunas de Aysén: 18 espacios museográficos inscritos en el Registro de Museos de Chile (RMC), la red comunal de bibliotecas públicas SNBP, declaratorias del Consejo de Monumentos Nacionales (como Caleta Tortel como Zona Típica, el Campamento Minero Puerto Cristal en Río Ibáñez, la Escuela Pedro Quintana Mansilla y las Bodegas Portuarias de sociedades ganaderas), y el financiamiento cultural combinado entre FONDART Regional, el fondo concursable 8% FNDR del GORE Aysén y el gasto municipal per cápita en cultura.'
+      'El Hub IX (Cultura, Artes y Patrimonio) sistematiza la infraestructura cultural oficial de las 10 comunas de Aysén (54 espacios totales): 16 museos activos inscritos en el Registro de Museos de Chile (RMC 2026, dentro de una Red de Museos de Aysén de 27 recintos; Museo Regional de Aysén con 36.173 visitas en 2025, #12 nacional), 16 bibliotecas públicas fijas SNBP en 10/10 comunas (31.221 préstamos físicos y 7.591 socios activos en 2024; 18.199 en Biblioteca Regional), 16 declaratorias del Consejo de Monumentos Nacionales (12 MH / 19 bienes incluyendo los 8 de la SIA en Coyhaique, 1 ZT en Caleta Tortel y 3 SN incluyendo Capilla de Mármol en Río Ibáñez 11402 = 23 bienes protegidos) y 6 centros culturales municipales. Integra además la serie MINCAP 2022–2026 (57 proyectos por >$1.007M en 2025, PAOCC 5 organizaciones en 2026, Red Cultura 7 espacios + $61M a 4 municipios, 25 Puntos de Cultura Comunitaria PCC), el FNDR 8% ($5.681M a 355 iniciativas en 2025), ENPCCL 2024 (62,0% urbana vs. 75,4% nacional), la demografía indígena Censo 2024 (29,0% = 29.230 personas; 47 Comunidades Indígenas SIIC CONADI con 490 familias + 27 Asociaciones Indígenas funcionales = 74 organizaciones) y el gasto municipal per cápita recalculado sobre Censo 2024 ($43.537 en Lago Verde y $32.860 en Tortel frente a $11.850 en Coyhaique), junto al Barómetro Regional (N=465, nota B4_B = 4,04, tasa positiva 40,2%): Coyhaique y Aysén operan en semáforo verde (n>=50), mientras las 8 comunas rurales permanecen en semáforo rojo (n<30) por lo que valores extremos como 100,0% en Tortel o 80,0% y nota 5,00 en Lago Verde son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona.'
   },
   {
     idx: 10,
@@ -1091,7 +1094,7 @@ function generateComunaPages(dataLake, canonicalLabels) {
       `| Calefacción a Leña y Días MP2.5 | ${fmtNum(c.hogares_lena_pct)}% hogares / ${fmtNum(c.dias_sobre_norma_mp25)} días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |`,
       `| Superficie Glaciar DGA (km²) | ${fmtNum(c.superficie_glaciares_km2)} km² (${fmtNum(c.glaciares_dga_n)} glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |`,
       `| Red de Salud y Tiempo de Derivación | ${c.salud_principal} (${fmtNum(c.camas_hospitalarias)} camas, ${fmtNum(c.postas_salud_rural)} PSR, ${fmtNum(c.traslado_coyhaique_hrs)} hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |`,
-      `| Infraestructura Cultural y Bibliotecas | ${fmtNum(c.museos_espacios_n)} museos / ${fmtNum(c.bibliotecas_snbp_n)} bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |`,
+      `| Infraestructura Cultural y Bibliotecas | ${fmtNum(c.museos_count)} museos RMC (${fmtNum(c.total_espacios_culturales)} espacios) / ${fmtNum(c.bibliotecas_snbp_n)} bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |`,
       `| Proyectos CTCi e Investigadores | ${fmtNum(c.total_proyectos_ctci)} proyectos / ${fmtNum(c.investigadores_residentes_est)} investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |`
     ];
 
@@ -1164,9 +1167,9 @@ const NODE_KEY_VARS_MAP = {
   29: ['especies_exoticas_invasoras_n', 'parcelaciones_sag_n'],
   30: ['dias_sobre_norma_mp25', 'episodios_gec_mp25_anual', 'superficie_glaciares_km2'],
   31: ['amenaza_volcanica_sismica_idx', 'superficie_glaciares_km2'],
-  32: ['monumentos_nacionales_count', 'museos_espacios_n', 'bibliotecas_snbp_n'],
+  32: ['monumentos_nacionales_count', 'museos_count', 'bibliotecas_snbp_n', 'total_espacios_culturales'],
   33: ['fondart_fndr_mclp', 'gasto_cultura_per_capita_clp'],
-  34: ['total_espacios_culturales', 'participacion_cultural_pct_c2', 'comunidades_indigenas_conadi'],
+  34: ['total_espacios_culturales', 'participacion_cultural_pct_c2', 'pueblos_originarios_pct_censo_2024', 'comunidades_indigenas_conadi', 'puntos_cultura_comunitaria_pcc_n'],
   35: ['proyectos_anid_n', 'monto_anid_mclp', 'proyectos_anid_locales_count'],
   36: ['centros_y_estaciones_ctci_count', 'investigadores_residentes_est', 'proporcion_ciencia_endogena_pct'],
   37: ['monto_corfo_innova_mclp', 'proyectos_corfo_innova_count', 'total_proyectos_ctci'],
@@ -1487,6 +1490,10 @@ function generateLogPage() {
     '- Cierre de residuos Sprint 10 en `data/estaciones_aysen.json` (`0` fechas futuras `2026-12` en las 16 estaciones) y `sys.path` en `wp_07_biodiversidad_flora_fauna.py`.',
     '- Reconciliación integral del [[hubs/hub_08_salud|Hub VIII]] y [[conceptos/red_asistencial_salud|Red Asistencial de Salud]]: dependencia 100% DAP SSA (`0%` salud municipalizada; `0` clínicas privadas hospitalización general; Convenio GORE–MINSAL `$195.000M`), 5 hospitales con `213` camas de diseño (`135` HRC basales / `141` con UPC Pediátrica jun-2026 / `4` pabellones / `18` hemodiálisis; `56` Puerto Aysén con bloqueo sociosanitario `7/17` Medicina y `~30` en red SSA; `8` Puerto Cisnes; `7` Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico feb-2026 erradicando el falso nombre San José; `7` Hospital Lord Cochrane acreditado may-2026; `8` pabellones), catastro DEIS 03-11-2026 (`4` CESFAM +1 en construcción, `4` CECOSF, `27` PSR 100% tele-ECG, `9` EMR, `2` COSAM).',
     '- Actualización Glosa 06 SIGTE T3 2026 (`14.751` CNE / `159d`, `3.608` IQ / `262d`, `6.870` Odonto / `242d`, `524` retrasos GES / `88d`, `149,6/100k` oncológico GES), SAMU (`454` primarias + `45` secundarias; Melinka regulado por SAMU Reloncaví; déficit ECMO HRC), epidemiología DEIS (suicidio `19,9/100k` `#1` Chile, `64%` *H. pylori* C16, vesícula C23 `18,29/100k`), dotación médica (`5,54` RNPI vs `1,80` red pública SSA; UAysén `0` Medicina), reemplazo `B3_B` por `I4_A` en `salud.espejo_barometro`, [[nodos/nodo_39|Nodo #39]] y **Eval E21** en [[nodos/nodo_24|Nodos #24]], [[nodos/nodo_38|#38]]–[[nodos/nodo_39|#39]].',
+    '',
+    '## [2026-11-27] ingest | Sprint 12: Reingeniería Forense del Hub IX (CMN 16/23, RMC 16/27, SNBP 16/31.221, Censo 2024 Indígena 29,0%, CONADI 47 SIIC, 25 PCC, Barómetro N=465) y Eval E22',
+    '- Reconciliación integral del [[hubs/hub_09_cultura|Hub IX]] y [[nodos/nodo_32|Nodos #32]]–[[nodos/nodo_34|#34]]: catastro CMN (`16` declaratorias / `23` bienes protegidos: `12` MH / `19` bienes incluyendo 8 inmuebles SIA en Coyhaique, `1` ZT Caleta Tortel, `3` SN reasignando *Capilla de Mármol* `CP-NOD-04` a Río Ibáñez `11402`; Lago Verde `1`, Cisnes `1`, Cochrane `1`), RMC (`16` museos activos / `27` Red Regional; Museo Regional de Aysén `36.173` visitas SNM 2025), SNBP (`16` bibliotecas fijas / `31.221` préstamos 2024 / `18.199` Biblioteca Regional) y `6` centros culturales (`54` espacios culturales totales).',
+    '- Recálculo exacto de `gasto_cultura_per_capita_clp` sobre padrón Censo 2024 (`$43.537` Lago Verde, `$32.860` Tortel, `$11.850` Coyhaique), serie MINCAP 2022–2026 (`57` proy. / `$1.007M` en 2025, PAOCC `5` orgs., Red Cultura `7` espacios + `$61M`), FNDR 8% (`$5.681M` / `355` iniciativas 2025), ENPCCL 2024 (`62,0%`), `25` PCC, unificación indígena Censo 2024 (`29,0%` = `29.230` hab., Guaitecas `57,9%`), desglose CONADI SIIC (`47` Comunidades / `490` familias + `27` Asociaciones = `74` orgs.), preservación de CUT real en `wp_09_barometro_espejo.py`, semáforo muestral comunal (`B4_B = 4,04`, `n < 30` en 8 comunas rurales) y **Eval E22**.',
     ''
   ].join('\n');
 

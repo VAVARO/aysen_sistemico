@@ -45,7 +45,7 @@ La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de 
 - [[hubs/hub_06_social|Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social]]
 - [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad, Glaciares DGA, Calidad del Aire SINCA y Riesgos Geológicos]]
 - [[hubs/hub_08_salud|Hub VIII — Red Asistencial, Atención Primaria Rural, Listas de Espera y SAMU]]
-- [[hubs/hub_09_cultura|Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas y Identidad Austral]]
+- [[hubs/hub_09_cultura|Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas e Identidad Austral]]
 - [[hubs/hub_10_ctci|Hub X — Ciencia, Tecnología, Conocimiento e Innovación (CTCi) en Aysén]]
 
 ## 3. Las 10 Comunas de la Región de Aysén (`wiki/comunas/`)
@@ -115,8 +115,8 @@ La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de 
 - [[nodos/nodo_30|Nodo #30 — Días al año con contaminación crítica del aire e Hidrología]]
 - [[nodos/nodo_31|Nodo #31 — Complejos Volcánicos Activos (RNVV), Sismos (USGS) y Red de Estaciones]]
 - [[nodos/nodo_32|Nodo #32 — Patrimonio Protegido, Museos (RMC) y Bibliotecas (SNBP)]]
-- [[nodos/nodo_33|Nodo #33 — Fondos Cultura MINCAP y FNDR 8%]]
-- [[nodos/nodo_34|Nodo #34 — Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios]]
+- [[nodos/nodo_33|Nodo #33 — Fondos Cultura MINCAP (2022–2026), PAOCC, Red Cultura y FNDR 8%]]
+- [[nodos/nodo_34|Nodo #34 — Cultura Comunitaria (25 PCC), Participación ENPCCL, Barómetro y Pueblos Originarios]]
 - [[nodos/nodo_35|Nodo #35 — Proyectos de investigación científica adjudicados]]
 - [[nodos/nodo_36|Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional]]
 - [[nodos/nodo_37|Nodo #37 — Proyectos de innovación productiva local]]

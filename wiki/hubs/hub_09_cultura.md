@@ -1,22 +1,25 @@
 ---
 id: hub_09_cultura
-title: "Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas y Identidad Austral"
+title: "Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas e Identidad Austral"
 type: hub
 hub_id: cultura
 hub_roman: IX
 variables_clave:
-  - museos_espacios_n
+  - museos_count
   - bibliotecas_snbp_n
   - monumentos_nacionales_count
-  - fondart_fndr_mclp
-  - gasto_cultura_per_capita_clp
   - total_espacios_culturales
+  - gasto_cultura_per_capita_clp
+  - fondart_fndr_mclp
   - participacion_cultural_pct_c2
+  - puntos_cultura_comunitaria_pcc_n
+  - pueblos_originarios_pct_censo_2024
 fuentes_oficiales:
-  - "MINCAP / SERPAT — Registro de Museos de Chile (RMC) y Sistema Nacional de Bibliotecas Públicas (SNBP)"
-  - "Consejo de Monumentos Nacionales (CMN) — Catastro de Monumentos Nacionales en Aysén"
-  - "GORE Aysén / MINCAP — Fondos Concursables FONDART y 8% FNDR Cultura"
-  - "Universidad de Aysén — Barómetro Regional Patagonia (Dimensión Identidad y Cultura)"
+  - "MINCAP / SERPAT — Registro de Museos de Chile (RMC 16/27), SNBP (16 fijas / 31.221 préstamos), PCC (25) y ENPCCL 2024"
+  - "Consejo de Monumentos Nacionales (CMN Ley N° 17.288) — 16 declaratorias / 23 bienes protegidos en Aysén"
+  - "INE Censo 2024 / BCN Reporte Distrital 27 / CONADI SIIC — Pueblos Originarios (29,0%) y 47 Comunidades SIIC"
+  - "GORE Aysén / MINCAP / SINIM — Fondos Cultura 2022–2026, PAOCC, Red Cultura, 8% FNDR y Gasto Municipal"
+  - "Universidad de Aysén — Barómetro Regional Patagonia (N=465, B4_B = 4,04, semáforo comunal n<30)"
 updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
@@ -24,32 +27,32 @@ tags:
   - hub-ix
 ---
 
-# Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas y Identidad Austral
+# Hub IX — Cultura, Patrimonio Monumental, Museos, Bibliotecas e Identidad Austral
 
 ## Síntesis Compilada (Consultor IA)
 
-El Hub IX (Cultura, Artes y Patrimonio) sistematiza la infraestructura cultural y patrimonial de las 10 comunas de Aysén: 18 espacios museográficos inscritos en el Registro de Museos de Chile (RMC), la red comunal de bibliotecas públicas SNBP, declaratorias del Consejo de Monumentos Nacionales (como Caleta Tortel como Zona Típica, el Campamento Minero Puerto Cristal en Río Ibáñez, la Escuela Pedro Quintana Mansilla y las Bodegas Portuarias de sociedades ganaderas), y el financiamiento cultural combinado entre FONDART Regional, el fondo concursable 8% FNDR del GORE Aysén y el gasto municipal per cápita en cultura.
+El Hub IX (Cultura, Artes y Patrimonio) sistematiza la infraestructura cultural oficial de las 10 comunas de Aysén (54 espacios totales): 16 museos activos inscritos en el Registro de Museos de Chile (RMC 2026, dentro de una Red de Museos de Aysén de 27 recintos; Museo Regional de Aysén con 36.173 visitas en 2025, #12 nacional), 16 bibliotecas públicas fijas SNBP en 10/10 comunas (31.221 préstamos físicos y 7.591 socios activos en 2024; 18.199 en Biblioteca Regional), 16 declaratorias del Consejo de Monumentos Nacionales (12 MH / 19 bienes incluyendo los 8 de la SIA en Coyhaique, 1 ZT en Caleta Tortel y 3 SN incluyendo Capilla de Mármol en Río Ibáñez 11402 = 23 bienes protegidos) y 6 centros culturales municipales. Integra además la serie MINCAP 2022–2026 (57 proyectos por >$1.007M en 2025, PAOCC 5 organizaciones en 2026, Red Cultura 7 espacios + $61M a 4 municipios, 25 Puntos de Cultura Comunitaria PCC), el FNDR 8% ($5.681M a 355 iniciativas en 2025), ENPCCL 2024 (62,0% urbana vs. 75,4% nacional), la demografía indígena Censo 2024 (29,0% = 29.230 personas; 47 Comunidades Indígenas SIIC CONADI con 490 familias + 27 Asociaciones Indígenas funcionales = 74 organizaciones) y el gasto municipal per cápita recalculado sobre Censo 2024 ($43.537 en Lago Verde y $32.860 en Tortel frente a $11.850 en Coyhaique), junto al Barómetro Regional (N=465, nota B4_B = 4,04, tasa positiva 40,2%): Coyhaique y Aysén operan en semáforo verde (n>=50), mientras las 8 comunas rurales permanecen en semáforo rojo (n<30) por lo que valores extremos como 100,0% en Tortel o 80,0% y nota 5,00 en Lago Verde son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona.
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Museos y Espacios Culturales | Bibliotecas Públicas SNBP | Monumentos Nacionales Declarados (CMN) | Total Fondos Culturales Adjudicados (FONDART + 8% FNDR) (M$ CLP) | Gasto Municipal en Cultura Per Cápita ($/hab) |
+| Comuna | museos_count | Bibliotecas Públicas Fijas SNBP | Monumentos Nacionales Declarados (CMN) | Total de Espacios Culturales e Infraestructura | Gasto Municipal en Cultura Per Cápita ($/hab) |
 | --- | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 8 | 1 | 2 | 2.630,4 | 11.850 |
-| [[comunas/lago_verde|Lago Verde]] | 2 | 1 | 0 | 65,5 | 49.294 |
-| [[comunas/aysen|Aysén]] | 6 | 1 | 2 | 1.052,8 | 9.306 |
-| [[comunas/cisnes|Cisnes]] | 6 | 3 | 0 | 357,5 | 16.040 |
-| [[comunas/guaitecas|Guaitecas]] | 2 | 1 | 0 | 110,1 | 25.782 |
-| [[comunas/chile_chico|Chile Chico]] | 5 | 2 | 1 | 282 | 15.250 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 6 | 1 | 3 | 305,4 | 19.317 |
-| [[comunas/cochrane|Cochrane]] | 3 | 1 | 0 | 279,2 | 18.045 |
-| [[comunas/ohiggins|O'Higgins]] | 2 | 1 | 0 | 83,6 | 33.590 |
-| [[comunas/tortel|Tortel]] | 2 | 1 | 1 | 133 | 36.706 |
+| [[comunas/coyhaique|Coyhaique]] | 8 | 2 | 2 | 14 | 11.850 |
+| [[comunas/lago_verde|Lago Verde]] | 0 | 1 | 1 | 3 | 43.537 |
+| [[comunas/aysen|Aysén]] | 1 | 3 | 5 | 10 | 9.305 |
+| [[comunas/cisnes|Cisnes]] | 0 | 3 | 1 | 5 | 15.445 |
+| [[comunas/guaitecas|Guaitecas]] | 0 | 1 | 0 | 1 | 25.782 |
+| [[comunas/chile_chico|Chile Chico]] | 2 | 2 | 0 | 4 | 15.111 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 2 | 1 | 4 | 7 | 19.693 |
+| [[comunas/cochrane|Cochrane]] | 2 | 1 | 1 | 5 | 17.869 |
+| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | 0 | 2 | 32.831 |
+| [[comunas/tortel|Tortel]] | 0 | 1 | 2 | 3 | 32.860 |
 
 ## Nodos Satélite del Hub
 
 - [[nodos/nodo_32|Nodo #32: Patrimonio Protegido, Museos (RMC) y Bibliotecas (SNBP)]]
-- [[nodos/nodo_33|Nodo #33: Fondos Cultura MINCAP y FNDR 8%]]
-- [[nodos/nodo_34|Nodo #34: Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios]]
+- [[nodos/nodo_33|Nodo #33: Fondos Cultura MINCAP (2022–2026), PAOCC, Red Cultura y FNDR 8%]]
+- [[nodos/nodo_34|Nodo #34: Cultura Comunitaria (25 PCC), Participación ENPCCL, Barómetro y Pueblos Originarios]]
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

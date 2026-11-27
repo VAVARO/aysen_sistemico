@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-27T15:21:36Z",
+  "generatedAt": "2026-11-27T22:15:55Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -3504,11 +3504,11 @@
           "hub": "IX. Cultura",
           "label": "Gasto Municipal en Cultura Per Cápita",
           "unit": "$/hab",
-          "comunaValue": 49294.0,
-          "regionalMean": 23518.0,
-          "zScore": 2.14,
-          "diffVsMeanPct": 109.6,
-          "plainSummary": "Gasto Municipal en Cultura Per Cápita: 49294,0 $/hab (promedio regional: 23518,0 $/hab)"
+          "comunaValue": 43537.0,
+          "regionalMean": 22428.3,
+          "zScore": 2.02,
+          "diffVsMeanPct": 94.1,
+          "plainSummary": "Gasto Municipal en Cultura Per Cápita: 43537,0 $/hab (promedio regional: 22428,3 $/hab)"
         },
         {
           "varKey": "ruralidad_censo_2024_pct",
@@ -3679,6 +3679,17 @@
       ],
       "topBelowRegionalMean": [
         {
+          "varKey": "gasto_cultura_per_capita_clp",
+          "hub": "IX. Cultura",
+          "label": "Gasto Municipal en Cultura Per Cápita",
+          "unit": "$/hab",
+          "comunaValue": 9305.0,
+          "regionalMean": 22428.3,
+          "zScore": -1.26,
+          "diffVsMeanPct": -58.5,
+          "plainSummary": "Gasto Municipal en Cultura Per Cápita: 9305,0 $/hab (promedio regional: 22428,3 $/hab)"
+        },
+        {
           "varKey": "participacion_cultural_pct_c2",
           "hub": "IX. Cultura",
           "label": "Participación Activa en Organizaciones Culturales",
@@ -3688,17 +3699,6 @@
           "zScore": -1.25,
           "diffVsMeanPct": -36.1,
           "plainSummary": "Participación Activa en Organizaciones Culturales: 40,4 % (promedio regional: 63,2 %)"
-        },
-        {
-          "varKey": "gasto_cultura_per_capita_clp",
-          "hub": "IX. Cultura",
-          "label": "Gasto Municipal en Cultura Per Cápita",
-          "unit": "$/hab",
-          "comunaValue": 9306.0,
-          "regionalMean": 23518.0,
-          "zScore": -1.18,
-          "diffVsMeanPct": -60.4,
-          "plainSummary": "Gasto Municipal en Cultura Per Cápita: 9306,0 $/hab (promedio regional: 23518,0 $/hab)"
         },
         {
           "varKey": "indice_aislamiento_multimodal",
@@ -3746,7 +3746,7 @@
           "similitudPct": 60
         }
       ],
-      "narrativeDigest": "Aysén (Aysén, 23.170 hab.) destaca sobre la media regional en Concesiones de Salmonicultura Otorgadas (412,0 concesiones) y Biomasa Anual de Salmón Cosechada, mientras presenta sus valores más bajos frente al promedio en Participación Activa en Organizaciones Culturales. Sus perfiles territoriales más parecidos son Cisnes (66%) y Chile Chico (60%)."
+      "narrativeDigest": "Aysén (Aysén, 23.170 hab.) destaca sobre la media regional en Concesiones de Salmonicultura Otorgadas (412,0 concesiones) y Biomasa Anual de Salmón Cosechada, mientras presenta sus valores más bajos frente al promedio en Gasto Municipal en Cultura Per Cápita. Sus perfiles territoriales más parecidos son Cisnes (66%) y Chile Chico (60%)."
     },
     "Cisnes": {
       "comuna": "Cisnes",
@@ -4004,7 +4004,7 @@
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 55
+          "similitudPct": 56
         },
         {
           "comuna": "O'Higgins",
@@ -4012,7 +4012,7 @@
           "similitudPct": 54
         }
       ],
-      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (55%) y O'Higgins (54%)."
+      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (56%) y O'Higgins (54%)."
     },
     "Chile Chico": {
       "comuna": "Chile Chico",

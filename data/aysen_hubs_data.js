@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-27T15:21:37.303Z",
+  "generatedAt": "2026-11-27T22:15:51.819Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -12,7 +12,7 @@ window.AYSEN_HUBS_DATA = {
       "totalOfficialSources": 38,
       "totalHubs": 10,
       "totalNodes": 41,
-      "totalComunaVariables": 294
+      "totalComunaVariables": 296
     }
   },
   "hubs": [
@@ -3749,8 +3749,8 @@ window.AYSEN_HUBS_DATA = {
       "title": "IX. Cultura, Artes & Patrimonio",
       "shortTitle": "Cultura, Artes & Patrimonio",
       "color": "#b45309",
-      "description": "Infraestructura cultural regional: **42 espacios culturales**, **14 museos (RMC)**, **13 bibliotecas públicas (SNBP)**, **9 monumentos nacionales (CMN)** y financiamiento Fondos Cultura / FNDR 8%.",
-      "example": "**Coyhaique** concentra la Biblioteca Regional y el Centro Cultural, mientras localidades como **Caleta Tortel**, **Guaitecas** y **Cerro Castillo** albergan museos comunitarios y monumentos históricos australes.",
+      "description": "Infraestructura cultural y patrimonial regional: **54 espacios culturales** (**16 museos activos RMC / 27 en Red Regional**, **16 bibliotecas fijas SNBP con 31.221 préstamos**, **16 declaratorias CMN que protegen 23 bienes**, **6 centros culturales**), **25 Puntos de Cultura Comunitaria (PCC)**, **29,0%** autoidentificación indígena Censo 2024 (**47 Comunidades SIIC CONADI + 27 Asociaciones**), **62,0%** participación cultural ENPCCL 2024 y financiamiento Fondos Cultura MINCAP / FNDR 8%.",
+      "example": "**Coyhaique** concentra el Museo Regional de Aysén (**36.173 visitas en 2025**) y la Biblioteca Regional (**18.199 préstamos**), **Puerto Aysén** suma 5 declaratorias CMN y 3 bibliotecas SNBP, mientras **Río Ibáñez** protege 4 declaratorias CMN incluyendo el Santuario de la Naturaleza **Capilla de Mármol** y **Caleta Tortel** resguarda su Zona Típica.",
       "csvFile": "data/systemic/csv/09_cultura_patrimonio_comunas.csv",
       "nodesFile": "data/systemic/csv/09_cultura_patrimonio_nodos.csv",
       "sourceName": "SERPAT / CMN / SNBP / MINCAP / GORE Aysén",
@@ -9880,10 +9880,10 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 2,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)**, **9 Monumentos Históricos y Arqueológicos (CMN)** y **6 Centros y Casas de la Cultura Municipales/Comunitarios** (**42 espacios culturales totales**).",
-      "example": "**Coyhaique** alberga 3 museos, 1 biblioteca, 2 monumentos y 2 centros culturales (8 espacios), mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.",
+      "definition": "Catastro oficial SERPAT/CMN: **16 declaratorias de Monumentos Nacionales por decreto** (12 decretos MH que protegen 19 inmuebles incluyendo los 8 de la Sociedad Industrial de Aisén, 1 ZT en Caleta Tortel y 3 SN: Estero Quitralco, Meullín-Puye y Capilla de Mármol en Río Ibáñez — **23 bienes protegidos** más 11 Monumentos Públicos), **16 museos activos inscritos en el RMC** (**27 espacios en la Red de Museos de Aysén**; **Museo Regional de Aysén con 36.173 visitas en 2025**, #12 nacional), **16 bibliotecas públicas fijas SNBP/BiblioRedes** en 10/10 comunas (**31.221 préstamos físicos y 7.591 socios activos en 2024**; **18.199 préstamos en Biblioteca Regional**) y **6 centros culturales principales** (**54 espacios culturales totales**).",
+      "example": "**Coyhaique** concentra 8 museos RMC, 2 bibliotecas SNBP, 2 declaratorias CMN (9 inmuebles) y 2 centros culturales (**14 espacios**). **Aysén** suma **10 espacios** (5 declaratorias CMN, 3 bibliotecas, 1 museo RMC y 1 centro cultural) y **Río Ibáñez** alcanza **7 espacios** con 4 declaratorias CMN incluida la **Capilla de Mármol** (D.E. N° 281/1994).",
       "officialSource": {
-        "name": "Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN",
+        "name": "Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN / RMC / SNBP",
         "url": "https://ide.patrimoniocultural.gob.cl/",
         "frequency": "Anual"
       },
@@ -9909,7 +9909,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "bar",
-        "title": "Museos, Bibliotecas, Monumentos Nacionales y Centros Culturales por Comuna",
+        "title": "Museos (RMC), Bibliotecas (SNBP), Monumentos (CMN) y Centros Culturales por Comuna (Total 54)",
         "labels": [
           "Coyhaique",
           "Lago Verde",
@@ -9924,27 +9924,27 @@ window.AYSEN_HUBS_DATA = {
         ],
         "datasets": [
           {
-            "label": "Museos RMC",
+            "label": "Museos RMC (16)",
             "data": [
-              3,
+              8,
+              0,
+              1,
+              0,
               0,
               2,
               2,
-              1,
               2,
-              2,
-              1,
               1,
               0
             ],
             "backgroundColor": "#b45309"
           },
           {
-            "label": "Bibliotecas SNBP",
+            "label": "Bibliotecas SNBP (16)",
             "data": [
+              2,
               1,
-              1,
-              1,
+              3,
               3,
               1,
               2,
@@ -9956,23 +9956,23 @@ window.AYSEN_HUBS_DATA = {
             "backgroundColor": "#d97706"
           },
           {
-            "label": "Monumentos CMN",
+            "label": "Monumentos CMN (16 decr. / 23 bienes)",
             "data": [
               2,
-              0,
-              2,
-              0,
-              0,
               1,
-              3,
+              5,
+              1,
               0,
               0,
-              1
+              4,
+              1,
+              0,
+              2
             ],
             "backgroundColor": "#f59e0b"
           },
           {
-            "label": "Centros Culturales",
+            "label": "Centros Culturales (6)",
             "data": [
               2,
               1,
@@ -10001,67 +10001,67 @@ window.AYSEN_HUBS_DATA = {
       "tableRows": [
         [
           "Coyhaique",
-          "3",
-          "1",
+          "8",
           "2",
           "2",
-          "8"
+          "2",
+          "14"
         ],
         [
           "Lago Verde",
           "0",
           "1",
-          "0",
           "1",
-          "2"
+          "1",
+          "3"
         ],
         [
           "Aysén",
-          "2",
           "1",
-          "2",
+          "3",
+          "5",
           "1",
-          "6"
+          "10"
         ],
         [
           "Cisnes",
-          "2",
-          "3",
           "0",
+          "3",
           "1",
-          "6"
+          "1",
+          "5"
         ],
         [
           "Guaitecas",
-          "1",
+          "0",
           "1",
           "0",
           "0",
-          "2"
+          "1"
         ],
         [
           "Chile Chico",
           "2",
           "2",
-          "1",
           "0",
-          "5"
+          "0",
+          "4"
         ],
         [
           "Río Ibáñez",
           "2",
           "1",
-          "3",
+          "4",
           "0",
-          "6"
+          "7"
         ],
         [
           "Cochrane",
+          "2",
           "1",
           "1",
-          "0",
           "1",
-          "3"
+          "5"
         ],
         [
           "O'Higgins",
@@ -10075,17 +10075,17 @@ window.AYSEN_HUBS_DATA = {
           "Tortel",
           "0",
           "1",
-          "1",
+          "2",
           "0",
-          "2"
+          "3"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Directorio de 14 museos regionales y comunitarios",
-          "Red de 13 bibliotecas públicas conectadas a BiblioRedes",
-          "9 Monumentos Históricos y Zonas Típicas decretadas por ley",
-          "Distribución territorial de recintos patrimoniales por cuenca"
+          "16 museos activos inscritos en RMC 2026 (27 en Red de Museos de Aysén; MRA 36.173 visitas 2025)",
+          "16 bibliotecas fijas SNBP en 10/10 comunas + Bibliomóvil 4x4 oct-2026 (31.221 préstamos 2024)",
+          "16 declaratorias CMN por decreto (12 MH / 19 bienes + 1 ZT + 3 SN = 23 bienes protegidos)",
+          "Reasignación administrativa de Capilla de Mármol (D.E. 281/1994) a Río Ibáñez (11402)"
         ],
         "suggestedCrossings": [
           "Cruce con Prestadores de Servicios Turísticos (Nodo #01)",
@@ -10099,15 +10099,15 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 33,
       "hubId": "cultura",
       "isSpecial": false,
-      "title": "Fondos Cultura MINCAP y FNDR 8%",
+      "title": "Fondos Cultura MINCAP (2022–2026), PAOCC, Red Cultura y FNDR 8%",
       "vsm_system": "S3",
       "espejo_governance": 4,
       "metabolic_flow": "financial",
       "algedonic_trigger": false,
-      "definition": "Flujos de financiamiento público para el desarrollo cultural: asignaciones acumuladas de los **Fondos de Cultura (FONDART Regional, Fondos del Libro, Música y Audiovisual)**, asignación del **FNDR 8% Comunitario del GORE Aysén** y gasto municipal anual en cultura.",
-      "example": "La inversión concursable MINCAP se concentra en **Coyhaique ($2.150,4 MM acumulados, 55,9%)** y **Aysén ($742,8 MM, 19,3%; $1.052,8 MM incluyendo FNDR 8%)**, mientras las comunas rurales lideran el esfuerzo municipal per cápita.",
+      "definition": "Flujos de financiamiento público para el desarrollo cultural: **Fondos Cultura MINCAP 2022–2026** (**2024: 54 proyectos por $477,4 MM**; **2025: 57 proyectos por >$1.007,0 MM** en 9/10 comunas generando 202 empleos, 64% liderado por mujeres; **2026 1ª entrega: 9 proyectos**), **PAOCC** (**5 organizaciones en 2026**: Zíngara, Teatro Austral, Malotun Ortiga, Memoria Austral y Pulso Austral + >$32 MM a Corp. Cultural Coyhaique en 2025), **Red Cultura 2026** (**7 espacios comunitarios** jul-2026 + **$61,0 MM a 4 municipios** nov-2026), **FNDR 8% GORE Aysén** (**2025: $5.681 MM a 355 iniciativas**, **2026: Aysén Crece en Comunidad**) y gasto municipal per cápita sobre **padrón Censo 2024**.",
+      "example": "La cartera concursable MINCAP histórica se concentra en **Coyhaique ($2.150,4 MM, 55,9%)** y **Aysén ($742,8 MM, 19,3%)**, mientras sobre población Censo 2024 **Lago Verde ($43.537/hab)** y **Caleta Tortel ($32.860/hab)** lideran el gasto municipal per cápita frente a **$11.850/hab en Coyhaique**.",
       "officialSource": {
-        "name": "MINCAP Fondos Cultura / DIPRES GORE Aysén / SINIM",
+        "name": "MINCAP Fondos Cultura / PAOCC / Red Cultura / GORE Aysén / SINIM",
         "url": "https://www.fondosdecultura.cl/",
         "frequency": "Anual"
       },
@@ -10186,7 +10186,7 @@ window.AYSEN_HUBS_DATA = {
         "Fondos MINCAP (M$)",
         "FNDR 8% Cultura (M$)",
         "Gasto Municipal (M$)",
-        "Gasto per Cápita ($)"
+        "Gasto per Cápita Censo 2024 ($)"
       ],
       "tableRows": [
         [
@@ -10201,21 +10201,21 @@ window.AYSEN_HUBS_DATA = {
           "23,5",
           "42",
           "38,4",
-          "49.294"
+          "43.537"
         ],
         [
           "Aysén",
           "742,8",
           "310",
           "215,6",
-          "9.306"
+          "9.305"
         ],
         [
           "Cisnes",
           "212,5",
           "145",
           "82,4",
-          "16.040"
+          "15.445"
         ],
         [
           "Guaitecas",
@@ -10229,43 +10229,43 @@ window.AYSEN_HUBS_DATA = {
           "162",
           "120",
           "74,8",
-          "15.250"
+          "15.111"
         ],
         [
           "Río Ibáñez",
           "195,4",
           "110",
           "52,6",
-          "19.317"
+          "19.693"
         ],
         [
           "Cochrane",
           "184,2",
           "95",
           "62,4",
-          "18.045"
+          "17.869"
         ],
         [
           "O'Higgins",
           "45,6",
           "38",
           "21,8",
-          "33.590"
+          "32.831"
         ],
         [
           "Tortel",
           "91",
           "42",
           "18,5",
-          "36.706"
+          "32.860"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Monto acumulado adjudicado en líneas FONDART Regional",
-          "Distribución de recursos del 8% FNDR para cultura",
-          "Gasto municipal reportado al SINIM en actividades culturales",
-          "Inversión cultural per cápita por habitante comunal"
+          "Serie oficial Fondos Cultura MINCAP 2022–2026 (57 proyectos / $1.007M en 2025; 202 empleos)",
+          "PAOCC 2026 (5 organizaciones) y Red Cultura 2026 (7 espacios comunitarios + $61M municipios)",
+          "Fondo Vinculación 8% FNDR GORE Aysén ($5.681M / 355 iniciativas 2025; Aysén Crece en Comunidad 2026)",
+          "Gasto municipal cultural per cápita recalculado exactamente sobre Censo 2024"
         ],
         "suggestedCrossings": [
           "Cruce con Dependencia del Fondo Común Municipal (Nodo #16)",
@@ -10279,16 +10279,16 @@ window.AYSEN_HUBS_DATA = {
       "nodeId": 34,
       "hubId": "cultura",
       "isSpecial": false,
-      "title": "Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios",
+      "title": "Cultura Comunitaria (25 PCC), Participación ENPCCL, Barómetro y Pueblos Originarios",
       "vsm_system": "S5",
       "espejo_governance": 2,
       "metabolic_flow": "info",
       "algedonic_trigger": false,
-      "definition": "Infraestructura activa de difusión artística: teatros, centros culturales, casas de la cultura comunales, agrupaciones artesanales, indicadores de participación ciudadana y evaluación comunal de la oferta cultural.",
-      "example": "El 42,8% de la población regional participa anualmente en actividades culturales, registrándose una valoración positiva en el Barómetro UAYSÉN (nota 4,12 regional) con alta demanda de descentralización hacia las localidades aisladas.",
+      "definition": "Demografía indígena oficial **Censo 2024 INE/BCN** (**29,0% regional = 29.230 personas**, liderado por **Guaitecas 57,9%** y **Tortel 40,2%**), desglose jurídico **CONADI SIIC (ago-2025: 47 Comunidades Indígenas vigentes con 490 familias + 27 Asociaciones Indígenas funcionales = 74 organizaciones)**, **25 Puntos de Cultura Comunitaria (PCC MINCAP)** en 8 comunas, **62,0% participación cultural urbana** (**ENPCCL 2024**, la más baja del país vs. 75,4% nacional) y evaluación del **Barómetro Regional UAYSÉN** (**N=465, nota media B4_B = 4,04, tasa positiva 40,2%**, con semáforo verde en Coyhaique/Aysén y rojo n<30 en las 8 comunas rurales).",
+      "example": "Las macrozonas del Barómetro evitan sesgos de micro-muestra rural (como 100,0% en Tortel o 5,00 en Lago Verde con n<=5), mientras las comunas sin tierras indígenas tituladas (Cisnes **34,9%**, Tortel **40,2%**, Chile Chico **26,0%**, Cochrane **24,5%**) se articulan vía Asociaciones Indígenas Art. 76° Ley 19.253.",
       "officialSource": {
-        "name": "SERPAT / MINCAP / Barómetro Regional UAYSÉN",
-        "url": "https://ide.patrimoniocultural.gob.cl/",
+        "name": "INE Censo 2024 / CONADI SIIC / MINCAP ENPCCL-PCC / Barómetro Regional UAYSÉN (N=465)",
+        "url": "https://puntos.cultura.gob.cl/aysen/",
         "frequency": "Bienal"
       },
       "provenance": {
@@ -10312,7 +10312,7 @@ window.AYSEN_HUBS_DATA = {
       ],
       "chartSpec": {
         "type": "bar",
-        "title": "Participación Cultural Ciudadana (C2) vs. Autoidentificación Pueblos Originarios (%)",
+        "title": "Participación Cultural Barómetro (C2) vs. Autoidentificación Pueblos Originarios Censo 2024 (%)",
         "labels": [
           "Coyhaique",
           "Lago Verde",
@@ -10343,18 +10343,18 @@ window.AYSEN_HUBS_DATA = {
             "backgroundColor": "#d97706"
           },
           {
-            "label": "Autoidentificación Pueblos Originarios (%)",
+            "label": "Autoidentificación Pueblos Originarios Censo 2024 (%)",
             "data": [
+              25.7,
+              28.2,
+              34.7,
+              34.9,
+              57.9,
+              26,
+              32.4,
+              24.5,
               28.4,
-              22,
-              31,
-              34,
-              49.8,
-              21,
-              24,
-              20,
-              18,
-              19
+              40.2
             ],
             "backgroundColor": "#0f766e"
           }
@@ -10363,95 +10363,106 @@ window.AYSEN_HUBS_DATA = {
       },
       "tableColumns": [
         "Comuna",
-        "Participación Cultural (%)",
-        "Nota Oferta Cultural (1-7)",
-        "Autoidentificación Indígena (%)",
-        "Comunidades CONADI (n°)"
+        "Participación Cultural C2 (%)",
+        "Nota Oferta Cultural B4_B (1-7)",
+        "Autoidentificación Indígena Censo 2024 (%)",
+        "Organizaciones CONADI Com.+Asoc. (n°)",
+        "Puntos de Cultura PCC (n°)"
       ],
       "tableRows": [
         [
           "Coyhaique",
           "42.2%",
           "3,87",
-          "28.4%",
-          "18"
+          "25.7%",
+          "18",
+          "6"
         ],
         [
           "Lago Verde",
           "80%",
           "5",
-          "22%",
-          "2"
+          "28.2%",
+          "2",
+          "0"
         ],
         [
           "Aysén",
           "40.4%",
           "3,81",
-          "31%",
-          "22"
+          "34.7%",
+          "22",
+          "1"
         ],
         [
           "Cisnes",
           "74.1%",
           "5",
-          "34%",
-          "14"
+          "34.9%",
+          "14",
+          "3"
         ],
         [
           "Guaitecas",
           "75%",
           "4,5",
-          "49.8%",
-          "8"
+          "57.9%",
+          "8",
+          "0"
         ],
         [
           "Chile Chico",
           "52%",
           "4,12",
-          "21%",
+          "26%",
+          "3",
           "3"
         ],
         [
           "Río Ibáñez",
           "47.6%",
           "4,62",
-          "24%",
+          "32.4%",
+          "4",
           "4"
         ],
         [
           "Cochrane",
           "54.2%",
           "4,58",
-          "20%",
-          "2"
+          "24.5%",
+          "2",
+          "4"
         ],
         [
           "O'Higgins",
           "66.7%",
           "4",
-          "18%",
-          "0"
+          "28.4%",
+          "0",
+          "3"
         ],
         [
           "Tortel",
           "100%",
           "4,8",
-          "19%",
+          "40.2%",
+          "1",
           "1"
         ]
       ],
       "canvasPreview": {
         "availableDimensions": [
-          "Directorio de centros culturales y casas comunales de cultura",
-          "Tasa de participación ciudadana en eventos artísticos",
-          "Evaluación de satisfacción comunal con la oferta cultural",
-          "Red de agentes y agrupaciones de creadores patagónicos"
+          "29,0% autoidentificación indígena Censo 2024 (29.230 personas; Guaitecas 57,9%, Tortel 40,2%)",
+          "47 Comunidades Indígenas SIIC CONADI (490 familias) + 27 Asociaciones Indígenas funcionales = 74 organizaciones",
+          "25 Puntos de Cultura Comunitaria (PCC MINCAP) y 62,0% participación ENPCCL 2024",
+          "Semáforo de robustez muestral del Barómetro Regional (verde Coyhaique/Aysén; rojo n<30 en 8 comunas rurales)"
         ],
         "suggestedCrossings": [
           "Cruce con Población Censo 2024 y Casen (Nodo #23)",
           "Cruce con Zonas de Interés Turístico ZOIT (Nodo #02)"
         ],
-        "totalRecordsInFullBase": "10 comunas con métricas de participación y percepción en data/systemic/09_cultura_patrimonio.json"
+        "totalRecordsInFullBase": "10 comunas con métricas de participación, CONADI, PCC y Barómetro en data/systemic/09_cultura_patrimonio.json"
       }
     },
     {
@@ -11819,15 +11830,17 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 7,
       "postas_rurales_psr_n": 7,
       "aeroevacuaciones_secundarias_interregionales_n": 45,
-      "museos_espacios_n": 8,
+      "museos_espacios_n": 14,
       "centros_culturales_n": 2,
+      "puntos_cultura_comunitaria_pcc_n": 6,
       "organizaciones_comunitarias_n": 142,
       "cultores_patrimonio_inmaterial_n": 48,
-      "bibliotecas_snbp_n": 1,
+      "bibliotecas_snbp_n": 2,
+      "bibliotecas_publicas_count": 2,
       "fondart_fndr_mclp": 2630.4,
-      "total_espacios_culturales": 8,
+      "total_espacios_culturales": 14,
       "monumentos_nacionales_count": 2,
-      "museos_count": 3,
+      "museos_count": 8,
       "fondos_cultura_adjudicados_mclp": 2150.4,
       "gasto_municipal_cultura_mclp": 685.2,
       "gasto_cultura_per_capita_clp": 11850,
@@ -11896,7 +11909,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 96.5,
       "viviendas_totales_censo_2024": 27989,
       "viviendas_ocupadas_censo_2024": 22198,
-      "pueblos_originarios_pct_censo_2024": 27.5,
+      "pueblos_originarios_pct_censo_2024": 25.7,
       "inmigrantes_internacionales_pct_censo_2024": 4.3,
       "indice_envejecimiento": 64.1,
       "indice_masculinidad": 95,
@@ -11963,7 +11976,7 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 5,
       "puntos_cajavecina_bancoestado": 145,
       "tasa_aprobacion_rs_sni_pct": 45,
-      "autoidentificacion_indigena_pct": 28.4,
+      "autoidentificacion_indigena_pct": 25.7,
       "comunidades_indigenas_conadi": 18,
       "gasto_cultural_per_capita_clp": 11850,
       "juntas_vecinos_activas": 72,
@@ -12115,18 +12128,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 3,
       "postas_rurales_psr_n": 3,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 2,
+      "museos_espacios_n": 3,
       "centros_culturales_n": 1,
+      "puntos_cultura_comunitaria_pcc_n": 0,
       "organizaciones_comunitarias_n": 14,
       "cultores_patrimonio_inmaterial_n": 22,
       "bibliotecas_snbp_n": 1,
+      "bibliotecas_publicas_count": 1,
       "fondart_fndr_mclp": 65.5,
-      "total_espacios_culturales": 2,
-      "monumentos_nacionales_count": 0,
+      "total_espacios_culturales": 3,
+      "monumentos_nacionales_count": 1,
       "museos_count": 0,
       "fondos_cultura_adjudicados_mclp": 23.5,
       "gasto_municipal_cultura_mclp": 38.4,
-      "gasto_cultura_per_capita_clp": 49294,
+      "gasto_cultura_per_capita_clp": 43537,
       "fndr_8pct_cultura_mclp": 42,
       "nota_percepcion_cultura_b4b": 5,
       "participacion_cultural_pct_c2": 80,
@@ -12192,7 +12207,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 84.2,
       "viviendas_totales_censo_2024": 724,
       "viviendas_ocupadas_censo_2024": 370,
-      "pueblos_originarios_pct_censo_2024": 22.8,
+      "pueblos_originarios_pct_censo_2024": 28.2,
       "inmigrantes_internacionales_pct_censo_2024": 2.8,
       "indice_envejecimiento": 182.8,
       "indice_masculinidad": 121.3,
@@ -12259,9 +12274,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 14,
       "tasa_aprobacion_rs_sni_pct": 28,
-      "autoidentificacion_indigena_pct": 22,
+      "autoidentificacion_indigena_pct": 28.2,
       "comunidades_indigenas_conadi": 2,
-      "gasto_cultural_per_capita_clp": 49294,
+      "gasto_cultural_per_capita_clp": 43537,
       "juntas_vecinos_activas": 6,
       "sindicatos_pesca_artesanal": 0,
       "transparencia_activa_cplt_2026_pct": 59.24,
@@ -12411,18 +12426,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 2,
       "postas_rurales_psr_n": 2,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 6,
+      "museos_espacios_n": 10,
       "centros_culturales_n": 1,
+      "puntos_cultura_comunitaria_pcc_n": 1,
       "organizaciones_comunitarias_n": 84,
       "cultores_patrimonio_inmaterial_n": 34,
-      "bibliotecas_snbp_n": 1,
+      "bibliotecas_snbp_n": 3,
+      "bibliotecas_publicas_count": 3,
       "fondart_fndr_mclp": 1052.8,
-      "total_espacios_culturales": 6,
-      "monumentos_nacionales_count": 2,
-      "museos_count": 2,
+      "total_espacios_culturales": 10,
+      "monumentos_nacionales_count": 5,
+      "museos_count": 1,
       "fondos_cultura_adjudicados_mclp": 742.8,
       "gasto_municipal_cultura_mclp": 215.6,
-      "gasto_cultura_per_capita_clp": 9306,
+      "gasto_cultura_per_capita_clp": 9305,
       "fndr_8pct_cultura_mclp": 310,
       "nota_percepcion_cultura_b4b": 3.81,
       "participacion_cultural_pct_c2": 40.4,
@@ -12488,7 +12505,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 89.5,
       "viviendas_totales_censo_2024": 11054,
       "viviendas_ocupadas_censo_2024": 8994,
-      "pueblos_originarios_pct_censo_2024": 31.8,
+      "pueblos_originarios_pct_censo_2024": 34.7,
       "inmigrantes_internacionales_pct_censo_2024": 3.5,
       "indice_envejecimiento": 61.6,
       "indice_masculinidad": 98.9,
@@ -12555,9 +12572,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 2,
       "puntos_cajavecina_bancoestado": 85,
       "tasa_aprobacion_rs_sni_pct": 42,
-      "autoidentificacion_indigena_pct": 31,
+      "autoidentificacion_indigena_pct": 34.7,
       "comunidades_indigenas_conadi": 22,
-      "gasto_cultural_per_capita_clp": 9306,
+      "gasto_cultural_per_capita_clp": 9305,
       "juntas_vecinos_activas": 42,
       "sindicatos_pesca_artesanal": 24,
       "transparencia_activa_cplt_2026_pct": 96.09,
@@ -12707,18 +12724,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 4,
       "postas_rurales_psr_n": 4,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 6,
+      "museos_espacios_n": 5,
       "centros_culturales_n": 1,
+      "puntos_cultura_comunitaria_pcc_n": 3,
       "organizaciones_comunitarias_n": 46,
       "cultores_patrimonio_inmaterial_n": 38,
       "bibliotecas_snbp_n": 3,
+      "bibliotecas_publicas_count": 3,
       "fondart_fndr_mclp": 357.5,
-      "total_espacios_culturales": 6,
-      "monumentos_nacionales_count": 0,
-      "museos_count": 2,
+      "total_espacios_culturales": 5,
+      "monumentos_nacionales_count": 1,
+      "museos_count": 0,
       "fondos_cultura_adjudicados_mclp": 212.5,
       "gasto_municipal_cultura_mclp": 82.4,
-      "gasto_cultura_per_capita_clp": 16040,
+      "gasto_cultura_per_capita_clp": 15445,
       "fndr_8pct_cultura_mclp": 145,
       "nota_percepcion_cultura_b4b": 5,
       "participacion_cultural_pct_c2": 74.1,
@@ -12784,7 +12803,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 85,
       "viviendas_totales_censo_2024": 3437,
       "viviendas_ocupadas_censo_2024": 2171,
-      "pueblos_originarios_pct_censo_2024": 28.4,
+      "pueblos_originarios_pct_censo_2024": 34.9,
       "inmigrantes_internacionales_pct_censo_2024": 3.6,
       "indice_envejecimiento": 64.1,
       "indice_masculinidad": 102.3,
@@ -12851,9 +12870,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 42,
       "tasa_aprobacion_rs_sni_pct": 35,
-      "autoidentificacion_indigena_pct": 34,
+      "autoidentificacion_indigena_pct": 34.9,
       "comunidades_indigenas_conadi": 14,
-      "gasto_cultural_per_capita_clp": 16040,
+      "gasto_cultural_per_capita_clp": 15445,
       "juntas_vecinos_activas": 18,
       "sindicatos_pesca_artesanal": 12,
       "transparencia_activa_cplt_2026_pct": 61.6,
@@ -13003,15 +13022,17 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 1,
       "postas_rurales_psr_n": 1,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 2,
+      "museos_espacios_n": 1,
       "centros_culturales_n": 0,
+      "puntos_cultura_comunitaria_pcc_n": 0,
       "organizaciones_comunitarias_n": 22,
       "cultores_patrimonio_inmaterial_n": 26,
       "bibliotecas_snbp_n": 1,
+      "bibliotecas_publicas_count": 1,
       "fondart_fndr_mclp": 110.1,
-      "total_espacios_culturales": 2,
+      "total_espacios_culturales": 1,
       "monumentos_nacionales_count": 0,
-      "museos_count": 1,
+      "museos_count": 0,
       "fondos_cultura_adjudicados_mclp": 42.1,
       "gasto_municipal_cultura_mclp": 41.2,
       "gasto_cultura_per_capita_clp": 25782,
@@ -13147,7 +13168,7 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 20,
       "tasa_aprobacion_rs_sni_pct": 22,
-      "autoidentificacion_indigena_pct": 49.8,
+      "autoidentificacion_indigena_pct": 57.9,
       "comunidades_indigenas_conadi": 8,
       "gasto_cultural_per_capita_clp": 25782,
       "juntas_vecinos_activas": 7,
@@ -13299,18 +13320,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 3,
       "postas_rurales_psr_n": 3,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 5,
+      "museos_espacios_n": 4,
       "centros_culturales_n": 0,
+      "puntos_cultura_comunitaria_pcc_n": 3,
       "organizaciones_comunitarias_n": 28,
       "cultores_patrimonio_inmaterial_n": 24,
       "bibliotecas_snbp_n": 2,
+      "bibliotecas_publicas_count": 2,
       "fondart_fndr_mclp": 282,
-      "total_espacios_culturales": 5,
-      "monumentos_nacionales_count": 1,
+      "total_espacios_culturales": 4,
+      "monumentos_nacionales_count": 0,
       "museos_count": 2,
       "fondos_cultura_adjudicados_mclp": 162,
       "gasto_municipal_cultura_mclp": 74.8,
-      "gasto_cultura_per_capita_clp": 15250,
+      "gasto_cultura_per_capita_clp": 15111,
       "fndr_8pct_cultura_mclp": 120,
       "nota_percepcion_cultura_b4b": 4.12,
       "participacion_cultural_pct_c2": 52,
@@ -13376,7 +13399,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 97.2,
       "viviendas_totales_censo_2024": 3108,
       "viviendas_ocupadas_censo_2024": 2097,
-      "pueblos_originarios_pct_censo_2024": 24.5,
+      "pueblos_originarios_pct_censo_2024": 26,
       "inmigrantes_internacionales_pct_censo_2024": 4.1,
       "indice_envejecimiento": 92.9,
       "indice_masculinidad": 102.1,
@@ -13443,9 +13466,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 28,
       "tasa_aprobacion_rs_sni_pct": 36,
-      "autoidentificacion_indigena_pct": 21,
+      "autoidentificacion_indigena_pct": 26,
       "comunidades_indigenas_conadi": 3,
-      "gasto_cultural_per_capita_clp": 15250,
+      "gasto_cultural_per_capita_clp": 15111,
       "juntas_vecinos_activas": 12,
       "sindicatos_pesca_artesanal": 2,
       "transparencia_activa_cplt_2026_pct": 57.46,
@@ -13595,18 +13618,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 5,
       "postas_rurales_psr_n": 5,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 6,
+      "museos_espacios_n": 7,
       "centros_culturales_n": 0,
+      "puntos_cultura_comunitaria_pcc_n": 4,
       "organizaciones_comunitarias_n": 21,
       "cultores_patrimonio_inmaterial_n": 46,
       "bibliotecas_snbp_n": 1,
+      "bibliotecas_publicas_count": 1,
       "fondart_fndr_mclp": 305.4,
-      "total_espacios_culturales": 6,
-      "monumentos_nacionales_count": 3,
+      "total_espacios_culturales": 7,
+      "monumentos_nacionales_count": 4,
       "museos_count": 2,
       "fondos_cultura_adjudicados_mclp": 195.4,
       "gasto_municipal_cultura_mclp": 52.6,
-      "gasto_cultura_per_capita_clp": 19317,
+      "gasto_cultura_per_capita_clp": 19693,
       "fndr_8pct_cultura_mclp": 110,
       "nota_percepcion_cultura_b4b": 4.62,
       "participacion_cultural_pct_c2": 47.6,
@@ -13672,7 +13697,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 92.8,
       "viviendas_totales_censo_2024": 2242,
       "viviendas_ocupadas_censo_2024": 1227,
-      "pueblos_originarios_pct_censo_2024": 25.1,
+      "pueblos_originarios_pct_censo_2024": 32.4,
       "inmigrantes_internacionales_pct_censo_2024": 2.9,
       "indice_envejecimiento": 121.2,
       "indice_masculinidad": 107.4,
@@ -13739,9 +13764,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 25,
       "tasa_aprobacion_rs_sni_pct": 34,
-      "autoidentificacion_indigena_pct": 24,
+      "autoidentificacion_indigena_pct": 32.4,
       "comunidades_indigenas_conadi": 4,
-      "gasto_cultural_per_capita_clp": 19317,
+      "gasto_cultural_per_capita_clp": 19693,
       "juntas_vecinos_activas": 10,
       "sindicatos_pesca_artesanal": 1,
       "transparencia_activa_cplt_2026_pct": 100,
@@ -13891,18 +13916,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 0,
       "postas_rurales_psr_n": 0,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 3,
+      "museos_espacios_n": 5,
       "centros_culturales_n": 1,
+      "puntos_cultura_comunitaria_pcc_n": 4,
       "organizaciones_comunitarias_n": 18,
       "cultores_patrimonio_inmaterial_n": 42,
       "bibliotecas_snbp_n": 1,
+      "bibliotecas_publicas_count": 1,
       "fondart_fndr_mclp": 279.2,
-      "total_espacios_culturales": 3,
-      "monumentos_nacionales_count": 0,
-      "museos_count": 1,
+      "total_espacios_culturales": 5,
+      "monumentos_nacionales_count": 1,
+      "museos_count": 2,
       "fondos_cultura_adjudicados_mclp": 184.2,
       "gasto_municipal_cultura_mclp": 62.4,
-      "gasto_cultura_per_capita_clp": 18045,
+      "gasto_cultura_per_capita_clp": 17869,
       "fndr_8pct_cultura_mclp": 95,
       "nota_percepcion_cultura_b4b": 4.58,
       "participacion_cultural_pct_c2": 54.2,
@@ -13968,7 +13995,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 95.8,
       "viviendas_totales_censo_2024": 2126,
       "viviendas_ocupadas_censo_2024": 1449,
-      "pueblos_originarios_pct_censo_2024": 22.9,
+      "pueblos_originarios_pct_censo_2024": 24.5,
       "inmigrantes_internacionales_pct_censo_2024": 2.5,
       "indice_envejecimiento": 65,
       "indice_masculinidad": 106,
@@ -14035,9 +14062,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 34,
       "tasa_aprobacion_rs_sni_pct": 35,
-      "autoidentificacion_indigena_pct": 20,
+      "autoidentificacion_indigena_pct": 24.5,
       "comunidades_indigenas_conadi": 2,
-      "gasto_cultural_per_capita_clp": 18045,
+      "gasto_cultural_per_capita_clp": 17869,
       "juntas_vecinos_activas": 9,
       "sindicatos_pesca_artesanal": 0,
       "transparencia_activa_cplt_2026_pct": 60.58,
@@ -14189,16 +14216,18 @@ window.AYSEN_HUBS_DATA = {
       "aeroevacuaciones_secundarias_interregionales_n": 0,
       "museos_espacios_n": 2,
       "centros_culturales_n": 0,
+      "puntos_cultura_comunitaria_pcc_n": 3,
       "organizaciones_comunitarias_n": 9,
       "cultores_patrimonio_inmaterial_n": 14,
       "bibliotecas_snbp_n": 1,
+      "bibliotecas_publicas_count": 1,
       "fondart_fndr_mclp": 83.6,
       "total_espacios_culturales": 2,
       "monumentos_nacionales_count": 0,
       "museos_count": 1,
       "fondos_cultura_adjudicados_mclp": 45.6,
       "gasto_municipal_cultura_mclp": 21.8,
-      "gasto_cultura_per_capita_clp": 33590,
+      "gasto_cultura_per_capita_clp": 32831,
       "fndr_8pct_cultura_mclp": 38,
       "nota_percepcion_cultura_b4b": 4,
       "participacion_cultural_pct_c2": 66.7,
@@ -14264,7 +14293,7 @@ window.AYSEN_HUBS_DATA = {
       "barometro_preocupacion_contaminacion_lena_pct": 94.2,
       "viviendas_totales_censo_2024": 403,
       "viviendas_ocupadas_censo_2024": 291,
-      "pueblos_originarios_pct_censo_2024": 21.4,
+      "pueblos_originarios_pct_censo_2024": 28.4,
       "inmigrantes_internacionales_pct_censo_2024": 3.6,
       "indice_envejecimiento": 41.7,
       "indice_masculinidad": 104.7,
@@ -14331,9 +14360,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 10,
       "tasa_aprobacion_rs_sni_pct": 20,
-      "autoidentificacion_indigena_pct": 18,
+      "autoidentificacion_indigena_pct": 28.4,
       "comunidades_indigenas_conadi": 0,
-      "gasto_cultural_per_capita_clp": 33590,
+      "gasto_cultural_per_capita_clp": 32831,
       "juntas_vecinos_activas": 4,
       "sindicatos_pesca_artesanal": 0,
       "transparencia_activa_cplt_2026_pct": 62.71,
@@ -14483,18 +14512,20 @@ window.AYSEN_HUBS_DATA = {
       "postas_salud_rural": 1,
       "postas_rurales_psr_n": 1,
       "aeroevacuaciones_secundarias_interregionales_n": 0,
-      "museos_espacios_n": 2,
+      "museos_espacios_n": 3,
       "centros_culturales_n": 0,
+      "puntos_cultura_comunitaria_pcc_n": 1,
       "organizaciones_comunitarias_n": 8,
       "cultores_patrimonio_inmaterial_n": 19,
       "bibliotecas_snbp_n": 1,
+      "bibliotecas_publicas_count": 1,
       "fondart_fndr_mclp": 133,
-      "total_espacios_culturales": 2,
-      "monumentos_nacionales_count": 1,
+      "total_espacios_culturales": 3,
+      "monumentos_nacionales_count": 2,
       "museos_count": 0,
       "fondos_cultura_adjudicados_mclp": 91,
       "gasto_municipal_cultura_mclp": 18.5,
-      "gasto_cultura_per_capita_clp": 36706,
+      "gasto_cultura_per_capita_clp": 32860,
       "fndr_8pct_cultura_mclp": 42,
       "nota_percepcion_cultura_b4b": 4.8,
       "participacion_cultural_pct_c2": 100,
@@ -14627,9 +14658,9 @@ window.AYSEN_HUBS_DATA = {
       "sucursales_banca_privada_cmf": 0,
       "puntos_cajavecina_bancoestado": 12,
       "tasa_aprobacion_rs_sni_pct": 18,
-      "autoidentificacion_indigena_pct": 19,
+      "autoidentificacion_indigena_pct": 40.2,
       "comunidades_indigenas_conadi": 1,
-      "gasto_cultural_per_capita_clp": 36706,
+      "gasto_cultural_per_capita_clp": 32860,
       "juntas_vecinos_activas": 4,
       "sindicatos_pesca_artesanal": 2,
       "transparencia_activa_cplt_2026_pct": 72.92,
@@ -23020,9 +23051,9 @@ window.AYSEN_HUBS_DATA = {
               "promedio_valor": 4.04,
               "structural_variable": "gasto_cultura_per_capita_clp",
               "structural_by_macrozona": {
-                "norte": 20911,
-                "centro": 23483,
-                "sur": 24582
+                "norte": 20613.5,
+                "centro": 21564,
+                "sur": 23672.8
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -23896,9 +23927,9 @@ window.AYSEN_HUBS_DATA = {
               "promedio_valor": 4.04,
               "structural_variable": "gasto_cultura_per_capita_clp",
               "structural_by_macrozona": {
-                "norte": 20911,
-                "centro": 23483,
-                "sur": 24582
+                "norte": 20613.5,
+                "centro": 21564,
+                "sur": 23672.8
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -24674,78 +24705,63 @@ window.AYSEN_HUBS_DATA = {
   "extension_modules": {
     "cultura_patrimonio": {
       "$schema": "https://json-schema.org/draft/2020-12/schema",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "work_package": "WP_09",
       "dataset_id": "09_cultura_patrimonio",
-      "titulo": "Cultura, Artes y Patrimonio: Infraestructura Cultural, Fondos Concursables, Monumentos y Percepción Ciudadana (SERPAT / MINCAP / GORE / Barómetro)",
+      "titulo": "Cultura, Artes y Patrimonio: Catastro CMN (16/23), RMC (16/27), SNBP (16), Fondos MINCAP, CONADI SIIC, 25 PCC y Barómetro (N=465)",
       "region": "Región de Aysén del General Carlos Ibáñez del Campo",
-      "fecha_extraccion": "2026-10-17T20:00:00Z",
+      "fecha_extraccion": "2026-11-27T00:00:00Z",
       "fuentes_primarias": [
         {
-          "nombre": "Servicio Nacional del Patrimonio Cultural (SERPAT) / IDE Patrimonio",
+          "nombre": "Servicio Nacional del Patrimonio Cultural (SERPAT) / IDE Patrimonio / CMN / RMC / SNBP",
           "url": "https://ide.patrimoniocultural.gob.cl/",
-          "cobertura": "Monumentos Nacionales (CMN), Registro de Museos de Chile (RMC), Bibliotecas SNBP"
+          "cobertura": "16 declaratorias CMN (23 bienes), 16 museos activos RMC (27 Red Regional), 16 bibliotecas SNBP (31.221 préstamos 2024), SIGPA"
         },
         {
           "nombre": "Ministerio de las Culturas, las Artes y el Patrimonio (MINCAP)",
           "url": "https://www.fondosdecultura.cl/",
-          "cobertura": "FONDART Regional/Nacional, Fondo del Libro, Música, Audiovisual 2015-2026"
+          "cobertura": "Fondos de Cultura 2022-2026, PAOCC, Red Cultura, 25 Puntos de Cultura Comunitaria (PCC) y ENPCCL 2024 (62,0%)"
         },
         {
-          "nombre": "Gobierno Regional de Aysén / DIPRES",
+          "nombre": "Instituto Nacional de Estadísticas (INE) Censo 2024 / BCN Distrito 27 / CONADI SIIC",
+          "url": "https://www.bcn.cl/siit/reportesdistritales/reporte_final.html?anno=2026&distrito=27",
+          "cobertura": "Padrón Censo 2024, autoidentificación pueblos originarios (29,0%, 29.230 hab.) y 47 Comunidades Indígenas SIIC CONADI (490 familias)"
+        },
+        {
+          "nombre": "Gobierno Regional de Aysén / SINIM",
           "url": "https://www.goreaysen.cl/",
-          "cobertura": "FNDR 8% Subvenciones Cultura y Patrimonio"
+          "cobertura": "FNDR 8% Cultura y Patrimonio (2025: $5.681M / 355 iniciativas) y gasto municipal Área 03 SINIM"
         },
         {
-          "nombre": "Sistema Nacional de Información Municipal (SINIM)",
-          "url": "http://www.sinim.gov.cl/",
-          "cobertura": "Gasto municipal en Cultura y Recreación (Área 03)"
-        },
-        {
-          "nombre": "Barómetro Regional UAYSÉN 2024-2025",
+          "nombre": "Barómetro Regional UAYSÉN (N=465)",
           "url": "https://www.uaysen.cl/",
-          "cobertura": "Indicadores empíricos B4_B (Oportunidades recreación y cultura) y C2 (Participación cultural)"
-        },
-        {
-          "nombre": "Corporacion Nacional de Desarrollo Indigena (CONADI) / INE Censo",
-          "url": "https://www.conadi.gob.cl/",
-          "cobertura": "Registro de Comunidades Indigenas (Ley 19.253), Autoidentificacion Censo/CASEN y Solicitudes ECMPO (Ley 20.249 Lafkenche)"
-        },
-        {
-          "nombre": "SERPAT Subdireccion de Patrimonio Cultural Inmaterial (SIGPA)",
-          "url": "https://www.sigpa.cl/",
-          "cobertura": "Inventario de Patrimonio Cultural Inmaterial: Maestros tejueleros de cipres, carpinteria de ribera y jineteadas camperas"
-        },
-        {
-          "nombre": "Consejo de Monumentos Nacionales (CMN) - Arqueologia y Paleontologia",
-          "url": "https://www.monumentos.gob.cl/",
-          "cobertura": "Sitios arqueologicos (Bano Nuevo 1, Paredon de las Manos) y yacimientos paleontologicos (Formacion Toqui)"
-        },
-        {
-          "nombre": "Registro Civil / SUBDERE (Tejido Asociativo)",
-          "url": "https://www.registrocivil.cl/",
-          "cobertura": "Catastro de Organizaciones Comunitarias (Ley N 19.418), Juntas de Vecinos, sindicatos de pescadores y mujeres rurales"
+          "cobertura": "Indicadores empíricos B4_B (media regional 4,04, tasa positiva 40,2%) y C2 con semáforo muestral comunal"
         }
       ],
       "resumen_regional": {
-        "total_espacios_culturales_regional": 42,
-        "total_museos_rmc": 14,
-        "total_bibliotecas_snbp": 13,
-        "total_monumentos_nacionales_cmn": 9,
+        "total_espacios_culturales_regional": 54,
+        "total_museos_rmc": 16,
+        "total_bibliotecas_snbp": 16,
+        "total_monumentos_nacionales_cmn": 16,
         "fondos_cultura_adjudicados_acumulado_mclp": 3849.5,
         "gasto_municipal_cultura_anual_regional_mclp": 1292.9,
         "fndr_8pct_cultura_anual_regional_mclp": 1450,
-        "nota_percepcion_cultura_regional_b4b": 4.12,
+        "nota_percepcion_cultura_regional_b4b": 4.04,
         "participacion_cultural_pct_regional_c2": 42.8,
         "pueblos_originarios": {
-          "autoidentificacion_regional_pct": 28.7,
-          "fuente_medicion": "Censo de Poblacion y Vivienda INE / Encuesta CASEN MIDESO",
-          "poblacion_indigena_estimada": 28900,
-          "pueblo_predominante": "Mapuche-Huilliche (93%) con memoria historica de canoeros Chonos y Kawesqar",
-          "comuna_maxima_densidad": "Guaitecas (49.8% autoidentificacion)",
-          "total_comunidades_conadi_registradas": 74,
+          "autoidentificacion_regional_pct": 29,
+          "fuente_medicion": "Censo de Población y Vivienda 2024 INE (BCN Reporte Distrital 27, 2026) y CONADI SIIC (ago-2025)",
+          "poblacion_indigena_estimada": 29230,
+          "pueblo_predominante": "Mapuche-Huilliche (93%) con presencia histórica y territorial de pueblos canoeros Chonos y Kawésqar",
+          "comuna_maxima_densidad": "Guaitecas (57.9% autoidentificacion, 926 personas)",
+          "total_comunidades_conadi_registradas": 47,
           "solicitudes_ecmpo_lafkenche_ha": 621000,
-          "ecmpos_emblematicas": "Pu Wapi (Cisnes, ~227.000 ha) y Antunen Rain (Islas Huichas, ~394.000 ha)"
+          "ecmpos_emblematicas": "Pu Wapi (Cisnes, ~227.000 ha) y Antunen Rain (Islas Huichas, ~394.000 ha)",
+          "poblacion_indigena_censo_2024": 29230,
+          "familias_comunidades_conadi_siic": 490,
+          "asociaciones_indigenas_funcionales_ley_19253": 27,
+          "total_organizaciones_indigenas_comunidades_y_asociaciones": 74,
+          "nota_asimetria_juridica": "CONADI SIIC (ago-2025) registra 47 Comunidades Indígenas vigentes (Art. 9° Ley 19.253, 490 familias, 0,93% del total nacional de 5.073). El agregado territorial de 74 organizaciones combina esas 47 Comunidades con 27 Asociaciones Indígenas funcionales (Art. 76° Ley 19.253) mediante las cuales se articulan comunas sin tierras indígenas tituladas por el Estado (Cisnes 34,9%, Tortel 40,2% Asoc. Menco, Chile Chico 26,0% Antu Ñi Fotum, Cochrane 24,5% Manqui y Lago Verde 28,2% Mari Mari)."
         },
         "sitios_paleo_arqueologicos": [
           {
@@ -24761,8 +24777,8 @@ window.AYSEN_HUBS_DATA = {
             "nombre": "Paredon de las Manos",
             "comuna": "Rio Ibanez",
             "antiguedad": "3.000 a 6.000 AP",
-            "categoria": "Monumento Historico (D.S. 2008) / Arte Rupestre Tehuelche",
-            "descripcion": "Alero rocoso con improntas de manos en negativo y escenas de caza de guanacos"
+            "categoria": "Monumento Arqueologico (Ley N° 17.288) / Arte Rupestre Tehuelche",
+            "descripcion": "Alero rocoso con improntas de manos en negativo y 28 sitios de arte rupestre protegidos por el solo ministerio de la Ley N° 17.288"
           },
           {
             "id": "SIT-PAL-03",
@@ -24770,7 +24786,7 @@ window.AYSEN_HUBS_DATA = {
             "comuna": "Chile Chico",
             "antiguedad": "148 Ma (Jurasico Superior)",
             "categoria": "Yacimiento Paleontologico de Interes Mundial",
-            "descripcion": "Yacimiento de descubrimiento del fosil de Chilesaurus diegosuarezi, dinosaurio teropodo herbivoro unico"
+            "descripcion": "Yacimiento de descubrimiento del fosil de Chilesaurus diegosuarezi, dinosaurio teropodo herbivoro unico protegido por la Ley N° 17.288"
           }
         ],
         "patrimonio_inmaterial_sigpa": {
@@ -24806,10 +24822,103 @@ window.AYSEN_HUBS_DATA = {
         },
         "paradoja_gasto_cultural_rural_urbano": {
           "gasto_per_capita_coyhaique_clp": 11850,
-          "gasto_per_capita_lago_verde_clp": 49294,
-          "gasto_per_capita_tortel_clp": 36706,
+          "gasto_per_capita_lago_verde_clp": 43537,
+          "gasto_per_capita_tortel_clp": 32860,
           "concentracion_fondos_mincap_coyhaique_pct": 55.9,
-          "explicacion": "Paradoja de escala demografica: el bajo numero de habitantes en comunas rurales infla el gasto per capita municipal, mientras el 56% de los fondos concursables ministeriales se concentra en Coyhaique."
+          "explicacion": "Paradoja de escala demografica sobre Censo 2024: la baja poblacion en comunas rurales eleva el gasto municipal per capita ($43.537 en Lago Verde y $32.860 en Tortel), mientras el 55,9% del monto concursable acumulado MINCAP se concentra en Coyhaique."
+        },
+        "total_museos_red_regional": 27,
+        "total_monumentos_nacionales_bienes_cmn": 23,
+        "total_monumentos_publicos_cmn": 11,
+        "total_centros_culturales_municipales": 6,
+        "total_puntos_cultura_comunitaria_pcc": 25,
+        "visitas_museo_regional_aysen_2025": 36173,
+        "visitas_museo_regional_aysen_2024": 28490,
+        "ranking_nacional_mra_snm_2025": 12,
+        "prestamos_fisicos_snbp_2024": 31221,
+        "socios_activos_snbp_2024": 7591,
+        "sesiones_biblioredes_2024": 28344,
+        "participacion_cultural_urbana_enpccl_2024_pct": 62,
+        "participacion_cultural_urbana_nacional_enpccl_2024_pct": 75.4,
+        "nota_percepcion_cultura_microdatos_b4b": 4.04,
+        "tasa_positiva_cultura_b4b_pct": 40.2,
+        "participacion_cultural_microdatos_c2_pct": 46.9,
+        "cultores_patrimonio_inmaterial_total": 313,
+        "organizaciones_comunitarias_total": 392,
+        "financiamiento_cultural_detalle_2022_2026": {
+          "fuente": "MINCAP Fondos Cultura (2022-2026), Estrategia Quinquenal Regional Aysén 2024-2029 y GORE Aysén FNDR 8%",
+          "convocatorias_anuales_mincap": {
+            "2022": {
+              "proyectos_concursables_base": 43,
+              "monto_concursables_mclp": 512.9,
+              "desglose_lineas": "Fondart Regional: 37 ($365.914.340), Libro: 7 ($59.671.052), Música: 3 ($34.598.492), Artes Escénicas: 2 ($52.686.675), Fondart Nacional: 2",
+              "paocc_proyectos": 3,
+              "paocc_monto_clp": 177472040,
+              "fondo_patrimonio_clp": 25000000,
+              "mejoramiento_museos_proyectos": 5,
+              "mejoramiento_museos_clp": 200354122
+            },
+            "2023": {
+              "proyectos_primeras_entregas": 51,
+              "monto_referencial_mclp": 300
+            },
+            "2024": {
+              "proyectos_seleccionados": 54,
+              "monto_total_clp": 477389400,
+              "variacion_vs_2022_pct": 30,
+              "empleos_culturales_estimados": 140,
+              "desglose": "22 Fondart Regional, 6 Fondart Nacional, 4 Artes Escénicas, 3 Fondo del Libro + 19 de 1a entrega"
+            },
+            "2025": {
+              "proyectos_seleccionados": 57,
+              "monto_total_mclp": 1007,
+              "comunas_cubiertas": 9,
+              "distribucion_territorial": "~28 Coyhaique, 9 Aysén, 5 Chile Chico, 4 Cisnes, 3 Tortel y 8 en otras 4 comunas rurales",
+              "empleos_culturales": 202,
+              "empleabilidad_femenina_pct": 64
+            },
+            "2026_primera_entrega": {
+              "proyectos_seleccionados": 9,
+              "detalle": "Primeras 15 líneas nacionales dic-2025 (4 Becas Chile Crea, FIMP, Festival Patagonia en Escena Malotun y II Encuentro Textil de Puyuhuapi)"
+            }
+          },
+          "paocc_2025_2026": {
+            "organizaciones_2026": 5,
+            "concurso_2026": [
+              "Escuela de Danzas Zíngara (#17 nacional)",
+              "Teatro Austral"
+            ],
+            "glosa_presupuestaria_2026": [
+              "Agrupación Malotun Ortiga",
+              "Corporación Memoria Austral",
+              "Pulso Austral"
+            ],
+            "coyhaique_jun_2025_mclp": 32
+          },
+          "red_cultura_2026": {
+            "espacios_comunitarios_jul_2026": 7,
+            "comunas_espacios": [
+              "Aysén (Espacio Abierto, Espacio Kinesis, Casa Alerce, La Polilla Mañihuales)",
+              "Cisnes (Micelio)",
+              "Cochrane (Café Tero)",
+              "O'Higgins (Taller El Bosque)"
+            ],
+            "transferencia_municipios_nov_2026_clp": 61000000,
+            "municipios_beneficiados_nov_2026": [
+              "Coyhaique",
+              "Aysén",
+              "Tortel",
+              "Lago Verde"
+            ],
+            "planes_gestion_financiados": 6
+          },
+          "fndr_8pct_gore_aysen": {
+            "monto_concurso_global_2025_mclp": 5681,
+            "iniciativas_adjudicadas_2025": 355,
+            "postulaciones_ingresadas_2025": 1240,
+            "iniciativas_admisibles_2025": 672,
+            "programa_2026": "Aysén Crece en Comunidad (Res. Ex. N° 83 y N° 115 de enero de 2026)"
+          }
         }
       },
       "por_comuna": [
@@ -24824,18 +24933,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -72.0685,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 8,
-            "museos_count": 3,
-            "bibliotecas_publicas_count": 1,
+            "total_espacios_culturales": 14,
+            "museos_count": 8,
+            "museos_red_regional_count": 9,
+            "bibliotecas_publicas_count": 2,
             "monumentos_nacionales_count": 2,
+            "monumentos_nacionales_bienes_count": 9,
+            "centros_culturales_n": 2,
+            "puntos_cultura_comunitaria_pcc_n": 6,
             "fondos_cultura_adjudicados_mclp": 2150.4,
             "gasto_municipal_cultura_mclp": 685.2,
             "gasto_cultura_per_capita_clp": 11850,
             "fndr_8pct_cultura_mclp": 480,
+            "autoidentificacion_indigena_pct": 25.7,
+            "poblacion_indigena_censo_2024_n": 14853,
+            "comunidades_organizaciones_indigenas_conadi": 18,
             "nota_percepcion_cultura_b4b": 3.87,
             "participacion_cultural_pct_c2": 42.2,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 2
+            "semaforo_muestral_barometro": "verde",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24849,18 +24965,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -71.8465,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 2,
+            "total_espacios_culturales": 3,
             "museos_count": 0,
+            "museos_red_regional_count": 0,
             "bibliotecas_publicas_count": 1,
-            "monumentos_nacionales_count": 0,
+            "monumentos_nacionales_count": 1,
+            "monumentos_nacionales_bienes_count": 1,
+            "centros_culturales_n": 1,
+            "puntos_cultura_comunitaria_pcc_n": 0,
             "fondos_cultura_adjudicados_mclp": 23.5,
             "gasto_municipal_cultura_mclp": 38.4,
-            "gasto_cultura_per_capita_clp": 49294,
+            "gasto_cultura_per_capita_clp": 43537,
             "fndr_8pct_cultura_mclp": 42,
+            "autoidentificacion_indigena_pct": 28.2,
+            "poblacion_indigena_censo_2024_n": 220,
+            "comunidades_organizaciones_indigenas_conadi": 2,
             "nota_percepcion_cultura_b4b": 5,
             "participacion_cultural_pct_c2": 80,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 1
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24874,18 +24997,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -72.693,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 6,
-            "museos_count": 2,
-            "bibliotecas_publicas_count": 1,
-            "monumentos_nacionales_count": 2,
+            "total_espacios_culturales": 10,
+            "museos_count": 1,
+            "museos_red_regional_count": 1,
+            "bibliotecas_publicas_count": 3,
+            "monumentos_nacionales_count": 5,
+            "monumentos_nacionales_bienes_count": 5,
+            "centros_culturales_n": 1,
+            "puntos_cultura_comunitaria_pcc_n": 1,
             "fondos_cultura_adjudicados_mclp": 742.8,
             "gasto_municipal_cultura_mclp": 215.6,
-            "gasto_cultura_per_capita_clp": 9306,
+            "gasto_cultura_per_capita_clp": 9305,
             "fndr_8pct_cultura_mclp": 310,
+            "autoidentificacion_indigena_pct": 34.7,
+            "poblacion_indigena_censo_2024_n": 8047,
+            "comunidades_organizaciones_indigenas_conadi": 22,
             "nota_percepcion_cultura_b4b": 3.81,
             "participacion_cultural_pct_c2": 40.4,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 1
+            "semaforo_muestral_barometro": "verde",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24899,18 +25029,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -72.699,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 6,
-            "museos_count": 2,
+            "total_espacios_culturales": 5,
+            "museos_count": 0,
+            "museos_red_regional_count": 1,
             "bibliotecas_publicas_count": 3,
-            "monumentos_nacionales_count": 0,
+            "monumentos_nacionales_count": 1,
+            "monumentos_nacionales_bienes_count": 1,
+            "centros_culturales_n": 1,
+            "puntos_cultura_comunitaria_pcc_n": 3,
             "fondos_cultura_adjudicados_mclp": 212.5,
             "gasto_municipal_cultura_mclp": 82.4,
-            "gasto_cultura_per_capita_clp": 16040,
+            "gasto_cultura_per_capita_clp": 15445,
             "fndr_8pct_cultura_mclp": 145,
+            "autoidentificacion_indigena_pct": 34.9,
+            "poblacion_indigena_censo_2024_n": 1794,
+            "comunidades_organizaciones_indigenas_conadi": 14,
             "nota_percepcion_cultura_b4b": 5,
             "participacion_cultural_pct_c2": 74.1,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 1
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24924,18 +25061,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -73.748,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 2,
-            "museos_count": 1,
+            "total_espacios_culturales": 1,
+            "museos_count": 0,
+            "museos_red_regional_count": 1,
             "bibliotecas_publicas_count": 1,
             "monumentos_nacionales_count": 0,
+            "monumentos_nacionales_bienes_count": 0,
+            "centros_culturales_n": 0,
+            "puntos_cultura_comunitaria_pcc_n": 0,
             "fondos_cultura_adjudicados_mclp": 42.1,
             "gasto_municipal_cultura_mclp": 41.2,
             "gasto_cultura_per_capita_clp": 25782,
             "fndr_8pct_cultura_mclp": 68,
+            "autoidentificacion_indigena_pct": 57.9,
+            "poblacion_indigena_censo_2024_n": 926,
+            "comunidades_organizaciones_indigenas_conadi": 8,
             "nota_percepcion_cultura_b4b": 4.5,
             "participacion_cultural_pct_c2": 75,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 0
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24949,18 +25093,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -71.722,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 5,
+            "total_espacios_culturales": 4,
             "museos_count": 2,
+            "museos_red_regional_count": 4,
             "bibliotecas_publicas_count": 2,
-            "monumentos_nacionales_count": 1,
+            "monumentos_nacionales_count": 0,
+            "monumentos_nacionales_bienes_count": 0,
+            "centros_culturales_n": 0,
+            "puntos_cultura_comunitaria_pcc_n": 3,
             "fondos_cultura_adjudicados_mclp": 162,
             "gasto_municipal_cultura_mclp": 74.8,
-            "gasto_cultura_per_capita_clp": 15250,
+            "gasto_cultura_per_capita_clp": 15111,
             "fndr_8pct_cultura_mclp": 120,
+            "autoidentificacion_indigena_pct": 26,
+            "poblacion_indigena_censo_2024_n": 1274,
+            "comunidades_organizaciones_indigenas_conadi": 3,
             "nota_percepcion_cultura_b4b": 4.12,
             "participacion_cultural_pct_c2": 52,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 0
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24974,18 +25125,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -71.936,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 6,
+            "total_espacios_culturales": 7,
             "museos_count": 2,
+            "museos_red_regional_count": 6,
             "bibliotecas_publicas_count": 1,
-            "monumentos_nacionales_count": 3,
+            "monumentos_nacionales_count": 4,
+            "monumentos_nacionales_bienes_count": 4,
+            "centros_culturales_n": 0,
+            "puntos_cultura_comunitaria_pcc_n": 4,
             "fondos_cultura_adjudicados_mclp": 195.4,
             "gasto_municipal_cultura_mclp": 52.6,
-            "gasto_cultura_per_capita_clp": 19317,
+            "gasto_cultura_per_capita_clp": 19693,
             "fndr_8pct_cultura_mclp": 110,
+            "autoidentificacion_indigena_pct": 32.4,
+            "poblacion_indigena_censo_2024_n": 882,
+            "comunidades_organizaciones_indigenas_conadi": 4,
             "nota_percepcion_cultura_b4b": 4.62,
             "participacion_cultural_pct_c2": 47.6,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 0
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -24999,18 +25157,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -72.571,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 3,
-            "museos_count": 1,
+            "total_espacios_culturales": 5,
+            "museos_count": 2,
+            "museos_red_regional_count": 3,
             "bibliotecas_publicas_count": 1,
-            "monumentos_nacionales_count": 0,
+            "monumentos_nacionales_count": 1,
+            "monumentos_nacionales_bienes_count": 1,
+            "centros_culturales_n": 1,
+            "puntos_cultura_comunitaria_pcc_n": 4,
             "fondos_cultura_adjudicados_mclp": 184.2,
             "gasto_municipal_cultura_mclp": 62.4,
-            "gasto_cultura_per_capita_clp": 18045,
+            "gasto_cultura_per_capita_clp": 17869,
             "fndr_8pct_cultura_mclp": 95,
+            "autoidentificacion_indigena_pct": 24.5,
+            "poblacion_indigena_censo_2024_n": 847,
+            "comunidades_organizaciones_indigenas_conadi": 2,
             "nota_percepcion_cultura_b4b": 4.58,
             "participacion_cultural_pct_c2": 54.2,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 1
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -25026,16 +25191,23 @@ window.AYSEN_HUBS_DATA = {
           "datos": {
             "total_espacios_culturales": 2,
             "museos_count": 1,
+            "museos_red_regional_count": 2,
             "bibliotecas_publicas_count": 1,
             "monumentos_nacionales_count": 0,
+            "monumentos_nacionales_bienes_count": 0,
+            "centros_culturales_n": 0,
+            "puntos_cultura_comunitaria_pcc_n": 3,
             "fondos_cultura_adjudicados_mclp": 45.6,
             "gasto_municipal_cultura_mclp": 21.8,
-            "gasto_cultura_per_capita_clp": 33590,
+            "gasto_cultura_per_capita_clp": 32831,
             "fndr_8pct_cultura_mclp": 38,
+            "autoidentificacion_indigena_pct": 28.4,
+            "poblacion_indigena_censo_2024_n": 184,
+            "comunidades_organizaciones_indigenas_conadi": 0,
             "nota_percepcion_cultura_b4b": 4,
             "participacion_cultural_pct_c2": 66.7,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 0
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         },
         {
@@ -25049,18 +25221,25 @@ window.AYSEN_HUBS_DATA = {
           "lng": -73.535,
           "source_url": "https://ide.patrimoniocultural.gob.cl/",
           "datos": {
-            "total_espacios_culturales": 2,
+            "total_espacios_culturales": 3,
             "museos_count": 0,
+            "museos_red_regional_count": 0,
             "bibliotecas_publicas_count": 1,
-            "monumentos_nacionales_count": 1,
+            "monumentos_nacionales_count": 2,
+            "monumentos_nacionales_bienes_count": 2,
+            "centros_culturales_n": 0,
+            "puntos_cultura_comunitaria_pcc_n": 1,
             "fondos_cultura_adjudicados_mclp": 91,
             "gasto_municipal_cultura_mclp": 18.5,
-            "gasto_cultura_per_capita_clp": 36706,
+            "gasto_cultura_per_capita_clp": 32860,
             "fndr_8pct_cultura_mclp": 42,
+            "autoidentificacion_indigena_pct": 40.2,
+            "poblacion_indigena_censo_2024_n": 203,
+            "comunidades_organizaciones_indigenas_conadi": 1,
             "nota_percepcion_cultura_b4b": 4.8,
             "participacion_cultural_pct_c2": 100,
-            "origen_dato": "observado_oficial",
-            "centros_culturales_n": 0
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+            "origen_dato": "observado_oficial"
           }
         }
       ],
@@ -25074,10 +25253,10 @@ window.AYSEN_HUBS_DATA = {
           "lat": -45.5684,
           "lng": -72.0642,
           "lon": -72.0642,
-          "source_url": "https://www.museoregionalaysen.gob.cl/",
+          "source_url": "https://www.registromuseoschile.cl/663/w3-article-83022.html",
           "categoria": "Museos",
-          "subcategoria": "Museo Regional Estatal",
-          "descripcion": "Principal recinto museográfico de la Patagonia Occidental ubicado en las construcciones históricas de la Sociedad Industrial de Aysén.",
+          "subcategoria": "Museo Regional Estatal (36.173 visitas SNM 2025; D.S. N° 413/2009 8 inmuebles SIA)",
+          "descripcion": "Principal recinto museográfico de la Patagonia Occidental ubicado en las construcciones históricas de la Sociedad Industrial de Aysén (36.173 visitas en 2025, #12 nacional SNM-SERPAT).",
           "origen_dato": "SERPAT_RMC"
         },
         {
@@ -25091,8 +25270,8 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.7645,
           "source_url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/campamento-minero-puerto-cristal",
           "categoria": "Patrimonio_Historico",
-          "subcategoria": "Monumento Histórico Minero (D.S. 149/2008)",
-          "descripcion": "Asentamiento minero de plomo y zinc del siglo XX en la ribera norte del Lago General Carrera.",
+          "subcategoria": "Monumento Histórico Minero (D.E. N° 2507, 05-08-2008)",
+          "descripcion": "Asentamiento minero de plomo y zinc del siglo XX en la ribera norte del Lago General Carrera, con Museo de Sitio inscrito en el RMC.",
           "origen_dato": "SERPAT_CMN"
         },
         {
@@ -25104,40 +25283,40 @@ window.AYSEN_HUBS_DATA = {
           "lat": -47.7952,
           "lng": -73.5354,
           "lon": -73.5354,
-          "source_url": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/sector-caleta-tortel",
+          "source_url": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/pueblo-de-caleta-tortel",
           "categoria": "Patrimonio_Arquitectonico",
-          "subcategoria": "Zona Típica Austral (D.S. 222/2001)",
-          "descripcion": "Red peatonal de más de 7 kilómetros de pasarelas construidas en madera de Ciprés de las Guaitecas.",
+          "subcategoria": "Zona Típica Austral (D.E. N° 282/2001; Res. Ex. N° 237/2026)",
+          "descripcion": "Red peatonal de más de 7 kilómetros de pasarelas construidas en madera de Ciprés de las Guaitecas (normas de intervención actualizadas por Res. Ex. N° 237/2026).",
           "origen_dato": "SERPAT_CMN"
         },
         {
           "id": "CP-NOD-04",
           "nombre": "Capilla de Mármol",
           "tipo": "Santuario_Naturaleza_CMN",
-          "codigo_comuna": "CL-XI-06",
-          "comuna_ine": "11401",
+          "codigo_comuna": "CL-XI-07",
+          "comuna_ine": "11402",
           "lat": -46.6438,
           "lng": -72.6321,
           "lon": -72.6321,
           "source_url": "https://www.monumentos.gob.cl/monumentos/santuarios-de-la-naturaleza/capillas-de-marmol",
           "categoria": "Patrimonio_Natural",
-          "subcategoria": "Santuario de la Naturaleza (D.S. 11/1994)",
-          "descripcion": "Formaciones geomorfológicas de carbonato de calcio erosionadas por el oleaje del Lago General Carrera.",
+          "subcategoria": "Santuario de la Naturaleza (D.E. 281/1994)",
+          "descripcion": "Formaciones geomorfológicas de carbonato de calcio (Islas Panichini, Lago General Carrera) administrativamente en la comuna de Río Ibáñez.",
           "origen_dato": "SERPAT_CMN"
         },
         {
           "id": "CP-NOD-05",
           "nombre": "Paredón de las Manos",
-          "tipo": "Monumento_Historico_CMN",
+          "tipo": "Monumento_Arqueologico_CMN",
           "codigo_comuna": "CL-XI-07",
           "comuna_ine": "11402",
           "lat": -46.2845,
           "lng": -71.9542,
           "lon": -71.9542,
-          "source_url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/sitio-arqueologico-paredon-de-las-manos",
+          "source_url": "https://www.monumentos.gob.cl/",
           "categoria": "Arqueologia",
-          "subcategoria": "Monumento Histórico Arqueológico (D.S. 355/2008)",
-          "descripcion": "Alero rocoso con arte rupestre tehuelche de más de 5.000 años de antigüedad ubicado en la cuenca del Río Ibáñez.",
+          "subcategoria": "Monumento Arqueológico por el solo ministerio de la Ley N° 17.288 (28 sitios de arte rupestre)",
+          "descripcion": "Alero rocoso con arte rupestre tehuelche en la cuenca del río Ibáñez, protegido por el solo ministerio de la Ley N° 17.288 como Monumento Arqueológico.",
           "origen_dato": "SERPAT_CMN"
         },
         {
@@ -25149,10 +25328,10 @@ window.AYSEN_HUBS_DATA = {
           "lat": -45.5712,
           "lng": -72.0688,
           "lon": -72.0688,
-          "source_url": "https://www.bibliotecaspublicas.gob.cl/biblioteca/biblioteca-regional-de-aysen",
+          "source_url": "https://www.bibliotecaspublicas.gob.cl/biblioteca-regional-de-aysen",
           "categoria": "Bibliotecas",
-          "subcategoria": "Biblioteca Cabecera Regional SNBP",
-          "descripcion": "Centro bibliotecario y articulador del Sistema BiblioRedes en la Región de Aysén con colección patrimonial austral.",
+          "subcategoria": "Biblioteca Cabecera Regional SNBP 052 BC1 (18.199 préstamos físicos 2024)",
+          "descripcion": "Centro bibliotecario y articulador del Sistema BiblioRedes en Aysén (18.199 préstamos físicos y 4.416 socios activos en 2024, más Bibliomóvil 4x4 oct-2026).",
           "origen_dato": "SERPAT_SNBP"
         },
         {
@@ -25166,7 +25345,7 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.0621,
           "source_url": "https://www.culturacoyhaique.cl/",
           "categoria": "Infraestructura_Cultural",
-          "subcategoria": "Centro Cultural Municipal",
+          "subcategoria": "Centro Cultural Municipal (Red Cultura / PAOCC >$32M 2025)",
           "descripcion": "Espacio polivalente para artes escénicas, exposiciones plásticas y formación artística de la capital regional.",
           "origen_dato": "MINCAP"
         },
@@ -25181,8 +25360,8 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.1584,
           "source_url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/escuela-antigua-de-cerro-castillo",
           "categoria": "Patrimonio_Arquitectonico",
-          "subcategoria": "Monumento Histórico y Museo de Sitio (D.S. 355/2008)",
-          "descripcion": "Edificio educacional rural construido en piedra por colonos en 1955, reconvertido en museo comunitario.",
+          "subcategoria": "Monumento Histórico y Museo Red Regional (D.E. N° 454, 05-02-2008)",
+          "descripcion": "Edificio educacional rural construido en piedra por colonos en 1955 en la comuna de Río Ibáñez, reconvertido en museo comunitario.",
           "origen_dato": "SERPAT_CMN"
         },
         {
@@ -25194,9 +25373,9 @@ window.AYSEN_HUBS_DATA = {
           "lat": -45.4052,
           "lng": -72.6931,
           "lon": -72.6931,
-          "source_url": "https://www.bibliotecaspublicas.gob.cl/biblioteca/biblioteca-publica-puerto-aysen",
+          "source_url": "https://www.bibliotecaspublicas.gob.cl/espacios/biblioteca-publica-de-puerto-aysen",
           "categoria": "Bibliotecas",
-          "subcategoria": "Biblioteca Municipal SNBP N° 53",
+          "subcategoria": "Biblioteca Municipal SNBP 149 BC1 (con Guaguateca 2026)",
           "descripcion": "Espacio público de lectura y alfabetización digital BiblioRedes en la comuna puerto de Aysén.",
           "origen_dato": "SERPAT_SNBP"
         },
@@ -25212,7 +25391,7 @@ window.AYSEN_HUBS_DATA = {
           "source_url": "https://www.municipalidadcisnes.cl/",
           "categoria": "Infraestructura_Cultural",
           "subcategoria": "Casa de la Cultura Comunal",
-          "descripcion": "Sede de talleres comunitarios, orquesta comunal infantil y difusión del patrimonio costero del canal Puyuhuapi.",
+          "descripcion": "Sede de talleres comunitarios, orquesta comunal infantil y difusión del patrimonio costero de Cisnes y Puyuhuapi.",
           "origen_dato": "MINCAP"
         },
         {
@@ -25224,10 +25403,10 @@ window.AYSEN_HUBS_DATA = {
           "lat": -43.8962,
           "lng": -73.7482,
           "lon": -73.7482,
-          "source_url": "https://www.muniguaitecas.cl/",
+          "source_url": "https://www.redmuseosaysen.cl/museos-en-aysen",
           "categoria": "Museos",
-          "subcategoria": "Museo Comunitario Archipelágico",
-          "descripcion": "Catastro y exhibición de la historia de los hacheros de las Guaitecas, pueblos canoeros y colonización chilota.",
+          "subcategoria": "Museo Comunitario Archipelágico (Red Museos de Aysén; ficha RMC inactiva desde 2022)",
+          "descripcion": "Exhibición de la historia de los hacheros de las Guaitecas, pueblos canoeros y colonización chilota.",
           "origen_dato": "SERPAT_RMC"
         },
         {
@@ -25239,9 +25418,9 @@ window.AYSEN_HUBS_DATA = {
           "lat": -47.2541,
           "lng": -72.5712,
           "lon": -72.5712,
-          "source_url": "https://www.cochranepatagonia.cl/",
+          "source_url": "https://www.registromuseoschile.cl/663/w3-article-77661.html",
           "categoria": "Museos",
-          "subcategoria": "Museo Municipal y Parque de Tradiciones",
+          "subcategoria": "Museo Municipal Inscrito RMC",
           "descripcion": "Recinto de conservación del patrimonio gaucho y pionero del Baker, herramientas tradicionales y muestras arqueológicas.",
           "origen_dato": "SERPAT_RMC"
         },
@@ -25254,25 +25433,25 @@ window.AYSEN_HUBS_DATA = {
           "lat": -44.2412,
           "lng": -71.8468,
           "lon": -71.8468,
-          "source_url": "https://www.lagoverdeaysen.cl/",
+          "source_url": "https://www.bibliotecaspublicas.gob.cl/",
           "categoria": "Bibliotecas",
-          "subcategoria": "Biblioteca Pública SNBP N° 410",
-          "descripcion": "Punto de lectura, acceso a internet satelital y encuentro cultural rural en el valle de Lago Verde.",
+          "subcategoria": "Biblioteca Pública SNBP 286 BC1",
+          "descripcion": "Punto de lectura, acceso digital BiblioRedes y encuentro cultural rural en el valle de Lago Verde.",
           "origen_dato": "SERPAT_SNBP"
         },
         {
           "id": "CP-NOD-14",
-          "nombre": "Museo y Biblioteca Histórica Villa O'Higgins",
-          "tipo": "Museo_Comunitario",
+          "nombre": "Museo de la Patagonia Padre Antonio Ronchi (Villa O'Higgins)",
+          "tipo": "Museo_RMC",
           "codigo_comuna": "CL-XI-09",
           "comuna_ine": "11302",
           "lat": -48.4682,
           "lng": -72.5603,
           "lon": -72.5603,
-          "source_url": "https://www.municipalidadohiggins.cl/",
+          "source_url": "https://www.registromuseoschile.cl/663/w3-article-92912.html",
           "categoria": "Museos",
-          "subcategoria": "Espacio Cultural Fronterizo",
-          "descripcion": "Exposición del fin de la Carretera Austral, expediciones al Campo de Hielo Sur e historia del Lago San Martín / O'Higgins.",
+          "subcategoria": "Museo Inscrito RMC (O'Higgins)",
+          "descripcion": "Exposición del fin de la Carretera Austral, expediciones al Campo de Hielo Sur y legado del Padre Antonio Ronchi.",
           "origen_dato": "SERPAT_RMC"
         },
         {
@@ -25286,8 +25465,8 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.6958,
           "source_url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/puente-presidente-ibanez",
           "categoria": "Patrimonio_Arquitectonico",
-          "subcategoria": "Monumento Histórico de Ingeniería (D.S. 25/2002)",
-          "descripcion": "Puente colgante de 210 metros sobre el río Aysén inaugurado en 1966 e ícono arquitectónico de la región.",
+          "subcategoria": "Monumento Histórico de Ingeniería (D.E. N° 138/2002 ratificado D.E. N° 312/2002)",
+          "descripcion": "Puente colgante de 210 metros sobre el río Aysén inaugurado en 1966 e ícono arquitectónico de Puerto Aysén.",
           "origen_dato": "SERPAT_CMN"
         }
       ]
@@ -40594,11 +40773,11 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Coyhaique",
       "lat": -45.5684,
       "lon": -72.0642,
-      "magnitudeValue": 24500,
+      "magnitudeValue": 36173,
       "magnitudeUnit": "visitas/año",
-      "magnitudeLabel": "Visitas Anuales SERPAT RMC",
+      "magnitudeLabel": "Visitas Anuales SERPAT SNM 2025 (#12 nacional; +27,0% vs 2024)",
       "titular": "SERPAT_RMC",
-      "sourceUrl": "https://www.museoregionalaysen.gob.cl/",
+      "sourceUrl": "https://www.registromuseoschile.cl/663/w3-article-83022.html",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40640,7 +40819,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "visitas/año",
       "magnitudeLabel": "Visitas Zona Típica CMN",
       "titular": "SERPAT_CMN",
-      "sourceUrl": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/sector-caleta-tortel",
+      "sourceUrl": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/pueblo-de-caleta-tortel",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40652,9 +40831,9 @@ window.AYSEN_HUBS_DATA = {
       "tipo": "Santuario_Naturaleza_CMN",
       "layerKey": "museos_cultura",
       "hubId": "cultura",
-      "comuna_ine": "11401",
-      "nombre_comuna": "Chile Chico",
-      "localidad": "Chile Chico",
+      "comuna_ine": "11402",
+      "nombre_comuna": "Río Ibáñez",
+      "localidad": "Río Ibáñez",
       "lat": -46.6438,
       "lon": -72.6321,
       "magnitudeValue": 41000,
@@ -40670,7 +40849,7 @@ window.AYSEN_HUBS_DATA = {
     {
       "id": "cul_CP-NOD-05",
       "nombre": "Paredón de las Manos",
-      "tipo": "Monumento_Historico_CMN",
+      "tipo": "Monumento_Arqueologico_CMN",
       "layerKey": "museos_cultura",
       "hubId": "cultura",
       "comuna_ine": "11402",
@@ -40682,7 +40861,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "años AP (arte rupestre)",
       "magnitudeLabel": "Antigüedad Sitio Arqueológico CMN",
       "titular": "SERPAT_CMN",
-      "sourceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/sitio-arqueologico-paredon-de-las-manos",
+      "sourceUrl": "https://www.monumentos.gob.cl/",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40699,11 +40878,11 @@ window.AYSEN_HUBS_DATA = {
       "localidad": "Coyhaique",
       "lat": -45.5712,
       "lon": -72.0688,
-      "magnitudeValue": 18600,
-      "magnitudeUnit": "préstamos/atenciones/año",
-      "magnitudeLabel": "Actividad SNBP BiblioRedes",
+      "magnitudeValue": 18199,
+      "magnitudeUnit": "préstamos físicos/año",
+      "magnitudeLabel": "Préstamos Biblioteca Regional SNBP 2024 (4.416 socios activos)",
       "titular": "SERPAT_SNBP",
-      "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/biblioteca/biblioteca-regional-de-aysen",
+      "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/biblioteca-regional-de-aysen",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40766,7 +40945,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "préstamos/atenciones/año",
       "magnitudeLabel": "Actividad SNBP Puerto Aysén",
       "titular": "SERPAT_SNBP",
-      "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/biblioteca/biblioteca-publica-puerto-aysen",
+      "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/espacios/biblioteca-publica-de-puerto-aysen",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40808,7 +40987,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "visitas/año",
       "magnitudeLabel": "Visitas Museo Comunitario Melinka",
       "titular": "SERPAT_RMC",
-      "sourceUrl": "https://www.muniguaitecas.cl/",
+      "sourceUrl": "https://www.redmuseosaysen.cl/museos-en-aysen",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40829,7 +41008,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "visitas/año",
       "magnitudeLabel": "Visitas Museo Municipal Cochrane",
       "titular": "SERPAT_RMC",
-      "sourceUrl": "https://www.cochranepatagonia.cl/",
+      "sourceUrl": "https://www.registromuseoschile.cl/663/w3-article-77661.html",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40850,7 +41029,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "atenciones/año",
       "magnitudeLabel": "Actividad Biblioteca Lago Verde",
       "titular": "SERPAT_SNBP",
-      "sourceUrl": "https://www.lagoverdeaysen.cl/",
+      "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -40858,8 +41037,8 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "cul_CP-NOD-14",
-      "nombre": "Museo y Biblioteca Histórica Villa O'Higgins",
-      "tipo": "Museo_Comunitario",
+      "nombre": "Museo de la Patagonia Padre Antonio Ronchi (Villa O'Higgins)",
+      "tipo": "Museo_RMC",
       "layerKey": "museos_cultura",
       "hubId": "cultura",
       "comuna_ine": "11302",
@@ -40871,7 +41050,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeUnit": "visitas/año",
       "magnitudeLabel": "Visitas Museo Villa O'Higgins",
       "titular": "SERPAT_RMC",
-      "sourceUrl": "https://www.municipalidadohiggins.cl/",
+      "sourceUrl": "https://www.registromuseoschile.cl/663/w3-article-92912.html",
       "bufferGenerator": false,
       "bufferRadiusM": 25000,
       "color": "#b45309",
@@ -47990,11 +48169,11 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Coyhaique",
         "lat": -45.5684,
         "lon": -72.0642,
-        "magnitudeValue": 24500,
+        "magnitudeValue": 36173,
         "magnitudeUnit": "visitas/año",
-        "magnitudeLabel": "Visitas Anuales SERPAT RMC",
+        "magnitudeLabel": "Visitas Anuales SERPAT SNM 2025 (#12 nacional; +27,0% vs 2024)",
         "titular": "SERPAT_RMC",
-        "sourceUrl": "https://www.museoregionalaysen.gob.cl/",
+        "sourceUrl": "https://www.registromuseoschile.cl/663/w3-article-83022.html",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48036,7 +48215,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "visitas/año",
         "magnitudeLabel": "Visitas Zona Típica CMN",
         "titular": "SERPAT_CMN",
-        "sourceUrl": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/sector-caleta-tortel",
+        "sourceUrl": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/pueblo-de-caleta-tortel",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48048,9 +48227,9 @@ window.AYSEN_HUBS_DATA = {
         "tipo": "Santuario_Naturaleza_CMN",
         "layerKey": "museos_cultura",
         "hubId": "cultura",
-        "comuna_ine": "11401",
-        "nombre_comuna": "Chile Chico",
-        "localidad": "Chile Chico",
+        "comuna_ine": "11402",
+        "nombre_comuna": "Río Ibáñez",
+        "localidad": "Río Ibáñez",
         "lat": -46.6438,
         "lon": -72.6321,
         "magnitudeValue": 41000,
@@ -48066,7 +48245,7 @@ window.AYSEN_HUBS_DATA = {
       {
         "id": "cul_CP-NOD-05",
         "nombre": "Paredón de las Manos",
-        "tipo": "Monumento_Historico_CMN",
+        "tipo": "Monumento_Arqueologico_CMN",
         "layerKey": "museos_cultura",
         "hubId": "cultura",
         "comuna_ine": "11402",
@@ -48078,7 +48257,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "años AP (arte rupestre)",
         "magnitudeLabel": "Antigüedad Sitio Arqueológico CMN",
         "titular": "SERPAT_CMN",
-        "sourceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/sitio-arqueologico-paredon-de-las-manos",
+        "sourceUrl": "https://www.monumentos.gob.cl/",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48095,11 +48274,11 @@ window.AYSEN_HUBS_DATA = {
         "localidad": "Coyhaique",
         "lat": -45.5712,
         "lon": -72.0688,
-        "magnitudeValue": 18600,
-        "magnitudeUnit": "préstamos/atenciones/año",
-        "magnitudeLabel": "Actividad SNBP BiblioRedes",
+        "magnitudeValue": 18199,
+        "magnitudeUnit": "préstamos físicos/año",
+        "magnitudeLabel": "Préstamos Biblioteca Regional SNBP 2024 (4.416 socios activos)",
         "titular": "SERPAT_SNBP",
-        "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/biblioteca/biblioteca-regional-de-aysen",
+        "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/biblioteca-regional-de-aysen",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48162,7 +48341,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "préstamos/atenciones/año",
         "magnitudeLabel": "Actividad SNBP Puerto Aysén",
         "titular": "SERPAT_SNBP",
-        "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/biblioteca/biblioteca-publica-puerto-aysen",
+        "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/espacios/biblioteca-publica-de-puerto-aysen",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48204,7 +48383,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "visitas/año",
         "magnitudeLabel": "Visitas Museo Comunitario Melinka",
         "titular": "SERPAT_RMC",
-        "sourceUrl": "https://www.muniguaitecas.cl/",
+        "sourceUrl": "https://www.redmuseosaysen.cl/museos-en-aysen",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48225,7 +48404,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "visitas/año",
         "magnitudeLabel": "Visitas Museo Municipal Cochrane",
         "titular": "SERPAT_RMC",
-        "sourceUrl": "https://www.cochranepatagonia.cl/",
+        "sourceUrl": "https://www.registromuseoschile.cl/663/w3-article-77661.html",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48246,7 +48425,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "atenciones/año",
         "magnitudeLabel": "Actividad Biblioteca Lago Verde",
         "titular": "SERPAT_SNBP",
-        "sourceUrl": "https://www.lagoverdeaysen.cl/",
+        "sourceUrl": "https://www.bibliotecaspublicas.gob.cl/",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",
@@ -48254,8 +48433,8 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "cul_CP-NOD-14",
-        "nombre": "Museo y Biblioteca Histórica Villa O'Higgins",
-        "tipo": "Museo_Comunitario",
+        "nombre": "Museo de la Patagonia Padre Antonio Ronchi (Villa O'Higgins)",
+        "tipo": "Museo_RMC",
         "layerKey": "museos_cultura",
         "hubId": "cultura",
         "comuna_ine": "11302",
@@ -48267,7 +48446,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeUnit": "visitas/año",
         "magnitudeLabel": "Visitas Museo Villa O'Higgins",
         "titular": "SERPAT_RMC",
-        "sourceUrl": "https://www.municipalidadohiggins.cl/",
+        "sourceUrl": "https://www.registromuseoschile.cl/663/w3-article-92912.html",
         "bufferGenerator": false,
         "bufferRadiusM": 25000,
         "color": "#b45309",

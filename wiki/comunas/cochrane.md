@@ -63,7 +63,7 @@ La comuna de Cochrane (capital comunal: Cochrane; Provincia de Capitán Prat; cu
 | Calefacción a Leña y Días MP2.5 | 95,5% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 512,4 km² (1.310 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Red de Salud y Tiempo de Derivación | Hospital Lord Cochrane (7 camas, 0 PSR, 6 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
-| Infraestructura Cultural y Bibliotecas | 3 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
+| Infraestructura Cultural y Bibliotecas | 2 museos RMC (5 espacios) / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 7 proyectos / 3 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)

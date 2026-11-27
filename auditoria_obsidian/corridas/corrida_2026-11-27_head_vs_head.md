@@ -19,7 +19,7 @@ etapas_restauradas: 1
 umbral_outlier_operativo_pct: 20
 umbral_outlier_estructural_pct: 5
 estado_revision_humana: "aprobada"
-fecha_aprobacion_humana: "2026-11-27T19:11:45.294Z"
+fecha_aprobacion_humana: "2026-11-27T22:16:00.639Z"
 tags:
   - aysen-sistemico
   - auditoria-indicadores

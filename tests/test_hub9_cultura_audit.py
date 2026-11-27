@@ -44,26 +44,33 @@ class TestHub9CulturaAudit(unittest.TestCase):
         cls.ext = cls.bundle.get("extension_modules", {}).get("cultura_patrimonio", {})
 
     def test_01_reconciliacion_per_capita_cultural(self):
-        expected = [11850, 49294, 9306, 16040, 25782, 15250, 19317, 18045, 33590, 36706]
+        expected = [11850, 43537, 9305, 15445, 25782, 15111, 19693, 17869, 32831, 32860]
         self.assertEqual([c["gasto_cultura_per_capita_clp"] for c in self.comunas], expected)
         n33_vals = [int(str(r[4]).replace(".", "").replace(",", "").strip()) for r in self.nodos[33]["tableRows"]]
         self.assertEqual(n33_vals, expected)
         ext_vals = [c["datos"]["gasto_cultura_per_capita_clp"] for c in self.ext.get("por_comuna", [])]
         self.assertEqual(ext_vals, expected)
 
-    def test_02_cuadratura_42_espacios_y_pueblos_originarios(self):
+    def test_02_cuadratura_54_espacios_y_pueblos_originarios(self):
         n32 = self.nodos[32]
         for row in n32["tableRows"]:
             self.assertEqual(int(row[1]) + int(row[2]) + int(row[3]) + int(row[4]), int(row[5]))
-        self.assertEqual(sum(int(r[5]) for r in n32["tableRows"]), 42)
-        self.assertEqual(sum(c["museos_espacios_n"] for c in self.comunas), 42)
+        self.assertEqual(sum(int(r[1]) for r in n32["tableRows"]), 16)
+        self.assertEqual(sum(int(r[2]) for r in n32["tableRows"]), 16)
+        self.assertEqual(sum(int(r[3]) for r in n32["tableRows"]), 16)
+        self.assertEqual(sum(int(r[5]) for r in n32["tableRows"]), 54)
+        self.assertEqual(sum(c["museos_espacios_n"] for c in self.comunas), 54)
 
         n34 = self.nodos[34]
         cols_joined = " ".join(n34.get("tableColumns", []))
         self.assertIn("Autoidentificación Indígena", cols_joined)
-        self.assertIn("Comunidades CONADI", cols_joined)
+        self.assertIn("CONADI", cols_joined)
+        self.assertIn("PCC", cols_joined)
         self.assertEqual(sum(int(r[4]) for r in n34["tableRows"]), 74)
-        self.assertAlmostEqual(max(float(str(r[3]).replace("%", "").replace(",", ".").strip()) for r in n34["tableRows"]), 49.8, places=1)
+        self.assertEqual(sum(int(r[5]) for r in n34["tableRows"]), 25)
+        self.assertEqual(self.ext["resumen_regional"]["pueblos_originarios"]["total_comunidades_conadi_registradas"], 47)
+        self.assertAlmostEqual(max(float(str(r[3]).replace("%", "").replace(",", ".").strip()) for r in n34["tableRows"]), 57.9, places=1)
+        self.assertAlmostEqual(self.ext["resumen_regional"]["pueblos_originarios"]["autoidentificacion_regional_pct"], 29.0, places=1)
         self.assertEqual(sum(c["organizaciones_comunitarias_n"] for c in self.comunas), 392)
         self.assertEqual(sum(c["cultores_patrimonio_inmaterial_n"] for c in self.comunas), 313)
 
@@ -84,7 +91,7 @@ class TestHub9CulturaAudit(unittest.TestCase):
         )
         self.assertGreater(r_cp03, 0.75)
         macro = presets["CP_05"]["config"]["mirror_series"]["structural_by_macrozona"]
-        self.assertEqual(macro, {"norte": 20911.0, "centro": 23483.0, "sur": 24582.0})
+        self.assertEqual(macro, {"norte": 20613.5, "centro": 21564.0, "sur": 23672.8})
 
     def test_04_consultor_hub9_queries(self):
         node_script = """

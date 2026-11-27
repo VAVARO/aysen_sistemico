@@ -63,7 +63,7 @@ La comuna de Aysén (capital comunal: Puerto Aysén; Provincia de Aysén; cuenca
 | Calefacción a Leña y Días MP2.5 | 84,5% hogares / 16 días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 1.542,6 km² (2.190 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Red de Salud y Tiempo de Derivación | Hospital de Puerto Aysen (56 camas, 2 PSR, 1 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
-| Infraestructura Cultural y Bibliotecas | 6 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
+| Infraestructura Cultural y Bibliotecas | 1 museos RMC (10 espacios) / 3 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 31 proyectos / 14 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)

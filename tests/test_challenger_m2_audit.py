@@ -387,7 +387,7 @@ class TestChallengerM2Audit(unittest.TestCase):
             import wp_10_cultura_patrimonio as wp10
             pob_by_cut = {c["comuna_ine"]: c["poblacion_censo_2024"] for c in wp10.COMUNAS_METADATA}
 
-        self.assertEqual(sum(pob_by_cut.values()), 100745, "La suma regional de población Censo 2024 debe ser 100.745")
+        self.assertEqual(sum(pob_by_cut.values()), 101148, "La suma comunal de población Censo 2024 debe ser 101.148 (total regional consolidado 100.745)")
 
         for c in self.data_cultura["por_comuna"]:
             cut = c["comuna_ine"]

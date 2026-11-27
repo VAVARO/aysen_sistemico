@@ -1774,7 +1774,7 @@ def build_extension_gallery(barometro_data=None):
                             "margin_error_pct": 4.55,
                             "robustness_rule": "semaforo_n_30_50"
                         },
-                        "mirror_series": _extract_mirror_series(barometro_data, "B4_B", "gasto_cultura_per_capita_clp", {"norte": 18400.0, "centro": 24600.0, "sur": 21300.0})
+                        "mirror_series": _extract_mirror_series(barometro_data, "B4_B", "gasto_cultura_per_capita_clp", {"norte": 20613.5, "centro": 21564.0, "sur": 23672.8})
                     },
                     "what_it_shows": "Disparidad en la disponibilidad de infraestructura cultural pública frente a la evaluación ciudadana de oportunidades de recreación y cultura.",
                     "why_complex_system": "Efectos de umbral: comunidades bajo cierto tamaño poblacional dependen exclusivamente de redes digitales y bibliotecas locales para acceso cultural."

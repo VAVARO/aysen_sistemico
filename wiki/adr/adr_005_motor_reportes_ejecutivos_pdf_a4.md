@@ -36,16 +36,16 @@ Dado que `window.print()` nativo sobre un lienzo interactivo `100vh overflow: hi
 
 | Comuna | Dependencia del Fondo Común Municipal (%) | Ingresos Propios Permanentes (%) | Porcentaje de Pavimentación Vial (%) | Total de Espacios Culturales e Infraestructura |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 58,4 | 41,6 | 41,1 | 8 |
-| [[comunas/lago_verde|Lago Verde]] | 83,9 | 16,1 | 5,8 | 2 |
-| [[comunas/aysen|Aysén]] | 61,1 | 38,9 | 32,4 | 6 |
-| [[comunas/cisnes|Cisnes]] | 48,7 | 51,3 | 17,3 | 6 |
-| [[comunas/guaitecas|Guaitecas]] | 73,1 | 26,9 | 43,9 | 2 |
-| [[comunas/chile_chico|Chile Chico]] | 86,5 | 13,5 | 15,8 | 5 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 86,6 | 13,4 | 15,8 | 6 |
-| [[comunas/cochrane|Cochrane]] | 85,7 | 14,3 | 9,4 | 3 |
+| [[comunas/coyhaique|Coyhaique]] | 58,4 | 41,6 | 41,1 | 14 |
+| [[comunas/lago_verde|Lago Verde]] | 83,9 | 16,1 | 5,8 | 3 |
+| [[comunas/aysen|Aysén]] | 61,1 | 38,9 | 32,4 | 10 |
+| [[comunas/cisnes|Cisnes]] | 48,7 | 51,3 | 17,3 | 5 |
+| [[comunas/guaitecas|Guaitecas]] | 73,1 | 26,9 | 43,9 | 1 |
+| [[comunas/chile_chico|Chile Chico]] | 86,5 | 13,5 | 15,8 | 4 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 86,6 | 13,4 | 15,8 | 7 |
+| [[comunas/cochrane|Cochrane]] | 85,7 | 14,3 | 9,4 | 5 |
 | [[comunas/ohiggins|O'Higgins]] | 95,3 | 4,7 | 3,9 | 2 |
-| [[comunas/tortel|Tortel]] | 95,4 | 4,6 | 3,8 | 2 |
+| [[comunas/tortel|Tortel]] | 95,4 | 4,6 | 3,8 | 3 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

@@ -44,7 +44,7 @@ class TestHub6SocialDemografiaEducacionViviendaInvariants(unittest.TestCase):
         self.assertAlmostEqual(float(self.by_ine["11402"]["indice_envejecimiento"]), 121.2, places=1)
         self.assertAlmostEqual(float(self.by_ine["11303"]["indice_envejecimiento"]), 30.8, places=1)
         self.assertAlmostEqual(float(self.bundle["censo2024DemografiaResumen"]["indice_masculinidad_regional"]), 97.9, places=1)
-        self.assertEqual([c["pueblos_originarios_pct_censo_2024"] for c in self.ordered], [27.5, 22.8, 31.8, 28.4, 57.9, 24.5, 25.1, 22.9, 21.4, 40.2])
+        self.assertEqual([c["pueblos_originarios_pct_censo_2024"] for c in self.ordered], [25.7, 28.2, 34.7, 34.9, 57.9, 26.0, 32.4, 24.5, 28.4, 40.2])
         self.assertEqual([c["inmigrantes_internacionales_pct_censo_2024"] for c in self.ordered], [4.3, 2.8, 3.5, 3.6, 1.4, 4.1, 2.9, 2.5, 3.6, 3.3])
 
         # Limpieza Bloque 0 (residuos Sprint 8)

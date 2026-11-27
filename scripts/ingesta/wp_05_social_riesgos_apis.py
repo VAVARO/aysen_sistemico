@@ -166,7 +166,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
 # Reingenieria Hub VI (Sprint 9): Censo 2024 INE/BCN, CASEN 2022/2024, RSH, MINVU CECT/PEH, DOH-MOP, MINEDUC/SLEP/SIES y CEAD
 WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
     "11101": {
-        "hogares": 22423, "viv_tot": 27989, "viv_ocu": 22198, "iam": 64.1, "masc": 95.0, "orig_pct": 27.5, "inmig_pct": 4.3, "rur_pct": 12.1,
+        "hogares": 22423, "viv_tot": 27989, "viv_ocu": 22198, "iam": 64.1, "masc": 95.0, "orig_pct": 25.7, "inmig_pct": 4.3, "rur_pct": 12.1,
         "pob_ing": 2.9, "pob_mul": 14.0, "rsh_serv": 11.5, "rsh_hac": 6.7,
         "def_cuant": 1128, "def_cuant_pct": 5.0, "irrecup": 280, "alleg": 225, "nuc_hac": 219, "hac_no_amp": 404, "def_cual": 2893, "camp_n": 5, "camp_hog": 127,
         "ssr_com": 15, "ssr_pers": 10650, "ssr_fam": 3350,
@@ -174,7 +174,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 1702.0, "vif_100k": 730.1,
     },
     "11102": {
-        "hogares": 373, "viv_tot": 724, "viv_ocu": 370, "iam": 182.8, "masc": 121.3, "orig_pct": 22.8, "inmig_pct": 2.8, "rur_pct": 100.0,
+        "hogares": 373, "viv_tot": 724, "viv_ocu": 370, "iam": 182.8, "masc": 121.3, "orig_pct": 28.2, "inmig_pct": 2.8, "rur_pct": 100.0,
         "pob_ing": 0.9, "pob_mul": 18.0, "rsh_serv": 33.9, "rsh_hac": 3.6, "casen_2024": {"pobreza_ingresos_2024_pct": 15.1, "pobreza_multidim_2024_pct": 15.7},
         "def_cuant": 73, "def_cuant_pct": 19.6, "irrecup": 65, "alleg": 3, "nuc_hac": 1, "hac_no_amp": 4, "def_cual": 48, "camp_n": 0, "camp_hog": 0,
         "ssr_com": 2, "ssr_pers": 620, "ssr_fam": 210,
@@ -182,7 +182,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 1422.3, "vif_100k": 548.2, "serie_vif_2023_2025": {"2023": 874.3, "2024": 109.4, "2025": 548.2},
     },
     "11201": {
-        "hogares": 9057, "viv_tot": 11054, "viv_ocu": 8994, "iam": 61.6, "masc": 98.9, "orig_pct": 31.8, "inmig_pct": 3.5, "rur_pct": 15.4,
+        "hogares": 9057, "viv_tot": 11054, "viv_ocu": 8994, "iam": 61.6, "masc": 98.9, "orig_pct": 34.7, "inmig_pct": 3.5, "rur_pct": 15.4,
         "pob_ing": 5.3, "pob_mul": 12.8, "rsh_serv": 11.7, "rsh_hac": 5.0, "casen_2024": {"pobreza_ingresos_2024_pct": 13.6, "pobreza_multidim_2024_pct": 12.2},
         "def_cuant": 330, "def_cuant_pct": 3.6, "irrecup": 78, "alleg": 63, "nuc_hac": 63, "hac_no_amp": 126, "def_cual": 1168, "camp_n": 4, "camp_hog": 107,
         "ssr_com": 8, "ssr_pers": 5680, "ssr_fam": 1790,
@@ -190,7 +190,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 1197.6, "vif_100k": 1157.9, "serie_vif_2023_2025": {"2024": 1157.9, "2025": 938.6},
     },
     "11202": {
-        "hogares": 2180, "viv_tot": 3437, "viv_ocu": 2171, "iam": 64.1, "masc": 102.3, "orig_pct": 28.4, "inmig_pct": 3.6, "rur_pct": 54.0,
+        "hogares": 2180, "viv_tot": 3437, "viv_ocu": 2171, "iam": 64.1, "masc": 102.3, "orig_pct": 34.9, "inmig_pct": 3.6, "rur_pct": 54.0,
         "pob_ing": 5.0, "pob_mul": 12.3, "rsh_serv": 12.0, "rsh_hac": 3.9,
         "def_cuant": 109, "def_cuant_pct": 5.0, "irrecup": 60, "alleg": 9, "nuc_hac": 10, "hac_no_amp": 30, "def_cual": 281, "camp_n": 1, "camp_hog": 10,
         "ssr_com": 5, "ssr_pers": 3250, "ssr_fam": 1050,
@@ -206,7 +206,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 1862.2, "vif_100k": 496.6,
     },
     "11401": {
-        "hogares": 2109, "viv_tot": 3108, "viv_ocu": 2097, "iam": 92.9, "masc": 102.1, "orig_pct": 24.5, "inmig_pct": 4.1, "rur_pct": 35.0,
+        "hogares": 2109, "viv_tot": 3108, "viv_ocu": 2097, "iam": 92.9, "masc": 102.1, "orig_pct": 26.0, "inmig_pct": 4.1, "rur_pct": 35.0,
         "pob_ing": 6.2, "pob_mul": 16.3, "rsh_serv": 9.6, "rsh_hac": 5.9,
         "def_cuant": 86, "def_cuant_pct": 4.1, "irrecup": 33, "alleg": 12, "nuc_hac": 10, "hac_no_amp": 31, "def_cual": 272, "camp_n": 0, "camp_hog": 0,
         "ssr_com": 5, "ssr_pers": 2420, "ssr_fam": 780,
@@ -214,7 +214,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 1743.2, "vif_100k": 755.4,
     },
     "11402": {
-        "hogares": 1231, "viv_tot": 2242, "viv_ocu": 1227, "iam": 121.2, "masc": 107.4, "orig_pct": 25.1, "inmig_pct": 2.9, "rur_pct": 72.0,
+        "hogares": 1231, "viv_tot": 2242, "viv_ocu": 1227, "iam": 121.2, "masc": 107.4, "orig_pct": 32.4, "inmig_pct": 2.9, "rur_pct": 72.0,
         "pob_ing": 7.0, "pob_mul": 18.8, "rsh_serv": 14.4, "rsh_hac": 4.9,
         "def_cuant": 50, "def_cuant_pct": 4.1, "irrecup": 17, "alleg": 4, "nuc_hac": 7, "hac_no_amp": 22, "def_cual": 158, "camp_n": 0, "camp_hog": 0,
         "ssr_com": 5, "ssr_pers": 2115, "ssr_fam": 680,
@@ -222,7 +222,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 1695.5, "vif_100k": 552.9,
     },
     "11301": {
-        "hogares": 1462, "viv_tot": 2126, "viv_ocu": 1449, "iam": 65.0, "masc": 106.0, "orig_pct": 22.9, "inmig_pct": 2.5, "rur_pct": 22.0,
+        "hogares": 1462, "viv_tot": 2126, "viv_ocu": 1449, "iam": 65.0, "masc": 106.0, "orig_pct": 24.5, "inmig_pct": 2.5, "rur_pct": 22.0,
         "pob_ing": 6.3, "pob_mul": 14.3, "rsh_serv": 15.8, "rsh_hac": 5.8, "casen_2024": {"pobreza_ingresos_2024_pct": 13.5, "pobreza_multidim_2024_pct": 9.9},
         "def_cuant": 118, "def_cuant_pct": 8.1, "irrecup": 62, "alleg": 13, "nuc_hac": 13, "hac_no_amp": 30, "def_cual": 189, "camp_n": 0, "camp_hog": 0,
         "ssr_com": 3, "ssr_pers": 1450, "ssr_fam": 450,
@@ -230,7 +230,7 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
         "dmcs_100k": 748.5, "vif_100k": 773.1, "serie_vif_2023_2025": {"2024": 374.2, "2025": 773.1},
     },
     "11302": {
-        "hogares": 292, "viv_tot": 403, "viv_ocu": 291, "iam": 41.7, "masc": 104.7, "orig_pct": 21.4, "inmig_pct": 3.6, "rur_pct": 100.0,
+        "hogares": 292, "viv_tot": 403, "viv_ocu": 291, "iam": 41.7, "masc": 104.7, "orig_pct": 28.4, "inmig_pct": 3.6, "rur_pct": 100.0,
         "pob_ing": 9.2, "pob_mul": 12.1, "rsh_serv": 14.4, "rsh_hac": 4.6,
         "def_cuant": 4, "def_cuant_pct": 1.4, "irrecup": 1, "alleg": 1, "nuc_hac": 1, "hac_no_amp": 1, "def_cual": 38, "camp_n": 0, "camp_hog": 0,
         "ssr_com": 2, "ssr_pers": 570, "ssr_fam": 174,

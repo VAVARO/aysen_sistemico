@@ -257,7 +257,7 @@ function loadEnv() {
 
   const cultMod = bundle.extension_modules.cultura_patrimonio;
   assert(cultMod.nodos_georreferenciados.length >= 15, 'Cultura debe mantener nodos georreferenciados');
-  assert.strictEqual(cultMod.resumen_regional.total_museos_rmc, 14, 'Cultura debe mantener 14 museos RMC');
+  assert.strictEqual(cultMod.resumen_regional.total_museos_rmc, 16, 'Cultura debe mantener 16 museos activos RMC');
 
   const postasSum = bundle.comunas.reduce((acc, c) => acc + (c.postas_salud_rural || 0), 0);
   assert.strictEqual(postasSum, 27, 'Postas de salud rural deben sumar 27');

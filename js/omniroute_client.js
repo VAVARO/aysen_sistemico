@@ -170,7 +170,9 @@
     dias_sobre_norma_mp25: 'Días Anuales sobre Norma Diaria MP2.5 (SINCA)',
     postas_salud_rural: 'Postas de Salud Rural (PSR)',
     museos_espacios_n: 'Museos y Espacios Culturales',
-    bibliotecas_snbp_n: 'Bibliotecas Públicas SNBP',
+    bibliotecas_snbp_n: 'Bibliotecas Públicas Fijas SNBP',
+    bibliotecas_publicas_count: 'Bibliotecas Públicas Fijas SNBP',
+    puntos_cultura_comunitaria_pcc_n: 'Puntos de Cultura Comunitaria PCC MINCAP',
     fondart_fndr_mclp: 'Total Fondos Culturales Adjudicados (FONDART + 8% FNDR) (M$ CLP)',
     total_espacios_culturales: 'Total de Espacios Culturales e Infraestructura',
     monumentos_nacionales_count: 'Monumentos Nacionales Declarados (CMN)',
@@ -837,6 +839,8 @@
     concesiones_mineras_ha: PROVENANCE_CATALOG_ENTRIES.SERNAGEOMIN,
     museos_espacios_n: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
     bibliotecas_snbp_n: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
+    bibliotecas_publicas_count: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
+    puntos_cultura_comunitaria_pcc_n: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
     fondart_fndr_mclp: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
     total_espacios_culturales: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
     monumentos_nacionales_count: PROVENANCE_CATALOG_ENTRIES.MINCAP_CMN,
@@ -1109,6 +1113,7 @@
     monumentos_nacionales_count: ['monumentos', 'monumentos nacionales', 'patrimonio monumental'],
     fondos_cultura_adjudicados_mclp: ['fondos de cultura', 'fondos culturales', 'fondos concursables adjudicados', 'fondos concursables cultura', 'fondos de cultura mincap', 'fondos cultura mincap adjudicados', 'fondos cultura mincap', 'fondart'],
     bibliotecas_snbp_n: ['bibliotecas', 'bibliotecas publicas', 'bibliotecas snbp'],
+    puntos_cultura_comunitaria_pcc_n: ['puntos de cultura comunitaria', 'pcc', 'puntos de cultura'],
     proyectos_ctci_total: ['proyectos ctci', 'proyectos de ciencia', 'ciencia y tecnologia'],
     monto_anid_mclp: ['monto anid', 'fondos anid', 'financiamiento anid', 'proyectos anid'],
     innovacion_corfo_mclp: ['innovacion corfo', 'corfo innova', 'monto corfo innova'],
@@ -3439,7 +3444,7 @@
           `1) Patrimonio Inmaterial SIGPA (${cultoresTotal} cultores registrados): Maestros tejueleros de Ciprés de las Guaitecas (45 cultores en Melinka, Tortel y Cisnes, en riesgo por restricción de acceso a madera muerta), ` +
           `Carpinteros de ribera y construcción naval artesanal (28 cultores activos en Puerto Aguirre, Gala, Gaviota y Melinka) y ` +
           `Jineteadas gauchas, chamamé y tradiciones camperas (240 cultores en 38 clubes camperos en Río Ibáñez, Cochrane, Mañihuales, Lago Verde y Coyhaique). ` +
-          `2) Sitios Paleo-Arqueológicos CMN: Cueva Baño Nuevo 1 (Coyhaique, 10.200 años AP, conjunto funerario más antiguo de Patagonia occidental), Paredón de las Manos (Río Ibáñez, 3.000-6.000 años AP, D.S. 355/2008 de arte rupestre Tehuelche) y Formación Toqui en Mallín Grande (Chile Chico, 148 Ma, hallazgo mundial de Chilesaurus diegosuarezi). ` +
+          `2) Sitios Paleo-Arqueológicos CMN: Cueva Baño Nuevo 1 (Coyhaique, 10.200 años AP, conjunto funerario más antiguo de Patagonia occidental), Paredón de las Manos (Río Ibáñez, 3.000-6.000 años AP, Monumento Arqueológico por el solo ministerio de la Ley N° 17.288) y Formación Toqui en Mallín Grande (Chile Chico, 148 Ma, hallazgo mundial de Chilesaurus diegosuarezi). ` +
           `3) Tejido Asociativo (${orgsTotal} organizaciones): 248 Juntas de Vecinos (Ley 19.418), 45 Sindicatos de Pescadores Artesanales, 38 Clubes de Huasos y Jineteada, 31 Comités Campesinos y 22 Agrupaciones de Mujeres Rurales.`
         );
         const sources = resolveSourcesForKeys(['cultores_patrimonio_inmaterial_n', 'monumentos_nacionales_count', 'organizaciones_comunitarias_n']);

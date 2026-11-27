@@ -6438,5 +6438,68 @@
         94.0
       ]
     }
+  },
+  "comuna_cut_mapping_version": "preserved_10_cuts_11101_to_11402",
+  "semaforo_muestral_comunal": {
+    "11101": {
+      "comuna_ine": "11101",
+      "nombre": "Coyhaique",
+      "semaforo_muestral_barometro": "verde",
+      "nota_interpretacion": "n >= 50 (centro macrozonal)"
+    },
+    "11102": {
+      "comuna_ine": "11102",
+      "nombre": "Lago Verde",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Norte)"
+    },
+    "11201": {
+      "comuna_ine": "11201",
+      "nombre": "Aysén",
+      "semaforo_muestral_barometro": "verde",
+      "nota_interpretacion": "n >= 50 (puerto principal macrozona norte)"
+    },
+    "11202": {
+      "comuna_ine": "11202",
+      "nombre": "Cisnes",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Norte)"
+    },
+    "11203": {
+      "comuna_ine": "11203",
+      "nombre": "Guaitecas",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Norte)"
+    },
+    "11401": {
+      "comuna_ine": "11401",
+      "nombre": "Chile Chico",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Sur)"
+    },
+    "11402": {
+      "comuna_ine": "11402",
+      "nombre": "Río Ibáñez",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Sur)"
+    },
+    "11301": {
+      "comuna_ine": "11301",
+      "nombre": "Cochrane",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Sur)"
+    },
+    "11302": {
+      "comuna_ine": "11302",
+      "nombre": "O'Higgins",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Sur)"
+    },
+    "11303": {
+      "comuna_ine": "11303",
+      "nombre": "Tortel",
+      "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
+      "nota_interpretacion": "n < 30 (interpretar a nivel Macrozona Sur)"
+    }
   }
 }

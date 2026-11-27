@@ -126,7 +126,7 @@ class TestCulturaCTCiSourcesAudit(unittest.TestCase):
             {"id": "CP-NOD-01", "nombre": "Museo Regional de Aysén", "lat": -45.5684, "lon": -72.0642, "ine": "11101"},
             {"id": "CP-NOD-02", "nombre": "Campamento Minero Puerto Cristal", "lat": -46.5412, "lon": -72.7645, "ine": "11402"},
             {"id": "CP-NOD-03", "nombre": "Pasarelas de Caleta Tortel", "lat": -47.7952, "lon": -73.5354, "ine": "11303"},
-            {"id": "CP-NOD-04", "nombre": "Capilla de Mármol", "lat": -46.6438, "lon": -72.6321, "ine": "11401"},
+            {"id": "CP-NOD-04", "nombre": "Capilla de Mármol", "lat": -46.6438, "lon": -72.6321, "ine": "11402"},
             {"id": "CP-NOD-05", "nombre": "Paredón de las Manos", "lat": -46.2845, "lon": -71.9542, "ine": "11402"},
             {"id": "CP-NOD-06", "nombre": "Biblioteca Regional de Aysén", "lat": -45.5712, "lon": -72.0688, "ine": "11101"},
             {"id": "CP-NOD-07", "nombre": "Centro Cultural de Coyhaique", "lat": -45.5745, "lon": -72.0621, "ine": "11101"},

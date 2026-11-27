@@ -84,13 +84,31 @@ const marcoRegulatorioEnergiaRaw = readJson('data/raw/energia_telecom/marco_regu
 
 // Reconciliacion en memoria (sin alterar JSON/CSV en disco) para Hubs VI-X
 const RECONCILED_GASTO_CULTURA_PC = {
-  '11101': 11850, '11102': 49294, '11201': 9306, '11202': 16040, '11203': 25782,
-  '11401': 15250, '11402': 19317, '11301': 18045, '11302': 33590, '11303': 36706
+  '11101': 11850, '11102': 43537, '11201': 9305, '11202': 15445, '11203': 25782,
+  '11401': 15111, '11402': 19693, '11301': 17869, '11302': 32831, '11303': 32860
 };
 const RECONCILED_CENTROS_CULT_N = {
   '11101': 2, '11102': 1, '11201': 1, '11202': 1, '11203': 0,
   '11401': 0, '11402': 0, '11301': 1, '11302': 0, '11303': 0
 };
+const PUEBLOS_ORIGINARIOS_CENSO_2024_MAP = {
+  '11101': 25.7, '11102': 28.2, '11201': 34.7, '11202': 34.9, '11203': 57.9,
+  '11401': 26.0, '11402': 32.4, '11301': 24.5, '11302': 28.4, '11303': 40.2
+};
+const AUTOIDENTIFICACION_INDIGENA_MAP = PUEBLOS_ORIGINARIOS_CENSO_2024_MAP;
+const POBLACION_INDIGENA_CENSO_2024_N_MAP = {
+  '11101': 14853, '11102': 220, '11201': 8047, '11202': 1794, '11203': 926,
+  '11401': 1274,  '11402': 882, '11301': 847,  '11302': 184,  '11303': 203
+}; // Suma regional exacta = 29.230 personas (29,0% sobre 100.745 censados)
+const COMUNIDADES_CONADI_MAP = {
+  '11101': 18, '11102': 2, '11201': 22, '11202': 14, '11203': 8,
+  '11401': 3, '11402': 4, '11301': 2, '11302': 0, '11303': 1
+}; // 47 Comunidades Indigenas SIIC CONADI (490 familias) + 27 Asociaciones Indigenas funcionales = 74 organizaciones
+const PUNTOS_CULTURA_COMUNITARIA_PCC_MAP = {
+  '11101': 6, '11102': 0, '11201': 1, '11202': 3, '11203': 0,
+  '11401': 3, '11402': 4, '11301': 4, '11302': 3, '11303': 1
+}; // Suma regional = 25 PCC validados MINCAP
+const GASTO_CULTURAL_MAP = RECONCILED_GASTO_CULTURA_PC;
 const RECONCILED_APS_PSR_COUNTS = {
   '11101': { psr: 7, aps: 12, rounds: 'Semanal / Quincenal (7 PSR con tele-ECG oct-2025 + 2 EMR Alto Baguales y Villa Frei · 100% DAP SSA)' },
   '11102': { psr: 3, aps: 3, rounds: 'Quincenal / Mensual (3 PSR: La Tapera, Lago Verde, Villa Amengual · tele-ECG oct-2025)' },
@@ -739,8 +757,8 @@ const hubs = [
     title: 'IX. Cultura, Artes & Patrimonio',
     shortTitle: 'Cultura, Artes & Patrimonio',
     color: '#b45309',
-    description: 'Infraestructura cultural regional: **42 espacios culturales**, **14 museos (RMC)**, **13 bibliotecas públicas (SNBP)**, **9 monumentos nacionales (CMN)** y financiamiento Fondos Cultura / FNDR 8%.',
-    example: '**Coyhaique** concentra la Biblioteca Regional y el Centro Cultural, mientras localidades como **Caleta Tortel**, **Guaitecas** y **Cerro Castillo** albergan museos comunitarios y monumentos históricos australes.',
+    description: 'Infraestructura cultural y patrimonial regional: **54 espacios culturales** (**16 museos activos RMC / 27 en Red Regional**, **16 bibliotecas fijas SNBP con 31.221 préstamos**, **16 declaratorias CMN que protegen 23 bienes**, **6 centros culturales**), **25 Puntos de Cultura Comunitaria (PCC)**, **29,0%** autoidentificación indígena Censo 2024 (**47 Comunidades SIIC CONADI + 27 Asociaciones**), **62,0%** participación cultural ENPCCL 2024 y financiamiento Fondos Cultura MINCAP / FNDR 8%.',
+    example: '**Coyhaique** concentra el Museo Regional de Aysén (**36.173 visitas en 2025**) y la Biblioteca Regional (**18.199 préstamos**), **Puerto Aysén** suma 5 declaratorias CMN y 3 bibliotecas SNBP, mientras **Río Ibáñez** protege 4 declaratorias CMN incluyendo el Santuario de la Naturaleza **Capilla de Mármol** y **Caleta Tortel** resguarda su Zona Típica.',
     csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
     nodesFile: 'data/systemic/csv/09_cultura_patrimonio_nodos.csv',
     sourceName: 'SERPAT / CMN / SNBP / MINCAP / GORE Aysén',
@@ -2324,33 +2342,33 @@ const rawNodos = [
     id: 32,
     hubId: 'cultura',
     title: 'Patrimonio Protegido, Museos (RMC) y Bibliotecas (SNBP)',
-    definition: 'Catastro de infraestructura patrimonial oficial: **14 museos (Red de Museos de Chile)**, **13 bibliotecas públicas (Sistema Nacional de Bibliotecas Públicas - BiblioRedes)**, **9 Monumentos Históricos y Arqueológicos (CMN)** y **6 Centros y Casas de la Cultura Municipales/Comunitarios** (**42 espacios culturales totales**).',
-    example: '**Coyhaique** alberga 3 museos, 1 biblioteca, 2 monumentos y 2 centros culturales (8 espacios), mientras que en **Río Ibáñez** se protege el Sitio Arqueológico Paredón de las Manos y en **Aysén** el Puente Presidente Ibáñez.',
-    officialSource: { name: 'Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Anual' },
+    definition: 'Catastro oficial SERPAT/CMN: **16 declaratorias de Monumentos Nacionales por decreto** (12 decretos MH que protegen 19 inmuebles incluyendo los 8 de la Sociedad Industrial de Aisén, 1 ZT en Caleta Tortel y 3 SN: Estero Quitralco, Meullín-Puye y Capilla de Mármol en Río Ibáñez — **23 bienes protegidos** más 11 Monumentos Públicos), **16 museos activos inscritos en el RMC** (**27 espacios en la Red de Museos de Aysén**; **Museo Regional de Aysén con 36.173 visitas en 2025**, #12 nacional), **16 bibliotecas públicas fijas SNBP/BiblioRedes** en 10/10 comunas (**31.221 préstamos físicos y 7.591 socios activos en 2024**; **18.199 préstamos en Biblioteca Regional**) y **6 centros culturales principales** (**54 espacios culturales totales**).',
+    example: '**Coyhaique** concentra 8 museos RMC, 2 bibliotecas SNBP, 2 declaratorias CMN (9 inmuebles) y 2 centros culturales (**14 espacios**). **Aysén** suma **10 espacios** (5 declaratorias CMN, 3 bibliotecas, 1 museo RMC y 1 centro cultural) y **Río Ibáñez** alcanza **7 espacios** con 4 declaratorias CMN incluida la **Capilla de Mármol** (D.E. N° 281/1994).',
+    officialSource: { name: 'Servicio Nacional del Patrimonio Cultural (SERPAT) / CMN / RMC / SNBP', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
     relatedNodeIds: [1, 15, 23, 33],
     chartSpec: {
       type: 'bar',
-      title: 'Museos, Bibliotecas, Monumentos Nacionales y Centros Culturales por Comuna',
+      title: 'Museos (RMC), Bibliotecas (SNBP), Monumentos (CMN) y Centros Culturales por Comuna (Total 54)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [
         {
-          label: 'Museos RMC',
+          label: 'Museos RMC (16)',
           data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).museos_count || 0),
           backgroundColor: '#b45309'
         },
         {
-          label: 'Bibliotecas SNBP',
+          label: 'Bibliotecas SNBP (16)',
           data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).bibliotecas_publicas_count || 0),
           backgroundColor: '#d97706'
         },
         {
-          label: 'Monumentos CMN',
+          label: 'Monumentos CMN (16 decr. / 23 bienes)',
           data: comunasBase.map(c => (wp09ByIne[String(c.comuna_ine)] || {}).monumentos_nacionales_count || 0),
           backgroundColor: '#f59e0b'
         },
         {
-          label: 'Centros Culturales',
+          label: 'Centros Culturales (6)',
           data: comunasBase.map(c => RECONCILED_CENTROS_CULT_N[String(c.comuna_ine)] || 0),
           backgroundColor: '#92400e'
         }
@@ -2376,10 +2394,10 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Directorio de 14 museos regionales y comunitarios',
-        'Red de 13 bibliotecas públicas conectadas a BiblioRedes',
-        '9 Monumentos Históricos y Zonas Típicas decretadas por ley',
-        'Distribución territorial de recintos patrimoniales por cuenca'
+        '16 museos activos inscritos en RMC 2026 (27 en Red de Museos de Aysén; MRA 36.173 visitas 2025)',
+        '16 bibliotecas fijas SNBP en 10/10 comunas + Bibliomóvil 4x4 oct-2026 (31.221 préstamos 2024)',
+        '16 declaratorias CMN por decreto (12 MH / 19 bienes + 1 ZT + 3 SN = 23 bienes protegidos)',
+        'Reasignación administrativa de Capilla de Mármol (D.E. 281/1994) a Río Ibáñez (11402)'
       ],
       suggestedCrossings: [
         'Cruce con Prestadores de Servicios Turísticos (Nodo #01)',
@@ -2391,10 +2409,10 @@ const rawNodos = [
   {
     id: 33,
     hubId: 'cultura',
-    title: 'Fondos Cultura MINCAP y FNDR 8%',
-    definition: 'Flujos de financiamiento público para el desarrollo cultural: asignaciones acumuladas de los **Fondos de Cultura (FONDART Regional, Fondos del Libro, Música y Audiovisual)**, asignación del **FNDR 8% Comunitario del GORE Aysén** y gasto municipal anual en cultura.',
-    example: 'La inversión concursable MINCAP se concentra en **Coyhaique ($2.150,4 MM acumulados, 55,9%)** y **Aysén ($742,8 MM, 19,3%; $1.052,8 MM incluyendo FNDR 8%)**, mientras las comunas rurales lideran el esfuerzo municipal per cápita.',
-    officialSource: { name: 'MINCAP Fondos Cultura / DIPRES GORE Aysén / SINIM', url: 'https://www.fondosdecultura.cl/', frequency: 'Anual' },
+    title: 'Fondos Cultura MINCAP (2022–2026), PAOCC, Red Cultura y FNDR 8%',
+    definition: 'Flujos de financiamiento público para el desarrollo cultural: **Fondos Cultura MINCAP 2022–2026** (**2024: 54 proyectos por $477,4 MM**; **2025: 57 proyectos por >$1.007,0 MM** en 9/10 comunas generando 202 empleos, 64% liderado por mujeres; **2026 1ª entrega: 9 proyectos**), **PAOCC** (**5 organizaciones en 2026**: Zíngara, Teatro Austral, Malotun Ortiga, Memoria Austral y Pulso Austral + >$32 MM a Corp. Cultural Coyhaique en 2025), **Red Cultura 2026** (**7 espacios comunitarios** jul-2026 + **$61,0 MM a 4 municipios** nov-2026), **FNDR 8% GORE Aysén** (**2025: $5.681 MM a 355 iniciativas**, **2026: Aysén Crece en Comunidad**) y gasto municipal per cápita sobre **padrón Censo 2024**.',
+    example: 'La cartera concursable MINCAP histórica se concentra en **Coyhaique ($2.150,4 MM, 55,9%)** y **Aysén ($742,8 MM, 19,3%)**, mientras sobre población Censo 2024 **Lago Verde ($43.537/hab)** y **Caleta Tortel ($32.860/hab)** lideran el gasto municipal per cápita frente a **$11.850/hab en Coyhaique**.',
+    officialSource: { name: 'MINCAP Fondos Cultura / PAOCC / Red Cultura / GORE Aysén / SINIM', url: 'https://www.fondosdecultura.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
     relatedNodeIds: [15, 18, 32, 34],
     chartSpec: {
@@ -2415,23 +2433,25 @@ const rawNodos = [
       ],
       unit: 'M$ CLP'
     },
-    tableColumns: ['Comuna', 'Fondos MINCAP (M$)', 'FNDR 8% Cultura (M$)', 'Gasto Municipal (M$)', 'Gasto per Cápita ($)'],
+    tableColumns: ['Comuna', 'Fondos MINCAP (M$)', 'FNDR 8% Cultura (M$)', 'Gasto Municipal (M$)', 'Gasto per Cápita Censo 2024 ($)'],
     tableRows: comunasBase.map(c => {
-      const cult = wp09ByIne[String(c.comuna_ine)] || {};
+      const ine = String(c.comuna_ine);
+      const cult = wp09ByIne[ine] || {};
+      const gpc = GASTO_CULTURAL_MAP[ine] !== undefined ? GASTO_CULTURAL_MAP[ine] : (cult.gasto_cultura_per_capita_clp || 0);
       return [
         c.nombre,
         fmtNum(cult.fondos_cultura_adjudicados_mclp || 0),
         fmtNum(cult.fndr_8pct_cultura_mclp || 0),
         fmtNum(cult.gasto_municipal_cultura_mclp || 0),
-        fmtNum(cult.gasto_cultura_per_capita_clp || 0)
+        fmtNum(gpc)
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Monto acumulado adjudicado en líneas FONDART Regional',
-        'Distribución de recursos del 8% FNDR para cultura',
-        'Gasto municipal reportado al SINIM en actividades culturales',
-        'Inversión cultural per cápita por habitante comunal'
+        'Serie oficial Fondos Cultura MINCAP 2022–2026 (57 proyectos / $1.007M en 2025; 202 empleos)',
+        'PAOCC 2026 (5 organizaciones) y Red Cultura 2026 (7 espacios comunitarios + $61M municipios)',
+        'Fondo Vinculación 8% FNDR GORE Aysén ($5.681M / 355 iniciativas 2025; Aysén Crece en Comunidad 2026)',
+        'Gasto municipal cultural per cápita recalculado exactamente sobre Censo 2024'
       ],
       suggestedCrossings: [
         'Cruce con Dependencia del Fondo Común Municipal (Nodo #16)',
@@ -2443,15 +2463,15 @@ const rawNodos = [
   {
     id: 34,
     hubId: 'cultura',
-    title: 'Infraestructura Cultural Comunitaria, Participación y Pueblos Originarios',
-    definition: 'Infraestructura activa de difusión artística: teatros, centros culturales, casas de la cultura comunales, agrupaciones artesanales, indicadores de participación ciudadana y evaluación comunal de la oferta cultural.',
-    example: 'El 42,8% de la población regional participa anualmente en actividades culturales, registrándose una valoración positiva en el Barómetro UAYSÉN (nota 4,12 regional) con alta demanda de descentralización hacia las localidades aisladas.',
-    officialSource: { name: 'SERPAT / MINCAP / Barómetro Regional UAYSÉN', url: 'https://ide.patrimoniocultural.gob.cl/', frequency: 'Bienal' },
+    title: 'Cultura Comunitaria (25 PCC), Participación ENPCCL, Barómetro y Pueblos Originarios',
+    definition: 'Demografía indígena oficial **Censo 2024 INE/BCN** (**29,0% regional = 29.230 personas**, liderado por **Guaitecas 57,9%** y **Tortel 40,2%**), desglose jurídico **CONADI SIIC (ago-2025: 47 Comunidades Indígenas vigentes con 490 familias + 27 Asociaciones Indígenas funcionales = 74 organizaciones)**, **25 Puntos de Cultura Comunitaria (PCC MINCAP)** en 8 comunas, **62,0% participación cultural urbana** (**ENPCCL 2024**, la más baja del país vs. 75,4% nacional) y evaluación del **Barómetro Regional UAYSÉN** (**N=465, nota media B4_B = 4,04, tasa positiva 40,2%**, con semáforo verde en Coyhaique/Aysén y rojo n<30 en las 8 comunas rurales).',
+    example: 'Las macrozonas del Barómetro evitan sesgos de micro-muestra rural (como 100,0% en Tortel o 5,00 en Lago Verde con n<=5), mientras las comunas sin tierras indígenas tituladas (Cisnes **34,9%**, Tortel **40,2%**, Chile Chico **26,0%**, Cochrane **24,5%**) se articulan vía Asociaciones Indígenas Art. 76° Ley 19.253.',
+    officialSource: { name: 'INE Censo 2024 / CONADI SIIC / MINCAP ENPCCL-PCC / Barómetro Regional UAYSÉN (N=465)', url: 'https://puntos.cultura.gob.cl/aysen/', frequency: 'Bienal' },
     csvFile: 'data/systemic/csv/09_cultura_patrimonio_comunas.csv',
     relatedNodeIds: [1, 23, 32, 33],
     chartSpec: {
       type: 'bar',
-      title: 'Participación Cultural Ciudadana (C2) vs. Autoidentificación Pueblos Originarios (%)',
+      title: 'Participación Cultural Barómetro (C2) vs. Autoidentificación Pueblos Originarios Censo 2024 (%)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [
         {
@@ -2460,39 +2480,38 @@ const rawNodos = [
           backgroundColor: '#d97706'
         },
         {
-          label: 'Autoidentificación Pueblos Originarios (%)',
-          data: comunasBase.map(c => ({ '11101': 28.4, '11102': 22.0, '11201': 31.0, '11202': 34.0, '11203': 49.8, '11401': 21.0, '11402': 24.0, '11301': 20.0, '11302': 18.0, '11303': 19.0 })[String(c.comuna_ine)] || 0),
+          label: 'Autoidentificación Pueblos Originarios Censo 2024 (%)',
+          data: comunasBase.map(c => PUEBLOS_ORIGINARIOS_CENSO_2024_MAP[String(c.comuna_ine)] || 0),
           backgroundColor: '#0f766e'
         }
       ],
       unit: '%'
     },
-    tableColumns: ['Comuna', 'Participación Cultural (%)', 'Nota Oferta Cultural (1-7)', 'Autoidentificación Indígena (%)', 'Comunidades CONADI (n°)'],
+    tableColumns: ['Comuna', 'Participación Cultural C2 (%)', 'Nota Oferta Cultural B4_B (1-7)', 'Autoidentificación Indígena Censo 2024 (%)', 'Organizaciones CONADI Com.+Asoc. (n°)', 'Puntos de Cultura PCC (n°)'],
     tableRows: comunasBase.map(c => {
       const ine = String(c.comuna_ine);
       const cult = wp09ByIne[ine] || {};
-      const autoMap = { '11101': 28.4, '11102': 22.0, '11201': 31.0, '11202': 34.0, '11203': 49.8, '11401': 21.0, '11402': 24.0, '11301': 20.0, '11302': 18.0, '11303': 19.0 };
-      const conadiMap = { '11101': 18, '11102': 2, '11201': 22, '11202': 14, '11203': 8, '11401': 3, '11402': 4, '11301': 2, '11302': 0, '11303': 1 };
       return [
         c.nombre,
         `${cult.participacion_cultural_pct_c2 || 0}%`,
         fmtNum(cult.nota_percepcion_cultura_b4b || 0),
-        `${autoMap[ine] || 0}%`,
-        fmtNum(conadiMap[ine] || 0)
+        `${PUEBLOS_ORIGINARIOS_CENSO_2024_MAP[ine] || 0}%`,
+        fmtNum(COMUNIDADES_CONADI_MAP[ine] || 0),
+        fmtNum(PUNTOS_CULTURA_COMUNITARIA_PCC_MAP[ine] || 0)
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Directorio de centros culturales y casas comunales de cultura',
-        'Tasa de participación ciudadana en eventos artísticos',
-        'Evaluación de satisfacción comunal con la oferta cultural',
-        'Red de agentes y agrupaciones de creadores patagónicos'
+        '29,0% autoidentificación indígena Censo 2024 (29.230 personas; Guaitecas 57,9%, Tortel 40,2%)',
+        '47 Comunidades Indígenas SIIC CONADI (490 familias) + 27 Asociaciones Indígenas funcionales = 74 organizaciones',
+        '25 Puntos de Cultura Comunitaria (PCC MINCAP) y 62,0% participación ENPCCL 2024',
+        'Semáforo de robustez muestral del Barómetro Regional (verde Coyhaique/Aysén; rojo n<30 en 8 comunas rurales)'
       ],
       suggestedCrossings: [
         'Cruce con Población Censo 2024 y Casen (Nodo #23)',
         'Cruce con Zonas de Interés Turístico ZOIT (Nodo #02)'
       ],
-      totalRecordsInFullBase: '10 comunas con métricas de participación y percepción en data/systemic/09_cultura_patrimonio.json'
+      totalRecordsInFullBase: '10 comunas con métricas de participación, CONADI, PCC y Barómetro en data/systemic/09_cultura_patrimonio.json'
     }
   },
   // --- HUB X: CTCI, CIENCIA & INNOVACIÓN (#35 a #37) ---
@@ -3712,10 +3731,7 @@ const VIVIENDAS_OCUPADAS_CENSO_2024_MAP = {
   '11401': 2097, '11402': 1227, '11301': 1449, '11302': 291, '11303': 231
 };
 
-const PUEBLOS_ORIGINARIOS_CENSO_2024_MAP = {
-  '11101': 27.5, '11102': 22.8, '11201': 31.8, '11202': 28.4, '11203': 57.9,
-  '11401': 24.5, '11402': 25.1, '11301': 22.9, '11302': 21.4, '11303': 40.2
-};
+// PUEBLOS_ORIGINARIOS_CENSO_2024_MAP definido en cabecera Sprint 12 (29.230 hab. / 29,0%)
 
 const INMIGRANTES_CENSO_2024_MAP = {
   '11101': 4.3, '11102': 2.8, '11201': 3.5, '11202': 3.6, '11203': 1.4,
@@ -3899,20 +3915,7 @@ const RS_SNI_MAP = {
   '11401': 36.0, '11402': 34.0, '11301': 35.0, '11302': 20.0, '11303': 18.0
 };
 
-const AUTOIDENTIFICACION_INDIGENA_MAP = {
-  '11101': 28.4, '11102': 22.0, '11201': 31.0, '11202': 34.0, '11203': 49.8,
-  '11401': 21.0, '11402': 24.0, '11301': 20.0, '11302': 18.0, '11303': 19.0
-};
-
-const COMUNIDADES_CONADI_MAP = {
-  '11101': 18, '11102': 2, '11201': 22, '11202': 14, '11203': 8,
-  '11401': 3, '11402': 4, '11301': 2, '11302': 0, '11303': 1
-};
-
-const GASTO_CULTURAL_MAP = {
-  '11101': 11850, '11102': 49294, '11201': 9306, '11202': 16040, '11203': 25782,
-  '11401': 15250, '11402': 19317, '11301': 18045, '11302': 33590, '11303': 36706
-};
+// AUTOIDENTIFICACION_INDIGENA_MAP, COMUNIDADES_CONADI_MAP, PUNTOS_CULTURA_COMUNITARIA_PCC_MAP y GASTO_CULTURAL_MAP definidos en cabecera Sprint 12
 
 const JJVV_ACTIVAS_MAP = {
   '11101': 72, '11102': 6, '11201': 42, '11202': 18, '11203': 7,
@@ -4203,9 +4206,11 @@ function buildComunaRows() {
       // Hub IX (Cultura)
       museos_espacios_n: Number(g9.total_espacios_culturales) || 0,
       centros_culturales_n: RECONCILED_CENTROS_CULT_N[ine] || 0,
+      puntos_cultura_comunitaria_pcc_n: PUNTOS_CULTURA_COMUNITARIA_PCC_MAP[ine] !== undefined ? PUNTOS_CULTURA_COMUNITARIA_PCC_MAP[ine] : (Number(g9.puntos_cultura_comunitaria_pcc_n) || 0),
       organizaciones_comunitarias_n: ({ '11101': 142, '11102': 14, '11201': 84, '11202': 46, '11203': 22, '11401': 28, '11402': 21, '11301': 18, '11302': 9, '11303': 8 })[ine] || 0,
       cultores_patrimonio_inmaterial_n: ({ '11101': 48, '11102': 22, '11201': 34, '11202': 38, '11203': 26, '11401': 24, '11402': 46, '11301': 42, '11302': 14, '11303': 19 })[ine] || 0,
       bibliotecas_snbp_n: Number(g9.bibliotecas_publicas_count) || 0,
+      bibliotecas_publicas_count: Number(g9.bibliotecas_publicas_count) || 0,
       fondart_fndr_mclp: (Number(g9.fondos_cultura_adjudicados_mclp) || 0) + (Number(g9.fndr_8pct_cultura_mclp) || 0),
       total_espacios_culturales: Number(g9.total_espacios_culturales) || 0,
       monumentos_nacionales_count: Number(g9.monumentos_nacionales_count) || 0,
@@ -4367,7 +4372,7 @@ function buildComunaRows() {
       sucursales_banca_privada_cmf: BANCA_PRIVADA_MAP[ine] !== undefined ? BANCA_PRIVADA_MAP[ine] : 0,
       puntos_cajavecina_bancoestado: CAJAVECINA_MAP[ine] !== undefined ? CAJAVECINA_MAP[ine] : 0,
       tasa_aprobacion_rs_sni_pct: RS_SNI_MAP[ine] !== undefined ? RS_SNI_MAP[ine] : 31.5,
-      autoidentificacion_indigena_pct: AUTOIDENTIFICACION_INDIGENA_MAP[ine] !== undefined ? AUTOIDENTIFICACION_INDIGENA_MAP[ine] : 28.7,
+      autoidentificacion_indigena_pct: AUTOIDENTIFICACION_INDIGENA_MAP[ine] !== undefined ? AUTOIDENTIFICACION_INDIGENA_MAP[ine] : 29.0,
       comunidades_indigenas_conadi: COMUNIDADES_CONADI_MAP[ine] !== undefined ? COMUNIDADES_CONADI_MAP[ine] : 0,
       gasto_cultural_per_capita_clp: GASTO_CULTURAL_MAP[ine] !== undefined ? GASTO_CULTURAL_MAP[ine] : 0,
       juntas_vecinos_activas: JJVV_ACTIVAS_MAP[ine] !== undefined ? JJVV_ACTIVAS_MAP[ine] : 0,
@@ -5462,12 +5467,12 @@ comunasBase.forEach((c) => {
 
 // 11) Modulo Cultura y Patrimonio: 18 hitos georreferenciados (incl. Bano Nuevo, Formacion Toqui y Biblioteca Tortel)
 const CULTURA_MAGNITUDES = {
-  'CP-NOD-01': { val: 24500, unit: 'visitas/año', lbl: 'Visitas Anuales SERPAT RMC' },
+  'CP-NOD-01': { val: 36173, unit: 'visitas/año', lbl: 'Visitas Anuales SERPAT SNM 2025 (#12 nacional; +27,0% vs 2024)' },
   'CP-NOD-02': { val: 4800, unit: 'visitas/año', lbl: 'Visitas Sitio Histórico CMN' },
   'CP-NOD-03': { val: 14200, unit: 'visitas/año', lbl: 'Visitas Zona Típica CMN' },
   'CP-NOD-04': { val: 41000, unit: 'visitas/año', lbl: 'Visitas Santuario Naturaleza CMN' },
   'CP-NOD-05': { val: 5000, unit: 'años AP (arte rupestre)', lbl: 'Antigüedad Sitio Arqueológico CMN' },
-  'CP-NOD-06': { val: 18600, unit: 'préstamos/atenciones/año', lbl: 'Actividad SNBP BiblioRedes' },
+  'CP-NOD-06': { val: 18199, unit: 'préstamos físicos/año', lbl: 'Préstamos Biblioteca Regional SNBP 2024 (4.416 socios activos)' },
   'CP-NOD-07': { val: 15400, unit: 'asistentes/año', lbl: 'Público Centro Cultural MINCAP' },
   'CP-NOD-08': { val: 3100, unit: 'visitas/año', lbl: 'Visitas Monumento Histórico CMN' },
   'CP-NOD-09': { val: 9200, unit: 'préstamos/atenciones/año', lbl: 'Actividad SNBP Puerto Aysén' },

@@ -85,7 +85,9 @@ const STRUCTURAL_PREFIXES = [
   'centros_salud',
   'museos_',
   'bibliotecas_',
+  'monumentos_nacionales_',
   'centros_culturales_',
+  'puntos_cultura_comunitaria_',
   'total_espacios_culturales',
   'holdings_operadores_',
   'acs_concesiones_',
@@ -737,6 +739,80 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     nodo39Ds1Sum
   };
 
+
+  // Contexto Hub IX (Sprint 12 - Eval E22: CMN 16/23, RMC 16/27, MRA 36173, SNBP 16/31221, Gasto Censo 2024, Indigena 29.0% / 29230, CONADI 47 SIIC, 25 PCC, Barometro Semaforo, Wiki)
+  const wp09PathAudit = options.wp09Path || path.join(ROOT_DIR, 'data', 'systemic', '09_cultura_patrimonio.json');
+  const wp09JsonAudit = readJsonSafe(wp09PathAudit, null);
+  const wp09ResAudit = (wp09JsonAudit && wp09JsonAudit.resumen_regional) || {};
+  const wp09ComsAudit = Array.isArray(wp09JsonAudit && wp09JsonAudit.por_comuna) ? wp09JsonAudit.por_comuna : [];
+  const wp09NodosAudit = Array.isArray(wp09JsonAudit && wp09JsonAudit.nodos_georreferenciados) ? wp09JsonAudit.nodos_georreferenciados : [];
+  const culNodesSpatial = Array.isArray(dataLake?.spatialNodesByLayer?.museos_cultura) ? dataLake.spatialNodesByLayer.museos_cultura : [];
+  const mraSpatial = culNodesSpatial.find(n => n && n.id === 'cul_CP-NOD-01') || null;
+  const marmolSpatial = culNodesSpatial.find(n => n && n.id === 'cul_CP-NOD-04') || null;
+  const bibRegSpatial = culNodesSpatial.find(n => n && n.id === 'cul_CP-NOD-06') || null;
+  const marmolJsonNode = wp09NodosAudit.find(n => n && n.id === 'CP-NOD-04') || null;
+
+  const cmnBienesByIne = {};
+  const semaforoMuestralByIne = {};
+  for (const row of wp09ComsAudit) {
+    const ine = String(row && row.comuna_ine || '');
+    if (!ine) continue;
+    cmnBienesByIne[ine] = Number(row?.datos?.monumentos_nacionales_bienes_count ?? 0);
+    semaforoMuestralByIne[ine] = String(row?.datos?.semaforo_muestral_barometro || '');
+  }
+
+  const readWikiSafe = (relParts) => {
+    try {
+      const fp = path.join(ROOT_DIR, ...relParts);
+      return fs.existsSync(fp) ? fs.readFileSync(fp, 'utf8') : '';
+    } catch (_) {
+      return '';
+    }
+  };
+  const wikiHub9Txt = readWikiSafe(['wiki', 'hubs', 'hub_09_cultura.md']);
+  const wikiN32Txt = readWikiSafe(['wiki', 'nodos', 'nodo_32.md']);
+  const wikiN33Txt = readWikiSafe(['wiki', 'nodos', 'nodo_33.md']);
+  const wikiN34Txt = readWikiSafe(['wiki', 'nodos', 'nodo_34.md']);
+  const combinedWikiH9 = `${wikiHub9Txt}\n${wikiN32Txt}\n${wikiN33Txt}\n${wikiN34Txt}`;
+  const wikiHasObsolete18Rmc = /18 espacios museogr[aá]ficos inscritos en el Registro de Museos de Chile/i.test(combinedWikiH9);
+  const tortelRowMatch = wikiN34Txt.match(/\|\s*\[\[comunas\/tortel\|Tortel\]\][^\n]*/i);
+  const wikiNodo34HasObsoleteTortel19 = tortelRowMatch ? /\|\s*19(?:\.0)?%\s*\|/i.test(tortelRowMatch[0]) : false;
+
+  const hub9CulturaAudit = {
+    cmnBienesByIne,
+    cmnBienesTotal: Number(wp09ResAudit.total_monumentos_nacionales_bienes_cmn || 0),
+    capillaMarmolComunaIne: String(marmolSpatial?.comuna_ine || marmolJsonNode?.comuna_ine || ''),
+    museosRedRegionalTotal: Number(wp09ResAudit.total_museos_red_regional || 0),
+    mraVisitas2025: Number(mraSpatial?.magnitudeValue ?? wp09ResAudit.visitas_museo_regional_aysen_2025 ?? 0),
+    bibRegPrestamos2024: Number(bibRegSpatial?.magnitudeValue ?? 0),
+    bibliotecasPublicasByIne: Object.fromEntries(
+      (dataLake.comunas || []).map(r => [String(r.comuna_ine || ''), Number(r.bibliotecas_publicas_count ?? NaN)])
+    ),
+    museosEspaciosByIne: Object.fromEntries(
+      (dataLake.comunas || []).map(r => [String(r.comuna_ine || ''), Number(r.museos_espacios_n ?? NaN)])
+    ),
+    gastoCulturalAliasByIne: Object.fromEntries(
+      (dataLake.comunas || []).map(r => [String(r.comuna_ine || ''), Number(r.gasto_cultural_per_capita_clp ?? NaN)])
+    ),
+    autoidentificacionIndigenaByIne: Object.fromEntries(
+      (dataLake.comunas || []).map(r => [String(r.comuna_ine || ''), Number(r.autoidentificacion_indigena_pct ?? NaN)])
+    ),
+    pueblosOriginariosResumen: {
+      total_comunidades_conadi_registradas: Number(wp09ResAudit.pueblos_originarios?.total_comunidades_conadi_registradas || 0),
+      familias_comunidades_conadi_siic: Number(wp09ResAudit.pueblos_originarios?.familias_comunidades_conadi_siic || 0),
+      total_organizaciones_indigenas_comunidades_y_asociaciones: Number(wp09ResAudit.pueblos_originarios?.total_organizaciones_indigenas_comunidades_y_asociaciones || 0),
+      poblacion_indigena_censo_2024: Number(wp09ResAudit.pueblos_originarios?.poblacion_indigena_censo_2024 || 0),
+      autoidentificacion_regional_pct: Number(wp09ResAudit.pueblos_originarios?.autoidentificacion_regional_pct || 0)
+    },
+    semaforoMuestralByIne,
+    barometroMicrodatosB4B: {
+      promedio: Number(wp09ResAudit.nota_percepcion_cultura_microdatos_b4b || 0),
+      tasa_positiva_pct: Number(wp09ResAudit.tasa_positiva_cultura_b4b_pct || 0)
+    },
+    wikiHasObsolete18Rmc,
+    wikiNodo34HasObsoleteTortel19
+  };
+
   return {
     schemaVersion: '3.0.0',
     label,
@@ -757,6 +833,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     hub6SocialAudit,
     hub7BiodivAudit,
     hub8SaludAudit,
+    hub9CulturaAudit,
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -1842,6 +1919,154 @@ function evaluateHub8SaludSsaDeisSigteSamuInvariants(bundleOrSnapshot, options =
   return alerts;
 }
 
+
+function evaluateHub9CulturaPatrimonioConadiBarometroInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'direct', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h9 = snapshot.hub9CulturaAudit || {};
+  if (comunas.length < 10 || !indicators.monumentos_nacionales_count) return alerts;
+
+  const getNum = (key, ine) => Number(indicators[key]?.values?.[ine] ?? NaN);
+  const sumInd = (key) => comunas.reduce((a, c) => a + (Number(indicators[key]?.values?.[c.comuna_ine]) || 0), 0);
+
+  // 1. Catastro CMN Monumentos Nacionales: 16 declaratorias / 23 bienes, Chile Chico = 0, Capilla de Marmol -> Rio Ibanez (11402), Lago Verde=1, Cisnes=1, Cochrane=1
+  const expCmn = { '11101': 2, '11102': 1, '11201': 5, '11202': 1, '11203': 0, '11401': 0, '11402': 4, '11301': 1, '11302': 0, '11303': 2 };
+  const sumCmn = sumInd('monumentos_nacionales_count');
+  const cmnMismatch = Object.entries(expCmn).some(([ine, v]) => getNum('monumentos_nacionales_count', ine) !== v);
+  if (
+    sumCmn !== 16 ||
+    cmnMismatch ||
+    Number(h9.cmnBienesTotal || 0) !== 23 ||
+    getNum('monumentos_nacionales_count', '11401') !== 0 ||
+    String(h9.capillaMarmolComunaIne || '') !== '11402' ||
+    getNum('monumentos_nacionales_count', '11102') !== 1 ||
+    getNum('monumentos_nacionales_count', '11202') !== 1 ||
+    getNum('monumentos_nacionales_count', '11301') !== 1
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CATASTRO_CMN_MONUMENTOS_NACIONALES',
+      invariant: 'INVARIANTE_CMN_16_DECLARATORIAS_23_BIENES',
+      indicator: 'monumentos_nacionales_count',
+      hub: CANONICAL_HUB_TITLES.cultura,
+      detail: `[ERROR_CATASTRO_CMN_MONUMENTOS_NACIONALES] sumCMN=${sumCmn} (esp. 16), bienes=${h9.cmnBienesTotal} (23), ChileChico=${getNum('monumentos_nacionales_count', '11401')} (0), CapillaMarmol=${h9.capillaMarmolComunaIne} (11402).`
+    });
+  }
+
+  // 2. Catastro RMC Museos (16 activos / 27 red), MRA 36173 visitas, SNBP (16 fijas) y 54 espacios totales
+  const expMus = { '11101': 8, '11102': 0, '11201': 1, '11202': 0, '11203': 0, '11401': 2, '11402': 2, '11301': 2, '11302': 1, '11303': 0 };
+  const expBib = { '11101': 2, '11102': 1, '11201': 3, '11202': 3, '11203': 1, '11401': 2, '11402': 1, '11301': 1, '11302': 1, '11303': 1 };
+  const expTot = { '11101': 14, '11102': 3, '11201': 10, '11202': 5, '11203': 1, '11401': 4, '11402': 7, '11301': 5, '11302': 2, '11303': 3 };
+  const sumMus = sumInd('museos_count');
+  const sumBib = sumInd('bibliotecas_snbp_n');
+  const sumTot = sumInd('total_espacios_culturales');
+  const musMismatch = Object.entries(expMus).some(([ine, v]) => getNum('museos_count', ine) !== v);
+  const bibMismatch = Object.entries(expBib).some(([ine, v]) => {
+    const aliasBib = indicators.bibliotecas_publicas_count
+      ? getNum('bibliotecas_publicas_count', ine)
+      : Number(h9.bibliotecasPublicasByIne?.[ine] ?? v);
+    return getNum('bibliotecas_snbp_n', ine) !== v || aliasBib !== v;
+  });
+  const totMismatch = Object.entries(expTot).some(([ine, v]) => getNum('total_espacios_culturales', ine) !== v);
+  if (
+    sumMus !== 16 ||
+    sumBib !== 16 ||
+    sumTot !== 54 ||
+    musMismatch ||
+    bibMismatch ||
+    totMismatch ||
+    Number(h9.mraVisitas2025 || 0) !== 36173 ||
+    Number(h9.museosRedRegionalTotal || 0) !== 27
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CATASTRO_RMC_MUSEOS_Y_SNBP_BIBLIOTECAS',
+      invariant: 'INVARIANTE_RMC_16_SNBP_16_ESPACIOS_54',
+      indicator: 'museos_count',
+      hub: CANONICAL_HUB_TITLES.cultura,
+      detail: `[ERROR_CATASTRO_RMC_MUSEOS_Y_SNBP_BIBLIOTECAS] museos=${sumMus} (16), red=${h9.museosRedRegionalTotal} (27), bib=${sumBib} (16), tot=${sumTot} (54), MRA=${h9.mraVisitas2025} (36173).`
+    });
+  }
+
+  // 3. Gasto Cultural Per Capita Censo 2024 exacto
+  const expGastoPc = { '11101': 11850, '11102': 43537, '11201': 9305, '11202': 15445, '11203': 25782, '11401': 15111, '11402': 19693, '11301': 17869, '11302': 32831, '11303': 32860 };
+  const gastoMismatch = comunas.some(c => {
+    const ine = String(c.comuna_ine);
+    const val = getNum('gasto_cultura_per_capita_clp', ine);
+    const gm = getNum('gasto_municipal_cultura_mclp', ine);
+    const pop = Number(indicators.poblacion_censo_2024?.values?.[ine] ?? snapshot.comunaPoblacion?.[ine] ?? 0);
+    const calc = pop > 0 ? Math.round((gm * 1000000) / pop) : -1;
+    return val !== expGastoPc[ine] || (calc > 0 && val !== calc);
+  });
+  if (gastoMismatch) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_GASTO_CULTURAL_PER_CAPITA_CENSO_2024',
+      invariant: 'INVARIANTE_GASTO_CULTURAL_PC_CENSO_2024',
+      indicator: 'gasto_cultura_per_capita_clp',
+      hub: CANONICAL_HUB_TITLES.cultura,
+      detail: `[ERROR_GASTO_CULTURAL_PER_CAPITA_CENSO_2024] Gasto cultural per capita desalineado respecto a Censo 2024 (LV=${getNum('gasto_cultura_per_capita_clp', '11102')} esp. 43537, Tortel=${getNum('gasto_cultura_per_capita_clp', '11303')} esp. 32860).`
+    });
+  }
+
+  // 4. Demografia Indigena Censo 2024 (29.0% = 29230 hab.), CONADI SIIC (47 / 490 familias) y 25 PCC
+  const expOrigPct = { '11101': 25.7, '11102': 28.2, '11201': 34.7, '11202': 34.9, '11203': 57.9, '11401': 26.0, '11402': 32.4, '11301': 24.5, '11302': 28.4, '11303': 40.2 };
+  const expPcc = { '11101': 6, '11102': 0, '11201': 1, '11202': 3, '11203': 0, '11401': 3, '11402': 4, '11301': 4, '11302': 3, '11303': 1 };
+  const origMismatch = Object.entries(expOrigPct).some(([ine, v]) => {
+    const pCenso = getNum('pueblos_originarios_pct_censo_2024', ine);
+    const pAuto = indicators.autoidentificacion_indigena_pct
+      ? getNum('autoidentificacion_indigena_pct', ine)
+      : Number(h9.autoidentificacionIndigenaByIne?.[ine] ?? v);
+    return Math.abs(pCenso - v) > 0.05 || Math.abs(pAuto - v) > 0.05 || Math.abs(pCenso - pAuto) > 0.05;
+  });
+  const sumPcc = sumInd('puntos_cultura_comunitaria_pcc_n');
+  const pccMismatch = Object.entries(expPcc).some(([ine, v]) => getNum('puntos_cultura_comunitaria_pcc_n', ine) !== v);
+  const poRes = h9.pueblosOriginariosResumen || {};
+  if (
+    origMismatch ||
+    sumPcc !== 25 ||
+    pccMismatch ||
+    Number(poRes.total_comunidades_conadi_registradas || 0) !== 47 ||
+    Number(poRes.familias_comunidades_conadi_siic || 0) !== 490 ||
+    Number(poRes.poblacion_indigena_censo_2024 || 0) !== 29230 ||
+    Math.abs(Number(poRes.autoidentificacion_regional_pct || 0) - 29.0) > 0.05
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_DEMOGRAFIA_INDIGENA_CENSO_2024_Y_CONADI_PCC',
+      invariant: 'INVARIANTE_INDIGENA_29_0_CONADI_47_PCC_25',
+      indicator: 'pueblos_originarios_pct_censo_2024',
+      hub: CANONICAL_HUB_TITLES.cultura,
+      detail: `[ERROR_DEMOGRAFIA_INDIGENA_CENSO_2024_Y_CONADI_PCC] origMismatch=${origMismatch}, sumPcc=${sumPcc} (25), conadiSIIC=${poRes.total_comunidades_conadi_registradas} (47), fam=${poRes.familias_comunidades_conadi_siic} (490), pobInd=${poRes.poblacion_indigena_censo_2024} (29230).`
+    });
+  }
+
+  // 5. Wiki Hub IX limpia (sin "18 espacios museograficos..." ni "19%" en Tortel) y semaforo muestral Barometro en las 10 comunas
+  const sems = h9.semaforoMuestralByIne || {};
+  const ruralInes = ['11102', '11202', '11203', '11401', '11402', '11301', '11302', '11303'];
+  const semInvalid =
+    sems['11101'] !== 'verde' ||
+    sems['11201'] !== 'verde' ||
+    ruralInes.some(ine => sems[ine] !== 'rojo_baja_precision_n_menor_30');
+  if (Boolean(h9.wikiHasObsolete18Rmc) || Boolean(h9.wikiNodo34HasObsoleteTortel19) || semInvalid) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_WIKI_HUB09_Y_BAROMETRO_SEMAFORO',
+      invariant: 'INVARIANTE_WIKI_HUB09_Y_SEMAFORO_BAROMETRO',
+      indicator: 'nota_percepcion_cultura_b4b',
+      hub: CANONICAL_HUB_TITLES.cultura,
+      detail: `[ERROR_WIKI_HUB09_Y_BAROMETRO_SEMAFORO] obsolete18Rmc=${Boolean(h9.wikiHasObsolete18Rmc)}, tortel19=${Boolean(h9.wikiNodo34HasObsoleteTortel19)}, semInvalid=${semInvalid}.`
+    });
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -2104,7 +2329,8 @@ function compareSnapshots(baseline, current, options = {}) {
     ...evaluateHub5EconomyInvestmentLandInvariants(current, options),
     ...evaluateHub6SocialDemographyEducationHousingInvariants(current, options),
     ...evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(current, options),
-    ...evaluateHub8SaludSsaDeisSigteSamuInvariants(current, options)
+    ...evaluateHub8SaludSsaDeisSigteSamuInvariants(current, options),
+    ...evaluateHub9CulturaPatrimonioConadiBarometroInvariants(current, options)
   ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
@@ -2763,6 +2989,8 @@ module.exports = {
   evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants,
   evaluateHub8SaludSsaDeisSigteSamuInvariants,
   hub8_salud_ssa_deis_sigte_samu_consistency: evaluateHub8SaludSsaDeisSigteSamuInvariants,
+  evaluateHub9CulturaPatrimonioConadiBarometroInvariants,
+  hub9_cultura_patrimonio_conadi_barometro_consistency: evaluateHub9CulturaPatrimonioConadiBarometroInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

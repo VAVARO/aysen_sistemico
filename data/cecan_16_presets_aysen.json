@@ -4953,9 +4953,9 @@
               "promedio_valor": 4.04,
               "structural_variable": "gasto_cultura_per_capita_clp",
               "structural_by_macrozona": {
-                "norte": 20911.0,
-                "centro": 23483.0,
-                "sur": 24582.0
+                "norte": 20613.5,
+                "centro": 21564.0,
+                "sur": 23672.8
               },
               "por_nivel_educativo": {
                 "basica_media": {
