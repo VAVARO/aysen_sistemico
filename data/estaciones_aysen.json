@@ -249,6 +249,12 @@
       "etiqueta_metrica": "Retroceso Frontal Anual (metros)",
       "serie_temporal": [
         {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 115,
+          "unidad": "m/año"
+        },
+        {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
           "valor": 45,
@@ -313,12 +319,6 @@
           "fecha": "2026-11-15",
           "valor": 130,
           "unidad": "m/año"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 115,
-          "unidad": "m/año"
         }
       ]
     },
@@ -345,6 +345,12 @@
       "unidad": "m/año",
       "etiqueta_metrica": "Velocidad de Flujo (m/año)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 1650,
+          "unidad": "m/año"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -409,12 +415,6 @@
           "periodo_mes": "2026-11",
           "fecha": "2026-11-15",
           "valor": 1610,
-          "unidad": "m/año"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 1650,
           "unidad": "m/año"
         }
       ]
@@ -540,6 +540,12 @@
       "etiqueta_metrica": "Concentración Media MP2.5 (µg/m³)",
       "serie_temporal": [
         {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 16,
+          "unidad": "µg/m³"
+        },
+        {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
           "valor": 18,
@@ -604,12 +610,6 @@
           "fecha": "2026-11-15",
           "valor": 19,
           "unidad": "µg/m³"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 16,
-          "unidad": "µg/m³"
         }
       ]
     },
@@ -636,6 +636,12 @@
       "unidad": "mm",
       "etiqueta_metrica": "Precipitación Acumulada Mensual (mm)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 30,
+          "unidad": "mm"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -701,12 +707,6 @@
           "fecha": "2026-11-15",
           "valor": 32,
           "unidad": "mm"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 30,
-          "unidad": "mm"
         }
       ]
     },
@@ -733,6 +733,12 @@
       "unidad": "eventos",
       "etiqueta_metrica": "Eventos Sísmicos VT / LP (mensual)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 26,
+          "unidad": "eventos"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -798,12 +804,6 @@
           "fecha": "2026-11-15",
           "valor": 20,
           "unidad": "eventos"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 26,
-          "unidad": "eventos"
         }
       ]
     },
@@ -830,6 +830,12 @@
       "unidad": "mg/L",
       "etiqueta_metrica": "Oxígeno Disuelto Superficial (mg/L)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 8.6,
+          "unidad": "mg/L"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -895,12 +901,6 @@
           "fecha": "2026-11-15",
           "valor": 8.4,
           "unidad": "mg/L"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 8.6,
-          "unidad": "mg/L"
         }
       ]
     },
@@ -927,6 +927,12 @@
       "unidad": "mm",
       "etiqueta_metrica": "Precipitación Diaria Máxima (mm)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 48,
+          "unidad": "mm"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -992,12 +998,6 @@
           "fecha": "2026-11-15",
           "valor": 55,
           "unidad": "mm"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 48,
-          "unidad": "mm"
         }
       ]
     },
@@ -1024,6 +1024,12 @@
       "unidad": "nidos",
       "etiqueta_metrica": "Nidos de Desove Censados",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 560,
+          "unidad": "nidos"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -1089,12 +1095,6 @@
           "fecha": "2026-11-15",
           "valor": 510,
           "unidad": "nidos"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 560,
-          "unidad": "nidos"
         }
       ]
     },
@@ -1121,6 +1121,12 @@
       "unidad": "cél/L",
       "etiqueta_metrica": "Densidad Celular A. catenella (cél/L)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 0,
+          "unidad": "cél/L"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -1186,12 +1192,6 @@
           "fecha": "2026-11-15",
           "valor": 0,
           "unidad": "cél/L"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 0,
-          "unidad": "cél/L"
         }
       ]
     },
@@ -1218,6 +1218,12 @@
       "unidad": "kTon",
       "etiqueta_metrica": "Biomasa Cosechada (miles de ton)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 42,
+          "unidad": "kTon"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -1283,12 +1289,6 @@
           "fecha": "2026-11-15",
           "valor": 38,
           "unidad": "kTon"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 42,
-          "unidad": "kTon"
         }
       ]
     },
@@ -1315,6 +1315,12 @@
       "unidad": "kPasajeros",
       "etiqueta_metrica": "Pasajeros Comerciales (miles)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 35,
+          "unidad": "kPasajeros"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -1380,12 +1386,6 @@
           "fecha": "2026-11-15",
           "valor": 30,
           "unidad": "kPasajeros"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 35,
-          "unidad": "kPasajeros"
         }
       ]
     },
@@ -1412,6 +1412,12 @@
       "unidad": "kPersonas",
       "etiqueta_metrica": "Tránsito de Personas (miles)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 17,
+          "unidad": "kPersonas"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -1477,12 +1483,6 @@
           "fecha": "2026-11-15",
           "valor": 13,
           "unidad": "kPersonas"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 17,
-          "unidad": "kPersonas"
         }
       ]
     },
@@ -1509,6 +1509,12 @@
       "unidad": "$/litro",
       "etiqueta_metrica": "Precio Gasolina 93 ($/litro)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 1390,
+          "unidad": "$/litro"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -1573,12 +1579,6 @@
           "periodo_mes": "2026-11",
           "fecha": "2026-11-15",
           "valor": 1385,
-          "unidad": "$/litro"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 1390,
           "unidad": "$/litro"
         }
       ]

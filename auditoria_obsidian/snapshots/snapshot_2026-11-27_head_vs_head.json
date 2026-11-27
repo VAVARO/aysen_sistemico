@@ -1,8 +1,8 @@
 {
   "schemaVersion": "3.0.0",
   "label": "HEAD",
-  "capturedAt": "2026-11-27T14:11:16.054Z",
-  "bundleGeneratedAt": "2026-11-27T14:06:34.800Z",
+  "capturedAt": "2026-11-27T15:21:47.778Z",
+  "bundleGeneratedAt": "2026-11-27T15:21:37.303Z",
   "autoUpdateMeta": {
     "frequency": "Mensual (día 1 de cada mes)",
     "lastRun": "2026-11-02T12:13:30+00:00",
@@ -11,7 +11,7 @@
     "totalOfficialSources": 38,
     "totalHubs": 10,
     "totalNodes": 41,
-    "totalComunaVariables": 291
+    "totalComunaVariables": 294
   },
   "comunas": [
     {
@@ -617,6 +617,37 @@
     },
     "nodo36WikiText": "---\nid: nodo_36\ntitle: \"Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\"\ntype: nodo\nhub_id: ctci\nhub_roman: X\nvariables_clave:\n  - centros_y_estaciones_ctci_count\n  - investigadores_residentes_est\n  - proporcion_ciencia_endogena_pct\nfuentes_oficiales:\n  - \"Ministerio de Ciencia / OBSERVA / ANID\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - nodo\n  - hub-x\n---\n\n# Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\n\n## Síntesis Compilada (Consultor IA)\n\nInfraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026), INIA Tamel Aike (10), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos).\n\n## Indicadores Comunales Verificados\n\n| Comuna | Centros y Estaciones I+D | Investigadores Residentes | Instituciones Principales | Prioridad Ciudadana (%) |\n| --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 6 | 91 | CIEP / UAysén / INIA Tamel Aike / INFOR / UACh Patagonia / DGAC | 88.6% |\n| [[comunas/lago_verde|Lago Verde]] | 1 | 1 | MinCiencia / CONAF / UAysén | 100% |\n| [[comunas/aysen|Aysén]] | 2 | 14 | CECs / U. de Chile / Plataforma Bioseguridad IFOP | 93.8% |\n| [[comunas/cisnes|Cisnes]] | 1 | 4 | IFOP Puerto Cisnes | 85.2% |\n| [[comunas/guaitecas|Guaitecas]] | 1 | 2 | IFOP Melinka (Marea Roja) | 87.5% |\n| [[comunas/chile_chico|Chile Chico]] | 1 | 3 | INIA Tamel Aike (Agroclimática) | 84% |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 1 | 2 | Pontificia Universidad Católica (PUC) | 90% |\n| [[comunas/cochrane|Cochrane]] | 1 | 3 | CIEP / UAysén (Cuencas Australes) | 83.3% |\n| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | CECs / U. de Concepción | 100% |\n| [[comunas/tortel|Tortel]] | 1 | 3 | CIEP / Municipalidad de Tortel | 100% |\n\n## Metadatos de Procedencia Institucional\n\n- **Entidad Oficial**: Ministerio de Ciencia / OBSERVA / ANID\n- **Fecha de Corte**: Catastro Oficial 2026\n- **Método de Captura**: Registro administrativo oficial y estadísticas sectoriales consolidadas\n- **Subsistema VSM**: S4 · Flujo metabólico: info\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Hub Perteneciente**: [[hubs/hub_10_ctci|Hub X — Ciencia, Tecnología, Conocimiento e Innovación (CTCi) en Aysén]]\n- **Nodos Satélite Relacionados**: [[nodos/nodo_06|Nodo #06]] · [[nodos/nodo_09|Nodo #09]] · [[nodos/nodo_25|Nodo #25]] · [[nodos/nodo_27|Nodo #27]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **ADRs de Referencia**: [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]] · [[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]\n"
   },
+  "hub8SaludAudit": {
+    "hrcQuirofanosTotales": 4,
+    "totalPabellonesQuirurgicos": 8,
+    "chileChicoHospitalName": "Hospital Dr. Leopoldo Ortega Rodriguez de Chile Chico",
+    "apsResumen": {
+      "total_cesfam": 4,
+      "total_cecosf": 4,
+      "total_postas_salud_rural_psr": 27,
+      "total_emr_ssa": 9,
+      "total_cosam": 2
+    },
+    "sigteRegional": {
+      "cne_no_ges_ssa_t3_2026": 14751,
+      "iq_no_ges_ssa_t3_2026": 3608,
+      "odontologia_no_ges_ssa_dic2024": 6870,
+      "retrasos_ges_ssa_t3_2026": 524,
+      "mediana_espera_cne_dias": 159,
+      "mediana_espera_quirurgica_dias": 262
+    },
+    "wp05AeroSum": 454,
+    "minsalDetAeroSum": 454,
+    "dotacionMedica": {
+      "medicos_rnpi_por_mil_hab": 5.54,
+      "medicos_red_publica_ssa_por_mil_hab": 1.8
+    },
+    "saludBarometroHasB3B": false,
+    "estacionesCount": 16,
+    "estacionesHasFuture202612": false,
+    "nodo39Ds0Sum": 14751,
+    "nodo39Ds1Sum": 454
+  },
   "centralesElectricas": [
     {
       "id": "ene_cne_CENTRAL-TERMICA-TEHUELCHE",
@@ -766,8 +797,8 @@
       "potencia_mw": 0.35
     }
   ],
-  "totalKeys": 291,
-  "indicatorCount": 248,
+  "totalKeys": 294,
+  "indicatorCount": 249,
   "indicators": {
     "poblacion_censo_2024": {
       "type": "numeric",
@@ -923,15 +954,15 @@
       "type": "categorical",
       "values": {
         "11101": "Hospital Regional Coyhaique",
-        "11102": "Sin hospital en la comuna (Atencion Primaria Rural)",
+        "11102": "Sin hospital en la comuna (3 PSR dependientes del DAP SSA)",
         "11201": "Hospital de Puerto Aysen",
         "11202": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
-        "11203": "Sin hospital en el archipielago (Cobertura por CESFAM Melinka)",
-        "11301": "Hospital Comunitario de Cochrane (Hospital Lord Cochrane)",
-        "11302": "Sin hospital en la comuna (Posta Rural de Aislamiento Extremo)",
-        "11303": "Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas)",
-        "11401": "Hospital Familiar y Comunitario San Jose / Dr. Leopoldo Ortega Rodriguez de Chile Chico",
-        "11402": "Sin hospital en la comuna (Atencion Primaria con CESFAM y Postas)"
+        "11203": "Sin hospital en el archipielago (Posta de Salud Rural Melinka con SUR, DEIS SSA)",
+        "11301": "Hospital Lord Cochrane",
+        "11302": "Sin hospital en la comuna (PSR Villa O'Higgins con 2 medicos EDF permanentes jun-2026)",
+        "11303": "Sin hospital en la comuna (PSR Caleta Tortel en pasarelas de cipres)",
+        "11401": "Hospital Dr. Leopoldo Ortega Rodriguez de Chile Chico",
+        "11402": "Sin hospital en la comuna (5 PSR y 2 EMR dependientes del DAP SSA)"
       }
     },
     "aerodromo": {
@@ -1702,15 +1733,15 @@
     "camas_hospitalarias": {
       "type": "numeric",
       "values": {
-        "11101": 167,
+        "11101": 135,
         "11102": 0,
-        "11201": 52,
-        "11202": 12,
+        "11201": 56,
+        "11202": 8,
         "11203": 0,
-        "11301": 16,
+        "11301": 7,
         "11302": 0,
         "11303": 0,
-        "11401": 14,
+        "11401": 7,
         "11402": 0
       }
     },
@@ -2212,16 +2243,16 @@
     "espera_no_ges_n": {
       "type": "numeric",
       "values": {
-        "11101": 5420,
-        "11102": 128,
-        "11201": 2450,
-        "11202": 890,
-        "11203": 410,
-        "11301": 460,
-        "11302": 96,
-        "11303": 112,
-        "11401": 520,
-        "11402": 280
+        "11101": 8120,
+        "11102": 148,
+        "11201": 3465,
+        "11202": 835,
+        "11203": 268,
+        "11301": 617,
+        "11302": 106,
+        "11303": 88,
+        "11401": 682,
+        "11402": 422
       }
     },
     "urgencias_respiratorias_pct": {
@@ -2242,7 +2273,7 @@
     "aeroevacuaciones_samu_n": {
       "type": "numeric",
       "values": {
-        "11101": 0,
+        "11101": 12,
         "11102": 24,
         "11201": 48,
         "11202": 72,
@@ -2379,14 +2410,29 @@
       "values": {
         "11101": 7,
         "11102": 3,
-        "11201": 4,
+        "11201": 2,
         "11202": 4,
         "11203": 1,
-        "11301": 1,
+        "11301": 0,
         "11302": 1,
         "11303": 1,
-        "11401": 2,
-        "11402": 3
+        "11401": 3,
+        "11402": 5
+      }
+    },
+    "aeroevacuaciones_secundarias_interregionales_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 45,
+        "11102": 0,
+        "11201": 0,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
       }
     },
     "centros_culturales_n": {
@@ -2812,16 +2858,16 @@
     "establecimientos_aps_n": {
       "type": "numeric",
       "values": {
-        "11101": 13,
-        "11102": 5,
-        "11201": 7,
+        "11101": 12,
+        "11102": 3,
+        "11201": 6,
         "11202": 7,
-        "11203": 3,
-        "11301": 3,
-        "11302": 3,
-        "11303": 3,
-        "11401": 4,
-        "11402": 5
+        "11203": 2,
+        "11301": 0,
+        "11302": 1,
+        "11303": 1,
+        "11401": 5,
+        "11402": 7
       }
     },
     "holdings_operadores_salmon": {
@@ -3442,31 +3488,31 @@
     "mediana_espera_especialidad_dias": {
       "type": "numeric",
       "values": {
-        "11101": 218,
-        "11102": 334,
-        "11201": 242,
-        "11202": 274,
-        "11203": 346,
-        "11301": 269,
-        "11302": 305,
-        "11303": 288,
-        "11401": 262,
-        "11402": 302
+        "11101": 124,
+        "11102": 186,
+        "11201": 138,
+        "11202": 162,
+        "11203": 194,
+        "11301": 146,
+        "11302": 172,
+        "11303": 148,
+        "11401": 152,
+        "11402": 168
       }
     },
     "mediana_espera_quirurgica_dias": {
       "type": "numeric",
       "values": {
-        "11101": 318,
-        "11102": 418,
-        "11201": 354,
-        "11202": 412,
-        "11203": 468,
-        "11301": 368,
-        "11302": 436,
-        "11303": 388,
-        "11401": 364,
-        "11402": 424
+        "11101": 218,
+        "11102": 284,
+        "11201": 234,
+        "11202": 268,
+        "11203": 312,
+        "11301": 242,
+        "11302": 280,
+        "11303": 258,
+        "11401": 248,
+        "11402": 276
       }
     },
     "tasa_mortalidad_cancer_gastrico_100k": {
@@ -3487,31 +3533,31 @@
     "tasa_mortalidad_cancer_vesicula_100k": {
       "type": "numeric",
       "values": {
-        "11101": 10.8,
-        "11102": 14.9,
-        "11201": 12.1,
-        "11202": 12.4,
-        "11203": 13.5,
-        "11301": 11.8,
-        "11302": 11.6,
-        "11303": 11.5,
-        "11401": 13.2,
-        "11402": 14.2
+        "11101": 15.8,
+        "11102": 21.4,
+        "11201": 17.6,
+        "11202": 18.1,
+        "11203": 19.5,
+        "11301": 17.2,
+        "11302": 16.9,
+        "11303": 16.6,
+        "11401": 19.2,
+        "11402": 20.6
       }
     },
     "tasa_mortalidad_suicidio_100k": {
       "type": "numeric",
       "values": {
-        "11101": 13.4,
-        "11102": 17.8,
-        "11201": 15.6,
-        "11202": 14.8,
-        "11203": 16.2,
-        "11301": 13.9,
-        "11302": 14.2,
-        "11303": 13.8,
-        "11401": 14.5,
-        "11402": 16.8
+        "11101": 17.8,
+        "11102": 23.4,
+        "11201": 20.6,
+        "11202": 19.5,
+        "11203": 21.3,
+        "11301": 18.3,
+        "11302": 18.7,
+        "11303": 18.2,
+        "11401": 19.1,
+        "11402": 22.1
       }
     },
     "tasa_dmcs_100k": {

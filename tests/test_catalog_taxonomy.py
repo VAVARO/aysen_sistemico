@@ -284,11 +284,11 @@ vm.runInNewContext(mainCode, ctx);
         by_id = {n["id"]: n for n in nodos}
         self.assertEqual(
             by_id[24]["title"],
-            "Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)",
+            "Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 213 Camas)",
         )
         self.assertEqual(
             by_id[38]["title"],
-            "Atención Primaria Rural: 27 Postas (PSR), 20 EMR y Rondas Médicas",
+            "Atención Primaria Rural: 27 Postas (PSR), 9 EMR, 4 CESFAM, 4 CECOSF y Rondas Médicas",
         )
         self.assertEqual(
             by_id[32]["title"],

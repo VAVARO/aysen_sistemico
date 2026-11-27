@@ -3483,84 +3483,84 @@
           }
         },
         {
-          "codigo": "B3_B",
-          "enunciado": "Evaluación del acceso a educación pública de calidad",
-          "tipo": "nota_1_7",
+          "codigo": "I4_A",
+          "enunciado": "Urgencia de resolver contaminación del aire por humo de leña",
+          "tipo": "escala_4",
           "N_total": 465,
-          "n_muestral_valido": 456,
-          "me_95_total": 4.58,
+          "n_muestral_valido": 460,
+          "me_95_total": 4.56,
           "semaforo_global": "verde",
-          "tasa_positiva_pct": 49.6,
-          "promedio_valor": 4.29,
+          "tasa_positiva_pct": 92.6,
+          "promedio_valor": 3.72,
           "micro_cubos": {
             "por_nivel_educativo": {
               "basica_media": {
                 "N_estrato": 200,
-                "n_muestral": 194,
-                "me_95": 7.03,
+                "n_muestral": 195,
+                "me_95": 7.01,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 54.1,
-                "promedio_valor": 4.34
+                "tasa_positiva_pct": 90.8,
+                "promedio_valor": 3.68
               },
               "tecnico_superior": {
                 "N_estrato": 94,
-                "n_muestral": 93,
-                "me_95": 10.16,
+                "n_muestral": 94,
+                "me_95": 10.1,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 41.9,
-                "promedio_valor": 4.08
+                "tasa_positiva_pct": 89.4,
+                "promedio_valor": 3.65
               },
               "universitaria": {
                 "N_estrato": 171,
-                "n_muestral": 169,
-                "me_95": 7.53,
+                "n_muestral": 171,
+                "me_95": 7.49,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 48.5,
-                "promedio_valor": 4.35
+                "tasa_positiva_pct": 96.5,
+                "promedio_valor": 3.8
               }
             },
             "por_nse": {
               "bajo": {
                 "N_estrato": 150,
-                "n_muestral": 147,
-                "me_95": 8.08,
+                "n_muestral": 146,
+                "me_95": 8.1,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 55.1,
-                "promedio_valor": 4.33
+                "tasa_positiva_pct": 87.0,
+                "promedio_valor": 3.6
               },
               "medio": {
                 "N_estrato": 186,
-                "n_muestral": 182,
-                "me_95": 7.26,
+                "n_muestral": 185,
+                "me_95": 7.2,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 44.5,
-                "promedio_valor": 4.16
+                "tasa_positiva_pct": 94.6,
+                "promedio_valor": 3.75
               },
               "alto": {
                 "N_estrato": 129,
-                "n_muestral": 127,
-                "me_95": 8.69,
+                "n_muestral": 129,
+                "me_95": 8.62,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 50.4,
-                "promedio_valor": 4.42
+                "tasa_positiva_pct": 96.1,
+                "promedio_valor": 3.81
               }
             },
             "por_sexo": {
               "hombre": {
                 "N_estrato": 217,
-                "n_muestral": 213,
-                "me_95": 6.71,
+                "n_muestral": 217,
+                "me_95": 6.64,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 48.4,
-                "promedio_valor": 4.23
+                "tasa_positiva_pct": 91.2,
+                "promedio_valor": 3.72
               },
               "mujer": {
                 "N_estrato": 248,
                 "n_muestral": 243,
                 "me_95": 6.28,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 50.6,
-                "promedio_valor": 4.35
+                "tasa_positiva_pct": 93.8,
+                "promedio_valor": 3.71
               }
             },
             "por_tramo_edad": {
@@ -3569,58 +3569,58 @@
                 "n_muestral": 74,
                 "me_95": 11.39,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 40.5,
-                "promedio_valor": 4.01
+                "tasa_positiva_pct": 93.2,
+                "promedio_valor": 3.72
               },
               "30-44": {
                 "N_estrato": 154,
-                "n_muestral": 152,
-                "me_95": 7.94,
+                "n_muestral": 153,
+                "me_95": 7.91,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 48.7,
-                "promedio_valor": 4.16
+                "tasa_positiva_pct": 95.4,
+                "promedio_valor": 3.76
               },
               "45-59": {
                 "N_estrato": 151,
-                "n_muestral": 149,
-                "me_95": 8.02,
+                "n_muestral": 150,
+                "me_95": 7.99,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 54.4,
-                "promedio_valor": 4.42
+                "tasa_positiva_pct": 93.3,
+                "promedio_valor": 3.77
               },
               "60+": {
                 "N_estrato": 86,
-                "n_muestral": 81,
-                "me_95": 10.88,
+                "n_muestral": 83,
+                "me_95": 10.75,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 50.6,
-                "promedio_valor": 4.53
+                "tasa_positiva_pct": 85.5,
+                "promedio_valor": 3.55
               }
             },
             "por_macrozona": {
               "centro": {
                 "N_estrato": 206,
-                "n_muestral": 203,
-                "me_95": 6.87,
+                "n_muestral": 206,
+                "me_95": 6.82,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 57.1,
-                "promedio_valor": 4.48
+                "tasa_positiva_pct": 95.1,
+                "promedio_valor": 3.82
               },
               "norte": {
                 "N_estrato": 154,
                 "n_muestral": 150,
                 "me_95": 7.99,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 45.3,
-                "promedio_valor": 4.29
+                "tasa_positiva_pct": 86.7,
+                "promedio_valor": 3.52
               },
               "sur": {
                 "N_estrato": 105,
-                "n_muestral": 103,
-                "me_95": 9.65,
+                "n_muestral": 104,
+                "me_95": 9.6,
                 "semaforo": "verde",
-                "tasa_positiva_pct": 40.8,
-                "promedio_valor": 3.92
+                "tasa_positiva_pct": 96.2,
+                "promedio_valor": 3.81
               }
             }
           }

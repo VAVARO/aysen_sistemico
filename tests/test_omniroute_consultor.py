@@ -602,7 +602,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             '78 centros activos',
             '185.000 ton',
             '48,7% dependencia FCM',
-            '12 camas',
+            '8 camas',
             '1.011 alumnos',
             '94% leña'
         ];
@@ -1093,7 +1093,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             {
                 topic: 'listas_espera',
                 query: 'listas de espera de especialidad y quirurgica sigte minsal',
-                expectedKeywords: ['SIGTE', '11.420'],
+                expectedKeywords: ['SIGTE', '14.751'],
                 expectedSource: 'SIGTE'
             },
             {
@@ -1104,8 +1104,8 @@ class TestOmniRouteConsultor(unittest.TestCase):
             },
             {
                 topic: 'red_asistencial_camas',
-                query: 'camas hospitalarias hrc 167 de 261 y postas de salud rural 27 psr',
-                expectedKeywords: ['167 camas', '27 Postas'],
+                query: 'camas hospitalarias hrc 135 de 213 y postas de salud rural 27 psr',
+                expectedKeywords: ['135 camas', '213 camas'],
                 expectedSource: 'DEIS'
             },
             {

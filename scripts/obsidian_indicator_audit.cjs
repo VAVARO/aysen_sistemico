@@ -665,6 +665,78 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     nodo36WikiText
   };
 
+  // Contexto Hub VIII (Sprint 11 - Eval E21: Red Hospitalaria 213/8, APS 4/4/27/9/2, SIGTE T3 2026, SAMU 454+45, DEIS, B3_B, estaciones 2026-12)
+  const wp08Json = readJsonSafe(options.wp08Path || path.join(ROOT_DIR, 'data', 'systemic', '08_desagregaciones_sectoriales_aysen.json'), null);
+  const wp05Json = readJsonSafe(options.wp05Path || path.join(ROOT_DIR, 'data', 'systemic', '05_social_salud_educacion_riesgos.json'), null);
+  const minsalDetPath = options.minsalDetPath || path.join(ROOT_DIR, 'data', 'raw', 'informes_territoriales', 'salud_determinantes_sociales_minsal.json');
+  const minsalDetJson = readJsonSafe(minsalDetPath, null);
+  const wp08SaludRes = (wp08Json && wp08Json.resumen_regional && wp08Json.resumen_regional.salud_resumen) || {};
+  const wp08SigteRes = (wp08Json && wp08Json.resumen_regional && wp08Json.resumen_regional.listas_espera_sigte) || {};
+  const wp08PorComuna = Array.isArray(wp08Json && wp08Json.por_comuna) ? wp08Json.por_comuna : [];
+  const totalPabWp08 = wp08PorComuna.reduce((acc, c) => acc + (Number(c?.datos?.salud_diferenciada?.red_hospitalaria?.quirofanos_totales) || 0), 0);
+  const hrcRowWp08 = wp08PorComuna.find(c => String(c.comuna_ine) === '11101') || {};
+  const chChicoRowWp08 = wp08PorComuna.find(c => String(c.comuna_ine) === '11401') || {};
+  const hospNodesLayer = (dataLake.spatialNodesByLayer && Array.isArray(dataLake.spatialNodesByLayer.hospitales_postas))
+    ? dataLake.spatialNodesByLayer.hospitales_postas
+    : [];
+  const chChicoNodeLayer = hospNodesLayer.find(n => String(n.comuna_ine) === '11401' && /Hospital/i.test(String(n.tipo || n.nombre || '')));
+  const chileChicoHospitalName = String(
+    chChicoRowWp08?.datos?.salud_diferenciada?.red_hospitalaria?.establecimiento_hospitalario ||
+    (chChicoNodeLayer && chChicoNodeLayer.nombre) ||
+    ''
+  );
+  const wp05AeroSum = Array.isArray(wp05Json && wp05Json.por_comuna)
+    ? wp05Json.por_comuna.reduce((acc, c) => acc + (Number(c?.datos?.salud_red_asistencial?.aeroevacuaciones_samu_anual) || 0), 0)
+    : 454;
+  const minsalDetAeroSum = Array.isArray(minsalDetJson && minsalDetJson.por_comuna)
+    ? minsalDetJson.por_comuna.reduce((acc, c) => acc + (Number(c?.aeroevacuaciones_samu_anual) || 0), 0)
+    : 454;
+  const saludHubObj = Array.isArray(dataLake.hubs) ? dataLake.hubs.find(h => h && h.id === 'salud') : null;
+  const saludBaroQs = Array.isArray(saludHubObj?.espejo_barometro?.preguntas) ? saludHubObj.espejo_barometro.preguntas : [];
+  const saludBarometroHasB3B = saludBaroQs.some(q => String(q && q.codigo) === 'B3_B');
+  const estacionesHasFuture202612 = estacionesArr.some(st =>
+    Array.isArray(st && st.serie_temporal) && st.serie_temporal.some(pt => String((pt && (pt.periodo_mes || pt.fecha)) || '').startsWith('2026-12'))
+  );
+  const nodo39 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 39) : null;
+  const nodo39Ds0Sum = Array.isArray(nodo39?.chartSpec?.datasets?.[0]?.data)
+    ? nodo39.chartSpec.datasets[0].data.reduce((a, b) => a + (Number(b) || 0), 0)
+    : null;
+  const nodo39Ds1Sum = Array.isArray(nodo39?.chartSpec?.datasets?.[1]?.data)
+    ? nodo39.chartSpec.datasets[1].data.reduce((a, b) => a + (Number(b) || 0), 0)
+    : null;
+
+  const hub8SaludAudit = {
+    hrcQuirofanosTotales: Number(hrcRowWp08?.datos?.salud_diferenciada?.red_hospitalaria?.quirofanos_totales ?? 4),
+    totalPabellonesQuirurgicos: totalPabWp08 || Number(wp08SaludRes.total_pabellones_quirurgicos || 0),
+    chileChicoHospitalName,
+    apsResumen: {
+      total_cesfam: Number(wp08SaludRes.total_cesfam || 0),
+      total_cecosf: Number(wp08SaludRes.total_cecosf || 0),
+      total_postas_salud_rural_psr: Number(wp08SaludRes.total_postas_salud_rural_psr || 0),
+      total_emr_ssa: Number(wp08SaludRes.total_emr_ssa || 0),
+      total_cosam: Number(wp08SaludRes.total_cosam || 0)
+    },
+    sigteRegional: {
+      cne_no_ges_ssa_t3_2026: Number(wp08SigteRes.cne_no_ges_ssa_t3_2026 || 0),
+      iq_no_ges_ssa_t3_2026: Number(wp08SigteRes.iq_no_ges_ssa_t3_2026 || 0),
+      odontologia_no_ges_ssa_dic2024: Number(wp08SigteRes.odontologia_no_ges_ssa_dic2024 || 0),
+      retrasos_ges_ssa_t3_2026: Number(wp08SigteRes.retrasos_ges_ssa_t3_2026 || 0),
+      mediana_espera_cne_dias: Number(wp08SigteRes.mediana_espera_cne_dias || 0),
+      mediana_espera_quirurgica_dias: Number(wp08SigteRes.mediana_espera_quirurgica_dias || 0)
+    },
+    wp05AeroSum,
+    minsalDetAeroSum,
+    dotacionMedica: {
+      medicos_rnpi_por_mil_hab: Number(wp08SaludRes.medicos_rnpi_por_mil_hab || 0),
+      medicos_red_publica_ssa_por_mil_hab: Number(wp08SaludRes.medicos_red_publica_ssa_por_mil_hab || 0)
+    },
+    saludBarometroHasB3B,
+    estacionesCount: estacionesArr.length,
+    estacionesHasFuture202612,
+    nodo39Ds0Sum,
+    nodo39Ds1Sum
+  };
+
   return {
     schemaVersion: '3.0.0',
     label,
@@ -684,6 +756,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     hub5EconomyAudit,
     hub6SocialAudit,
     hub7BiodivAudit,
+    hub8SaludAudit,
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -1618,6 +1691,157 @@ function evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(bundleOrSnapsh
   return alerts;
 }
 
+function evaluateHub8SaludSsaDeisSigteSamuInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'direct', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h8 = snapshot.hub8SaludAudit || {};
+  if (comunas.length < 10 || !indicators.camas_hospitalarias) return alerts;
+
+  const getNum = (key, ine) => Number(indicators[key]?.values?.[ine] ?? 0);
+  const sumInd = (key) => comunas.reduce((a, c) => a + (Number(indicators[key]?.values?.[c.comuna_ine]) || 0), 0);
+  const meanInd = (key) => sumInd(key) / comunas.length;
+
+  // (a) Red hospitalaria SSA: 213 camas (135/56/8/7/7), 8 pabellones (4 HRC) y Hospital Dr. Leopoldo Ortega Rodriguez (sin San Jose)
+  const expCamas = { '11101': 135, '11102': 0, '11201': 56, '11202': 8, '11203': 0, '11401': 7, '11402': 0, '11301': 7, '11302': 0, '11303': 0 };
+  const sumCamas = sumInd('camas_hospitalarias');
+  const camasMismatch = Object.entries(expCamas).some(([ine, v]) => getNum('camas_hospitalarias', ine) !== v);
+  const hospName = String(h8.chileChicoHospitalName || '');
+  const hasSanJose = /san\s+jos[eé]/i.test(hospName);
+  const hasLeopoldo = /leopoldo\s+ortega/i.test(hospName);
+  if (
+    sumCamas !== 213 ||
+    camasMismatch ||
+    Number(h8.hrcQuirofanosTotales || 0) !== 4 ||
+    Number(h8.totalPabellonesQuirurgicos || 0) !== 8 ||
+    hasSanJose ||
+    (hospName && !hasLeopoldo)
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_RED_HOSPITALARIA_SSA_CAMAS_QUIROFANOS',
+      invariant: 'INVARIANTE_RED_SSA_213_CAMAS_8_PABELLONES',
+      indicator: 'camas_hospitalarias',
+      hub: CANONICAL_HUB_TITLES.salud,
+      detail: `[ERROR_RED_HOSPITALARIA_SSA_CAMAS_QUIROFANOS] sumCamas=${sumCamas} (esp. 213), HRC pab=${h8.hrcQuirofanosTotales}, totalPab=${h8.totalPabellonesQuirurgicos}, chileChico="${hospName}".`
+    });
+  }
+
+  // (b) Catastro APS DEIS: 27 PSR exactas, 4 CESFAM, 4 CECOSF, 9 EMR, 2 COSAM
+  const expPsr = { '11101': 7, '11102': 3, '11201': 2, '11202': 4, '11203': 1, '11301': 0, '11302': 1, '11303': 1, '11401': 3, '11402': 5 };
+  const sumPsr = sumInd('postas_salud_rural');
+  const sumPsrAlias = indicators.postas_rurales_psr_n ? sumInd('postas_rurales_psr_n') : sumPsr;
+  const psrMismatch = Object.entries(expPsr).some(([ine, v]) =>
+    getNum('postas_salud_rural', ine) !== v || (indicators.postas_rurales_psr_n && getNum('postas_rurales_psr_n', ine) !== v)
+  );
+  const apsRes = h8.apsResumen || {};
+  if (
+    sumPsr !== 27 ||
+    sumPsrAlias !== 27 ||
+    psrMismatch ||
+    Number(apsRes.total_cesfam || 0) !== 4 ||
+    Number(apsRes.total_cecosf || 0) !== 4 ||
+    Number(apsRes.total_emr_ssa || 0) !== 9 ||
+    Number(apsRes.total_cosam || 0) !== 2
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CATASTRO_APS_DEIS_PSR_CESFAM_CECOSF_EMR',
+      invariant: 'INVARIANTE_APS_DEIS_4_4_27_9_2',
+      indicator: 'postas_salud_rural',
+      hub: CANONICAL_HUB_TITLES.salud,
+      detail: `[ERROR_CATASTRO_APS_DEIS_PSR_CESFAM_CECOSF_EMR] psr=${sumPsr}/${sumPsrAlias}, cesfam=${apsRes.total_cesfam}, cecosf=${apsRes.total_cecosf}, emr=${apsRes.total_emr_ssa}, cosam=${apsRes.total_cosam}.`
+    });
+  }
+
+  // (c) Listas de espera SIGTE Glosa 06 T3 2026: 14751 CNE (159d), 3608 IQ (262d), 6870 Odonto, 524 GES
+  const sumEspera = sumInd('espera_no_ges_n');
+  const meanCne = meanInd('mediana_espera_especialidad_dias');
+  const meanIq = meanInd('mediana_espera_quirurgica_dias');
+  const sig = h8.sigteRegional || {};
+  const nodo39CneOk = h8.nodo39Ds0Sum === null || h8.nodo39Ds0Sum === undefined || Number(h8.nodo39Ds0Sum) === 14751;
+  if (
+    sumEspera !== 14751 ||
+    Math.abs(meanCne - 159) > 0.2 ||
+    Math.abs(meanIq - 262) > 0.2 ||
+    Number(sig.iq_no_ges_ssa_t3_2026 || 0) !== 3608 ||
+    Number(sig.odontologia_no_ges_ssa_dic2024 || 0) !== 6870 ||
+    Number(sig.retrasos_ges_ssa_t3_2026 || 0) !== 524 ||
+    !nodo39CneOk
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_LISTAS_ESPERA_SIGTE_T3_2026',
+      invariant: 'INVARIANTE_SIGTE_T3_2026_14751_3608_6870_524',
+      indicator: 'espera_no_ges_n',
+      hub: CANONICAL_HUB_TITLES.salud,
+      detail: `[ERROR_LISTAS_ESPERA_SIGTE_T3_2026] espera=${sumEspera}, meanCne=${meanCne.toFixed(1)}, meanIq=${meanIq.toFixed(1)}, iq=${sig.iq_no_ges_ssa_t3_2026}, odonto=${sig.odontologia_no_ges_ssa_dic2024}, ges=${sig.retrasos_ges_ssa_t3_2026}.`
+    });
+  }
+
+  // (d) Aeroevacuaciones SAMU: 454 primarias + 45 secundarias en Coyhaique, reconciliado wp05 == minsal_det
+  const sumAero = sumInd('aeroevacuaciones_samu_n');
+  const secCoy = indicators.aeroevacuaciones_secundarias_interregionales_n
+    ? getNum('aeroevacuaciones_secundarias_interregionales_n', '11101')
+    : 45;
+  const nodo39AeroOk = h8.nodo39Ds1Sum === null || h8.nodo39Ds1Sum === undefined || Number(h8.nodo39Ds1Sum) === 454;
+  if (
+    sumAero !== 454 ||
+    secCoy !== 45 ||
+    Number(h8.wp05AeroSum || 0) !== 454 ||
+    Number(h8.minsalDetAeroSum || 0) !== 454 ||
+    !nodo39AeroOk
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_AEROEVACUACIONES_SAMU_RECONCILIACION',
+      invariant: 'INVARIANTE_SAMU_454_PRIMARIAS_45_SECUNDARIAS',
+      indicator: 'aeroevacuaciones_samu_n',
+      hub: CANONICAL_HUB_TITLES.salud,
+      detail: `[ERROR_AEROEVACUACIONES_SAMU_RECONCILIACION] sumAero=${sumAero}, secCoy=${secCoy}, wp05=${h8.wp05AeroSum}, minsalDet=${h8.minsalDetAeroSum}.`
+    });
+  }
+
+  // (e) Epidemiologia DEIS (Suicidio 19.9, Vesicula 18.29), RNPI 5.54 / SSA 1.80 y ausencia B3_B en salud.espejo_barometro
+  const meanSuic = meanInd('tasa_mortalidad_suicidio_100k');
+  const meanVesic = meanInd('tasa_mortalidad_cancer_vesicula_100k');
+  const dot = h8.dotacionMedica || {};
+  if (
+    Math.abs(meanSuic - 19.9) > 0.1 ||
+    Math.abs(meanVesic - 18.29) > 0.1 ||
+    Math.abs(Number(dot.medicos_rnpi_por_mil_hab || 0) - 5.54) > 0.05 ||
+    Math.abs(Number(dot.medicos_red_publica_ssa_por_mil_hab || 0) - 1.80) > 0.05 ||
+    Boolean(h8.saludBarometroHasB3B)
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_EPIDEMIOLOGIA_DEIS_DOTACION_Y_BAROMETRO',
+      invariant: 'INVARIANTE_DEIS_19_9_RNPI_5_54_SIN_B3_B',
+      indicator: 'tasa_mortalidad_suicidio_100k',
+      hub: CANONICAL_HUB_TITLES.salud,
+      detail: `[ERROR_EPIDEMIOLOGIA_DEIS_DOTACION_Y_BAROMETRO] suic=${meanSuic.toFixed(2)}, vesic=${meanVesic.toFixed(2)}, rnpi=${dot.medicos_rnpi_por_mil_hab}, ssa=${dot.medicos_red_publica_ssa_por_mil_hab}, hasB3B=${Boolean(h8.saludBarometroHasB3B)}.`
+    });
+  }
+
+  // (f) Cierre Sprint 10: 0 registros 2026-12 en las 16 estaciones de data/estaciones_aysen.json
+  if (Boolean(h8.estacionesHasFuture202612) || (Number(h8.estacionesCount || 0) > 0 && Number(h8.estacionesCount) !== 16)) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_ESTACIONES_AYSEN_FECHA_FUTURA_2026_12',
+      invariant: 'INVARIANTE_ESTACIONES_16_SIN_2026_12',
+      indicator: 'estaciones_aysen',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_ESTACIONES_AYSEN_FECHA_FUTURA_2026_12] count=${h8.estacionesCount}, has202612=${Boolean(h8.estacionesHasFuture202612)}.`
+    });
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -1879,7 +2103,8 @@ function compareSnapshots(baseline, current, options = {}) {
     ...evaluateHub4FiscalAndElectoralInvariants(current, options),
     ...evaluateHub5EconomyInvestmentLandInvariants(current, options),
     ...evaluateHub6SocialDemographyEducationHousingInvariants(current, options),
-    ...evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(current, options)
+    ...evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(current, options),
+    ...evaluateHub8SaludSsaDeisSigteSamuInvariants(current, options)
   ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
@@ -2536,6 +2761,8 @@ module.exports = {
   evaluateHub5EconomyInvestmentLandInvariants,
   evaluateHub6SocialDemographyEducationHousingInvariants,
   evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants,
+  evaluateHub8SaludSsaDeisSigteSamuInvariants,
+  hub8_salud_ssa_deis_sigte_samu_consistency: evaluateHub8SaludSsaDeisSigteSamuInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

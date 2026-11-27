@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-27T14:06:33Z",
+  "generatedAt": "2026-11-27T15:21:36Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -64,108 +64,108 @@
       "dataY": [
         7.0,
         3.0,
-        4.0,
-        4.0,
-        1.0,
         2.0,
-        3.0,
+        4.0,
         1.0,
+        3.0,
+        5.0,
+        0.0,
         1.0,
         1.0
       ],
       "regressionLine": {
-        "slopeBeta1": 0.53991,
-        "interceptBeta0": 0.8103,
-        "rSquaredPct": 91.0,
+        "slopeBeta1": 0.47418,
+        "interceptBeta0": 1.0404,
+        "rSquaredPct": 56.9,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: Coyhaique suma 12,0 escuelas y 7,0 postas, frente a 1,0 y 1,0 en Cochrane.",
-      "plainExplanation": "En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: Coyhaique suma 12,0 escuelas y 7,0 postas, frente a 1,0 y 1,0 en Cochrane.",
-      "notable_commune": "Caso atípico: Río Ibáñez registra +1,1 postas por encima de lo esperado para su nivel en el eje X.",
+      "reading": "En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: Coyhaique suma 12,0 escuelas y 7,0 postas, frente a 1,0 y 0,0 en Cochrane.",
+      "plainExplanation": "En comunas con mayor ruralidad dispersa, la red escolar multigrado y las postas de salud crecen juntas: Coyhaique suma 12,0 escuelas y 7,0 postas, frente a 1,0 y 0,0 en Cochrane.",
+      "notable_commune": "Caso atípico: Río Ibáñez registra +3,0 postas por encima de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 7.0,
-          "expectedY": 7.29,
-          "diffY": -0.29,
-          "zResid": -0.52,
-          "note": "Coyhaique registra 7,0 postas, 0,3 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
+          "expectedY": 6.73,
+          "diffY": 0.27,
+          "zResid": 0.2,
+          "note": "Coyhaique (7,0 postas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Lago Verde": {
           "actualY": 3.0,
-          "expectedY": 2.43,
-          "diffY": 0.57,
-          "zResid": 1.03,
-          "note": "Lago Verde registra 3,0 postas, 0,6 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
+          "expectedY": 2.46,
+          "diffY": 0.54,
+          "zResid": 0.4,
+          "note": "Lago Verde (3,0 postas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Aysén": {
-          "actualY": 4.0,
-          "expectedY": 4.05,
-          "diffY": -0.05,
-          "zResid": -0.09,
-          "note": "Aysén (4,0 postas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 2.0,
+          "expectedY": 3.89,
+          "diffY": -1.89,
+          "zResid": -1.4,
+          "note": "Aysén registra 2,0 postas, 1,9 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Cisnes": {
           "actualY": 4.0,
-          "expectedY": 3.51,
-          "diffY": 0.49,
-          "zResid": 0.89,
-          "note": "Cisnes registra 4,0 postas, 0,5 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
+          "expectedY": 3.41,
+          "diffY": 0.59,
+          "zResid": 0.44,
+          "note": "Cisnes (4,0 postas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Guaitecas": {
           "actualY": 1.0,
-          "expectedY": 1.89,
-          "diffY": -0.89,
-          "zResid": -1.61,
-          "note": "Guaitecas registra 1,0 postas, 0,9 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
+          "expectedY": 1.99,
+          "diffY": -0.99,
+          "zResid": -0.73,
+          "note": "Guaitecas registra 1,0 postas, 1,0 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Chile Chico": {
-          "actualY": 2.0,
-          "expectedY": 1.89,
-          "diffY": 0.11,
-          "zResid": 0.2,
-          "note": "Chile Chico (2,0 postas) se ubica prácticamente en línea con la tendencia regional."
+          "actualY": 3.0,
+          "expectedY": 1.99,
+          "diffY": 1.01,
+          "zResid": 0.75,
+          "note": "Chile Chico registra 3,0 postas, 1,0 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Río Ibáñez": {
-          "actualY": 3.0,
-          "expectedY": 1.89,
-          "diffY": 1.11,
-          "zResid": 2.01,
-          "note": "Río Ibáñez registra 3,0 postas, 1,1 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
+          "actualY": 5.0,
+          "expectedY": 1.99,
+          "diffY": 3.01,
+          "zResid": 2.23,
+          "note": "Río Ibáñez registra 5,0 postas, 3,0 postas por encima de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "Cochrane": {
-          "actualY": 1.0,
-          "expectedY": 1.35,
-          "diffY": -0.35,
-          "zResid": -0.63,
-          "note": "Cochrane registra 1,0 postas, 0,4 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
+          "actualY": 0.0,
+          "expectedY": 1.51,
+          "diffY": -1.51,
+          "zResid": -1.12,
+          "note": "Cochrane registra 0,0 postas, 1,5 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
         },
         "O'Higgins": {
           "actualY": 1.0,
-          "expectedY": 1.35,
-          "diffY": -0.35,
-          "zResid": -0.63,
-          "note": "O'Higgins registra 1,0 postas, 0,4 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
+          "expectedY": 1.51,
+          "diffY": -0.51,
+          "zResid": -0.38,
+          "note": "O'Higgins (1,0 postas) se ubica prácticamente en línea con la tendencia regional."
         },
         "Tortel": {
           "actualY": 1.0,
-          "expectedY": 1.35,
-          "diffY": -0.35,
-          "zResid": -0.63,
-          "note": "Tortel registra 1,0 postas, 0,4 postas por debajo de lo esperado según su nivel de escuelas rurales multigrado."
+          "expectedY": 1.51,
+          "diffY": -0.51,
+          "zResid": -0.38,
+          "note": "Tortel (1,0 postas) se ubica prácticamente en línea con la tendencia regional."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 91% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,85",
+      "metrics_line": "R² 57% · r = +0,75 · Sin Coyhaique: +0,42 · Control pob.: +0,58",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 91,
-        "pearsonR": 0.954,
-        "spearmanRho": 0.936,
-        "kendallTau": 0.895,
-        "partialCorrPop": 0.854,
-        "rWithoutCoyhaique": 0.896,
-        "firstDiffCorrDelta": 0.854,
-        "pValueFdr": 3.5e-05,
-        "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,85"
+        "fuerzaExplicativaPct": 57,
+        "pearsonR": 0.754,
+        "spearmanRho": 0.738,
+        "kendallTau": 0.6,
+        "partialCorrPop": 0.578,
+        "rWithoutCoyhaique": 0.416,
+        "firstDiffCorrDelta": 0.578,
+        "pValueFdr": 0.012748,
+        "veredictoSimple": "R² 57% · r = +0,75 · Sin Coyhaique: +0,42 · Control pob.: +0,58"
       }
     },
     {
@@ -310,7 +310,7 @@
         "partialCorrPop": -0.812,
         "rWithoutCoyhaique": -0.898,
         "firstDiffCorrDelta": -0.812,
-        "pValueFdr": 0.000519,
+        "pValueFdr": 0.000546,
         "veredictoSimple": "R² 81% · r = –0,90 · Sin Coyhaique: –0,90 · Control pob.: –0,81"
       }
     },
@@ -602,7 +602,7 @@
         "partialCorrPop": 0.735,
         "rWithoutCoyhaique": 0.88,
         "firstDiffCorrDelta": 0.735,
-        "pValueFdr": 0.002767,
+        "pValueFdr": 0.002899,
         "veredictoSimple": "R² 70% · r = +0,84 · Sin Coyhaique: +0,88 · Control pob.: +0,73"
       }
     },
@@ -1478,7 +1478,7 @@
         "partialCorrPop": -0.974,
         "rWithoutCoyhaique": -0.937,
         "firstDiffCorrDelta": -0.974,
-        "pValueFdr": 0.000252,
+        "pValueFdr": 0.000267,
         "veredictoSimple": "R² 84% · r = –0,92 · Sin Coyhaique: –0,94 · Control pob.: –0,97"
       }
     },
@@ -1624,7 +1624,7 @@
         "partialCorrPop": 0.714,
         "rWithoutCoyhaique": 0.895,
         "firstDiffCorrDelta": 0.714,
-        "pValueFdr": 5.1e-05,
+        "pValueFdr": 5.5e-05,
         "veredictoSimple": "R² 90% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,71"
       }
     },
@@ -1770,7 +1770,7 @@
         "partialCorrPop": -0.699,
         "rWithoutCoyhaique": -0.708,
         "firstDiffCorrDelta": -0.699,
-        "pValueFdr": 0.011865,
+        "pValueFdr": 0.012404,
         "veredictoSimple": "R² 58% · r = –0,76 · Sin Coyhaique: –0,71 · Control pob.: –0,70"
       }
     },
@@ -2062,7 +2062,7 @@
         "partialCorrPop": 0.84,
         "rWithoutCoyhaique": 0.938,
         "firstDiffCorrDelta": 0.84,
-        "pValueFdr": 3.6e-05,
+        "pValueFdr": 3.8e-05,
         "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,94 · Control pob.: +0,84"
       }
     },
@@ -2208,7 +2208,7 @@
         "partialCorrPop": -0.773,
         "rWithoutCoyhaique": -0.944,
         "firstDiffCorrDelta": -0.773,
-        "pValueFdr": 3.5e-05,
+        "pValueFdr": 3.6e-05,
         "veredictoSimple": "R² 91% · r = –0,95 · Sin Coyhaique: –0,94 · Control pob.: –0,77"
       }
     },
@@ -2354,7 +2354,7 @@
         "partialCorrPop": 0.96,
         "rWithoutCoyhaique": 0.982,
         "firstDiffCorrDelta": 0.96,
-        "pValueFdr": 0.000425,
+        "pValueFdr": 0.000449,
         "veredictoSimple": "R² 82% · r = +0,91 · Sin Coyhaique: +0,98 · Control pob.: +0,96"
       }
     },
@@ -2500,7 +2500,7 @@
         "partialCorrPop": 0.934,
         "rWithoutCoyhaique": 0.926,
         "firstDiffCorrDelta": 0.934,
-        "pValueFdr": 0.001347,
+        "pValueFdr": 0.001415,
         "veredictoSimple": "R² 75% · r = +0,87 · Sin Coyhaique: +0,93 · Control pob.: +0,93"
       }
     },
@@ -2938,7 +2938,7 @@
         "partialCorrPop": 0.91,
         "rWithoutCoyhaique": 0.755,
         "firstDiffCorrDelta": 0.91,
-        "pValueFdr": 6.2e-05,
+        "pValueFdr": 6.6e-05,
         "veredictoSimple": "R² 89% · r = +0,94 · Sin Coyhaique: +0,76 · Control pob.: +0,91"
       }
     },
@@ -3100,7 +3100,7 @@
         "partialCorrPop": 0.866,
         "rWithoutCoyhaique": 0.835,
         "firstDiffCorrDelta": 0.866,
-        "pValueFdr": 6.3e-05,
+        "pValueFdr": 6.7e-05,
         "veredictoSimple": "R² 83% · r = +0,91 · Sin 2020: +0,83 · Variación anual: +0,87"
       }
     },
@@ -3439,11 +3439,11 @@
           "hub": "VIII. Salud",
           "label": "Mediana de Espera Quirúrgica No GES",
           "unit": "días",
-          "comunaValue": 318.0,
-          "regionalMean": 395.0,
-          "zScore": -1.81,
-          "diffVsMeanPct": -19.5,
-          "plainSummary": "Mediana de Espera Quirúrgica No GES: 318,0 días (promedio regional: 395,0 días)"
+          "comunaValue": 218.0,
+          "regionalMean": 262.0,
+          "zScore": -1.68,
+          "diffVsMeanPct": -16.8,
+          "plainSummary": "Mediana de Espera Quirúrgica No GES: 218,0 días (promedio regional: 262,0 días)"
         },
         {
           "varKey": "indice_aislamiento_multimodal",
@@ -3932,15 +3932,15 @@
           "plainSummary": "Tiempo de Derivación Médica al Hospital Regional: 14,0 horas (promedio regional: 5,2 horas)"
         },
         {
-          "varKey": "red_vial_pavimentada_pct",
-          "hub": "IV. Gobernanza",
-          "label": "Porcentaje de Red Vial Comunal Pavimentada",
-          "unit": "%",
-          "comunaValue": 43.9,
-          "regionalMean": 18.92,
-          "zScore": 1.75,
-          "diffVsMeanPct": 132.0,
-          "plainSummary": "Porcentaje de Red Vial Comunal Pavimentada: 43,9 % (promedio regional: 18,9 %)"
+          "varKey": "mediana_espera_quirurgica_dias",
+          "hub": "VIII. Salud",
+          "label": "Mediana de Espera Quirúrgica No GES",
+          "unit": "días",
+          "comunaValue": 312.0,
+          "regionalMean": 262.0,
+          "zScore": 1.91,
+          "diffVsMeanPct": 19.1,
+          "plainSummary": "Mediana de Espera Quirúrgica No GES: 312,0 días (promedio regional: 262,0 días)"
         }
       ],
       "topBelowRegionalMean": [
@@ -4007,12 +4007,12 @@
           "similitudPct": 55
         },
         {
-          "comuna": "Cisnes",
-          "provincia": "Aysén",
+          "comuna": "O'Higgins",
+          "provincia": "Capitán Prat",
           "similitudPct": 54
         }
       ],
-      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (55%) y Cisnes (54%)."
+      "narrativeDigest": "Guaitecas (Aysén, 1.598 hab.) destaca sobre la media regional en Tiempo de Viaje Multimodal hacia Coyhaique (18,0 horas) y Proporción de Suelo Fiscal (Bienes Nacionales), mientras presenta sus valores más bajos frente al promedio en Ocupación Hotelera Estival (Enero-Febrero). Sus perfiles territoriales más parecidos son Lago Verde (55%) y O'Higgins (54%)."
     },
     "Chile Chico": {
       "comuna": "Chile Chico",
@@ -4198,15 +4198,15 @@
           "plainSummary": "Pobreza Multidimensional (CASEN): 18,8 % (promedio regional: 15,3 %)"
         },
         {
-          "varKey": "mediana_espera_quirurgica_dias",
-          "hub": "VIII. Salud",
-          "label": "Mediana de Espera Quirúrgica No GES",
-          "unit": "días",
-          "comunaValue": 424.0,
-          "regionalMean": 395.0,
-          "zScore": 0.68,
-          "diffVsMeanPct": 7.3,
-          "plainSummary": "Mediana de Espera Quirúrgica No GES: 424,0 días (promedio regional: 395,0 días)"
+          "varKey": "dependencia_fcm_pct",
+          "hub": "IV. Gobernanza",
+          "label": "Dependencia del Fondo Común Municipal (FCM)",
+          "unit": "%",
+          "comunaValue": 86.6,
+          "regionalMean": 77.47,
+          "zScore": 0.59,
+          "diffVsMeanPct": 11.8,
+          "plainSummary": "Dependencia del Fondo Común Municipal (FCM): 86,6 % (promedio regional: 77,5 %)"
         }
       ],
       "topBelowRegionalMean": [
@@ -4388,15 +4388,15 @@
           "plainSummary": "Cumplimiento de Transparencia Activa Municipal (CPLT): 60,6 % (promedio regional: 73,8 %)"
         },
         {
-          "varKey": "red_vial_pavimentada_pct",
-          "hub": "IV. Gobernanza",
-          "label": "Porcentaje de Red Vial Comunal Pavimentada",
-          "unit": "%",
-          "comunaValue": 9.4,
-          "regionalMean": 18.92,
-          "zScore": -0.67,
-          "diffVsMeanPct": -50.3,
-          "plainSummary": "Porcentaje de Red Vial Comunal Pavimentada: 9,4 % (promedio regional: 18,9 %)"
+          "varKey": "mediana_espera_quirurgica_dias",
+          "hub": "VIII. Salud",
+          "label": "Mediana de Espera Quirúrgica No GES",
+          "unit": "días",
+          "comunaValue": 242.0,
+          "regionalMean": 262.0,
+          "zScore": -0.76,
+          "diffVsMeanPct": -7.6,
+          "plainSummary": "Mediana de Espera Quirúrgica No GES: 242,0 días (promedio regional: 262,0 días)"
         }
       ],
       "twinComunas": [
@@ -4536,7 +4536,7 @@
         {
           "comuna": "Tortel",
           "provincia": "Capitán Prat",
-          "similitudPct": 68
+          "similitudPct": 69
         },
         {
           "comuna": "Lago Verde",
@@ -4544,7 +4544,7 @@
           "similitudPct": 59
         }
       ],
-      "narrativeDigest": "O'Higgins (Capitán Prat, 664 hab.) destaca sobre la media regional en Presupuesto Municipal Per Cápita (8017,7 M$/hab) y Índice Compuesto de Aislamiento Multimodal, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (68%) y Lago Verde (59%)."
+      "narrativeDigest": "O'Higgins (Capitán Prat, 664 hab.) destaca sobre la media regional en Presupuesto Municipal Per Cápita (8017,7 M$/hab) y Índice Compuesto de Aislamiento Multimodal, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (69%) y Lago Verde (59%)."
     },
     "Tortel": {
       "comuna": "Tortel",
@@ -4669,7 +4669,7 @@
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 68
+          "similitudPct": 69
         },
         {
           "comuna": "Lago Verde",
@@ -4677,7 +4677,7 @@
           "similitudPct": 54
         }
       ],
-      "narrativeDigest": "Tortel (Capitán Prat, 563 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3485,4 km²) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Cobertura del Programa de Salud Cardiovascular (PSCV). Sus perfiles territoriales más parecidos son O'Higgins (68%) y Lago Verde (54%)."
+      "narrativeDigest": "Tortel (Capitán Prat, 563 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3485,4 km²) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Cobertura del Programa de Salud Cardiovascular (PSCV). Sus perfiles territoriales más parecidos son O'Higgins (69%) y Lago Verde (54%)."
     }
   }
 };

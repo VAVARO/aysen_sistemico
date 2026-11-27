@@ -249,16 +249,16 @@ WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
 
 # Indicadores Sistémicos Profundos (SSA / DEIS)
 WP05_INDICADORES = {
-    "11101": {"medicos": 3.12, "espera": 5420, "resp_pct": 44.5, "aero": 0},
-    "11102": {"medicos": 0.82, "espera": 128, "resp_pct": 18.2, "aero": 24},
-    "11201": {"medicos": 1.74, "espera": 2450, "resp_pct": 28.6, "aero": 48},
-    "11202": {"medicos": 1.15, "espera": 890, "resp_pct": 21.4, "aero": 72},
-    "11203": {"medicos": 0.95, "espera": 410, "resp_pct": 22.8, "aero": 96},
-    "11401": {"medicos": 1.28, "espera": 520, "resp_pct": 20.5, "aero": 38},
-    "11402": {"medicos": 0.88, "espera": 280, "resp_pct": 19.8, "aero": 22},
-    "11301": {"medicos": 1.42, "espera": 460, "resp_pct": 24.2, "aero": 54},
-    "11302": {"medicos": 0.78, "espera": 96, "resp_pct": 16.5, "aero": 42},
-    "11303": {"medicos": 0.85, "espera": 112, "resp_pct": 17.8, "aero": 46},
+    "11101": {"medicos": 3.12, "espera": 8120, "resp_pct": 44.5, "aero": 12, "aero_sec": 45, "camas": 135, "psr": 7},
+    "11102": {"medicos": 0.82, "espera": 148,  "resp_pct": 18.2, "aero": 24, "aero_sec": 0,  "camas": 0,   "psr": 3},
+    "11201": {"medicos": 1.74, "espera": 3465, "resp_pct": 28.6, "aero": 48, "aero_sec": 0,  "camas": 56,  "psr": 2},
+    "11202": {"medicos": 1.15, "espera": 835,  "resp_pct": 21.4, "aero": 72, "aero_sec": 0,  "camas": 8,   "psr": 4},
+    "11203": {"medicos": 0.95, "espera": 268,  "resp_pct": 22.8, "aero": 96, "aero_sec": 0,  "camas": 0,   "psr": 1},
+    "11401": {"medicos": 1.28, "espera": 682,  "resp_pct": 20.5, "aero": 38, "aero_sec": 0,  "camas": 7,   "psr": 3},
+    "11402": {"medicos": 0.88, "espera": 422,  "resp_pct": 19.8, "aero": 22, "aero_sec": 0,  "camas": 0,   "psr": 5},
+    "11301": {"medicos": 1.42, "espera": 617,  "resp_pct": 24.2, "aero": 54, "aero_sec": 0,  "camas": 7,   "psr": 0},
+    "11302": {"medicos": 0.78, "espera": 106,  "resp_pct": 16.5, "aero": 42, "aero_sec": 0,  "camas": 0,   "psr": 1},
+    "11303": {"medicos": 0.85, "espera": 88,   "resp_pct": 17.8, "aero": 46, "aero_sec": 0,  "camas": 0,   "psr": 1},
 }
 
 # Series Históricas Regionales Consolidadas 2015-2026
@@ -597,9 +597,10 @@ SERIES_REGIONALES_WP05 = [
         "anio": 2026,
         "salud_regional": {
             "egresos_hospitalarios_red_ssa": 14020,
-            "camas_hospitalarias_totales_ssa": 257,
-            "camas_basicas_medias_ssa": 233,
-            "camas_criticas_uci_uti_ssa": 24,
+            "camas_hospitalarias_totales_ssa": 213,
+            "camas_hospitalarias_con_upc_ped_jun2026_ssa": 219,
+            "camas_basicas_medias_ssa": 193,
+            "camas_criticas_uci_uti_ssa": 20,
             "urgencias_respiratorias_coyhaique_aysen": 16400,
         },
         "educacion_regional": {
@@ -854,9 +855,11 @@ def build_raw_social_health_catalog() -> Dict[str, Any]:
                 "nombre": "Hospital Regional Coyhaique",
                 "comuna_ine": "11101",
                 "nivel": "Alta Complejidad (Base Regional)",
-                "camas": 167,
+                "camas": 135,
+                "camas_con_upc_pediatrica_jun2026": 141,
                 "urgencia_24h": True,
-                "pabellones_quirurgicos": 5,
+                "pabellones_quirurgicos": 4,
+                "sillones_hemodialisis": 18,
                 "uci_uti_adulta_pediatrica": True,
                 "base_samu_regional": True,
             },
@@ -864,43 +867,47 @@ def build_raw_social_health_catalog() -> Dict[str, Any]:
                 "id": "hosp_puerto_aysen",
                 "nombre": "Hospital de Puerto Aysén",
                 "comuna_ine": "11201",
-                "nivel": "Mediana Complejidad",
-                "camas": 52,
+                "nivel": "Mediana/Baja Complejidad",
+                "camas": 56,
                 "urgencia_24h": True,
                 "pabellones_quirurgicos": 2,
                 "base_samu_regional": False,
             },
             {
                 "id": "hosp_puerto_cisnes",
-                "nombre": "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes",
+                "nombre": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
                 "comuna_ine": "11202",
                 "nivel": "Baja Complejidad",
-                "camas": 12,
+                "camas": 8,
                 "urgencia_24h": True,
                 "pabellones_quirurgicos": 0,
             },
             {
                 "id": "hosp_chile_chico",
-                "nombre": "Hospital Familiar y Comunitario San José de Chile Chico",
+                "nombre": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
                 "comuna_ine": "11401",
                 "nivel": "Baja Complejidad",
-                "camas": 14,
+                "camas": 7,
                 "urgencia_24h": True,
-                "pabellones_quirurgicos": 0,
+                "pabellones_quirurgicos": 1,
             },
             {
                 "id": "hosp_cochrane",
-                "nombre": "Hospital Comunitario de Cochrane",
+                "nombre": "Hospital Lord Cochrane",
                 "comuna_ine": "11301",
                 "nivel": "Baja Complejidad",
-                "camas": 16,
+                "camas": 7,
                 "urgencia_24h": True,
-                "pabellones_quirurgicos": 0,
+                "pabellones_quirurgicos": 1,
             },
         ],
         "atencion_primaria_y_postas": [
-            {"id": "cesfam_melinka", "nombre": "CESFAM Melinka", "comuna_ine": "11203", "tipo": "CESFAM SUR", "camas": 0},
-            {"id": "cesfam_rio_ibanez", "nombre": "CESFAM Puerto Ingeniero Ibáñez", "comuna_ine": "11402", "tipo": "CESFAM SUR", "camas": 0},
+            {"id": "cesfam_victor_domingo_silva", "nombre": "CESFAM Víctor Domingo Silva", "comuna_ine": "11101", "tipo": "CESFAM Urbano (DAP SSA)", "camas": 0},
+            {"id": "cesfam_alejandro_gutierrez", "nombre": "CESFAM Dr. Alejandro Gutiérrez", "comuna_ine": "11101", "tipo": "CESFAM Urbano (DAP SSA)", "camas": 0},
+            {"id": "cesfam_puerto_aysen", "nombre": "CESFAM Puerto Aysén", "comuna_ine": "11201", "tipo": "CESFAM Urbano (DAP SSA)", "camas": 0},
+            {"id": "cesfam_la_junta", "nombre": "CESFAM La Junta", "comuna_ine": "11202", "tipo": "CESFAM Rural (DAP SSA)", "camas": 0},
+            {"id": "posta_melinka", "nombre": "Posta de Salud Rural Melinka", "comuna_ine": "11203", "tipo": "PSR Insular SUR", "camas": 0},
+            {"id": "posta_puerto_ibanez", "nombre": "Posta de Salud Rural Puerto Ibáñez", "comuna_ine": "11402", "tipo": "PSR SUR", "camas": 0},
             {"id": "posta_lago_verde", "nombre": "Posta de Salud Rural Lago Verde", "comuna_ine": "11102", "tipo": "Posta Rural", "camas": 0},
             {"id": "posta_villa_ohiggins", "nombre": "Posta de Salud Rural Villa O'Higgins", "comuna_ine": "11302", "tipo": "Posta Rural Extrema", "camas": 0},
             {"id": "posta_caleta_tortel", "nombre": "Posta de Salud Rural Caleta Tortel", "comuna_ine": "11303", "tipo": "Posta Rural Extrema", "camas": 0},
@@ -1211,8 +1218,11 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "salud_red_asistencial": {
                 "establecimiento_principal": "Hospital Regional Coyhaique",
                 "nivel_complejidad": "Alta Complejidad (Base Regional)",
-                "camas_hospitalarias": 167,
+                "camas_hospitalarias": 135,
+                "camas_con_upc_pediatrica_jun2026": 141,
+                "quirofanos_totales": 4,
                 "postas_rurales_dependientes": 7,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11101"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 0.0,
                 "dependencia_evacuacion_aeromedica": "Nula (Centro Receptor Regional y Base SAMU)",
@@ -1248,7 +1258,9 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 "establecimiento_principal": "Posta de Salud Rural Lago Verde",
                 "nivel_complejidad": "Atención Primaria / Posta Rural",
                 "camas_hospitalarias": 0,
+                "quirofanos_totales": 0,
                 "postas_rurales_dependientes": 3,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11102"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 4.5,
                 "dependencia_evacuacion_aeromedica": "Media-Alta (Aislamiento por nevadas y cortes de ruta)",
@@ -1283,8 +1295,10 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "salud_red_asistencial": {
                 "establecimiento_principal": "Hospital de Puerto Aysén",
                 "nivel_complejidad": "Mediana Complejidad",
-                "camas_hospitalarias": 52,
-                "postas_rurales_dependientes": 5,
+                "camas_hospitalarias": 56,
+                "quirofanos_totales": 2,
+                "postas_rurales_dependientes": 2,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11201"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 1.0,
                 "dependencia_evacuacion_aeromedica": "Baja (Conexión terrestre pavimentada continua Ruta 240)",
@@ -1317,10 +1331,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         {
             "comuna_ine": "11202",
             "salud_red_asistencial": {
-                "establecimiento_principal": "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes",
+                "establecimiento_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
                 "nivel_complejidad": "Baja Complejidad",
-                "camas_hospitalarias": 12,
-                "postas_rurales_dependientes": 6,
+                "camas_hospitalarias": 8,
+                "quirofanos_totales": 0,
+                "postas_rurales_dependientes": 4,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11202"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital de Puerto Aysén / Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 3.5,
                 "dependencia_evacuacion_aeromedica": "Media (Alta en caletas insulares como Puerto Gaviota y Raúl Marín)",
@@ -1353,10 +1369,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         {
             "comuna_ine": "11203",
             "salud_red_asistencial": {
-                "establecimiento_principal": "CESFAM Melinka",
-                "nivel_complejidad": "Atención Primaria de Salud con Servicio de Urgencia Rural (SUR)",
+                "establecimiento_principal": "Posta de Salud Rural Melinka",
+                "nivel_complejidad": "Atención Primaria Insular con Servicio de Urgencia Rural (SUR · Regulación SAMU Reloncaví)",
                 "camas_hospitalarias": 0,
+                "quirofanos_totales": 0,
                 "postas_rurales_dependientes": 1,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11203"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique (Vía lancha a Puerto Montt o aeroevacuación)",
                 "tiempo_traslado_terrestre_coyhaique_horas": 14.0,
                 "dependencia_evacuacion_aeromedica": "Crítica / Extrema (Aislamiento marítimo insular absoluto)",
@@ -1389,10 +1407,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         {
             "comuna_ine": "11401",
             "salud_red_asistencial": {
-                "establecimiento_principal": "Hospital Familiar y Comunitario San José de Chile Chico",
-                "nivel_complejidad": "Baja Complejidad",
-                "camas_hospitalarias": 14,
-                "postas_rurales_dependientes": 4,
+                "establecimiento_principal": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
+                "nivel_complejidad": "Baja Complejidad (~5.000 m2 feb-2026)",
+                "camas_hospitalarias": 7,
+                "quirofanos_totales": 1,
+                "postas_rurales_dependientes": 3,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11401"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique (Vía barcaza Lago General Carrera o territorio argentino)",
                 "tiempo_traslado_terrestre_coyhaique_horas": 4.0,
                 "dependencia_evacuacion_aeromedica": "Media (Afectada por suspensión de navegación en barcaza por viento)",
@@ -1425,10 +1445,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         {
             "comuna_ine": "11402",
             "salud_red_asistencial": {
-                "establecimiento_principal": "CESFAM Puerto Ingeniero Ibáñez",
-                "nivel_complejidad": "Atención Primaria de Salud con Servicio de Urgencia Rural",
+                "establecimiento_principal": "Posta de Salud Rural Puerto Ibáñez",
+                "nivel_complejidad": "Atención Primaria Rural (5 PSR y 2 EMR · DAP SSA)",
                 "camas_hospitalarias": 0,
-                "postas_rurales_dependientes": 4,
+                "quirofanos_totales": 0,
+                "postas_rurales_dependientes": 5,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11402"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 1.5,
                 "dependencia_evacuacion_aeromedica": "Baja (Cercanía terrestre pavimentada a Coyhaique vía Ruta 7)",
@@ -1461,10 +1483,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         {
             "comuna_ine": "11301",
             "salud_red_asistencial": {
-                "establecimiento_principal": "Hospital Comunitario de Cochrane",
-                "nivel_complejidad": "Baja Complejidad (Cabecera Provincial Capitán Prat)",
-                "camas_hospitalarias": 16,
-                "postas_rurales_dependientes": 2,
+                "establecimiento_principal": "Hospital Lord Cochrane",
+                "nivel_complejidad": "Baja Complejidad (5.116 m2, acreditado SuperSalud 14-05-2026)",
+                "camas_hospitalarias": 7,
+                "quirofanos_totales": 1,
+                "postas_rurales_dependientes": 0,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11301"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 6.0,
                 "dependencia_evacuacion_aeromedica": "Alta (Distancia de 330 km de ripio/asfalto a Coyhaique)",
@@ -1498,9 +1522,11 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "comuna_ine": "11302",
             "salud_red_asistencial": {
                 "establecimiento_principal": "Posta de Salud Rural Villa O'Higgins",
-                "nivel_complejidad": "Atención Primaria de Salud Rural Extrema",
+                "nivel_complejidad": "Atención Primaria de Salud Rural Extrema (2 médicos EDF jun-2026)",
                 "camas_hospitalarias": 0,
-                "postas_rurales_dependientes": 0,
+                "quirofanos_totales": 0,
+                "postas_rurales_dependientes": 1,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11302"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane (a 230 km) / Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 10.0,
                 "dependencia_evacuacion_aeromedica": "Crítica (Extremo sur de Carretera Austral, paso por barcaza Fiordo Mitchell)",
@@ -1536,7 +1562,9 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 "establecimiento_principal": "Posta de Salud Rural Caleta Tortel",
                 "nivel_complejidad": "Atención Primaria de Salud Rural Pasarelas / Fluvial",
                 "camas_hospitalarias": 0,
-                "postas_rurales_dependientes": 0,
+                "quirofanos_totales": 0,
+                "postas_rurales_dependientes": 1,
+                "aeroevacuaciones_secundarias_interregionales_anual": WP05_INDICADORES["11303"]["aero_sec"],
                 "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane (a 125 km) / Hospital Regional Coyhaique",
                 "tiempo_traslado_terrestre_coyhaique_horas": 8.0,
                 "dependencia_evacuacion_aeromedica": "Crítica / Alta (Topografía de pasarelas de ciprés, traslado fluvial en lancha ambulancia)",
@@ -1681,7 +1709,10 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lng": -72.0685,
             "atributos": {
                 "categoria": "Red Asistencial Minsal / SSA",
-                "camas": 167,
+                "camas": 135,
+                "camas_con_upc_pediatrica_jun2026": 141,
+                "quirofanos": 4,
+                "sillones_hemodialisis": 18,
                 "quirurgico": True,
                 "uci_adulto_pediatrica": True,
                 "helipuerto_aeromedico": True,
@@ -1691,14 +1722,15 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         {
             "id": "hosp_puerto_aysen",
             "nombre": "Hospital de Puerto Aysén",
-            "tipo": "Hospital de Mediana Complejidad",
+            "tipo": "Hospital de Mediana/Baja Complejidad",
             "codigo_comuna": "CL-XI-03",
             "comuna_ine": "11201",
             "lat": -45.4042,
             "lng": -72.6948,
             "atributos": {
                 "categoria": "Red Asistencial Minsal / SSA",
-                "camas": 52,
+                "camas": 56,
+                "quirofanos": 2,
                 "quirurgico": True,
                 "urgencia_24h": True,
             },
@@ -1706,7 +1738,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         },
         {
             "id": "hosp_puerto_cisnes",
-            "nombre": "Hospital Comunitario de Puerto Cisnes",
+            "nombre": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
             "tipo": "Hospital Comunitario de Baja Complejidad",
             "codigo_comuna": "CL-XI-04",
             "comuna_ine": "11202",
@@ -1714,7 +1746,8 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lng": -72.6980,
             "atributos": {
                 "categoria": "Red Asistencial Minsal / SSA",
-                "camas": 12,
+                "camas": 8,
+                "quirofanos": 0,
                 "quirurgico": False,
                 "urgencia_24h": True,
             },
@@ -1722,7 +1755,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         },
         {
             "id": "hosp_chile_chico",
-            "nombre": "Hospital Familiar y Comunitario San José de Chile Chico",
+            "nombre": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
             "tipo": "Hospital Comunitario de Baja Complejidad",
             "codigo_comuna": "CL-XI-06",
             "comuna_ine": "11401",
@@ -1730,15 +1763,16 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lng": -71.7250,
             "atributos": {
                 "categoria": "Red Asistencial Minsal / SSA",
-                "camas": 14,
-                "quirurgico": False,
+                "camas": 7,
+                "quirofanos": 1,
+                "quirurgico": True,
                 "urgencia_24h": True,
             },
             "source_url": "https://www.saludaysen.cl",
         },
         {
             "id": "hosp_cochrane",
-            "nombre": "Hospital Comunitario de Cochrane",
+            "nombre": "Hospital Lord Cochrane",
             "tipo": "Hospital Comunitario de Baja Complejidad",
             "codigo_comuna": "CL-XI-08",
             "comuna_ine": "11301",
@@ -1746,24 +1780,26 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lng": -72.5725,
             "atributos": {
                 "categoria": "Red Asistencial Minsal / SSA",
-                "camas": 16,
-                "quirurgico": False,
+                "camas": 7,
+                "quirofanos": 1,
+                "quirurgico": True,
                 "urgencia_24h": True,
             },
             "source_url": "https://www.saludaysen.cl",
         },
         {
-            "id": "cesfam_melinka",
-            "nombre": "CESFAM Melinka (Archipiélago de las Guaitecas)",
-            "tipo": "Centro de Salud Familiar Rural",
+            "id": "posta_melinka",
+            "nombre": "Posta de Salud Rural Melinka (Archipiélago de las Guaitecas)",
+            "tipo": "Posta de Salud Rural Insular con SUR",
             "codigo_comuna": "CL-XI-05",
             "comuna_ine": "11203",
             "lat": -43.8972,
             "lng": -73.7465,
             "atributos": {
-                "categoria": "Atención Primaria Insular",
-                "camas_observacion": 2,
+                "categoria": "Atención Primaria Insular (DAP SSA)",
+                "camas": 0,
                 "aeromedico_requerido": True,
+                "samu_regulador": "SAMU Reloncaví (Puerto Montt)",
             },
             "source_url": "https://www.saludaysen.cl",
         },
@@ -1776,7 +1812,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lat": -44.2415,
             "lng": -71.8460,
             "atributos": {
-                "categoria": "Atención Primaria Rural",
+                "categoria": "Atención Primaria Rural (DAP SSA)",
                 "medico_general_zona": True,
             },
             "source_url": "https://www.saludaysen.cl",
@@ -1790,8 +1826,9 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lat": -48.4685,
             "lng": -72.5605,
             "atributos": {
-                "categoria": "Atención Primaria Extrema",
+                "categoria": "Atención Primaria Extrema (DAP SSA)",
                 "terminal_carretera_austral": True,
+                "medicos_edf_permanentes": 2,
                 "aeromedico_requerido": True,
             },
             "source_url": "https://www.saludaysen.cl",
@@ -1805,7 +1842,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "lat": -47.7960,
             "lng": -73.5345,
             "atributos": {
-                "categoria": "Atención Primaria Rural Pasarelas",
+                "categoria": "Atención Primaria Rural Pasarelas (DAP SSA)",
                 "lancha_ambulancia": True,
             },
             "source_url": "https://www.saludaysen.cl",
@@ -2025,7 +2062,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "total_camas_hospitalarias_red_ssa": sum(
                 c["datos"]["salud_red_asistencial"]["camas_hospitalarias"] for c in por_comuna_list
             ),
-            "hospital_base_regional": "Hospital Regional Coyhaique (167 camas, nivel alta complejidad)",
+            "hospital_base_regional": "Hospital Regional Coyhaique (135 camas basales; 141 con 6 UPC Pediátrica jun-2026; 4 pabellones; alta complejidad)",
             "matricula_escolar_regional_total": sum(
                 c["datos"]["educacion_mineduc"]["matricula_escolar_total"] for c in por_comuna_list
             ),
@@ -2159,9 +2196,40 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "rsh_jun2026_hacinamiento_regional_pct": 6.1,
             "peh_minvu_meta_viviendas": 1293,
             "peh_minvu_estado_2025_2026": "Cierre oficial febrero 2026 MINVU: 1.671 viviendas terminadas sobre meta de 1.293 (129,2% de cumplimiento); vigencia prorrogada hasta el 31 de diciembre de 2029 (Ley N° 21.450).",
-            "salud_mental_y_riesgo_vital": {"tasa_suicidio_deis_por_100k": 15.1, "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9, "riesgo": "Mayor tasa nacional de suicidio (~15,1/100k hab) y cuello de botella a 9 camas UHCE en Hospital Regional Coyhaique.", "fuente": "DEIS MINSAL / SSA"},
-            "mortalidad_oncologica_digestiva_deis": {"tasa_cancer_gastrico_cie10_c16": 18.4, "tasa_cancer_vesicula_cie10_c23": 12.6, "avpp_criticos": ["Cáncer Gástrico (C16)", "Cáncer de Vesícula Biliar (C23)"], "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer"},
-            "listas_espera_sigte": {"interconsultas_no_ges_totales": 11420, "mediana_dias_consulta_especialidad": 284, "mediana_dias_intervencion_quirurgica": 395, "fuente": "SIGTE / Redes Asistenciales"},
+            "gob_salud_sistema": {
+                "dependencia_aps_y_hospitalaria": "100% Servicio de Salud Aysén (DAP SSA — 0% salud municipalizada; 'Sin Servicio' en SINIM)",
+                "clinicas_privadas_hospitalizacion_general": 0,
+                "unico_recinto_privado_deis": "Clínica del Trabajador AChS de Puerto Aysén (centro ambulatorio mutual)",
+                "convenio_programacion_gore_minsal": {"fecha": "2025-07-30", "monto_total_mm_clp": 195000, "gore_mm_clp": 61000, "minsal_mm_clp": 134000, "plazo_anos": 5, "iniciativas": ">59"},
+                "total_camas_diseno_ssa": 213,
+                "total_camas_operativas_agudas_efectivas": 174,
+                "total_pabellones_quirurgicos": 8,
+                "total_cesfam": 4,
+                "total_cecosf": 4,
+                "total_postas_salud_rural_psr": 27,
+                "total_emr_ssa": 9,
+                "total_cosam": 2,
+            },
+            "aeroevacuaciones_samu_regional": {
+                "primarias_total": 454,
+                "secundarias_interregionales_total": 45,
+                "samu_reloncavi_jurisdiccion_melinka": True,
+                "ecmo_disponible_hrc": False,
+                "hantavirus_ago2026_casos": 5,
+                "hantavirus_ago2026_fallecidos": 1,
+                "auditorias_cgr_2026": ["abril 2026", "agosto 2026"],
+            },
+            "dotacion_medica_2026": {
+                "medicos_por_mil_hab_operativo": 2.44,
+                "medicos_rnpi_por_mil_hab": 5.54,
+                "medicos_rnpi_chile_por_mil_hab": 3.91,
+                "medicos_red_publica_ssa_por_mil_hab": 1.80,
+                "uaysen_carreras_medicina_n": 0,
+                "uaysen_carreras_salud": ["Enfermería", "Obstetricia", "Psicología", "Terapia Ocupacional", "Tecnología Médica en Imagenología y Física Médica (Admisión 2027)"],
+            },
+            "salud_mental_y_riesgo_vital": {"tasa_suicidio_deis_por_100k": 19.9, "suicidios_2024_n": 20, "suicidio_adolescente_15_19_100k": 28.1, "jovenes_control_salud_mental_pct": 18.1, "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9, "riesgo": "Líder nacional en mortalidad por suicidio (19,9/100k hab; 20 suicidios en 2024 vs. 10,7/100k Chile) y cuello de botella a 9 camas UHCE en Hospital Regional Coyhaique.", "fuente": "DEIS MINSAL / UNICEF SITAN 2025 p. 51 / SSA"},
+            "mortalidad_oncologica_digestiva_deis": {"tasa_cancer_gastrico_cie10_c16": 18.4, "helicobacter_pylori_prevalencia_pct": 64.0, "helicobacter_pylori_erradicacion_pct": 82.0, "tasa_cancer_vesicula_cie10_c23": 18.29, "cancer_vesicula_casos_hrc_2024": 22, "avpp_criticos": ["Cáncer Gástrico (C16)", "Cáncer de Vesícula Biliar (C23)"], "fuente": "DEIS MINSAL / SEREMI Salud / UAysén / HRC 2024"},
+            "listas_espera_sigte": {"cne_no_ges_ssa_t3_2026": 14751, "interconsultas_no_ges_totales": 14751, "mediana_espera_cne_dias": 159, "mediana_dias_consulta_especialidad": 159, "iq_no_ges_ssa_t3_2026": 3608, "mediana_espera_quirurgica_dias": 262, "mediana_dias_intervencion_quirurgica": 262, "odontologia_no_ges_ssa_dic2024": 6870, "mediana_espera_odontologica_dias": 242, "retrasos_ges_ssa_t3_2026": 524, "mediana_retraso_ges_dias": 88, "ges_oncologico_tasa_100k_15ymas": 149.6, "fuente": "Glosa 06 MINSAL / BCN SIGTE 2024-2025 / CIPS-UDD T3 2026"},
         },
         "por_comuna": por_comuna_list,
         "nodos_georreferenciados": nodos,
@@ -2185,6 +2253,15 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
         "rsh_jun2026_hacinamiento_regional_pct",
         "peh_minvu_meta_viviendas",
         "peh_minvu_estado_2025_2026",
+        "total_camas_hospitalarias_red_ssa",
+        "hospital_base_regional",
+        "series_historicas_regionales",
+        "gob_salud_sistema",
+        "aeroevacuaciones_samu_regional",
+        "dotacion_medica_2026",
+        "salud_mental_y_riesgo_vital",
+        "mortalidad_oncologica_digestiva_deis",
+        "listas_espera_sigte",
     )
     merged.setdefault("resumen_regional", {})
     for rk in s9_reg_keys:
@@ -2193,6 +2270,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
 
     gen_by_ine = {r["comuna_ine"]: r["datos"] for r in por_comuna_list}
     s9_com_blocks = (
+        "salud_red_asistencial",
         "educacion_mineduc",
         "demografia_censo_2024",
         "habitat_minvu",
@@ -2216,19 +2294,24 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 if sk in gdat["seguridad_cead"]:
                     rsec[sk] = gdat["seguridad_cead"][sk]
 
-    # Sprint 10: Remover Cerro Arenales de nodos volcanicos RNVV en Aysen y sincronizar 5 volcanes activos
+    # Sprint 10-11: Sincronizar volcanes activos RNVV y nodos de salud SSA/DEIS (sin cesfam_melinka ni San Jose)
     volc_by_id = {vn["id"]: vn for vn in nodos if str(vn.get("id", "")).startswith("volcan_")}
+    salud_by_id = {sn["id"]: sn for sn in nodos if str(sn.get("id", "")).startswith(("hosp_", "posta_"))}
     filtered_nodos = []
+    seen_ids = set()
     for n_disk in merged.get("nodos_georreferenciados", []):
         nid = n_disk.get("id")
-        if nid == "volcan_arenales":
+        if nid in ("volcan_arenales", "cesfam_melinka"):
             continue
-        if nid == "hosp_coyhaique":
-            n_disk["lat"] = -45.5712
-            n_disk["lng"] = -72.0685
-        elif nid in volc_by_id:
+        if nid in volc_by_id:
             n_disk = volc_by_id[nid]
+        elif nid in salud_by_id:
+            n_disk = salud_by_id[nid]
         filtered_nodos.append(n_disk)
+        seen_ids.add(nid)
+    for sid, sn in salud_by_id.items():
+        if sid not in seen_ids:
+            filtered_nodos.append(sn)
     merged["nodos_georreferenciados"] = filtered_nodos
 
     with open(out_json, "w", encoding="utf-8", newline="\n") as fh:

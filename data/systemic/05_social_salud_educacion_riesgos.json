@@ -94,8 +94,8 @@
   ],
   "resumen_regional": {
     "total_comunas": 10,
-    "total_camas_hospitalarias_red_ssa": 261,
-    "hospital_base_regional": "Hospital Regional Coyhaique (167 camas, nivel alta complejidad)",
+    "total_camas_hospitalarias_red_ssa": 213,
+    "hospital_base_regional": "Hospital Regional Coyhaique (135 camas basales; 141 con 6 UPC Pediátrica jun-2026; 4 pabellones; alta complejidad)",
     "matricula_escolar_regional_total": 21990,
     "establecimientos_escolares_totales": 84,
     "volcanes_activos_monitoreados": 6,
@@ -436,9 +436,10 @@
         "anio": 2026,
         "salud_regional": {
           "egresos_hospitalarios_red_ssa": 14020,
-          "camas_hospitalarias_totales_ssa": 257,
-          "camas_basicas_medias_ssa": 233,
-          "camas_criticas_uci_uti_ssa": 24,
+          "camas_hospitalarias_totales_ssa": 213,
+          "camas_hospitalarias_con_upc_ped_jun2026_ssa": 219,
+          "camas_basicas_medias_ssa": 193,
+          "camas_criticas_uci_uti_ssa": 20,
           "urgencias_respiratorias_coyhaique_aysen": 16400
         },
         "educacion_regional": {
@@ -518,37 +519,40 @@
       "hacinamiento_critico_viviendas": 139
     },
     "salud_mental_y_riesgo_vital": {
-      "tasa_mortalidad_suicidio_deis_por_100k": 15.1,
+      "tasa_suicidio_deis_por_100k": 19.9,
+      "suicidios_2024_n": 20,
+      "suicidio_adolescente_15_19_100k": 28.1,
+      "jovenes_control_salud_mental_pct": 18.1,
       "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
-      "diagnostico_red_salud_mental": "Restricción crítica estructural a 9 camas psiquiátricas de corta estadía en la Unidad de Hospitalización de Cuidados Especiales (UHCE) del Hospital Regional Coyhaique para toda la población regional; tasa regional de suicidio históricamente en la cúspide nacional (~15,1 por 100k hab)",
-      "fuente": "DEIS MINSAL / SSA",
-      "tasa_suicidio_deis_por_100k": 15.1,
-      "riesgo": "Mayor tasa nacional de suicidio (~15,1/100k hab) y cuello de botella a 9 camas UHCE en Hospital Regional Coyhaique."
+      "riesgo": "Líder nacional en mortalidad por suicidio (19,9/100k hab; 20 suicidios en 2024 vs. 10,7/100k Chile) y cuello de botella a 9 camas UHCE en Hospital Regional Coyhaique.",
+      "fuente": "DEIS MINSAL / UNICEF SITAN 2025 p. 51 / SSA"
     },
     "mortalidad_oncologica_digestiva_deis": {
-      "tasa_cancer_gastrico_cie10_c16_por_100k": 18.4,
-      "tasa_cancer_vesicula_cie10_c23_por_100k": 12.6,
-      "primeras_causas_avpp_regional": [
-        "Cáncer Gástrico (C16)",
-        "Cáncer de Vesícula Biliar (C23)"
-      ],
-      "observacion": "Las neoplasias digestivas constituyen la primera causa de años de vida potencialmente perdidos (AVPP) en la región",
-      "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer",
       "tasa_cancer_gastrico_cie10_c16": 18.4,
-      "tasa_cancer_vesicula_cie10_c23": 12.6,
+      "helicobacter_pylori_prevalencia_pct": 64.0,
+      "helicobacter_pylori_erradicacion_pct": 82.0,
+      "tasa_cancer_vesicula_cie10_c23": 18.29,
+      "cancer_vesicula_casos_hrc_2024": 22,
       "avpp_criticos": [
         "Cáncer Gástrico (C16)",
         "Cáncer de Vesícula Biliar (C23)"
-      ]
+      ],
+      "fuente": "DEIS MINSAL / SEREMI Salud / UAysén / HRC 2024"
     },
     "listas_espera_sigte": {
-      "total_interconsultas_no_ges_espera": 11420,
-      "mediana_dias_espera_especialidad": 284,
-      "mediana_dias_espera_quirurgica": 395,
-      "fuente": "SIGTE / Subsecretaría de Redes Asistenciales",
-      "interconsultas_no_ges_totales": 11420,
-      "mediana_dias_consulta_especialidad": 284,
-      "mediana_dias_intervencion_quirurgica": 395
+      "cne_no_ges_ssa_t3_2026": 14751,
+      "interconsultas_no_ges_totales": 14751,
+      "mediana_espera_cne_dias": 159,
+      "mediana_dias_consulta_especialidad": 159,
+      "iq_no_ges_ssa_t3_2026": 3608,
+      "mediana_espera_quirurgica_dias": 262,
+      "mediana_dias_intervencion_quirurgica": 262,
+      "odontologia_no_ges_ssa_dic2024": 6870,
+      "mediana_espera_odontologica_dias": 242,
+      "retrasos_ges_ssa_t3_2026": 524,
+      "mediana_retraso_ges_dias": 88,
+      "ges_oncologico_tasa_100k_15ymas": 149.6,
+      "fuente": "Glosa 06 MINSAL / BCN SIGTE 2024-2025 / CIPS-UDD T3 2026"
     },
     "habitat_y_deficit_habitacional_minvu": {
       "deficit_habitacional_cuantitativo_total": 1927,
@@ -684,6 +688,53 @@
         }
       },
       "fuente": "CEAD - Subsecretaría de Prevención del Delito / BCN"
+    },
+    "gob_salud_sistema": {
+      "dependencia_aps_y_hospitalaria": "100% Servicio de Salud Aysén (DAP SSA — 0% salud municipalizada; 'Sin Servicio' en SINIM)",
+      "clinicas_privadas_hospitalizacion_general": 0,
+      "unico_recinto_privado_deis": "Clínica del Trabajador AChS de Puerto Aysén (centro ambulatorio mutual)",
+      "convenio_programacion_gore_minsal": {
+        "fecha": "2025-07-30",
+        "monto_total_mm_clp": 195000,
+        "gore_mm_clp": 61000,
+        "minsal_mm_clp": 134000,
+        "plazo_anos": 5,
+        "iniciativas": ">59"
+      },
+      "total_camas_diseno_ssa": 213,
+      "total_camas_operativas_agudas_efectivas": 174,
+      "total_pabellones_quirurgicos": 8,
+      "total_cesfam": 4,
+      "total_cecosf": 4,
+      "total_postas_salud_rural_psr": 27,
+      "total_emr_ssa": 9,
+      "total_cosam": 2
+    },
+    "aeroevacuaciones_samu_regional": {
+      "primarias_total": 454,
+      "secundarias_interregionales_total": 45,
+      "samu_reloncavi_jurisdiccion_melinka": true,
+      "ecmo_disponible_hrc": false,
+      "hantavirus_ago2026_casos": 5,
+      "hantavirus_ago2026_fallecidos": 1,
+      "auditorias_cgr_2026": [
+        "abril 2026",
+        "agosto 2026"
+      ]
+    },
+    "dotacion_medica_2026": {
+      "medicos_por_mil_hab_operativo": 2.44,
+      "medicos_rnpi_por_mil_hab": 5.54,
+      "medicos_rnpi_chile_por_mil_hab": 3.91,
+      "medicos_red_publica_ssa_por_mil_hab": 1.8,
+      "uaysen_carreras_medicina_n": 0,
+      "uaysen_carreras_salud": [
+        "Enfermería",
+        "Obstetricia",
+        "Psicología",
+        "Terapia Ocupacional",
+        "Tecnología Médica en Imagenología y Física Médica (Admisión 2027)"
+      ]
     }
   },
   "por_comuna": [
@@ -701,19 +752,18 @@
         "salud_red_asistencial": {
           "establecimiento_principal": "Hospital Regional Coyhaique",
           "nivel_complejidad": "Alta Complejidad (Base Regional)",
-          "camas_hospitalarias": 167,
+          "camas_hospitalarias": 135,
+          "camas_con_upc_pediatrica_jun2026": 141,
+          "quirofanos_totales": 4,
           "postas_rurales_dependientes": 7,
+          "aeroevacuaciones_secundarias_interregionales_anual": 45,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 0.0,
           "dependencia_evacuacion_aeromedica": "Nula (Centro Receptor Regional y Base SAMU)",
           "medicos_por_mil_habitantes": 3.12,
-          "lista_espera_no_ges_consultas_especialidad": 5420,
+          "lista_espera_no_ges_consultas_especialidad": 8120,
           "urgencias_respiratorias_invernales_pct": 44.5,
-          "aeroevacuaciones_samu_anual": 0,
-          "camas_psiquiatricas_hrc": 9,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 12
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -1130,18 +1180,16 @@
           "establecimiento_principal": "Posta de Salud Rural Lago Verde",
           "nivel_complejidad": "Atención Primaria / Posta Rural",
           "camas_hospitalarias": 0,
+          "quirofanos_totales": 0,
           "postas_rurales_dependientes": 3,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 4.5,
           "dependencia_evacuacion_aeromedica": "Media-Alta (Aislamiento por nevadas y cortes de ruta)",
           "medicos_por_mil_habitantes": 0.82,
-          "lista_espera_no_ges_consultas_especialidad": 128,
+          "lista_espera_no_ges_consultas_especialidad": 148,
           "urgencias_respiratorias_invernales_pct": 18.2,
-          "aeroevacuaciones_samu_anual": 24,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 24
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -1563,19 +1611,17 @@
         "salud_red_asistencial": {
           "establecimiento_principal": "Hospital de Puerto Aysén",
           "nivel_complejidad": "Mediana Complejidad",
-          "camas_hospitalarias": 52,
-          "postas_rurales_dependientes": 5,
+          "camas_hospitalarias": 56,
+          "quirofanos_totales": 2,
+          "postas_rurales_dependientes": 2,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 1.0,
           "dependencia_evacuacion_aeromedica": "Baja (Conexión terrestre pavimentada continua Ruta 240)",
           "medicos_por_mil_habitantes": 1.74,
-          "lista_espera_no_ges_consultas_especialidad": 2450,
+          "lista_espera_no_ges_consultas_especialidad": 3465,
           "urgencias_respiratorias_invernales_pct": 28.6,
-          "aeroevacuaciones_samu_anual": 48,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 48
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -1998,21 +2044,19 @@
       "source_url": "https://www.saludaysen.cl",
       "datos": {
         "salud_red_asistencial": {
-          "establecimiento_principal": "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes",
+          "establecimiento_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
           "nivel_complejidad": "Baja Complejidad",
-          "camas_hospitalarias": 12,
-          "postas_rurales_dependientes": 6,
+          "camas_hospitalarias": 8,
+          "quirofanos_totales": 0,
+          "postas_rurales_dependientes": 4,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital de Puerto Aysén / Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 3.5,
           "dependencia_evacuacion_aeromedica": "Media (Alta en caletas insulares como Puerto Gaviota y Raúl Marín)",
           "medicos_por_mil_habitantes": 1.15,
-          "lista_espera_no_ges_consultas_especialidad": 890,
+          "lista_espera_no_ges_consultas_especialidad": 835,
           "urgencias_respiratorias_invernales_pct": 21.4,
-          "aeroevacuaciones_samu_anual": 72,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 72
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -2424,21 +2468,19 @@
       "source_url": "https://www.saludaysen.cl",
       "datos": {
         "salud_red_asistencial": {
-          "establecimiento_principal": "CESFAM Melinka",
-          "nivel_complejidad": "Atención Primaria de Salud con Servicio de Urgencia Rural (SUR)",
+          "establecimiento_principal": "Posta de Salud Rural Melinka",
+          "nivel_complejidad": "Atención Primaria Insular con Servicio de Urgencia Rural (SUR · Regulación SAMU Reloncaví)",
           "camas_hospitalarias": 0,
+          "quirofanos_totales": 0,
           "postas_rurales_dependientes": 1,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique (Vía lancha a Puerto Montt o aeroevacuación)",
           "tiempo_traslado_terrestre_coyhaique_horas": 14.0,
           "dependencia_evacuacion_aeromedica": "Crítica / Extrema (Aislamiento marítimo insular absoluto)",
           "medicos_por_mil_habitantes": 0.95,
-          "lista_espera_no_ges_consultas_especialidad": 410,
+          "lista_espera_no_ges_consultas_especialidad": 268,
           "urgencias_respiratorias_invernales_pct": 22.8,
-          "aeroevacuaciones_samu_anual": 96,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 96
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -2848,21 +2890,19 @@
       "source_url": "https://www.saludaysen.cl",
       "datos": {
         "salud_red_asistencial": {
-          "establecimiento_principal": "Hospital Familiar y Comunitario San José de Chile Chico",
-          "nivel_complejidad": "Baja Complejidad",
-          "camas_hospitalarias": 14,
-          "postas_rurales_dependientes": 4,
+          "establecimiento_principal": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
+          "nivel_complejidad": "Baja Complejidad (~5.000 m2 feb-2026)",
+          "camas_hospitalarias": 7,
+          "quirofanos_totales": 1,
+          "postas_rurales_dependientes": 3,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique (Vía barcaza Lago General Carrera o territorio argentino)",
           "tiempo_traslado_terrestre_coyhaique_horas": 4.0,
           "dependencia_evacuacion_aeromedica": "Media (Afectada por suspensión de navegación en barcaza por viento)",
           "medicos_por_mil_habitantes": 1.28,
-          "lista_espera_no_ges_consultas_especialidad": 520,
+          "lista_espera_no_ges_consultas_especialidad": 682,
           "urgencias_respiratorias_invernales_pct": 20.5,
-          "aeroevacuaciones_samu_anual": 38,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 38
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -3272,21 +3312,19 @@
       "source_url": "https://www.saludaysen.cl",
       "datos": {
         "salud_red_asistencial": {
-          "establecimiento_principal": "CESFAM Puerto Ingeniero Ibáñez",
-          "nivel_complejidad": "Atención Primaria de Salud con Servicio de Urgencia Rural",
+          "establecimiento_principal": "Posta de Salud Rural Puerto Ibáñez",
+          "nivel_complejidad": "Atención Primaria Rural (5 PSR y 2 EMR · DAP SSA)",
           "camas_hospitalarias": 0,
-          "postas_rurales_dependientes": 4,
+          "quirofanos_totales": 0,
+          "postas_rurales_dependientes": 5,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 1.5,
           "dependencia_evacuacion_aeromedica": "Baja (Cercanía terrestre pavimentada a Coyhaique vía Ruta 7)",
           "medicos_por_mil_habitantes": 0.88,
-          "lista_espera_no_ges_consultas_especialidad": 280,
+          "lista_espera_no_ges_consultas_especialidad": 422,
           "urgencias_respiratorias_invernales_pct": 19.8,
-          "aeroevacuaciones_samu_anual": 22,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 22
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -3696,21 +3734,19 @@
       "source_url": "https://www.saludaysen.cl",
       "datos": {
         "salud_red_asistencial": {
-          "establecimiento_principal": "Hospital Comunitario de Cochrane",
-          "nivel_complejidad": "Baja Complejidad (Cabecera Provincial Capitán Prat)",
-          "camas_hospitalarias": 16,
-          "postas_rurales_dependientes": 2,
+          "establecimiento_principal": "Hospital Lord Cochrane",
+          "nivel_complejidad": "Baja Complejidad (5.116 m2, acreditado SuperSalud 14-05-2026)",
+          "camas_hospitalarias": 7,
+          "quirofanos_totales": 1,
+          "postas_rurales_dependientes": 0,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 6.0,
           "dependencia_evacuacion_aeromedica": "Alta (Distancia de 330 km de ripio/asfalto a Coyhaique)",
           "medicos_por_mil_habitantes": 1.42,
-          "lista_espera_no_ges_consultas_especialidad": 460,
+          "lista_espera_no_ges_consultas_especialidad": 617,
           "urgencias_respiratorias_invernales_pct": 24.2,
-          "aeroevacuaciones_samu_anual": 54,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 54
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -4130,20 +4166,18 @@
       "datos": {
         "salud_red_asistencial": {
           "establecimiento_principal": "Posta de Salud Rural Villa O'Higgins",
-          "nivel_complejidad": "Atención Primaria de Salud Rural Extrema",
+          "nivel_complejidad": "Atención Primaria de Salud Rural Extrema (2 médicos EDF jun-2026)",
           "camas_hospitalarias": 0,
-          "postas_rurales_dependientes": 0,
+          "quirofanos_totales": 0,
+          "postas_rurales_dependientes": 1,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane (a 230 km) / Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 10.0,
           "dependencia_evacuacion_aeromedica": "Crítica (Extremo sur de Carretera Austral, paso por barcaza Fiordo Mitchell)",
           "medicos_por_mil_habitantes": 0.78,
-          "lista_espera_no_ges_consultas_especialidad": 96,
+          "lista_espera_no_ges_consultas_especialidad": 106,
           "urgencias_respiratorias_invernales_pct": 16.5,
-          "aeroevacuaciones_samu_anual": 42,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 42
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -4556,18 +4590,16 @@
           "establecimiento_principal": "Posta de Salud Rural Caleta Tortel",
           "nivel_complejidad": "Atención Primaria de Salud Rural Pasarelas / Fluvial",
           "camas_hospitalarias": 0,
-          "postas_rurales_dependientes": 0,
+          "quirofanos_totales": 0,
+          "postas_rurales_dependientes": 1,
+          "aeroevacuaciones_secundarias_interregionales_anual": 0,
           "hospital_derivacion_quirurgica": "Hospital Comunitario de Cochrane (a 125 km) / Hospital Regional Coyhaique",
           "tiempo_traslado_terrestre_coyhaique_horas": 8.0,
           "dependencia_evacuacion_aeromedica": "Crítica / Alta (Topografía de pasarelas de ciprés, traslado fluvial en lancha ambulancia)",
           "medicos_por_mil_habitantes": 0.85,
-          "lista_espera_no_ges_consultas_especialidad": 112,
+          "lista_espera_no_ges_consultas_especialidad": 88,
           "urgencias_respiratorias_invernales_pct": 17.8,
-          "aeroevacuaciones_samu_anual": 46,
-          "camas_psiquiatricas_hrc": 0,
-          "tasa_suicidio_deis_por_100k": 15.1,
-          "mortalidad_cancer_gastrico_cie10_c16": 18.4,
-          "mortalidad_cancer_vesicula_cie10_c23": 12.6
+          "aeroevacuaciones_samu_anual": 46
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
@@ -4977,7 +5009,10 @@
       "lng": -72.0685,
       "atributos": {
         "categoria": "Red Asistencial Minsal / SSA",
-        "camas": 167,
+        "camas": 135,
+        "camas_con_upc_pediatrica_jun2026": 141,
+        "quirofanos": 4,
+        "sillones_hemodialisis": 18,
         "quirurgico": true,
         "uci_adulto_pediatrica": true,
         "helipuerto_aeromedico": true
@@ -4987,14 +5022,15 @@
     {
       "id": "hosp_puerto_aysen",
       "nombre": "Hospital de Puerto Aysén",
-      "tipo": "Hospital de Mediana Complejidad",
+      "tipo": "Hospital de Mediana/Baja Complejidad",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "lat": -45.4042,
       "lng": -72.6948,
       "atributos": {
         "categoria": "Red Asistencial Minsal / SSA",
-        "camas": 52,
+        "camas": 56,
+        "quirofanos": 2,
         "quirurgico": true,
         "urgencia_24h": true
       },
@@ -5002,7 +5038,7 @@
     },
     {
       "id": "hosp_puerto_cisnes",
-      "nombre": "Hospital Comunitario de Puerto Cisnes",
+      "nombre": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
       "tipo": "Hospital Comunitario de Baja Complejidad",
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
@@ -5010,7 +5046,8 @@
       "lng": -72.698,
       "atributos": {
         "categoria": "Red Asistencial Minsal / SSA",
-        "camas": 12,
+        "camas": 8,
+        "quirofanos": 0,
         "quirurgico": false,
         "urgencia_24h": true
       },
@@ -5018,7 +5055,7 @@
     },
     {
       "id": "hosp_chile_chico",
-      "nombre": "Hospital Familiar y Comunitario San José de Chile Chico",
+      "nombre": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
       "tipo": "Hospital Comunitario de Baja Complejidad",
       "codigo_comuna": "CL-XI-06",
       "comuna_ine": "11401",
@@ -5026,15 +5063,16 @@
       "lng": -71.725,
       "atributos": {
         "categoria": "Red Asistencial Minsal / SSA",
-        "camas": 14,
-        "quirurgico": false,
+        "camas": 7,
+        "quirofanos": 1,
+        "quirurgico": true,
         "urgencia_24h": true
       },
       "source_url": "https://www.saludaysen.cl"
     },
     {
       "id": "hosp_cochrane",
-      "nombre": "Hospital Comunitario de Cochrane",
+      "nombre": "Hospital Lord Cochrane",
       "tipo": "Hospital Comunitario de Baja Complejidad",
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
@@ -5042,24 +5080,10 @@
       "lng": -72.5725,
       "atributos": {
         "categoria": "Red Asistencial Minsal / SSA",
-        "camas": 16,
-        "quirurgico": false,
+        "camas": 7,
+        "quirofanos": 1,
+        "quirurgico": true,
         "urgencia_24h": true
-      },
-      "source_url": "https://www.saludaysen.cl"
-    },
-    {
-      "id": "cesfam_melinka",
-      "nombre": "CESFAM Melinka (Archipiélago de las Guaitecas)",
-      "tipo": "Centro de Salud Familiar Rural",
-      "codigo_comuna": "CL-XI-05",
-      "comuna_ine": "11203",
-      "lat": -43.8972,
-      "lng": -73.7465,
-      "atributos": {
-        "categoria": "Atención Primaria Insular",
-        "camas_observacion": 2,
-        "aeromedico_requerido": true
       },
       "source_url": "https://www.saludaysen.cl"
     },
@@ -5072,7 +5096,7 @@
       "lat": -44.2415,
       "lng": -71.846,
       "atributos": {
-        "categoria": "Atención Primaria Rural",
+        "categoria": "Atención Primaria Rural (DAP SSA)",
         "medico_general_zona": true
       },
       "source_url": "https://www.saludaysen.cl"
@@ -5086,8 +5110,9 @@
       "lat": -48.4685,
       "lng": -72.5605,
       "atributos": {
-        "categoria": "Atención Primaria Extrema",
+        "categoria": "Atención Primaria Extrema (DAP SSA)",
         "terminal_carretera_austral": true,
+        "medicos_edf_permanentes": 2,
         "aeromedico_requerido": true
       },
       "source_url": "https://www.saludaysen.cl"
@@ -5101,7 +5126,7 @@
       "lat": -47.796,
       "lng": -73.5345,
       "atributos": {
-        "categoria": "Atención Primaria Rural Pasarelas",
+        "categoria": "Atención Primaria Rural Pasarelas (DAP SSA)",
         "lancha_ambulancia": true
       },
       "source_url": "https://www.saludaysen.cl"
@@ -5617,6 +5642,22 @@
         "fuente_catalogo": "USGS NEIC"
       },
       "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/usb000tpz6"
+    },
+    {
+      "id": "posta_melinka",
+      "nombre": "Posta de Salud Rural Melinka (Archipiélago de las Guaitecas)",
+      "tipo": "Posta de Salud Rural Insular con SUR",
+      "codigo_comuna": "CL-XI-05",
+      "comuna_ine": "11203",
+      "lat": -43.8972,
+      "lng": -73.7465,
+      "atributos": {
+        "categoria": "Atención Primaria Insular (DAP SSA)",
+        "camas": 0,
+        "aeromedico_requerido": true,
+        "samu_regulador": "SAMU Reloncaví (Puerto Montt)"
+      },
+      "source_url": "https://www.saludaysen.cl"
     }
   ]
 }

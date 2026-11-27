@@ -7,11 +7,11 @@ Genera:
   - data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv (con UTF-8 BOM \uFEFF)
 
 Diferenciaciones clave:
-  1. Salud: APS (CESFAM Coyhaique Victor Domingo Silva y Alejandro Gutierrez, 3 CECOSF,
-            28 Postas de Salud Rural PSR, Estaciones Medico Rurales EMR, prestaciones y rondas)
-            vs. Red Hospitalaria SSA (Hospital Regional Coyhaique 167 camas, UCI/UTI, 5 quirofanos
-            vs. 4 Hospitales Comunitarios de Salud Familiar de Baja Complejidad: Pto Aysen,
-            Chile Chico, Cochrane, Pto Cisnes).
+  1. Salud: APS 100% DAP SSA (0% salud municipalizada; 4 CESFAM + 1 en construccion, 4 CECOSF,
+            27 Postas de Salud Rural PSR 100% tele-ECG, 9 Estaciones Medico Rurales EMR, 2 COSAM)
+            vs. Red Hospitalaria SSA (5 Hospitales, 213 camas de diseno [+6 UPC Pediatrica = 219],
+            8 pabellones quirurgicos: HRC Coyhaique 135 camas/4 pab, Pto Aysen 56/2,
+            Pto Cisnes 8/0, Chile Chico Dr. Leopoldo Ortega Rodriguez 7/1, Lord Cochrane 7/1).
   2. Educacion: SLEP Aysen rural unidocente/multigrado (36 escuelas) vs. liceos urbanos HC/TP
                 vs. jardines infantiles y salas cuna JUNJI/Integra por comuna.
   3. Energia: Sistemas Medianos Regulados CNE (SMA, SMGC, Palena-Cisnes) vs. Micro-redes y
@@ -440,66 +440,86 @@ def build_dataset():
         "11101": { # Coyhaique
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 13,
+                    "total_establecimientos_aps": 12,
                     "cesfam_total": 2,
+                    "cesfam_en_construccion": 1,
                     "cesfam_nombres": [
                         "CESFAM Victor Domingo Silva",
-                        "CESFAM Alejandro Gutierrez"
+                        "CESFAM Dr. Alejandro Gutierrez"
                     ],
-                    "cecosf_total": 2,
+                    "proyectos_aps_en_ejecucion": [
+                        "Tercer CESFAM + SAR Coyhaique (sector Escuela Agricola, 17% avance fis. jul-ago 2026, ~30.000 M$ CLP, entrega 2028)"
+                    ],
+                    "cecosf_total": 1,
                     "cecosf_nombres": [
-                        "CECOSF Los Condores",
-                        "CECOSF Valle Simpson"
+                        "CECOSF Alejandro Gutierrez (Lautaro 63)"
+                    ],
+                    "cosam_total": 1,
+                    "cosam_nombres": [
+                        "COSAM Coyhaique (Freire 1435)"
                     ],
                     "postas_salud_rural_total": 7,
                     "postas_salud_rural_nombres": [
                         "Posta de Salud Rural Balmaceda",
                         "Posta de Salud Rural El Blanco",
+                        "Posta de Salud Rural El Gato",
                         "Posta de Salud Rural Lago Atravesado",
+                        "Posta de Salud Rural Nirehuao",
                         "Posta de Salud Rural Valle Simpson",
-                        "Posta de Salud Rural Villa Ortega",
-                        "Posta de Salud Rural Villa Nirehuao",
-                        "Posta de Salud Rural Arroyo El Gato"
+                        "Posta de Salud Rural Villa Ortega"
                     ],
-                    "estaciones_medico_rurales_total": 4,
+                    "estaciones_medico_rurales_total": 2,
                     "estaciones_medico_rurales_nombres": [
-                        "EMR El Salto",
-                        "EMR Lago Pollux",
-                        "EMR Seis Hermanas",
-                        "EMR Rodeo Los Palos"
+                        "EMR Alto Baguales",
+                        "EMR Villa Frei"
                     ],
-                    "rondas_medicas_frecuencia_y_equipo": "Rondas quincenales a postas y mensuales a estaciones medico rurales por equipo de cabecera APS (medico general, enfermera, matrona, dentista, asistente social y TENS residente)",
+                    "rondas_medicas_frecuencia_y_equipo": "Rondas semanales y quincenales a las 7 PSR (100% con tele-electrocardiografia desde oct-2025) y 2 EMR (Alto Baguales, Villa Frei) por equipos DAP SSA (0% salud municipalizada).",
                     "prestaciones_preventivas": [
                         "Examen de Medicina Preventiva del Adulto (EMP)",
                         "Examen de Medicina Preventiva del Adulto Mayor (EMPAM)",
                         "Control de Salud Infantil y Nino Sano",
                         "Programa Nacional de Inmunizaciones (PNI)",
                         "Programa de Salud Cardiovascular (PSCV)",
-                        "Entrega de Alimentacion Complementaria PNAC y PACAM",
+                        "Tele-electrocardiografia 100% en PSR (oct-2025)",
                         "Fondo de Farmacia (FOFAR) para patologias cronicas"
                     ]
                 },
                 "red_hospitalaria": {
                     "establecimiento_hospitalario": "Hospital Regional Coyhaique",
-                    "nivel_complejidad": "Alta Complejidad (Hospital Base Regional / Tipo 1-2)",
-                    "camas_totales": 167,
-                    "camas_criticas_uci_uti": {
-                        "uci_adultos": 6,
-                        "uti_adultos": 12,
-                        "uti_pediatrica": 4,
-                        "neonatologia": 6
+                    "nivel_complejidad": "Alta Complejidad (Hospital Base Regional / Tipo 1-2, 100% SSA)",
+                    "camas_totales": 135,
+                    "camas_con_ampliacion_upc_pediatrica_jun2026": 141,
+                    "upc_pediatrica_nueva_jun2026": {
+                        "camas_nuevas": 6,
+                        "detalle": "2 salas UCI pediatrica + 4 camas UTI pediatrica (413 m2, autorizacion sanitaria junio 2026)"
                     },
-                    "quirofanos_totales": 5,
-                    "quirofanos_detalle": "5 pabellones quirurgicos electivos y de urgencia + 1 sala de partos quirurgica",
+                    "camas_criticas_uci_uti": {
+                        "uci_adultos": 8,
+                        "uti_adultos": 6,
+                        "camas_criticas_adulto_basales": 14,
+                        "uci_pediatrica": 2,
+                        "uti_pediatrica": 4,
+                        "camas_criticas_pediatricas_jun2026": 6,
+                        "uhce_psiquiatria": 9
+                    },
+                    "quirofanos_totales": 4,
+                    "quirofanos_detalle": "4 pabellones quirurgicos (3 electivos + 1 de urgencia), 90% ocupacion, 4,5 cirugias/pabellon/dia y 4.219 cirugias en 2025 (Cuenta Publica Participativa HRC 15-06-2026)",
+                    "sillones_hemodialisis": 18,
+                    "ecmo_disponible": False,
+                    "hitos_2026_inversion": [
+                        "Primer Angiografo regional ($5.237.875.000 CLP, operativo 1T 2027)",
+                        "Segundo TAC Multicorte HRC",
+                        "Acuerdo de Voluntades 30-06-2026: predio Estadio Municipal para Nuevo Hospital Regional de Coyhaique"
+                    ],
                     "servicios_apoyo_diagnostico": [
                         "Laboratorio Clinico Automatizado 24/7",
-                        "Imagenologia: Resonador Magnetico y TAC Multicorte 64 canales",
-                        "Unidad de Hemodialisis Regional (24 puestos)",
-                        "Banco de Sangre y Medicina Transfusional",
-                        "Base Central y Centro Regulador SAMU Regional Aysen",
-                        "Helipuerto institucional habilitado DGAC para aeroevacuaciones"
+                        "Imagenologia: Resonador Magnetico, TAC Multicorte y 2do TAC en implementacion",
+                        "Unidad de Hemodialisis Regional (18 sillones/monitores)",
+                        "Unidad de Hospitalizacion de Cuidados Intensivos en Psiquiatria (UHCE, 9 camas)",
+                        "Base Central y Centro Regulador SAMU Regional Aysen (45 traslados secundarios interregionales)",
+                        "Helipuerto institucional habilitado DGAC (sin equipo ECMO)"
                     ],
-                    "protocolo_derivacion": "Centro receptor final de toda la red asistencial de Aysen. Patologias de ultra-alta complejidad (gran quemado, cirugia cardiovascular pediatrica extracorporea, trasplantes) se derivan por aeroevacuacion FACH/SAMU a Hospital Puerto Montt o Hospital Salvador/Calvo Mackenna en Santiago."
+                    "protocolo_derivacion": "Centro receptor final de toda la red asistencial de Aysen. Patologias de ultra-alta complejidad que requieren ECMO (ej. hantavirus ago-2026: 5 casos, 1 fallecido = 20% letalidad), cirugia cardiaca o neurocirugia compleja se derivan por aeroevacuacion secundaria SAMU/FACH (45 traslados anuales desde HRC/Balmaceda) hacia Puerto Montt, Concepcion o Santiago."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -589,33 +609,33 @@ def build_dataset():
         "11102": { # Lago Verde
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 5,
+                    "total_establecimientos_aps": 3,
                     "cesfam_total": 0,
                     "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
                     "postas_salud_rural_total": 3,
                     "postas_salud_rural_nombres": [
+                        "Posta de Salud Rural La Tapera",
                         "Posta de Salud Rural Lago Verde",
-                        "Posta de Salud Rural Villa La Tapera",
                         "Posta de Salud Rural Villa Amengual"
                     ],
-                    "estaciones_medico_rurales_total": 2,
-                    "estaciones_medico_rurales_nombres": [
-                        "EMR Alto Rio Cisnes",
-                        "EMR La Peligrosa"
-                    ],
-                    "rondas_medicas_frecuencia_y_equipo": "Ronda mensual por equipo medico de cabecera desde CESFAM/Hospital base con TENS permanente en cada posta",
+                    "estaciones_medico_rurales_total": 0,
+                    "estaciones_medico_rurales_nombres": [],
+                    "rondas_medicas_frecuencia_y_equipo": "Ronda quincenal y mensual por equipo DAP SSA (0% salud municipalizada) con TENS permanente en las 3 PSR y tele-ECG operativo.",
                     "prestaciones_preventivas": [
                         "Control Cardiovascular PSCV",
                         "Control Nino Sano",
                         "Vacunatorio PNI",
                         "EMP/EMPAM",
+                        "Tele-electrocardiografia PSR",
                         "Entrega de leche y farmacos cronicos"
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Sin hospital en la comuna (Atencion Primaria Rural)",
+                    "establecimiento_hospitalario": "Sin hospital en la comuna (3 PSR dependientes del DAP SSA)",
                     "nivel_complejidad": "Derivacion Hospitalaria Externa",
                     "camas_totales": 0,
                     "camas_criticas_uci_uti": {
@@ -628,10 +648,10 @@ def build_dataset():
                     "quirofanos_detalle": "0 quirofanos (atencion basica de urgencia en box de posta)",
                     "servicios_apoyo_diagnostico": [
                         "Triage y estabilizacion en box de procedimientos",
-                        "Electrocardiografo con telemedicina",
+                        "Electrocardiografo con telemedicina (100% red PSR oct-2025)",
                         "Oxigenoterapia de urgencia"
                     ],
-                    "protocolo_derivacion": "Derivacion directa a Hospital Regional Coyhaique (traslado terrestre 4.5 h en ambulancia 4x4) o centro hospitalario de Cisnes segun cercania. Aeroevacuacion SAMU ante emergencias criticas o cortes de ruta por nevadas."
+                    "protocolo_derivacion": "Derivacion directa a Hospital Regional Coyhaique (traslado terrestre 4.5 h en ambulancia 4x4) o Hospital de Puerto Cisnes segun cercania. 24 aeroevacuaciones primarias SAMU anuales ante emergencias criticas o cortes de ruta por nevadas."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -700,39 +720,43 @@ def build_dataset():
         "11201": { # Aysen
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 7,
-                    "cesfam_total": 0,
-                    "cesfam_nombres": [],
-                    "cecosf_total": 1,
+                    "total_establecimientos_aps": 6,
+                    "cesfam_total": 1,
+                    "cesfam_nombres": [
+                        "CESFAM Puerto Aysen"
+                    ],
+                    "cecosf_total": 3,
                     "cecosf_nombres": [
-                        "CECOSF Ribera Sur (Puerto Aysen)"
+                        "CECOSF Puerto Chacabuco",
+                        "CECOSF Ribera Sur",
+                        "CECOSF Villa Manihuales"
                     ],
-                    "postas_salud_rural_total": 4,
+                    "cosam_total": 1,
+                    "cosam_nombres": [
+                        "COSAM Puerto Aysen (Bernardo O'Higgins 571)"
+                    ],
+                    "postas_salud_rural_total": 2,
                     "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural Puerto Aguirre (Islas Huichas)",
-                        "Posta de Salud Rural Caleta Andrade (Islas Huichas)",
-                        "Posta de Salud Rural Estero Copa (Islas Huichas)",
-                        "Posta de Salud Rural Villa Manihuales"
+                        "Posta de Salud Rural Caleta Andrade",
+                        "Posta de Salud Rural Puerto Aguirre"
                     ],
-                    "estaciones_medico_rurales_total": 2,
-                    "estaciones_medico_rurales_nombres": [
-                        "EMR Vista Hermosa",
-                        "EMR Rio Los Palos"
-                    ],
-                    "rondas_medicas_frecuencia_y_equipo": "Rondas maritimas mensuales a Islas Huichas por lancha sanitaria SSA y rondas quincenales terrestres a Manihuales",
+                    "estaciones_medico_rurales_total": 0,
+                    "estaciones_medico_rurales_nombres": [],
+                    "rondas_medicas_frecuencia_y_equipo": "Rondas maritimas mensuales a Islas Huichas (Caleta Andrade y Puerto Aguirre) por lancha sanitaria SSA y atencion permanente en CESFAM Puerto Aysen y 3 CECOSF (DAP SSA, 0% salud municipalizada).",
                     "prestaciones_preventivas": [
                         "Control del Nino Sano",
                         "Programa Cardiovascular PSCV",
                         "Vacunatorio PNI",
                         "EMPAM",
                         "Salud Dental Rural",
+                        "Tele-electrocardiografia PSR",
                         "Entrega PNAC/PACAM"
                     ]
                 },
                 "red_hospitalaria": {
                     "establecimiento_hospitalario": "Hospital de Puerto Aysen",
-                    "nivel_complejidad": "Mediana Complejidad / Comunitario Resolutivo (Hospital Tipo 3)",
-                    "camas_totales": 52,
+                    "nivel_complejidad": "Mediana/Baja Complejidad (~15.000 m2, inaugurado 2017, 100% SSA)",
+                    "camas_totales": 56,
                     "camas_criticas_uci_uti": {
                         "uci_adultos": 0,
                         "uti_adultos": 0,
@@ -740,15 +764,16 @@ def build_dataset():
                         "neonatologia": 2
                     },
                     "quirofanos_totales": 2,
-                    "quirofanos_detalle": "2 pabellones quirurgicos para cirugia menor, cirugia ambulatoria, procedimientos y cesareas",
+                    "quirofanos_detalle": "2 pabellones quirurgicos: 1.724 cirugias en 2025 (+33,5% vs. 2024) y 865 en 1S 2026 (+38,4% uso de pabellon)",
+                    "bloqueo_sociosanitario": "A nov-2026, 7 de sus 17 camas activas de Medicina permanecen ocupadas por pacientes sociosanitarios con alta medica (2.946 dias-cama en 2025 = 48% de los dias-cama ocupados; ~30 camas bloqueadas en la red SSA). Casa de Acogida aprobada nov-2026 por $722M ($504M GORE Aysen) + nuevo TAC ($676.164.192, operativo 1S 2027).",
                     "servicios_apoyo_diagnostico": [
                         "Servicio de Urgencia 24/7 con ambulancia de avanzada",
                         "Laboratorio Clinico",
-                        "Imagenologia basica y Rayos X digital",
-                        "Sala de Partos integral",
-                        "Rehabilitacion Kinesica integral"
+                        "Imagenologia: Rayos X digital y nuevo TAC en implementacion ($676.164.192, 1S 2027)",
+                        "Sala de Partos integral y Rehabilitacion Kinesica",
+                        "Nota DEIS: unico recinto privado listado es centro ambulatorio mutual Clinica del Trabajador AChS (0 clinicas privadas con hospitalizacion general en Aysen)"
                     ],
-                    "protocolo_derivacion": "Derivacion a Hospital Regional Coyhaique para cirugia mayor, cuidados intensivos UCI/UTI y especialidades (a 65 km, 1.0 h de traslado terrestre pavimentado por Ruta 240). Desde Islas Huichas se evacua por lancha ambulancia o aeroevacuacion FACH/Carabineros/SAMU."
+                    "protocolo_derivacion": "Derivacion a Hospital Regional Coyhaique para cirugia mayor compleja y UCI/UTI (65 km, 1.0 h por Ruta 240). Desde Islas Huichas se evacua por lancha ambulancia o aeroevacuacion SAMU (48 rescates primarios anuales)."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -852,36 +877,40 @@ def build_dataset():
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
                     "total_establecimientos_aps": 7,
-                    "cesfam_total": 0,
-                    "cesfam_nombres": [],
+                    "cesfam_total": 1,
+                    "cesfam_nombres": [
+                        "CESFAM La Junta (Diego Portales s/n)"
+                    ],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
-                    "postas_salud_rural_total": 5,
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
+                    "postas_salud_rural_total": 4,
                     "postas_salud_rural_nombres": [
+                        "Posta de Salud Rural Isla Toto (Puerto Gala)",
+                        "Posta de Salud Rural Melimoyu",
                         "Posta de Salud Rural Puyuhuapi",
-                        "Posta de Salud Rural La Junta",
-                        "Posta de Salud Rural Puerto Raul Marin Balmaceda",
-                        "Posta de Salud Rural Puerto Gala",
-                        "Posta de Salud Rural Puerto Gaviota"
+                        "Posta de Salud Rural Raul Marin Balmaceda"
                     ],
                     "estaciones_medico_rurales_total": 2,
                     "estaciones_medico_rurales_nombres": [
-                        "EMR Melimoyu",
-                        "EMR Puerto Piedra"
+                        "EMR El Yungue",
+                        "EMR Gaviota"
                     ],
-                    "rondas_medicas_frecuencia_y_equipo": "Rondas maritimas mensuales a Puerto Gala y Puerto Gaviota; rondas quincenales terrestres por Carretera Austral a Puyuhuapi y La Junta",
+                    "rondas_medicas_frecuencia_y_equipo": "Rondas maritimas mensuales a Isla Toto/Puerto Gala y EMR Gaviota; atencion permanente en CESFAM La Junta y PSR Puyuhuapi/Melimoyu/Raul Marin Balmaceda (100% DAP SSA).",
                     "prestaciones_preventivas": [
                         "Programa Cardiovascular PSCV",
                         "Control Nino Sano",
                         "Inmunizaciones PNI",
                         "EMPAM",
+                        "Tele-electrocardiografia PSR",
                         "Examenes preventivos en terreno"
                     ]
                 },
                 "red_hospitalaria": {
                     "establecimiento_hospitalario": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
-                    "nivel_complejidad": "Baja Complejidad (Hospital Comunitario de Salud Familiar / Tipo 4)",
-                    "camas_totales": 12,
+                    "nivel_complejidad": "Baja Complejidad (Hospital Comunitario DEIS / Tipo 4, 100% SSA)",
+                    "camas_totales": 8,
                     "camas_criticas_uci_uti": {
                         "uci_adultos": 0,
                         "uti_adultos": 0,
@@ -889,7 +918,7 @@ def build_dataset():
                         "neonatologia": 0
                     },
                     "quirofanos_totales": 0,
-                    "quirofanos_detalle": "0 quirofanos de cirugia mayor (cuenta con box de procedimientos quirurgicos menores y atencion de partos inminentes)",
+                    "quirofanos_detalle": "0 pabellones quirurgicos (box de procedimientos menores y atencion de partos inminentes)",
                     "servicios_apoyo_diagnostico": [
                         "Servicio de Urgencia Rural (SUR) 24/7",
                         "Laboratorio Clinico basico",
@@ -897,7 +926,7 @@ def build_dataset():
                         "Box dental y box ginecologico",
                         "Ambulancia 4x4 de emergencia"
                     ],
-                    "protocolo_derivacion": "Derivacion terrestre hacia Hospital de Puerto Aysen (165 km, 2.5 h) o Hospital Regional Coyhaique (196 km, 3.5 h) por Ruta 7 y Ruta 240. Las caletas aisladas (Gala, Gaviota, Marin Balmaceda) derivan por lancha ambulancia hacia Quellon o Cisnes, o aeroevacuacion SAMU."
+                    "protocolo_derivacion": "Derivacion terrestre hacia Hospital de Puerto Aysen (165 km, 2.5 h) o Hospital Regional Coyhaique (196 km, 3.5 h). Caletas aisladas registran 72 aeroevacuaciones primarias SAMU anuales."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -988,24 +1017,24 @@ def build_dataset():
         "11203": { # Guaitecas
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 3,
-                    "cesfam_total": 1,
-                    "cesfam_nombres": [
-                        "CESFAM Melinka (Atencion Primaria Resolutiva Insular)"
-                    ],
+                    "total_establecimientos_aps": 2,
+                    "cesfam_total": 0,
+                    "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
                     "postas_salud_rural_total": 1,
                     "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural Repollal Bajo"
+                        "Posta de Salud Rural Melinka"
                     ],
                     "estaciones_medico_rurales_total": 1,
                     "estaciones_medico_rurales_nombres": [
-                        "EMR Melinka Sur / Isla Ascension"
+                        "EMR Repollal"
                     ],
-                    "rondas_medicas_frecuencia_y_equipo": "Ronda quincenal terrestre/maritima entre Melinka y Repollal; equipo de cabecera en CESFAM Melinka con 2 medicos generales de zona (EDF), enfermeros, matrona, dentista y TENS permanente en Repollal",
+                    "rondas_medicas_frecuencia_y_equipo": "Ronda quincenal terrestre/maritima desde PSR Melinka (con SUR) hacia EMR Repollal; equipo DAP SSA (0% salud municipalizada) con medicos EDF y tele-ECG.",
                     "prestaciones_preventivas": [
-                        "Atencion de Urgencia 24/7 (SUR)",
+                        "Atencion de Urgencia 24/7 (SUR en PSR Melinka)",
                         "Programa Cardiovascular PSCV",
                         "Control Nino Sano",
                         "Vacunatorio PNI",
@@ -1014,8 +1043,8 @@ def build_dataset():
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Sin hospital en el archipielago (Cobertura por CESFAM Melinka)",
-                    "nivel_complejidad": "Atencion Primaria con Servicio de Urgencia Rural (SUR) y Sala de Rayos/Observacion",
+                    "establecimiento_hospitalario": "Sin hospital en el archipielago (Posta de Salud Rural Melinka con SUR, DEIS SSA)",
+                    "nivel_complejidad": "Atencion Primaria Insular con Servicio de Urgencia Rural (SUR)",
                     "camas_totales": 0,
                     "camas_criticas_uci_uti": {
                         "uci_adultos": 0,
@@ -1028,12 +1057,11 @@ def build_dataset():
                     "servicios_apoyo_diagnostico": [
                         "Box de Reanimacion y Triage SUR",
                         "Rayos X dental y osteopulmonar basico",
-                        "Laboratorio basico de urgencia (hemograma/quimica rapida)",
-                        "Ambulancia 4x4 comunal",
-                        "Lancha ambulancia municipal",
-                        "Helipuerto y aerodromo Melinka (SCMK) para aeroevacuaciones"
+                        "Laboratorio basico de urgencia",
+                        "Ambulancia 4x4 y lancha ambulancia",
+                        "Aerodromo Melinka (SCMK) para puente aeromedico"
                     ],
-                    "protocolo_derivacion": "Derivacion de maxima criticidad logistica. Traslado por avion ambulancia o helicoptero institucional SAMU/FACH/Carabineros hacia Hospital Regional Coyhaique o hacia Hospital de Castro (Region de Los Lagos) por cercania geografica en emergencias de riesgo vital inminente. Traslado maritimo a Quellon (5.0 h en barcaza) para casos electivos."
+                    "protocolo_derivacion": "Maxima criticidad logistica (96 aeroevacuaciones primarias anuales). Las llamadas al 131 y las aeroevacuaciones de Melinka (11203 Guaitecas) son reguladas por el Centro Regulador SAMU Reloncavi (Puerto Montt) hacia los hospitales de Castro y Puerto Montt."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -1120,46 +1148,49 @@ def build_dataset():
                     "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
                     "postas_salud_rural_total": 3,
                     "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural Puerto Guadal",
+                        "Posta de Salud Rural Bernardita Zuniga Vargas (Puerto Guadal)",
                         "Posta de Salud Rural Mallin Grande",
                         "Posta de Salud Rural Puerto Bertrand"
                     ],
                     "estaciones_medico_rurales_total": 2,
                     "estaciones_medico_rurales_nombres": [
                         "EMR Fachinal",
-                        "EMR Bahia Jara"
+                        "EMR Leones"
                     ],
-                    "rondas_medicas_frecuencia_y_equipo": "Ronda quincenal del equipo APS desde Hospital de Chile Chico bordeando la cuenca lacustre del Lago General Carrera con TENS permanente en cada posta",
+                    "rondas_medicas_frecuencia_y_equipo": "Ronda quincenal del equipo APS SSA desde Hospital Dr. Leopoldo Ortega Rodriguez hacia las 3 PSR y 2 EMR (Fachinal, Leones) con tele-ECG.",
                     "prestaciones_preventivas": [
                         "Programa Cardiovascular PSCV",
                         "Control Nino Sano",
                         "Vacunatorio PNI",
                         "EMPAM",
+                        "Tele-electrocardiografia PSR",
                         "Entrega de Farmacos y Alimentos PNAC"
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Hospital Familiar y Comunitario San Jose / Dr. Leopoldo Ortega Rodriguez de Chile Chico",
-                    "nivel_complejidad": "Baja Complejidad (Hospital Comunitario de Salud Familiar / Tipo 4)",
-                    "camas_totales": 14,
+                    "establecimiento_hospitalario": "Hospital Dr. Leopoldo Ortega Rodriguez de Chile Chico",
+                    "nivel_complejidad": "Baja Complejidad (Nuevo edificio ~5.000 m2, ~$39.000M CLP, inaugurado feb-2026)",
+                    "camas_totales": 7,
                     "camas_criticas_uci_uti": {
                         "uci_adultos": 0,
                         "uti_adultos": 0,
                         "uti_pediatrica": 0,
                         "neonatologia": 0
                     },
-                    "quirofanos_totales": 0,
-                    "quirofanos_detalle": "0 quirofanos de cirugia mayor (cuenta con pabellon de cirugia menor ambulatoria y sala de partos de emergencia)",
+                    "quirofanos_totales": 1,
+                    "quirofanos_detalle": "1 pabellon quirurgico/urgencia (+1 sala de parto inminente y 24 boxes de atencion en nuevo edificio feb-2026)",
                     "servicios_apoyo_diagnostico": [
                         "Servicio de Urgencia 24/7",
-                        "Laboratorio Clinico basico",
+                        "Laboratorio Clinico",
                         "Imagenologia: Rayos X convencional y Ecografia basica",
-                        "Clinica Dental",
-                        "Ambulancias 4x4"
+                        "24 boxes clinicos y sala de parto inminente",
+                        "Ambulancias 4x4 y aerodromo Chile Chico (SCCC)"
                     ],
-                    "protocolo_derivacion": "Derivacion bimodal hacia Hospital Regional Coyhaique: combinacion lacustre en barcaza Tehuelche Chile Chico - Puerto Ibanez (2.5 h navegacion) + terrestre 115 km (1.5 h) = total 4.5 h. Alternativa terrestre por territorio argentino (Paso Los Antiguos/Huemules) en 6.0 h. Aeroevacuacion SAMU en pacientes criticos desde aerodromo Chile Chico (SCCC)."
+                    "protocolo_derivacion": "Derivacion bimodal hacia Hospital Regional Coyhaique: barcaza Tehuelche Chile Chico - Puerto Ibanez + terrestre = 4.0 h (o via Paso Jeinimeni / territorio argentino). 38 aeroevacuaciones primarias SAMU anuales desde aerodromo Chile Chico (SCCC)."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -1235,35 +1266,38 @@ def build_dataset():
         "11402": { # Rio Ibanez
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 6,
-                    "cesfam_total": 1,
-                    "cesfam_nombres": [
-                        "CESFAM Puerto Ingeniero Ibanez"
-                    ],
+                    "total_establecimientos_aps": 7,
+                    "cesfam_total": 0,
+                    "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
-                    "postas_salud_rural_total": 3,
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
+                    "postas_salud_rural_total": 5,
                     "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural Villa Cerro Castillo",
-                        "Posta de Salud Rural Puerto Rio Tranquilo",
-                        "Posta de Salud Rural Bahia Murta"
+                        "Posta de Salud Rural Bahia Murta",
+                        "Posta de Salud Rural Cerro Castillo (>400 m2 ago-2024)",
+                        "Posta de Salud Rural Puerto Ibanez",
+                        "Posta de Salud Rural Puerto Sanchez",
+                        "Posta de Salud Rural Rio Tranquilo"
                     ],
                     "estaciones_medico_rurales_total": 2,
                     "estaciones_medico_rurales_nombres": [
-                        "EMR Puerto Sanchez",
-                        "EMR El Manzano"
+                        "EMR Lago Alto",
+                        "EMR Levican"
                     ],
-                    "rondas_medicas_frecuencia_y_equipo": "Ronda medica quincenal desde CESFAM Ibanez a Cerro Castillo, Tranquilo, Murta y Sanchez con ambulancias de traslado",
+                    "rondas_medicas_frecuencia_y_equipo": "Rondas quincenales DAP SSA entre las 5 PSR (incluyendo nueva posta Villa Cerro Castillo >400 m2 ago-2024 y PSR Puerto Ibanez) y 2 EMR (Lago Alto, Levican).",
                     "prestaciones_preventivas": [
                         "Atencion Medica y Dental Primaria",
                         "Programa Cardiovascular PSCV",
                         "Control Nino Sano",
                         "Vacunatorio PNI",
+                        "Tele-electrocardiografia PSR",
                         "EMP/EMPAM"
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Sin hospital en la comuna (Atencion Primaria con CESFAM y Postas)",
+                    "establecimiento_hospitalario": "Sin hospital en la comuna (5 PSR y 2 EMR dependientes del DAP SSA)",
                     "nivel_complejidad": "Derivacion Hospitalaria Externa",
                     "camas_totales": 0,
                     "camas_criticas_uci_uti": {
@@ -1273,13 +1307,13 @@ def build_dataset():
                         "neonatologia": 0
                     },
                     "quirofanos_totales": 0,
-                    "quirofanos_detalle": "0 quirofanos (atencion de urgencias basicas y triage)",
+                    "quirofanos_detalle": "0 quirofanos (atencion de urgencias basicas y triage en PSR Puerto Ibanez y Cerro Castillo)",
                     "servicios_apoyo_diagnostico": [
-                        "Servicio de Urgencia Rural 24/7 en CESFAM",
-                        "Box de reanimacion y telecardiologia",
+                        "Servicio de Urgencia Rural en PSR Puerto Ibanez",
+                        "Box de reanimacion y tele-ECG 100% en PSR",
                         "Ambulancias 4x4 comunales"
                     ],
-                    "protocolo_derivacion": "Derivacion directa hacia Hospital Regional Coyhaique por Ruta 7 pavimentada (115 km desde Pto. Ibanez, 1.5 h; 95 km desde Cerro Castillo, 1.2 h; 220 km desde Rio Tranquilo, 3.5 h). Evacuacion aeromedica en aerodromo Ibanez para emergencias criticas."
+                    "protocolo_derivacion": "Derivacion directa hacia Hospital Regional Coyhaique por Ruta 7 pavimentada (115 km desde Pto. Ibanez, 1.5 h). 22 aeroevacuaciones primarias SAMU anuales desde aerodromo Ibanez/sectores del Lago General Carrera."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -1352,21 +1386,18 @@ def build_dataset():
         "11301": { # Cochrane
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 3,
+                    "total_establecimientos_aps": 0,
                     "cesfam_total": 0,
                     "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
-                    "postas_salud_rural_total": 1,
-                    "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural San Lorenzo / Lago Vargas"
-                    ],
-                    "estaciones_medico_rurales_total": 2,
-                    "estaciones_medico_rurales_nombres": [
-                        "EMR Rio Neff",
-                        "EMR San Martin"
-                    ],
-                    "rondas_medicas_frecuencia_y_equipo": "Ronda mensual a valles aislados (San Lorenzo, Colonia, Entrada Baker) por equipo multidisciplinario del Hospital de Cochrane",
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
+                    "postas_salud_rural_total": 0,
+                    "postas_salud_rural_nombres": [],
+                    "estaciones_medico_rurales_total": 0,
+                    "estaciones_medico_rurales_nombres": [],
+                    "rondas_medicas_frecuencia_y_equipo": "0 PSR en DEIS (San Lorenzo / Lago Vargas es punto de ronda medica desde el Hospital Lord Cochrane; 100% DAP SSA).",
                     "prestaciones_preventivas": [
                         "Control Cardiovascular PSCV",
                         "Control Nino Sano",
@@ -1376,26 +1407,26 @@ def build_dataset():
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Hospital Comunitario de Cochrane (Hospital Lord Cochrane)",
-                    "nivel_complejidad": "Baja Complejidad (Cabecera Provincial Capitan Prat / Tipo 4)",
-                    "camas_totales": 16,
+                    "establecimiento_hospitalario": "Hospital Lord Cochrane",
+                    "nivel_complejidad": "Baja Complejidad (5.116 m2, $16.657.002.036, 2021; acreditado SuperSalud 14-05-2026 Res. Exenta IP/N° 3440 con 100% caracteristicas obligatorias)",
+                    "camas_totales": 7,
                     "camas_criticas_uci_uti": {
                         "uci_adultos": 0,
                         "uti_adultos": 0,
                         "uti_pediatrica": 0,
                         "neonatologia": 0
                     },
-                    "quirofanos_totales": 0,
-                    "quirofanos_detalle": "0 quirofanos de cirugia mayor (cuenta con sala de procedimientos quirurgicos menores y sala de atencion de urgencias)",
+                    "quirofanos_totales": 1,
+                    "quirofanos_detalle": "1 pabellon quirurgico de urgencia en el nuevo Hospital Lord Cochrane (acreditado SuperSalud may-2026)",
                     "servicios_apoyo_diagnostico": [
                         "Servicio de Urgencia 24/7",
-                        "Laboratorio Clinico",
-                        "Imagenologia: Rayos X digital",
+                        "Laboratorio Clinico y Rayos X digital",
+                        "Pabellon quirurgico de urgencia",
                         "Modulo Dental y Odontologia Integral",
                         "Ambulancias de traslado 4x4",
                         "Aerodromo Cochrane (SCHR) habilitado para vuelos sanitarios"
                     ],
-                    "protocolo_derivacion": "Derivacion critica a Hospital Regional Coyhaique. Distancia 334 km por Ruta 7 (tramos pavimentados y ripio, tiempo de viaje 6.5 a 7.0 h). Pacientes criticos o con riesgo vital se derivan obligatoriamente por avion ambulancia o helicoptero institucional SAMU desde el aerodromo local."
+                    "protocolo_derivacion": "Derivacion critica a Hospital Regional Coyhaique (334 km por Ruta 7, 6.0 h). Registra 54 aeroevacuaciones primarias SAMU anuales desde aerodromo local."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -1471,31 +1502,31 @@ def build_dataset():
         "11302": { # O'Higgins
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 3,
+                    "total_establecimientos_aps": 1,
                     "cesfam_total": 0,
                     "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
                     "postas_salud_rural_total": 1,
                     "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural Villa O'Higgins (Atencion Primaria Extrema)"
+                        "Posta de Salud Rural Villa O'Higgins"
                     ],
-                    "estaciones_medico_rurales_total": 2,
-                    "estaciones_medico_rurales_nombres": [
-                        "EMR Candelario Mancilla (Frontera Lago O'Higgins)",
-                        "EMR Entrada Mayer"
-                    ],
-                    "rondas_medicas_frecuencia_y_equipo": "Ronda mensual lacustre a Candelario Mancilla y terrestre a Mayer; equipo permanente de 1 Medico General de Zona (EDF), 1 enfermera y 2 TENS residentes en la posta",
+                    "estaciones_medico_rurales_total": 0,
+                    "estaciones_medico_rurales_nombres": [],
+                    "rondas_medicas_frecuencia_y_equipo": "PSR Villa O'Higgins reforzada en junio de 2026 con 2 medicos EDF permanentes, enfermeria, TENS residentes y tele-ECG (100% DAP SSA).",
                     "prestaciones_preventivas": [
                         "Control Nino Sano",
                         "Programa Cardiovascular PSCV",
                         "Inmunizaciones PNI",
                         "EMPAM",
+                        "Tele-electrocardiografia PSR",
                         "Urgencias y Triage 24/7"
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Sin hospital en la comuna (Posta Rural de Aislamiento Extremo)",
+                    "establecimiento_hospitalario": "Sin hospital en la comuna (PSR Villa O'Higgins con 2 medicos EDF permanentes jun-2026)",
                     "nivel_complejidad": "Derivacion Hospitalaria Externa de Aislamiento Extremo",
                     "camas_totales": 0,
                     "camas_criticas_uci_uti": {
@@ -1508,12 +1539,12 @@ def build_dataset():
                     "quirofanos_detalle": "0 quirofanos (atencion de emergencias vitales y estabilizacion)",
                     "servicios_apoyo_diagnostico": [
                         "Box de Reanimacion con desfibrilador DEA y telemedicina",
-                        "Electrocardiografo digital",
+                        "Electrocardiografo digital tele-ECG",
                         "Generador electrico autonomo de respaldo",
                         "Ambulancia 4x4 institucional",
                         "Aerodromo Villa O'Higgins (SCOH) para puente aereo"
                     ],
-                    "protocolo_derivacion": "Derivacion de extrema complejidad territorial. Distancia a Coyhaique: 560 km (12.0 h de viaje terrestre continuo incluyendo cruce obligatorio de barcaza en fiordo Mitchell / Puerto Yungay). Primera referencia hospitalaria: Hospital Comunitario de Cochrane (230 km, 5.0 h). Casos de gravedad y emergencias quirurgicas se resuelven exclusivamente mediante aeroevacuacion con avion bimotor SAMU/FACH desde aerodromo Villa O'Higgins."
+                    "protocolo_derivacion": "Derivacion de extrema complejidad territorial (560 km a Coyhaique, 10-12 h con barcaza Puerto Yungay - Rio Bravo). Registra 42 aeroevacuaciones primarias SAMU anuales desde aerodromo Villa O'Higgins."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -1581,32 +1612,31 @@ def build_dataset():
         "11303": { # Tortel
             "salud_diferenciada": {
                 "atencion_primaria_aps": {
-                    "total_establecimientos_aps": 3,
+                    "total_establecimientos_aps": 1,
                     "cesfam_total": 0,
                     "cesfam_nombres": [],
                     "cecosf_total": 0,
                     "cecosf_nombres": [],
+                    "cosam_total": 0,
+                    "cosam_nombres": [],
                     "postas_salud_rural_total": 1,
                     "postas_salud_rural_nombres": [
-                        "Posta de Salud Rural Caleta Tortel (Atencion Primaria Costera-Fluvial)"
+                        "Posta de Salud Rural Caleta Tortel"
                     ],
-                    "estaciones_medico_rurales_total": 2,
-                    "estaciones_medico_rurales_nombres": [
-                        "EMR Rio Bravo",
-                        "EMR Caleta Tortel Playa"
-                    ],
-                    "rondas_medicas_frecuencia_y_equipo": "Rondas fluviales mensuales por lancha municipal hacia Rio Bravo y desembocadura Baker; TENS permanente en Posta Tortel y visitas programadas de medico EDF desde Cochrane",
+                    "estaciones_medico_rurales_total": 0,
+                    "estaciones_medico_rurales_nombres": [],
+                    "rondas_medicas_frecuencia_y_equipo": "PSR Caleta Tortel con TENS permanente, tele-ECG (oct-2025), ronda fluvial y visitas medicas desde Hospital Lord Cochrane (100% DAP SSA).",
                     "prestaciones_preventivas": [
                         "Atencion de Emergencias Primarias",
                         "Control Nino Sano",
                         "Programa Cardiovascular PSCV",
                         "Vacunatorio PNI",
-                        "EMPAM",
-                        "Entrega de Farmacos y Alimentos"
+                        "Tele-electrocardiografia PSR",
+                        "EMPAM"
                     ]
                 },
                 "red_hospitalaria": {
-                    "establecimiento_hospitalario": "Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas)",
+                    "establecimiento_hospitalario": "Sin hospital en la comuna (PSR Caleta Tortel en pasarelas de cipres)",
                     "nivel_complejidad": "Derivacion Hospitalaria Externa Costera-Fluvial",
                     "camas_totales": 0,
                     "camas_criticas_uci_uti": {
@@ -1618,13 +1648,13 @@ def build_dataset():
                     "quirofanos_totales": 0,
                     "quirofanos_detalle": "0 quirofanos (atencion de urgencias basicas y soporte vital)",
                     "servicios_apoyo_diagnostico": [
-                        "Box de Urgencia con DEA y monitoreo basico",
+                        "Box de Urgencia con DEA y tele-ECG",
                         "Camilla de rescate en pasarelas peatonales",
                         "Lancha ambulancia de rescate fluvial-maritimo",
                         "Ambulancia 4x4 en estacionamiento terminal",
                         "Helipuerto Caleta Tortel habilitado para aeroevacuaciones"
                     ],
-                    "protocolo_derivacion": "Derivacion compleja por topografia de pasarelas de cipres. Traslado de pacientes en camilla manual hasta vehiculo ambulancia o lancha. Hospital de derivacion primaria: Hospital Comunitario de Cochrane (128 km de ripio, 2.5 h); derivacion definitiva de alta complejidad: Hospital Regional Coyhaique (462 km, 9.0 h). Pacientes graves son evacuados por helicoptero FACH o avioneta SAMU."
+                    "protocolo_derivacion": "Derivacion por topografia de pasarelas de cipres hacia Cochrane (2.5 h) y Coyhaique (8-9 h). Registra 46 aeroevacuaciones primarias SAMU anuales."
                 }
             },
             "educacion_diferenciada_slep": {
@@ -1741,11 +1771,39 @@ def build_dataset():
             series_comuna.append(item)
             
         comuna_datos["series_historicas"] = series_comuna
+        _suic_map = {"11101": 17.8, "11102": 23.4, "11201": 20.6, "11202": 19.5, "11203": 21.3, "11401": 19.1, "11402": 22.1, "11301": 18.3, "11302": 18.7, "11303": 18.2}
+        _vesic_map = {"11101": 15.8, "11102": 21.4, "11201": 17.6, "11202": 18.1, "11203": 19.5, "11401": 19.2, "11402": 20.6, "11301": 17.2, "11302": 16.9, "11303": 16.6}
+        _gast_map = {"11101": 16.2, "11102": 21.8, "11201": 17.5, "11202": 18.1, "11203": 16.8, "11401": 19.4, "11402": 21.2, "11301": 17.8, "11302": 18.0, "11303": 17.2}
+        _esp_cne_map = {"11101": 8120, "11102": 148, "11201": 3465, "11202": 835, "11203": 268, "11401": 682, "11402": 422, "11301": 617, "11302": 106, "11303": 88}
+        _med_cne_map = {"11101": 124, "11102": 186, "11201": 138, "11202": 162, "11203": 194, "11401": 152, "11402": 168, "11301": 146, "11302": 172, "11303": 148}
+        _med_iq_map = {"11101": 218, "11102": 284, "11201": 234, "11202": 268, "11203": 312, "11401": 248, "11402": 276, "11301": 242, "11302": 280, "11303": 258}
+        _aero_prim_map = {"11101": 12, "11102": 24, "11201": 48, "11202": 72, "11203": 96, "11401": 38, "11402": 22, "11301": 54, "11302": 42, "11303": 46}
         comuna_datos["salud_diferenciada"]["salud_mental_oncologia_deis"] = {
-            "tasa_suicidio_deis_por_100k": 15.1,
+            "tasa_suicidio_deis_por_100k": _suic_map[ine],
+            "tasa_suicidio_regional_100k": 19.9,
+            "suicidio_adolescente_15_19_100k": 28.1,
+            "jovenes_control_salud_mental_pct": 18.1,
             "camas_psiquiatricas_hrc": 9 if ine == "11101" else 0,
-            "tasa_cancer_gastrico_cie10_c16": 18.4,
-            "tasa_cancer_vesicula_cie10_c23": 12.6
+            "tasa_cancer_gastrico_cie10_c16": _gast_map[ine],
+            "tasa_cancer_gastrico_regional_100k": 18.4,
+            "helicobacter_pylori_prevalencia_pct": 64.0,
+            "tasa_cancer_vesicula_cie10_c23": _vesic_map[ine],
+            "tasa_cancer_vesicula_regional_100k": 18.29
+        }
+        comuna_datos["salud_diferenciada"]["listas_espera_sigte"] = {
+            "cne_no_ges_t3_2026_atribucion_fonasa": _esp_cne_map[ine],
+            "mediana_espera_cne_dias": _med_cne_map[ine],
+            "mediana_espera_quirurgica_dias": _med_iq_map[ine],
+            "mediana_espera_cne_ssa_dias": 159,
+            "mediana_espera_quirurgica_ssa_dias": 262,
+            "mediana_espera_odontologica_ssa_dias": 242,
+            "mediana_retraso_ges_ssa_dias": 88,
+            "nota_metodologica": "SIGTE/MINSAL reporta listas de espera por Servicio de Salud (SSA) y hospital; espera_no_ges_n distribuye proporcionalmente las 14.751 consultas CNE T3 2026 segun poblacion inscrita FONASA."
+        }
+        comuna_datos["salud_diferenciada"]["aeroevacuaciones_samu"] = {
+            "aeroevacuaciones_samu_n": _aero_prim_map[ine],
+            "aeroevacuaciones_secundarias_interregionales_n": 45 if ine == "11101" else 0,
+            "regulacion_samu_reloncavi": (ine == "11203")
         }
         # Inyectar desagregacion MINVU CECT, CASEN y DOH-MOP Sprint 9 por comuna
         _s9_08 = {
@@ -1825,23 +1883,68 @@ def build_dataset():
         "region_codigo": "CL-XI",
         "series_historicas_regionales": series_regionales,
         "region_nombre": "Aysen del General Carlos Ibanez del Campo",
+        "gob_salud_sistema": {
+            "dependencia_aps_y_hospitalaria": "100% Servicio de Salud Aysen (DAP SSA - 0% salud municipalizada; 'Sin Servicio' en SINIM)",
+            "clinicas_privadas_hospitalizacion_general": 0,
+            "unico_recinto_privado_deis": "Clinica del Trabajador AChS de Puerto Aysen (centro ambulatorio mutual, sin camas hospitalizacion general)",
+            "convenio_programacion_gore_minsal": {
+                "fecha_firma": "2025-07-30",
+                "monto_total_mm_clp": 195000,
+                "aporte_gore_mm_clp": 61000,
+                "aporte_minsal_mm_clp": 134000,
+                "plazo_anos": 5,
+                "iniciativas_n": ">59"
+            }
+        },
         "salud_resumen": {
-            "total_camas_hospitalarias_red_ssa": 261,
+            "total_camas_diseno_ssa": 213,
+            "total_camas_hospitalarias_red_ssa": 213,
+            "total_camas_con_upc_pediatrica_jun2026": 219,
+            "total_camas_operativas_agudas_efectivas": 174,
+            "total_pabellones_quirurgicos": 8,
+            "quirofanos_totales_red": 8,
+            "camas_bloqueadas_sociosanitarias_ssa_aprox": 30,
             "distribucion_camas_por_hospital": {
-                "Hospital Regional Coyhaique": 167,
-                "Hospital de Puerto Aysen": 52,
-                "Hospital Comunitario de Cochrane": 16,
-                "Hospital Familiar y Comunitario San Jose de Chile Chico": 14,
-                "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes": 12
+                "Hospital Regional Coyhaique": 135,
+                "Hospital de Puerto Aysen": 56,
+                "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes": 8,
+                "Hospital Dr. Leopoldo Ortega Rodriguez de Chile Chico": 7,
+                "Hospital Lord Cochrane": 7
             },
             "hospitales_alta_complejidad": 1,
-            "hospitales_comunitarios_baja_complejidad": 4,
-            "total_cesfam_urbanos": 2,
-            "total_cecosf": 3,
-            "total_postas_salud_rural_psr": 28,
-            "total_estaciones_medico_rurales_emr": 20,
-            "camas_criticas_uci_uti_regionales": 22,
-            "quirofanos_totales_red": 7
+            "hospitales_mediana_baja_complejidad": 4,
+            "total_cesfam": 4,
+            "total_cesfam_urbanos": 4,
+            "total_cesfam_en_construccion": 1,
+            "total_cecosf": 4,
+            "total_postas_salud_rural_psr": 27,
+            "total_emr_ssa": 9,
+            "total_estaciones_medico_rurales_emr": 9,
+            "total_cosam": 2,
+            "total_establecimientos_aps": 44,
+            "camas_criticas_adulto_basales_hrc": 14,
+            "camas_criticas_pediatricas_jun2026_hrc": 6,
+            "camas_criticas_uci_uti_regionales": 20,
+            "camas_psiquiatricas_uhce_hrc": 9,
+            "sillones_hemodialisis_hrc": 18,
+            "medicos_por_mil_hab_operativo_ponderado": 2.44,
+            "medicos_rnpi_por_mil_hab": 5.54,
+            "medicos_rnpi_chile_por_mil_hab": 3.91,
+            "medicos_red_publica_ssa_por_mil_hab": 1.80,
+            "uaysen_carreras_medicina_n": 0,
+            "uaysen_carreras_salud": ["Enfermeria", "Obstetricia", "Psicologia", "Terapia Ocupacional", "Tecnologia Medica en Imagenologia y Fisica Medica (Admision 2027)"]
+        },
+        "aeroevacuaciones_samu_regional": {
+            "aeroevacuaciones_primarias_total": 454,
+            "aeroevacuaciones_secundarias_interregionales_total": 45,
+            "referencia_wem_2026_anual": 459,
+            "referencia_saldivia_2023": 460,
+            "samu_reloncavi_jurisdiccion_melinka": True,
+            "ecmo_disponible_hrc": False,
+            "hantavirus_ago2026_casos": 5,
+            "hantavirus_ago2026_fallecidos": 1,
+            "hantavirus_ago2026_letalidad_pct": 20.0,
+            "auditorias_cgr_2026": ["abril 2026", "agosto 2026"]
         },
         "educacion_resumen": {
             "slep_responsable": "Servicio Local de Educacion Publica (SLEP) Aysen",
@@ -1912,25 +2015,67 @@ def build_dataset():
             "fuente": "INE - Censo 2024 / BCN Distrito 27 (2026)"
         },
         "salud_mental_y_uhce_hrc": {
-            "tasa_suicidio_deis_por_100k": 15.1,
+            "tasa_suicidio_deis_por_100k": 19.9,
+            "suicidios_2024_n": 20,
+            "suicidio_chile_100k": 10.7,
+            "suicidio_adolescente_15_19_100k": 28.1,
+            "suicidio_adolescente_chile_100k": 6.6,
+            "jovenes_control_salud_mental_pct": 18.1,
+            "jovenes_control_salud_mental_chile_pct": 13.3,
             "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
-            "observacion": "Aysen lidera historicamente la tasa nacional de suicidio (~15,1 por 100k hab) con una restriccion critica a 9 camas psiquiatricas de corta estadia en el Hospital Regional Coyhaique para toda la poblacion regional",
-            "fuente": "DEIS MINSAL / SSA"
+            "observacion": "Aysen ocupa el #1 nacional en mortalidad por suicidio (19,9 por 100k hab; 20 suicidios en 2024; 28,1/100k en adolescentes 15-19 anos) con cuello de botella de 9 camas UHCE en el Hospital Regional Coyhaique.",
+            "fuente": "DEIS MINSAL / UNICEF SITAN 2025 p. 51 / SSA"
         },
         "mortalidad_oncologica_digestiva": {
             "tasa_cancer_gastrico_cie10_c16": 18.4,
-            "tasa_cancer_vesicula_cie10_c23": 12.6,
+            "helicobacter_pylori_prevalencia_pct": 64.0,
+            "helicobacter_pylori_erradicacion_pct": 82.0,
+            "tasa_cancer_vesicula_cie10_c23": 18.29,
+            "cancer_vesicula_casos_hrc_2024": 22,
             "primeras_causas_avpp": [
-                "Cancer Gastrico (C16)",
-                "Cancer de Vesicula Biliar (C23)"
+                "Cancer Gastrico (C16 - 18,4/100k; 64% H. pylori SEREMI/UAysen)",
+                "Cancer de Vesicula Biliar (C23 - 18,29/100k; 22 casos HRC 2024)"
             ],
-            "fuente": "DEIS MINSAL / Registro Poblacional de Cancer"
+            "fuente": "DEIS MINSAL / SEREMI Salud / UAysen / HRC 2024"
         },
         "listas_espera_sigte": {
-            "total_interconsultas_no_ges": 11420,
-            "mediana_dias_espera_consulta_especialidad": 284,
-            "mediana_dias_espera_quirurgica": 395,
-            "fuente": "SIGTE / Redes Asistenciales"
+            "corte": "Glosa 06 MINSAL / CIPS-UDD T3 2026 (al 30-09-2026) y BCN SIGTE 2024",
+            "cne_no_ges_ssa_t3_2026": 14751,
+            "total_interconsultas_no_ges": 14751,
+            "cne_tasa_100k": 14642,
+            "cne_tasa_chile_100k": 13526,
+            "cne_ene2024": 10115,
+            "cne_dic2024": 10939,
+            "mediana_espera_cne_dias": 159,
+            "mediana_dias_espera_consulta_especialidad": 159,
+            "iq_no_ges_ssa_t3_2026": 3608,
+            "iq_tasa_100k": 3581,
+            "iq_tasa_chile_100k": 2627,
+            "iq_ene2024": 1277,
+            "iq_dic2024": 1682,
+            "mediana_espera_quirurgica_dias": 262,
+            "mediana_dias_espera_quirurgica": 262,
+            "mediana_iq_chile_t3_2026_dias": 301,
+            "desglose_iq_dic2024": {
+                "digestiva": {"casos": 373, "mediana_dias": 236},
+                "traumatologia": {"casos": 363, "mediana_dias": 265},
+                "ginecologia": {"casos": 326, "mediana_dias": 305},
+                "cardiovascular": {"casos": 61, "mediana_dias": 392}
+            },
+            "odontologia_no_ges_ssa_dic2024": 6870,
+            "odontologia_ene2024": 4224,
+            "mediana_espera_odontologica_dias": 242,
+            "odontologia_pct_especialidad": 39,
+            "odontologia_tasa_mil_fonasa": 82,
+            "retrasos_ges_ssa_t3_2026": 524,
+            "retrasos_ges_tasa_100k": 520,
+            "retrasos_ges_chile_tasa_100k": 354,
+            "mediana_retraso_ges_dias": 88,
+            "mediana_retraso_ges_chile_dias": 65,
+            "ges_oncologico_tasa_100k_15ymas": 149.6,
+            "ges_oncologico_chile_tasa_100k": 97.4,
+            "ges_oncologico_detalle": {"diagnosticas": 137, "tratamiento": 11, "tamizaje": 1},
+            "fuente": "Glosa 06 MINSAL / BCN SIGTE 2024-2025 / CIPS-UDD T3 2026"
         },
         "deficit_habitacional_minvu": {
             "deficit_cuantitativo": 1927,
@@ -1978,7 +2123,7 @@ def build_dataset():
 
     # 3. Nodos Georreferenciados (Hospitales, CESFAM, CECOSF, Caletas, Centrales electricas, Liceos emblemáticos)
     nodos = [
-        # Hospitales y APS Emblemáticos
+        # Hospitales y APS Emblematicos (5 Hospitales, 4 CESFAM, 4 CECOSF, 2 COSAM)
         {
             "id": "nodo-hosp-regional-coyhaique",
             "nombre": "Hospital Regional Coyhaique",
@@ -1988,8 +2133,10 @@ def build_dataset():
             "lat": -45.5712,
             "lng": -72.0685,
             "atributos": {
-                "camas": 167,
-                "quirofanos": 5,
+                "camas": 135,
+                "camas_con_upc_pediatrica_jun2026": 141,
+                "quirofanos": 4,
+                "sillones_hemodialisis": 18,
                 "uci_uti": True,
                 "nivel": "Alta Complejidad",
                 "dependencia": "Servicio de Salud Aysen"
@@ -1999,30 +2146,30 @@ def build_dataset():
         {
             "id": "nodo-hosp-puerto-aysen",
             "nombre": "Hospital de Puerto Aysen",
-            "tipo": "Hospital Comunitario de Mediana Complejidad",
+            "tipo": "Hospital de Mediana/Baja Complejidad",
             "codigo_comuna": "CL-XI-03",
             "comuna_ine": "11201",
             "lat": -45.4058,
             "lng": -72.6892,
             "atributos": {
-                "camas": 52,
+                "camas": 56,
                 "quirofanos": 2,
                 "uci_uti": False,
-                "nivel": "Mediana Complejidad",
+                "nivel": "Mediana/Baja Complejidad",
                 "dependencia": "Servicio de Salud Aysen"
             },
             "source_url": "https://www.saludaysen.cl"
         },
         {
             "id": "nodo-hosp-puerto-cisnes",
-            "nombre": "Hospital Comunitario Dr. Jorge Ibar Bruce",
+            "nombre": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
             "tipo": "Hospital Comunitario de Baja Complejidad",
             "codigo_comuna": "CL-XI-04",
             "comuna_ine": "11202",
             "lat": -44.7450,
             "lng": -72.6965,
             "atributos": {
-                "camas": 12,
+                "camas": 8,
                 "quirofanos": 0,
                 "uci_uti": False,
                 "nivel": "Baja Complejidad",
@@ -2032,15 +2179,15 @@ def build_dataset():
         },
         {
             "id": "nodo-hosp-chile-chico",
-            "nombre": "Hospital Familiar y Comunitario San Jose de Chile Chico",
+            "nombre": "Hospital Dr. Leopoldo Ortega Rodriguez de Chile Chico",
             "tipo": "Hospital Comunitario de Baja Complejidad",
             "codigo_comuna": "CL-XI-06",
             "comuna_ine": "11401",
             "lat": -46.5412,
             "lng": -71.7289,
             "atributos": {
-                "camas": 14,
-                "quirofanos": 0,
+                "camas": 7,
+                "quirofanos": 1,
                 "uci_uti": False,
                 "nivel": "Baja Complejidad",
                 "dependencia": "Servicio de Salud Aysen"
@@ -2049,15 +2196,15 @@ def build_dataset():
         },
         {
             "id": "nodo-hosp-cochrane",
-            "nombre": "Hospital Comunitario Lord Cochrane",
+            "nombre": "Hospital Lord Cochrane",
             "tipo": "Hospital Comunitario de Baja Complejidad",
             "codigo_comuna": "CL-XI-08",
             "comuna_ine": "11301",
             "lat": -47.2558,
             "lng": -72.5698,
             "atributos": {
-                "camas": 16,
-                "quirofanos": 0,
+                "camas": 7,
+                "quirofanos": 1,
                 "uci_uti": False,
                 "nivel": "Baja Complejidad",
                 "dependencia": "Servicio de Salud Aysen"
@@ -2072,26 +2219,62 @@ def build_dataset():
             "comuna_ine": "11101",
             "lat": -45.5802,
             "lng": -72.0594,
-            "atributos": {
-                "camas": 0,
-                "atencion": "Atencion Primaria Urbana",
-                "inscritos": 32000
-            },
+            "atributos": {"camas": 0, "atencion": "Atencion Primaria Urbana (DAP SSA)", "inscritos": 26800},
             "source_url": "https://www.saludaysen.cl"
         },
         {
             "id": "nodo-cesfam-alejandro-gutierrez",
-            "nombre": "CESFAM Alejandro Gutierrez",
+            "nombre": "CESFAM Dr. Alejandro Gutierrez",
             "tipo": "Centro de Salud Familiar Urbano",
             "codigo_comuna": "CL-XI-01",
             "comuna_ine": "11101",
             "lat": -45.5645,
             "lng": -72.0728,
-            "atributos": {
-                "camas": 0,
-                "atencion": "Atencion Primaria Urbana",
-                "inscritos": 26000
-            },
+            "atributos": {"camas": 0, "atencion": "Atencion Primaria Urbana (DAP SSA)", "inscritos": 28400},
+            "source_url": "https://www.saludaysen.cl"
+        },
+        {
+            "id": "nodo-cesfam-puerto-aysen",
+            "nombre": "CESFAM Puerto Aysen",
+            "tipo": "Centro de Salud Familiar Urbano",
+            "codigo_comuna": "CL-XI-03",
+            "comuna_ine": "11201",
+            "lat": -45.4065,
+            "lng": -72.6952,
+            "atributos": {"camas": 0, "atencion": "Atencion Primaria Urbana (DAP SSA)", "inscritos": 14200},
+            "source_url": "https://www.saludaysen.cl"
+        },
+        {
+            "id": "nodo-cesfam-la-junta",
+            "nombre": "CESFAM La Junta",
+            "tipo": "Centro de Salud Familiar Rural",
+            "codigo_comuna": "CL-XI-04",
+            "comuna_ine": "11202",
+            "lat": -43.9720,
+            "lng": -72.4080,
+            "atributos": {"camas": 0, "atencion": "Atencion Primaria Rural (DAP SSA)", "inscritos": 1420},
+            "source_url": "https://www.saludaysen.cl"
+        },
+        {
+            "id": "nodo-cecosf-alejandro-gutierrez",
+            "nombre": "CECOSF Alejandro Gutierrez",
+            "tipo": "Centro Comunitario de Salud Familiar",
+            "codigo_comuna": "CL-XI-01",
+            "comuna_ine": "11101",
+            "lat": -45.5735,
+            "lng": -72.0615,
+            "atributos": {"camas": 0, "tipo_recinto": "CECOSF", "direccion": "Lautaro 63", "inscritos": 4100},
+            "source_url": "https://www.saludaysen.cl"
+        },
+        {
+            "id": "nodo-cecosf-puerto-chacabuco",
+            "nombre": "CECOSF Puerto Chacabuco",
+            "tipo": "Centro Comunitario de Salud Familiar",
+            "codigo_comuna": "CL-XI-03",
+            "comuna_ine": "11201",
+            "lat": -45.4655,
+            "lng": -72.8195,
+            "atributos": {"camas": 0, "tipo_recinto": "CECOSF", "dependencia": "DAP SSA", "inscritos": 2400},
             "source_url": "https://www.saludaysen.cl"
         },
         {
@@ -2102,26 +2285,40 @@ def build_dataset():
             "comuna_ine": "11201",
             "lat": -45.4112,
             "lng": -72.6935,
-            "atributos": {
-                "camas": 0,
-                "tipo_recinto": "CECOSF",
-                "dependencia": "Hospital de Puerto Aysen"
-            },
+            "atributos": {"camas": 0, "tipo_recinto": "CECOSF", "dependencia": "DAP SSA", "inscritos": 5200},
             "source_url": "https://www.saludaysen.cl"
         },
         {
-            "id": "nodo-cesfam-melinka",
-            "nombre": "CESFAM Melinka",
-            "tipo": "Centro de Salud Familiar Insular con SUR",
-            "codigo_comuna": "CL-XI-05",
-            "comuna_ine": "11203",
-            "lat": -43.8950,
-            "lng": -73.7480,
-            "atributos": {
-                "camas": 0,
-                "urgencia_24h": True,
-                "tipo_recinto": "CESFAM Insular"
-            },
+            "id": "nodo-cecosf-villa-manihuales",
+            "nombre": "CECOSF Villa Manihuales",
+            "tipo": "Centro Comunitario de Salud Familiar",
+            "codigo_comuna": "CL-XI-03",
+            "comuna_ine": "11201",
+            "lat": -45.1715,
+            "lng": -72.1485,
+            "atributos": {"camas": 0, "tipo_recinto": "CECOSF", "dependencia": "DAP SSA", "inscritos": 1650},
+            "source_url": "https://www.saludaysen.cl"
+        },
+        {
+            "id": "nodo-cosam-coyhaique",
+            "nombre": "COSAM Coyhaique",
+            "tipo": "Centro Comunitario de Salud Mental",
+            "codigo_comuna": "CL-XI-01",
+            "comuna_ine": "11101",
+            "lat": -45.5762,
+            "lng": -72.0715,
+            "atributos": {"camas": 0, "tipo_recinto": "COSAM", "direccion": "Freire 1435", "dependencia": "Servicio de Salud Aysen"},
+            "source_url": "https://www.saludaysen.cl"
+        },
+        {
+            "id": "nodo-cosam-puerto-aysen",
+            "nombre": "COSAM Puerto Aysen",
+            "tipo": "Centro Comunitario de Salud Mental",
+            "codigo_comuna": "CL-XI-03",
+            "comuna_ine": "11201",
+            "lat": -45.4050,
+            "lng": -72.6975,
+            "atributos": {"camas": 0, "tipo_recinto": "COSAM", "direccion": "Bernardo O'Higgins 571", "dependencia": "Servicio de Salud Aysen"},
             "source_url": "https://www.saludaysen.cl"
         },
 

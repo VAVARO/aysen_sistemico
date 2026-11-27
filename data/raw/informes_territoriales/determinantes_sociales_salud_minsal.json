@@ -15,7 +15,42 @@
     "cobertura_control_adulto_mayor_empam_pct": 78.4,
     "cobertura_programa_salud_cardiovascular_pscv_pct": 71.8,
     "prevalencia_tabaquismo_poblacion_mayor_15_pct": 27.9,
-    "prevalencia_inactividad_fisica_sedentarismo_pct": 85.6
+    "prevalencia_inactividad_fisica_sedentarismo_pct": 85.6,
+    "tasa_mortalidad_suicidio_100k": 19.9,
+    "suicidios_2024_n": 20,
+    "suicidio_adolescente_15_19_100k": 28.1,
+    "suicidio_adolescente_chile_100k": 6.6,
+    "jovenes_control_salud_mental_pct": 18.1,
+    "jovenes_control_salud_mental_chile_pct": 13.3,
+    "tasa_mortalidad_cancer_gastrico_c16_100k": 18.4,
+    "helicobacter_pylori_prevalencia_pct": 64.0,
+    "helicobacter_pylori_erradicacion_pct": 82.0,
+    "tasa_mortalidad_cancer_vesicula_c23_100k": 18.29,
+    "cancer_vesicula_casos_hrc_2024": 22,
+    "medicos_rnpi_por_mil_hab": 5.54,
+    "medicos_rnpi_chile_por_mil_hab": 3.91,
+    "medicos_red_publica_ssa_por_mil_hab": 1.8,
+    "uaysen_carreras_medicina_n": 0,
+    "aeroevacuaciones_samu_primarias_total": 454,
+    "aeroevacuaciones_secundarias_interregionales_total": 45,
+    "samu_reloncavi_melinka": "Llamadas al 131 y aeroevacuaciones de Melinka (11203 Guaitecas) reguladas por Centro Regulador SAMU Reloncavi (Puerto Montt) hacia Hospitales de Castro y Puerto Montt.",
+    "ecmo_deficit_hrc": "Ausencia de equipo ECMO en HRC; contingencia hantavirus agosto 2026 registro 5 casos y 1 fallecido (20% letalidad).",
+    "cgr_auditorias_2026": [
+      "Auditoría CGR traslados aeromédicos abril 2026",
+      "Auditoría CGR traslados aeromédicos agosto 2026"
+    ],
+    "listas_espera_sigte": {
+      "corte": "Glosa 06 MINSAL / CIPS-UDD T3 2026 (30-09-2026) y BCN SIGTE 2024",
+      "cne_no_ges_ssa_t3_2026": 14751,
+      "mediana_espera_cne_dias": 159,
+      "iq_no_ges_ssa_t3_2026": 3608,
+      "mediana_espera_quirurgica_dias": 262,
+      "odontologia_no_ges_ssa_dic2024": 6870,
+      "mediana_espera_odontologica_dias": 242,
+      "retrasos_ges_ssa_t3_2026": 524,
+      "mediana_retraso_ges_dias": 88,
+      "ges_oncologico_tasa_100k_15ymas": 149.6
+    }
   },
   "por_comuna": [
     {
@@ -24,8 +59,13 @@
       "esperanza_vida_total_anos": 81.6,
       "cobertura_empam_pct": 80.8,
       "cobertura_pscv_pct": 74.8,
-      "aeroevacuaciones_samu_anual": 45,
-      "tasa_natalidad_por_mil": 9.4
+      "aeroevacuaciones_samu_anual": 12,
+      "tasa_natalidad_por_mil": 9.4,
+      "aeroevacuaciones_samu_n": 12,
+      "aeroevacuaciones_secundarias_interregionales_n": 45,
+      "espera_no_ges_n": 8120,
+      "tasa_mortalidad_suicidio_100k": 17.8,
+      "tasa_mortalidad_cancer_vesicula_100k": 15.8
     },
     {
       "comuna_ine": "11102",
@@ -33,8 +73,13 @@
       "esperanza_vida_total_anos": 79.8,
       "cobertura_empam_pct": 71.8,
       "cobertura_pscv_pct": 67.8,
-      "aeroevacuaciones_samu_anual": 8,
-      "tasa_natalidad_por_mil": 6.8
+      "aeroevacuaciones_samu_anual": 24,
+      "tasa_natalidad_por_mil": 6.8,
+      "aeroevacuaciones_samu_n": 24,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 148,
+      "tasa_mortalidad_suicidio_100k": 23.4,
+      "tasa_mortalidad_cancer_vesicula_100k": 21.4
     },
     {
       "comuna_ine": "11201",
@@ -42,8 +87,13 @@
       "esperanza_vida_total_anos": 81.1,
       "cobertura_empam_pct": 78.4,
       "cobertura_pscv_pct": 70.2,
-      "aeroevacuaciones_samu_anual": 38,
-      "tasa_natalidad_por_mil": 9.1
+      "aeroevacuaciones_samu_anual": 48,
+      "tasa_natalidad_por_mil": 9.1,
+      "aeroevacuaciones_samu_n": 48,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 3465,
+      "tasa_mortalidad_suicidio_100k": 20.6,
+      "tasa_mortalidad_cancer_vesicula_100k": 17.6
     },
     {
       "comuna_ine": "11202",
@@ -51,8 +101,13 @@
       "esperanza_vida_total_anos": 80.4,
       "cobertura_empam_pct": 76.5,
       "cobertura_pscv_pct": 71.8,
-      "aeroevacuaciones_samu_anual": 19,
-      "tasa_natalidad_por_mil": 8.2
+      "aeroevacuaciones_samu_anual": 72,
+      "tasa_natalidad_por_mil": 8.2,
+      "aeroevacuaciones_samu_n": 72,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 835,
+      "tasa_mortalidad_suicidio_100k": 19.5,
+      "tasa_mortalidad_cancer_vesicula_100k": 18.1
     },
     {
       "comuna_ine": "11203",
@@ -60,8 +115,13 @@
       "esperanza_vida_total_anos": 79.5,
       "cobertura_empam_pct": 70.6,
       "cobertura_pscv_pct": 66.4,
-      "aeroevacuaciones_samu_anual": 22,
-      "tasa_natalidad_por_mil": 8.0
+      "aeroevacuaciones_samu_anual": 96,
+      "tasa_natalidad_por_mil": 8.0,
+      "aeroevacuaciones_samu_n": 96,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 268,
+      "tasa_mortalidad_suicidio_100k": 21.3,
+      "tasa_mortalidad_cancer_vesicula_100k": 19.5
     },
     {
       "comuna_ine": "11301",
@@ -69,8 +129,13 @@
       "esperanza_vida_total_anos": 80.8,
       "cobertura_empam_pct": 77.8,
       "cobertura_pscv_pct": 73.4,
-      "aeroevacuaciones_samu_anual": 15,
-      "tasa_natalidad_por_mil": 8.5
+      "aeroevacuaciones_samu_anual": 54,
+      "tasa_natalidad_por_mil": 8.5,
+      "aeroevacuaciones_samu_n": 54,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 617,
+      "tasa_mortalidad_suicidio_100k": 18.3,
+      "tasa_mortalidad_cancer_vesicula_100k": 17.2
     },
     {
       "comuna_ine": "11302",
@@ -78,8 +143,13 @@
       "esperanza_vida_total_anos": 79.2,
       "cobertura_empam_pct": 69.1,
       "cobertura_pscv_pct": 63.4,
-      "aeroevacuaciones_samu_anual": 12,
-      "tasa_natalidad_por_mil": 6.2
+      "aeroevacuaciones_samu_anual": 42,
+      "tasa_natalidad_por_mil": 6.2,
+      "aeroevacuaciones_samu_n": 42,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 106,
+      "tasa_mortalidad_suicidio_100k": 18.7,
+      "tasa_mortalidad_cancer_vesicula_100k": 16.9
     },
     {
       "comuna_ine": "11303",
@@ -87,8 +157,13 @@
       "esperanza_vida_total_anos": 79.0,
       "cobertura_empam_pct": 68.4,
       "cobertura_pscv_pct": 63.9,
-      "aeroevacuaciones_samu_anual": 14,
-      "tasa_natalidad_por_mil": 6.5
+      "aeroevacuaciones_samu_anual": 46,
+      "tasa_natalidad_por_mil": 6.5,
+      "aeroevacuaciones_samu_n": 46,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 88,
+      "tasa_mortalidad_suicidio_100k": 18.2,
+      "tasa_mortalidad_cancer_vesicula_100k": 16.6
     },
     {
       "comuna_ine": "11401",
@@ -96,8 +171,13 @@
       "esperanza_vida_total_anos": 81.3,
       "cobertura_empam_pct": 79.4,
       "cobertura_pscv_pct": 74.1,
-      "aeroevacuaciones_samu_anual": 16,
-      "tasa_natalidad_por_mil": 8.6
+      "aeroevacuaciones_samu_anual": 38,
+      "tasa_natalidad_por_mil": 8.6,
+      "aeroevacuaciones_samu_n": 38,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 682,
+      "tasa_mortalidad_suicidio_100k": 19.1,
+      "tasa_mortalidad_cancer_vesicula_100k": 19.2
     },
     {
       "comuna_ine": "11402",
@@ -105,8 +185,13 @@
       "esperanza_vida_total_anos": 80.2,
       "cobertura_empam_pct": 75.9,
       "cobertura_pscv_pct": 68.9,
-      "aeroevacuaciones_samu_anual": 11,
-      "tasa_natalidad_por_mil": 7.5
+      "aeroevacuaciones_samu_anual": 22,
+      "tasa_natalidad_por_mil": 7.5,
+      "aeroevacuaciones_samu_n": 22,
+      "aeroevacuaciones_secundarias_interregionales_n": 0,
+      "espera_no_ges_n": 422,
+      "tasa_mortalidad_suicidio_100k": 22.1,
+      "tasa_mortalidad_cancer_vesicula_100k": 20.6
     }
   ]
 }

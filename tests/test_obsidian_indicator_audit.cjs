@@ -474,7 +474,53 @@ function runTests() {
   console.log('  [PASS] Eval 20: CONAF 2026 4 tipos, IPG 2022 (8.721,6 km2 / 10.301), EEI SAT, SINCA EMRP, Baker DGA 8 conectores y RNVV 5 volcanes verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/20 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 21: Invariantes Hub VIII (Salud SSA 213 camas / 8 pab / 27 PSR / 4 CESFAM / 4 CECOSF / 9 EMR / SIGTE 14.751 / SAMU 454+45 / DEIS 19,9 / sin B3_B / sin 2026-12) ---
+  console.log('--- Eval 21: Invariantes Hub VIII Salud APS, Hospitales SSA, SIGTE T3 2026, SAMU y Epidemiologia DEIS ---');
+  assert.strictEqual(
+    audit.evaluateHub8SaludSsaDeisSigteSamuInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 21 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub8SaludSsaDeisSigteSamuInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 21 con 0 alertas'
+  );
+
+  // 21a: Regresion en red hospitalaria SSA (167 HRC + San Jose) y APS DEIS (Cochrane PSR=1, CESFAM!=4) -> ROJO
+  const badHospApsSnap = JSON.parse(JSON.stringify(currSnap));
+  badHospApsSnap.indicators.camas_hospitalarias.values['11101'] = 167;
+  badHospApsSnap.indicators.postas_salud_rural.values['11301'] = 1;
+  badHospApsSnap.hub8SaludAudit.chileChicoHospitalName = 'Hospital Familiar y Comunitario San José de Chile Chico';
+  badHospApsSnap.hub8SaludAudit.apsResumen.total_cesfam = 5;
+  const badHospApsDiff = audit.compareSnapshots(currSnap, badHospApsSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badHospApsDiff.semaforo, 'ROJO');
+  assert(
+    badHospApsDiff.verificationAlerts.some(a => a.code === 'ERROR_RED_HOSPITALARIA_SSA_CAMAS_QUIROFANOS') &&
+    badHospApsDiff.verificationAlerts.some(a => a.code === 'ERROR_CATASTRO_APS_DEIS_PSR_CESFAM_CECOSF_EMR'),
+    'Debe detectar regresion de camas/San Jose y catastro APS DEIS'
+  );
+
+  // 21b: Regresion en SIGTE (11420), SAMU (442 vs 200), DEIS/RNPI/B3_B y estaciones 2026-12 -> ROJO
+  const badSigteSamuSnap = JSON.parse(JSON.stringify(currSnap));
+  badSigteSamuSnap.indicators.espera_no_ges_n.values['11101'] = 5420;
+  badSigteSamuSnap.indicators.aeroevacuaciones_samu_n.values['11101'] = 0;
+  badSigteSamuSnap.indicators.tasa_mortalidad_suicidio_100k.values['11101'] = 10.0;
+  badSigteSamuSnap.hub8SaludAudit.saludBarometroHasB3B = true;
+  badSigteSamuSnap.hub8SaludAudit.estacionesHasFuture202612 = true;
+  const badSigteSamuDiff = audit.compareSnapshots(currSnap, badSigteSamuSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badSigteSamuDiff.semaforo, 'ROJO');
+  assert(
+    badSigteSamuDiff.verificationAlerts.some(a => a.code === 'ERROR_LISTAS_ESPERA_SIGTE_T3_2026') &&
+    badSigteSamuDiff.verificationAlerts.some(a => a.code === 'ERROR_AEROEVACUACIONES_SAMU_RECONCILIACION') &&
+    badSigteSamuDiff.verificationAlerts.some(a => a.code === 'ERROR_EPIDEMIOLOGIA_DEIS_DOTACION_Y_BAROMETRO') &&
+    badSigteSamuDiff.verificationAlerts.some(a => a.code === 'ERROR_ESTACIONES_AYSEN_FECHA_FUTURA_2026_12'),
+    'Debe detectar regresiones en SIGTE, SAMU, DEIS/B3_B y fecha futura 2026-12 en estaciones'
+  );
+  console.log('  [PASS] Eval 21: Red SSA 213 camas / 8 pabellones, Leopoldo Ortega, 27 PSR / 4 CESFAM / 4 CECOSF / 9 EMR, SIGTE 14.751, SAMU 454+45, DEIS 19,9 y 0 fechas 2026-12 verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/21 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

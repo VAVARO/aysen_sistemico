@@ -4398,7 +4398,7 @@
           "subtype": "grouped_bar",
           "inter_hub_cross": {
             "cross_hub": "social",
-            "descripcion": "Compara la dotación de 261 camas hospitalarias en Aysén frente a la tasa de médicos por cada mil habitantes en las 10 comunas"
+            "descripcion": "Compara la dotación de 213 camas hospitalarias de diseño en Aysén (+6 UPC Pediátrica jun-2026 = 219; ~30 camas bloqueadas sociosanitarias en la red SSA) frente a la tasa de médicos por cada mil habitantes en las 10 comunas"
           },
           "config": {
             "widget_type": "chart",
@@ -4407,7 +4407,7 @@
             "varY": "medicos_por_mil_hab",
             "showAverage": true
           },
-          "what_it_shows": "Coyhaique alberga 167 de las 261 camas regionales (63,98%) y 3,12 médicos/1.000 hab, Puerto Aysén 52 camas (19,92%) y Cisnes 12 camas (4,60%), mientras toda la Macrozona Sur suma 30 camas (11,49%: 16 en Cochrane y 14 en Chile Chico) y 5 comunas carecen de hospital.",
+          "what_it_shows": "Coyhaique alberga 135 de las 213 camas de diseño (63,38%; 141 con la nueva UPC Pediátrica jun-2026) y 3,12 médicos/1.000 hab, Puerto Aysén 56 camas (26,29%) y Cisnes 8 camas (3,76%), mientras la Macrozona Sur suma 14 camas (7 en Hospital Lord Cochrane y 7 en Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico) y la red SSA enfrenta ~30 camas bloqueadas por pacientes sociosanitarios.",
           "why_complex_system": "Centralismo intrarregional: la concentración hospitalaria en la capital regional genera extrema dependencia en evacuaciones de emergencia."
         },
         {

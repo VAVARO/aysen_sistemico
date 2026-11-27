@@ -318,11 +318,11 @@ HUB_QUESTIONS_MAP = {
             'positive_codes': [2, 3]
         },
         {
-            'codigo': 'B3_B',
-            'enunciado': 'Evaluación del acceso a educación pública de calidad',
-            'tipo': 'nota_1_7',
-            'labels': {1: 'Pésimo (1)', 7: 'Excelente (7)'},
-            'positive_codes': [5, 6, 7]
+            'codigo': 'I4_A',
+            'enunciado': 'Urgencia de resolver contaminación del aire por humo de leña',
+            'tipo': 'escala_4',
+            'labels': {1: 'Nada urgente', 2: 'Poco urgente', 3: 'Algo urgente', 4: 'Muy urgente'},
+            'positive_codes': [3, 4]
         }
     ]
 }

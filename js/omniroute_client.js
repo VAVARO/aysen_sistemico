@@ -2679,8 +2679,8 @@
         };
       }
       case 'listas_espera_sigte': {
-        const reply = 'Según el Sistema de Información de Gestión de Tiempos de Espera (SIGTE / Subsecretaría de Redes Asistenciales / FONASA): La Red Asistencial de Aysén registra 11.420 interconsultas No GES pendientes. La mediana de espera para consulta de nueva especialidad médica es de 284 días, mientras que la mediana de espera para intervenciones quirúrgicas alcanza los 395 días.';
-        const sources = resolveSourcesForKeys(['espera_no_ges_n']);
+        const reply = 'Según Glosa 06 MINSAL / SIGTE / CIPS-UDD (corte T3 2026 al 30-09-2026 y BCN 2024): La Red Asistencial del Servicio de Salud Aysén (SSA) registra 14.751 Consultas Nuevas de Especialidad (CNE) No GES (tasa 14.642/100k vs. 13.526/100k nacional; mediana oficial SIGTE de 159 días), 3.608 Intervenciones Quirúrgicas Mayores No GES (tasa 3.581/100k, +36,3% sobre Chile; mediana oficial SIGTE de 262 días vs. 301 días nacional), 6.870 consultas Odontológicas No GES (dic-2024, mediana 242 días, 82/1.000 FONASA) y 524 garantías GES retrasadas (mediana 88 días, 4ª más alta de Chile; retraso GES oncológico 149,6/100k). Nota metodológica: SIGTE reporta por Servicio de Salud (SSA)/hospital, por lo que la desagregación comunal atribuye proporcionalmente según población inscrita FONASA.';
+        const sources = resolveSourcesForKeys(['espera_no_ges_n', 'mediana_espera_especialidad_dias', 'mediana_espera_quirurgica_dias']);
         return {
           reply,
           chart: {
@@ -2690,7 +2690,7 @@
             varY: null,
             yKey: 'espera_no_ges_n',
             y2Key: null,
-            title: 'Lista de Espera No GES Consultas de Especialidad por Comuna (SIGTE)',
+            title: 'Lista de Espera No GES Consultas de Especialidad por Comuna (SIGTE T3 2026 · 14.751 CNE)',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -2706,7 +2706,7 @@
         const diffNote = (gMax && sMax)
           ? ` A nivel comunal, el Cáncer Gástrico alcanza su máximo en ${gMax.name} (${fmtNumber(gMax.raw.tasa_mortalidad_cancer_gastrico_100k)} c/100k) y mínimo en ${gMin.name} (${fmtNumber(gMin.raw.tasa_mortalidad_cancer_gastrico_100k)}), mientras la mortalidad por suicidio lidera en ${sMax.name} (${fmtNumber(sMax.raw.tasa_mortalidad_suicidio_100k)} c/100k) vs. ${sMin.name} (${fmtNumber(sMin.raw.tasa_mortalidad_suicidio_100k)}).`
           : '';
-        const reply = `Según DEIS MINSAL y el Registro Poblacional de Cáncer: Las neoplasias digestivas lideran los AVPP en Aysén con Cáncer Gástrico (C16, promedio 18,4 c/100k hab) y Vesícula Biliar (C23, 12,6 c/100k hab). En salud mental, la tasa promedio regional de suicidio es de 15,1 c/100k hab con un cuello de botella crítico: solo 9 camas psiquiátricas de corta estadía (UHCE) en el Hospital Regional Coyhaique (0 en las otras 9 comunas).${diffNote}`;
+        const reply = `Según DEIS MINSAL / UNICEF SITAN 2025 y el Registro de Cáncer: Las neoplasias digestivas lideran los AVPP en Aysén con Cáncer Gástrico (C16, promedio 18,4 c/100k hab; estudio SEREMI/UAysén con 64% de prevalencia de Helicobacter pylori y 82% de erradicación) y Vesícula Biliar (C23, 18,29 c/100k hab; 22 casos estudiados en HRC 2024). En salud mental, Aysén registra la mayor tasa nacional de suicidio con 19,9 c/100k hab (20 suicidios en 2024 vs. 10,7/100k Chile; 28,1/100k en adolescentes 15–19 años y 18,1% de jóvenes bajo control en salud mental) con solo 9 camas psiquiátricas UHCE en el HRC (0 en las otras 9 comunas) y 2 COSAM (Coyhaique y Puerto Aysén).${diffNote}`;
         const sources = resolveSourcesForKeys(['tasa_mortalidad_cancer_gastrico_100k', 'tasa_mortalidad_suicidio_100k', 'camas_psiquiatricas_uhce', 'barometro_evaluacion_acceso_salud_pct']);
         return {
           reply,
@@ -2726,7 +2726,7 @@
         };
       }
       case 'camas_hrc_postas': {
-        const reply = 'Según el catastro oficial del DEIS MINSAL y el Servicio de Salud Aysén (SSA): La red asistencial regional dispone de 261 camas hospitalarias totales, de las cuales 167 camas (63,98%) están concentradas en el Hospital Regional Coyhaique (HRC), seguidas por Puerto Aysén (52), Cochrane (16), Chile Chico (14) y Cisnes (12). En atención primaria rural, existen 27 Postas de Salud Rural (PSR) permanentes dotadas de personal TENS residente y 20 Estaciones Médico Rurales (EMR) atendidas por rondas periódicas.';
+        const reply = 'Según el catastro oficial DEIS MINSAL (03-11-2026) y el Servicio de Salud Aysén (SSA): El 100% de la APS y red hospitalaria pública depende directamente del DAP SSA (0% salud municipalizada; 0 clínicas privadas de hospitalización general). La red de 5 hospitales públicos suma 213 camas de diseño (174 agudas efectivas y 8 pabellones quirúrgicos): Hospital Regional Coyhaique 135 camas basales (141 con las 6 camas de la nueva UPC Pediátrica jun-2026, 4 pabellones, 18 sillones de hemodiálisis), Puerto Aysén 56 camas y 2 pabellones (~30 camas bloqueadas sociosanitarias en la red SSA), Puerto Cisnes Dr. Jorge Ibar Bruce 8 camas, Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico 7 camas y 1 pabellón (nuevo edificio feb-2026), y Hospital Lord Cochrane 7 camas y 1 pabellón (acreditado SuperSalud 14-05-2026). La APS reúne 4 CESFAM (+1 en construcción), 4 CECOSF, 27 Postas de Salud Rural (PSR, 100% tele-ECG oct-2025), 9 EMR y 2 COSAM.';
         const sources = resolveSourcesForKeys(['camas_hospitalarias', 'postas_salud_rural']);
         return {
           reply,
@@ -2737,7 +2737,7 @@
             varY: 'postas_salud_rural',
             yKey: 'camas_hospitalarias',
             y2Key: 'postas_salud_rural',
-            title: 'Camas Hospitalarias y Postas de Salud Rural (PSR) por Comuna',
+            title: 'Camas Hospitalarias (213 diseño) y Postas de Salud Rural (27 PSR) por Comuna',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -4354,7 +4354,7 @@
         title: 'Tiempo de Derivación Médica a Coyhaique (hrs) vs. Mediana de Espera Quirúrgica (días)'
       },
       conceptualBrief:
-        'El Servicio de Salud Aysén articula un hospital base de alta complejidad (Hospital Regional de Coyhaique), hospitales comunitarios de baja complejidad (Puerto Aysén, Puerto Cisnes, Chile Chico y Cochrane) y 27 Postas de Salud Rural (PSR) distribuidas en las 10 comunas. La dispersión geográfica impone tiempos de derivación terrestre o marítima hacia Coyhaique desde 0 a 1,0 hora en Coyhaique y Aysén hasta 8,0 horas en Tortel, 10,0 horas en O\'Higgins y 14,0 horas en Guaitecas, complementados por aeroevacuaciones SAMU.'
+        'El Servicio de Salud Aysén (DAP SSA · 0% salud municipalizada; 0 clínicas privadas de hospitalización general) articula 5 hospitales con 213 camas de diseño (174 agudas efectivas y 8 pabellones quirúrgicos): Hospital Regional de Coyhaique (135 basales, 141 con 6 UPC Pediátrica jun-2026, 4 pabellones), Puerto Aysén (56 camas, 2 pabellones; ~30 camas bloqueadas sociosanitarias en la red), Puerto Cisnes Dr. Jorge Ibar Bruce (8 camas), Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico (7 camas, 1 pabellón, nuevo edificio feb-2026) y Hospital Lord Cochrane (7 camas, 1 pabellón, acreditado may-2026). La APS reúne 4 CESFAM (+1 en construcción), 4 CECOSF, 27 PSR (100% tele-ECG), 9 EMR y 2 COSAM, bajo el Convenio GORE–MINSAL de $195.000M. Registra 14.751 CNE (159d), 3.608 IQ (262d), 6.870 Odonto (242d), 524 GES (88d) y 454 aeroevacuaciones SAMU primarias + 45 secundarias (Melinka regulado por SAMU Reloncaví; HRC sin equipo ECMO).'
     },
     {
       id: 'ecosistema_ctci_ciencia',

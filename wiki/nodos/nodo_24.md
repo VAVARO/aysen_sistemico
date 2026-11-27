@@ -1,6 +1,6 @@
 ---
 id: nodo_24
-title: "Nodo #24 — Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)"
+title: "Nodo #24 — Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 213 Camas)"
 type: nodo
 hub_id: salud
 hub_roman: VIII
@@ -17,26 +17,26 @@ tags:
   - hub-viii
 ---
 
-# Nodo #24 — Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)
+# Nodo #24 — Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 213 Camas)
 
 ## Síntesis Compilada (Consultor IA)
 
-Red asistencial del Servicio de Salud Aysén (SSA / DEIS MINSAL): diferenciación entre Atención Primaria de Salud (27 Postas de Salud Rural permanentes y 20 EMR) frente a la Red Hospitalaria Regional (261 camas totales), de las cuales 167 camas están en el Hospital Regional Coyhaique (63,98%), camas críticas UCI/UTI y tiempos de traslado SAMU. El Hospital Regional de Coyhaique concentra 167 de las 261 camas hospitalarias regionales (63,98%), 22 camas críticas UCI/UTI y 5 quirófanos. Los 4 hospitales comunitarios provinciales suman 94 camas y la red cuenta con 27 postas de salud rural permanentes con TENS residente.
+Red asistencial 100% DAP Servicio de Salud Aysén (0% salud municipalizada; 0 clínicas privadas de hospitalización general): 5 hospitales públicos con 213 camas de diseño (174 agudas efectivas, 8 pabellones quirúrgicos) frente a la APS DEIS (4 CESFAM +1 en construcción, 4 CECOSF, 27 PSR, 9 EMR y 2 COSAM = 44 dispositivos APS + 2 COSAM). Convenio GORE–MINSAL 30-07-2025 por $195.000 millones ($61.000M GORE + $134.000M MINSAL). El Hospital Regional Coyhaique concentra 135 camas basales (141 con 6 camas de la nueva UPC Pediátrica jun-2026: 14 críticas adulto + 6 críticas pediátricas + 9 UHCE, 4 pabellones, 18 sillones hemodiálisis), Puerto Aysén suma 56 camas y 2 pabellones (7/17 camas Medicina bloqueadas sociosanitarias; ~30 en red SSA), Puerto Cisnes Dr. Jorge Ibar Bruce 8 camas, Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico 7 camas y 1 pabellón (nuevo edificio feb-2026) y Hospital Lord Cochrane 7 camas y 1 pabellón (acreditado SuperSalud 14-05-2026).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Dispositivo Principal | Tipo Red Asistencial | Camas Totales | Tiempo a Coyhaique (hrs) |
+| Comuna | Dispositivo Principal (100% SSA) | Pabellones | Camas de Diseño | Tiempo a Coyhaique (hrs) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | Hospital Regional Coyhaique | Hospitalario | 167 | 0 hrs |
-| [[comunas/lago_verde|Lago Verde]] | Sin hospital en la comuna (Atencion Primaria Rural) | APS Rural | 0 | 4.5 hrs |
-| [[comunas/aysen|Aysén]] | Hospital de Puerto Aysen | Hospitalario | 52 | 1 hrs |
-| [[comunas/cisnes|Cisnes]] | Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes | Hospitalario | 12 | 3.5 hrs |
-| [[comunas/guaitecas|Guaitecas]] | Sin hospital en el archipielago (Cobertura por CESFAM Melinka) | APS Rural | 0 | 14 hrs |
-| [[comunas/chile_chico|Chile Chico]] | Hospital Familiar y Comunitario San Jose / Dr. Leopoldo Ortega Rodriguez de Chile Chico | Hospitalario | 14 | 4 hrs |
-| [[comunas/rio_ibanez|Río Ibáñez]] | Sin hospital en la comuna (Atencion Primaria con CESFAM y Postas) | APS Rural | 0 | 1.5 hrs |
-| [[comunas/cochrane|Cochrane]] | Hospital Comunitario de Cochrane (Hospital Lord Cochrane) | Hospitalario | 16 | 6 hrs |
-| [[comunas/ohiggins|O'Higgins]] | Sin hospital en la comuna (Posta Rural de Aislamiento Extremo) | APS Rural | 0 | 10 hrs |
-| [[comunas/tortel|Tortel]] | Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas) | APS Rural | 0 | 8 hrs |
+| [[comunas/coyhaique|Coyhaique]] | Hospital Regional Coyhaique | 4 | 135 | 0 hrs |
+| [[comunas/lago_verde|Lago Verde]] | Sin hospital en la comuna (3 PSR dependientes del DAP SSA) | 0 | 0 | 4.5 hrs |
+| [[comunas/aysen|Aysén]] | Hospital de Puerto Aysen | 2 | 56 | 1 hrs |
+| [[comunas/cisnes|Cisnes]] | Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes | 0 | 8 | 3.5 hrs |
+| [[comunas/guaitecas|Guaitecas]] | Sin hospital en el archipielago (Posta de Salud Rural Melinka con SUR, DEIS SSA) | 0 | 0 | 14 hrs |
+| [[comunas/chile_chico|Chile Chico]] | Hospital Dr. Leopoldo Ortega Rodriguez de Chile Chico | 1 | 7 | 4 hrs |
+| [[comunas/rio_ibanez|Río Ibáñez]] | Sin hospital en la comuna (5 PSR y 2 EMR dependientes del DAP SSA) | 0 | 0 | 1.5 hrs |
+| [[comunas/cochrane|Cochrane]] | Hospital Lord Cochrane | 1 | 7 | 6 hrs |
+| [[comunas/ohiggins|O'Higgins]] | Sin hospital en la comuna (PSR Villa O'Higgins con 2 medicos EDF permanentes jun-2026) | 0 | 0 | 10 hrs |
+| [[comunas/tortel|Tortel]] | Sin hospital en la comuna (PSR Caleta Tortel en pasarelas de cipres) | 0 | 0 | 8 hrs |
 
 ## Metadatos de Procedencia Institucional
 

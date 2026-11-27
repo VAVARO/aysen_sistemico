@@ -9,9 +9,11 @@
       "nombre": "Hospital Regional Coyhaique",
       "comuna_ine": "11101",
       "nivel": "Alta Complejidad (Base Regional)",
-      "camas": 167,
+      "camas": 135,
+      "camas_con_upc_pediatrica_jun2026": 141,
       "urgencia_24h": true,
-      "pabellones_quirurgicos": 5,
+      "pabellones_quirurgicos": 4,
+      "sillones_hemodialisis": 18,
       "uci_uti_adulta_pediatrica": true,
       "base_samu_regional": true
     },
@@ -19,53 +21,81 @@
       "id": "hosp_puerto_aysen",
       "nombre": "Hospital de Puerto Aysén",
       "comuna_ine": "11201",
-      "nivel": "Mediana Complejidad",
-      "camas": 52,
+      "nivel": "Mediana/Baja Complejidad",
+      "camas": 56,
       "urgencia_24h": true,
       "pabellones_quirurgicos": 2,
       "base_samu_regional": false
     },
     {
       "id": "hosp_puerto_cisnes",
-      "nombre": "Hospital Comunitario Dr. Jorge Ibar de Puerto Cisnes",
+      "nombre": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
       "comuna_ine": "11202",
       "nivel": "Baja Complejidad",
-      "camas": 12,
+      "camas": 8,
       "urgencia_24h": true,
       "pabellones_quirurgicos": 0
     },
     {
       "id": "hosp_chile_chico",
-      "nombre": "Hospital Familiar y Comunitario San José de Chile Chico",
+      "nombre": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
       "comuna_ine": "11401",
       "nivel": "Baja Complejidad",
-      "camas": 14,
+      "camas": 7,
       "urgencia_24h": true,
-      "pabellones_quirurgicos": 0
+      "pabellones_quirurgicos": 1
     },
     {
       "id": "hosp_cochrane",
-      "nombre": "Hospital Comunitario de Cochrane",
+      "nombre": "Hospital Lord Cochrane",
       "comuna_ine": "11301",
       "nivel": "Baja Complejidad",
-      "camas": 16,
+      "camas": 7,
       "urgencia_24h": true,
-      "pabellones_quirurgicos": 0
+      "pabellones_quirurgicos": 1
     }
   ],
   "atencion_primaria_y_postas": [
     {
-      "id": "cesfam_melinka",
-      "nombre": "CESFAM Melinka",
-      "comuna_ine": "11203",
-      "tipo": "CESFAM SUR",
+      "id": "cesfam_victor_domingo_silva",
+      "nombre": "CESFAM Víctor Domingo Silva",
+      "comuna_ine": "11101",
+      "tipo": "CESFAM Urbano (DAP SSA)",
       "camas": 0
     },
     {
-      "id": "cesfam_rio_ibanez",
-      "nombre": "CESFAM Puerto Ingeniero Ibáñez",
+      "id": "cesfam_alejandro_gutierrez",
+      "nombre": "CESFAM Dr. Alejandro Gutiérrez",
+      "comuna_ine": "11101",
+      "tipo": "CESFAM Urbano (DAP SSA)",
+      "camas": 0
+    },
+    {
+      "id": "cesfam_puerto_aysen",
+      "nombre": "CESFAM Puerto Aysén",
+      "comuna_ine": "11201",
+      "tipo": "CESFAM Urbano (DAP SSA)",
+      "camas": 0
+    },
+    {
+      "id": "cesfam_la_junta",
+      "nombre": "CESFAM La Junta",
+      "comuna_ine": "11202",
+      "tipo": "CESFAM Rural (DAP SSA)",
+      "camas": 0
+    },
+    {
+      "id": "posta_melinka",
+      "nombre": "Posta de Salud Rural Melinka",
+      "comuna_ine": "11203",
+      "tipo": "PSR Insular SUR",
+      "camas": 0
+    },
+    {
+      "id": "posta_puerto_ibanez",
+      "nombre": "Posta de Salud Rural Puerto Ibáñez",
       "comuna_ine": "11402",
-      "tipo": "CESFAM SUR",
+      "tipo": "PSR SUR",
       "camas": 0
     },
     {
@@ -182,9 +212,10 @@
     {
       "anio": 2026,
       "egresos_hospitalarios_red_ssa": 14020,
-      "camas_hospitalarias_totales_ssa": 257,
-      "camas_basicas_medias_ssa": 233,
-      "camas_criticas_uci_uti_ssa": 24,
+      "camas_hospitalarias_totales_ssa": 213,
+      "camas_hospitalarias_con_upc_ped_jun2026_ssa": 219,
+      "camas_basicas_medias_ssa": 193,
+      "camas_criticas_uci_uti_ssa": 20,
       "urgencias_respiratorias_coyhaique_aysen": 16400
     }
   ]

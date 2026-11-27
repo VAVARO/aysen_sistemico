@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Logística de urgencia vital y tiempos de derivación crítica hacia el Hospital Regional Coyhaique y centros extrarregionales (Puerto Montt / Santiago), disponibilidad de helipuertos DGAC, ambulancias 4x4 y aeroevacuaciones FACH/SAMU. Una evacuación desde Villa O'Higgins a Coyhaique toma 8 a 9 horas vía terrestre o 75 minutos vía aérea, condicionada a techos de vuelo y meteorología patagónica extrema.
+Glosa 06 SIGTE / MINSAL (T3 2026 al 30-09-2026) y logística aeromédica SAMU Aysén / SAMU Reloncaví: 14.751 Consultas CNE No GES (mediana 159 días), 3.608 Intervenciones Quirúrgicas No GES (+36,3% tasa sobre Chile; mediana 262 días vs. 301 nacional), 6.870 consultas Odontológicas No GES (dic-2024, 242 días), 524 retrasos GES (mediana 88 días, 4ª más alta; GES oncológico 149,6/100k), más 454 aeroevacuaciones primarias y 45 traslados secundarios interregionales (HRC sin equipo ECMO). Guaitecas (Melinka) registra 96 aeroevacuaciones primarias anuales reguladas por el Centro Regulador SAMU Reloncaví (Puerto Montt) hacia Castro/Puerto Montt, mientras el HRC/Balmaceda origina 45 traslados secundarios interregionales (contingencia hantavirus ago-2026: 5 casos, 1 fallecido = 20% letalidad sin ECMO regional; auditorías CGR abr y ago 2026).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Tiempo a Coyhaique (hrs) | Aeródromo DGAC | Tipo Traslado | Centro Derivación Final |
+| Comuna | CNE No GES (14.751) | Mediana Quirúrgica (SSA 262d) | Aeroevacuaciones SAMU (Prim. / Sec.) | Traslado Coyhaique (hrs) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 0 hrs | Aeródromo Balmaceda (SCBA) / Teniente Vidal (SCCY) | Terrestre Directo | Hospital Regional Coyhaique |
-| [[comunas/lago_verde|Lago Verde]] | 4.5 hrs | Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica) | Terrestre / Aeroevacuación | Hospital Regional Coyhaique |
-| [[comunas/aysen|Aysén]] | 1 hrs | Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico) | Terrestre Directo | Hospital Regional Coyhaique |
-| [[comunas/cisnes|Cisnes]] | 3.5 hrs | Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH) | Terrestre Directo | Hospital Regional Coyhaique |
-| [[comunas/guaitecas|Guaitecas]] | 14 hrs | Aeródromo Melinka (SCMK, asfalto 830m, vuelos regulares subvencionados) | Terrestre / Aeroevacuación | Hospital Regional Coyhaique |
-| [[comunas/chile_chico|Chile Chico]] | 4 hrs | Aeródromo Chile Chico (SCCC, asfalto 1.300m, subvencionado y aeromédico) | Terrestre Directo | Hospital Regional Coyhaique |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 1.5 hrs | Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias) | Terrestre Directo | Hospital Regional Coyhaique |
-| [[comunas/cochrane|Cochrane]] | 6 hrs | Aeródromo Cochrane (SCHR, asfalto 1.200m, vuelos subvencionados y aeromédicos) | Terrestre / Aeroevacuación | Hospital Regional Coyhaique |
-| [[comunas/ohiggins|O'Higgins]] | 10 hrs | Aeródromo Villa O'Higgins (SCOH, asfalto 1.300m, puente aéreo subvencionado) | Terrestre / Aeroevacuación | Hospital Regional Coyhaique |
-| [[comunas/tortel|Tortel]] | 8 hrs | Aeródromo Caleta Tortel (SCTT, ripio 800m, evacuación médica y rescate) | Terrestre / Aeroevacuación | Hospital Regional Coyhaique |
+| [[comunas/coyhaique|Coyhaique]] | 8.120 | 218 días (SSA 262d) | 12 prim. / 45 sec. | 0 hrs |
+| [[comunas/lago_verde|Lago Verde]] | 148 | 284 días (SSA 262d) | 24 prim. / 0 sec. | 4.5 hrs |
+| [[comunas/aysen|Aysén]] | 3.465 | 234 días (SSA 262d) | 48 prim. / 0 sec. | 1 hrs |
+| [[comunas/cisnes|Cisnes]] | 835 | 268 días (SSA 262d) | 72 prim. / 0 sec. | 3.5 hrs |
+| [[comunas/guaitecas|Guaitecas]] | 268 | 312 días (SSA 262d) | 96 prim. / 0 sec. | 14 hrs |
+| [[comunas/chile_chico|Chile Chico]] | 682 | 248 días (SSA 262d) | 38 prim. / 0 sec. | 4 hrs |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 422 | 276 días (SSA 262d) | 22 prim. / 0 sec. | 1.5 hrs |
+| [[comunas/cochrane|Cochrane]] | 617 | 242 días (SSA 262d) | 54 prim. / 0 sec. | 6 hrs |
+| [[comunas/ohiggins|O'Higgins]] | 106 | 280 días (SSA 262d) | 42 prim. / 0 sec. | 10 hrs |
+| [[comunas/tortel|Tortel]] | 88 | 258 días (SSA 262d) | 46 prim. / 0 sec. | 8 hrs |
 
 ## Metadatos de Procedencia Institucional
 

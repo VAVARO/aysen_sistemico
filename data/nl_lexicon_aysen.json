@@ -3432,6 +3432,58 @@
       ]
     },
     {
+      "id": "postas_rurales_psr_n",
+      "canonicalId": "postas_salud_rural",
+      "isAliasOf": "postas_salud_rural",
+      "name": "Postas de Salud Rural PSR (DEIS SSA)",
+      "shortName": "Postas Rurales PSR",
+      "unit": "postas",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 38,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "postas rurales psr",
+        "psr deis"
+      ]
+    },
+    {
+      "id": "aeroevacuaciones_secundarias_interregionales_n",
+      "canonicalId": "aeroevacuaciones_secundarias_interregionales_n",
+      "name": "Aeroevacuaciones Secundarias Interregionales SAMU",
+      "shortName": "Evacuaciones Secundarias",
+      "unit": "traslados",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 39,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "aeroevacuaciones secundarias",
+        "traslados interregionales",
+        "derivacion aerea hrc",
+        "evacuacion puerto montt"
+      ]
+    },
+    {
+      "id": "mediana_espera_cne_dias",
+      "canonicalId": "mediana_espera_especialidad_dias",
+      "isAliasOf": "mediana_espera_especialidad_dias",
+      "name": "Mediana de Espera CNE No GES (SIGTE SSA)",
+      "shortName": "Mediana Espera CNE",
+      "unit": "días",
+      "hub": "salud",
+      "hubTitle": "VIII. Salud",
+      "nodeId": 39,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "mediana espera cne",
+        "cne sigte dias"
+      ]
+    },
+    {
       "id": "esperanza_vida_total_anos",
       "canonicalId": "esperanza_vida_total_anos",
       "name": "Esperanza de Vida al Nacer (DEIS)",

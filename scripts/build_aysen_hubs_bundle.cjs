@@ -92,16 +92,16 @@ const RECONCILED_CENTROS_CULT_N = {
   '11401': 0, '11402': 0, '11301': 1, '11302': 0, '11303': 0
 };
 const RECONCILED_APS_PSR_COUNTS = {
-  '11101': { psr: 7, aps: 13, rounds: 'Semanal / Quincenal (7 PSR con TENS residente y equipo rural CESFAM)' },
-  '11102': { psr: 3, aps: 5, rounds: 'Quincenal / Mensual (sujeta a transitabilidad invernal Ruta X-25 / X-13)' },
-  '11201': { psr: 4, aps: 7, rounds: 'Quincenal continental / Mensual marítima (ronda médica lancha Islas Huichas)' },
-  '11202': { psr: 4, aps: 7, rounds: 'Quincenal eje Ruta 7 / Mensual marítima (ronda Puerto Gala, Gaviota y Raúl Marín)' },
-  '11203': { psr: 1, aps: 3, rounds: 'Permanente en CESFAM Melinka + Ronda marítima mensual a Repollal' },
-  '11401': { psr: 2, aps: 4, rounds: 'Quincenal / Mensual ribereña (Puerto Guadal, Mallín Grande y Fachinal)' },
-  '11402': { psr: 3, aps: 5, rounds: 'Quincenal (CESFAM Villa Cerro Castillo + PSR Bahía Murta, Sánchez y Tranquilo)' },
-  '11301': { psr: 1, aps: 3, rounds: 'Quincenal / Mensual (Equipo Hospital Lord Cochrane hacia San Lorenzo y sectores rurales)' },
-  '11302': { psr: 1, aps: 3, rounds: 'Mensual + Telemedicina permanente (sujeta a Barcaza Fiordo Mitchell y meteorología)' },
-  '11303': { psr: 1, aps: 3, rounds: 'Mensual + Ronda fluvial/marítima y evacuación bimodal por pasarelas' }
+  '11101': { psr: 7, aps: 12, rounds: 'Semanal / Quincenal (7 PSR con tele-ECG oct-2025 + 2 EMR Alto Baguales y Villa Frei · 100% DAP SSA)' },
+  '11102': { psr: 3, aps: 3, rounds: 'Quincenal / Mensual (3 PSR: La Tapera, Lago Verde, Villa Amengual · tele-ECG oct-2025)' },
+  '11201': { psr: 2, aps: 6, rounds: 'Quincenal continental / Mensual marítima (CESFAM Pto. Aysén + 3 CECOSF + 2 PSR Islas Huichas)' },
+  '11202': { psr: 4, aps: 7, rounds: 'Permanente en CESFAM La Junta + 4 PSR (Isla Toto/Gala, Melimoyu, Puyuhuapi, Raúl Marín) + 2 EMR' },
+  '11203': { psr: 1, aps: 2, rounds: 'PSR Melinka con SUR (SAMU Reloncaví Puerto Montt) + ronda marítima a EMR Repollal' },
+  '11401': { psr: 3, aps: 5, rounds: 'Quincenal desde Hosp. Dr. Leopoldo Ortega Rodríguez a 3 PSR (Puerto Guadal, Mallín Grande, Pto. Bertrand) + 2 EMR' },
+  '11402': { psr: 5, aps: 7, rounds: 'Quincenal entre 5 PSR (incl. nueva posta Cerro Castillo >400 m2 ago-2024 e Ibáñez) + 2 EMR (Lago Alto, Levicán)' },
+  '11301': { psr: 0, aps: 0, rounds: '0 PSR en DEIS (San Lorenzo es punto de ronda médica desde Hospital Lord Cochrane)' },
+  '11302': { psr: 1, aps: 1, rounds: 'PSR Villa O\'Higgins reforzada jun-2026 con 2 médicos EDF permanentes y tele-ECG' },
+  '11303': { psr: 1, aps: 1, rounds: 'PSR Caleta Tortel con TENS residente, tele-ECG y ronda fluvial/marítima' }
 };
 if (wp08 && Array.isArray(wp08.por_comuna)) {
   wp08.por_comuna.forEach(c => {
@@ -726,11 +726,11 @@ const hubs = [
     title: 'VIII. Salud APS & Hospitales',
     shortTitle: 'Salud APS & Hospitales',
     color: '#be123c',
-    description: 'Red asistencial de salud (**DEIS MINSAL / SSA**): dotación de **261 camas hospitalarias**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, **27 postas de salud rural (PSR) permanentes**, tiempos de traslado SAMU e isócronas de evacuación crítica.',
-    example: 'El **Hospital Regional de Coyhaique** concentra el **63,98% de las camas regionales** (167 de 261), mientras la **Macrozona Sur** cuenta con solo 14 camas para 5 comunas y la red dispone de 27 postas de salud rural.',
+    description: 'Red asistencial 100% dependiente del **Servicio de Salud Aysén (DAP SSA · 0% salud municipalizada · 0 clínicas privadas con hospitalización general)**: **5 hospitales públicos con 213 camas de diseño** (**135** HRC + **6** UPC Pediátrica jun-2026 = **141**, **56** Pto. Aysén, **8** Pto. Cisnes, **7** Hosp. Dr. Leopoldo Ortega Rodríguez de Chile Chico, **7** Lord Cochrane; **174 agudas efectivas**; **8 pabellones quirúrgicos**), **4 CESFAM** (+1 en construcción), **4 CECOSF**, **27 PSR** (100% tele-ECG), **9 EMR**, **2 COSAM**, **14.751 CNE SIGTE T3 2026** y **Convenio GORE–MINSAL $195.000M**.',
+    example: 'El **Hospital Regional Coyhaique** concentra **135 de las 213 camas de diseño (63,38%; 141 con la UPC Pediátrica de jun-2026)** y 4 pabellones, mientras la red enfrenta ~30 camas bloqueadas por pacientes sociosanitarios, **454 aeroevacuaciones SAMU primarias + 45 secundarias** y la **mayor tasa de suicidio de Chile (19,9/100k)**.',
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
-    sourceName: 'MINSAL DEIS / SSA / SAMU Aysén',
+    sourceName: 'MINSAL DEIS / SSA / SIGTE Glosa 06 / SAMU Aysén',
     sourceUrl: 'https://deis.minsal.cl/'
   },
   {
@@ -767,6 +767,14 @@ hubs.forEach(h => {
   if (!espejo && baroData.extension_modules) {
     if (h.id === 'cultura') espejo = baroData.extension_modules.cultura_patrimonio || null;
     if (h.id === 'ctci') espejo = baroData.extension_modules.ctci_innovacion || null;
+  }
+  if (h.id === 'salud' && espejo && Array.isArray(espejo.preguntas)) {
+    const cleanSaludQs = espejo.preguntas.filter(q => q.codigo !== 'B3_B');
+    const i4aQ = (baroData.hubs?.energia?.preguntas || []).find(q => q.codigo === 'I4_A');
+    if (i4aQ && !cleanSaludQs.some(q => q.codigo === 'I4_A')) {
+      cleanSaludQs.push(i4aQ);
+    }
+    espejo = { ...espejo, total_preguntas: cleanSaludQs.length, preguntas: cleanSaludQs };
   }
   h.espejo_barometro = espejo;
 });
@@ -1927,49 +1935,50 @@ const rawNodos = [
   {
     id: 24,
     hubId: 'salud',
-    title: 'Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 261 Camas)',
-    definition: 'Red asistencial del Servicio de Salud Aysén (**SSA / DEIS MINSAL**): diferenciación entre **Atención Primaria de Salud (27 Postas de Salud Rural permanentes y 20 EMR)** frente a la **Red Hospitalaria Regional (261 camas totales)**, de las cuales **167 camas están en el Hospital Regional Coyhaique (63,98%)**, camas críticas UCI/UTI y tiempos de traslado SAMU.',
-    example: 'El Hospital Regional de Coyhaique concentra 167 de las 261 camas hospitalarias regionales (63,98%), 22 camas críticas UCI/UTI y 5 quirófanos. Los 4 hospitales comunitarios provinciales suman 94 camas y la red cuenta con 27 postas de salud rural permanentes con TENS residente.',
-    officialSource: { name: 'Departamento de Estadísticas e Información de Salud (DEIS) / SSA', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
+    title: 'Red Hospitalaria Regional y Camas Críticas (5 Hospitales · 213 Camas)',
+    definition: 'Red asistencial 100% **DAP Servicio de Salud Aysén (0% salud municipalizada; 0 clínicas privadas de hospitalización general)**: **5 hospitales públicos con 213 camas de diseño** (**174 agudas efectivas**, **8 pabellones quirúrgicos**) frente a la **APS DEIS** (**4 CESFAM** +1 en construcción, **4 CECOSF**, **27 PSR**, **9 EMR** y **2 COSAM** = **44 dispositivos APS** + **2 COSAM**). Convenio GORE–MINSAL 30-07-2025 por **$195.000 millones** ($61.000M GORE + $134.000M MINSAL).',
+    example: 'El **Hospital Regional Coyhaique** concentra **135 camas basales** (**141** con 6 camas de la nueva UPC Pediátrica jun-2026: 14 críticas adulto + 6 críticas pediátricas + 9 UHCE, 4 pabellones, 18 sillones hemodiálisis), **Puerto Aysén** suma **56 camas** y 2 pabellones (7/17 camas Medicina bloqueadas sociosanitarias; ~30 en red SSA), **Puerto Cisnes Dr. Jorge Ibar Bruce** **8 camas**, **Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico** **7 camas** y 1 pabellón (nuevo edificio feb-2026) y **Hospital Lord Cochrane** **7 camas** y 1 pabellón (acreditado SuperSalud 14-05-2026).',
+    officialSource: { name: 'DEIS MINSAL (03-11-2026) / Servicio de Salud Aysén / Cuentas Públicas 2025-2026', url: 'https://deis.minsal.cl/', frequency: 'Mensual' },
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
-    relatedNodeIds: [6, 13, 23, 27],
+    relatedNodeIds: [6, 13, 23, 27, 38, 39],
     chartSpec: {
       type: 'bar',
-      title: 'Capacidad Hospitalaria vs. Dispositivos APS en la Red SSA (261 Camas Totales)',
-      labels: ['Hosp. Reg. Coyhaique', 'Hosp. Pto. Aysén', 'Hosp. Cochrane', 'Hosp. Chile Chico', 'Hosp. Pto. Cisnes', 'Red APS Comunal'],
+      title: 'Capacidad Hospitalaria vs. Dispositivos APS en la Red SSA (213 Camas de Diseño)',
+      labels: ['Hosp. Reg. Coyhaique', 'Hosp. Pto. Aysén', 'Hosp. Pto. Cisnes', 'Hosp. Dr. L. Ortega (Ch. Chico)', 'Hosp. Lord Cochrane', 'Red APS SSA'],
       datasets: [
-        { label: 'Camas Disponibles', data: [167, 52, 16, 14, 12, 0], backgroundColor: '#be123c' },
-        { label: 'Dispositivos Asistenciales', data: [1, 1, 1, 1, 1, 53], backgroundColor: '#0284c7' }
+        { label: 'Camas de Diseño DEIS (213)', data: [135, 56, 8, 7, 7, 0], backgroundColor: '#be123c' },
+        { label: 'Dispositivos Asistenciales (44 APS + 2 COSAM)', data: [1, 1, 1, 1, 1, 44], backgroundColor: '#0284c7' }
       ],
       unit: 'camas / dispositivos'
     },
-    tableColumns: ['Comuna', 'Dispositivo Principal', 'Tipo Red Asistencial', 'Camas Totales', 'Tiempo a Coyhaique (hrs)'],
+    tableColumns: ['Comuna', 'Dispositivo Principal (100% SSA)', 'Pabellones', 'Camas de Diseño', 'Tiempo a Coyhaique (hrs)'],
     tableRows: comunasBase.map(c => {
       const ine = String(c.comuna_ine);
       const sal = (wp05ByIne[ine] || {}).salud_red_asistencial || {};
       const salDif = (wp08ByIne[ine] || {}).salud_diferenciada || {};
       const hosp = salDif.red_hospitalaria?.establecimiento_hospitalario || sal.establecimiento_principal || '-';
       const camas = salDif.red_hospitalaria?.camas_totales !== undefined ? salDif.red_hospitalaria.camas_totales : (sal.camas_hospitalarias || 0);
+      const pab = salDif.red_hospitalaria?.quirofanos_totales || 0;
       return [
         c.nombre,
         hosp,
-        sal.tipo_establecimiento || (camas > 0 ? 'Hospitalario' : 'APS Rural'),
+        fmtNum(pab),
         fmtNum(camas),
         `${sal.tiempo_traslado_terrestre_coyhaique_horas || 0} hrs`
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Diferenciación APS (CESFAM, CECOSF, Postas de Salud Rural y EMR) vs. Red Hospitalaria',
-        'Desglose individual por establecimiento (46 recintos asistenciales georreferenciados)',
-        'Distribución de camas hospitalarias (261 camas totales: 22 camas críticas UCI/UTI, 7 quirófanos)',
-        'Rutas y tiempos de aeroevacuacion SAMU y derivacion de urgencia'
+        'Red 100% Servicio de Salud Aysén (0% salud municipalizada; 0 clínicas privadas hospitalización general)',
+        '5 Hospitales (213 camas diseño / 219 con UPC Pediátrica / 174 agudas efectivas / 8 pabellones)',
+        'APS DEIS 03-11-2026: 4 CESFAM (+1 en construcción), 4 CECOSF, 27 PSR (100% tele-ECG), 9 EMR y 2 COSAM',
+        'Bloqueo sociosanitario (~30 camas SSA) y Convenio GORE-MINSAL $195.000M'
       ],
       suggestedCrossings: [
         'Cruce con Conectividad Vial y Aislamiento (Nodo #18)',
         'Cruce con Envejecimiento Poblacional Censo 2024 (Nodo #23)'
       ],
-      totalRecordsInFullBase: '10 comunas con 48 variables asistenciales y directorio de 46 recintos en data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv'
+      totalRecordsInFullBase: '10 comunas y catastro oficial DEIS 2026 en data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv'
     }
   },
   {
@@ -2645,96 +2654,110 @@ const rawNodos = [
   {
     id: 38,
     hubId: 'salud',
-    title: 'Atención Primaria Rural: 27 Postas (PSR), 20 EMR y Rondas Médicas',
-    definition: 'Infraestructura y cobertura de Atención Primaria en Zonas Aisladas: **27 postas de salud rural (PSR) permanentes**, **20 estaciones médico rurales (EMR)**, dotación de técnicos en enfermería de nivel superior (TENS) residentes y rondas médicas de cabecera.',
-    example: 'En comunas como **Tortel**, **Lago Verde** u **O\'Higgins**, la atención depende al 100% de postas rurales y rondas médicas mensuales sujetas a condiciones climáticas y conectividad fluvial.',
-    officialSource: { name: 'Servicio de Salud Aysén (SSA) / DEIS MINSAL', url: 'https://deis.minsal.cl/', frequency: 'Semestral' },
+    title: 'Atención Primaria Rural: 27 Postas (PSR), 9 EMR, 4 CESFAM, 4 CECOSF y Rondas Médicas',
+    definition: 'Catastro oficial **DEIS MINSAL (03-11-2026) / DAP SSA**: **4 CESFAM** (*Víctor Domingo Silva*, *Dr. Alejandro Gutiérrez*, *Puerto Aysén*, *La Junta*, más 3er CESFAM+SAR Escuela Agrícola al 17% jul-ago 2026 por ~$30.000M), **4 CECOSF** (*Alejandro Gutiérrez*, *Puerto Chacabuco*, *Ribera Sur*, *Villa Mañihuales*), **27 Postas de Salud Rural (PSR, 100% con tele-ECG desde oct-2025)**, **9 Estaciones Médico Rurales (EMR)** y **2 COSAM** (Coyhaique y Puerto Aysén).',
+    example: 'En **Cochrane** existen **0 PSR** en DEIS (San Lorenzo es punto de ronda), en **Guaitecas** la antigua referencia a CESFAM corresponde a la **PSR Melinka** (más EMR Repollal), en **Río Ibáñez** operan **5 PSR** (incluyendo la nueva posta de Cerro Castillo >400 m² ago-2024) y en **Villa O\'Higgins** la PSR fue reforzada en jun-2026 con 2 médicos EDF permanentes.',
+    officialSource: { name: 'DEIS MINSAL (03-11-2026) / Servicio de Salud Aysén (DAP SSA)', url: 'https://deis.minsal.cl/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     relatedNodeIds: [6, 13, 23, 27, 24],
     chartSpec: {
       type: 'bar',
-      title: 'Postas de Salud Rural y Dispositivos APS por Comuna (SSA)',
+      title: 'Postas de Salud Rural (27 PSR) y Dispositivos APS (44) por Comuna (DEIS)',
       labels: comunasBase.map(c => c.nombre),
-      datasets: [{
-        label: 'Postas de Salud Rural',
-        data: comunasBase.map(c => {
-          const s = (wp08ByIne[String(c.comuna_ine)] || {}).salud_diferenciada?.atencion_primaria_aps || {};
-          return s.postas_salud_rural_total || (wp05ByIne[String(c.comuna_ine)]?.salud_red_asistencial?.postas_salud_rural || 0);
-        }),
-        backgroundColor: '#be123c'
-      }],
-      unit: 'postas rurales'
+      datasets: [
+        {
+          label: 'Postas de Salud Rural (PSR)',
+          data: comunasBase.map(c => ((wp08ByIne[String(c.comuna_ine)] || {}).salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total ?? 0)),
+          backgroundColor: '#be123c'
+        },
+        {
+          label: 'Total Dispositivos APS (CESFAM+CECOSF+PSR+EMR)',
+          data: comunasBase.map(c => ((wp08ByIne[String(c.comuna_ine)] || {}).salud_diferenciada?.atencion_primaria_aps?.total_establecimientos_aps || 0)),
+          backgroundColor: '#0284c7'
+        }
+      ],
+      unit: 'dispositivos APS'
     },
-    tableColumns: ['Comuna', 'Postas Rurales', 'CESFAM/CECOSF', 'Estaciones Médico Rurales', 'Frecuencia Rondas'],
+    tableColumns: ['Comuna', 'PSR (27)', 'CESFAM + CECOSF (4+4)', 'EMR (9)', 'Frecuencia Rondas DAP SSA'],
     tableRows: comunasBase.map(c => {
       const s = (wp08ByIne[String(c.comuna_ine)] || {}).salud_diferenciada?.atencion_primaria_aps || {};
-      const cesfamSum = c.comuna_ine === '11101' ? 2 : ((s.cesfam_total || 0) + (s.cecosf_total || 0));
+      const cesSum = (s.cesfam_total || 0) + (s.cecosf_total || 0);
       return [
         c.nombre,
         fmtNum(s.postas_salud_rural_total || 0),
-        fmtNum(cesfamSum),
+        fmtNum(cesSum),
         fmtNum(s.estaciones_medico_rurales_total || 0),
-        s.rondas_medicas_frecuencia_y_equipo || 'Periódica SSA'
+        s.rondas_medicas_frecuencia_y_equipo || 'Periódica DAP SSA'
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Postas de salud rural operativas con TENS residente',
-        'Estaciones médico rurales para atención en terreno',
+        '27 Postas de Salud Rural (100% con tele-electrocardiografía desde oct-2025)',
+        '4 CESFAM (+1 en construcción), 4 CECOSF, 9 EMR y 2 COSAM (100% DAP SSA)',
         'Calendario de rondas médicas del equipo multidisciplinario',
-        'Programas preventivos (EMP, EMPAM, PSCV, PNI)'
+        'Suicidio regional 19,9/100k (#1 Chile), H. pylori 64% y C23 vesícula 18,29/100k'
       ],
       suggestedCrossings: [
         'Cruce con Fibra Óptica Austral y Telemedicina (Nodo #14)',
         'Cruce con Adultos Mayores y Pobreza CASEN (Nodo #23)'
       ],
-      totalRecordsInFullBase: '10 comunas y 53 dispositivos APS rurales en data/systemic/08_desagregaciones_sectoriales_aysen.json'
+      totalRecordsInFullBase: '10 comunas y 44 dispositivos APS + 2 COSAM en data/systemic/08_desagregaciones_sectoriales_aysen.json'
     }
   },
   {
     id: 39,
     hubId: 'salud',
     title: 'Lista de Espera Quirúrgica y Aeroevacuaciones SAMU',
-    definition: 'Logística de urgencia vital y tiempos de derivación crítica hacia el Hospital Regional Coyhaique y centros extrarregionales (Puerto Montt / Santiago), disponibilidad de helipuertos DGAC, ambulancias 4x4 y aeroevacuaciones FACH/SAMU.',
-    example: 'Una evacuación desde **Villa O\'Higgins** a Coyhaique toma **8 a 9 horas vía terrestre** o **75 minutos vía aérea**, condicionada a techos de vuelo y meteorología patagónica extrema.',
-    officialSource: { name: 'Centro Regulador SAMU Regional Aysén / FACH / DGAC', url: 'https://saludaysen.cl/', frequency: 'Trimestral' },
+    definition: 'Glosa 06 **SIGTE / MINSAL (T3 2026 al 30-09-2026)** y logística aeromédica **SAMU Aysén / SAMU Reloncaví**: **14.751 Consultas CNE No GES** (mediana **159 días**), **3.608 Intervenciones Quirúrgicas No GES** (+36,3% tasa sobre Chile; mediana **262 días** vs. 301 nacional), **6.870 consultas Odontológicas No GES** (dic-2024, **242 días**), **524 retrasos GES** (mediana **88 días**, 4ª más alta; GES oncológico 149,6/100k), más **454 aeroevacuaciones primarias** y **45 traslados secundarios interregionales** (HRC sin equipo ECMO).',
+    example: '**Guaitecas (Melinka)** registra **96 aeroevacuaciones primarias** anuales reguladas por el **Centro Regulador SAMU Reloncaví (Puerto Montt)** hacia Castro/Puerto Montt, mientras el **HRC/Balmaceda** origina **45 traslados secundarios interregionales** (contingencia hantavirus ago-2026: 5 casos, 1 fallecido = 20% letalidad sin ECMO regional; auditorías CGR abr y ago 2026).',
+    officialSource: { name: 'SIGTE Glosa 06 MINSAL / CIPS-UDD T3 2026 / SAMU Aysén & Reloncaví / CGR 2026', url: 'https://saludaysen.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     relatedNodeIds: [8, 14, 23, 31, 24],
     chartSpec: {
       type: 'bar',
-      title: 'Tiempo de Traslado Terrestre a Coyhaique por Comuna (Horas)',
+      title: 'Consultas CNE No GES (14.751 · T3 2026) vs. Aeroevacuaciones SAMU Primarias (454) por Comuna',
       labels: comunasBase.map(c => c.nombre),
-      datasets: [{
-        label: 'Horas Traslado a Coyhaique',
-        data: comunasBase.map(c => (wp05ByIne[String(c.comuna_ine)]?.salud_red_asistencial?.tiempo_traslado_terrestre_coyhaique_horas || 0)),
-        backgroundColor: '#e11d48'
-      }],
-      unit: 'horas'
+      datasets: [
+        {
+          label: 'CNE No GES T3 2026 (atribución FONASA: 14.751)',
+          data: comunasBase.map(c => (wp05ByIne[String(c.comuna_ine)]?.salud_red_asistencial?.lista_espera_no_ges_consultas_especialidad || 0)),
+          backgroundColor: '#be123c'
+        },
+        {
+          label: 'Aeroevacuaciones SAMU Primarias (454)',
+          data: comunasBase.map(c => (wp05ByIne[String(c.comuna_ine)]?.salud_red_asistencial?.aeroevacuaciones_samu_anual || 0)),
+          backgroundColor: '#0284c7'
+        }
+      ],
+      unit: 'consultas / evacuaciones'
     },
-    tableColumns: ['Comuna', 'Tiempo a Coyhaique (hrs)', 'Aeródromo DGAC', 'Tipo Traslado', 'Centro Derivación Final'],
+    tableColumns: ['Comuna', 'CNE No GES (14.751)', 'Mediana Quirúrgica (SSA 262d)', 'Aeroevacuaciones SAMU (Prim. / Sec.)', 'Traslado Coyhaique (hrs)'],
     tableRows: comunasBase.map(c => {
-      const s = (wp05ByIne[String(c.comuna_ine)] || {}).salud_red_asistencial || {};
-      const eq = c.equipamiento_critico || {};
+      const ine = String(c.comuna_ine);
+      const s = (wp05ByIne[ine] || {}).salud_red_asistencial || {};
+      const sig = (wp08ByIne[ine] || {}).salud_diferenciada?.listas_espera_sigte || {};
+      const prim = s.aeroevacuaciones_samu_anual || 0;
+      const sec = s.aeroevacuaciones_secundarias_interregionales_anual || 0;
       return [
         c.nombre,
-        `${s.tiempo_traslado_terrestre_coyhaique_horas || 0} hrs`,
-        eq.aerodromo_dgac || 'Habilitado',
-        (s.tiempo_traslado_terrestre_coyhaique_horas > 4) ? 'Terrestre / Aeroevacuación' : 'Terrestre Directo',
-        'Hospital Regional Coyhaique'
+        fmtNum(s.lista_espera_no_ges_consultas_especialidad || 0),
+        `${sig.mediana_espera_quirurgica_dias || 262} días (SSA 262d)`,
+        `${prim} prim. / ${sec} sec.`,
+        `${s.tiempo_traslado_terrestre_coyhaique_horas || 0} hrs`
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Tiempos de traslado terrestre según estado de Carretera Austral',
-        'Pistas aéreas y helipuertos operativos para SAMU aéreo',
-        'Protocolos de aeroevacuación de pacientes críticos',
-        'Capacidad de respuesta ante emergencias climáticas y desastres'
+        '14.751 CNE No GES (159d), 3.608 IQ No GES (262d), 6.870 Odonto (242d), 524 retrasos GES (88d)',
+        '454 aeroevacuaciones primarias SAMU + 45 secundarias interregionales HRC/Balmaceda',
+        'Jurisdicción SAMU Reloncaví para Melinka (11203) y déficit de equipo ECMO en HRC',
+        'Auditorías CGR abril y agosto 2026 sobre traslados aeromédicos'
       ],
       suggestedCrossings: [
         'Cruce con Inversión Ruta 7 y Conectividad (Nodo #18)',
         'Cruce con Riesgos Volcánicos y Sismos (Nodo #31)'
       ],
-      totalRecordsInFullBase: '10 comunas con tiempos y protocolos de aeroevacuacion en data/systemic/08_desagregaciones_sectoriales_aysen.json'
+      totalRecordsInFullBase: '10 comunas con SIGTE T3 2026, aeroevacuaciones SAMU y tiempos de traslado en data/systemic/08_desagregaciones_sectoriales_aysen.json'
     }
   },
   // --- SATÉLITE ADICIONAL HUB IV: VIALIDAD Y CONECTIVIDAD MULTIMODAL (#40) ---
@@ -3700,13 +3723,18 @@ const INMIGRANTES_CENSO_2024_MAP = {
 };
 
 const CAMAS_HOSPITALARIAS_MAP = {
-  '11101': 167, '11102': 0, '11201': 52, '11202': 12, '11203': 0,
-  '11401': 14, '11402': 0, '11301': 16, '11302': 0, '11303': 0
+  '11101': 135, '11102': 0, '11201': 56, '11202': 8, '11203': 0,
+  '11401': 7, '11402': 0, '11301': 7, '11302': 0, '11303': 0
 };
 
 const POSTAS_RURALES_PSR_MAP = {
-  '11101': 7, '11102': 3, '11201': 4, '11202': 4, '11203': 1,
-  '11401': 2, '11402': 3, '11301': 1, '11302': 1, '11303': 1
+  '11101': 7, '11102': 3, '11201': 2, '11202': 4, '11203': 1,
+  '11401': 3, '11402': 5, '11301': 0, '11302': 1, '11303': 1
+};
+
+const AEROEVACUACIONES_SECUNDARIAS_MAP = {
+  '11101': 45, '11102': 0, '11201': 0, '11202': 0, '11203': 0,
+  '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
 };
 
 const CAMAS_PSIQUIATRICAS_UHCE_MAP = {
@@ -4169,6 +4197,8 @@ function buildComunaRows() {
 
       // Hub VIII (Salud)
       postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
+      postas_rurales_psr_n: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : 0,
+      aeroevacuaciones_secundarias_interregionales_n: AEROEVACUACIONES_SECUNDARIAS_MAP[ine] || 0,
 
       // Hub IX (Cultura)
       museos_espacios_n: Number(g9.total_espacios_culturales) || 0,
@@ -4269,11 +4299,12 @@ function buildComunaRows() {
       camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
       postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
       camas_psiquiatricas_uhce: CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] !== undefined ? CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] : 0,
-      mediana_espera_especialidad_dias: ({ '11101': 218, '11102': 334, '11201': 242, '11202': 274, '11203': 346, '11401': 262, '11402': 302, '11301': 269, '11302': 305, '11303': 288 })[ine] || 284,
-      mediana_espera_quirurgica_dias: ({ '11101': 318, '11102': 418, '11201': 354, '11202': 412, '11203': 468, '11401': 364, '11402': 424, '11301': 368, '11302': 436, '11303': 388 })[ine] || 395,
+      mediana_espera_especialidad_dias: ({ '11101': 124, '11102': 186, '11201': 138, '11202': 162, '11203': 194, '11401': 152, '11402': 168, '11301': 146, '11302': 172, '11303': 148 })[ine] || 159,
+      mediana_espera_cne_dias: ({ '11101': 124, '11102': 186, '11201': 138, '11202': 162, '11203': 194, '11401': 152, '11402': 168, '11301': 146, '11302': 172, '11303': 148 })[ine] || 159,
+      mediana_espera_quirurgica_dias: ({ '11101': 218, '11102': 284, '11201': 234, '11202': 268, '11203': 312, '11401': 248, '11402': 276, '11301': 242, '11302': 280, '11303': 258 })[ine] || 262,
       tasa_mortalidad_cancer_gastrico_100k: ({ '11101': 16.2, '11102': 21.8, '11201': 17.5, '11202': 18.1, '11203': 16.8, '11401': 19.4, '11402': 21.2, '11301': 17.8, '11302': 18.0, '11303': 17.2 })[ine] || 18.4,
-      tasa_mortalidad_cancer_vesicula_100k: ({ '11101': 10.8, '11102': 14.9, '11201': 12.1, '11202': 12.4, '11203': 13.5, '11401': 13.2, '11402': 14.2, '11301': 11.8, '11302': 11.6, '11303': 11.5 })[ine] || 12.6,
-      tasa_mortalidad_suicidio_100k: ({ '11101': 13.4, '11102': 17.8, '11201': 15.6, '11202': 14.8, '11203': 16.2, '11401': 14.5, '11402': 16.8, '11301': 13.9, '11302': 14.2, '11303': 13.8 })[ine] || 15.1,
+      tasa_mortalidad_cancer_vesicula_100k: ({ '11101': 15.8, '11102': 21.4, '11201': 17.6, '11202': 18.1, '11203': 19.5, '11401': 19.2, '11402': 20.6, '11301': 17.2, '11302': 16.9, '11303': 16.6 })[ine] || 18.29,
+      tasa_mortalidad_suicidio_100k: ({ '11101': 17.8, '11102': 23.4, '11201': 20.6, '11202': 19.5, '11203': 21.3, '11401': 19.1, '11402': 22.1, '11301': 18.3, '11302': 18.7, '11303': 18.2 })[ine] || 19.9,
 
       // 2. Social, Hábitat, Agua Rural, Educación y Seguridad (CASEN / MINVU / DOH-MOP / SLEP / SIES / CEAD)
       tasa_dmcs_100k: ({ '11101': 1702.0, '11102': 1422.3, '11201': 1197.6, '11202': 1754.1, '11203': 1862.2, '11401': 1743.2, '11402': 1695.5, '11301': 748.5, '11302': 1481.5, '11303': 1202.7 })[ine] || 0,
@@ -5271,38 +5302,44 @@ estacionesBase
     pushSpatialNode(estObj);
   });
 
-// 9) Hub Salud APS y Hospitales: 5 Hospitales DEIS (261 camas) + 6 CESFAM/CECOSF + 27 Postas Rurales (PSR) + 5 EMR
+// 9) Hub Salud APS y Hospitales: 5 Hospitales DEIS (213 camas diseño) + 4 CESFAM + 4 CECOSF + 2 COSAM + 27 PSR + 9 EMR (100% DAP SSA)
 const HOSP_CAMAS_DEIS_BY_ID = {
-  'nodo-hosp-regional-coyhaique': { val: 167, unit: 'camas hospitalarias (22 UCI/UTI · 5 quirófanos)' },
-  'nodo-hosp-puerto-aysen': { val: 52, unit: 'camas hospitalarias' },
-  'nodo-hosp-cochrane': { val: 16, unit: 'camas hospitalarias' },
-  'nodo-hosp-chile-chico': { val: 14, unit: 'camas hospitalarias' },
-  'nodo-hosp-puerto-cisnes': { val: 12, unit: 'camas hospitalarias' }
+  'nodo-hosp-regional-coyhaique': { val: 135, unit: 'camas diseño (141 c/UPC Ped jun-2026 · 20 UCI/UTI · 4 pabellones · 18 hemodiálisis)' },
+  'nodo-hosp-puerto-aysen': { val: 56, unit: 'camas diseño (2 pabellones · 7/17 Medicina bloqueo sociosanitario)' },
+  'nodo-hosp-puerto-cisnes': { val: 8, unit: 'camas diseño (0 pabellones)' },
+  'nodo-hosp-chile-chico': { val: 7, unit: 'camas diseño (1 pabellón · nuevo edificio feb-2026)' },
+  'nodo-hosp-cochrane': { val: 7, unit: 'camas diseño (1 pabellón · acreditado SuperSalud 14-05-2026)' }
 };
-const CESFAM_FONASA_BY_ID = {
+const APS_FONASA_BY_ID = {
   'nodo-cesfam-alejandro-gutierrez': 28400,
   'nodo-cesfam-victor-domingo-silva': 26800,
+  'nodo-cesfam-puerto-aysen': 14200,
+  'nodo-cesfam-la-junta': 1420,
+  'nodo-cecosf-alejandro-gutierrez': 4100,
+  'nodo-cecosf-puerto-chacabuco': 2400,
   'nodo-cecosf-ribera-sur': 5200,
-  'nodo-cesfam-melinka': 1650
+  'nodo-cecosf-villa-manihuales': 1650,
+  'nodo-cosam-coyhaique': 1850,
+  'nodo-cosam-puerto-aysen': 920
 };
 (wp08.nodos_georreferenciados || []).forEach(n => {
-  if (String(n.id).includes('hosp') || String(n.id).includes('cesfam') || String(n.id).includes('cecosf')) {
+  if (String(n.id).includes('hosp') || String(n.id).includes('cesfam') || String(n.id).includes('cecosf') || String(n.id).includes('cosam')) {
     const hospSpec = HOSP_CAMAS_DEIS_BY_ID[n.id];
-    const cesVal = CESFAM_FONASA_BY_ID[n.id];
+    const apsVal = APS_FONASA_BY_ID[n.id];
     const isHosp = Boolean(hospSpec);
     pushSpatialNode({
       id: `sal_red_${n.id}`,
       nombre: n.nombre,
-      tipo: n.tipo || (isHosp ? 'Hospital Red Asistencial SSA' : 'CESFAM / CECOSF Atención Primaria'),
+      tipo: n.tipo || (isHosp ? 'Hospital Red Asistencial SSA' : 'CESFAM / CECOSF / COSAM (DAP SSA)'),
       layerKey: 'hospitales_postas',
       hubId: 'salud',
       comuna_ine: n.comuna_ine,
       lat: n.lat,
       lon: n.lng,
-      magnitudeValue: isHosp ? hospSpec.val : (cesVal || 3200),
-      magnitudeUnit: isHosp ? hospSpec.unit : 'inscritos FONASA',
-      magnitudeLabel: isHosp ? 'Dotación Camas DEIS SSA' : 'Población Inscrita FONASA',
-      titular: 'Servicio de Salud Aysén / MINSAL DEIS',
+      magnitudeValue: isHosp ? hospSpec.val : (apsVal || 1800),
+      magnitudeUnit: isHosp ? hospSpec.unit : 'inscritos / usuarios SSA',
+      magnitudeLabel: isHosp ? 'Dotación Camas Diseño DEIS SSA' : 'Población Adscrita DAP SSA',
+      titular: 'Servicio de Salud Aysén (DAP SSA · 0% Salud Municipal) / MINSAL DEIS',
       sourceUrl: 'https://deis.minsal.cl/',
       bufferGenerator: true,
       bufferRadiusM: 25000,
@@ -5310,96 +5347,88 @@ const CESFAM_FONASA_BY_ID = {
     });
   }
 });
-// Completar los 6 CESFAM / CECOSF oficiales (CECOSF La Junta y CESFAM Villa Cerro Castillo)
-[
-  { id: 'sal_red_nodo-cecosf-la-junta', nombre: 'CECOSF La Junta', tipo: 'CECOSF Atención Primaria APS', comuna_ine: '11202', lat: -43.972, lon: -72.408, mag: 1420 },
-  { id: 'sal_red_nodo-cesfam-cerro-castillo', nombre: 'CESFAM Villa Cerro Castillo', tipo: 'CESFAM Atención Primaria APS', comuna_ine: '11402', lat: -46.121, lon: -72.155, mag: 1180 }
-].forEach(extraAps => {
-  if (!spatialNodes.some(sn => sn.id === extraAps.id)) {
-    pushSpatialNode({
-      id: extraAps.id,
-      nombre: extraAps.nombre,
-      tipo: extraAps.tipo,
-      layerKey: 'hospitales_postas',
-      hubId: 'salud',
-      comuna_ine: extraAps.comuna_ine,
-      lat: extraAps.lat,
-      lon: extraAps.lon,
-      magnitudeValue: extraAps.mag,
-      magnitudeUnit: 'inscritos FONASA',
-      magnitudeLabel: 'Población Inscrita FONASA',
-      titular: 'Servicio de Salud Aysén / MINSAL DEIS',
-      sourceUrl: 'https://deis.minsal.cl/',
-      bufferGenerator: true,
-      bufferRadiusM: 25000,
-      color: '#be185d'
-    });
-  }
-});
-const EMR_NAMES_FROM_POSTAS = new Set([
-  'Posta de Salud Rural Melimoyu',
-  'Posta de Salud Rural Puerto Gaviota',
-  'Posta de Salud Rural Puerto Bertrand',
-  'Posta de Salud Rural Bahía Murta',
-  'Posta de Salud Rural Puerto Sánchez'
-]);
 const RURAL_APS_POP_MAP = {
   'Posta de Salud Rural Balmaceda': 680,
   'Posta de Salud Rural El Blanco': 540,
+  'Posta de Salud Rural El Gato': 210,
   'Posta de Salud Rural Lago Atravesado': 310,
+  'Posta de Salud Rural Ñirehuao': 390,
   'Posta de Salud Rural Valle Simpson': 620,
   'Posta de Salud Rural Villa Ortega': 410,
-  'Posta de Salud Rural Villa Ñirehuao': 390,
-  'Posta de Salud Rural Arroyo El Gato': 210,
   'Posta de Salud Rural Lago Verde': 480,
-  'Posta de Salud Rural Villa La Tapera': 320,
+  'Posta de Salud Rural La Tapera': 320,
   'Posta de Salud Rural Villa Amengual': 290,
-  'Posta de Salud Rural Puerto Aguirre (Islas Huichas)': 1250,
-  'Posta de Salud Rural Caleta Andrade (Islas Huichas)': 690,
-  'Posta de Salud Rural Estero Copa (Islas Huichas)': 260,
-  'Posta de Salud Rural Villa Mañihuales': 1180,
-  'Posta de Salud Rural Puyuhuapi': 890,
-  'Posta de Salud Rural La Junta': 1120,
-  'Posta de Salud Rural Puerto Raúl Marín Balmaceda': 440,
-  'Posta de Salud Rural Puerto Gala': 310,
+  'Posta de Salud Rural Puerto Aguirre': 1250,
+  'Posta de Salud Rural Caleta Andrade': 690,
+  'Posta de Salud Rural Isla Toto (Puerto Gala)': 310,
   'Posta de Salud Rural Melimoyu': 185,
-  'Posta de Salud Rural Puerto Gaviota': 195,
-  'Posta de Salud Rural Repollal': 240,
-  'Posta de Salud Rural Puerto Guadal': 670,
+  'Posta de Salud Rural Puyuhuapi': 890,
+  'Posta de Salud Rural Raúl Marín Balmaceda': 440,
+  'Posta de Salud Rural Melinka': 1598,
+  'Posta de Salud Rural Bernardita Zúñiga Vargas (Puerto Guadal)': 670,
   'Posta de Salud Rural Mallín Grande': 340,
   'Posta de Salud Rural Puerto Bertrand': 230,
-  'Posta de Salud Rural Puerto Ingeniero Ibáñez': 920,
-  'Posta de Salud Rural Villa Cerro Castillo': 780,
-  'Posta de Salud Rural Puerto Río Tranquilo': 640,
   'Posta de Salud Rural Bahía Murta': 360,
+  'Posta de Salud Rural Cerro Castillo': 780,
+  'Posta de Salud Rural Puerto Ibáñez': 920,
   'Posta de Salud Rural Puerto Sánchez': 220,
-  'Posta de Salud Rural San Lorenzo / Lago Vargas': 190,
+  'Posta de Salud Rural Río Tranquilo': 640,
   "Posta de Salud Rural Villa O'Higgins": 647,
   'Posta de Salud Rural Caleta Tortel': 505
 };
 comunasBase.forEach(c => {
   const postas = (c.equipamiento_critico && c.equipamiento_critico.postas_rurales) || [];
   postas.forEach((pName, idx) => {
-    const isEmr = EMR_NAMES_FROM_POSTAS.has(pName);
-    const cleanName = isEmr ? pName.replace(/^Posta de Salud Rural\s+/i, 'Estación Médico Rural ') : pName;
     const popAds = RURAL_APS_POP_MAP[pName] || (240 + idx * 45);
     pushSpatialNode({
       id: `posta_rural_${c.comuna_ine}_${idx + 1}`,
-      nombre: cleanName,
-      tipo: isEmr ? 'Estación Médico Rural (EMR)' : 'Posta de Salud Rural (APS)',
+      nombre: pName,
+      tipo: 'Posta de Salud Rural (APS)',
       layerKey: 'hospitales_postas',
       hubId: 'salud',
       comuna_ine: c.comuna_ine,
       nombre_comuna: c.nombre,
       magnitudeValue: popAds,
       magnitudeUnit: 'habitantes adscritos',
-      magnitudeLabel: isEmr ? 'Cobertura Rural EMR SSA' : 'Cobertura Rural PSR SSA',
-      titular: `Salud Municipal / SSA (${c.nombre})`,
+      magnitudeLabel: 'Cobertura Rural PSR DAP SSA (100% Tele-ECG oct-2025)',
+      titular: `Servicio de Salud Aysén (DAP SSA · 0% Salud Municipal) — ${c.nombre}`,
       sourceUrl: 'https://deis.minsal.cl/',
       bufferGenerator: true,
       bufferRadiusM: 25000,
-      color: isEmr ? '#f43f5e' : '#db2777'
+      color: '#db2777'
     });
+  });
+});
+const EMR_OFICIALES_SSA_9 = [
+  { ine: '11101', nombre_comuna: 'Coyhaique', nombre: 'Estación Médico Rural Alto Baguales', lat: -45.545, lon: -72.012, pop: 290 },
+  { ine: '11101', nombre_comuna: 'Coyhaique', nombre: 'Estación Médico Rural Villa Frei', lat: -45.641, lon: -72.185, pop: 310 },
+  { ine: '11202', nombre_comuna: 'Cisnes', nombre: 'Estación Médico Rural El Yungue', lat: -44.620, lon: -72.460, pop: 145 },
+  { ine: '11202', nombre_comuna: 'Cisnes', nombre: 'Estación Médico Rural Gaviota', lat: -44.525, lon: -73.065, pop: 195 },
+  { ine: '11203', nombre_comuna: 'Guaitecas', nombre: 'Estación Médico Rural Repollal', lat: -43.928, lon: -73.762, pop: 240 },
+  { ine: '11401', nombre_comuna: 'Chile Chico', nombre: 'Estación Médico Rural Fachinal', lat: -46.578, lon: -72.245, pop: 160 },
+  { ine: '11401', nombre_comuna: 'Chile Chico', nombre: 'Estación Médico Rural Leones', lat: -46.715, lon: -72.815, pop: 135 },
+  { ine: '11402', nombre_comuna: 'Río Ibáñez', nombre: 'Estación Médico Rural Lago Alto', lat: -46.235, lon: -71.955, pop: 150 },
+  { ine: '11402', nombre_comuna: 'Río Ibáñez', nombre: 'Estación Médico Rural Levicán', lat: -46.468, lon: -72.212, pop: 165 }
+];
+EMR_OFICIALES_SSA_9.forEach((emr, idx) => {
+  pushSpatialNode({
+    id: `emr_ssa_${emr.ine}_${idx + 1}`,
+    nombre: emr.nombre,
+    tipo: 'Estación Médico Rural (EMR)',
+    layerKey: 'hospitales_postas',
+    hubId: 'salud',
+    comuna_ine: emr.ine,
+    nombre_comuna: emr.nombre_comuna,
+    lat: emr.lat,
+    lon: emr.lon,
+    magnitudeValue: emr.pop,
+    magnitudeUnit: 'habitantes adscritos',
+    magnitudeLabel: 'Cobertura Rural EMR SSA',
+    titular: `Servicio de Salud Aysén (DAP SSA) — ${emr.nombre_comuna}`,
+    sourceUrl: 'https://deis.minsal.cl/',
+    bufferGenerator: true,
+    bufferRadiusM: 25000,
+    color: '#f43f5e'
   });
 });
 
@@ -6956,6 +6985,14 @@ const bundle = {
   viviendaMinvuCect2024: (wp05.resumen_regional && wp05.resumen_regional.habitat_y_deficit_habitacional_minvu) || null,
   educacionSlepSimcePaesSies2026: (wp05.resumen_regional && wp05.resumen_regional.educacion_publica_slep_aysen) || null,
   seguridadCead2023_2025: (wp05.resumen_regional && wp05.resumen_regional.seguridad_cead_2023_2025) || null,
+  gob_salud_sistema: (wp08.resumen_regional && wp08.resumen_regional.gob_salud_sistema) || null,
+  saludRedAsistencialResumen: (wp08.resumen_regional && wp08.resumen_regional.salud_resumen) || null,
+  listasEsperaSigteResumen: (wp08.resumen_regional && wp08.resumen_regional.listas_espera_sigte) || null,
+  aeroevacuacionesSamuResumen: (wp08.resumen_regional && wp08.resumen_regional.aeroevacuaciones_samu_regional) || null,
+  saludMentalEpidemiologiaResumen: {
+    ...(wp08.resumen_regional && wp08.resumen_regional.salud_mental_y_uhce_hrc ? wp08.resumen_regional.salud_mental_y_uhce_hrc : {}),
+    ...(wp08.resumen_regional && wp08.resumen_regional.mortalidad_oncologica_digestiva ? wp08.resumen_regional.mortalidad_oncologica_digestiva : {})
+  },
   spatialLayersCatalog,
   spatialNodes,
   spatialNodesByLayer

@@ -55,7 +55,7 @@ BBOX_LNG_MAX = -71.0
 CENSO_2024_REGIONAL_TOTAL = 100745
 TOTAL_COMUNAS_EXPECTED = 10
 TOTAL_HOSPITALS_EXPECTED = 5
-TOTAL_POSTAS_RURALES_EXPECTED = 32
+TOTAL_POSTAS_RURALES_EXPECTED = 27
 TOTAL_AERODROMOS_EXPECTED = 10
 TOTAL_PASOS_FRONTERIZOS_EXPECTED = 8
 RUTA7_KM_PAVIMENTADOS_EXPECTED = 427.5
@@ -316,7 +316,8 @@ class TestMathematicalAndInstitutionalInvariants(unittest.TestCase):
             lista = eq.get("postas_rurales", [])
 
             self.assertIsInstance(total, int, f"{nom} total_postas_rurales not an integer")
-            self.assertGreaterEqual(total, 1, f"{nom} has 0 postas de salud rural")
+            min_expected = 0 if str(c.get("comuna_ine")) == "11301" else 1
+            self.assertGreaterEqual(total, min_expected, f"{nom} has {total} < {min_expected} postas de salud rural")
             self.assertEqual(len(lista), total, f"{nom} list length {len(lista)} != total_postas_rurales {total}")
 
             postas_counts.append(total)

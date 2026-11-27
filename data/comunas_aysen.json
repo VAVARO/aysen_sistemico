@@ -75,11 +75,11 @@
         "postas_rurales": [
           "Posta de Salud Rural Balmaceda",
           "Posta de Salud Rural El Blanco",
+          "Posta de Salud Rural El Gato",
           "Posta de Salud Rural Lago Atravesado",
+          "Posta de Salud Rural Ñirehuao",
           "Posta de Salud Rural Valle Simpson",
-          "Posta de Salud Rural Villa Ortega",
-          "Posta de Salud Rural Villa Ñirehuao",
-          "Posta de Salud Rural Arroyo El Gato"
+          "Posta de Salud Rural Villa Ortega"
         ],
         "aerodromo_dgac": "Aeródromo Balmaceda (SCBA) / Teniente Vidal (SCCY)",
         "paso_fronterizo": "Paso Huemules (Ruta CH-245) / Paso Coyhaique Alto (Ruta 240) / Paso Triana"
@@ -173,8 +173,8 @@
         "salud_principal": "Posta de Salud Rural Lago Verde (Atención Primaria Rural)",
         "total_postas_rurales": 3,
         "postas_rurales": [
+          "Posta de Salud Rural La Tapera",
           "Posta de Salud Rural Lago Verde",
-          "Posta de Salud Rural Villa La Tapera",
           "Posta de Salud Rural Villa Amengual"
         ],
         "aerodromo_dgac": "Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica)",
@@ -262,12 +262,10 @@
       },
       "equipamiento_critico": {
         "salud_principal": "Hospital de Puerto Aysén (Mediana Complejidad, Tipo 3)",
-        "total_postas_rurales": 4,
+        "total_postas_rurales": 2,
         "postas_rurales": [
-          "Posta de Salud Rural Puerto Aguirre (Islas Huichas)",
-          "Posta de Salud Rural Caleta Andrade (Islas Huichas)",
-          "Posta de Salud Rural Estero Copa (Islas Huichas)",
-          "Posta de Salud Rural Villa Mañihuales"
+          "Posta de Salud Rural Caleta Andrade",
+          "Posta de Salud Rural Puerto Aguirre"
         ],
         "aerodromo_dgac": "Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico)",
         "paso_fronterizo": "Sin pasos fronterizos terrestres directos (puerto internacional de cabotaje y aduanas Puerto Chacabuco)"
@@ -369,15 +367,13 @@
         ]
       },
       "equipamiento_critico": {
-        "salud_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce (Baja Complejidad, Tipo 4)",
-        "total_postas_rurales": 6,
+        "salud_principal": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
+        "total_postas_rurales": 4,
         "postas_rurales": [
-          "Posta de Salud Rural Puyuhuapi",
-          "Posta de Salud Rural La Junta",
-          "Posta de Salud Rural Puerto Raúl Marín Balmaceda",
-          "Posta de Salud Rural Puerto Gala",
+          "Posta de Salud Rural Isla Toto (Puerto Gala)",
           "Posta de Salud Rural Melimoyu",
-          "Posta de Salud Rural Puerto Gaviota"
+          "Posta de Salud Rural Puyuhuapi",
+          "Posta de Salud Rural Raúl Marín Balmaceda"
         ],
         "aerodromo_dgac": "Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH)",
         "paso_fronterizo": "Sin pasos fronterizos vehiculares habilitados (barrera cordillera andina y Parques Queulat y Melimoyu)"
@@ -463,10 +459,10 @@
         ]
       },
       "equipamiento_critico": {
-        "salud_principal": "CESFAM Melinka (Atención Primaria de Salud Resolutiva)",
+        "salud_principal": "Posta de Salud Rural Melinka",
         "total_postas_rurales": 1,
         "postas_rurales": [
-          "Posta de Salud Rural Repollal"
+          "Posta de Salud Rural Melinka"
         ],
         "aerodromo_dgac": "Aeródromo Melinka (SCMK, asfalto 830m, vuelos regulares subvencionados)",
         "paso_fronterizo": "Sin pasos fronterizos terrestres (territorio insular marítimo en el Golfo de Corcovado)"
@@ -550,10 +546,10 @@
         ]
       },
       "equipamiento_critico": {
-        "salud_principal": "Hospital Comunitario Dr. Leopoldo Ortega Rodríguez (Baja Complejidad, Tipo 4)",
+        "salud_principal": "Hospital Dr. Leopoldo Ortega Rodríguez de Chile Chico",
         "total_postas_rurales": 3,
         "postas_rurales": [
-          "Posta de Salud Rural Puerto Guadal",
+          "Posta de Salud Rural Bernardita Zúñiga Vargas (Puerto Guadal)",
           "Posta de Salud Rural Mallín Grande",
           "Posta de Salud Rural Puerto Bertrand"
         ],
@@ -640,14 +636,14 @@
         ]
       },
       "equipamiento_critico": {
-        "salud_principal": "Posta de Salud Rural Puerto Ingeniero Ibáñez (Atención Primaria Rural)",
+        "salud_principal": "Posta de Salud Rural Puerto Ibáñez",
         "total_postas_rurales": 5,
         "postas_rurales": [
-          "Posta de Salud Rural Puerto Ingeniero Ibáñez",
-          "Posta de Salud Rural Villa Cerro Castillo",
-          "Posta de Salud Rural Puerto Río Tranquilo",
           "Posta de Salud Rural Bahía Murta",
-          "Posta de Salud Rural Puerto Sánchez"
+          "Posta de Salud Rural Cerro Castillo",
+          "Posta de Salud Rural Puerto Ibáñez",
+          "Posta de Salud Rural Puerto Sánchez",
+          "Posta de Salud Rural Río Tranquilo"
         ],
         "aerodromo_dgac": "Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias)",
         "paso_fronterizo": "Paso Pallavicini / El Palomar / Río Ibáñez (Ruta X-65 hacia RP 45 Argentina)"
@@ -733,11 +729,9 @@
         ]
       },
       "equipamiento_critico": {
-        "salud_principal": "Hospital Comunitario Lord Cochrane (Baja Complejidad, Tipo 4)",
-        "total_postas_rurales": 1,
-        "postas_rurales": [
-          "Posta de Salud Rural San Lorenzo / Lago Vargas"
-        ],
+        "salud_principal": "Hospital Lord Cochrane",
+        "total_postas_rurales": 0,
+        "postas_rurales": [],
         "aerodromo_dgac": "Aeródromo Cochrane (SCHR, asfalto 1.200m, vuelos subvencionados y aeromédicos)",
         "paso_fronterizo": "Paso Roballos / Rodolfo Roballos (Ruta X-83 Valle Chacabuco hacia RP 41 Argentina)"
       },

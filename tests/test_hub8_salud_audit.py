@@ -35,11 +35,11 @@ class TestHub8SaludAudit(unittest.TestCase):
 
     def test_01_cero_vectores_planos_y_promedios_oficiales(self):
         expected_means = {
-            "mediana_espera_especialidad_dias": 284.0,
-            "mediana_espera_quirurgica_dias": 395.0,
+            "mediana_espera_especialidad_dias": 159.0,
+            "mediana_espera_quirurgica_dias": 262.0,
             "tasa_mortalidad_cancer_gastrico_100k": 18.4,
-            "tasa_mortalidad_cancer_vesicula_100k": 12.6,
-            "tasa_mortalidad_suicidio_100k": 15.1,
+            "tasa_mortalidad_cancer_vesicula_100k": 18.29,
+            "tasa_mortalidad_suicidio_100k": 19.9,
         }
         for key, target_mean in expected_means.items():
             vals = [c[key] for c in self.comunas]
@@ -48,18 +48,19 @@ class TestHub8SaludAudit(unittest.TestCase):
 
     def test_02_consistencia_postas_aps_y_hospitales(self):
         self.assertEqual(sum(c["postas_salud_rural"] for c in self.comunas), 27)
+        self.assertEqual(sum(c["postas_rurales_psr_n"] for c in self.comunas), 27)
         self.assertEqual(sum(self.nodos[38]["chartSpec"]["datasets"][0]["data"]), 27)
-        self.assertEqual(sum(c["establecimientos_aps_n"] for c in self.comunas), 53)
+        self.assertEqual(sum(c["establecimientos_aps_n"] for c in self.comunas), 44)
 
         psr_nodes = [n for n in self.hosp if n.get("tipo") == "Posta de Salud Rural (APS)"]
         emr_nodes = [n for n in self.hosp if n.get("tipo") == "Estación Médico Rural (EMR)"]
         hosp_nodes = [n for n in self.hosp if "Hospital" in str(n.get("tipo", ""))]
         self.assertEqual(len(psr_nodes), 27)
-        self.assertEqual(len(emr_nodes), 5)
+        self.assertEqual(len(emr_nodes), 9)
         self.assertEqual(len(hosp_nodes), 5)
 
         camas_vals = sorted([n.get("magnitudeValue") for n in hosp_nodes], reverse=True)
-        self.assertEqual(camas_vals, [167, 52, 16, 14, 12])
+        self.assertEqual(camas_vals, [135, 56, 8, 7, 7])
         self.assertFalse(any("35 box APS" in f"{n.get('magnitudeValue')} {n.get('magnitudeUnit')}" for n in hosp_nodes))
 
     def test_03_presets_hub8_y_textos(self):

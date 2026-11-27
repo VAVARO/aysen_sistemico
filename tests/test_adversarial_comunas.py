@@ -345,7 +345,7 @@ class TestComunasAdversarialIntegrity(unittest.TestCase):
         self.assertEqual(len(hospitals), 5, f"Expected exactly 5 hospitals across region, found {len(hospitals)}: {hospitals}")
 
         total_postas = sum(c["equipamiento_critico"]["total_postas_rurales"] for c in self.comunas)
-        self.assertEqual(total_postas, 32, f"Expected exactly 32 rural postas across region, found {total_postas}")
+        self.assertEqual(total_postas, 27, f"Expected exactly 27 rural postas across region, found {total_postas}")
 
         # Postas list items count must match total_postas_rurales for each comuna
         for c in self.comunas:

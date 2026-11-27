@@ -62,7 +62,7 @@ La comuna de Tortel (capital comunal: Caleta Tortel; Provincia de Capitán Prat;
 | Subsistema Eléctrico y Tarifa BT1 | Sistema Aislado Municipal Caleta Tortel (0,95 MW) / $318/kWh | [[hubs/hub_03_energia|Hub III — Energía]] |
 | Calefacción a Leña y Días MP2.5 | 98,5% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 3.485,4 km² (2.140 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
-| Red de Salud y Tiempo de Derivación | Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas) (0 camas, 1 PSR, 8 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
+| Red de Salud y Tiempo de Derivación | Sin hospital en la comuna (PSR Caleta Tortel en pasarelas de cipres) (0 camas, 1 PSR, 8 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
 | Infraestructura Cultural y Bibliotecas | 2 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 6 proyectos / 3 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 

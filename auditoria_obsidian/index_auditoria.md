@@ -4,7 +4,7 @@ title: "Índice de Auditoría y Respaldos por Indicador — Aysén Sistémico"
 type: index_auditoria
 updated_at: "2026-11-27"
 total_corridas: 5
-total_fichas_indicadores: 128
+total_fichas_indicadores: 137
 tags:
   - aysen-sistemico
   - auditoria-indicadores
@@ -24,10 +24,13 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 
 ## Fichas de Respaldo por Indicador (Modificados / Nuevos / Alertados)
 
+- [[indicadores/aeroevacuaciones_samu_n|aeroevacuaciones_samu_n]]
+- [[indicadores/aeroevacuaciones_secundarias_interregionales_n|aeroevacuaciones_secundarias_interregionales_n]]
 - [[indicadores/alojamientos_turisticos_rnpst_n|alojamientos_turisticos_rnpst_n]]
 - [[indicadores/beneficiarios_ssr_apr_doh|beneficiarios_ssr_apr_doh]]
 - [[indicadores/cajavecina_puntos_n|cajavecina_puntos_n]]
 - [[indicadores/cajeros_automaticos_n|cajeros_automaticos_n]]
+- [[indicadores/camas_hospitalarias|camas_hospitalarias]]
 - [[indicadores/centros_infa_anaerobica_n|centros_infa_anaerobica_n]]
 - [[indicadores/cobertura_empam_pct|cobertura_empam_pct]]
 - [[indicadores/cobertura_fibra_hogar_pct|cobertura_fibra_hogar_pct]]
@@ -59,6 +62,8 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/episodios_gec_mp25_anual|episodios_gec_mp25_anual]]
 - [[indicadores/escuelas_rurales_multigrado_n|escuelas_rurales_multigrado_n]]
 - [[indicadores/especies_exoticas_invasoras_n|especies_exoticas_invasoras_n]]
+- [[indicadores/espera_no_ges_n|espera_no_ges_n]]
+- [[indicadores/establecimientos_aps_n|establecimientos_aps_n]]
 - [[indicadores/establecimientos_educacion_conectados_n|establecimientos_educacion_conectados_n]]
 - [[indicadores/establecimientos_escolares_n|establecimientos_escolares_n]]
 - [[indicadores/establecimientos_slep_aysen|establecimientos_slep_aysen]]
@@ -106,6 +111,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/peso_pua_ingresos_propios_pct|peso_pua_ingresos_propios_pct]]
 - [[indicadores/poblacion_censo_2024|poblacion_censo_2024]]
 - [[indicadores/pobreza_multidim_pct|pobreza_multidim_pct]]
+- [[indicadores/postas_salud_rural|postas_salud_rural]]
 - [[indicadores/potencia_ernc_en_construccion_mw|potencia_ernc_en_construccion_mw]]
 - [[indicadores/potencia_mw|potencia_mw]]
 - [[indicadores/precio_lena_m3|precio_lena_m3]]
@@ -125,6 +131,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/rsh_carencia_servicios_basicos_jun2026_pct|rsh_carencia_servicios_basicos_jun2026_pct]]
 - [[indicadores/rsh_hacinamiento_jun2026_pct|rsh_hacinamiento_jun2026_pct]]
 - [[indicadores/ruralidad_censo_2024_pct|ruralidad_censo_2024_pct]]
+- [[indicadores/salud_principal|salud_principal]]
 - [[indicadores/sancionatorios_sma_acuicolas_n|sancionatorios_sma_acuicolas_n]]
 - [[indicadores/sistema_electrico|sistema_electrico]]
 - [[indicadores/sistemas_ssr_apr_n|sistemas_ssr_apr_n]]
@@ -136,6 +143,8 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/tarifa_adr_estimada_usd|tarifa_adr_estimada_usd]]
 - [[indicadores/tarifa_bt1_clp|tarifa_bt1_clp]]
 - [[indicadores/tasa_dmcs_100k|tasa_dmcs_100k]]
+- [[indicadores/tasa_mortalidad_cancer_vesicula_100k|tasa_mortalidad_cancer_vesicula_100k]]
+- [[indicadores/tasa_mortalidad_suicidio_100k|tasa_mortalidad_suicidio_100k]]
 - [[indicadores/tasa_ocupacion_emat_estival_pct|tasa_ocupacion_emat_estival_pct]]
 - [[indicadores/tasa_ocupacion_estival_pct|tasa_ocupacion_estival_pct]]
 - [[indicadores/tasa_ocupacion_invernal_pct|tasa_ocupacion_invernal_pct]]

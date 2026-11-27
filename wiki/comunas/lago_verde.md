@@ -62,7 +62,7 @@ La comuna de Lago Verde (capital comunal: Lago Verde; Provincia de Coyhaique; cu
 | Subsistema Eléctrico y Tarifa BT1 | Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual (0,35 MW) / $294/kWh | [[hubs/hub_03_energia|Hub III — Energía]] |
 | Calefacción a Leña y Días MP2.5 | 98,1% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 64 km² (265 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
-| Red de Salud y Tiempo de Derivación | Sin hospital en la comuna (Atencion Primaria Rural) (0 camas, 3 PSR, 4,5 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
+| Red de Salud y Tiempo de Derivación | Sin hospital en la comuna (3 PSR dependientes del DAP SSA) (0 camas, 3 PSR, 4,5 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
 | Infraestructura Cultural y Bibliotecas | 2 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |
 | Proyectos CTCi e Investigadores | 2 proyectos / 1 investigadores | [[hubs/hub_10_ctci|Hub X — CTCi]] |
 
